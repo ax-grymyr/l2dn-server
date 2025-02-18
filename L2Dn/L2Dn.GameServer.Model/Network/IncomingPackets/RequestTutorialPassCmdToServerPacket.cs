@@ -20,20 +20,20 @@ public struct RequestTutorialPassCmdToServerPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         if (_bypass.StartsWith("admin_"))
         {
             AdminCommandHandler.getInstance().useAdminCommand(player, _bypass, true);
         }
         else
         {
-            IBypassHandler handler = BypassHandler.getInstance().getHandler(_bypass);
+            IBypassHandler? handler = BypassHandler.getInstance().getHandler(_bypass);
             if (handler != null)
             {
                 handler.useBypass(_bypass, player, null);
             }
         }
-		
+
         if (player.Events.HasSubscribers<OnPlayerBypass>())
         {
             player.Events.NotifyAsync(new OnPlayerBypass(player, _bypass));

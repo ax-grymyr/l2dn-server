@@ -64,7 +64,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		MethodInfo[] methods =
 			GetType().GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-		
+
 		foreach (MethodInfo method in methods)
 		{
 			SubscribeEventAttribute? subscribeEventAttribute = method.GetCustomAttribute<SubscribeEventAttribute>();
@@ -72,13 +72,13 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			{
 				IReadOnlyCollection<EventContainer> containers =
 					SubscriptionHelper.Subscribe(subscribeEventAttribute.Type, this, method);
-				
+
 				foreach (EventContainer container in containers)
 					_eventContainers.Add(container);
 			}
 		}
 	}
-	
+
 	/// <summary>
 	/// Unsubscribe from all events by this class.
 	/// </summary>
@@ -86,7 +86,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		foreach (EventContainer container in _eventContainers)
 			container.UnsubscribeAllTypes(this);
-        
+
 		if (_timerExecutor != null)
 			_timerExecutor.cancelAllTimers();
 	}
@@ -96,27 +96,27 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		Unload();
 		SubscribeToEvents();
 	}
-    
+
 	public virtual void onTimerEvent(TimerHolder<string> holder)
 	{
 		onTimerEvent(holder.getEvent(), holder.getParams(), holder.getNpc(), holder.getPlayer());
 	}
-	
+
 	public virtual void onTimerCancel(TimerHolder<string> holder)
 	{
 		onTimerCancel(holder.getEvent(), holder.getParams(), holder.getNpc(), holder.getPlayer());
 	}
-	
+
 	public virtual void onTimerEvent(string @event, StatSet @params, Npc npc, Player player)
 	{
 		_logger.Warn("[" + GetType().Name + "]: Timer event arrived at non overriden onTimerEvent method event: " +
 		            @event + " npc: " + npc + " player: " + player);
 	}
-	
+
 	public void onTimerCancel(string @event, StatSet @params, Npc npc, Player player)
 	{
 	}
-	
+
 	/**
 	 * @return the {@link TimerExecutor} object that manages timers
 	 */
@@ -134,12 +134,12 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		return _timerExecutor;
 	}
-	
+
 	public bool hasTimers()
 	{
 		return _timerExecutor != null;
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
 
 	public void addTalkId(int npcId)
@@ -155,12 +155,12 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		setNpcTalkId(ev => ev.Scripts.Add(this), npcIds);
 	}
-	
+
 	public void addTalkId(IReadOnlyCollection<int> npcIds)
 	{
 		setNpcTalkId(ev => ev.Scripts.Add(this), npcIds);
 	}
-	
+
 	/**
 	 * This function is called whenever a player clicks to the "Quest" link of an NPC that is registered for the quest.
 	 * @param npc this parameter contains a reference to the exact instance of the NPC that the player is talking with.
@@ -171,7 +171,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return null;
 	}
-	
+
 	/**
 	 * @param npc
 	 * @param player
@@ -183,7 +183,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			// TODO: this is just the check that the script subscribed to OnNpcTalk event of Npc
 			// the check must be implemented differently, because it is THIS script instance
-			// subscribed to Npc OnNpcTalk event and it can store the Npc ids  
+			// subscribed to Npc OnNpcTalk event and it can store the Npc ids
 			if (npc.Events.HasSubscribers<OnNpcTalk>())
 			{
 				OnNpcTalk onNpcTalk = new OnNpcTalk(npc, player);
@@ -198,7 +198,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			showError(player, e);
 			return;
 		}
-		
+
 		player.setLastQuestNpcObject(npc.ObjectId);
 		showResult(player, res, npc);
 	}
@@ -208,7 +208,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @param t the {@link Throwable} to get the message/stacktrace from
 	 * @return {@code false}
 	 */
-	public bool showError(Player player, Exception exception)
+	public bool showError(Player? player, Exception exception)
 	{
 		_logger.Warn(Name + " " + exception);
 		if (player != null && player.getAccessLevel().isGm())
@@ -218,7 +218,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		return false;
 	}
-	
+
 	/**
 	 * @param player the player to whom to show the result
 	 * @param res the message to show to the player
@@ -229,7 +229,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return showResult(player, res, null);
 	}
-	
+
 	/**
 	 * Show a message to the specified player.<br>
 	 * <u><i>Concept:</i></u><br>
@@ -250,7 +250,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return true;
 		}
-		
+
 		if (res.endsWith(".htm") || res.endsWith(".html"))
 		{
 			showHtmlFile(player, res, npc);
@@ -285,7 +285,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return showHtmlFile(player, filename, null);
 	}
-	
+
 	/**
 	 * Send an HTML file to the specified player.
 	 * @param player the player to send the HTML file to
@@ -298,7 +298,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		// Create handler to file linked to the quest
 		string content = getHtm(player, filename);
-		
+
 		// Send message to client if message not empty
 		if (content != null)
 		{
@@ -306,25 +306,25 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			{
 				content = content.Replace("%objectId%", npc.ObjectId.ToString());
 			}
-			
+
 			HtmlContent htmlContent = HtmlContent.LoadFromText(content, player);
 			htmlContent.Replace("%playername%", player.getName());
 
 			NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.ObjectId, 0, htmlContent);
 			player.sendPacket(npcReply);
-			
+
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
-		
+
 		return content;
 	}
-	
+
 	/**
 	 * @param player for language prefix.
 	 * @param fileName the html file to be get.
 	 * @return the HTML file contents
 	 */
-	public string? getHtm(Player player, string fileName)
+	public string getHtm(Player player, string fileName)
 	{
 		HtmCache hc = HtmCache.getInstance();
 
@@ -343,7 +343,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 
 		return content;
 	}
-	
+
 	/**
 	 * @return the path of the quest script
 	 */
@@ -352,7 +352,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		string path = GetType().FullName.Replace('.', '/');
 		return path.Substring(0, path.LastIndexOf('/' + GetType().Name)); // TODO
 	}
-	
+
 	/**
 	 * Provides callback operation when Attackable dies from a player.
 	 * @param callback
@@ -363,7 +363,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides callback operation when Attackable dies from a player.
 	 * @param callback
@@ -374,9 +374,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when Attackable dies from a player with return type.
 	 * @param callback
@@ -387,7 +387,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when Attackable dies from a player.
 	 * @param callback
@@ -398,7 +398,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Attackable} dies from a {@link Player}.
 	 * @param callback
@@ -409,9 +409,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when Attackable dies from a player with return type.
 	 * @param callback
@@ -422,7 +422,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when Attackable dies from a player.
 	 * @param callback
@@ -433,7 +433,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Attackable} dies from a {@link Player}.
 	 * @param callback
@@ -444,9 +444,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} talk to {@link Npc} for first time.
 	 * @param callback
@@ -457,7 +457,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} talk to {@link Npc} for first time.
 	 * @param callback
@@ -468,9 +468,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} talk to {@link Npc}.
 	 * @param npcIds
@@ -480,7 +480,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} talk to {@link Npc}.
 	 * @param npcIds
@@ -490,9 +490,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when teleport {@link Npc}.
 	 * @param callback
@@ -503,7 +503,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when teleport {@link Npc}.
 	 * @param callback
@@ -514,9 +514,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} talk to {@link Npc} and must receive quest state.
 	 * @param npcIds
@@ -526,7 +526,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} talk to {@link Npc} and must receive quest state.
 	 * @param npcIds
@@ -536,9 +536,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when Npc sees skill from a player.
 	 * @param callback
@@ -549,7 +549,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when Npc sees skill from a player.
 	 * @param callback
@@ -560,9 +560,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when Npc casts skill on a player.
 	 * @param callback
@@ -573,7 +573,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when Npc casts skill on a player.
 	 * @param callback
@@ -584,9 +584,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when Npc is spawned.
 	 * @param callback
@@ -597,7 +597,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when Npc is spawned.
 	 * @param callback
@@ -608,9 +608,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when Npc is despawned.
 	 * @param callback
@@ -621,7 +621,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when Npc is despawned.
 	 * @param callback
@@ -632,9 +632,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Npc} receives event from another {@link Npc}
 	 * @param callback
@@ -645,7 +645,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Npc} receives event from another {@link Npc}
 	 * @param callback
@@ -656,9 +656,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Npc} finishes to move.
 	 * @param callback
@@ -669,7 +669,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Npc} finishes to move.
 	 * @param callback
@@ -680,9 +680,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Npc} finishes to move on its route.
 	 * @param callback
@@ -693,7 +693,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Npc} finishes to move on its route.
 	 * @param callback
@@ -704,9 +704,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
 	 * @param callback
@@ -717,7 +717,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
 	 * @param callback
@@ -728,7 +728,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
 	 * @param callback
@@ -739,7 +739,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
 	 * @param callback
@@ -750,9 +750,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
 	 * @param callback
@@ -763,7 +763,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
 	 * @param callback
@@ -774,9 +774,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Creature} sees another creature.
 	 * @param callback
@@ -792,7 +792,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Creature} sees another creature.
 	 * @param callback
@@ -805,12 +805,12 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			Npc.addCreatureSeeId(id);
 		}
-		
+
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when Attackable is under attack to other clan mates.
 	 * @param callback
@@ -821,7 +821,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when Attackable is under attack to other clan mates.
 	 * @param callback
@@ -832,9 +832,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when Attackable is attacked from a player.
 	 * @param callback
@@ -845,7 +845,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when Attackable is attacked from a player.
 	 * @param callback
@@ -856,9 +856,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} enters in {@link Attackable}'s aggressive range.
 	 * @param callback
@@ -869,7 +869,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} enters in {@link Attackable}'s aggressive range.
 	 * @param callback
@@ -880,9 +880,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} learn's a {@link Skill}.
 	 * @param callback
@@ -893,7 +893,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} learn's a {@link Skill}.
 	 * @param callback
@@ -904,9 +904,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} summons a servitor or a pet
 	 * @param callback
@@ -917,7 +917,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} summons a servitor or a pet
 	 * @param callback
@@ -928,9 +928,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} talk with a servitor or a pet
 	 * @param callback
@@ -941,7 +941,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} talk with a servitor or a pet
 	 * @param callback
@@ -952,9 +952,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} summons a servitor or a pet
 	 * @param callback
@@ -964,9 +964,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.Global);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} summons a servitor or a pet
 	 * @param callback
@@ -976,9 +976,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.Global);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link org.l2jmobius.gameserver.model.actor.Creature} Enters on a {@link ZoneType}.
 	 * @param callback
@@ -989,7 +989,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.ZoneType, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link org.l2jmobius.gameserver.model.actor.Creature} Enters on a {@link ZoneType}.
 	 * @param callback
@@ -1000,9 +1000,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.ZoneType, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link org.l2jmobius.gameserver.model.actor.Creature} Exits on a {@link ZoneType}.
 	 * @param callback
@@ -1013,7 +1013,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.ZoneType, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link org.l2jmobius.gameserver.model.actor.Creature} Exits on a {@link ZoneType}.
 	 * @param callback
@@ -1024,9 +1024,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.ZoneType, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link org.l2jmobius.gameserver.model.actor.instance.Trap} acts.
 	 * @param callback
@@ -1037,7 +1037,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link org.l2jmobius.gameserver.model.actor.instance.Trap} acts.
 	 * @param callback
@@ -1048,9 +1048,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.NpcTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link ItemTemplate} receives an event from {@link Player}.
 	 * @param callback
@@ -1061,7 +1061,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.ItemTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link ItemTemplate} receives an event from {@link Player}.
 	 * @param callback
@@ -1072,9 +1072,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.ItemTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} talk to {@link ItemTemplate}.
 	 * @param callback
@@ -1085,7 +1085,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.ItemTemplate, npcIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when {@link Player} talk to {@link ItemTemplate}.
 	 * @param callback
@@ -1096,9 +1096,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.ItemTemplate, npcIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when Olympiad match finishes.
 	 * @param callback
@@ -1108,9 +1108,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.Olympiad);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when castle siege begins
 	 * @param callback
@@ -1121,7 +1121,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.Castle, castleIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when castle siege begins
 	 * @param callback
@@ -1132,9 +1132,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.Castle, castleIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when Castle owner has changed during a siege
 	 * @param callback
@@ -1145,7 +1145,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.Castle, castleIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when Castle owner has changed during a siege
 	 * @param callback
@@ -1156,9 +1156,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.Castle, castleIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when castle siege ends
 	 * @param callback
@@ -1169,7 +1169,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.Castle, castleIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when castle siege ends
 	 * @param callback
@@ -1180,9 +1180,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.Castle, castleIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when player's profession has change
 	 * @param callback
@@ -1192,7 +1192,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.Global);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when player's cancel profession
 	 * @param callback
@@ -1202,7 +1202,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.Global);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when instance world created
 	 * @param callback
@@ -1213,7 +1213,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when instance world created
 	 * @param callback
@@ -1224,9 +1224,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when instance world destroyed
 	 * @param callback
@@ -1237,7 +1237,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when instance world destroyed
 	 * @param callback
@@ -1248,9 +1248,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when player enters into instance world
 	 * @param callback
@@ -1261,7 +1261,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when player enters into instance world
 	 * @param callback
@@ -1272,9 +1272,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation when player leave from instance world
 	 * @param callback
@@ -1285,7 +1285,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation when player leave from instance world
 	 * @param callback
@@ -1296,9 +1296,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
-	
+
 	// ---------------------------------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Provides instant callback operation on instance status change
 	 * @param callback
@@ -1309,7 +1309,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		SubscribeToEvent(callback, SubscriptionType.InstanceTemplate, templateIds);
 	}
-	
+
 	/**
 	 * Provides instant callback operation on instance status change
 	 * @param callback
@@ -1324,7 +1324,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	// --------------------------------------------------------------------------------------------------
 	// --------------------------------------Register methods--------------------------------------------
 	// --------------------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Generic listener register method
 	 * @param action
@@ -1352,32 +1352,32 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		string typeName = "event " + typeof(TEvent).Name + ", class " + (GetType().FullName ?? nameof(AbstractScript));
 		ImmutableList<EventContainer> containers =
 			SubscriptionHelper.GetEventContainers(subscriptionType, typeName, ids);
-		
+
 		foreach (EventContainer container in containers)
 		{
 			container.Subscribe(this, action);
 			_eventContainers.Add(container);
 		}
 	}
-	
+
 	/**
 	 * -------------------------------------------------------------------------------------------------------
 	 */
-	
+
 	/**
 	 * @param template
 	 */
 	public void onSpawnActivate(SpawnTemplate template)
 	{
 	}
-	
+
 	/**
 	 * @param template
 	 */
 	public void onSpawnDeactivate(SpawnTemplate template)
 	{
 	}
-	
+
 	/**
 	 * @param template
 	 * @param group
@@ -1386,7 +1386,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	public void onSpawnNpc(SpawnTemplate template, SpawnGroup group, Npc npc)
 	{
 	}
-	
+
 	/**
 	 * @param template
 	 * @param group
@@ -1395,7 +1395,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	public void onSpawnDespawnNpc(SpawnTemplate template, SpawnGroup group, Npc npc)
 	{
 	}
-	
+
 	/**
 	 * @param template
 	 * @param group
@@ -1405,11 +1405,11 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	public void onSpawnNpcDeath(SpawnTemplate template, SpawnGroup group, Npc npc, Creature killer)
 	{
 	}
-	
+
 	/**
 	 * -------------------------------------------------------------------------------------------------------
 	 */
-	
+
 	/**
 	 * Show an on screen message to the player.
 	 * @param player the player to display the message to
@@ -1422,10 +1422,10 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return;
 		}
-		
+
 		player.sendPacket(new ExShowScreenMessagePacket(text, time));
 	}
-	
+
 	/**
 	 * Show an on screen message to the player.
 	 * @param player the player to display the message to
@@ -1440,10 +1440,10 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return;
 		}
-		
+
 		player.sendPacket(new ExShowScreenMessagePacket(npcString, position, time, @params));
 	}
-	
+
 	/**
 	 * Show an on screen message to the player.
 	 * @param player the player to display the message to
@@ -1461,7 +1461,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		player.sendPacket(new ExShowScreenMessagePacket(npcString, position, time, showEffect, @params));
 	}
-	
+
 	/**
 	 * Show an on screen message to the player.
 	 * @param player the player to display the message to
@@ -1478,7 +1478,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		player.sendPacket(new ExShowScreenMessagePacket(systemMsg, position, time, @params));
 	}
-	
+
 	/**
 	 * Add a temporary spawn of the specified NPC.
 	 * @param npcId the ID of the NPC to spawn
@@ -1491,7 +1491,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, false, TimeSpan.Zero, false, 0);
 	}
-	
+
 	/**
 	 * Add a temporary spawn of the specified NPC.
 	 * @param summoner the NPC that requires this spawn
@@ -1505,7 +1505,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return addSpawn(summoner, npcId, location.X, location.Y, location.Z, heading, randomOffset, despawnDelay, false, 0);
 	}
-	
+
 	/**
 	 * Add a temporary spawn of the specified NPC.
 	 * @param npcId the ID of the NPC to spawn
@@ -1519,7 +1519,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, false, TimeSpan.Zero, isSummonSpawn, 0);
 	}
-	
+
 	/**
 	 * Add a temporary spawn of the specified NPC.
 	 * @param npcId the ID of the NPC to spawn
@@ -1534,7 +1534,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, randomOffset, despawnDelay, false, 0);
 	}
-	
+
 	/**
 	 * Add a temporary spawn of the specified NPC.
 	 * @param npcId the ID of the NPC to spawn
@@ -1550,7 +1550,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, randomOffset, despawnDelay, isSummonSpawn, 0);
 	}
-	
+
 	/**
 	 * Add a temporary spawn of the specified NPC.
 	 * @param summoner the NPC that requires this spawn
@@ -1569,7 +1569,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return addSpawn(summoner, npcId, location.X, location.Y, location.Z, location.Heading, randomOffset, TimeSpan.Zero, false, instanceId);
 	}
-	
+
 	/**
 	 * Add a temporary spawn of the specified NPC.
 	 * @param npcId the ID of the NPC to spawn
@@ -1589,7 +1589,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, randomOffset, despawnDelay, isSummonSpawn, instanceId);
 	}
-	
+
 	/**
 	 * Add a temporary spawn of the specified NPC.
 	 * @param npcId the ID of the NPC to spawn
@@ -1607,7 +1607,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, false, 0);
 	}
-	
+
 	/**
 	 * Add a temporary spawn of the specified NPC.
 	 * @param npcId the ID of the NPC to spawn
@@ -1626,7 +1626,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, isSummonSpawn, 0);
 	}
-	
+
 	/**
 	 * Add a temporary spawn of the specified NPC.
 	 * @param npcId the ID of the NPC to spawn
@@ -1647,7 +1647,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return addSpawn(null, npcId, x, y, z, heading, randomOffset, despawnDelay, isSummonSpawn, instanceId);
 	}
-	
+
 	/**
 	 * Add a temporary spawn of the specified NPC.
 	 * @param summoner the NPC that requires this spawn
@@ -1674,7 +1674,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 				_logger.Error("addSpawn(): invalid spawn coordinates for NPC #" + npcId + "!");
 				return null;
 			}
-			
+
 			int x = xValue;
 			int y = yValue;
 			if (randomOffset)
@@ -1692,23 +1692,23 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 				}
 				y += offset;
 			}
-			
+
 			Spawn spawn = new Spawn(npcId);
 			spawn.setInstanceId(instance);
 			spawn.Location = new Location(x, y, zValue, heading);
 			spawn.stopRespawn();
-			
+
 			Npc npc = spawn.doSpawn(isSummonSpawn);
 			if (despawnDelay > TimeSpan.Zero)
 			{
 				npc.scheduleDespawn(despawnDelay);
 			}
-			
+
 			if (summoner != null)
 			{
 				summoner.addSummonedNpc(npc);
 			}
-			
+
 			// Retain monster original position if ENABLE_RANDOM_MONSTER_SPAWNS is enabled.
 			if (Config.ENABLE_RANDOM_MONSTER_SPAWNS && !randomOffset && npc.isMonster())
 			{
@@ -1719,20 +1719,20 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 					npc.setHeading(heading);
 				}
 			}
-			
+
 			// Fixes invisible NPCs spawned by script.
 			npc.broadcastInfo();
-			
+
 			return npc;
 		}
 		catch (Exception e)
 		{
 			_logger.Warn("Could not spawn NPC #" + npcId + "; error: " + e);
 		}
-		
+
 		return null;
 	}
-	
+
 	/**
 	 * @param trapId
 	 * @param x
@@ -1753,7 +1753,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		trap.spawnMe(location.Location3D);
 		return trap;
 	}
-	
+
 	/**
 	 * @param master
 	 * @param minionId
@@ -1763,7 +1763,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return MinionList.spawnMinion(master, minionId);
 	}
-	
+
 	/**
 	 * Get the amount of an item in player's inventory.
 	 * @param player the player whose inventory to check
@@ -1774,7 +1774,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return player.getInventory().getInventoryItemCount(itemId, -1);
 	}
-	
+
 	/**
 	 * Get the total amount of all specified items in player's inventory.
 	 * @param player the player whose inventory to check
@@ -1790,7 +1790,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			{
 				continue;
 			}
-			
+
 			foreach (int itemId in itemIds)
 			{
 				if (item.getId() == itemId)
@@ -1805,7 +1805,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		return count;
 	}
-	
+
 	/**
 	 * Check if the player has the specified item in his inventory.
 	 * @param player the player whose inventory to check for the specified item
@@ -1816,7 +1816,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return hasItem(player, item, true);
 	}
-	
+
 	/**
 	 * Check if the player has the required count of the specified item in his inventory.
 	 * @param player the player whose inventory to check for the specified item
@@ -1837,7 +1837,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		return hasQuestItems(player, item.getId());
 	}
-	
+
 	/**
 	 * Check if the player has all the specified items in his inventory and, if necessary, if their count is also as required.
 	 * @param player the player whose inventory to check for the specified item
@@ -1861,7 +1861,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Check for an item in player's inventory.
 	 * @param player the player whose inventory to check for quest items
@@ -1872,7 +1872,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return player.getInventory().getItemByItemId(itemId) != null;
 	}
-	
+
 	/**
 	 * Check for multiple items in player's inventory.
 	 * @param player the player whose inventory to check for quest items
@@ -1885,7 +1885,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return false;
 		}
-		
+
 		PlayerInventory inv = player.getInventory();
 		foreach (int itemId in itemIds)
 		{
@@ -1896,7 +1896,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Check for multiple items in player's inventory.
 	 * @param player the player whose inventory to check for quest items
@@ -1915,7 +1915,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Extensive player ownership check for single or multiple items.<br>
 	 * Checks inventory, warehouse, pet, summons, mail attachments and item auctions.
@@ -2014,7 +2014,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Get the enchantment level of an item in player's inventory.
 	 * @param player the player whose item to check
@@ -2030,7 +2030,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		return enchantedItem.getEnchantLevel();
 	}
-	
+
 	/**
 	 * Give Adena to the player.
 	 * @param player the player to whom to give the Adena
@@ -2048,7 +2048,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			giveItems(player, Inventory.ADENA_ID, count);
 		}
 	}
-	
+
 	/**
 	 * Give a reward to player using multipliers.
 	 * @param player the player to whom to give the item
@@ -2058,7 +2058,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		rewardItems(player, holder.getId(), holder.getCount());
 	}
-	
+
 	/**
 	 * Give a reward to player using multipliers.
 	 * @param player the player to whom to give the item
@@ -2071,18 +2071,18 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return;
 		}
-		
+
 		if (countValue <= 0)
 		{
 			return;
 		}
-		
+
 		ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
 		if (item == null)
 		{
 			return;
 		}
-		
+
 		long count = countValue;
 		try
 		{
@@ -2135,17 +2135,17 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			count = long.MaxValue;
 		}
-		
+
 		// Add items to player's inventory
 		Item itemInstance = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
 		if (itemInstance == null)
 		{
 			return;
 		}
-		
+
 		sendItemGetMessage(player, itemInstance, count);
 	}
-	
+
 	/**
 	 * Send the system message and the status update packets to the player.
 	 * @param player the player that has got the item
@@ -2179,7 +2179,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		player.sendPacket(new ExUserInfoInventoryWeightPacket(player));
 		player.sendPacket(new ExAdenaInvenCountPacket(player));
 	}
-	
+
 	/**
 	 * Give item/reward to the player
 	 * @param player
@@ -2190,7 +2190,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		giveItems(player, itemId, count, 0, false);
 	}
-	
+
 	/**
 	 * Give item/reward to the player
 	 * @param player
@@ -2202,7 +2202,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		giveItems(player, itemId, count, 0, playSound);
 	}
-	
+
 	/**
 	 * Give item/reward to the player
 	 * @param player
@@ -2212,7 +2212,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		giveItems(player, holder.getId(), holder.getCount());
 	}
-	
+
 	/**
 	 * @param player
 	 * @param itemId
@@ -2226,32 +2226,32 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return;
 		}
-		
+
 		if (count <= 0)
 		{
 			return;
 		}
-		
+
 		// Add items to player's inventory
 		Item item = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
 		if (item == null)
 		{
 			return;
 		}
-		
+
 		// set enchant level for item if that item is not adena
 		if ((enchantlevel > 0) && (itemId != Inventory.ADENA_ID))
 		{
 			item.setEnchantLevel(enchantlevel);
 		}
-		
+
 		if (playSound)
 		{
 			AbstractScript.playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		sendItemGetMessage(player, item, count);
 	}
-	
+
 	/**
 	 * @param player
 	 * @param itemId
@@ -2265,19 +2265,19 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return;
 		}
-		
+
 		if (count <= 0)
 		{
 			return;
 		}
-		
+
 		// Add items to player's inventory
 		Item item = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
 		if (item == null)
 		{
 			return;
 		}
-		
+
 		// set enchant level for item if that item is not adena
 		if ((attributeType != null) && (attributeValue > 0))
 		{
@@ -2287,14 +2287,14 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 				// Recalculate all stats
 				player.getStat().recalculateStats(true);
 			}
-			
+
 			InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(item, ItemChangeType.MODIFIED));
 			player.sendInventoryUpdate(iu);
 		}
-		
+
 		sendItemGetMessage(player, item, count);
 	}
-	
+
 	/**
 	 * Give the specified player a set amount of items if he is lucky enough.<br>
 	 * Not recommended to use this for non-stacking items.
@@ -2310,7 +2310,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return giveItemRandomly(player, null, itemId, amountToGive, amountToGive, limit, dropChance, playSound);
 	}
-	
+
 	/**
 	 * Give the specified player a set amount of items if he is lucky enough.<br>
 	 * Not recommended to use this for non-stacking items.
@@ -2327,7 +2327,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return giveItemRandomly(player, npc, itemId, amountToGive, amountToGive, limit, dropChance, playSound);
 	}
-	
+
 	/**
 	 * Give the specified player a random amount of items if he is lucky enough.<br>
 	 * Not recommended to use this for non-stacking items.
@@ -2347,13 +2347,13 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return false;
 		}
-		
+
 		long currentCount = getQuestItemsCount(player, itemId);
 		if ((limit > 0) && (currentCount >= limit))
 		{
 			return true;
 		}
-		
+
 		long minAmountWithBonus = (long) (minAmount * Config.RATE_QUEST_DROP);
 		long maxAmountWithBonus = (long) (maxAmount * Config.RATE_QUEST_DROP);
 		double dropChanceWithBonus = dropChance * Config.RATE_QUEST_DROP; // TODO separate configs for rate and amount
@@ -2372,7 +2372,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 				maxAmountWithBonus = (long)(maxAmountWithBonus * Config.CHAMPION_REWARDS_AMOUNT);
 			}
 		}
-		
+
 		long amountToGive = (minAmountWithBonus == maxAmountWithBonus) ? minAmountWithBonus : Rnd.get(minAmountWithBonus, maxAmountWithBonus);
 		double random = Rnd.nextDouble();
 		// Inventory slot check (almost useless for non-stacking items)
@@ -2382,7 +2382,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			{
 				amountToGive = limit - currentCount;
 			}
-			
+
 			// Give the item to player
 			if (player.addItem("Quest", itemId, amountToGive, npc, true) != null)
 			{
@@ -2395,12 +2395,12 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 					}
 					return true;
 				}
-				
+
 				if (playSound)
 				{
 					AbstractScript.playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
-				
+
 				// if there is no limit, return true every time an item is given
 				if (limit <= 0)
 				{
@@ -2410,7 +2410,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Take an amount of a specified item from player's inventory.
 	 * @param player the player whose item to take
@@ -2424,21 +2424,21 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return false;
 		}
-		
+
 		// Get object item from player's inventory list
 		Item item = player.getInventory().getItemByItemId(itemId);
 		if (item == null)
 		{
 			return false;
 		}
-		
+
 		// Tests on count value in order not to have negative value
 		long amount = amountValue;
 		if ((amountValue < 0) || (amountValue > item.getCount()))
 		{
 			amount = item.getCount();
 		}
-		
+
 		// Destroy the quantity of items wanted
 		if (item.isEquipped())
 		{
@@ -2452,10 +2452,10 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			player.sendInventoryUpdate(iu);
 			player.broadcastUserInfo();
 		}
-		
+
 		return player.destroyItemByItemId("Quest", itemId, amount, player, true);
 	}
-	
+
 	/**
 	 * Take a set amount of a specified item from player's inventory.
 	 * @param player the player whose item to take
@@ -2470,7 +2470,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		return takeItems(player, holder.getId(), holder.getCount());
 	}
-	
+
 	/**
 	 * Take a set amount of all specified items from player's inventory.
 	 * @param player the player whose items to take
@@ -2502,7 +2502,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Take an amount of all specified items from player's inventory.
 	 * @param player the player whose items to take
@@ -2516,7 +2516,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return false;
 		}
-		
+
 		bool check = true;
 		if (itemIds != null)
 		{
@@ -2527,12 +2527,12 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		return check;
 	}
-	
+
 	public static void playSound(Instance world, string sound)
 	{
 		world.broadcastPacket().SendPackets(new PlaySoundPacket(sound));
 	}
-	
+
 	/**
 	 * Send a packet in order to play a sound to the player.
 	 * @param player the player whom to send the packet
@@ -2544,10 +2544,10 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return;
 		}
-		
+
 		player.sendPacket(new PlaySoundPacket(sound));
 	}
-	
+
 	/**
 	 * Send a packet in order to play a sound to the player.
 	 * @param player the player whom to send the packet
@@ -2559,10 +2559,10 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return;
 		}
-		
+
 		player.sendPacket(new PlaySoundPacket(sound.GetSoundName()));
 	}
-	
+
 	/**
 	 * Add EXP and SP as quest reward.
 	 * @param player the player whom to reward with the EXP/SP
@@ -2575,21 +2575,21 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return;
 		}
-		
+
 		long addExp = exp;
 		long addSp = sp;
-		
+
 		// Premium rates
 		if (player.hasPremiumStatus())
 		{
 			addExp = (long)(addExp * Config.PREMIUM_RATE_QUEST_XP);
 			addSp = (long)(addSp * Config.PREMIUM_RATE_QUEST_SP);
 		}
-		
+
 		player.addExpAndSp((long) player.getStat().getValue(Stat.EXPSP_RATE, (addExp * Config.RATE_QUEST_REWARD_XP)), (int) player.getStat().getValue(Stat.EXPSP_RATE, (addSp * Config.RATE_QUEST_REWARD_SP)));
 		PcCafePointsManager.getInstance().givePcCafePoint(player, (long) (addExp * Config.RATE_QUEST_REWARD_XP));
 	}
-	
+
 	/**
 	 * Get a random integer from 0 (inclusive) to {@code max} (exclusive).<br>
 	 * Use this method instead of importing {@link org.l2jmobius.commons.util.Rnd} utility.
@@ -2600,7 +2600,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return Rnd.get(max);
 	}
-	
+
 	/**
 	 * Get a random integer from {@code min} (inclusive) to {@code max} (inclusive).<br>
 	 * Use this method instead of importing {@link org.l2jmobius.commons.util.Rnd} utility.
@@ -2612,7 +2612,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return Rnd.get(min, max);
 	}
-	
+
 	/**
 	 * Get a random bool.<br>
 	 * Use this method instead of importing {@link org.l2jmobius.commons.util.Rnd} utility.
@@ -2633,7 +2633,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return player.getInventory().getPaperdollItemId(slot);
 	}
-	
+
 	/**
 	 * @return the number of ticks from the {@link org.l2jmobius.gameserver.taskmanager.GameTimeTaskManager}.
 	 */
@@ -2641,7 +2641,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		return GameTimeTaskManager.getInstance().getGameTicks();
 	}
-	
+
 	/**
 	 * Execute a procedure for each player depending on the parameters.
 	 * @param player the player on which the procedure will be executed
@@ -2681,7 +2681,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			actionForEachPlayer(player, npc, isSummon);
 		}
 	}
-	
+
 	/**
 	 * Overridable method called from {@link #executeForEachPlayer(Player, Npc, bool, bool, bool)}
 	 * @param player the player on which the action will be run
@@ -2692,7 +2692,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		// To be overridden in quest scripts.
 	}
-	
+
 	/**
 	 * Open a door if it is present on the instance and its not open.
 	 * @param doorId the ID of the door to open
@@ -2711,7 +2711,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			door.openMe();
 		}
 	}
-	
+
 	/**
 	 * Close a door if it is present in a specified the instance and its open.
 	 * @param doorId the ID of the door to close
@@ -2730,7 +2730,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			door.closeMe();
 		}
 	}
-	
+
 	/**
 	 * Retrieve a door from an instance or the real world.
 	 * @param doorId the ID of the door to get
@@ -2752,7 +2752,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 
 		return door;
 	}
-	
+
 	/**
 	 * Monster is running and attacking the playable.
 	 * @param npc the NPC that performs the attack
@@ -2762,7 +2762,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		addAttackPlayerDesire(npc, playable, 999);
 	}
-	
+
 	/**
 	 * Monster is running and attacking the target.
 	 * @param npc the NPC that performs the attack
@@ -2778,7 +2778,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		npc.setRunning();
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 	}
-	
+
 	/**
 	 * Monster is running and attacking the target.
 	 * @param npc the NPC that performs the attack
@@ -2789,7 +2789,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		npc.setRunning();
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 	}
-	
+
 	/**
 	 * Adds desire to move to the given NPC.
 	 * @param npc the NPC
@@ -2800,7 +2800,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
 	}
-	
+
 	/**
 	 * Instantly cast a skill upon the given target.
 	 * @param npc the caster NPC
@@ -2812,7 +2812,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		npc.setTarget(target);
 		npc.doCast(skill.getSkill());
 	}
-	
+
 	/**
 	 * Instantly cast a skill upon the given target.
 	 * @param npc the caster NPC
@@ -2824,7 +2824,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		npc.setTarget(target);
 		npc.doCast(skill);
 	}
-	
+
 	/**
 	 * Adds the desire to cast a skill to the given NPC.
 	 * @param npc the NPC whom cast the skill
@@ -2836,7 +2836,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		addSkillCastDesire(npc, target, skill.getSkill(), desire);
 	}
-	
+
 	/**
 	 * Adds the desire to cast a skill to the given NPC.
 	 * @param npc the NPC whom cast the skill
@@ -2853,7 +2853,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		npc.setTarget(target != null ? target : npc);
 		npc.doCast(skill);
 	}
-	
+
 	/**
 	 * Sends the special camera packet to the player.
 	 * @param player the player
@@ -2877,7 +2877,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		player.sendPacket(new SpecialCameraPacket(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle));
 	}
-	
+
 	/**
 	 * Sends the special camera packet to the player.
 	 * @param player
@@ -2900,7 +2900,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		player.sendPacket(new SpecialCameraPacket(creature, player, force, angle1, angle2, time, duration, relYaw, relPitch, isWide, relAngle));
 	}
-	
+
 	/**
 	 * Sends the special camera packet to the player.
 	 * @param player
@@ -2925,12 +2925,12 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		player.sendPacket(new SpecialCameraPacket(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle, unk));
 	}
-	
+
 	public static void specialCamera(Instance world, Creature creature, int force, int angle1, int angle2, int time, int range, int duration, int relYaw, int relPitch, int isWide, int relAngle, int unk)
 	{
 		world.broadcastPacket().SendPackets(new SpecialCameraPacket(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle, unk));
 	}
-	
+
 	/**
 	 * @param player
 	 * @param x
@@ -2945,7 +2945,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		player.getRadar().addMarker(x, y, z);
 	}
-	
+
 	/**
 	 * @param player
 	 * @param x
@@ -2960,7 +2960,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		player.getRadar().removeMarker(x, y, z);
 	}
-	
+
 	/**
 	 * @param player
 	 */
@@ -2972,7 +2972,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		player.getRadar().removeAllMarkers();
 	}
-	
+
 	/**
 	 * Play scene for Player.
 	 * @param player the player
@@ -2987,7 +2987,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 
 		new MovieHolder([player], movie);
 	}
-	
+
 	/**
 	 * Play scene for all Player inside list.
 	 * @param players list with Player
@@ -2997,7 +2997,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		new MovieHolder(players, movie);
 	}
-	
+
 	/**
 	 * Play scene for all Player inside set.
 	 * @param players set with Player
@@ -3007,7 +3007,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		new MovieHolder(players.ToList(), movie);
 	}
-	
+
 	/**
 	 * Play scene for all Player inside instance.
 	 * @param instance Instance object

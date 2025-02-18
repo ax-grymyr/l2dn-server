@@ -19,20 +19,20 @@ public class Enemy: ITargetTypeHandler
 	{
 		return TargetType.ENEMY;
 	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
+
+	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
 		if (selectedTarget == null)
 		{
 			return null;
 		}
-		
+
 		if (!selectedTarget.isCreature())
 		{
 			return null;
 		}
 		Creature target = (Creature) selectedTarget;
-		
+
 		// You cannot attack yourself even with force.
 		if (creature == target)
 		{
@@ -42,7 +42,7 @@ public class Enemy: ITargetTypeHandler
 			}
 			return null;
 		}
-		
+
 		// You cannot attack dead targets.
 		if (target.isDead() && !skill.isStayAfterDeath())
 		{
@@ -52,7 +52,7 @@ public class Enemy: ITargetTypeHandler
 			}
 			return null;
 		}
-		
+
 		// Doors do not care about force attack.
 		if (target.isDoor() && !target.isAutoAttackable(creature))
 		{
@@ -62,7 +62,7 @@ public class Enemy: ITargetTypeHandler
 			}
 			return null;
 		}
-		
+
 		// Monsters can attack/be attacked anywhere. Players can attack creatures that aren't autoattackable with force attack.
 		if (target.isAutoAttackable(creature) || forceUse)
 		{
@@ -75,7 +75,7 @@ public class Enemy: ITargetTypeHandler
 				}
 				return null;
 			}
-			
+
 			// Geodata check when character is within range.
 			if (!GeoEngine.getInstance().canSeeTarget(creature, target))
 			{
@@ -85,7 +85,7 @@ public class Enemy: ITargetTypeHandler
 				}
 				return null;
 			}
-			
+
 			// Skills with this target type cannot be used by playables on playables in peace zone, but can be used by and on NPCs.
 			if (target.isInsidePeaceZone(creature))
 			{
@@ -95,11 +95,11 @@ public class Enemy: ITargetTypeHandler
 				}
 				return null;
 			}
-			
+
 			if (forceUse)
 			{
-				Player player = creature.getActingPlayer();
-				Player targetPlayer = target.getActingPlayer();
+				Player? player = creature.getActingPlayer();
+				Player? targetPlayer = target.getActingPlayer();
 				if ((player != null) && (targetPlayer != null))
 				{
 					// Siege friend check.
@@ -113,15 +113,15 @@ public class Enemy: ITargetTypeHandler
 					}
 				}
 			}
-			
+
 			return target;
 		}
-		
+
 		if (sendMessage)
 		{
 			creature.sendPacket(SystemMessageId.INVALID_TARGET);
 		}
-		
+
 		return null;
 	}
 }

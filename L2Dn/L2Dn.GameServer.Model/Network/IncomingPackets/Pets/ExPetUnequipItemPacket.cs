@@ -30,44 +30,42 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-		Pet pet = player.getPet();
+		Pet? pet = player.getPet();
 		if (pet == null)
-		{
 			return ValueTask.CompletedTask;
-		}
-		
+
 		// TODO: Flood protect UseItem
 		// if (!client.getFloodProtectors().canUseItem())
 		// {
 		// 	return ValueTask.CompletedTask;
 		// }
-		
+
 		if (player.isInsideZone(ZoneId.JAIL))
 		{
 			player.sendMessage("You cannot use items while jailed.");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.getActiveTradeList() != null)
 		{
 			player.cancelActiveTrade();
 		}
-		
+
 		if (player.getPrivateStoreType() != PrivateStoreType.NONE)
 		{
 			player.sendPacket(SystemMessageId.WHILE_OPERATING_A_PRIVATE_STORE_OR_WORKSHOP_YOU_CANNOT_DISCARD_DESTROY_OR_TRADE_AN_ITEM);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
-		Item item = pet.getInventory().getItemByObjectId(_objectId);
-		
+
+		Item? item = pet.getInventory().getItemByObjectId(_objectId);
+
 		// No UseItem is allowed while the player is in special conditions
 		if (player.hasBlockActions() || player.isControlBlocked() || player.isAlikeDead())
 		{
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Char cannot use item when dead
 		if (player.isDead() || pet.isDead() || !player.getInventory().canManipulateWithItemId(item.getId()))
 		{
@@ -76,12 +74,12 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
 			player.sendPacket(sm);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!item.isEquipable())
 		{
 			return ValueTask.CompletedTask;
 		}
-		
+
 		_itemId = item.getId();
 		if (player.isFishing() && ((_itemId < 6535) || (_itemId > 6540)))
 		{
@@ -89,9 +87,9 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_FISHING_3);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		player.onActionRequest();
-		
+
 		if (item.isEquipable())
 		{
 			if (pet.getInventory().isItemSlotBlocked(item.getTemplate().getBodyPart()))
@@ -145,7 +143,7 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
 					return ValueTask.CompletedTask;
 				}
 			}
-			
+
 			if (player.isCastingNow())
 			{
 				// Create and Bind the next action to the AI.
@@ -167,10 +165,10 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
 				sendInfos(pet, player);
 			}
 		}
-		
+
 		return ValueTask.CompletedTask;
     }
-	
+
 	private static void sendInfos(Pet pet, Player player)
 	{
 		pet.getStat().recalculateStats(true);

@@ -7,31 +7,22 @@ using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.ElementalSpirits;
 
-public readonly struct ElementalSpiritAbsorbInfoPacket: IOutgoingPacket
+public readonly struct ElementalSpiritAbsorbInfoPacket(Player player, ElementalType type): IOutgoingPacket
 {
-    private readonly Player _player;
-    private readonly ElementalType _type;
-	
-    public ElementalSpiritAbsorbInfoPacket(Player player, ElementalType type)
-    {
-        _player = player;
-        _type = type;
-    }
-	
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_ELEMENTAL_SPIRIT_ABSORB_INFO);
-        
-        ElementalSpirit spirit = _player.getElementalSpirit(_type);
+
+        ElementalSpirit? spirit = player.getElementalSpirit(type);
         if (spirit == null)
         {
             writer.WriteByte(0);
             writer.WriteByte(0);
             return;
         }
-        
+
         writer.WriteByte(1);
-        writer.WriteByte((byte)_type);
+        writer.WriteByte((byte)type);
         writer.WriteByte(spirit.getStage());
         writer.WriteInt64(spirit.getExperience());
         writer.WriteInt64(spirit.getExperienceToNextLevel()); // NextExp
@@ -44,7 +35,7 @@ public readonly struct ElementalSpiritAbsorbInfoPacket: IOutgoingPacket
         foreach (ElementalSpiritAbsorbItemHolder absorbItem in absorbItems)
         {
             writer.WriteInt32(absorbItem.getId());
-            writer.WriteInt32((int)(_player.getInventory().getItemByItemId(absorbItem.getId())?.getCount() ?? 0));
+            writer.WriteInt32((int)(player.getInventory().getItemByItemId(absorbItem.getId())?.getCount() ?? 0));
             writer.WriteInt32(absorbItem.getExperience());
         }
     }

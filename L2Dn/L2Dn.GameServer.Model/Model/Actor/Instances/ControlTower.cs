@@ -9,14 +9,14 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
  */
 public class ControlTower: Tower
 {
-    private Set<Spawn> _guards;
+    private readonly Set<Spawn> _guards = [];
 
     public ControlTower(NpcTemplate template): base(template)
     {
         InstanceType = InstanceType.ControlTower;
     }
 
-    public override bool doDie(Creature killer)
+    public override bool doDie(Creature? killer)
     {
         if (getCastle().getSiege().isInProgress())
         {
@@ -51,22 +51,6 @@ public class ControlTower: Tower
 
     public void registerGuard(Spawn guard)
     {
-        getGuards().add(guard);
-    }
-
-    private Set<Spawn> getGuards()
-    {
-        if (_guards == null)
-        {
-            lock (this)
-            {
-                if (_guards == null)
-                {
-                    _guards = new();
-                }
-            }
-        }
-
-        return _guards;
+        _guards.Add(guard);
     }
 }

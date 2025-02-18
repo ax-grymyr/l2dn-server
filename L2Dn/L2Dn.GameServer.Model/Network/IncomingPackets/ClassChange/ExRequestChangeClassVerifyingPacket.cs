@@ -24,13 +24,13 @@ public struct ExRequestChangeClassVerifyingPacket: IIncomingPacket<GameSession>
 		Player? player = session.Player;
 		if (player == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (_classId != player.getClassId())
 			return ValueTask.CompletedTask;
-		
+
 		if (player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
 			return ValueTask.CompletedTask;
-		
+
 		if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP))
 		{
 			if (!thirdClassCheck(player))
@@ -46,7 +46,7 @@ public struct ExRequestChangeClassVerifyingPacket: IIncomingPacket<GameSession>
 			if (!firstClassCheck(player))
 				return ValueTask.CompletedTask;
 		}
-		
+
 		connection.Send(ExClassChangeSetAlarmPacket.STATIC_PACKET);
 		return ValueTask.CompletedTask;
 	}
@@ -58,25 +58,25 @@ public struct ExRequestChangeClassVerifyingPacket: IIncomingPacket<GameSession>
 	    // (for example in ClassTree.xml)
 	    // TODO: also in ExRequestClassChangePacket
 	    return player.getLevel() >= 20;
-	    int questId;
-	    if (player.isDeathKnight())
-		    questId = 10101;
-	    else if (player.isAssassin())
-		    questId = 10123;
-	    else
-		    questId = player.getRace() switch
-		    {
-			    Race.HUMAN => player.getClassId() == CharacterClass.FIGHTER ? 10009 : 10020,
-			    Race.ELF => 10033,
-			    Race.DARK_ELF => 10046,
-			    Race.ORC => 10057,
-			    Race.DWARF => 10079,
-			    Race.KAMAEL => 10090,
-			    Race.SYLPH => 10112,
-			    _ => 0
-		    };
-
-	    return questId > 0 && IsQuestCompleted(player, questId);
+	    // int questId;
+	    // if (player.isDeathKnight())
+		   //  questId = 10101;
+	    // else if (player.isAssassin())
+		   //  questId = 10123;
+	    // else
+		   //  questId = player.getRace() switch
+		   //  {
+			  //   Race.HUMAN => player.getClassId() == CharacterClass.FIGHTER ? 10009 : 10020,
+			  //   Race.ELF => 10033,
+			  //   Race.DARK_ELF => 10046,
+			  //   Race.ORC => 10057,
+			  //   Race.DWARF => 10079,
+			  //   Race.KAMAEL => 10090,
+			  //   Race.SYLPH => 10112,
+			  //   _ => 0
+		   //  };
+	    //
+	    // return questId > 0 && IsQuestCompleted(player, questId);
     }
 
     private static bool secondClassCheck(Player player)
@@ -92,8 +92,8 @@ public struct ExRequestChangeClassVerifyingPacket: IIncomingPacket<GameSession>
 		Quest quest = QuestManager.getInstance().getQuest(questId);
 		if (quest is null)
 			return false;
-		
-		QuestState qs = player.getQuestState(quest.Name);
+
+		QuestState? qs = player.getQuestState(quest.Name);
 		return qs != null && qs.isCompleted();
 	}
 }

@@ -29,7 +29,7 @@ public class Door : Creature
 	private bool _isInverted;
 	private int _meshindex = 1;
 	private ScheduledFuture _autoCloseTask;
-	
+
 	public Door(DoorTemplate template, bool? isOpened = null): base(template)
 	{
 		InstanceType = InstanceType.Door;
@@ -39,34 +39,34 @@ public class Door : Creature
 		_isAttackableDoor = template.isAttackable();
 		_isInverted = template.isInverted();
 		base.setTargetable(template.isTargetable());
-		
+
 		if (isOpenableByTime())
 		{
 			startTimerOpen();
 		}
 	}
-	
+
 	protected override CreatureAI initAI()
 	{
 		return new DoorAI(this);
 	}
-	
+
 	public override void moveToLocation(Location3D location, int offset)
 	{
 	}
-	
+
 	public override void stopMove(Location? loc)
 	{
 	}
-	
+
 	public override void doAutoAttack(Creature target)
 	{
 	}
-	
+
 	public override void doCast(Skill skill)
 	{
 	}
-	
+
 	private void startTimerOpen()
 	{
 		int delay = _open ? getTemplate().getOpenTime() : getTemplate().getCloseTime();
@@ -76,32 +76,32 @@ public class Door : Creature
 		}
 		ThreadPool.schedule(new TimerOpen(this), delay * 1000);
 	}
-	
+
 	public override DoorTemplate getTemplate()
 	{
 		return (DoorTemplate) base.getTemplate();
 	}
-	
+
 	public override DoorStatus getStatus()
 	{
 		return (DoorStatus)base.getStatus();
 	}
-	
+
 	public override void initCharStatus()
 	{
 		setStatus(new DoorStatus(this));
 	}
-	
+
 	public override void initCharStat()
 	{
 		setStat(new DoorStat(this));
 	}
-	
+
 	public override DoorStat getStat()
 	{
 		return (DoorStat)base.getStat();
 	}
-	
+
 	/**
 	 * @return {@code true} if door is open-able by skill.
 	 */
@@ -109,7 +109,7 @@ public class Door : Creature
 	{
 		return getTemplate().getOpenType() == DoorOpenType.BY_SKILL;
 	}
-	
+
 	/**
 	 * @return {@code true} if door is open-able by item.
 	 */
@@ -117,7 +117,7 @@ public class Door : Creature
 	{
 		return getTemplate().getOpenType() == DoorOpenType.BY_ITEM;
 	}
-	
+
 	/**
 	 * @return {@code true} if door is open-able by double-click.
 	 */
@@ -125,7 +125,7 @@ public class Door : Creature
 	{
 		return getTemplate().getOpenType() == DoorOpenType.BY_CLICK;
 	}
-	
+
 	/**
 	 * @return {@code true} if door is open-able by time.
 	 */
@@ -133,7 +133,7 @@ public class Door : Creature
 	{
 		return getTemplate().getOpenType() == DoorOpenType.BY_TIME;
 	}
-	
+
 	/**
 	 * @return {@code true} if door is open-able by Field Cycle system.
 	 */
@@ -141,12 +141,12 @@ public class Door : Creature
 	{
 		return getTemplate().getOpenType() == DoorOpenType.BY_CYCLE;
 	}
-	
+
 	public override int getLevel()
 	{
 		return getTemplate().getLevel();
 	}
-	
+
 	/**
 	 * Gets the door ID.
 	 * @return the door ID
@@ -155,7 +155,7 @@ public class Door : Creature
 	{
 		return getTemplate().getId();
 	}
-	
+
 	/**
 	 * @return Returns if the door is open.
 	 */
@@ -163,7 +163,7 @@ public class Door : Creature
 	{
 		return _open;
 	}
-	
+
 	/**
 	 * @param open The door open status.
 	 */
@@ -183,27 +183,27 @@ public class Door : Creature
 			}
 		}
 	}
-	
+
 	public bool isAttackableDoor()
 	{
 		return _isAttackableDoor;
 	}
-	
+
 	public bool isInverted()
 	{
 		return _isInverted;
 	}
-	
+
 	public bool isShowHp()
 	{
 		return getTemplate().isShowHp();
 	}
-	
+
 	public void setIsAttackableDoor(bool value)
 	{
 		_isAttackableDoor = value;
 	}
-	
+
 	public int getDamage()
 	{
 		if (getCastle() == null && getFort() == null)
@@ -221,17 +221,17 @@ public class Door : Creature
 		}
 		return dmg;
 	}
-	
+
 	public Castle getCastle()
 	{
 		return CastleManager.getInstance().getCastle(this);
 	}
-	
+
 	public Fort getFort()
 	{
 		return InstanceManagers.FortManager.getInstance().getFort(this);
 	}
-	
+
 	public bool isEnemy()
 	{
 		if (getCastle() != null && getCastle().getResidenceId() > 0 && getCastle().getZone().isActive() && isShowHp())
@@ -244,7 +244,7 @@ public class Door : Creature
 		}
 		return false;
 	}
-	
+
 	public override bool isAutoAttackable(Creature attacker)
 	{
 		// Doors can`t be attacked by NPCs
@@ -260,9 +260,9 @@ public class Door : Creature
 		{
 			return false;
 		}
-		
+
 		Player actingPlayer = attacker.getActingPlayer();
-		
+
 		// Attackable only during siege by everyone (not owner)
 		bool isCastle = getCastle() != null && getCastle().getResidenceId() > 0 && getCastle().getZone().isActive();
 		bool isFort = getFort() != null && getFort().getResidenceId() > 0 && getFort().getZone().isActive();
@@ -284,38 +284,38 @@ public class Door : Creature
 		}
 		return isCastle || isFort;
 	}
-	
+
 	/**
 	 * Return null.
 	 */
-	public override Item getActiveWeaponInstance()
+	public override Item? getActiveWeaponInstance()
 	{
 		return null;
 	}
-	
-	public override Weapon getActiveWeaponItem()
+
+	public override Weapon? getActiveWeaponItem()
 	{
 		return null;
 	}
-	
-	public override Item getSecondaryWeaponInstance()
+
+	public override Item? getSecondaryWeaponInstance()
 	{
 		return null;
 	}
-	
-	public override Weapon getSecondaryWeaponItem()
+
+	public override Weapon? getSecondaryWeaponItem()
 	{
 		return null;
 	}
-	
-	public override void broadcastStatusUpdate(Creature caster)
+
+	public override void broadcastStatusUpdate(Creature? caster)
 	{
 		ICollection<Player> knownPlayers = World.getInstance().getVisibleObjects<Player>(this);
 		if (knownPlayers == null || knownPlayers.Count == 0)
 		{
 			return;
 		}
-		
+
 		StaticObjectInfoPacket su = new StaticObjectInfoPacket(this, false);
 		StaticObjectInfoPacket targetableSu = new StaticObjectInfoPacket(this, true);
 		DoorStatusUpdatePacket dsu = new DoorStatusUpdatePacket(this);
@@ -331,14 +331,14 @@ public class Door : Creature
 				oe = new OnEventTriggerPacket(getEmitter(), _open);
 			}
 		}
-		
+
 		foreach (Player player in knownPlayers)
 		{
 			if (player == null || !isVisibleFor(player))
 			{
 				continue;
 			}
-			
+
 			if (player.isGM() || (getCastle() != null && getCastle().getResidenceId() > 0) || (getFort() != null && getFort().getResidenceId() > 0))
 			{
 				player.sendPacket(targetableSu);
@@ -347,7 +347,7 @@ public class Door : Creature
 			{
 				player.sendPacket(su);
 			}
-			
+
 			player.sendPacket(dsu);
 			if (oe != null)
 			{
@@ -355,7 +355,7 @@ public class Door : Creature
 			}
 		}
 	}
-	
+
 	public void openCloseMe(bool open)
 	{
 		if (open)
@@ -367,7 +367,7 @@ public class Door : Creature
 			closeMe();
 		}
 	}
-	
+
 	public void openMe()
 	{
 		string groupName = getGroupName();
@@ -376,7 +376,7 @@ public class Door : Creature
 			manageGroupOpen(true, groupName);
 			return;
 		}
-		
+
 		if (!isOpen())
 		{
 			setOpen(true);
@@ -384,7 +384,7 @@ public class Door : Creature
 			startAutoCloseTask();
 		}
 	}
-	
+
 	public void closeMe()
 	{
 		// remove close task
@@ -401,14 +401,14 @@ public class Door : Creature
 			manageGroupOpen(false, groupName);
 			return;
 		}
-		
+
 		if (isOpen())
 		{
 			setOpen(false);
 			broadcastStatusUpdate();
 		}
 	}
-	
+
 	private void manageGroupOpen(bool open, string groupName)
 	{
 		Set<int> set = DoorData.getInstance().getDoorsByGroup(groupName);
@@ -420,7 +420,7 @@ public class Door : Creature
 			{
 				first = door;
 			}
-			
+
 			if (door.isOpen() != open)
 			{
 				door.setOpen(open);
@@ -432,7 +432,7 @@ public class Door : Creature
 			first.startAutoCloseTask(); // only one from group
 		}
 	}
-	
+
 	/**
 	 * Door notify child about open state change
 	 * @param open true if opened
@@ -449,62 +449,62 @@ public class Door : Creature
 			closeMe();
 		}
 	}
-	
+
 	public override string getName()
 	{
 		return getTemplate().getName();
 	}
-	
+
 	public int getX(int i)
 	{
 		return getTemplate().getNodeX()[i];
 	}
-	
+
 	public int getY(int i)
 	{
 		return getTemplate().getNodeY()[i];
 	}
-	
+
 	public int getZMin()
 	{
 		return getTemplate().getNodeZ();
 	}
-	
+
 	public int getZMax()
 	{
 		return getTemplate().getNodeZ() + getTemplate().getHeight();
 	}
-	
+
 	public void setMeshIndex(int mesh)
 	{
 		_meshindex = mesh;
 	}
-	
+
 	public int getMeshIndex()
 	{
 		return _meshindex;
 	}
-	
+
 	public int getEmitter()
 	{
 		return getTemplate().getEmmiter();
 	}
-	
+
 	public bool isWall()
 	{
 		return getTemplate().isWall();
 	}
-	
+
 	public string getGroupName()
 	{
 		return getTemplate().getGroupName();
 	}
-	
+
 	public int getChildId()
 	{
 		return getTemplate().getChildDoorId();
 	}
-	
+
 	public override void reduceCurrentHp(double value, Creature attacker, Skill skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
 	{
 		if (isWall() && !isInInstance())
@@ -513,7 +513,7 @@ public class Door : Creature
 			{
 				return;
 			}
-			
+
 			Servitor servitor = (Servitor) attacker;
 			if (servitor.getTemplate().getRace() != Race.SIEGE_WEAPON)
 			{
@@ -522,14 +522,14 @@ public class Door : Creature
 		}
 		base.reduceCurrentHp(value, attacker, skill, isDOT, directlyToHp, critical, reflect);
 	}
-	
+
 	public override bool doDie(Creature killer)
 	{
 		if (!base.doDie(killer))
 		{
 			return false;
 		}
-		
+
 		bool isFort = getFort() != null && getFort().getResidenceId() > 0 && getFort().getSiege().isInProgress();
 		bool isCastle = getCastle() != null && getCastle().getResidenceId() > 0 && getCastle().getSiege().isInProgress();
 		if (isFort || isCastle)
@@ -540,10 +540,10 @@ public class Door : Creature
 		{
 			openMe();
 		}
-		
+
 		return true;
 	}
-	
+
 	public override void sendInfo(Player player)
 	{
 		if (isVisibleFor(player))
@@ -563,18 +563,18 @@ public class Door : Creature
 			}
 		}
 	}
-	
+
 	public override void setTargetable(bool targetable)
 	{
 		base.setTargetable(targetable);
 		broadcastStatusUpdate();
 	}
-	
+
 	public bool checkCollision()
 	{
 		return getTemplate().isCheckCollision();
 	}
-	
+
 	/**
 	 * All doors are stored at DoorTable except instance doors
 	 * @param doorId
@@ -585,14 +585,14 @@ public class Door : Creature
 		Instance inst = getInstanceWorld();
 		return inst != null ? inst.getDoor(doorId) : DoorData.getInstance().getDoor(doorId);
 	}
-	
+
 	private void startAutoCloseTask()
 	{
 		if (getTemplate().getCloseTime() < 0 || isOpenableByTime())
 		{
 			return;
 		}
-		
+
 		ScheduledFuture oldTask = _autoCloseTask;
 		if (oldTask != null)
 		{
@@ -601,7 +601,7 @@ public class Door : Creature
 		}
 		_autoCloseTask = ThreadPool.schedule(new AutoClose(this), getTemplate().getCloseTime() * 1000);
 	}
-	
+
 	private class AutoClose : Runnable
 	{
 		private readonly Door _door;
@@ -610,7 +610,7 @@ public class Door : Creature
 		{
 			_door = door;
 		}
-		
+
 		public void run()
 		{
 			if (_door._open)
@@ -619,7 +619,7 @@ public class Door : Creature
 			}
 		}
 	}
-	
+
 	private class TimerOpen: Runnable
 	{
 		private readonly Door _door;
@@ -628,7 +628,7 @@ public class Door : Creature
 		{
 			_door = door;
 		}
-		
+
 		public void run()
 		{
 			if (_door._open)
@@ -639,22 +639,22 @@ public class Door : Creature
 			{
 				_door.openMe();
 			}
-			
+
 			int delay = _door._open ? _door.getTemplate().getCloseTime() : _door.getTemplate().getOpenTime();
 			if (_door.getTemplate().getRandomTime() > 0)
 			{
 				delay += Rnd.get(_door.getTemplate().getRandomTime());
 			}
-			
+
 			ThreadPool.schedule(this, delay * 1000);
 		}
 	}
-	
+
 	public override bool isDoor()
 	{
 		return true;
 	}
-	
+
 	public override string ToString()
 	{
 		StringBuilder sb = new();

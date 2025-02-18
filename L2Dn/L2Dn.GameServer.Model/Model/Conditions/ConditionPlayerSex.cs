@@ -8,25 +8,14 @@ namespace L2Dn.GameServer.Model.Conditions;
 /**
  * The Class ConditionPlayerSex.
  */
-public class ConditionPlayerSex : Condition
+public sealed class ConditionPlayerSex(Sex sex): Condition
 {
-	private readonly Sex _sex;
-	
-	/**
-	 * Instantiates a new condition player sex.
-	 * @param sex the sex
-	 */
-	public ConditionPlayerSex(Sex sex)
-	{
-		_sex = sex;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		if (effector.getActingPlayer() == null)
-		{
-			return false;
-		}
-		return effector.getActingPlayer().getAppearance().getSex() == _sex;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? actingPlayer = effector.getActingPlayer();
+        if (actingPlayer is null)
+            return false;
+
+        return actingPlayer.getAppearance().getSex() == sex;
+    }
 }

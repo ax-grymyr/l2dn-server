@@ -18,10 +18,10 @@ public class PointBlank: IAffectScopeHandler
 	public void forEachAffected<T>(Creature creature, WorldObject target, Skill skill, Action<T> action)
 		where T: WorldObject
 	{
-		IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		int affectRange = skill.getAffectRange();
 		int affectLimit = skill.getAffectLimit();
-		
+
 		// Target checks.
 		AtomicInteger affected = new AtomicInteger(0);
 		Predicate<Creature> filter = c =>
@@ -45,17 +45,17 @@ public class PointBlank: IAffectScopeHandler
 			{
 				return false;
 			}
-			
+
 			affected.incrementAndGet();
 			return true;
 		};
-		
+
 		// Check and add targets.
 		if (skill.getTargetType() == TargetType.GROUND)
 		{
 			if (creature.isPlayable())
 			{
-				Location3D? worldPosition = creature.getActingPlayer().getCurrentSkillWorldPosition();
+				Location3D? worldPosition = creature.getActingPlayer()?.getCurrentSkillWorldPosition();
 				if (worldPosition != null)
 				{
 					World.getInstance().forEachVisibleObjectInRange<Creature>(creature,
@@ -85,7 +85,7 @@ public class PointBlank: IAffectScopeHandler
 			});
 		}
 	}
-	
+
 	public AffectScope getAffectScopeType()
 	{
 		return AffectScope.POINT_BLANK;

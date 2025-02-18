@@ -14,8 +14,8 @@ public interface IBypassHandler
 	 * @param bypassOrigin
 	 * @return success
 	 */
-	bool useBypass(string command, Player player, Creature bypassOrigin);
-	
+	bool useBypass(string command, Player player, Creature? bypassOrigin);
+
 	/**
 	 * This method is called at initialization to register all bypasses automatically.
 	 * @return all known bypasses

@@ -32,16 +32,16 @@ public readonly struct ShortCutRegisterPacket: IOutgoingPacket
         {
             case ShortcutType.ITEM:
             {
-                Item item = _player.getInventory().getItemByObjectId(_shortcut.getId());
-                VariationInstance augment = item.getAugmentation();
+                Item? item = _player.getInventory().getItemByObjectId(_shortcut.getId());
+                VariationInstance? augment = item?.getAugmentation();
                 writer.WriteInt32(_shortcut.getId());
                 writer.WriteInt32(_shortcut.getCharacterType());
                 writer.WriteInt32(_shortcut.getSharedReuseGroup());
                 writer.WriteInt32(0); // unknown
                 writer.WriteInt32(0); // unknown
-                writer.WriteInt32(augment != null ? augment.getOption1Id() : 0); // item augment id
-                writer.WriteInt32(augment != null ? augment.getOption2Id() : 0); // item augment id
-                writer.WriteInt32(item.getVisualId()); // visual id
+                writer.WriteInt32(augment?.getOption1Id() ?? 0); // item augment id
+                writer.WriteInt32(augment?.getOption2Id() ?? 0); // item augment id
+                writer.WriteInt32(item?.getVisualId() ?? 0); // visual id
                 break;
             }
             case ShortcutType.SKILL:

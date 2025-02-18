@@ -26,13 +26,13 @@ public struct ExElementalSpiritExtractPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        ElementalSpirit spirit = player.getElementalSpirit(_type);
+        ElementalSpirit? spirit = player.getElementalSpirit(_type);
         if (spirit == null)
         {
             connection.Send(SystemMessageId.NO_SPIRITS_ARE_AVAILABLE);
             return ValueTask.CompletedTask;
         }
-		
+
         bool canExtract = checkConditions(player, spirit);
         if (canExtract)
         {
@@ -40,15 +40,15 @@ public struct ExElementalSpiritExtractPacket: IIncomingPacket<GameSession>
             SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.EXTRACTED_S1_S2_SUCCESSFULLY);
             sm.Params.addItemName(spirit.getExtractItem()).addInt(amount);
             connection.Send(sm);
-            
+
             spirit.reduceLevel();
             player.addItem("ElementalSpiritExtract", spirit.getExtractItem(), amount, player, true);
-			
+
             UserInfoPacket userInfo = new UserInfoPacket(player);
             userInfo.addComponentType(UserInfoType.ATT_SPIRITS);
             connection.Send(userInfo);
         }
-		
+
         connection.Send(new ElementalSpiritExtractPacket(player, _type, canExtract));
 
         return ValueTask.CompletedTask;

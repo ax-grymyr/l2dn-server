@@ -11,6 +11,8 @@ public abstract class WrapperStream: Stream
         _seekable = seekable;
     }
 
+    public Stream BaseStream => _baseStream;
+
     public override void Close() => _baseStream.Close();
 
     protected override void Dispose(bool disposing) => _baseStream.Dispose();

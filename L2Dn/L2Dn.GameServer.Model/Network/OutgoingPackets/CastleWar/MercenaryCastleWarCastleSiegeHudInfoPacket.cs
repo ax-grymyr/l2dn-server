@@ -7,7 +7,7 @@ namespace L2Dn.GameServer.Network.OutgoingPackets.CastleWar;
 public readonly struct MercenaryCastleWarCastleSiegeHudInfoPacket: IOutgoingPacket
 {
     private readonly int _castleId;
-	
+
     public MercenaryCastleWarCastleSiegeHudInfoPacket(int castleId)
     {
         _castleId = castleId;
@@ -15,7 +15,7 @@ public readonly struct MercenaryCastleWarCastleSiegeHudInfoPacket: IOutgoingPack
 
     public void WriteContent(PacketBitWriter writer)
     {
-        Castle castle = CastleManager.getInstance().getCastleById(_castleId);
+        Castle? castle = CastleManager.getInstance().getCastleById(_castleId);
         if (castle == null)
         {
             return; // TODO: logging
@@ -26,8 +26,8 @@ public readonly struct MercenaryCastleWarCastleSiegeHudInfoPacket: IOutgoingPack
         if (castle.getSiege().isInProgress())
         {
             int remainingTimeInSeconds = (int)(CastleManager.getInstance().getCastleById(_castleId).getSiegeDate() +
-                SiegeManager.getInstance().getSiegeLength() - DateTime.UtcNow).TotalSeconds; 
-            
+                SiegeManager.getInstance().getSiegeLength() - DateTime.UtcNow).TotalSeconds;
+
             writer.WriteInt32(1);
             writer.WriteInt32(0);
             writer.WriteInt32(remainingTimeInSeconds);

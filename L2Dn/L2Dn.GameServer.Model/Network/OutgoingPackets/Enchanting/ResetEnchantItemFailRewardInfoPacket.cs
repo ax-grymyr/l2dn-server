@@ -11,12 +11,12 @@ namespace L2Dn.GameServer.Network.OutgoingPackets.Enchanting;
 public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 {
 	private readonly Player _player;
-	
+
 	public ResetEnchantItemFailRewardInfoPacket(Player player)
 	{
 		_player = player;
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		EnchantItemRequest request = _player.getRequest<EnchantItemRequest>();
@@ -24,19 +24,19 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 		{
 			return;
 		}
-		
+
 		if ((request.getEnchantingItem() == null) || request.isProcessing() || (request.getEnchantingScroll() == null))
 		{
 			return;
 		}
-		
+
 		EnchantScroll? enchantScroll = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId());
 		Item enchantItem = request.getEnchantingItem();
-		Item addedItem = new Item(enchantItem.getId());
+		Item? addedItem = new Item(enchantItem.getId());
 		addedItem.setOwnerId(_player.ObjectId);
 		addedItem.setEnchantLevel(request.getEnchantingItem().getEnchantLevel());
 		EnchantSupportItem? enchantSupportItem = null;
-		ItemHolder result = null;
+		ItemHolder? result = null;
 		if (request.getSupportItem() != null)
 		{
 			enchantSupportItem = EnchantItemData.getInstance().getSupportItem(request.getSupportItem().getId());
@@ -61,16 +61,16 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 				result = new ItemHolder(enchantItem.getTemplate().getCrystalItemId(), Math.Max(0, enchantItem.getCrystalCount() - ((enchantItem.getTemplate().getCrystalCount() + 1) / 2)));
 			}
 		}
-		
+
 		writer.WritePacketCode(OutgoingPacketCodes.EX_RES_ENCHANT_ITEM_FAIL_REWARD_INFO);
-		
+
 		writer.WriteInt32(enchantItem.ObjectId);
-		
+
 		int challengeGroup = _player.getChallengeInfo().getNowGroup();
 		int challengePoint = _player.getChallengeInfo().getNowPoint();
 		writer.WriteInt32(challengeGroup);
 		writer.WriteInt32(challengePoint);
-		
+
 		if (result != null)
 		{
 			writer.WriteInt32(1); // Loop count.

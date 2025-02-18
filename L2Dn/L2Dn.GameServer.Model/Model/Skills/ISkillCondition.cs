@@ -7,5 +7,5 @@ namespace L2Dn.GameServer.Model.Skills;
  */
 public interface ISkillCondition
 {
-	bool canUse(Creature caster, Skill skill, WorldObject target);
+	bool canUse(Creature caster, Skill skill, WorldObject? target);
 }

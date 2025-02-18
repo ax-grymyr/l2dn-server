@@ -112,14 +112,14 @@ public class SkillData: DataReaderBase
 		return (skillId * 4294967296L) + (subSkillLevel * 65536) + skillLevel;
 	}
 
-	public Skill getSkill(int skillId, int level)
+	public Skill? getSkill(int skillId, int level)
 	{
 		return getSkill(skillId, level, 0);
 	}
 
 	public Skill? getSkill(int skillId, int level, int subLevel)
 	{
-		Skill result = _skills.get(getSkillHashCode(skillId, level, subLevel));
+		Skill? result = _skills.get(getSkillHashCode(skillId, level, subLevel));
 		if (result != null)
 		{
 			return result;
@@ -140,9 +140,8 @@ public class SkillData: DataReaderBase
 	}
 
 	public int getMaxLevel(int skillId)
-	{
-		int maxLevel = _skillsMaxLevel.get(skillId);
-		return maxLevel != null ? maxLevel : 0;
+    {
+        return _skillsMaxLevel.GetValueOrDefault(skillId);
 	}
 
 	/**
@@ -152,10 +151,13 @@ public class SkillData: DataReaderBase
 	 */
 	public List<Skill> getSiegeSkills(bool addNoble, bool hasCastle)
 	{
-		List<Skill> temp = new();
-		temp.Add(_skills.get(getSkillHashCode((int)CommonSkill.SEAL_OF_RULER, 1)));
-		temp.Add(_skills.get(getSkillHashCode(247, 1))); // Build Headquarters
-		if (addNoble)
+		List<Skill?> temp =
+        [
+            _skills.get(getSkillHashCode((int)CommonSkill.SEAL_OF_RULER, 1)),
+            _skills.get(getSkillHashCode(247, 1)), // Build Headquarters
+        ];
+
+        if (addNoble)
 		{
 			temp.Add(_skills.get(getSkillHashCode(326, 1))); // Build Advanced Headquarters
 		}
@@ -166,7 +168,7 @@ public class SkillData: DataReaderBase
 			temp.Add(_skills.get(getSkillHashCode(845, 1))); // Outpost Demolition
 		}
 
-		return temp;
+		return temp.Where(s => s != null).ToList()!; // TODO: review code and refactor
 	}
 
 	public bool isValidating()
@@ -348,7 +350,7 @@ public class SkillData: DataReaderBase
 				@params.remove(".name");
 				try
 				{
-					Func<StatSet, AbstractEffect> effectFunction =
+					Func<StatSet, AbstractEffect>? effectFunction =
 						EffectHandler.getInstance().getHandlerFactory(effectName);
 					if (effectFunction != null)
 					{
@@ -376,7 +378,7 @@ public class SkillData: DataReaderBase
 				@params.remove(".name");
 				try
 				{
-					Func<StatSet, ISkillCondition> conditionFunction =
+					Func<StatSet, ISkillCondition>? conditionFunction =
 						SkillConditionHandler.getInstance().getHandlerFactory(conditionName);
 					if (conditionFunction != null)
 					{
@@ -563,8 +565,8 @@ public class SkillData: DataReaderBase
 
 	public object parseValue(XElement element, bool blockValue, bool parseAttributes, Map<string, double> variables)
 	{
-		StatSet statSet = null;
-		List<object> list = null;
+		StatSet? statSet = null;
+		List<object>? list = null;
 		object? text = null;
 		if (parseAttributes && (!element.Name.LocalName.equals("value") || !blockValue) && (element.Attributes().Any()))
 		{
@@ -580,7 +582,7 @@ public class SkillData: DataReaderBase
 				text = parseNodeValue(value, variables);
 			}
 		}
-		
+
 		foreach (XElement n in element.Elements())
 		{
 			string nodeName = n.Name.LocalName;
@@ -615,14 +617,10 @@ public class SkillData: DataReaderBase
 				{
 					object value = parseValue(n, false, true, variables);
 					if (value != null)
-					{
-						if (statSet == null)
-						{
-							statSet = new StatSet();
-						}
-
-						statSet.set(nodeName, value);
-					}
+                    {
+                        statSet ??= new StatSet();
+                        statSet.set(nodeName, value);
+                    }
 
 					break;
 				}
@@ -665,8 +663,8 @@ public class SkillData: DataReaderBase
 			}
 		}
 
-		return statSet;
-	}
+        return statSet ?? throw new InvalidOperationException("Cannot parse value for node [" + element + "]");
+    }
 
 	private void parseAttributes(XElement element, string prefix, StatSet statSet, Map<string, double> variables)
 	{

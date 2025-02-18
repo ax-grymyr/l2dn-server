@@ -23,8 +23,8 @@ public readonly struct L2FriendListPacket: IOutgoingPacket
 		_info = new List<FriendInfo>();
 		foreach (int objId in player.getFriendList())
 		{
-			string name = CharInfoTable.getInstance().getNameById(objId);
-			Player player1 = World.getInstance().getPlayer(objId);
+			string? name = CharInfoTable.getInstance().getNameById(objId);
+			Player? player1 = World.getInstance().getPlayer(objId);
 			bool online = false;
 			int level;
 			CharacterClass classId;

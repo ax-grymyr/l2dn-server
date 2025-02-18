@@ -11,30 +11,28 @@ namespace L2Dn.GameServer.Scripts.Handlers.UserCommandHandlers;
  */
 public class ChannelInfo: IUserCommandHandler
 {
-	private static readonly int[] COMMAND_IDS =
-	{
-		97
-	};
-	
-	public bool useUserCommand(int id, Player player)
-	{
-		if (id != COMMAND_IDS[0])
-		{
-			return false;
-		}
-		
-		if ((player.getParty() == null) || (player.getParty().getCommandChannel() == null))
-		{
-			return false;
-		}
-		
-		CommandChannel channel = player.getParty().getCommandChannel();
-		player.sendPacket(new ExMultiPartyCommandChannelInfoPacket(channel));
-		return true;
-	}
-	
-	public int[] getUserCommandList()
-	{
-		return COMMAND_IDS;
-	}
+    private static readonly int[] COMMAND_IDS = [97];
+
+    public bool useUserCommand(int id, Player player)
+    {
+        if (id != COMMAND_IDS[0])
+        {
+            return false;
+        }
+
+        Party? party = player.getParty();
+        if (party == null || party.getCommandChannel() == null)
+        {
+            return false;
+        }
+
+        CommandChannel channel = party.getCommandChannel();
+        player.sendPacket(new ExMultiPartyCommandChannelInfoPacket(channel));
+        return true;
+    }
+
+    public int[] getUserCommandList()
+    {
+        return COMMAND_IDS;
+    }
 }

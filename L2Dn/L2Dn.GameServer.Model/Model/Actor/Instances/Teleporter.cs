@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
@@ -9,7 +8,6 @@ using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Model.Quests.NewQuestData;
 using L2Dn.GameServer.Model.Teleporters;
-using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Teleports;
 using L2Dn.GameServer.Utilities;
@@ -20,8 +18,8 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 
 public class Teleporter: Npc
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Teleporter));
-	
+	private new static readonly Logger LOGGER = LogManager.GetLogger(nameof(Teleporter));
+
 	private static readonly Map<int, List<TeleporterQuestRecommendationHolder>> QUEST_RECOMENDATIONS = new();
 	// static
 	// {
@@ -29,17 +27,17 @@ public class Teleporter: Npc
 	// QUEST_RECOMENDATIONS.get(30848).add(new TeleporterQuestRecommendationHolder(30848, "Q00561_BasicMissionHarnakUndergroundRuins", new int[]{-1}, "30848-Q561-Q562"));
 	// QUEST_RECOMENDATIONS.get(30848).add(new TeleporterQuestRecommendationHolder(30848, "Q00562_BasicMissionAltarOfEvil", new int[]{-1}, "30848-561-562"));
 	// }
-	
+
 	public Teleporter(NpcTemplate template): base(template)
 	{
 		InstanceType = InstanceType.Teleporter;
 	}
-	
+
 	public override bool isAutoAttackable(Creature attacker)
 	{
 		return attacker.isMonster() || base.isAutoAttackable(attacker);
 	}
-	
+
 	public override void onBypassFeedback(Player player, string command)
 	{
 		// Process bypass
@@ -54,7 +52,7 @@ public class Teleporter: Npc
 			case "showTeleports":
 			{
 				string listName = (st.hasMoreTokens()) ? st.nextToken() : TeleportType.NORMAL.ToString();
-				TeleportHolder holder = TeleporterData.getInstance().getHolder(getId(), listName);
+				TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), listName);
 				if (holder == null)
 				{
 					LOGGER.Warn(player + " requested show teleports for list with name " + listName + " at NPC " + getId() + "!");
@@ -71,7 +69,7 @@ public class Teleporter: Npc
 			case "showTeleportsHunting":
 			{
 				string listName = (st.hasMoreTokens()) ? st.nextToken() : TeleportType.HUNTING.ToString();
-				TeleportHolder holder = TeleporterData.getInstance().getHolder(getId(), listName);
+				TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), listName);
 				if (holder == null)
 				{
 					LOGGER.Warn(player + " requested show teleports for hunting list with name " + listName + " at NPC " + getId() + "!");
@@ -88,9 +86,9 @@ public class Teleporter: Npc
 					LOGGER.Warn(player + " send unhandled teleport command: " + command);
 					return;
 				}
-				
+
 				string listName = st.nextToken();
-				TeleportHolder holder = TeleporterData.getInstance().getHolder(getId(), listName);
+				TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), listName);
 				if (holder == null)
 				{
 					LOGGER.Warn(player + " requested unknown teleport list: " + listName + " for npc: " + getId() + "!");
@@ -122,7 +120,7 @@ public class Teleporter: Npc
 			}
 		}
 	}
-	
+
 	private int parseNextInt(StringTokenizer st, int defaultVal)
 	{
 		if (st.hasMoreTokens())
@@ -135,7 +133,7 @@ public class Teleporter: Npc
 		}
 		return defaultVal;
 	}
-	
+
 	public override string getHtmlPath(int npcId, int value, Player player)
 	{
 		string pom;
@@ -160,7 +158,7 @@ public class Teleporter: Npc
 							}
 						}
 					}
-					
+
 					if (breakOuterLoop)
 						break;
 				}
@@ -170,10 +168,10 @@ public class Teleporter: Npc
 		{
 			pom = (npcId + "-" + value);
 		}
-		
+
 		return "html/teleporter/" + pom + ".htm";
 	}
-	
+
 	public override void showChatWindow(Player player)
 	{
 		// Teleporter isn't on castle ground
@@ -182,7 +180,7 @@ public class Teleporter: Npc
 			base.showChatWindow(player);
 			return;
 		}
-		
+
 		// Teleporter is on castle ground
 		string filename = "html/teleporter/castleteleporter-no.htm";
 		if ((player.getClan() != null) && (getCastle().getOwnerId() == player.getClanId())) // Clan owns castle
@@ -195,7 +193,7 @@ public class Teleporter: Npc
 		}
 		sendHtmlMessage(player, filename);
 	}
-	
+
 	private void sendHtmlMessage(Player player, string filename)
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);

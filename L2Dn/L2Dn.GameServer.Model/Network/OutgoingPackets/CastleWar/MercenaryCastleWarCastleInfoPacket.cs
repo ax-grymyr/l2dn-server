@@ -9,17 +9,17 @@ namespace L2Dn.GameServer.Network.OutgoingPackets.CastleWar;
 public readonly struct MercenaryCastleWarCastleInfoPacket: IOutgoingPacket
 {
     private readonly int _castleId;
-	
+
     public MercenaryCastleWarCastleInfoPacket(int castleId)
     {
         _castleId = castleId;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_MERCENARY_CASTLEWAR_CASTLE_INFO);
-		
-        Castle castle = CastleManager.getInstance().getCastleById(_castleId);
+
+        Castle? castle = CastleManager.getInstance().getCastleById(_castleId);
         if (castle == null)
         {
             writer.WriteInt32(_castleId);
@@ -33,7 +33,7 @@ public readonly struct MercenaryCastleWarCastleInfoPacket: IOutgoingPacket
             writer.WriteInt32(0);
             return;
         }
-		
+
         writer.WriteInt32(castle.getResidenceId());
         writer.WriteInt32(castle.getOwner()?.getCrestId() ?? 0); // CastleOwnerPledgeSID
         writer.WriteInt32(castle.getOwner()?.getCrestLargeId() ?? 0); // CastleOwnerPledgeCrestDBID

@@ -168,7 +168,7 @@ public abstract class ProcessingStream(Stream stream, int bufferSize = 4096): Wr
             byte[] buf = ArrayPool<byte>.Shared.Rent(_buffer.Length);
             try
             {
-                int bytesRead = stream.ReadAtLeast(buf.AsSpan(0, _buffer.Length), _buffer.Length, false);
+                int bytesRead = BaseStream.ReadAtLeast(buf.AsSpan(0, _buffer.Length), _buffer.Length, false);
                 _endOfStream = bytesRead != _buffer.Length;
                 int outputSize = ProcessInputData(_buffer, buf.AsSpan(0, bytesRead));
                 _data = _buffer.AsMemory(0, outputSize);

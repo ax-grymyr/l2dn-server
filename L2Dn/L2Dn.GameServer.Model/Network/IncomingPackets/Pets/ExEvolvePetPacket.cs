@@ -28,12 +28,12 @@ public struct ExEvolvePetPacket: IIncomingPacket<GameSession>
 		Pet pet = activeChar.getPet();
 		if (pet == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (!activeChar.isMounted() && !pet.isDead() && !activeChar.isDead() && !pet.isHungry() && !activeChar.isControlBlocked() && !activeChar.isInDuel() && !activeChar.isSitting() && !activeChar.isFishing() && !activeChar.isInCombat() && !pet.isInCombat())
 		{
 			bool isAbleToEvolveLevel1 = pet.getLevel() >= 40 && pet.getEvolveLevel() == EvolveLevel.None;
 			bool isAbleToEvolveLevel2 = pet.getLevel() >= 76 && pet.getEvolveLevel() == EvolveLevel.First;
-			
+
 			if (isAbleToEvolveLevel1 && activeChar.destroyItemByItemId("PetEvolve", 94096, 1, null, true))
 			{
 				doEvolve(activeChar, pet, EvolveLevel.First);
@@ -47,25 +47,25 @@ public struct ExEvolvePetPacket: IIncomingPacket<GameSession>
 		{
 			activeChar.sendMessage("You can't evolve in this time."); // TODO: Proper system messages.
 		}
-		
+
 		return ValueTask.CompletedTask;
 	}
-	
+
 	private void doEvolve(Player activeChar, Pet pet, EvolveLevel evolveLevel)
 	{
-		Item controlItem = pet.getControlItem();
+		Item? controlItem = pet.getControlItem();
 		pet.unSummon(activeChar);
 		List<PetData> pets = PetDataTable.getInstance().getPetDatasByEvolve(controlItem.getId(), evolveLevel);
 		PetData targetPet = pets.GetRandomElement();
-		PetData petData = PetDataTable.getInstance().getPetData(targetPet.getNpcId());
+		PetData? petData = PetDataTable.getInstance().getPetData(targetPet.getNpcId());
 		if (petData == null || petData.getNpcId() == -1)
 			return;
-		
-		NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(evolveLevel == EvolveLevel.Second ? pet.getId() + 2 : petData.getNpcId());
+
+		NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(evolveLevel == EvolveLevel.Second ? pet.getId() + 2 : petData.getNpcId());
 		Pet evolved = Pet.spawnPet(npcTemplate, activeChar, controlItem);
 		if (evolved == null)
 			return;
-		
+
 		if (evolveLevel == EvolveLevel.First)
 		{
 			var skillType = PetTypeData.getInstance().getRandomSkill();
@@ -74,7 +74,7 @@ public struct ExEvolvePetPacket: IIncomingPacket<GameSession>
 			evolved.setName(name);
 			PetDataTable.getInstance().setPetName(controlItem.ObjectId, name);
 		}
-		
+
 		activeChar.setPet(evolved);
 		evolved.setShowSummonAnimation(true);
 		evolved.setEvolveLevel(evolveLevel);

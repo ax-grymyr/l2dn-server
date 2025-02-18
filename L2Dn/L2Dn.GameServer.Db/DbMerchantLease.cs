@@ -10,7 +10,7 @@ public class DbMerchantLease
     public int CharacterId { get; set; }
     public int Bid { get; set; }
     public int Type { get; set; }
-    
+
     [MaxLength(35)]
-    public string CharacterName { get; set; }
+    public string CharacterName { get; set; } = string.Empty;
 }

@@ -21,14 +21,14 @@ public struct RequestTutorialLinkHtmlPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         if (_bypass.startsWith("admin_"))
         {
             AdminCommandHandler.getInstance().useAdminCommand(player, _bypass, true);
         }
         else
         {
-            IBypassHandler handler = BypassHandler.getInstance().getHandler(_bypass);
+            IBypassHandler? handler = BypassHandler.getInstance().getHandler(_bypass);
             if (handler != null)
             {
                 handler.useBypass(_bypass, player, null);

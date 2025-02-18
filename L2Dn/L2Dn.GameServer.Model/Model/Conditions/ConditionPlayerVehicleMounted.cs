@@ -7,24 +7,14 @@ namespace L2Dn.GameServer.Model.Conditions;
 /**
  * @author Nyaran
  */
-public class ConditionPlayerVehicleMounted : Condition
+public sealed class ConditionPlayerVehicleMounted(bool value): Condition
 {
-	private readonly bool _value;
-	
-	/**
-	 * @param value the value
-	 */
-	public ConditionPlayerVehicleMounted(bool value)
-	{
-		_value = value;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		if (effector.getActingPlayer() == null)
-		{
-			return true;
-		}
-		return (effector.getActingPlayer().isInVehicle() == _value);
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? player = effector.getActingPlayer();
+        if (player is null)
+            return true;
+
+        return player.isInVehicle() == value;
+    }
 }

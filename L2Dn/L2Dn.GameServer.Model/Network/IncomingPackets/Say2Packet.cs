@@ -54,7 +54,7 @@ public struct Say2Packet: IIncomingPacket<GameSession>
         "ITEMCOUNT",
         "FOLLOWTELEPORT"
     ];
-	
+
     private string _text;
     private ChatType _type;
     private string _target;
@@ -87,7 +87,7 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 			Disconnection.of(player).defaultSequence(LeaveWorldPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (string.IsNullOrEmpty(text))
 		{
 			PacketLogger.Instance.Warn(player.getName() + ": sending empty text. Possible packet hack!");
@@ -95,7 +95,7 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 			Disconnection.of(player).defaultSequence(LeaveWorldPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Even though the client can handle more characters than it's current limit allows, an overflow (critical error) happens if you pass a huge (1000+) message.
 		// July 11, 2011 - Verified on High Five 4 official client as 105.
 		// Allow higher limit if player shift some item (text is longer then).
@@ -105,19 +105,19 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 			connection.Send(new SystemMessagePacket(SystemMessageId.WHEN_A_USER_S_KEYBOARD_INPUT_EXCEEDS_A_CERTAIN_CUMULATIVE_SCORE_A_CHAT_BAN_WILL_BE_APPLIED_THIS_IS_DONE_TO_DISCOURAGE_SPAMMING_PLEASE_AVOID_POSTING_THE_SAME_MESSAGE_MULTIPLE_TIMES_DURING_A_SHORT_PERIOD));
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (Config.L2WALKER_PROTECTION && chatType == ChatType.WHISPER && checkBot(text))
 		{
 			Util.handleIllegalPlayerAction(player, "Client Emulator Detect: " + player + " using L2Walker.", Config.DEFAULT_PUNISH);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.isCursedWeaponEquipped() && (chatType == ChatType.TRADE || chatType == ChatType.SHOUT))
 		{
 			connection.Send(new SystemMessagePacket(SystemMessageId.SHOUT_AND_TRADE_CHATTING_CANNOT_BE_USED_WHILE_POSSESSING_A_CURSED_WEAPON));
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.isChatBanned() && text[0] != '.')
 		{
 			if (player.isAffected(EffectFlag.CHAT_BLOCK))
@@ -131,7 +131,7 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.isInOlympiadMode() || OlympiadManager.getInstance().isRegistered(player))
 		{
 			connection.Send(new SystemMessagePacket(SystemMessageId.YOU_CANNOT_CHAT_WHILE_PARTICIPATING_IN_THE_OLYMPIAD));
@@ -147,7 +147,7 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 
 		if (chatType == ChatType.PETITION_PLAYER && player.isGM())
 			chatType = ChatType.PETITION_GM;
-		
+
 		if (Config.LOG_CHAT)
 		{
 			StringBuilder sb = new StringBuilder();
@@ -169,10 +169,10 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 
 			PacketLogger.Instance.Info(sb.ToString());
 		}
-		
+
 		if (hasItem && !parseAndPublishItem(player, text))
 			return ValueTask.CompletedTask;
-		
+
 		if (player.Events.HasSubscribers<OnPlayerChat>())
 		{
 			OnPlayerChat onPlayerChat = new OnPlayerChat(player, _target, text, chatType);
@@ -182,12 +182,12 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 				chatType = onPlayerChat.FilteredType;
 			}
 		}
-		
+
 		// Say Filter implementation
 		if (Config.USE_SAY_FILTER)
 			text = checkText(text);
-		
-		IChatHandler handler = ChatHandler.getInstance().getHandler(chatType);
+
+		IChatHandler? handler = ChatHandler.getInstance().getHandler(chatType);
 		if (handler != null)
 		{
 			handler.handleChat(chatType, player, _target, text, _shareLocation);
@@ -199,7 +199,7 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 
 		return ValueTask.CompletedTask;
 	}
-	
+
 	private static bool checkBot(string text) => WALKER_COMMAND_LIST.Any(text.StartsWith);
 
 	private static string checkText(string text)
@@ -209,10 +209,10 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 		{
 			filteredText = filteredText.replaceAll("(?i)" + pattern, Config.CHAT_FILTER_CHARS);
 		}
-		
+
 		return filteredText;
 	}
-	
+
 	private static bool parseAndPublishItem(Player owner, string text)
 	{
 		int pos1 = -1;
@@ -223,7 +223,7 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 			{
 				return false;
 			}
-			
+
 			StringBuilder result = new StringBuilder(9);
 			pos += 3;
 			while (pos < text.Length && char.IsDigit(text[pos]))
@@ -231,17 +231,17 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 				result.Append(text[pos]);
 				pos++;
 			}
-			
+
 			int id = int.Parse(result.ToString());
-			Item item = owner.getInventory().getItemByObjectId(id);
+			Item? item = owner.getInventory().getItemByObjectId(id);
 			if (item == null)
 			{
 				PacketLogger.Instance.Info(owner + " trying publish item which does not own! ID:" + id);
 				return false;
 			}
-			
+
 			item.publish();
-			
+
 			pos1 = text.IndexOf('\x8', pos) + 1;
 			if (pos1 == 0) // missing ending tag
 			{
@@ -249,7 +249,7 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 				return false;
 			}
 		}
-		
+
 		return true;
 	}
 }

@@ -18,12 +18,12 @@ public struct RequestWithdrawalPartyPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        Party party = player.getParty();
+
+        Party? party = player.getParty();
         if (party != null)
         {
             party.removePartyMember(player, PartyMessageType.LEFT);
-			
+
             MatchingRoom room = player.getMatchingRoom();
             if (room != null)
             {

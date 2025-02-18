@@ -17,11 +17,11 @@ public struct RequestPledgeMemberListPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        Clan clan = player.getClan();
+
+        Clan? clan = player.getClan();
         if (clan != null)
             PledgeShowMemberListAllPacket.sendAllTo(player);
-    
+
         return ValueTask.CompletedTask;
     }
 }

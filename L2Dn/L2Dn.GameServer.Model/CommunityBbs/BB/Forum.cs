@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.CommunityBbs.BB;
 public class Forum
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Forum));
-	
+
 	// type
 	public const int ROOT = 0;
 	public const int NORMAL = 1;
@@ -21,30 +21,30 @@ public class Forum
 	public const int ALL = 1;
 	public const int CLANMEMBERONLY = 2;
 	public const int OWNERONLY = 3;
-	
+
 	private readonly Set<Forum> _children;
 	private readonly Map<int, Topic> _topic = new();
 	private readonly int _forumId;
-	private string _forumName;
+	private string _forumName = string.Empty;
 	private int _forumType;
 	private int _forumPost;
 	private int _forumPerm;
-	private readonly Forum _fParent;
+	private readonly Forum? _fParent;
 	private int _ownerID;
-	private bool _loaded = false;
-	
+	private bool _loaded;
+
 	/**
 	 * Creates new instance of Forum. When you create new forum, use {@link org.l2jmobius.gameserver.communitybbs.Manager.ForumsBBSManager#addForum(org.l2jmobius.gameserver.communitybbs.BB.Forum)} to add forum to the forums manager.
 	 * @param forumId
 	 * @param fParent
 	 */
-	public Forum(int forumId, Forum fParent)
+	public Forum(int forumId, Forum? fParent)
 	{
 		_forumId = forumId;
 		_fParent = fParent;
 		_children = new();
 	}
-	
+
 	/**
 	 * @param name
 	 * @param parent
@@ -66,7 +66,7 @@ public class Forum
 		ForumsBBSManager.getInstance().addForum(this);
 		_loaded = true;
 	}
-	
+
 	private void load()
 	{
 		using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -87,7 +87,7 @@ public class Forum
 		{
 			LOGGER.Warn("Data error on Forum " + _forumId + " : " + e);
 		}
-		
+
 		try
 		{
 			var topics = ctx.Topics.Where(t => t.ForumId == _forumId).ToList();
@@ -107,10 +107,10 @@ public class Forum
 			LOGGER.Warn("Data error on Forum " + _forumId + " : " + e);
 		}
 	}
-	
+
 	private void getChildren()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var children = ctx.Forums.Where(f => f.ParentId == _forumId).Select(f => f.Id).ToList();
@@ -126,25 +126,25 @@ public class Forum
 			LOGGER.Warn("Data error on Forum (children): " + e);
 		}
 	}
-	
+
 	public int getTopicSize()
 	{
 		vload();
 		return _topic.Count;
 	}
-	
-	public Topic getTopic(int j)
+
+	public Topic? getTopic(int j)
 	{
 		vload();
 		return _topic.get(j);
 	}
-	
+
 	public void addTopic(Topic t)
 	{
 		vload();
 		_topic.put(t.getID(), t);
 	}
-	
+
 	/**
 	 * @return the forum Id
 	 */
@@ -152,24 +152,24 @@ public class Forum
 	{
 		return _forumId;
 	}
-	
+
 	public string getName()
 	{
 		vload();
 		return _forumName;
 	}
-	
+
 	public int getType()
 	{
 		vload();
 		return _forumType;
 	}
-	
+
 	/**
 	 * @param name the forum name
 	 * @return the forum for the given name
 	 */
-	public Forum getChildByName(string name)
+	public Forum? getChildByName(string name)
 	{
 		vload();
 		foreach (Forum f in _children)
@@ -181,7 +181,7 @@ public class Forum
 		}
 		return null;
 	}
-	
+
 	/**
 	 * @param id
 	 */
@@ -189,10 +189,10 @@ public class Forum
 	{
 		_topic.remove(id);
 	}
-	
+
 	public void insertIntoDb()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
@@ -200,13 +200,13 @@ public class Forum
 			{
 				Id = _forumId,
 				Name = _forumName,
-				ParentId = _fParent.getID(),
+				ParentId = _fParent?.getID(),
 				Post = _forumPost,
 				Type = _forumType,
 				Perm = _forumPerm,
 				OwnerId = _ownerID
 			};
-			
+
 			ctx.Forums.Add(forum);
 			ctx.SaveChangesAsync();
 		}
@@ -215,7 +215,7 @@ public class Forum
 			LOGGER.Warn("Error while saving new Forum to db " + e);
 		}
 	}
-	
+
 	public void vload()
 	{
 		if (!_loaded)

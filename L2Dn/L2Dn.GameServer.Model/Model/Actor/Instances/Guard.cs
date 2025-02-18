@@ -29,7 +29,7 @@ public class Guard: Attackable
 		InstanceType = InstanceType.Guard;
 	}
 
-	public bool isAutoAttackable(Creature attacker)
+	public override bool isAutoAttackable(Creature attacker)
 	{
 		if (attacker.isMonster() && !attacker.isFakePlayer())
 		{

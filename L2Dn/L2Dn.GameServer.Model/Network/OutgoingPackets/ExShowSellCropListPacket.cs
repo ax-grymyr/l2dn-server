@@ -12,7 +12,7 @@ public readonly struct ExShowSellCropListPacket: IOutgoingPacket
     private readonly int _manorId;
     private readonly Map<int, Item> _cropsItems;
     private readonly Map<int, CropProcure> _castleCrops;
-	
+
     public ExShowSellCropListPacket(PlayerInventory inventory, int manorId)
     {
         _manorId = manorId;
@@ -20,7 +20,7 @@ public readonly struct ExShowSellCropListPacket: IOutgoingPacket
         _cropsItems = new Map<int, Item>();
         foreach (int cropId in CastleManorManager.getInstance().getCropIds())
         {
-            Item item = inventory.getItemByItemId(cropId);
+            Item? item = inventory.getItemByItemId(cropId);
             if (item != null)
             {
                 _cropsItems.put(cropId, item);
@@ -28,17 +28,17 @@ public readonly struct ExShowSellCropListPacket: IOutgoingPacket
         }
         foreach (CropProcure crop in CastleManorManager.getInstance().getCropProcure(_manorId, false))
         {
-            if (_cropsItems.ContainsKey(crop.getId()) && (crop.getAmount() > 0))
+            if (_cropsItems.ContainsKey(crop.getId()) && crop.getAmount() > 0)
             {
                 _castleCrops.put(crop.getId(), crop);
             }
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SHOW_SELL_CROP_LIST);
-        
+
         writer.WriteInt32(_manorId); // manor id
         writer.WriteInt32(_cropsItems.Count); // size
         foreach (Item item in _cropsItems.Values)
@@ -66,7 +66,7 @@ public readonly struct ExShowSellCropListPacket: IOutgoingPacket
                 writer.WriteInt64(0); // buy price
                 writer.WriteByte(0); // reward
             }
-            
+
             writer.WriteInt64(item.getCount()); // my crops
         }
     }

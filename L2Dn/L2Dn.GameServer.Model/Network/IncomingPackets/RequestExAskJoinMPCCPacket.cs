@@ -23,7 +23,7 @@ public struct RequestExAskJoinMPCCPacket: IIncomingPacket<GameSession>
 	    Player? player = session.Player;
 	    if (player == null)
 		    return ValueTask.CompletedTask;
-		
+
 		Player target = World.getInstance().getPlayer(_name);
 		if (target == null)
 			return ValueTask.CompletedTask;
@@ -31,12 +31,12 @@ public struct RequestExAskJoinMPCCPacket: IIncomingPacket<GameSession>
 		// invite yourself? ;)
 		if (player.isInParty() && target.isInParty() && player.getParty() == target.getParty())
 			return ValueTask.CompletedTask;
-		
+
 		SystemMessagePacket sm;
 		// activeChar is in a Party?
 		if (player.isInParty())
 		{
-			Party activeParty = player.getParty();
+			Party? activeParty = player.getParty();
 			// activeChar is PartyLeader? && activeChars Party is already in a CommandChannel?
 			if (activeParty.getLeader() == player)
 			{
@@ -102,10 +102,10 @@ public struct RequestExAskJoinMPCCPacket: IIncomingPacket<GameSession>
 				player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_AUTHORITY_TO_INVITE_SOMEONE_TO_THE_COMMAND_CHANNEL);
 			}
 		}
-		
+
 		return ValueTask.CompletedTask;
 	}
-	
+
 	private void askJoinMPCC(Player requestor, Player target)
 	{
 		bool hasRight = false;
@@ -125,13 +125,13 @@ public struct RequestExAskJoinMPCCPacket: IIncomingPacket<GameSession>
 			// At least Baron or higher and the skill Clan Imperium
 			hasRight = true;
 		}
-		
+
 		if (!hasRight)
 		{
 			requestor.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_WHO_IS_ALSO_A_LV_5_CLAN_LEADER_CAN_CREATE_A_COMMAND_CHANNEL);
 			return;
 		}
-		
+
 		// Get the target's party leader, and do whole actions on him.
 		Player targetLeader = target.getParty().getLeader();
 		SystemMessagePacket sm;

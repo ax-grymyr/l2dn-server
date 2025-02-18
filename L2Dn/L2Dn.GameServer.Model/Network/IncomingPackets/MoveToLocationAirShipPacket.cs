@@ -15,7 +15,7 @@ public struct MoveToLocationAirShipPacket: IIncomingPacket<GameSession>
     public const int MIN_Z = -895;
     public const int MAX_Z = 6105;
     public const int STEP = 300;
-	
+
     private int _command;
     private int _param1;
     private int _param2;
@@ -35,16 +35,16 @@ public struct MoveToLocationAirShipPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         if (!player.isInAirShip())
             return ValueTask.CompletedTask;
-		
+
         AirShip ship = player.getAirShip();
         if (!ship.isCaptain(player))
             return ValueTask.CompletedTask;
 
         int z = ship.getZ();
-		
+
         switch (_command)
         {
             case 0:
@@ -54,7 +54,7 @@ public struct MoveToLocationAirShipPacket: IIncomingPacket<GameSession>
 
                 if (_param1 < World.GRACIA_MAX_X)
                     ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location3D(_param1, _param2, z));
-                
+
                 break;
             }
             case 1:
@@ -95,11 +95,11 @@ public struct MoveToLocationAirShipPacket: IIncomingPacket<GameSession>
             {
                 if (!ship.isInDock() || ship.isMoving())
                     return ValueTask.CompletedTask;
-				
-                VehiclePathPoint[] dst = AirShipManager.getInstance().getTeleportDestination(ship.getDockId(), _param1);
+
+                VehiclePathPoint[]? dst = AirShipManager.getInstance().getTeleportDestination(ship.getDockId(), _param1);
                 if (dst == null)
                     return ValueTask.CompletedTask;
-				
+
                 // Consume fuel, if needed
                 int fuelConsumption = AirShipManager.getInstance().getFuelConsumption(ship.getDockId(), _param1);
                 if (fuelConsumption > 0)
@@ -112,7 +112,7 @@ public struct MoveToLocationAirShipPacket: IIncomingPacket<GameSession>
 
                     ship.setFuel(ship.getFuel() - fuelConsumption);
                 }
-				
+
                 ship.executePath(dst);
                 break;
             }

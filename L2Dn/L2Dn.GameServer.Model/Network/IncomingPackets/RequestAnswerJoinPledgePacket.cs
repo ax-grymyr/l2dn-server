@@ -23,11 +23,11 @@ public struct RequestAnswerJoinPledgePacket: IIncomingPacket<GameSession>
 		Player? player = session.Player;
 		if (player == null)
 			return ValueTask.CompletedTask;
-		
+
 		Player requestor = player.getRequest().getPartner();
 		if (requestor == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (_answer == 0)
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_DIDN_T_RESPOND_TO_S1_S_INVITATION_JOINING_HAS_BEEN_CANCELLED);
@@ -54,10 +54,10 @@ public struct RequestAnswerJoinPledgePacket: IIncomingPacket<GameSession>
 			{
 				pledgeType = ((RequestClanAskJoinByNamePacket)requestor.getRequest().getRequestPacket()).getPledgeType();
 			}
-			
-			Clan clan = requestor.getClan();
-			
-			// we must double check this cause during response time conditions can be changed,
+
+			Clan? clan = requestor.getClan();
+
+			// we must double-check this cause during response time conditions can be changed,
 			// i.e. another player could join clan
 			if (clan.checkClanJoinCondition(requestor, player, pledgeType))
 			{
@@ -65,7 +65,7 @@ public struct RequestAnswerJoinPledgePacket: IIncomingPacket<GameSession>
 				{
 					return ValueTask.CompletedTask;
 				}
-				
+
 				player.sendPacket(new JoinPledgePacket(requestor.getClanId().Value));
 				player.setPledgeType(pledgeType);
 				if (pledgeType == Clan.SUBUNIT_ACADEMY)
@@ -77,15 +77,15 @@ public struct RequestAnswerJoinPledgePacket: IIncomingPacket<GameSession>
 				{
 					player.setPowerGrade(5); // new member starts at 5, not confirmed
 				}
-				
+
 				clan.addClanMember(player);
 				player.setClanPrivileges(player.getClan().getRankPrivs(player.getPowerGrade()));
 				player.sendPacket(SystemMessageId.ENTERED_THE_CLAN);
-				
+
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_HAS_JOINED_THE_CLAN);
 				sm.Params.addString(player.getName());
 				clan.broadcastToOnlineMembers(sm);
-				
+
 				if (clan.getCastleId() > 0)
 				{
 					Castle castle = CastleManager.getInstance().getCastleByOwner(clan);
@@ -103,18 +103,18 @@ public struct RequestAnswerJoinPledgePacket: IIncomingPacket<GameSession>
 					}
 				}
 				player.sendSkillList();
-				
+
 				clan.broadcastToOtherOnlineMembers(new PledgeShowMemberListAddPacket(player), player);
 				clan.broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(clan));
 				clan.broadcastToOnlineMembers(new ExPledgeCountPacket(clan));
-				
+
 				// this activates the clan tab on the new member
 				PledgeShowMemberListAllPacket.sendAllTo(player);
 				player.setClanJoinExpiryTime(null);
 				player.broadcastUserInfo();
 			}
 		}
-		
+
 		player.getRequest().onRequestResponse();
 		return ValueTask.CompletedTask;
     }

@@ -12,103 +12,103 @@ namespace L2Dn.GameServer.CommunityBbs.BB;
 public class Post
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Post));
-	
+
 	public class CPost
 	{
 		private int _postId;
-		private string _postOwner;
+		private string? _postOwner;
 		private int _postOwnerId;
 		private DateTime _postDate;
 		private int _postTopicId;
 		private int _postForumId;
-		private string _postText;
-		
+		private string _postText = string.Empty;
+
 		public void setPostId(int postId)
 		{
 			_postId = postId;
 		}
-		
+
 		public int getPostId()
 		{
 			return _postId;
 		}
-		
+
 		public void setPostOwner(string postOwner)
 		{
 			_postOwner = postOwner;
 		}
-		
-		public string getPostOwner()
+
+		public string? getPostOwner()
 		{
 			return _postOwner;
 		}
-		
+
 		public void setPostOwnerId(int postOwnerId)
 		{
 			_postOwnerId = postOwnerId;
 		}
-		
+
 		public int getPostOwnerId()
 		{
 			return _postOwnerId;
 		}
-		
+
 		public void setPostDate(DateTime postDate)
 		{
 			_postDate = postDate;
 		}
-		
+
 		public DateTime getPostDate()
 		{
 			return _postDate;
 		}
-		
+
 		public void setPostTopicId(int postTopicId)
 		{
 			_postTopicId = postTopicId;
 		}
-		
+
 		public int getPostTopicId()
 		{
 			return _postTopicId;
 		}
-		
+
 		public void setPostForumId(int postForumId)
 		{
 			_postForumId = postForumId;
 		}
-		
+
 		public int getPostForumId()
 		{
 			return _postForumId;
 		}
-		
+
 		public void setPostText(string postText)
 		{
 			_postText = postText;
 		}
-		
+
 		public string getPostText()
 		{
-			if (_postText == null)
+			if (string.IsNullOrEmpty(_postText))
 			{
-				return "";
+				return string.Empty;
 			}
-			
+
 			// Bypass exploit check.
-			string text = _postText.ToLower();
-			if (text.Contains("action") && text.Contains("bypass"))
-			{
-				return "";
-			}
-			
-			// Returns text without tags.
-			return _postText.replaceAll("<.*?>", "");
+            if (_postText.Contains("action", StringComparison.OrdinalIgnoreCase) &&
+                _postText.Contains("bypass", StringComparison.OrdinalIgnoreCase))
+            {
+                return string.Empty;
+            }
+
+            // Returns text without tags.
+			return _postText.replaceAll("<.*?>", string.Empty);
 		}
 	}
-	
+
 	private readonly Set<CPost> _post;
-	
+
 	/**
 	 * @param postOwner
 	 * @param postOwnerId
@@ -131,7 +131,7 @@ public class Post
 		_post.add(cp);
 		insertindb(cp);
 	}
-	
+
 	private void insertindb(CPost cp)
 	{
 		try
@@ -147,7 +147,7 @@ public class Post
 				ForumId = cp.getPostForumId(),
 				Text = cp.getPostText()
 			};
-			
+
 			ctx.Posts.Add(post);
 			ctx.SaveChanges();
 		}
@@ -156,14 +156,14 @@ public class Post
 			LOGGER.Warn("Error while saving new Post to db " + e);
 		}
 	}
-	
+
 	public Post(Topic t)
 	{
 		_post = new();
 		load(t);
 	}
-	
-	public CPost getCPost(int id)
+
+	public CPost? getCPost(int id)
 	{
 		int i = 0;
 		foreach (CPost cp in _post)
@@ -175,11 +175,11 @@ public class Post
 		}
 		return null;
 	}
-	
+
 	public void deleteMe(Topic t)
 	{
 		PostBBSManager.getInstance().delPostByTopic(t);
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Posts.Where(p => p.ForumId == t.getForumID() && p.TopicId == t.getID()).ExecuteDelete();
@@ -189,10 +189,10 @@ public class Post
 			LOGGER.Warn("Error while deleting post: " + e);
 		}
 	}
-	
+
 	private void load(Topic t)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var posts = ctx.Posts.AsNoTracking().Where(p => p.ForumId == t.getForumID() && p.TopicId == t.getID())
@@ -217,13 +217,13 @@ public class Post
 			LOGGER.Warn("Data error on Post " + t.getForumID() + "/" + t.getID() + " : " + e);
 		}
 	}
-	
+
 	public void updateText(int i)
 	{
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			CPost cp = getCPost(i);
+			CPost? cp = getCPost(i);
 			ctx.Posts.Where(p =>
 					p.Id == cp.getPostId() && p.TopicId == cp.getPostTopicId() && p.ForumId == cp.getPostForumId())
 				.ExecuteUpdate(p => p.SetProperty(x => x.Text, cp.getPostText()));

@@ -12,8 +12,8 @@ public class CommissionItem
 	private readonly DateTime _startTime;
 	private readonly int _durationInDays;
 	private readonly int _discountInPercentage;
-	private ScheduledFuture _saleEndTask;
-	
+	private ScheduledFuture? _saleEndTask;
+
 	public CommissionItem(long commissionId, Item itemInstance, long pricePerUnit, DateTime startTime, int durationInDays, int discountInPercentage)
 	{
 		_commissionId = commissionId;
@@ -24,7 +24,7 @@ public class CommissionItem
 		_durationInDays = durationInDays;
 		_discountInPercentage = discountInPercentage;
 	}
-	
+
 	/**
 	 * Gets the commission id.
 	 * @return the commission id
@@ -33,7 +33,7 @@ public class CommissionItem
 	{
 		return _commissionId;
 	}
-	
+
 	/**
 	 * Gets the item instance.
 	 * @return the item instance
@@ -42,7 +42,7 @@ public class CommissionItem
 	{
 		return _itemInstance;
 	}
-	
+
 	/**
 	 * Gets the item info.
 	 * @return the item info
@@ -51,7 +51,7 @@ public class CommissionItem
 	{
 		return _itemInfo;
 	}
-	
+
 	/**
 	 * Gets the price per unit.
 	 * @return the price per unit
@@ -60,7 +60,7 @@ public class CommissionItem
 	{
 		return _pricePerUnit;
 	}
-	
+
 	/**
 	 * Gets the start time.
 	 * @return the start time
@@ -69,7 +69,7 @@ public class CommissionItem
 	{
 		return _startTime;
 	}
-	
+
 	/**
 	 * Gets the duration in days.
 	 * @return the duration in days
@@ -78,7 +78,7 @@ public class CommissionItem
 	{
 		return _durationInDays;
 	}
-	
+
 	/**
 	 * Gets the discount in percentage
 	 * @return the _discountInPercentage
@@ -87,7 +87,7 @@ public class CommissionItem
 	{
 		return _discountInPercentage;
 	}
-	
+
 	/**
 	 * Gets the end time.
 	 * @return the end time
@@ -96,16 +96,16 @@ public class CommissionItem
 	{
 		return _startTime.AddDays(_durationInDays);
 	}
-	
+
 	/**
 	 * Gets the sale end task.
 	 * @return the sale end task
 	 */
-	public ScheduledFuture getSaleEndTask()
+	public ScheduledFuture? getSaleEndTask()
 	{
 		return _saleEndTask;
 	}
-	
+
 	/**
 	 * Sets the sale end task.
 	 * @param saleEndTask the sale end task

@@ -17,14 +17,14 @@ namespace L2Dn.GameServer.Data.Sql;
 public class AnnouncementsTable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AnnouncementsTable));
-	
+
 	private readonly Map<int, IAnnouncement> _announcements = new();
-	
+
 	protected AnnouncementsTable()
 	{
 		load();
 	}
-	
+
 	private void load()
 	{
 		_announcements.Clear();
@@ -55,7 +55,7 @@ public class AnnouncementsTable
 						continue;
 					}
 				}
-				
+
 				_announcements.put(announce.getId(), announce);
 			}
 		}
@@ -64,7 +64,7 @@ public class AnnouncementsTable
 			LOGGER.Warn(GetType().Name + ": Failed loading announcements: " + e);
 		}
 	}
-	
+
 	/**
 	 * Sending all announcements to the player
 	 * @param player
@@ -75,7 +75,7 @@ public class AnnouncementsTable
 		sendAnnouncements(player, AnnouncementType.CRITICAL);
 		sendAnnouncements(player, AnnouncementType.EVENT);
 	}
-	
+
 	/**
 	 * Sends all announcements to the player by the specified type
 	 * @param player
@@ -93,7 +93,7 @@ public class AnnouncementsTable
 			}
 		}
 	}
-	
+
 	/**
 	 * Adds announcement
 	 * @param announce
@@ -105,7 +105,7 @@ public class AnnouncementsTable
 			_announcements.put(announce.getId(), announce);
 		}
 	}
-	
+
 	/**
 	 * Removes announcement by id
 	 * @param id
@@ -113,19 +113,19 @@ public class AnnouncementsTable
 	 */
 	public bool deleteAnnouncement(int id)
 	{
-		IAnnouncement announce = _announcements.remove(id);
+		IAnnouncement? announce = _announcements.remove(id);
 		return (announce != null) && announce.deleteMe();
 	}
-	
+
 	/**
 	 * @param id
 	 * @return {@link IAnnouncement} by id
 	 */
-	public IAnnouncement getAnnounce(int id)
+	public IAnnouncement? getAnnounce(int id)
 	{
-		return _announcements.get(id);
+		return _announcements.GetValueOrDefault(id);
 	}
-	
+
 	/**
 	 * @return {@link Collection} containing all announcements
 	 */
@@ -133,7 +133,7 @@ public class AnnouncementsTable
 	{
 		return _announcements.Values;
 	}
-	
+
 	/**
 	 * @return Single instance of {@link AnnouncementsTable}
 	 */
@@ -141,9 +141,9 @@ public class AnnouncementsTable
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
-		public static readonly AnnouncementsTable INSTANCE = new AnnouncementsTable();
+		public static readonly AnnouncementsTable INSTANCE = new();
 	}
 }

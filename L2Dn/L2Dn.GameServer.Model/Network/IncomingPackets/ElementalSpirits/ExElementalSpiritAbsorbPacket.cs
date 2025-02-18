@@ -31,7 +31,7 @@ public struct ExElementalSpiritAbsorbPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        ElementalSpirit spirit = player.getElementalSpirit(_type);
+        ElementalSpirit? spirit = player.getElementalSpirit(_type);
         if (spirit == null)
         {
             connection.Send(SystemMessageId.NO_SPIRITS_ARE_AVAILABLE);

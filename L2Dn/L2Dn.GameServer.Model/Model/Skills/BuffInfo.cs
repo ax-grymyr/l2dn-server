@@ -39,9 +39,9 @@ public class BuffInfo
 	/** If {@code true} then this effect is in use (or has been stop because an Herb took place). */
 	private volatile bool _isInUse = true;
 	private readonly bool _hideStartMessage;
-	private readonly Item _item;
-	private readonly Options.Options _option;
-	
+	private readonly Item? _item;
+	private readonly Options.Options? _option;
+
 	/**
 	 * Buff Info constructor.
 	 * @param effector the effector
@@ -51,9 +51,9 @@ public class BuffInfo
 	 * @param item
 	 * @param option
 	 */
-	public BuffInfo(Creature effector, Creature effected, Skill skill, bool hideStartMessage, Item item, Options.Options option)
+	public BuffInfo(Creature effector, Creature effected, Skill skill, bool hideStartMessage, Item? item, Options.Options? option)
 	{
-		_effectorObjectId = effector?.ObjectId ?? 0;
+		_effectorObjectId = effector.ObjectId;
 		_effector = effector;
 		_effected = effected;
 		_skill = skill;
@@ -63,7 +63,7 @@ public class BuffInfo
 		_item = item;
 		_option = option;
 	}
-	
+
 	/**
 	 * Gets the effects on this buff info.
 	 * @return the effects
@@ -72,7 +72,7 @@ public class BuffInfo
 	{
 		return _effects;
 	}
-	
+
 	/**
 	 * Adds an effect to this buff info.
 	 * @param effect the effect to add
@@ -81,7 +81,7 @@ public class BuffInfo
 	{
 		_effects.Add(effect);
 	}
-	
+
 	/**
 	 * Adds an effect task to this buff info.<br>
 	 * Uses double-checked locking to initialize the map if it's necessary.
@@ -100,10 +100,10 @@ public class BuffInfo
 				}
 			}
 		}
-		
+
 		_tasks.put(effect, effectTaskInfo);
 	}
-	
+
 	/**
 	 * Gets the task for the given effect.
 	 * @param effect the effect
@@ -113,7 +113,7 @@ public class BuffInfo
 	{
 		return _tasks == null ? null : _tasks.get(effect);
 	}
-	
+
 	/**
 	 * Gets the skill that created this buff info.
 	 * @return the skill
@@ -122,7 +122,7 @@ public class BuffInfo
 	{
 		return _skill;
 	}
-	
+
 	/**
 	 * Gets the calculated abnormal time.
 	 * @return the abnormal time
@@ -131,7 +131,7 @@ public class BuffInfo
 	{
 		return _abnormalTime;
 	}
-	
+
 	/**
 	 * Sets the abnormal time.
 	 * @param abnormalTime the abnormal time to set
@@ -140,7 +140,7 @@ public class BuffInfo
 	{
 		_abnormalTime = abnormalTime;
 	}
-	
+
 	/**
 	 * Gets the period start ticks.
 	 * @return the period start
@@ -149,23 +149,23 @@ public class BuffInfo
 	{
 		return _periodStartTicks;
 	}
-	
+
 	/**
 	 * @return the item that triggered this skill
 	 */
-	public Item getItem()
+	public Item? getItem()
 	{
 		return _item;
 	}
-	
+
 	/**
 	 * @return the options that issued this effect
 	 */
-	public Options.Options getOption()
+	public Options.Options? getOption()
 	{
 		return _option;
 	}
-	
+
 	/**
 	 * Get the remaining time in seconds for this buff info.
 	 * @return the elapsed time
@@ -175,7 +175,7 @@ public class BuffInfo
 		int ticks = GameTimeTaskManager.getInstance().getGameTicks() - _periodStartTicks;
 		return _abnormalTime - TimeSpan.FromSeconds(1.0 * ticks / GameTimeTaskManager.TICKS_PER_SECOND);
 	}
-	
+
 	/**
 	 * Verify if this buff info has been cancelled.
 	 * @return {@code true} if this buff info has been cancelled, {@code false} otherwise
@@ -184,7 +184,7 @@ public class BuffInfo
 	{
 		return _finishType == SkillFinishType.REMOVED;
 	}
-	
+
 	/**
 	 * Set the buff info to removed.
 	 * @param type the SkillFinishType to set
@@ -193,7 +193,7 @@ public class BuffInfo
 	{
 		_finishType = type;
 	}
-	
+
 	/**
 	 * Verify if this buff info is in use.
 	 * @return {@code true} if this buff info is in use, {@code false} otherwise
@@ -202,7 +202,7 @@ public class BuffInfo
 	{
 		return _isInUse;
 	}
-	
+
 	/**
 	 * Set the buff info to in use.
 	 * @param value the value to set
@@ -210,7 +210,7 @@ public class BuffInfo
 	public void setInUse(bool value)
 	{
 		_isInUse = value;
-		
+
 		// Send message that the effect is applied or removed.
 		if (_skill != null && !_skill.isHidingMessages() && _effected.isPlayer())
 		{
@@ -231,7 +231,7 @@ public class BuffInfo
 			}
 		}
 	}
-	
+
 	/**
 	 * Gets the character's object id that launched the buff.
 	 * @return the object id of the effector.
@@ -240,7 +240,7 @@ public class BuffInfo
 	{
 		return _effectorObjectId;
 	}
-	
+
 	/**
 	 * Gets the character that launched the buff.
 	 * @return the effector
@@ -249,7 +249,7 @@ public class BuffInfo
 	{
 		return _effector;
 	}
-	
+
 	/**
 	 * Gets the target of the skill.
 	 * @return the effected
@@ -258,7 +258,7 @@ public class BuffInfo
 	{
 		return _effected;
 	}
-	
+
 	/**
 	 * Stops all the effects for this buff info.<br>
 	 * Removes effects stats.<br>
@@ -269,19 +269,19 @@ public class BuffInfo
 	public void stopAllEffects(SkillFinishType type)
 	{
 		setFinishType(type);
-		
+
 		// Remove this buff info from BuffFinishTask.
 		_effected.removeBuffInfoTime(this);
 		finishEffects();
 	}
-	
+
 	public void initializeEffects()
 	{
 		if (_effected == null || _skill == null)
 		{
 			return;
 		}
-		
+
 		// When effects are initialized, the successfully landed.
 		if (!_hideStartMessage && _effected.isPlayer() && !_skill.isHidingMessages() && !_skill.isAura() && isDisplayedForEffected())
 		{
@@ -289,29 +289,29 @@ public class BuffInfo
 			sm.Params.addSkillName(_skill);
 			_effected.sendPacket(sm);
 		}
-		
+
 		// Creates a task that will stop all the effects.
 		if (_abnormalTime > TimeSpan.Zero)
 		{
 			_effected.addBuffInfoTime(this);
 		}
-		
+
 		foreach (AbstractEffect effect in _effects)
 		{
 			if (effect.isInstant() || (_effected.isDead() && !_skill.isPassive() && !_skill.isStayAfterDeath()))
 			{
 				continue;
 			}
-			
+
 			// Call on start.
 			effect.onStart(_effector, _effected, _skill, _item);
-			
+
 			// Do not add continuous effect if target just died from the initial effect, otherwise they'll be ticked forever.
 			if (_effected.isDead())
 			{
 				continue;
 			}
-			
+
 			// If it's a continuous effect, if has ticks schedule a task with period, otherwise schedule a simple task to end it.
 			if (effect.getTicks() > 0)
 			{
@@ -320,13 +320,13 @@ public class BuffInfo
 				ScheduledFuture scheduledFuture = ThreadPool.scheduleAtFixedRate(effectTask,
 					effect.getTicks() * TimeSpan.FromMilliseconds(Config.EFFECT_TICK_RATIO),
 					effect.getTicks() * TimeSpan.FromMilliseconds(Config.EFFECT_TICK_RATIO));
-				
+
 				// Adds the task for ticking.
 				addTask(effect, new EffectTaskInfo(effectTask, scheduledFuture));
 			}
 		}
 	}
-	
+
 	/**
 	 * Called on each tick.<br>
 	 * Verify if the effect should end and the effect task should be cancelled.
@@ -341,10 +341,10 @@ public class BuffInfo
 			// Callback for on action time event.
 			continueForever = effect.onActionTime(_effector, _effected, _skill, _item);
 		}
-		
+
 		if (!continueForever && _skill.isToggle())
 		{
-			EffectTaskInfo task = getEffectTask(effect);
+			EffectTaskInfo? task = getEffectTask(effect);
 			if (task != null)
 			{
 				ScheduledFuture schedule = task.getScheduledFuture();
@@ -356,7 +356,7 @@ public class BuffInfo
 			}
 		}
 	}
-	
+
 	public void finishEffects()
 	{
 		// Cancels the ticking task.
@@ -371,7 +371,7 @@ public class BuffInfo
 				}
 			}
 		}
-		
+
 		// Notify on exit.
 		foreach (AbstractEffect effect in _effects)
 		{
@@ -381,7 +381,7 @@ public class BuffInfo
 			effect.onExit(_effector, _effected, _skill);
 			// }
 		}
-		
+
 		// Set the proper system message.
 		if (_skill != null && !(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()) && !_skill.isHidingMessages())
 		{
@@ -402,7 +402,7 @@ public class BuffInfo
 			{
 				smId = SystemMessageId.S1_HAS_WORN_OFF;
 			}
-			
+
 			if (smId != null && _effected.getActingPlayer() != null && _effected.getActingPlayer().isOnline())
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(smId.Value);
@@ -411,7 +411,7 @@ public class BuffInfo
 			}
 		}
 	}
-	
+
 	public void resetAbnormalTime(TimeSpan? abnormalTime)
 	{
 		if (_abnormalTime > TimeSpan.Zero)
@@ -422,12 +422,12 @@ public class BuffInfo
 			_effected.addBuffInfoTime(this);
 		}
 	}
-	
+
 	public bool isAbnormalType(AbnormalType type)
 	{
 		return _skill.getAbnormalType() == type;
 	}
-	
+
 	/**
 	 * Determines if this BuffInfo is displayed for the effected. These checks are needed to display A3 skills properly.<br>
 	 * A3 skills are a type of skills that has different behavior depending on the effector and the effected.

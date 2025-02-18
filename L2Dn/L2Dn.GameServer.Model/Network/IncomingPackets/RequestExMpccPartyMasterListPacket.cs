@@ -21,15 +21,15 @@ public struct RequestExMpccPartyMasterListPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         MatchingRoom room = player.getMatchingRoom();
-        if ((room != null) && (room.getRoomType() == MatchingRoomType.COMMAND_CHANNEL))
+        if (room != null && room.getRoomType() == MatchingRoomType.COMMAND_CHANNEL)
         {
-            Set<string> leadersName = new();
+            Set<string> leadersName = [];
             leadersName.addAll(room.getMembers().Select(x => x.getParty()).Where(x => x != null)
                 .Select(x => x.getLeader().getName()));
-            
+
             player.sendPacket(new ExMPCCPartyMasterListPacket(leadersName));
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

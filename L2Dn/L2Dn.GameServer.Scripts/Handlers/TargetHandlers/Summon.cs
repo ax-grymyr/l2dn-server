@@ -12,17 +12,19 @@ namespace L2Dn.GameServer.Scripts.Handlers.TargetHandlers;
  */
 public class Summon: ITargetTypeHandler
 {
-	public TargetType getTargetType()
-	{
-		return TargetType.SUMMON;
-	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
-	{
-		if (creature.isPlayer() && creature.hasSummon())
-		{
-			return creature.getActingPlayer().getAnyServitor();
-		}
-		return creature.getPet();
-	}
+    public TargetType getTargetType()
+    {
+        return TargetType.SUMMON;
+    }
+
+    public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse,
+        bool dontMove, bool sendMessage)
+    {
+        if (creature.isPlayer() && creature.hasSummon())
+        {
+            return creature.getActingPlayer()?.getAnyServitor();
+        }
+
+        return creature.getPet();
+    }
 }

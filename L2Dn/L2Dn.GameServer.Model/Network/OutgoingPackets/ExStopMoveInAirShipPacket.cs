@@ -9,7 +9,6 @@ public readonly struct ExStopMoveInAirShipPacket: IOutgoingPacket
 {
     private readonly Player _player;
     private readonly int _shipObjId;
-    private readonly int _h;
     private readonly Location _location;
 
     public ExStopMoveInAirShipPacket(Player player, int shipObjId)

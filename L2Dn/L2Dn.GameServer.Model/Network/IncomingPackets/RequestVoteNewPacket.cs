@@ -24,7 +24,7 @@ public struct RequestVoteNewPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         SystemMessagePacket sm;
-        WorldObject obj = player.getTarget();
+        WorldObject? obj = player.getTarget();
         if (!(obj is Player))
         {
             if (obj == null)
@@ -38,12 +38,12 @@ public struct RequestVoteNewPacket: IIncomingPacket<GameSession>
                     player.sendPacket(SystemMessageId.YOU_ARE_OUT_OF_RECOMMENDATIONS_TRY_AGAIN_LATER);
                     return ValueTask.CompletedTask;
                 }
-				
+
                 sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_RECOMMENDED_C1_YOU_HAVE_S2_RECOMMENDATIONS_LEFT);
                 sm.Params.addString(FakePlayerData.getInstance().getProperName(obj.getName()));
                 sm.Params.addInt(player.getRecomLeft());
                 player.sendPacket(sm);
-				
+
                 player.setRecomLeft(player.getRecomLeft() - 1);
                 player.updateUserInfo();
                 player.sendPacket(new ExVoteSystemInfoPacket(player));
@@ -55,46 +55,46 @@ public struct RequestVoteNewPacket: IIncomingPacket<GameSession>
 
             return ValueTask.CompletedTask;
         }
-		
+
         Player target = (Player)obj;
         if (target.ObjectId != _targetId)
             return ValueTask.CompletedTask;
-		
+
         if (target == player)
         {
             player.sendPacket(SystemMessageId.YOU_CANNOT_RECOMMEND_YOURSELF);
             return ValueTask.CompletedTask;
         }
-		
+
         if (player.getRecomLeft() <= 0)
         {
             player.sendPacket(SystemMessageId.YOU_ARE_OUT_OF_RECOMMENDATIONS_TRY_AGAIN_LATER);
             return ValueTask.CompletedTask;
         }
-		
+
         if (target.getRecomHave() >= 255)
         {
             player.sendPacket(SystemMessageId.YOUR_SELECTED_TARGET_CAN_NO_LONGER_RECEIVE_A_RECOMMENDATION);
             return ValueTask.CompletedTask;
         }
-		
+
         player.giveRecom(target);
-		
+
         sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_RECOMMENDED_C1_YOU_HAVE_S2_RECOMMENDATIONS_LEFT);
         sm.Params.addPcName(target);
         sm.Params.addInt(player.getRecomLeft());
         player.sendPacket(sm);
-		
+
         sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_BEEN_RECOMMENDED_BY_C1);
         sm.Params.addPcName(player);
         target.sendPacket(sm);
-		
+
         player.updateUserInfo();
         target.broadcastUserInfo();
-		
+
         player.sendPacket(new ExVoteSystemInfoPacket(player));
         target.sendPacket(new ExVoteSystemInfoPacket(target));
-        
+
         return ValueTask.CompletedTask;
     }
 }

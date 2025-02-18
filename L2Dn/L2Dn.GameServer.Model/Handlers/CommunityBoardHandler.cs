@@ -17,12 +17,12 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 	private readonly Map<string, IParseBoardHandler> _datatable = new();
 	/** The bypasses used by the players. */
 	private readonly Map<int, string> _bypasses = new();
-	
+
 	protected CommunityBoardHandler()
 	{
 		// Prevent external initialization.
 	}
-	
+
 	public void registerHandler(IParseBoardHandler handler)
 	{
 		foreach (string cmd in handler.getCommunityBoardCommands())
@@ -30,7 +30,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 			_datatable.put(cmd.ToLower(), handler);
 		}
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void removeHandler(IParseBoardHandler handler)
 	{
@@ -39,7 +39,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 			_datatable.remove(cmd.ToLower());
 		}
 	}
-	
+
 	public IParseBoardHandler getHandler(string cmd)
 	{
 		foreach (IParseBoardHandler cb in _datatable.Values)
@@ -54,12 +54,12 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 		}
 		return null;
 	}
-	
+
 	public int size()
 	{
 		return _datatable.Count;
 	}
-	
+
 	/**
 	 * Verifies if the string is a registered community board command.
 	 * @param cmd the command to verify
@@ -69,7 +69,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 	{
 		return getHandler(cmd) != null;
 	}
-	
+
 	/**
 	 * Parses a community board command.
 	 * @param command the command
@@ -81,23 +81,23 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 		{
 			return;
 		}
-		
+
 		if (!Config.ENABLE_COMMUNITY_BOARD)
 		{
 			player.sendPacket(SystemMessageId.THE_COMMUNITY_SERVER_IS_CURRENTLY_OFFLINE);
 			return;
 		}
-		
+
 		IParseBoardHandler cb = getHandler(command);
 		if (cb == null)
 		{
 			LOG.Warn(nameof(CommunityBoardHandler) + ": Couldn't find parse handler for command " + command + "!");
 			return;
 		}
-		
+
 		cb.parseCommunityBoardCommand(command, player);
 	}
-	
+
 	/**
 	 * Writes a command into the client.
 	 * @param player the player
@@ -114,13 +114,13 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 		{
 			return;
 		}
-		
+
 		if (!Config.ENABLE_COMMUNITY_BOARD)
 		{
 			player.sendPacket(SystemMessageId.THE_COMMUNITY_SERVER_IS_CURRENTLY_OFFLINE);
 			return;
 		}
-		
+
 		string cmd = "";
 		switch (url)
 		{
@@ -150,14 +150,14 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 				return;
 			}
 		}
-		
+
 		IParseBoardHandler cb = getHandler(cmd);
 		if (cb == null)
 		{
 			LOG.Warn(nameof(CommunityBoardHandler) + ": Couldn't find write handler for command " + cmd + "!");
 			return;
 		}
-		
+
 		if (!(cb is IWriteBoardHandler))
 		{
 			LOG.Warn(nameof(CommunityBoardHandler) + ": " + cb.GetType().Name + " doesn't implement write!");
@@ -165,7 +165,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 		}
 		((IWriteBoardHandler) cb).writeCommunityBoardCommand(player, arg1, arg2, arg3, arg4, arg5);
 	}
-	
+
 	/**
 	 * Sets the last bypass used by the player.
 	 * @param player the player
@@ -176,17 +176,17 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 	{
 		_bypasses.put(player.ObjectId, title + "&" + bypass);
 	}
-	
+
 	/**
 	 * Removes the last bypass used by the player.
 	 * @param player the player
 	 * @return the last bypass used
 	 */
-	public string removeBypass(Player player)
+	public string? removeBypass(Player player)
 	{
 		return _bypasses.remove(player.ObjectId);
 	}
-	
+
 	/**
 	 * Separates and send an HTML into multiple packets, to display into the community board.<br>
 	 * The limit is 16383 characters.
@@ -197,12 +197,12 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 	{
 		Util.sendCBHtml(player, html);
 	}
-	
+
 	public static CommunityBoardHandler getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly CommunityBoardHandler INSTANCE = new CommunityBoardHandler();

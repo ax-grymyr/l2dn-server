@@ -41,7 +41,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 	    // 	return;
 	    // }
 
-	    Item item = player.getInventory().getItemByObjectId(_objectId);
+	    Item? item = player.getInventory().getItemByObjectId(_objectId);
 	    if (item == null || _count == 0 || !player.validateItemManipulation(_objectId, "drop") ||
 	        (!Config.ALLOW_DISCARDITEM && !player.canOverrideCond(PlayerCondOverride.DROP_ALL_ITEMS)) ||
 	        (!item.isDropable() && !(player.canOverrideCond(PlayerCondOverride.DROP_ALL_ITEMS) &&

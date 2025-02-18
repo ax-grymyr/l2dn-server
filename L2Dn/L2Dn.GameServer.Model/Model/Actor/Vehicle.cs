@@ -22,11 +22,11 @@ public abstract class Vehicle: Creature
 	protected int _dockId;
 	protected readonly Set<Player> _passengers = new();
 	protected Location? _oustLoc;
-	private Runnable _engine;
-	
-	protected VehiclePathPoint[] _currentPath;
+	private Runnable? _engine;
+
+	protected VehiclePathPoint[]? _currentPath;
 	protected int _runState;
-	private ScheduledFuture _monitorTask;
+	private ScheduledFuture? _monitorTask;
 	private Location3D _monitorLocation;
 
 	protected Vehicle(CreatureTemplate template): base(template)
@@ -35,27 +35,27 @@ public abstract class Vehicle: Creature
 		_monitorLocation = base.Location.Location3D;
 		setFlying(true);
 	}
-	
+
 	public virtual bool isBoat()
 	{
 		return false;
 	}
-	
+
 	public virtual bool isAirShip()
 	{
 		return false;
 	}
-	
+
 	public virtual bool canBeControlled()
 	{
 		return _engine == null;
 	}
-	
+
 	public void registerEngine(Runnable r)
 	{
 		_engine = r;
 	}
-	
+
 	public void runEngine(int delay)
 	{
 		if (_engine != null)
@@ -63,7 +63,7 @@ public abstract class Vehicle: Creature
 			ThreadPool.schedule(_engine, delay);
 		}
 	}
-	
+
 	public void executePath(VehiclePathPoint[] path)
 	{
 		_runState = 0;
@@ -79,13 +79,13 @@ public abstract class Vehicle: Creature
 			{
 				getStat().setRotationSpeed(point.getRotationSpeed());
 			}
-			
+
 			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, point.Location);
 			return;
 		}
 		getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 	}
-	
+
 	public override bool moveToNextRoutePoint()
 	{
 		_move = null;
@@ -117,7 +117,7 @@ public abstract class Vehicle: Creature
 						{
 							getStat().setRotationSpeed(point.getRotationSpeed());
 						}
-						
+
 						MoveData m = new MoveData();
 						m.disregardingGeodata = false;
 						m.onGeodataPathIndex = -1;
@@ -125,17 +125,17 @@ public abstract class Vehicle: Creature
 						m.yDestination = point.Location.Y;
 						m.zDestination = point.Location.Z;
 						m.heading = 0;
-						
+
 						double distance = double.Hypot(point.Location.X - getX(), point.Location.Y - getY());
 						if (distance > 1)
 						{
 							setHeading(new Location2D(getX(), getY()).HeadingTo(point.Location));
 						}
-						
+
 						m.moveStartTime = GameTimeTaskManager.getInstance().getGameTicks();
 						_move = m;
 						MovementTaskManager.getInstance().registerMovingObject(this);
-						
+
 						// Make sure vehicle is not stuck.
 						if (_monitorTask == null)
 						{
@@ -162,7 +162,7 @@ public abstract class Vehicle: Creature
 								}
 							}, 1000, 1000);
 						}
-						
+
 						return true;
 					}
 				}
@@ -177,41 +177,41 @@ public abstract class Vehicle: Creature
 				_currentPath = null;
 			}
 		}
-		
+
 		runEngine(10);
 		return false;
 	}
-	
+
 	public override VehicleStat getStat()
 	{
 		return (VehicleStat) base.getStat();
 	}
-	
+
 	public override void initCharStat()
 	{
 		setStat(new VehicleStat(this));
 	}
-	
+
 	public bool isInDock()
 	{
 		return _dockId > 0;
 	}
-	
+
 	public int getDockId()
 	{
 		return _dockId;
 	}
-	
+
 	public void setInDock(int d)
 	{
 		_dockId = d;
 	}
-	
+
 	public void setOustLoc(Location loc)
 	{
 		_oustLoc = loc;
 	}
-	
+
 	public Location getOustLoc()
 	{
 		if (_oustLoc != null)
@@ -219,7 +219,7 @@ public abstract class Vehicle: Creature
 
 		return MapRegionManager.getInstance().getTeleToLocation(this, TeleportWhereType.TOWN);
 	}
-	
+
 	public virtual void oustPlayers()
 	{
 		List<Player> passengers = _passengers.ToList();
@@ -232,52 +232,52 @@ public abstract class Vehicle: Creature
 			}
 		}
 	}
-	
+
 	public virtual void oustPlayer(Player player)
 	{
 		player.setVehicle(null);
 		removePassenger(player);
 	}
-	
+
 	public virtual bool addPassenger(Player player)
 	{
 		if ((player == null) || _passengers.Contains(player))
 		{
 			return false;
 		}
-		
+
 		// already in other vehicle
 		if ((player.getVehicle() != null) && (player.getVehicle() != this))
 		{
 			return false;
 		}
-		
+
 		_passengers.add(player);
 		return true;
 	}
-	
+
 	public void removePassenger(Player player)
 	{
 		try
 		{
 			_passengers.remove(player);
 		}
-		catch (Exception e)
+		catch (Exception exception)
 		{
-			// TODO: log
+            LOGGER.Trace(exception);
 		}
 	}
-	
+
 	public bool isEmpty()
 	{
 		return _passengers.isEmpty();
 	}
-	
+
 	public Set<Player> getPassengers()
 	{
 		return _passengers;
 	}
-	
+
 	public void broadcastToPassengers<TPacket>(TPacket packet)
 		where TPacket: struct, IOutgoingPacket
 	{
@@ -289,7 +289,7 @@ public abstract class Vehicle: Creature
 			}
 		}
 	}
-	
+
 	/**
 	 * Consume ticket(s) and teleport player from boat if no correct ticket
 	 * @param itemId Ticket itemId
@@ -313,7 +313,7 @@ public abstract class Vehicle: Creature
 						player.teleToLocation(new Location(oustX, oustY, oustZ, 0), true);
 						return;
 					}
-					
+
 					InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(ticket, ItemChangeType.MODIFIED));
 					player.sendInventoryUpdate(iu);
 				}
@@ -321,7 +321,7 @@ public abstract class Vehicle: Creature
 			}
 		});
 	}
-	
+
 	public override bool updatePosition()
 	{
 		bool result = base.updatePosition();
@@ -335,18 +335,18 @@ public abstract class Vehicle: Creature
 		}
 		return result;
 	}
-	
+
 	public override void teleToLocation(Location location, Instance? instance)
 	{
 		if (isMoving())
 		{
 			stopMove(null);
 		}
-		
+
 		setTeleporting(true);
-		
+
 		getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-		
+
 		foreach (Player player in _passengers)
 		{
 			if (player != null)
@@ -354,20 +354,20 @@ public abstract class Vehicle: Creature
 				player.teleToLocation(location, instance);
 			}
 		}
-		
+
 		decayMe();
 		setXYZ(location.Location3D);
-		
+
 		// temporary fix for heading on teleports
 		if (location.Heading != 0)
 		{
 			setHeading(location.Heading);
 		}
-		
+
 		onTeleported();
 		revalidateZone(true);
 	}
-	
+
 	public override void stopMove(Location? loc)
 	{
 		_move = null;
@@ -378,11 +378,11 @@ public abstract class Vehicle: Creature
 			revalidateZone(true);
 		}
 	}
-	
+
 	public override bool deleteMe()
 	{
 		_engine = null;
-		
+
 		try
 		{
 			if (isMoving())
@@ -394,7 +394,7 @@ public abstract class Vehicle: Creature
 		{
 			LOGGER.Error("Failed stopMove(): " + e);
 		}
-		
+
 		try
 		{
 			oustPlayers();
@@ -403,9 +403,9 @@ public abstract class Vehicle: Creature
 		{
 			LOGGER.Error("Failed oustPlayers(): " + e);
 		}
-		
+
 		ZoneRegion? oldZoneRegion = ZoneManager.getInstance().getRegion(Location.Location2D);
-		
+
 		try
 		{
 			decayMe();
@@ -414,46 +414,46 @@ public abstract class Vehicle: Creature
 		{
 			LOGGER.Error("Failed decayMe(): " + e);
 		}
-		
+
 		oldZoneRegion?.removeFromZones(this);
-		
+
 		return base.deleteMe();
 	}
-	
-	public override Item getActiveWeaponInstance()
+
+	public override Item? getActiveWeaponInstance()
 	{
 		return null;
 	}
-	
-	public override Weapon getActiveWeaponItem()
+
+	public override Weapon? getActiveWeaponItem()
 	{
 		return null;
 	}
-	
-	public override Item getSecondaryWeaponInstance()
+
+	public override Item? getSecondaryWeaponInstance()
 	{
 		return null;
 	}
-	
-	public override Weapon getSecondaryWeaponItem()
+
+	public override Weapon? getSecondaryWeaponItem()
 	{
 		return null;
 	}
-	
+
 	public override int getLevel()
 	{
 		return 0;
 	}
-	
+
 	public override bool isAutoAttackable(Creature attacker)
 	{
 		return false;
 	}
-	
+
 	public override void detachAI()
 	{
 	}
-	
+
 	public override bool isVehicle()
 	{
 		return true;

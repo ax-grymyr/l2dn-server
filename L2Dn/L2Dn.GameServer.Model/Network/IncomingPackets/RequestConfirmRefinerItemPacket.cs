@@ -26,23 +26,23 @@ public struct RequestConfirmRefinerItemPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Item targetItem = player.getInventory().getItemByObjectId(_targetItemObjId);
+        Item? targetItem = player.getInventory().getItemByObjectId(_targetItemObjId);
         if (targetItem == null)
             return ValueTask.CompletedTask;
-		
-        Item refinerItem = player.getInventory().getItemByObjectId(_refinerItemObjId);
+
+        Item? refinerItem = player.getInventory().getItemByObjectId(_refinerItemObjId);
         if (refinerItem == null)
             return ValueTask.CompletedTask;
-		
-        VariationFee fee = VariationData.getInstance().getFee(targetItem.getId(), refinerItem.getId());
-        if ((fee == null) || !RefinePacketHelper.isValid(player, targetItem, refinerItem))
+
+        VariationFee? fee = VariationData.getInstance().getFee(targetItem.getId(), refinerItem.getId());
+        if (fee == null || !RefinePacketHelper.isValid(player, targetItem, refinerItem))
         {
             player.sendPacket(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM);
             return ValueTask.CompletedTask;
         }
-		
+
         player.sendPacket(new ExPutIntensiveResultForVariationMakePacket(_refinerItemObjId, refinerItem.getId(), 1));
-        
+
         return ValueTask.CompletedTask;
     }
 }

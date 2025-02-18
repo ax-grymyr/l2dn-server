@@ -15,34 +15,35 @@ public class SummonExceptMaster: IAffectScopeHandler
 	public void forEachAffected<T>(Creature creature, WorldObject target, Skill skill, Action<T> action)
 		where T: WorldObject
 	{
-		IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		int affectRange = skill.getAffectRange();
 		int affectLimit = skill.getAffectLimit();
-		
-		if (target.isPlayable())
+
+        Player? actingPlayer = target.getActingPlayer();
+		if (actingPlayer != null)
 		{
 			int count = 0;
 			int limit = (affectLimit > 0) ? affectLimit : int.MaxValue;
-			foreach (Creature c in target.getActingPlayer().getServitorsAndPets())
+			foreach (Model.Actor.Summon c in actingPlayer.getServitorsAndPets())
 			{
 				if (c.isDead())
 				{
 					continue;
 				}
-				
+
 				if ((affectRange > 0) && !Util.checkIfInRange(affectRange, c, target, true))
 				{
 					continue;
 				}
-				
+
 				if ((affectObject != null) && !affectObject.checkAffectedObject(creature, c))
 				{
 					continue;
 				}
-				
+
 				count++;
 				action((T)(WorldObject)c);
-				
+
 				if (count >= limit)
 				{
 					break;
@@ -50,7 +51,7 @@ public class SummonExceptMaster: IAffectScopeHandler
 			}
 		}
 	}
-	
+
 	public AffectScope getAffectScopeType()
 	{
 		return AffectScope.SUMMON_EXCEPT_MASTER;

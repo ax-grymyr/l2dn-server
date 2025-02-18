@@ -8,18 +8,10 @@ namespace L2Dn.GameServer.Model.Conditions;
  * The Class ConditionTargetNone.
  * @author mkizub
  */
-public class ConditionTargetNone: Condition
+public sealed class ConditionTargetNone: Condition
 {
-	/**
-	 * Instantiates a new condition target none.
-	 */
-	public ConditionTargetNone()
-	{
-		//
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		return effected == null;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        return effected is null;
+    }
 }

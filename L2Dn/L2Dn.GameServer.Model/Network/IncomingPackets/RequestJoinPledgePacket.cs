@@ -26,14 +26,15 @@ public struct RequestJoinPledgePacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        Clan clan = player.getClan();
+
+        Clan? clan = player.getClan();
         if (clan == null)
             return ValueTask.CompletedTask;
-		
-        if ((player.getTarget() != null) && (FakePlayerData.getInstance().isTalkable(player.getTarget().getName())))
+
+        WorldObject? playerTarget = player.getTarget();
+        if ((playerTarget != null) && (FakePlayerData.getInstance().isTalkable(playerTarget.getName())))
         {
-            if (FakePlayerData.getInstance().getInfo(player.getTarget().getId()).getClanId() > 0)
+            if (FakePlayerData.getInstance().getInfo(playerTarget.getId()).getClanId() > 0)
             {
                 player.sendPacket(SystemMessageId.THAT_PLAYER_ALREADY_BELONGS_TO_ANOTHER_CLAN);
             }
@@ -41,43 +42,43 @@ public struct RequestJoinPledgePacket: IIncomingPacket<GameSession>
             {
                 if (!player.isProcessingRequest())
                 {
-                    ThreadPool.schedule(() => scheduleDeny(player, player.getTarget().getName()), 10000);
+                    ThreadPool.schedule(() => scheduleDeny(player, playerTarget.getName()), 10000);
                     player.blockRequest();
                 }
                 else
                 {
                     SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.C1_IS_ON_ANOTHER_TASK_PLEASE_TRY_AGAIN_LATER);
-                    msg.Params.addString(player.getTarget().getName());
+                    msg.Params.addString(playerTarget.getName());
                     player.sendPacket(msg);
                 }
             }
 
             return ValueTask.CompletedTask;
         }
-		
-        Player target = World.getInstance().getPlayer(_target);
+
+        Player? target = World.getInstance().getPlayer(_target);
         if (target == null)
         {
             player.sendPacket(SystemMessageId.THE_TARGET_CANNOT_BE_INVITED);
             return ValueTask.CompletedTask;
         }
-		
+
         if (!clan.checkClanJoinCondition(player, target, _pledgeType))
             return ValueTask.CompletedTask;
-		
+
         if (!player.getRequest().setRequest(target, this))
             return ValueTask.CompletedTask;
-		
-        string pledgeName = player.getClan().getName();
+
+        string pledgeName = clan.getName();
         target.sendPacket(new AskJoinPledgePacket(player, pledgeName));
         return ValueTask.CompletedTask;
     }
-	
+
     public int getPledgeType()
     {
         return _pledgeType;
     }
-	
+
     private static void scheduleDeny(Player player, string name)
     {
         if (player != null)

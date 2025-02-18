@@ -21,11 +21,11 @@ public struct RequestPledgeInfoPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        Clan clan = ClanTable.getInstance().getClan(_clanId);
+
+        Clan? clan = ClanTable.getInstance().getClan(_clanId);
         if (clan == null)
             return ValueTask.CompletedTask; // we have no clan data ?!? should not happen
-		
+
         player.sendPacket(new PledgeInfoPacket(clan));
         return ValueTask.CompletedTask;
     }

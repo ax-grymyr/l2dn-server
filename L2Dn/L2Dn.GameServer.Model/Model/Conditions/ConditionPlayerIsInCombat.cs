@@ -8,18 +8,11 @@ namespace L2Dn.GameServer.Model.Conditions;
 /**
  * @author Sdw
  */
-public class ConditionPlayerIsInCombat : Condition
+public sealed class ConditionPlayerIsInCombat(bool value): Condition
 {
-	private readonly bool _value;
-	
-	public ConditionPlayerIsInCombat(bool value)
-	{
-		_value = value;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		bool isInCombat = !AttackStanceTaskManager.getInstance().hasAttackStanceTask(effector);
-		return _value == isInCombat;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        bool isInCombat = !AttackStanceTaskManager.getInstance().hasAttackStanceTask(effector);
+        return value == isInCombat;
+    }
 }

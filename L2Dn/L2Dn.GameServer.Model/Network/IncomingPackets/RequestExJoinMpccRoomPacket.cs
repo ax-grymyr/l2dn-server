@@ -23,13 +23,13 @@ public struct RequestExJoinMpccRoomPacket: IIncomingPacket<GameSession>
 
         if (player.getMatchingRoom() != null)
             return ValueTask.CompletedTask;
-		
-        MatchingRoom room = MatchingRoomManager.getInstance().getCCMatchingRoom(_roomId);
+
+        MatchingRoom? room = MatchingRoomManager.getInstance().getCCMatchingRoom(_roomId);
         if (room != null)
         {
             room.addMember(player);
         }
- 
+
         return ValueTask.CompletedTask;
     }
 }

@@ -10,25 +10,25 @@ public readonly struct ShortCutInitPacket: IOutgoingPacket
 {
     private readonly Player _player;
     private readonly ICollection<Shortcut> _shortCuts;
-	
+
     public ShortCutInitPacket(Player player)
     {
         _player = player;
         _shortCuts = player.getAllShortCuts();
         player.restoreAutoShortcutVisual();
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.SHORT_CUT_INIT);
-        
+
         writer.WriteInt32(_shortCuts.Count);
         foreach (Shortcut sc in _shortCuts)
         {
             writer.WriteInt32((int)sc.getType());
             writer.WriteInt32(sc.getSlot() + (sc.getPage() * 12));
             writer.WriteByte(0); // 228
-            
+
             switch (sc.getType())
             {
                 case ShortcutType.ITEM:
@@ -38,13 +38,13 @@ public readonly struct ShortCutInitPacket: IOutgoingPacket
                     writer.WriteInt32(sc.getSharedReuseGroup());
                     writer.WriteInt32(0);
                     writer.WriteInt32(0);
-					
-                    Item item = _player.getInventory().getItemByObjectId(sc.getId());
+
+                    Item? item = _player.getInventory().getItemByObjectId(sc.getId());
                     if (item != null)
                     {
-                        VariationInstance augment = item.getAugmentation();
-                        writer.WriteInt32(augment != null ? augment.getOption1Id() : 0); // item augment id
-                        writer.WriteInt32(augment != null ? augment.getOption2Id() : 0); // item augment id
+                        VariationInstance? augment = item.getAugmentation();
+                        writer.WriteInt32(augment?.getOption1Id() ?? 0); // item augment id
+                        writer.WriteInt32(augment?.getOption2Id() ?? 0); // item augment id
                         writer.WriteInt32(item.getVisualId()); // visual id
                     }
                     else

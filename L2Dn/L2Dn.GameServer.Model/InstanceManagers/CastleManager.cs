@@ -16,32 +16,15 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class CastleManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CastleManager));
-	
+
 	private readonly Map<int, Castle> _castles = new();
 	private readonly Map<int, DateTime> _castleSiegeDate = new();
-	
-	private static readonly int[] _castleCirclets =
-	[
-		0,
-		6838,
-		6835,
-		6839,
-		6837,
-		6840,
-		6834,
-		6836,
-		8182,
-		8183
-	];
-	
-	public Castle findNearestCastle(WorldObject obj)
+
+    private static readonly int[] _castleCirclets = [0, 6838, 6835, 6839, 6837, 6840, 6834, 6836, 8182, 8183];
+
+	public Castle? findNearestCastle(WorldObject obj, long maxDistanceValue = long.MaxValue)
 	{
-		return findNearestCastle(obj, long.MaxValue);
-	}
-	
-	public Castle findNearestCastle(WorldObject obj, long maxDistanceValue)
-	{
-		Castle nearestCastle = getCastle(obj);
+		Castle? nearestCastle = getCastle(obj);
 		if (nearestCastle == null)
 		{
 			long maxDistance = maxDistanceValue;
@@ -57,13 +40,13 @@ public class CastleManager
 		}
 		return nearestCastle;
 	}
-	
-	public Castle getCastleById(int castleId)
+
+	public Castle? getCastleById(int castleId)
 	{
 		return _castles.get(castleId);
 	}
-	
-	public Castle getCastleByOwner(Clan clan)
+
+	public Castle? getCastleByOwner(Clan clan)
 	{
 		if (clan == null)
 		{
@@ -78,8 +61,8 @@ public class CastleManager
 		}
 		return null;
 	}
-	
-	public Castle getCastle(string name)
+
+	public Castle? getCastle(string name)
 	{
 		foreach (Castle temp in _castles.Values)
 		{
@@ -90,8 +73,8 @@ public class CastleManager
 		}
 		return null;
 	}
-	
-	public Castle getCastle(Location3D location)
+
+	public Castle? getCastle(Location3D location)
 	{
 		foreach (Castle temp in _castles.Values)
 		{
@@ -102,17 +85,17 @@ public class CastleManager
 		}
 		return null;
 	}
-	
-	public Castle getCastle(WorldObject activeObject)
+
+	public Castle? getCastle(WorldObject activeObject)
 	{
 		return getCastle(activeObject.Location.Location3D);
 	}
-	
+
 	public ICollection<Castle> getCastles()
 	{
 		return _castles.Values;
 	}
-	
+
 	public bool hasOwnedCastle()
 	{
 		bool hasOwnedCastle = false;
@@ -126,7 +109,7 @@ public class CastleManager
 		}
 		return hasOwnedCastle;
 	}
-	
+
 	public int getCircletByCastleId(int castleId)
 	{
 		if ((castleId > 0) && (castleId < 10))
@@ -135,7 +118,7 @@ public class CastleManager
 		}
 		return 0;
 	}
-	
+
 	// remove this castle's circlets from the clan
 	public void removeCirclet(Clan clan, int castleId)
 	{
@@ -144,7 +127,7 @@ public class CastleManager
 			removeCirclet(member, castleId);
 		}
 	}
-	
+
 	public void removeCirclet(ClanMember member, int castleId)
 	{
 		if (member == null)
@@ -160,7 +143,7 @@ public class CastleManager
 			{
 				try
 				{
-					Item circlet = player.getInventory().getItemByItemId(circletId);
+					Item? circlet = player.getInventory().getItemByItemId(circletId);
 					if (circlet != null)
 					{
 						if (circlet.isEquipped())
@@ -171,16 +154,17 @@ public class CastleManager
 					}
 					return;
 				}
-				catch (NullReferenceException e)
+				catch (NullReferenceException exception)
 				{
+                    LOGGER.Trace(exception);
 					// continue removing offline
 				}
 			}
 			// else offline-player circlet removal
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-				int ownerId = member.getObjectId(); 
+				int ownerId = member.getObjectId();
 				ctx.Items.Where(item => item.OwnerId == ownerId && item.ItemId == circletId).ExecuteDelete();
 			}
 			catch (Exception e)
@@ -189,10 +173,10 @@ public class CastleManager
 			}
 		}
 	}
-	
+
 	public void loadInstances()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (var castle in ctx.Castles.Select(c => new { c.Id, c.Name }).OrderBy(c => c.Id))
@@ -232,7 +216,7 @@ public class CastleManager
 				foreach (var castle in ctx.Castles.Select(c => new { c.Id, c.Name }).OrderBy(c => c.Id))
 					_castles.put(castle.Id, new Castle(castle.Id, castle.Name));
 			}
-			
+
 			LOGGER.Info(GetType().Name +": Loaded " + _castles.Values.Count + " castles.");
 		}
 		catch (Exception e)
@@ -240,7 +224,7 @@ public class CastleManager
 			LOGGER.Warn(GetType().Name + ": Exception: loadCastleData():" + e);
 		}
 	}
-	
+
 	public void activateInstances()
 	{
 		foreach (Castle castle in _castles.Values)
@@ -248,12 +232,12 @@ public class CastleManager
 			castle.activateInstance();
 		}
 	}
-	
+
 	public void registerSiegeDate(int castleId, DateTime siegeDate)
 	{
 		_castleSiegeDate.put(castleId, siegeDate);
 	}
-	
+
 	public int getSiegeDates(DateTime siegeDate)
 	{
 		int count = 0;
@@ -266,12 +250,12 @@ public class CastleManager
 		}
 		return count;
 	}
-	
+
 	public static CastleManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly CastleManager INSTANCE = new();

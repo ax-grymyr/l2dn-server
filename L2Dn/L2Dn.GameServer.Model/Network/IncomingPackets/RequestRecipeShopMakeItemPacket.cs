@@ -31,26 +31,26 @@ public struct RequestRecipeShopMakeItemPacket: IIncomingPacket<GameSession>
         // {
         //     return;
         // }
-		
-        Player manufacturer = World.getInstance().getPlayer(_id);
+
+        Player? manufacturer = World.getInstance().getPlayer(_id);
         if (manufacturer == null)
             return ValueTask.CompletedTask;
-		
+
         if (manufacturer.getInstanceWorld() != player.getInstanceWorld())
             return ValueTask.CompletedTask;
-		
+
         if (player.getPrivateStoreType() != PrivateStoreType.NONE)
         {
             player.sendMessage("You cannot create items while trading.");
             return ValueTask.CompletedTask;
         }
-        
+
         if (manufacturer.getPrivateStoreType() != PrivateStoreType.MANUFACTURE)
         {
             // player.sendMessage("You cannot create items while trading.");
             return ValueTask.CompletedTask;
         }
-		
+
         if (player.isCrafting() || manufacturer.isCrafting())
         {
             player.sendMessage("You are currently in Craft Mode.");

@@ -30,14 +30,14 @@ public struct RequestHuntPassRewardAllPacket: IIncomingPacket<GameSession>
 
 		if (player.hasRequest<RewardRequest>())
 			return ValueTask.CompletedTask;
-		
+
 		player.addRequest(new RewardRequest(player));
-		
+
 		int rewardIndex;
 		int premiumRewardIndex;
 		bool inventoryLimitReached = false;
 		HuntPass huntPass = player.getHuntPass();
-		
+
 		while (true)
 		{
 			rewardIndex = huntPass.getRewardStep();
@@ -46,15 +46,15 @@ public struct RequestHuntPassRewardAllPacket: IIncomingPacket<GameSession>
 			{
 				break;
 			}
-			
-			ItemHolder reward = null;
+
+			ItemHolder? reward = null;
 			if (!huntPass.isPremium())
 			{
 				if (rewardIndex >= huntPass.getCurrentStep())
 				{
 					break;
 				}
-				
+
 				reward = HuntPassData.getInstance().getRewards()[rewardIndex];
 			}
 			else
@@ -63,7 +63,7 @@ public struct RequestHuntPassRewardAllPacket: IIncomingPacket<GameSession>
 				{
 					break;
 				}
-				
+
 				if (rewardIndex < HuntPassData.getInstance().getRewardsCount())
 				{
 					reward = HuntPassData.getInstance().getRewards()[rewardIndex];
@@ -73,13 +73,13 @@ public struct RequestHuntPassRewardAllPacket: IIncomingPacket<GameSession>
 					reward = HuntPassData.getInstance().getPremiumRewards()[premiumRewardIndex];
 				}
 			}
-			
+
 			if (reward == null)
 			{
 				break;
 			}
-			
-			ItemTemplate itemTemplate = ItemData.getInstance().getTemplate(reward.getId());
+
+			ItemTemplate? itemTemplate = ItemData.getInstance().getTemplate(reward.getId());
 			long weight = itemTemplate.getWeight() * reward.getCount();
 			long slots = itemTemplate.isStackable() ? 1 : reward.getCount();
 			if (!player.getInventory().validateWeight(weight) || !player.getInventory().validateCapacity(slots))
@@ -88,33 +88,33 @@ public struct RequestHuntPassRewardAllPacket: IIncomingPacket<GameSession>
 				inventoryLimitReached = true;
 				break;
 			}
-			
+
 			normalReward(player);
 			premiumReward(player);
 			huntPass.setRewardStep(rewardIndex + 1);
 		}
-		
+
 		if (!inventoryLimitReached)
 		{
 			huntPass.setRewardAlert(false);
 		}
-		
+
 		player.sendPacket(new HuntPassInfoPacket(player, _huntPassType));
 		player.sendPacket(new HuntPassSayhasSupportInfoPacket(player));
 		player.sendPacket(new HuntPassSimpleInfoPacket(player));
-		
+
 		ThreadPool.schedule(() => player.removeRequest<RewardRequest>(), 300);
-		
+
 		return ValueTask.CompletedTask;
 	}
-	
+
 	private static void rewardItem(Player player, ItemHolder reward)
 	{
 		if (reward.getId() == 72286) // Sayha's Grace Sustention Points
 		{
 			int count = (int) reward.getCount();
 			player.getHuntPass().addSayhaTime(count);
-			
+
 			SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_VE_GOT_S1_SAYHA_S_GRACE_SUSTENTION_POINT_S);
 			msg.Params.addInt(count);
 			player.sendPacket(msg);

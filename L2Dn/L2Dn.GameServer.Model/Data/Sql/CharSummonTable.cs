@@ -24,22 +24,22 @@ public class CharSummonTable
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CharSummonTable));
 	private static readonly Map<int, int> _pets = new();
 	private static readonly Map<int, Set<int>> _servitors = new();
-	
+
 	public Map<int, int> getPets()
 	{
 		return _pets;
 	}
-	
+
 	public Map<int, Set<int>> getServitors()
 	{
 		return _servitors;
 	}
-	
+
 	public void init()
 	{
 		if (Config.RESTORE_SERVITOR_ON_RECONNECT)
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				var summons = ctx.CharacterSummons.Select(cs => new { cs.OwnerId, cs.SummonId });
@@ -53,10 +53,10 @@ public class CharSummonTable
 				LOGGER.Warn(GetType().Name + ": Error while loading saved servitor: " + e);
 			}
 		}
-		
+
 		if (Config.RESTORE_PET_ON_RECONNECT)
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				var pets = ctx.Pets.Where(p => p.Restore).Select(p => new { p.OwnerId, p.ItemObjectId });
@@ -71,7 +71,7 @@ public class CharSummonTable
 			}
 		}
 	}
-	
+
 	public void removeServitor(Player player, int summonObjectId)
 	{
 		_servitors.computeIfPresent(player.ObjectId, (k, v) =>
@@ -92,7 +92,7 @@ public class CharSummonTable
 			LOGGER.Warn(GetType().Name + ": Summon cannot be removed: " + e);
 		}
 	}
-	
+
 	public void restorePet(Player player)
 	{
 		Item item = player.getInventory().getItemByObjectId(_pets.get(player.ObjectId));
@@ -101,7 +101,7 @@ public class CharSummonTable
 			LOGGER.Warn(GetType().Name + ": Null pet summoning item for: " + player);
 			return;
 		}
-		
+
 		PetEvolveHolder evolveData = player.getPetEvolve(item.ObjectId);
 		PetData petData = evolveData.getEvolve() == EvolveLevel.None ? PetDataTable.getInstance().getPetDataByEvolve(item.getId(), evolveData.getEvolve()) : PetDataTable.getInstance().getPetDataByEvolve(item.getId(), evolveData.getEvolve(), evolveData.getIndex());
 		if (petData == null)
@@ -109,24 +109,24 @@ public class CharSummonTable
 			LOGGER.Warn(GetType().Name + ": Null pet data for: " + player + " and summoning item: " + item);
 			return;
 		}
-		NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(petData.getNpcId());
+		NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(petData.getNpcId());
 		if (npcTemplate == null)
 		{
 			LOGGER.Warn(GetType().Name + ": Null pet NPC template for: " + player + " and pet Id:" + petData.getNpcId());
 			return;
 		}
-		
+
 		Pet pet = Pet.spawnPet(npcTemplate, player, item);
 		if (pet == null)
 		{
 			LOGGER.Warn(GetType().Name + ": Null pet instance for: " + player + " and pet NPC template:" + npcTemplate);
 			return;
 		}
-		
+
 		player.setPet(pet);
 		pet.setShowSummonAnimation(true);
 		pet.setTitle(player.getName());
-		
+
 		if (!pet.isRespawned())
 		{
 			pet.setCurrentHp(pet.getMaxHp());
@@ -135,16 +135,16 @@ public class CharSummonTable
 			pet.setCurrentFed(pet.getMaxFed());
 			pet.storeMe();
 		}
-		
+
 		pet.setRunning();
 		item.setEnchantLevel(pet.getLevel());
 		pet.spawnMe(new Location3D(player.getX() + 50, player.getY() + 100, player.getZ()));
 		pet.startFeed();
 	}
-	
+
 	public void restoreServitor(Player player)
 	{
-		try 
+		try
 		{
 			int ownerId = player.ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -169,7 +169,7 @@ public class CharSummonTable
 
 				if (player.hasServitors())
 				{
-					Servitor servitor = null;
+					Servitor? servitor = null;
 					foreach (Summon summon in player.getServitors().Values)
 					{
 						if (summon is Servitor)
@@ -197,33 +197,33 @@ public class CharSummonTable
 			LOGGER.Warn(GetType().Name + ": Servitor cannot be restored: " + e);
 		}
 	}
-	
+
 	public void saveSummon(Servitor summon)
 	{
 		if (summon == null)
 		{
 			return;
 		}
-		
+
 		_servitors.computeIfAbsent(summon.getOwner().ObjectId, k => new()).add(summon.ObjectId);
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			TimeSpan? remainingTime = summon.getLifeTimeRemaining();
 			if (remainingTime < TimeSpan.Zero)
 				remainingTime = TimeSpan.Zero;
-				
+
 			var dbSummon = new CharacterSummon
 			{
 				OwnerId = summon.getOwner().ObjectId,
 				SummonId = summon.ObjectId,
 				SummonSkillId = summon.getReferenceSkill(),
 				CurrentHp = (int) summon.getCurrentHp(),
-				CurrentMp =(int) summon.getCurrentMp(), 
+				CurrentMp =(int) summon.getCurrentMp(),
 				Time = remainingTime
 			};
-			
+
 			ctx.CharacterSummons.Add(dbSummon);
 			ctx.SaveChanges();
 		}
@@ -232,14 +232,14 @@ public class CharSummonTable
 			LOGGER.Warn(GetType().Name + ": Failed to store summon: " + summon + " from " + summon.getOwner() + ", error: " + e);
 		}
 	}
-	
+
 	public static CharSummonTable getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
-		public static readonly CharSummonTable INSTANCE = new CharSummonTable();
+		public static readonly CharSummonTable INSTANCE = new();
 	}
 }

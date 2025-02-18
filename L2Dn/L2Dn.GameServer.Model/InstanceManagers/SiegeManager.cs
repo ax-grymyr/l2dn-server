@@ -205,12 +205,12 @@ public class SiegeManager
 		return _flagMaxCount;
 	}
 
-	public Siege getSiege(WorldObject activeObject)
+	public Siege? getSiege(WorldObject activeObject)
 	{
 		return getSiege(activeObject.Location.Location3D);
 	}
 
-	public Siege getSiege(Location3D location)
+	public Siege? getSiege(Location3D location)
 	{
 		foreach (Castle castle in CastleManager.getInstance().getCastles())
 		{

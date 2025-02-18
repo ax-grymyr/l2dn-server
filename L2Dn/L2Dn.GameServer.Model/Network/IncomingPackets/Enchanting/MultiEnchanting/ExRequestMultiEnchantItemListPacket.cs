@@ -40,14 +40,14 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
 		player.getChallengeInfo().setChallengePointsPendingRecharge(-1, -1);
-		
+
 		EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
 		if (request == null)
 			return ValueTask.CompletedTask;
-		
+
 		if ((request.getEnchantingScroll() == null) || request.isProcessing())
 			return ValueTask.CompletedTask;
-		
+
 		Item scroll = request.getEnchantingScroll();
 		if (scroll.getCount() < _slotId)
 		{
@@ -56,14 +56,14 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 			player.sendPacket(new ExResultSetMultiEnchantItemListPacket(player, 1));
 			PacketLogger.Instance.Warn("MultiEnchant - player " + player.ObjectId + " " + player.getName() +
 			                           " trying enchant items, when scroll count is less than items!");
-			
+
 			return ValueTask.CompletedTask;
 		}
-		
+
 		EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
 		if (scrollTemplate == null)
 			return ValueTask.CompletedTask;
-		
+
 		int[] slots = new int[_slotId];
 		for (int i = 1; i <= _slotId; i++)
 		{
@@ -72,10 +72,10 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 				player.removeRequest<EnchantItemRequest>();
 				return ValueTask.CompletedTask;
 			}
-			
+
 			slots[i - 1] = getMultiEnchantingSlotByObjectId(request, _itemObjectId[i]);
 		}
-		
+
 		request.setProcessing(true);
 
 		Map<int, string> result = new();
@@ -83,7 +83,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 		Map<int, int> failureEnchant = new();
 		Map<int, int> failChallengePointInfoList = new();
 		Map<int, ItemHolder> failureReward = new();
-		
+
 		for (int slotCounter = 0; slotCounter < slots.Length; slotCounter++)
 		{
 			int i = slots[slotCounter];
@@ -93,30 +93,30 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 				player.removeRequest<EnchantItemRequest>();
 				return ValueTask.CompletedTask;
 			}
-			
-			Item enchantItem = player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(i));
+
+			Item? enchantItem = player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(i));
 			if (enchantItem == null)
 			{
 				player.removeRequest<EnchantItemRequest>();
 				return ValueTask.CompletedTask;
 			}
-			
+
 			if (scrollTemplate.getMaxEnchantLevel() < enchantItem.getEnchantLevel())
 			{
 				PacketLogger.Instance.Warn("MultiEnchant - player " + player.ObjectId + " " + player.getName() +
 				                           " trying over-enchant item " + enchantItem.getItemName() + " " +
 				                           enchantItem.ObjectId);
-				
+
 				player.removeRequest<EnchantItemRequest>();
 				return ValueTask.CompletedTask;
 			}
-			
+
 			if (player.getInventory().destroyItemByItemId("Enchant", scroll.getId(), 1, player, enchantItem) == null)
 			{
 				player.removeRequest<EnchantItemRequest>();
 				return ValueTask.CompletedTask;
 			}
-			
+
 			lock (enchantItem)
 			{
 				if ((enchantItem.getOwnerId() != player.ObjectId) || !enchantItem.isEnchantable())
@@ -126,7 +126,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 					player.sendPacket(new ExResultMultiEnchantItemListPacket(player, true));
 					return ValueTask.CompletedTask;
 				}
-				
+
 				EnchantResultType resultType = scrollTemplate.calculateSuccess(player, enchantItem, null);
 				switch (resultType)
 				{
@@ -153,10 +153,10 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								                            Rnd.get(scrollTemplate.getRandomEnchantMin(),
 									                            scrollTemplate.getRandomEnchantMax()),
 								                            scrollTemplate.getMaxEnchantLevel()));
-							
+
 							enchantItem.updateDatabase();
 						}
-						
+
 						result.put(i, "SUCCESS");
 						if (Config.LOG_ITEM_ENCHANTS)
 						{
@@ -231,7 +231,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								player.sendPacket(SystemMessageId.THE_BLESSED_ENCHANT_FAILED_THE_ENCHANT_VALUE_OF_THE_ITEM_BECAME_0);
 								enchantItem.setEnchantLevel(0);
 							}
-							
+
 							result.put(i, "BLESSED_FAIL");
 							enchantItem.updateDatabase();
 							if (Config.LOG_ITEM_ENCHANTS)
@@ -267,7 +267,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 							{
 								failChallengePointInfoList.compute(challengePoints[0], (k, v) => v == null ? challengePoints[1] : v + challengePoints[1]);
 							}
-							
+
 							if (player.getInventory().destroyItem("Enchant", enchantItem, player, null) == null)
 							{
 								// Unable to destroy item, cheater?
@@ -304,16 +304,16 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 
 								return ValueTask.CompletedTask;
 							}
-							
+
 							World.getInstance().removeObject(enchantItem);
-							
+
 							int count = 0;
 							if (enchantItem.getTemplate().isCrystallizable())
 							{
 								count = Math.Max(0, enchantItem.getCrystalCount() - ((enchantItem.getTemplate().getCrystalCount() + 1) / 2));
 							}
-							
-							Item crystals = null;
+
+							Item? crystals = null;
 							int crystalId = enchantItem.getTemplate().getCrystalItemId();
 							if (count > 0)
 							{
@@ -323,15 +323,15 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								sm.Params.addLong(count);
 								player.sendPacket(sm);
 								ItemHolder itemHolder = new ItemHolder(crystalId, count);
-								
+
 								failureReward.put(failureReward.Count + 1, itemHolder);
 							}
-							
+
 							// if (crystals != null)
 							// {
 							// 	iu.addItem(crystals); // TODO: packet not sent
 							// }
-							
+
 							if ((crystalId == 0) || (count == 0))
 							{
 								ItemHolder itemHolder = new ItemHolder(0, 0);
@@ -344,7 +344,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								failureReward.put(failureReward.Count + 1, itemHolder);
 								result.put(i, "FAIL");
 							}
-							
+
 							ItemChanceHolder destroyReward = ItemCrystallizationData.getInstance().getItemOnDestroy(player, enchantItem);
 							if ((destroyReward != null) && (Rnd.get(100) < destroyReward.getChance()))
 							{
@@ -352,7 +352,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								player.addItem("Enchant", destroyReward.getId(), destroyReward.getCount(), null, true);
 								player.sendPacket(new EnchantResultPacket(EnchantResultPacket.FAIL, destroyReward, null, 0));
 							}
-							
+
 							if (Config.LOG_ITEM_ENCHANTS)
 							{
 								StringBuilder sb = new StringBuilder();
@@ -384,7 +384,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 				}
 			}
 		}
-		
+
 		for (int slotCounter = 0; slotCounter < slots.Length; slotCounter++)
 		{
 			int i = slots[slotCounter];
@@ -404,36 +404,36 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 			{
 				player.sendPacket(new ExResultMultiEnchantItemListPacket(player, successEnchant, failureEnchant,
 					failChallengePointInfoList, true));
-				
+
 				player.sendPacket(new ShortCutInitPacket(player));
 				return ValueTask.CompletedTask;
 			}
 		}
-		
+
 		foreach (ItemHolder failure in failureReward.Values)
 		{
 			request.addMultiEnchantFailItems(failure);
 		}
-		
+
 		request.setProcessing(false);
-		
+
 		player.sendItemList();
 		player.broadcastUserInfo();
 		player.sendPacket(new ChangedEnchantTargetItemProbabilityListPacket(player, true));
-		
+
 		if (_useLateAnnounce == 1)
 		{
 			request.setMultiSuccessEnchantList(successEnchant);
 			request.setMultiFailureEnchantList(failureEnchant);
 		}
-		
+
 		player.sendPacket(new ExResultMultiEnchantItemListPacket(player, successEnchant, failureEnchant, failChallengePointInfoList, true));
 		player.sendPacket(new ShortCutInitPacket(player));
 		player.sendPacket(new ExEnchantChallengePointInfoPacket(player));
-		
+
 		return ValueTask.CompletedTask;
 	}
-	
+
 	private static int getMultiEnchantingSlotByObjectId(EnchantItemRequest request, int objectId)
 	{
 		int slotId = -1;
@@ -443,7 +443,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 			{
 				return slotId;
 			}
-			
+
 			if (request.getMultiEnchantingItemsBySlot(i) == objectId)
 			{
 				return i;

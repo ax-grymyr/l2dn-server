@@ -31,7 +31,7 @@ public struct ExRequestItemAutoPeelPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         AutoPeelRequest request = player.getRequest<AutoPeelRequest>();
-        Item item;
+        Item? item;
         if (request == null)
         {
             item = player.getInventory().getItemByObjectId(_itemObjectId);
@@ -48,23 +48,23 @@ public struct ExRequestItemAutoPeelPacket: IIncomingPacket<GameSession>
         {
             return ValueTask.CompletedTask;
         }
-        
+
         request.setProcessing(true);
-		
+
         item = request.getItem();
         if (item.ObjectId != _itemObjectId || item.getOwnerId() != player.ObjectId)
         {
             player.removeRequest<AutoPeelRequest>();
             return ValueTask.CompletedTask;
         }
-		
+
         request.setTotalPeelCount(_totalPeelCount);
         request.setRemainingPeelCount(_remainingPeelCount);
-		
+
         EtcItem etcItem = (EtcItem) item.getTemplate();
         if (etcItem.getExtractableItems() != null && etcItem.getExtractableItems().Count != 0)
         {
-            IItemHandler handler = ItemHandler.getInstance().getHandler(item.getEtcItem());
+            IItemHandler? handler = ItemHandler.getInstance().getHandler(item.getEtcItem());
             if (handler != null && !handler.useItem(player, item, false))
             {
                 request.setProcessing(false);
@@ -72,7 +72,7 @@ public struct ExRequestItemAutoPeelPacket: IIncomingPacket<GameSession>
                     new List<ItemHolder>()));
             }
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

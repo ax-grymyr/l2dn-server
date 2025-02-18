@@ -16,7 +16,7 @@ public struct ExRequestRandomCraftLockSlotPacket: IIncomingPacket<GameSession>
         500,
         1000
     };
-	
+
     private int _id;
 
     public void ReadContent(PacketBitReader reader)
@@ -32,7 +32,7 @@ public struct ExRequestRandomCraftLockSlotPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         if (_id >= 0 && _id < 5)
         {
             PlayerRandomCraft rc = player.getRandomCraft();
@@ -40,7 +40,7 @@ public struct ExRequestRandomCraftLockSlotPacket: IIncomingPacket<GameSession>
             if (rc.getRewards().Count - 1 >= _id && lockedItemCount < 3)
             {
                 int price = LOCK_PRICE[Math.Min(lockedItemCount, 2)];
-                Item lcoin = player.getInventory().getItemByItemId(Inventory.LCOIN_ID);
+                Item? lcoin = player.getInventory().getItemByItemId(Inventory.LCOIN_ID);
                 if (lcoin != null && lcoin.getCount() >= price)
                 {
                     player.destroyItem("RandomCraft Lock Slot", lcoin, price, player, true);
@@ -50,7 +50,7 @@ public struct ExRequestRandomCraftLockSlotPacket: IIncomingPacket<GameSession>
                 }
             }
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

@@ -27,18 +27,18 @@ public struct RequestJoinSiegePacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         if (!player.hasClanPrivilege(ClanPrivilege.CS_MANAGE_SIEGE))
         {
             player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
             return ValueTask.CompletedTask;
         }
-		
-        Clan clan = player.getClan();
+
+        Clan? clan = player.getClan();
         if (clan == null)
             return ValueTask.CompletedTask;
-		
-        Castle castle = CastleManager.getInstance().getCastleById(_castleId);
+
+        Castle? castle = CastleManager.getInstance().getCastleById(_castleId);
         if (castle is null)
             return ValueTask.CompletedTask;
 
@@ -73,10 +73,10 @@ public struct RequestJoinSiegePacket: IIncomingPacket<GameSession>
                 player.sendPacket(new MercenaryCastleWarCastleSiegeDefenderListPacket(castle.getResidenceId()));
             }
         }
-		
+
         // Managed by new packets.
         // castle.getSiege().listRegisterClan(player);
-        
+
         return ValueTask.CompletedTask;
     }
 }

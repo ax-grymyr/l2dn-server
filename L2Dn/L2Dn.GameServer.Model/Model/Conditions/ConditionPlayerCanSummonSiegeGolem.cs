@@ -12,52 +12,43 @@ namespace L2Dn.GameServer.Model.Conditions;
  * Player Can Summon Siege Golem implementation.
  * @author Adry_85
  */
-public class ConditionPlayerCanSummonSiegeGolem: Condition
+public sealed class ConditionPlayerCanSummonSiegeGolem(bool value): Condition
 {
-	private readonly bool _value;
-	
-	public ConditionPlayerCanSummonSiegeGolem(bool value)
-	{
-		_value = value;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? player = effector.getActingPlayer();
+        if (effector is null || !effector.isPlayer() || player is null)
+        {
+            return !value;
+        }
 
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		if ((effector == null) || !effector.isPlayer())
-		{
-			return !_value;
-		}
+        Clan? playerClan = player.getClan();
+        bool canSummonSiegeGolem = !(player.isAlikeDead() || player.isCursedWeaponEquipped() || playerClan == null);
 
-		Player player = effector.getActingPlayer();
-		Clan? playerClan = player.getClan();
-		bool canSummonSiegeGolem = !(player.isAlikeDead() || player.isCursedWeaponEquipped() || playerClan == null);
+        Castle? castle = CastleManager.getInstance().getCastle(player);
+        Fort? fort = FortManager.getInstance().getFort(player);
+        if (castle == null && fort == null)
+            canSummonSiegeGolem = false;
 
-		Castle castle = CastleManager.getInstance().getCastle(player);
-		Fort fort = FortManager.getInstance().getFort(player);
-		if ((castle == null) && (fort == null))
-		{
-			canSummonSiegeGolem = false;
-		}
+        if ((fort != null && fort.getResidenceId() == 0) || (castle != null && castle.getResidenceId() == 0))
+        {
+            player.sendPacket(SystemMessageId.INVALID_TARGET);
+            canSummonSiegeGolem = false;
+        }
+        else if ((castle != null && !castle.getSiege().isInProgress()) ||
+                 (fort != null && !fort.getSiege().isInProgress()))
+        {
+            player.sendPacket(SystemMessageId.INVALID_TARGET);
+            canSummonSiegeGolem = false;
+        }
+        else if (playerClan != null &&
+                 ((castle != null && castle.getSiege().getAttackerClan(playerClan.getId()) == null) ||
+                     (fort != null && fort.getSiege().getAttackerClan(playerClan.getId()) == null)))
+        {
+            player.sendPacket(SystemMessageId.INVALID_TARGET);
+            canSummonSiegeGolem = false;
+        }
 
-		if (((fort != null) && (fort.getResidenceId() == 0)) || ((castle != null) && (castle.getResidenceId() == 0)))
-		{
-			player.sendPacket(SystemMessageId.INVALID_TARGET);
-			canSummonSiegeGolem = false;
-		}
-		else if (((castle != null) && !castle.getSiege().isInProgress()) ||
-		         ((fort != null) && !fort.getSiege().isInProgress()))
-		{
-			player.sendPacket(SystemMessageId.INVALID_TARGET);
-			canSummonSiegeGolem = false;
-		}
-		else if (playerClan != null &&
-		         (((castle != null) && (castle.getSiege().getAttackerClan(playerClan.getId()) == null)) ||
-		          ((fort != null) && (fort.getSiege().getAttackerClan(playerClan.getId()) == null))))
-		{
-			player.sendPacket(SystemMessageId.INVALID_TARGET);
-			canSummonSiegeGolem = false;
-		}
-
-		return (_value == canSummonSiegeGolem);
-	}
+        return value == canSummonSiegeGolem;
+    }
 }

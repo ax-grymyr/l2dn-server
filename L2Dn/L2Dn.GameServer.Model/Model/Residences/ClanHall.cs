@@ -25,7 +25,7 @@ namespace L2Dn.GameServer.Model.Residences;
 public class ClanHall: AbstractResidence
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClanHall));
-	
+
 	// Static parameters
 	private readonly ClanHallType _type;
 	private readonly long _minBid;
@@ -53,17 +53,17 @@ public class ClanHall: AbstractResidence
 		_deposit = deposit;
 		_ownerLocation = ownerLocation;
 		_banishLocation = banishLocation;
-		
+
 		load();
-		
+
 		// Init Clan Hall zone and Functions
 		initResidenceZone();
 		initFunctions();
 	}
-	
+
 	protected override void load()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int residenceId = getResidenceId();
@@ -90,10 +90,10 @@ public class ClanHall: AbstractResidence
 			LOGGER.Error("Failed loading clan hall: " + e);
 		}
 	}
-	
+
 	public void updateDB()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int residenceId = getResidenceId();
@@ -105,7 +105,7 @@ public class ClanHall: AbstractResidence
 			LOGGER.Error(e);
 		}
 	}
-	
+
 	protected override void initResidenceZone()
 	{
 		foreach (ClanHallZone zone in ZoneManager.getInstance().getAllZones<ClanHallZone>())
@@ -117,13 +117,13 @@ public class ClanHall: AbstractResidence
 			}
 		}
 	}
-	
+
 	public int getCostFailDay()
 	{
 		TimeSpan failDay = _paidUntil - DateTime.UtcNow;
 		return failDay < TimeSpan.Zero ? 0 : (int)failDay.TotalDays;
 	}
-	
+
 	/**
 	 * Teleport all non-owner players from {@link ClanHallZone} to {@link ClanHall#getBanishLocation()}.
 	 */
@@ -131,7 +131,7 @@ public class ClanHall: AbstractResidence
 	{
 		getResidenceZone().banishForeigners(getOwnerId());
 	}
-	
+
 	/**
 	 * Open or close all {@link Door} related to this {@link ClanHall}.
 	 * @param open {@code true} means open door, {@code false} means close door
@@ -140,7 +140,7 @@ public class ClanHall: AbstractResidence
 	{
 		_doors.ForEach(door => door.openCloseMe(open));
 	}
-	
+
 	/**
 	 * Gets all {@link Door} related to this {@link ClanHall}.
 	 * @return all {@link Door} related to this {@link ClanHall}
@@ -149,7 +149,7 @@ public class ClanHall: AbstractResidence
 	{
 		return _doors;
 	}
-	
+
 	/**
 	 * Gets all {@link Npc} related to this {@link ClanHall}.
 	 * @return all {@link Npc} related to this {@link ClanHall}
@@ -158,7 +158,7 @@ public class ClanHall: AbstractResidence
 	{
 		return _npcs;
 	}
-	
+
 	/**
 	 * Gets the {@link ClanHallType} of this {@link ClanHall}.
 	 * @return {@link ClanHallType} of this {@link ClanHall} in {@link ClanHallGrade} enum.
@@ -167,7 +167,7 @@ public class ClanHall: AbstractResidence
 	{
 		return _type;
 	}
-	
+
 	/**
 	 * Gets the {@link Clan} which own this {@link ClanHall}.
 	 * @return {@link Clan} which own this {@link ClanHall}
@@ -176,7 +176,7 @@ public class ClanHall: AbstractResidence
 	{
 		return _owner;
 	}
-	
+
 	/**
 	 * Gets the {@link Clan} ID which own this {@link ClanHall}.
 	 * @return the {@link Clan} ID which own this {@link ClanHall}
@@ -186,7 +186,7 @@ public class ClanHall: AbstractResidence
 		Clan owner = _owner;
 		return (owner != null) ? owner.getId() : 0;
 	}
-	
+
 	/**
 	 * Set the owner of clan hall
 	 * @param clanId the Id of the clan
@@ -195,12 +195,12 @@ public class ClanHall: AbstractResidence
 	{
 		setOwner(ClanTable.getInstance().getClan(clanId));
 	}
-	
+
 	/**
 	 * Set the clan as owner of clan hall
 	 * @param clan the Clan object
 	 */
-	public void setOwner(Clan clan)
+	public void setOwner(Clan? clan)
 	{
 		if (clan != null)
 		{
@@ -211,10 +211,10 @@ public class ClanHall: AbstractResidence
 			{
 				setPaidUntil(DateTime.UtcNow.AddDays(7));
 			}
-			
+
 			int failDays = getCostFailDay();
 			DateTime time = failDays > 0 ? (failDays > 8 ? DateTime.UtcNow : _paidUntil.AddDays(failDays + 1)) : _paidUntil;
-			
+
 			_checkPaymentTask = ThreadPool.schedule(new CheckPaymentTask(this), Algorithms.Max(TimeSpan.Zero, time - DateTime.UtcNow));
 		}
 		else
@@ -235,7 +235,7 @@ public class ClanHall: AbstractResidence
 		}
 		updateDB();
 	}
-	
+
 	/**
 	 * Gets the due date of clan hall payment
 	 * @return the due date of clan hall payment
@@ -244,7 +244,7 @@ public class ClanHall: AbstractResidence
 	{
 		return _paidUntil;
 	}
-	
+
 	/**
 	 * Set the due date of clan hall payment
 	 * @param paidUntil the due date of clan hall payment
@@ -253,7 +253,7 @@ public class ClanHall: AbstractResidence
 	{
 		_paidUntil = paidUntil;
 	}
-	
+
 	/**
 	 * Gets the next date of clan hall payment
 	 * @return the next date of clan hall payment
@@ -262,22 +262,22 @@ public class ClanHall: AbstractResidence
 	{
 		return (_checkPaymentTask != null) ? DateTime.UtcNow + _checkPaymentTask.getDelay() : DateTime.MinValue;
 	}
-	
+
 	public Location3D getOwnerLocation()
 	{
 		return _ownerLocation;
 	}
-	
+
 	public Location3D getBanishLocation()
 	{
 		return _banishLocation;
 	}
-	
+
 	public Set<ClanHallTeleportHolder> getTeleportList()
 	{
 		return _teleports;
 	}
-	
+
 	public List<ClanHallTeleportHolder> getTeleportList(int functionLevel)
 	{
 		List<ClanHallTeleportHolder> result = new();
@@ -290,22 +290,22 @@ public class ClanHall: AbstractResidence
 		}
 		return result;
 	}
-	
+
 	public long getMinBid()
 	{
 		return _minBid;
 	}
-	
+
 	public long getLease()
 	{
 		return _lease;
 	}
-	
+
 	public long getDeposit()
 	{
 		return _deposit;
 	}
-	
+
 	private class CheckPaymentTask: Runnable
 	{
 		private readonly ClanHall _clanHall;
@@ -314,7 +314,7 @@ public class ClanHall: AbstractResidence
 		{
 			_clanHall = clanHall;
 		}
-		
+
 		public void run()
 		{
 			if (_clanHall._owner != null)
@@ -344,7 +344,7 @@ public class ClanHall: AbstractResidence
 			}
 		}
 	}
-	
+
 	public override string ToString()
 	{
 		return GetType().Name + ":" + getName() + "[" + getResidenceId() + "]";

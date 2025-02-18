@@ -29,12 +29,12 @@ public class MapRegionManager: DataReaderBase
 
 	private static FrozenDictionary<string, MapRegion> _regions = FrozenDictionary<string, MapRegion>.Empty;
 	private const string DefaultRespawn = "talking_island_town";
-	
+
 	private MapRegionManager()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		Dictionary<string, MapRegion> regions = new Dictionary<string, MapRegion>();
@@ -71,10 +71,10 @@ public class MapRegionManager: DataReaderBase
 			});
 
 		_regions = regions.ToFrozenDictionary();
-		
+
 		_logger.Info(GetType().Name +": Loaded " + regions.Count + " map regions.");
 	}
-	
+
 	/**
 	 * @param locX
 	 * @param locY
@@ -89,10 +89,10 @@ public class MapRegionManager: DataReaderBase
 				return region;
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	/**
 	 * @param locX
 	 * @param locY
@@ -102,7 +102,7 @@ public class MapRegionManager: DataReaderBase
 	{
 		return getMapRegion(locX, locY)?.getLocId() ?? 0;
 	}
-	
+
 	/**
 	 * @param obj
 	 * @return
@@ -111,7 +111,7 @@ public class MapRegionManager: DataReaderBase
 	{
 		return getMapRegion(obj.getX(), obj.getY());
 	}
-	
+
 	/**
 	 * @param obj
 	 * @return
@@ -120,7 +120,7 @@ public class MapRegionManager: DataReaderBase
 	{
 		return getMapRegionLocId(obj.getX(), obj.getY());
 	}
-	
+
 	/**
 	 * @param posX
 	 * @return
@@ -129,7 +129,7 @@ public class MapRegionManager: DataReaderBase
 	{
 		return (posX >> 15) + 9 + 11; // + centerTileX;
 	}
-	
+
 	/**
 	 * @param posY
 	 * @return
@@ -138,7 +138,7 @@ public class MapRegionManager: DataReaderBase
 	{
 		return (posY >> 15) + 10 + 8; // + centerTileX;
 	}
-	
+
 	/**
 	 * Get town name by character position
 	 * @param creature
@@ -148,7 +148,7 @@ public class MapRegionManager: DataReaderBase
 	{
 		return getMapRegion(creature)?.getTown() ?? "Aden Castle Town";
 	}
-	
+
 	/**
 	 * @param creature
 	 * @param teleportWhere
@@ -171,7 +171,7 @@ public class MapRegionManager: DataReaderBase
 						return new Location(clanhall.getOwnerLocation(), 0);
 					}
 				}
-				
+
 				// If teleport to castle
 				if (teleportWhere == TeleportWhereType.CASTLE)
 				{
@@ -186,7 +186,7 @@ public class MapRegionManager: DataReaderBase
 							castle = null;
 						}
 					}
-					
+
 					if (castle != null && castle.getResidenceId() > 0)
 					{
 						if (player.getReputation() < 0)
@@ -197,7 +197,7 @@ public class MapRegionManager: DataReaderBase
 						return new Location(castle.getResidenceZone().getSpawnLoc(), player.getHeading());
 					}
 				}
-				
+
 				// If teleport to fortress
 				Fort? fort;
 				if (teleportWhere == TeleportWhereType.FORTRESS)
@@ -213,7 +213,7 @@ public class MapRegionManager: DataReaderBase
 							fort = null;
 						}
 					}
-					
+
 					if (fort != null && fort.getResidenceId() > 0)
 					{
 						if (player.getReputation() < 0)
@@ -223,7 +223,7 @@ public class MapRegionManager: DataReaderBase
 						return new Location(fort.getResidenceZone().getSpawnLoc(), player.getHeading());
 					}
 				}
-				
+
 				// If teleport to SiegeHQ
 				if (teleportWhere == TeleportWhereType.SIEGEFLAG)
 				{
@@ -257,7 +257,7 @@ public class MapRegionManager: DataReaderBase
 					}
 				}
 			}
-			
+
 			// Timed Hunting zones.
 			TimedHuntingZoneHolder timedHuntingZone = player.getTimedHuntingZone();
 			if (timedHuntingZone != null)
@@ -268,13 +268,13 @@ public class MapRegionManager: DataReaderBase
 					return new Location(exitLocation.Value, 0);
 				}
 			}
-			
+
 			// Karma player land out of city
 			if (player.getReputation() < 0)
 			{
 				return new Location(getNearestKarmaRespawn(player), 0);
 			}
-			
+
 			// Checking if needed to be respawned in "far" town from the castle;
 			// Check if player's clan is participating
 			castle = CastleManager.getInstance().getCastle(player);
@@ -282,7 +282,7 @@ public class MapRegionManager: DataReaderBase
 			{
 				return new Location(castle.getResidenceZone().getOtherSpawnLoc(), player.getHeading());
 			}
-			
+
 			// Checking if in an instance
 			Instance inst = player.getInstanceWorld();
 			if (inst != null)
@@ -294,7 +294,7 @@ public class MapRegionManager: DataReaderBase
 				}
 			}
 		}
-		
+
 		if (Config.FACTION_SYSTEM_ENABLED && Config.FACTION_RESPAWN_AT_BASE)
 		{
 			if (creature.getActingPlayer().isGood())
@@ -306,11 +306,11 @@ public class MapRegionManager: DataReaderBase
 				return Config.FACTION_EVIL_BASE_LOCATION;
 			}
 		}
-		
+
 		// Get the nearest town
 		return new Location(getNearestTownRespawn(creature), 0);
 	}
-	
+
 	public Location3D getNearestKarmaRespawn(Player player)
 	{
 		try
@@ -333,11 +333,11 @@ public class MapRegionManager: DataReaderBase
 			{
 				return _regions.GetValueOrDefault("union_base_of_kserth").getChaoticSpawnLoc();
 			}
-			
+
 			return _regions.GetValueOrDefault(DefaultRespawn).getChaoticSpawnLoc();
 		}
 	}
-	
+
 	public Location3D getNearestTownRespawn(Creature creature)
 	{
 		try
@@ -360,7 +360,7 @@ public class MapRegionManager: DataReaderBase
 			return _regions.GetValueOrDefault(DefaultRespawn).getSpawnLoc();
 		}
 	}
-	
+
 	/**
 	 * @param creature
 	 * @param point
@@ -376,6 +376,7 @@ public class MapRegionManager: DataReaderBase
 			{
 				getRestartRegion(player, value);
 			}
+
 			return region;
 		}
 		catch (Exception e)
@@ -383,7 +384,7 @@ public class MapRegionManager: DataReaderBase
 			return _regions.GetValueOrDefault(DefaultRespawn);
 		}
 	}
-	
+
 	/**
 	 * @param regionName the map region name.
 	 * @return if exists the map region identified by that name, null otherwise.
@@ -392,13 +393,13 @@ public class MapRegionManager: DataReaderBase
 	{
 		return _regions.GetValueOrDefault(regionName);
 	}
-	
+
 	public int getBBs(Location2D location)
 	{
 		return getMapRegion(location.X, location.Y)?.getBbs() ??
 		       _regions.GetValueOrDefault(DefaultRespawn)?.getBbs() ?? 0;
 	}
-	
+
 	/**
 	 * Gets the single instance of {@code MapRegionManager}.
 	 * @return single instance of {@code MapRegionManager}
@@ -407,7 +408,7 @@ public class MapRegionManager: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly MapRegionManager INSTANCE = new();

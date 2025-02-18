@@ -9,13 +9,13 @@ public class BinaryNodeHeap
 {
 	private readonly GeoNode[] _list;
 	private int _size;
-	
+
 	public BinaryNodeHeap(int size)
 	{
 		_list = new GeoNode[size + 1];
 		_size = 0;
 	}
-	
+
 	public void add(GeoNode n)
 	{
 		_size++;
@@ -37,7 +37,7 @@ public class BinaryNodeHeap
 			}
 		}
 	}
-	
+
 	public GeoNode removeFirst()
 	{
 		GeoNode first = _list[1];
@@ -70,7 +70,7 @@ public class BinaryNodeHeap
 					pos = dblcpos;
 				}
 			}
-			
+
 			if (cpos != pos)
 			{
 				temp = _list[cpos];
@@ -84,7 +84,7 @@ public class BinaryNodeHeap
 		}
 		return first;
 	}
-	
+
 	public bool contains(GeoNode n)
 	{
 		if (_size == 0)
@@ -100,7 +100,7 @@ public class BinaryNodeHeap
 		}
 		return false;
 	}
-	
+
 	public bool isEmpty()
 	{
 		return _size == 0;

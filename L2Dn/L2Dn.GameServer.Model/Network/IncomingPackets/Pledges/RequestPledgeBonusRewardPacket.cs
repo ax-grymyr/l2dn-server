@@ -20,17 +20,20 @@ public struct RequestPledgeBonusRewardPacket: IIncomingPacket<GameSession>
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
         Player? player = session.Player;
-        if (player == null || player.getClan() == null)
+        if (player == null)
             return ValueTask.CompletedTask;
 
         if (_type < ClanRewardType.MEMBERS_ONLINE || _type > ClanRewardType.HUNTING_MONSTERS)
             return ValueTask.CompletedTask;
-		
-        Clan clan = player.getClan();
+
+        Clan? clan = player.getClan();
+        if (clan == null)
+            return ValueTask.CompletedTask;
+
         ClanMember member = clan.getClanMember(player.ObjectId);
         if (clan.canClaimBonusReward(player, _type))
         {
-            ClanRewardBonus bonus = _type.getAvailableBonus(player.getClan());
+            ClanRewardBonus? bonus = _type.getAvailableBonus(clan);
             if (bonus != null)
             {
                 SkillHolder skillReward = bonus.getSkillReward();
@@ -38,7 +41,7 @@ public struct RequestPledgeBonusRewardPacket: IIncomingPacket<GameSession>
                 {
                     skillReward.getSkill().activateSkill(player, player);
                 }
-                
+
                 member.setRewardClaimed(_type);
             }
             else
@@ -47,7 +50,7 @@ public struct RequestPledgeBonusRewardPacket: IIncomingPacket<GameSession>
                                            ") doesn't have such!");
             }
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

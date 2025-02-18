@@ -31,7 +31,7 @@ public struct RequestDispelPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Skill skill = SkillData.getInstance().getSkill(_skillId, _skillLevel, _skillSubLevel);
+        Skill? skill = SkillData.getInstance().getSkill(_skillId, _skillLevel, _skillSubLevel);
         if (skill == null)
             return ValueTask.CompletedTask;
 
@@ -48,10 +48,10 @@ public struct RequestDispelPacket: IIncomingPacket<GameSession>
             player.stopSkillEffects(SkillFinishType.REMOVED, _skillId);
         else
         {
-            Summon pet = player.getPet();
+            Summon? pet = player.getPet();
             if (pet != null && pet.ObjectId == _objectId)
                 pet.stopSkillEffects(SkillFinishType.REMOVED, _skillId);
-			
+
             Summon servitor = player.getServitor(_objectId);
             if (servitor != null)
                 servitor.stopSkillEffects(SkillFinishType.REMOVED, _skillId);

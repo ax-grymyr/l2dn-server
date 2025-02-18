@@ -18,28 +18,28 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 
 public struct SetPrivateStoreListBuyPacket: IIncomingPacket<GameSession>
 {
-    private TradeItem[] _items;
+    private TradeItem[]? _items;
 
     public void ReadContent(PacketBitReader reader)
     {
 		int count = reader.ReadInt32();
 		if (count < 1 || count > Config.MAX_ITEM_IN_PACKET)
 			return;
-		
+
 		_items = new TradeItem[count];
 		for (int i = 0; i < count; i++)
 		{
 			int itemId = reader.ReadInt32();
-			ItemTemplate template = ItemData.getInstance().getTemplate(itemId);
+			ItemTemplate? template = ItemData.getInstance().getTemplate(itemId);
 			if (template == null)
 			{
 				_items = null;
 				return;
 			}
-			
+
 			int enchantLevel = reader.ReadInt16();
 			reader.ReadInt16(); // TODO analyse this
-			
+
 			long cnt = reader.ReadInt64();
 			long price = reader.ReadInt64();
 			if (itemId < 1 || cnt < 1 || price < 0)
@@ -47,7 +47,7 @@ public struct SetPrivateStoreListBuyPacket: IIncomingPacket<GameSession>
 				_items = null;
 				return;
 			}
-			
+
 			int option1 = reader.ReadInt32();
 			int option2 = reader.ReadInt32();
 			AttributeType attackAttribute = (AttributeType)reader.ReadInt16();
@@ -67,7 +67,7 @@ public struct SetPrivateStoreListBuyPacket: IIncomingPacket<GameSession>
 			EnsoulOption[] soulCrystalSpecialOptions = new EnsoulOption[reader.ReadByte()];
 			for (int k = 0; k < soulCrystalSpecialOptions.Length; k++)
 				soulCrystalSpecialOptions[k] = EnsoulData.getInstance().getOption(reader.ReadInt32());
-			
+
 			// Unknown.
 			reader.ReadByte();
 			reader.ReadByte();
@@ -75,7 +75,7 @@ public struct SetPrivateStoreListBuyPacket: IIncomingPacket<GameSession>
 			reader.ReadByte();
 			reader.ReadByte();
 			reader.ReadString();
-			
+
 			TradeItem item = new TradeItem(template, cnt, price);
 			item.setEnchant(enchantLevel);
 			item.setAugmentation(option1, option2);
@@ -99,20 +99,20 @@ public struct SetPrivateStoreListBuyPacket: IIncomingPacket<GameSession>
 	    Player? player = session.Player;
 	    if (player == null)
 		    return ValueTask.CompletedTask;
-		
+
 		if (_items == null)
 		{
 			player.setPrivateStoreType(PrivateStoreType.NONE);
 			player.broadcastUserInfo();
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!player.getAccessLevel().allowTransaction())
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(player) || player.isInDuel())
 		{
 			player.sendPacket(SystemMessageId.WHILE_YOU_ARE_ENGAGED_IN_COMBAT_YOU_CANNOT_OPERATE_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
@@ -121,7 +121,7 @@ public struct SetPrivateStoreListBuyPacket: IIncomingPacket<GameSession>
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.isInsideZone(ZoneId.NO_STORE))
 		{
 			player.sendPacket(new PrivateStoreManageListBuyPacket(1, player));
@@ -130,10 +130,10 @@ public struct SetPrivateStoreListBuyPacket: IIncomingPacket<GameSession>
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		TradeList tradeList = player.getBuyList();
 		tradeList.clear();
-		
+
 		// Check maximum number of allowed slots for pvt shops
 		if (_items.Length > player.getPrivateBuyStoreLimit())
 		{
@@ -142,7 +142,7 @@ public struct SetPrivateStoreListBuyPacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_QUANTITY_THAT_CAN_BE_INPUTTED);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		long totalCost = 0;
 		foreach (TradeItem i in _items)
 		{
@@ -152,10 +152,10 @@ public struct SetPrivateStoreListBuyPacket: IIncomingPacket<GameSession>
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
 					" tried to set price more than " + Inventory.MAX_ADENA + " adena in Private Store - Buy.",
 					Config.DEFAULT_PUNISH);
-				
+
 				return ValueTask.CompletedTask;
 			}
-			
+
 			tradeList.addItemByItemId(i.getItem().getId(), i.getCount(), i.getPrice());
 			totalCost += i.getCount() * i.getPrice();
 			if (totalCost > Inventory.MAX_ADENA)
@@ -164,11 +164,11 @@ public struct SetPrivateStoreListBuyPacket: IIncomingPacket<GameSession>
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
 					" tried to set total price more than " + Inventory.MAX_ADENA + " adena in Private Store - Buy.",
 					Config.DEFAULT_PUNISH);
-				
+
 				return ValueTask.CompletedTask;
 			}
 		}
-		
+
 		// Check for available funds
 		if (totalCost > player.getAdena())
 		{
@@ -177,7 +177,7 @@ public struct SetPrivateStoreListBuyPacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.THE_PURCHASE_PRICE_IS_HIGHER_THAN_THE_AMOUNT_OF_MONEY_THAT_YOU_HAVE_AND_SO_YOU_CANNOT_OPEN_A_PERSONAL_STORE);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		player.sitDown();
 		player.setPrivateStoreType(PrivateStoreType.BUY);
 		player.broadcastUserInfo();

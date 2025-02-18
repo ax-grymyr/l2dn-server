@@ -27,23 +27,23 @@ public struct RequestExQuestCancelPacket: IIncomingPacket<GameSession>
         Quest quest = QuestManager.getInstance().getQuest(_questId);
         if (quest is null)
             return ValueTask.CompletedTask;
-        
-        QuestState qs = quest.getQuestState(player, false);
+
+        QuestState? qs = quest.getQuestState(player, false);
         if ((qs != null) && !qs.isCompleted())
         {
             qs.setSimulated(false);
             qs.exitQuest(QuestType.REPEATABLE);
             player.sendPacket(new ExQuestUiPacket(player));
             player.sendPacket(new ExQuestNotificationAllPacket(player));
-			
+
             if (player.Events.HasSubscribers<OnPlayerQuestAbort>())
             {
                 player.Events.NotifyAsync(new OnPlayerQuestAbort(player, _questId));
             }
-			
+
             quest.onQuestAborted(player);
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

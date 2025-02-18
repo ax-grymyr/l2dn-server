@@ -15,9 +15,9 @@ namespace L2Dn.GameServer.Model.Effects;
 public abstract class AbstractEffect
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(AbstractEffect));
-	
+
 	private int _ticks;
-	
+
 	/**
 	 * Gets the effect ticks
 	 * @return the ticks
@@ -26,7 +26,7 @@ public abstract class AbstractEffect
 	{
 		return _ticks;
 	}
-	
+
 	/**
 	 * Sets the effect ticks
 	 * @param ticks the ticks
@@ -35,12 +35,12 @@ public abstract class AbstractEffect
 	{
 		_ticks = ticks;
 	}
-	
+
 	public double getTicksMultiplier()
 	{
 		return (getTicks() * Config.EFFECT_TICK_RATIO) / 1000f;
 	}
-	
+
 	/**
 	 * Calculates whether this effects land or not.<br>
 	 * If it lands will be scheduled and added to the character effect list.<br>
@@ -55,7 +55,7 @@ public abstract class AbstractEffect
 	{
 		return true;
 	}
-	
+
 	/**
 	 * Verify if the buff can start.<br>
 	 * Used for continuous effects.
@@ -68,23 +68,23 @@ public abstract class AbstractEffect
 	{
 		return true;
 	}
-	
+
 	public virtual void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 	}
-	
+
 	public virtual void continuousInstant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 	}
-	
-	public virtual void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public virtual void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 	}
-	
+
 	public virtual void onExit(Creature effector, Creature effected, Skill skill)
 	{
 	}
-	
+
 	/**
 	 * Called on each tick.<br>
 	 * If the abnormal time is lesser than zero it will last forever.
@@ -94,11 +94,11 @@ public abstract class AbstractEffect
 	 * @param item
 	 * @return if {@code true} this effect will continue forever, if {@code false} it will stop after abnormal time has passed
 	 */
-	public virtual bool onActionTime(Creature effector, Creature effected, Skill skill, Item item)
+	public virtual bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		return false;
 	}
-	
+
 	/**
 	 * Get the effect flags.
 	 * @return bit flag for current effect
@@ -107,12 +107,12 @@ public abstract class AbstractEffect
 	{
 		return 1L << (int)EffectFlag.NONE;
 	}
-	
+
 	public virtual bool checkCondition(int id)
 	{
 		return true;
 	}
-	
+
 	/**
 	 * Verify if this effect is an instant effect.
 	 * @return {@code true} if this effect is instant, {@code false} otherwise
@@ -121,7 +121,7 @@ public abstract class AbstractEffect
 	{
 		return false;
 	}
-	
+
 	/**
 	 * @param effector
 	 * @param effected
@@ -132,7 +132,7 @@ public abstract class AbstractEffect
 	{
 		return true;
 	}
-	
+
 	/**
 	 * @param effected
 	 * @param skill
@@ -140,7 +140,7 @@ public abstract class AbstractEffect
 	public virtual void pump(Creature effected, Skill skill)
 	{
 	}
-	
+
 	/**
 	 * Get this effect's type.<br>
 	 * TODO: Remove.
@@ -150,7 +150,7 @@ public abstract class AbstractEffect
 	{
 		return EffectType.NONE;
 	}
-	
+
 	public override string ToString()
 	{
 		return "Effect " + GetType().Name;

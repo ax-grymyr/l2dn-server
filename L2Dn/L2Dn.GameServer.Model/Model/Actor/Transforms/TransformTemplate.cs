@@ -12,7 +12,7 @@ public sealed class TransformTemplate
 {
 	private readonly float? _collisionRadius;
 	private readonly float? _collisionHeight;
-	private readonly WeaponType _baseAttackType;
+	private readonly WeaponType? _baseAttackType;
 	private List<SkillHolder> _skills;
 	private List<AdditionalSkillHolder> _additionalSkills;
 	private List<AdditionalItemHolder> _additionalItems;
@@ -20,7 +20,7 @@ public sealed class TransformTemplate
 	private Map<Stat, double> _baseStats;
 	private ImmutableArray<int> _actions = ImmutableArray<int>.Empty;
 	private readonly Map<int, TransformLevelData> _data = new();
-	
+
 	public TransformTemplate(StatSet set)
 	{
 		_collisionRadius = set.Contains("radius") ? set.getFloat("radius") : null;
@@ -102,7 +102,7 @@ public sealed class TransformTemplate
 		{
 			addStats(Stat.STAT_MEN, set.getInt("men", 0));
 		}
-		
+
 		if (set.contains("chest"))
 		{
 			addDefense(Inventory.PAPERDOLL_CHEST, set.getInt("chest", 0));
@@ -152,17 +152,17 @@ public sealed class TransformTemplate
 			addDefense(Inventory.PAPERDOLL_NECK, set.getInt("neck", 0));
 		}
 	}
-	
+
 	private void addDefense(int type, int value)
 	{
 		if (_baseDefense == null)
 		{
 			_baseDefense = new();
 		}
-		
+
 		_baseDefense.put(type, value);
 	}
-	
+
 	/**
 	 * @param type the slot type for where to search defense.
 	 * @param defaultValue value to be used if no value for the type is found.
@@ -172,7 +172,7 @@ public sealed class TransformTemplate
 	{
 		return (_baseDefense == null) ? defaultValue : _baseDefense.GetValueOrDefault(type, defaultValue);
 	}
-	
+
 	private void addStats(Stat stat, double value)
 	{
 		if (_baseStats == null)
@@ -181,7 +181,7 @@ public sealed class TransformTemplate
 		}
 		_baseStats.put(stat, value);
 	}
-	
+
 	/**
 	 * @param stat the Stat value to search for.
 	 * @param defaultValue value to be used if no such stat is found.
@@ -191,7 +191,7 @@ public sealed class TransformTemplate
 	{
 		return _baseStats == null ? defaultValue : _baseStats.GetValueOrDefault(stat, defaultValue);
 	}
-	
+
 	/**
 	 * @return collision radius if set, {@code null} otherwise.
 	 */
@@ -199,7 +199,7 @@ public sealed class TransformTemplate
 	{
 		return _collisionRadius;
 	}
-	
+
 	/**
 	 * @return collision height if set, {@code null} otherwise.
 	 */
@@ -207,12 +207,12 @@ public sealed class TransformTemplate
 	{
 		return _collisionHeight;
 	}
-	
-	public WeaponType getBaseAttackType()
+
+	public WeaponType? getBaseAttackType()
 	{
 		return _baseAttackType;
 	}
-	
+
 	public void addSkill(SkillHolder holder)
 	{
 		if (_skills == null)
@@ -221,12 +221,12 @@ public sealed class TransformTemplate
 		}
 		_skills.Add(holder);
 	}
-	
+
 	public List<SkillHolder> getSkills()
 	{
 		return _skills != null ? _skills : new();
 	}
-	
+
 	public void addAdditionalSkill(AdditionalSkillHolder holder)
 	{
 		if (_additionalSkills == null)
@@ -235,12 +235,12 @@ public sealed class TransformTemplate
 		}
 		_additionalSkills.Add(holder);
 	}
-	
+
 	public List<AdditionalSkillHolder> getAdditionalSkills()
 	{
 		return _additionalSkills != null ? _additionalSkills : new();
 	}
-	
+
 	public void addAdditionalItem(AdditionalItemHolder holder)
 	{
 		if (_additionalItems == null)
@@ -249,32 +249,32 @@ public sealed class TransformTemplate
 		}
 		_additionalItems.Add(holder);
 	}
-	
+
 	public List<AdditionalItemHolder> getAdditionalItems()
 	{
 		return _additionalItems != null ? _additionalItems : new();
 	}
-	
+
 	public void setBasicActionList(ImmutableArray<int> actions)
 	{
 		_actions = actions;
 	}
-	
+
 	public ImmutableArray<int> getBasicActionList()
 	{
 		return _actions;
 	}
-	
+
 	public bool hasBasicActionList()
 	{
 		return !_actions.IsDefaultOrEmpty;
 	}
-	
+
 	public void addLevelData(TransformLevelData data)
 	{
 		_data.put(data.getLevel(), data);
 	}
-	
+
 	public TransformLevelData getData(int level)
 	{
 		return _data.get(level);

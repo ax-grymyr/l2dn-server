@@ -19,22 +19,22 @@ public struct RequestFriendListPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         SystemMessagePacket sm;
-		
+
         // ======<Friend List>======
         player.sendPacket(SystemMessageId.FRIENDS_LIST);
-		
-        Player friend = null;
+
+        Player? friend;
         foreach (int id in player.getFriendList())
         {
             // int friendId = rset.getInt("friendId");
-            string friendName = CharInfoTable.getInstance().getNameById(id);
+            string? friendName = CharInfoTable.getInstance().getNameById(id);
             if (friendName == null)
             {
                 continue;
             }
-			
+
             friend = World.getInstance().getPlayer(friendName);
             if (friend == null || !friend.isOnline())
             {
@@ -48,10 +48,10 @@ public struct RequestFriendListPacket: IIncomingPacket<GameSession>
                 sm = new SystemMessagePacket(SystemMessageId.S1_CURRENTLY_ONLINE);
                 sm.Params.addString(friendName);
             }
-			
+
             player.sendPacket(sm);
         }
-		
+
         // =========================
         player.sendPacket(SystemMessageId.EMPTY_3);
         return ValueTask.CompletedTask;

@@ -20,14 +20,14 @@ public class ChatAdmin: IVoicedCommandHandler
 		"unbanchat",
 		"chatunban"
 	};
-	
+
 	public bool useVoicedCommand(string command, Player activeChar, string @params)
 	{
 		if (!AdminData.getInstance().hasAccess(command, activeChar.getAccessLevel()))
 		{
 			return false;
 		}
-		
+
 		switch (command)
 		{
 			case "banchat":
@@ -38,7 +38,7 @@ public class ChatAdmin: IVoicedCommandHandler
 					BuilderUtil.sendSysMessage(activeChar, "Usage: .banchat name [minutes]");
 					return true;
 				}
-				
+
                 StringTokenizer st = new StringTokenizer(@params);
 				if (st.hasMoreTokens())
 				{
@@ -52,11 +52,11 @@ public class ChatAdmin: IVoicedCommandHandler
 							expirationTime = value;
 						}
 					}
-					
+
 					int objId = CharInfoTable.getInstance().getIdByName(name);
 					if (objId > 0)
 					{
-						Player player = World.getInstance().getPlayer(objId);
+						Player? player = World.getInstance().getPlayer(objId);
 						if ((player == null) || !player.isOnline())
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Player not online!");
@@ -87,7 +87,7 @@ public class ChatAdmin: IVoicedCommandHandler
                             PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN,
                             DateTime.UtcNow.AddHours(expirationTime), "Chat banned by moderator",
                             activeChar.getName()));
-                        
+
 						if (expirationTime > 0)
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Player " + player.getName() + " chat banned for " + expirationTime + " minutes.");
@@ -115,7 +115,7 @@ public class ChatAdmin: IVoicedCommandHandler
 					BuilderUtil.sendSysMessage(activeChar, "Usage: .unbanchat name");
 					return true;
 				}
-				
+
                 StringTokenizer st = new StringTokenizer(@params);
 				if (st.hasMoreTokens())
 				{
@@ -123,7 +123,7 @@ public class ChatAdmin: IVoicedCommandHandler
 					int objId = CharInfoTable.getInstance().getIdByName(name);
 					if (objId > 0)
 					{
-						Player player = World.getInstance().getPlayer(objId);
+						Player? player = World.getInstance().getPlayer(objId);
 						if ((player == null) || !player.isOnline())
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Player not online!");
@@ -134,7 +134,7 @@ public class ChatAdmin: IVoicedCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Player is not chat banned!");
 							return false;
 						}
-						
+
 						PunishmentManager.getInstance().stopPunishment(objId.ToString(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN);
 						BuilderUtil.sendSysMessage(activeChar, "Player " + player.getName() + " chat unbanned.");
 						player.sendMessage("Chat unbanned by moderator " + activeChar.getName());
@@ -151,7 +151,7 @@ public class ChatAdmin: IVoicedCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;

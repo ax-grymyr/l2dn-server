@@ -23,22 +23,22 @@ public struct RequestQuestAbortPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         Quest qe = QuestManager.getInstance().getQuest(_questId);
         if (qe != null)
         {
-            QuestState qs = player.getQuestState(qe.Name);
+            QuestState? qs = player.getQuestState(qe.Name);
             if (qs != null)
             {
                 qs.setSimulated(false);
                 qs.exitQuest(QuestType.REPEATABLE);
                 player.sendPacket(new QuestListPacket(player));
-				
+
                 if (player.Events.HasSubscribers<OnPlayerQuestAbort>())
                 {
                     player.Events.NotifyAsync(new OnPlayerQuestAbort(player, _questId));
                 }
-				
+
                 qe.onQuestAborted(player);
             }
         }

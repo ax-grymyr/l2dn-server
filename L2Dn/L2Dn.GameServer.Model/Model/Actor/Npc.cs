@@ -52,7 +52,7 @@ public class Npc: Creature
 	/** Maximum distance where the drop may appear given this NPC position. */
 	public const int RANDOM_ITEM_DROP_LIMIT = 70;
 	/** Ids of NPCs that see creatures through the OnCreatureSee event. */
-	private static readonly Set<int> CREATURE_SEE_IDS = new();
+	private static readonly Set<int> CREATURE_SEE_IDS = [];
 	/** The Spawn object that manage this Npc */
 	private Spawn _spawn;
 	/** The flag to specify if this Npc is busy */
@@ -72,35 +72,35 @@ public class Npc: Creature
 	private bool _isTalkable;
 	private readonly bool _isQuestMonster;
 	private readonly bool _isFakePlayer;
-	
+
 	private int _currentLHandId; // normally this shouldn't change from the template, but there exist exceptions
 	private int _currentRHandId; // normally this shouldn't change from the template, but there exist exceptions
 	private int _currentEnchant; // normally this shouldn't change from the template, but there exist exceptions
 	private float _currentCollisionHeight; // used for npc grow effect skills
 	private float _currentCollisionRadius; // used for npc grow effect skills
-	
+
 	private int _soulshotamount;
 	private int _spiritshotamount;
 	private int _displayEffect;
-	
+
 	private int _killingBlowWeaponId;
-	
+
 	private int _cloneObjId; // Used in NpcInfo packet to clone the specified player.
 	private int? _clanId; // Used in NpcInfo packet to show the specified clan.
-	
+
 	private NpcStringId? _titleString;
 	private NpcStringId? _nameString;
-	
+
 	private StatSet _params;
 	private volatile int _scriptValue;
 	private RaidBossStatus _raidStatus;
-	
+
 	/** Contains information about local tax payments. */
-	private TaxZone _taxZone;
-	
+	private TaxZone? _taxZone;
+
 	private readonly List<QuestTimer> _questTimers = new();
 	private readonly List<TimerHolder> _timerHolders = new();
-	
+
 	/**
 	 * Constructor of Npc (use Creature constructor).<br>
 	 * <br>
@@ -115,7 +115,7 @@ public class Npc: Creature
 	public Npc(NpcTemplate template): base(template)
 	{
 		InstanceType = InstanceType.Npc;
-		
+
 		// Call the Creature constructor to set the _template of the Creature, copy skills from template to object
 		// and link _calculators to NPC_STD_CALCULATOR
 		initCharStatusUpdateValues();
@@ -124,19 +124,19 @@ public class Npc: Creature
 		_isTalkable = getTemplate().isTalkable();
 		_isQuestMonster = getTemplate().isQuestMonster();
 		_isFakePlayer = getTemplate().isFakePlayer();
-		
+
 		// initialize the "current" equipment
 		_currentLHandId = getTemplate().getLHandId();
 		_currentRHandId = getTemplate().getRHandId();
 		_currentEnchant = Config.ENABLE_RANDOM_ENCHANT_EFFECT ? Rnd.get(4, 21) : getTemplate().getWeaponEnchant();
-		
+
 		// initialize the "current" collisions
 		_currentCollisionHeight = getTemplate().getFCollisionHeight();
 		_currentCollisionRadius = getTemplate().getFCollisionRadius();
 		setFlying(template.isFlying());
 		initStatusUpdateCache();
 	}
-	
+
 	/**
 	 * Send a packet SocialAction to all Player in the _KnownPlayers of the Npc and create a new RandomAnimation Task.
 	 * @param animationId
@@ -151,7 +151,7 @@ public class Npc: Creature
 			broadcastSocialAction(animationId);
 		}
 	}
-	
+
 	/**
 	 * @return true if the server allows Random Animation.
 	 */
@@ -159,7 +159,7 @@ public class Npc: Creature
 	{
 		return ((Config.MAX_NPC_ANIMATION > 0) && _isRandomAnimationEnabled && (getAiType() != AIType.CORPSE));
 	}
-	
+
 	/**
 	 * Switches random Animation state into val.
 	 * @param value needed state of random animation
@@ -168,7 +168,7 @@ public class Npc: Creature
 	{
 		_isRandomAnimationEnabled = value;
 	}
-	
+
 	/**
 	 * @return {@code true}, if random animation is enabled, {@code false} otherwise.
 	 */
@@ -176,43 +176,43 @@ public class Npc: Creature
 	{
 		return _isRandomAnimationEnabled;
 	}
-	
+
 	public void setRandomWalking(bool enabled)
 	{
 		_isRandomWalkingEnabled = enabled;
 	}
-	
+
 	public bool isRandomWalkingEnabled()
 	{
 		return _isRandomWalkingEnabled;
 	}
-	
+
 	public override NpcStat getStat()
 	{
 		return (NpcStat)base.getStat();
 	}
-	
+
 	public override void initCharStat()
 	{
 		setStat(new NpcStat(this));
 	}
-	
+
 	public override NpcStatus getStatus()
 	{
 		return (NpcStatus) base.getStatus();
 	}
-	
+
 	public override void initCharStatus()
 	{
 		setStatus(new NpcStatus(this));
 	}
-	
+
 	/** Return the NpcTemplate of the Npc. */
 	public override NpcTemplate getTemplate()
 	{
 		return (NpcTemplate)base.getTemplate();
 	}
-	
+
 	/**
 	 * Gets the NPC ID.
 	 * @return the NPC ID
@@ -221,12 +221,12 @@ public class Npc: Creature
 	{
 		return getTemplate().getId();
 	}
-	
+
 	public override bool canBeAttacked()
 	{
 		return Config.ALT_ATTACKABLE_NPCS;
 	}
-	
+
 	/**
 	 * Return the Level of this Npc contained in the NpcTemplate.
 	 */
@@ -234,7 +234,7 @@ public class Npc: Creature
 	{
 		return getTemplate().getLevel();
 	}
-	
+
 	/**
 	 * @return false.
 	 */
@@ -242,7 +242,7 @@ public class Npc: Creature
 	{
 		return false;
 	}
-	
+
 	/**
 	 * @return the Aggro Range of this Npc either contained in the NpcTemplate, or overriden by spawnlist AI value.
 	 */
@@ -250,7 +250,7 @@ public class Npc: Creature
 	{
 		return getTemplate().getAggroRange();
 	}
-	
+
 	/**
 	 * @param npc
 	 * @return if both npcs have the same clan by template.
@@ -259,7 +259,7 @@ public class Npc: Creature
 	{
 		return getTemplate().isClan(npc.getTemplate().getClans());
 	}
-	
+
 	/**
 	 * Return True if this Npc is undead in function of the NpcTemplate.
 	 */
@@ -267,7 +267,7 @@ public class Npc: Creature
 	{
 		return getTemplate().getRace() == Race.UNDEAD;
 	}
-	
+
 	/**
 	 * Send a packet NpcInfo with state of abnormal effect to all Player in the _KnownPlayers of the Npc.
 	 */
@@ -279,7 +279,7 @@ public class Npc: Creature
 			{
 				return;
 			}
-			
+
 			if (_isFakePlayer)
 			{
 				player.sendPacket(new FakePlayerInfoPacket(this));
@@ -294,50 +294,50 @@ public class Npc: Creature
 			}
 		});
 	}
-	
+
 	public override bool isAutoAttackable(Creature attacker)
 	{
 		if (attacker == null)
 		{
 			return false;
 		}
-		
+
 		// Summons can attack NPCs.
 		if (attacker.isSummon())
 		{
 			return true;
 		}
-		
+
 		if (!isTargetable())
 		{
 			return false;
 		}
-		
+
 		if (attacker.isAttackable())
 		{
 			if (isInMyClan((Npc) attacker))
 			{
 				return false;
 			}
-			
+
 			// Chaos NPCs attack everything except clan.
 			if (((NpcTemplate) attacker.getTemplate()).isChaos())
 			{
 				return true;
 			}
-			
+
 			// Usually attackables attack everything they hate.
 			return ((Attackable) attacker).getHating(this) > 0;
 		}
-		
+
 		return _isAutoAttackable;
 	}
-	
+
 	public virtual void setAutoAttackable(bool flag)
 	{
 		_isAutoAttackable = flag;
 	}
-	
+
 	/**
 	 * @return the Identifier of the item in the left hand of this Npc contained in the NpcTemplate.
 	 */
@@ -345,7 +345,7 @@ public class Npc: Creature
 	{
 		return _currentLHandId;
 	}
-	
+
 	/**
 	 * @return the Identifier of the item in the right hand of this Npc contained in the NpcTemplate.
 	 */
@@ -353,12 +353,12 @@ public class Npc: Creature
 	{
 		return _currentRHandId;
 	}
-	
+
 	public int getEnchantEffect()
 	{
 		return _currentEnchant;
 	}
-	
+
 	/**
 	 * @return the busy status of this Npc.
 	 */
@@ -366,7 +366,7 @@ public class Npc: Creature
 	{
 		return _isBusy;
 	}
-	
+
 	/**
 	 * @param isBusy the busy status of this Npc
 	 */
@@ -374,7 +374,7 @@ public class Npc: Creature
 	{
 		_isBusy = isBusy;
 	}
-	
+
 	/**
 	 * @return true if this Npc instance can be warehouse manager.
 	 */
@@ -382,7 +382,7 @@ public class Npc: Creature
 	{
 		return false;
 	}
-	
+
 	public bool canTarget(Player player)
 	{
 		if (player.isControlBlocked())
@@ -398,7 +398,7 @@ public class Npc: Creature
 		}
 		return true;
 	}
-	
+
 	public bool canInteract(Player player)
 	{
 		if (player.isCastingNow())
@@ -438,25 +438,25 @@ public class Npc: Creature
 
 		return true;
 	}
-	
+
 	/**
 	 * Set another tax zone which will be used for tax payments.
 	 * @param zone newly entered tax zone
 	 */
-	public void setTaxZone(TaxZone zone)
+	public void setTaxZone(TaxZone? zone)
 	{
 		_taxZone = ((zone != null) && !isInInstance()) ? zone : null;
 	}
-	
+
 	/**
 	 * Gets castle for tax payments.
 	 * @return instance of {@link Castle} when NPC is inside {@link TaxZone} otherwise {@code null}
 	 */
-	public Castle getTaxCastle()
+	public Castle? getTaxCastle()
 	{
 		return (_taxZone != null) ? _taxZone.getCastle() : null;
 	}
-	
+
 	/**
 	 * Gets castle tax rate
 	 * @param type type of tax
@@ -467,20 +467,20 @@ public class Npc: Creature
 		Castle castle = getTaxCastle();
 		return (castle != null) ? (castle.getTaxPercent(type) / 100.0) : 0;
 	}
-	
+
 	/**
 	 * Increase castle vault by specified tax amount.
 	 * @param amount tax amount
 	 */
 	public void handleTaxPayment(long amount)
 	{
-		Castle taxCastle = getTaxCastle();
+		Castle? taxCastle = getTaxCastle();
 		if (taxCastle != null)
 		{
 			taxCastle.addToTreasury(amount);
 		}
 	}
-	
+
 	/**
 	 * @return the nearest Castle this Npc belongs to. Otherwise null.
 	 */
@@ -488,8 +488,8 @@ public class Npc: Creature
 	{
 		return CastleManager.getInstance().findNearestCastle(this);
 	}
-	
-	public ClanHall getClanHall()
+
+	public ClanHall? getClanHall()
 	{
 		if (getId() == 33360) // Provisional Hall Manager
 		{
@@ -507,7 +507,7 @@ public class Npc: Creature
 		}
 		return ClanHallData.getInstance().getClanHallByNpcId(getId());
 	}
-	
+
 	/**
 	 * Return closest castle in defined distance
 	 * @param maxDistance long
@@ -517,7 +517,7 @@ public class Npc: Creature
 	{
 		return CastleManager.getInstance().findNearestCastle(this, maxDistance);
 	}
-	
+
 	/**
 	 * @return the nearest Fort this Npc belongs to. Otherwise null.
 	 */
@@ -525,7 +525,7 @@ public class Npc: Creature
 	{
 		return FortManager.getInstance().findNearestFort(this);
 	}
-	
+
 	/**
 	 * Return closest Fort in defined distance
 	 * @param maxDistance long
@@ -535,7 +535,7 @@ public class Npc: Creature
 	{
 		return FortManager.getInstance().findNearestFort(this, maxDistance);
 	}
-	
+
 	/**
 	 * Open a quest or chat window on client with the text of the Npc in function of the command.<br>
 	 * <br>
@@ -561,41 +561,41 @@ public class Npc: Creature
 			}
 		}
 	}
-	
+
 	/**
 	 * Return null (regular NPCs don't have weapons instances).
 	 */
-	public override Item getActiveWeaponInstance()
+	public override Item? getActiveWeaponInstance()
 	{
 		return null;
 	}
-	
+
 	/**
 	 * Return the weapon item equipped in the right hand of the Npc or null.
 	 */
-	public override Weapon getActiveWeaponItem()
+	public override Weapon? getActiveWeaponItem()
 	{
 		return null;
 	}
-	
+
 	/**
 	 * Return null (regular NPCs don't have weapons instances).
 	 */
-	public override Item getSecondaryWeaponInstance()
+	public override Item? getSecondaryWeaponInstance()
 	{
 		return null;
 	}
-	
+
 	/**
 	 * Return the weapon item equipped in the left hand of the Npc or null.
 	 */
-	public override Weapon getSecondaryWeaponItem()
+	public override Weapon? getSecondaryWeaponItem()
 	{
 		return null;
 	}
-	
+
 	/**
-	 * <b><U Format of the pathfile</u>:</b>
+	 * <b><u>Format of the pathfile</u>:</b>
 	 * <ul>
 	 * <li>if the file exists on the server (page number = 0) : <b>data/html/default/12006.htm</b> (npcId-page number)</li>
 	 * <li>if the file exists on the server (page number > 0) : <b>data/html/default/12006-1.htm</b> (npcId-page number)</li>
@@ -617,7 +617,7 @@ public class Npc: Creature
 		{
 			pom = npcId + "-" + value;
 		}
-		
+
 		string temp = "html/default/" + pom + ".htm";
 		if (Config.HTM_CACHE)
 		{
@@ -631,16 +631,16 @@ public class Npc: Creature
 		{
 			return temp;
 		}
-		
+
 		// If the file is not found, the standard message "I have nothing to say to you" is returned
 		return "html/npcdefault.htm";
 	}
-	
+
 	public virtual void showChatWindow(Player player)
 	{
 		showChatWindow(player, 0);
 	}
-	
+
 	/**
 	 * Returns true if html exists
 	 * @param player
@@ -659,7 +659,7 @@ public class Npc: Creature
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Open a chat window on client with the text of the Npc.<br>
 	 * <br>
@@ -679,7 +679,7 @@ public class Npc: Creature
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return;
 		}
-		
+
 		if (player.getReputation() < 0)
 		{
 			if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (this is Merchant))
@@ -711,12 +711,12 @@ public class Npc: Creature
 				}
 			}
 		}
-		
+
 		if (getTemplate().isType("Auctioneer") && (value == 0))
 		{
 			return;
 		}
-		
+
 		int npcId = getTemplate().getId();
 		string filename;
 		switch (npcId)
@@ -760,18 +760,18 @@ public class Npc: Creature
 				break;
 			}
 		}
-		
+
 		// Send a Server->Client NpcHtmlMessage containing the text of the Npc to the Player
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
 		htmlContent.Replace("%npcname%", getName());
 		htmlContent.Replace("%objectId%", ObjectId.ToString());
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
-		
+
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 	}
-	
+
 	/**
 	 * Open a chat window on client with the text specified by the given file name and path, relative to the datapack root.
 	 * @param player The Player that talk with the Npc
@@ -784,21 +784,21 @@ public class Npc: Creature
 		htmlContent.Replace("%objectId%", ObjectId.ToString());
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
-		
+
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 	}
-	
+
 	/**
 	 * @return the Exp Reward of this Npc (modified by RATE_XP).
 	 */
 	public double getExpReward()
 	{
-		Instance instance = getInstanceWorld();
+		Instance? instance = getInstanceWorld();
 		float rateMul = instance != null ? instance.getExpRate() : Config.RATE_XP;
 		return getTemplate().getExp() * rateMul;
 	}
-	
+
 	/**
 	 * @return the SP Reward of this Npc (modified by RATE_SP).
 	 */
@@ -808,17 +808,17 @@ public class Npc: Creature
 		float rateMul = instance != null ? instance.getSPRate() : Config.RATE_SP;
 		return getTemplate().getSP() * rateMul;
 	}
-	
+
 	public long getAttributeExp()
 	{
 		return getTemplate().getAttributeExp();
 	}
-	
+
 	public override ElementalType getElementalSpiritType()
 	{
 		return getTemplate().getElementalType();
 	}
-	
+
 	/**
 	 * Kill the Npc (the corpse disappeared after 7 seconds).<br>
 	 * <br>
@@ -834,21 +834,21 @@ public class Npc: Creature
 	 * </ul>
 	 * @param killer The Creature who killed it
 	 */
-	public override bool doDie(Creature killer)
+	public override bool doDie(Creature? killer)
 	{
 		if (!base.doDie(killer))
 		{
 			return false;
 		}
-		
+
 		// normally this wouldn't really be needed, but for those few exceptions,
 		// we do need to reset the weapons back to the initial template weapon.
 		_currentLHandId = getTemplate().getLHandId();
 		_currentRHandId = getTemplate().getRHandId();
 		_currentCollisionHeight = getTemplate().getFCollisionHeight();
 		_currentCollisionRadius = getTemplate().getFCollisionRadius();
-		
-		Weapon weapon = (killer != null) ? killer.getActiveWeaponItem() : null;
+
+		Weapon? weapon = (killer != null) ? killer.getActiveWeaponItem() : null;
 		_killingBlowWeaponId = (weapon != null) ? weapon.getId() : 0;
 		if (_isFakePlayer && (killer != null) && killer.isPlayable())
 		{
@@ -918,9 +918,9 @@ public class Npc: Creature
 				}
 			}
 		}
-		
+
 		DecayTaskManager.getInstance().add(this);
-		
+
 		if (_spawn != null)
 		{
 			NpcSpawnTemplate npcTemplate = _spawn.getNpcSpawnTemplate();
@@ -929,7 +929,7 @@ public class Npc: Creature
 				npcTemplate.notifyNpcDeath(this, killer);
 			}
 		}
-		
+
 		// Apply Mp Rewards
 		if ((getTemplate().getMpRewardValue() > 0) && (killer != null) && killer.isPlayable())
 		{
@@ -958,11 +958,11 @@ public class Npc: Creature
 				}
 			}
 		}
-		
+
 		DbSpawnManager.getInstance().updateStatus(this, true);
 		return true;
 	}
-	
+
 	/**
 	 * Set the spawn of the Npc.
 	 * @param spawn The Spawn that manage the Npc
@@ -971,11 +971,11 @@ public class Npc: Creature
 	{
 		_spawn = spawn;
 	}
-	
+
 	public override void onSpawn()
 	{
 		base.onSpawn();
-		
+
 		// Recharge shots
 		_soulshotamount = getTemplate().getSoulShot();
 		_spiritshotamount = getTemplate().getSpiritShot();
@@ -993,28 +993,28 @@ public class Npc: Creature
 		{
 			Events.NotifyAsync(new OnNpcSpawn(this));
 		}
-		
+
 		if (!isTeleporting())
 		{
 			WalkingManager.getInstance().onSpawn(this);
 		}
-		
+
 		if (isInsideZone(ZoneId.TAX) && (getCastle() != null) && (Config.SHOW_CREST_WITHOUT_QUEST || getCastle().getShowNpcCrest()) && (getCastle().getOwnerId() != 0))
 		{
 			setClanId(getCastle().getOwnerId());
 		}
-		
+
 		if (CREATURE_SEE_IDS.Contains(getId()))
 		{
 			initSeenCreatures();
 		}
 	}
-	
+
 	public static void addCreatureSeeId(int id)
 	{
 		CREATURE_SEE_IDS.Add(id);
 	}
-	
+
 	/**
 	 * Invoked when the NPC is re-spawned to reset the instance variables
 	 */
@@ -1022,42 +1022,42 @@ public class Npc: Creature
 	{
 		// Make it alive
 		setDead(false);
-		
+
 		// Stop all effects and recalculate stats without broadcasting.
 		getEffectList().stopAllEffects(false);
-		
+
 		// Reset decay info
 		setDecayed(false);
-		
+
 		// Fully heal npc and don't broadcast packet.
 		setCurrentHp(getMaxHp(), false);
 		setCurrentMp(getMaxMp(), false);
-		
+
 		// Clear script variables
 		if (hasVariables())
 		{
 			getVariables().getSet().Clear();
 		}
-		
+
 		// Reset targetable state
 		setTargetable(getTemplate().isTargetable());
-		
+
 		// Reset summoner
 		setSummoner(null);
-		
+
 		// Reset summoned list
 		resetSummonedNpcs();
-		
+
 		// Reset NpcStringId for name
 		_nameString = null;
-		
+
 		// Reset NpcStringId for title
 		_titleString = null;
-		
+
 		// Reset parameters
 		_params = null;
 	}
-	
+
 	/**
 	 * Remove the Npc from the world and update its spawn object (for a complete removal use the deleteMe method).<br>
 	 * <br>
@@ -1077,40 +1077,40 @@ public class Npc: Creature
 			return;
 		}
 		setDecayed(true);
-		
+
 		// Remove the Npc from the world when the decay task is launched
 		base.onDecay();
-		
+
 		// Decrease its spawn counter
 		if ((_spawn != null) && !DbSpawnManager.getInstance().isDefined(getId()))
 		{
 			_spawn.decreaseCount(this);
 		}
-		
+
 		// Notify Walking Manager
 		WalkingManager.getInstance().onDeath(this);
-		
+
 		// Notify DP scripts
 		if (Events.HasSubscribers<OnNpcDespawn>())
 		{
 			Events.NotifyAsync(new OnNpcDespawn(this));
 		}
-		
+
 		// Remove from instance world
 		Instance instance = getInstanceWorld();
 		if (instance != null)
 		{
 			instance.removeNpc(this);
 		}
-		
+
 		// Stop all timers
 		stopQuestTimers();
 		stopTimerHolders();
-		
+
 		// Clear script value
 		_scriptValue = 0;
 	}
-	
+
 	/**
 	 * Remove PROPERLY the Npc from the world.<br>
 	 * <br>
@@ -1133,17 +1133,17 @@ public class Npc: Creature
 		{
 			LOGGER.Error("Failed decayMe()." + e);
 		}
-		
+
 		if (isChannelized())
 		{
 			getSkillChannelized().abortChannelization();
 		}
-		
+
 		ZoneManager.getInstance().getRegion(Location.Location2D)?.removeFromZones(this);
-		
+
 		return base.deleteMe();
 	}
-	
+
 	/**
 	 * @return the Spawn object that manage this Npc.
 	 */
@@ -1151,17 +1151,17 @@ public class Npc: Creature
 	{
 		return _spawn;
 	}
-	
+
 	public bool isDecayed()
 	{
 		return _isDecayed;
 	}
-	
+
 	public void setDecayed(bool decayed)
 	{
 		_isDecayed = decayed;
 	}
-	
+
 	public void endDecayTask()
 	{
 		if (!_isDecayed)
@@ -1170,7 +1170,7 @@ public class Npc: Creature
 			onDecay();
 		}
 	}
-	
+
 	// Two functions to change the appearance of the equipped weapons on the NPC
 	// This is only useful for a few NPCs and is most likely going to be called from AI
 	public void setLHandId(int newWeaponId)
@@ -1178,51 +1178,51 @@ public class Npc: Creature
 		_currentLHandId = newWeaponId;
 		broadcastInfo();
 	}
-	
+
 	public void setRHandId(int newWeaponId)
 	{
 		_currentRHandId = newWeaponId;
 		broadcastInfo();
 	}
-	
+
 	public void setLRHandId(int newLWeaponId, int newRWeaponId)
 	{
 		_currentRHandId = newRWeaponId;
 		_currentLHandId = newLWeaponId;
 		broadcastInfo();
 	}
-	
+
 	public void setEnchant(int newEnchantValue)
 	{
 		_currentEnchant = newEnchantValue;
 		broadcastInfo();
 	}
-	
+
 	public bool isShowName()
 	{
 		return getTemplate().isShowName();
 	}
-	
+
 	public void setCollisionHeight(float height)
 	{
 		_currentCollisionHeight = height;
 	}
-	
+
 	public void setCollisionRadius(float radius)
 	{
 		_currentCollisionRadius = radius;
 	}
-	
+
 	public override float getCollisionHeight()
 	{
 		return _currentCollisionHeight;
 	}
-	
+
 	public override float getCollisionRadius()
 	{
 		return _currentCollisionRadius;
 	}
-	
+
 	public override void sendInfo(Player player)
 	{
 		if (isVisibleFor(player))
@@ -1241,7 +1241,7 @@ public class Npc: Creature
 			}
 		}
 	}
-	
+
 	public void scheduleDespawn(TimeSpan delay)
 	{
 		ThreadPool.schedule(() =>
@@ -1252,7 +1252,7 @@ public class Npc: Creature
 			}
 		}, delay);
 	}
-	
+
 	public override void notifyQuestEventSkillFinished(Skill skill, WorldObject target)
 	{
 		if ((target != null) && Events.HasSubscribers<OnNpcSkillFinished>())
@@ -1260,17 +1260,17 @@ public class Npc: Creature
 			Events.NotifyAsync(new OnNpcSkillFinished(this, target.getActingPlayer(), skill));
 		}
 	}
-	
+
 	public override bool isMovementDisabled()
 	{
 		return base.isMovementDisabled() || !getTemplate().canMove() || (getAiType() == AIType.CORPSE);
 	}
-	
+
 	public AIType getAiType()
 	{
 		return getTemplate().getAIType();
 	}
-	
+
 	public void setDisplayEffect(int value)
 	{
 		if (value != _displayEffect)
@@ -1279,27 +1279,27 @@ public class Npc: Creature
 			broadcastPacket(new ExChangeNpcStatePacket(ObjectId, value));
 		}
 	}
-	
+
 	public bool hasDisplayEffect(int value)
 	{
 		return _displayEffect == value;
 	}
-	
+
 	public int getDisplayEffect()
 	{
 		return _displayEffect;
 	}
-	
+
 	public int getColorEffect()
 	{
 		return 0;
 	}
-	
+
 	public override bool isNpc()
 	{
 		return true;
 	}
-	
+
 	public void setTeam(Team team, bool broadcast)
 	{
 		base.setTeam(team);
@@ -1308,23 +1308,23 @@ public class Npc: Creature
 			broadcastInfo();
 		}
 	}
-	
+
 	public override void setTeam(Team team)
 	{
 		base.setTeam(team);
 		broadcastInfo();
 	}
-	
+
 	public override bool isWalker()
 	{
 		return _isWalker;
 	}
-	
+
 	public void setWalker()
 	{
 		_isWalker = true;
 	}
-	
+
 	public override void rechargeShots(bool physical, bool magic, bool fish)
 	{
 		if (_isFakePlayer && Config.FAKE_PLAYER_USE_SHOTS)
@@ -1364,7 +1364,7 @@ public class Npc: Creature
 			}
 		}
 	}
-	
+
 	/**
 	 * Receive the stored int value for this {@link Npc} instance.
 	 * @return stored script value
@@ -1373,7 +1373,7 @@ public class Npc: Creature
 	{
 		return _scriptValue;
 	}
-	
+
 	/**
 	 * Sets the script value related with this {@link Npc} instance.
 	 * @param value value to store
@@ -1382,7 +1382,7 @@ public class Npc: Creature
 	{
 		_scriptValue = value;
 	}
-	
+
 	/**
 	 * @param value value to store
 	 * @return {@code true} if stored script value equals given value, {@code false} otherwise
@@ -1391,7 +1391,7 @@ public class Npc: Creature
 	{
 		return _scriptValue == value;
 	}
-	
+
 	/**
 	 * @param npc NPC to check
 	 * @return {@code true} if both given NPC and this NPC is in the same spawn group, {@code false} otherwise
@@ -1400,7 +1400,7 @@ public class Npc: Creature
 	{
 		return getSpawn().getNpcSpawnTemplate().getSpawnTemplate().getName().equals(npc.getSpawn().getNpcSpawnTemplate().getSpawnTemplate().getName());
 	}
-	
+
 	/**
 	 * @return {@code true} if NPC currently located in own spawn point, {@code false} otherwise
 	 */
@@ -1408,7 +1408,7 @@ public class Npc: Creature
 	{
 		return ((_spawn != null) && (_spawn.Location.X == getX()) && (_spawn.Location.Y == getY()));
 	}
-	
+
 	/**
 	 * @return {@code true} if {@link NpcVariables} instance is attached to current player's scripts, {@code false} otherwise.
 	 */
@@ -1416,7 +1416,7 @@ public class Npc: Creature
 	{
 		return getScript<NpcVariables>() != null;
 	}
-	
+
 	/**
 	 * @return {@link NpcVariables} instance containing parameters regarding NPC.
 	 */
@@ -1425,7 +1425,7 @@ public class Npc: Creature
 		NpcVariables vars = getScript<NpcVariables>();
 		return vars != null ? vars : addScript(new NpcVariables(getTemplate().getId()));
 	}
-	
+
 	/**
 	 * Send an "event" to all NPCs within given radius
 	 * @param eventName - name of event
@@ -1442,7 +1442,7 @@ public class Npc: Creature
 			}
 		});
 	}
-	
+
 	/**
 	 * Sends an event to a given object.
 	 * @param eventName the event name
@@ -1456,7 +1456,7 @@ public class Npc: Creature
 			npc.Events.NotifyAsync(new OnNpcEventReceived(eventName, this, npc, reference));
 		}
 	}
-	
+
 	/**
 	 * Gets point in range between radiusMin and radiusMax from this NPC
 	 * @param radiusMin miminal range from NPC (not closer than)
@@ -1469,12 +1469,12 @@ public class Npc: Creature
 		{
 			return new Location3D(getX(), getY(), getZ());
 		}
-		
+
 		int radius = Rnd.get(radiusMin, radiusMax);
 		double angle = Rnd.nextDouble() * 2 * Math.PI;
 		return new Location3D((int) (getX() + (radius * Math.Cos(angle))), (int) (getY() + (radius * Math.Sin(angle))), getZ());
 	}
-	
+
 	/**
 	 * Drops an item.
 	 * @param creature the last attacker or main damage dealer
@@ -1482,9 +1482,9 @@ public class Npc: Creature
 	 * @param itemCount the item count
 	 * @return the dropped item
 	 */
-	public Item dropItem(Creature creature, int itemId, long itemCount)
+	public Item? dropItem(Creature creature, int itemId, long itemCount)
 	{
-		Item item = null;
+		Item? item = null;
 		for (int i = 0; i < itemCount; i++)
 		{
 			if (ItemData.getInstance().getTemplate(itemId) == null)
@@ -1492,32 +1492,32 @@ public class Npc: Creature
 				LOGGER.Error("Item doesn't exist so cannot be dropped. Item ID: " + itemId + " Quest: " + getName());
 				return null;
 			}
-			
+
 			item = ItemData.getInstance().createItem("Loot", itemId, itemCount, creature, this);
 			if (item == null)
 			{
 				return null;
 			}
-			
+
 			if (creature != null)
 			{
 				item.getDropProtection().protect(creature);
 			}
-			
+
 			// Randomize drop position.
 			int newX = (getX() + Rnd.get((RANDOM_ITEM_DROP_LIMIT * 2) + 1)) - RANDOM_ITEM_DROP_LIMIT;
 			int newY = (getY() + Rnd.get((RANDOM_ITEM_DROP_LIMIT * 2) + 1)) - RANDOM_ITEM_DROP_LIMIT;
 			int newZ = getZ() + 20;
-			
+
 			item.dropMe(this, new Location3D(newX, newY, newZ));
-			
+
 			// Add drop to auto destroy item task.
 			if (!Config.LIST_PROTECTED_ITEMS.Contains(itemId) && (((Config.AUTODESTROY_ITEM_AFTER > 0) && !item.getTemplate().hasExImmediateEffect()) || ((Config.HERB_AUTO_DESTROY_TIME > 0) && item.getTemplate().hasExImmediateEffect())))
 			{
 				ItemsAutoDestroyTaskManager.getInstance().addItem(item);
 			}
 			item.setProtected(false);
-			
+
 			// If stackable, end loop as entire count is included in 1 instance of item.
 			if (item.isStackable() || !Config.MULTIPLE_ITEM_DROP)
 			{
@@ -1526,23 +1526,23 @@ public class Npc: Creature
 		}
 		return item;
 	}
-	
+
 	/**
 	 * Method overload for {@link Attackable#dropItem(Creature, int, long)}
 	 * @param creature the last attacker or main damage dealer
 	 * @param item the item holder
 	 * @return the dropped item
 	 */
-	public Item dropItem(Creature creature, ItemHolder item)
+	public Item? dropItem(Creature creature, ItemHolder item)
 	{
 		return dropItem(creature, item.getId(), item.getCount());
 	}
-	
+
 	public override string getName()
 	{
 		return getTemplate().getName();
 	}
-	
+
 	public override bool isVisibleFor(Player player)
 	{
 		if (Events.HasSubscribers<OnNpcCanBeSeen>())
@@ -1551,10 +1551,10 @@ public class Npc: Creature
 			if (Events.Notify(onNpcCanBeSeen))
 				return onNpcCanBeSeen.Visible;
 		}
-		
+
 		return base.isVisibleFor(player);
 	}
-	
+
 	/**
 	 * Sets if the players can talk with this npc or not
 	 * @param value {@code true} if the players can talk, {@code false} otherwise
@@ -1563,7 +1563,7 @@ public class Npc: Creature
 	{
 		_isTalkable = value;
 	}
-	
+
 	/**
 	 * Checks if the players can talk to this npc.
 	 * @return {@code true} if the players can talk, {@code false} otherwise.
@@ -1572,7 +1572,7 @@ public class Npc: Creature
 	{
 		return _isTalkable;
 	}
-	
+
 	/**
 	 * Checks if the NPC is a Quest Monster.
 	 * @return {@code true} if the NPC is a Quest Monster, {@code false} otherwise.
@@ -1581,7 +1581,7 @@ public class Npc: Creature
 	{
 		return _isQuestMonster;
 	}
-	
+
 	/**
 	 * Sets the weapon id with which this npc was killed.
 	 * @param weaponId
@@ -1590,7 +1590,7 @@ public class Npc: Creature
 	{
 		_killingBlowWeaponId = weaponId;
 	}
-	
+
 	/**
 	 * @return the id of the weapon with which player killed this npc.
 	 */
@@ -1598,17 +1598,17 @@ public class Npc: Creature
 	{
 		return _killingBlowWeaponId;
 	}
-	
+
 	public override int getMinShopDistance()
 	{
 		return Config.SHOP_MIN_RANGE_FROM_NPC;
 	}
-	
+
 	public override bool isFakePlayer()
 	{
 		return _isFakePlayer;
 	}
-	
+
 	/**
 	 * @return The player's object Id this NPC is cloning.
 	 */
@@ -1616,7 +1616,7 @@ public class Npc: Creature
 	{
 		return _cloneObjId;
 	}
-	
+
 	/**
 	 * @param cloneObjId object id of player or 0 to disable it.
 	 */
@@ -1624,7 +1624,7 @@ public class Npc: Creature
 	{
 		_cloneObjId = cloneObjId;
 	}
-	
+
 	/**
 	 * @return The clan's object Id this NPC is displaying.
 	 */
@@ -1632,7 +1632,7 @@ public class Npc: Creature
 	{
 		return _clanId;
 	}
-	
+
 	/**
 	 * @param clanObjId object id of clan or 0 to disable it.
 	 */
@@ -1640,7 +1640,7 @@ public class Npc: Creature
 	{
 		_clanId = clanObjId;
 	}
-	
+
 	/**
 	 * Broadcasts NpcSay packet to all known players.
 	 * @param chatType the chat type
@@ -1650,7 +1650,7 @@ public class Npc: Creature
 	{
 		Broadcast.toKnownPlayers(this, new NpcSayPacket(this, chatType, text));
 	}
-	
+
 	/**
 	 * Broadcasts NpcSay packet to all known players with NPC string id.
 	 * @param chatType the chat type
@@ -1670,7 +1670,7 @@ public class Npc: Creature
 				}
 			}
 		}
-		
+
 		switch (chatType)
 		{
 			case ChatType.NPC_GENERAL:
@@ -1685,7 +1685,7 @@ public class Npc: Creature
 			}
 		}
 	}
-	
+
 	/**
 	 * Broadcasts NpcSay packet to all known players with custom string in specific radius.
 	 * @param chatType the chat type
@@ -1696,7 +1696,7 @@ public class Npc: Creature
 	{
 		Broadcast.toKnownPlayersInRadius(this, new NpcSayPacket(this, chatType, text), radius);
 	}
-	
+
 	/**
 	 * Broadcasts NpcSay packet to all known players with NPC string id in specific radius.
 	 * @param chatType the chat type
@@ -1707,7 +1707,7 @@ public class Npc: Creature
 	{
 		Broadcast.toKnownPlayersInRadius(this, new NpcSayPacket(this, chatType, npcStringId), radius);
 	}
-	
+
 	/**
 	 * @return the parameters of the npc merged with the spawn parameters (if there are any)
 	 */
@@ -1717,7 +1717,7 @@ public class Npc: Creature
 		{
 			return _params;
 		}
-		
+
 		if (_spawn != null) // Minions doesn't have Spawn object bound
 		{
 			NpcSpawnTemplate npcSpawnTemplate = _spawn.getNpcSpawnTemplate();
@@ -1739,17 +1739,17 @@ public class Npc: Creature
 		_params = getTemplate().getParameters();
 		return _params;
 	}
-	
+
 	public List<Skill> getLongRangeSkills()
 	{
 		return getTemplate().getAISkills(AISkillScope.LONG_RANGE);
 	}
-	
+
 	public List<Skill> getShortRangeSkills()
 	{
 		return getTemplate().getAISkills(AISkillScope.SHORT_RANGE);
 	}
-	
+
 	/**
 	 * Verifies if the NPC can cast a skill given the minimum and maximum skill chances.
 	 * @return {@code true} if the NPC has chances of casting a skill
@@ -1758,7 +1758,7 @@ public class Npc: Creature
 	{
 		return Rnd.get(100) < Rnd.get(getTemplate().getMinSkillChance(), getTemplate().getMaxSkillChance());
 	}
-	
+
 	/**
 	 * @return the NpcStringId for name
 	 */
@@ -1766,7 +1766,7 @@ public class Npc: Creature
 	{
 		return _nameString;
 	}
-	
+
 	/**
 	 * @return the NpcStringId for title
 	 */
@@ -1774,32 +1774,32 @@ public class Npc: Creature
 	{
 		return _titleString;
 	}
-	
+
 	public void setNameString(NpcStringId nameString)
 	{
 		_nameString = nameString;
 	}
-	
+
 	public void setTitleString(NpcStringId titleString)
 	{
 		_titleString = titleString;
 	}
-	
+
 	public void sendChannelingEffect(Creature target, int state)
 	{
 		broadcastPacket(new ExShowChannelingEffectPacket(this, target, state));
 	}
-	
+
 	public void setDBStatus(RaidBossStatus status)
 	{
 		_raidStatus = status;
 	}
-	
+
 	public RaidBossStatus getDBStatus()
 	{
 		return _raidStatus;
 	}
-	
+
 	public void addQuestTimer(QuestTimer questTimer)
 	{
 		lock (_questTimers)
@@ -1807,7 +1807,7 @@ public class Npc: Creature
 			_questTimers.Add(questTimer);
 		}
 	}
-	
+
 	public void removeQuestTimer(QuestTimer questTimer)
 	{
 		lock (_questTimers)
@@ -1815,7 +1815,7 @@ public class Npc: Creature
 			_questTimers.Remove(questTimer);
 		}
 	}
-	
+
 	public void stopQuestTimers()
 	{
 		lock (_questTimers)
@@ -1827,7 +1827,7 @@ public class Npc: Creature
 			_questTimers.Clear();
 		}
 	}
-	
+
 	public void addTimerHolder(TimerHolder timer)
 	{
 		lock (_timerHolders)
@@ -1835,7 +1835,7 @@ public class Npc: Creature
 			_timerHolders.Add(timer);
 		}
 	}
-	
+
 	public void removeTimerHolder(TimerHolder timer)
 	{
 		lock (_timerHolders)
@@ -1843,7 +1843,7 @@ public class Npc: Creature
 			_timerHolders.Remove(timer);
 		}
 	}
-	
+
 	public void stopTimerHolders()
 	{
 		lock (_timerHolders)
@@ -1852,11 +1852,11 @@ public class Npc: Creature
 			{
 				timer.cancelTask();
 			}
-			
+
 			_timerHolders.Clear();
 		}
 	}
-	
+
 	public override string ToString()
 	{
 		StringBuilder sb = new();

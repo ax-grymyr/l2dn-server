@@ -23,16 +23,16 @@ public struct RequestExPledgeV3SetAnnouncePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Clan clan = player.getClan();
+        Clan? clan = player.getClan();
         if (clan == null)
             return ValueTask.CompletedTask;
-		
+
         clan.setNotice(_announce);
         clan.setNoticeEnabled(_enterWorldShow);
-        
+
         clan.broadcastToOnlineMembers(new ExPledgeV3InfoPacket(clan.getExp(), clan.getRank(), clan.getNotice(),
             clan.isNoticeEnabled()));
-        
+
         return ValueTask.CompletedTask;
     }
 }

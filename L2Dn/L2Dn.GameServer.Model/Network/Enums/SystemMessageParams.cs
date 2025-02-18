@@ -23,7 +23,7 @@ public sealed class SystemMessageParams
         _smId = smId;
         _params = new List<SystemMessageParam>();
     }
-	
+
 	public SystemMessageParams(string text)
 	{
         ArgumentNullException.ThrowIfNull(text);
@@ -35,11 +35,11 @@ public sealed class SystemMessageParams
 
 	public List<SystemMessageParam> Params => _params;
 	public int Count => _params.Count;
-	public SystemMessageId MessageId => _smId; 
-	
+	public SystemMessageId MessageId => _smId;
+
 	private void append(SystemMessageParamType type, object value)
 	{
-		int smIdParamCount = _smId.GetParamCount(); 
+		int smIdParamCount = _smId.GetParamCount();
 		if (_params.Count < smIdParamCount)
 			_params.Add(new SystemMessageParam(type, value));
 		else if (_params.Count == smIdParamCount && type == SystemMessageParamType.TYPE_POPUP_ID)
@@ -48,13 +48,13 @@ public sealed class SystemMessageParams
 			throw new InvalidOperationException(
 				$"Wrong parameter count '{_params.Count + 1}' for SystemMessageId: {_smId}");
 	}
-	
+
 	public SystemMessageParams addString(string text)
 	{
 		append(SystemMessageParamType.TYPE_TEXT, text);
 		return this;
 	}
-	
+
 	/**
 	 * Appends a Castle name parameter type, the name will be read from CastleName-e.dat.<br>
 	 * <ul>
@@ -79,25 +79,25 @@ public sealed class SystemMessageParams
 		append(SystemMessageParamType.TYPE_CASTLE_NAME, number);
 		return this;
 	}
-	
+
 	public SystemMessageParams addInt(int number)
 	{
 		append(SystemMessageParamType.TYPE_INT_NUMBER, number);
 		return this;
 	}
-	
+
 	public SystemMessageParams addLong(long number)
 	{
 		append(SystemMessageParamType.TYPE_LONG_NUMBER, number);
 		return this;
 	}
-	
+
 	public SystemMessageParams addPcName(Player pc)
 	{
 		append(SystemMessageParamType.TYPE_PLAYER_NAME, pc.getAppearance().getVisibleName());
 		return this;
 	}
-	
+
 	/**
 	 * ID from doorData.xml
 	 * @param doorId
@@ -108,55 +108,57 @@ public sealed class SystemMessageParams
 		append(SystemMessageParamType.TYPE_DOOR_NAME, doorId);
 		return this;
 	}
-	
+
 	public SystemMessageParams addNpcName(Npc npc)
 	{
 		return addNpcName(npc.getTemplate());
 	}
-	
+
 	public SystemMessageParams addNpcName(Summon npc)
 	{
 		return addNpcName(npc.getId());
 	}
-	
+
 	public SystemMessageParams addNpcName(NpcTemplate template)
 	{
 		if (template.isUsingServerSideName())
 		{
 			return addString(template.getName());
 		}
-		
+
 		return addNpcName(template.getId());
 	}
-	
+
 	public SystemMessageParams addNpcName(int id)
 	{
 		append(SystemMessageParamType.TYPE_NPC_NAME, 1000000 + id);
 		return this;
 	}
-	
+
 	public SystemMessageParams addItemName(Item item)
 	{
 		return addItemName(item.getId());
 	}
-	
+
 	public SystemMessageParams addItemName(ItemTemplate item)
 	{
 		return addItemName(item.getId());
 	}
-	
+
 	public SystemMessageParams addItemName(int id)
-	{
-		ItemTemplate item = ItemData.getInstance().getTemplate(id);
+    {
+        ItemTemplate item = ItemData.getInstance().getTemplate(id) ??
+            throw new ArgumentException($"Item {id} template not found", nameof(id));
+        
 		if (item.getDisplayId() != id)
 		{
 			return addString(item.getName());
 		}
-		
+
 		append(SystemMessageParamType.TYPE_ITEM_NAME, id);
 		return this;
 	}
-	
+
 	public SystemMessageParams addZoneName(int x, int y, int z)
 	{
 		append(SystemMessageParamType.TYPE_ZONE_NAME, new int[]
@@ -167,7 +169,7 @@ public sealed class SystemMessageParams
 		});
 		return this;
 	}
-	
+
 	public SystemMessageParams addSkillName(Skill skill)
 	{
 		if (skill.getId() != skill.getDisplayId())
@@ -176,12 +178,12 @@ public sealed class SystemMessageParams
 		}
 		return addSkillName(skill.getId(), skill.getLevel(), skill.getSubLevel());
 	}
-	
+
 	public SystemMessageParams addSkillName(int id)
 	{
 		return addSkillName(id, 1, 0);
 	}
-	
+
 	public SystemMessageParams addSkillName(int id, int lvl, int subLevel)
 	{
 		append(SystemMessageParamType.TYPE_SKILL_NAME, new[]
@@ -192,7 +194,7 @@ public sealed class SystemMessageParams
 		});
 		return this;
 	}
-	
+
 	/**
 	 * Elemental name - 0(Fire) ...
 	 * @param type
@@ -203,7 +205,7 @@ public sealed class SystemMessageParams
 		append(SystemMessageParamType.TYPE_ELEMENT_NAME, (int)type);
 		return this;
 	}
-	
+
 	/**
 	 * ID from sysstring-e.dat
 	 * @param type
@@ -214,7 +216,7 @@ public sealed class SystemMessageParams
 		append(SystemMessageParamType.TYPE_SYSTEM_STRING, type);
 		return this;
 	}
-	
+
 	/**
 	 * ID from ClassInfo-e.dat
 	 * @param type
@@ -225,13 +227,13 @@ public sealed class SystemMessageParams
 		append(SystemMessageParamType.TYPE_CLASS_ID, (int)type);
 		return this;
 	}
-	
+
 	public SystemMessageParams addFactionName(int factionId)
 	{
 		append(SystemMessageParamType.TYPE_FACTION_NAME, factionId);
 		return this;
 	}
-	
+
 	public SystemMessageParams addPopup(int target, int attacker, int damage)
 	{
 		append(SystemMessageParamType.TYPE_POPUP_ID, new[]
@@ -242,13 +244,13 @@ public sealed class SystemMessageParams
 		});
 		return this;
 	}
-	
+
 	public SystemMessageParams addByte(int time)
 	{
 		append(SystemMessageParamType.TYPE_BYTE, time);
 		return this;
 	}
-	
+
 	/**
 	 * Instance name from instantzonedata-e.dat
 	 * @param type id of instance
@@ -259,7 +261,7 @@ public sealed class SystemMessageParams
 		append(SystemMessageParamType.TYPE_INSTANCE_NAME, type);
 		return this;
 	}
-	
+
 	public SystemMessageParams addElementalSpirit(ElementalType elementType)
 	{
 		append(SystemMessageParamType.TYPE_ELEMENTAL_SPIRIT, (int)elementType);

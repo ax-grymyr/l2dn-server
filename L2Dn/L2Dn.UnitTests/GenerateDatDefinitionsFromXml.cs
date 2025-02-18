@@ -1,6 +1,5 @@
 ﻿using System.Text;
 using System.Xml.Linq;
-using L2Dn.Extensions;
 using L2Dn.Packages.DatDefinitions.Annotations;
 
 namespace L2Dn;
@@ -8,55 +7,62 @@ namespace L2Dn;
 public class GenerateDatDefinitionsFromXml
 {
     private const string BasePath = @"D:\Temp\000";
-    
+
     //[Fact]
     public void GenerateDefs()
     {
         StringBuilder sb = new StringBuilder();
-        
+
         var files = Directory.EnumerateFiles(BasePath, "*.xml");
         foreach (string file in files)
         {
             string name = Path.GetFileNameWithoutExtension(file).Substring(3);
             sb.AppendLine($"        dictionary[Chronicles.{name}] =");
             sb.AppendLine("        [");
-            
+
             XDocument document = XDocument.Load(file);
             var elements = document.Elements("list").Elements("link");
             foreach (XElement element in elements)
             {
-                string pattern = element.Attribute("pattern").Value;
-                string className = element.Attribute("file").Value;
-                string version = element.Attribute("version").Value;
+                string pattern = element.Attribute("pattern")?.Value ??
+                    throw new InvalidOperationException("Missing pattern attribute");
+
+                string className = element.Attribute("file")?.Value ??
+                    throw new InvalidOperationException("Missing file attribute");
+
+                string version = element.Attribute("version")?.Value ??
+                    throw new InvalidOperationException("Missing version attribute");
 
                 className = className.Replace("-", "");
-                
+
                 sb.AppendLine($"            new DatFileDefinition(@\"{pattern}\", typeof({version}.{className})),");
             }
 
             sb.AppendLine("        ];");
             sb.AppendLine();
         }
-        
+
         File.WriteAllText(Path.Combine(BasePath, "get.txt"), sb.ToString(), Encoding.UTF8);
     }
 
     //[Fact]
     public void GenerateClasses()
     {
-        Dictionary<string, SortedSet<string>> classes = new Dictionary<string, SortedSet<string>>(); 
+        Dictionary<string, SortedSet<string>> classes = new Dictionary<string, SortedSet<string>>();
         var files = Directory.EnumerateFiles(Path.Combine(BasePath, "dats"), "*.xml");
         foreach (string file in files)
         {
             string name = Path.GetFileNameWithoutExtension(file);
             if (char.IsDigit(name[0]))
                 continue;
-            
+
             XDocument document = XDocument.Load(file);
             var elements = document.Elements("list").Elements("file");
             foreach (XElement element in elements)
             {
-                string version = element.Attribute("pattern").Value;
+                string version = element.Attribute("pattern")?.Value ?? // TODO: Check if this is correct
+                    throw new InvalidOperationException("Missing pattern attribute");
+
                 string className = name.Replace("-", "");
 
                 GenerateClass(version, className, element, classes);
@@ -64,35 +70,40 @@ public class GenerateDatDefinitionsFromXml
         }
     }
 
-    private static ClassDef GetClassDef(string version, string className, XElement element, 
+    private static ClassDef GetClassDef(string version, string className, XElement element,
         Dictionary<string, SortedSet<string>> classes)
     {
         ClassDef classDef = new ClassDef(version, className, false);
-        
+
         XElement classElem = element;
         XElement[] subElems = element.Elements().ToArray();
         if (subElems.Length == 2 && subElems[0].Name.LocalName == "node" &&
-            subElems[1].Name.LocalName == "for" && subElems[1].Attribute("size").Value ==
-            "#" + subElems[0].Attribute("name").Value)
+            subElems[1].Name.LocalName == "for" &&
+            subElems[1].Attribute("size")?.Value == "#" + subElems[0].Attribute("name")?.Value)
         {
             classElem = subElems[1];
             classDef = classDef with { IsArray = true };
         }
-        
+
         XElement[] propElems = classElem.Elements().ToArray();
         for (int i = 0; i < propElems.Length; i++)
         {
             XElement propElem = propElems[i];
-            string propName = propElem.Attribute("name").Value;
+            string propName = propElem.Attribute("name")?.Value ??
+                throw new InvalidOperationException("Missing name attribute");
 
             if (propElem.Name.LocalName == "node")
             {
-                string propType = propElem.Attribute("reader").Value;
+                string propType = propElem.Attribute("reader")?.Value ??
+                    throw new InvalidOperationException("Missing reader attribute");
+
                 classDef.Properties.Add(new PropertyDef(propName, new PropertyTypeDef(propType, false)));
             }
             else if (propElem.Name.LocalName == "for")
             {
-                string size = propElem.Attribute("size").Value;
+                string size = propElem.Attribute("size")?.Value ??
+                    throw new InvalidOperationException("Missing size attribute");
+
                 if (size.StartsWith("#"))
                 {
                     string sizePropName = size.Substring(1);
@@ -101,7 +112,7 @@ public class GenerateDatDefinitionsFromXml
                         throw new NotSupportedException();
 
                     classDef.Properties.RemoveAt(classDef.Properties.Count - 1);
-                    
+
                     PropertyTypeDef arrayElemType = GetArrayElemType(version, className, propElem, classes);
 
                     ArrayLengthType arrayLengthType;
@@ -139,17 +150,21 @@ public class GenerateDatDefinitionsFromXml
         return classDef;
     }
 
-    private static PropertyTypeDef GetArrayElemType(string version, string className, XElement propElem, 
+    private static PropertyTypeDef GetArrayElemType(string version, string className, XElement propElem,
         Dictionary<string, SortedSet<string>> classes)
     {
         XElement[] elems = propElem.Elements().ToArray();
         if (elems.Length == 1 && elems[0].Name.LocalName == "node")
         {
-            string elemType = elems[0].Attribute("reader").Value;
+            string elemType = elems[0].Attribute("reader")?.Value ??
+                throw new InvalidOperationException("Missing reader attribute");
+
             return new PropertyTypeDef(elemType, false);
         }
 
-        string propName = propElem.Attribute("name").Value;
+        string propName = propElem.Attribute("name")?.Value ??
+            throw new InvalidOperationException("Missing name attribute");
+
         GenerateClass(version, className + "_" + propName, propElem, classes);
         return new PropertyTypeDef(className + "_" + propName, true);
     }
@@ -157,7 +172,7 @@ public class GenerateDatDefinitionsFromXml
     private static void GenerateClass(string version, string className, XElement element, Dictionary<string, SortedSet<string>> classes)
     {
         ClassDef classDef = GetClassDef(version, className, element, classes);
-        
+
         StringBuilder sb = new StringBuilder();
 
         sb.AppendLine($"namespace L2Dn.Packages.DatDefinitions.{classDef.Version};");
@@ -177,17 +192,17 @@ public class GenerateDatDefinitionsFromXml
                 {
                     case ArrayLengthType.CompactInt:
                         break;
-                    
+
                     case ArrayLengthType.Fixed:
                         sb.AppendLine($"    [ArrayLengthType(ArrayLengthType.Fixed, {propertyType.Size})]");
                         break;
-                    
+
                     default:
                         sb.AppendLine($"    [ArrayLengthType(ArrayLengthType.{propertyType.LengthType})]");
                         break;
                 }
             }
-                
+
             if (propertyType.TypeName == "UNICODE")
                 sb.AppendLine("    [StringType(StringType.Unicode)]");
 
@@ -220,10 +235,10 @@ public class GenerateDatDefinitionsFromXml
                 sb.AppendLine($"    public {type}[] {propName} {{ get; set; }} = Array.Empty<{type}>();");
             else if (type == "string")
                 sb.AppendLine($"    public {type} {propName} {{ get; set; }} = string.Empty;");
-            else 
+            else
                 sb.AppendLine($"    public {type} {propName} {{ get; set; }}");
         }
-        
+
         sb.AppendLine("}");
 
         sb.AppendLine();

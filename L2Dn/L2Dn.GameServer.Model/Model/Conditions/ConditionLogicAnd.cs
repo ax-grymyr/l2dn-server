@@ -10,55 +10,55 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public class ConditionLogicAnd: Condition
 {
-	public readonly List<Condition> conditions = new();
-	
-	/**
-	 * Adds the.
-	 * @param condition the condition
-	 */
-	public void add(Condition condition)
-	{
-		if (condition == null)
-		{
-			return;
-		}
-		if (getListener() != null)
-		{
-			condition.setListener(this);
-		}
-		
-		conditions.Add(condition);
-	}
-	
-	public override void setListener(ConditionListener listener)
-	{
-		if (listener != null)
-		{
-			foreach (Condition c in conditions)
-			{
-				c.setListener(this);
-			}
-		}
-		else
-		{
-			foreach (Condition c in conditions)
-			{
-				c.setListener(null);
-			}
-		}
+    public readonly List<Condition> conditions = [];
 
-		base.setListener(listener);
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		foreach (Condition c in conditions)
-		{
-			if (!c.test(effector, effected, skill, item))
-			{
-				return false;
-			}
-		}
-		return true;
-	}
+    /**
+     * Adds the.
+     * @param condition the condition
+     */
+    public void add(Condition condition)
+    {
+        if (condition == null)
+        {
+            return;
+        }
+
+        if (getListener() != null)
+        {
+            condition.setListener(this);
+        }
+
+        conditions.Add(condition);
+    }
+
+    public override void setListener(ConditionListener? listener)
+    {
+        if (listener != null)
+        {
+            foreach (Condition c in conditions)
+            {
+                c.setListener(this);
+            }
+        }
+        else
+        {
+            foreach (Condition c in conditions)
+            {
+                c.setListener(null);
+            }
+        }
+
+        base.setListener(listener);
+    }
+
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        foreach (Condition c in conditions)
+        {
+            if (!c.test(effector, effected, skill, item))
+                return false;
+        }
+
+        return true;
+    }
 }

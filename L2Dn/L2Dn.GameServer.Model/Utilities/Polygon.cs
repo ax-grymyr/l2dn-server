@@ -6,12 +6,12 @@ public class Polygon
     private readonly int[] _xpoints;
     private readonly int[] _ypoints;
     private readonly Rectangle _bounds;
-    private static readonly int MIN_LENGTH = 4;
+    //private static readonly int MIN_LENGTH = 4;
 
     public int npoints => _npoints;
     public int[] xpoints => _xpoints;
     public int[] ypoints => _ypoints;
-    
+
     public Polygon(int[] xpoints, int[] ypoints, int npoints)
     {
         if (npoints > xpoints.Length || npoints > ypoints.Length)
@@ -140,7 +140,7 @@ public class Polygon
         return ((hits & 1) != 0);
     }
 
-    private Crossings getCrossings(double xlo, double ylo,
+    private Crossings? getCrossings(double xlo, double ylo,
         double xhi, double yhi)
     {
         Crossings cross = new Crossings.EvenOdd(xlo, ylo, xhi, yhi);
@@ -171,7 +171,7 @@ public class Polygon
             return false;
         }
 
-        Crossings cross = getCrossings(x, y, x + w, y + h);
+        Crossings? cross = getCrossings(x, y, x + w, y + h);
         return (cross == null || !cross.isEmpty());
     }
 }

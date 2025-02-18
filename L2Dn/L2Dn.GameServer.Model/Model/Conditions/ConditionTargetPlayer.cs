@@ -7,10 +7,10 @@ namespace L2Dn.GameServer.Model.Conditions;
 /**
  * @author Sdw
  */
-public class ConditionTargetPlayer : Condition
+public sealed class ConditionTargetPlayer: Condition
 {
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		return effected.isPlayer();
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        return effected.isPlayer();
+    }
 }

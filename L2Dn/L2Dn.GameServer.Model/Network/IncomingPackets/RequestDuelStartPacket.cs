@@ -27,7 +27,7 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 		Player? player = session.Player;
 		if (player == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (FakePlayerData.getInstance().isTalkable(_player))
 		{
 			SystemMessagePacket sm;
@@ -48,7 +48,7 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 					npcInRange = true;
 				}
 			}
-			
+
 			if (!npcInRange)
 			{
 				sm = new SystemMessagePacket(SystemMessageId.C1_IS_TOO_FAR_AWAY_TO_RECEIVE_A_DUEL_CHALLENGE);
@@ -64,7 +64,7 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 				player.sendPacket(sm);
 				return ValueTask.CompletedTask;
 			}
-			
+
 			sm = new SystemMessagePacket(SystemMessageId.C1_HAS_BEEN_CHALLENGED_TO_A_DUEL);
 			sm.Params.addString(name);
 			player.sendPacket(sm);
@@ -72,7 +72,7 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 			player.blockRequest();
 			return ValueTask.CompletedTask;
 		}
-		
+
 		Player targetChar = World.getInstance().getPlayer(_player);
 		if (targetChar == null)
 		{
@@ -85,7 +85,7 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.THERE_IS_NO_OPPONENT_TO_RECEIVE_YOUR_CHALLENGE_FOR_A_DUEL);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Check if duel is possible
 		if (!player.canDuel())
 		{
@@ -107,12 +107,12 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 			player.sendPacket(msg);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Duel is a party duel
 		if (_partyDuel)
 		{
 			// Player must be in a party & the party leader
-			Party party = player.getParty();
+			Party? party = player.getParty();
 			if ((party == null) || !party.isLeader(player))
 			{
 				player.sendMessage("You have to be the leader of a party in order to request a party duel.");
@@ -125,16 +125,16 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 				player.sendPacket(SystemMessageId.SINCE_THE_PERSON_YOU_CHALLENGED_IS_NOT_CURRENTLY_IN_A_PARTY_THEY_CANNOT_DUEL_AGAINST_YOUR_PARTY);
 				return ValueTask.CompletedTask;
 			}
-			
+
 			// Target may not be of the same party
-			if (player.getParty().containsPlayer(targetChar))
+			if (party.containsPlayer(targetChar))
 			{
 				player.sendMessage("This player is a member of your own party.");
 				return ValueTask.CompletedTask;
 			}
-			
+
 			// Check if every player is ready for a duel
-			foreach (Player temp in player.getParty().getMembers())
+			foreach (Player temp in party.getMembers())
 			{
 				if (!temp.canDuel())
 				{
@@ -143,21 +143,21 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 				}
 			}
 
-			Player partyLeader = null; // snatch party leader of targetChar's party
+			Player? partyLeader = null; // snatch party leader of targetChar's party
 			foreach (Player temp in targetChar.getParty().getMembers())
 			{
 				if (partyLeader == null)
 				{
 					partyLeader = temp;
 				}
-				
+
 				if (!temp.canDuel())
 				{
 					player.sendPacket(SystemMessageId.THE_OPPOSING_PARTY_IS_CURRENTLY_UNABLE_TO_ACCEPT_A_CHALLENGE_TO_A_DUEL);
 					return ValueTask.CompletedTask;
 				}
 			}
-			
+
 			// Send request to targetChar's party leader
 			if (partyLeader != null)
 			{
@@ -168,7 +168,7 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.C1_S_PARTY_HAS_BEEN_CHALLENGED_TO_A_DUEL);
 					msg.Params.addString(partyLeader.getName());
 					player.sendPacket(msg);
-					
+
 					msg = new SystemMessagePacket(SystemMessageId.C1_S_PARTY_HAS_CHALLENGED_YOUR_PARTY_TO_A_DUEL);
 					msg.Params.addString(player.getName());
 					targetChar.sendPacket(msg);
@@ -191,7 +191,7 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 				SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.C1_HAS_BEEN_CHALLENGED_TO_A_DUEL);
 				msg.Params.addString(targetChar.getName());
 				player.sendPacket(msg);
-				
+
 				msg = new SystemMessagePacket(SystemMessageId.C1_HAS_CHALLENGED_YOU_TO_A_DUEL);
 				msg.Params.addString(player.getName());
 				targetChar.sendPacket(msg);

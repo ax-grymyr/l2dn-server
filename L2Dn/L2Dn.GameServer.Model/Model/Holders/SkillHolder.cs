@@ -6,7 +6,7 @@ namespace L2Dn.GameServer.Model.Holders;
 /// <summary>
 /// Simple class for storing skill id/level.
 /// </summary>
-public class SkillHolder: IEquatable<SkillHolder>
+public class SkillHolder: IEquatable<SkillHolder> // TODO: this class must never exist, instead directly use Skill
 {
 	private readonly int _skillId;
 	private readonly int _skillLevel;
@@ -41,8 +41,10 @@ public class SkillHolder: IEquatable<SkillHolder>
 	public int getSkillLevel() => _skillLevel;
 	public int getSkillSubLevel() => _skillSubLevel;
 
-	public Skill? getSkill()
-		=> _skill ??= SkillData.getInstance().getSkill(_skillId, Math.Max(_skillLevel, 1), _skillSubLevel);
+    public Skill getSkill() =>
+        _skill ??= SkillData.getInstance().getSkill(_skillId, Math.Max(_skillLevel, 1), _skillSubLevel) ??
+            throw new InvalidOperationException(
+                $"Skill id={_skillId}, level={_skillLevel}, subLevel={_skillSubLevel} not found!");
 
 	public bool Equals(SkillHolder? other)
 	{

@@ -25,7 +25,7 @@ public class DoorAction: IActionHandler
 		else if (interact)
 		{
 			Door door = (Door) target;
-			ClanHall clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.getId());
+			ClanHall? clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.getId());
 			// MyTargetSelected my = new MyTargetSelected(getObjectId(), player.getLevel());
 			// player.sendPacket(my);
 			if (target.isAutoAttackable(player))
@@ -74,10 +74,10 @@ public class DoorAction: IActionHandler
 				}
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	public InstanceType getInstanceType()
 	{
 		return InstanceType.Door;

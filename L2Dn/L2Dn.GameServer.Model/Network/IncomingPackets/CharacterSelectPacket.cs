@@ -40,18 +40,18 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 		    connection.Close();
 		    return ValueTask.CompletedTask;
 	    }
-        
+
 		// if (!client.getFloodProtectors().canSelectCharacter())
 		// {
 		// 	return;
 		// }
-		
+
 		// if (SecondaryAuthData.getInstance().isEnabled() && !session.getSecondaryAuth().isAuthed())
 		// {
 		// 	client.getSecondaryAuth().openDialog();
 		// 	return;
 		// }
-		
+
 		// We should always be able to acquire the lock
 		// But if we can't lock then nothing should be done (i.e. repeated packet)
 		if (Monitor.TryEnter(session.PlayerLock))
@@ -64,16 +64,16 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 				{
 					if (_charSlot < 0 || _charSlot >= session.Characters.Count)
 						return ValueTask.CompletedTask;
-					
+
 					CharacterInfo charInfo = session.Characters[_charSlot];
-					
+
 					// Disconnect offline trader.
-					Player offlineTrader = World.getInstance().getPlayer(charInfo.Id);
+					Player? offlineTrader = World.getInstance().getPlayer(charInfo.Id);
 					if (offlineTrader != null)
 					{
 						Disconnection.of(offlineTrader).storeMe().deleteMe();
 					}
-					
+
 					// Banned?
 					if (PunishmentManager.getInstance().hasPunishment(charInfo.Id.ToString(), PunishmentAffect.CHARACTER, PunishmentType.BAN)
 						|| PunishmentManager.getInstance().hasPunishment(session.AccountName, PunishmentAffect.ACCOUNT, PunishmentType.BAN)
@@ -83,7 +83,7 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 						connection.Send(ref serverClosePacket, SendPacketOptions.CloseAfterSending);
 						return ValueTask.CompletedTask;
 					}
-					
+
 					// Selected character is banned (compatibility with previous versions).
 					if (charInfo.AccessLevel < 0)
 					{
@@ -136,12 +136,12 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 					}
 
 					// load up character from disk
-					Player player = session.Characters.LoadPlayer(_charSlot);
+					Player? player = session.Characters.LoadPlayer(_charSlot);
 					if (player == null)
 						return ValueTask.CompletedTask; // handled in GameClient
-					
+
 					CharInfoTable.getInstance().addName(player);
-					
+
 					// Prevent instant disappear of invisible GMs on login.
 					if (player.isGM() && Config.GM_STARTUP_INVISIBLE && AdminData.getInstance()
 						    .hasAccess("admin_invisible", player.getAccessLevel()))
@@ -158,12 +158,12 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 						player.setXYZ(int.Parse(split[0]), int.Parse(split[1]), int.Parse(split[2]));
 						vars.remove(PlayerVariables.RESTORE_LOCATION);
 					}
-					
+
 					player.setClient(session);
 					session.Player = player;
 					player.setOnlineStatus(true, true);
 					session.Characters.UpdateLastAccessTime(_charSlot);
-					
+
 					if (GlobalEvents.Players.HasSubscribers<OnPlayerSelect>())
 					{
 						OnPlayerSelect onPlayerSelect = new(player, player.ObjectId, player.getName(), session);

@@ -87,7 +87,7 @@ public class SchemeBufferTable: DataReaderBase
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			
+
 			// Delete all entries from database.
 			ctx.BufferSchemes.ExecuteDelete();
 
@@ -97,7 +97,7 @@ public class SchemeBufferTable: DataReaderBase
 				foreach (var scheme in player.Value)
 				{
 					// Build a String composed of skill ids seperated by a ",".
-					string skills = string.Join(",", scheme.Value); 
+					string skills = string.Join(",", scheme.Value);
 					ctx.BufferSchemes.Add(new()
 					{
 						ObjectId = player.Key,
@@ -115,25 +115,24 @@ public class SchemeBufferTable: DataReaderBase
 		}
 	}
 
-	public void setScheme(int playerId, string schemeName, List<int> list)
-	{
-		if (!_schemesTable.ContainsKey(playerId))
-		{
-			_schemesTable.put(playerId, new(StringComparer.InvariantCultureIgnoreCase));
-		}
-		else if (_schemesTable.get(playerId).Count >= Config.BUFFER_MAX_SCHEMES)
-		{
-			return;
-		}
+    public void setScheme(int playerId, string schemeName, List<int> list)
+    {
+        Map<string, List<int>> schemes = _schemesTable.GetOrAdd(playerId,
+            static _ => new Map<string, List<int>>(StringComparer.InvariantCultureIgnoreCase));
 
-		_schemesTable.get(playerId).put(schemeName, list);
-	}
+        if (schemes.Count >= Config.BUFFER_MAX_SCHEMES)
+        {
+            return;
+        }
 
-	/**
-	 * @param playerId : The player objectId to check.
-	 * @return the list of schemes for a given player.
-	 */
-	public Map<string, List<int>> getPlayerSchemes(int playerId)
+        schemes.put(schemeName, list);
+    }
+
+    /**
+     * @param playerId : The player objectId to check.
+     * @return the list of schemes for a given player.
+     */
+	public Map<string, List<int>>? getPlayerSchemes(int playerId)
 	{
 		return _schemesTable.get(playerId);
 	}
@@ -143,14 +142,14 @@ public class SchemeBufferTable: DataReaderBase
 	 * @param schemeName : The scheme name to check.
 	 * @return the List holding skills for the given scheme name and player, or null (if scheme or player isn't registered).
 	 */
-	public List<int> getScheme(int playerId, string schemeName)
+	public List<int>? getScheme(int playerId, string schemeName)
 	{
 		if ((_schemesTable.get(playerId) == null) || (_schemesTable.get(playerId).get(schemeName) == null))
 		{
 			return new();
 		}
 
-		return _schemesTable.get(playerId).get(schemeName);
+		return _schemesTable.get(playerId)?.get(schemeName);
 	}
 
 	/**
@@ -161,8 +160,8 @@ public class SchemeBufferTable: DataReaderBase
 	 */
 	public bool getSchemeContainsSkill(int playerId, string schemeName, int skillId)
 	{
-		List<int> skills = getScheme(playerId, schemeName);
-		if (skills.Count == 0)
+		List<int>? skills = getScheme(playerId, schemeName);
+		if (skills is null || skills.Count == 0)
 		{
 			return false;
 		}
@@ -213,7 +212,7 @@ public class SchemeBufferTable: DataReaderBase
 		return skillTypes;
 	}
 
-	public BuffSkillHolder getAvailableBuff(int skillId)
+	public BuffSkillHolder? getAvailableBuff(int skillId)
 	{
 		return _availableBuffs.get(skillId);
 	}

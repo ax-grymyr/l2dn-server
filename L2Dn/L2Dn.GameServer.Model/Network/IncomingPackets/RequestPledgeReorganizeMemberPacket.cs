@@ -28,30 +28,30 @@ public struct RequestPledgeReorganizeMemberPacket: IIncomingPacket<GameSession>
 
         if (_isMemberSelected == 0)
             return ValueTask.CompletedTask;
-		
-        Clan clan = player.getClan();
+
+        Clan? clan = player.getClan();
         if (clan == null)
             return ValueTask.CompletedTask;
-		
+
         if (!player.hasClanPrivilege(ClanPrivilege.CL_MANAGE_RANKS))
             return ValueTask.CompletedTask;
-		
+
         ClanMember member1 = clan.getClanMember(_memberName);
         if (member1 == null || member1.getObjectId() == clan.getLeaderId())
             return ValueTask.CompletedTask;
-		
+
         ClanMember member2 = clan.getClanMember(_selectedMember);
         if (member2 == null || member2.getObjectId() == clan.getLeaderId())
             return ValueTask.CompletedTask;
-		
+
         int oldPledgeType = member1.getPledgeType();
         if (oldPledgeType == _newPledgeType)
             return ValueTask.CompletedTask;
-		
+
         member1.setPledgeType(_newPledgeType);
         member2.setPledgeType(oldPledgeType);
         clan.broadcastClanStatus();
-        
+
         return ValueTask.CompletedTask;
     }
 }

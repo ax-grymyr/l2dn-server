@@ -16,13 +16,13 @@ public class MyParty: ITargetTypeHandler
 	{
 		return TargetType.MY_PARTY;
 	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
+
+	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
 		if ((selectedTarget != null) && selectedTarget.isPlayer() && (selectedTarget != creature))
 		{
 			Party party = creature.getParty();
-			Party targetParty = selectedTarget.getActingPlayer().getParty();
+			Party? targetParty = selectedTarget.getActingPlayer()?.getParty();
 			if ((party != null) && (targetParty != null) && (party.getLeaderObjectId() == targetParty.getLeaderObjectId()))
 			{
 				return selectedTarget;

@@ -28,15 +28,15 @@ public struct ExTryPetExtractSystemPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-		Item petItem = player.getInventory().getItemByObjectId(_itemObjId);
+		Item? petItem = player.getInventory().getItemByObjectId(_itemObjId);
 		if (petItem == null || (player.getPet() != null && player.getPet().getControlItem() == petItem))
 		{
 			player.sendPacket(new ResultPetExtractSystemPacket(false));
 			return ValueTask.CompletedTask;
 		}
-		
+
 		PetData petData = PetDataTable.getInstance().getPetDataByItemId(petItem.getId());
-		NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(petData.getNpcId());
+		NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(petData.getNpcId());
 		Pet pet = new Pet(npcTemplate, player, petItem);
 		PetInventory petInventory = pet.getInventory();
 		PlayerInventory playerInventory = player.getInventory();
@@ -45,16 +45,16 @@ public struct ExTryPetExtractSystemPacket: IIncomingPacket<GameSession>
 			player.sendPacket(new ResultPetExtractSystemPacket(false));
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!playerInventory.validateWeight(petInventory.getTotalWeight()) || !playerInventory.validateCapacity(petInventory.getSize()))
 		{
 			player.sendPacket(SystemMessageId.THERE_ARE_ITEMS_IN_THE_PET_S_INVENTORY_TAKE_THEM_OUT_FIRST);
 			player.sendPacket(new ResultPetExtractSystemPacket(false));
 			return ValueTask.CompletedTask;
 		}
-		
+
 		petInventory.transferItemsToOwner();
-		
+
 		Pet petInfo = Pet.restore(petItem, NpcData.getInstance().getTemplate(petData.getNpcId()), player);
 		int petId = PetDataTable.getInstance().getPetDataByItemId(petItem.getId()).getType();
 		int petLevel = petInfo.getLevel();
@@ -83,9 +83,9 @@ public struct ExTryPetExtractSystemPacket: IIncomingPacket<GameSession>
 
 			return ValueTask.CompletedTask;
 		}
-		
+
 		player.sendPacket(new ResultPetExtractSystemPacket(false));
-        
+
         return ValueTask.CompletedTask;
     }
 }

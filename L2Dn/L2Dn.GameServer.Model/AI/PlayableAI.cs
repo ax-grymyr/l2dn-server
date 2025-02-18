@@ -19,7 +19,7 @@ public abstract class PlayableAI : CreatureAI
 	protected PlayableAI(Playable playable): base(playable)
 	{
 	}
-	
+
 	protected override void onIntentionAttack(Creature target)
 	{
 		if ((target != null) && target.isPlayable())
@@ -32,7 +32,7 @@ public abstract class PlayableAI : CreatureAI
 				clientActionFailed();
 				return;
 			}
-			
+
 			if (_actor.getActingPlayer().isProtectionBlessingAffected() && ((target.getActingPlayer().getLevel() - _actor.getActingPlayer().getLevel()) >= 10) && (target.getActingPlayer().getReputation() < 0) && !(target.isInsideZone(ZoneId.PVP)))
 			{
 				// If target have karma and have level >= 10 than his target and actor have
@@ -41,14 +41,14 @@ public abstract class PlayableAI : CreatureAI
 				clientActionFailed();
 				return;
 			}
-			
+
 			if (target.getActingPlayer().isCursedWeaponEquipped() && (_actor.getActingPlayer().getLevel() <= 20))
 			{
 				_actor.getActingPlayer().sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 				clientActionFailed();
 				return;
 			}
-			
+
 			if (_actor.getActingPlayer().isCursedWeaponEquipped() && (target.getActingPlayer().getLevel() <= 20))
 			{
 				_actor.getActingPlayer().sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
@@ -56,11 +56,11 @@ public abstract class PlayableAI : CreatureAI
 				return;
 			}
 		}
-		
+
 		base.onIntentionAttack(target);
 	}
-	
-	protected override void onIntentionCast(Skill skill, WorldObject target, Item item, bool forceUse, bool dontMove)
+
+	protected override void onIntentionCast(Skill skill, WorldObject? target, Item? item, bool forceUse, bool dontMove)
 	{
 		if ((target != null) && (target.isPlayable()) && skill.isBad())
 		{
@@ -72,7 +72,7 @@ public abstract class PlayableAI : CreatureAI
 				clientActionFailed();
 				return;
 			}
-			
+
 			if (_actor.getActingPlayer().isProtectionBlessingAffected() && ((target.getActingPlayer().getLevel() - _actor.getActingPlayer().getLevel()) >= 10) && (target.getActingPlayer().getReputation() < 0) && !target.isInsideZone(ZoneId.PVP))
 			{
 				// If target have karma and have level >= 10 than his target and actor have
@@ -81,7 +81,7 @@ public abstract class PlayableAI : CreatureAI
 				clientActionFailed();
 				return;
 			}
-			
+
 			if (target.getActingPlayer().isCursedWeaponEquipped() && ((_actor.getActingPlayer().getLevel() <= 20) || (target.getActingPlayer().getLevel() <= 20)))
 			{
 				_actor.getActingPlayer().sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
@@ -89,7 +89,7 @@ public abstract class PlayableAI : CreatureAI
 				return;
 			}
 		}
-		
+
 		base.onIntentionCast(skill, target, item, forceUse, dontMove);
 	}
 }

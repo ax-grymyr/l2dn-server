@@ -34,21 +34,21 @@ public struct RequestPledgeRecruitBoardAccessPacket: IIncomingPacket<GameSession
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Clan clan = player.getClan();
+        Clan? clan = player.getClan();
         if (clan == null)
         {
             player.sendPacket(SystemMessageId.ONLY_THE_CLAN_LEADER_OR_SOMEONE_WITH_RANK_MANAGEMENT_AUTHORITY_MAY_REGISTER_THE_CLAN);
             return ValueTask.CompletedTask;
         }
-		
+
         if (!player.hasClanPrivilege(ClanPrivilege.CL_MANAGE_RANKS))
         {
             player.sendPacket(SystemMessageId.ONLY_THE_CLAN_LEADER_OR_SOMEONE_WITH_RANK_MANAGEMENT_AUTHORITY_MAY_REGISTER_THE_CLAN);
             return ValueTask.CompletedTask;
         }
-		
+
         PledgeRecruitInfo pledgeRecruitInfo = new PledgeRecruitInfo(clan.getId(), _karma, _information, _detailedInformation, _applicationType, _recruitingType);
-		
+
         switch (_applyType)
         {
             case 0: // remove
@@ -68,7 +68,7 @@ public struct RequestPledgeRecruitBoardAccessPacket: IIncomingPacket<GameSession
                     sm.Params.addLong((long)ClanEntryManager.getInstance().getClanLockTime(clan.getId()).TotalMinutes);
                     player.sendPacket(sm);
                 }
-                
+
                 break;
             }
             case 2: // update
@@ -83,11 +83,11 @@ public struct RequestPledgeRecruitBoardAccessPacket: IIncomingPacket<GameSession
                     sm.Params.addLong((long)ClanEntryManager.getInstance().getClanLockTime(clan.getId()).TotalMinutes);
                     player.sendPacket(sm);
                 }
-                
+
                 break;
             }
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

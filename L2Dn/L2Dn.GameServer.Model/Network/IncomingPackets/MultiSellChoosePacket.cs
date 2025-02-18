@@ -72,121 +72,121 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 		}
 	}
 
-	public ValueTask ProcessAsync(Connection connection, GameSession session)
-	{
-		Player? player = session.Player;
-		if (player is null)
-			return ValueTask.CompletedTask;
+    public ValueTask ProcessAsync(Connection connection, GameSession session)
+    {
+        Player? player = session.Player;
+        if (player is null)
+            return ValueTask.CompletedTask;
 
-		// TODO: flood protection
-		// if (!client.getFloodProtectors().canUseMultiSell())
-		// {
-		// 	player.setMultiSell(null);
-		// 	return ValueTask.CompletedTask;
-		// }
+        // TODO: flood protection
+        // if (!client.getFloodProtectors().canUseMultiSell())
+        // {
+        // 	player.setMultiSell(null);
+        // 	return ValueTask.CompletedTask;
+        // }
 
-		if (_amount < 1 || _amount > 10000) // 999 999 is client max.
-		{
-			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_QUANTITY_THAT_CAN_BE_INPUTTED);
-			return ValueTask.CompletedTask;
-		}
+        if (_amount < 1 || _amount > 10000) // 999 999 is client max.
+        {
+            player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_QUANTITY_THAT_CAN_BE_INPUTTED);
+            return ValueTask.CompletedTask;
+        }
 
-		PreparedMultisellListHolder list = player.getMultiSell();
-		if (list == null || list.getId() != _listId)
-		{
-			player.setMultiSell(null);
-			return ValueTask.CompletedTask;
-		}
+        PreparedMultisellListHolder list = player.getMultiSell();
+        if (list == null || list.getId() != _listId)
+        {
+            player.setMultiSell(null);
+            return ValueTask.CompletedTask;
+        }
 
-		Npc npc = player.getLastFolkNPC();
-		if (!list.isNpcAllowed(-1))
-		{
-			if (npc == null //
-			    || !list.isNpcAllowed(npc.getId()) //
-			    || !list.checkNpcObjectId(npc.ObjectId) //
-			    || player.getInstanceId() != npc.getInstanceId() //
-			    || !player.IsInsideRadius3D(npc, Npc.INTERACTION_DISTANCE))
-			{
-				if (player.isGM())
-				{
-					player.sendMessage("Multisell " + _listId +
-						" is restricted. Under current conditions cannot be used. Only GMs are allowed to use it.");
-				}
-				else
-				{
-					player.setMultiSell(null);
-					return ValueTask.CompletedTask;
-				}
-			}
-		}
+        Npc npc = player.getLastFolkNPC();
+        if (!list.isNpcAllowed(-1))
+        {
+            if (npc == null //
+                || !list.isNpcAllowed(npc.getId()) //
+                || !list.checkNpcObjectId(npc.ObjectId) //
+                || player.getInstanceId() != npc.getInstanceId() //
+                || !player.IsInsideRadius3D(npc, Npc.INTERACTION_DISTANCE))
+            {
+                if (player.isGM())
+                {
+                    player.sendMessage("Multisell " + _listId +
+                        " is restricted. Under current conditions cannot be used. Only GMs are allowed to use it.");
+                }
+                else
+                {
+                    player.setMultiSell(null);
+                    return ValueTask.CompletedTask;
+                }
+            }
+        }
 
-		if (_soulCrystalOptions != null && _soulCrystalOptions.ContainsNull() ||
-		    (_soulCrystalSpecialOptions != null && _soulCrystalSpecialOptions.ContainsNull()))
-		{
-			PacketLogger.Instance.Warn("Character: " + player.getName() +
-				" requested multisell entry with invalid soul crystal options. Multisell: " +
-				_listId + " entry: " + _entryId);
+        if (_soulCrystalOptions != null && _soulCrystalOptions.ContainsNull() ||
+            (_soulCrystalSpecialOptions != null && _soulCrystalSpecialOptions.ContainsNull()))
+        {
+            PacketLogger.Instance.Warn("Character: " + player.getName() +
+                " requested multisell entry with invalid soul crystal options. Multisell: " +
+                _listId + " entry: " + _entryId);
 
-			player.setMultiSell(null);
-			return ValueTask.CompletedTask;
-		}
+            player.setMultiSell(null);
+            return ValueTask.CompletedTask;
+        }
 
-		ImmutableArray<MultisellEntryHolder> entries = list.getEntries();
-		if (entries.IsDefaultOrEmpty)
-		{
-			PacketLogger.Instance.Warn("Character: " + player.getName() +
-				" requested empty multisell entry. Multisell: " + _listId + " entry: " +
-				_entryId);
+        ImmutableArray<MultisellEntryHolder> entries = list.getEntries();
+        if (entries.IsDefaultOrEmpty)
+        {
+            PacketLogger.Instance.Warn("Character: " + player.getName() +
+                " requested empty multisell entry. Multisell: " + _listId + " entry: " +
+                _entryId);
 
-			return ValueTask.CompletedTask;
-		}
+            return ValueTask.CompletedTask;
+        }
 
-		if (entries.IsDefaultOrEmpty)
-		{
-			PacketLogger.Instance.Warn("Character: " + player.getName() +
-				" requested empty multisell entry. Multisell: " + _listId + " entry: " +
-				_entryId);
+        if (entries.IsDefaultOrEmpty)
+        {
+            PacketLogger.Instance.Warn("Character: " + player.getName() +
+                " requested empty multisell entry. Multisell: " + _listId + " entry: " +
+                _entryId);
 
-			return ValueTask.CompletedTask;
-		}
+            return ValueTask.CompletedTask;
+        }
 
-		if (_entryId < 0 || _entryId >= entries.Length)
-		{
-			PacketLogger.Instance.Warn("Character: " + player.getName() +
-				" requested out of bounds multisell entry. Multisell: " + _listId + " entry: " +
-				_entryId);
+        if (_entryId < 0 || _entryId >= entries.Length)
+        {
+            PacketLogger.Instance.Warn("Character: " + player.getName() +
+                " requested out of bounds multisell entry. Multisell: " + _listId + " entry: " +
+                _entryId);
 
-			return ValueTask.CompletedTask;
-		}
+            return ValueTask.CompletedTask;
+        }
 
-		MultisellEntryHolder entry = entries[_entryId];
-		if (entry == null)
-		{
-			PacketLogger.Instance.Warn("Character: " + player.getName() +
-				" requested inexistant prepared multisell entry. Multisell: " + _listId +
-				" entry: " + _entryId);
+        MultisellEntryHolder entry = entries[_entryId];
+        if (entry == null)
+        {
+            PacketLogger.Instance.Warn("Character: " + player.getName() +
+                " requested inexistant prepared multisell entry. Multisell: " + _listId +
+                " entry: " + _entryId);
 
-			player.setMultiSell(null);
-			return ValueTask.CompletedTask;
-		}
+            player.setMultiSell(null);
+            return ValueTask.CompletedTask;
+        }
 
-		if (!entry.isStackable() && _amount > 1)
-		{
-			PacketLogger.Instance.Warn("Character: " + player.getName() +
-				" is trying to set amount > 1 on non-stackable multisell. Id: " + _listId +
-				" entry: " + _entryId);
+        if (!entry.isStackable() && _amount > 1)
+        {
+            PacketLogger.Instance.Warn("Character: " + player.getName() +
+                " is trying to set amount > 1 on non-stackable multisell. Id: " + _listId +
+                " entry: " + _entryId);
 
-			player.setMultiSell(null);
-			return ValueTask.CompletedTask;
-		}
+            player.setMultiSell(null);
+            return ValueTask.CompletedTask;
+        }
 
-		ItemInfo itemEnchantment = list.getItemEnchantment(_entryId);
+        ItemInfo itemEnchantment = list.getItemEnchantment(_entryId);
 
-		// Validate the requested item with its full stats.
+        // Validate the requested item with its full stats.
 		//@formatter:off
 		if (itemEnchantment != null && (_amount > 1
 		                                || itemEnchantment.getEnchantLevel() != _enchantLevel
-		                                || itemEnchantment.getAttackElementType() != _attackAttribute 
+		                                || itemEnchantment.getAttackElementType() != _attackAttribute
 		                                || itemEnchantment.getAttackElementPower() != _attributePower
 		                                || itemEnchantment.getAttributeDefence(AttributeType.FIRE) != _fireDefence
 		                                || itemEnchantment.getAttributeDefence(AttributeType.WATER) != _waterDefence
@@ -206,10 +206,10 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			player.setMultiSell(null);
 			return ValueTask.CompletedTask;
 		}
-		
-		Clan clan = player.getClan();
+
+		Clan? clan = player.getClan();
 		PlayerInventory inventory = player.getInventory();
-		
+
 		try
 		{
 			int slots = 0;
@@ -511,7 +511,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 					Item addedItem = inventory.addItem("Multisell", product.getId(), totalCount, player, npc, false);
 
 					// Check if the newly given item should be enchanted.
-					if (itemEnchantmentProcessed && list.isMaintainEnchantment() && itemEnchantment != null && 
+					if (itemEnchantmentProcessed && list.isMaintainEnchantment() && itemEnchantment != null &&
 					    addedItem.isEquipable() && addedItem.getTemplate().GetType() == itemEnchantment.getItem().GetType())
 					{
 						addedItem.setEnchantLevel(itemEnchantment.getEnchantLevel());

@@ -13,15 +13,15 @@ public class FriendlyNpcAI : AttackableAI
 	public FriendlyNpcAI(Attackable attackable): base(attackable)
 	{
 	}
-	
+
 	protected override void onEvtAttacked(Creature attacker)
 	{
 	}
-	
+
 	protected override void onEvtAggression(Creature target, int aggro)
 	{
 	}
-	
+
 	protected override void onIntentionAttack(Creature target)
 	{
 		if (target == null)
@@ -29,31 +29,31 @@ public class FriendlyNpcAI : AttackableAI
 			clientActionFailed();
 			return;
 		}
-		
+
 		if (getIntention() == CtrlIntention.AI_INTENTION_REST)
 		{
 			clientActionFailed();
 			return;
 		}
-		
+
 		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isControlBlocked())
 		{
 			clientActionFailed();
 			return;
 		}
-		
+
 		// Set the Intention of this AbstractAI to AI_INTENTION_ATTACK
 		changeIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
-		
+
 		// Set the AI attack target
 		setTarget(target);
-		
+
 		stopFollow();
-		
+
 		// Launch the Think Event
-		notifyEvent(CtrlEvent.EVT_THINK, null);
+		notifyEvent(CtrlEvent.EVT_THINK);
 	}
-	
+
 	protected override void thinkAttack()
 	{
 		Attackable npc = getActiveChar();
@@ -61,9 +61,9 @@ public class FriendlyNpcAI : AttackableAI
 		{
 			return;
 		}
-		
-		WorldObject target = getTarget();
-		Creature originalAttackTarget = (target != null) && target.isCreature() ? (Creature) target : null;
+
+		WorldObject? target = getTarget();
+		Creature? originalAttackTarget = (target != null) && target.isCreature() ? (Creature) target : null;
 		// Check if target is dead or if timeout is expired to stop this attack
 		if ((originalAttackTarget == null) || originalAttackTarget.isAlikeDead())
 		{
@@ -72,17 +72,17 @@ public class FriendlyNpcAI : AttackableAI
 			{
 				npc.stopHating(originalAttackTarget);
 			}
-			
+
 			// Set the AI Intention to AI_INTENTION_ACTIVE
 			setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-			
+
 			npc.setWalking();
 			return;
 		}
-		
+
 		int collision = npc.getTemplate().getCollisionRadius();
 		setTarget(originalAttackTarget);
-		
+
 		int combinedCollision = collision + originalAttackTarget.getTemplate().getCollisionRadius();
 		if (!npc.isMovementDisabled() && (Rnd.get(100) <= 3))
 		{
@@ -108,7 +108,7 @@ public class FriendlyNpcAI : AttackableAI
 					{
 						newY = originalAttackTarget.getY() - newY;
 					}
-					
+
 					if (!npc.IsInsideRadius2D(new Location2D(newX, newY), collision))
 					{
 						int newZ = npc.getZ() + 30;
@@ -123,7 +123,7 @@ public class FriendlyNpcAI : AttackableAI
 				}
 			}
 		}
-		
+
 		// Calculate Archer movement.
 		if ((!npc.isMovementDisabled()) && (npc.getAiType() == AIType.ARCHER) && (Rnd.get(100) < 15))
 		{
@@ -141,7 +141,7 @@ public class FriendlyNpcAI : AttackableAI
 				{
 					posX -= 300;
 				}
-				
+
 				if (originalAttackTarget.getY() < posY)
 				{
 					posY += 300;
@@ -160,7 +160,7 @@ public class FriendlyNpcAI : AttackableAI
 				return;
 			}
 		}
-		
+
 		double dist = npc.Distance2D(originalAttackTarget);
 		int dist2 = (int) dist - collision;
 		int range = npc.getPhysicalAttackRange() + combinedCollision;
@@ -172,7 +172,7 @@ public class FriendlyNpcAI : AttackableAI
 				range += 50;
 			}
 		}
-		
+
 		if ((dist2 > range) || !GeoEngine.getInstance().canSeeTarget(npc, originalAttackTarget))
 		{
 			if (originalAttackTarget.isMoving())
@@ -186,23 +186,25 @@ public class FriendlyNpcAI : AttackableAI
 			moveToPawn(originalAttackTarget, range);
 			return;
 		}
-		
+
 		_actor.doAutoAttack(originalAttackTarget);
 	}
-	
-	protected override void thinkCast()
-	{
-		WorldObject target = getCastTarget();
-		if (checkTargetLost(target))
-		{
-			setCastTarget(null);
-			setTarget(null);
-			return;
-		}
-		if (maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
-		{
-			return;
-		}
-		_actor.doCast(_skill, _item, _forceUse, _dontMove);
-	}
+
+    protected override void thinkCast()
+    {
+        WorldObject? target = getCastTarget();
+        if (checkTargetLost(target))
+        {
+            setCastTarget(null);
+            setTarget(null);
+            return;
+        }
+
+        if (maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
+        {
+            return;
+        }
+
+        _actor.doCast(_skill, _item, _forceUse, _dontMove);
+    }
 }

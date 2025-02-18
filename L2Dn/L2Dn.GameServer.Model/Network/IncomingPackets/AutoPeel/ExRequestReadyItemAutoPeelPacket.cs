@@ -23,7 +23,7 @@ public struct ExRequestReadyItemAutoPeelPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Item item = player.getInventory().getItemByObjectId(_itemObjectId);
+        Item? item = player.getInventory().getItemByObjectId(_itemObjectId);
         if (item == null || !item.isEtcItem() || item.getEtcItem().getExtractableItems() == null ||
             item.getEtcItem().getExtractableItems().Count == 0)
         {
@@ -33,7 +33,7 @@ public struct ExRequestReadyItemAutoPeelPacket: IIncomingPacket<GameSession>
 
         player.addRequest(new AutoPeelRequest(player, item));
         player.sendPacket(new ExReadyItemAutoPeelPacket(true, _itemObjectId));
-        
+
         return ValueTask.CompletedTask;
     }
 }

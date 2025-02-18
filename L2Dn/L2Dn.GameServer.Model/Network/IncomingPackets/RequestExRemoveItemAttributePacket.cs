@@ -30,21 +30,21 @@ public struct RequestExRemoveItemAttributePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
- 		Item targetItem = player.getInventory().getItemByObjectId(_objectId);
+ 		Item? targetItem = player.getInventory().getItemByObjectId(_objectId);
 		if (targetItem == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (!Enum.IsDefined(_element))
 			return ValueTask.CompletedTask;
-		
+
 		if (targetItem.getAttributes() == null || targetItem.getAttribute(_element) == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (player.reduceAdena("RemoveElement", getPrice(targetItem), player, true))
 		{
 			targetItem.clearAttribute(_element);
 			player.updateUserInfo();
-			
+
 			InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(targetItem, ItemChangeType.MODIFIED));
 			player.sendInventoryUpdate(iu);
 
@@ -78,7 +78,7 @@ public struct RequestExRemoveItemAttributePacket: IIncomingPacket<GameSession>
 				{
 					sm = new SystemMessagePacket(SystemMessageId.S1_S_S2_ATTRIBUTE_HAS_BEEN_REMOVED);
 				}
-				
+
 				sm.Params.addItemName(targetItem);
 				if (targetItem.isArmor())
 				{
@@ -86,7 +86,7 @@ public struct RequestExRemoveItemAttributePacket: IIncomingPacket<GameSession>
 					sm.Params.addAttribute(realElement.getOpposite());
 				}
 			}
-			
+
 			player.sendPacket(sm);
 			player.sendPacket(new ExBaseAttributeCancelResultPacket(targetItem.ObjectId, _element));
 		}
@@ -97,7 +97,7 @@ public struct RequestExRemoveItemAttributePacket: IIncomingPacket<GameSession>
 
 		return ValueTask.CompletedTask;
 	}
-	
+
 	private static long getPrice(Item item)
 	{
 		long price = 0;
@@ -176,7 +176,7 @@ public struct RequestExRemoveItemAttributePacket: IIncomingPacket<GameSession>
 				break;
 			}
 		}
-		
+
 		return price;
 	}
 }

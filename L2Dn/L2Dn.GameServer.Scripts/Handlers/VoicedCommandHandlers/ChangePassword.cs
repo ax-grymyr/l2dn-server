@@ -16,12 +16,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
 public class ChangePassword: IVoicedCommandHandler
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ChangePassword));
-	
+
 	private static readonly string[] VOICED_COMMANDS =
 	{
 		"changepassword"
 	};
-	
+
 	public bool useVoicedCommand(string command, Player activeChar, string target)
 	{
 		if (target != null)
@@ -29,9 +29,9 @@ public class ChangePassword: IVoicedCommandHandler
 			StringTokenizer st = new StringTokenizer(target);
 			try
 			{
-				string curpass = null;
-				string newpass = null;
-				string repeatnewpass = null;
+				string? curpass = null;
+				string? newpass = null;
+				string? repeatnewpass = null;
 				if (st.hasMoreTokens())
 				{
 					curpass = st.nextToken();
@@ -44,7 +44,7 @@ public class ChangePassword: IVoicedCommandHandler
 				{
 					repeatnewpass = st.nextToken();
 				}
-				
+
 				if (!((curpass == null) || (newpass == null) || (repeatnewpass == null)))
 				{
 					if (!newpass.equals(repeatnewpass))
@@ -52,13 +52,13 @@ public class ChangePassword: IVoicedCommandHandler
 						activeChar.sendMessage("The new password doesn't match with the repeated one!");
 						return false;
 					}
-                    
+
 					if (newpass.Length < 3)
 					{
 						activeChar.sendMessage("The new password is shorter than 3 chars! Please try with a longer one.");
 						return false;
 					}
-                    
+
 					if (newpass.Length > 30)
 					{
 						activeChar.sendMessage("The new password is longer than 30 chars! Please try with a shorter one.");
@@ -83,7 +83,7 @@ public class ChangePassword: IVoicedCommandHandler
 		else
 		{
 			// showHTML(activeChar);
-			string html = HtmCache.getInstance().getHtm("html/mods/ChangePassword.htm");
+			string? html = HtmCache.getInstance().getHtm("html/mods/ChangePassword.htm");
 			if (html == null)
 			{
 				html = "<html><body><br><br><center><font color=LEVEL>404:</font> File Not Found</center></body></html>";
@@ -95,7 +95,7 @@ public class ChangePassword: IVoicedCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;

@@ -30,7 +30,7 @@ public class ClanTable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClanTable));
 	private readonly Map<int, Clan> _clans = new();
-	
+
 	protected ClanTable()
 	{
 		// forums has to be loaded before clan data, because of last forum id used should have also memo included
@@ -38,7 +38,7 @@ public class ClanTable
 		{
 			ForumsBBSManager.getInstance().initRoot();
 		}
-		
+
 		// Get all clan ids.
 		List<int> cids;
 		try
@@ -62,12 +62,12 @@ public class ClanTable
 				scheduleRemoveClan(clan.getId());
 			}
 		}
-		
+
 		LOGGER.Info(GetType().Name + ": Restored " + cids.Count + " clans from the database.");
 		allianceCheck();
 		restoreClanWars();
 	}
-	
+
 	/**
 	 * Gets the clans.
 	 * @return the clans
@@ -76,7 +76,7 @@ public class ClanTable
 	{
 		return _clans.Values;
 	}
-	
+
 	/**
 	 * Gets the clan count.
 	 * @return the clan count
@@ -85,7 +85,7 @@ public class ClanTable
 	{
 		return _clans.Count;
 	}
-	
+
 	/**
 	 * @param clanId
 	 * @return
@@ -94,8 +94,8 @@ public class ClanTable
 	{
 		return _clans.get(clanId);
 	}
-	
-	public Clan getClanByName(string clanName)
+
+	public Clan? getClanByName(string clanName)
 	{
 		foreach (Clan clan in _clans.Values)
 		{
@@ -106,7 +106,7 @@ public class ClanTable
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Creates a new clan and store clan info to database
 	 * @param player
@@ -119,7 +119,7 @@ public class ClanTable
 		{
 			return null;
 		}
-		
+
 		// if (player.getLevel() < 10)
 		// {
 		// player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_CRITERIA_IN_ORDER_TO_CREATE_A_CLAN);
@@ -145,7 +145,7 @@ public class ClanTable
 			player.sendPacket(SystemMessageId.CLAN_NAME_S_LENGTH_IS_INCORRECT);
 			return null;
 		}
-		
+
 		if (getClanByName(clanName) != null)
 		{
 			// clan name is already taken
@@ -154,7 +154,7 @@ public class ClanTable
 			player.sendPacket(sm);
 			return null;
 		}
-		
+
 		Clan clan = new Clan(IdManager.getInstance().getNextId(), clanName);
 		ClanMember leader = new ClanMember(clan, player);
 		clan.setLeader(leader);
@@ -163,38 +163,38 @@ public class ClanTable
 		player.setClan(clan);
 		player.setPledgeClass(ClanMember.calculatePledgeClass(player));
 		player.setClanPrivileges(ClanPrivilege.All);
-		
+
 		_clans.put(clan.getId(), clan);
-		
+
 		// should be update packet only
 		player.sendPacket(new PledgeShowInfoUpdatePacket(clan));
 		PledgeShowMemberListAllPacket.sendAllTo(player);
 		player.sendPacket(new PledgeShowMemberListUpdatePacket(player));
 		player.sendPacket(SystemMessageId.YOUR_CLAN_HAS_BEEN_CREATED);
 		player.broadcastUserInfo(UserInfoType.RELATION, UserInfoType.CLAN);
-		
+
 		// Notify to scripts
 		if (GlobalEvents.Global.HasSubscribers<OnClanCreate>())
 		{
 			GlobalEvents.Global.NotifyAsync(new OnClanCreate(player, clan));
 		}
-		
+
 		return clan;
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void destroyClan(int clanId)
 	{
-		Clan clan = getClan(clanId);
+		Clan? clan = getClan(clanId);
 		if (clan == null)
 		{
 			return;
 		}
-		
+
 		clan.broadcastToOnlineMembers(new SystemMessagePacket(SystemMessageId.CLAN_HAS_DISPERSED));
-		
+
 		ClanEntryManager.getInstance().removeFromClanList(clan.getId());
-		
+
 		int? castleId = clan.getCastleId();
 		if (castleId == 0)
 		{
@@ -203,7 +203,7 @@ public class ClanTable
 				siege.removeSiegeClan(clan);
 			}
 		}
-		
+
 		int? fortId = clan.getFortId();
 		if (fortId == null || fortId == 0)
 		{
@@ -212,13 +212,13 @@ public class ClanTable
 				siege.removeAttacker(clan);
 			}
 		}
-		
-		ClanHall hall = ClanHallData.getInstance().getClanHallByClan(clan);
+
+		ClanHall? hall = ClanHallData.getInstance().getClanHallByClan(clan);
 		if (hall != null)
 		{
 			hall.setOwner(null);
 		}
-		
+
 		ClanMember leaderMember = clan.getLeader();
 		if (leaderMember == null)
 		{
@@ -228,15 +228,15 @@ public class ClanTable
 		{
 			clan.getWarehouse().destroyAllItems("ClanRemove", clan.getLeader().getPlayer(), null);
 		}
-		
+
 		foreach (ClanMember member in clan.getMembers())
 		{
 			clan.removeClanMember(member.getObjectId(), null);
 		}
-		
+
 		_clans.remove(clanId);
 		IdManager.getInstance().releaseId(clanId);
-		
+
 		try
 		{
 			// TODO: set cascade delete for dependent tables
@@ -247,7 +247,7 @@ public class ClanTable
 			ctx.ClanSubPledges.Where(c => c.ClanId == clanId).ExecuteDelete();
 			ctx.ClanWars.Where(c => c.Clan1Id == clanId || c.Clan2Id == clanId).ExecuteDelete();
 			ctx.ClanNotices.Where(c => c.ClanId == clanId).ExecuteDelete();
-			
+
 			if (fortId != null && fortId != 0)
 			{
 				Fort fort = FortManager.getInstance().getFortById(fortId.Value);
@@ -265,45 +265,50 @@ public class ClanTable
 		{
 			LOGGER.Error(GetType().Name + ": Error removing clan from DB.", e);
 		}
-		
+
 		// Notify to scripts
 		if (GlobalEvents.Global.HasSubscribers<OnClanDestroy>())
 		{
 			GlobalEvents.Global.NotifyAsync(new OnClanDestroy(leaderMember, clan));
 		}
 	}
-	
+
 	public void scheduleRemoveClan(int clanId)
-	{
-		TimeSpan delay = getClan(clanId).getDissolvingExpiryTime().Value - DateTime.UtcNow;
+    {
+        Clan? clan = getClan(clanId);
+        if (clan is null)
+            return;
+
+        DateTime? dissolvingExpiryTime = clan.getDissolvingExpiryTime();
+        if (dissolvingExpiryTime is null)
+            return;
+
+		TimeSpan delay = dissolvingExpiryTime.Value - DateTime.UtcNow;
 		if (delay < TimeSpan.FromMilliseconds(300000))
 			delay = TimeSpan.FromMilliseconds(300000);
-			
+
 		ThreadPool.schedule(() =>
-		{
-			if (getClan(clanId) == null)
-			{
-				return;
-			}
-			if (getClan(clanId).getDissolvingExpiryTime() != DateTime.MinValue)
+        {
+            if (clan.getDissolvingExpiryTime() is not null)
 			{
 				destroyClan(clanId);
 			}
 		}, delay);
 	}
-	
+
 	public bool isAllyExists(string allyName)
 	{
 		foreach (Clan clan in _clans.Values)
-		{
-			if ((clan.getAllyName() != null) && clan.getAllyName().equalsIgnoreCase(allyName))
+        {
+            string? clanAllyName = clan.getAllyName();
+			if ((clanAllyName != null) && clanAllyName.equalsIgnoreCase(allyName))
 			{
 				return true;
 			}
 		}
 		return false;
 	}
-	
+
 	public void storeClanWars(ClanWar war)
 	{
 		try
@@ -320,7 +325,7 @@ public class ClanTable
 				EndTime = war.getEndTime(),
 				State = (short)war.getState()
 			};
-			
+
 			ctx.ClanWars.Add(dbWar);
 			ctx.SaveChanges();
 		}
@@ -329,22 +334,24 @@ public class ClanTable
 			LOGGER.Error("Error storing clan wars data: " + e);
 		}
 	}
-	
+
 	public void deleteClanWars(int clanId1, int clanId2)
 	{
-		Clan clan1 = getInstance().getClan(clanId1);
-		Clan clan2 = getInstance().getClan(clanId2);
-		
+		Clan? clan1 = getInstance().getClan(clanId1);
+		Clan? clan2 = getInstance().getClan(clanId2);
+        if (clan1 is null || clan2 is null)
+            return;
+
 		if (GlobalEvents.Global.HasSubscribers<OnClanWarFinish>())
 		{
 			GlobalEvents.Global.NotifyAsync(new OnClanWarFinish(clan1, clan2));
 		}
-		
+
 		clan1.deleteWar(clan2.getId());
 		clan2.deleteWar(clan1.getId());
 		clan1.broadcastClanStatus();
 		clan2.broadcastClanStatus();
-		
+
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -355,16 +362,16 @@ public class ClanTable
 			LOGGER.Error(GetType().Name + ": Error removing clan wars data.", e);
 		}
 	}
-	
+
 	private void restoreClanWars()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (var war in ctx.ClanWars)
 			{
-				Clan attacker = getClan(war.Clan1Id);
-				Clan attacked = getClan(war.Clan2Id);
+				Clan? attacker = getClan(war.Clan1Id);
+				Clan? attacked = getClan(war.Clan2Id);
 				if ((attacker != null) && (attacked != null))
 				{
 					ClanWarState state = (ClanWarState)war.State;
@@ -384,7 +391,7 @@ public class ClanTable
 			LOGGER.Error(GetType().Name + ": Error restoring clan wars data.", e);
 		}
 	}
-	
+
 	/**
 	 * Check for nonexistent alliances
 	 */
@@ -403,7 +410,7 @@ public class ClanTable
 			}
 		}
 	}
-	
+
 	public List<Clan> getClanAllies(int allianceId)
 	{
 		List<Clan> clanAllies = new();
@@ -419,7 +426,7 @@ public class ClanTable
 		}
 		return clanAllies;
 	}
-	
+
 	public void shutdown()
 	{
 		foreach (Clan clan in _clans.Values)
@@ -432,12 +439,12 @@ public class ClanTable
 			}
 		}
 	}
-	
+
 	public static ClanTable getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ClanTable INSTANCE = new ClanTable();

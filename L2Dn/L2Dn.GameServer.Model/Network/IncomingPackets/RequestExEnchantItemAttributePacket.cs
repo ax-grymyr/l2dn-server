@@ -35,30 +35,30 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 		EnchantItemAttributeRequest request = player.getRequest<EnchantItemAttributeRequest>();
 		if (request == null)
 			return ValueTask.CompletedTask;
-		
+
 		request.setProcessing(true);
-		
-		if (_objectId == 0xFFFFFFFF)
+
+		if (_objectId == -1)
 		{
 			// Player canceled enchant
 			player.removeRequest<EnchantItemAttributeRequest>();
 			player.sendPacket(SystemMessageId.ATTRIBUTE_ITEM_USAGE_HAS_BEEN_CANCELLED);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!player.isOnline())
 		{
 			player.removeRequest<EnchantItemAttributeRequest>();
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.getPrivateStoreType() != PrivateStoreType.NONE)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ADD_ELEMENTAL_POWER_WHILE_OPERATING_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
 			player.removeRequest<EnchantItemAttributeRequest>();
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Restrict enchant during a trade (bug if enchant fails)
 		if (player.getActiveRequester() != null)
 		{
@@ -68,8 +68,8 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_TRADING);
 			return ValueTask.CompletedTask;
 		}
-		
-		Item item = player.getInventory().getItemByObjectId(_objectId);
+
+		Item? item = player.getInventory().getItemByObjectId(_objectId);
 		Item stone = request.getEnchantingStone();
 		if (item == null || stone == null)
 		{
@@ -77,14 +77,14 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.ATTRIBUTE_ITEM_USAGE_HAS_BEEN_CANCELLED);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!item.isElementable())
 		{
 			player.sendPacket(SystemMessageId.ELEMENTAL_POWER_ENHANCER_USAGE_REQUIREMENT_IS_NOT_SUFFICIENT);
 			player.removeRequest<EnchantItemAttributeRequest>();
 			return ValueTask.CompletedTask;
 		}
-		
+
 		switch (item.getItemLocation())
 		{
 			case ItemLocation.INVENTORY:
@@ -95,7 +95,7 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 					player.removeRequest<EnchantItemAttributeRequest>();
 					return ValueTask.CompletedTask;
 				}
-				
+
 				break;
 			}
 
@@ -106,7 +106,7 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 		}
-		
+
 		int stoneId = stone.getId();
 		long count = Math.Min(stone.getCount(), _count);
 		AttributeType elementToAdd = ElementalAttributeData.getInstance().getItemElement(stoneId);
@@ -116,18 +116,18 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 			elementToAdd = elementToAdd.getOpposite();
 		}
 		AttributeType opositeElement = elementToAdd.getOpposite();
-		AttributeHolder oldElement = item.getAttribute(elementToAdd);
+		AttributeHolder? oldElement = item.getAttribute(elementToAdd);
 		int elementValue = oldElement == null ? 0 : oldElement.getValue();
 		int limit = getLimit(item, stoneId);
 		int powerToAdd = getPowerToAdd(stoneId, elementValue, item);
-		if ((item.isWeapon() && oldElement != null && oldElement.getType() != elementToAdd && 
+		if ((item.isWeapon() && oldElement != null && oldElement.getType() != elementToAdd &&
 		     oldElement.getType() != AttributeType.NONE) || (item.isArmor() && item.getAttribute(elementToAdd) == null && item.getAttributes() != null && item.getAttributes().Count >= 3))
 		{
 			player.sendPacket(SystemMessageId.ANOTHER_ELEMENTAL_POWER_HAS_ALREADY_BEEN_ADDED_THIS_ELEMENTAL_POWER_CANNOT_BE_ADDED);
 			player.removeRequest<EnchantItemAttributeRequest>();
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (item.isArmor() && item.getAttributes() != null)
 		{
 			// can't add opposite element
@@ -141,21 +141,21 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 				}
 			}
 		}
-		
+
 		int newPower = elementValue + powerToAdd;
 		if (newPower > limit)
 		{
 			newPower = limit;
 			powerToAdd = limit - elementValue;
 		}
-		
+
 		if (powerToAdd <= 0)
 		{
 			player.sendPacket(SystemMessageId.ATTRIBUTE_ITEM_USAGE_HAS_BEEN_CANCELLED);
 			player.removeRequest<EnchantItemAttributeRequest>();
 			return ValueTask.CompletedTask;
 		}
-		
+
 		int usedStones = 0;
 		int successfulAttempts = 0;
 		int failedAttempts = 0;
@@ -177,10 +177,10 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 				break;
 			}
 		}
-		
+
 		item.updateItemElementals();
 		player.destroyItem("AttrEnchant", stone, usedStones, player, true);
-		AttributeHolder newElement = item.getAttribute(elementToAdd);
+		AttributeHolder? newElement = item.getAttribute(elementToAdd);
 		int newValue = newElement != null ? newElement.getValue() : 0;
 		AttributeType realElement = item.isArmor() ? opositeElement : elementToAdd;
 		List<ItemInfo> itemsToUpdate = new List<ItemInfo>();
@@ -197,7 +197,7 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 				{
 					sm = new SystemMessagePacket(SystemMessageId.S2_ATTRIBUTE_HAS_BEEN_ADDED_TO_S1);
 				}
-				
+
 				sm.Params.addItemName(item);
 				sm.Params.addAttribute(realElement);
 				if (item.isArmor())
@@ -215,7 +215,7 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 				{
 					sm = new SystemMessagePacket(SystemMessageId.S3_POWER_HAS_BEEN_ADDED_TO_S1_S2);
 				}
-				
+
 				sm.Params.addInt(item.getEnchantLevel());
 				sm.Params.addItemName(item);
 				sm.Params.addAttribute(realElement);
@@ -224,9 +224,9 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 					sm.Params.addAttribute(realElement.getOpposite());
 				}
 			}
-			
+
 			player.sendPacket(sm);
-			
+
 			// send packets
 			itemsToUpdate.Add(new ItemInfo(item, ItemChangeType.MODIFIED));
 		}
@@ -234,14 +234,14 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_FAILED_TO_ADD_ELEMENTAL_POWER);
 		}
-		
+
 		result = 0;
 		if (successfulAttempts == 0)
 		{
 			// Failed
 			result = 2;
 		}
-		
+
 		// Stone must be removed
 		if (stone.getCount() == 0)
 		{
@@ -251,11 +251,11 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 		{
 			itemsToUpdate.Add(new ItemInfo(stone, ItemChangeType.MODIFIED));
 		}
-		
+
 		player.removeRequest<EnchantItemAttributeRequest>();
 		player.sendPacket(new ExAttributeEnchantResultPacket(result, item.isWeapon(), elementToAdd, elementValue,
 			newValue, successfulAttempts, failedAttempts));
-		
+
 		player.updateUserInfo();
 
 		InventoryUpdatePacket iu = new InventoryUpdatePacket(itemsToUpdate);
@@ -263,10 +263,10 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 
 		return ValueTask.CompletedTask;
 	}
-	
+
 	private static int addElement(Player player, Item stone, Item item, AttributeType elementToAdd)
 	{
-		AttributeHolder oldElement = item.getAttribute(elementToAdd);
+		AttributeHolder? oldElement = item.getAttribute(elementToAdd);
 		int elementValue = oldElement == null ? 0 : oldElement.getValue();
 		int limit = getLimit(item, stone.getId());
 		int powerToAdd = getPowerToAdd(stone.getId(), elementValue, item);
@@ -276,23 +276,23 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 			newPower = limit;
 			powerToAdd = limit - elementValue;
 		}
-		
+
 		if (powerToAdd <= 0)
 		{
 			player.sendPacket(SystemMessageId.ATTRIBUTE_ITEM_USAGE_HAS_BEEN_CANCELLED);
 			player.removeRequest<EnchantItemAttributeRequest>();
 			return -1;
 		}
-		
+
 		bool success = ElementalAttributeData.getInstance().isSuccess(item, stone.getId());
 		if (success)
 		{
 			item.setAttribute(new AttributeHolder(elementToAdd, newPower), false);
 		}
-		
+
 		return success ? 1 : 0;
 	}
-	
+
 	public static int getLimit(Item item, int sotneId)
 	{
 		ElementalItemHolder elementItem = ElementalAttributeData.getInstance().getItemElemental(sotneId);
@@ -300,15 +300,15 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 		{
 			return 0;
 		}
-		
+
 		if (item.isWeapon())
 		{
 			return ElementalAttributeData.WeaponValues[elementItem.getType().GetMaxLevel()];
 		}
-		
+
 		return ElementalAttributeData.ArmorValues[elementItem.getType().GetMaxLevel()];
 	}
-	
+
 	public static int getPowerToAdd(int stoneId, int oldValue, Item item)
 	{
 		if (ElementalAttributeData.getInstance().getItemElement(stoneId) != AttributeType.NONE)
@@ -323,10 +323,10 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 				{
 					return ElementalAttributeData.FirstWeaponBonus;
 				}
-			
+
 				return ElementalAttributeData.NextWeaponBonus;
 			}
-			
+
 			if (item.isArmor())
 			{
 				return ElementalAttributeData.ArmorBonus;

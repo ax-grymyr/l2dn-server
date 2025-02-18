@@ -12,22 +12,20 @@ namespace L2Dn.GameServer.Scripts.Handlers.UserCommandHandlers;
  */
 public class PartyInfo: IUserCommandHandler
 {
-	private static readonly int[] COMMAND_IDS =
-	{
-		81
-	};
-	
+    private static readonly int[] COMMAND_IDS = [81];
+
 	public bool useUserCommand(int id, Player player)
 	{
 		if (id != COMMAND_IDS[0])
 		{
 			return false;
 		}
-		
+
 		player.sendPacket(SystemMessageId.PARTY_INFORMATION);
-		if (player.isInParty())
+
+        Party? party = player.getParty();
+        if (party != null)
 		{
-			Party party = player.getParty();
 			switch (party.getDistributionType())
 			{
 				case PartyDistributionType.FINDERS_KEEPERS:
@@ -56,7 +54,7 @@ public class PartyInfo: IUserCommandHandler
 					break;
 				}
 			}
-			
+
 			// Not used in Infinite Odissey
 			// if (!party.isLeader(player))
 			// {
@@ -68,7 +66,7 @@ public class PartyInfo: IUserCommandHandler
 		player.sendPacket(SystemMessageId.EMPTY_3);
 		return true;
 	}
-	
+
 	public int[] getUserCommandList()
 	{
 		return COMMAND_IDS;

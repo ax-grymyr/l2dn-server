@@ -19,20 +19,20 @@ public class FortressFlagpole: ITargetTypeHandler
 	{
 		return TargetType.FORTRESS_FLAGPOLE;
 	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
+
+	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
-		WorldObject target = creature.getTarget();
+		WorldObject? target = creature.getTarget();
 		if ((target != null) && creature.isInsideZone(ZoneId.HQ) && creature.isInsideZone(ZoneId.FORT) && !target.isPlayable() && target.getName().toLowerCase().contains("flagpole"))
 		{
 			return target;
 		}
-		
+
 		if (sendMessage)
 		{
 			creature.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 		}
-		
+
 		return null;
 	}
 }

@@ -17,7 +17,7 @@ public class Doorman : Folk
 	{
 		InstanceType = InstanceType.Doorman;
 	}
-	
+
 	public override bool isAutoAttackable(Creature attacker)
 	{
 		if (attacker.isMonster())
@@ -26,7 +26,7 @@ public class Doorman : Folk
 		}
 		return base.isAutoAttackable(attacker);
 	}
-	
+
 	public override void onBypassFeedback(Player player, string command)
 	{
 		if (command.startsWith("Chat"))
@@ -68,7 +68,7 @@ public class Doorman : Folk
 		{
 			if (isOwnerClan(player))
 			{
-				TeleportHolder holder = TeleporterData.getInstance().getHolder(getId(), TeleportType.OTHER.ToString());
+				TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), TeleportType.OTHER.ToString());
 				if (holder != null)
 				{
 					int locId = int.Parse(command.Substring(5).Trim());
@@ -79,7 +79,7 @@ public class Doorman : Folk
 		}
 		base.onBypassFeedback(player, command);
 	}
-	
+
 	public override void showChatWindow(Player player)
 	{
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -93,50 +93,50 @@ public class Doorman : Folk
 		{
 			filePath = "html/doorman/" + getTemplate().getId() + ".htm";
 		}
-		
+
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filePath, player);
 		htmlContent.Replace("%objectId%", ObjectId.ToString());
 
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 	}
-	
+
 	protected virtual void openDoors(Player player, string command)
 	{
 		 StringTokenizer st = new StringTokenizer(command.Substring(10), ", ");
 		st.nextToken();
-		
+
 		while (st.hasMoreTokens())
 		{
-			DoorData.getInstance().getDoor(int.Parse(st.nextToken())).openMe();
+			DoorData.getInstance().getDoor(int.Parse(st.nextToken()))?.openMe();
 		}
 	}
-	
+
 	protected virtual void closeDoors(Player player, string command)
 	{
 		 StringTokenizer st = new StringTokenizer(command.Substring(11), ", ");
 		st.nextToken();
-		
+
 		while (st.hasMoreTokens())
 		{
-			DoorData.getInstance().getDoor(int.Parse(st.nextToken())).closeMe();
+			DoorData.getInstance().getDoor(int.Parse(st.nextToken()))?.closeMe();
 		}
 	}
-	
+
 	protected void cannotManageDoors(Player player)
 	{
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-		
+
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().getId() + "-busy.htm", player);
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 	}
-	
+
 	protected virtual bool isOwnerClan(Player player)
 	{
 		return true;
 	}
-	
+
 	protected virtual bool isUnderSiege()
 	{
 		return false;

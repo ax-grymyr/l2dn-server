@@ -11,12 +11,12 @@ public class PlayerAutoSaveTaskManager: Runnable
 {
 	private static readonly Map<Player, DateTime> PLAYER_TIMES = new();
 	private static bool _working = false;
-	
+
 	protected PlayerAutoSaveTaskManager()
 	{
 		ThreadPool.scheduleAtFixedRate(this, 1000, 1000);
 	}
-	
+
 	public void run()
 	{
 		if (_working)
@@ -24,7 +24,7 @@ public class PlayerAutoSaveTaskManager: Runnable
 			return;
 		}
 		_working = true;
-		
+
 		if (PLAYER_TIMES.Count != 0)
 		{
 			DateTime currentTime = DateTime.UtcNow;
@@ -33,16 +33,16 @@ public class PlayerAutoSaveTaskManager: Runnable
 			{
 				Player player = entry.Key;
 				DateTime time = entry.Value;
-				
+
 				if (currentTime > time)
 				{
-					if ((player != null) && player.isOnline())
+					if (player.isOnline())
 					{
 						player.autoSave();
 						PLAYER_TIMES.put(player, currentTime + TimeSpan.FromMilliseconds(Config.CHAR_DATA_STORE_INTERVAL));
 						break; // Prevent SQL flood.
 					}
-					
+
 					toRemove.Add(player);
 				}
 			}
@@ -52,25 +52,25 @@ public class PlayerAutoSaveTaskManager: Runnable
 				PLAYER_TIMES.remove(player);
 			}
 		}
-		
+
 		_working = false;
 	}
-	
+
 	public void add(Player player)
 	{
 		PLAYER_TIMES.put(player, DateTime.UtcNow + TimeSpan.FromMilliseconds(Config.CHAR_DATA_STORE_INTERVAL));
 	}
-	
+
 	public void remove(Player player)
 	{
 		PLAYER_TIMES.remove(player);
 	}
-	
+
 	public static PlayerAutoSaveTaskManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly PlayerAutoSaveTaskManager INSTANCE = new PlayerAutoSaveTaskManager();

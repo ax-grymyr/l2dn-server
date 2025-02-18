@@ -18,57 +18,53 @@ namespace L2Dn.GameServer.Model.Zones.Types;
 public class SiegeZone : ZoneType
 {
 	private const int DISMOUNT_DELAY = 5;
-	
+
 	public SiegeZone(int id): base(id)
 	{
-		AbstractZoneSettings settings = ZoneManager.getSettings(getName());
+		AbstractZoneSettings? settings = ZoneManager.getSettings(getName());
 		if (settings == null)
 		{
 			settings = new Settings();
 		}
 		setSettings(settings);
 	}
-	
+
 	public class Settings : AbstractZoneSettings
 	{
 		private int _siegableId = -1;
-		private Siegable _siege = null;
-		private bool _isActiveSiege = false;
-		
-		public Settings()
-		{
-		}
-		
+		private Siegable? _siege;
+		private bool _isActiveSiege;
+
 		public int getSiegeableId()
 		{
 			return _siegableId;
 		}
-		
+
 		public void setSiegeableId(int id)
 		{
 			_siegableId = id;
 		}
-		
-		public Siegable getSiege()
+
+		public Siegable? getSiege()
 		{
 			return _siege;
 		}
-		
-		public void setSiege(Siegable s)
+
+		public void setSiege(Siegable? s)
 		{
 			_siege = s;
 		}
-		
+
 		public bool isActiveSiege()
 		{
 			return _isActiveSiege;
 		}
-		
+
 		public void setActiveSiege(bool value)
 		{
 			_isActiveSiege = value;
 		}
-		
+
 		public override void clear()
 		{
 			_siegableId = -1;
@@ -76,12 +72,12 @@ public class SiegeZone : ZoneType
 			_isActiveSiege = false;
 		}
 	}
-	
+
 	public override Settings getSettings()
 	{
 		return (Settings) base.getSettings();
 	}
-	
+
 	public override void setParameter(string name, string value)
 	{
 		if (name.equals("castleId"))
@@ -105,7 +101,7 @@ public class SiegeZone : ZoneType
 			base.setParameter(name, value);
 		}
 	}
-	
+
 	protected override void onEnter(Creature creature)
 	{
 		if (getSettings().isActiveSiege())
@@ -113,7 +109,7 @@ public class SiegeZone : ZoneType
 			creature.setInsideZone(ZoneId.PVP, true);
 			creature.setInsideZone(ZoneId.SIEGE, true);
 			creature.setInsideZone(ZoneId.NO_SUMMON_FRIEND, true); // FIXME: Custom ?
-			
+
 			if (creature.isPlayer())
 			{
 				Player player = creature.getActingPlayer();
@@ -127,19 +123,19 @@ public class SiegeZone : ZoneType
 							getSettings().getSiege().getFameAmount());
 					}
 				}
-				
+
 				creature.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_A_COMBAT_ZONE);
 				if (!Config.ALLOW_WYVERN_DURING_SIEGE && (player.getMountType() == MountType.WYVERN))
 				{
 					player.sendPacket(SystemMessageId.THIS_AREA_CANNOT_BE_ENTERED_WHILE_MOUNTED_ATOP_OF_A_WYVERN_YOU_WILL_BE_DISMOUNTED_FROM_YOUR_WYVERN_IF_YOU_DO_NOT_LEAVE);
 					player.enteredNoLanding(DISMOUNT_DELAY);
 				}
-				
+
 				if (!Config.ALLOW_MOUNTS_DURING_SIEGE && player.isMounted())
 				{
 					player.dismount();
 				}
-				
+
 				if (!Config.ALLOW_MOUNTS_DURING_SIEGE && player.isTransformed() && player.getTransformation().isRiding())
 				{
 					player.untransform();
@@ -147,7 +143,7 @@ public class SiegeZone : ZoneType
 			}
 		}
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
 		creature.setInsideZone(ZoneId.PVP, false);
@@ -172,11 +168,11 @@ public class SiegeZone : ZoneType
 			Player player = creature.getActingPlayer();
 			player.stopFameTask();
 			player.setInSiege(false);
-			
+
 			if ((getSettings().getSiege() is FortSiege) && (player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG) != null))
 			{
 				// drop combat flag
-				Fort fort = FortManager.getInstance().getFortById(getSettings().getSiegeableId());
+				Fort? fort = FortManager.getInstance().getFortById(getSettings().getSiegeableId());
 				if (fort != null)
 				{
 					FortSiegeManager.getInstance().dropCombatFlag(player, fort.getResidenceId());
@@ -188,7 +184,7 @@ public class SiegeZone : ZoneType
 					player.destroyItem("CombatFlag", player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG), null, true);
 				}
 			}
-			
+
 			if (player.hasServitors())
 			{
 				player.getServitors().Values.ForEach(servitor =>
@@ -208,7 +204,7 @@ public class SiegeZone : ZoneType
 			}
 		}
 	}
-	
+
 	public override void onDieInside(Creature creature)
 	{
 		// debuff participants only if they die inside siege zone
@@ -220,7 +216,7 @@ public class SiegeZone : ZoneType
 			{
 				level = Math.Min(level + info.getSkill().getLevel(), 5);
 			}
-			
+
 			Skill skill = SkillData.getInstance().getSkill(5660, level);
 			if (skill != null)
 			{
@@ -228,7 +224,7 @@ public class SiegeZone : ZoneType
 			}
 		}
 	}
-	
+
 	public override void onPlayerLogoutInside(Player player)
 	{
 		if (player.getClanId() != getSettings().getSiegeableId())
@@ -236,7 +232,7 @@ public class SiegeZone : ZoneType
 			player.teleToLocation(TeleportWhereType.TOWN);
 		}
 	}
-	
+
 	public void updateZoneStatusForCharactersInside()
 	{
 		if (getSettings().isActiveSiege())
@@ -258,11 +254,11 @@ public class SiegeZone : ZoneType
 				{
 					continue;
 				}
-				
+
 				creature.setInsideZone(ZoneId.PVP, false);
 				creature.setInsideZone(ZoneId.SIEGE, false);
 				creature.setInsideZone(ZoneId.NO_SUMMON_FRIEND, false);
-				
+
 				if (creature.isPlayer())
 				{
 					player = creature.getActingPlayer();
@@ -276,7 +272,7 @@ public class SiegeZone : ZoneType
 			}
 		}
 	}
-	
+
 	/**
 	 * Sends a message to all players in this zone
 	 * @param message
@@ -291,27 +287,27 @@ public class SiegeZone : ZoneType
 			}
 		}
 	}
-	
+
 	public int getSiegeObjectId()
 	{
 		return getSettings().getSiegeableId();
 	}
-	
+
 	public bool isActive()
 	{
 		return getSettings().isActiveSiege();
 	}
-	
+
 	public void setActive(bool value)
 	{
 		getSettings().setActiveSiege(value);
 	}
-	
-	public void setSiegeInstance(Siegable siege)
+
+	public void setSiegeInstance(Siegable? siege)
 	{
 		getSettings().setSiege(siege);
 	}
-	
+
 	/**
 	 * Removes all foreigners from the zone
 	 * @param owningClanId

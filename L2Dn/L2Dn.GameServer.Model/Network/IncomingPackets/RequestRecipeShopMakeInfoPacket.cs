@@ -23,11 +23,11 @@ public struct RequestRecipeShopMakeInfoPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        Player shop = World.getInstance().getPlayer(_playerObjectId);
+
+        Player? shop = World.getInstance().getPlayer(_playerObjectId);
         if (shop == null || shop.getPrivateStoreType() != PrivateStoreType.MANUFACTURE)
             return ValueTask.CompletedTask;
-		
+
         player.sendPacket(new RecipeShopItemInfoPacket(shop, _recipeId));
 
         return ValueTask.CompletedTask;

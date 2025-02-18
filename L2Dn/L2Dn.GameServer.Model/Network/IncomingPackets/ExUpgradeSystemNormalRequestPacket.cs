@@ -17,7 +17,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
     private int _objectId;
     private int _typeId;
     private int _upgradeId;
-	
+
     public void ReadContent(PacketBitReader reader)
     {
         _objectId = reader.ReadInt32();
@@ -31,20 +31,20 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-		Item requestedItem = player.getInventory().getItemByObjectId(_objectId);
+		Item? requestedItem = player.getInventory().getItemByObjectId(_objectId);
 		if (requestedItem == null)
 		{
 			player.sendPacket(ExUpgradeSystemNormalResultPacket.FAIL);
 			return ValueTask.CompletedTask;
 		}
-		
-		EquipmentUpgradeNormalHolder upgradeHolder = EquipmentUpgradeNormalData.getInstance().getUpgrade(_upgradeId);
+
+		EquipmentUpgradeNormalHolder? upgradeHolder = EquipmentUpgradeNormalData.getInstance().getUpgrade(_upgradeId);
 		if (upgradeHolder == null || upgradeHolder.getType() != _typeId)
 		{
 			player.sendPacket(ExUpgradeSystemNormalResultPacket.FAIL);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		Inventory inventory = player.getInventory();
 		if (inventory.getItemByItemId(upgradeHolder.getInitialItem().getId()) == null ||
 		    inventory.getInventoryItemCount(upgradeHolder.getInitialItem().getId(), -1) <
@@ -55,7 +55,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 		}
 
 	    Map<int, long> discounts = new();
-		
+
 		if (upgradeHolder.isHasCategory(UpgradeDataType.MATERIAL))
 		{
 			foreach (ItemEnchantHolder material in upgradeHolder.getItems(UpgradeDataType.MATERIAL))
@@ -67,7 +67,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 					                           ": material -> item -> count in file EquipmentUpgradeNormalData.xml for upgrade id " +
 					                           upgradeHolder.getId() +
 					                           " cant be less than 0! Aborting current request!");
-					
+
 					return ValueTask.CompletedTask;
 				}
 
@@ -76,7 +76,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 					player.sendPacket(ExUpgradeSystemNormalResultPacket.FAIL);
 					return ValueTask.CompletedTask;
 				}
-				
+
 				foreach (ItemHolder discount in EquipmentUpgradeNormalData.getInstance().getDiscount())
 				{
 					if (discount.getId() == material.getId())
@@ -94,7 +94,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 			player.sendPacket(ExUpgradeSystemNormalResultPacket.FAIL);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Get materials.
 		player.destroyItem("UpgradeNormalEquipment", _objectId, 1, player, true);
 		if (upgradeHolder.isHasCategory(UpgradeDataType.MATERIAL))
@@ -105,7 +105,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 					material.getCount() - (discounts.Count == 0 ? 0 : discounts.get(material.getId())), player, true);
 			}
 		}
-		
+
 		if (adena > 0)
 		{
 			player.reduceAdena("UpgradeNormalEquipment", adena, player, true);
@@ -114,7 +114,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 		bool isNeedToSendUpdate = false;
 		List<UniqueItemEnchantHolder> resultItems = new();
 		List<UniqueItemEnchantHolder> bonusItems = new();
-		
+
 		if (Rnd.get(100d) < upgradeHolder.getChance())
 		{
 			foreach (ItemEnchantHolder successItem in upgradeHolder.getItems(UpgradeDataType.ON_SUCCESS))
@@ -125,18 +125,18 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 					isNeedToSendUpdate = true;
 					addedSuccessItem.setEnchantLevel(successItem.getEnchantLevel());
 				}
-				
+
 				addedSuccessItem.updateDatabase(true);
 				resultItems.Add(new UniqueItemEnchantHolder(successItem, addedSuccessItem.ObjectId));
 			}
-			
+
 			if (upgradeHolder.isHasCategory(UpgradeDataType.BONUS_TYPE) && Rnd.get(100d) < upgradeHolder.getChanceToReceiveBonusItems())
 			{
 				foreach (ItemEnchantHolder bonusItem in upgradeHolder.getItems(UpgradeDataType.BONUS_TYPE))
 				{
 					Item addedBonusItem = player.addItem("UpgradeNormalEquipment", bonusItem.getId(),
 						bonusItem.getCount(), player, true);
-					
+
 					if (bonusItem.getEnchantLevel() != 0)
 					{
 						isNeedToSendUpdate = true;
@@ -156,7 +156,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 				{
 					Item addedFailureItem = player.addItem("UpgradeNormalEquipment", failureItem.getId(),
 						failureItem.getCount(), player, true);
-					
+
 					if (failureItem.getEnchantLevel() != 0)
 					{
 						isNeedToSendUpdate = true;
@@ -172,15 +172,15 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 				player.sendPacket(ExUpgradeSystemNormalResultPacket.FAIL);
 			}
 		}
-		
+
 		if (isNeedToSendUpdate)
 		{
 			player.sendItemList(); // for see enchant level in Upgrade UI
 		}
-		
+
 		// Why need map of item and count? because method "addItem" return item, and if it exists in result will be count of all items, not of obtained.
 		player.sendPacket(new ExUpgradeSystemNormalResultPacket(1, _typeId, true, resultItems, bonusItems));
-        
+
         return ValueTask.CompletedTask;
     }
 }

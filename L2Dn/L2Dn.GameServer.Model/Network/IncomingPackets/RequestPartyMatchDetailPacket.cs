@@ -24,14 +24,14 @@ public struct RequestPartyMatchDetailPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         if (player.isInMatchingRoom())
             return ValueTask.CompletedTask;
 
-        MatchingRoom room = _roomId > 0
+        MatchingRoom? room = _roomId > 0
             ? MatchingRoomManager.getInstance().getPartyMathchingRoom(_roomId)
             : MatchingRoomManager.getInstance().getPartyMathchingRoom(_location, _level);
-        
+
         if (room != null)
             room.addMember(player);
 

@@ -33,15 +33,15 @@ public struct RequestActionUsePacket: IIncomingPacket<GameSession>
 		Player? player = session.Player;
 		if (player == null)
 			return ValueTask.CompletedTask;
-		
+
 		// Don't do anything if player is dead or confused
 		if ((player.isFakeDeath() && (_actionId != 0)) || player.isDead() || player.isControlBlocked())
 		{
 			connection.Send(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
-		BuffInfo info = player.getEffectList().getFirstBuffInfoByAbnormalType(AbnormalType.BOT_PENALTY);
+
+		BuffInfo? info = player.getEffectList().getFirstBuffInfoByAbnormalType(AbnormalType.BOT_PENALTY);
 		if (info != null)
 		{
 			foreach (AbstractEffect effect in info.getEffects())
@@ -54,7 +54,7 @@ public struct RequestActionUsePacket: IIncomingPacket<GameSession>
 				}
 			}
 		}
-		
+
 		// Don't allow to do some action if player is transformed
 		if (player.isTransformed())
 		{
@@ -65,15 +65,15 @@ public struct RequestActionUsePacket: IIncomingPacket<GameSession>
 				connection.Send(ActionFailedPacket.STATIC_PACKET);
 				PacketLogger.Instance.Warn(player + " used action which he does not have! Id = " + _actionId +
 				                           " transform: " + player.getTransformation().getId());
-				
+
 				return ValueTask.CompletedTask;
 			}
 		}
-		
-		ActionDataHolder actionHolder = ActionData.getInstance().getActionData(_actionId);
+
+		ActionDataHolder? actionHolder = ActionData.getInstance().getActionData(_actionId);
 		if (actionHolder != null)
 		{
-			IPlayerActionHandler actionHandler = PlayerActionHandler.getInstance().getHandler(actionHolder.getHandler());
+			IPlayerActionHandler? actionHandler = PlayerActionHandler.getInstance().getHandler(actionHolder.getHandler());
 			if (actionHandler != null)
 			{
 				actionHandler.useAction(player, actionHolder, _ctrlPressed, _shiftPressed);
@@ -83,7 +83,7 @@ public struct RequestActionUsePacket: IIncomingPacket<GameSession>
 			PacketLogger.Instance.Warn("Couldn't find handler with name: " + actionHolder.getHandler());
 			return ValueTask.CompletedTask;
 		}
-		
+
 		switch (_actionId)
 		{
 			case 51: // General Manufacture
@@ -94,13 +94,13 @@ public struct RequestActionUsePacket: IIncomingPacket<GameSession>
 					connection.Send(ActionFailedPacket.STATIC_PACKET);
 					return ValueTask.CompletedTask;
 				}
-				
+
 				if (player.isSellingBuffs())
 				{
 					connection.Send(ActionFailedPacket.STATIC_PACKET);
 					return ValueTask.CompletedTask;
 				}
-				
+
 				if (player.getPrivateStoreType() != PrivateStoreType.NONE)
 				{
 					player.setPrivateStoreType(PrivateStoreType.NONE);
@@ -110,7 +110,7 @@ public struct RequestActionUsePacket: IIncomingPacket<GameSession>
 				{
 					player.standUp();
 				}
-				
+
 				connection.Send(new RecipeShopManageListPacket(player, false));
 				break;
 			}

@@ -26,7 +26,7 @@ public struct RequestExAcquirePetSkillPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Pet pet = player.getPet();
+        Pet? pet = player.getPet();
         if (pet == null)
             return ValueTask.CompletedTask;
 
@@ -38,7 +38,7 @@ public struct RequestExAcquirePetSkillPacket: IIncomingPacket<GameSession>
         int skillLevel = _skillLevel;
         PetSkillAcquireHolder? reqItem = PetAcquireList.getInstance()
             .getSkills(pet.getPetData().getType()).FirstOrDefault(it => it.getSkillId() == skillId && it.getSkillLevel() == skillLevel);
-        
+
         if (reqItem != null)
         {
             if (reqItem.getItem() != null)
@@ -57,7 +57,7 @@ public struct RequestExAcquirePetSkillPacket: IIncomingPacket<GameSession>
                 player.sendPacket(new ExPetSkillListPacket(false, pet));
             }
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

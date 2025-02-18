@@ -59,7 +59,7 @@ public class BeeHive: AbstractScript
 		if (!onAttackableAttack.isSummon())
 			return;
 
-		Pet pet = onAttackableAttack.getAttacker().getPet();
+		Pet? pet = onAttackableAttack.getAttacker().getPet();
 		if (pet == null || pet.getCurrentFed() == 0 || pet.isDead() || pet.isAffectedBySkill(SKILLS[0]) || pet.isAffectedBySkill(SKILLS[1]))
 		{
 			return;
@@ -112,7 +112,7 @@ public class BeeHive: AbstractScript
 				}
 				spawn.setScriptValue(killer.ObjectId);
 				spawn.setShowSummonAnimation(true);
-				addAttackPlayerDesire(spawn, killer.hasPet() ? killer.getPet() : killer);
+				addAttackPlayerDesire(spawn, (Playable?)killer.getPet() ?? killer);
 			}
 		}
 	}

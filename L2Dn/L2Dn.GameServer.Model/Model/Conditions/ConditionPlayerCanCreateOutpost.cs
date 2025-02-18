@@ -12,38 +12,29 @@ namespace L2Dn.GameServer.Model.Conditions;
  * Player Can Create Outpost condition implementation.
  * @author Adry_85
  */
-public class ConditionPlayerCanCreateOutpost: Condition
+public sealed class ConditionPlayerCanCreateOutpost(bool value): Condition
 {
-	private readonly bool _value;
-	
-	public ConditionPlayerCanCreateOutpost(bool value)
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
 	{
-		_value = value;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		if ((effector == null) || !effector.isPlayer())
-		{
-			return !_value;
-		}
-		
-		Player player = effector.getActingPlayer();
-		bool canCreateOutpost = !(player.isAlikeDead() || player.isCursedWeaponEquipped() || (player.getClan() == null));
-		
-		Castle castle = CastleManager.getInstance().getCastle(player);
-		Fort fort = FortManager.getInstance().getFort(player);
-		if ((castle == null) && (fort == null))
+        Player? player = effector.getActingPlayer();
+		if (effector is null || !effector.isPlayer() || player is null)
+			return !value;
+
+		bool canCreateOutpost = !(player.isAlikeDead() || player.isCursedWeaponEquipped() || player.getClan() == null);
+
+		Castle? castle = CastleManager.getInstance().getCastle(player);
+		Fort? fort = FortManager.getInstance().getFort(player);
+		if (castle == null && fort == null)
 		{
 			canCreateOutpost = false;
 		}
-		
-		if (((fort != null) && (fort.getResidenceId() == 0)) || ((castle != null) && (castle.getResidenceId() == 0)))
+
+		if ((fort != null && fort.getResidenceId() == 0) || (castle != null && castle.getResidenceId() == 0))
 		{
 			player.sendMessage("You must be on fort or castle ground to construct an outpost or flag.");
 			canCreateOutpost = false;
 		}
-		else if (((fort != null) && !fort.getZone().isActive()) || ((castle != null) && !castle.getZone().isActive()))
+		else if ((fort != null && !fort.getZone().isActive()) || (castle != null && !castle.getZone().isActive()))
 		{
 			player.sendMessage("You can only construct an outpost or flag on siege field.");
 			canCreateOutpost = false;
@@ -58,6 +49,7 @@ public class ConditionPlayerCanCreateOutpost: Condition
 			player.sendPacket(SystemMessageId.YOU_CAN_T_BUILD_HEADQUARTERS_HERE);
 			canCreateOutpost = false;
 		}
-		return (_value == canCreateOutpost);
+
+		return value == canCreateOutpost;
 	}
 }

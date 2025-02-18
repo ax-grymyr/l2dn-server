@@ -10,25 +10,25 @@ public readonly struct ExShowProcureCropDetailPacket: IOutgoingPacket
 {
     private readonly int _cropId;
     private readonly Map<int, CropProcure> _castleCrops;
-	
+
     public ExShowProcureCropDetailPacket(int cropId)
     {
         _cropId = cropId;
         _castleCrops = new Map<int, CropProcure>();
         foreach (Castle c in CastleManager.getInstance().getCastles())
         {
-            CropProcure cropItem = CastleManorManager.getInstance().getCropProcure(c.getResidenceId(), cropId, false);
-            if ((cropItem != null) && (cropItem.getAmount() > 0))
+            CropProcure? cropItem = CastleManorManager.getInstance().getCropProcure(c.getResidenceId(), cropId, false);
+            if (cropItem != null && cropItem.getAmount() > 0)
             {
                 _castleCrops.put(c.getResidenceId(), cropItem);
             }
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SHOW_PROCURE_CROP_DETAIL);
-        
+
         writer.WriteInt32(_cropId); // crop id
         writer.WriteInt32(_castleCrops.Count); // size
         foreach (var entry in _castleCrops)

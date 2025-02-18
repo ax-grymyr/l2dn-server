@@ -14,27 +14,27 @@ public class ConditionHandler
 	private ConditionHandler()
 	{
 	}
-	
+
 	public void registerHandler(string name, Func<StatSet, ICondition> handlerFactory)
 	{
 		_conditionHandlerFactories.put(name, handlerFactory);
 	}
-	
-	public Func<StatSet, ICondition> getHandlerFactory(string name)
+
+	public Func<StatSet, ICondition>? getHandlerFactory(string name)
 	{
 		return _conditionHandlerFactories.get(name);
 	}
-	
+
 	public int size()
 	{
 		return _conditionHandlerFactories.Count;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ConditionHandler INSTANCE = new ConditionHandler();
 	}
-	
+
 	public static ConditionHandler getInstance()
 	{
 		return SingletonHolder.INSTANCE;

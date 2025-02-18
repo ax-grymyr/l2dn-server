@@ -27,27 +27,27 @@ public struct ExElementalSpiritEvolutionPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-		ElementalSpirit spirit = player.getElementalSpirit(_type);
+		ElementalSpirit? spirit = player.getElementalSpirit(_type);
 		if (spirit == null)
 		{
 			connection.Send(SystemMessageId.NO_SPIRITS_ARE_AVAILABLE);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		bool canEvolve = checkConditions(player, spirit);
 		if (canEvolve)
 		{
 			spirit.upgrade();
-			
+
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_HAS_EVOLVED_TO_LV_S2);
 			sm.Params.addElementalSpirit(_type).addInt(spirit.getStage());
 			connection.Send(sm);
-			
+
 			UserInfoPacket userInfo = new UserInfoPacket(player, false);
 			userInfo.addComponentType(UserInfoType.ATT_SPIRITS);
 			connection.Send(userInfo);
 		}
-		
+
 		connection.Send(new ElementalSpiritEvolutionPacket(player, _type, canEvolve));
 
 		return ValueTask.CompletedTask;
@@ -90,7 +90,7 @@ public struct ExElementalSpiritEvolutionPacket: IIncomingPacket<GameSession>
 			inventory.setInventoryBlock(
 				spirit.getItemsToEvolve().Select(x => x.getId()).ToList(),
 				InventoryBlockType.BLACKLIST);
-			
+
 			foreach (ItemHolder itemHolder in spirit.getItemsToEvolve())
 			{
 				if (inventory.getInventoryItemCount(itemHolder.getId(), -1) < itemHolder.getCount())
@@ -98,12 +98,12 @@ public struct ExElementalSpiritEvolutionPacket: IIncomingPacket<GameSession>
 					return false;
 				}
 			}
-			
+
 			foreach (ItemHolder itemHolder in spirit.getItemsToEvolve())
 			{
 				player.destroyItemByItemId("Evolve", itemHolder.getId(), itemHolder.getCount(), player, true);
 			}
-			
+
 			return true;
 		}
 		finally

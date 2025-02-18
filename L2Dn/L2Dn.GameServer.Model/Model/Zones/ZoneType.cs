@@ -22,20 +22,20 @@ namespace L2Dn.GameServer.Model.Zones;
 public abstract class ZoneType: IEventContainerProvider
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(ZoneType));
-	
+
 	private readonly int _id;
 	protected ZoneForm _zone;
 	protected List<ZoneForm> _blockedZones;
 	private readonly Map<int, Creature> _characterList = new();
 	private readonly EventContainer _eventContainer;
-	
+
 	/** Parameters to affect specific characters */
 	private bool _checkAffected;
 	private string _name;
 	private int _minLevel;
 	private int _maxLevel;
-	private Race[] _race;
-	private CharacterClass[] _class;
+	private Race[]? _race;
+	private CharacterClass[]? _class;
 	private int _classType;
 	private InstanceType _target = InstanceType.Creature; // default all chars
 	private bool _allowStore;
@@ -43,7 +43,7 @@ public abstract class ZoneType: IEventContainerProvider
 	private AbstractZoneSettings _settings;
 	private int _instanceTemplateId;
 	private Map<int, bool> _enabledInInstance;
-	
+
 	protected ZoneType(int id)
 	{
 		_eventContainer = new($"Zone template {id}", GlobalEvents.Global);
@@ -58,7 +58,7 @@ public abstract class ZoneType: IEventContainerProvider
 	}
 
 	public EventContainer Events => _eventContainer;
-	
+
 	/**
 	 * @return Returns the id.
 	 */
@@ -66,7 +66,7 @@ public abstract class ZoneType: IEventContainerProvider
 	{
 		return _id;
 	}
-	
+
 	/**
 	 * Setup new parameters for this zone
 	 * @param name
@@ -75,7 +75,7 @@ public abstract class ZoneType: IEventContainerProvider
 	public virtual void setParameter(string name, string value)
 	{
 		_checkAffected = true;
-		
+
 		// Zone name
 		if (name.equals("name"))
 		{
@@ -106,7 +106,7 @@ public abstract class ZoneType: IEventContainerProvider
 				int i = 0;
 				for (; i < _race.Length; i++)
 					temp[i] = _race[i];
-				
+
 				temp[i] = (Race)int.Parse(value);
 				_race = temp;
 			}
@@ -126,7 +126,7 @@ public abstract class ZoneType: IEventContainerProvider
 				int i = 0;
 				for (; i < _class.Length; i++)
 					temp[i] = _class[i];
-				
+
 				temp[i] = (CharacterClass)int.Parse(value);
 				_class = temp;
 			}
@@ -164,7 +164,7 @@ public abstract class ZoneType: IEventContainerProvider
 			LOGGER.Info(GetType().Name + ": Unknown parameter - " + name + " in zone: " + _id);
 		}
 	}
-	
+
 	/**
 	 * @param creature the player to verify.
 	 * @return {@code true} if the given character is affected by this zone, {@code false} otherwise.
@@ -172,7 +172,7 @@ public abstract class ZoneType: IEventContainerProvider
 	private bool isAffected(Creature creature)
 	{
 		// Check instance
-		Instance world = creature.getInstanceWorld();
+		Instance? world = creature.getInstanceWorld();
 		if (world != null)
 		{
 			if (world.getTemplateId() != _instanceTemplateId)
@@ -188,7 +188,7 @@ public abstract class ZoneType: IEventContainerProvider
 		{
 			return false;
 		}
-		
+
 		// Check level
 		if (creature.getLevel() < _minLevel || creature.getLevel() > _maxLevel)
 		{
@@ -198,16 +198,16 @@ public abstract class ZoneType: IEventContainerProvider
 					SystemMessageId.YOU_CANNOT_ENTER_AS_YOUR_LEVEL_DOES_NOT_MEET_THE_REQUIREMENTS,
 					ExShowScreenMessagePacket.TOP_CENTER, 10000));
 			}
-			
+
 			return false;
 		}
-		
+
 		// check obj class
 		if (!creature.InstanceType.IsType(_target))
 		{
 			return false;
 		}
-		
+
 		if (creature.isPlayer())
 		{
 			// Check class type
@@ -225,7 +225,7 @@ public abstract class ZoneType: IEventContainerProvider
 					return false;
 				}
 			}
-			
+
 			// Check race
 			if (_race != null)
 			{
@@ -238,13 +238,13 @@ public abstract class ZoneType: IEventContainerProvider
 						break;
 					}
 				}
-				
+
 				if (!ok)
 				{
 					return false;
 				}
 			}
-			
+
 			// Check class
 			if (_class != null)
 			{
@@ -257,7 +257,7 @@ public abstract class ZoneType: IEventContainerProvider
 						break;
 					}
 				}
-				
+
 				if (!ok)
 				{
 					return false;
@@ -266,7 +266,7 @@ public abstract class ZoneType: IEventContainerProvider
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Set the zone for this ZoneType Instance
 	 * @param zone
@@ -279,7 +279,7 @@ public abstract class ZoneType: IEventContainerProvider
 		}
 		_zone = zone;
 	}
-	
+
 	/**
 	 * Returns this zones zone form.
 	 * @return {@link #_zone}
@@ -288,7 +288,7 @@ public abstract class ZoneType: IEventContainerProvider
 	{
 		return _zone;
 	}
-	
+
 	public void setBlockedZones(List<ZoneForm> blockedZones)
 	{
 		if (_blockedZones != null)
@@ -297,12 +297,12 @@ public abstract class ZoneType: IEventContainerProvider
 		}
 		_blockedZones = blockedZones;
 	}
-	
+
 	public List<ZoneForm> getBlockedZones()
 	{
 		return _blockedZones;
 	}
-	
+
 	/**
 	 * Set the zone name.
 	 * @param name
@@ -311,7 +311,7 @@ public abstract class ZoneType: IEventContainerProvider
 	{
 		_name = name;
 	}
-	
+
 	/**
 	 * Returns zone name
 	 * @return
@@ -320,7 +320,7 @@ public abstract class ZoneType: IEventContainerProvider
 	{
 		return _name;
 	}
-	
+
 	/**
 	 * Checks if the given coordinates are within the zone, ignores instanceId check.
 	 * @param x
@@ -332,7 +332,7 @@ public abstract class ZoneType: IEventContainerProvider
 	{
 		return _zone != null && _zone.isInsideZone(x, y, z) && !isInsideBlockedZone(x, y, z);
 	}
-	
+
 	/**
 	 * @param x
 	 * @param y
@@ -345,7 +345,7 @@ public abstract class ZoneType: IEventContainerProvider
 		{
 			return false;
 		}
-		
+
 		foreach (ZoneForm zone in _blockedZones)
 		{
 			if (zone.isInsideZone(x, y, z))
@@ -353,10 +353,10 @@ public abstract class ZoneType: IEventContainerProvider
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 	/**
 	 * Checks if the given coordinates are within zone's plane
 	 * @param x
@@ -367,7 +367,7 @@ public abstract class ZoneType: IEventContainerProvider
 	{
 		return isInsideZone(new Location3D(location.X, location.Y, _zone.getHighZ()));
 	}
-	
+
 	/**
 	 * Checks if the given coordinates are within the zone, ignores instanceId check
 	 * @param loc
@@ -377,7 +377,7 @@ public abstract class ZoneType: IEventContainerProvider
 	{
 		return isInsideZone(location.X, location.Y, location.Z);
 	}
-	
+
 	/**
 	 * Checks if the given object is inside the zone.
 	 * @param object
@@ -387,17 +387,17 @@ public abstract class ZoneType: IEventContainerProvider
 	{
 		return isInsideZone(obj.getX(), obj.getY(), obj.getZ());
 	}
-	
+
 	public double getDistanceToZone(int x, int y)
 	{
 		return _zone.getDistanceToZone(x, y);
 	}
-	
+
 	public double getDistanceToZone(WorldObject obj)
 	{
 		return _zone.getDistanceToZone(obj.getX(), obj.getY());
 	}
-	
+
 	public void revalidateInZone(Creature creature)
 	{
 		// If the object is inside the zone...
@@ -408,7 +408,7 @@ public abstract class ZoneType: IEventContainerProvider
 			{
 				return;
 			}
-			
+
 			if (_characterList.TryAdd(creature.ObjectId, creature))
 			{
 				// Notify to scripts.
@@ -416,7 +416,7 @@ public abstract class ZoneType: IEventContainerProvider
 				{
 					_eventContainer.NotifyAsync(new OnZoneEnter(creature, this));
 				}
-				
+
 				// Notify Zone implementation.
 				onEnter(creature);
 			}
@@ -426,7 +426,7 @@ public abstract class ZoneType: IEventContainerProvider
 			removeCharacter(creature);
 		}
 	}
-	
+
 	/**
 	 * Force fully removes a character from the zone Should use during teleport / logoff
 	 * @param creature
@@ -441,15 +441,15 @@ public abstract class ZoneType: IEventContainerProvider
 			{
 				_eventContainer.NotifyAsync(new OnZoneExit(creature, this));
 			}
-			
+
 			// Unregister player.
 			_characterList.remove(creature.ObjectId);
-			
+
 			// Notify Zone implementation.
 			onExit(creature);
 		}
 	}
-	
+
 	/**
 	 * Will scan the zones char list for the character
 	 * @param creature
@@ -459,12 +459,12 @@ public abstract class ZoneType: IEventContainerProvider
 	{
 		return _characterList.ContainsKey(creature.ObjectId);
 	}
-	
+
 	public virtual AbstractZoneSettings getSettings()
 	{
 		return _settings;
 	}
-	
+
 	public void setSettings(AbstractZoneSettings settings)
 	{
 		if (_settings != null)
@@ -473,37 +473,37 @@ public abstract class ZoneType: IEventContainerProvider
 		}
 		_settings = settings;
 	}
-	
+
 	protected abstract void onEnter(Creature creature);
-	
+
 	protected abstract void onExit(Creature creature);
-	
+
 	public virtual void onDieInside(Creature creature)
 	{
 	}
-	
+
 	public void onReviveInside(Creature creature)
 	{
 	}
-	
+
 	public virtual void onPlayerLoginInside(Player player)
 	{
 	}
-	
+
 	public virtual void onPlayerLogoutInside(Player player)
 	{
 	}
-	
+
 	public Map<int, Creature> getCharacters()
 	{
 		return _characterList;
 	}
-	
+
 	public ICollection<Creature> getCharactersInside()
 	{
 		return _characterList.Values;
 	}
-	
+
 	public List<Player> getPlayersInside()
 	{
 		List<Player> players = new();
@@ -516,7 +516,7 @@ public abstract class ZoneType: IEventContainerProvider
 		}
 		return players;
 	}
-	
+
 	/**
 	 * Broadcasts packet to all players inside the zone
 	 * @param packet
@@ -528,7 +528,7 @@ public abstract class ZoneType: IEventContainerProvider
 		{
 			return;
 		}
-		
+
 		foreach (Creature creature in _characterList.Values)
 		{
 			if (creature != null && creature.isPlayer())
@@ -537,48 +537,48 @@ public abstract class ZoneType: IEventContainerProvider
 			}
 		}
 	}
-	
+
 	public InstanceType getTargetType()
 	{
 		return _target;
 	}
-	
+
 	public void setTargetType(InstanceType type)
 	{
 		_target = type;
 		_checkAffected = true;
 	}
-	
+
 	public bool getAllowStore()
 	{
 		return _allowStore;
 	}
-	
+
 	public int getInstanceTemplateId()
 	{
 		return _instanceTemplateId;
 	}
-	
+
 	public override string ToString()
 	{
 		return GetType().Name + "[" + _id + "]";
 	}
-	
+
 	public void visualizeZone(int z)
 	{
 		_zone.visualizeZone(z);
 	}
-	
+
 	public virtual void setEnabled(bool value)
 	{
 		_enabled = value;
 	}
-	
+
 	public bool isEnabled()
 	{
 		return _enabled;
 	}
-	
+
 	public void setEnabled(bool state, int instanceId)
 	{
 		if (_enabledInInstance == null)
@@ -591,10 +591,10 @@ public abstract class ZoneType: IEventContainerProvider
 				}
 			}
 		}
-		
+
 		_enabledInInstance.put(instanceId, state);
 	}
-	
+
 	public bool isEnabled(int instanceId)
 	{
 		if (_enabledInInstance != null)
@@ -604,7 +604,7 @@ public abstract class ZoneType: IEventContainerProvider
 
 		return _enabled;
 	}
-	
+
 	public virtual void oustAllPlayers()
 	{
 		foreach (Creature obj in _characterList.Values)
@@ -615,7 +615,7 @@ public abstract class ZoneType: IEventContainerProvider
 			}
 		}
 	}
-	
+
 	/**
 	 * @param loc
 	 */
@@ -625,7 +625,7 @@ public abstract class ZoneType: IEventContainerProvider
 		{
 			return;
 		}
-		
+
 		foreach (Creature creature in _characterList.Values)
 		{
 			if (creature != null && creature.isPlayer())

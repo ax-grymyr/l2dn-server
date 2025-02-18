@@ -29,17 +29,17 @@ else
         @foreach (Record record in _items)
         {
             <tr>
-                <td>@record.Item.Name (@record.BuyListItem.ItemId)</td>
+                <td>@record.Item?.Name (@record.BuyListItem?.ItemId)</td>
                 <td>
                     @if (record.Icon != null)
                     {
                         <img alt="@record.Icon.Name" width="@record.Icon.Width" height="@record.Icon.Height" src="data:image/bmp;base64, @(Convert.ToBase64String(record.Icon.Bitmap))"/>
                     }
                 </td>
-                <td>@record.BuyListItem.Price</td>
-                <td>@record.BuyListItem.Count</td>
-                <td>@record.BuyListItem.RestockDelay</td>
-                <td>@record.BuyListItem.Enabled</td>
+                <td>@record.BuyListItem?.Price</td>
+                <td>@record.BuyListItem?.Count</td>
+                <td>@record.BuyListItem?.RestockDelay</td>
+                <td>@record.BuyListItem?.Enabled</td>
             </tr>
         }
         </tbody>
@@ -73,8 +73,8 @@ else
 
     private class Record
     {
-        public DbBuyListItem BuyListItem { get; set; }
-        public DbItem Item { get; set; }
+        public DbBuyListItem? BuyListItem { get; set; }
+        public DbItem? Item { get; set; }
         public DbIcon? Icon { get; set; }
     }
 }

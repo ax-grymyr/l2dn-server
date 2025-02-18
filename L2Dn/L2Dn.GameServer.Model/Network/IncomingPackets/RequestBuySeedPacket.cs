@@ -18,7 +18,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
 {
     private const int BATCH_LENGTH = 12; // length of the one item
-    
+
     private int _manorId;
     private List<ItemHolder>? _items;
 
@@ -30,7 +30,7 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
         {
             return;
         }
-		
+
         _items = new(count);
         for (int i = 0; i < count; i++)
         {
@@ -41,7 +41,7 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
                 _items = null;
                 return;
             }
-            
+
             _items.Add(new ItemHolder(itemId, cnt));
         }
     }
@@ -57,49 +57,49 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
 		    player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		    return ValueTask.CompletedTask;
 	    }
-	    
+
 	    // TODO: flood protection
 		// if (!client.getFloodProtectors().canPerformTransaction())
 		// {
 		// 	player.sendMessage("You are buying seeds too fast!");
 		// 	return ValueTask.CompletedTask;
 		// }
-		
+
 		CastleManorManager manor = CastleManorManager.getInstance();
 		if (manor.isUnderMaintenance())
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
-		Castle castle = CastleManager.getInstance().getCastleById(_manorId);
+
+		Castle? castle = CastleManager.getInstance().getCastleById(_manorId);
 		if (castle == null)
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		Npc manager = player.getLastFolkNPC();
 		if (!(manager is Merchant) || !manager.canInteract(player) || manager.getParameters().getInt("manor_id", -1) != _manorId)
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		long totalPrice = 0;
 		long slots = 0;
 		long totalWeight = 0;
-		
+
 		Map<int, SeedProduction> productInfo = new();
 		foreach (ItemHolder ih in _items)
 		{
-			SeedProduction sp = manor.getSeedProduct(_manorId, ih.getId(), false);
+			SeedProduction? sp = manor.getSeedProduct(_manorId, ih.getId(), false);
 			if (sp == null || sp.getPrice() <= 0 || sp.getAmount() < ih.getCount() || Inventory.MAX_ADENA / ih.getCount() < sp.getPrice())
 			{
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				return ValueTask.CompletedTask;
 			}
-			
+
 			// Calculate price
 			totalPrice += sp.getPrice() * ih.getCount();
 			if (totalPrice > Inventory.MAX_ADENA)
@@ -107,15 +107,15 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
 				Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
 					" tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.DEFAULT_PUNISH);
-				
+
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				return ValueTask.CompletedTask;
 			}
-			
+
 			// Calculate weight
 			ItemTemplate template = ItemData.getInstance().getTemplate(ih.getId());
 			totalWeight += ih.getCount() * template.getWeight();
-			
+
 			// Calculate slots
 			if (!template.isStackable())
 			{
@@ -127,31 +127,31 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
 			}
 			productInfo.put(ih.getId(), sp);
 		}
-		
+
 		if (!player.getInventory().validateWeight(totalWeight))
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_WEIGHT_LIMIT);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!player.getInventory().validateCapacity(slots))
 		{
 			player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (totalPrice < 0 || player.getAdena() < totalPrice)
 		{
 			player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Proceed the purchase
 		foreach (ItemHolder i in _items)
 		{
 			SeedProduction sp = productInfo.get(i.getId());
 			long price = sp.getPrice() * i.getCount();
-			
+
 			// Take Adena and decrease seed amount
 			if (!sp.decreaseAmount(i.getCount()) || !player.reduceAdena("Buy", price, player, false))
 			{
@@ -159,20 +159,20 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
 				totalPrice -= price;
 				continue;
 			}
-			
+
 			// Add item to player's inventory
 			player.addItem("Buy", i.getId(), i.getCount(), manager, true);
 		}
-		
+
 		// Adding to treasury for Manor Castle
 		if (totalPrice > 0)
 		{
 			castle.addToTreasuryNoTax(totalPrice);
-			
+
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_ADENA_DISAPPEARED);
 			sm.Params.addLong(totalPrice);
 			player.sendPacket(sm);
-			
+
 			if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 			{
 				manor.updateCurrentProduction(_manorId, productInfo.Values);

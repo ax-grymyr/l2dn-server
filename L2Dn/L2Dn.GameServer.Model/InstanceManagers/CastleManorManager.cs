@@ -25,7 +25,7 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class CastleManorManager: DataReaderBase, IStorable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CastleManorManager));
-	
+
 	// Current manor status
 	private ManorMode _mode = ManorMode.APPROVED;
 	// Temporary date
@@ -37,14 +37,14 @@ public class CastleManorManager: DataReaderBase, IStorable
 	private readonly Map<int, List<CropProcure>> _procureNext = new();
 	private readonly Map<int, List<SeedProduction>> _production = new();
 	private readonly Map<int, List<SeedProduction>> _productionNext = new();
-	
+
 	public CastleManorManager()
 	{
 		if (Config.ALLOW_MANOR)
 		{
 			load(); // Load seed data (XML)
 			loadDb(); // Load castle manor data (DB)
-			
+
 			// Set mode and start timer
 			DateTime currentTime = DateTime.Now;
 			int hour = currentTime.Hour;
@@ -58,10 +58,10 @@ public class CastleManorManager: DataReaderBase, IStorable
 			{
 				_mode = ManorMode.MAINTENANCE;
 			}
-			
+
 			// Schedule mode change
 			scheduleModeChange();
-			
+
 			// Schedule autosave
 			if (!Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 			{
@@ -75,12 +75,12 @@ public class CastleManorManager: DataReaderBase, IStorable
 			LOGGER.Info(GetType().Name +": Manor system is deactivated.");
 		}
 	}
-	
+
 	public void load()
 	{
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "Seeds.xml");
 		document.Elements("list").Elements("castle").ForEach(parseElement);
-		
+
 		LOGGER.Info(GetType().Name +": Loaded " + _seeds.Count + " seeds.");
 	}
 
@@ -97,14 +97,14 @@ public class CastleManorManager: DataReaderBase, IStorable
 
 	private void loadDb()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			foreach (Castle castle in CastleManager.getInstance().getCastles())
 			{
 				int castleId = castle.getResidenceId();
-				
+
 				// Seed production
 				List<SeedProduction> pCurrent = new();
 				List<SeedProduction> pNext = new();
@@ -131,7 +131,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 
 				_production.put(castleId, pCurrent);
 				_productionNext.put(castleId, pNext);
-				
+
 				// Seed procure
 				List<CropProcure> current = new();
 				List<CropProcure> next = new();
@@ -144,7 +144,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 					{
 						CropProcure cp = new CropProcure(cropId, procure.Amount, procure.RewardType,
 							procure.StartAmount, procure.Price);
-						
+
 						if (procure.NextPeriod)
 						{
 							next.Add(cp);
@@ -170,7 +170,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 			LOGGER.Warn(GetType().Name + ": Unable to load manor data! " + e);
 		}
 	}
-	
+
 	// -------------------------------------------------------
 	// Manor methods
 	// -------------------------------------------------------
@@ -186,14 +186,14 @@ public class CastleManorManager: DataReaderBase, IStorable
 				time = new DateTime(time.Year, time.Month, time.Day, Config.ALT_MANOR_APPROVE_TIME, Config.ALT_MANOR_APPROVE_MIN, 0);
 				if (time < DateTime.Now)
 					time = time.AddDays(1);
-				
+
 				break;
 			}
 			case ManorMode.MAINTENANCE:
 			{
 				time = new DateTime(time.Year, time.Month, time.Day, Config.ALT_MANOR_REFRESH_TIME,
 					Config.ALT_MANOR_REFRESH_MIN + Config.ALT_MANOR_MAINTENANCE_MIN, 0);
-				
+
 				break;
 			}
 			case ManorMode.APPROVED:
@@ -208,11 +208,11 @@ public class CastleManorManager: DataReaderBase, IStorable
 		TimeSpan delay = time - DateTime.Now;
 		if (delay < TimeSpan.Zero)
 			delay = TimeSpan.Zero;
-		
+
 		// Schedule mode change
 		ThreadPool.schedule(changeMode, delay);
 	}
-	
+
 	public void changeMode()
 	{
 		switch (_mode)
@@ -221,7 +221,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 			{
 				// Change mode
 				_mode = ManorMode.MAINTENANCE;
-				
+
 				// Update manor period
 				foreach (Castle castle in CastleManager.getInstance().getCastles())
 				{
@@ -230,7 +230,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 					{
 						continue;
 					}
-					
+
 					int castleId = castle.getResidenceId();
 					ItemContainer cwh = owner.getWarehouse();
 					foreach (CropProcure crop in _procure.get(castleId))
@@ -245,7 +245,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 								{
 									count = 1;
 								}
-								
+
 								if (count > 0)
 								{
 									cwh.addItem("Manor", getSeedByCrop(crop.getId()).getMatureId(), count, null, null);
@@ -258,13 +258,13 @@ public class CastleManorManager: DataReaderBase, IStorable
 							}
 						}
 					}
-					
+
 					// Change next period to current and prepare next period data
 					List<SeedProduction> nextProduction = _productionNext.get(castleId);
 					List<CropProcure> nextProcure = _procureNext.get(castleId);
 					_production.put(castleId, nextProduction);
 					_procure.put(castleId, nextProcure);
-					
+
 					if (castle.getTreasury() < getManorCost(castleId, false))
 					{
 						_productionNext.put(castleId, new());
@@ -278,7 +278,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 							s.setAmount(s.getStartAmount());
 						}
 						_productionNext.put(castleId, production);
-						
+
 						List<CropProcure> procure = new();
 						foreach (CropProcure cr in procure)
 						{
@@ -287,7 +287,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 						_procureNext.put(castleId, procure);
 					}
 				}
-				
+
 				// Save changes
 				storeMe();
 				break;
@@ -320,7 +320,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 					{
 						continue;
 					}
-					
+
 					int slots = 0;
 					int castleId = castle.getResidenceId();
 					ItemContainer cwh = owner.getWarehouse();
@@ -331,13 +331,13 @@ public class CastleManorManager: DataReaderBase, IStorable
 							slots++;
 						}
 					}
-					
+
 					long manorCost = getManorCost(castleId, true);
 					if (!cwh.validateCapacity(slots) && (castle.getTreasury() < manorCost))
 					{
 						_productionNext.get(castleId).Clear();
 						_procureNext.get(castleId).Clear();
-						
+
 						// Notify clan leader
 						ClanMember clanLeader = owner.getLeader();
 						if ((clanLeader != null) && clanLeader.isOnline())
@@ -350,7 +350,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 						castle.addToTreasuryNoTax(-manorCost);
 					}
 				}
-				
+
 				// Store changes
 				if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 				{
@@ -361,19 +361,19 @@ public class CastleManorManager: DataReaderBase, IStorable
 		}
 		scheduleModeChange();
 	}
-	
+
 	public void setNextSeedProduction(List<SeedProduction> list, int castleId)
 	{
 		_productionNext.put(castleId, list);
 		if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 				// Delete old data
 				ctx.CastleManorProduction.Where(p => p.CastleId == castleId && p.NextPeriod).ExecuteDelete();
-				
+
 				// Insert new data
 				if (list.Count != 0)
 				{
@@ -396,19 +396,19 @@ public class CastleManorManager: DataReaderBase, IStorable
 			}
 		}
 	}
-	
+
 	public void setNextCropProcure(List<CropProcure> list, int castleId)
 	{
 		_procureNext.put(castleId, list);
 		if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-				
+
 				// Delete old data
 				ctx.CastleManorProcure.Where(p => p.CastleId == castleId && p.NextPeriod).ExecuteDelete();
-				
+
 				// Insert new data
 				if (list.Count != 0)
 				{
@@ -432,10 +432,10 @@ public class CastleManorManager: DataReaderBase, IStorable
 			}
 		}
 	}
-	
+
 	public void updateCurrentProduction(int castleId, ICollection<SeedProduction> items)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (SeedProduction sp in items)
@@ -451,10 +451,10 @@ public class CastleManorManager: DataReaderBase, IStorable
 			LOGGER.Info(GetType().Name + ": Unable to store manor data!" + e);
 		}
 	}
-	
+
 	public void updateCurrentProcure(int castleId, ICollection<CropProcure> items)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (CropProcure sp in items)
@@ -470,13 +470,13 @@ public class CastleManorManager: DataReaderBase, IStorable
 			LOGGER.Info(GetType().Name + ": Unable to store manor data!" + e);
 		}
 	}
-	
+
 	public List<SeedProduction> getSeedProduction(int castleId, bool nextPeriod)
 	{
 		return (nextPeriod) ? _productionNext.get(castleId) : _production.get(castleId);
 	}
-	
-	public SeedProduction getSeedProduct(int castleId, int seedId, bool nextPeriod)
+
+	public SeedProduction? getSeedProduct(int castleId, int seedId, bool nextPeriod)
 	{
 		foreach (SeedProduction sp in getSeedProduction(castleId, nextPeriod))
 		{
@@ -487,13 +487,13 @@ public class CastleManorManager: DataReaderBase, IStorable
 		}
 		return null;
 	}
-	
+
 	public List<CropProcure> getCropProcure(int castleId, bool nextPeriod)
 	{
 		return (nextPeriod) ? _procureNext.get(castleId) : _procure.get(castleId);
 	}
-	
-	public CropProcure getCropProcure(int castleId, int cropId, bool nextPeriod)
+
+	public CropProcure? getCropProcure(int castleId, int cropId, bool nextPeriod)
 	{
 		foreach (CropProcure cp in getCropProcure(castleId, nextPeriod))
 		{
@@ -504,7 +504,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 		}
 		return null;
 	}
-	
+
 	public long getManorCost(int castleId, bool nextPeriod)
 	{
 		List<CropProcure> procure = getCropProcure(castleId, nextPeriod);
@@ -521,10 +521,10 @@ public class CastleManorManager: DataReaderBase, IStorable
 		}
 		return total;
 	}
-	
+
 	public bool storeMe()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
@@ -553,7 +553,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 				Price = t.Production.getPrice(),
 				NextPeriod = t.NextPeriod
 			}));
-			
+
 			// Current procure
 			IEnumerable<(int CastleId, bool NextPeriod, CropProcure Procure)> currentProcure =
 				_procure.SelectMany(kvp =>
@@ -574,10 +574,10 @@ public class CastleManorManager: DataReaderBase, IStorable
 				RewardType = t.Procure.getReward(),
 				NextPeriod = t.NextPeriod
 			}));
-			
+
 			// Execute procure batch
 			ctx.SaveChanges();
-			
+
 			return true;
 		}
 		catch (Exception e)
@@ -586,22 +586,22 @@ public class CastleManorManager: DataReaderBase, IStorable
 			return false;
 		}
 	}
-	
+
 	public void resetManorData(int castleId)
 	{
 		if (!Config.ALLOW_MANOR)
 		{
 			return;
 		}
-		
+
 		_procure.get(castleId).Clear();
 		_procureNext.get(castleId).Clear();
 		_production.get(castleId).Clear();
 		_productionNext.get(castleId).Clear();
-		
+
 		if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
@@ -617,32 +617,32 @@ public class CastleManorManager: DataReaderBase, IStorable
 			}
 		}
 	}
-	
+
 	public bool isUnderMaintenance()
 	{
 		return _mode == ManorMode.MAINTENANCE;
 	}
-	
+
 	public bool isManorApproved()
 	{
 		return _mode == ManorMode.APPROVED;
 	}
-	
+
 	public bool isModifiablePeriod()
 	{
 		return _mode == ManorMode.MODIFIABLE;
 	}
-	
+
 	public string getCurrentModeName()
 	{
 		return _mode.ToString();
 	}
-	
+
 	public string getNextModeChange()
 	{
 		return _nextModeChange.ToString("dd/MM HH:mm:ss");
 	}
-	
+
 	// -------------------------------------------------------
 	// Seed methods
 	// -------------------------------------------------------
@@ -661,7 +661,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 		cropIds.Clear();
 		return seeds;
 	}
-	
+
 	public Set<Seed> getSeedsForCastle(int castleId)
 	{
 		Set<Seed> result = new();
@@ -674,14 +674,14 @@ public class CastleManorManager: DataReaderBase, IStorable
 		}
 		return result;
 	}
-	
+
 	public Set<int> getSeedIds()
 	{
 		Set<int> set = new();
 		set.addAll(_seeds.Keys);
 		return set;
 	}
-	
+
 	public Set<int> getCropIds()
 	{
 		Set<int> result = new();
@@ -691,12 +691,12 @@ public class CastleManorManager: DataReaderBase, IStorable
 		}
 		return result;
 	}
-	
+
 	public Seed getSeed(int seedId)
 	{
 		return _seeds.get(seedId);
 	}
-	
+
 	public Seed getSeedByCrop(int cropId, int castleId)
 	{
 		foreach (Seed s in getSeedsForCastle(castleId))
@@ -708,7 +708,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 		}
 		return null;
 	}
-	
+
 	public Seed getSeedByCrop(int cropId)
 	{
 		foreach (Seed s in _seeds.Values)
@@ -720,7 +720,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 		}
 		return null;
 	}
-	
+
 	// -------------------------------------------------------
 	// Static methods
 	// -------------------------------------------------------
@@ -728,7 +728,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly CastleManorManager INSTANCE = new CastleManorManager();

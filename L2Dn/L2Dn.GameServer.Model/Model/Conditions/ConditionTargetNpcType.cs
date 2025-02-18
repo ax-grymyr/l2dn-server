@@ -8,26 +8,13 @@ namespace L2Dn.GameServer.Model.Conditions;
 /**
  * The Class ConditionTargetNpcType.
  */
-public class ConditionTargetNpcType: Condition
+public sealed class ConditionTargetNpcType(InstanceType[] type): Condition
 {
-	private readonly InstanceType[] _npcType;
-	
-	/**
-	 * Instantiates a new condition target npc type.
-	 * @param type the type
-	 */
-	public ConditionTargetNpcType(InstanceType[] type)
-	{
-		_npcType = type;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		if (effected == null)
-		{
-			return false;
-		}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        if (effected == null)
+            return false;
 
-		return Array.IndexOf(_npcType, effected.InstanceType) >= 0;
-	}
+        return Array.IndexOf(type, effected.InstanceType) >= 0;
+    }
 }

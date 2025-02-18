@@ -15,8 +15,8 @@ public class OwnerPet: ITargetTypeHandler
 	{
 		return TargetType.OWNER_PET;
 	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
+
+	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
 		return creature.getActingPlayer();
 	}

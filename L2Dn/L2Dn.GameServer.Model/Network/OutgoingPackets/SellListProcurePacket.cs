@@ -11,25 +11,25 @@ public readonly struct SellListProcurePacket: IOutgoingPacket
 {
     private readonly long _money;
     private readonly Map<Item, long> _sellList;
-	
+
     public SellListProcurePacket(Player player, int castleId)
     {
         _money = player.getAdena();
         _sellList = new Map<Item, long>();
         foreach (CropProcure c in CastleManorManager.getInstance().getCropProcure(castleId, false))
         {
-            Item item = player.getInventory().getItemByItemId(c.getId());
-            if ((item != null) && (c.getAmount() > 0))
+            Item? item = player.getInventory().getItemByItemId(c.getId());
+            if (item != null && c.getAmount() > 0)
             {
                 _sellList.put(item, c.getAmount());
             }
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.SELL_LIST_PROCURE);
-        
+
         writer.WriteInt64(_money); // money
         writer.WriteInt32(0); // lease ?
         writer.WriteInt16((short)_sellList.Count); // list size

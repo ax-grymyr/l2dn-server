@@ -27,11 +27,11 @@ public struct RequestReplyStartPledgeWarPacket: IIncomingPacket<GameSession>
         Player requestor = player.getActiveRequester();
         if (requestor == null)
             return ValueTask.CompletedTask;
-		
+
         if (_answer == 1)
         {
-            Clan attacked = player.getClan();
-            Clan attacker = requestor.getClan();
+            Clan? attacked = player.getClan();
+            Clan? attacker = requestor.getClan();
             if ((attacked != null) && (attacker != null))
             {
                 ClanWar clanWar = attacker.getWarWith(attacked.getId());
@@ -46,7 +46,7 @@ public struct RequestReplyStartPledgeWarPacket: IIncomingPacket<GameSession>
         {
             requestor.sendPacket(SystemMessageId.THE_S1_CLAN_DID_NOT_RESPOND_WAR_PROCLAMATION_HAS_BEEN_REFUSED_2);
         }
-        
+
         player.setActiveRequester(null);
         requestor.onTransactionResponse();
         return ValueTask.CompletedTask;

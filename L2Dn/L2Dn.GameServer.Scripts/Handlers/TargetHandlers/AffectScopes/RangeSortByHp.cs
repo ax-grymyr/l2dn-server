@@ -16,10 +16,10 @@ public class RangeSortByHp: IAffectScopeHandler
 	public void forEachAffected<T>(Creature creature, WorldObject target, Skill skill, Action<T> action)
 		where T: WorldObject
 	{
-		IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		int affectRange = skill.getAffectRange();
 		int affectLimit = skill.getAffectLimit();
-		
+
 		// Target checks.
 		AtomicInteger affected = new AtomicInteger(0);
 		Predicate<Creature> filter = c =>
@@ -28,39 +28,39 @@ public class RangeSortByHp: IAffectScopeHandler
 			{
 				return false;
 			}
-			
+
 			if (c.isDead())
 			{
 				return false;
 			}
-			
+
 			// Range skills appear to not affect you unless you are the main target.
 			if ((c == creature) && (target != creature))
 			{
 				return false;
 			}
-			
+
 			if ((affectObject != null) && !affectObject.checkAffectedObject(creature, c))
 			{
 				return false;
 			}
-			
+
 			affected.incrementAndGet();
 			return true;
 		};
-		
+
 		List<Creature> result = World.getInstance().getVisibleObjectsInRange(target, affectRange, filter);
-		
+
 		// Add object of origin since its skipped in the getVisibleObjects method.
 		if (target.isCreature() && filter((Creature) target))
 		{
 			result.Add((Creature) target);
 		}
-		
+
 		// Sort from lowest hp to highest hp.
 		List<Creature> sortedList = new(result);
 		sortedList.Sort((a, b) => a.getCurrentHpPercent().CompareTo(b.getCurrentHpPercent()));
-		
+
 		int count = 0;
 		int limit = (affectLimit > 0) ? affectLimit : int.MaxValue;
 		foreach (Creature c in sortedList)
@@ -69,12 +69,12 @@ public class RangeSortByHp: IAffectScopeHandler
 			{
 				break;
 			}
-			
+
 			count++;
 			action((T)(WorldObject)c);
 		}
 	}
-	
+
 	public AffectScope getAffectScopeType()
 	{
 		return AffectScope.RANGE_SORT_BY_HP;

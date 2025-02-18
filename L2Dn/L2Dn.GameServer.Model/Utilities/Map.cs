@@ -2,7 +2,7 @@
 
 namespace L2Dn.GameServer.Utilities;
 
-public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue> 
+public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
     where TKey: notnull
 {
     public Map()
@@ -13,11 +13,7 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
     {
     }
 
-    public TValue? get(TKey key)
-    {
-        TryGetValue(key, out var value);
-        return value;
-    }
+    public TValue? get(TKey key) => this.GetValueOrDefault(key);
 
     public TValue? remove(TKey key)
     {
@@ -25,9 +21,9 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
         return value;
     }
 
-    public TValue put(TKey key, TValue value)
+    public TValue? put(TKey key, TValue value)
     {
-        TryGetValue(key, out var oldValue);
+        TryGetValue(key, out TValue? oldValue);
         this[key] = value;
         return oldValue;
     }
@@ -51,7 +47,7 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
         return GetOrAdd(key, factory);
     }
 
-    public TResult computeIfPresent<TResult>(TKey key, Func<TKey, TValue, TResult> func)
+    public TResult? computeIfPresent<TResult>(TKey key, Func<TKey, TValue, TResult> func)
     {
         if (TryGetValue(key, out var value))
             return func(key, value);
@@ -73,12 +69,6 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
     public void replace(TKey key, TValue newValue)
     {
         if (ContainsKey(key))
-            this[key] = newValue;
-    }
-
-    public void replace(TKey key, TValue oldValue, TValue newValue)
-    {
-        if (TryGetValue(key, out TValue? value) && value.Equals(oldValue))
             this[key] = newValue;
     }
 }

@@ -13,21 +13,21 @@ namespace L2Dn.GameServer.Data.Xml;
 public class SubjugationData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SubjugationData));
-	
+
 	private static readonly List<SubjugationHolder> _subjugations = new();
-	
+
 	public SubjugationData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_subjugations.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "SubjugationData.xml");
 		document.Elements("list").Elements("purge").ForEach(parseElement);
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _subjugations.Count + " data.");
 	}
 
@@ -36,7 +36,7 @@ public class SubjugationData: DataReaderBase
 		int category = element.GetAttributeValueAsInt32("category");
 		List<int[]> hottimes = element.GetAttributeValueAsString("hottimes").Split(";")
 			.Select(it => it.Split("-").Select(int.Parse).ToArray()).ToList();
-		
+
 		Map<int, int> npcs = new();
 		element.Elements("npc").ForEach(el =>
 		{
@@ -48,16 +48,16 @@ public class SubjugationData: DataReaderBase
 		_subjugations.Add(new SubjugationHolder(category, hottimes, npcs));
 	}
 
-	public SubjugationHolder getSubjugation(int category)
+	public SubjugationHolder? getSubjugation(int category)
 	{
 		return _subjugations.FirstOrDefault(it => it.getCategory() == category);
 	}
-	
+
 	public static SubjugationData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly SubjugationData INSTANCE = new();

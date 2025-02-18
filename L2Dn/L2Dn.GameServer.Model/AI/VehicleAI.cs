@@ -19,7 +19,7 @@ public abstract class VehicleAI: CreatureAI
 	{
 	}
 
-	protected override void onIntentionCast(Skill skill, WorldObject target, Item item, bool forceUse, bool dontMove)
+	protected override void onIntentionCast(Skill skill, WorldObject? target, Item? item, bool forceUse, bool dontMove)
 	{
 	}
 

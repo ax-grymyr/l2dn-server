@@ -56,7 +56,7 @@ public struct RequestExSkillEnchantChargePacket: IIncomingPacket<GameSession>
 	    long feeAdena = 0;
 	    foreach (ItemHolder itemCharge in _itemList)
 	    {
-		    Item item = player.getInventory().getItemByObjectId(itemCharge.getId());
+		    Item? item = player.getInventory().getItemByObjectId(itemCharge.getId());
 		    if (item == null)
 		    {
 			    PacketLogger.Instance.Warn(GetType().Name + " Player" + player.getName() +

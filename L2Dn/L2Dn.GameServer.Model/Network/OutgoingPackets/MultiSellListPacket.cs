@@ -41,12 +41,12 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 		writer.WriteInt32(1 + _index / MultisellData.PAGE_SIZE); // page started from 1
 		writer.WriteInt32(finished); // finished
 		writer.WriteInt32(MultisellData.PAGE_SIZE); // size of pages
-		
+
 		writer.WriteInt32(size); // list length
 		writer.WriteByte(0); // Grand Crusade
 		writer.WriteByte(_list.isChanceMultisell()); // new multisell window
 		writer.WriteInt32(32); // Helios - Always 32
-		
+
 		for (int index = _index, end = _index + size; index < end; index++)
 		{
 			ItemInfo itemEnchantment = _list.getItemEnchantment(index);
@@ -55,7 +55,7 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 			{
 				foreach (ItemChanceHolder holder in entry.getIngredients())
 				{
-					Item item = _player.getInventory().getItemByItemId(holder.getId());
+					Item? item = _player.getInventory().getItemByItemId(holder.getId());
 					if ((item != null) && item.isEquipable())
 					{
 						itemEnchantment = new ItemInfo(item);
@@ -75,8 +75,8 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 			writer.WriteInt16((short)entry.getIngredients().Count);
 			foreach (ItemChanceHolder product in entry.getProducts())
 			{
-				ItemTemplate template = ItemData.getInstance().getTemplate(product.getId());
-				ItemInfo displayItemEnchantment =
+				ItemTemplate? template = ItemData.getInstance().getTemplate(product.getId());
+				ItemInfo? displayItemEnchantment =
 					_list.isMaintainEnchantment() && (itemEnchantment != null) && (template != null) &&
 					template.GetType() == itemEnchantment.getItem().GetType()
 						? itemEnchantment
@@ -108,12 +108,12 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 
 			foreach (ItemChanceHolder ingredient in entry.getIngredients())
 			{
-				ItemTemplate template = ItemData.getInstance().getTemplate(ingredient.getId());
-				ItemInfo displayItemEnchantment = (itemEnchantment != null) && (template != null) &&
+				ItemTemplate? template = ItemData.getInstance().getTemplate(ingredient.getId());
+				ItemInfo? displayItemEnchantment = (itemEnchantment != null) && (template != null) &&
 				                                  template.GetType() == itemEnchantment.GetType()
 					? itemEnchantment
 					: null;
-				
+
 				if (template != null)
 				{
 					writer.WriteInt32(template.getDisplayId());
@@ -128,7 +128,7 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 				writer.WriteInt64(_list.getIngredientCount(ingredient));
 				writer.WriteInt16((short)(ingredient.getEnchantmentLevel() > 0 ? ingredient.getEnchantmentLevel() :
 					displayItemEnchantment?.getEnchantLevel() ?? 0)); // enchant level
-				
+
 				writer.WriteItemAugment(displayItemEnchantment);
 				writer.WriteItemElemental(displayItemEnchantment);
 				writer.WriteItemEnsoulOptions(displayItemEnchantment);

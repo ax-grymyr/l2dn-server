@@ -31,62 +31,62 @@ public struct RequestExTryToPutShapeShiftingEnchantSupportItemPacket: IIncomingP
             return ValueTask.CompletedTask;
 
 		ShapeShiftingItemRequest request = player.getRequest<ShapeShiftingItemRequest>();
-		if (request == null || player.isInStoreMode() || player.isCrafting() || player.isProcessingRequest() || 
+		if (request == null || player.isInStoreMode() || player.isCrafting() || player.isProcessingRequest() ||
 		    player.isProcessingTransaction())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_SYSTEM_DURING_TRADING_PRIVATE_STORE_AND_WORKSHOP_SETUP);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		PlayerInventory inventory = player.getInventory();
-		Item targetItem = inventory.getItemByObjectId(_targetItemObjId);
-		Item extractItem = inventory.getItemByObjectId(_extracItemObjId);
+		Item? targetItem = inventory.getItemByObjectId(_targetItemObjId);
+		Item? extractItem = inventory.getItemByObjectId(_extracItemObjId);
 		Item stone = request.getAppearanceStone();
 		if (targetItem == null || extractItem == null || stone == null)
 		{
 			player.removeRequest<ShapeShiftingItemRequest>();
 			return ValueTask.CompletedTask;
 		}
-		
-		if (stone.getOwnerId() != player.ObjectId || targetItem.getOwnerId() != player.ObjectId || 
+
+		if (stone.getOwnerId() != player.ObjectId || targetItem.getOwnerId() != player.ObjectId ||
 		    extractItem.getOwnerId() != player.ObjectId)
 		{
 			player.removeRequest<ShapeShiftingItemRequest>();
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!extractItem.getTemplate().isAppearanceable())
 		{
 			player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 			player.sendPacket(ExPutShapeShiftingExtractionItemResultPacket.FAILED);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (extractItem.getItemLocation() != ItemLocation.INVENTORY && extractItem.getItemLocation() != ItemLocation.PAPERDOLL)
 		{
 			player.removeRequest<ShapeShiftingItemRequest>();
 			return ValueTask.CompletedTask;
 		}
-		
-		if ((stone = inventory.getItemByObjectId(stone.ObjectId)) == null)
+
+		if (inventory.getItemByObjectId(stone.ObjectId) == null)
 		{
 			player.removeRequest<ShapeShiftingItemRequest>();
 			return ValueTask.CompletedTask;
 		}
 
-		AppearanceStone appearanceStone = AppearanceItemData.getInstance().getStone(stone.getId());
+		AppearanceStone? appearanceStone = AppearanceItemData.getInstance().getStone(stone.getId());
 		if (appearanceStone == null)
 		{
 			player.removeRequest<ShapeShiftingItemRequest>();
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (appearanceStone.getType() == AppearanceType.RESTORE || appearanceStone.getType() == AppearanceType.FIXED)
 		{
 			player.removeRequest<ShapeShiftingItemRequest>();
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (extractItem.getVisualId() > 0)
 		{
 			player.sendPacket(ExPutShapeShiftingExtractionItemResultPacket.FAILED);
@@ -94,48 +94,48 @@ public struct RequestExTryToPutShapeShiftingEnchantSupportItemPacket: IIncomingP
 			player.removeRequest<ShapeShiftingItemRequest>();
 			return ValueTask.CompletedTask;
 		}
-		
-		if (extractItem.getItemLocation() != ItemLocation.INVENTORY && 
+
+		if (extractItem.getItemLocation() != ItemLocation.INVENTORY &&
 		    extractItem.getItemLocation() != ItemLocation.PAPERDOLL)
 		{
 			player.sendPacket(ExPutShapeShiftingExtractionItemResultPacket.FAILED);
 			player.removeRequest<ShapeShiftingItemRequest>();
 			return ValueTask.CompletedTask;
 		}
-		
-		if (extractItem.getItemType() != targetItem.getItemType() || extractItem.getId() == targetItem.getId() || 
+
+		if (extractItem.getItemType() != targetItem.getItemType() || extractItem.getId() == targetItem.getId() ||
 		    extractItem.ObjectId == targetItem.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 			player.sendPacket(ExPutShapeShiftingExtractionItemResultPacket.FAILED);
 			return ValueTask.CompletedTask;
 		}
-		
-		if (extractItem.getTemplate().getBodyPart() != targetItem.getTemplate().getBodyPart() && 
-		    (extractItem.getTemplate().getBodyPart() != ItemTemplate.SLOT_FULL_ARMOR || 
+
+		if (extractItem.getTemplate().getBodyPart() != targetItem.getTemplate().getBodyPart() &&
+		    (extractItem.getTemplate().getBodyPart() != ItemTemplate.SLOT_FULL_ARMOR ||
 		     targetItem.getTemplate().getBodyPart() != ItemTemplate.SLOT_CHEST))
 		{
 			player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 			player.sendPacket(ExPutShapeShiftingExtractionItemResultPacket.FAILED);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (extractItem.getTemplate().getCrystalType() > targetItem.getTemplate().getCrystalType())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_EXTRACT_FROM_ITEMS_THAT_ARE_HIGHER_GRADE_THAN_ITEMS_TO_BE_MODIFIED);
 			player.sendPacket(ExPutShapeShiftingExtractionItemResultPacket.FAILED);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!appearanceStone.checkConditions(player, targetItem))
 		{
 			player.sendPacket(ExPutShapeShiftingExtractionItemResultPacket.FAILED);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		request.setAppearanceExtractItem(extractItem);
 		player.sendPacket(ExPutShapeShiftingExtractionItemResultPacket.SUCCESS);
-        
+
         return ValueTask.CompletedTask;
     }
 }

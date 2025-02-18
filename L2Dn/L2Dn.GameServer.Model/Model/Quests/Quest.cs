@@ -40,28 +40,28 @@ namespace L2Dn.GameServer.Model.Quests;
 public class Quest: AbstractScript, IIdentifiable
 {
 	public static readonly Logger LOGGER = LogManager.GetLogger(nameof(Quest));
-	
+
 	/** Map containing lists of timers from the name of the timer. */
 	private readonly Map<string, List<QuestTimer>> _questTimers = new();
 
 	/** Map containing all the start conditions. */
 	private readonly Set<QuestCondition> _startCondition = new();
-	
+
 	private readonly int _questId;
 	private readonly byte _initialState = State.CREATED;
 	private bool _isCustom;
 	private NpcStringId _questNameNpcStringId;
-	
+
 	private int[] _questItemIds;
-	
+
 	private readonly NewQuest _questData;
-	
+
 	private const string DEFAULT_NO_QUEST_MSG = "<html><body>You are either not on a quest that involves this NPC, " +
 	                                            "or you don't meet this NPC's minimum quest requirements.</body></html>";
-	
+
 	private const int RESET_HOUR = 6;
 	private const int RESET_MINUTES = 30;
-	
+
 	private static readonly SkillHolder[] _storyQuestBuffs =
 	[
 		new SkillHolder(1068, 1), // Might
@@ -70,7 +70,7 @@ public class Quest: AbstractScript, IIdentifiable
 		new SkillHolder(1086, 1), // Haste
 		new SkillHolder(1085, 1) // Acumen
 	];
-	
+
 	/**
 	 * @return the reset hour for a daily quest, could be overridden on a script.
 	 */
@@ -78,7 +78,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return RESET_HOUR;
 	}
-	
+
 	/**
 	 * @return the reset minutes for a daily quest, could be overridden on a script.
 	 */
@@ -86,7 +86,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return RESET_MINUTES;
 	}
-	
+
 	/**
 	 * The Quest object constructor.<br>
 	 * Constructing a quest also calls the {@code init_LoadGlobalData} convenience method.
@@ -103,19 +103,19 @@ public class Quest: AbstractScript, IIdentifiable
 		// {
 		// 	QuestManager.getInstance()?.addScript(this);
 		// }
-		
+
 		_questData = Data.Xml.NewQuestData.getInstance().getQuestById(questId);
 		if (_questData != null)
 		{
 			addNewQuestConditions(_questData.getConditions(), null);
-			
+
 			if (_questData.getQuestType() == 1)
 			{
 				if (_questData.getStartNpcId() > 0)
 				{
 					addFirstTalkId(_questData.getStartNpcId());
 				}
-				
+
 				if (_questData.getEndNpcId() > 0 && _questData.getEndNpcId() != _questData.getStartNpcId())
 				{
 					addFirstTalkId(_questData.getEndNpcId());
@@ -128,16 +128,16 @@ public class Quest: AbstractScript, IIdentifiable
 					addItemTalkId(_questData.getStartItemId());
 				}
 			}
-			
+
 			if (_questData.getGoal().getItemId() > 0)
 			{
 				registerQuestItems(_questData.getGoal().getItemId());
 			}
 		}
-		
+
 		onLoad();
 	}
-	
+
 	/**
 	 * This method is, by default, called by the constructor of all scripts.<br>
 	 * Children of this class can implement this function in order to define what variables to load and what structures to save them in.<br>
@@ -146,7 +146,7 @@ public class Quest: AbstractScript, IIdentifiable
 	protected void onLoad()
 	{
 	}
-	
+
 	/**
 	 * The function onSave is, by default, called at shutdown, for all quests, by the QuestManager.<br>
 	 * Children of this class can implement this function in order to convert their structures<br>
@@ -156,7 +156,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public void onSave()
 	{
 	}
-	
+
 	/**
 	 * Gets the quest ID.
 	 * @return the quest ID
@@ -165,7 +165,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return _questId;
 	}
-	
+
 	/**
 	 * @return the NpcStringId of the current quest, used in Quest link bypass
 	 */
@@ -173,17 +173,17 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return _questNameNpcStringId != null ? (int)_questNameNpcStringId / 100 : _questId > 10000 ? _questId - 5000 : _questId;
 	}
-	
+
 	public NpcStringId getQuestNameNpcStringId()
 	{
 		return _questNameNpcStringId;
 	}
-	
+
 	public void setQuestNameNpcStringId(NpcStringId npcStringId)
 	{
 		_questNameNpcStringId = npcStringId;
 	}
-	
+
 	/**
 	 * Add a new quest state of this quest to the database.
 	 * @param player the owner of the newly created quest state
@@ -193,7 +193,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return new QuestState(this, player, _initialState);
 	}
-	
+
 	/**
 	 * Get the specified player's {@link QuestState} object for this quest.<br>
 	 * If the player does not have it and initIfNode is {@code true},<br>
@@ -203,16 +203,16 @@ public class Quest: AbstractScript, IIdentifiable
 	 *            create a new QuestState
 	 * @return the QuestState object for this quest or null if it doesn't exist
 	 */
-	public QuestState getQuestState(Player player, bool initIfNone)
+	public QuestState? getQuestState(Player player, bool initIfNone)
 	{
-		QuestState qs = player.getQuestState(Name);
+		QuestState? qs = player.getQuestState(Name);
 		if (qs != null || !initIfNone)
 		{
 			return qs;
 		}
 		return newQuestState(player);
 	}
-	
+
 	/**
 	 * @return the initial state of the quest
 	 */
@@ -231,10 +231,10 @@ public class Quest: AbstractScript, IIdentifiable
 	public override string showHtmlFile(Player player, string filename, Npc npc)
 	{
 		bool questwindow = !filename.endsWith(".html");
-		
+
 		// Create handler to file linked to the quest
 		string content = getHtm(player, filename);
-		
+
 		// Send message to client if message not empty
 		if (content != null)
 		{
@@ -242,7 +242,7 @@ public class Quest: AbstractScript, IIdentifiable
 			{
 				content = content.Replace("%objectId%", npc.ObjectId.ToString());
 			}
-			
+
 			HtmlContent htmlContent = HtmlContent.LoadFromText(content, player);
 			htmlContent.Replace("%playername%", player.getName());
 
@@ -256,13 +256,13 @@ public class Quest: AbstractScript, IIdentifiable
 				NpcHtmlMessagePacket npcReply = new NpcHtmlMessagePacket(npc?.ObjectId, 0, htmlContent);
 				player.sendPacket(npcReply);
 			}
-			
+
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
-		
+
 		return content;
 	}
-	
+
 	/**
 	 * Add a timer to the quest (if it doesn't exist already) and start it.
 	 * @param name the name of the timer (also passed back as "event" in {@link #onAdvEvent(String, Npc, Player)})
@@ -271,11 +271,11 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player the player associated with this timer (can be null)
 	 * @see #startQuestTimer(String, long, Npc, Player, bool)
 	 */
-	public void startQuestTimer(string name, TimeSpan time, Npc npc, Player player)
+	public void startQuestTimer(string name, TimeSpan time, Npc? npc, Player player)
 	{
 		startQuestTimer(name, time, npc, player, false);
 	}
-	
+
 	/**
 	 * Gets the quest timers.
 	 * @return the quest timers
@@ -284,7 +284,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return _questTimers;
 	}
-	
+
 	/**
 	 * Add a timer to the quest (if it doesn't exist already) and start it.
 	 * @param name the name of the timer (also passed back as "event" in {@link #onAdvEvent(String, Npc, Player)})
@@ -294,28 +294,23 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param repeating indicates whether the timer is repeatable or one-time.<br>
 	 *            If {@code true}, the task is repeated every {@code time} milliseconds until explicitly stopped.
 	 */
-	public void startQuestTimer(string name, TimeSpan time, Npc npc, Player player, bool repeating)
+	public void startQuestTimer(string name, TimeSpan time, Npc? npc, Player player, bool repeating)
 	{
 		if (name == null)
 		{
 			return;
 		}
-		
+
 		lock (_questTimers)
-		{
-			if (!_questTimers.ContainsKey(name))
-			{
-				_questTimers.put(name, new());
-			}
-			
+        {
+            List<QuestTimer> timers = _questTimers.GetOrAdd(name, _ => []);
+
 			// If there exists a timer with this name, allow the timer only if the [npc, player] set is unique nulls act as wildcards.
 			if (getQuestTimer(name, npc, player) == null)
-			{
-				_questTimers.get(name).Add(new QuestTimer(this, name, time, npc, player, repeating));
-			}
+				timers.Add(new QuestTimer(this, name, time, npc, player, repeating));
 		}
 	}
-	
+
 	/**
 	 * Get a quest timer that matches the provided name and parameters.
 	 * @param name the name of the quest timer to get
@@ -323,19 +318,19 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player the player associated with the quest timer to get
 	 * @return the quest timer that matches the specified parameters or {@code null} if nothing was found
 	 */
-	public QuestTimer getQuestTimer(string name, Npc npc, Player player)
+	public QuestTimer? getQuestTimer(string name, Npc? npc, Player player)
 	{
 		if (name == null)
 		{
 			return null;
 		}
-		
-		List<QuestTimer> timers = _questTimers.get(name);
+
+		List<QuestTimer>? timers = _questTimers.get(name);
 		if (timers == null || timers.Count == 0)
 		{
 			return null;
 		}
-		
+
 		foreach (QuestTimer timer in timers)
 		{
 			if (timer != null && timer.equals(this, name, npc, player))
@@ -343,10 +338,10 @@ public class Quest: AbstractScript, IIdentifiable
 				return timer;
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	/**
 	 * Cancel all quest timers with the specified name.
 	 * @param name the name of the quest timers to cancel
@@ -357,13 +352,13 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			return;
 		}
-		
+
 		List<QuestTimer> timers = _questTimers.get(name);
 		if (timers == null || timers.Count == 0)
 		{
 			return;
 		}
-		
+
 		foreach (QuestTimer timer in timers)
 		{
 			if (timer != null)
@@ -371,10 +366,10 @@ public class Quest: AbstractScript, IIdentifiable
 				timer.cancel();
 			}
 		}
-		
+
 		timers.Clear();
 	}
-	
+
 	/**
 	 * Cancel the quest timer that matches the specified name and parameters.
 	 * @param name the name of the quest timer to cancel
@@ -387,13 +382,13 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			return;
 		}
-		
+
 		List<QuestTimer> timers = _questTimers.get(name);
 		if (timers == null || timers.Count == 0)
 		{
 			return;
 		}
-		
+
 		foreach (QuestTimer timer in timers)
 		{
 			if (timer != null && timer.equals(this, name, npc, player))
@@ -402,7 +397,7 @@ public class Quest: AbstractScript, IIdentifiable
 			}
 		}
 	}
-	
+
 	/**
 	 * Remove a quest timer from the list of all timers.<br>
 	 * Note: does not stop the timer itself!
@@ -414,16 +409,16 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			return;
 		}
-		
+
 		List<QuestTimer> timers = _questTimers.get(timer.ToString());
 		if (timers != null)
 		{
 			timers.Remove(timer);
 		}
 	}
-	
+
 	// These are methods to call within the core to call the quest events.
-	
+
 	/**
 	 * @param npc the NPC that was attacked
 	 * @param attacker the attacking player
@@ -443,10 +438,10 @@ public class Quest: AbstractScript, IIdentifiable
 			showError(attacker, e);
 			return;
 		}
-		
+
 		showResult(attacker, res);
 	}
-	
+
 	/**
 	 * @param killer the character that killed the {@code victim}
 	 * @param victim the character that was killed by the {@code killer}
@@ -466,7 +461,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		showResult(qs.getPlayer(), res);
 	}
-	
+
 	/**
 	 * @param item
 	 * @param player
@@ -485,7 +480,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		showResult(player, res);
 	}
-	
+
 	/**
 	 * @param instance
 	 * @param player
@@ -505,7 +500,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		showResult(player, res);
 	}
-	
+
 	/**
 	 * Notify quest script when something happens with a trap.
 	 * @param trap the trap instance which triggers the notification
@@ -533,7 +528,7 @@ public class Quest: AbstractScript, IIdentifiable
 			showResult(trigger.getActingPlayer(), res);
 		}
 	}
-	
+
 	/**
 	 * @param npc the spawned NPC
 	 */
@@ -548,7 +543,7 @@ public class Quest: AbstractScript, IIdentifiable
 			LOGGER.Warn("Exception on onSpawn() in notifySpawn(): " + e);
 		}
 	}
-	
+
 	/**
 	 * @param npc the teleport NPC
 	 */
@@ -563,15 +558,15 @@ public class Quest: AbstractScript, IIdentifiable
 			LOGGER.Warn("Exception on onTeleport() in notifyTeleport(): " + e);
 		}
 	}
-	
+
 	/**
 	 * @param event
 	 * @param npc
 	 * @param player
 	 */
-	public void notifyEvent(string @event, Npc npc, Player player)
+	public void notifyEvent(string @event, Npc? npc, Player? player)
 	{
-		string res = null;
+		string? res;
 		try
 		{
 			// Simulated talk should not exist when event runs.
@@ -579,6 +574,7 @@ public class Quest: AbstractScript, IIdentifiable
 			{
 				player.setSimulatedTalking(false);
 			}
+
 			res = onAdvEvent(@event, npc, player);
 		}
 		catch (Exception e)
@@ -586,9 +582,10 @@ public class Quest: AbstractScript, IIdentifiable
 			showError(player, e);
 			return;
 		}
+
 		showResult(player, res, npc);
 	}
-	
+
 	/**
 	 * @param player the player entering the world
 	 */
@@ -606,7 +603,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		showResult(player, res);
 	}
-	
+
 	/**
 	 * @param npc
 	 * @param killer
@@ -621,14 +618,14 @@ public class Quest: AbstractScript, IIdentifiable
 			if (killer != null)
 			{
 				killer.setSimulatedTalking(false);
-				
+
 				QuestState qs = getQuestState(killer, false);
 				if (qs != null)
 				{
 					qs.setSimulated(false);
 				}
 			}
-			
+
 			res = onKill(npc, killer, isSummon);
 		}
 		catch (Exception e)
@@ -638,7 +635,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		showResult(killer, res);
 	}
-	
+
 	/**
 	 * @param npc
 	 * @param player
@@ -664,18 +661,18 @@ public class Quest: AbstractScript, IIdentifiable
 					}
 				}
 			}
-			
+
 		}
 		catch (Exception e)
 		{
 			showError(player, e);
 			return;
 		}
-		
+
 		player.setLastQuestNpcObject(npc.ObjectId);
 		showResult(player, res, npc);
 	}
-	
+
 	/**
 	 * Override the default NPC dialogs when a quest defines this for the given NPC.<br>
 	 * Note: If the default html for this npc needs to be shown, onFirstTalk should call npc.showChatWindow(player) and then return null.
@@ -694,10 +691,10 @@ public class Quest: AbstractScript, IIdentifiable
 			showError(player, e);
 			return;
 		}
-		
+
 		showResult(player, res, npc);
 	}
-	
+
 	/**
 	 * Notify the quest engine that an skill has been acquired.
 	 * @param npc the NPC
@@ -717,10 +714,10 @@ public class Quest: AbstractScript, IIdentifiable
 			showError(player, e);
 			return;
 		}
-		
+
 		showResult(player, res);
 	}
-	
+
 	/**
 	 * @param item
 	 * @param player
@@ -739,7 +736,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		showResult(player, res);
 	}
-	
+
 	/**
 	 * @param item
 	 * @param player
@@ -749,7 +746,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * @param item
 	 * @param player
@@ -773,7 +770,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		showResult(player, res);
 	}
-	
+
 	/**
 	 * @param npc
 	 * @param caster
@@ -795,7 +792,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		showResult(caster, res);
 	}
-	
+
 	/**
 	 * @param npc
 	 * @param caller
@@ -816,7 +813,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		showResult(attacker, res);
 	}
-	
+
 	/**
 	 * @param npc
 	 * @param player
@@ -836,7 +833,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		showResult(player, res);
 	}
-	
+
 	/**
 	 * @param npc the NPC that sees the creature
 	 * @param creature the creature seen by the NPC
@@ -866,7 +863,7 @@ public class Quest: AbstractScript, IIdentifiable
 			showResult(player, res);
 		}
 	}
-	
+
 	/**
 	 * @param eventName - name of event
 	 * @param sender - NPC, who sent event
@@ -884,7 +881,7 @@ public class Quest: AbstractScript, IIdentifiable
 			LOGGER.Warn("Exception on onEventReceived() in notifyEventReceived(): " + e);
 		}
 	}
-	
+
 	/**
 	 * @param creature
 	 * @param zone
@@ -910,7 +907,7 @@ public class Quest: AbstractScript, IIdentifiable
 			showResult(player, res);
 		}
 	}
-	
+
 	/**
 	 * @param creature
 	 * @param zone
@@ -936,7 +933,7 @@ public class Quest: AbstractScript, IIdentifiable
 			showResult(player, res);
 		}
 	}
-	
+
 	/**
 	 * @param winner
 	 * @param looser
@@ -952,7 +949,7 @@ public class Quest: AbstractScript, IIdentifiable
 			LOGGER.Warn("Execution on onOlympiadMatchFinish() in notifyOlympiadMatch(): " + e);
 		}
 	}
-	
+
 	/**
 	 * @param npc
 	 */
@@ -967,7 +964,7 @@ public class Quest: AbstractScript, IIdentifiable
 			LOGGER.Warn("Exception on onMoveFinished() in notifyMoveFinished(): " + e);
 		}
 	}
-	
+
 	/**
 	 * @param npc
 	 */
@@ -982,7 +979,7 @@ public class Quest: AbstractScript, IIdentifiable
 			LOGGER.Warn("Exception on onRouteFinished() in notifyRouteFinished(): " + e);
 		}
 	}
-	
+
 	/**
 	 * @param npc
 	 * @param player
@@ -1000,9 +997,9 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		return false;
 	}
-	
+
 	// These are methods that java calls to invoke scripts.
-	
+
 	/**
 	 * This function is called in place of {@link #onAttack(Npc, Player, int, bool, Skill)} if the former is not implemented.<br>
 	 * If a script contains both onAttack(..) implementations, then this method will never be called unless the script's {@link #onAttack(Npc, Player, int, bool, Skill)} explicitly calls this method.
@@ -1016,7 +1013,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever a player attacks an NPC that is registered for the quest.<br>
 	 * If is not overridden by a subclass, then default to the returned value of the simpler (and older) {@link #onAttack(Npc, Player, int, bool)} override.
@@ -1031,7 +1028,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return onAttack(npc, attacker, damage, isSummon);
 	}
-	
+
 	/**
 	 * This function is called whenever an <b>exact instance</b> of a character who was previously registered for this event dies.<br>
 	 * The registration for {@link #onDeath(Creature, Creature, QuestState)} events <b>is not</b> done via the quest itself, but it is instead handled by the QuestState of a particular player.
@@ -1044,7 +1041,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return onAdvEvent("", killer is Npc ? (Npc) killer : null, qs.getPlayer());
 	}
-	
+
 	/**
 	 * This function is called whenever a player clicks on a link in a quest dialog and whenever a timer fires.<br>
 	 * If is not overridden by a subclass, then default to the returned value of the simpler (and older) {@link #onEvent(String, QuestState)} override.<br>
@@ -1066,19 +1063,20 @@ public class Quest: AbstractScript, IIdentifiable
 	 *            This parameter may be {@code null} in certain circumstances.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public virtual string onAdvEvent(string @event, Npc npc, Player player)
+	public virtual string? onAdvEvent(string @event, Npc? npc, Player? player)
 	{
 		if (player != null)
 		{
-			QuestState qs = player.getQuestState(Name);
+			QuestState? qs = player.getQuestState(Name);
 			if (qs != null)
 			{
 				return onEvent(@event, qs);
 			}
 		}
+
 		return null;
 	}
-	
+
 	/**
 	 * This function is called in place of {@link #onAdvEvent(String, Npc, Player)} if the former is not implemented.<br>
 	 * If a script contains both {@link #onAdvEvent(String, Npc, Player)} and this implementation, then this method will never be called unless the script's {@link #onAdvEvent(String, Npc, Player)} explicitly calls this method.
@@ -1098,7 +1096,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever a player kills a NPC that is registered for the quest.
 	 * @param npc this parameter contains a reference to the exact instance of the NPC that got killed.
@@ -1114,7 +1112,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever a player clicks to the "Quest" link of an NPC that is registered for the quest.
 	 * @param npc this parameter contains a reference to the exact instance of the NPC that the player is talking with.
@@ -1154,7 +1152,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * @param item
 	 * @param player
@@ -1165,7 +1163,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever a player request a skill list.<br>
 	 * TODO: Re-implement, since Skill Trees rework it's support was removed.
@@ -1177,7 +1175,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever a player request a skill info.
 	 * @param npc this parameter contains a reference to the exact instance of the NPC that the player requested the skill info.
@@ -1189,7 +1187,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever a player acquire a skill.<br>
 	 * TODO: Re-implement, since Skill Trees rework it's support was removed.
@@ -1203,7 +1201,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever a player uses a quest item that has a quest events list.<br>
 	 * TODO: complete this documentation and unhardcode it to work with all item uses not with those listed.
@@ -1215,7 +1213,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever a player casts a skill near a registered NPC (1000 distance).<br>
 	 * <b>Note:</b><br>
@@ -1234,7 +1232,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever an NPC finishes casting a skill.
 	 * @param npc the NPC that casted the skill.
@@ -1246,7 +1244,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever a trap action is performed.
 	 * @param trap this parameter contains a reference to the exact instance of the trap that was activated.
@@ -1258,7 +1256,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever an NPC spawns or re-spawns and passes a reference to the newly (re)spawned NPC.<br>
 	 * Currently the only function that has no reference to a player.<br>
@@ -1270,7 +1268,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever an NPC is teleport.
 	 * @param npc this parameter contains a reference to the exact instance of the NPC who just teleport.
@@ -1278,7 +1276,7 @@ public class Quest: AbstractScript, IIdentifiable
 	protected void onTeleport(Npc npc)
 	{
 	}
-	
+
 	/**
 	 * This function is called whenever an NPC is called by another NPC in the same faction.
 	 * @param npc this parameter contains a reference to the exact instance of the NPC who is being asked for help.
@@ -1291,7 +1289,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever a player enters an NPC aggression range.
 	 * @param npc this parameter contains a reference to the exact instance of the NPC whose aggression range is being transgressed.
@@ -1303,7 +1301,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever an NPC "sees" a creature.
 	 * @param npc the NPC who sees the creature
@@ -1314,7 +1312,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever a player enters the game.
 	 * @param player this parameter contains a reference to the exact instance of the player who is entering to the world.
@@ -1324,7 +1322,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever a character enters a registered zone.
 	 * @param creature this parameter contains a reference to the exact instance of the character who is entering the zone.
@@ -1335,7 +1333,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever a character exits a registered zone.
 	 * @param creature this parameter contains a reference to the exact instance of the character who is exiting the zone.
@@ -1346,7 +1344,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * @param eventName - name of event
 	 * @param sender - NPC, who sent event
@@ -1358,7 +1356,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return null;
 	}
-	
+
 	/**
 	 * This function is called whenever a player wins an Olympiad Game.
 	 * @param winner in this match.
@@ -1367,7 +1365,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public void onOlympiadMatchFinish(Participant winner, Participant looser)
 	{
 	}
-	
+
 	/**
 	 * This function is called whenever a player looses an Olympiad Game.
 	 * @param loser this parameter contains a reference to the exact instance of the player who lose the competition.
@@ -1375,7 +1373,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public void onOlympiadLose(Player loser)
 	{
 	}
-	
+
 	/**
 	 * This function is called whenever a NPC finishes moving
 	 * @param npc registered NPC
@@ -1383,7 +1381,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public void onMoveFinished(Npc npc)
 	{
 	}
-	
+
 	/**
 	 * This function is called whenever a walker NPC (controlled by WalkingManager) arrive to last node
 	 * @param npc registered NPC
@@ -1391,7 +1389,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public void onRouteFinished(Npc npc)
 	{
 	}
-	
+
 	/**
 	 * @param mob
 	 * @param player
@@ -1402,21 +1400,21 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return true;
 	}
-	
+
 	/**
 	 * @param summon
 	 */
 	public void onSummonSpawn(Summon summon)
 	{
 	}
-	
+
 	/**
 	 * @param summon
 	 */
 	public void onSummonTalk(Summon summon)
 	{
 	}
-	
+
 	/**
 	 * This listener is called when instance world is created.
 	 * @param instance created instance world
@@ -1425,7 +1423,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public void onInstanceCreated(Instance instance, Player player)
 	{
 	}
-	
+
 	/**
 	 * This listener is called when instance being destroyed.
 	 * @param instance instance world which will be destroyed
@@ -1433,7 +1431,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public void onInstanceDestroy(Instance instance)
 	{
 	}
-	
+
 	/**
 	 * This listener is called when player enter into instance.
 	 * @param player player who enter
@@ -1442,7 +1440,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public void onInstanceEnter(Player player, Instance instance)
 	{
 	}
-	
+
 	/**
 	 * This listener is called when player leave instance.
 	 * @param player player who leaved
@@ -1451,7 +1449,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public void onInstanceLeave(Player player, Instance instance)
 	{
 	}
-	
+
 	/**
 	 * This listener is called when NPC {@code npc} being despawned.
 	 * @param npc NPC which will be despawned
@@ -1459,7 +1457,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public void onNpcDespawn(Npc npc)
 	{
 	}
-	
+
 	/**
 	 * @param npc
 	 * @param player
@@ -1469,7 +1467,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return false;
 	}
-	
+
 	/**
 	 * Loads all quest states and variables for the specified player.
 	 * @param player the player who is entering the world
@@ -1553,7 +1551,7 @@ public class Quest: AbstractScript, IIdentifiable
 			LOGGER.Error("could not insert char quest: " + e);
 		}
 	}
-	
+
 	/**
 	 * Insert in the database the quest for the player.
 	 * @param qs the {@link QuestState} object whose variable to insert
@@ -1562,11 +1560,11 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public static void createQuestVarInDb(QuestState qs, string var, string value)
 	{
-		try 
+		try
 		{
 			int characterId = qs.getPlayer().ObjectId;
 			string questName = qs.getQuestName();
-				
+
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var record = ctx.CharacterQuests.SingleOrDefault(r =>
 				r.CharacterId == characterId && r.Name == questName && r.Variable == var);
@@ -1588,7 +1586,7 @@ public class Quest: AbstractScript, IIdentifiable
 			LOGGER.Error("could not insert char quest: " + e);
 		}
 	}
-	
+
 	/**
 	 * Update the value of the variable "var" for the specified quest in database
 	 * @param qs the {@link QuestState} object whose variable to update
@@ -1599,7 +1597,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		createQuestVarInDb(qs, var, value);
 	}
-	
+
 	/**
 	 * Delete a variable of player's quest from the database.
 	 * @param qs the {@link QuestState} object whose variable to delete
@@ -1607,11 +1605,11 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public static void deleteQuestVarInDb(QuestState qs, string var)
 	{
-		try 
+		try
 		{
 			int characterId = qs.getPlayer().ObjectId;
 			string questName = qs.getQuestName();
-			
+
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterQuests.Where(r => r.CharacterId == characterId && r.Name == questName && r.Variable == var)
 				.ExecuteDelete();
@@ -1621,7 +1619,7 @@ public class Quest: AbstractScript, IIdentifiable
 			LOGGER.Error("Unable to delete char quest: " + e);
 		}
 	}
-	
+
 	/**
 	 * Delete from the database all variables and states of the specified quest state.
 	 * @param qs the {@link QuestState} object whose variables to delete
@@ -1629,7 +1627,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public static void deleteQuestInDb(QuestState qs, bool repeatable)
 	{
-		try 
+		try
 		{
 			int characterId = qs.getPlayer().ObjectId;
 			string questName = qs.getQuestName();
@@ -1647,7 +1645,7 @@ public class Quest: AbstractScript, IIdentifiable
 			LOGGER.Error("could not delete char quest: " + e);
 		}
 	}
-	
+
 	/**
 	 * Create a database record for the specified quest state.
 	 * @param qs the {@link QuestState} object whose data to write in the database
@@ -1656,7 +1654,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		createQuestVarInDb(qs, "<state>", State.getStateName(qs.getState()));
 	}
-	
+
 	/**
 	 * Update a quest state record of the specified quest state in database.
 	 * @param qs the {@link QuestState} object whose data to update in the database
@@ -1665,7 +1663,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		updateQuestVarInDb(qs, "<state>", State.getStateName(qs.getState()));
 	}
-	
+
 	/**
 	 * @param player the player whose language settings to use in finding the html of the right language
 	 * @return the default html for when no quest is available: "You are either not on a quest that involves this NPC.."
@@ -1679,7 +1677,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		return DEFAULT_NO_QUEST_MSG;
 	}
-	
+
 	/**
 	 * @param player the player whose language settings to use in finding the html of the right language
 	 * @return the default html for when player don't have minimum level for reward: "You cannot receive quest rewards as your character.."
@@ -1688,7 +1686,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return HtmCache.getInstance().getHtm("html/noquestlevelreward.html", player.getLang());
 	}
-	
+
 	/**
 	 * @param player the player whose language settings to use in finding the html of the right language
 	 * @return the default html for when quest is already completed
@@ -1697,7 +1695,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return getAlreadyCompletedMsg(player, QuestType.ONE_TIME);
 	}
-	
+
 	/**
 	 * @param player the player whose language settings to use in finding the html of the right language
 	 * @param type the Quest type
@@ -1711,28 +1709,28 @@ public class Quest: AbstractScript, IIdentifiable
 					? "html/alreadyCompleted.html"
 					: "html/alreadyCompletedDaily.html", player.getLang());
 	}
-	
+
 	// TODO: Clean up these methods
 	public void addStartNpc(int npcId)
 	{
 		setNpcQuestStartId(ev => ev.Quests.Add(this), npcId);
 	}
-	
+
 	public void addFirstTalkId(int npcId)
 	{
 		setNpcFirstTalkId(@event => notifyFirstTalk(@event.getNpc(), @event.getActiveChar()), npcId);
 	}
-	
+
 	public void addKillId(int npcId)
 	{
 		setAttackableKillId(kill => notifyKill(kill.getTarget(), kill.getAttacker(), kill.isSummon()), npcId);
 	}
-	
+
 	public void addAttackId(int npcId)
 	{
 		setAttackableAttackId(attack => notifyAttack(attack.getTarget(), attack.getAttacker(), attack.getDamage(), attack.isSummon(), attack.getSkill()), npcId);
 	}
-	
+
 	/**
 	 * Add the quest to the NPC's startQuest
 	 * @param npcIds the IDs of the NPCs to register
@@ -1741,7 +1739,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcQuestStartId(ev => ev.Quests.Add(this), npcIds);
 	}
-	
+
 	/**
 	 * Add the quest to the NPC's startQuest
 	 * @param npcIds the IDs of the NPCs to register
@@ -1750,7 +1748,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcQuestStartId(ev => ev.Quests.Add(this), npcIds);
 	}
-	
+
 	/**
 	 * Add the quest to the NPC's first-talk (default action dialog).
 	 * @param npcIds the IDs of the NPCs to register
@@ -1759,7 +1757,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcFirstTalkId(@event => notifyFirstTalk(@event.getNpc(), @event.getActiveChar()), npcIds);
 	}
-	
+
 	/**
 	 * Add the quest to the NPC's first-talk (default action dialog).
 	 * @param npcIds the IDs of the NPCs to register
@@ -1768,7 +1766,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcFirstTalkId(@event => notifyFirstTalk(@event.getNpc(), @event.getActiveChar()), npcIds);
 	}
-	
+
 	/**
 	 * Add the NPC to the AcquireSkill dialog.
 	 * @param npcIds the IDs of the NPCs to register
@@ -1777,7 +1775,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setPlayerSkillLearnId(@event => notifyAcquireSkill(@event.getTrainer(), @event.getPlayer(), @event.getSkill(), @event.getAcquireType()), npcIds);
 	}
-	
+
 	/**
 	 * Add the NPC to the AcquireSkill dialog.
 	 * @param npcIds the IDs of the NPCs to register
@@ -1786,7 +1784,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setPlayerSkillLearnId(@event => notifyAcquireSkill(@event.getTrainer(), @event.getPlayer(), @event.getSkill(), @event.getAcquireType()), npcIds);
 	}
-	
+
 	/**
 	 * Add the Item to the notify when player speaks with it.
 	 * @param itemIds the IDs of the Item to register
@@ -1795,7 +1793,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setItemBypassEvenId(@event => notifyItemEvent(@event.getItem(), @event.getActiveChar(), @event.getEvent()), itemIds);
 	}
-	
+
 	/**
 	 * Add the Item to the notify when player speaks with it.
 	 * @param itemIds the IDs of the Item to register
@@ -1804,7 +1802,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setItemBypassEvenId(@event => notifyItemEvent(@event.getItem(), @event.getActiveChar(), @event.getEvent()), itemIds);
 	}
-	
+
 	/**
 	 * Add the Item to the notify when player speaks with it.
 	 * @param itemIds the IDs of the Item to register
@@ -1813,7 +1811,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setItemTalkId(@event => notifyItemTalk(@event.getItem(), @event.getActiveChar()), itemIds);
 	}
-	
+
 	/**
 	 * Add the Item to the notify when player speaks with it.
 	 * @param itemIds the IDs of the Item to register
@@ -1822,7 +1820,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setItemTalkId(@event => notifyItemTalk(@event.getItem(), @event.getActiveChar()), itemIds);
 	}
-	
+
 	/**
 	 * Add this quest to the list of quests that the passed mob will respond to for attack events.
 	 * @param npcIds the IDs of the NPCs to register
@@ -1831,7 +1829,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setAttackableAttackId(attack => notifyAttack(attack.getTarget(), attack.getAttacker(), attack.getDamage(), attack.isSummon(), attack.getSkill()), npcIds);
 	}
-	
+
 	/**
 	 * Add this quest to the list of quests that the passed mob will respond to for attack events.
 	 * @param npcIds the IDs of the NPCs to register
@@ -1840,7 +1838,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setAttackableAttackId(attack => notifyAttack(attack.getTarget(), attack.getAttacker(), attack.getDamage(), attack.isSummon(), attack.getSkill()), npcIds);
 	}
-	
+
 	/**
 	 * Add this quest to the list of quests that the passed mob will respond to for kill events.
 	 * @param npcIds
@@ -1849,7 +1847,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setAttackableKillId(kill => notifyKill(kill.getTarget(), kill.getAttacker(), kill.isSummon()), npcIds);
 	}
-	
+
 	/**
 	 * Add this quest event to the collection of NPC IDs that will respond to for on kill events.
 	 * @param npcIds the collection of NPC IDs
@@ -1858,7 +1856,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setAttackableKillId(kill => notifyKill(kill.getTarget(), kill.getAttacker(), kill.isSummon()), npcIds);
 	}
-	
+
 	/**
 	 * Add this quest to the list of quests that the passed npc will respond to for Teleport Events.
 	 * @param npcIds the IDs of the NPCs to register
@@ -1867,7 +1865,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcTeleportId(@event => notifyTeleport(@event.getNpc()), npcIds);
 	}
-	
+
 	/**
 	 * Add this quest to the list of quests that the passed npc will respond to for Teleport Events.
 	 * @param npcIds the IDs of the NPCs to register
@@ -1876,7 +1874,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcTeleportId(@event => notifyTeleport(@event.getNpc()), npcIds);
 	}
-	
+
 	/**
 	 * Add this quest to the list of quests that the passed npc will respond to for spawn events.
 	 * @param npcIds the IDs of the NPCs to register
@@ -1885,7 +1883,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcSpawnId(@event => notifySpawn(@event.getNpc()), npcIds);
 	}
-	
+
 	/**
 	 * Add this quest to the list of quests that the passed npc will respond to for spawn events.
 	 * @param npcIds the IDs of the NPCs to register
@@ -1894,7 +1892,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcSpawnId(@event => notifySpawn(@event.getNpc()), npcIds);
 	}
-	
+
 	/**
 	 * Register onNpcDespawn to NPCs.
 	 * @param npcIds
@@ -1903,7 +1901,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcDespawnId(@event => onNpcDespawn(@event.getNpc()), npcIds);
 	}
-	
+
 	/**
 	 * Register onNpcDespawn to NPCs.
 	 * @param npcIds
@@ -1912,7 +1910,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcDespawnId(@event => onNpcDespawn(@event.getNpc()), npcIds);
 	}
-	
+
 	/**
 	 * Add this quest to the list of quests that the passed npc will respond to for skill see events.
 	 * @param npcIds the IDs of the NPCs to register
@@ -1921,7 +1919,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcSkillSeeId(@event => notifySkillSee(@event.getTarget(), @event.getCaster(), @event.getSkill(), @event.getTargets(), @event.isSummon()), npcIds);
 	}
-	
+
 	/**
 	 * Add this quest to the list of quests that the passed npc will respond to for skill see events.
 	 * @param npcIds the IDs of the NPCs to register
@@ -1930,7 +1928,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcSkillSeeId(@event => notifySkillSee(@event.getTarget(), @event.getCaster(), @event.getSkill(), @event.getTargets(), @event.isSummon()), npcIds);
 	}
-	
+
 	/**
 	 * @param npcIds the IDs of the NPCs to register
 	 */
@@ -1938,7 +1936,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcSkillFinishedId(@event => notifySpellFinished(@event.getCaster(), @event.getTarget(), @event.getSkill()), npcIds);
 	}
-	
+
 	/**
 	 * @param npcIds the IDs of the NPCs to register
 	 */
@@ -1946,7 +1944,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcSkillFinishedId(@event => notifySpellFinished(@event.getCaster(), @event.getTarget(), @event.getSkill()), npcIds);
 	}
-	
+
 	/**
 	 * @param npcIds the IDs of the NPCs to register
 	 */
@@ -1954,7 +1952,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setTrapActionId(@event => notifyTrapAction(@event.getTrap(), @event.getTrigger(), @event.getAction()), npcIds);
 	}
-	
+
 	/**
 	 * @param npcIds the IDs of the NPCs to register
 	 */
@@ -1962,7 +1960,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setTrapActionId(@event => notifyTrapAction(@event.getTrap(), @event.getTrigger(), @event.getAction()), npcIds);
 	}
-	
+
 	/**
 	 * Add this quest to the list of quests that the passed npc will respond to for faction call events.
 	 * @param npcIds the IDs of the NPCs to register
@@ -1971,7 +1969,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setAttackableFactionIdId(@event => notifyFactionCall(@event.getNpc(), @event.getCaller(), @event.getAttacker(), @event.isSummon()), npcIds);
 	}
-	
+
 	/**
 	 * Add this quest to the list of quests that the passed npc will respond to for faction call events.
 	 * @param npcIds the IDs of the NPCs to register
@@ -1980,7 +1978,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setAttackableFactionIdId(@event => notifyFactionCall(@event.getNpc(), @event.getCaller(), @event.getAttacker(), @event.isSummon()), npcIds);
 	}
-	
+
 	/**
 	 * Add this quest to the list of quests that the passed npc will respond to for character see events.
 	 * @param npcIds the IDs of the NPCs to register
@@ -1989,7 +1987,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setAttackableAggroRangeEnterId(@event => notifyAggroRangeEnter(@event.getNpc(), @event.getActiveChar(), @event.isSummon()), npcIds);
 	}
-	
+
 	/**
 	 * Add this quest to the list of quests that the passed npc will respond to for character see events.
 	 * @param npcIds the IDs of the NPCs to register
@@ -1998,7 +1996,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setAttackableAggroRangeEnterId(@event => notifyAggroRangeEnter(@event.getNpc(), @event.getActiveChar(), @event.isSummon()), npcIds);
 	}
-	
+
 	/**
 	 * @param npcIds the IDs of the NPCs to register
 	 */
@@ -2006,7 +2004,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setCreatureSeeId(@event => notifyCreatureSee((Npc) @event.getCreature(), @event.getSeen()), npcIds);
 	}
-	
+
 	/**
 	 * @param npcIds the IDs of the NPCs to register
 	 */
@@ -2014,7 +2012,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setCreatureSeeId(@event => notifyCreatureSee((Npc) @event.getCreature(), @event.getSeen()), npcIds);
 	}
-	
+
 	/**
 	 * Register onEnterZone trigger for zone
 	 * @param zoneId the ID of the zone to register
@@ -2023,7 +2021,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setCreatureZoneEnterId(@event => notifyEnterZone(@event.getCreature(), @event.getZone()), zoneId);
 	}
-	
+
 	/**
 	 * Register onEnterZone trigger for zones
 	 * @param zoneIds the IDs of the zones to register
@@ -2032,7 +2030,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setCreatureZoneEnterId(@event => notifyEnterZone(@event.getCreature(), @event.getZone()), zoneIds);
 	}
-	
+
 	/**
 	 * Register onEnterZone trigger for zones
 	 * @param zoneIds the IDs of the zones to register
@@ -2041,7 +2039,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setCreatureZoneEnterId(@event => notifyEnterZone(@event.getCreature(), @event.getZone()), zoneIds);
 	}
-	
+
 	/**
 	 * Register onExitZone trigger for zone
 	 * @param zoneId the ID of the zone to register
@@ -2050,7 +2048,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setCreatureZoneExitId(@event => notifyExitZone(@event.getCreature(), @event.getZone()), zoneId);
 	}
-	
+
 	/**
 	 * Register onExitZone trigger for zones
 	 * @param zoneIds the IDs of the zones to register
@@ -2059,7 +2057,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setCreatureZoneExitId(@event => notifyExitZone(@event.getCreature(), @event.getZone()), zoneIds);
 	}
-	
+
 	/**
 	 * Register onExitZone trigger for zones
 	 * @param zoneIds the IDs of the zones to register
@@ -2068,7 +2066,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setCreatureZoneExitId(@event => notifyExitZone(@event.getCreature(), @event.getZone()), zoneIds);
 	}
-	
+
 	/**
 	 * Register onEventReceived trigger for NPC
 	 * @param npcIds the IDs of the NPCs to register
@@ -2077,7 +2075,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcEventReceivedId(@event => notifyEventReceived(@event.getEventName(), @event.getSender(), @event.getReceiver(), @event.getReference()), npcIds);
 	}
-	
+
 	/**
 	 * Register onEventReceived trigger for NPC
 	 * @param npcIds the IDs of the NPCs to register
@@ -2086,7 +2084,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcEventReceivedId(@event => notifyEventReceived(@event.getEventName(), @event.getSender(), @event.getReceiver(), @event.getReference()), npcIds);
 	}
-	
+
 	/**
 	 * Register onMoveFinished trigger for NPC
 	 * @param npcIds the IDs of the NPCs to register
@@ -2095,7 +2093,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcMoveFinishedId(@event => notifyMoveFinished(@event.Npc), npcIds);
 	}
-	
+
 	/**
 	 * Register onMoveFinished trigger for NPC
 	 * @param npcIds the IDs of the NPCs to register
@@ -2104,7 +2102,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcMoveFinishedId(@event => notifyMoveFinished(@event.Npc), npcIds);
 	}
-	
+
 	/**
 	 * Register onRouteFinished trigger for NPC
 	 * @param npcIds the IDs of the NPCs to register
@@ -2113,7 +2111,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcMoveRouteFinishedId(@event => notifyRouteFinished(@event.getNpc()), npcIds);
 	}
-	
+
 	/**
 	 * Register onRouteFinished trigger for NPC
 	 * @param npcIds the IDs of the NPCs to register
@@ -2122,7 +2120,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setNpcMoveRouteFinishedId(@event => notifyRouteFinished(@event.getNpc()), npcIds);
 	}
-	
+
 	/**
 	 * Register onNpcHate trigger for NPC
 	 * @param npcIds
@@ -2135,7 +2133,7 @@ public class Quest: AbstractScript, IIdentifiable
 				ev.Terminate = true;
 		}, npcIds);
 	}
-	
+
 	/**
 	 * Register onNpcHate trigger for NPC
 	 * @param npcIds
@@ -2148,7 +2146,7 @@ public class Quest: AbstractScript, IIdentifiable
 				ev.Terminate = true;
 		}, npcIds);
 	}
-	
+
 	/**
 	 * Register onSummonSpawn trigger when summon is spawned.
 	 * @param npcIds
@@ -2157,7 +2155,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setPlayerSummonSpawnId(@event => onSummonSpawn(@event.getSummon()), npcIds);
 	}
-	
+
 	/**
 	 * Register onSummonSpawn trigger when summon is spawned.
 	 * @param npcIds
@@ -2166,7 +2164,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setPlayerSummonSpawnId(@event => onSummonSpawn(@event.getSummon()), npcIds);
 	}
-	
+
 	/**
 	 * Register onSummonTalk trigger when master talked to summon.
 	 * @param npcIds
@@ -2175,7 +2173,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setPlayerSummonTalkId(@event => onSummonTalk(@event.getSummon()), npcIds);
 	}
-	
+
 	/**
 	 * Register onSummonTalk trigger when summon is spawned.
 	 * @param npcIds
@@ -2184,7 +2182,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setPlayerSummonTalkId(@event => onSummonTalk(@event.getSummon()), npcIds);
 	}
-	
+
 	/**
 	 * Registers onCanSeeMe trigger whenever an npc info must be sent to player.
 	 * @param npcIds
@@ -2197,7 +2195,7 @@ public class Quest: AbstractScript, IIdentifiable
 				ev.Terminate = true;
 		}, npcIds);
 	}
-	
+
 	/**
 	 * Registers onCanSeeMe trigger whenever an npc info must be sent to player.
 	 * @param npcIds
@@ -2210,12 +2208,12 @@ public class Quest: AbstractScript, IIdentifiable
 				ev.Terminate = true;
 		}, npcIds);
 	}
-	
+
 	public void addOlympiadMatchFinishId()
 	{
 		setOlympiadMatchResult(@event => notifyOlympiadMatch(@event.getWinner(), @event.getLoser()));
 	}
-	
+
 	/**
 	 * Register onInstanceCreated trigger when instance is created.
 	 * @param templateIds
@@ -2224,7 +2222,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setInstanceCreatedId(@event => onInstanceCreated(@event.getInstanceWorld(), @event.getCreator()), templateIds);
 	}
-	
+
 	/**
 	 * Register onInstanceCreated trigger when instance is created.
 	 * @param templateIds
@@ -2233,7 +2231,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setInstanceCreatedId(@event => onInstanceCreated(@event.getInstanceWorld(), @event.getCreator()), templateIds);
 	}
-	
+
 	/**
 	 * Register onInstanceDestroy trigger when instance is destroyed.
 	 * @param templateIds
@@ -2242,7 +2240,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setInstanceDestroyId(@event => onInstanceDestroy(@event.getInstanceWorld()), templateIds);
 	}
-	
+
 	/**
 	 * Register onInstanceCreate trigger when instance is destroyed.
 	 * @param templateIds
@@ -2251,7 +2249,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setInstanceDestroyId(@event => onInstanceDestroy(@event.getInstanceWorld()), templateIds);
 	}
-	
+
 	/**
 	 * Register onInstanceEnter trigger when player enter into instance.
 	 * @param templateIds
@@ -2260,7 +2258,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setInstanceEnterId(@event => onInstanceEnter(@event.getPlayer(), @event.getInstanceWorld()), templateIds);
 	}
-	
+
 	/**
 	 * Register onInstanceEnter trigger when player enter into instance.
 	 * @param templateIds
@@ -2269,7 +2267,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setInstanceEnterId(@event => onInstanceEnter(@event.getPlayer(), @event.getInstanceWorld()), templateIds);
 	}
-	
+
 	/**
 	 * Register onInstanceEnter trigger when player leave from instance.
 	 * @param templateIds
@@ -2278,7 +2276,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setInstanceLeaveId(@event => onInstanceLeave(@event.getPlayer(), @event.getInstanceWorld()), templateIds);
 	}
-	
+
 	/**
 	 * Register onInstanceEnter trigger when player leave from instance.
 	 * @param templateIds
@@ -2287,7 +2285,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		setInstanceLeaveId(@event => onInstanceLeave(@event.getPlayer(), @event.getInstanceWorld()), templateIds);
 	}
-	
+
 	/**
 	 * Use this method to get a random party member from a player's party.<br>
 	 * Useful when distributing rewards after killing an NPC.
@@ -2307,7 +2305,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		return party.getMembers().GetRandomElement();
 	}
-	
+
 	/**
 	 * Get a random party member with required cond value.
 	 * @param player the instance of a player whose party is to be searched
@@ -2318,7 +2316,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return getRandomPartyMember(player, "cond", cond.ToString(CultureInfo.InvariantCulture));
 	}
-	
+
 	/**
 	 * Auxiliary function for party quests.<br>
 	 * Note: This function is only here because of how commonly it may be used by quest developers.<br>
@@ -2337,13 +2335,13 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			return null;
 		}
-		
+
 		// for null var condition, return any random party member.
 		if (var == null)
 		{
 			return getRandomPartyMember(player);
 		}
-		
+
 		// normal cases...if the player is not in a party, check the player's state
 		QuestState temp = null;
 		Party party = player.getParty();
@@ -2357,7 +2355,7 @@ public class Quest: AbstractScript, IIdentifiable
 			}
 			return null; // no match
 		}
-		
+
 		// if the player is in a party, gather a list of all matching party members (possibly including this player)
 		List<Player> candidates = new();
 		// get the target for enforcing distance limitations.
@@ -2366,7 +2364,7 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			target = player;
 		}
-		
+
 		foreach (Player partyMember in party.getMembers())
 		{
 			if (partyMember == null)
@@ -2388,7 +2386,7 @@ public class Quest: AbstractScript, IIdentifiable
 		// if a match was found from the party, return one of them at random.
 		return candidates.GetRandomElement();
 	}
-	
+
 	/**
 	 * Auxiliary function for party quests.<br>
 	 * Note: This function is only here because of how commonly it may be used by quest developers.<br>
@@ -2404,7 +2402,7 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			return null;
 		}
-		
+
 		// normal cases...if the player is not in a party check the player's state
 		QuestState temp = null;
 		Party party = player.getParty();
@@ -2416,21 +2414,21 @@ public class Quest: AbstractScript, IIdentifiable
 			{
 				return player; // match
 			}
-			
+
 			return null; // no match
 		}
-		
+
 		// if the player is in a party, gather a list of all matching party members (possibly
 		// including this player)
 		List<Player> candidates = new();
-		
+
 		// get the target for enforcing distance limitations.
 		WorldObject target = player.getTarget();
 		if (target == null)
 		{
 			target = player;
 		}
-		
+
 		foreach (Player partyMember in party.getMembers())
 		{
 			if (partyMember == null)
@@ -2448,11 +2446,11 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			return null;
 		}
-		
+
 		// if a match was found from the party, return one of them at random.
 		return candidates.GetRandomElement();
 	}
-	
+
 	/**
 	 * Get a random party member from the specified player's party.<br>
 	 * If the player is not in a party, only the player himself is checked.<br>
@@ -2492,7 +2490,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		return luckyPlayer != null && checkDistanceToTarget(luckyPlayer, npc) ? luckyPlayer : null;
 	}
-	
+
 	/**
 	 * This method is called for every party member in {@link #getRandomPartyMember(Player, Npc)}.<br>
 	 * It is intended to be overriden by the specific quest implementations.
@@ -2504,7 +2502,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return true;
 	}
-	
+
 	/**
 	 * Get a random party member from the player's party who has this quest at the specified quest progress.<br>
 	 * If the player is not in a party, only the player himself is checked.
@@ -2521,13 +2519,13 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			return null;
 		}
-		
+
 		QuestState qs = player.getQuestState(Name);
 		if (!player.isInParty())
 		{
 			return !checkPartyMemberConditions(qs, condition, target) || !checkDistanceToTarget(player, target) ? null : qs;
 		}
-		
+
 		List<QuestState> candidates = new();
 		if (checkPartyMemberConditions(qs, condition, target) && playerChance > 0)
 		{
@@ -2536,40 +2534,40 @@ public class Quest: AbstractScript, IIdentifiable
 				candidates.Add(qs);
 			}
 		}
-		
+
 		foreach (Player member in player.getParty().getMembers())
 		{
 			if (member == player)
 			{
 				continue;
 			}
-			
+
 			qs = member.getQuestState(Name);
 			if (checkPartyMemberConditions(qs, condition, target))
 			{
 				candidates.Add(qs);
 			}
 		}
-		
+
 		if (candidates.Count == 0)
 		{
 			return null;
 		}
-		
+
 		qs = candidates.GetRandomElement();
 		return !checkDistanceToTarget(qs.getPlayer(), target) ? null : qs;
 	}
-	
+
 	private bool checkPartyMemberConditions(QuestState qs, QuestCondType condition, Npc npc)
 	{
 		return qs != null && (condition == (QuestCondType)(-1) ? qs.isStarted() : qs.isCond(condition)) && checkPartyMember(qs, npc);
 	}
-	
+
 	private static bool checkDistanceToTarget(Player player, Npc target)
 	{
 		return target == null || Util.checkIfInRange(Config.ALT_PARTY_RANGE, player, target, true);
 	}
-	
+
 	/**
 	 * This method is called for every party member in {@link #getRandomPartyMemberState(Player, int, int, Npc)} if/after all the standard checks are passed.<br>
 	 * It is intended to be overriden by the specific quest implementations.<br>
@@ -2583,7 +2581,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return true;
 	}
-	
+
 	/**
 	 * @return the registered quest items IDs.
 	 */
@@ -2591,7 +2589,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return _questItemIds;
 	}
-	
+
 	/**
 	 * Registers all items that have to be destroyed in case player abort the quest or finish it.
 	 * @param items
@@ -2607,7 +2605,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		_questItemIds = items;
 	}
-	
+
 	/**
 	 * Remove all quest items associated with this quest from the specified player's inventory.
 	 * @param player the player whose quest items to remove
@@ -2616,13 +2614,13 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		takeItemsByIds(player, -1, _questItemIds);
 	}
-	
-	
+
+
 	public override void Unload()
 	{
 		unload(true);
 	}
-	
+
 	/**
 	 * @param removeFromList
 	 * @return
@@ -2630,7 +2628,7 @@ public class Quest: AbstractScript, IIdentifiable
 	public void unload(bool removeFromList)
 	{
 		onSave();
-		
+
 		// Cancel all pending timers before reloading.
 		// If timers ought to be restarted, the quest can take care of it with its code (example: save global data indicating what timer must be restarted).
 		foreach (List<QuestTimer> timers in _questTimers.Values)
@@ -2642,16 +2640,16 @@ public class Quest: AbstractScript, IIdentifiable
 			timers.Clear();
 		}
 		_questTimers.Clear();
-		
+
 		if (removeFromList)
 		{
 			QuestManager.getInstance().removeScript(this);
 			base.Unload();
 		}
-		
+
 		base.Unload();
 	}
-	
+
 	public void setOnEnterWorld(bool value)
 	{
 		if (value)
@@ -2663,7 +2661,7 @@ public class Quest: AbstractScript, IIdentifiable
 			GlobalEvents.Global.UnsubscribeAll<OnPlayerLogin>(this);
 		}
 	}
-	
+
 	/**
 	 * If a quest is set as custom, it will display it's name in the NPC Quest List.<br>
 	 * Retail quests are unhardcoded to display the name using a client string.
@@ -2673,7 +2671,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		_isCustom = value;
 	}
-	
+
 	/**
 	 * Verifies if this is a custom quest.
 	 * @return {@code true} if the quest script is a custom quest, {@code false} otherwise.
@@ -2682,12 +2680,12 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return _isCustom;
 	}
-	
+
 	public Set<NpcLogListHolder> getNpcLogList(Player player)
 	{
 		return new();
 	}
-	
+
 	public bool isTarget<T>(int[] ids, WorldObject target)
 		where T: WorldObject
 	{
@@ -2697,7 +2695,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		return false;
 	}
-	
+
 	public void sendNpcLogList(Player player)
 	{
 		if (player.getQuestState(Name) != null)
@@ -2711,7 +2709,7 @@ public class Quest: AbstractScript, IIdentifiable
 			player.sendPacket(packet);
 		}
 	}
-	
+
 	/**
 	 * Gets the start conditions.
 	 * @return the start conditions
@@ -2720,7 +2718,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		return _startCondition;
 	}
-	
+
 	/**
 	 * Verifies if the player meets all the start conditions.
 	 * @param player the player
@@ -2737,7 +2735,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Gets the HTML for the first starting condition not met.
 	 * @param player the player
@@ -2751,7 +2749,7 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			return null;
 		}
-		
+
 		foreach (QuestCondition cond in _startCondition)
 		{
 			if (!cond.test(player))
@@ -2759,10 +2757,10 @@ public class Quest: AbstractScript, IIdentifiable
 				return cond.getHtml(npc);
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	/**
 	 * Adds a predicate to the start conditions.
 	 * @param questStartRequirement the predicate condition
@@ -2772,7 +2770,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		getStartConditions().add(new QuestCondition(questStartRequirement, html));
 	}
-	
+
 	/**
 	 * Adds a predicate to the start conditions.
 	 * @param questStartRequirement the predicate condition
@@ -2782,7 +2780,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		getStartConditions().add(new QuestCondition(questStartRequirement, pairs));
 	}
-	
+
 	/**
 	 * Adds a minimum/maximum level start condition to the quest.
 	 * @param minLevel the minimum player's level to start the quest
@@ -2793,7 +2791,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getLevel() >= minLevel && p.getLevel() <= maxLevel, html);
 	}
-	
+
 	/**
 	 * Adds a minimum/maximum level start condition to the quest.
 	 * @param minLevel the minimum player's level to start the quest
@@ -2804,7 +2802,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getLevel() >= minLevel && p.getLevel() <= maxLevel, pairs);
 	}
-	
+
 	/**
 	 * Adds a minimum level start condition to the quest.
 	 * @param minLevel the minimum player's level to start the quest
@@ -2814,7 +2812,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getLevel() >= minLevel, html);
 	}
-	
+
 	/**
 	 * Adds a minimum level start condition to the quest.
 	 * @param minLevel the minimum player's level to start the quest
@@ -2824,7 +2822,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getLevel() >= minLevel, pairs);
 	}
-	
+
 	/**
 	 * Adds a minimum/maximum level start condition to the quest.
 	 * @param maxLevel the maximum player's level to start the quest
@@ -2834,7 +2832,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getLevel() <= maxLevel, html);
 	}
-	
+
 	/**
 	 * Adds a minimum/maximum level start condition to the quest.
 	 * @param maxLevel the maximum player's level to start the quest
@@ -2844,7 +2842,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getLevel() <= maxLevel, pairs);
 	}
-	
+
 	/**
 	 * Adds a race start condition to the quest.
 	 * @param race the race
@@ -2854,7 +2852,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getRace() == race, html);
 	}
-	
+
 	/**
 	 * Adds a race start condition to the quest.
 	 * @param race the race
@@ -2864,7 +2862,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getRace() == race, pairs);
 	}
-	
+
 	/**
 	 * Adds a not-race start condition to the quest.
 	 * @param race the race
@@ -2874,7 +2872,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getRace() != race, html);
 	}
-	
+
 	/**
 	 * Adds a not-race start condition to the quest.
 	 * @param race the race
@@ -2884,7 +2882,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getRace() != race, pairs);
 	}
-	
+
 	/**
 	 * Adds a quest completed start condition to the quest.
 	 * @param name the quest name
@@ -2894,7 +2892,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.hasQuestState(name) && p.getQuestState(name).isCompleted(), html);
 	}
-	
+
 	/**
 	 * Adds a quest completed start condition to the quest.
 	 * @param name the quest name
@@ -2904,7 +2902,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.hasQuestState(name) && p.getQuestState(name).isCompleted(), pairs);
 	}
-	
+
 	/**
 	 * Adds a quest started start condition to the quest.
 	 * @param name the quest name
@@ -2914,7 +2912,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.hasQuestState(name) && p.getQuestState(name).isStarted(), html);
 	}
-	
+
 	/**
 	 * Adds a quest started start condition to the quest.
 	 * @param name the quest name
@@ -2924,7 +2922,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.hasQuestState(name) && p.getQuestState(name).isStarted(), pairs);
 	}
-	
+
 	/**
 	 * Adds a class ID start condition to the quest.
 	 * @param classId the class ID
@@ -2934,7 +2932,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getClassId() == classId, html);
 	}
-	
+
 	/**
 	 * Adds a class ID start condition to the quest.
 	 * @param classId the class ID
@@ -2944,7 +2942,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getClassId() == classId, pairs);
 	}
-	
+
 	/**
 	 * Adds a class IDs start condition to the quest.
 	 * @param classIds the class ID
@@ -2954,14 +2952,14 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => classIds.Contains(p.getClassId()), html);
 	}
-	
+
 	public void addNewQuestConditions(NewQuestCondition condition, string html)
 	{
 		if (condition.getAllowedClassIds().Count != 0)
 		{
 			addCondStart(p => condition.getAllowedClassIds().Contains(p.getClassId()), html);
 		}
-		
+
 		if (condition.getPreviousQuestIds().Count != 0)
 		{
 			foreach (int questId in condition.getPreviousQuestIds())
@@ -2979,12 +2977,12 @@ public class Quest: AbstractScript, IIdentifiable
 					}
 				}
 			}
-			
+
 			addCondMinLevel(condition.getMinLevel(), html);
 			addCondMaxLevel(condition.getMaxLevel(), html);
 		}
 	}
-	
+
 	/**
 	 * Adds a not-class ID start condition to the quest.
 	 * @param classId the class ID
@@ -2994,7 +2992,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getClassId() != classId, html);
 	}
-	
+
 	/**
 	 * Adds a not-class ID start condition to the quest.
 	 * @param classId the class ID
@@ -3004,7 +3002,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getClassId() != classId, pairs);
 	}
-	
+
 	/**
 	 * Adds a subclass active start condition to the quest.
 	 * @param html the HTML to display if the condition is not met
@@ -3013,7 +3011,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.isSubClassActive(), html);
 	}
-	
+
 	/**
 	 * Adds a subclass active start condition to the quest.
 	 * @param pairs the HTML to display if the condition is not met per each npc
@@ -3022,7 +3020,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.isSubClassActive(), pairs);
 	}
-	
+
 	/**
 	 * Adds a not-subclass active start condition to the quest.
 	 * @param html the HTML to display if the condition is not met
@@ -3031,7 +3029,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => !p.isSubClassActive() && !p.isDualClassActive(), html);
 	}
-	
+
 	/**
 	 * Adds a not-subclass active start condition to the quest.
 	 * @param pairs the HTML to display if the condition is not met per each npc
@@ -3040,7 +3038,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => !p.isSubClassActive() && !p.isDualClassActive(), pairs);
 	}
-	
+
 	/**
 	 * Adds a category start condition to the quest.
 	 * @param categoryType the category type
@@ -3050,7 +3048,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.isInCategory(categoryType), html);
 	}
-	
+
 	/**
 	 * Adds a category start condition to the quest.
 	 * @param categoryType the category type
@@ -3060,7 +3058,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.isInCategory(categoryType), pairs);
 	}
-	
+
 	/**
 	 * Adds a clan level start condition to the quest.
 	 * @param clanLevel the clan level
@@ -3070,7 +3068,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getClan() != null && p.getClan().getLevel() > clanLevel, html);
 	}
-	
+
 	/**
 	 * Adds a category start condition to the quest.
 	 * @param clanLevel the clan level
@@ -3080,11 +3078,11 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		addCondStart(p => p.getClan() != null && p.getClan().getLevel() > clanLevel, pairs);
 	}
-	
+
 	public void onQuestAborted(Player player)
 	{
 	}
-	
+
 	public void giveStoryBuffReward(Npc npc, Player player)
 	{
 		if (Config.ENABLE_STORY_QUEST_BUFF_REWARD)
@@ -3095,12 +3093,12 @@ public class Quest: AbstractScript, IIdentifiable
 			}
 		}
 	}
-	
+
 	public NewQuest getQuestData()
 	{
 		return _questData;
 	}
-	
+
 	public void rewardPlayer(Player player)
 	{
 		NewQuestReward reward = _questData.getRewards();
@@ -3113,7 +3111,7 @@ public class Quest: AbstractScript, IIdentifiable
 					giveItems(player, item);
 				}
 			}
-			
+
 		}
 		if (reward.getLevel() > 0)
 		{
@@ -3127,21 +3125,21 @@ public class Quest: AbstractScript, IIdentifiable
 				player.broadcastUserInfo();
 			}
 		}
-		
+
 		if (reward.getExp() > 0)
 		{
 			player.getStat().addExp(reward.getExp());
-			
+
 			player.broadcastUserInfo();
 		}
-		
+
 		if (reward.getSp() > 0)
 		{
 			player.getStat().addSp(reward.getSp());
 			player.broadcastUserInfo();
 		}
 	}
-	
+
 	public void teleportToQuestLocation(Player player, Location loc)
 	{
 		if (player.isDead())
@@ -3149,35 +3147,35 @@ public class Quest: AbstractScript, IIdentifiable
 			player.sendPacket(SystemMessageId.DEAD_CHARACTERS_CANNOT_USE_TELEPORTS);
 			return;
 		}
-		
+
 		// Players should not be able to teleport if in a special location.
 		if (player.getMovieHolder() != null || player.isFishing() || player.isInInstance() || player.isOnEvent() || player.isInOlympiadMode() || player.inObserverMode() || player.isInTraingCamp() || player.isInsideZone(ZoneId.TIMED_HUNTING))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_RIGHT_NOW);
 			return;
 		}
-		
+
 		// Teleport in combat configuration.
 		if (!Config.TELEPORT_WHILE_PLAYER_IN_COMBAT && (player.isInCombat() || player.isCastingNow()))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_WHILE_IN_COMBAT);
 			return;
 		}
-		
+
 		// Karma related configurations.
 		if ((!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT || !Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK) && player.getReputation() < 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_RIGHT_NOW);
 			return;
 		}
-		
+
 		// Cannot escape effect.
 		if (player.isAffected(EffectFlag.CANNOT_ESCAPE))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_RIGHT_NOW);
 			return;
 		}
-		
+
 		player.abortCast();
 		player.stopMove(null);
 		player.teleToLocation(loc);

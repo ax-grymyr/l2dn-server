@@ -17,8 +17,8 @@ public class Others: ITargetTypeHandler
 	{
 		return TargetType.OTHERS;
 	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
+
+	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
 		if (selectedTarget == creature)
 		{

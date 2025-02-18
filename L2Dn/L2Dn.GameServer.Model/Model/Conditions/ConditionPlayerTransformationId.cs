@@ -9,21 +9,10 @@ namespace L2Dn.GameServer.Model.Conditions;
  * the parameter is -1 which returns true if player is transformed regardless the transformation Id.
  * @author Zoey76
  */
-public class ConditionPlayerTransformationId : Condition
+public sealed class ConditionPlayerTransformationId(int id): Condition
 {
-	private readonly int _id;
-	
-	/**
-	 * Instantiates a new condition player is transformed.
-	 * @param id the transformation Id.
-	 */
-	public ConditionPlayerTransformationId(int id)
-	{
-		_id = id;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		return _id == -1 ? effector.isTransformed() : effector.getTransformationId() == _id;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        return id == -1 ? effector.isTransformed() : effector.getTransformationId() == id;
+    }
 }

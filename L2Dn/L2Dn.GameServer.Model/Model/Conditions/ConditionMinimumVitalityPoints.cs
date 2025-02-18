@@ -7,22 +7,14 @@ namespace L2Dn.GameServer.Model.Conditions;
 /**
  * @author Mobius
  */
-public class ConditionMinimumVitalityPoints: Condition
+public sealed class ConditionMinimumVitalityPoints(int count): Condition
 {
-	private readonly int _count;
-	
-	public ConditionMinimumVitalityPoints(int count)
-	{
-		_count = count;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		Player player = effector.getActingPlayer();
-		if (player != null)
-		{
-			return player.getVitalityPoints() >= _count;
-		}
-		return false;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? player = effector.getActingPlayer();
+        if (player is null)
+            return false;
+
+        return player.getVitalityPoints() >= count;
+    }
 }

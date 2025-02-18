@@ -51,35 +51,35 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 			PacketLogger.Instance.Warn(player + " tried to exploit RequestExEnchantSkill!");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// TODO: flood protection
 		// if (!client.getFloodProtectors().canPerformPlayerAction())
 		// {
 		// 	return ValueTask.CompletedTask;
 		// }
-		
+
 		if (!player.isAllowedToEnchantSkills())
 			return ValueTask.CompletedTask;
-		
+
 		if (player.isSellingBuffs())
 			return ValueTask.CompletedTask;
-		
+
 		if (player.isInOlympiadMode())
 			return ValueTask.CompletedTask;
-		
+
 		if (player.getPrivateStoreType() != PrivateStoreType.NONE)
 			return ValueTask.CompletedTask;
-		
-		Skill skill = player.getKnownSkill(_skillId);
+
+		Skill? skill = player.getKnownSkill(_skillId);
 		if (skill == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (!skill.isEnchantable())
 			return ValueTask.CompletedTask;
-		
+
 		if (skill.getLevel() != _skillLevel)
 			return ValueTask.CompletedTask;
-		
+
 		if (skill.getSubLevel() > 0)
 		{
 			if (_type == SkillEnchantType.CHANGE)
@@ -91,7 +91,7 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 					LOGGER.Warn(GetType().Name + ": Client: " + player +
 					            " send incorrect sub level group: " + group1 + " expected: " + group2 +
 					            " for skill " + _skillId);
-					
+
 					return ValueTask.CompletedTask;
 				}
 			}
@@ -99,32 +99,32 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 			{
 				LOGGER.Warn(GetType().Name + ": Client: " + player + " send incorrect sub level: " + _skillSubLevel +
 				            " expected: " + (skill.getSubLevel() + 1) + " for skill " + _skillId);
-				
+
 				return ValueTask.CompletedTask;
 			}
 		}
-		
+
 		SkillEnchantHolder skillEnchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.getId());
 		if (skillEnchantHolder == null)
 		{
 			LOGGER.Warn(GetType().Name + " request enchant skill dont have star lvl skillId-" + skill.getId());
 			return ValueTask.CompletedTask;
 		}
-		
+
 		EnchantStarHolder starHolder = SkillEnchantData.getInstance().getEnchantStar(skillEnchantHolder.getStarLevel());
 		if (starHolder == null)
 		{
 			LOGGER.Warn(GetType().Name + " request enchant skill dont have star lvl-" + skill.getId());
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.getAdena() < 1000000)
 			return ValueTask.CompletedTask;
-		
+
 		int starLevel = starHolder.getLevel();
 		if (Rnd.get(100) <= SkillEnchantData.getInstance().getChanceEnchantMap(skill))
 		{
-			Skill enchantedSkill = SkillData.getInstance().getSkill(_skillId, _skillLevel, _skillSubLevel);
+			Skill? enchantedSkill = SkillData.getInstance().getSkill(_skillId, _skillLevel, _skillSubLevel);
 			if (Config.LOG_SKILL_ENCHANTS)
 			{
 				StringBuilder sb = new StringBuilder();
@@ -140,12 +140,12 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 			{
 				player.addTimeStamp(enchantedSkill, reuse);
 			}
-			
+
 			player.addSkill(enchantedSkill, true);
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.SKILL_ENCHANT_WAS_SUCCESSFUL_S1_HAS_BEEN_ENCHANTED);
 			sm.Params.addSkillName(_skillId);
 			player.sendPacket(sm);
-			
+
 			// player.setSkillEnchantExp(starHolder.getLvl(), 0);
 			player.setSkillEnchantExp(starLevel, 0);
 			player.sendPacket(ExEnchantSkillResultPacket.STATIC_PACKET_TRUE);
@@ -163,7 +163,7 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 		}
 		player.broadcastUserInfo();
 		player.sendSkillList();
-		
+
 		skill = player.getKnownSkill(_skillId);
 		player.reduceAdena("Try enchant skill", 1_000_000, null, true);
 		player.sendPacket(new ExSkillEnchantInfoPacket(skill, player));

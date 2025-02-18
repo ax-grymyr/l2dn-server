@@ -9,21 +9,11 @@ namespace L2Dn.GameServer.Model.Conditions;
  * The Class ConditionPlayerIsPvpFlagged.
  * @author Mobius
  */
-public class ConditionPlayerIsPvpFlagged : Condition
+public sealed class ConditionPlayerIsPvpFlagged(bool value): Condition
 {
-	private readonly bool _value;
-	
-	/**
-	 * Instantiates a new condition player is PvP flagged.
-	 * @param value the value
-	 */
-	public ConditionPlayerIsPvpFlagged(bool value)
-	{
-		_value = value;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		return (effector.getActingPlayer() != null) && ((effector.getActingPlayer().getPvpFlag() != PvpFlagStatus.None) == _value);
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? player = effector.getActingPlayer();
+        return player is not null && (player.getPvpFlag() != PvpFlagStatus.None) == value;
+    }
 }

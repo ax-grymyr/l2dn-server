@@ -33,7 +33,7 @@ public class TamedBeast: FeedableBeast
 	private ScheduledFuture _durationCheckTask;
 	protected bool _isFreyaBeast;
 	private Set<Skill> _beastSkills;
-	
+
 	public TamedBeast(int npcTemplateId): base(NpcData.getInstance().getTemplate(npcTemplateId))
 	{
 		InstanceType = InstanceType.TamedBeast;
@@ -66,43 +66,43 @@ public class TamedBeast: FeedableBeast
 			_remainingTime = MAX_DURATION;
 		}
 	}
-	
+
 	public Location3D getHome()
 	{
 		return _homeLocation;
 	}
-	
+
 	public void setHome(Location3D location)
 	{
 		_homeLocation = location;
 	}
-	
+
 	public void setHome(Creature c)
 	{
 		setHome(c.Location.Location3D);
 	}
-	
+
 	public int getRemainingTime()
 	{
 		return _remainingTime;
 	}
-	
+
 	public void setRemainingTime(int duration)
 	{
 		_remainingTime = duration;
 	}
-	
+
 	public int getFoodType()
 	{
 		return _foodSkillId;
 	}
-	
+
 	public void setFoodType(int foodItemId)
 	{
 		if (foodItemId > 0)
 		{
 			_foodSkillId = foodItemId;
-			
+
 			// start the duration checks
 			// start the buff tasks
 			if (_durationCheckTask != null)
@@ -112,14 +112,14 @@ public class TamedBeast: FeedableBeast
 			_durationCheckTask = ThreadPool.scheduleAtFixedRate(new CheckDuration(this), DURATION_CHECK_INTERVAL, DURATION_CHECK_INTERVAL);
 		}
 	}
-	
-	public override bool doDie(Creature killer)
+
+	public override bool doDie(Creature? killer)
 	{
 		if (!base.doDie(killer))
 		{
 			return false;
 		}
-		
+
 		getAI().stopFollow();
 		if (_buffTask != null)
 		{
@@ -129,7 +129,7 @@ public class TamedBeast: FeedableBeast
 		{
 			_durationCheckTask.cancel(true);
 		}
-		
+
 		// clean up variables
 		if (_owner != null)
 		{
@@ -142,17 +142,17 @@ public class TamedBeast: FeedableBeast
 		_remainingTime = 0;
 		return true;
 	}
-	
+
 	public override bool isAutoAttackable(Creature attacker)
 	{
 		return !_isFreyaBeast;
 	}
-	
+
 	public bool isFreyaBeast()
 	{
 		return _isFreyaBeast;
 	}
-	
+
 	public void addBeastSkill(Skill skill)
 	{
 		if (_beastSkills == null)
@@ -161,14 +161,14 @@ public class TamedBeast: FeedableBeast
 		}
 		_beastSkills.add(skill);
 	}
-	
+
 	public void castBeastSkills()
 	{
 		if ((_owner == null) || (_beastSkills == null))
 		{
 			return;
 		}
-		
+
 		TimeSpan delay = TimeSpan.FromMilliseconds(100);
 		foreach (Skill skill in _beastSkills)
 		{
@@ -177,18 +177,18 @@ public class TamedBeast: FeedableBeast
 		}
 		ThreadPool.schedule(new buffCast(this, null), delay);
 	}
-	
+
 	private class buffCast: Runnable
 	{
 		private readonly TamedBeast _tamedBeast;
 		private readonly Skill _skill;
-		
+
 		public buffCast(TamedBeast tamedBeast, Skill skill)
 		{
 			_tamedBeast = tamedBeast;
 			_skill = skill;
 		}
-		
+
 		public void run()
 		{
 			if (_skill == null)
@@ -201,12 +201,12 @@ public class TamedBeast: FeedableBeast
 			}
 		}
 	}
-	
+
 	public Player getOwner()
 	{
 		return _owner;
 	}
-	
+
 	public void setOwner(Player owner)
 	{
 		if (owner != null)
@@ -217,7 +217,7 @@ public class TamedBeast: FeedableBeast
 			setShowSummonAnimation(true);
 			broadcastPacket(new NpcInfoPacket(this));
 			owner.addTrainedBeast(this);
-			
+
 			// always and automatically follow the owner.
 			getAI().startFollow(_owner, 100);
 			if (!_isFreyaBeast)
@@ -232,7 +232,7 @@ public class TamedBeast: FeedableBeast
 						totalBuffsAvailable++;
 					}
 				}
-				
+
 				// start the buff tasks
 				if (_buffTask != null)
 				{
@@ -248,12 +248,12 @@ public class TamedBeast: FeedableBeast
 			deleteMe(); // despawn if no owner
 		}
 	}
-	
+
 	public bool isTooFarFromHome()
 	{
 		return !this.IsInsideRadius3D(_homeLocation, MAX_DISTANCE_FROM_HOME);
 	}
-	
+
 	public override bool deleteMe()
 	{
 		if (_buffTask != null)
@@ -262,7 +262,7 @@ public class TamedBeast: FeedableBeast
 		}
 		_durationCheckTask.cancel(true);
 		stopHpMpRegeneration();
-		
+
 		// clean up variables
 		if (_owner != null)
 		{
@@ -274,11 +274,11 @@ public class TamedBeast: FeedableBeast
 		_owner = null;
 		_foodSkillId = 0;
 		_remainingTime = 0;
-		
+
 		// remove the spawn
 		return base.deleteMe();
 	}
-	
+
 	// notification triggered by the owner when the owner is attacked.
 	// tamed mobs will heal/recharge or debuff the enemy according to their skills
 	public void onOwnerGotAttacked(Creature attacker)
@@ -300,15 +300,15 @@ public class TamedBeast: FeedableBeast
 		{
 			return;
 		}
-		
+
 		// if the tamed beast is currently in the middle of casting, let it complete its skill...
 		if (isCastingNow(x => x.isAnyNormalType()))
 		{
 			return;
 		}
-		
+
 		float HPRatio = ((float) _owner.getCurrentHp()) / _owner.getMaxHp();
-		
+
 		// if the owner has a lot of HP, then debuff the enemy with a random debuff among the available skills
 		// use of more than one debuff at this moment is acceptable
 		if (HPRatio >= 0.8)
@@ -331,7 +331,7 @@ public class TamedBeast: FeedableBeast
 			{
 				chance = 2;
 			}
-			
+
 			// if the owner has a lot of HP, then debuff the enemy with a random debuff among the available skills
 			foreach (Skill skill in getTemplate().getSkills().Values)
 			{
@@ -343,7 +343,7 @@ public class TamedBeast: FeedableBeast
 			}
 		}
 	}
-	
+
 	/**
 	 * Prepare and cast a skill:<br>
 	 * First smoothly prepare the beast for casting, by abandoning other actions.<br>
@@ -357,21 +357,21 @@ public class TamedBeast: FeedableBeast
 		stopMove(null);
 		broadcastPacket(new StopMovePacket(this));
 		getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		
+
 		setTarget(target);
 		doCast(skill);
 		getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _owner);
 	}
-	
+
 	private class CheckDuration: Runnable
 	{
 		private TamedBeast _tamedBeast;
-		
+
 		public CheckDuration(TamedBeast tamedBeast)
 		{
 			_tamedBeast = tamedBeast;
 		}
-		
+
 		public void run()
 		{
 			int foodTypeSkillId = _tamedBeast.getFoodType();
@@ -404,13 +404,13 @@ public class TamedBeast: FeedableBeast
 				{
 					item = owner.getInventory().getItemByItemId(6644);
 				}
-				
+
 				// if the owner has enough food, call the item handler (use the food and triffer all necessary actions)
 				if ((item != null) && (item.getCount() >= 1))
 				{
 					WorldObject oldTarget = owner.getTarget();
 					owner.setTarget(_tamedBeast);
-					
+
 					// emulate a call to the owner using food, but bypass all checks for range, etc
 					// this also causes a call to the AI tasks handling feeding, which may call onReceiveFood as required.
 					SkillCaster.triggerCast(owner, _tamedBeast, SkillData.getInstance().getSkill(foodTypeSkillId, 1));
@@ -435,22 +435,22 @@ public class TamedBeast: FeedableBeast
 			}
 		}
 	}
-	
+
 	private class CheckOwnerBuffs: Runnable
 	{
 		private TamedBeast _tamedBeast;
 		private int _numBuffs;
-		
+
 		public CheckOwnerBuffs(TamedBeast tamedBeast, int numBuffs)
 		{
 			_tamedBeast = tamedBeast;
 			_numBuffs = numBuffs;
 		}
-		
+
 		public void run()
 		{
 			Player owner = _tamedBeast.getOwner();
-			
+
 			// check if the owner is no longer around...if so, despawn
 			if ((owner == null) || !owner.isOnline())
 			{
@@ -473,12 +473,12 @@ public class TamedBeast: FeedableBeast
 			{
 				return;
 			}
-			
+
 			int totalBuffsOnOwner = 0;
 			int i = 0;
 			int rand = Rnd.get(_numBuffs);
 			Skill buffToGive = null;
-			
+
 			// get this npc's skills: getSkills()
 			foreach (Skill skill in _tamedBeast.getTemplate().getSkills().Values)
 			{
@@ -500,18 +500,18 @@ public class TamedBeast: FeedableBeast
 			{
 				_tamedBeast.sitCastAndFollow(buffToGive, owner);
 			}
-			
+
 			_tamedBeast.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _tamedBeast.getOwner());
 		}
 	}
-	
+
 	public override void onAction(Player player, bool interact)
 	{
 		if ((player == null) || !canTarget(player))
 		{
 			return;
 		}
-		
+
 		// Check if the Player already target the Npc
 		if (this != player.getTarget())
 		{

@@ -10,20 +10,20 @@ public readonly struct ExPutItemResultForVariationCancelPacket: IOutgoingPacket
     private readonly int _itemAug1;
     private readonly int _itemAug2;
     private readonly long _price;
-	
+
     public ExPutItemResultForVariationCancelPacket(Item item, long price)
     {
         _itemObjId = item.ObjectId;
         _itemId = item.getDisplayId();
         _price = price;
-        _itemAug1 = item.getAugmentation().getOption1Id();
-        _itemAug2 = item.getAugmentation().getOption2Id();
+        _itemAug1 = item.getAugmentation()?.getOption1Id() ?? 0;
+        _itemAug2 = item.getAugmentation()?.getOption2Id() ?? 0;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_PUT_ITEM_RESULT_FOR_VARIATION_CANCEL);
-        
+
         writer.WriteInt32(_itemObjId);
         writer.WriteInt32(_itemId);
         writer.WriteInt32(_itemAug1);

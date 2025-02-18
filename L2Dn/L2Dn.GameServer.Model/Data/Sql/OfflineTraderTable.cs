@@ -32,9 +32,10 @@ public class OfflineTraderTable
 			foreach (Player pc in World.getInstance().getPlayers())
 			{
 				try
-				{
+                {
+                    GameSession? client = pc.getClient();
 					if ((pc.getPrivateStoreType() != PrivateStoreType.NONE) &&
-					    ((pc.getClient() == null) || pc.getClient().IsDetached))
+					    ((client == null) || client.IsDetached))
 					{
 						var trade = new CharacterOfflineTrade
 						{
@@ -173,7 +174,7 @@ public class OfflineTraderTable
 					continue;
 				}
 
-				Player player = null;
+				Player? player = null;
 
 				try
 				{
@@ -241,7 +242,7 @@ public class OfflineTraderTable
 										new ManufactureItem(item.ItemId, item.Price));
 								}
 
-								player.setStoreName(trade.Title);
+                                player.setStoreName(trade.Title ?? string.Empty);
 								break;
 							}
 						}
@@ -298,7 +299,7 @@ public class OfflineTraderTable
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int traderId = trader.ObjectId;
-			string title = null;
+			string? title = null;
 			ctx.CharacterOfflineTradeItems.Where(i => i.CharacterId == traderId).ExecuteDelete();
 
 			// Trade is done - clear info
@@ -309,8 +310,9 @@ public class OfflineTraderTable
 			else
 			{
 				try
-				{
-					if ((trader.getClient() == null) || trader.getClient().IsDetached)
+                {
+                    GameSession? traderClient = trader.getClient();
+					if ((traderClient == null) || traderClient.IsDetached)
 					{
 						switch (trader.getPrivateStoreType())
 						{

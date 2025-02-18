@@ -22,13 +22,13 @@ public struct RequestSetPledgeCrestPresetPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Clan clan = player.getClan();
+        Clan? clan = player.getClan();
         if (clan == null)
             return ValueTask.CompletedTask;
-		
+
         if (clan.getLevel() < 3)
             return ValueTask.CompletedTask;
-		
+
         if (clan.getLeader().getObjectId() == player.ObjectId)
         {
             if (_emblemType == 0)
@@ -36,13 +36,13 @@ public struct RequestSetPledgeCrestPresetPacket: IIncomingPacket<GameSession>
                 clan.changeClanCrest(0);
                 return ValueTask.CompletedTask;
             }
-			
+
             if (_emblemType == 1)
             {
                 clan.changeClanCrest(_emblem);
             }
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

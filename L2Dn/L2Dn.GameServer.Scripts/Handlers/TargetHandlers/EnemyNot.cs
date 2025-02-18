@@ -19,27 +19,27 @@ public class EnemyNot: ITargetTypeHandler
 	{
 		return TargetType.ENEMY_NOT;
 	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
+
+	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
 		if (selectedTarget == null)
 		{
 			return null;
 		}
-		
+
 		if (!selectedTarget.isCreature())
 		{
 			return null;
 		}
-		
+
 		Creature target = (Creature) selectedTarget;
-		
+
 		// You can always target yourself.
 		if (creature == target)
 		{
 			return target;
 		}
-		
+
 		if (!target.isAutoAttackable(creature))
 		{
 			// Check for cast range if character cannot move. TODO: char will start follow until within castrange, but if his moving is blocked by geodata, this msg will be sent.
@@ -51,7 +51,7 @@ public class EnemyNot: ITargetTypeHandler
 				}
 				return null;
 			}
-			
+
 			if ((skill.isFlyType()) && !GeoEngine.getInstance().canMoveToTarget(creature.Location.Location3D, target.Location.Location3D, creature.getInstanceWorld()))
 			{
 				if (sendMessage)
@@ -60,7 +60,7 @@ public class EnemyNot: ITargetTypeHandler
 				}
 				return null;
 			}
-			
+
 			// Geodata check when character is within range.
 			if (!GeoEngine.getInstance().canSeeTarget(creature, target))
 			{
@@ -70,15 +70,15 @@ public class EnemyNot: ITargetTypeHandler
 				}
 				return null;
 			}
-			
+
 			return target;
 		}
-		
+
 		if (sendMessage)
 		{
 			creature.sendPacket(SystemMessageId.INVALID_TARGET);
 		}
-		
+
 		return null;
 	}
 }

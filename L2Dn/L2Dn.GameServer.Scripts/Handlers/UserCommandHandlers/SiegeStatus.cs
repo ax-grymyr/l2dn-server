@@ -17,40 +17,37 @@ namespace L2Dn.GameServer.Scripts.Handlers.UserCommandHandlers;
  */
 public class SiegeStatus: IUserCommandHandler
 {
-	private static readonly int[] COMMAND_IDS =
-	{
-		99
-	};
-	
+    private static readonly int[] COMMAND_IDS = [99];
+
 	private static readonly string INSIDE_SIEGE_ZONE = "Castle Siege in Progress";
 	private static readonly string OUTSIDE_SIEGE_ZONE = "No Castle Siege Area";
-	
+
 	public bool useUserCommand(int id, Player player)
 	{
 		if (id != COMMAND_IDS[0])
 		{
 			return false;
 		}
-		
-		if (!player.isNoble() || !player.isClanLeader())
+
+        Clan? clan = player.getClan();
+		if (!player.isNoble() || !player.isClanLeader() || clan == null)
 		{
 			player.sendPacket(SystemMessageId.ONLY_A_CLAN_LEADER_THAT_IS_A_NOBLESSE_OR_EXALTED_CAN_VIEW_THE_SIEGE_STATUS_WINDOW_DURING_A_SIEGE_WAR);
 			return false;
 		}
-		
+
 		foreach (Siege siege in SiegeManager.getInstance().getSieges())
 		{
 			if (!siege.isInProgress())
 			{
 				continue;
 			}
-			
-			Clan clan = player.getClan();
+
 			if (!siege.checkIsAttacker(clan) && !siege.checkIsDefender(clan))
 			{
 				continue;
 			}
-			
+
 			SiegeZone siegeZone = siege.getCastle().getZone();
 			StringBuilder sb = new StringBuilder();
 			foreach (Player member in clan.getOnlineMembers(0))
@@ -67,15 +64,15 @@ public class SiegeStatus: IUserCommandHandler
 			html.Replace("%death_count%", clan.getSiegeDeaths().ToString());
 			html.Replace("%member_list%", sb.ToString());
 			player.sendPacket(new NpcHtmlMessagePacket(null, 0, html));
-			
+
 			return true;
 		}
-		
+
 		player.sendPacket(SystemMessageId.ONLY_A_CLAN_LEADER_THAT_IS_A_NOBLESSE_OR_EXALTED_CAN_VIEW_THE_SIEGE_STATUS_WINDOW_DURING_A_SIEGE_WAR);
-		
+
 		return false;
 	}
-	
+
 	public int[] getUserCommandList()
 	{
 		return COMMAND_IDS;

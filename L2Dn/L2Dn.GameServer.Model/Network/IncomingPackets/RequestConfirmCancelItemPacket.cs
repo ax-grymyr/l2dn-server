@@ -24,38 +24,38 @@ public struct RequestConfirmCancelItemPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Item item = player.getInventory().getItemByObjectId(_objectId);
+        Item? item = player.getInventory().getItemByObjectId(_objectId);
         if (item == null)
             return ValueTask.CompletedTask;
-		
+
         if (item.getOwnerId() != player.ObjectId)
         {
             Util.handleIllegalPlayerAction(player,
                 "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
                 " tryied to destroy augment on item that doesn't own.", Config.DEFAULT_PUNISH);
-            
+
             return ValueTask.CompletedTask;
         }
-		
+
         if (!item.isAugmented())
         {
             player.sendPacket(SystemMessageId.AUGMENTATION_REMOVAL_CAN_ONLY_BE_DONE_ON_AN_AUGMENTED_ITEM);
             return ValueTask.CompletedTask;
         }
-		
+
         if (item.isPvp() && !Config.ALT_ALLOW_AUGMENT_PVP_ITEMS)
         {
             player.sendPacket(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM);
             return ValueTask.CompletedTask;
         }
-		
+
         long price = VariationData.getInstance().getCancelFee(item.getId(), item.getAugmentation().getMineralId());
         if (price < 0)
         {
             player.sendPacket(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM);
             return ValueTask.CompletedTask;
         }
-		
+
         player.sendPacket(new ExPutItemResultForVariationCancelPacket(item, price));
 
         return ValueTask.CompletedTask;

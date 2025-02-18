@@ -14,17 +14,15 @@ public static class ElementalPacketHelper
         writer.WriteByte((byte)type);
         if (update)
         {
-            ElementalSpirit spirit = player.getElementalSpirit(type);
+            ElementalSpirit? spirit = player.getElementalSpirit(type);
             if (spirit == null)
-            {
                 return;
-            }
 
             writer.WriteByte((byte)type);
             WriteSpiritInfo(writer, spirit);
         }
     }
-    
+
     public static void WriteSpiritInfo(PacketBitWriter writer, ElementalSpirit spirit)
     {
         writer.WriteByte(spirit.getStage());

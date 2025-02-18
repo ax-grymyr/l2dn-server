@@ -10,10 +10,10 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct ExListPartyMatchingWaitingRoomPacket: IOutgoingPacket
 {
     private const int NUM_PER_PAGE = 64;
-	
+
     private readonly int _size;
     private readonly List<Player> _players;
-	
+
     public ExListPartyMatchingWaitingRoomPacket(int page, int minLevel, int maxLevel, List<CharacterClass> classIds, string query)
     {
         List<Player> players = MatchingRoomManager.getInstance().getPlayerInWaitingList(minLevel, maxLevel, classIds, query);
@@ -26,16 +26,16 @@ public readonly struct ExListPartyMatchingWaitingRoomPacket: IOutgoingPacket
         }
 
         _players = new List<Player>();
-        for (int i = startIndex; i < (startIndex + chunkSize); i++)
+        for (int i = startIndex; i < startIndex + chunkSize; i++)
         {
             _players.Add(players[i]);
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_LIST_PARTY_MATCHING_WAITING_ROOM);
-        
+
         writer.WriteInt32(_size);
         writer.WriteInt32(_players.Count);
         foreach (Player player in _players)
@@ -43,8 +43,8 @@ public readonly struct ExListPartyMatchingWaitingRoomPacket: IOutgoingPacket
             writer.WriteString(player.getName());
             writer.WriteInt32((int)player.getClassId());
             writer.WriteInt32(player.getLevel());
-            Instance instance = InstanceManager.getInstance().getPlayerInstance(player, false);
-            writer.WriteInt32((instance != null) && (instance.getTemplateId() >= 0) ? instance.getTemplateId() : -1);
+            Instance? instance = InstanceManager.getInstance().getPlayerInstance(player, false);
+            writer.WriteInt32(instance != null && instance.getTemplateId() >= 0 ? instance.getTemplateId() : -1);
             Map<int, DateTime> instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(player);
             writer.WriteInt32(instanceTimes.Count);
             foreach (var entry in instanceTimes)

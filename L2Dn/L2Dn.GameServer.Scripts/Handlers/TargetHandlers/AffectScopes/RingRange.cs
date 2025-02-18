@@ -18,45 +18,45 @@ public class RingRange: IAffectScopeHandler
 	public void forEachAffected<T>(Creature creature, WorldObject target, Skill skill, Action<T> action)
 		where T: WorldObject
 	{
-		IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		int affectRange = skill.getAffectRange();
 		int affectLimit = skill.getAffectLimit();
 		int startRange = skill.getFanRange()[2];
-		
+
 		// Target checks.
-		AtomicInteger affected = new AtomicInteger(0);
+		AtomicInteger affected = new AtomicInteger();
 		Predicate<Creature> filter = c =>
 		{
 			if ((affectLimit > 0) && (affected.get() >= affectLimit))
 			{
 				return false;
 			}
-			
+
 			if (c.isDead())
 			{
 				return false;
 			}
-			
+
 			// Targets before the start range are unaffected.
 			if (c.IsInsideRadius2D(target, startRange))
 			{
 				return false;
 			}
-			
+
 			if ((affectObject != null) && !affectObject.checkAffectedObject(creature, c))
 			{
 				return false;
 			}
-			
+
 			if (!GeoEngine.getInstance().canSeeTarget(target, c))
 			{
 				return false;
 			}
-			
+
 			affected.incrementAndGet();
 			return true;
 		};
-		
+
 		// Check and add targets.
 		World.getInstance().forEachVisibleObjectInRange<Creature>(target, affectRange, c =>
 		{
@@ -66,7 +66,7 @@ public class RingRange: IAffectScopeHandler
 			}
 		});
 	}
-	
+
 	public AffectScope getAffectScopeType()
 	{
 		return AffectScope.RING_RANGE;

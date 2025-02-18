@@ -27,7 +27,7 @@ public struct RequestSetCastleSiegeTimePacket: IIncomingPacket<GameSession>
 		if (player is null)
 			return ValueTask.CompletedTask;
 
-		Castle castle = CastleManager.getInstance().getCastleById(_castleId);
+		Castle? castle = CastleManager.getInstance().getCastleById(_castleId);
 		if (castle == null)
 		{
 			PacketLogger.Instance.Warn(GetType().Name + ": activeChar: " + player + " castle: " + castle +

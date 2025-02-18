@@ -11,24 +11,16 @@ namespace L2Dn.GameServer.Model.Conditions;
  * Condition Category Type implementation.
  * @author Adry_85
  */
-public class ConditionCategoryType: Condition
+public class ConditionCategoryType(Set<CategoryType> categoryTypes): Condition
 {
-	private readonly Set<CategoryType> _categoryTypes;
-	
-	public ConditionCategoryType(Set<CategoryType> categoryTypes)
-	{
-		_categoryTypes = categoryTypes;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		foreach (CategoryType type in _categoryTypes)
-		{
-			if (effector.isInCategory(type))
-			{
-				return true;
-			}
-		}
-		return false;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        foreach (CategoryType type in categoryTypes)
+        {
+            if (effector.isInCategory(type))
+                return true;
+        }
+
+        return false;
+    }
 }

@@ -18,7 +18,7 @@ public struct RequestSaveInventoryOrderPacket: IIncomingPacket<GameSession>
     {
         int count = reader.ReadInt32();
         count = Math.Min(count, LIMIT);
-        
+
         _order = new List<InventoryOrder>();
         for (int i = 0; i < count; i++)
         {
@@ -36,14 +36,14 @@ public struct RequestSaveInventoryOrderPacket: IIncomingPacket<GameSession>
             Inventory inventory = player.getInventory();
             foreach (InventoryOrder order in _order)
             {
-                Item item = inventory.getItemByObjectId(order.ObjectId);
-                if ((item != null) && (item.getItemLocation() == ItemLocation.INVENTORY))
+                Item? item = inventory.getItemByObjectId(order.ObjectId);
+                if (item != null && item.getItemLocation() == ItemLocation.INVENTORY)
                 {
                     item.setItemLocation(ItemLocation.INVENTORY, order.Order);
                 }
             }
         }
-        
+
         return ValueTask.CompletedTask;
     }
 

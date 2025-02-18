@@ -21,12 +21,12 @@ public struct ExRequestEnchantFailRewardInfoPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Item addedItem = player.getInventory().getItemByObjectId(_itemobjectid);
+        Item? addedItem = player.getInventory().getItemByObjectId(_itemobjectid);
         if (addedItem != null)
         {
             player.sendPacket(new ResetEnchantItemFailRewardInfoPacket(player));
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

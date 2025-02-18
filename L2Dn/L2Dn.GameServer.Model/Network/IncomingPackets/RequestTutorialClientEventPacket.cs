@@ -19,9 +19,9 @@ public struct RequestTutorialClientEventPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         // TODO: UNHARDCODE ME!
-        QuestState qs = player.getQuestState("255_Tutorial");
+        QuestState? qs = player.getQuestState("255_Tutorial");
         if (qs != null)
         {
             qs.getQuest().notifyEvent("CE" + _eventId + "", null, player);

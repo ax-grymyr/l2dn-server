@@ -23,27 +23,27 @@ namespace L2Dn.GameServer.Data.Xml;
 public class NpcData: DataReaderBase
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(NpcData));
-	
+
 	private readonly Map<int, NpcTemplate> _npcs = new();
 	private readonly Map<string, int> _clans = new();
 	private static readonly Set<int> _masterMonsterIDs = new();
 	private static int? _genericClanId;
-	
+
 	protected NpcData()
 	{
 		load();
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
+
+	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
 	{
 		_masterMonsterIDs.clear();
-		
+
 		LoadXmlDocuments(DataFileLocation.Data, "stats/npcs").ForEach(t =>
 		{
 			t.Document.Elements("list").Elements("npc").ForEach(x => loadElement(t.FilePath, x));
 		});
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _npcs.Count + " NPCs.");
 
 		if (Config.CUSTOM_NPC_DATA)
@@ -53,7 +53,7 @@ public class NpcData: DataReaderBase
 			{
 				t.Document.Elements("list").Elements("npc").ForEach(x => loadElement(t.FilePath, x));
 			});
-		
+
 			LOGGER.Info(GetType().Name + ": Loaded " + (_npcs.Count - npcCount) + " custom NPCs.");
 		}
 	}
@@ -71,10 +71,10 @@ public class NpcData: DataReaderBase
 		List<DropHolder> dropLists = null;
 		List<DropGroupHolder> dropGroups = null;
 		set.set("id", npcId);
-		
+
 		if (element.Attribute("displayId") != null)
 			set.set("displayId", element.GetAttributeValueAsInt32("displayId"));
-		
+
 		set.set("level", level);
 		set.set("type", type);
 		set.set("name", element.GetAttributeValueAsString("name"));
@@ -625,7 +625,7 @@ public class NpcData: DataReaderBase
 		}
 		return id;
 	}
-	
+
 	/**
 	 * Gets the clan id
 	 * @param clanName the clan name to get its id
@@ -636,7 +636,7 @@ public class NpcData: DataReaderBase
 		int id = _clans.get(clanName);
 		return id != null ? id : -1;
 	}
-	
+
 	public Set<string> getClansByIds(Set<int> clanIds)
 	{
 		Set<string> result = new();
@@ -656,7 +656,7 @@ public class NpcData: DataReaderBase
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Gets the template.
 	 * @param id the template Id to get.
@@ -666,7 +666,7 @@ public class NpcData: DataReaderBase
 	{
 		return _npcs.GetValueOrDefault(id);
 	}
-	
+
 	/**
 	 * Gets the template by name.
 	 * @param name of the template to get.
@@ -683,7 +683,7 @@ public class NpcData: DataReaderBase
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Gets all templates matching the filter.
 	 * @param filter
@@ -701,7 +701,7 @@ public class NpcData: DataReaderBase
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Gets the all of level.
 	 * @param levels of all the templates to get.
@@ -711,7 +711,7 @@ public class NpcData: DataReaderBase
 	{
 		return getTemplates(template => levels.Contains(template.getLevel()));
 	}
-	
+
 	/**
 	 * Gets the all monsters of level.
 	 * @param levels of all the monster templates to get.
@@ -721,7 +721,7 @@ public class NpcData: DataReaderBase
 	{
 		return getTemplates(template => levels.Contains(template.getLevel()) && template.isType("Monster"));
 	}
-	
+
 	/**
 	 * Gets the all npc starting with.
 	 * @param text of all the NPC templates which its name start with.
@@ -731,7 +731,7 @@ public class NpcData: DataReaderBase
 	{
 		return getTemplates(template => template.isType("Folk") && template.getName().startsWith(text));
 	}
-	
+
 	/**
 	 * Gets the all npc of class type.
 	 * @param classTypes of all the templates to get.
@@ -742,7 +742,7 @@ public class NpcData: DataReaderBase
 		return getTemplates(
 			template => classTypes.Contains(template.getType(), StringComparer.CurrentCultureIgnoreCase));
 	}
-	
+
 	/**
 	 * @return the IDs of monsters that have minions.
 	 */
@@ -750,7 +750,7 @@ public class NpcData: DataReaderBase
 	{
 		return _masterMonsterIDs;
 	}
-	
+
 	/**
 	 * Gets the single instance of NpcData.
 	 * @return single instance of NpcData
@@ -759,23 +759,23 @@ public class NpcData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly NpcData INSTANCE = new();
 	}
-	
-	private static Map<string, object> parseParameters(XElement element)
+
+	private new static Map<string, object> parseParameters(XElement element)
 	{
 		Map<string, object> parameters = new();
-		
+
 		element.Elements("param").ForEach(el =>
 		{
 			string name = el.GetAttributeValueAsString("name");
 			string value = el.GetAttributeValueAsString("value");
 			parameters.put(name, value);
 		});
-		
+
 		element.Elements("skill").ForEach(el =>
 		{
 			string name = el.GetAttributeValueAsString("name");
@@ -783,7 +783,7 @@ public class NpcData: DataReaderBase
 			int level = el.GetAttributeValueAsInt32("level");
 			parameters.put(name, new SkillHolder(id, level));
 		});
-		
+
 		element.Elements("location").ForEach(el =>
 		{
 			string name = el.GetAttributeValueAsString("name");
@@ -793,7 +793,7 @@ public class NpcData: DataReaderBase
 			int heading = el.Attribute("heading").GetInt32(0);
 			parameters.put(name, new Location(x, y, z, heading));
 		});
-		
+
 		element.Elements("minions").ForEach(el =>
 		{
 			List<MinionHolder> minions = new();
@@ -806,7 +806,7 @@ public class NpcData: DataReaderBase
 				int weightPoint = e.Attribute("weightPoint").GetInt32(0);
 				minions.Add(new MinionHolder(id, count, max, TimeSpan.FromMilliseconds(respawnTime), weightPoint));
 			});
-					
+
 			if (minions.Count != 0)
 				parameters.put(el.GetAttributeValueAsString("name"), minions);
 		});
@@ -820,17 +820,17 @@ public class NpcData: DataReaderBase
 		{
 			return _genericClanId.Value;
 		}
-		
+
 		lock (this)
 		{
 			_genericClanId = _clans.get("ALL");
-			
+
 			if (_genericClanId == null)
 			{
 				_genericClanId = -1;
 			}
 		}
-		
+
 		return _genericClanId.Value;
 	}
 }

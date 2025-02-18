@@ -22,7 +22,7 @@ public struct ExElementalSpiritSetTalentPacket: IIncomingPacket<GameSession>
     {
         _type = (ElementalType)reader.ReadByte();
         reader.ReadByte(); // Characteristics for now always 4
-		
+
         reader.ReadByte(); // attack id
         _attackPoints = reader.ReadByte();
         reader.ReadByte(); // defense id
@@ -39,7 +39,7 @@ public struct ExElementalSpiritSetTalentPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        ElementalSpirit spirit = player.getElementalSpirit(_type);
+        ElementalSpirit? spirit = player.getElementalSpirit(_type);
         bool result = false;
         if (spirit != null)
         {
@@ -48,26 +48,26 @@ public struct ExElementalSpiritSetTalentPacket: IIncomingPacket<GameSession>
                 spirit.addAttackPoints(_attackPoints);
                 result = true;
             }
-			
+
             if (_defensePoints > 0 && spirit.getAvailableCharacteristicsPoints() >= _defensePoints)
             {
                 spirit.addDefensePoints(_defensePoints);
                 result = true;
             }
-			
+
             if (_critRate > 0 && spirit.getAvailableCharacteristicsPoints() >= _critRate)
             {
                 spirit.addCritRatePoints(_critRate);
                 result = true;
             }
-			
+
             if (_critDamage > 0 && spirit.getAvailableCharacteristicsPoints() >= _critDamage)
             {
                 spirit.addCritDamage(_critDamage);
                 result = true;
             }
         }
-		
+
         if (result)
         {
             UserInfoPacket userInfo = new UserInfoPacket(player, false);
@@ -75,9 +75,9 @@ public struct ExElementalSpiritSetTalentPacket: IIncomingPacket<GameSession>
             connection.Send(userInfo);
             connection.Send(SystemMessageId.CHARACTERISTICS_WERE_APPLIED_SUCCESSFULLY);
         }
- 
+
         connection.Send(new ElementalSpiritSetTalentPacket(player, _type, result));
-        
+
         return ValueTask.CompletedTask;
     }
 }

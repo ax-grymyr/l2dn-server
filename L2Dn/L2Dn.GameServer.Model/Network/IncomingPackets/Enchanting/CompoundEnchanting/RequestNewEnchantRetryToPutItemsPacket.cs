@@ -33,21 +33,21 @@ public struct RequestNewEnchantRetryToPutItemsPacket: IIncomingPacket<GameSessio
             connection.Send(ExEnchantRetryToPutItemFailPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         if (player.isProcessingTransaction() || player.isProcessingRequest())
         {
             connection.Send(SystemMessageId.YOU_CANNOT_USE_THIS_SYSTEM_DURING_TRADING_PRIVATE_STORE_AND_WORKSHOP_SETUP);
             connection.Send(ExEnchantRetryToPutItemFailPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         CompoundRequest request = new CompoundRequest(player);
         if (!player.addRequest(request))
         {
             connection.Send(ExEnchantRetryToPutItemFailPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         // Make sure player owns first item.
         request.setItemOne(_firstItemObjectId);
         Item itemOne = request.getItemOne();
@@ -57,7 +57,7 @@ public struct RequestNewEnchantRetryToPutItemsPacket: IIncomingPacket<GameSessio
             player.removeRequest<CompoundRequest>();
             return ValueTask.CompletedTask;
         }
-		
+
         // Make sure player owns second item.
         request.setItemTwo(_secondItemObjectId);
         Item itemTwo = request.getItemTwo();
@@ -67,20 +67,20 @@ public struct RequestNewEnchantRetryToPutItemsPacket: IIncomingPacket<GameSessio
             player.removeRequest<CompoundRequest>();
             return ValueTask.CompletedTask;
         }
-		
+
         // Not implemented or not able to merge!
-        CombinationItem combinationItem = CombinationItemsData.getInstance().getItemsBySlots(itemOne.getId(),
+        CombinationItem? combinationItem = CombinationItemsData.getInstance().getItemsBySlots(itemOne.getId(),
             itemOne.getEnchantLevel(), itemTwo.getId(), itemTwo.getEnchantLevel());
-        
+
         if (combinationItem == null)
         {
             connection.Send(ExEnchantRetryToPutItemFailPacket.STATIC_PACKET);
             player.removeRequest<CompoundRequest>();
             return ValueTask.CompletedTask;
         }
-		
+
         connection.Send(ExEnchantRetryToPutItemOkPacket.STATIC_PACKET);
-        
+
         return ValueTask.CompletedTask;
     }
 }

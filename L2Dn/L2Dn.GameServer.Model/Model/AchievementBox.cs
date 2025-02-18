@@ -13,11 +13,11 @@ namespace L2Dn.GameServer.Model;
 public class AchievementBox
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AchievementBox));
-	
+
 	private static readonly TimeSpan ACHIEVEMENT_BOX_2H = TimeSpan.FromHours(2);
 	private static readonly TimeSpan ACHIEVEMENT_BOX_6H = TimeSpan.FromHours(6);
 	private static readonly TimeSpan ACHIEVEMENT_BOX_12H = TimeSpan.FromHours(12);
-	
+
 	private readonly Player _owner;
 	private int _boxOwned = 1;
 	private int _monsterPoints = 0;
@@ -26,18 +26,18 @@ public class AchievementBox
 	private DateTime _pvpEndDate;
 	private DateTime? _boxTimeForOpen;
 	private readonly List<AchievementBoxHolder> _achievementBox = new();
-	private ScheduledFuture _boxOpenTask;
-	
+	private ScheduledFuture? _boxOpenTask;
+
 	public AchievementBox(Player owner)
 	{
 		_owner = owner;
 	}
-	
+
 	public DateTime pvpEndDate()
 	{
 		return _pvpEndDate;
 	}
-	
+
 	public void addPoints(int value)
 	{
 		int newPoints = Math.Min(Config.ACHIEVEMENT_BOX_POINTS_FOR_REWARD, _monsterPoints + value);
@@ -55,7 +55,7 @@ public class AchievementBox
 		}
 		_monsterPoints += value;
 	}
-	
+
 	public void addPvpPoints(int value)
 	{
 		int newPoints = Math.Min(Config.ACHIEVEMENT_BOX_PVP_POINTS_FOR_REWARD, _pvpPoints);
@@ -73,7 +73,7 @@ public class AchievementBox
 		}
 		_pvpPoints += value;
 	}
-	
+
 	public void restore()
 	{
 		tryFinishBox();
@@ -117,9 +117,9 @@ public class AchievementBox
 					_achievementBox.Insert(3, holder);
 				}
 				catch (Exception e)
-				{
-					LOGGER.Error("Could not restore Achievement box for " + _owner);
-				}
+                {
+                    LOGGER.Error("Could not restore Achievement box for " + _owner + ": " + e);
+                }
 			}
 			else
 			{
@@ -132,10 +132,10 @@ public class AchievementBox
 			LOGGER.Error("Could not restore achievement box for " + _owner + ": " + e);
 		}
 	}
-	
+
 	public void storeNew()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.AchievementBoxes.Add(new DbAchievementBox()
@@ -155,10 +155,10 @@ public class AchievementBox
 			LOGGER.Error("Could not store new Archivement Box for: " + _owner + ": " + e);
 		}
 	}
-	
+
 	public void store()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _owner.ObjectId;
@@ -187,7 +187,7 @@ public class AchievementBox
 
 			record.BoxStateSlot4 = _achievementBox.Count > 3 ? (int)_achievementBox[3].getState() : 0;
 			record.BoxTypeSlot4 = _achievementBox.Count > 3 ? (int)_achievementBox[3].getType() : 0;
-			
+
 			ctx.SaveChanges();
 		}
 		catch (Exception e)
@@ -195,15 +195,15 @@ public class AchievementBox
 			LOGGER.Error("Could not store Achievement Box for: " + _owner + ": " + e);
 		}
 	}
-	
+
 	public List<AchievementBoxHolder> getAchievementBox()
 	{
 		return _achievementBox;
 	}
-	
+
 	public bool addNewBox()
 	{
-		AchievementBoxHolder free = null;
+		AchievementBoxHolder? free = null;
 		int id = -1;
 		for (int i = 1; i <= getBoxOwned(); i++)
 		{
@@ -236,22 +236,22 @@ public class AchievementBox
 		}
 		return false;
 	}
-	
+
 	public void openBox(int slotId)
 	{
 		if (slotId > getBoxOwned())
 		{
 			return;
 		}
-		
+
 		AchievementBoxHolder holder = getAchievementBox()[slotId - 1];
 		if ((holder == null) || (_boxTimeForOpen != null))
 		{
 			return;
 		}
-		
+
 		_pendingBoxSlotId = slotId;
-		
+
 		switch (holder.getType())
 		{
 			case AchievementBoxType.BOX_2H:
@@ -283,14 +283,14 @@ public class AchievementBox
 			}
 		}
 	}
-	
+
 	public void skipBoxOpenTime(int slotId, long fee)
 	{
 		if (slotId > getBoxOwned())
 		{
 			return;
 		}
-		
+
 		AchievementBoxHolder holder = getAchievementBox()[slotId - 1];
 		if ((holder != null) && _owner.destroyItemByItemId("Take Achievement Box", Inventory.LCOIN_ID, fee, _owner, true))
 		{
@@ -301,102 +301,102 @@ public class AchievementBox
 			finishAndUnlockChest(slotId);
 		}
 	}
-	
+
 	public bool setBoxTimeForOpen(TimeSpan time)
 	{
 		if ((_boxOpenTask != null) && !(_boxOpenTask.isDone() || _boxOpenTask.isCancelled()))
 		{
 			return false;
 		}
-		
+
 		_boxTimeForOpen = DateTime.UtcNow + time;
 		return true;
 	}
-	
+
 	public void tryFinishBox()
 	{
 		if ((_boxTimeForOpen == null) || (_boxTimeForOpen >= DateTime.UtcNow))
 		{
 			return;
 		}
-		
+
 		if ((_owner == null) || !_owner.isOnline())
 		{
 			return;
 		}
-		
+
 		AchievementBoxHolder holder = getAchievementBox()[_pendingBoxSlotId - 1];
 		if (holder != null)
 		{
 			finishAndUnlockChest(_pendingBoxSlotId);
 		}
 	}
-	
+
 	public int getBoxOwned()
 	{
 		return _boxOwned;
 	}
-	
+
 	public int getMonsterPoints()
 	{
 		return _monsterPoints;
 	}
-	
+
 	public int getPvpPoints()
 	{
 		return _pvpPoints;
 	}
-	
+
 	public int getPendingBoxSlotId()
 	{
 		return _pendingBoxSlotId;
 	}
-	
+
 	public DateTime? getBoxOpenTime()
 	{
 		return _boxTimeForOpen;
 	}
-	
+
 	public void finishAndUnlockChest(int id)
 	{
 		if (id > getBoxOwned())
 		{
 			return;
 		}
-		
+
 		if (_pendingBoxSlotId == id)
 		{
 			_boxTimeForOpen = null;
 			_pendingBoxSlotId = 0;
 		}
-		
+
 		getAchievementBox()[id - 1].setState(AchievementBoxState.RECEIVE_REWARD);
 		sendBoxUpdate();
 	}
-	
+
 	public void sendBoxUpdate()
 	{
 		_owner.sendPacket(new ExSteadyAllBoxUpdatePacket(_owner));
 	}
-	
+
 	public void cancelTask()
 	{
 		if (_boxOpenTask == null)
 		{
 			return;
 		}
-		
+
 		_boxOpenTask.cancel(false);
 		_boxOpenTask = null;
 	}
-	
+
 	public void unlockSlot(int slotId)
 	{
 		if (((slotId - 1) != getBoxOwned()) || (slotId > 4))
 		{
 			return;
 		}
-		
+
 		bool paidSlot = false;
 		switch (slotId)
 		{
@@ -425,7 +425,7 @@ public class AchievementBox
 				break;
 			}
 		}
-		
+
 		if (paidSlot)
 		{
 			_boxOwned = slotId;
@@ -436,7 +436,7 @@ public class AchievementBox
 			sendBoxUpdate();
 		}
 	}
-	
+
 	public void getReward(int slotId)
 	{
 		AchievementBoxHolder holder = getAchievementBox()[slotId - 1];
@@ -444,9 +444,9 @@ public class AchievementBox
 		{
 			return;
 		}
-		
+
 		int rnd = Rnd.get(100);
-		ItemHolder reward = null;
+		ItemHolder? reward = null;
 		switch (holder.getType())
 		{
 			case AchievementBoxType.BOX_2H:
@@ -510,7 +510,7 @@ public class AchievementBox
 				break;
 			}
 		}
-		
+
 		holder.setState(AchievementBoxState.AVAILABLE);
 		holder.setType(AchievementBoxType.LOCKED);
 		sendBoxUpdate();
@@ -520,7 +520,7 @@ public class AchievementBox
 			_owner.sendPacket(new ExSteadyBoxRewardPacket(slotId, reward.getId(), reward.getCount()));
 		}
 	}
-	
+
 	public void refreshPvpEndDate()
 	{
 		DateTime currentTime = DateTime.Now;
@@ -529,7 +529,7 @@ public class AchievementBox
 		{
 			calendar = calendar.AddMonths(1);
 		}
-		
+
 		_pvpEndDate = calendar;
 	}
 }

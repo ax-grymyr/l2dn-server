@@ -37,7 +37,7 @@ public class Cemetery: AbstractScript
         {
             Npc spawnBanshee = addSpawn(GRAVE_WARDEN, npc.Location, false, TimeSpan.FromMilliseconds(300000));
             Playable attacker = isSummon
-                ? killer.getServitors().Values.FirstOrDefault() ?? killer.getPet()
+                ? (Playable?)killer.getServitors().Values.FirstOrDefault() ?? (Playable?)killer.getPet() ?? killer
                 : killer;
 
             addAttackPlayerDesire(spawnBanshee, attacker);

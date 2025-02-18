@@ -17,46 +17,51 @@ namespace L2Dn.GameServer.Scripts.Handlers.TargetHandlers;
  */
 public class Ground: ITargetTypeHandler
 {
-	public TargetType getTargetType()
-	{
-		return TargetType.GROUND;
-	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
-	{
-		if (creature.isPlayer())
-		{
-			Location3D? worldPosition = creature.getActingPlayer().getCurrentSkillWorldPosition();
-			if (worldPosition != null)
-			{
-				if (dontMove && !creature.IsInsideRadius2D(worldPosition.Value.Location2D, skill.getCastRange() + creature.getTemplate().getCollisionRadius()))
-				{
-					return null;
-				}
-				
-				if (!GeoEngine.getInstance().canSeeTarget(creature, worldPosition.Value))
-				{
-					if (sendMessage)
-					{
-						creature.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
-					}
-					return null;
-				}
+    public TargetType getTargetType()
+    {
+        return TargetType.GROUND;
+    }
 
-				ZoneRegion? zoneRegion = ZoneManager.getInstance().getRegion(creature.Location.Location2D);
-				if (skill.isBad() && !creature.isInInstance() && !zoneRegion.checkEffectRangeInsidePeaceZone(skill, worldPosition.Value.X, worldPosition.Value.Y, worldPosition.Value.Z))
-				{
-					if (sendMessage)
-					{
-						creature.sendPacket(SystemMessageId.YOU_CANNOT_USE_SKILLS_THAT_MAY_HARM_OTHER_PLAYERS_IN_HERE);
-					}
-					return null;
-				}
+    public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse,
+        bool dontMove, bool sendMessage)
+    {
+        if (creature.isPlayer())
+        {
+            Location3D? worldPosition = creature.getActingPlayer()?.getCurrentSkillWorldPosition();
+            if (worldPosition != null)
+            {
+                if (dontMove && !creature.IsInsideRadius2D(worldPosition.Value.Location2D,
+                        skill.getCastRange() + creature.getTemplate().getCollisionRadius()))
+                {
+                    return null;
+                }
 
-				return creature; // Return yourself to know that your ground location is legit.
-			}
-		}
-		
-		return null;
-	}
+                if (!GeoEngine.getInstance().canSeeTarget(creature, worldPosition.Value))
+                {
+                    if (sendMessage)
+                    {
+                        creature.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
+                    }
+
+                    return null;
+                }
+
+                ZoneRegion? zoneRegion = ZoneManager.getInstance().getRegion(creature.Location.Location2D);
+                if (skill.isBad() && !creature.isInInstance() && !zoneRegion.checkEffectRangeInsidePeaceZone(skill,
+                        worldPosition.Value.X, worldPosition.Value.Y, worldPosition.Value.Z))
+                {
+                    if (sendMessage)
+                    {
+                        creature.sendPacket(SystemMessageId.YOU_CANNOT_USE_SKILLS_THAT_MAY_HARM_OTHER_PLAYERS_IN_HERE);
+                    }
+
+                    return null;
+                }
+
+                return creature; // Return yourself to know that your ground location is legit.
+            }
+        }
+
+        return null;
+    }
 }

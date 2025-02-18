@@ -12,12 +12,12 @@ namespace L2Dn.GameServer.Scripts.AI;
  */
 public abstract class AbstractNpcAI: Quest
 {
-	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(AbstractNpcAI));
-	
+	protected new static readonly Logger LOGGER = LogManager.GetLogger(nameof(AbstractNpcAI));
+
 	public AbstractNpcAI(): base(-1)
 	{
 	}
-	
+
 	/**
 	 * Simple on first talk event handler.
 	 */
@@ -25,7 +25,7 @@ public abstract class AbstractNpcAI: Quest
 	{
 		return npc.getId() + ".html";
 	}
-	
+
 	/**
 	 * Registers the following events to the current script:<br>
 	 * <ul>
@@ -49,7 +49,7 @@ public abstract class AbstractNpcAI: Quest
 		addAggroRangeEnterId(mobs);
 		addFactionCallId(mobs);
 	}
-	
+
 	public void spawnMinions(Npc npc, string spawnName)
 	{
 		foreach (MinionHolder mh in npc.getParameters().getMinionList(spawnName))

@@ -7,7 +7,7 @@ namespace L2Dn.GameServer.Model.Holders;
 /**
  * @author Mobius
  */
-public class ClientHardwareInfoHolder
+public sealed class ClientHardwareInfoHolder
 {
 	private readonly string _macAddress;
 	private readonly int _windowsPlatformId;
@@ -278,8 +278,9 @@ public class ClientHardwareInfoHolder
 		return _vgaDriverVersion;
 	}
 
-	public override bool Equals(object? obj)
-	{
-		return (obj is ClientHardwareInfoHolder) && _macAddress.Equals(((ClientHardwareInfoHolder)obj).getMacAddress());
-	}
+    public override bool Equals(object? obj) =>
+        obj == this || obj is ClientHardwareInfoHolder holder &&
+        string.Equals(_macAddress, holder.getMacAddress(), StringComparison.OrdinalIgnoreCase);
+
+    public override int GetHashCode() => _macAddress.GetHashCode();
 }

@@ -32,21 +32,21 @@ public struct RequestExTryToPutEnchantTargetItemPacket: IIncomingPacket<GameSess
 		EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
 		if (request == null || request.isProcessing())
 			return ValueTask.CompletedTask;
-		
+
 		Item scroll = request.getEnchantingScroll();
 		if (scroll == null)
 			return ValueTask.CompletedTask;
-		
-		Item item = player.getInventory().getItemByObjectId(_objectId);
+
+		Item? item = player.getInventory().getItemByObjectId(_objectId);
 		if (item == null)
 		{
 			Util.handleIllegalPlayerAction(player,
 				"RequestExTryToPutEnchantTargetItem: " + player +
 				" tried to cheat using a packet manipulation tool! Ban this player!", Config.DEFAULT_PUNISH);
-			
+
 			return ValueTask.CompletedTask;
 		}
-		
+
 		EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
 		if (!item.isEnchantable() || scrollTemplate == null || !scrollTemplate.isValid(item, null) ||
 		    item.getEnchantLevel() >= scrollTemplate.getMaxEnchantLevel())
@@ -67,17 +67,18 @@ public struct RequestExTryToPutEnchantTargetItemPacket: IIncomingPacket<GameSess
 
 		request.setEnchantingItem(_objectId);
 		request.setEnchantLevel(item.getEnchantLevel());
-		
+
 		request.setTimestamp(DateTime.UtcNow);
 		player.sendPacket(new ExPutEnchantTargetItemResultPacket(_objectId));
 		player.sendPacket(new ChangedEnchantTargetItemProbabilityListPacket(player, false));
-		
+
 		double chance = scrollTemplate.getChance(player, item);
 		if (chance > 0)
 		{
 			double challengePointsChance = 0;
-			EnchantChallengePointData.EnchantChallengePointsItemInfo info = EnchantChallengePointData.getInstance()
+			EnchantChallengePointData.EnchantChallengePointsItemInfo? info = EnchantChallengePointData.getInstance()
 				.getInfoByItemId(item.getId());
+
 			if (info != null)
 			{
 				int groupId = info.GroupId;
@@ -87,8 +88,9 @@ public struct RequestExTryToPutEnchantTargetItemPacket: IIncomingPacket<GameSess
 				    (pendingOptionIndex == EnchantChallengePointData.OptionProbInc1 ||
 				     pendingOptionIndex == EnchantChallengePointData.OptionProbInc2))
 				{
-					EnchantChallengePointData.EnchantChallengePointsOptionInfo optionInfo = EnchantChallengePointData
+					EnchantChallengePointData.EnchantChallengePointsOptionInfo? optionInfo = EnchantChallengePointData
 						.getInstance().getOptionInfo(pendingGroupId, pendingOptionIndex);
+
 					if (optionInfo != null && item.getEnchantLevel() >= optionInfo.MinEnchant &&
 					    item.getEnchantLevel() <= optionInfo.MaxEnchant)
 					{
@@ -103,7 +105,7 @@ public struct RequestExTryToPutEnchantTargetItemPacket: IIncomingPacket<GameSess
 				crystalLevel > CrystalType.NONE.getLevel() && crystalLevel < CrystalType.EVENT.getLevel()
 					? player.getStat().getValue(Stat.ENCHANT_RATE)
 					: 0;
-			
+
 			player.sendPacket(new ExChangedEnchantTargetItemProbListPacket(
 				new ExChangedEnchantTargetItemProbListPacket.EnchantProbInfo(item.ObjectId,
 					(int)((chance + challengePointsChance + enchantRateStat) * 100), (int)(chance * 100),

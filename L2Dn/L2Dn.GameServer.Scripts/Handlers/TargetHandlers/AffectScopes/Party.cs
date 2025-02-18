@@ -15,15 +15,15 @@ public class Party: IAffectScopeHandler
 	public void forEachAffected<T>(Creature creature, WorldObject target, Skill skill, Action<T> action)
 		where T: WorldObject
 	{
-		IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		int affectRange = skill.getAffectRange();
 		int affectLimit = skill.getAffectLimit();
-		
+
 		if (target.isPlayable())
 		{
-			Player player = target.getActingPlayer();
-			Model.Party party = player.getParty();
-			
+			Player? player = target.getActingPlayer();
+			Model.Party? party = player?.getParty();
+
 			// Create the target filter.
 			AtomicInteger affected = new AtomicInteger(0);
 			Predicate<Playable> filter = plbl =>
@@ -33,42 +33,42 @@ public class Party: IAffectScopeHandler
 				{
 					return false;
 				}
-				
+
 				if ((affectLimit > 0) && (affected.get() >= affectLimit))
 				{
 					return false;
 				}
-				
-				Player p = plbl.getActingPlayer();
+
+				Player? p = plbl.getActingPlayer();
 				if ((p == null) || p.isDead())
 				{
 					return false;
 				}
-				
+
 				if (p != player)
 				{
-					Model.Party targetParty = p.getParty();
+					Model.Party? targetParty = p.getParty();
 					if ((party == null) || (targetParty == null) || (party.getLeaderObjectId() != targetParty.getLeaderObjectId()))
 					{
 						return false;
 					}
 				}
-				
+
 				if ((affectObject != null) && !affectObject.checkAffectedObject(creature, p))
 				{
 					return false;
 				}
-				
+
 				affected.incrementAndGet();
 				return true;
 			};
-			
+
 			// Affect object of origin since its skipped in the forEachVisibleObjectInRange method.
 			if (filter((Playable) target))
 			{
 				action((T)(WorldObject)target);
 			}
-			
+
 			// Check and add targets.
 			World.getInstance().forEachVisibleObjectInRange<Playable>(target, affectRange, c =>
 			{
@@ -81,7 +81,7 @@ public class Party: IAffectScopeHandler
 		else if (target.isNpc())
 		{
 			Npc npc = (Npc) target;
-			
+
 			// Create the target filter.
 			AtomicInteger affected = new AtomicInteger(0);
 			Predicate<Npc> filter = n =>
@@ -102,17 +102,17 @@ public class Party: IAffectScopeHandler
 				{
 					return false;
 				}
-				
+
 				affected.incrementAndGet();
 				return true;
 			};
-			
+
 			// Add object of origin since its skipped in the getVisibleObjects method.
 			if (filter(npc))
 			{
 				action((T)(WorldObject)npc);
 			}
-			
+
 			// Check and add targets.
 			World.getInstance().forEachVisibleObjectInRange<Npc>(npc, affectRange, n =>
 			{
@@ -120,7 +120,7 @@ public class Party: IAffectScopeHandler
 				{
 					return;
 				}
-				
+
 				if (filter(n))
 				{
 					action((T)(WorldObject)n);
@@ -128,7 +128,7 @@ public class Party: IAffectScopeHandler
 			});
 		}
 	}
-	
+
 	public AffectScope getAffectScopeType()
 	{
 		return AffectScope.PARTY;

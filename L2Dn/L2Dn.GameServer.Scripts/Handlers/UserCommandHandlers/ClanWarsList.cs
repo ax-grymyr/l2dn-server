@@ -15,21 +15,16 @@ namespace L2Dn.GameServer.Scripts.Handlers.UserCommandHandlers;
 public class ClanWarsList: IUserCommandHandler
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(ClanWarsList));
-	private static readonly int[] COMMAND_IDS =
-	{
-		88,
-		89,
-		90
-	};
-	
+    private static readonly int[] COMMAND_IDS = [88, 89, 90];
+
 	public bool useUserCommand(int id, Player player)
 	{
 		if ((id != COMMAND_IDS[0]) && (id != COMMAND_IDS[1]) && (id != COMMAND_IDS[2]))
 		{
 			return false;
 		}
-		
-		Clan clan = player.getClan();
+
+		Clan? clan = player.getClan();
 		if (clan == null)
 		{
 			player.sendPacket(SystemMessageId.NOT_JOINED_IN_ANY_CLAN);
@@ -125,7 +120,7 @@ public class ClanWarsList: IUserCommandHandler
 
 		return true;
 	}
-	
+
 	public int[] getUserCommandList()
 	{
 		return COMMAND_IDS;

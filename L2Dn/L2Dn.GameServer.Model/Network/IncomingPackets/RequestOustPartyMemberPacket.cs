@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -19,10 +20,11 @@ public struct RequestOustPartyMemberPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        if (player.isInParty() && player.getParty().isLeader(player))
+
+        Party? party = player.getParty();
+        if (party != null && party.isLeader(player))
         {
-            player.getParty().removePartyMember(_name, PartyMessageType.EXPELLED);
+            party.removePartyMember(_name, PartyMessageType.EXPELLED);
         }
 
         return ValueTask.CompletedTask;

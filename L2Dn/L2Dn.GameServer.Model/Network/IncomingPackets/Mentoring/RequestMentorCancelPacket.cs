@@ -29,15 +29,15 @@ public struct RequestMentorCancelPacket: IIncomingPacket<GameSession>
 
 		if (_confirmed != 1)
 			return ValueTask.CompletedTask;
-		
+
 		int objectId = CharInfoTable.getInstance().getIdByName(_name);
 			if (player.isMentor())
 			{
-				Mentee mentee = MentorManager.getInstance().getMentee(player.ObjectId, objectId);
+				Mentee? mentee = MentorManager.getInstance().getMentee(player.ObjectId, objectId);
 				if (mentee != null)
 				{
 					MentorManager.getInstance().cancelAllMentoringBuffs(mentee.getPlayer());
-					
+
 					if (MentorManager.getInstance().isAllMenteesOffline(player.ObjectId, mentee.getObjectId()))
 					{
 						MentorManager.getInstance().cancelAllMentoringBuffs(player);
@@ -46,10 +46,10 @@ public struct RequestMentorCancelPacket: IIncomingPacket<GameSession>
 					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_S_MENTORING_CONTRACT_IS_CANCELLED_THE_MENTOR_CANNOT_BOND_WITH_ANOTHER_MENTEE_FOR_2_DAYS);
 					sm.Params.addString(_name);
 					player.sendPacket(sm);
-					
+
 					MentorManager.getInstance().setPenalty(player.ObjectId, TimeSpan.FromDays(Config.MENTOR_PENALTY_FOR_MENTEE_LEAVE)); // TODO: verify period
 					MentorManager.getInstance().deleteMentor(player.ObjectId, mentee.getObjectId());
-					
+
 					// Notify to scripts
 					if (player.Events.HasSubscribers<OnPlayerMenteeRemove>())
 					{
@@ -59,31 +59,31 @@ public struct RequestMentorCancelPacket: IIncomingPacket<GameSession>
 			}
 			else if (player.isMentee())
 			{
-				Mentee mentor = MentorManager.getInstance().getMentor(player.ObjectId);
+				Mentee? mentor = MentorManager.getInstance().getMentor(player.ObjectId);
 				if ((mentor != null) && (mentor.getObjectId() == objectId))
 				{
 					MentorManager.getInstance().cancelAllMentoringBuffs(player);
-					
+
 					if (MentorManager.getInstance().isAllMenteesOffline(mentor.getObjectId(), player.ObjectId))
 					{
 						MentorManager.getInstance().cancelAllMentoringBuffs(mentor.getPlayer());
 					}
-					
+
 					MentorManager.getInstance().setPenalty(mentor.getObjectId(), TimeSpan.FromDays(Config.MENTOR_PENALTY_FOR_MENTEE_LEAVE)); // TODO: verify period
 					MentorManager.getInstance().deleteMentor(mentor.getObjectId(), player.ObjectId);
-					
+
 					// Notify to scripts
 					if (player.Events.HasSubscribers<OnPlayerMenteeLeft>())
 					{
 						player.Events.NotifyAsync(new OnPlayerMenteeLeft(mentor, player));
 					}
-					
+
 					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_S_MENTORING_CONTRACT_IS_CANCELLED_THE_MENTOR_CANNOT_BOND_WITH_ANOTHER_MENTEE_FOR_2_DAYS);
 					sm.Params.addString(_name);
 					mentor.getPlayer().sendPacket(sm);
 				}
 			}
-       
+
         return ValueTask.CompletedTask;
     }
 }

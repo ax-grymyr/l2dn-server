@@ -20,10 +20,10 @@ public struct SnoopQuitPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Player target = World.getInstance().getPlayer(_snoopId);
+        Player? target = World.getInstance().getPlayer(_snoopId);
         if (target == null)
             return ValueTask.CompletedTask;
-		
+
         target.removeSnooper(player);
         player.removeSnooped(target);
 

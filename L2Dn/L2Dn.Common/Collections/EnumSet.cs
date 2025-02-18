@@ -10,6 +10,7 @@ public struct EnumSet<TEnum, TStorage>
 
     public EnumSet()
     {
+        _storage = default;
         if (_storage.Capacity < EnumUtil.GetMaxValue<TEnum>().ToInt64())
             throw new InvalidOperationException("Storage capacity is too small");
     }

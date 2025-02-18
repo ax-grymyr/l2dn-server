@@ -27,10 +27,10 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 		Player? requestor = session.Player;
 		if (requestor == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (!Enum.IsDefined(_partyDistributionType))
 			return ValueTask.CompletedTask;
-		
+
 		ClientSettings clientSettings = requestor.getClientSettings();
 		if (clientSettings.getPartyContributionType() != _partyDistributionType)
 		{
@@ -52,30 +52,31 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 			{
 				requestor.sendPacket(SystemMessageId.WAITING_FOR_ANOTHER_REPLY);
 			}
-			
+
 			return ValueTask.CompletedTask;
 		}
-		
+
 		Player target = World.getInstance().getPlayer(_name);
 		if (target == null)
 		{
 			requestor.sendPacket(SystemMessageId.SELECT_A_PLAYER_YOU_WANT_TO_INVITE_TO_YOUR_PARTY);
 			return ValueTask.CompletedTask;
 		}
-		
-		if (target.getClient() == null || target.getClient().IsDetached)
+
+        GameSession? targetClient = target.getClient();
+		if (targetClient == null || targetClient.IsDetached)
 		{
 			requestor.sendMessage("Player is in offline mode.");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (requestor.isPartyBanned())
 		{
 			requestor.sendPacket(SystemMessageId.YOU_HAVE_BEEN_REPORTED_AS_AN_ILLEGAL_PROGRAM_USER_SO_PARTICIPATING_IN_A_PARTY_IS_NOT_ALLOWED);
 			requestor.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (target.isPartyBanned())
 		{
 			sm = new SystemMessagePacket(SystemMessageId.C1_HAS_BEEN_REPORTED_AS_AN_ILLEGAL_PROGRAM_USER_AND_CANNOT_JOIN_A_PARTY);
@@ -83,13 +84,13 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 			requestor.sendPacket(sm);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (requestor.isRegisteredOnEvent())
 		{
 			requestor.sendMessage("You cannot invite to a party while participating in an event.");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (target.isInParty())
 		{
 			sm = new SystemMessagePacket(SystemMessageId.C1_IS_A_MEMBER_OF_ANOTHER_PARTY_AND_CANNOT_BE_INVITED);
@@ -97,7 +98,7 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 			requestor.sendPacket(sm);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (BlockList.isBlocked(target, requestor))
 		{
 			sm = new SystemMessagePacket(SystemMessageId.C1_HAS_ADDED_YOU_TO_THEIR_IGNORE_LIST);
@@ -105,7 +106,7 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 			requestor.sendPacket(sm);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (target == requestor)
 		{
 			requestor.sendPacket(SystemMessageId.THE_TARGET_CANNOT_BE_INVITED);
@@ -121,7 +122,7 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 			sm = new SystemMessagePacket(SystemMessageId.PARTY_INVITATION_IS_SET_UP_TO_BE_REJECTED_AT_PREFERENCES_THE_PARTY_INVITATION_OF_C1_IS_AUTOMATICALLY_REJECTED);
 			sm.Params.addPcName(requestor);
 			target.sendPacket(sm);
-			
+
 			return ValueTask.CompletedTask;
 		}
 
@@ -130,26 +131,26 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 			requestor.sendPacket(SystemMessageId.INVALID_TARGET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (target.isJailed() || requestor.isJailed())
 		{
 			requestor.sendMessage("You cannot invite a player while is in Jail.");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if ((target.isInOlympiadMode() || requestor.isInOlympiadMode()) &&
-		    (target.isInOlympiadMode() != requestor.isInOlympiadMode() || 
-		     target.getOlympiadGameId() != requestor.getOlympiadGameId() || 
+		    (target.isInOlympiadMode() != requestor.isInOlympiadMode() ||
+		     target.getOlympiadGameId() != requestor.getOlympiadGameId() ||
 		     target.getOlympiadSide() != requestor.getOlympiadSide()))
 		{
 			requestor.sendPacket(SystemMessageId.A_USER_CURRENTLY_PARTICIPATING_IN_THE_OLYMPIAD_CANNOT_SEND_PARTY_AND_FRIEND_INVITATIONS);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		sm = new SystemMessagePacket(SystemMessageId.C1_HAS_BEEN_INVITED_TO_THE_PARTY);
 		sm.Params.addString(target.getName());
 		requestor.sendPacket(sm);
-		
+
 		if (!requestor.isInParty())
 		{
 			createNewParty(target, requestor, _partyDistributionType);
@@ -161,7 +162,7 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 
 		return ValueTask.CompletedTask;
 	}
-	
+
 	/**
 	 * @param target
 	 * @param requestor
@@ -169,7 +170,7 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 	private void addTargetToParty(Player target, Player requestor)
 	{
 		Party party = requestor.getParty();
-		
+
 		// summary of ppl already in party and ppl that get invitation
 		if (!party.isLeader(requestor))
 		{
@@ -199,7 +200,7 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 			requestor.sendPacket(sm);
 		}
 	}
-	
+
 	/**
 	 * @param target
 	 * @param requestor
@@ -228,7 +229,7 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 		bool condition = targetClientSettings.isPartyRequestRestrictedFromOthers();
 		bool clanCheck = target.getClan() != null && requestor.getClan() != null &&
 		                 target.getClan() == requestor.getClan();
-		
+
 		if (condition &&
 		    ((!targetClientSettings.isPartyRequestRestrictedFromFriends() &&
 		      target.getFriendList().Contains(requestor.ObjectId)) ||
@@ -252,7 +253,7 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 			{
 				player.sendPacket(SystemMessageId.THE_PLAYER_HAS_DECLINED_TO_JOIN_YOUR_PARTY);
 			}
-			
+
 			player.onTransactionResponse();
 		}
 	}

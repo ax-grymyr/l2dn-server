@@ -13,38 +13,38 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 public class FriendlyNpc : Attackable
 {
 	private bool _isAutoAttackable = true;
-	
+
 	public FriendlyNpc(NpcTemplate template): base(template)
 	{
 		InstanceType = InstanceType.FriendlyNpc;
 		setCanReturnToSpawnPoint(false);
 	}
-	
+
 	public override bool isAttackable()
 	{
 		return false;
 	}
-	
+
 	public override bool isAutoAttackable(Creature attacker)
 	{
 		return _isAutoAttackable && !attacker.isPlayable() && !(attacker is FriendlyNpc);
 	}
-	
+
 	public override void setAutoAttackable(bool value)
 	{
 		_isAutoAttackable = value;
 	}
-	
+
 	public override void addDamage(Creature attacker, int damage, Skill skill)
 	{
 		if (!attacker.isPlayable() && !(attacker is FriendlyNpc))
 		{
 			base.addDamage(attacker, damage, skill);
 		}
-		
+
 		Events.Notify(new OnAttackableAttack(null, this, damage, skill, false));
 	}
-	
+
 	public override void addDamageHate(Creature attacker, long damage, long aggro)
 	{
 		if (!attacker.isPlayable() && !(attacker is FriendlyNpc))
@@ -52,31 +52,31 @@ public class FriendlyNpc : Attackable
 			base.addDamageHate(attacker, damage, aggro);
 		}
 	}
-	
-	public override bool doDie(Creature killer)
+
+	public override bool doDie(Creature? killer)
 	{
 		// Kill the Npc (the corpse disappeared after 7 seconds)
 		if (!base.doDie(killer))
 		{
 			return false;
 		}
-		
+
 		// Notify to scripts.
 		if (killer != null)
 		{
 			Events.Notify(new OnAttackableKill(null, this, false));
 		}
-		
+
 		return true;
 	}
-	
+
 	public override void onAction(Player player, bool interact)
 	{
 		if (!canTarget(player))
 		{
 			return;
 		}
-		
+
 		// Check if the Player already target the GuardInstance
 		if (ObjectId != player.getTargetId())
 		{
@@ -94,7 +94,7 @@ public class FriendlyNpc : Attackable
 			else
 			{
 				player.setLastFolkNPC(this);
-				
+
 				// Open a chat window on client with the text of the GuardInstance
 				if (Events.HasSubscribers<OnNpcQuestStart>())
 				{
@@ -114,7 +114,7 @@ public class FriendlyNpc : Attackable
 		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 	}
-	
+
 	public override string getHtmlPath(int npcId, int value, Player player)
 	{
 		string pom = "";
@@ -128,7 +128,7 @@ public class FriendlyNpc : Attackable
 		}
 		return "html/default/" + pom + ".htm";
 	}
-	
+
 	protected override CreatureAI initAI()
 	{
 		return new FriendlyNpcAI(this);

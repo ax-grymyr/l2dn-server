@@ -52,9 +52,9 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		Inventory.PAPERDOLL_HAIR,
 		Inventory.PAPERDOLL_HAIR2
 	];
-	
+
 	private readonly Player _player;
-	private readonly Clan _clan;
+	private readonly Clan? _clan;
 	private int _objId;
 	private Location _location;
 	private readonly int _mAtkSpd;
@@ -205,7 +205,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		writer.WriteByte((byte)(_player.isCursedWeaponEquipped()
 			? CursedWeaponsManager.getInstance().getLevel(_player.getCursedWeaponEquippedId())
 			: 0));
-		
+
 		writer.WriteInt32(_clan != null ? _clan.getReputationScore() : 0);
 		writer.WriteInt32(_player.getTransformationDisplayId()); // Confirmed
 		writer.WriteInt32(_player.getAgathionId()); // Confirmed

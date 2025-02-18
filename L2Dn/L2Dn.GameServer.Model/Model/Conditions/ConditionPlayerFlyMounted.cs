@@ -8,21 +8,11 @@ namespace L2Dn.GameServer.Model.Conditions;
  * The Class ConditionPlayerFlyMounted.
  * @author kerberos
  */
-public class ConditionPlayerFlyMounted: Condition
+public sealed class ConditionPlayerFlyMounted(bool value): Condition
 {
-	private readonly bool _value;
-	
-	/**
-	 * Instantiates a new condition player fly mounted.
-	 * @param value the value
-	 */
-	public ConditionPlayerFlyMounted(bool value)
-	{
-		_value = value;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		return (effector.getActingPlayer() == null) || (effector.getActingPlayer().isFlyingMounted() == _value);
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? player = effector.getActingPlayer();
+        return player is null || player.isFlyingMounted() == value;
+    }
 }

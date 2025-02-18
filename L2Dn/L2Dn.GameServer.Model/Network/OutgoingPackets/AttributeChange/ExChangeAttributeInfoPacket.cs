@@ -10,7 +10,7 @@ public readonly struct ExChangeAttributeInfoPacket: IOutgoingPacket
     private readonly int _crystalItemId;
     private readonly int _attributes;
     private readonly int _itemObjId;
-	
+
     public ExChangeAttributeInfoPacket(int crystalItemId, Item item)
     {
         _crystalItemId = crystalItemId;
@@ -22,12 +22,14 @@ public readonly struct ExChangeAttributeInfoPacket: IOutgoingPacket
                 _attributes |= 1 << (int)e;
             }
         }
+
+        _itemObjId = 0;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_CHANGE_ATTRIBUTE_INFO);
-        
+
         writer.WriteInt32(_crystalItemId);
         writer.WriteInt32(_attributes);
         writer.WriteInt32(_itemObjId);

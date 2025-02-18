@@ -11,14 +11,14 @@ public class PeaceZone : ZoneType
 	public PeaceZone(int id): base(id)
 	{
 	}
-	
+
 	protected override void onEnter(Creature creature)
 	{
 		if (!isEnabled())
 		{
 			return;
 		}
-		
+
 		if (creature.isPlayer())
 		{
 			Player player = creature.getActingPlayer();
@@ -29,43 +29,43 @@ public class PeaceZone : ZoneType
 				return;
 			}
 		}
-		
+
 		if (Config.PEACE_ZONE_MODE != 2)
 		{
 			creature.setInsideZone(ZoneId.PEACE, true);
 		}
-		
+
 		if (!getAllowStore())
 		{
 			creature.setInsideZone(ZoneId.NO_STORE, true);
 		}
-		
+
 		// Send player info to nearby players.
 		if (creature.isPlayer())
 		{
 			creature.broadcastInfo();
 		}
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
 		if (Config.PEACE_ZONE_MODE != 2)
 		{
 			creature.setInsideZone(ZoneId.PEACE, false);
 		}
-		
+
 		if (!getAllowStore())
 		{
 			creature.setInsideZone(ZoneId.NO_STORE, false);
 		}
-		
+
 		// Send player info to nearby players.
 		if (creature.isPlayer() && !creature.isTeleporting())
 		{
 			creature.broadcastInfo();
 		}
 	}
-	
+
 	public override void setEnabled(bool value)
 	{
 		base.setEnabled(value);
@@ -76,12 +76,12 @@ public class PeaceZone : ZoneType
 				if ((player != null) && isInsideZone(player))
 				{
 					revalidateInZone(player);
-					
+
 					if (player.getPet() != null)
 					{
 						revalidateInZone(player.getPet());
 					}
-					
+
 					foreach (Summon summon in player.getServitors().Values)
 					{
 						revalidateInZone(summon);

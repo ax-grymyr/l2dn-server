@@ -25,17 +25,17 @@ public struct RequestGmCommandPacket: IIncomingPacket<GameSession>
         Player? thisPlayer = session.Player;
         if (thisPlayer is null)
             return ValueTask.CompletedTask;
-        
+
         if (!thisPlayer.isGM() || !thisPlayer.getAccessLevel().allowAltG())
             return ValueTask.CompletedTask;
-		
+
         Player player = World.getInstance().getPlayer(_targetName);
-        Clan clan = ClanTable.getInstance().getClanByName(_targetName);
-		
+        Clan? clan = ClanTable.getInstance().getClanByName(_targetName);
+
         // player name was incorrect?
         if (player == null && (clan == null || _command != 6))
             return ValueTask.CompletedTask;
-		
+
         switch (_command)
         {
             case 1: // player status
@@ -83,7 +83,7 @@ public struct RequestGmCommandPacket: IIncomingPacket<GameSession>
                     connection.Send(new GMViewWarehouseWithdrawListPacket(1, clan));
                     connection.Send(new GMViewWarehouseWithdrawListPacket(2, clan));
                 }
-                
+
                 break;
             }
         }

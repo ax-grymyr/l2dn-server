@@ -64,7 +64,7 @@ public struct RequestItemEnsoulPacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.SOUL_CRYSTAL_INSERTION_IS_IMPOSSIBLE_WHILE_IN_FROZEN_STATE);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.isDead())
 		{
 			player.sendPacket(SystemMessageId.SOUL_CRYSTAL_INSERTION_IS_IMPOSSIBLE_IF_THE_CHARACTER_IS_DEAD);
@@ -100,8 +100,8 @@ public struct RequestItemEnsoulPacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.SOUL_CRYSTAL_INSERTION_IS_IMPOSSIBLE_DURING_COMBAT);
 			return ValueTask.CompletedTask;
 		}
-		
-		Item item = player.getInventory().getItemByObjectId(_itemObjectId);
+
+		Item? item = player.getInventory().getItemByObjectId(_itemObjectId);
 		if (item == null)
 		{
 			PacketLogger.Instance.Warn("Player: " + player + " attempting to ensoul item without having it!");
@@ -110,7 +110,7 @@ public struct RequestItemEnsoulPacket: IIncomingPacket<GameSession>
 
 		ItemTemplate template = item.getTemplate();
 		CrystalType itemGrade = template.getCrystalType();
-		
+
 		if (_type == 1 && template.getEnsoulSlots() == 0)
 		{
 			PacketLogger.Instance.Warn("Player: " + player + " attempting to ensoul non ensoulable item: " + item + "!");
@@ -152,39 +152,39 @@ public struct RequestItemEnsoulPacket: IIncomingPacket<GameSession>
 			PacketLogger.Instance.Warn("Player: " + player + " attempting to ensoul item without any special ability declared!");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		int success = 0;
 		List<ItemInfo> itemsToUpdate = new List<ItemInfo>();
 		foreach (EnsoulItemOption itemOption in _options)
 		{
 			int position = itemOption.getPosition() - 1;
-			Item soulCrystal = player.getInventory().getItemByObjectId(itemOption.getSoulCrystalObjectId());
+			Item? soulCrystal = player.getInventory().getItemByObjectId(itemOption.getSoulCrystalObjectId());
 			if (soulCrystal == null)
 			{
 				player.sendPacket(SystemMessageId.INVALID_SOUL_CRYSTAL);
 				continue;
 			}
-			
-			EnsoulStone stone = EnsoulData.getInstance().getStone(soulCrystal.getId());
+
+			EnsoulStone? stone = EnsoulData.getInstance().getStone(soulCrystal.getId());
 			if (stone == null)
 			{
 				continue;
 			}
-			
+
 			if (!stone.getOptions().Contains(itemOption.getSoulCrystalOption()))
 			{
 				PacketLogger.Instance.Warn("Player: " + player + " attempting to ensoul item option that stone doesn't contains!");
 				continue;
 			}
-			
-			EnsoulOption option = EnsoulData.getInstance().getOption(itemOption.getSoulCrystalOption());
+
+			EnsoulOption? option = EnsoulData.getInstance().getOption(itemOption.getSoulCrystalOption());
 			if (option == null)
 			{
 				PacketLogger.Instance.Warn("Player: " + player + " attempting to ensoul item option that doesn't exists!");
 				continue;
 			}
-			
-			ItemHolder fee;
+
+			ItemHolder? fee;
 			if (itemOption.getType() == 1)
 			{
 				// Normal Soul Crystal
@@ -208,19 +208,19 @@ public struct RequestItemEnsoulPacket: IIncomingPacket<GameSession>
 				PacketLogger.Instance.Warn("Player: " + player +
 				                           " attempting to ensoul item option with unhandled type: " +
 				                           itemOption.getType() + "!");
-				
+
 				continue;
 			}
-			
+
 			if (fee == null)
 			{
 				PacketLogger.Instance.Warn("Player: " + player +
 				                           " attempting to ensoul item option that doesn't exists! (unknown fee)");
-				
+
 				continue;
 			}
-			
-			Item gemStones = player.getInventory().getItemByItemId(fee.getId());
+
+			Item? gemStones = player.getInventory().getItemByItemId(fee.getId());
 			if (gemStones == null || gemStones.getCount() < fee.getCount())
 			{
 				continue;
@@ -252,7 +252,7 @@ public struct RequestItemEnsoulPacket: IIncomingPacket<GameSession>
 
 			itemsToUpdate.Add(new ItemInfo(item, ItemChangeType.MODIFIED));
 		}
-		
+
 		InventoryUpdatePacket iu = new InventoryUpdatePacket(itemsToUpdate);
 		player.sendInventoryUpdate(iu);
 
@@ -263,17 +263,17 @@ public struct RequestItemEnsoulPacket: IIncomingPacket<GameSession>
 
 		player.sendPacket(new ExEnsoulResultPacket(success, item));
 		item.updateDatabase(true);
-        
+
         return ValueTask.CompletedTask;
     }
-    
+
     private sealed class EnsoulItemOption
     {
         private readonly int _type;
         private readonly int _position;
         private readonly int _soulCrystalObjectId;
         private readonly int _soulCrystalOption;
-		
+
         public EnsoulItemOption(int type, int position, int soulCrystalObjectId, int soulCrystalOption)
         {
             _type = type;
@@ -281,22 +281,22 @@ public struct RequestItemEnsoulPacket: IIncomingPacket<GameSession>
             _soulCrystalObjectId = soulCrystalObjectId;
             _soulCrystalOption = soulCrystalOption;
         }
-		
+
         public int getType()
         {
             return _type;
         }
-		
+
         public int getPosition()
         {
             return _position;
         }
-		
+
         public int getSoulCrystalObjectId()
         {
             return _soulCrystalObjectId;
         }
-		
+
         public int getSoulCrystalOption()
         {
             return _soulCrystalOption;

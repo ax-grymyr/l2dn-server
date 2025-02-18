@@ -20,7 +20,7 @@ public readonly struct AgitDecoInfoPacket: IOutgoingPacket
 		writer.WriteInt32(_residense.getResidenceId());
 
 		// Fireplace
-		ResidenceFunction function = _residense.getFunction(ResidenceFunctionType.HP_REGEN);
+		ResidenceFunction? function = _residense.getFunction(ResidenceFunctionType.HP_REGEN);
 		if ((function == null) || (function.getLevel() == 0))
 		{
 			writer.WriteByte(0);

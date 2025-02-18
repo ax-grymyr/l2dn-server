@@ -9,12 +9,12 @@ namespace L2Dn.GameServer.Handlers;
 public class VoicedCommandHandler: IHandler<IVoicedCommandHandler, string>
 {
 	private readonly Map<string, IVoicedCommandHandler> _datatable;
-	
+
 	protected VoicedCommandHandler()
 	{
 		_datatable = new();
 	}
-	
+
 	public void registerHandler(IVoicedCommandHandler handler)
 	{
 		foreach (string id in handler.getVoicedCommandList())
@@ -31,22 +31,24 @@ public class VoicedCommandHandler: IHandler<IVoicedCommandHandler, string>
 			_datatable.remove(id);
 		}
 	}
-	
-	public IVoicedCommandHandler getHandler(string voicedCommand)
-	{
-		return _datatable.get(voicedCommand.Contains(" ") ? voicedCommand.Substring(0, voicedCommand.IndexOf(' ')) : voicedCommand);
-	}
-	
+
+	public IVoicedCommandHandler? getHandler(string voicedCommand)
+    {
+        return _datatable.get(voicedCommand.Contains(" ")
+            ? voicedCommand.Substring(0, voicedCommand.IndexOf(' '))
+            : voicedCommand);
+    }
+
 	public int size()
 	{
 		return _datatable.Count;
 	}
-	
+
 	public static VoicedCommandHandler getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly VoicedCommandHandler INSTANCE = new VoicedCommandHandler();

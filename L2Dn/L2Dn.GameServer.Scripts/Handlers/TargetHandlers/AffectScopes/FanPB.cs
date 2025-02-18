@@ -18,14 +18,14 @@ public class FanPB: IAffectScopeHandler
 	public void forEachAffected<T>(Creature creature, WorldObject target, Skill skill, Action<T> action)
 		where T: WorldObject
 	{
-		IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		double headingAngle = HeadingUtil.ConvertHeadingToDegrees(creature.getHeading());
 		int fanStartAngle = skill.getFanRange()[1];
 		int fanRadius = skill.getFanRange()[2];
 		int fanAngle = skill.getFanRange()[3];
 		double fanHalfAngle = fanAngle / 2.0; // Half left and half right.
 		int affectLimit = skill.getAffectLimit();
-		
+
 		// Target checks.
 		AtomicInteger affected = new AtomicInteger(0);
 		Predicate<Creature> filter = c =>
@@ -52,11 +52,11 @@ public class FanPB: IAffectScopeHandler
 			{
 				return false;
 			}
-			
+
 			affected.incrementAndGet();
 			return true;
 		};
-		
+
 		// Check and add targets.
 		World.getInstance().forEachVisibleObjectInRange<Creature>(creature, fanRadius, c =>
 		{
@@ -66,7 +66,7 @@ public class FanPB: IAffectScopeHandler
 			}
 		});
 	}
-	
+
 	public AffectScope getAffectScopeType()
 	{
 		return AffectScope.FAN_PB;

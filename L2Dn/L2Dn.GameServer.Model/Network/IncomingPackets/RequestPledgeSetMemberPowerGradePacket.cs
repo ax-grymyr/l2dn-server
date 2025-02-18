@@ -23,38 +23,38 @@ public struct RequestPledgeSetMemberPowerGradePacket: IIncomingPacket<GameSessio
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        Clan clan = player.getClan();
+
+        Clan? clan = player.getClan();
         if (clan == null)
             return ValueTask.CompletedTask;
-		
+
         if (!player.hasClanPrivilege(ClanPrivilege.CL_MANAGE_RANKS))
             return ValueTask.CompletedTask;
-		
+
         ClanMember member = clan.getClanMember(_member);
         if (member == null)
             return ValueTask.CompletedTask;
-		
+
         if (member.getObjectId() == clan.getLeaderId())
             return ValueTask.CompletedTask;
-		
+
         if (member.getPledgeType() == Clan.SUBUNIT_ACADEMY)
         {
             // also checked from client side
             player.sendPacket(SystemMessageId.THAT_PRIVILEGE_CANNOT_BE_GRANTED_TO_A_CLAN_ACADEMY_MEMBER);
             return ValueTask.CompletedTask;
         }
-		
+
         member.setPowerGrade(_powerGrade);
         clan.broadcastToOnlineMembers(new PledgeShowMemberListUpdatePacket(member));
 
         SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.CLAN_MEMBER_C1_S_PRIVILEGE_LEVEL_HAS_BEEN_CHANGED_TO_S2);
         sm.Params.addString(member.getName()).addInt(_powerGrade);
         clan.broadcastToOnlineMembers(sm);
-		
+
         // Fixes sometimes not updating when member privileges change.
         clan.broadcastClanStatus();
- 
+
         return ValueTask.CompletedTask;
     }
 }

@@ -25,13 +25,13 @@ public struct RequestExOustFromMpccRoomPacket: IIncomingPacket<GameSession>
         MatchingRoom room = player.getMatchingRoom();
         if (room != null && room.getLeader() == player && room.getRoomType() == MatchingRoomType.COMMAND_CHANNEL)
         {
-            Player target = World.getInstance().getPlayer(_objectId);
+            Player? target = World.getInstance().getPlayer(_objectId);
             if (target != null)
             {
                 room.deleteMember(target, true);
             }
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

@@ -15,18 +15,18 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class MentorManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(MentorManager));
-	
+
 	private readonly Map<int, Map<int, Mentee>> _menteeData = new();
 	private readonly Map<int, Mentee> _mentors = new();
-	
+
 	protected MentorManager()
 	{
 		load();
 	}
-	
+
 	private void load()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (CharacterMentee mentee in ctx.CharacterMentees)
@@ -39,7 +39,7 @@ public class MentorManager
 			LOGGER.Warn(e);
 		}
 	}
-	
+
 	/**
 	 * Removes mentee for current Player
 	 * @param mentorId
@@ -47,7 +47,7 @@ public class MentorManager
 	 */
 	public void deleteMentee(int mentorId, int menteeId)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterMentees.Where(r => r.MentorId == mentorId && r.CharacterId == menteeId).ExecuteDelete();
@@ -57,14 +57,14 @@ public class MentorManager
 			LOGGER.Warn(e);
 		}
 	}
-	
+
 	/**
 	 * @param mentorId
 	 * @param menteeId
 	 */
 	public void deleteMentor(int mentorId, int menteeId)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterMentees.Where(r => r.MentorId == mentorId && r.CharacterId == menteeId).ExecuteDelete();
@@ -78,12 +78,12 @@ public class MentorManager
 			removeMentor(mentorId, menteeId);
 		}
 	}
-	
+
 	public bool isMentor(int objectId)
 	{
 		return _menteeData.ContainsKey(objectId);
 	}
-	
+
 	public bool isMentee(int objectId)
 	{
 		foreach (Map<int, Mentee> map in _menteeData.Values)
@@ -95,19 +95,19 @@ public class MentorManager
 		}
 		return false;
 	}
-	
+
 	public Map<int, Map<int, Mentee>> getMentorData()
 	{
 		return _menteeData;
 	}
-	
+
 	public void cancelAllMentoringBuffs(Player player)
 	{
 		if (player == null)
 		{
 			return;
 		}
-		
+
 		foreach (BuffInfo info in player.getEffectList().getEffects())
 		{
 			if (info.getSkill().isMentoring())
@@ -116,21 +116,21 @@ public class MentorManager
 			}
 		}
 	}
-	
+
 	public void setPenalty(int mentorId, TimeSpan penalty)
 	{
-		Player player = World.getInstance().getPlayer(mentorId);
+		Player? player = World.getInstance().getPlayer(mentorId);
 		PlayerVariables vars = player != null ? player.getVariables() : new PlayerVariables(mentorId);
 		vars.set("Mentor-Penalty-" + mentorId, DateTime.UtcNow + penalty);
 	}
-	
+
 	public DateTime getMentorPenalty(int mentorId)
 	{
-		Player player = World.getInstance().getPlayer(mentorId);
+		Player? player = World.getInstance().getPlayer(mentorId);
 		PlayerVariables vars = player != null ? player.getVariables() : new PlayerVariables(mentorId);
 		return vars.getDateTime("Mentor-Penalty-" + mentorId, DateTime.MinValue);
 	}
-	
+
 	/**
 	 * @param mentorId
 	 * @param menteeId
@@ -147,7 +147,7 @@ public class MentorManager
 			mentees.put(menteeId, new Mentee(menteeId));
 		}
 	}
-	
+
 	/**
 	 * @param mentorId
 	 * @param menteeId
@@ -164,12 +164,12 @@ public class MentorManager
 			}
 		}
 	}
-	
+
 	/**
 	 * @param menteeId
 	 * @return
 	 */
-	public Mentee getMentor(int menteeId)
+	public Mentee? getMentor(int menteeId)
 	{
 		foreach (var map in _menteeData)
 		{
@@ -185,12 +185,12 @@ public class MentorManager
 		}
 		return null;
 	}
-	
+
 	public ICollection<Mentee> getMentees(int mentorId)
 	{
 		return _menteeData.TryGetValue(mentorId, out Map<int, Mentee>? mentees) ? mentees.Values : [];
 	}
-	
+
 	/**
 	 * @param mentorId
 	 * @param menteeId
@@ -200,7 +200,7 @@ public class MentorManager
 	{
 		return _menteeData.GetValueOrDefault(mentorId)?.GetValueOrDefault(menteeId);
 	}
-	
+
 	public bool isAllMenteesOffline(int mentorId, int menteeId)
 	{
 		bool isAllMenteesOffline = true;
@@ -214,7 +214,7 @@ public class MentorManager
 		}
 		return isAllMenteesOffline;
 	}
-	
+
 	public bool hasOnlineMentees(int menteorId)
 	{
 		foreach (Mentee mentee in getMentees(menteorId))
@@ -226,12 +226,12 @@ public class MentorManager
 		}
 		return false;
 	}
-	
+
 	public static MentorManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly MentorManager INSTANCE = new MentorManager();

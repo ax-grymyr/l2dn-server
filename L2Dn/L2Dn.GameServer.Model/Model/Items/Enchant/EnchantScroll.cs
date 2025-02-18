@@ -100,7 +100,7 @@ public class EnchantScroll: AbstractEnchantItem
 	 * @param supportItem the support item used when enchanting (can be null)
 	 * @return {@code true} if this scroll can be used with the specified support item and the item to be enchanted, {@code false} otherwise
 	 */
-	public override bool isValid(Item itemToEnchant, EnchantSupportItem supportItem)
+	public override bool isValid(Item itemToEnchant, EnchantSupportItem? supportItem)
 	{
 		if (_items.Count != 0 && !_items.ContainsKey(itemToEnchant.getId()))
 		{
@@ -172,8 +172,9 @@ public class EnchantScroll: AbstractEnchantItem
 			return -1;
 		}
 
-		EnchantItemGroup group = EnchantItemGroupsData.getInstance()
+		EnchantItemGroup? group = EnchantItemGroupsData.getInstance()
 			.getItemGroup(enchantItem.getTemplate(), scrollGroupId);
+
 		if (group == null)
 		{
 			_logger.Warn(GetType().Name + ": Couldn't find enchant item group for scroll: " + getId() +
@@ -195,7 +196,7 @@ public class EnchantScroll: AbstractEnchantItem
 	 * @param supportItem
 	 * @return the total chance for success rate of this scroll
 	 */
-	public EnchantResultType calculateSuccess(Player player, Item enchantItem, EnchantSupportItem supportItem)
+	public EnchantResultType calculateSuccess(Player player, Item enchantItem, EnchantSupportItem? supportItem)
 	{
 		if (!isValid(enchantItem, supportItem))
 		{

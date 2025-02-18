@@ -24,7 +24,7 @@ namespace L2Dn.GameServer.Model.Actor.Templates;
 public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvider
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(NpcTemplate));
-	
+
 	private int _id;
 	private int _displayId;
 	private int _level;
@@ -79,11 +79,11 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	private Map<int, Skill> _skills;
 	private Map<AISkillScope, List<Skill>> _aiSkillLists;
 	private Set<int> _clans;
-	private Set<int> _ignoreClanNpcIds;
-	private List<DropGroupHolder> _dropGroups;
-	private List<DropHolder> _dropListDeath;
-	private List<DropHolder> _dropListSpoil;
-	private List<DropHolder> _dropListFortune;
+	private Set<int>? _ignoreClanNpcIds;
+	private List<DropGroupHolder>? _dropGroups;
+	private List<DropHolder>? _dropListDeath;
+	private List<DropHolder>? _dropListSpoil;
+	private List<DropHolder>? _dropListFortune;
 	private float _collisionRadiusGrown;
 	private float _collisionHeightGrown;
 	private int _mpRewardValue;
@@ -92,7 +92,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	private MpRewardAffectType _mpRewardAffectType;
 	private ElementalType _elementalType;
 	private long _attributeExp;
-	
+
 	/**
 	 * Constructor of Creature.
 	 * @param set The StatSet object to transfer data to the method
@@ -100,7 +100,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	public NpcTemplate(StatSet set): base(set)
 	{
 	}
-	
+
 	public override void set(StatSet set)
 	{
 		base.set(set);
@@ -1306,7 +1306,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 					{
 						rateAmount *= Config.PREMIUM_RATE_SPOIL_AMOUNT;
 					}
-					
+
 					// finally
 					return new ItemHolder(dropItem.getItemId(), (long)(Rnd.get(dropItem.getMin(), dropItem.getMax()) * rateAmount));
 				}
@@ -1315,12 +1315,12 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 		}
 		return null;
 	}
-	
+
 	public float getCollisionRadiusGrown()
 	{
 		return _collisionRadiusGrown;
 	}
-	
+
 	public float getCollisionHeightGrown()
 	{
 		return _collisionHeightGrown;
@@ -1343,7 +1343,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 			"PetManager" => new PetManager(this),
 			"FriendlyMob" => new FriendlyMob(this),
 			"Chest" => new Chest(this),
-			
+
 			"VillageMaster" => new VillageMaster(this),
 			"VillageMasterDElf" => new VillageMasterDElf(this),
 			"VillageMasterDwarf" => new VillageMasterDwarf(this),
@@ -1351,7 +1351,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 			"VillageMasterMystic" => new VillageMasterMystic(this),
 			"VillageMasterOrc" => new VillageMasterOrc(this),
 			"VillageMasterPriest" => new VillageMasterPriest(this),
-			
+
 			_ => throw new NotSupportedException()
 		};
 

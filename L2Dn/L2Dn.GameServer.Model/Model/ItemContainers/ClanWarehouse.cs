@@ -67,7 +67,7 @@ public class ClanWarehouse: Warehouse
 		return base.addItem(process, item, actor, reference);
 	}
 
-	public override Item destroyItem(string process, Item item, long count, Player actor, object reference)
+	public override Item? destroyItem(string process, Item item, long count, Player? actor, object? reference)
 	{
 		// Notify to scripts
 		EventContainer itemEvents = item.getTemplate().Events;

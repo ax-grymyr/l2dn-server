@@ -24,7 +24,7 @@ public struct RequestPledgeWaitingUserPacket: IIncomingPacket<GameSession>
         if (player == null || (player.getClanId() != _clanId))
             return ValueTask.CompletedTask;
 
-        PledgeApplicantInfo infos = ClanEntryManager.getInstance().getPlayerApplication(_clanId, _playerId);
+        PledgeApplicantInfo? infos = ClanEntryManager.getInstance().getPlayerApplication(_clanId, _playerId);
         if (infos == null)
         {
             player.sendPacket(new ExPledgeWaitingListPacket(_clanId));

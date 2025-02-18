@@ -14,19 +14,19 @@ public class DoppelgangerAI : CreatureAI
 {
 	private volatile bool _thinking; // to prevent recursive thinking
 	private volatile bool _startFollow;
-	private Creature _lastAttack = null;
-	
+	private Creature? _lastAttack;
+
 	public DoppelgangerAI(Doppelganger clone): base(clone)
 	{
 	}
-	
+
 	protected override void onIntentionIdle()
 	{
 		stopFollow();
 		_startFollow = false;
 		onIntentionActive();
 	}
-	
+
 	protected override void onIntentionActive()
 	{
 		if (_startFollow)
@@ -38,54 +38,59 @@ public class DoppelgangerAI : CreatureAI
 			base.onIntentionActive();
 		}
 	}
-	
+
 	private void thinkAttack()
 	{
-		WorldObject target = getTarget();
-		Creature attackTarget = (target != null) && target.isCreature() ? (Creature) target : null;
-		if (checkTargetLostOrDead(attackTarget))
+		WorldObject? target = getTarget();
+		Creature? attackTarget = target != null && target.isCreature() ? (Creature) target : null;
+		if (attackTarget is null || checkTargetLostOrDead(attackTarget))
 		{
 			setTarget(null);
 			return;
 		}
-		if (maybeMoveToPawn(target, _actor.getPhysicalAttackRange()))
+
+        if (target is not null && maybeMoveToPawn(target, _actor.getPhysicalAttackRange()))
 		{
 			return;
 		}
+
 		clientStopMoving(null);
 		_actor.doAutoAttack(attackTarget);
 	}
-	
+
 	private void thinkCast()
 	{
 		if (_actor.isCastingNow(x => x.isAnyNormalType()))
 		{
 			return;
 		}
-		
-		WorldObject target = getCastTarget();
+
+		WorldObject? target = getCastTarget();
 		if (checkTargetLost(target))
 		{
 			setCastTarget(null);
 			setTarget(null);
 			return;
 		}
-		
+
 		bool val = _startFollow;
 		if (maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
 		{
 			return;
 		}
-		
+
 		getActor().followSummoner(false);
 		setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		_startFollow = val;
 		_actor.doCast(_skill, _item, _forceUse, _dontMove);
 	}
-	
+
 	private void thinkInteract()
 	{
-		WorldObject target = getTarget();
+		WorldObject? target = getTarget();
+        if (target is null)
+            return;
+
 		if (checkTargetLost(target))
 		{
 			return;
@@ -130,7 +135,7 @@ public class DoppelgangerAI : CreatureAI
 			_thinking = false;
 		}
 	}
-	
+
 	protected override void onEvtFinishCasting()
 	{
 		if (_lastAttack == null)
@@ -143,7 +148,7 @@ public class DoppelgangerAI : CreatureAI
 			_lastAttack = null;
 		}
 	}
-	
+
 	public void notifyFollowStatusChange()
 	{
 		_startFollow = !_startFollow;
@@ -160,17 +165,18 @@ public class DoppelgangerAI : CreatureAI
 			}
 		}
 	}
-	
+
 	public void setStartFollowController(bool value)
 	{
 		_startFollow = value;
 	}
-	
-	protected override void onIntentionCast(Skill skill, WorldObject target, Item item, bool forceUse, bool dontMove)
+
+	protected override void onIntentionCast(Skill skill, WorldObject? target, Item? item, bool forceUse, bool dontMove)
 	{
 		if (getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
-		{
-			_lastAttack = (getTarget() != null) && getTarget().isCreature() ? (Creature) getTarget() : null;
+        {
+            WorldObject? currentTarget = getTarget();
+			_lastAttack = (currentTarget != null) && currentTarget.isCreature() ? (Creature)currentTarget : null;
 		}
 		else
 		{
@@ -179,7 +185,7 @@ public class DoppelgangerAI : CreatureAI
 
 		base.onIntentionCast(skill, target, item, forceUse, dontMove);
 	}
-	
+
 	public override void moveToPawn(WorldObject pawn, int offsetValue)
 	{
 		// Check if actor can move
@@ -190,7 +196,7 @@ public class DoppelgangerAI : CreatureAI
 			{
 				offset = 10;
 			}
-			
+
 			// prevent possible extra calls to this function (there is none?),
 			// also don't send movetopawn packets too often
 			bool sendPacket = true;
@@ -213,7 +219,7 @@ public class DoppelgangerAI : CreatureAI
 					}
 				}
 			}
-			
+
 			// Set AI movement data
 			_clientMoving = true;
 			_clientMovingToPawnOffset = offset;
@@ -224,7 +230,7 @@ public class DoppelgangerAI : CreatureAI
 			{
 				return;
 			}
-			
+
 			// Calculate movement data for a move to location action and add the actor to movingObjects of GameTimeTaskManager
 			// _actor.moveToLocation(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
 			Location3D loc = new(pawn.getX() + Rnd.get(-offset, offset), pawn.getY() + Rnd.get(-offset, offset), pawn.getZ());
@@ -234,7 +240,7 @@ public class DoppelgangerAI : CreatureAI
 				clientActionFailed();
 				return;
 			}
-			
+
 			// Doppelgangers always send MoveToLocation packet.
 			if (sendPacket)
 			{
@@ -246,7 +252,7 @@ public class DoppelgangerAI : CreatureAI
 			clientActionFailed();
 		}
 	}
-	
+
 	public override Doppelganger getActor()
 	{
 		return (Doppelganger)base.getActor();

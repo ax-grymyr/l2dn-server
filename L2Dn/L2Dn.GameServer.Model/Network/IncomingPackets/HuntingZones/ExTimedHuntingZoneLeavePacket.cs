@@ -24,17 +24,17 @@ public struct ExTimedHuntingZoneLeavePacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         if (player.isInCombat())
         {
             connection.Send(new SystemMessagePacket(SystemMessageId.YOU_CANNOT_TELEPORT_IN_BATTLE));
             return ValueTask.CompletedTask;
         }
-		
+
         TimedHuntingZoneHolder huntingZone = player.getTimedHuntingZone();
         if (huntingZone == null)
             return ValueTask.CompletedTask;
-		
+
         Location3D? exitLocation = huntingZone.getExitLocation();
         if (exitLocation != null)
         {
@@ -42,7 +42,7 @@ public struct ExTimedHuntingZoneLeavePacket: IIncomingPacket<GameSession>
         }
         else
         {
-            Instance world = player.getInstanceWorld();
+            Instance? world = player.getInstanceWorld();
             if (world != null)
             {
                 world.ejectPlayer(player);
@@ -52,7 +52,7 @@ public struct ExTimedHuntingZoneLeavePacket: IIncomingPacket<GameSession>
                 player.teleToLocation(TeleportWhereType.TOWN);
             }
         }
-		
+
         ThreadPool.schedule(() => connection.Send(new TimedHuntingZoneExitPacket(huntingZone.getZoneId())), 3000);
         return ValueTask.CompletedTask;
     }

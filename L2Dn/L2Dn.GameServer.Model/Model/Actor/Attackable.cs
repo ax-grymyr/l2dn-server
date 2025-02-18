@@ -54,7 +54,7 @@ public class Attackable: Npc
 	// Over-hit
 	private bool _overhit;
 	private double _overhitDamage;
-	private Creature _overhitAttacker;
+	private Creature? _overhitAttacker;
 
 	// Command channel
 	private CommandChannel _firstCommandChannelAttacked;
@@ -63,7 +63,7 @@ public class Attackable: Npc
 
 	// Misc
 	private bool _mustGiveExpSp;
-	
+
 	/**
 	 * Constructor of Attackable (use Creature and Npc constructor).<br>
 	 * Actions:<br>
@@ -78,47 +78,47 @@ public class Attackable: Npc
 		setInvul(false);
 		_mustGiveExpSp = true;
 	}
-	
+
 	public override AttackableStatus getStatus()
 	{
 		return (AttackableStatus) base.getStatus();
 	}
-	
+
 	public override void initCharStatus()
 	{
 		setStatus(new AttackableStatus(this));
 	}
-	
+
 	protected override CreatureAI initAI()
 	{
 		return new AttackableAI(this);
 	}
-	
+
 	public Map<Creature, AggroInfo> getAggroList()
 	{
 		return _aggroList;
 	}
-	
+
 	public bool canReturnToSpawnPoint()
 	{
 		return _canReturnToSpawnPoint;
 	}
-	
+
 	public void setCanReturnToSpawnPoint(bool value)
 	{
 		_canReturnToSpawnPoint = value;
 	}
-	
+
 	public bool canSeeThroughSilentMove()
 	{
 		return _seeThroughSilentMove;
 	}
-	
+
 	public void setSeeThroughSilentMove(bool value)
 	{
 		_seeThroughSilentMove = value;
 	}
-	
+
 	/**
 	 * Use the skill if minimum checks are pass.
 	 * @param skill the skill
@@ -129,21 +129,21 @@ public class Attackable: Npc
 		{
 			return;
 		}
-		
+
 		WorldObject target = skill.getTarget(this, false, false, false);
 		if (target != null)
 		{
 			getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target);
 		}
 	}
-	
+
 	/**
 	 * Reduce the current HP of the Attackable, update its _aggroList and launch the doDie Task if necessary.
 	 * @param attacker The Creature who attacks
 	 * @param isDOT
 	 * @param skill
 	 */
-	public override void reduceCurrentHp(double value, Creature attacker, Skill skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
+	public override void reduceCurrentHp(double value, Creature? attacker, Skill? skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
 	{
 		if (_isRaid && !isMinion() && (attacker != null) && (attacker.getParty() != null) && attacker.getParty().isInCommandChannel() && attacker.getParty().getCommandChannel().meetRaidWarCondition(this))
 		{
@@ -169,12 +169,12 @@ public class Attackable: Npc
 				_commandChannelLastAttack = DateTime.UtcNow; // update last attack time
 			}
 		}
-		
+
 		// Add damage and hate to the attacker AggroInfo of the Attackable _aggroList
 		if (attacker != null)
 		{
 			addDamage(attacker, (int) value, skill);
-			
+
 			// Check Raidboss attack. Character will be petrified if attacking a raid that's more than 8 levels lower. In retail you deal damage to raid before curse.
 			if (_isRaid && giveRaidCurse() && !Config.RAID_DISABLE_CURSE && (attacker.getLevel() > (getLevel() + 8)))
 			{
@@ -185,7 +185,7 @@ public class Attackable: Npc
 				}
 			}
 		}
-		
+
 		// If this Attackable is a Monster and it has spawned minions, call its minions to battle
 		if (isMonster())
 		{
@@ -194,7 +194,7 @@ public class Attackable: Npc
 			{
 				master.getMinionList().onAssist(this, attacker);
 			}
-			
+
 			master = master.getLeader();
 			if ((master != null) && master.hasMinions())
 			{
@@ -204,19 +204,19 @@ public class Attackable: Npc
 		// Reduce the current HP of the Attackable and launch the doDie Task if necessary
 		base.reduceCurrentHp(value, attacker, skill, isDOT, directlyToHp, critical, reflect);
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void setMustRewardExpSp(bool value)
 	{
 		_mustGiveExpSp = value;
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public bool getMustRewardExpSP()
 	{
 		return _mustGiveExpSp && !isFakePlayer();
 	}
-	
+
 	/**
 	 * Kill the Attackable (the corpse disappeared after 7 seconds), distribute rewards (EXP, SP, Drops...) and notify Quest Engine.<br>
 	 * Actions:<br>
@@ -226,28 +226,28 @@ public class Attackable: Npc
 	 * Caution: This method DOESN'T GIVE rewards to Pet.
 	 * @param killer The Creature that has killed the Attackable
 	 */
-	public override bool doDie(Creature killer)
+	public override bool doDie(Creature? killer)
 	{
 		// Kill the Npc (the corpse disappeared after 7 seconds)
 		if (!base.doDie(killer))
 		{
 			return false;
 		}
-		
+
 		if ((killer != null) && (killer.getActingPlayer() != null))
 		{
 			if ((killer.getClan() != null) && (Rnd.get(100) < 2))
 			{
 				killer.getClan().addExp(killer.ObjectId, 1);
 			}
-			
+
 			// Notify to scripts.
 			if (Events.HasSubscribers<OnAttackableKill>())
 			{
 				Events.NotifyAsync(new OnAttackableKill(killer.getActingPlayer(), this, killer.isSummon()));
 			}
 		}
-		
+
 		// Notify to minions if there are.
 		if (isMonster())
 		{
@@ -257,28 +257,28 @@ public class Attackable: Npc
 				int respawnTime = Config.MINIONS_RESPAWN_TIME.ContainsKey(getId()) ? Config.MINIONS_RESPAWN_TIME[getId()] * 1000 : -1;
 				mob.getLeader().getMinionList().onMinionDie(mob, respawnTime);
 			}
-			
+
 			if (mob.hasMinions())
 			{
 				mob.getMinionList().onMasterDie(false);
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	private class PartyContainer
 	{
 		public Party party;
 		public long damage;
-		
+
 		public PartyContainer(Party party, long damage)
 		{
 			this.party = party;
 			this.damage = damage;
 		}
 	}
-	
+
 	/**
 	 * Distribute Exp and SP rewards to Player (including Summon owner) that hit the Attackable and to their Party members.<br>
 	 * Actions:<br>
@@ -296,14 +296,14 @@ public class Attackable: Npc
 			{
 				return;
 			}
-			
+
 			// NOTE: Concurrent-safe map is used because while iterating to verify all conditions sometimes an entry must be removed.
 			Map<Player, DamageDoneInfo> rewards = new();
-			
+
 			Player maxDealer = null;
 			long maxDamage = 0;
 			long totalDamage = 0;
-			
+
 			// While Iterating over This Map Removing Object is Not Allowed
 			// Go through the _aggroList of the Attackable
 			foreach (AggroInfo info in _aggroList.Values)
@@ -314,10 +314,10 @@ public class Attackable: Npc
 				{
 					continue;
 				}
-				
+
 				// Get damages done by this attacker
 				long damage = info.getDamage();
-				
+
 				// Prevent unwanted behavior
 				if (damage > 1)
 				{
@@ -326,13 +326,13 @@ public class Attackable: Npc
 					{
 						continue;
 					}
-					
+
 					totalDamage += damage;
-					
+
 					// Calculate real damages (Summoners should get own damage plus summon's damage)
 					DamageDoneInfo reward = rewards.computeIfAbsent(attacker, x => new DamageDoneInfo(x));
 					reward.addDamage(damage);
-					
+
 					if (reward.getDamage() > maxDamage)
 					{
 						maxDealer = attacker;
@@ -340,7 +340,7 @@ public class Attackable: Npc
 					}
 				}
 			}
-			
+
 			List<PartyContainer> damagingParties = new();
 			foreach (AggroInfo info in _aggroList.Values)
 			{
@@ -349,14 +349,14 @@ public class Attackable: Npc
 				{
 					continue;
 				}
-				
+
 				long totalMemberDamage = 0;
 				Party party = attacker.getParty();
 				if (party == null)
 				{
 					continue;
 				}
-				
+
 				PartyContainer? partyContainerStream = null;
 				for (int i = 0, damagingPartiesSize = damagingParties.Count; i < damagingPartiesSize; i++)
 				{
@@ -377,14 +377,14 @@ public class Attackable: Npc
 					{
 						continue;
 					}
-					
+
 					if (memberAggro.getDamage() > 1)
 					{
 						totalMemberDamage += memberAggro.getDamage();
 					}
 				}
 				container.damage = totalMemberDamage;
-				
+
 				if (partyContainerStream is not null)
 				{
 					damagingParties.Add(container);
@@ -425,7 +425,7 @@ public class Attackable: Npc
 							}
 						}
 					}
-					
+
 					members.ForEach(p =>
 					{
 						int points = (int) (Math.Max(raidbossPoints / members.Count, 1) * p.getStat().getValue(Stat.BONUS_RAID_POINTS, 1));
@@ -452,7 +452,7 @@ public class Attackable: Npc
 					}
 				}
 			}
-			
+
 			if ((mostDamageParty != null) && (mostDamageParty.damage > maxDamage))
 			{
 				Player leader = mostDamageParty.party.getLeader();
@@ -464,12 +464,12 @@ public class Attackable: Npc
 				doItemDrop((maxDealer != null) && maxDealer.isOnline() ? maxDealer : lastAttacker);
 				EventDropManager.getInstance().doEventDrop(lastAttacker, this);
 			}
-			
+
 			if (!getMustRewardExpSP())
 			{
 				return;
 			}
-			
+
 			if (rewards.Count != 0)
 			{
 				foreach (DamageDoneInfo reward in rewards.Values)
@@ -478,20 +478,20 @@ public class Attackable: Npc
 					{
 						continue;
 					}
-					
+
 					// Attacker to be rewarded
 					Player attacker = reward.getAttacker();
-					
+
 					// Total amount of damage done
 					long damage = reward.getDamage();
-					
+
 					// Get party
 					Party attackerParty = attacker.getParty();
-					
+
 					// Penalty applied to the attacker's XP
 					// If this attacker have servitor, get Exp Penalty applied for the servitor.
 					float penalty = 1;
-					
+
 					foreach (Summon summon in attacker.getServitors().Values)
 					{
 						if (((Servitor) summon).getExpMultiplier() > 1)
@@ -500,7 +500,7 @@ public class Attackable: Npc
 							break;
 						}
 					}
-					
+
 					// If there's NO party in progress
 					if (attackerParty == null)
 					{
@@ -519,9 +519,9 @@ public class Attackable: Npc
 								exp *= Config.CHAMPION_REWARDS_EXP_SP;
 								sp *= Config.CHAMPION_REWARDS_EXP_SP;
 							}
-							
+
 							exp *= penalty;
-							
+
 							// Check for an over-hit enabled strike
 							Creature overhitAttacker = _overhitAttacker;
 							if (_overhit && (overhitAttacker != null) && (overhitAttacker.getActingPlayer() != null) && (attacker == overhitAttacker.getActingPlayer()))
@@ -530,23 +530,23 @@ public class Attackable: Npc
 								attacker.sendPacket(new ExMagicAttackInfoPacket(overhitAttacker.ObjectId, ObjectId, ExMagicAttackInfoPacket.OVERHIT));
 								exp += calculateOverhitExp(exp);
 							}
-							
+
 							// Distribute the Exp and SP between the Player and its Summon
 							if (!attacker.isDead())
 							{
 								exp = attacker.getStat().getValue(Stat.EXPSP_RATE, exp) *
 								      Config.EXP_AMOUNT_MULTIPLIERS.GetValueOrDefault(attacker.getClassId(), 1);
-								
+
 								sp = attacker.getStat().getValue(Stat.EXPSP_RATE, sp) *
 								     Config.SP_AMOUNT_MULTIPLIERS.GetValueOrDefault(attacker.getClassId(), 1);
-								
+
 								// Premium rates
 								if (attacker.hasPremiumStatus())
 								{
 									exp *= Config.PREMIUM_RATE_XP;
 									sp *= Config.PREMIUM_RATE_SP;
 								}
-								
+
 								attacker.addExpAndSp(exp, sp, useVitalityRate());
 								if (exp > 0)
 								{
@@ -571,13 +571,13 @@ public class Attackable: Npc
 										{
 											MagicLampManager.getInstance().addLampExp(attacker, exp, true);
 										}
-										
+
 										HuntPass huntPass = attacker.getHuntPass();
 										if (huntPass != null)
 										{
 											attacker.getHuntPass().addPassPoint();
 										}
-										
+
 										AchievementBox box = attacker.getAchievementBox();
 										if (box != null)
 										{
@@ -585,7 +585,7 @@ public class Attackable: Npc
 										}
 									}
 								}
-								
+
 								rewardAttributeExp(attacker, damage, totalDamage);
 							}
 						}
@@ -596,7 +596,7 @@ public class Attackable: Npc
 						long partyDmg = 0;
 						double partyMul = 1;
 						int partyLvl = 0;
-						
+
 						// Get all Creature that can be rewarded in the party
 						List<Player> rewardedMembers = new();
 						// Go through all Player in the party
@@ -607,10 +607,10 @@ public class Attackable: Npc
 							{
 								continue;
 							}
-							
+
 							// Get the RewardInfo of this Player from Attackable rewards
 							DamageDoneInfo reward2 = rewards.get(partyPlayer);
-							
+
 							// If the Player is in the Attackable rewards add its damages to party damages
 							if (reward2 != null)
 							{
@@ -618,7 +618,7 @@ public class Attackable: Npc
 								{
 									partyDmg += reward2.getDamage(); // Add Player damages to party damages
 									rewardedMembers.Add(partyPlayer);
-									
+
 									if (partyPlayer.getLevel() > partyLvl)
 									{
 										if (attackerParty.isInCommandChannel())
@@ -649,13 +649,13 @@ public class Attackable: Npc
 								}
 							}
 						}
-						
+
 						// If the party didn't killed this Attackable alone
 						if (partyDmg < totalDamage)
 						{
 							partyMul = ((double) partyDmg / totalDamage);
 						}
-						
+
 						// Calculate Exp and SP rewards
 						double[] expSp = calculateExpAndSp(partyLvl, partyDmg, totalDamage);
 						double exp = expSp[0];
@@ -665,10 +665,10 @@ public class Attackable: Npc
 							exp *= Config.CHAMPION_REWARDS_EXP_SP;
 							sp *= Config.CHAMPION_REWARDS_EXP_SP;
 						}
-						
+
 						exp *= partyMul;
 						sp *= partyMul;
-						
+
 						// Check for an over-hit enabled strike
 						// (When in party, the over-hit exp bonus is given to the whole party and splitted proportionally through the party members)
 						Creature overhitAttacker = _overhitAttacker;
@@ -678,7 +678,7 @@ public class Attackable: Npc
 							attacker.sendPacket(new ExMagicAttackInfoPacket(overhitAttacker.ObjectId, ObjectId, ExMagicAttackInfoPacket.OVERHIT));
 							exp += calculateOverhitExp(exp);
 						}
-						
+
 						// Distribute Experience and SP rewards to Player Party members in the known area of the last attacker
 						if (partyDmg > 0)
 						{
@@ -697,7 +697,7 @@ public class Attackable: Npc
 			LOGGER.Error(e);
 		}
 	}
-	
+
 	private void rewardAttributeExp(Player player, long damage, long totalDamage)
 	{
 		if ((getAttributeExp() > 0) && (getElementalSpiritType() != ElementalType.NONE) && (player.getActiveElementalSpiritType() > 0))
@@ -709,14 +709,14 @@ public class Attackable: Npc
 			}
 		}
 	}
-	
+
 	public override void addAttackerToAttackByList(Creature creature)
 	{
 		if ((creature == null) || (creature == this))
 		{
 			return;
 		}
-		
+
 		foreach (WeakReference<Creature> @ref in getAttackByList())
 		{
 			if (@ref.TryGetTarget(out var target) && target == creature)
@@ -724,17 +724,17 @@ public class Attackable: Npc
 				return;
 			}
 		}
-		
+
 		getAttackByList().add(new WeakReference<Creature>(creature));
 	}
-	
+
 	public Creature getMainDamageDealer()
 	{
 		if (_aggroList.Count == 0)
 		{
 			return null;
 		}
-		
+
 		long damage = 0;
 		Creature damageDealer = null;
 		foreach (AggroInfo info in _aggroList.Values)
@@ -745,10 +745,10 @@ public class Attackable: Npc
 				damageDealer = info.getAttacker();
 			}
 		}
-		
+
 		return damageDealer;
 	}
-	
+
 	/**
 	 * Add damage and hate to the attacker AggroInfo of the Attackable _aggroList.
 	 * @param attacker The Creature that gave damages to this Attackable
@@ -761,7 +761,7 @@ public class Attackable: Npc
 		{
 			return;
 		}
-		
+
 		// Notify the Attackable AI with EVT_ATTACKED
 		if (!isDead())
 		{
@@ -772,18 +772,18 @@ public class Attackable: Npc
 				{
 					WalkingManager.getInstance().stopMoving(this, false, true);
 				}
-				
+
 				getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, attacker);
-				
+
 				// Calculate the amount of hate this attackable receives from this attack.
 				double hateValue = (damage * 100) / (getLevel() + 7);
 				if (skill == null)
 				{
 					hateValue *= attacker.getStat().getMul(Stat.HATE_ATTACK, 1);
 				}
-				
+
 				addDamageHate(attacker, damage, (int) hateValue);
-				
+
 				Player player = attacker.getActingPlayer();
 				if (player != null && Events.HasSubscribers<OnAttackableAttack>())
 				{
@@ -796,7 +796,7 @@ public class Attackable: Npc
 			}
 		}
 	}
-	
+
 	/**
 	 * Add damage and hate to the attacker AggroInfo of the Attackable _aggroList.
 	 * @param creature The Creature that gave damages to this Attackable
@@ -810,13 +810,13 @@ public class Attackable: Npc
 		{
 			return;
 		}
-		
+
 		// Check if fake players should aggro each other.
 		if (isFakePlayer() && !Config.FAKE_PLAYER_AGGRO_FPC && attacker.isFakePlayer())
 		{
 			return;
 		}
-		
+
 		Player targetPlayer = attacker.getActingPlayer();
 		Creature summoner = attacker.getSummoner();
 		if (attacker.isNpc() && (summoner != null) && summoner.isPlayer() && !attacker.isTargetable())
@@ -824,11 +824,11 @@ public class Attackable: Npc
 			targetPlayer = summoner.getActingPlayer();
 			attacker = summoner;
 		}
-		
+
 		// Get the AggroInfo of the attacker Creature from the _aggroList of the Attackable
 		AggroInfo ai = _aggroList.computeIfAbsent(attacker, x => new AggroInfo(x));
 		ai.addDamage(damage);
-		
+
 		// traps does not cause aggro
 		// making this hack because not possible to determine if damage made by trap
 		// so just check for triggered trap here
@@ -837,17 +837,17 @@ public class Attackable: Npc
 		{
 			ai.addHate(aggro);
 		}
-		
+
 		if ((targetPlayer != null) && (aggro == 0))
 		{
 			addDamageHate(attacker, 0, 1);
-			
+
 			// Set the intention to the Attackable to AI_INTENTION_ACTIVE
 			if (getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 			{
 				getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 			}
-			
+
 			// Notify to scripts
 			if (Events.HasSubscribers<OnAttackableAggroRangeEnter>())
 			{
@@ -859,14 +859,14 @@ public class Attackable: Npc
 			aggro = 1;
 			ai.addHate(1);
 		}
-		
+
 		// Set the intention to the Attackable to AI_INTENTION_ACTIVE
 		if ((aggro != 0) && (getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE))
 		{
 			getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		}
 	}
-	
+
 	public void reduceHate(Creature target, long amount)
 	{
 		if (target == null) // whole aggrolist
@@ -877,12 +877,12 @@ public class Attackable: Npc
 				((AttackableAI) getAI()).setGlobalAggro(-25);
 				return;
 			}
-			
+
 			foreach (AggroInfo ai in _aggroList.Values)
 			{
 				ai.addHate(amount);
 			}
-			
+
 			if (getHating(mostHated) >= 0)
 			{
 				((AttackableAI) getAI()).setGlobalAggro(-25);
@@ -895,13 +895,13 @@ public class Attackable: Npc
 			}
 			return;
 		}
-		
+
 		AggroInfo ai1 = _aggroList.get(target);
 		if (ai1 == null)
 		{
 			return;
 		}
-		
+
 		ai1.addHate(amount);
 		if ((ai1.getHate() >= 0) && (getMostHated() == null))
 		{
@@ -914,7 +914,7 @@ public class Attackable: Npc
 			}
 		}
 	}
-	
+
 	/**
 	 * Clears _aggroList hate of the Creature without removing from the list.
 	 * @param target
@@ -925,27 +925,27 @@ public class Attackable: Npc
 		{
 			return;
 		}
-		
+
 		AggroInfo ai = _aggroList.get(target);
 		if (ai != null)
 		{
 			ai.stopHate();
 		}
 	}
-	
+
 	/**
 	 * @return the most hated Creature of the Attackable _aggroList.
 	 */
-	public Creature getMostHated()
+	public Creature? getMostHated()
 	{
 		if (_aggroList.Count == 0 || isAlikeDead())
 		{
 			return null;
 		}
-		
-		Creature mostHated = null;
+
+		Creature? mostHated = null;
 		long maxHate = 0;
-		
+
 		// While Interacting over This Map Removing Object is Not Allowed
 		// Go through the aggroList of the Attackable
 		foreach (AggroInfo ai in _aggroList.Values)
@@ -954,32 +954,32 @@ public class Attackable: Npc
 			{
 				continue;
 			}
-			
+
 			if (ai.checkHate(this) > maxHate)
 			{
 				mostHated = ai.getAttacker();
 				maxHate = ai.getHate();
 			}
 		}
-		
+
 		return mostHated;
 	}
-	
+
 	/**
 	 * @return the 2 most hated Creature of the Attackable _aggroList.
 	 */
-	public List<Creature> get2MostHated()
+	public List<Creature>? get2MostHated()
 	{
 		if (_aggroList.Count == 0 || isAlikeDead())
 		{
 			return null;
 		}
-		
-		Creature mostHated = null;
-		Creature secondMostHated = null;
+
+		Creature? mostHated = null;
+		Creature? secondMostHated = null;
 		long maxHate = 0;
 		List<Creature> result = new();
-		
+
 		// While iterating over this map removing objects is not allowed
 		// Go through the aggroList of the Attackable
 		foreach (AggroInfo ai in _aggroList.Values)
@@ -991,10 +991,10 @@ public class Attackable: Npc
 				maxHate = ai.getHate();
 			}
 		}
-		
+
 		result.Add(mostHated);
-		
-		Creature secondMostHatedFinal = secondMostHated;
+
+		Creature? secondMostHatedFinal = secondMostHated;
 		bool found = false;
 		foreach (WeakReference<Creature> @ref in getAttackByList())
 		{
@@ -1012,27 +1012,27 @@ public class Attackable: Npc
 		{
 			result.Add(null);
 		}
-		
+
 		return result;
 	}
-	
-	public List<Creature> getHateList()
+
+	public List<Creature>? getHateList()
 	{
 		if (_aggroList.Count == 0 || isAlikeDead())
 		{
 			return null;
 		}
-		
+
 		List<Creature> result = new();
 		foreach (AggroInfo ai in _aggroList.Values)
 		{
 			ai.checkHate(this);
-			
+
 			result.Add(ai.getAttacker());
 		}
 		return result;
 	}
-	
+
 	/**
 	 * @param target The Creature whose hate level must be returned
 	 * @return the hate level of the Attackable against this Creature contained in _aggroList.
@@ -1043,13 +1043,13 @@ public class Attackable: Npc
 		{
 			return 0;
 		}
-		
-		AggroInfo ai = _aggroList.get(target);
+
+		AggroInfo? ai = _aggroList.get(target);
 		if (ai == null)
 		{
 			return 0;
 		}
-		
+
 		if (ai.getAttacker().isPlayer())
 		{
 			Player act = (Player) ai.getAttacker();
@@ -1060,13 +1060,13 @@ public class Attackable: Npc
 				return 0;
 			}
 		}
-		
+
 		if (!ai.getAttacker().isSpawned() || ai.getAttacker().isInvisible())
 		{
 			_aggroList.remove(target);
 			return 0;
 		}
-		
+
 		if (ai.getAttacker().isAlikeDead())
 		{
 			ai.stopHate();
@@ -1074,12 +1074,12 @@ public class Attackable: Npc
 		}
 		return ai.getHate();
 	}
-	
+
 	public void doItemDrop(Creature mainDamageDealer)
 	{
 		doItemDrop(getTemplate(), mainDamageDealer);
 	}
-	
+
 	/**
 	 * Manage Base, Quests and Special Events drops of Attackable (called by calculateRewards).<br>
 	 * Concept:<br>
@@ -1103,9 +1103,9 @@ public class Attackable: Npc
 		{
 			return;
 		}
-		
+
 		Player player = mainDamageDealer.getActingPlayer();
-		
+
 		// Don't drop anything if the last attacker or owner isn't Player
 		if (player == null)
 		{
@@ -1145,13 +1145,13 @@ public class Attackable: Npc
 			}
 			return;
 		}
-		
+
 		CursedWeaponsManager.getInstance().checkDrop(this, player);
 		if (isSpoiled() && !_plundered)
 		{
 			_sweepItems = npcTemplate.calculateDrops(DropType.SPOIL, this, player);
 		}
-		
+
 		ICollection<ItemHolder> deathItems1 = npcTemplate.calculateDrops(DropType.DROP, this, player);
 		if (deathItems1 != null)
 		{
@@ -1168,7 +1168,7 @@ public class Attackable: Npc
 				{
 					dropItem(player, drop); // drop the item on the ground
 				}
-				
+
 				// Broadcast message if RaidBoss was defeated
 				if (_isRaid && !_isRaidMinion)
 				{
@@ -1195,7 +1195,7 @@ public class Attackable: Npc
 				Broadcast.toAllOnlinePlayers(new ExRaidDropItemAnnouncePacket(player.getName(), getId(), announceItems));
 			}
 			deathItems1.Clear();
-			
+
 			// Items that can be obtained under the Fortune Time effect.
 			if (isAffectedBySkill((int)CommonSkill.FORTUNE_SEAKER_MARK))
 			{
@@ -1214,7 +1214,7 @@ public class Attackable: Npc
 						{
 							dropItem(player, drop); // Drop the item on the ground.
 						}
-						
+
 						// Message.
 						if (_isRaid && !_isRaidMinion)
 						{
@@ -1230,7 +1230,7 @@ public class Attackable: Npc
 			}
 		}
 	}
-	
+
 	/**
 	 * @return the active weapon of this Attackable (= null).
 	 */
@@ -1238,7 +1238,7 @@ public class Attackable: Npc
 	{
 		return null;
 	}
-	
+
 	/**
 	 * Verifies if the creature is in the aggro list.
 	 * @param creature the creature
@@ -1248,20 +1248,20 @@ public class Attackable: Npc
 	{
 		return _aggroList.ContainsKey(creature);
 	}
-	
+
 	/**
 	 * Clear the _aggroList of the Attackable.
 	 */
 	public void clearAggroList()
 	{
 		_aggroList.Clear();
-		
+
 		// clear overhit values
 		_overhit = false;
 		_overhitDamage = 0;
 		_overhitAttacker = null;
 	}
-	
+
 	/**
 	 * @return {@code true} if there is a loot to sweep, {@code false} otherwise.
 	 */
@@ -1269,7 +1269,7 @@ public class Attackable: Npc
 	{
 		return _sweepItems != null;
 	}
-	
+
 	/**
 	 * @return a copy of dummy items for the spoil loot.
 	 */
@@ -1286,7 +1286,7 @@ public class Attackable: Npc
 		}
 		return lootItems;
 	}
-	
+
 	/**
 	 * @return table containing all Item that can be spoiled.
 	 */
@@ -1294,7 +1294,7 @@ public class Attackable: Npc
 	{
 		return Interlocked.Exchange(ref _sweepItems, null);
 	}
-	
+
 	/**
 	 * @return table containing all Item that can be harvested.
 	 */
@@ -1302,7 +1302,7 @@ public class Attackable: Npc
 	{
 		return Interlocked.Exchange(ref _harvestItem, null);
 	}
-	
+
 	/**
 	 * Checks if the corpse is too old.
 	 * @param attacker the player to validate
@@ -1322,7 +1322,7 @@ public class Attackable: Npc
 		}
 		return false;
 	}
-	
+
 	/**
 	 * @param sweeper the player to validate.
 	 * @param sendMessage sendMessage if {@code true} will send a message of sweep not allowed.
@@ -1340,7 +1340,7 @@ public class Attackable: Npc
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Set the over-hit flag on the Attackable.
 	 * @param status The status of the over-hit flag
@@ -1349,7 +1349,7 @@ public class Attackable: Npc
 	{
 		_overhit = status;
 	}
-	
+
 	/**
 	 * Set the over-hit values like the attacker who did the strike and the amount of damage done by the skill.
 	 * @param attacker The Creature who hit on the Attackable using the over-hit enabled skill
@@ -1373,7 +1373,7 @@ public class Attackable: Npc
 		_overhitDamage = overhitDmg;
 		_overhitAttacker = attacker;
 	}
-	
+
 	/**
 	 * Return the Creature who hit on the Attackable using an over-hit enabled skill.
 	 * @return Creature attacker
@@ -1382,7 +1382,7 @@ public class Attackable: Npc
 	{
 		return _overhitAttacker;
 	}
-	
+
 	/**
 	 * Return the amount of damage done on the Attackable using an over-hit enabled skill.
 	 * @return double damage
@@ -1391,7 +1391,7 @@ public class Attackable: Npc
 	{
 		return _overhitDamage;
 	}
-	
+
 	/**
 	 * @return True if the Attackable was hit by an over-hit enabled skill.
 	 */
@@ -1399,7 +1399,7 @@ public class Attackable: Npc
 	{
 		return _overhit;
 	}
-	
+
 	/**
 	 * Calculate the Experience and SP to distribute to attacker (Player, Servitor or Party) of the Attackable.
 	 * @param charLevel The killer level
@@ -1418,30 +1418,30 @@ public class Attackable: Npc
 				0
 			};
 		}
-		
+
 		return new double[]
 		{
 			Math.Max(0, (getExpReward() * damage) / totalDamage),
 			Math.Max(0, (getSpReward() * damage) / totalDamage)
 		};
 	}
-	
+
 	public double calculateOverhitExp(double exp)
 	{
 		// Get the percentage based on the total of extra (over-hit) damage done relative to the total (maximum) ammount of HP on the Attackable
 		double overhitPercentage = ((_overhitDamage * 100) / getMaxHp());
-		
+
 		// Over-hit damage percentages are limited to 25% max
 		if (overhitPercentage > 25)
 		{
 			overhitPercentage = 25;
 		}
-		
+
 		// Get the overhit exp bonus according to the above over-hit damage percentage
 		// (1/1 basis - 13% of over-hit damage, 13% of extra exp is given, and so on...)
 		return (overhitPercentage / 100) * exp;
 	}
-	
+
 	/**
 	 * Return True.
 	 */
@@ -1449,22 +1449,22 @@ public class Attackable: Npc
 	{
 		return true;
 	}
-	
+
 	public override void onSpawn()
 	{
 		base.onSpawn();
-		
+
 		// Clear mob spoil, seed
 		setSpoilerObjectId(0);
-		
+
 		// Clear all aggro list and overhit
 		clearAggroList();
-		
+
 		// Clear Harvester reward
 		_harvestItem = null;
 		_sweepItems = null;
 		_plundered = false;
-		
+
 		// fake players
 		if (isFakePlayer())
 		{
@@ -1477,18 +1477,18 @@ public class Attackable: Npc
 		{
 			setWalking();
 		}
-		
+
 		// Clear mod Seeded stat
 		_seeded = false;
 		_seed = null;
 		_seederObjId = 0;
-		
+
 		// Check the region where this mob is, do not activate the AI if region is inactive.
 		if (hasAI())
 		{
 			// Set the intention of the Attackable to AI_INTENTION_ACTIVE
 			getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-			
+
 			// Check the region where this mob is, do not activate the AI if region is inactive.
 			if (!isInActiveRegion())
 			{
@@ -1496,12 +1496,12 @@ public class Attackable: Npc
 			}
 		}
 	}
-	
+
 	public override void onRespawn()
 	{
 		// Reset champion state
 		_champion = false;
-		
+
 		// Set champion on next spawn
 		if (Config.CHAMPION_ENABLE && isMonster() && !isQuestMonster() && !getTemplate().isUndying() && !_isRaid && !_isRaidMinion && (Config.CHAMPION_FREQUENCY > 0) && (getLevel() >= Config.CHAMP_MIN_LEVEL) && (getLevel() <= Config.CHAMP_MAX_LEVEL) && (Config.CHAMPION_ENABLE_IN_INSTANCES || (getInstanceId() == 0)))
 		{
@@ -1514,11 +1514,11 @@ public class Attackable: Npc
 				setTeam(_champion ? Team.RED : Team.NONE, false);
 			}
 		}
-		
+
 		// Reset the rest of NPC related states
 		base.onRespawn();
 	}
-	
+
 	/**
 	 * Checks if its spoiled.
 	 * @return {@code true} if its spoiled, {@code false} otherwise
@@ -1527,7 +1527,7 @@ public class Attackable: Npc
 	{
 		return _spoilerObjectId != 0;
 	}
-	
+
 	/**
 	 * Gets the spoiler object ID.
 	 * @return the spoiler object ID if its spoiled, 0 otherwise
@@ -1536,7 +1536,7 @@ public class Attackable: Npc
 	{
 		return _spoilerObjectId;
 	}
-	
+
 	/**
 	 * Sets the spoiler object ID.
 	 * @param spoilerObjectId spoilerObjectId the spoiler object ID
@@ -1545,7 +1545,7 @@ public class Attackable: Npc
 	{
 		_spoilerObjectId = spoilerObjectId;
 	}
-	
+
 	/**
 	 * Sets state of the mob to plundered.
 	 * @param player
@@ -1556,7 +1556,7 @@ public class Attackable: Npc
 		_spoilerObjectId = player.ObjectId;
 		_sweepItems = getTemplate().calculateDrops(DropType.SPOIL, this, player);
 	}
-	
+
 	/**
 	 * Sets state of the mob to seeded. Parameters needed to be set before.
 	 * @param seeder
@@ -1614,7 +1614,7 @@ public class Attackable: Npc
 					}
 				}
 			}
-			
+
 			// hi-level mobs bonus
 			int diff = getLevel() - _seed.getLevel() - 5;
 			if (diff > 0)
@@ -1624,7 +1624,7 @@ public class Attackable: Npc
 			_harvestItem = new ItemHolder(_seed.getCropId(), count * Config.RATE_DROP_MANOR);
 		}
 	}
-	
+
 	/**
 	 * Sets the seed parameters, but not the seed state
 	 * @param seed - instance {@link Seed} of used seed
@@ -1638,22 +1638,22 @@ public class Attackable: Npc
 			_seederObjId = seeder.ObjectId;
 		}
 	}
-	
+
 	public int getSeederId()
 	{
 		return _seederObjId;
 	}
-	
+
 	public Seed getSeed()
 	{
 		return _seed;
 	}
-	
+
 	public bool isSeeded()
 	{
 		return _seeded;
 	}
-	
+
 	/**
 	 * Check if the server allows Random Animation.
 	 */
@@ -1662,27 +1662,27 @@ public class Attackable: Npc
 	{
 		return ((Config.MAX_MONSTER_ANIMATION > 0) && isRandomAnimationEnabled() && !(this is GrandBoss));
 	}
-	
+
 	public void setCommandChannelTimer(CommandChannelTimer commandChannelTimer)
 	{
 		_commandChannelTimer = commandChannelTimer;
 	}
-	
+
 	public CommandChannelTimer getCommandChannelTimer()
 	{
 		return _commandChannelTimer;
 	}
-	
+
 	public CommandChannel getFirstCommandChannelAttacked()
 	{
 		return _firstCommandChannelAttacked;
 	}
-	
+
 	public void setFirstCommandChannelAttacked(CommandChannel firstCommandChannelAttacked)
 	{
 		_firstCommandChannelAttacked = firstCommandChannelAttacked;
 	}
-	
+
 	/**
 	 * @return the _commandChannelLastAttack
 	 */
@@ -1690,7 +1690,7 @@ public class Attackable: Npc
 	{
 		return _commandChannelLastAttack;
 	}
-	
+
 	/**
 	 * @param channelLastAttack the _commandChannelLastAttack to set
 	 */
@@ -1698,17 +1698,17 @@ public class Attackable: Npc
 	{
 		_commandChannelLastAttack = channelLastAttack;
 	}
-	
+
 	public virtual void returnHome()
 	{
 		clearAggroList();
-		
+
 		if (hasAI() && (getSpawn() != null))
 		{
 			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().Location.Location3D);
 		}
 	}
-	
+
 	/*
 	 * Return vitality points decrease (if positive) or increase (if negative) based on damage. Maximum for damage = maxHp.
 	 */
@@ -1718,11 +1718,11 @@ public class Attackable: Npc
 		{
 			return 0;
 		}
-		
+
 		int points = Math.Max((int) ((exp / (isBoss ? Config.VITALITY_CONSUME_BY_BOSS : Config.VITALITY_CONSUME_BY_MOB)) * Math.Max(level - getLevel(), 1)), level < 40 ? 5 : 100);
 		return -points;
 	}
-	
+
 	/*
 	 * True if vitality rate for exp and sp should be applied
 	 */
@@ -1730,13 +1730,13 @@ public class Attackable: Npc
 	{
 		return !_champion || Config.CHAMPION_ENABLE_VITALITY;
 	}
-	
+
 	/** Return True if the Creature is RaidBoss or his minion. */
 	public override bool isRaid()
 	{
 		return _isRaid;
 	}
-	
+
 	/**
 	 * Set this Npc as a Raid instance.
 	 * @param isRaid
@@ -1745,7 +1745,7 @@ public class Attackable: Npc
 	{
 		_isRaid = isRaid;
 	}
-	
+
 	/**
 	 * Set this Npc as a Minion instance.
 	 * @param value
@@ -1755,45 +1755,45 @@ public class Attackable: Npc
 		_isRaid = value;
 		_isRaidMinion = value;
 	}
-	
+
 	public override bool isRaidMinion()
 	{
 		return _isRaidMinion;
 	}
-	
+
 	public override bool isMinion()
 	{
 		return getLeader() != null;
 	}
-	
+
 	/**
 	 * @return leader of this minion or null.
 	 */
-	public virtual Attackable getLeader()
+	public virtual Attackable? getLeader()
 	{
 		return null;
 	}
-	
+
 	public override bool isChampion()
 	{
 		return _champion;
 	}
-	
+
 	public override bool isAttackable()
 	{
 		return true;
 	}
-	
-	public override void setTarget(WorldObject @object)
+
+	public override void setTarget(WorldObject? @object)
 	{
 		if (isDead())
 		{
 			return;
 		}
-		
+
 		if (@object == null)
 		{
-			WorldObject target = getTarget();
+			WorldObject? target = getTarget();
 			if (target is Creature creature)
 			{
 				_aggroList.remove(creature);

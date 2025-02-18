@@ -18,19 +18,19 @@ public class TeleportListData: DataReaderBase
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(TeleportListData));
 	private readonly Map<int, TeleportListHolder> _teleports = new();
 	private int _teleportCount = 0;
-	
+
 	protected TeleportListData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_teleports.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "TeleportListData.xml");
 		document.Elements("list").Elements("teleport").ForEach(parseElement);
-		
+
 		_teleportCount = _teleports.Count;
 		LOGGER.Info(GetType().Name + ": Loaded " + _teleportCount + " teleports.");
 	}
@@ -60,21 +60,21 @@ public class TeleportListData: DataReaderBase
 		_teleports.put(tpId, new TeleportListHolder(tpId, locations.ToImmutableArray(), tpPrice, special));
 	}
 
-	public TeleportListHolder getTeleport(int teleportId)
+	public TeleportListHolder? getTeleport(int teleportId)
 	{
 		return _teleports.get(teleportId);
 	}
-	
+
 	public int getTeleportCount()
 	{
 		return _teleportCount;
 	}
-	
+
 	public static TeleportListData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly TeleportListData INSTANCE = new();

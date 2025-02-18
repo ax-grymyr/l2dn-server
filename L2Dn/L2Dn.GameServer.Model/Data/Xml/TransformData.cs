@@ -18,27 +18,27 @@ namespace L2Dn.GameServer.Data.Xml;
 public class TransformData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(TransformData));
-	
+
 	private readonly Map<int, Transform> _transformData = new();
-	
+
 	protected TransformData()
 	{
 		load();
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
+
+	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
 	{
 		_transformData.Clear();
-		
+
 		LoadXmlDocuments(DataFileLocation.Data, "stats/transformations").ForEach(t =>
 		{
 			t.Document.Elements("list").Elements("transform").ForEach(x => loadElement(t.FilePath, x));
 		});
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _transformData.Count + " transform templates.");
 	}
-	
+
 	private void loadElement(string filePath, XElement element)
 	{
 		StatSet set = new StatSet(element);
@@ -49,15 +49,15 @@ public class TransformData: DataReaderBase
 
 		transform.setTemplate(true, loadTemplate(maleElement));
 		transform.setTemplate(false, loadTemplate(femaleElement));
-		
+
 		_transformData.put(transform.getId(), transform);
 	}
 
 	private TransformTemplate loadTemplate(XElement element)
 	{
-		TransformTemplate templateData = null;
+		TransformTemplate? templateData = null;
 		StatSet set = new();
-		
+
 		foreach (XElement z in element.Elements())
 		{
 			switch (z.Name.LocalName)
@@ -159,21 +159,20 @@ public class TransformData: DataReaderBase
 
 		if (templateData is null)
 			throw new InvalidOperationException("Invalid transformation data");
-		
+
 		return templateData;
 	}
 
-
-	public Transform getTransform(int id)
+	public Transform? getTransform(int id)
 	{
 		return _transformData.get(id);
 	}
-	
+
 	public static TransformData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly TransformData INSTANCE = new();

@@ -19,7 +19,8 @@ public struct RequestWithdrawalPledgePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (player.getClan() == null)
+        Clan? clan = player.getClan();
+        if (clan == null)
         {
             player.sendPacket(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER_2);
             return ValueTask.CompletedTask;
@@ -36,14 +37,13 @@ public struct RequestWithdrawalPledgePacket: IIncomingPacket<GameSession>
             player.sendPacket(SystemMessageId.YOU_CANNOT_LEAVE_A_CLAN_WHILE_ENGAGED_IN_COMBAT);
             return ValueTask.CompletedTask;
         }
-		
-        Clan clan = player.getClan();
+
         clan.removeClanMember(player.ObjectId, DateTime.UtcNow.AddMinutes(Config.ALT_CLAN_JOIN_MINS));
-		
+
         SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_HAS_LEFT_THE_CLAN);
         sm.Params.addString(player.getName());
         clan.broadcastToOnlineMembers(sm);
-		
+
         // Remove the Player From the Member list
         clan.broadcastToOnlineMembers(new PledgeShowMemberListDeletePacket(player.getName()));
         clan.broadcastToOnlineMembers(new ExPledgeCountPacket(clan));

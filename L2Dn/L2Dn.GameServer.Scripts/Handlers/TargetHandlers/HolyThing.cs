@@ -17,15 +17,15 @@ public class HolyThing: ITargetTypeHandler
 	{
 		return TargetType.HOLYTHING;
 	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
+
+	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
-		WorldObject target = creature.getTarget();
+		WorldObject? target = creature.getTarget();
 		if ((target != null) && target.isArtefact())
 		{
 			return target;
 		}
-		
+
 		if (sendMessage)
 		{
 			creature.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);

@@ -21,7 +21,7 @@ public struct RequestExSetPledgeCrestLargePacket: IIncomingPacket<GameSession>
         {
             return;
         }
-		
+
         _data = reader.ReadBytes(_length).ToArray();
     }
 
@@ -29,33 +29,33 @@ public struct RequestExSetPledgeCrestLargePacket: IIncomingPacket<GameSession>
     {
         if (_data == null)
             return ValueTask.CompletedTask;
-		
+
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        Clan clan = player.getClan();
+
+        Clan? clan = player.getClan();
         if (clan == null)
             return ValueTask.CompletedTask;
-		
+
         if ((_length < 0) || (_length > 2176))
         {
             player.sendPacket(SystemMessageId.THE_SIZE_OF_THE_UPLOADED_SYMBOL_DOES_NOT_MEET_THE_STANDARD_REQUIREMENTS);
             return ValueTask.CompletedTask;
         }
-		
+
         if (clan.getDissolvingExpiryTime() > DateTime.UtcNow)
         {
             player.sendPacket(SystemMessageId.AS_YOU_ARE_CURRENTLY_SCHEDULE_FOR_CLAN_DISSOLUTION_YOU_CANNOT_REGISTER_OR_DELETE_A_CLAN_CREST);
             return ValueTask.CompletedTask;
         }
-		
+
         if (!player.hasClanPrivilege(ClanPrivilege.CL_REGISTER_CREST))
         {
             player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
             return ValueTask.CompletedTask;
         }
-		
+
         if (_length == 0)
         {
             if (clan.getCrestLargeId() != 0)
@@ -71,8 +71,8 @@ public struct RequestExSetPledgeCrestLargePacket: IIncomingPacket<GameSession>
                 player.sendPacket(SystemMessageId.A_CLAN_CREST_CAN_ONLY_BE_REGISTERED_WHEN_THE_CLAN_S_SKILL_LEVEL_IS_3_OR_ABOVE);
                 return ValueTask.CompletedTask;
             }
-			
-            Crest crest = CrestTable.getInstance().createCrest(_data, CrestType.PLEDGE_LARGE);
+
+            Crest? crest = CrestTable.getInstance().createCrest(_data, CrestType.PLEDGE_LARGE);
             if (crest != null)
             {
                 clan.changeLargeCrest(crest.getId());

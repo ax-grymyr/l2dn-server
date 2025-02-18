@@ -15,16 +15,16 @@ public class Pledge: IAffectScopeHandler
 	public void forEachAffected<T>(Creature creature, WorldObject target, Skill skill, Action<T> action)
 		where T: WorldObject
 	{
-		IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		int affectRange = skill.getAffectRange();
 		int affectLimit = skill.getAffectLimit();
-		
+
 		if (target.isPlayable())
 		{
 			Playable playable = (Playable) target;
-			Player player = playable.getActingPlayer();
-			int? clanId = player.getClanId();
-			
+			Player? player = playable.getActingPlayer();
+			int? clanId = player?.getClanId();
+
 			// Create the target filter.
 			AtomicInteger affected = new AtomicInteger(0);
 			Predicate<Playable> filter = c =>
@@ -33,8 +33,8 @@ public class Pledge: IAffectScopeHandler
 				{
 					return false;
 				}
-				
-				Player p = c.getActingPlayer();
+
+				Player? p = c.getActingPlayer();
 				if ((p == null) || p.isDead())
 				{
 					return false;
@@ -51,17 +51,17 @@ public class Pledge: IAffectScopeHandler
 				{
 					return false;
 				}
-				
+
 				affected.incrementAndGet();
 				return true;
 			};
-			
+
 			// Add object of origin since its skipped in the forEachVisibleObjectInRange method.
 			if (filter(playable))
 			{
 				action((T)(WorldObject)playable);
 			}
-			
+
 			// Check and add targets.
 			World.getInstance().forEachVisibleObjectInRange<Playable>(playable, affectRange, c =>
 			{
@@ -72,7 +72,7 @@ public class Pledge: IAffectScopeHandler
 			});
 		}
 	}
-	
+
 	public AffectScope getAffectScopeType()
 	{
 		return AffectScope.PLEDGE;

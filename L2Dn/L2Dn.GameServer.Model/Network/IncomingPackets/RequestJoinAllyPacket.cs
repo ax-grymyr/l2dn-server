@@ -22,32 +22,32 @@ public struct RequestJoinAllyPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        Player target = World.getInstance().getPlayer(_objectId);
+
+        Player? target = World.getInstance().getPlayer(_objectId);
         if (target == null)
         {
             player.sendPacket(SystemMessageId.THE_TARGET_CANNOT_BE_INVITED);
             return ValueTask.CompletedTask;
         }
-		
-        Clan clan = player.getClan();
+
+        Clan? clan = player.getClan();
         if (clan == null)
         {
             player.sendPacket(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER_2);
             return ValueTask.CompletedTask;
         }
-		
+
         if (!clan.checkAllyJoinCondition(player, target))
             return ValueTask.CompletedTask;
 
         if (!player.getRequest().setRequest(target, this))
             return ValueTask.CompletedTask;
-		
+
         SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_LEADER_S2_HAS_REQUESTED_AN_ALLIANCE);
-        sm.Params.addString(player.getClan().getAllyName());
+        sm.Params.addString(clan.getAllyName());
         sm.Params.addString(player.getName());
         target.sendPacket(sm);
-        target.sendPacket(new AskJoinAllyPacket(player.ObjectId, player.getClan().getAllyName()));
+        target.sendPacket(new AskJoinAllyPacket(player.ObjectId, clan.getAllyName()));
 
         return ValueTask.CompletedTask;
     }

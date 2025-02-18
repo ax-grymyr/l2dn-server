@@ -17,8 +17,9 @@ public struct AllyLeavePacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        if (player.getClan() == null)
+
+        Clan? clan = player.getClan();
+        if (clan == null)
         {
             player.sendPacket(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER_2);
             return ValueTask.CompletedTask;
@@ -30,7 +31,6 @@ public struct AllyLeavePacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        Clan clan = player.getClan();
         if (clan.getAllyId() == 0)
         {
             player.sendPacket(SystemMessageId.YOU_ARE_NOT_IN_AN_ALLIANCE);
@@ -42,14 +42,14 @@ public struct AllyLeavePacket: IIncomingPacket<GameSession>
             player.sendPacket(SystemMessageId.ALLIANCE_LEADERS_CANNOT_WITHDRAW);
             return ValueTask.CompletedTask;
         }
-		
+
         DateTime currentTime = DateTime.UtcNow;
         clan.setAllyId(0);
         clan.setAllyName(null);
         clan.changeAllyCrest(0, true);
         clan.setAllyPenaltyExpiryTime(currentTime.AddDays(Config.ALT_ALLY_JOIN_DAYS_WHEN_LEAVED * 86400000), Clan.PENALTY_TYPE_CLAN_LEAVED);
         clan.updateClanInDB();
-		
+
         player.sendPacket(SystemMessageId.YOU_HAVE_LEFT_THE_ALLIANCE);
 
         return ValueTask.CompletedTask;

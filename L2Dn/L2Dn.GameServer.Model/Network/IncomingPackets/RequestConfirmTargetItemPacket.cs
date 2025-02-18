@@ -23,16 +23,16 @@ public struct RequestConfirmTargetItemPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Item item = player.getInventory().getItemByObjectId(_itemObjId);
+        Item? item = player.getInventory().getItemByObjectId(_itemObjId);
         if (item == null)
             return ValueTask.CompletedTask;
-		
+
         if (!VariationData.getInstance().hasFeeData(item.getId()))
         {
             player.sendPacket(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM);
             return ValueTask.CompletedTask;
         }
-		
+
         if (!RefinePacketHelper.isValid(player, item))
         {
             // Different system message here
@@ -41,13 +41,13 @@ public struct RequestConfirmTargetItemPacket: IIncomingPacket<GameSession>
                 player.sendPacket(SystemMessageId.ONCE_AN_ITEM_IS_AUGMENTED_IT_CANNOT_BE_AUGMENTED_AGAIN);
                 return ValueTask.CompletedTask;
             }
-			
+
             player.sendPacket(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM);
             return ValueTask.CompletedTask;
         }
-		
+
         player.sendPacket(new ExPutItemResultForVariationMakePacket(_itemObjId, item.getId()));
-        
+
         return ValueTask.CompletedTask;
     }
 }

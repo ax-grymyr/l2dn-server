@@ -32,14 +32,14 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
             connection.Close();
             return ValueTask.CompletedTask;
         }
-		
+
         if (!player.canLogout())
         {
             player.sendPacket(new RestartResponsePacket(false));
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         // Unregister from olympiad.
         if (OlympiadManager.getInstance().isRegistered(player))
         {
@@ -47,7 +47,7 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
         }
 
         Location3D? location = null;
-        Instance world = player.getInstanceWorld();
+        Instance? world = player.getInstanceWorld();
         if (world != null)
         {
             if (Config.RESTORE_PLAYER_INSTANCE)
@@ -62,7 +62,7 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
                     location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN).Location3D;
                 }
             }
-            
+
             player.setInstance(null);
         }
         else if (player.isInTimedHuntingZone())
@@ -76,16 +76,16 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
         }
 
         //LOGGER_ACCOUNTING.info("Logged out, " + client);
-		
+
         if (!OfflineTradeUtil.enteredOfflineMode(player))
         {
             Disconnection.of(session, player).storeMe().deleteMe();
         }
-		
+
         // Return the client to the authenticated status.
         session.State = GameSessionState.CharacterScreen;
         connection.Send(new RestartResponsePacket(true));
-		
+
         // Send character list
         session.Characters.UpdateActiveCharacter(player);
         CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);

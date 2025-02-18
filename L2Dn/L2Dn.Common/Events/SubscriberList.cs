@@ -14,7 +14,7 @@ internal sealed class SubscriberList<TArg>: SubscriberList
     // TODO: think about weak events
     private static readonly Logger _logger = LogManager.GetLogger(nameof(SubscriberList<EventBase>));
     private const int ArraySize = 8;
-    private SubscriberArray _array;
+    private SubscriberArray _array = default;
     private Node? _node;
     private int _subscriberCount;
 
@@ -40,7 +40,7 @@ internal sealed class SubscriberList<TArg>: SubscriberList
         if (removedCount != 0)
             Interlocked.Add(ref _subscriberCount, -removedCount);
     }
-    
+
     public void Unsubscribe(Action<TArg> action)
     {
         int removedCount = RemoveByDelegateFromArray(_array, action);
@@ -55,7 +55,7 @@ internal sealed class SubscriberList<TArg>: SubscriberList
     {
         if (arg.Abort)
             return false;
-        
+
         bool result = NotifySubscribersInArray(_array, arg);
         for (Node? node = _node; node != null && !arg.Abort; node = node.Next)
             result |= NotifySubscribersInArray(node.Array, arg);
@@ -161,7 +161,7 @@ internal sealed class SubscriberList<TArg>: SubscriberList
         public object? Owner;
         public Action<TArg>? Action;
     }
-    
+
     [InlineArray(ArraySize)]
     private struct SubscriberArray
     {
@@ -170,7 +170,7 @@ internal sealed class SubscriberList<TArg>: SubscriberList
 
     private sealed class Node
     {
-        public SubscriberArray Array;
+        public SubscriberArray Array = default;
         public Node? Next;
     }
 }

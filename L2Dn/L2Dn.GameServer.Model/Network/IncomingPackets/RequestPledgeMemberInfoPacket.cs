@@ -23,14 +23,14 @@ public struct RequestPledgeMemberInfoPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         // do we need powers to do that??
-        Clan clan = player.getClan();
+        Clan? clan = player.getClan();
         if (clan == null)
             return ValueTask.CompletedTask;
-		
+
         ClanMember member = clan.getClanMember(_player);
         if (member == null)
             return ValueTask.CompletedTask;
-		
+
         player.sendPacket(new PledgeReceiveMemberInfoPacket(member));
 
         return ValueTask.CompletedTask;

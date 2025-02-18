@@ -4,23 +4,14 @@ using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
-public class ConditionUsingMagicWeapon : Condition
+public sealed class ConditionUsingMagicWeapon(bool value): Condition
 {
-    private readonly bool _value;
-
-    public ConditionUsingMagicWeapon(bool value)
-    {
-        _value = value;
-    }
-
-    public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
     {
         if (effected == null || !effected.isPlayer())
-        {
             return false;
-        }
 
-        ItemTemplate weapon = effected.getActiveWeaponItem();
-        return weapon != null && weapon.isMagicWeapon() == _value;
+        ItemTemplate? weapon = effected.getActiveWeaponItem();
+        return weapon != null && weapon.isMagicWeapon() == value;
     }
 }

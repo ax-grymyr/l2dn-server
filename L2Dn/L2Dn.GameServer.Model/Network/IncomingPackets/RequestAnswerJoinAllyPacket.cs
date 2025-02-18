@@ -20,11 +20,19 @@ public struct RequestAnswerJoinAllyPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
+        Clan? playerClan = player.getClan();
+        if (playerClan == null)
+            return ValueTask.CompletedTask;
+
         Player requestor = player.getRequest().getPartner();
         if (requestor == null)
             return ValueTask.CompletedTask;
-		
+
+        Clan? requestorClan = requestor.getClan();
+        if (requestorClan == null)
+            return ValueTask.CompletedTask;
+
         if (_response == 0)
         {
             player.sendPacket(SystemMessageId.NO_RESPONSE_YOUR_ENTRANCE_TO_THE_ALLIANCE_HAS_BEEN_CANCELLED);
@@ -32,28 +40,24 @@ public struct RequestAnswerJoinAllyPacket: IIncomingPacket<GameSession>
         }
         else
         {
-            if (!(requestor.getRequest().getRequestPacket() is RequestJoinAllyPacket))
-            {
+            if (requestor.getRequest().getRequestPacket() is not RequestJoinAllyPacket)
                 return ValueTask.CompletedTask; // hax
-            }
-			
-            Clan clan = requestor.getClan();
-            
-            // we must double check this cause of hack
-            if (clan.checkAllyJoinCondition(requestor, player))
+
+            // we must double-check this cause of hack
+            if (requestorClan.checkAllyJoinCondition(requestor, player))
             {
                 // TODO: Need correct message id
                 requestor.sendPacket(SystemMessageId.THAT_PERSON_HAS_BEEN_SUCCESSFULLY_ADDED_TO_YOUR_FRIEND_LIST);
                 player.sendPacket(SystemMessageId.YOU_HAVE_ACCEPTED_THE_ALLIANCE);
-				
-                player.getClan().setAllyId(clan.getAllyId());
-                player.getClan().setAllyName(clan.getAllyName());
-                player.getClan().setAllyPenaltyExpiryTime(null, 0);
-                player.getClan().changeAllyCrest(clan.getAllyCrestId(), true);
-                player.getClan().updateClanInDB();
+
+                playerClan.setAllyId(requestorClan.getAllyId());
+                playerClan.setAllyName(requestorClan.getAllyName());
+                playerClan.setAllyPenaltyExpiryTime(null, 0);
+                playerClan.changeAllyCrest(requestorClan.getAllyCrestId(), true);
+                playerClan.updateClanInDB();
             }
         }
-		
+
         player.getRequest().onRequestResponse();
 
         return ValueTask.CompletedTask;

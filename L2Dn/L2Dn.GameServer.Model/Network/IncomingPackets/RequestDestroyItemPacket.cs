@@ -32,7 +32,7 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 		Player? player = session.Player;
 		if (player == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (_count <= 0)
 		{
 			if (_count < 0)
@@ -41,7 +41,7 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 					"[RequestDestroyItem] Character " + player.getName() + " of account " + player.getAccountName() +
 					" tried to destroy item with oid " + _objectId + " but has count < 0!", Config.DEFAULT_PUNISH);
 			}
-			
+
 			return ValueTask.CompletedTask;
 		}
 
@@ -51,53 +51,53 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 		// 	player.sendMessage("You are destroying items too fast.");
 		// 	return ValueTask.CompletedTask;
 		// }
-		
+
 		long count = _count;
 		if (player.isProcessingTransaction() || (player.getPrivateStoreType() != PrivateStoreType.NONE))
 		{
 			player.sendPacket(SystemMessageId.WHILE_OPERATING_A_PRIVATE_STORE_OR_WORKSHOP_YOU_CANNOT_DISCARD_DESTROY_OR_TRADE_AN_ITEM);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.hasItemRequest())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DESTROY_OR_CRYSTALLIZE_ITEMS_WHILE_ENCHANTING_ATTRIBUTES);
 			return ValueTask.CompletedTask;
 		}
-		
-		Item itemToRemove = player.getInventory().getItemByObjectId(_objectId);
-		
+
+		Item? itemToRemove = player.getInventory().getItemByObjectId(_objectId);
+
 		// if we can't find the requested item, its actually a cheat
 		if (itemToRemove == null)
 		{
 			// GM can destroy other player items
 			if (player.isGM())
 			{
-				WorldObject obj = World.getInstance().findObject(_objectId);
+				WorldObject? obj = World.getInstance().findObject(_objectId);
 				if ((obj != null) && obj.isItem())
 				{
 					if (_count > ((Item) obj).getCount())
 					{
 						count = ((Item) obj).getCount();
 					}
-					
+
 					AdminCommandHandler.getInstance().useAdminCommand(player, "admin_delete_item " + _objectId + " " + count, true);
 				}
 
 				return ValueTask.CompletedTask;
 			}
-			
+
 			player.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_DESTROYED);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Cannot discard item that the skill is consuming
 		if (player.isCastingNow(s => s.getSkill().getItemConsumeId() == itemToRemove.getId()))
 		{
 			player.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_DESTROYED);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		int itemId = itemToRemove.getId();
 		if (!Config.DESTROY_ALL_ITEMS && ((!player.canOverrideCond(PlayerCondOverride.DESTROY_ALL_ITEMS) && !itemToRemove.isDestroyable()) || CursedWeaponsManager.getInstance().isCursed(itemId)))
 		{
@@ -112,31 +112,31 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!itemToRemove.isStackable() && (count > 1))
 		{
 			Util.handleIllegalPlayerAction(player,
 				"[RequestDestroyItem] Character " + player.getName() + " of account " + player.getAccountName() +
 				" tried to destroy a non-stackable item with oid " + _objectId + " but has count > 1!",
 				Config.DEFAULT_PUNISH);
-			
+
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!player.getInventory().canManipulateWithItemId(itemToRemove.getId()))
 		{
 			player.sendMessage("You cannot use this item.");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (_count > itemToRemove.getCount())
 		{
 			count = itemToRemove.getCount();
 		}
-		
+
 		if (itemToRemove.getTemplate().isPetItem())
 		{
-			Summon pet = player.getPet();
+			Summon? pet = player.getPet();
 			if ((pet != null) && (pet.getControlObjectId() == _objectId))
 			{
 				pet.unSummon(player);
@@ -184,11 +184,11 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 			iu = new InventoryUpdatePacket(itemsToUpdate);
 			player.sendInventoryUpdate(iu);
 		}
-		
-		Item removedItem = player.getInventory().destroyItem("Destroy", itemToRemove, count, player, null);
+
+		Item? removedItem = player.getInventory().destroyItem("Destroy", itemToRemove, count, player, null);
 		if (removedItem == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (removedItem.getCount() == 0)
 		{
 			iu = new InventoryUpdatePacket(new ItemInfo(removedItem, ItemChangeType.REMOVED));
@@ -199,9 +199,9 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 			iu = new InventoryUpdatePacket(new ItemInfo(removedItem, ItemChangeType.MODIFIED));
 			iu.addModifiedItem(removedItem);
 		}
-		
+
 		player.sendInventoryUpdate(iu);
-		
+
 		// LCoin UI update.
 		if (removedItem.getId() == Inventory.LCOIN_ID)
 		{

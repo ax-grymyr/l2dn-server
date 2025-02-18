@@ -56,7 +56,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		    connection.Close();
 		    return ValueTask.CompletedTask;
 	    }
-        
+
 		// Last Verified: May 30, 2009 - Gracia Final - Players are able to create characters with
 		// names consisting of as little as 1,2,3 letter/number combinations.
 		if (string.IsNullOrEmpty(_name) || _name.Length > 16)
@@ -65,7 +65,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 			connection.Send(ref createFailPacket);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (Config.FORBIDDEN_NAMES.Count > 0)
 		{
 			foreach (string st in Config.FORBIDDEN_NAMES)
@@ -78,14 +78,14 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 				}
 			}
 		}
-		
+
 		if (FakePlayerData.getInstance().getProperName(_name) != null)
 		{
 			CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.IncorrectName);
 			connection.Send(ref createFailPacket);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Last Verified: May 30, 2009 - Gracia Final
 		if (string.IsNullOrEmpty(_name) || !_name.ContainsAlphaNumericOnly() || !IsValidName(_name))
 		{
@@ -93,28 +93,28 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 			connection.Send(ref createFailPacket);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (_face > 4 || _face < 0)
 		{
 			CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
 			connection.Send(ref createFailPacket);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (_hairStyle < 0 || (_sex != Sex.Female && _hairStyle > 8) || (_sex == Sex.Female && _hairStyle > 11))
 		{
 			CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
 			connection.Send(ref createFailPacket);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (_hairColor > 3 || _hairColor < 0)
 		{
 			CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
 			connection.Send(ref createFailPacket);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		/*
 		 * DrHouse: Since checks for duplicate names are done using SQL, lock must be held until data is written to DB as well.
 		 */
@@ -137,8 +137,8 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 				connection.Send(ref createFailPacket);
 				return ValueTask.CompletedTask;
 			}
-			
-			PlayerTemplate template = PlayerTemplateData.getInstance().getTemplate(_class);
+
+			PlayerTemplate? template = PlayerTemplateData.getInstance().getTemplate(_class);
 			if (template == null || _class.GetLevel() > 0)
 			{
 				CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.CreationFailed);
@@ -156,16 +156,16 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 			newChar = Player.create(template, session.AccountId, session.AccountName, _name,
 				new PlayerAppearance((byte)_face, (byte)_hairColor, (byte)_hairStyle, _sex));
 		}
-		
+
 		// HP and MP are at maximum and CP is zero by default.
 		newChar.setCurrentHp(newChar.getMaxHp());
 		newChar.setCurrentMp(newChar.getMaxMp());
-		
+
 		InitNewChar(session, newChar);
-		
+
 		CharacterCreateSuccessPacket createSuccessPacket = new();
 		connection.Send(ref createSuccessPacket);
-		
+
 		session.Characters.AddNewChar(newChar);
 		CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
 		connection.Send(ref characterListPacket);
@@ -173,19 +173,19 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		// Update character count on AuthServer
 		AccountStatusPacket accountStatusPacket = new(session.AccountId, (byte)session.Characters.Count);
 		AuthServerSession.Send(ref accountStatusPacket);
-		
+
 		return ValueTask.CompletedTask;
 	}
-	
+
 	private static void InitNewChar(GameSession session, Player newChar)
 	{
 		World.getInstance().addObject(newChar);
-		
+
 		if (Config.STARTING_ADENA > 0)
 		{
 			newChar.addAdena("Init", Config.STARTING_ADENA, null, false);
 		}
-		
+
 		PlayerTemplate template = newChar.getTemplate();
 		if (Config.CUSTOM_STARTING_LOC)
 		{
@@ -201,24 +201,24 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 			Location3D createLoc = template.getCreationPoint();
 			newChar.setXYZInvisible(createLoc);
 		}
-		
+
 		newChar.setTitle("");
-		
+
 		if (Config.ENABLE_VITALITY)
 		{
 			newChar.setVitalityPoints(Math.Min(Config.STARTING_VITALITY_POINTS, PlayerStat.MAX_VITALITY_POINTS), true);
 		}
-		
+
 		if (Config.STARTING_LEVEL > 1)
 		{
 			newChar.getStat().addLevel(Config.STARTING_LEVEL - 1);
 		}
-		
+
 		if (Config.STARTING_SP > 0)
 		{
 			newChar.getStat().addSp(Config.STARTING_SP);
 		}
-		
+
 		List<PlayerItemTemplate> initialItems = InitialEquipmentData.getInstance().getEquipmentList(newChar.getClassId());
 		if (initialItems != null)
 		{
@@ -229,30 +229,30 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 				{
 					PacketLogger.Instance.Error("Could not create item during char creation: itemId " + ie.getId() +
 					                            ", amount " + ie.getCount() + ".");
-					
+
 					continue;
 				}
-				
+
 				if (item.isEquipable() && ie.isEquipped())
 				{
 					newChar.getInventory().equipItem(item);
 				}
 			}
 		}
-		
+
 		foreach (SkillLearn skill in SkillTreeData.getInstance().getAvailableSkills(newChar, newChar.getClassId(), false, true, false))
 		{
 			newChar.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), true);
 		}
-		
+
 		// Register all shortcuts for actions, skills and items for this new character.
 		InitialShortcutData.getInstance().registerAllShortcuts(newChar);
-		
+
 		if (GlobalEvents.Players.HasSubscribers<OnPlayerCreate>())
 		{
 			GlobalEvents.Players.Notify(new OnPlayerCreate(newChar, newChar.ObjectId, newChar.getName(), session));
 		}
-		
+
 		newChar.setOnlineStatus(true, false);
 		Disconnection.of(session, newChar).storeMe().deleteMe();
     }

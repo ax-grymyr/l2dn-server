@@ -9,19 +9,19 @@ namespace L2Dn.GameServer.TaskManagers;
 public class ItemsAutoDestroyTaskManager: Runnable
 {
 	private static readonly Set<Item> ITEMS = new ();
-	
+
 	protected ItemsAutoDestroyTaskManager()
 	{
 		ThreadPool.scheduleAtFixedRate(this, 5000, 5000);
 	}
-	
+
 	public void run()
 	{
 		if (ITEMS.isEmpty())
 		{
 			return;
 		}
-		
+
 		DateTime currentTime = DateTime.UtcNow;
 		List<Item> toRemove = new List<Item>();
 		foreach (Item itemInstance in ITEMS)
@@ -33,9 +33,10 @@ public class ItemsAutoDestroyTaskManager: Runnable
 			else
 			{
 				TimeSpan autoDestroyTime;
-				if (itemInstance.getTemplate().getAutoDestroyTime() > TimeSpan.Zero)
+                TimeSpan? autoDestroyTimeNullable = itemInstance.getTemplate().getAutoDestroyTime();
+				if (autoDestroyTimeNullable > TimeSpan.Zero)
 				{
-					autoDestroyTime = itemInstance.getTemplate().getAutoDestroyTime().Value;
+					autoDestroyTime = autoDestroyTimeNullable.Value;
 				}
 				else if (itemInstance.getTemplate().hasExImmediateEffect())
 				{
@@ -47,7 +48,7 @@ public class ItemsAutoDestroyTaskManager: Runnable
 						? TimeSpan.FromMilliseconds(3600000)
 						: TimeSpan.FromMilliseconds(Config.AUTODESTROY_ITEM_AFTER * 1000));
 				}
-				
+
 				if ((currentTime - itemInstance.getDropTime()) > autoDestroyTime)
 				{
 					itemInstance.decayMe();
@@ -66,18 +67,18 @@ public class ItemsAutoDestroyTaskManager: Runnable
 			ITEMS.remove(item);
 		}
 	}
-	
+
 	public void addItem(Item item)
 	{
 		item.setDropTime(DateTime.UtcNow);
 		ITEMS.add(item);
 	}
-	
+
 	public static ItemsAutoDestroyTaskManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ItemsAutoDestroyTaskManager INSTANCE = new ItemsAutoDestroyTaskManager();

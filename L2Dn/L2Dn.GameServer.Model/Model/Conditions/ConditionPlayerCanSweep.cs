@@ -17,51 +17,52 @@ namespace L2Dn.GameServer.Model.Conditions;
  * If two or more conditions aren't meet at the same time, one message per condition will be shown.
  * @author Zoey76
  */
-public class ConditionPlayerCanSweep: Condition
+public sealed class ConditionPlayerCanSweep(bool value): Condition
 {
-	private readonly bool _value;
-	
-	public ConditionPlayerCanSweep(bool value)
-	{
-		_value = value;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		bool canSweep = false;
-		if (effector.getActingPlayer() != null)
-		{
-			Player sweeper = effector.getActingPlayer();
-			if (skill != null)
-			{
-				foreach (WorldObject wo in skill.getTargetsAffected(sweeper, effected))
-				{
-					if ((wo != null) && wo.isAttackable())
-					{
-						Attackable attackable = (Attackable) wo;
-						if (attackable.isDead())
-						{
-							if (attackable.isSpoiled())
-							{
-								canSweep = attackable.checkSpoilOwner(sweeper, true);
-								if (canSweep)
-								{
-									canSweep = !attackable.isOldCorpse(sweeper, Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true);
-								}
-								if (canSweep)
-								{
-									canSweep = sweeper.getInventory().checkInventorySlotsAndWeight(attackable.getSpoilLootItems(), true, true);
-								}
-							}
-							else
-							{
-								sweeper.sendPacket(SystemMessageId.THE_SWEEPER_HAS_FAILED_AS_THE_TARGET_IS_NOT_SPOILED);
-							}
-						}
-					}
-				}
-			}
-		}
-		return _value == canSweep;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? sweeper = effector.getActingPlayer();
+        if (sweeper is null)
+            return !value;
+
+        bool canSweep = false;
+        if (skill != null)
+        {
+            List<WorldObject>? targets = skill.getTargetsAffected(sweeper, effected);
+            if (targets is not null)
+            {
+                foreach (WorldObject wo in targets)
+                {
+                    if (wo != null && wo.isAttackable())
+                    {
+                        Attackable attackable = (Attackable)wo;
+                        if (attackable.isDead())
+                        {
+                            if (attackable.isSpoiled())
+                            {
+                                canSweep = attackable.checkSpoilOwner(sweeper, true);
+                                if (canSweep)
+                                {
+                                    canSweep = !attackable.isOldCorpse(sweeper,
+                                        Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true);
+                                }
+
+                                if (canSweep)
+                                {
+                                    canSweep = sweeper.getInventory().
+                                        checkInventorySlotsAndWeight(attackable.getSpoilLootItems(), true, true);
+                                }
+                            }
+                            else
+                            {
+                                sweeper.sendPacket(SystemMessageId.THE_SWEEPER_HAS_FAILED_AS_THE_TARGET_IS_NOT_SPOILED);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return value == canSweep;
+    }
 }

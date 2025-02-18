@@ -25,20 +25,20 @@ public struct ExElementalInitTalentPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        ElementalSpirit spirit = player.getElementalSpirit(_type);
+        ElementalSpirit? spirit = player.getElementalSpirit(_type);
         if (spirit == null)
         {
             connection.Send(SystemMessageId.NO_SPIRITS_ARE_AVAILABLE);
             return ValueTask.CompletedTask;
         }
-		
+
         if (player.isInBattle())
         {
             connection.Send(SystemMessageId.UNABLE_TO_RESET_THE_SPIRIT_ATTRIBUTES_WHILE_IN_BATTLE);
             connection.Send(new ElementalSpiritSetTalentPacket(player, _type, false));
             return ValueTask.CompletedTask;
         }
-		
+
         if (player.reduceAdena("Talent", ElementalSpiritData.TalentInitFee, player, true))
         {
             spirit.resetCharacteristics();
@@ -49,7 +49,7 @@ public struct ExElementalInitTalentPacket: IIncomingPacket<GameSession>
         {
             connection.Send(new ElementalSpiritSetTalentPacket(player, _type, false));
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

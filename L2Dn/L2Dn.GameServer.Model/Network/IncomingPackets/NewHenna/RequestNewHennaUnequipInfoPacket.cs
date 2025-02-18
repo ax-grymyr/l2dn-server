@@ -22,7 +22,7 @@ public struct RequestNewHennaUnequipInfoPacket: IIncomingPacket<GameSession>
         if (player == null || _hennaId == 0)
             return ValueTask.CompletedTask;
 
-        Henna henna = null;
+        Henna? henna = null;
         for (int slot = 1; slot <= 4; slot++)
         {
             Henna equipedHenna = player.getHenna(slot);
@@ -39,9 +39,9 @@ public struct RequestNewHennaUnequipInfoPacket: IIncomingPacket<GameSession>
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         player.sendPacket(new HennaItemRemoveInfoPacket(henna, player));
-        
+
         return ValueTask.CompletedTask;
     }
 }

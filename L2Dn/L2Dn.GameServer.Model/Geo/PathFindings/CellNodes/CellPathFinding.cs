@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Geo.PathFindings.CellNodes;
 public class CellPathFinding: PathFinding
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CellPathFinding));
-	
+
 	private BufferInfo[] _allBuffers;
 	private int _findSuccess;
 	private int _findFails;
@@ -22,16 +22,16 @@ public class CellPathFinding: PathFinding
 	private int _postFilterPlayableUses;
 	private int _postFilterPasses;
 	private TimeSpan _postFilterElapsed;
-	
-	private List<Item> _debugItems;
-	
+
+	private List<Item> _debugItems = [];
+
 	protected CellPathFinding()
 	{
 		try
 		{
 			string[] array = Config.PATHFIND_BUFFERS.Split(";");
 			_allBuffers = new BufferInfo[array.Length];
-			
+
 			string buf;
 			string[] args;
 			for (int i = 0; i < array.Length; i++)
@@ -42,7 +42,7 @@ public class CellPathFinding: PathFinding
 				{
 					throw new Exception("Invalid buffer definition: " + buf);
 				}
-				
+
 				_allBuffers[i] = new BufferInfo(int.Parse(args[0]), int.Parse(args[1]));
 			}
 		}
@@ -52,12 +52,12 @@ public class CellPathFinding: PathFinding
 			throw new Exception("CellPathFinding: load aborted");
 		}
 	}
-	
+
 	public override bool pathNodesExist(short regionoffset)
 	{
 		return false;
 	}
-	
+
 	public override List<AbstractNodeLoc>? findPath(Location3D location, Location3D targetLocation, Instance? instance, bool playable)
 	{
 		int gx = GeoEngine.getGeoX(location.X);
@@ -79,9 +79,9 @@ public class CellPathFinding: PathFinding
 		{
 			return null;
 		}
-		
+
 		bool debug = Config.DEBUG_PATH && playable;
-		
+
 		if (debug)
 		{
 			if (_debugItems == null)
@@ -94,16 +94,16 @@ public class CellPathFinding: PathFinding
 				{
 					item.decayMe();
 				}
-				
+
 				_debugItems.Clear();
 			}
 		}
-		
+
 		List<AbstractNodeLoc> path = null;
 		try
 		{
 			CellNode result = buffer.findPath(gx, gy, gz, gtx, gty, gtz);
-			
+
 			if (debug)
 			{
 				foreach (CellNode n in buffer.debugPath())
@@ -119,13 +119,13 @@ public class CellPathFinding: PathFinding
 					}
 				}
 			}
-			
+
 			if (result == null)
 			{
 				_findFails++;
 				return null;
 			}
-			
+
 			path = constructPath(result);
 		}
 		catch (Exception e)
@@ -137,13 +137,13 @@ public class CellPathFinding: PathFinding
 		{
 			buffer.free();
 		}
-		
+
 		if ((path.Count < 3) || (Config.MAX_POSTFILTER_PASSES <= 0))
 		{
 			_findSuccess++;
 			return path;
 		}
-		
+
 		DateTime timeStamp = DateTime.UtcNow;
 		_postFilterUses++;
 		if (playable)
@@ -157,7 +157,7 @@ public class CellPathFinding: PathFinding
 		{
 			pass++;
 			_postFilterPasses++;
-			
+
 			remove = false;
 			int middlePoint = 0;
 			Location3D currentLoc = location;
@@ -170,7 +170,7 @@ public class CellPathFinding: PathFinding
 				{
 					break;
 				}
-				
+
 				AbstractNodeLoc locEnd = path[middlePoint];
 				if (GeoEngine.getInstance().canMoveToTarget(currentLoc, locEnd.Location, instance))
 				{
@@ -190,17 +190,17 @@ public class CellPathFinding: PathFinding
 
 		// Only one postfilter pass for AI.
 		while (playable && remove && (path.Count > 2) && (pass < Config.MAX_POSTFILTER_PASSES));
-		
+
 		if (debug)
 		{
 			path.ForEach(n => dropDebugItem(1061, 1, n));
 		}
-		
+
 		_findSuccess++;
 		_postFilterElapsed += DateTime.UtcNow - timeStamp;
 		return path;
 	}
-	
+
 	private List<AbstractNodeLoc> constructPath(AbstractNode<NodeLoc> node)
 	{
 		List<AbstractNodeLoc> path = new();
@@ -208,7 +208,7 @@ public class CellPathFinding: PathFinding
 		int previousDirectionY = int.MinValue;
 		int directionX;
 		int directionY;
-		
+
 		AbstractNode<NodeLoc> tempNode = node;
 		while (tempNode.getParent() != null)
 		{
@@ -232,23 +232,23 @@ public class CellPathFinding: PathFinding
 				directionX = tempNode.getLoc().getNodeX() - tempNode.getParent().getLoc().getNodeX();
 				directionY = tempNode.getLoc().getNodeY() - tempNode.getParent().getLoc().getNodeY();
 			}
-			
+
 			// Only add a new route point if moving direction changes.
 			if ((directionX != previousDirectionX) || (directionY != previousDirectionY))
 			{
 				previousDirectionX = directionX;
 				previousDirectionY = directionY;
-				
+
 				path.Insert(0, tempNode.getLoc()); // TODO: very inefficient
 				tempNode.setLoc(null);
 			}
-			
+
 			tempNode = tempNode.getParent();
 		}
-		
+
 		return path;
 	}
-	
+
 	private CellNodeBuffer alloc(int size, bool playable)
 	{
 		CellNodeBuffer current = null;
@@ -274,7 +274,7 @@ public class CellPathFinding: PathFinding
 				{
 					break;
 				}
-				
+
 				// Not found, allocate temporary buffer.
 				current = new CellNodeBuffer(i.mapSize);
 				current.@lock();
@@ -288,7 +288,7 @@ public class CellPathFinding: PathFinding
 					}
 					break;
 				}
-				
+
 				i.overflows++;
 				if (playable)
 				{
@@ -297,10 +297,10 @@ public class CellPathFinding: PathFinding
 				}
 			}
 		}
-		
+
 		return current;
 	}
-	
+
 	private void dropDebugItem(int itemId, int num, AbstractNodeLoc loc)
 	{
 		Item item = new Item(IdManager.getInstance().getNextId(), itemId);
@@ -308,7 +308,7 @@ public class CellPathFinding: PathFinding
 		item.spawnMe(loc.Location);
 		_debugItems.Add(item);
 	}
-	
+
 	private class BufferInfo
 	{
 		public int mapSize;
@@ -319,7 +319,7 @@ public class CellPathFinding: PathFinding
 		public int overflows;
 		public int playableOverflows;
 		public TimeSpan elapsed;
-		
+
 		public BufferInfo(int size, int cnt)
 		{
 			mapSize = size;
@@ -393,11 +393,11 @@ public class CellPathFinding: PathFinding
 		return result;
 	}
 
-	public static CellPathFinding getInstance()
+	public new static CellPathFinding getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static CellPathFinding INSTANCE = new CellPathFinding();

@@ -18,10 +18,10 @@ public class Artillery: ITargetTypeHandler
 	{
 		return TargetType.ARTILLERY;
 	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
+
+	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
-		WorldObject target = creature.getTarget();
+		WorldObject? target = creature.getTarget();
 		if ((target != null) && target.isDoor())
 		{
 			Door targetDoor = (Door) target;
@@ -30,12 +30,12 @@ public class Artillery: ITargetTypeHandler
 				return targetDoor;
 			}
 		}
-		
+
 		if (sendMessage)
 		{
 			creature.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 		}
-		
+
 		return null;
 	}
 }

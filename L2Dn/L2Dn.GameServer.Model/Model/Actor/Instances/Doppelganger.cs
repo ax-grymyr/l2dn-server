@@ -17,9 +17,9 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 public class Doppelganger : Attackable
 {
 	private bool _copySummonerEffects = true;
-	private ScheduledFuture _attackTask = null;
-	private Creature _attackTarget = null;
-	
+	private ScheduledFuture? _attackTask;
+	private Creature? _attackTarget;
+
 	public Doppelganger(NpcTemplate template, Player owner): base(template)
 	{
 		setSummoner(owner);
@@ -30,31 +30,31 @@ public class Doppelganger : Attackable
 		((DoppelgangerAI) getAI()).setStartFollowController(true);
 		followSummoner(true);
 	}
-	
+
 	protected override CreatureAI initAI()
 	{
 		return new DoppelgangerAI(this);
 	}
-	
-	public override void onSpawn()
-	{
-		base.onSpawn();
-		
-		if (_copySummonerEffects && (getSummoner() != null))
-		{
-			foreach (BuffInfo summonerInfo in getSummoner().getEffectList().getEffects())
-			{
-				if (summonerInfo.getAbnormalTime() > TimeSpan.Zero)
-				{
-					BuffInfo info = new BuffInfo(getSummoner(), this, summonerInfo.getSkill(), false, null, null);
-					info.setAbnormalTime(summonerInfo.getAbnormalTime());
-					getEffectList().add(info);
-				}
-			}
-		}
-	}
-	
-	public void followSummoner(bool followSummoner)
+
+    public override void onSpawn()
+    {
+        base.onSpawn();
+
+        if (_copySummonerEffects && (getSummoner() != null))
+        {
+            foreach (BuffInfo summonerInfo in getSummoner().getEffectList().getEffects())
+            {
+                if (summonerInfo.getAbnormalTime() > TimeSpan.Zero)
+                {
+                    BuffInfo info = new BuffInfo(getSummoner(), this, summonerInfo.getSkill(), false, null, null);
+                    info.setAbnormalTime(summonerInfo.getAbnormalTime());
+                    getEffectList().add(info);
+                }
+            }
+        }
+    }
+
+    public void followSummoner(bool followSummoner)
 	{
 		if (followSummoner)
 		{
@@ -69,12 +69,12 @@ public class Doppelganger : Attackable
 			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		}
 	}
-	
+
 	public void setCopySummonerEffects(bool copySummonerEffects)
 	{
 		_copySummonerEffects = copySummonerEffects;
 	}
-	
+
 	public void stopAttackTask()
 	{
 		if ((_attackTask != null) && !_attackTask.isCancelled() && !_attackTask.isDone())
@@ -84,14 +84,14 @@ public class Doppelganger : Attackable
 			_attackTarget = null;
 		}
 	}
-	
+
 	public void startAttackTask(Creature target)
 	{
 		stopAttackTask();
 		_attackTarget = target;
 		_attackTask = ThreadPool.scheduleAtFixedRate(thinkCombat, 1000, 1000);
 	}
-	
+
 	private void thinkCombat()
 	{
 		if (_attackTarget == null)
@@ -99,39 +99,39 @@ public class Doppelganger : Attackable
 			stopAttackTask();
 			return;
 		}
-		
+
 		doAutoAttack(_attackTarget);
 		// TODO: Cast skills.
 	}
-	
+
 	public override PvpFlagStatus getPvpFlag()
 	{
 		return getSummoner() != null ? getSummoner().getPvpFlag() : PvpFlagStatus.None;
 	}
-	
+
 	public override Team getTeam()
 	{
 		return getSummoner() != null ? getSummoner().getTeam() : Team.NONE;
 	}
-	
+
 	public override bool isAutoAttackable(Creature attacker)
 	{
 		return (getSummoner() != null) ? getSummoner().isAutoAttackable(attacker) : base.isAutoAttackable(attacker);
 	}
-	
+
 	public override void doAttack(double damage, Creature target, Skill skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
 	{
 		base.doAttack(damage, target, skill, isDOT, directlyToHp, critical, reflect);
 		sendDamageMessage(target, skill, (int) damage, 0, critical, false, false);
 	}
-	
+
 	public override void sendDamageMessage(Creature target, Skill skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
 	{
 		if (miss || (getSummoner() == null) || !getSummoner().isPlayer())
 		{
 			return;
 		}
-		
+
 		// Prevents the double spam of system messages, if the target is the owning player.
 		if (target.ObjectId != getSummoner().ObjectId)
 		{
@@ -139,7 +139,7 @@ public class Doppelganger : Attackable
 			{
 				OlympiadGameManager.getInstance().notifyCompetitorDamage(getSummoner().getActingPlayer(), damage);
 			}
-			
+
 			SystemMessagePacket sm;
 			if ((target.isHpBlocked() && !target.isNpc()) || (target.isPlayer() && target.isAffected(EffectFlag.DUELIST_FURY) && !getActingPlayer().isAffected(EffectFlag.FACEOFF)))
 			{
@@ -153,15 +153,15 @@ public class Doppelganger : Attackable
 				sm.Params.addInt(damage);
 				sm.Params.addPopup(target.ObjectId, ObjectId, (damage * -1));
 			}
-			
+
 			sendPacket(sm);
 		}
 	}
-	
+
 	public override void reduceCurrentHp(double damage, Creature attacker, Skill skill)
 	{
 		base.reduceCurrentHp(damage, attacker, skill);
-		
+
 		if ((getSummoner() != null) && getSummoner().isPlayer() && (attacker != null) && !isDead() && !isHpBlocked())
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
@@ -172,23 +172,23 @@ public class Doppelganger : Attackable
 			sendPacket(sm);
 		}
 	}
-	
+
 	public override Player getActingPlayer()
 	{
 		return getSummoner() != null ? getSummoner().getActingPlayer() : base.getActingPlayer();
 	}
-	
+
 	public override bool deleteMe()
 	{
 		stopAttackTask();
 		return base.deleteMe();
 	}
-	
+
 	public override void onTeleported()
 	{
 		deleteMe(); // In retail, doppelgangers disappear when summoner teleports.
 	}
-	
+
 	public override void sendPacket<TPacket>(TPacket packet)
 	{
 		if (getSummoner() != null)
@@ -196,7 +196,7 @@ public class Doppelganger : Attackable
 			getSummoner().sendPacket(packet);
 		}
 	}
-	
+
 	public override void sendPacket(SystemMessageId id)
 	{
 		if (getSummoner() != null)
@@ -204,7 +204,7 @@ public class Doppelganger : Attackable
 			getSummoner().sendPacket(id);
 		}
 	}
-	
+
 	public override string ToString()
 	{
 		StringBuilder sb = new();

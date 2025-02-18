@@ -17,12 +17,12 @@ public class MyMentor: ITargetTypeHandler
 	{
 		return TargetType.MY_MENTOR;
 	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
+
+	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
 		if (creature.isPlayer())
 		{
-			Mentee mentor = MentorManager.getInstance().getMentor(creature.ObjectId);
+			Mentee? mentor = MentorManager.getInstance().getMentor(creature.ObjectId);
 			if (mentor != null)
 			{
 				return mentor.getPlayer();

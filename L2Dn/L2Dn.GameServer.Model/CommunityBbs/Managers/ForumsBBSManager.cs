@@ -13,7 +13,7 @@ public class ForumsBBSManager: BaseBBSManager
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ForumsBBSManager));
 	private readonly Set<Forum> _table;
 	private int _lastid = 1;
-	
+
 	/**
 	 * Instantiates a new forums bbs manager.
 	 */
@@ -35,7 +35,7 @@ public class ForumsBBSManager: BaseBBSManager
 			LOGGER.Warn(GetType().Name + ": Data error on Forum (root): " + e);
 		}
 	}
-	
+
 	/**
 	 * Inits the root.
 	 */
@@ -44,7 +44,7 @@ public class ForumsBBSManager: BaseBBSManager
 		_table.ForEach(x => x.vload());
 		LOGGER.Info(GetType().Name + ": Loaded " + _table.Count + " forums. Last forum id used: " + _lastid);
 	}
-	
+
 	/**
 	 * Adds the forum.
 	 * @param ff the forum
@@ -55,25 +55,25 @@ public class ForumsBBSManager: BaseBBSManager
 		{
 			return;
 		}
-		
+
 		_table.add(ff);
-		
+
 		if (ff.getID() > _lastid)
 		{
 			_lastid = ff.getID();
 		}
 	}
-	
+
 	public override void parsecmd(string command, Player player)
 	{
 	}
-	
+
 	/**
 	 * Gets the forum by name.
 	 * @param name the forum name
 	 * @return the forum by name
 	 */
-	public Forum getForumByName(string name)
+	public Forum? getForumByName(string name)
 	{
 		foreach (Forum f in _table)
 		{
@@ -84,7 +84,7 @@ public class ForumsBBSManager: BaseBBSManager
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Creates the new forum.
 	 * @param name the forum name
@@ -100,7 +100,7 @@ public class ForumsBBSManager: BaseBBSManager
 		forum.insertIntoDb();
 		return forum;
 	}
-	
+
 	/**
 	 * Gets the a new Id.
 	 * @return the a new Id
@@ -109,13 +109,13 @@ public class ForumsBBSManager: BaseBBSManager
 	{
 		return ++_lastid;
 	}
-	
+
 	/**
 	 * Gets the forum by Id.
 	 * @param idf the the forum Id
 	 * @return the forum by Id
 	 */
-	public Forum getForumByID(int idf)
+	public Forum? getForumByID(int idf)
 	{
 		foreach (Forum f in _table)
 		{
@@ -126,11 +126,11 @@ public class ForumsBBSManager: BaseBBSManager
 		}
 		return null;
 	}
-	
+
 	public override void parsewrite(string ar1, string ar2, string ar3, string ar4, string ar5, Player player)
 	{
 	}
-	
+
 	/**
 	 * Gets the single instance of ForumsBBSManager.
 	 * @return single instance of ForumsBBSManager
@@ -139,7 +139,7 @@ public class ForumsBBSManager: BaseBBSManager
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ForumsBBSManager INSTANCE = new ForumsBBSManager();

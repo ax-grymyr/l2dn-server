@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.Network;
@@ -62,9 +63,8 @@ public struct ExResetStatusBonusPacket: IIncomingPacket<GameSession>
 	    }
 
 	    long adena = player.getAdena();
-	    long lcoin = player.getInventory().getItemByItemId(Inventory.LCOIN_ID) == null
-		    ? 0
-		    : player.getInventory().getItemByItemId(Inventory.LCOIN_ID).getCount();
+        Item? item = player.getInventory().getItemByItemId(Inventory.LCOIN_ID);
+	    long lcoin = item?.getCount() ?? 0;
 
 	    if ((adena < adenaCost) || (lcoin < lcoinCost))
 	    {
@@ -82,7 +82,7 @@ public struct ExResetStatusBonusPacket: IIncomingPacket<GameSession>
 		    player.getVariables().remove(PlayerVariables.STAT_INT);
 		    player.getVariables().remove(PlayerVariables.STAT_WIT);
 		    player.getVariables().remove(PlayerVariables.STAT_MEN);
-		    
+
 		    player.getVariables().set(PlayerVariables.ELIXIRS_AVAILABLE,
 			    player.getVariables().getInt(PlayerVariables.ELIXIRS_AVAILABLE, 0));
 

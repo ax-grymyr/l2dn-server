@@ -7,21 +7,13 @@ namespace L2Dn.GameServer.Model.Conditions;
 /**
  * @author Sdw
  */
-public class ConditionTargetCheckCrtEffect : Condition
+public sealed class ConditionTargetCheckCrtEffect(bool isCrtEffect): Condition
 {
-	private readonly bool _isCrtEffect;
-	
-	public ConditionTargetCheckCrtEffect(bool isCrtEffect)
-	{
-		_isCrtEffect = isCrtEffect;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		if (effected.isNpc())
-		{
-			return ((Npc) effected).getTemplate().canBeCrt() == _isCrtEffect;
-		}
-		return true;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        if (effected.isNpc())
+            return ((Npc)effected).getTemplate().canBeCrt() == isCrtEffect;
+
+        return true;
+    }
 }

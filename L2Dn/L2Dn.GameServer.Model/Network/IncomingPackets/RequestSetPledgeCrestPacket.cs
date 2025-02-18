@@ -26,35 +26,35 @@ public struct RequestSetPledgeCrestPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         if (_length < 0)
         {
             connection.Send(SystemMessageId.THE_SIZE_OF_THE_UPLOADED_SYMBOL_DOES_NOT_MEET_THE_STANDARD_REQUIREMENTS);
             return ValueTask.CompletedTask;
         }
-		
+
         if (_length > 384)
         {
             connection.Send(SystemMessageId.THE_FILE_FORMAT_BMP_256_COLORS_24X12_PIXELS);
             return ValueTask.CompletedTask;
         }
-		
-        Clan clan = player.getClan();
+
+        Clan? clan = player.getClan();
         if (clan == null)
             return ValueTask.CompletedTask;
-		
+
         if (clan.getDissolvingExpiryTime() > DateTime.UtcNow)
         {
             connection.Send(SystemMessageId.AS_YOU_ARE_CURRENTLY_SCHEDULE_FOR_CLAN_DISSOLUTION_YOU_CANNOT_REGISTER_OR_DELETE_A_CLAN_CREST);
             return ValueTask.CompletedTask;
         }
-		
+
         if (!player.hasClanPrivilege(ClanPrivilege.CL_REGISTER_CREST))
         {
             connection.Send(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
             return ValueTask.CompletedTask;
         }
-		
+
         if (_length == 0)
         {
             if (clan.getCrestId() != 0)
@@ -70,8 +70,8 @@ public struct RequestSetPledgeCrestPacket: IIncomingPacket<GameSession>
                 connection.Send(SystemMessageId.A_CLAN_CREST_CAN_ONLY_BE_REGISTERED_WHEN_THE_CLAN_S_SKILL_LEVEL_IS_3_OR_ABOVE);
                 return ValueTask.CompletedTask;
             }
-			
-            Crest crest = CrestTable.getInstance().createCrest(_data, CrestType.PLEDGE);
+
+            Crest? crest = CrestTable.getInstance().createCrest(_data, CrestType.PLEDGE);
             if (crest != null)
             {
                 clan.changeClanCrest(crest.getId());

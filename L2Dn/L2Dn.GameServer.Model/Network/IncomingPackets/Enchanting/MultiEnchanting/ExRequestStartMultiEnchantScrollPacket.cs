@@ -28,21 +28,22 @@ public struct ExRequestStartMultiEnchantScrollPacket: IIncomingPacket<GameSessio
         {
             player.addRequest(new EnchantItemRequest(player, _scrollObjectId));
         }
-        
+
         EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
-		
-        Item scroll = player.getInventory().getItemByObjectId(_scrollObjectId);
+
+        Item? scroll = player.getInventory().getItemByObjectId(_scrollObjectId);
         EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
-        if (scrollTemplate == null || scrollTemplate.isBlessed() || scrollTemplate.isBlessedDown() || scrollTemplate.isSafe() || scrollTemplate.isGiant())
+        if (scrollTemplate == null || scrollTemplate.isBlessed() || scrollTemplate.isBlessedDown() ||
+            scrollTemplate.isSafe() || scrollTemplate.isGiant())
         {
             player.sendPacket(new ExResetSelectMultiEnchantScrollPacket(player, _scrollObjectId, 1));
             return ValueTask.CompletedTask;
         }
-		
+
         request.setEnchantingScroll(_scrollObjectId);
-		
+
         player.sendPacket(new ExResetSelectMultiEnchantScrollPacket(player, _scrollObjectId, 0));
-        
+
         return ValueTask.CompletedTask;
     }
 }

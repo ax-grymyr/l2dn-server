@@ -36,15 +36,15 @@ namespace L2Dn.GameServer.Data.Xml;
 public class ItemData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemData));
-	
-	private ItemTemplate[] _allTemplates;
+
+	private ItemTemplate[] _allTemplates = [];
 	private readonly Map<int, EtcItem> _etcItems = new();
 	private readonly Map<int, Armor> _armors = new();
 	private readonly Map<int, Weapon> _weapons = new();
 	private readonly Map<string, ImmutableArray<string>> _tables = new();
-	
+
 	public static readonly Map<string, long> SLOTS = new();
-	
+
 	static ItemData()
 	{
 		SLOTS.put("shirt", ItemTemplate.SLOT_UNDERWEAR);
@@ -80,7 +80,7 @@ public class ItemData: DataReaderBase
 		SLOTS.put("artifactbook", ItemTemplate.SLOT_ARTIFACT_BOOK);
 		SLOTS.put("artifact", ItemTemplate.SLOT_ARTIFACT);
 		SLOTS.put("none", ItemTemplate.SLOT_NONE);
-		
+
 		// retail compatibility
 		SLOTS.put("onepiece", ItemTemplate.SLOT_FULL_ARMOR);
 		SLOTS.put("hair2", ItemTemplate.SLOT_HAIR2);
@@ -89,12 +89,12 @@ public class ItemData: DataReaderBase
 		SLOTS.put("deco1", ItemTemplate.SLOT_DECO);
 		SLOTS.put("waist", ItemTemplate.SLOT_BELT);
 	}
-	
+
 	protected ItemData()
 	{
 		load();
 	}
-	
+
 	private void load()
 	{
 		_armors.Clear();
@@ -143,7 +143,7 @@ public class ItemData: DataReaderBase
 				{
 					if (item is not null)
 						throw new InvalidOperationException("Item created but table node found! Item " + id);
-					
+
 					parseTable(el);
 					break;
 				}
@@ -229,9 +229,9 @@ public class ItemData: DataReaderBase
 					throw new InvalidOperationException($"Unknown tag {el.Name.LocalName} in file {fileName}");
 			}
 		});
-		
+
 		MakeItem(className, set, ref item);
-		
+
 		switch (item)
 		{
 			case EtcItem etcItem:
@@ -285,10 +285,10 @@ public class ItemData: DataReaderBase
 
 			throw new InvalidOperationException();
 		}
-		
+
 		return value;
 	}
-	
+
 	private void parseTable(XElement element)
 	{
 		string name = element.GetAttributeValueAsString("name");
@@ -304,7 +304,7 @@ public class ItemData: DataReaderBase
 
 		_tables[name] = array.ToImmutableArray();
 	}
-	
+
 	private static Condition parseCondition(XElement element, ItemTemplate template)
 	{
 		string elementName = element.Name.LocalName;
@@ -326,17 +326,17 @@ public class ItemData: DataReaderBase
 		element.Elements().ForEach(e => cond.add(parseCondition(e, template)));
 		if ((cond.conditions == null) || (cond.conditions.Count == 0))
 			LOGGER.Error($"Empty <and> condition in item {template.getId()}");
-		
+
 		return cond;
 	}
-	
+
 	private static Condition parseLogicOr(XElement element, ItemTemplate template)
 	{
 		ConditionLogicOr cond = new ConditionLogicOr();
 		element.Elements().ForEach(e => cond.add(parseCondition(e, template)));
 		if ((cond.conditions == null) || (cond.conditions.Count == 0))
 			LOGGER.Error($"Empty <or> condition in item {template.getId()}");
-		
+
 		return cond;
 	}
 
@@ -376,10 +376,9 @@ public class ItemData: DataReaderBase
 					string[] range = ((string)attribute).Split(";");
 					if (range.Length == 2)
 					{
-						int[] lvlRange = new int[2];
-						lvlRange[0] = int.Parse(range[0]);
-						lvlRange[1] = int.Parse(range[1]);
-						cond = joinAnd(cond, new ConditionPlayerLevelRange(lvlRange));
+						int minLevel = int.Parse(range[0]);
+						int maxLevel = int.Parse(range[1]);
+						cond = joinAnd(cond, new ConditionPlayerLevelRange(minLevel, maxLevel));
 					}
 					break;
 				}
@@ -499,7 +498,7 @@ public class ItemData: DataReaderBase
 				}
 				case "souls":
 				{
-					// TODO: something wrong here 
+					// TODO: something wrong here
 					int value = (int)attribute;
 					SoulType type = attribute.GetEnum<SoulType>();
 					cond = joinAnd(cond, new ConditionPlayerSouls(value, type));
@@ -698,7 +697,7 @@ public class ItemData: DataReaderBase
 						Set<int> npcIds = new();
 						for (int index = 0; index < ids.Length; index++)
 							npcIds.add(int.Parse(ids[index]));
-						
+
 						int radius = int.Parse(st.nextToken());
 						bool val = bool.Parse(st.nextToken());
 						cond = joinAnd(cond, new ConditionPlayerRangeFromNpc(npcIds, radius, val));
@@ -714,7 +713,7 @@ public class ItemData: DataReaderBase
 						Set<int> npcIds = new();
 						for (int index = 0; index < ids.Length; index++)
 							npcIds.add(int.Parse(ids[index]));
-						
+
 						int radius = int.Parse(st.nextToken());
 						bool val = bool.Parse(st.nextToken());
 						cond = joinAnd(cond, new ConditionPlayerRangeFromSummonedNpc(npcIds, radius, val));
@@ -843,7 +842,7 @@ public class ItemData: DataReaderBase
 				case "categorytype":
 				{
 					string[] values = ((string)attribute).Split(",");
-					Set<CategoryType> array = new();
+					Set<CategoryType> array = [];
 					foreach (string value in values)
 						array.add(Enum.Parse<CategoryType>(value));
 
@@ -882,13 +881,13 @@ public class ItemData: DataReaderBase
 				}
 			}
 		}
-		
+
 		if (cond == null)
 			throw new InvalidOperationException("Unrecognized <player> condition");
 
 		return cond;
 	}
-	
+
 	private static Condition parseTargetCondition(XElement element, ItemTemplate template)
 	{
 		Condition cond = null;
@@ -919,10 +918,9 @@ public class ItemData: DataReaderBase
 					string[] range = ((string)attribute).Split(";");
 					if (range.Length == 2)
 					{
-						int[] lvlRange = new int[2];
-						lvlRange[0] = int.Parse(range[0]);
-						lvlRange[1] = int.Parse(range[1]);
-						cond = joinAnd(cond, new ConditionTargetLevelRange(lvlRange));
+						int minLevel = int.Parse(range[0]);
+						int maxLevel = int.Parse(range[1]);
+						cond = joinAnd(cond, new ConditionTargetLevelRange(minLevel, maxLevel));
 					}
 					break;
 				}
@@ -1015,7 +1013,7 @@ public class ItemData: DataReaderBase
 								break;
 							}
 						}
-						
+
 						foreach (ArmorType at in EnumUtil.GetValues<ArmorType>())
 						{
 							if (at.ToString().equals(item))
@@ -1077,7 +1075,7 @@ public class ItemData: DataReaderBase
 
 		return cond;
 	}
-	
+
 	private static Condition parseUsingCondition(XElement element)
 	{
 		Condition cond = null;
@@ -1100,7 +1098,7 @@ public class ItemData: DataReaderBase
 								mask |= wt;
 							}
 						}
-						
+
 						foreach (ArmorType at in EnumUtil.GetValues<ArmorType>())
 						{
 							if (at.ToString().equals(item))
@@ -1108,7 +1106,7 @@ public class ItemData: DataReaderBase
 								mask |= at;
 							}
 						}
-						
+
 						if (old == mask)
 							LOGGER.Error("[parseUsingCondition=\"kind\"] Unknown item type name: " + item);
 					}
@@ -1127,7 +1125,7 @@ public class ItemData: DataReaderBase
 						{
 							mask |= value;
 						}
-						
+
 						if (old == mask)
 							LOGGER.Error("[parseUsingCondition=\"slot\"] Unknown item slot name: " + item);
 					}
@@ -1166,7 +1164,7 @@ public class ItemData: DataReaderBase
 
 		return cond;
 	}
-	
+
 	private static Condition parseGameCondition(XElement element)
 	{
 		Condition cond = null;
@@ -1197,7 +1195,7 @@ public class ItemData: DataReaderBase
 
 		if (cond == null)
 			throw new InvalidOperationException("Unrecognized <game> condition");
-		
+
 		return cond;
 	}
 
@@ -1211,13 +1209,13 @@ public class ItemData: DataReaderBase
 			logicAnd.add(c);
 			return logicAnd;
 		}
-		
+
 		logicAnd = new ConditionLogicAnd();
 		logicAnd.add(cond);
 		logicAnd.add(c);
 		return logicAnd;
 	}
-	
+
 	private static ItemTemplate MakeItem(string className, StatSet set, ref ItemTemplate? template)
 	{
 		if (template is not null)
@@ -1235,7 +1233,7 @@ public class ItemData: DataReaderBase
 
 		return template;
 	}
-	
+
 	/**
 	 * Builds a variable in which all items are putting in in function of their ID.
 	 * @param size
@@ -1244,30 +1242,30 @@ public class ItemData: DataReaderBase
 	{
 		IEnumerable<int> ids = _armors.Keys.Concat(_weapons.Keys).Concat(_etcItems.Keys);
 		int maxId = ids.Any() ? ids.Max() : 0;
-			
+
 		// Create a FastLookUp Table called _allTemplates of size : value of the highest item ID
 		LOGGER.Info(GetType().Name + ": Highest item id used: " + maxId);
 		_allTemplates = new ItemTemplate[maxId + 1];
-		
+
 		// Insert armor item in Fast Look Up Table
 		foreach (Armor item in _armors.Values)
 		{
 			_allTemplates[item.getId()] = item;
 		}
-		
+
 		// Insert weapon item in Fast Look Up Table
 		foreach (Weapon item in _weapons.Values)
 		{
 			_allTemplates[item.getId()] = item;
 		}
-		
+
 		// Insert etcItem item in Fast Look Up Table
 		foreach (EtcItem item in _etcItems.Values)
 		{
 			_allTemplates[item.getId()] = item;
 		}
 	}
-	
+
 	/**
 	 * Returns the item corresponding to the item ID
 	 * @param id : int designating the item
@@ -1294,7 +1292,7 @@ public class ItemData: DataReaderBase
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item
 	 */
-	public Item createItem(string process, int itemId, long count, Creature actor, object reference)
+	public Item createItem(string process, int itemId, long count, Creature actor, object? reference)
 	{
 		// Create and Init the Item corresponding to the Item Identifier
 		Item item = new Item(IdManager.getInstance().getNextId(), itemId);
@@ -1401,7 +1399,7 @@ public class ItemData: DataReaderBase
 				referenceName = (string)reference;
 			}
 
-			// TODO: GMAudit 
+			// TODO: GMAudit
 			// GMAudit.auditGMAction(actor.ToString(), sb.ToString(), targetName,
 			// 	StringUtil.concat("Object referencing this action is: ", referenceName));
 		}
@@ -1420,7 +1418,7 @@ public class ItemData: DataReaderBase
 	{
 		return createItem(process, itemId, count, actor, null);
 	}
-	
+
 	/**
 	 * Destroys the Item.<br>
 	 * <br>
@@ -1435,7 +1433,7 @@ public class ItemData: DataReaderBase
 	 * @param actor the player requesting the item destroy.
 	 * @param reference the object referencing current action like NPC selling item or previous item in transformation.
 	 */
-	public void destroyItem(string process, Item item, Player actor, object reference)
+	public void destroyItem(string process, Item item, Player actor, object? reference)
 	{
 		lock (item)
 		{
@@ -1444,10 +1442,10 @@ public class ItemData: DataReaderBase
 			item.setOwnerId(0);
 			item.setItemLocation(ItemLocation.VOID);
 			item.setLastChange(ItemChangeType.REMOVED);
-			
+
 			World.getInstance().removeObject(item);
 			IdManager.getInstance().releaseId(item.ObjectId);
-			
+
 			if ((Config.LOG_ITEMS && ((!Config.LOG_ITEMS_SMALL_LOG) && (!Config.LOG_ITEMS_IDS_ONLY))) || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || (item.getId() == Inventory.ADENA_ID))) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(item.getId())))
 			{
 				if (item.getEnchantLevel() > 0)
@@ -1504,7 +1502,7 @@ public class ItemData: DataReaderBase
 				sb.Append(item.ObjectId);
 				sb.Append(")");
 
-				string targetName = (actor.getTarget() != null ? actor.getTarget().getName() : "no-target");
+				string targetName = actor.getTarget()?.getName() ?? "no-target";
 
 				string referenceName = "no-reference";
 				if (reference is WorldObject)
@@ -1518,7 +1516,7 @@ public class ItemData: DataReaderBase
 					referenceName = (string)reference;
 				}
 
-				// TODO: GMAudit 
+				// TODO: GMAudit
 				//GMAudit.auditGMAction(actor.ToString(), sb.ToString(), targetName,
 				//	StringUtil.concat("Object referencing this action is: ", referenceName));
 			}
@@ -1540,62 +1538,62 @@ public class ItemData: DataReaderBase
 			}
 		}
 	}
-	
+
 	public void reload()
 	{
 		load();
 		EnchantItemHPBonusData.getInstance().load();
 	}
-	
+
 	public ICollection<int> getAllArmorsId()
 	{
 		return _armors.Keys;
 	}
-	
+
 	public ICollection<Armor> getAllArmors()
 	{
 		return _armors.Values;
 	}
-	
+
 	public ICollection<int> getAllWeaponsId()
 	{
 		return _weapons.Keys;
 	}
-	
+
 	public ICollection<Weapon> getAllWeapons()
 	{
 		return _weapons.Values;
 	}
-	
+
 	public ICollection<int> getAllEtcItemsId()
 	{
 		return _etcItems.Keys;
 	}
-	
+
 	public ICollection<EtcItem> getAllEtcItems()
 	{
 		return _etcItems.Values;
 	}
-	
+
 	public ItemTemplate[] getAllItems()
 	{
 		return _allTemplates;
 	}
-	
+
 	public int getArraySize()
 	{
 		return _allTemplates.Length;
 	}
-	
+
 	protected class ResetOwner : Runnable
 	{
 		Item _item;
-		
+
 		public ResetOwner(Item item)
 		{
 			_item = item;
 		}
-		
+
 		public void run()
 		{
 			// Set owner id to 0 only when location is VOID.
@@ -1606,12 +1604,12 @@ public class ItemData: DataReaderBase
 			_item.setItemLootShedule(null);
 		}
 	}
-	
+
 	public static ItemData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ItemData INSTANCE = new();

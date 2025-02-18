@@ -23,7 +23,8 @@ public struct RequestOustPledgeMemberPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (player.getClan() == null)
+        Clan? clan = player.getClan();
+        if (clan == null)
         {
             player.sendPacket(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER_2);
             return ValueTask.CompletedTask;
@@ -40,9 +41,8 @@ public struct RequestOustPledgeMemberPacket: IIncomingPacket<GameSession>
             player.sendPacket(SystemMessageId.YOU_CANNOT_DISMISS_YOURSELF);
             return ValueTask.CompletedTask;
         }
-		
-        Clan clan = player.getClan();
-        ClanMember member = clan.getClanMember(_target);
+
+        ClanMember? member = clan.getClanMember(_target);
         if (member == null)
         {
             PacketLogger.Instance.Warn("Target (" + _target + ") is not member of the clan");
@@ -54,18 +54,18 @@ public struct RequestOustPledgeMemberPacket: IIncomingPacket<GameSession>
             player.sendPacket(SystemMessageId.A_CLAN_MEMBER_MAY_NOT_BE_DISMISSED_DURING_COMBAT);
             return ValueTask.CompletedTask;
         }
-		
+
         // this also updates the database
         clan.removeClanMember(member.getObjectId(), DateTime.UtcNow.AddMinutes(Config.ALT_CLAN_JOIN_MINS));
         clan.setCharPenaltyExpiryTime(DateTime.UtcNow.AddMinutes(Config.ALT_CLAN_JOIN_MINS)); // TODO: check, multiplier was 86400000
         clan.updateClanInDB();
-		
+
         SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_IS_DISMISSED_FROM_THE_CLAN);
         sm.Params.addString(member.getName());
         clan.broadcastToOnlineMembers(sm);
         player.sendPacket(SystemMessageId.THE_CLAN_MEMBER_IS_DISMISSED);
         player.sendPacket(SystemMessageId.YOU_CANNOT_ACCEPT_A_NEW_CLAN_MEMBER_FOR_24_H_AFTER_DISMISSING_SOMEONE);
-		
+
         // Remove the Player From the Member list
         clan.broadcastToOnlineMembers(new PledgeShowMemberListDeletePacket(_target));
         clan.broadcastToOnlineMembers(new ExPledgeCountPacket(clan));

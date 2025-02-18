@@ -21,12 +21,13 @@ public struct RequestExMPCCShowPartyMembersInfoPacket: IIncomingPacket<GameSessi
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Player target = World.getInstance().getPlayer(_partyLeaderId);
-        if (target != null && target.getParty() != null)
+        Player? target = World.getInstance().getPlayer(_partyLeaderId);
+        Party? targetParty = target?.getParty();
+        if (target != null && targetParty != null)
         {
-            player.sendPacket(new ExMPCCShowPartyMemberInfoPacket(target.getParty()));
+            player.sendPacket(new ExMPCCShowPartyMemberInfoPacket(targetParty));
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

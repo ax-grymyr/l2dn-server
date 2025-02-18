@@ -21,7 +21,7 @@ public struct RequestChangeNicknameColorPacket: IIncomingPacket<GameSession>
         0x486295, // Chocolate
         0x999999, // Silver
     };
-	
+
     private int _colorNum;
     private int _itemId;
     private string _title;
@@ -41,8 +41,8 @@ public struct RequestChangeNicknameColorPacket: IIncomingPacket<GameSession>
 
         if (_colorNum < 0 || _colorNum >= COLORS.Length)
             return ValueTask.CompletedTask;
-		
-        Item item = player.getInventory().getItemByItemId(_itemId);
+
+        Item? item = player.getInventory().getItemByItemId(_itemId);
         if (item == null || item.getEtcItem() == null || item.getEtcItem().getHandlerName() == null ||
             !item.getEtcItem().getHandlerName().equalsIgnoreCase("NicknameColor"))
         {
@@ -55,7 +55,7 @@ public struct RequestChangeNicknameColorPacket: IIncomingPacket<GameSession>
             player.getAppearance().setTitleColor(new Color(COLORS[_colorNum]));
             player.broadcastUserInfo();
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

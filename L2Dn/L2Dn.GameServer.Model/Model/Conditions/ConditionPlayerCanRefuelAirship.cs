@@ -9,25 +9,19 @@ namespace L2Dn.GameServer.Model.Conditions;
  * Player Can Refuel Airship condition implementation.
  * @author Adry_85
  */
-public class ConditionPlayerCanRefuelAirship: Condition
+public sealed class ConditionPlayerCanRefuelAirship(int value): Condition
 {
-	private readonly int _value;
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? player = effector.getActingPlayer();
 
-	public ConditionPlayerCanRefuelAirship(int value)
-	{
-		_value = value;
-	}
+        bool canRefuelAirship = true;
+        if (player?.getAirShip() == null || player.getAirShip() is not ControllableAirShip ||
+            player.getAirShip().getFuel() + value > player.getAirShip().getMaxFuel())
+        {
+            canRefuelAirship = false;
+        }
 
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		bool canRefuelAirship = true;
-		Player player = effector.getActingPlayer();
-		if ((player == null) || (player.getAirShip() == null) || !(player.getAirShip() is ControllableAirShip) ||
-		    ((player.getAirShip().getFuel() + _value) > player.getAirShip().getMaxFuel()))
-		{
-			canRefuelAirship = false;
-		}
-
-		return canRefuelAirship;
-	}
+        return canRefuelAirship;
+    }
 }

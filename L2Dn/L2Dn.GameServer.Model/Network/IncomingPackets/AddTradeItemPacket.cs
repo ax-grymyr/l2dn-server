@@ -27,7 +27,7 @@ public struct AddTradeItemPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         TradeList trade = player.getActiveTradeList();
         if (trade == null)
         {
@@ -36,7 +36,7 @@ public struct AddTradeItemPacket: IIncomingPacket<GameSession>
 
             return ValueTask.CompletedTask;
         }
-		
+
         Player partner = trade.getPartner();
         if ((partner == null) || (World.getInstance().getPlayer(partner.ObjectId) == null) || (partner.getActiveTradeList() == null))
         {
@@ -51,26 +51,26 @@ public struct AddTradeItemPacket: IIncomingPacket<GameSession>
             player.cancelActiveTrade();
             return ValueTask.CompletedTask;
         }
-		
+
         if (trade.isConfirmed() || partner.getActiveTradeList().isConfirmed())
         {
             player.sendPacket(SystemMessageId.YOU_MAY_NO_LONGER_ADJUST_ITEMS_IN_THE_TRADE_BECAUSE_THE_TRADE_HAS_BEEN_CONFIRMED);
             return ValueTask.CompletedTask;
         }
-		
+
         if (!player.getAccessLevel().allowTransaction())
         {
             player.sendMessage("Transactions are disabled for your Access Level.");
             player.cancelActiveTrade();
             return ValueTask.CompletedTask;
         }
-		
+
         if (!player.validateItemManipulation(_objectId, "trade"))
         {
             player.sendPacket(SystemMessageId.NOTHING_HAPPENED);
             return ValueTask.CompletedTask;
         }
-		
+
         Item item1 = player.getInventory().getItemByObjectId(_objectId);
         TradeItem item2 = trade.addItem(_objectId, _count);
         if (item2 != null)

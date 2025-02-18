@@ -28,11 +28,11 @@ public struct ExLetterCollectorTakeRewardPacket: IIncomingPacket<GameSession>
         PlayerInventory inventory = player.getInventory();
         if (inventory == null)
             return ValueTask.CompletedTask;
-		
+
         LetterCollectorManager.LetterCollectorRewardHolder lcrh = LetterCollectorManager.getInstance().getRewards(_wordId);
         if (lcrh == null)
             return ValueTask.CompletedTask;
-		
+
         foreach (ItemHolder needLetter in LetterCollectorManager.getInstance().getWord(_wordId))
         {
             if (inventory.getInventoryItemCount(needLetter.getId(), -1) < needLetter.getCount())
@@ -44,19 +44,19 @@ public struct ExLetterCollectorTakeRewardPacket: IIncomingPacket<GameSession>
             if (!player.destroyItemByItemId("LetterCollector", destroyLetter.getId(), destroyLetter.getCount(), player, true))
                 return ValueTask.CompletedTask;
         }
-		
-        ItemChanceHolder rewardItem = getRandomReward(lcrh.getRewards(), lcrh.getChance());
+
+        ItemChanceHolder? rewardItem = getRandomReward(lcrh.getRewards(), lcrh.getChance());
         if (rewardItem == null)
         {
             player.sendPacket(SystemMessageId.NOTHING_HAPPENED);
             return ValueTask.CompletedTask;
         }
-		
+
         player.addItem("LetterCollector", rewardItem.getId(), rewardItem.getCount(), rewardItem.getEnchantmentLevel(), player, true);
         return ValueTask.CompletedTask;
     }
-	
-    private static ItemChanceHolder getRandomReward(List<ItemChanceHolder> rewards, double holderChance)
+
+    private static ItemChanceHolder? getRandomReward(List<ItemChanceHolder> rewards, double holderChance)
     {
         double chance = Rnd.get(holderChance);
         double itemChance = 0;
@@ -69,11 +69,11 @@ public struct ExLetterCollectorTakeRewardPacket: IIncomingPacket<GameSession>
                 {
                     return null;
                 }
- 
+
                 return rewardItem;
             }
         }
- 
+
         return null;
     }
 }

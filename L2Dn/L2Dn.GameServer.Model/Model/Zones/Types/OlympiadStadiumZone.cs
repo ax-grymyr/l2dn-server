@@ -25,7 +25,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 
 	public OlympiadStadiumZone(int id): base(id)
 	{
-		AbstractZoneSettings settings = ZoneManager.getSettings(getName());
+		AbstractZoneSettings? settings = ZoneManager.getSettings(getName());
 		if (settings == null)
 		{
 			settings = new Settings();
@@ -34,15 +34,11 @@ public class OlympiadStadiumZone: ZoneRespawn
 		setSettings(settings);
 	}
 
-	public class Settings: AbstractZoneSettings
+	public sealed class Settings: AbstractZoneSettings
 	{
-		private OlympiadGameTask _task;
+		private OlympiadGameTask? _task;
 
-		public Settings()
-		{
-		}
-
-		public OlympiadGameTask getOlympiadTask()
+		public OlympiadGameTask? getOlympiadTask()
 		{
 			return _task;
 		}
@@ -81,20 +77,21 @@ public class OlympiadStadiumZone: ZoneRespawn
 	}
 
 	protected override void onEnter(Creature creature)
-	{
-		if ((getSettings().getOlympiadTask() != null) && getSettings().getOlympiadTask().isBattleStarted())
+    {
+        OlympiadGameTask? olympiadTask = getSettings().getOlympiadTask();
+		if ((olympiadTask != null) && olympiadTask.isBattleStarted())
 		{
 			creature.setInsideZone(ZoneId.PVP, true);
 			if (creature.isPlayer())
 			{
 				creature.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_A_COMBAT_ZONE);
-				getSettings().getOlympiadTask().getGame().sendOlympiadInfo(creature);
+                olympiadTask.getGame().sendOlympiadInfo(creature);
 			}
 		}
 
 		if (creature.isPlayable())
 		{
-			Player player = creature.getActingPlayer();
+			Player? player = creature.getActingPlayer();
 			if (player != null)
 			{
 				// only participants, observers and GMs allowed
@@ -118,7 +115,8 @@ public class OlympiadStadiumZone: ZoneRespawn
 
 	protected override void onExit(Creature creature)
 	{
-		if ((getSettings().getOlympiadTask() != null) && getSettings().getOlympiadTask().isBattleStarted())
+        OlympiadGameTask? olympiadTask = getSettings().getOlympiadTask();
+		if ((olympiadTask != null) && olympiadTask.isBattleStarted())
 		{
 			creature.setInsideZone(ZoneId.PVP, false);
 			if (creature.isPlayer())
@@ -129,24 +127,19 @@ public class OlympiadStadiumZone: ZoneRespawn
 		}
 	}
 
-	private class KickPlayer: Runnable
-	{
-		private Player _player;
+	private class KickPlayer(Player player): Runnable
+    {
+		private Player? _player = player;
 
-		public KickPlayer(Player player)
-		{
-			_player = player;
-		}
+        public void run()
+        {
+            if (_player == null)
+                return;
 
-		public void run()
-		{
-			if (_player != null)
-			{
-				_player.getServitors().Values.ForEach(s => s.unSummon(_player));
-				_player.teleToLocation(TeleportWhereType.TOWN, null);
-				_player = null;
-			}
-		}
+            _player.getServitors().Values.ForEach(s => s.unSummon(_player));
+            _player.teleToLocation(TeleportWhereType.TOWN, null);
+            _player = null;
+        }
 	}
 
 	public List<Door> getDoors()

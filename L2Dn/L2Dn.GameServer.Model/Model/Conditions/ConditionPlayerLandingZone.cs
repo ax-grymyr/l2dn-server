@@ -9,21 +9,10 @@ namespace L2Dn.GameServer.Model.Conditions;
  * The Class ConditionPlayerLandingZone.
  * @author kerberos
  */
-public class ConditionPlayerLandingZone : Condition
+public sealed class ConditionPlayerLandingZone(bool value): Condition
 {
-	private readonly bool _value;
-	
-	/**
-	 * Instantiates a new condition player landing zone.
-	 * @param value the value
-	 */
-	public ConditionPlayerLandingZone(bool value)
-	{
-		_value = value;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		return effector.isInsideZone(ZoneId.LANDING) == _value;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        return effector.isInsideZone(ZoneId.LANDING) == value;
+    }
 }

@@ -29,29 +29,29 @@ public class AutoPlayTaskManager
 	private const int AUTO_ATTACK_ACTION = 2;
 	private const int PET_ATTACK_ACTION = 16;
 	private const int SUMMON_ATTACK_ACTION = 22;
-	
+
 	protected AutoPlayTaskManager()
 	{
 	}
-	
+
 	private class AutoPlay: Runnable
 	{
 		private readonly AutoPlayTaskManager _autoPlayTaskManager;
 		private readonly Set<Player> _players;
-		
+
 		public AutoPlay(AutoPlayTaskManager autoPlayTaskManager, Set<Player> players)
 		{
 			_autoPlayTaskManager = autoPlayTaskManager;
 			_players = players;
 		}
-		
+
 		public void run()
 		{
 			if (_players.isEmpty())
 			{
 				return;
 			}
-			
+
 			foreach (Player player in _players)
 			{
 				if (!player.isOnline() || (player.isInOfflineMode() && !player.isOfflinePlay()) || !Config.ENABLE_AUTO_PLAY)
@@ -59,18 +59,18 @@ public class AutoPlayTaskManager
 					_autoPlayTaskManager.stopAutoPlay(player);
 					continue; // play
 				}
-				
+
 				if (player.isSitting() || player.isCastingNow() || player.getQueuedSkill() != null)
 				{
 					continue; // play
 				}
-				
+
 				// Next target mode.
 				int targetMode = player.getAutoPlaySettings().getNextTargetMode();
-				
+
 				// Skip thinking.
-				WorldObject target = player.getTarget();
-				Creature creature;
+				WorldObject? target = player.getTarget();
+				Creature? creature;
 				if (target != null && target.isCreature())
 				{
 					creature = (Creature) target;
@@ -79,7 +79,7 @@ public class AutoPlayTaskManager
 						// Logic for Spoil (254) skill.
 						if (creature.isMonster() && creature.isDead() && player.getAutoUseSettings().getAutoSkills().Contains(254))
 						{
-							Skill sweeper = player.getKnownSkill(42); // TODO: Check skill ids 254 and 42, add to CommonSkills 
+							Skill sweeper = player.getKnownSkill(42); // TODO: Check skill ids 254 and 42, add to CommonSkills
 							if (sweeper != null)
 							{
 								Monster monster = (Monster) target;
@@ -94,7 +94,7 @@ public class AutoPlayTaskManager
 										}
 										continue; // play
 									}
-									
+
 									// Sweep target.
 									player.doCast(sweeper);
 									continue; // play
@@ -136,7 +136,7 @@ public class AutoPlayTaskManager
 						{
 							pet.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, creature);
 						}
-						
+
 						// Summon Attack.
 						if (player.hasSummon() && player.getAutoUseSettings().getAutoActions().Contains(SUMMON_ATTACK_ACTION))
 						{
@@ -148,13 +148,13 @@ public class AutoPlayTaskManager
 								}
 							}
 						}
-						
+
 						// We take granted that mage classes do not auto hit.
 						if (isMageCaster(player))
 						{
 							continue; // play
 						}
-						
+
 						// Check if actually attacking.
 						if (player.hasAI() && !player.isAttackingNow() && !player.isCastingNow() && !player.isMoving() && !player.isDisabled())
 						{
@@ -168,7 +168,7 @@ public class AutoPlayTaskManager
 										player.setTarget(null);
 										continue; // play
 									}
-									
+
 									player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, creature);
 								}
 							}
@@ -210,10 +210,10 @@ public class AutoPlayTaskManager
 						continue; // play
 					}
 				}
-				
+
 				// Reset idle count.
 				IDLE_COUNT.remove(player);
-				
+
 				// Pickup.
 				if (player.getAutoPlaySettings().doPickup())
 				{
@@ -227,7 +227,7 @@ public class AutoPlayTaskManager
 						{
 							continue; // pick up
 						}
-						
+
 						// Move to item.
 						if (player.Distance2D(droppedItem) > 70)
 						{
@@ -239,35 +239,37 @@ public class AutoPlayTaskManager
 							gotoPlay = true;
 							break;
 						}
-						
+
 						// Try to pick it up.
 						if (!droppedItem.isProtected() || droppedItem.getOwnerId() == player.ObjectId)
 						{
 							player.doPickupItem(droppedItem);
-							
+
 							gotoPlay = true; // Avoid pickup being skipped.
 							break;
 						}
 					}
-					
+
 					if (gotoPlay)
 						continue; // play
 				}
-				
+
 				// Find target.
 				creature = null;
 				Party party = player.getParty();
-				Player leader = party == null ? null : party.getLeader();
+				Player? leader = party == null ? null : party.getLeader();
 				if (Config.ENABLE_AUTO_ASSIST && party != null && leader != null && leader != player && !leader.isDead())
 				{
 					if (leader.Distance3D(player) < Config.ALT_PARTY_RANGE * 2 /* 2? */)
 					{
-						WorldObject leaderTarget = leader.getTarget();
-						if (leaderTarget != null && (leaderTarget.isAttackable() || (leaderTarget.isPlayable() && !party.containsPlayer(leaderTarget.getActingPlayer()))))
-						{
-							creature = (Creature) leaderTarget;
-						}
-						else if (player.getAI().getIntention() != CtrlIntention.AI_INTENTION_FOLLOW && !player.isDisabled())
+						WorldObject? leaderTarget = leader.getTarget();
+                        Player? leaderTargetPlayer = leaderTarget?.getActingPlayer();
+                        if (leaderTarget != null && (leaderTarget.isAttackable() || (leaderTarget.isPlayable() &&
+                                leaderTargetPlayer != null && !party.containsPlayer(leaderTargetPlayer))))
+                        {
+                            creature = (Creature)leaderTarget;
+                        }
+                        else if (player.getAI().getIntention() != CtrlIntention.AI_INTENTION_FOLLOW && !player.isDisabled())
 						{
 							player.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, leader);
 						}
@@ -283,11 +285,12 @@ public class AutoPlayTaskManager
 						{
 							continue; // target
 						}
-						
+
 						// Check creature target.
+                        WorldObject? nearbyTarget = nearby.getTarget();
 						if (player.getAutoPlaySettings().isRespectfulHunting() && !nearby.isPlayable() &&
-						    nearby.getTarget() != null && nearby.getTarget() != player &&
-						    !player.getServitors().ContainsKey(nearby.getTarget().ObjectId))
+                            nearbyTarget != null && nearbyTarget != player &&
+						    !player.getServitors().ContainsKey(nearbyTarget.ObjectId))
 						{
 							continue; // target
 						}
@@ -297,7 +300,7 @@ public class AutoPlayTaskManager
 						{
 							continue; // target
 						}
-						
+
 						// Check if creature is reachable.
 						if (Math.Abs(player.getZ() - nearby.getZ()) < 180 &&
 						    GeoEngine.getInstance().canSeeTarget(player, nearby) && GeoEngine.getInstance()
@@ -312,23 +315,23 @@ public class AutoPlayTaskManager
 						}
 					}
 				}
-				
+
 				// New target was assigned.
 				if (creature != null)
 				{
 					player.setTarget(creature);
-					
+
 					// We take granted that mage classes do not auto hit.
 					if (isMageCaster(player))
 					{
 						continue;
 					}
-					
+
 					player.sendPacket(ExAutoPlayDoMacroPacket.STATIC_PACKET);
 				}
 			}
 		}
-		
+
 		private bool isMageCaster(Player player)
 		{
 			// On Essence auto attack is enabled via the Auto Attack action.
@@ -336,11 +339,11 @@ public class AutoPlayTaskManager
 			{
 				return !player.getAutoUseSettings().getAutoActions().Contains(AUTO_ATTACK_ACTION);
 			}
-			
+
 			// Non Essence like.
 			return player.isMageClass() && player.getRace() != Race.ORC;
 		}
-		
+
 		private bool isTargetModeValid(int mode, Player player, Creature creature)
 		{
 			switch (mode)
@@ -358,9 +361,11 @@ public class AutoPlayTaskManager
 					return creature.isNpc() && !creature.isMonster() && !creature.isInsideZone(ZoneId.PEACE);
 				}
 				case 4: // Counterattack
-				{
-					return creature.isMonster() || (creature.isPlayer() && creature.getTarget() == player && creature.getActingPlayer().getEinhasadOverseeingLevel() >= 1);
-				}
+                {
+                    Player? actingPlayer = creature.getActingPlayer();
+                    return creature.isMonster() || (creature.isPlayer() && creature.getTarget() == player &&
+                        actingPlayer != null && actingPlayer.getEinhasadOverseeingLevel() >= 1);
+                }
 				default: // Any Target
 				{
 					return (creature.isNpc() && !creature.isInsideZone(ZoneId.PEACE)) || (creature.isPlayable() && creature.isAutoAttackable(player));
@@ -368,7 +373,7 @@ public class AutoPlayTaskManager
 			}
 		}
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void startAutoPlay(Player player)
 	{
@@ -379,9 +384,9 @@ public class AutoPlayTaskManager
 				return;
 			}
 		}
-		
+
 		player.setAutoPlaying(true);
-		
+
 		foreach (Set<Player> pool in POOLS)
 		{
 			if (pool.Count < POOL_SIZE)
@@ -391,14 +396,14 @@ public class AutoPlayTaskManager
 				return;
 			}
 		}
-		
+
 		Set<Player> pool1 = new();
 		player.onActionRequest();
 		pool1.add(player);
 		ThreadPool.scheduleAtFixedRate(new AutoPlay(this, pool1), TASK_DELAY, TASK_DELAY); // TODO: high priority task
 		POOLS.add(pool1);
 	}
-	
+
 	public void stopAutoPlay(Player player)
 	{
 		foreach (Set<Player> pool in POOLS)
@@ -406,7 +411,7 @@ public class AutoPlayTaskManager
 			if (pool.remove(player))
 			{
 				player.setAutoPlaying(false);
-				
+
 				// Pets must follow their owner.
 				if (player.hasServitors())
 				{
@@ -424,12 +429,12 @@ public class AutoPlayTaskManager
 			}
 		}
 	}
-	
+
 	public static AutoPlayTaskManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static AutoPlayTaskManager INSTANCE = new AutoPlayTaskManager();

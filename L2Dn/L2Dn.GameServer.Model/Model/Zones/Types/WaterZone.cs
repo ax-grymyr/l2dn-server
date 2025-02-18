@@ -8,11 +8,11 @@ public class WaterZone : ZoneType
 	public WaterZone(int id): base(id)
 	{
 	}
-	
+
 	protected override void onEnter(Creature creature)
 	{
 		creature.setInsideZone(ZoneId.WATER, true);
-		
+
 		// TODO: update to only send speed status when that packet is known
 		if (creature.isPlayer())
 		{
@@ -45,11 +45,11 @@ public class WaterZone : ZoneType
 			});
 		}
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
 		creature.setInsideZone(ZoneId.WATER, false);
-		
+
 		// TODO: update to only send speed status when that packet is known
 		if (creature.isPlayer())
 		{
@@ -63,14 +63,14 @@ public class WaterZone : ZoneType
 				creature.getActingPlayer().broadcastUserInfo();
 			}
 		}
-		else if (creature.isNpc()) 
+		else if (creature.isNpc())
 		{
 			// TODO temporary fix of monsters remaining corpses after respawn
 			// if Npc is deleted from the world, then forEachVisibleObject must return no visible object for it
-			// Changes in forEachVisibleObject may affect many functionality, so temporary fix here. 
+			// Changes in forEachVisibleObject may affect many functionality, so temporary fix here.
 			if (((Npc)creature).isDecayed())
 				return;
-				
+
 			World.getInstance().forEachVisibleObject<Player>(creature, player =>
 			{
 				if (creature.isFakePlayer())
@@ -88,7 +88,7 @@ public class WaterZone : ZoneType
 			});
 		}
 	}
-	
+
 	public int getWaterZ()
 	{
 		return getZone().getHighZ();

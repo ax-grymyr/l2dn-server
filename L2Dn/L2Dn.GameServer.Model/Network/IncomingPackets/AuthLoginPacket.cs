@@ -33,7 +33,7 @@ public struct AuthLoginPacket: IIncomingPacket<GameSession>
             connection.Close();
             return ValueTask.CompletedTask;
         }
-        
+
         // TODO: wait for login data
         if (AuthServerSession.Instance.Logins.TryRemove(_accountName, out AuthServerLoginData? loginData))
         {
@@ -56,18 +56,18 @@ public struct AuthLoginPacket: IIncomingPacket<GameSession>
                 // Update character count on AuthServer
                 AccountStatusPacket accountStatusPacket = new(session.AccountId, (byte)session.Characters.Count);
                 AuthServerSession.Send(ref accountStatusPacket);
-                
+
                 // Disconnect offline traders
                 if (Config.OFFLINE_DISCONNECT_SAME_ACCOUNT)
                 {
                     foreach (CharacterInfo charInfo in session.Characters)
                     {
-                        Player player = World.getInstance().getPlayer(charInfo.Id);
+                        Player? player = World.getInstance().getPlayer(charInfo.Id);
                         if (player != null)
                             Disconnection.of(player).storeMe().deleteMe();
                     }
                 }
-                
+
                 CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
                 connection.Send(ref characterListPacket);
                 return ValueTask.CompletedTask;

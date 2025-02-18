@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Network.OutgoingPackets.Revenge;
  */
 public readonly struct ExPvpBookShareRevengeListPacket: IOutgoingPacket
 {
-    private readonly List<RevengeHistoryHolder> _history;
+    private readonly List<RevengeHistoryHolder>? _history;
 
     public ExPvpBookShareRevengeListPacket(Player player)
     {
@@ -53,11 +53,11 @@ public readonly struct ExPvpBookShareRevengeListPacket: IOutgoingPacket
                 writer.WriteInt32((int)holder.getKillerRace()); // KillUserRace
                 writer.WriteInt32((int)holder.getKillerClass()); // KillUserClass
 
-                Player killer = World.getInstance().getPlayer(holder.getKillerName()); // TODO Store player id in DB as well  
+                Player killer = World.getInstance().getPlayer(holder.getKillerName()); // TODO Store player id in DB as well
                 writer.WriteInt32((killer != null) && killer.isOnline()
                     ? 2
                     : 0); // KillUserOnline (2 - online, 0 - offline)
-                
+
                 writer.WriteInt32(0); // KillUserKarma
                 writer.WriteInt32(holder.getShareTime().getEpochSecond()); // nSharedTime
             }

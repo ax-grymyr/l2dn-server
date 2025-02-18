@@ -15,8 +15,8 @@ public class Single: IAffectScopeHandler
 	public void forEachAffected<T>(Creature creature, WorldObject target, Skill skill, Action<T> action)
 		where T: WorldObject
 	{
-		IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
-		
+		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+
 		if (target.isCreature())
 		{
 			if (skill.getTargetType() == TargetType.GROUND)
@@ -33,7 +33,7 @@ public class Single: IAffectScopeHandler
 			action((T)(WorldObject)target); // Return yourself to mark that effects can use your current skill's world position.
 		}
 	}
-	
+
 	public AffectScope getAffectScopeType()
 	{
 		return AffectScope.SINGLE;

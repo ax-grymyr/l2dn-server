@@ -8,14 +8,14 @@ namespace L2Dn.GameServer.Scripts;
 public class ScriptDocument
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ScriptDocument));
-	
+
 	// private Document _document;
-	private readonly string _name;
+	private readonly string _name = string.Empty;
 	//
 	// public ScriptDocument(String name, InputStream input)
 	// {
 	// 	_name = name;
-	// 	
+	//
 	// 	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 	// 	try
 	// 	{
@@ -43,12 +43,12 @@ public class ScriptDocument
 	// 		LOGGER.Warn(ioe);
 	// 	}
 	// }
-	
+
 	// public Document getDocument()
 	// {
 	// 	return _document;
 	// }
-	
+
 	/**
 	 * @return Returns the _name.
 	 */
@@ -56,7 +56,7 @@ public class ScriptDocument
 	{
 		return _name;
 	}
-	
+
 	public override string ToString()
 	{
 		return _name;

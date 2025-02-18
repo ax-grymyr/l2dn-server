@@ -9,45 +9,36 @@ using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.Enchanting;
 
-public readonly struct ChangedEnchantTargetItemProbabilityListPacket: IOutgoingPacket
+public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player player, bool isMulti): IOutgoingPacket
 {
-	private readonly Player _player;
-	private readonly bool _isMulti;
-	
-	public ChangedEnchantTargetItemProbabilityListPacket(Player player, bool isMulti)
+    public void WriteContent(PacketBitWriter writer)
 	{
-		_player = player;
-		_isMulti = isMulti;
-	}
-	
-	public void WriteContent(PacketBitWriter writer)
-	{
-		EnchantItemRequest request = _player.getRequest<EnchantItemRequest>();
+		EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
 		if (request == null)
 		{
 			return;
 		}
-		
-		if ((!_isMulti && (request.getEnchantingItem() == null)) || request.isProcessing() || (request.getEnchantingScroll() == null))
+
+		if ((!isMulti && (request.getEnchantingItem() == null)) || request.isProcessing() || (request.getEnchantingScroll() == null))
 		{
 			return;
 		}
-		
+
 		int count = 1;
-		if (_isMulti)
+		if (isMulti)
 		{
 			count = request.getMultiEnchantingItemsCount();
 		}
-		
+
 		writer.WritePacketCode(OutgoingPacketCodes.EX_CHANGED_ENCHANT_TARGET_ITEM_PROB_LIST);
-		
+
 		writer.WriteInt32(count);
 		for (int i = 1; i <= count; i++)
 		{
 			// 100,00 % = 10000, because last 2 numbers going after float comma.
 			double baseRate;
 			double passiveRate;
-			if (!_isMulti || (request.getMultiEnchantingItemsBySlot(i) != 0))
+			if (!isMulti || (request.getMultiEnchantingItemsBySlot(i) != 0))
 			{
 				baseRate = getBaseRate(request, i);
 				passiveRate = getPassiveRate(request, i);
@@ -68,7 +59,7 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket: IOutgoingP
 			{
 				totalRate = 10000;
 			}
-			if (!_isMulti)
+			if (!isMulti)
 			{
 				writer.WriteInt32(request.getEnchantingItem().ObjectId);
 			}
@@ -82,30 +73,30 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket: IOutgoingP
 			writer.WriteInt32((int) passiveBaseRate); // Passive success (items, skills).
 		}
 	}
-	
+
 	private int getBaseRate(EnchantItemRequest request, int iteration)
 	{
 		EnchantScroll? enchantScroll = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId());
-		return (int) Math.Min(100, enchantScroll.getChance(_player, _isMulti ? _player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(iteration)) : request.getEnchantingItem()) + enchantScroll.getBonusRate()) * 100;
+		return (int) Math.Min(100, enchantScroll.getChance(player, isMulti ? player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(iteration)) : request.getEnchantingItem()) + enchantScroll.getBonusRate()) * 100;
 	}
-	
+
 	private int getSupportRate(EnchantItemRequest request)
 	{
 		double supportRate = 0;
-		if (!_isMulti && (request.getSupportItem() != null))
+		if (!isMulti && (request.getSupportItem() != null))
 		{
 			supportRate = EnchantItemData.getInstance().getSupportItem(request.getSupportItem().getId()).getBonusRate();
 			supportRate = supportRate * 100;
 		}
 		return (int) supportRate;
 	}
-	
+
 	private int getPassiveRate(EnchantItemRequest request, int iteration)
 	{
 		double passiveRate = 0;
-		if (_player.getStat().getValue(Stat.ENCHANT_RATE) != 0)
+		if (player.getStat().getValue(Stat.ENCHANT_RATE) != 0)
 		{
-			if (!_isMulti)
+			if (!isMulti)
 			{
 				CrystalType crystalLevel = request.getEnchantingItem().getTemplate().getCrystalType().getLevel();
 				if ((crystalLevel == CrystalType.NONE.getLevel()) || (crystalLevel == CrystalType.EVENT.getLevel()))
@@ -114,23 +105,23 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket: IOutgoingP
 				}
 				else
 				{
-					passiveRate = _player.getStat().getValue(Stat.ENCHANT_RATE) * 100;
+					passiveRate = player.getStat().getValue(Stat.ENCHANT_RATE) * 100;
 				}
 			}
 			else
 			{
-				CrystalType crystalLevel = _player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(iteration)).getTemplate().getCrystalType().getLevel();
+				CrystalType crystalLevel = player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(iteration)).getTemplate().getCrystalType().getLevel();
 				if ((crystalLevel == CrystalType.NONE.getLevel()) || (crystalLevel == CrystalType.EVENT.getLevel()))
 				{
 					passiveRate = 0;
 				}
 				else
 				{
-					passiveRate = _player.getStat().getValue(Stat.ENCHANT_RATE) * 100;
+					passiveRate = player.getStat().getValue(Stat.ENCHANT_RATE) * 100;
 				}
 			}
 		}
-		
+
 		return (int) passiveRate;
 	}
 }

@@ -32,10 +32,10 @@ public sealed class Q00206Tutorial: Quest
     // Npcs
     private const int NEWBIE_HELPER = 30530;
     private const int SUPERVISOR = 30528;
-    
+
     // Monsters
     private const int GREMLIN = 18342;
-    
+
     public Q00206Tutorial()
         : base(206)
     {
@@ -48,7 +48,7 @@ public sealed class Q00206Tutorial: Quest
 
     public override string onFirstTalk(Npc npc, Player player)
     {
-		QuestState qs = getQuestState(player, false);
+		QuestState? qs = getQuestState(player, false);
 		if (qs != null)
 		{
 			// start newbie helpers
@@ -67,7 +67,7 @@ public sealed class Q00206Tutorial: Quest
 						qs.setMemoState(2);
 						return "tutorial_05_fighter.html";
 					}
-					
+
 					case 2:
 					{
 						return "tutorial_05_fighter_back.html";
@@ -96,7 +96,7 @@ public sealed class Q00206Tutorial: Quest
 					}
 				}
 			}
-			
+
 			// else supervisors
 			switch (qs.getMemoState())
 			{
@@ -118,13 +118,16 @@ public sealed class Q00206Tutorial: Quest
 				}
 			}
 		}
-		
+
 		return npc.getId() + "-1.html";
     }
 
-    public override string onAdvEvent(string ev, Npc npc, Player player)
+    public override string? onAdvEvent(string ev, Npc? npc, Player? player)
     {
-        QuestState qs = getQuestState(player, false);
+        if (player is null)
+            return null;
+        
+        QuestState? qs = getQuestState(player, false);
         if (qs == null)
             return null;
 
@@ -168,7 +171,7 @@ public sealed class Q00206Tutorial: Quest
                     giveItems(player, SOULSHOT_REWARD);
                     playTutorialVoice(player, "tutorial_voice_026");
                 }
-                
+
                 // There is no html window.
                 player.sendPacket(new TutorialShowQuestionMarkPacket(QUESTION_MARK_ID_3, 0));
                 player.teleToLocation(new Location(115575, -178014, -904, 9808));
@@ -185,7 +188,7 @@ public sealed class Q00206Tutorial: Quest
 
     public override string onKill(Npc npc, Player killer, bool isSummon)
     {
-	    QuestState qs = getQuestState(killer, false);
+	    QuestState? qs = getQuestState(killer, false);
 	    if (qs != null && qs.getMemoState() < 3 && !hasQuestItems(killer, BLUE_GEM) && getRandom(100) < 50)
 	    {
 		    giveItems(killer, BLUE_GEM, 1);
@@ -201,7 +204,7 @@ public sealed class Q00206Tutorial: Quest
     [SubscribeEvent(SubscriptionType.GlobalPlayers)]
     public void PlayerPressTutorialMark(OnPlayerPressTutorialMark ev)
     {
-	    QuestState qs = getQuestState(ev.getPlayer(), false);
+	    QuestState? qs = getQuestState(ev.getPlayer(), false);
 	    if (qs == null)
 		    return;
 
@@ -213,7 +216,7 @@ public sealed class Q00206Tutorial: Quest
 			    {
 				    showOnScreenMsg(ev.getPlayer(), NpcStringId.TALK_TO_NEWBIE_HELPER,
 					    ExShowScreenMessagePacket.TOP_CENTER, 5000);
-				    
+
 				    addRadar(ev.getPlayer(), 108567, -173994, -406);
 				    showTutorialHtml(ev.getPlayer(), "tutorial_04.html");
 				    playTutorialVoice(ev.getPlayer(), "tutorial_voice_007");
@@ -255,18 +258,18 @@ public sealed class Q00206Tutorial: Quest
 		    notifyEvent(command, null, player);
 	    }
     }
-    
+
     [SubscribeEvent(SubscriptionType.GlobalPlayers)]
     public void PlayerLogin(OnPlayerLogin ev)
     {
         if (Config.DISABLE_TUTORIAL)
             return;
-        
+
         Player player = ev.getPlayer();
         if (player.getLevel() > 6)
             return;
-		
-        QuestState qs = getQuestState(player, true);
+
+        QuestState? qs = getQuestState(player, true);
         if (qs != null && qs.getMemoState() < 4 && player.getClassId() == CharacterClass.DWARVEN_FIGHTER)
         {
             startQuestTimer("start_newbie_tutorial", TimeSpan.FromSeconds(5), null, player);

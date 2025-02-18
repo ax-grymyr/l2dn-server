@@ -17,20 +17,20 @@ public class AdvanceBase: ITargetTypeHandler
 	{
 		return TargetType.ADVANCE_BASE;
 	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
+
+	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
-		WorldObject target = creature.getTarget();
+		WorldObject? target = creature.getTarget();
 		if ((target != null) && target.isNpc() && (target.getId() == 36590) && !((Npc) target).isDead())
 		{
 			return target;
 		}
-		
+
 		if (sendMessage)
 		{
 			creature.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 		}
-		
+
 		return null;
 	}
 }

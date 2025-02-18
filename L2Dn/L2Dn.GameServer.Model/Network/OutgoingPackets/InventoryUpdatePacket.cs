@@ -36,33 +36,37 @@ public struct InventoryUpdatePacket: IOutgoingPacket
 
     public void addModifiedItem(Item item)
     {
+        _helper ??= new();
         _helper.Items.Add(new ItemInfo(item, ItemChangeType.MODIFIED));
     }
 
     public void addRemovedItem(Item item)
     {
+        _helper ??= new();
         _helper.Items.Add(new ItemInfo(item, ItemChangeType.REMOVED));
     }
 
     public void addNewItem(Item item)
     {
+        _helper ??= new();
         _helper.Items.Add(new ItemInfo(item, ItemChangeType.ADDED));
     }
 
     public void addItem(Item item)
     {
+        _helper ??= new();
         _helper.Items.Add(new ItemInfo(item));
     }
-    
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.INVENTORY_UPDATE);
-        
+
         writer.WriteByte(0); // 140
         writer.WriteInt32(0); // 140
         if (_helper is null)
             writer.WriteInt32(0); // item count
-        else 
+        else
             _helper.WriteItems(writer);
     }
 }

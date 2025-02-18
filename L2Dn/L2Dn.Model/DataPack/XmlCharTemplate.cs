@@ -16,7 +16,7 @@ public class XmlCharTemplate: XmlBase
     public List<XmlCharTemplateLevel> Levels { get; set; } = [];
 }
 
-public class XmlCharTemplateStaticData 
+public class XmlCharTemplateStaticData
 {
     [XmlElement("baseINT")]
     public int BaseInt { get; set; }
@@ -66,13 +66,13 @@ public class XmlCharTemplateStaticData
     public int BaseMAtkSpd { get; set; }
 
     [XmlElement("basePDef")]
-    public XmlCharTemplateBasePDef BasePDef { get; set; }
+    public XmlCharTemplateBasePDef BasePDef { get; set; } = new();
 
     [XmlElement("baseMAtk")]
     public int BaseMAtk { get; set; }
 
     [XmlElement("baseMDef")]
-    public XmlCharTemplateBaseMDef BaseMDef { get; set; }
+    public XmlCharTemplateBaseMDef BaseMDef { get; set; } = new();
 
     [XmlElement("baseCanPenetrate")]
     public int BaseCanPenetrate { get; set; }
@@ -81,13 +81,13 @@ public class XmlCharTemplateStaticData
     public int BaseAtkRange { get; set; }
 
     [XmlElement("baseDamRange")]
-    public XmlCharTemplateBaseDamRange BaseDamRange { get; set; }
+    public XmlCharTemplateBaseDamRange BaseDamRange { get; set; } = new();
 
     [XmlElement("baseRndDam")]
     public int BaseRndDam { get; set; }
 
     [XmlElement("baseMoveSpd")]
-    public XmlCharTemplateBaseMoveSpd BaseMoveSpd { get; set; }
+    public XmlCharTemplateBaseMoveSpd BaseMoveSpd { get; set; } = new();
 
     [XmlElement("baseBreath")]
     public int BaseBreath { get; set; }
@@ -96,14 +96,13 @@ public class XmlCharTemplateStaticData
     public int BaseSafeFall { get; set; }
 
     [XmlElement("collisionMale")]
-    public XmlCharTemplateCollision CollisionMale { get; set; }
-
+    public XmlCharTemplateCollision CollisionMale { get; set; } = new();
 
     [XmlElement("collisionFemale")]
-    public XmlCharTemplateCollision CollisionFemale { get; set; }
+    public XmlCharTemplateCollision CollisionFemale { get; set; } = new();
 }
 
-public enum XmlCharTemplateBaseAtkType 
+public enum XmlCharTemplateBaseAtkType
 {
     FIST,
 }
@@ -132,7 +131,7 @@ public class XmlCharTemplateBasePDef
     public int Cloak { get; set; }
 }
 
-public class XmlCharTemplateBaseMDef 
+public class XmlCharTemplateBaseMDef
 {
     [XmlElement("rear")]
     public int RightEar { get; set; }
@@ -154,7 +153,7 @@ public class XmlCharTemplateBaseMDef
     public int Neck { get; set; }
 }
 
-public class XmlCharTemplateBaseDamRange 
+public class XmlCharTemplateBaseDamRange
 {
     [XmlElement("verticalDirection")]
     public int VerticalDirection { get; set; }
@@ -169,7 +168,7 @@ public class XmlCharTemplateBaseDamRange
     public int Width { get; set; }
 }
 
-public class XmlCharTemplateBaseMoveSpd 
+public class XmlCharTemplateBaseMoveSpd
 {
     [XmlElement("walk")]
     public int Walk { get; set; }
@@ -184,7 +183,7 @@ public class XmlCharTemplateBaseMoveSpd
     public int FastSwim { get; set; }
 }
 
-public class XmlCharTemplateCollision 
+public class XmlCharTemplateCollision
 {
     [XmlElement("radius")]
     public double Radius { get; set; }
@@ -193,7 +192,7 @@ public class XmlCharTemplateCollision
     public double Height { get; set; }
 }
 
-public class XmlCharTemplateLevel 
+public class XmlCharTemplateLevel
 {
     [XmlElement("hp")]
     public double Hp { get; set; }

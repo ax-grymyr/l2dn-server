@@ -19,18 +19,16 @@ public readonly struct FriendListPacket: IOutgoingPacket
 	private record struct FriendInfo(int ObjId, string Name, bool Online, CharacterClass ClassId, int Level);
 	private readonly List<FriendInfo> _info;
 
-	
+
 	public FriendListPacket(Player player)
 	{
 		_info = new List<FriendInfo>();
 		foreach (int objId in player.getFriendList())
 		{
-			string name = CharInfoTable.getInstance().getNameById(objId);
-			Player player1 = World.getInstance().getPlayer(objId);
+			string? name = CharInfoTable.getInstance().getNameById(objId);
+			Player? player1 = World.getInstance().getPlayer(objId);
 			bool online = false;
-			CharacterClass classid;
-			int level = 0;
-			if (player1 == null)
+            if (player1 == null)
 			{
 				// TODO: logic must not be in packets
 				try
@@ -47,24 +45,24 @@ public readonly struct FriendListPacket: IOutgoingPacket
 				{
 					_logger.Error(e);
 				}
-				
+
 				continue;
 			}
 			if (player1.isOnline())
 			{
 				online = true;
 			}
-			
-			classid = player1.getClassId();
-			level = player1.getLevel();
+
+			CharacterClass classid = player1.getClassId();
+			int level = player1.getLevel();
 			_info.Add(new FriendInfo(objId, name, online, classid, level));
 		}
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.FRIEND_LIST);
-		
+
 		writer.WriteInt32(_info.Count);
 		foreach (FriendInfo info in _info)
 		{

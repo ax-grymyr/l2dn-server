@@ -58,7 +58,7 @@ public abstract class WorldObject(int objectId)
 
 	public virtual void onAction(Player player, bool interact)
 	{
-		IActionHandler handler = ActionHandler.getInstance().getHandler(InstanceType);
+		IActionHandler? handler = ActionHandler.getInstance().getHandler(InstanceType);
 		if (handler != null)
 		{
 			handler.action(player, this, interact);
@@ -187,7 +187,7 @@ public abstract class WorldObject(int objectId)
 	{
 	}
 
-	public virtual Player getActingPlayer()
+	public virtual Player? getActingPlayer()
 	{
 		return null;
 	}
@@ -722,12 +722,12 @@ public abstract class WorldObject(int objectId)
 		return obj is not null && obj.ObjectId == ObjectId;
 	}
 
-	public override bool Equals(object? obj)
-	{
-		return obj is WorldObject worldObject && worldObject.ObjectId == ObjectId;
-	}
+    public override bool Equals(object? obj) =>
+        obj == this || obj is WorldObject worldObject && worldObject.ObjectId == ObjectId;
 
-	public override string ToString()
+    public override int GetHashCode() => ObjectId;
+
+    public override string ToString()
 	{
 		StringBuilder sb = new();
 		sb.Append(GetType().Name);

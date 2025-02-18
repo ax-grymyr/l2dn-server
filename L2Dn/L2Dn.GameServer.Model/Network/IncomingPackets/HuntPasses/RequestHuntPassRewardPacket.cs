@@ -44,7 +44,7 @@ public struct RequestHuntPassRewardPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		ItemHolder reward = null;
+		ItemHolder? reward = null;
 		if (!huntPass.isPremium())
 		{
 			if (rewardIndex < huntPass.getCurrentStep())
@@ -76,14 +76,14 @@ public struct RequestHuntPassRewardPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		ItemTemplate itemTemplate = ItemData.getInstance().getTemplate(reward.getId());
+		ItemTemplate? itemTemplate = ItemData.getInstance().getTemplate(reward.getId());
 		long weight = itemTemplate.getWeight() * reward.getCount();
 		long slots = itemTemplate.isStackable() ? 1 : reward.getCount();
 		if (!player.getInventory().validateWeight(weight) || !player.getInventory().validateCapacity(slots))
 		{
 			player.sendPacket(SystemMessageId
 				.YOUR_INVENTORY_S_WEIGHT_SLOT_LIMIT_HAS_BEEN_EXCEEDED_SO_YOU_CAN_T_RECEIVE_THE_REWARD_PLEASE_FREE_UP_SOME_SPACE_AND_TRY_AGAIN);
-			
+
 			player.removeRequest<RewardRequest>();
 			return ValueTask.CompletedTask;
 		}
@@ -98,7 +98,7 @@ public struct RequestHuntPassRewardPacket: IIncomingPacket<GameSession>
 		player.sendPacket(new HuntPassSimpleInfoPacket(player));
 
 		ThreadPool.schedule(() => player.removeRequest<RewardRequest>(), 300);
-		
+
 		return ValueTask.CompletedTask;
 	}
 

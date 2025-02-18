@@ -12,21 +12,21 @@ namespace L2Dn.GameServer.Data.Xml;
 public class SubjugationGacha: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SubjugationGacha));
-	
+
 	private static readonly Map<int, Map<int, double>> _subjugations = new();
-	
+
 	public SubjugationGacha()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_subjugations.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "SubjugationGacha.xml");
 		document.Elements("list").Elements("purge").ForEach(parseElement);
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _subjugations.Count + " data.");
 	}
 
@@ -44,16 +44,16 @@ public class SubjugationGacha: DataReaderBase
 		_subjugations.put(category, items);
 	}
 
-	public Map<int, double> getSubjugation(int category)
+	public Map<int, double>? getSubjugation(int category)
 	{
 		return _subjugations.get(category);
 	}
-	
+
 	public static SubjugationGacha getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly SubjugationGacha INSTANCE = new();

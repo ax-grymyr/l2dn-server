@@ -42,38 +42,38 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 		Player? player = session.Player;
 		if (player == null)
 			return ValueTask.CompletedTask;
-		
+
 		// TODO: Flood protect UseItem
 		// if (!client.getFloodProtectors().canUseItem())
 		// {
 		// 	return ValueTask.CompletedTask;
 		// }
-		
+
 		if (player.isInsideZone(ZoneId.JAIL))
 		{
 			player.sendMessage("You cannot use items while jailed.");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.getActiveTradeList() != null)
 		{
 			player.cancelActiveTrade();
 		}
-		
+
 		if (player.getPrivateStoreType() != PrivateStoreType.NONE)
 		{
 			player.sendPacket(SystemMessageId.WHILE_OPERATING_A_PRIVATE_STORE_OR_WORKSHOP_YOU_CANNOT_DISCARD_DESTROY_OR_TRADE_AN_ITEM);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
-		Item item = player.getInventory().getItemByObjectId(_objectId);
+
+		Item? item = player.getInventory().getItemByObjectId(_objectId);
 		if (item == null)
 		{
 			// GM can use other player item
 			if (player.isGM())
 			{
-				WorldObject obj = World.getInstance().findObject(_objectId);
+				WorldObject? obj = World.getInstance().findObject(_objectId);
 				if ((obj != null) && obj.isItem())
 				{
 					AdminCommandHandler.getInstance().useAdminCommand(player, "admin_use_item " + _objectId, true);
@@ -82,19 +82,19 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (item.isQuestItem() && (item.getTemplate().getDefaultAction() != ActionType.NONE))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_QUEST_ITEMS);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// No UseItem is allowed while the player is in special conditions
 		if (player.hasBlockActions() || player.isControlBlocked() || player.isAlikeDead())
 		{
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Char cannot use item when dead
 		if (player.isDead() || !player.getInventory().canManipulateWithItemId(item.getId()))
 		{
@@ -103,12 +103,12 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			player.sendPacket(sm);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!item.isEquipped() && !item.getTemplate().checkCondition(player, player, true))
 		{
 			return ValueTask.CompletedTask;
 		}
-		
+
 		int itemId = item.getId();
 		if (player.isFishing() && ((itemId < 6535) || (itemId > 6540)))
 		{
@@ -116,7 +116,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_FISHING_3);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && (player.getReputation() < 0))
 		{
 			List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
@@ -131,7 +131,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 				}
 			}
 		}
-		
+
 		// If the item has reuse time and it has not passed.
 		// Message from reuse delay must come from item.
 		TimeSpan reuseDelay = item.getReuseDelay();
@@ -145,7 +145,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 				sendSharedGroupUpdate(player, itemId, sharedReuseGroup, reuse, reuseDelay);
 				return ValueTask.CompletedTask;
 			}
-			
+
 			TimeSpan? reuseOnGroup = player.getReuseDelayOnGroup(sharedReuseGroup);
 			if (reuseOnGroup > TimeSpan.Zero)
 			{
@@ -154,9 +154,9 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 		}
-		
+
 		player.onActionRequest();
-		
+
 		if (item.isEquipable())
 		{
 			// Don't allow to put formal wear while a cursed weapon is equipped.
@@ -164,24 +164,24 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			{
 				return ValueTask.CompletedTask;
 			}
-			
+
 			// Equip or unEquip
 			if (FortSiegeManager.getInstance().isCombat(itemId))
 			{
 				return ValueTask.CompletedTask; // no message
 			}
-			
+
 			if (player.isCombatFlagEquipped())
 			{
 				return ValueTask.CompletedTask;
 			}
-			
+
 			if (player.getInventory().isItemSlotBlocked(item.getTemplate().getBodyPart()))
 			{
 				player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 				return ValueTask.CompletedTask;
 			}
-			
+
 			if (item.isArmor())
 			{
 				// Prevent equip shields for Death Knight, Sylph, Vanguard or Assassin players.
@@ -260,7 +260,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 					}
 				}
 			}
-			
+
 			// Prevent players to equip weapon while wearing combat flag
 			// Don't allow weapon/shield equipment if a cursed weapon is equipped.
 			if ((item.getTemplate().getBodyPart() == ItemTemplate.SLOT_LR_HAND) || (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_L_HAND) || (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_R_HAND))
@@ -316,7 +316,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 					return ValueTask.CompletedTask;
 				}
 			}
-			
+
 			// Over-enchant protection.
 			if (Config.OVER_ENCHANT_PROTECTION && !player.isGM() //
 				&& ((item.isWeapon() && (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxWeaponEnchant())) //
@@ -335,7 +335,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 
 				return ValueTask.CompletedTask;
 			}
-			
+
 			if (player.isCastingNow())
 			{
 				// Create and Bind the next action to the AI.
@@ -364,7 +364,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			{
 				return ValueTask.CompletedTask;
 			}
-			
+
 			IItemHandler handler = ItemHandler.getInstance().getHandler(etcItem);
 			if (handler == null)
 			{
@@ -382,7 +382,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 					player.addTimeStampItem(item, reuseDelay);
 					sendSharedGroupUpdate(player, itemId, sharedReuseGroup, reuseDelay, reuseDelay);
 				}
-				
+
 				// Notify events.
 				EventContainer itemEvents = item.getTemplate().Events;
 				if (itemEvents.HasSubscribers<OnItemUse>())
@@ -390,7 +390,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 					itemEvents.NotifyAsync(new OnItemUse(player, item));
 				}
 			}
-			
+
 			if (etcItem != null)
 			{
 				if (etcItem.isMineral())
@@ -407,7 +407,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 
 		return ValueTask.CompletedTask;
 	}
-	
+
 	private static void reuseData(Player player, Item item, TimeSpan remainingTime)
 	{
 		SystemMessagePacket sm;
@@ -429,11 +429,11 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			sm = new SystemMessagePacket(SystemMessageId.S1_WILL_BE_AVAILABLE_AGAIN_IN_S2_SEC);
 			sm.Params.addItemName(item);
 		}
-		
+
 		sm.Params.addInt(remainingTime.Seconds);
 		player.sendPacket(sm);
 	}
-	
+
 	private static void sendSharedGroupUpdate(Player player, int itemId, int group, TimeSpan remaining, TimeSpan reuse)
 	{
 		if (group > 0)

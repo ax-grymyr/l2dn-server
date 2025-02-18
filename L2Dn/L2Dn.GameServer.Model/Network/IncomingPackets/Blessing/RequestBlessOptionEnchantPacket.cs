@@ -30,13 +30,13 @@ public struct RequestBlessOptionEnchantPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-		Item targetInstance = player.getInventory().getItemByObjectId(_itemObjId);
+		Item? targetInstance = player.getInventory().getItemByObjectId(_itemObjId);
 		if (targetInstance == null)
 		{
 			player.sendPacket(new ExBlessOptionEnchantPacket(EnchantResultPacket.ERROR));
 			return ValueTask.CompletedTask;
 		}
-		
+
 		BlessingItemRequest request = player.getRequest<BlessingItemRequest>();
 		if (request == null || request.isProcessing())
 		{
@@ -46,26 +46,26 @@ public struct RequestBlessOptionEnchantPacket: IIncomingPacket<GameSession>
 
 		request.setProcessing(true);
 		request.setTimestamp(DateTime.UtcNow);
-		
+
 		if (!player.isOnline() || session.IsDetached)
 		{
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.isInStoreMode())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ENCHANT_WHILE_OPERATING_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
 			player.sendPacket(new ExBlessOptionEnchantPacket(EnchantResultPacket.ERROR));
 			return ValueTask.CompletedTask;
 		}
-		
-		Item item = player.getInventory().getItemByObjectId(_itemObjId);
+
+		Item? item = player.getInventory().getItemByObjectId(_itemObjId);
 		if (item == null)
 		{
 			player.sendPacket(new ExBlessOptionEnchantPacket(EnchantResultPacket.ERROR));
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// first validation check - also over enchant check
 		if (item.isBlessed())
 		{
@@ -73,14 +73,14 @@ public struct RequestBlessOptionEnchantPacket: IIncomingPacket<GameSession>
 			player.sendPacket(new ExBlessOptionPutItemPacket(0));
 			return ValueTask.CompletedTask;
 		}
-		
-		Item targetScroll = player.getInventory().getItemByItemId(request.getBlessScrollId());
+
+		Item? targetScroll = player.getInventory().getItemByItemId(request.getBlessScrollId());
 		if (targetScroll == null)
 		{
 			player.sendPacket(new ExBlessOptionEnchantPacket(EnchantResultPacket.ERROR));
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// attempting to destroy scroll
 		if (player.getInventory().destroyItem("Blessing", targetScroll.ObjectId, 1, player, item) == null)
 		{
@@ -89,7 +89,7 @@ public struct RequestBlessOptionEnchantPacket: IIncomingPacket<GameSession>
 			player.sendPacket(new ExBlessOptionEnchantPacket(EnchantResultPacket.ERROR));
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (Rnd.get(100) < Config.BLESSING_CHANCE) // Success
 		{
 			ItemTemplate it = item.getTemplate();
@@ -107,7 +107,7 @@ public struct RequestBlessOptionEnchantPacket: IIncomingPacket<GameSession>
 				sm.Params.addItemName(item);
 				player.broadcastPacket(sm);
 				Broadcast.toAllOnlinePlayers(new ExItemAnnouncePacket(player, item, ExItemAnnouncePacket.ENCHANT));
-				
+
 				Skill skill = CommonSkill.FIREWORK.getSkill();
 				if (skill != null)
 				{
@@ -132,11 +132,11 @@ public struct RequestBlessOptionEnchantPacket: IIncomingPacket<GameSession>
 		{
 			player.sendPacket(new ExBlessOptionEnchantPacket(0));
 		}
-		
+
 		request.setProcessing(false);
 		player.sendItemList();
 		player.broadcastUserInfo();
-        
+
         return ValueTask.CompletedTask;
     }
 }

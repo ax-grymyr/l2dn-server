@@ -28,10 +28,10 @@ public abstract class Playable: Creature
 {
 	private Creature _lockedTarget;
 	private Player transferDmgTo;
-	
+
 	private readonly Map<int, int> _replacedSkills = new();
 	private readonly Map<int, int> _originalSkills = new();
-	
+
 	/**
 	 * Constructor of Playable.<br>
 	 * <br>
@@ -47,33 +47,33 @@ public abstract class Playable: Creature
 		InstanceType = InstanceType.Playable;
 		setInvul(false);
 	}
-	
+
 	public Playable(CreatureTemplate template): base(template)
 	{
 		InstanceType = InstanceType.Playable;
 		setInvul(false);
 	}
-	
+
 	public override PlayableStat getStat()
 	{
 		return (PlayableStat) base.getStat();
 	}
-	
+
 	public override void initCharStat()
 	{
 		setStat(new PlayableStat(this));
 	}
-	
+
 	public override PlayableStatus getStatus()
 	{
 		return (PlayableStatus) base.getStatus();
 	}
-	
+
 	public override void initCharStatus()
 	{
 		setStatus(new PlayableStatus(this));
 	}
-	
+
 	public override bool doDie(Creature killer)
 	{
 		if (Events.HasSubscribers<OnCreatureDeath>())
@@ -84,7 +84,7 @@ public abstract class Playable: Creature
 				return false;
 			}
 		}
-		
+
 		// killing is only possible one time
 		lock (this)
 		{
@@ -96,20 +96,20 @@ public abstract class Playable: Creature
 			setCurrentHp(0);
 			setDead(true);
 		}
-		
+
 		// Set target to null and cancel Attack or Cast
 		setTarget(null);
-		
+
 		// Abort casting after target has been cancelled.
 		abortAttack();
 		abortCast();
-		
+
 		// Stop movement
 		stopMove(null);
-		
+
 		// Stop HP/MP/CP Regeneration task
 		getStatus().stopHpMpRegeneration();
-		
+
 		bool deleteBuffs = true;
 		if (isNoblesseBlessedAffected())
 		{
@@ -134,17 +134,17 @@ public abstract class Playable: Creature
 				player.sendPacket(new EtcStatusUpdatePacket(player));
 			}
 		}
-		
+
 		if (deleteBuffs)
 		{
 			stopAllEffectsExceptThoseThatLastThroughDeath();
 		}
-		
+
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other Player to inform
 		broadcastStatusUpdate();
-		
+
 		ZoneManager.getInstance().getRegion(Location.Location2D)?.onDeath(this);
-		
+
 		// Notify Quest of Playable's death
 		Player actingPlayer = getActingPlayer();
 		if (!actingPlayer.isNotifyQuestOfDeathEmpty())
@@ -154,17 +154,17 @@ public abstract class Playable: Creature
 				qs.getQuest().notifyDeath((killer == null ? this : killer), this, qs);
 			}
 		}
-		
+
 		// Notify instance
 		if (isPlayer())
 		{
-			Instance instance = getInstanceWorld();
+			Instance? instance = getInstanceWorld();
 			if (instance != null)
 			{
 				instance.onDeath(getActingPlayer());
 			}
 		}
-		
+
 		if (killer != null)
 		{
 			Player killerPlayer = killer.getActingPlayer();
@@ -173,12 +173,12 @@ public abstract class Playable: Creature
 				killerPlayer.onPlayerKill(this);
 			}
 		}
-		
+
 		// Notify Creature AI
 		getAI().notifyEvent(CtrlEvent.EVT_DEAD);
 		return true;
 	}
-	
+
 	public bool checkIfPvP(Player target)
 	{
 		Player player = getActingPlayer();
@@ -195,7 +195,7 @@ public abstract class Playable: Creature
 		{
 			return false;
 		}
-		
+
 		Clan playerClan = player.getClan();
 		if ((playerClan != null) && !player.isAcademyMember() && !target.isAcademyMember())
 		{
@@ -204,7 +204,7 @@ public abstract class Playable: Creature
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Return True.
 	 */
@@ -212,13 +212,13 @@ public abstract class Playable: Creature
 	{
 		return true;
 	}
-	
+
 	// Support for Noblesse Blessing skill, where buffs are retained after resurrect
 	public bool isNoblesseBlessedAffected()
 	{
 		return isAffected(EffectFlag.NOBLESS_BLESSING);
 	}
-	
+
 	/**
 	 * @return {@code true} if char can resurrect by himself, {@code false} otherwise
 	 */
@@ -226,7 +226,7 @@ public abstract class Playable: Creature
 	{
 		return isAffected(EffectFlag.RESURRECTION_SPECIAL);
 	}
-	
+
 	/**
 	 * @return {@code true} if the Silent Moving mode is active, {@code false} otherwise
 	 */
@@ -234,7 +234,7 @@ public abstract class Playable: Creature
 	{
 		return isAffected(EffectFlag.SILENT_MOVE);
 	}
-	
+
 	/**
 	 * For Newbie Protection Blessing skill, keeps you safe from an attack by a chaotic character >= 10 levels apart from you.
 	 * @return
@@ -243,37 +243,37 @@ public abstract class Playable: Creature
 	{
 		return isAffected(EffectFlag.PROTECTION_BLESSING);
 	}
-	
+
 	public override void updateEffectIcons(bool partyOnly)
 	{
 		getEffectList().updateEffectIcons(partyOnly);
 	}
-	
+
 	public bool isLockedTarget()
 	{
 		return _lockedTarget != null;
 	}
-	
+
 	public Creature getLockedTarget()
 	{
 		return _lockedTarget;
 	}
-	
+
 	public void setLockedTarget(Creature creature)
 	{
 		_lockedTarget = creature;
 	}
-	
+
 	public void setTransferDamageTo(Player val)
 	{
 		transferDmgTo = val;
 	}
-	
+
 	public Player getTransferingDamageTo()
 	{
 		return transferDmgTo;
 	}
-	
+
 	/**
 	 * Adds a replacement for an original skill.<br>
 	 * Both original and replacement skill IDs are stored in their respective maps.
@@ -285,7 +285,7 @@ public abstract class Playable: Creature
 		_replacedSkills.put(originalId, replacementId);
 		_originalSkills.put(replacementId, originalId);
 	}
-	
+
 	/**
 	 * Removes a replaced skill by the original skill ID.<br>
 	 * The corresponding replacement skill ID is also removed from its map.
@@ -299,7 +299,7 @@ public abstract class Playable: Creature
 			_originalSkills.remove(replacementId);
 		}
 	}
-	
+
 	/**
 	 * Retrieves the replacement skill for a given original skill.
 	 * @param originalId The ID of the original skill.
@@ -309,7 +309,7 @@ public abstract class Playable: Creature
 	{
 		return _replacedSkills.GetValueOrDefault(originalId, originalId);
 	}
-	
+
 	/**
 	 * Retrieves the original skill for a given replacement skill.
 	 * @param replacementId The ID of the replacement skill.
@@ -319,7 +319,7 @@ public abstract class Playable: Creature
 	{
 		return _originalSkills.GetValueOrDefault(replacementId, replacementId);
 	}
-	
+
 	/**
 	 * Retrieves a collection of all original skills that have been replaced.
 	 * @return The collection of all replaced skill IDs.
@@ -328,22 +328,22 @@ public abstract class Playable: Creature
 	{
 		return _replacedSkills.Keys;
 	}
-	
+
 	public abstract void doPickupItem(WorldObject @object);
-	
-	public abstract bool useMagic(Skill skill, Item item, bool forceUse, bool dontMove);
-	
+
+	public abstract bool useMagic(Skill skill, Item? item, bool forceUse, bool dontMove);
+
 	public abstract void storeMe();
-	
+
 	public abstract void storeEffect(bool storeEffects);
-	
+
 	public abstract void restoreEffects();
-	
+
 	public virtual bool isOnEvent()
 	{
 		return false;
 	}
-	
+
 	public override bool isPlayable()
 	{
 		return true;

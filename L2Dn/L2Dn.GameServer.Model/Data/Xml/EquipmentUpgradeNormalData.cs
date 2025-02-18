@@ -19,12 +19,12 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 	private static readonly Map<int, EquipmentUpgradeNormalHolder> _upgrades = new();
 	private static readonly Set<ItemHolder> _discount = new();
 	private static int _commission;
-	
+
 	protected EquipmentUpgradeNormalData()
 	{
 		load();
 	}
-	
+
 	public void reload()
 	{
 		foreach (Player player in World.getInstance().getPlayers())
@@ -32,16 +32,16 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 			ExUpgradeSystemNormalResultPacket packet = default;
 			player.sendPacket(packet);
 		}
-		
+
 		load();
 	}
-	
+
 	public void load()
 	{
 		_commission = -1;
 		_discount.Clear();
 		_upgrades.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "EquipmentUpgradeNormalData.xml");
 		document.Elements("list").Elements("params").ForEach(el => _commission = el.GetAttributeValueAsInt32("commission"));
 		if (_commission < 0)
@@ -55,12 +55,12 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 
 		document.Elements("list").Elements("discount").Elements("item").ForEach(parseDiscountElement);
 		document.Elements("list").Elements("upgrade").ForEach(parseUpgradeElement);
-		
+
 		if (_upgrades.Count != 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _upgrades.Count + " upgrade-normal equipment data. Adena commission is " + _commission + ".");
 		}
-		
+
 		if (_discount.Count != 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _discount.Count + " upgrade-normal discount data.");
@@ -87,7 +87,7 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 			int type = element.GetAttributeValueAsInt32("type");
 			double chance = element.GetAttributeValueAsDouble("chance");
 			long commission = _commission == 0 ? 0 : ((element.GetAttributeValueAsInt64("commission") / 100) * _commission);
-			
+
 			element.Elements("upgradeItem").ForEach(upgradeEl =>
 			{
 				int itemId = upgradeEl.GetAttributeValueAsInt32("id");
@@ -134,7 +134,7 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 				{
 					LOGGER.Warn(GetType().Name + ": bonus_items => chance in file EquipmentUpgradeNormalData.xml for upgrade id " + id + " cant be less than 0!");
 				}
-				
+
 				bonusEl.Elements("item").ForEach(materialEl =>
 				{
 					int itemId = materialEl.GetAttributeValueAsInt32("id");
@@ -148,32 +148,32 @@ public class EquipmentUpgradeNormalData: DataReaderBase
 			{
 				LOGGER.Error(GetType().Name + ": no upgradeItem for upgrade id " + id);
 			}
-			
+
 			_upgrades.put(id,
 				new EquipmentUpgradeNormalHolder(id, type, commission, chance, initialItem, materialItems,
 					onSuccessItems, onFailureItems, bonusChance, bonusItems));
 	}
-	
-	public EquipmentUpgradeNormalHolder getUpgrade(int id)
+
+	public EquipmentUpgradeNormalHolder? getUpgrade(int id)
 	{
 		return _upgrades.get(id);
 	}
-	
+
 	public Set<ItemHolder> getDiscount()
 	{
 		return _discount;
 	}
-	
+
 	public int getCommission()
 	{
 		return _commission;
 	}
-	
+
 	public static EquipmentUpgradeNormalData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly EquipmentUpgradeNormalData INSTANCE = new();

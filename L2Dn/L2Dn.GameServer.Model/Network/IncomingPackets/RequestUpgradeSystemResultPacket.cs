@@ -33,20 +33,20 @@ public struct RequestUpgradeSystemResultPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-		Item existingItem = player.getInventory().getItemByObjectId(_objectId);
+		Item? existingItem = player.getInventory().getItemByObjectId(_objectId);
 		if (existingItem == null)
 		{
 			player.sendPacket(new ExUpgradeSystemResultPacket(0, 0));
 			return ValueTask.CompletedTask;
 		}
-		
-		EquipmentUpgradeHolder upgradeHolder = EquipmentUpgradeData.getInstance().getUpgrade(_upgradeId);
+
+		EquipmentUpgradeHolder? upgradeHolder = EquipmentUpgradeData.getInstance().getUpgrade(_upgradeId);
 		if (upgradeHolder == null)
 		{
 			player.sendPacket(new ExUpgradeSystemResultPacket(0, 0));
 			return ValueTask.CompletedTask;
 		}
-		
+
 		foreach (ItemHolder material in upgradeHolder.getMaterials())
 		{
 			if (player.getInventory().getInventoryItemCount(material.getId(), -1) < material.getCount())
@@ -55,47 +55,48 @@ public struct RequestUpgradeSystemResultPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 		}
-		
+
 		long adena = upgradeHolder.getAdena();
-		if ((adena > 0) && (player.getAdena() < adena))
+		if (adena > 0 && player.getAdena() < adena)
 		{
 			player.sendPacket(new ExUpgradeSystemResultPacket(0, 0));
 			return ValueTask.CompletedTask;
 		}
-		
-		if ((existingItem.getTemplate().getId() != upgradeHolder.getRequiredItemId()) || (existingItem.getEnchantLevel() != upgradeHolder.getRequiredItemEnchant()))
-		{
-			player.sendPacket(new ExUpgradeSystemResultPacket(0, 0));
-			return ValueTask.CompletedTask;
-		}
-		
-		// Store old item enchantment info.
+
+        if (existingItem.getTemplate().getId() != upgradeHolder.getRequiredItemId() ||
+            existingItem.getEnchantLevel() != upgradeHolder.getRequiredItemEnchant())
+        {
+            player.sendPacket(new ExUpgradeSystemResultPacket(0, 0));
+            return ValueTask.CompletedTask;
+        }
+
+        // Store old item enchantment info.
 		ItemInfo itemEnchantment = new ItemInfo(existingItem);
-		
+
 		// Get materials.
 		player.destroyItem("UpgradeEquipment", _objectId, 1, player, true);
 		foreach (ItemHolder material in upgradeHolder.getMaterials())
 		{
 			player.destroyItemByItemId("UpgradeEquipment", material.getId(), material.getCount(), player, true);
 		}
-		
+
 		if (adena > 0)
 		{
 			player.reduceAdena("UpgradeEquipment", adena, player, true);
 		}
-		
+
 		// Give item.
 		Item addedItem = player.addItem("UpgradeEquipment", upgradeHolder.getResultItemId(), 1, player, true);
 		if (upgradeHolder.isAnnounce())
 		{
 			Broadcast.toAllOnlinePlayers(new ExItemAnnouncePacket(player, addedItem, ExItemAnnouncePacket.UPGRADE));
 		}
-		
+
 		// Transfer item enchantments.
 		if (addedItem.isEquipable())
 		{
 			addedItem.setAugmentation(itemEnchantment.getAugmentation(), false);
-			if (addedItem.isWeapon() && (addedItem.getTemplate().getAttributes() == null))
+			if (addedItem.isWeapon() && addedItem.getTemplate().getAttributes() == null)
 			{
 				if (itemEnchantment.getAttackElementPower() > 0)
 				{
@@ -129,7 +130,7 @@ public struct RequestUpgradeSystemResultPacket: IIncomingPacket<GameSession>
 					addedItem.setAttribute(new AttributeHolder(AttributeType.DARK, itemEnchantment.getAttributeDefence(AttributeType.DARK)), false);
 				}
 			}
-			
+
 			if (itemEnchantment.getSoulCrystalOptions() != null)
 			{
 				int pos = -1;
@@ -139,7 +140,7 @@ public struct RequestUpgradeSystemResultPacket: IIncomingPacket<GameSession>
 					addedItem.addSpecialAbility(ensoul, pos, 1, false);
 				}
 			}
-			
+
 			if (itemEnchantment.getSoulCrystalSpecialOptions() != null)
 			{
 				foreach (EnsoulOption ensoul in itemEnchantment.getSoulCrystalSpecialOptions())
@@ -147,7 +148,7 @@ public struct RequestUpgradeSystemResultPacket: IIncomingPacket<GameSession>
 					addedItem.addSpecialAbility(ensoul, 0, 2, false);
 				}
 			}
-			
+
 			if (itemEnchantment.getVisualId() > 0)
 			{
 				ItemVariables oldVars = existingItem.getVariables();
@@ -159,21 +160,21 @@ public struct RequestUpgradeSystemResultPacket: IIncomingPacket<GameSession>
 				addedItem.scheduleVisualLifeTime();
 			}
 		}
-		
+
 		// Apply update holder enchant.
 		int enchantLevel = upgradeHolder.getResultItemEnchant();
 		if (enchantLevel > 0)
 		{
 			addedItem.setEnchantLevel(enchantLevel);
 		}
-		
+
 		// Save item.
 		addedItem.updateDatabase(true);
-		
+
 		// Send result packet.
 		player.sendPacket(new ExUpgradeSystemResultPacket(addedItem.ObjectId, 1));
 		player.sendItemList();
-        
+
         return ValueTask.CompletedTask;
     }
 }

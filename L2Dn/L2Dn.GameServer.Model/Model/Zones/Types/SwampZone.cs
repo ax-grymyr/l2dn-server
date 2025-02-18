@@ -15,22 +15,22 @@ public class SwampZone : ZoneType
 {
 	private double _move_bonus;
 	private int _castleId;
-	private Castle _castle;
+	private Castle? _castle;
 	private int _eventId;
-	
+
 	public SwampZone(int id): base(id)
 	{
 		// Setup default speed reduce (in %)
 		_move_bonus = 0.5;
-		
+
 		// no castle by default
 		_castleId = 0;
 		_castle = null;
-		
+
 		// no event by default
 		_eventId = 0;
 	}
-	
+
 	public override void setParameter(string name, string value)
 	{
 		if (name.equals("move_bonus"))
@@ -50,8 +50,8 @@ public class SwampZone : ZoneType
 			base.setParameter(name, value);
 		}
 	}
-	
-	private Castle getCastle()
+
+	private Castle? getCastle()
 	{
 		if ((_castleId > 0) && (_castle == null))
 		{
@@ -59,7 +59,7 @@ public class SwampZone : ZoneType
 		}
 		return _castle;
 	}
-	
+
 	protected override void onEnter(Creature creature)
 	{
 		if (getCastle() != null)
@@ -69,7 +69,7 @@ public class SwampZone : ZoneType
 			{
 				return;
 			}
-			
+
 			// defenders not affected
 			Player player = creature.getActingPlayer();
 			if ((player != null) && player.isInSiege() && (player.getSiegeState() == 2))
@@ -77,7 +77,7 @@ public class SwampZone : ZoneType
 				return;
 			}
 		}
-		
+
 		creature.setInsideZone(ZoneId.SWAMP, true);
 		if (creature.isPlayer())
 		{
@@ -85,10 +85,11 @@ public class SwampZone : ZoneType
 			{
 				creature.sendPacket(new OnEventTriggerPacket(_eventId, true));
 			}
+
 			creature.getActingPlayer().broadcastUserInfo();
 		}
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
 		// don't broadcast info if not needed
@@ -108,7 +109,7 @@ public class SwampZone : ZoneType
 			}
 		}
 	}
-	
+
 	public double getMoveBonus()
 	{
 		return _move_bonus;

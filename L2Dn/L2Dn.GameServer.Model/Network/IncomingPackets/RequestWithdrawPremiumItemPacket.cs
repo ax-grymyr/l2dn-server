@@ -29,7 +29,7 @@ public struct RequestWithdrawPremiumItemPacket: IIncomingPacket<GameSession>
 
         if (_itemCount <= 0)
             return ValueTask.CompletedTask;
-        
+
         if (player.ObjectId != _charId)
         {
             Util.handleIllegalPlayerAction(player, "[RequestWithDrawPremiumItem] Incorrect owner, Player: " + player.getName(), Config.DEFAULT_PUNISH);
@@ -41,8 +41,8 @@ public struct RequestWithdrawPremiumItemPacket: IIncomingPacket<GameSession>
             Util.handleIllegalPlayerAction(player, "[RequestWithDrawPremiumItem] Player: " + player.getName() + " try to get item with empty list!", Config.DEFAULT_PUNISH);
             return ValueTask.CompletedTask;
         }
-        
-        if ((player.getWeightPenalty() >= 3) || !player.isInventoryUnder90(false))
+
+        if (player.getWeightPenalty() >= 3 || !player.isInventoryUnder90(false))
         {
             player.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_THE_DIMENSIONAL_ITEM_BECAUSE_YOU_HAVE_EXCEED_YOUR_INVENTORY_WEIGHT_QUANTITY_LIMIT);
             return ValueTask.CompletedTask;
@@ -53,15 +53,15 @@ public struct RequestWithdrawPremiumItemPacket: IIncomingPacket<GameSession>
             player.sendPacket(SystemMessageId.ITEMS_FROM_GAME_ASSISTANTS_CANNOT_BE_EXCHANGED);
             return ValueTask.CompletedTask;
         }
-		
-        PremiumItem item = player.getPremiumItemList().get(_itemNum);
+
+        PremiumItem? item = player.getPremiumItemList().get(_itemNum);
         if (item == null)
             return ValueTask.CompletedTask;
 
         if (item.getCount() < _itemCount)
             return ValueTask.CompletedTask;
-		
-        long itemsLeft = (item.getCount() - _itemCount);
+
+        long itemsLeft = item.getCount() - _itemCount;
         player.addItem("PremiumItem", item.getItemId(), _itemCount, player.getTarget(), true);
         if (itemsLeft > 0)
         {
@@ -73,7 +73,7 @@ public struct RequestWithdrawPremiumItemPacket: IIncomingPacket<GameSession>
             player.getPremiumItemList().remove(_itemNum);
             player.deletePremiumItem(_itemNum);
         }
-		
+
         if (player.getPremiumItemList().Count == 0)
         {
             player.sendPacket(SystemMessageId.THERE_ARE_NO_MORE_DIMENSIONAL_ITEMS_TO_BE_FOUND);
@@ -82,7 +82,7 @@ public struct RequestWithdrawPremiumItemPacket: IIncomingPacket<GameSession>
         {
             player.sendPacket(new ExGetPremiumItemListPacket(player));
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

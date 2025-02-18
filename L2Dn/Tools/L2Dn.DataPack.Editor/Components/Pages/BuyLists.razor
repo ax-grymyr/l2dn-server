@@ -46,15 +46,16 @@
 
 @code {
     [Inject]
-    protected NavigationManager NavigationManager { get; set; }
+    protected NavigationManager? NavigationManager { get; set; }
     
     private IQueryable<DbBuyList>? _buyLists;
 
     private RadzenDataGrid<DbBuyList> _grid = new();
 
-    protected override async Task OnInitializedAsync()
+    protected override Task OnInitializedAsync()
     {
         _buyLists = Ctx.BuyLists.AsQueryable();
+        return Task.CompletedTask;
     }
 
     private void AddNew()
@@ -69,7 +70,7 @@
 
     private void EditRow(DbBuyList buyList)
     {
-        NavigationManager.NavigateTo($"/buylists/{buyList.BuyListId}");
+        NavigationManager?.NavigateTo($"/buylists/{buyList.BuyListId}");
     }
     
     private void ShowEditTooltip(ElementReference elementReference, TooltipOptions? options = null) => 

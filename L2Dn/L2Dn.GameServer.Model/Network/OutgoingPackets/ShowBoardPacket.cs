@@ -5,18 +5,18 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct ShowBoardPacket(bool showBoard, string content): IOutgoingPacket
 {
-    public ShowBoardPacket(string content, string id): this(id + '\b' + content)
+    public ShowBoardPacket(string? content, string id): this(id + '\b' + content)
     {
     }
-    
+
     public ShowBoardPacket(string content): this(true, content)
     {
     }
-    
+
     public ShowBoardPacket(ReadOnlySpan<string> args): this(BuildContent(args))
     {
     }
-    
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.SHOW_BOARD);
@@ -38,7 +38,7 @@ public readonly struct ShowBoardPacket(bool showBoard, string content): IOutgoin
         builder.Append("1002\b");
         foreach (string str in args)
             builder.Append(str).Append('\b');
-        
+
         return builder.ToString();
     }
 }

@@ -13,23 +13,23 @@ namespace L2Dn.GameServer.AI;
 public class PlayerAI : PlayableAI
 {
 	private bool _thinking; // to prevent recursive thinking
-	
+
 	private IntentionCommand? _nextIntention;
-	
+
 	public PlayerAI(Player player): base(player)
 	{
 	}
-	
+
 	private void saveNextIntention(CtrlIntention intention, object? arg0, object? arg1)
 	{
 		_nextIntention = new IntentionCommand(intention, arg0, arg1);
 	}
-	
-	public override IntentionCommand getNextIntention()
+
+	public override IntentionCommand? getNextIntention()
 	{
 		return _nextIntention;
 	}
-	
+
 	/**
 	 * Saves the current Intention for this PlayerAI if necessary and calls changeIntention in AbstractAI.
 	 * @param intention The new Intention to set to the AI
@@ -40,30 +40,30 @@ public class PlayerAI : PlayableAI
 	{
 		// do nothing unless CAST intention
 		// however, forget interrupted actions when starting to use an offensive skill
-		if ((intention != CtrlIntention.AI_INTENTION_CAST) || ((Skill) args[0]).isBad())
+		if (intention != CtrlIntention.AI_INTENTION_CAST || ((Skill)args[0]).isBad())
 		{
 			_nextIntention = null;
 			base.changeIntention(intention, args);
 			return;
 		}
-		
+
 		object? localArg0 = args.Length > 0 ? args[0] : null;
 		object? localArg1 = args.Length > 1 ? args[1] : null;
 		object? globalArg0 = (_intentionArgs != null) && (_intentionArgs.Length > 0) ? _intentionArgs[0] : null;
 		object? globalArg1 = (_intentionArgs != null) && (_intentionArgs.Length > 1) ? _intentionArgs[1] : null;
-		
+
 		// do nothing if next intention is same as current one.
 		if ((intention == _intention) && (globalArg0 == localArg0) && (globalArg1 == localArg1))
 		{
 			base.changeIntention(intention, args);
 			return;
 		}
-		
+
 		// save current intention so it can be used after cast
 		saveNextIntention(_intention, globalArg0, globalArg1);
 		base.changeIntention(intention, args);
 	}
-	
+
 	/**
 	 * Launch actions corresponding to the Event ReadyToAct.<br>
 	 * <br>
@@ -80,10 +80,10 @@ public class PlayerAI : PlayableAI
 			setIntention(_nextIntention.getCtrlIntention(), _nextIntention.getArg0(), _nextIntention.getArg1());
 			_nextIntention = null;
 		}
-		
+
 		base.onEvtReadyToAct();
 	}
-	
+
 	/**
 	 * Launch actions corresponding to the Event Cancel.<br>
 	 * <br>
@@ -98,7 +98,7 @@ public class PlayerAI : PlayableAI
 		_nextIntention = null;
 		base.onEvtCancel();
 	}
-	
+
 	/**
 	 * Finalize the casting of a skill. This method overrides CreatureAI method.<br>
 	 * <b>What it does:</b><br>
@@ -109,8 +109,8 @@ public class PlayerAI : PlayableAI
 		if (getIntention() == CtrlIntention.AI_INTENTION_CAST)
 		{
 			// run interrupted or next intention
-			
-			IntentionCommand nextIntention = _nextIntention;
+
+			IntentionCommand? nextIntention = _nextIntention;
 			if (nextIntention != null)
 			{
 				if (nextIntention.getCtrlIntention() != CtrlIntention.AI_INTENTION_CAST) // previous state shouldn't be casting
@@ -129,11 +129,11 @@ public class PlayerAI : PlayableAI
 			}
 		}
 	}
-	
+
 	protected override void onEvtAttacked(Creature attacker)
 	{
 		base.onEvtAttacked(attacker);
-		
+
 		// Summons in defending mode defend its master when attacked.
 		if (_actor.getActingPlayer().hasServitors())
 		{
@@ -146,11 +146,11 @@ public class PlayerAI : PlayableAI
 			}
 		}
 	}
-	
+
 	protected override void onEvtEvaded(Creature attacker)
 	{
 		base.onEvtEvaded(attacker);
-		
+
 		// Summons in defending mode defend its master when attacked.
 		if (_actor.getActingPlayer().hasServitors())
 		{
@@ -163,7 +163,7 @@ public class PlayerAI : PlayableAI
 			}
 		}
 	}
-	
+
 	protected override void onIntentionRest()
 	{
 		if (getIntention() != CtrlIntention.AI_INTENTION_REST)
@@ -173,12 +173,12 @@ public class PlayerAI : PlayableAI
 			clientStopMoving(null);
 		}
 	}
-	
+
 	protected override void onIntentionActive()
 	{
 		setIntention(CtrlIntention.AI_INTENTION_IDLE);
 	}
-	
+
 	/**
 	 * Manage the Move To Intention : Stop current Attack and Launch a Move to Location Task.<br>
 	 * <br>
@@ -197,34 +197,34 @@ public class PlayerAI : PlayableAI
 			clientActionFailed();
 			return;
 		}
-		
+
 		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isAttackingNow())
 		{
 			clientActionFailed();
 			saveNextIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination, null);
 			return;
 		}
-		
+
 		// Set the Intention of this AbstractAI to AI_INTENTION_MOVE_TO
 		changeIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
-		
+
 		// Stop the actor auto-attack client side by sending Server->Client packet AutoAttackStop (broadcast)
 		clientStopAutoAttack();
-		
+
 		// Abort the attack of the Creature and send Server->Client ActionFailed packet
 		_actor.abortAttack();
-		
+
 		// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet MoveToLocation (broadcast)
 		moveTo(destination);
 	}
-	
+
 	protected override void clientNotifyDead()
 	{
 		_clientMovingToPawnOffset = 0;
 		_clientMoving = false;
 		base.clientNotifyDead();
 	}
-	
+
 	private void thinkAttack()
 	{
 		SkillUseHolder queuedSkill = _actor.getActingPlayer().getQueuedSkill();
@@ -232,26 +232,26 @@ public class PlayerAI : PlayableAI
 		{
 			// Remove the skill from queue.
 			_actor.getActingPlayer().setQueuedSkill(null, null, false, false);
-			
+
 			// Check if player has the needed MP for the queued skill.
 			if (_actor.getCurrentMp() >= _actor.getStat().getMpInitialConsume(queuedSkill.getSkill()))
 			{
 				// Abort attack.
 				_actor.abortAttack();
-				
+
 				// Recharge shots.
 				if (!_actor.isChargedShot(ShotType.SOULSHOTS) && !_actor.isChargedShot(ShotType.BLESSED_SOULSHOTS))
 				{
 					_actor.rechargeShots(true, false, false);
 				}
-				
+
 				// Use queued skill.
 				_actor.getActingPlayer().useMagic(queuedSkill.getSkill(), queuedSkill.getItem(), queuedSkill.isCtrlPressed(), queuedSkill.isShiftPressed());
 				return;
 			}
 		}
-		
-		WorldObject target = getTarget();
+
+		WorldObject? target = getTarget();
 		if ((target == null) || !target.isCreature())
 		{
 			return;
@@ -266,14 +266,14 @@ public class PlayerAI : PlayableAI
 		{
 			return;
 		}
-		
+
 		clientStopMoving(null);
 		_actor.doAutoAttack((Creature) target);
 	}
-	
+
 	private void thinkCast()
 	{
-		WorldObject target = getCastTarget();
+		WorldObject? target = getCastTarget();
 		if ((_skill.getTargetType() == TargetType.GROUND) && _actor.isPlayer())
 		{
 			Location3D? location = ((Player)_actor).getCurrentSkillWorldPosition();
@@ -299,9 +299,9 @@ public class PlayerAI : PlayableAI
 				return;
 			}
 		}
-		
+
 		// Check if target has changed.
-		WorldObject currentTarget = _actor.getTarget();
+		WorldObject? currentTarget = _actor.getTarget();
 		if ((currentTarget != target) && (currentTarget != null) && (target != null))
 		{
 			_actor.setTarget(target);
@@ -309,48 +309,51 @@ public class PlayerAI : PlayableAI
 			_actor.setTarget(currentTarget);
 			return;
 		}
-		
+
 		_actor.doCast(_skill, _item, _forceUse, _dontMove);
 	}
-	
+
 	private void thinkPickUp()
 	{
 		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
 		{
 			return;
 		}
-		WorldObject target = getTarget();
+		WorldObject? target = getTarget();
+        if (target is null)
+            return;
+
 		if (checkTargetLost(target))
-		{
 			return;
-		}
-		if (maybeMoveToPawn(target, 36))
-		{
+
+        if (maybeMoveToPawn(target, 36))
 			return;
-		}
-		setIntention(CtrlIntention.AI_INTENTION_IDLE);
+
+        setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		getActor().doPickupItem(target);
 	}
-	
+
 	private void thinkInteract()
 	{
 		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
 		{
 			return;
 		}
-		WorldObject target = getTarget();
+		WorldObject? target = getTarget();
+        if (target is null)
+            return;
+
 		if (checkTargetLost(target))
-		{
 			return;
-		}
-		if (maybeMoveToPawn(target, 36))
-		{
+
+        if (maybeMoveToPawn(target, 36))
 			return;
-		}
-		if (!(target is StaticObject))
+
+        if (!(target is StaticObject))
 		{
 			getActor().doInteract((Creature) target);
 		}
+
 		setIntention(CtrlIntention.AI_INTENTION_IDLE);
 	}
 
@@ -360,7 +363,7 @@ public class PlayerAI : PlayableAI
 		{
 			return;
 		}
-		
+
 		_thinking = true;
 		try
 		{
@@ -386,7 +389,7 @@ public class PlayerAI : PlayableAI
 			_thinking = false;
 		}
 	}
-	
+
 	public override Player getActor()
 	{
 		return (Player)base.getActor();

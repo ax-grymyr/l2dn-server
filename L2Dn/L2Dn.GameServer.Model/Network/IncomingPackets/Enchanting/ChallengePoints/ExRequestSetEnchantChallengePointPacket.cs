@@ -43,9 +43,9 @@ public struct ExRequestSetEnchantChallengePointPacket: IIncomingPacket<GameSessi
 		    return ValueTask.CompletedTask;
 	    }
 
-	    EnchantChallengePointData.EnchantChallengePointsItemInfo info = EnchantChallengePointData.getInstance()
-		    .getInfoByItemId(item.getId());
-	    
+	    EnchantChallengePointData.EnchantChallengePointsItemInfo? info =
+            EnchantChallengePointData.getInstance().getInfoByItemId(item.getId());
+
 	    if (info == null)
 	    {
 		    player.sendPacket(new ExSetEnchantChallengePointPacket(false));
@@ -101,8 +101,9 @@ public struct ExRequestSetEnchantChallengePointPacket: IIncomingPacket<GameSessi
 	    if (pendingGroupId == groupId && (pendingOptionIndex == EnchantChallengePointData.OptionProbInc1 ||
 	                                      pendingOptionIndex == EnchantChallengePointData.OptionProbInc2))
 	    {
-		    EnchantChallengePointData.EnchantChallengePointsOptionInfo optionInfo = EnchantChallengePointData
+		    EnchantChallengePointData.EnchantChallengePointsOptionInfo? optionInfo = EnchantChallengePointData
 			    .getInstance().getOptionInfo(pendingGroupId, pendingOptionIndex);
+
 		    if (optionInfo != null && item.getEnchantLevel() >= optionInfo.MinEnchant &&
 		        item.getEnchantLevel() <= optionInfo.MaxEnchant)
 		    {

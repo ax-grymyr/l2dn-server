@@ -10,73 +10,70 @@ namespace L2Dn.GameServer.Network.Enums;
 
 public static class RefinePacketHelper
 {
-	/**
-	 * Checks player, source item, lifestone and gemstone validity for augmentation process
-	 * @param player
-	 * @param item
-	 * @param mineralItem
-	 * @param feeItem
-	 * @param fee
-	 * @return
-	 */
-	public static bool isValid(Player player, Item item, Item mineralItem, Item feeItem, VariationFee fee)
-	{
-		if (fee == null)
-		{
-			return false;
-		}
-		
-		if (!isValid(player, item, mineralItem))
-		{
-			return false;
-		}
-		
-		if (feeItem != null)
-		{
-			// GemStones must belong to owner
-			if (feeItem.getOwnerId() != player.ObjectId)
-			{
-				return false;
-			}
-			// .. and located in inventory
-			if (feeItem.getItemLocation() != ItemLocation.INVENTORY)
-			{
-				return false;
-			}
-		}
-		
-		return true;
-	}
-	
-	/**
-	 * Checks player, source item and lifestone validity for augmentation process
-	 * @param player
-	 * @param item
-	 * @param mineralItem
-	 * @return
-	 */
+    /**
+     * Checks player, source item, lifestone and gemstone validity for augmentation process
+     * @param player
+     * @param item
+     * @param mineralItem
+     * @param feeItem
+     * @param fee
+     * @return
+     */
+    public static bool isValid(Player player, Item item, Item mineralItem, Item? feeItem, VariationFee? fee)
+    {
+        if (fee == null)
+        {
+            return false;
+        }
+
+        if (!isValid(player, item, mineralItem))
+        {
+            return false;
+        }
+
+        if (feeItem != null)
+        {
+            // GemStones must belong to owner
+            if (feeItem.getOwnerId() != player.ObjectId)
+                return false;
+
+            // and located in inventory
+            if (feeItem.getItemLocation() != ItemLocation.INVENTORY)
+                return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Checks player, source item and lifestone validity for augmentation process
+     * @param player
+     * @param item
+     * @param mineralItem
+     * @return
+     */
 	public static bool isValid(Player player, Item item, Item mineralItem)
 	{
 		if (!isValid(player, item))
 		{
 			return false;
 		}
-		
+
 		// Item must belong to owner
 		if (mineralItem.getOwnerId() != player.ObjectId)
 		{
 			return false;
 		}
-		
+
 		// Lifestone must be located in inventory
 		if (mineralItem.getItemLocation() != ItemLocation.INVENTORY)
 		{
 			return false;
 		}
-		
+
 		return true;
 	}
-	
+
 	/**
 	 * Check both player and source item conditions for augmentation process
 	 * @param player
@@ -89,13 +86,13 @@ public static class RefinePacketHelper
 		{
 			return false;
 		}
-		
+
 		// Item must belong to owner
 		if (item.getOwnerId() != player.ObjectId)
 		{
 			return false;
 		}
-		
+
 		if (item.isHeroItem())
 		{
 			return false;
@@ -120,7 +117,7 @@ public static class RefinePacketHelper
 		{
 			return false;
 		}
-		
+
 		// Source item can be equipped or in inventory
 		switch (item.getItemLocation())
 		{
@@ -134,21 +131,21 @@ public static class RefinePacketHelper
 				return false;
 			}
 		}
-		
+
 		if (!(item.getTemplate() is Weapon) && !(item.getTemplate() is Armor))
 		{
 			return false; // neither weapon nor armor ?
 		}
-		
+
 		// blacklist check
 		if (Config.AUGMENTATION_BLACKLIST.Contains(item.getId()))
 		{
 			return false;
 		}
-		
+
 		return true;
 	}
-	
+
 	/**
 	 * Check if player's conditions valid for augmentation process
 	 * @param player

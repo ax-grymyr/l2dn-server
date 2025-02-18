@@ -19,11 +19,11 @@ public struct CreatureSayPacket: IOutgoingPacket
     private List<string> _parameters;
     private readonly bool _shareLocation;
 
-    public CreatureSayPacket(Player sender, Player receiver, string name, ChatType chatType, string text)
+    public CreatureSayPacket(Player sender, Player? receiver, string name, ChatType chatType, string text)
         : this(sender, receiver, name, chatType, text, false)
     {
     }
-    public CreatureSayPacket(Player sender, Player receiver, string name, ChatType chatType, string text, bool shareLocation)
+    public CreatureSayPacket(Player sender, Player? receiver, string name, ChatType chatType, string text, bool shareLocation)
     {
         _sender = sender;
         _senderName = name;
@@ -55,12 +55,12 @@ public struct CreatureSayPacket: IOutgoingPacket
             _mask |= 0x10;
         }
     }
-	
+
     public CreatureSayPacket(Creature? sender, ChatType chatType, string senderName, string text)
         : this(sender, chatType, senderName, text, false)
     {
     }
-	
+
     public CreatureSayPacket(Creature? sender, ChatType chatType, string senderName, string text, bool shareLocation)
     {
         _sender = sender;
@@ -69,7 +69,7 @@ public struct CreatureSayPacket: IOutgoingPacket
         _text = text;
         _shareLocation = shareLocation;
     }
-	
+
     public CreatureSayPacket(Creature? sender, ChatType chatType, NpcStringId npcStringId)
     {
         _sender = sender;
@@ -80,7 +80,7 @@ public struct CreatureSayPacket: IOutgoingPacket
             _senderName = sender.getName();
         }
     }
-	
+
     public CreatureSayPacket(ChatType chatType, int charId, SystemMessageId systemMessageId)
     {
         _sender = null;

@@ -11,19 +11,19 @@ public readonly struct ExInzoneWaitingPacket: IOutgoingPacket
     private readonly int _currentTemplateId;
     private readonly Map<int, DateTime> _instanceTimes;
     private readonly bool _hide;
-	
+
     public ExInzoneWaitingPacket(Player player, bool hide)
     {
-        Instance instance = InstanceManager.getInstance().getPlayerInstance(player, false);
-        _currentTemplateId = ((instance != null) && (instance.getTemplateId() >= 0)) ? instance.getTemplateId() : -1;
+        Instance? instance = InstanceManager.getInstance().getPlayerInstance(player, false);
+        _currentTemplateId = instance != null && instance.getTemplateId() >= 0 ? instance.getTemplateId() : -1;
         _instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(player);
         _hide = hide;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_INZONE_WAITING_INFO);
-        
+
         writer.WriteByte(!_hide); // Grand Crusade
         writer.WriteInt32(_currentTemplateId);
         writer.WriteInt32(_instanceTimes.Count);

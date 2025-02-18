@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -22,10 +23,11 @@ public struct RequestPledgeWarListPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (player.getClan() == null)
+        Clan? clan = player.getClan();
+        if (clan == null)
             return ValueTask.CompletedTask;
-		
-        player.sendPacket(new PledgeReceiveWarListPacket(player.getClan(), _tab));
+
+        player.sendPacket(new PledgeReceiveWarListPacket(clan, _tab));
 
         return ValueTask.CompletedTask;
     }

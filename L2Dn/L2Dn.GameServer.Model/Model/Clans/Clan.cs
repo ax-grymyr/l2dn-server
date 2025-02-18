@@ -32,7 +32,7 @@ namespace L2Dn.GameServer.Model.Clans;
 public class Clan: IIdentifiable, INamable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Clan));
-	
+
 	// Ally Penalty Types
 	/** Clan leaved ally */
 	public const int PENALTY_TYPE_CLAN_LEAVED = 1;
@@ -57,12 +57,12 @@ public class Clan: IIdentifiable, INamable
 	public const int SUBUNIT_KNIGHT3 = 2001;
 	/** Clan subunit type of Order of Knights B-2 */
 	public const int SUBUNIT_KNIGHT4 = 2002;
-	
+
 	private string _name;
 	private int _clanId;
 	private ClanMember _leader;
 	private readonly Map<int, ClanMember> _members = new();
-	
+
 	private string? _allyName;
 	private int? _allyId;
 	private int _level;
@@ -80,34 +80,34 @@ public class Clan: IIdentifiable, INamable
 	private DateTime? _dissolvingExpiryTime;
 	private int _bloodAllianceCount;
 	private int _bloodOathCount;
-	
+
 	private readonly ItemContainer _warehouse;
 	private readonly Map<int, ClanWar> _atWarWith = new();
-	
+
 	private Forum _forum;
-	
+
 	private readonly Map<int, Skill> _skills = new();
 	private readonly Map<int, RankPrivs> _privs = new();
 	private readonly Map<int, SubPledge> _subPledges = new();
 	private readonly Map<int, Skill> _subPledgeSkills = new();
-	
+
 	private int _reputationScore;
 	private int _rank;
 	private int _exp;
-	
+
 	private string _notice;
 	private bool _noticeEnabled;
 	private const int MAX_NOTICE_LENGTH = 8192;
 	private int? _newLeaderId;
-	
+
 	private int _siegeKills; // atomic
 	private int _siegeDeaths; // atomic
-	
+
 	private ClanRewardBonus? _lastMembersOnlineBonus;
 	private ClanRewardBonus? _lastHuntingBonus;
-	
+
 	private volatile ClanVariables _vars;
-	
+
 	/**
 	 * Called if a clan is referenced only by id. In this case all other data needs to be fetched from db
 	 * @param clanId A valid clan Id to create and restore
@@ -119,20 +119,20 @@ public class Clan: IIdentifiable, INamable
 		initializePrivs();
 		restore();
 		_warehouse.restore();
-		
+
 		ClanRewardBonus? availableOnlineBonus = getAvailableBonus(ClanRewardType.MEMBERS_ONLINE);
 		if ((_lastMembersOnlineBonus == null) && (availableOnlineBonus != null))
 		{
 			_lastMembersOnlineBonus = availableOnlineBonus;
 		}
-		
+
 		ClanRewardBonus? availableHuntingBonus = getAvailableBonus(ClanRewardType.HUNTING_MONSTERS);
 		if ((_lastHuntingBonus == null) && (availableHuntingBonus != null))
 		{
 			_lastHuntingBonus = availableHuntingBonus;
 		}
 	}
-	
+
 	/**
 	 * Called only if a new clan is created
 	 * @param clanId A valid clan Id to create
@@ -145,7 +145,7 @@ public class Clan: IIdentifiable, INamable
 		_name = clanName;
 		initializePrivs();
 	}
-	
+
 	/**
 	 * @return Returns the clanId.
 	 */
@@ -153,7 +153,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _clanId;
 	}
-	
+
 	/**
 	 * @param clanId The clanId to set.
 	 */
@@ -161,7 +161,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		_clanId = clanId;
 	}
-	
+
 	/**
 	 * @return Returns the leaderId.
 	 */
@@ -169,7 +169,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _leader != null ? _leader.getObjectId() : 0;
 	}
-	
+
 	/**
 	 * @return PledgeMember of clan leader.
 	 */
@@ -177,7 +177,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _leader;
 	}
-	
+
 	/**
 	 * @param leader the leader to set.
 	 */
@@ -186,37 +186,37 @@ public class Clan: IIdentifiable, INamable
 		_leader = leader;
 		_members.put(leader.getObjectId(), leader);
 	}
-	
+
 	public void setNewLeader(ClanMember member)
 	{
 		Player newLeader = member.getPlayer();
 		ClanMember exMember = _leader;
 		Player exLeader = exMember.getPlayer();
-		
+
 		// Notify to scripts
 		if (GlobalEvents.Global.HasSubscribers<OnClanLeaderChange>())
 		{
 			GlobalEvents.Global.NotifyAsync(new OnClanLeaderChange(exMember, member, this));
 		}
-		
+
 		if (exLeader != null)
 		{
 			if (exLeader.isFlying())
 			{
 				exLeader.dismount();
 			}
-			
+
 			if (getLevel() >= SiegeManager.getInstance().getSiegeClanMinLevel())
 			{
 				SiegeManager.getInstance().removeSiegeSkills(exLeader);
 			}
-			
+
 			exLeader.setClanPrivileges(ClanPrivilege.None);
 			exLeader.broadcastUserInfo();
 		}
 		else
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int leaderId = getLeaderId();
@@ -227,26 +227,26 @@ public class Clan: IIdentifiable, INamable
 				LOGGER.Error("Couldn't update clan privs for old clan leader: " + e);
 			}
 		}
-		
+
 		setLeader(member);
 		if (_newLeaderId != 0)
 		{
 			setNewLeaderId(0, true);
 		}
 		updateClanInDB();
-		
+
 		if (exLeader != null)
 		{
 			exLeader.setPledgeClass(ClanMember.calculatePledgeClass(exLeader));
 			exLeader.broadcastUserInfo();
 			exLeader.checkItemRestriction();
 		}
-		
+
 		if (newLeader != null)
 		{
 			newLeader.setPledgeClass(ClanMember.calculatePledgeClass(newLeader));
 			newLeader.setClanPrivileges(ClanPrivilege.All);
-			
+
 			if (getLevel() >= SiegeManager.getInstance().getSiegeClanMinLevel())
 			{
 				SiegeManager.getInstance().addSiegeSkills(newLeader);
@@ -255,7 +255,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		else
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int leaderId = getLeaderId();
@@ -267,15 +267,15 @@ public class Clan: IIdentifiable, INamable
 				LOGGER.Warn("Couldn't update clan privs for new clan leader: " + e);
 			}
 		}
-		
+
 		broadcastClanStatus();
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.CLAN_LEADER_PRIVILEGES_HAVE_BEEN_TRANSFERRED_TO_C1);
 		sm.Params.addString(member.getName());
 		broadcastToOnlineMembers(sm);
-		
+
 		LOGGER.Info("Leader of Clan: " + getName() + " changed to: " + member.getName() + " ex leader: " + exMember.getName());
 	}
-	
+
 	/**
 	 * @return the clan leader's name.
 	 */
@@ -288,7 +288,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		return _leader.getName();
 	}
-	
+
 	/**
 	 * @return the clan name.
 	 */
@@ -296,7 +296,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _name;
 	}
-	
+
 	/**
 	 * @param name The name to set.
 	 */
@@ -304,7 +304,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		_name = name;
 	}
-	
+
 	/**
 	 * Adds a clan member to the clan.
 	 * @param member the clan member.
@@ -313,7 +313,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		_members.put(member.getObjectId(), member);
 	}
-	
+
 	/**
 	 * Adds a clan member to the clan.<br>
 	 * Using a different constructor, to make it easier to read.
@@ -330,14 +330,14 @@ public class Clan: IIdentifiable, INamable
 		player.sendPacket(new PledgeShowMemberListUpdatePacket(player));
 		player.sendPacket(new PledgeSkillListPacket(this));
 		addSkillEffects(player);
-		
+
 		// Notify to scripts
 		if (GlobalEvents.Global.HasSubscribers<OnClanJoin>())
 		{
 			GlobalEvents.Global.NotifyAsync(new OnClanJoin(member, this));
 		}
 	}
-	
+
 	/**
 	 * Updates player status in clan.
 	 * @param player the player to be updated.
@@ -349,10 +349,10 @@ public class Clan: IIdentifiable, INamable
 		{
 			setLeader(member);
 		}
-		
+
 		addClanMember(member);
 	}
-	
+
 	/**
 	 * @param name the name of the required clan member.
 	 * @return the clan member for a given name.
@@ -368,7 +368,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		return null;
 	}
-	
+
 	/**
 	 * @param objectId the required clan member object Id.
 	 * @return the clan member for a given {@code objectId}.
@@ -377,7 +377,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _members.get(objectId);
 	}
-	
+
 	/**
 	 * @param objectId the object Id of the member that will be removed.
 	 * @param clanJoinExpiryTime time penalty to join a clan.
@@ -390,7 +390,7 @@ public class Clan: IIdentifiable, INamable
 			LOGGER.Warn("Member Object ID: " + objectId + " not found in clan while trying to remove");
 			return;
 		}
-		
+
 		int leadssubpledge = getLeaderSubPledge(objectId);
 		if (leadssubpledge != 0)
 		{
@@ -399,7 +399,7 @@ public class Clan: IIdentifiable, INamable
 			getSubPledge(leadssubpledge).setLeaderId(0);
 			updateSubPledgeInDB(leadssubpledge);
 		}
-		
+
 		if (exMember.getApprentice() != 0)
 		{
 			ClanMember apprentice = getClanMember(exMember.getApprentice());
@@ -413,12 +413,12 @@ public class Clan: IIdentifiable, INamable
 				{
 					apprentice.setApprenticeAndSponsor(0, 0);
 				}
-				
+
 				apprentice.saveApprenticeAndSponsor(0, 0);
 			}
 		}
 
-		int? sponsorId = exMember.getSponsor(); 
+		int? sponsorId = exMember.getSponsor();
 		if (sponsorId != null)
 		{
 			ClanMember sponsor = getClanMember(sponsorId.Value);
@@ -432,17 +432,17 @@ public class Clan: IIdentifiable, INamable
 				{
 					sponsor.setApprenticeAndSponsor(0, 0);
 				}
-				
+
 				sponsor.saveApprenticeAndSponsor(0, 0);
 			}
 		}
 		exMember.saveApprenticeAndSponsor(0, 0);
-		
+
 		if (Config.REMOVE_CASTLE_CIRCLETS && _castleId != null)
 		{
 			CastleManager.getInstance().removeCirclet(exMember, _castleId.Value);
 		}
-		
+
 		if (exMember.isOnline())
 		{
 			Player player = exMember.getPlayer();
@@ -452,17 +452,17 @@ public class Clan: IIdentifiable, INamable
 			}
 			player.setApprentice(0);
 			player.setSponsor(0);
-			
+
 			if (player.isClanLeader())
 			{
 				SiegeManager.getInstance().removeSiegeSkills(player);
 				player.setClanCreateExpiryTime(DateTime.UtcNow.AddDays(Config.ALT_CLAN_CREATE_DAYS));
 			}
-			
+
 			// remove Clan skills from Player
 			removeSkillEffects(player);
 			player.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.CLAN_ADVENT);
-			
+
 			// remove Residential skills
 			if (getCastleId() > 0)
 			{
@@ -482,13 +482,13 @@ public class Clan: IIdentifiable, INamable
 			}
 			player.sendSkillList();
 			player.setClan(null);
-			
+
 			// players leaving from clan academy have no penalty
 			if (exMember.getPledgeType() != -1)
 			{
 				player.setClanJoinExpiryTime(clanJoinExpiryTime);
 			}
-			
+
 			player.setPledgeClass(ClanMember.calculatePledgeClass(player));
 			player.broadcastUserInfo();
 			// disable clan tab
@@ -496,27 +496,27 @@ public class Clan: IIdentifiable, INamable
 		}
 		else
 		{
-			removeMemberInDatabase(exMember, clanJoinExpiryTime, getLeaderId() == objectId ? 
+			removeMemberInDatabase(exMember, clanJoinExpiryTime, getLeaderId() == objectId ?
 				DateTime.UtcNow.AddDays(Config.ALT_CLAN_CREATE_DAYS) : DateTime.MinValue);
 		}
-		
+
 		// Notify to scripts
 		if (GlobalEvents.Global.HasSubscribers<OnClanLeft>())
 		{
 			GlobalEvents.Global.NotifyAsync(new OnClanLeft(exMember, this));
 		}
 	}
-	
+
 	public ICollection<ClanMember> getMembers()
 	{
 		return _members.Values;
 	}
-	
+
 	public int getMembersCount()
 	{
 		return _members.Count;
 	}
-	
+
 	public int getSubPledgeMembersCount(int subpl)
 	{
 		int result = 0;
@@ -529,7 +529,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		return result;
 	}
-	
+
 	/**
 	 * @param pledgeType the Id of the pledge type.
 	 * @return the maximum number of members allowed for a given {@code pledgeType}.
@@ -537,7 +537,7 @@ public class Clan: IIdentifiable, INamable
 	public int getMaxNrOfMembers(int pledgeType)
 	{
 		int limit = 0;
-		
+
 		switch (pledgeType)
 		{
 			case 0:
@@ -624,7 +624,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		return limit;
 	}
-	
+
 	/**
 	 * @param exclude the object Id to exclude from list.
 	 * @return all online members excluding the one with object id {code exclude}.
@@ -641,7 +641,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		return result;
 	}
-	
+
 	/**
 	 * @return the online clan member count.
 	 */
@@ -657,7 +657,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		return count;
 	}
-	
+
 	/**
 	 * @return the alliance Id.
 	 */
@@ -665,7 +665,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _allyId;
 	}
-	
+
 	/**
 	 * @return the alliance name.
 	 */
@@ -673,7 +673,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _allyName;
 	}
-	
+
 	/**
 	 * @param allyCrestId the alliance crest Id to be set.
 	 */
@@ -681,7 +681,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		_allyCrestId = allyCrestId;
 	}
-	
+
 	/**
 	 * @return the alliance crest Id.
 	 */
@@ -689,7 +689,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _allyCrestId;
 	}
-	
+
 	/**
 	 * @return the clan level.
 	 */
@@ -697,7 +697,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _level;
 	}
-	
+
 	/**
 	 * Sets the clan level and updates the clan forum if it's needed.
 	 * @param level the clan level to be set.
@@ -718,7 +718,7 @@ public class Clan: IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	/**
 	 * @return the castle Id for this clan if owns a castle, zero otherwise.
 	 */
@@ -726,7 +726,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _castleId;
 	}
-	
+
 	/**
 	 * @return the fort Id for this clan if owns a fort, zero otherwise.
 	 */
@@ -734,7 +734,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _fortId;
 	}
-	
+
 	/**
 	 * @return the hideout Id for this clan if owns a hideout, zero otherwise.
 	 */
@@ -742,7 +742,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _hideoutId;
 	}
-	
+
 	/**
 	 * @param crestId the Id of the clan crest to be set.
 	 */
@@ -750,7 +750,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		_crestId = crestId;
 	}
-	
+
 	/**
 	 * @return Returns the clanCrestId.
 	 */
@@ -758,7 +758,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _crestId;
 	}
-	
+
 	/**
 	 * @param crestLargeId The id of pledge LargeCrest.
 	 */
@@ -766,7 +766,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		_crestLargeId = crestLargeId;
 	}
-	
+
 	/**
 	 * @return Returns the clan CrestLargeId
 	 */
@@ -774,7 +774,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _crestLargeId;
 	}
-	
+
 	/**
 	 * @param allyId The allyId to set.
 	 */
@@ -782,7 +782,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		_allyId = allyId;
 	}
-	
+
 	/**
 	 * @param allyName The allyName to set.
 	 */
@@ -790,7 +790,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		_allyName = allyName;
 	}
-	
+
 	/**
 	 * @param castleId the castle Id to set.
 	 */
@@ -798,7 +798,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		_castleId = castleId;
 	}
-	
+
 	/**
 	 * @param fortId the fort Id to set.
 	 */
@@ -806,7 +806,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		_fortId = fortId;
 	}
-	
+
 	/**
 	 * @param hideoutId the hideout Id to set.
 	 */
@@ -814,7 +814,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		_hideoutId = hideoutId;
 	}
-	
+
 	/**
 	 * @param id the Id of the player to be verified.
 	 * @return {code true} if the player belongs to the clan.
@@ -823,7 +823,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return ((id != 0) && _members.ContainsKey(id));
 	}
-	
+
 	/**
 	 * @return the Blood Alliance count for this clan
 	 */
@@ -831,7 +831,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _bloodAllianceCount;
 	}
-	
+
 	/**
 	 * Increase Blood Alliance count by config predefined count and updates the database.
 	 */
@@ -840,7 +840,7 @@ public class Clan: IIdentifiable, INamable
 		_bloodAllianceCount += SiegeManager.getInstance().getBloodAllianceReward();
 		updateBloodAllianceCountInDB();
 	}
-	
+
 	/**
 	 * Reset the Blood Alliance count to zero and updates the database.
 	 */
@@ -849,13 +849,13 @@ public class Clan: IIdentifiable, INamable
 		_bloodAllianceCount = 0;
 		updateBloodAllianceCountInDB();
 	}
-	
+
 	/**
 	 * Store current Bloood Alliances count in database.
 	 */
 	public void updateBloodAllianceCountInDB()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Clans.Where(c => c.Id == _clanId)
@@ -866,7 +866,7 @@ public class Clan: IIdentifiable, INamable
 			LOGGER.Error("Exception on updateBloodAllianceCountInDB(): " + e);
 		}
 	}
-	
+
 	/**
 	 * @return the Blood Oath count for this clan
 	 */
@@ -874,7 +874,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _bloodOathCount;
 	}
-	
+
 	/**
 	 * Increase Blood Oath count by config predefined count and updates the database.
 	 */
@@ -883,7 +883,7 @@ public class Clan: IIdentifiable, INamable
 		_bloodOathCount += Config.FS_BLOOD_OATH_COUNT;
 		updateBloodOathCountInDB();
 	}
-	
+
 	/**
 	 * Reset the Blood Oath count to zero and updates the database.
 	 */
@@ -892,13 +892,13 @@ public class Clan: IIdentifiable, INamable
 		_bloodOathCount = 0;
 		updateBloodOathCountInDB();
 	}
-	
+
 	/**
 	 * Store current Bloood Alliances count in database.
 	 */
 	public void updateBloodOathCountInDB()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Clans.Where(c => c.Id == _clanId)
@@ -909,7 +909,7 @@ public class Clan: IIdentifiable, INamable
 			LOGGER.Error("Exception on updateBloodAllianceCountInDB(): " + e);
 		}
 	}
-	
+
 	/**
 	 * Updates in database clan information:
 	 * <ul>
@@ -926,7 +926,7 @@ public class Clan: IIdentifiable, INamable
 	 */
 	public void updateClanInDB()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			Db.Clan? clan = ctx.Clans.SingleOrDefault(c => c.Id == _clanId);
@@ -955,7 +955,7 @@ public class Clan: IIdentifiable, INamable
 			LOGGER.Error("Error saving clan: " + e);
 		}
 	}
-	
+
 	/**
 	 * Stores in database clan information:
 	 * <ul>
@@ -973,7 +973,7 @@ public class Clan: IIdentifiable, INamable
 	 */
 	public void store()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Clans.Add(new Db.Clan()
@@ -999,7 +999,7 @@ public class Clan: IIdentifiable, INamable
 			LOGGER.Error("Error saving new clan: " + e);
 		}
 	}
-	
+
 	/**
 	 * @param member the clan member to be removed.
 	 * @param clanJoinExpiryTime
@@ -1007,7 +1007,7 @@ public class Clan: IIdentifiable, INamable
 	 */
 	private void removeMemberInDatabase(ClanMember member, DateTime? clanJoinExpiryTime, DateTime? clanCreateExpiryTime)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = member.getObjectId();
@@ -1025,7 +1025,7 @@ public class Clan: IIdentifiable, INamable
 				record.SubPledge = 0;
 				record.Apprentice = 0;
 				record.SponsorId = null;
-				
+
 				ctx.SaveChanges();
 			}
 		}
@@ -1034,10 +1034,10 @@ public class Clan: IIdentifiable, INamable
 			LOGGER.Error("Error removing clan member: " + e);
 		}
 	}
-	
+
 	private void restore()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			Db.Clan? record = ctx.Clans.SingleOrDefault(c => c.Id == _clanId);
@@ -1061,16 +1061,16 @@ public class Clan: IIdentifiable, INamable
 					setCharPenaltyExpiryTime(null);
 				}
 				setDissolvingExpiryTime(record.DissolvingExpireTime);
-				
+
 				setCrestId(record.CrestId);
 				setCrestLargeId(record.LargeCrestId);
 				setAllyCrestId(record.AllyCrestId);
-				
+
 				_exp = record.Exp;
 				setReputationScore(record.Reputation);
 				setAuctionBiddedAt(record.AuctionBidAt, false);
 				setNewLeaderId(record.NewLeaderId, false);
-				
+
 				int leaderId = record.LeaderId;
 
 				foreach (Character character in ctx.Characters.Where(c => c.ClanId == _clanId))
@@ -1086,7 +1086,7 @@ public class Clan: IIdentifiable, INamable
 					}
 				}
 			}
-			
+
 			restoreSubPledges();
 			restoreRankPrivs();
 			restoreSkills();
@@ -1097,10 +1097,10 @@ public class Clan: IIdentifiable, INamable
 			LOGGER.Error("Error restoring clan data: " + e);
 		}
 	}
-	
+
 	private void restoreNotice()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ClanNotice? notice = ctx.ClanNotices.SingleOrDefault(c => c.ClanId == _clanId);
@@ -1115,7 +1115,7 @@ public class Clan: IIdentifiable, INamable
 			LOGGER.Error("Error restoring clan notice: " + e);
 		}
 	}
-	
+
 	private void storeNotice(string noticeValue, bool enabled)
 	{
 		string notice = noticeValue;
@@ -1123,13 +1123,13 @@ public class Clan: IIdentifiable, INamable
 		{
 			notice = "";
 		}
-		
+
 		if (notice.Length > MAX_NOTICE_LENGTH)
 		{
 			notice = notice.Substring(0, MAX_NOTICE_LENGTH - 1);
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ClanNotice? record = ctx.ClanNotices.SingleOrDefault(c => c.ClanId == _clanId);
@@ -1139,7 +1139,7 @@ public class Clan: IIdentifiable, INamable
 				record.ClanId = _clanId;
 				ctx.ClanNotices.Add(record);
 			}
-			
+
 			record.Notice = notice;
 			record.Enabled = enabled;
 
@@ -1149,47 +1149,47 @@ public class Clan: IIdentifiable, INamable
 		{
 			LOGGER.Error("Error could not store clan notice: " + e);
 		}
-		
+
 		_notice = notice;
 		_noticeEnabled = enabled;
 	}
-	
+
 	public void setNoticeEnabled(bool enabled)
 	{
 		storeNotice(getNotice(), enabled);
 	}
-	
+
 	public void setNotice(string notice)
 	{
 		storeNotice(notice, _noticeEnabled);
 	}
-	
+
 	public bool isNoticeEnabled()
 	{
 		return _noticeEnabled;
 	}
-	
+
 	public string getNotice()
 	{
 		if (_notice == null)
 		{
 			return "";
 		}
-		
+
 		// Bypass exploit check.
 		string text = _notice.toLowerCase();
 		if (text.contains("action") && text.contains("bypass"))
 		{
 			return "";
 		}
-		
+
 		// Returns text without tags.
 		return _notice.replaceAll("<.*?>", "");
 	}
-	
+
 	private void restoreSkills()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (ClanSkill clanSkill in ctx.ClanSkills.Where(c => c.ClanId == _clanId))
@@ -1227,7 +1227,7 @@ public class Clan: IIdentifiable, INamable
 			LOGGER.Error("Error restoring clan skills: " + e);
 		}
 	}
-	
+
 	/**
 	 * @return all the clan skills.
 	 */
@@ -1237,10 +1237,10 @@ public class Clan: IIdentifiable, INamable
 		{
 			return new List<Skill>();
 		}
-		
+
 		return _skills.Values;
 	}
-	
+
 	/**
 	 * @return the map containing this clan skills.
 	 */
@@ -1248,15 +1248,15 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _skills;
 	}
-	
+
 	/**
 	 * Used to add a skill to skill list of this Pledge
 	 * @param newSkill
 	 * @return
 	 */
-	public Skill addSkill(Skill newSkill)
+	public Skill? addSkill(Skill newSkill)
 	{
-		Skill oldSkill = null;
+		Skill? oldSkill = null;
 		if (newSkill != null)
 		{
 			// Replace oldSkill by newSkill or Add the newSkill
@@ -1264,21 +1264,21 @@ public class Clan: IIdentifiable, INamable
 		}
 		return oldSkill;
 	}
-	
+
 	public Skill addNewSkill(Skill newSkill)
 	{
 		return addNewSkill(newSkill, -2);
 	}
-	
+
 	/**
 	 * Used to add a new skill to the list, send a packet to all online clan members, update their stats and store it in db
 	 * @param newSkill
 	 * @param subType
 	 * @return
 	 */
-	public Skill addNewSkill(Skill newSkill, int subType)
+	public Skill? addNewSkill(Skill newSkill, int subType)
 	{
-		Skill oldSkill = null;
+		Skill? oldSkill = null;
 		if (newSkill != null)
 		{
 			if (subType == -2)
@@ -1302,7 +1302,7 @@ public class Clan: IIdentifiable, INamable
 					return oldSkill;
 				}
 			}
-			
+
 			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -1331,10 +1331,10 @@ public class Clan: IIdentifiable, INamable
 			{
 				LOGGER.Error("Error could not store clan skills: " + e);
 			}
-			
+
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_CLAN_SKILL_S1_HAS_BEEN_ADDED);
 			sm.Params.addSkillName(newSkill.getId());
-			
+
 			foreach (ClanMember temp in _members.Values)
 			{
 				if ((temp != null) && (temp.getPlayer() != null) && temp.isOnline())
@@ -1359,10 +1359,10 @@ public class Clan: IIdentifiable, INamable
 				}
 			}
 		}
-		
+
 		return oldSkill;
 	}
-	
+
 	public void addSkillEffects()
 	{
 		foreach (Skill skill in _skills.Values)
@@ -1383,14 +1383,14 @@ public class Clan: IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	public void addSkillEffects(Player player)
 	{
 		if (player == null)
 		{
 			return;
 		}
-		
+
 		SocialClass playerSocialClass = (SocialClass)player.getPledgeClass() + 1;
 		foreach (Skill skill in _skills.Values)
 		{
@@ -1423,25 +1423,25 @@ public class Clan: IIdentifiable, INamable
 				player.addSkill(skill, false); // Skill is not saved to player DB
 			}
 		}
-		
+
 		if (_reputationScore < 0)
 		{
 			skillsStatus(player, true);
 		}
 	}
-	
+
 	public void removeSkillEffects(Player player)
 	{
 		if (player == null)
 		{
 			return;
 		}
-		
+
 		foreach (Skill skill in _skills.Values)
 		{
 			player.removeSkill(skill, false); // Skill is not saved to player DB
 		}
-		
+
 		if (player.getPledgeType() == 0)
 		{
 			foreach (Skill skill in _subPledgeSkills.Values)
@@ -1462,14 +1462,14 @@ public class Clan: IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	public void skillsStatus(Player player, bool disable)
 	{
 		if (player == null)
 		{
 			return;
 		}
-		
+
 		foreach (Skill skill in _skills.Values)
 		{
 			if (disable)
@@ -1481,7 +1481,7 @@ public class Clan: IIdentifiable, INamable
 				player.enableSkill(skill, false);
 			}
 		}
-		
+
 		if (player.getPledgeType() == 0)
 		{
 			foreach (Skill skill in _subPledgeSkills.Values)
@@ -1539,7 +1539,7 @@ public class Clan: IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	public void broadcastCSToOnlineMembers(CreatureSayPacket packet, Player broadcaster)
 	{
 		foreach (ClanMember member in _members.Values)
@@ -1550,7 +1550,7 @@ public class Clan: IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	public void broadcastToOtherOnlineMembers<TPacket>(TPacket packet, Player player)
 		where TPacket: struct, IOutgoingPacket
 	{
@@ -1562,22 +1562,22 @@ public class Clan: IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	public override string ToString()
 	{
 		return _name + "[" + _clanId + "]";
 	}
-	
+
 	public ItemContainer getWarehouse()
 	{
 		return _warehouse;
 	}
-	
+
 	public bool isAtWarWith(int clanId)
 	{
 		return _atWarWith.ContainsKey(clanId);
 	}
-	
+
 	public bool isAtWarWith(Clan clan)
 	{
 		if (clan == null)
@@ -1586,27 +1586,27 @@ public class Clan: IIdentifiable, INamable
 		}
 		return _atWarWith.ContainsKey(clan.getId());
 	}
-	
+
 	public int getHiredGuards()
 	{
 		return _hiredGuards;
 	}
-	
+
 	public void incrementHiredGuards()
 	{
 		_hiredGuards++;
 	}
-	
+
 	public bool isAtWar()
 	{
 		return _atWarWith.Count != 0;
 	}
-	
+
 	public Map<int, ClanWar> getWarList()
 	{
 		return _atWarWith;
 	}
-	
+
 	public void broadcastClanStatus()
 	{
 		foreach (Player member in getOnlineMembers(0))
@@ -1615,99 +1615,99 @@ public class Clan: IIdentifiable, INamable
 			PledgeShowMemberListAllPacket.sendAllTo(member);
 		}
 	}
-	
+
 	public class SubPledge
 	{
 		private readonly int _id;
 		private string _subPledgeName;
 		private int _leaderId;
 		private readonly Map<int, Skill> _subPledgeSkills = new();
-		
+
 		public SubPledge(int id, string name, int leaderId)
 		{
 			_id = id;
 			_subPledgeName = name;
 			_leaderId = leaderId;
 		}
-		
+
 		public int getId()
 		{
 			return _id;
 		}
-		
+
 		public string getName()
 		{
 			return _subPledgeName;
 		}
-		
+
 		public void setName(string name)
 		{
 			_subPledgeName = name;
 		}
-		
+
 		public int getLeaderId()
 		{
 			return _leaderId;
 		}
-		
+
 		public void setLeaderId(int leaderId)
 		{
 			_leaderId = leaderId;
 		}
-		
-		public Skill addNewSkill(Skill skill)
+
+		public Skill? addNewSkill(Skill skill)
 		{
 			return _subPledgeSkills.put(skill.getId(), skill);
 		}
-		
+
 		public ICollection<Skill> getSkills()
 		{
 			return _subPledgeSkills.Values;
 		}
-		
-		public Skill getSkill(int id)
+
+		public Skill? getSkill(int id)
 		{
 			return _subPledgeSkills.get(id);
 		}
 	}
-	
+
 	public class RankPrivs
 	{
 		private readonly int _rankId;
 		private readonly int _party; // TODO find out what this stuff means and implement it
 		private ClanPrivilege _rankPrivs;
-		
+
 		public RankPrivs(int rank, int party, ClanPrivilege privs)
 		{
 			_rankId = rank;
 			_party = party;
 			_rankPrivs = privs;
 		}
-		
+
 		public int getRank()
 		{
 			return _rankId;
 		}
-		
+
 		public int getParty()
 		{
 			return _party;
 		}
-		
+
 		public ClanPrivilege getPrivs()
 		{
 			return _rankPrivs;
 		}
-		
+
 		public void setPrivs(ClanPrivilege privs)
 		{
 			_rankPrivs = privs;
 		}
 	}
-	
+
 	private void restoreSubPledges()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (ClanSubPledge record in ctx.ClanSubPledges.Where(c => c.ClanId == _clanId))
@@ -1725,7 +1725,7 @@ public class Clan: IIdentifiable, INamable
 			LOGGER.Error("Could not restore clan sub-units: " + e);
 		}
 	}
-	
+
 	/**
 	 * used to retrieve subPledge by type
 	 * @param pledgeType
@@ -1735,19 +1735,19 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _subPledges == null ? null : _subPledges.get(pledgeType);
 	}
-	
+
 	/**
 	 * Used to retrieve subPledge by type
 	 * @param pledgeName
 	 * @return
 	 */
-	public SubPledge getSubPledge(string pledgeName)
+	public SubPledge? getSubPledge(string pledgeName)
 	{
 		if (_subPledges == null)
 		{
 			return null;
 		}
-		
+
 		foreach (SubPledge sp in _subPledges.Values)
 		{
 			if (sp.getName().equalsIgnoreCase(pledgeName))
@@ -1757,7 +1757,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Used to retrieve all subPledges
 	 * @return
@@ -1770,7 +1770,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		return _subPledges.Values;
 	}
-	
+
 	public SubPledge createSubPledge(Player player, int pledgeTypeValue, int leaderId, string subPledgeName)
 	{
 		SubPledge subPledge = null;
@@ -1792,7 +1792,7 @@ public class Clan: IIdentifiable, INamable
 			player.sendMessage("Leader is not correct");
 			return null;
 		}
-		
+
 		// Royal Guard 5000 points per each
 		// Order of Knights 10000 points per each
 		if ((pledgeType != -1) && (((_reputationScore < Config.ROYAL_GUARD_COST) && (pledgeType < SUBUNIT_KNIGHT1)) || ((_reputationScore < Config.KNIGHT_UNIT_COST) && (pledgeType > SUBUNIT_ROYAL2))))
@@ -1800,8 +1800,8 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(SystemMessageId.THE_CLAN_REPUTATION_IS_TOO_LOW);
 			return null;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ClanSubPledges.Add(new ClanSubPledge()
@@ -1813,10 +1813,10 @@ public class Clan: IIdentifiable, INamable
 			});
 
 			ctx.SaveChanges();
-			
+
 			subPledge = new SubPledge(pledgeType, subPledgeName, leaderId);
 			_subPledges.put(pledgeType, subPledge);
-			
+
 			if (pledgeType != -1)
 			{
 				// Royal Guard 5000 points per each
@@ -1836,12 +1836,12 @@ public class Clan: IIdentifiable, INamable
 		{
 			LOGGER.Error("Error saving sub clan data: " + e);
 		}
-		
+
 		broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(_leader.getClan()));
 		broadcastToOnlineMembers(new PledgeReceiveSubPledgeCreatedPacket(subPledge, _leader.getClan()));
 		return subPledge;
 	}
-	
+
 	public int getAvailablePledgeTypes(int pledgeType)
 	{
 		if (_subPledges.get(pledgeType) != null)
@@ -1881,10 +1881,10 @@ public class Clan: IIdentifiable, INamable
 		}
 		return pledgeType;
 	}
-	
+
 	public void updateSubPledgeInDB(int pledgeType)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int leaderId = getSubPledge(pledgeType).getLeaderId();
@@ -1897,10 +1897,10 @@ public class Clan: IIdentifiable, INamable
 			LOGGER.Error("Error updating subpledge: " + e);
 		}
 	}
-	
+
 	private void restoreRankPrivs()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (var record in ctx.ClanPrivileges.Where(c => c.ClanId == _clanId))
@@ -1913,7 +1913,7 @@ public class Clan: IIdentifiable, INamable
 				{
 					continue;
 				}
-					
+
 				_privs.get(rank).setPrivs((ClanPrivilege)privileges);
 			}
 		}
@@ -1922,7 +1922,7 @@ public class Clan: IIdentifiable, INamable
 			LOGGER.Error("Error restoring clan privs by rank: " + e);
 		}
 	}
-	
+
 	public void initializePrivs()
 	{
 		for (int i = 1; i < 10; i++)
@@ -1930,19 +1930,19 @@ public class Clan: IIdentifiable, INamable
 			_privs.put(i, new RankPrivs(i, 0, ClanPrivilege.None));
 		}
 	}
-	
+
 	public ClanPrivilege getRankPrivs(int rank)
 	{
 		return _privs.get(rank) != null ? _privs.get(rank).getPrivs() : ClanPrivilege.None;
 	}
-	
+
 	public void setRankPrivs(int rank, ClanPrivilege privs)
 	{
 		if (_privs.get(rank) != null)
 		{
 			_privs.get(rank).setPrivs(privs);
-			
-			try 
+
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ClanPrivileges? record =
@@ -1967,7 +1967,7 @@ public class Clan: IIdentifiable, INamable
 			{
 				LOGGER.Error("Could not store clan privs for rank: " + e);
 			}
-			
+
 			foreach (ClanMember cm in _members.Values)
 			{
 				if (cm.isOnline() && (cm.getPowerGrade() == rank) && (cm.getPlayer() != null))
@@ -1981,8 +1981,8 @@ public class Clan: IIdentifiable, INamable
 		else
 		{
 			_privs.put(rank, new RankPrivs(rank, 0, privs));
-			
-			try 
+
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ClanPrivileges? record =
@@ -2009,7 +2009,7 @@ public class Clan: IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	/**
 	 * @return all RankPrivs.
 	 */
@@ -2017,7 +2017,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		return _privs == null ? new List<RankPrivs>() : _privs.Values;
 	}
-	
+
 	public int getLeaderSubPledge(int leaderId)
 	{
 		int id = 0;
@@ -2034,19 +2034,19 @@ public class Clan: IIdentifiable, INamable
 		}
 		return id;
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void addReputationScore(int value)
 	{
 		setReputationScore(_reputationScore + value);
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void takeReputationScore(int value)
 	{
 		setReputationScore(_reputationScore - value);
 	}
-	
+
 	private void setReputationScore(int value)
 	{
 		if ((_reputationScore >= 0) && (value < 0))
@@ -2071,7 +2071,7 @@ public class Clan: IIdentifiable, INamable
 				}
 			}
 		}
-		
+
 		_reputationScore = value;
 		if (_reputationScore > 100000000)
 		{
@@ -2081,36 +2081,36 @@ public class Clan: IIdentifiable, INamable
 		{
 			_reputationScore = -100000000;
 		}
-		
+
 		broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(this));
 	}
-	
+
 	public int getReputationScore()
 	{
 		return _reputationScore;
 	}
-	
+
 	public void setRank(int rank)
 	{
 		_rank = rank;
 	}
-	
+
 	public int getRank()
 	{
 		return _rank;
 	}
-	
+
 	public int getAuctionBiddedAt()
 	{
 		return _auctionBiddedAt;
 	}
-	
+
 	public void setAuctionBiddedAt(int id, bool storeInDb)
 	{
 		_auctionBiddedAt = id;
 		if (storeInDb)
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.Clans.Where(c => c.Id == _clanId).ExecuteUpdate(s => s.SetProperty(c => c.AuctionBidAt, id));
@@ -2121,7 +2121,7 @@ public class Clan: IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	/**
 	 * @param player the clan inviting player.
 	 * @param target the invited player.
@@ -2193,7 +2193,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		return true;
 	}
-	
+
 	/**
 	 * @param player the clan inviting player.
 	 * @param target the invited player.
@@ -2206,38 +2206,38 @@ public class Clan: IIdentifiable, INamable
 			return false;
 		}
 
-		int? playerAllyId = player.getAllyId(); 
+		int? playerAllyId = player.getAllyId();
 		if ((playerAllyId is null) || !player.isClanLeader() || (player.getClanId() != playerAllyId))
 		{
 			player.sendPacket(SystemMessageId.ACCESS_ONLY_FOR_THE_CHANNEL_FOUNDER);
 			return false;
 		}
-		
+
 		Clan leaderClan = player.getClan();
 		if ((leaderClan.getAllyPenaltyExpiryTime() > DateTime.UtcNow) && (leaderClan.getAllyPenaltyType() == PENALTY_TYPE_DISMISS_CLAN))
 		{
 			player.sendPacket(SystemMessageId.YOU_CAN_ACCEPT_A_NEW_CLAN_IN_THE_ALLIANCE_IN_24_H_AFTER_DISMISSING_ANOTHER_ONE);
 			return false;
 		}
-		
+
 		if (target == null)
 		{
 			player.sendPacket(SystemMessageId.THE_TARGET_CANNOT_BE_INVITED);
 			return false;
 		}
-		
+
 		if (player.ObjectId == target.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ASK_YOURSELF_TO_APPLY_TO_A_CLAN);
 			return false;
 		}
-		
+
 		if (target.getClan() == null)
 		{
 			player.sendPacket(SystemMessageId.THE_TARGET_MUST_BE_A_CLAN_MEMBER);
 			return false;
 		}
-		
+
 		if (!target.isClanLeader())
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_IS_NOT_A_CLAN_LEADER);
@@ -2245,7 +2245,7 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(sm);
 			return false;
 		}
-		
+
 		Clan targetClan = target.getClan();
 		if (target.getAllyId() is not null)
 		{
@@ -2255,7 +2255,7 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(sm);
 			return false;
 		}
-		
+
 		if (targetClan.getAllyPenaltyExpiryTime() > DateTime.UtcNow)
 		{
 			if (targetClan.getAllyPenaltyType() == PENALTY_TYPE_CLAN_LEAVED)
@@ -2266,78 +2266,78 @@ public class Clan: IIdentifiable, INamable
 				player.sendPacket(sm);
 				return false;
 			}
-			
+
 			if (targetClan.getAllyPenaltyType() == PENALTY_TYPE_CLAN_DISMISSED)
 			{
 				player.sendPacket(SystemMessageId.A_CLAN_CAN_JOIN_ANOTHER_ALLIANCE_IN_24_H_AFTER_LEAVING_THE_PREVIOUS_ONE);
 				return false;
 			}
 		}
-		
+
 		if (player.isInsideZone(ZoneId.SIEGE) && target.isInsideZone(ZoneId.SIEGE))
 		{
 			player.sendPacket(SystemMessageId.THE_OPPOSING_CLAN_IS_PARTICIPATING_IN_A_SIEGE_BATTLE);
 			return false;
 		}
-		
+
 		if (leaderClan.isAtWarWith(targetClan.getId()))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_MAKE_AN_ALLIANCE_WITH_A_CLAN_YOU_ARE_IN_WAR_WITH);
 			return false;
 		}
-		
+
 		if (ClanTable.getInstance().getClanAllies(playerAllyId.Value).Count >= Config.ALT_MAX_NUM_OF_CLANS_IN_ALLY)
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_LIMIT);
 			return false;
 		}
-		
+
 		return true;
 	}
-	
+
 	public DateTime? getAllyPenaltyExpiryTime()
 	{
 		return _allyPenaltyExpiryTime;
 	}
-	
+
 	public int getAllyPenaltyType()
 	{
 		return _allyPenaltyType;
 	}
-	
+
 	public void setAllyPenaltyExpiryTime(DateTime? expiryTime, int penaltyType)
 	{
 		_allyPenaltyExpiryTime = expiryTime;
 		_allyPenaltyType = penaltyType;
 	}
-	
+
 	public DateTime? getCharPenaltyExpiryTime()
 	{
 		return _charPenaltyExpiryTime;
 	}
-	
+
 	public void setCharPenaltyExpiryTime(DateTime? time)
 	{
 		_charPenaltyExpiryTime = time;
 	}
-	
+
 	public DateTime? getDissolvingExpiryTime()
 	{
 		return _dissolvingExpiryTime;
 	}
-	
+
 	public void setDissolvingExpiryTime(DateTime? time)
 	{
 		_dissolvingExpiryTime = time;
 	}
-	
+
 	public void createAlly(Player player, string allyName)
 	{
 		if (null == player)
 		{
 			return;
 		}
-		
+
 		if (!player.isClanLeader())
 		{
 			player.sendPacket(SystemMessageId.ONLY_CLAN_LEADERS_MAY_CREATE_ALLIANCES);
@@ -2378,18 +2378,18 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(SystemMessageId.THAT_ALLIANCE_NAME_ALREADY_EXISTS);
 			return;
 		}
-		
+
 		setAllyId(_clanId);
 		setAllyName(allyName.Trim());
 		setAllyPenaltyExpiryTime(null, 0);
 		updateClanInDB();
-		
+
 		player.updateUserInfo();
-		
+
 		// TODO: Need correct message id
 		player.sendMessage("Alliance " + allyName + " has been created.");
 	}
-	
+
 	public void dissolveAlly(Player player)
 	{
 		if (_allyId is null)
@@ -2407,9 +2407,9 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DISSOLVE_AN_ALLIANCE_WHILE_AN_AFFILIATED_CLAN_IS_PARTICIPATING_IN_A_SIEGE_BATTLE);
 			return;
 		}
-		
+
 		broadcastToOnlineAllyMembers(new SystemMessagePacket(SystemMessageId.THE_ALLIANCE_IS_DISBANDED));
-		
+
 		DateTime currentTime = DateTime.UtcNow;
 		foreach (Clan clan in ClanTable.getInstance().getClanAllies(_allyId.Value))
 		{
@@ -2421,16 +2421,16 @@ public class Clan: IIdentifiable, INamable
 				clan.updateClanInDB();
 			}
 		}
-		
+
 		setAllyId(0);
 		setAllyName(null);
 		changeAllyCrest(0, false);
 		setAllyPenaltyExpiryTime(currentTime + TimeSpan.FromDays(Config.ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED),
 			PENALTY_TYPE_DISSOLVE_ALLY);
-		
+
 		updateClanInDB();
 	}
-	
+
 	// Unused?
 	public bool levelUpClan(Player player)
 	{
@@ -2444,9 +2444,9 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(SystemMessageId.AS_YOU_ARE_CURRENTLY_SCHEDULE_FOR_CLAN_DISSOLUTION_YOUR_CLAN_LEVEL_CANNOT_BE_INCREASED);
 			return false;
 		}
-		
+
 		bool increaseClanLevel = false;
-		
+
 		// Such as https://l2wiki.com/classic/Clans_%E2%80%93_Clan_Level
 		switch (_level)
 		{
@@ -2529,34 +2529,34 @@ public class Clan: IIdentifiable, INamable
 				return false;
 			}
 		}
-		
+
 		if (!increaseClanLevel)
 		{
 			player.sendPacket(SystemMessageId.THE_CONDITIONS_NECESSARY_TO_INCREASE_THE_CLAN_S_LEVEL_HAVE_NOT_BEEN_MET);
 			return false;
 		}
-		
+
 		// the player should know that he has less sp now :p
 		UserInfoPacket ui = new UserInfoPacket(player, false);
 		ui.addComponentType(UserInfoType.CURRENT_HPMPCP_EXP_SP);
 		player.sendPacket(ui);
-		
+
 		player.sendItemList();
-		
+
 		changeLevel(_level + 1);
-		
+
 		// Notify to scripts
 		if (GlobalEvents.Global.HasSubscribers<OnClanLvlUp>())
 		{
 			GlobalEvents.Global.NotifyAsync(new OnClanLvlUp(player, this));
 		}
-		
+
 		return true;
 	}
-	
+
 	public void changeLevel(int level)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Clans.Where(c => c.Id == _clanId).ExecuteUpdate(s => s.SetProperty(c => c.Level, level));
@@ -2565,9 +2565,9 @@ public class Clan: IIdentifiable, INamable
 		{
 			LOGGER.Warn("could not increase clan level: " + e);
 		}
-		
+
 		setLevel(level);
-		
+
 		if (_leader.isOnline())
 		{
 			Player leader = _leader.getPlayer();
@@ -2581,27 +2581,27 @@ public class Clan: IIdentifiable, INamable
 				SiegeManager.getInstance().removeSiegeSkills(leader);
 			}
 		}
-		
+
 		// notify all the members about it
 		broadcastToOnlineMembers(new ExPledgeLevelUpPacket(level));
 		broadcastToOnlineMembers(new SystemMessagePacket(SystemMessageId.YOUR_CLAN_S_LEVEL_HAS_INCREASED));
 		broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(this));
 	}
-	
+
 	/**
 	 * Change the clan crest. If crest id is 0, crest is removed. New crest id is saved to database.
 	 * @param crestId if 0, crest is removed, else new crest id is set and saved to database
 	 */
 	public void changeClanCrest(int? crestId)
 	{
-		if (_crestId != 0)
+		if (_crestId is not null)
 		{
 			CrestTable.getInstance().removeCrest(_crestId.Value);
 		}
-		
+
 		setCrestId(crestId);
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Clans.Where(c => c.Id == _clanId).ExecuteUpdate(s => s.SetProperty(c => c.CrestId, crestId));
@@ -2610,13 +2610,13 @@ public class Clan: IIdentifiable, INamable
 		{
 			LOGGER.Error("Could not update crest for clan " + _name + " [" + _clanId + "] : " + e);
 		}
-		
+
 		foreach (Player member in getOnlineMembers(0))
 		{
 			member.broadcastUserInfo();
 		}
 	}
-	
+
 	/**
 	 * Change the ally crest. If crest id is 0, crest is removed. New crest id is saved to database.
 	 * @param crestId if 0, crest is removed, else new crest id is set and saved to database
@@ -2628,8 +2628,8 @@ public class Clan: IIdentifiable, INamable
 		{
 			CrestTable.getInstance().removeCrest(_allyCrestId.Value);
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = onlyThisClan ? ctx.Clans.Where(c => c.Id == _clanId) : ctx.Clans.Where(c => c.AllyId == _allyId);
@@ -2639,7 +2639,7 @@ public class Clan: IIdentifiable, INamable
 		{
 			LOGGER.Error("Could not update ally crest for ally/clan: " + e);
 		}
-		
+
 		if (onlyThisClan)
 		{
 			setAllyCrestId(crestId);
@@ -2660,7 +2660,7 @@ public class Clan: IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	/**
 	 * Change the large crest. If crest id is 0, crest is removed. New crest id is saved to database.
 	 * @param crestId if 0, crest is removed, else new crest id is set and saved to database
@@ -2671,10 +2671,10 @@ public class Clan: IIdentifiable, INamable
 		{
 			CrestTable.getInstance().removeCrest(_crestLargeId.Value);
 		}
-		
+
 		setCrestLargeId(crestId);
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Clans.Where(c => c.Id == _clanId).ExecuteUpdate(s => s.SetProperty(c => c.LargeCrestId, crestId));
@@ -2683,13 +2683,13 @@ public class Clan: IIdentifiable, INamable
 		{
 			LOGGER.Warn("Could not update large crest for clan " + _name + " [" + _clanId + "] : " + e);
 		}
-		
+
 		foreach (Player member in getOnlineMembers(0))
 		{
 			member.broadcastUserInfo();
 		}
 	}
-	
+
 	/**
 	 * Check if this clan can learn the skill for the given skill ID, level.
 	 * @param skillId
@@ -2698,7 +2698,7 @@ public class Clan: IIdentifiable, INamable
 	 */
 	public bool isLearnableSubSkill(int skillId, int skillLevel)
 	{
-		Skill current = _subPledgeSkills.get(skillId);
+		Skill? current = _subPledgeSkills.get(skillId);
 		// is next level?
 		if ((current != null) && ((current.getLevel() + 1) == skillLevel))
 		{
@@ -2731,7 +2731,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		return false;
 	}
-	
+
 	public bool isLearnableSubPledgeSkill(Skill skill, int subType)
 	{
 		// academy
@@ -2739,16 +2739,16 @@ public class Clan: IIdentifiable, INamable
 		{
 			return false;
 		}
-		
+
 		int id = skill.getId();
-		Skill current;
+		Skill? current;
 		if (subType == 0)
 		{
 			current = _subPledgeSkills.get(id);
 		}
 		else
 		{
-			current = _subPledges.get(subType).getSkill(id);
+			current = _subPledges.get(subType)?.getSkill(id);
 		}
 		// is next level?
 		if ((current != null) && ((current.getLevel() + 1) == skill.getLevel()))
@@ -2760,10 +2760,10 @@ public class Clan: IIdentifiable, INamable
 		{
 			return true;
 		}
-		
+
 		return false;
 	}
-	
+
 	public List<PledgeSkillListPacket.SubPledgeSkill> getAllSubSkills()
 	{
 		List<PledgeSkillListPacket.SubPledgeSkill> list = new();
@@ -2780,7 +2780,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		return list;
 	}
-	
+
 	public void setNewLeaderId(int? objectId, bool storeInDb)
 	{
 		_newLeaderId = objectId;
@@ -2789,79 +2789,79 @@ public class Clan: IIdentifiable, INamable
 			updateClanInDB();
 		}
 	}
-	
+
 	public int? getNewLeaderId()
 	{
 		return _newLeaderId;
 	}
-	
+
 	public Player? getNewLeader()
 	{
 		if (_newLeaderId is null)
 			return null;
 		return World.getInstance().getPlayer(_newLeaderId.Value);
 	}
-	
+
 	public string? getNewLeaderName()
 	{
 		if (_newLeaderId is null)
 			return null;
 		return CharInfoTable.getInstance().getNameById(_newLeaderId.Value);
 	}
-	
+
 	public int getSiegeKills()
 	{
 		return _siegeKills;
 	}
-	
+
 	public int getSiegeDeaths()
 	{
 		return _siegeDeaths;
 	}
-	
+
 	public int addSiegeKill()
 	{
 		return Interlocked.Increment(ref _siegeKills);
 	}
-	
+
 	public int addSiegeDeath()
 	{
 		return Interlocked.Increment(ref _siegeDeaths);
 	}
-	
+
 	public void clearSiegeKills()
 	{
 		_siegeKills=0;
 	}
-	
+
 	public void clearSiegeDeaths()
 	{
 		_siegeDeaths=0;
 	}
-	
+
 	public int getWarCount()
 	{
 		return _atWarWith.Count;
 	}
-	
+
 	public void addWar(int clanId, ClanWar war)
 	{
 		_atWarWith.put(clanId, war);
 	}
-	
+
 	public void deleteWar(int clanId)
 	{
 		_atWarWith.remove(clanId);
 	}
-	
+
 	public ClanWar getWarWith(int? clanId)
 	{
 		if (clanId is null)
 			return null;
-		
+
 		return _atWarWith.get(clanId.Value);
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void addMemberOnlineTime(Player player)
 	{
@@ -2874,7 +2874,7 @@ public class Clan: IIdentifiable, INamable
 				broadcastToOnlineMembers(new PledgeShowMemberListUpdatePacket(clanMember));
 			}
 		}
-		
+
 		ClanRewardBonus? availableBonus = getAvailableBonus(ClanRewardType.MEMBERS_ONLINE);
 		if (availableBonus != null)
 		{
@@ -2893,7 +2893,7 @@ public class Clan: IIdentifiable, INamable
 				broadcastToOnlineMembers(sm);
 			}
 		}
-		
+
 		int currentMaxOnline = 0;
 		foreach (ClanMember member in _members.Values)
 		{
@@ -2907,7 +2907,7 @@ public class Clan: IIdentifiable, INamable
 			getVariables().set("MAX_ONLINE_MEMBERS", currentMaxOnline);
 		}
 	}
-	
+
 	/**
 	 * @param player
 	 * @param target
@@ -2941,50 +2941,50 @@ public class Clan: IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	public int getMaxOnlineMembers()
 	{
 		return getVariables().getInt("MAX_ONLINE_MEMBERS", 0);
 	}
-	
+
 	public int getHuntingPoints()
 	{
 		return getVariables().getInt("HUNTING_POINTS", 0);
 	}
-	
+
 	public int getPreviousMaxOnlinePlayers()
 	{
 		return getVariables().getInt("PREVIOUS_MAX_ONLINE_PLAYERS", 0);
 	}
-	
+
 	public int getPreviousHuntingPoints()
 	{
 		return getVariables().getInt("PREVIOUS_HUNTING_POINTS", 0);
 	}
-	
+
 	public bool canClaimBonusReward(Player player, ClanRewardType type)
 	{
 		ClanMember clanMember = getClanMember(player.ObjectId);
 		return (clanMember != null) && (getAvailableBonus(type) != null) && !clanMember.isRewardClaimed(type);
 	}
-	
+
 	public void resetClanBonus()
 	{
 		// Save current state
 		getVariables().set("PREVIOUS_MAX_ONLINE_PLAYERS", getMaxOnlineMembers());
 		getVariables().set("PREVIOUS_HUNTING_POINTS", getHuntingPoints());
-		
+
 		// Reset
 		_members.Values.ForEach(x => x.resetBonus());
 		getVariables().remove("HUNTING_POINTS");
-		
+
 		// force store
 		getVariables().storeMe();
-		
+
 		// Send Packet
 		broadcastToOnlineMembers(ExPledgeBonusMarkResetPacket.STATIC_PACKET);
 	}
-	
+
 	public ClanVariables getVariables()
 	{
 		if (_vars == null)
@@ -3003,12 +3003,12 @@ public class Clan: IIdentifiable, INamable
 		}
 		return _vars;
 	}
-	
+
 	public bool hasVariables()
 	{
 		return _vars != null;
 	}
-	
+
 	private void storeVariables()
 	{
 		ClanVariables vars = _vars;
@@ -3017,37 +3017,37 @@ public class Clan: IIdentifiable, INamable
 			vars.storeMe();
 		}
 	}
-	
+
 	public int getClanContribution(int objId)
 	{
 		return getVariables().getInt(ClanVariables.CONTRIBUTION + objId, 0);
 	}
-	
+
 	public void setClanContribution(int objId, int exp)
 	{
 		getVariables().set(ClanVariables.CONTRIBUTION + objId, exp);
 	}
-	
+
 	public int getClanContributionWeekly(int objId)
 	{
 		return getVariables().getInt(ClanVariables.CONTRIBUTION_WEEKLY + objId, 0);
 	}
-	
+
 	public List<ClanMember> getContributionList()
 	{
 		return getMembers().Where(it => it.getClan().getClanContribution(it.getObjectId()) != 0).ToList();
 	}
-	
+
 	public void setClanContributionWeekly(int objId, int exp)
 	{
 		getVariables().set(ClanVariables.CONTRIBUTION_WEEKLY + objId, exp);
 	}
-	
+
 	public int getExp()
 	{
 		return _exp;
 	}
-	
+
 	public void addExp(int objId, int value)
 	{
 		if ((_exp + value) <= ClanLevelData.getInstance().getMaxExp())
@@ -3055,30 +3055,30 @@ public class Clan: IIdentifiable, INamable
 			_exp += value;
 			broadcastToOnlineMembers(new ExPledgeV3InfoPacket(_exp, getRank(), getNotice(), isNoticeEnabled()));
 		}
-		
+
 		int nextLevel = _level + 1;
 		if ((nextLevel <= ClanLevelData.getInstance().getMaxLevel()) && (ClanLevelData.getInstance().getLevelExp(nextLevel) <= _exp))
 		{
 			changeLevel(nextLevel);
 		}
-		
+
 		int contribution = getClanContribution(objId);
 		setClanContribution(objId, contribution + value);
 		setClanContributionWeekly(objId, contribution + value);
 	}
-	
+
 	public void setExp(int objId, int value)
 	{
 		_exp = value;
 		broadcastToOnlineMembers(new ExPledgeV3InfoPacket(_exp, getRank(), getNotice(), isNoticeEnabled()));
-		
+
 		int contribution = getClanContribution(objId);
 		setClanContribution(objId, contribution + value);
 		setClanContributionWeekly(objId, contribution + value);
-		
+
 		updateClanInDB();
 	}
-	
+
 	private ClanRewardBonus? getAvailableBonus(ClanRewardType rewardType)
 	{
 		int currentAmount = rewardType switch
@@ -3099,7 +3099,7 @@ public class Clan: IIdentifiable, INamable
 				}
 			}
 		}
-		
+
 		return availableBonus;
 	}
 }

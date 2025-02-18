@@ -30,17 +30,17 @@ public struct RequestPledgeWaitingApplyPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null || (player.getClan() != null))
             return ValueTask.CompletedTask;
-        
-        Clan clan = ClanTable.getInstance().getClan(_clanId);
+
+        Clan? clan = ClanTable.getInstance().getClan(_clanId);
         if (clan == null)
             return ValueTask.CompletedTask;
-		
+
         PledgeApplicantInfo info = new PledgeApplicantInfo(player.ObjectId, player.getName(), player.getLevel(), _karma, _clanId, _message);
         if (ClanEntryManager.getInstance().addPlayerApplicationToClan(_clanId, info))
         {
             player.sendPacket(new ExPledgeRecruitApplyInfoPacket(ClanEntryStatus.WAITING));
-			
-            Player clanLeader = World.getInstance().getPlayer(clan.getLeaderId());
+
+            Player? clanLeader = World.getInstance().getPlayer(clan.getLeaderId());
             if (clanLeader != null)
             {
                 clanLeader.sendPacket(ExPledgeWaitingListAlarmPacket.STATIC_PACKET);

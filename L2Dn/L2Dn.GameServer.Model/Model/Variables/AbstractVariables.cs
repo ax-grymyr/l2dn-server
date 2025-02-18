@@ -6,11 +6,11 @@ using NLog;
 namespace L2Dn.GameServer.Model.Variables;
 
 public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDeletable
-	where T: DbVariable 
+	where T: DbVariable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AbstractVariables<T>));
 	private int _hasChanges;
-	
+
 	/**
 	 * Overriding following methods to prevent from doing useless database operations if there is no changes since player's login.
 	 */
@@ -20,61 +20,61 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 		_hasChanges = 1;
 		base.set(name, value);
 	}
-	
+
 	public override void set(string name, byte value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
-	
+
 	public override void set(string name, short value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
-	
+
 	public override void set(string name, int value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
-	
+
 	public override void set(string name, long value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
-	
+
 	public override void set(string name, float value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
-	
+
 	public override void set(string name, double value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
-	
+
 	public override void set(string name, string value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
-	
-	public override void set<T>(string name, T value)
+
+	public override void set<TValue>(string name, TValue value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
-	
+
 	public override void set(string name, object value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);
 	}
-	
+
 	/**
 	 * Put's entry to the variables and marks as changed if required (<i>Useful when restoring to do not save them again</i>).
 	 * @param name
@@ -87,10 +87,10 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 		{
 			_hasChanges = 1;
 		}
-		
+
 		base.set(name, value);
 	}
-	
+
 	/**
 	 * Return true if there exists a record for the variable name.
 	 * @param name
@@ -100,7 +100,7 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 	{
 		return getSet().ContainsKey(name);
 	}
-	
+
 	/**
 	 * @return {@code true} if changes are made since last load/save.
 	 */
@@ -157,7 +157,7 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 
 		return true;
 	}
-	
+
 	/**
 	 * Delete all entries for an requested var
 	 * @param var
@@ -168,7 +168,7 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			
+
 			// Clear previous entries.
 			ctx.Set<T>().Where(r => r.Name == name).ExecuteDelete();
 		}
@@ -177,19 +177,19 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 			LOGGER.Error("AccountVariables: Couldn't delete variables: " + e);
 			return false;
 		}
-		
+
 		return true;
 	}
-	
+
 	public bool deleteMe()
 	{
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			
+
 			// Clear previous entries.
 			GetQuery(ctx).ExecuteDelete();
-			
+
 			// Clear all entries
 			getSet().Clear();
 		}
@@ -198,7 +198,7 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 			LOGGER.Warn(GetType().Name + ": Couldn't delete variables: " + e);
 			return false;
 		}
-		
+
 		return true;
 	}
 
@@ -209,14 +209,14 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 		{
 			return false;
 		}
-		
+
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			
+
 			// Clear previous entries.
 			GetQuery(ctx).ExecuteDelete();
-			
+
 			// Insert all variables.
 			ctx.AddRange(getSet().Select(pair =>
 			{

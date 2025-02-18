@@ -71,7 +71,7 @@ public struct RequestNewEnchantTryPacket: IIncomingPacket<GameSession>
 		    return ValueTask.CompletedTask;
 	    }
 
-	    CombinationItem combinationItem = CombinationItemsData.getInstance().getItemsBySlots(itemOne.getId(),
+	    CombinationItem? combinationItem = CombinationItemsData.getInstance().getItemsBySlots(itemOne.getId(),
 		    itemOne.getEnchantLevel(), itemTwo.getId(), itemTwo.getEnchantLevel());
 
 	    // Not implemented or not able to merge!

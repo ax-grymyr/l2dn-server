@@ -28,9 +28,9 @@ public struct RequestPartyMatchConfigPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        Party party = player.getParty();
-        CommandChannel cc = party == null ? null : party.getCommandChannel();
+
+        Party? party = player.getParty();
+        CommandChannel? cc = party?.getCommandChannel();
         if ((party != null) && (cc != null) && (cc.getLeader() == player))
         {
             if (player.getMatchingRoom() == null)

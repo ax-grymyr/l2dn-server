@@ -33,10 +33,10 @@ public struct RequestPreviewItemPacket: IIncomingPacket<GameSession>
             _count = 0;
         if (_count > 100)
             return; // prevent too long lists
-		
+
         // Create _items table that will contain all ItemID to Wear
         _items = new int[_count];
-		
+
         // Fill _items table with all ItemID to Wear
         for (int i = 0; i < _count; i++)
             _items[i] = reader.ReadInt32();
@@ -61,7 +61,7 @@ public struct RequestPreviewItemPacket: IIncomingPacket<GameSession>
 		    return ValueTask.CompletedTask;
 
 	    // Check current target of the player and the INTERACTION_DISTANCE
-	    WorldObject target = player.getTarget();
+	    WorldObject? target = player.getTarget();
 	    if (!player.isGM() && (target == null // No target (i.e. GM Shop)
 	                           || !(target is Merchant) // Target not a merchant
 	                           || !player.IsInsideRadius2D(target, Npc.INTERACTION_DISTANCE) // Distance is too far
@@ -84,13 +84,13 @@ public struct RequestPreviewItemPacket: IIncomingPacket<GameSession>
 		    return ValueTask.CompletedTask;
 	    }
 
-	    ProductList buyList = BuyListData.getInstance().getBuyList(_listId);
+	    ProductList? buyList = BuyListData.getInstance().getBuyList(_listId);
 	    if (buyList == null)
 	    {
 		    Util.handleIllegalPlayerAction(player,
 			    "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
 			    " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
-		    
+
 		    return ValueTask.CompletedTask;
 	    }
 
@@ -99,13 +99,13 @@ public struct RequestPreviewItemPacket: IIncomingPacket<GameSession>
 	    for (int i = 0; i < _count; i++)
 	    {
 		    int itemId = _items[i];
-		    Product product = buyList.getProductByItemId(itemId);
+		    Product? product = buyList.getProductByItemId(itemId);
 		    if (product == null)
 		    {
 			    Util.handleIllegalPlayerAction(player,
 				    "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
 				    " sent a false BuyList list_id " + _listId + " and item_id " + itemId, Config.DEFAULT_PUNISH);
-			    
+
 			    return ValueTask.CompletedTask;
 		    }
 
@@ -129,7 +129,7 @@ public struct RequestPreviewItemPacket: IIncomingPacket<GameSession>
 				    {
 					    continue;
 				    }
-				    
+
 				    if (template.getItemType() == WeaponType.RAPIER ||
 				        template.getItemType() == WeaponType.CROSSBOW ||
 				        template.getItemType() == WeaponType.ANCIENTSWORD)
@@ -160,7 +160,7 @@ public struct RequestPreviewItemPacket: IIncomingPacket<GameSession>
 			    Util.handleIllegalPlayerAction(player,
 				    "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
 				    " tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.DEFAULT_PUNISH);
-			    
+
 			    return ValueTask.CompletedTask;
 		    }
 	    }

@@ -33,7 +33,7 @@ namespace L2Dn.GameServer.Model.Skills;
 public class SkillCaster: Runnable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SkillCaster));
-	
+
 	private readonly WeakReference<Creature> _caster;
 	private readonly WeakReference<WorldObject> _target;
 	private readonly Skill _skill;
@@ -82,10 +82,10 @@ public class SkillCaster: Runnable
 		{
 			return null;
 		}
-		
+
 		return castSkill(caster, target, skill, item, castingType, ctrlPressed, shiftPressed, null);
 	}
-	
+
 	/**
 	 * Checks if the caster can cast the specified skill on the given target with the selected parameters.
 	 * @param caster the creature trying to cast
@@ -98,9 +98,9 @@ public class SkillCaster: Runnable
 	 * @param castTime custom cast time in milliseconds or -1 for default.
 	 * @return {@code SkillCaster} object containing casting data if casting has started or {@code null} if casting was not started.
 	 */
-	public static SkillCaster castSkill(Creature caster, WorldObject worldObject, Skill skill, Item item, SkillCastingType castingType, bool ctrlPressed, bool shiftPressed, TimeSpan? castTime)
+	public static SkillCaster? castSkill(Creature caster, WorldObject? worldObject, Skill skill, Item? item, SkillCastingType castingType, bool ctrlPressed, bool shiftPressed, TimeSpan? castTime)
 	{
-		if (caster == null || skill == null || castingType == null)
+		if (caster == null || skill == null)
 		{
 			return null;
 		}
@@ -856,7 +856,7 @@ public class SkillCaster: Runnable
 		triggerCast(creature, target, skill, null, true);
 	}
 
-	public static void triggerCast(Creature creature, WorldObject target, Skill skill, Item item, bool ignoreTargetType)
+	public static void triggerCast(Creature creature, WorldObject? target, Skill skill, Item? item, bool ignoreTargetType)
 	{
 		try
 		{
@@ -1203,7 +1203,7 @@ public class SkillCaster: Runnable
 		}
 		return true;
 	}
-	
+
 	private void handleSkillFly(Creature creature, WorldObject target)
 	{
 		int x = 0;

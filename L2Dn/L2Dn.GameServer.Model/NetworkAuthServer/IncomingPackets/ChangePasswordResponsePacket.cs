@@ -18,19 +18,19 @@ internal struct ChangePasswordResponsePacket: IIncomingPacket<AuthServerSession>
 
     public ValueTask ProcessAsync(Connection connection, AuthServerSession session)
     {
-        Player player = World.getInstance().getPlayer(_playerId);
-        if (player == null) 
+        Player? player = World.getInstance().getPlayer(_playerId);
+        if (player == null)
             return ValueTask.CompletedTask;
-        
+
         string message = _result switch
         {
             ChangePasswordResult.Ok => "You have successfully changed your password!",
             ChangePasswordResult.InvalidPassword =>
                 "The typed current password doesn't match with your current one.",
-                
+
             _ => "The password change was unsuccessful!",
         };
-            
+
         player.sendMessage(message);
         return ValueTask.CompletedTask;
     }

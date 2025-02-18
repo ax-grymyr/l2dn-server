@@ -1,4 +1,3 @@
-using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Skills;
@@ -10,25 +9,14 @@ namespace L2Dn.GameServer.Model.Conditions;
  * The Class ConditionPlayerIsOnSide.
  * @author St3eT
  */
-public class ConditionPlayerIsOnSide : Condition
+public sealed class ConditionPlayerIsOnSide(CastleSide side): Condition
 {
-	private readonly CastleSide _side;
-	
-	/**
-	 * Instantiates a new condition player race.
-	 * @param side the allowed Castle side.
-	 */
-	public ConditionPlayerIsOnSide(CastleSide side)
-	{
-		_side = side;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		if ((effector == null) || !effector.isPlayer())
-		{
-			return false;
-		}
-		return effector.getActingPlayer().getPlayerSide() == _side;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? player = effector.getActingPlayer();
+        if (effector == null || !effector.isPlayer() || player is null)
+            return false;
+
+        return player.getPlayerSide() == side;
+    }
 }

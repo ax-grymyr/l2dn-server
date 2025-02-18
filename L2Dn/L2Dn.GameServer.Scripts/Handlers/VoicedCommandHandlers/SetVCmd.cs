@@ -18,23 +18,28 @@ public class SetVCmd: IVoicedCommandHandler
 		"set home",
 		"set group"
 	};
-	
+
 	public bool useVoicedCommand(string command, Player activeChar, string @params)
 	{
 		if (command.equals("set"))
 		{
-			WorldObject target = activeChar.getTarget();
-			if ((target == null) || !target.isPlayer())
+			WorldObject? target = activeChar.getTarget();
+			if (target == null || !target.isPlayer())
 			{
 				return false;
 			}
-			
-			Player player = activeChar.getTarget().getActingPlayer();
-			if ((activeChar.getClan() == null) || (player.getClan() == null) || (activeChar.getClan().getId() != player.getClan().getId()))
+
+			Player? player = target.getActingPlayer();
+            if (player is null)
+                return false;
+
+            Clan? playerClan = player.getClan();
+            Clan? activeCharClan = activeChar.getClan();
+			if (activeCharClan == null || playerClan == null || activeCharClan.getId() != playerClan.getId())
 			{
 				return false;
 			}
-			
+
 			if (@params.startsWith("privileges"))
 			{
 				string val = @params.Substring(11);
@@ -43,11 +48,11 @@ public class SetVCmd: IVoicedCommandHandler
 					return false;
 				}
 
-				if ((activeChar.getClanPrivileges() <= (ClanPrivilege)n) || !activeChar.isClanLeader())
+				if (activeChar.getClanPrivileges() <= (ClanPrivilege)n || !activeChar.isClanLeader())
 				{
 					return false;
 				}
-				
+
 				player.setClanPrivileges((ClanPrivilege)n);
 				activeChar.sendMessage("Your clan privileges have been set to " + n + " by " + activeChar.getName() + ".");
 			}
@@ -59,7 +64,7 @@ public class SetVCmd: IVoicedCommandHandler
 
         return true;
 	}
-	
+
 	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;

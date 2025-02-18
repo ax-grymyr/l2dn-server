@@ -2,7 +2,7 @@
 
 public static class TimeUtil
 {
-    public static TimeSpan ParseDuration(string s)
+    public static TimeSpan ParseDuration(string? s)
     {
         if (string.IsNullOrEmpty(s))
             throw new FormatException();
@@ -21,7 +21,7 @@ public static class TimeUtil
 
         throw new FormatException();
     }
-    
+
     public static DateTime GetCloseNextDay(DayOfWeek dayOfWeek, int hour, int minute)
     {
         DateTime calendar = DateTime.Now; // Today, now

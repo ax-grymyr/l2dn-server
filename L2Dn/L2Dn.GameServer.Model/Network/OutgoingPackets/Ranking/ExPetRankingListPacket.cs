@@ -17,7 +17,7 @@ public readonly struct ExPetRankingListPacket: IOutgoingPacket
 	private readonly int _petItemObjectId;
 	private readonly Map<int, StatSet> _playerList;
 	private readonly Map<int, StatSet> _snapshotList;
-	
+
 	public ExPetRankingListPacket(Player player, int season, RankingCategory tabId, int type, int petItemObjectId)
 	{
 		_player = player;
@@ -28,11 +28,11 @@ public readonly struct ExPetRankingListPacket: IOutgoingPacket
 		_playerList = RankManager.getInstance().getPetRankList();
 		_snapshotList = RankManager.getInstance().getSnapshotPetRankList();
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.EX_PET_RANKING_LIST);
-		
+
 		writer.WriteByte((byte)_season);
 		writer.WriteByte((byte)_tabId);
 		writer.WriteInt16((short)_type);
@@ -46,7 +46,7 @@ public readonly struct ExPetRankingListPacket: IOutgoingPacket
 			writer.WriteInt32(0);
 		}
 	}
-	
+
 	private void writeFilteredRankingData(PacketBitWriter writer, RankingCategory category, RankingScope scope)
 	{
 		switch (category)
@@ -65,7 +65,7 @@ public readonly struct ExPetRankingListPacket: IOutgoingPacket
 			}
 			case RankingCategory.CLAN:
 			{
-				Clan clan = _player.getClan();
+				Clan? clan = _player.getClan();
 				writeScopeData(writer, scope,
 					clan == null
 						? Enumerable.Empty<System.Collections.Generic.KeyValuePair<int, StatSet>>()
@@ -85,8 +85,8 @@ public readonly struct ExPetRankingListPacket: IOutgoingPacket
 			}
 		}
 	}
-	
-	private void writeScopeData(PacketBitWriter writer, RankingScope scope, IEnumerable<System.Collections.Generic.KeyValuePair<int, StatSet>> list, 
+
+	private void writeScopeData(PacketBitWriter writer, RankingScope scope, IEnumerable<System.Collections.Generic.KeyValuePair<int, StatSet>> list,
 		IEnumerable<System.Collections.Generic.KeyValuePair<int, StatSet>> snapshot)
 	{
 		List<System.Collections.Generic.KeyValuePair<int, StatSet>> limited;
@@ -115,7 +115,7 @@ public readonly struct ExPetRankingListPacket: IOutgoingPacket
 				limited = (playerData.Key == 0
 					? Enumerable.Empty<System.Collections.Generic.KeyValuePair<int, StatSet>>()
 					: list.Skip(Math.Max(0, indexOf - 10)).Take(20)).ToList();
-				
+
 				break;
 			}
 			default:
@@ -124,7 +124,7 @@ public readonly struct ExPetRankingListPacket: IOutgoingPacket
 				break;
 			}
 		}
-		
+
 		writer.WriteInt32(limited.Count);
 		int rank = 1;
 		foreach (var data in limited)

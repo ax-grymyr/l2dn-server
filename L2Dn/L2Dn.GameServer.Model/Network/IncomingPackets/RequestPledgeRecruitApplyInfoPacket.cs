@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -19,12 +20,14 @@ public struct RequestPledgeRecruitApplyInfoPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
+        Clan? clan = player.getClan();
+
         ClanEntryStatus status;
-        if ((player.getClan() != null) && player.isClanLeader() && ClanEntryManager.getInstance().isClanRegistred(player.getClanId().Value))
+        if (clan != null && player.isClanLeader() && ClanEntryManager.getInstance().isClanRegistred(clan.getId()))
         {
             status = ClanEntryStatus.ORDERED;
         }
-        else if ((player.getClan() == null) && (ClanEntryManager.getInstance().isPlayerRegistred(player.ObjectId)))
+        else if (clan == null && ClanEntryManager.getInstance().isPlayerRegistred(player.ObjectId))
         {
             status = ClanEntryStatus.WAITING;
         }
@@ -32,9 +35,8 @@ public struct RequestPledgeRecruitApplyInfoPacket: IIncomingPacket<GameSession>
         {
             status = ClanEntryStatus.DEFAULT;
         }
-		
+
         player.sendPacket(new ExPledgeRecruitApplyInfoPacket(status));
-        
         return ValueTask.CompletedTask;
     }
 }

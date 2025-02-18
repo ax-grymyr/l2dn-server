@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.PledgeV3;
 using L2Dn.Network;
@@ -21,13 +22,14 @@ public struct RequestExPledgeV3InfoPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (player.getClan() == null)
+        Clan? clan = player.getClan();
+        if (clan == null)
             return ValueTask.CompletedTask;
 
-        player.sendPacket(new ExPledgeV3InfoPacket(player.getClan().getExp(), player.getClan().getRank(),
-            player.getClan().getNotice(), player.getClan().isNoticeEnabled()));
-        
-        player.sendPacket(new PledgeReceiveWarListPacket(player.getClan(), _page));
+        player.sendPacket(new ExPledgeV3InfoPacket(clan.getExp(), clan.getRank(),
+            clan.getNotice(), clan.isNoticeEnabled()));
+
+        player.sendPacket(new PledgeReceiveWarListPacket(clan, _page));
         player.sendPacket(new ExPledgeClassicRaidInfoPacket(player));
 
         return ValueTask.CompletedTask;

@@ -24,7 +24,7 @@ public readonly struct FlyToLocationPacket: IOutgoingPacket
         _type = type;
         if (creature.isPlayer())
         {
-            creature.getActingPlayer().setBlinkActive(true);
+            creature.getActingPlayer()?.setBlinkActive(true); // TODO: why is this here?
         }
     }
 
@@ -40,14 +40,14 @@ public readonly struct FlyToLocationPacket: IOutgoingPacket
         _animationSpeed = animationSpeed;
         if (creature.isPlayer())
         {
-            creature.getActingPlayer().setBlinkActive(true);
+            creature.getActingPlayer()?.setBlinkActive(true); // TODO: why is this here?
         }
     }
 
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.FLY_TO_LOCATION);
-        
+
         writer.WriteInt32(_objectId);
         writer.WriteLocation3D(_destination);
         writer.WriteLocation3D(_origin);

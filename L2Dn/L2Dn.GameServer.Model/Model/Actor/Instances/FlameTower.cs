@@ -11,15 +11,15 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
  */
 public class FlameTower: Tower
 {
-    private int _upgradeLevel = 0;
-    private List<int> _zoneList;
+    private int _upgradeLevel;
+    private List<int>? _zoneList;
 
     public FlameTower(NpcTemplate template): base(template)
     {
         InstanceType = InstanceType.FlameTower;
     }
 
-    public override bool doDie(Creature killer)
+    public override bool doDie(Creature? killer)
     {
         enableZones(false);
         return base.doDie(killer);
@@ -33,12 +33,12 @@ public class FlameTower: Tower
 
     public void enableZones(bool value)
     {
-        if ((_zoneList != null) && (_upgradeLevel != 0))
+        if (_zoneList != null && _upgradeLevel != 0)
         {
             int maxIndex = _upgradeLevel * 2;
             for (int i = 0; i < maxIndex; i++)
             {
-                ZoneType zone = ZoneManager.getInstance().getZoneById(_zoneList[i]);
+                ZoneType? zone = ZoneManager.getInstance().getZoneById(_zoneList[i]);
                 if (zone != null)
                 {
                     zone.setEnabled(value);

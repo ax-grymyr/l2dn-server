@@ -4,21 +4,14 @@ using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
-public class ConditionPlayerDualclass: Condition
+public sealed class ConditionPlayerDualclass(bool value): Condition
 {
-	private readonly bool _value;
-	
-	public ConditionPlayerDualclass(bool value)
-	{
-		_value = value;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		if (effector.getActingPlayer() == null)
-		{
-			return true;
-		}
-		return effector.getActingPlayer().isDualClassActive() == _value;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? player = effector.getActingPlayer();
+        if (player is null)
+            return true;
+
+        return player.isDualClassActive() == value;
+    }
 }

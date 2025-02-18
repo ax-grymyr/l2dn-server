@@ -36,7 +36,7 @@ public class Util
 	 * @param includeZAxis
 	 * @return {@code true} if the two objects are within specified range between each other, {@code false} otherwise
 	 */
-	public static bool checkIfInRange(int range, WorldObject obj1, WorldObject obj2, bool includeZAxis)
+	public static bool checkIfInRange(int range, WorldObject? obj1, WorldObject? obj2, bool includeZAxis)
 	{
 		if (obj1 == null || obj2 == null || obj1.getInstanceWorld() != obj2.getInstanceWorld())
 		{
@@ -71,7 +71,7 @@ public class Util
 	 * @param includeZAxis if true, check also Z axis (3-dimensional check), otherwise only 2D
 	 * @return {@code true} if objects are within specified range between each other, {@code false} otherwise
 	 */
-	public static bool checkIfInShortRange(int range, WorldObject obj1, WorldObject obj2, bool includeZAxis)
+	public static bool checkIfInShortRange(int range, WorldObject? obj1, WorldObject? obj2, bool includeZAxis)
 	{
 		if (obj1 == null || obj2 == null)
 		{
@@ -149,9 +149,9 @@ public class Util
 	 * @param fillMultiEdit text to fill the multiedit field with(may be null)
 	 * @param npcObjId bypass origin to use
 	 */
-	public static void sendCBHtml(Player player, string html, string fillMultiEdit, int npcObjId)
+	public static void sendCBHtml(Player player, string html, string? fillMultiEdit, int npcObjId)
 	{
-		GameSession? session = player?.getClient();
+		GameSession? session = player.getClient();
 		if (session == null || html == null)
 		{
 			return;

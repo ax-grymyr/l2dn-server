@@ -16,14 +16,14 @@ namespace L2Dn.GameServer.Handlers;
 public class AdminCommandHandler: IHandler<IAdminCommandHandler, string>
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminCommandHandler));
-	
+
 	private readonly Map<string, IAdminCommandHandler> _datatable;
-	
+
 	protected AdminCommandHandler()
 	{
 		_datatable = new();
 	}
-	
+
 	public void registerHandler(IAdminCommandHandler handler)
 	{
 		foreach (string id in handler.getAdminCommandList())
@@ -40,38 +40,38 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, string>
 			_datatable.remove(id);
 		}
 	}
-	
+
 	/**
 	 * WARNING: Please use {@link #useAdminCommand(Player, String, bool)} instead.
 	 */
-	public IAdminCommandHandler getHandler(string adminCommand)
+	public IAdminCommandHandler? getHandler(string adminCommand)
 	{
 		string command = adminCommand;
 		if (adminCommand.Contains(" "))
 		{
 			command = adminCommand.Substring(0, adminCommand.IndexOf(' '));
 		}
-		
+
 		return _datatable.get(command);
 	}
-	
+
 	public void useAdminCommand(Player player, string fullCommand, bool useConfirm)
 	{
 		if (!player.isGM())
 		{
 			return;
 		}
-		
+
 		string command = fullCommand.Split(" ")[0];
 		string commandNoPrefix = command.Substring(6);
-		IAdminCommandHandler handler = getHandler(command);
+		IAdminCommandHandler? handler = getHandler(command);
 		if (handler == null)
 		{
 			player.sendMessage("The command '" + commandNoPrefix + "' does not exist!");
 			LOGGER.Warn("No handler registered for admin command '" + command + "'");
 			return;
 		}
-		
+
 		if (!AdminData.getInstance().hasAccess(command, player.getAccessLevel()))
 		{
 			player.sendMessage("You don't have the access rights to use this command!");
@@ -84,7 +84,7 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, string>
 			player.setAdminConfirmCmd(fullCommand);
 			ConfirmDialogPacket dlg =
 				new ConfirmDialogPacket("Are you sure you want execute command '" + commandNoPrefix + "' ?");
-			
+
 			player.addAction(PlayerAction.ADMIN_COMMAND);
 			player.sendPacket(dlg);
 		}
@@ -98,11 +98,11 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, string>
 				{
 					if (Config.GMAUDIT)
 					{
-						WorldObject target = player.getTarget();
-						// TODO: GMAudit 
+						WorldObject? target = player.getTarget();
+						// TODO: GMAudit
 						//GMAudit.auditGMAction(player.getName() + " [" + player.getObjectId() + "]", fullCommand, (target != null ? target.getName() : "no-target"));
 					}
-					
+
 					handler.useAdminCommand(fullCommand, player);
 				}
 				catch (Exception e)
@@ -121,17 +121,17 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, string>
 			});
 		}
 	}
-	
+
 	public int size()
 	{
 		return _datatable.Count;
 	}
-	
+
 	public static AdminCommandHandler getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly AdminCommandHandler INSTANCE = new AdminCommandHandler();

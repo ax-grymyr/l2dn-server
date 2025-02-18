@@ -68,9 +68,10 @@ public class AdminData: DataReaderBase
 	 * @return the master access level
 	 */
 	public AccessLevel getMasterAccessLevel()
-	{
-		return _accessLevels.GetValueOrDefault(_highestLevel);
-	}
+    {
+        return _accessLevels.GetValueOrDefault(_highestLevel) ??
+            throw new InvalidOperationException("Master access level is not defined");
+    }
 
 	/**
 	 * Checks for access level.

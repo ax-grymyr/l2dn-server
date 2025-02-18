@@ -14,7 +14,7 @@ public readonly struct AttackPacket: IOutgoingPacket
 	private readonly Location3D _targetLoc;
 	private readonly List<Hit> _hits;
 	private readonly int _soulshotVisualSubstitute;
-	
+
 	/**
 	 * @param attacker
 	 * @param target
@@ -25,7 +25,7 @@ public readonly struct AttackPacket: IOutgoingPacket
 		_attackerObjId = attacker.ObjectId;
 		_attackerLoc = attacker.Location.Location3D;
 		_targetLoc = target.Location.Location3D;
-		Player player = attacker.getActingPlayer();
+		Player? player = attacker.getActingPlayer();
 		if (player == null)
 		{
 			_soulshotVisualSubstitute = 0;
@@ -48,7 +48,7 @@ public readonly struct AttackPacket: IOutgoingPacket
 			}
 		}
 	}
-	
+
 	/**
 	 * Adds hit to the attack (Attacks such as dual dagger/sword/fist has two hits)
 	 * @param hit
@@ -57,12 +57,12 @@ public readonly struct AttackPacket: IOutgoingPacket
 	{
 		_hits.Add(hit);
 	}
-	
+
 	public List<Hit> getHits()
 	{
 		return _hits;
 	}
-	
+
 	/**
 	 * @return {@code true} if current attack contains at least 1 hit.
 	 */
@@ -70,7 +70,7 @@ public readonly struct AttackPacket: IOutgoingPacket
 	{
 		return _hits.Count != 0;
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		Hit firstHit = _hits[0];

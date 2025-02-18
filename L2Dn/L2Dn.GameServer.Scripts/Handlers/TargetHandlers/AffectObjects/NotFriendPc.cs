@@ -14,18 +14,18 @@ public class NotFriendPc: IAffectObjectHandler
 {
 	public bool checkAffectedObject(Creature creature, Creature target)
 	{
-		if (!target.isPlayer())
+        Player? targetPlayer = target.getActingPlayer();
+		if (!target.isPlayer() || targetPlayer is null)
 		{
 			return false;
 		}
-		
+
 		if (creature == target)
 		{
 			return false;
 		}
-		
-		Player player = creature.getActingPlayer();
-		Player targetPlayer = target.getActingPlayer();
+
+		Player? player = creature.getActingPlayer();
 		if (player != null)
 		{
 			// Same player.
@@ -33,91 +33,91 @@ public class NotFriendPc: IAffectObjectHandler
 			{
 				return false;
 			}
-			
+
 			// Peace Zone.
 			if (target.isInsidePeaceZone(player) && !player.getAccessLevel().allowPeaceAttack())
 			{
 				return false;
 			}
-			
+
 			if (Config.ALT_COMMAND_CHANNEL_FRIENDS)
 			{
-				CommandChannel playerCC = player.getCommandChannel();
-				CommandChannel targetCC = targetPlayer.getCommandChannel();
+				CommandChannel? playerCC = player.getCommandChannel();
+				CommandChannel? targetCC = targetPlayer?.getCommandChannel();
 				if ((playerCC != null) && (targetCC != null) && (playerCC.getLeaderObjectId() == targetCC.getLeaderObjectId()))
 				{
 					return false;
 				}
 			}
-			
+
 			// Party (command channel doesn't make you friends).
-			Party party = player.getParty();
-			Party targetParty = targetPlayer.getParty();
+			Party? party = player.getParty();
+			Party? targetParty = targetPlayer?.getParty();
 			if ((party != null) && (targetParty != null) && (party.getLeaderObjectId() == targetParty.getLeaderObjectId()))
 			{
 				return false;
 			}
-			
+
 			// Events.
 			if (player.isOnEvent() && !player.isOnSoloEvent() && (player.getTeam() == target.getTeam()))
 			{
 				return false;
 			}
-			
+
 			// Olympiad observer.
 			if (targetPlayer.inObserverMode())
 			{
 				return false;
 			}
-			
+
 			// Siege.
 			if (target.isInsideZone(ZoneId.SIEGE))
 			{
 				// Players in the same siege side at the same castle are considered friends.
 				return !player.isSiegeFriend(targetPlayer);
 			}
-			
+
 			// Arena.
 			if (creature.isInsideZone(ZoneId.PVP) && !creature.isInsideZone(ZoneId.SIEGE) && target.isInsideZone(ZoneId.PVP) && !target.isInsideZone(ZoneId.SIEGE))
 			{
 				return true;
 			}
-			
+
 			// Duel.
 			if (player.isInDuel() && targetPlayer.isInDuel() && (player.getDuelId() == targetPlayer.getDuelId()))
 			{
 				return true;
 			}
-			
+
 			// Olympiad.
 			if (player.isInOlympiadMode() && targetPlayer.isInOlympiadMode() && (player.getOlympiadGameId() == targetPlayer.getOlympiadGameId()))
 			{
 				return true;
 			}
-			
+
 			// Clan.
-			Model.Clans.Clan clan = player.getClan();
-			Model.Clans.Clan targetClan = targetPlayer.getClan();
+			Model.Clans.Clan? clan = player.getClan();
+			Model.Clans.Clan? targetClan = targetPlayer.getClan();
 			if (clan != null)
 			{
 				if (clan == targetClan)
 				{
 					return false;
 				}
-				
+
 				// War
 				if ((targetClan != null) && clan.isAtWarWith(targetClan) && targetClan.isAtWarWith(clan))
 				{
 					return true;
 				}
 			}
-			
+
 			// Alliance.
 			if ((player.getAllyId() != 0) && (player.getAllyId() == targetPlayer.getAllyId()))
 			{
 				return false;
 			}
-			
+
 			// Auto play target mode check.
 			if (player.isAutoPlaying() && ((targetPlayer.getPvpFlag() == PvpFlagStatus.None) || (targetPlayer.getReputation() > -1)))
 			{
@@ -127,14 +127,14 @@ public class NotFriendPc: IAffectObjectHandler
 					return false;
 				}
 			}
-			
+
 			// By default any flagged/PK player is considered enemy.
 			return (targetPlayer.getPvpFlag() != PvpFlagStatus.None) || (targetPlayer.getReputation() < 0);
 		}
-		
+
 		return target.isAutoAttackable(creature);
 	}
-	
+
 	public AffectObject getAffectObjectType()
 	{
 		return AffectObject.NOT_FRIEND_PC;

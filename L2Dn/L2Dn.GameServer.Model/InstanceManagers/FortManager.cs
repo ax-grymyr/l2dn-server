@@ -15,17 +15,12 @@ public class FortManager
 	public const int FLAG_MAX_COUNT = 3;
 	public const int ORC_FORTRESS_FLAGPOLE_ID = 23170500;
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(FortManager));
-	
+
 	private static readonly Map<int, Fort> _forts = new();
-	
-	public Fort findNearestFort(WorldObject obj)
+
+	public Fort? findNearestFort(WorldObject obj, long maxDistanceValue = long.MaxValue)
 	{
-		return findNearestFort(obj, long.MaxValue);
-	}
-	
-	public Fort findNearestFort(WorldObject obj, long maxDistanceValue)
-	{
-		Fort nearestFort = getFort(obj);
+		Fort? nearestFort = getFort(obj);
 		if (nearestFort == null)
 		{
 			long maxDistance = maxDistanceValue;
@@ -41,8 +36,8 @@ public class FortManager
 		}
 		return nearestFort;
 	}
-	
-	public Fort getFortById(int fortId)
+
+	public Fort? getFortById(int fortId)
 	{
 		foreach (Fort f in _forts.Values)
 		{
@@ -53,8 +48,8 @@ public class FortManager
 		}
 		return null;
 	}
-	
-	public Fort getFortByOwner(Clan clan)
+
+	public Fort? getFortByOwner(Clan clan)
 	{
 		if (clan == null)
 		{
@@ -69,7 +64,7 @@ public class FortManager
 		}
 		return null;
 	}
-	
+
 	public Fort? getFort(string name)
 	{
 		foreach (Fort f in _forts.Values)
@@ -81,7 +76,7 @@ public class FortManager
 		}
 		return null;
 	}
-	
+
 	public Fort? getFort(Location3D location)
 	{
 		foreach (Fort f in _forts.Values)
@@ -93,22 +88,22 @@ public class FortManager
 		}
 		return null;
 	}
-	
-	public Fort getFort(WorldObject activeObject)
+
+	public Fort? getFort(WorldObject activeObject)
 	{
 		// TODO: Make this more abstract?
 		// return getFort(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 		return getFortById(ORC_FORTRESS);
 	}
-	
+
 	public ICollection<Fort> getForts()
 	{
 		return _forts.Values;
 	}
-	
+
 	public void loadInstances()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (var fort in ctx.Forts.Select(f => new { f.Id, f.Name }).OrderBy(f => f.Id))
@@ -127,7 +122,7 @@ public class FortManager
 			LOGGER.Warn("Exception: loadFortData(): " + e);
 		}
 	}
-	
+
 	public void activateInstances()
 	{
 		foreach (Fort fort in _forts.Values)
@@ -135,12 +130,12 @@ public class FortManager
 			fort.activateInstance();
 		}
 	}
-	
+
 	public static FortManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly FortManager INSTANCE = new();

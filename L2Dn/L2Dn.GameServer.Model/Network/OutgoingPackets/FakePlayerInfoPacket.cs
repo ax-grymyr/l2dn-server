@@ -52,8 +52,8 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 	private readonly double _moveMultiplier;
 	private readonly float _attackSpeedMultiplier;
 	private readonly FakePlayerHolder _fpcHolder;
-	private readonly Clan _clan;
-	
+	private readonly Clan? _clan;
+
 	public FakePlayerInfoPacket(Npc npc)
 	{
 		_npc = npc;
@@ -75,7 +75,7 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 		_fpcHolder = FakePlayerData.getInstance().getInfo(npc.getId());
 		_clan = ClanTable.getInstance().getClan(_fpcHolder.getClanId());
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.CHAR_INFO); // TODO: this must be same packet as CharacterInfoPacket
@@ -101,7 +101,7 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 		writer.WriteInt32(_fpcHolder.getEquipRHand()); // dual hand
 		writer.WriteInt32(_fpcHolder.getEquipHair());
 		writer.WriteInt32(_fpcHolder.getEquipHair2());
-		
+
 		foreach (int slot in PAPERDOLL_ORDER_AUGMENT)
 		{
 			writer.WriteInt32(0);
@@ -113,7 +113,7 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 		{
 			writer.WriteInt32(0);
 		}
-		
+
 		writer.WriteByte((byte)_npc.getScriptValue()); // getPvpFlag()
 		writer.WriteInt32(_npc.getReputation());
 		writer.WriteInt32(_mAtkSpd);
@@ -188,7 +188,7 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 		writer.WriteInt32(_npc.getMaxMp());
 		writer.WriteInt32((int)Math.Round(_npc.getCurrentMp()));
 		writer.WriteByte(0);
-		
+
 		Set<AbnormalVisualEffect> abnormalVisualEffects = _npc.getEffectList().getCurrentAbnormalVisualEffects();
 		writer.WriteInt32(abnormalVisualEffects.size() + (_npc.isInvisible() ? 1 : 0));
 		foreach (AbnormalVisualEffect abnormalVisualEffect in abnormalVisualEffects)
@@ -199,14 +199,14 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 		{
 			writer.WriteInt16((short)AbnormalVisualEffect.STEALTH);
 		}
-		
+
 		writer.WriteByte(0); // isTrueHero() ? 100 : 0
 		writer.WriteByte((_fpcHolder.getHair() > 0) || (_fpcHolder.getEquipHair2() > 0));
 		writer.WriteByte(0); // Used Ability Points
 		writer.WriteInt32(0); // CursedWeaponClassId
-		
+
 		writer.WriteInt32(0); // AFK animation.
-		
+
 		writer.WriteInt32(0); // Rank.
 		writer.WriteInt16(0);
 		writer.WriteByte(0);

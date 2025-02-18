@@ -8,26 +8,14 @@ namespace L2Dn.GameServer.Model.Conditions;
  * The Class ConditionTargetInvSize.
  * @author Zoey76
  */
-public class ConditionTargetInvSize : Condition
+public sealed class ConditionTargetInvSize(int size): Condition
 {
-	private readonly int _size;
-	
-	/**
-	 * Instantiates a new condition player inv size.
-	 * @param size the size
-	 */
-	public ConditionTargetInvSize(int size)
-	{
-		_size = size;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		if ((effected != null) && effected.isPlayer())
-		{
-			Player target = effected.getActingPlayer();
-			return target.getInventory().getNonQuestSize() <= (target.getInventoryLimit() - _size);
-		}
-		return false;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? target = effected.getActingPlayer();
+        if (effected != null && effected.isPlayer() && target != null)
+            return target.getInventory().getNonQuestSize() <= target.getInventoryLimit() - size;
+
+        return false;
+    }
 }

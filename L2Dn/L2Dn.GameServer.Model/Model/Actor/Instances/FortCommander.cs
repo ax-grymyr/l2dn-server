@@ -13,13 +13,13 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 public class FortCommander : Defender
 {
 	private bool _canTalk;
-	
+
 	public FortCommander(NpcTemplate template): base(template)
 	{
 		InstanceType = InstanceType.FortCommander;
 		_canTalk = true;
 	}
-	
+
 	/**
 	 * Return True if a siege is in progress and the Creature attacker isn't a Defender.
 	 * @param attacker The Creature that the Commander try to attack
@@ -30,39 +30,39 @@ public class FortCommander : Defender
 		{
 			return false;
 		}
-		
+
 		// Attackable during siege by all except defenders
 		return ((getFort() != null) && (getFort().getResidenceId() > 0) && getFort().getSiege().isInProgress() && !getFort().getSiege().checkIsDefender(attacker.getClan()));
 	}
-	
+
 	public override void addDamageHate(Creature attacker, long damage, long aggro)
 	{
 		if (attacker == null)
 		{
 			return;
 		}
-		
+
 		if (!(attacker is FortCommander))
 		{
 			base.addDamageHate(attacker, damage, aggro);
 		}
 	}
-	
-	public override bool doDie(Creature killer)
+
+	public override bool doDie(Creature? killer)
 	{
 		if (!base.doDie(killer))
 		{
 			return false;
 		}
-		
+
 		if (getFort().getSiege().isInProgress())
 		{
 			getFort().getSiege().killedCommander(this);
 		}
-		
+
 		return true;
 	}
-	
+
 	/**
 	 * This method forces guard to return to home location previously set
 	 */
@@ -71,14 +71,14 @@ public class FortCommander : Defender
 		if (!this.IsInsideRadius2D(getSpawn(), 200))
 		{
 			clearAggroList();
-			
+
 			if (hasAI())
 			{
 				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().Location.Location3D);
 			}
 		}
 	}
-	
+
 	public override void addDamage(Creature creature, int damage, Skill skill)
 	{
 		Creature attacker = creature;
@@ -113,7 +113,7 @@ public class FortCommander : Defender
 							break;
 						}
 					}
-					
+
 					if (npcString != null)
 					{
 						broadcastSay(ChatType.NPC_SHOUT, npcString.Value, npcString.Value.GetParamCount() == 1 ? attacker.getName() : null);
@@ -125,7 +125,7 @@ public class FortCommander : Defender
 		}
 		base.addDamage(attacker, damage, skill);
 	}
-	
+
 	private class ScheduleTalkTask : Runnable
 	{
 		private readonly FortCommander _commander;
@@ -134,23 +134,23 @@ public class FortCommander : Defender
 		{
 			_commander = commander;
 		}
-		
+
 		public void run()
 		{
 			_commander.setCanTalk(true);
 		}
 	}
-	
+
 	void setCanTalk(bool value)
 	{
 		_canTalk = value;
 	}
-	
+
 	private bool canTalk()
 	{
 		return _canTalk;
 	}
-	
+
 	public override bool hasRandomAnimation()
 	{
 		return false;

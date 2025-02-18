@@ -7,22 +7,14 @@ namespace L2Dn.GameServer.Model.Conditions;
 /**
  * @author Sdw
  */
-public class ConditionPlayerHasSummon : Condition
+public sealed class ConditionPlayerHasSummon(bool hasSummon): Condition
 {
-	private readonly bool _hasSummon;
-	
-	public ConditionPlayerHasSummon(bool hasSummon)
-	{
-		_hasSummon = hasSummon;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		Player player = effector.getActingPlayer();
-		if (player == null)
-		{
-			return false;
-		}
-		return _hasSummon == player.hasSummon();
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? player = effector.getActingPlayer();
+        if (player is null)
+            return false;
+
+        return hasSummon == player.hasSummon();
+    }
 }

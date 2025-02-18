@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 public struct SetPrivateStoreListSellPacket: IIncomingPacket<GameSession>
 {
     private bool _packageSale;
-    private ItemData[] _items;
+    private ItemData[]? _items;
 
     public void ReadContent(PacketBitReader reader)
     {
@@ -23,7 +23,7 @@ public struct SetPrivateStoreListSellPacket: IIncomingPacket<GameSession>
         int count = reader.ReadInt32();
         if (count < 1 || count > Config.MAX_ITEM_IN_PACKET)
             return;
-		
+
         _items = new ItemData[count];
         for (int i = 0; i < count; i++)
         {
@@ -35,10 +35,10 @@ public struct SetPrivateStoreListSellPacket: IIncomingPacket<GameSession>
                 _items = null;
                 return;
             }
-			
+
             // Unknown.
             reader.ReadString();
-			
+
             _items[i] = new ItemData(itemId, cnt, price);
         }
     }
@@ -48,7 +48,7 @@ public struct SetPrivateStoreListSellPacket: IIncomingPacket<GameSession>
 		Player? player = session.Player;
 		if (player == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (_items == null)
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT);
@@ -56,13 +56,13 @@ public struct SetPrivateStoreListSellPacket: IIncomingPacket<GameSession>
 			player.broadcastUserInfo();
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!player.getAccessLevel().allowTransaction())
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(player) || player.isInDuel())
 		{
 			player.sendPacket(SystemMessageId.WHILE_YOU_ARE_ENGAGED_IN_COMBAT_YOU_CANNOT_OPERATE_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
@@ -71,7 +71,7 @@ public struct SetPrivateStoreListSellPacket: IIncomingPacket<GameSession>
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.isInsideZone(ZoneId.NO_STORE))
 		{
 			player.sendPacket(new PrivateStoreManageListSellPacket(1, player, _packageSale));
@@ -80,7 +80,7 @@ public struct SetPrivateStoreListSellPacket: IIncomingPacket<GameSession>
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Check maximum number of allowed slots for pvt shops
 		if (_items.Length > player.getPrivateSellStoreLimit())
 		{
@@ -89,11 +89,11 @@ public struct SetPrivateStoreListSellPacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_QUANTITY_THAT_CAN_BE_INPUTTED);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		TradeList tradeList = player.getSellList();
 		tradeList.clear();
 		tradeList.setPackaged(_packageSale);
-		
+
 		long totalCost = player.getAdena();
 		foreach (ItemData i in _items)
 		{
@@ -103,10 +103,10 @@ public struct SetPrivateStoreListSellPacket: IIncomingPacket<GameSession>
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
 					" tried to set price more than " + Inventory.MAX_ADENA + " adena in Private Store - Sell.",
 					Config.DEFAULT_PUNISH);
-				
+
 				return ValueTask.CompletedTask;
 			}
-			
+
 			totalCost += i.getPrice();
 			if (totalCost > Inventory.MAX_ADENA)
 			{
@@ -114,11 +114,11 @@ public struct SetPrivateStoreListSellPacket: IIncomingPacket<GameSession>
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
 					" tried to set total price more than " + Inventory.MAX_ADENA + " adena in Private Store - Sell.",
 					Config.DEFAULT_PUNISH);
-				
+
 				return ValueTask.CompletedTask;
 			}
 		}
-		
+
 		player.sitDown();
 		if (_packageSale)
 		{
@@ -128,9 +128,9 @@ public struct SetPrivateStoreListSellPacket: IIncomingPacket<GameSession>
 		{
 			player.setPrivateStoreType(PrivateStoreType.SELL);
 		}
-		
+
 		player.broadcastUserInfo();
-		
+
 		if (_packageSale)
 		{
 			player.broadcastPacket(new ExPrivateStoreSetWholeMsgPacket(player));
@@ -142,7 +142,7 @@ public struct SetPrivateStoreListSellPacket: IIncomingPacket<GameSession>
 
 		return ValueTask.CompletedTask;
 	}
-	
+
 	private readonly record struct ItemData(int ObjectId, long Count, long Price)
 	{
 		public bool addToTradeList(TradeList list)
@@ -151,11 +151,11 @@ public struct SetPrivateStoreListSellPacket: IIncomingPacket<GameSession>
 			{
 				return false;
 			}
-			
+
 			list.addItem(ObjectId, Count, Price);
 			return true;
 		}
-		
+
 		public long getPrice()
 		{
 			return Count * Price;

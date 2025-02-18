@@ -14,16 +14,16 @@ namespace L2Dn.GameServer.Data.Xml;
 public class VariationData: DataReaderBase
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(VariationData));
-	
+
 	private readonly Map<int, Set<int>> _itemGroups = new();
 	private readonly Map<int, List<Variation>> _variations = new();
 	private readonly Map<int, Map<int, VariationFee>> _fees = new();
-	
+
 	private VariationData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_itemGroups.Clear();
@@ -41,7 +41,7 @@ public class VariationData: DataReaderBase
 
 		foreach (XmlVariationFee fee in variationData.Fees)
 			parseFeeElement(fee);
-		
+
 		_logger.Info(GetType().Name + ": Loaded " + _itemGroups.Count + " item groups.");
 		_logger.Info(GetType().Name + ": Loaded " + _variations.Count + " variations.");
 		_logger.Info(GetType().Name + ": Loaded " + _fees.Count + " fees.");
@@ -79,7 +79,7 @@ public class VariationData: DataReaderBase
 						{
 							double optionChance = option.Chance;
 							int optionId = option.Id;
-							Options opt = OptionData.getInstance().getOptions(optionId);
+							Options? opt = OptionData.getInstance().getOptions(optionId);
 							if (opt == null)
 							{
 								_logger.Error(GetType().Name + ": Null option for id " + optionId + " mineral " + mineralId);
@@ -88,8 +88,8 @@ public class VariationData: DataReaderBase
 
 							options.put(opt, optionChance);
 							break;
-						}				
-						
+						}
+
 						case XmlVariationOptionGroupCategoryOptionRange optionRange:
 						{
 							double optionChance = optionRange.Chance;
@@ -97,7 +97,7 @@ public class VariationData: DataReaderBase
 							int toId = optionRange.To;
 							for (int id = fromId; id <= toId; id++)
 							{
-								Options op = OptionData.getInstance().getOptions(id);
+								Options? op = OptionData.getInstance().getOptions(id);
 								if (op == null)
 								{
 									_logger.Error(GetType().Name + ": Null option for id " + id + " mineral " + mineralId);
@@ -114,7 +114,7 @@ public class VariationData: DataReaderBase
 						{
 							itemIds.add(item.Id);
 							break;
-						}							
+						}
 
 						case XmlIdRange itemRange:
 						{
@@ -124,7 +124,7 @@ public class VariationData: DataReaderBase
 								itemIds.add(id);
 
 							break;
-						}							
+						}
 					}
 				}
 
@@ -134,7 +134,7 @@ public class VariationData: DataReaderBase
 			variation.setEffectGroup(order, new OptionDataGroup(sets));
 		}
 
-		List<Variation> list = _variations.get(mineralId);
+		List<Variation>? list = _variations.get(mineralId);
 		if (list == null)
 		{
 			list = new();
@@ -155,7 +155,7 @@ public class VariationData: DataReaderBase
 			int itemId = item.Id;
 			if (ItemData.getInstance().getTemplate(itemId) == null)
 				_logger.Error(GetType().Name + ": Item with id " + itemId + " was not found.");
-			
+
 			items.add(itemId);
 		}
 
@@ -176,9 +176,9 @@ public class VariationData: DataReaderBase
 		{
 			_logger.Error(GetType().Name + ": Item with id " + itemId + " was not found.");
 		}
-				
+
 		VariationFee fee = new VariationFee(itemId, itemCount, adenaFee, cancelFee);
-		
+
 		Map<int, VariationFee> feeByMinerals = new();
 		foreach (object mineral in xmlVariationFee.Minerals)
 		{
@@ -208,7 +208,7 @@ public class VariationData: DataReaderBase
 			_logger.Error(GetType().Name + ": Item group with id " + itemGroupId + " was not found.");
 			return;
 		}
-		
+
 		foreach (int item in itemGroup)
 		{
 			Map<int, VariationFee> fees = _fees.GetValueOrDefault(item) ?? new Map<int, VariationFee>();
@@ -216,17 +216,17 @@ public class VariationData: DataReaderBase
 			_fees.put(item, fees);
 		}
 	}
-	
+
 	public int getVariationCount()
 	{
 		return _variations.Count;
 	}
-	
+
 	public int getFeeCount()
 	{
 		return _fees.Count;
 	}
-	
+
 	/**
 	 * Generate a new random variation instance
 	 * @param variation The variation template to generate the variation instance from
@@ -237,45 +237,45 @@ public class VariationData: DataReaderBase
 	{
 		return generateRandomVariation(variation, targetItem.getId());
 	}
-	
+
 	private VariationInstance generateRandomVariation(Variation variation, int targetItemId)
 	{
 		Options option1 = variation.getRandomEffect(0, targetItemId);
 		Options option2 = variation.getRandomEffect(1, targetItemId);
 		return new VariationInstance(variation.getMineralId(), option1, option2);
 	}
-	
+
 	public Variation? getVariation(int mineralId, Item item)
 	{
 		List<Variation>? variations = _variations.GetValueOrDefault(mineralId);
 		if (variations == null || variations.Count == 0)
 			return null;
-		
+
 		foreach (Variation variation in variations)
 		{
 			Set<int>? group = _itemGroups.GetValueOrDefault(variation.getItemGroup());
 			if (group != null && group.Contains(item.getId()))
 				return variation;
 		}
-		
+
 		return variations[0];
 	}
-	
+
 	public bool hasVariation(int mineralId)
 	{
 		return _variations.GetValueOrDefault(mineralId)?.Count != 0;
 	}
-	
+
 	public VariationFee? getFee(int itemId, int mineralId)
 	{
 		return _fees.GetValueOrDefault(itemId)?.GetValueOrDefault(mineralId);
 	}
-	
+
 	public long getCancelFee(int itemId, int mineralId)
 	{
 		if (!_fees.TryGetValue(itemId, out Map<int, VariationFee>? fees))
 			return -1;
-		
+
 		if (!fees.TryGetValue(mineralId, out VariationFee? fee))
 		{
 			// FIXME This will happen when the data is pre-rework or when augments were manually given, but still that's a cheap solution
@@ -284,20 +284,20 @@ public class VariationData: DataReaderBase
 			if (fee == null)
 				return -1;
 		}
-		
+
 		return fee.getCancelFee();
 	}
-	
+
 	public bool hasFeeData(int itemId)
 	{
 		return _fees.GetValueOrDefault(itemId)?.Count != 0;
 	}
-	
+
 	public static VariationData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly VariationData INSTANCE = new();

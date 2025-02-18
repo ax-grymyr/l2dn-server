@@ -25,54 +25,54 @@ namespace L2Dn.GameServer.Model;
 public class EffectList
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EffectList));
-	
+
 	/** Queue containing all effects from buffs for this effect list. */
 	private readonly Set<BuffInfo> _actives = new();
-	
+
 	/** List containing all passives for this effect list. They bypass most of the actions and they are not included in most operations. */
 	private readonly Set<BuffInfo> _passives = new();
-	
+
 	/** List containing all options for this effect list. They bypass most of the actions and they are not included in most operations. */
 	private readonly Set<BuffInfo> _options = new();
-	
+
 	/** Map containing the all stacked effect in progress for each {@code AbnormalType}. */
 	private Set<AbnormalType> _stackedEffects = new();
-	
+
 	/** Set containing all {@code AbnormalType}s that shouldn't be added to this creature effect list. */
 	private readonly Set<AbnormalType> _blockedAbnormalTypes = new();
-	
+
 	/** Set containing all abnormal visual effects this creature currently displays. */
 	private Set<AbnormalVisualEffect> _abnormalVisualEffects = new();
-	
+
 	/** Short buff skill ID. */
 	private BuffInfo? _shortBuff;
-	
+
 	/** Count of specific types of buffs. */
 	private readonly AtomicInteger _buffCount = new();
 	private readonly AtomicInteger _triggerBuffCount = new();
 	private readonly AtomicInteger _danceCount = new();
 	private readonly AtomicInteger _toggleCount = new();
 	private readonly AtomicInteger _debuffCount = new();
-	
+
 	/** If {@code true} this effect list has buffs removed on any action. */
 	private readonly AtomicInteger _hasBuffsRemovedOnAnyAction = new();
-	
+
 	/** If {@code true} this effect list has buffs removed on damage. */
 	private readonly AtomicInteger _hasBuffsRemovedOnDamage = new();
-	
+
 	/** Effect flags. */
 	private long _effectFlags;
-	
+
 	/** The owner of this effect list. */
 	private readonly Creature _owner;
-	
+
 	/** Hidden buffs count, prevents iterations. */
 	private readonly AtomicInteger _hiddenBuffs = new();
-	
+
 	/** Delay task **/
 	private ScheduledFuture? _updateEffectIconTask;
 	private readonly AtomicBoolean _updateAbnormalStatus = new();
-	
+
 	/**
 	 * Constructor for effect list.
 	 * @param owner the creature that owns this effect list
@@ -81,7 +81,7 @@ public class EffectList
 	{
 		_owner = owner;
 	}
-	
+
 	/**
 	 * Gets passive effects.
 	 * @return an unmodifiable set containing all passives.
@@ -90,7 +90,7 @@ public class EffectList
 	{
 		return _passives;
 	}
-	
+
 	/**
 	 * Gets option effects.
 	 * @return an unmodifiable set containing all options.
@@ -99,7 +99,7 @@ public class EffectList
 	{
 		return _options;
 	}
-	
+
 	/**
 	 * Gets all the active effects on this effect list.
 	 * @return an unmodifiable set containing all the active effects on this effect list
@@ -108,7 +108,7 @@ public class EffectList
 	{
 		return _actives;
 	}
-	
+
 	/**
 	 * Gets all the active positive effects on this effect list.
 	 * @return all the buffs on this effect list
@@ -125,7 +125,7 @@ public class EffectList
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Gets all the active positive effects on this effect list.
 	 * @return all the dances songs on this effect list
@@ -142,7 +142,7 @@ public class EffectList
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Gets all the active negative effects on this effect list.
 	 * @return all the debuffs on this effect list
@@ -159,7 +159,7 @@ public class EffectList
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Verifies if this effect list contains the given skill ID.
 	 * @param skillId the skill ID to verify
@@ -183,13 +183,13 @@ public class EffectList
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Gets the first {@code BuffInfo} found in this effect list.
 	 * @param skillId the skill ID
 	 * @return {@code BuffInfo} of the first active or passive effect found.
 	 */
-	public BuffInfo getBuffInfoBySkillId(int skillId)
+	public BuffInfo? getBuffInfoBySkillId(int skillId)
 	{
 		foreach (BuffInfo info in _actives)
 		{
@@ -207,7 +207,7 @@ public class EffectList
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Check if any active {@code BuffInfo} of this {@code AbnormalType} exists.
 	 * @param type the abnormal skill type
@@ -217,7 +217,7 @@ public class EffectList
 	{
 		return _stackedEffects.Contains(type);
 	}
-	
+
 	/**
 	 * Check if any active {@code BuffInfo} of this {@code AbnormalType} exists.
 	 * @param types the abnormal skill type
@@ -234,7 +234,7 @@ public class EffectList
 		}
 		return false;
 	}
-	
+
 	/**
 	 * @param type the {@code AbnormalType} to match for.
 	 * @param filter any additional filters to match for once a {@code BuffInfo} of this {@code AbnormalType} is found.
@@ -254,7 +254,7 @@ public class EffectList
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Gets the first {@code BuffInfo} found by the given {@code AbnormalType}.<br>
 	 * <font color="red">There are some cases where there are multiple {@code BuffInfo} per single {@code AbnormalType}</font>.
@@ -275,7 +275,7 @@ public class EffectList
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Adds {@code AbnormalType}s to the blocked buff slot set.
 	 * @param blockedAbnormalTypes the blocked buff slot set to add
@@ -284,7 +284,7 @@ public class EffectList
 	{
 		_blockedAbnormalTypes.addAll(blockedAbnormalTypes);
 	}
-	
+
 	/**
 	 * Removes {@code AbnormalType}s from the blocked buff slot set.
 	 * @param blockedBuffSlots the blocked buff slot set to remove
@@ -294,7 +294,7 @@ public class EffectList
 	{
 		return _blockedAbnormalTypes.removeAll(blockedBuffSlots);
 	}
-	
+
 	/**
 	 * Gets all the blocked {@code AbnormalType}s for this creature effect list.
 	 * @return the current blocked {@code AbnormalType}s set in unmodifiable view.
@@ -303,7 +303,7 @@ public class EffectList
 	{
 		return _blockedAbnormalTypes;
 	}
-	
+
 	/**
 	 * Sets the Short Buff data and sends an update if the effected is a player.
 	 * @param info the {@code BuffInfo}
@@ -324,7 +324,7 @@ public class EffectList
 			}
 		}
 	}
-	
+
 	/**
 	 * Gets the buffs count without including the hidden buffs (after getting an Herb buff).<br>
 	 * Prevents initialization.
@@ -334,7 +334,7 @@ public class EffectList
 	{
 		return _actives.Count != 0 ? _buffCount.get() - _hiddenBuffs.get() : 0;
 	}
-	
+
 	/**
 	 * Gets the Songs/Dances count.<br>
 	 * Prevents initialization.
@@ -344,7 +344,7 @@ public class EffectList
 	{
 		return _danceCount.get();
 	}
-	
+
 	/**
 	 * Gets the triggered buffs count.<br>
 	 * Prevents initialization.
@@ -354,7 +354,7 @@ public class EffectList
 	{
 		return _triggerBuffCount.get();
 	}
-	
+
 	/**
 	 * Gets the toggled skills count.<br>
 	 * Prevents initialization.
@@ -364,7 +364,7 @@ public class EffectList
 	{
 		return _toggleCount.get();
 	}
-	
+
 	/**
 	 * Gets the debuff skills count.<br>
 	 * Prevents initialization.
@@ -374,7 +374,7 @@ public class EffectList
 	{
 		return _debuffCount.get();
 	}
-	
+
 	/**
 	 * Gets the hidden buff count.
 	 * @return the number of hidden buffs
@@ -383,7 +383,7 @@ public class EffectList
 	{
 		return _hiddenBuffs.get();
 	}
-	
+
 	/**
 	 * Exits all effects in this effect list.<br>
 	 * Stops all the effects, clear the effect lists and updates the effect flags and icons.
@@ -393,7 +393,7 @@ public class EffectList
 	{
 		stopEffects(b => !b.getSkill().isIrreplacableBuff(), true, broadcast);
 	}
-	
+
 	/**
 	 * Stops all effects in this effect list except those that last through death.
 	 */
@@ -401,7 +401,7 @@ public class EffectList
 	{
 		stopEffects(info => !info.getSkill().isStayAfterDeath(), true, true);
 	}
-	
+
 	/**
 	 * Exits all active, passive and option effects in this effect list without excluding anything,<br>
 	 * like necessary toggles, irreplacable buffs or effects that last through death.<br>
@@ -415,24 +415,24 @@ public class EffectList
 		{
 			remove(info);
 		}
-		
+
 		foreach (BuffInfo info in _passives)
 		{
 			remove(info);
 		}
-		
+
 		foreach (BuffInfo info in _options)
 		{
 			remove(info);
 		}
-		
+
 		// Update stats, effect flags and icons.
 		if (update)
 		{
 			updateEffectList(broadcast);
 		}
 	}
-	
+
 	/**
 	 * Stops all active toggle skills.
 	 */
@@ -443,7 +443,7 @@ public class EffectList
 			stopEffects(b => b.getSkill().isToggle() && !b.getSkill().isIrreplacableBuff(), true, true);
 		}
 	}
-	
+
 	public void stopAllTogglesOfGroup(int toggleGroup)
 	{
 		if (_toggleCount.get() > 0)
@@ -451,7 +451,7 @@ public class EffectList
 			stopEffects(b => b.getSkill().isToggle() && b.getSkill().getToggleGroupId() == toggleGroup, true, true);
 		}
 	}
-	
+
 	/**
 	 * Stops all active dances/songs skills.
 	 * @param update set to true to update the effect flags and icons
@@ -469,7 +469,7 @@ public class EffectList
 			}
 		}
 	}
-	
+
 	/**
 	 * Stops all active dances/songs skills.
 	 * @param update set to true to update the effect flags and icons
@@ -480,7 +480,7 @@ public class EffectList
 		if (!_options.isEmpty())
 		{
 			_options.ForEach(remove);
-			
+
 			// Update stats, effect flags and icons.
 			if (update)
 			{
@@ -488,7 +488,7 @@ public class EffectList
 			}
 		}
 	}
-	
+
 	/**
 	 * Exit all effects having a specified flag.
 	 * @param effectFlag the flag of the effect to stop
@@ -509,7 +509,7 @@ public class EffectList
 					}
 				}
 			}
-			
+
 			// Update stats, effect flags and icons.
 			if (update)
 			{
@@ -517,7 +517,7 @@ public class EffectList
 			}
 		}
 	}
-	
+
 	/**
 	 * Exits all effects created by a specific skill ID.<br>
 	 * Removes the effects from the effect list.<br>
@@ -536,7 +536,7 @@ public class EffectList
 			remove(info, type, true, true);
 		}
 	}
-	
+
 	/**
 	 * Exits all effects created by a specific skill.<br>
 	 * Removes the effects from the effect list.<br>
@@ -551,7 +551,7 @@ public class EffectList
 	{
 		stopSkillEffects(type, skill.getId());
 	}
-	
+
 	/**
 	 * Exits all effects created by a specific skill {@code AbnormalType}.<br>
 	 * <font color="red">This function should not be used recursively, because it updates on every execute.</font>
@@ -567,7 +567,7 @@ public class EffectList
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Exits all effects created by a specific skill {@code AbnormalType}s.
 	 * @param types the skill {@code AbnormalType}s to be checked and removed.
@@ -582,7 +582,7 @@ public class EffectList
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Exits all effects matched by a specific filter.
 	 * @param filter any filter to apply when selecting which {@code BuffInfo}s to be removed.
@@ -600,7 +600,7 @@ public class EffectList
 					remove(info);
 				}
 			}
-			
+
 			// Update stats, effect flags and icons.
 			if (update)
 			{
@@ -608,7 +608,7 @@ public class EffectList
 			}
 		}
 	}
-	
+
 	/**
 	 * Exits all buffs effects of the skills with "removedOnAnyAction" set.<br>
 	 * Called on any action except movement (attack, cast).
@@ -620,7 +620,7 @@ public class EffectList
 			stopEffects(info => info.getSkill().isRemovedOnAnyActionExceptMove(), true, true);
 		}
 	}
-	
+
 	public void stopEffectsOnDamage()
 	{
 		if (_hasBuffsRemovedOnDamage.get() > 0)
@@ -628,7 +628,7 @@ public class EffectList
 			stopEffects(info => info.getSkill().isRemovedOnDamage(), true, true);
 		}
 	}
-	
+
 	/**
 	 * Checks if a given effect limitation is exceeded.
 	 * @param buffTypes the {@code SkillBuffType} of the skill.
@@ -677,7 +677,7 @@ public class EffectList
 		}
 		return false;
 	}
-	
+
 	/**
 	 * @param info the {@code BuffInfo} whose buff category will be increased/decreased in count.
 	 * @param increase {@code true} to increase the category count of this {@code BuffInfo}, {@code false} to decrease.
@@ -697,7 +697,7 @@ public class EffectList
 				_hiddenBuffs.decrementAndGet();
 			}
 		}
-		
+
 		// Update flag for skills being removed on action or damage.
 		if (info.getSkill().isRemovedOnAnyActionExceptMove())
 		{
@@ -721,7 +721,7 @@ public class EffectList
 				_hasBuffsRemovedOnDamage.decrementAndGet();
 			}
 		}
-		
+
 		// Increase specific buff count
 		switch (info.getSkill().getBuffType())
 		{
@@ -746,10 +746,10 @@ public class EffectList
 				return increase ? _buffCount.incrementAndGet() : _buffCount.decrementAndGet();
 			}
 		}
-		
+
 		return 0;
 	}
-	
+
 	/**
 	 * Removes a set of effects from this effect list.<br>
 	 * <font color="red">Does NOT update effect icons and flags. </font>
@@ -759,7 +759,7 @@ public class EffectList
 	{
 		remove(info, SkillFinishType.REMOVED, false, false);
 	}
-	
+
 	/**
 	 * Removes a set of effects from this effect list.
 	 * @param info the effects to remove
@@ -793,36 +793,36 @@ public class EffectList
 				updateEffectList(broadcast);
 			}
 		}
-		
+
 		// Update stats, effect flags and icons.
 		if (update)
 		{
 			updateEffectList(broadcast);
 		}
 	}
-	
+
 	private void removeActive(BuffInfo info, SkillFinishType type)
 	{
 		if (_actives.Count != 0)
 		{
 			// Removes the buff from the given effect list.
 			_actives.Remove(info);
-			
+
 			// Remove short buff.
 			if (info == _shortBuff)
 			{
 				shortBuffStatusUpdate(null);
 			}
-			
+
 			// Stop the buff effects.
 			info.stopAllEffects(type);
-			
+
 			// Decrease specific buff count
 			increaseDecreaseCount(info, false);
 			info.getSkill().applyEffectScope(EffectScope.END, info, true, false);
 		}
 	}
-	
+
 	private void removePassive(BuffInfo info, SkillFinishType type)
 	{
 		if (!_passives.isEmpty())
@@ -831,7 +831,7 @@ public class EffectList
 			info.stopAllEffects(type);
 		}
 	}
-	
+
 	private void removeOption(BuffInfo info, SkillFinishType type)
 	{
 		if (!_options.isEmpty())
@@ -840,7 +840,7 @@ public class EffectList
 			info.stopAllEffects(type);
 		}
 	}
-	
+
 	/**
 	 * Adds a set of effects to this effect list.
 	 * @param info the {@code BuffInfo}
@@ -851,15 +851,15 @@ public class EffectList
 		{
 			return;
 		}
-		
+
 		Skill skill = info.getSkill();
-		
+
 		// Prevent adding and initializing buffs/effects on dead creatures.
 		if (info.getEffected().isDead() && skill != null && !skill.isPassive() && !skill.isStayAfterDeath())
 		{
 			return;
 		}
-		
+
 		if (skill == null)
 		{
 			// Only options are without skills.
@@ -875,26 +875,26 @@ public class EffectList
 			// Add active effect
 			addActive(info);
 		}
-		
+
 		// Update stats, effect flags and icons.
 		updateEffectList(true);
 	}
-	
+
 	private void addActive(BuffInfo info)
 	{
 		Skill skill = info.getSkill();
-		
+
 		// Cannot add active buff to dead creature. Even in retail if you are dead with Lv. 3 Shillien's Breath, it will disappear instead of going 1 level down.
 		if (info.getEffected().isDead() && !skill.isStayAfterDeath())
 		{
 			return;
 		}
-		
+
 		if (_blockedAbnormalTypes != null && _blockedAbnormalTypes.Contains(skill.getAbnormalType()))
 		{
 			return;
 		}
-		
+
 		// Fix for stacking trigger skills
 		if (skill.isTriggeredSkill())
 		{
@@ -904,7 +904,7 @@ public class EffectList
 				return;
 			}
 		}
-		
+
 		if (info.getEffector() != null)
 		{
 			// Check for debuffs against target.
@@ -915,20 +915,20 @@ public class EffectList
 				{
 					return;
 				}
-				
+
 				if (info.getEffector().isPlayer() && info.getEffected().isPlayer() && info.getEffected().isAffected(EffectFlag.DUELIST_FURY) && !info.getEffector().isAffected(EffectFlag.DUELIST_FURY))
 				{
 					return;
 				}
 			}
-			
+
 			// Check if buff skills are blocked.
 			if (info.getEffected().isBuffBlocked() && !skill.isBad())
 			{
 				return;
 			}
 		}
-		
+
 		// Manage effect stacking.
 		if (hasAbnormalType(skill.getAbnormalType()))
 		{
@@ -977,10 +977,10 @@ public class EffectList
 				}
 			}
 		}
-		
+
 		// Increase buff count.
 		increaseDecreaseCount(info, true);
-		
+
 		// Check if any effect limit is exceeded.
 		if (isLimitExceeded(EnumUtil.GetValues<SkillBuffType>()))
 		{
@@ -1000,24 +1000,24 @@ public class EffectList
 				}
 			}
 		}
-		
+
 		// After removing old buff (same ID) or stacked buff (same abnormal type),
 		// Add the buff to the end of the effect list.
 		_actives.Add(info);
 		// Initialize effects.
 		info.initializeEffects();
 	}
-	
+
 	private void addPassive(BuffInfo info)
 	{
 		Skill skill = info.getSkill();
-		
+
 		// Passive effects don't need stack type!
 		if (skill.getAbnormalType() != AbnormalType.NONE)
 		{
 			LOGGER.Warn("Passive " + skill + " with abnormal type: " + skill.getAbnormalType() + "!");
 		}
-		
+
 		// Remove previous passives of this id.
 		foreach (BuffInfo b in _passives)
 		{
@@ -1027,13 +1027,13 @@ public class EffectList
 				_passives.remove(b);
 			}
 		}
-		
+
 		_passives.add(info);
-		
+
 		// Initialize effects.
 		info.initializeEffects();
 	}
-	
+
 	private void addOption(BuffInfo info)
 	{
 		if (info.getOption() != null)
@@ -1047,14 +1047,14 @@ public class EffectList
 					_options.remove(b);
 				}
 			}
-			
+
 			_options.add(info);
-			
+
 			// Initialize effects.
 			info.initializeEffects();
 		}
 	}
-	
+
 	/**
 	 * Update effect icons.<br>
 	 * Prevents initialization.
@@ -1066,7 +1066,7 @@ public class EffectList
 		{
 			_updateAbnormalStatus.compareAndSet(false, true);
 		}
-		
+
 		if (_updateEffectIconTask == null)
 		{
 			_updateEffectIconTask = ThreadPool.schedule(() =>
@@ -1095,18 +1095,18 @@ public class EffectList
 
 									if (ps != null && !info.getSkill().isToggle())
 										ps.Value.addSkill(info);
-									
+
 									if (os != null)
 										os.Value.addSkill(info);
 								}
 							}
 						}
 					}
-					
+
 					// Send icon update for player buff bar.
 					if (asu != null)
 						_owner.sendPacket(asu.Value);
-					
+
 					// Player or summon is in party. Broadcast packet to everyone in the party.
 					if (ps != null)
 					{
@@ -1130,7 +1130,7 @@ public class EffectList
 						}
 					}
 				}
-				
+
 				// Update effect icons for everyone targeting this owner.
 				ExAbnormalStatusUpdateFromTargetPacket upd = new ExAbnormalStatusUpdateFromTargetPacket(_owner);
 				foreach (Creature creature in _owner.getStatus().getStatusListener())
@@ -1140,18 +1140,18 @@ public class EffectList
 						creature.sendPacket(upd);
 					}
 				}
-				
+
 				if (_owner.isPlayer() && _owner.getTarget() == _owner)
 				{
 					_owner.sendPacket(upd);
 				}
-				
+
 				_updateAbnormalStatus.set(false);
 				_updateEffectIconTask = null;
 			}, 300);
 		}
 	}
-	
+
 	/**
 	 * Gets the currently applied abnormal visual effects.
 	 * @return the abnormal visual effects
@@ -1160,7 +1160,7 @@ public class EffectList
 	{
 		return _abnormalVisualEffects;
 	}
-	
+
 	/**
 	 * Checks if the creature has the abnormal visual effect.
 	 * @param ave the abnormal visual effect
@@ -1170,7 +1170,7 @@ public class EffectList
 	{
 		return _abnormalVisualEffects.Contains(ave);
 	}
-	
+
 	/**
 	 * Adds the abnormal visual and sends packet for updating them in client.
 	 * @param aves the abnormal visual effects
@@ -1183,7 +1183,7 @@ public class EffectList
 		}
 		_owner.updateAbnormalVisualEffects();
 	}
-	
+
 	/**
 	 * Removes the abnormal visual and sends packet for updating them in client.
 	 * @param aves the abnormal visual effects
@@ -1196,7 +1196,7 @@ public class EffectList
 		}
 		_owner.updateAbnormalVisualEffects();
 	}
-	
+
 	/**
 	 * Wrapper to update abnormal icons and effect flags.
 	 * @param broadcast {@code true} sends update packets to observing players, {@code false} doesn't send any packets.
@@ -1208,14 +1208,14 @@ public class EffectList
 		Set<AbnormalType> abnormalTypeFlags = new();
 		Set<AbnormalVisualEffect> abnormalVisualEffectFlags = new();
 		Set<BuffInfo> unhideBuffs = new();
-		
+
 		// Recalculate new flags
 		foreach (BuffInfo info in _actives)
 		{
 			if (info != null && info.isDisplayedForEffected())
 			{
 				Skill skill = info.getSkill();
-				
+
 				// Handle hidden buffs. Check if there was such abnormal before so we can continue.
 				if (_hiddenBuffs.get() > 0 && _stackedEffects.Contains(skill.getAbnormalType()))
 				{
@@ -1224,7 +1224,7 @@ public class EffectList
 					{
 						unhideBuffs.removeIf(b => b.isAbnormalType(skill.getAbnormalType()));
 					}
-				
+
 					// If this incoming buff is hidden and its first of its abnormal, or it removes
 					// any previous hidden buff with the same or lower abnormal level and add this instead.
 					else if (!abnormalTypeFlags.Contains(skill.getAbnormalType()) || unhideBuffs.removeIf(b =>
@@ -1240,10 +1240,10 @@ public class EffectList
 				{
 					flags |= e.getEffectFlags();
 				}
-				
+
 				// Add the AbnormalType flag.
 				abnormalTypeFlags.add(skill.getAbnormalType());
-				
+
 				// Add AbnormalVisualEffect flag.
 				if (skill.hasAbnormalVisualEffects())
 				{
@@ -1269,7 +1269,7 @@ public class EffectList
 				{
 					flags |= e.getEffectFlags();
 				}
-				
+
 				// Add AbnormalVisualEffect flag.
 				Skill skill = info.getSkill();
 				if (skill.hasAbnormalVisualEffects())
@@ -1286,21 +1286,21 @@ public class EffectList
 				}
 			}
 		}
-		
+
 		// Replace the old flags with the new flags.
 		_effectFlags = flags;
 		_stackedEffects = abnormalTypeFlags;
-		
+
 		// Unhide the selected buffs.
 		unhideBuffs.ForEach(b =>
 		{
 			b.setInUse(true);
 			_hiddenBuffs.decrementAndGet();
 		});
-		
+
 		// Recalculate all stats
 		_owner.getStat().recalculateStats(broadcast);
-		
+
 		if (broadcast)
 		{
 			// Check if there is change in AbnormalVisualEffect
@@ -1309,12 +1309,12 @@ public class EffectList
 				_abnormalVisualEffects = abnormalVisualEffectFlags;
 				_owner.updateAbnormalVisualEffects();
 			}
-			
+
 			// Send updates to the client
 			updateEffectIcons(false);
 		}
 	}
-	
+
 	/**
 	 * Check if target is affected with special buff
 	 * @param flag of special buff

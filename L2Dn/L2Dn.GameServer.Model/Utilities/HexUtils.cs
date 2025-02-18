@@ -26,7 +26,7 @@ public class HexUtils
 		'F'
 	};
 	private static readonly char[] _NEW_LINE_CHARS = Environment.NewLine.ToCharArray();
-	
+
 	/**
 	 * Method to generate the hexadecimal character presentation of a byte<br>
 	 * This call is equivalent to {@link HexUtils#b2HexChars(byte, char[], int)} with parameters (data, null, 0)
@@ -37,7 +37,7 @@ public class HexUtils
 	{
 		return b2HexChars(data, null, 0);
 	}
-	
+
 	/**
 	 * Method to generate the hexadecimal character presentation of a byte
 	 * @param data byte to generate the hexadecimal character presentation from
@@ -45,24 +45,24 @@ public class HexUtils
 	 * @param dstOffsetValue offset at which the hexadecimal character presentation is copied to dstHexChars
 	 * @return the char array the hexadecimal character presentation was copied to
 	 */
-	public static char[] b2HexChars(byte data, char[] dstHexCharsValue, int dstOffsetValue)
+	public static char[] b2HexChars(byte data, char[]? dstHexCharsValue, int dstOffsetValue)
 	{
-		char[] dstHexChars = dstHexCharsValue;
+		char[]? dstHexChars = dstHexCharsValue;
 		int dstOffset = dstOffsetValue;
 		if (dstHexChars == null)
 		{
 			dstHexChars = new char[2];
 			dstOffset = 0;
 		}
-		
+
 		// /////////////////////////////
 		// NIBBLE LOOKUP
 		dstHexChars[dstOffset] = _NIBBLE_CHAR_LOOKUP[(data & 0xF0) >> 4];
 		dstHexChars[dstOffset + 1] = _NIBBLE_CHAR_LOOKUP[data & 0x0F];
-		
+
 		return dstHexChars;
 	}
-	
+
 	/**
 	 * Method to generate the hexadecimal character presentation of an integer This call is equivalent to {@link HexUtils#int2HexChars(int, char[], int)} with parameters (data, null, 0)
 	 * @param data integer to generate the hexadecimal character presentation from
@@ -72,7 +72,7 @@ public class HexUtils
 	{
 		return int2HexChars(data, new char[8], 0);
 	}
-	
+
 	/**
 	 * Method to generate the hexadecimal character presentation of an integer
 	 * @param data integer to generate the hexadecimal character presentation from
@@ -89,15 +89,15 @@ public class HexUtils
 			dstHexChars = new char[8];
 			dstOffset = 0;
 		}
-		
+
 		b2HexChars((byte) ((data & 0xFF000000) >> 24), dstHexChars, dstOffset);
 		b2HexChars((byte) ((data & 0x00FF0000) >> 16), dstHexChars, dstOffset + 2);
 		b2HexChars((byte) ((data & 0x0000FF00) >> 8), dstHexChars, dstOffset + 4);
 		b2HexChars((byte) (data & 0x000000FF), dstHexChars, dstOffset + 6);
-		
+
 		return dstHexChars;
 	}
-	
+
 	/**
 	 * Method to generate the hexadecimal character presentation of a byte array<br>
 	 * This call is equivalent to {@link HexUtils#bArr2HexChars(byte[], int, int, char[], int)} with parameters (data, offset, len, null, 0)
@@ -110,7 +110,7 @@ public class HexUtils
 	{
 		return bArr2HexChars(data, offset, len, null, 0);
 	}
-	
+
 	/**
 	 * Method to generate the hexadecimal character presentation of a byte array
 	 * @param data byte array to generate the hexadecimal character presentation from
@@ -120,16 +120,16 @@ public class HexUtils
 	 * @param dstOffsetValue offset at which the hexadecimal character presentation is copied to dstHexChars
 	 * @return the char array the hexadecimal character presentation was copied to
 	 */
-	public static char[] bArr2HexChars(byte[] data, int offset, int len, char[] dstHexCharsValue, int dstOffsetValue)
+	public static char[] bArr2HexChars(byte[] data, int offset, int len, char[]? dstHexCharsValue, int dstOffsetValue)
 	{
-		char[] dstHexChars = dstHexCharsValue;
+		char[]? dstHexChars = dstHexCharsValue;
 		int dstOffset = dstOffsetValue;
 		if (dstHexChars == null)
 		{
 			dstHexChars = new char[len * 2];
 			dstOffset = 0;
 		}
-		
+
 		for (int dataIdx = offset, charsIdx = dstOffset; dataIdx < (len + offset); ++dataIdx, ++charsIdx)
 		{
 			// /////////////////////////////
@@ -137,15 +137,15 @@ public class HexUtils
 			dstHexChars[charsIdx] = _NIBBLE_CHAR_LOOKUP[(data[dataIdx] & 0xF0) >> 4];
 			dstHexChars[++charsIdx] = _NIBBLE_CHAR_LOOKUP[data[dataIdx] & 0x0F];
 		}
-		
+
 		return dstHexChars;
 	}
-	
+
 	public static char[] bArr2AsciiChars(byte[] data, int offset, int len)
 	{
 		return bArr2AsciiChars(data, offset, len, new char[len], 0);
 	}
-	
+
 	public static char[] bArr2AsciiChars(byte[] data, int offset, int len, char[] dstAsciiCharsValue, int dstOffsetValue)
 	{
 		char[] dstAsciiChars = dstAsciiCharsValue;
@@ -155,7 +155,7 @@ public class HexUtils
 			dstAsciiChars = new char[len];
 			dstOffset = 0;
 		}
-		
+
 		for (int dataIdx = offset, charsIdx = dstOffset; dataIdx < (len + offset); ++dataIdx, ++charsIdx)
 		{
 			if ((data[dataIdx] > 0x1f) && (data[dataIdx] < 0x80))
@@ -167,13 +167,13 @@ public class HexUtils
 				dstAsciiChars[charsIdx] = '.';
 			}
 		}
-		
+
 		return dstAsciiChars;
 	}
-	
+
 	private const int HEX_ED_BPL = 16;
 	private const int HEX_ED_CPB = 2;
-	
+
 	/**
 	 * Method to generate the hexadecimal character representation of a byte array like in a hex editor<br>
 	 * Line Format: {OFFSET} {HEXADECIMAL} {ASCII}({NEWLINE})<br>
@@ -207,10 +207,10 @@ public class HexUtils
 			numLines = (len / HEX_ED_BPL) + 1;
 			textData = new char[(lineLength * numLines) - (HEX_ED_BPL - (lenBplMod)) - _NEW_LINE_CHARS.Length];
 		}
-		
+
 		// performance penalty, only doing space filling in the loop is faster
 		// Arrays.fill(textData, ' ');
-		
+
 		int dataOffset;
 		int dataLen;
 		int lineStart;
@@ -223,12 +223,12 @@ public class HexUtils
 			lineStart = i * lineLength;
 			lineHexDataStart = lineStart + 9;
 			lineAsciiDataStart = lineHexDataStart + (HEX_ED_BPL * HEX_ED_CPB) + 1;
-			
+
 			int2HexChars(dataOffset, textData, lineStart); // the offset of this line
 			textData[lineHexDataStart - 1] = ' '; // separate
 			bArr2HexChars(data, dataOffset, dataLen, textData, lineHexDataStart); // the data in hex
 			bArr2AsciiChars(data, dataOffset, dataLen, textData, lineAsciiDataStart); // the data in ascii
-			
+
 			if (i < (numLines - 1))
 			{
 				textData[lineAsciiDataStart - 1] = ' '; // separate

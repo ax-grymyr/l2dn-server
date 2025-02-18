@@ -17,7 +17,7 @@ public struct AttackRequestPacket: IIncomingPacket<GameSession>
     private int _originY;
     private int _originZ;
     private int _attackId;
-    
+
     public void ReadContent(PacketBitReader reader)
     {
         _objectId = reader.ReadInt32();
@@ -47,7 +47,7 @@ public struct AttackRequestPacket: IIncomingPacket<GameSession>
 		    return ValueTask.CompletedTask;
 	    }
 
-	    BuffInfo info = player.getEffectList().getFirstBuffInfoByAbnormalType(AbnormalType.BOT_PENALTY);
+	    BuffInfo? info = player.getEffectList().getFirstBuffInfoByAbnormalType(AbnormalType.BOT_PENALTY);
 	    if (info != null)
 	    {
 		    foreach (AbstractEffect effect in info.getEffects())
@@ -56,7 +56,7 @@ public struct AttackRequestPacket: IIncomingPacket<GameSession>
 			    {
 				    connection.Send(new SystemMessagePacket(SystemMessageId
 					    .YOU_HAVE_BEEN_REPORTED_AS_AN_ILLEGAL_PROGRAM_USER_SO_YOUR_ACTIONS_HAVE_BEEN_RESTRICTED));
-				    
+
 				    connection.Send(ActionFailedPacket.STATIC_PACKET);
 				    return ValueTask.CompletedTask;
 			    }
@@ -64,7 +64,7 @@ public struct AttackRequestPacket: IIncomingPacket<GameSession>
 	    }
 
 	    // avoid using expensive operations if not needed
-	    WorldObject target;
+	    WorldObject? target;
 	    if (player.getTargetId() == _objectId)
 	    {
 		    target = player.getTarget();

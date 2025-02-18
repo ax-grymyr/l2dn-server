@@ -12,7 +12,7 @@ public readonly struct AllianceInfoPacket: IOutgoingPacket
     private readonly string _leaderC;
     private readonly string _leaderP;
     private readonly ClanInfo[] _allies;
-	
+
     public AllianceInfoPacket(int allianceId)
     {
         Clan leader = ClanTable.getInstance().getClan(allianceId);
@@ -31,15 +31,15 @@ public readonly struct AllianceInfoPacket: IOutgoingPacket
             total += ci.getTotal();
             online += ci.getOnline();
         }
-        
+
         _total = total;
         _online = online;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.ALLIANCE_INFO);
-        
+
         writer.WriteString(_name);
         writer.WriteInt32(_total);
         writer.WriteInt32(_online);
@@ -56,32 +56,32 @@ public readonly struct AllianceInfoPacket: IOutgoingPacket
             writer.WriteInt32(aci.getOnline());
         }
     }
-	
+
     public string getName()
     {
         return _name;
     }
-	
+
     public int getTotal()
     {
         return _total;
     }
-	
+
     public int getOnline()
     {
         return _online;
     }
-	
+
     public string getLeaderC()
     {
         return _leaderC;
     }
-	
+
     public string getLeaderP()
     {
         return _leaderP;
     }
-	
+
     public ClanInfo[] getAllies()
     {
         return _allies;

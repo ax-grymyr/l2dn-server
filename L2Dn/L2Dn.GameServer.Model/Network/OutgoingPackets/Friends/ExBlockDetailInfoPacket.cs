@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Network.OutgoingPackets.Friends;
 public readonly struct ExBlockDetailInfoPacket: IOutgoingPacket
 {
 	private readonly int _objectId;
-	private readonly Player _friend;
+	private readonly Player? _friend;
 	private readonly string _name;
 	private readonly int _lastAccess;
 
@@ -27,13 +27,13 @@ public readonly struct ExBlockDetailInfoPacket: IOutgoingPacket
 		TimeSpan onlineTime = (now - _friend.getLastAccess()) ?? TimeSpan.Zero;
 		_lastAccess = (_friend == null) || _friend.isBlocked(player) ? 0 :
 			_friend.isOnline() ? now.getEpochSecond() * 1000 :
-			(int)onlineTime.TotalSeconds; // TODO probably incorrect time 
+			(int)onlineTime.TotalSeconds; // TODO probably incorrect time
 	}
 
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.EX_FRIEND_DETAIL_INFO);
-		
+
 		writer.WriteInt32(_objectId);
 		if (_friend == null)
 		{
@@ -43,7 +43,7 @@ public readonly struct ExBlockDetailInfoPacket: IOutgoingPacket
 			writer.WriteInt32(charId);
 			writer.WriteInt16((short)CharInfoTable.getInstance().getLevelById(charId));
 			writer.WriteInt16((short)CharInfoTable.getInstance().getClassIdById(charId));
-			Clan clan = ClanTable.getInstance().getClan(CharInfoTable.getInstance().getClanIdById(charId));
+			Clan? clan = ClanTable.getInstance().getClan(CharInfoTable.getInstance().getClanIdById(charId));
 			if (clan != null)
 			{
 				writer.WriteInt32(clan.getId());
@@ -62,7 +62,7 @@ public readonly struct ExBlockDetailInfoPacket: IOutgoingPacket
 				writer.WriteInt32(0);
 				writer.WriteString("");
 			}
-			
+
 			DateTime createDate = CharInfoTable.getInstance().getCharacterCreationDate(charId) ?? DateTime.UtcNow;
 			writer.WriteByte((byte)createDate.Month);
 			writer.WriteByte((byte)createDate.Day);
@@ -71,6 +71,8 @@ public readonly struct ExBlockDetailInfoPacket: IOutgoingPacket
 		}
 		else
 		{
+            Clan? friendClan = _friend.getClan();
+
 			writer.WriteString(_friend.getName());
 			writer.WriteInt32((int)_friend.getOnlineStatus());
 			writer.WriteInt32(_friend.ObjectId);
@@ -78,11 +80,11 @@ public readonly struct ExBlockDetailInfoPacket: IOutgoingPacket
 			writer.WriteInt16((short)_friend.getClassId());
 			writer.WriteInt32(_friend.getClanId() ?? 0);
 			writer.WriteInt32(_friend.getClanCrestId() ?? 0);
-			writer.WriteString(_friend.getClan() != null ? _friend.getClan().getName() : "");
+			writer.WriteString(friendClan != null ? friendClan.getName() : "");
 			writer.WriteInt32(_friend.getAllyId() ?? 0);
 			writer.WriteInt32(_friend.getAllyCrestId() ?? 0);
-			writer.WriteString(_friend.getClan() != null ? _friend.getClan().getAllyName() : "");
-			
+			writer.WriteString(friendClan != null ? friendClan.getAllyName() : "");
+
 			DateTime createDate = _friend.getCreateDate();
 			writer.WriteByte((byte)createDate.Month);
 			writer.WriteByte((byte)createDate.Day);

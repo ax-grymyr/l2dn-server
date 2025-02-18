@@ -23,7 +23,7 @@ namespace L2Dn.GameServer;
 public class Shutdown
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Shutdown));
-	
+
 	private const int SIGTERM = 0;
 	private const int GM_SHUTDOWN = 1;
 	private const int GM_RESTART = 2;
@@ -35,13 +35,13 @@ public class Shutdown
 		"restarting",
 		"aborting"
 	};
-	
-	private static Shutdown _counterInstance;
+
+	private static Shutdown? _counterInstance;
 	private static bool _countdownFinished;
-	
+
 	private int _secondsShut;
 	private int _shutdownMode;
-	
+
 	/**
 	 * This function starts a shutdown count down from Telnet (Copied from Function startShutdown())
 	 * @param seconds seconds until shutdown
@@ -52,7 +52,7 @@ public class Shutdown
 		sysm.Params.addInt(seconds);
 		Broadcast.toAllOnlinePlayers(sysm);
 	}
-	
+
 	/**
 	 * Default constructor is only used internal to create the shutdown-hook instance
 	 */
@@ -61,7 +61,7 @@ public class Shutdown
 		_secondsShut = -1;
 		_shutdownMode = SIGTERM;
 	}
-	
+
 	/**
 	 * This creates a countdown instance of Shutdown.
 	 * @param seconds how many seconds until shutdown
@@ -77,7 +77,7 @@ public class Shutdown
 	{
 		System.Threading.Tasks.Task.Run(() => run());
 	}
-	
+
 	/**
 	 * This function is called, when a new thread starts if this thread is the thread of getInstance, then this is the shutdown hook and we save all data and disconnect all clients.<br>
 	 * After this thread ends, the server will completely exit if this is not the thread of getInstance, then this is a countdown thread.<br>
@@ -89,18 +89,18 @@ public class Shutdown
 		{
 			return;
 		}
-		
+
 		if (_countdownFinished)
 		{
 			return;
 		}
-		
+
 		// Send warnings and then call exit to start shutdown sequence.
 		countdown();
-		
+
 		// Last point where logging is operational.
 		LOGGER.Warn("GM shutdown countdown is over. " + MODE_TEXT[_shutdownMode] + " NOW!");
-		
+
 		switch (_shutdownMode)
 		{
 			case GM_SHUTDOWN:
@@ -124,7 +124,7 @@ public class Shutdown
 			}
 		}
 	}
-	
+
 	/**
 	 * This functions starts a shutdown countdown.
 	 * @param player GM who issued the shutdown command
@@ -134,7 +134,7 @@ public class Shutdown
 	public void startShutdown(Player player, int seconds, bool restart)
 	{
 		_shutdownMode = restart ? GM_RESTART : GM_SHUTDOWN;
-		
+
 		if (player != null)
 		{
 			LOGGER.Warn("GM: " + player.getName() + "(" + player.ObjectId + ") issued shutdown command. " + MODE_TEXT[_shutdownMode] + " in " + seconds + " seconds!");
@@ -143,7 +143,7 @@ public class Shutdown
 		{
 			LOGGER.Warn("Server scheduled restart issued shutdown command. " + (restart ? "Restart" : "Shutdown") + " in " + seconds + " seconds!");
 		}
-		
+
 		if (_shutdownMode > 0)
 		{
 			switch (seconds)
@@ -174,22 +174,22 @@ public class Shutdown
 				}
 			}
 		}
-		
+
 		if (_counterInstance != null)
 		{
 			_counterInstance.abort();
 		}
-		
+
 		if (Config.PRECAUTIONARY_RESTART_ENABLED)
 		{
 			PrecautionaryRestartManager.getInstance().restartEnabled();
 		}
-		
+
 		// the main instance should only run for shutdown hook, so we start a new instance
 		_counterInstance = new Shutdown(seconds, restart);
 		_counterInstance.start();
 	}
-	
+
 	/**
 	 * This function aborts a running countdown.
 	 * @param player GM who issued the abort command
@@ -201,21 +201,21 @@ public class Shutdown
 			LOGGER.Warn("GM: " + (player != null ? player.getName() + "(" + player.ObjectId + ") " : "") + "shutdown ABORT failed because countdown has finished.");
 			return;
 		}
-		
+
 		LOGGER.Warn("GM: " + (player != null ? player.getName() + "(" + player.ObjectId + ") " : "") + "issued shutdown ABORT. " + MODE_TEXT[_shutdownMode] + " has been stopped!");
 		if (_counterInstance != null)
 		{
 			_counterInstance.abort();
-			
+
 			if (Config.PRECAUTIONARY_RESTART_ENABLED)
 			{
 				PrecautionaryRestartManager.getInstance().restartAborted();
 			}
-			
+
 			Broadcast.toAllOnlinePlayers("Server aborts " + MODE_TEXT[_shutdownMode] + " and continues normal operation!", false);
 		}
 	}
-	
+
 	/**
 	 * Set the shutdown mode.
 	 * @param mode what mode shall be set
@@ -224,7 +224,7 @@ public class Shutdown
 	{
 		_shutdownMode = mode;
 	}
-	
+
 	/**
 	 * Set shutdown mode to ABORT.
 	 */
@@ -232,7 +232,7 @@ public class Shutdown
 	{
 		_shutdownMode = ABORT;
 	}
-	
+
 	/**
 	 * This counts the countdown and reports it to all players countdown is aborted if mode changes to ABORT.
 	 */
@@ -253,7 +253,7 @@ public class Shutdown
 					// }
 					break;
 				}
-				
+
 				switch (_secondsShut)
 				{
 					case 540:
@@ -277,24 +277,25 @@ public class Shutdown
 						break;
 					}
 				}
-				
+
 				// Prevent players from logging in.
 				if (_secondsShut <= 60)
 				{
 					AuthServerSession.setServerStatus(false);
 				}
-				
+
 				_secondsShut--;
-				
+
 				Thread.Sleep(1000);
 			}
 		}
 		catch (Exception e)
 		{
 			// this will never happen
+            LOGGER.Trace(e);
 		}
 	}
-	
+
 	/**
 	 * Actions performed when shutdown countdown completes.
 	 */
@@ -305,10 +306,10 @@ public class Shutdown
 			return;
 		}
 		_countdownFinished = true;
-		
+
 		TimeCounter tc = new TimeCounter();
 		TimeCounter tc1 = new TimeCounter();
-		
+
 		try
 		{
 			if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS && !Config.STORE_OFFLINE_TRADE_IN_REALTIME)
@@ -321,7 +322,7 @@ public class Shutdown
 		{
 			LOGGER.Error("Error saving offline shops: " + t);
 		}
-		
+
 		try
 		{
 			disconnectAllCharacters();
@@ -331,7 +332,7 @@ public class Shutdown
 		{
 			LOGGER.Error("Error disconnecting characters: " + t);
 		}
-		
+
 		// ensure all services are stopped
 		try
 		{
@@ -342,7 +343,7 @@ public class Shutdown
 		{
 			LOGGER.Error("Error stopping services: " + t);
 		}
-		
+
 		// stop all thread pools
 		try
 		{
@@ -353,7 +354,7 @@ public class Shutdown
 		{
 			LOGGER.Error("Error stopping thread pool: " + t);
 		}
-		
+
 		try
 		{
 			//AuthServerSession.Instance.interrupt();
@@ -363,11 +364,11 @@ public class Shutdown
 		{
 			LOGGER.Error("Error stopping LoginServerThread: " + t);
 		}
-		
+
 		// last byebye, save all data and quit this server
 		saveData();
 		tc.restartCounter();
-		
+
 		// commit data, last chance
 		try
 		{
@@ -378,16 +379,16 @@ public class Shutdown
 		{
 			LOGGER.Error("Error stopping database factory: " + t);
 		}
-		
+
 		// Backup database.
 		if (Config.BACKUP_DATABASE)
 		{
 			//DatabaseBackup.performBackup(); // TODO: backup?
 		}
-		
+
 		LOGGER.Info("The server has been successfully shut down in " + (tc1.getEstimatedTime() / 1000) + "seconds.");
 	}
-	
+
 	/**
 	 * This sends a last byebye, disconnects all players and saves data.
 	 */
@@ -411,9 +412,9 @@ public class Shutdown
 				break;
 			}
 		}
-		
+
 		TimeCounter tc = new TimeCounter();
-		
+
 		// Save all raidboss and GrandBoss status ^_^
 		DbSpawnManager.getInstance().cleanUp();
 		LOGGER.Info("RaidBossSpawnManager: All raidboss info saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
@@ -423,45 +424,45 @@ public class Shutdown
 		LOGGER.Info("Item Auction Manager: All tasks stopped(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		Olympiad.getInstance().saveOlympiadStatus();
 		LOGGER.Info("Olympiad System: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
-		
+
 		Hero.getInstance().shutdown();
 		LOGGER.Info("Hero System: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		ClanTable.getInstance().shutdown();
 		LOGGER.Info("Clan System: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
-		
+
 		RevengeHistoryManager.getInstance().storeMe();
 		LOGGER.Info("Revenge History Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
-		
+
 		// Save Cursed Weapons data before closing.
 		CursedWeaponsManager.getInstance().saveData();
 		LOGGER.Info("Cursed Weapons Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
-		
+
 		// Save all manor data
 		if (!Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
 			CastleManorManager.getInstance().storeMe();
 			LOGGER.Info("Castle Manor Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		}
-		
+
 		// Save all global (non-player specific) Quest data that needs to persist after reboot
 		QuestManager.getInstance().save();
 		LOGGER.Info("Quest Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
-		
+
 		// Save all global variables data
 		GlobalVariablesManager.getInstance().storeMe();
 		LOGGER.Info("Global Variables Manager: Variables saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
-		
+
 		// Schemes save.
 		SchemeBufferTable.getInstance().saveSchemes();
 		LOGGER.Info("SchemeBufferTable data has been saved.");
-		
+
 		// Save World Exchange.
 		if (Config.ENABLE_WORLD_EXCHANGE)
 		{
 			WorldExchangeManager.getInstance().storeMe();
 			LOGGER.Info("World Exchange Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		}
-		
+
 		// Save items on ground before closing
 		if (Config.SAVE_DROPPED_ITEM)
 		{
@@ -470,24 +471,25 @@ public class Shutdown
 			ItemsOnGroundManager.getInstance().cleanUp();
 			LOGGER.Info("Items On Ground Manager: Cleaned up(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		}
-		
+
 		// Save bot reports to database
 		if (Config.BOTREPORT_ENABLE)
 		{
 			BotReportTable.getInstance().saveReportedCharData();
 			LOGGER.Info("Bot Report Table: Successfully saved reports to database!");
 		}
-		
+
 		try
 		{
 			Thread.Sleep(5000);
 		}
 		catch (Exception e)
 		{
-			// this will never happen
+            // this will never happen
+            LOGGER.Trace(e);
 		}
 	}
-	
+
 	/**
 	 * This disconnects all clients from the server.
 	 */
@@ -499,7 +501,7 @@ public class Shutdown
 			Disconnection.of(player).defaultSequence(ref packet);
 		}
 	}
-	
+
 	/**
 	 * A simple class used to track down the estimated time of method executions.<br>
 	 * Once this class is created, it saves the start time, and when you want to get the estimated time, use the getEstimatedTime() method.
@@ -507,30 +509,30 @@ public class Shutdown
 	private class TimeCounter
 	{
 		private DateTime _startTime;
-		
+
 		public TimeCounter()
 		{
 			restartCounter();
 		}
-		
+
 		public void restartCounter()
 		{
 			_startTime = DateTime.UtcNow;
 		}
-		
+
 		public TimeSpan getEstimatedTimeAndRestartCounter()
 		{
 			TimeSpan toReturn = DateTime.UtcNow - _startTime;
 			restartCounter();
 			return toReturn;
 		}
-		
+
 		public TimeSpan getEstimatedTime()
 		{
 			return DateTime.UtcNow - _startTime;
 		}
 	}
-	
+
 	/**
 	 * Get the shutdown-hook instance the shutdown-hook instance is created by the first call of this function, but it has to be registered externally.
 	 * @return instance of Shutdown, to be used as shutdown hook
@@ -539,7 +541,7 @@ public class Shutdown
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly Shutdown INSTANCE = new Shutdown();

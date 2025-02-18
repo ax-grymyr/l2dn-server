@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 public struct RequestSetCropPacket: IIncomingPacket<GameSession>
 {
     private const int BATCH_LENGTH = 21; // length of the one item
-	
+
     private int _manorId;
     private List<CropProcure>? _items;
 
@@ -23,7 +23,7 @@ public struct RequestSetCropPacket: IIncomingPacket<GameSession>
         {
             return;
         }
-		
+
         _items = new(count);
         for (int i = 0; i < count; i++)
         {
@@ -36,7 +36,7 @@ public struct RequestSetCropPacket: IIncomingPacket<GameSession>
                 _items = null;
                 return;
             }
-			
+
             if (sales > 0)
             {
                 _items.Add(new CropProcure(itemId, sales, type, sales, price));
@@ -48,20 +48,21 @@ public struct RequestSetCropPacket: IIncomingPacket<GameSession>
     {
         if (_items is null || _items.Count == 0)
             return ValueTask.CompletedTask;
-		
+
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         CastleManorManager manor = CastleManorManager.getInstance();
         if (!manor.isModifiablePeriod())
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         // Check player privileges
-        if (player.getClan() == null || player.getClan().getCastleId() != _manorId ||
+        Clan? clan = player.getClan();
+        if (clan == null || clan.getCastleId() != _manorId ||
             !player.hasClanPrivilege(ClanPrivilege.CS_MANOR_ADMIN) || !player.getLastFolkNPC().canInteract(player))
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -79,7 +80,7 @@ public struct RequestSetCropPacket: IIncomingPacket<GameSession>
                 list.Add(cp);
             }
         }
-		
+
         // Save crop list
         manor.setNextCropProcure(list, _manorId);
 

@@ -16,17 +16,20 @@ public struct NewCharacterPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        List<PlayerTemplate> templates = new List<PlayerTemplate>();
-        templates.Add(PlayerTemplateData.getInstance().getTemplate(CharacterClass.FIGHTER)); // Human Figther
-        templates.Add(PlayerTemplateData.getInstance().getTemplate(CharacterClass.MAGE)); // Human Mystic
-        templates.Add(PlayerTemplateData.getInstance().getTemplate(CharacterClass.ELVEN_FIGHTER)); // Elven Fighter
-        templates.Add(PlayerTemplateData.getInstance().getTemplate(CharacterClass.ELVEN_MAGE)); // Elven Mystic
-        templates.Add(PlayerTemplateData.getInstance().getTemplate(CharacterClass.DARK_FIGHTER)); // Dark Fighter
-        templates.Add(PlayerTemplateData.getInstance().getTemplate(CharacterClass.DARK_MAGE)); // Dark Mystic
-        templates.Add(PlayerTemplateData.getInstance().getTemplate(CharacterClass.ORC_FIGHTER)); // Orc Fighter
-        templates.Add(PlayerTemplateData.getInstance().getTemplate(CharacterClass.ORC_MAGE)); // Orc Mystic
-        templates.Add(PlayerTemplateData.getInstance().getTemplate(CharacterClass.DWARVEN_FIGHTER)); // Dwarf Fighter
-        templates.Add(PlayerTemplateData.getInstance().getTemplate(CharacterClass.KAMAEL_SOLDIER)); // Kamael Soldier
+        // TODO: cache array of templates
+        List<PlayerTemplate> templates =
+        [
+            PlayerTemplateData.getInstance().getTemplate(CharacterClass.FIGHTER), // Human Figther
+            PlayerTemplateData.getInstance().getTemplate(CharacterClass.MAGE), // Human Mystic
+            PlayerTemplateData.getInstance().getTemplate(CharacterClass.ELVEN_FIGHTER), // Elven Fighter
+            PlayerTemplateData.getInstance().getTemplate(CharacterClass.ELVEN_MAGE), // Elven Mystic
+            PlayerTemplateData.getInstance().getTemplate(CharacterClass.DARK_FIGHTER), // Dark Fighter
+            PlayerTemplateData.getInstance().getTemplate(CharacterClass.DARK_MAGE), // Dark Mystic
+            PlayerTemplateData.getInstance().getTemplate(CharacterClass.ORC_FIGHTER), // Orc Fighter
+            PlayerTemplateData.getInstance().getTemplate(CharacterClass.ORC_MAGE), // Orc Mystic
+            PlayerTemplateData.getInstance().getTemplate(CharacterClass.DWARVEN_FIGHTER), // Dwarf Fighter
+            PlayerTemplateData.getInstance().getTemplate(CharacterClass.KAMAEL_SOLDIER), // Kamael Soldier
+        ];
 
         NewCharacterSuccessPacket ct = new NewCharacterSuccessPacket(templates);
         connection.Send(ref ct);

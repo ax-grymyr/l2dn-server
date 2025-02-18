@@ -32,33 +32,33 @@ public struct RequestRefinePacket: IIncomingPacket<GameSession>
 		Item targetItem = player.getInventory().getItemByObjectId(_targetItemObjId);
 		if (targetItem == null)
 			return ValueTask.CompletedTask;
-		
+
 		Item mineralItem = player.getInventory().getItemByObjectId(_mineralItemObjId);
 		if (mineralItem == null)
 			return ValueTask.CompletedTask;
-		
-		VariationFee fee = VariationData.getInstance().getFee(targetItem.getId(), mineralItem.getId());
+
+		VariationFee? fee = VariationData.getInstance().getFee(targetItem.getId(), mineralItem.getId());
 		if (fee == null)
 			return ValueTask.CompletedTask;
-		
-		Item feeItem = player.getInventory().getItemByItemId(fee.getItemId());
+
+		Item? feeItem = player.getInventory().getItemByItemId(fee.getItemId());
 		if ((feeItem == null) && (fee.getItemId() != 0))
 			return ValueTask.CompletedTask;
-		
+
 		if (!RefinePacketHelper.isValid(player, targetItem, mineralItem, feeItem, fee))
 		{
 			player.sendPacket(ExVariationResultPacket.FAIL);
 			player.sendPacket(SystemMessageId.AUGMENTATION_FAILED_DUE_TO_INAPPROPRIATE_CONDITIONS);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (fee.getAdenaFee() <= 0)
 		{
 			player.sendPacket(ExVariationResultPacket.FAIL);
 			player.sendPacket(SystemMessageId.AUGMENTATION_FAILED_DUE_TO_INAPPROPRIATE_CONDITIONS);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		long adenaFee = fee.getAdenaFee();
 		if ((adenaFee > 0) && (player.getAdena() < adenaFee))
 		{
@@ -66,23 +66,23 @@ public struct RequestRefinePacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.AUGMENTATION_FAILED_DUE_TO_INAPPROPRIATE_CONDITIONS);
 			return ValueTask.CompletedTask;
 		}
-		
-		Variation variation = VariationData.getInstance().getVariation(mineralItem.getId(), targetItem);
+
+		Variation? variation = VariationData.getInstance().getVariation(mineralItem.getId(), targetItem);
 		if (variation == null)
 		{
 			player.sendPacket(ExVariationResultPacket.FAIL);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		VariationInstance augment = VariationData.getInstance().generateRandomVariation(variation, targetItem);
 		if (augment == null)
 		{
 			player.sendPacket(ExVariationResultPacket.FAIL);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Support for single slot augments.
-		VariationInstance oldAugment = targetItem.getAugmentation();
+		VariationInstance? oldAugment = targetItem.getAugmentation();
 		int option1 = augment.getOption1Id();
 		int option2 = augment.getOption2Id();
 		if (oldAugment != null)
@@ -105,24 +105,24 @@ public struct RequestRefinePacket: IIncomingPacket<GameSession>
 		{
 			augment = new VariationInstance(augment.getMineralId(), option1, option2);
 		}
-		
+
 		// Essence does not support creating a new augment without losing old one.
 		targetItem.setAugmentation(augment, true);
 
 		InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(targetItem, ItemChangeType.MODIFIED));
 		player.sendInventoryUpdate(iu);
-		
+
 		player.sendPacket(new ExVariationResultPacket(augment.getOption1Id(), augment.getOption2Id(), true));
-		
+
 		// Consume the life stone.
 		player.destroyItem("RequestRefine", mineralItem, 1, null, false);
-		
+
 		// Consume the gemstones.
 		if (feeItem != null)
 		{
 			player.destroyItem("RequestRefine", feeItem, fee.getItemCount(), null, false);
 		}
-		
+
 		// Consume Adena.
 		if (adenaFee > 0)
 		{

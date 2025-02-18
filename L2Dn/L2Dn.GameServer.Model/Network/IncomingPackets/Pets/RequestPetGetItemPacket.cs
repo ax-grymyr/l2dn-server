@@ -37,35 +37,35 @@ public struct RequestPetGetItemPacket: IIncomingPacket<GameSession>
             connection.Send(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
-        Castle castle = CastleManager.getInstance().getCastle(item);
+
+        Castle? castle = CastleManager.getInstance().getCastle(item);
         if ((castle != null) && (SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), item.getId()) != null))
         {
             connection.Send(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         if (FortSiegeManager.getInstance().isCombat(item.getId()))
         {
             connection.Send(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         Pet pet = player.getPet();
         if (pet.isDead() || pet.isControlBlocked())
         {
             connection.Send(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         if (pet.isUncontrollable())
         {
             connection.Send(SystemMessageId.WHEN_YOUR_PET_S_SATIETY_REACHES_0_YOU_CANNOT_CONTROL_IT);
             return ValueTask.CompletedTask;
         }
-		
+
         pet.getAI().setIntention(CtrlIntention.AI_INTENTION_PICK_UP, item);
-        
+
         return ValueTask.CompletedTask;
     }
 }

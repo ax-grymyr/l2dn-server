@@ -7,21 +7,11 @@ namespace L2Dn.GameServer.Model.Conditions;
 /**
  * The Class ConditionPlayerCharges.
  */
-public class ConditionPlayerCharges: Condition
+public sealed class ConditionPlayerCharges(int charges): Condition
 {
-	private readonly int _charges;
-	
-	/**
-	 * Instantiates a new condition player charges.
-	 * @param charges the charges
-	 */
-	public ConditionPlayerCharges(int charges)
-	{
-		_charges = charges;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		return (effector.getActingPlayer() != null) && (effector.getActingPlayer().getCharges() >= _charges);
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? player = effector.getActingPlayer();
+        return player is not null && player.getCharges() >= charges;
+    }
 }

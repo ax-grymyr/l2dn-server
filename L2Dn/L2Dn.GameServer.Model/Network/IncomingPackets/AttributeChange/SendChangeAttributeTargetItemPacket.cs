@@ -24,15 +24,15 @@ public struct SendChangeAttributeTargetItemPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Item item = player.getInventory().getItemByObjectId(_itemObjId);
+        Item? item = player.getInventory().getItemByObjectId(_itemObjId);
         if (item == null || !item.isWeapon())
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         player.sendPacket(new ExChangeAttributeInfoPacket(_crystalItemId, item));
-        
+
         return ValueTask.CompletedTask;
     }
 }

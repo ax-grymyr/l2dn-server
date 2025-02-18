@@ -41,27 +41,27 @@ public struct RequestShortCutRegisterPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        if ((_page > 25) || (_page < 0))
+
+        if (_page > 25 || _page < 0)
             return ValueTask.CompletedTask;
-		
+
         // Auto play checks.
         if (_page == 22)
         {
             if (_type != ShortcutType.ITEM)
                 return ValueTask.CompletedTask;
-			
-            Item item = player.getInventory().getItemByObjectId(_id);
-            if ((item != null) && item.isPotion())
+
+            Item? item = player.getInventory().getItemByObjectId(_id);
+            if (item != null && item.isPotion())
                 return ValueTask.CompletedTask;
         }
-        else if ((_page == 23) || (_page == 24))
+        else if (_page == 23 || _page == 24)
         {
-            Item item = player.getInventory().getItemByObjectId(_id);
-            if (((item != null) && !item.isPotion()) || (_type == ShortcutType.ACTION))
+            Item? item = player.getInventory().getItemByObjectId(_id);
+            if ((item != null && !item.isPotion()) || _type == ShortcutType.ACTION)
                 return ValueTask.CompletedTask;
         }
-		
+
         // Delete the shortcut.
         Shortcut oldShortcut = player.getShortCut(_slot, _page);
         player.deleteShortCut(_slot, _page);
@@ -74,7 +74,7 @@ public struct RequestShortCutRegisterPacket: IIncomingPacket<GameSession>
                 player.removeAutoShortcut(_slot, _page);
                 foreach (Shortcut shortcut in player.getAllShortCuts())
                 {
-                    if ((oldShortcut.getId() == shortcut.getId()) && (oldShortcut.getType() == shortcut.getType()))
+                    if (oldShortcut.getId() == shortcut.getId() && oldShortcut.getType() == shortcut.getType())
                     {
                         player.addAutoShortcut(shortcut.getSlot(), shortcut.getPage());
                         removed = false;
@@ -112,37 +112,37 @@ public struct RequestShortCutRegisterPacket: IIncomingPacket<GameSession>
                 }
             }
         }
-		
+
         player.restoreAutoShortcutVisual();
-		
+
         Shortcut sc = new Shortcut(_slot, _page, _type, _id, _level, _subLevel, _characterType);
         sc.setAutoUse(_active);
         player.registerShortCut(sc);
         player.sendPacket(new ShortCutRegisterPacket(sc, player));
         player.sendPacket(new ExActivateAutoShortcutPacket(sc, _active));
         player.sendSkillList();
-		
+
         // When id is not auto used, deactivate auto shortcuts.
         if (!player.getAutoUseSettings().isAutoSkill(_id) && !player.getAutoUseSettings().getAutoSupplyItems().Contains(_id))
         {
             List<int> positions = player.getVariables().getIntegerList(PlayerVariables.AUTO_USE_SHORTCUTS);
-            int position = _slot + (_page * ShortCuts.MAX_SHORTCUTS_PER_BAR);
+            int position = _slot + _page * ShortCuts.MAX_SHORTCUTS_PER_BAR;
             if (!positions.Contains(position))
                 return ValueTask.CompletedTask;
-			
+
             positions.Remove(position);
             player.getVariables().setIntegerList(PlayerVariables.AUTO_USE_SHORTCUTS, positions);
             return ValueTask.CompletedTask;
         }
-		
+
         // Activate if any other similar shortcut is activated.
         foreach (Shortcut shortcut in player.getAllShortCuts())
         {
-            if (!shortcut.isAutoUse() || (shortcut.getId() != _id) || (shortcut.getType() != _type))
+            if (!shortcut.isAutoUse() || shortcut.getId() != _id || shortcut.getType() != _type)
             {
                 continue;
             }
-			
+
             player.addAutoShortcut(_slot, _page);
             break;
         }

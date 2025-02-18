@@ -16,7 +16,7 @@ public readonly struct ExAcquireSkillInfoPacket: IOutgoingPacket
     private readonly int _minLevel;
     private readonly List<List<ItemHolder>> _itemReq;
     private readonly List<Skill> _skillRem;
-	
+
     /**
      * Special constructor for Alternate Skill Learning system.<br>
      * Sets a custom amount of SP.
@@ -35,18 +35,18 @@ public readonly struct ExAcquireSkillInfoPacket: IOutgoingPacket
         _skillRem = new List<Skill>();
         foreach (int id in skillLearn.getRemoveSkills())
         {
-            Skill removeSkill = player.getKnownSkill(id);
+            Skill? removeSkill = player.getKnownSkill(id);
             if (removeSkill != null)
             {
                 _skillRem.Add(removeSkill);
             }
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_ACQUIRE_SKILL_INFO);
-        
+
         writer.WriteInt32(_player.getReplacementSkill(_id));
         writer.WriteInt32(_level);
         writer.WriteInt64(_spCost);

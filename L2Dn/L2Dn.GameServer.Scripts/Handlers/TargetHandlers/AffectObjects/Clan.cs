@@ -15,11 +15,11 @@ public class Clan: IAffectObjectHandler
 		{
 			return true;
 		}
-		
-		Player player = creature.getActingPlayer();
+
+		Player? player = creature.getActingPlayer();
 		if (player != null)
 		{
-			Model.Clans.Clan clan = player.getClan();
+			Model.Clans.Clan? clan = player.getClan();
 			if (clan != null)
 			{
 				return clan == target.getClan();
@@ -29,10 +29,10 @@ public class Clan: IAffectObjectHandler
 		{
 			return ((Npc) creature).isInMyClan(((Npc) target));
 		}
-		
+
 		return false;
 	}
-	
+
 	public AffectObject getAffectObjectType()
 	{
 		return AffectObject.CLAN;

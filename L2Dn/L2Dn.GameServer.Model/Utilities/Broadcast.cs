@@ -14,9 +14,9 @@ namespace L2Dn.GameServer.Utilities;
 public static class Broadcast
 {
     // TODO: refactor this later
-    
+
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Broadcast));
-	
+
 	/**
 	 * Send a packet to all Player in the _KnownPlayers of the Creature that have the Character targeted.<br>
 	 * <br>
@@ -39,7 +39,7 @@ public static class Broadcast
 			}
 		});
 	}
-	
+
 	/**
 	 * Send a packet to all Player in the _KnownPlayers of the Creature.<br>
 	 * <br>
@@ -63,7 +63,7 @@ public static class Broadcast
 				{
 					long relation = ((Player) creature).getRelation(player);
 					bool isAutoAttackable = creature.isAutoAttackable(player);
-					RelationCache oldrelation = creature.getKnownRelations().get(player.ObjectId);
+					RelationCache? oldrelation = creature.getKnownRelations().get(player.ObjectId);
 					if ((oldrelation == null) || (oldrelation.getRelation() != relation) || (oldrelation.isAutoAttackable() != isAutoAttackable))
 					{
 						RelationChangedPacket rc = new RelationChangedPacket();
@@ -91,7 +91,7 @@ public static class Broadcast
 			}
 		});
 	}
-	
+
 	/**
 	 * Send a packet to all Player in the _KnownPlayers (in the specified radius) of the Creature.<br>
 	 * <br>
@@ -112,10 +112,10 @@ public static class Broadcast
 		{
 			radius = 1500;
 		}
-		
+
 		World.getInstance().forEachVisibleObjectInRange<Player>(creature, radius, player => player.sendPacket(packet));
 	}
-	
+
 	/**
 	 * Send a packet to all Player in the _KnownPlayers of the Creature and to the specified character.<br>
 	 * <br>
@@ -133,10 +133,10 @@ public static class Broadcast
 		{
 			creature.sendPacket(packet);
 		}
-		
+
 		toKnownPlayers(creature, packet);
 	}
-	
+
 	// To improve performance we are comparing values of radius^2 instead of calculating sqrt all the time
 	public static void toSelfAndKnownPlayersInRadius<TPacket>(Creature creature, TPacket packet, int radiusValue)
 		where TPacket: struct, IOutgoingPacket
@@ -146,15 +146,15 @@ public static class Broadcast
 		{
 			radius = 600;
 		}
-		
+
 		if (creature.isPlayer())
 		{
 			creature.sendPacket(packet);
 		}
-		
+
 		World.getInstance().forEachVisibleObjectInRange<Player>(creature, radius, player => player.sendPacket(packet));
 	}
-	
+
 	/**
 	 * Send a packet to all Player present in the world.<br>
 	 * <br>
@@ -175,22 +175,22 @@ public static class Broadcast
 			}
 		}
 	}
-	
+
 	public static void toAllOnlinePlayers(string text)
 	{
 		toAllOnlinePlayers(text, false);
 	}
-	
+
 	public static void toAllOnlinePlayers(string text, bool isCritical)
 	{
 		toAllOnlinePlayers(new CreatureSayPacket(null, isCritical ? ChatType.CRITICAL_ANNOUNCE : ChatType.ANNOUNCEMENT, "", text));
 	}
-	
+
 	public static void toAllOnlinePlayersOnScreen(string text)
 	{
 		toAllOnlinePlayers(new ExShowScreenMessagePacket(text, 10000));
 	}
-	
+
 	/**
 	 * Send a packet to all players in a specific zone type.
 	 * @param <T> ZoneType.

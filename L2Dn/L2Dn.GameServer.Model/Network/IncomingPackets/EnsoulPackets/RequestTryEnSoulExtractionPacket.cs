@@ -33,11 +33,11 @@ public struct RequestTryEnSoulExtractionPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Item item = player.getInventory().getItemByObjectId(_itemObjectId);
+        Item? item = player.getInventory().getItemByObjectId(_itemObjectId);
         if (item == null)
             return ValueTask.CompletedTask;
-		
-        EnsoulOption option = null;
+
+        EnsoulOption? option = null;
         if (_type == 1)
         {
             option = item.getSpecialAbility(_position);
@@ -51,20 +51,20 @@ public struct RequestTryEnSoulExtractionPacket: IIncomingPacket<GameSession>
                 }
             }
         }
-        
+
         if (_type == 2)
         {
             option = item.getAdditionalSpecialAbility(_position);
         }
-        
+
         if (option == null)
             return ValueTask.CompletedTask;
-        
+
         int runeId = EnsoulData.getInstance().getStone(_type, option.getId());
         ICollection<ItemHolder> removalFee = EnsoulData.getInstance().getRemovalFee(item.getTemplate().getCrystalType()); // it was runeId
         if (removalFee.Count == 0)
             return ValueTask.CompletedTask;
-		
+
         // Check if player has required items.
         foreach (ItemHolder itemHolder in removalFee)
         {
@@ -75,32 +75,32 @@ public struct RequestTryEnSoulExtractionPacket: IIncomingPacket<GameSession>
                 return ValueTask.CompletedTask;
             }
         }
-		
+
         // Take required items.
         foreach (ItemHolder itemHolder in removalFee)
         {
             player.destroyItemByItemId("Rune Extract", itemHolder.getId(), itemHolder.getCount(), player, true);
         }
-		
+
         // Remove equipped rune.
         item.removeSpecialAbility(_position, _type);
 
         List<ItemInfo> itemsToUpdate = new List<ItemInfo>();
         itemsToUpdate.Add(new ItemInfo(item, ItemChangeType.MODIFIED));
-		
+
         // Add rune in player inventory.
         if (runeId > 0)
         {
-            Item addItem = player.addItem("Rune Extract", runeId, 1, player, true); 
+            Item addItem = player.addItem("Rune Extract", runeId, 1, player, true);
             itemsToUpdate.Add(new ItemInfo(addItem));
         }
-        
+
         InventoryUpdatePacket iu = new InventoryUpdatePacket(itemsToUpdate);
         player.sendInventoryUpdate(iu);
         player.sendItemList();
-		
+
         player.sendPacket(new ExEnSoulExtractionResultPacket(true, item));
-        
+
         return ValueTask.CompletedTask;
     }
 }

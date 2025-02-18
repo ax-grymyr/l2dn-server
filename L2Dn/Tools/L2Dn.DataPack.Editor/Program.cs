@@ -6,9 +6,17 @@ using Radzen;
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContextFactory<DataPackDbContext>(optionsBuilder
-    => DesignTimeDataPackDbContextFactory.ConfigureOptions(optionsBuilder, 
-        Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "datapack.sqlite")));
+builder.Services.AddDbContextFactory<DataPackDbContext>(optionsBuilder =>
+{
+    const string databaseFileName = "datapack.sqlite";
+    string assemblyLocation = Assembly.GetExecutingAssembly().Location;
+    string? assemblyDirectory = Path.GetDirectoryName(assemblyLocation);
+    string databasePath = string.IsNullOrEmpty(assemblyDirectory)
+        ? databaseFileName
+        : Path.Combine(assemblyDirectory, databaseFileName);
+
+    DesignTimeDataPackDbContextFactory.ConfigureOptions(optionsBuilder, databasePath);
+});
 
 builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 builder.Services.AddRadzenComponents();

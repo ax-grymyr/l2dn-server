@@ -18,8 +18,8 @@ public class Self: ITargetTypeHandler
 	{
 		return TargetType.SELF;
 	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
+
+	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
 		if (creature.isInsideZone(ZoneId.PEACE) && skill.isBad())
 		{
@@ -27,6 +27,7 @@ public class Self: ITargetTypeHandler
 			{
 				creature.sendPacket(SystemMessageId.YOU_CANNOT_USE_SKILLS_THAT_MAY_HARM_OTHER_PLAYERS_IN_HERE);
 			}
+
 			return null;
 		}
 		return creature;

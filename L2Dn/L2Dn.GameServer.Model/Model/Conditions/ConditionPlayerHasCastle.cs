@@ -9,41 +9,26 @@ namespace L2Dn.GameServer.Model.Conditions;
  * The Class ConditionPlayerHasCastle.
  * @author MrPoke
  */
-public class ConditionPlayerHasCastle: Condition
+public sealed class ConditionPlayerHasCastle(int castle): Condition
 {
-	private readonly int _castle;
-	
-	/**
-	 * Instantiates a new condition player has castle.
-	 * @param castle the castle
-	 */
-	public ConditionPlayerHasCastle(int castle)
-	{
-		_castle = castle;
-	}
-	
-	/**
-	 * Test impl.
-	 * @return true, if successful
-	 */
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		if (effector.getActingPlayer() == null)
-		{
-			return false;
-		}
-		
-		Clan clan = effector.getActingPlayer().getClan();
-		if (clan == null)
-		{
-			return _castle == 0;
-		}
-		
-		// Any castle
-		if (_castle == -1)
-		{
-			return clan.getCastleId() > 0;
-		}
-		return clan.getCastleId() == _castle;
-	}
+    /**
+     * Test impl.
+     * @return true, if successful
+     */
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? player = effector.getActingPlayer();
+        if (player is null)
+            return false;
+
+        Clan? clan = player.getClan();
+        if (clan is null)
+            return castle == 0;
+
+        // Any castle
+        if (castle == -1)
+            return clan.getCastleId() > 0;
+
+        return clan.getCastleId() == castle;
+    }
 }

@@ -1046,7 +1046,7 @@ public class Skill: IIdentifiable
 		return _effectPoint < 0;
 	}
 
-	public bool checkCondition(Creature creature, WorldObject @object, bool sendMessage)
+	public bool checkCondition(Creature creature, WorldObject? @object, bool sendMessage)
 	{
 		if (creature.isFakePlayer() || (creature.canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS) &&
 		                                !Config.GM_SKILL_RESTRICTION))
@@ -1102,15 +1102,15 @@ public class Skill: IIdentifiable
 	 * @param sendMessage send SystemMessageId packet if target is incorrect.
 	 * @return the selected {@code WorldObject} this skill can be used on, or {@code null} if there is no such.
 	 */
-	public WorldObject getTarget(Creature creature, WorldObject seletedTarget, bool forceUse, bool dontMove,
+	public WorldObject getTarget(Creature creature, WorldObject? selectedTarget, bool forceUse, bool dontMove,
 		bool sendMessage)
 	{
-		ITargetTypeHandler handler = TargetHandler.getInstance().getHandler(getTargetType());
+		ITargetTypeHandler? handler = TargetHandler.getInstance().getHandler(getTargetType());
 		if (handler != null)
 		{
 			try
 			{
-				return handler.getTarget(creature, seletedTarget, this, forceUse, dontMove, sendMessage);
+				return handler.getTarget(creature, selectedTarget, this, forceUse, dontMove, sendMessage);
 			}
 			catch (Exception e)
 			{
@@ -1127,14 +1127,14 @@ public class Skill: IIdentifiable
 	 * @param target the initial target activeChar is focusing upon.
 	 * @return list containing objects gathered in a specific geometric way that are valid to be affected by this skill.
 	 */
-	public List<WorldObject> getTargetsAffected(Creature creature, WorldObject target)
+	public List<WorldObject>? getTargetsAffected(Creature creature, WorldObject? target)
 	{
 		if (target == null)
 		{
 			return null;
 		}
 
-		IAffectScopeHandler handler = AffectScopeHandler.getInstance().getHandler(getAffectScope());
+		IAffectScopeHandler? handler = AffectScopeHandler.getInstance().getHandler(getAffectScope());
 		if (handler != null)
 		{
 			try
@@ -1158,7 +1158,7 @@ public class Skill: IIdentifiable
 	 * @param target the initial target activeChar is focusing upon.
 	 * @param action for each affected target.
 	 */
-	public void forEachTargetAffected<T>(Creature creature, WorldObject target, Action<T> action)
+	public void forEachTargetAffected<T>(Creature creature, WorldObject? target, Action<T> action)
 		where T: WorldObject
 	{
 		if (target == null)
@@ -1166,7 +1166,7 @@ public class Skill: IIdentifiable
 			return;
 		}
 
-		IAffectScopeHandler handler = AffectScopeHandler.getInstance().getHandler(getAffectScope());
+		IAffectScopeHandler? handler = AffectScopeHandler.getInstance().getHandler(getAffectScope());
 		if (handler != null)
 		{
 			try
@@ -1199,7 +1199,7 @@ public class Skill: IIdentifiable
 	 * @param effectScope the effect scope
 	 * @return the list of effects for the give scope
 	 */
-	public List<AbstractEffect> getEffects(EffectScope effectScope)
+	public List<AbstractEffect>? getEffects(EffectScope effectScope)
 	{
 		return _effectLists.get(effectScope);
 	}
@@ -1338,7 +1338,7 @@ public class Skill: IIdentifiable
 			if (addContinuousEffects)
 			{
 				// Aura skills reset the abnormal time.
-				BuffInfo existingInfo =
+				BuffInfo? existingInfo =
 					_operateType.isAura() ? effected.getEffectList().getBuffInfoBySkillId(_id) : null;
 				if (existingInfo != null)
 				{
@@ -1537,9 +1537,9 @@ public class Skill: IIdentifiable
 	 * @param target the target
 	 * @return {@code false} if at least one condition returns false, {@code true} otherwise
 	 */
-	public bool checkConditions(SkillConditionScope skillConditionScope, Creature caster, WorldObject target)
+	public bool checkConditions(SkillConditionScope skillConditionScope, Creature caster, WorldObject? target)
 	{
-		List<ISkillCondition> conditions = _conditionLists.get(skillConditionScope);
+		List<ISkillCondition>? conditions = _conditionLists.get(skillConditionScope);
 		if (conditions == null)
 		{
 			return true;
@@ -1737,7 +1737,7 @@ public class Skill: IIdentifiable
 	 * @param creature
 	 * @return alternative skill that has been attached due to the effect of toggle skills on the player (e.g Fire Stance, Water Stance).
 	 */
-	public Skill getAttachedSkill(Creature creature)
+	public Skill? getAttachedSkill(Creature creature)
 	{
 		// If character is double casting, return double cast skill.
 		if ((_doubleCastSkill > 0) && creature.isAffected(EffectFlag.DOUBLE_CAST))
@@ -1767,7 +1767,7 @@ public class Skill: IIdentifiable
 			return null;
 		}
 
-		AttachSkillHolder attachedSkill = null;
+		AttachSkillHolder? attachedSkill = null;
 		foreach (AttachSkillHolder ash in _attachSkills)
 		{
 			if (ash.getRequiredSkillId() == toggleSkillId)

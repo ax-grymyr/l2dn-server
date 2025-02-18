@@ -28,34 +28,34 @@ public struct RequestPledgeWaitingUserAcceptPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-		Clan clan = player.getClan();
+		Clan? clan = player.getClan();
 		if (clan == null)
 			return ValueTask.CompletedTask;
-		
+
 		int clanId = clan.getId();
 		if (_acceptRequest)
 		{
-			Player target = World.getInstance().getPlayer(_playerId);
+			Player? target = World.getInstance().getPlayer(_playerId);
 			if (target != null)
 			{
 				DateTime currentTime = DateTime.UtcNow;
 				if ((target.getClan() == null) && (target.getClanJoinExpiryTime() < currentTime))
 				{
 					target.sendPacket(new JoinPledgePacket(clan.getId()));
-					
+
 					// player.setPowerGrade(9); // academy
 					target.setPowerGrade(5); // New member starts at 5, not confirmed.
 					clan.addClanMember(target);
 					target.setClanPrivileges(target.getClan().getRankPrivs(target.getPowerGrade()));
 					target.sendPacket(SystemMessageId.ENTERED_THE_CLAN);
-					
+
 					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_HAS_JOINED_THE_CLAN);
 					sm.Params.addString(target.getName());
 					clan.broadcastToOnlineMembers(sm);
-					
+
 					if (clan.getCastleId() > 0)
 					{
-						Castle castle = CastleManager.getInstance().getCastleByOwner(clan);
+						Castle? castle = CastleManager.getInstance().getCastleByOwner(clan);
 						if (castle != null)
 						{
 							castle.giveResidentialSkills(target);
@@ -63,24 +63,24 @@ public struct RequestPledgeWaitingUserAcceptPacket: IIncomingPacket<GameSession>
 					}
 					if (clan.getFortId() > 0)
 					{
-						Fort fort = FortManager.getInstance().getFortByOwner(clan);
+						Fort? fort = FortManager.getInstance().getFortByOwner(clan);
 						if (fort != null)
 						{
 							fort.giveResidentialSkills(target);
 						}
 					}
 					target.sendSkillList();
-					
+
 					clan.broadcastToOtherOnlineMembers(new PledgeShowMemberListAddPacket(target), target);
 					clan.broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(clan));
 					clan.broadcastToOnlineMembers(new ExPledgeCountPacket(clan));
-					
+
 					// This activates the clan tab on the new member.
 					PledgeShowMemberListAllPacket.sendAllTo(target);
 					target.setClanJoinExpiryTime(null);
 					player.setClanJoinTime(currentTime);
 					target.broadcastUserInfo();
-					
+
 					ClanEntryManager.getInstance().removePlayerApplication(clanId, _playerId);
 				}
 				else if (target.getClanJoinExpiryTime() > currentTime)
@@ -95,7 +95,7 @@ public struct RequestPledgeWaitingUserAcceptPacket: IIncomingPacket<GameSession>
 		{
 			ClanEntryManager.getInstance().removePlayerApplication(clanId, _playerId);
 		}
-        
+
         return ValueTask.CompletedTask;
     }
 }

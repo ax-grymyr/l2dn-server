@@ -21,48 +21,48 @@ public struct RequestDivideAdenaStartPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Party party = player.getParty();
+        Party? party = player.getParty();
         if (party == null)
         {
             player.sendPacket(SystemMessageId.YOU_CANNOT_DISTRIBUTE_ADENA_IF_YOU_ARE_NOT_A_MEMBER_OF_AN_ALLIANCE_OR_A_COMMAND_CHANNEL);
             return ValueTask.CompletedTask;
         }
-		
+
         CommandChannel commandChannel = party.getCommandChannel();
         if ((commandChannel != null) && !commandChannel.isLeader(player))
         {
             player.sendPacket(SystemMessageId.YOU_CANNOT_PROCEED_AS_YOU_ARE_NOT_AN_ALLIANCE_LEADER_OR_PARTY_LEADER);
             return ValueTask.CompletedTask;
         }
-        
+
         if (!party.isLeader(player))
         {
             player.sendPacket(SystemMessageId.YOU_CANNOT_PROCEED_AS_YOU_ARE_NOT_A_PARTY_LEADER);
             return ValueTask.CompletedTask;
         }
-		
+
         List<Player> targets = commandChannel != null ? commandChannel.getMembers() : party.getMembers();
         if (player.getAdena() < targets.Count)
         {
             player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA_2);
             return ValueTask.CompletedTask;
         }
-		
+
         if (targets.Any(t => t.hasRequest<AdenaDistributionRequest>()))
         {
             // Handle that case ?
             return ValueTask.CompletedTask;
         }
-		
+
         int adenaObjectId = player.getInventory().getAdenaInstance().ObjectId;
         targets.ForEach(t =>
         {
             t.sendPacket(SystemMessageId.ADENA_DISTRIBUTION_HAS_STARTED);
             t.addRequest(new AdenaDistributionRequest(t, player, targets, adenaObjectId, player.getAdena()));
         });
-		
+
         player.sendPacket(ExDivideAdenaStartPacket.STATIC_PACKET);
-        
+
         return ValueTask.CompletedTask;
     }
 }

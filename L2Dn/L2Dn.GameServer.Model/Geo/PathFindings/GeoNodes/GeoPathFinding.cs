@@ -12,15 +12,15 @@ namespace L2Dn.GameServer.Geo.PathFindings.GeoNodes;
 public class GeoPathFinding: PathFinding
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(GeoPathFinding));
-	
+
 	private static readonly Map<short, byte[]> PATH_NODES = new();
 	private static readonly Map<short, int[]> PATH_NODE_INDEX = new();
-	
+
 	public override bool pathNodesExist(short regionoffset)
 	{
 		return PATH_NODE_INDEX.ContainsKey(regionoffset);
 	}
-	
+
 	public override List<AbstractNodeLoc>? findPath(Location3D location, Location3D targetLocation, Instance? instance, bool playable)
 	{
 		int gx = (location.X - World.WORLD_X_MIN) >> 4;
@@ -29,7 +29,7 @@ public class GeoPathFinding: PathFinding
 		int gtx = (targetLocation.X - World.WORLD_X_MIN) >> 4;
 		int gty = (targetLocation.Y - World.WORLD_Y_MIN) >> 4;
 		short gtz = (short)targetLocation.Z;
-		
+
 		GeoNode? start = readNode(gx, gy, gz);
 		GeoNode? end = readNode(gtx, gty, gtz);
 		if (start == null || end == null || ReferenceEquals(start, end))
@@ -55,18 +55,18 @@ public class GeoPathFinding: PathFinding
 		{
 			return null; // Cannot reach closest...
 		}
-		
+
 		// TODO: Find closest path node around target, now only checks if location can be reached.
 		temp = GeoEngine.getInstance().getValidLocation(targetLocation, endLoc, instance);
 		if (temp.X != endLoc.X || temp.Y != endLoc.Y)
 		{
 			return null; // Cannot reach closest...
 		}
-		
+
 		return searchByClosest2(start, end);
 	}
-	
-	public List<AbstractNodeLoc> searchByClosest2(GeoNode start, GeoNode end)
+
+	public List<AbstractNodeLoc>? searchByClosest2(GeoNode start, GeoNode end)
 	{
 		// Always continues checking from the closest to target non-blocked
 		// node from to_visit list. There's extra length in path if needed
@@ -76,16 +76,16 @@ public class GeoPathFinding: PathFinding
 		// Generally returns a bit (only a bit) more intelligent looking routes than
 		// the basic version. Not a true distance image (which would increase CPU
 		// load) level of intelligence though.
-		
+
 		// List of Visited Nodes.
 		List<GeoNode> visited = new();
-		
+
 		// List of Nodes to Visit.
 		List<GeoNode> toVisit = new();
 		toVisit.Add(start);
 		int targetX = end.getLoc().getNodeX();
 		int targetY = end.getLoc().getNodeY();
-		
+
 		int dx, dy;
 		bool added;
 		int i = 0;
@@ -97,16 +97,17 @@ public class GeoPathFinding: PathFinding
 				node = toVisit[0];
 				toVisit.RemoveAt(0); // TODO: very inefficient
 			}
-			catch (Exception e)
+			catch (Exception exception)
 			{
 				// No Path found
+                LOGGER.Trace(exception);
 				return null;
 			}
 			if (node.Equals(end))
 			{
 				return constructPath2(node);
 			}
-			
+
 			i++;
 			visited.Add(node);
 			node.attachNeighbors(readNeighbors(node));
@@ -144,7 +145,7 @@ public class GeoPathFinding: PathFinding
 		// No Path found.
 		return null;
 	}
-	
+
 	public List<AbstractNodeLoc> constructPath2(AbstractNode<GeoNodeLoc> node)
 	{
 		List<AbstractNodeLoc> path = new();
@@ -152,14 +153,14 @@ public class GeoPathFinding: PathFinding
 		int previousDirectionY = -1000;
 		int directionX;
 		int directionY;
-		
+
 		AbstractNode<GeoNodeLoc> tempNode = node;
 		while (tempNode.getParent() != null)
 		{
 			// Only add a new route point if moving direction changes.
 			directionX = tempNode.getLoc().getNodeX() - tempNode.getParent().getLoc().getNodeX();
 			directionY = tempNode.getLoc().getNodeY() - tempNode.getParent().getLoc().getNodeY();
-			
+
 			if (directionX != previousDirectionX || directionY != previousDirectionY)
 			{
 				previousDirectionX = directionX;
@@ -170,27 +171,27 @@ public class GeoPathFinding: PathFinding
 		}
 		return path;
 	}
-	
-	private GeoNode[] readNeighbors(GeoNode n)
+
+	private GeoNode[]? readNeighbors(GeoNode n)
 	{
 		if (n.getLoc() == null)
 		{
 			return null;
 		}
-		
+
 		int idx = n.getNeighborsIdx();
-		
+
 		int nodeX = n.getLoc().getNodeX();
 		int nodeY = n.getLoc().getNodeY();
-		
+
 		short regoffset = getRegionOffset(getRegionX(nodeX), getRegionY(nodeY));
-		byte[] pn = PATH_NODES.get(regoffset);
-		
+		byte[]? pn = PATH_NODES.get(regoffset);
+
 		List<GeoNode> neighbors = new();
 		GeoNode newNode;
 		short newNodeX;
 		short newNodeY;
-		
+
 		// Region for sure will change, we must read from correct file
 		byte neighbor = pn[idx++]; // N
 		if (neighbor > 0)
@@ -290,15 +291,15 @@ public class GeoPathFinding: PathFinding
 		}
 		return neighbors.ToArray();
 	}
-	
+
 	// Private
 
 	private static short getShort(byte[] b, int index)
 	{
 		return (short)(b[index] + (b[index + 1] << 8));
 	}
-	
-	private GeoNode readNode(short nodeX, short nodeY, byte layer)
+
+	private GeoNode? readNode(short nodeX, short nodeY, byte layer)
 	{
 		short regoffset = getRegionOffset(getRegionX(nodeX), getRegionY(nodeY));
 		if (!pathNodesExist(regoffset))
@@ -320,7 +321,7 @@ public class GeoPathFinding: PathFinding
 		idx += 2;
 		return new GeoNode(new GeoNodeLoc(nodeX, nodeY, node_z), idx);
 	}
-	
+
 	private GeoNode? readNode(int gx, int gy, short z)
 	{
 		short nodeX = getNodePos(gx);
@@ -351,7 +352,7 @@ public class GeoPathFinding: PathFinding
 		}
 		return new GeoNode(new GeoNodeLoc(nodeX, nodeY, lastZ), idx2);
 	}
-	
+
 	protected GeoPathFinding()
 	{
 		for (int regionX = World.TILE_X_MIN; regionX <= World.TILE_X_MAX; regionX++)
@@ -362,7 +363,7 @@ public class GeoPathFinding: PathFinding
 			}
 		}
 	}
-	
+
 	private void loadPathNodeFile(byte rx, byte ry)
 	{
 		short regionoffset = getRegionOffset(rx, ry);
@@ -371,21 +372,20 @@ public class GeoPathFinding: PathFinding
 		{
 			return;
 		}
-		
+
 		// LOGGER.info("Path Engine: - Loading: " + file.getName() + " -> region offset: " + regionoffset + " X: " + rx + " Y: " + ry);
-		
+
 		int node = 0;
-		int size = 0;
 		int index = 0;
-		
+
 		// Create a read-only memory-mapped file.
 		try
 		{
 			byte[] nodes = File.ReadAllBytes(filePath);
-			
+
 			// Indexing pathnode files, so we will know where each block starts.
 			int[] indexs = new int[65536];
-			
+
 			while (node < 65536)
 			{
 				byte layer = nodes[index];
@@ -400,12 +400,12 @@ public class GeoPathFinding: PathFinding
 			LOGGER.Warn("Failed to Load PathNode File: " + filePath + " : " + e);
 		}
 	}
-	
-	public static GeoPathFinding getInstance()
+
+	public new static GeoPathFinding getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static GeoPathFinding INSTANCE = new GeoPathFinding();

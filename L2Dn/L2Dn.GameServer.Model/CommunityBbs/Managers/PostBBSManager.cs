@@ -9,10 +9,10 @@ namespace L2Dn.GameServer.CommunityBbs.Managers;
 public class PostBBSManager: BaseBBSManager
 {
 	private readonly Map<Topic, Post> _postByTopic = new();
-	
+
 	public Post getGPosttByTopic(Topic t)
 	{
-		Post post = _postByTopic.get(t);
+		Post? post = _postByTopic.get(t);
 		if (post == null)
 		{
 			post = new Post(t);
@@ -20,12 +20,12 @@ public class PostBBSManager: BaseBBSManager
 		}
 		return post;
 	}
-	
+
 	public void delPostByTopic(Topic t)
 	{
 		_postByTopic.remove(t);
 	}
-	
+
 	public void addPostByTopic(Post p, Topic t)
 	{
 		if (_postByTopic.get(t) == null)
@@ -33,7 +33,7 @@ public class PostBBSManager: BaseBBSManager
 			_postByTopic.put(t, p);
 		}
 	}
-	
+
 	public override void parsecmd(string command, Player player)
 	{
 		if (command.startsWith("_bbsposts;read;"))
@@ -43,7 +43,7 @@ public class PostBBSManager: BaseBBSManager
 			st.nextToken();
 			int idf = int.Parse(st.nextToken());
 			int idp = int.Parse(st.nextToken());
-			string index = st.hasMoreTokens() ? st.nextToken() : null;
+			string? index = st.hasMoreTokens() ? st.nextToken() : null;
 			int ind = index == null ? 1 : int.Parse(index);
 			showPost(TopicBBSManager.getInstance().getTopicByID(idp), ForumsBBSManager.getInstance().getForumByID(idf), player, ind);
 		}
@@ -62,10 +62,10 @@ public class PostBBSManager: BaseBBSManager
 			CommunityBoardHandler.separateAndSend("<html><body><br><br><center>the command: " + command + " is not implemented yet</center><br><br></body></html>", player);
 		}
 	}
-	
-	private void showEditPost(Topic topic, Forum forum, Player player, int idp)
+
+	private void showEditPost(Topic? topic, Forum? forum, Player player, int idp)
 	{
-		Post p = getGPosttByTopic(topic);
+        Post p = getGPosttByTopic(topic);
 		if ((forum == null) || (topic == null) || (p == null))
 		{
 			CommunityBoardHandler.separateAndSend("<html><body><br><br><center>Error, this forum, topic or post does not exist!</center><br><br></body></html>", player);
@@ -75,8 +75,8 @@ public class PostBBSManager: BaseBBSManager
 			showHtmlEditPost(topic, player, forum, p);
 		}
 	}
-	
-	private void showPost(Topic topic, Forum forum, Player player, int ind)
+
+	private void showPost(Topic? topic, Forum? forum, Player player, int ind)
 	{
 		if ((forum == null) || (topic == null))
 		{
@@ -91,14 +91,14 @@ public class PostBBSManager: BaseBBSManager
 			CommunityBoardHandler.separateAndSend("<html><body><br><br><center>The forum: " + forum.getName() + " is not implemented yet!</center></body></html>", player);
 		}
 	}
-	
+
 	private void showHtmlEditPost(Topic topic, Player player, Forum forum, Post p)
 	{
 		string html = "<html><body><br><br><table border=0 width=610><tr><td width=10></td><td width=600 align=left><a action=\"bypass _bbshome\">HOME</a>&nbsp;>&nbsp;<a action=\"bypass _bbsmemo\">" + forum.getName() + " Form</a></td></tr></table><img src=\"L2UI.squareblank\" width=\"1\" height=\"10\"><center><table border=0 cellspacing=0 cellpadding=0><tr><td width=610><img src=\"sek.cbui355\" width=\"610\" height=\"1\"><br1><img src=\"sek.cbui355\" width=\"610\" height=\"1\"></td></tr></table><table fixwidth=610 border=0 cellspacing=0 cellpadding=0><tr><td><img src=\"l2ui.mini_logo\" width=5 height=20></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=1></td><td align=center FIXWIDTH=60 height=29>&$413;</td><td FIXWIDTH=540>" + topic.getName() + "</td><td><img src=\"l2ui.mini_logo\" width=5 height=1></td></tr></table><table fixwidth=610 border=0 cellspacing=0 cellpadding=0><tr><td><img src=\"l2ui.mini_logo\" width=5 height=10></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=1></td><td align=center FIXWIDTH=60 height=29 valign=top>&$427;</td><td align=center FIXWIDTH=540><MultiEdit var =\"Content\" width=535 height=313></td><td><img src=\"l2ui.mini_logo\" width=5 height=1></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=10></td></tr></table><table fixwidth=610 border=0 cellspacing=0 cellpadding=0><tr><td><img src=\"l2ui.mini_logo\" width=5 height=10></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=1></td><td align=center FIXWIDTH=60 height=29>&nbsp;</td><td align=center FIXWIDTH=70><button value=\"&$140;\" action=\"Write Post " + forum.getID() + ";" + topic.getID() + ";0 _ Content Content Content\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td><td align=center FIXWIDTH=70><button value = \"&$141;\" action=\"bypass _bbsmemo\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\"> </td><td align=center FIXWIDTH=400>&nbsp;</td><td><img src=\"l2ui.mini_logo\" width=5 height=1></td></tr></table></center></body></html>";
 		send1001(html, player);
 		send1002(player, p.getCPost(0).getPostText(), topic.getName(), topic.getDate().ToString("D", CultureInfo.InvariantCulture));
 	}
-	
+
 	private void showMemoPost(Topic topic, Player player, Forum forum)
 	{
 		Post p = getGPosttByTopic(topic);
@@ -123,7 +123,7 @@ public class PostBBSManager: BaseBBSManager
 			"\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td>&nbsp;</tr></table></td></tr></table><br><br><br></center></body></html>";
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
-	
+
 	public override void parsewrite(string ar1, string ar2, string ar3, string ar4, string ar5, Player player)
 	{
 		StringTokenizer st = new StringTokenizer(ar1, ";");
@@ -161,12 +161,12 @@ public class PostBBSManager: BaseBBSManager
 			}
 		}
 	}
-	
+
 	public static PostBBSManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static PostBBSManager INSTANCE = new PostBBSManager();

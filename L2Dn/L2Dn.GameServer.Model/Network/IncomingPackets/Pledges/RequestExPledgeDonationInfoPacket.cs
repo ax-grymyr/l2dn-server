@@ -18,13 +18,13 @@ public struct RequestExPledgeDonationInfoPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Clan clan = player.getClan();
+        Clan? clan = player.getClan();
         if (clan == null)
             return ValueTask.CompletedTask;
 
         player.sendPacket(new ExPledgeDonationInfoPacket(player.getClanDonationPoints(),
             player.getClanJoinTime()?.AddDays(1) < DateTime.UtcNow));
-        
+
         return ValueTask.CompletedTask;
     }
 }

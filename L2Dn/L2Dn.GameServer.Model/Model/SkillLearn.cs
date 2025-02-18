@@ -20,7 +20,7 @@ public class SkillLearn
 	private readonly List<List<ItemHolder>> _requiredItems = new(); // TODO: does this really need to be list of lists?
 	private readonly Set<Race> _races = new();
 	private readonly Set<SkillHolder> _preReqSkills = new();
-	private SocialClass _socialClass;
+	private SocialClass? _socialClass;
 	private readonly bool _residenceSkill;
 	private readonly Set<int> _residenceIds = new();
 	private readonly bool _learnedByNpc;
@@ -30,7 +30,7 @@ public class SkillLearn
 	private readonly int _row;
 	private readonly int _column;
 	private readonly int _pointsRequired;
-	
+
 	/**
 	 * Constructor for SkillLearn.
 	 * @param set the set with the SkillLearn data.
@@ -52,7 +52,7 @@ public class SkillLearn
 		_column = xmlSkill.Column;
 		_pointsRequired = xmlSkill.PointsRequired;
 	}
-	
+
 	/**
 	 * @return the name of this skill.
 	 */
@@ -60,7 +60,7 @@ public class SkillLearn
 	{
 		return _skillName;
 	}
-	
+
 	/**
 	 * @return the ID of this skill.
 	 */
@@ -68,7 +68,7 @@ public class SkillLearn
 	{
 		return _skillId;
 	}
-	
+
 	/**
 	 * @return the level of this skill.
 	 */
@@ -76,7 +76,7 @@ public class SkillLearn
 	{
 		return _skillLevel;
 	}
-	
+
 	/**
 	 * @return the minimum level required to acquire this skill.
 	 */
@@ -84,7 +84,7 @@ public class SkillLearn
 	{
 		return _getLevel;
 	}
-	
+
 	/**
 	 * @return the minimum level of a character dual class required to acquire this skill.
 	 */
@@ -92,7 +92,7 @@ public class SkillLearn
 	{
 		return _getDualClassLevel;
 	}
-	
+
 	/**
 	 * @return the amount of SP/Clan Reputation to acquire this skill.
 	 */
@@ -100,7 +100,7 @@ public class SkillLearn
 	{
 		return _levelUpSp;
 	}
-	
+
 	/**
 	 * @return {@code true} if the skill is auto-get, this skill is automatically delivered.
 	 */
@@ -108,7 +108,7 @@ public class SkillLearn
 	{
 		return _autoGet;
 	}
-	
+
 	/**
 	 * @return the set with the item holders required to acquire this skill.
 	 */
@@ -116,7 +116,7 @@ public class SkillLearn
 	{
 		return _requiredItems;
 	}
-	
+
 	/**
 	 * Adds a required item holder list to learn this skill.
 	 * @param list the required item holder list.
@@ -125,7 +125,7 @@ public class SkillLearn
 	{
 		_requiredItems.Add(list);
 	}
-	
+
 	/**
 	 * @return a set with the races that can acquire this skill.
 	 */
@@ -133,7 +133,7 @@ public class SkillLearn
 	{
 		return _races;
 	}
-	
+
 	/**
 	 * Adds a required race to learn this skill.
 	 * @param race the required race.
@@ -142,7 +142,7 @@ public class SkillLearn
 	{
 		_races.add(race);
 	}
-	
+
 	/**
 	 * @return the set of skill holders required to acquire this skill.
 	 */
@@ -150,7 +150,7 @@ public class SkillLearn
 	{
 		return _preReqSkills;
 	}
-	
+
 	/**
 	 * Adds a required skill holder to learn this skill.
 	 * @param skill the required skill holder.
@@ -159,27 +159,27 @@ public class SkillLearn
 	{
 		_preReqSkills.add(skill);
 	}
-	
+
 	/**
 	 * @return the social class required to get this skill.
 	 */
-	public SocialClass getSocialClass()
+	public SocialClass? getSocialClass()
 	{
 		return _socialClass;
 	}
-	
+
 	/**
 	 * Sets the social class if hasn't been set before.
 	 * @param socialClass the social class to set.
 	 */
-	public void setSocialClass(SocialClass socialClass)
+	public void setSocialClass(SocialClass? socialClass)
 	{
 		if (_socialClass == null)
 		{
 			_socialClass = socialClass;
 		}
 	}
-	
+
 	/**
 	 * @return {@code true} if this skill is a Residence skill.
 	 */
@@ -187,7 +187,7 @@ public class SkillLearn
 	{
 		return _residenceSkill;
 	}
-	
+
 	/**
 	 * @return a set with the Ids where this skill is available.
 	 */
@@ -195,7 +195,7 @@ public class SkillLearn
 	{
 		return _residenceIds;
 	}
-	
+
 	/**
 	 * Adds a required residence Id.
 	 * @param id the residence Id to add.
@@ -204,7 +204,7 @@ public class SkillLearn
 	{
 		_residenceIds.add(id);
 	}
-	
+
 	/**
 	 * @return {@code true} if this skill is learned from Npc.
 	 */
@@ -212,7 +212,7 @@ public class SkillLearn
 	{
 		return _learnedByNpc;
 	}
-	
+
 	/**
 	 * @return {@code true} if this skill is learned by Forgotten Scroll.
 	 */
@@ -220,32 +220,32 @@ public class SkillLearn
 	{
 		return _learnedByFS;
 	}
-	
+
 	public void addRemoveSkills(int skillId)
 	{
 		_removeSkills.add(skillId);
 	}
-	
+
 	public Set<int> getRemoveSkills()
 	{
 		return _removeSkills;
 	}
-	
+
 	public int getTreeId()
 	{
 		return _treeId;
 	}
-	
+
 	public int getRow()
 	{
 		return _row;
 	}
-	
+
 	public int getColumn()
 	{
 		return _column;
 	}
-	
+
 	public int getPointsRequired()
 	{
 		return _pointsRequired;

@@ -7,25 +7,14 @@ namespace L2Dn.GameServer.Model.Conditions;
 /**
  * The Class ConditionPlayerSubclass.
  */
-public class ConditionPlayerSubclass : Condition
+public sealed class ConditionPlayerSubclass(bool value): Condition
 {
-	private readonly bool _value;
-	
-	/**
-	 * Instantiates a new condition player subclass.
-	 * @param value the value
-	 */
-	public ConditionPlayerSubclass(bool value)
-	{
-		_value = value;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		if (effector.getActingPlayer() == null)
-		{
-			return true;
-		}
-		return effector.getActingPlayer().isSubClassActive() == _value;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? player = effector.getActingPlayer();
+        if (player is null)
+            return true;
+
+        return player.isSubClassActive() == value;
+    }
 }

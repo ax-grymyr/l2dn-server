@@ -11,8 +11,8 @@ public readonly struct ExReplySentPostPacket: IOutgoingPacket
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(ExReplySentPostPacket));
     private readonly Message _msg;
-    private readonly ICollection<Item> _items = null;
-	
+    private readonly ICollection<Item>? _items;
+
     public ExReplySentPostPacket(Message msg)
     {
         _msg = msg;
@@ -29,18 +29,18 @@ public readonly struct ExReplySentPostPacket: IOutgoingPacket
             }
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_REPLY_SENT_POST);
-        
+
         writer.WriteInt32(0); // GOD
         writer.WriteInt32(_msg.getId());
         writer.WriteInt32(_msg.isLocked());
         writer.WriteString(_msg.getReceiverName());
         writer.WriteString(_msg.getSubject());
         writer.WriteString(_msg.getContent());
-        if ((_items != null) && _items.Count != 0)
+        if (_items != null && _items.Count != 0)
         {
             writer.WriteInt32(_items.Count);
             foreach (Item item in _items)
@@ -53,7 +53,7 @@ public readonly struct ExReplySentPostPacket: IOutgoingPacket
         {
             writer.WriteInt32(0);
         }
-        
+
         writer.WriteInt64(_msg.getReqAdena());
         writer.WriteInt32(_msg.hasAttachments());
         writer.WriteInt32(_msg.isReturned());

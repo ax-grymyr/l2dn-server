@@ -8,47 +8,27 @@ namespace L2Dn.GameServer.Model.Conditions;
  * Player Can Escape condition implementation.
  * @author Adry_85
  */
-public class ConditionPlayerCanEscape: Condition
+public sealed class ConditionPlayerCanEscape(bool value): Condition
 {
-	private readonly bool _value;
-	
-	public ConditionPlayerCanEscape(bool value)
-	{
-		_value = value;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		bool canTeleport = true;
-		Player player = effector.getActingPlayer();
-		if (player == null)
-		{
-			canTeleport = false;
-		}
-		else if (player.isInDuel())
-		{
-			canTeleport = false;
-		}
-		else if (player.isControlBlocked())
-		{
-			canTeleport = false;
-		}
-		else if (player.isCombatFlagEquipped())
-		{
-			canTeleport = false;
-		}
-		else if (player.isFlying() || player.isFlyingMounted())
-		{
-			canTeleport = false;
-		}
-		else if (player.isInOlympiadMode())
-		{
-			canTeleport = false;
-		}
-		else if (player.isOnEvent())
-		{
-			canTeleport = false;
-		}
-		return (_value == canTeleport);
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        bool canTeleport = true;
+        Player? player = effector.getActingPlayer();
+        if (player is null)
+            canTeleport = false;
+        else if (player.isInDuel())
+            canTeleport = false;
+        else if (player.isControlBlocked())
+            canTeleport = false;
+        else if (player.isCombatFlagEquipped())
+            canTeleport = false;
+        else if (player.isFlying() || player.isFlyingMounted())
+            canTeleport = false;
+        else if (player.isInOlympiadMode())
+            canTeleport = false;
+        else if (player.isOnEvent())
+            canTeleport = false;
+
+        return value == canTeleport;
+    }
 }

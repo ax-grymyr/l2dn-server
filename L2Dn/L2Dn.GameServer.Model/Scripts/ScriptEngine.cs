@@ -8,10 +8,10 @@ namespace L2Dn.GameServer.Scripts;
 public class ScriptEngine
 {
 	public static readonly Map<string, ParserFactory> PARSER_FACTORIES = new();
-	
-	protected static Parser createParser(string name)
+
+	protected static Parser? createParser(string name)
 	{
-		ParserFactory s = PARSER_FACTORIES.get(name);
+		ParserFactory? s = PARSER_FACTORIES.get(name);
 		// if (s == null) // shape not found
 		// {
 		// 	try
@@ -34,6 +34,6 @@ public class ScriptEngine
 		// 		throw new ParserNotCreatedException();
 		// 	}
 		// }
-		return s.create();
+		return s?.create();
 	}
 }

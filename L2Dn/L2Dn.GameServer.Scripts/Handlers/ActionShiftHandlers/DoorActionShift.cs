@@ -26,7 +26,7 @@ public class DoorActionShift: IActionShiftHandler
 		{
 			player.setTarget(target);
 			Door door = (Door) target;
-			ClanHall clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.getId());
+			ClanHall? clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.getId());
 			Fort fort = door.getFort();
 			Castle castle = door.getCastle();
 			player.sendPacket(new StaticObjectInfoPacket(door, player.isGM()));
@@ -56,7 +56,7 @@ public class DoorActionShift: IActionShiftHandler
 		}
 		return true;
 	}
-	
+
 	public InstanceType getInstanceType()
 	{
 		return InstanceType.Door;

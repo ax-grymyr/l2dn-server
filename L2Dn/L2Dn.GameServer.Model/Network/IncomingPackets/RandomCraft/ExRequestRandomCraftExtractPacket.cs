@@ -32,7 +32,7 @@ public struct ExRequestRandomCraftExtractPacket: IIncomingPacket<GameSession>
     {
         if (!Config.ENABLE_RANDOM_CRAFT)
             return ValueTask.CompletedTask;
-		
+
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
@@ -41,7 +41,7 @@ public struct ExRequestRandomCraftExtractPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         player.addRequest(new RandomCraftRequest(player));
-		
+
         long points = 0;
         long fee = 0;
         Map<int, long> toDestroy = new();
@@ -54,15 +54,15 @@ public struct ExRequestRandomCraftExtractPacket: IIncomingPacket<GameSession>
                 player.removeRequest<RandomCraftRequest>();
                 return ValueTask.CompletedTask;
             }
-			
-            Item item = player.getInventory().getItemByObjectId(objId);
+
+            Item? item = player.getInventory().getItemByObjectId(objId);
             if (item != null)
             {
                 if (count > item.getCount())
                 {
                     continue;
                 }
-				
+
                 toDestroy.put(objId, count);
                 points += RandomCraftData.getInstance().getPoints(item.getId()) * count;
                 fee += RandomCraftData.getInstance().getFee(item.getId()) * count;
@@ -72,27 +72,27 @@ public struct ExRequestRandomCraftExtractPacket: IIncomingPacket<GameSession>
                 player.sendPacket(new ExCraftExtractPacket());
             }
         }
-		
+
         if (points < 1 || fee < 0)
         {
             player.removeRequest<RandomCraftRequest>();
             return ValueTask.CompletedTask;
         }
-		
+
         if (player.reduceAdena("RandomCraft Extract", fee, player, true))
         {
             foreach (var e in toDestroy)
             {
                 player.destroyItem("RandomCraft Extract", e.Key, e.Value, player, true);
             }
-            
+
             player.getRandomCraft().addCraftPoints(checked((int)points));
         }
-		
+
         player.sendPacket(new ExCraftInfoPacket(player));
         player.sendPacket(new ExCraftExtractPacket());
         player.removeRequest<RandomCraftRequest>();
-        
+
         return ValueTask.CompletedTask;
     }
 }

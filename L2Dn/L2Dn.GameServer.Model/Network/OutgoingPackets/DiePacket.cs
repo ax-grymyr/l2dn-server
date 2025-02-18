@@ -27,7 +27,7 @@ public readonly struct DiePacket: IOutgoingPacket
 		if (creature.isPlayer())
 		{
 			_player = creature.getActingPlayer();
-			
+
 			foreach (BuffInfo effect in creature.getEffectList().getEffects())
 			{
 				if (effect.getSkill().getId() == (int)CommonSkill.FEATHER_OF_BLESSING)
@@ -36,15 +36,15 @@ public readonly struct DiePacket: IOutgoingPacket
 					break;
 				}
 			}
-			
+
 			if (!_player.isInTimedHuntingZone())
 			{
 				Clan clan = _player.getClan();
 				bool isInCastleDefense = false;
 				bool isInFortDefense = false;
-				SiegeClan siegeClan = null;
-				Castle castle = CastleManager.getInstance().getCastle(creature);
-				Fort fort = FortManager.getInstance().getFort(creature);
+				SiegeClan? siegeClan = null;
+				Castle? castle = CastleManager.getInstance().getCastle(creature);
+				Fort? fort = FortManager.getInstance().getFort(creature);
 				if ((castle != null) && castle.getSiege().isInProgress())
 				{
 					siegeClan = castle.getSiege().getAttackerClan(clan);
@@ -55,7 +55,7 @@ public readonly struct DiePacket: IOutgoingPacket
 					siegeClan = fort.getSiege().getAttackerClan(clan);
 					isInFortDefense = (siegeClan == null) && fort.getSiege().checkIsDefender(clan);
 				}
-				
+
 				// ClanHall check.
 				if ((clan != null) && (clan.getHideoutId() > 0))
 				{
@@ -77,7 +77,7 @@ public readonly struct DiePacket: IOutgoingPacket
 					_flags += 16;
 				}
 			}
-			
+
 			// Feather check.
 			if (creature.getAccessLevel().allowFixedRes() || creature.getInventory().haveItemForSelfResurrection())
 			{
@@ -85,11 +85,11 @@ public readonly struct DiePacket: IOutgoingPacket
 			}
 		}
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.DIE);
-		
+
 		writer.WriteInt32(_objectId);
 		writer.WriteInt64(_flags);
 		writer.WriteInt32(_isSweepable);
@@ -122,10 +122,10 @@ public readonly struct DiePacket: IOutgoingPacket
 			writer.WriteInt32(0); // L-Coin resurrection
 			writer.WriteInt32(-1); // L-Coin count%
 		}
-		
+
 		writer.WriteInt32(0);
 	}
-	
+
 	private void getValues(PacketBitWriter writer, int originalValue)
 	{
 		if ((Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES == null) || (Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES == null))
@@ -136,7 +136,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			writer.WriteInt32(-1); // L-Coin count%
 			return;
 		}
-		
+
 		List<int> levelListFirst = Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES.Keys.ToList();
 		List<int> levelListSecond = Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES.Keys.ToList();
 		foreach (int level in levelListSecond)
@@ -147,12 +147,12 @@ public readonly struct DiePacket: IOutgoingPacket
 				writer.WriteInt32(-1); // Adena count%
 				break;
 			}
-			
+
 			if ((_player.getLevel() >= level) && (levelListSecond.LastIndexOf(level) != (levelListSecond.Count - 1)))
 			{
 				continue;
 			}
-			
+
 			int maxResTime;
 			try
 			{
@@ -164,14 +164,14 @@ public readonly struct DiePacket: IOutgoingPacket
 				writer.WriteInt32(-1); // Adena count%
 				return;
 			}
-			
+
 			int getValue = maxResTime <= originalValue ? maxResTime : originalValue + 1;
 			ResurrectByPaymentHolder rbph = Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES[level][getValue];
 			writer.WriteInt32((int) (rbph.getAmount() * _player.getStat().getValue(Stat.RESURRECTION_FEE_MODIFIER, 1))); // Adena resurrection
 			writer.WriteInt32((int)rbph.getResurrectPercent()); // Adena count%
 			break;
 		}
-		
+
 		foreach (int level in levelListFirst)
 		{
 			if (Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES.Count == 0)
@@ -180,12 +180,12 @@ public readonly struct DiePacket: IOutgoingPacket
 				writer.WriteInt32(-1); // L-Coin count%
 				break;
 			}
-			
+
 			if ((_player.getLevel() >= level) && (levelListFirst.LastIndexOf(level) != (levelListFirst.Count - 1)))
 			{
 				continue;
 			}
-			
+
 			int maxResTime;
 			try
 			{
@@ -197,7 +197,7 @@ public readonly struct DiePacket: IOutgoingPacket
 				writer.WriteInt32(-1); // L-Coin count%
 				return;
 			}
-			
+
 			int getValue = maxResTime <= originalValue ? maxResTime : originalValue + 1;
 			ResurrectByPaymentHolder rbph = Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES[level][getValue];
 			writer.WriteInt32((int)(rbph.getAmount() * _player.getStat().getValue(Stat.RESURRECTION_FEE_MODIFIER, 1))); // L-Coin resurrection

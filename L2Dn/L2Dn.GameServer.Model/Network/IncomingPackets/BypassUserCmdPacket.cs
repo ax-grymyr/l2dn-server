@@ -19,8 +19,8 @@ public struct BypassUserCmdPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        IUserCommandHandler handler = UserCommandHandler.getInstance().getHandler(_command);
+
+        IUserCommandHandler? handler = UserCommandHandler.getInstance().getHandler(_command);
         if (handler == null)
         {
             if (player.isGM())
@@ -32,7 +32,7 @@ public struct BypassUserCmdPacket: IIncomingPacket<GameSession>
         {
             handler.useUserCommand(_command, player);
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

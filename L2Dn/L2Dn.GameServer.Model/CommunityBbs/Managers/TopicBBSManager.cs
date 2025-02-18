@@ -12,34 +12,33 @@ public class TopicBBSManager: BaseBBSManager
 {
 	private readonly Set<Topic> _table = new();
 	private readonly Map<Forum, int> _maxId = new();
-	
+
 	protected TopicBBSManager()
 	{
 		// Prevent external initialization.
 	}
-	
+
 	public void addTopic(Topic tt)
 	{
 		_table.add(tt);
 	}
-	
+
 	public void delTopic(Topic topic)
 	{
 		_table.remove(topic);
 	}
-	
+
 	public void setMaxID(int id, Forum f)
 	{
 		_maxId.put(f, id);
 	}
-	
+
 	public int getMaxID(Forum f)
 	{
-		int i = _maxId.get(f);
-		return i == null ? 0 : i;
+		return _maxId.GetValueOrDefault(f);
 	}
-	
-	public Topic getTopicByID(int idf)
+
+	public Topic? getTopicByID(int idf)
 	{
 		foreach (Topic t in _table)
 		{
@@ -50,12 +49,12 @@ public class TopicBBSManager: BaseBBSManager
 		}
 		return null;
 	}
-	
+
 	public override void parsewrite(string ar1, string ar2, string ar3, string ar4, string ar5, Player player)
 	{
 		if (ar1.equals("crea"))
 		{
-			Forum f = ForumsBBSManager.getInstance().getForumByID(int.Parse(ar2));
+			Forum? f = ForumsBBSManager.getInstance().getForumByID(int.Parse(ar2));
 			if (f == null)
 			{
 				CommunityBoardHandler.separateAndSend("<html><body><br><br><center>the forum: " + ar2 + " is not implemented yet</center><br><br></body></html>", player);
@@ -74,14 +73,14 @@ public class TopicBBSManager: BaseBBSManager
 		}
 		else if (ar1.equals("del"))
 		{
-			Forum f = ForumsBBSManager.getInstance().getForumByID(int.Parse(ar2));
+			Forum? f = ForumsBBSManager.getInstance().getForumByID(int.Parse(ar2));
 			if (f == null)
 			{
 				CommunityBoardHandler.separateAndSend("<html><body><br><br><center>the forum: " + ar2 + " does not exist !</center><br><br></body></html>", player);
 			}
 			else
 			{
-				Topic t = f.getTopic(int.Parse(ar3));
+				Topic? t = f.getTopic(int.Parse(ar3));
 				if (t == null)
 				{
 					CommunityBoardHandler.separateAndSend("<html><body><br><br><center>the topic: " + ar3 + " does not exist !</center><br><br></body></html>", player);
@@ -104,7 +103,7 @@ public class TopicBBSManager: BaseBBSManager
 			CommunityBoardHandler.separateAndSend("<html><body><br><br><center>the command: " + ar1 + " is not implemented yet</center><br><br></body></html>", player);
 		}
 	}
-	
+
 	public override void parsecmd(string command, Player player)
 	{
 		if (command.equals("_bbsmemo"))
@@ -117,7 +116,7 @@ public class TopicBBSManager: BaseBBSManager
 			st.nextToken();
 			st.nextToken();
 			int idf = int.Parse(st.nextToken());
-			string index = st.hasMoreTokens() ? st.nextToken() : null;
+			string? index = st.hasMoreTokens() ? st.nextToken() : null;
 			int ind = index == null ? 1 : int.Parse(index);
 			showTopics(ForumsBBSManager.getInstance().getForumByID(idf), player, ind, idf);
 		}
@@ -136,14 +135,14 @@ public class TopicBBSManager: BaseBBSManager
 			st.nextToken();
 			int idf = int.Parse(st.nextToken());
 			int idt = int.Parse(st.nextToken());
-			Forum f = ForumsBBSManager.getInstance().getForumByID(idf);
+			Forum? f = ForumsBBSManager.getInstance().getForumByID(idf);
 			if (f == null)
 			{
 				CommunityBoardHandler.separateAndSend("<html><body><br><br><center>the forum: " + idf + " does not exist !</center><br><br></body></html>", player);
 			}
 			else
 			{
-				Topic t = f.getTopic(idt);
+				Topic? t = f.getTopic(idt);
 				if (t == null)
 				{
 					CommunityBoardHandler.separateAndSend("<html><body><br><br><center>the topic: " + idt + " does not exist !</center><br><br></body></html>", player);
@@ -166,8 +165,8 @@ public class TopicBBSManager: BaseBBSManager
 			CommunityBoardHandler.separateAndSend("<html><body><br><br><center>the command: " + command + " is not implemented yet</center><br><br></body></html>", player);
 		}
 	}
-	
-	private void showNewTopic(Forum forum, Player player, int idf)
+
+	private void showNewTopic(Forum? forum, Player player, int idf)
 	{
 		if (forum == null)
 		{
@@ -182,15 +181,15 @@ public class TopicBBSManager: BaseBBSManager
 			CommunityBoardHandler.separateAndSend("<html><body><br><br><center>the forum: " + forum.getName() + " is not implemented yet</center><br><br></body></html>", player);
 		}
 	}
-	
+
 	private void showMemoNewTopics(Forum forum, Player player)
 	{
 		string html = "<html><body><br><br><table border=0 width=610><tr><td width=10></td><td width=600 align=left><a action=\"bypass _bbshome\">HOME</a>&nbsp;>&nbsp;<a action=\"bypass _bbsmemo\">Memo Form</a></td></tr></table><img src=\"L2UI.squareblank\" width=\"1\" height=\"10\"><center><table border=0 cellspacing=0 cellpadding=0><tr><td width=610><img src=\"sek.cbui355\" width=\"610\" height=\"1\"><br1><img src=\"sek.cbui355\" width=\"610\" height=\"1\"></td></tr></table><table fixwidth=610 border=0 cellspacing=0 cellpadding=0><tr><td><img src=\"l2ui.mini_logo\" width=5 height=20></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=1></td><td align=center FIXWIDTH=60 height=29>&$413;</td><td FIXWIDTH=540><edit var = \"Title\" width=540 height=13></td><td><img src=\"l2ui.mini_logo\" width=5 height=1></td></tr></table><table fixwidth=610 border=0 cellspacing=0 cellpadding=0><tr><td><img src=\"l2ui.mini_logo\" width=5 height=10></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=1></td><td align=center FIXWIDTH=60 height=29 valign=top>&$427;</td><td align=center FIXWIDTH=540><MultiEdit var =\"Content\" width=535 height=313></td><td><img src=\"l2ui.mini_logo\" width=5 height=1></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=10></td></tr></table><table fixwidth=610 border=0 cellspacing=0 cellpadding=0><tr><td><img src=\"l2ui.mini_logo\" width=5 height=10></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=1></td><td align=center FIXWIDTH=60 height=29>&nbsp;</td><td align=center FIXWIDTH=70><button value=\"&$140;\" action=\"Write Topic crea " + forum.getID() + " Title Content Title\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td><td align=center FIXWIDTH=70><button value = \"&$141;\" action=\"bypass _bbsmemo\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\"> </td><td align=center FIXWIDTH=400>&nbsp;</td><td><img src=\"l2ui.mini_logo\" width=5 height=1></td></tr></table></center></body></html>";
 		send1001(html, player);
 		send1002(player);
 	}
-	
-	private void showTopics(Forum forum, Player player, int index, int idf)
+
+	private void showTopics(Forum? forum, Player player, int index, int idf)
 	{
 		if (forum == null)
 		{
@@ -205,7 +204,7 @@ public class TopicBBSManager: BaseBBSManager
 			CommunityBoardHandler.separateAndSend("<html><body><br><br><center>the forum: " + forum.getName() + " is not implemented yet</center><br><br></body></html>", player);
 		}
 	}
-	
+
 	private void showMemoTopics(Forum forum, Player player, int index)
 	{
 		forum.vload();
@@ -217,7 +216,7 @@ public class TopicBBSManager: BaseBBSManager
 			{
 				break;
 			}
-			Topic t = forum.getTopic(j);
+			Topic? t = forum.getTopic(j);
 			if ((t != null) && (i++ >= (12 * (index - 1))))
 			{
 				html.Append(
@@ -228,7 +227,7 @@ public class TopicBBSManager: BaseBBSManager
 					"</td></tr></table><img src=\"L2UI.Squaregray\" width=\"610\" height=\"1\">");
 			}
 		}
-		
+
 		html.Append("<br><table width=610 cellspace=0 cellpadding=0><tr><td width=50><button value=\"&$422;\" action=\"bypass _bbsmemo\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\"></td><td width=510 align=center><table border=0><tr>");
 		if (index == 1)
 		{
@@ -238,7 +237,7 @@ public class TopicBBSManager: BaseBBSManager
 		{
 			html.Append("<td><button action=\"bypass _bbstopics;read;" + forum.getID() + ";" + (index - 1) + "\" back=\"l2ui_ch3.prev1_down\" fore=\"l2ui_ch3.prev1\" width=16 height=16 ></td>");
 		}
-		
+
 		int nbp = forum.getTopicSize() / 8;
 		if ((nbp * 8) != ClanTable.getInstance().getClanCount())
 		{
@@ -263,16 +262,16 @@ public class TopicBBSManager: BaseBBSManager
 		{
 			html.Append("<td><button action=\"bypass _bbstopics;read;" + forum.getID() + ";" + (index + 1) + "\" back=\"l2ui_ch3.next1_down\" fore=\"l2ui_ch3.next1\" width=16 height=16 ></td>");
 		}
-		
+
 		html.Append("</tr></table> </td> <td align=right><button value = \"&$421;\" action=\"bypass _bbstopics;crea;" + forum.getID() + "\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=10></td></tr><tr> <td></td><td align=center><table border=0><tr><td></td><td><edit var = \"Search\" width=130 height=11></td><td><button value=\"&$420;\" action=\"Write 5 -2 0 Search _ _\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\"> </td> </tr></table> </td></tr></table><br><br><br></center></body></html>");
 		CommunityBoardHandler.separateAndSend(html.ToString(), player);
 	}
-	
+
 	public static TopicBBSManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static TopicBBSManager INSTANCE = new TopicBBSManager();

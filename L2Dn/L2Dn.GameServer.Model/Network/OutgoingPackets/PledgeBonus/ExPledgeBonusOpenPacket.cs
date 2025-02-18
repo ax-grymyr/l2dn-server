@@ -11,24 +11,25 @@ public readonly struct ExPledgeBonusOpenPacket: IOutgoingPacket
 {
 	private readonly Logger _logger = LogManager.GetLogger(nameof(ExPledgeBonusOpenPacket));
 	private readonly Player _player;
-	
+
 	public ExPledgeBonusOpenPacket(Player player)
 	{
 		_player = player;
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
-		Clan clan = _player.getClan();
+		Clan? clan = _player.getClan();
 		if (clan == null)
 		{
 			_logger.Error("Player: " + _player + " attempting to write to a null clan!");
 			return;
 		}
-		ClanRewardBonus highestMembersOnlineBonus = ClanRewardData.getInstance().getHighestReward(ClanRewardType.MEMBERS_ONLINE);
-		ClanRewardBonus highestHuntingBonus = ClanRewardData.getInstance().getHighestReward(ClanRewardType.HUNTING_MONSTERS);
-		ClanRewardBonus membersOnlineBonus = ClanRewardType.MEMBERS_ONLINE.getAvailableBonus(clan);
-		ClanRewardBonus huntingBonus = ClanRewardType.HUNTING_MONSTERS.getAvailableBonus(clan);
+
+		ClanRewardBonus? highestMembersOnlineBonus = ClanRewardData.getInstance().getHighestReward(ClanRewardType.MEMBERS_ONLINE);
+		ClanRewardBonus? highestHuntingBonus = ClanRewardData.getInstance().getHighestReward(ClanRewardType.HUNTING_MONSTERS);
+		ClanRewardBonus? membersOnlineBonus = ClanRewardType.MEMBERS_ONLINE.getAvailableBonus(clan);
+		ClanRewardBonus? huntingBonus = ClanRewardType.HUNTING_MONSTERS.getAvailableBonus(clan);
 		if (highestMembersOnlineBonus == null)
 		{
 			_logger.Error("Couldn't find highest available clan members online bonus!!");
@@ -49,10 +50,10 @@ public readonly struct ExPledgeBonusOpenPacket: IOutgoingPacket
 			_logger.Error("Couldn't find skill reward for highest available hunting bonus!!");
 			return;
 		}
-		
+
 		// General OP Code
 		writer.WritePacketCode(OutgoingPacketCodes.EX_PLEDGE_BONUS_OPEN);
-		
+
 		// Members online bonus
 		writer.WriteInt32(highestMembersOnlineBonus.getRequiredAmount());
 		writer.WriteInt32(clan.getMaxOnlineMembers());

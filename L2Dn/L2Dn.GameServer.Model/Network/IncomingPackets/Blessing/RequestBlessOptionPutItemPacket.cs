@@ -22,7 +22,7 @@ public struct RequestBlessOptionPutItemPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Item item = player.getInventory().getItemByObjectId(_objectId);
+        Item? item = player.getInventory().getItemByObjectId(_objectId);
         if (item == null)
             return ValueTask.CompletedTask;
 
@@ -31,7 +31,7 @@ public struct RequestBlessOptionPutItemPacket: IIncomingPacket<GameSession>
             player.sendPacket(SystemMessageId.YOU_CANNOT_ENCHANT_WHILE_OPERATING_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
             return ValueTask.CompletedTask;
         }
-		
+
         // first validation check - also over enchant check
         if (item.isBlessed())
         {
@@ -39,9 +39,9 @@ public struct RequestBlessOptionPutItemPacket: IIncomingPacket<GameSession>
             player.sendPacket(new ExBlessOptionPutItemPacket(0));
             return ValueTask.CompletedTask;
         }
-		
+
         player.sendPacket(new ExBlessOptionPutItemPacket(1));
-        
+
         return ValueTask.CompletedTask;
     }
 }

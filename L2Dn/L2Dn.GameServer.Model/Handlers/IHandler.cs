@@ -8,10 +8,10 @@ namespace L2Dn.GameServer.Handlers;
 public interface IHandler<K, V>
 {
 	void registerHandler(K handler);
-	
+
 	void removeHandler(K handler);
-	
-	K getHandler(V val);
-	
+
+	K? getHandler(V val);
+
 	int size();
 }

@@ -32,10 +32,10 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 	    string? VisualIdStr,
 	    int Option1,
 	    int Option2);
-    
+
     private static readonly List<string> _characterVariablesToLoad =
     [
-        "visualFaceId", "visualHairColorId", "visualHairId", 
+        "visualFaceId", "visualHairColorId", "visualHairId",
         PlayerVariables.HAIR_ACCESSORY_VARIABLE_NAME,
         PlayerVariables.VITALITY_ITEMS_USED_VARIABLE_NAME
     ];
@@ -72,7 +72,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 		    from chVar in ctx.CharacterVariables.AsNoTracking().Where(r =>
 			    r.CharacterId == ch.Id && _characterVariablesToLoad.Contains(r.Name))
 		    select chVar);
-    
+
     private readonly int _accountId;
     private readonly List<CharacterInfo> _characters = new(Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT);
     private int? _selected;
@@ -95,7 +95,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
     public void AddNewChar(Player newChar)
     {
 	    CheckDeleteTime();
-	    
+
 	    CharacterInfo charInfo = new CharacterInfo();
 	    charInfo.LoadFrom(newChar);
 	    _characters.Add(charInfo);
@@ -112,7 +112,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
     {
 	    if (_selected is null || _selected < 0 || _selected >= _characters.Count)
 		    return;
-	    
+
 	    _characters[_selected.Value].LoadFrom(player);
     }
 
@@ -125,27 +125,27 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 		    return CharacterDeleteFailReason.Unknown;
 	    }
 
-	    charInfo = _characters[index]; 
+	    charInfo = _characters[index];
 	    int objectId = charInfo.Id;
 	    if (objectId < 0)
 		    return CharacterDeleteFailReason.Unknown;
-		
+
 	    if (MentorManager.getInstance().isMentor(objectId))
 		    return CharacterDeleteFailReason.Mentor;
 
 	    if (MentorManager.getInstance().isMentee(objectId))
 		    return CharacterDeleteFailReason.Mentee;
-        
+
 	    if (ItemCommissionManager.getInstance().hasCommissionItems(objectId))
 		    return CharacterDeleteFailReason.Commission;
-        
+
 	    if (MailManager.getInstance().getMailsInProgress(objectId) > 0)
 		    return CharacterDeleteFailReason.Mail;
-        
+
 	    int clanId = CharInfoTable.getInstance().getClanIdById(objectId);
 	    if (clanId > 0)
 	    {
-		    Clan clan = ClanTable.getInstance().getClan(clanId);
+		    Clan? clan = ClanTable.getInstance().getClan(clanId);
 		    if (clan != null)
 		    {
 			    if (clan.getLeaderId() == objectId)
@@ -175,12 +175,12 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 	    {
 		    _logger.Error("Failed to update char delete time: " + e);
 	    }
-		
+
 	    CheckDeleteTime();
 
 	    return CharacterDeleteFailReason.None;
     }
-    
+
     public bool RestoreCharacter(int index, out CharacterInfo? charInfo)
     {
 	    if (index < 0 || index >= _characters.Count)
@@ -194,7 +194,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 	    int objectId = charInfo.Id;
 	    if (objectId < 0)
 		    return false;
-		
+
 	    try
 	    {
 		    using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -211,11 +211,11 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 	    }
 
 	    CheckDeleteTime();
-	    
+
 	    return true;
     }
 
-    public Player LoadPlayer(int index)
+    public Player? LoadPlayer(int index)
     {
 	    if (index < 0 || index >= _characters.Count)
 	    {
@@ -227,17 +227,17 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 	    int objectId = charInfo.Id;
 	    if (objectId < 0)
 		    return null;
-		
-	    Player player = World.getInstance().getPlayer(objectId);
+
+	    Player? player = World.getInstance().getPlayer(objectId);
 	    if (player != null)
 	    {
 		    // exploit prevention, should not happens in normal way
 		    if (player.getOnlineStatus() == CharacterOnlineStatus.Online)
 			    _logger.Error("Attempt of double login: " + player.getName() + "(" + objectId + ") " + player.getAccountName());
-			
+
 		    if (player.getClient() != null)
 		    {
-			    LeaveWorldPacket leaveWorldPacket = new(); 
+			    LeaveWorldPacket leaveWorldPacket = new();
 			    Disconnection.of(player).defaultSequence(ref leaveWorldPacket);
 		    }
 		    else
@@ -245,14 +245,14 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 			    player.storeMe();
 			    player.deleteMe();
 		    }
-			
+
 		    return null;
 	    }
-		
+
 	    player = Player.load(objectId);
 	    if (player == null)
 		    _logger.Error("Could not restore in slot: " + index);
-		
+
 	    return player;
     }
 
@@ -261,7 +261,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
         try
         {
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-            
+
             // Load characters with the active subclasses
             foreach (CharacterSubClassData pair in _characterQuery(ctx, _accountId))
             {
@@ -281,7 +281,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 
             // Look for characters that must be deleted
             CheckDeleteTime();
-            
+
             // Query paperdoll data // TODO: check how weapon augmentation loads
             foreach (PaperdollData record in _paperdollQuery(ctx, _accountId))
             {
@@ -293,7 +293,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 	            {
 		            if (!int.TryParse(record.VisualIdStr, out int visualId))
 			            visualId = 0;
-		            
+
 		            charInfo.Paperdoll[slot] = new CharacterPaperdollSlotInfo(record.ItemId, visualId);
 
 		            switch (slot)
@@ -303,30 +303,30 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 				            charInfo.WeaponAugmentationOption1Id = record.Option1;
 				            charInfo.WeaponAugmentationOption2Id = record.Option2;
 				            break;
-			            
+
 			            case Inventory.PAPERDOLL_CHEST:
 				            charInfo.ChestEnchantLevel = record.EnchantLevel;
 				            break;
-			            
+
 			            case Inventory.PAPERDOLL_LEGS:
 				            charInfo.LegsEnchantLevel = record.EnchantLevel;
 				            break;
-			            
+
 			            case Inventory.PAPERDOLL_HEAD:
 				            charInfo.HeadEnchantLevel = record.EnchantLevel;
 				            break;
-			            
+
 			            case Inventory.PAPERDOLL_GLOVES:
 				            charInfo.GlovesEnchantLevel = record.EnchantLevel;
 				            break;
-			            
+
 			            case Inventory.PAPERDOLL_FEET:
 				            charInfo.BootsEnchantLevel = record.EnchantLevel;
 				            break;
 		            }
 	            }
             }
-            
+
             // Query character variables
             foreach (CharacterVariable variable in _variablesQuery(ctx, _accountId, _characterVariablesToLoad))
             {
@@ -338,25 +338,25 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 			            case "visualFaceId":
 				            if (int.TryParse(variable.Value, out int value))
 								charInfo.Face = value;
-				            
+
 				            break;
 
 			            case "visualHairColorId":
 				            if (int.TryParse(variable.Value, out value))
 					            charInfo.HairColor = value;
-				            
+
 				            break;
 
 			            case "visualHairId":
 				            if (int.TryParse(variable.Value, out value))
 					            charInfo.HairStyle = value;
-				            
+
 				            break;
 
 			            case PlayerVariables.HAIR_ACCESSORY_VARIABLE_NAME:
 				            if (bool.TryParse(variable.Value, out bool val))
 					            charInfo.HairAccessoryEnabled = val;
-				            
+
 				            break;
 
 			            case PlayerVariables.VITALITY_ITEMS_USED_VARIABLE_NAME:
@@ -422,11 +422,11 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 			    i--;
 		    }
 	    }
-	    
+
 	    if (deleted)
 		    CalcSelectedIndex();
     }
-    
+
     private void DeleteCharacter(int id)
     {
 	    CharInfoTable.getInstance().removeName(id);
@@ -453,19 +453,19 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 
 		    ctx.Pets.Where(p => ctx.Items.Where(r => r.OwnerId == id).Select(r => r.ObjectId).Contains(p.ItemObjectId))
 			    .ExecuteDelete();
-		    
+
 		    ctx.ItemVariations
 			    .Where(p => ctx.Items.Where(r => r.OwnerId == id).Select(r => r.ObjectId).Contains(p.ItemId))
 			    .ExecuteDelete();
-		    
+
 		    ctx.ItemSpecialAbilities
 			    .Where(p => ctx.Items.Where(r => r.OwnerId == id).Select(r => r.ObjectId).Contains(p.ItemId))
 			    .ExecuteDelete();
-		    
+
 		    ctx.ItemVariables
 			    .Where(p => ctx.Items.Where(r => r.OwnerId == id).Select(r => r.ObjectId).Contains(p.ItemId))
 			    .ExecuteDelete();
-		    
+
 		    ctx.Items.Where(r => r.OwnerId == id).ExecuteDelete();
 		    ctx.MerchantLeases.Where(r => r.CharacterId == id).ExecuteDelete();
 		    ctx.CharacterInstances.Where(r => r.CharacterId == id).ExecuteDelete();

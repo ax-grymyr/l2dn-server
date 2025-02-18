@@ -37,7 +37,7 @@ public struct RequestNewHennaEquipPacket: IIncomingPacket<GameSession>
 		// {
 		// 	return ValueTask.CompletedTask;
 		// }
-		
+
 		if (player.getHennaEmptySlots() == 0)
 		{
 			PacketLogger.Instance.Warn(player + ": Invalid Henna error 0 Id " + _symbolId + " " + _slotId);
@@ -45,15 +45,15 @@ public struct RequestNewHennaEquipPacket: IIncomingPacket<GameSession>
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
-		Item item = player.getInventory().getItemByObjectId(_symbolId);
+
+		Item? item = player.getInventory().getItemByObjectId(_symbolId);
 		if (item == null)
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			player.sendPacket(new NewHennaEquipPacket(_slotId, 0, false));
 			return ValueTask.CompletedTask;
 		}
-		
+
 		Henna henna = HennaData.getInstance().getHennaByItemId(item.getId());
 		if (henna == null)
 		{
@@ -62,7 +62,7 @@ public struct RequestNewHennaEquipPacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.YOU_CANNOT_MAKE_A_PATTERN);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		long count = player.getInventory().getInventoryItemCount(henna.getDyeItemId(), -1);
 		if (henna.isAllowedClass(player) && count >= henna.getWearCount() &&
 		    (player.getAdena() >= henna.getWearFee() ||
@@ -83,13 +83,16 @@ public struct RequestNewHennaEquipPacket: IIncomingPacket<GameSession>
 
 			player.destroyItemByItemId("HennaDye", henna.getDyeItemId(), henna.getWearCount(), player, true);
 			player.destroyItemByItemId("fee", _otherItemId, feeType, player, true);
-			if (player.getAdena() > 0)
-			{
-				InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(player.getInventory().getAdenaInstance(), ItemChangeType.MODIFIED));
-				player.sendInventoryUpdate(iu);
-			}
+            if (player.getAdena() > 0)
+            {
+                InventoryUpdatePacket iu =
+                    new InventoryUpdatePacket(new ItemInfo(player.getInventory().getAdenaInstance(),
+                        ItemChangeType.MODIFIED));
 
-			player.sendPacket(new NewHennaEquipPacket(_slotId, henna.getDyeId(), true));
+                player.sendInventoryUpdate(iu);
+            }
+
+            player.sendPacket(new NewHennaEquipPacket(_slotId, henna.getDyeId(), true));
 			player.getStat().recalculateStats(true);
 			player.sendPacket(new UserInfoPacket(player));
 		}
@@ -102,11 +105,11 @@ public struct RequestNewHennaEquipPacket: IIncomingPacket<GameSession>
 					"Exploit attempt: Character " + player.getName() + " of account " + player.getAccountName() +
 					" tryed to add a forbidden henna.", Config.DEFAULT_PUNISH);
 			}
-			
+
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			player.sendPacket(new NewHennaEquipPacket(_slotId, henna.getDyeId(), false));
 		}
-        
+
         return ValueTask.CompletedTask;
     }
 }

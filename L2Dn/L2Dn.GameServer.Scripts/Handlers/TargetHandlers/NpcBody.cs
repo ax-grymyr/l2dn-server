@@ -19,19 +19,19 @@ public class NpcBody: ITargetTypeHandler
 	{
 		return TargetType.NPC_BODY;
 	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
+
+	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
 		if (selectedTarget == null)
 		{
 			return null;
 		}
-		
+
 		if (!selectedTarget.isCreature())
 		{
 			return null;
 		}
-		
+
 		if (!selectedTarget.isNpc() && !selectedTarget.isSummon())
 		{
 			if (sendMessage)
@@ -40,7 +40,7 @@ public class NpcBody: ITargetTypeHandler
 			}
 			return null;
 		}
-		
+
 		Creature target = (Creature) selectedTarget;
 		if (target.isDead())
 		{
@@ -53,7 +53,7 @@ public class NpcBody: ITargetTypeHandler
 				}
 				return null;
 			}
-			
+
 			// Geodata check when character is within range.
 			if (!GeoEngine.getInstance().canSeeTarget(creature, target))
 			{
@@ -65,7 +65,7 @@ public class NpcBody: ITargetTypeHandler
 			}
 			return target;
 		}
-		
+
 		// If target is not dead or not player/pet it will not even bother to walk within range, unlike Enemy target type.
 		if (sendMessage)
 		{

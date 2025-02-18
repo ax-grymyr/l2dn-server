@@ -5,23 +5,26 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Packets;
+using NLog;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
 public class BoatManager
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(BoatManager));
+
 	private readonly Map<int, Boat> _boats = new();
 	private readonly bool[] _docksBusy = new bool[3];
-	
+
 	public const int TALKING_ISLAND = 1;
 	public const int GLUDIN_HARBOR = 2;
 	public const int RUNE_HARBOR = 3;
-	
+
 	public static BoatManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	protected BoatManager()
 	{
 		for (int i = 0; i < _docksBusy.Length; i++)
@@ -29,14 +32,14 @@ public class BoatManager
 			_docksBusy[i] = false;
 		}
 	}
-	
-	public Boat getNewBoat(int boatId, int x, int y, int z, int heading)
+
+	public Boat? getNewBoat(int boatId, int x, int y, int z, int heading)
 	{
 		if (!Config.ALLOW_BOAT)
 		{
 			return null;
 		}
-		
+
 		StatSet npcDat = new StatSet();
 		npcDat.set("npcId", boatId);
 		npcDat.set("level", 0);
@@ -52,7 +55,7 @@ public class BoatManager
 		npcDat.set("baseAccCombat", 38);
 		npcDat.set("baseEvasRate", 38);
 		npcDat.set("baseCritRate", 38);
-		
+
 		// npcDat.set("name", "");
 		npcDat.set("collision_radius", 0);
 		npcDat.set("collision_height", 0);
@@ -86,16 +89,16 @@ public class BoatManager
 		boat.spawnMe();
 		return boat;
 	}
-	
+
 	/**
 	 * @param boatId
 	 * @return
 	 */
-	public Boat getBoat(int boatId)
+	public Boat? getBoat(int boatId)
 	{
 		return _boats.get(boatId);
 	}
-	
+
 	/**
 	 * Lock/unlock dock so only one ship can be docked
 	 * @param h Dock Id
@@ -109,10 +112,11 @@ public class BoatManager
 		}
 		catch (IndexOutOfRangeException e)
 		{
+            _logger.Trace(e);
 			// Ignore.
 		}
 	}
-	
+
 	/**
 	 * Check if dock is busy
 	 * @param h Dock Id
@@ -126,10 +130,11 @@ public class BoatManager
 		}
 		catch (IndexOutOfRangeException e)
 		{
+            _logger.Trace(e);
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Broadcast one packet in both path points
 	 * @param point1
@@ -141,7 +146,7 @@ public class BoatManager
 	{
 		broadcastPacketsToPlayers(point1, point2).SendPackets(packet);
 	}
-	
+
 	/**
 	 * Broadcast several packets in both path points
 	 * @param point1
@@ -152,7 +157,7 @@ public class BoatManager
 	{
 		return broadcastPacketsToPlayers(point1, point2);
 	}
-	
+
 	private PacketSendUtil broadcastPacketsToPlayers(VehiclePathPoint point1, VehiclePathPoint point2)
 	{
 		IEnumerable<Player> players = World.getInstance().getPlayers().Where(player =>
@@ -163,7 +168,7 @@ public class BoatManager
 
 		return new PacketSendUtil(players);
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly BoatManager INSTANCE = new BoatManager();

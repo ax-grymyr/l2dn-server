@@ -15,12 +15,12 @@ public class MessageDeletionTaskManager: Runnable
 {
 	private static readonly Map<int, DateTime> PENDING_MESSAGES = new();
 	private static bool _working = false;
-	
+
 	protected MessageDeletionTaskManager()
 	{
 		ThreadPool.scheduleAtFixedRate(this, 10000, 10000);
 	}
-	
+
 	public void run()
 	{
 		if (_working)
@@ -28,7 +28,7 @@ public class MessageDeletionTaskManager: Runnable
 			return;
 		}
 		_working = true;
-		
+
 		if (PENDING_MESSAGES.Count != 0)
 		{
 			DateTime currentTime = DateTime.UtcNow;
@@ -44,10 +44,10 @@ public class MessageDeletionTaskManager: Runnable
 						toRemove.Add(messageId);
 						continue;
 					}
-					
+
 					if (message.hasAttachments())
 					{
-						Player sender = World.getInstance().getPlayer(message.getSenderId());
+						Player? sender = World.getInstance().getPlayer(message.getSenderId());
 						if (sender != null)
 						{
 							message.getAttachments().returnToWh(sender.getWarehouse());
@@ -59,14 +59,14 @@ public class MessageDeletionTaskManager: Runnable
 						}
 						message.getAttachments().deleteMe();
 						message.removeAttachments();
-						
-						Player receiver = World.getInstance().getPlayer(message.getReceiverId());
+
+						Player? receiver = World.getInstance().getPlayer(message.getReceiverId());
 						if (receiver != null)
 						{
 							receiver.sendPacket(new SystemMessagePacket(SystemMessageId.THE_MAIL_WAS_RETURNED_DUE_TO_THE_EXCEEDED_WAITING_TIME));
 						}
 					}
-					
+
 					MailManager.getInstance().deleteMessageInDb(messageId);
 					toRemove.Add(messageId);
 				}
@@ -77,20 +77,20 @@ public class MessageDeletionTaskManager: Runnable
 				PENDING_MESSAGES.remove(messageId);
 			}
 		}
-		
+
 		_working = false;
 	}
-	
+
 	public void add(int msgId, DateTime deletionTime)
 	{
 		PENDING_MESSAGES.put(msgId, deletionTime);
 	}
-	
+
 	public static MessageDeletionTaskManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly MessageDeletionTaskManager INSTANCE = new MessageDeletionTaskManager();

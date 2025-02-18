@@ -7,13 +7,14 @@ public class TowerSpawn: IIdentifiable
 {
     private readonly int _npcId;
     private readonly Location3D _location;
-    private List<int> _zoneList;
+    private readonly List<int> _zoneList;
     private int _upgradeLevel;
 
     public TowerSpawn(int npcId, Location3D location)
     {
         _location = location;
         _npcId = npcId;
+        _zoneList = [];
     }
 
     public TowerSpawn(int npcId, Location3D location, List<int> zoneList)

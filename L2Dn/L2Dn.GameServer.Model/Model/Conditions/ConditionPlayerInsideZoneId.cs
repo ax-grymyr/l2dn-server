@@ -10,29 +10,19 @@ namespace L2Dn.GameServer.Model.Conditions;
 /**
  * @author UnAfraid
  */
-public class ConditionPlayerInsideZoneId : Condition
+public sealed class ConditionPlayerInsideZoneId(Set<int> zones): Condition
 {
-	private readonly Set<int> _zones;
-	
-	public ConditionPlayerInsideZoneId(Set<int> zones)
-	{
-		_zones = zones;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		if (effector.getActingPlayer() == null)
-		{
-			return false;
-		}
-		
-		foreach (ZoneType zone in ZoneManager.getInstance().getZones(effector.Location.Location3D))
-		{
-			if (_zones.Contains(zone.getId()))
-			{
-				return true;
-			}
-		}
-		return false;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        if (effector.getActingPlayer() == null)
+            return false;
+
+        foreach (ZoneType zone in ZoneManager.getInstance().getZones(effector.Location.Location3D))
+        {
+            if (zones.Contains(zone.getId()))
+                return true;
+        }
+
+        return false;
+    }
 }

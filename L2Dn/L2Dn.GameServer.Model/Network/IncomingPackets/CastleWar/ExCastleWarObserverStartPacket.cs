@@ -27,26 +27,26 @@ public struct ExCastleWarObserverStartPacket: IIncomingPacket<GameSession>
             player.sendPacket(SystemMessageId.YOU_MAY_NOT_OBSERVE_A_SIEGE_WITH_A_SERVITOR_SUMMONED);
             return ValueTask.CompletedTask;
         }
-		
+
         if (player.isOnEvent())
         {
             player.sendMessage("Cannot use while on an event.");
             return ValueTask.CompletedTask;
         }
-		
-        Castle castle = CastleManager.getInstance().getCastleById(_castleId);
+
+        Castle? castle = CastleManager.getInstance().getCastleById(_castleId);
         if (castle == null)
             return ValueTask.CompletedTask;
-		
+
         if (!castle.getSiege().isInProgress())
             return ValueTask.CompletedTask;
-		
+
         Player? random = castle.getSiege().getPlayersInZone().FirstOrDefault();
         if (random == null)
             return ValueTask.CompletedTask;
-		
+
         player.enterObserverMode(random.Location);
-        
+
         return ValueTask.CompletedTask;
     }
 }

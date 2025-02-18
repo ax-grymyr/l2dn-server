@@ -16,15 +16,15 @@ namespace L2Dn.GameServer.Data.Sql;
 public class CrestTable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CrestTable));
-	
+
 	private readonly Map<int, Crest> _crests = new();
 	private readonly AtomicInteger _nextId = new AtomicInteger(1);
-	
+
 	protected CrestTable()
 	{
 		load();
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
 	{
@@ -32,26 +32,29 @@ public class CrestTable
 		Set<int> crestsInUse = new();
 		foreach (Clan clan in ClanTable.getInstance().getClans())
 		{
-			if (clan.getCrestId() != null)
+            int? crestId = clan.getCrestId();
+			if (crestId != null)
 			{
-				crestsInUse.add(clan.getCrestId().Value);
+				crestsInUse.add(crestId.Value);
 			}
-			
-			if (clan.getCrestLargeId() != null)
+
+            int? crestLargeId = clan.getCrestLargeId();
+			if (crestLargeId != null)
 			{
-				crestsInUse.add(clan.getCrestLargeId().Value);
+				crestsInUse.add(crestLargeId.Value);
 			}
-			
-			if (clan.getAllyCrestId() != null)
+
+            int? allyCrestId = clan.getAllyCrestId();
+			if (allyCrestId != null)
 			{
-				crestsInUse.add(clan.getAllyCrestId().Value);
+				crestsInUse.add(allyCrestId.Value);
 			}
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			var crests = ctx.Crests.OrderByDescending(c => c.Id);
+			IOrderedQueryable<Db.Crest> crests = ctx.Crests.OrderByDescending(c => c.Id);
 			foreach (var crest in crests)
 			{
 				int id = crest.Id;
@@ -59,7 +62,7 @@ public class CrestTable
 				{
 					_nextId.set(id + 1);
 				}
-				
+
 				// delete all unused crests except the last one we dont want to reuse
 				// a crest id because client will display wrong crest if its reused
 				if (!crestsInUse.Contains(id) && (id != (_nextId.get() - 1)))
@@ -67,7 +70,7 @@ public class CrestTable
 					removeCrest(id);
 					continue;
 				}
-				
+
 				byte[] data = crest.Data;
 				CrestType crestType = (CrestType)crest.Type;
 				if (Enum.IsDefined(crestType))
@@ -84,26 +87,29 @@ public class CrestTable
 		{
 			LOGGER.Warn("There was an error while loading crests from database:", e);
 		}
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _crests.Count + " Crests.");
-		
+
 		foreach (Clan clan in ClanTable.getInstance().getClans())
 		{
-			if ((clan.getCrestId() != null) && (getCrest(clan.getCrestId().Value) == null))
+            int? crestId = clan.getCrestId();
+			if ((crestId != null) && (getCrest(crestId.Value) == null))
 			{
 				LOGGER.Info("Removing non-existent crest for clan " + clan.getName() + " [" + clan.getId() + "], crestId:" + clan.getCrestId());
 				clan.setCrestId(0);
 				clan.changeClanCrest(0);
 			}
-			
-			if ((clan.getCrestLargeId() != null) && (getCrest(clan.getCrestLargeId().Value) == null))
+
+            int? crestLargeId = clan.getCrestLargeId();
+			if ((crestLargeId != null) && (getCrest(crestLargeId.Value) == null))
 			{
 				LOGGER.Info("Removing non-existent large crest for clan " + clan.getName() + " [" + clan.getId() + "], crestLargeId:" + clan.getCrestLargeId());
 				clan.setCrestLargeId(0);
 				clan.changeLargeCrest(0);
 			}
-			
-			if ((clan.getAllyCrestId() != null) && (getCrest(clan.getAllyCrestId().Value) == null))
+
+            int? allyCrestId = clan.getAllyCrestId();
+			if ((allyCrestId != null) && (getCrest(allyCrestId.Value) == null))
 			{
 				LOGGER.Info("Removing non-existent ally crest for clan " + clan.getName() + " [" + clan.getId() + "], allyCrestId:" + clan.getAllyCrestId());
 				clan.setAllyCrestId(0);
@@ -111,25 +117,25 @@ public class CrestTable
 			}
 		}
 	}
-	
+
 	/**
 	 * @param crestId The crest id
 	 * @return {@code Crest} if crest is found, {@code null} if crest was not found.
 	 */
-	public Crest getCrest(int crestId)
+	public Crest? getCrest(int crestId)
 	{
-		return _crests.get(crestId);
+		return _crests.GetValueOrDefault(crestId);
 	}
-	
+
 	/**
 	 * Creates a {@code Crest} object and inserts it in database and cache.
 	 * @param data
 	 * @param crestType
 	 * @return {@code Crest} on success, {@code null} on failure.
 	 */
-	public Crest createCrest(byte[] data, CrestType crestType)
+	public Crest? createCrest(byte[] data, CrestType crestType)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			Crest crest = new Crest(_nextId.getAndIncrement(), data, crestType);
@@ -146,11 +152,12 @@ public class CrestTable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("There was an error while saving crest in database:", e);
+			LOGGER.Warn("There was an error while saving crest in database: " + e);
 		}
-		return null;
+
+        return null;
 	}
-	
+
 	/**
 	 * Removes crest from database and cache.
 	 * @param crestId the id of crest to be removed.
@@ -158,15 +165,15 @@ public class CrestTable
 	public void removeCrest(int crestId)
 	{
 		_crests.remove(crestId);
-		
+
 		// avoid removing last crest id we dont want to lose index...
 		// because client will display wrong crest if its reused
 		if (crestId == (_nextId.get() - 1))
 		{
 			return;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.Crests.Where(c => c.Id == crestId).ExecuteDelete();
@@ -176,7 +183,7 @@ public class CrestTable
 			LOGGER.Warn("There was an error while deleting crest from database:", e);
 		}
 	}
-	
+
 	/**
 	 * @return The next crest id.
 	 */
@@ -184,12 +191,12 @@ public class CrestTable
 	{
 		return _nextId.getAndIncrement();
 	}
-	
+
 	public static CrestTable getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly CrestTable INSTANCE = new CrestTable();

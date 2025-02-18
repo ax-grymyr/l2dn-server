@@ -25,54 +25,54 @@ public struct RequestExPledgeEnemyDeletePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Clan playerClan = player.getClan();
+        Clan? playerClan = player.getClan();
         if (playerClan == null)
             return ValueTask.CompletedTask;
-		
-        Clan enemyClan = ClanTable.getInstance().getClan(_clanId);
+
+        Clan? enemyClan = ClanTable.getInstance().getClan(_clanId);
         if (enemyClan == null)
         {
             player.sendPacket(SystemMessageId.THERE_IS_NO_SUCH_CLAN);
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         if (!playerClan.isAtWarWith(enemyClan.getId()))
         {
             player.sendPacket(SystemMessageId.ENTER_THE_NAME_OF_THE_CLAN_YOU_WISH_TO_END_THE_WAR_WITH);
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         if (!player.hasClanPrivilege(ClanPrivilege.CL_PLEDGE_WAR))
         {
             player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
             return ValueTask.CompletedTask;
         }
-		
+
         foreach (ClanMember member in playerClan.getMembers())
         {
             if (member == null || member.getPlayer() == null)
             {
                 continue;
             }
-            
+
             if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(member.getPlayer()))
             {
                 player.sendPacket(SystemMessageId.THE_CLAN_WAR_CANNOT_BE_STOPPED_BECAUSE_SOMEONE_FROM_YOUR_CLAN_IS_STILL_ENGAGED_IN_BATTLE);
                 return ValueTask.CompletedTask;
             }
         }
-		
+
         // Reduce reputation.
         playerClan.takeReputationScore(500);
         ClanTable.getInstance().deleteClanWars(playerClan.getId(), enemyClan.getId());
-		
+
         broadcastClanInfo(playerClan, enemyClan);
 
         return ValueTask.CompletedTask;
     }
-	
+
     private void broadcastClanInfo(Clan playerClan, Clan enemyClan)
     {
         foreach (ClanMember member in playerClan.getMembers())
@@ -83,7 +83,7 @@ public struct RequestExPledgeEnemyDeletePacket: IIncomingPacket<GameSession>
                 member.getPlayer().broadcastUserInfo();
             }
         }
-        
+
         foreach (ClanMember member in enemyClan.getMembers())
         {
             if (member != null && member.isOnline())

@@ -12,12 +12,12 @@ namespace L2Dn.GameServer.Model;
 public class BlockList
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(BlockList));
-	
+
 	private static readonly Map<int, Set<int>> OFFLINE_LIST = new();
-	
+
 	private readonly Player _owner;
 	private Set<int> _blockList;
-	
+
 	public BlockList(Player owner)
 	{
 		_owner = owner;
@@ -27,24 +27,24 @@ public class BlockList
 			_blockList = loadList(_owner.ObjectId);
 		}
 	}
-	
+
 	private void addToBlockList(int target)
 	{
 		_blockList.add(target);
 		updateInDB(target, true);
 	}
-	
+
 	private void removeFromBlockList(int target)
 	{
 		_blockList.remove(target);
 		updateInDB(target, false);
 	}
-	
+
 	public void playerLogout()
 	{
 		OFFLINE_LIST.put(_owner.ObjectId, _blockList);
 	}
-	
+
 	private static Set<int> loadList(int objId)
 	{
 		Set<int> list = new();
@@ -70,10 +70,10 @@ public class BlockList
 
 		return list;
 	}
-	
+
 	private void updateInDB(int targetId, bool state)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			if (state) // add
@@ -101,70 +101,70 @@ public class BlockList
 			LOGGER.Error("Could not add block player: " + e);
 		}
 	}
-	
+
 	public bool isInBlockList(Player target)
 	{
 		return _blockList.Contains(target.ObjectId);
 	}
-	
+
 	public bool isInBlockList(int targetId)
 	{
 		return _blockList.Contains(targetId);
 	}
-	
+
 	public bool isBlockAll()
 	{
 		return _owner.getMessageRefusal();
 	}
-	
+
 	public static bool isBlocked(Player listOwner, Player target)
 	{
 		BlockList blockList = listOwner.getBlockList();
 		return blockList.isBlockAll() || blockList.isInBlockList(target);
 	}
-	
+
 	public static bool isBlocked(Player listOwner, int targetId)
 	{
 		BlockList blockList = listOwner.getBlockList();
 		return blockList.isBlockAll() || blockList.isInBlockList(targetId);
 	}
-	
+
 	private void setBlockAll(bool value)
 	{
 		_owner.setMessageRefusal(value);
 	}
-	
+
 	private Set<int> getBlockList()
 	{
 		return _blockList;
 	}
-	
+
 	public static void addToBlockList(Player listOwner, int targetId)
 	{
 		if (listOwner == null)
 		{
 			return;
 		}
-		
+
 		string charName = CharInfoTable.getInstance().getNameById(targetId);
 		if (listOwner.getFriendList().Contains(targetId))
 		{
 			listOwner.sendPacket(SystemMessageId.THIS_PLAYER_IS_ALREADY_REGISTERED_ON_YOUR_FRIENDS_LIST);
 			return;
 		}
-		
+
 		if (listOwner.getBlockList().getBlockList().Contains(targetId))
 		{
 			listOwner.sendMessage("Already in ignore list.");
 			return;
 		}
-		
+
 		listOwner.getBlockList().addToBlockList(targetId);
-		
+
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_HAS_BEEN_ADDED_TO_YOUR_IGNORE_LIST);
 		sm.Params.addString(charName);
 		listOwner.sendPacket(sm);
-		
+
 		Player player = World.getInstance().getPlayer(targetId);
 		if (player != null)
 		{
@@ -173,16 +173,16 @@ public class BlockList
 			player.sendPacket(sm);
 		}
 	}
-	
+
 	public static void removeFromBlockList(Player listOwner, int targetId)
 	{
 		if (listOwner == null)
 		{
 			return;
 		}
-		
+
 		SystemMessagePacket sm;
-		
+
 		string charName = CharInfoTable.getInstance().getNameById(targetId);
 		if (!listOwner.getBlockList().getBlockList().Contains(targetId))
 		{
@@ -190,34 +190,34 @@ public class BlockList
 			listOwner.sendPacket(sm);
 			return;
 		}
-		
+
 		listOwner.getBlockList().removeFromBlockList(targetId);
-		
+
 		sm = new SystemMessagePacket(SystemMessageId.S1_HAS_BEEN_REMOVED_FROM_YOUR_IGNORE_LIST);
 		sm.Params.addString(charName);
 		listOwner.sendPacket(sm);
 	}
-	
+
 	public static bool isInBlockList(Player listOwner, Player target)
 	{
 		return listOwner.getBlockList().isInBlockList(target);
 	}
-	
+
 	public bool isBlockAll(Player listOwner)
 	{
 		return listOwner.getBlockList().isBlockAll();
 	}
-	
+
 	public static void setBlockAll(Player listOwner, bool newValue)
 	{
 		listOwner.getBlockList().setBlockAll(newValue);
 	}
-	
+
 	public static void sendListToOwner(Player listOwner)
 	{
 		listOwner.sendPacket(new BlockListPacket(listOwner.getBlockList().getBlockList()));
 	}
-	
+
 	/**
 	 * @param ownerId object id of owner block list
 	 * @param targetId object id of potential blocked player

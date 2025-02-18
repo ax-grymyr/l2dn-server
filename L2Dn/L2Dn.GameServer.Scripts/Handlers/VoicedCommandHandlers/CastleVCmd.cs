@@ -2,6 +2,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
@@ -19,7 +20,7 @@ public class CastleVCmd: IVoicedCommandHandler
 		"closedoors",
 		"ridewyvern"
 	};
-	
+
 	public bool useVoicedCommand(string command, Player activeChar, string @params)
 	{
 		switch (command)
@@ -31,14 +32,14 @@ public class CastleVCmd: IVoicedCommandHandler
 					activeChar.sendMessage("Only Castle doors can be open.");
 					return false;
 				}
-				
+
 				if (!activeChar.isClanLeader())
 				{
 					activeChar.sendPacket(SystemMessageId.ONLY_THE_CLAN_LEADER_MAY_ISSUE_COMMANDS);
 					return false;
 				}
-				
-				Door door = (Door) activeChar.getTarget();
+
+				Door? door = (Door?)activeChar.getTarget();
 				if (door == null)
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
@@ -52,19 +53,19 @@ public class CastleVCmd: IVoicedCommandHandler
                     return false;
                 }
 
-                Castle castle = CastleManager.getInstance().getCastleById(castleId.Value);
+                Castle? castle = CastleManager.getInstance().getCastleById(castleId.Value);
 				if (castle == null)
 				{
 					activeChar.sendMessage("Your clan does not own a castle.");
 					return false;
 				}
-				
+
 				if (castle.getSiege().isInProgress())
 				{
 					activeChar.sendPacket(SystemMessageId.THE_CASTLE_GATES_CANNOT_BE_OPENED_AND_CLOSED_DURING_A_SIEGE);
 					return false;
 				}
-				
+
 				if (castle.checkIfInZone(door.Location.Location3D))
 				{
 					activeChar.sendPacket(SystemMessageId.THE_GATE_IS_BEING_OPENED);
@@ -84,14 +85,14 @@ public class CastleVCmd: IVoicedCommandHandler
 					activeChar.sendPacket(SystemMessageId.ONLY_THE_CLAN_LEADER_MAY_ISSUE_COMMANDS);
 					return false;
 				}
-                
-				Door door2 = (Door) activeChar.getTarget();
+
+				Door? door2 = (Door?)activeChar.getTarget();
 				if (door2 == null)
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 					return false;
 				}
-                
+
                 int? castleId = activeChar.getClan()?.getCastleId();
                 if (castleId is null)
                 {
@@ -99,19 +100,19 @@ public class CastleVCmd: IVoicedCommandHandler
                     return false;
                 }
 
-                Castle castle2 = CastleManager.getInstance().getCastleById(castleId.Value);
+                Castle? castle2 = CastleManager.getInstance().getCastleById(castleId.Value);
 				if (castle2 == null)
 				{
 					activeChar.sendMessage("Your clan does not own a castle.");
 					return false;
 				}
-				
+
 				if (castle2.getSiege().isInProgress())
 				{
 					activeChar.sendPacket(SystemMessageId.THE_CASTLE_GATES_CANNOT_BE_OPENED_AND_CLOSED_DURING_A_SIEGE);
 					return false;
 				}
-				
+
 				if (castle2.checkIfInZone(door2.Location.Location3D))
 				{
 					activeChar.sendMessage("The gate is being closed.");
@@ -120,8 +121,9 @@ public class CastleVCmd: IVoicedCommandHandler
 				break;
 			}
 			case "ridewyvern":
-			{
-				if (activeChar.isClanLeader() && (activeChar.getClan().getCastleId() > 0))
+            {
+                Clan? clan = activeChar.getClan();
+				if (clan != null && activeChar.isClanLeader() && clan.getCastleId() > 0)
 				{
 					activeChar.mount(15955, 0, true);
 				}
@@ -130,7 +132,7 @@ public class CastleVCmd: IVoicedCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;

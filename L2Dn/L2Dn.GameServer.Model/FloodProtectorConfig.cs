@@ -25,12 +25,12 @@ public class FloodProtectorConfig
     /**
      * Punishment type. Either 'none', 'kick', 'ban' or 'jail'.
      */
-    public string PUNISHMENT_TYPE;
+    public string PUNISHMENT_TYPE = "none";
     /**
      * For how long should the char/account be punished.
      */
     public long PUNISHMENT_TIME;
-	
+
     /**
      * Creates new instance of FloodProtectorConfig.
      * @param floodProtectorType {@link #FLOOD_PROTECTOR_TYPE}

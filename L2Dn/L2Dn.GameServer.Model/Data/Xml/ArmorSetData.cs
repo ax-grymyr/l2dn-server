@@ -17,8 +17,8 @@ public class ArmorSetData: DataReaderBase
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(ArmorSetData));
 
-	private ArmorSet[] _armorSets;
-	private List<ArmorSet>[] _itemSets;
+	private ArmorSet[] _armorSets = [];
+	private List<ArmorSet>[] _itemSets = [];
 
 	private ArmorSetData()
 	{
@@ -73,7 +73,7 @@ public class ArmorSetData: DataReaderBase
 		foreach (XmlArmorSetItem xmlArmorSetItem in xmlArmorSet.OptionalItems)
 		{
 			int itemId = xmlArmorSetItem.Id;
-			ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+			ItemTemplate? item = ItemData.getInstance().getTemplate(itemId);
 			if (item == null)
 			{
 				_logger.Warn("Attempting to register non existing optional item: " + itemId + " to a set: " +

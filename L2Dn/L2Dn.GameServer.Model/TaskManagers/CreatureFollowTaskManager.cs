@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
+using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.TaskManagers;
@@ -13,17 +14,18 @@ namespace L2Dn.GameServer.TaskManagers;
  */
 public class CreatureFollowTaskManager
 {
-	protected static readonly Map<Creature, int> NORMAL_FOLLOW_CREATURES = new();
-	protected static readonly Map<Creature, int> ATTACK_FOLLOW_CREATURES = new();
-	protected static bool _workingNormal = false;
-	protected static bool _workingAttack = false;
-	
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(CreatureFollowTaskManager));
+    private static readonly Map<Creature, int> NORMAL_FOLLOW_CREATURES = new();
+    private static readonly Map<Creature, int> ATTACK_FOLLOW_CREATURES = new();
+    private static bool _workingNormal;
+    private static bool _workingAttack;
+
 	protected CreatureFollowTaskManager()
 	{
 		ThreadPool.scheduleAtFixedRate(new CreatureFollowNormalTask(this), 1000, 1000); // TODO: high priority task
 		ThreadPool.scheduleAtFixedRate(new CreatureFollowAttackTask(this), 500, 500); // TODO: high priority task
 	}
-	
+
 	protected class CreatureFollowNormalTask: Runnable
 	{
 		private readonly CreatureFollowTaskManager _manager;
@@ -32,7 +34,7 @@ public class CreatureFollowTaskManager
 		{
 			_manager = manager;
 		}
-		
+
 		public void run()
 		{
 			if (_workingNormal)
@@ -40,7 +42,7 @@ public class CreatureFollowTaskManager
 				return;
 			}
 			_workingNormal = true;
-			
+
 			if (NORMAL_FOLLOW_CREATURES.Count != 0)
 			{
 				foreach (var entry in NORMAL_FOLLOW_CREATURES)
@@ -48,11 +50,11 @@ public class CreatureFollowTaskManager
 					_manager.follow(entry.Key, entry.Value);
 				}
 			}
-			
+
 			_workingNormal = false;
 		}
 	}
-	
+
 	protected class CreatureFollowAttackTask: Runnable
 	{
 		private readonly CreatureFollowTaskManager _manager;
@@ -61,7 +63,7 @@ public class CreatureFollowTaskManager
 		{
 			_manager = manager;
 		}
-		
+
 		public void run()
 		{
 			if (_workingAttack)
@@ -69,7 +71,7 @@ public class CreatureFollowTaskManager
 				return;
 			}
 			_workingAttack = true;
-			
+
 			if (ATTACK_FOLLOW_CREATURES.Count != 0)
 			{
 				foreach (var entry in ATTACK_FOLLOW_CREATURES)
@@ -77,11 +79,11 @@ public class CreatureFollowTaskManager
 					_manager.follow(entry.Key, entry.Value);
 				}
 			}
-			
+
 			_workingAttack = false;
 		}
 	}
-	
+
 	protected void follow(Creature creature, int range)
 	{
 		try
@@ -91,7 +93,7 @@ public class CreatureFollowTaskManager
 				CreatureAI ai = creature.getAI();
 				if (ai != null)
 				{
-					WorldObject followTarget = ai.getTarget();
+					WorldObject? followTarget = ai.getTarget();
 					if (followTarget == null)
 					{
 						if (creature.isSummon())
@@ -101,7 +103,7 @@ public class CreatureFollowTaskManager
 						ai.setIntention(CtrlIntention.AI_INTENTION_IDLE);
 						return;
 					}
-					
+
 					int followRange = range == -1 ? Rnd.get(50, 100) : range;
 					if (!creature.IsInsideRadius3D(followTarget, followRange))
 					{
@@ -130,40 +132,41 @@ public class CreatureFollowTaskManager
 		}
 		catch (Exception e)
 		{
+            _logger.Trace(e);
 			// Ignore.
 		}
 	}
-	
+
 	public bool isFollowing(Creature creature)
 	{
 		return NORMAL_FOLLOW_CREATURES.ContainsKey(creature) || ATTACK_FOLLOW_CREATURES.ContainsKey(creature);
 	}
-	
+
 	public void addNormalFollow(Creature creature, int range)
 	{
 		NORMAL_FOLLOW_CREATURES.TryAdd(creature, range);
 		follow(creature, range);
 	}
-	
+
 	public void addAttackFollow(Creature creature, int range)
 	{
 		ATTACK_FOLLOW_CREATURES.TryAdd(creature, range);
 		follow(creature, range);
 	}
-	
+
 	public void remove(Creature creature)
 	{
 		NORMAL_FOLLOW_CREATURES.remove(creature);
 		ATTACK_FOLLOW_CREATURES.remove(creature);
 	}
-	
+
 	public static CreatureFollowTaskManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
-		public static CreatureFollowTaskManager INSTANCE = new CreatureFollowTaskManager();
+		public static CreatureFollowTaskManager INSTANCE = new();
 	}
 }

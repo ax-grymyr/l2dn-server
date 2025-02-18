@@ -23,7 +23,7 @@ public struct RequestOustFromPartyRoomPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Player member = World.getInstance().getPlayer(_objectId);
+        Player? member = World.getInstance().getPlayer(_objectId);
         if (member == null)
             return ValueTask.CompletedTask;
 
@@ -34,8 +34,8 @@ public struct RequestOustFromPartyRoomPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        Party playerParty = player.getParty();
-        Party memberParty = player.getParty();
+        Party? playerParty = player.getParty();
+        Party? memberParty = player.getParty();
         if (playerParty != null && memberParty != null &&
             playerParty.getLeaderObjectId() == memberParty.getLeaderObjectId())
         {

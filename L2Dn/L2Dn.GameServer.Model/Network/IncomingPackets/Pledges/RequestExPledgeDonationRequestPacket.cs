@@ -30,10 +30,10 @@ public struct RequestExPledgeDonationRequestPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-		Clan clan = player.getClan();
+		Clan? clan = player.getClan();
 		if (clan == null)
 			return ValueTask.CompletedTask;
-		
+
 		switch (_type)
 		{
 			case 0:
@@ -86,7 +86,7 @@ public struct RequestExPledgeDonationRequestPacket: IIncomingPacket<GameSession>
 
 		return ValueTask.CompletedTask;
 	}
-	
+
 	private void criticalSuccess(Player player, Clan clan, int type)
 	{
 		if (type == 1)
@@ -106,16 +106,16 @@ public struct RequestExPledgeDonationRequestPacket: IIncomingPacket<GameSession>
 			}
 		}
 	}
-	
+
 	private static void sendMail(int charId, int amount, string donator)
 	{
 		Message msg = new Message(charId, "Clan Rewards for " + donator + " Donation",
 			"The entire clan receives rewards for " + donator + " donation.",
 			MailType.PLEDGE_DONATION_CRITICAL_SUCCESS);
-		
+
 		Mail attachment = msg.createAttachments();
 		attachment.addItem("Pledge reward", 95672, amount, null, donator); // Honor Coin Pouch
-		
+
 		MailManager.getInstance().sendMessage(msg);
 	}
 }

@@ -47,8 +47,8 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 
 public struct EnterWorldPacket: IIncomingPacket<GameSession>
 {
-	private static readonly Logger _logger = LogManager.GetLogger(nameof(EnterWorldPacket)); 
-	
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(EnterWorldPacket));
+
     public void ReadContent(PacketBitReader reader)
     {
         // 447 protocol
@@ -70,33 +70,33 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			Disconnection.of(session).defaultSequence(LeaveWorldPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		session.State = GameSessionState.InGame;
-		
+
 		// string[] adress = new String[5];
 		// for (int i = 0; i < 5; i++)
 		// {
 		// 	adress[i] = _tracert[i][0] + "." + _tracert[i][1] + "." + _tracert[i][2] + "." + _tracert[i][3];
 		// }
-		
+
 		//LoginServerThread.getInstance().sendClientTracert(player.getAccountName(), adress);
 		//client.setClientTracert(_tracert);
-		
+
 		connection.Send(new UserInfoPacket(player));
-		
+
 		// Restore to instanced area if enabled.
 		PlayerVariables vars = player.getVariables();
 		if (Config.RESTORE_PLAYER_INSTANCE)
 		{
-			Instance instance = InstanceManager.getInstance().getPlayerInstance(player, false);
+			Instance? instance = InstanceManager.getInstance().getPlayerInstance(player, false);
 			if ((instance != null) && (instance.getId() == vars.getInt(PlayerVariables.INSTANCE_RESTORE, 0)))
 			{
 				player.setInstance(instance);
 			}
-			
+
 			vars.remove(PlayerVariables.INSTANCE_RESTORE);
 		}
-		
+
 		if (!player.isGM())
 		{
 			player.updatePvpTitleAndColor(false);
@@ -171,121 +171,121 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		{
 			player.setDead(true);
 		}
-		
+
 		bool showClanNotice = false;
-		
+
 		// Clan related checks are here
-		Clan clan = player.getClan();
+		Clan? clan = player.getClan();
 		if (clan != null)
 		{
 			notifyClanMembers(connection, player);
 			notifySponsorOrApprentice(player);
-			
+
 			foreach (Siege siege in SiegeManager.getInstance().getSieges())
 			{
 				if (!siege.isInProgress())
 				{
 					continue;
 				}
-				
+
 				if (siege.checkIsAttacker(clan))
 				{
 					player.setSiegeState(1);
 					player.setSiegeSide(siege.getCastle().getResidenceId());
 				}
-				
+
 				else if (siege.checkIsDefender(clan))
 				{
 					player.setSiegeState(2);
 					player.setSiegeSide(siege.getCastle().getResidenceId());
 				}
 			}
-			
+
 			foreach (FortSiege siege in FortSiegeManager.getInstance().getSieges())
 			{
 				if (!siege.isInProgress())
 				{
 					continue;
 				}
-				
+
 				if (siege.checkIsAttacker(clan))
 				{
 					player.setSiegeState(1);
 					player.setSiegeSide(siege.getFort().getResidenceId());
 				}
-				
+
 				else if (siege.checkIsDefender(clan))
 				{
 					player.setSiegeState(2);
 					player.setSiegeSide(siege.getFort().getResidenceId());
 				}
 			}
-			
+
 			// Residential skills support
 			if (clan.getCastleId() > 0)
 			{
-				Castle castle = CastleManager.getInstance().getCastleByOwner(clan);
+				Castle? castle = CastleManager.getInstance().getCastleByOwner(clan);
 				if (castle != null)
 				{
 					castle.giveResidentialSkills(player);
 				}
 			}
-			
+
 			if (clan.getFortId() > 0)
 			{
-				Fort fort = FortManager.getInstance().getFortByOwner(clan);
+				Fort? fort = FortManager.getInstance().getFortByOwner(clan);
 				if (fort != null)
 				{
 					fort.giveResidentialSkills(player);
 				}
 			}
-			
+
 			showClanNotice = clan.isNoticeEnabled();
 		}
-		
+
 		// Send time.
 		connection.Send(new ExEnterWorldPacket());
-		
+
 		// Send Macro List
 		player.getMacros().sendAllMacros();
-		
+
 		// Send Teleport Bookmark List
 		connection.Send(new ExGetBookMarkInfoPacket(player));
-		
+
 		// Send Item List
 		connection.Send(new ItemListPacket(1, player));
 		connection.Send(new ItemListPacket(2, player));
-		
+
 		// Send Quest Item List
 		connection.Send(new ExQuestItemListPacket(1, player));
 		connection.Send(new ExQuestItemListPacket(2, player));
-		
+
 		// Send Shortcuts
 		connection.Send(new ShortCutInitPacket(player));
-		
+
 		// Send Action list
 		connection.Send(ExBasicActionListPacket.STATIC_PACKET);
-		
+
 		// Send blank skill list
 		connection.Send(new SkillListPacket(0));
-		
+
 		// Send GG check
 		// player.queryGameGuard();
-		
+
 		// Send Dye Information
 		connection.Send(new HennaInfoPacket(player));
-		
+
 		// Send Skill list
 		player.sendSkillList();
-		
+
 		// Send EtcStatusUpdate
 		connection.Send(new EtcStatusUpdatePacket(player));
-		
+
 		// Calculate stat increase skills.
 		player.calculateStatIncreaseSkills();
 
 		SystemMessagePacket sm;
-		
+
 		// Clan packets
 		if (clan != null)
 		{
@@ -293,7 +293,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			PledgeShowMemberListAllPacket.sendAllTo(player);
 			clan.broadcastToOnlineMembers(new ExPledgeCountPacket(clan));
 			connection.Send(new PledgeSkillListPacket(clan));
-			ClanHall ch = ClanHallData.getInstance().getClanHallByClan(clan);
+			ClanHall? ch = ClanHallData.getInstance().getClanHallByClan(clan);
 			if ((ch != null) && (ch.getCostFailDay() > 0) && (ch.getResidenceId() < 186))
 			{
 				sm = new SystemMessagePacket(SystemMessageId.THE_PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_DEPOSIT_THE_NECESSARY_AMOUNT_OF_ADENA_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW);
@@ -305,35 +305,35 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		{
 			connection.Send(ExPledgeWaitingListAlarmPacket.STATIC_PACKET);
 		}
-		
+
 		// Send SubClass Info
 		connection.Send(new ExSubJobInfoPacket(player, SubclassInfoType.NO_CHANGES));
-		
+
 		// Send Inventory Info
 		connection.Send(new ExUserInfoInventoryWeightPacket(player));
-		
+
 		// Send Adena / Inventory Count Info
 		connection.Send(new ExAdenaInvenCountPacket(player));
-		
+
 		// Send LCoin count.
 		connection.Send(new ExBloodyCoinCountPacket(player));
-		
+
 		// Send honor coin count.
 		connection.Send(new ExPledgeCoinInfoPacket(player));
-		
+
 		// Send VIP/Premium Info
 		connection.Send(new ExBrPremiumStatePacket(player));
-		
+
 		// Send Challenge Point info.
 		connection.Send(new ExEnchantChallengePointInfoPacket(player));
-		
+
 		// Send Unread Mail Count
 		if (MailManager.getInstance().hasUnreadPost(player))
 		{
 			int mailCount = MailManager.getInstance().getUnreadCount(player);
 			connection.Send(new ExUnReadMailCountPacket(mailCount));
 		}
-		
+
 		// Faction System
 		if (Config.FACTION_SYSTEM_ENABLED)
 		{
@@ -352,9 +352,9 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				connection.Send(new ExShowScreenMessagePacket("Welcome " + player.getName() + ", you are fighting for the " + Config.FACTION_EVIL_TEAM_NAME + " faction.", 10000));
 			}
 		}
-		
+
 		Quest.playerEnter(player);
-		
+
 		// Send quest list.
 		if (!Config.DISABLE_TUTORIAL)
 		{
@@ -364,7 +364,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				Quest quest = QuestManager.getInstance().getQuest(newQuest.getId());
 				if (quest != null)
 				{
-					QuestState questState = player.getQuestState(quest.Name);
+					QuestState? questState = player.getQuestState(quest.Name);
 					if ((questState == null) && quest.canStartQuest(player) && !newQuest.getConditions().getSpecificStart())
 					{
 						connection.Send(new ExQuestDialogPacket(quest.getId(), QuestDialogType.ACCEPT));
@@ -373,20 +373,20 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				}
 			}
 		}
-		
+
 		if (Config.PLAYER_SPAWN_PROTECTION > 0)
 		{
 			player.setSpawnProtection(true);
 		}
-		
+
 		player.spawnMe(player.Location.Location3D);
 		connection.Send(new ExRotationPacket(player.ObjectId, player.getHeading()));
-		
+
 		if (player.isCursedWeaponEquipped())
 		{
-			CursedWeaponsManager.getInstance().getCursedWeapon(player.getCursedWeaponEquippedId()).cursedOnLogin();
+			CursedWeaponsManager.getInstance().getCursedWeapon(player.getCursedWeaponEquippedId())?.cursedOnLogin();
 		}
-		
+
 		if (Config.PC_CAFE_ENABLED)
 		{
 			if (player.getPcCafePoints() > 0)
@@ -398,42 +398,42 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				connection.Send(new ExPcCafePointInfoPacket());
 			}
 		}
-		
+
 		// Expand Skill
 		player.sendStorageMaxCount();
-		
+
 		// Send Equipped Items
 		connection.Send(new ExUserInfoEquipSlotPacket(player));
-		
+
 		// Friend list
 		connection.Send(new L2FriendListPacket(player));
-		
+
 		sm = new SystemMessagePacket(SystemMessageId.YOUR_FRIEND_S1_JUST_LOGGED_IN);
 		sm.Params.addString(player.getName());
 		foreach (int id in player.getFriendList())
 		{
-			WorldObject obj = World.getInstance().findObject(id);
+			WorldObject? obj = World.getInstance().findObject(id);
 			if (obj != null)
 			{
 				obj.sendPacket(sm);
 			}
 		}
-		
+
 		connection.Send(new SystemMessagePacket(SystemMessageId.WELCOME_TO_THE_WORLD_OF_LINEAGE_II));
-		
+
 		AnnouncementsTable.getInstance().showAnnouncements(player);
-		
+
 		if ((Config.SERVER_RESTART_SCHEDULE_ENABLED) && (Config.SERVER_RESTART_SCHEDULE_MESSAGE))
 		{
 			connection.Send(new CreatureSayPacket(null, ChatType.BATTLEFIELD, "[SERVER]",
 				"Next restart is scheduled at " + ServerRestartManager.getInstance().getNextRestartTime() + "."));
 		}
-		
-		if (showClanNotice)
+
+		if (clan != null && showClanNotice)
 		{
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/clanNotice.htm", player);
-			htmlContent.Replace("%clan_name%", player.getClan().getName());
-			htmlContent.Replace("%notice_text%", player.getClan().getNotice().replaceAll("(\r\n|\n)", "<br>"));
+			htmlContent.Replace("%clan_name%", clan.getName());
+			htmlContent.Replace("%notice_text%", clan.getNotice().replaceAll("(\r\n|\n)", "<br>"));
 			connection.Send(new NpcHtmlMessagePacket(null, 0, htmlContent));
 		}
 		else if (Config.SERVER_NEWS)
@@ -446,18 +446,18 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		{
 			PetitionManager.getInstance().checkPetitionMessages(player);
 		}
-		
+
 		player.onPlayerEnter();
-		
+
 		connection.Send(new SkillCoolTimePacket(player));
 		connection.Send(new ExVoteSystemInfoPacket(player));
-		
+
 		if (player.isAlikeDead()) // dead or fake dead
 		{
 			// no broadcast needed since the player will already spawn dead to others
 			connection.Send(new DiePacket(player));
 		}
-		
+
 		foreach (Item item in player.getInventory().getItems())
 		{
 			if (item.isTimeLimitedItem())
@@ -469,7 +469,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				item.decreaseMana(false);
 			}
 		}
-		
+
 		foreach (Item whItem in player.getWarehouse().getItems())
 		{
 			if (whItem.isTimeLimitedItem())
@@ -477,28 +477,29 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				whItem.scheduleLifeTimeTask();
 			}
 		}
-		
+
 		if (player.getClanJoinExpiryTime() > DateTime.UtcNow)
 		{
 			connection.Send(new SystemMessagePacket(SystemMessageId.YOU_ARE_DISMISSED_FROM_A_CLAN_YOU_CANNOT_JOIN_ANOTHER_FOR_24_H));
 		}
-		
+
 		// remove combat flag before teleporting
-		if (player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG) != null)
+        Item? flagItem = player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG);
+		if (flagItem != null)
 		{
-			Fort fort = FortManager.getInstance().getFort(player);
+			Fort? fort = FortManager.getInstance().getFort(player);
 			if (fort != null)
 			{
 				FortSiegeManager.getInstance().dropCombatFlag(player, fort.getResidenceId());
 			}
 			else
-			{
-				long slot = player.getInventory().getSlotFromItem(player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG));
+            {
+				long slot = player.getInventory().getSlotFromItem(flagItem);
 				player.getInventory().unEquipItemInBodySlot(slot);
-				player.destroyItem("CombatFlag", player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG), null, true);
+				player.destroyItem("CombatFlag", flagItem, null, true);
 			}
 		}
-		
+
 		// Attacker or spectator logging in to a siege zone.
 		// Actually should be checked for inside castle only?
 		if (!player.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS) && player.isInsideZone(ZoneId.SIEGE) &&
@@ -536,18 +537,20 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				Util.handleIllegalPlayerAction(player, player.getName() + " has over-enchanted items.", Config.OVER_ENCHANT_PUNISHMENT);
 			}
 		}
-		
+
 		// Remove demonic weapon if character is not cursed weapon equipped.
-		if ((player.getInventory().getItemByItemId(8190) != null) && !player.isCursedWeaponEquipped())
+        Item? item8190 = player.getInventory().getItemByItemId(8190);
+		if ((item8190 != null) && !player.isCursedWeaponEquipped())
 		{
-			player.destroyItem("Zariche", player.getInventory().getItemByItemId(8190), null, true);
+			player.destroyItem("Zariche", item8190, null, true);
 		}
-		
-		if ((player.getInventory().getItemByItemId(8689) != null) && !player.isCursedWeaponEquipped())
+
+        Item? item8689 = player.getInventory().getItemByItemId(8689);
+		if ((item8689 != null) && !player.isCursedWeaponEquipped())
 		{
-			player.destroyItem("Akamanah", player.getInventory().getItemByItemId(8689), null, true);
+			player.destroyItem("Akamanah", item8689, null, true);
 		}
-		
+
 		if (Config.ALLOW_MAIL)
 		{
 			if (MailManager.getInstance().hasUnreadPost(player))
@@ -555,66 +558,66 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				connection.Send(new ExNoticePostArrivedPacket(false));
 			}
 		}
-		
+
 		if (Config.WELCOME_MESSAGE_ENABLED)
 		{
 			connection.Send(new ExShowScreenMessagePacket(Config.WELCOME_MESSAGE_TEXT, Config.WELCOME_MESSAGE_TIME));
 		}
-		
+
 		if (player.getPremiumItemList().Count != 0)
 		{
 			connection.Send(ExNotifyPremiumItemPacket.STATIC_PACKET);
 		}
-		
+
 		if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.STORE_OFFLINE_TRADE_IN_REALTIME)
 		{
 			OfflineTraderTable.getInstance().onTransaction(player, true, false);
 		}
-		
+
 		// Check if expoff is enabled.
 		if (vars.getBoolean("EXPOFF", false))
 		{
 			player.disableExpGain();
 			player.sendMessage("Experience gain is disabled.");
 		}
-		
+
 		player.broadcastUserInfo();
-		
+
 		if (BeautyShopData.getInstance().hasBeautyData(player.getRace(), player.getAppearance().getSex()))
 		{
 			connection.Send(new ExBeautyItemListPacket(player));
 		}
-		
+
 		if (Config.ENABLE_WORLD_CHAT)
 		{
 			connection.Send(new ExWorldCharCntPacket(player));
 		}
-		
+
 		// Initial mission level progress for correct show RewardList.
 		player.getMissionLevelProgress();
 		connection.Send(new ExConnectedTimeAndGettableRewardPacket(player));
 		connection.Send(new ExOneDayReceiveRewardListPacket(player, true));
-		
+
 		// Handle soulshots, disable all on EnterWorld
 		connection.Send(new ExAutoSoulShotPacket(0, true, 0));
 		connection.Send(new ExAutoSoulShotPacket(0, true, 1));
 		connection.Send(new ExAutoSoulShotPacket(0, true, 2));
 		connection.Send(new ExAutoSoulShotPacket(0, true, 3));
-		
+
 		// Auto use restore.
 		player.restoreAutoShortcuts();
 		player.restoreAutoSettings();
-		
+
 		// Client settings restore.
 		player.getClientSettings();
 		connection.Send(new ExItemAnnounceSettingPacket(player.getClientSettings().isAnnounceEnabled()));
-		
+
 		// Fix for equipped item skills
 		if (!player.getEffectList().getCurrentAbnormalVisualEffects().isEmpty())
 		{
 			player.updateAbnormalVisualEffects();
 		}
-		
+
 		// Death Knight death points init.
 		if (player.isDeathKnight())
 		{
@@ -633,73 +636,73 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		{
 			player.setAssassinationPoints(player.getVariables().getInt(PlayerVariables.ASSASSINATION_POINT_COUNT, 0));
 		}
-		
+
 		// Sayha's Grace.
 		if (Config.ENABLE_VITALITY)
 		{
 			connection.Send(new ExVitalityEffectInfoPacket(player));
 		}
-		
+
 		if (Config.ENABLE_MAGIC_LAMP)
 		{
 			connection.Send(new ExMagicLampInfoPacket(player));
 		}
-		
+
 		if (Config.ENABLE_RANDOM_CRAFT)
 		{
 			connection.Send(new ExCraftInfoPacket(player));
 		}
-		
+
 		if (Config.ENABLE_HUNT_PASS)
 		{
 			connection.Send(new HuntPassSimpleInfoPacket(player));
 		}
-		
+
 		if (Config.ENABLE_ACHIEVEMENT_BOX)
 		{
 			connection.Send(new ExSteadyBoxUiInitPacket(player));
 		}
-		
+
 		if ((player.getLevel() >= 40) && (player.getClassId().GetLevel() > 1))
 		{
 			player.initElementalSpirits();
 		}
-		
+
 		for (int category = 1; category <= 7; category++)
 		{
 			connection.Send(new ExCollectionInfoPacket(player, category));
 		}
-		
+
 		connection.Send(new ExCollectionActiveEventPacket());
-		
+
 		connection.Send(new ExSubjugationSidebarPacket(player, player.getPurgePoints().get(player.getPurgeLastCategory())));
-		
+
 		connection.Send(new ItemDeletionInfoPacket());
-		
+
 		player.applyKarmaPenalty();
-		
+
 		SiegeManager.getInstance().sendSiegeInfo(player);
-		
+
 		// Activate first agathion when available.
 		Item agathion = player.getInventory().unEquipItemInBodySlot(ItemTemplate.SLOT_AGATHION);
 		if (agathion != null)
 		{
 			player.getInventory().equipItemAndRecord(agathion);
 		}
-		
+
 		// Old ammunition check.
-		Item leftHandItem = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
+		Item? leftHandItem = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 		if ((leftHandItem != null) && ((leftHandItem.getItemType() == EtcItemType.ARROW) || (leftHandItem.getItemType() == EtcItemType.BOLT) || (leftHandItem.getItemType() == EtcItemType.ELEMENTAL_ORB)))
 		{
 			player.getInventory().unEquipItemInBodySlot(Inventory.PAPERDOLL_LHAND);
 		}
-		
+
 		// World Trade.
 		WorldExchangeManager.getInstance().checkPlayerSellAlarm(player);
-		
+
 		// Dual inventory.
 		player.restoreDualInventory();
-		
+
 		if (Config.ENABLE_ATTENDANCE_REWARDS)
 		{
 			AttendanceInfoHolder attendanceInfo = player.getAttendanceInfo();
@@ -707,7 +710,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			{
 				player.setAttendanceDelay(Config.ATTENDANCE_REWARD_DELAY);
 			}
-			
+
 			ThreadPool.schedule(() =>
 			{
 				// Check if player can receive reward today.
@@ -724,14 +727,14 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 					}
 				}
 			}, Config.ATTENDANCE_REWARD_DELAY);
-			
+
 			if (Config.ATTENDANCE_POPUP_START)
 			{
 				connection.Send(new ExVipAttendanceListPacket(player));
 				connection.Send(new ExVipAttendanceNotifyPacket());
 			}
 		}
-		
+
 		// Delayed HWID checks.
 		if (Config.HARDWARE_INFO_ENABLED)
 		{
@@ -748,7 +751,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			// 		}
 			// 	}
 			// 	String trace = sb.ToString();
-			// 	
+			//
 			// 	// Get hardware info from client.
 			// 	ClientHardwareInfoHolder hwInfo = client.getHardwareInfo();
 			// 	if (hwInfo != null)
@@ -777,14 +780,14 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			// 			}
 			// 		}
 			// 	}
-			// 	
+			//
 			// 	// Banned?
 			// 	if ((hwInfo != null) && PunishmentManager.getInstance().hasPunishment(hwInfo.getMacAddress(), PunishmentAffect.HWID, PunishmentType.BAN))
 			// 	{
 			// 		Disconnection.of(client).defaultSequence(LeaveWorld.STATIC_PACKET);
 			// 		return;
 			// 	}
-			// 	
+			//
 			// 	// Check max players.
 			// 	if (Config.KICK_MISSING_HWID && (hwInfo == null))
 			// 	{
@@ -811,7 +814,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			// 	}
 			// }, 5000);
 		}
-		
+
 		// Chat banned icon.
 		ThreadPool.schedule(() =>
 		{
@@ -820,10 +823,10 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				player.getEffectList().startAbnormalVisualEffect(AbnormalVisualEffect.NO_CHAT);
 			}
 		}, 5500);
-		
+
 		// EnterWorld has finished.
 		player.setEnteredWorld();
-		
+
 		if ((player.hasPremiumStatus() || !Config.PC_CAFE_ONLY_PREMIUM) && Config.PC_CAFE_RETAIL_LIKE)
 		{
 			PcCafePointsManager.getInstance().run(player);
@@ -831,34 +834,35 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 
 		return ValueTask.CompletedTask;
     }
-	
+
 	/**
 	 * @param player
 	 */
 	private static void notifyClanMembers(Connection connection, Player player)
 	{
-		Clan clan = player.getClan();
+		Clan? clan = player.getClan();
 		if (clan != null)
 		{
 			clan.getClanMember(player.ObjectId).setPlayer(player);
-			
+
 			SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.CLAN_MEMBER_S1_HAS_LOGGED_IN);
 			msg.Params.addString(player.getName());
 			clan.broadcastToOtherOnlineMembers(msg, player);
 			clan.broadcastToOtherOnlineMembers(new PledgeShowMemberListUpdatePacket(player), player);
-			
+
 			connection.Send(new ExPledgeContributionListPacket(clan.getMembers()));
 		}
 	}
-	
+
 	/**
 	 * @param player
 	 */
 	private void notifySponsorOrApprentice(Player player)
-	{
-		if (player.getSponsor() != null)
+    {
+        int? sponsorId = player.getSponsor();
+		if (sponsorId != null)
 		{
-			Player sponsor = World.getInstance().getPlayer(player.getSponsor().Value);
+			Player? sponsor = World.getInstance().getPlayer(sponsorId.Value);
 			if (sponsor != null)
 			{
 				SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOUR_MENTEE_S1_HAS_LOGGED_IN);
@@ -868,7 +872,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		}
 		else if (player.getApprentice() != 0)
 		{
-			Player apprentice = World.getInstance().getPlayer(player.getApprentice());
+			Player? apprentice = World.getInstance().getPlayer(player.getApprentice());
 			if (apprentice != null)
 			{
 				SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOUR_SPONSOR_C1_HAS_LOGGED_IN);

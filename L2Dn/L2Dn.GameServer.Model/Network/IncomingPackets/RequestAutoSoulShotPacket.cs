@@ -35,7 +35,7 @@ public struct RequestAutoSoulShotPacket: IIncomingPacket<GameSession>
 		    return ValueTask.CompletedTask;
 	    }
 
-	    Item item = player.getInventory().getItemByItemId(_itemId);
+	    Item? item = player.getInventory().getItemByItemId(_itemId);
 	    if (item == null)
 		    return ValueTask.CompletedTask;
 
@@ -61,7 +61,7 @@ public struct RequestAutoSoulShotPacket: IIncomingPacket<GameSession>
 		    return ValueTask.CompletedTask;
 	    }
 
-	    Summon pet = player.getPet();
+	    Summon? pet = player.getPet();
 	    if (isSummonShot(item.getTemplate()))
 	    {
 		    if (player.hasSummon())

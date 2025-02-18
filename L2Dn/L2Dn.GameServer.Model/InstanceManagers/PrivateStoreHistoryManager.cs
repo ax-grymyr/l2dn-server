@@ -114,48 +114,54 @@ public class PrivateStoreHistoryManager
 	public List<ItemHistoryTransaction> getTopMostItem()
 	{
 		Map<int, ItemHistoryTransaction> map = new();
-		foreach (ItemHistoryTransaction transaction in _items)
-		{
-			if (map.get(transaction.getItemId()) == null)
-			{
-				map.put(transaction.getItemId(),
-					new ItemHistoryTransaction(transaction.getTransactionType(), transaction.getCount(),
-						transaction.getPrice(), transaction.getItemId(), 0, false));
-			}
-			else
-			{
-				map.get(transaction.getItemId()).addCount(transaction.getCount());
-			}
-		}
+        foreach (ItemHistoryTransaction transaction in _items)
+        {
+            ItemHistoryTransaction transactionInMap = map.GetOrAdd(transaction.getItemId(),
+                static (_, tr) => new ItemHistoryTransaction(tr.getTransactionType(), tr.getCount(),
+                    tr.getPrice(), tr.getItemId(), 0, false), transaction);
 
-		List<ItemHistoryTransaction> list = new();
+            transactionInMap.addCount(transaction.getCount());
+        }
+
+        List<ItemHistoryTransaction> list = [];
 		map.ForEach(kvp => list.Add(kvp.Value));
 		list.Sort(new SortByQuantity());
 		return list;
 	}
 
-	protected class SortByPrice: IComparer<ItemHistoryTransaction>
+    private sealed class SortByPrice: IComparer<ItemHistoryTransaction>
 	{
-		public int Compare(ItemHistoryTransaction a, ItemHistoryTransaction b)
-		{
-			return a.getPrice() > b.getPrice() ? -1 : a.getPrice() == b.getPrice() ? 0 : 1;
+		public int Compare(ItemHistoryTransaction? a, ItemHistoryTransaction? b)
+        {
+            long aPrice = a?.getPrice() ?? 0;
+            long bPrice = b?.getPrice() ?? 0;
+
+            // TODO: descending order???
+            return -aPrice.CompareTo(bPrice);
 		}
 	}
 
-	protected class SortByQuantity: IComparer<ItemHistoryTransaction>
+    private sealed class SortByQuantity: IComparer<ItemHistoryTransaction>
 	{
-		public int Compare(ItemHistoryTransaction a, ItemHistoryTransaction b)
-		{
-			return a.getCount() > b.getCount() ? -1 : a.getCount() == b.getCount() ? 0 : 1;
-		}
-	}
+        public int Compare(ItemHistoryTransaction? a, ItemHistoryTransaction? b)
+        {
+            long aCount = a?.getCount() ?? 0;
+            long bCount = b?.getCount() ?? 0;
 
-	protected class SortByDate: IComparer<ItemHistoryTransaction>
+            // TODO: descending order???
+            return -aCount.CompareTo(bCount);
+        }
+    }
+
+    private sealed class SortByDate: IComparer<ItemHistoryTransaction>
 	{
-		public int Compare(ItemHistoryTransaction a, ItemHistoryTransaction b)
+		public int Compare(ItemHistoryTransaction? a, ItemHistoryTransaction? b)
 		{
-			return a.getTransactionDate() > b.getTransactionDate() ? -1 :
-				a.getTransactionDate() == b.getTransactionDate() ? 0 : 1;
+            DateTime aDate = a?.getTransactionDate() ?? DateTime.MinValue;
+            DateTime bDate = b?.getTransactionDate() ?? DateTime.MinValue;
+
+            // TODO: descending order???
+			return -aDate.CompareTo(bDate);
 		}
 	}
 
@@ -243,12 +249,12 @@ public class PrivateStoreHistoryManager
 				{
 					CreatedTime = _transactionDate,
 					ItemId = _itemId,
-					TransactionType = _transactionType == PrivateStoreType.SELL ? 0 : 1, 
+					TransactionType = _transactionType == PrivateStoreType.SELL ? 0 : 1,
 					EnchantLevel = _enchantLevel,
 					Count = _count,
 					Price = _price
 				});
-				
+
 				ctx.SaveChanges();
 			}
 			catch (Exception e)

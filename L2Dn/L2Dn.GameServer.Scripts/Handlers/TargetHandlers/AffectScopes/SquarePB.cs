@@ -18,19 +18,19 @@ public class SquarePB: IAffectScopeHandler
 	public void forEachAffected<T>(Creature creature, WorldObject target, Skill skill, Action<T> action)
 		where T: WorldObject
 	{
-		IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		int squareStartAngle = skill.getFanRange()[1];
 		int squareLength = skill.getFanRange()[2];
 		int squareWidth = skill.getFanRange()[3];
 		int radius = (int) Math.Sqrt(squareLength * squareLength + squareWidth * squareWidth);
 		int affectLimit = skill.getAffectLimit();
-		
+
 		int rectX = creature.getX();
 		int rectY = creature.getY() - squareWidth / 2;
 		double heading = double.DegreesToRadians(squareStartAngle + HeadingUtil.ConvertHeadingToDegrees(creature.getHeading()));
 		double cos = Math.Cos(-heading);
 		double sin = Math.Sin(-heading);
-		
+
 		// Target checks.
 		AtomicInteger affected = new AtomicInteger(0);
 		Predicate<Creature> filter = c =>
@@ -43,7 +43,7 @@ public class SquarePB: IAffectScopeHandler
 			{
 				return false;
 			}
-			
+
 			// Check if inside square.
 			int xp = c.getX() - creature.getX();
 			int yp = c.getY() - creature.getY();
@@ -59,14 +59,14 @@ public class SquarePB: IAffectScopeHandler
 				{
 					return false;
 				}
-				
+
 				affected.incrementAndGet();
 				return true;
 			}
-			
+
 			return false;
 		};
-		
+
 		// Check and add targets.
 		World.getInstance().forEachVisibleObjectInRange<Creature>(creature, radius, c =>
 		{
@@ -76,7 +76,7 @@ public class SquarePB: IAffectScopeHandler
 			}
 		});
 	}
-	
+
 	public AffectScope getAffectScopeType()
 	{
 		return AffectScope.SQUARE_PB;

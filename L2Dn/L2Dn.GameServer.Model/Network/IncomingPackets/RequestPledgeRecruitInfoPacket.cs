@@ -22,12 +22,12 @@ public struct RequestPledgeRecruitInfoPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Clan clan = ClanTable.getInstance().getClan(_clanId);
+        Clan? clan = ClanTable.getInstance().getClan(_clanId);
         if (clan == null)
             return ValueTask.CompletedTask;
-		
+
         player.sendPacket(new ExPledgeRecruitInfoPacket(_clanId));
-        
+
         return ValueTask.CompletedTask;
     }
 }

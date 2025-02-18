@@ -37,40 +37,40 @@ public struct RequestMoveToLocationInVehiclePacket: IIncomingPacket<GameSession>
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         if (_targetLocation == _originLocation)
         {
             player.sendPacket(new StopMoveInVehiclePacket(player, _boatId));
             return ValueTask.CompletedTask;
         }
-		
+
         if (player.isAttackingNow() && player.getActiveWeaponItem() != null && player.getActiveWeaponItem().getItemType() == WeaponType.BOW)
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         if (player.isSitting() || player.isMovementDisabled())
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         if (player.hasSummon())
         {
             player.sendPacket(SystemMessageId.YOU_SHOULD_RELEASE_YOUR_SERVITOR_SO_THAT_IT_DOES_NOT_FALL_OFF_OF_THE_BOAT_AND_DROWN);
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         if (player.isTransformed())
         {
             player.sendPacket(SystemMessageId.YOU_CANNOT_POLYMORPH_WHILE_RIDING_A_BOAT);
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
-        Boat boat;
+
+        Boat? boat;
         if (player.isInBoat())
         {
             boat = player.getBoat();

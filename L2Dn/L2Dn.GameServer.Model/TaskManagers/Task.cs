@@ -9,20 +9,20 @@ namespace L2Dn.GameServer.TaskManagers;
 public abstract class Task
 {
 	protected readonly Logger LOGGER = LogManager.GetLogger(nameof(Task));
-	
+
 	public virtual void initializate()
 	{
 	}
-	
-	public virtual ScheduledFuture launchSpecial(TaskManager.ExecutedTask instance)
+
+	public virtual ScheduledFuture? launchSpecial(TaskManager.ExecutedTask instance)
 	{
 		return null;
 	}
-	
+
 	public abstract string getName();
-	
+
 	public abstract void onTimeElapsed(TaskManager.ExecutedTask task);
-	
+
 	public virtual void onDestroy()
 	{
 	}

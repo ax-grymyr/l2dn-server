@@ -68,16 +68,16 @@ public class ZoneManager: DataReaderBase
 			new ZoneTypeInfo<UndyingZone>(id => new UndyingZone(id)),
 			new ZoneTypeInfo<WaterZone>(id => new WaterZone(id)),
 		}.ToFrozenDictionary(info => info.ZoneTypeName, StringComparer.OrdinalIgnoreCase);
-	
+
 	private static readonly Map<string, AbstractZoneSettings> _settings = new();
-	
+
 	private FrozenDictionary<Type, Map<int, ZoneType>> _classZones = FrozenDictionary<Type, Map<int, ZoneType>>.Empty;
 	private readonly Map<string, SpawnTerritory> _spawnTerritories = new();
 	private readonly AtomicInteger _lastDynamicId = new(300000);
 	private List<Item> _debugItems = [];
-	
+
 	private readonly ZoneRegion[][] _zoneRegions;
-	
+
 	private ZoneManager()
 	{
 		_zoneRegions = new ZoneRegion[RegionCountX][];
@@ -93,7 +93,7 @@ public class ZoneManager: DataReaderBase
 		_logger.Info(GetType().Name + " " + RegionCountX + " by " + RegionCountY + " Zone Region Grid set up.");
 		load();
 	}
-	
+
 	/**
 	 * Reload.
 	 */
@@ -101,10 +101,10 @@ public class ZoneManager: DataReaderBase
 	{
 		// Unload zones.
 		unload();
-		
+
 		// Load the zones.
 		load();
-		
+
 		// Re-validate all characters in zones.
 		foreach (WorldObject obj in World.getInstance().getVisibleObjects())
 		{
@@ -113,15 +113,15 @@ public class ZoneManager: DataReaderBase
 				((Creature)obj).revalidateZone(true);
 			}
 		}
-		
+
 		_settings.Clear();
 	}
-	
+
 	public void unload()
 	{
 		// Get the world regions
 		int count = 0;
-		
+
 		// Backup old zone settings
 		foreach (Map<int, ZoneType> map in _classZones.Values)
 		{
@@ -133,7 +133,7 @@ public class ZoneManager: DataReaderBase
 				}
 			}
 		}
-		
+
 		// Clear zones
 		foreach (ZoneRegion[] zoneRegions in _zoneRegions)
 		{
@@ -145,13 +145,13 @@ public class ZoneManager: DataReaderBase
 		}
 		_logger.Info(GetType().Name +": Removed zones in " + count + " regions.");
 	}
-	
+
 	private void parseElement(string filePath, XmlZone zone)
 	{
 		bool isNpcSpawnTerritory = string.Equals(zone.Type, "NpcSpawnTerritory", StringComparison.OrdinalIgnoreCase);
 		int zoneId = zone.IdSpecified ? zone.Id : isNpcSpawnTerritory ? 0 : _lastDynamicId.incrementAndGet();
-		string zoneName = zone.Name; 
-		
+		string zoneName = zone.Name;
+
 		// Check zone name for NpcSpawnTerritory. Must exist and to be unique
 		if (isNpcSpawnTerritory)
 		{
@@ -160,7 +160,7 @@ public class ZoneManager: DataReaderBase
 				_logger.Error($"ZoneData: Missing name for NpcSpawnTerritory in file: {filePath}, skipping zone");
 				return;
 			}
-			
+
 			if (_spawnTerritories.ContainsKey(zoneName))
 			{
 				_logger.Error($"ZoneData: Name {zoneName} already used for another zone, check file: {filePath}. Skipping zone");
@@ -243,24 +243,24 @@ public class ZoneManager: DataReaderBase
 			_logger.Error(GetType().Name + ": ZoneData: Failed to load zone " + zoneId + " coordinates: " + e);
 			return;
 		}
-		
+
 		// No further parameters needed, if NpcSpawnTerritory is loading
 		if (isNpcSpawnTerritory)
 		{
 			_spawnTerritories[zoneName] = new SpawnTerritory(zoneName, zoneForm);
 			return;
 		}
-		
+
 		// Create the zone
 		if (!_zoneTypes.TryGetValue(zone.Type, out ZoneTypeInfo? zoneTypeInfo))
 		{
 			_logger.Error(GetType().Name + ": ZoneData: No such zone type: " + zone.Type + " in file: " + filePath);
 			return;
-		}			
-			
+		}
+
 		ZoneType zoneType = zoneTypeInfo.Factory(zoneId);
 		zoneType.setZone(zoneForm);
-		
+
 		// Check for additional parameters
 		zone.Stats.ForEach(stat => zoneType.setParameter(stat.Name, stat.Value));
 
@@ -290,7 +290,7 @@ public class ZoneManager: DataReaderBase
 			_logger.Warn(GetType().Name + ": Caution: Zone (" + zoneId + ") from file: " + filePath + " has duplicated definition.");
 			return;
 		}
-		
+
 		// Register the zone into any world region it
 		// intersects with...
 		// currently 11136 test for each zone :>
@@ -309,22 +309,22 @@ public class ZoneManager: DataReaderBase
 			}
 		}
 	}
-	
+
 	public void load()
 	{
 		_classZones = _zoneTypes.Values.ToFrozenDictionary(info => info.ZoneType, _ => new Map<int, ZoneType>());
-		
+
 		_spawnTerritories.Clear();
 
 		LoadXmlDocuments<XmlZones>(DataFileLocation.Data, "zones")
 			.Where(tuple => tuple.Document.Enabled)
 			.ForEach(t => t.Document.Zones.ForEach(zone => parseElement(t.FilePath, zone)));
-		
+
 		_logger.Info(GetType().Name +": Loaded " + _classZones.Count + " zone classes and " + getSize() + " zones.");
 		int maxId = _classZones.Values.SelectMany(map => map.Keys).Where(value => value < 300000).Max();
 		_logger.Info(GetType().Name +": Last static id " + maxId + ".");
 	}
-	
+
 	/**
 	 * Gets the size.
 	 * @return the size
@@ -333,7 +333,7 @@ public class ZoneManager: DataReaderBase
 	{
 		return _classZones.Sum(pair => pair.Value.Count);
 	}
-	
+
 	/**
 	 * Return all zones by class type.
 	 * @param <T> the generic type
@@ -348,7 +348,7 @@ public class ZoneManager: DataReaderBase
 
 		return map.Values.Cast<T>().ToImmutableArray();
 	}
-	
+
 	/**
 	 * Get zone by ID.
 	 * @param id the id
@@ -365,7 +365,7 @@ public class ZoneManager: DataReaderBase
 
 		return null;
 	}
-	
+
 	/**
 	 * Get zone by name.
 	 * @param name the zone name
@@ -376,7 +376,7 @@ public class ZoneManager: DataReaderBase
 		return _classZones.SelectMany(pair => pair.Value.Values)
 			.FirstOrDefault(zone => string.Equals(zone.getName(), name));
 	}
-	
+
 	/**
 	 * Get zone by ID and zone class.
 	 * @param <T> the generic type
@@ -389,7 +389,7 @@ public class ZoneManager: DataReaderBase
 	{
 		return (T?)_classZones.GetValueOrDefault(typeof(T))?.GetValueOrDefault(id);
 	}
-	
+
 	/**
 	 * Get zone by name.
 	 * @param <T> the generic type
@@ -402,10 +402,10 @@ public class ZoneManager: DataReaderBase
 	{
 		if (!_classZones.TryGetValue(typeof(T), out Map<int, ZoneType>? map))
 			return null;
-		
+
 		return map.Values.OfType<T>().FirstOrDefault(zone => string.Equals(zone.getName(), name));
 	}
-	
+
 	/**
 	 * Returns all zones from where the object is located.
 	 * @param locational the locational
@@ -504,11 +504,11 @@ public class ZoneManager: DataReaderBase
 	 * @param name name of territory to search
 	 * @return link to zone form
 	 */
-	public SpawnTerritory getSpawnTerritory(string name)
+	public SpawnTerritory? getSpawnTerritory(string name)
 	{
 		return _spawnTerritories.get(name);
 	}
-	
+
 	/**
 	 * Returns all spawm territories from where the object is located
 	 * @param object
@@ -526,7 +526,7 @@ public class ZoneManager: DataReaderBase
 		}
 		return temp;
 	}
-	
+
 	/**
 	 * Gets the olympiad stadium.
 	 * @param creature the creature
@@ -545,7 +545,7 @@ public class ZoneManager: DataReaderBase
 
 		return null;
 	}
-	
+
 	/**
 	 * General storage for debug items used for visualizing zones.
 	 * @return list of items
@@ -558,7 +558,7 @@ public class ZoneManager: DataReaderBase
 		}
 		return _debugItems;
 	}
-	
+
 	/**
 	 * Remove all debug items from l2world.
 	 */
@@ -597,14 +597,14 @@ public class ZoneManager: DataReaderBase
 	 * @param name the name
 	 * @return the settings
 	 */
-	public static AbstractZoneSettings getSettings(string name)
+	public static AbstractZoneSettings? getSettings(string? name)
 	{
 		if (name == null)
 			return null;
-		
+
 		return _settings.get(name);
 	}
-	
+
 	/**
 	 * Gets the single instance of ZoneManager.
 	 * @return single instance of ZoneManager
@@ -613,7 +613,7 @@ public class ZoneManager: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ZoneManager INSTANCE = new();

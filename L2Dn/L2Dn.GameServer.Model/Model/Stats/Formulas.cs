@@ -198,7 +198,7 @@ public class Formulas
 	 * @param target
 	 * @return
 	 */
-	public static bool calcCrit(double rateValue, Creature creature, Creature target, Skill skill)
+	public static bool calcCrit(double rateValue, Creature creature, Creature target, Skill? skill)
 	{
 		double rate = rateValue;
 		double balanceMod;
@@ -332,7 +332,7 @@ public class Formulas
 	 * @param skill {@code skill} to be used in the calculation, else calculation will result for autoattack.
 	 * @return regular critical damage bonus. Positional bonus is excluded!
 	 */
-	public static double calcCritDamage(Creature attacker, Creature target, Skill skill)
+	public static double calcCritDamage(Creature attacker, Creature target, Skill? skill)
 	{
 		double criticalDamage;
 		double defenceCriticalDamage;
@@ -386,7 +386,7 @@ public class Formulas
 	 * @param skill {@code skill} to be used in the calculation, else calculation will result for autoattack.
 	 * @return critical damage additional bonus, not multiplier!
 	 */
-	public static double calcCritDamageAdd(Creature attacker, Creature target, Skill skill)
+	public static double calcCritDamageAdd(Creature attacker, Creature target, Skill? skill)
 	{
 		double criticalDamageAdd;
 		double defenceCriticalDamageAdd;
@@ -512,7 +512,7 @@ public class Formulas
 		                                 creature.getTransformation()?.getType() == TransformType.COMBAT ||
 		                                 creature.getTransformation()?.getType() == TransformType.MODE_CHANGE))
 		{
-			Item weapon = creature.getActiveWeaponInstance();
+			Item? weapon = creature.getActiveWeaponInstance();
 			baseValue = weapon != null ? weapon.getTemplate().getStats(stat, baseTemplateValue) : baseTemplateValue;
 		}
 
@@ -598,7 +598,7 @@ public class Formulas
 	 */
 	public static byte calcShldUse(Creature attacker, Creature target, bool sendSysMsg)
 	{
-		ItemTemplate item = target.getSecondaryWeaponItem();
+		ItemTemplate? item = target.getSecondaryWeaponItem();
 		if (!(item is Armor) || ((Armor) item).getItemType() == ArmorType.SIGIL)
 		{
 			return 0;
@@ -968,7 +968,7 @@ public class Formulas
 	 * @param skill Can be {@code null} if there is no skill used for the attack.
 	 * @return The attribute bonus
 	 */
-	public static double calcAttributeBonus(Creature attacker, Creature target, Skill skill)
+	public static double calcAttributeBonus(Creature attacker, Creature target, Skill? skill)
 	{
 		int attackAttribute;
 		int defenceAttribute;
@@ -1579,7 +1579,7 @@ public class Formulas
 		return TimeSpan.FromMilliseconds(900000) / creature.getStat().getPAtkSpd();
 	}
 
-	public static double calculatePvpPveBonus(Creature attacker, Creature target, Skill skill, bool crit)
+	public static double calculatePvpPveBonus(Creature attacker, Creature target, Skill? skill, bool crit)
 	{
 		Player attackerPlayer = attacker.getActingPlayer();
 		Player targetPlayer = attacker.getActingPlayer();

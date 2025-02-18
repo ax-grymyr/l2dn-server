@@ -8,24 +8,11 @@ namespace L2Dn.GameServer.Model.Conditions;
 /**
  * The Class ConditionPlayerSouls.
  */
-public class ConditionPlayerSouls : Condition
+public sealed class ConditionPlayerSouls(int souls, SoulType type): Condition
 {
-	private readonly int _souls;
-	private readonly SoulType _type;
-	
-	/**
-	 * Instantiates a new condition player souls.
-	 * @param souls the souls
-	 * @param type the soul type
-	 */
-	public ConditionPlayerSouls(int souls, SoulType type)
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
 	{
-		_souls = souls;
-		_type = type;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		return (effector.getActingPlayer() != null) && (effector.getActingPlayer().getChargedSouls(_type) >= _souls);
+        Player? player = effector.getActingPlayer();
+		return player is not null && player.getChargedSouls(type) >= souls;
 	}
 }

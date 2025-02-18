@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 public struct RequestSurrenderPledgeWarPacket: IIncomingPacket<GameSession>
 {
     private string _pledgeName;
-    
+
     public void ReadContent(PacketBitReader reader)
     {
         _pledgeName = reader.ReadString();
@@ -23,12 +23,12 @@ public struct RequestSurrenderPledgeWarPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        Clan myClan = player.getClan();
-        if (myClan == null)
+
+        Clan? clan = player.getClan();
+        if (clan == null)
             return ValueTask.CompletedTask;
-		
-        foreach (ClanMember member in myClan.getMembers())
+
+        foreach (ClanMember member in clan.getMembers())
         {
             if ((member != null) && member.isOnline() && member.getPlayer().isInCombat())
             {
@@ -37,23 +37,23 @@ public struct RequestSurrenderPledgeWarPacket: IIncomingPacket<GameSession>
                 return ValueTask.CompletedTask;
             }
         }
-		
-        Clan targetClan = ClanTable.getInstance().getClanByName(_pledgeName);
+
+        Clan? targetClan = ClanTable.getInstance().getClanByName(_pledgeName);
         if (targetClan == null)
         {
             connection.Send("No such clan.");
             connection.Send(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-        
+
         if (!player.hasClanPrivilege(ClanPrivilege.CL_PLEDGE_WAR))
         {
             connection.Send(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
             connection.Send(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
-        ClanWar clanWar = myClan.getWarWith(targetClan.getId());
+
+        ClanWar clanWar = clan.getWarWith(targetClan.getId());
         if (clanWar == null)
         {
             SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_NOT_DECLARED_A_CLAN_WAR_AGAINST_THE_CLAN_S1);
@@ -62,15 +62,15 @@ public struct RequestSurrenderPledgeWarPacket: IIncomingPacket<GameSession>
             connection.Send(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         if (clanWar.getState() == ClanWarState.BLOOD_DECLARATION)
         {
             connection.Send(SystemMessageId.YOU_CANNOT_DECLARE_DEFEAT_AS_IT_HAS_NOT_BEEN_7_DAYS_SINCE_STARTING_A_CLAN_WAR_WITH_CLAN_S1);
             connection.Send(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
-        clanWar.cancel(player, myClan);
+
+        clanWar.cancel(player, clan);
         return ValueTask.CompletedTask;
     }
 }

@@ -27,9 +27,9 @@ public class NpcActionShift: IActionShiftHandler
 		{
 			// Set the target of the Player player
 			player.setTarget(target);
-			
+
 			Npc npc = (Npc) target;
-			ClanHall clanHall = ClanHallData.getInstance().getClanHallByNpcId(npc.getId());
+			ClanHall? clanHall = ClanHallData.getInstance().getClanHallByNpcId(npc.getId());
 
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/npcinfo.htm", player);
 			htmlContent.Replace("%objid%", target.ObjectId.ToString());
@@ -46,7 +46,7 @@ public class NpcActionShift: IActionShiftHandler
 			htmlContent.Replace("%mpmax%", npc.getMaxMp().ToString());
 			htmlContent.Replace("%exp%", npc.getTemplate().getExp().ToString());
 			htmlContent.Replace("%sp%", npc.getTemplate().getSP().ToString());
-			
+
 			htmlContent.Replace("%patk%", npc.getPAtk().ToString());
 			htmlContent.Replace("%matk%", npc.getMAtk().ToString());
 			htmlContent.Replace("%pdef%", npc.getPDef().ToString());
@@ -76,7 +76,7 @@ public class NpcActionShift: IActionShiftHandler
 			htmlContent.Replace("%mpRewardAffectType%", npc.getTemplate().getMpRewardAffectType().ToString());
 			htmlContent.Replace("%loc2d%", ((int)player.Distance2D(npc)).ToString());
 			htmlContent.Replace("%loc3d%", ((int)player.Distance3D(npc)).ToString());
-			
+
 			AttributeType attackAttribute = npc.getAttackElement();
 			htmlContent.Replace("%ele_atk%", attackAttribute.ToString());
 			htmlContent.Replace("%ele_atk_value%", npc.getAttackElementValue(attackAttribute).ToString());
@@ -86,7 +86,7 @@ public class NpcActionShift: IActionShiftHandler
 			htmlContent.Replace("%ele_dearth%", npc.getDefenseElementValue(AttributeType.EARTH).ToString());
 			htmlContent.Replace("%ele_dholy%", npc.getDefenseElementValue(AttributeType.HOLY).ToString());
 			htmlContent.Replace("%ele_ddark%", npc.getDefenseElementValue(AttributeType.DARK).ToString());
-			
+
 			Spawn spawn = npc.getSpawn();
 			if (spawn != null)
 			{
@@ -94,13 +94,13 @@ public class NpcActionShift: IActionShiftHandler
 				if (template != null)
 				{
 					string fileName = template.getSpawnTemplate().getFile().Replace('\\', '/');
-				
+
 					htmlContent.Replace("%spawnfile%", fileName.Replace("spawns/", ""));
 					htmlContent.Replace("%spawnname%", template.getSpawnTemplate().getName() ?? string.Empty);
 					htmlContent.Replace("%spawngroup%", template.getGroup()?.getName() ?? string.Empty);
 					if (template.getSpawnTemplate().getAI() != null)
 					{
-						Quest script = QuestManager.getInstance().getQuest(template.getSpawnTemplate().getAI());
+						Quest? script = QuestManager.getInstance().getQuest(template.getSpawnTemplate().getAI());
 						if (script != null)
 						{
 							htmlContent.Replace("%spawnai%", "<a action=\"bypass -h admin_quest_info " + script.Name + "\"><font color=\"LEVEL\">" + script.Name + "</font></a>");
@@ -132,19 +132,19 @@ public class NpcActionShift: IActionShiftHandler
 				htmlContent.Replace("%resp%", "<font color=FF0000>--</font>");
 				htmlContent.Replace("%chaseRange%", "<font color=FF0000>--</font>");
 			}
-			
+
 			htmlContent.Replace("%spawnfile%", "<font color=FF0000>--</font>");
 			htmlContent.Replace("%spawnname%", "<font color=FF0000>--</font>");
 			htmlContent.Replace("%spawngroup%", "<font color=FF0000>--</font>");
 			htmlContent.Replace("%spawnai%", "<font color=FF0000>--</font>");
-			
+
 			if (npc.hasAI())
 			{
 				Set<string> clans = NpcData.getInstance().getClansByIds(npc.getTemplate().getClans());
 				Set<int> ignoreClanNpcIds = npc.getTemplate().getIgnoreClanNpcIds();
 				string clansString = !clans.isEmpty() ? string.Join(", ", clans) : "";
 				string ignoreClanNpcIdsString = ignoreClanNpcIds != null ? string.Join(", ", ignoreClanNpcIds) : "";
-				
+
 				htmlContent.Replace("%ai_intention%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>Intention:</font></td><td align=right width=170>" + npc.getAI().getIntention() + "</td></tr></table></td></tr>");
 				htmlContent.Replace("%ai%", "<tr><td><table width=270 border=0><tr><td width=100><font color=FFAA00>AI</font></td><td align=right width=170>" + npc.getAI().GetType().Name + "</td></tr></table></td></tr>");
 				htmlContent.Replace("%ai_type%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>AIType</font></td><td align=right width=170>" + npc.getAiType() + "</td></tr></table></td></tr>");
@@ -159,7 +159,7 @@ public class NpcActionShift: IActionShiftHandler
 				htmlContent.Replace("%ai_clan%", "");
 				htmlContent.Replace("%ai_enemy_clan%", "");
 			}
-			
+
 			string routeName = WalkingManager.getInstance().getRouteName(npc);
 			if (!string.IsNullOrEmpty(routeName))
 			{
@@ -183,10 +183,10 @@ public class NpcActionShift: IActionShiftHandler
 			player.setTarget(target);
 			NpcViewMod.sendNpcView(player, (Npc) target);
 		}
-		
+
 		return true;
 	}
-	
+
 	public InstanceType getInstanceType()
 	{
 		return InstanceType.Npc;

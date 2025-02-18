@@ -27,12 +27,12 @@ public struct RequestMagicSkillUsePacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         // Consider skill replacements.
         _magicId = player.getReplacementSkill(_magicId);
-		
+
         // Get the level of the used skill
-        Skill skill = player.getKnownSkill(_magicId);
+        Skill? skill = player.getKnownSkill(_magicId);
         if (skill == null)
         {
             if ((_magicId == (int)CommonSkill.HAIR_ACCESSORY_SET) || ((_magicId > 1565) && (_magicId < 1570))) // subClass change SkillTree
@@ -41,7 +41,7 @@ public struct RequestMagicSkillUsePacket: IIncomingPacket<GameSession>
             }
             else // Check for known pet skill.
             {
-                Playable pet = null;
+                Playable? pet = null;
                 if (player.hasServitors())
                 {
                     foreach (Summon summon in player.getServitors().Values)
@@ -73,14 +73,14 @@ public struct RequestMagicSkillUsePacket: IIncomingPacket<GameSession>
                 return ValueTask.CompletedTask;
             }
         }
-		
+
         // Skill is blocked from player use.
         if (skill.isBlockActionUseSkill())
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         // Avoid Use of Skills in AirShip.
         if (player.isInAirShip())
         {
@@ -88,7 +88,7 @@ public struct RequestMagicSkillUsePacket: IIncomingPacket<GameSession>
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         player.onActionRequest();
         player.useMagic(skill, null, _ctrlPressed, _shiftPressed);
         return ValueTask.CompletedTask;

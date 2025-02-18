@@ -14,27 +14,27 @@ public class SkillConditionHandler
 	private SkillConditionHandler()
 	{
 	}
-	
+
 	public void registerHandler(string name, Func<StatSet, ISkillCondition> handlerFactory)
 	{
 		_skillConditionHandlerFactories.put(name, handlerFactory);
 	}
-	
-	public Func<StatSet, ISkillCondition> getHandlerFactory(string name)
+
+	public Func<StatSet, ISkillCondition>? getHandlerFactory(string name)
 	{
 		return _skillConditionHandlerFactories.get(name);
 	}
-	
+
 	public int size()
 	{
 		return _skillConditionHandlerFactories.Count;
 	}
-	
+
 	private static class SingletonHolder
 	{
-		public static readonly SkillConditionHandler INSTANCE = new SkillConditionHandler();
+		public static readonly SkillConditionHandler INSTANCE = new();
 	}
-	
+
 	public static SkillConditionHandler getInstance()
 	{
 		return SingletonHolder.INSTANCE;

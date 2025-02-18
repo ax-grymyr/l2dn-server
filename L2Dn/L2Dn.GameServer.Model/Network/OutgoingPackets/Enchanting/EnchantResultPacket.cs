@@ -48,24 +48,24 @@ public readonly struct EnchantResultPacket: IOutgoingPacket
 	 * isAutoEnchantingStop && SelectItemInfo.Enchanted == EnchantValue) will reuse scroll in blue auto enchant *will show item*
 	 */
 	public const int SAFE_FAIL_02 = 10;
-	
+
 	private readonly int _result;
 	private readonly ItemHolder _crystal;
 	private readonly ItemHolder _additional;
 	private readonly int _enchantLevel;
-	
-	public EnchantResultPacket(int result, ItemHolder crystal, ItemHolder additionalItem, int enchantLevel)
+
+	public EnchantResultPacket(int result, ItemHolder? crystal, ItemHolder? additionalItem, int enchantLevel)
 	{
 		_result = result;
-		_crystal = crystal == null ? new ItemHolder(0, 0) : crystal;
-		_additional = additionalItem == null ? new ItemHolder(0, 0) : additionalItem;
+		_crystal = crystal ?? new ItemHolder(0, 0);
+		_additional = additionalItem ?? new ItemHolder(0, 0);
 		_enchantLevel = enchantLevel;
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.ENCHANT_RESULT);
-		
+
 		writer.WriteInt32(_result);
 		writer.WriteInt32(_crystal.getId());
 		writer.WriteInt64(_crystal.getCount());

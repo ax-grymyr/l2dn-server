@@ -25,7 +25,7 @@ public readonly struct MercenaryCastleWarCastleSiegeAttackerListPacket: IOutgoin
         writer.WriteInt32(1);
         writer.WriteInt32(0);
 
-        Castle castle = CastleManager.getInstance().getCastleById(_castleId);
+        Castle? castle = CastleManager.getInstance().getCastleById(_castleId);
         if (castle == null)
         {
             writer.WriteInt32(0);
@@ -38,7 +38,7 @@ public readonly struct MercenaryCastleWarCastleSiegeAttackerListPacket: IOutgoin
             writer.WriteInt32(attackers.Count);
             foreach (SiegeClan siegeClan in attackers)
             {
-                Clan clan = ClanTable.getInstance().getClan(siegeClan.getClanId());
+                Clan? clan = ClanTable.getInstance().getClan(siegeClan.getClanId());
                 if (clan == null)
                 {
                     continue;

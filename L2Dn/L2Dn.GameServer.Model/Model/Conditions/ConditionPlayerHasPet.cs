@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Items;
@@ -9,40 +10,20 @@ namespace L2Dn.GameServer.Model.Conditions;
 /**
  * The Class ConditionPlayerHasPet.
  */
-public class ConditionPlayerHasPet : Condition
+public sealed class ConditionPlayerHasPet(List<int> itemIds): Condition
 {
-	private readonly List<int> _controlItemIds;
-	
-	/**
-	 * Instantiates a new condition player has pet.
-	 * @param itemIds the item ids
-	 */
-	public ConditionPlayerHasPet(List<int> itemIds)
-	{
-		if ((itemIds.Count == 1) && (itemIds[0] == 0))
-		{
-			_controlItemIds = null;
-		}
-		else
-		{
-			_controlItemIds = itemIds;
-		}
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		Summon pet = effector.getActingPlayer().getPet();
-		if ((effector.getActingPlayer() == null) || (pet == null))
-		{
-			return false;
-		}
-		
-		if (_controlItemIds == null)
-		{
-			return true;
-		}
-		
-		Item controlItem = ((Pet) pet).getControlItem();
-		return (controlItem != null) && _controlItemIds.Contains(controlItem.getId());
-	}
+    private readonly ImmutableArray<int> _controlItemIds = itemIds is [0] ? default : itemIds.ToImmutableArray();
+
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Summon? pet = effector.getActingPlayer()?.getPet();
+        if (pet is null)
+            return false;
+
+        if (_controlItemIds.IsDefaultOrEmpty)
+            return true;
+
+        Item? controlItem = ((Pet)pet).getControlItem();
+        return controlItem != null && _controlItemIds.Contains(controlItem.getId());
+    }
 }

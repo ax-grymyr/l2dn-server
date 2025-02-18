@@ -34,20 +34,20 @@ public struct ActionPacket: IIncomingPacket<GameSession>
 		// {
 		// 	return;
 		// }
-		
+
 		// Get the current Player of the player
 		Player? player = session.Player;
 		if (player == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (player.inObserverMode())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_FUNCTION_IN_THE_SPECTATOR_MODE);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
-		BuffInfo info = player.getEffectList().getFirstBuffInfoByAbnormalType(AbnormalType.BOT_PENALTY);
+
+		BuffInfo? info = player.getEffectList().getFirstBuffInfoByAbnormalType(AbnormalType.BOT_PENALTY);
 		if (info != null)
 		{
 			foreach (AbstractEffect effect in info.getEffects())
@@ -60,8 +60,8 @@ public struct ActionPacket: IIncomingPacket<GameSession>
 				}
 			}
 		}
-		
-		WorldObject obj;
+
+		WorldObject? obj;
 		if (player.getTargetId() == _objectId)
 		{
 			obj = player.getTarget();
@@ -74,7 +74,7 @@ public struct ActionPacket: IIncomingPacket<GameSession>
 		{
 			obj = World.getInstance().findObject(_objectId);
 		}
-		
+
 		// If object requested does not exist, add warn msg into logs
 		if (obj == null)
 		{
@@ -82,27 +82,27 @@ public struct ActionPacket: IIncomingPacket<GameSession>
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if ((!obj.isTargetable() || player.isTargetingDisabled()) && !player.canOverrideCond(PlayerCondOverride.TARGET_ALL))
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Players can't interact with objects in the other instances
 		if (obj.getInstanceWorld() != player.getInstanceWorld())
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Only GMs can directly interact with invisible characters
 		if (!obj.isVisibleFor(player))
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Check if the target is valid, if the player haven't a shop or isn't the requester of a transaction (ex : FriendInvite, JoinAlly, JoinParty...)
 		if (player.getActiveRequester() != null)
 		{
@@ -110,9 +110,9 @@ public struct ActionPacket: IIncomingPacket<GameSession>
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		player.onActionRequest();
-		
+
 		switch (_actionId)
 		{
 			case 0:
@@ -137,12 +137,12 @@ public struct ActionPacket: IIncomingPacket<GameSession>
 				// Invalid action detected (probably client cheating), log this
 				PacketLogger.Instance.Warn(GetType().Name + ": Character: " + player.getName() +
 				                           " requested invalid action: " + _actionId);
-				
+
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				break;
 			}
 		}
-		
+
 		return ValueTask.CompletedTask;
 	}
 }

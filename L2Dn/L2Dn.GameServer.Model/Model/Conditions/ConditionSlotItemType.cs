@@ -10,32 +10,17 @@ namespace L2Dn.GameServer.Model.Conditions;
  * The Class ConditionSlotItemType.
  * @author mkizub
  */
-public class ConditionSlotItemType : ConditionInventory
+public sealed class ConditionSlotItemType(int slot, ItemTypeMask mask): ConditionInventory(slot)
 {
-	private readonly ItemTypeMask _mask;
-	
-	/**
-	 * Instantiates a new condition slot item type.
-	 * @param slot the slot
-	 * @param mask the mask
-	 */
-	public ConditionSlotItemType(int slot, ItemTypeMask mask): base(slot)
-	{
-		_mask = mask;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		if ((effector == null) || !effector.isPlayer())
-		{
-			return false;
-		}
-		
-		Item itemSlot = effector.getInventory().getPaperdollItem(_slot);
-		if (itemSlot == null)
-		{
-			return false;
-		}
-		return (itemSlot.getTemplate().getItemMask() & _mask) != ItemTypeMask.Zero;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        if (effector == null || !effector.isPlayer())
+            return false;
+
+        Item? itemSlot = effector.getInventory().getPaperdollItem(Slot);
+        if (itemSlot == null)
+            return false;
+
+        return (itemSlot.getTemplate().getItemMask() & mask) != ItemTypeMask.Zero;
+    }
 }

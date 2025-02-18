@@ -16,19 +16,19 @@ public class PetSkillData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PetSkillData));
 	private readonly Map<int, Map<long, SkillHolder>> _skillTrees = new();
-	
+
 	protected PetSkillData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_skillTrees.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PetSkillData.xml");
 		document.Elements("list").Elements("skill").ForEach(parseElement);
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _skillTrees.Count + " skills.");
 	}
 
@@ -63,7 +63,7 @@ public class PetSkillData: DataReaderBase
 			// LOGGER.Warn(GetType().Name + ": Pet id " + pet.getId() + " does not have any skills assigned.");
 			return level;
 		}
-		
+
 		foreach (SkillHolder skillHolder in holders.Values)
 		{
 			if (skillHolder.getSkillId() != skillId)
@@ -84,7 +84,7 @@ public class PetSkillData: DataReaderBase
 				{
 					level = 7 + ((pet.getLevel() - 70) / 5);
 				}
-				
+
 				// formula usable for skill that have 10 or more skill levels
 				int maxLevel = SkillData.getInstance().getMaxLevel(skillHolder.getSkillId());
 				if (level > maxLevel)
@@ -98,10 +98,10 @@ public class PetSkillData: DataReaderBase
 				level = skillHolder.getSkillLevel();
 			}
 		}
-		
+
 		return level;
 	}
-	
+
 	public List<int> getAvailableSkills(Summon pet)
 	{
 		List<int> skillIds = new();
@@ -110,7 +110,7 @@ public class PetSkillData: DataReaderBase
 			// LOGGER.Warn(GetType().Name + ": Pet id " + pet.getId() + " does not have any skills assigned.");
 			return skillIds;
 		}
-		
+
 		foreach (SkillHolder skillHolder in holders.Values)
 		{
 			if (skillIds.Contains(skillHolder.getSkillId()))
@@ -119,10 +119,10 @@ public class PetSkillData: DataReaderBase
 			}
 			skillIds.Add(skillHolder.getSkillId());
 		}
-		
+
 		return skillIds;
 	}
-	
+
 	public List<Skill> getKnownSkills(Summon pet)
 	{
 		List<Skill> skills = new();
@@ -130,7 +130,7 @@ public class PetSkillData: DataReaderBase
 		{
 			return skills;
 		}
-		
+
 		foreach (SkillHolder skillHolder in holders.Values)
 		{
 			Skill skill = skillHolder.getSkill();
@@ -138,20 +138,20 @@ public class PetSkillData: DataReaderBase
 			{
 				continue;
 			}
-			
+
 			skills.Add(skill);
 		}
-		
+
 		return skills;
 	}
-	
-	public Skill getKnownSkill(Summon pet, int skillId)
+
+	public Skill? getKnownSkill(Summon pet, int skillId)
 	{
 		if (!_skillTrees.TryGetValue(pet.getId(), out Map<long, SkillHolder>? holders))
 		{
 			return null;
 		}
-		
+
 		foreach (SkillHolder skillHolder in holders.Values)
 		{
 			if (skillHolder.getSkillId() == skillId)
@@ -159,15 +159,15 @@ public class PetSkillData: DataReaderBase
 				return skillHolder.getSkill();
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	public static PetSkillData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly PetSkillData INSTANCE = new();

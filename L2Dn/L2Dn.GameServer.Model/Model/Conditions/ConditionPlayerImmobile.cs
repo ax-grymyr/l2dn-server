@@ -7,18 +7,11 @@ namespace L2Dn.GameServer.Model.Conditions;
 /**
  * @author Sdw
  */
-public class ConditionPlayerImmobile : Condition
+public sealed class ConditionPlayerImmobile(bool value): Condition
 {
-	private readonly bool _value;
-	
-	public ConditionPlayerImmobile(bool value)
-	{
-		_value = value;
-	}
-	
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		bool isImmobile = !effector.isMovementDisabled();
-		return _value == isImmobile;
-	}
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        bool isImmobile = !effector.isMovementDisabled();
+        return value == isImmobile;
+    }
 }

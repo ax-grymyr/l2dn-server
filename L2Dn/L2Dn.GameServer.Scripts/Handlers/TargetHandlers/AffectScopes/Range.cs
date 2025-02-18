@@ -18,10 +18,10 @@ public class Range: IAffectScopeHandler
 	public void forEachAffected<T>(Creature creature, WorldObject target, Skill skill, Action<T> action)
 		where T: WorldObject
 	{
-		IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		int affectRange = skill.getAffectRange();
 		int affectLimit = skill.getAffectLimit();
-		
+
 		// Target checks.
 		TargetType targetType = skill.getTargetType();
 		AtomicInteger affected = new AtomicInteger(0);
@@ -47,17 +47,17 @@ public class Range: IAffectScopeHandler
 			{
 				return false;
 			}
-			
+
 			affected.incrementAndGet();
 			return true;
 		};
-		
+
 		// Check and add targets.
 		if (targetType == TargetType.GROUND)
 		{
 			if (creature.isPlayable())
 			{
-				Location3D? worldPosition = creature.getActingPlayer().getCurrentSkillWorldPosition();
+				Location3D? worldPosition = creature.getActingPlayer()?.getCurrentSkillWorldPosition();
 				if (worldPosition != null)
 				{
 					World.getInstance().forEachVisibleObjectInRange<Creature>(creature,
@@ -83,7 +83,7 @@ public class Range: IAffectScopeHandler
 			{
 				action((T)(WorldObject)target);
 			}
-			
+
 			World.getInstance().forEachVisibleObjectInRange<Creature>(target, affectRange, c =>
 			{
 				if (filter(c))
@@ -93,7 +93,7 @@ public class Range: IAffectScopeHandler
 			});
 		}
 	}
-	
+
 	public AffectScope getAffectScopeType()
 	{
 		return AffectScope.RANGE;

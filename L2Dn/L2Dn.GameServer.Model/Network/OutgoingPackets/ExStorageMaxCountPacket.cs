@@ -18,7 +18,7 @@ public readonly struct ExStorageMaxCountPacket: IOutgoingPacket
     private readonly int _recipe;
     private readonly int _inventoryExtraSlots;
     private readonly int _inventoryQuestItems;
-	
+
     public ExStorageMaxCountPacket(Player player)
     {
         if (!player.isSubclassLocked()) // Changing class. // TODO: logic must be in model
@@ -36,16 +36,16 @@ public readonly struct ExStorageMaxCountPacket: IOutgoingPacket
             _inventoryQuestItems = Config.INVENTORY_MAXIMUM_QUEST_ITEMS;
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         if (_player == null)
         {
-            return;
+            return; // TODO: packet must not be sent at all
         }
-		
+
         writer.WritePacketCode(OutgoingPacketCodes.EX_STORAGE_MAX_COUNT);
-        
+
         writer.WriteInt32(_inventory);
         writer.WriteInt32(_warehouse);
         // writer.WriteInt32(_freight); // Removed with 152.

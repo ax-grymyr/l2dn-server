@@ -16,8 +16,8 @@ public class Item: ITargetTypeHandler
 	{
 		return TargetType.ITEM;
 	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
+
+	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
 		return (selectedTarget != null) && selectedTarget.isItem() ? selectedTarget : null;
 	}

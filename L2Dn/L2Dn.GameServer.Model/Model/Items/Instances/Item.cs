@@ -40,14 +40,14 @@ public class Item: WorldObject
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Item));
 	private static readonly Logger LOG_ITEMS = LogManager.GetLogger("item");
-	
+
 	/** Owner */
 	private int _ownerId;
 	private Player _owner;
-	
+
 	/** ID of who dropped the item last, used for knownlist */
 	private int _dropperObjectId = 0;
-	
+
 	/** Quantity of the item */
 	private long _count = 1;
 	/** Initial Quantity of the item */
@@ -56,66 +56,66 @@ public class Item: WorldObject
 	private DateTime? _time;
 	/** Quantity of the item can decrease */
 	private bool _decrease = false;
-	
+
 	/** ID of the item */
 	private readonly int _itemId;
-	
+
 	/** ItemTemplate associated to the item */
 	private readonly ItemTemplate _itemTemplate;
-	
+
 	/** Location of the item : Inventory, PaperDoll, WareHouse */
 	private ItemLocation _loc;
-	
+
 	/** Slot where item is stored : Paperdoll slot, inventory order ... */
 	private int _locData;
-	
+
 	/** Level of enchantment of the item */
 	private int _enchantLevel;
-	
+
 	/** Wear Item */
 	private bool _wear;
-	
+
 	/** Augmented Item */
-	private VariationInstance _augmentation;
-	
+	private VariationInstance? _augmentation;
+
 	/** Shadow item */
 	private int? _mana;
 	private bool _consumingMana;
-	
+
 	/** Custom item types (used loto, race tickets) */
 	private int _type1;
 	private int _type2;
-	
+
 	private DateTime? _dropTime;
-	
+
 	private bool _published = false;
-	
+
 	private bool _protected;
-	
+
 	public const int UNCHANGED = 0;
 	public const int ADDED = 1;
 	public const int REMOVED = 3;
 	public const int MODIFIED = 2;
-	
+
 	public static readonly ImmutableArray<int> DEFAULT_ENCHANT_OPTIONS = [];
 
 	private ItemChangeType _lastChange = ItemChangeType.MODIFIED; // 1 added, 2 modified, 3 removed
 	private bool _existsInDb; // if a record exists in DB.
 	private bool _storedInDb; // if DB data is up-to-date.
-	
+
 	private readonly object _dbLock = new();
-	
-	private Map<AttributeType, AttributeHolder> _elementals = null;
-	
-	private ScheduledFuture _itemLootShedule = null;
-	
-	private readonly DropProtection _dropProtection = new DropProtection();
-	
+
+	private Map<AttributeType, AttributeHolder>? _elementals;
+
+	private ScheduledFuture? _itemLootShedule;
+
+	private readonly DropProtection _dropProtection = new();
+
 	private readonly List<Options.Options> _enchantOptions = new();
 	private readonly EnsoulOption[] _ensoulOptions = new EnsoulOption[2];
 	private readonly EnsoulOption[] _ensoulSpecialOptions = new EnsoulOption[1];
-	private bool _isBlessed = false;
-	
+	private bool _isBlessed;
+
 	/**
 	 * Constructor of the Item from the objectId and the itemId.
 	 * @param objectId : int designating the ID of the object in the world
@@ -248,7 +248,7 @@ public class Item: WorldObject
 	 * @param creator : Player Player requesting the item creation
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public void setOwnerId(string process, int ownerId, Player creator, object reference)
+	public void setOwnerId(string process, int ownerId, Player creator, object? reference)
 	{
 		setOwnerId(ownerId);
 
@@ -421,7 +421,7 @@ public class Item: WorldObject
 	 * @param creator : Player Player requesting the item creation
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public void changeCount(string process, long count, Player creator, object reference)
+	public void changeCount(string? process, long count, Player? creator, object? reference)
 	{
 		if (count == 0)
 		{
@@ -987,7 +987,7 @@ public class Item: WorldObject
 	 * Returns the augmentation object for this item
 	 * @return augmentation
 	 */
-	public VariationInstance getAugmentation()
+	public VariationInstance? getAugmentation()
 	{
 		return _augmentation;
 	}
@@ -1199,12 +1199,12 @@ public class Item: WorldObject
 		return _elementals != null && _elementals.Count != 0;
 	}
 
-	public AttributeHolder getAttribute(AttributeType type)
+	public AttributeHolder? getAttribute(AttributeType type)
 	{
 		return _elementals != null ? _elementals.get(type) : null;
 	}
 
-	public AttributeHolder getAttackAttribute()
+	public AttributeHolder? getAttackAttribute()
 	{
 		if (isWeapon())
 		{
@@ -1787,7 +1787,7 @@ public class Item: WorldObject
 					continue;
 				}
 
-				if (!condition.testImpl(player, player, null, _itemTemplate))
+				if (!condition.TestImpl(player, player, null, _itemTemplate))
 				{
 					return false;
 				}
@@ -2701,18 +2701,18 @@ public class Item: WorldObject
 												? skill.getReuseDelay()
 												: TimeSpan.FromMilliseconds(Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE));
 									}
-									
+
 									updateTimeStamp = true;
 								}
 							}
 						}
 					}
-					
+
 					if (updateTimeStamp)
 					{
 						player.sendPacket(new SkillCoolTimePacket(player));
 					}
-					
+
 					if (update)
 					{
 						player.sendSkillList();
@@ -2721,7 +2721,7 @@ public class Item: WorldObject
 			}
 		}
 	}
-	
+
 	/**
 	 * Returns the item in String format
 	 * @return String

@@ -111,7 +111,7 @@ public abstract class AbstractEnchantItem
 	 * @param supportItem
 	 * @return {@code true} if this support item can be used with the item to be enchanted, {@code false} otherwise
 	 */
-	public virtual bool isValid(Item itemToEnchant, EnchantSupportItem supportItem)
+	public virtual bool isValid(Item itemToEnchant, EnchantSupportItem? supportItem)
 	{
 		if (itemToEnchant == null)
 		{

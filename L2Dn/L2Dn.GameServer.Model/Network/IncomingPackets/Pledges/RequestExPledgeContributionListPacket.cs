@@ -18,12 +18,12 @@ public struct RequestExPledgeContributionListPacket: IIncomingPacket<GameSession
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Clan clan = player.getClan();
+        Clan? clan = player.getClan();
         if (clan == null)
             return ValueTask.CompletedTask;
-		
+
         player.sendPacket(new ExPledgeContributionListPacket(clan.getContributionList()));
-        
+
         return ValueTask.CompletedTask;
     }
 }

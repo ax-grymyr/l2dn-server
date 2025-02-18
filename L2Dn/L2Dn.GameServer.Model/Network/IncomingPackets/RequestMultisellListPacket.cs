@@ -21,8 +21,8 @@ public struct RequestMultisellListPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        MultisellListHolder multisell = MultisellData.getInstance().getMultisell(_multiSellId);
+
+        MultisellListHolder? multisell = MultisellData.getInstance().getMultisell(_multiSellId);
         if (multisell == null)
         {
             PacketLogger.Instance.Warn("RequestMultisellList: " + player + " requested non-existent list " +

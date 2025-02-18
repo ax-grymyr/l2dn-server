@@ -15,7 +15,7 @@ public readonly struct PledgeShowMemberListAllPacket: IOutgoingPacket
     private readonly ICollection<ClanMember> _members;
     private readonly int _pledgeId;
     private readonly bool _isSubPledge;
-	
+
     private PledgeShowMemberListAllPacket(Clan clan, Clan.SubPledge? pledge, bool isSubPledge)
     {
         _clan = clan;
@@ -25,17 +25,17 @@ public readonly struct PledgeShowMemberListAllPacket: IOutgoingPacket
         _members = _clan.getMembers();
         _isSubPledge = isSubPledge;
     }
-	
+
     public static void sendAllTo(Player player)
     {
-        Clan clan = player.getClan();
+        Clan? clan = player.getClan();
         if (clan != null)
         {
             foreach (Clan.SubPledge subPledge in clan.getAllSubPledges())
             {
                 player.sendPacket(new PledgeShowMemberListAllPacket(clan, subPledge, false));
             }
-			
+
             player.sendPacket(new PledgeShowMemberListAllPacket(clan, null, true));
         }
     }
@@ -76,7 +76,7 @@ public readonly struct PledgeShowMemberListAllPacket: IOutgoingPacket
             writer.WriteString(m.getName());
             writer.WriteInt32(m.getLevel());
             writer.WriteInt32((int)m.getClassId());
-            
+
             Player player = m.getPlayer();
             if (player != null)
             {

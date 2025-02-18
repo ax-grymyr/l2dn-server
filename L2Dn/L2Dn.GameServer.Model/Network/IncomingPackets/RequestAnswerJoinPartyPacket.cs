@@ -24,22 +24,22 @@ public struct RequestAnswerJoinPartyPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         PartyRequest request = player.getRequest<PartyRequest>();
         if ((request == null) || request.isProcessing() || !player.removeRequest<PartyRequest>())
             return ValueTask.CompletedTask;
 
         request.setProcessing(true);
-		
+
         Player requestor = request.getActiveChar();
         if (requestor == null)
             return ValueTask.CompletedTask;
-		
+
         Party party = request.getParty();
-        Party requestorParty = requestor.getParty();
+        Party? requestorParty = requestor.getParty();
         if ((requestorParty != null) && (requestorParty != party))
             return ValueTask.CompletedTask;
-		
+
         requestor.sendPacket(new JoinPartyPacket(_response, requestor));
         if (_response == 1)
         {
@@ -50,15 +50,15 @@ public struct RequestAnswerJoinPartyPacket: IIncomingPacket<GameSession>
                 requestor.sendPacket(sm);
                 return ValueTask.CompletedTask;
             }
-			
+
             // Assign the party to the leader upon accept of his partner
             if (requestorParty == null)
             {
                 requestor.setParty(party);
             }
-			
+
             player.joinParty(party);
-			
+
             MatchingRoom requestorRoom = requestor.getMatchingRoom();
             if (requestorRoom != null)
             {
@@ -70,7 +70,7 @@ public struct RequestAnswerJoinPartyPacket: IIncomingPacket<GameSession>
             SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_SET_TO_REFUSE_PARTY_REQUESTS_AND_CANNOT_RECEIVE_A_PARTY_REQUEST);
             sm.Params.addPcName(player);
             requestor.sendPacket(sm);
-			
+
             if (party.getMemberCount() == 1)
             {
                 party.removePartyMember(requestor, PartyMessageType.NONE);
@@ -80,7 +80,7 @@ public struct RequestAnswerJoinPartyPacket: IIncomingPacket<GameSession>
         {
             party.removePartyMember(requestor, PartyMessageType.NONE);
         }
-		
+
         party.setPendingInvitation(false);
         request.setProcessing(false);
         return ValueTask.CompletedTask;

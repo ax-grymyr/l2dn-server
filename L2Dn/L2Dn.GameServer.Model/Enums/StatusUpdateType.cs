@@ -3,7 +3,7 @@
 namespace L2Dn.GameServer.Enums;
 
 /// <summary>
-/// Values correspond client ids. 
+/// Values correspond client ids.
 /// </summary>
 public enum StatusUpdateType: byte
 {
@@ -78,21 +78,21 @@ public static class StatusUpdateTypeUtil
 			StatusUpdateType.CAST_SPD => creature.getMAtkSpd(),
 			StatusUpdateType.M_DEF => creature.getMDef(),
 			StatusUpdateType.PVP_FLAG => (int)creature.getPvpFlag(),
-			StatusUpdateType.REPUTATION => creature.isPlayer() ? creature.getActingPlayer().getReputation() : 0,
+			StatusUpdateType.REPUTATION => creature.isPlayer() ? creature.getActingPlayer()!.getReputation() : 0,
 
 			StatusUpdateType.CUR_CP => (int)creature.getCurrentCp(),
 			StatusUpdateType.MAX_CP => creature.getMaxCp(),
 
-			StatusUpdateType.CUR_DP => creature.isPlayer() ? creature.getActingPlayer().getDeathPoints() : 0,
-			StatusUpdateType.MAX_DP => creature.isPlayer() ? creature.getActingPlayer().getMaxDeathPoints() : 0,
+			StatusUpdateType.CUR_DP => creature.isPlayer() ? creature.getActingPlayer()!.getDeathPoints() : 0,
+			StatusUpdateType.MAX_DP => creature.isPlayer() ? creature.getActingPlayer()!.getMaxDeathPoints() : 0,
 
-			StatusUpdateType.CUR_BP => creature.isPlayer() ? creature.getActingPlayer().getBeastPoints() : 0,
-			StatusUpdateType.MAX_BP => creature.isPlayer() ? creature.getActingPlayer().getMaxBeastPoints() : 0,
+			StatusUpdateType.CUR_BP => creature.isPlayer() ? creature.getActingPlayer()!.getBeastPoints() : 0,
+			StatusUpdateType.MAX_BP => creature.isPlayer() ? creature.getActingPlayer()!.getMaxBeastPoints() : 0,
 
-			StatusUpdateType.CUR_AP => creature.isPlayer() ? creature.getActingPlayer().getAssassinationPoints() : 0,
-			StatusUpdateType.MAX_AP => creature.isPlayer() ? creature.getActingPlayer().getMaxAssassinationPoints() : 0,
-			_ => throw new ArgumentOutOfRangeException()
-		};
+			StatusUpdateType.CUR_AP => creature.isPlayer() ? creature.getActingPlayer()!.getAssassinationPoints() : 0,
+			StatusUpdateType.MAX_AP => creature.isPlayer() ? creature.getActingPlayer()!.getMaxAssassinationPoints() : 0,
+			_ => throw new ArgumentOutOfRangeException(),
+        };
 	}
 }
 
@@ -106,13 +106,13 @@ public static class StatusUpdateTypeUtil
 // 	INT(0x06, Creature::getINT),
 // 	WIT(0x07, Creature::getWIT),
 // 	MEN(0x08, Creature::getMEN),
-// 	
+//
 // 	CUR_HP(0x09, creature -> (int) creature.getCurrentHp()),
 // 	MAX_HP(0x0A, Creature::getMaxHp),
 // 	CUR_MP(0x0B, creature -> (int) creature.getCurrentMp()),
 // 	MAX_MP(0x0C, Creature::getMaxMp),
 // 	CUR_LOAD(0x0E, Creature::getCurrentLoad),
-// 	
+//
 // 	P_ATK(0x11, Creature::getPAtk),
 // 	ATK_SPD(0x12, Creature::getPAtkSpd),
 // 	P_DEF(0x13, Creature::getPDef),
@@ -124,33 +124,33 @@ public static class StatusUpdateTypeUtil
 // 	M_DEF(0x19, Creature::getMDef),
 // 	PVP_FLAG(0x1A, creature -> (int) creature.getPvpFlag()),
 // 	REPUTATION(0x1B, creature -> creature.isPlayer() ? creature.getActingPlayer().getReputation() : 0),
-// 	
+//
 // 	CUR_CP(0x21, creature -> (int) creature.getCurrentCp()),
 // 	MAX_CP(0x22, Creature::getMaxCp),
-// 	
+//
 // 	CUR_DP(0x28, creature -> creature.isPlayer() ? creature.getActingPlayer().getDeathPoints() : 0),
 // 	MAX_DP(0x29, creature -> creature.isPlayer() ? creature.getActingPlayer().getMaxDeathPoints() : 0),
-// 	
+//
 // 	CUR_BP(0x2B, creature -> creature.isPlayer() ? creature.getActingPlayer().getBeastPoints() : 0),
 // 	MAX_BP(0x2C, creature -> creature.isPlayer() ? creature.getActingPlayer().getMaxBeastPoints() : 0),
-// 	
+//
 // 	CUR_AP(0x2D, creature -> creature.isPlayer() ? creature.getActingPlayer().getAssassinationPoints() : 0),
 // 	MAX_AP(0x2E, creature -> creature.isPlayer() ? creature.getActingPlayer().getMaxAssassinationPoints() : 0);
-// 	
+//
 // 	private int _clientId;
 // 	private Function<Creature, Integer> _valueSupplier;
-// 	
+//
 // 	StatusUpdateType(int clientId, Function<Creature, Integer> valueSupplier)
 // 	{
 // 		_clientId = clientId;
 // 		_valueSupplier = valueSupplier;
 // 	}
-// 	
+//
 // 	public int getClientId()
 // 	{
 // 		return _clientId;
 // 	}
-// 	
+//
 // 	public int getValue(Creature creature)
 // 	{
 // 		return _valueSupplier.apply(creature).intValue();

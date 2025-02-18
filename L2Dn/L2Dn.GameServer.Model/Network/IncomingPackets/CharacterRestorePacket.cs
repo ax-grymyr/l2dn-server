@@ -24,13 +24,13 @@ public struct CharacterRestorePacket: IIncomingPacket<GameSession>
             connection.Close();
             return ValueTask.CompletedTask;
         }
-        
+
         // if (!client.getFloodProtectors().canSelectCharacter())
         // {
         //     return;
         // }
 
-        if (session.Characters.RestoreCharacter(_charSlot, out CharacterInfo? charInfo))
+        if (session.Characters.RestoreCharacter(_charSlot, out CharacterInfo? charInfo) && charInfo is not null)
         {
             if (GlobalEvents.Players.HasSubscribers<OnPlayerRestore>())
             {
@@ -40,7 +40,7 @@ public struct CharacterRestorePacket: IIncomingPacket<GameSession>
 
         CharacterListPacket characterListPacket = new(session.PlayKey1, session.AccountName, session.Characters);
         connection.Send(ref characterListPacket);
-        
+
         return ValueTask.CompletedTask;
     }
 }

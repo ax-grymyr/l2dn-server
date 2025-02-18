@@ -24,15 +24,15 @@ public class RankingPowerManager
 	private const int LEADER_STATUE = 18485;
 	private static readonly TimeSpan COOLDOWN = TimeSpan.FromSeconds(43200);
 	private static readonly SkillHolder LEADER_POWER = new SkillHolder(52018, 1);
-	
+
 	private Decoy _decoyInstance;
-	private ScheduledFuture _decoyTask;
-	
+	private ScheduledFuture? _decoyTask;
+
 	protected RankingPowerManager()
 	{
 		reset();
 	}
-	
+
 	public void activatePower(Player player)
 	{
 		Location3D location = player.Location.Location3D;
@@ -49,11 +49,11 @@ public class RankingPowerManager
 		msg.Params.addZoneName(location.X, location.Y, location.Z);
 		Broadcast.toAllOnlinePlayers(msg);
 	}
-	
+
 	private void createClone(Player player)
 	{
 		Location location = player.Location;
-		
+
 		NpcTemplate template = NpcData.getInstance().getTemplate(LEADER_STATUE);
 		_decoyInstance = new Decoy(template, player, COOLDOWN, false);
 		_decoyInstance.setTargetable(false);
@@ -62,23 +62,23 @@ public class RankingPowerManager
 		_decoyInstance.spawnMe(location.Location3D);
 		_decoyInstance.setHeading(location.Heading);
 		_decoyInstance.broadcastStatusUpdate();
-		
+
 		AbstractScript.addSpawn(null, LEADER_STATUE, location.Location3D, location.Heading, false, COOLDOWN);
 	}
-	
+
 	private void cloneTask()
 	{
 		_decoyTask = ThreadPool.scheduleAtFixedRate(() =>
 		{
 			World.getInstance().forEachVisibleObjectInRange<Player>(_decoyInstance, 300, nearby =>
 			{
-				BuffInfo info = nearby.getEffectList().getBuffInfoBySkillId(LEADER_POWER.getSkillId());
+				BuffInfo? info = nearby.getEffectList().getBuffInfoBySkillId(LEADER_POWER.getSkillId());
 				if ((info == null) ||
 				    (info.getTime() < (LEADER_POWER.getSkill().getAbnormalTime() - TimeSpan.FromSeconds(60))))
 				{
 					nearby.sendPacket(new MagicSkillUsePacket(_decoyInstance, nearby, LEADER_POWER.getSkillId(),
 						LEADER_POWER.getSkillLevel(), TimeSpan.Zero, TimeSpan.Zero));
-					
+
 					LEADER_POWER.getSkill().applyEffects(_decoyInstance, nearby);
 				}
 			});
@@ -87,10 +87,10 @@ public class RankingPowerManager
 				ThreadPool.schedule(() => _decoyInstance.broadcastSocialAction(2), 4500);
 			}
 		}, 1000, 10000);
-		
+
 		ThreadPool.schedule(reset, COOLDOWN);
 	}
-	
+
 	public void reset()
 	{
 		if (_decoyTask != null)
@@ -105,12 +105,12 @@ public class RankingPowerManager
 		GlobalVariablesManager.getInstance().remove(GlobalVariablesManager.RANKING_POWER_COOLDOWN);
 		GlobalVariablesManager.getInstance().remove(GlobalVariablesManager.RANKING_POWER_LOCATION);
 	}
-	
+
 	public static RankingPowerManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly RankingPowerManager INSTANCE = new();

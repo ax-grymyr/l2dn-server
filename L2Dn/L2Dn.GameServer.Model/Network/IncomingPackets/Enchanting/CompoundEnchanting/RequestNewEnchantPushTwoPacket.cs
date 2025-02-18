@@ -31,21 +31,21 @@ public struct RequestNewEnchantPushTwoPacket: IIncomingPacket<GameSession>
             player.sendPacket(ExEnchantOneFailPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         if (player.isProcessingTransaction() || player.isProcessingRequest())
         {
             player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_SYSTEM_DURING_TRADING_PRIVATE_STORE_AND_WORKSHOP_SETUP);
             player.sendPacket(ExEnchantOneFailPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         CompoundRequest request = player.getRequest<CompoundRequest>();
         if (request == null || request.isProcessing())
         {
             player.sendPacket(ExEnchantTwoFailPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         // Make sure player owns this item.
         request.setItemTwo(_objectId);
         Item itemOne = request.getItemOne();
@@ -55,27 +55,27 @@ public struct RequestNewEnchantPushTwoPacket: IIncomingPacket<GameSession>
             player.sendPacket(ExEnchantTwoFailPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         // Lets prevent using same item twice. Also stackable item check.
-        if (itemOne.ObjectId == itemTwo.ObjectId && (!itemOne.isStackable() || 
+        if (itemOne.ObjectId == itemTwo.ObjectId && (!itemOne.isStackable() ||
             player.getInventory().getInventoryItemCount(itemOne.getTemplate().getId(), -1) < 2))
         {
             player.sendPacket(ExEnchantTwoFailPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
 
-        CombinationItem combinationItem = CombinationItemsData.getInstance().getItemsBySlots(itemOne.getId(),
+        CombinationItem? combinationItem = CombinationItemsData.getInstance().getItemsBySlots(itemOne.getId(),
             itemOne.getEnchantLevel(), itemTwo.getId(), itemTwo.getEnchantLevel());
-		
+
         // Not implemented or not able to merge!
         if (combinationItem == null)
         {
             player.sendPacket(ExEnchantTwoFailPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         player.sendPacket(ExEnchantTwoOkPacket.STATIC_PACKET);
-        
+
         return ValueTask.CompletedTask;
     }
 }

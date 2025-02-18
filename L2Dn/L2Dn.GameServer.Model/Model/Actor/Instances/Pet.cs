@@ -30,7 +30,7 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 public class Pet: Summon
 {
 	protected static readonly Logger LOGGER_PET = LogManager.GetLogger(nameof(Pet));
-	
+
 	protected int _curFed;
 	protected readonly PetInventory _inventory;
 	private readonly bool _mountable;
@@ -43,10 +43,10 @@ public class Pet: Summon
 	private PetLevelData _leveldata;
 	private EvolveLevel _evolveLevel = EvolveLevel.None;
 	private ScheduledFuture _feedTask;
-	
+
 	private void deletePetEvolved()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.PetEvolves.Where(r => r.ItemObjectId == _controlObjectId).ExecuteDelete();
@@ -56,10 +56,10 @@ public class Pet: Summon
 			LOGGER.Error("Could not delete pet evolve data " + _controlObjectId + ": " + e);
 		}
 	}
-	
+
 	public void restorePetEvolvesByItem()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (PetEvolve record in ctx.PetEvolves.Where(r => r.ItemObjectId == _controlObjectId))
@@ -72,11 +72,11 @@ public class Pet: Summon
 			LOGGER.Error("Could not restore pet evolve for playerId: " + ObjectId + ": " + e);
 		}
 	}
-	
+
 	public void storeEvolvedPets(int evolveLevel, int index, int controlItemObjId)
 	{
 		deletePetEvolved();
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			PetEvolve? record = ctx.PetEvolves.SingleOrDefault(r =>
@@ -103,10 +103,10 @@ public class Pet: Summon
 		getOwner().setPetEvolve(controlItemObjId,
 			new PetEvolveHolder(index, (EvolveLevel)evolveLevel, getName(), getLevel(), getExpForThisLevel()));
 	}
-	
+
 	public void storePetSkills(int skillId, int skillLevel)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			DbPetSkill? record = ctx.PetSkills.SingleOrDefault(r =>
@@ -130,10 +130,10 @@ public class Pet: Summon
 			LOGGER.Error("Could not store pet skill data: " + e);
 		}
 	}
-	
+
 	public void restoreSkills()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (DbPetSkill record in ctx.PetSkills.Where(r => r.PetItemObjectId == _controlObjectId))
@@ -154,7 +154,7 @@ public class Pet: Summon
 			LOGGER.Error("Could not restore " + this + " skill data: " + e);
 		}
 	}
-	
+
 	public PetLevelData getPetLevelData()
 	{
 		if (_leveldata == null)
@@ -163,7 +163,7 @@ public class Pet: Summon
 		}
 		return _leveldata;
 	}
-	
+
 	public PetData getPetData()
 	{
 		if (_data == null)
@@ -173,12 +173,12 @@ public class Pet: Summon
 		setPetType(_data.getDefaultPetType());
 		return _data;
 	}
-	
+
 	public void setPetData(PetLevelData value)
 	{
 		_leveldata = value;
 	}
-	
+
 	/**
 	 * Manage Feeding Task.<br>
 	 * Feed or kill the pet depending on hunger level.<br>
@@ -193,7 +193,7 @@ public class Pet: Summon
 		{
 			_pet = pet;
 		}
-		
+
 		public void run()
 		{
 			try
@@ -377,7 +377,7 @@ public class Pet: Summon
 		return _controlObjectId;
 	}
 
-	public Item getControlItem()
+	public Item? getControlItem()
 	{
 		return getOwner().getInventory().getItemByObjectId(_controlObjectId);
 	}
@@ -1601,7 +1601,7 @@ public class Pet: Summon
 				sendPacket(sm);
 				// Consume mana - will start a task if required; returns if item is not a shadow item
 				item.decreaseMana(false);
-				
+
 				if ((item.getTemplate().getBodyPart() & ItemTemplate.SLOT_MULTI_ALLWEAPON) != 0)
 				{
 					rechargeShots(true, true, false);
@@ -1612,15 +1612,15 @@ public class Pet: Summon
 				sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 			}
 		}
-		
+
 		PetInventoryUpdatePacket petIU = new PetInventoryUpdatePacket(items);
 		sendInventoryUpdate(petIU);
-		
+
 		if (abortAttack)
 		{
 			this.abortAttack();
 		}
-		
+
 		if (getInventoryLimit() != oldInvLimit)
 		{
 			getOwner().sendPacket(new ExStorageMaxCountPacket(getOwner()));

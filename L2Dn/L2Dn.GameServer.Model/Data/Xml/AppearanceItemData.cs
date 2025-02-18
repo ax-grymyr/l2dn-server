@@ -98,7 +98,7 @@ public class AppearanceItemData: DataReaderBase
 		}
 	}
 
-	public AppearanceStone getStone(int stone)
+	public AppearanceStone? getStone(int stone)
 	{
 		return _stoneMap.get(stone);
 	}

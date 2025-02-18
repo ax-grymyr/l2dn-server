@@ -23,19 +23,19 @@ public struct RequestFortressMapInfoPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Fort fort = FortManager.getInstance().getFortById(_fortressId);
+        Fort? fort = FortManager.getInstance().getFortById(_fortressId);
         if (fort == null)
         {
             PacketLogger.Instance.Warn("Fort is not found with id (" + _fortressId + ") in all forts with size of (" +
                                        FortManager.getInstance().getForts().Count + ") called by player (" + player +
                                        ")");
-            
+
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         player.sendPacket(new ExShowFortressMapInfoPacket(fort));
-       
+
         return ValueTask.CompletedTask;
     }
 }

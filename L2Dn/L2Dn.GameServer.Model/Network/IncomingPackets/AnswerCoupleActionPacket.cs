@@ -27,13 +27,13 @@ public struct AnswerCoupleActionPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Player target = World.getInstance().getPlayer(_objectId);
+        Player? target = World.getInstance().getPlayer(_objectId);
         if (target == null)
             return ValueTask.CompletedTask;
-		
+
         if (target.getMultiSocialTarget() != player.ObjectId || target.getMultiSociaAction() != _actionId)
             return ValueTask.CompletedTask;
-		
+
         if (_answer == 0) // cancel
         {
             target.sendPacket(SystemMessageId.THE_COUPLE_ACTION_REQUEST_HAS_BEEN_DENIED);
@@ -47,7 +47,7 @@ public struct AnswerCoupleActionPacket: IIncomingPacket<GameSession>
                 target.sendPacket(SystemMessageId.THE_REQUEST_CANNOT_BE_COMPLETED_BECAUSE_THE_TARGET_DOES_NOT_MEET_LOCATION_REQUIREMENTS);
                 return ValueTask.CompletedTask;
             }
-            
+
             int heading = player.HeadingTo(target);
             player.broadcastPacket(new ExRotationPacket(player.ObjectId, heading));
             player.setHeading(heading);
@@ -63,9 +63,9 @@ public struct AnswerCoupleActionPacket: IIncomingPacket<GameSession>
             sm.Params.addPcName(player);
             target.sendPacket(sm);
         }
-        
+
         target.setMultiSocialAction(0, 0);
-        
+
         return ValueTask.CompletedTask;
     }
 }

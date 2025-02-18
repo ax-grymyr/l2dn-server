@@ -14,7 +14,7 @@ public class ItemAction: IActionHandler
 {
 	public bool action(Player player, WorldObject target, bool interact)
 	{
-		Castle castle = CastleManager.getInstance().getCastle(target);
+		Castle? castle = CastleManager.getInstance().getCastle(target);
 		if ((castle != null) &&
 		    (SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), target.getId()) != null) &&
 		    ((player.getClan() == null) || (castle.getOwnerId() != player.getClanId()) ||
@@ -32,7 +32,7 @@ public class ItemAction: IActionHandler
 		}
 		return true;
 	}
-	
+
 	public InstanceType getInstanceType()
 	{
 		return InstanceType.Item;

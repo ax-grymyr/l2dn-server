@@ -16,17 +16,17 @@ namespace L2Dn.GameServer.Data.Xml;
 public class MultisellData: DataReaderBase
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(MultisellData));
-	
+
 	public const int PAGE_SIZE = 40;
 
 	private FrozenDictionary<int, MultisellListHolder> _multiSellLists =
 		FrozenDictionary<int, MultisellListHolder>.Empty;
-	
+
 	private MultisellData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		IEnumerable<(string FilePath, XmlMultiSellList Document)> files =
@@ -38,7 +38,7 @@ public class MultisellData: DataReaderBase
 
 		_multiSellLists = files.Select(x => loadFile(x.FilePath, x.Document)).Where(l => l != null)
 			.ToFrozenDictionary(x => x.getId());
-		
+
 		_logger.Info(GetType().Name + ": Loaded " + _multiSellLists.Count + " multisell lists.");
 	}
 
@@ -119,28 +119,28 @@ public class MultisellData: DataReaderBase
 										: enchantmentLevel);
 						}
 					}
-					
+
 					// Check chance only of items that have set chance.
 					// Items without chance are used for displaying purposes.
 					if (productEntry is { ChanceSpecified: true, Chance: < 0 or > 100 })
 					{
 						_logger.Warn("Invalid chance for itemId: " + productEntry.ItemId + ", count: " +
 						             productEntry.Count + ", chance: " + productEntry.Chance + " in list: " + listId);
-						
+
 						return null;
 					}
-					
+
 					if (productEntry.ChanceSpecified)
 						totalChance += productEntry.Chance;
 
 					ItemChanceHolder product = new(productEntry.ItemId, productEntry.Chance, productEntry.Count,
 						enchantmentLevel);
-					
+
 					if (!ItemExists(product))
 					{
 						_logger.Warn("Invalid product id or count for itemId: " + product.getId() + ", count: " +
 						             product.getCount() + " in list: " + listId);
-						
+
 						continue;
 					}
 
@@ -156,7 +156,7 @@ public class MultisellData: DataReaderBase
 							totalPrice += item.getReferencePrice() / 2 * product.getCount();
 					}
 				}
-				
+
 				if (totalChance > 100)
 				{
 					_logger.Warn("Products' total chance of " + totalChance + "% exceeds 100% for list: " + listId +
@@ -222,7 +222,7 @@ public class MultisellData: DataReaderBase
 	 * @param productMultiplierValue
 	 * @param type
 	 */
-	public void separateAndSend(int listId, Player player, Npc npc, bool inventoryOnly,
+	public void separateAndSend(int listId, Player player, Npc? npc, bool inventoryOnly,
 		double? ingredientMultiplierValue, double? productMultiplierValue, int type)
 	{
 		MultisellListHolder? template = _multiSellLists.GetValueOrDefault(listId);
@@ -253,7 +253,7 @@ public class MultisellData: DataReaderBase
 		double productMultiplier = productMultiplierValue ?? template.getProductMultiplier();
 		PreparedMultisellListHolder list = new(template, inventoryOnly, player.getInventory(), npc,
 			ingredientMultiplier, productMultiplier);
-		
+
 		int index = 0;
 		do
 		{
@@ -265,11 +265,11 @@ public class MultisellData: DataReaderBase
 		player.setMultiSell(list);
 	}
 
-	public void separateAndSend(int listId, Player player, Npc npc, bool inventoryOnly)
+	public void separateAndSend(int listId, Player player, Npc? npc, bool inventoryOnly)
 	{
 		separateAndSend(listId, player, npc, inventoryOnly, null, null, 0);
 	}
-	
+
 	private static bool ItemExists(ItemHolder holder)
 	{
 		SpecialItemType specialItem = (SpecialItemType)holder.getId();
@@ -277,21 +277,21 @@ public class MultisellData: DataReaderBase
 		{
 			return true;
 		}
-		
+
 		ItemTemplate? template = ItemData.getInstance().getTemplate(holder.getId());
 		return template != null && (template.isStackable() ? holder.getCount() >= 1 : holder.getCount() == 1);
 	}
-	
+
 	public MultisellListHolder? getMultisell(int id)
 	{
 		return _multiSellLists.GetValueOrDefault(id);
 	}
-	
+
 	public static MultisellData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly MultisellData INSTANCE = new();

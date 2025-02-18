@@ -27,23 +27,23 @@ public struct RequestConfirmSiegeWaitingListPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         // Check if the player has a clan
         if (player.getClan() == null)
             return ValueTask.CompletedTask;
-		
-        Castle castle = CastleManager.getInstance().getCastleById(_castleId);
+
+        Castle? castle = CastleManager.getInstance().getCastleById(_castleId);
         if (castle == null)
             return ValueTask.CompletedTask;
-		
+
         // Check if leader of the clan who owns the castle?
-        if ((castle.getOwnerId() != player.getClanId()) || (!player.isClanLeader()))
+        if (castle.getOwnerId() != player.getClanId() || !player.isClanLeader())
             return ValueTask.CompletedTask;
-		
-        Clan clan = ClanTable.getInstance().getClan(_clanId);
+
+        Clan? clan = ClanTable.getInstance().getClan(_clanId);
         if (clan == null)
             return ValueTask.CompletedTask;
-		
+
         if (!castle.getSiege().isRegistrationOver())
         {
             if (_approved == 1)
@@ -57,12 +57,12 @@ public struct RequestConfirmSiegeWaitingListPacket: IIncomingPacket<GameSession>
                     return ValueTask.CompletedTask;
                 }
             }
-            else if ((castle.getSiege().checkIsDefenderWaiting(clan)) || (castle.getSiege().checkIsDefender(clan)))
+            else if (castle.getSiege().checkIsDefenderWaiting(clan) || castle.getSiege().checkIsDefender(clan))
             {
                 castle.getSiege().removeSiegeClan(_clanId);
             }
         }
-		
+
         // Update the defender list
         player.sendPacket(new SiegeDefenderListPacket(castle));
 

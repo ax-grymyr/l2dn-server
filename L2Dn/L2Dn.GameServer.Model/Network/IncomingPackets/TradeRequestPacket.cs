@@ -28,15 +28,15 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 		Player? player = session.Player;
 		if (player == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (!player.getAccessLevel().allowTransaction())
 		{
 			player.sendMessage("Transactions are disabled for your current Access Level.");
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
-		BuffInfo info = player.getEffectList().getFirstBuffInfoByAbnormalType(AbnormalType.BOT_PENALTY);
+
+		BuffInfo? info = player.getEffectList().getFirstBuffInfoByAbnormalType(AbnormalType.BOT_PENALTY);
 		if (info != null)
 		{
 			foreach (AbstractEffect effect in info.getEffects())
@@ -49,15 +49,15 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 				}
 			}
 		}
-		
-		WorldObject target = World.getInstance().findObject(_objectId);
+
+		WorldObject? target = World.getInstance().findObject(_objectId);
 
 		// If there is no target, target is far away or
 		// they are in different instances
 		// trade request is ignored and there is no system message.
 		if ((target == null) || !player.isInSurroundingRegion(target) || (target.getInstanceWorld() != player.getInstanceWorld()))
 			return ValueTask.CompletedTask;
-		
+
 		// If target and acting player are the same, trade request is ignored
 		// and the following system message is sent to acting player.
 		if (target.ObjectId == player.ObjectId)
@@ -65,7 +65,7 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		SystemMessagePacket sm;
 		if (FakePlayerData.getInstance().isTalkable(target.getName()))
 		{
@@ -76,13 +76,13 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 				if (string.Equals(npc.getName(), name))
 					npcInRange = true;
 			}
-			
+
 			if (!npcInRange)
 			{
 				player.sendPacket(SystemMessageId.YOUR_TARGET_IS_OUT_OF_RANGE);
 				return ValueTask.CompletedTask;
 			}
-			
+
 			if (!player.isProcessingRequest())
 			{
 				sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_REQUESTED_A_TRADE_WITH_C1);
@@ -98,20 +98,20 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!target.isPlayer())
 		{
 			player.sendPacket(SystemMessageId.INVALID_TARGET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		Player partner = target.getActingPlayer();
 		if (partner.isInOlympiadMode() || player.isInOlympiadMode())
 		{
 			player.sendMessage("A user currently participating in the Olympiad cannot accept or request a trade.");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		info = partner.getEffectList().getFirstBuffInfoByAbnormalType(AbnormalType.BOT_PENALTY);
 		if (info != null)
 		{
@@ -127,38 +127,38 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 				}
 			}
 		}
-		
+
 		// L2J Customs: Karma punishment
 		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && (player.getReputation() < 0))
 		{
 			player.sendMessage("You cannot trade while you are in a chaotic state.");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && (partner.getReputation() < 0))
 		{
 			player.sendMessage("You cannot request a trade while your target is in a chaotic state.");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (Config.JAIL_DISABLE_TRANSACTION && (player.isJailed() || partner.isJailed()))
 		{
 			player.sendMessage("You cannot trade while you are in in Jail.");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if ((player.getPrivateStoreType() != PrivateStoreType.NONE) || (partner.getPrivateStoreType() != PrivateStoreType.NONE))
 		{
 			player.sendPacket(SystemMessageId.WHILE_OPERATING_A_PRIVATE_STORE_OR_WORKSHOP_YOU_CANNOT_DISCARD_DESTROY_OR_TRADE_AN_ITEM);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.isProcessingTransaction())
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_ALREADY_TRADING_WITH_SOMEONE);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (partner.isProcessingRequest() || partner.isProcessingTransaction())
 		{
 			sm = new SystemMessagePacket(SystemMessageId.C1_IS_ON_ANOTHER_TASK_PLEASE_TRY_AGAIN_LATER);
@@ -166,13 +166,13 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 			player.sendPacket(sm);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (partner.getTradeRefusal())
 		{
 			player.sendMessage("That person is in trade refusal mode.");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (BlockList.isBlocked(partner, player))
 		{
 			sm = new SystemMessagePacket(SystemMessageId.C1_HAS_ADDED_YOU_TO_THEIR_IGNORE_LIST);
@@ -180,13 +180,13 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 			player.sendPacket(sm);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.Distance3D(partner) > 150)
 		{
 			player.sendPacket(SystemMessageId.YOUR_TARGET_IS_OUT_OF_RANGE);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		player.onTransactionRequest(partner);
 		partner.sendPacket(new SendTradeRequestPacket(player.ObjectId));
 		sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_REQUESTED_A_TRADE_WITH_C1);

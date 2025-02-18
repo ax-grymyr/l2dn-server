@@ -27,8 +27,8 @@ public struct RequestCommissionInfoPacket: IIncomingPacket<GameSession>
             player.sendPacket(ExCloseCommissionPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
-        Item itemInstance = player.getInventory().getItemByObjectId(_itemObjectId);
+
+        Item? itemInstance = player.getInventory().getItemByObjectId(_itemObjectId);
         if (itemInstance != null)
         {
             player.sendPacket(player.getLastCommissionInfos().GetValueOrDefault(itemInstance.getId(), ExResponseCommissionInfoPacket.EMPTY));
@@ -37,7 +37,7 @@ public struct RequestCommissionInfoPacket: IIncomingPacket<GameSession>
         {
             player.sendPacket(ExResponseCommissionInfoPacket.EMPTY);
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

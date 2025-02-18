@@ -12,15 +12,15 @@ public readonly struct ExReplyReceivedPostPacket: IOutgoingPacket
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(ExReplyReceivedPostPacket));
     private readonly Message _msg;
-    private readonly ICollection<Item> _items;
-	
+    private readonly ICollection<Item>? _items;
+
     public ExReplyReceivedPostPacket(Message msg)
     {
         _msg = msg;
         if (msg.hasAttachments())
         {
             ItemContainer attachments = msg.getAttachments();
-            if ((attachments != null) && (attachments.getSize() > 0))
+            if (attachments != null && attachments.getSize() > 0)
             {
                 _items = attachments.getItems();
             }
@@ -30,11 +30,11 @@ public readonly struct ExReplyReceivedPostPacket: IOutgoingPacket
             }
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_REPLY_RECEIVED_POST);
-        
+
         writer.WriteInt32((int)_msg.getMailType()); // GOD
         if (_msg.getMailType() == MailType.COMMISSION_ITEM_RETURNED)
         {
@@ -58,7 +58,7 @@ public readonly struct ExReplyReceivedPostPacket: IOutgoingPacket
         writer.WriteString(_msg.getSenderName());
         writer.WriteString(_msg.getSubject());
         writer.WriteString(_msg.getContent());
-        if ((_items != null) && _items.Count != 0)
+        if (_items != null && _items.Count != 0)
         {
             writer.WriteInt32(_items.Count);
             foreach (Item item in _items)
@@ -71,7 +71,7 @@ public readonly struct ExReplyReceivedPostPacket: IOutgoingPacket
         {
             writer.WriteInt32(0);
         }
-        
+
         writer.WriteInt64(_msg.getReqAdena());
         writer.WriteInt32(_msg.hasAttachments());
         writer.WriteInt32(_msg.isReturned());

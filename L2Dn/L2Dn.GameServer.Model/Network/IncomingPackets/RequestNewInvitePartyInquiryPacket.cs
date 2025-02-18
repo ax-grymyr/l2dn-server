@@ -18,7 +18,7 @@ public struct RequestNewInvitePartyInquiryPacket: IIncomingPacket<GameSession>
     public void ReadContent(PacketBitReader reader)
     {
         _reqType = reader.ReadByte();
-		
+
         int chatTypeValue = reader.ReadByte();
         _sayType = chatTypeValue switch
         {
@@ -42,20 +42,20 @@ public struct RequestNewInvitePartyInquiryPacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_ALLOWED_TO_CHAT_WITH_A_CONTACT_WHILE_A_CHATTING_BLOCK_IS_IMPOSED);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Ten second delay.
 		// TODO: Create another flood protection for this?
 		// if (!client.getFloodProtectors().canSendMail())
 		// {
 		// 	return;
 		// }
-		
+
 		if (Config.JAIL_DISABLE_CHAT && player.isJailed() && !player.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 		{
 			player.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.isInOlympiadMode())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_CHAT_WHILE_PARTICIPATING_IN_THE_OLYMPIAD);
@@ -79,14 +79,14 @@ public struct RequestNewInvitePartyInquiryPacket: IIncomingPacket<GameSession>
 			}
 			case 1: // Command Channel
 			{
-				Party party = player.getParty();
+				Party? party = player.getParty();
 				if (party == null || !party.isLeader(player) || party.getCommandChannel() != null)
 					return ValueTask.CompletedTask;
 
 				break;
 			}
 		}
-		
+
 		switch (_sayType)
 		{
 			case ChatType.SHOUT:
@@ -96,11 +96,11 @@ public struct RequestNewInvitePartyInquiryPacket: IIncomingPacket<GameSession>
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CHAT_WHILE_IN_THE_SPECTATOR_MODE);
 					return ValueTask.CompletedTask;
 				}
-				
+
 				Broadcast.toAllOnlinePlayers(new ExRequestNewInvitePartyInquiryPacket(player, _reqType, _sayType));
 				break;
 			}
-			
+
 			case ChatType.TRADE:
 			{
 				if (player.inObserverMode())
@@ -108,11 +108,11 @@ public struct RequestNewInvitePartyInquiryPacket: IIncomingPacket<GameSession>
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CHAT_WHILE_IN_THE_SPECTATOR_MODE);
 					return ValueTask.CompletedTask;
 				}
-				
+
 				Broadcast.toAllOnlinePlayers(new ExRequestNewInvitePartyInquiryPacket(player, _reqType, _sayType));
 				break;
 			}
-			
+
 			case ChatType.GENERAL:
 			{
 				if (player.inObserverMode())
@@ -120,39 +120,40 @@ public struct RequestNewInvitePartyInquiryPacket: IIncomingPacket<GameSession>
 					player.sendPacket(SystemMessageId.YOU_CANNOT_CHAT_WHILE_IN_THE_SPECTATOR_MODE);
 					return ValueTask.CompletedTask;
 				}
-				
+
 				ExRequestNewInvitePartyInquiryPacket msg = new ExRequestNewInvitePartyInquiryPacket(player, _reqType, _sayType);
 				player.sendPacket(msg);
 				World.getInstance().forEachVisibleObjectInRange<Player>(player, Config.ALT_PARTY_RANGE, nearby => nearby.sendPacket(msg));
 				break;
 			}
-			
+
 			case ChatType.CLAN:
 			{
-				Clan clan = player.getClan();
+				Clan? clan = player.getClan();
 				if (clan == null)
 				{
 					player.sendPacket(SystemMessageId.YOU_ARE_NOT_IN_A_CLAN);
 					return ValueTask.CompletedTask;
 				}
-				
+
 				clan.broadcastToOnlineMembers(new ExRequestNewInvitePartyInquiryPacket(player, _reqType, _sayType));
 				break;
 			}
-			
+
 			case ChatType.ALLIANCE:
 			{
-				if (player.getClan() == null || (player.getClan() != null && player.getClan().getAllyId() == 0))
+                Clan? clan = player.getClan();
+				if (clan == null || clan.getAllyId() is null)
 				{
 					player.sendPacket(SystemMessageId.YOU_ARE_NOT_IN_AN_ALLIANCE);
 					return ValueTask.CompletedTask;
 				}
-				
-				player.getClan().broadcastToOnlineAllyMembers(new ExRequestNewInvitePartyInquiryPacket(player, _reqType, _sayType));
+
+				clan.broadcastToOnlineAllyMembers(new ExRequestNewInvitePartyInquiryPacket(player, _reqType, _sayType));
 				break;
 			}
 		}
-        
+
         return ValueTask.CompletedTask;
     }
 }

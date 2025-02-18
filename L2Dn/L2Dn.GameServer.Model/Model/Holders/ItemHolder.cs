@@ -8,18 +8,20 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class ItemHolder(int id, long count): IIdentifiable
 {
-	/**
-	 * @return the ID of the item contained in this object
-	 */
-	public int getId() => id;
+    /**
+     * @return the ID of the item contained in this object
+     */
+    public int getId() => id;
 
-	/**
-	 * @return the count of items contained in this object
-	 */
-	public long getCount() => count;
+    /**
+     * @return the count of items contained in this object
+     */
+    public long getCount() => count;
 
-	public override bool Equals(object? obj)
-		=> obj is ItemHolder other && id == other.getId() && count == other.getCount();
+    public override bool Equals(object? obj) =>
+        obj == this || obj is ItemHolder other && id == other.getId() && count == other.getCount();
 
-	public override string ToString() => $"[{GetType().Name}] ID: {id}, count: {count}";
+    public override int GetHashCode() => HashCode.Combine(id, count);
+
+    public override string ToString() => $"[{GetType().Name}] ID: {id}, count: {count}";
 }

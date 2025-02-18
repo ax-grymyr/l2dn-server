@@ -38,8 +38,8 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 		else
 			player.removeAutoShortcut(_slot, _page);
 
-		Item item = null;
-		Skill skill = null;
+		Item? item = null;
+		Skill? skill = null;
 		if (shortcut.getType() == ShortcutType.SKILL)
 		{
 			int skillId = player.getReplacementSkill(shortcut.getId());

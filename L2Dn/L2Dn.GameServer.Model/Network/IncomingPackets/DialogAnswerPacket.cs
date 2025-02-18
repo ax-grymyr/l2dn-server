@@ -119,14 +119,14 @@ public struct DialogAnswerPacket: IIncomingPacket<GameSession>
 			    Disconnection.of(session, player).defaultSequence(LeaveWorldPacket.STATIC_PACKET);
 		    }
 	    }
-	    else if (_messageId == SystemMessageId.C1_IS_ATTEMPTING_TO_DO_A_RESURRECTION_THAT_RESTORES_S2_S3_XP_ACCEPT || 
+	    else if (_messageId == SystemMessageId.C1_IS_ATTEMPTING_TO_DO_A_RESURRECTION_THAT_RESTORES_S2_S3_XP_ACCEPT ||
 	             _messageId == SystemMessageId.YOUR_CHARM_OF_COURAGE_IS_TRYING_TO_RESURRECT_YOU_WOULD_YOU_LIKE_TO_RESURRECT_NOW)
 	    {
 		    player.reviveAnswer(_answer);
 	    }
 	    else if (_messageId == SystemMessageId.C1_WANTS_TO_SUMMON_YOU_TO_S2_ACCEPT)
 	    {
-		    SummonRequestHolder holder = player.removeScript<SummonRequestHolder>();
+		    SummonRequestHolder? holder = player.removeScript<SummonRequestHolder>();
 		    if (_answer == 1 && holder != null && holder.getSummoner().ObjectId == _requesterId)
 		    {
 			    player.teleToLocation(holder.Location, true);
@@ -134,7 +134,7 @@ public struct DialogAnswerPacket: IIncomingPacket<GameSession>
 	    }
 	    else if (_messageId == SystemMessageId.WOULD_YOU_LIKE_TO_OPEN_THE_GATE)
 	    {
-		    DoorRequestHolder holder = player.removeScript<DoorRequestHolder>();
+		    DoorRequestHolder? holder = player.removeScript<DoorRequestHolder>();
 		    if (holder != null && holder.getDoor() == player.getTarget() && _answer == 1)
 		    {
 			    holder.getDoor().openMe();
@@ -142,7 +142,7 @@ public struct DialogAnswerPacket: IIncomingPacket<GameSession>
 	    }
 	    else if (_messageId == SystemMessageId.WOULD_YOU_LIKE_TO_CLOSE_THE_GATE)
 	    {
-		    DoorRequestHolder holder = player.removeScript<DoorRequestHolder>();
+		    DoorRequestHolder? holder = player.removeScript<DoorRequestHolder>();
 		    if (holder != null && holder.getDoor() == player.getTarget() && _answer == 1)
 		    {
 			    holder.getDoor().closeMe();

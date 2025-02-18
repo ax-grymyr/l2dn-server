@@ -18,16 +18,16 @@ public struct RequestSiegeDefenderListPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        Castle castle = CastleManager.getInstance().getCastleById(_castleId);
+        Castle? castle = CastleManager.getInstance().getCastleById(_castleId);
         if (castle == null)
             return ValueTask.CompletedTask;
-		
+
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         player.sendPacket(new SiegeDefenderListPacket(castle));
-        
+
         return ValueTask.CompletedTask;
     }
 }

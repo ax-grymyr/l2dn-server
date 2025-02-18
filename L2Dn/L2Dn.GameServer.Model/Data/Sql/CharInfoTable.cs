@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Data.Sql;
 public class CharInfoTable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(CharInfoTable));
-	
+
 	private readonly Map<int, string> _names = new();
 	private readonly Map<int, int> _accessLevels = new();
 	private readonly Map<int, int> _levels = new();
@@ -19,7 +19,7 @@ public class CharInfoTable
 	private readonly Map<int, Map<int, string>> _memos = new();
 	private readonly Map<int, DateTime> _creationDates = new();
 	private readonly Map<int, DateTime> _lastAccess = new();
-	
+
 	protected CharInfoTable()
 	{
 		try
@@ -41,7 +41,7 @@ public class CharInfoTable
 
 		LOGGER.Info(GetType().Name + ": Loaded " + _names.Count + " char names.");
 	}
-	
+
 	public void addName(Player player)
 	{
 		if (player != null)
@@ -50,7 +50,7 @@ public class CharInfoTable
 			_accessLevels.put(player.ObjectId, player.getAccessLevel().getLevel());
 		}
 	}
-	
+
 	private void addName(int objectId, string name)
 	{
 		if ((name != null) && !name.equals(_names.get(objectId)))
@@ -58,20 +58,20 @@ public class CharInfoTable
 			_names.put(objectId, name);
 		}
 	}
-	
+
 	public void removeName(int objId)
 	{
 		_names.remove(objId);
 		_accessLevels.remove(objId);
 	}
-	
+
 	public int getIdByName(string name)
 	{
 		if (string.IsNullOrEmpty(name))
 		{
 			return -1;
 		}
-		
+
 		foreach (var entry in _names)
 		{
 			if (entry.Value.equalsIgnoreCase(name))
@@ -79,13 +79,13 @@ public class CharInfoTable
 				return entry.Key;
 			}
 		}
-		
+
 		// Should not continue after the above?
-		
+
 		int id = -1;
 		int accessLevel = 0;
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var ch = ctx.Characters.Where(c => c.Name == name).Select(c => new { c.Id, c.AccessLevel })
@@ -101,31 +101,31 @@ public class CharInfoTable
 		{
 			LOGGER.Warn(GetType().Name + ": Could not check existing char name: " + e);
 		}
-		
+
 		if (id > 0)
 		{
 			_names.put(id, name);
 			_accessLevels.put(id, accessLevel);
 			return id;
 		}
-		
+
 		return -1; // Not found.
 	}
-	
+
 	public string? getNameById(int id)
 	{
 		if (id <= 0)
 		{
 			return null;
 		}
-		
+
 		string? name = _names.get(id);
 		if (name != null)
 		{
 			return name;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var ch = ctx.Characters.Where(c => c.Id == id).Select(c => new { c.Name, c.AccessLevel })
@@ -143,10 +143,10 @@ public class CharInfoTable
 		{
 			LOGGER.Warn(GetType().Name + ": Could not check existing char id: " + e);
 		}
-		
+
 		return null; // not found
 	}
-	
+
 	public int getAccessLevelById(int objectId)
 	{
 		return getNameById(objectId) != null ? _accessLevels.get(objectId) : 0;
@@ -156,7 +156,7 @@ public class CharInfoTable
 	public bool doesCharNameExist(string name)
 	{
 		bool result = false;
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			result = ctx.Characters.Any(c => c.Name == name);
@@ -167,10 +167,10 @@ public class CharInfoTable
 		}
 		return result;
 	}
-	
+
 	public int getAccountCharacterCount(string account)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			return ctx.Characters.Count(c => c.Name == account);
@@ -181,20 +181,20 @@ public class CharInfoTable
 		}
 		return 0;
 	}
-	
+
 	public void setLevel(int objectId, int level)
 	{
 		_levels.put(objectId, level);
 	}
-	
+
 	public int getLevelById(int objectId)
 	{
 		if (_levels.TryGetValue(objectId, out int level))
 		{
 			return level;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			byte? lv = ctx.Characters.Where(c => c.Id == objectId).Select(c => (byte?)c.Level).SingleOrDefault();
@@ -208,23 +208,23 @@ public class CharInfoTable
 		{
 			LOGGER.Warn(GetType().Name + ": Could not check existing char count: " + e);
 		}
-		
+
 		return 0;
 	}
-	
+
 	public void setClassId(int objectId, CharacterClass classId)
 	{
 		_classes.put(objectId, classId);
 	}
-	
+
 	public CharacterClass getClassIdById(int objectId)
 	{
 		if (_classes.TryGetValue(objectId, out CharacterClass classId))
 		{
 			return classId;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			CharacterClass? clsId = ctx.Characters.Where(c => c.Id == objectId).Select(c => (CharacterClass?)c.Class).SingleOrDefault();
@@ -240,26 +240,23 @@ public class CharInfoTable
 		}
 		return 0;
 	}
-	
+
 	public void setClanId(int objectId, int clanId)
 	{
 		_clans.put(objectId, clanId);
 	}
-	
+
 	public void removeClanId(int objectId)
 	{
 		_clans.remove(objectId);
 	}
-	
+
 	public int getClanIdById(int objectId)
-	{
-		int clanId = _clans.get(objectId);
-		if (clanId != null)
-		{
-			return clanId;
-		}
-		
-		try 
+    {
+        if (_clans.TryGetValue(objectId, out int clanId))
+            return clanId;
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int? dbClanId = ctx.Characters.Where(c => c.Id == objectId).Select(c => c.ClanId).SingleOrDefault();
@@ -273,27 +270,27 @@ public class CharInfoTable
 		{
 			LOGGER.Warn(GetType().Name + ": Could not check existing char count: " + e);
 		}
-		
+
 		// Prevent searching again.
 		_clans.put(objectId, 0);
 		return 0;
 	}
-	
+
 	public void setFriendMemo(int charId, int friendId, string memo)
 	{
-		Map<int, string> memos = _memos.get(charId);
+		Map<int, string>? memos = _memos.get(charId);
 		if (memos == null)
 		{
 			memos = new();
 			_memos.put(charId, memos);
 		}
-		
-		if (memo == null)
+
+		if (memo == null) // TODO: check if this is correct
 		{
 			memos.put(friendId, "");
 			return;
 		}
-		
+
 		// Bypass exploit check.
 		string text = memo.ToLower();
 		if (text.Contains("action") && text.Contains("bypass"))
@@ -301,22 +298,22 @@ public class CharInfoTable
 			memos.put(friendId, "");
 			return;
 		}
-		
+
 		// Add text without tags.
 		memos.put(friendId, memo.replaceAll("<.*?>", ""));
 	}
-	
+
 	public void removeFriendMemo(int charId, int friendId)
 	{
-		Map<int, string> memos = _memos.get(charId);
+		Map<int, string>? memos = _memos.get(charId);
 		if (memos == null)
 		{
 			return;
 		}
-		
+
 		memos.remove(friendId);
 	}
-	
+
 	public string getFriendMemo(int charId, int friendId)
 	{
 		Map<int, string>? memos = _memos.get(charId);
@@ -329,8 +326,8 @@ public class CharInfoTable
 		{
 			return value;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			string memo = ctx.CharacterFriends.Where(cf => cf.CharacterId == charId && cf.FriendId == friendId)
@@ -343,23 +340,23 @@ public class CharInfoTable
 		{
 			LOGGER.Warn("Error occurred while retrieving memo: " + e);
 		}
-		
+
 		// Prevent searching again.
 		memos.put(friendId, string.Empty);
 		return string.Empty;
 	}
-	
+
 	public DateTime? getCharacterCreationDate(int objectId)
 	{
 		if (_creationDates.TryGetValue(objectId, out DateTime date))
 			return date;
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			DateTime? createDate = ctx.Characters.Where(c => c.Id == objectId).Select(c => (DateTime?)c.Created)
 				.SingleOrDefault();
-			
+
 			if (createDate is not null)
 			{
 				_creationDates.put(objectId, createDate.Value);
@@ -372,12 +369,12 @@ public class CharInfoTable
 		}
 		return null;
 	}
-	
+
 	public void setLastAccess(int objectId, DateTime lastAccess)
 	{
 		_lastAccess.put(objectId, lastAccess);
 	}
-	
+
 	public TimeSpan getLastAccessDelay(int objectId)
 	{
 		if (_lastAccess.TryGetValue(objectId, out DateTime lastAccess))
@@ -386,8 +383,8 @@ public class CharInfoTable
 			TimeSpan timeDifference = currentTime - lastAccess;
 			return timeDifference;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			DateTime? dbLastAccess = ctx.Characters.Where(c => c.Id == objectId).Select(c => c.LastAccess)
@@ -404,15 +401,15 @@ public class CharInfoTable
 		{
 			LOGGER.Warn(GetType().Name + ": Could not retrieve lastAccess timestamp: " + e);
 		}
-		
+
 		return TimeSpan.Zero;
 	}
-	
+
 	public static CharInfoTable getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly CharInfoTable INSTANCE = new CharInfoTable();

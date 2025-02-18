@@ -15,18 +15,15 @@ namespace L2Dn.GameServer.Scripts.Handlers.TargetHandlers;
  */
 public class Target: ITargetTypeHandler
 {
-	public TargetType getTargetType()
-	{
-		return TargetType.TARGET;
-	}
-	
-	public WorldObject getTarget(Creature creature, WorldObject selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
+	public TargetType getTargetType() => TargetType.TARGET;
+
+    public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
 		if (selectedTarget == null)
 		{
 			return null;
 		}
-		
+
 		if (!selectedTarget.isCreature())
 		{
 			if (sendMessage)
@@ -35,15 +32,15 @@ public class Target: ITargetTypeHandler
 			}
 			return null;
 		}
-		
+
 		Creature target = (Creature) selectedTarget;
-		
+
 		// You can always target yourself.
 		if (creature == target)
 		{
 			return target;
 		}
-		
+
 		// Check for cast range if character cannot move. TODO: char will start follow until within castrange, but if his moving is blocked by geodata, this msg will be sent.
 		if (dontMove && (creature.Distance2D(target) > skill.getCastRange()))
 		{
@@ -51,10 +48,10 @@ public class Target: ITargetTypeHandler
 			{
 				creature.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_CANCELLED);
 			}
-			
+
 			return null;
 		}
-		
+
 		if (skill.isFlyType() && !GeoEngine.getInstance().canMoveToTarget(creature.Location.Location3D, target.Location.Location3D, creature.getInstanceWorld()))
 		{
 			if (sendMessage)
@@ -63,7 +60,7 @@ public class Target: ITargetTypeHandler
 			}
 			return null;
 		}
-		
+
 		// Geodata check when character is within range.
 		if (!GeoEngine.getInstance().canSeeTarget(creature, target))
 		{
@@ -71,7 +68,7 @@ public class Target: ITargetTypeHandler
 			{
 				creature.sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
 			}
-			
+
 			return null;
 		}
 		return target;

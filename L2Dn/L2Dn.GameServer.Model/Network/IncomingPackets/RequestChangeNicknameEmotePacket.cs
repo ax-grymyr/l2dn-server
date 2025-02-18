@@ -50,7 +50,7 @@ public struct RequestChangeNicknameEmotePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Item item = player.getInventory().getItemByItemId(_itemId);
+        Item? item = player.getInventory().getItemByItemId(_itemId);
         if (item == null || item.getEtcItem() == null || item.getEtcItem().getHandlerName() == null ||
             !item.getEtcItem().getHandlerName().equalsIgnoreCase("NicknameColor"))
         {
@@ -59,7 +59,7 @@ public struct RequestChangeNicknameEmotePacket: IIncomingPacket<GameSession>
 
         if (_colorNum < 0 || _colorNum >= COLORS.Length)
             return ValueTask.CompletedTask;
-		
+
         if (_title.contains("{"))
         {
             player.sendMessage("Cannot use this type of characters {}");
@@ -83,13 +83,13 @@ public struct RequestChangeNicknameEmotePacket: IIncomingPacket<GameSession>
             {
                 skyblue = 15;
             }
-			
+
             player.setTitle(_title);
             player.sendPacket(SystemMessageId.YOUR_TITLE_HAS_BEEN_CHANGED);
             player.getAppearance().setTitleColor(new Color(COLORS[skyblue]));
             player.broadcastUserInfo();
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

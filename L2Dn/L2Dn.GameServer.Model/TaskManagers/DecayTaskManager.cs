@@ -13,12 +13,12 @@ public class DecayTaskManager: Runnable
 {
 	private static readonly Map<Creature, DateTime> DECAY_SCHEDULES = new();
 	private static bool _working = false;
-	
+
 	protected DecayTaskManager()
 	{
 		ThreadPool.scheduleAtFixedRate(this, 0, 1000);
 	}
-	
+
 	public void run()
 	{
 		if (_working)
@@ -40,7 +40,7 @@ public class DecayTaskManager: Runnable
 
 		_working = false;
 	}
-	
+
 	/**
 	 * Adds a decay task for the specified character.<br>
 	 * If the decay task already exists it cancels it and re-adds it.
@@ -52,16 +52,16 @@ public class DecayTaskManager: Runnable
 		{
 			return;
 		}
-		
+
 		long delay;
-		
+
 		// Pet related - Removed on Essence.
 		// if (creature.isPet())
 		// {
 		// delay = 86400;
 		// }
 		// else
-		
+
 		if (creature.getTemplate() is NpcTemplate)
 		{
 			delay = ((NpcTemplate) creature.getTemplate()).getCorpseTime();
@@ -70,15 +70,14 @@ public class DecayTaskManager: Runnable
 		{
 			delay = Config.DEFAULT_CORPSE_TIME;
 		}
-		
+
 		if (creature.isAttackable() && (((Attackable) creature).isSpoiled() || ((Attackable) creature).isSeeded()))
 		{
 			delay += Config.SPOILED_CORPSE_EXTEND_TIME;
 		}
-		
-		if (creature.isPlayer())
+
+		if (creature.isPlayer() && creature.getActingPlayer() is {} player)
 		{
-			Player player = creature.getActingPlayer();
 			if (player.isOfflinePlay() && Config.OFFLINE_PLAY_LOGOUT_ON_DEATH)
 			{
 				delay = 10; // 10 seconds
@@ -92,11 +91,11 @@ public class DecayTaskManager: Runnable
 				delay = 3600; // 1 hour
 			}
 		}
-		
+
 		// Add to decay schedules.
 		DECAY_SCHEDULES.put(creature, DateTime.UtcNow.AddMilliseconds(delay * 1000));
 	}
-	
+
 	/**
 	 * Cancels the decay task of the specified character.
 	 * @param creature the creature
@@ -105,7 +104,7 @@ public class DecayTaskManager: Runnable
 	{
 		DECAY_SCHEDULES.remove(creature);
 	}
-	
+
 	/**
 	 * Gets the remaining time of the specified character's decay task.
 	 * @param creature the creature
@@ -115,10 +114,10 @@ public class DecayTaskManager: Runnable
 	{
 		if (DECAY_SCHEDULES.TryGetValue(creature, out DateTime time))
 			return time - DateTime.UtcNow;
-		
+
 		return TimeSpan.MaxValue;
 	}
-	
+
 	public override string ToString()
 	{
 		StringBuilder ret = new StringBuilder();
@@ -129,7 +128,7 @@ public class DecayTaskManager: Runnable
 		ret.Append(Environment.NewLine);
 		ret.Append("Tasks dump:");
 		ret.Append(Environment.NewLine);
-		
+
 		DateTime time = DateTime.UtcNow;
 		foreach (var entry in DECAY_SCHEDULES)
 		{
@@ -141,15 +140,15 @@ public class DecayTaskManager: Runnable
 			ret.Append(entry.Value - time);
 			ret.Append(Environment.NewLine);
 		}
-		
+
 		return ret.ToString();
 	}
-	
+
 	public static DecayTaskManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static DecayTaskManager INSTANCE = new DecayTaskManager();

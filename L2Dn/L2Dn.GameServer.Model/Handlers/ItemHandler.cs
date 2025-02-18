@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Handlers;
 public class ItemHandler: IHandler<IItemHandler, EtcItem>
 {
 	private readonly Map<string, IItemHandler> _datatable;
-	
+
 	/**
 	 * Constructor of ItemHandler
 	 */
@@ -19,7 +19,7 @@ public class ItemHandler: IHandler<IItemHandler, EtcItem>
 	{
 		_datatable = new();
 	}
-	
+
 	/**
 	 * Adds handler of item type in <i>datatable</i>.<br>
 	 * <b><i>Concept :</i></u><br>
@@ -30,19 +30,19 @@ public class ItemHandler: IHandler<IItemHandler, EtcItem>
 	{
 		_datatable.put(handler.GetType().Name, handler);
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void removeHandler(IItemHandler handler)
 	{
 		_datatable.remove(handler.GetType().Name);
 	}
-	
+
 	/**
 	 * Returns the handler of the item
 	 * @param item
 	 * @return IItemHandler
 	 */
-	public IItemHandler getHandler(EtcItem item)
+	public IItemHandler? getHandler(EtcItem item)
 	{
 		if ((item == null) || (item.getHandlerName() == null))
 		{
@@ -50,7 +50,7 @@ public class ItemHandler: IHandler<IItemHandler, EtcItem>
 		}
 		return _datatable.get(item.getHandlerName());
 	}
-	
+
 	/**
 	 * Returns the number of elements contained in datatable
 	 * @return int : Size of the datatable
@@ -59,7 +59,7 @@ public class ItemHandler: IHandler<IItemHandler, EtcItem>
 	{
 		return _datatable.Count;
 	}
-	
+
 	/**
 	 * Create ItemHandler if doesn't exist and returns ItemHandler
 	 * @return ItemHandler
@@ -68,7 +68,7 @@ public class ItemHandler: IHandler<IItemHandler, EtcItem>
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ItemHandler INSTANCE = new ItemHandler();

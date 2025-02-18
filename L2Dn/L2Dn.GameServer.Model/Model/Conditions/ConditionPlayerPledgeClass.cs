@@ -9,37 +9,22 @@ namespace L2Dn.GameServer.Model.Conditions;
  * The Class ConditionPlayerPledgeClass.
  * @author MrPoke
  */
-public class ConditionPlayerPledgeClass : Condition
+public sealed class ConditionPlayerPledgeClass(SocialClass pledgeClass): Condition
 {
-	private readonly SocialClass _pledgeClass;
-	
-	/**
-	 * Instantiates a new condition player pledge class.
-	 * @param pledgeClass the pledge class
-	 */
-	public ConditionPlayerPledgeClass(SocialClass pledgeClass)
-	{
-		_pledgeClass = pledgeClass;
-	}
-	
-	/**
-	 * Test impl.
-	 * @return true, if successful
-	 */
-	public override bool testImpl(Creature effector, Creature effected, Skill skill, ItemTemplate item)
-	{
-		Player player = effector.getActingPlayer();
-		if ((player == null) || (player.getClan() == null))
-		{
-			return false;
-		}
-		
-		bool isClanLeader = player.isClanLeader();
-		if ((_pledgeClass == (SocialClass)(-1)) && !isClanLeader)
-		{
-			return false;
-		}
-		
-		return isClanLeader || (player.getPledgeClass() >= _pledgeClass);
-	}
+    /**
+     * Test impl.
+     * @return true, if successful
+     */
+    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    {
+        Player? player = effector.getActingPlayer();
+        if (player?.getClan() == null)
+            return false;
+
+        bool isClanLeader = player.isClanLeader();
+        if (pledgeClass == (SocialClass)(-1) && !isClanLeader)
+            return false;
+
+        return isClanLeader || player.getPledgeClass() >= pledgeClass;
+    }
 }

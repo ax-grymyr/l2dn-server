@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -16,14 +17,15 @@ public struct RequestDismissAllyPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        if (!player.isClanLeader())
+
+        Clan? clan = player.getClan();
+        if (clan is null || !player.isClanLeader())
         {
             player.sendPacket(SystemMessageId.ACCESS_ONLY_FOR_THE_CHANNEL_FOUNDER);
             return ValueTask.CompletedTask;
         }
-		
-        player.getClan().dissolveAlly(player);
+
+        clan.dissolveAlly(player);
 
         return ValueTask.CompletedTask;
     }

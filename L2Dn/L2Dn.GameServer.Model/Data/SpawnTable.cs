@@ -19,7 +19,7 @@ public class SpawnTable
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SpawnTable));
 	private static readonly Map<int, Set<Spawn>> _spawnTable = new();
 	private const string OTHER_XML_FOLDER = "spawns/Others";
-	
+
 	/**
 	 * Gets the spawn data.
 	 * @return the spawn data
@@ -28,7 +28,7 @@ public class SpawnTable
 	{
 		return _spawnTable;
 	}
-	
+
 	/**
 	 * Gets the spawns for the NPC Id.
 	 * @param npcId the NPC Id
@@ -38,7 +38,7 @@ public class SpawnTable
 	{
 		return _spawnTable.GetValueOrDefault(npcId, []);
 	}
-	
+
 	/**
 	 * Gets the spawn count for the given NPC ID.
 	 * @param npcId the NPC Id
@@ -48,7 +48,7 @@ public class SpawnTable
 	{
 		return getSpawns(npcId).Count;
 	}
-	
+
 	/**
 	 * Gets a spawn for the given NPC ID.
 	 * @param npcId the NPC Id
@@ -58,7 +58,7 @@ public class SpawnTable
 	{
 		return getSpawns(npcId).FirstOrDefault();
 	}
-	
+
 	/**
 	 * Adds a new spawn to the spawn table.
 	 * @param spawn the spawn to add
@@ -68,7 +68,7 @@ public class SpawnTable
 	public void addNewSpawn(Spawn spawn, bool store)
 	{
 		addSpawn(spawn);
-		
+
 		// if (store)
 		// {
 		// 	// Create output directory if it doesn't exist
@@ -90,12 +90,12 @@ public class SpawnTable
 		// 			LOGGER.Info(GetType().Name + ": Created directory: " + OTHER_XML_FOLDER);
 		// 		}
 		// 	}
-		// 	
+		//
 		// 	// XML file for spawn
 		// 	int x = ((spawn.getX() - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
 		// 	int y = ((spawn.getY() - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
 		// 	File spawnFile = new File(OTHER_XML_FOLDER + "/" + x + "_" + y + ".xml");
-		// 	
+		//
 		// 	// Write info to XML
 		// 	String spawnId = String.valueOf(spawn.getId());
 		// 	String spawnCount = String.valueOf(spawn.getAmount());
@@ -161,7 +161,7 @@ public class SpawnTable
 		// 	}
 		// }
 	}
-	
+
 	/**
 	 * Delete an spawn from the spawn table.
 	 * @param spawn the spawn to delete
@@ -174,7 +174,7 @@ public class SpawnTable
 		{
 			return;
 		}
-		
+
 		// if (update)
 		// {
 		// 	int x = ((spawn.getX() - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
@@ -186,13 +186,13 @@ public class SpawnTable
 		// 	{
 		// 		BufferedReader reader = new BufferedReader(new FileReader(spawnFile));
 		// 		BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
-		// 		
+		//
 		// 		bool found = false; // in XML you can have more than one spawn with same coords
 		// 		bool isMultiLine = false; // in case spawn has more stats
 		// 		bool lastLineFound = false; // used to check for empty file
 		// 		int lineCount = 0;
 		// 		String currentLine;
-		// 		
+		//
 		// 		SpawnGroup group = npcSpawnTemplate != null ? npcSpawnTemplate.getGroup() : null;
 		// 		List<SpawnTerritory> territories = group != null ? group.getTerritories() : new();
 		// 		bool simpleTerritory = false;
@@ -205,14 +205,14 @@ public class SpawnTable
 		// 				simpleTerritory = true;
 		// 			}
 		// 		}
-		// 		
+		//
 		// 		if (territories.isEmpty())
 		// 		{
 		// 			String spawnId = String.valueOf(spawn.getId());
 		// 			String spawnX = String.valueOf(npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnLocation().getX() : spawn.getX());
 		// 			String spawnY = String.valueOf(npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnLocation().getY() : spawn.getY());
 		// 			String spawnZ = String.valueOf(npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnLocation().getZ() : spawn.getZ());
-		// 			
+		//
 		// 			while ((currentLine = reader.readLine()) != null)
 		// 			{
 		// 				if (!found)
@@ -283,7 +283,7 @@ public class SpawnTable
 		// 				}
 		// 			}
 		// 		}
-		// 		
+		//
 		// 		writer.close();
 		// 		reader.close();
 		// 		spawnFile.delete();
@@ -301,7 +301,7 @@ public class SpawnTable
 		// 	}
 		// }
 	}
-	
+
 	/**
 	 * Add a spawn to the spawn set if present, otherwise add a spawn set and add the spawn to the newly created spawn set.
 	 * @param spawn the NPC spawn to add
@@ -310,7 +310,7 @@ public class SpawnTable
 	{
 		_spawnTable.computeIfAbsent(spawn.getId(), k => new()).add(spawn);
 	}
-	
+
 	/**
 	 * Remove a spawn from the spawn set, if the spawn set is empty, remove it as well.
 	 * @param spawn the NPC spawn to remove
@@ -318,7 +318,7 @@ public class SpawnTable
 	 */
 	private bool removeSpawn(Spawn spawn)
 	{
-		Set<Spawn> set = _spawnTable.get(spawn.getId());
+		Set<Spawn>? set = _spawnTable.get(spawn.getId());
 		if (set != null)
 		{
 			bool removed = set.remove(spawn);
@@ -332,7 +332,7 @@ public class SpawnTable
 		notifyRemoved(spawn);
 		return false;
 	}
-	
+
 	private void notifyRemoved(Spawn spawn)
 	{
 		if ((spawn != null) && (spawn.getLastSpawn() != null) && (spawn.getNpcSpawnTemplate() != null))
@@ -340,7 +340,7 @@ public class SpawnTable
 			spawn.getNpcSpawnTemplate().notifyDespawnNpc(spawn.getLastSpawn());
 		}
 	}
-	
+
 	/**
 	 * Execute a procedure over all spawns.<br>
 	 * <font size="4" color="red">Do not use it!</font>
@@ -361,12 +361,12 @@ public class SpawnTable
 		}
 		return true;
 	}
-	
+
 	public static SpawnTable getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly SpawnTable INSTANCE = new SpawnTable();

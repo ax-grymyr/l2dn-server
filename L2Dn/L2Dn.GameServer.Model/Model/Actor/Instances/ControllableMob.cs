@@ -44,7 +44,7 @@ public class ControllableMob: Monster
         _isInvul = isInvul;
     }
 
-    public override bool doDie(Creature killer)
+    public override bool doDie(Creature? killer)
     {
         if (!base.doDie(killer))
         {

@@ -32,28 +32,28 @@ public struct RequestCrystallizeEstimatePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-		
+
 		// if (!client.getFloodProtectors().canPerformTransaction())
 		// {
 		// player.sendMessage("You are crystallizing too fast.");
 		// return;
 		// }
-		
+
 		if (_count <= 0)
 		{
 			Util.handleIllegalPlayerAction(player,
 				"[RequestCrystallizeItem] count <= 0! ban! oid: " + _objectId + " owner: " + player.getName(),
 				Config.DEFAULT_PUNISH);
-			
+
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.getPrivateStoreType() != PrivateStoreType.NONE || player.isInCrystallize())
 		{
 			player.sendPacket(SystemMessageId.WHILE_OPERATING_A_PRIVATE_STORE_OR_WORKSHOP_YOU_CANNOT_DISCARD_DESTROY_OR_TRADE_AN_ITEM);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		int skillLevel = player.getSkillLevel((int)CommonSkill.CRYSTALLIZE);
 		if (skillLevel <= 0)
 		{
@@ -61,8 +61,8 @@ public struct RequestCrystallizeEstimatePacket: IIncomingPacket<GameSession>
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
-		Item item = player.getInventory().getItemByObjectId(_objectId);
+
+		Item? item = player.getInventory().getItemByObjectId(_objectId);
 		if (item == null || item.isShadowItem() || item.isTimeLimitedItem() || item.isHeroItem() ||
 		    (!Config.ALT_ALLOW_AUGMENT_DESTROY && item.isAugmented()))
 		{
@@ -80,15 +80,15 @@ public struct RequestCrystallizeEstimatePacket: IIncomingPacket<GameSession>
 
 		if (_count > item.getCount())
 		{
-			_count = player.getInventory().getItemByObjectId(_objectId).getCount();
+			_count = player.getInventory().getItemByObjectId(_objectId)?.getCount() ?? 0;
 		}
-		
+
 		if (!player.getInventory().canManipulateWithItemId(item.getId()))
 		{
 			player.sendMessage("You cannot use this item.");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Check if the char can crystallize items and return if false;
 		bool canCrystallize = true;
 		switch (item.getTemplate().getCrystalTypePlus())
@@ -142,14 +142,14 @@ public struct RequestCrystallizeEstimatePacket: IIncomingPacket<GameSession>
 				break;
 			}
 		}
-		
+
 		if (!canCrystallize)
 		{
 			player.sendPacket(SystemMessageId.YOU_MAY_NOT_CRYSTALLIZE_THIS_ITEM_YOUR_CRYSTALLIZATION_SKILL_LEVEL_IS_TOO_LOW);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Show crystallization rewards window.
 		List<ItemChanceHolder> crystallizationRewards = ItemCrystallizationData.getInstance().getCrystallizationRewards(item);
 		if (crystallizationRewards != null && crystallizationRewards.Count != 0)
@@ -161,7 +161,7 @@ public struct RequestCrystallizeEstimatePacket: IIncomingPacket<GameSession>
 		{
 			player.sendPacket(SystemMessageId.ANGEL_NEVIT_S_DESCENT_BONUS_TIME_S1);
 		}
-        
+
         return ValueTask.CompletedTask;
     }
 }

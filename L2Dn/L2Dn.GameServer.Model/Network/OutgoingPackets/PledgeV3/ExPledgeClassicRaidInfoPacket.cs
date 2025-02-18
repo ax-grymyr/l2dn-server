@@ -7,17 +7,17 @@ namespace L2Dn.GameServer.Network.OutgoingPackets.PledgeV3;
 
 public readonly struct ExPledgeClassicRaidInfoPacket: IOutgoingPacket
 {
-    private readonly Clan _clan;
-	
+    private readonly Clan? _clan;
+
     public ExPledgeClassicRaidInfoPacket(Player player)
     {
         _clan = player.getClan();
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_PLEDGE_CLASSIC_RAID_INFO);
-        
+
         if (_clan == null)
         {
             writer.WriteInt32(0);

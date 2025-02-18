@@ -30,7 +30,7 @@ public readonly struct TradeStartPacket: IOutgoingPacket
                 _mask |= 0x01;
             }
 
-            if ((player.getClanId() > 0) && (_partner.getClanId() == _partner.getClanId()))
+            if ((player.getClanId() > 0) && (player.getClanId() == _partner.getClanId()))
             {
                 _mask |= 0x02;
             }
@@ -60,9 +60,9 @@ public readonly struct TradeStartPacket: IOutgoingPacket
         {
             return;
         }
-		
+
         writer.WritePacketCode(OutgoingPacketCodes.TRADE_START);
-     
+
         writer.WriteByte((byte)_sendType);
         if (_sendType == 2)
         {

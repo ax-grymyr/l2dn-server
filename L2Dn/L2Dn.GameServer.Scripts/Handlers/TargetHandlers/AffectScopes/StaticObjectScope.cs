@@ -17,10 +17,10 @@ public class StaticObjectScope: IAffectScopeHandler
 	public void forEachAffected<T>(Creature creature, WorldObject target, Skill skill, Action<T> action)
 		where T: WorldObject
 	{
-		IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		int affectRange = skill.getAffectRange();
 		int affectLimit = skill.getAffectLimit();
-		
+
 		// Target checks.
 		AtomicInteger affected = new AtomicInteger(0);
 		Predicate<Creature> filter = c =>
@@ -33,27 +33,27 @@ public class StaticObjectScope: IAffectScopeHandler
 			{
 				return false;
 			}
-			
+
 			if (!c.isDoor() && !(c is StaticObject))
 			{
 				return false;
 			}
-			
+
 			if ((affectObject != null) && !affectObject.checkAffectedObject(creature, c))
 			{
 				return false;
 			}
-			
+
 			affected.incrementAndGet();
 			return true;
 		};
-		
+
 		// Add object of origin since its skipped in the forEachVisibleObjectInRange method.
 		if (target.isCreature() && filter((Creature) target))
 		{
-			action((T)(WorldObject)target);
+			action((T)target);
 		}
-		
+
 		// Check and add targets.
 		World.getInstance().forEachVisibleObjectInRange<Creature>(target, affectRange, c =>
 		{
@@ -63,7 +63,7 @@ public class StaticObjectScope: IAffectScopeHandler
 			}
 		});
 	}
-	
+
 	public AffectScope getAffectScopeType()
 	{
 		return AffectScope.STATIC_OBJECT_SCOPE;

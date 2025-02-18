@@ -9,12 +9,12 @@ namespace L2Dn.GameServer.Handlers;
 public class UserCommandHandler: IHandler<IUserCommandHandler, int>
 {
 	private readonly Map<int, IUserCommandHandler> _datatable;
-	
+
 	protected UserCommandHandler()
 	{
 		_datatable = new();
 	}
-	
+
 	public void registerHandler(IUserCommandHandler handler)
 	{
 		foreach (int id in handler.getUserCommandList())
@@ -31,24 +31,24 @@ public class UserCommandHandler: IHandler<IUserCommandHandler, int>
 			_datatable.remove(id);
 		}
 	}
-	
-	public IUserCommandHandler getHandler(int userCommand)
+
+	public IUserCommandHandler? getHandler(int userCommand)
 	{
 		return _datatable.get(userCommand);
 	}
-	
+
 	public int size()
 	{
 		return _datatable.Count;
 	}
-	
+
 	public static UserCommandHandler getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
-		public static readonly UserCommandHandler INSTANCE = new UserCommandHandler();
+		public static readonly UserCommandHandler INSTANCE = new();
 	}
 }

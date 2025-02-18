@@ -28,10 +28,10 @@ namespace L2Dn.GameServer.AI;
 public class AttackableAI: CreatureAI
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AttackableAI));
-	
+
 	private const int RANDOM_WALK_RATE = 30; // confirmed
 	private const int MAX_ATTACK_TIMEOUT = 1200; // int ticks, i.e. 2min
-	
+
 	/**
 	 * The delay after which the attacked is stopped.
 	 */
@@ -44,15 +44,15 @@ public class AttackableAI: CreatureAI
 	 * The flag used to indicate that a thinking action is in progress, to prevent recursive thinking.
 	 */
 	private bool _thinking;
-	
+
 	private int chaostime;
-	
+
 	public AttackableAI(Attackable attackable): base(attackable)
 	{
 		_attackTimeout = int.MaxValue;
 		_globalAggro = -10; // 10 seconds timeout of ATTACK after respawn
 	}
-	
+
 	/**
 	 * @param target The targeted WorldObject
 	 * @return {@code true} if target can be auto attacked due aggression.
@@ -90,7 +90,7 @@ public class AttackableAI: CreatureAI
 		}
 
 		// Gets the player if there is any.
-		Player player = target.getActingPlayer();
+		Player? player = target.getActingPlayer();
 		if (player != null)
 		{
 			// Don't take the aggro if the GM has the access level below or equal to GM_DONT_TAKE_AGGRO
@@ -162,7 +162,7 @@ public class AttackableAI: CreatureAI
 	 * @param args The first parameter of the Intention
 	 */
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	protected override void changeIntention(CtrlIntention newIntention, params object[] args)
+	protected override void changeIntention(CtrlIntention newIntention, params object?[] args)
 	{
 		CtrlIntention intention = newIntention;
 		if (intention == CtrlIntention.AI_INTENTION_IDLE || intention == CtrlIntention.AI_INTENTION_ACTIVE)
@@ -203,7 +203,7 @@ public class AttackableAI: CreatureAI
 		startAITask();
 	}
 
-	protected override void changeIntentionToCast(Skill skill, WorldObject target, Item item, bool forceUse, bool dontMove)
+	protected override void changeIntentionToCast(Skill skill, WorldObject? target, Item? item, bool forceUse, bool dontMove)
 	{
 		// Set the AI cast target
 		setTarget(target);
@@ -253,14 +253,14 @@ public class AttackableAI: CreatureAI
 	protected virtual void thinkActive()
 	{
 		// Check if region and its neighbors are active.
-		WorldRegion region = _actor.getWorldRegion();
+		WorldRegion? region = _actor.getWorldRegion();
 		if (region == null || !region.areNeighborsActive())
 		{
 			return;
 		}
 
 		Attackable npc = getActiveChar();
-		WorldObject target = getTarget();
+		WorldObject? target = getTarget();
 
 		// Update every 1s the _globalAggro counter to come close to 0
 		if (_globalAggro != 0)
@@ -310,7 +310,7 @@ public class AttackableAI: CreatureAI
 						npc.addDamageHate(nearestTarget, 0, 1);
 					}
 				}
-				else if (!npc.isInCombat()) // must pickup items
+				else if (!npc.isInCombat()) // must pick up items
 				{
 					int itemIndex = npc.getFakePlayerDrops().Count - 1; // last item dropped - can also use 0 for first item dropped
 					Item droppedItem = npc.getFakePlayerDrops()[itemIndex];
@@ -330,7 +330,7 @@ public class AttackableAI: CreatureAI
 							}
 							if (droppedItem.getTemplate().hasExImmediateEffect())
 							{
-								foreach (SkillHolder skillHolder in droppedItem.getTemplate().getAllSkills())
+								foreach (ItemSkillHolder skillHolder in droppedItem.getTemplate().getAllSkills())
 								{
 									SkillCaster.triggerCast(npc, null, skillHolder.getSkill(), null, false);
 								}
@@ -396,7 +396,7 @@ public class AttackableAI: CreatureAI
 			}
 
 			// Chose a target from its aggroList
-			Creature hated;
+			Creature? hated;
 			if (npc.isConfused() && target != null && target.isCreature())
 			{
 				hated = (Creature) target; // effect handles selection
@@ -442,14 +442,17 @@ public class AttackableAI: CreatureAI
 		}
 
 		// Order this attackable to return to its spawn because there's no target to attack
-		if (!npc.isWalker() && npc.getSpawn() != null && npc.Distance2D(npc.getSpawn().Location.Location2D) > Config.MAX_DRIFT_RANGE && (getTarget() == null || getTarget().isInvisible() || (getTarget().isPlayer() && !Config.ATTACKABLES_CAMP_PLAYER_CORPSES && getTarget().getActingPlayer().isAlikeDead())))
-		{
-			npc.setWalking();
-			npc.returnHome();
-			return;
-		}
+        if (!npc.isWalker() && npc.getSpawn() != null &&
+            npc.Distance2D(npc.getSpawn().Location.Location2D) > Config.MAX_DRIFT_RANGE && (getTarget() == null ||
+                getTarget().isInvisible() || (getTarget().isPlayer() && !Config.ATTACKABLES_CAMP_PLAYER_CORPSES &&
+                    getTarget().getActingPlayer().isAlikeDead())))
+        {
+            npc.setWalking();
+            npc.returnHome();
+            return;
+        }
 
-		// Do not leave dead player
+        // Do not leave dead player
 		if (getTarget() != null && getTarget().isPlayer() && getTarget().getActingPlayer().isAlikeDead())
 		{
 			return;
@@ -627,7 +630,7 @@ public class AttackableAI: CreatureAI
 			}
 		}
 
-		Creature target = npc.getMostHated();
+		Creature? target = npc.getMostHated();
 		if (target == null)
 		{
 			setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -898,7 +901,7 @@ public class AttackableAI: CreatureAI
 				Skill healSkill = template.getAISkills(AISkillScope.HEAL).GetRandomElement();
 				if (SkillCaster.checkUseConditions(npc, healSkill))
 				{
-					Creature healTarget = skillTargetReconsider(healSkill, false);
+					Creature? healTarget = skillTargetReconsider(healSkill, false);
 					if (healTarget != null)
 					{
 						double healChance = (100 - healTarget.getCurrentHpPercent()) * 1.5; // Ensure heal chance is always 100% if HP is below 33%.
@@ -919,7 +922,7 @@ public class AttackableAI: CreatureAI
 				Skill buffSkill = template.getAISkills(AISkillScope.BUFF).GetRandomElement();
 				if (SkillCaster.checkUseConditions(npc, buffSkill))
 				{
-					Creature buffTarget = skillTargetReconsider(buffSkill, true);
+					Creature? buffTarget = skillTargetReconsider(buffSkill, true);
 					if (checkSkillTarget(buffSkill, buffTarget))
 					{
 						setTarget(buffTarget);
@@ -1117,7 +1120,7 @@ public class AttackableAI: CreatureAI
 		return true; // GeoEngine.getInstance().canMoveToTarget(npc.getX(), npc.getY(), npc.getZ(), target.getX(), target.getY(), target.getZ(), npc.getInstanceWorld());
 	}
 
-	private Creature skillTargetReconsider(Skill skill, bool insideCastRange)
+	private Creature? skillTargetReconsider(Skill skill, bool insideCastRange)
 	{
 		// Check if skill can be casted.
 		Attackable npc = getActiveChar();
@@ -1163,7 +1166,7 @@ public class AttackableAI: CreatureAI
 			if (skill.hasEffectType(EffectType.HEAL))
 			{
 				int searchValue = int.MaxValue;
-				Creature creature = null;
+				Creature? creature = null;
 
 				foreach (Creature c in result)
 				{
@@ -1186,7 +1189,7 @@ public class AttackableAI: CreatureAI
 		return result.GetRandomElementOrDefault();
 	}
 
-	private Creature targetReconsider(bool randomTarget)
+	private Creature? targetReconsider(bool randomTarget)
 	{
 		Attackable npc = getActiveChar();
 		if (randomTarget)
@@ -1219,7 +1222,7 @@ public class AttackableAI: CreatureAI
 		}
 
 		long searchValue = long.MinValue;
-		Creature creature1 = null;
+		Creature? creature1 = null;
 		foreach (AggroInfo aggro in npc.getAggroList().Values)
 		{
 			if (checkTarget(aggro.getAttacker()) && aggro.getHate() > searchValue)
@@ -1317,7 +1320,7 @@ public class AttackableAI: CreatureAI
 	protected override void onEvtAttacked(Creature attacker)
 	{
 		Attackable me = getActiveChar();
-		WorldObject target = getTarget();
+		WorldObject? target = getTarget();
 		// Calculate the attack timeout
 		_attackTimeout = MAX_ATTACK_TIMEOUT + GameTimeTaskManager.getInstance().getGameTicks();
 
@@ -1418,31 +1421,31 @@ public class AttackableAI: CreatureAI
 			}
 		}
 	}
-	
+
 	protected override void onIntentionActive()
 	{
 		// Cancel attack timeout
 		_attackTimeout = int.MaxValue;
 		base.onIntentionActive();
 	}
-	
+
 	public void setGlobalAggro(int value)
 	{
 		_globalAggro = value;
 	}
-	
-	public override void setTarget(WorldObject target)
+
+	public override void setTarget(WorldObject? target)
 	{
 		// NPCs share their regular target with AI target.
 		_actor.setTarget(target);
 	}
-	
-	public override WorldObject getTarget()
+
+	public override WorldObject? getTarget()
 	{
 		// NPCs share their regular target with AI target.
 		return _actor.getTarget();
 	}
-	
+
 	public Attackable getActiveChar()
 	{
 		return (Attackable) _actor;

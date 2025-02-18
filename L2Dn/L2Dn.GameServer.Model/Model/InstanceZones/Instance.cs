@@ -29,7 +29,7 @@ namespace L2Dn.GameServer.Model.InstanceZones;
 public class Instance : IIdentifiable, INamable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Instance));
-	
+
 	// Basic instance parameters
 	private readonly int _id;
 	private readonly InstanceTemplate _template;
@@ -40,13 +40,13 @@ public class Instance : IIdentifiable, INamable
 	private readonly Set<Player> _players = new(); // Players inside instance
 	private readonly Set<Npc> _npcs = new(); // Spawned NPCs inside instance
 	private readonly Map<int, Door> _doors = new(); // Spawned doors inside instance
-	private readonly StatSet _parameters = new StatSet();
+	private readonly StatSet _parameters = new();
 	// Timers
 	private readonly Map<int, ScheduledFuture> _ejectDeadTasks = new();
-	private ScheduledFuture _cleanUpTask = null;
-	private ScheduledFuture _emptyDestroyTask = null;
+	private ScheduledFuture? _cleanUpTask;
+	private ScheduledFuture? _emptyDestroyTask;
 	private readonly List<SpawnTemplate> _spawns;
-	
+
 	/**
 	 * Create instance world.
 	 * @param id ID of instance world
@@ -60,21 +60,21 @@ public class Instance : IIdentifiable, INamable
 		_template = template;
 		_startTime = DateTime.UtcNow;
 		_spawns = new(template.getSpawns().Count);
-		
+
 		// Clone and add the spawn templates
 		foreach (SpawnTemplate spawn in template.getSpawns())
 		{
 			_spawns.Add(spawn.clone());
 		}
-		
+
 		// Register world to instance manager.
 		InstanceManager.getInstance().register(this);
-		
+
 		// Set duration, spawns, status, etc..
 		setDuration(_template.getDuration());
 		setStatus(0);
 		spawnDoors();
-		
+
 		// Initialize instance spawns.
 		foreach (SpawnTemplate spawnTemplate in _spawns)
 		{
@@ -83,24 +83,24 @@ public class Instance : IIdentifiable, INamable
 				spawnTemplate.spawnAll(this);
 			}
 		}
-		
+
 		// Notify DP scripts
 		if (!isDynamic() && _template.Events.HasSubscribers<OnInstanceCreated>())
 		{
 			_template.Events.NotifyAsync(new OnInstanceCreated(this, player));
 		}
 	}
-	
+
 	public int getId()
 	{
 		return _id;
 	}
-	
+
 	public string getName()
 	{
 		return _template.getName();
 	}
-	
+
 	/**
 	 * Check if instance has been created dynamically or have XML template.
 	 * @return {@code true} if instance is dynamic or {@code false} if instance has static template
@@ -109,7 +109,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _template.getId() == -1;
 	}
-	
+
 	/**
 	 * Set instance world parameter.
 	 * @param key parameter name
@@ -126,7 +126,7 @@ public class Instance : IIdentifiable, INamable
 			_parameters.set(key, value);
 		}
 	}
-	
+
 	/**
 	 * Set instance world parameter.
 	 * @param key parameter name
@@ -136,7 +136,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		_parameters.set(key, value);
 	}
-	
+
 	/**
 	 * Get instance world parameters.
 	 * @return instance parameters
@@ -145,7 +145,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _parameters;
 	}
-	
+
 	/**
 	 * Get status of instance world.
 	 * @return instance status, otherwise 0
@@ -154,7 +154,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _parameters.getInt("INSTANCE_STATUS", 0);
 	}
-	
+
 	/**
 	 * Check if instance status is equal to {@code status}.
 	 * @param status number used for status comparison
@@ -164,7 +164,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return getStatus() == status;
 	}
-	
+
 	/**
 	 * Set status of instance world.
 	 * @param value new world status
@@ -172,13 +172,13 @@ public class Instance : IIdentifiable, INamable
 	public void setStatus(int value)
 	{
 		_parameters.set("INSTANCE_STATUS", value);
-		
+
 		if (_template.Events.HasSubscribers<OnInstanceStatusChange>())
 		{
 			_template.Events.NotifyAsync(new OnInstanceStatusChange(this, value));
 		}
 	}
-	
+
 	/**
 	 * Increment instance world status
 	 * @return new world status
@@ -189,7 +189,7 @@ public class Instance : IIdentifiable, INamable
 		setStatus(status);
 		return status;
 	}
-	
+
 	/**
 	 * Add player who can enter to instance.
 	 * @param player player instance
@@ -201,7 +201,7 @@ public class Instance : IIdentifiable, INamable
 			_allowed.add(player.ObjectId);
 		}
 	}
-	
+
 	/**
 	 * Check if player can enter to instance.
 	 * @param player player itself
@@ -211,7 +211,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _allowed.Contains(player.ObjectId);
 	}
-	
+
 	/**
 	 * Returns all players who can enter to instance.
 	 * @return allowed players list
@@ -229,7 +229,7 @@ public class Instance : IIdentifiable, INamable
 		}
 		return allowed;
 	}
-	
+
 	/**
 	 * Add player to instance
 	 * @param player player instance
@@ -243,7 +243,7 @@ public class Instance : IIdentifiable, INamable
 			_emptyDestroyTask = null;
 		}
 	}
-	
+
 	/**
 	 * Remove player from instance.
 	 * @param player player instance
@@ -264,7 +264,7 @@ public class Instance : IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	/**
 	 * Check if player is inside instance.
 	 * @param player player to be checked
@@ -274,7 +274,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _players.Contains(player);
 	}
-	
+
 	/**
 	 * Get all players inside instance.
 	 * @return players within instance
@@ -283,7 +283,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _players;
 	}
-	
+
 	/**
 	 * Get count of players inside instance.
 	 * @return players count inside instance
@@ -292,13 +292,13 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _players.size();
 	}
-	
+
 	/**
 	 * Get first found player from instance world.<br>
 	 * <i>This method is useful for instances with one player inside.</i>
 	 * @return first found player, otherwise {@code null}
 	 */
-	public Player getFirstPlayer()
+	public Player? getFirstPlayer()
 	{
 		foreach (Player player in _players)
 		{
@@ -306,13 +306,13 @@ public class Instance : IIdentifiable, INamable
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Get player by ID from instance.
 	 * @param id objectId of player
 	 * @return first player by ID, otherwise {@code null}
 	 */
-	public Player getPlayerById(int id)
+	public Player? getPlayerById(int id)
 	{
 		foreach (Player player in _players)
 		{
@@ -323,7 +323,7 @@ public class Instance : IIdentifiable, INamable
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Get all players from instance world inside specified radius.
 	 * @param object location of target
@@ -341,7 +341,7 @@ public class Instance : IIdentifiable, INamable
 
 		return result;
 	}
-	
+
 	/**
 	 * Spawn doors inside instance world.
 	 */
@@ -354,13 +354,13 @@ public class Instance : IIdentifiable, INamable
 			bool? isOpenedByDefault = null;
 			if (doorStates.TryGetValue(template.getId(), out bool isOpened))
 				isOpenedByDefault = isOpened;
-			
+
 			// Create new door instance
 			Door door = DoorData.getInstance().spawnDoor(template, this, isOpenedByDefault);
 			_doors.put(template.getId(), door);
 		}
 	}
-	
+
 	/**
 	 * Get all doors spawned inside instance world.
 	 * @return collection of spawned doors
@@ -369,17 +369,17 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _doors.Values;
 	}
-	
+
 	/**
 	 * Get spawned door by template ID.
 	 * @param id template ID of door
 	 * @return instance of door if found, otherwise {@code null}
 	 */
-	public Door getDoor(int id)
+	public Door? getDoor(int id)
 	{
 		return _doors.get(id);
 	}
-	
+
 	/**
 	 * Handle open/close status of instance doors.
 	 * @param id ID of doors
@@ -387,7 +387,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public void openCloseDoor(int id, bool open)
 	{
-		Door door = _doors.get(id);
+		Door? door = _doors.get(id);
 		if (door != null)
 		{
 			if (open)
@@ -403,7 +403,7 @@ public class Instance : IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	/**
 	 * Check if spawn group with name {@code name} exists.
 	 * @param name name of group to be checked
@@ -423,7 +423,7 @@ public class Instance : IIdentifiable, INamable
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Get spawn group by group name.
 	 * @param name name of group
@@ -438,7 +438,7 @@ public class Instance : IIdentifiable, INamable
 		}
 		return spawns;
 	}
-	
+
 	/**
 	 * @param name
 	 * @return {@code List} of NPCs that are part of specified group
@@ -447,20 +447,20 @@ public class Instance : IIdentifiable, INamable
 	{
 		return getNpcsOfGroup(name, null);
 	}
-	
+
 	/**
 	 * @param groupName
 	 * @param filterValue
 	 * @return {@code List} of NPCs that are part of specified group and matches filter specified
 	 */
-	public List<Npc> getNpcsOfGroup(string groupName, Predicate<Npc> filterValue)
+	public List<Npc> getNpcsOfGroup(string groupName, Predicate<Npc>? filterValue)
 	{
-		Predicate<Npc> filter = filterValue;
+		Predicate<Npc>? filter = filterValue;
 		if (filter == null)
 		{
 			filter = x => x is not null;
 		}
-		
+
 		List<Npc> npcs = new();
 		foreach (SpawnTemplate spawnTemplate in _spawns)
 		{
@@ -480,20 +480,20 @@ public class Instance : IIdentifiable, INamable
 		}
 		return npcs;
 	}
-	
+
 	/**
 	 * @param groupName
 	 * @param filterValue
 	 * @return {@code Npc} instance of an NPC that is part of a group and matches filter specified
 	 */
-	public Npc getNpcOfGroup(string groupName, Predicate<Npc> filterValue)
+	public Npc? getNpcOfGroup(string groupName, Predicate<Npc> filterValue)
 	{
 		Predicate<Npc> filter = filterValue;
 		if (filter == null)
 		{
 			filter = x => x is not null;
 		}
-		
+
 		foreach (SpawnTemplate spawnTemplate in _spawns)
 		{
 			foreach (SpawnGroup group in spawnTemplate.getGroupsByName(groupName))
@@ -512,7 +512,7 @@ public class Instance : IIdentifiable, INamable
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Spawn NPCs from group (defined in XML template) into instance world.
 	 * @param name name of group which should be spawned
@@ -526,7 +526,7 @@ public class Instance : IIdentifiable, INamable
 			LOGGER.Warn("Spawn group " + name + " doesn't exist for instance " + _template.getName() + " (" + _id + ")!");
 			return new();
 		}
-		
+
 		List<Npc> npcs = new();
 		try
 		{
@@ -538,11 +538,12 @@ public class Instance : IIdentifiable, INamable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Unable to spawn group " + name + " inside instance " + _template.getName() + " (" + _id + ")");
+			LOGGER.Warn($"Unable to spawn group {name} inside instance {_template.getName()} ({_id}): {e}");
 		}
+
 		return npcs;
 	}
-	
+
 	/**
 	 * De-spawns NPCs from group (defined in XML template) from the instance world.
 	 * @param name of group which should be de-spawned
@@ -555,17 +556,17 @@ public class Instance : IIdentifiable, INamable
 			LOGGER.Warn("Spawn group " + name + " doesn't exist for instance " + _template.getName() + " (" + _id + ")!");
 			return;
 		}
-		
+
 		try
 		{
 			spawns.ForEach(x => x.despawnAll());
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Unable to spawn group " + name + " inside instance " + _template.getName() + " (" + _id + ")");
+			LOGGER.Warn($"Unable to spawn group {name} inside instance {_template.getName()} ({_id}): {e}");
 		}
 	}
-	
+
 	/**
 	 * Get spawned NPCs from instance.
 	 * @return set of NPCs from instance
@@ -574,7 +575,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _npcs;
 	}
-	
+
 	/**
 	 * Get spawned NPCs from instance with specific IDs.
 	 * @param id IDs of NPCs which should be found
@@ -592,7 +593,7 @@ public class Instance : IIdentifiable, INamable
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Get spawned NPCs from instance with specific IDs and class type.
 	 * @param <T>
@@ -613,7 +614,7 @@ public class Instance : IIdentifiable, INamable
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Get alive NPCs from instance.
 	 * @return set of NPCs from instance
@@ -630,7 +631,7 @@ public class Instance : IIdentifiable, INamable
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Get alive NPCs from instance with specific IDs.
 	 * @param id IDs of NPCs which should be found
@@ -648,7 +649,7 @@ public class Instance : IIdentifiable, INamable
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Get spawned and alive NPCs from instance with specific IDs and class type.
 	 * @param <T>
@@ -669,7 +670,7 @@ public class Instance : IIdentifiable, INamable
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Get alive NPC count from instance.
 	 * @return count of filtered NPCs from instance
@@ -686,7 +687,7 @@ public class Instance : IIdentifiable, INamable
 		}
 		return count;
 	}
-	
+
 	/**
 	 * Get alive NPC count from instance with specific IDs.
 	 * @param id IDs of NPCs which should be counted
@@ -704,13 +705,13 @@ public class Instance : IIdentifiable, INamable
 		}
 		return count;
 	}
-	
+
 	/**
 	 * Get first found spawned NPC with specific ID.
 	 * @param id ID of NPC to be found
 	 * @return first found NPC with specified ID, otherwise {@code null}
 	 */
-	public Npc getNpc(int id)
+	public Npc? getNpc(int id)
 	{
 		foreach (Npc npc in _npcs)
 		{
@@ -721,17 +722,17 @@ public class Instance : IIdentifiable, INamable
 		}
 		return null;
 	}
-	
+
 	public void addNpc(Npc npc)
 	{
 		_npcs.add(npc);
 	}
-	
+
 	public void removeNpc(Npc npc)
 	{
 		_npcs.remove(npc);
 	}
-	
+
 	/**
 	 * Remove all players from instance world.
 	 */
@@ -740,7 +741,7 @@ public class Instance : IIdentifiable, INamable
 		_players.ForEach(ejectPlayer);
 		_players.clear();
 	}
-	
+
 	/**
 	 * Despawn doors inside instance world.
 	 */
@@ -755,7 +756,7 @@ public class Instance : IIdentifiable, INamable
 		}
 		_doors.Clear();
 	}
-	
+
 	/**
 	 * Despawn NPCs inside instance world.
 	 */
@@ -765,7 +766,7 @@ public class Instance : IIdentifiable, INamable
 		_npcs.ForEach(x => x.deleteMe());
 		_npcs.clear();
 	}
-	
+
 	/**
 	 * Change instance duration.
 	 * @param minutes remaining time to destroy instance
@@ -778,20 +779,20 @@ public class Instance : IIdentifiable, INamable
 			_endTime = null;
 			return;
 		}
-		
+
 		// Stop running tasks
 		if (_cleanUpTask != null)
 		{
 			_cleanUpTask.cancel(true);
 			_cleanUpTask = null;
 		}
-		
+
 		if ((_emptyDestroyTask != null) && (duration.Value < _emptyDestroyTask.getDelay()))
 		{
 			_emptyDestroyTask.cancel(true);
 			_emptyDestroyTask = null;
 		}
-		
+
 		// Set new cleanup task
 		_endTime = DateTime.UtcNow + duration.Value;
 		if (duration.Value <= TimeSpan.Zero) // Destroy instance
@@ -811,7 +812,7 @@ public class Instance : IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	/**
 	 * Destroy current instance world.<br>
 	 * <b><font color=red>Use this method to destroy instance world properly.</font></b>
@@ -824,36 +825,36 @@ public class Instance : IIdentifiable, INamable
 			_cleanUpTask.cancel(false);
 			_cleanUpTask = null;
 		}
-		
+
 		if (_emptyDestroyTask != null)
 		{
 			_emptyDestroyTask.cancel(false);
 			_emptyDestroyTask = null;
 		}
-		
+
 		_ejectDeadTasks.Values.ForEach(t => t.cancel(true));
 		_ejectDeadTasks.Clear();
-		
+
 		// Notify DP scripts
 		if (!isDynamic() && _template.Events.HasSubscribers<OnInstanceDestroy>())
 		{
 			_template.Events.Notify(new OnInstanceDestroy(this));
 		}
-		
+
 		removePlayers();
 		removeDoors();
 		removeNpcs();
-		
+
 		InstanceManager.getInstance().unregister(getId());
 	}
-	
+
 	/**
 	 * Teleport player out of instance.
 	 * @param player player that should be moved out
 	 */
 	public void ejectPlayer(Player player)
 	{
-		Instance world = player.getInstanceWorld();
+		Instance? world = player.getInstanceWorld();
 		if ((world != null) && world == this)
 		{
 			Location3D? loc = _template.getExitLocation(player);
@@ -867,7 +868,7 @@ public class Instance : IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	/**
 	 * Send packet to each player from instance world.
 	 * @param packets packets to be send
@@ -876,7 +877,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return new PacketSendUtil(_players);
 	}
-	
+
 	/**
 	 * Get instance creation time.
 	 * @return creation time in milliseconds
@@ -885,7 +886,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _startTime;
 	}
-	
+
 	/**
 	 * Get elapsed time since instance create.
 	 * @return elapsed time in milliseconds
@@ -894,7 +895,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return DateTime.UtcNow - _startTime;
 	}
-	
+
 	/**
 	 * Get remaining time before instance will be destroyed.
 	 * @return remaining time in milliseconds if duration is not equal to -1, otherwise -1
@@ -903,7 +904,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _endTime is null ? null : (_endTime.Value - DateTime.UtcNow);
 	}
-	
+
 	/**
 	 * Get instance destroy time.
 	 * @return destroy time in milliseconds if duration is not equal to -1, otherwise -1
@@ -912,7 +913,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _endTime;
 	}
-	
+
 	/**
 	 * Set reenter penalty for players associated with current instance.<br>
 	 * Penalty time is calculated from XML reenter data.
@@ -921,7 +922,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		setReenterTime(_template.calculateReenterTime());
 	}
-	
+
 	/**
 	 * Set reenter penalty for players associated with current instance.
 	 * @param time penalty time in milliseconds since January 1, 1970
@@ -933,11 +934,11 @@ public class Instance : IIdentifiable, INamable
 		{
 			return;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			
+
 			// Save to database
 			foreach (int playerId in _allowed)
 			{
@@ -950,11 +951,11 @@ public class Instance : IIdentifiable, INamable
 			}
 
 			ctx.SaveChanges();
-			
+
 			// Save to memory and send message to player
 			SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId
 				.INSTANCE_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_WITH_INSTANCEZONE);
-			
+
 			if (InstanceManager.getInstance().getInstanceName(getTemplateId()) != null)
 			{
 				msg.Params.addInstanceName(_template.getId());
@@ -978,7 +979,7 @@ public class Instance : IIdentifiable, INamable
 			LOGGER.Warn("Could not insert character instance reenter data: " + e);
 		}
 	}
-	
+
 	/**
 	 * Set instance world to finish state.<br>
 	 * Calls method {@link Instance#finishInstance(int)} with {@link Config#INSTANCE_FINISH_TIME} as argument.
@@ -987,7 +988,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		finishInstance(TimeSpan.FromMinutes(Config.INSTANCE_FINISH_TIME));
 	}
-	
+
 	/**
 	 * Set instance world to finish state.<br>
 	 * Set re-enter for allowed players if required data are defined in template.<br>
@@ -1004,7 +1005,7 @@ public class Instance : IIdentifiable, INamable
 		// Change instance duration
 		setDuration(delay);
 	}
-	
+
 	// ---------------------------------------------
 	// Listeners
 	// ---------------------------------------------
@@ -1020,7 +1021,7 @@ public class Instance : IIdentifiable, INamable
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.IF_YOU_ARE_NOT_RESURRECTED_IN_S1_MIN_YOU_WILL_BE_TELEPORTED_OUT_OF_THE_INSTANCE_ZONE);
 			sm.Params.addInt((int)_template.getEjectTime().TotalMinutes);
 			player.sendPacket(sm);
-			
+
 			// Start eject task
 			_ejectDeadTasks.put(player.ObjectId, ThreadPool.schedule(() =>
 			{
@@ -1031,20 +1032,20 @@ public class Instance : IIdentifiable, INamable
 			}, _template.getEjectTime())); // minutes to milliseconds
 		}
 	}
-	
+
 	/**
 	 * This method is called when player was resurrected inside instance.
 	 * @param player resurrected player
 	 */
 	public void doRevive(Player player)
 	{
-		ScheduledFuture task = _ejectDeadTasks.remove(player.ObjectId);
+		ScheduledFuture? task = _ejectDeadTasks.remove(player.ObjectId);
 		if (task != null)
 		{
 			task.cancel(true);
 		}
 	}
-	
+
 	/**
 	 * This method is called when object enter or leave this instance.
 	 * @param object instance of object which enters/leaves instance
@@ -1058,19 +1059,20 @@ public class Instance : IIdentifiable, INamable
 			if (enter)
 			{
 				addPlayer(player);
-				
+
 				// Set origin return location if enabled
 				if (_template.getExitLocationType() == InstanceTeleportType.ORIGIN)
-				{
-					player.getVariables().set(PlayerVariables.INSTANCE_ORIGIN, player.getX() + ";" + player.getY() + ";" + player.getZ());
-				}
-				
+                {
+                    player.getVariables().set(PlayerVariables.INSTANCE_ORIGIN,
+                        player.getX() + ";" + player.getY() + ";" + player.getZ());
+                }
+
 				// Remove player buffs
 				if (_template.isRemoveBuffEnabled())
 				{
 					_template.removePlayerBuff(player);
 				}
-				
+
 				// Notify DP scripts
 				if (!isDynamic() && _template.Events.HasSubscribers<OnInstanceEnter>())
 				{
@@ -1080,7 +1082,7 @@ public class Instance : IIdentifiable, INamable
 			else
 			{
 				removePlayer(player);
-				
+
 				// Notify DP scripts
 				if (!isDynamic() && _template.Events.HasSubscribers<OnInstanceLeave>())
 				{
@@ -1105,7 +1107,7 @@ public class Instance : IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	/**
 	 * This method is called when player logout inside instance world.
 	 * @param player player who logout
@@ -1132,7 +1134,7 @@ public class Instance : IIdentifiable, INamable
 			}
 		}
 	}
-	
+
 	// ----------------------------------------------
 	// Template methods
 	// ----------------------------------------------
@@ -1144,7 +1146,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _template.getParameters();
 	}
-	
+
 	/**
 	 * Get template ID of instance world.
 	 * @return instance template ID
@@ -1153,7 +1155,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _template.getId();
 	}
-	
+
 	/**
 	 * Get type of re-enter data.
 	 * @return type of re-enter (see {@link InstanceReenterType} for possible values)
@@ -1162,7 +1164,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _template.getReenterType();
 	}
-	
+
 	/**
 	 * Check if instance world is PvP zone.
 	 * @return {@code true} when instance is PvP zone, otherwise {@code false}
@@ -1171,7 +1173,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _template.isPvP();
 	}
-	
+
 	/**
 	 * Check if summoning players to instance world is allowed.
 	 * @return {@code true} when summon is allowed, otherwise {@code false}
@@ -1180,7 +1182,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _template.isPlayerSummonAllowed();
 	}
-	
+
 	/**
 	 * Get enter location for instance world.
 	 * @return {@link Location} object if instance has enter location defined, otherwise {@code null}
@@ -1189,7 +1191,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _template.getEnterLocation();
 	}
-	
+
 	/**
 	 * Get all enter locations defined in XML template.
 	 * @return list of enter locations
@@ -1198,7 +1200,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _template.getEnterLocations();
 	}
-	
+
 	/**
 	 * Get exit location for player from instance world.
 	 * @param player instance of player who wants to leave instance world
@@ -1208,7 +1210,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _template.getExitLocation(player);
 	}
-	
+
 	/**
 	 * @return the exp rate of the instance
 	 */
@@ -1216,7 +1218,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _template.getExpRate();
 	}
-	
+
 	/**
 	 * @return the sp rate of the instance
 	 */
@@ -1224,7 +1226,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _template.getSPRate();
 	}
-	
+
 	/**
 	 * @return the party exp rate of the instance
 	 */
@@ -1232,7 +1234,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _template.getExpPartyRate();
 	}
-	
+
 	/**
 	 * @return the party sp rate of the instance
 	 */
@@ -1240,7 +1242,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		return _template.getSPPartyRate();
 	}
-	
+
 	// ----------------------------------------------
 	// Tasks
 	// ----------------------------------------------
@@ -1260,7 +1262,7 @@ public class Instance : IIdentifiable, INamable
 			_cleanUpTask = ThreadPool.schedule(cleanUp, TimeSpan.FromMinutes(5)); // 5 minutes
 		}
 	}
-	
+
 	/**
 	 * Show instance destroy messages to players inside instance world.
 	 * @param delay time in minutes
@@ -1272,19 +1274,15 @@ public class Instance : IIdentifiable, INamable
 		{
 			return;
 		}
-		
+
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_INSTANCE_ZONE_EXPIRES_IN_S1_MIN_AFTER_THAT_YOU_WILL_BE_TELEPORTED_OUTSIDE_2);
 		sm.Params.addInt((int)delay.TotalMinutes);
 		broadcastPacket().SendPackets(sm);
 	}
-	
-	public override bool Equals(object? obj)
-	{
-		return (obj is Instance) && (((Instance) obj).getId() == getId());
-	}
-	
-	public override string ToString()
-	{
-		return _template.getName() + "(" + _id + ")";
-	}
+
+    public override bool Equals(object? obj) => obj == this || obj is Instance instance && instance.getId() == getId();
+
+    public override int GetHashCode() => getId();
+
+    public override string ToString() => $"{_template.getName()}({_id})";
 }

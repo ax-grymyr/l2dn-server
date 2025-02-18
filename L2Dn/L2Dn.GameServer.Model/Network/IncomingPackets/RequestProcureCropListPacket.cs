@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 {
     private const int BATCH_LENGTH = 20; // length of the one item
-	
+
     private List<CropHolder>? _items;
 
     public void ReadContent(PacketBitReader reader)
@@ -26,7 +26,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
         {
             return;
         }
-		
+
         _items = new(count);
         for (int i = 0; i < count; i++)
         {
@@ -39,7 +39,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
                 _items = null;
                 return;
             }
-            
+
             _items.Add(new CropHolder(objId, itemId, cnt, manorId));
         }
     }
@@ -48,50 +48,50 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
     {
 		if (_items == null)
 			return ValueTask.CompletedTask;
-		
+
 		Player? player = session.Player;
 		if (player == null)
 			return ValueTask.CompletedTask;
-		
+
 		CastleManorManager manor = CastleManorManager.getInstance();
 		if (manor.isUnderMaintenance())
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		Npc manager = player.getLastFolkNPC();
 		if (!(manager is Merchant) || !manager.canInteract(player))
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		int castleId = manager.getCastle().getResidenceId();
 		if (manager.getParameters().getInt("manor_id", -1) != castleId)
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		long slots = 0;
 		long weight = 0;
 		foreach (CropHolder i in _items)
 		{
-			Item item = player.getInventory().getItemByObjectId(i.ObjectId);
+			Item? item = player.getInventory().getItemByObjectId(i.ObjectId);
 			if (item == null || item.getCount() < i.getCount() || item.getId() != i.getId())
 			{
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				return ValueTask.CompletedTask;
 			}
-			
+
 			CropProcure cp = i.getCropProcure();
 			if (cp == null || cp.getAmount() < i.getCount())
 			{
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				return ValueTask.CompletedTask;
 			}
-			
+
 			ItemTemplate template = ItemData.getInstance().getTemplate(i.getRewardId());
 			weight += i.getCount() * template.getWeight();
 			if (!template.isStackable())
@@ -103,7 +103,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 				slots++;
 			}
 		}
-		
+
 		if (!player.getInventory().validateWeight(weight))
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_WEIGHT_LIMIT);
@@ -115,11 +115,11 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Used when Config.ALT_MANOR_SAVE_ALL_ACTIONS == true
 		int updateListSize = Config.ALT_MANOR_SAVE_ALL_ACTIONS ? _items.Count : 0;
 		List<CropProcure> updateList = new(updateListSize);
-		
+
 		// Proceed the purchase
 		foreach (CropHolder i in _items)
 		{
@@ -128,7 +128,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 			{
 				continue;
 			}
-			
+
 			long rewardItemCount = i.getPrice() / rewardPrice;
 			if (rewardItemCount < 1)
 			{
@@ -138,7 +138,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 				player.sendPacket(sm);
 				continue;
 			}
-			
+
 			// Fee for selling to other manors
 			long fee = castleId == i.getManorId() ? 0 : (long) (i.getPrice() * 0.05);
 			if (fee != 0 && player.getAdena() < fee)
@@ -147,12 +147,12 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 				sm.Params.addItemName(i.getId());
 				sm.Params.addLong(i.getCount());
 				player.sendPacket(sm);
-				
+
 				sm = new SystemMessagePacket(SystemMessageId.NOT_ENOUGH_ADENA);
 				player.sendPacket(sm);
 				continue;
 			}
-			
+
 			CropProcure cp = i.getCropProcure();
 			if (!cp.decreaseAmount(i.getCount()) || (fee > 0 && !player.reduceAdena("Manor", fee, manager, true)) || !player.destroyItem("Manor", i.ObjectId, i.getCount(), manager, true))
 			{
@@ -164,7 +164,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 				updateList.Add(cp);
 			}
 		}
-		
+
 		if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
 			manor.updateCurrentProcure(castleId, updateList);
@@ -172,28 +172,28 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 
 		return ValueTask.CompletedTask;
 	}
-	
+
 	private class CropHolder: UniqueItemHolder
 	{
 		private int _manorId;
 		private CropProcure _cp;
 		private int _rewardId = 0;
-		
+
 		public CropHolder(int objectId, int id, long count, int manorId): base(id, objectId, count)
 		{
 			_manorId = manorId;
 		}
-		
+
 		public int getManorId()
 		{
 			return _manorId;
 		}
-		
+
 		public long getPrice()
 		{
 			return getCount() * _cp.getPrice();
 		}
-		
+
 		public CropProcure getCropProcure()
 		{
 			if (_cp == null)
@@ -202,7 +202,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 			}
 			return _cp;
 		}
-		
+
 		public int getRewardId()
 		{
 			if (_rewardId == 0)

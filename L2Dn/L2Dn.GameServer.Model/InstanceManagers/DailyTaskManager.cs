@@ -36,7 +36,7 @@ public class DailyTaskManager
 		RESET_SKILLS.add(39199); // Hero's Wondrous Cubic
 		RESET_ITEMS.add(49782); // Balthus Knights' Supply Box
 	}
-	
+
 	protected DailyTaskManager()
 	{
 		// Schedule reset everyday at 6:30.
@@ -44,7 +44,7 @@ public class DailyTaskManager
 		DateTime calendar = new DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 6, 30, 0, DateTimeKind.Local);
 		if (calendar < currentTime)
 			calendar = calendar.AddDays(1);
-		
+
 		// Check if 24 hours have passed since the last daily reset.
 		if (GlobalVariablesManager.getInstance().getLong(GlobalVariablesManager.DAILY_TASK_RESET, 0) < calendar.Ticks)
 		{
@@ -55,23 +55,23 @@ public class DailyTaskManager
 			LOGGER.Info(GetType().Name +": Daily task will run now.");
 			onReset();
 		}
-		
+
 		// Daily reset task.
 		TimeSpan startDelay = calendar - currentTime;
 		if (startDelay < TimeSpan.Zero)
 			startDelay = TimeSpan.Zero;
 
 		ThreadPool.scheduleAtFixedRate(onReset, startDelay, TimeSpan.FromDays(1));
-		
+
 		// Global save task.
 		ThreadPool.scheduleAtFixedRate(onSave, 1800000, 1800000); // 1800000 = 30 minutes
 	}
-	
+
 	private void onReset()
 	{
 		// Store last reset time.
 		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.DAILY_TASK_RESET, DateTime.Now.Ticks);
-		
+
 		// Wednesday weekly tasks.
 		DateTime calendar = DateTime.Now;
 		if (calendar.DayOfWeek == DayOfWeek.Wednesday)
@@ -86,17 +86,17 @@ public class DailyTaskManager
 		{
 			resetVitalityDaily();
 		}
-		
+
 		if (Config.ENABLE_HUNT_PASS && (calendar.Day == Config.HUNT_PASS_PERIOD))
 		{
 			resetHuntPass();
 		}
-		
+
 		if (calendar.Day == 1)
 		{
 			resetMontlyLimitShopData();
 		}
-		
+
 		// Daily tasks.
 		resetClanBonus();
 		resetClanContributionList();
@@ -116,43 +116,44 @@ public class DailyTaskManager
 		resetVip();
 		resetResurrectionByPayment();
 	}
-	
+
 	private void onSave()
 	{
 		GlobalVariablesManager.getInstance().storeMe();
-		
+
 		RevengeHistoryManager.getInstance().storeMe();
-		
+
 		if (Config.WORLD_EXCHANGE_LAZY_UPDATE)
 		{
 			WorldExchangeManager.getInstance().storeMe();
 		}
-		
+
 		if (Olympiad.getInstance().inCompPeriod())
 		{
 			Olympiad.getInstance().saveOlympiadStatus();
 			LOGGER.Info("Olympiad System: Data updated.");
 		}
 	}
-	
+
 	private void clanLeaderApply()
 	{
 		foreach (Clan clan in ClanTable.getInstance().getClans())
-		{
-			if (clan.getNewLeaderId() != null)
+        {
+            int? newLeaderId = clan.getNewLeaderId();
+			if (newLeaderId != null)
 			{
-				ClanMember member = clan.getClanMember(clan.getNewLeaderId().Value);
+				ClanMember? member = clan.getClanMember(newLeaderId.Value);
 				if (member == null)
 				{
 					continue;
 				}
-				
+
 				clan.setNewLeader(member);
 			}
 		}
 		LOGGER.Info("Clan leaders has been updated.");
 	}
-	
+
 	private void resetClanContributionList()
 	{
 		foreach (Clan clan in ClanTable.getInstance().getClans())
@@ -160,14 +161,14 @@ public class DailyTaskManager
 			clan.getVariables().deleteWeeklyContribution();
 		}
 	}
-	
+
 	private void resetVitalityDaily()
 	{
 		if (!Config.ENABLE_VITALITY)
 		{
 			return;
 		}
-		
+
 		int vitality = PlayerStat.MAX_VITALITY_POINTS / 4;
 		foreach (Player player in World.getInstance().getPlayers())
 		{
@@ -179,13 +180,13 @@ public class DailyTaskManager
 				subclass.setVitalityPoints(VPS + vitality);
 			}
 		}
-		
+
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			// TODO: possibly the expression was incorrect
-			
+
 			ctx.CharacterSubClasses.ExecuteUpdate(s => s.SetProperty(c => c.VitalityPoints,
 				c => c.VitalityPoints == PlayerStat.MAX_VITALITY_POINTS
 					? PlayerStat.MAX_VITALITY_POINTS
@@ -200,17 +201,17 @@ public class DailyTaskManager
 		{
 			LOGGER.Error("Error while updating vitality" + e);
 		}
-		
+
 		LOGGER.Info("Daily Vitality Added");
 	}
-	
+
 	private void resetVitalityWeekly()
 	{
 		if (!Config.ENABLE_VITALITY)
 		{
 			return;
 		}
-		
+
 		foreach (Player player in World.getInstance().getPlayers())
 		{
 			player.setVitalityPoints(PlayerStat.MAX_VITALITY_POINTS, false);
@@ -219,7 +220,7 @@ public class DailyTaskManager
 				subclass.setVitalityPoints(PlayerStat.MAX_VITALITY_POINTS);
 			}
 		}
-		
+
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -234,10 +235,10 @@ public class DailyTaskManager
 		{
 			LOGGER.Error("Error while updating vitality" + e);
 		}
-		
+
 		LOGGER.Info("Vitality reset");
 	}
-	
+
 	private void resetMonsterArenaWeekly()
 	{
 		foreach (Clan clan in ClanTable.getInstance().getClans())
@@ -245,13 +246,13 @@ public class DailyTaskManager
 			GlobalVariablesManager.getInstance().remove(GlobalVariablesManager.MONSTER_ARENA_VARIABLE + clan.getId());
 		}
 	}
-	
+
 	private void resetClanBonus()
 	{
 		ClanTable.getInstance().getClans().ForEach(x => x.resetClanBonus());
 		LOGGER.Info("Daily clan bonus has been reset.");
 	}
-	
+
 	private void resetDailySkills()
 	{
 		// Update data for offline players.
@@ -265,7 +266,7 @@ public class DailyTaskManager
 		{
 			LOGGER.Error("Could not reset daily skill reuse: " + e);
 		}
-		
+
 		// Update data for online players.
 		// Set<Player> updates = new();
 		foreach (int skillId in RESET_SKILLS)
@@ -287,10 +288,10 @@ public class DailyTaskManager
 		// {
 		// player.sendSkillList();
 		// }
-		
+
 		LOGGER.Info("Daily skill reuse cleaned.");
 	}
-	
+
 	private void resetDailyItems()
 	{
 		// Update data for offline players.
@@ -304,7 +305,7 @@ public class DailyTaskManager
 		{
 			LOGGER.Error("Could not reset daily item reuse: " + e);
 		}
-		
+
 		// Update data for online players.
 		bool update;
 		foreach (Player player in World.getInstance().getPlayers())
@@ -323,10 +324,10 @@ public class DailyTaskManager
 				player.sendItemList();
 			}
 		}
-		
+
 		LOGGER.Info("Daily item reuse cleaned.");
 	}
-	
+
 	private void resetClanDonationPoints()
 	{
 		// Update data for offline players.
@@ -339,24 +340,24 @@ public class DailyTaskManager
 		{
 			LOGGER.Error("Could not reset clan donation points: " + e);
 		}
-		
+
 		// Update data for online players.
 		foreach (Player player in World.getInstance().getPlayers())
 		{
 			player.getVariables().remove(PlayerVariables.CLAN_DONATION_POINTS);
 			player.getVariables().storeMe();
 		}
-		
+
 		LOGGER.Info("Daily clan donation points have been reset.");
 	}
-	
+
 	private void resetWorldChatPoints()
 	{
 		if (!Config.ENABLE_WORLD_CHAT)
 		{
 			return;
 		}
-		
+
 		// Update data for offline players.
 		try
 		{
@@ -376,10 +377,10 @@ public class DailyTaskManager
 			player.sendPacket(new ExWorldCharCntPacket(player));
 			player.getVariables().storeMe();
 		}
-		
+
 		LOGGER.Info("Daily world chat points has been reset.");
 	}
-	
+
 	private void resetRecommends()
 	{
 		try
@@ -393,7 +394,7 @@ public class DailyTaskManager
 		{
 			LOGGER.Error("Could not reset Recommendations System: " + e);
 		}
-		
+
 		foreach (Player player in World.getInstance().getPlayers())
 		{
 			player.setRecomLeft(0);
@@ -402,13 +403,13 @@ public class DailyTaskManager
 			player.broadcastUserInfo();
 		}
 	}
-	
+
 	private void resetTrainingCamp()
 	{
 		if (Config.TRAINING_CAMP_ENABLE)
 		{
 			// Update data for offline players.
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.AccountVariables.Where(v => v.Name == "TRAINING_CAMP_DURATION").ExecuteDelete();
@@ -417,23 +418,23 @@ public class DailyTaskManager
 			{
 				LOGGER.Error("Could not reset Training Camp: " + e);
 			}
-			
+
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
 				player.resetTraingCampDuration();
 				player.getAccountVariables().storeMe();
 			}
-			
+
 			LOGGER.Info("Training Camp daily time has been reset.");
 		}
 	}
-	
+
 	private void resetVip()
 	{
 		// Delete all entries for received gifts
 		AccountVariables.deleteVariable(AccountVariables.VIP_ITEM_BOUGHT);
-		
+
 		// Checks the tier expiration for online players
 		// offline players get handled on next time they log in.
 		foreach (Player player in World.getInstance().getPlayers())
@@ -442,16 +443,16 @@ public class DailyTaskManager
 			{
 				VipManager.getInstance().checkVipTierExpiration(player);
 			}
-			
+
 			player.getAccountVariables().restoreMe();
 		}
 	}
-	
+
 	private void resetDailyMissionRewards()
 	{
 		DailyMissionData.getInstance().getDailyMissionData().ForEach(x => x.reset());
 	}
-	
+
 	private void resetTimedHuntingZones()
 	{
 		foreach (TimedHuntingZoneHolder holder in TimedHuntingZoneData.getInstance().getAllHuntingZones())
@@ -460,15 +461,15 @@ public class DailyTaskManager
 			{
 				continue;
 			}
-			
+
 			// Update data for offline players.
-			try 
+			try
 			{
 				// TODO: separate table
 				string name1 = PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId();
 				string name2 = PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId();
 				string name3 = PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId();
-				
+
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.CharacterVariables.Where(v => v.Name == name1 || v.Name == name2 || v.Name == name3)
 					.ExecuteDelete();
@@ -477,7 +478,7 @@ public class DailyTaskManager
 			{
 				LOGGER.Error("Could not reset Special Hunting Zones: " + e);
 			}
-			
+
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
@@ -487,10 +488,10 @@ public class DailyTaskManager
 				player.getVariables().storeMe();
 			}
 		}
-		
+
 		LOGGER.Info("Special Hunting Zones has been reset.");
 	}
-	
+
 	private void resetTimedHuntingZonesWeekly()
 	{
 		foreach (TimedHuntingZoneHolder holder in TimedHuntingZoneData.getInstance().getAllHuntingZones())
@@ -499,15 +500,15 @@ public class DailyTaskManager
 			{
 				continue;
 			}
-			
+
 			// Update data for offline players.
-			try 
+			try
 			{
 				// TODO: separate table
 				string name1 = PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId();
 				string name2 = PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId();
 				string name3 = PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId();
-				
+
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.CharacterVariables.Where(v => v.Name == name1 || v.Name == name2 || v.Name == name3)
 					.ExecuteDelete();
@@ -516,7 +517,7 @@ public class DailyTaskManager
 			{
 				LOGGER.Error("Could not reset Weekly Special Hunting Zones: " + e);
 			}
-			
+
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
@@ -526,10 +527,10 @@ public class DailyTaskManager
 				player.getVariables().storeMe();
 			}
 		}
-		
+
 		LOGGER.Info("Weekly Special Hunting Zones has been reset.");
 	}
-	
+
 	private void resetAttendanceRewards()
 	{
 		if (Config.ATTENDANCE_REWARDS_SHARE_ACCOUNT)
@@ -544,14 +545,14 @@ public class DailyTaskManager
 			{
 				LOGGER.Error(GetType().Name + ": Could not reset Attendance Rewards: " + e);
 			}
-			
+
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
 				player.getAccountVariables().remove("ATTENDANCE_DATE");
 				player.getAccountVariables().storeMe();
 			}
-			
+
 			LOGGER.Info("Account shared Attendance Rewards has been reset.");
 		}
 		else
@@ -566,18 +567,18 @@ public class DailyTaskManager
 			{
 				LOGGER.Error(GetType().Name + ": Could not reset Attendance Rewards: " + e);
 			}
-			
+
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
 				player.getVariables().remove(PlayerVariables.ATTENDANCE_DATE);
 				player.getVariables().storeMe();
 			}
-			
+
 			LOGGER.Info("Attendance Rewards has been reset.");
 		}
 	}
-	
+
 	private void resetDailyPrimeShopData()
 	{
 		foreach (PrimeShopGroup holder in PrimeShopData.getInstance().getPrimeItems().Values)
@@ -593,7 +594,7 @@ public class DailyTaskManager
 			{
 				LOGGER.Error(GetType().Name + ": Could not reset PrimeShopData: " + e);
 			}
-			
+
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
@@ -603,13 +604,13 @@ public class DailyTaskManager
 		}
 		LOGGER.Info("PrimeShopData has been reset.");
 	}
-	
+
 	private void resetDailyLimitShopData()
 	{
 		foreach (LimitShopProductHolder holder in LimitShopData.getInstance().getProducts())
 		{
 			// Update data for offline players.
-			try 
+			try
 			{
 				string name = AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + holder.getProductionId();
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -619,7 +620,7 @@ public class DailyTaskManager
 			{
 				LOGGER.Error(GetType().Name + ": Could not reset LimitShopData: " + e);
 			}
-			
+
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
@@ -629,7 +630,7 @@ public class DailyTaskManager
 		}
 		LOGGER.Info("LimitShopData has been reset.");
 	}
-	
+
 	private void resetMontlyLimitShopData()
 	{
 		foreach (LimitShopProductHolder holder in LimitShopData.getInstance().getProducts())
@@ -654,11 +655,11 @@ public class DailyTaskManager
 		}
 		LOGGER.Info("LimitShopData has been reset.");
 	}
-	
+
 	private void resetHuntPass()
 	{
 		// Update data for offline players.
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.HuntPasses.ExecuteDelete();
@@ -667,7 +668,7 @@ public class DailyTaskManager
 		{
 			LOGGER.Error(GetType().Name + ": Could not delete entries from hunt pass: " + e);
 		}
-		
+
 		// Update data for online players.
 		foreach (Player player in World.getInstance().getPlayers())
 		{
@@ -675,7 +676,7 @@ public class DailyTaskManager
 		}
 		LOGGER.Info("HuntPassData has been reset.");
 	}
-	
+
 	private void resetResurrectionByPayment()
 	{
 		// Update data for offline players.
@@ -688,17 +689,17 @@ public class DailyTaskManager
 		{
 			LOGGER.Error(GetType().Name + ": Could not reset payment resurrection count for players: " + e);
 		}
-		
+
 		// Update data for online players.
 		foreach (Player player in World.getInstance().getPlayers())
 		{
 			player.getVariables().remove(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT);
 			player.getVariables().storeMe();
 		}
-		
+
 		LOGGER.Info("Daily payment resurrection count for player has been reset.");
 	}
-	
+
 	public void resetPrivateStoreHistory()
 	{
 		try
@@ -709,10 +710,10 @@ public class DailyTaskManager
 		{
 			LOGGER.Error(GetType().Name + ": Could not reset private store history! " + e);
 		}
-		
+
 		LOGGER.Info("Private store history has been reset.");
 	}
-	
+
 	private void resetDailyHennaPattern()
 	{
 		// Update data for offline players.
@@ -725,17 +726,17 @@ public class DailyTaskManager
 		{
 			LOGGER.Error(GetType().Name + ": Could not reset Daily Henna Count: " + e);
 		}
-		
+
 		// Update data for online players.
 		foreach (Player player in World.getInstance().getPlayers())
 		{
 			player.getVariables().remove(PlayerVariables.DYE_POTENTIAL_DAILY_COUNT);
 			player.getVariables().storeMe();
 		}
-		
+
 		LOGGER.Info("Daily Henna Count has been reset.");
 	}
-	
+
 	private void resetMorgosMilitaryBase()
 	{
 		// Update data for offline players.
@@ -748,22 +749,22 @@ public class DailyTaskManager
 		{
 			LOGGER.Error(GetType().Name + ": Could not reset MorgosMilitaryBase: " + e);
 		}
-		
+
 		// Update data for online players.
 		foreach (Player player in World.getInstance().getPlayers())
 		{
 			player.getAccountVariables().remove("MORGOS_MILITARY_FREE");
 			player.getAccountVariables().storeMe();
 		}
-		
+
 		LOGGER.Info("MorgosMilitaryBase has been reset.");
 	}
-	
+
 	public static DailyTaskManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly DailyTaskManager INSTANCE = new DailyTaskManager();

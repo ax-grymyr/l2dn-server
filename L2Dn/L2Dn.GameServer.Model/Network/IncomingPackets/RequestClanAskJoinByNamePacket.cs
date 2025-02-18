@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -20,20 +21,24 @@ public struct RequestClanAskJoinByNamePacket: IIncomingPacket<GameSession>
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
         Player? player = session.Player;
-        if (player == null || player.getClan() == null)
+        if (player is null)
             return ValueTask.CompletedTask;
-		
+
+        Clan? clan = player.getClan();
+        if (clan == null)
+            return ValueTask.CompletedTask;
+
         Player invitedPlayer = World.getInstance().getPlayer(_playerName);
-        if (!player.getClan().checkClanJoinCondition(player, invitedPlayer, _pledgeType))
+        if (!clan.checkClanJoinCondition(player, invitedPlayer, _pledgeType))
             return ValueTask.CompletedTask;
 
         if (!player.getRequest().setRequest(invitedPlayer, this))
             return ValueTask.CompletedTask;
-		
-        invitedPlayer.sendPacket(new AskJoinPledgePacket(player, player.getClan().getName()));
+
+        invitedPlayer.sendPacket(new AskJoinPledgePacket(player, clan.getName()));
         return ValueTask.CompletedTask;
     }
-	
+
     public int getPledgeType()
     {
         return _pledgeType;

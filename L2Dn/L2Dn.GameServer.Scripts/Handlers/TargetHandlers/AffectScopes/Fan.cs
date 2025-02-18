@@ -18,7 +18,7 @@ public class Fan: IAffectScopeHandler
 	public void forEachAffected<T>(Creature creature, WorldObject target, Skill skill, Action<T> action)
 		where T: WorldObject
 	{
-		IAffectObjectHandler affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
 		double headingAngle = HeadingUtil.ConvertHeadingToDegrees(creature.getHeading());
 		int fanStartAngle = skill.getFanRange()[1];
 		int fanRadius = skill.getFanRange()[2];
@@ -52,17 +52,17 @@ public class Fan: IAffectScopeHandler
 			{
 				return false;
 			}
-			
+
 			affected.incrementAndGet();
 			return true;
 		};
-		
+
 		// Add object of origin since its skipped in the forEachVisibleObjectInRange method.
 		if (filter(creature))
 		{
 			action((T)(WorldObject)creature);
 		}
-		
+
 		// Check and add targets.
 		World.getInstance().forEachVisibleObjectInRange<Creature>(creature, fanRadius, c =>
 		{
@@ -72,7 +72,7 @@ public class Fan: IAffectScopeHandler
 			}
 		});
 	}
-	
+
 	public AffectScope getAffectScopeType()
 	{
 		return AffectScope.FAN;

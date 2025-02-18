@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
 public class ResidenceHallTeleportZone : ResidenceTeleportZone
 {
 	private int _id;
-	private ScheduledFuture _teleTask;
+	private ScheduledFuture? _teleTask;
 	
 	/**
 	 * @param id
@@ -22,7 +22,7 @@ public class ResidenceHallTeleportZone : ResidenceTeleportZone
 	public ResidenceHallTeleportZone(int id): base(id)
 	{
 	}
-	
+
 	public override void setParameter(string name, string value)
 	{
 		if (name.equals("residenceZoneId"))
@@ -34,12 +34,12 @@ public class ResidenceHallTeleportZone : ResidenceTeleportZone
 			base.setParameter(name, value);
 		}
 	}
-	
+
 	public int getResidenceZoneId()
 	{
 		return _id;
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void checkTeleportTask()
 	{
@@ -48,7 +48,7 @@ public class ResidenceHallTeleportZone : ResidenceTeleportZone
 			_teleTask = ThreadPool.schedule(new TeleportTask(this), 30000);
 		}
 	}
-	
+
 	private sealed class TeleportTask: Runnable
 	{
 		private readonly ResidenceHallTeleportZone _zone;
@@ -57,7 +57,7 @@ public class ResidenceHallTeleportZone : ResidenceTeleportZone
 		{
 			_zone = zone;
 		}
-        
+
 		public void run()
 		{
 			int index = _zone.getSpawns().Length > 1 ? Rnd.get(_zone.getSpawns().Length) : 0;

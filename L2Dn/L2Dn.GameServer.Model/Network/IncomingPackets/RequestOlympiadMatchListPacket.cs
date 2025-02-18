@@ -19,12 +19,12 @@ public struct RequestOlympiadMatchListPacket: IIncomingPacket<GameSession>
         if (player == null || !player.inObserverMode())
             return ValueTask.CompletedTask;
 
-        IBypassHandler handler = BypassHandler.getInstance().getHandler(COMMAND);
+        IBypassHandler? handler = BypassHandler.getInstance().getHandler(COMMAND);
         if (handler != null)
         {
             handler.useBypass(COMMAND, player, null);
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

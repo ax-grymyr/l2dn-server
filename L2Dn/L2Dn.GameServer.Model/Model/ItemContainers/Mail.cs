@@ -9,33 +9,33 @@ public class Mail: ItemContainer
 {
 	private readonly int _ownerId;
 	private int _messageId;
-	
+
 	public Mail(int objectId, int messageId)
 	{
 		_ownerId = objectId;
 		_messageId = messageId;
 	}
-	
+
 	public override string getName()
 	{
 		return "Mail";
 	}
-	
-	public override Player getOwner()
+
+	public override Player? getOwner()
 	{
 		return null;
 	}
-	
+
 	public override ItemLocation getBaseLocation()
 	{
 		return ItemLocation.MAIL;
 	}
-	
+
 	public int getMessageId()
 	{
 		return _messageId;
 	}
-	
+
 	public void setNewMessageId(int messageId)
 	{
 		_messageId = messageId;
@@ -45,8 +45,8 @@ public class Mail: ItemContainer
 		}
 		updateDatabase();
 	}
-	
-	public void returnToWh(ItemContainer wh)
+
+	public void returnToWh(ItemContainer? wh)
 	{
 		foreach (Item item in _items)
 		{
@@ -60,14 +60,14 @@ public class Mail: ItemContainer
 			}
 		}
 	}
-	
+
 	protected override void addItem(Item item)
 	{
 		base.addItem(item);
 		item.setItemLocation(getBaseLocation(), _messageId);
 		item.updateDatabase(true);
 	}
-	
+
 	/*
 	 * Allow saving of the items without owner
 	 */
@@ -78,14 +78,14 @@ public class Mail: ItemContainer
 			item.updateDatabase(true);
 		}
 	}
-	
-	public void restore()
+
+	public override void restore()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int ownerId = getOwnerId();
-			ItemLocation location = getBaseLocation(); 
+			ItemLocation location = getBaseLocation();
 			var query = ctx.Items.Where(r => r.OwnerId == ownerId && r.Location == (int)location && r.LocationData == _messageId);
 			foreach (var record in query)
 			{
@@ -108,7 +108,7 @@ public class Mail: ItemContainer
 			LOGGER.Warn("could not restore container: " + e);
 		}
 	}
-	
+
 	public override void deleteMe()
 	{
 		foreach (Item item in _items)
@@ -117,10 +117,10 @@ public class Mail: ItemContainer
 			item.stopAllTasks();
 			World.getInstance().removeObject(item);
 		}
-		
+
 		_items.clear();
 	}
-	
+
 	public override int getOwnerId()
 	{
 		return _ownerId;

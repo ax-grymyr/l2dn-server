@@ -22,26 +22,26 @@ public struct AllyDismissPacket: IIncomingPacket<GameSession>
         if (player == null || string.IsNullOrEmpty(_clanName))
             return ValueTask.CompletedTask;
 
-        if (player.getClan() == null)
+        Clan? leaderClan = player.getClan();
+        if (leaderClan == null)
         {
             player.sendPacket(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER_2);
             return ValueTask.CompletedTask;
         }
-        
-        Clan leaderClan = player.getClan();
+
         if (leaderClan.getAllyId() == 0)
         {
             player.sendPacket(SystemMessageId.YOU_ARE_NOT_IN_AN_ALLIANCE);
             return ValueTask.CompletedTask;
         }
 
-        if (!player.isClanLeader() || (leaderClan.getId() != leaderClan.getAllyId()))
+        if (!player.isClanLeader() || leaderClan.getId() != leaderClan.getAllyId())
         {
             player.sendPacket(SystemMessageId.ACCESS_ONLY_FOR_THE_CHANNEL_FOUNDER);
             return ValueTask.CompletedTask;
         }
 
-        Clan clan = ClanTable.getInstance().getClanByName(_clanName);
+        Clan? clan = ClanTable.getInstance().getClanByName(_clanName);
         if (clan == null)
         {
             player.sendPacket(SystemMessageId.THAT_CLAN_DOES_NOT_EXIST);
@@ -59,19 +59,19 @@ public struct AllyDismissPacket: IIncomingPacket<GameSession>
             player.sendPacket(SystemMessageId.DIFFERENT_ALLIANCE);
             return ValueTask.CompletedTask;
         }
-		
+
         DateTime currentTime = DateTime.UtcNow;
         leaderClan.setAllyPenaltyExpiryTime(currentTime.AddDays(Config.ALT_ACCEPT_CLAN_DAYS_WHEN_DISMISSED), Clan.PENALTY_TYPE_DISMISS_CLAN);
         leaderClan.updateClanInDB();
-		
+
         clan.setAllyId(0);
         clan.setAllyName(null);
         clan.changeAllyCrest(0, true);
         clan.setAllyPenaltyExpiryTime(currentTime.AddDays(Config.ALT_ALLY_JOIN_DAYS_WHEN_DISMISSED), Clan.PENALTY_TYPE_CLAN_DISMISSED);
         clan.updateClanInDB();
-		
+
         player.sendPacket(SystemMessageId.THE_CLAN_IS_DISMISSED_FROM_THE_ALLIANCE);
- 
+
         return ValueTask.CompletedTask;
     }
 }

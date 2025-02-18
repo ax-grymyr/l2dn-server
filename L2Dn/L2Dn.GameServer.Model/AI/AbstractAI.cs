@@ -17,34 +17,34 @@ public abstract class AbstractAI : Ctrl
 {
 	/** The creature that this AI manages */
 	protected readonly Creature _actor;
-	
+
 	/** Current long-term intention */
 	protected CtrlIntention _intention = CtrlIntention.AI_INTENTION_IDLE;
 	/** Current long-term intention parameter */
 	protected object?[]? _intentionArgs;
-	
+
 	/** Flags about client's state, in order to know which messages to send */
 	protected volatile bool _clientMoving;
 	/** Flags about client's state, in order to know which messages to send */
 	private volatile bool _clientAutoAttacking;
 	/** Flags about client's state, in order to know which messages to send */
 	protected int _clientMovingToPawnOffset;
-	
+
 	/** Different targets this AI maintains */
 	private WorldObject? _target;
 	private WorldObject? _castTarget;
-	
+
 	/** The skill we are currently casting by INTENTION_CAST */
 	protected Skill? _skill;
 	protected Item? _item;
 	protected bool _forceUse;
 	protected bool _dontMove;
-	
+
 	/** Different internal state flags */
 	protected int _moveToPawnTimeout;
-	
+
 	private NextAction? _nextAction;
-	
+
 	/**
 	 * @return the _nextAction
 	 */
@@ -52,7 +52,7 @@ public abstract class AbstractAI : Ctrl
 	{
 		return _nextAction;
 	}
-	
+
 	/**
 	 * @param nextAction the next action to set.
 	 */
@@ -60,12 +60,12 @@ public abstract class AbstractAI : Ctrl
 	{
 		_nextAction = nextAction;
 	}
-	
+
 	protected AbstractAI(Creature creature)
 	{
 		_actor = creature;
 	}
-	
+
 	/**
 	 * @return the Creature managed by this Accessor AI.
 	 */
@@ -73,7 +73,7 @@ public abstract class AbstractAI : Ctrl
 	{
 		return _actor;
 	}
-	
+
 	/**
 	 * @return the current Intention.
 	 */
@@ -81,7 +81,7 @@ public abstract class AbstractAI : Ctrl
 	{
 		return _intention;
 	}
-	
+
 	/**
 	 * Set the Intention of this AbstractAI.<br>
 	 * <font color=#FF0000><b><u>Caution</u>: This method is USED by AI classes</b></font><b><u><br>
@@ -104,15 +104,15 @@ public abstract class AbstractAI : Ctrl
 	 * @param intention The new Intention to set to the AI
 	 * @param args The first parameters of the Intention (optional target)
 	 */
-	public void setIntention(CtrlIntention intention, object? arg0 = null, object? arg1 = null, object? arg2 = null, 
+	public void setIntention(CtrlIntention intention, object? arg0 = null, object? arg1 = null, object? arg2 = null,
 		object? arg3 = null, object? arg4 = null)
 	{
 		// Stop the follow mode if necessary
-		if ((intention != CtrlIntention.AI_INTENTION_FOLLOW) && (intention != CtrlIntention.AI_INTENTION_ATTACK))
+		if (intention != CtrlIntention.AI_INTENTION_FOLLOW && intention != CtrlIntention.AI_INTENTION_ATTACK)
 		{
 			stopFollow();
 		}
-		
+
 		// Launch the onIntention method of the CreatureAI corresponding to the new Intention
 		switch (intention)
 		{
@@ -132,46 +132,64 @@ public abstract class AbstractAI : Ctrl
 				break;
 			}
 			case CtrlIntention.AI_INTENTION_ATTACK:
-			{
-				onIntentionAttack((Creature)arg0);
+            {
+                if (arg0 is not Creature target)
+                    throw new InvalidOperationException("Attack intention requires a Creature target.");
+
+				onIntentionAttack(target);
 				break;
 			}
 			case CtrlIntention.AI_INTENTION_CAST:
 			{
-				onIntentionCast((Skill)arg0, (WorldObject)arg1, (Item?)arg2, (bool?)arg3 ?? false,
+                if (arg0 is not Skill skill)
+                    throw new InvalidOperationException("Cast intention requires a Skill.");
+
+				onIntentionCast(skill, (WorldObject?)arg1, (Item?)arg2, (bool?)arg3 ?? false,
 					(bool?)arg4 ?? false);
 
 				break;
 			}
 			case CtrlIntention.AI_INTENTION_MOVE_TO:
 			{
-				onIntentionMoveTo((Location3D)arg0);
+                if (arg0 is not Location3D location)
+                    throw new InvalidOperationException("MoveTo intention requires a location.");
+
+				onIntentionMoveTo(location);
 				break;
 			}
 			case CtrlIntention.AI_INTENTION_FOLLOW:
 			{
-				onIntentionFollow((Creature)arg0);
+                if (arg0 is not Creature target)
+                    throw new InvalidOperationException("Follow intention requires a Creature target.");
+
+                onIntentionFollow(target);
 				break;
 			}
 			case CtrlIntention.AI_INTENTION_PICK_UP:
 			{
-				onIntentionPickUp((WorldObject)arg0);
+                if (arg0 is not WorldObject target)
+                    throw new InvalidOperationException("PickUp intention requires a WorldObject target.");
+
+                onIntentionPickUp(target);
 				break;
 			}
 			case CtrlIntention.AI_INTENTION_INTERACT:
 			{
-				onIntentionInteract((WorldObject)arg0);
+                if (arg0 is not WorldObject target)
+                    throw new InvalidOperationException("Interact intention requires a WorldObject target.");
+
+                onIntentionInteract(target);
 				break;
 			}
 		}
-		
+
 		// If do move or follow intention drop next action.
 		if (_nextAction is not null && _nextAction.Intentions.Contains(intention))
 		{
 			_nextAction = null;
 		}
 	}
-	
+
 	/**
 	 * Launch the CreatureAI onEvt method corresponding to the Event.
 	 * <font color=#FF0000><b><u>Caution</u>: The current general intention won't be change
@@ -186,7 +204,7 @@ public abstract class AbstractAI : Ctrl
 		{
 			return;
 		}
-		
+
 		switch (evt)
 		{
 			case CtrlEvent.EVT_THINK:
@@ -196,37 +214,61 @@ public abstract class AbstractAI : Ctrl
 			}
 			case CtrlEvent.EVT_ATTACKED:
 			{
-				onEvtAttacked((Creature)arg0);
+                if (arg0 is not Creature creature)
+                    throw new InvalidOperationException("Attacked event requires a Creature argument.");
+
+                onEvtAttacked(creature);
 				break;
 			}
 			case CtrlEvent.EVT_AGGRESSION:
 			{
-				onEvtAggression((Creature)arg0, (int)arg1);
+                if (arg0 is not Creature creature)
+                    throw new InvalidOperationException("Aggression event requires a Creature argument.");
+
+                if (arg1 is not int aggro)
+                    throw new InvalidOperationException("Aggression event requires an int as 2nd argument.");
+
+				onEvtAggression(creature, aggro);
 				break;
 			}
 			case CtrlEvent.EVT_ACTION_BLOCKED:
 			{
-				onEvtActionBlocked((Creature) arg0);
+                if (arg0 is not Creature creature)
+                    throw new InvalidOperationException("Action blocked event requires a Creature argument.");
+
+                onEvtActionBlocked(creature);
 				break;
 			}
 			case CtrlEvent.EVT_ROOTED:
 			{
-				onEvtRooted((Creature) arg0);
+                if (arg0 is not Creature creature)
+                    throw new InvalidOperationException("Rooted event requires a Creature argument.");
+
+                onEvtRooted(creature);
 				break;
 			}
 			case CtrlEvent.EVT_CONFUSED:
 			{
-				onEvtConfused((Creature) arg0);
+                if (arg0 is not Creature creature)
+                    throw new InvalidOperationException("Confused event requires a Creature argument.");
+
+                onEvtConfused(creature);
 				break;
 			}
 			case CtrlEvent.EVT_MUTED:
 			{
-				onEvtMuted((Creature) arg0);
+                if (arg0 is not Creature creature)
+                    throw new InvalidOperationException("Muted event requires a Creature argument.");
+
+                onEvtMuted(creature);
 				break;
 			}
 			case CtrlEvent.EVT_EVADED:
 			{
-				onEvtEvaded((Creature) arg0);
+                if (arg0 is not Creature creature)
+                    throw new InvalidOperationException("Evaded event requires a Creature argument.");
+
+                onEvtEvaded(creature);
 				break;
 			}
 			case CtrlEvent.EVT_READY_TO_ACT:
@@ -257,12 +299,17 @@ public abstract class AbstractAI : Ctrl
 			}
 			case CtrlEvent.EVT_ARRIVED_BLOCKED:
 			{
-				onEvtArrivedBlocked((Location)arg0);
+                if (arg0 is not Location location)
+                    throw new InvalidOperationException("Arrived blocked event requires a Location argument.");
+
+                onEvtArrivedBlocked(location);
 				break;
 			}
 			case CtrlEvent.EVT_FORGET_OBJECT:
 			{
-				WorldObject worldObject = (WorldObject)arg0;
+                if (arg0 is not WorldObject worldObject)
+                    throw new InvalidOperationException("Forget object event requires a WorldObject argument.");
+
 				_actor.removeSeenCreature(worldObject);
 				onEvtForgetObject(worldObject);
 				break;
@@ -288,66 +335,66 @@ public abstract class AbstractAI : Ctrl
 				break;
 			}
 		}
-		
+
 		// Do next action.
 		if (_nextAction is not null && _nextAction.Events.Contains(evt))
 		{
 			_nextAction.DoAction();
 		}
 	}
-	
+
 	protected abstract void onIntentionIdle();
-	
+
 	protected abstract void onIntentionActive();
-	
+
 	protected abstract void onIntentionRest();
-	
+
 	protected abstract void onIntentionAttack(Creature target);
-	
-	protected abstract void onIntentionCast(Skill skill, WorldObject target, Item item, bool forceUse, bool dontMove);
-	
+
+	protected abstract void onIntentionCast(Skill skill, WorldObject? target, Item? item, bool forceUse, bool dontMove);
+
 	protected abstract void onIntentionMoveTo(Location3D destination);
-	
+
 	protected abstract void onIntentionFollow(Creature target);
-	
+
 	protected abstract void onIntentionPickUp(WorldObject item);
-	
+
 	protected abstract void onIntentionInteract(WorldObject @object);
 
 	public abstract void onEvtThink();
-	
+
 	protected abstract void onEvtAttacked(Creature attacker);
-	
+
 	protected abstract void onEvtAggression(Creature target, int aggro);
-	
+
 	protected abstract void onEvtActionBlocked(Creature attacker);
-	
+
 	protected abstract void onEvtRooted(Creature attacker);
-	
+
 	protected abstract void onEvtConfused(Creature attacker);
-	
+
 	protected abstract void onEvtMuted(Creature attacker);
-	
+
 	protected abstract void onEvtEvaded(Creature attacker);
-	
+
 	protected abstract void onEvtReadyToAct();
-	
+
 	protected abstract void onEvtArrived();
-	
+
 	protected abstract void onEvtArrivedRevalidate();
-	
+
 	protected abstract void onEvtArrivedBlocked(Location location);
-	
+
 	protected abstract void onEvtForgetObject(WorldObject @object);
-	
+
 	protected abstract void onEvtCancel();
-	
+
 	protected abstract void onEvtDead();
-	
+
 	protected abstract void onEvtFakeDeath();
-	
+
 	protected abstract void onEvtFinishCasting();
-	
+
 	/**
 	 * Cancel action client side by sending Server->Client packet ActionFailed to the Player actor.
 	 * <font color=#FF0000><b><u>Caution</u>: Low level function, used by AI subclasses</b></font>
@@ -359,7 +406,7 @@ public abstract class AbstractAI : Ctrl
 			_actor.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
 	}
-	
+
 	/**
 	 * Move the actor to Pawn server side AND client side by sending Server->Client packet MoveToPawn <i>(broadcast)</i>.<br>
 	 * <font color=#FF0000><b><u>Caution</u>: Low level function, used by AI subclasses</b></font>
@@ -376,7 +423,7 @@ public abstract class AbstractAI : Ctrl
 			{
 				offset = 10;
 			}
-			
+
 			// prevent possible extra calls to this function (there is none?),
 			// also don't send movetopawn packets too often
 			if (_clientMoving && (_target == pawn))
@@ -394,29 +441,29 @@ public abstract class AbstractAI : Ctrl
 					return;
 				}
 			}
-			
+
 			// Set AI movement data
 			_clientMoving = true;
 			_clientMovingToPawnOffset = offset;
 			_target = pawn;
 			_moveToPawnTimeout = GameTimeTaskManager.getInstance().getGameTicks();
 			_moveToPawnTimeout += 1000 / GameTimeTaskManager.MILLIS_IN_TICK;
-			
+
 			if (pawn == null)
 			{
 				return;
 			}
-			
+
 			// Calculate movement data for a move to location action and add the actor to movingObjects of GameTimeTaskManager
 			_actor.moveToLocation(pawn.Location.Location3D, offset);
-			
+
 			// May result to make monsters stop moving.
 			// if (!_actor.isMoving())
 			// {
 			// clientActionFailed();
 			// return;
 			// }
-			
+
 			// Send a Server->Client packet MoveToPawn/MoveToLocation to the actor and all Player in its _knownPlayers
 			if (pawn.isCreature())
 			{
@@ -427,7 +474,7 @@ public abstract class AbstractAI : Ctrl
 				}
 				else
 				{
-					WorldRegion region = _actor.getWorldRegion();
+					WorldRegion? region = _actor.getWorldRegion();
 					if ((region != null) && region.isActive() && !_actor.isMovementSuspended())
 					{
 						_actor.broadcastPacket(new MoveToPawnPacket(_actor, pawn, offset));
@@ -460,10 +507,10 @@ public abstract class AbstractAI : Ctrl
 			// Set AI movement data
 			_clientMoving = true;
 			_clientMovingToPawnOffset = 0;
-			
+
 			// Calculate movement data for a move to location action and add the actor to movingObjects of GameTimeTaskManager
 			_actor.moveToLocation(location, 0);
-			
+
 			// Send a Server->Client packet MoveToLocation to the actor and all Player in its _knownPlayers
 			_actor.broadcastMoveToLocation();
 		}
@@ -472,7 +519,7 @@ public abstract class AbstractAI : Ctrl
 			clientActionFailed();
 		}
 	}
-	
+
 	/**
 	 * Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation <i>(broadcast)</i>.<br>
 	 * <font color=#FF0000><b><u>Caution</u>: Low level function, used by AI subclasses</b></font>
@@ -485,11 +532,11 @@ public abstract class AbstractAI : Ctrl
 		{
 			_actor.stopMove(loc);
 		}
-		
+
 		_clientMovingToPawnOffset = 0;
 		_clientMoving = false;
 	}
-	
+
 	/**
 	 * Client has already arrived to target, no need to force StopMove packet.
 	 */
@@ -502,12 +549,12 @@ public abstract class AbstractAI : Ctrl
 		}
 		_clientMoving = false;
 	}
-	
+
 	public bool isAutoAttacking()
 	{
 		return _clientAutoAttacking;
 	}
-	
+
 	public void setAutoAttacking(bool isAutoAttacking)
 	{
 		if (_actor.isSummon())
@@ -521,7 +568,7 @@ public abstract class AbstractAI : Ctrl
 		}
 		_clientAutoAttacking = isAutoAttacking;
 	}
-	
+
 	/**
 	 * Start the actor Auto Attack client side by sending Server->Client packet AutoAttackStart <i>(broadcast)</i>.<br>
 	 * <font color=#FF0000><b><u>Caution</u>: Low level function, used by AI subclasses</b></font>
@@ -533,7 +580,7 @@ public abstract class AbstractAI : Ctrl
 		{
 			return;
 		}
-		
+
 		if (_actor.isSummon())
 		{
 			Summon summon = (Summon) _actor;
@@ -543,7 +590,7 @@ public abstract class AbstractAI : Ctrl
 			}
 			return;
 		}
-		
+
 		if (!_clientAutoAttacking)
 		{
 			if (_actor.isPlayer() && _actor.hasSummon())
@@ -559,10 +606,10 @@ public abstract class AbstractAI : Ctrl
 			_actor.broadcastPacket(new AutoAttackStartPacket(_actor.ObjectId));
 			setAutoAttacking(true);
 		}
-		
+
 		AttackStanceTaskManager.getInstance().addAttackStanceTask(_actor);
 	}
-	
+
 	/**
 	 * Stop the actor auto-attack client side by sending Server->Client packet AutoAttackStop <i>(broadcast)</i>.<br>
 	 * <font color=#FF0000><b><u>Caution</u>: Low level function, used by AI subclasses</b></font>
@@ -591,7 +638,7 @@ public abstract class AbstractAI : Ctrl
 			setAutoAttacking(false);
 		}
 	}
-	
+
 	/**
 	 * Kill the actor client side by sending Server->Client packet AutoAttackStop, StopMove/StopRotation, Die <i>(broadcast)</i>.<br>
 	 * <font color=#FF0000><b><u>Caution</u>: Low level function, used by AI subclasses</b></font>
@@ -600,16 +647,16 @@ public abstract class AbstractAI : Ctrl
 	{
 		// Send a Server->Client packet Die to the actor and all Player in its _knownPlayers
 		_actor.broadcastPacket(new DiePacket(_actor));
-		
+
 		// Init AI
 		_intention = CtrlIntention.AI_INTENTION_IDLE;
 		_target = null;
 		_castTarget = null;
-		
+
 		// Cancel the follow task if necessary
 		stopFollow();
 	}
-	
+
 	/**
 	 * Update the state of this actor client side by sending Server->Client packet MoveToPawn/MoveToLocation and AutoAttackStart to the Player player.<br>
 	 * <font color=#FF0000><b><u>Caution</u>: Low level function, used by AI subclasses</b></font>
@@ -631,12 +678,13 @@ public abstract class AbstractAI : Ctrl
 			}
 		}
 	}
-	
+
 	public bool isFollowing()
-	{
-		return (_target != null) && _target.isCreature() && ((_intention == CtrlIntention.AI_INTENTION_FOLLOW) || CreatureFollowTaskManager.getInstance().isFollowing(_actor));
-	}
-	
+    {
+        return (_target != null) && _target.isCreature() && ((_intention == CtrlIntention.AI_INTENTION_FOLLOW) ||
+            CreatureFollowTaskManager.getInstance().isFollowing(_actor));
+    }
+
 	/**
 	 * Create and Launch an AI Follow Task to execute every 1s.
 	 * @param target The Creature to follow
@@ -646,7 +694,7 @@ public abstract class AbstractAI : Ctrl
 	{
 		startFollow(target, -1);
 	}
-	
+
 	/**
 	 * Create and Launch an AI Follow Task to execute every 0.5s, following at specified range.
 	 * @param target The Creature to follow
@@ -666,7 +714,7 @@ public abstract class AbstractAI : Ctrl
 			CreatureFollowTaskManager.getInstance().addAttackFollow(_actor, range);
 		}
 	}
-	
+
 	/**
 	 * Stop an AI Follow Task.
 	 */
@@ -675,27 +723,27 @@ public abstract class AbstractAI : Ctrl
 	{
 		CreatureFollowTaskManager.getInstance().remove(_actor);
 	}
-	
-	public virtual void setTarget(WorldObject target)
+
+	public virtual void setTarget(WorldObject? target)
 	{
 		_target = target;
 	}
-	
-	public virtual WorldObject getTarget()
+
+	public virtual WorldObject? getTarget()
 	{
 		return _target;
 	}
-	
+
 	protected void setCastTarget(WorldObject? target)
 	{
 		_castTarget = target;
 	}
-	
+
 	public WorldObject? getCastTarget()
 	{
 		return _castTarget;
 	}
-	
+
 	/**
 	 * Stop all Ai tasks and futures.
 	 */
@@ -703,7 +751,7 @@ public abstract class AbstractAI : Ctrl
 	{
 		stopFollow();
 	}
-	
+
 	public override string ToString()
 	{
 		return "Actor: " + _actor;

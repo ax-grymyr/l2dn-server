@@ -27,16 +27,16 @@ public readonly struct LogoutPacket: IIncomingPacket<GameSession>
             connection.Close();
             return ValueTask.CompletedTask;
         }
-		
+
         // Unregister from olympiad.
         if (OlympiadManager.getInstance().isRegistered(player))
         {
             OlympiadManager.getInstance().unRegisterNoble(player);
         }
-		
+
         // Set restore location for next enter world // TODO: also save heading
         Location3D? location = null;
-        Instance world = player.getInstanceWorld();
+        Instance? world = player.getInstanceWorld();
         if (world != null)
         {
             if (Config.RESTORE_PLAYER_INSTANCE)
@@ -67,7 +67,7 @@ public readonly struct LogoutPacket: IIncomingPacket<GameSession>
         {
             Disconnection.of(session, player).defaultSequence(LeaveWorldPacket.STATIC_PACKET);
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

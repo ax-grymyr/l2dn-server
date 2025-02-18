@@ -23,13 +23,13 @@ public struct RequestPartyLootModificationPacket: IIncomingPacket<GameSession>
 
         if (!Enum.IsDefined(_partyDistributionType))
             return ValueTask.CompletedTask;
-		
-        Party party = player.getParty();
+
+        Party? party = player.getParty();
         if (party == null || !party.isLeader(player) || _partyDistributionType == party.getDistributionType())
             return ValueTask.CompletedTask;
 
         party.requestLootChange(_partyDistributionType);
-        
+
         return ValueTask.CompletedTask;
     }
 }

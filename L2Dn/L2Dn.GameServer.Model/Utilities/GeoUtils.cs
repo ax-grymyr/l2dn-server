@@ -164,10 +164,10 @@ public class GeoUtils
 	{
 		const int geoRadius = 20;
 		const int blocksPerPacket = 40;
-		
+
 		int iBlock = blocksPerPacket;
 		int iPacket = 0;
-		
+
 		ExServerPrimitivePacket? exsp = null;
 		int playerGx = GeoEngine.getGeoX(player.getX());
 		int playerGy = GeoEngine.getGeoY(player.getY());
@@ -183,28 +183,29 @@ public class GeoUtils
 						++iPacket;
 						player.sendPacket(exsp.Value);
 					}
-					
+
 					exsp = new ExServerPrimitivePacket("DebugGrid_" + iPacket, player.getX(), player.getY(), -16000);
 				}
-				
+
 				if (exsp == null)
 				{
 					throw new InvalidOperationException();
 				}
-				
+
 				int gx = playerGx + dx;
 				int gy = playerGy + dy;
-				
+
 				int x = GeoEngine.getWorldX(gx);
 				int y = GeoEngine.getWorldY(gy);
-				
+
 				// Nothing.
 				exsp.Value.addLine(Colors.Black, x, y, -16000, x, y, -16000);
 				++iBlock;
 			}
 		}
-		
-		player.sendPacket(exsp.Value);
+
+        if (exsp is not null)
+		    player.sendPacket(exsp.Value);
 	}
 
 	/**

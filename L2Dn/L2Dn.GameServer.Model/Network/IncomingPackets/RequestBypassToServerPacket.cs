@@ -47,14 +47,14 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 		Player? player = session.Player;
 		if (player == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (string.IsNullOrEmpty(_command))
 		{
 			PacketLogger.Instance.Warn(player + " sent empty bypass!");
 			Disconnection.of(session, player).defaultSequence(LeaveWorldPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		bool requiresBypassValidation = true;
 		foreach (string possibleNonHtmlCommand in _possibleNonHtmlCommands)
 		{
@@ -64,7 +64,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 				break;
 			}
 		}
-		
+
 		int? bypassOriginId = null;
 		if (requiresBypassValidation)
 		{
@@ -85,14 +85,14 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 		// {
 		// 	return ValueTask.CompletedTask;
 		// }
-		
+
 		if (player.Events.HasSubscribers<OnPlayerBypass>())
 		{
 			OnPlayerBypass onPlayerBypass = new OnPlayerBypass(player, _command);
 			if (player.Events.Notify(onPlayerBypass) && onPlayerBypass.Terminate)
 				return ValueTask.CompletedTask;
 		}
-		
+
 		try
 		{
 			if (_command.startsWith("admin_"))
@@ -119,7 +119,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 				{
 					id = _command.Substring(4);
 				}
-				
+
 				if (int.TryParse(id, CultureInfo.InvariantCulture, out int objectId))
 				{
 					WorldObject? obj = World.getInstance().findObject(objectId);
@@ -128,7 +128,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 						((Npc)obj).onBypassFeedback(player, _command[(endOfId + 1)..]);
 					}
 				}
-				
+
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			}
 			else if (_command.startsWith("item_"))
@@ -145,12 +145,12 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 				}
 				try
 				{
-					Item item = player.getInventory().getItemByObjectId(int.Parse(id));
+					Item? item = player.getInventory().getItemByObjectId(int.Parse(id));
 					if (item != null && endOfId > 0)
 					{
 						item.onBypassFeedback(player, _command.Substring(endOfId + 1));
 					}
-					
+
 					player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				}
 				catch (Exception nfe)
@@ -185,7 +185,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 			else if (_command.startsWith("_olympiad?command"))
 			{
 				int arenaId = int.Parse(_command.Split("=")[2]);
-				IBypassHandler handler = BypassHandler.getInstance().getHandler("arenachange");
+				IBypassHandler? handler = BypassHandler.getInstance().getHandler("arenachange");
 				if (handler != null)
 				{
 					handler.useBypass("arenachange " + (arenaId - 1), player, null);
@@ -224,12 +224,12 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 			}
 			else
 			{
-				IBypassHandler handler = BypassHandler.getInstance().getHandler(_command);
+				IBypassHandler? handler = BypassHandler.getInstance().getHandler(_command);
 				if (handler != null)
 				{
 					if (bypassOriginId != null)
 					{
-						WorldObject bypassOrigin = World.getInstance().findObject(bypassOriginId.Value);
+						WorldObject? bypassOrigin = World.getInstance().findObject(bypassOriginId.Value);
 						if (bypassOrigin != null && bypassOrigin.isCreature())
 						{
 							handler.useBypass(_command, player, (Creature) bypassOrigin);
@@ -261,19 +261,19 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 				sb.Append("Bypass command: " + _command + "<br1>");
 				sb.Append("StackTrace:<br1>");
 				sb.Append("</body></html>");
-				
+
 				// item html
 				HtmlContent htmlContent = HtmlContent.LoadFromText(sb.ToString(), player);
 				htmlContent.DisableValidation();
 				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(null, 1, htmlContent);
-				
+
 				player.sendPacket(msg);
 			}
 		}
 
 		return ValueTask.CompletedTask;
 	}
-	
+
 	/**
 	 * @param player
 	 */

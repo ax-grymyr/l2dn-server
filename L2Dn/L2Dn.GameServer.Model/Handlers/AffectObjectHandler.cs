@@ -10,12 +10,12 @@ namespace L2Dn.GameServer.Handlers;
 public class AffectObjectHandler: IHandler<IAffectObjectHandler, AffectObject>
 {
 	private readonly Map<AffectObject, IAffectObjectHandler> _datatable;
-	
+
 	protected AffectObjectHandler()
 	{
 		_datatable = new();
 	}
-	
+
 	public void registerHandler(IAffectObjectHandler handler)
 	{
 		_datatable.put(handler.getAffectObjectType(), handler);
@@ -26,22 +26,22 @@ public class AffectObjectHandler: IHandler<IAffectObjectHandler, AffectObject>
 	{
 		_datatable.remove(handler.getAffectObjectType());
 	}
-	
-	public IAffectObjectHandler getHandler(AffectObject targetType)
+
+	public IAffectObjectHandler? getHandler(AffectObject targetType)
 	{
 		return _datatable.get(targetType);
 	}
-	
+
 	public int size()
 	{
 		return _datatable.Count;
 	}
-	
+
 	public static AffectObjectHandler getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly AffectObjectHandler INSTANCE = new AffectObjectHandler();

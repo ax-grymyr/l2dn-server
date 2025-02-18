@@ -27,7 +27,7 @@ public struct RequestGetOnVehiclePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Boat boat;
+        Boat? boat;
         if (player.isInBoat())
         {
             boat = player.getBoat();

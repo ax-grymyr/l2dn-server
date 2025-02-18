@@ -24,11 +24,11 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 	private readonly int _allyId;
 	private readonly int _clanId;
 	private readonly int _statusMask;
-	
+
 	public NpcInfoPacket(Npc npc)
 	{
 		_helper = new(5);
-		
+
 		_npc = npc;
 		_abnormalVisualEffects = npc.getEffectList().getCurrentAbnormalVisualEffects();
 
@@ -37,17 +37,17 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		_helper.AddComponent((NpcInfoType)0x0D);
 		_helper.AddComponent((NpcInfoType)0x14);
 		_helper.AddComponent((NpcInfoType)0x15);
-		
+
 		_helper.AddComponent(NpcInfoType.ID);
 		_helper.AddComponent(NpcInfoType.ATTACKABLE);
 		_helper.AddComponent(NpcInfoType.RELATIONS);
 		_helper.AddComponent(NpcInfoType.POSITION);
 		_helper.AddComponent(NpcInfoType.STOP_MODE);
 		_helper.AddComponent(NpcInfoType.MOVE_MODE);
-		
+
 		if (npc.getHeading() > 0)
 			_helper.AddComponent(NpcInfoType.HEADING);
-		
+
 		if ((npc.getStat().getPAtkSpd() > 0) || (npc.getStat().getMAtkSpd() > 0))
 			_helper.AddComponent(NpcInfoType.ATK_CAST_SPEED);
 
@@ -117,10 +117,10 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		if (npc.isShowSummonAnimation())
 			_helper.AddComponent(NpcInfoType.SUMMONED);
 
-		int? clanId = npc.getClanId(); 
+		int? clanId = npc.getClanId();
 		if (clanId > 0)
 		{
-			Clan clan = ClanTable.getInstance().getClan(clanId.Value);
+			Clan? clan = ClanTable.getInstance().getClan(clanId.Value);
 			if ((clan != null) && ((npc.getTemplate().getId() == 34156 /* Clan Stronghold Device */) ||
 			                       (!npc.isMonster() && npc.isInsideZone(ZoneId.PEACE))))
 			{
@@ -132,7 +132,7 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 				_helper.AddComponent(NpcInfoType.CLAN);
 			}
 		}
-        
+
 		_helper.AddComponent(NpcInfoType.PET_EVOLUTION_ID);
 		if (npc.getPvpFlag() != PvpFlagStatus.None)
 			_helper.AddComponent(NpcInfoType.PVP_FLAG);
@@ -149,11 +149,11 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 
 		if (npc.isShowName())
 			_statusMask |= 0x08;
-		
+
 		if (_statusMask != 0x00)
 			_helper.AddComponent(NpcInfoType.VISUAL_STATE);
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		// Localisation related.
@@ -230,7 +230,7 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 				}
 			}
 		}
-		
+
 		writer.WritePacketCode(OutgoingPacketCodes.NPC_INFO);
 		writer.WriteInt32(_npc.ObjectId);
 		writer.WriteByte(_npc.isShowSummonAnimation() ? (byte)2 : (byte)0); // // 0=teleported 1=default 2=summoned
@@ -260,10 +260,10 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 			// 		title = title.replace(NpcData.getInstance().getTemplate(_npc.getId()).getTitle(), localisation[1]);
 			// 	}
 			// }
-			
+
 			writer.WriteString(title);
 		}
-		
+
 		// Block 2
 		writer.WriteInt16((short)blockSize);
 		if (_helper.HasComponent(NpcInfoType.ID))
@@ -275,7 +275,7 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 			writer.WriteInt32(_npc.getY());
 			writer.WriteInt32(_npc.getZ());
 		}
-		
+
 		if (_helper.HasComponent(NpcInfoType.HEADING))
 			writer.WriteInt32(_npc.getHeading());
 
@@ -287,20 +287,20 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 			writer.WriteInt32(_npc.getPAtkSpd());
 			writer.WriteInt32(_npc.getMAtkSpd());
 		}
-		
+
 		if (_helper.HasComponent(NpcInfoType.SPEED_MULTIPLIER))
 		{
 			writer.WriteFloat((float)_npc.getStat().getMovementSpeedMultiplier());
 			writer.WriteFloat((float)_npc.getStat().getAttackSpeedMultiplier());
 		}
-		
+
 		if (_helper.HasComponent(NpcInfoType.EQUIPPED))
 		{
 			writer.WriteInt32(_npc.getRightHandItem());
 			writer.WriteInt32(0); // Armor id?
 			writer.WriteInt32(_npc.getLeftHandItem());
 		}
-		
+
 		if (_helper.HasComponent(NpcInfoType.STOP_MODE))
 			writer.WriteByte(!_npc.isDead());
 
@@ -351,25 +351,25 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 			writer.WriteInt32(0);
 			writer.WriteInt32(0);
 		}
-		
+
 		if (_helper.HasComponent(NpcInfoType.NAME))
 		{
 			//writer.WriteString(localisation != null ? localisation[0] : _npc.getName());
 			writer.WriteString(_npc.getName());
 		}
-		
+
 		if (_helper.HasComponent(NpcInfoType.NAME_NPCSTRINGID))
 		{
 			NpcStringId? nameString = _npc.getNameString();
 			writer.WriteInt32(nameString != null ? (int)nameString : -1); // NPCStringId for name
 		}
-		
+
 		if (_helper.HasComponent(NpcInfoType.TITLE_NPCSTRINGID))
 		{
 			NpcStringId? titleString = _npc.getTitleString();
 			writer.WriteInt32(titleString != null ? (int)titleString : -1); // NPCStringId for title
 		}
-		
+
 		if (_helper.HasComponent(NpcInfoType.PVP_FLAG))
 			writer.WriteByte((byte)_npc.getPvpFlag()); // PVP flag
 
@@ -384,7 +384,7 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 			writer.WriteInt32(_allyId);
 			writer.WriteInt32(_allyCrest);
 		}
-		
+
 		if (_helper.HasComponent(NpcInfoType.VISUAL_STATE))
 			writer.WriteInt32(_statusMask); // Main writer.WriteByte, Essence writer.WriteInt32. // TODO: classic?
 
@@ -394,16 +394,16 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 			            Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None
 				? _npc.getTeam()
 				: Team.NONE;
-			
+
 			int effectSize = _abnormalVisualEffects.size() + (_npc.isInvisible() ? 1 : 0) + (team != Team.NONE ? 1 : 0);
 			writer.WriteInt16((short)effectSize);
 
 			foreach (AbnormalVisualEffect abnormalVisualEffect in _abnormalVisualEffects)
 				writer.WriteInt16((short)abnormalVisualEffect);
-			
+
 			if (_npc.isInvisible())
 				writer.WriteInt16((short)AbnormalVisualEffect.STEALTH);
-			
+
 			if (team == Team.BLUE)
 			{
 				if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)

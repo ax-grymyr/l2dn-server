@@ -23,9 +23,9 @@ public struct RequestExPledgeCrestLargePacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        Crest crest = CrestTable.getInstance().getCrest(_crestId);
-        byte[] data = crest != null ? crest.getData() : null;
+
+        Crest? crest = CrestTable.getInstance().getCrest(_crestId);
+        byte[]? data = crest != null ? crest.getData() : null;
         if (data != null)
         {
             for (int i = 0; i <= 4; i++)
@@ -35,7 +35,7 @@ public struct RequestExPledgeCrestLargePacket: IIncomingPacket<GameSession>
                 {
                     continue;
                 }
-                
+
                 byte[] chunk = new byte[size];
                 Array.Copy(data, 14336 * i, chunk, 0, size);
                 player.sendPacket(new ExPledgeEmblemPacket(_crestId, chunk, _clanId, i));
