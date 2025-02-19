@@ -5928,7 +5928,7 @@ public class Player: Playable
 		return true;
 	}
 
-	public bool mountPlayer(Summon pet)
+	public bool mountPlayer(Summon? pet)
 	{
 		if ((pet != null) && pet.isMountable() && !isMounted() && !isBetrayed())
 		{

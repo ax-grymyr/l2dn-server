@@ -11,19 +11,20 @@ namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
  */
 public class TacticalSignTarget: IPlayerActionHandler
 {
-	public void useAction(Player player, ActionDataHolder data, bool ctrlPressed, bool shiftPressed)
-	{
-		if (!player.isInParty())
-		{
-			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-			return;
-		}
-		
-		player.getParty().setTargetBasedOnTacticalSignId(player, data.getOptionId());
-	}
+    public void useAction(Player player, ActionDataHolder data, bool ctrlPressed, bool shiftPressed)
+    {
+        Party? party = player.getParty();
+        if (!player.isInParty() || party == null)
+        {
+            player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+            return;
+        }
 
-	public bool isPetAction()
-	{
-		return false;
-	}
+        party.setTargetBasedOnTacticalSignId(player, data.getOptionId());
+    }
+
+    public bool isPetAction()
+    {
+        return false;
+    }
 }

@@ -576,7 +576,7 @@ public abstract class Summon: Playable
 	 * @param forceUse used to force ATTACK on players
 	 * @param dontMove used to prevent movement, if not in range
 	 */
-	public override bool useMagic(Skill skill, Item item, bool forceUse, bool dontMove)
+	public override bool useMagic(Skill skill, Item? item, bool forceUse, bool dontMove)
 	{
 		// Null skill, dead summon or null owner are reasons to prevent casting.
 		if ((skill == null) || isDead() || (_owner == null))

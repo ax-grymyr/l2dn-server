@@ -16,38 +16,39 @@ namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
  */
 public class ServitorSkillUse: IPlayerActionHandler
 {
-	public void useAction(Player player, ActionDataHolder data, bool ctrlPressed, bool shiftPressed)
-	{
-		Summon summon = player.getAnyServitor();
-		if ((summon == null) || !summon.isServitor())
-		{
-			player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_A_SERVITOR);
-			return;
-		}
-		
-		player.getServitors().Values.ForEach(servitor =>
-		{
-			if (summon.isBetrayed())
-			{
-				player.sendPacket(SystemMessageId.YOUR_SERVITOR_IS_UNRESPONSIVE_AND_WILL_NOT_OBEY_ANY_ORDERS);
-				return;
-			}
-			
-			int skillLevel = PetSkillData.getInstance().getAvailableLevel(servitor, data.getOptionId());
-			if (skillLevel > 0)
-			{
-				Skill skill = SkillData.getInstance().getSkill(data.getOptionId(), skillLevel);
-				if (skill != null)
-				{
-					servitor.setTarget(player.getTarget());
-					servitor.useMagic(skill, null, (skill.getTargetType() == TargetType.SELF) || ctrlPressed, shiftPressed);
-				}
-			}
-		});
-	}
-	
-	public bool isPetAction()
-	{
-		return true;
-	}
+    public void useAction(Player player, ActionDataHolder data, bool ctrlPressed, bool shiftPressed)
+    {
+        Summon? summon = player.getAnyServitor();
+        if (summon == null || !summon.isServitor())
+        {
+            player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_A_SERVITOR);
+            return;
+        }
+
+        player.getServitors().Values.ForEach(servitor =>
+        {
+            if (summon.isBetrayed())
+            {
+                player.sendPacket(SystemMessageId.YOUR_SERVITOR_IS_UNRESPONSIVE_AND_WILL_NOT_OBEY_ANY_ORDERS);
+                return;
+            }
+
+            int skillLevel = PetSkillData.getInstance().getAvailableLevel(servitor, data.getOptionId());
+            if (skillLevel > 0)
+            {
+                Skill? skill = SkillData.getInstance().getSkill(data.getOptionId(), skillLevel);
+                if (skill != null)
+                {
+                    servitor.setTarget(player.getTarget());
+                    servitor.useMagic(skill, null, skill.getTargetType() == TargetType.SELF || ctrlPressed,
+                        shiftPressed);
+                }
+            }
+        });
+    }
+
+    public bool isPetAction()
+    {
+        return true;
+    }
 }

@@ -19,8 +19,9 @@ public class ServitorMove: IPlayerActionHandler
 			player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_A_SERVITOR);
 			return;
 		}
-		
-		if (player.getTarget() != null)
+
+        WorldObject? target = player.getTarget();
+		if (target != null)
 		{
 			foreach (Summon summon in player.getServitors().Values)
 			{
@@ -31,14 +32,14 @@ public class ServitorMove: IPlayerActionHandler
 						player.sendPacket(SystemMessageId.YOUR_SERVITOR_IS_UNRESPONSIVE_AND_WILL_NOT_OBEY_ANY_ORDERS);
 						return;
 					}
-					
+
 					summon.setFollowStatus(false);
-					summon.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, player.getTarget().Location.Location3D);
+					summon.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, target.Location.Location3D);
 				}
 			}
 		}
 	}
-	
+
 	public bool isPetAction()
 	{
 		return true;

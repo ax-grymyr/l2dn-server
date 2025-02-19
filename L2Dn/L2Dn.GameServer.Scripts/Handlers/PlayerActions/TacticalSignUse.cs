@@ -11,19 +11,21 @@ namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
  */
 public class TacticalSignUse: IPlayerActionHandler
 {
-	public void useAction(Player player, ActionDataHolder data, bool ctrlPressed, bool shiftPressed)
-	{
-		if ((!player.isInParty() || (player.getTarget() == null) || !player.getTarget().isCreature()))
-		{
-			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-			return;
-		}
-		
-		player.getParty().addTacticalSign(player, data.getOptionId(), (Creature) player.getTarget());
-	}
+    public void useAction(Player player, ActionDataHolder data, bool ctrlPressed, bool shiftPressed)
+    {
+        WorldObject? target = player.getTarget();
+        Party? party = player.getParty();
+        if (!player.isInParty() || party == null || target == null || !target.isCreature())
+        {
+            player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+            return;
+        }
 
-	public bool isPetAction()
-	{
-		return false;
-	}
+        party.addTacticalSign(player, data.getOptionId(), (Creature)target);
+    }
+
+    public bool isPetAction()
+    {
+        return false;
+    }
 }

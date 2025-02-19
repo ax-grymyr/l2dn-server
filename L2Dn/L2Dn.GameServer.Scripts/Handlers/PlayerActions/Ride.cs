@@ -10,13 +10,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
  */
 public class Ride: IPlayerActionHandler
 {
-	public void useAction(Player player, ActionDataHolder data, bool ctrlPressed, bool shiftPressed)
-	{
-		player.mountPlayer(player.getPet());
-	}
+    public void useAction(Player player, ActionDataHolder data, bool ctrlPressed, bool shiftPressed)
+    {
+        player.mountPlayer(player.getPet());
+    }
 
-	public bool isPetAction()
-	{
-		return false;
-	}
+    public bool isPetAction()
+    {
+        return false;
+    }
 }
