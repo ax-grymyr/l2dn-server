@@ -34,8 +34,8 @@ public class OfflineTraderTable
 				try
                 {
                     GameSession? client = pc.getClient();
-					if ((pc.getPrivateStoreType() != PrivateStoreType.NONE) &&
-					    ((client == null) || client.IsDetached))
+					if (pc.getPrivateStoreType() != PrivateStoreType.NONE &&
+					    (client == null || client.IsDetached))
 					{
 						var trade = new CharacterOfflineTrade
 						{
@@ -312,7 +312,7 @@ public class OfflineTraderTable
 				try
                 {
                     GameSession? traderClient = trader.getClient();
-					if ((traderClient == null) || traderClient.IsDetached)
+					if (traderClient == null || traderClient.IsDetached)
 					{
 						switch (trader.getPrivateStoreType())
 						{

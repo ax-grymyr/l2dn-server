@@ -13,26 +13,26 @@ namespace L2Dn.GameServer.Data.Xml;
 public class VipData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(VipData));
-	
+
 	private readonly Map<int, VipInfo> _vipTiers = new();
-	
+
 	protected VipData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		if (!Config.VIP_SYSTEM_ENABLED)
 		{
 			return;
 		}
-		
+
 		_vipTiers.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "Vip.xml");
 		document.Elements("list").Elements("vip").ForEach(parseElement);
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _vipTiers.Count + " vips.");
 	}
 
@@ -47,7 +47,7 @@ public class VipData: DataReaderBase
 			int skill = el.GetAttributeValueAsInt32("skill");
 			vipInfo.setSkill(skill);
 		});
-		
+
 		_vipTiers.put(tier, vipInfo);
 	}
 
@@ -59,7 +59,7 @@ public class VipData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	/**
 	 * The Class SingletonHolder.
 	 */
@@ -67,12 +67,12 @@ public class VipData: DataReaderBase
 	{
 		public static readonly VipData INSTANCE = new();
 	}
-	
+
 	public int getSkillId(int tier)
 	{
-		return _vipTiers.get(tier).getSkill();
+		return _vipTiers.get(tier)?.getSkill() ?? 0;
 	}
-	
+
 	public Map<int, VipInfo> getVipTiers()
 	{
 		return _vipTiers;

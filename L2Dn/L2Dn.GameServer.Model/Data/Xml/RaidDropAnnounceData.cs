@@ -14,21 +14,21 @@ namespace L2Dn.GameServer.Data.Xml;
 public class RaidDropAnnounceData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(RaidDropAnnounceData));
-	
+
 	private readonly Set<int> _itemIds = new();
-	
+
 	protected RaidDropAnnounceData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_itemIds.clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "RaidDropAnnounceData.xml");
 		document.Elements("list").Elements("item").ForEach(parseElement);
-		
+
 		if (!_itemIds.isEmpty())
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _itemIds.size() + " raid drop announce data.");
@@ -38,7 +38,7 @@ public class RaidDropAnnounceData: DataReaderBase
 	private void parseElement(XElement element)
 	{
 		int id = element.GetAttributeValueAsInt32("id");
-		ItemTemplate item = ItemData.getInstance().getTemplate(id);
+		ItemTemplate? item = ItemData.getInstance().getTemplate(id);
 		if (item != null)
 		{
 			_itemIds.add(id);
@@ -53,12 +53,12 @@ public class RaidDropAnnounceData: DataReaderBase
 	{
 		return _itemIds.Contains(itemId);
 	}
-	
+
 	public static RaidDropAnnounceData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly RaidDropAnnounceData INSTANCE = new();

@@ -17,10 +17,10 @@ namespace L2Dn.GameServer.Data.Xml;
 public class PetDataTable: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PetDataTable));
-	
+
 	private readonly Map<int, PetData> _pets = new();
 	private readonly Map<int, string> _petNames = new();
-	
+
 	/**
 	 * Instantiates a new pet data table.
 	 */
@@ -28,16 +28,16 @@ public class PetDataTable: DataReaderBase
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_pets.Clear();
-		
+
 		LoadXmlDocuments(DataFileLocation.Data, "stats/pets").ForEach(t =>
 		{
 			t.Document.Elements("pets").Elements("pet").ForEach(x => loadElement(t.FilePath, x));
 		});
-		
+
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -55,7 +55,7 @@ public class PetDataTable: DataReaderBase
 		{
 			LOGGER.Warn(GetType().Name + ": Problem loading pet names! " + e);
 		}
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _pets.Count + " pets.");
 	}
 
@@ -149,7 +149,7 @@ public class PetDataTable: DataReaderBase
 	 * @param itemId
 	 * @return
 	 */
-	public PetData getPetDataByItemId(int itemId)
+	public PetData? getPetDataByItemId(int itemId)
 	{
 		foreach (PetData data in _pets.Values)
 		{
@@ -160,16 +160,16 @@ public class PetDataTable: DataReaderBase
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Gets the pet level data.
 	 * @param petId the pet Id.
 	 * @param petLevel the pet level.
 	 * @return the pet's parameters for the given Id and level.
 	 */
-	public PetLevelData getPetLevelData(int petId, int petLevel)
+	public PetLevelData? getPetLevelData(int petId, int petLevel)
 	{
-		PetData pd = getPetData(petId);
+		PetData? pd = getPetData(petId);
 		if (pd != null)
 		{
 			if (petLevel > pd.getMaxLevel())
@@ -180,7 +180,7 @@ public class PetDataTable: DataReaderBase
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Gets the pet data.
 	 * @param petId the pet Id.
@@ -195,7 +195,7 @@ public class PetDataTable: DataReaderBase
 
 		return petData;
 	}
-	
+
 	/**
 	 * Gets the pet min level.
 	 * @param petId the pet Id.
@@ -203,9 +203,9 @@ public class PetDataTable: DataReaderBase
 	 */
 	public int getPetMinLevel(int petId)
 	{
-		return _pets.get(petId).getMinLevel();
+		return _pets.get(petId)?.getMinLevel() ?? 0;
 	}
-	
+
 	/**
 	 * Gets the pet items by npc.
 	 * @param npcId the NPC ID to get its summoning item
@@ -213,9 +213,9 @@ public class PetDataTable: DataReaderBase
 	 */
 	public int getPetItemsByNpc(int npcId)
 	{
-		return _pets.get(npcId).getItemId();
+		return _pets.get(npcId)?.getItemId() ?? 0;
 	}
-	
+
 	/**
 	 * Checks if is mountable.
 	 * @param npcId the NPC Id to verify.
@@ -225,7 +225,7 @@ public class PetDataTable: DataReaderBase
 	{
 		return MountTypeUtil.findByNpcId(npcId) != MountType.NONE;
 	}
-	
+
 	public int getTypeByIndex(int index)
 	{
 		var first = _pets.FirstOrDefault(it => it.Value.getIndex() == index);
@@ -235,44 +235,44 @@ public class PetDataTable: DataReaderBase
 	public PetData getPetDataByEvolve(int itemId, EvolveLevel evolveLevel, int index)
 	{
 		var firstByItem = _pets.FirstOrDefault(it =>
-			(it.Value.getItemId() == itemId) && (it.Value.getIndex() == index) &&
-			(it.Value.getEvolveLevel() == evolveLevel)).Value;
+			it.Value.getItemId() == itemId && it.Value.getIndex() == index &&
+			it.Value.getEvolveLevel() == evolveLevel).Value;
 		return firstByItem;
 	}
 
 	public PetData getPetDataByEvolve(int itemId, EvolveLevel evolveLevel)
 	{
 		var firstByItem = _pets
-			.FirstOrDefault(it => (it.Value.getItemId() == itemId) && (it.Value.getEvolveLevel() == evolveLevel)).Value;
+			.FirstOrDefault(it => it.Value.getItemId() == itemId && it.Value.getEvolveLevel() == evolveLevel).Value;
 		return firstByItem;
 	}
 
 	public List<PetData> getPetDatasByEvolve(int itemId, EvolveLevel evolveLevel)
 	{
-		return _pets.Values.Where(petData => (petData.getItemId() == itemId) && (petData.getEvolveLevel() == evolveLevel)).ToList();
+		return _pets.Values.Where(petData => petData.getItemId() == itemId && petData.getEvolveLevel() == evolveLevel).ToList();
 	}
-	
+
 	public void setPetName(int objectId, string name)
 	{
 		_petNames.put(objectId, name);
 	}
-	
+
 	public string getPetName(int objectId)
 	{
 		return _petNames.GetValueOrDefault(objectId, "No name");
 	}
-	
+
 	public string getNameByItemObjectId(int objectId)
 	{
 		string name = getPetName(objectId);
-		SkillHolder type = PetTypeData.getInstance().getSkillByName(name);
+		SkillHolder? type = PetTypeData.getInstance().getSkillByName(name);
 		if (type == null)
 		{
 			return "";
 		}
 		return type.getSkillId() + ";" + type.getSkillLevel() + ";" + PetTypeData.getInstance().getIdByName(name);
 	}
-	
+
 	/**
 	 * Gets the single instance of PetDataTable.
 	 * @return this class unique instance.
@@ -281,7 +281,7 @@ public class PetDataTable: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly PetDataTable INSTANCE = new();

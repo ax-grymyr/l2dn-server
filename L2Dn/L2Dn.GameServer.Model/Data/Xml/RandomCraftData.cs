@@ -18,15 +18,15 @@ public class RandomCraftData: DataReaderBase
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(RandomCraftData));
 	private static readonly Map<int, RandomCraftExtractDataHolder> EXTRACT_DATA = new();
 	private static readonly Map<int, RandomCraftRewardDataHolder> REWARD_DATA = new();
-	
+
 	private RandomCraftRewardDataHolder[] _randomRewards = [];
 	private int _randomRewardIndex;
-	
+
 	protected RandomCraftData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		EXTRACT_DATA.Clear();
@@ -41,7 +41,7 @@ public class RandomCraftData: DataReaderBase
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + extractCount + " extraction data.");
 		}
-		
+
 		REWARD_DATA.Clear();
 
 		{
@@ -50,7 +50,7 @@ public class RandomCraftData: DataReaderBase
 			XDocument document = XDocument.Load(stream);
 			document.Elements("list").Elements("rewards").Elements("item").ForEach(parseRewardElement);
 		}
-		
+
 		int rewardCount = REWARD_DATA.Count;
 		if (rewardCount > 4)
 		{
@@ -61,7 +61,7 @@ public class RandomCraftData: DataReaderBase
 			LOGGER.Info(GetType().Name + ": Random craft rewards should be more than " + rewardCount + ".");
 			REWARD_DATA.Clear();
 		}
-		
+
 		randomizeRewards();
 	}
 
@@ -76,7 +76,7 @@ public class RandomCraftData: DataReaderBase
 	private void parseRewardElement(XElement element)
 	{
 		int itemId = element.GetAttributeValueAsInt32("id");
-		ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+		ItemTemplate? item = ItemData.getInstance().getTemplate(itemId);
 		if (item == null)
 		{
 			LOGGER.Warn(GetType().Name + " unexisting item reward: " + itemId);
@@ -97,9 +97,9 @@ public class RandomCraftData: DataReaderBase
 	{
 		return REWARD_DATA.Count == 0;
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
-	public RandomCraftRewardItemHolder getNewReward()
+
+	[MethodImpl(MethodImplOptions.Synchronized)]
+	public RandomCraftRewardItemHolder? getNewReward()
 	{
 		double random = Rnd.get(100d);
 		while (_randomRewards.Length > 0)
@@ -108,7 +108,7 @@ public class RandomCraftData: DataReaderBase
 				randomizeRewards();
 
 			_randomRewardIndex++;
-			
+
 			RandomCraftRewardDataHolder reward = _randomRewards[_randomRewardIndex];
 			if (random < reward.getChance())
 			{
@@ -117,49 +117,49 @@ public class RandomCraftData: DataReaderBase
 		}
 		return null;
 	}
-	
+
 	private void randomizeRewards()
 	{
 		_randomRewardIndex = -1;
 		_randomRewards = REWARD_DATA.Values.ToArray();
 		Random.Shared.Shuffle(_randomRewards);
 	}
-	
+
 	public bool isAnnounce(int id)
 	{
-		RandomCraftRewardDataHolder holder = REWARD_DATA.get(id);
+		RandomCraftRewardDataHolder? holder = REWARD_DATA.get(id);
 		if (holder == null)
 		{
 			return false;
 		}
 		return holder.isAnnounce();
 	}
-	
+
 	public long getPoints(int id)
 	{
-		RandomCraftExtractDataHolder holder = EXTRACT_DATA.get(id);
+		RandomCraftExtractDataHolder? holder = EXTRACT_DATA.get(id);
 		if (holder == null)
 		{
 			return 0;
 		}
 		return holder.getPoints();
 	}
-	
+
 	public long getFee(int id)
 	{
-		RandomCraftExtractDataHolder holder = EXTRACT_DATA.get(id);
+		RandomCraftExtractDataHolder? holder = EXTRACT_DATA.get(id);
 		if (holder == null)
 		{
 			return 0;
 		}
 		return holder.getFee();
 	}
-	
+
 	public static RandomCraftData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly RandomCraftData INSTANCE = new();

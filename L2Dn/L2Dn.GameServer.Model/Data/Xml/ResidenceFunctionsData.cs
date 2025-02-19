@@ -18,20 +18,20 @@ public class ResidenceFunctionsData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ResidenceFunctionsData));
 	private readonly Map<int, List<ResidenceFunctionTemplate>> _functions = new();
-	
+
 	protected ResidenceFunctionsData()
 	{
 		load();
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
+
+	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
 	{
 		_functions.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ResidenceFunctions.xml");
 		document.Elements("list").Elements("function").ForEach(parseElement);
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _functions.Count + " functions.");
 	}
 
@@ -59,7 +59,7 @@ public class ResidenceFunctionsData: DataReaderBase
 	 * @param level
 	 * @return function template by id and level, null if not available
 	 */
-	public ResidenceFunctionTemplate getFunction(int id, int level)
+	public ResidenceFunctionTemplate? getFunction(int id, int level)
 	{
 		if (_functions.TryGetValue(id, out List<ResidenceFunctionTemplate>? functions))
 		{
@@ -73,21 +73,21 @@ public class ResidenceFunctionsData: DataReaderBase
 		}
 		return null;
 	}
-	
+
 	/**
 	 * @param id
 	 * @return function template by id, null if not available
 	 */
-	public List<ResidenceFunctionTemplate> getFunctions(int id)
+	public List<ResidenceFunctionTemplate>? getFunctions(int id)
 	{
 		return _functions.get(id);
 	}
-	
+
 	public static ResidenceFunctionsData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ResidenceFunctionsData INSTANCE = new();

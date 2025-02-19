@@ -15,22 +15,22 @@ namespace L2Dn.GameServer.Data.Xml;
 public class LimitShopClanData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(LimitShopClanData));
-	
+
 	private readonly List<LimitShopProductHolder> _products = new();
-	
+
 	protected LimitShopClanData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_products.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "LimitShopClan.xml");
 		document.Elements("list").Where(l => l.Attribute("enabled").GetBoolean(false)).Elements("product")
 			.ForEach(parseElement);
-		
+
 		if (_products.Count != 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _products.Count + " items.");
@@ -154,7 +154,7 @@ public class LimitShopClanData: DataReaderBase
 			false, accountDailyLimit, accountMontlyLimit, accountBuyLimit));
 	}
 
-	public LimitShopProductHolder getProduct(int id)
+	public LimitShopProductHolder? getProduct(int id)
 	{
 		foreach (LimitShopProductHolder product in _products)
 		{
@@ -165,17 +165,17 @@ public class LimitShopClanData: DataReaderBase
 		}
 		return null;
 	}
-	
+
 	public List<LimitShopProductHolder> getProducts()
 	{
 		return _products;
 	}
-	
+
 	public static LimitShopClanData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly LimitShopClanData INSTANCE = new();

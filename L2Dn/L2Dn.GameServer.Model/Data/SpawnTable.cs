@@ -335,7 +335,7 @@ public class SpawnTable
 
 	private void notifyRemoved(Spawn spawn)
 	{
-		if ((spawn != null) && (spawn.getLastSpawn() != null) && (spawn.getNpcSpawnTemplate() != null))
+		if (spawn != null && spawn.getLastSpawn() != null && spawn.getNpcSpawnTemplate() != null)
 		{
 			spawn.getNpcSpawnTemplate().notifyDespawnNpc(spawn.getLastSpawn());
 		}

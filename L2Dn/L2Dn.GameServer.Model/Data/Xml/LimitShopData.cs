@@ -14,22 +14,22 @@ namespace L2Dn.GameServer.Data.Xml;
 public class LimitShopData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(LimitShopData));
-	
+
 	private readonly List<LimitShopProductHolder> _products = new();
-	
+
 	protected LimitShopData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_products.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "LimitShop.xml");
 		document.Elements("list").Where(l => l.Attribute("enabled").GetBoolean(false)).Elements("product")
 			.ForEach(parseElement);
-		
+
 		if (_products.Count != 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _products.Count + " items.");
@@ -77,7 +77,7 @@ public class LimitShopData: DataReaderBase
 
 			if (ingredientId > 0)
 			{
-				ItemTemplate item = ItemData.getInstance().getTemplate(ingredientId);
+				ItemTemplate? item = ItemData.getInstance().getTemplate(ingredientId);
 				if (item == null)
 				{
 					LOGGER.Error(GetType().Name + ": Item template null for itemId: " + productionId + " productId: " +
@@ -157,7 +157,7 @@ public class LimitShopData: DataReaderBase
 			accountMontlyLimit = el.Attribute("accountMontlyLimit").GetInt32(0);
 			accountBuyLimit = el.Attribute("accountBuyLimit").GetInt32(0);
 
-			ItemTemplate item = ItemData.getInstance().getTemplate(productionId);
+			ItemTemplate? item = ItemData.getInstance().getTemplate(productionId);
 			if (item == null)
 				LOGGER.Error(GetType().Name + ": Item template null for itemId: " + productionId + " productId: " + id);
 		});
@@ -168,7 +168,7 @@ public class LimitShopData: DataReaderBase
 			accountMontlyLimit, accountBuyLimit));
 	}
 
-	public LimitShopProductHolder getProduct(int id)
+	public LimitShopProductHolder? getProduct(int id)
 	{
 		foreach (LimitShopProductHolder product in _products)
 		{
@@ -179,17 +179,17 @@ public class LimitShopData: DataReaderBase
 		}
 		return null;
 	}
-	
+
 	public List<LimitShopProductHolder> getProducts()
 	{
 		return _products;
 	}
-	
+
 	public static LimitShopData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly LimitShopData INSTANCE = new();

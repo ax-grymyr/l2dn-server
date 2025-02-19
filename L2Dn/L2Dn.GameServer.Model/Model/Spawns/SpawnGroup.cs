@@ -89,7 +89,7 @@ public class SpawnGroup: ITerritorized, IParameterized<StatSet>
 		spawnAll(null);
 	}
 
-	public void spawnAll(Instance instance)
+	public void spawnAll(Instance? instance)
 	{
 		_spawns.ForEach(template => template.spawn(instance));
 	}

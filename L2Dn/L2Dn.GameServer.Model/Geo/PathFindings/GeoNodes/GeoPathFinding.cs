@@ -173,22 +173,23 @@ public class GeoPathFinding: PathFinding
 	}
 
 	private GeoNode[]? readNeighbors(GeoNode n)
-	{
-		if (n.getLoc() == null)
+    {
+        GeoNodeLoc? loc = n.getLoc();
+		if (loc == null)
 		{
 			return null;
 		}
 
 		int idx = n.getNeighborsIdx();
 
-		int nodeX = n.getLoc().getNodeX();
-		int nodeY = n.getLoc().getNodeY();
+		int nodeX = loc.getNodeX();
+		int nodeY = loc.getNodeY();
 
 		short regoffset = getRegionOffset(getRegionX(nodeX), getRegionY(nodeY));
-		byte[]? pn = PATH_NODES.get(regoffset);
+		byte[] pn = PATH_NODES[regoffset];
 
 		List<GeoNode> neighbors = new();
-		GeoNode newNode;
+		GeoNode? newNode;
 		short newNodeX;
 		short newNodeY;
 
@@ -303,13 +304,12 @@ public class GeoPathFinding: PathFinding
 	{
 		short regoffset = getRegionOffset(getRegionX(nodeX), getRegionY(nodeY));
 		if (!pathNodesExist(regoffset))
-		{
 			return null;
-		}
-		short nbx = getNodeBlock(nodeX);
+
+        short nbx = getNodeBlock(nodeX);
 		short nby = getNodeBlock(nodeY);
-		int idx = PATH_NODE_INDEX.get(regoffset)[(nby << 8) + nbx];
-		byte[] pn = PATH_NODES.get(regoffset);
+		int idx = PATH_NODE_INDEX[regoffset][(nby << 8) + nbx];
+		byte[] pn = PATH_NODES[regoffset];
 		// Reading.
 		byte nodes = pn[idx];
 		idx += layer * 10 + 1; // byte + layer*10byte
@@ -328,13 +328,12 @@ public class GeoPathFinding: PathFinding
 		short nodeY = getNodePos(gy);
 		short regoffset = getRegionOffset(getRegionX(nodeX), getRegionY(nodeY));
 		if (!pathNodesExist(regoffset))
-		{
 			return null;
-		}
-		short nbx = getNodeBlock(nodeX);
+
+        short nbx = getNodeBlock(nodeX);
 		short nby = getNodeBlock(nodeY);
-		int idx = PATH_NODE_INDEX.get(regoffset)[(nby << 8) + nbx];
-		byte[] pn = PATH_NODES.get(regoffset);
+		int idx = PATH_NODE_INDEX[regoffset][(nby << 8) + nbx];
+		byte[] pn = PATH_NODES[regoffset];
 		// Reading.
 		byte nodes = pn[idx++];
 		int idx2 = 0; // Create index to nearlest node by z.

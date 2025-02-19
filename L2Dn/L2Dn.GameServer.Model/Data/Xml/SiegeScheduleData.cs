@@ -14,15 +14,15 @@ namespace L2Dn.GameServer.Data.Xml;
 public class SiegeScheduleData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SiegeScheduleData));
-	
+
 	private readonly Map<int, SiegeScheduleDate> _scheduleData = new();
-	
+
 	protected SiegeScheduleData()
 	{
 		load();
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
+
+	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
 	{
 		XDocument document = LoadXmlDocument(DataFileLocation.Config, "SiegeSchedule.xml");
@@ -40,17 +40,17 @@ public class SiegeScheduleData: DataReaderBase
 		bool siegeEnabled = element.Attribute("siegeEnabled").GetBoolean(false);
 		_scheduleData.put(castleId, new SiegeScheduleDate(day, hour, maxConcurrent, siegeEnabled));
 	}
-	
-	public SiegeScheduleDate getScheduleDateForCastleId(int castleId)
+
+	public SiegeScheduleDate? getScheduleDateForCastleId(int castleId)
 	{
 		return _scheduleData.get(castleId);
 	}
-	
+
 	public static SiegeScheduleData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly SiegeScheduleData INSTANCE = new();

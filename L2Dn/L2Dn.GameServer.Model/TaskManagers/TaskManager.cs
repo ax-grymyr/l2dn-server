@@ -60,7 +60,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 				LOGGER.Error(GetType().Name + ": Cannot updated the Global Task " + id + ": " + e);
 			}
 
-			if ((type == TaskTypes.TYPE_SHEDULED) || (type == TaskTypes.TYPE_TIME))
+			if (type == TaskTypes.TYPE_SHEDULED || type == TaskTypes.TYPE_TIME)
 			{
 				stopTask();
 			}
@@ -68,7 +68,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 
 		public override bool Equals(object? obj)
 		{
-			return (this == obj) || ((obj is ExecutedTask) && (id == ((ExecutedTask) obj).id));
+			return this == obj || (obj is ExecutedTask && id == ((ExecutedTask) obj).id);
 		}
 
 		public override int GetHashCode()
@@ -245,7 +245,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 
 				delay = min - DateTime.Now;
 
-				if (check > min || (delay < TimeSpan.Zero))
+				if (check > min || delay < TimeSpan.Zero)
 				{
 					delay += interval;
 				}

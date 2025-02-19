@@ -60,11 +60,11 @@ public class HitConditionBonusData: DataReaderBase
 	{
 		double mod = 100;
 		// Get high or low bonus
-		if ((attacker.getZ() - target.getZ()) > 50)
+		if (attacker.getZ() - target.getZ() > 50)
 		{
 			mod += highBonus;
 		}
-		else if ((attacker.getZ() - target.getZ()) < -50)
+		else if (attacker.getZ() - target.getZ() < -50)
 		{
 			mod += lowBonus;
 		}

@@ -9,9 +9,9 @@ public class PetSkillAcquireHolder
 	private readonly int _skillLevel;
 	private readonly int _reqLvl;
 	private readonly int _evolve;
-	private readonly ItemHolder _item;
+	private readonly ItemHolder? _item;
 
-	public PetSkillAcquireHolder(int skillId, int skillLevel, int reqLvl, int evolve, ItemHolder item)
+	public PetSkillAcquireHolder(int skillId, int skillLevel, int reqLvl, int evolve, ItemHolder? item)
 	{
 		_skillId = skillId;
 		_skillLevel = skillLevel;
@@ -40,7 +40,7 @@ public class PetSkillAcquireHolder
 		return _evolve;
 	}
 
-	public ItemHolder getItem()
+	public ItemHolder? getItem()
 	{
 		return _item;
 	}

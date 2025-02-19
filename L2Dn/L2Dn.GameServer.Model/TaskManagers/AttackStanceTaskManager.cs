@@ -42,7 +42,7 @@ public class AttackStanceTaskManager: Runnable
 				List<Creature> toRemove = new List<Creature>();
 				foreach (var entry in CREATURE_ATTACK_STANCES)
 				{
-					if ((currentTime - entry.Value) > COMBAT_TIME)
+					if (currentTime - entry.Value > COMBAT_TIME)
 					{
 						Creature creature = entry.Key;
 						if (creature != null)
@@ -53,7 +53,7 @@ public class AttackStanceTaskManager: Runnable
                                 creature.getActingPlayer() is { } actingPlayer)
                             {
                                 actingPlayer.clearDamageTaken();
-                                Summon pet = creature.getPet();
+                                Summon? pet = creature.getPet();
                                 if (pet != null)
                                 {
                                     pet.broadcastPacket(new AutoAttackStopPacket(pet.ObjectId));

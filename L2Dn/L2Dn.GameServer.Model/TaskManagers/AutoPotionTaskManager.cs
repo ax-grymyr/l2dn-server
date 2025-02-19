@@ -43,11 +43,11 @@ public class AutoPotionTaskManager: Runnable
                 bool success = false;
 				if (Config.AUTO_HP_ENABLED)
 				{
-					bool restoreHP = ((player.getStatus().getCurrentHp() / player.getMaxHp()) * 100) < Config.AUTO_HP_PERCENTAGE;
+					bool restoreHP = player.getStatus().getCurrentHp() / player.getMaxHp() * 100 < Config.AUTO_HP_PERCENTAGE;
 					foreach (int itemId in Config.AUTO_HP_ITEM_IDS)
 					{
 						Item? hpPotion = player.getInventory().getItemByItemId(itemId);
-						if ((hpPotion != null) && (hpPotion.getCount() > 0))
+						if (hpPotion != null && hpPotion.getCount() > 0)
 						{
 							success = true;
 							if (restoreHP)
@@ -61,11 +61,11 @@ public class AutoPotionTaskManager: Runnable
 				}
 				if (Config.AUTO_CP_ENABLED)
 				{
-					bool restoreCP = ((player.getStatus().getCurrentCp() / player.getMaxCp()) * 100) < Config.AUTO_CP_PERCENTAGE;
+					bool restoreCP = player.getStatus().getCurrentCp() / player.getMaxCp() * 100 < Config.AUTO_CP_PERCENTAGE;
 					foreach (int itemId in Config.AUTO_CP_ITEM_IDS)
 					{
 						Item? cpPotion = player.getInventory().getItemByItemId(itemId);
-						if ((cpPotion != null) && (cpPotion.getCount() > 0))
+						if (cpPotion != null && cpPotion.getCount() > 0)
 						{
 							success = true;
 							if (restoreCP)
@@ -79,11 +79,11 @@ public class AutoPotionTaskManager: Runnable
 				}
 				if (Config.AUTO_MP_ENABLED)
 				{
-					bool restoreMP = ((player.getStatus().getCurrentMp() / player.getMaxMp()) * 100) < Config.AUTO_MP_PERCENTAGE;
+					bool restoreMP = player.getStatus().getCurrentMp() / player.getMaxMp() * 100 < Config.AUTO_MP_PERCENTAGE;
 					foreach (int itemId in Config.AUTO_MP_ITEM_IDS)
 					{
 						Item? mpPotion = player.getInventory().getItemByItemId(itemId);
-						if ((mpPotion != null) && (mpPotion.getCount() > 0))
+						if (mpPotion != null && mpPotion.getCount() > 0)
 						{
 							success = true;
 							if (restoreMP)

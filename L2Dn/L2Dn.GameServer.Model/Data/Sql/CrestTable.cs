@@ -65,7 +65,7 @@ public class CrestTable
 
 				// delete all unused crests except the last one we dont want to reuse
 				// a crest id because client will display wrong crest if its reused
-				if (!crestsInUse.Contains(id) && (id != (_nextId.get() - 1)))
+				if (!crestsInUse.Contains(id) && id != _nextId.get() - 1)
 				{
 					removeCrest(id);
 					continue;
@@ -93,7 +93,7 @@ public class CrestTable
 		foreach (Clan clan in ClanTable.getInstance().getClans())
 		{
             int? crestId = clan.getCrestId();
-			if ((crestId != null) && (getCrest(crestId.Value) == null))
+			if (crestId != null && getCrest(crestId.Value) == null)
 			{
 				LOGGER.Info("Removing non-existent crest for clan " + clan.getName() + " [" + clan.getId() + "], crestId:" + clan.getCrestId());
 				clan.setCrestId(0);
@@ -101,7 +101,7 @@ public class CrestTable
 			}
 
             int? crestLargeId = clan.getCrestLargeId();
-			if ((crestLargeId != null) && (getCrest(crestLargeId.Value) == null))
+			if (crestLargeId != null && getCrest(crestLargeId.Value) == null)
 			{
 				LOGGER.Info("Removing non-existent large crest for clan " + clan.getName() + " [" + clan.getId() + "], crestLargeId:" + clan.getCrestLargeId());
 				clan.setCrestLargeId(0);
@@ -109,7 +109,7 @@ public class CrestTable
 			}
 
             int? allyCrestId = clan.getAllyCrestId();
-			if ((allyCrestId != null) && (getCrest(allyCrestId.Value) == null))
+			if (allyCrestId != null && getCrest(allyCrestId.Value) == null)
 			{
 				LOGGER.Info("Removing non-existent ally crest for clan " + clan.getName() + " [" + clan.getId() + "], allyCrestId:" + clan.getAllyCrestId());
 				clan.setAllyCrestId(0);
@@ -168,7 +168,7 @@ public class CrestTable
 
 		// avoid removing last crest id we dont want to lose index...
 		// because client will display wrong crest if its reused
-		if (crestId == (_nextId.get() - 1))
+		if (crestId == _nextId.get() - 1)
 		{
 			return;
 		}

@@ -13,21 +13,21 @@ namespace L2Dn.GameServer.Data.Xml;
 public class PetAcquireList: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PetAcquireList));
-	
+
 	private readonly Map<int, List<PetSkillAcquireHolder>> _skills = new();
-	
+
 	protected PetAcquireList()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_skills.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PetAcquireList.xml");
 		document.Elements("list").Elements("pet").ForEach(parseElement);
-		
+
 		if (_skills.Count != 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _skills.Count + " pet skills.");
@@ -60,16 +60,16 @@ public class PetAcquireList: DataReaderBase
 		_skills.put(type, list);
 	}
 
-	public List<PetSkillAcquireHolder> getSkills(int type)
+	public List<PetSkillAcquireHolder>? getSkills(int type)
 	{
 		return _skills.get(type);
 	}
-	
+
 	public Map<int, List<PetSkillAcquireHolder>> getAllSkills()
 	{
 		return _skills;
 	}
-	
+
 	public int getSpecialSkillByType(int petType)
 	{
 		switch (petType)
@@ -104,12 +104,12 @@ public class PetAcquireList: DataReaderBase
 			}
 		}
 	}
-	
+
 	public static PetAcquireList getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly PetAcquireList INSTANCE = new();

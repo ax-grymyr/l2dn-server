@@ -97,7 +97,7 @@ public class TaskBirthday: Task
 	 */
 	private string getNum(int num)
 	{
-		return (num <= 9) ? "0" + num : num.ToString();
+		return num <= 9 ? "0" + num : num.ToString();
 	}
 	
 	public override void initializate()

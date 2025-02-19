@@ -74,7 +74,7 @@ public class CellPathFinding: PathFinding
 			return null;
 		}
 		int gtz = GeoEngine.getInstance().getHeight(targetLocation);
-		CellNodeBuffer buffer = alloc(64 + (2 * Math.Max(Math.Abs(gx - gtx), Math.Abs(gy - gty))), playable);
+		CellNodeBuffer? buffer = alloc(64 + (2 * Math.Max(Math.Abs(gx - gtx), Math.Abs(gy - gty))), playable);
 		if (buffer == null)
 		{
 			return null;
@@ -99,7 +99,7 @@ public class CellPathFinding: PathFinding
 			}
 		}
 
-		List<AbstractNodeLoc> path = null;
+		List<AbstractNodeLoc>? path = null;
 		try
 		{
 			CellNode result = buffer.findPath(gx, gy, gz, gtx, gty, gtz);
@@ -206,13 +206,13 @@ public class CellPathFinding: PathFinding
 		List<AbstractNodeLoc> path = new();
 		int previousDirectionX = int.MinValue;
 		int previousDirectionY = int.MinValue;
-		int directionX;
-		int directionY;
 
-		AbstractNode<NodeLoc> tempNode = node;
+        AbstractNode<NodeLoc> tempNode = node;
 		while (tempNode.getParent() != null)
 		{
-			if (!Config.ADVANCED_DIAGONAL_STRATEGY && (tempNode.getParent().getParent() != null))
+            int directionX;
+            int directionY;
+            if (!Config.ADVANCED_DIAGONAL_STRATEGY && (tempNode.getParent().getParent() != null))
 			{
 				int tmpX = tempNode.getLoc().getNodeX() - tempNode.getParent().getParent().getLoc().getNodeX();
 				int tmpY = tempNode.getLoc().getNodeY() - tempNode.getParent().getParent().getLoc().getNodeY();
@@ -249,9 +249,9 @@ public class CellPathFinding: PathFinding
 		return path;
 	}
 
-	private CellNodeBuffer alloc(int size, bool playable)
+	private CellNodeBuffer? alloc(int size, bool playable)
 	{
-		CellNodeBuffer current = null;
+		CellNodeBuffer? current = null;
 		foreach (BufferInfo i in _allBuffers)
 		{
 			if (i.mapSize >= size)

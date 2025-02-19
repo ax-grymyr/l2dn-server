@@ -26,7 +26,7 @@ public class ItemsAutoDestroyTaskManager: Runnable
 		List<Item> toRemove = new List<Item>();
 		foreach (Item itemInstance in ITEMS)
 		{
-			if ((itemInstance.getDropTime() is null) || (itemInstance.getItemLocation() != ItemLocation.VOID))
+			if (itemInstance.getDropTime() is null || itemInstance.getItemLocation() != ItemLocation.VOID)
 			{
 				toRemove.Add(itemInstance);
 			}
@@ -44,12 +44,12 @@ public class ItemsAutoDestroyTaskManager: Runnable
 				}
 				else
 				{
-					autoDestroyTime = ((Config.AUTODESTROY_ITEM_AFTER == 0)
-						? TimeSpan.FromMilliseconds(3600000)
-						: TimeSpan.FromMilliseconds(Config.AUTODESTROY_ITEM_AFTER * 1000));
+					autoDestroyTime = Config.AUTODESTROY_ITEM_AFTER == 0
+                        ? TimeSpan.FromMilliseconds(3600000)
+                        : TimeSpan.FromMilliseconds(Config.AUTODESTROY_ITEM_AFTER * 1000);
 				}
 
-				if ((currentTime - itemInstance.getDropTime()) > autoDestroyTime)
+				if (currentTime - itemInstance.getDropTime() > autoDestroyTime)
 				{
 					itemInstance.decayMe();
 					if (Config.SAVE_DROPPED_ITEM)

@@ -39,7 +39,7 @@ public class ItemManaTaskManager: Runnable
 					toRemove.Add(item);
 					
 					Player player = item.getActingPlayer();
-					if ((player == null) || player.isInOfflineMode())
+					if (player == null || player.isInOfflineMode())
 					{
 						continue;
 					}

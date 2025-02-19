@@ -16,12 +16,12 @@ namespace L2Dn.GameServer.Utilities;
 public class OfflineTradeUtil
 {
 	protected static readonly Logger LOGGER_ACCOUNTING = LogManager.GetLogger("accounting");
-	
+
 	private OfflineTradeUtil()
 	{
 		// utility class
 	}
-	
+
 	/**
 	 * Check whether player is able to enter offline mode.
 	 * @param player the player to be check.
@@ -33,7 +33,7 @@ public class OfflineTradeUtil
 		{
 			return false;
 		}
-		
+
 		bool canSetShop = false;
 		switch (player.getPrivateStoreType())
 		{
@@ -51,22 +51,22 @@ public class OfflineTradeUtil
 				break;
 			}
 		}
-		
+
 		if (Config.OFFLINE_MODE_IN_PEACE_ZONE && !player.isInsideZone(ZoneId.PEACE))
 		{
 			canSetShop = false;
 		}
-		
+
 		// Check whether client is null or player is already in offline mode.
 		GameSession? client = player.getClient();
 		if ((client == null) || client.IsDetached)
 		{
 			return false;
 		}
-		
+
 		return canSetShop;
 	}
-	
+
 	/**
 	 * Manages the disconnection process of offline traders.
 	 * @param player
@@ -78,14 +78,14 @@ public class OfflineTradeUtil
 		{
 			return false;
 		}
-		
+
 		GameSession? client = player.getClient();
 		Connection? connection = client?.Connection;
 		if (client == null || connection == null)
 			return false;
-		
+
 		World.OFFLINE_TRADE_COUNT++;
-		
+
 		connection.Send(ServerClosePacket.STATIC_PACKET, SendPacketOptions.CloseAfterSending);
 		if (!Config.DUALBOX_COUNT_OFFLINE_TRADERS)
 		{
@@ -93,56 +93,56 @@ public class OfflineTradeUtil
 		}
 
 		client.IsDetached = true;
-		
+
 		player.leaveParty();
 		OlympiadManager.getInstance().unRegisterNoble(player);
-		
+
 		// If the Player has Pet, unsummon it
-		Summon pet = player.getPet();
+		Summon? pet = player.getPet();
 		if (pet != null)
 		{
 			pet.setRestoreSummon(true);
 			pet.unSummon(player);
 			pet = player.getPet();
-			
+
 			// Dead pet wasn't unsummoned, broadcast npcinfo changes (pet will be without owner name - means owner offline)
 			if (pet != null)
 			{
 				pet.broadcastNpcInfo(0);
 			}
 		}
-		
+
 		player.getServitors().Values.ForEach(s =>
 		{
 			s.setRestoreSummon(true);
 			s.unSummon(player);
 		});
-		
+
 		if (Config.OFFLINE_SET_NAME_COLOR)
 		{
 			player.getAppearance().setNameColor(Config.OFFLINE_NAME_COLOR);
 			player.broadcastUserInfo();
 		}
-		
+
 		if (player.getOfflineStartTime() == null)
 		{
 			player.setOfflineStartTime(DateTime.UtcNow);
 		}
-		
+
 		// Store trade on exit, if realtime saving is enabled.
 		if (Config.STORE_OFFLINE_TRADE_IN_REALTIME)
 		{
 			OfflineTraderTable.getInstance().onTransaction(player, false, true);
 		}
-		
+
 		player.storeMe();
 		LOGGER_ACCOUNTING.Info("Entering offline mode, " + client);
-		
+
 		if (!Config.OFFLINE_ABNORMAL_EFFECTS.IsDefaultOrEmpty)
 		{
 			player.getEffectList().startAbnormalVisualEffect(Config.OFFLINE_ABNORMAL_EFFECTS.GetRandomElement());
 		}
-		
+
 		return true;
 	}
 }

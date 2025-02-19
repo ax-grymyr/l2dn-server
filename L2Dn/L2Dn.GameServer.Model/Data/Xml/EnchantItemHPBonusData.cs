@@ -61,7 +61,7 @@ public class EnchantItemHPBonusData: DataReaderBase
 	public int getHPBonus(Item item)
 	{
 		List<int>? values = _armorHPBonuses.get(item.getTemplate().getCrystalTypePlus());
-		if (values is null || values.Count == 0 || (item.getOlyEnchantLevel() <= 0))
+		if (values is null || values.Count == 0 || item.getOlyEnchantLevel() <= 0)
 		{
 			return 0;
 		}

@@ -1746,12 +1746,12 @@ public class Item: WorldObject
 		}
 	}
 
-	public void setItemLootShedule(ScheduledFuture sf)
+	public void setItemLootShedule(ScheduledFuture? sf)
 	{
 		_itemLootShedule = sf;
 	}
 
-	public ScheduledFuture getItemLootShedule()
+	public ScheduledFuture? getItemLootShedule()
 	{
 		return _itemLootShedule;
 	}

@@ -37,7 +37,7 @@ public class MultisellData: DataReaderBase
 			files = files.Concat(LoadXmlDocuments<XmlMultiSellList>(DataFileLocation.Data, "multisell/custom"));
 
 		_multiSellLists = files.Select(x => loadFile(x.FilePath, x.Document)).Where(l => l != null)
-			.ToFrozenDictionary(x => x.getId());
+			.ToFrozenDictionary(x => x!.getId())!;
 
 		_logger.Info(GetType().Name + ": Loaded " + _multiSellLists.Count + " multisell lists.");
 	}
@@ -48,13 +48,13 @@ public class MultisellData: DataReaderBase
 		if (!int.TryParse(fileName, CultureInfo.InvariantCulture, out int listId))
 			return null;
 
-		EnchantItemGroup magicWeaponGroup = EnchantItemGroupsData.getInstance().getItemGroup("MAGE_WEAPON_GROUP");
+		EnchantItemGroup? magicWeaponGroup = EnchantItemGroupsData.getInstance().getItemGroup("MAGE_WEAPON_GROUP");
 		int magicWeaponGroupMax = magicWeaponGroup != null ? magicWeaponGroup.getMaximumEnchant() : -2;
-		EnchantItemGroup weapongroup = EnchantItemGroupsData.getInstance().getItemGroup("FIGHTER_WEAPON_GROUP");
+		EnchantItemGroup? weapongroup = EnchantItemGroupsData.getInstance().getItemGroup("FIGHTER_WEAPON_GROUP");
 		int weaponGroupMax = weapongroup != null ? weapongroup.getMaximumEnchant() : -2;
-		EnchantItemGroup fullArmorGroup = EnchantItemGroupsData.getInstance().getItemGroup("FULL_ARMOR_GROUP");
+		EnchantItemGroup? fullArmorGroup = EnchantItemGroupsData.getInstance().getItemGroup("FULL_ARMOR_GROUP");
 		int fullArmorGroupMax = fullArmorGroup != null ? fullArmorGroup.getMaximumEnchant() : -2;
-		EnchantItemGroup armorGroup = EnchantItemGroupsData.getInstance().getItemGroup("ARMOR_GROUP");
+		EnchantItemGroup? armorGroup = EnchantItemGroupsData.getInstance().getItemGroup("ARMOR_GROUP");
 		int armorGroupMax = armorGroup != null ? armorGroup.getMaximumEnchant() : -2;
 
 		try
@@ -233,22 +233,23 @@ public class MultisellData: DataReaderBase
 			return;
 		}
 
-		if (!template.isNpcAllowed(-1) && (npc == null || !template.isNpcAllowed(npc.getId())))
-		{
-			if (player.isGM())
-			{
-				player.sendMessage("Multisell " + listId +
-				                   " is restricted. Under current conditions cannot be used. Only GMs are allowed to use it.");
-			}
-			else
-			{
-				_logger.Warn(GetType().Name + ": " + player + " attempted to open multisell " + listId + " from npc " +
-				            npc + " which is not allowed!");
-				return;
-			}
-		}
+        if (!template.isNpcAllowed(-1) && (npc == null || !template.isNpcAllowed(npc.getId())))
+        {
+            if (player.isGM())
+            {
+                player.sendMessage("Multisell " + listId +
+                    " is restricted. Under current conditions cannot be used. Only GMs are allowed to use it.");
+            }
+            else
+            {
+                _logger.Warn(GetType().Name + ": " + player + " attempted to open multisell " + listId + " from npc " +
+                    npc + " which is not allowed!");
 
-		// Check if ingredient/product multipliers are set, if not, set them to the template value.
+                return;
+            }
+        }
+
+        // Check if ingredient/product multipliers are set, if not, set them to the template value.
 		double ingredientMultiplier = ingredientMultiplierValue ?? template.getIngredientMultiplier();
 		double productMultiplier = productMultiplierValue ?? template.getProductMultiplier();
 		PreparedMultisellListHolder list = new(template, inventoryOnly, player.getInventory(), npc,

@@ -15,18 +15,18 @@ namespace L2Dn.GameServer.Data.Xml;
 public class SkillEnchantData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SkillEnchantData));
-	
+
 	private readonly Map<int, EnchantStarHolder> _enchantStarMap = new();
 	private readonly Map<int, SkillEnchantHolder> _skillEnchantMap = new();
 	private readonly Map<int, Map<int, EnchantItemExpHolder>> _enchantItemMap = new();
-	
+
 	private readonly Map<int, int> _chanceEnchantMap = new();
-	
+
 	public SkillEnchantData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "SkillEnchantData.xml");
@@ -79,43 +79,43 @@ public class SkillEnchantData: DataReaderBase
 
 		_enchantItemMap.put(level, itemMap);
 	}
-	
-	public EnchantStarHolder getEnchantStar(int level)
+
+	public EnchantStarHolder? getEnchantStar(int level)
 	{
 		return _enchantStarMap.get(level);
 	}
-	
-	public SkillEnchantHolder getSkillEnchant(int id)
+
+	public SkillEnchantHolder? getSkillEnchant(int id)
 	{
 		return _skillEnchantMap.get(id);
 	}
-	
-	public EnchantItemExpHolder getEnchantItem(int level, int id)
+
+	public EnchantItemExpHolder? getEnchantItem(int level, int id)
 	{
-		return _enchantItemMap.get(level).get(id);
+		return _enchantItemMap.get(level)?.get(id);
 	}
-	
-	public Map<int, EnchantItemExpHolder> getEnchantItem(int level)
+
+	public Map<int, EnchantItemExpHolder>? getEnchantItem(int level)
 	{
 		return _enchantItemMap.get(level);
 	}
-	
+
 	public int getChanceEnchantMap(Skill skill)
 	{
-		int enchantLevel = skill.getSubLevel() == 0 ? 1 : (skill.getSubLevel() + 1) - 1000;
-		if (enchantLevel > getSkillEnchant(skill.getId()).getMaxEnchantLevel())
+		int enchantLevel = skill.getSubLevel() == 0 ? 1 : skill.getSubLevel() + 1 - 1000;
+		if (enchantLevel > getSkillEnchant(skill.getId())?.getMaxEnchantLevel())
 		{
 			return 0;
 		}
-		
+
 		return _chanceEnchantMap.get(enchantLevel);
 	}
-	
+
 	public static SkillEnchantData getInstance()
 	{
 		return SkillEnchantData.SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly SkillEnchantData INSTANCE = new();

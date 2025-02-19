@@ -37,7 +37,7 @@ public class AddHuntingTime: AbstractEffect
 			return;
 		}
 
-		TimedHuntingZoneHolder holder = TimedHuntingZoneData.getInstance().getHuntingZone(_zoneId);
+		TimedHuntingZoneHolder? holder = TimedHuntingZoneData.getInstance().getHuntingZone(_zoneId);
 		if (holder == null)
 		{
 			return;

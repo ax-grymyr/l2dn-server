@@ -14,23 +14,23 @@ namespace L2Dn.GameServer.Data.Xml;
 public class MissionLevel: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(MissionLevel));
-	
+
 	private readonly Map<int, MissionLevelHolder> _template = new();
 	private int _currentSeason;
-	
+
 	protected MissionLevel()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_template.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "MissionLevel.xml");
 		document.Elements("list").Elements("current").ForEach(el => _currentSeason = el.GetAttributeValueAsInt32("season"));
 		document.Elements("list").Elements("missionLevel").ForEach(parseElement);
-		
+
 		if (_currentSeason > 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _template.Count + " seasons.");
@@ -51,8 +51,8 @@ public class MissionLevel: DataReaderBase
 		Map<int, ItemHolder> keyReward = new();
 		Map<int, ItemHolder> normalReward = new();
 		Map<int, int> xpForLevel = new();
-		ItemHolder specialReward = null;
-		ItemHolder bonusReward = null;
+		ItemHolder? specialReward = null;
+		ItemHolder? bonusReward = null;
 
 		element.Elements("expTable").Elements("exp").ForEach(el =>
 		{
@@ -104,17 +104,17 @@ public class MissionLevel: DataReaderBase
 	{
 		return _currentSeason;
 	}
-	
+
 	public MissionLevelHolder? getMissionBySeason(int season)
 	{
 		return _template.GetValueOrDefault(season);
 	}
-	
+
 	public static MissionLevel getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly MissionLevel INSTANCE = new();

@@ -16,9 +16,9 @@ namespace L2Dn.GameServer.Data.Xml;
 public class RecipeData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(RecipeData));
-	
+
 	private readonly Map<int, RecipeList> _recipes = new();
-	
+
 	/**
 	 * Instantiates a new recipe data.
 	 */
@@ -26,14 +26,14 @@ public class RecipeData: DataReaderBase
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_recipes.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "Recipes.xml");
 		document.Elements("list").Elements("item").ForEach(parseElement);
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _recipes.Count + " recipes.");
 	}
 
@@ -107,17 +107,17 @@ public class RecipeData: DataReaderBase
 	 * @param listId the list id
 	 * @return the recipe list
 	 */
-	public RecipeList getRecipeList(int listId)
+	public RecipeList? getRecipeList(int listId)
 	{
 		return _recipes.get(listId);
 	}
-	
+
 	/**
 	 * Gets the recipe by item id.
 	 * @param itemId the item id
 	 * @return the recipe by item id
 	 */
-	public RecipeList getRecipeByItemId(int itemId)
+	public RecipeList? getRecipeByItemId(int itemId)
 	{
 		foreach (RecipeList find in _recipes.Values)
 		{
@@ -128,7 +128,7 @@ public class RecipeData: DataReaderBase
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Gets the all item ids.
 	 * @return the all item ids
@@ -137,17 +137,17 @@ public class RecipeData: DataReaderBase
 	{
 		return _recipes.Values.Select(x => x.getRecipeId()).ToArray();
 	}
-	
+
 	/**
 	 * Gets the valid recipe list.
 	 * @param player the player
 	 * @param id the recipe list id
 	 * @return the valid recipe list
 	 */
-	public RecipeList getValidRecipeList(Player player, int id)
+	public RecipeList? getValidRecipeList(Player player, int id)
 	{
-		RecipeList recipeList = _recipes.get(id);
-		if ((recipeList == null) || (recipeList.getRecipes().Count == 0))
+		RecipeList? recipeList = _recipes.get(id);
+		if (recipeList == null || recipeList.getRecipes().Count == 0)
 		{
 			player.sendMessage("No recipe for: " + id);
 			player.setCrafting(false);
@@ -155,7 +155,7 @@ public class RecipeData: DataReaderBase
 		}
 		return recipeList;
 	}
-	
+
 	/**
 	 * Gets the single instance of RecipeData.
 	 * @return single instance of RecipeData
@@ -164,7 +164,7 @@ public class RecipeData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	/**
 	 * The Class SingletonHolder.
 	 */

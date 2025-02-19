@@ -201,7 +201,7 @@ public abstract class ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public virtual Item? addItem(string process, int itemId, long count, Player actor, object? reference)
+	public virtual Item? addItem(string process, int itemId, long count, Player? actor, object? reference)
 	{
 		Item? item = getItemByItemId(itemId);
 
@@ -245,7 +245,7 @@ public abstract class ItemContainer
 			}
 
 			// If additional items where created send InventoryUpdate.
-			if ((count > 1) && (item != null) && !item.isStackable() && (item.getItemLocation() == ItemLocation.INVENTORY))
+			if (actor != null && (count > 1) && (item != null) && !item.isStackable() && (item.getItemLocation() == ItemLocation.INVENTORY))
 			{
 				InventoryUpdatePacket iu = new InventoryUpdatePacket(items);
 				actor.sendInventoryUpdate(iu);

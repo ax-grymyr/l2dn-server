@@ -15,40 +15,40 @@ namespace L2Dn.GameServer.Data.Xml;
 public class NewQuestData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(NewQuestData));
-	
+
 	private readonly Map<int, NewQuest> _newQuestData = new();
-	
+
 	protected NewQuestData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_newQuestData.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "NewQuestData.xml");
 		document.Elements("list").Elements("quest").ForEach(parseElement);
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _newQuestData.Count + " new quest data.");
 	}
-	
+
 	private void parseElement(XElement element)
 	{
 		NewQuest holder = new NewQuest(element);
 		_newQuestData.put(holder.getId(), holder);
 	}
-	
-	public NewQuest getQuestById(int id)
+
+	public NewQuest? getQuestById(int id)
 	{
 		return _newQuestData.get(id);
 	}
-	
+
 	public ICollection<NewQuest> getQuests()
 	{
 		return _newQuestData.Values;
 	}
-	
+
 	/**
 	 * Gets the single instance of NewQuestData.
 	 * @return single instance of NewQuestData
@@ -57,7 +57,7 @@ public class NewQuestData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly NewQuestData INSTANCE = new();

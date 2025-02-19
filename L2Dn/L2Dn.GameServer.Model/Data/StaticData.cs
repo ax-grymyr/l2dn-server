@@ -196,7 +196,7 @@ public static class StaticData
 			ItemsOnGroundManager.getInstance();
 		}
 		
-		if ((Config.AUTODESTROY_ITEM_AFTER > 0) || (Config.HERB_AUTO_DESTROY_TIME > 0))
+		if (Config.AUTODESTROY_ITEM_AFTER > 0 || Config.HERB_AUTO_DESTROY_TIME > 0)
 		{
 			ItemsAutoDestroyTaskManager.getInstance();
 		}

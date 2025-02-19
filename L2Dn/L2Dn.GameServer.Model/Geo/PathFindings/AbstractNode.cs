@@ -3,10 +3,10 @@ namespace L2Dn.GameServer.Geo.PathFindings;
 public abstract class AbstractNode<Loc>
 	where Loc: AbstractNodeLoc
 {
-	private Loc _loc;
+	private Loc? _loc;
 	private AbstractNode<Loc>? _parent;
 
-	public AbstractNode(Loc loc)
+	public AbstractNode(Loc? loc)
 	{
 		_loc = loc;
 	}
@@ -21,12 +21,12 @@ public abstract class AbstractNode<Loc>
 		return _parent;
 	}
 
-	public Loc getLoc()
+	public Loc? getLoc()
 	{
 		return _loc;
 	}
 
-	public void setLoc(Loc l)
+	public void setLoc(Loc? l)
 	{
 		_loc = l;
 	}

@@ -18,14 +18,14 @@ namespace L2Dn.GameServer.Geo;
 public class GeoEngine
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(GeoEngine));
-	
+
 	public const string FILE_NAME_FORMAT = "{0}_{1}.l2j";
 	private const int ELEVATED_SEE_OVER_DISTANCE = 2;
 	private const int MAX_SEE_OVER_HEIGHT = 48;
 	private const int SPAWN_Z_DELTA_LIMIT = 100;
-	
+
 	private readonly GeoData _geodata = new GeoData();
-	
+
 	protected GeoEngine()
 	{
 		bool updated = false;
@@ -35,17 +35,17 @@ public class GeoEngine
 			FileUpdater.UpdateFiles(geoDataConfig.FileListUrl, Config.GEODATA_PATH, "geodata");
 			updated = true;
 		}
-		
+
 		int loadedRegions = LoadGeoData();
 		if (loadedRegions == 0 && geoDataConfig.Download && !updated)
 		{
 			FileUpdater.UpdateFiles(geoDataConfig.FileListUrl, Config.GEODATA_PATH, "geodata");
 			loadedRegions = LoadGeoData();
 		}
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + loadedRegions + " regions.");
 	}
-	
+
 	private int LoadGeoData()
 	{
 		int loadedRegions = 0;
@@ -60,7 +60,7 @@ public class GeoEngine
 
 				if (!File.Exists(geoFilePath))
 					continue;
-					
+
 				try
 				{
 					_geodata.loadRegion(geoFilePath, regionX, regionY);
@@ -79,17 +79,17 @@ public class GeoEngine
 
 		return loadedRegions;
 	}
-	
+
 	public bool hasGeoPos(int geoX, int geoY)
 	{
 		return _geodata.hasGeoPos(geoX, geoY);
 	}
-	
+
 	public bool checkNearestNswe(int geoX, int geoY, int worldZ, int nswe)
 	{
 		return _geodata.checkNearestNswe(geoX, geoY, worldZ, nswe);
 	}
-	
+
 	public bool checkNearestNsweAntiCornerCut(int geoX, int geoY, int worldZ, int nswe)
 	{
 		bool can = true;
@@ -98,25 +98,25 @@ public class GeoEngine
 			// can = canEnterNeighbors(prevX, prevY - 1, prevGeoZ, Direction.EAST) && canEnterNeighbors(prevX + 1, prevY, prevGeoZ, Direction.NORTH);
 			can = checkNearestNswe(geoX, geoY - 1, worldZ, Cell.NSWE_EAST) && checkNearestNswe(geoX + 1, geoY, worldZ, Cell.NSWE_NORTH);
 		}
-		
+
 		if (can && (nswe & Cell.NSWE_NORTH_WEST) == Cell.NSWE_NORTH_WEST)
 		{
 			// can = canEnterNeighbors(prevX, prevY - 1, prevGeoZ, Direction.WEST) && canEnterNeighbors(prevX - 1, prevY, prevGeoZ, Direction.NORTH);
 			can = checkNearestNswe(geoX, geoY - 1, worldZ, Cell.NSWE_WEST) && checkNearestNswe(geoX, geoY - 1, worldZ, Cell.NSWE_NORTH);
 		}
-		
+
 		if (can && (nswe & Cell.NSWE_SOUTH_EAST) == Cell.NSWE_SOUTH_EAST)
 		{
 			// can = canEnterNeighbors(prevX, prevY + 1, prevGeoZ, Direction.EAST) && canEnterNeighbors(prevX + 1, prevY, prevGeoZ, Direction.SOUTH);
 			can = checkNearestNswe(geoX, geoY + 1, worldZ, Cell.NSWE_EAST) && checkNearestNswe(geoX + 1, geoY, worldZ, Cell.NSWE_SOUTH);
 		}
-		
+
 		if (can && (nswe & Cell.NSWE_SOUTH_WEST) == Cell.NSWE_SOUTH_WEST)
 		{
 			// can = canEnterNeighbors(prevX, prevY + 1, prevGeoZ, Direction.WEST) && canEnterNeighbors(prevX - 1, prevY, prevGeoZ, Direction.SOUTH);
 			can = checkNearestNswe(geoX, geoY + 1, worldZ, Cell.NSWE_WEST) && checkNearestNswe(geoX - 1, geoY, worldZ, Cell.NSWE_SOUTH);
 		}
-		
+
 		return can && checkNearestNswe(geoX, geoY, worldZ, nswe);
 	}
 
@@ -124,57 +124,57 @@ public class GeoEngine
 	{
 		_geodata.setNearestNswe(geoX, geoY, worldZ, nswe);
 	}
-	
+
 	public void unsetNearestNswe(int geoX, int geoY, int worldZ, byte nswe)
 	{
 		_geodata.unsetNearestNswe(geoX, geoY, worldZ, nswe);
 	}
-	
+
 	public int getNearestZ(int geoX, int geoY, int worldZ)
 	{
 		return _geodata.getNearestZ(geoX, geoY, worldZ);
 	}
-	
+
 	public int getNextLowerZ(int geoX, int geoY, int worldZ)
 	{
 		return _geodata.getNextLowerZ(geoX, geoY, worldZ);
 	}
-	
+
 	public int getNextHigherZ(int geoX, int geoY, int worldZ)
 	{
 		return _geodata.getNextHigherZ(geoX, geoY, worldZ);
 	}
-	
+
 	public static int getGeoX(int worldX)
 	{
 		return GeoData.getGeoX(worldX);
 	}
-	
+
 	public static int getGeoY(int worldY)
 	{
 		return GeoData.getGeoY(worldY);
 	}
-	
+
 	public static int getWorldX(int geoX)
 	{
 		return GeoData.getWorldX(geoX);
 	}
-	
+
 	public static int getWorldY(int geoY)
 	{
 		return GeoData.getWorldY(geoY);
 	}
-	
+
 	public IRegion getRegion(int geoX, int geoY)
 	{
 		return _geodata.getRegion(geoX, geoY);
 	}
-	
+
 	public void setRegion(int regionX, int regionY, Region region)
 	{
 		_geodata.setRegion(regionX, regionY, region);
 	}
-	
+
 	/**
 	 * Gets the height.
 	 * @param x the x coordinate
@@ -203,7 +203,7 @@ public class GeoEngine
 		int nextLowerZ = getNextLowerZ(geoX, geoY, location.Z + 20);
 		return Math.Abs(nextLowerZ - location.Z) <= SPAWN_Z_DELTA_LIMIT ? nextLowerZ : location.Z;
 	}
-	
+
 	/**
 	 * Can see target. Doors as target always return true. Checks doors between.
 	 * @param cha the character
@@ -215,7 +215,7 @@ public class GeoEngine
 		return target != null && (target.isDoor() || canSeeTarget(cha.Location.Location3D, cha.getInstanceWorld(),
 			target.Location.Location3D, target.getInstanceWorld()));
 	}
-	
+
 	/**
 	 * Can see target. Checks doors between.
 	 * @param cha the character
@@ -226,7 +226,7 @@ public class GeoEngine
 	{
 		return canSeeTarget(cha.Location.Location3D, targetLocation, cha.getInstanceWorld());
 	}
-	
+
 	/**
 	 * Can see target. Checks doors between.
 	 * @param x the x coordinate
@@ -239,11 +239,11 @@ public class GeoEngine
 	 * @param tInstance the target's instance
 	 * @return
 	 */
-	public bool canSeeTarget(Location3D location, Instance instance, Location3D targetLocation, Instance tInstance)
+	public bool canSeeTarget(Location3D location, Instance? instance, Location3D targetLocation, Instance? tInstance)
 	{
 		return instance == tInstance && canSeeTarget(location, targetLocation, instance);
 	}
-	
+
 	/**
 	 * Can see target. Checks doors between.
 	 * @param x the x coordinate
@@ -298,16 +298,16 @@ public class GeoEngine
 		int geoY = getGeoY(location.Y);
 		int tGeoX = getGeoX(targetLocation.X);
 		int tGeoY = getGeoY(targetLocation.Y);
-		
+
 		int nearestFromZ = getNearestZ(geoX, geoY, location.Z);
 		int nearestToZ = getNearestZ(tGeoX, tGeoY, targetLocation.Z);
-		
+
 		// Fastpath.
 		if (geoX == tGeoX && geoY == tGeoY)
 		{
 			return !hasGeoPos(tGeoX, tGeoY) || nearestFromZ == nearestToZ;
 		}
-		
+
 		int fromX = targetLocation.X;
 		int fromY = targetLocation.Y;
 		int toX = targetLocation.X;
@@ -317,24 +317,24 @@ public class GeoEngine
 			int tmp = toX;
 			toX = fromX;
 			fromX = tmp;
-			
+
 			tmp = toY;
 			toY = fromY;
 			fromY = tmp;
-			
+
 			tmp = nearestToZ;
 			nearestToZ = nearestFromZ;
 			nearestFromZ = tmp;
-			
+
 			tmp = tGeoX;
 			tGeoX = geoX;
 			geoX = tmp;
-			
+
 			tmp = tGeoY;
 			tGeoY = geoY;
 			geoY = tmp;
 		}
-		
+
 		LinePointIterator3D pointIter = new LinePointIterator3D(geoX, geoY, nearestFromZ, tGeoX, tGeoY, nearestToZ);
 		// First point is guaranteed to be available, skip it, we can always see our own position.
 		pointIter.next();
@@ -347,15 +347,15 @@ public class GeoEngine
 		{
 			int curX = pointIter.x();
 			int curY = pointIter.y();
-			
+
 			if (curX == prevX && curY == prevY)
 			{
 				continue;
 			}
-			
+
 			int beeCurZ = pointIter.z();
 			int curGeoZ = prevGeoZ;
-			
+
 			// Check if the position has geodata.
 			if (hasGeoPos(curX, curY))
 			{
@@ -394,19 +394,19 @@ public class GeoEngine
 						canSeeThrough = true;
 					}
 				}
-				
+
 				if (!canSeeThrough)
 				{
 					return false;
 				}
 			}
-			
+
 			prevX = curX;
 			prevY = curY;
 			prevGeoZ = curGeoZ;
 			++ptIndex;
 		}
-		
+
 		return true;
 	}
 
@@ -542,17 +542,17 @@ public class GeoEngine
 		int nearestFromZ = getNearestZ(geoX, geoY, z1);
 		int tGeoX = getGeoX(tx);
 		int tGeoY = getGeoY(ty);
-		
+
 		LinePointIterator pointIter = new LinePointIterator(geoX, geoY, tGeoX, tGeoY);
 		// First point is guaranteed to be available.
 		pointIter.next();
 		int prevZ = nearestFromZ;
-		
+
 		while (pointIter.next())
 		{
 			prevZ = getNearestZ(pointIter.x(), pointIter.y(), prevZ);
 		}
-		
+
 		return prevZ;
 	}
 
@@ -566,15 +566,14 @@ public class GeoEngine
 	{
 		return hasGeoPos(getGeoX(x), getGeoY(y));
 	}
-	
+
 	public static GeoEngine getInstance()
 	{
 		return SingletonHolder._instance;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public readonly static GeoEngine _instance = new GeoEngine();
 	}
 }
-

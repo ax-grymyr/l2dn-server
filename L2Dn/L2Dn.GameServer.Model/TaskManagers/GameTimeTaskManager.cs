@@ -13,7 +13,7 @@ public class GameTimeTaskManager
 	public const int TICKS_PER_SECOND = 10; // Not able to change this without checking through code.
 	public const int MILLIS_IN_TICK = 1000 / TICKS_PER_SECOND;
 	public const int IG_DAYS_PER_DAY = 6;
-	public const int MILLIS_PER_IG_DAY = (3600000 * 24) / IG_DAYS_PER_DAY;
+	public const int MILLIS_PER_IG_DAY = 3600000 * 24 / IG_DAYS_PER_DAY;
 	public const int SECONDS_PER_IG_DAY = MILLIS_PER_IG_DAY / 1000;
 	public const int TICKS_PER_IG_DAY = SECONDS_PER_IG_DAY * TICKS_PER_SECOND;
 	
@@ -44,10 +44,10 @@ public class GameTimeTaskManager
 		while (!_stopRequested)
 		{
 			_gameTicks = (int)((DateTime.UtcNow - _referenceTime).TotalMilliseconds / MILLIS_IN_TICK);
-			_gameTime = (_gameTicks % TICKS_PER_IG_DAY) / MILLIS_IN_TICK;
+			_gameTime = _gameTicks % TICKS_PER_IG_DAY / MILLIS_IN_TICK;
 			_gameHour = _gameTime / 60;
 			
-			if ((_gameHour < 6) != _isNight)
+			if (_gameHour < 6 != _isNight)
 			{
 				_isNight = !_isNight;
 				

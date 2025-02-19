@@ -15,19 +15,19 @@ public class PetExtractData: DataReaderBase
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PetExtractData));
 	// <Pet_Id, <Pet_Level, Cost>>
 	private readonly Map<int, Map<int, PetExtractionHolder>> _extractionData = new();
-	
+
 	protected PetExtractData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_extractionData.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PetExtractData.xml");
 		document.Elements("list").Elements("extraction").ForEach(parseElement);
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _extractionData.Count + " pet extraction data.");
 	}
 
@@ -41,8 +41,8 @@ public class PetExtractData: DataReaderBase
 		int defaultCostCount = element.GetAttributeValueAsInt32("defaultCostCount");
 		int extractCostId = element.GetAttributeValueAsInt32("extractCostId");
 		int extractCostCount = element.GetAttributeValueAsInt32("extractCostCount");
-		
-		Map<int, PetExtractionHolder> data = _extractionData.get(petId);
+
+		Map<int, PetExtractionHolder>? data = _extractionData.get(petId);
 		if (data == null)
 		{
 			data = new();
@@ -54,9 +54,9 @@ public class PetExtractData: DataReaderBase
 				new ItemHolder(defaultCostId, defaultCostCount), new ItemHolder(extractCostId, extractCostCount)));
 	}
 
-	public PetExtractionHolder getExtraction(int petId, int petLevel)
+	public PetExtractionHolder? getExtraction(int petId, int petLevel)
 	{
-		Map<int, PetExtractionHolder> map = _extractionData.get(petId);
+		Map<int, PetExtractionHolder>? map = _extractionData.get(petId);
 		if (map == null)
 		{
 			LOGGER.Warn(GetType().Name + ": Missing pet extraction data: [PetId: " + petId + "] [PetLevel: " + petLevel + "]");
@@ -64,12 +64,12 @@ public class PetExtractData: DataReaderBase
 		}
 		return map.get(petLevel);
 	}
-	
+
 	public static PetExtractData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly PetExtractData INSTANCE = new();

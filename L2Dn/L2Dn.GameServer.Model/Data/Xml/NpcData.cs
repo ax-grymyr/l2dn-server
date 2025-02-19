@@ -64,12 +64,12 @@ public class NpcData: DataReaderBase
 		int npcId = element.GetAttributeValueAsInt32("id");
 		int level = element.Attribute("level").GetInt32(85);
 		string type = element.Attribute("type").GetString("Folk");
-		Map<string, object> parameters = null;
+		Map<string, object>? parameters = null;
 		Map<int, Skill> skills = new();
-		Set<int> clans = null;
-		Set<int> ignoreClanNpcIds = null;
-		List<DropHolder> dropLists = null;
-		List<DropGroupHolder> dropGroups = null;
+		Set<int>? clans = null;
+		Set<int>? ignoreClanNpcIds = null;
+		List<DropHolder>? dropLists = null;
+		List<DropGroupHolder>? dropGroups = null;
 		set.set("id", npcId);
 
 		if (element.Attribute("displayId") != null)
@@ -352,7 +352,7 @@ public class NpcData: DataReaderBase
 					int itemId = itemEl.GetAttributeValueAsInt32("id");
 
 					// Drop materials for random craft configuration.
-					if (!Config.DROP_RANDOM_CRAFT_MATERIALS && (itemId >= 92908) && (itemId <= 92919))
+					if (!Config.DROP_RANDOM_CRAFT_MATERIALS && itemId >= 92908 && itemId <= 92919)
 						return;
 
 					if (ItemData.getInstance().getTemplate(itemId) == null)
@@ -381,7 +381,7 @@ public class NpcData: DataReaderBase
 				int itemId = e.GetAttributeValueAsInt32("id");
 
 				// Drop materials for random craft configuration.
-				if (!Config.DROP_RANDOM_CRAFT_MATERIALS && (itemId >= 92908) && (itemId <= 92919))
+				if (!Config.DROP_RANDOM_CRAFT_MATERIALS && itemId >= 92908 && itemId <= 92919)
 					return;
 
 				if (ItemData.getInstance().getTemplate(itemId) == null)
@@ -550,8 +550,8 @@ public class NpcData: DataReaderBase
 		template.removeDrops();
 
 		// Add configurable item drop for bosses.
-		if ((Config.BOSS_DROP_ENABLED) && (type.contains("RaidBoss") && (level >= Config.BOSS_DROP_MIN_LEVEL) &&
-		                                   (level <= Config.BOSS_DROP_MAX_LEVEL)))
+		if (Config.BOSS_DROP_ENABLED && type.contains("RaidBoss") && level >= Config.BOSS_DROP_MIN_LEVEL &&
+            level <= Config.BOSS_DROP_MAX_LEVEL)
 		{
 			if (dropLists == null)
 			{
@@ -562,8 +562,8 @@ public class NpcData: DataReaderBase
 		}
 
 		// Add configurable LCoin drop for monsters.
-		if ((Config.LCOIN_DROP_ENABLED) && (type.contains("Monster") && !type.contains("boss")) &&
-		    (level >= Config.LCOIN_MIN_MOB_LEVEL))
+		if (Config.LCOIN_DROP_ENABLED && type.contains("Monster") && !type.contains("boss") &&
+            level >= Config.LCOIN_MIN_MOB_LEVEL)
 		{
 			if (dropLists == null)
 			{
@@ -604,7 +604,7 @@ public class NpcData: DataReaderBase
 		}
 
 		if (template.getParameters().getMinionList("Privates").Count != 0 &&
-		    (template.getParameters().getSet().get("SummonPrivateRate") == null))
+		    template.getParameters().getSet().get("SummonPrivateRate") == null)
 		{
 			_masterMonsterIDs.add(template.getId());
 		}

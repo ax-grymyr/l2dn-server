@@ -15,9 +15,9 @@ public class PreparedMultisellListHolder: MultisellListHolder
 	private int _npcObjectId;
 	private readonly bool _inventoryOnly;
 	private double _taxRate;
-	private List<ItemInfo> _itemInfos;
+	private List<ItemInfo>? _itemInfos;
 
-	public PreparedMultisellListHolder(MultisellListHolder list, bool inventoryOnly, ItemContainer inventory, Npc npc,
+	public PreparedMultisellListHolder(MultisellListHolder list, bool inventoryOnly, ItemContainer inventory, Npc? npc,
 		double ingredientMultiplier, double productMultiplier)
 		: base(list.getId(), list.isChanceMultisell(), list.isApplyTaxes(), list.isMaintainEnchantment(),
 			list.getIngredientMultiplier(), list.getProductMultiplier(), list.getEntries(), list.getNpcsAllowed())
@@ -57,7 +57,7 @@ public class PreparedMultisellListHolder: MultisellListHolder
 		}
 	}
 
-	public ItemInfo getItemEnchantment(int index)
+	public ItemInfo? getItemEnchantment(int index)
 	{
 		return _itemInfos != null ? _itemInfos[index] : null;
 	}

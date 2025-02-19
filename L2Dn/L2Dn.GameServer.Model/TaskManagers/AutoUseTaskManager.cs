@@ -74,7 +74,7 @@ public class AutoUseTaskManager
 
 				if (Config.ENABLE_AUTO_ITEM && !isInPeaceZone)
 				{
-					Pet pet = player.getPet();
+					Pet? pet = player.getPet();
 					foreach (int itemId in player.getAutoUseSettings().getAutoSupplyItems())
 					{
 						if (player.isTeleporting())
@@ -90,7 +90,7 @@ public class AutoUseTaskManager
 						}
 
 						// Pet food is managed by Pet FeedTask.
-						if ((pet != null) && pet.getPetData().getFood().Contains(itemId))
+						if (pet != null && pet.getPetData().getFood().Contains(itemId))
 						{
 							continue;
 						}
@@ -117,7 +117,7 @@ public class AutoUseTaskManager
 									}
 
 									// Check item skills that affect pets.
-									if ((pet != null) && !pet.isDead() && (pet.isAffectedBySkill(skill.getId()) || pet.hasSkillReuse(skill.getReuseHashCode()) || !skill.checkCondition(pet, pet, false)))
+									if (pet != null && !pet.isDead() && (pet.isAffectedBySkill(skill.getId()) || pet.hasSkillReuse(skill.getReuseHashCode()) || !skill.checkCondition(pet, pet, false)))
 									{
 										continueItems = true;
 										break;
@@ -130,11 +130,11 @@ public class AutoUseTaskManager
 						}
 
 						TimeSpan reuseDelay = item.getReuseDelay();
-						if ((reuseDelay <= TimeSpan.Zero) || (player.getItemRemainingReuseTime(item.ObjectId) <= TimeSpan.Zero))
+						if (reuseDelay <= TimeSpan.Zero || player.getItemRemainingReuseTime(item.ObjectId) <= TimeSpan.Zero)
 						{
 							EtcItem etcItem = item.getEtcItem();
 							IItemHandler? handler = ItemHandler.getInstance().getHandler(etcItem);
-							if ((handler != null) && handler.useItem(player, item, false))
+							if (handler != null && handler.useItem(player, item, false))
 							{
 								if (reuseDelay > TimeSpan.Zero)
 								{
@@ -152,7 +152,7 @@ public class AutoUseTaskManager
 					}
 				}
 
-				if (Config.ENABLE_AUTO_POTION && !isInPeaceZone && (player.getCurrentHpPercent() < player.getAutoPlaySettings().getAutoPotionPercent()))
+				if (Config.ENABLE_AUTO_POTION && !isInPeaceZone && player.getCurrentHpPercent() < player.getAutoPlaySettings().getAutoPotionPercent())
 				{
 					int itemId = player.getAutoUseSettings().getAutoPotionItem();
 					if (itemId > 0)
@@ -165,11 +165,11 @@ public class AutoUseTaskManager
 						else
 						{
 							TimeSpan reuseDelay = item.getReuseDelay();
-							if ((reuseDelay <= TimeSpan.Zero) || (player.getItemRemainingReuseTime(item.ObjectId) <= TimeSpan.Zero))
+							if (reuseDelay <= TimeSpan.Zero || player.getItemRemainingReuseTime(item.ObjectId) <= TimeSpan.Zero)
 							{
 								EtcItem etcItem = item.getEtcItem();
 								IItemHandler? handler = ItemHandler.getInstance().getHandler(etcItem);
-								if ((handler != null) && handler.useItem(player, item, false))
+								if (handler != null && handler.useItem(player, item, false))
 								{
 									if (reuseDelay > TimeSpan.Zero)
 									{
@@ -190,11 +190,11 @@ public class AutoUseTaskManager
 
 				if (Config.ENABLE_AUTO_PET_POTION && !isInPeaceZone)
 				{
-					Pet pet = player.getPet();
-					if ((pet != null) && !pet.isDead())
+					Pet? pet = player.getPet();
+					if (pet != null && !pet.isDead())
 					{
 						int percent = pet.getCurrentHpPercent();
-						if ((percent < 100) && (percent <= player.getAutoPlaySettings().getAutoPetPotionPercent()))
+						if (percent < 100 && percent <= player.getAutoPlaySettings().getAutoPetPotionPercent())
 						{
 							int itemId = player.getAutoUseSettings().getAutoPetPotionItem();
 							if (itemId > 0)
@@ -207,11 +207,11 @@ public class AutoUseTaskManager
 								else
 								{
 									TimeSpan reuseDelay = item.getReuseDelay();
-									if ((reuseDelay <= TimeSpan.Zero) || (player.getItemRemainingReuseTime(item.ObjectId) <= TimeSpan.Zero))
+									if (reuseDelay <= TimeSpan.Zero || player.getItemRemainingReuseTime(item.ObjectId) <= TimeSpan.Zero)
 									{
 										EtcItem etcItem = item.getEtcItem();
 										IItemHandler? handler = ItemHandler.getInstance().getHandler(etcItem);
-										if ((handler != null) && handler.useItem(player, item, false) && (reuseDelay > TimeSpan.Zero))
+										if (handler != null && handler.useItem(player, item, false) && reuseDelay > TimeSpan.Zero)
 										{
 											player.addTimeStampItem(item, reuseDelay);
 										}
@@ -266,10 +266,11 @@ public class AutoUseTaskManager
 									}
 								}
 							}
-							if ((skill == null) && player.hasPet())
+							if (skill == null && player.hasPet())
 							{
 								pet = player.getPet();
-								skill = pet.getKnownSkill(skillId);
+                                if (pet != null)
+								    skill = pet.getKnownSkill(skillId);
 							}
 							if (skill == null)
 							{
@@ -292,10 +293,10 @@ public class AutoUseTaskManager
 
 							// Playable target cast.
 							Playable caster = pet ?? player;
-                            if ((target != null) && target.isPlayable() &&
+                            if (target != null && target.isPlayable() &&
                                 target.getActingPlayer() is {} actingPlayer &&
-                                (actingPlayer.getPvpFlag() == PvpFlagStatus.None) &&
-                                (actingPlayer.getReputation() >= 0))
+                                actingPlayer.getPvpFlag() == PvpFlagStatus.None &&
+                                actingPlayer.getReputation() >= 0)
                             {
                                 caster.doCast(skill);
                             }
@@ -352,15 +353,17 @@ public class AutoUseTaskManager
 									}
 								}
 							}
-							if ((skill == null) && player.hasPet())
+							if (skill == null && player.hasPet())
 							{
 								pet = player.getPet();
-								skill = pet.getKnownSkill(skillId);
-								if (skill == null)
+                                if (pet != null)
+								    skill = pet.getKnownSkill(skillId);
+
+								if (skill == null && pet != null)
 								{
-									skill = PetSkillData.getInstance().getKnownSkill((Summon) pet, skillId);
+									skill = PetSkillData.getInstance().getKnownSkill((Summon)pet, skillId);
 								}
-								if (skill != null && pet.isSkillDisabled(skill))
+								if (skill != null && pet != null && pet.isSkillDisabled(skill))
 								{
 									player.getAutoUseSettings().incrementSkillOrder();
 									break;
@@ -381,7 +384,7 @@ public class AutoUseTaskManager
 						}
 
 						// Check bad skill target.
-						if ((target == null) || ((Creature) target).isDead())
+						if (target == null || ((Creature) target).isDead())
 						{
 							break;
 						}
@@ -396,7 +399,7 @@ public class AutoUseTaskManager
 						if (target is Guard)
 						{
 							int targetMode = player.getAutoPlaySettings().getNextTargetMode();
-							if ((targetMode != 3 /* NPC */) && (targetMode != 0 /* Any Target */))
+							if (targetMode != 3 /* NPC */ && targetMode != 0 /* Any Target */)
 							{
 								break;
 							}
@@ -429,7 +432,7 @@ public class AutoUseTaskManager
 						{
 							TransformTemplate? transformTemplate = player.getTransformation()?.getTemplate(player);
 							ImmutableArray<int> allowedActions = transformTemplate?.getBasicActionList() ?? default;
-							if ((allowedActions.IsDefaultOrEmpty) || (allowedActions.BinarySearch(actionId) < 0))
+							if (allowedActions.IsDefaultOrEmpty || allowedActions.BinarySearch(actionId) < 0)
 							{
 								continue;
 							}
@@ -448,10 +451,10 @@ public class AutoUseTaskManager
 								else
 								{
 									Summon? summon = player.getAnyServitor();
-									if ((summon != null) && !summon.isAlikeDead())
+									if (summon != null && !summon.isAlikeDead())
 									{
 										Skill? skill = summon.getKnownSkill(actionHolder.getOptionId());
-										if ((skill != null) && !canSummonCastSkill(player, summon, skill))
+										if (skill != null && !canSummonCastSkill(player, summon, skill))
 										{
 											continue;
 										}
@@ -469,7 +472,7 @@ public class AutoUseTaskManager
 		private bool canCastBuff(Player player, WorldObject? target, Skill skill)
 		{
 			// Summon check.
-			if ((skill.getAffectScope() == AffectScope.SUMMON_EXCEPT_MASTER) || (skill.getTargetType() == TargetType.SUMMON))
+			if (skill.getAffectScope() == AffectScope.SUMMON_EXCEPT_MASTER || skill.getTargetType() == TargetType.SUMMON)
 			{
 				if (!player.hasServitors())
 				{
@@ -489,13 +492,13 @@ public class AutoUseTaskManager
 				}
 			}
 
-			if ((target != null) && target.isCreature() && ((Creature) target).isAlikeDead() && (skill.getTargetType() != TargetType.SELF) && (skill.getTargetType() != TargetType.NPC_BODY) && (skill.getTargetType() != TargetType.PC_BODY))
+			if (target != null && target.isCreature() && ((Creature) target).isAlikeDead() && skill.getTargetType() != TargetType.SELF && skill.getTargetType() != TargetType.NPC_BODY && skill.getTargetType() != TargetType.PC_BODY)
 			{
 				return false;
 			}
 
-			Playable playableTarget = (target == null) || !target.isPlayable() || (skill.getTargetType() == TargetType.SELF) ? player : (Playable) target;
-			if ((player != playableTarget) && (player.Distance3D(playableTarget) > skill.getCastRange()))
+			Playable playableTarget = target == null || !target.isPlayable() || skill.getTargetType() == TargetType.SELF ? player : (Playable) target;
+			if (player != playableTarget && player.Distance3D(playableTarget) > skill.getCastRange())
 			{
 				return false;
 			}
@@ -511,27 +514,27 @@ public class AutoUseTaskManager
 			{
 				if (buffInfo != null)
 				{
-					return (abnormalBuffInfo.getSkill().getId() == buffInfo.getSkill().getId()) && ((buffInfo.getTime() <= TimeSpan.FromSeconds(REUSE_MARGIN_TIME)) || (buffInfo.getSkill().getLevel() < skill.getLevel()));
+					return abnormalBuffInfo.getSkill().getId() == buffInfo.getSkill().getId() && (buffInfo.getTime() <= TimeSpan.FromSeconds(REUSE_MARGIN_TIME) || buffInfo.getSkill().getLevel() < skill.getLevel());
 				}
-				return (abnormalBuffInfo.getSkill().getAbnormalLevel() < skill.getAbnormalLevel()) || abnormalBuffInfo.isAbnormalType(AbnormalType.NONE);
+				return abnormalBuffInfo.getSkill().getAbnormalLevel() < skill.getAbnormalLevel() || abnormalBuffInfo.isAbnormalType(AbnormalType.NONE);
 			}
 			return buffInfo == null;
 		}
 
 		private bool canUseMagic(Playable playable, WorldObject target, Skill skill)
 		{
-			if ((skill.getItemConsumeCount() > 0) && (playable.getInventory().getInventoryItemCount(skill.getItemConsumeId(), -1) < skill.getItemConsumeCount()))
+			if (skill.getItemConsumeCount() > 0 && playable.getInventory().getInventoryItemCount(skill.getItemConsumeId(), -1) < skill.getItemConsumeCount())
 			{
 				return false;
 			}
 
-			if ((skill.getMpConsume() > 0) && (playable.getCurrentMp() < skill.getMpConsume()))
+			if (skill.getMpConsume() > 0 && playable.getCurrentMp() < skill.getMpConsume())
 			{
 				return false;
 			}
 
 			// Check if monster is spoiled to avoid Spoil (254) skill recast.
-			if ((skill.getId() == 254) && (target != null) && target.isMonster() && ((Monster) target).isSpoiled())
+			if (skill.getId() == 254 && target != null && target.isMonster() && ((Monster) target).isSpoiled())
 			{
 				return false;
 			}
@@ -550,13 +553,13 @@ public class AutoUseTaskManager
 
 		private bool canSummonCastSkill(Player player, Summon summon, Skill skill)
 		{
-			if (skill.isBad() && (player.getTarget() == null))
+			if (skill.isBad() && player.getTarget() == null)
 			{
 				return false;
 			}
 
 			int mpConsume = skill.getMpConsume() + skill.getMpInitialConsume();
-			if ((((mpConsume != 0) && (mpConsume > (int) Math.Floor(summon.getCurrentMp()))) || ((skill.getHpConsume() != 0) && (skill.getHpConsume() > (int) Math.Floor(summon.getCurrentHp())))))
+			if ((mpConsume != 0 && mpConsume > (int) Math.Floor(summon.getCurrentMp())) || (skill.getHpConsume() != 0 && skill.getHpConsume() > (int) Math.Floor(summon.getCurrentHp())))
 			{
 				return false;
 			}
@@ -566,12 +569,12 @@ public class AutoUseTaskManager
 				return false;
 			}
 
-			if (((player.getTarget() != null) && !skill.checkCondition(summon, player.getTarget(), false)) || ((player.getTarget() == null) && !skill.checkCondition(summon, player, false)))
+			if ((player.getTarget() != null && !skill.checkCondition(summon, player.getTarget(), false)) || (player.getTarget() == null && !skill.checkCondition(summon, player, false)))
 			{
 				return false;
 			}
 
-			if ((skill.getItemConsumeCount() > 0) && (summon.getInventory().getInventoryItemCount(skill.getItemConsumeId(), -1) < skill.getItemConsumeCount()))
+			if (skill.getItemConsumeCount() > 0 && summon.getInventory().getInventoryItemCount(skill.getItemConsumeId(), -1) < skill.getItemConsumeCount())
 			{
 				return false;
 			}
@@ -579,12 +582,12 @@ public class AutoUseTaskManager
 			if (skill.getTargetType()==TargetType.SELF || skill.getTargetType()==TargetType.SUMMON)
 			{
 				BuffInfo? summonInfo = summon.getEffectList().getBuffInfoBySkillId(skill.getId());
-				return (summonInfo != null) && (summonInfo.getTime() >= TimeSpan.FromSeconds(REUSE_MARGIN_TIME));
+				return summonInfo != null && summonInfo.getTime() >= TimeSpan.FromSeconds(REUSE_MARGIN_TIME);
 			}
 
-            if ((skill.getEffects(EffectScope.GENERAL) is {} generalEffect) &&
+            if (skill.getEffects(EffectScope.GENERAL) is {} generalEffect &&
                 generalEffect.Any(a => a.getEffectType() == EffectType.MANAHEAL_BY_LEVEL) &&
-                (player.getCurrentMpPercent() > 80))
+                player.getCurrentMpPercent() > 80)
             {
                 return false;
             }
@@ -595,9 +598,9 @@ public class AutoUseTaskManager
 			{
 				if (buffInfo != null)
 				{
-					return (abnormalBuffInfo.getSkill().getId() == buffInfo.getSkill().getId()) && ((buffInfo.getTime() <= TimeSpan.FromSeconds(REUSE_MARGIN_TIME)) || (buffInfo.getSkill().getLevel() < skill.getLevel()));
+					return abnormalBuffInfo.getSkill().getId() == buffInfo.getSkill().getId() && (buffInfo.getTime() <= TimeSpan.FromSeconds(REUSE_MARGIN_TIME) || buffInfo.getSkill().getLevel() < skill.getLevel());
 				}
-				return (abnormalBuffInfo.getSkill().getAbnormalLevel() < skill.getAbnormalLevel()) || abnormalBuffInfo.isAbnormalType(AbnormalType.NONE);
+				return abnormalBuffInfo.getSkill().getAbnormalLevel() < skill.getAbnormalLevel() || abnormalBuffInfo.isAbnormalType(AbnormalType.NONE);
 			}
 
 			return true;

@@ -186,8 +186,8 @@ public class BotReportTable
 			return false;
 		}
 
-		Creature bot = ((Creature) target);
-		if ((!bot.isPlayer() && !bot.isFakePlayer()) || (bot.isFakePlayer() && !((Npc) bot).getTemplate().isFakePlayerTalkable()) || (target.ObjectId == reporter.ObjectId))
+		Creature bot = (Creature) target;
+		if ((!bot.isPlayer() && !bot.isFakePlayer()) || (bot.isFakePlayer() && !((Npc) bot).getTemplate().isFakePlayerTalkable()) || target.ObjectId == reporter.ObjectId)
 		{
 			return false;
 		}
@@ -198,19 +198,22 @@ public class BotReportTable
 			return false;
 		}
 
-		if (bot.isPlayer() && bot.getActingPlayer().isInOlympiadMode())
+        Player? botPlayer = bot.getActingPlayer();
+		if (bot.isPlayer() && botPlayer != null && botPlayer.isInOlympiadMode())
 		{
 			reporter.sendPacket(SystemMessageId.THIS_CHARACTER_CANNOT_MAKE_A_REPORT_YOU_CANNOT_MAKE_A_REPORT_WHILE_LOCATED_INSIDE_A_PEACE_ZONE_OR_A_BATTLEGROUND_WHILE_YOU_ARE_AN_OPPOSING_CLAN_MEMBER_DURING_A_CLAN_WAR_OR_WHILE_PARTICIPATING_IN_THE_OLYMPIAD);
 			return false;
 		}
 
-		if ((bot.getClan() != null) && (reporter.getClan() != null) && bot.getClan().isAtWarWith(reporter.getClan()))
+        Clan? botClan = bot.getClan();
+        Clan? reporterClan = reporter.getClan();
+		if (botClan != null && reporterClan != null && botClan.isAtWarWith(reporterClan))
 		{
 			reporter.sendPacket(SystemMessageId.YOU_CANNOT_REPORT_WHEN_A_CLAN_WAR_HAS_BEEN_DECLARED);
 			return false;
 		}
 
-		if (bot.isPlayer() && (bot.getActingPlayer().getExp() == bot.getActingPlayer().getStat().getStartingExp()))
+		if (bot.isPlayer() && botPlayer != null && botPlayer.getExp() == botPlayer.getStat().getStartingExp())
 		{
 			reporter.sendPacket(SystemMessageId.YOU_CANNOT_REPORT_A_CHARACTER_WHO_HAS_NOT_ACQUIRED_ANY_XP_AFTER_CONNECTING);
 			return false;
@@ -244,7 +247,7 @@ public class BotReportTable
 					return false;
 				}
 
-				if (!Config.BOTREPORT_ALLOW_REPORTS_FROM_SAME_CLAN_MEMBERS && rcd.reportedBySameClan(reporter.getClan()))
+				if (!Config.BOTREPORT_ALLOW_REPORTS_FROM_SAME_CLAN_MEMBERS && reporterClan != null && rcd.reportedBySameClan(reporterClan))
 				{
 					reporter.sendPacket(SystemMessageId.THIS_CHARACTER_CANNOT_MAKE_A_REPORT_THE_TARGET_HAS_ALREADY_BEEN_REPORTED_BY_EITHER_YOUR_CLAN_OR_HAS_ALREADY_BEEN_REPORTED_FROM_YOUR_CURRENT_IP);
 					return false;
@@ -296,9 +299,9 @@ public class BotReportTable
 		sm.Params.addInt(rcdRep.getPointsLeft());
 		reporter.sendPacket(sm);
 
-		if (bot.isPlayer())
+		if (bot.isPlayer() && botPlayer != null)
 		{
-			handleReport(bot.getActingPlayer(), rcd);
+			handleReport(botPlayer, rcd);
 		}
 
 		return true;
@@ -318,7 +321,7 @@ public class BotReportTable
 		foreach (var entry in _punishments)
 		{
 			int key = entry.Key;
-			if ((key < 0) && (Math.Abs(key) <= rcd.getReportCount()))
+			if (key < 0 && Math.Abs(key) <= rcd.getReportCount())
 			{
 				punishBot(bot, entry.Value);
 			}
@@ -355,7 +358,7 @@ public class BotReportTable
 	 */
 	void addPunishment(int neededReports, int skillId, int skillLevel, SystemMessageId? sysMsg)
 	{
-		Skill sk = SkillData.getInstance().getSkill(skillId, skillLevel);
+		Skill? sk = SkillData.getInstance().getSkill(skillId, skillLevel);
 		if (sk != null)
 		{
 			_punishments.put(neededReports, new PunishHolder(sk, sysMsg));
@@ -429,7 +432,7 @@ public class BotReportTable
 	{
 		if (map.TryGetValue(objectId, out DateTime value))
 		{
-			return (DateTime.UtcNow - value) > TimeSpan.FromMilliseconds(Config.BOTREPORT_REPORT_DELAY);
+			return DateTime.UtcNow - value > TimeSpan.FromMilliseconds(Config.BOTREPORT_REPORT_DELAY);
 		}
 
 		return true;

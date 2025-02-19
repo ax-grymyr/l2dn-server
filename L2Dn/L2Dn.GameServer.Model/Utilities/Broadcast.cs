@@ -70,7 +70,7 @@ public static class Broadcast
 						rc.addRelation((Player) creature, relation, isAutoAttackable);
 						if (creature.hasSummon())
 						{
-							Summon pet = creature.getPet();
+							Summon? pet = creature.getPet();
 							if (pet != null)
 							{
 								rc.addRelation(pet, relation, isAutoAttackable);

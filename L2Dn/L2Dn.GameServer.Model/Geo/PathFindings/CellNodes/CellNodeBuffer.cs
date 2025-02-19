@@ -278,13 +278,13 @@ public class CellNodeBuffer
 		while (node.getNext() != null && count < MAX_ITERATIONS * 4)
 		{
 			count++;
-			if (node.getNext().getCost() > newNode.getCost())
+			if (node.getNext()!.getCost() > newNode.getCost())
 			{
 				// Insert node into a chain.
 				newNode.setNext(node.getNext());
 				break;
 			}
-			node = node.getNext();
+			node = node.getNext()!;
 		}
 		if (count == MAX_ITERATIONS * 4)
 		{

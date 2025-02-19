@@ -17,22 +17,22 @@ namespace L2Dn.GameServer.Data.Xml;
 public class PrimeShopData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PrimeShopData));
-	
+
 	private readonly Map<int, PrimeShopGroup> _primeItems = new();
-	
+
 	protected PrimeShopData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_primeItems.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PrimeShop.xml");
 		document.Elements("list").Where(el => el.Attribute("enabled").GetBoolean(false)).Elements("item")
 			.ForEach(parseElement);
-		
+
 		if (_primeItems.Count != 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _primeItems.Count + " items.");
@@ -52,7 +52,7 @@ public class PrimeShopData: DataReaderBase
 		{
 			int itemId = el.GetAttributeValueAsInt32("itemId");
 			int count = el.GetAttributeValueAsInt32("count");
-			ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+			ItemTemplate? item = ItemData.getInstance().getTemplate(itemId);
 			if (item == null)
 			{
 				LOGGER.Error(GetType().Name + ": Item template null for itemId: " + itemId + " brId: " + id);
@@ -67,30 +67,30 @@ public class PrimeShopData: DataReaderBase
 
 	public void showProductInfo(Player player, int brId)
 	{
-		PrimeShopGroup item = _primeItems.get(brId);
-		if ((player == null) || (item == null))
+		PrimeShopGroup? item = _primeItems.get(brId);
+		if (player == null || item == null)
 		{
 			return;
 		}
-		
+
 		player.sendPacket(new ExBRProductInfoPacket(item, player));
 	}
-	
-	public PrimeShopGroup getItem(int brId)
+
+	public PrimeShopGroup? getItem(int brId)
 	{
 		return _primeItems.get(brId);
 	}
-	
+
 	public Map<int, PrimeShopGroup> getPrimeItems()
 	{
 		return _primeItems;
 	}
-	
+
 	public static PrimeShopData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly PrimeShopData INSTANCE = new();

@@ -143,7 +143,16 @@ public class VariationData: DataReaderBase
 		list.Add(variation);
 
 		_variations.put(mineralId, list);
-		((EtcItem)ItemData.getInstance().getTemplate(mineralId)).setMineral();
+
+        EtcItem? etcItem = (EtcItem?)ItemData.getInstance().getTemplate(mineralId);
+        if (etcItem == null)
+        {
+            _logger.Error("Mineral with item id " + mineralId + " was not found.");
+        }
+        else
+        {
+            etcItem.setMineral();
+        }
 	}
 
 	private void parseItemGroupElement(XmlVariationItemGroup xmlVariationItemGroup)

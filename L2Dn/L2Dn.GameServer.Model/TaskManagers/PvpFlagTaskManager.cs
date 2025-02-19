@@ -35,7 +35,7 @@ public class PvpFlagTaskManager: Runnable
 				{
 					player.stopPvPFlag();
 				}
-				else if (currentTime > (player.getPvpFlagLasts() - TimeSpan.FromMilliseconds(20000)))
+				else if (currentTime > player.getPvpFlagLasts() - TimeSpan.FromMilliseconds(20000))
 				{
 					player.updatePvPFlag(PvpFlagStatus.Flashing);
 				}

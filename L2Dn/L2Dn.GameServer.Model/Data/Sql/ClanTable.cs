@@ -301,7 +301,7 @@ public class ClanTable
 		foreach (Clan clan in _clans.Values)
         {
             string? clanAllyName = clan.getAllyName();
-			if ((clanAllyName != null) && clanAllyName.equalsIgnoreCase(allyName))
+			if (clanAllyName != null && clanAllyName.equalsIgnoreCase(allyName))
 			{
 				return true;
 			}
@@ -372,7 +372,7 @@ public class ClanTable
 			{
 				Clan? attacker = getClan(war.Clan1Id);
 				Clan? attacked = getClan(war.Clan2Id);
-				if ((attacker != null) && (attacked != null))
+				if (attacker != null && attacked != null)
 				{
 					ClanWarState state = (ClanWarState)war.State;
 					ClanWar clanWar = new ClanWar(attacker, attacked, war.Clan1Kills, war.Clan2Kills,
@@ -400,7 +400,7 @@ public class ClanTable
 		foreach (Clan clan in _clans.Values)
 		{
 			int? allyId = clan.getAllyId();
-			if ((allyId != null) && (clan.getId() != allyId) && !_clans.ContainsKey(allyId.Value))
+			if (allyId != null && clan.getId() != allyId && !_clans.ContainsKey(allyId.Value))
 			{
 				clan.setAllyId(0);
 				clan.setAllyName(null);
@@ -418,7 +418,7 @@ public class ClanTable
 		{
 			foreach (Clan clan in _clans.Values)
 			{
-				if ((clan != null) && (clan.getAllyId() == allianceId))
+				if (clan != null && clan.getAllyId() == allianceId)
 				{
 					clanAllies.Add(clan);
 				}

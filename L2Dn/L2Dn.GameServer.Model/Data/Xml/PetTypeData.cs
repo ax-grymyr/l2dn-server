@@ -13,22 +13,22 @@ namespace L2Dn.GameServer.Data.Xml;
 public class PetTypeData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PetTypeData));
-	
+
 	private readonly Map<int, SkillHolder> _skills = new();
 	private readonly Map<int, string> _names = new();
-	
+
 	protected PetTypeData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_skills.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "PetTypes.xml");
 		document.Elements("list").Elements("pet").ForEach(parseElement);
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _skills.Count + " pet types.");
 	}
 
@@ -42,7 +42,7 @@ public class PetTypeData: DataReaderBase
 		_names.put(id, name);
 	}
 
-	public SkillHolder getSkillByName(string name)
+	public SkillHolder? getSkillByName(string name)
 	{
 		foreach (var entry in _names)
 		{
@@ -53,7 +53,7 @@ public class PetTypeData: DataReaderBase
 		}
 		return null;
 	}
-	
+
 	public int getIdByName(string name)
 	{
 		foreach (var entry in _names)
@@ -65,27 +65,27 @@ public class PetTypeData: DataReaderBase
 		}
 		return 0;
 	}
-	
-	public string getNamePrefix(int id)
+
+	public string? getNamePrefix(int id)
 	{
 		return _names.get(id);
 	}
-	
+
 	public string getRandomName()
 	{
 		return _names.Where(e => e.Key > 100).First().Value;
 	}
-	
+
 	public KeyValuePair<int, SkillHolder> getRandomSkill()
 	{
 		return _skills.Where(e => e.Value.getSkillId() > 0).First();
 	}
-	
+
 	public static PetTypeData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly PetTypeData INSTANCE = new();

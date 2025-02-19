@@ -37,7 +37,7 @@ public class PetSkillData: DataReaderBase
 		int npcId = element.GetAttributeValueAsInt32("npcId");
 		int skillId = element.GetAttributeValueAsInt32("skillId");
 		int skillLevel = element.GetAttributeValueAsInt32("skillLevel");
-		Map<long, SkillHolder> skillTree = _skillTrees.get(npcId);
+		Map<long, SkillHolder>? skillTree = _skillTrees.get(npcId);
 		if (skillTree == null)
 		{
 			skillTree = new();
@@ -82,7 +82,7 @@ public class PetSkillData: DataReaderBase
 				}
 				else
 				{
-					level = 7 + ((pet.getLevel() - 70) / 5);
+					level = 7 + (pet.getLevel() - 70) / 5;
 				}
 
 				// formula usable for skill that have 10 or more skill levels
@@ -93,11 +93,12 @@ public class PetSkillData: DataReaderBase
 				}
 				break;
 			}
-			else if ((1 <= pet.getLevel()) && (skillHolder.getSkillLevel() > level))
-			{
-				level = skillHolder.getSkillLevel();
-			}
-		}
+
+            if (1 <= pet.getLevel() && skillHolder.getSkillLevel() > level)
+            {
+                level = skillHolder.getSkillLevel();
+            }
+        }
 
 		return level;
 	}

@@ -46,7 +46,7 @@ public class SummonItems: ItemSkillsTemplate
 			return false;
 		}
 
-		PetData petData = PetDataTable.getInstance().getPetDataByItemId(item.getId());
+		PetData? petData = PetDataTable.getInstance().getPetDataByItemId(item.getId());
 		if (petData == null || petData.getNpcId() == -1)
 		{
 			return false;

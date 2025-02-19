@@ -85,7 +85,7 @@ public class AnnouncementsTable
 	{
 		foreach (IAnnouncement announce in _announcements.Values)
 		{
-			if (announce.isValid() && (announce.getType() == type))
+			if (announce.isValid() && announce.getType() == type)
 			{
 				player.sendPacket(new CreatureSayPacket(null,
 					type == AnnouncementType.CRITICAL ? ChatType.CRITICAL_ANNOUNCE : ChatType.ANNOUNCEMENT,
@@ -114,7 +114,7 @@ public class AnnouncementsTable
 	public bool deleteAnnouncement(int id)
 	{
 		IAnnouncement? announce = _announcements.remove(id);
-		return (announce != null) && announce.deleteMe();
+		return announce != null && announce.deleteMe();
 	}
 
 	/**

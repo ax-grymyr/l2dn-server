@@ -22,14 +22,14 @@ namespace L2Dn.GameServer.Data.Xml;
 public class SpawnData: DataReaderBase
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(SpawnData));
-	
+
 	private readonly Set<SpawnTemplate> _spawns = new();
-	
+
 	private SpawnData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		LoadXmlDocuments<XmlSpawnList>(DataFileLocation.Data, "spawns", true)
@@ -61,7 +61,7 @@ public class SpawnData: DataReaderBase
 		{
 			return;
 		}
-		
+
 		_logger.Info(GetType().Name + ": Initializing spawns...");
 		if (Config.THREADS_FOR_LOADING)
 		{
@@ -81,7 +81,7 @@ public class SpawnData: DataReaderBase
 			{
 				foreach (ScheduledFuture job in jobs)
 				{
-					if ((job == null) || job.isDone() || job.isCancelled())
+					if (job.isDone() || job.isCancelled())
 					{
 						jobs.remove(job);
 					}
@@ -99,10 +99,10 @@ public class SpawnData: DataReaderBase
 				}
 			}
 		}
-		
+
 		_logger.Info(GetType().Name + ": All spawns has been initialized!");
 	}
-	
+
 	/**
 	 * Removing all spawns
 	 */
@@ -112,12 +112,12 @@ public class SpawnData: DataReaderBase
 		_spawns.ForEach(x => x.despawnAll());
 		_logger.Info(GetType().Name + ": All spawns has been removed!");
 	}
-	
+
 	public ICollection<SpawnTemplate> getSpawns()
 	{
 		return _spawns;
 	}
-	
+
 	public List<SpawnTemplate> getSpawns(Predicate<SpawnTemplate> condition)
 	{
 		List<SpawnTemplate> result = new();
@@ -130,26 +130,26 @@ public class SpawnData: DataReaderBase
 		}
 		return result;
 	}
-	
-	public SpawnTemplate getSpawnByName(string name)
+
+	public SpawnTemplate? getSpawnByName(string name)
 	{
 		foreach (SpawnTemplate spawn in _spawns)
 		{
-			if ((spawn.getName() != null) && spawn.getName().equalsIgnoreCase(name))
+			if (spawn.getName() != null && spawn.getName().equalsIgnoreCase(name))
 			{
 				return spawn;
 			}
 		}
 		return null;
 	}
-	
-	public SpawnGroup getSpawnGroupByName(string name)
+
+	public SpawnGroup? getSpawnGroupByName(string name)
 	{
 		foreach (SpawnTemplate spawnTemplate in _spawns)
 		{
 			foreach (SpawnGroup group in spawnTemplate.getGroups())
 			{
-				if ((group.getName() != null) && group.getName().equalsIgnoreCase(name))
+				if (group.getName() != null && group.getName().equalsIgnoreCase(name))
 				{
 					return group;
 				}
@@ -157,7 +157,7 @@ public class SpawnData: DataReaderBase
 		}
 		return null;
 	}
-	
+
 	public List<NpcSpawnTemplate> getNpcSpawns(Predicate<NpcSpawnTemplate> condition)
 	{
 		List<NpcSpawnTemplate> result = new();
@@ -186,7 +186,7 @@ public class SpawnData: DataReaderBase
 			parseGroup(group, spawnTemplate);
 
 		if (spawn.Npcs.Count != 0)
-		{	
+		{
 			// One static group for all npcs outside group scope
 			SpawnGroup defaultGroup = new(spawn.Name, spawn.SpawnByDefault);
 			foreach (XmlSpawnNpc npc in spawn.Npcs)
@@ -212,12 +212,12 @@ public class SpawnData: DataReaderBase
 			string name = territory.Name;
 			if (string.IsNullOrEmpty(name))
 				name = fileName + "_" + (spawnTemplate.getTerritories().Count + 1);
-			
+
 			int minZ = territory.MinZ;
 			int maxZ = territory.MaxZ;
 			int[] x = territory.Nodes.Select(n => n.X).ToArray();
 			int[] y = territory.Nodes.Select(n => n.Y).ToArray();
-			
+
 			// Support for multiple spawn zone types.
 			ZoneForm zoneForm;
 			XmlSpawnTerritoryShape zoneShape = territory.ShapeSpecified ? territory.Shape : XmlSpawnTerritoryShape.NPoly;
@@ -260,7 +260,7 @@ public class SpawnData: DataReaderBase
 			}
 		}
 	}
-	
+
 	private void parseGroup(XmlSpawnGroup xmlGroup, SpawnTemplate spawnTemplate)
 	{
 		SpawnGroup group = new(xmlGroup.Name, xmlGroup.SpawnByDefault);
@@ -270,7 +270,7 @@ public class SpawnData: DataReaderBase
 
 		spawnTemplate.addGroup(group);
 	}
-	
+
 	/**
 	 * @param n
 	 * @param spawnTemplate
@@ -284,7 +284,7 @@ public class SpawnData: DataReaderBase
 		{
 			_logger.Warn(GetType().Name + ": Requested spawn for non existing npc: " + npcTemplate.getId() +
 			            " in file: " + spawnTemplate.getFile());
-			
+
 			return;
 		}
 
@@ -292,7 +292,7 @@ public class SpawnData: DataReaderBase
 		{
 			_logger.Warn(GetType().Name + ": Requested spawn for " + template.getType() + " " + template.getName() +
 			            "(" + template.getId() + ") file: " + spawnTemplate.getFile());
-			
+
 			return;
 		}
 
@@ -304,7 +304,7 @@ public class SpawnData: DataReaderBase
 		parseLocations(npc.Locations, npcTemplate);
 		group.addSpawn(npcTemplate);
 	}
-	
+
 	/**
 	 * @param n
 	 * @param npcTemplate
@@ -318,7 +318,7 @@ public class SpawnData: DataReaderBase
 				location.Chance));
 		}
 	}
-	
+
 	/**
 	 * @param n
 	 * @param npcTemplate
@@ -333,30 +333,30 @@ public class SpawnData: DataReaderBase
 				case XmlParameterString paramString:
 					statSet.set(parameter.Name, paramString.Value);
 					break;
-				
+
 				case XmlParameterSkill paramSkill:
 					statSet.set(parameter.Name, new SkillHolder(paramSkill.Id, paramSkill.Level));
 					break;
-				
+
 				case XmlSpawnNpcParameterMinions paramMinions:
 					List<MinionHolder> minions = paramMinions.Npcs.Select(m
 						=> new MinionHolder(m.Id, m.Count, m.MaxCount, TimeSpan.FromMilliseconds(m.RespawnTime),
 							m.WeightPoint)).ToList();
-					
+
 					if (minions.Count != 0)
 						statSet.set(parameter.Name, minions);
 
 					break;
-				
+
 				default:
 					_logger.Error(nameof(SpawnData) + $": Invalid parameter type {parameter.GetType()}");
 					break;
 			}
 		}
-		
+
 		npcTemplate.setParameters(!statSet.isEmpty() ? statSet : StatSet.EMPTY_STATSET);
 	}
-	
+
 	/**
 	 * @param n
 	 * @param npcTemplate
@@ -378,7 +378,7 @@ public class SpawnData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly SpawnData INSTANCE = new();

@@ -16,22 +16,22 @@ namespace L2Dn.GameServer.Data.Xml;
 public class TimedHuntingZoneData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(TimedHuntingZoneData));
-	
+
 	private readonly Map<int, TimedHuntingZoneHolder> _timedHuntingZoneData = new();
-	
+
 	protected TimedHuntingZoneData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_timedHuntingZoneData.Clear();
-        
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "TimedHuntingZoneData.xml");
 		document.Elements("list").Where(e => e.Attribute("enabled").GetBoolean(false)).Elements("zone")
 			.ForEach(parseElement);
-		
+
 		if (_timedHuntingZoneData.Count != 0)
 		{
 			LOGGER.Info(GetType().Name + ": Loaded " + _timedHuntingZoneData.Count + " timed hunting zones.");
@@ -129,26 +129,26 @@ public class TimedHuntingZoneData: DataReaderBase
 				useWorldPrefix, zonePremiumUserOnly, enterLocations, exitLocation));
 	}
 
-	public TimedHuntingZoneHolder getHuntingZone(int zoneId)
+	public TimedHuntingZoneHolder? getHuntingZone(int zoneId)
 	{
 		return _timedHuntingZoneData.get(zoneId);
 	}
-	
+
 	public ICollection<TimedHuntingZoneHolder> getAllHuntingZones()
 	{
 		return _timedHuntingZoneData.Values;
 	}
-	
+
 	public int getSize()
 	{
 		return _timedHuntingZoneData.Count;
 	}
-	
+
 	public static TimedHuntingZoneData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly TimedHuntingZoneData INSTANCE = new();

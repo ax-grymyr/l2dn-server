@@ -42,7 +42,7 @@ public class BinaryNodeHeap
 	{
 		GeoNode first = _list[1];
 		_list[1] = _list[_size];
-		_list[_size] = null;
+		_list[_size] = null!;
 		_size--;
 		int pos = 1;
 		int cpos;

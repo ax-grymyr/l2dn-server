@@ -17,15 +17,15 @@ namespace L2Dn.GameServer.Data.Xml;
 public class OptionData: DataReaderBase
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(OptionData));
-	
+
 	private static ImmutableArray<Options> _options = ImmutableArray<Options>.Empty;
-	
+
 	private OptionData()
 	{
 		load();
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
+
+	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
 	{
 		Dictionary<int, Options> optionMap = new();
@@ -112,7 +112,7 @@ public class OptionData: DataReaderBase
 
 		foreach (XmlOptionChanceSkill criticalSkill in xmlOption.CriticalSkills)
 		{
-			Skill skill = SkillData.getInstance().getSkill(criticalSkill.Id, criticalSkill.Level);
+			Skill? skill = SkillData.getInstance().getSkill(criticalSkill.Id, criticalSkill.Level);
 			if (skill != null)
 				option.addActivationSkill(new OptionSkillHolder(skill, criticalSkill.Chance, OptionSkillType.CRITICAL));
 			else
@@ -128,7 +128,7 @@ public class OptionData: DataReaderBase
 	{
 		return id >= 0 && id < _options.Length ? _options[id] : null;
 	}
-	
+
 	/**
 	 * Gets the single instance of OptionsData.
 	 * @return single instance of OptionsData
@@ -137,7 +137,7 @@ public class OptionData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly OptionData INSTANCE = new();

@@ -79,7 +79,7 @@ public class AutoPlayTaskManager
 						// Logic for Spoil (254) skill.
 						if (creature.isMonster() && creature.isDead() && player.getAutoUseSettings().getAutoSkills().Contains(254))
 						{
-							Skill sweeper = player.getKnownSkill(42); // TODO: Check skill ids 254 and 42, add to CommonSkills
+							Skill? sweeper = player.getKnownSkill(42); // TODO: Check skill ids 254 and 42, add to CommonSkills
 							if (sweeper != null)
 							{
 								Monster monster = (Monster) target;
@@ -131,7 +131,7 @@ public class AutoPlayTaskManager
 						}
 
 						// Pet Attack.
-						Pet pet = player.getPet();
+						Pet? pet = player.getPet();
 						if (pet != null && player.getAutoUseSettings().getAutoActions().Contains(PET_ATTACK_ACTION) && pet.hasAI() && !pet.isMoving() && !pet.isDisabled() && pet.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK && pet.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST && creature.isAutoAttackable(player) && GeoEngine.getInstance().canSeeTarget(player, creature))
 						{
 							pet.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, creature);
@@ -256,7 +256,7 @@ public class AutoPlayTaskManager
 
 				// Find target.
 				creature = null;
-				Party party = player.getParty();
+				Party? party = player.getParty();
 				Player? leader = party == null ? null : party.getLeader();
 				if (Config.ENABLE_AUTO_ASSIST && party != null && leader != null && leader != player && !leader.isDead())
 				{
@@ -420,9 +420,11 @@ public class AutoPlayTaskManager
 						summon.followOwner();
 					}
 				}
-				if (player.hasPet())
+
+                Pet? pet = player.getPet();
+				if (player.hasPet() && pet != null)
 				{
-					player.getPet().followOwner();
+                    pet.followOwner();
 				}
 				IDLE_COUNT.remove(player);
 				return;

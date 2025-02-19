@@ -18,16 +18,16 @@ namespace L2Dn.GameServer.Data.Xml;
 public class ShuttleData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ShuttleData));
-	
+
 	private readonly Map<int, ShuttleDataHolder> _shuttles = new();
 	private readonly Map<int, Shuttle> _shuttleInstances = new();
-	
+
 	protected ShuttleData()
 	{
 		load();
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
+
+	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
 	{
 		if (_shuttleInstances.Count != 0)
@@ -38,10 +38,10 @@ public class ShuttleData: DataReaderBase
 			}
 			_shuttleInstances.Clear();
 		}
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "ShuttleData.xml");
 		document.Elements("list").Elements("shuttle").ForEach(parseElement);
-		
+
 		init();
 		LOGGER.Info(GetType().Name + ": Loaded " + _shuttles.Count + " shuttles.");
 	}
@@ -117,24 +117,24 @@ public class ShuttleData: DataReaderBase
 			_shuttleInstances.put(shuttle.ObjectId, shuttle);
 		}
 	}
-	
-	public Shuttle getShuttle(int id)
+
+	public Shuttle? getShuttle(int id)
 	{
 		foreach (Shuttle shuttle in _shuttleInstances.Values)
 		{
-			if ((shuttle.ObjectId == id) || (shuttle.getId() == id))
+			if (shuttle.ObjectId == id || shuttle.getId() == id)
 			{
 				return shuttle;
 			}
 		}
 		return null;
 	}
-	
+
 	public static ShuttleData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ShuttleData INSTANCE = new();

@@ -53,7 +53,7 @@ public class CharInfoTable
 
 	private void addName(int objectId, string name)
 	{
-		if ((name != null) && !name.equals(_names.get(objectId)))
+		if (name != null && !name.equals(_names.get(objectId)))
 		{
 			_names.put(objectId, name);
 		}

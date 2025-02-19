@@ -156,7 +156,7 @@ public class ItemData: DataReaderBase
 					string setName = el.GetAttributeValueAsString("name").Trim();
 					string value = el.GetAttributeValueAsString("val").Trim();
 					char ch = string.IsNullOrEmpty(value) ? ' ' : value[0];
-					if ((ch == '#') || (ch == '-') || char.IsDigit(ch))
+					if (ch == '#' || ch == '-' || char.IsDigit(ch))
 						set.set(setName, getValue(value, 1));
 					else
 						set.set(setName, value);
@@ -219,7 +219,7 @@ public class ItemData: DataReaderBase
 					{
 						condition.setMessageId((SystemMessageId)int.Parse(msgId));
 						string? addName = conditionEl.GetAttributeValueAsString("addName");
-						if ((addName != null) && (int.Parse(msgId) > 0))
+						if (addName != null && int.Parse(msgId) > 0)
 							condition.addName();
 					}
 					break;
@@ -238,8 +238,8 @@ public class ItemData: DataReaderBase
 			{
 				_etcItems.put(etcItem.getId(), etcItem);
 
-				if ((etcItem.getItemType() == EtcItemType.ARROW) || (etcItem.getItemType() == EtcItemType.BOLT) ||
-				    (etcItem.getItemType() == EtcItemType.ELEMENTAL_ORB))
+				if (etcItem.getItemType() == EtcItemType.ARROW || etcItem.getItemType() == EtcItemType.BOLT ||
+				    etcItem.getItemType() == EtcItemType.ELEMENTAL_ORB)
 				{
 					List<ItemSkillHolder> skills = item.getAllSkills();
 					if (skills != null)
@@ -324,7 +324,7 @@ public class ItemData: DataReaderBase
 	{
 		ConditionLogicAnd cond = new ConditionLogicAnd();
 		element.Elements().ForEach(e => cond.add(parseCondition(e, template)));
-		if ((cond.conditions == null) || (cond.conditions.Count == 0))
+		if (cond.conditions == null || cond.conditions.Count == 0)
 			LOGGER.Error($"Empty <and> condition in item {template.getId()}");
 
 		return cond;
@@ -334,7 +334,7 @@ public class ItemData: DataReaderBase
 	{
 		ConditionLogicOr cond = new ConditionLogicOr();
 		element.Elements().ForEach(e => cond.add(parseCondition(e, template)));
-		if ((cond.conditions == null) || (cond.conditions.Count == 0))
+		if (cond.conditions == null || cond.conditions.Count == 0)
 			LOGGER.Error($"Empty <or> condition in item {template.getId()}");
 
 		return cond;
@@ -348,7 +348,7 @@ public class ItemData: DataReaderBase
 
 	private static Condition parsePlayerCondition(XElement element, ItemTemplate template)
 	{
-		Condition cond = null;
+		Condition? cond = null;
 		foreach (XAttribute attribute in element.Attributes())
 		{
 			switch (attribute.Name.LocalName.ToLowerInvariant())
@@ -890,7 +890,7 @@ public class ItemData: DataReaderBase
 
 	private static Condition parseTargetCondition(XElement element, ItemTemplate template)
 	{
-		Condition cond = null;
+		Condition? cond = null;
 		foreach (XAttribute attribute in element.Attributes())
 		{
 			switch (attribute.Name.LocalName.ToLowerInvariant())
@@ -1078,7 +1078,7 @@ public class ItemData: DataReaderBase
 
 	private static Condition parseUsingCondition(XElement element)
 	{
-		Condition cond = null;
+		Condition? cond = null;
 		foreach (XAttribute attribute in element.Attributes())
 		{
 			switch (attribute.Name.LocalName)
@@ -1167,7 +1167,7 @@ public class ItemData: DataReaderBase
 
 	private static Condition parseGameCondition(XElement element)
 	{
-		Condition cond = null;
+		Condition? cond = null;
 		foreach (XAttribute attribute in element.Attributes())
 		{
 			switch (attribute.Name.LocalName)
@@ -1273,7 +1273,7 @@ public class ItemData: DataReaderBase
 	 */
 	public ItemTemplate? getTemplate(int id)
 	{
-		if ((id >= _allTemplates.Length) || (id < 0))
+		if (id >= _allTemplates.Length || id < 0)
 		{
 			return null;
 		}
@@ -1281,7 +1281,7 @@ public class ItemData: DataReaderBase
 	}
 
 	/**
-	 * Create the Item corresponding to the Item Identifier and quantitiy add logs the activity. <b><u>Actions</u>:</b>
+	 * Create the Item corresponding to the Item Identifier and quantity add logs the activity. <b><u>Actions</u>:</b>
 	 * <li>Create and Init the Item corresponding to the Item Identifier and quantity</li>
 	 * <li>Add the Item object to _allObjects of L2world</li>
 	 * <li>Logs Item creation according to log settings</li><br>
@@ -1292,18 +1292,18 @@ public class ItemData: DataReaderBase
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item
 	 */
-	public Item createItem(string process, int itemId, long count, Creature actor, object? reference)
+	public Item createItem(string process, int itemId, long count, Creature? actor, object? reference)
 	{
 		// Create and Init the Item corresponding to the Item Identifier
 		Item item = new Item(IdManager.getInstance().getNextId(), itemId);
 		if (process.equalsIgnoreCase("loot") && !Config.AUTO_LOOT_ITEM_IDS.Contains(itemId))
 		{
 			ScheduledFuture itemLootShedule;
-			if ((reference is Attackable) && ((Attackable)reference).isRaid()) // loot privilege for raids
+			if (reference is Attackable && ((Attackable)reference).isRaid()) // loot privilege for raids
 			{
 				Attackable raid = (Attackable)reference;
 				// if in CommandChannel and was killing a World/RaidBoss
-				if ((raid.getFirstCommandChannelAttacked() != null) && !Config.AUTO_LOOT_RAIDS)
+				if (raid.getFirstCommandChannelAttacked() != null && !Config.AUTO_LOOT_RAIDS)
 				{
 					item.setOwnerId(raid.getFirstCommandChannelAttacked().getLeaderObjectId());
 					itemLootShedule = ThreadPool.schedule(new ResetOwner(item), Config.LOOT_RAIDS_PRIVILEGE_INTERVAL);
@@ -1311,7 +1311,7 @@ public class ItemData: DataReaderBase
 				}
 			}
 			else if (!Config.AUTO_LOOT ||
-			         ((reference is EventMonster) && ((EventMonster)reference).eventDropOnGround()))
+			         (reference is EventMonster && ((EventMonster)reference).eventDropOnGround()))
 			{
 				item.setOwnerId(actor.ObjectId);
 				itemLootShedule = ThreadPool.schedule(new ResetOwner(item), 15000);
@@ -1323,14 +1323,14 @@ public class ItemData: DataReaderBase
 		World.getInstance().addObject(item);
 
 		// Set Item parameters
-		if (item.isStackable() && (count > 1))
+		if (item.isStackable() && count > 1)
 		{
 			item.setCount(count);
 		}
 
 		if ((Config.LOG_ITEMS && !process.equals("Reset") &&
-		     ((!Config.LOG_ITEMS_SMALL_LOG) && (!Config.LOG_ITEMS_IDS_ONLY))) ||
-		    (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || (item.getId() == Inventory.ADENA_ID))) ||
+                !Config.LOG_ITEMS_SMALL_LOG && !Config.LOG_ITEMS_IDS_ONLY) ||
+		    (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getId() == Inventory.ADENA_ID)) ||
 		    (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(item.getId())))
 		{
 			if (item.getEnchantLevel() > 0)
@@ -1371,7 +1371,7 @@ public class ItemData: DataReaderBase
 			}
 		}
 
-		if ((actor != null) && actor.isGM() && Config.GMAUDIT)
+		if (actor != null && actor.isGM() && Config.GMAUDIT)
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.Append(process);
@@ -1385,14 +1385,15 @@ public class ItemData: DataReaderBase
 			sb.Append(item.ObjectId);
 			sb.Append(")");
 
-			string targetName = (actor.getTarget() != null ? actor.getTarget().getName() : "no-target");
+            WorldObject? actorTarget = actor.getTarget();
+			string targetName = actorTarget != null ? actorTarget.getName() : "no-target";
 
 			string referenceName = "no-reference";
 			if (reference is WorldObject)
 			{
-				referenceName = (((WorldObject)reference).getName() != null
-					? ((WorldObject)reference).getName()
-					: "no-name");
+				referenceName = ((WorldObject)reference).getName() != null
+                    ? ((WorldObject)reference).getName()
+                    : "no-name";
 			}
 			else if (reference is string)
 			{
@@ -1446,7 +1447,7 @@ public class ItemData: DataReaderBase
 			World.getInstance().removeObject(item);
 			IdManager.getInstance().releaseId(item.ObjectId);
 
-			if ((Config.LOG_ITEMS && ((!Config.LOG_ITEMS_SMALL_LOG) && (!Config.LOG_ITEMS_IDS_ONLY))) || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || (item.getId() == Inventory.ADENA_ID))) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(item.getId())))
+			if ((Config.LOG_ITEMS && !Config.LOG_ITEMS_SMALL_LOG && !Config.LOG_ITEMS_IDS_ONLY) || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getId() == Inventory.ADENA_ID)) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(item.getId())))
 			{
 				if (item.getEnchantLevel() > 0)
 				{
@@ -1490,7 +1491,7 @@ public class ItemData: DataReaderBase
 				}
 			}
 
-			if ((actor != null) && actor.isGM() && Config.GMAUDIT)
+			if (actor != null && actor.isGM() && Config.GMAUDIT)
 			{
 				StringBuilder sb = new StringBuilder();
 				sb.Append(process);
@@ -1507,9 +1508,9 @@ public class ItemData: DataReaderBase
 				string referenceName = "no-reference";
 				if (reference is WorldObject)
 				{
-					referenceName = (((WorldObject)reference).getName() != null
-						? ((WorldObject)reference).getName()
-						: "no-name");
+					referenceName = ((WorldObject)reference).getName() != null
+                        ? ((WorldObject)reference).getName()
+                        : "no-name";
 				}
 				else if (reference is string)
 				{

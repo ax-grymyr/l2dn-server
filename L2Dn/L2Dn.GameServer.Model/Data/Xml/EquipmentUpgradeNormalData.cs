@@ -86,7 +86,7 @@ public class EquipmentUpgradeNormalData: DataReaderBase
         int id = element.GetAttributeValueAsInt32("id");
         int type = element.GetAttributeValueAsInt32("type");
         double chance = element.GetAttributeValueAsDouble("chance");
-        long commission = _commission == 0 ? 0 : ((element.GetAttributeValueAsInt64("commission") / 100) * _commission);
+        long commission = _commission == 0 ? 0 : element.GetAttributeValueAsInt64("commission") / 100 * _commission;
 
         element.Elements("upgradeItem").ForEach(upgradeEl =>
         {

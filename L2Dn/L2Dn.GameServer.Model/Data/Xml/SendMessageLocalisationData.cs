@@ -13,20 +13,19 @@ namespace L2Dn.GameServer.Data.Xml;
 public class SendMessageLocalisationData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SendMessageLocalisationData));
-	
+
 	private const string SPLIT_STRING = "XXX";
 	private static readonly Map<string, Map<string[], string[]>> SEND_MESSAGE_LOCALISATIONS = new();
-	private static string _lang;
-	
+
 	protected SendMessageLocalisationData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		SEND_MESSAGE_LOCALISATIONS.Clear();
-		
+
 		if (Config.MULTILANG_ENABLE)
 		{
 			foreach (string lang in Config.MULTILANG_ALLOWED)
@@ -34,10 +33,10 @@ public class SendMessageLocalisationData: DataReaderBase
 				string filePath = GetFullPath(DataFileLocation.Data, "lang/" + lang + "/SendMessageLocalisation.xml");
 				if (!File.Exists(filePath))
 					continue;
-				
-				SEND_MESSAGE_LOCALISATIONS.put(lang, new());
-				_lang = lang;
-				
+
+                Map<string[], string[]> map = new Map<string[], string[]>();
+				SEND_MESSAGE_LOCALISATIONS.put(lang, map);
+
 				XDocument document =
 					LoadXmlDocument(DataFileLocation.Data, "lang/" + lang + "/SendMessageLocalisation.xml");
 
@@ -45,10 +44,10 @@ public class SendMessageLocalisationData: DataReaderBase
 				{
 					string[] message = el.GetAttributeValueAsString("message").Split(SPLIT_STRING);
 					string[] translation = el.GetAttributeValueAsString("translation").Split(SPLIT_STRING);
-					SEND_MESSAGE_LOCALISATIONS.get(_lang).put(message, translation);
+					map.put(message, translation);
 				});
-				
-				int count = SEND_MESSAGE_LOCALISATIONS.get(lang).Count;
+
+				int count = map.Count;
 				if (count == 0)
 				{
 					SEND_MESSAGE_LOCALISATIONS.remove(lang);
@@ -60,12 +59,12 @@ public class SendMessageLocalisationData: DataReaderBase
 			}
 		}
 	}
-	
+
 	public static string getLocalisation(Player player, string message)
 	{
-		if (Config.MULTILANG_ENABLE && (player != null))
+		if (Config.MULTILANG_ENABLE && player != null)
 		{
-			Map<string[], string[]> localisations = SEND_MESSAGE_LOCALISATIONS.get(player.getLang());
+			Map<string[], string[]>? localisations = SEND_MESSAGE_LOCALISATIONS.get(player.getLang());
 			if (localisations != null)
 			{
 				// No pretty way of doing something like this.
@@ -78,7 +77,7 @@ public class SendMessageLocalisationData: DataReaderBase
 				{
 					searchMessage = entry.Key;
 					replacementMessage = entry.Value;
-					
+
 					// Exact match.
 					if (searchMessage.Length == 1)
 					{
@@ -113,12 +112,12 @@ public class SendMessageLocalisationData: DataReaderBase
 		}
 		return message;
 	}
-	
+
 	public static SendMessageLocalisationData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly SendMessageLocalisationData INSTANCE = new();
