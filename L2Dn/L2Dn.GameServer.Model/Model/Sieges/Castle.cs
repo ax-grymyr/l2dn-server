@@ -44,12 +44,12 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	private bool _showNpcCrest = false;
 	private SiegeZone _zone = null;
 	private ResidenceTeleportZone _teleZone;
-	private Clan _formerOwner = null;
+	private Clan? _formerOwner = null;
 	private readonly Set<Artefact> _artefacts = new();
 	private readonly Map<int, CastleFunction> _function = new();
 	private int _ticketBuyCount = 0;
 	private bool _isFirstMidVictory = false;
-	
+
 	/** Castle Functions */
 	public const int FUNC_TELEPORT = 1;
 	public const int FUNC_RESTORE_HP = 2;
@@ -58,7 +58,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	public const int FUNC_SUPPORT = 5;
 
 	public EventContainer Events => _eventContainer;
-	
+
 	public class CastleFunction
 	{
 		private readonly Castle _castle;
@@ -70,7 +70,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		private DateTime? _endDate;
 		protected bool _inDebt;
 		public bool _cwh;
-		
+
 		public CastleFunction(Castle castle, int type, int lvl, int lease, int tempLease, TimeSpan rate, DateTime? time, bool cwh)
 		{
 			_castle = castle;
@@ -82,54 +82,54 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			_endDate = time;
 			initializeTask(cwh);
 		}
-		
+
 		public int getType()
 		{
 			return _type;
 		}
-		
+
 		public int getLvl()
 		{
 			return _lvl;
 		}
-		
+
 		public int getLease()
 		{
 			return _fee;
 		}
-		
+
 		public TimeSpan getRate()
 		{
 			return _rate;
 		}
-		
+
 		public DateTime? getEndTime()
 		{
 			return _endDate;
 		}
-		
+
 		public void setLvl(int lvl)
 		{
 			_lvl = lvl;
 		}
-		
+
 		public void setLease(int lease)
 		{
 			_fee = lease;
 		}
-		
+
 		public void setEndTime(DateTime time)
 		{
 			_endDate = time;
 		}
-		
+
 		private void initializeTask(bool cwh)
 		{
 			if (_castle._ownerId <= 0)
 			{
 				return;
 			}
-			
+
 			DateTime currentTime = DateTime.UtcNow;
 			if (_endDate > currentTime)
 			{
@@ -140,7 +140,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 				ThreadPool.schedule(new FunctionTask(_castle, this, cwh), 0);
 			}
 		}
-		
+
 		private class FunctionTask: Runnable
 		{
 			private readonly Castle _castle;
@@ -152,7 +152,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 				_castleFunction = castleFunction;
 				_castleFunction._cwh = cwh;
 			}
-			
+
 			public void run()
 			{
 				try
@@ -192,10 +192,10 @@ public class Castle: AbstractResidence, IEventContainerProvider
 				}
 			}
 		}
-		
+
 		public void dbSave()
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int castleId = _castle.getResidenceId();
@@ -207,7 +207,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 					record.Type = (byte)_type;
 					ctx.CastleFunctions.Add(record);
 				}
-				
+
 				record.Level = (short)_lvl;
 				record.Lease = _fee;
 				record.Rate = _rate;
@@ -220,11 +220,11 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	public Castle(int castleId, string castleName): base(castleId, castleName)
 	{
 		_eventContainer = new($"Castle template {castleId}", GlobalEvents.Global);
-		
+
 		load();
 		initResidenceZone();
 		// initFunctions();
@@ -235,7 +235,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			loadDoorUpgrade();
 		}
 	}
-	
+
 	/**
 	 * Return function with id
 	 * @param type
@@ -260,7 +260,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		msg.Params.addString(getName());
 		getSiege().announceToPlayer(msg, true);
 	}
-	
+
 	// This method add to the treasury
 	/**
 	 * Add amount to castle instance's treasury (warehouse).
@@ -273,7 +273,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		{
 			return;
 		}
-		
+
 		long amount = amountValue;
 		switch (getName().ToLower())
 		{
@@ -311,10 +311,10 @@ public class Castle: AbstractResidence, IEventContainerProvider
 				break;
 			}
 		}
-		
+
 		addToTreasuryNoTax(amount);
 	}
-	
+
 	/**
 	 * Add amount to castle instance's treasury (warehouse), no tax paying.
 	 * @param amountValue
@@ -326,7 +326,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		{
 			return false;
 		}
-		
+
 		long amount = amountValue;
 		if (amount < 0)
 		{
@@ -345,8 +345,8 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		{
 			_treasury += amount;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
@@ -356,10 +356,10 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		{
 			LOGGER.Error(e);
 		}
-		
+
 		return true;
 	}
-	
+
 	/**
 	 * Move non clan members off castle area and to nearest town.
 	 */
@@ -367,7 +367,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	{
 		getResidenceZone().banishForeigners(_ownerId);
 	}
-	
+
 	/**
 	 * Return true if object is inside the zone
 	 * @param x
@@ -380,7 +380,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		SiegeZone zone = getZone();
 		return zone != null && zone.isInsideZone(location);
 	}
-	
+
 	public SiegeZone getZone()
 	{
 		if (_zone == null)
@@ -396,12 +396,12 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		}
 		return _zone;
 	}
-	
+
 	public override CastleZone getResidenceZone()
 	{
 		return (CastleZone) base.getResidenceZone();
 	}
-	
+
 	public ResidenceTeleportZone getTeleZone()
 	{
 		if (_teleZone == null)
@@ -417,12 +417,12 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		}
 		return _teleZone;
 	}
-	
+
 	public void oustAllPlayers()
 	{
 		getTeleZone().oustAllPlayers();
 	}
-	
+
 	/**
 	 * Get the objects distance to this castle
 	 * @param obj
@@ -432,24 +432,24 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	{
 		return getZone().getDistanceToZone(obj);
 	}
-	
+
 	public void closeDoor(Player player, int doorId)
 	{
 		openCloseDoor(player, doorId, false);
 	}
-	
+
 	public void openDoor(Player player, int doorId)
 	{
 		openCloseDoor(player, doorId, true);
 	}
-	
+
 	public void openCloseDoor(Player player, int doorId, bool open)
 	{
 		if (player.getClanId() != _ownerId && !player.canOverrideCond(PlayerCondOverride.CASTLE_CONDITIONS))
 		{
 			return;
 		}
-		
+
 		Door door = getDoor(doorId);
 		if (door != null)
 		{
@@ -463,14 +463,14 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	public void openCloseDoor(Player player, string doorName, bool open)
 	{
 		if (player.getClanId() != _ownerId && !player.canOverrideCond(PlayerCondOverride.CASTLE_CONDITIONS))
 		{
 			return;
 		}
-		
+
 		Door door = getDoor(doorName);
 		if (door != null)
 		{
@@ -484,7 +484,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	// This method is used to begin removing all castle upgrades
 	public void removeUpgrade()
 	{
@@ -496,14 +496,14 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		}
 		_function.Clear();
 	}
-	
+
 	// This method updates the castle tax rate
-	public void setOwner(Clan clan)
+	public void setOwner(Clan? clan)
 	{
 		// Remove old owner
 		if (_ownerId > 0 && (clan == null || clan.getId() != _ownerId))
 		{
-			Clan oldOwner = ClanTable.getInstance().getClan(getOwnerId()); // Try to find clan instance
+			Clan? oldOwner = ClanTable.getInstance().getClan(getOwnerId()); // Try to find clan instance
 			if (oldOwner != null)
 			{
 				if (_formerOwner == null)
@@ -535,21 +535,21 @@ public class Castle: AbstractResidence, IEventContainerProvider
 				}
 			}
 		}
-		
+
 		updateOwnerInDB(clan); // Update in database
 		setShowNpcCrest(false);
-		
+
 		// if clan have fortress, remove it
 		if (clan != null && clan.getFortId() > 0)
 		{
 			FortManager.getInstance().getFortByOwner(clan).removeOwner(true);
 		}
-		
+
 		if (getSiege().isInProgress())
 		{
 			getSiege().midVictory(); // Mid victory phase of siege
 		}
-		
+
 		if (clan != null)
 		{
 			foreach (Player member in clan.getOnlineMembers(0))
@@ -559,7 +559,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	public void removeOwner(Clan clan)
 	{
 		if (clan != null)
@@ -577,21 +577,21 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			clan.setCastleId(0);
 			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(clan));
 		}
-		
+
 		setSide(CastleSide.NEUTRAL);
 		updateOwnerInDB(null);
 		if (getSiege().isInProgress())
 		{
 			getSiege().midVictory();
 		}
-		
+
 		foreach (int fc in _function.Keys)
 		{
 			removeFunction(fc);
 		}
 		_function.Clear();
 	}
-	
+
 	/**
 	 * Respawn all doors on castle grounds.
 	 */
@@ -599,7 +599,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	{
 		spawnDoor(false);
 	}
-	
+
 	/**
 	 * Respawn all doors on castle grounds
 	 * @param isDoorWeak
@@ -613,18 +613,18 @@ public class Castle: AbstractResidence, IEventContainerProvider
 				door.doRevive();
 				door.setCurrentHp(isDoorWeak ? door.getMaxHp() / 2 : door.getMaxHp());
 			}
-			
+
 			if (door.isOpen())
 			{
 				door.closeMe();
 			}
 		}
 	}
-	
+
 	// This method loads castle
 	protected override void load()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
@@ -652,11 +652,11 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Exception: loadCastleData(): " + e);
 		}
 	}
-	
+
 	/** Load All Functions */
 	private void loadFunctions()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
@@ -673,7 +673,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Exception: Castle.loadFunctions(): " + e);
 		}
 	}
-	
+
 	/**
 	 * Remove function In List and in DB
 	 * @param functionType
@@ -681,7 +681,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	public void removeFunction(int functionType)
 	{
 		_function.remove(functionType);
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
@@ -692,7 +692,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Exception: Castle.removeFunctions(int functionType): " + e);
 		}
 	}
-	
+
 	public bool updateFunctions(Player player, int type, int lvl, int lease, TimeSpan rate, bool addNew)
 	{
 		if (player == null)
@@ -728,12 +728,12 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		}
 		return true;
 	}
-	
+
 	public void activateInstance()
 	{
 		loadDoor();
 	}
-	
+
 	// This method loads castle door data from database
 	private void loadDoor()
 	{
@@ -745,11 +745,11 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	// This method loads castle door upgrade data from database
 	private void loadDoorUpgrade()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
@@ -764,7 +764,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Exception: loadCastleDoorUpgrade(): " + e);
 		}
 	}
-	
+
 	private void removeDoorUpgrade()
 	{
 		foreach (Door door in _doors)
@@ -772,8 +772,8 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			door.getStat().setUpgradeHpRatio(1);
 			door.setCurrentHp(door.getCurrentHp());
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
@@ -784,7 +784,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			LOGGER.Warn("Exception: removeDoorUpgrade(): " + e);
 		}
 	}
-	
+
 	public void setDoorUpgrade(int doorId, int ratio, bool save)
 	{
 		Door door = getDoors().Count == 0 ? DoorData.getInstance().getDoor(doorId) : getDoor(doorId);
@@ -792,13 +792,13 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		{
 			return;
 		}
-		
+
 		door.getStat().setUpgradeHpRatio(ratio);
 		door.setCurrentHp(door.getMaxHp());
-		
+
 		if (save)
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				var record = ctx.CastleDoorUpgrades.SingleOrDefault(r => r.DoorId == doorId);
@@ -819,7 +819,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	private void updateOwnerInDB(Clan clan)
 	{
 		if (clan != null)
@@ -831,7 +831,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			_ownerId = 0; // Remove owner
 			CastleManorManager.getInstance().resetManorData(getResidenceId());
 		}
-		
+
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -840,7 +840,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			// Need to remove has castle flag from clan_data, should be checked from castle table.
 			ctx.Clans.Where(c => c.Castle == castleId).ExecuteUpdate(s => s.SetProperty(r => r.Castle, (short?)null));
 			ctx.Clans.Where(c => c.Id == _ownerId).ExecuteUpdate(s => s.SetProperty(r => r.Castle, (short)castleId));
-			
+
 			// Announce to clan members
 			if (clan != null)
 			{
@@ -854,7 +854,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Exception: updateOwnerInDB(Pledge clan): " + e);
 		}
 	}
-	
+
 	public Door getDoor(int doorId)
 	{
 		foreach (Door door in _doors)
@@ -866,7 +866,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		}
 		return null;
 	}
-	
+
 	public Door getDoor(string doorName)
 	{
 		foreach (Door door in _doors)
@@ -878,32 +878,32 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		}
 		return null;
 	}
-	
+
 	public List<Door> getDoors()
 	{
 		return _doors;
 	}
-	
+
 	public bool isFirstMidVictory()
 	{
 		return _isFirstMidVictory;
 	}
-	
+
 	public void setFirstMidVictory(bool value)
 	{
 		_isFirstMidVictory = value;
 	}
-	
+
 	public override int getOwnerId()
 	{
 		return _ownerId;
 	}
-	
-	public Clan getOwner()
+
+	public Clan? getOwner()
 	{
 		return _ownerId != 0 ? ClanTable.getInstance().getClan(_ownerId) : null;
 	}
-	
+
 	public Siege getSiege()
 	{
 		if (_siege == null)
@@ -912,42 +912,42 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		}
 		return _siege;
 	}
-	
+
 	public DateTime getSiegeDate()
 	{
 		return _siegeDate;
 	}
-	
+
 	public void setSiegeDate(DateTime siegeDate)
 	{
 		_siegeDate = siegeDate;
 	}
-	
+
 	public bool isTimeRegistrationOver()
 	{
 		return _isTimeRegistrationOver;
 	}
-	
+
 	public void setTimeRegistrationOver(bool value)
 	{
 		_isTimeRegistrationOver = value;
 	}
-	
+
 	public DateTime getTimeRegistrationOverDate()
 	{
 		if (_siegeTimeRegistrationEndDate == null)
 		{
 			_siegeTimeRegistrationEndDate = DateTime.UtcNow;
 		}
-		
+
 		return _siegeTimeRegistrationEndDate.Value;
 	}
-	
+
 	public void setTimeRegistrationOverDate(DateTime time)
 	{
 		_siegeTimeRegistrationEndDate = time;
 	}
-	
+
 	public int getTaxPercent(TaxType type)
 	{
 		int taxPercent;
@@ -971,22 +971,22 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		}
 		return taxPercent;
 	}
-	
+
 	public double getTaxRate(TaxType taxType)
 	{
 		return getTaxPercent(taxType) / 100.0;
 	}
-	
+
 	public long getTreasury()
 	{
 		return _treasury;
 	}
-	
+
 	public bool getShowNpcCrest()
 	{
 		return _showNpcCrest;
 	}
-	
+
 	public void setShowNpcCrest(bool showNpcCrest)
 	{
 		if (_showNpcCrest != showNpcCrest)
@@ -995,7 +995,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			updateShowNpcCrest();
 		}
 	}
-	
+
 	public void updateClansReputation()
 	{
 		if (_formerOwner != null)
@@ -1024,10 +1024,10 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	public void updateShowNpcCrest()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
@@ -1039,7 +1039,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Error saving showNpcCrest for castle " + getName() + ": " + e);
 		}
 	}
-	
+
 	/**
 	 * Register Artefact to castle
 	 * @param artefact
@@ -1048,12 +1048,12 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	{
 		_artefacts.add(artefact);
 	}
-	
+
 	public Set<Artefact> getArtefacts()
 	{
 		return _artefacts;
 	}
-	
+
 	/**
 	 * @return the tickets exchanged for this castle
 	 */
@@ -1061,7 +1061,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	{
 		return _ticketBuyCount;
 	}
-	
+
 	/**
 	 * Set the exchanged tickets count.<br>
 	 * Performs database update.
@@ -1070,8 +1070,8 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	public void setTicketBuyCount(int count)
 	{
 		_ticketBuyCount = count;
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
@@ -1083,18 +1083,18 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			LOGGER.Error(e);
 		}
 	}
-	
+
 	public int getTrapUpgradeLevel(int towerIndex)
 	{
 		TowerSpawn spawn = SiegeManager.getInstance().getFlameTowers(getResidenceId())[towerIndex];
 		return spawn != null ? spawn.getUpgradeLevel() : 0;
 	}
-	
+
 	public void setTrapUpgrade(int towerIndex, int level, bool save)
 	{
 		if (save)
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int castleId = getResidenceId();
@@ -1121,15 +1121,15 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			spawn.setUpgradeLevel(level);
 		}
 	}
-	
+
 	private void removeTrapUpgrade()
 	{
 		foreach (TowerSpawn ts in SiegeManager.getInstance().getFlameTowers(getResidenceId()))
 		{
 			ts.setUpgradeLevel(0);
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
@@ -1140,7 +1140,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			LOGGER.Warn("Exception: removeDoorUpgrade(): " + e);
 		}
 	}
-	
+
 	protected override void initResidenceZone()
 	{
 		foreach (CastleZone zone in ZoneManager.getInstance().getAllZones<CastleZone>())
@@ -1152,21 +1152,21 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	public override void giveResidentialSkills(Player player)
 	{
 		base.giveResidentialSkills(player);
 		Skill skill = _castleSide == CastleSide.DARK ? CommonSkill.ABILITY_OF_DARKNESS.getSkill() : CommonSkill.ABILITY_OF_LIGHT.getSkill();
 		player.addSkill(skill);
 	}
-	
+
 	public override void removeResidentialSkills(Player player)
 	{
 		base.removeResidentialSkills(player);
 		player.removeSkill((int)CommonSkill.ABILITY_OF_DARKNESS);
 		player.removeSkill((int)CommonSkill.ABILITY_OF_LIGHT);
 	}
-	
+
 	public void spawnSideNpcs()
 	{
 		foreach (Npc npc in _sideNpcs)
@@ -1177,7 +1177,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			}
 		}
 		_sideNpcs.Clear();
-		
+
 		foreach (CastleSpawnHolder holder in getSideSpawns())
 		{
 			if (holder != null)
@@ -1200,20 +1200,20 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	public ImmutableArray<CastleSpawnHolder> getSideSpawns()
 	{
 		return CastleData.getInstance().getSpawnsForSide(getResidenceId(), getSide());
 	}
-	
+
 	public void setSide(CastleSide side)
 	{
 		if (_castleSide == side)
 		{
 			return;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = getResidenceId();
@@ -1228,7 +1228,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		Broadcast.toAllOnlinePlayers(new ExCastleStatePacket(this));
 		spawnSideNpcs();
 	}
-	
+
 	public CastleSide getSide()
 	{
 		return _castleSide;

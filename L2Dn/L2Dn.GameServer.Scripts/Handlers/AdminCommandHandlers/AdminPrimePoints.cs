@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -16,11 +17,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminPrimePoints: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminPrimePoints));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_primepoints",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
@@ -31,11 +33,11 @@ public class AdminPrimePoints: IAdminCommandHandler
 			{
 				string action = st.nextToken();
 				Player target = getTarget(activeChar);
-				if ((target == null) || !st.hasMoreTokens())
+				if (target == null || !st.hasMoreTokens())
 				{
 					return false;
 				}
-				
+
 				int value = 0;
 				try
 				{
@@ -43,11 +45,12 @@ public class AdminPrimePoints: IAdminCommandHandler
 				}
 				catch (Exception e)
 				{
+                    _logger.Error(e);
 					showMenuHtml(activeChar);
 					BuilderUtil.sendSysMessage(activeChar, "Invalid Value!");
 					return false;
 				}
-				
+
 				switch (action)
 				{
 					case "set":
@@ -65,8 +68,8 @@ public class AdminPrimePoints: IAdminCommandHandler
 							activeChar.sendMessage(target.getName() + " already have max count of Prime Points!");
 							return false;
 						}
-						
-						int primeCount = Math.Min((target.getPrimePoints() + value), int.MaxValue);
+
+						int primeCount = Math.Min(target.getPrimePoints() + value, int.MaxValue);
 						if (primeCount < 0)
 						{
 							primeCount = int.MaxValue;
@@ -84,7 +87,7 @@ public class AdminPrimePoints: IAdminCommandHandler
 							activeChar.sendMessage(target.getName() + " already have min count of Prime Points!");
 							return false;
 						}
-						
+
 						int primeCount = Math.Max(target.getPrimePoints() - value, 0);
 						target.setPrimePoints(primeCount);
 						target.sendMessage("Admin decreased your Prime Point(s) by " + value + "!");
@@ -100,8 +103,9 @@ public class AdminPrimePoints: IAdminCommandHandler
 						}
 						catch (Exception e)
 						{
+                            _logger.Error(e);
 						}
-						
+
 						if (range <= 0)
 						{
 							int count = increaseForAll(World.getInstance().getPlayers(), value);
@@ -120,20 +124,20 @@ public class AdminPrimePoints: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	private int increaseForAll(ICollection<Player> playerList, int value)
 	{
 		int counter = 0;
 		foreach (Player temp in playerList)
 		{
-			if ((temp != null) && (temp.getOnlineStatus() == CharacterOnlineStatus.Online))
+			if (temp != null && temp.getOnlineStatus() == CharacterOnlineStatus.Online)
 			{
 				if (temp.getPrimePoints() == int.MaxValue)
 				{
 					continue;
 				}
-				
-				int primeCount = Math.Min((temp.getPrimePoints() + value), int.MaxValue);
+
+				int primeCount = Math.Min(temp.getPrimePoints() + value, int.MaxValue);
 				if (primeCount < 0)
 				{
 					primeCount = int.MaxValue;
@@ -145,25 +149,25 @@ public class AdminPrimePoints: IAdminCommandHandler
 		}
 		return counter;
 	}
-	
+
 	private Player getTarget(Player activeChar)
 	{
-		return ((activeChar.getTarget() != null) && (activeChar.getTarget().getActingPlayer() != null)) ? activeChar.getTarget().getActingPlayer() : activeChar;
+		return activeChar.getTarget()?.getActingPlayer() ?? activeChar;
 	}
-	
+
 	private void showMenuHtml(Player activeChar)
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/primepoints.htm", activeChar);
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, htmlContent);
-		
+
 		Player target = getTarget(activeChar);
 		int points = target.getPrimePoints();
-		
+
 		htmlContent.Replace("%points%", Util.formatAdena(points));
 		htmlContent.Replace("%targetName%", target.getName());
 		activeChar.sendPacket(html);
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

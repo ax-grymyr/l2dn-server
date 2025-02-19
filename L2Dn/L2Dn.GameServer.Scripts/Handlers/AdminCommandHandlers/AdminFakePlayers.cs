@@ -16,7 +16,7 @@ public class AdminFakePlayers: IAdminCommandHandler
     [
         "admin_fakechat",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_fakechat"))
@@ -27,13 +27,13 @@ public class AdminFakePlayers: IAdminCommandHandler
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //fakechat playername fpcname message");
 				return false;
 			}
-			Player player = World.getInstance().getPlayer(words[0]);
+			Player? player = World.getInstance().getPlayer(words[0]);
 			if (player == null)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Player not found.");
 				return false;
 			}
-			string fpcName = FakePlayerData.getInstance().getProperName(words[1]);
+			string? fpcName = FakePlayerData.getInstance().getProperName(words[1]);
 			if (fpcName == null)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Fake player not found.");
@@ -46,15 +46,15 @@ public class AdminFakePlayers: IAdminCommandHandler
 				{
 					continue;
 				}
-				message += (words[i] + " ");
+				message += words[i] + " ";
 			}
-			
+
 			FakePlayerChatManager.getInstance().sendChat(player, fpcName, message);
 			BuilderUtil.sendSysMessage(activeChar, "Your message has been sent.");
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

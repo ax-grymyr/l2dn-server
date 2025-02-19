@@ -606,7 +606,7 @@ public class Npc: Creature
 	 * @param player The player that speaks to this NPC
 	 * @return the pathfile of the selected HTML file in function of the npcId and of the page number.
 	 */
-	public virtual string getHtmlPath(int npcId, int value, Player player)
+	public virtual string getHtmlPath(int npcId, int value, Player? player)
 	{
 		string pom = "";
 		if (value == 0)

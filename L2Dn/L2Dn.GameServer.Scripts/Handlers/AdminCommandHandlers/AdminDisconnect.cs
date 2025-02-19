@@ -17,7 +17,7 @@ public class AdminDisconnect: IAdminCommandHandler
     [
         "admin_character_disconnect",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_character_disconnect"))
@@ -26,17 +26,17 @@ public class AdminDisconnect: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	private void disconnectCharacter(Player activeChar)
 	{
-		WorldObject target = activeChar.getTarget();
-		Player player = null;
-		if ((target != null) && target.isPlayer())
+		WorldObject? target = activeChar.getTarget();
+		Player? player;
+		if (target != null && target.isPlayer())
 		{
 			player = (Player) target;
 		}
@@ -44,7 +44,7 @@ public class AdminDisconnect: IAdminCommandHandler
 		{
 			return;
 		}
-		
+
 		if (player == activeChar)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "You cannot logout your own character.");

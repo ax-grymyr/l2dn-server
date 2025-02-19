@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -15,11 +16,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminPcCafePoints: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminPcCafePoints));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_pccafepoints",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
@@ -30,11 +32,11 @@ public class AdminPcCafePoints: IAdminCommandHandler
 			{
 				string action = st.nextToken();
 				Player target = getTarget(activeChar);
-				if ((target == null) || !st.hasMoreTokens())
+				if (target == null || !st.hasMoreTokens())
 				{
 					return false;
 				}
-				
+
 				int value = 0;
 				try
 				{
@@ -42,11 +44,12 @@ public class AdminPcCafePoints: IAdminCommandHandler
 				}
 				catch (Exception e)
 				{
+                    _logger.Error(e);
 					showMenuHtml(activeChar);
 					BuilderUtil.sendSysMessage(activeChar, "Invalid Value!");
 					return false;
 				}
-				
+
 				switch (action)
 				{
 					case "set":
@@ -61,7 +64,7 @@ public class AdminPcCafePoints: IAdminCommandHandler
 						{
 							value = 0;
 						}
-						
+
 						target.setPcCafePoints(value);
 						target.sendMessage("Admin set your PC Cafe point(s) to " + value + "!");
 						BuilderUtil.sendSysMessage(activeChar, "You set " + value + " PC Cafe point(s) to player " + target.getName());
@@ -76,7 +79,7 @@ public class AdminPcCafePoints: IAdminCommandHandler
 							activeChar.sendMessage(target.getName() + " already have max count of PC points!");
 							return false;
 						}
-						
+
 						int pcCafeCount = Math.Min(target.getPcCafePoints() + value, Config.PC_CAFE_MAX_POINTS);
 						if (pcCafeCount < 0)
 						{
@@ -96,7 +99,7 @@ public class AdminPcCafePoints: IAdminCommandHandler
 							activeChar.sendMessage(target.getName() + " already have min count of PC points!");
 							return false;
 						}
-						
+
 						int pcCafeCount = Math.Max(target.getPcCafePoints() - value, 0);
 						target.setPcCafePoints(pcCafeCount);
 						target.sendMessage("Admin decreased your PC Cafe point(s) by " + value + "!");
@@ -113,8 +116,9 @@ public class AdminPcCafePoints: IAdminCommandHandler
 						}
 						catch (Exception e)
 						{
+                            _logger.Error(e);
 						}
-						
+
 						if (range <= 0)
 						{
 							int count = increaseForAll(World.getInstance().getPlayers(), value);
@@ -133,19 +137,19 @@ public class AdminPcCafePoints: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	private int increaseForAll(ICollection<Player> playerList, int value)
 	{
 		int counter = 0;
 		foreach (Player temp in playerList)
 		{
-			if ((temp != null) && (temp.getOnlineStatus() == CharacterOnlineStatus.Online))
+			if (temp != null && temp.getOnlineStatus() == CharacterOnlineStatus.Online)
 			{
 				if (temp.getPcCafePoints() == int.MaxValue)
 				{
 					continue;
 				}
-				
+
 				int pcCafeCount = Math.Min(temp.getPcCafePoints() + value, int.MaxValue);
 				if (pcCafeCount < 0)
 				{
@@ -159,16 +163,17 @@ public class AdminPcCafePoints: IAdminCommandHandler
 		}
 		return counter;
 	}
-	
+
 	private Player getTarget(Player activeChar)
-	{
-		return ((activeChar.getTarget() != null) && (activeChar.getTarget().getActingPlayer() != null)) ? activeChar.getTarget().getActingPlayer() : activeChar;
+    {
+        WorldObject? activeCharTarget = activeChar.getTarget();
+		return activeCharTarget?.getActingPlayer() ?? activeChar;
 	}
-	
+
 	private void showMenuHtml(Player activeChar)
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/pccafe.htm", activeChar);
-		
+
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		Player target = getTarget(activeChar);
 		int points = target.getPcCafePoints();
@@ -176,7 +181,7 @@ public class AdminPcCafePoints: IAdminCommandHandler
 		htmlContent.Replace("%targetName%", target.getName());
 		activeChar.sendPacket(html);
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

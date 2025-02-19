@@ -71,7 +71,7 @@ public class AgathionData: DataReaderBase
 			int skillId = int.Parse(split[0]);
 			int level = int.Parse(split[1]);
 
-			Skill skill = SkillData.getInstance().getSkill(skillId, level);
+			Skill? skill = SkillData.getInstance().getSkill(skillId, level);
 			if (skill == null)
 			{
 				_logger.Warn(nameof(AgathionData) + ": Could not find agathion skill id " + skillId + ".");

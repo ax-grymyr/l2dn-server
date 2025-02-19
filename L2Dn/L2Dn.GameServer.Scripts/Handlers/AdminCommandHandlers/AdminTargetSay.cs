@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -15,37 +16,40 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminTargetSay: IAdminCommandHandler
 {
-	private static readonly string[] ADMIN_COMMANDS =
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminTargetSay));
+
+    private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_targetsay",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_targetsay"))
 		{
 			try
 			{
-				WorldObject obj = activeChar.getTarget();
-				if ((obj is StaticObject) || !obj.isCreature())
+				WorldObject? obj = activeChar.getTarget();
+				if (obj is null || obj is StaticObject || !obj.isCreature())
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 					return false;
 				}
-				
+
 				string message = command.Substring(16);
 				Creature target = (Creature) obj;
 				target.broadcastPacket(new CreatureSayPacket(target, target.isPlayer() ? ChatType.GENERAL : ChatType.NPC_GENERAL, target.getName(), message));
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //targetsay <text>");
 				return false;
 			}
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

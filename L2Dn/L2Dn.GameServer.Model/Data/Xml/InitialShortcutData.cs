@@ -21,11 +21,11 @@ namespace L2Dn.GameServer.Data.Xml;
 public class InitialShortcutData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(InitialShortcutData));
-	
+
 	private readonly Map<CharacterClass, List<Shortcut>> _initialShortcutData = new();
 	private readonly List<Shortcut> _initialGlobalShortcutList = new();
 	private readonly Map<int, Macro> _macroPresets = new();
-	
+
 	/**
 	 * Instantiates a new initial shortcuts data.
 	 */
@@ -33,12 +33,12 @@ public class InitialShortcutData: DataReaderBase
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_initialShortcutData.Clear();
 		_initialGlobalShortcutList.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/initialShortcuts.xml");
 		document.Elements("list").Elements("shortcuts").ForEach(parseShortcut);
 		document.Elements("list").Elements("macros").Elements("macro").ForEach(parseMacro);
@@ -47,7 +47,7 @@ public class InitialShortcutData: DataReaderBase
 		LOGGER.Info(GetType().Name + ": Loaded " + _initialShortcutData.Count + " initial shortcuts data.");
 		LOGGER.Info(GetType().Name + ": Loaded " + _macroPresets.Count + " macro presets.");
 	}
-	
+
 	/**
 	 * Parses a shortcut.
 	 * @param d the node
@@ -56,7 +56,7 @@ public class InitialShortcutData: DataReaderBase
 	{
 		int classId = element.Attribute("classId").GetInt32(-1);
 		List<Shortcut> list = new();
-		
+
 		element.Elements("page").ForEach(pageElement =>
 		{
 			int pageId = pageElement.GetAttributeValueAsInt32("pageId");
@@ -71,7 +71,7 @@ public class InitialShortcutData: DataReaderBase
 				list.Add(shortcut);
 			});
 		});
-		
+
 		if (classId < 0)
 			_initialGlobalShortcutList.AddRange(list);
 		else
@@ -145,17 +145,17 @@ public class InitialShortcutData: DataReaderBase
 
 		_macroPresets.put(macroId, new Macro(macroId, icon, name, description, acronym, commands));
 	}
-	
+
 	/**
 	 * Gets the shortcut list.
 	 * @param cId the class ID for the shortcut list
 	 * @return the shortcut list for the give class ID
 	 */
-	public List<Shortcut> getShortcutList(CharacterClass cId)
+	public List<Shortcut>? getShortcutList(CharacterClass cId)
 	{
 		return _initialShortcutData.get(cId);
 	}
-	
+
 	/**
 	 * Gets the global shortcut list.
 	 * @return the global shortcut list
@@ -164,7 +164,7 @@ public class InitialShortcutData: DataReaderBase
 	{
 		return _initialGlobalShortcutList;
 	}
-	
+
 	/**
 	 * Register all the available shortcuts for the given player.
 	 * @param player the player
@@ -175,7 +175,7 @@ public class InitialShortcutData: DataReaderBase
 		{
 			return;
 		}
-		
+
 		// Register global shortcuts.
 		foreach (Shortcut shortcut in _initialGlobalShortcutList)
 		{
@@ -184,7 +184,7 @@ public class InitialShortcutData: DataReaderBase
 			{
 				case ShortcutType.ITEM:
 				{
-					Item item = player.getInventory().getItemByItemId(shortcutId);
+					Item? item = player.getInventory().getItemByItemId(shortcutId);
 					if (item == null)
 					{
 						continue;
@@ -202,7 +202,7 @@ public class InitialShortcutData: DataReaderBase
 				}
 				case ShortcutType.MACRO:
 				{
-					Macro macro = _macroPresets.get(shortcutId);
+					Macro? macro = _macroPresets.get(shortcutId);
 					if (macro == null)
 					{
 						continue;
@@ -211,13 +211,13 @@ public class InitialShortcutData: DataReaderBase
 					break;
 				}
 			}
-			
+
 			// Register shortcut
 			Shortcut newShortcut = new Shortcut(shortcut.getSlot(), shortcut.getPage(), shortcut.getType(), shortcutId, shortcut.getLevel(), shortcut.getSubLevel(), shortcut.getCharacterType());
 			player.sendPacket(new ShortCutRegisterPacket(newShortcut, player));
 			player.registerShortCut(newShortcut);
 		}
-		
+
 		// Register class specific shortcuts.
 		if (_initialShortcutData.TryGetValue(player.getClassId(), out List<Shortcut>? shortcuts))
 		{
@@ -228,7 +228,7 @@ public class InitialShortcutData: DataReaderBase
 				{
 					case ShortcutType.ITEM:
 					{
-						Item item = player.getInventory().getItemByItemId(shortcutId);
+						Item? item = player.getInventory().getItemByItemId(shortcutId);
 						if (item == null)
 						{
 							continue;
@@ -246,7 +246,7 @@ public class InitialShortcutData: DataReaderBase
 					}
 					case ShortcutType.MACRO:
 					{
-						Macro macro = _macroPresets.get(shortcutId);
+						Macro? macro = _macroPresets.get(shortcutId);
 						if (macro == null)
 						{
 							continue;
@@ -262,7 +262,7 @@ public class InitialShortcutData: DataReaderBase
 			}
 		}
 	}
-	
+
 	/**
 	 * Gets the single instance of InitialEquipmentData.
 	 * @return single instance of InitialEquipmentData
@@ -271,7 +271,7 @@ public class InitialShortcutData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly InitialShortcutData INSTANCE = new();

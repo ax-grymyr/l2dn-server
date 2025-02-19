@@ -142,14 +142,15 @@ public class SchemeBufferTable: DataReaderBase
 	 * @param schemeName : The scheme name to check.
 	 * @return the List holding skills for the given scheme name and player, or null (if scheme or player isn't registered).
 	 */
-	public List<int>? getScheme(int playerId, string schemeName)
+	public List<int> getScheme(int playerId, string schemeName)
 	{
-		if ((_schemesTable.get(playerId) == null) || (_schemesTable.get(playerId).get(schemeName) == null))
-		{
-			return new();
-		}
+        if (!_schemesTable.TryGetValue(playerId, out Map<string, List<int>>? schemes))
+            return [];
 
-		return _schemesTable.get(playerId)?.get(schemeName);
+        if (!schemes.TryGetValue(schemeName, out List<int>? scheme))
+            return [];
+
+		return scheme;
 	}
 
 	/**
@@ -160,8 +161,8 @@ public class SchemeBufferTable: DataReaderBase
 	 */
 	public bool getSchemeContainsSkill(int playerId, string schemeName, int skillId)
 	{
-		List<int>? skills = getScheme(playerId, schemeName);
-		if (skills is null || skills.Count == 0)
+		List<int> skills = getScheme(playerId, schemeName);
+		if (skills.Count == 0)
 		{
 			return false;
 		}

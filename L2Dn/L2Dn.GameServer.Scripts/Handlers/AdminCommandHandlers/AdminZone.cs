@@ -26,17 +26,17 @@ public class AdminZone: IAdminCommandHandler
 		"admin_zone_visual",
 		"admin_zone_visual_clear",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (activeChar == null)
 		{
 			return false;
 		}
-		
+
 		StringTokenizer st = new StringTokenizer(command, " ");
 		string actualCommand = st.nextToken(); // Get actual command
-		
+
 		// String val = "";
 		// if (st.countTokens() >= 1) {val = st.nextToken();}
 		if (actualCommand.equalsIgnoreCase("admin_zone_check"))
@@ -45,7 +45,7 @@ public class AdminZone: IAdminCommandHandler
 			BuilderUtil.sendSysMessage(activeChar, "MapRegion: x:" + MapRegionManager.getInstance().getMapRegionX(activeChar.getX()) + " y:" + MapRegionManager.getInstance().getMapRegionY(activeChar.getY()) + " (" + MapRegionManager.getInstance().getMapRegionLocId(activeChar) + ")");
 			getGeoRegionXY(activeChar);
 			BuilderUtil.sendSysMessage(activeChar, "Closest Town: " + MapRegionManager.getInstance().getClosestTownName(activeChar));
-			
+
 			// Prevent exit instance variable deletion.
 			if (!activeChar.isInInstance())
 			{
@@ -78,7 +78,7 @@ public class AdminZone: IAdminCommandHandler
 			else
 			{
 				int zoneId = int.Parse(next);
-				ZoneManager.getInstance().getZoneById(zoneId).visualizeZone(activeChar.getZ());
+				ZoneManager.getInstance().getZoneById(zoneId)?.visualizeZone(activeChar.getZ());
 			}
 		}
 		else if (actualCommand.equalsIgnoreCase("admin_zone_visual_clear"))
@@ -88,7 +88,7 @@ public class AdminZone: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	private void showHtml(Player activeChar)
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/zone.htm", activeChar);
@@ -108,8 +108,8 @@ public class AdminZone: IAdminCommandHandler
 		htmlContent.Replace("%DANGER%", activeChar.isInsideZone(ZoneId.DANGER_AREA) ? "<font color=\"LEVEL\">YES</font>" : "NO");
 		htmlContent.Replace("%NOSTORE%", activeChar.isInsideZone(ZoneId.NO_STORE) ? "<font color=\"LEVEL\">YES</font>" : "NO");
 		htmlContent.Replace("%SCRIPT%", activeChar.isInsideZone(ZoneId.SCRIPT) ? "<font color=\"LEVEL\">YES</font>" : "NO");
-		htmlContent.Replace("%TAX%", (activeChar.isInsideZone(ZoneId.TAX) ? "<font color=\"LEVEL\">YES</font>" : "NO"));
-		
+		htmlContent.Replace("%TAX%", activeChar.isInsideZone(ZoneId.TAX) ? "<font color=\"LEVEL\">YES</font>" : "NO");
+
 		StringBuilder zones = new StringBuilder(100);
 		foreach (ZoneType zone in ZoneManager.getInstance().getZones(activeChar.Location.Location3D))
 		{
@@ -135,22 +135,22 @@ public class AdminZone: IAdminCommandHandler
 			zones.Append(territory.getName());
 			zones.Append("<br1>");
 		}
-		
+
 		htmlContent.Replace("%ZLIST%", zones.ToString());
 
 		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		activeChar.sendPacket(adminReply);
 	}
-	
+
 	private void getGeoRegionXY(Player activeChar)
 	{
 		int worldX = activeChar.getX();
 		int worldY = activeChar.getY();
-		int geoX = (((worldX - -327680) >> 4) >> 11) + 10;
-		int geoY = (((worldY - -262144) >> 4) >> 11) + 10;
+		int geoX = ((worldX - -327680) >> 4 >> 11) + 10;
+		int geoY = ((worldY - -262144) >> 4 >> 11) + 10;
 		BuilderUtil.sendSysMessage(activeChar, "GeoRegion: " + geoX + "_" + geoY + "");
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

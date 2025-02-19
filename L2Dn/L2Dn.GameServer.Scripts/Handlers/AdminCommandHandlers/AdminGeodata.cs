@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -16,6 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminGeodata: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminGeodata));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_geo_pos",
@@ -46,7 +48,7 @@ public class AdminGeodata: IAdminCommandHandler
 		"admin_geoedit",
 		"admin_ge",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
@@ -60,7 +62,7 @@ public class AdminGeodata: IAdminCommandHandler
 				int worldZ = activeChar.getZ();
 				int geoX = GeoEngine.getGeoX(worldX);
 				int geoY = GeoEngine.getGeoY(worldY);
-				
+
 				if (GeoEngine.getInstance().hasGeoPos(geoX, geoY))
 				{
 					BuilderUtil.sendSysMessage(activeChar,
@@ -80,7 +82,7 @@ public class AdminGeodata: IAdminCommandHandler
 				int worldZ = activeChar.getZ();
 				int geoX = GeoEngine.getGeoX(worldX);
 				int geoY = GeoEngine.getGeoY(worldY);
-				
+
 				if (GeoEngine.getInstance().hasGeoPos(geoX, geoY))
 				{
 					BuilderUtil.sendSysMessage(activeChar,
@@ -95,7 +97,7 @@ public class AdminGeodata: IAdminCommandHandler
 			}
 			case "admin_geo_can_move":
 			{
-				WorldObject target = activeChar.getTarget();
+				WorldObject? target = activeChar.getTarget();
 				if (target != null)
 				{
 					if (GeoEngine.getInstance().canSeeTarget(activeChar, target))
@@ -115,7 +117,7 @@ public class AdminGeodata: IAdminCommandHandler
 			}
 			case "admin_geo_can_see":
 			{
-				WorldObject target = activeChar.getTarget();
+				WorldObject? target = activeChar.getTarget();
 				if (target != null)
 				{
 					if (GeoEngine.getInstance().canSeeTarget(activeChar, target))
@@ -149,7 +151,11 @@ public class AdminGeodata: IAdminCommandHandler
 			{
 				int x = ((activeChar.getX() - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
 				int y = ((activeChar.getY() - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
-				BuilderUtil.sendSysMessage(activeChar, "GeoMap: " + x + "_" + y + " (" + ((x - World.TILE_ZERO_COORD_X) * World.TILE_SIZE) + "," + ((y - World.TILE_ZERO_COORD_Y) * World.TILE_SIZE) + " to " + ((((x - World.TILE_ZERO_COORD_X) * World.TILE_SIZE) + World.TILE_SIZE) - 1) + "," + ((((y - World.TILE_ZERO_COORD_Y) * World.TILE_SIZE) + World.TILE_SIZE) - 1) + ")");
+                BuilderUtil.sendSysMessage(activeChar,
+                    "GeoMap: " + x + "_" + y + " (" + (x - World.TILE_ZERO_COORD_X) * World.TILE_SIZE + "," +
+                    (y - World.TILE_ZERO_COORD_Y) * World.TILE_SIZE + " to " +
+                    ((x - World.TILE_ZERO_COORD_X) * World.TILE_SIZE + World.TILE_SIZE - 1) + "," +
+                    ((y - World.TILE_ZERO_COORD_Y) * World.TILE_SIZE + World.TILE_SIZE - 1) + ")");
 				break;
 			}
 			case "admin_geocell":
@@ -159,7 +165,8 @@ public class AdminGeodata: IAdminCommandHandler
 				int geoZ = GeoEngine.getInstance().getNearestZ(geoX, geoY, activeChar.getZ());
 				int worldX = GeoEngine.getWorldX(geoX);
 				int worldY = GeoEngine.getWorldY(geoY);
-				BuilderUtil.sendSysMessage(activeChar, "GeoCell: " + geoX + ", " + geoY + ". XYZ (" + worldX + ", " + worldY + ", " + geoZ + ")");
+                BuilderUtil.sendSysMessage(activeChar,
+                    "GeoCell: " + geoX + ", " + geoY + ". XYZ (" + worldX + ", " + worldY + ", " + geoZ + ")");
 				break;
 			}
 			case "admin_geosave":
@@ -172,10 +179,11 @@ public class AdminGeodata: IAdminCommandHandler
 				}
 				catch (IOException e)
 				{
+                    _logger.Error(e);
 					BuilderUtil.sendSysMessage(activeChar, "Could not create output directory.");
 					return false;
 				}
-				
+
 				int x = ((activeChar.getX() - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
 				int y = ((activeChar.getY() - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
 				string fileName = string.Format(GeoEngine.FILE_NAME_FORMAT, x, y);
@@ -204,10 +212,11 @@ public class AdminGeodata: IAdminCommandHandler
 				}
 				catch (IOException e)
 				{
+                    _logger.Error(e);
 					BuilderUtil.sendSysMessage(activeChar, "Could not create output directory.");
 					return false;
 				}
-				
+
 				int count = 0;
 				int worldX = -327680; // Top left Gracia X coord.
 				int worldY = -262144; // Top left Gracia Y coord.
@@ -396,7 +405,7 @@ public class AdminGeodata: IAdminCommandHandler
 			case "admin_geoedit":
 			{
 				string content = HtmCache.getInstance().getHtm("html/admin/geoedit.htm", activeChar.getLang());
-				
+
 				// Follow player heading.
 				int direction = getPlayerDirection(activeChar);
 				switch (direction)
@@ -434,7 +443,7 @@ public class AdminGeodata: IAdminCommandHandler
 						break;
 					}
 				}
-				
+
 				int geoRadius = 9;
 				int geoX = GeoEngine.getGeoX(activeChar.getX());
 				int geoY = GeoEngine.getGeoY(activeChar.getY());
@@ -472,11 +481,11 @@ public class AdminGeodata: IAdminCommandHandler
 								break;
 							}
 						}
-						
+
 						int gx = geoX + dx;
 						int gy = geoY + dy;
 						content = content.Replace("xy_" + translatedDx + "_" + translatedDy, gx + " " + gy);
-						
+
 						int z = GeoEngine.getInstance().getNearestZ(gx, gy, playerZ);
 						bool northEnabled = GeoEngine.getInstance().checkNearestNswe(gx, gy, z, Cell.NSWE_NORTH);
 						bool eastEnabled = GeoEngine.getInstance().checkNearestNswe(gx, gy, z, Cell.NSWE_EAST);
@@ -485,7 +494,7 @@ public class AdminGeodata: IAdminCommandHandler
 						content = content.Replace("bg_" + translatedDx + "_" + translatedDy, northEnabled && eastEnabled && southEnabled && westEnabled ? "L2UI_CH3.minibar_food" : "L2UI_CH3.minibar_arrow");
 					}
 				}
-				
+
 				Util.sendCBHtml(activeChar, content);
 				break;
 			}
@@ -496,9 +505,9 @@ public class AdminGeodata: IAdminCommandHandler
 					AdminCommandHandler.getInstance().useAdminCommand(activeChar, "admin_geoedit", false);
 					break;
 				}
-				
+
 				string content = HtmCache.getInstance().getHtm("html/admin/geoedit_cell.htm", activeChar.getLang());
-				
+
 				// Follow player heading.
 				int direction = getPlayerDirection(activeChar);
 				switch (direction)
@@ -557,7 +566,7 @@ public class AdminGeodata: IAdminCommandHandler
 						break;
 					}
 				}
-				
+
 				int gx = int.Parse(st.nextToken());
 				int gy = int.Parse(st.nextToken());
 				int z = GeoEngine.getInstance().getNearestZ(gx, gy, activeChar.getZ());
@@ -601,7 +610,7 @@ public class AdminGeodata: IAdminCommandHandler
 					content = content.Replace("bg_w", "L2UI_CH3.minibar_arrow");
 					content = content.Replace("cmd_w", "ew " + gx + " " + gy);
 				}
-				
+
 				Util.sendCBHtml(activeChar, content);
 				break;
 			}
@@ -612,24 +621,24 @@ public class AdminGeodata: IAdminCommandHandler
 	private static int getPlayerDirection(Player activeChar)
 	{
 		int heading = activeChar.getHeading();
-		if ((heading < 8192) || (heading > 57344))
+		if (heading < 8192 || heading > 57344)
 		{
 			return 0; // North.
 		}
-		else if (heading < 24576)
-		{
-			return 1; // East.
-		}
-		else if (heading < 40960)
-		{
-			return 2; // South.
-		}
-		else
-		{
-			return 3; // West.
-		}
-	}
-	
+
+        if (heading < 24576)
+        {
+            return 1; // East.
+        }
+
+        if (heading < 40960)
+        {
+            return 2; // South.
+        }
+
+        return 3; // West.
+    }
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

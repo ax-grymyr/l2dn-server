@@ -61,7 +61,7 @@ public class FenceData: DataReaderBase
 
 	public Fence spawnFence(Location3D location, int width, int length, int height, int instanceId, FenceState state)
 	{
-		return spawnFence(location, null, width, length, height, instanceId, state);
+		return spawnFence(location, string.Empty, width, length, height, instanceId, state);
 	}
 
 	public Fence spawnFence(Location3D location, string name, int width, int length, int height, int instanceId,
@@ -94,7 +94,7 @@ public class FenceData: DataReaderBase
 		return _fences;
 	}
 
-	public Fence getFence(int objectId)
+	public Fence? getFence(int objectId)
 	{
 		return _fences.get(objectId);
 	}

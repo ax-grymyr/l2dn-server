@@ -22,12 +22,12 @@ public class ClanHallData: DataReaderBase
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(ClanHallData));
 	private static FrozenDictionary<int, ClanHall> _clanHalls = FrozenDictionary<int, ClanHall>.Empty;
-	
+
 	private ClanHallData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		Dictionary<int, ClanHall> clanHalls = new Dictionary<int, ClanHall>();
@@ -42,10 +42,10 @@ public class ClanHallData: DataReaderBase
 			});
 
 		_clanHalls = clanHalls.ToFrozenDictionary();
-		
+
 		_logger.Info(GetType().Name + ": Succesfully loaded " + clanHalls.Count + " clan halls.");
 	}
-	
+
 	private static ClanHall? LoadClanHall(XmlClanHall xmlClanHall)
 	{
 		string name = string.IsNullOrEmpty(xmlClanHall.Name) ? "None" : xmlClanHall.Name;
@@ -73,7 +73,7 @@ public class ClanHallData: DataReaderBase
 			_logger.Error(nameof(ClanHallData) + $": banishPoint is null for clan hall id={xmlClanHall.Id}");
 			return null;
 		}
-		
+
 		Location3D ownerRestartPointLoc = new(ownerRestartPoint.X, ownerRestartPoint.Y, ownerRestartPoint.Z);
 		Location3D banishPointLoc = new(banishPoint.X, banishPoint.Y, banishPoint.Z);
 
@@ -85,7 +85,7 @@ public class ClanHallData: DataReaderBase
 
 		foreach (XmlClanHallDoor clanHallDoor in xmlClanHall.DoorList)
 		{
-			Door door = DoorData.getInstance().getDoor(clanHallDoor.Id);
+			Door? door = DoorData.getInstance().getDoor(clanHallDoor.Id);
 			if (door is null)
 				_logger.Warn(nameof(ClanHallData) + $": Door id={clanHallDoor.Id} not exists");
 			else
@@ -100,17 +100,17 @@ public class ClanHallData: DataReaderBase
 
 		return clanHall;
 	}
-	
+
 	public ClanHall? getClanHallById(int clanHallId)
 	{
 		return _clanHalls.GetValueOrDefault(clanHallId);
 	}
-	
+
 	public ImmutableArray<ClanHall> getClanHalls()
 	{
 		return _clanHalls.Values;
 	}
-	
+
 	public ClanHall? getClanHallByNpcId(int npcId)
 	{
 		foreach (ClanHall ch in _clanHalls.Values)
@@ -122,7 +122,7 @@ public class ClanHallData: DataReaderBase
 		}
 		return null;
 	}
-	
+
 	public ClanHall? getClanHallByClan(Clan clan)
 	{
 		foreach (ClanHall ch in _clanHalls.Values)
@@ -132,13 +132,16 @@ public class ClanHallData: DataReaderBase
 				return ch;
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	public ClanHall? getClanHallByDoorId(int doorId)
 	{
-		Door door = DoorData.getInstance().getDoor(doorId);
+		Door? door = DoorData.getInstance().getDoor(doorId);
+        if (door is null)
+            return null;
+
 		foreach (ClanHall ch in _clanHalls.Values)
 		{
 			if (ch.getDoors().Contains(door))
@@ -146,7 +149,7 @@ public class ClanHallData: DataReaderBase
 				return ch;
 			}
 		}
-		
+
 		return null;
 	}
 
@@ -173,7 +176,7 @@ public class ClanHallData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ClanHallData INSTANCE = new();

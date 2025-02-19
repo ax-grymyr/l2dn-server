@@ -95,7 +95,7 @@ public class CharSummonTable
 
 	public void restorePet(Player player)
 	{
-		Item item = player.getInventory().getItemByObjectId(_pets.get(player.ObjectId));
+		Item? item = player.getInventory().getItemByObjectId(_pets.get(player.ObjectId));
 		if (item == null)
 		{
 			LOGGER.Warn(GetType().Name + ": Null pet summoning item for: " + player);
@@ -149,7 +149,7 @@ public class CharSummonTable
 			int ownerId = player.ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var summons = ctx.CharacterSummons.Where(s => s.OwnerId == ownerId);
-			Skill skill;
+			Skill? skill;
 			foreach (CharacterSummon dbSummon in summons)
 			{
 				int summonObjId = dbSummon.SummonId;

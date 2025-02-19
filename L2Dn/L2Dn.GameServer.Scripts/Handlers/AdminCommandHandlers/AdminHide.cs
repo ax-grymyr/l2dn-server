@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -9,16 +10,17 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminHide: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminHide));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_hide",
     ];
-	
+
 	public bool useAdminCommand(string command, Player player)
 	{
 		StringTokenizer st = new StringTokenizer(command);
 		st.nextToken();
-		
+
 		try
 		{
 			string param = st.nextToken();
@@ -31,7 +33,7 @@ public class AdminHide: IAdminCommandHandler
 						BuilderUtil.sendSysMessage(player, "Currently, you cannot be seen.");
 						return true;
 					}
-					
+
 					BuilderUtil.sendSysMessage(player, "Now, you cannot be seen.");
 					return true;
 				}
@@ -42,7 +44,7 @@ public class AdminHide: IAdminCommandHandler
 						BuilderUtil.sendSysMessage(player, "Currently, you can be seen.");
 						return true;
 					}
-					
+
 					BuilderUtil.sendSysMessage(player, "Now, you can be seen.");
 					return true;
 				}
@@ -55,11 +57,12 @@ public class AdminHide: IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
+            _logger.Error(e);
 			BuilderUtil.sendSysMessage(player, "//hide [on|off]");
 			return false;
 		}
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

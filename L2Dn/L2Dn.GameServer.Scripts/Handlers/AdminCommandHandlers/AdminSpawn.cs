@@ -25,7 +25,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminSpawn: IAdminCommandHandler
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminSpawn));
-	
+
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_show_spawns",
@@ -48,7 +48,7 @@ public class AdminSpawn: IAdminCommandHandler
 		"admin_topspawncount",
 		"admin_top_spawn_count",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_show_spawns"))
@@ -62,14 +62,14 @@ public class AdminSpawn: IAdminCommandHandler
 		else if (command.startsWith("admin_spawn_debug_print"))
 		{
 			StringTokenizer st = new StringTokenizer(command, " ");
-			WorldObject target = activeChar.getTarget();
-			if (target is Npc)
+			WorldObject? target = activeChar.getTarget();
+			if (target is Npc npc)
 			{
 				try
 				{
 					st.nextToken();
 					int type = int.Parse(st.nextToken());
-					printSpawn((Npc) target, type);
+					printSpawn(npc, type);
 					if (command.contains("_menu"))
 					{
 						AdminHtml.showAdminHtml(activeChar, "spawns_debug.htm");
@@ -77,6 +77,7 @@ public class AdminSpawn: IAdminCommandHandler
 				}
 				catch (Exception e)
 				{
+                    LOGGER.Error(e);
 				}
 			}
 			else
@@ -96,13 +97,15 @@ public class AdminSpawn: IAdminCommandHandler
 				{
 					from = int.Parse(st.nextToken());
 				}
-				catch (Exception nsee)
+				catch (Exception e)
 				{
+                    LOGGER.Error(e);
 				}
 				showMonsters(activeChar, level, from);
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				AdminHtml.showAdminHtml(activeChar, "spawns.htm");
 			}
 		}
@@ -122,13 +125,15 @@ public class AdminSpawn: IAdminCommandHandler
 				{
 					from = int.Parse(st.nextToken());
 				}
-				catch (Exception nsee)
+				catch (Exception e)
 				{
+                    LOGGER.Error(e);
 				}
 				showNpcs(activeChar, letter, from);
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				AdminHtml.showAdminHtml(activeChar, "npcs.htm");
 			}
 		}
@@ -145,7 +150,7 @@ public class AdminSpawn: IAdminCommandHandler
 					html.Append("<html><table width=\"100%\"><tr><td width=45><button value=\"Main\" action=\"bypass admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center><font color=\"LEVEL\">Spawns for " + instance + "</font></td><td width=45><button value=\"Back\" action=\"bypass -h admin_current_player\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br><table width=\"100%\"><tr><td width=200>NpcName</td><td width=70>Action</td></tr>");
 					int counter = 0;
 					int skiped = 0;
-					Instance inst = InstanceManager.getInstance().getInstance(instance);
+					Instance? inst = InstanceManager.getInstance().getInstance(instance);
 					if (inst != null)
 					{
 						foreach (Npc npc in inst.getNpcs())
@@ -165,7 +170,7 @@ public class AdminSpawn: IAdminCommandHandler
 							}
 						}
 						html.Append("<tr><td>Skipped:</td><td>" + skiped + "</td></tr></table></body></html>");
-						
+
 						HtmlContent htmlContent = HtmlContent.LoadFromText(html.ToString(), activeChar);
 						NpcHtmlMessagePacket ms = new NpcHtmlMessagePacket(null, 1, htmlContent);
 						activeChar.sendPacket(ms);
@@ -182,6 +187,7 @@ public class AdminSpawn: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage //instance_spawns <instance_number>");
 			}
 		}
@@ -204,7 +210,7 @@ public class AdminSpawn: IAdminCommandHandler
 			DbSpawnManager.getInstance().cleanUp();
 			foreach (WorldObject obj in World.getInstance().getVisibleObjects())
 			{
-				if ((obj != null) && obj.isNpc())
+				if (obj != null && obj.isNpc())
 				{
 					Npc target = (Npc) obj;
 					target.deleteMe();
@@ -239,7 +245,7 @@ public class AdminSpawn: IAdminCommandHandler
 			DbSpawnManager.getInstance().cleanUp();
 			foreach (WorldObject obj in World.getInstance().getVisibleObjects())
 			{
-				if ((obj != null) && obj.isNpc())
+				if (obj != null && obj.isNpc())
 				{
 					Npc target = (Npc) obj;
 					target.deleteMe();
@@ -277,6 +283,7 @@ public class AdminSpawn: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				// Case of wrong or missing monster data.
 				AdminHtml.showAdminHtml(activeChar, "spawns.htm");
 			}
@@ -287,33 +294,33 @@ public class AdminSpawn: IAdminCommandHandler
 			{
 				// Create a StringTokenizer to Split the command by spaces.
 				StringTokenizer st = new StringTokenizer(command, " ");
-				
+
 				// Get the first token (the command itself).
 				string cmd = st.nextToken();
-				
+
 				// Get the second token (the NPC ID or name).
 				string npcId = st.nextToken();
-				
+
 				// If the second token is not a digit, search for the NPC template by name.
 				if (!int.TryParse(npcId, CultureInfo.InvariantCulture, out int _))
 				{
 					// Initialize the variables.
 					StringBuilder searchParam = new StringBuilder();
 					string[] pars = command.Split(" ");
-					NpcTemplate searchTemplate = null;
-					NpcTemplate template = null;
+					NpcTemplate? searchTemplate = null;
+					NpcTemplate? template = null;
 					int pos = 1;
-					
+
 					// Iterate through the command parameters, starting from the second one.
 					for (int i = 1; i < pars.Length; i++)
 					{
 						// Add the current parameter to the search parameter string.
 						searchParam.Append(pars[i]);
 						searchParam.Append(" ");
-						
+
 						// Try to get the NPC template using the search parameter string.
 						searchTemplate = NpcData.getInstance().getTemplateByName(searchParam.ToString().Trim());
-						
+
 						// If the template is found, update the position and the template.
 						if (searchTemplate != null)
 						{
@@ -321,7 +328,7 @@ public class AdminSpawn: IAdminCommandHandler
 							pos = i;
 						}
 					}
-					
+
 					// Check if an NPC template was found.
 					if (template != null)
 					{
@@ -330,35 +337,36 @@ public class AdminSpawn: IAdminCommandHandler
 						{
 							st.nextToken();
 						}
-						
+
 						// Set the npcId based on template found.
 						npcId = template.getId().ToString();
 					}
 				}
-				
+
 				// Initialize mobCount to 1.
 				int mobCount = 1;
-				
+
 				// If next token exists, set the mobCount value.
 				if (st.hasMoreTokens())
 				{
 					mobCount = int.Parse(st.nextToken());
 				}
-				
+
 				// Initialize respawnTime to 60.
 				int respawnTime = 60;
-				
+
 				// If next token exists, set the respawnTime value.
 				if (st.hasMoreTokens())
 				{
 					respawnTime = int.Parse(st.nextToken());
 				}
-				
+
 				// Call the spawnMonster method with the appropriate parameters.
 				spawnMonster(activeChar, npcId, respawnTime, mobCount, !cmd.equalsIgnoreCase("admin_spawn_once"));
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				// Case of wrong or missing monster data.
 				AdminHtml.showAdminHtml(activeChar, "spawns.htm");
 			}
@@ -367,33 +375,33 @@ public class AdminSpawn: IAdminCommandHandler
 		{
 			int npcId = 0;
 			int teleportIndex = -1;
-			
+
 			try
 			{
 				// Split the command into an array of words.
 				string[] pars = command.Split(" ");
 				StringBuilder searchParam = new StringBuilder();
 				int pos = -1;
-				
+
 				// Concatenate all words in the command except the first and last word.
 				foreach (string param in pars)
 				{
 					pos++;
-					if ((pos > 0) && (pos < (pars.Length - 1)))
+					if (pos > 0 && pos < pars.Length - 1)
 					{
 						searchParam.Append(param);
 						searchParam.Append(" ");
 					}
 				}
-				
+
 				string searchString = searchParam.ToString().Trim();
 				// If the search string is a number, use it as the NPC ID.
 				if (!int.TryParse(searchString, CultureInfo.InvariantCulture, out npcId))
 				{
 					// Otherwise, use it as the NPC name and look up the NPC ID.
-					npcId = NpcData.getInstance().getTemplateByName(searchString).getId();
+					npcId = NpcData.getInstance().getTemplateByName(searchString)?.getId() ?? 0;
 				}
-				
+
 				// If there are more than two words in the command, try to parse the last word as the teleport index.
 				if (pars.Length > 2)
 				{
@@ -406,9 +414,10 @@ public class AdminSpawn: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Command format is //list_spawns <npcId|npc_name> [tele_index]");
 			}
-			
+
 			// Call the findNpcs method with the parsed NPC ID and teleport index.
 			findNpcs(activeChar, npcId, teleportIndex, command.startsWith("admin_list_positions"));
 		}
@@ -455,17 +464,17 @@ public class AdminSpawn: IAdminCommandHandler
 					break;
 				}
 				int npcId = entry.Key;
-				BuilderUtil.sendSysMessage(activeChar, NpcData.getInstance().getTemplate(npcId).getName() + " (" + npcId + "): " + entry.Value);
+				BuilderUtil.sendSysMessage(activeChar, NpcData.getInstance().getTemplate(npcId)?.getName() + " (" + npcId + "): " + entry.Value);
 			}
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	/**
 	 * Get all the spawn of a NPC.
 	 * @param activeChar
@@ -484,7 +493,7 @@ public class AdminSpawn: IAdminCommandHandler
 			{
 				if (teleportIndex == index)
 				{
-					if (showposition && (npc != null))
+					if (showposition && npc != null)
 					{
 						activeChar.teleToLocation(npc.Location, true);
 					}
@@ -494,7 +503,7 @@ public class AdminSpawn: IAdminCommandHandler
 					}
 				}
 			}
-			else if (showposition && (npc != null))
+			else if (showposition && npc != null)
 			{
 				activeChar.sendMessage(index + " - " + spawn.getTemplate().getName() + " (" + spawn + "): " + npc.getX() + " " + npc.getY() + " " + npc.getZ());
 			}
@@ -504,13 +513,13 @@ public class AdminSpawn: IAdminCommandHandler
 					spawn.Location.X + " " + spawn.Location.Y + " " + spawn.Location.Z);
 			}
 		}
-		
+
 		if (index == 0)
 		{
 			activeChar.sendMessage(GetType().Name + ": No current spawns found.");
 		}
 	}
-	
+
 	private void printSpawn(Npc target, int type)
 	{
 		int i = target.getId();
@@ -538,16 +547,16 @@ public class AdminSpawn: IAdminCommandHandler
 			}
 		}
 	}
-	
+
 	private void spawnMonster(Player activeChar, string monsterIdValue, int respawnTime, int mobCount, bool permanentValue)
 	{
-		WorldObject target = activeChar.getTarget();
+		WorldObject? target = activeChar.getTarget();
 		if (target == null)
 		{
 			target = activeChar;
 		}
-		
-		NpcTemplate template1;
+
+		NpcTemplate? template1;
 		string monsterId = monsterIdValue;
 		if (Regex.IsMatch(monsterId, "[0-9]+"))
 		{
@@ -561,59 +570,60 @@ public class AdminSpawn: IAdminCommandHandler
 			monsterId = monsterId.Replace('_', ' ');
 			template1 = NpcData.getInstance().getTemplateByName(monsterId);
 		}
-		
-		if (!Config.FAKE_PLAYERS_ENABLED && template1.isFakePlayer())
+
+		if (template1 is null || !Config.FAKE_PLAYERS_ENABLED && template1.isFakePlayer())
 		{
 			activeChar.sendPacket(SystemMessageId.YOUR_TARGET_CANNOT_BE_FOUND);
 			return;
 		}
-		
+
 		try
 		{
 			Spawn spawn = new Spawn(template1);
 			spawn.Location = target.Location;
 			spawn.setAmount(mobCount);
 			spawn.setRespawnDelay(TimeSpan.FromSeconds(respawnTime));
-			
+
 			bool permanent = permanentValue;
 			if (activeChar.isInInstance())
 			{
 				spawn.setInstanceId(activeChar.getInstanceId());
 				permanent = false;
 			}
-			
+
 			SpawnTable.getInstance().addNewSpawn(spawn, permanent);
 			spawn.init();
-			
-			if (!permanent || (respawnTime <= 0))
+
+			if (!permanent || respawnTime <= 0)
 			{
 				spawn.stopRespawn();
 			}
-			
+
 			spawn.getLastSpawn().broadcastInfo();
 			BuilderUtil.sendSysMessage(activeChar, "Created " + template1.getName() + " on " + target.ObjectId);
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			activeChar.sendPacket(SystemMessageId.YOUR_TARGET_CANNOT_BE_FOUND);
 		}
 	}
-	
+
 	private void spawnMonster(Player activeChar, int id, int x, int y, int z, int h)
 	{
-		WorldObject target = activeChar.getTarget();
+		WorldObject? target = activeChar.getTarget();
 		if (target == null)
 		{
 			target = activeChar;
 		}
-		
-		NpcTemplate template1 = NpcData.getInstance().getTemplate(id);
-		if (!Config.FAKE_PLAYERS_ENABLED && template1.isFakePlayer())
+
+		NpcTemplate? template1 = NpcData.getInstance().getTemplate(id);
+		if (template1 is null || !Config.FAKE_PLAYERS_ENABLED && template1.isFakePlayer())
 		{
 			activeChar.sendPacket(SystemMessageId.YOUR_TARGET_CANNOT_BE_FOUND);
 			return;
 		}
-		
+
 		try
 		{
 			Spawn spawn = new Spawn(template1);
@@ -624,10 +634,10 @@ public class AdminSpawn: IAdminCommandHandler
 			{
 				spawn.setInstanceId(activeChar.getInstanceId());
 			}
-			
+
 			SpawnTable.getInstance().addNewSpawn(spawn, true);
 			spawn.init();
-			
+
 			if (activeChar.isInInstance())
 			{
 				spawn.stopRespawn();
@@ -637,24 +647,25 @@ public class AdminSpawn: IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			activeChar.sendPacket(SystemMessageId.YOUR_TARGET_CANNOT_BE_FOUND);
 		}
 	}
-	
+
 	private void showMonsters(Player activeChar, int level, int from)
 	{
 		List<NpcTemplate> mobs = NpcData.getInstance().getAllMonstersOfLevel(level);
 		int mobsCount = mobs.Count;
-		StringBuilder tb = new StringBuilder(500 + (mobsCount * 80));
+		StringBuilder tb = new StringBuilder(500 + mobsCount * 80);
 		tb.Append("<html><title>Spawn Monster:</title><body><p> Level : " + level + "<br>Total NPCs : " + mobsCount + "<br>");
-		
+
 		// Loop
 		int i = from;
-		for (int j = 0; (i < mobsCount) && (j < 50); i++, j++)
+		for (int j = 0; i < mobsCount && j < 50; i++, j++)
 		{
 			tb.Append("<a action=\"bypass -h admin_spawn_monster " + mobs[i].getId() + "\">" + mobs[i].getName() + "</a><br1>");
 		}
-		
+
 		if (i == mobsCount)
 		{
 			tb.Append("<br><center><button value=\"Back\" action=\"bypass -h admin_show_spawns\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
@@ -663,25 +674,25 @@ public class AdminSpawn: IAdminCommandHandler
 		{
 			tb.Append("<br><center><button value=\"Next\" action=\"bypass -h admin_spawn_index " + level + " " + i + "\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Back\" action=\"bypass -h admin_show_spawns\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 		}
-		
+
 		HtmlContent htmlContent = HtmlContent.LoadFromText(tb.ToString(), activeChar);
 		activeChar.sendPacket(new NpcHtmlMessagePacket(null, 1, htmlContent));
 	}
-	
+
 	private void showNpcs(Player activeChar, string starting, int from)
 	{
 		List<NpcTemplate> mobs = NpcData.getInstance().getAllNpcStartingWith(starting);
 		int mobsCount = mobs.Count;
-		StringBuilder tb = new StringBuilder(500 + (mobsCount * 80));
+		StringBuilder tb = new StringBuilder(500 + mobsCount * 80);
 		tb.Append("<html><title>Spawn Monster:</title><body><p> There are " + mobsCount + " Npcs whose name starts with " + starting + ":<br>");
-		
+
 		// Loop
 		int i = from;
-		for (int j = 0; (i < mobsCount) && (j < 50); i++, j++)
+		for (int j = 0; i < mobsCount && j < 50; i++, j++)
 		{
 			tb.Append("<a action=\"bypass -h admin_spawn_monster " + mobs[i].getId() + "\">" + mobs[i].getName() + "</a><br1>");
 		}
-		
+
 		if (i == mobsCount)
 		{
 			tb.Append("<br><center><button value=\"Back\" action=\"bypass -h admin_show_npcs\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
@@ -690,7 +701,7 @@ public class AdminSpawn: IAdminCommandHandler
 		{
 			tb.Append("<br><center><button value=\"Next\" action=\"bypass -h admin_npc_index " + starting + " " + i + "\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Back\" action=\"bypass -h admin_show_npcs\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 		}
-		
+
 		HtmlContent htmlContent = HtmlContent.LoadFromText(tb.ToString(), activeChar);
 		activeChar.sendPacket(new NpcHtmlMessagePacket(null, 1, htmlContent));
 	}

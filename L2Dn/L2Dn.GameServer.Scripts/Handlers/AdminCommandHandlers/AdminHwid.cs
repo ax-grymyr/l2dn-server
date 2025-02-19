@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Handlers;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Html;
@@ -18,22 +19,23 @@ public class AdminHwid: IAdminCommandHandler
         "admin_hwid",
 		"admin_hwinfo",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
-	{
-		if ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer() ||
-		    (activeChar.getTarget().getActingPlayer().getClient() == null) ||
-		    (activeChar.getTarget().getActingPlayer().getClient()?.HardwareInfo == null))
-		{
+    {
+        WorldObject? activeCharTarget = activeChar.getTarget();
+		if (activeCharTarget == null || !activeCharTarget.isPlayer())
 			return true;
-		}
 
-		Player target = activeChar.getTarget().getActingPlayer();
+		Player? target = activeCharTarget.getActingPlayer();
+        if (target == null)
+            return true;
 
-		ClientHardwareInfoHolder hardwareInfo = activeChar.getClient().HardwareInfo;
+		ClientHardwareInfoHolder? hardwareInfo = target.getClient()?.HardwareInfo;
+        if (hardwareInfo == null)
+            return true;
 
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/charhwinfo.htm", activeChar);
-		
+
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		htmlContent.Replace("%name%", target.getName());
 		htmlContent.Replace("%macAddress%", hardwareInfo.getMacAddress());
@@ -49,7 +51,7 @@ public class AdminHwid: IAdminCommandHandler
 		activeChar.sendPacket(html);
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

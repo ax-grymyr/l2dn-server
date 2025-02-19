@@ -19,7 +19,7 @@ public class ChatWhisper: IChatHandler
 	{
 		ChatType.WHISPER
 	};
-	
+
 	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
 	{
 		if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.Contains(type))
@@ -27,29 +27,32 @@ public class ChatWhisper: IChatHandler
 			activeChar.sendPacket(SystemMessageId.IF_YOU_TRY_TO_CHAT_BEFORE_THE_PROHIBITION_IS_REMOVED_THE_PROHIBITION_TIME_WILL_INCREASE_EVEN_FURTHER_S1_SEC_OF_PROHIBITION_IS_LEFT);
 			return;
 		}
-		
+
 		if (Config.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 			return;
 		}
-		
+
 		// Return if no target is set
 		if (target == null)
 		{
 			return;
 		}
-		
+
 		if (Config.FAKE_PLAYERS_ENABLED && FakePlayerData.getInstance().getProperName(target) != null)
 		{
 			if (FakePlayerData.getInstance().isTalkable(target))
 			{
 				if (Config.FAKE_PLAYER_CHAT)
 				{
-					string name = FakePlayerData.getInstance().getProperName(target);
-					activeChar.sendPacket(new CreatureSayPacket(activeChar, null, "=>" + name, type, text));
-					FakePlayerChatManager.getInstance().manageChat(activeChar, name, text);
-				}
+					string? name = FakePlayerData.getInstance().getProperName(target);
+                    if (name != null)
+                    {
+                        activeChar.sendPacket(new CreatureSayPacket(activeChar, null, "=>" + name, type, text));
+                        FakePlayerChatManager.getInstance().manageChat(activeChar, name, text);
+                    }
+                }
 				else
 				{
 					activeChar.sendPacket(SystemMessageId.THAT_PERSON_IS_IN_MESSAGE_REFUSAL_MODE);
@@ -61,8 +64,8 @@ public class ChatWhisper: IChatHandler
 			}
 			return;
 		}
-		
-		Player receiver = World.getInstance().getPlayer(target);
+
+		Player? receiver = World.getInstance().getPlayer(target);
 		if (receiver != null && !receiver.isSilenceMode(activeChar.ObjectId))
 		{
 			if (Config.JAIL_DISABLE_CHAT && receiver.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
@@ -99,7 +102,7 @@ public class ChatWhisper: IChatHandler
 				{
 					activeChar.addSilenceModeExcluded(receiver.ObjectId);
 				}
-				
+
 				receiver.getWhisperers().add(activeChar.ObjectId);
 				receiver.sendPacket(new CreatureSayPacket(activeChar, receiver, activeChar.getName(), type, text));
 				activeChar.sendPacket(new CreatureSayPacket(activeChar, receiver, "=>" + receiver.getName(), type, text));
@@ -114,7 +117,7 @@ public class ChatWhisper: IChatHandler
 			activeChar.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);
 		}
 	}
-	
+
 	public ChatType[] getChatTypeList()
 	{
 		return CHAT_TYPES;

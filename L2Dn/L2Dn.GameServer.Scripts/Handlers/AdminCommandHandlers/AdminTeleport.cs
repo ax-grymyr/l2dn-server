@@ -28,8 +28,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminTeleport: IAdminCommandHandler
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminTeleport));
-	
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminTeleport));
+
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_show_moves",
@@ -56,7 +56,7 @@ public class AdminTeleport: IAdminCommandHandler
 		"admin_instant_move",
 		"admin_sendhome",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_instant_move"))
@@ -92,11 +92,11 @@ public class AdminTeleport: IAdminCommandHandler
 		}
 		else if (command.equals("admin_recall_npc"))
 		{
-			recallNPC(activeChar);
+			RecallNpc(activeChar);
 		}
 		else if (command.equals("admin_teleport_to_character"))
 		{
-			teleportToCharacter(activeChar, activeChar.getTarget());
+			TeleportToCharacter(activeChar, activeChar.getTarget());
 		}
 		else if (command.startsWith("admin_walk"))
 		{
@@ -111,6 +111,7 @@ public class AdminTeleport: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 			}
 		}
 		else if (command.startsWith("admin_move_to"))
@@ -122,11 +123,13 @@ public class AdminTeleport: IAdminCommandHandler
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                _logger.Error(e);
 				// Case of empty or missing coordinates
 				AdminHtml.showAdminHtml(activeChar, "teleports.htm");
 			}
 			catch (FormatException nfe)
 			{
+                _logger.Error(nfe);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //move_to <x> <y> <z>");
 				AdminHtml.showAdminHtml(activeChar, "teleports.htm");
 			}
@@ -136,10 +139,11 @@ public class AdminTeleport: IAdminCommandHandler
 			try
 			{
 				string val = command.Substring(25);
-				teleportCharacter(activeChar, val);
+				TeleportCharacter(activeChar, val);
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                _logger.Error(e);
 				// Case of empty coordinates
 				BuilderUtil.sendSysMessage(activeChar, "Wrong or no Coordinates given.");
 				showTeleportCharWindow(activeChar); // back to character teleport
@@ -150,11 +154,12 @@ public class AdminTeleport: IAdminCommandHandler
 			try
 			{
 				string targetName = command.Substring(17);
-				Player player = World.getInstance().getPlayer(targetName);
-				teleportToCharacter(activeChar, player);
+				Player? player = World.getInstance().getPlayer(targetName);
+				TeleportToCharacter(activeChar, player);
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                _logger.Error(e);
 			}
 		}
 		else if (command.startsWith("admin_teleport"))
@@ -165,11 +170,12 @@ public class AdminTeleport: IAdminCommandHandler
 				st.nextToken();
 				int x = (int) float.Parse(st.nextToken(), CultureInfo.InvariantCulture);
 				int y = (int) float.Parse(st.nextToken(), CultureInfo.InvariantCulture);
-				int z = st.hasMoreTokens() ? ((int) float.Parse(st.nextToken(), CultureInfo.InvariantCulture)) : GeoEngine.getInstance().getHeight(new Location3D(x, y, 10000));
+				int z = st.hasMoreTokens() ? (int) float.Parse(st.nextToken(), CultureInfo.InvariantCulture) : GeoEngine.getInstance().getHeight(new Location3D(x, y, 10000));
 				activeChar.teleToLocation(new Location3D(x, y, z));
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Wrong coordinates!");
 			}
 		}
@@ -184,7 +190,7 @@ public class AdminTeleport: IAdminCommandHandler
 					return false;
 				}
 				string targetName = param[1];
-				Player player = World.getInstance().getPlayer(targetName);
+				Player? player = World.getInstance().getPlayer(targetName);
 				if (player != null)
 				{
 					teleportCharacter(player, activeChar.Location.Location3D, activeChar);
@@ -196,6 +202,7 @@ public class AdminTeleport: IAdminCommandHandler
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                _logger.Error(e);
 			}
 		}
 		else if (command.equals("admin_tele"))
@@ -246,6 +253,7 @@ public class AdminTeleport: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //go<north|south|east|west|up|down> [offset] (default 150)");
 			}
 		}
@@ -260,7 +268,7 @@ public class AdminTeleport: IAdminCommandHandler
 			else if (st.countTokens() == 1)
 			{
 				string name = st.nextToken();
-				Player player = World.getInstance().getPlayer(name);
+				Player? player = World.getInstance().getPlayer(name);
 				if (player == null)
 				{
 					activeChar.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);
@@ -270,10 +278,11 @@ public class AdminTeleport: IAdminCommandHandler
 			}
 			else
 			{
-				WorldObject target = activeChar.getTarget();
-				if ((target != null) && target.isPlayer())
+				WorldObject? target = activeChar.getTarget();
+                Player? targetPlayer = target?.getActingPlayer();
+				if (target != null && target.isPlayer() && targetPlayer != null)
 				{
-					teleportHome(target.getActingPlayer());
+					teleportHome(targetPlayer);
 				}
 				else
 				{
@@ -283,12 +292,12 @@ public class AdminTeleport: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	/**
 	 * This method sends a player to it's home town.
 	 * @param player the player to teleport.
@@ -330,10 +339,17 @@ public class AdminTeleport: IAdminCommandHandler
 				break;
 			}
 		}
-		
-		player.teleToLocation(MapRegionManager.getInstance().getMapRegionByName(regionName).getSpawnLoc(), true);
+
+        MapRegion? region = MapRegionManager.getInstance().getMapRegionByName(regionName);
+        if (region == null)
+        {
+            _logger.Warn("Region " + regionName + " not found.");
+            return;
+        }
+
+		player.teleToLocation(region.getSpawnLoc(), true);
 	}
-	
+
 	private void teleportTo(Player activeChar, string coords)
 	{
 		try
@@ -348,20 +364,21 @@ public class AdminTeleport: IAdminCommandHandler
 		}
 		catch (Exception nsee)
 		{
+            _logger.Error(nsee);
 			BuilderUtil.sendSysMessage(activeChar, "Wrong or no Coordinates given.");
 		}
 	}
-	
+
 	private void showTeleportWindow(Player activeChar)
 	{
 		AdminHtml.showAdminHtml(activeChar, "move.htm");
 	}
-	
+
 	private void showTeleportCharWindow(Player activeChar)
 	{
-		WorldObject target = activeChar.getTarget();
-		Player player = null;
-		if ((target != null) && target.isPlayer())
+		WorldObject? target = activeChar.getTarget();
+		Player? player = null;
+		if (target != null && target.isPlayer())
 		{
 			player = (Player) target;
 		}
@@ -376,17 +393,17 @@ public class AdminTeleport: IAdminCommandHandler
 			".<br>Co-ordinate x<edit var=\"char_cord_x\" width=110>Co-ordinate y<edit var=\"char_cord_y\" width=110>Co-ordinate z<edit var=\"char_cord_z\" width=110><button value=\"Teleport\" action=\"bypass -h admin_teleport_character $char_cord_x $char_cord_y $char_cord_z\" width=60 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Teleport near you\" action=\"bypass -h admin_teleport_character " +
 			activeChar.getX() + " " + activeChar.getY() + " " + activeChar.getZ() +
 			"\" width=115 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><center><button value=\"Back\" action=\"bypass -h admin_current_player\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>";
-		
+
 		HtmlContent htmlContent = HtmlContent.LoadFromText(replyMSG, activeChar);
 		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		activeChar.sendPacket(adminReply);
 	}
-	
-	private void teleportCharacter(Player activeChar, string coords)
+
+	private void TeleportCharacter(Player activeChar, string coords)
 	{
-		WorldObject target = activeChar.getTarget();
-		Player player = null;
-		if ((target != null) && target.isPlayer())
+		WorldObject? target = activeChar.getTarget();
+		Player? player = null;
+		if (target != null && target.isPlayer())
 		{
 			player = (Player) target;
 		}
@@ -395,7 +412,7 @@ public class AdminTeleport: IAdminCommandHandler
 			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 			return;
 		}
-		
+
 		if (player.ObjectId == activeChar.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_ON_YOURSELF);
@@ -411,20 +428,21 @@ public class AdminTeleport: IAdminCommandHandler
 				int y = int.Parse(y1);
 				string z1 = st.nextToken();
 				int z = int.Parse(z1);
-				teleportCharacter(player, new Location3D(x, y, z), null);
+				teleportCharacter(player, new Location3D(x, y, z), activeChar);
 			}
 			catch (Exception nsee)
 			{
+                _logger.Error(nsee);
 			}
 		}
 	}
-	
+
 	/**
 	 * @param player
 	 * @param loc
 	 * @param activeChar
 	 */
-	private void teleportCharacter(Player player, Location3D loc, Player activeChar)
+	private static void teleportCharacter(Player player, Location3D loc, Player activeChar)
 	{
 		if (player != null)
 		{
@@ -442,16 +460,16 @@ public class AdminTeleport: IAdminCommandHandler
 			}
 		}
 	}
-	
-	private void teleportToCharacter(Player activeChar, WorldObject target)
+
+	private static void TeleportToCharacter(Player activeChar, WorldObject? target)
 	{
-		if ((target == null) || !target.isPlayer())
+        Player? player = target?.getActingPlayer();
+		if (target == null || !target.isPlayer() || player == null)
 		{
 			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 			return;
 		}
-		
-		Player player = target.getActingPlayer();
+
 		if (player.ObjectId == activeChar.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_ON_YOURSELF);
@@ -463,7 +481,7 @@ public class AdminTeleport: IAdminCommandHandler
 			BuilderUtil.sendSysMessage(activeChar, "You have teleported to character " + player.getName() + ".");
 		}
 	}
-	
+
 	private void changeCharacterPosition(Player activeChar, string name)
 	{
 		int x = activeChar.getX();
@@ -486,38 +504,39 @@ public class AdminTeleport: IAdminCommandHandler
 		}
 		catch (Exception se)
 		{
+            _logger.Error(se);
 			BuilderUtil.sendSysMessage(activeChar, "SQLException while changing offline character's position");
 		}
 	}
-	
-	private void recallNPC(Player activeChar)
+
+	private static void RecallNpc(Player activeChar)
 	{
-		WorldObject obj = activeChar.getTarget();
-		if ((obj is Npc) && !((Npc) obj).isMinion() && !(obj is RaidBoss) && !(obj is GrandBoss))
+		WorldObject? obj = activeChar.getTarget();
+		if (obj is Npc && !((Npc) obj).isMinion() && !(obj is RaidBoss) && !(obj is GrandBoss))
 		{
 			Npc target = (Npc) obj;
 			int monsterTemplate = target.getTemplate().getId();
-			NpcTemplate template1 = NpcData.getInstance().getTemplate(monsterTemplate);
+			NpcTemplate? template1 = NpcData.getInstance().getTemplate(monsterTemplate);
 			if (template1 == null)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Incorrect monster template.");
-				LOGGER.Warn("ERROR: NPC " + target.ObjectId + " has a 'null' template.");
+				_logger.Warn("ERROR: NPC " + target.ObjectId + " has a 'null' template.");
 				return;
 			}
-			
+
 			Spawn spawn = target.getSpawn();
 			if (spawn == null)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Incorrect monster spawn.");
-				LOGGER.Warn("ERROR: NPC " + target.ObjectId + " has a 'null' spawn.");
+				_logger.Warn("ERROR: NPC " + target.ObjectId + " has a 'null' spawn.");
 				return;
 			}
-			
+
 			TimeSpan respawnTime = spawn.getRespawnDelay();
 			target.deleteMe();
 			spawn.stopRespawn();
 			SpawnTable.getInstance().deleteSpawn(spawn, true);
-			
+
 			try
 			{
 				spawn = new Spawn(template1);
@@ -534,11 +553,12 @@ public class AdminTeleport: IAdminCommandHandler
 				{
 					spawn.stopRespawn();
 				}
-				
+
 				BuilderUtil.sendSysMessage(activeChar, "Created " + template1.getName() + " on " + target.ObjectId + ".");
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Target is not in game.");
 			}
 		}
@@ -551,7 +571,7 @@ public class AdminTeleport: IAdminCommandHandler
 			if (spawn == null)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Incorrect raid spawn.");
-				LOGGER.Warn("ERROR: NPC Id" + target.getId() + " has a 'null' spawn.");
+				_logger.Warn("ERROR: NPC Id" + target.getId() + " has a 'null' spawn.");
 				return;
 			}
 			DbSpawnManager.getInstance().deleteSpawn(spawn, true);
@@ -562,11 +582,12 @@ public class AdminTeleport: IAdminCommandHandler
 				spawnDat.setAmount(1);
 				spawnDat.setRespawnMinDelay(TimeSpan.FromSeconds(43200));
 				spawnDat.setRespawnMaxDelay(TimeSpan.FromSeconds(129600));
-				
+
 				DbSpawnManager.getInstance().addNewSpawn(spawnDat, null, curHP, curMP, true);
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				activeChar.sendPacket(SystemMessageId.YOUR_TARGET_CANNOT_BE_FOUND);
 			}
 		}

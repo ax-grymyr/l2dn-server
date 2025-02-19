@@ -17,19 +17,19 @@ namespace L2Dn.GameServer.Scripts.Handlers.CommunityBoard;
 public class FavoriteBoard: IParseBoardHandler
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(FavoriteBoard));
-	
+
 	private static readonly string[] COMMANDS =
     [
         "_bbsgetfav",
 		"bbs_add_fav",
 		"_bbsdelfav_",
     ];
-	
+
 	public string[] getCommunityBoardCommands()
 	{
 		return COMMANDS;
 	}
-	
+
 	public bool parseCommunityBoardCommand(string command, Player player)
 	{
 		// None of this commands can be added to favorites.
@@ -40,12 +40,12 @@ public class FavoriteBoard: IParseBoardHandler
 			StringBuilder sb = new StringBuilder();
 			try
             {
-                int playerId = player.ObjectId; 
+                int playerId = player.ObjectId;
                 using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                 IOrderedQueryable<DbBbsFavorite> query = ctx.BbsFavorites
                     .Where(r => r.PlayerId == playerId)
                     .OrderByDescending(r => r.Created);
-                
+
 				foreach (DbBbsFavorite record in query)
 				{
 					string link = list.Replace("%fav_bypass%", record.ByPass);
@@ -61,12 +61,12 @@ public class FavoriteBoard: IParseBoardHandler
 			}
 			catch (Exception e)
 			{
-                _logger.Warn(nameof(FavoriteBoard) + ": Couldn't load favorite links for " + player);
+                _logger.Warn(nameof(FavoriteBoard) + ": Couldn't load favorite links for " + player + ": " + e);
 			}
 		}
 		else if (command.startsWith("bbs_add_fav"))
 		{
-			string bypass = CommunityBoardHandler.getInstance().removeBypass(player);
+			string? bypass = CommunityBoardHandler.getInstance().removeBypass(player);
 			if (bypass != null)
 			{
 				string[] parts = bypass.Split("&", 2);
@@ -75,8 +75,8 @@ public class FavoriteBoard: IParseBoardHandler
 					_logger.Warn(nameof(FavoriteBoard) + ": Couldn't add favorite link, " + bypass + " it's not a valid bypass!");
 					return false;
 				}
-				
-				try 
+
+				try
 				{
                     using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
                     ctx.BbsFavorites.Add(new DbBbsFavorite()
@@ -88,13 +88,13 @@ public class FavoriteBoard: IParseBoardHandler
                     });
 
                     ctx.SaveChanges();
-                    
+
                     // Callback
 					parseCommunityBoardCommand("_bbsgetfav", player);
 				}
 				catch (Exception e)
 				{
-                    _logger.Warn(nameof(FavoriteBoard) + ": Couldn't add favorite link " + bypass + " for " + player);
+                    _logger.Warn(nameof(FavoriteBoard) + ": Couldn't add favorite link " + bypass + " for " + player + ": " + e);
 				}
 			}
 		}
@@ -106,7 +106,7 @@ public class FavoriteBoard: IParseBoardHandler
                 _logger.Warn(nameof(FavoriteBoard) + ": Couldn't delete favorite link, " + favId + " it's not a valid ID!");
 				return false;
 			}
-			
+
 			try
             {
                 int playerId = player.ObjectId;
@@ -118,7 +118,7 @@ public class FavoriteBoard: IParseBoardHandler
 			}
 			catch (Exception e)
 			{
-                _logger.Warn(nameof(FavoriteBoard) + ": Couldn't delete favorite link ID " + favId + " for " + player);
+                _logger.Warn(nameof(FavoriteBoard) + ": Couldn't delete favorite link ID " + favId + " for " + player + ": " + e);
 			}
 		}
 		return true;

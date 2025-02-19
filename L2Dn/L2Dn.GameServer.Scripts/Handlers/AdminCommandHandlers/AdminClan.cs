@@ -9,6 +9,8 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Html;
+using L2Dn.GameServer.Model.Residences;
+using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -27,7 +29,7 @@ public class AdminClan: IAdminCommandHandler
 		"admin_clan_show_pending",
 		"admin_clan_force_pending",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
@@ -36,27 +38,31 @@ public class AdminClan: IAdminCommandHandler
 		{
 			case "admin_clan_info":
 			{
-				Player player = getPlayer(activeChar, st);
+				Player? player = getPlayer(activeChar, st);
 				if (player == null)
 				{
 					break;
 				}
-				
-				Clan clan = player.getClan();
+
+				Clan? clan = player.getClan();
 				if (clan == null)
 				{
 					activeChar.sendPacket(SystemMessageId.THE_TARGET_MUST_BE_A_CLAN_MEMBER);
 					return false;
 				}
 
+                Castle? castle = CastleManager.getInstance().getCastleById(clan.getCastleId() ?? 0);
+                ClanHall? clanHall = ClanHallData.getInstance().getClanHallById(clan.getHideoutId());
+                Fort? fort = FortManager.getInstance().getFortById(clan.getFortId() ?? 0);
+
 				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/claninfo.htm", activeChar);
 				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 				htmlContent.Replace("%clan_name%", clan.getName());
 				htmlContent.Replace("%clan_leader%", clan.getLeaderName());
 				htmlContent.Replace("%clan_level%", clan.getLevel().ToString());
-				htmlContent.Replace("%clan_has_castle%", clan.getCastleId() > 0 ? CastleManager.getInstance().getCastleById(clan.getCastleId() ?? 0).getName() : "No");
-				htmlContent.Replace("%clan_has_clanhall%", clan.getHideoutId() > 0 ? ClanHallData.getInstance().getClanHallById(clan.getHideoutId()).getName() : "No");
-				htmlContent.Replace("%clan_has_fortress%", clan.getFortId() > 0 ? FortManager.getInstance().getFortById(clan.getFortId() ?? 0).getName() : "No");
+				htmlContent.Replace("%clan_has_castle%", castle != null ? castle.getName() : "No");
+				htmlContent.Replace("%clan_has_clanhall%", clanHall != null ? clanHall.getName() : "No");
+				htmlContent.Replace("%clan_has_fortress%", fort != null ? fort.getName() : "No");
 				htmlContent.Replace("%clan_points%", clan.getReputationScore().ToString());
 				htmlContent.Replace("%clan_players_count%", clan.getMembersCount().ToString());
 				htmlContent.Replace("%clan_ally%", clan.getAllyId() > 0 ? clan.getAllyName() : "Not in ally");
@@ -67,19 +73,19 @@ public class AdminClan: IAdminCommandHandler
 			}
 			case "admin_clan_changeleader":
 			{
-				Player player = getPlayer(activeChar, st);
+				Player? player = getPlayer(activeChar, st);
 				if (player == null)
 				{
 					break;
 				}
-				
-				Clan clan = player.getClan();
+
+				Clan? clan = player.getClan();
 				if (clan == null)
 				{
 					activeChar.sendPacket(SystemMessageId.THE_TARGET_MUST_BE_A_CLAN_MEMBER);
 					return false;
 				}
-				
+
 				ClanMember member = clan.getClanMember(player.ObjectId);
 				if (member != null)
 				{
@@ -123,18 +129,18 @@ public class AdminClan: IAdminCommandHandler
 					{
 						break;
 					}
-					Clan clan = ClanTable.getInstance().getClan(clanId);
+					Clan? clan = ClanTable.getInstance().getClan(clanId);
 					if (clan == null)
 					{
 						break;
 					}
-					
+
 					ClanMember member = clan.getClanMember(clan.getNewLeaderId() ?? 0);
 					if (member == null)
 					{
 						break;
 					}
-					
+
 					clan.setNewLeader(member);
 					BuilderUtil.sendSysMessage(activeChar, "Task have been forcely executed.");
 				}
@@ -144,16 +150,16 @@ public class AdminClan: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	/**
 	 * @param activeChar
 	 * @param st
 	 * @return
 	 */
-	private Player getPlayer(Player activeChar, StringTokenizer st)
+	private Player? getPlayer(Player activeChar, StringTokenizer st)
 	{
 		string val;
-		Player player = null;
+		Player? player;
 		if (st.hasMoreTokens())
 		{
 			val = st.nextToken();
@@ -179,8 +185,8 @@ public class AdminClan: IAdminCommandHandler
 		}
 		else
 		{
-			WorldObject targetObj = activeChar.getTarget();
-			if ((targetObj == null) || !targetObj.isPlayer())
+			WorldObject? targetObj = activeChar.getTarget();
+			if (targetObj == null || !targetObj.isPlayer())
 			{
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				return null;
@@ -189,7 +195,7 @@ public class AdminClan: IAdminCommandHandler
 		}
 		return player;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

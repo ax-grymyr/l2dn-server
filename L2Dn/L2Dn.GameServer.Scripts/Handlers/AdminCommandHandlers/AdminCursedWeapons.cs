@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -19,6 +20,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminCursedWeapons: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminCursedWeapons));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_cw_info",
@@ -28,15 +30,15 @@ public class AdminCursedWeapons: IAdminCommandHandler
 		"admin_cw_add",
 		"admin_cw_info_menu",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		CursedWeaponsManager cwm = CursedWeaponsManager.getInstance();
 		int id = 0;
-		
+
 		StringTokenizer st = new StringTokenizer(command);
 		st.nextToken();
-		
+
 		if (command.startsWith("admin_cw_info"))
 		{
 			if (!command.contains("menu"))
@@ -50,13 +52,13 @@ public class AdminCursedWeapons: IAdminCommandHandler
 						Player pl = cw.getPlayer();
 						BuilderUtil.sendSysMessage(activeChar, "  Player holding: " + (pl == null ? "null" : pl.getName()));
 						BuilderUtil.sendSysMessage(activeChar, "    Player Reputation: " + cw.getPlayerReputation());
-						BuilderUtil.sendSysMessage(activeChar, "    Time Remaining: " + (cw.getTimeLeft() / 60000) + " min.");
+						BuilderUtil.sendSysMessage(activeChar, "    Time Remaining: " + cw.getTimeLeft() / 60000 + " min.");
 						BuilderUtil.sendSysMessage(activeChar, "    Kills : " + cw.getNbKills());
 					}
 					else if (cw.isDropped())
 					{
 						BuilderUtil.sendSysMessage(activeChar, "  Lying on the ground.");
-						BuilderUtil.sendSysMessage(activeChar, "    Time Remaining: " + (cw.getTimeLeft() / 60000) + " min.");
+						BuilderUtil.sendSysMessage(activeChar, "    Time Remaining: " + cw.getTimeLeft() / 60000 + " min.");
 						BuilderUtil.sendSysMessage(activeChar, "    Kills : " + cw.getNbKills());
 					}
 					else
@@ -78,7 +80,7 @@ public class AdminCursedWeapons: IAdminCommandHandler
 					replyMSG.Append("<table width=270><tr><td>Name:</td><td>");
 					replyMSG.Append(cw.getName());
 					replyMSG.Append("</td></tr>");
-					
+
 					if (cw.isActivated())
 					{
 						Player pl = cw.getPlayer();
@@ -121,10 +123,10 @@ public class AdminCursedWeapons: IAdminCommandHandler
 						replyMSG.Append(itemId);
 						replyMSG.Append("\" width=130 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td></td></tr>");
 					}
-					
+
 					replyMSG.Append("</table><br>");
 				}
-				
+
 				htmlContent.Replace("%cwinfo%", replyMSG.ToString());
 				activeChar.sendPacket(adminReply);
 			}
@@ -135,7 +137,7 @@ public class AdminCursedWeapons: IAdminCommandHandler
 		}
 		else
 		{
-			CursedWeapon cw = null;
+			CursedWeapon? cw = null;
 			try
 			{
 				string parameter = st.nextToken();
@@ -159,15 +161,16 @@ public class AdminCursedWeapons: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //cw_remove|//cw_goto|//cw_add <itemid|name>");
 			}
-			
+
 			if (cw == null)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Unknown cursed weapon ID.");
 				return false;
 			}
-			
+
 			if (command.startsWith("admin_cw_remove "))
 			{
 				cw.endOfLife();
@@ -184,8 +187,8 @@ public class AdminCursedWeapons: IAdminCommandHandler
 				}
 				else
 				{
-					WorldObject target = activeChar.getTarget();
-					if ((target != null) && target.isPlayer())
+					WorldObject? target = activeChar.getTarget();
+					if (target != null && target.isPlayer())
 					{
 						((Player) target).addItem("AdminCursedWeaponAdd", id, 1, target, true);
 					}
@@ -204,7 +207,7 @@ public class AdminCursedWeapons: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

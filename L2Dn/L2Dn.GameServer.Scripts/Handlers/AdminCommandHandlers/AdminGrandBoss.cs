@@ -25,7 +25,7 @@ public class AdminGrandBoss: IAdminCommandHandler
 	private const int QUEENANT = 29001; // Queen Ant
 	private const int ORFEN = 29014; // Orfen
 	private const int CORE = 29006; // Core
-	
+
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_grandboss",
@@ -34,7 +34,7 @@ public class AdminGrandBoss: IAdminCommandHandler
 		"admin_grandboss_minions",
 		"admin_grandboss_abort",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
@@ -56,7 +56,7 @@ public class AdminGrandBoss: IAdminCommandHandler
 				}
 				break;
 			}
-			
+
 			case "admin_grandboss_skip":
 			{
 				if (st.hasMoreTokens())
@@ -83,7 +83,7 @@ public class AdminGrandBoss: IAdminCommandHandler
 				if (st.hasMoreTokens())
 				{
 					int grandBossId = int.Parse(st.nextToken());
-					
+
 					switch (grandBossId)
 					{
 						case ANTHARAS:
@@ -116,7 +116,7 @@ public class AdminGrandBoss: IAdminCommandHandler
 				if (st.hasMoreTokens())
 				{
 					int grandBossId = int.Parse(st.nextToken());
-					
+
 					switch (grandBossId)
 					{
 						case ANTHARAS:
@@ -147,7 +147,7 @@ public class AdminGrandBoss: IAdminCommandHandler
 				if (st.hasMoreTokens())
 				{
 					int grandBossId = int.Parse(st.nextToken());
-					
+
 					switch (grandBossId)
 					{
 						case ANTHARAS:
@@ -178,148 +178,154 @@ public class AdminGrandBoss: IAdminCommandHandler
 		}
 		return true;
 	}
-	
-	private void manageHtml(Player activeChar, int grandBossId)
-	{
-		List<int> list = [ANTHARAS, VALAKAS, BAIUM, QUEENANT, ORFEN, CORE]; 
-		if (list.Contains(grandBossId))
-		{
-			int bossStatus = GrandBossManager.getInstance().getStatus(grandBossId);
-			NoRestartZone bossZone = null;
-			string textColor = null;
-			string text = null;
-			string htmlPatch = null;
-			int deadStatus = 0;
-			
-			switch (grandBossId)
-			{
-				case ANTHARAS:
-				{
-					bossZone = ZoneManager.getInstance().getZoneById<NoRestartZone>(ANTHARAS_ZONE);
-					htmlPatch = "html/admin/grandboss/grandboss_antharas.htm";
-					break;
-				}
-				case VALAKAS:
-				{
-					htmlPatch = "html/admin/grandboss/grandboss_valakas.htm";
-					break;
-				}
-				case BAIUM:
-				{
-					bossZone = ZoneManager.getInstance().getZoneById<NoRestartZone>(BAIUM_ZONE);
-					htmlPatch = "html/admin/grandboss/grandboss_baium.htm";
-					break;
-				}
-				case QUEENANT:
-				{
-					htmlPatch = "html/admin/grandboss/grandboss_queenant.htm";
-					break;
-				}
-				case ORFEN:
-				{
-					htmlPatch = "html/admin/grandboss/grandboss_orfen.htm";
-					break;
-				}
-				case CORE:
-				{
-					htmlPatch = "html/admin/grandboss/grandboss_core.htm";
-					break;
-				}
-			}
-			
-			list = [ANTHARAS, VALAKAS, BAIUM];
-			if (list.Contains(grandBossId))
-			{
-				deadStatus = 3;
-				switch (bossStatus)
-				{
-					case 0:
-					{
-						textColor = "00FF00"; // Green
-						text = "Alive";
-						break;
-					}
-					case 1:
-					{
-						textColor = "FFFF00"; // Yellow
-						text = "Waiting";
-						break;
-					}
-					case 2:
-					{
-						textColor = "FF9900"; // Orange
-						text = "In Fight";
-						break;
-					}
-					case 3:
-					{
-						textColor = "FF0000"; // Red
-						text = "Dead";
-						break;
-					}
-					default:
-					{
-						textColor = "FFFFFF"; // White
-						text = "Unk " + bossStatus;
-						break;
-					}
-				}
-			}
-			else
-			{
-				deadStatus = 1;
-				switch (bossStatus)
-				{
-					case 0:
-					{
-						textColor = "00FF00"; // Green
-						text = "Alive";
-						break;
-					}
-					case 1:
-					{
-						textColor = "FF0000"; // Red
-						text = "Dead";
-						break;
-					}
-					default:
-					{
-						textColor = "FFFFFF"; // White
-						text = "Unk " + bossStatus;
-						break;
-					}
-				}
-			}
-			
-			StatSet info = GrandBossManager.getInstance().getStatSet(grandBossId);
-			string bossRespawn = info.getDateTime("respawn_time").ToString("yyyy-MM-dd HH:mm:ss");
 
-			HtmlContent htmlContent = HtmlContent.LoadFromFile(htmlPatch, activeChar);
-			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, htmlContent);
-			htmlContent.Replace("%bossStatus%", text);
-			htmlContent.Replace("%bossColor%", textColor);
-			htmlContent.Replace("%respawnTime%", bossStatus == deadStatus ? bossRespawn : "Already respawned!");
-			htmlContent.Replace("%playersInside%", bossZone != null ? bossZone.getPlayersInside().Count.ToString() : "Zone not found!");
-			activeChar.sendPacket(html);
-		}
-		else
-		{
-			BuilderUtil.sendSysMessage(activeChar, "Wrong ID!");
-		}
-	}
-	
-	private Quest antharasAi()
-	{
-		return null;
+    private void manageHtml(Player activeChar, int grandBossId)
+    {
+        List<int> list = [ANTHARAS, VALAKAS, BAIUM, QUEENANT, ORFEN, CORE];
+        if (!list.Contains(grandBossId))
+        {
+            BuilderUtil.sendSysMessage(activeChar, "Wrong ID!");
+            return;
+        }
+
+        int bossStatus = GrandBossManager.getInstance().getStatus(grandBossId);
+        NoRestartZone? bossZone = null;
+        string? textColor = null;
+        string? text = null;
+        string? htmlPath = null;
+        int deadStatus = 0;
+
+        switch (grandBossId)
+        {
+            case ANTHARAS:
+            {
+                bossZone = ZoneManager.getInstance().getZoneById<NoRestartZone>(ANTHARAS_ZONE);
+                htmlPath = "html/admin/grandboss/grandboss_antharas.htm";
+                break;
+            }
+            case VALAKAS:
+            {
+                htmlPath = "html/admin/grandboss/grandboss_valakas.htm";
+                break;
+            }
+            case BAIUM:
+            {
+                bossZone = ZoneManager.getInstance().getZoneById<NoRestartZone>(BAIUM_ZONE);
+                htmlPath = "html/admin/grandboss/grandboss_baium.htm";
+                break;
+            }
+            case QUEENANT:
+            {
+                htmlPath = "html/admin/grandboss/grandboss_queenant.htm";
+                break;
+            }
+            case ORFEN:
+            {
+                htmlPath = "html/admin/grandboss/grandboss_orfen.htm";
+                break;
+            }
+            case CORE:
+            {
+                htmlPath = "html/admin/grandboss/grandboss_core.htm";
+                break;
+            }
+            default:
+            {
+                BuilderUtil.sendSysMessage(activeChar, "Wrong ID!");
+                return;
+            }
+        }
+
+        list = [ANTHARAS, VALAKAS, BAIUM];
+        if (list.Contains(grandBossId))
+        {
+            deadStatus = 3;
+            switch (bossStatus)
+            {
+                case 0:
+                {
+                    textColor = "00FF00"; // Green
+                    text = "Alive";
+                    break;
+                }
+                case 1:
+                {
+                    textColor = "FFFF00"; // Yellow
+                    text = "Waiting";
+                    break;
+                }
+                case 2:
+                {
+                    textColor = "FF9900"; // Orange
+                    text = "In Fight";
+                    break;
+                }
+                case 3:
+                {
+                    textColor = "FF0000"; // Red
+                    text = "Dead";
+                    break;
+                }
+                default:
+                {
+                    textColor = "FFFFFF"; // White
+                    text = "Unk " + bossStatus;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            deadStatus = 1;
+            switch (bossStatus)
+            {
+                case 0:
+                {
+                    textColor = "00FF00"; // Green
+                    text = "Alive";
+                    break;
+                }
+                case 1:
+                {
+                    textColor = "FF0000"; // Red
+                    text = "Dead";
+                    break;
+                }
+                default:
+                {
+                    textColor = "FFFFFF"; // White
+                    text = "Unk " + bossStatus;
+                    break;
+                }
+            }
+        }
+
+        StatSet info = GrandBossManager.getInstance().getStatSet(grandBossId);
+        string bossRespawn = info.getDateTime("respawn_time").ToString("yyyy-MM-dd HH:mm:ss");
+
+        HtmlContent htmlContent = HtmlContent.LoadFromFile(htmlPath, activeChar);
+        NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(0, 1, htmlContent);
+        htmlContent.Replace("%bossStatus%", text);
+        htmlContent.Replace("%bossColor%", textColor);
+        htmlContent.Replace("%respawnTime%", bossStatus == deadStatus ? bossRespawn : "Already respawned!");
+        htmlContent.Replace("%playersInside%",
+            bossZone != null ? bossZone.getPlayersInside().Count.ToString() : "Zone not found!");
+
+        activeChar.sendPacket(html);
+    }
+
+    private Quest antharasAi()
+    {
+        throw new NotImplementedException();
 		// return QuestManager.getInstance().getQuest(Antharas.class.getSimpleName());
 	}
-	
+
 	private Quest baiumAi()
 	{
-		return null;
+        throw new NotImplementedException();
 		// return QuestManager.getInstance().getQuest(Baium.class.getSimpleName());
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

@@ -180,7 +180,7 @@ public class BotReportTable
 	 */
 	public bool reportBot(Player reporter)
 	{
-		WorldObject target = reporter.getTarget();
+		WorldObject? target = reporter.getTarget();
 		if (target == null)
 		{
 			return false;

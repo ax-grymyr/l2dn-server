@@ -595,7 +595,7 @@ public abstract class AbstractAI : Ctrl
 		{
 			if (_actor.isPlayer() && _actor.hasSummon())
 			{
-				Summon pet = _actor.getPet();
+				Summon? pet = _actor.getPet();
 				if (pet != null)
 				{
 					pet.broadcastPacket(new AutoAttackStartPacket(pet.ObjectId));

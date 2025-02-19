@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Handlers;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Network.Enums;
@@ -18,16 +19,17 @@ public class AdminCamera: IAdminCommandHandler
 		"admin_camex",
 		"admin_cam3",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
-	{
-		if ((activeChar.getTarget() == null) || !activeChar.getTarget().isCreature())
+    {
+        WorldObject? activeCharTarget = activeChar.getTarget();
+		if (activeCharTarget == null || !activeCharTarget.isCreature())
 		{
 			activeChar.sendPacket(SystemMessageId.YOUR_TARGET_CANNOT_BE_FOUND);
 			return false;
 		}
-		
-		Creature target = (Creature) activeChar.getTarget();
+
+		Creature target = (Creature)activeCharTarget;
 		string[] com = command.Split(" ");
 		switch (com[0])
 		{
@@ -64,7 +66,7 @@ public class AdminCamera: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

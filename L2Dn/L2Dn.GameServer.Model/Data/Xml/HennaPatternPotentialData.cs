@@ -16,27 +16,27 @@ namespace L2Dn.GameServer.Data.Xml;
 public class HennaPatternPotentialData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(HennaPatternPotentialData));
-	
+
 	private readonly Map<int, int> _potenExpTable = new();
 	private readonly Map<int, DyePotentialFee> _potenFees = new();
 	private readonly Map<int, DyePotential> _potentials = new();
 	private readonly List<ItemHolder> _enchancedReset = new();
-	
+
 	private int MAX_POTEN_LEVEL = 0;
 	private int MAX_POTEN_EXP = 0;
-	
+
 	protected HennaPatternPotentialData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_potenFees.Clear();
 		_potenExpTable.Clear();
 		_potentials.Clear();
 		_enchancedReset.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/hennaPatternPotential.xml");
 		document.Elements("list").ForEach(element =>
 		{
@@ -45,9 +45,9 @@ public class HennaPatternPotentialData: DataReaderBase
 			element.Elements("experiencePoints").Elements("hiddenPower").ForEach(parseHiddenPowerElement);
 			element.Elements("hiddenPotentials").Elements("poten").ForEach(parseHiddenPotenElement);
 		});
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _potenFees.Count + " dye pattern fee data.");
-		
+
 	}
 
 	private void parseFeeElement(XElement element)
@@ -56,20 +56,20 @@ public class HennaPatternPotentialData: DataReaderBase
 		int dailyCount = 0;
 		Map<int, double> enchantExp = new();
 		List<ItemHolder> items = new();
-		
+
 		element.Elements("requiredItem").ForEach(el =>
 		{
 			int itemId = el.GetAttributeValueAsInt32("id");
 			long itemCount = el.Attribute("count").GetInt64(1);
 			items.Add(new ItemHolder(itemId, itemCount));
 		});
-		
+
 		element.Elements("dailyCount").ForEach(el =>
 		{
 			int value = (int)el;
 			dailyCount = value;
 		});
-		
+
 		element.Elements("enchantExp").ForEach(el =>
 		{
 			int count = el.GetAttributeValueAsInt32("count");
@@ -117,45 +117,45 @@ public class HennaPatternPotentialData: DataReaderBase
 		int skillId = element.GetAttributeValueAsInt32("skillId");
 		_potentials.put(id, new DyePotential(id, slotId, skillId, maxSkillLevel));
 	}
-	
-	public DyePotentialFee getFee(int step)
+
+	public DyePotentialFee? getFee(int step)
 	{
 		return _potenFees.get(step);
 	}
-	
+
 	public int getMaxPotenEnchantStep()
 	{
 		return _potenFees.Count;
 	}
-	
+
 	public List<ItemHolder> getEnchantReset()
 	{
 		return _enchancedReset;
 	}
-	
+
 	public int getExpForLevel(int level)
 	{
 		return _potenExpTable.get(level);
 	}
-	
+
 	public int getMaxPotenLevel()
 	{
 		return MAX_POTEN_LEVEL;
 	}
-	
+
 	public int getMaxPotenExp()
 	{
 		return MAX_POTEN_EXP;
 	}
-	
-	public DyePotential getPotential(int potenId)
+
+	public DyePotential? getPotential(int potenId)
 	{
 		return _potentials.get(potenId);
 	}
-	
-	public Skill getPotentialSkill(int potenId, int slotId, int level)
+
+	public Skill? getPotentialSkill(int potenId, int slotId, int level)
 	{
-		DyePotential potential = _potentials.get(potenId);
+		DyePotential? potential = _potentials.get(potenId);
 		if (potential == null)
 		{
 			return null;
@@ -166,7 +166,7 @@ public class HennaPatternPotentialData: DataReaderBase
 		}
 		return null;
 	}
-	
+
 	public ICollection<int> getSkillIdsBySlotId(int slotId)
 	{
 		List<int> skillIds = new();
@@ -179,12 +179,12 @@ public class HennaPatternPotentialData: DataReaderBase
 		}
 		return skillIds;
 	}
-	
+
 	public static HennaPatternPotentialData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly HennaPatternPotentialData INSTANCE = new();

@@ -21,13 +21,13 @@ public class BuyListData: DataReaderBase
 	{
 		load();
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
+
+	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
 	{
 		_buyLists = LoadBuyLists();
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var buyLists = ctx.BuyLists;
@@ -43,14 +43,14 @@ public class BuyListData: DataReaderBase
 					_logger.Warn("BuyList found in database but not loaded from xml! BuyListId: " + buyListId);
 					continue;
 				}
-				
+
 				Product? product = buyList.getProductByItemId(itemId);
 				if (product == null)
 				{
 					_logger.Warn("ItemId found in database but not loaded from xml! BuyListId: " + buyListId + " ItemId: " + itemId);
 					continue;
 				}
-				
+
 				if (count < product.getRestock()?.Count)
 				{
 					product.setCount(count);
@@ -68,7 +68,7 @@ public class BuyListData: DataReaderBase
 	{
 		IEnumerable<ProductList> buyLists = LoadXmlDocuments<XmlBuyList>(DataFileLocation.Data, "buylists")
 			.Select(t => LoadBuyList(t.FilePath, t.Document));
-		
+
 		if (Config.CUSTOM_BUYLIST_LOAD)
 		{
 			buyLists = buyLists.Concat(LoadXmlDocuments<XmlBuyList>(DataFileLocation.Data, "buylists/custom")
@@ -76,11 +76,11 @@ public class BuyListData: DataReaderBase
 		}
 
 		FrozenDictionary<int, ProductList> result = buyLists.ToFrozenDictionary(x => x.getListId());
-		
+
 		_logger.Info(nameof(BuyListData) + ": Loaded " + result.Count + " buyLists.");
 		return result;
 	}
-	
+
 	private static ProductList LoadBuyList(string filePath, XmlBuyList document)
 	{
 		//int defaultBaseTax = parseInteger(list.getAttributes(), "baseTax", 0);
@@ -90,7 +90,7 @@ public class BuyListData: DataReaderBase
 		List<Product> products = document.Items.Select(buyListItem =>
 		{
 			int itemId = buyListItem.Id;
-			ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+			ItemTemplate? item = ItemData.getInstance().getTemplate(itemId);
 			if (item == null)
 			{
 				_logger.Warn("Item not found. BuyList:" + buyListId + " ItemID:" + itemId + " File:" + filePath);
@@ -114,7 +114,7 @@ public class BuyListData: DataReaderBase
 			}
 
 			return new Product(buyListId, item, price, restock, baseTax);
-		}).Where(x => x != null).ToList();
+		}).Where(x => x != null).ToList()!;
 
 		List<int> duplicateItemIds =
 			products.GroupBy(x => x.getItemId()).Where(g => g.Count() > 1).Select(g => g.Key).ToList();
@@ -123,18 +123,18 @@ public class BuyListData: DataReaderBase
 		{
 			_logger.Warn($"Buylist={buyListId} contains duplicated item ids {string.Join(", ", duplicateItemIds)}.");
 		}
-		
+
 		ProductList buyList = new(buyListId, products, allowedNpc);
 		return buyList;
 	}
-	
+
 	public ProductList? getBuyList(int listId) => _buyLists.GetValueOrDefault(listId);
 
 	public static BuyListData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly BuyListData INSTANCE = new();

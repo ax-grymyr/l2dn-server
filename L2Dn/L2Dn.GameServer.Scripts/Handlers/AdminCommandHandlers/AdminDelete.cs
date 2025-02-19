@@ -20,7 +20,7 @@ public class AdminDelete: IAdminCommandHandler
         "admin_delete", // supports range parameter
 		"admin_delete_group", // for territory spawns
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.contains("group"))
@@ -37,7 +37,7 @@ public class AdminDelete: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	private void handleDelete(Player player, int range)
 	{
 		if (range > 0)
@@ -45,42 +45,42 @@ public class AdminDelete: IAdminCommandHandler
 			World.getInstance().forEachVisibleObjectInRange<Npc>(player, range, target => deleteNpc(player, target));
 			return;
 		}
-		
-		WorldObject obj = player.getTarget();
-		if (obj is Npc)
+
+		WorldObject? obj = player.getTarget();
+		if (obj is Npc npc)
 		{
-			deleteNpc(player, (Npc) obj);
+			deleteNpc(player, npc);
 		}
 		else
 		{
 			BuilderUtil.sendSysMessage(player, "Incorrect target.");
 		}
 	}
-	
+
 	private void handleDeleteGroup(Player player)
 	{
-		WorldObject obj = player.getTarget();
-		if (obj is Npc)
+		WorldObject? obj = player.getTarget();
+		if (obj is Npc npc)
 		{
-			deleteGroup(player, (Npc) obj);
+			deleteGroup(player, npc);
 		}
 		else
 		{
 			BuilderUtil.sendSysMessage(player, "Incorrect target.");
 		}
 	}
-	
+
 	private void deleteNpc(Player player, Npc target)
 	{
 		Spawn spawn = target.getSpawn();
 		if (spawn != null)
 		{
-			NpcSpawnTemplate npcSpawnTemplate = spawn.getNpcSpawnTemplate();
-			SpawnGroup group = npcSpawnTemplate != null ? npcSpawnTemplate.getGroup() : null;
+			NpcSpawnTemplate? npcSpawnTemplate = spawn.getNpcSpawnTemplate();
+			SpawnGroup? group = npcSpawnTemplate != null ? npcSpawnTemplate.getGroup() : null;
 			List<SpawnTerritory> territories = group != null ? group.getTerritories() : [];
 			if (territories.Count == 0)
 			{
-				SpawnTemplate spawnTemplate = npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnTemplate() : null;
+				SpawnTemplate? spawnTemplate = npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnTemplate() : null;
 				if (spawnTemplate != null)
 				{
 					territories = spawnTemplate.getTerritories();
@@ -106,19 +106,19 @@ public class AdminDelete: IAdminCommandHandler
 			}
 		}
 	}
-	
+
 	private void deleteGroup(Player player, Npc target)
 	{
 		Spawn spawn = target.getSpawn();
 		if (spawn != null)
 		{
-			NpcSpawnTemplate npcSpawnTemplate = spawn.getNpcSpawnTemplate();
-			SpawnGroup group = npcSpawnTemplate != null ? npcSpawnTemplate.getGroup() : null;
+			NpcSpawnTemplate? npcSpawnTemplate = spawn.getNpcSpawnTemplate();
+			SpawnGroup? group = npcSpawnTemplate != null ? npcSpawnTemplate.getGroup() : null;
 			List<SpawnTerritory> territories = group != null ? group.getTerritories() : [];
 			bool simpleTerritory = false;
 			if (territories.Count == 0)
 			{
-				SpawnTemplate spawnTemplate = npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnTemplate() : null;
+				SpawnTemplate? spawnTemplate = npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnTemplate() : null;
 				if (spawnTemplate != null)
 				{
 					territories = spawnTemplate.getTerritories();
@@ -141,7 +141,7 @@ public class AdminDelete: IAdminCommandHandler
 				{
 					SpawnTable.getInstance().deleteSpawn(spawn, true);
 				}
-				
+
 				if (group != null)
 				{
 					foreach (NpcSpawnTemplate template in group.getSpawns())
@@ -149,16 +149,16 @@ public class AdminDelete: IAdminCommandHandler
 						template.despawn();
 					}
 				}
-				else if (simpleTerritory && (npcSpawnTemplate != null))
+				else if (simpleTerritory && npcSpawnTemplate != null)
 				{
 					npcSpawnTemplate.despawn();
 				}
-				
+
 				BuilderUtil.sendSysMessage(player, "Deleted " + target.getName() + " group from " + target.ObjectId + ".");
 			}
 		}
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

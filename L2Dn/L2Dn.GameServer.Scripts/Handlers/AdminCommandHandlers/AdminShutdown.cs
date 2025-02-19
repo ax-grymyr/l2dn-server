@@ -8,6 +8,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -16,13 +17,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminShutdown: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminShowQuests));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_server_shutdown",
 		"admin_server_restart",
 		"admin_server_abort",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_server_shutdown"))
@@ -42,6 +44,7 @@ public class AdminShutdown: IAdminCommandHandler
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                _logger.Error(e);
 				sendHtmlForm(activeChar);
 			}
 		}
@@ -62,6 +65,7 @@ public class AdminShutdown: IAdminCommandHandler
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                _logger.Error(e);
 				sendHtmlForm(activeChar);
 			}
 		}
@@ -71,31 +75,31 @@ public class AdminShutdown: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	private void sendHtmlForm(Player activeChar)
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/shutdown.htm", activeChar);
 		int t = GameTimeTaskManager.getInstance().getGameTime();
 		int h = t / 60;
 		int m = t % 60;
-		
+
 		htmlContent.Replace("%count%", World.getInstance().getPlayers().Count.ToString());
 		htmlContent.Replace("%used%", GC.GetTotalMemory(false).ToString());
 		htmlContent.Replace("%time%", h + ":" + m);
 		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		activeChar.sendPacket(adminReply);
 	}
-	
+
 	private void serverShutdown(Player activeChar, int seconds, bool restart)
 	{
 		Shutdown.getInstance().startShutdown(activeChar, seconds, restart);
 	}
-	
+
 	private void serverAbort(Player activeChar)
 	{
 		Shutdown.getInstance().abort(activeChar);

@@ -8,6 +8,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using Microsoft.EntityFrameworkCore;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -16,11 +17,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminChangeAccessLevel: IAdminCommandHandler
 {
-	private static readonly string[] ADMIN_COMMANDS =
-    [
-        "admin_changelvl",
-    ];
-	
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminChangeAccessLevel));
+    private static readonly string[] ADMIN_COMMANDS = ["admin_changelvl"];
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		string[] parts = command.Split(" ");
@@ -29,8 +28,8 @@ public class AdminChangeAccessLevel: IAdminCommandHandler
 			try
 			{
 				int lvl = int.Parse(parts[1]);
-				WorldObject target = activeChar.getTarget();
-				if ((target == null) || !target.isPlayer())
+				WorldObject? target = activeChar.getTarget();
+				if (target == null || !target.isPlayer())
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				}
@@ -41,6 +40,7 @@ public class AdminChangeAccessLevel: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //changelvl <target_new_level> | <player_name> <new_level>");
 			}
 		}
@@ -48,7 +48,7 @@ public class AdminChangeAccessLevel: IAdminCommandHandler
 		{
 			string name = parts[1];
 			int lvl = int.Parse(parts[2]);
-			Player player = World.getInstance().getPlayer(name);
+			Player? player = World.getInstance().getPlayer(name);
 			if (player != null)
 			{
 				onlineChange(activeChar, player, lvl);
@@ -72,18 +72,19 @@ public class AdminChangeAccessLevel: IAdminCommandHandler
 				}
 				catch (Exception se)
 				{
+                    _logger.Error(se);
 					BuilderUtil.sendSysMessage(activeChar, "SQLException while changing character's access level");
 				}
 			}
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	/**
 	 * @param activeChar the active GM
 	 * @param player the online target
@@ -93,7 +94,7 @@ public class AdminChangeAccessLevel: IAdminCommandHandler
 	{
 		if (lvl >= 0)
 		{
-			AccessLevel acccessLevel = AdminData.getInstance().getAccessLevel(lvl);
+			AccessLevel? acccessLevel = AdminData.getInstance().getAccessLevel(lvl);
 			if (acccessLevel != null)
 			{
 				player.setAccessLevel(lvl, true, true);

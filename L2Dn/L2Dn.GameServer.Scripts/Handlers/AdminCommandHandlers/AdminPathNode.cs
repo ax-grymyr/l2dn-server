@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Geo.PathFindings;
 using L2Dn.GameServer.Handlers;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
 
@@ -11,7 +12,7 @@ public class AdminPathNode: IAdminCommandHandler
     [
         "admin_path_find",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_path_find"))
@@ -21,11 +22,12 @@ public class AdminPathNode: IAdminCommandHandler
 				BuilderUtil.sendSysMessage(activeChar, "PathFinding is disabled.");
 				return true;
 			}
-			
-			if (activeChar.getTarget() != null)
+
+            WorldObject? activeCharTarget = activeChar.getTarget();
+			if (activeCharTarget != null)
 			{
 				List<AbstractNodeLoc>? path = PathFinding.getInstance().findPath(activeChar.Location.Location3D,
-					activeChar.getTarget().Location.Location3D, activeChar.getInstanceWorld(), true);
+                    activeCharTarget.Location.Location3D, activeChar.getInstanceWorld(), true);
 
 				if (path == null)
 				{
@@ -44,7 +46,7 @@ public class AdminPathNode: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

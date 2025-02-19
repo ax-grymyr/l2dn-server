@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -13,6 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminPetition: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminPetition));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_view_petitions",
@@ -22,20 +24,21 @@ public class AdminPetition: IAdminCommandHandler
 		"admin_reset_petitions",
 		"admin_force_peti",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		int petitionId = -1;
-		
+
 		try
 		{
 			petitionId = int.Parse(command.Split(" ")[1]);
 		}
 		catch (Exception e)
 		{
+            _logger.Error(e);
 			// Managed above?
 		}
-		
+
 		if (command.equals("admin_view_petitions"))
 		{
 			PetitionManager.getInstance().sendPendingPetitionList(activeChar);
@@ -51,13 +54,13 @@ public class AdminPetition: IAdminCommandHandler
 				activeChar.sendPacket(SystemMessageId.YOUR_GLOBAL_SUPPORT_REQUEST_WAS_RECEIVED);
 				return true;
 			}
-			
+
 			if (PetitionManager.getInstance().isPetitionInProcess(petitionId))
 			{
 				activeChar.sendPacket(SystemMessageId.YOUR_GLOBAL_SUPPORT_REQUEST_IS_BEING_PROCESSED);
 				return true;
 			}
-			
+
 			if (!PetitionManager.getInstance().acceptPetition(activeChar, petitionId))
 			{
 				activeChar.sendPacket(SystemMessageId.NO_GLOBAL_SUPPORT_CONSULTATIONS_ARE_UNDER_WAY);
@@ -85,8 +88,8 @@ public class AdminPetition: IAdminCommandHandler
 		{
 			try
 			{
-				WorldObject targetChar = activeChar.getTarget();
-				if ((targetChar == null) || !targetChar.isPlayer())
+				WorldObject? targetChar = activeChar.getTarget();
+				if (targetChar == null || !targetChar.isPlayer())
 				{
 					activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 					return false;
@@ -98,13 +101,14 @@ public class AdminPetition: IAdminCommandHandler
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //force_peti text");
 				return false;
 			}
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

@@ -17,9 +17,9 @@ namespace L2Dn.GameServer.Data.Xml;
 public class InitialEquipmentData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(InitialEquipmentData));
-	
+
 	private readonly Map<CharacterClass, List<PlayerItemTemplate>> _initialEquipmentList = new();
-	
+
 	/**
 	 * Instantiates a new initial equipment data.
 	 */
@@ -39,7 +39,7 @@ public class InitialEquipmentData: DataReaderBase
 
 		LOGGER.Info(GetType().Name + ": Loaded " + _initialEquipmentList.Count + " initial equipment data.");
 	}
-	
+
 	/**
 	 * Parses the equipment.
 	 * @param d parse an initial equipment and add it to {@link #_initialEquipmentList}
@@ -48,28 +48,28 @@ public class InitialEquipmentData: DataReaderBase
 	{
 		CharacterClass classId = (CharacterClass)element.GetAttributeValueAsInt32("classId");
 		List<PlayerItemTemplate> equipList = new();
-		
+
 		element.Elements("item").ForEach(el =>
 		{
 			int id = el.GetAttributeValueAsInt32("id");
 			long count = el.Attribute("count").GetInt64(1);
-			bool equipped = el.Attribute("equipped").GetBoolean(false); 
+			bool equipped = el.Attribute("equipped").GetBoolean(false);
 			equipList.Add(new PlayerItemTemplate(id, count, equipped));
 		});
-		
+
 		_initialEquipmentList.put(classId, equipList);
 	}
-	
+
 	/**
 	 * Gets the equipment list.
 	 * @param cId the class Id for the required initial equipment.
 	 * @return the initial equipment for the given class Id.
 	 */
-	public List<PlayerItemTemplate> getEquipmentList(CharacterClass cId)
+	public List<PlayerItemTemplate>? getEquipmentList(CharacterClass cId)
 	{
 		return _initialEquipmentList.get(cId);
 	}
-	
+
 	/**
 	 * Gets the single instance of InitialEquipmentData.
 	 * @return single instance of InitialEquipmentData
@@ -78,7 +78,7 @@ public class InitialEquipmentData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly InitialEquipmentData INSTANCE = new();

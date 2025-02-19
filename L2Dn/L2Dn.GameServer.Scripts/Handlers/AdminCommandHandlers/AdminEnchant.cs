@@ -20,7 +20,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminEnchant: IAdminCommandHandler
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminEnchant));
-	
+
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_seteh", // 6
@@ -40,7 +40,7 @@ public class AdminEnchant: IAdminCommandHandler
 		"admin_setbe",
 		"admin_enchant",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_enchant"))
@@ -110,15 +110,15 @@ public class AdminEnchant: IAdminCommandHandler
 			{
 				slot = Inventory.PAPERDOLL_BELT;
 			}
-			
+
 			if (slot != -1)
 			{
 				try
 				{
 					int ench = int.Parse(command.Substring(12));
-					
+
 					// check value
-					if ((ench < 0) || (ench > 127))
+					if (ench < 0 || ench > 127)
 					{
 						BuilderUtil.sendSysMessage(activeChar, "You must set the enchant level to be between 0-127.");
 					}
@@ -144,37 +144,37 @@ public class AdminEnchant: IAdminCommandHandler
 					BuilderUtil.sendSysMessage(activeChar, "Please specify a valid new enchant value.");
 				}
 			}
-			
+
 			// show the enchant menu after an action
 			showMainPage(activeChar);
 		}
 		return true;
 	}
-	
+
 	private void setEnchant(Player activeChar, int ench, int slot)
 	{
 		// Get the target.
-		Player player = activeChar.getTarget() != null ? activeChar.getTarget().getActingPlayer() : activeChar;
+		Player? player = activeChar.getTarget() != null ? activeChar.getTarget()?.getActingPlayer() : activeChar;
 		if (player == null)
 		{
 			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 			return;
 		}
-		
+
 		// Now we need to find the equipped weapon of the targeted character...
-		Item itemInstance = null;
-		
+		Item? itemInstance = null;
+
 		// Only attempt to enchant if there is a weapon equipped.
-		Item paperdollInstance = player.getInventory().getPaperdollItem(slot);
-		if ((paperdollInstance != null) && (paperdollInstance.getLocationSlot() == slot))
+		Item? paperdollInstance = player.getInventory().getPaperdollItem(slot);
+		if (paperdollInstance != null && paperdollInstance.getLocationSlot() == slot)
 		{
 			itemInstance = paperdollInstance;
 		}
-		
+
 		if (itemInstance != null)
 		{
 			int curEnchant = itemInstance.getEnchantLevel();
-			
+
 			// Set enchant value.
 			int enchant = ench;
 			if (Config.OVER_ENCHANT_PROTECTION && !player.isGM())
@@ -204,23 +204,23 @@ public class AdminEnchant: IAdminCommandHandler
 			player.getInventory().unEquipItemInSlot(slot);
 			itemInstance.setEnchantLevel(enchant);
 			player.getInventory().equipItem(itemInstance);
-			
+
 			// Send packets.
 			InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(itemInstance, ItemChangeType.MODIFIED));
 			player.sendInventoryUpdate(iu);
 			player.broadcastUserInfo();
-			
+
 			// Information.
 			BuilderUtil.sendSysMessage(activeChar, "Changed enchantment of " + player.getName() + "'s " + itemInstance.getTemplate().getName() + " from " + curEnchant + " to " + enchant + ".");
 			player.sendMessage("Admin has changed the enchantment of your " + itemInstance.getTemplate().getName() + " from " + curEnchant + " to " + enchant + ".");
 		}
 	}
-	
+
 	private void showMainPage(Player activeChar)
 	{
 		AdminHtml.showAdminHtml(activeChar, "enchant.htm");
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

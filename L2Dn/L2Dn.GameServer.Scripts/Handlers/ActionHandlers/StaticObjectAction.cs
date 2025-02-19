@@ -41,7 +41,7 @@ public class StaticObjectAction: IActionHandler
 			}
 			else if (staticObject.getType() == 2)
 			{
-				string filename = (staticObject.getId() == 24230101)
+				string filename = staticObject.getId() == 24230101
 					? "html/signboard/tomb_of_crystalgolem.htm"
 					: "html/signboard/pvp_signboard.htm";
 				

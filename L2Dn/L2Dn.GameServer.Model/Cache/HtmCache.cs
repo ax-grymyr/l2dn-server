@@ -10,17 +10,17 @@ public sealed class HtmCache
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(HtmCache));
 	private static readonly ConcurrentDictionary<string, string> _cache = new(StringComparer.OrdinalIgnoreCase);
-	
+
 	private HtmCache()
 	{
 		reload();
 	}
-	
+
 	public void reload()
 	{
 		reload(Config.DATAPACK_ROOT_PATH);
 	}
-	
+
 	public void reload(string directoryPath)
 	{
 		if (Config.HTM_CACHE)
@@ -35,37 +35,37 @@ public sealed class HtmCache
 			_logger.Info("Cache[HTML]: Running lazy cache.");
 		}
 	}
-	
+
 	public void reloadPath(string dirPath)
 	{
 		ParseDir(dirPath);
 		_logger.Info("Cache[HTML]: Reloaded specified path.");
 	}
-	
+
 	public long getMemoryUsage()
 	{
 		return _cache.Sum(x => (long)x.Value.Length);
 	}
-	
+
 	public int getLoadedFiles()
 	{
 		return _cache.Count;
 	}
-	
+
 	private void ParseDir(string directoryPath)
 	{
 		Directory.EnumerateFiles(directoryPath, "*", SearchOption.AllDirectories).ForEach(x => loadFile(x));
 	}
-	
+
 	public string? loadFile(string filePath)
 	{
-		string extension = Path.GetExtension(filePath); 
-		if (!string.Equals(extension, ".htm", StringComparison.OrdinalIgnoreCase) && 
+		string extension = Path.GetExtension(filePath);
+		if (!string.Equals(extension, ".htm", StringComparison.OrdinalIgnoreCase) &&
 		    !string.Equals(extension, ".html", StringComparison.OrdinalIgnoreCase))
 		{
 			return null;
 		}
-		
+
 		string? content = null;
 		try
 		{
@@ -79,7 +79,7 @@ public sealed class HtmCache
 				content = content.replaceAll("bypass -h npc_%objectId%_Chat ", "bypass npc_%objectId%_Chat ");
 				content = content.replaceAll("bypass -h npc_%objectId%_Quest", "bypass npc_%objectId%_Quest");
 			}
-			
+
 			filePath = Path.GetRelativePath(Config.DATAPACK_ROOT_PATH, filePath);
 			if (Config.CHECK_HTML_ENCODING && !filePath.startsWith("lang") &&
 			    content.Any(c => c >= 128))
@@ -88,18 +88,18 @@ public sealed class HtmCache
 			}
 
 			filePath = filePath.Replace("\\", "/");
-			
+
 			_cache[filePath] = content;
 		}
 		catch (Exception e)
 		{
 			_logger.Warn("Problem with htm file: " + e);
 		}
-		
+
 		return content;
 	}
-	
-	public string? getHtm(string path, string? language = null)
+
+	public string getHtm(string path, string? language = null)
 	{
 		string prefix = string.Empty;
 		if (Config.MULTILANG_ENABLE && !string.IsNullOrEmpty(language))
@@ -111,7 +111,7 @@ public sealed class HtmCache
 			if (!string.Equals(lang, "en"))
 				prefix = "lang/" + lang + "/"; // TODO: cache prefixes
 		}
-		
+
 		string newPath = string.IsNullOrEmpty(prefix) ? path : prefix + path;
 		if (!_cache.TryGetValue(newPath, out string? content))
 		{
@@ -136,15 +136,15 @@ public sealed class HtmCache
 				}
 			}
 		}
-		
-		return content;
+
+		return content ?? throw new ArgumentException("HTML resource not found: " + path);
 	}
-	
+
 	public bool contains(string path)
 	{
 		return _cache.ContainsKey(path);
 	}
-	
+
 	/**
 	 * @param path The path to the HTM
 	 * @return {@code true} if the path targets a HTM or HTML file, {@code false} otherwise.
@@ -155,12 +155,12 @@ public sealed class HtmCache
 		return string.Equals(extension, ".htm", StringComparison.OrdinalIgnoreCase) ||
 		       string.Equals(extension, ".html", StringComparison.OrdinalIgnoreCase);
 	}
-	
+
 	public static HtmCache getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly HtmCache INSTANCE = new HtmCache();

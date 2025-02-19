@@ -33,7 +33,7 @@ public class AdminOnline: IAdminCommandHandler
 			foreach (Player player in World.getInstance().getPlayers())
 			{
 				string? ip = player.getClient()?.IpAddress.ToString();
-				if ((ip != null) && !ips.Contains(ip))
+				if (ip != null && !ips.Contains(ip))
 				{
 					ips.Add(ip);
 				}
@@ -64,7 +64,7 @@ public class AdminOnline: IAdminCommandHandler
 				}
 
 				if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(player) ||
-				    (player.getPvpFlag() != PvpFlagStatus.None) || player.isInsideZone(ZoneId.PVP) ||
+				    player.getPvpFlag() != PvpFlagStatus.None || player.isInsideZone(ZoneId.PVP) ||
 				    player.isInsideZone(ZoneId.SIEGE))
 				{
 					combat++;

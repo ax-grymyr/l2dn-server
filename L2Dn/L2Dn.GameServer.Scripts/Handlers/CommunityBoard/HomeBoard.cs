@@ -7,6 +7,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.BuyList;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -26,14 +27,14 @@ public class HomeBoard: IParseBoardHandler
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(HomeBoard));
 	private static readonly string NAVIGATION_PATH = "html/CommunityBoard/Custom/navigation.html";
-	
+
 	private static readonly string[] COMMANDS =
     [
         "_bbshome",
 		"_bbstop",
     ];
-	
-	private static readonly string[] CUSTOM_COMMANDS =
+
+	private static readonly string?[] CUSTOM_COMMANDS = // TODO: keep only non-null values
     [
         Config.PREMIUM_SYSTEM_ENABLED && Config.COMMUNITY_PREMIUM_SYSTEM_ENABLED ? "_bbspremium" : null,
 		Config.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbsexcmultisell" : null,
@@ -44,31 +45,31 @@ public class HomeBoard: IParseBoardHandler
 		Config.COMMUNITYBOARD_ENABLE_HEAL ? "_bbsheal" : null,
 		Config.COMMUNITYBOARD_ENABLE_DELEVEL ? "_bbsdelevel" : null,
     ];
-	
+
 	private static readonly Func<string, Player, bool> COMBAT_CHECK = (command, player) =>
 	{
 		bool commandCheck = false;
-		foreach (string c in CUSTOM_COMMANDS)
+		foreach (string? c in CUSTOM_COMMANDS)
 		{
-			if ((c != null) && command.StartsWith(c))
+			if (c != null && command.StartsWith(c))
 			{
 				commandCheck = true;
 				break;
 			}
 		}
-		return commandCheck && (player.isCastingNow() || player.isInCombat() || player.isInDuel() || player.isInOlympiadMode() || player.isInsideZone(ZoneId.SIEGE) || player.isInsideZone(ZoneId.PVP) || (player.getPvpFlag() > 0) || player.isAlikeDead() || player.isOnEvent());
+		return commandCheck && (player.isCastingNow() || player.isInCombat() || player.isInDuel() || player.isInOlympiadMode() || player.isInsideZone(ZoneId.SIEGE) || player.isInsideZone(ZoneId.PVP) || player.getPvpFlag() > 0 || player.isAlikeDead() || player.isOnEvent());
 	};
-	
-	private static readonly Predicate<Player> KARMA_CHECK = player => Config.COMMUNITYBOARD_KARMA_DISABLED && (player.getReputation() < 0);
-	
+
+	private static readonly Predicate<Player> KARMA_CHECK = player => Config.COMMUNITYBOARD_KARMA_DISABLED && player.getReputation() < 0;
+
 	public string[] getCommunityBoardCommands()
 	{
-		List<string> commands = [];
+		List<string?> commands = [];
 		commands.AddRange(COMMANDS);
 		commands.AddRange(CUSTOM_COMMANDS);
-        return commands.Where(x => x != null).ToArray();
+        return commands.Where(x => x != null).ToArray()!;
     }
-	
+
 	public bool parseCommunityBoardCommand(string command, Player player)
 	{
 		// Old custom conditions check move to here
@@ -77,14 +78,14 @@ public class HomeBoard: IParseBoardHandler
 			player.sendMessage("You can't use the Community Board right now.");
 			return false;
 		}
-		
+
 		if (KARMA_CHECK(player))
 		{
 			player.sendMessage("Players with Karma cannot use the Community Board.");
 			return false;
 		}
-		
-		string returnHtml = null;
+
+		string? returnHtml = null;
 		string navigation = HtmCache.getInstance().getHtm(NAVIGATION_PATH, player.getLang());
 		if (command.equals("_bbshome") || command.equals("_bbstop"))
 		{
@@ -102,7 +103,7 @@ public class HomeBoard: IParseBoardHandler
 		{
 			string customPath = Config.CUSTOM_CB_ENABLED ? "Custom/" : "";
 			string path = command.Replace("_bbstop;", "");
-			if ((path.Length > 0) && path.endsWith(".html"))
+			if (path.Length > 0 && path.endsWith(".html"))
 			{
 				returnHtml = HtmCache.getInstance().getHtm("html/CommunityBoard/" + customPath + path, player.getLang());
 			}
@@ -129,7 +130,14 @@ public class HomeBoard: IParseBoardHandler
 		{
 			string page = command.Replace("_bbssell;", "");
 			returnHtml = HtmCache.getInstance().getHtm("html/CommunityBoard/Custom/" + page + ".html", player.getLang());
-			player.sendPacket(new ExBuySellListPacket(BuyListData.getInstance().getBuyList(423), player, 0));
+            ProductList? buyList = BuyListData.getInstance().getBuyList(423);
+            if (buyList == null)
+            {
+                _logger.Error("BuyList 423 not found!");
+                return false;
+            }
+
+			player.sendPacket(new ExBuySellListPacket(buyList, player, 0));
 			player.sendPacket(new ExBuySellListPacket(player, false));
 		}
 		else if (command.startsWith("_bbsteleport"))
@@ -155,27 +163,27 @@ public class HomeBoard: IParseBoardHandler
 			string[] buypassOptions = fullBypass.Split(";");
 			int buffCount = buypassOptions.Length - 1;
 			string page = buypassOptions[buffCount];
-			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < (Config.COMMUNITYBOARD_BUFF_PRICE * buffCount))
+			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < Config.COMMUNITYBOARD_BUFF_PRICE * buffCount)
 			{
 				player.sendMessage("Not enough currency!");
 			}
 			else
 			{
 				player.destroyItemByItemId("CB_Buff", Config.COMMUNITYBOARD_CURRENCY, Config.COMMUNITYBOARD_BUFF_PRICE * buffCount, player, true);
-				Pet pet = player.getPet();
+				Pet? pet = player.getPet();
 				List<Creature> targets = new(4);
 				targets.Add(player);
 				if (pet != null)
 				{
 					targets.Add(pet);
 				}
-				
+
 				player.getServitors().Values.ForEach(x => targets.Add(x));
-				
+
 				for (int i = 0; i < buffCount; i++)
 				{
-					Skill skill = SkillData.getInstance().getSkill(int.Parse(buypassOptions[i].Split(",")[0]), int.Parse(buypassOptions[i].Split(",")[1]));
-					if (!Config.COMMUNITY_AVAILABLE_BUFFS.Contains(skill.getId()))
+					Skill? skill = SkillData.getInstance().getSkill(int.Parse(buypassOptions[i].Split(",")[0]), int.Parse(buypassOptions[i].Split(",")[1]));
+					if (skill == null || !Config.COMMUNITY_AVAILABLE_BUFFS.Contains(skill.getId()))
 					{
 						continue;
 					}
@@ -194,13 +202,13 @@ public class HomeBoard: IParseBoardHandler
 					}
 				}
 			}
-			
+
 			returnHtml = HtmCache.getInstance().getHtm("html/CommunityBoard/Custom/" + page + ".html", player.getLang());
 		}
 		else if (command.startsWith("_bbsheal"))
 		{
 			string page = command.Replace("_bbsheal;", "");
-			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < (Config.COMMUNITYBOARD_HEAL_PRICE))
+			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < Config.COMMUNITYBOARD_HEAL_PRICE)
 			{
 				player.sendMessage("Not enough currency!");
 			}
@@ -210,11 +218,12 @@ public class HomeBoard: IParseBoardHandler
 				player.setCurrentHp(player.getMaxHp());
 				player.setCurrentMp(player.getMaxMp());
 				player.setCurrentCp(player.getMaxCp());
-				if (player.hasPet())
+                Pet? pet = player.getPet();
+				if (player.hasPet() && pet != null)
 				{
-					player.getPet().setCurrentHp(player.getPet().getMaxHp());
-					player.getPet().setCurrentMp(player.getPet().getMaxMp());
-					player.getPet().setCurrentCp(player.getPet().getMaxCp());
+                    pet.setCurrentHp(pet.getMaxHp());
+                    pet.setCurrentMp(pet.getMaxMp());
+                    pet.setCurrentCp(pet.getMaxCp());
 				}
 				foreach (Summon summon in player.getServitors().Values)
 				{
@@ -224,7 +233,7 @@ public class HomeBoard: IParseBoardHandler
 				}
 				player.sendMessage("You used heal!");
 			}
-			
+
 			returnHtml = HtmCache.getInstance().getHtm("html/CommunityBoard/Custom/" + page + ".html", player.getLang());
 		}
 		else if (command.equals("_bbsdelevel"))
@@ -255,7 +264,7 @@ public class HomeBoard: IParseBoardHandler
 			string fullBypass = command.Replace("_bbspremium;", "");
 			string[] buypassOptions = fullBypass.Split(",");
 			int premiumDays = int.Parse(buypassOptions[0]);
-			if ((premiumDays < 1) || (premiumDays > 30) || (player.getInventory().getInventoryItemCount(Config.COMMUNITY_PREMIUM_COIN_ID, -1) < (Config.COMMUNITY_PREMIUM_PRICE_PER_DAY * premiumDays)))
+			if (premiumDays < 1 || premiumDays > 30 || player.getInventory().getInventoryItemCount(Config.COMMUNITY_PREMIUM_COIN_ID, -1) < Config.COMMUNITY_PREMIUM_PRICE_PER_DAY * premiumDays)
 			{
 				player.sendMessage("Not enough currency!");
 			}
@@ -271,7 +280,7 @@ public class HomeBoard: IParseBoardHandler
 				returnHtml = HtmCache.getInstance().getHtm("html/CommunityBoard/Custom/premium/thankyou.html", player.getLang());
 			}
 		}
-		
+
 		if (returnHtml != null)
 		{
 			if (Config.CUSTOM_CB_ENABLED)
@@ -282,7 +291,7 @@ public class HomeBoard: IParseBoardHandler
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Gets the Favorite links for the given player.
 	 * @param player the player
@@ -299,12 +308,12 @@ public class HomeBoard: IParseBoardHandler
 		}
 		catch (Exception e)
 		{
-			_logger.Warn(nameof(FavoriteBoard) + ": Coudn't load favorites count for " + player);
+			_logger.Warn(nameof(FavoriteBoard) + ": Coudn't load favorites count for " + player + ": " + e);
 		}
-        
+
 		return count;
 	}
-	
+
 	/**
 	 * Gets the registered regions count for the given player.
 	 * @param player the player

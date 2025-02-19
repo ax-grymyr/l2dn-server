@@ -26,21 +26,21 @@ public class FakePlayerChatManager: DataReaderBase
 	List<FakePlayerChatHolder> MESSAGES = new();
 	private const int MIN_DELAY = 5000;
 	private const int MAX_DELAY = 15000;
-	
+
 	protected FakePlayerChatManager()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		if (Config.FAKE_PLAYERS_ENABLED && Config.FAKE_PLAYER_CHAT)
 		{
 			MESSAGES.Clear();
-			
+
 			XDocument document = LoadXmlDocument(DataFileLocation.Data, "FakePlayerChatData.xml");
 			document.Elements("list").Elements("fakePlayerChat").ForEach(parseElement);
-			
+
 			LOGGER.Info(GetType().Name +": Loaded " + MESSAGES.Count + " chat templates.");
 		}
 		else
@@ -60,25 +60,25 @@ public class FakePlayerChatManager: DataReaderBase
 	{
 		ThreadPool.schedule(() => manageResponce(player, fpcName, message), Rnd.get(MIN_DELAY, MAX_DELAY));
 	}
-	
+
 	public void manageChat(Player player, string fpcName, string message, int minDelay, int maxDelay)
 	{
 		ThreadPool.schedule(() => manageResponce(player, fpcName, message), Rnd.get(minDelay, maxDelay));
 	}
-	
+
 	private void manageResponce(Player player, string fpcName, string message)
 	{
 		if (player == null)
 		{
 			return;
 		}
-		
+
 		string text = message.ToLower();
-		
+
 		// tricky question
 		if (text.Contains("can you see me"))
 		{
-			Spawn spawn = SpawnTable.getInstance().getAnySpawn(FakePlayerData.getInstance().getNpcIdByName(fpcName));
+			Spawn? spawn = SpawnTable.getInstance().getAnySpawn(FakePlayerData.getInstance().getNpcIdByName(fpcName));
 			if (spawn != null)
 			{
 				Npc npc = spawn.getLastSpawn();
@@ -103,14 +103,14 @@ public class FakePlayerChatManager: DataReaderBase
 				}
 			}
 		}
-		
+
 		foreach (FakePlayerChatHolder chatHolder in MESSAGES)
 		{
 			if (!chatHolder.getFpcName().equals(fpcName) && !chatHolder.getFpcName().equals("ALL"))
 			{
 				continue;
 			}
-			
+
 			switch (chatHolder.getSearchMethod())
 			{
 				case "EQUALS":
@@ -148,10 +148,10 @@ public class FakePlayerChatManager: DataReaderBase
 			}
 		}
 	}
-	
+
 	public void sendChat(Player player, string fpcName, string message)
 	{
-		Spawn spawn = SpawnTable.getInstance().getAnySpawn(FakePlayerData.getInstance().getNpcIdByName(fpcName));
+		Spawn? spawn = SpawnTable.getInstance().getAnySpawn(FakePlayerData.getInstance().getNpcIdByName(fpcName));
 		if (spawn != null)
 		{
 			Npc npc = spawn.getLastSpawn();
@@ -161,12 +161,12 @@ public class FakePlayerChatManager: DataReaderBase
 			}
 		}
 	}
-	
+
 	public static FakePlayerChatManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly FakePlayerChatManager INSTANCE = new FakePlayerChatManager();

@@ -14,12 +14,6 @@ public static class ReadOnlyListExtensions
         return false;
     }
 
-    public static void ForEach<T>(this IReadOnlyList<T> collection, Action<T> action)
-    {
-        for (int index = 0; index < collection.Count; index++)
-            action(collection[index]);
-    }
-
     public static T GetRandomElement<T>(this IReadOnlyList<T> collection)
         => collection[Random.Shared.Next(collection.Count)];
 

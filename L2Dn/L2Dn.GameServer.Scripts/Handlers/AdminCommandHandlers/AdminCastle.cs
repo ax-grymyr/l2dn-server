@@ -5,6 +5,7 @@ using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Sieges;
@@ -26,7 +27,7 @@ public class AdminCastle: IAdminCommandHandler
     [
         "admin_castlemanage",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
@@ -36,7 +37,7 @@ public class AdminCastle: IAdminCommandHandler
 			if (st.hasMoreTokens())
 			{
 				string param = st.nextToken();
-				Castle castle;
+				Castle? castle;
 				if (int.TryParse(param, CultureInfo.InvariantCulture, out int castleId))
 				{
 					castle = CastleManager.getInstance().getCastleById(castleId);
@@ -45,13 +46,13 @@ public class AdminCastle: IAdminCommandHandler
 				{
 					castle = CastleManager.getInstance().getCastle(param);
 				}
-				
+
 				if (castle == null)
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Invalid parameters! Usage: //castlemanage <castleId[1-9] / castleName>");
 					return false;
 				}
-				
+
 				if (!st.hasMoreTokens())
 				{
 					showCastleMenu(activeChar, castle.getResidenceId());
@@ -59,7 +60,6 @@ public class AdminCastle: IAdminCommandHandler
 				else
 				{
 					string action = st.nextToken();
-					Player target = checkTarget(activeChar) ? activeChar.getTarget().getActingPlayer() : null;
 					switch (action)
 					{
 						case "showRegWindow":
@@ -69,7 +69,7 @@ public class AdminCastle: IAdminCommandHandler
 						}
 						case "addAttacker":
 						{
-							if (checkTarget(activeChar))
+							if (CheckTarget(activeChar, out Player? target) && target != null)
 							{
 								castle.getSiege().registerAttacker(target, true);
 							}
@@ -81,7 +81,7 @@ public class AdminCastle: IAdminCommandHandler
 						}
 						case "removeAttacker":
 						{
-							if (checkTarget(activeChar))
+                            if (CheckTarget(activeChar, out Player? target) && target != null)
 							{
 								castle.getSiege().removeSiegeClan(activeChar);
 							}
@@ -93,7 +93,7 @@ public class AdminCastle: IAdminCommandHandler
 						}
 						case "addDeffender":
 						{
-							if (checkTarget(activeChar))
+                            if (CheckTarget(activeChar, out Player? target) && target != null)
 							{
 								castle.getSiege().registerDefender(target, true);
 							}
@@ -105,7 +105,7 @@ public class AdminCastle: IAdminCommandHandler
 						}
 						case "removeDeffender":
 						{
-							if (checkTarget(activeChar))
+                            if (CheckTarget(activeChar, out Player? target) && target != null)
 							{
 								castle.getSiege().removeSiegeClan(target);
 							}
@@ -142,11 +142,11 @@ public class AdminCastle: IAdminCommandHandler
 						}
 						case "setOwner":
 						{
-							if ((target == null) || !checkTarget(activeChar))
+							if (!CheckTarget(activeChar, out Player? target) || target == null)
 							{
 								activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 							}
-							else if (target.getClan().getCastleId() > 0)
+							else if (target.getClan()?.getCastleId() > 0)
 							{
 								BuilderUtil.sendSysMessage(activeChar, "This clan already have castle!");
 							}
@@ -160,8 +160,7 @@ public class AdminCastle: IAdminCommandHandler
 							}
 							else
 							{
-								CastleSide side = Enum.Parse<CastleSide>(st.nextToken().toUpperCase());
-								if (side != null)
+                                if (Enum.TryParse(st.nextToken(), true, out CastleSide side))
 								{
 									castle.setSide(side);
 									castle.setOwner(target.getClan());
@@ -172,7 +171,7 @@ public class AdminCastle: IAdminCommandHandler
 						}
 						case "takeCastle":
 						{
-							Model.Clans.Clan clan = ClanTable.getInstance().getClan(castle.getOwnerId());
+							Clan? clan = ClanTable.getInstance().getClan(castle.getOwnerId());
 							if (clan != null)
 							{
 								castle.removeOwner(clan);
@@ -213,14 +212,14 @@ public class AdminCastle: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	private void showCastleMenu(Player player, int castleId)
 	{
-		Castle castle = CastleManager.getInstance().getCastleById(castleId);
+		Castle? castle = CastleManager.getInstance().getCastleById(castleId);
 		if (castle != null)
 		{
-			Clan ownerClan = castle.getOwner();
-			
+			Clan? ownerClan = castle.getOwner();
+
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/castlemanage_selected.htm", player);
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 			htmlContent.Replace("%castleId%", castle.getResidenceId().ToString());
@@ -231,12 +230,20 @@ public class AdminCastle: IAdminCommandHandler
 			player.sendPacket(html);
 		}
 	}
-	
-	private bool checkTarget(Player player)
+
+	private static bool CheckTarget(Player player, out Player? target)
 	{
-		return ((player.getTarget() != null) && player.getTarget().isPlayer() && (((Player) player.getTarget()).getClan() != null));
-	}
-	
+        WorldObject? target1 = player.getTarget();
+        if (target1 != null && target1.isPlayer() && ((Player)target1).getClan() != null)
+        {
+            target = (Player)target1;
+            return true;
+        }
+
+        target = null;
+        return false;
+    }
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

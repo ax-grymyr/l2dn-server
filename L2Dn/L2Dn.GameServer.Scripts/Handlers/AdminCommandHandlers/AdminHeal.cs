@@ -18,7 +18,7 @@ public class AdminHeal: IAdminCommandHandler
     [
         "admin_heal",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_heal"))
@@ -43,23 +43,23 @@ public class AdminHeal: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	private void handleHeal(Player activeChar)
 	{
 		handleHeal(activeChar, null);
 	}
-	
-	private void handleHeal(Player activeChar, string player)
+
+	private void handleHeal(Player activeChar, string? player)
 	{
-		WorldObject obj = activeChar.getTarget();
+		WorldObject? obj = activeChar.getTarget();
 		if (player != null)
 		{
-			Player plyr = World.getInstance().getPlayer(player);
+			Player? plyr = World.getInstance().getPlayer(player);
 			if (plyr != null)
 			{
 				obj = plyr;
@@ -77,13 +77,14 @@ public class AdminHeal: IAdminCommandHandler
 							character.setCurrentCp(character.getMaxCp());
 						}
 					});
-					
+
 					BuilderUtil.sendSysMessage(activeChar, "Healed within " + radius + " unit radius.");
 					return;
 				}
-				catch (FormatException nbe)
-				{
-				}
+				catch (Exception e)
+                {
+                    LOGGER.Error(e);
+                }
 			}
 		}
 		if (obj == null)

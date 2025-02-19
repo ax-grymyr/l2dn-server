@@ -18,7 +18,7 @@ public class AdminInvul: IAdminCommandHandler
 		"admin_undying",
 		"admin_setundying",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_invul"))
@@ -31,31 +31,31 @@ public class AdminInvul: IAdminCommandHandler
 			handleUndying(activeChar, activeChar);
 			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
 		}
-		
+
 		else if (command.equals("admin_setinvul"))
 		{
-			WorldObject target = activeChar.getTarget();
-			if ((target != null) && target.isPlayer())
+			WorldObject? target = activeChar.getTarget();
+			if (target != null && target.isPlayer())
 			{
 				handleInvul((Player) target);
 			}
 		}
 		else if (command.equals("admin_setundying"))
 		{
-			WorldObject target = activeChar.getTarget();
-			if (target.isCreature())
+			WorldObject? target = activeChar.getTarget();
+			if (target != null && target.isCreature())
 			{
 				handleUndying(activeChar, (Creature) target);
 			}
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	private void handleInvul(Player activeChar)
 	{
 		string text;
@@ -71,7 +71,7 @@ public class AdminInvul: IAdminCommandHandler
 		}
 		BuilderUtil.sendSysMessage(activeChar, text);
 	}
-	
+
 	private void handleUndying(Player activeChar, Creature target)
 	{
 		string text;

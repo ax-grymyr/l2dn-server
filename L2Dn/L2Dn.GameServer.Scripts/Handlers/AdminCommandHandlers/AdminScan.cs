@@ -11,6 +11,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -19,15 +20,16 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminScan: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminScan));
 	private const string SPACE = " ";
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_scan",
 		"admin_deleteNpcByObjectId",
     ];
-	
+
 	private static int DEFAULT_RADIUS = 1000;
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
@@ -46,7 +48,7 @@ public class AdminScan: IAdminCommandHandler
 					BuilderUtil.sendSysMessage(activeChar, "Usage: //deletenpcbyobjectid objectId=<object_id>");
 					return false;
 				}
-				
+
 				BypassParser parser = new BypassParser(command);
 				try
 				{
@@ -55,22 +57,21 @@ public class AdminScan: IAdminCommandHandler
 					{
 						BuilderUtil.sendSysMessage(activeChar, "objectId is not set!");
 					}
-					
-					WorldObject target = World.getInstance().findObject(objectId);
-					Npc npc = target is Npc ? (Npc) target : null;
-					if (npc == null)
+
+					WorldObject? target = World.getInstance().findObject(objectId);
+                    if (target is not Npc npc)
 					{
 						BuilderUtil.sendSysMessage(activeChar, "NPC does not exist or object_id does not belong to an NPC");
 						return false;
 					}
-					
+
 					npc.deleteMe();
-					
+
 					Spawn spawn = npc.getSpawn();
 					if (spawn != null)
 					{
 						spawn.stopRespawn();
-						
+
 						if (DbSpawnManager.getInstance().isDefined(spawn.getId()))
 						{
 							DbSpawnManager.getInstance().deleteSpawn(spawn, true);
@@ -80,26 +81,27 @@ public class AdminScan: IAdminCommandHandler
 							SpawnTable.getInstance().deleteSpawn(spawn, true);
 						}
 					}
-					
+
 					activeChar.sendMessage(npc.getName() + " have been deleted.");
 				}
 				catch (FormatException e)
 				{
+                    _logger.Error(e);
 					BuilderUtil.sendSysMessage(activeChar, "object_id must be a number.");
 					return false;
 				}
-				
+
 				processBypass(activeChar, parser);
 				break;
 			}
 		}
 		return true;
 	}
-	
+
 	private void processBypass(Player activeChar, BypassParser parser)
 	{
 		int id = parser.getInt("id", 0);
-		string name = parser.getString("name", null);
+		string name = parser.getString("name", string.Empty);
 		int radius = parser.getInt("radius", parser.getInt("range", DEFAULT_RADIUS));
 		int page = parser.getInt("page", 0);
 		Predicate<Npc> condition;
@@ -107,7 +109,7 @@ public class AdminScan: IAdminCommandHandler
 		{
 			condition = npc => npc.getId() == id;
 		}
-		else if (name != null)
+		else if (!string.IsNullOrEmpty(name))
 		{
 			condition = npc => npc.getName().toLowerCase().startsWith(name.toLowerCase());
 		}
@@ -115,38 +117,38 @@ public class AdminScan: IAdminCommandHandler
 		{
 			condition = npc => true;
 		}
-		
+
 		sendNpcList(activeChar, radius, page, condition, parser);
 	}
-	
+
 	private BypassBuilder createBypassBuilder(BypassParser parser, string bypass)
 	{
 		int id = parser.getInt("id", 0);
-		string name = parser.getString("name", null);
+		string name = parser.getString("name", string.Empty);
 		int radius = parser.getInt("radius", parser.getInt("range", DEFAULT_RADIUS));
 		BypassBuilder builder = new BypassBuilder(bypass);
 		if (id > 0)
 		{
 			builder.AddParam("id", id);
 		}
-		else if (name != null)
+		else if (!string.IsNullOrEmpty(name))
 		{
 			builder.AddParam("name", name);
 		}
-		
+
 		if (radius > DEFAULT_RADIUS)
 		{
 			builder.AddParam("radius", radius);
 		}
 		return builder;
 	}
-	
+
 	private void sendNpcList(Player activeChar, int radius, int page, Predicate<Npc> condition, BypassParser parser)
 	{
 		BypassBuilder bypassParser = createBypassBuilder(parser, "bypass -h admin_scan");
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/scan.htm", activeChar);
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
-		
+
 		//@formatter:off
 		PageResult result = PageBuilder.newBuilder(World.getInstance().getVisibleObjectsInRange<Npc>(activeChar, radius, condition), 15, bypassParser.ToString())
 			.currentPage(page)
@@ -167,7 +169,7 @@ public class AdminScan: IAdminCommandHandler
 			sb.Append("</tr>");
 		}).build();
 		//@formatter:on
-		
+
 		if (result.getPages() > 0)
 		{
 			htmlContent.Replace("%pages%", "<center><table width=\"100%\" cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table></center>");
@@ -176,11 +178,11 @@ public class AdminScan: IAdminCommandHandler
 		{
 			htmlContent.Replace("%pages%", "");
 		}
-		
+
 		htmlContent.Replace("%data%", result.getBodyTemplate().ToString());
 		activeChar.sendPacket(html);
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

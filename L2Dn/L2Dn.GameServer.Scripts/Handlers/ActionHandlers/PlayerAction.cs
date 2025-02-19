@@ -39,7 +39,7 @@ public class PlayerAction: IActionHandler
 		}
 
 		// Aggression target lock effect
-		if (player.isLockedTarget() && (player.getLockedTarget() != target))
+		if (player.isLockedTarget() && player.getLockedTarget() != target)
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CHANGE_ENMITY);
 			return false;
@@ -55,19 +55,19 @@ public class PlayerAction: IActionHandler
 		{
 			// Check if this Player has a Private Store
 			Player? targetPlayer = target.getActingPlayer();
-			if (targetPlayer.getPrivateStoreType() != PrivateStoreType.NONE)
+			if (targetPlayer != null && targetPlayer.getPrivateStoreType() != PrivateStoreType.NONE)
 			{
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 			}
 			else
 			{
 				// Check if this Player is autoAttackable
-				if (target.isAutoAttackable(player))
+				if (targetPlayer != null && target.isAutoAttackable(player))
 				{
 					// Player with level < 21 can't attack a cursed weapon holder
 					// And a cursed weapon holder can't attack players with level < 21
-					if ((targetPlayer.isCursedWeaponEquipped() && (player.getLevel() < CURSED_WEAPON_VICTIM_MIN_LEVEL)) //
-						|| (player.isCursedWeaponEquipped() && (targetPlayer.getLevel() < CURSED_WEAPON_VICTIM_MIN_LEVEL)))
+					if ((targetPlayer.isCursedWeaponEquipped() && player.getLevel() < CURSED_WEAPON_VICTIM_MIN_LEVEL) //
+						|| (player.isCursedWeaponEquipped() && targetPlayer.getLevel() < CURSED_WEAPON_VICTIM_MIN_LEVEL))
 					{
 						player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 					}

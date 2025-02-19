@@ -29,7 +29,7 @@ public class DropSearchBoard: IParseBoardHandler
 		"_bbs_search_drop",
 		"_bbs_npc_trace",
     ];
-	
+
 	private class CBDropHolder
 	{
         public readonly int itemId;
@@ -40,7 +40,7 @@ public class DropSearchBoard: IParseBoardHandler
         public readonly double chance;
         public readonly bool isSpoil;
         public readonly bool isRaid;
-		
+
 		public CBDropHolder(NpcTemplate npcTemplate, DropHolder dropHolder)
 		{
 			isSpoil = dropHolder.getDropType() == DropType.SPOIL;
@@ -52,7 +52,7 @@ public class DropSearchBoard: IParseBoardHandler
 			chance = dropHolder.getChance();
 			isRaid = npcTemplate.getType().equals("RaidBoss") || npcTemplate.getType().equals("GrandBoss");
 		}
-		
+
 		/**
 		 * only for debug
 		 */
@@ -61,17 +61,17 @@ public class DropSearchBoard: IParseBoardHandler
 			return "DropHolder [itemId=" + itemId + ", npcId=" + npcId + ", npcLevel=" + npcLevel + ", min=" + min + ", max=" + max + ", chance=" + chance + ", isSpoil=" + isSpoil + "]";
 		}
 	}
-	
+
 	private readonly Map<int, List<CBDropHolder>> DROP_INDEX_CACHE = new();
-	
+
 	// nonsupport items
 	private static readonly Set<int> BLOCK_ID = [Inventory.ADENA_ID];
-	
+
 	public DropSearchBoard()
 	{
 		buildDropIndex();
 	}
-	
+
 	private void buildDropIndex()
 	{
 		NpcData.getInstance().getTemplates(npc => npc.getDropGroups() != null).ForEach(npcTemplate =>
@@ -105,31 +105,31 @@ public class DropSearchBoard: IParseBoardHandler
         DROP_INDEX_CACHE.Values.ForEach(l
             => l.Sort((d1, d2) => d1.npcLevel.CompareTo(d2.npcLevel)));
     }
-	
+
 	private void addToDropList(NpcTemplate npcTemplate, DropHolder dropHolder)
 	{
 		if (BLOCK_ID.Contains(dropHolder.getItemId()))
 		{
 			return;
 		}
-		
-		List<CBDropHolder> dropList = DROP_INDEX_CACHE.get(dropHolder.getItemId());
+
+		List<CBDropHolder>? dropList = DROP_INDEX_CACHE.get(dropHolder.getItemId());
 		if (dropList == null)
 		{
 			dropList = [];
 			DROP_INDEX_CACHE.put(dropHolder.getItemId(), dropList);
 		}
-		
+
 		dropList.Add(new CBDropHolder(npcTemplate, dropHolder));
 	}
-	
+
 	public bool parseCommunityBoardCommand(string command, Player player)
     {
         string? navigation = HtmCache.getInstance().getHtm(NAVIGATION_PATH, player.getLang());
 		string[] @params = command.Split(" ");
         string? html = HtmCache.getInstance()
             .getHtm("html/CommunityBoard/Custom/dropsearch/main.html", player.getLang());
-        
+
 		switch (@params[0])
 		{
 			case "_bbs_search_item":
@@ -143,13 +143,13 @@ public class DropSearchBoard: IParseBoardHandler
 			{
 				int itemId = int.Parse(@params[1]);
 				int page = int.Parse(@params[2]);
-				List<CBDropHolder> list = DROP_INDEX_CACHE.get(itemId);
+				List<CBDropHolder> list = DROP_INDEX_CACHE.get(itemId) ?? [];
 				int pages = list.Count / 14;
 				if (pages == 0)
 				{
 					pages++;
 				}
-				
+
 				int start = (page - 1) * 14;
 				int end = Math.Min(list.Count - 1, start + 14);
 				StringBuilder builder = new StringBuilder();
@@ -160,7 +160,7 @@ public class DropSearchBoard: IParseBoardHandler
 				for (int index = start; index <= end; index++)
 				{
 					CBDropHolder cbDropHolder = list[index];
-					
+
 					// real time server rate calculations
 					double rateChance = 1;
 					double rateAmount = 1;
@@ -168,14 +168,14 @@ public class DropSearchBoard: IParseBoardHandler
 					{
 						rateChance = Config.RATE_SPOIL_DROP_CHANCE_MULTIPLIER;
 						rateAmount = Config.RATE_SPOIL_DROP_AMOUNT_MULTIPLIER;
-						
+
 						// also check premium rates if available
 						if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 						{
 							rateChance *= Config.PREMIUM_RATE_SPOIL_CHANCE;
 							rateAmount *= Config.PREMIUM_RATE_SPOIL_AMOUNT;
 						}
-						
+
 						// bonus spoil rate effect
 						rateChance *= spoilRateEffectBonus;
 					}
@@ -186,7 +186,7 @@ public class DropSearchBoard: IParseBoardHandler
 						{
 							rateChance *= value;
 						}
-						else if (item.hasExImmediateEffect())
+						else if (item != null && item.hasExImmediateEffect())
 						{
 							rateChance *= Config.RATE_HERB_DROP_CHANCE_MULTIPLIER;
 						}
@@ -198,12 +198,12 @@ public class DropSearchBoard: IParseBoardHandler
 						{
 							rateChance *= Config.RATE_DEATH_DROP_CHANCE_MULTIPLIER;
 						}
-						
+
 						if (Config.RATE_DROP_AMOUNT_BY_ID.TryGetValue(cbDropHolder.itemId, out float value1))
 						{
 							rateAmount *= value1;
 						}
-						else if (item.hasExImmediateEffect())
+						else if (item != null && item.hasExImmediateEffect())
 						{
 							rateAmount *= Config.RATE_HERB_DROP_AMOUNT_MULTIPLIER;
 						}
@@ -215,7 +215,7 @@ public class DropSearchBoard: IParseBoardHandler
 						{
 							rateAmount *= Config.RATE_DEATH_DROP_AMOUNT_MULTIPLIER;
 						}
-						
+
 						// also check premium rates if available
 						if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 						{
@@ -223,7 +223,7 @@ public class DropSearchBoard: IParseBoardHandler
 							{
 								rateChance *= value2;
 							}
-							else if (item.hasExImmediateEffect())
+							else if (item != null && item.hasExImmediateEffect())
 							{
 								// TODO: Premium herb chance? :)
 							}
@@ -235,12 +235,12 @@ public class DropSearchBoard: IParseBoardHandler
 							{
 								rateChance *= Config.PREMIUM_RATE_DROP_CHANCE;
 							}
-							
+
 							if (Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.TryGetValue(cbDropHolder.itemId, out double value3))
 							{
 								rateAmount *= value3;
 							}
-							else if (item.hasExImmediateEffect())
+							else if (item != null && item.hasExImmediateEffect())
 							{
 								// TODO: Premium herb amount? :)
 							}
@@ -253,21 +253,21 @@ public class DropSearchBoard: IParseBoardHandler
 								rateAmount *= Config.PREMIUM_RATE_DROP_AMOUNT;
 							}
 						}
-						
+
 						// bonus drop amount effect
 						rateAmount *= dropAmountEffectBonus;
-						if (item.getId() == Inventory.ADENA_ID)
+						if (item != null && item.getId() == Inventory.ADENA_ID)
 						{
 							rateAmount *= dropAmountAdenaEffectBonus;
 						}
 						// bonus drop rate effect
 						rateChance *= dropRateEffectBonus;
-						if (item.getId() == Inventory.LCOIN_ID)
+						if (item != null && item.getId() == Inventory.LCOIN_ID)
 						{
 							rateChance *= player.getStat().getMul(Stat.BONUS_DROP_RATE_LCOIN, 1);
 						}
 					}
-					
+
 					builder.Append("<tr>");
 					builder.Append("<td width=30>").Append(cbDropHolder.npcLevel).Append("</td>");
 					builder.Append("<td width=170>").Append("<a action=\"bypass _bbs_npc_trace " + cbDropHolder.npcId + "\">").Append("&@").Append(cbDropHolder.npcId).Append(";").Append("</a>").Append("</td>");
@@ -276,10 +276,10 @@ public class DropSearchBoard: IParseBoardHandler
 					builder.Append("<td width=50 align=CENTER>").Append(cbDropHolder.isSpoil ? "Spoil" : "Drop").Append("</td>");
 					builder.Append("</tr>");
 				}
-				
+
 				html = html.Replace("%searchResult%", builder.ToString());
 				builder.Clear();
-				
+
 				builder.Append("<tr>");
 				for (page = 1; page <= pages; page++)
 				{
@@ -307,16 +307,16 @@ public class DropSearchBoard: IParseBoardHandler
 				break;
 			}
 		}
-		
+
 		if (html != null)
 		{
 			html = html.Replace("%navigation%", navigation);
 			CommunityBoardHandler.separateAndSend(html, player);
 		}
-		
+
 		return false;
 	}
-	
+
 	/**
 	 * @param itemName
 	 * @return
@@ -331,31 +331,31 @@ public class DropSearchBoard: IParseBoardHandler
 			{
 				continue;
 			}
-			
+
 			if (!DROP_INDEX_CACHE.ContainsKey(item.getId()))
 			{
 				continue;
 			}
-			
+
 			if (item.getName().toLowerCase().contains(itemName.toLowerCase()))
 			{
 				items.Add(item);
 				limit++;
 			}
-			
+
 			if (limit == 14)
 			{
 				break;
 			}
 		}
-		
+
 		if (items.Count == 0)
 		{
 			return "<tr><td width=100 align=CENTER>No Match</td></tr>";
 		}
-		
+
 		int line = 0;
-		
+
 		StringBuilder builder = new StringBuilder(items.Count * 28);
 		int i = 0;
 		foreach (ItemTemplate item in items)
@@ -366,43 +366,43 @@ public class DropSearchBoard: IParseBoardHandler
 				line++;
 				builder.Append("<tr>");
 			}
-			
+
 			string icon = item.getIcon();
 			if (icon == null)
 			{
 				icon = "icon.etc_question_mark_i00";
 			}
-			
+
 			builder.Append("<td>");
 			builder.Append("<button value=\".\" action=\"bypass _bbs_search_drop " + item.getId() + " 1 $order $level\" width=32 height=32 back=\"" + icon + "\" fore=\"" + icon + "\">");
 			builder.Append("</td>");
 			builder.Append("<td width=200>");
 			builder.Append("&#").Append(item.getId()).Append(";");
 			builder.Append("</td>");
-			
+
 			if (i == 2)
 			{
 				builder.Append("</tr>");
 				i = 0;
 			}
 		}
-		
-		if ((i % 2) == 1)
+
+		if (i % 2 == 1)
 		{
 			builder.Append("</tr>");
 		}
-		
+
 		if (line < 7)
 		{
-			for (i = 0; i < (7 - line); i++)
+			for (i = 0; i < 7 - line; i++)
 			{
 				builder.Append("<tr><td height=36></td></tr>");
 			}
 		}
-		
+
 		return builder.ToString();
 	}
-	
+
 	/**
 	 * @param params
 	 * @return
@@ -411,7 +411,7 @@ public class DropSearchBoard: IParseBoardHandler
     {
         return string.Join(" ", @params);
 	}
-	
+
 	public string[] getCommunityBoardCommands()
 	{
 		return COMMAND;

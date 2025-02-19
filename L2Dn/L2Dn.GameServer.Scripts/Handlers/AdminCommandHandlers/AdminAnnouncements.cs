@@ -21,7 +21,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 		"admin_announce_screen",
 		"admin_announces",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
@@ -98,7 +98,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							break;
 						}
 						delay *= 1000;
-						if ((delay < (10 * 1000)) && ((type == AnnouncementType.AUTO_NORMAL) || (type == AnnouncementType.AUTO_CRITICAL)))
+						if (delay < 10 * 1000 && (type == AnnouncementType.AUTO_NORMAL || type == AnnouncementType.AUTO_CRITICAL))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Delay cannot be less then 10 seconds!");
 							break;
@@ -132,7 +132,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 						}
 						// ************************************
 						IAnnouncement announce;
-						if ((type == AnnouncementType.AUTO_CRITICAL) || (type == AnnouncementType.AUTO_NORMAL))
+						if (type == AnnouncementType.AUTO_CRITICAL || type == AnnouncementType.AUTO_NORMAL)
 						{
 							announce = new AutoAnnouncement(type, content, activeChar.getName(), TimeSpan.FromMilliseconds(initDelay), TimeSpan.FromMilliseconds(delay), repeat);
 						}
@@ -140,7 +140,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 						{
 							announce = new Announcement(type, content, activeChar.getName());
 						}
-						
+
 						AnnouncementsTable.getInstance().addAnnouncement(announce);
 						BuilderUtil.sendSysMessage(activeChar, "Announcement has been successfully added!");
 						return useAdminCommand("admin_announces list", activeChar);
@@ -158,7 +158,8 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces edit <id>");
 							break;
 						}
-						IAnnouncement announce = AnnouncementsTable.getInstance().getAnnounce(id);
+
+						IAnnouncement? announce = AnnouncementsTable.getInstance().getAnnounce(id);
 						if (announce == null)
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Announcement does not exist!");
@@ -181,7 +182,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 								announcementDelay = (autoAnnounce.getDelay() / 1000).ToString();
 								announcementRepeat = autoAnnounce.getRepeat().ToString();
 							}
-							
+
 							content = content.Replace("%id%", announcementId);
 							content = content.Replace("%type%", announcementType);
 							content = content.Replace("%initial%", announcementInital);
@@ -257,7 +258,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces add <type> <delay> <repeat> <text>");
 							break;
 						}
-						if ((delay < 10) && ((type == AnnouncementType.AUTO_NORMAL) || (type == AnnouncementType.AUTO_CRITICAL)))
+						if (delay < 10 && (type == AnnouncementType.AUTO_NORMAL || type == AnnouncementType.AUTO_CRITICAL))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "Delay cannot be less then 10 seconds!");
 							break;
@@ -350,7 +351,8 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces show <announcement id>");
 							break;
 						}
-						IAnnouncement announce1 = AnnouncementsTable.getInstance().getAnnounce(id);
+
+						IAnnouncement? announce1 = AnnouncementsTable.getInstance().getAnnounce(id);
 						if (announce1 != null)
 						{
 							if (announce1 is AutoAnnouncement)
@@ -383,7 +385,8 @@ public class AdminAnnouncements: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Syntax: //announces show <announcement id>");
 							break;
 						}
-						IAnnouncement announce = AnnouncementsTable.getInstance().getAnnounce(id);
+
+						IAnnouncement? announce = AnnouncementsTable.getInstance().getAnnounce(id);
 						if (announce != null)
 						{
 							string content = HtmCache.getInstance().getHtm("html/admin/announces-show.htm", activeChar.getLang());
@@ -425,7 +428,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 								page = value;
 							}
 						}
-						
+
 						string content = HtmCache.getInstance().getHtm("html/admin/announces-list.htm", activeChar.getLang());
 						PageResult result = PageBuilder.newBuilder(AnnouncementsTable.getInstance().getAllAnnouncements().ToList(), 8, "bypass admin_announces list").
 							currentPage(page).bodyHandler((pages, announcement, sb) =>
@@ -435,7 +438,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							sb.Append("<td width=80>" + announcement.getId() + "</td>");
 							sb.Append("<td width=100>" + announcement.getType() + "</td>");
 							sb.Append("<td width=100>" + announcement.getAuthor() + "</td>");
-							if ((announcement.getType() == AnnouncementType.AUTO_NORMAL) || (announcement.getType() == AnnouncementType.AUTO_CRITICAL))
+							if (announcement.getType() == AnnouncementType.AUTO_NORMAL || announcement.getType() == AnnouncementType.AUTO_CRITICAL)
 							{
 								sb.Append("<td width=60><button action=\"bypass -h admin_announces restart " + announcement.getId() + "\" value=\"Restart\" width=\"60\" height=\"21\" back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
 							}
@@ -457,7 +460,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 							sb.Append("<td width=5></td>");
 							sb.Append("</tr>");
 						}).build();
-						
+
 						content = content.Replace("%pages%", result.getPagerTemplate().ToString());
 						content = content.Replace("%announcements%", result.getBodyTemplate().ToString());
 						Util.sendCBHtml(activeChar, content);
@@ -470,7 +473,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 		}
 		return false;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

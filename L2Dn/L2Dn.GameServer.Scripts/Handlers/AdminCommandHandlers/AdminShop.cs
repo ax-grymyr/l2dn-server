@@ -18,7 +18,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminShop: IAdminCommandHandler
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminShop));
-	
+
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_buy",
@@ -26,7 +26,7 @@ public class AdminShop: IAdminCommandHandler
 		"admin_multisell",
 		"admin_exc_multisell",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_buy"))
@@ -37,6 +37,7 @@ public class AdminShop: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Please specify buylist.");
 			}
 		}
@@ -53,6 +54,7 @@ public class AdminShop: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Please specify multisell list ID.");
 			}
 		}
@@ -65,17 +67,18 @@ public class AdminShop: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Please specify multisell list ID.");
 			}
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	private void handleBuyRequest(Player activeChar, string command)
 	{
 		int val = -1;
@@ -85,10 +88,11 @@ public class AdminShop: IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			LOGGER.Warn("admin buylist failed:" + command);
 		}
-		
-		ProductList buyList = BuyListData.getInstance().getBuyList(val);
+
+		ProductList? buyList = BuyListData.getInstance().getBuyList(val);
 		if (buyList != null)
 		{
 			activeChar.sendPacket(new ExBuySellListPacket(buyList, activeChar, 0));

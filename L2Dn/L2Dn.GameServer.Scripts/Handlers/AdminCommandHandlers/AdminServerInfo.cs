@@ -22,7 +22,7 @@ public class AdminServerInfo: IAdminCommandHandler
     [
         "admin_serverinfo",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_serverinfo"))
@@ -36,7 +36,7 @@ public class AdminServerInfo: IAdminCommandHandler
 			htmlContent.Replace("%gameTime%",
 				GameTimeTaskManager.getInstance().getGameHour() + ":" +
 				GameTimeTaskManager.getInstance().getGameMinute());
-			
+
 			htmlContent.Replace("%dayNight%", GameTimeTaskManager.getInstance().isNight() ? "Night" : "Day");
 			htmlContent.Replace("%geodata%", Config.PATHFINDING > 0 ? "Enabled" : "Disabled");
 			htmlContent.Replace("%serverTime%", DateTime.UtcNow.ToString("u"));
@@ -45,9 +45,9 @@ public class AdminServerInfo: IAdminCommandHandler
 			htmlContent.Replace("%offlineTrade%", getPlayersCount("OFF_TRADE").ToString());
 			htmlContent.Replace("%onlineGM%", getPlayersCount("GM").ToString());
 			htmlContent.Replace("%onlineReal%", getPlayersCount("ALL_REAL").ToString());
-			htmlContent.Replace("%usedMem%", (process.PrivateMemorySize64 / 0x100000) + " Mb");
-			htmlContent.Replace("%freeMem%", (0 / 0x100000) + " Mb"); // TODO
-			htmlContent.Replace("%totalMem%", (0 / 0x100000) + " Mb");
+			htmlContent.Replace("%usedMem%", process.PrivateMemorySize64 / 0x100000 + " Mb");
+			htmlContent.Replace("%freeMem%", 0 / 0x100000 + " Mb"); // TODO
+			htmlContent.Replace("%totalMem%", 0 / 0x100000 + " Mb");
 			htmlContent.Replace("%live%", process.Threads.Count.ToString());
 			htmlContent.Replace("%nondaemon%", "-");
 			htmlContent.Replace("%daemon%", "-");
@@ -64,13 +64,13 @@ public class AdminServerInfo: IAdminCommandHandler
 
 		return true;
 	}
-	
+
 	private string getServerUpTime()
 	{
 		TimeSpan time = DateTime.UtcNow - ServerInfo.ServerStarted;
 		return (int)time.TotalDays + " Days, " + time.Hours + " Hours, " + time.Minutes + " Minutes";
 	}
-	
+
 	private int getPlayersCount(string type)
 	{
 		switch (type)
@@ -82,11 +82,12 @@ public class AdminServerInfo: IAdminCommandHandler
 			case "OFF_TRADE":
 			{
 				int offlineCount = 0;
-				
+
 				ICollection<Player> objs = World.getInstance().getPlayers();
 				foreach (Player player in objs)
-				{
-					if ((player.getClient() == null) || player.getClient().IsDetached)
+                {
+                    GameSession? client = player.getClient();
+					if (client == null || client.IsDetached)
 					{
 						offlineCount++;
 					}
@@ -98,7 +99,8 @@ public class AdminServerInfo: IAdminCommandHandler
 				int onlineGMcount = 0;
 				foreach (Player gm in AdminData.getInstance().getAllGms(true))
 				{
-					if ((gm != null) && gm.isOnline() && (gm.getClient() != null) && !gm.getClient().IsDetached)
+                    GameSession? client = gm.getClient();
+					if (gm != null && gm.isOnline() && client != null && !client.IsDetached)
 					{
 						onlineGMcount++;
 					}
@@ -110,19 +112,19 @@ public class AdminServerInfo: IAdminCommandHandler
 				Set<string> realPlayers = [];
 				foreach (Player onlinePlayer in World.getInstance().getPlayers())
 				{
-					GameSession? client = onlinePlayer?.getClient(); 
-					if ((client != null) && !client.IsDetached)
+					GameSession? client = onlinePlayer.getClient();
+					if (client != null && !client.IsDetached)
 					{
 						realPlayers.add(client.IpAddress.ToString());
 					}
 				}
-				
+
 				return realPlayers.size();
 			}
 		}
 		return 0;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

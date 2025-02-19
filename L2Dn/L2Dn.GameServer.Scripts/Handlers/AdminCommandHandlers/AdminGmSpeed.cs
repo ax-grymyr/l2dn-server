@@ -61,7 +61,7 @@ public class AdminGmSpeed: IAdminCommandHandler
 			}
 
 			Creature targetCharacter;
-			WorldObject target = player.getTarget();
+			WorldObject? target = player.getTarget();
 			if (target != null && target.isCreature())
 			{
 				targetCharacter = (Creature)target;

@@ -9,11 +9,14 @@ using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
 public class AdminEvents: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminEvents));
+
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_event_menu",
@@ -23,19 +26,19 @@ public class AdminEvents: IAdminCommandHandler
 		"admin_event_stop_menu",
 		"admin_event_bypass",
     ];
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (activeChar == null)
 		{
 			return false;
 		}
-		
+
 		string eventName = "";
 		string eventBypass = "";
 		StringTokenizer st = new StringTokenizer(command, " ");
@@ -48,19 +51,19 @@ public class AdminEvents: IAdminCommandHandler
 		{
 			eventBypass = st.nextToken();
 		}
-		
+
 		if (command.contains("_menu"))
 		{
 			showMenu(activeChar);
 		}
-		
+
 		if (command.startsWith("admin_event_start"))
 		{
 			try
 			{
 				if (eventName != null)
 				{
-					Event ev = (Event)QuestManager.getInstance().getQuest(eventName);
+					Event? ev = (Event?)QuestManager.getInstance().getQuest(eventName);
 					if (ev != null)
 					{
 						if (ev.eventStart(activeChar))
@@ -68,14 +71,15 @@ public class AdminEvents: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Event " + eventName + " started.");
 							return true;
 						}
-						
+
 						BuilderUtil.sendSysMessage(activeChar, "There is problem starting " + eventName + " event.");
 						return true;
 					}
 				}
 			}
 			catch (Exception e)
-			{
+            {
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //event_start <eventname>");
 				return false;
 			}
@@ -86,7 +90,7 @@ public class AdminEvents: IAdminCommandHandler
 			{
 				if (eventName != null)
 				{
-					Event ev = (Event) QuestManager.getInstance().getQuest(eventName);
+					Event? ev = (Event?) QuestManager.getInstance().getQuest(eventName);
 					if (ev != null)
 					{
 						if (ev.eventStop())
@@ -94,7 +98,7 @@ public class AdminEvents: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Event " + eventName + " stopped.");
 							return true;
 						}
-						
+
 						BuilderUtil.sendSysMessage(activeChar, "There is problem with stoping " + eventName + " event.");
 						return true;
 					}
@@ -102,6 +106,7 @@ public class AdminEvents: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //event_start <eventname>");
 				return false;
 			}
@@ -112,7 +117,7 @@ public class AdminEvents: IAdminCommandHandler
 			{
 				if (eventName != null)
 				{
-					Event ev = (Event) QuestManager.getInstance().getQuest(eventName);
+					Event? ev = (Event?) QuestManager.getInstance().getQuest(eventName);
 					if (ev != null)
 					{
 						ev.eventBypass(activeChar, eventBypass);
@@ -121,13 +126,14 @@ public class AdminEvents: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //event_bypass <eventname> <bypass>");
 				return false;
 			}
 		}
 		return false;
 	}
-	
+
 	private void showMenu(Player activeChar)
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/gm_events.htm", activeChar);

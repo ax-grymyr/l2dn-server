@@ -18,7 +18,7 @@ public class PetAction: IActionHandler
 	public bool action(Player player, WorldObject target, bool interact)
 	{
 		// Aggression target lock effect
-		if (player.isLockedTarget() && (player.getLockedTarget() != target))
+		if (player.isLockedTarget() && player.getLockedTarget() != target)
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CHANGE_ENMITY);
 			return false;
@@ -26,7 +26,7 @@ public class PetAction: IActionHandler
 
 		Pet pet = (Pet)target;
 		bool isOwner = player.ObjectId == pet.getOwner().ObjectId;
-		if (isOwner && (player != pet.getOwner()))
+		if (isOwner && player != pet.getOwner())
 		{
 			pet.updateRefOwner(player);
 		}

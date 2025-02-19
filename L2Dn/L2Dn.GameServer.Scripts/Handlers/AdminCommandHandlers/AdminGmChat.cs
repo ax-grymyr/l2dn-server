@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -15,13 +16,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminGmChat: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminGmChat));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_gmchat",
 		"admin_snoop",
 		"admin_gmchat_menu",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_gmchat"))
@@ -38,14 +40,14 @@ public class AdminGmChat: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	/**
 	 * @param command
 	 * @param activeChar
 	 */
 	private void snoop(string command, Player activeChar)
 	{
-		WorldObject target = null;
+		WorldObject? target = null;
 		if (command.Length > 12)
 		{
 			target = World.getInstance().getPlayer(command.Substring(12));
@@ -54,7 +56,7 @@ public class AdminGmChat: IAdminCommandHandler
 		{
 			target = activeChar.getTarget();
 		}
-		
+
 		if (target == null)
 		{
 			activeChar.sendPacket(SystemMessageId.SELECT_TARGET);
@@ -69,12 +71,12 @@ public class AdminGmChat: IAdminCommandHandler
 		player.addSnooper(activeChar);
 		activeChar.addSnooped(player);
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	/**
 	 * @param command
 	 * @param activeChar
@@ -98,6 +100,7 @@ public class AdminGmChat: IAdminCommandHandler
 		}
 		catch (IndexOutOfRangeException e)
 		{
+            _logger.Error(e);
 			// Who cares?
 		}
 	}

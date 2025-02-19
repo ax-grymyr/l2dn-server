@@ -105,38 +105,44 @@ public class AdminAdmin: IAdminCommandHandler
 			BuilderUtil.sendSysMessage(activeChar, "Heroes formed.");
 		}
 		else if (command.startsWith("admin_sethero"))
-		{
-			if (activeChar.getTarget() == null)
+        {
+            WorldObject? activeCharTarget = activeChar.getTarget();
+			if (activeCharTarget == null)
 			{
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				return false;
 			}
 
-			Player target = activeChar.getTarget().isPlayer() ? activeChar.getTarget().getActingPlayer() : activeChar;
+            Player? activeCharTargetPlayer = activeCharTarget.getActingPlayer();
+            Player target = activeCharTarget.isPlayer() && activeCharTargetPlayer != null ? activeCharTargetPlayer : activeChar;
 			target.setHero(!target.isHero());
 			target.broadcastUserInfo();
 		}
 		else if (command.startsWith("admin_settruehero"))
 		{
-			if (activeChar.getTarget() == null)
+            WorldObject? activeCharTarget = activeChar.getTarget();
+			if (activeCharTarget == null)
 			{
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				return false;
 			}
 
-			Player target = activeChar.getTarget().isPlayer() ? activeChar.getTarget().getActingPlayer() : activeChar;
+            Player? activeCharTargetPlayer = activeCharTarget.getActingPlayer();
+            Player target = activeCharTarget.isPlayer() && activeCharTargetPlayer != null ? activeCharTargetPlayer : activeChar;
 			target.setTrueHero(!target.isTrueHero());
 			target.broadcastUserInfo();
 		}
 		else if (command.startsWith("admin_givehero"))
 		{
-			if (activeChar.getTarget() == null)
+            WorldObject? activeCharTarget = activeChar.getTarget();
+			if (activeCharTarget == null)
 			{
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				return false;
 			}
 
-			Player target = activeChar.getTarget().isPlayer() ? activeChar.getTarget().getActingPlayer() : activeChar;
+            Player? activeCharTargetPlayer = activeCharTarget.getActingPlayer();
+			Player target = activeCharTarget.isPlayer() && activeCharTargetPlayer != null ? activeCharTargetPlayer : activeChar;
 			if (Hero.getInstance().isHero(target.ObjectId))
 			{
 				BuilderUtil.sendSysMessage(activeChar, "This player has already claimed the hero status.");
@@ -169,6 +175,7 @@ public class AdminAdmin: IAdminCommandHandler
 			}
 			catch (Exception ex)
 			{
+                LOGGER.Error(ex);
 				if (activeChar.getDietMode())
 				{
 					activeChar.setDietMode(false);
@@ -204,6 +211,7 @@ public class AdminAdmin: IAdminCommandHandler
 			}
 			catch (Exception ex)
 			{
+                LOGGER.Error(ex);
 				if (activeChar.getTradeRefusal())
 				{
 					activeChar.setTradeRefusal(false);
@@ -253,6 +261,7 @@ public class AdminAdmin: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //setconfig <parameter> <value>");
 			}
 			finally
@@ -287,13 +296,14 @@ public class AdminAdmin: IAdminCommandHandler
 				}
 				case "see":
 				{
-					WorldObject target = activeChar.getTarget();
-					if ((target == null) || !target.isPlayer())
+					WorldObject? target = activeChar.getTarget();
+                    Player? targetPlayer = target?.getActingPlayer();
+					if (target == null || !target.isPlayer() || targetPlayer == null)
 					{
 						activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 						break;
 					}
-					Player targetPlayer = target.getActingPlayer();
+
 					if (targetPlayer.getLevel() < Config.WORLD_CHAT_MIN_LEVEL)
 					{
 						BuilderUtil.sendSysMessage(activeChar, "Your target's level is below the minimum: " + Config.WORLD_CHAT_MIN_LEVEL);
@@ -304,14 +314,14 @@ public class AdminAdmin: IAdminCommandHandler
 				}
 				case "set":
 				{
-					WorldObject target = activeChar.getTarget();
-					if ((target == null) || !target.isPlayer())
+					WorldObject? target = activeChar.getTarget();
+                    Player? targetPlayer = target?.getActingPlayer();
+					if (target == null || !target.isPlayer() || targetPlayer == null)
 					{
 						activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 						break;
 					}
 
-					Player targetPlayer = target.getActingPlayer();
 					if (targetPlayer.getLevel() < Config.WORLD_CHAT_MIN_LEVEL)
 					{
 						BuilderUtil.sendSysMessage(activeChar, "Your target's level is below the minimum: " + Config.WORLD_CHAT_MIN_LEVEL);

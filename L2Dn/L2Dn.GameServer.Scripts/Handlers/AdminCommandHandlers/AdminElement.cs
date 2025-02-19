@@ -9,6 +9,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -18,6 +19,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminElement: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminElement));
+
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_setlh",
@@ -28,7 +31,7 @@ public class AdminElement: IAdminCommandHandler
 		"admin_setlw",
 		"admin_setls",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		int armorType = -1;
@@ -60,7 +63,7 @@ public class AdminElement: IAdminCommandHandler
 		{
 			armorType = Inventory.PAPERDOLL_LHAND;
 		}
-		
+
 		if (armorType != -1)
 		{
 			try
@@ -68,38 +71,39 @@ public class AdminElement: IAdminCommandHandler
 				string[] args = command.Split(" ");
 				AttributeType type = Enum.Parse<AttributeType>(args[1]);
 				int value = int.Parse(args[2]);
-				if ((!Enum.IsDefined(type) || (value < 0) || (value > 450)))
+				if (!Enum.IsDefined(type) || value < 0 || value > 450)
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Usage: //setlh/setlc/setlg/setlb/setll/setlw/setls <element> <value>[0-450]");
 					return false;
 				}
-				
+
 				setElement(activeChar, type, value, armorType);
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //setlh/setlc/setlg/setlb/setll/setlw/setls <element>[0-5] <value>[0-450]");
 				return false;
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	private void setElement(Player activeChar, AttributeType type, int value, int armorType)
 	{
 		// get the target
-		WorldObject target = activeChar.getTarget();
+		WorldObject? target = activeChar.getTarget();
 		if (target == null)
 		{
 			target = activeChar;
 		}
-		Player player = null;
+		Player? player;
 		if (target.isPlayer())
 		{
 			player = (Player) target;
@@ -109,21 +113,21 @@ public class AdminElement: IAdminCommandHandler
 			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 			return;
 		}
-		
-		Item itemInstance = null;
-		
+
+		Item? itemInstance = null;
+
 		// only attempt to enchant if there is a weapon equipped
-		Item parmorInstance = player.getInventory().getPaperdollItem(armorType);
-		if ((parmorInstance != null) && (parmorInstance.getLocationSlot() == armorType))
+		Item? parmorInstance = player.getInventory().getPaperdollItem(armorType);
+		if (parmorInstance != null && parmorInstance.getLocationSlot() == armorType)
 		{
 			itemInstance = parmorInstance;
 		}
-		
+
 		if (itemInstance != null)
 		{
 			string old;
-			string current;
-			AttributeHolder element = itemInstance.getAttribute(type);
+			string? current;
+			AttributeHolder? element = itemInstance.getAttribute(type);
 			if (element == null)
 			{
 				old = "None";
@@ -132,7 +136,7 @@ public class AdminElement: IAdminCommandHandler
 			{
 				old = element.ToString();
 			}
-			
+
 			// set enchant value
 			player.getInventory().unEquipItemInSlot(armorType);
 			if (type == AttributeType.NONE)
@@ -148,20 +152,20 @@ public class AdminElement: IAdminCommandHandler
 				itemInstance.setAttribute(new AttributeHolder(type, value), true);
 			}
 			player.getInventory().equipItem(itemInstance);
-			
+
 			if (itemInstance.getAttributes() == null)
 			{
 				current = "None";
 			}
 			else
 			{
-				current = itemInstance.getAttribute(type).ToString();
+				current = itemInstance.getAttribute(type)?.ToString();
 			}
-			
+
 			// send packets
 			InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(itemInstance, ItemChangeType.MODIFIED));
 			player.sendInventoryUpdate(iu);
-			
+
 			// informations
 			BuilderUtil.sendSysMessage(activeChar, "Changed elemental power of " + player.getName() + "'s " + itemInstance.getTemplate().getName() + " from " + old + " to " + current + ".");
 			if (player != activeChar)

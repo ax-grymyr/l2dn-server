@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -19,13 +20,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminExpSp: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminExpSp));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_add_exp_sp_to_character",
 		"admin_add_exp_sp",
 		"admin_remove_exp_sp",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_add_exp_sp"))
@@ -39,7 +41,9 @@ public class AdminExpSp: IAdminCommandHandler
 				}
 			}
 			catch (IndexOutOfRangeException e)
-			{ // Case of missing parameter
+			{
+                _logger.Error(e);
+                // Case of missing parameter
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //add_exp_sp exp sp");
 			}
 		}
@@ -54,24 +58,26 @@ public class AdminExpSp: IAdminCommandHandler
 				}
 			}
 			catch (IndexOutOfRangeException e)
-			{ // Case of missing parameter
+			{
+                _logger.Error(e);
+                // Case of missing parameter
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //remove_exp_sp exp sp");
 			}
 		}
 		addExpSp(activeChar);
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	private void addExpSp(Player activeChar)
 	{
-		WorldObject target = activeChar.getTarget();
-		Player player = null;
-		if ((target != null) && target.isPlayer())
+		WorldObject? target = activeChar.getTarget();
+		Player? player;
+		if (target != null && target.isPlayer())
 		{
 			player = (Player) target;
 		}
@@ -90,12 +96,12 @@ public class AdminExpSp: IAdminCommandHandler
 		htmlContent.Replace("%class%", ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
 		activeChar.sendPacket(adminReply);
 	}
-	
+
 	private bool adminAddExpSp(Player activeChar, string expSp)
 	{
-		WorldObject target = activeChar.getTarget();
-		Player player = null;
-		if ((target != null) && target.isPlayer())
+		WorldObject? target = activeChar.getTarget();
+		Player? player;
+		if (target != null && target.isPlayer())
 		{
 			player = (Player) target;
 		}
@@ -109,21 +115,23 @@ public class AdminExpSp: IAdminCommandHandler
 		{
 			return false;
 		}
-		
+
 		string exp = st.nextToken();
 		string sp = st.nextToken();
-		long expval = 0;
-		long spval = 0;
-		try
-		{
-			expval = long.Parse(exp);
-			spval = long.Parse(sp);
-		}
-		catch (Exception e)
-		{
-			return false;
-		}
-		if ((expval != 0) || (spval != 0))
+		long expval;
+		long spval;
+        try
+        {
+            expval = long.Parse(exp);
+            spval = long.Parse(sp);
+        }
+        catch (Exception e)
+        {
+            _logger.Error(e);
+            return false;
+        }
+
+        if (expval != 0 || spval != 0)
 		{
 			// Common character information
 			player.sendMessage("Admin is adding you " + expval + " xp and " + spval + " sp.");
@@ -133,12 +141,12 @@ public class AdminExpSp: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	private bool adminRemoveExpSP(Player activeChar, string expSp)
 	{
-		WorldObject target = activeChar.getTarget();
-		Player player = null;
-		if ((target != null) && target.isPlayer())
+		WorldObject? target = activeChar.getTarget();
+		Player? player;
+		if (target != null && target.isPlayer())
 		{
 			player = (Player) target;
 		}
@@ -152,7 +160,7 @@ public class AdminExpSp: IAdminCommandHandler
 		{
 			return false;
 		}
-		
+
 		string exp = st.nextToken();
 		string sp = st.nextToken();
 		long expval = 0;
@@ -164,9 +172,10 @@ public class AdminExpSp: IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
+            _logger.Error(e);
 			return false;
 		}
-		if ((expval != 0) || (spval != 0))
+		if (expval != 0 || spval != 0)
 		{
 			// Common character information
 			player.sendMessage("Admin is removing you " + expval + " xp and " + spval + " sp.");

@@ -234,7 +234,7 @@ public sealed class World
 	 * @param name Name of the player to get Instance
 	 * @return the player instance corresponding to the given name.
 	 */
-	public Player getPlayer(string name)
+	public Player? getPlayer(string name)
 	{
 		return getPlayer(CharInfoTable.getInstance().getIdByName(name));
 	}

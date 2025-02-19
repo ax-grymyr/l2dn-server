@@ -24,25 +24,23 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminClanHall: IAdminCommandHandler
 {
-	private static readonly string[] ADMIN_COMMANDS =
-    [
-        "admin_clanhall",
-    ];
-	
+    private static readonly string[] ADMIN_COMMANDS = ["admin_clanhall"];
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
 		string actualCommand = st.nextToken();
 		if (actualCommand.equalsIgnoreCase("admin_clanhall"))
 		{
-			processBypass(activeChar, new BypassParser(command));
+			ProcessBypass(activeChar, new BypassParser(command));
 		}
+
 		return true;
 	}
-	
-	private void doAction(Player player, int clanHallId, string action, string actionVal)
+
+	private void DoAction(Player player, int clanHallId, string action, string actionVal)
 	{
-		ClanHall clanHall = ClanHallData.getInstance().getClanHallById(clanHallId);
+		ClanHall? clanHall = ClanHallData.getInstance().getClanHallById(clanHallId);
 		if (clanHall != null)
 		{
 			switch (action)
@@ -76,15 +74,16 @@ public class AdminClanHall: IAdminCommandHandler
 					break;
 				}
 				case "give":
-				{
-					if ((player.getTarget() != null) && (player.getTarget().getActingPlayer() != null))
+                {
+                    WorldObject? playerTarget = player.getTarget();
+					if (playerTarget != null && playerTarget.getActingPlayer() != null)
 					{
-						Clan targetClan = player.getTarget().getActingPlayer().getClan();
-						if ((targetClan == null) || (targetClan.getHideoutId() != 0))
+						Clan? targetClan = playerTarget.getActingPlayer()?.getClan();
+						if (targetClan == null || targetClan.getHideoutId() != 0)
 						{
 							player.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 						}
-						
+
 						clanHall.setOwner(targetClan);
 					}
 					else
@@ -108,11 +107,11 @@ public class AdminClanHall: IAdminCommandHandler
 				}
 				case "cancelFunc":
 				{
-					ResidenceFunction function = clanHall.getFunction(int.Parse(actionVal));
+					ResidenceFunction? function = clanHall.getFunction(int.Parse(actionVal));
 					if (function != null)
 					{
 						clanHall.removeFunction(function);
-						sendClanHallDetails(player, clanHallId);
+						SendClanHallDetails(player, clanHallId);
 					}
 					break;
 				}
@@ -124,13 +123,13 @@ public class AdminClanHall: IAdminCommandHandler
 		}
 		useAdminCommand("admin_clanhall id=" + clanHallId, player);
 	}
-	
-	private void sendClanHallList(Player player, int page)
+
+	private void SendClanHallList(Player player, int page)
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/clanhall_list.htm", player);
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		List<ClanHall> clanHallList = ClanHallData.getInstance().getClanHalls().OrderBy(x => x.getResidenceId()).ToList();
-		
+
 		//@formatter:off
 		PageResult result = PageBuilder.newBuilder(clanHallList, 4, "bypass -h admin_clanhall")
 			.currentPage(page)
@@ -144,45 +143,45 @@ public class AdminClanHall: IAdminCommandHandler
 			sb.Append("</table>");
 
 			sb.Append("<table border=0 cellpadding=0 cellspacing=0 bgcolor=\"363636\">");
-			sb.Append("<tr>");		
-			sb.Append("<td align=center fixwidth=\"83\">Status:</td>");		
-			sb.Append("<td align=center fixwidth=\"83\"></td>");		
-			sb.Append("<td align=center fixwidth=\"83\">" + (clanHall.getOwner() == null ? "<font color=\"00FF00\">Free</font>" : "<font color=\"FF9900\">Owned</font>") + "</td>");		
+			sb.Append("<tr>");
+			sb.Append("<td align=center fixwidth=\"83\">Status:</td>");
+			sb.Append("<td align=center fixwidth=\"83\"></td>");
+			sb.Append("<td align=center fixwidth=\"83\">" + (clanHall.getOwner() == null ? "<font color=\"00FF00\">Free</font>" : "<font color=\"FF9900\">Owned</font>") + "</td>");
 			sb.Append("</tr>");
-			
+
 			sb.Append("<tr>");
 			sb.Append("<td align=center fixwidth=\"83\">Location:</td>");
 			sb.Append("<td align=center fixwidth=\"83\"></td>");
 			sb.Append("<td align=center fixwidth=\"83\">&^" + clanHall.getResidenceId() + ";</td>");
 			sb.Append("</tr>");
-			
+
 			sb.Append("<tr>");
 			sb.Append("<td align=center fixwidth=\"83\">Detailed Info:</td>");
 			sb.Append("<td align=center fixwidth=\"83\"></td>");
 			sb.Append("<td align=center fixwidth=\"83\"><button value=\"Show me!\" action=\"bypass -h admin_clanhall id=" + clanHall.getResidenceId() + "\" width=\"85\" height=\"20\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 			sb.Append("</tr>");
-			
-			
+
+
 			sb.Append("</table>");
 			sb.Append("<br>");
 		}).build();
 		//@formatter:on
-		
+
 		htmlContent.Replace("%pages%", result.getPages() > 0 ? "<center><table width=\"100%\" cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table></center>" : "");
 		htmlContent.Replace("%data%", result.getBodyTemplate().ToString());
 		player.sendPacket(html);
 	}
-	
-	private void sendClanHallDetails(Player player, int clanHallId)
+
+	private void SendClanHallDetails(Player player, int clanHallId)
 	{
-		ClanHall clanHall = ClanHallData.getInstance().getClanHallById(clanHallId);
+		ClanHall? clanHall = ClanHallData.getInstance().getClanHallById(clanHallId);
 		if (clanHall != null)
 		{
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/clanhall_detail.htm", player);
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 			StringBuilder sb = new StringBuilder();
 			htmlContent.Replace("%clanHallId%", clanHall.getResidenceId().ToString());
-			htmlContent.Replace("%clanHallOwner%", (clanHall.getOwner() == null ? "<font color=\"00FF00\">Free</font>" : "<font color=\"FF9900\">" + clanHall.getOwner().getName() + "</font>"));
+			htmlContent.Replace("%clanHallOwner%", clanHall.getOwner() == null ? "<font color=\"00FF00\">Free</font>" : "<font color=\"FF9900\">" + clanHall.getOwner().getName() + "</font>");
 			string grade = clanHall.getGrade().ToString().Replace("GRADE_", "") + " Grade";
 			htmlContent.Replace("%clanHallGrade%", grade);
 			htmlContent.Replace("%clanHallSize%", clanHall.getGrade().ToString());
@@ -214,7 +213,7 @@ public class AdminClanHall: IAdminCommandHandler
 			{
 				sb.Append("This Clan Hall doesn't have any Function yet.");
 			}
-			
+
 			htmlContent.Replace("%functionList%", sb.ToString());
 			player.sendPacket(html);
 		}
@@ -224,27 +223,27 @@ public class AdminClanHall: IAdminCommandHandler
 			useAdminCommand("admin_clanhall", player);
 		}
 	}
-	
-	private void processBypass(Player player, BypassParser parser)
+
+	private void ProcessBypass(Player player, BypassParser parser)
 	{
 		int page = parser.getInt("page", 0);
 		int clanHallId = parser.getInt("id", 0);
-		string action = parser.getString("action", null);
-		string actionVal = parser.getString("actionVal", null);
-		if ((clanHallId > 0) && (action != null))
+		string action = parser.getString("action", string.Empty);
+		string actionVal = parser.getString("actionVal", string.Empty);
+		if (clanHallId > 0 && !string.IsNullOrEmpty(action))
 		{
-			doAction(player, clanHallId, action, actionVal);
+			DoAction(player, clanHallId, action, actionVal);
 		}
 		else if (clanHallId > 0)
 		{
-			sendClanHallDetails(player, clanHallId);
+			SendClanHallDetails(player, clanHallId);
 		}
 		else
 		{
-			sendClanHallList(player, page);
+			SendClanHallList(player, page);
 		}
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

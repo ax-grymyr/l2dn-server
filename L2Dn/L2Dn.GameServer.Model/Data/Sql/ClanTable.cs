@@ -250,7 +250,7 @@ public class ClanTable
 
 			if (fortId != null && fortId != 0)
 			{
-				Fort fort = FortManager.getInstance().getFortById(fortId.Value);
+				Fort? fort = FortManager.getInstance().getFortById(fortId.Value);
 				if (fort != null)
 				{
 					Clan owner = fort.getOwnerClan();

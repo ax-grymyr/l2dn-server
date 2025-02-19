@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -14,12 +15,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminKill: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminKill));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_kill",
 		"admin_kill_monster",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_kill"))
@@ -29,7 +31,7 @@ public class AdminKill: IAdminCommandHandler
 			if (st.hasMoreTokens())
 			{
 				string firstParam = st.nextToken();
-				Player plyr = World.getInstance().getPlayer(firstParam);
+				Player? plyr = World.getInstance().getPlayer(firstParam);
 				if (plyr != null)
 				{
 					if (st.hasMoreTokens())
@@ -39,19 +41,20 @@ public class AdminKill: IAdminCommandHandler
 							int radius = int.Parse(st.nextToken());
 							World.getInstance().forEachVisibleObjectInRange<Creature>(plyr, radius, knownChar =>
 							{
-								if ((knownChar is ControllableMob) || (knownChar is FriendlyNpc) || (knownChar == activeChar))
+								if (knownChar is ControllableMob || knownChar is FriendlyNpc || knownChar == activeChar)
 								{
 									return;
 								}
-								
+
 								kill(activeChar, knownChar);
 							});
-							
+
 							BuilderUtil.sendSysMessage(activeChar, "Killed all characters within a " + radius + " unit radius.");
 							return true;
 						}
 						catch (FormatException e)
 						{
+                            _logger.Error(e);
 							BuilderUtil.sendSysMessage(activeChar, "Invalid radius.");
 							return false;
 						}
@@ -65,18 +68,19 @@ public class AdminKill: IAdminCommandHandler
 						int radius = int.Parse(firstParam);
 						World.getInstance().forEachVisibleObjectInRange<Creature>(activeChar, radius, wo =>
 						{
-							if ((wo is ControllableMob) || (wo is FriendlyNpc))
+							if (wo is ControllableMob || wo is FriendlyNpc)
 							{
 								return;
 							}
 							kill(activeChar, wo);
 						});
-						
+
 						BuilderUtil.sendSysMessage(activeChar, "Killed all characters within a " + radius + " unit radius.");
 						return true;
 					}
 					catch (FormatException e)
 					{
+                        _logger.Error(e);
 						BuilderUtil.sendSysMessage(activeChar, "Usage: //kill <player_name | radius>");
 						return false;
 					}
@@ -84,8 +88,8 @@ public class AdminKill: IAdminCommandHandler
 			}
 			else
 			{
-				WorldObject obj = activeChar.getTarget();
-				if ((obj == null) || (obj is ControllableMob) || !obj.isCreature())
+				WorldObject? obj = activeChar.getTarget();
+				if (obj == null || obj is ControllableMob || !obj.isCreature())
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				}
@@ -97,7 +101,7 @@ public class AdminKill: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	private void kill(Player activeChar, Creature target)
 	{
 		if (target.isPlayer())
@@ -110,7 +114,7 @@ public class AdminKill: IAdminCommandHandler
 		}
 		else if (Config.CHAMPION_ENABLE && target.isChampion())
 		{
-			target.reduceCurrentHp((target.getMaxHp() * Config.CHAMPION_HP) + 1, activeChar, null);
+			target.reduceCurrentHp(target.getMaxHp() * Config.CHAMPION_HP + 1, activeChar, null);
 		}
 		else
 		{
@@ -120,7 +124,7 @@ public class AdminKill: IAdminCommandHandler
 				targetIsInvul = true;
 				target.setInvul(false);
 			}
-			
+
 			target.reduceCurrentHp(target.getMaxHp() + 1, activeChar, null);
 			if (targetIsInvul)
 			{
@@ -128,7 +132,7 @@ public class AdminKill: IAdminCommandHandler
 			}
 		}
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

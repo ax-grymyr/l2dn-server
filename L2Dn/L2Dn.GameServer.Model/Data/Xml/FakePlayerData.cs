@@ -15,17 +15,17 @@ namespace L2Dn.GameServer.Data.Xml;
 public class FakePlayerData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(FakePlayerData));
-	
+
 	private readonly Map<int, FakePlayerHolder> _fakePlayerInfos = new();
 	private readonly Map<string, string> _fakePlayerNames = new();
 	private readonly Map<string, int> _fakePlayerIds = new();
 	private readonly Set<string> _talkableFakePlayerNames = new();
-	
+
 	protected FakePlayerData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		if (Config.FAKE_PLAYERS_ENABLED)
@@ -34,7 +34,7 @@ public class FakePlayerData: DataReaderBase
 			_fakePlayerNames.Clear();
 			_fakePlayerIds.Clear();
 			_talkableFakePlayerNames.Clear();
-			
+
 			XDocument document = LoadXmlDocument(DataFileLocation.Data, "FakePlayerVisualData.xml");
 			document.Elements("list").Elements("fakePlayer").ForEach(parseElement);
 
@@ -45,11 +45,17 @@ public class FakePlayerData: DataReaderBase
 			LOGGER.Info(GetType().Name + ": Disabled.");
 		}
 	}
-	
+
 	private void parseElement(XElement element)
 	{
 		int npcId = element.GetAttributeValueAsInt32("npcId");
-		NpcTemplate template = NpcData.getInstance().getTemplate(npcId);
+		NpcTemplate? template = NpcData.getInstance().getTemplate(npcId);
+        if (template is null)
+        {
+            LOGGER.Error(GetType().Name + ": Could find fake player template " + npcId + ".");
+            return;
+        }
+
 		string name = template.getName();
 		if (CharInfoTable.getInstance().getIdByName(name) > 0)
 		{
@@ -66,32 +72,32 @@ public class FakePlayerData: DataReaderBase
 			}
 		}
 	}
-	
+
 	public int getNpcIdByName(string name)
 	{
 		return _fakePlayerIds.get(name);
 	}
-	
-	public string getProperName(string name)
+
+	public string? getProperName(string name)
 	{
 		return _fakePlayerNames.get(name.ToLower());
 	}
-	
+
 	public bool isTalkable(string name)
 	{
 		return _talkableFakePlayerNames.Contains(name.ToLower());
 	}
-	
-	public FakePlayerHolder getInfo(int npcId)
+
+	public FakePlayerHolder? getInfo(int npcId)
 	{
 		return _fakePlayerInfos.get(npcId);
 	}
-	
+
 	public static FakePlayerData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly FakePlayerData INSTANCE = new();

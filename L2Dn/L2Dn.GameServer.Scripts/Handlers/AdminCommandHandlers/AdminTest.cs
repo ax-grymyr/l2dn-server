@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
@@ -14,12 +15,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminTest: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminTest));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_stats",
 		"admin_skill_test",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_stats"))
@@ -40,12 +42,13 @@ public class AdminTest: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Command format is //skill_test <ID>");
 			}
 		}
 		return true;
 	}
-	
+
 	/**
 	 * @param activeChar
 	 * @param id
@@ -54,8 +57,8 @@ public class AdminTest: IAdminCommandHandler
 	private void adminTestSkill(Player activeChar, int id, bool msu)
 	{
 		Creature caster;
-		WorldObject target = activeChar.getTarget();
-		if (!target.isCreature())
+		WorldObject? target = activeChar.getTarget();
+		if (target == null || !target.isCreature())
 		{
 			caster = activeChar;
 		}
@@ -63,8 +66,8 @@ public class AdminTest: IAdminCommandHandler
 		{
 			caster = (Creature) target;
 		}
-		
-		Skill skill = SkillData.getInstance().getSkill(id, 1);
+
+		Skill? skill = SkillData.getInstance().getSkill(id, 1);
 		if (skill != null)
 		{
 			caster.setTarget(activeChar);
@@ -78,7 +81,7 @@ public class AdminTest: IAdminCommandHandler
 			}
 		}
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

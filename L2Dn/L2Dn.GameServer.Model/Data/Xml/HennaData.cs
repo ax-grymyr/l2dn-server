@@ -20,10 +20,10 @@ namespace L2Dn.GameServer.Data.Xml;
 public class HennaData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(HennaData));
-	
+
 	private readonly Map<int, Henna> _hennaDyeIdList = new();
 	private readonly Map<int, Henna> _hennaItemIdList = new();
-	
+
 	/**
 	 * Instantiates a new henna data.
 	 */
@@ -31,18 +31,18 @@ public class HennaData: DataReaderBase
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_hennaItemIdList.Clear();
 		_hennaDyeIdList.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/hennaList.xml");
 		document.Elements("list").Elements("henna").ForEach(parseElement);
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _hennaDyeIdList.Count + " henna data.");
 	}
-	
+
 	/**
 	 * Parses the henna.
 	 * @param d the node
@@ -57,76 +57,76 @@ public class HennaData: DataReaderBase
 			set.set(attribute.Name.LocalName, attribute.Value);
 
 		element.Elements("stats").Attributes().ForEach(a => set.set(a.Name.LocalName, a.Value));
-		
+
 		element.Elements("wear").ForEach(e =>
 		{
 			int count = e.GetAttributeValueAsInt32("count");
 			set.set("wear_count", count);
 			int fee = e.GetAttributeValueAsInt32("fee");
 			set.set("wear_fee", fee);
-					
+
 			fee = e.Attribute("l2coinfee").GetInt32(0);
 			set.set("l2coin_fee", fee);
 		});
-		
+
 		element.Elements("cancel").ForEach(e =>
 		{
 			int count = e.GetAttributeValueAsInt32("count");
 			set.set("cancel_count", count);
 			int fee = e.GetAttributeValueAsInt32("fee");
 			set.set("cancel_fee", fee);
-					
+
 			fee = e.Attribute("l2coinfee_cancel").GetInt32(0);
 			set.set("cancel_l2coin_fee", fee);
 		});
-		
+
 		element.Elements("duration").ForEach(e =>
 		{
 			int duration = e.Attribute("time").GetInt32(-1); // in minutes
 			set.set("duration", duration);
 		});
-		
+
 		element.Elements("skill").ForEach(e =>
 		{
 			int id = e.GetAttributeValueAsInt32("id");
 			int level = e.GetAttributeValueAsInt32("level");
 			skills.Add(SkillData.getInstance().getSkill(id, level));
 		});
-		
+
 		element.Elements("classId").ForEach(e =>
 		{
 			string[] ids = ((string)e).Split(",");
 			foreach (string s in ids)
 				wearClassIds.Add(int.Parse(s));
 		});
-		
+
 		Henna henna = new Henna(set);
 		henna.setSkills(skills);
 		henna.setWearClassIds(wearClassIds);
 		_hennaDyeIdList.put(henna.getDyeId(), henna);
 		_hennaItemIdList.put(henna.getDyeItemId(), henna);
 	}
-	
+
 	/**
 	 * Gets the henna.
 	 * @param id of the dye.
 	 * @return the dye with that id.
 	 */
-	public Henna getHenna(int id)
+	public Henna? getHenna(int id)
 	{
 		return _hennaDyeIdList.get(id);
 	}
-	
-	public Henna getHennaByDyeId(int id)
+
+	public Henna? getHennaByDyeId(int id)
 	{
 		return _hennaDyeIdList.get(id);
 	}
-	
-	public Henna getHennaByItemId(int id)
+
+	public Henna? getHennaByItemId(int id)
 	{
 		return _hennaItemIdList.get(id);
 	}
-	
+
 	/**
 	 * Gets the henna list.
 	 * @param player the player's class Id.
@@ -144,7 +144,7 @@ public class HennaData: DataReaderBase
 		}
 		return list;
 	}
-	
+
 	/**
 	 * Gets the single instance of HennaData.
 	 * @return single instance of HennaData
@@ -153,7 +153,7 @@ public class HennaData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly HennaData INSTANCE = new();

@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -24,18 +25,19 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminPledge: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminPledge));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_pledge",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
 		string cmd = st.nextToken();
-		WorldObject target = activeChar.getTarget();
-		Player targetPlayer = (target != null) && target.isPlayer() ? (Player) target : null;
-		Clan clan = targetPlayer != null ? targetPlayer.getClan() : null;
+		WorldObject? target = activeChar.getTarget();
+		Player? targetPlayer = target != null && target.isPlayer() ? (Player) target : null;
+		Clan? clan = targetPlayer != null ? targetPlayer.getClan() : null;
 		if (targetPlayer == null)
 		{
 			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
@@ -58,7 +60,7 @@ public class AdminPledge: IAdminCommandHandler
 					break;
 				}
 				string param = st.nextToken();
-				
+
 				switch (action)
 				{
 					case "create":
@@ -68,7 +70,7 @@ public class AdminPledge: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Target player has clan!");
 							break;
 						}
-						
+
 						DateTime? penalty = targetPlayer.getClanCreateExpiryTime();
 						targetPlayer.setClanCreateExpiryTime(null);
 						clan = ClanTable.getInstance().createClan(targetPlayer, param);
@@ -90,7 +92,7 @@ public class AdminPledge: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Target player has no clan!");
 							break;
 						}
-						
+
 						if (!targetPlayer.isClanLeader())
 						{
 							SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_IS_NOT_A_CLAN_LEADER);
@@ -119,7 +121,7 @@ public class AdminPledge: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Target player has no clan!");
 							break;
 						}
-						
+
 						activeChar.sendPacket(new GMViewPledgeInfoPacket(clan, targetPlayer));
 						break;
 					}
@@ -130,14 +132,15 @@ public class AdminPledge: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Target player has no clan!");
 							break;
 						}
-						else if (param == null)
-						{
-							BuilderUtil.sendSysMessage(activeChar, "Usage: //pledge <setlevel|rep> <number>");
-							break;
-						}
-						
-						int level = int.Parse(param);
-						if ((level >= 0) && (level <= ClanLevelData.getInstance().getMaxLevel()))
+
+                        if (param == null)
+                        {
+                            BuilderUtil.sendSysMessage(activeChar, "Usage: //pledge <setlevel|rep> <number>");
+                            break;
+                        }
+
+                        int level = int.Parse(param);
+						if (level >= 0 && level <= ClanLevelData.getInstance().getMaxLevel())
 						{
 							clan.changeLevel(level);
 							clan.setExp(activeChar.ObjectId, ClanLevelData.getInstance().getLevelExp(level));
@@ -160,14 +163,15 @@ public class AdminPledge: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Target player has no clan!");
 							break;
 						}
-						else if (clan.getLevel() < 5)
-						{
-							BuilderUtil.sendSysMessage(activeChar, "Only clans of level 5 or above may receive reputation points.");
-							showMainPage(activeChar);
-							return false;
-						}
-						
-						try
+
+                        if (clan.getLevel() < 5)
+                        {
+                            BuilderUtil.sendSysMessage(activeChar, "Only clans of level 5 or above may receive reputation points.");
+                            showMainPage(activeChar);
+                            return false;
+                        }
+
+                        try
 						{
 							int points = int.Parse(param);
 							clan.addReputationScore(points);
@@ -175,6 +179,7 @@ public class AdminPledge: IAdminCommandHandler
 						}
 						catch (Exception e)
 						{
+                            _logger.Error(e);
 							BuilderUtil.sendSysMessage(activeChar, "Usage: //pledge <rep> <number>");
 						}
 						break;
@@ -186,7 +191,7 @@ public class AdminPledge: IAdminCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "Target player has no clan!");
 							break;
 						}
-						
+
 						try
 						{
 							int stage = int.Parse(param);
@@ -195,6 +200,7 @@ public class AdminPledge: IAdminCommandHandler
 						}
 						catch (Exception e)
 						{
+                            _logger.Error(e);
 							BuilderUtil.sendSysMessage(activeChar, "Usage: //pledge arena <number>");
 						}
 						break;
@@ -206,12 +212,12 @@ public class AdminPledge: IAdminCommandHandler
 		showMainPage(activeChar);
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	private void showMainPage(Player activeChar)
 	{
 		AdminHtml.showAdminHtml(activeChar, "game_menu.htm");

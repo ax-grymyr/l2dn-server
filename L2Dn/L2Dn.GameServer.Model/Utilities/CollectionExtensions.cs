@@ -10,26 +10,26 @@ public static class CollectionExtensions
     {
         if (weakReference.TryGetTarget(out T? target))
             return target;
-        
+
         return null;
     }
 
-    public static bool equals(this string s, string other)
+    public static bool equals(this string? s, string? other)
     {
         return string.Equals(s, other, StringComparison.Ordinal);
     }
 
-    public static bool equalsIgnoreCase(this string s, string other)
+    public static bool equalsIgnoreCase(this string? s, string? other)
     {
         return string.Equals(s, other, StringComparison.OrdinalIgnoreCase);
     }
 
-    public static bool endsWith(this string s, string other)
+    public static bool endsWith(this string? s, string other)
     {
         return (s ?? string.Empty).EndsWith(other, StringComparison.Ordinal);
     }
 
-    public static bool startsWith(this string s, string other)
+    public static bool startsWith(this string? s, string other)
     {
         return (s ?? string.Empty).StartsWith(other, StringComparison.Ordinal);
     }

@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -9,16 +10,17 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminSummon: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminSummon));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_summon",
     ];
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		int id;
@@ -34,10 +36,11 @@ public class AdminSummon: IAdminCommandHandler
 		}
 		catch (FormatException nfe)
 		{
+            _logger.Error(nfe);
 			BuilderUtil.sendSysMessage(activeChar, "Incorrect format for command 'summon'");
 			return false;
 		}
-		
+
 		string subCommand;
 		if (id < 1000000)
 		{
@@ -49,12 +52,12 @@ public class AdminSummon: IAdminCommandHandler
 			BuilderUtil.sendSysMessage(activeChar, "This is only a temporary spawn.  The mob(s) will NOT respawn.");
 			id -= 1000000;
 		}
-		
-		if ((id > 0) && (count > 0))
+
+		if (id > 0 && count > 0)
 		{
 			AdminCommandHandler.getInstance().useAdminCommand(activeChar, subCommand + " " + id + " " + count, true);
 		}
-		
+
 		return true;
 	}
 }

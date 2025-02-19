@@ -18,7 +18,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminMenu: IAdminCommandHandler
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminMenu));
-	
+
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_char_manage",
@@ -32,7 +32,7 @@ public class AdminMenu: IAdminCommandHandler
 		"admin_ban_menu",
 		"admin_unban_menu",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_char_manage"))
@@ -45,7 +45,7 @@ public class AdminMenu: IAdminCommandHandler
 			if (data.Length == 5)
 			{
 				string playerName = data[1];
-				Player player = World.getInstance().getPlayer(playerName);
+				Player? player = World.getInstance().getPlayer(playerName);
 				if (player != null)
 				{
 					teleportCharacter(player, new Location(int.Parse(data[2]), int.Parse(data[3]), int.Parse(data[4]), 0), activeChar, "Admin is teleporting you.");
@@ -58,11 +58,12 @@ public class AdminMenu: IAdminCommandHandler
 			try
 			{
 				string targetName = command.Substring(23);
-				Player player = World.getInstance().getPlayer(targetName);
+				Player? player = World.getInstance().getPlayer(targetName);
 				teleportCharacter(player, activeChar.Location, activeChar, "Admin is teleporting you.");
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                LOGGER.Error(e);
 				// Not important.
 			}
 		}
@@ -71,19 +72,22 @@ public class AdminMenu: IAdminCommandHandler
 			try
 			{
 				string targetName = command.Substring(24);
-				Player player = World.getInstance().getPlayer(targetName);
+				Player? player = World.getInstance().getPlayer(targetName);
 				if (player == null)
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 					return true;
 				}
-				if (!player.isInParty())
+
+                Party? party = player.getParty();
+				if (party is null)
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Player is not in party.");
 					teleportCharacter(player, activeChar.Location, activeChar, "Admin is teleporting you.");
 					return true;
 				}
-				foreach (Player pm in player.getParty().getMembers())
+
+				foreach (Player pm in party.getMembers())
 				{
 					teleportCharacter(pm, activeChar.Location, activeChar, "Your party is being teleported by an Admin.");
 				}
@@ -98,20 +102,20 @@ public class AdminMenu: IAdminCommandHandler
 			try
 			{
 				string targetName = command.Substring(23);
-				Player player = World.getInstance().getPlayer(targetName);
+				Player? player = World.getInstance().getPlayer(targetName);
 				if (player == null)
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 					return true;
 				}
-				Clan clan = player.getClan();
+				Clan? clan = player.getClan();
 				if (clan == null)
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Player is not in a clan.");
 					teleportCharacter(player, activeChar.Location, activeChar, "Admin is teleporting you.");
 					return true;
 				}
-				
+
 				foreach(Player member in clan.getOnlineMembers(0))
 				{
 					teleportCharacter(member, activeChar.Location, activeChar, "Your clan is being teleported by an Admin.");
@@ -119,18 +123,19 @@ public class AdminMenu: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				LOGGER.Warn(e);
+				LOGGER.Error(e);
 			}
 		}
 		else if (command.startsWith("admin_goto_char_menu"))
 		{
 			try
 			{
-				Player player = World.getInstance().getPlayer(command.Substring(21));
+				Player? player = World.getInstance().getPlayer(command.Substring(21));
 				teleportToCharacter(activeChar, player);
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                LOGGER.Error(e);
 				// Not important.
 			}
 		}
@@ -145,7 +150,7 @@ public class AdminMenu: IAdminCommandHandler
 			{
 				st.nextToken();
 				string player = st.nextToken();
-				Player plyr = World.getInstance().getPlayer(player);
+				Player? plyr = World.getInstance().getPlayer(player);
 				string text;
 				if (plyr != null)
 				{
@@ -182,25 +187,20 @@ public class AdminMenu: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
-	private void handleKill(Player activeChar)
+
+	private void handleKill(Player activeChar, string? player = null)
 	{
-		handleKill(activeChar, null);
-	}
-	
-	private void handleKill(Player activeChar, string player)
-	{
-		WorldObject obj = activeChar.getTarget();
-		Creature target = (Creature) obj;
+		WorldObject? obj = activeChar.getTarget();
+		Creature? target = (Creature?)obj;
 		string filename = "main_menu.htm";
 		if (player != null)
 		{
-			Player plyr = World.getInstance().getPlayer(player);
+			Player? plyr = World.getInstance().getPlayer(player);
 			if (plyr != null)
 			{
 				target = plyr;
@@ -216,7 +216,7 @@ public class AdminMenu: IAdminCommandHandler
 			}
 			else if (Config.CHAMPION_ENABLE && target.isChampion())
 			{
-				target.reduceCurrentHp((target.getMaxHp() * Config.CHAMPION_HP) + 1, activeChar, null);
+				target.reduceCurrentHp(target.getMaxHp() * Config.CHAMPION_HP + 1, activeChar, null);
 			}
 			else
 			{
@@ -229,8 +229,8 @@ public class AdminMenu: IAdminCommandHandler
 		}
 		AdminHtml.showAdminHtml(activeChar, filename);
 	}
-	
-	private void teleportCharacter(Player player, Location loc, Player activeChar, string message)
+
+	private void teleportCharacter(Player? player, Location loc, Player activeChar, string message)
 	{
 		if (player != null)
 		{
@@ -240,16 +240,16 @@ public class AdminMenu: IAdminCommandHandler
 
 		showMainPage(activeChar);
 	}
-	
-	private void teleportToCharacter(Player activeChar, WorldObject target)
+
+	private void teleportToCharacter(Player activeChar, WorldObject? target)
 	{
-		if (!target.isPlayer())
+        Player? player = target?.getActingPlayer();
+		if (target == null || !target.isPlayer() || player == null)
 		{
 			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 			return;
 		}
-		
-		Player player = target.getActingPlayer();
+
 		if (player.ObjectId == activeChar.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_ON_YOURSELF);
@@ -261,7 +261,7 @@ public class AdminMenu: IAdminCommandHandler
 		}
 		showMainPage(activeChar);
 	}
-	
+
 	/**
 	 * @param activeChar
 	 */

@@ -45,13 +45,15 @@ public class RegionBoard: IWriteBoardHandler
 			StringBuilder sb = new StringBuilder();
 			for (int i = 0; i < REGIONS.Length; i++)
 			{
-				Castle castle = CastleManager.getInstance().getCastleById(i + 1);
-				Clan clan = ClanTable.getInstance().getClan(castle.getOwnerId());
+				Castle? castle = CastleManager.getInstance().getCastleById(i + 1);
+				Clan? clan = castle != null ? ClanTable.getInstance().getClan(castle.getOwnerId()) : null;
+                int taxPercent = castle?.getTaxPercent(TaxType.BUY) ?? 0;
+
 				string link = list.Replace("%region_id%", i.ToString());
 				link = link.Replace("%region_name%", REGIONS[i].ToString());
-				link = link.Replace("%region_owning_clan%", (clan != null ? clan.getName() : "NPC"));
-				link = link.Replace("%region_owning_clan_alliance%", ((clan != null) && (clan.getAllyName() != null) ? clan.getAllyName() : ""));
-				link = link.Replace("%region_tax_rate%", castle.getTaxPercent(TaxType.BUY) + "%");
+				link = link.Replace("%region_owning_clan%", clan != null ? clan.getName() : "NPC");
+				link = link.Replace("%region_owning_clan_alliance%", clan != null && clan.getAllyName() != null ? clan.getAllyName() : "");
+				link = link.Replace("%region_tax_rate%", taxPercent + "%");
 				sb.Append(link);
 			}
 

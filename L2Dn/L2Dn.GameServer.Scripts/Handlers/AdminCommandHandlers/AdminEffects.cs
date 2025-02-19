@@ -16,6 +16,8 @@ using L2Dn.GameServer.Scripts.Handlers.PlayerActions;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
+using NLog;
+using NLog.Fluent;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -37,6 +39,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminEffects: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminEffects));
+
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_invis",
@@ -76,13 +80,13 @@ public class AdminEffects: IAdminCommandHandler
 		"admin_settargetable",
 		"admin_playmovie",
     ];
-	
+
 	public bool useAdminCommand(string commandValue, Player activeChar)
 	{
 		string command = commandValue;
 		StringTokenizer st = new StringTokenizer(command);
 		st.nextToken();
-		
+
 		if (command.equals("admin_invis_menu"))
 		{
 			if (!activeChar.isInvisible())
@@ -92,7 +96,7 @@ public class AdminEffects: IAdminCommandHandler
 				activeChar.sendPacket(new ExUserInfoAbnormalVisualEffectPacket(activeChar));
 				World.getInstance().forEachVisibleObject<Creature>(activeChar, target =>
 				{
-					if ((target != null) && (target.getTarget() == activeChar))
+					if (target != null && target.getTarget() == activeChar)
 					{
 						target.setTarget(null);
 						target.abortAttack();
@@ -100,7 +104,7 @@ public class AdminEffects: IAdminCommandHandler
 						target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 					}
 				});
-				
+
 				BuilderUtil.sendSysMessage(activeChar, "Now, you cannot be seen.");
 			}
 			else
@@ -111,7 +115,7 @@ public class AdminEffects: IAdminCommandHandler
 				activeChar.sendPacket(new ExUserInfoAbnormalVisualEffectPacket(activeChar));
 				BuilderUtil.sendSysMessage(activeChar, "Now, you can be seen.");
 			}
-			
+
 			command = "";
 			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
 		}
@@ -122,7 +126,7 @@ public class AdminEffects: IAdminCommandHandler
 			activeChar.sendPacket(new ExUserInfoAbnormalVisualEffectPacket(activeChar));
 			World.getInstance().forEachVisibleObject<Creature>(activeChar, target =>
 			{
-				if ((target != null) && (target.getTarget() == activeChar))
+				if (target != null && target.getTarget() == activeChar)
 				{
 					target.setTarget(null);
 					target.abortAttack();
@@ -142,12 +146,14 @@ public class AdminEffects: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_setinvis"))
 		{
-			if ((activeChar.getTarget() == null) || !activeChar.getTarget().isCreature())
+            WorldObject? activeCharTarget = activeChar.getTarget();
+			if (activeCharTarget == null || !activeCharTarget.isCreature())
 			{
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				return false;
 			}
-			Creature target = (Creature) activeChar.getTarget();
+
+            Creature target = (Creature)activeCharTarget;
 			target.setInvisible(!target.isInvisible());
 			BuilderUtil.sendSysMessage(activeChar, "You've made " + target.getName() + " " + (target.isInvisible() ? "invisible" : "visible") + ".");
 			if (target.isPlayer())
@@ -167,6 +173,7 @@ public class AdminEffects: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //earthquake <intensity> <duration>");
 			}
 		}
@@ -181,6 +188,7 @@ public class AdminEffects: IAdminCommandHandler
 			}
 			catch (Exception ex)
 			{
+                _logger.Error(ex);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //atmosphere <signsky dawn|dusk>|<sky day|night|red> <duration>");
 			}
 		}
@@ -196,6 +204,7 @@ public class AdminEffects: IAdminCommandHandler
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //play_sounds <pagenumber>");
 			}
 		}
@@ -207,6 +216,7 @@ public class AdminEffects: IAdminCommandHandler
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //play_sound <soundname>");
 			}
 		}
@@ -230,7 +240,7 @@ public class AdminEffects: IAdminCommandHandler
 				player.getEffectList().stopAbnormalVisualEffect(AbnormalVisualEffect.PARALYZE);
 				player.setBlockActions(false);
 				player.broadcastInfo();
-				
+
 			});
 		}
 		else if (command.startsWith("admin_para")) // || command.startsWith("admin_para_menu"))
@@ -242,14 +252,14 @@ public class AdminEffects: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 			}
 			try
 			{
-				WorldObject target = activeChar.getTarget();
-				Creature creature = null;
-				if (target.isCreature())
+				WorldObject? target = activeChar.getTarget();
+                if (target != null && target.isCreature())
 				{
-					creature = (Creature) target;
+					Creature creature = (Creature) target;
 					if (type.equals("1"))
 					{
 						creature.getEffectList().startAbnormalVisualEffect(AbnormalVisualEffect.PARALYZE);
@@ -265,6 +275,7 @@ public class AdminEffects: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 			}
 		}
 		else if (command.startsWith("admin_unpara")) // || command.startsWith("admin_unpara_menu"))
@@ -276,14 +287,14 @@ public class AdminEffects: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 			}
 			try
 			{
-				WorldObject target = activeChar.getTarget();
-				Creature creature = null;
-				if (target.isCreature())
+				WorldObject? target = activeChar.getTarget();
+                if (target != null && target.isCreature())
 				{
-					creature = (Creature) target;
+					Creature creature = (Creature) target;
 					if (type.equals("1"))
 					{
 						creature.getEffectList().stopAbnormalVisualEffect(AbnormalVisualEffect.PARALYZE);
@@ -298,39 +309,40 @@ public class AdminEffects: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 			}
 		}
 		else if (command.startsWith("admin_bighead"))
 		{
 			try
 			{
-				WorldObject target = activeChar.getTarget();
-				Creature creature = null;
-				if (target.isCreature())
-				{
-					creature = (Creature) target;
-					creature.getEffectList().startAbnormalVisualEffect(AbnormalVisualEffect.BIG_HEAD);
-				}
+				WorldObject? target = activeChar.getTarget();
+                if (target != null && target.isCreature())
+                {
+                    var creature = (Creature) target;
+                    creature.getEffectList().startAbnormalVisualEffect(AbnormalVisualEffect.BIG_HEAD);
+                }
 			}
 			catch (Exception e)
-			{
-			}
+            {
+                _logger.Error(e);
+            }
 		}
 		else if (command.startsWith("admin_shrinkhead"))
 		{
 			try
 			{
-				WorldObject target = activeChar.getTarget();
-				Creature creature = null;
-				if (target.isCreature())
-				{
-					creature = (Creature) target;
-					creature.getEffectList().stopAbnormalVisualEffect(AbnormalVisualEffect.BIG_HEAD);
-				}
+				WorldObject? target = activeChar.getTarget();
+                if (target != null && target.isCreature())
+                {
+                    var creature = (Creature) target;
+                    creature.getEffectList().stopAbnormalVisualEffect(AbnormalVisualEffect.BIG_HEAD);
+                }
 			}
 			catch (Exception e)
-			{
-			}
+            {
+                _logger.Error(e);
+            }
 		}
 		else if (command.equals("admin_clearteams"))
 		{
@@ -354,7 +366,8 @@ public class AdminEffects: IAdminCommandHandler
 				World.getInstance().forEachVisibleObjectInRange<Player>(activeChar, radius, player => player.setTeam(team));
 			}
 			catch (Exception e)
-			{
+            {
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //setteam_close <none|blue|red> [radius]");
 			}
 		}
@@ -363,19 +376,22 @@ public class AdminEffects: IAdminCommandHandler
 			try
 			{
 				Team team = Enum.Parse<Team>(st.nextToken().toUpperCase());
-				Creature target = null;
-				if (activeChar.getTarget().isCreature())
+                WorldObject? activeCharTarget = activeChar.getTarget();
+				Creature? target = null;
+				if (activeCharTarget != null && activeCharTarget.isCreature())
 				{
-					target = (Creature) activeChar.getTarget();
+					target = (Creature)activeCharTarget;
 				}
 				else
 				{
 					return false;
 				}
+
 				target.setTeam(team);
 			}
 			catch (Exception e)
-			{
+            {
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //setteam <none|blue|red>");
 			}
 		}
@@ -383,15 +399,15 @@ public class AdminEffects: IAdminCommandHandler
 		{
 			try
 			{
-				string target = null;
-				WorldObject obj = activeChar.getTarget();
+				string? target = null;
+				WorldObject? obj = activeChar.getTarget();
 				if (st.countTokens() == 2)
 				{
 					int social = int.Parse(st.nextToken());
 					target = st.nextToken();
 					if (target != null)
 					{
-						Player player = World.getInstance().getPlayer(target);
+						Player? player = World.getInstance().getPlayer(target);
 						if (player != null)
 						{
 							if (performSocial(social, player, activeChar))
@@ -408,7 +424,8 @@ public class AdminEffects: IAdminCommandHandler
 								activeChar.sendMessage(radius + " units radius affected by your request.");
 							}
 							catch (FormatException nbe)
-							{
+                            {
+                                _logger.Error(nbe);
 								BuilderUtil.sendSysMessage(activeChar, "Incorrect parameter");
 							}
 						}
@@ -421,7 +438,7 @@ public class AdminEffects: IAdminCommandHandler
 					{
 						obj = activeChar;
 					}
-					
+
 					if (performSocial(social, obj, activeChar))
 					{
 						activeChar.sendMessage(obj.getName() + " was affected by your request.");
@@ -437,12 +454,13 @@ public class AdminEffects: IAdminCommandHandler
 				}
 			}
 			catch (Exception e)
-			{
-			}
+            {
+                _logger.Error(e);
+            }
 		}
 		else if (command.startsWith("admin_ave_abnormal"))
 		{
-			string param1 = null;
+			string? param1 = null;
 			if (st.countTokens() > 0)
 			{
 				param1 = st.nextToken();
@@ -452,18 +470,19 @@ public class AdminEffects: IAdminCommandHandler
 			if (!string.IsNullOrEmpty(param1) && !int.TryParse(param1, CultureInfo.InvariantCulture, out page))
 			{
 				AbnormalVisualEffect ave;
-				
+
 				try
 				{
 					ave = Enum.Parse<AbnormalVisualEffect>(param1);
 				}
 				catch (Exception e)
 				{
+                    _logger.Error(e);
 					return false;
 				}
-				
+
 				int radius = 0;
-				string param2 = null;
+				string? param2 = null;
 				if (st.countTokens() == 1)
 				{
 					param2 = st.nextToken();
@@ -472,16 +491,16 @@ public class AdminEffects: IAdminCommandHandler
 						radius = value;
 					}
 				}
-				
+
 				if (radius > 0)
 				{
-					World.getInstance().forEachVisibleObjectInRange<WorldObject>(activeChar, radius, obj => performAbnormalVisualEffect(ave, obj));
+					World.getInstance().forEachVisibleObjectInRange<WorldObject>(activeChar, radius, obj => PerformAbnormalVisualEffect(ave, obj));
 					BuilderUtil.sendSysMessage(activeChar, "Affected all characters in radius " + param2 + " by " + param1 + " abnormal visual effect.");
 				}
 				else
 				{
-					WorldObject obj = activeChar.getTarget() != null ? activeChar.getTarget() : activeChar;
-					if (performAbnormalVisualEffect(ave, obj))
+					WorldObject? obj = activeChar.getTarget() != null ? activeChar.getTarget() : activeChar;
+					if (PerformAbnormalVisualEffect(ave, obj) && obj != null)
 					{
 						activeChar.sendMessage(obj.getName() + " affected by " + param1 + " abnormal visual effect.");
 					}
@@ -500,7 +519,7 @@ public class AdminEffects: IAdminCommandHandler
 						sb.Append(string.Format(
 							"<button action=\"bypass admin_ave_abnormal {0}\" align=left icon=teleport>{1}({2})</button>",
 							ave.ToString(), ave.ToString(), (int)ave));
-						
+
 					}).build();
 
 				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/ave_abnormal.htm", activeChar);
@@ -513,7 +532,7 @@ public class AdminEffects: IAdminCommandHandler
 				{
 					htmlContent.Replace("%pages%", "");
 				}
-				
+
 				htmlContent.Replace("%abnormals%", result.getBodyTemplate().ToString());
 				activeChar.sendPacket(html);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //" + command.Replace("admin_", "") + " <AbnormalVisualEffect> [radius]");
@@ -524,7 +543,7 @@ public class AdminEffects: IAdminCommandHandler
 		{
 			try
 			{
-				WorldObject obj = activeChar.getTarget();
+				WorldObject? obj = activeChar.getTarget();
 				int level = 1;
 				TimeSpan hittime = TimeSpan.Zero;
 				int skill = int.Parse(st.nextToken());
@@ -553,19 +572,20 @@ public class AdminEffects: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //effect skill [level | level hittime]");
 			}
 		}
 		else if (command.startsWith("admin_set_displayeffect"))
 		{
-			WorldObject target = activeChar.getTarget();
-			if (!(target is Npc))
+			WorldObject? target = activeChar.getTarget();
+			if (target is not Npc npc)
 			{
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				return false;
 			}
-			Npc npc = (Npc) target;
-			try
+
+            try
 			{
 				string type = st.nextToken();
 				int diplayeffect = int.Parse(type);
@@ -573,6 +593,7 @@ public class AdminEffects: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //set_displayeffect <id>");
 			}
 		}
@@ -580,10 +601,11 @@ public class AdminEffects: IAdminCommandHandler
 		{
 			try
 			{
-				new MovieHolder([activeChar], (Movie)(int.Parse(st.nextToken())));
+				new MovieHolder([activeChar], (Movie)int.Parse(st.nextToken()));
 			}
 			catch (Exception e)
-			{
+            {
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //playmovie <id>");
 			}
 		}
@@ -597,7 +619,8 @@ public class AdminEffects: IAdminCommandHandler
 				activeChar.sendPacket(new OnEventTriggerPacket(triggerId, enable));
 			}
 			catch (Exception e)
-			{
+            {
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //event_trigger id [true | false]");
 			}
 		}
@@ -605,22 +628,22 @@ public class AdminEffects: IAdminCommandHandler
 		{
 			activeChar.setTargetable(!activeChar.isTargetable());
 		}
-		
+
 		if (command.contains("menu"))
 		{
 			showMainPage(activeChar, command);
 		}
 		return true;
 	}
-	
+
 	/**
 	 * @param ave the abnormal visual effect
 	 * @param target the target
 	 * @return {@code true} if target's abnormal state was affected, {@code false} otherwise.
 	 */
-	private bool performAbnormalVisualEffect(AbnormalVisualEffect ave, WorldObject target)
+	private static bool PerformAbnormalVisualEffect(AbnormalVisualEffect ave, WorldObject? target)
 	{
-		if (target.isCreature())
+		if (target != null && target.isCreature())
 		{
 			Creature creature = (Creature) target;
 			if (!creature.getEffectList().hasAbnormalVisualEffect(ave))
@@ -635,7 +658,7 @@ public class AdminEffects: IAdminCommandHandler
 		}
 		return false;
 	}
-	
+
 	private bool performSocial(int action, WorldObject target, Player activeChar)
 	{
 		try
@@ -647,12 +670,12 @@ public class AdminEffects: IAdminCommandHandler
 					activeChar.sendPacket(SystemMessageId.NOTHING_HAPPENED);
 					return false;
 				}
-				if ((target.isNpc()) && ((action < 1) || (action > 20)))
+				if (target.isNpc() && (action < 1 || action > 20))
 				{
 					activeChar.sendPacket(SystemMessageId.NOTHING_HAPPENED);
 					return false;
 				}
-				if ((target.isPlayer()) && ((action < 2) || ((action > 18) && (action != SocialActionPacket.LEVEL_UP))))
+				if (target.isPlayer() && (action < 2 || (action > 18 && action != SocialActionPacket.LEVEL_UP)))
 				{
 					activeChar.sendPacket(SystemMessageId.NOTHING_HAPPENED);
 					return false;
@@ -666,11 +689,12 @@ public class AdminEffects: IAdminCommandHandler
 			}
 		}
 		catch (Exception e)
-		{
-		}
+        {
+            _logger.Error(e);
+        }
 		return true;
 	}
-	
+
 	/**
 	 * @param type - atmosphere type (signssky,sky)
 	 * @param state - atmosphere state(night,day)
@@ -706,7 +730,7 @@ public class AdminEffects: IAdminCommandHandler
 			BuilderUtil.sendSysMessage(activeChar, "Usage: //atmosphere <signsky dawn|dusk>|<sky day|night|red> <duration>");
 		}
 	}
-	
+
 	private void playAdminSound(Player activeChar, string sound)
 	{
 		PlaySoundPacket snd = new PlaySoundPacket(1, sound, 0, 0, 0, 0, 0);
@@ -714,12 +738,12 @@ public class AdminEffects: IAdminCommandHandler
 		activeChar.broadcastPacket(snd);
 		BuilderUtil.sendSysMessage(activeChar, "Playing " + sound + ".");
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	private void showMainPage(Player activeChar, string command)
 	{
 		string filename = "effects_menu";

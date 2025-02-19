@@ -10,6 +10,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -19,13 +20,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminFightCalculator: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminFightCalculator));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_fight_calculator",
 		"admin_fight_calculator_show",
 		"admin_fcs",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		try
@@ -45,16 +47,17 @@ public class AdminFightCalculator: IAdminCommandHandler
 		}
 		catch (IndexOutOfRangeException e)
 		{
+            _logger.Error(e);
 			// Do nothing.
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	private void handleStart(string pars, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(pars);
@@ -86,46 +89,46 @@ public class AdminFightCalculator: IAdminCommandHandler
 				continue;
 			}
 		}
-		
-		NpcTemplate npc1 = null;
+
+		NpcTemplate? npc1 = null;
 		if (mid1 != 0)
 		{
 			npc1 = NpcData.getInstance().getTemplate(mid1);
 		}
-		NpcTemplate npc2 = null;
+		NpcTemplate? npc2 = null;
 		if (mid2 != 0)
 		{
 			npc2 = NpcData.getInstance().getTemplate(mid2);
 		}
-		
+
 		string replyMSG;
-		if ((npc1 != null) && (npc2 != null))
+		if (npc1 != null && npc2 != null)
 		{
 			replyMSG = "<html><title>Selected mobs to fight</title><body><table><tr><td>First</td><td>Second</td></tr><tr><td>level " + lvl1 + "</td><td>level " + lvl2 + "</td></tr><tr><td>id " + npc1.getId() + "</td><td>id " + npc2.getId() + "</td></tr><tr><td>" + npc1.getName() + "</td><td>" + npc2.getName() + "</td></tr></table><center><br><br><br><button value=\"OK\" action=\"bypass -h admin_fight_calculator_show " + npc1.getId() + " " + npc2.getId() + "\"  width=100 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>";
 		}
-		else if ((lvl1 != 0) && (npc1 == null))
+		else if (lvl1 != 0 && npc1 == null)
 		{
 			List<NpcTemplate> npcs = NpcData.getInstance().getAllOfLevel(lvl1);
-			StringBuilder sb = new StringBuilder(50 + (npcs.Count * 200));
+			StringBuilder sb = new StringBuilder(50 + npcs.Count * 200);
 			sb.Append("<html><title>Select first mob to fight</title><body><table>");
 			foreach (NpcTemplate n in npcs)
 			{
 				sb.Append("<tr><td><a action=\"bypass -h admin_fight_calculator lvl1 " + lvl1 + " lvl2 " + lvl2 + " mid1 " + n.getId() + " mid2 " + mid2 + "\">" + n.getName() + "</a></td></tr>");
 			}
-			
+
 			sb.Append("</table></body></html>");
 			replyMSG = sb.ToString();
 		}
-		else if ((lvl2 != 0) && (npc2 == null))
+		else if (lvl2 != 0 && npc2 == null)
 		{
 			List<NpcTemplate> npcs = NpcData.getInstance().getAllOfLevel(lvl2);
-			StringBuilder sb = new StringBuilder(50 + (npcs.Count * 200));
+			StringBuilder sb = new StringBuilder(50 + npcs.Count * 200);
 			sb.Append("<html><title>Select second mob to fight</title><body><table>");
 			foreach (NpcTemplate n in npcs)
 			{
 				sb.Append("<tr><td><a action=\"bypass -h admin_fight_calculator lvl1 " + lvl1 + " lvl2 " + lvl2 + " mid1 " + mid1 + " mid2 " + n.getId() + "\">" + n.getName() + "</a></td></tr>");
 			}
-			
+
 			sb.Append("</table></body></html>");
 			replyMSG = sb.ToString();
 		}
@@ -133,21 +136,21 @@ public class AdminFightCalculator: IAdminCommandHandler
 		{
 			replyMSG = "<html><title>Select mobs to fight</title><body><table><tr><td>First</td><td>Second</td></tr><tr><td><edit var=\"lvl1\" width=80></td><td><edit var=\"lvl2\" width=80></td></tr></table><center><br><br><br><button value=\"OK\" action=\"bypass -h admin_fight_calculator lvl1 $lvl1 lvl2 $lvl2\"  width=100 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>";
 		}
-		
+
 		HtmlContent htmlContent = HtmlContent.LoadFromText(replyMSG, activeChar);
 		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		activeChar.sendPacket(adminReply);
 	}
-	
+
 	private void handleShow(string pars, Player activeChar)
 	{
 		string trimmedParams = pars.Trim();
-		Creature npc1 = null;
-		Creature npc2 = null;
+		Creature? npc1 = null;
+		Creature? npc2 = null;
 		if (string.IsNullOrEmpty(trimmedParams))
 		{
 			npc1 = activeChar;
-			npc2 = (Creature) activeChar.getTarget();
+			npc2 = (Creature?) activeChar.getTarget();
 			if (npc2 == null)
 			{
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
@@ -161,10 +164,27 @@ public class AdminFightCalculator: IAdminCommandHandler
 			StringTokenizer st = new StringTokenizer(trimmedParams);
 			mid1 = int.Parse(st.nextToken());
 			mid2 = int.Parse(st.nextToken());
-			npc1 = new Monster(NpcData.getInstance().getTemplate(mid1));
-			npc2 = new Monster(NpcData.getInstance().getTemplate(mid2));
+
+            NpcTemplate? npc1Template = NpcData.getInstance().getTemplate(mid1);
+            if (npc1Template == null)
+            {
+                activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
+                activeChar.sendMessage("NPC with id " + mid1 + " not found.");
+                return;
+            }
+
+            NpcTemplate? npc2Template = NpcData.getInstance().getTemplate(mid2);
+            if (npc2Template == null)
+            {
+                activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
+                activeChar.sendMessage("NPC with id " + mid2 + " not found.");
+                return;
+            }
+
+			npc1 = new Monster(npc1Template);
+			npc2 = new Monster(npc2Template);
 		}
-		
+
 		int miss1 = 0;
 		int miss2 = 0;
 		int shld1 = 0;
@@ -177,7 +197,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 		double pdef2 = 0;
 		double dmg1 = 0;
 		double dmg2 = 0;
-		
+
 		// ATTACK speed in milliseconds
 		int sAtk1 = Formulas.calculateTimeBetweenAttacks(npc1.getPAtkSpd());
 		int sAtk2 = Formulas.calculateTimeBetweenAttacks(npc2.getPAtkSpd());
@@ -201,11 +221,11 @@ public class AdminFightCalculator: IAdminCommandHandler
 			{
 				crit1++;
 			}
-			
+
 			double npcPatk1 = npc1.getPAtk();
 			npcPatk1 += npc1.getRandomDamageMultiplier();
 			patk1 += npcPatk1;
-			
+
 			double npcPdef1 = npc1.getPDef();
 			pdef1 += npcPdef1;
 			if (!calcMiss1)
@@ -215,7 +235,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 				npc1.abortAttack();
 			}
 		}
-		
+
 		for (int i = 0; i < 10000; i++)
 		{
 			bool calcMiss2 = Formulas.calcHitMiss(npc2, npc1);
@@ -233,11 +253,11 @@ public class AdminFightCalculator: IAdminCommandHandler
 			{
 				crit2++;
 			}
-			
+
 			double npcPatk2 = npc2.getPAtk();
 			npcPatk2 *= npc2.getRandomDamageMultiplier();
 			patk2 += npcPatk2;
-			
+
 			double npcPdef2 = npc2.getPDef();
 			pdef2 += npcPdef2;
 			if (!calcMiss2)
@@ -247,7 +267,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 				npc2.abortAttack();
 			}
 		}
-		
+
 		miss1 /= 100;
 		miss2 /= 100;
 		shld1 /= 100;
@@ -260,15 +280,15 @@ public class AdminFightCalculator: IAdminCommandHandler
 		pdef2 /= 10000;
 		dmg1 /= 10000;
 		dmg2 /= 10000;
-		
+
 		// total damage per 100 seconds
 		int tdmg1 = (int) (sAtk1 * dmg1);
 		int tdmg2 = (int) (sAtk2 * dmg2);
 		// HP restored per 100 seconds
 		double maxHp1 = npc1.getMaxHp();
-		int hp1 = (int) ((npc1.getStat().getValue(Stat.REGENERATE_HP_RATE) * 100000) / Formulas.getRegeneratePeriod(npc1));
+		int hp1 = (int) (npc1.getStat().getValue(Stat.REGENERATE_HP_RATE) * 100000 / Formulas.getRegeneratePeriod(npc1));
 		double maxHp2 = npc2.getMaxHp();
-		int hp2 = (int) ((npc2.getStat().getValue(Stat.REGENERATE_HP_RATE) * 100000) / Formulas.getRegeneratePeriod(npc2));
+		int hp2 = (int) (npc2.getStat().getValue(Stat.REGENERATE_HP_RATE) * 100000 / Formulas.getRegeneratePeriod(npc2));
 
 		StringBuilder replyMSG = new StringBuilder(1000);
 		replyMSG.Append("<html><title>Selected mobs to fight</title><body><table>");
@@ -280,28 +300,28 @@ public class AdminFightCalculator: IAdminCommandHandler
 		{
 			replyMSG.Append("<tr><td width=140>Parameter</td><td width=70>" + ((NpcTemplate) npc1.getTemplate()).getName() + "</td><td width=70>" + ((NpcTemplate) npc2.getTemplate()).getName() + "</td></tr>");
 		}
-		
+
 		replyMSG.Append("<tr><td>miss</td><td>" + miss1 + "%</td><td>" + miss2 + "%</td></tr><tr><td>shld</td><td>" + shld2 + "%</td><td>" + shld1 + "%</td></tr><tr><td>crit</td><td>" + crit1 + "%</td><td>" + crit2 + "%</td></tr><tr><td>pAtk / pDef</td><td>" + (int) patk1 + " / " + (int) pdef1 + "</td><td>" + (int) patk2 + " / " + (int) pdef2 + "</td></tr><tr><td>made hits</td><td>" + sAtk1 + "</td><td>" + sAtk2 + "</td></tr><tr><td>dmg per hit</td><td>" + (int) dmg1 + "</td><td>" + (int) dmg2 + "</td></tr><tr><td>got dmg</td><td>" + tdmg2 + "</td><td>" + tdmg1 + "</td></tr><tr><td>got regen</td><td>" + hp1 + "</td><td>" + hp2 + "</td></tr><tr><td>had HP</td><td>" + (int) maxHp1 + "</td><td>" + (int) maxHp2 + "</td></tr><tr><td>die</td>");
-		if ((tdmg2 - hp1) > 1)
+		if (tdmg2 - hp1 > 1)
 		{
-			replyMSG.Append("<td>" + ((int) ((100 * maxHp1) / (tdmg2 - hp1))) + " sec</td>");
+			replyMSG.Append("<td>" + (int) (100 * maxHp1 / (tdmg2 - hp1)) + " sec</td>");
 		}
 		else
 		{
 			replyMSG.Append("<td>never</td>");
 		}
-		
-		if ((tdmg1 - hp2) > 1)
+
+		if (tdmg1 - hp2 > 1)
 		{
-			replyMSG.Append("<td>" + ((int) ((100 * maxHp2) / (tdmg1 - hp2))) + " sec</td>");
+			replyMSG.Append("<td>" + (int) (100 * maxHp2 / (tdmg1 - hp2)) + " sec</td>");
 		}
 		else
 		{
 			replyMSG.Append("<td>never</td>");
 		}
-		
+
 		replyMSG.Append("</tr></table><center><br>");
-		
+
 		if (string.IsNullOrEmpty(trimmedParams))
 		{
 			replyMSG.Append("<button value=\"Retry\" action=\"bypass -h admin_fight_calculator_show\"  width=100 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
@@ -310,13 +330,13 @@ public class AdminFightCalculator: IAdminCommandHandler
 		{
 			replyMSG.Append("<button value=\"Retry\" action=\"bypass -h admin_fight_calculator_show " + ((NpcTemplate) npc1.getTemplate()).getId() + " " + ((NpcTemplate) npc2.getTemplate()).getId() + "\"  width=100 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 		}
-		
+
 		replyMSG.Append("</center></body></html>");
-		
+
 		HtmlContent htmlContent = HtmlContent.LoadFromText(replyMSG.ToString(), activeChar);
 		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		activeChar.sendPacket(adminReply);
-		
+
 		if (trimmedParams.Length != 0)
 		{
 			npc1.deleteMe();

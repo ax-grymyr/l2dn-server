@@ -21,27 +21,27 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminShowQuests: IAdminCommandHandler
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminShowQuests));
-	
+
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_charquestmenu",
 		"admin_setcharquest",
     ];
-	
+
 	private static readonly string[] _states =
     [
         "CREATED",
 		"STARTED",
 		"COMPLETED",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		string[] cmdParams = command.Split(" ");
-		Player target = null;
-		WorldObject targetObject = null;
+		Player? target = null;
+		WorldObject? targetObject = null;
 		string[] val = new string[4];
-		val[0] = null;
+		val[0] = string.Empty;
 		if (cmdParams.Length > 1)
 		{
 			target = World.getInstance().getPlayer(cmdParams[1]);
@@ -71,7 +71,7 @@ public class AdminShowQuests: IAdminCommandHandler
 					val[0] = "name";
 					val[1] = cmdParams[2];
 				}
-				if ((cmdParams.Length > 3) && cmdParams[3].equals("custom"))
+				if (cmdParams.Length > 3 && cmdParams[3].equals("custom"))
 				{
 					val[0] = "custom";
 					val[1] = cmdParams[2];
@@ -81,21 +81,21 @@ public class AdminShowQuests: IAdminCommandHandler
 		else
 		{
 			targetObject = activeChar.getTarget();
-			if ((targetObject != null) && targetObject.isPlayer())
+			if (targetObject != null && targetObject.isPlayer())
 			{
 				target = targetObject.getActingPlayer();
 			}
 		}
-		
+
 		if (target == null)
 		{
 			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 			return false;
 		}
-		
+
 		if (command.startsWith("admin_charquestmenu"))
 		{
-			if (val[0] != null)
+			if (!string.IsNullOrEmpty(val[0]))
 			{
 				showQuestMenu(target, activeChar, val);
 			}
@@ -124,7 +124,7 @@ public class AdminShowQuests: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	private void showFirstQuestMenu(Player target, Player actor)
 	{
 		StringBuilder replyMSG = new StringBuilder("<html><body><table width=270><tr><td width=45><button value=\"Main\" action=\"bypass admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center>Player: " + target.getName() + "</center></td><td width=45><button value=\"Back\" action=\"bypass -h admin_admin6\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table>");
@@ -138,19 +138,19 @@ public class AdminShowQuests: IAdminCommandHandler
 		replyMSG.Append("<tr><td><br><br>Manual Edit by Quest number:<br></td></tr>");
 		replyMSG.Append("<tr><td><edit var=\"qn\" width=50 height=15><br><button value=\"Edit\" action=\"bypass -h admin_charquestmenu " + target.getName() + " $qn custom\" width=50 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
 		replyMSG.Append("</table></center></body></html>");
-		
+
 		HtmlContent htmlContent = HtmlContent.LoadFromText(replyMSG.ToString(), actor);
 		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		actor.sendPacket(adminReply);
 	}
-	
+
 	private void showQuestMenu(Player target, Player actor, string[] val)
 	{
 		try
 		{
 			int ID = target.ObjectId;
 			StringBuilder replyMSG = new StringBuilder("<html><body>");
-			
+
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			switch (val[0])
 			{
@@ -159,7 +159,7 @@ public class AdminShowQuests: IAdminCommandHandler
 					replyMSG.Append("<table width=250><tr><td>Full Quest List for <font color=\"LEVEL\">" + target.getName() + "</font> (ID:" + ID + ")</td></tr>");
 					var query = ctx.CharacterQuests.Where(r => r.CharacterId == ID && r.Variable == "<state>")
 						.OrderBy(r => r.Name);
-					
+
 					foreach (var record in query)
 					{
 						replyMSG.Append("<tr><td><a action=\"bypass -h admin_charquestmenu " + target.getName() + " " + record.CharacterId + "\">" + record.Name + "</a></td></tr>");
@@ -169,8 +169,8 @@ public class AdminShowQuests: IAdminCommandHandler
 				}
 				case "name":
 				{
-					QuestState qs = target.getQuestState(val[1]);
-					string state = (qs != null) ? _states[qs.getState()] : "CREATED";
+					QuestState? qs = target.getQuestState(val[1]);
+					string state = qs != null ? _states[qs.getState()] : "CREATED";
 					replyMSG.Append("Character: <font color=\"LEVEL\">" + target.getName() + "</font><br>Quest: <font color=\"LEVEL\">" + val[1] + "</font><br>State: <font color=\"LEVEL\">" + state + "</font><br><br>");
 					replyMSG.Append("<center><table width=250><tr><td>Var</td><td>Value</td><td>New Value</td><td>&nbsp;</td></tr>");
 
@@ -200,7 +200,7 @@ public class AdminShowQuests: IAdminCommandHandler
 					var query = ctx.CharacterQuests
 						.Where(r => r.CharacterId == ID && r.Variable == "<state>" && r.Value == value)
 						.Select(r => r.Name).Distinct();
-					
+
 					foreach (var record in query)
 					{
 						replyMSG.Append("<tr><td><a action=\"bypass -h admin_charquestmenu " + target.getName() + " " + record + "\">" + record + "</a></td></tr>");
@@ -213,10 +213,10 @@ public class AdminShowQuests: IAdminCommandHandler
 					bool exqdb = true;
 					bool exqch = true;
 					int qnumber = int.Parse(val[1]);
-					string state = null;
-					string qname = null;
-					QuestState qs = null;
-					
+					string? state = null;
+					string? qname = null;
+					QuestState? qs = null;
+
 					Quest quest = QuestManager.getInstance().getQuest(qnumber);
 					if (quest != null)
 					{
@@ -227,7 +227,7 @@ public class AdminShowQuests: IAdminCommandHandler
 					{
 						exqdb = false;
 					}
-					
+
 					if (qs != null)
 					{
 						state = _states[qs.getState()];
@@ -237,7 +237,7 @@ public class AdminShowQuests: IAdminCommandHandler
 						exqch = false;
 						state = "N/A";
 					}
-					
+
 					if (exqdb)
 					{
 						if (exqch)
@@ -277,7 +277,7 @@ public class AdminShowQuests: IAdminCommandHandler
 					break;
 				}
 			}
-			
+
 			HtmlContent htmlContent = HtmlContent.LoadFromText(replyMSG.ToString(), actor);
 			NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 			actor.sendPacket(adminReply);
@@ -288,20 +288,26 @@ public class AdminShowQuests: IAdminCommandHandler
 			LOGGER.Warn(nameof(AdminShowQuests) + ": " + e);
 		}
 	}
-	
+
 	private void setQuestVar(Player target, Player actor, string[] val)
 	{
-		QuestState qs = target.getQuestState(val[0]);
+		QuestState? qs = target.getQuestState(val[0]);
+        if (qs == null)
+        {
+            LOGGER.Error("QuestState is null.");
+            return;
+        }
+
 		string[] outval = new string[3];
 		qs.setSimulated(false);
-		
+
 		if (val[1].equals("state"))
 		{
 			switch (val[2])
 			{
 				case "COMPLETED":
 				{
-					qs.exitQuest((val[3].equals("1")) ? QuestType.REPEATABLE : QuestType.ONE_TIME);
+					qs.exitQuest(val[3].equals("1") ? QuestType.REPEATABLE : QuestType.ONE_TIME);
 					break;
 				}
 				case "DELETE":
@@ -351,7 +357,7 @@ public class AdminShowQuests: IAdminCommandHandler
 		outval[1] = val[0];
 		showQuestMenu(target, actor, outval);
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

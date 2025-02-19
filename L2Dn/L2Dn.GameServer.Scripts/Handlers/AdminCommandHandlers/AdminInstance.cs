@@ -45,12 +45,12 @@ public class AdminInstance: IAdminCommandHandler
 		150, // Orbis Arena
 		148, // Three Bridges Arena
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
 		string actualCommand = st.nextToken();
-		
+
 		switch (actualCommand.toLowerCase())
 		{
 			case "admin_instance":
@@ -76,7 +76,7 @@ public class AdminInstance: IAdminCommandHandler
 				{
 					string enterGroup = st.hasMoreTokens() ? st.nextToken() : "Alone";
 					List<Player> members = [];
-					
+
 					switch (enterGroup)
 					{
 						case "Alone":
@@ -85,10 +85,11 @@ public class AdminInstance: IAdminCommandHandler
 							break;
 						}
 						case "Party":
-						{
-							if (activeChar.isInParty())
+                        {
+                            Party? party = activeChar.getParty();
+							if (activeChar.isInParty() && party != null)
 							{
-								members.AddRange(activeChar.getParty().getMembers());
+								members.AddRange(party.getMembers());
 							}
 							else
 							{
@@ -98,13 +99,14 @@ public class AdminInstance: IAdminCommandHandler
 						}
 						case "CommandChannel":
 						{
-							if (activeChar.isInCommandChannel())
+                            Party? party = activeChar.getParty();
+							if (activeChar.isInCommandChannel() && party != null)
 							{
-								members.AddRange(activeChar.getParty().getCommandChannel().getMembers());
+								members.AddRange(party.getCommandChannel().getMembers());
 							}
-							else if (activeChar.isInParty())
+							else if (activeChar.isInParty() && party != null)
 							{
-								members.AddRange(activeChar.getParty().getMembers());
+								members.AddRange(party.getMembers());
 							}
 							else
 							{
@@ -118,7 +120,7 @@ public class AdminInstance: IAdminCommandHandler
 							return true;
 						}
 					}
-					
+
 					Instance instance = InstanceManager.getInstance().createInstance(template, activeChar);
 					Location? loc = instance.getEnterLocation();
 					if (loc != null)
@@ -172,13 +174,12 @@ public class AdminInstance: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	private void sendTemplateDetails(Player player, int templateId)
 	{
-		if (InstanceManager.getInstance().getInstanceTemplate(templateId) != null)
+        InstanceTemplate? template = InstanceManager.getInstance().getInstanceTemplate(templateId);
+		if (template != null)
 		{
-			InstanceTemplate template = InstanceManager.getInstance().getInstanceTemplate(templateId);
-
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/instances_detail.htm", player);
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 			StringBuilder sb = new StringBuilder();
@@ -196,8 +197,8 @@ public class AdminInstance: IAdminCommandHandler
 			sb.Append("<td fixwidth=\"83\"><font color=\"LEVEL\">Destroy</font></td>");
 			sb.Append("</tr>");
 			sb.Append("</table>");
-			
-			InstanceManager.getInstance().getInstances().Where(inst => (inst.getTemplateId() == templateId)).OrderBy(x => x.getPlayersCount()).ForEach(instance =>
+
+			InstanceManager.getInstance().getInstances().Where(inst => inst.getTemplateId() == templateId).OrderBy(x => x.getPlayersCount()).ForEach(instance =>
 			{
 				sb.Append("<table border=0 cellpadding=2 cellspacing=0 bgcolor=\"363636\">");
 				sb.Append("<tr>");
@@ -207,7 +208,7 @@ public class AdminInstance: IAdminCommandHandler
 				sb.Append("</tr>");
 				sb.Append("</table>");
 			});
-			
+
 			htmlContent.Replace("%instanceList%", sb.ToString());
 			player.sendPacket(html);
 		}
@@ -217,17 +218,17 @@ public class AdminInstance: IAdminCommandHandler
 			useAdminCommand("admin_instance", player);
 		}
 	}
-	
+
 	private void sendTemplateList(Player player, int page)
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/instances_list.htm", player);
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
-		
+
 		InstanceManager instManager = InstanceManager.getInstance();
 		List<InstanceTemplate> templateList = instManager.getInstanceTemplates()
 			.OrderByDescending(x => x.getWorldCount())
 			.Where(template => Array.IndexOf(IGNORED_TEMPLATES, template.getId()) < 0).ToList();
-		
+
 		//@formatter:off
 		PageResult result = PageBuilder.newBuilder(templateList, 4, "bypass -h admin_instancelist")
 			.currentPage(page)
@@ -246,24 +247,24 @@ public class AdminInstance: IAdminCommandHandler
 			sb.Append("<td align=center fixwidth=\"83\"></td>");
 			sb.Append("<td align=center fixwidth=\"83\">" + template.getWorldCount() + " / " + (template.getMaxWorlds() == -1 ? "Unlimited" : template.getMaxWorlds()) + "</td>");
 			sb.Append("</tr>");
-			
+
 			sb.Append("<tr>");
 			sb.Append("<td align=center fixwidth=\"83\">Detailed info:</td>");
 			sb.Append("<td align=center fixwidth=\"83\"></td>");
 			sb.Append("<td align=center fixwidth=\"83\"><button value=\"Show me!\" action=\"bypass -h admin_instancelist id=" + template.getId() + "\" width=\"85\" height=\"20\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 			sb.Append("</tr>");
-			
-			
+
+
 			sb.Append("</table>");
 			sb.Append("<br>");
 		}).build();
 		//@formatter:on
-		
+
 		htmlContent.Replace("%pages%", result.getPages() > 0 ? "<center><table width=\"100%\" cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table></center>" : "");
 		htmlContent.Replace("%data%", result.getBodyTemplate().ToString());
 		player.sendPacket(html);
 	}
-	
+
 	private void processBypass(Player player, BypassParser parser)
 	{
 		int page = parser.getInt("page", 0);
@@ -277,7 +278,7 @@ public class AdminInstance: IAdminCommandHandler
 			sendTemplateList(player, page);
 		}
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

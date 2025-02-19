@@ -4,6 +4,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -13,6 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminSuperHaste: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminSuperHaste));
 	public static readonly string[] ADMIN_COMMANDS =
     [
         "admin_superhaste",
@@ -20,9 +22,9 @@ public class AdminSuperHaste: IAdminCommandHandler
 		"admin_speed",
 		"admin_speed_menu",
     ];
-	
+
 	private static int SUPER_HASTE_ID = 7029;
-	
+
 	public bool useAdminCommand(string command, Player player)
 	{
 		StringTokenizer st = new StringTokenizer(command);
@@ -36,21 +38,22 @@ public class AdminSuperHaste: IAdminCommandHandler
 				{
 					int val = int.Parse(st.nextToken());
 					bool sendMessage = player.isAffectedBySkill(SUPER_HASTE_ID);
-					player.stopSkillEffects((val == 0) && sendMessage ? SkillFinishType.REMOVED : SkillFinishType.NORMAL, SUPER_HASTE_ID);
-					if ((val >= 1) && (val <= 4))
+					player.stopSkillEffects(val == 0 && sendMessage ? SkillFinishType.REMOVED : SkillFinishType.NORMAL, SUPER_HASTE_ID);
+					if (val >= 1 && val <= 4)
 					{
 						int time = 0;
 						if (st.hasMoreTokens())
 						{
 							time = int.Parse(st.nextToken());
 						}
-						
-						Skill superHasteSkill = SkillData.getInstance().getSkill(SUPER_HASTE_ID, val);
-						superHasteSkill.applyEffects(player, player, true, TimeSpan.FromSeconds(time));
+
+						Skill? superHasteSkill = SkillData.getInstance().getSkill(SUPER_HASTE_ID, val);
+						superHasteSkill?.applyEffects(player, player, true, TimeSpan.FromSeconds(time));
 					}
 				}
 				catch (Exception e)
 				{
+                    _logger.Error(e);
 					player.sendMessage("Usage: //superhaste <Effect level (0-4)> <Time in seconds>");
 				}
 				break;
@@ -62,10 +65,10 @@ public class AdminSuperHaste: IAdminCommandHandler
 				break;
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

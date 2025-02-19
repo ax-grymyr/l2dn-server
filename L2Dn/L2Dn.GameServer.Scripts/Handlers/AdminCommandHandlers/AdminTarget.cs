@@ -2,6 +2,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -11,11 +12,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminTarget: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminTarget));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_target",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_target"))
@@ -24,18 +26,18 @@ public class AdminTarget: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	private void handleTarget(string command, Player activeChar)
 	{
 		try
 		{
 			string targetName = command.Substring(13);
-			Player player = World.getInstance().getPlayer(targetName);
+			Player? player = World.getInstance().getPlayer(targetName);
 			if (player != null)
 			{
 				player.onAction(activeChar);
@@ -47,6 +49,7 @@ public class AdminTarget: IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
+            _logger.Error(e);
 			BuilderUtil.sendSysMessage(activeChar, "Please specify correct name.");
 		}
 	}

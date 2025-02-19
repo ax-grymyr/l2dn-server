@@ -11,6 +11,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -19,6 +20,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminFence: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminFence));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_addfence",
@@ -27,7 +29,7 @@ public class AdminFence: IAdminCommandHandler
 		"admin_listfence",
 		"admin_gofence",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
@@ -41,22 +43,23 @@ public class AdminFence: IAdminCommandHandler
 					int width = int.Parse(st.nextToken());
 					int Length = int.Parse(st.nextToken());
 					int height = int.Parse(st.nextToken());
-					if ((width < 1) || (Length < 1))
+					if (width < 1 || Length < 1)
 					{
 						BuilderUtil.sendSysMessage(activeChar, "Width and length values must be positive numbers.");
 						return false;
 					}
-					if ((height < 1) || (height > 3))
+					if (height < 1 || height > 3)
 					{
 						BuilderUtil.sendSysMessage(activeChar, "The range for height can only be 1-3.");
 						return false;
 					}
-					
+
 					FenceData.getInstance().spawnFence(activeChar.Location.Location3D, width, Length, height, activeChar.getInstanceId(), FenceState.CLOSED);
 					BuilderUtil.sendSysMessage(activeChar, "Fence added succesfully.");
 				}
 				catch (Exception e)
 				{
+                    _logger.Error(e);
 					BuilderUtil.sendSysMessage(activeChar, "Format must be: //addfence <width> <length> <height>");
 				}
 				break;
@@ -68,17 +71,16 @@ public class AdminFence: IAdminCommandHandler
 					var fenceValues = EnumUtil.GetValues<FenceState>();
 					int objId = int.Parse(st.nextToken());
 					int fenceTypeOrdinal = int.Parse(st.nextToken());
-					if ((fenceTypeOrdinal < 0) || (fenceTypeOrdinal >= fenceValues.Length))
+					if (fenceTypeOrdinal < 0 || fenceTypeOrdinal >= fenceValues.Length)
 					{
 						BuilderUtil.sendSysMessage(activeChar, "Specified FenceType is out of range. Only 0-" + (fenceValues.Length - 1) + " are permitted.");
 					}
 					else
 					{
-						WorldObject obj = World.getInstance().findObject(objId);
-						if (obj is Fence)
+						WorldObject? obj = World.getInstance().findObject(objId);
+						if (obj is Fence fence)
 						{
-							Fence fence = (Fence) obj;
-							FenceState state = fenceValues[fenceTypeOrdinal];
+                            FenceState state = fenceValues[fenceTypeOrdinal];
 							fence.setState(state);
 							BuilderUtil.sendSysMessage(activeChar, "Fence " + fence.getName() + "[" + fence.getId() + "]'s state has been changed to " + state.ToString());
 						}
@@ -90,6 +92,7 @@ public class AdminFence: IAdminCommandHandler
 				}
 				catch (Exception e)
 				{
+                    _logger.Error(e);
 					BuilderUtil.sendSysMessage(activeChar, "Format mustr be: //setfencestate <fenceObjectId> <fenceState>");
 				}
 				break;
@@ -99,10 +102,10 @@ public class AdminFence: IAdminCommandHandler
 				try
 				{
 					int objId = int.Parse(st.nextToken());
-					WorldObject obj = World.getInstance().findObject(objId);
-					if (obj is Fence)
+					WorldObject? obj = World.getInstance().findObject(objId);
+					if (obj is Fence fence)
 					{
-						((Fence) obj).deleteMe();
+						fence.deleteMe();
 						BuilderUtil.sendSysMessage(activeChar, "Fence removed succesfully.");
 					}
 					else
@@ -112,6 +115,7 @@ public class AdminFence: IAdminCommandHandler
 				}
 				catch (Exception e)
 				{
+                    _logger.Error(e);
 					BuilderUtil.sendSysMessage(activeChar, "Invalid object ID or target was not found.");
 				}
 				sendHtml(activeChar, 0);
@@ -132,7 +136,7 @@ public class AdminFence: IAdminCommandHandler
 				try
 				{
 					int objId = int.Parse(st.nextToken());
-					WorldObject obj = World.getInstance().findObject(objId);
+					WorldObject? obj = World.getInstance().findObject(objId);
 					if (obj != null)
 					{
 						activeChar.teleToLocation(obj.Location);
@@ -140,20 +144,21 @@ public class AdminFence: IAdminCommandHandler
 				}
 				catch (Exception e)
 				{
+                    _logger.Error(e);
 					BuilderUtil.sendSysMessage(activeChar, "Invalid object ID or target was not found.");
 				}
 				break;
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	private void sendHtml(Player activeChar, int page)
 	{
 		PageResult result = PageBuilder.newBuilder(FenceData.getInstance().getFences().Values.ToList(), 10, "bypass -h admin_listfence").currentPage(page).style(ButtonsStyle.INSTANCE).bodyHandler((pages, fence, sb) =>
@@ -196,7 +201,7 @@ public class AdminFence: IAdminCommandHandler
 		{
 			htmlContent.Replace("%pages%", "");
 		}
-		
+
 		htmlContent.Replace("%fences%", result.getBodyTemplate().ToString());
 		activeChar.sendPacket(html);
 	}

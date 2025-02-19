@@ -54,7 +54,7 @@ public class SpawnTable
 	 * @param npcId the NPC Id
 	 * @return a spawn for the given NPC ID or {@code null}
 	 */
-	public Spawn getAnySpawn(int npcId)
+	public Spawn? getAnySpawn(int npcId)
 	{
 		return getSpawns(npcId).FirstOrDefault();
 	}

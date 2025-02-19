@@ -30,15 +30,15 @@ public class AdminFortSiege: IAdminCommandHandler
 		"admin_setfort",
 		"admin_removefort",
     ];
-	
+
 	public bool useAdminCommand(string commandValue, Player activeChar)
 	{
 		string command = commandValue;
 		StringTokenizer st = new StringTokenizer(command, " ");
 		command = st.nextToken(); // Get actual command
-		
+
 		// Get fort
-		Fort fort = null;
+		Fort? fort = null;
 		int fortId = 0;
 		if (st.hasMoreTokens())
 		{
@@ -46,20 +46,20 @@ public class AdminFortSiege: IAdminCommandHandler
 			fort = FortManager.getInstance().getFortById(fortId);
 		}
 		// Get fort
-		if (((fort == null) || (fortId == 0)))
+		if (fort == null || fortId == 0)
 		{
 			// No fort specified
 			showFortSelectPage(activeChar);
 		}
 		else
 		{
-			WorldObject target = activeChar.getTarget();
-			Player player = null;
-			if ((target != null) && target.isPlayer())
+			WorldObject? target = activeChar.getTarget();
+			Player? player = null;
+			if (target != null && target.isPlayer())
 			{
 				player = (Player) target;
 			}
-			
+
 			if (command.equalsIgnoreCase("admin_add_fortattacker"))
 			{
 				if (player == null)
@@ -91,13 +91,14 @@ public class AdminFortSiege: IAdminCommandHandler
 			}
 			else if (command.equalsIgnoreCase("admin_setfort"))
 			{
-				if ((player == null) || (player.getClan() == null))
+                Clan? clan = player?.getClan();
+				if (clan == null)
 				{
 					activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 				}
 				else
 				{
-					fort.endOfSiege(player.getClan());
+					fort.endOfSiege(clan);
 				}
 			}
 			else if (command.equalsIgnoreCase("admin_removefort"))
@@ -120,18 +121,18 @@ public class AdminFortSiege: IAdminCommandHandler
 			{
 				fort.getSiege().startSiege();
 			}
-			
+
 			showFortSiegePage(activeChar, fort);
 		}
 		return true;
 	}
-	
+
 	private void showFortSelectPage(Player activeChar)
 	{
 		int i = 0;
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/forts.htm", activeChar);
 		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
-		
+
 		ICollection<Fort> forts = FortManager.getInstance().getForts();
 		StringBuilder cList = new StringBuilder(forts.Count * 100);
 		foreach (Fort fort in forts)
@@ -141,18 +142,18 @@ public class AdminFortSiege: IAdminCommandHandler
 				cList.Append("<td fixwidth=90><a action=\"bypass -h admin_fortsiege " + fort.getResidenceId() + "\">" + fort.getName() + " id: " + fort.getResidenceId() + "</a></td>");
 				i++;
 			}
-			
+
 			if (i > 2)
 			{
 				cList.Append("</tr><tr>");
 				i = 0;
 			}
 		}
-		
+
 		htmlContent.Replace("%forts%", cList.ToString());
 		activeChar.sendPacket(adminReply);
 	}
-	
+
 	private void showFortSiegePage(Player activeChar, Fort fort)
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/fort.htm", activeChar);

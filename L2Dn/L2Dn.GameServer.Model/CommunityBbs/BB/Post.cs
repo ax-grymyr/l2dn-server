@@ -224,6 +224,12 @@ public class Post
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			CPost? cp = getCPost(i);
+            if (cp == null)
+            {
+                LOGGER.Error($"Post {i} not found in Post.updateText");
+                return;
+            }
+
 			ctx.Posts.Where(p =>
 					p.Id == cp.getPostId() && p.TopicId == cp.getPostTopicId() && p.ForumId == cp.getPostForumId())
 				.ExecuteUpdate(p => p.SetProperty(x => x.Text, cp.getPostText()));

@@ -16,22 +16,22 @@ namespace L2Dn.GameServer.Data.Xml;
 public class HennaCombinationData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(HennaCombinationData));
-	
+
 	private readonly List<CombinationHenna> _henna = new();
-	
+
 	protected HennaCombinationData()
 	{
 		load();
 	}
-	
-	[MethodImpl(MethodImplOptions.Synchronized)] 
+
+	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void load()
 	{
 		_henna.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/hennaCombinations.xml");
 		document.Elements("list").Elements("henna").ForEach(parseElement);
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _henna.Count + " henna combinations.");
 	}
 
@@ -63,8 +63,8 @@ public class HennaCombinationData: DataReaderBase
 	{
 		return _henna;
 	}
-	
-	public CombinationHenna getByHenna(int hennaId)
+
+	public CombinationHenna? getByHenna(int hennaId)
 	{
 		foreach (CombinationHenna henna in _henna)
 		{
@@ -75,12 +75,12 @@ public class HennaCombinationData: DataReaderBase
 		}
 		return null;
 	}
-	
+
 	public static HennaCombinationData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly HennaCombinationData INSTANCE = new();

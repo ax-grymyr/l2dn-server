@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Handlers;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
@@ -22,11 +23,11 @@ public class AdminRide: IAdminCommandHandler
 		"admin_ride_wolf",
 		"admin_unride_wolf",
     ];
-	
+
 	private static int PURPLE_MANED_HORSE_TRANSFORMATION_ID = 106;
-	
+
 	private static int JET_BIKE_TRANSFORMATION_ID = 20001;
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		Player player = getRideTarget(activeChar);
@@ -34,7 +35,7 @@ public class AdminRide: IAdminCommandHandler
 		{
 			return false;
 		}
-		
+
 		if (command.startsWith("admin_ride"))
 		{
 			if (player.isMounted() || player.hasSummon())
@@ -42,7 +43,7 @@ public class AdminRide: IAdminCommandHandler
 				BuilderUtil.sendSysMessage(activeChar, "Target already have a summon.");
 				return false;
 			}
-			
+
 			int petRideId;
 			if (command.startsWith("admin_ride_wyvern"))
 			{
@@ -66,7 +67,7 @@ public class AdminRide: IAdminCommandHandler
 				{
 					player.transform(PURPLE_MANED_HORSE_TRANSFORMATION_ID, true);
 				}
-				
+
 				return true;
 			}
 			else if (command.startsWith("admin_ride_bike")) // handled using transformation
@@ -79,7 +80,7 @@ public class AdminRide: IAdminCommandHandler
 				{
 					player.transform(JET_BIKE_TRANSFORMATION_ID, true);
 				}
-				
+
 				return true;
 			}
 			else
@@ -87,43 +88,45 @@ public class AdminRide: IAdminCommandHandler
 				BuilderUtil.sendSysMessage(activeChar, "Command '" + command + "' not recognized");
 				return false;
 			}
-			
+
 			player.mount(petRideId, 0, false);
 			return false;
 		}
-		else if (command.startsWith("admin_unride"))
-		{
-			if (player.getTransformationId() == PURPLE_MANED_HORSE_TRANSFORMATION_ID)
-			{
-				player.untransform();
-			}
-			
-			if (player.getTransformationId() == JET_BIKE_TRANSFORMATION_ID)
-			{
-				player.untransform();
-			}
-			else
-			{
-				player.dismount();
-			}
-		}
-		return true;
+
+        if (command.startsWith("admin_unride"))
+        {
+            if (player.getTransformationId() == PURPLE_MANED_HORSE_TRANSFORMATION_ID)
+            {
+                player.untransform();
+            }
+
+            if (player.getTransformationId() == JET_BIKE_TRANSFORMATION_ID)
+            {
+                player.untransform();
+            }
+            else
+            {
+                player.dismount();
+            }
+        }
+        return true;
 	}
-	
+
 	private Player getRideTarget(Player activeChar)
 	{
-		Player player = null;
-		if ((activeChar.getTarget() == null) || (activeChar.getTarget().ObjectId == activeChar.ObjectId) || !activeChar.getTarget().isPlayer())
+		Player? player = null;
+        WorldObject? activeCharTarget = activeChar.getTarget();
+		if (activeCharTarget == null || activeCharTarget.ObjectId == activeChar.ObjectId || !activeCharTarget.isPlayer())
 		{
 			player = activeChar;
 		}
 		else
 		{
-			player = (Player) activeChar.getTarget();
+			player = (Player)activeCharTarget;
 		}
 		return player;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

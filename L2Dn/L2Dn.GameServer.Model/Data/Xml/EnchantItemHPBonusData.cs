@@ -17,11 +17,11 @@ namespace L2Dn.GameServer.Data.Xml;
 public class EnchantItemHPBonusData: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(EnchantItemHPBonusData));
-	
+
 	private readonly Map<CrystalType, List<int>> _armorHPBonuses = new();
-	
+
 	private static readonly float FULL_ARMOR_MODIFIER = 1.5f; // TODO: Move it to config!
-	
+
 	/**
 	 * Instantiates a new enchant hp bonus data.
 	 */
@@ -29,11 +29,11 @@ public class EnchantItemHPBonusData: DataReaderBase
 	{
 		load();
 	}
-	
+
 	private void parseEnchant(XElement element)
 	{
 		List<int> bonuses = new();
-		
+
 		element.Elements("bonus").ForEach(bonusElement =>
 		{
 			bonuses.Add((int)bonusElement);
@@ -42,17 +42,17 @@ public class EnchantItemHPBonusData: DataReaderBase
 		CrystalType grade = element.Attribute("grade").GetEnum<CrystalType>();
 		_armorHPBonuses.put(grade, bonuses);
 	}
-	
+
 	public void load()
 	{
 		_armorHPBonuses.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "stats/enchantHPBonus.xml");
 		document.Elements("list").Elements("enchantHP").ForEach(parseEnchant);
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _armorHPBonuses.Count + " enchant HP bonuses.");
 	}
-	
+
 	/**
 	 * Gets the HP bonus.
 	 * @param item the item
@@ -60,12 +60,12 @@ public class EnchantItemHPBonusData: DataReaderBase
 	 */
 	public int getHPBonus(Item item)
 	{
-		List<int> values = _armorHPBonuses.get(item.getTemplate().getCrystalTypePlus());
+		List<int>? values = _armorHPBonuses.get(item.getTemplate().getCrystalTypePlus());
 		if (values is null || values.Count == 0 || (item.getOlyEnchantLevel() <= 0))
 		{
 			return 0;
 		}
-		
+
 		int bonus = values[Math.Min(item.getOlyEnchantLevel(), values.Count) - 1];
 		if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR)
 		{
@@ -73,7 +73,7 @@ public class EnchantItemHPBonusData: DataReaderBase
 		}
 		return bonus;
 	}
-	
+
 	/**
 	 * Gets the single instance of EnchantHPBonusData.
 	 * @return single instance of EnchantHPBonusData
@@ -82,7 +82,7 @@ public class EnchantItemHPBonusData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly EnchantItemHPBonusData INSTANCE = new();

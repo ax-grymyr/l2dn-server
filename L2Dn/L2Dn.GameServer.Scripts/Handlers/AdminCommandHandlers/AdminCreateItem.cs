@@ -4,8 +4,10 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -15,6 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
  */
 public class AdminCreateItem: IAdminCommandHandler
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminCreateItem));
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_itemcreate",
@@ -25,7 +28,7 @@ public class AdminCreateItem: IAdminCommandHandler
 		"admin_delete_item",
 		"admin_use_item",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_itemcreate"))
@@ -55,10 +58,12 @@ public class AdminCreateItem: IAdminCommandHandler
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //create_item <itemId> [amount]");
 			}
 			catch (FormatException nfe)
 			{
+                _logger.Error(nfe);
 				BuilderUtil.sendSysMessage(activeChar, "Specify a valid number.");
 			}
 			AdminHtml.showAdminHtml(activeChar, "itemcreation.htm");
@@ -89,10 +94,12 @@ public class AdminCreateItem: IAdminCommandHandler
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //create_coin <name> [amount]");
 			}
 			catch (FormatException nfe)
 			{
+                _logger.Error(nfe);
 				BuilderUtil.sendSysMessage(activeChar, "Specify a valid number.");
 			}
 			AdminHtml.showAdminHtml(activeChar, "itemcreation.htm");
@@ -101,13 +108,13 @@ public class AdminCreateItem: IAdminCommandHandler
 		{
 			try
 			{
-				WorldObject target = activeChar.getTarget();
-				if ((target == null) || !target.isPlayer())
+				WorldObject? target = activeChar.getTarget();
+				if (target == null || !target.isPlayer())
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Invalid target.");
 					return false;
 				}
-				
+
 				string val = command.Substring(22);
 				StringTokenizer st = new StringTokenizer(val);
 				if (st.countTokens() == 2)
@@ -127,10 +134,12 @@ public class AdminCreateItem: IAdminCommandHandler
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                _logger.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //give_item_target <itemId> [amount]");
 			}
 			catch (FormatException nfe)
 			{
+                _logger.Error(nfe);
 				BuilderUtil.sendSysMessage(activeChar, "Specify a valid number.");
 			}
 			AdminHtml.showAdminHtml(activeChar, "itemcreation.htm");
@@ -155,20 +164,21 @@ public class AdminCreateItem: IAdminCommandHandler
 				numval = 1;
 			}
 			int counter = 0;
-			ItemTemplate template = ItemData.getInstance().getTemplate(idval);
+			ItemTemplate? template = ItemData.getInstance().getTemplate(idval);
 			if (template == null)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "This item doesn't exist.");
 				return false;
 			}
-			if ((numval > 10) && !template.isStackable())
+			if (numval > 10 && !template.isStackable())
 			{
 				BuilderUtil.sendSysMessage(activeChar, "This item does not stack - Creation aborted.");
 				return false;
 			}
 			foreach (Player onlinePlayer in World.getInstance().getPlayers())
 			{
-				if ((activeChar != onlinePlayer) && onlinePlayer.isOnline() && ((onlinePlayer.getClient() != null) && !onlinePlayer.getClient().IsDetached))
+                GameSession? onlinePlayerClient = onlinePlayer.getClient();
+				if (activeChar != onlinePlayer && onlinePlayer.isOnline() && onlinePlayerClient != null && !onlinePlayerClient.IsDetached)
 				{
 					onlinePlayer.getInventory().addItem("Admin", idval, numval, onlinePlayer, activeChar);
 					onlinePlayer.sendMessage("Admin spawned " + numval + " " + template.getName() + " in your inventory.");
@@ -196,22 +206,23 @@ public class AdminCreateItem: IAdminCommandHandler
 				idval = int.Parse(id);
 				numval = 1;
 			}
-			Item item = (Item) World.getInstance().findObject(idval);
-			int ownerId = item.getOwnerId();
-			if (ownerId > 0)
+
+            Item? item = (Item?)World.getInstance().findObject(idval);
+			int? ownerId = item?.getOwnerId();
+			if (ownerId > 0 && item != null)
 			{
-				Player player = World.getInstance().getPlayer(ownerId);
+				Player? player = World.getInstance().getPlayer(ownerId.Value);
 				if (player == null)
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Player is not online.");
 					return false;
 				}
-				
+
 				if (numval == 0)
 				{
 					numval = item.getCount();
 				}
-				
+
 				player.getInventory().destroyItem("AdminDelete", idval, numval, activeChar, null);
 				activeChar.sendPacket(new GMViewItemListPacket(1, player));
 				BuilderUtil.sendSysMessage(activeChar, "Item deleted.");
@@ -226,17 +237,17 @@ public class AdminCreateItem: IAdminCommandHandler
 		{
 			string val = command.Substring(15);
 			int idval = int.Parse(val);
-			Item item = (Item) World.getInstance().findObject(idval);
-			int ownerId = item.getOwnerId();
-			if (ownerId > 0)
+			Item? item = (Item?)World.getInstance().findObject(idval);
+			int? ownerId = item?.getOwnerId();
+			if (ownerId > 0 && item != null)
 			{
-				Player player = World.getInstance().getPlayer(ownerId);
+				Player? player = World.getInstance().getPlayer(ownerId.Value);
 				if (player == null)
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Player is not online.");
 					return false;
 				}
-				
+
 				// equip
 				if (item.isEquipable())
 				{
@@ -244,7 +255,7 @@ public class AdminCreateItem: IAdminCommandHandler
 				}
 				else
 				{
-					IItemHandler ih = ItemHandler.getInstance().getHandler(item.getEtcItem());
+					IItemHandler? ih = ItemHandler.getInstance().getHandler(item.getEtcItem());
 					if (ih != null)
 					{
 						ih.useItem(player, item, false);
@@ -260,37 +271,37 @@ public class AdminCreateItem: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	private void createItem(Player activeChar, Player target, int id, long num)
 	{
-		ItemTemplate template = ItemData.getInstance().getTemplate(id);
+		ItemTemplate? template = ItemData.getInstance().getTemplate(id);
 		if (template == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "This item doesn't exist.");
 			return;
 		}
-		if ((num > 10) && !template.isStackable())
+		if (num > 10 && !template.isStackable())
 		{
 			BuilderUtil.sendSysMessage(activeChar, "This item does not stack - Creation aborted.");
 			return;
 		}
-		
+
 		target.getInventory().addItem("Admin", id, num, target, activeChar);
 		if (activeChar != target)
 		{
 			target.sendMessage("Admin spawned " + num + " " + template.getName() + " in your inventory.");
 		}
 		target.sendItemList();
-		
+
 		BuilderUtil.sendSysMessage(activeChar, "You have spawned " + num + " " + template.getName() + "(" + id + ") in " + target.getName() + " inventory.");
 		target.sendPacket(new ExAdenaInvenCountPacket(target));
 	}
-	
+
 	private int getCoinId(string name)
 	{
 		int id;

@@ -69,7 +69,7 @@ public abstract class WorldObject(int objectId)
 
 	public virtual void onActionShift(Player player)
 	{
-		IActionShiftHandler handler = ActionShiftHandler.getInstance().getHandler(InstanceType);
+		IActionShiftHandler? handler = ActionShiftHandler.getInstance().getHandler(InstanceType);
 		if (handler != null)
 		{
 			handler.action(player, this, true);

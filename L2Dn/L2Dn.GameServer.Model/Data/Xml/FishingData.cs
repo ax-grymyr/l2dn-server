@@ -22,7 +22,7 @@ public class FishingData: DataReaderBase
 	private double _expRateMax;
 	private double _spRateMin;
 	private double _spRateMax;
-	
+
 	/**
 	 * Instantiates a new fishing data.
 	 */
@@ -30,11 +30,11 @@ public class FishingData: DataReaderBase
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_baitData.Clear();
-		
+
 		XDocument document = LoadXmlDocument(DataFileLocation.Data, "Fishing.xml");
 		document.Elements("list").ForEach(el =>
 		{
@@ -59,7 +59,7 @@ public class FishingData: DataReaderBase
 			el.Elements("baits").Elements("bait").ForEach(parseBaitElement);
 			el.Elements("rods").Elements("rod").ForEach(parseRodElement);
 		});
-		
+
 		LOGGER.Info(GetType().Name + ": Loaded " + _baitData.Count + " bait and " + _rodData.Count + " rod data.");
 	}
 
@@ -84,7 +84,7 @@ public class FishingData: DataReaderBase
 		FishingBait baitData = new FishingBait(itemId, level, minPlayerLevel, maxPlayerLevel, chance,
 			TimeSpan.FromMilliseconds(timeMin), TimeSpan.FromMilliseconds(timeMax),
 			TimeSpan.FromMilliseconds(waitMin), TimeSpan.FromMilliseconds(waitMax), isPremiumOnly);
-		
+
 		element.Elements("catch").ForEach(el =>
 		{
 			int cId = el.GetAttributeValueAsInt32("itemId");
@@ -95,13 +95,13 @@ public class FishingData: DataReaderBase
 				LOGGER.Error(GetType().Name + ": Could not find item with id " + itemId);
 				return;
 			}
-											
+
 			baitData.addReward(new FishingCatch(cId, cChance, cMultiplier));
 		});
-		
+
 		_baitData.put(baitData.getItemId(), baitData);
 	}
-	
+
 	private void parseRodElement(XElement element)
 	{
 		int itemId = element.GetAttributeValueAsInt32("itemId");
@@ -113,50 +113,50 @@ public class FishingData: DataReaderBase
 			LOGGER.Error(GetType().Name + ": Could not find item with id " + itemId);
 			return;
 		}
-									
+
 		_rodData.put(itemId, new FishingRod(itemId, reduceFishingTime, xpMultiplier, spMultiplier));
 	}
-	
-	public FishingBait getBaitData(int baitItemId)
+
+	public FishingBait? getBaitData(int baitItemId)
 	{
 		return _baitData.get(baitItemId);
 	}
-	
-	public FishingRod getRodData(int rodItemId)
+
+	public FishingRod? getRodData(int rodItemId)
 	{
 		return _rodData.get(rodItemId);
 	}
-	
+
 	public int getBaitDistanceMin()
 	{
 		return _baitDistanceMin;
 	}
-	
+
 	public int getBaitDistanceMax()
 	{
 		return _baitDistanceMax;
 	}
-	
+
 	public double getExpRateMin()
 	{
 		return _expRateMin;
 	}
-	
+
 	public double getExpRateMax()
 	{
 		return _expRateMax;
 	}
-	
+
 	public double getSpRateMin()
 	{
 		return _spRateMin;
 	}
-	
+
 	public double getSpRateMax()
 	{
 		return _spRateMax;
 	}
-	
+
 	/**
 	 * Gets the single instance of FishingData.
 	 * @return single instance of FishingData
@@ -165,7 +165,7 @@ public class FishingData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly FishingData INSTANCE = new();

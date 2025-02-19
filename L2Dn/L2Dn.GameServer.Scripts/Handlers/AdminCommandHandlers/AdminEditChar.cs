@@ -25,6 +25,7 @@ using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 using Pet = L2Dn.GameServer.Model.Actor.Instances.Pet;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
@@ -35,7 +36,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminEditChar: IAdminCommandHandler
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminEditChar));
-	
+
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_edit_character",
@@ -76,23 +77,24 @@ public class AdminEditChar: IAdminCommandHandler
 		"admin_setparam",
 		"admin_unsetparam",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equals("admin_current_player"))
 		{
-			showCharacterInfo(activeChar, activeChar);
+			ShowCharacterInfo(activeChar, activeChar);
 		}
 		else if (command.startsWith("admin_character_info"))
-		{
+        {
+            WorldObject? activeCharTarget = activeChar.getTarget();
 			string[] data = command.Split(" ");
-			if ((data.Length > 1))
+			if (data.Length > 1)
 			{
-				showCharacterInfo(activeChar, World.getInstance().getPlayer(data[1]));
+				ShowCharacterInfo(activeChar, World.getInstance().getPlayer(data[1]));
 			}
-			else if ((activeChar.getTarget() != null) && activeChar.getTarget().isPlayer())
+			else if (activeCharTarget != null && activeCharTarget.isPlayer())
 			{
-				showCharacterInfo(activeChar, activeChar.getTarget().getActingPlayer());
+				ShowCharacterInfo(activeChar, activeCharTarget.getActingPlayer());
 			}
 			else
 			{
@@ -113,6 +115,7 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                LOGGER.Error(e);
 				// Case of empty page number
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //show_characters <page_number>");
 			}
@@ -125,7 +128,9 @@ public class AdminEditChar: IAdminCommandHandler
 				findCharacter(activeChar, val);
 			}
 			catch (IndexOutOfRangeException e)
-			{ // Case of empty character name
+			{
+                LOGGER.Error(e);
+                // Case of empty character name
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //find_character <character_name>");
 				listCharacters(activeChar, 0);
 			}
@@ -138,7 +143,9 @@ public class AdminEditChar: IAdminCommandHandler
 				findCharactersPerIp(activeChar, val);
 			}
 			catch (Exception e)
-			{ // Case of empty or malformed IP number
+			{
+                LOGGER.Error(e);
+                // Case of empty or malformed IP number
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //find_ip <www.xxx.yyy.zzz>");
 				listCharacters(activeChar, 0);
 			}
@@ -148,24 +155,27 @@ public class AdminEditChar: IAdminCommandHandler
 			try
 			{
 				string val = command.Substring(19);
-				findCharactersPerAccount(activeChar, val);
+				FindCharactersPerAccount(activeChar, val);
 			}
 			catch (Exception e)
-			{ // Case of empty or malformed player name
+			{
+                LOGGER.Error(e);
+                // Case of empty or malformed player name
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //find_account <player_name>");
 				listCharacters(activeChar, 0);
 			}
 		}
 		else if (command.startsWith("admin_edit_character"))
 		{
+            WorldObject? activeCharTarget = activeChar.getTarget();
 			string[] data = command.Split(" ");
-			if ((data.Length > 1))
+			if (data.Length > 1)
 			{
-				editCharacter(activeChar, data[1]);
+				EditCharacter(activeChar, data[1]);
 			}
-			else if ((activeChar.getTarget() != null) && activeChar.getTarget().isPlayer())
+			else if (activeCharTarget != null && activeCharTarget.isPlayer())
 			{
-				editCharacter(activeChar, null);
+				EditCharacter(activeChar, null);
 			}
 			else
 			{
@@ -178,7 +188,7 @@ public class AdminEditChar: IAdminCommandHandler
 			{
 				string val = command.Substring(20);
 				int reputation = int.Parse(val);
-				setTargetReputation(activeChar, reputation);
+				SetTargetReputation(activeChar, reputation);
 			}
 			catch (Exception e)
 			{
@@ -191,15 +201,16 @@ public class AdminEditChar: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_nokarma"))
 		{
-			if ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer())
+            WorldObject? activeCharTarget = activeChar.getTarget();
+			if (activeCharTarget == null || !activeCharTarget.isPlayer())
 			{
 				BuilderUtil.sendSysMessage(activeChar, "You must target a player.");
 				return false;
 			}
 
-			if (activeChar.getTarget().getActingPlayer().getReputation() < 0)
+			if (activeCharTarget.getActingPlayer()?.getReputation() < 0)
 			{
-				setTargetReputation(activeChar, 0);
+				SetTargetReputation(activeChar, 0);
 			}
 		}
 		else if (command.startsWith("admin_setpk"))
@@ -208,10 +219,10 @@ public class AdminEditChar: IAdminCommandHandler
 			{
 				string val = command.Substring(12);
 				int pk = int.Parse(val);
-				WorldObject target = activeChar.getTarget();
-				if (target.isPlayer())
+				WorldObject? target = activeChar.getTarget();
+                Player? player = target?.getActingPlayer();
+				if (target != null && target.isPlayer() && player != null)
 				{
-					Player player = target.getActingPlayer();
 					player.setPkKills(pk);
 					player.setTotalKills(pk);
 					player.broadcastUserInfo();
@@ -238,8 +249,8 @@ public class AdminEditChar: IAdminCommandHandler
 			{
 				string val = command.Substring(13);
 				int pvp = int.Parse(val);
-				WorldObject target = activeChar.getTarget();
-				if ((target != null) && target.isPlayer())
+				WorldObject? target = activeChar.getTarget();
+				if (target != null && target.isPlayer())
 				{
 					Player player = (Player) target;
 					player.setPvpKills(pvp);
@@ -269,8 +280,8 @@ public class AdminEditChar: IAdminCommandHandler
 			{
 				string val = command.Substring(14);
 				int fame = int.Parse(val);
-				WorldObject target = activeChar.getTarget();
-				if ((target != null) && target.isPlayer())
+				WorldObject? target = activeChar.getTarget();
+				if (target != null && target.isPlayer())
 				{
 					Player player = (Player) target;
 					player.setFame(fame);
@@ -298,8 +309,8 @@ public class AdminEditChar: IAdminCommandHandler
 			{
 				string val = command.Substring(10);
 				int recVal = int.Parse(val);
-				WorldObject target = activeChar.getTarget();
-				if ((target != null) && target.isPlayer())
+				WorldObject? target = activeChar.getTarget();
+				if (target != null && target.isPlayer())
 				{
 					Player player = (Player) target;
 					player.setRecomHave(recVal);
@@ -314,6 +325,7 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //rec number");
 			}
 		}
@@ -323,19 +335,20 @@ public class AdminEditChar: IAdminCommandHandler
 			{
 				string val = command.Substring(15).Trim();
 				CharacterClass classidval = (CharacterClass)int.Parse(val);
-				WorldObject target = activeChar.getTarget();
-				if ((target == null) || !target.isPlayer())
+				WorldObject? target = activeChar.getTarget();
+				if (target == null || !target.isPlayer())
 				{
 					return false;
 				}
 
-				Player player = target.getActingPlayer();
-				if (Enum.IsDefined(classidval) && (player.getClassId() != classidval))
+				Player? player = target.getActingPlayer();
+				if (Enum.IsDefined(classidval) && player != null && player.getClassId() != classidval)
 				{
 					player.setClassId(classidval);
 					if (player.isSubClassActive())
 					{
-						player.getSubClasses().get(player.getClassIndex()).setClassId(player.getActiveClass());
+                        // TODO: refactor later
+						player.getSubClasses().get(player.getClassIndex())!.setClassId(player.getActiveClass());
 					}
 					else
 					{
@@ -379,9 +392,9 @@ public class AdminEditChar: IAdminCommandHandler
 					}
 
 					// Sylph checks
-					if (!CategoryData.getInstance().isInCategory(CategoryType.SYLPH_ALL_CLASS, classidval) && ((player.getActiveWeaponItem() != null) && (player.getActiveWeaponItem().getItemType() == WeaponType.PISTOLS)))
+					if (!CategoryData.getInstance().isInCategory(CategoryType.SYLPH_ALL_CLASS, classidval) && player.getActiveWeaponItem() != null && player.getActiveWeaponItem().getItemType() == WeaponType.PISTOLS)
 					{
-						Item itemToRemove = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
+						Item? itemToRemove = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
 						if (itemToRemove != null)
 						{
 							long slot = player.getInventory().getSlotFromItem(itemToRemove);
@@ -476,10 +489,12 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (IndexOutOfRangeException e)
 			{
+                LOGGER.Error(e);
 				AdminHtml.showAdminHtml(activeChar, "setclass/human_fighter.htm");
 			}
 			catch (FormatException e)
 			{
+                LOGGER.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //setclass <valid_new_classid>");
 			}
 		}
@@ -488,9 +503,9 @@ public class AdminEditChar: IAdminCommandHandler
 			try
 			{
 				string val = command.Substring(15);
-				WorldObject target = activeChar.getTarget();
-				Player player = null;
-				if ((target != null) && target.isPlayer())
+				WorldObject? target = activeChar.getTarget();
+				Player? player = null;
+				if (target != null && target.isPlayer())
 				{
 					player = (Player) target;
 				}
@@ -503,7 +518,9 @@ public class AdminEditChar: IAdminCommandHandler
 				player.broadcastTitleInfo();
 			}
 			catch (IndexOutOfRangeException e)
-			{ // Case of empty character title
+			{
+                LOGGER.Error(e);
+                // Case of empty character title
 				BuilderUtil.sendSysMessage(activeChar, "You need to specify the new title.");
 			}
 		}
@@ -512,9 +529,9 @@ public class AdminEditChar: IAdminCommandHandler
 			try
 			{
 				string val = command.Substring(17);
-				WorldObject target = activeChar.getTarget();
-				Player player = null;
-				if ((target != null) && target.isPlayer())
+				WorldObject? target = activeChar.getTarget();
+				Player? player = null;
+				if (target != null && target.isPlayer())
 				{
 					player = (Player) target;
 				}
@@ -535,34 +552,39 @@ public class AdminEditChar: IAdminCommandHandler
 				player.sendMessage("Your name has been changed by a GM.");
 				player.broadcastUserInfo();
 
-				if (player.isInParty())
+                Party? party = player.getParty();
+				if (player.isInParty() && party != null)
 				{
 					// Delete party window for other party members
-					player.getParty().broadcastToPartyMembers(player, PartySmallWindowDeleteAllPacket.STATIC_PACKET);
-					foreach (Player member in player.getParty().getMembers())
+					party.broadcastToPartyMembers(player, PartySmallWindowDeleteAllPacket.STATIC_PACKET);
+					foreach (Player member in party.getMembers())
 					{
 						// And re-add
 						if (member != player)
 						{
-							member.sendPacket(new PartySmallWindowAllPacket(member, player.getParty()));
+							member.sendPacket(new PartySmallWindowAllPacket(member, party));
 						}
 					}
 				}
-				if (player.getClan() != null)
+
+                Clan? clan = player.getClan();
+				if (clan != null)
 				{
-					player.getClan().broadcastClanStatus();
+                    clan.broadcastClanStatus();
 				}
 			}
 			catch (IndexOutOfRangeException e)
-			{ // Case of empty character name
+			{
+                LOGGER.Error(e);
+                // Case of empty character name
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //setname new_name_for_target");
 			}
 		}
 		else if (command.startsWith("admin_setsex"))
 		{
-			WorldObject target = activeChar.getTarget();
-			Player player = null;
-			if ((target != null) && target.isPlayer())
+			WorldObject? target = activeChar.getTarget();
+			Player? player = null;
+			if (target != null && target.isPlayer())
 			{
 				player = (Player) target;
 			}
@@ -586,9 +608,9 @@ public class AdminEditChar: IAdminCommandHandler
 			try
 			{
 				string val = command.Substring(15);
-				WorldObject target = activeChar.getTarget();
-				Player player = null;
-				if ((target != null) && target.isPlayer())
+				WorldObject? target = activeChar.getTarget();
+				Player? player = null;
+				if (target != null && target.isPlayer())
 				{
 					player = (Player) target;
 				}
@@ -601,7 +623,9 @@ public class AdminEditChar: IAdminCommandHandler
 				player.broadcastUserInfo();
 			}
 			catch (Exception e)
-			{ // Case of empty color or invalid hex string
+			{
+                LOGGER.Error(e);
+                // Case of empty color or invalid hex string
 				BuilderUtil.sendSysMessage(activeChar, "You need to specify a valid new color.");
 			}
 		}
@@ -610,9 +634,9 @@ public class AdminEditChar: IAdminCommandHandler
 			try
 			{
 				string val = command.Substring(16);
-				WorldObject target = activeChar.getTarget();
-				Player player = null;
-				if ((target != null) && target.isPlayer())
+				WorldObject? target = activeChar.getTarget();
+				Player? player = null;
+				if (target != null && target.isPlayer())
 				{
 					player = (Player) target;
 				}
@@ -625,14 +649,16 @@ public class AdminEditChar: IAdminCommandHandler
 				player.broadcastUserInfo();
 			}
 			catch (Exception e)
-			{ // Case of empty color or invalid hex string
+			{
+                LOGGER.Error(e);
+                // Case of empty color or invalid hex string
 				BuilderUtil.sendSysMessage(activeChar, "You need to specify a valid new color.");
 			}
 		}
 		else if (command.startsWith("admin_fullfood"))
 		{
-			WorldObject target = activeChar.getTarget();
-			if ((target != null) && target.isPet())
+			WorldObject? target = activeChar.getTarget();
+			if (target != null && target.isPet())
 			{
 				Pet targetPet = (Pet)target;
 				targetPet.setCurrentFed(targetPet.getMaxFed());
@@ -658,8 +684,7 @@ public class AdminEditChar: IAdminCommandHandler
 
 				bool changeCreateExpiryTime = st.nextToken().equalsIgnoreCase("create");
 				string playerName = st.nextToken();
-				Player player = null;
-				player = World.getInstance().getPlayer(playerName);
+				Player? player = World.getInstance().getPlayer(playerName);
 				if (player == null)
 				{
 					using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -700,6 +725,7 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 			}
 			findDualbox(activeChar, multibox);
 		}
@@ -718,21 +744,23 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 			}
+
 			findDualboxStrict(activeChar, multibox);
 		}
 		else if (command.startsWith("admin_tracert"))
 		{
 			string[] data = command.Split(" ");
-			Player pl = null;
-			if ((data.Length > 1))
+			Player? pl = null;
+			if (data.Length > 1)
 			{
 				pl = World.getInstance().getPlayer(data[1]);
 			}
 			else
 			{
-				WorldObject target = activeChar.getTarget();
-				if ((target != null) && target.isPlayer())
+				WorldObject? target = activeChar.getTarget();
+				if (target != null && target.isPlayer())
 				{
 					pl = (Player) target;
 				}
@@ -744,7 +772,7 @@ public class AdminEditChar: IAdminCommandHandler
 				return false;
 			}
 
-			GameSession client = pl.getClient();
+			GameSession? client = pl.getClient();
 			if (client == null)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Client is null.");
@@ -777,8 +805,8 @@ public class AdminEditChar: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_summon_info"))
 		{
-			WorldObject target = activeChar.getTarget();
-			if ((target != null) && target.isSummon())
+			WorldObject? target = activeChar.getTarget();
+			if (target != null && target.isSummon())
 			{
 				gatherSummonInfo((Summon) target, activeChar);
 			}
@@ -789,8 +817,8 @@ public class AdminEditChar: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_unsummon"))
 		{
-			WorldObject target = activeChar.getTarget();
-			if ((target != null) && target.isSummon())
+			WorldObject? target = activeChar.getTarget();
+			if (target != null && target.isSummon())
 			{
 				((Summon) target).unSummon(((Summon) target).getOwner());
 			}
@@ -801,8 +829,8 @@ public class AdminEditChar: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_summon_setlvl"))
 		{
-			WorldObject target = activeChar.getTarget();
-			if ((target != null) && target.isPet())
+			WorldObject? target = activeChar.getTarget();
+			if (target != null && target.isPet())
 			{
 				Pet pet = (Pet) target;
 				try
@@ -822,6 +850,7 @@ public class AdminEditChar: IAdminCommandHandler
 				}
 				catch (Exception e)
 				{
+                    LOGGER.Error(e);
 				}
 			}
 			else
@@ -831,7 +860,7 @@ public class AdminEditChar: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_show_pet_inv"))
 		{
-			WorldObject target;
+			WorldObject? target;
 			try
 			{
 				string val = command.Substring(19);
@@ -840,10 +869,11 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				target = activeChar.getTarget();
 			}
 
-			if ((target != null) && target.isPet())
+			if (target != null && target.isPet())
 			{
 				activeChar.sendPacket(new GMViewItemListPacket(1, (Pet) target));
 			}
@@ -854,7 +884,7 @@ public class AdminEditChar: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_partyinfo"))
 		{
-			WorldObject target;
+			WorldObject? target;
 			try
 			{
 				string val = command.Substring(16);
@@ -866,10 +896,11 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				target = activeChar.getTarget();
 			}
 
-			if (target.isPlayer())
+			if (target != null && target.isPlayer())
 			{
 				if (((Player) target).isInParty())
 				{
@@ -886,11 +917,12 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 		}
 		else if (command.equals("admin_setnoble"))
-		{
-			Player player = null;
-			if ((activeChar.getTarget() != null) && (activeChar.getTarget().isPlayer()))
+        {
+            WorldObject? activeCharTarget = activeChar.getTarget();
+			Player? player;
+			if (activeCharTarget != null && activeCharTarget.isPlayer())
 			{
-				player = (Player) activeChar.getTarget();
+				player = (Player?)activeChar.getTarget();
 			}
 			else
 			{
@@ -913,8 +945,8 @@ public class AdminEditChar: IAdminCommandHandler
 			string[] data = command.Split(" ");
 			try
 			{
-				WorldObject target = activeChar.getTarget();
-				if ((target == null) || !target.isCreature())
+				WorldObject? target = activeChar.getTarget();
+				if (target == null || !target.isCreature())
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 					return false;
@@ -923,6 +955,7 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //set_hp 1000");
 			}
 		}
@@ -931,8 +964,8 @@ public class AdminEditChar: IAdminCommandHandler
 			string[] data = command.Split(" ");
 			try
 			{
-				WorldObject target = activeChar.getTarget();
-				if ((target == null) || !target.isCreature())
+				WorldObject? target = activeChar.getTarget();
+				if (target == null || !target.isCreature())
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 					return false;
@@ -941,6 +974,7 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //set_mp 1000");
 			}
 		}
@@ -949,8 +983,8 @@ public class AdminEditChar: IAdminCommandHandler
 			string[] data = command.Split(" ");
 			try
 			{
-				WorldObject target = activeChar.getTarget();
-				if ((target == null) || !target.isCreature())
+				WorldObject? target = activeChar.getTarget();
+				if (target == null || !target.isCreature())
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 					return false;
@@ -959,6 +993,7 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //set_cp 1000");
 			}
 		}
@@ -966,25 +1001,26 @@ public class AdminEditChar: IAdminCommandHandler
 		{
 			try
 			{
-				WorldObject target = activeChar.getTarget();
-				if ((target == null) || !target.isPlayable())
+				WorldObject? target = activeChar.getTarget();
+				if (target == null || !target.isPlayable())
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 					return false;
 				}
 
-				Playable playable = ((Playable) target);
+				Playable playable = (Playable) target;
 				playable.updatePvPFlag(PvpFlagStatus.Enabled);
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Usage: //set_pvp_flag");
 			}
 		}
 		else if (command.startsWith("admin_setparam"))
 		{
-			WorldObject target = activeChar.getTarget();
-			if ((target == null) || !target.isCreature())
+			WorldObject? target = activeChar.getTarget();
+			if (target == null || !target.isCreature())
 			{
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				return false;
@@ -1035,14 +1071,15 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				BuilderUtil.sendSysMessage(activeChar, "Syntax: //setparam <stat> <value>");
 				return false;
 			}
 		}
 		else if (command.startsWith("admin_unsetparam"))
 		{
-			WorldObject target = activeChar.getTarget();
-			if ((target == null) || !target.isCreature())
+			WorldObject? target = activeChar.getTarget();
+			if (target == null || !target.isCreature())
 			{
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				return false;
@@ -1094,7 +1131,7 @@ public class AdminEditChar: IAdminCommandHandler
 		PageResult result = PageBuilder.newBuilder(players, 20, "bypass -h admin_show_characters").currentPage(page).bodyHandler((pages, player, sb) =>
 		{
 			sb.Append("<tr>");
-			sb.Append("<td width=80><a action=\"bypass -h admin_character_info " + player.getName() + "\">" + ((player.isInOfflineMode() ? ("<font color=\"808080\">" + player.getName() + "</font>") : player.getName()) + "</a></td>"));
+			sb.Append("<td width=80><a action=\"bypass -h admin_character_info " + player.getName() + "\">" + (player.isInOfflineMode() ? "<font color=\"808080\">" + player.getName() + "</font>" : player.getName()) + "</a></td>");
 			sb.Append("<td width=110>" + ClassListData.getInstance().getClass(player.getClassId()).getClientCode() + "</td><td width=40>" + player.getLevel() + "</td>");
 			sb.Append("</tr>");
 		}).build();
@@ -1112,35 +1149,36 @@ public class AdminEditChar: IAdminCommandHandler
 		activeChar.sendPacket(html);
 	}
 
-	private void showCharacterInfo(Player activeChar, Player targetPlayer)
-	{
-		Player player = targetPlayer;
-		if (player == null)
-		{
-			WorldObject target = activeChar.getTarget();
-			if ((target != null) && target.isPlayer())
-			{
-				player = (Player) target;
-			}
-			else
-			{
-				return;
-			}
-		}
-		else
-		{
-			activeChar.setTarget(player);
-		}
-		gatherCharacterInfo(activeChar, player, "charinfo.htm");
-	}
+    private void ShowCharacterInfo(Player activeChar, Player? targetPlayer)
+    {
+        Player? player = targetPlayer;
+        if (player == null)
+        {
+            WorldObject? target = activeChar.getTarget();
+            if (target != null && target.isPlayer())
+            {
+                player = (Player)target;
+            }
+            else
+            {
+                return;
+            }
+        }
+        else
+        {
+            activeChar.setTarget(player);
+        }
 
-	/**
-	 * Retrieve and replace player's info in filename htm file, sends it to activeChar as NpcHtmlMessagePacket.
-	 * @param activeChar
-	 * @param player
-	 * @param filename
-	 */
-	private void gatherCharacterInfo(Player activeChar, Player player, string filename)
+        GatherCharacterInfo(activeChar, player, "charinfo.htm");
+    }
+
+    /**
+     * Retrieve and replace player's info in filename htm file, sends it to activeChar as NpcHtmlMessagePacket.
+     * @param activeChar
+     * @param player
+     * @param filename
+     */
+	private static void GatherCharacterInfo(Player activeChar, Player? player, string filename)
 	{
 		string ip = "N/A";
 		if (player == null)
@@ -1149,7 +1187,7 @@ public class AdminEditChar: IAdminCommandHandler
 			return;
 		}
 
-		GameSession client = player.getClient();
+		GameSession? client = player.getClient();
 		if (client == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Client is null.");
@@ -1167,7 +1205,7 @@ public class AdminEditChar: IAdminCommandHandler
 		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		htmlContent.Replace("%name%", player.getName());
 		htmlContent.Replace("%level%", player.getLevel().ToString());
-		htmlContent.Replace("%clan%", player.getClan() != null ? "<a action=\"bypass -h admin_clan_info " + player.ObjectId + "\">" + player.getClan().getName() + "</a>" : null);
+		htmlContent.Replace("%clan%", player.getClan() != null ? "<a action=\"bypass -h admin_clan_info " + player.ObjectId + "\">" + player.getClan()?.getName() + "</a>" : null);
 		htmlContent.Replace("%xp%", player.getExp().ToString());
 		htmlContent.Replace("%sp%", player.getSp().ToString());
 		htmlContent.Replace("%class%", ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
@@ -1207,19 +1245,19 @@ public class AdminEditChar: IAdminCommandHandler
 		htmlContent.Replace("%access%", player.getAccessLevel().getLevel() + " (" + player.getAccessLevel().getName() + ")");
 		htmlContent.Replace("%account%", player.getAccountName());
 		htmlContent.Replace("%ip%", ip);
-		htmlContent.Replace("%protocol%", player.getClient() != null ? player.getClient().ProtocolVersion.ToString() : "NULL");
-		htmlContent.Replace("%hwid%", (player.getClient() != null) && (player.getClient().HardwareInfo != null) ? player.getClient().HardwareInfo.getMacAddress() : "Unknown");
+		htmlContent.Replace("%protocol%", client != null ? client.ProtocolVersion.ToString() : "NULL");
+		htmlContent.Replace("%hwid%", client != null && client.HardwareInfo != null ? client.HardwareInfo.getMacAddress() : "Unknown");
 		htmlContent.Replace("%ai%", player.getAI().getIntention().ToString());
-		htmlContent.Replace("%inst%", player.isInInstance() ? " " + player.getInstanceWorld().getName() + "</td><td><button value=\"Go\" action=\"bypass -h admin_instanceteleport " + player.getInstanceId() + "\"width=60 height=20 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">" : "NONE");
+		htmlContent.Replace("%inst%", player.isInInstance() ? " " + player.getInstanceWorld()?.getName() + "</td><td><button value=\"Go\" action=\"bypass -h admin_instanceteleport " + player.getInstanceId() + "\"width=60 height=20 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\">" : "NONE");
 		htmlContent.Replace("%noblesse%", player.isNoble() ? "Yes" : "No");
 		activeChar.sendPacket(adminReply);
 	}
 
-	private void setTargetReputation(Player activeChar, int value)
+	private static void SetTargetReputation(Player activeChar, int value)
 	{
-		WorldObject target = activeChar.getTarget();
-		Player player = null;
-		if (target.isPlayer())
+		WorldObject? target = activeChar.getTarget();
+		Player? player;
+		if (target != null && target.isPlayer())
 		{
 			player = (Player) target;
 		}
@@ -1239,12 +1277,15 @@ public class AdminEditChar: IAdminCommandHandler
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOUR_REPUTATION_HAS_BEEN_CHANGED_TO_S1);
 		sm.Params.addInt(newReputation);
 		player.sendPacket(sm);
-		BuilderUtil.sendSysMessage(activeChar, "Successfully Changed karma for " + player.getName() + " from (" + oldReputation + ") to (" + newReputation + ").");
-	}
 
-	private void editCharacter(Player activeChar, string targetName)
+        BuilderUtil.sendSysMessage(activeChar,
+            "Successfully Changed karma for " + player.getName() + " from (" + oldReputation + ") to (" +
+            newReputation + ").");
+    }
+
+	private static void EditCharacter(Player activeChar, string? targetName)
 	{
-		WorldObject target = null;
+		WorldObject? target;
 		if (targetName != null)
 		{
 			target = World.getInstance().getPlayer(targetName);
@@ -1254,10 +1295,10 @@ public class AdminEditChar: IAdminCommandHandler
 			target = activeChar.getTarget();
 		}
 
-		if ((target != null) && target.isPlayer())
+		if (target != null && target.isPlayer())
 		{
-			Player player = (Player) target;
-			gatherCharacterInfo(activeChar, player, "charedit.htm");
+			Player player = (Player)target;
+			GatherCharacterInfo(activeChar, player, "charedit.htm");
 		}
 	}
 
@@ -1339,7 +1380,7 @@ public class AdminEditChar: IAdminCommandHandler
 		}
 
 		int charactersFound = 0;
-		GameSession client;
+		GameSession? client;
 		string ip = "0.0.0.0";
 		StringBuilder replyMSG = new StringBuilder(1000);
 
@@ -1423,9 +1464,9 @@ public class AdminEditChar: IAdminCommandHandler
 	 * @param activeChar
 	 * @param characterName
 	 */
-	private void findCharactersPerAccount(Player activeChar, string characterName)
+	private static void FindCharactersPerAccount(Player activeChar, string characterName)
 	{
-		Player player = World.getInstance().getPlayer(characterName);
+		Player? player = World.getInstance().getPlayer(characterName);
 		if (player == null)
 		{
 			throw new ArgumentException("Player doesn't exist");
@@ -1449,36 +1490,23 @@ public class AdminEditChar: IAdminCommandHandler
 	private void findDualbox(Player activeChar, int multibox)
 	{
 		Map<string, List<Player>> ipMap = new();
-		string ip = "0.0.0.0";
-		GameSession client;
-		Map<string, int> dualboxIPs = new();
+        Map<string, int> dualboxIPs = new();
 		List<Player> players = new(World.getInstance().getPlayers().OrderByDescending(p=>p.getUptime()));
 		foreach (Player player in players)
 		{
-			client = player.getClient();
-			if ((client == null) || client.IsDetached)
+			GameSession? client = player.getClient();
+			if (client == null || client.IsDetached)
 			{
 				continue;
 			}
 
-			ip = client.IpAddress.ToString();
-			if (ipMap.get(ip) == null)
-			{
-				ipMap.put(ip, []);
-			}
-			ipMap.get(ip).Add(player);
+			string ip = client.IpAddress.ToString();
+            List<Player> list = ipMap.GetOrAdd(ip, _ => []);
+			list.Add(player);
 
-			if (ipMap.get(ip).Count >= multibox)
-			{
-				int count = dualboxIPs.get(ip);
-				if (count == null)
-				{
-					dualboxIPs.put(ip, multibox);
-				}
-				else
-				{
-					dualboxIPs.put(ip, count + 1);
-				}
+			if (list.Count >= multibox)
+            {
+                dualboxIPs.AddOrUpdate(ip, _ => multibox, (_, oldValue) => oldValue + 1);
 			}
 		}
 
@@ -1501,35 +1529,25 @@ public class AdminEditChar: IAdminCommandHandler
 	private void findDualboxStrict(Player activeChar, int multibox)
 	{
 		Map<IpPack, List<Player>> ipMap = new();
-		GameSession client;
+		GameSession? client;
 		Map<IpPack, int> dualboxIPs = new();
 		List<Player> players = new(World.getInstance().getPlayers().OrderByDescending(p=>p.getUptime()));
 		foreach (Player player in players)
 		{
 			client = player.getClient();
-			if ((client == null) || client.IsDetached)
+			if (client == null || client.IsDetached)
 			{
 				continue;
 			}
 
 			IpPack pack = new IpPack(client.IpAddress.ToString(), null /*client.getTrace()*/);
-			if (ipMap.get(pack) == null)
-			{
-				ipMap.put(pack, []);
-			}
-			ipMap.get(pack).Add(player);
 
-			if (ipMap.get(pack).Count >= multibox)
+            List<Player> list = ipMap.GetOrAdd(pack, _ => []);
+			list.Add(player);
+
+			if (list.Count >= multibox)
 			{
-				int count = dualboxIPs.get(pack);
-				if (count == null)
-				{
-					dualboxIPs.put(pack, multibox);
-				}
-				else
-				{
-					dualboxIPs.put(pack, count + 1);
-				}
+                dualboxIPs.AddOrUpdate(pack, _ => multibox, (_, oldValue) => oldValue + 1);
 			}
 		}
 
@@ -1554,17 +1572,17 @@ public class AdminEditChar: IAdminCommandHandler
 		public string ip;
 		//public int[][] tracert;
 
-		public IpPack(string ip, int[][] tracert)
+		public IpPack(string ip, int[][]? tracert)
 		{
 			this.ip = ip;
 			//this.tracert = tracert;
 		}
 
-		public int GetHashCode()
+		public override int GetHashCode()
 		{
 			int prime = 31;
 			int result = 1;
-			result = (prime * result) + ((ip == null) ? 0 : ip.GetHashCode());
+			result = prime * result + (ip == null ? 0 : ip.GetHashCode());
 			// foreach (int[] array in tracert)
 			// {
 			// 	result = (prime * result) + Arrays.hashCode(array);
@@ -1573,7 +1591,7 @@ public class AdminEditChar: IAdminCommandHandler
 			return result;
 		}
 
-		public bool Equals(object obj)
+		public override bool Equals(object? obj)
 		{
 			if (this == obj)
 			{
@@ -1650,28 +1668,37 @@ public class AdminEditChar: IAdminCommandHandler
 		}
 		activeChar.sendPacket(html);
 	}
-	
+
 	private void gatherPartyInfo(Player target, Player activeChar)
 	{
+        Party? party = target.getParty();
 		bool color = true;
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/partyinfo.htm", activeChar);
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		StringBuilder text = new StringBuilder(400);
-		foreach (Player member in target.getParty().getMembers())
-		{
-			if (color)
-			{
-				text.Append("<tr><td><table width=270 border=0 bgcolor=131210 cellpadding=2><tr><td width=30 align=right>");
-			}
-			else
-			{
-				text.Append("<tr><td><table width=270 border=0 cellpadding=2><tr><td width=30 align=right>");
-			}
-			text.Append(member.getLevel() + "</td><td width=130><a action=\"bypass -h admin_character_info " + member.getName() + "\">" + member.getName() + "</a>");
-			text.Append("</td><td width=110 align=right>" + member.getClassId() + "</td></tr></table></td></tr>");
-			color = !color;
-		}
-		htmlContent.Replace("%player%", target.getName());
+        if (party != null)
+        {
+            foreach (Player member in party.getMembers())
+            {
+                if (color)
+                {
+                    text.Append(
+                        "<tr><td><table width=270 border=0 bgcolor=131210 cellpadding=2><tr><td width=30 align=right>");
+                }
+                else
+                {
+                    text.Append("<tr><td><table width=270 border=0 cellpadding=2><tr><td width=30 align=right>");
+                }
+
+                text.Append(member.getLevel() + "</td><td width=130><a action=\"bypass -h admin_character_info " +
+                    member.getName() + "\">" + member.getName() + "</a>");
+
+                text.Append("</td><td width=110 align=right>" + member.getClassId() + "</td></tr></table></td></tr>");
+                color = !color;
+            }
+        }
+
+        htmlContent.Replace("%player%", target.getName());
 		htmlContent.Replace("%party%", text.ToString());
 		activeChar.sendPacket(html);
 	}

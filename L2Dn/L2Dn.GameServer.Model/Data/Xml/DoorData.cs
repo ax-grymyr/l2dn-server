@@ -16,22 +16,22 @@ namespace L2Dn.GameServer.Data.Xml;
 public class DoorData: DataReaderBase
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(DoorData));
-	
+
 	// Info holders
 	private readonly Map<string, Set<int>> _groups = new();
 	private readonly Map<int, Door> _doors = new();
 	private readonly Map<int, DoorTemplate> _templates = new();
-	
+
 	private DoorData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		_doors.Clear();
 		_groups.Clear();
-		
+
 		LoadXmlDocument<XmlDoorList>(DataFileLocation.Data, "DoorData.xml")
 			.Doors.ForEach(xmlDoor =>
 			{
@@ -39,10 +39,10 @@ public class DoorData: DataReaderBase
 				_templates.TryAdd(template.getId(), template);
 				spawnDoor(template);
 			});
-		
+
 		_logger.Info(GetType().Name + ": Loaded " + _doors.Count + " doors.");
 	}
-	
+
 	/**
 	 * Spawns the door, adds the group name and registers it to templates, regions and doors also inserts collisions data
 	 * @param set
@@ -51,62 +51,62 @@ public class DoorData: DataReaderBase
 	public Door spawnDoor(DoorTemplate template)
 	{
 		Door door = spawnDoor(template, null);
-		
+
 		// Register the door
 		_doors.put(door.getId(), door);
-		
+
 		return door;
 	}
-	
+
 	/**
 	 * Spawns the door, adds the group name and registers it to templates
 	 * @param template
 	 * @param instance
 	 * @return a new door instance based on provided template
 	 */
-	public Door spawnDoor(DoorTemplate template, Instance instance, bool? isOpened = null)
+	public Door spawnDoor(DoorTemplate template, Instance? instance, bool? isOpened = null)
 	{
 		Door door = new Door(template, isOpened);
 		door.setCurrentHp(door.getMaxHp());
-		
+
 		// Set instance world if provided
 		if (instance != null)
 		{
 			door.setInstance(instance);
 		}
-		
+
 		// Spawn the door on the world
 		door.spawnMe(template.Location);
-		
+
 		// Register door's group
 		if (template.getGroupName() != null)
 		{
 			_groups.computeIfAbsent(door.getGroupName(), key => new()).add(door.getId());
 		}
-		
+
 		return door;
 	}
-	
+
 	public DoorTemplate? getDoorTemplate(int doorId)
 	{
 		return _templates.GetValueOrDefault(doorId);
 	}
-	
+
 	public Door? getDoor(int doorId)
 	{
 		return _doors.GetValueOrDefault(doorId);
 	}
-	
+
 	public Set<int> getDoorsByGroup(string groupName)
 	{
 		return _groups.GetValueOrDefault(groupName, []);
 	}
-	
+
 	public ICollection<Door> getDoors()
 	{
 		return _doors.Values;
 	}
-	
+
 	public bool checkIfDoorsBetween(Location3D location, Location3D targetLocation, Instance? instance = null,
 		bool doubleFaceCheck = false)
 	{
@@ -141,11 +141,11 @@ public class DoorData: DataReaderBase
 
 				float multiplier2 = (float)((targetLocation.X - location.X) * (location.Y - doorInst.getY(i)) -
 					(targetLocation.Y - location.Y) * (location.X - doorInst.getX(i))) / denominator;
-				
+
 				if (multiplier1 >= 0 && multiplier1 <= 1 && multiplier2 >= 0 && multiplier2 <= 1)
 				{
 					int intersectZ = (int)Math.Round(location.Z + multiplier1 * (targetLocation.Z - location.Z));
-					
+
 					// now checking if the resulting point is between door's min and max z
 					if (intersectZ > doorInst.getZMin() && intersectZ < doorInst.getZMax())
 					{
@@ -167,7 +167,7 @@ public class DoorData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly DoorData INSTANCE = new();

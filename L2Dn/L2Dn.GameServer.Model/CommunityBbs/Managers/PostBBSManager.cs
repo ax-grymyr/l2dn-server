@@ -130,14 +130,14 @@ public class PostBBSManager: BaseBBSManager
 		int idf = int.Parse(st.nextToken());
 		int idt = int.Parse(st.nextToken());
 		int idp = int.Parse(st.nextToken());
-		Forum f = ForumsBBSManager.getInstance().getForumByID(idf);
+		Forum? f = ForumsBBSManager.getInstance().getForumByID(idf);
 		if (f == null)
 		{
 			CommunityBoardHandler.separateAndSend("<html><body><br><br><center>the forum: " + idf + " does not exist !</center><br><br></body></html>", player);
 		}
 		else
 		{
-			Topic t = f.getTopic(idt);
+			Topic? t = f.getTopic(idt);
 			if (t == null)
 			{
 				CommunityBoardHandler.separateAndSend("<html><body><br><br><center>the topic: " + idt + " does not exist !</center><br><br></body></html>", player);

@@ -19,9 +19,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminDoorControl: IAdminCommandHandler
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminDoorControl));
-	
+
 	private static readonly Map<Player, Set<int>> PLAYER_SHOWN_DOORS = new();
-	
+
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_open",
@@ -30,7 +30,7 @@ public class AdminDoorControl: IAdminCommandHandler
 		"admin_closeall",
 		"admin_showdoors",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		try
@@ -38,7 +38,7 @@ public class AdminDoorControl: IAdminCommandHandler
 			if (command.startsWith("admin_open "))
 			{
 				int doorId = int.Parse(command.Substring(11));
-				Door door = DoorData.getInstance().getDoor(doorId);
+				Door? door = DoorData.getInstance().getDoor(doorId);
 				if (door != null)
 				{
 					door.openMe();
@@ -57,7 +57,7 @@ public class AdminDoorControl: IAdminCommandHandler
 			else if (command.startsWith("admin_close "))
 			{
 				int doorId = int.Parse(command.Substring(12));
-				Door door = DoorData.getInstance().getDoor(doorId);
+				Door? door = DoorData.getInstance().getDoor(doorId);
 				if (door != null)
 				{
 					door.openMe();
@@ -103,8 +103,8 @@ public class AdminDoorControl: IAdminCommandHandler
 			}
 			else if (command.equals("admin_open"))
 			{
-				WorldObject target = activeChar.getTarget();
-				if ((target != null) && target.isDoor())
+				WorldObject? target = activeChar.getTarget();
+				if (target != null && target.isDoor())
 				{
 					((Door) target).openMe();
 				}
@@ -115,8 +115,8 @@ public class AdminDoorControl: IAdminCommandHandler
 			}
 			else if (command.equals("admin_close"))
 			{
-				WorldObject target = activeChar.getTarget();
-				if ((target != null) && target.isDoor())
+				WorldObject? target = activeChar.getTarget();
+				if (target != null && target.isDoor())
 				{
 					((Door) target).closeMe();
 				}
@@ -129,19 +129,19 @@ public class AdminDoorControl: IAdminCommandHandler
 			{
 				if (command.contains("off"))
 				{
-					Set<int> doorIds = PLAYER_SHOWN_DOORS.get(activeChar);
+					Set<int>? doorIds = PLAYER_SHOWN_DOORS.get(activeChar);
 					if (doorIds == null)
 					{
 						return true;
 					}
-					
+
 					foreach (int doorId in doorIds)
 					{
 						ExServerPrimitivePacket exsp = new ExServerPrimitivePacket("Door" + doorId, activeChar.getX(), activeChar.getY(), -16000);
 						exsp.addLine(Colors.Black, activeChar.getX(), activeChar.getY(), -16000, activeChar.getX(), activeChar.getY(), -16000);
 						activeChar.sendPacket(exsp);
 					}
-					
+
 					doorIds.clear();
 					PLAYER_SHOWN_DOORS.remove(activeChar);
 				}
@@ -152,7 +152,7 @@ public class AdminDoorControl: IAdminCommandHandler
 						doorIds = [];
 						PLAYER_SHOWN_DOORS.put(activeChar, doorIds);
 					}
-					
+
 					World.getInstance().forEachVisibleObject<Door>(activeChar, door =>
 					{
 						if (doorIds.Contains(door.getId()))
@@ -160,10 +160,10 @@ public class AdminDoorControl: IAdminCommandHandler
 							return;
 						}
 						doorIds.add(door.getId());
-						
+
 						ExServerPrimitivePacket packet = new ExServerPrimitivePacket("Door" + door.getId(), activeChar.getX(), activeChar.getY(), -16000);
 						Color color = door.isOpen() ? Colors.GREEN : Colors.RED;
-						
+
 						// box 1
 						packet.addLine(color, door.getX(0), door.getY(0), door.getZMin(), door.getX(1), door.getY(1), door.getZMin());
 						packet.addLine(color, door.getX(1), door.getY(1), door.getZMin(), door.getX(2), door.getY(2), door.getZMax());
@@ -190,10 +190,10 @@ public class AdminDoorControl: IAdminCommandHandler
 		{
 			LOGGER.Warn("Problem with AdminDoorControl: " + e);
 		}
-		
+
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
