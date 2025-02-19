@@ -10,12 +10,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpCannotUseTargetWithPrivateStoreSkillCondition: ISkillCondition
 {
-	public OpCannotUseTargetWithPrivateStoreSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return (target == null) || !target.isPlayer() || (target.getActingPlayer().getPrivateStoreType() == PrivateStoreType.NONE);
-	}
+    public OpCannotUseTargetWithPrivateStoreSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = target?.getActingPlayer();
+        return target == null || !target.isPlayer() || player == null ||
+            player.getPrivateStoreType() == PrivateStoreType.NONE;
+    }
 }

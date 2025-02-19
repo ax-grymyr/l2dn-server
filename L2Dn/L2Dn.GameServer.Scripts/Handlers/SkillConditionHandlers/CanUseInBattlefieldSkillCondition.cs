@@ -10,12 +10,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class CanUseInBattlefieldSkillCondition: ISkillCondition
 {
-	public CanUseInBattlefieldSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return (caster != null) && caster.isInsideZone(ZoneId.SIEGE);
-	}
+    public CanUseInBattlefieldSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return caster != null && caster.isInsideZone(ZoneId.SIEGE);
+    }
 }

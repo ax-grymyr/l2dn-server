@@ -9,15 +9,15 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class CannotUseInTransformSkillCondition: ISkillCondition
 {
-	private readonly int _transformId;
-	
-	public CannotUseInTransformSkillCondition(StatSet @params)
-	{
-		_transformId = @params.getInt("transformId", -1);
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return (_transformId > 0) ? caster.getTransformationId() != _transformId : !caster.isTransformed();
-	}
+    private readonly int _transformId;
+
+    public CannotUseInTransformSkillCondition(StatSet @params)
+    {
+        _transformId = @params.getInt("transformId", -1);
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return _transformId > 0 ? caster.getTransformationId() != _transformId : !caster.isTransformed();
+    }
 }

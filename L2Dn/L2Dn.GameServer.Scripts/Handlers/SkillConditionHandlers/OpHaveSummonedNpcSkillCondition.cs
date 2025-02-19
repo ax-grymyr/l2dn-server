@@ -9,22 +9,21 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpHaveSummonedNpcSkillCondition: ISkillCondition
 {
-	private readonly int _npcId;
-	
-	public OpHaveSummonedNpcSkillCondition(StatSet @params)
-	{
-		_npcId = @params.getInt("npcId");
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		foreach (Npc npc in caster.getSummonedNpcs())
-		{
-			if (npc.getId() == _npcId)
-			{
-				return true;
-			}
-		}
-		return false;
-	}
+    private readonly int _npcId;
+
+    public OpHaveSummonedNpcSkillCondition(StatSet @params)
+    {
+        _npcId = @params.getInt("npcId");
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        foreach (Npc npc in caster.getSummonedNpcs())
+        {
+            if (npc.getId() == _npcId)
+                return true;
+        }
+
+        return false;
+    }
 }

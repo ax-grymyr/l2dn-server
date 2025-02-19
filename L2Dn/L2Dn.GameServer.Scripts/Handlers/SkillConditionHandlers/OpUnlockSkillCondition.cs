@@ -10,12 +10,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpUnlockSkillCondition: ISkillCondition
 {
-	public OpUnlockSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return (target != null) && (target.isDoor() || (target is Chest));
-	}
+    public OpUnlockSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return (target != null) && (target.isDoor() || (target is Chest));
+    }
 }

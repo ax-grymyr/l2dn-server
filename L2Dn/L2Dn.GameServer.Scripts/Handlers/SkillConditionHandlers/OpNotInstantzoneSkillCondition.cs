@@ -9,12 +9,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpNotInstantzoneSkillCondition: ISkillCondition
 {
-	public OpNotInstantzoneSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return caster.getInstanceId() == 0;
-	}
+    public OpNotInstantzoneSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return caster.getInstanceId() == 0;
+    }
 }

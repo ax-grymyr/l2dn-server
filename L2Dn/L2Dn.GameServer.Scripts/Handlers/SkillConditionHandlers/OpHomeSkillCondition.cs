@@ -13,37 +13,39 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpHomeSkillCondition: ISkillCondition
 {
-	private readonly ResidenceType _type;
-	
-	public OpHomeSkillCondition(StatSet @params)
-	{
-		_type = @params.getEnum<ResidenceType>("type");
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		if (caster.isPlayer())
-		{
-			Clan clan = caster.getActingPlayer().getClan();
-			if (clan != null)
-			{
-				switch (_type)
-				{
-					case ResidenceType.CASTLE:
-					{
-						return CastleManager.getInstance().getCastleByOwner(clan) != null;
-					}
-					case ResidenceType.FORTRESS:
-					{
-						return FortManager.getInstance().getFortByOwner(clan) != null;
-					}
-					case ResidenceType.CLANHALL:
-					{
-						return ClanHallData.getInstance().getClanHallByClan(clan) != null;
-					}
-				}
-			}
-		}
-		return false;
-	}
+    private readonly ResidenceType _type;
+
+    public OpHomeSkillCondition(StatSet @params)
+    {
+        _type = @params.getEnum<ResidenceType>("type");
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = caster.getActingPlayer();
+        if (caster.isPlayer() && player != null)
+        {
+            Clan? clan = player.getClan();
+            if (clan != null)
+            {
+                switch (_type)
+                {
+                    case ResidenceType.CASTLE:
+                    {
+                        return CastleManager.getInstance().getCastleByOwner(clan) != null;
+                    }
+                    case ResidenceType.FORTRESS:
+                    {
+                        return FortManager.getInstance().getFortByOwner(clan) != null;
+                    }
+                    case ResidenceType.CLANHALL:
+                    {
+                        return ClanHallData.getInstance().getClanHallByClan(clan) != null;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
 }

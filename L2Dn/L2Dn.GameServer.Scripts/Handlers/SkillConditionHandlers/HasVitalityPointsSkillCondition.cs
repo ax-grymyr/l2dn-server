@@ -9,15 +9,16 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class HasVitalityPointsSkillCondition: ISkillCondition
 {
-	private readonly int _amount;
-	
-	public HasVitalityPointsSkillCondition(StatSet @params)
-	{
-		_amount = @params.getInt("amount", 1);
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return caster.isPlayer() && (caster.getActingPlayer().getVitalityPoints() >= _amount);
-	}
+    private readonly int _amount;
+
+    public HasVitalityPointsSkillCondition(StatSet @params)
+    {
+        _amount = @params.getInt("amount", 1);
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = caster.getActingPlayer();
+        return caster.isPlayer() && player != null && player.getVitalityPoints() >= _amount;
+    }
 }

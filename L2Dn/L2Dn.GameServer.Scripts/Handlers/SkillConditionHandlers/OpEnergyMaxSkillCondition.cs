@@ -10,20 +10,22 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpEnergyMaxSkillCondition: ISkillCondition
 {
-	private readonly int _amount;
-	
-	public OpEnergyMaxSkillCondition(StatSet @params)
-	{
-		_amount = @params.getInt("amount");
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		if (caster.getActingPlayer().getCharges() >= _amount)
-		{
-			caster.sendPacket(SystemMessageId.YOUR_FORCE_HAS_REACHED_MAXIMUM_CAPACITY);
-			return false;
-		}
-		return true;
-	}
+    private readonly int _amount;
+
+    public OpEnergyMaxSkillCondition(StatSet @params)
+    {
+        _amount = @params.getInt("amount");
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = caster.getActingPlayer();
+        if (player != null && player.getCharges() >= _amount)
+        {
+            caster.sendPacket(SystemMessageId.YOUR_FORCE_HAS_REACHED_MAXIMUM_CAPACITY);
+            return false;
+        }
+
+        return true;
+    }
 }

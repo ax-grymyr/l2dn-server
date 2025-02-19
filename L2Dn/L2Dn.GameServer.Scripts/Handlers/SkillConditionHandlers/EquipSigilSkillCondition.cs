@@ -11,13 +11,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class EquipSigilSkillCondition: ISkillCondition
 {
-	public EquipSigilSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		ItemTemplate sigil = caster.getSecondaryWeaponItem();
-		return (sigil != null) && (sigil.getItemType() == ArmorType.SIGIL);
-	}
+    public EquipSigilSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        ItemTemplate? sigil = caster.getSecondaryWeaponItem();
+        return sigil != null && sigil.getItemType() == ArmorType.SIGIL;
+    }
 }

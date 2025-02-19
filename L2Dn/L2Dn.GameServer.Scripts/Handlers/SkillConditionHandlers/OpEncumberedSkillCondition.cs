@@ -10,30 +10,28 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpEncumberedSkillCondition: ISkillCondition
 {
-	private readonly int _slotsPercent;
-	private readonly int _weightPercent;
-	
-	public OpEncumberedSkillCondition(StatSet @params)
-	{
-		_slotsPercent = @params.getInt("slotsPercent");
-		_weightPercent = @params.getInt("weightPercent");
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		if (!caster.isPlayer())
-		{
-			return false;
-		}
-		
-		Player player = caster.getActingPlayer();
-		int currentSlotsPercent = calcPercent(player.getInventoryLimit(), player.getInventory().getNonQuestSize());
-		int currentWeightPercent = calcPercent(player.getMaxLoad(), player.getCurrentLoad());
-		return (currentSlotsPercent >= _slotsPercent) && (currentWeightPercent >= _weightPercent);
-	}
-	
-	private int calcPercent(int max, int current)
-	{
-		return 100 - ((current * 100) / max);
-	}
+    private readonly int _slotsPercent;
+    private readonly int _weightPercent;
+
+    public OpEncumberedSkillCondition(StatSet @params)
+    {
+        _slotsPercent = @params.getInt("slotsPercent");
+        _weightPercent = @params.getInt("weightPercent");
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = caster.getActingPlayer();
+        if (!caster.isPlayer() || player == null)
+            return false;
+
+        int currentSlotsPercent = CalcPercent(player.getInventoryLimit(), player.getInventory().getNonQuestSize());
+        int currentWeightPercent = CalcPercent(player.getMaxLoad(), player.getCurrentLoad());
+        return currentSlotsPercent >= _slotsPercent && currentWeightPercent >= _weightPercent;
+    }
+
+    private static int CalcPercent(int max, int current)
+    {
+        return 100 - current * 100 / max;
+    }
 }

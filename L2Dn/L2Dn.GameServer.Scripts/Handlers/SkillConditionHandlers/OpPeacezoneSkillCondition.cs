@@ -10,12 +10,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpPeacezoneSkillCondition: ISkillCondition
 {
-	public OpPeacezoneSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return caster.isInsideZone(ZoneId.PEACE);
-	}
+    public OpPeacezoneSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return caster.isInsideZone(ZoneId.PEACE);
+    }
 }

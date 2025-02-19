@@ -10,12 +10,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpFishingReelingSkillCondition: ISkillCondition
 {
-	public OpFishingReelingSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return caster.isInsideZone(ZoneId.FISHING);
-	}
+    public OpFishingReelingSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return caster.isInsideZone(ZoneId.FISHING);
+    }
 }

@@ -9,15 +9,15 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class MaxMpSkillCondition: ISkillCondition
 {
-	private readonly int _amount;
-	
-	public MaxMpSkillCondition(StatSet @params)
-	{
-		_amount = @params.getInt("amount");
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return caster.getMaxMp() >= _amount;
-	}
+    private readonly int _amount;
+
+    public MaxMpSkillCondition(StatSet @params)
+    {
+        _amount = @params.getInt("amount");
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return caster.getMaxMp() >= _amount;
+    }
 }

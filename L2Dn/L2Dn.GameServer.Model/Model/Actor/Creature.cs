@@ -2079,7 +2079,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	/**
 	 * @return the summon
 	 */
-	public virtual Summon getPet()
+	public virtual Summon? getPet()
 	{
 		return null;
 	}
@@ -2092,7 +2092,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		return new();
 	}
 
-	public virtual Summon getServitor(int objectId)
+	public virtual Summon? getServitor(int objectId)
 	{
 		return null;
 	}
@@ -4236,7 +4236,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	/**
 	 * @return the Party object of the Creature.
 	 */
-	public virtual Party getParty()
+	public virtual Party? getParty()
 	{
 		return null;
 	}
@@ -5173,7 +5173,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * Dummy method overriden in {@link Player}
 	 * @return the clan of current character.
 	 */
-	public virtual Clan getClan()
+	public virtual Clan? getClan()
 	{
 		return null;
 	}

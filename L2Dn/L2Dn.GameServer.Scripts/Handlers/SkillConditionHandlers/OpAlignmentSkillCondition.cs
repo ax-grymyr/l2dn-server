@@ -10,35 +10,37 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpAlignmentSkillCondition: ISkillCondition
 {
-	private readonly SkillConditionAffectType _affectType;
-	private readonly SkillConditionAlignment _alignment;
+    private readonly SkillConditionAffectType _affectType;
+    private readonly SkillConditionAlignment _alignment;
 
-	public OpAlignmentSkillCondition(StatSet @params)
-	{
-		_affectType = @params.getEnum<SkillConditionAffectType>("affectType");
-		_alignment = @params.getEnum<SkillConditionAlignment>("alignment");
-	}
+    public OpAlignmentSkillCondition(StatSet @params)
+    {
+        _affectType = @params.getEnum<SkillConditionAffectType>("affectType");
+        _alignment = @params.getEnum<SkillConditionAlignment>("alignment");
+    }
 
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		switch (_affectType)
-		{
-			case SkillConditionAffectType.CASTER:
-			{
-				return _alignment.test(caster.getActingPlayer());
-			}
-			
-			case SkillConditionAffectType.TARGET:
-			{
-				if ((target != null) && target.isPlayer())
-				{
-					return _alignment.test(target.getActingPlayer());
-				}
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        switch (_affectType)
+        {
+            case SkillConditionAffectType.CASTER:
+            {
+                Player? player = caster.getActingPlayer();
+                return player != null && _alignment.test(player);
+            }
 
-				break;
-			}
-		}
+            case SkillConditionAffectType.TARGET:
+            {
+                Player? player = target?.getActingPlayer();
+                if (target != null && target.isPlayer() && player != null)
+                {
+                    return _alignment.test(player);
+                }
 
-		return false;
-	}
+                break;
+            }
+        }
+
+        return false;
+    }
 }

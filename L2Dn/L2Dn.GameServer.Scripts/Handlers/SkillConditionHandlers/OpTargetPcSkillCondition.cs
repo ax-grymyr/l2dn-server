@@ -9,12 +9,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpTargetPcSkillCondition: ISkillCondition
 {
-	public OpTargetPcSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return (target != null) && target.isPlayer();
-	}
+    public OpTargetPcSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return (target != null) && target.isPlayer();
+    }
 }

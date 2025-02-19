@@ -13,13 +13,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 public class OpInSiegeSkillCondition: ISkillCondition
 {
 	private readonly Set<int> _residenceIds = new();
-	
+
 	public OpInSiegeSkillCondition(StatSet @params)
 	{
 		_residenceIds.addAll(@params.getList<int>("residenceIds"));
 	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
+
+	public bool canUse(Creature caster, Skill skill, WorldObject? target)
 	{
 		foreach (int id in _residenceIds)
 		{
@@ -30,7 +30,7 @@ public class OpInSiegeSkillCondition: ISkillCondition
 		}
 		return false;
 	}
-	
+
 	private bool valid(Creature caster, int id)
 	{
 		FortSiege fortSiege = FortSiegeManager.getInstance().getSiege(id);
@@ -38,15 +38,15 @@ public class OpInSiegeSkillCondition: ISkillCondition
 		{
 			return fortSiege.isInProgress() && fortSiege.getFort().getZone().isInsideZone(caster);
 		}
-		
+
 		Siege castleSiege = SiegeManager.getInstance().getSiege(id);
 		if (castleSiege != null)
 		{
 			return castleSiege.isInProgress() && castleSiege.getCastle().getZone().isInsideZone(caster);
 		}
-		
+
 		// TODO: Check for clan hall siege
-		
+
 		return false;
 	}
 }

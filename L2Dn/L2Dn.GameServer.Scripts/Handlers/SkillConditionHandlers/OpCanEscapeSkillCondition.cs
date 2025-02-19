@@ -9,12 +9,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpCanEscapeSkillCondition: ISkillCondition
 {
-	public OpCanEscapeSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return !caster.cannotEscape();
-	}
+    public OpCanEscapeSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return !caster.cannotEscape();
+    }
 }

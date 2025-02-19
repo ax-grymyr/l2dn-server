@@ -9,12 +9,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpNotCursedSkillCondition: ISkillCondition
 {
-	public OpNotCursedSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return caster.isPlayer() && !caster.getActingPlayer().isCursedWeaponEquipped();
-	}
+    public OpNotCursedSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = caster.getActingPlayer();
+        return caster.isPlayer() && player != null && !player.isCursedWeaponEquipped();
+    }
 }

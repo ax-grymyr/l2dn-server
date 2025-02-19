@@ -10,12 +10,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpCanNotUseAirshipSkillCondition: ISkillCondition
 {
-	public OpCanNotUseAirshipSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return caster.isPlayer() && !(caster.getActingPlayer().getVehicle() is AirShip);
-	}
+    public OpCanNotUseAirshipSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = caster.getActingPlayer();
+        return caster.isPlayer() && player != null && player.getVehicle() is not AirShip;
+    }
 }

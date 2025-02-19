@@ -10,23 +10,23 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class CanRefuelAirshipSkillCondition: ISkillCondition
 {
-	private readonly int _amount;
+    private readonly int _amount;
 
-	public CanRefuelAirshipSkillCondition(StatSet @params)
-	{
-		_amount = @params.getInt("amount");
-	}
+    public CanRefuelAirshipSkillCondition(StatSet @params)
+    {
+        _amount = @params.getInt("amount");
+    }
 
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		bool canRefuelAirship = true;
-		Player player = caster.getActingPlayer();
-		if ((player == null) || (player.getAirShip() == null) || !(player.getAirShip() is ControllableAirShip) ||
-		    ((player.getAirShip().getFuel() + _amount) > player.getAirShip().getMaxFuel()))
-		{
-			canRefuelAirship = false;
-		}
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        bool canRefuelAirship = true;
+        Player? player = caster.getActingPlayer();
+        AirShip? airShip = player?.getAirShip();
+        if (airShip is not ControllableAirShip || airShip.getFuel() + _amount > airShip.getMaxFuel())
+        {
+            canRefuelAirship = false;
+        }
 
-		return canRefuelAirship;
-	}
+        return canRefuelAirship;
+    }
 }

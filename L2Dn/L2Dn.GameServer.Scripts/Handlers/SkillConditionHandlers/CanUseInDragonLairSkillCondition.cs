@@ -6,12 +6,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
 public class CanUseInDragonLairSkillCondition: ISkillCondition
 {
-	public CanUseInDragonLairSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return true; // TODO
-	}
+    public CanUseInDragonLairSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return true; // TODO
+    }
 }

@@ -6,12 +6,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
 public class OpCheckPcbangPointSkillCondition: ISkillCondition
 {
-	public OpCheckPcbangPointSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return true; // TODO
-	}
+    public OpCheckPcbangPointSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return true; // TODO
+    }
 }

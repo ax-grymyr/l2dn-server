@@ -10,27 +10,27 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class CanBookmarkAddSlotSkillCondition: ISkillCondition
 {
-	private readonly int _teleportBookmarkSlots;
-	
-	public CanBookmarkAddSlotSkillCondition(StatSet @params)
-	{
-		_teleportBookmarkSlots = @params.getInt("teleportBookmarkSlots");
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		Player player = caster.getActingPlayer();
-		if (player == null)
-		{
-			return false;
-		}
-		
-		if ((player.getBookMarkSlot() + _teleportBookmarkSlots) > 30)
-		{
-			player.sendPacket(SystemMessageId.YOU_HAVE_REACHED_THE_MAXIMUM_NUMBER_OF_MY_TELEPORT_SLOTS_OR_USE_CONDITIONS_ARE_NOT_OBSERVED);
-			return false;
-		}
-		
-		return true;
-	}
+    private readonly int _teleportBookmarkSlots;
+
+    public CanBookmarkAddSlotSkillCondition(StatSet @params)
+    {
+        _teleportBookmarkSlots = @params.getInt("teleportBookmarkSlots");
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = caster.getActingPlayer();
+        if (player == null)
+            return false;
+
+        if (player.getBookMarkSlot() + _teleportBookmarkSlots > 30)
+        {
+            player.sendPacket(SystemMessageId.
+                YOU_HAVE_REACHED_THE_MAXIMUM_NUMBER_OF_MY_TELEPORT_SLOTS_OR_USE_CONDITIONS_ARE_NOT_OBSERVED);
+
+            return false;
+        }
+
+        return true;
+    }
 }

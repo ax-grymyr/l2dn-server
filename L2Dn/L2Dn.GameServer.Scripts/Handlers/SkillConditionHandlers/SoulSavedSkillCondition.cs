@@ -10,17 +10,17 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class SoulSavedSkillCondition: ISkillCondition
 {
-	private readonly SoulType _type;
-	private readonly int _amount;
-	
-	public SoulSavedSkillCondition(StatSet @params)
-	{
-		_type = @params.getEnum("type", SoulType.LIGHT);
-		_amount = @params.getInt("amount");
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return caster.isPlayer() && (caster.getActingPlayer().getChargedSouls(_type) >= _amount);
-	}
+    private readonly SoulType _type;
+    private readonly int _amount;
+
+    public SoulSavedSkillCondition(StatSet @params)
+    {
+        _type = @params.getEnum("type", SoulType.LIGHT);
+        _amount = @params.getInt("amount");
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return caster.isPlayer() && (caster.getActingPlayer()?.getChargedSouls(_type) >= _amount);
+    }
 }

@@ -10,29 +10,29 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class CanSummonSkillCondition: ISkillCondition
 {
-	public CanSummonSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		Player player = caster.getActingPlayer();
-		if ((player == null) || player.isSpawnProtected() || player.isTeleportProtected())
-		{
-			return false;
-		}
-		
-		bool canSummon = true;
-		if (player.isFlyingMounted() || player.isMounted() || player.inObserverMode() || player.isTeleporting())
-		{
-			canSummon = false;
-		}
-		else if (player.isInAirShip())
-		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_SUMMON_A_SERVITOR_WHILE_MOUNTED);
-			canSummon = false;
-		}
-		
-		return canSummon;
-	}
+    public CanSummonSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = caster.getActingPlayer();
+        if (player == null || player.isSpawnProtected() || player.isTeleportProtected())
+        {
+            return false;
+        }
+
+        bool canSummon = true;
+        if (player.isFlyingMounted() || player.isMounted() || player.inObserverMode() || player.isTeleporting())
+        {
+            canSummon = false;
+        }
+        else if (player.isInAirShip())
+        {
+            player.sendPacket(SystemMessageId.YOU_CANNOT_SUMMON_A_SERVITOR_WHILE_MOUNTED);
+            canSummon = false;
+        }
+
+        return canSummon;
+    }
 }

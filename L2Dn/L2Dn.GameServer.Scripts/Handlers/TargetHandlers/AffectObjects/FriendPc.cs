@@ -14,13 +14,13 @@ public class FriendPc: IAffectObjectHandler
 {
 	public bool checkAffectedObject(Creature creature, Creature target)
 	{
-		if (!target.isPlayer())
+        Player? targetPlayer = target.getActingPlayer();
+		if (!target.isPlayer() || targetPlayer == null)
 		{
 			return false;
 		}
 
 		Player? player = creature.getActingPlayer();
-		Player? targetPlayer = target.getActingPlayer();
 		if (player != null)
 		{
 			// Same player.
@@ -32,7 +32,7 @@ public class FriendPc: IAffectObjectHandler
 			if (Config.ALT_COMMAND_CHANNEL_FRIENDS)
 			{
 				CommandChannel? playerCC = player.getCommandChannel();
-				CommandChannel? targetCC = targetPlayer?.getCommandChannel();
+				CommandChannel? targetCC = targetPlayer.getCommandChannel();
 				if ((playerCC != null) && (targetCC != null) && (playerCC.getLeaderObjectId() == targetCC.getLeaderObjectId()))
 				{
 					return true;
@@ -41,7 +41,7 @@ public class FriendPc: IAffectObjectHandler
 
 			// Party (command channel doesn't make you friends).
 			Party? party = player.getParty();
-			Party? targetParty = targetPlayer?.getParty();
+			Party? targetParty = targetPlayer.getParty();
 			if ((party != null) && (targetParty != null) && (party.getLeaderObjectId() == targetParty.getLeaderObjectId()))
 			{
 				return true;
@@ -67,7 +67,7 @@ public class FriendPc: IAffectObjectHandler
 
 			// Clan.
 			Model.Clans.Clan? clan = player.getClan();
-			Model.Clans.Clan? targetClan = targetPlayer?.getClan();
+			Model.Clans.Clan? targetClan = targetPlayer.getClan();
 			if (clan != null)
 			{
 				if (clan == targetClan)
@@ -83,7 +83,7 @@ public class FriendPc: IAffectObjectHandler
 			}
 
 			// Alliance.
-			if ((player.getAllyId() != 0) && (player.getAllyId() == targetPlayer?.getAllyId()))
+			if ((player.getAllyId() != 0) && (player.getAllyId() == targetPlayer.getAllyId()))
 			{
 				return true;
 			}

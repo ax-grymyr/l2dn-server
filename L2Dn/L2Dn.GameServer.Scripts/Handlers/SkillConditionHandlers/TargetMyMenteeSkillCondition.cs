@@ -10,16 +10,17 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class TargetMyMenteeSkillCondition: ISkillCondition
 {
-	public TargetMyMenteeSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		if ((target == null) || !target.isPlayer())
-		{
-			return false;
-		}
-		return MentorManager.getInstance().getMentee(caster.ObjectId, target.ObjectId) != null;
-	}
+    public TargetMyMenteeSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        if ((target == null) || !target.isPlayer())
+        {
+            return false;
+        }
+
+        return MentorManager.getInstance().getMentee(caster.ObjectId, target.ObjectId) != null;
+    }
 }

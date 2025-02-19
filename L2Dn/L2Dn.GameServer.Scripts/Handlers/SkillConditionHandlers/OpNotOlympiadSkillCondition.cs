@@ -9,12 +9,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpNotOlympiadSkillCondition: ISkillCondition
 {
-	public OpNotOlympiadSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return (caster.isPlayer() && !caster.getActingPlayer().isInOlympiadMode());
-	}
+    public OpNotOlympiadSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = caster.getActingPlayer();
+        return caster.isPlayer() && player != null && !player.isInOlympiadMode();
+    }
 }

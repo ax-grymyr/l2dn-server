@@ -10,12 +10,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class NotInUnderwaterSkillCondition: ISkillCondition
 {
-	public NotInUnderwaterSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return !caster.isInsideZone(ZoneId.WATER);
-	}
+    public NotInUnderwaterSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return !caster.isInsideZone(ZoneId.WATER);
+    }
 }

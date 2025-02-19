@@ -10,29 +10,30 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpCompanionSkillCondition: ISkillCondition
 {
-	private readonly SkillConditionCompanionType _type;
-	
-	public OpCompanionSkillCondition(StatSet @params)
-	{
-		_type = @params.getEnum<SkillConditionCompanionType>("type");
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		if (target != null)
-		{
-			switch (_type)
-			{
-				case SkillConditionCompanionType.PET:
-				{
-					return target.isPet();
-				}
-				case SkillConditionCompanionType.MY_SUMMON:
-				{
-					return target.isSummon() && (caster.getServitor(target.ObjectId) != null);
-				}
-			}
-		}
-		return false;
-	}
+    private readonly SkillConditionCompanionType _type;
+
+    public OpCompanionSkillCondition(StatSet @params)
+    {
+        _type = @params.getEnum<SkillConditionCompanionType>("type");
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        if (target != null)
+        {
+            switch (_type)
+            {
+                case SkillConditionCompanionType.PET:
+                {
+                    return target.isPet();
+                }
+                case SkillConditionCompanionType.MY_SUMMON:
+                {
+                    return target.isSummon() && caster.getServitor(target.ObjectId) != null;
+                }
+            }
+        }
+
+        return false;
+    }
 }

@@ -5,33 +5,25 @@ using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Zones;
 
-public class ZoneRegion
+public sealed class ZoneRegion(int regionX, int regionY)
 {
-    private readonly int _regionX;
-    private readonly int _regionY;
     private readonly Map<int, ZoneType> _zones = new();
-	
-    public ZoneRegion(int regionX, int regionY)
-    {
-        _regionX = regionX;
-        _regionY = regionY;
-    }
-	
+
     public Map<int, ZoneType> getZones()
     {
         return _zones;
     }
-	
+
     public int getRegionX()
     {
-        return _regionX;
+        return regionX;
     }
-	
+
     public int getRegionY()
     {
-        return _regionY;
+        return regionY;
     }
-	
+
     public void revalidateZones(Creature creature)
     {
         // do NOT update the world region while the character is still in the process of teleporting
@@ -40,13 +32,13 @@ public class ZoneRegion
         {
             return;
         }
-		
+
         foreach (ZoneType z in _zones.Values)
         {
             z.revalidateInZone(creature);
         }
     }
-	
+
     public void removeFromZones(Creature creature)
     {
         foreach (ZoneType z in _zones.Values)
@@ -54,7 +46,7 @@ public class ZoneRegion
             z.removeCharacter(creature);
         }
     }
-	
+
     public bool checkEffectRangeInsidePeaceZone(Skill skill, int x, int y, int z)
     {
         int range = skill.getEffectRange();
@@ -70,22 +62,22 @@ public class ZoneRegion
                 {
                     return false;
                 }
-				
+
                 if (e.isInsideZone(x, down, z))
                 {
                     return false;
                 }
-				
+
                 if (e.isInsideZone(left, y, z))
                 {
                     return false;
                 }
-				
+
                 if (e.isInsideZone(right, y, z))
                 {
                     return false;
                 }
-				
+
                 if (e.isInsideZone(x, y, z))
                 {
                     return false;
@@ -94,7 +86,7 @@ public class ZoneRegion
         }
         return true;
     }
-	
+
     public void onDeath(Creature creature)
     {
         foreach (ZoneType z in _zones.Values)
@@ -105,7 +97,7 @@ public class ZoneRegion
             }
         }
     }
-	
+
     public void onRevive(Creature creature)
     {
         foreach (ZoneType z in _zones.Values)

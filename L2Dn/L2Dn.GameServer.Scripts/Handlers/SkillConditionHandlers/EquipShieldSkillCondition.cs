@@ -11,13 +11,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class EquipShieldSkillCondition: ISkillCondition
 {
-	public EquipShieldSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		ItemTemplate shield = caster.getSecondaryWeaponItem();
-		return (shield != null) && (shield.getItemType() == ArmorType.SHIELD);
-	}
+    public EquipShieldSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        ItemTemplate? shield = caster.getSecondaryWeaponItem();
+        return shield != null && shield.getItemType() == ArmorType.SHIELD;
+    }
 }

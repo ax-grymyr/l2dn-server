@@ -43,7 +43,7 @@ public class NotFriendPc: IAffectObjectHandler
 			if (Config.ALT_COMMAND_CHANNEL_FRIENDS)
 			{
 				CommandChannel? playerCC = player.getCommandChannel();
-				CommandChannel? targetCC = targetPlayer?.getCommandChannel();
+				CommandChannel? targetCC = targetPlayer.getCommandChannel();
 				if ((playerCC != null) && (targetCC != null) && (playerCC.getLeaderObjectId() == targetCC.getLeaderObjectId()))
 				{
 					return false;
@@ -52,7 +52,7 @@ public class NotFriendPc: IAffectObjectHandler
 
 			// Party (command channel doesn't make you friends).
 			Party? party = player.getParty();
-			Party? targetParty = targetPlayer?.getParty();
+			Party? targetParty = targetPlayer.getParty();
 			if ((party != null) && (targetParty != null) && (party.getLeaderObjectId() == targetParty.getLeaderObjectId()))
 			{
 				return false;

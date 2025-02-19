@@ -10,12 +10,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpWyvernSkillCondition: ISkillCondition
 {
-	public OpWyvernSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return caster.isPlayer() && (caster.getActingPlayer().getMountType() == MountType.WYVERN);
-	}
+    public OpWyvernSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = caster.getActingPlayer();
+        return caster.isPlayer() && player != null && player.getMountType() == MountType.WYVERN;
+    }
 }

@@ -10,15 +10,17 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class CanUseVitalityIncreaseItemSkillCondition: ISkillCondition
 {
-	private readonly int _amount;
-	
-	public CanUseVitalityIncreaseItemSkillCondition(StatSet @params)
-	{
-		_amount = @params.getInt("amount", 0);
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return caster.isPlayer() && ((caster.getActingPlayer().getVitalityPoints() + _amount) <= PlayerStat.MAX_VITALITY_POINTS);
-	}
+    private readonly int _amount;
+
+    public CanUseVitalityIncreaseItemSkillCondition(StatSet @params)
+    {
+        _amount = @params.getInt("amount", 0);
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = caster.getActingPlayer();
+        return caster.isPlayer() && player != null &&
+            player.getVitalityPoints() + _amount <= PlayerStat.MAX_VITALITY_POINTS;
+    }
 }

@@ -10896,9 +10896,9 @@ public class Player: Playable
 	/**
 	 * @return
 	 */
-	public AirShip getAirShip()
+	public AirShip? getAirShip()
 	{
-		return (AirShip) _vehicle;
+		return (AirShip?)_vehicle;
 	}
 
 	public bool isInShuttle()

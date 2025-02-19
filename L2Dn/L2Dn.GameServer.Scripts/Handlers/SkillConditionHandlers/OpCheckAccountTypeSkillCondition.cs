@@ -9,12 +9,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpCheckAccountTypeSkillCondition: ISkillCondition
 {
-	public OpCheckAccountTypeSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return false;
-	}
+    public OpCheckAccountTypeSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return false;
+    }
 }

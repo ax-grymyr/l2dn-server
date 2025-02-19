@@ -10,17 +10,17 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class RemainCpPerSkillCondition: ISkillCondition
 {
-	private readonly int _amount;
-	private readonly SkillConditionPercentType _percentType;
-	
-	public RemainCpPerSkillCondition(StatSet @params)
-	{
-		_amount = @params.getInt("amount");
-		_percentType = @params.getEnum<SkillConditionPercentType>("percentType");
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return _percentType.test(caster.getCurrentCpPercent(), _amount);
-	}
+    private readonly int _amount;
+    private readonly SkillConditionPercentType _percentType;
+
+    public RemainCpPerSkillCondition(StatSet @params)
+    {
+        _amount = @params.getInt("amount");
+        _percentType = @params.getEnum<SkillConditionPercentType>("percentType");
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return _percentType.test(caster.getCurrentCpPercent(), _amount);
+    }
 }

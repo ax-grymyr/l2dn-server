@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 public class Op1hWeaponSkillCondition: ISkillCondition
 {
     private readonly Set<WeaponType> _weaponTypes = new();
-	
+
     public Op1hWeaponSkillCondition(StatSet @params)
     {
         List<string> weaponTypes = @params.getList<string>("weaponType");
@@ -22,15 +22,13 @@ public class Op1hWeaponSkillCondition: ISkillCondition
             }
         }
     }
-	
-    public bool canUse(Creature caster, Skill skill, WorldObject target)
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
-        Weapon weapon = caster.getActiveWeaponItem();
+        Weapon? weapon = caster.getActiveWeaponItem();
         if (weapon == null)
-        {
             return false;
-        }
-		
+
         foreach (WeaponType weaponType in _weaponTypes)
         {
             if (weapon.getItemType() == weaponType)
@@ -38,7 +36,7 @@ public class Op1hWeaponSkillCondition: ISkillCondition
                 return (weapon.getBodyPart() & ItemTemplate.SLOT_LR_HAND) == 0;
             }
         }
-		
+
         return false;
     }
 }

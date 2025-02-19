@@ -9,12 +9,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpCheckCrtEffectSkillCondition: ISkillCondition
 {
-	public OpCheckCrtEffectSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return (target != null) && target.isNpc() && ((Npc) target).getTemplate().canBeCrt();
-	}
+    public OpCheckCrtEffectSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return target != null && target.isNpc() && ((Npc)target).getTemplate().canBeCrt();
+    }
 }

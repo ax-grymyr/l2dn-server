@@ -12,16 +12,17 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpSoulMaxSkillCondition: ISkillCondition
 {
-	private readonly SoulType _type;
-	
-	public OpSoulMaxSkillCondition(StatSet @params)
-	{
-		_type = @params.getEnum("type", SoulType.LIGHT);
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		int maxSouls = (int) caster.getStat().getValue(Stat.MAX_SOULS);
-		return caster.isPlayable() && (caster.getActingPlayer().getChargedSouls(_type) < maxSouls);
-	}
+    private readonly SoulType _type;
+
+    public OpSoulMaxSkillCondition(StatSet @params)
+    {
+        _type = @params.getEnum("type", SoulType.LIGHT);
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        int maxSouls = (int)caster.getStat().getValue(Stat.MAX_SOULS);
+        Player? player = caster.getActingPlayer();
+        return caster.isPlayable() && player != null && player.getChargedSouls(_type) < maxSouls;
+    }
 }

@@ -9,17 +9,18 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpTargetMyPledgeAcademySkillCondition: ISkillCondition
 {
-	public OpTargetMyPledgeAcademySkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		if ((caster.getClan() == null) || (target == null) || !target.isPlayer())
-		{
-			return false;
-		}
-		Player targetPlayer = target.getActingPlayer();
-		return targetPlayer.isAcademyMember() && (targetPlayer.getClan() == caster.getClan());
-	}
+    public OpTargetMyPledgeAcademySkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        if (caster.getClan() == null || target == null || !target.isPlayer())
+        {
+            return false;
+        }
+
+        Player? targetPlayer = target.getActingPlayer();
+        return targetPlayer != null && targetPlayer.isAcademyMember() && targetPlayer.getClan() == caster.getClan();
+    }
 }

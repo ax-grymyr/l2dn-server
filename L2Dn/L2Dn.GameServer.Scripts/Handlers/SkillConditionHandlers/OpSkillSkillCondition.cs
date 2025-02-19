@@ -12,17 +12,17 @@ public class OpSkillSkillCondition: ISkillCondition
 	private readonly int _skillId;
 	private readonly int _skillLevel;
 	private readonly bool _hasLearned;
-	
+
 	public OpSkillSkillCondition(StatSet @params)
 	{
 		_skillId = @params.getInt("skillId");
 		_skillLevel = @params.getInt("skillLevel");
 		_hasLearned = @params.getBoolean("hasLearned");
 	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
+
+	public bool canUse(Creature caster, Skill skill, WorldObject? target)
 	{
-		Skill requestedSkill = caster.getKnownSkill(_skillId);
+		Skill? requestedSkill = caster.getKnownSkill(_skillId);
 		if (_hasLearned)
 		{
 			return (requestedSkill != null) && (requestedSkill.getLevel() == _skillLevel);

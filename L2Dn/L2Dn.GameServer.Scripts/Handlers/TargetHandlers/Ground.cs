@@ -25,9 +25,10 @@ public class Ground: ITargetTypeHandler
     public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse,
         bool dontMove, bool sendMessage)
     {
-        if (creature.isPlayer())
+        Player? player = creature.getActingPlayer();
+        if (creature.isPlayer() && player != null)
         {
-            Location3D? worldPosition = creature.getActingPlayer()?.getCurrentSkillWorldPosition();
+            Location3D? worldPosition = player.getCurrentSkillWorldPosition();
             if (worldPosition != null)
             {
                 if (dontMove && !creature.IsInsideRadius2D(worldPosition.Value.Location2D,
@@ -47,7 +48,8 @@ public class Ground: ITargetTypeHandler
                 }
 
                 ZoneRegion? zoneRegion = ZoneManager.getInstance().getRegion(creature.Location.Location2D);
-                if (skill.isBad() && !creature.isInInstance() && !zoneRegion.checkEffectRangeInsidePeaceZone(skill,
+                if (skill.isBad() && !creature.isInInstance() && zoneRegion != null &&
+                    !zoneRegion.checkEffectRangeInsidePeaceZone(skill,
                         worldPosition.Value.X, worldPosition.Value.Y, worldPosition.Value.Z))
                 {
                     if (sendMessage)

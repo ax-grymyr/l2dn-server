@@ -11,29 +11,34 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class CanSummonCubicSkillCondition: ISkillCondition
 {
-	public CanSummonCubicSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		if (!caster.isPlayer() || caster.isAlikeDead() || caster.getActingPlayer().inObserverMode())
-		{
-			return false;
-		}
-		
-		Player player = caster.getActingPlayer();
-		if (player.getAutoUseSettings().isAutoSkill(skill.getId()))
-		{
-			foreach (AbstractEffect effect in skill.getEffects(EffectScope.GENERAL))
-			{
-				if ((effect is SummonCubic) && (player.getCubicById(((SummonCubic) effect).getCubicId()) != null))
-				{
-					return false;
-				}
-			}
-		}
-		
-		return !player.inObserverMode() && !player.isMounted() && !player.isSpawnProtected() && !player.isTeleportProtected();
-	}
+    public CanSummonCubicSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = caster.getActingPlayer();
+        if (!caster.isPlayer() || caster.isAlikeDead() || player == null || player.inObserverMode())
+        {
+            return false;
+        }
+
+        if (player.getAutoUseSettings().isAutoSkill(skill.getId()))
+        {
+            List<AbstractEffect>? generalEffects = skill.getEffects(EffectScope.GENERAL);
+            if (generalEffects != null)
+            {
+                foreach (AbstractEffect effect in generalEffects)
+                {
+                    if (effect is SummonCubic cubic && player.getCubicById(cubic.getCubicId()) != null)
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        return !player.inObserverMode() && !player.isMounted() && !player.isSpawnProtected() &&
+            !player.isTeleportProtected();
+    }
 }

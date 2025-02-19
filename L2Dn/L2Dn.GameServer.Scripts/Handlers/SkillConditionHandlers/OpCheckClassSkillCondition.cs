@@ -12,34 +12,38 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpCheckClassSkillCondition: ISkillCondition
 {
-	private readonly CharacterClass _classId;
-	private readonly SkillConditionAffectType _affectType;
-	private readonly bool _isWithin;
-	
-	public OpCheckClassSkillCondition(StatSet @params)
-	{
-		_classId = @params.getEnum<CharacterClass>("classId");
-		_affectType = @params.getEnum<SkillConditionAffectType>("affectType");
-		_isWithin = @params.getBoolean("isWithin");
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		switch (_affectType)
-		{
-			case SkillConditionAffectType.CASTER:
-			{
-				return caster.isPlayer() && (_isWithin == (_classId == caster.getActingPlayer().getClassId()));
-			}
-			case SkillConditionAffectType.TARGET:
-			{
-				if ((target != null) && !target.isPlayer())
-				{
-					return _isWithin == (_classId == target.getActingPlayer().getClassId());
-				}
-				break;
-			}
-		}
-		return false;
-	}
+    private readonly CharacterClass _classId;
+    private readonly SkillConditionAffectType _affectType;
+    private readonly bool _isWithin;
+
+    public OpCheckClassSkillCondition(StatSet @params)
+    {
+        _classId = @params.getEnum<CharacterClass>("classId");
+        _affectType = @params.getEnum<SkillConditionAffectType>("affectType");
+        _isWithin = @params.getBoolean("isWithin");
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        switch (_affectType)
+        {
+            case SkillConditionAffectType.CASTER:
+            {
+                Player? player = caster.getActingPlayer();
+                return caster.isPlayer() && player != null && _isWithin == (_classId == player.getClassId());
+            }
+            case SkillConditionAffectType.TARGET:
+            {
+                Player? player = target?.getActingPlayer();
+                if (target != null && !target.isPlayer() && player != null)
+                {
+                    return _isWithin == (_classId == player.getClassId());
+                }
+
+                break;
+            }
+        }
+
+        return false;
+    }
 }

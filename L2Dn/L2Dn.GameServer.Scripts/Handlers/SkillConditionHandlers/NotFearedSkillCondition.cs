@@ -10,12 +10,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class NotFearedSkillCondition: ISkillCondition
 {
-	public NotFearedSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return (target != null) && target.isCreature() && !((Creature) target).isAffected(EffectFlag.FEAR);
-	}
+    public NotFearedSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return target != null && target.isCreature() && !((Creature)target).isAffected(EffectFlag.FEAR);
+    }
 }

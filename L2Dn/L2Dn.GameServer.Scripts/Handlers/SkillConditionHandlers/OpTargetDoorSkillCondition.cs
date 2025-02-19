@@ -10,15 +10,15 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpTargetDoorSkillCondition: ISkillCondition
 {
-	private readonly Set<int> _doorIds = new();
-	
-	public OpTargetDoorSkillCondition(StatSet @params)
-	{
-		_doorIds.addAll(@params.getList<int>("doorIds"));
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return (target != null) && target.isDoor() && _doorIds.Contains(target.getId());
-	}
+    private readonly Set<int> _doorIds = [];
+
+    public OpTargetDoorSkillCondition(StatSet @params)
+    {
+        _doorIds.addAll(@params.getList<int>("doorIds"));
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return (target != null) && target.isDoor() && _doorIds.Contains(target.getId());
+    }
 }

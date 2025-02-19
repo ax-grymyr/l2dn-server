@@ -11,45 +11,45 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpBlinkSkillCondition: ISkillCondition
 {
-	private readonly int _angle;
-	private readonly int _range;
-	
-	public OpBlinkSkillCondition(StatSet @params)
-	{
-		Position position = @params.getEnum<Position>("direction");
-		switch (position)
-		{
-			case Position.Back:
-			{
-				_angle = 0;
-				break;
-			}
-			case Position.Front:
-			{
-				_angle = 180;
-				break;
-			}
-			default:
-			{
-				_angle = -1;
-				break;
-			}
-		}
-		
-		_range = @params.getInt("range");
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		double angle = HeadingUtil.ConvertHeadingToDegrees(caster.getHeading());
-		double radian = double.DegreesToRadians(angle);
-		double course = double.DegreesToRadians(_angle);
-		int x1 = (int) (Math.Cos(Math.PI + radian + course) * _range);
-		int y1 = (int) (Math.Sin(Math.PI + radian + course) * _range);
-		int x = caster.getX() + x1;
-		int y = caster.getY() + y1;
-		int z = caster.getZ();
-		return GeoEngine.getInstance()
-			.canMoveToTarget(caster.Location.Location3D, new Location3D(x, y, z), caster.getInstanceWorld());
-	}
+    private readonly int _angle;
+    private readonly int _range;
+
+    public OpBlinkSkillCondition(StatSet @params)
+    {
+        Position position = @params.getEnum<Position>("direction");
+        switch (position)
+        {
+            case Position.Back:
+            {
+                _angle = 0;
+                break;
+            }
+            case Position.Front:
+            {
+                _angle = 180;
+                break;
+            }
+            default:
+            {
+                _angle = -1;
+                break;
+            }
+        }
+
+        _range = @params.getInt("range");
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        double angle = HeadingUtil.ConvertHeadingToDegrees(caster.getHeading());
+        double radian = double.DegreesToRadians(angle);
+        double course = double.DegreesToRadians(_angle);
+        int x1 = (int)(Math.Cos(Math.PI + radian + course) * _range);
+        int y1 = (int)(Math.Sin(Math.PI + radian + course) * _range);
+        int x = caster.getX() + x1;
+        int y = caster.getY() + y1;
+        int z = caster.getZ();
+        return GeoEngine.getInstance().
+            canMoveToTarget(caster.Location.Location3D, new Location3D(x, y, z), caster.getInstanceWorld());
+    }
 }

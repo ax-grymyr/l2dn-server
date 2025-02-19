@@ -10,12 +10,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpSiegeHammerSkillCondition: ISkillCondition
 {
-	public OpSiegeHammerSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return caster.isInsideZone(ZoneId.SIEGE);
-	}
+    public OpSiegeHammerSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        return caster.isInsideZone(ZoneId.SIEGE);
+    }
 }

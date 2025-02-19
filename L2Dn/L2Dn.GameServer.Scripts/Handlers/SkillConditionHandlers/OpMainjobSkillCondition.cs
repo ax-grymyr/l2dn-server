@@ -9,12 +9,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
  */
 public class OpMainjobSkillCondition: ISkillCondition
 {
-	public OpMainjobSkillCondition(StatSet @params)
-	{
-	}
-	
-	public bool canUse(Creature caster, Skill skill, WorldObject target)
-	{
-		return caster.isPlayer() && !caster.getActingPlayer().isSubClassActive();
-	}
+    public OpMainjobSkillCondition(StatSet @params)
+    {
+    }
+
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = caster.getActingPlayer();
+        return caster.isPlayer() && player != null && !player.isSubClassActive();
+    }
 }
