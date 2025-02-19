@@ -19,8 +19,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminFortSiege: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_fortsiege",
+    [
+        "admin_fortsiege",
 		"admin_add_fortattacker",
 		"admin_list_fortsiege_clans",
 		"admin_clear_fortsiege_list",
@@ -28,8 +28,8 @@ public class AdminFortSiege: IAdminCommandHandler
 		"admin_endfortsiege",
 		"admin_startfortsiege",
 		"admin_setfort",
-		"admin_removefort"
-	};
+		"admin_removefort",
+    ];
 	
 	public bool useAdminCommand(string commandValue, Player activeChar)
 	{

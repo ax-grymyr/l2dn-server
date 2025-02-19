@@ -6,9 +6,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminBBS: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_bbs"
-	};
+    [
+        "admin_bbs",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

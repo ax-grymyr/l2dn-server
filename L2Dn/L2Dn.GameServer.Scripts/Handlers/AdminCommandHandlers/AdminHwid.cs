@@ -14,10 +14,10 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminHwid: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_hwid",
-		"admin_hwinfo"
-	};
+    [
+        "admin_hwid",
+		"admin_hwinfo",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

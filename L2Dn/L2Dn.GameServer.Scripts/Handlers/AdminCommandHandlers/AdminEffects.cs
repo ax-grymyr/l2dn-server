@@ -38,8 +38,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminEffects: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_invis",
+    [
+        "admin_invis",
 		"admin_invisible",
 		"admin_setinvis",
 		"admin_vis",
@@ -75,7 +75,7 @@ public class AdminEffects: IAdminCommandHandler
 		"admin_event_trigger",
 		"admin_settargetable",
 		"admin_playmovie",
-	};
+    ];
 	
 	public bool useAdminCommand(string commandValue, Player activeChar)
 	{

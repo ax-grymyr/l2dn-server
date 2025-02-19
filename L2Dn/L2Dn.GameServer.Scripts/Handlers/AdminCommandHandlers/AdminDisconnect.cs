@@ -14,9 +14,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminDisconnect: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_character_disconnect"
-	};
+    [
+        "admin_character_disconnect",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

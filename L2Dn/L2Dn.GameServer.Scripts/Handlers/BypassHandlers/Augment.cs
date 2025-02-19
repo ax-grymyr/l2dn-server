@@ -8,16 +8,16 @@ namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 public class Augment: IBypassHandler
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(Augment));
-    
+
 	private static readonly string[] COMMANDS = ["Augment"];
-	
-	public bool useBypass(string command, Player player, Creature target)
+
+	public bool useBypass(string command, Player player, Creature? target)
 	{
-		if (!target.isNpc())
+		if (target is null || !target.isNpc())
 		{
 			return false;
 		}
-		
+
 		try
 		{
 			switch (int.Parse(command.Substring(8, 9).Trim()))
@@ -36,12 +36,12 @@ public class Augment: IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_logger.Warn("Exception in " + GetType().Name + ": " + e);
+			_logger.Warn($"Exception in {GetType().Name}: {e}");
 		}
-		
+
 		return false;
 	}
-	
+
 	public string[] getBypassList()
 	{
 		return COMMANDS;

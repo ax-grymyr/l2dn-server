@@ -15,9 +15,9 @@ public class AdminHeal: IAdminCommandHandler
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminHeal));
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_heal"
-	};
+    [
+        "admin_heal",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

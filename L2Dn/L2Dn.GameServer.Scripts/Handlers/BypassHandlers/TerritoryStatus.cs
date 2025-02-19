@@ -13,24 +13,24 @@ namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 public class TerritoryStatus: IBypassHandler
 {
 	private static readonly string[] COMMANDS =
+    [
+        "TerritoryStatus",
+    ];
+
+	public bool useBypass(string command, Player player, Creature? target)
 	{
-		"TerritoryStatus"
-	};
-	
-	public bool useBypass(string command, Player player, Creature target)
-	{
-		if (!target.isNpc())
+		if (target == null || !target.isNpc())
 		{
 			return false;
 		}
-		
-		Npc npc = (Npc) target;
+
+		Npc npc = (Npc)target;
 		HtmlContent htmlContent;
 		{
-			if (npc.getCastle().getOwnerId() > 0)
+            Clan? clan = ClanTable.getInstance().getClan(npc.getCastle().getOwnerId());
+			if (npc.getCastle().getOwnerId() > 0 && clan != null)
 			{
 				htmlContent = HtmlContent.LoadFromFile("html/territorystatus.htm", player);
-				Clan clan = ClanTable.getInstance().getClan(npc.getCastle().getOwnerId());
 				htmlContent.Replace("%clanname%", clan.getName());
 				htmlContent.Replace("%clanleadername%", clan.getLeaderName());
 			}
@@ -43,7 +43,7 @@ public class TerritoryStatus: IBypassHandler
 		htmlContent.Replace("%castlename%", npc.getCastle().getName());
 		htmlContent.Replace("%taxpercent%", npc.getCastle().getTaxPercent(TaxType.BUY).ToString());
 		htmlContent.Replace("%objectId%", npc.ObjectId.ToString());
-		
+
 		{
 			if (npc.getCastle().getResidenceId() > 6)
 			{
@@ -54,12 +54,12 @@ public class TerritoryStatus: IBypassHandler
 				htmlContent.Replace("%territory%", "The Kingdom of Aden");
 			}
 		}
-		
+
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 		return true;
 	}
-	
+
 	public string[] getBypassList()
 	{
 		return COMMANDS;

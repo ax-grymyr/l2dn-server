@@ -8,21 +8,21 @@ namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 public class SupportBlessing: IBypassHandler
 {
 	private static readonly string[] COMMANDS =
+    [
+        "GiveBlessing",
+    ];
+
+	public bool useBypass(string command, Player player, Creature? target)
 	{
-		"GiveBlessing"
-	};
-	
-	public bool useBypass(string command, Player player, Creature target)
-	{
-		if (!target.isNpc())
+		if (target == null || !target.isNpc())
 		{
 			return false;
 		}
-		
+
 		Npc npc = (Npc) target;
-		
+
 		// If the player is too high level, display a message and return
-		if ((player.getLevel() > 39) || (player.getClassId().GetLevel() >= 2))
+		if (player.getLevel() > 39 || player.getClassId().GetLevel() >= 2)
 		{
 			npc.showChatWindow(player, "html/default/SupportBlessingHighLevel.htm");
 			return true;
@@ -31,7 +31,7 @@ public class SupportBlessing: IBypassHandler
 		SkillCaster.triggerCast(npc, player, CommonSkill.BLESSING_OF_PROTECTION.getSkill());
 		return false;
 	}
-	
+
 	public string[] getBypassList()
 	{
 		return COMMANDS;

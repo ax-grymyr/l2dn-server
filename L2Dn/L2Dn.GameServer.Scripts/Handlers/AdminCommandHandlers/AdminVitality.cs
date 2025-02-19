@@ -11,12 +11,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminVitality: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_set_vitality",
+    [
+        "admin_set_vitality",
 		"admin_full_vitality",
 		"admin_empty_vitality",
-		"admin_get_vitality"
-	};
+		"admin_get_vitality",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

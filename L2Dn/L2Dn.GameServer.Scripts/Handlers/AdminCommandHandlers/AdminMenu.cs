@@ -20,8 +20,8 @@ public class AdminMenu: IAdminCommandHandler
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminMenu));
 	
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_char_manage",
+    [
+        "admin_char_manage",
 		"admin_teleport_character_to_menu",
 		"admin_recall_char_menu",
 		"admin_recall_party_menu",
@@ -30,8 +30,8 @@ public class AdminMenu: IAdminCommandHandler
 		"admin_kick_menu",
 		"admin_kill_menu",
 		"admin_ban_menu",
-		"admin_unban_menu"
-	};
+		"admin_unban_menu",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

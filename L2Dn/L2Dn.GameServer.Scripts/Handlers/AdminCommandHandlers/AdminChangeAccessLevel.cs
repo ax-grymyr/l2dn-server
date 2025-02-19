@@ -17,9 +17,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminChangeAccessLevel: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_changelvl"
-	};
+    [
+        "admin_changelvl",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

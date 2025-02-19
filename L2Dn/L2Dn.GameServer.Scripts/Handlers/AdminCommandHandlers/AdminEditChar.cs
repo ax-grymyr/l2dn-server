@@ -37,8 +37,8 @@ public class AdminEditChar: IAdminCommandHandler
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminEditChar));
 	
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_edit_character",
+    [
+        "admin_edit_character",
 		"admin_current_player",
 		"admin_setreputation", // sets reputation of target char to any amount. //setreputation <amout>
 		"admin_nokarma", // sets reputation to 0 if its negative.
@@ -74,8 +74,8 @@ public class AdminEditChar: IAdminCommandHandler
 		"admin_set_mp",
 		"admin_set_cp",
 		"admin_setparam",
-		"admin_unsetparam"
-	};
+		"admin_unsetparam",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{
@@ -1464,7 +1464,7 @@ public class AdminEditChar: IAdminCommandHandler
 			ip = client.IpAddress.ToString();
 			if (ipMap.get(ip) == null)
 			{
-				ipMap.put(ip, new());
+				ipMap.put(ip, []);
 			}
 			ipMap.get(ip).Add(player);
 
@@ -1515,7 +1515,7 @@ public class AdminEditChar: IAdminCommandHandler
 			IpPack pack = new IpPack(client.IpAddress.ToString(), null /*client.getTrace()*/);
 			if (ipMap.get(pack) == null)
 			{
-				ipMap.put(pack, new());
+				ipMap.put(pack, []);
 			}
 			ipMap.get(pack).Add(player);
 

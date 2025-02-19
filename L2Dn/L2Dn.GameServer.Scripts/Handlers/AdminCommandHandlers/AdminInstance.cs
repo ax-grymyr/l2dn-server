@@ -24,17 +24,17 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminInstance: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_instance",
+    [
+        "admin_instance",
 		"admin_instances",
 		"admin_instancelist",
 		"admin_instancecreate",
 		"admin_instanceteleport",
 		"admin_instancedestroy",
-	};
+    ];
 	private static int[] IGNORED_TEMPLATES =
-	{
-		127, // Chamber of Delusion
+    [
+        127, // Chamber of Delusion
 		128, // Chamber of Delusion
 		129, // Chamber of Delusion
 		130, // Chamber of Delusion
@@ -44,7 +44,7 @@ public class AdminInstance: IAdminCommandHandler
 		149, // Heros's Vestiges Arena
 		150, // Orbis Arena
 		148, // Three Bridges Arena
-	};
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{
@@ -75,7 +75,7 @@ public class AdminInstance: IAdminCommandHandler
 				if (template != null)
 				{
 					string enterGroup = st.hasMoreTokens() ? st.nextToken() : "Alone";
-					List<Player> members = new();
+					List<Player> members = [];
 					
 					switch (enterGroup)
 					{

@@ -12,11 +12,11 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminGraciaSeeds: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_gracia_seeds",
+    [
+        "admin_gracia_seeds",
 		"admin_kill_tiat",
-		"admin_set_sodstate"
-	};
+		"admin_set_sodstate",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

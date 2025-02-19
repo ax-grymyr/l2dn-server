@@ -550,7 +550,7 @@ public class Npc: Creature
 	{
 		if (canInteract(player))
 		{
-			IBypassHandler handler = BypassHandler.getInstance().getHandler(command);
+			IBypassHandler? handler = BypassHandler.getInstance().getHandler(command);
 			if (handler != null)
 			{
 				handler.useBypass(command, player, this);

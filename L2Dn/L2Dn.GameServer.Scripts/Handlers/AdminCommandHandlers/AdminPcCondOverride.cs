@@ -23,10 +23,10 @@ public class AdminPcCondOverride: IAdminCommandHandler
 	// private static int SETPARAM_ORDER = 0x90;
 	
 	private static readonly string[] COMMANDS =
-	{
-		"admin_exceptions",
+    [
+        "admin_exceptions",
 		"admin_set_exception",
-	};
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

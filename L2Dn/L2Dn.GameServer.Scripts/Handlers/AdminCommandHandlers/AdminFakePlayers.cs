@@ -13,9 +13,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminFakePlayers: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_fakechat"
-	};
+    [
+        "admin_fakechat",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

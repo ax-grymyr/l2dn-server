@@ -22,8 +22,8 @@ public class AdminEnchant: IAdminCommandHandler
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminEnchant));
 	
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_seteh", // 6
+    [
+        "admin_seteh", // 6
 		"admin_setec", // 10
 		"admin_seteg", // 9
 		"admin_setel", // 11
@@ -38,8 +38,8 @@ public class AdminEnchant: IAdminCommandHandler
 		"admin_setun", // 0
 		"admin_setba", // 13
 		"admin_setbe",
-		"admin_enchant"
-	};
+		"admin_enchant",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

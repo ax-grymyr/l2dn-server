@@ -20,11 +20,11 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminFightCalculator: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_fight_calculator",
+    [
+        "admin_fight_calculator",
 		"admin_fight_calculator_show",
 		"admin_fcs",
-	};
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

@@ -21,12 +21,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminClan: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_clan_info",
+    [
+        "admin_clan_info",
 		"admin_clan_changeleader",
 		"admin_clan_show_pending",
-		"admin_clan_force_pending"
-	};
+		"admin_clan_force_pending",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

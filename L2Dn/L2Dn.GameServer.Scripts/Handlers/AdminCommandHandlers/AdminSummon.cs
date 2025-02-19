@@ -10,9 +10,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminSummon: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_summon"
-	};
+    [
+        "admin_summon",
+    ];
 	
 	public string[] getAdminCommandList()
 	{

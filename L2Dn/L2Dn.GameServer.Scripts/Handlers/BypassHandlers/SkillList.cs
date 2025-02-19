@@ -7,13 +7,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 public class SkillList: IBypassHandler
 {
 	private static readonly string[] COMMANDS =
+    [
+        "SkillList",
+    ];
+
+	public bool useBypass(string command, Player player, Creature? target)
 	{
-		"SkillList"
-	};
-	
-	public bool useBypass(string command, Player player, Creature target)
-	{
-		if ((target == null) || !target.isNpc())
+		if (target == null || !target.isNpc())
 		{
 			return false;
 		}
@@ -21,7 +21,7 @@ public class SkillList: IBypassHandler
 		Folk.showSkillList(player, (Npc) target, player.getClassId());
 		return true;
 	}
-	
+
 	public string[] getBypassList()
 	{
 		return COMMANDS;

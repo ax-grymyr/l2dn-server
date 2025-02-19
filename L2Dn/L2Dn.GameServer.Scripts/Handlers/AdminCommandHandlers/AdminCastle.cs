@@ -23,9 +23,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminCastle: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_castlemanage",
-	};
+    [
+        "admin_castlemanage",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

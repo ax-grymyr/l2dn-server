@@ -25,9 +25,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminClanHall: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_clanhall",
-	};
+    [
+        "admin_clanhall",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

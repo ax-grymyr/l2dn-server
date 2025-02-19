@@ -20,13 +20,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminFence: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_addfence",
+    [
+        "admin_addfence",
 		"admin_setfencestate",
 		"admin_removefence",
 		"admin_listfence",
-		"admin_gofence"
-	};
+		"admin_gofence",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

@@ -15,10 +15,10 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminTest: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_stats",
-		"admin_skill_test"
-	};
+    [
+        "admin_stats",
+		"admin_skill_test",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

@@ -17,11 +17,11 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminShutdown: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_server_shutdown",
+    [
+        "admin_server_shutdown",
 		"admin_server_restart",
-		"admin_server_abort"
-	};
+		"admin_server_abort",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

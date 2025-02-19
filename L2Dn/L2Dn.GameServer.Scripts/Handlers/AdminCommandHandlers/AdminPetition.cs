@@ -14,14 +14,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminPetition: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_view_petitions",
+    [
+        "admin_view_petitions",
 		"admin_view_petition",
 		"admin_accept_petition",
 		"admin_reject_petition",
 		"admin_reset_petitions",
-		"admin_force_peti"
-	};
+		"admin_force_peti",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

@@ -14,15 +14,15 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminOnline: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_online"
-	};
+    [
+        "admin_online",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.equalsIgnoreCase("admin_online"))
 		{
-			List<string> ips = new();
+			List<string> ips = [];
 			int total = 0;
 			int online = 0;
 			int offline = 0;

@@ -16,10 +16,10 @@ public class AdminRepairChar: IAdminCommandHandler
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminRepairChar));
 	
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_restore",
-		"admin_repair"
-	};
+    [
+        "admin_restore",
+		"admin_repair",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

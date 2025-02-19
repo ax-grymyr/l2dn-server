@@ -8,18 +8,15 @@ namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
  */
 public class VoiceCommand: IBypassHandler
 {
-	private static readonly string[] COMMANDS =
-	{
-		"voice"
-	};
-	
-	public bool useBypass(string command, Player player, Creature target)
+    private static readonly string[] COMMANDS = ["voice"];
+
+	public bool useBypass(string command, Player player, Creature? target)
 	{
 		// only voice commands allowed
-		if ((command.Length > 7) && (command[6] == '.'))
+		if (command.Length > 7 && command[6] == '.')
 		{
 			string vc;
-			string vparams;
+			string? vparams;
 			int endOfCommand = command.IndexOf(' ', 7);
 			if (endOfCommand > 0)
 			{
@@ -31,20 +28,20 @@ public class VoiceCommand: IBypassHandler
 				vc = command.Substring(7).Trim();
 				vparams = null;
 			}
-			
+
 			if (vc.Length > 0)
 			{
-				IVoicedCommandHandler vch = VoicedCommandHandler.getInstance().getHandler(vc);
+				IVoicedCommandHandler? vch = VoicedCommandHandler.getInstance().getHandler(vc);
 				if (vch != null)
 				{
-					return vch.useVoicedCommand(vc, player, vparams);
+					return vch.useVoicedCommand(vc, player, vparams ?? string.Empty);
 				}
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 	public string[] getBypassList()
 	{
 		return COMMANDS;

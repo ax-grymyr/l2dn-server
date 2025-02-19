@@ -12,10 +12,10 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminInstanceZone: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_instancezone",
-		"admin_instancezone_clear"
-	};
+    [
+        "admin_instancezone",
+		"admin_instancezone_clear",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

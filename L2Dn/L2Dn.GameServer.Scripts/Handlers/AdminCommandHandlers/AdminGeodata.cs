@@ -17,8 +17,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminGeodata: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_geo_pos",
+    [
+        "admin_geo_pos",
 		"admin_geo_spawn_pos",
 		"admin_geo_can_move",
 		"admin_geo_can_see",
@@ -44,8 +44,8 @@ public class AdminGeodata: IAdminCommandHandler
 		"admin_geodisablewest",
 		"admin_dw",
 		"admin_geoedit",
-		"admin_ge"
-	};
+		"admin_ge",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

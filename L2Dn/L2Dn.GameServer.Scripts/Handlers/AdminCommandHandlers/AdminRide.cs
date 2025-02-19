@@ -11,8 +11,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminRide: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_ride_horse",
+    [
+        "admin_ride_horse",
 		"admin_ride_bike",
 		"admin_ride_wyvern",
 		"admin_ride_strider",
@@ -21,7 +21,7 @@ public class AdminRide: IAdminCommandHandler
 		"admin_unride",
 		"admin_ride_wolf",
 		"admin_unride_wolf",
-	};
+    ];
 	
 	private static int PURPLE_MANED_HORSE_TRANSFORMATION_ID = 106;
 	

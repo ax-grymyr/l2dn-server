@@ -23,13 +23,13 @@ public class AdminDoorControl: IAdminCommandHandler
 	private static readonly Map<Player, Set<int>> PLAYER_SHOWN_DOORS = new();
 	
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_open",
+    [
+        "admin_open",
 		"admin_close",
 		"admin_openall",
 		"admin_closeall",
-		"admin_showdoors"
-	};
+		"admin_showdoors",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{
@@ -149,7 +149,7 @@ public class AdminDoorControl: IAdminCommandHandler
 				{
 					if (!PLAYER_SHOWN_DOORS.TryGetValue(activeChar, out Set<int>? doorIds))
 					{
-						doorIds = new();
+						doorIds = [];
 						PLAYER_SHOWN_DOORS.put(activeChar, doorIds);
 					}
 					

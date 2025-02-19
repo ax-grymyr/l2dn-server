@@ -16,15 +16,15 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminCreateItem: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_itemcreate",
+    [
+        "admin_itemcreate",
 		"admin_create_item",
 		"admin_create_coin",
 		"admin_give_item_target",
 		"admin_give_item_to_all",
 		"admin_delete_item",
-		"admin_use_item"
-	};
+		"admin_use_item",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

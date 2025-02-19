@@ -17,9 +17,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminPrimePoints: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_primepoints",
-	};
+    [
+        "admin_primepoints",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

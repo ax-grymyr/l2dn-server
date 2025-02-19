@@ -19,9 +19,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminServerInfo: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_serverinfo"
-	};
+    [
+        "admin_serverinfo",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{
@@ -107,7 +107,7 @@ public class AdminServerInfo: IAdminCommandHandler
 			}
 			case "ALL_REAL":
 			{
-				Set<string> realPlayers = new();
+				Set<string> realPlayers = [];
 				foreach (Player onlinePlayer in World.getInstance().getPlayers())
 				{
 					GameSession? client = onlinePlayer?.getClient(); 

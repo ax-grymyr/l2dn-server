@@ -18,8 +18,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminBuffs: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_buff",
+    [
+        "admin_buff",
 		"admin_getbuffs",
 		"admin_getbuffs_ps",
 		"admin_stopbuff",
@@ -27,8 +27,8 @@ public class AdminBuffs: IAdminCommandHandler
 		"admin_viewblockedeffects",
 		"admin_areacancel",
 		"admin_removereuse",
-		"admin_switch_gm_buffs"
-	};
+		"admin_switch_gm_buffs",
+    ];
 	// Misc
 	private const string FONT_RED1 = "<font color=\"FF0000\">";
 	private const string FONT_RED2 = "</font>";
@@ -262,7 +262,7 @@ public class AdminBuffs: IAdminCommandHandler
 	
 	private void showBuffs(Player activeChar, Creature target, int page, bool passive)
 	{
-		List<BuffInfo> effects = new();
+		List<BuffInfo> effects = [];
 		if (!passive)
 		{
 			effects.AddRange(target.getEffectList().getEffects());

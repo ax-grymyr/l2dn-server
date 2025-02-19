@@ -12,31 +12,31 @@ namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 public class ItemAuctionLink: IBypassHandler
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(ItemAuctionLink));
-	
+
 	private static readonly string[] COMMANDS =
+    [
+        "ItemAuction",
+    ];
+
+	public bool useBypass(string command, Player player, Creature? target)
 	{
-		"ItemAuction"
-	};
-	
-	public bool useBypass(string command, Player player, Creature target)
-	{
-		if (!target.isNpc())
+		if (target is null || !target.isNpc())
 		{
 			return false;
 		}
-		
+
 		if (!Config.ALT_ITEM_AUCTION_ENABLED)
 		{
 			player.sendPacket(SystemMessageId.IT_IS_NOT_AN_AUCTION_PERIOD);
 			return true;
 		}
-		
+
 		ItemAuctionInstance au = ItemAuctionManager.getInstance().getManagerInstance(target.getId());
 		if (au == null)
 		{
 			return false;
 		}
-		
+
 		try
 		{
 			StringTokenizer st = new StringTokenizer(command);
@@ -45,7 +45,7 @@ public class ItemAuctionLink: IBypassHandler
 			{
 				return false;
 			}
-			
+
 			string cmd = st.nextToken();
 			if ("show".equalsIgnoreCase(cmd))
 			{
@@ -54,18 +54,18 @@ public class ItemAuctionLink: IBypassHandler
 				// {
 				// 	return false;
 				// }
-				
+
 				if (player.isItemAuctionPolling())
 				{
 					return false;
 				}
-				
+
 				ItemAuction currentAuction = au.getCurrentAuction();
 				ItemAuction nextAuction = au.getNextAuction();
 				if (currentAuction == null)
 				{
 					player.sendPacket(SystemMessageId.IT_IS_NOT_AN_AUCTION_PERIOD);
-					
+
 					if (nextAuction != null)
 					{
 						player.sendMessage("The next auction will begin on the " +
@@ -73,7 +73,7 @@ public class ItemAuctionLink: IBypassHandler
 					}
 					return true;
 				}
-				
+
 				player.sendPacket(new ExItemAuctionInfoPacket(false, currentAuction, nextAuction));
 			}
 			else if ("cancel".equalsIgnoreCase(cmd))
@@ -98,12 +98,12 @@ public class ItemAuctionLink: IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_logger.Warn("Exception in " + GetType().Name, e);
+			_logger.Warn($"Exception in {GetType().Name}: {e}");
 		}
-		
+
 		return true;
 	}
-	
+
 	public string[] getBypassList()
 	{
 		return COMMANDS;

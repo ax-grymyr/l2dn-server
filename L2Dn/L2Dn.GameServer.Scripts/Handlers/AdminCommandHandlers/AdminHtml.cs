@@ -13,10 +13,10 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminHtml: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_html",
-		"admin_loadhtml"
-	};
+    [
+        "admin_html",
+		"admin_loadhtml",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

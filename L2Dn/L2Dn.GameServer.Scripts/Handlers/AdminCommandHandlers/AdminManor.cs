@@ -42,9 +42,9 @@ public class AdminManor: IAdminCommandHandler
 	
 	public string[] getAdminCommandList()
 	{
-		return new string[]
-		{
-			"admin_manor"
-		};
+		return
+        [
+            "admin_manor",
+        ];
 	}
 }

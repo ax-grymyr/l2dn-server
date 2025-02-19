@@ -15,9 +15,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminGmSpeed: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_gmspeed",
-	};
+    [
+        "admin_gmspeed",
+    ];
 
 	private static Set<Stat> SPEED_STATS =
 	[

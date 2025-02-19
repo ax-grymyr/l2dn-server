@@ -24,8 +24,8 @@ public class AdminPunishment: IAdminCommandHandler
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminPunishment));
 	
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_punishment",
+    [
+        "admin_punishment",
 		"admin_punishment_add",
 		"admin_punishment_remove",
 		"admin_ban_acc",
@@ -37,8 +37,8 @@ public class AdminPunishment: IAdminCommandHandler
 		"admin_ban_char",
 		"admin_unban_char",
 		"admin_jail",
-		"admin_unjail"
-	};
+		"admin_unjail",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

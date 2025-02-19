@@ -14,11 +14,11 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminMissingHtmls: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_geomap_missing_htmls",
+    [
+        "admin_geomap_missing_htmls",
 		"admin_world_missing_htmls",
-		"admin_next_missing_html"
-	};
+		"admin_next_missing_html",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{
@@ -35,7 +35,7 @@ public class AdminMissingHtmls: IAdminCommandHandler
 				int bottomRightX = (((x - World.TILE_ZERO_COORD_X) * World.TILE_SIZE) + World.TILE_SIZE) - 1;
 				int bottomRightY = (((y - World.TILE_ZERO_COORD_Y) * World.TILE_SIZE) + World.TILE_SIZE) - 1;
 				BuilderUtil.sendSysMessage(activeChar, "GeoMap: " + x + "_" + y + " (" + topLeftX + "," + topLeftY + " to " + bottomRightX + "," + bottomRightY + ")");
-				List<int> results = new();
+				List<int> results = [];
 				foreach (WorldObject obj in World.getInstance().getVisibleObjects())
 				{
 					if (obj.isNpc() //
@@ -71,7 +71,7 @@ public class AdminMissingHtmls: IAdminCommandHandler
 			case "admin_world_missing_htmls":
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Missing htmls for the whole world.");
-				List<int> results = new();
+				List<int> results = [];
 				foreach (WorldObject obj in World.getInstance().getVisibleObjects())
 				{
 					if (obj.isNpc() //

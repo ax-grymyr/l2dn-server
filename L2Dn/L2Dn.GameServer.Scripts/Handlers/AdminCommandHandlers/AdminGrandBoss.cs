@@ -27,13 +27,13 @@ public class AdminGrandBoss: IAdminCommandHandler
 	private const int CORE = 29006; // Core
 	
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_grandboss",
+    [
+        "admin_grandboss",
 		"admin_grandboss_skip",
 		"admin_grandboss_respawn",
 		"admin_grandboss_minions",
 		"admin_grandboss_abort",
-	};
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

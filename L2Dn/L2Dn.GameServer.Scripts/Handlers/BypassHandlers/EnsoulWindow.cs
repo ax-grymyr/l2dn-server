@@ -11,31 +11,32 @@ namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 public class EnsoulWindow: IBypassHandler
 {
 	private static readonly string[] COMMANDS =
+    [
+        "show_ensoul_window",
+		"show_extract_ensoul_window",
+    ];
+
+	public bool useBypass(string command, Player player, Creature? target)
 	{
-		"show_ensoul_window",
-		"show_extract_ensoul_window"
-	};
-	
-	public bool useBypass(string command, Player player, Creature target)
-	{
-		if (!target.isNpc())
+		if (target is null || !target.isNpc())
 		{
 			return false;
 		}
-		
+
 		if (command.toLowerCase().startsWith(COMMANDS[0])) // show_ensoul_window
 		{
 			player.sendPacket(ExShowEnsoulWindowPacket.STATIC_PACKET);
 			return true;
 		}
-		else if (command.toLowerCase().startsWith(COMMANDS[1])) // show_extract_ensoul_window
-		{
-			player.sendPacket(ExShowEnsoulExtractionWindowPacket.STATIC_PACKET);
-			return true;
-		}
-		return false;
+
+        if (command.toLowerCase().startsWith(COMMANDS[1])) // show_extract_ensoul_window
+        {
+            player.sendPacket(ExShowEnsoulExtractionWindowPacket.STATIC_PACKET);
+            return true;
+        }
+        return false;
 	}
-	
+
 	public string[] getBypassList()
 	{
 		return COMMANDS;

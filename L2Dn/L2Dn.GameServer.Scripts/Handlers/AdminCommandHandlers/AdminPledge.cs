@@ -25,9 +25,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminPledge: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_pledge"
-	};
+    [
+        "admin_pledge",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

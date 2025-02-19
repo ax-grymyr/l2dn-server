@@ -15,12 +15,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminAnnouncements: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_announce",
+    [
+        "admin_announce",
 		"admin_announce_crit",
 		"admin_announce_screen",
 		"admin_announces",
-	};
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

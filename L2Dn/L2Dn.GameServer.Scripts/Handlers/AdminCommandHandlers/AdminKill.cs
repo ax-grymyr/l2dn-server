@@ -15,10 +15,10 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminKill: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_kill",
-		"admin_kill_monster"
-	};
+    [
+        "admin_kill",
+		"admin_kill_monster",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

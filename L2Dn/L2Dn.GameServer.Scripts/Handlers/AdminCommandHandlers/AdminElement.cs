@@ -19,15 +19,15 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminElement: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_setlh",
+    [
+        "admin_setlh",
 		"admin_setlc",
 		"admin_setll",
 		"admin_setlg",
 		"admin_setlb",
 		"admin_setlw",
-		"admin_setls"
-	};
+		"admin_setls",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

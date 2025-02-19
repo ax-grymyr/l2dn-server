@@ -20,12 +20,12 @@ public class AdminShop: IAdminCommandHandler
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminShop));
 	
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_buy",
+    [
+        "admin_buy",
 		"admin_gmshop",
 		"admin_multisell",
-		"admin_exc_multisell"
-	};
+		"admin_exc_multisell",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

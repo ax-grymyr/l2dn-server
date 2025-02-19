@@ -21,11 +21,11 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminZone: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_zone_check",
+    [
+        "admin_zone_check",
 		"admin_zone_visual",
-		"admin_zone_visual_clear"
-	};
+		"admin_zone_visual_clear",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

@@ -16,11 +16,11 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminGmChat: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_gmchat",
+    [
+        "admin_gmchat",
 		"admin_snoop",
-		"admin_gmchat_menu"
-	};
+		"admin_gmchat_menu",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

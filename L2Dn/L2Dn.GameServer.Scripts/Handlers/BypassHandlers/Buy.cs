@@ -11,28 +11,28 @@ public class Buy: IBypassHandler
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(Buy));
 
 	private static readonly string[] COMMANDS =
+    [
+        "Buy",
+    ];
+
+	public bool useBypass(string command, Player player, Creature? target)
 	{
-		"Buy"
-	};
-	
-	public bool useBypass(string command, Player player, Creature target)
-	{
-		if (!(target is Merchant))
+		if (target is not Merchant merchant)
 		{
 			return false;
 		}
-		
+
 		try
 		{
 			StringTokenizer st = new StringTokenizer(command, " ");
 			st.nextToken();
-			
+
 			if (st.countTokens() < 1)
 			{
 				return false;
 			}
-			
-			((Merchant) target).showBuyWindow(player, int.Parse(st.nextToken()));
+
+			merchant.showBuyWindow(player, int.Parse(st.nextToken()));
 			return true;
 		}
 		catch (Exception e)
@@ -41,7 +41,7 @@ public class Buy: IBypassHandler
 		}
 		return false;
 	}
-	
+
 	public string[] getBypassList()
 	{
 		return COMMANDS;

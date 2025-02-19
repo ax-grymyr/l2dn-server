@@ -13,11 +13,11 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminCamera: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_cam",
+    [
+        "admin_cam",
 		"admin_camex",
-		"admin_cam3"
-	};
+		"admin_cam3",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

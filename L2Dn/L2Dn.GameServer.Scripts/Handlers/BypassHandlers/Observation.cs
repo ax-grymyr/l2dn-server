@@ -13,14 +13,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 public class Observation: IBypassHandler
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(Observation));
-	
+
 	private static readonly string[] COMMANDS =
-	{
-		"observesiege",
+    [
+        "observesiege",
 		"observeoracle",
-		"observe"
-	};
-	
+		"observe",
+    ];
+
 	private static readonly int[][] LOCATIONS = [
 		//@formatter:off
 		// Gludio
@@ -68,14 +68,14 @@ public class Observation: IBypassHandler
 		[-78930, 110005, -4300, 500]
 		//@formatter:on
 	];
-	
-	public bool useBypass(string command, Player player, Creature target)
+
+	public bool useBypass(string command, Player player, Creature? target)
 	{
-		if (!(target is BroadcastingTower))
+		if (target is not BroadcastingTower broadcastingTower)
 		{
 			return false;
 		}
-		
+
 		if (player.hasSummon())
 		{
 			player.sendPacket(SystemMessageId.YOU_MAY_NOT_OBSERVE_A_SIEGE_WITH_A_SERVITOR_SUMMONED);
@@ -86,7 +86,7 @@ public class Observation: IBypassHandler
 			player.sendMessage("Cannot use while current Event");
 			return false;
 		}
-		
+
 		string _command = command.Split(" ")[0].ToLower();
 		int param;
 		try
@@ -98,22 +98,22 @@ public class Observation: IBypassHandler
 			_logger.Warn("Exception in " + GetType().Name, nfe);
 			return false;
 		}
-		
-		if ((param < 0) || (param > (LOCATIONS.Length - 1)))
+
+		if (param < 0 || param > LOCATIONS.Length - 1)
 		{
 			return false;
 		}
 		int[] locCost = LOCATIONS[param];
 		Location loc = new Location(locCost[0], locCost[1], locCost[2], 0);
 		long cost = locCost[3];
-		
+
 		switch (_command)
 		{
 			case "observesiege":
 			{
 				if (SiegeManager.getInstance().getSiege(loc.Location3D) != null)
 				{
-					doObserve(player, (Npc) target, loc, cost);
+					DoObserve(player, broadcastingTower, loc, cost);
 				}
 				else
 				{
@@ -123,19 +123,19 @@ public class Observation: IBypassHandler
 			}
 			case "observeoracle": // Oracle Dusk/Dawn
 			{
-				doObserve(player, (Npc) target, loc, cost);
+				DoObserve(player, broadcastingTower, loc, cost);
 				return true;
 			}
 			case "observe": // Observe
 			{
-				doObserve(player, (Npc) target, loc, cost);
+				DoObserve(player, broadcastingTower, loc, cost);
 				return true;
 			}
 		}
 		return false;
 	}
-	
-	private void doObserve(Player player, Npc npc, Location pos, long cost)
+
+	private static void DoObserve(Player player, Npc npc, Location pos, long cost)
 	{
 		if (player.reduceAdena("Broadcast", cost, npc, true))
 		{
@@ -145,7 +145,7 @@ public class Observation: IBypassHandler
 		}
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 	}
-	
+
 	public string[] getBypassList()
 	{
 		return COMMANDS;

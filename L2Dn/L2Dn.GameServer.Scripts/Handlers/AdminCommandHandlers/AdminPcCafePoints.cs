@@ -16,9 +16,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminPcCafePoints: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_pccafepoints",
-	};
+    [
+        "admin_pccafepoints",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

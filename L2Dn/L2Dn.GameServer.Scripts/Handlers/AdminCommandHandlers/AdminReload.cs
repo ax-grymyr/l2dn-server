@@ -19,9 +19,9 @@ public class AdminReload: IAdminCommandHandler
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminReload));
 	
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_reload"
-	};
+    [
+        "admin_reload",
+    ];
 	
 	private const string RELOAD_USAGE = "Usage: //reload <config|access|npc|quest [quest_id|quest_name]|walker|htm[l] [file|directory]|multisell|buylist|teleport|skill|item|door|effect|handler|enchant|options|fishing>";
 	

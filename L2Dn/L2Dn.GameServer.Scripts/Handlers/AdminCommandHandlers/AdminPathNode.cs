@@ -8,9 +8,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminPathNode: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_path_find"
-	};
+    [
+        "admin_path_find",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

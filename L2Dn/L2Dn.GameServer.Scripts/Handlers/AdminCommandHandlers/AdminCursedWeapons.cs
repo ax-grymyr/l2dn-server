@@ -20,14 +20,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminCursedWeapons: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_cw_info",
+    [
+        "admin_cw_info",
 		"admin_cw_remove",
 		"admin_cw_goto",
 		"admin_cw_reload",
 		"admin_cw_add",
-		"admin_cw_info_menu"
-	};
+		"admin_cw_info_menu",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

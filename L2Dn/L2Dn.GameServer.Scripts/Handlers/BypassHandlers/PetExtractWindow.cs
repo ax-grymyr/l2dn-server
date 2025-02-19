@@ -11,26 +11,26 @@ namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 public class PetExtractWindow: IBypassHandler
 {
 	private static readonly string[] COMMANDS =
+    [
+        "pet_extract_window",
+    ];
+
+	public bool useBypass(string command, Player player, Creature? target)
 	{
-		"pet_extract_window",
-	};
-	
-	public bool useBypass(string command, Player player, Creature target)
-	{
-		if (!target.isNpc())
+		if (target is null || !target.isNpc())
 		{
 			return false;
 		}
-		
+
 		if (command.toLowerCase().startsWith(COMMANDS[0]))
 		{
 			player.sendPacket(ShowPetExtractSystemPacket.STATIC_PACKET);
 			return true;
 		}
-		
+
 		return false;
 	}
-	
+
 	public string[] getBypassList()
 	{
 		return COMMANDS;

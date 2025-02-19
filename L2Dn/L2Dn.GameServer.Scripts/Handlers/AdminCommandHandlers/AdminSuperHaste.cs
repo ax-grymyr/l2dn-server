@@ -14,12 +14,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminSuperHaste: IAdminCommandHandler
 {
 	public static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_superhaste",
+    [
+        "admin_superhaste",
 		"admin_superhaste_menu",
 		"admin_speed",
 		"admin_speed_menu",
-	};
+    ];
 	
 	private static int SUPER_HASTE_ID = 7029;
 	

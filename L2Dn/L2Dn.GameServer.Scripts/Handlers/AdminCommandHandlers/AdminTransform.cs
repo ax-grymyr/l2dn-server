@@ -13,11 +13,11 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminTransform: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_transform",
+    [
+        "admin_transform",
 		"admin_untransform",
 		"admin_transform_menu",
-	};
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

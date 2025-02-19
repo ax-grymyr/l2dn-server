@@ -10,10 +10,10 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminLevel: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_add_level",
-		"admin_set_level"
-	};
+    [
+        "admin_add_level",
+		"admin_set_level",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

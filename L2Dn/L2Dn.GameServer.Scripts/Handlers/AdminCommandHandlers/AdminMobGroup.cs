@@ -15,8 +15,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminMobGroup: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_mobmenu",
+    [
+        "admin_mobmenu",
 		"admin_mobgroup_list",
 		"admin_mobgroup_create",
 		"admin_mobgroup_remove",
@@ -32,8 +32,8 @@ public class AdminMobGroup: IAdminCommandHandler
 		"admin_mobgroup_casting",
 		"admin_mobgroup_nomove",
 		"admin_mobgroup_attackgrp",
-		"admin_mobgroup_invul"
-	};
+		"admin_mobgroup_invul",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

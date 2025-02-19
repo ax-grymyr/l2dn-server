@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.ActionHandlers;
 public class PlayerAction: IActionHandler
 {
 	private const int CURSED_WEAPON_VICTIM_MIN_LEVEL = 21;
-	
+
 	/**
 	 * Manage actions when a player click on this Player.<br>
 	 * <br>
@@ -37,14 +37,14 @@ public class PlayerAction: IActionHandler
 		{
 			return false;
 		}
-		
+
 		// Aggression target lock effect
 		if (player.isLockedTarget() && (player.getLockedTarget() != target))
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CHANGE_ENMITY);
 			return false;
 		}
-		
+
 		// Check if the player already target this Player
 		if (player.getTarget() != target)
 		{
@@ -54,7 +54,7 @@ public class PlayerAction: IActionHandler
 		else if (interact)
 		{
 			// Check if this Player has a Private Store
-			Player targetPlayer = target.getActingPlayer();
+			Player? targetPlayer = target.getActingPlayer();
 			if (targetPlayer.getPrivateStoreType() != PrivateStoreType.NONE)
 			{
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
@@ -90,7 +90,7 @@ public class PlayerAction: IActionHandler
 		}
 		return true;
 	}
-	
+
 	public InstanceType getInstanceType()
 	{
 		return InstanceType.Player;

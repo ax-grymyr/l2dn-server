@@ -31,8 +31,8 @@ public class AdminTeleport: IAdminCommandHandler
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminTeleport));
 	
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_show_moves",
+    [
+        "admin_show_moves",
 		"admin_show_moves_other",
 		"admin_show_teleport",
 		"admin_teleport_to_character",
@@ -54,8 +54,8 @@ public class AdminTeleport: IAdminCommandHandler
 		"admin_tele",
 		"admin_teleto",
 		"admin_instant_move",
-		"admin_sendhome"
-	};
+		"admin_sendhome",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

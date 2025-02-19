@@ -15,12 +15,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminOlympiad: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_olympiad_game",
+    [
+        "admin_olympiad_game",
 		"admin_addolypoints",
 		"admin_removeolypoints",
 		"admin_setolypoints",
-	};
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

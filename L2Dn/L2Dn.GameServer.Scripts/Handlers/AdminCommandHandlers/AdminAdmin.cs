@@ -22,10 +22,10 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminAdmin: IAdminCommandHandler
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminAdmin));
-	
+
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_admin",
+    [
+        "admin_admin",
 		"admin_admin1",
 		"admin_admin2",
 		"admin_admin3",
@@ -49,8 +49,8 @@ public class AdminAdmin: IAdminCommandHandler
 		"admin_config_server",
 		"admin_gmon",
 		"admin_worldchat",
-	};
-	
+    ];
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		if (command.startsWith("admin_admin"))
@@ -111,7 +111,7 @@ public class AdminAdmin: IAdminCommandHandler
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				return false;
 			}
-			
+
 			Player target = activeChar.getTarget().isPlayer() ? activeChar.getTarget().getActingPlayer() : activeChar;
 			target.setHero(!target.isHero());
 			target.broadcastUserInfo();
@@ -123,7 +123,7 @@ public class AdminAdmin: IAdminCommandHandler
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				return false;
 			}
-			
+
 			Player target = activeChar.getTarget().isPlayer() ? activeChar.getTarget().getActingPlayer() : activeChar;
 			target.setTrueHero(!target.isTrueHero());
 			target.broadcastUserInfo();
@@ -135,14 +135,14 @@ public class AdminAdmin: IAdminCommandHandler
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				return false;
 			}
-			
+
 			Player target = activeChar.getTarget().isPlayer() ? activeChar.getTarget().getActingPlayer() : activeChar;
 			if (Hero.getInstance().isHero(target.ObjectId))
 			{
 				BuilderUtil.sendSysMessage(activeChar, "This player has already claimed the hero status.");
 				return false;
 			}
-			
+
 			if (!Hero.getInstance().isUnclaimedHero(target.ObjectId))
 			{
 				BuilderUtil.sendSysMessage(activeChar, "This player cannot claim the hero status.");
@@ -230,7 +230,7 @@ public class AdminAdmin: IAdminCommandHandler
 					BuilderUtil.sendSysMessage(activeChar, "Invalid parameter!");
 					return false;
 				}
-				
+
 				switch (pName)
 				{
 					case "RateXp":
@@ -274,7 +274,7 @@ public class AdminAdmin: IAdminCommandHandler
 						sb.Append(st.nextToken());
 						sb.Append(" ");
 					}
-					
+
 					CreatureSayPacket cs = new CreatureSayPacket(activeChar, ChatType.WORLD, activeChar.getName(), sb.ToString());
 					foreach (Player player in World.getInstance().getPlayers())
 					{
@@ -310,27 +310,27 @@ public class AdminAdmin: IAdminCommandHandler
 						activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 						break;
 					}
-					
+
 					Player targetPlayer = target.getActingPlayer();
 					if (targetPlayer.getLevel() < Config.WORLD_CHAT_MIN_LEVEL)
 					{
 						BuilderUtil.sendSysMessage(activeChar, "Your target's level is below the minimum: " + Config.WORLD_CHAT_MIN_LEVEL);
 						break;
 					}
-					
+
 					if (!st.hasMoreTokens())
 					{
 						BuilderUtil.sendSysMessage(activeChar, "Incorrect syntax, use: //worldchat set <times used>");
 						break;
 					}
-					
+
 					string valueToken = st.nextToken();
 					if (!int.TryParse(valueToken, CultureInfo.InvariantCulture, out int valueTokenInt))
 					{
 						BuilderUtil.sendSysMessage(activeChar, "Incorrect syntax, use: //worldchat set <times used>");
 						break;
 					}
-					
+
 					BuilderUtil.sendSysMessage(activeChar, targetPlayer.getName() + ": times used changed from " + targetPlayer.getWorldChatPoints() + " to " + valueToken);
 					targetPlayer.setWorldChatUsed(valueTokenInt);
 					if (Config.ENABLE_WORLD_CHAT)
@@ -355,22 +355,23 @@ public class AdminAdmin: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-	
+
 	private void showMainPage(Player activeChar, string command)
 	{
 		int mode = 0;
-		string filename = null;
+		string filename;
 		try
 		{
 			mode = int.Parse(command.Substring(11));
 		}
 		catch (Exception e)
 		{
+            LOGGER.Warn(e);
 			// Not important.
 		}
 		switch (mode)
@@ -416,10 +417,10 @@ public class AdminAdmin: IAdminCommandHandler
 				break;
 			}
 		}
-		
+
 		AdminHtml.showAdminHtml(activeChar, filename + "_menu.htm");
 	}
-	
+
 	private void showConfigPage(Player activeChar)
 	{
 		StringBuilder replyMSG = new StringBuilder("<html><title>L2J :: Config</title><body>");
@@ -431,7 +432,7 @@ public class AdminAdmin: IAdminCommandHandler
 		replyMSG.Append("<tr><td><font color=\"LEVEL\">Rate Drop Spoil</font> = " + Config.RATE_SPOIL_DROP_CHANCE_MULTIPLIER + "</td><td><edit var=\"param4\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateDropSpoil $param4\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
 		replyMSG.Append("<tr><td width=140></td><td width=40></td><td width=40></td></tr>");
 		replyMSG.Append("</table></body></html>");
-		
+
 		HtmlContent htmlContent = HtmlContent.LoadFromText(replyMSG.ToString(), activeChar);
 		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 0, htmlContent);
 		activeChar.sendPacket(adminReply);

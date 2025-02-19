@@ -16,9 +16,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminTargetSay: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_targetsay"
-	};
+    [
+        "admin_targetsay",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

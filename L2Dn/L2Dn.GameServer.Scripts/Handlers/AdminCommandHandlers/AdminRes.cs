@@ -15,10 +15,10 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminRes: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_res",
-		"admin_res_monster"
-	};
+    [
+        "admin_res",
+		"admin_res_monster",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

@@ -10,37 +10,34 @@ using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 
 public class QuestLink: IBypassHandler
 {
-	private static readonly string[] COMMANDS =
-	{
-		"Quest"
-	};
-	
-	public bool useBypass(string command, Player player, Creature target)
-	{
-		string quest = "";
-		try
-		{
-			quest = command.Substring(5).Trim();
-		}
-		catch (IndexOutOfRangeException ioobe)
-		{
-		}
-		
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(QuestLink));
+    private static readonly string[] COMMANDS = ["Quest"];
+
+	public bool useBypass(string command, Player player, Creature? target)
+    {
+        if (target is not Npc npc)
+            return false;
+
+		string quest = string.Empty;
+        if (command.Length >= 5)
+            quest = command.Substring(5).Trim();
+
 		if (string.IsNullOrEmpty(quest))
 		{
-			showQuestWindow(player, (Npc) target);
+			showQuestWindow(player, npc);
 		}
 		else
 		{
 			int questNameEnd = quest.IndexOf(' ');
 			if (questNameEnd == -1)
 			{
-				showQuestWindow(player, (Npc) target, quest);
+				showQuestWindow(player, npc, quest);
 			}
 			else
 			{
@@ -49,7 +46,7 @@ public class QuestLink: IBypassHandler
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Open a choose quest window on client with all quests available of the Npc.<br>
 	 * <br>
@@ -65,8 +62,8 @@ public class QuestLink: IBypassHandler
 		StringBuilder sbCanStart = new StringBuilder(128);
 		StringBuilder sbCantStart = new StringBuilder(128);
 		StringBuilder sbCompleted = new StringBuilder(128);
-		
-		Set<Quest> startingQuests = new();
+
+		Set<Quest> startingQuests = [];
 		if (npc.Events.HasSubscribers<OnNpcQuestStart>())
 		{
 			OnNpcQuestStart onNpcQuestStart = new OnNpcQuestStart(npc, player);
@@ -77,7 +74,7 @@ public class QuestLink: IBypassHandler
 					startingQuests.Add(quest);
 			}
 		}
-		
+
 		List<Quest> questList = quests.ToList();
 		if (Config.ORDER_QUEST_LIST_BY_QUESTID)
 		{
@@ -89,19 +86,19 @@ public class QuestLink: IBypassHandler
 					orderedQuests.put(q.getId(), q);
 				}
 			}
-			
+
 			questList = orderedQuests.Values.ToList();
 		}
-		
+
 		int startCount = 0;
-		string startQuest = null;
+		string? startQuest = null;
 		foreach (Quest quest in questList)
 		{
-			QuestState qs = player.getQuestState(quest.Name);
-			if ((qs == null) || qs.isCreated() || (qs.isCompleted() && qs.isNowAvailable()))
+			QuestState? qs = player.getQuestState(quest.Name);
+			if (qs == null || qs.isCreated() || (qs.isCompleted() && qs.isNowAvailable()))
 			{
 				string startConditionHtml = quest.getStartConditionHtml(player, npc);
-				if (((startConditionHtml != null) && startConditionHtml.Length == 0) || !startingQuests.Contains(quest))
+				if ((startConditionHtml != null && startConditionHtml.Length == 0) || !startingQuests.Contains(quest))
 				{
 					continue;
 				}
@@ -110,7 +107,7 @@ public class QuestLink: IBypassHandler
 				{
 					startCount++;
 					startQuest = quest.Name;
-					
+
 					sbCanStart.Append("<font color=\"bbaa88\">");
 					sbCanStart.Append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.ObjectId + "_Quest " + quest.Name + "\">");
 
@@ -127,7 +124,7 @@ public class QuestLink: IBypassHandler
 					// 		}
 					// 	}
 					// }
-					
+
 					sbCanStart.Append(localisation);
 					sbCanStart.Append("</button></font>");
 				}
@@ -160,7 +157,7 @@ public class QuestLink: IBypassHandler
 			{
 				startCount++;
 				startQuest = quest.Name;
-				
+
 				sbStarted.Append("<font color=\"ffdd66\">");
 				sbStarted.Append("<button icon=\"quest\" align=\"left\" action=\"bypass npc_" + npc.ObjectId + "_Quest " + quest.Name + "\">");
 				string localisation = quest.isCustomQuest() ? quest.getPath() + " (In Progress)" : "<fstring>" + quest.getNpcStringId() + "02</fstring>";
@@ -200,15 +197,21 @@ public class QuestLink: IBypassHandler
 				sbCompleted.Append("</button></font>");
 			}
 		}
-		
+
 		if (startCount == 1)
 		{
+            if (startQuest is null)
+            {
+                _logger.Error("[QuestLink] startQuest is null");
+                return;
+            }
+
 			showQuestWindow(player, npc, startQuest);
 			return;
 		}
-		
+
 		string content;
-		if ((sbStarted.Length > 0) || (sbCanStart.Length > 0) || (sbCantStart.Length > 0) || (sbCompleted.Length > 0))
+		if (sbStarted.Length > 0 || sbCanStart.Length > 0 || sbCantStart.Length > 0 || sbCompleted.Length > 0)
 		{
 			StringBuilder sb = new StringBuilder(128);
 			sb.Append("<html><body>");
@@ -223,14 +226,14 @@ public class QuestLink: IBypassHandler
 		{
 			content = Quest.getNoQuestMsg(player);
 		}
-		
+
 		// Send a Server=>Client packet NpcHtmlMessage to the Player in order to display the message of the Npc
 		HtmlContent htmlContent = HtmlContent.LoadFromText(content, player);
 		htmlContent.Replace("%objectId%", npc.ObjectId.ToString());
 
 		player.sendPacket(new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent));
 	}
-	
+
 	/**
 	 * Open a quest window on client with the text of the Npc.<br>
 	 * <br>
@@ -246,7 +249,7 @@ public class QuestLink: IBypassHandler
 	 */
 	private void showQuestWindow(Player player, Npc npc, string questId)
 	{
-		string content = null;
+		string? content = null;
 
 		AbstractScript? script = ScriptManager.GetScript(questId);
 		if (script != null)
@@ -256,32 +259,32 @@ public class QuestLink: IBypassHandler
 			return;
 		}
 
-		Quest q = QuestManager.getInstance().getQuest(questId);
+		Quest? q = QuestManager.getInstance().getQuest(questId);
 		if (q != null)
 		{
-			if (((q.getId() >= 1) && (q.getId() < 20000)) && ((player.getWeightPenalty() >= 3) || !player.isInventoryUnder90(true)))
+			if (q.getId() >= 1 && q.getId() < 20000 && (player.getWeightPenalty() >= 3 || !player.isInventoryUnder90(true)))
 			{
 				player.sendPacket(SystemMessageId.UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY);
 				return;
 			}
-			
+
 			// Get the state of the selected quest
-			QuestState qs = player.getQuestState(questId);
-			if ((qs == null) && (q.getId() >= 1) && (q.getId() < 20000) && (player.getAllActiveQuests().Count > 40))
+			QuestState? qs = player.getQuestState(questId);
+			if (qs == null && q.getId() >= 1 && q.getId() < 20000 && player.getAllActiveQuests().Count > 40)
 			{
 				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fullquest.html", player);
 				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent);
 				player.sendPacket(html);
 				return;
 			}
-			
+
 			q.notifyTalk(npc, player);
 		}
 		else
 		{
 			content = Quest.getNoQuestMsg(player); // no quests found
 		}
-		
+
 		// Send a Server=>Client packet NpcHtmlMessage to the Player in order to display the message of the Npc
 		if (content != null)
 		{
@@ -289,11 +292,11 @@ public class QuestLink: IBypassHandler
 			htmlContent.Replace("%objectId%", npc.ObjectId.ToString());
 			player.sendPacket(new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent));
 		}
-		
+
 		// Send a Server=>Client ActionFailedPacket to the Player in order to avoid that the client wait another packet
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 	}
-	
+
 	/**
 	 * Collect awaiting quests/start points and display a QuestChooseWindow (if several available) or QuestWindow.
 	 * @param player the Player that talk with the {@code npc}.
@@ -301,7 +304,7 @@ public class QuestLink: IBypassHandler
 	 */
 	private void showQuestWindow(Player player, Npc npc)
 	{
-		Set<Quest> quests = new();
+		Set<Quest> quests = [];
 		if (npc.Events.HasSubscribers<OnNpcTalk>())
 		{
 			OnNpcTalk onNpcTalk = new OnNpcTalk(npc, player);
@@ -310,7 +313,7 @@ public class QuestLink: IBypassHandler
 			{
 				if (script is Quest quest)
 				{
-					if ((quest.getId() > 0) && (quest.getId() < 20000) && (quest.getId() != 255) &&
+					if (quest.getId() > 0 && quest.getId() < 20000 && quest.getId() != 255 &&
 					    !Quest.getNoQuestMsg(player).equals(quest.onTalk(npc, player, true)))
 					{
 						quests.add(quest);
@@ -318,7 +321,7 @@ public class QuestLink: IBypassHandler
 				}
 			}
 		}
-		
+
 		if (quests.size() > 1)
 		{
 			showQuestChooseWindow(player, npc, quests);
@@ -332,7 +335,7 @@ public class QuestLink: IBypassHandler
 			showQuestWindow(player, npc, "");
 		}
 	}
-	
+
 	public string[] getBypassList()
 	{
 		return COMMANDS;

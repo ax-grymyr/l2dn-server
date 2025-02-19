@@ -10,10 +10,10 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminKick: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_kick",
-		"admin_kick_non_gm"
-	};
+    [
+        "admin_kick",
+		"admin_kick_non_gm",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

@@ -20,11 +20,11 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminExpSp: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_add_exp_sp_to_character",
+    [
+        "admin_add_exp_sp_to_character",
 		"admin_add_exp_sp",
-		"admin_remove_exp_sp"
-	};
+		"admin_remove_exp_sp",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

@@ -14,11 +14,11 @@ public class PlayerHelp: IBypassHandler
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(PlayerHelp));
 
 	private static readonly string[] COMMANDS =
-	{
-		"player_help"
-	};
-	
-	public bool useBypass(string command, Player player, Creature target)
+    [
+        "player_help",
+    ];
+
+	public bool useBypass(string command, Player player, Creature? target)
 	{
 		try
 		{
@@ -26,13 +26,13 @@ public class PlayerHelp: IBypassHandler
 			{
 				return false;
 			}
-			
+
 			string path = command.Substring(12);
 			if (path.Contains(".."))
 			{
 				return false;
 			}
-			
+
 			StringTokenizer st = new StringTokenizer(path);
 			string[] cmd = st.nextToken().Split("#");
 
@@ -47,7 +47,7 @@ public class PlayerHelp: IBypassHandler
 			{
 				html = new NpcHtmlMessagePacket(null, 0, htmlContent);
 			}
-			
+
 			player.sendPacket(html);
 		}
 		catch (Exception e)
@@ -56,7 +56,7 @@ public class PlayerHelp: IBypassHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getBypassList()
 	{
 		return COMMANDS;

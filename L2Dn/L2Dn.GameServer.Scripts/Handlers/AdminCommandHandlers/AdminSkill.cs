@@ -39,8 +39,8 @@ public class AdminSkill: IAdminCommandHandler
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminSkill));
 	
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_show_skills",
+    [
+        "admin_show_skills",
 		"admin_remove_skills",
 		"admin_skill_list",
 		"admin_skill_index",
@@ -56,8 +56,8 @@ public class AdminSkill: IAdminCommandHandler
 		"admin_add_clan_skill",
 		"admin_setskill",
 		"admin_cast",
-		"admin_castnow"
-	};
+		"admin_castnow",
+    ];
 	
 	private static Skill[] adminSkills;
 	

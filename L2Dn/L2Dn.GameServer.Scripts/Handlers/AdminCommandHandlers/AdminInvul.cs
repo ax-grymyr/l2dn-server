@@ -12,12 +12,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminInvul: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_invul",
+    [
+        "admin_invul",
 		"admin_setinvul",
 		"admin_undying",
-		"admin_setundying"
-	};
+		"admin_setundying",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

@@ -16,10 +16,10 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminDelete: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_delete", // supports range parameter
-		"admin_delete_group" // for territory spawns
-	};
+    [
+        "admin_delete", // supports range parameter
+		"admin_delete_group", // for territory spawns
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{
@@ -77,7 +77,7 @@ public class AdminDelete: IAdminCommandHandler
 		{
 			NpcSpawnTemplate npcSpawnTemplate = spawn.getNpcSpawnTemplate();
 			SpawnGroup group = npcSpawnTemplate != null ? npcSpawnTemplate.getGroup() : null;
-			List<SpawnTerritory> territories = group != null ? group.getTerritories() : new();
+			List<SpawnTerritory> territories = group != null ? group.getTerritories() : [];
 			if (territories.Count == 0)
 			{
 				SpawnTemplate spawnTemplate = npcSpawnTemplate != null ? npcSpawnTemplate.getSpawnTemplate() : null;
@@ -114,7 +114,7 @@ public class AdminDelete: IAdminCommandHandler
 		{
 			NpcSpawnTemplate npcSpawnTemplate = spawn.getNpcSpawnTemplate();
 			SpawnGroup group = npcSpawnTemplate != null ? npcSpawnTemplate.getGroup() : null;
-			List<SpawnTerritory> territories = group != null ? group.getTerritories() : new();
+			List<SpawnTerritory> territories = group != null ? group.getTerritories() : [];
 			bool simpleTerritory = false;
 			if (territories.Count == 0)
 			{

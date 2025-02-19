@@ -21,10 +21,10 @@ public class AdminScan: IAdminCommandHandler
 {
 	private const string SPACE = " ";
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_scan",
-		"admin_deleteNpcByObjectId"
-	};
+    [
+        "admin_scan",
+		"admin_deleteNpcByObjectId",
+    ];
 	
 	private static int DEFAULT_RADIUS = 1000;
 	

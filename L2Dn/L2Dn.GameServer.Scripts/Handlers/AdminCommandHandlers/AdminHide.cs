@@ -10,9 +10,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminHide: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_hide"
-	};
+    [
+        "admin_hide",
+    ];
 	
 	public bool useAdminCommand(string command, Player player)
 	{

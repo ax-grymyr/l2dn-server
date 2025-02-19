@@ -14,18 +14,18 @@ namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 public class Freight: IBypassHandler
 {
 	private static readonly string[] COMMANDS =
+    [
+        "package_withdraw",
+		"package_deposit",
+    ];
+
+	public bool useBypass(string command, Player player, Creature? target)
 	{
-		"package_withdraw",
-		"package_deposit"
-	};
-	
-	public bool useBypass(string command, Player player, Creature target)
-	{
-		if (!target.isNpc())
+		if (target is null || !target.isNpc())
 		{
 			return false;
 		}
-		
+
 		if (command.equalsIgnoreCase(COMMANDS[0]))
 		{
 			PlayerFreight freight = player.getFreight();
@@ -36,7 +36,7 @@ public class Freight: IBypassHandler
 					player.setActiveWarehouse(freight);
 					foreach (Item i in player.getActiveWarehouse().getItems())
 					{
-						if (i.isTimeLimitedItem() && (i.getRemainingTime() <= TimeSpan.Zero))
+						if (i.isTimeLimitedItem() && i.getRemainingTime() <= TimeSpan.Zero)
 						{
 							player.getActiveWarehouse().destroyItem("ItemInstance", i, player, null);
 						}
@@ -63,7 +63,7 @@ public class Freight: IBypassHandler
 		}
 		return false;
 	}
-	
+
 	public string[] getBypassList()
 	{
 		return COMMANDS;

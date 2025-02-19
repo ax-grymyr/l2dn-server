@@ -10,22 +10,19 @@ namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 public class UpgradeEquipment: IBypassHandler
 {
 	private static readonly int FERRIS = 30847;
-	
-	private static readonly string[] COMMANDS =
+
+    private static readonly string[] COMMANDS = ["UpgradeEquipment"];
+
+	public bool useBypass(string command, Player player, Creature? target)
 	{
-		"UpgradeEquipment"
-	};
-	
-	public bool useBypass(string command, Player player, Creature target)
-	{
-		if ((target == null) || !target.isNpc() || (((Npc) target).getId() != FERRIS))
+		if (target == null || !target.isNpc() || ((Npc) target).getId() != FERRIS)
 		{
 			return false;
 		}
 		player.sendPacket(new ExShowUpgradeSystemPacket());
 		return true;
 	}
-	
+
 	public string[] getBypassList()
 	{
 		return COMMANDS;

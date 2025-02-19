@@ -15,14 +15,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminEvents: IAdminCommandHandler
 {
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_event_menu",
+    [
+        "admin_event_menu",
 		"admin_event_start",
 		"admin_event_stop",
 		"admin_event_start_menu",
 		"admin_event_stop_menu",
-		"admin_event_bypass"
-	};
+		"admin_event_bypass",
+    ];
 	
 	public string[] getAdminCommandList()
 	{

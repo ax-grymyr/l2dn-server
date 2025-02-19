@@ -27,8 +27,8 @@ public class AdminSpawn: IAdminCommandHandler
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminSpawn));
 	
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_show_spawns",
+    [
+        "admin_show_spawns",
 		"admin_spawnat",
 		"admin_spawn",
 		"admin_spawn_monster",
@@ -46,8 +46,8 @@ public class AdminSpawn: IAdminCommandHandler
 		"admin_spawn_debug_print",
 		"admin_spawn_debug_print_menu",
 		"admin_topspawncount",
-		"admin_top_spawn_count"
-	};
+		"admin_top_spawn_count",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{

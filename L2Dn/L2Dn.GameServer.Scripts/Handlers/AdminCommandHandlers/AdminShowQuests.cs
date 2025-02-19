@@ -23,17 +23,17 @@ public class AdminShowQuests: IAdminCommandHandler
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminShowQuests));
 	
 	private static readonly string[] ADMIN_COMMANDS =
-	{
-		"admin_charquestmenu",
-		"admin_setcharquest"
-	};
+    [
+        "admin_charquestmenu",
+		"admin_setcharquest",
+    ];
 	
 	private static readonly string[] _states =
-	{
-		"CREATED",
+    [
+        "CREATED",
 		"STARTED",
-		"COMPLETED"
-	};
+		"COMPLETED",
+    ];
 	
 	public bool useAdminCommand(string command, Player activeChar)
 	{
