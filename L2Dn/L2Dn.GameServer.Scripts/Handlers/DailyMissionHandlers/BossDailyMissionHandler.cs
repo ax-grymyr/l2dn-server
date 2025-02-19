@@ -14,17 +14,17 @@ namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
 public class BossDailyMissionHandler: AbstractDailyMissionHandler
 {
 	private readonly int _amount;
-	
+
 	public BossDailyMissionHandler(DailyMissionDataHolder holder): base(holder)
 	{
 		_amount = holder.getRequiredCompletions();
 	}
-	
+
 	public override void init()
 	{
 		GlobalEvents.Monsters.Subscribe<OnAttackableKill>(this, onAttackableKill);
 	}
-	
+
 	public override bool isAvailable(Player player)
 	{
 		DailyMissionPlayerEntry? entry = player.getDailyMissions().getEntry(getHolder().getId());
@@ -49,14 +49,14 @@ public class BossDailyMissionHandler: AbstractDailyMissionHandler
 		}
 		return false;
 	}
-	
+
 	private void onAttackableKill(OnAttackableKill @event)
 	{
 		Attackable monster = @event.getTarget();
 		Player player = @event.getAttacker();
-		if (monster.isRaid() && (monster.getInstanceId() > 0) && (player != null))
+		if (monster.isRaid() && monster.getInstanceId() > 0 && player != null)
 		{
-			Party party = player.getParty();
+			Party? party = player.getParty();
 			if (party != null)
 			{
 				CommandChannel channel = party.getCommandChannel();
@@ -75,7 +75,7 @@ public class BossDailyMissionHandler: AbstractDailyMissionHandler
 			}
 		}
 	}
-	
+
 	private void processPlayerProgress(Player player)
 	{
 		DailyMissionPlayerEntry entry = player.getDailyMissions().getOrCreateEntry(getHolder().getId());
@@ -85,7 +85,7 @@ public class BossDailyMissionHandler: AbstractDailyMissionHandler
 			{
 				entry.setStatus(DailyMissionStatus.AVAILABLE);
 			}
-			
+
 			player.getDailyMissions().storeEntry(entry);
 		}
 	}

@@ -34,7 +34,7 @@ public class ChatShout: IChatHandler
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 			return;
 		}
-		if ((activeChar.getLevel() < Config.MINIMUM_CHAT_LEVEL) && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+		if (activeChar.getLevel() < Config.MINIMUM_CHAT_LEVEL && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 		{
 			var sm = new SystemMessagePacket(SystemMessageId.SHOUT_CANNOT_BE_USED_BY_CHARACTERS_LV_S1_OR_LOWER);
 			sm.Params.addInt(Config.MINIMUM_CHAT_LEVEL);
@@ -50,7 +50,7 @@ public class ChatShout: IChatHandler
 				return;
 			}
 			
-			if ((activeChar.getMovieHolder() != null) || activeChar.isFishing() || activeChar.isInInstance() || activeChar.isOnEvent() || activeChar.isInOlympiadMode() || activeChar.inObserverMode() || activeChar.isInTraingCamp() || activeChar.isInTimedHuntingZone() || activeChar.isInsideZone(ZoneId.SIEGE))
+			if (activeChar.getMovieHolder() != null || activeChar.isFishing() || activeChar.isInInstance() || activeChar.isOnEvent() || activeChar.isInOlympiadMode() || activeChar.inObserverMode() || activeChar.isInTraingCamp() || activeChar.isInTimedHuntingZone() || activeChar.isInsideZone(ZoneId.SIEGE))
 			{
 				activeChar.sendPacket(SystemMessageId.LOCATION_CANNOT_BE_SHARED_SINCE_THE_CONDITIONS_ARE_NOT_MET);
 				return;
@@ -65,7 +65,7 @@ public class ChatShout: IChatHandler
 			int region = MapRegionManager.getInstance().getMapRegionLocId(activeChar);
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				if ((region == MapRegionManager.getInstance().getMapRegionLocId(player)) && !BlockList.isBlocked(player, activeChar) && (player.getInstanceId() == activeChar.getInstanceId()) && !BlockList.isBlocked(activeChar, player))
+				if (region == MapRegionManager.getInstance().getMapRegionLocId(player) && !BlockList.isBlocked(player, activeChar) && player.getInstanceId() == activeChar.getInstanceId() && !BlockList.isBlocked(activeChar, player))
 				{
 					if (Config.FACTION_SYSTEM_ENABLED)
 					{

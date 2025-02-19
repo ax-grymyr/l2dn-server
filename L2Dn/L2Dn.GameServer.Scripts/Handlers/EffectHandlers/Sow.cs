@@ -22,38 +22,41 @@ public class Sow: AbstractEffect
 	public Sow(StatSet @params)
 	{
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effector.isPlayer() || !effected.isMonster())
-		{
-			return;
-		}
-		
-		Player player = effector.getActingPlayer();
+        Player? player = effector.getActingPlayer();
+		if (!effector.isPlayer() || !effected.isMonster() || player == null)
+        {
+            return;
+        }
+
 		Monster target = (Monster) effected;
-		
-		if (target.isDead() || (!target.getTemplate().canBeSown()) || target.isSeeded() || (target.getSeederId() != player.ObjectId))
+
+		if (target.isDead() || !target.getTemplate().canBeSown() || target.isSeeded() || target.getSeederId() != player.ObjectId)
 		{
 			return;
 		}
-		
+
 		// Consuming used seed
 		Seed seed = target.getSeed();
 		if (!player.destroyItemByItemId("Consume", seed.getSeedId(), 1, target, false))
 		{
 			return;
 		}
-		
+
 		SystemMessagePacket sm;
-		if (calcSuccess(player, target, seed))
-		{
-			player.sendPacket(new PlaySoundPacket(QuestSound.ITEMSOUND_QUEST_ITEMGET.GetSoundName()));
+		if (CalcSuccess(player, target, seed))
+        {
+            string? sound = QuestSound.ITEMSOUND_QUEST_ITEMGET.GetSoundName();
+            if (sound != null)
+			    player.sendPacket(new PlaySoundPacket(sound));
+
 			target.setSeeded(player.getActingPlayer());
 			sm = new SystemMessagePacket(SystemMessageId.THE_SEED_WAS_SUCCESSFULLY_SOWN);
 		}
@@ -61,8 +64,8 @@ public class Sow: AbstractEffect
 		{
 			sm = new SystemMessagePacket(SystemMessageId.THE_SEED_WAS_NOT_SOWN);
 		}
-		
-		Party party = player.getParty();
+
+		Party? party = player.getParty();
 		if (party != null)
 		{
 			party.broadcastPacket(sm);
@@ -71,12 +74,12 @@ public class Sow: AbstractEffect
 		{
 			player.sendPacket(sm);
 		}
-		
+
 		// TODO: Mob should not aggro on player, this way doesn't work really nice
 		target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 	}
-	
-	private static bool calcSuccess(Creature creature, Creature target, Seed seed)
+
+	private static bool CalcSuccess(Creature creature, Creature target, Seed seed)
 	{
 		// TODO: check all the chances
 		int minlevelSeed = seed.getLevel() - 5;
@@ -84,7 +87,7 @@ public class Sow: AbstractEffect
 		int levelPlayer = creature.getLevel(); // Attacker Level
 		int levelTarget = target.getLevel(); // target Level
 		int basicSuccess = seed.isAlternative() ? 20 : 90;
-		
+
 		// seed level
 		if (levelTarget < minlevelSeed)
 		{
@@ -94,10 +97,10 @@ public class Sow: AbstractEffect
 		{
 			basicSuccess -= 5 * (levelTarget - maxlevelSeed);
 		}
-		
+
 		// 5% decrease in chance if player level
 		// is more than +/- 5 levels to _target's_ level
-		int diff = (levelPlayer - levelTarget);
+		int diff = levelPlayer - levelTarget;
 		if (diff < 0)
 		{
 			diff = -diff;
@@ -106,9 +109,9 @@ public class Sow: AbstractEffect
 		{
 			basicSuccess -= 5 * (diff - 5);
 		}
-		
+
 		// chance can't be less than 1%
-		Math.Max(basicSuccess, 1);
+        basicSuccess = Math.Max(basicSuccess, 1);
 		return Rnd.get(99) < basicSuccess;
 	}
 }

@@ -18,29 +18,29 @@ public class FocusMomentum: AbstractEffect
 {
 	private readonly int _amount;
 	private readonly int _maxCharges;
-	
+
 	public FocusMomentum(StatSet @params)
 	{
 		_amount = @params.getInt("amount", 1);
 		_maxCharges = @params.getInt("maxCharges", 0);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effected.isPlayer())
+        Player? player = effected.getActingPlayer();
+		if (!effected.isPlayer() || player == null)
 		{
 			return;
 		}
-		
-		Player player = effected.getActingPlayer();
+
 		int currentCharges = player.getCharges();
 		int maxCharges = Math.Min(_maxCharges, (int) effected.getStat().getValue(Stat.MAX_MOMENTUM, 1));
-		
+
 		if (currentCharges >= maxCharges)
 		{
 			if (!skill.isTriggeredSkill())
@@ -49,11 +49,11 @@ public class FocusMomentum: AbstractEffect
 			}
 			return;
 		}
-		
+
 		int newCharge = Math.Min(currentCharges + _amount, maxCharges);
-		
+
 		player.setCharges(newCharge);
-		
+
 		if (newCharge == maxCharges)
 		{
 			player.sendPacket(SystemMessageId.YOUR_FORCE_HAS_REACHED_MAXIMUM_CAPACITY);
@@ -64,7 +64,7 @@ public class FocusMomentum: AbstractEffect
 			sm.Params.addInt(newCharge);
 			player.sendPacket(sm);
 		}
-		
+
 		player.sendPacket(new EtcStatusUpdatePacket(player));
 	}
 }

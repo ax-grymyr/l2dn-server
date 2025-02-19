@@ -20,15 +20,15 @@ public class ChatGeneral: IChatHandler
 	{
 		ChatType.GENERAL,
 	};
-	
+
 	public void handleChat(ChatType type, Player activeChar, string paramsValue, string text, bool shareLocation)
 	{
 		bool vcdUsed = false;
 		if (text.startsWith("."))
 		{
 			StringTokenizer st = new StringTokenizer(text);
-			IVoicedCommandHandler vch;
-			string command = "";
+			IVoicedCommandHandler? vch;
+			string command;
 			string @params = paramsValue;
 			if (st.countTokens() > 1)
 			{
@@ -50,7 +50,7 @@ public class ChatGeneral: IChatHandler
 				vcdUsed = false;
 			}
 		}
-		
+
 		if (!vcdUsed)
 		{
 			if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.Contains(type))
@@ -58,15 +58,15 @@ public class ChatGeneral: IChatHandler
 				activeChar.sendPacket(SystemMessageId.IF_YOU_TRY_TO_CHAT_BEFORE_THE_PROHIBITION_IS_REMOVED_THE_PROHIBITION_TIME_WILL_INCREASE_EVEN_FURTHER_S1_SEC_OF_PROHIBITION_IS_LEFT);
 				return;
 			}
-			
-			if ((activeChar.getLevel() < Config.MINIMUM_CHAT_LEVEL) && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+
+			if (activeChar.getLevel() < Config.MINIMUM_CHAT_LEVEL && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.GENERAL_CHAT_CANNOT_BE_USED_BY_CHARACTERS_LV_S1_OR_LOWER);
 				sm.Params.addInt(Config.MINIMUM_CHAT_LEVEL);
 				activeChar.sendPacket(sm);
 				return;
 			}
-			
+
 			if (shareLocation)
 			{
 				if (activeChar.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < Config.SHARING_LOCATION_COST)
@@ -74,22 +74,22 @@ public class ChatGeneral: IChatHandler
 					activeChar.sendPacket(SystemMessageId.THERE_ARE_NOT_ENOUGH_L_COINS);
 					return;
 				}
-				
-				if ((activeChar.getMovieHolder() != null) || activeChar.isFishing() || activeChar.isInInstance() || activeChar.isOnEvent() || activeChar.isInOlympiadMode() || activeChar.inObserverMode() || activeChar.isInTraingCamp() || activeChar.isInTimedHuntingZone() || activeChar.isInsideZone(ZoneId.SIEGE))
+
+				if (activeChar.getMovieHolder() != null || activeChar.isFishing() || activeChar.isInInstance() || activeChar.isOnEvent() || activeChar.isInOlympiadMode() || activeChar.inObserverMode() || activeChar.isInTraingCamp() || activeChar.isInTimedHuntingZone() || activeChar.isInsideZone(ZoneId.SIEGE))
 				{
 					activeChar.sendPacket(SystemMessageId.LOCATION_CANNOT_BE_SHARED_SINCE_THE_CONDITIONS_ARE_NOT_MET);
 					return;
 				}
-				
+
 				activeChar.destroyItemByItemId("Shared Location", Inventory.LCOIN_ID, Config.SHARING_LOCATION_COST, activeChar, true);
 			}
-			
+
 			CreatureSayPacket cs = new CreatureSayPacket(activeChar, type, activeChar.getAppearance().getVisibleName(), text, shareLocation);
 			CreatureSayPacket csRandom = new CreatureSayPacket(activeChar, type, activeChar.getAppearance().getVisibleName(), ChatRandomizer.randomize(text), shareLocation);
-			
+
 			World.getInstance().forEachVisibleObjectInRange<Player>(activeChar, 1250, player =>
 			{
-				if ((player != null) && !BlockList.isBlocked(player, activeChar))
+				if (player != null && !BlockList.isBlocked(player, activeChar))
 				{
 					if (Config.FACTION_SYSTEM_ENABLED)
 					{
@@ -115,11 +115,11 @@ public class ChatGeneral: IChatHandler
 					}
 				}
 			});
-			
+
 			activeChar.sendPacket(cs);
 		}
 	}
-	
+
 	public ChatType[] getChatTypeList()
 	{
 		return CHAT_TYPES;

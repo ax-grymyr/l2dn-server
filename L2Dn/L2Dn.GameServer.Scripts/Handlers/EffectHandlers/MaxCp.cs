@@ -37,7 +37,7 @@ public class MaxCp: AbstractStatEffect
 					}
 					case StatModifierType.PER:
 					{
-						effected.setCurrentCp(effected.getCurrentCp() + (effected.getMaxCp() * (_amount / 100)));
+						effected.setCurrentCp(effected.getCurrentCp() + effected.getMaxCp() * (_amount / 100));
 						break;
 					}
 				}

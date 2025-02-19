@@ -23,32 +23,32 @@ public class CallPc: AbstractEffect
 {
 	private readonly int _itemId;
 	private readonly int _itemCount;
-	
+
 	public CallPc(StatSet @params)
 	{
 		_itemId = @params.getInt("itemId", 0);
 		_itemCount = @params.getInt("itemCount", 0);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		if (effector == effected)
 		{
 			return;
 		}
-		
-		Player target = effected.getActingPlayer();
-		Player player = effector.getActingPlayer();
-		if (player != null)
+
+		Player? player = effector.getActingPlayer();
+        Player? target = effected.getActingPlayer();
+		if (player != null && target != null)
 		{
 			if (checkSummonTargetStatus(target, player))
 			{
-				if ((_itemId != 0) && (_itemCount != 0))
+				if (_itemId != 0 && _itemCount != 0)
 				{
 					SystemMessagePacket sm;
 					if (target.getInventory().getInventoryItemCount(_itemId, 0) < _itemCount)
@@ -66,7 +66,7 @@ public class CallPc: AbstractEffect
 				}
 
 				target.addScript(new SummonRequestHolder(player));
-				
+
 				ConfirmDialogPacket confirm = new(30000, player.ObjectId, SystemMessageId.C1_WANTS_TO_SUMMON_YOU_TO_S2_ACCEPT);
 				confirm.Params.addString(player.getName());
 				confirm.Params.addZoneName(player.getX(), player.getY(), player.getZ());
@@ -85,20 +85,20 @@ public class CallPc: AbstractEffect
 			}
 			else
 			{
-				WorldObject previousTarget = target.getTarget();
+				WorldObject? previousTarget = target.getTarget();
 				target.teleToLocation(effector.Location);
 				target.setTarget(previousTarget);
 			}
 		}
 	}
-	
+
 	public static bool checkSummonTargetStatus(Player target, Player effector)
 	{
 		if (target == effector)
 		{
 			return false;
 		}
-		
+
 		if (target.isAlikeDead())
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_DEAD_AT_THE_MOMENT_AND_CANNOT_BE_SUMMONED_OR_TELEPORTED);
@@ -106,7 +106,7 @@ public class CallPc: AbstractEffect
 			effector.sendPacket(sm);
 			return false;
 		}
-		
+
 		if (target.isInStoreMode())
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_CURRENTLY_TRADING_OR_OPERATING_A_PRIVATE_STORE_AND_CANNOT_BE_SUMMONED_OR_TELEPORTED);
@@ -114,7 +114,7 @@ public class CallPc: AbstractEffect
 			effector.sendPacket(sm);
 			return false;
 		}
-		
+
 		if (target.isRooted() || target.isInCombat())
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_ENGAGED_IN_COMBAT_AND_CANNOT_BE_SUMMONED_OR_TELEPORTED);
@@ -122,19 +122,19 @@ public class CallPc: AbstractEffect
 			effector.sendPacket(sm);
 			return false;
 		}
-		
+
 		if (target.isInOlympiadMode())
 		{
 			effector.sendPacket(SystemMessageId.A_USER_PARTICIPATING_IN_THE_OLYMPIAD_CANNOT_USE_SUMMONING_OR_TELEPORTING);
 			return false;
 		}
-		
+
 		if (target.isOnEvent() || target.isFlyingMounted() || target.isCombatFlagEquipped() || target.isInTraingCamp() || target.isInsideZone(ZoneId.TIMED_HUNTING) || effector.isInsideZone(ZoneId.TIMED_HUNTING))
 		{
 			effector.sendPacket(SystemMessageId.YOU_CANNOT_USE_SUMMONING_OR_TELEPORTING_IN_THIS_AREA);
 			return false;
 		}
-		
+
 		if (target.inObserverMode() || OlympiadManager.getInstance().isRegisteredInComp(target))
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_IN_AN_AREA_WHERE_SUMMONING_OR_TELEPORTING_IS_BLOCKED_2);
@@ -142,7 +142,7 @@ public class CallPc: AbstractEffect
 			effector.sendPacket(sm);
 			return false;
 		}
-		
+
 		if (target.isInsideZone(ZoneId.NO_SUMMON_FRIEND) || target.isInsideZone(ZoneId.JAIL))
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_IN_AN_AREA_WHERE_SUMMONING_OR_TELEPORTING_IS_BLOCKED);
@@ -150,14 +150,14 @@ public class CallPc: AbstractEffect
 			effector.sendPacket(sm);
 			return false;
 		}
-		
-		Instance instance = effector.getInstanceWorld();
-		if ((instance != null) && !instance.isPlayerSummonAllowed())
+
+		Instance? instance = effector.getInstanceWorld();
+		if (instance != null && !instance.isPlayerSummonAllowed())
 		{
 			effector.sendPacket(SystemMessageId.CANNOT_BE_SUMMONED_IN_THIS_LOCATION);
 			return false;
 		}
-		
+
 		return true;
 	}
 }

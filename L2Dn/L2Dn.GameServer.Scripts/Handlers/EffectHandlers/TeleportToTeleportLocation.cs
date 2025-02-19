@@ -16,20 +16,20 @@ public class TeleportToTeleportLocation: AbstractEffect
 	public TeleportToTeleportLocation(StatSet @params)
 	{
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		Player player = effector.getActingPlayer();
+		Player? player = effector.getActingPlayer();
 		if (player == null)
 		{
 			return;
 		}
-		
+
 		Location? location = player.getTeleportLocation();
 		if (location != null)
 		{

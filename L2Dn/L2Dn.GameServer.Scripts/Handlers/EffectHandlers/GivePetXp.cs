@@ -12,24 +12,24 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class GivePetXp: AbstractEffect
 {
 	private readonly int _xp;
-	
+
 	public GivePetXp(StatSet @params)
 	{
 		_xp = @params.getInt("xp", 0);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		if (!effector.hasPet())
 		{
 			return;
 		}
-		
-		effected.getActingPlayer().getPet().addExpAndSp(_xp, 0);
+
+		effected.getActingPlayer()?.getPet()?.addExpAndSp(_xp, 0);
 	}
 }

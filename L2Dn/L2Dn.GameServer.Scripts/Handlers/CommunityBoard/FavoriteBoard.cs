@@ -19,11 +19,11 @@ public class FavoriteBoard: IParseBoardHandler
     private static readonly Logger _logger = LogManager.GetLogger(nameof(FavoriteBoard));
 	
 	private static readonly string[] COMMANDS =
-	{
-		"_bbsgetfav",
+    [
+        "_bbsgetfav",
 		"bbs_add_fav",
-		"_bbsdelfav_"
-	};
+		"_bbsdelfav_",
+    ];
 	
 	public string[] getCommunityBoardCommands()
 	{

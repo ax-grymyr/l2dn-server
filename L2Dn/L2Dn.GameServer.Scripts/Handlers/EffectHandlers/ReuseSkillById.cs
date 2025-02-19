@@ -15,24 +15,24 @@ public class ReuseSkillById: AbstractEffect
 {
 	private readonly int _skillId;
 	private readonly int _amount;
-	
+
 	public ReuseSkillById(StatSet @params)
 	{
 		_skillId = @params.getInt("skillId", 0);
 		_amount = @params.getInt("amount", 0);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		Player player = effector.getActingPlayer();
+		Player? player = effector.getActingPlayer();
 		if (player != null)
 		{
-			Skill s = player.getKnownSkill(_skillId);
+			Skill? s = player.getKnownSkill(_skillId);
 			if (s != null)
 			{
 				if (_amount > 0)
@@ -42,7 +42,7 @@ public class ReuseSkillById: AbstractEffect
 					{
 						TimeSpan diff = reuse - TimeSpan.FromMilliseconds(_amount);
 						diff = Algorithms.Max(diff, TimeSpan.Zero);
-						
+
 						player.removeTimeStamp(s);
 						player.addTimeStamp(s, diff);
 						player.sendPacket(new SkillCoolTimePacket(player));

@@ -58,7 +58,7 @@ public class FishingDailyMissionHandler: AbstractDailyMissionHandler
 	private void onPlayerFishing(OnPlayerFishing @event)
 	{
 		Player player = @event.getPlayer();
-		if ((player.getLevel() < _minLevel) || (player.getLevel() > _maxLevel))
+		if (player.getLevel() < _minLevel || player.getLevel() > _maxLevel)
 		{
 			return;
 		}

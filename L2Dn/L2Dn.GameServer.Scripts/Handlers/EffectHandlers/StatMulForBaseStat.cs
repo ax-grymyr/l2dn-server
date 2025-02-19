@@ -69,9 +69,9 @@ public class StatMulForBaseStat: AbstractEffect
 			}
 		}
 		
-		if ((currentValue >= _min) && (currentValue <= _max))
+		if (currentValue >= _min && currentValue <= _max)
 		{
-			effected.getStat().mergeMul(_mulStat, (_amount / 100) + 1);
+			effected.getStat().mergeMul(_mulStat, _amount / 100 + 1);
 		}
 	}
 }

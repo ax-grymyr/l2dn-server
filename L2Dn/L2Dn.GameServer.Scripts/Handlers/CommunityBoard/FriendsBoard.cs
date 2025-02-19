@@ -12,10 +12,10 @@ namespace L2Dn.GameServer.Scripts.Handlers.CommunityBoard;
 public class FriendsBoard: IParseBoardHandler
 {
 	private static readonly string[] COMMANDS =
-	{
-		"_friendlist",
-		"_friendblocklist"
-	};
+    [
+        "_friendlist",
+		"_friendblocklist",
+    ];
 	
 	public string[] getCommunityBoardCommands()
 	{

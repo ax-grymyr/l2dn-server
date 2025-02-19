@@ -44,7 +44,7 @@ public class Lethal: AbstractEffect
 			return;
 		}
 		
-		if (skill.getMagicLevel() < (effected.getLevel() - 6))
+		if (skill.getMagicLevel() < effected.getLevel() - 6)
 		{
 			return;
 		}
@@ -74,7 +74,7 @@ public class Lethal: AbstractEffect
 			effector.sendPacket(sm2);
 		}
 		// Lethal Strike
-		else if (Rnd.get(100) < (_fullLethal * chanceMultiplier))
+		else if (Rnd.get(100) < _fullLethal * chanceMultiplier)
 		{
 			// for Players CP and HP is set to 1.
 			if (effected.isPlayer())
@@ -91,7 +91,7 @@ public class Lethal: AbstractEffect
 			effector.sendPacket(SystemMessageId.HIT_WITH_LETHAL_STRIKE);
 		}
 		// Half-Kill
-		else if (Rnd.get(100) < (_halfLethal * chanceMultiplier))
+		else if (Rnd.get(100) < _halfLethal * chanceMultiplier)
 		{
 			// for Players CP is set to 1.
 			if (effected.isPlayer())

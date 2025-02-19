@@ -17,28 +17,28 @@ public class SkillTurningOverTime: AbstractEffect
 {
 	private readonly int _chance;
 	private readonly bool _staticChance;
-	
+
 	public SkillTurningOverTime(StatSet @params)
 	{
 		_chance = @params.getInt("chance", 100);
 		_staticChance = @params.getBoolean("staticChance", false);
 		setTicks(@params.getInt("ticks"));
 	}
-	
-	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
 	{
-		if ((effected == null) || (effected == effector) || effected.isRaid())
+		if (effected == null || effected == effector || effected.isRaid())
 		{
 			return false;
 		}
-		
-		bool skillSuccess = _staticChance ? Formulas.calcProbability(_chance, effector, effected, skill) : (Rnd.get(100) < _chance);
+
+		bool skillSuccess = _staticChance ? Formulas.calcProbability(_chance, effector, effected, skill) : Rnd.get(100) < _chance;
 		if (skillSuccess && effected.isCastingNow())
 		{
 			effected.abortAllSkillCasters();
 			effected.sendPacket(SystemMessageId.YOUR_CASTING_HAS_BEEN_INTERRUPTED);
 		}
-		
+
 		return base.onActionTime(effector, effected, skill, item);
 	}
 }

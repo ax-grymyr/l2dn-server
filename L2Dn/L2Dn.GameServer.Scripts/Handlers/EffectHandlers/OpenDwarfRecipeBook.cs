@@ -18,26 +18,26 @@ public class OpenDwarfRecipeBook: AbstractEffect
 	public OpenDwarfRecipeBook(StatSet @params)
 	{
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effector.isPlayer())
+        Player? player = effector.getActingPlayer();
+		if (!effector.isPlayer() || player == null)
 		{
 			return;
 		}
-		
-		Player player = effector.getActingPlayer();
+
 		if (player.getPrivateStoreType() != PrivateStoreType.NONE)
 		{
 			player.sendPacket(SystemMessageId.ITEM_CREATION_IS_NOT_POSSIBLE_WHILE_ENGAGED_IN_A_TRADE);
 			return;
 		}
-		
+
 		RecipeManager.getInstance().requestBookOpen(player, true);
 	}
 }

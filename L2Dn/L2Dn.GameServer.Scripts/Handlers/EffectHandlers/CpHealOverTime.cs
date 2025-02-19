@@ -14,23 +14,23 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class CpHealOverTime: AbstractEffect
 {
 	private readonly double _power;
-	
+
 	public CpHealOverTime(StatSet @params)
 	{
 		_power = @params.getDouble("power", 0);
 		setTicks(@params.getInt("ticks"));
 	}
-	
-	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isDead())
 		{
 			return false;
 		}
-		
+
 		double cp = effected.getCurrentCp();
 		double maxcp = effected.getMaxRecoverableCp();
-		
+
 		// Not needed to set the CP and send update packet if player is already at max CP
 		if (_power > 0)
 		{
@@ -41,18 +41,18 @@ public class CpHealOverTime: AbstractEffect
 		}
 		else
 		{
-			if ((cp - _power) <= 0)
+			if (cp - _power <= 0)
 			{
 				return false;
 			}
 		}
-		
+
 		double power = _power;
-		if ((item != null) && (item.isPotion() || item.isElixir()))
+		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			power += effected.getStat().getValue(Stat.ADDITIONAL_POTION_CP, 0) / getTicks();
 		}
-		
+
 		cp += power * getTicksMultiplier();
 		if (_power > 0)
 		{

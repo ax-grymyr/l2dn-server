@@ -16,27 +16,27 @@ public class RollingDice: IItemHandler
 {
 	public bool useItem(Playable playable, Item item, bool forceUse)
 	{
-		if (!playable.isPlayer())
+        Player? player = playable.getActingPlayer();
+		if (!playable.isPlayer() || player == null)
 		{
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
-		
-		Player player = playable.getActingPlayer();
+
 		int itemId = item.getId();
 		if (player.isInOlympiadMode())
 		{
 			player.sendPacket(SystemMessageId.THE_ITEM_CANNOT_BE_USED_IN_THE_OLYMPIAD);
 			return false;
 		}
-		
+
 		int number = rollDice(player);
 		if (number == 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_MAY_NOT_THROW_THE_DICE_AT_THIS_TIME_TRY_AGAIN_LATER);
 			return false;
 		}
-		
+
 		// Mobius: Retail dice position land calculation.
 		double angle = HeadingUtil.ConvertHeadingToDegrees(player.getHeading());
 		double radian = double.DegreesToRadians(angle);
@@ -48,11 +48,11 @@ public class RollingDice: IItemHandler
 		int z = player.getZ();
 		Location3D destination = GeoEngine.getInstance().getValidLocation(player.Location.Location3D, new Location3D(x, y, z), player.getInstanceWorld());
 		Broadcast.toSelfAndKnownPlayers(player, new DicePacket(player.ObjectId, itemId, number, destination));
-		
+
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_ROLLED_A_S2);
 		sm.Params.addString(player.getName());
 		sm.Params.addInt(number);
-		
+
 		player.sendPacket(sm);
 		if (player.isInsideZone(ZoneId.PEACE))
 		{
@@ -60,12 +60,12 @@ public class RollingDice: IItemHandler
 		}
 		else if (player.isInParty()) // TODO: Verify this!
 		{
-			player.getParty().broadcastToPartyMembers(player, sm);
+			player.getParty()?.broadcastToPartyMembers(player, sm);
 		}
 		return true;
 	}
-	
-	private int rollDice(Player player)
+
+	private static int rollDice(Player player)
 	{
 		// TODO: flood protection
 		// Check if the dice is ready
@@ -73,7 +73,7 @@ public class RollingDice: IItemHandler
 		// {
 		// 	return 0;
 		// }
-		
+
 		return Rnd.get(1, 6); // TODO: upper bound is not inclusive
 	}
 }

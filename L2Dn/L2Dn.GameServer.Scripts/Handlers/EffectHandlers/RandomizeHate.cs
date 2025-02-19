@@ -34,16 +34,16 @@ public class RandomizeHate: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if ((effected == effector) || !effected.isAttackable())
+		if (effected == effector || !effected.isAttackable())
 		{
 			return;
 		}
 		
 		Attackable effectedMob = (Attackable) effected;
-		List<Creature> targetList = new();
+		List<Creature> targetList = [];
 		World.getInstance().forEachVisibleObject<Creature>(effected, cha =>
 		{
-			if ((cha != effectedMob) && (cha != effector))
+			if (cha != effectedMob && cha != effector)
 			{
 				// Aggro cannot be transfered to a mob of the same faction.
 				if (cha.isAttackable() && ((Attackable) cha).isInMyClan(effectedMob))

@@ -21,20 +21,20 @@ public class Harvesting: AbstractEffect
 	public Harvesting(StatSet @params)
 	{
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effector.isPlayer() || !effected.isMonster() || !effected.isDead())
+		Player? player = effector.getActingPlayer();
+		if (!effector.isPlayer() || player == null || !effected.isMonster() || !effected.isDead())
 		{
 			return;
 		}
-		
-		Player player = effector.getActingPlayer();
+
 		Monster monster = (Monster) effected;
 		if (player.ObjectId != monster.getSeederId())
 		{
@@ -44,12 +44,12 @@ public class Harvesting: AbstractEffect
 		{
 			if (calcSuccess(player, monster))
 			{
-				ItemHolder harvestedItem = monster.takeHarvest();
+				ItemHolder? harvestedItem = monster.takeHarvest();
 				if (harvestedItem != null)
 				{
 					// Add item
 					player.getInventory().addItem("Harvesting", harvestedItem.getId(), harvestedItem.getCount(), player, monster);
-					
+
 					// Send system msg
 					SystemMessagePacket sm;
 					if (item.getCount() == 1)
@@ -64,9 +64,9 @@ public class Harvesting: AbstractEffect
 						sm.Params.addLong(harvestedItem.getCount());
 					}
 					player.sendPacket(sm);
-					
+
 					// Send msg to party
-					Party party = player.getParty();
+					Party? party = player.getParty();
 					if (party != null)
 					{
 						if (item.getCount() == 1)
@@ -82,7 +82,7 @@ public class Harvesting: AbstractEffect
 							sm.Params.addLong(harvestedItem.getCount());
 							sm.Params.addItemName(harvestedItem.getId());
 						}
-						
+
 						party.broadcastToPartyMembers(player, sm);
 					}
 				}
@@ -97,18 +97,18 @@ public class Harvesting: AbstractEffect
 			player.sendPacket(SystemMessageId.THE_HARVEST_FAILED_BECAUSE_THE_SEED_WAS_NOT_SOWN);
 		}
 	}
-	
+
 	private static bool calcSuccess(Player player, Monster target)
 	{
 		int levelPlayer = player.getLevel();
 		int levelTarget = target.getLevel();
-		
-		int diff = (levelPlayer - levelTarget);
+
+		int diff = levelPlayer - levelTarget;
 		if (diff < 0)
 		{
 			diff = -diff;
 		}
-		
+
 		// apply penalty, target <=> player levels
 		// 5% penalty for each level
 		int basicSuccess = 100;
@@ -116,7 +116,7 @@ public class Harvesting: AbstractEffect
 		{
 			basicSuccess -= (diff - 5) * 5;
 		}
-		
+
 		// success rate can't be less than 1%
 		if (basicSuccess < 1)
 		{

@@ -13,25 +13,25 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class ChangeFace: AbstractEffect
 {
 	private readonly int _value;
-	
+
 	public ChangeFace(StatSet @params)
 	{
 		_value = @params.getInt("value", 0);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effected.isPlayer())
+        Player? player = effected.getActingPlayer();
+		if (!effected.isPlayer() || player == null)
 		{
 			return;
 		}
-		
-		Player player = effected.getActingPlayer();
+
 		player.getAppearance().setFace(_value);
 		player.broadcastUserInfo();
 	}

@@ -20,10 +20,10 @@ public class BlockParty: AbstractEffect
 
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
-		return (effected != null) && effected.isPlayer();
+		return effected != null && effected.isPlayer();
 	}
 
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, effected.ObjectId.ToString(),
 			PunishmentAffect.CHARACTER, PunishmentType.PARTY_BAN, null, "Party banned by bot report", "system", true));

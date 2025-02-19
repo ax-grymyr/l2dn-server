@@ -46,13 +46,13 @@ public class Fear: AbstractEffect
 		return 5;
 	}
 
-	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item item)
+	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		fearAction(null, effected);
 		return false;
 	}
 
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		effected.getAI().notifyEvent(CtrlEvent.EVT_AFRAID);
 		fearAction(effector, effected);
@@ -66,7 +66,7 @@ public class Fear: AbstractEffect
 		}
 	}
 
-	private void fearAction(Creature effector, Creature effected)
+	private void fearAction(Creature? effector, Creature effected)
 	{
 		double radians = effector != null
 			? new Location2D(effector.getX(), effector.getY()).AngleRadiansTo(new Location2D(effected.getX(), effected.getY()))

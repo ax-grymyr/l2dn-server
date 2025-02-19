@@ -31,7 +31,7 @@ public class GetAgro: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if ((effected != null) && effected.isAttackable())
+		if (effected != null && effected.isAttackable())
 		{
 			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, effector);
 			

@@ -32,7 +32,7 @@ public class TargetMeProbability: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (effected.isPlayable() && (effected.getTarget() != effector))
+		if (effected.isPlayable() && effected.getTarget() != effector)
 		{
 			effected.setTarget(effector);
 		}

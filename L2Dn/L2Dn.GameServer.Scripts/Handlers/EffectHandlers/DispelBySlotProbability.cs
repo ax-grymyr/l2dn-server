@@ -21,7 +21,7 @@ public class DispelBySlotProbability: AbstractEffect
 	{
 		string[] dispelEffects = @params.getString("dispel").Split(";");
 		_rate = @params.getInt("rate", 100);
-		_dispelAbnormals = new();
+		_dispelAbnormals = [];
 		foreach (string slot in dispelEffects)
 		{
 			_dispelAbnormals.add(Enum.Parse<AbnormalType>(slot));
@@ -48,7 +48,7 @@ public class DispelBySlotProbability: AbstractEffect
 		// The effectlist should already check if it has buff with this abnormal type or not.
 		effected.getEffectList()
 			.stopEffects(
-				info => !info.getSkill().isIrreplacableBuff() && (Rnd.get(100) < _rate) &&
+				info => !info.getSkill().isIrreplacableBuff() && Rnd.get(100) < _rate &&
 				        _dispelAbnormals.Contains(info.getSkill().getAbnormalType()), true, true);
 	}
 }

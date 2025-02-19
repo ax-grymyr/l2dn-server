@@ -19,7 +19,7 @@ public class LoginWeekendDailyMissionHandler: AbstractDailyMissionHandler
 	public override bool isAvailable(Player player)
 	{
 		DailyMissionPlayerEntry? entry = player.getDailyMissions().getEntry(getHolder().getId());
-		return (entry != null) && (entry.getStatus() == DailyMissionStatus.AVAILABLE);
+		return entry != null && entry.getStatus() == DailyMissionStatus.AVAILABLE;
 	}
 	
 	public override void init()
@@ -35,8 +35,8 @@ public class LoginWeekendDailyMissionHandler: AbstractDailyMissionHandler
 		{
 			DateTime now = DateTime.Now;
 			DayOfWeek currentDay = now.DayOfWeek;
-			if (((currentDay == DayOfWeek.Saturday) || (currentDay == DayOfWeek.Sunday) || (currentDay == DayOfWeek.Monday)) //
-				&& (now.Hour < 6) && (now.Minute < 30))
+			if ((currentDay == DayOfWeek.Saturday || currentDay == DayOfWeek.Sunday || currentDay == DayOfWeek.Monday) //
+				&& now.Hour < 6 && now.Minute < 30)
 			{
 				entry.setProgress(1);
 				entry.setStatus(DailyMissionStatus.AVAILABLE);

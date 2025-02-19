@@ -34,8 +34,8 @@ public class SetCp: AbstractEffect
 			return;
 		}
 		
-		bool full = (_mode == StatModifierType.PER) && (_amount == 100.0);
-		double amount = full ? effected.getMaxCp() : (_mode == StatModifierType.PER) ? ((effected.getMaxCp() * _amount) / 100.0) : _amount;
+		bool full = _mode == StatModifierType.PER && _amount == 100.0;
+		double amount = full ? effected.getMaxCp() : _mode == StatModifierType.PER ? effected.getMaxCp() * _amount / 100.0 : _amount;
 		effected.setCurrentCp(amount);
 	}
 }

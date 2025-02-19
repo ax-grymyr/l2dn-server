@@ -11,10 +11,10 @@ namespace L2Dn.GameServer.Scripts.Handlers.CommunityBoard;
 public class MemoBoard: IWriteBoardHandler
 {
 	private static readonly string[] COMMANDS =
-	{
-		"_bbsmemo",
-		"_bbstopics"
-	};
+    [
+        "_bbsmemo",
+		"_bbstopics",
+    ];
 	
 	public string[] getCommunityBoardCommands()
 	{

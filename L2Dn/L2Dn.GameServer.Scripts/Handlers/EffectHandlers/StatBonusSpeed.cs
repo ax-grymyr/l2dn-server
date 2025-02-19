@@ -15,12 +15,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class StatBonusSpeed: AbstractEffect
 {
 	private readonly double _stat;
-	private readonly Condition _armorTypeCondition;
-	
+	private readonly Condition? _armorTypeCondition;
+
 	public StatBonusSpeed(StatSet @params)
 	{
 		_stat = (int)@params.getEnum("stat", BaseStat.DEX);
-		
+
 		ItemTypeMask armorTypesMask = ItemTypeMask.Zero;
 		List<string> armorTypes = @params.getList<string>("armorType");
 		if (armorTypes != null)
@@ -37,13 +37,13 @@ public class StatBonusSpeed: AbstractEffect
 				}
 			}
 		}
-		
+
 		_armorTypeCondition = armorTypesMask != ItemTypeMask.Zero ? new ConditionUsingItemType(armorTypesMask) : null;
 	}
-	
+
 	public override void pump(Creature effected, Skill skill)
 	{
-		if ((_armorTypeCondition == null) || _armorTypeCondition.test(effected, effected, skill))
+		if (_armorTypeCondition == null || _armorTypeCondition.test(effected, effected, skill))
 		{
 			effected.getStat().mergeAdd(Stat.STAT_BONUS_SPEED, _stat);
 		}

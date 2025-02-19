@@ -20,20 +20,20 @@ public class BeastSpiritShot: IItemHandler
 
 	public bool useItem(Playable playable, Item item, bool forceUse)
 	{
-		if (!playable.isPlayer())
+        Player? activeOwner = playable.getActingPlayer();
+		if (!playable.isPlayer() || activeOwner == null)
 		{
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
 
-		Player activeOwner = playable.getActingPlayer();
 		if (!activeOwner.hasSummon())
 		{
 			activeOwner.sendPacket(SystemMessageId.SERVITORS_ARE_NOT_AVAILABLE_AT_THIS_TIME);
 			return false;
 		}
 
-		Summon pet = playable.getPet();
+		Summon? pet = playable.getPet();
 		if (pet != null && pet.isDead())
 		{
 			activeOwner.sendPacket(SystemMessageId

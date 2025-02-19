@@ -15,17 +15,17 @@ public class EnlargeSlot: AbstractEffect
 {
 	private readonly StorageType _type;
 	private readonly double _amount;
-	
+
 	public EnlargeSlot(StatSet @params)
 	{
 		_amount = @params.getDouble("amount", 0);
 		_type = @params.getEnum("type", StorageType.INVENTORY_NORMAL);
 	}
-	
+
 	public override void pump(Creature effected, Skill skill)
 	{
 		Stat stat = Stat.INVENTORY_NORMAL;
-		
+
 		switch (_type)
 		{
 			case StorageType.TRADE_BUY:
@@ -54,11 +54,11 @@ public class EnlargeSlot: AbstractEffect
 				break;
 			}
 		}
-		
+
 		effected.getStat().mergeAdd(stat, _amount);
 		if (effected.isPlayer())
 		{
-			effected.getActingPlayer().sendStorageMaxCount();
+			effected.getActingPlayer()?.sendStorageMaxCount();
 		}
 	}
 }

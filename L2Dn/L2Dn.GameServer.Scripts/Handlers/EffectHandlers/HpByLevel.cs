@@ -30,7 +30,7 @@ public class HpByLevel: AbstractEffect
 	{
 		// Calculation
 		double abs = _power;
-		double absorb = ((effector.getCurrentHp() + abs) > effector.getMaxHp() ? effector.getMaxHp() : (effector.getCurrentHp() + abs));
+		double absorb = effector.getCurrentHp() + abs > effector.getMaxHp() ? effector.getMaxHp() : effector.getCurrentHp() + abs;
 		int restored = (int) (absorb - effector.getCurrentHp());
 		effector.setCurrentHp(absorb);
 		// System message

@@ -16,27 +16,28 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class GiveClanReputation: AbstractEffect
 {
 	private readonly int _reputation;
-	
+
 	public GiveClanReputation(StatSet @params)
 	{
 		_reputation = @params.getInt("reputation", 0);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
-	{
-		if (!effector.isPlayer() || !effected.isPlayer() || effected.isAlikeDead() || (effector.getActingPlayer().getClan() == null))
+    {
+        Clan? clan = effector.getActingPlayer()?.getClan();
+		if (!effector.isPlayer() || !effected.isPlayer() || effected.isAlikeDead() || clan == null)
 		{
 			return;
 		}
-		
-		effector.getActingPlayer().getClan().addReputationScore(_reputation);
-		
-		foreach (ClanMember member in effector.getActingPlayer().getClan().getMembers())
+
+        clan.addReputationScore(_reputation);
+
+		foreach (ClanMember member in clan.getMembers())
 		{
 			if (member.isOnline())
 			{

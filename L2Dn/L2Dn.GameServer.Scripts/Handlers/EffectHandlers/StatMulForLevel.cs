@@ -40,7 +40,7 @@ public class StatMulForLevel: AbstractEffect
 		double amount = _values.get(effected.getLevel());
 		if (amount != null)
 		{
-			effected.getStat().mergeMul(_stat, (amount / 100) + 1);
+			effected.getStat().mergeMul(_stat, amount / 100 + 1);
 		}
 	}
 }

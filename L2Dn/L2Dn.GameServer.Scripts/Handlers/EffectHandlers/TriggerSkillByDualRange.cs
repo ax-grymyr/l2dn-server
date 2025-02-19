@@ -19,7 +19,7 @@ public class TriggerSkillByDualRange: AbstractEffect
 	private readonly SkillHolder _rangeSkill;
 	private readonly int _distance;
 	private readonly bool _adjustLevel;
-	
+
 	public TriggerSkillByDualRange(StatSet @params)
 	{
 		// Just use closeSkill and rangeSkill parameters.
@@ -28,36 +28,37 @@ public class TriggerSkillByDualRange: AbstractEffect
 		_distance = @params.getInt("distance", 120);
 		_adjustLevel = @params.getBoolean("adjustLevel", true);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.DUAL_RANGE;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
-	{
-		if ((effected == null) || !effector.isPlayer())
+    {
+        Player? player = effector.getActingPlayer();
+		if (effected == null || !effector.isPlayer() || player == null)
 		{
 			return;
 		}
-		
+
 		SkillHolder skillHolder = effector.Distance3D(effected) < _distance ? _closeSkill : _rangeSkill;
-		Skill triggerSkill = _adjustLevel ? SkillData.getInstance().getSkill(skillHolder.getSkillId(), skill.getLevel()) : skillHolder.getSkill();
+		Skill? triggerSkill = _adjustLevel ? SkillData.getInstance().getSkill(skillHolder.getSkillId(), skill.getLevel()) : skillHolder.getSkill();
 		if (triggerSkill == null)
 		{
 			return;
 		}
-		
+
 		if (effected.isPlayable() && !effected.isAutoAttackable(effector))
 		{
-			effector.getActingPlayer().updatePvPStatus();
+            player.updatePvPStatus();
 		}
-		
-		effector.getActingPlayer().useMagic(triggerSkill, null, true, triggerSkill.getCastRange() > 600);
+
+        player.useMagic(triggerSkill, null, true, triggerSkill.getCastRange() > 600);
 	}
 }

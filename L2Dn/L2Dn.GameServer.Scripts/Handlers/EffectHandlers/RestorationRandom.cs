@@ -20,13 +20,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
  */
 public class RestorationRandom: AbstractEffect
 {
-	private readonly List<ExtractableProductItem> _products = new();
+	private readonly List<ExtractableProductItem> _products = [];
 
 	public RestorationRandom(StatSet @params)
 	{
 		foreach (StatSet group in @params.getList<StatSet>("items"))
 		{
-			List<RestorationItemHolder> items = new();
+			List<RestorationItemHolder> items = [];
 			foreach (StatSet item in group.getList<StatSet>("."))
 			{
 				items.Add(new RestorationItemHolder(item.getInt(".id"), item.getInt(".count"),
@@ -41,14 +41,17 @@ public class RestorationRandom: AbstractEffect
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		double rndNum = 100 * Rnd.nextDouble();
-		double chance = 0;
-		double chanceFrom = 0;
-		List<RestorationItemHolder> creationList = new();
-		
+        Player? player = effected.getActingPlayer();
+        if (player == null)
+            return;
+
+        double rndNum = 100 * Rnd.nextDouble();
+        double chanceFrom = 0;
+		List<RestorationItemHolder> creationList = [];
+
 		// Explanation for future changes:
 		// You get one chance for the current skill, then you can fall into
 		// one of the "areas" like in a roulette.
@@ -60,38 +63,38 @@ public class RestorationRandom: AbstractEffect
 		// Calculate extraction
 		foreach (ExtractableProductItem expi in _products)
 		{
-			chance = expi.getChance();
-			if ((rndNum >= chanceFrom) && (rndNum <= (chance + chanceFrom)))
+			double chance = expi.getChance();
+			if (rndNum >= chanceFrom && rndNum <= chance + chanceFrom)
 			{
 				creationList.AddRange(expi.getItems());
 				break;
 			}
+
 			chanceFrom += chance;
 		}
-		
-		Player player = effected.getActingPlayer();
+
 		if (creationList.Count == 0)
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CHANGE_THE_ITEM);
 			return;
 		}
-		
+
 		Map<Item, long> extractedItems = new();
 		foreach (RestorationItemHolder createdItem in creationList)
 		{
-			if ((createdItem.getId() <= 0) || (createdItem.getCount() <= 0))
+			if (createdItem.getId() <= 0 || createdItem.getCount() <= 0)
 			{
 				continue;
 			}
-			
+
 			long itemCount = (long) (createdItem.getCount() * Config.RATE_EXTRACTABLE);
 			Item newItem = player.addItem("Extract", createdItem.getId(), itemCount, effector, false);
-			
+
 			if (createdItem.getMaxEnchant() > 0)
 			{
 				newItem.setEnchantLevel(Rnd.get(createdItem.getMinEnchant(), createdItem.getMaxEnchant()));
 			}
-			
+
 			if (extractedItems.ContainsKey(newItem))
 			{
 				extractedItems.put(newItem, extractedItems.get(newItem) + itemCount);
@@ -101,10 +104,10 @@ public class RestorationRandom: AbstractEffect
 				extractedItems.put(newItem, itemCount);
 			}
 		}
-		
+
 		if (extractedItems.Count != 0)
 		{
-			List<ItemInfo> items = new List<ItemInfo>();
+			List<ItemInfo> items = [];
 			foreach (var entry in extractedItems)
 			{
 				if (entry.Key.getTemplate().isStackable())
@@ -118,7 +121,7 @@ public class RestorationRandom: AbstractEffect
 						items.Add(new ItemInfo(itemInstance, ItemChangeType.MODIFIED));
 					}
 				}
-				
+
 				sendMessage(player, entry.Key, entry.Value);
 			}
 
@@ -126,12 +129,12 @@ public class RestorationRandom: AbstractEffect
 			player.sendPacket(playerIU);
 		}
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.EXTRACT_ITEM;
 	}
-	
+
 	private void sendMessage(Player player, Item item, long count)
 	{
 		SystemMessagePacket sm;

@@ -14,23 +14,23 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class ManaHealOverTime: AbstractEffect
 {
 	private readonly double _power;
-	
+
 	public ManaHealOverTime(StatSet @params)
 	{
 		_power = @params.getDouble("power", 0);
 		setTicks(@params.getInt("ticks"));
 	}
-	
-	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isDead())
 		{
 			return false;
 		}
-		
+
 		double mp = effected.getCurrentMp();
 		double maxmp = effected.getMaxRecoverableMp();
-		
+
 		// Not needed to set the MP and send update packet if player is already at max MP
 		if (_power > 0)
 		{
@@ -41,18 +41,18 @@ public class ManaHealOverTime: AbstractEffect
 		}
 		else
 		{
-			if ((mp - _power) <= 0)
+			if (mp - _power <= 0)
 			{
 				return true;
 			}
 		}
-		
+
 		double power = _power;
-		if ((item != null) && (item.isPotion() || item.isElixir()))
+		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			power += effected.getStat().getValue(Stat.ADDITIONAL_POTION_MP, 0) / getTicks();
 		}
-		
+
 		mp += power * getTicksMultiplier();
 		if (_power > 0)
 		{

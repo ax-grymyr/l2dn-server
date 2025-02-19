@@ -69,7 +69,7 @@ public class OlympiadDailyMissionHandler: AbstractDailyMissionHandler
 			}
 		}
 		
-		if (!_winOnly && (@event.getLoser() != null))
+		if (!_winOnly && @event.getLoser() != null)
 		{
 			Player player = @event.getLoser().getPlayer();
 			DailyMissionPlayerEntry loseEntry = player.getDailyMissions().getOrCreateEntry(getHolder().getId());

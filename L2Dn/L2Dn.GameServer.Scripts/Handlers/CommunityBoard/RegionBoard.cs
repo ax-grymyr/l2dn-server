@@ -20,27 +20,27 @@ namespace L2Dn.GameServer.Scripts.Handlers.CommunityBoard;
 public class RegionBoard: IWriteBoardHandler
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(RegionBoard));
-    
+
 	// Region data
 	// @formatter:off
-	private static readonly int[] REGIONS = { 1049, 1052, 1053, 1057, 1060, 1059, 1248, 1247, 1056 };
+	private static readonly int[] REGIONS = [ 1049, 1052, 1053, 1057, 1060, 1059, 1248, 1247, 1056 ];
 	// @formatter:on
 	private static readonly  string[] COMMANDS =
-	{
-		"_bbsloc"
-	};
-	
+    [
+        "_bbsloc",
+    ];
+
 	public string[] getCommunityBoardCommands()
 	{
 		return COMMANDS;
 	}
-	
+
 	public bool parseCommunityBoardCommand(string command, Player player)
 	{
 		if (command.equals("_bbsloc"))
 		{
 			CommunityBoardHandler.getInstance().addBypass(player, "Region", command);
-			
+
 			string list = HtmCache.getInstance().getHtm("html/CommunityBoard/region_list.html", player.getLang());
 			StringBuilder sb = new StringBuilder();
 			for (int i = 0; i < REGIONS.Length; i++)
@@ -54,7 +54,7 @@ public class RegionBoard: IWriteBoardHandler
 				link = link.Replace("%region_tax_rate%", castle.getTaxPercent(TaxType.BUY) + "%");
 				sb.Append(link);
 			}
-			
+
 			string html = HtmCache.getInstance().getHtm("html/CommunityBoard/region.html", player.getLang());
 			html = html.Replace("%region_list%", sb.ToString());
 			CommunityBoardHandler.separateAndSend(html, player);
@@ -62,19 +62,19 @@ public class RegionBoard: IWriteBoardHandler
 		else if (command.startsWith("_bbsloc;"))
 		{
 			CommunityBoardHandler.getInstance().addBypass(player, "Region>", command);
-			
+
 			string id = command.Replace("_bbsloc;", "");
 			if (!int.TryParse(id, CultureInfo.InvariantCulture, out int value))
 			{
 				_logger.Warn(nameof(RegionBoard) + ": " + player + " sent and invalid region bypass " + command + "!");
 				return false;
 			}
-			
+
 			// TODO: Implement.
 		}
 		return true;
 	}
-	
+
 	public bool writeCommunityBoardCommand(Player player, string arg1, string arg2, string arg3, string arg4, string arg5)
 	{
 		// TODO: Implement.

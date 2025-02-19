@@ -459,7 +459,7 @@ public class Pet: Summon
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return bool informing if the action was successfull
 	 */
-	public override bool destroyItem(string process, int objectId, long count, WorldObject reference, bool sendMessage)
+	public override bool destroyItem(string process, int objectId, long count, WorldObject? reference, bool sendMessage)
 	{
 		Item item = _inventory.destroyItem(process, objectId, count, getOwner(), reference);
 		if (item == null)

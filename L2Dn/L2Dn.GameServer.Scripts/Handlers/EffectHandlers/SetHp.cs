@@ -34,8 +34,8 @@ public class SetHp: AbstractEffect
 			return;
 		}
 		
-		bool full = (_mode == StatModifierType.PER) && (_amount == 100.0);
-		double amount = full ? effected.getMaxHp() : (_mode == StatModifierType.PER) ? ((effected.getMaxHp() * _amount) / 100.0) : _amount;
+		bool full = _mode == StatModifierType.PER && _amount == 100.0;
+		double amount = full ? effected.getMaxHp() : _mode == StatModifierType.PER ? effected.getMaxHp() * _amount / 100.0 : _amount;
 		effected.setCurrentHp(amount);
 	}
 }

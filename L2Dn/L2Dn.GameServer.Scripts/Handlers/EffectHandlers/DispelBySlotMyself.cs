@@ -20,7 +20,7 @@ public class DispelBySlotMyself: AbstractEffect
 		string dispel = @params.getString("dispel");
 		if (!string.IsNullOrEmpty(dispel))
 		{
-			_dispelAbnormals = new();
+			_dispelAbnormals = [];
 			foreach (string slot in dispel.Split(";"))
 			{
 				_dispelAbnormals.add(Enum.Parse<AbnormalType>(slot));
@@ -28,7 +28,7 @@ public class DispelBySlotMyself: AbstractEffect
 		}
 		else
 		{
-			_dispelAbnormals = new();
+			_dispelAbnormals = [];
 		}
 	}
 	

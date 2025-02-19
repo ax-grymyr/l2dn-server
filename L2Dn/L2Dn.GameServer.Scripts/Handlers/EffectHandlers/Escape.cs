@@ -15,37 +15,39 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class Escape: AbstractEffect
 {
 	private readonly TeleportWhereType? _escapeType;
-	
+
 	public Escape(StatSet @params)
 	{
 		if (@params.contains("escapeType"))
 			_escapeType = @params.getEnum<TeleportWhereType>("escapeType");
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.TELEPORT;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
 		// While affected by escape blocking effect you cannot use Blink or Scroll of Escape
 		return base.canStart(effector, effected, skill) && !effected.cannotEscape();
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		if (_escapeType != null)
-		{
-			if (effected.isInInstance() && effected.getActingPlayer().isInTimedHuntingZone())
-			{
-				effected.teleToLocation(new Location(effected.getActingPlayer().getTimedHuntingZone().getEnterLocation(), 0), effected.getInstanceId());
-			}
+        {
+            Player? effectedPlayer = effected.getActingPlayer();
+			if (effected.isInInstance() && effectedPlayer != null && effectedPlayer.isInTimedHuntingZone())
+            {
+                effected.teleToLocation(new Location(effectedPlayer.getTimedHuntingZone().getEnterLocation(), 0),
+                    effected.getInstanceId());
+            }
 			else
 			{
 				effected.teleToLocation(_escapeType.Value, null);

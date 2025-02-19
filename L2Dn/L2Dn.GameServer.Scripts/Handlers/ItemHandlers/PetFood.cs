@@ -36,7 +36,8 @@ public class PetFood: IItemHandler
 
 	private bool useFood(Playable activeChar, int skillId, int skillLevel, Item item)
 	{
-		Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+        Player? player = activeChar.getActingPlayer();
+		Skill? skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 		if (skill != null)
 		{
 			if (activeChar.isPet())
@@ -56,13 +57,12 @@ public class PetFood: IItemHandler
 					return true;
 				}
 			}
-			else if (activeChar.isPlayer())
+			else if (activeChar.isPlayer() && player != null)
 			{
-				Player player = activeChar.getActingPlayer();
 				if (player.isMounted())
 				{
-					Set<int> foodIds = PetDataTable.getInstance().getPetData(player.getMountNpcId()).getFood();
-					if (foodIds.Contains(item.getId()) &&
+					Set<int>? foodIds = PetDataTable.getInstance().getPetData(player.getMountNpcId())?.getFood();
+					if (foodIds != null && foodIds.Contains(item.getId()) &&
 					    player.destroyItem("Consume", item.ObjectId, 1, null, false))
 					{
 						player.broadcastPacket(new MagicSkillUsePacket(player, player, skillId, skillLevel,

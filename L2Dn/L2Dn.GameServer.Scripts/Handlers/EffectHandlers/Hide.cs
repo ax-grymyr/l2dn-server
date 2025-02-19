@@ -16,21 +16,21 @@ public class Hide: AbstractEffect
 	public Hide(StatSet @params)
 	{
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isPlayer())
 		{
 			effected.setInvisible(true);
-			
-			if ((effected.getAI().getNextIntention() != null) && (effected.getAI().getNextIntention().getCtrlIntention() == CtrlIntention.AI_INTENTION_ATTACK))
+
+			if (effected.getAI().getNextIntention() != null && effected.getAI().getNextIntention()?.getCtrlIntention() == CtrlIntention.AI_INTENTION_ATTACK)
 			{
 				effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			}
-			
+
 			World.getInstance().forEachVisibleObject<Creature>(effected, target =>
 			{
-				if ((target.getTarget() == effected))
+				if (target.getTarget() == effected)
 				{
 					target.setTarget(null);
 					target.abortAttack();
@@ -40,12 +40,12 @@ public class Hide: AbstractEffect
 			});
 		}
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		if (effected.isPlayer())
+        Player? player = effected.getActingPlayer();
+		if (effected.isPlayer() && player != null)
 		{
-			Player player = effected.getActingPlayer();
 			if (!player.inObserverMode())
 			{
 				player.setInvisible(false);

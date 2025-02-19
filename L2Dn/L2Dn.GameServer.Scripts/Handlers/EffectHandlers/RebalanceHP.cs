@@ -16,27 +16,27 @@ public class RebalanceHP: AbstractEffect
 	public RebalanceHP(StatSet @params)
 	{
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.REBALANCE_HP;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		if (!effector.isPlayer())
 		{
 			return;
 		}
-		
+
 		double fullHP = 0;
 		double currentHPs = 0;
-		Party party = effector.getParty();
+		Party? party = effector.getParty();
 		if (party != null)
 		{
 			foreach (Player member in party.getMembers())
@@ -46,14 +46,14 @@ public class RebalanceHP: AbstractEffect
 					fullHP += member.getMaxHp();
 					currentHPs += member.getCurrentHp();
 				}
-				
-				L2Dn.GameServer.Model.Actor.Summon summon = member.getPet();
-				if ((summon != null) && (!summon.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, summon, true)))
+
+				L2Dn.GameServer.Model.Actor.Summon? summon = member.getPet();
+				if (summon != null && !summon.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, summon, true))
 				{
 					fullHP += summon.getMaxHp();
 					currentHPs += summon.getCurrentHp();
 				}
-				
+
 				foreach (L2Dn.GameServer.Model.Actor.Summon servitors in member.getServitors().Values)
 				{
 					if (!servitors.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, servitors, true))
@@ -63,7 +63,7 @@ public class RebalanceHP: AbstractEffect
 					}
 				}
 			}
-			
+
 			double percentHP = currentHPs / fullHP;
 			foreach (Player member in party.getMembers())
 			{
@@ -82,12 +82,12 @@ public class RebalanceHP: AbstractEffect
 							newHP = member.getMaxRecoverableHp();
 						}
 					}
-					
+
 					member.setCurrentHp(newHP);
 				}
-				
-				L2Dn.GameServer.Model.Actor.Summon summon = member.getPet();
-				if ((summon != null) && (!summon.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, summon, true)))
+
+				L2Dn.GameServer.Model.Actor.Summon? summon = member.getPet();
+				if (summon != null && !summon.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, summon, true))
 				{
 					double newHP = summon.getMaxHp() * percentHP;
 					if (newHP > summon.getCurrentHp()) // The target gets healed
@@ -104,7 +104,7 @@ public class RebalanceHP: AbstractEffect
 					}
 					summon.setCurrentHp(newHP);
 				}
-				
+
 				foreach (L2Dn.GameServer.Model.Actor.Summon servitors in member.getServitors().Values)
 				{
 					if (!servitors.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, servitors, true))

@@ -15,15 +15,15 @@ public class HpToOwner: AbstractEffect
 {
 	private readonly double _power;
 	private readonly int _stealAmount;
-	
+
 	public HpToOwner(StatSet @params)
 	{
 		_power = @params.getDouble("power");
 		_stealAmount = @params.getInt("stealAmount");
 		setTicks(@params.getInt("ticks"));
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (!skill.isToggle() && skill.isMagic())
 		{
@@ -36,25 +36,25 @@ public class HpToOwner: AbstractEffect
 			}
 		}
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.DMG_OVER_TIME;
 	}
-	
-	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isDead())
 		{
 			return false;
 		}
-		
+
 		double damage = _power * getTicksMultiplier();
-		
+
 		effector.doAttack(damage, effected, skill, true, false, false, false);
 		if (_stealAmount > 0)
 		{
-			double amount = (damage * _stealAmount) / 100;
+			double amount = damage * _stealAmount / 100;
 			effector.setCurrentHp(effector.getCurrentHp() + amount);
 			effector.setCurrentMp(effector.getCurrentMp() + amount);
 		}

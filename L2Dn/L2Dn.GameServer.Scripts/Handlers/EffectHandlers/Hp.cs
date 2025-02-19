@@ -39,13 +39,13 @@ public class Hp: AbstractEffect
 		}
 		
 		double basicAmount = _amount;
-		if ((item != null) && (item.isPotion() || item.isElixir()))
+		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			basicAmount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_HP, 0);
 			
 			// Classic Potion Mastery
 			// TODO: Create an effect if more mastery skills are added.
-			basicAmount *= 1 + (effected.getAffectedSkillLevel((int)CommonSkill.POTION_MASTERY) / 100.0);
+			basicAmount *= 1 + effected.getAffectedSkillLevel((int)CommonSkill.POTION_MASTERY) / 100.0;
 		}
 		
 		double amount = 0;
@@ -58,7 +58,7 @@ public class Hp: AbstractEffect
 			}
 			case StatModifierType.PER:
 			{
-				amount = Math.Min((effected.getMaxHp() * basicAmount) / 100, Math.Max(0, effected.getMaxRecoverableHp() - effected.getCurrentHp()));
+				amount = Math.Min(effected.getMaxHp() * basicAmount / 100, Math.Max(0, effected.getMaxRecoverableHp() - effected.getCurrentHp()));
 				break;
 			}
 		}

@@ -39,7 +39,7 @@ public class Cp: AbstractEffect
 		}
 		
 		double basicAmount = _amount;
-		if ((item != null) && (item.isPotion() || item.isElixir()))
+		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			basicAmount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_CP, 0);
 		}
@@ -54,7 +54,7 @@ public class Cp: AbstractEffect
 			}
 			case StatModifierType.PER:
 			{
-				amount = Math.Min((effected.getMaxCp() * basicAmount) / 100, Math.Max(0, effected.getMaxRecoverableCp() - effected.getCurrentCp()));
+				amount = Math.Min(effected.getMaxCp() * basicAmount / 100, Math.Max(0, effected.getMaxRecoverableCp() - effected.getCurrentCp()));
 				break;
 			}
 		}
@@ -68,7 +68,7 @@ public class Cp: AbstractEffect
 		
 		if (amount >= 0)
 		{
-			if ((effector != null) && (effector != effected))
+			if (effector != null && effector != effected)
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_RECOVERED_S2_CP_WITH_C1_S_HELP);
 				sm.Params.addString(effector.getName());

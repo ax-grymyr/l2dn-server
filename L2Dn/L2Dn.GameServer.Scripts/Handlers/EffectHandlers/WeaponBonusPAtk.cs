@@ -18,40 +18,40 @@ public class WeaponBonusPAtk: AbstractStatAddEffect
 	public WeaponBonusPAtk(StatSet @params): base(@params, Stat.WEAPON_BONUS_PHYSICAL_ATTACK)
 	{
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
-		Player player = effected.getActingPlayer();
+		Player? player = effected.getActingPlayer();
 		if (player == null)
 		{
 			return;
 		}
-		
-		Item weapon = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
+
+		Item? weapon = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
 		if (weapon == null)
 		{
 			return;
 		}
-		
+
 		InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(weapon, ItemChangeType.MODIFIED));
 		player.sendInventoryUpdate(iu);
 		player.broadcastUserInfo();
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		Player player = effected.getActingPlayer();
+		Player? player = effected.getActingPlayer();
 		if (player == null)
 		{
 			return;
 		}
-		
-		Item weapon = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
+
+		Item? weapon = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
 		if (weapon == null)
 		{
 			return;
 		}
-		
+
 		InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(weapon, ItemChangeType.MODIFIED));
 		player.sendInventoryUpdate(iu);
 		player.broadcastUserInfo();

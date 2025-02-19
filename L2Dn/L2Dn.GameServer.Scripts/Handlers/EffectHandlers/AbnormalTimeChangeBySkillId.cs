@@ -17,13 +17,13 @@ public class AbnormalTimeChangeBySkillId: AbstractEffect
 {
 	private readonly double _time;
 	private readonly StatModifierType _mode;
-	private readonly Set<int> _skillIds = new();
-	
+	private readonly Set<int> _skillIds = [];
+
 	public AbnormalTimeChangeBySkillId(StatSet @params)
 	{
 		_time = @params.getDouble("time", -1);
 		_mode = @params.getEnum("mode", StatModifierType.PER);
-		string skillIds = @params.getString("ids", null);
+		string skillIds = @params.getString("ids", string.Empty);
 		if (!string.IsNullOrEmpty(skillIds))
 		{
 			foreach (string id in skillIds.Split(","))
@@ -33,7 +33,7 @@ public class AbnormalTimeChangeBySkillId: AbstractEffect
 		}
 	}
 
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		effected.Events.Subscribe<OnCreatureSkillUse>(this, onCreatureSkillUse);
 	}
@@ -42,7 +42,7 @@ public class AbnormalTimeChangeBySkillId: AbstractEffect
 	{
 		effected.Events.Unsubscribe<OnCreatureSkillUse>(onCreatureSkillUse);
 	}
-	
+
 	private void onCreatureSkillUse(OnCreatureSkillUse @event)
 	{
 		Skill skill = @event.getSkill();
@@ -50,8 +50,8 @@ public class AbnormalTimeChangeBySkillId: AbstractEffect
 		{
 			return;
 		}
-		
-		AbnormalStatusUpdatePacket asu = new AbnormalStatusUpdatePacket(new List<BuffInfo>());
+
+		AbnormalStatusUpdatePacket asu = new AbnormalStatusUpdatePacket([]);
 		Creature creature = @event.getCaster();
 		foreach (BuffInfo info in creature.getEffectList().getEffects())
 		{
@@ -68,7 +68,7 @@ public class AbnormalTimeChangeBySkillId: AbstractEffect
 				asu.addSkill(info);
 			}
 		}
-		
+
 		creature.sendPacket(asu);
 	}
 }

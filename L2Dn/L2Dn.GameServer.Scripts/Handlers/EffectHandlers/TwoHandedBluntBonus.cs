@@ -112,7 +112,7 @@ public class TwoHandedBluntBonus: AbstractEffect
 				}
 				else // PER
 				{
-					effected.getStat().mergeMul(Stat.PHYSICAL_ATTACK, (_pAtkAmount / 100) + 1);
+					effected.getStat().mergeMul(Stat.PHYSICAL_ATTACK, _pAtkAmount / 100 + 1);
 				}
 			}
 			
@@ -124,7 +124,7 @@ public class TwoHandedBluntBonus: AbstractEffect
 				}
 				else // PER
 				{
-					effected.getStat().mergeMul(Stat.MAGIC_ATTACK, (_mAtkAmount / 100) + 1);
+					effected.getStat().mergeMul(Stat.MAGIC_ATTACK, _mAtkAmount / 100 + 1);
 				}
 			}
 			
@@ -136,7 +136,7 @@ public class TwoHandedBluntBonus: AbstractEffect
 				}
 				else // PER
 				{
-					effected.getStat().mergeMul(Stat.PHYSICAL_ATTACK_SPEED, (_pAtkSpeedAmount / 100) + 1);
+					effected.getStat().mergeMul(Stat.PHYSICAL_ATTACK_SPEED, _pAtkSpeedAmount / 100 + 1);
 				}
 			}
 			
@@ -148,7 +148,7 @@ public class TwoHandedBluntBonus: AbstractEffect
 				}
 				else // PER
 				{
-					effected.getStat().mergeMul(Stat.MAGIC_ATTACK_SPEED, (_mAtkSpeedAmount / 100) + 1);
+					effected.getStat().mergeMul(Stat.MAGIC_ATTACK_SPEED, _mAtkSpeedAmount / 100 + 1);
 				}
 			}
 			
@@ -160,7 +160,7 @@ public class TwoHandedBluntBonus: AbstractEffect
 				}
 				else // PER
 				{
-					effected.getStat().mergeMul(Stat.ACCURACY_COMBAT, (_pAccuracyAmount / 100) + 1);
+					effected.getStat().mergeMul(Stat.ACCURACY_COMBAT, _pAccuracyAmount / 100 + 1);
 				}
 			}
 			
@@ -172,7 +172,7 @@ public class TwoHandedBluntBonus: AbstractEffect
 				}
 				else // PER
 				{
-					effected.getStat().mergeMul(Stat.ACCURACY_MAGIC, (_mAccuracyAmount / 100) + 1);
+					effected.getStat().mergeMul(Stat.ACCURACY_MAGIC, _mAccuracyAmount / 100 + 1);
 				}
 			}
 			
@@ -184,7 +184,7 @@ public class TwoHandedBluntBonus: AbstractEffect
 				}
 				else // PER
 				{
-					effected.getStat().mergeMul(Stat.CRITICAL_RATE, (_pCritRateAmount / 100) + 1);
+					effected.getStat().mergeMul(Stat.CRITICAL_RATE, _pCritRateAmount / 100 + 1);
 				}
 			}
 			
@@ -196,7 +196,7 @@ public class TwoHandedBluntBonus: AbstractEffect
 				}
 				else // PER
 				{
-					effected.getStat().mergeMul(Stat.MAGIC_CRITICAL_RATE, (_mCritRateAmount / 100) + 1);
+					effected.getStat().mergeMul(Stat.MAGIC_CRITICAL_RATE, _mCritRateAmount / 100 + 1);
 				}
 			}
 			
@@ -208,7 +208,7 @@ public class TwoHandedBluntBonus: AbstractEffect
 				}
 				else // PER
 				{
-					effected.getStat().mergeMul(Stat.CRITICAL_DAMAGE, (_pCritDamageAmount / 100) + 1);
+					effected.getStat().mergeMul(Stat.CRITICAL_DAMAGE, _pCritDamageAmount / 100 + 1);
 				}
 			}
 			
@@ -220,7 +220,7 @@ public class TwoHandedBluntBonus: AbstractEffect
 				}
 				else // PER
 				{
-					effected.getStat().mergeMul(Stat.MAGIC_CRITICAL_DAMAGE, (_mCritDamageAmount / 100) + 1);
+					effected.getStat().mergeMul(Stat.MAGIC_CRITICAL_DAMAGE, _mCritDamageAmount / 100 + 1);
 				}
 			}
 			
@@ -232,7 +232,7 @@ public class TwoHandedBluntBonus: AbstractEffect
 				}
 				else // PER
 				{
-					effected.getStat().mergeMul(Stat.MOVE_SPEED, (_speedAmount / 100) + 1);
+					effected.getStat().mergeMul(Stat.MOVE_SPEED, _speedAmount / 100 + 1);
 				}
 			}
 			
@@ -244,7 +244,7 @@ public class TwoHandedBluntBonus: AbstractEffect
 				}
 				else // PER
 				{
-					effected.getStat().mergeMul(Stat.PHYSICAL_ATTACK_RANGE, (_physicalAttackRange / 100) + 1);
+					effected.getStat().mergeMul(Stat.PHYSICAL_ATTACK_RANGE, _physicalAttackRange / 100 + 1);
 				}
 			}
 			
@@ -256,7 +256,7 @@ public class TwoHandedBluntBonus: AbstractEffect
 				}
 				else // PER
 				{
-					effected.getStat().mergeMul(Stat.MAGIC_ATTACK_RANGE, (_skillBonusRange / 100) + 1);
+					effected.getStat().mergeMul(Stat.MAGIC_ATTACK_RANGE, _skillBonusRange / 100 + 1);
 				}
 			}
 		}

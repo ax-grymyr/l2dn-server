@@ -17,27 +17,27 @@ public class OpenChest: AbstractEffect
 	public OpenChest(StatSet @params)
 	{
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!(effected is Chest))
+		if (effected is not Chest chest)
+			return;
+
+		Player? player = effector.getActingPlayer();
+        if (player == null)
+            return;
+
+        if (chest.isDead() || player.getInstanceWorld() != chest.getInstanceWorld())
 		{
 			return;
 		}
-		
-		Player player = effector.getActingPlayer();
-		Chest chest = (Chest) effected;
-		if (chest.isDead() || (player.getInstanceWorld() != chest.getInstanceWorld()))
-		{
-			return;
-		}
-		
-		if (((player.getLevel() <= 77) && (Math.Abs(chest.getLevel() - player.getLevel()) <= 6)) || ((player.getLevel() >= 78) && (Math.Abs(chest.getLevel() - player.getLevel()) <= 5)))
+
+		if ((player.getLevel() <= 77 && Math.Abs(chest.getLevel() - player.getLevel()) <= 6) || (player.getLevel() >= 78 && Math.Abs(chest.getLevel() - player.getLevel()) <= 5))
 		{
 			player.broadcastSocialAction(3);
 			chest.setSpecialDrop();

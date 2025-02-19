@@ -11,9 +11,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.CommunityBoard;
 public class MailBoard: IWriteBoardHandler
 {
 	private static readonly string[] COMMANDS =
-	{
-		"_maillist"
-	};
+    [
+        "_maillist",
+    ];
 	
 	public string[] getCommunityBoardCommands()
 	{

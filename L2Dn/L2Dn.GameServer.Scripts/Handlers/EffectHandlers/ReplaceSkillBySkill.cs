@@ -20,36 +20,42 @@ public class ReplaceSkillBySkill: AbstractEffect
 {
 	private readonly SkillHolder _existingSkill;
 	private readonly SkillHolder _replacementSkill;
-	
+
 	public ReplaceSkillBySkill(StatSet @params)
 	{
 		_existingSkill = new SkillHolder(@params.getInt("existingSkillId"), @params.getInt("existingSkillLevel", -1));
 		_replacementSkill = new SkillHolder(@params.getInt("replacementSkillId"), @params.getInt("replacementSkillLevel", -1));
 	}
-	
+
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
 		return effected.isPlayable() && (!effected.isTransformed() || effected.hasAbnormalType(AbnormalType.KAMAEL_TRANSFORM));
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		Playable playable = (Playable) effected;
-		Skill knownSkill = playable.getKnownSkill(_existingSkill.getSkillId());
-		if ((knownSkill == null) || (knownSkill.getLevel() < _existingSkill.getSkillLevel()))
+		Skill? knownSkill = playable.getKnownSkill(_existingSkill.getSkillId());
+		if (knownSkill == null || knownSkill.getLevel() < _existingSkill.getSkillLevel())
 		{
 			return;
 		}
-		
-		Skill addedSkill = SkillData.getInstance().getSkill(_replacementSkill.getSkillId(), _replacementSkill.getSkillLevel() < 1 ? knownSkill.getLevel() : _replacementSkill.getSkillLevel(), knownSkill.getSubLevel());
-		if (playable.isPlayer())
+
+        Skill? addedSkill = SkillData.getInstance().getSkill(_replacementSkill.getSkillId(),
+            _replacementSkill.getSkillLevel() < 1 ? knownSkill.getLevel() : _replacementSkill.getSkillLevel(),
+            knownSkill.getSubLevel());
+
+        if (addedSkill == null)
+            return;
+
+        Player? player = effected.getActingPlayer();
+		if (playable.isPlayer() && player != null)
 		{
-			Player player = effected.getActingPlayer();
 			player.addSkill(addedSkill, false);
 			player.addReplacedSkill(_existingSkill.getSkillId(), _replacementSkill.getSkillId());
 			foreach (Shortcut shortcut in player.getAllShortCuts())
 			{
-				if (shortcut.isAutoUse() && (shortcut.getType() == ShortcutType.SKILL) && (shortcut.getId() == knownSkill.getId()))
+				if (shortcut.isAutoUse() && shortcut.getType() == ShortcutType.SKILL && shortcut.getId() == knownSkill.getId())
 				{
 					if (knownSkill.isBad())
 					{
@@ -66,7 +72,7 @@ public class ReplaceSkillBySkill: AbstractEffect
 					}
 				}
 			}
-			
+
 			// Replace continuous effects.
 			if (knownSkill.isContinuous() && player.isAffectedBySkill(knownSkill.getId()))
 			{
@@ -79,11 +85,11 @@ public class ReplaceSkillBySkill: AbstractEffect
 						break;
 					}
 				}
-				
+
 				if (abnormalTime > TimeSpan.FromMilliseconds(2000))
 				{
 					addedSkill.applyEffects(player, player);
-					List<BuffInfo> skills = new List<BuffInfo>();
+					List<BuffInfo> skills = [];
 					foreach (BuffInfo info in player.getEffectList().getEffects())
 					{
 						if (info.getSkill().getId() == addedSkill.getId())
@@ -97,7 +103,7 @@ public class ReplaceSkillBySkill: AbstractEffect
 					player.sendPacket(asu);
 				}
 			}
-			
+
 			player.removeSkill(knownSkill, false);
 			player.sendSkillList();
 		}
@@ -112,7 +118,7 @@ public class ReplaceSkillBySkill: AbstractEffect
 			}
 		}
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		Playable playable = (Playable) effected;
@@ -121,22 +127,25 @@ public class ReplaceSkillBySkill: AbstractEffect
 		{
 			return;
 		}
-		
-		Skill knownSkill = playable.getKnownSkill(_replacementSkill.getSkillId());
+
+		Skill? knownSkill = playable.getKnownSkill(_replacementSkill.getSkillId());
 		if (knownSkill == null)
 		{
 			return;
 		}
-		
-		Skill addedSkill = SkillData.getInstance().getSkill(existingSkillId, knownSkill.getLevel(), knownSkill.getSubLevel());
-		if (playable.isPlayer())
+
+		Skill? addedSkill = SkillData.getInstance().getSkill(existingSkillId, knownSkill.getLevel(), knownSkill.getSubLevel());
+        if (addedSkill == null)
+            return;
+
+        Player? player = effected.getActingPlayer();
+		if (playable.isPlayer() && player != null)
 		{
-			Player player = effected.getActingPlayer();
 			player.addSkill(addedSkill, knownSkill.getLevel() != _existingSkill.getSkillLevel());
 			player.removeReplacedSkill(existingSkillId);
 			foreach (Shortcut shortcut in player.getAllShortCuts())
 			{
-				if (shortcut.isAutoUse() && (shortcut.getType() == ShortcutType.SKILL) && (shortcut.getId() == addedSkill.getId()))
+				if (shortcut.isAutoUse() && shortcut.getType() == ShortcutType.SKILL && shortcut.getId() == addedSkill.getId())
 				{
 					if (knownSkill.isBad())
 					{
@@ -153,7 +162,7 @@ public class ReplaceSkillBySkill: AbstractEffect
 					}
 				}
 			}
-			
+
 			// Replace continuous effects.
 			if (knownSkill.isContinuous() && player.isAffectedBySkill(knownSkill.getId()))
 			{
@@ -166,11 +175,11 @@ public class ReplaceSkillBySkill: AbstractEffect
 						break;
 					}
 				}
-				
+
 				if (abnormalTime > TimeSpan.FromMilliseconds(2000))
 				{
 					addedSkill.applyEffects(player, player);
-					List<BuffInfo> skills = new List<BuffInfo>();
+					List<BuffInfo> skills = [];
 					foreach (BuffInfo info in player.getEffectList().getEffects())
 					{
 						if (info.getSkill().getId() == addedSkill.getId())
@@ -184,7 +193,7 @@ public class ReplaceSkillBySkill: AbstractEffect
 					player.sendPacket(asu);
 				}
 			}
-			
+
 			player.removeSkill(knownSkill, false);
 			player.sendSkillList();
 		}

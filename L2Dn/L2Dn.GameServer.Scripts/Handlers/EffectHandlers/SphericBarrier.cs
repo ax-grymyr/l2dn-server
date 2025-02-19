@@ -17,17 +17,17 @@ public class SphericBarrier: AbstractStatAddEffect
 	public SphericBarrier(StatSet @params): base(@params, Stat.SPHERIC_BARRIER_RANGE)
 	{
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		effected.Events.Subscribe<OnCreatureDamageReceived>(this, onDamageReceivedEvent);
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		effected.Events.Unsubscribe<OnCreatureDamageReceived>(onDamageReceivedEvent);
 	}
-	
+
 	private void onDamageReceivedEvent(OnCreatureDamageReceived ev)
 	{
 		if (ev.getAttacker().Distance3D(ev.getTarget()) > _amount)

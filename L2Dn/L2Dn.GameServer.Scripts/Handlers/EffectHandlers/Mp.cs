@@ -39,7 +39,7 @@ public class Mp: AbstractEffect
 		}
 		
 		double basicAmount = _amount;
-		if ((item != null) && (item.isPotion() || item.isElixir()))
+		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			basicAmount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_MP, 0);
 		}
@@ -54,7 +54,7 @@ public class Mp: AbstractEffect
 			}
 			case StatModifierType.PER:
 			{
-				amount = Math.Min((effected.getMaxMp() * basicAmount) / 100, Math.Max(0, effected.getMaxRecoverableMp() - effected.getCurrentMp()));
+				amount = Math.Min(effected.getMaxMp() * basicAmount / 100, Math.Max(0, effected.getMaxRecoverableMp() - effected.getCurrentMp()));
 				break;
 			}
 		}

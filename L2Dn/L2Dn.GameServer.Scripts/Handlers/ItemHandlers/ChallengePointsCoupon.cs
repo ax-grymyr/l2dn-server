@@ -14,12 +14,13 @@ public class ChallengePointsCoupon: IItemHandler
 {
 	public bool useItem(Playable playable, Item item, bool forceUse)
 	{
-		if (!playable.isPlayer())
+        Player? player = playable.getActingPlayer();
+		if (!playable.isPlayer() || player == null)
 		{
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
-		
+
 		int pointsToGive;
 		int categoryId;
 		switch (item.getId())
@@ -65,8 +66,7 @@ public class ChallengePointsCoupon: IItemHandler
 				return false;
 			}
 		}
-		
-		Player player = playable.getActingPlayer();
+
 		if (player.getChallengeInfo().canAddPoints(categoryId, pointsToGive))
 		{
 			player.destroyItem("Challenge Coupon", item.ObjectId, 1, null, false);
@@ -74,14 +74,14 @@ public class ChallengePointsCoupon: IItemHandler
 				(k, v) => v == null
 					? Math.Min(EnchantChallengePointData.getInstance().getMaxPoints(), pointsToGive)
 					: Math.Min(EnchantChallengePointData.getInstance().getMaxPoints(), v + pointsToGive));
-			
+
 			player.sendPacket(new ExEnchantChallengePointInfoPacket(player));
 		}
 		else
 		{
 			player.sendMessage("The points of this coupon exceed the limit.");
 		}
-		
+
 		return true;
 	}
 }

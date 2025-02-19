@@ -20,7 +20,7 @@ public abstract class AbstractConditionalHpEffect: AbstractStatEffect
 		_hpPercent = @params.getInt("hpPercent", 0);
 	}
 
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		// Augmentation option
 		if (skill is null)
@@ -44,7 +44,7 @@ public abstract class AbstractConditionalHpEffect: AbstractStatEffect
 		_updates.TryRemove(effected, out _);
 	}
 
-	public override bool canPump(Creature effector, Creature effected, Skill skill)
+	public override bool canPump(Creature? effector, Creature effected, Skill? skill)
 	{
 		return _hpPercent <= 0 || effected.getCurrentHpPercent() <= _hpPercent;
 	}

@@ -15,8 +15,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
  */
 public class ChangeBody: AbstractEffect
 {
-	private readonly Set<TemplateChanceHolder> _transformations = new();
-	
+	private readonly Set<TemplateChanceHolder> _transformations = [];
+
 	public ChangeBody(StatSet @params)
 	{
 		foreach (StatSet item in @params.getList<StatSet>("templates"))
@@ -25,13 +25,13 @@ public class ChangeBody: AbstractEffect
 				item.getInt(".maxChance")));
 		}
 	}
-	
+
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
 		return !effected.isDoor();
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		int chance = Rnd.get(100);
 		foreach (TemplateChanceHolder holder in _transformations)
@@ -43,7 +43,7 @@ public class ChangeBody: AbstractEffect
 			}
 		}
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		effected.stopTransformation(false);

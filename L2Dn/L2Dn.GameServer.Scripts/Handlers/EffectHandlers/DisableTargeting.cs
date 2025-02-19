@@ -16,15 +16,15 @@ public class DisableTargeting: AbstractEffect
 	public DisableTargeting(StatSet @params)
 	{
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		effected.setTarget(null);
 		effected.abortAttack();
 		effected.abortCast();
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 	}
-	
+
 	public override long getEffectFlags()
 	{
 		return EffectFlag.TARGETING_DISABLED.getMask();

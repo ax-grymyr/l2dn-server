@@ -32,19 +32,19 @@ public class OpenDoor: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effected.isDoor() || (effector.getInstanceWorld() != effected.getInstanceWorld()))
+		if (!effected.isDoor() || effector.getInstanceWorld() != effected.getInstanceWorld())
 		{
 			return;
 		}
 		
 		Door door = (Door) effected;
-		if ((!door.isOpenableBySkill() && !_isItem) || (door.getFort() != null))
+		if ((!door.isOpenableBySkill() && !_isItem) || door.getFort() != null)
 		{
 			effector.sendPacket(SystemMessageId.THIS_DOOR_CANNOT_BE_UNLOCKED);
 			return;
 		}
 		
-		if ((Rnd.get(100) < _chance) && !door.isOpen())
+		if (Rnd.get(100) < _chance && !door.isOpen())
 		{
 			door.openMe();
 		}

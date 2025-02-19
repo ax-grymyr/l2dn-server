@@ -16,19 +16,19 @@ public class Flag: AbstractEffect
 	public Flag(StatSet @params)
 	{
 	}
-	
+
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
-		return (effected != null) && effected.isPlayer();
+		return effected != null && effected.isPlayer();
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		effected.updatePvPFlag(PvpFlagStatus.Enabled);
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		effected.getActingPlayer().updatePvPFlag(PvpFlagStatus.None);
+		effected.getActingPlayer()?.updatePvPFlag(PvpFlagStatus.None);
 	}
 }

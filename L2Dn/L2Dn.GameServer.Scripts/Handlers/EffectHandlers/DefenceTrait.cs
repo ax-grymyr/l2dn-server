@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class DefenceTrait: AbstractEffect
 {
 	private readonly Map<TraitType, float> _defenceTraits = new();
-	
+
 	public DefenceTrait(StatSet @params)
 	{
 		if (@params.isEmpty())
@@ -24,15 +24,15 @@ public class DefenceTrait: AbstractEffect
 			LOGGER.Warn(GetType().Name + ": must have parameters.");
 			return;
 		}
-		
+
 		foreach (var param in @params.getSet())
 		{
 			_defenceTraits.put(Enum.Parse<TraitType>(param.Key),
 				float.Parse(param.Value.ToString() ?? string.Empty, CultureInfo.InvariantCulture) / 100);
 		}
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		foreach (var trait in _defenceTraits)
 		{
@@ -46,7 +46,7 @@ public class DefenceTrait: AbstractEffect
 			}
 		}
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		foreach (var trait in _defenceTraits)

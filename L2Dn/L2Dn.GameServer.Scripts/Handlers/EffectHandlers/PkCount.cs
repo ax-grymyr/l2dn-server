@@ -13,25 +13,25 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class PkCount: AbstractEffect
 {
 	private readonly int _amount;
-	
+
 	public PkCount(StatSet @params)
 	{
 		_amount = @params.getInt("amount", 0);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		Player player = effected.getActingPlayer();
+		Player? player = effected.getActingPlayer();
 		if (player == null)
 		{
 			return;
 		}
-		
+
 		if (player.getPkKills() > 0)
 		{
 			int newPkCount = Math.Max(player.getPkKills() + _amount, 0);

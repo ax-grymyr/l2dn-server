@@ -9,28 +9,30 @@ namespace L2Dn.GameServer.Scripts.Handlers.ItemHandlers;
 
 public class BlessingScrolls: IItemHandler
 {
-	public bool useItem(Playable playable, Item item, bool forceUse)
-	{
-		if (!playable.isPlayer())
-		{
-			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
-			return false;
-		}
-		
-		Player player = playable.getActingPlayer();
-		if (player.isCastingNow())
-		{
-			return false;
-		}
-		
-		if (player.hasItemRequest())
-		{
-			player.sendPacket(SystemMessageId.ANOTHER_ENCHANTMENT_IS_IN_PROGRESS_PLEASE_COMPLETE_THE_PREVIOUS_TASK_THEN_TRY_AGAIN);
-			return false;
-		}
-		
-		player.addRequest(new BlessingItemRequest(player, item.getId()));
-		player.sendPacket(new ExOpenBlessOptionScrollPacket(item.getId()));
-		return true;
-	}
+    public bool useItem(Playable playable, Item item, bool forceUse)
+    {
+        Player? player = playable.getActingPlayer();
+        if (!playable.isPlayer() || player == null)
+        {
+            playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
+            return false;
+        }
+
+        if (player.isCastingNow())
+        {
+            return false;
+        }
+
+        if (player.hasItemRequest())
+        {
+            player.sendPacket(SystemMessageId.
+                ANOTHER_ENCHANTMENT_IS_IN_PROGRESS_PLEASE_COMPLETE_THE_PREVIOUS_TASK_THEN_TRY_AGAIN);
+
+            return false;
+        }
+
+        player.addRequest(new BlessingItemRequest(player, item.getId()));
+        player.sendPacket(new ExOpenBlessOptionScrollPacket(item.getId()));
+        return true;
+    }
 }

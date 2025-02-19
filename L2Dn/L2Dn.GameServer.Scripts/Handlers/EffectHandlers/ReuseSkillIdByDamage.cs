@@ -24,7 +24,7 @@ public class ReuseSkillIdByDamage: AbstractEffect
 	private readonly int _skillId;
 	private readonly int _amount;
 	private readonly InstanceType _attackerType;
-	
+
 	public ReuseSkillIdByDamage(StatSet @params)
 	{
 		_minAttackerLevel = @params.getInt("minAttackerLevel", 1);
@@ -36,46 +36,46 @@ public class ReuseSkillIdByDamage: AbstractEffect
 		_amount = @params.getInt("amount", 0);
 		_attackerType = @params.getEnum("attackerType", InstanceType.Creature);
 	}
-	
+
 	private void onDamageReceivedEvent(OnCreatureDamageReceived @event)
 	{
-		if (@event.isDamageOverTime() || (_chance == 0))
+		if (@event.isDamageOverTime() || _chance == 0)
 		{
 			return;
 		}
-		
+
 		if (@event.getAttacker() == @event.getTarget())
 		{
 			return;
 		}
-		
-		if ((@event.getAttacker().getLevel() < _minAttackerLevel) || (@event.getAttacker().getLevel() > _maxAttackerLevel))
+
+		if (@event.getAttacker().getLevel() < _minAttackerLevel || @event.getAttacker().getLevel() > _maxAttackerLevel)
 		{
 			return;
 		}
-		
+
 		if (@event.getDamage() < _minDamage)
 		{
 			return;
 		}
-		
-		if ((_chance < 100) && (Rnd.get(100) > _chance))
+
+		if (_chance < 100 && Rnd.get(100) > _chance)
 		{
 			return;
 		}
-		
-		if ((_hpPercent < 100) && (@event.getAttacker().getCurrentHpPercent() > _hpPercent))
+
+		if (_hpPercent < 100 && @event.getAttacker().getCurrentHpPercent() > _hpPercent)
 		{
 			return;
 		}
-		
+
 		if (!@event.getAttacker().InstanceType.IsType(_attackerType))
 		{
 			return;
 		}
-		
+
 		Player player = (Player) @event.getTarget();
-		Skill s = player.getKnownSkill(_skillId);
+		Skill? s = player.getKnownSkill(_skillId);
 		if (s != null)
 		{
 			if (_amount > 0)
@@ -99,14 +99,14 @@ public class ReuseSkillIdByDamage: AbstractEffect
 			}
 		}
 	}
-	
+
+    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        effected.Events.Subscribe<OnCreatureDamageReceived>(this, onDamageReceivedEvent);
+    }
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		effected.Events.Unsubscribe<OnCreatureDamageReceived>(onDamageReceivedEvent);
-	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
-	{
-		effected.Events.Subscribe<OnCreatureDamageReceived>(this, onDamageReceivedEvent);
 	}
 }

@@ -128,7 +128,7 @@ public abstract class AbstractEffect
 	 * @param skill
 	 * @return {@code true} if pump can be invoked, {@code false} otherwise
 	 */
-	public virtual bool canPump(Creature effector, Creature effected, Skill skill)
+	public virtual bool canPump(Creature? effector, Creature effected, Skill? skill)
 	{
 		return true;
 	}

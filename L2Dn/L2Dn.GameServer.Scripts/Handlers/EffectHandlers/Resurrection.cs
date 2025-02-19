@@ -18,7 +18,7 @@ public class Resurrection: AbstractEffect
 	private readonly int _hpPercent;
 	private readonly int _mpPercent;
 	private readonly int _cpPercent;
-	
+
 	public Resurrection(StatSet @params)
 	{
 		_power = @params.getInt("power", 0);
@@ -26,25 +26,30 @@ public class Resurrection: AbstractEffect
 		_mpPercent = @params.getInt("mpPercent", 0);
 		_cpPercent = @params.getInt("cpPercent", 0);
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.RESURRECTION;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
-	{
-		if (effector.isPlayer())
+    {
+        Player? player = effector.getActingPlayer();
+        Player? effectedPlayer = effected.getActingPlayer();
+
+        if (effector.isPlayer() && player != null)
 		{
-			Player player = effected.getActingPlayer();
-			if (!player.isResurrectionBlocked() && !player.isReviveRequested())
+            if (effectedPlayer == null)
+                return;
+
+            if (!effectedPlayer.isResurrectionBlocked() && !effectedPlayer.isReviveRequested())
 			{
-				effected.getActingPlayer().reviveRequest(effector.getActingPlayer(), effected.isPet(), _power, _hpPercent, _mpPercent, _cpPercent);
+                effectedPlayer.reviveRequest(player, effected.isPet(), _power, _hpPercent, _mpPercent, _cpPercent);
 			}
 		}
 		else

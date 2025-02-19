@@ -26,8 +26,8 @@ namespace L2Dn.GameServer.Model.Actor;
  */
 public abstract class Playable: Creature
 {
-	private Creature _lockedTarget;
-	private Player transferDmgTo;
+	private Creature? _lockedTarget;
+	private Player? transferDmgTo;
 
 	private readonly Map<int, int> _replacedSkills = new();
 	private readonly Map<int, int> _originalSkills = new();
@@ -259,12 +259,12 @@ public abstract class Playable: Creature
 		return _lockedTarget;
 	}
 
-	public void setLockedTarget(Creature creature)
+	public void setLockedTarget(Creature? creature)
 	{
 		_lockedTarget = creature;
 	}
 
-	public void setTransferDamageTo(Player val)
+	public void setTransferDamageTo(Player? val)
 	{
 		transferDmgTo = val;
 	}

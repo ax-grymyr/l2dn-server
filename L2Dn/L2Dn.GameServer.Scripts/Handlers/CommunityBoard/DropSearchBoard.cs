@@ -24,11 +24,11 @@ public class DropSearchBoard: IParseBoardHandler
 {
 	private const string NAVIGATION_PATH = "html/CommunityBoard/Custom/navigation.html";
 	private static readonly string[] COMMAND =
-	{
-		"_bbs_search_item",
+    [
+        "_bbs_search_item",
 		"_bbs_search_drop",
-		"_bbs_npc_trace"
-	};
+		"_bbs_npc_trace",
+    ];
 	
 	private class CBDropHolder
 	{
@@ -116,7 +116,7 @@ public class DropSearchBoard: IParseBoardHandler
 		List<CBDropHolder> dropList = DROP_INDEX_CACHE.get(dropHolder.getItemId());
 		if (dropList == null)
 		{
-			dropList = new();
+			dropList = [];
 			DROP_INDEX_CACHE.put(dropHolder.getItemId(), dropList);
 		}
 		
@@ -324,7 +324,7 @@ public class DropSearchBoard: IParseBoardHandler
 	private string buildItemSearchResult(string itemName)
 	{
 		int limit = 0;
-		List<ItemTemplate> items = new();
+		List<ItemTemplate> items = [];
 		foreach (ItemTemplate item in ItemData.getInstance().getAllItems())
 		{
 			if (item == null)

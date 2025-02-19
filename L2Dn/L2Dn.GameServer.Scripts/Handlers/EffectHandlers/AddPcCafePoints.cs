@@ -15,25 +15,25 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class AddPcCafePoints: AbstractEffect
 {
 	private readonly int _amount;
-	
+
 	public AddPcCafePoints(StatSet @params)
 	{
 		_amount = @params.getInt("amount", 0);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effected.isPlayer())
+        Player? player = effected.getActingPlayer();
+		if (!effected.isPlayer() || player == null)
 		{
 			return;
 		}
-		
-		Player player = effected.getActingPlayer();
+
 		int currentPoints = player.getPcCafePoints();
 		int upgradePoints = currentPoints + _amount;
 		player.setPcCafePoints(upgradePoints);

@@ -16,40 +16,40 @@ public class MagicalDamOverTime: AbstractEffect
 {
 	private readonly double _power;
 	private readonly bool _canKill;
-	
+
 	public MagicalDamOverTime(StatSet @params)
 	{
 		_power = @params.getDouble("power", 0);
 		_canKill = @params.getBoolean("canKill", false);
 		setTicks(@params.getInt("ticks"));
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.MAGICAL_DMG_OVER_TIME;
 	}
-	
-	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		Creature creature = effector;
 		Creature target = effected;
-		
+
 		if (target.isDead())
 		{
 			return false;
 		}
-		
+
 		double damage = Formulas.calcMagicDam(creature, target, skill, creature.getMAtk(), _power, target.getMDef(), false, false, false); // In retail spiritshots change nothing.
 		damage *= getTicksMultiplier();
-		
-		if (damage >= (target.getCurrentHp() - 1))
+
+		if (damage >= target.getCurrentHp() - 1)
 		{
 			if (skill.isToggle())
 			{
 				target.sendPacket(SystemMessageId.YOUR_SKILL_HAS_BEEN_CANCELED_DUE_TO_LACK_OF_HP);
 				return false;
 			}
-			
+
 			// For DOT skills that will not kill effected player.
 			if (!_canKill)
 			{
@@ -61,7 +61,7 @@ public class MagicalDamOverTime: AbstractEffect
 				damage = target.getCurrentHp() - 1;
 			}
 		}
-		
+
 		effector.doAttack(damage, effected, skill, true, false, false, false);
 		return skill.isToggle();
 	}

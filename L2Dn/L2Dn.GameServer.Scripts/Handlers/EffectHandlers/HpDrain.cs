@@ -56,7 +56,7 @@ public class HpDrain: AbstractEffect
 		
 		if (cp > 0)
 		{
-			drain = (damage < cp) ? 0 : (damage - cp);
+			drain = damage < cp ? 0 : damage - cp;
 		}
 		else if (damage > hp)
 		{
@@ -67,8 +67,8 @@ public class HpDrain: AbstractEffect
 			drain = damage;
 		}
 		
-		double hpAdd = ((_percentage / 100) * drain);
-		double hpFinal = ((effector.getCurrentHp() + hpAdd) > effector.getMaxHp() ? effector.getMaxHp() : (effector.getCurrentHp() + hpAdd));
+		double hpAdd = _percentage / 100 * drain;
+		double hpFinal = effector.getCurrentHp() + hpAdd > effector.getMaxHp() ? effector.getMaxHp() : effector.getCurrentHp() + hpAdd;
 		effector.setCurrentHp(hpFinal);
 		
 		effector.doAttack(damage, effected, skill, false, false, mcrit, false);

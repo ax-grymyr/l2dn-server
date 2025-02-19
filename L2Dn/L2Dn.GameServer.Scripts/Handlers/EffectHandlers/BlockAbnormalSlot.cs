@@ -13,8 +13,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
  */
 public class BlockAbnormalSlot: AbstractEffect
 {
-	private readonly Set<AbnormalType> _blockAbnormalSlots = new();
-	
+	private readonly Set<AbnormalType> _blockAbnormalSlots = [];
+
 	public BlockAbnormalSlot(StatSet @params)
 	{
 		foreach (string slot in @params.getString("slot").Split(";"))
@@ -25,12 +25,12 @@ public class BlockAbnormalSlot: AbstractEffect
 			}
 		}
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		effected.getEffectList().addBlockedAbnormalTypes(_blockAbnormalSlots);
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		effected.getEffectList().removeBlockedAbnormalTypes(_blockAbnormalSlots);

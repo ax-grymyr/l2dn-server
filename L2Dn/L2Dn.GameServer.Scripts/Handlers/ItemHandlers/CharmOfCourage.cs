@@ -16,12 +16,12 @@ public class CharmOfCourage: IItemHandler
 {
 	public bool useItem(Playable playable, Item item, bool forceUse)
 	{
-		if (!playable.isPlayer())
+        Player? player = playable.getActingPlayer();
+		if (!playable.isPlayer() || player == null)
 		{
 			return false;
 		}
-		
-		Player player = playable.getActingPlayer();
+
 		int level = player.getLevel();
 		CrystalType itemLevel = item.getTemplate().getCrystalType().getLevel();
 		CrystalType playerLevel;
@@ -49,7 +49,7 @@ public class CharmOfCourage: IItemHandler
 		{
 			playerLevel = CrystalType.S;
 		}
-		
+
 		if (itemLevel < playerLevel)
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
@@ -57,14 +57,14 @@ public class CharmOfCourage: IItemHandler
 			player.sendPacket(sm);
 			return false;
 		}
-		
+
 		if (player.destroyItemWithoutTrace("Consume", item.ObjectId, 1, null, false))
 		{
 			player.setCharmOfCourage(true);
 			player.sendPacket(new EtcStatusUpdatePacket(player));
 			return true;
 		}
-		
+
 		return false;
 	}
 }

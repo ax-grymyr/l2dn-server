@@ -13,24 +13,24 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class GiveSp: AbstractEffect
 {
 	private readonly int _sp;
-	
+
 	public GiveSp(StatSet @params)
 	{
 		_sp = @params.getInt("sp", 0);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		if (!effector.isPlayer() || !effected.isPlayer() || effected.isAlikeDead())
 		{
 			return;
 		}
-		
-		effector.getActingPlayer().addExpAndSp(0, _sp);
+
+		effector.getActingPlayer()?.addExpAndSp(0, _sp);
 	}
 }

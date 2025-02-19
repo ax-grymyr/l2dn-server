@@ -16,27 +16,27 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class GetMomentum: AbstractEffect
 {
 	private static int _ticks;
-	
+
 	public GetMomentum(StatSet @params)
 	{
 		_ticks = @params.getInt("ticks", 0);
 	}
-	
+
 	public override int getTicks()
 	{
 		return _ticks;
 	}
-	
-	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
 	{
-		if (effected.isPlayer())
+        Player? player = effected.getActingPlayer();
+		if (effected.isPlayer() && player != null)
 		{
-			Player player = effected.getActingPlayer();
 			int maxCharge = (int) player.getStat().getValue(Stat.MAX_MOMENTUM, 1);
 			int newCharge = Math.Min(player.getCharges() + 1, maxCharge);
-			
+
 			player.setCharges(newCharge);
-			
+
 			if (newCharge == maxCharge)
 			{
 				player.sendPacket(SystemMessageId.YOUR_FORCE_HAS_REACHED_MAXIMUM_CAPACITY);
@@ -47,10 +47,10 @@ public class GetMomentum: AbstractEffect
 				sm.Params.addInt(newCharge);
 				player.sendPacket(sm);
 			}
-			
+
 			player.sendPacket(new EtcStatusUpdatePacket(player));
 		}
-		
+
 		return skill.isToggle();
 	}
 }

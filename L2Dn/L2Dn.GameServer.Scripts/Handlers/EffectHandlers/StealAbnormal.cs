@@ -38,7 +38,7 @@ public class StealAbnormal: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (effected.isPlayer() && (effector != effected))
+		if (effected.isPlayer() && effector != effected)
 		{
 			List<BuffInfo> toSteal = Formulas.calcCancelStealEffects(effector, effected, skill, _slot, _rate, _max);
 			if (toSteal.Count == 0)

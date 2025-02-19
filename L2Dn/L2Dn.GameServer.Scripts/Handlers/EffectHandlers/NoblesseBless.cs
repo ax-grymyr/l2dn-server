@@ -17,7 +17,7 @@ public class NoblesseBless: AbstractEffect
 	
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
-		return (effector != null) && (effected != null) && effected.isPlayable();
+		return effector != null && effected != null && effected.isPlayable();
 	}
 	
 	public override long getEffectFlags()

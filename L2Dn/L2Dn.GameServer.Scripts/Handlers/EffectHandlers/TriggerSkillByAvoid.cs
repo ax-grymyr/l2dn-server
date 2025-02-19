@@ -23,7 +23,7 @@ public class TriggerSkillByAvoid: AbstractEffect
 	private readonly SkillHolder _skill;
 	private readonly TargetType _targetType;
 	private readonly int _skillLevelScaleTo;
-	
+
 	/**
 	 * @param @params
 	 */
@@ -34,48 +34,50 @@ public class TriggerSkillByAvoid: AbstractEffect
 		_targetType = @params.getEnum("targetType", TargetType.TARGET);
 		_skillLevelScaleTo = @params.getInt("skillLevelScaleTo", 0);
 	}
-	
+
 	private void onAvoidEvent(OnCreatureAttackAvoid @event)
 	{
-		if (@event.isDamageOverTime() || (_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLevel() == 0)))
+		if (@event.isDamageOverTime() || _chance == 0 || _skill.getSkillId() == 0 || _skill.getSkillLevel() == 0)
 		{
 			return;
 		}
-		
-		ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(_targetType);
+
+		ITargetTypeHandler? targetHandler = TargetHandler.getInstance().getHandler(_targetType);
 		if (targetHandler == null)
 		{
 			LOGGER.Warn("Handler for target type: " + _targetType + " does not exist.");
 			return;
 		}
-		
-		if ((_chance < 100) && (Rnd.get(100) > _chance))
+
+		if (_chance < 100 && Rnd.get(100) > _chance)
 		{
 			return;
 		}
-		
-		WorldObject target = null;
+
+		WorldObject? target = null;
 		try
-		{
-			target = TargetHandler.getInstance().getHandler(_targetType).getTarget(@event.getTarget(), @event.getAttacker(), _skill.getSkill(), false, false, false);
-		}
+        {
+            target = TargetHandler.getInstance().getHandler(_targetType)?.getTarget(@event.getTarget(),
+                @event.getAttacker(), _skill.getSkill(), false, false, false);
+        }
 		catch (Exception e)
 		{
 			LOGGER.Warn("Exception in ITargetTypeHandler.getTarget(): " + e);
 		}
-		if ((target == null) || !target.isCreature())
+
+		if (target == null || !target.isCreature())
 		{
 			return;
 		}
-		
-		Skill triggerSkill;
+
+		Skill? triggerSkill;
 		if (_skillLevelScaleTo <= 0)
 		{
 			triggerSkill = _skill.getSkill();
 		}
 		else
 		{
-			BuffInfo buffInfo = ((Creature) target).getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
+			BuffInfo? buffInfo = ((Creature)target).getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
 			if (buffInfo != null)
 			{
 				triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(), Math.Min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
@@ -85,16 +87,19 @@ public class TriggerSkillByAvoid: AbstractEffect
 				triggerSkill = _skill.getSkill();
 			}
 		}
-		
+
+        if (triggerSkill == null)
+            return;
+
 		SkillCaster.triggerCast(@event.getAttacker(), (Creature) target, triggerSkill);
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		effected.Events.Unsubscribe<OnCreatureAttackAvoid>(onAvoidEvent);
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		effected.Events.Subscribe<OnCreatureAttackAvoid>(this, onAvoidEvent);
 	}

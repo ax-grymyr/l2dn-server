@@ -382,7 +382,7 @@ public abstract class Summon: Playable
 		}
 	}
 
-	public virtual void unSummon(Player owner)
+	public virtual void unSummon(Player? owner)
 	{
 		if (isSpawned())
 		{
@@ -424,7 +424,7 @@ public abstract class Summon: Playable
 				}
 
 				owner.sendPacket(new PetDeletePacket(getSummonType(), ObjectId));
-				Party party = owner.getParty();
+				Party? party = owner.getParty();
 				if (party != null)
 				{
 					party.broadcastToPartyMembers(owner, new ExPartyPetWindowDeletePacket(this));

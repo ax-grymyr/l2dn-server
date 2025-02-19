@@ -42,16 +42,16 @@ public class HealPercent: AbstractEffect
 		
 		double amount = 0;
 		double power = _power;
-		bool full = (power == 100.0);
+		bool full = power == 100.0;
 		
-		amount = full ? effected.getMaxHp() : (effected.getMaxHp() * power) / 100.0;
-		if ((item != null) && (item.isPotion() || item.isElixir()))
+		amount = full ? effected.getMaxHp() : effected.getMaxHp() * power / 100.0;
+		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			amount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_HP, 0);
 			
 			// Classic Potion Mastery
 			// TODO: Create an effect if more mastery skills are added.
-			amount *= 1 + (effected.getAffectedSkillLevel((int)CommonSkill.POTION_MASTERY) / 100.0);
+			amount *= 1 + effected.getAffectedSkillLevel((int)CommonSkill.POTION_MASTERY) / 100.0;
 		}
 		
 		// Prevents overheal

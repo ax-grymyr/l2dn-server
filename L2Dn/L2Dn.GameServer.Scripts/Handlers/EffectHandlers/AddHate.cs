@@ -29,7 +29,7 @@ public class AddHate: AbstractEffect
 	public override void instant(Creature creature, Creature effected, Skill skill, Item item)
 	{
 		Creature effector = creature;
-		if (_affectSummoner && (effector.getSummoner() != null))
+		if (_affectSummoner && effector.getSummoner() != null)
 		{
 			effector = effector.getSummoner();
 		}

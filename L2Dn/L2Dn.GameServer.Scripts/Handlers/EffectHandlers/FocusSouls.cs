@@ -18,33 +18,33 @@ public class FocusSouls: AbstractEffect
 {
 	private readonly int _charge;
 	private readonly SoulType _type;
-	
+
 	public FocusSouls(StatSet @params)
 	{
 		_charge = @params.getInt("charge", 0);
 		_type = @params.getEnum("type", SoulType.LIGHT);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effected.isPlayer() || effected.isAlikeDead())
+        Player? target = effected.getActingPlayer();
+		if (!effected.isPlayer() || effected.isAlikeDead() || target == null)
 		{
 			return;
 		}
-		
-		Player target = effected.getActingPlayer();
+
 		int maxSouls = (int) target.getStat().getValue(Stat.MAX_SOULS, 0);
 		if (maxSouls > 0)
 		{
 			int amount = _charge;
-			if ((target.getChargedSouls(_type) < maxSouls))
+			if (target.getChargedSouls(_type) < maxSouls)
 			{
-				int count = ((target.getChargedSouls(_type) + amount) <= maxSouls) ? amount : (maxSouls - target.getChargedSouls(_type));
+				int count = target.getChargedSouls(_type) + amount <= maxSouls ? amount : maxSouls - target.getChargedSouls(_type);
 				target.increaseSouls(count, _type);
 			}
 			else

@@ -16,16 +16,16 @@ public class AbsorbDamage: AbstractEffect
 {
 	private static readonly Map<int, double> DIFF_DAMAGE_HOLDER = new();
 	private static readonly Map<int, double> PER_DAMAGE_HOLDER = new();
-	
+
 	private readonly double _damage;
 	private readonly StatModifierType _mode;
-	
+
 	public AbsorbDamage(StatSet @params)
 	{
 		_damage = @params.getDouble("damage", 0);
 		_mode = @params.getEnum("mode", StatModifierType.DIFF);
 	}
-	
+
 	private void onDamageReceivedDiffEvent(OnCreatureDamageReceived ev, Creature effected, Skill skill)
 	{
 		// DOT effects are not taken into account.
@@ -33,13 +33,13 @@ public class AbsorbDamage: AbstractEffect
 		{
 			return;
 		}
-		
+
 		int objectId = ev.getTarget().ObjectId;
-		
+
 		double damageLeft = DIFF_DAMAGE_HOLDER.GetValueOrDefault(objectId);
 		double newDamageLeft = Math.Max(damageLeft - ev.getDamage(), 0);
 		double newDamage = Math.Max(ev.getDamage() - damageLeft, 0);
-		
+
 		if (newDamageLeft > 0)
 		{
 			DIFF_DAMAGE_HOLDER.put(objectId, newDamageLeft);
@@ -52,7 +52,7 @@ public class AbsorbDamage: AbstractEffect
 		ev.OverrideDamage = true;
 		ev.OverridenDamage = newDamage;
 	}
-	
+
 	private void onDamageReceivedPerEvent(OnCreatureDamageReceived ev)
 	{
 		// DOT effects are not taken into account.
@@ -60,17 +60,17 @@ public class AbsorbDamage: AbstractEffect
 		{
 			return;
 		}
-		
+
 		int objectId = ev.getTarget().ObjectId;
-		
+
 		double damagePercent = PER_DAMAGE_HOLDER.GetValueOrDefault(objectId);
 		double currentDamage = ev.getDamage();
-		double newDamage = currentDamage - ((currentDamage / 100) * damagePercent);
+		double newDamage = currentDamage - currentDamage / 100 * damagePercent;
 
 		ev.OverrideDamage = true;
 		ev.OverridenDamage = newDamage;
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		if (_mode == StatModifierType.DIFF)
@@ -84,8 +84,8 @@ public class AbsorbDamage: AbstractEffect
 			PER_DAMAGE_HOLDER.remove(effected.ObjectId);
 		}
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (_mode == StatModifierType.DIFF)
 		{

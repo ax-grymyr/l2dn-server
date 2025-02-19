@@ -3323,7 +3323,7 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return bool informing if the action was successful
 	 */
-	public override bool destroyItem(string process, int objectId, long count, WorldObject reference, bool sendMessage)
+	public override bool destroyItem(string process, int objectId, long count, WorldObject? reference, bool sendMessage)
 	{
 		Item item = _inventory.getItemByObjectId(objectId);
 		if (item == null)
@@ -3346,7 +3346,7 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return bool informing if the action was successful
 	 */
-	public bool destroyItemWithoutTrace(string process, int objectId, long count, WorldObject reference, bool sendMessage)
+	public bool destroyItemWithoutTrace(string process, int objectId, long count, WorldObject? reference, bool sendMessage)
 	{
 		Item item = _inventory.getItemByObjectId(objectId);
 		if ((item == null) || (item.getCount() < count))
@@ -4516,7 +4516,7 @@ public class Player: Playable
 	/**
 	 * Return the active weapon instance (always equipped in the right hand).
 	 */
-	public override Item getActiveWeaponInstance()
+	public override Item? getActiveWeaponInstance()
 	{
 		return _inventory.getPaperdollItem(Inventory.PAPERDOLL_RHAND);
 	}
@@ -4526,7 +4526,7 @@ public class Player: Playable
 	 */
 	public override Weapon getActiveWeaponItem()
 	{
-		Item weapon = getActiveWeaponInstance();
+		Item? weapon = getActiveWeaponInstance();
 		if (weapon == null)
 		{
 			return _fistsWeaponItem;
@@ -5331,7 +5331,7 @@ public class Player: Playable
 	 * Set the summoned Pet of the Player.
 	 * @param pet
 	 */
-	public void setPet(Pet pet)
+	public void setPet(Pet? pet)
 	{
 		_pet = pet;
 	}

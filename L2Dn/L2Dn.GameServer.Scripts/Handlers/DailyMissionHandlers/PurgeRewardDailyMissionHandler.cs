@@ -57,7 +57,7 @@ public class PurgeRewardDailyMissionHandler: AbstractDailyMissionHandler
 	private void onItemPurgeReward(OnItemPurgeReward @event)
 	{
 		Player player = @event.getPlayer();
-		if ((player.getLevel() < _minLevel) || (player.getLevel() > _maxLevel))
+		if (player.getLevel() < _minLevel || player.getLevel() > _maxLevel)
 		{
 			return;
 		}

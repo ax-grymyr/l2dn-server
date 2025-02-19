@@ -14,8 +14,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
  */
 public class ResistSkill: AbstractEffect
 {
-	private readonly List<SkillHolder> _skills = new();
-	
+	private readonly List<SkillHolder> _skills = [];
+
 	public ResistSkill(StatSet @params)
 	{
 		for (int i = 1;; i++)
@@ -28,21 +28,21 @@ public class ResistSkill: AbstractEffect
 			}
 			_skills.Add(new SkillHolder(skillId, skillLevel));
 		}
-		
+
 		if (_skills.Count == 0)
 		{
 			throw new ArgumentException(GetType().Name + ": Without parameters!");
 		}
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		foreach (SkillHolder holder in _skills)
 		{
 			effected.addIgnoreSkillEffects(holder);
 		}
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		foreach (SkillHolder holder in _skills)

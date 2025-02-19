@@ -15,15 +15,14 @@ public class AddSpiritExp: IItemHandler
 {
 	public bool useItem(Playable playable, Item item, bool forceUse)
 	{
-		if (!playable.isPlayer())
+        Player? player = playable.getActingPlayer();
+		if (!playable.isPlayer() || player == null)
 		{
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
-		
-		Player player = playable.getActingPlayer();
-		
-		ElementalSpirit spirit = null;
+
+		ElementalSpirit? spirit = null;
 		switch (item.getId())
 		{
 			case 91999:
@@ -51,17 +50,17 @@ public class AddSpiritExp: IItemHandler
 				break;
 			}
 		}
-		
-		if ((spirit != null) && checkConditions(player, spirit))
+
+		if (spirit != null && checkConditions(player, spirit))
 		{
 			player.destroyItem("AddSpiritExp item", item, 1, player, true);
 			spirit.addExperience(9300);
 			return true;
 		}
-		
+
 		return false;
 	}
-	
+
 	private bool checkConditions(Player player, ElementalSpirit spirit)
 	{
 		if (player.isInBattle())
@@ -69,7 +68,7 @@ public class AddSpiritExp: IItemHandler
 			player.sendPacket(SystemMessageId.UNABLE_TO_ABSORB_DURING_BATTLE);
 			return false;
 		}
-		if ((spirit.getLevel() == spirit.getMaxLevel()) && (spirit.getExperience() == spirit.getExperienceToNextLevel()))
+		if (spirit.getLevel() == spirit.getMaxLevel() && spirit.getExperience() == spirit.getExperienceToNextLevel())
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_REACHED_THE_MAXIMUM_LEVEL_AND_CANNOT_ABSORB_ANY_FURTHER);
 			return false;

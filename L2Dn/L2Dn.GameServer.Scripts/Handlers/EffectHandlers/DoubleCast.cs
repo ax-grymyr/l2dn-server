@@ -34,16 +34,16 @@ public class DoubleCast: AbstractEffect
 		return EffectFlag.DOUBLE_CAST.getMask();
 	}
 
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isPlayer())
 		{
 			foreach (SkillHolder holder in TOGGLE_SKILLS)
 			{
 				Skill s = holder.getSkill();
-				if ((s != null) && !effected.isAffectedBySkill(holder))
+				if (s != null && !effected.isAffectedBySkill(holder))
 				{
-					_addedToggles.computeIfAbsent(effected.ObjectId, v => new()).Add(holder);
+					_addedToggles.computeIfAbsent(effected.ObjectId, v => []).Add(holder);
 					s.applyEffects(effected, effected);
 				}
 			}

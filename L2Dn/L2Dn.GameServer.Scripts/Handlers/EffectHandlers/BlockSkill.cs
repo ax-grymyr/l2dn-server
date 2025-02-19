@@ -14,9 +14,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
  */
 public class BlockSkill: AbstractEffect
 {
-	private readonly Set<int> _magicTypes = new();
-	private readonly Set<int> _skillIds = new();
-	
+	private readonly Set<int> _magicTypes = [];
+	private readonly Set<int> _skillIds = [];
+
 	public BlockSkill(StatSet @params)
 	{
 		if (@params.contains("magicTypes"))
@@ -34,17 +34,17 @@ public class BlockSkill: AbstractEffect
 			}
 		}
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (_magicTypes.isEmpty() && _skillIds.isEmpty())
 		{
 			return;
 		}
-		
+
 		effected.Events.Subscribe<OnCreatureSkillUse>(this, onSkillUseEvent);
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		effected.Events.Unsubscribe<OnCreatureSkillUse>(onSkillUseEvent);

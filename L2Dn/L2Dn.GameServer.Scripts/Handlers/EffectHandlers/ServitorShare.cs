@@ -14,28 +14,28 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class ServitorShare: AbstractEffect
 {
 	private readonly Map<Stat, float> _sharedStats = new();
-	
+
 	public ServitorShare(StatSet @params)
 	{
 		if (@params.isEmpty())
 		{
 			return;
 		}
-		
+
 		foreach (var param in @params.getSet())
 		{
-			_sharedStats.put(Enum.Parse<Stat>(param.Key), (float.Parse(param.Value.ToString() ?? string.Empty)) / 100);
+			_sharedStats.put(Enum.Parse<Stat>(param.Key), float.Parse(param.Value.ToString() ?? string.Empty) / 100);
 		}
 	}
-	
-	public override bool canPump(Creature effector, Creature effected, Skill skill)
+
+	public override bool canPump(Creature? effector, Creature effected, Skill? skill)
 	{
 		return effected.isSummon();
 	}
-	
+
 	public override void pump(Creature effected, Skill skill)
 	{
-		Player owner = effected.getActingPlayer();
+		Player? owner = effected.getActingPlayer();
 		if (owner != null)
 		{
 			foreach (var stats in _sharedStats)

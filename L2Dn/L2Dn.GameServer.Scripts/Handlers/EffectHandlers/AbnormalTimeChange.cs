@@ -16,13 +16,13 @@ public class AbnormalTimeChange: AbstractEffect
 	private readonly Set<AbnormalType> _abnormals;
 	private readonly TimeSpan? _time;
 	private readonly int _mode;
-	
+
 	public AbnormalTimeChange(StatSet @params)
 	{
-		string abnormals = @params.getString("slot", null);
+		string abnormals = @params.getString("slot", string.Empty);
 		if (!string.IsNullOrEmpty(abnormals))
 		{
-			_abnormals = new();
+			_abnormals = [];
 			foreach (string slot in abnormals.Split(";"))
 			{
 				if (Enum.TryParse(slot, true, out AbnormalType abnormalType))
@@ -31,12 +31,12 @@ public class AbnormalTimeChange: AbstractEffect
 		}
 		else
 		{
-			_abnormals = new();
+			_abnormals = [];
 		}
-		
-		int time = @params.getInt("time", -1); 
+
+		int time = @params.getInt("time", -1);
 		_time = time == -1 ? null : TimeSpan.FromSeconds(time);
-		
+
 		switch (@params.getString("mode", "DEBUFF"))
 		{
 			case "DIFF":
@@ -55,16 +55,16 @@ public class AbnormalTimeChange: AbstractEffect
 			}
 		}
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		AbnormalStatusUpdatePacket asu = new AbnormalStatusUpdatePacket(new List<BuffInfo>());
-		
+		AbnormalStatusUpdatePacket asu = new AbnormalStatusUpdatePacket([]);
+
 		switch (_mode)
 		{
 			case 0: // DIFF
@@ -120,19 +120,19 @@ public class AbnormalTimeChange: AbstractEffect
 				break;
 			}
 		}
-		
+
 		effected.sendPacket(asu);
-		
+
 		ExAbnormalStatusUpdateFromTargetPacket upd = new ExAbnormalStatusUpdateFromTargetPacket(effected);
 		foreach (Creature creature in effected.getStatus().getStatusListener())
 		{
-			if ((creature != null) && creature.isPlayer())
+			if (creature != null && creature.isPlayer())
 			{
 				creature.sendPacket(upd);
 			}
 		}
-		
-		if (effected.isPlayer() && (effected.getTarget() == effected))
+
+		if (effected.isPlayer() && effected.getTarget() == effected)
 		{
 			effected.sendPacket(upd);
 		}

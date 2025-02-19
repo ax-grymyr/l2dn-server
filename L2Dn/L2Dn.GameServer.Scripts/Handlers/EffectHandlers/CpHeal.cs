@@ -41,7 +41,7 @@ public class CpHeal: AbstractEffect
 		}
 		
 		double amount = _power;
-		if ((item != null) && (item.isPotion() || item.isElixir()))
+		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			amount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_CP, 0);
 		}
@@ -55,7 +55,7 @@ public class CpHeal: AbstractEffect
 			effected.broadcastStatusUpdate(effector);
 		}
 		
-		if ((effector != null) && (effector != effected))
+		if (effector != null && effector != effected)
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_RECOVERED_S2_CP_WITH_C1_S_HELP);
 			sm.Params.addString(effector.getName());

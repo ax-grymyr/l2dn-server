@@ -12,14 +12,14 @@ public class LimitedSayha: IItemHandler
 {
 	public bool useItem(Playable playable, Item item, bool forceUse)
 	{
-		if (!playable.isPlayer())
+        Player? player = playable.getActingPlayer();
+		if (!playable.isPlayer() || player == null)
 		{
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
-		
-		Player player = playable.getActingPlayer();
-		long time = 0;
+
+		long time;
 		switch (item.getId())
 		{
 			case 71899:
@@ -43,7 +43,7 @@ public class LimitedSayha: IItemHandler
 				break;
 			}
 		}
-		if ((time > 0) && player.setLimitedSayhaGraceEndTime(DateTime.UtcNow + TimeSpan.FromMilliseconds(time)))
+		if (time > 0 && player.setLimitedSayhaGraceEndTime(DateTime.UtcNow + TimeSpan.FromMilliseconds(time)))
 		{
 			player.destroyItem("LimitedSayha potion", item, 1, player, true);
 		}

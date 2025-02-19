@@ -919,14 +919,14 @@ public class Attackable: Npc
 	 * Clears _aggroList hate of the Creature without removing from the list.
 	 * @param target
 	 */
-	public void stopHating(Creature target)
+	public void stopHating(Creature? target)
 	{
 		if (target == null)
 		{
 			return;
 		}
 
-		AggroInfo ai = _aggroList.get(target);
+		AggroInfo? ai = _aggroList.get(target);
 		if (ai != null)
 		{
 			ai.stopHate();

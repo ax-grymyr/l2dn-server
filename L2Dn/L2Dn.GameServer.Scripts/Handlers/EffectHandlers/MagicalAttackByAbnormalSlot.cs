@@ -17,15 +17,15 @@ public class MagicalAttackByAbnormalSlot: AbstractEffect
 {
 	private readonly double _power;
 	private readonly Set<AbnormalType> _abnormals;
-	
+
 	public MagicalAttackByAbnormalSlot(StatSet @params)
 	{
 		_power = @params.getDouble("power", 0);
-		
-		string abnormals = @params.getString("abnormalType", null);
+
+		string abnormals = @params.getString("abnormalType", string.Empty);
 		if (!string.IsNullOrEmpty(abnormals))
 		{
-			_abnormals = new();
+			_abnormals = [];
 			foreach (string slot in abnormals.Split(";"))
 			{
 				if (Enum.TryParse(slot, out AbnormalType val))
@@ -34,32 +34,32 @@ public class MagicalAttackByAbnormalSlot: AbstractEffect
 		}
 		else
 		{
-			_abnormals = new();
+			_abnormals = [];
 		}
 	}
-	
+
 	public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
 		return !Formulas.calcSkillEvasion(effector, effected, skill);
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.MAGICAL_ATTACK;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		if (effector.isAlikeDead())
 		{
 			return;
 		}
-		
+
 		bool hasAbnormalType = false;
 		if (!_abnormals.isEmpty())
 		{
@@ -76,17 +76,18 @@ public class MagicalAttackByAbnormalSlot: AbstractEffect
 		{
 			return;
 		}
-		
-		if (effected.isPlayer() && effected.getActingPlayer().isFakeDeath() && Config.FAKE_DEATH_DAMAGE_STAND)
+
+        Player? effectedPlayer = effected.getActingPlayer();
+		if (effected.isPlayer() && effectedPlayer != null && effectedPlayer.isFakeDeath() && Config.FAKE_DEATH_DAMAGE_STAND)
 		{
 			effected.stopFakeDeath(true);
 		}
-		
+
 		bool sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
 		bool bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		bool mcrit = Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill);
 		double damage = Formulas.calcMagicDam(effector, effected, skill, effector.getMAtk(), _power, effected.getMDef(), sps, bss, mcrit);
-		
+
 		effector.doAttack(damage, effected, skill, false, false, mcrit, false);
 	}
 }

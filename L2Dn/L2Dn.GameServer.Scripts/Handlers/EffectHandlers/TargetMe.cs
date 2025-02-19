@@ -15,7 +15,7 @@ public class TargetMe: AbstractEffect
 	public TargetMe(StatSet @params)
 	{
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		if (effected.isPlayable())
@@ -23,8 +23,8 @@ public class TargetMe: AbstractEffect
 			((Playable) effected).setLockedTarget(null);
 		}
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isPlayable())
 		{
@@ -32,7 +32,7 @@ public class TargetMe: AbstractEffect
 			{
 				effected.setTarget(effector);
 			}
-			
+
 			((Playable) effected).setLockedTarget(effector);
 		}
 	}

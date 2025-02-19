@@ -35,7 +35,7 @@ public class LevelDailyMissionHandler: AbstractDailyMissionHandler
 			{
 				case DailyMissionStatus.NOT_AVAILABLE:
 				{
-					if ((player.getLevel() >= _level) && (player.isDualClassActive() == _dualclass))
+					if (player.getLevel() >= _level && player.isDualClassActive() == _dualclass)
 					{
 						entry.setStatus(DailyMissionStatus.AVAILABLE);
 						player.getDailyMissions().storeEntry(entry);
@@ -65,7 +65,7 @@ public class LevelDailyMissionHandler: AbstractDailyMissionHandler
 	private void onPlayerLevelChanged(OnPlayerLevelChanged @event)
 	{
 		Player player = @event.getPlayer();
-		if ((player.getLevel() >= _level) && (player.isDualClassActive() == _dualclass))
+		if (player.getLevel() >= _level && player.isDualClassActive() == _dualclass)
 		{
 			DailyMissionPlayerEntry entry = player.getDailyMissions().getOrCreateEntry(getHolder().getId());
 			if (entry.getStatus() == DailyMissionStatus.NOT_AVAILABLE)

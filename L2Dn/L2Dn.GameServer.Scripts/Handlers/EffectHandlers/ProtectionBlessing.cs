@@ -17,7 +17,7 @@ public class ProtectionBlessing: AbstractEffect
 	
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
-		return (effector != null) && (effected != null) && effected.isPlayer();
+		return effector != null && effected != null && effected.isPlayer();
 	}
 	
 	public override long getEffectFlags()

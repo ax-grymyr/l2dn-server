@@ -19,13 +19,13 @@ public class Synergy: AbstractEffect
 	private readonly int _partyBuffSkillId;
 	private readonly int _skillLevelScaleTo;
 	private readonly int _minSlot;
-	
+
 	public Synergy(StatSet @params)
 	{
-		string requiredSlots = @params.getString("requiredSlots", null);
+		string requiredSlots = @params.getString("requiredSlots", string.Empty);
 		if (!string.IsNullOrEmpty(requiredSlots))
 		{
-			_requiredSlots = new();
+			_requiredSlots = [];
 			foreach (string slot in requiredSlots.Split(";"))
 			{
 				_requiredSlots.add(Enum.Parse<AbnormalType>(slot));
@@ -33,13 +33,13 @@ public class Synergy: AbstractEffect
 		}
 		else
 		{
-			_requiredSlots = new();
+			_requiredSlots = [];
 		}
-		
-		string optionalSlots = @params.getString("optionalSlots", null);
+
+		string optionalSlots = @params.getString("optionalSlots", string.Empty);
 		if (!string.IsNullOrEmpty(optionalSlots))
 		{
-			_optionalSlots = new();
+			_optionalSlots = [];
 			foreach (string slot in optionalSlots.Split(";"))
 			{
 				_optionalSlots.add(Enum.Parse<AbnormalType>(slot));
@@ -47,22 +47,22 @@ public class Synergy: AbstractEffect
 		}
 		else
 		{
-			_optionalSlots = new();
+			_optionalSlots = [];
 		}
-		
+
 		_partyBuffSkillId = @params.getInt("partyBuffSkillId");
 		_skillLevelScaleTo = @params.getInt("skillLevelScaleTo", 1);
 		_minSlot = @params.getInt("minSlot", 2);
 		setTicks(@params.getInt("ticks"));
 	}
-	
-	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effector.isDead())
 		{
 			return false;
 		}
-		
+
 		foreach (AbnormalType required in _requiredSlots)
 		{
 			if (!effector.hasAbnormalType(required))
@@ -70,7 +70,7 @@ public class Synergy: AbstractEffect
 				return skill.isToggle();
 			}
 		}
-		
+
 		int abnormalCount = 0;
 		foreach (AbnormalType abnormalType in _optionalSlots)
 		{
@@ -79,7 +79,7 @@ public class Synergy: AbstractEffect
 				abnormalCount++;
 			}
 		}
-		
+
 		if (abnormalCount >= _minSlot)
 		{
 			SkillHolder partyBuff = new SkillHolder(_partyBuffSkillId, Math.Min(abnormalCount - 1, _skillLevelScaleTo));
@@ -87,10 +87,10 @@ public class Synergy: AbstractEffect
 			if (partyBuffSkill != null)
 			{
 				WorldObject target = partyBuffSkill.getTarget(effector, effected, false, false, false);
-				if ((target != null) && target.isCreature())
+				if (target != null && target.isCreature())
 				{
-					BuffInfo abnormalBuffInfo = effector.getEffectList().getFirstBuffInfoByAbnormalType(partyBuffSkill.getAbnormalType());
-					if ((abnormalBuffInfo != null) && (abnormalBuffInfo.getSkill().getAbnormalLevel() != (abnormalCount - 1)))
+					BuffInfo? abnormalBuffInfo = effector.getEffectList().getFirstBuffInfoByAbnormalType(partyBuffSkill.getAbnormalType());
+					if (abnormalBuffInfo != null && abnormalBuffInfo.getSkill().getAbnormalLevel() != abnormalCount - 1)
 					{
 						effector.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, _partyBuffSkillId);
 					}
@@ -109,7 +109,7 @@ public class Synergy: AbstractEffect
 		{
 			effector.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, _partyBuffSkillId);
 		}
-		
+
 		return skill.isToggle();
 	}
 }

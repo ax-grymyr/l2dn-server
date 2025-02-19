@@ -52,12 +52,12 @@ public class EnergyAttack: AbstractEffect
 
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effector.isPlayer())
+        Player? attacker = effector.getActingPlayer();
+		if (!effector.isPlayer() || attacker == null)
 		{
 			return;
 		}
 
-		Player attacker = effector.getActingPlayer();
 		int charge = Math.Min(_chargeConsume, attacker.getCharges());
 		if (!attacker.decreaseCharges(charge))
 		{
@@ -75,9 +75,9 @@ public class EnergyAttack: AbstractEffect
 
 		double defenceIgnoreRemoval = effected.getStat().getValue(Stat.DEFENCE_IGNORE_REMOVAL, 1);
 		double defenceIgnoreRemovalAdd = effected.getStat().getValue(Stat.DEFENCE_IGNORE_REMOVAL_ADD, 0);
-		double pDefMod = Math.Min(1, (defenceIgnoreRemoval - 1) + (_pDefMod));
+		double pDefMod = Math.Min(1, defenceIgnoreRemoval - 1 + _pDefMod);
 		int pDef = effected.getPDef();
-		double ignoredPDef = pDef - (pDef * pDefMod);
+		double ignoredPDef = pDef - pDef * pDefMod;
 		if (ignoredPDef > 0)
 		{
 			ignoredPDef = Math.Max(0, ignoredPDef - defenceIgnoreRemovalAdd);
@@ -87,7 +87,7 @@ public class EnergyAttack: AbstractEffect
 
 		double shieldDefenceIgnoreRemoval = effected.getStat().getValue(Stat.SHIELD_DEFENCE_IGNORE_REMOVAL, 1);
 		double shieldDefenceIgnoreRemovalAdd = effected.getStat().getValue(Stat.SHIELD_DEFENCE_IGNORE_REMOVAL_ADD, 0);
-		if (!_ignoreShieldDefence || (shieldDefenceIgnoreRemoval > 1) || (shieldDefenceIgnoreRemovalAdd > 0))
+		if (!_ignoreShieldDefence || shieldDefenceIgnoreRemoval > 1 || shieldDefenceIgnoreRemovalAdd > 0)
 		{
 			byte shield = Formulas.calcShldUse(attacker, effected);
 			switch (shield)
@@ -98,7 +98,7 @@ public class EnergyAttack: AbstractEffect
 					if (_ignoreShieldDefence)
 					{
 						double shieldDefMod = Math.Max(0, shieldDefenceIgnoreRemoval - 1);
-						double ignoredShieldDef = shieldDef - (shieldDef * shieldDefMod);
+						double ignoredShieldDef = shieldDef - shieldDef * shieldDefMod;
 						if (ignoredShieldDef > 0)
 						{
 							ignoredShieldDef = Math.Max(0, ignoredShieldDef - shieldDefenceIgnoreRemovalAdd);
@@ -134,7 +134,7 @@ public class EnergyAttack: AbstractEffect
 			double pvpPveMod = Formulas.calculatePvpPveBonus(attacker, effected, skill, true);
 
 			// Skill specific mods.
-			double energyChargesBoost = 1 + (charge * 0.1); // 10% bonus damage for each charge used.
+			double energyChargesBoost = 1 + charge * 0.1; // 10% bonus damage for each charge used.
 			double critMod = critical ? Formulas.calcCritDamage(attacker, effected, skill) : 1;
 			double ssmod = 1;
 			if (skill.useSoulShot())
@@ -154,8 +154,8 @@ public class EnergyAttack: AbstractEffect
 			// ...................________Initial Damage_________...__Charges Additional Damage__...____________________________________
 			// ATTACK CALCULATION ((77 * ((pAtk * lvlMod) + power) * (1 + (0.1 * chargesConsumed)) / pdef) * skillPower) + skillPowerAdd
 			// ```````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^```^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-			double baseMod = (77 * ((attacker.getPAtk() * attacker.getLevelMod()) + _power +
-			                        effector.getStat().getValue(Stat.SKILL_POWER_ADD, 0))) / defence;
+			double baseMod = 77 * (attacker.getPAtk() * attacker.getLevelMod() + _power +
+                effector.getStat().getValue(Stat.SKILL_POWER_ADD, 0)) / defence;
 			damage = baseMod * ssmod * critMod * weaponTraitMod * generalTraitMod * weaknessMod * attributeMod *
 			         energyChargesBoost * pvpPveMod;
 		}
@@ -168,12 +168,13 @@ public class EnergyAttack: AbstractEffect
 				: Config.PVE_ENERGY_SKILL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId()];
 		}
 
-		if (effected.isPlayable())
+        Player? effectedPlayer = effected.getActingPlayer();
+		if (effected.isPlayable() && effectedPlayer != null)
 		{
 			// TODO: why defence not used
 			defence *= attacker.isPlayable()
-				? Config.PVP_ENERGY_SKILL_DEFENCE_MULTIPLIERS[effected.getActingPlayer().getClassId()]
-				: Config.PVE_ENERGY_SKILL_DEFENCE_MULTIPLIERS[effected.getActingPlayer().getClassId()];
+				? Config.PVP_ENERGY_SKILL_DEFENCE_MULTIPLIERS[effectedPlayer.getClassId()]
+				: Config.PVE_ENERGY_SKILL_DEFENCE_MULTIPLIERS[effectedPlayer.getClassId()];
 		}
 
 		damage = Math.Max(0, damage * effector.getStat().getValue(Stat.PHYSICAL_SKILL_POWER, 1)) * balanceMod;

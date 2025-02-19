@@ -31,11 +31,11 @@ public class FlyAway: AbstractEffect
 	{
 		int dx = effector.getX() - effected.getX();
 		int dy = effector.getY() - effected.getY();
-		double distance = Math.Sqrt((dx * dx) + (dy * dy));
+		double distance = Math.Sqrt(dx * dx + dy * dy);
 		double nRadius = effector.getCollisionRadius() + effected.getCollisionRadius() + _radius;
 		
-		int x = (int) (effector.getX() - (nRadius * (dx / distance)));
-		int y = (int) (effector.getY() - (nRadius * (dy / distance)));
+		int x = (int) (effector.getX() - nRadius * (dx / distance));
+		int y = (int) (effector.getY() - nRadius * (dy / distance));
 		int z = effector.getZ();
 
 		Location3D destination = GeoEngine.getInstance().getValidLocation(effected.Location.Location3D,

@@ -19,23 +19,23 @@ public class TeleportToNpc: AbstractEffect
 {
 	private readonly int _npcId;
 	private readonly bool _party;
-	
+
 	public TeleportToNpc(StatSet @params)
 	{
 		_npcId = @params.getInt("npcId");
 		_party = @params.getBoolean("party", false);
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.TELEPORT_TO_TARGET;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		Location? teleLocation = null;
@@ -46,11 +46,11 @@ public class TeleportToNpc: AbstractEffect
 				teleLocation = npc.Location;
 			}
 		}
-		
+
 		if (teleLocation != null)
 		{
-			Party party = effected.getParty();
-			if (_party && (party != null))
+			Party? party = effected.getParty();
+			if (_party && party != null)
 			{
 				foreach (Player member in party.getMembers())
 				{
@@ -63,7 +63,7 @@ public class TeleportToNpc: AbstractEffect
 			}
 		}
 	}
-	
+
 	private void teleport(Creature effected, Location location)
 	{
 		if (effected.IsInsideRadius2D(location.Location2D, 900))

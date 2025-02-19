@@ -39,7 +39,7 @@ public class MaxHp: AbstractStatEffect
 						}
 						case StatModifierType.PER:
 						{
-							effected.setCurrentHp(effected.getCurrentHp() + (effected.getMaxHp() * (_amount / 100)));
+							effected.setCurrentHp(effected.getCurrentHp() + effected.getMaxHp() * (_amount / 100));
 							break;
 						}
 					}

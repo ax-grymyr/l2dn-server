@@ -34,7 +34,7 @@ public class Bluff: AbstractEffect
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		// Headquarters NPC should not rotate
-		if ((effected.getId() == 35062) || effected.isRaid() || effected.isRaidMinion())
+		if (effected.getId() == 35062 || effected.isRaid() || effected.isRaidMinion())
 		{
 			return;
 		}

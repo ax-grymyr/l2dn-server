@@ -17,15 +17,15 @@ public class UnsummonAgathion: AbstractEffect
 	public UnsummonAgathion(StatSet @params)
 	{
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		Player player = effector.getActingPlayer();
+		Player? player = effector.getActingPlayer();
 		if (player != null)
 		{
 			int agathionId = player.getAgathionId();
@@ -34,7 +34,7 @@ public class UnsummonAgathion: AbstractEffect
 				player.setAgathionId(0);
 				player.sendPacket(new ExUserInfoCubicPacket(player));
 				player.broadcastCharInfo();
-				
+
 				if (player.Events.HasSubscribers<OnPlayerUnsummonAgathion>())
 				{
 					player.Events.NotifyAsync(new OnPlayerUnsummonAgathion(player, agathionId));

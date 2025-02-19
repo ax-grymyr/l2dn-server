@@ -26,14 +26,14 @@ public class Summon: AbstractEffect
 	private readonly ItemHolder _consumeItem;
 	private readonly TimeSpan? _lifeTime;
 	private readonly int _consumeItemInterval;
-	
+
 	public Summon(StatSet @params)
 	{
 		if (@params.isEmpty())
 		{
 			throw new ArgumentException("Summon effect without parameters!");
 		}
-		
+
 		_npcId = @params.getInt("npcId");
 		_expMultiplier = @params.getFloat("expMultiplier", 1);
 		_consumeItem = new ItemHolder(@params.getInt("consumeItemId", 0), @params.getInt("consumeItemCount", 1));
@@ -42,36 +42,39 @@ public class Summon: AbstractEffect
 		if (lifeTime != null)
 			_lifeTime = TimeSpan.FromMilliseconds(lifeTime.Value);
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.SUMMON;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effected.isPlayer())
+        Player? player = effected.getActingPlayer();
+		if (!effected.isPlayer() || player == null)
 		{
 			return;
 		}
-		
-		Player player = effected.getActingPlayer();
+
 		if (player.hasServitors())
 		{
 			player.getServitors().Values.ForEach(s => s.unSummon(player));
 		}
-		
-		NpcTemplate template = NpcData.getInstance().getTemplate(_npcId);
+
+		NpcTemplate? template = NpcData.getInstance().getTemplate(_npcId);
+        if (template == null)
+            return;
+
 		Servitor summon = new(template, player);
 		TimeSpan consumeItemInterval = TimeSpan.FromMilliseconds((_consumeItemInterval > 0
 			? _consumeItemInterval
-			: (template.getRace() != Race.SIEGE_WEAPON ? 240 : 60)) * 1000);
-		
+			: template.getRace() != Race.SIEGE_WEAPON ? 240 : 60) * 1000);
+
 		summon.setName(template.getName());
 		summon.setTitle(effected.getName());
 		summon.setReferenceSkill(skill.getId());
@@ -79,7 +82,7 @@ public class Summon: AbstractEffect
 		summon.setLifeTime(_lifeTime); // Classic hack. Resummon upon entering game.
 		summon.setItemConsume(_consumeItem);
 		summon.setItemConsumeInterval(consumeItemInterval);
-		
+
 		int maxPetLevel = ExperienceData.getInstance().getMaxPetLevel();
 		if (summon.getLevel() >= maxPetLevel)
 		{
@@ -89,7 +92,7 @@ public class Summon: AbstractEffect
 		{
 			summon.getStat().setExp(ExperienceData.getInstance().getExpForLevel(summon.getLevel() % maxPetLevel));
 		}
-		
+
 		// Summons must have their master buffs upon spawn.
 		foreach (BuffInfo effect in player.getEffectList().getEffects())
 		{
@@ -99,13 +102,13 @@ public class Summon: AbstractEffect
 				sk.applyEffects(player, summon, false, effect.getTime() ?? TimeSpan.Zero);
 			}
 		}
-		
+
 		summon.setCurrentHp(summon.getMaxHp());
 		summon.setCurrentMp(summon.getMaxMp());
 		summon.setHeading(player.getHeading());
-		
+
 		player.addServitor(summon);
-		
+
 		summon.setShowSummonAnimation(true);
 		summon.spawnMe();
 		summon.setRunning();

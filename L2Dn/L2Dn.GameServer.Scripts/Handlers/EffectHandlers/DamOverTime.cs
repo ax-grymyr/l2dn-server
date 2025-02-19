@@ -15,15 +15,15 @@ public class DamOverTime: AbstractEffect
 {
 	private readonly bool _canKill;
 	private readonly double _power;
-	
+
 	public DamOverTime(StatSet @params)
 	{
 		_canKill = @params.getBoolean("canKill", false);
 		_power = @params.getDouble("power");
 		setTicks(@params.getInt("ticks"));
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (!skill.isToggle() && skill.isMagic())
 		{
@@ -32,38 +32,38 @@ public class DamOverTime: AbstractEffect
 			if (mcrit)
 			{
 				double damage = _power * 10; // Tests show that 10 times HP DOT is taken during magic critical.
-				
-				if (!_canKill && (damage >= (effected.getCurrentHp() - 1)))
+
+				if (!_canKill && damage >= effected.getCurrentHp() - 1)
 				{
 					damage = effected.getCurrentHp() - 1;
 				}
-				
+
 				effected.reduceCurrentHp(damage, effector, skill, true, false, true, false);
 			}
 		}
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.DMG_OVER_TIME;
 	}
-	
-	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isDead())
 		{
 			return false;
 		}
-		
+
 		double damage = _power * getTicksMultiplier();
-		if (damage >= (effected.getCurrentHp() - 1))
+		if (damage >= effected.getCurrentHp() - 1)
 		{
 			if (skill.isToggle())
 			{
 				effected.sendPacket(SystemMessageId.YOUR_SKILL_HAS_BEEN_CANCELED_DUE_TO_LACK_OF_HP);
 				return false;
 			}
-			
+
 			// For DOT skills that will not kill effected player.
 			if (!_canKill)
 			{
@@ -75,7 +75,7 @@ public class DamOverTime: AbstractEffect
 				damage = effected.getCurrentHp() - 1;
 			}
 		}
-		
+
 		effector.doAttack(damage, effected, skill, true, false, false, false);
 		return skill.isToggle();
 	}

@@ -12,20 +12,21 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
  */
 public class ImmobilePetBuff: AbstractEffect
 {
-	public ImmobilePetBuff(StatSet @params)
-	{
-	}
-	
-	public override void onExit(Creature effector, Creature effected, Skill skill)
-	{
-		effected.setImmobilized(false);
-	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
-	{
-		if (effected.isSummon() && ((effector == effected) || (effector.isPlayer() && (((L2Dn.GameServer.Model.Actor.Summon) effected).getOwner() == effector))))
-		{
-			effected.setImmobilized(true);
-		}
-	}
+    public ImmobilePetBuff(StatSet @params)
+    {
+    }
+
+    public override void onExit(Creature effector, Creature effected, Skill skill)
+    {
+        effected.setImmobilized(false);
+    }
+
+    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        if (effected.isSummon() && (effector == effected ||
+                (effector.isPlayer() && ((L2Dn.GameServer.Model.Actor.Summon)effected).getOwner() == effector)))
+        {
+            effected.setImmobilized(true);
+        }
+    }
 }

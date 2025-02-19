@@ -16,20 +16,20 @@ public class HairAccessorySet: AbstractEffect
 	public HairAccessorySet(StatSet @params)
 	{
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effector.isPlayer() || !effected.isPlayer() || effected.isAlikeDead())
+        Player? player = effected.getActingPlayer();
+		if (!effector.isPlayer() || player == null || !effected.isPlayer() || effected.isAlikeDead())
 		{
 			return;
 		}
-		
-		Player player = effected.getActingPlayer();
+
 		player.setHairAccessoryEnabled(!player.isHairAccessoryEnabled());
 		player.broadcastUserInfo(UserInfoType.APPAREANCE);
 		player.sendPacket(player.isHairAccessoryEnabled() ? SystemMessageId.HEAD_ACCESSORIES_ARE_VISIBLE_FROM_NOW_ON : SystemMessageId.HEAD_ACCESSORIES_ARE_NO_LONGER_SHOWN);

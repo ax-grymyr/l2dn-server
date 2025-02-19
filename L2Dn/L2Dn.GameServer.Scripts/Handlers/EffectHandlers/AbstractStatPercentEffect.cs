@@ -28,6 +28,6 @@ public class AbstractStatPercentEffect: AbstractEffect
 	
 	public override void pump(Creature effected, Skill skill)
 	{
-		effected.getStat().mergeMul(_stat, (_amount / 100) + 1);
+		effected.getStat().mergeMul(_stat, _amount / 100 + 1);
 	}
 }

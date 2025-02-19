@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -16,10 +17,11 @@ public class ChatPartyRoomAll: IChatHandler
 	{
 		ChatType.PARTYROOM_ALL,
 	};
-	
+
 	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
-	{
-		if (activeChar.isInParty() && activeChar.getParty().isInCommandChannel() && activeChar.getParty().isLeader(activeChar))
+    {
+        Party? party = activeChar.getParty();
+		if (activeChar.isInParty() && party != null && party.isInCommandChannel() && party.isLeader(activeChar))
 		{
 			if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.Contains(type))
 			{
@@ -31,10 +33,11 @@ public class ChatPartyRoomAll: IChatHandler
 				activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 				return;
 			}
-			activeChar.getParty().getCommandChannel().broadcastCreatureSay(new CreatureSayPacket(activeChar, type, activeChar.getName(), text, shareLocation), activeChar);
+
+            party.getCommandChannel().broadcastCreatureSay(new CreatureSayPacket(activeChar, type, activeChar.getName(), text, shareLocation), activeChar);
 		}
 	}
-	
+
 	public ChatType[] getChatTypeList()
 	{
 		return CHAT_TYPES;

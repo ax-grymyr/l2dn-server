@@ -21,18 +21,18 @@ public class FatalBlow: AbstractEffect
 	private readonly Set<AbnormalType> _abnormals;
 	private readonly double _abnormalPower;
 	private readonly bool _overHit;
-	
+
 	public FatalBlow(StatSet @params)
 	{
 		_power = @params.getDouble("power");
 		_chanceBoost = @params.getDouble("chanceBoost");
 		_criticalChance = @params.getDouble("criticalChance", 0);
 		_overHit = @params.getBoolean("overHit", false);
-		
-		string abnormals = @params.getString("abnormalType", null);
+
+		string abnormals = @params.getString("abnormalType", string.Empty);
 		if (!string.IsNullOrEmpty(abnormals))
 		{
-			_abnormals = new();
+			_abnormals = [];
 			foreach (string slot in abnormals.Split(";"))
 			{
 				_abnormals.add(Enum.Parse<AbnormalType>(slot));
@@ -40,40 +40,40 @@ public class FatalBlow: AbstractEffect
 		}
 		else
 		{
-			_abnormals = new();
+			_abnormals = [];
 		}
 		_abnormalPower = @params.getDouble("abnormalPower", 1);
 	}
-	
+
 	public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
 		return !Formulas.calcSkillEvasion(effector, effected, skill) && Formulas.calcBlowSuccess(effector, effected, skill, _chanceBoost);
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.PHYSICAL_ATTACK;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		if (effector.isAlikeDead())
 		{
 			return;
 		}
-		
+
 		if (_overHit && effected.isAttackable())
 		{
 			((Attackable) effected).overhitEnabled(true);
 		}
-		
+
 		double power = _power;
-		
+
 		// Check if we apply an abnormal modifier.
 		if (!_abnormals.isEmpty())
 		{
@@ -86,17 +86,17 @@ public class FatalBlow: AbstractEffect
 				}
 			}
 		}
-		
+
 		bool ss = skill.useSoulShot() && (effector.isChargedShot(ShotType.SOULSHOTS) || effector.isChargedShot(ShotType.BLESSED_SOULSHOTS));
 		byte shld = Formulas.calcShldUse(effector, effected);
 		double damage = Formulas.calcBlowDamage(effector, effected, skill, false, power, shld, ss);
 		bool crit = Formulas.calcCrit(_criticalChance, effector, effected, skill);
-		
+
 		if (crit)
 		{
 			damage *= 2;
 		}
-		
+
 		effector.doAttack(damage, effected, skill, false, false, true, false);
 	}
 }

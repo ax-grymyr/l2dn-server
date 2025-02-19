@@ -47,7 +47,7 @@ public class ChatHeroVoice: IChatHandler
 		CreatureSayPacket cs = new CreatureSayPacket(activeChar, type, activeChar.getName(), text, shareLocation);
 		foreach (Player player in World.getInstance().getPlayers())
 		{
-			if ((player != null) && !BlockList.isBlocked(player, activeChar))
+			if (player != null && !BlockList.isBlocked(player, activeChar))
 			{
 				if (Config.FACTION_SYSTEM_ENABLED)
 				{

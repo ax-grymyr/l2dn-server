@@ -20,19 +20,19 @@ public abstract class AbstractStatEffect: AbstractEffect
 	protected Stat _mulStat;
 	protected double _amount;
 	protected StatModifierType _mode;
-	protected List<Condition> _conditions = new();
-	
+	protected List<Condition> _conditions = [];
+
 	public AbstractStatEffect(StatSet @params, Stat stat): this(@params, stat, stat)
 	{
 	}
-	
+
 	public AbstractStatEffect(StatSet @params, Stat mulStat, Stat addStat)
 	{
 		_addStat = addStat;
 		_mulStat = mulStat;
 		_amount = @params.getDouble("amount", 0);
 		_mode = @params.getEnum("mode", StatModifierType.DIFF);
-		
+
 		ItemTypeMask weaponTypesMask = ItemTypeMask.Zero;
 		List<string> weaponTypes = @params.getList<string>("weaponType");
 		if (weaponTypes != null)
@@ -50,7 +50,7 @@ public abstract class AbstractStatEffect: AbstractEffect
 				}
 			}
 		}
-		
+
 		ItemTypeMask armorTypesMask = ItemTypeMask.Zero;
 		List<string> armorTypes = @params.getList<string>("armorType");
 		if (armorTypes != null)
@@ -67,17 +67,17 @@ public abstract class AbstractStatEffect: AbstractEffect
 				}
 			}
 		}
-		
+
 		if (weaponTypesMask != ItemTypeMask.Zero)
 		{
 			_conditions.Add(new ConditionUsingItemType(weaponTypesMask));
 		}
-		
+
 		if (armorTypesMask != ItemTypeMask.Zero)
 		{
 			_conditions.Add(new ConditionUsingItemType(armorTypesMask));
 		}
-		
+
 		if (@params.contains("inCombat"))
 		{
 			_conditions.Add(new ConditionPlayerIsInCombat(@params.getBoolean("inCombat")));
@@ -87,13 +87,13 @@ public abstract class AbstractStatEffect: AbstractEffect
 		{
 			_conditions.Add(new ConditionUsingMagicWeapon(@params.getBoolean("magicWeapon")));
 		}
-		
+
 		if (@params.contains("twoHandWeapon"))
 		{
 			_conditions.Add(new ConditionUsingTwoHandWeapon(@params.getBoolean("twoHandWeapon")));
 		}
 	}
-	
+
 	public override void pump(Creature effected, Skill skill)
 	{
 		foreach (Condition cond in _conditions)
@@ -113,7 +113,7 @@ public abstract class AbstractStatEffect: AbstractEffect
 			}
 			case StatModifierType.PER:
 			{
-				effected.getStat().mergeMul(_mulStat, (_amount / 100) + 1);
+				effected.getStat().mergeMul(_mulStat, _amount / 100 + 1);
 				break;
 			}
 		}

@@ -40,7 +40,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 		}
 	}
 
-	public IParseBoardHandler getHandler(string cmd)
+	public IParseBoardHandler? getHandler(string cmd)
 	{
 		foreach (IParseBoardHandler cb in _datatable.Values)
 		{
@@ -88,7 +88,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 			return;
 		}
 
-		IParseBoardHandler cb = getHandler(command);
+		IParseBoardHandler? cb = getHandler(command);
 		if (cb == null)
 		{
 			LOG.Warn(nameof(CommunityBoardHandler) + ": Couldn't find parse handler for command " + command + "!");
@@ -151,7 +151,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 			}
 		}
 
-		IParseBoardHandler cb = getHandler(cmd);
+		IParseBoardHandler? cb = getHandler(cmd);
 		if (cb == null)
 		{
 			LOG.Warn(nameof(CommunityBoardHandler) + ": Couldn't find write handler for command " + cmd + "!");

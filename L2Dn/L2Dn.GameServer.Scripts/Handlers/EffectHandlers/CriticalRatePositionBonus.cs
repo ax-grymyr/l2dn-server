@@ -15,20 +15,20 @@ public class CriticalRatePositionBonus: AbstractEffect
 {
 	private readonly double _amount;
 	private readonly Position _position;
-	
+
 	public CriticalRatePositionBonus(StatSet @params)
 	{
 		_amount = @params.getDouble("amount", 0);
 		_position = @params.getEnum("position", Position.Front);
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
-		effected.getStat().mergePositionTypeValue(Stat.CRITICAL_RATE, _position, (_amount / 100) + 1, (a, b) => a * b);
+		effected.getStat().mergePositionTypeValue(Stat.CRITICAL_RATE, _position, _amount / 100 + 1, (a, b) => a * b);
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		effected.getStat().mergePositionTypeValue(Stat.CRITICAL_RATE, _position, (_amount / 100) + 1, (a, b) => a / b);
+		effected.getStat().mergePositionTypeValue(Stat.CRITICAL_RATE, _position, _amount / 100 + 1, (a, b) => a / b);
 	}
 }

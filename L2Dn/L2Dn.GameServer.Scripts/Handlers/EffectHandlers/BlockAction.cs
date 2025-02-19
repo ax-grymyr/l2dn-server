@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
  */
 public class BlockAction: AbstractEffect
 {
-	private readonly Set<int> _blockedActions = new();
+	private readonly Set<int> _blockedActions = [];
 
 	public BlockAction(StatSet @params)
 	{
@@ -29,7 +29,7 @@ public class BlockAction: AbstractEffect
 
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
-		return (effected != null) && effected.isPlayer();
+		return effected != null && effected.isPlayer();
 	}
 
 	public override bool checkCondition(int id)
@@ -37,7 +37,7 @@ public class BlockAction: AbstractEffect
 		return !_blockedActions.Contains(id);
 	}
 
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (_blockedActions.Contains(BotReportTable.PARTY_ACTION_BLOCK_ID))
 		{

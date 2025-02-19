@@ -18,40 +18,44 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class VitalityPointUp: AbstractEffect
 {
 	private readonly int _value;
-	
+
 	public VitalityPointUp(StatSet @params)
 	{
 		_value = @params.getInt("value", 0);
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.VITALITY_POINT_UP;
 	}
-	
+
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
-		return (effected != null) && effected.isPlayer();
+		return effected != null && effected.isPlayer();
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		effected.getActingPlayer().updateVitalityPoints(_value, false, false);
-		
-		UserInfoPacket ui = new UserInfoPacket(effected.getActingPlayer());
+        Player? player = effected.getActingPlayer();
+        if (player == null)
+            return;
+
+        player.updateVitalityPoints(_value, false, false);
+
+		UserInfoPacket ui = new UserInfoPacket(player);
 		ui.addComponentType(UserInfoType.VITA_FAME);
-		effected.getActingPlayer().sendPacket(ui);
-		
+        player.sendPacket(ui);
+
 		// Send item list to update vitality items with red icons in inventory.
 		ThreadPool.schedule(() =>
 		{
-			List<Item> items = new();
-			foreach (Item i in effected.getActingPlayer().getInventory().getItems())
+			List<Item> items = [];
+			foreach (Item i in player.getInventory().getItems())
 			{
 				if (i.getTemplate().hasSkills())
 				{
@@ -65,11 +69,11 @@ public class VitalityPointUp: AbstractEffect
 					}
 				}
 			}
-			
+
 			if (items.Count != 0)
 			{
 				InventoryUpdatePacket iu = new InventoryUpdatePacket(items);
-				effected.getActingPlayer().sendInventoryUpdate(iu);
+				player.sendInventoryUpdate(iu);
 			}
 		}, 1000);
 	}

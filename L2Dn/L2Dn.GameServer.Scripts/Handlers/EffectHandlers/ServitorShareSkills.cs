@@ -17,47 +17,36 @@ public class ServitorShareSkills: AbstractEffect
 	public static int SERVITOR_SHARE_SKILL_ID = 1557;
 	public static int POWERFUL_SERVITOR_SHARE_SKILL_ID = 45054;
 	// For Powerful servitor share (45054).
-	public static int[] SERVITOR_SHARE_PASSIVE_SKILLS =
-	{
-		50189,
-		50468,
-		50190,
-		50353,
-		50446,
-		50444,
-		50555,
-		50445,
-		50449,
-		50448,
-		50447,
-		50450
-	};
-	
+    public static int[] SERVITOR_SHARE_PASSIVE_SKILLS =
+    [
+        50189, 50468, 50190, 50353, 50446, 50444, 50555, 50445, 50449, 50448, 50447, 50450,
+    ];
+
 	public ServitorShareSkills(StatSet @params)
 	{
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
-		if (effected.isPlayer())
+        Player? player = effected.getActingPlayer();
+		if (effected.isPlayer() && player != null)
 		{
-			Player player = effected.getActingPlayer();
-			if ((player.getClient()?.State != GameSessionState.InGame))
+			if (player.getClient()?.State != GameSessionState.InGame)
 			{
 				// ThreadPool.schedule(() => onStart(effector, effected, skill, item), 1000);
 				return;
 			}
-			
+
 			if (!effected.hasServitors())
 			{
 				return;
 			}
-			
+
 			ICollection<L2Dn.GameServer.Model.Actor.Summon> summons = player.getServitors().Values;
 			for (int i = 0; i < SERVITOR_SHARE_PASSIVE_SKILLS.Length; i++)
 			{
 				int passiveSkillId = SERVITOR_SHARE_PASSIVE_SKILLS[i];
-				BuffInfo passiveSkillEffect = player.getEffectList().getBuffInfoBySkillId(passiveSkillId);
+				BuffInfo? passiveSkillEffect = player.getEffectList().getBuffInfoBySkillId(passiveSkillId);
 				if (passiveSkillEffect != null)
 				{
 					foreach (L2Dn.GameServer.Model.Actor.Summon s in summons)
@@ -73,27 +62,27 @@ public class ServitorShareSkills: AbstractEffect
 			}
 		}
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		if (!effected.isPlayer())
+        Player? player = effected.getActingPlayer();
+		if (!effected.isPlayer() || player == null)
 		{
 			return;
 		}
-		
+
 		if (!effected.hasServitors())
 		{
 			return;
 		}
-		
-		Player player = effected.getActingPlayer();
+
 		ICollection<L2Dn.GameServer.Model.Actor.Summon> summons = player.getServitors().Values;
 		for (int i = 0; i < SERVITOR_SHARE_PASSIVE_SKILLS.Length; i++)
 		{
 			int passiveSkillId = SERVITOR_SHARE_PASSIVE_SKILLS[i];
 			foreach (L2Dn.GameServer.Model.Actor.Summon s in summons)
 			{
-				BuffInfo passiveSkillEffect = s.getEffectList().getBuffInfoBySkillId(passiveSkillId);
+				BuffInfo? passiveSkillEffect = s.getEffectList().getBuffInfoBySkillId(passiveSkillId);
 				if (passiveSkillEffect != null)
 				{
 					s.removeSkill(passiveSkillEffect.getSkill(), true);

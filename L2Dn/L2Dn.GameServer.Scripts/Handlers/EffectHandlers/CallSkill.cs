@@ -21,27 +21,27 @@ public class CallSkill: AbstractEffect
 	private readonly SkillHolder _skill;
 	private readonly int _skillLevelScaleTo;
 	private readonly int _chance;
-	
+
 	public CallSkill(StatSet @params)
 	{
 		_skill = new SkillHolder(@params.getInt("skillId"), @params.getInt("skillLevel", 1), @params.getInt("skillSubLevel", 0));
 		_skillLevelScaleTo = @params.getInt("skillLevelScaleTo", 0);
 		_chance = @params.getInt("chance", 100);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if ((_chance < 100) && (Rnd.get(100) > _chance))
+		if (_chance < 100 && Rnd.get(100) > _chance)
 		{
 			return;
 		}
-		
-		Skill triggerSkill;
+
+		Skill? triggerSkill;
 		if (_skillLevelScaleTo <= 0)
 		{
 			// Mobius: Use 0 to trigger max effector learned skill level.
@@ -65,7 +65,7 @@ public class CallSkill: AbstractEffect
 		}
 		else
 		{
-			BuffInfo buffInfo = effected.getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
+			BuffInfo? buffInfo = effected.getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
 			if (buffInfo != null)
 			{
 				triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(), Math.Min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
@@ -75,15 +75,15 @@ public class CallSkill: AbstractEffect
 				triggerSkill = _skill.getSkill();
 			}
 		}
-		
+
 		if (triggerSkill != null)
 		{
 			// Prevent infinite loop.
-			if ((skill.getId() == triggerSkill.getId()) && (skill.getLevel() == triggerSkill.getLevel()))
+			if (skill.getId() == triggerSkill.getId() && skill.getLevel() == triggerSkill.getLevel())
 			{
 				return;
 			}
-			
+
 			TimeSpan hitTime = triggerSkill.getHitTime();
 			if (hitTime > TimeSpan.Zero)
 			{
@@ -94,7 +94,7 @@ public class CallSkill: AbstractEffect
 
 				effector.broadcastPacket(new MagicSkillUsePacket(effector, effected, triggerSkill.getDisplayId(),
 					triggerSkill.getLevel(), hitTime, TimeSpan.Zero));
-				
+
 				ThreadPool.schedule(() => SkillCaster.triggerCast(effector, effected, triggerSkill), hitTime);
 			}
 			else

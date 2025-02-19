@@ -25,7 +25,7 @@ public class SkillTurning: AbstractEffect
 	
 	public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
-		return _staticChance ? Formulas.calcProbability(_chance, effector, effected, skill) : (Rnd.get(100) < _chance);
+		return _staticChance ? Formulas.calcProbability(_chance, effector, effected, skill) : Rnd.get(100) < _chance;
 	}
 	
 	public override bool isInstant()
@@ -35,7 +35,7 @@ public class SkillTurning: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if ((effected == effector) || effected.isRaid())
+		if (effected == effector || effected.isRaid())
 		{
 			return;
 		}

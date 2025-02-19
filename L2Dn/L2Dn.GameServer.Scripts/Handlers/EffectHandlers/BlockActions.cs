@@ -15,8 +15,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
  */
 public class BlockActions: AbstractEffect
 {
-	private readonly Set<int> _allowedSkills = new();
-	
+	private readonly Set<int> _allowedSkills = [];
+
 	public BlockActions(StatSet @params)
 	{
 		foreach (string skill in @params.getString("allowedSkills", "").Split(";"))
@@ -27,49 +27,49 @@ public class BlockActions: AbstractEffect
 			}
 		}
 	}
-	
+
 	public override long getEffectFlags()
 	{
 		return _allowedSkills.isEmpty() ? EffectFlag.BLOCK_ACTIONS.getMask() : EffectFlag.CONDITIONAL_BLOCK_ACTIONS.getMask();
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.BLOCK_ACTIONS;
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
-		if ((effected == null) || effected.isRaid())
+		if (effected == null || effected.isRaid())
 		{
 			return;
 		}
-		
+
 		foreach (int skillId in _allowedSkills)
 		{
 			effected.addBlockActionsAllowedSkill(skillId);
 		}
-		
+
 		effected.startParalyze();
-		
+
 		// Cancel running skill casters.
 		effected.abortAllSkillCasters();
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		foreach (int skillId in _allowedSkills)
 		{
 			effected.removeBlockActionsAllowedSkill(skillId);
 		}
-		
+
 		if (effected.isPlayable())
 		{
 			if (effected.isSummon())
 			{
-				if ((effector != null) && !effector.isDead())
+				if (effector != null && !effector.isDead())
 				{
-					if (effector.isPlayable() && (effected.getActingPlayer().getPvpFlag() == PvpFlagStatus.None))
+					if (effector.isPlayable() && effected.getActingPlayer()?.getPvpFlag() == PvpFlagStatus.None)
 					{
 						effected.disableCoreAI(false);
 					}

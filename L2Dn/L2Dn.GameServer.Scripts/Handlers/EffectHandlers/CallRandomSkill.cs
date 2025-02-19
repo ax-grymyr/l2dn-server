@@ -15,12 +15,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
  */
 public class CallRandomSkill: AbstractEffect
 {
-	private readonly List<SkillHolder> _skills = new();
-	
+	private readonly List<SkillHolder> _skills = [];
+
 	public CallRandomSkill(StatSet @params)
 	{
-		string skills = @params.getString("skills", null);
-		if (skills != null)
+		string skills = @params.getString("skills", string.Empty);
+		if (!string.IsNullOrEmpty(skills))
 		{
 			foreach (string skill in skills.Split(";"))
 			{
@@ -28,12 +28,12 @@ public class CallRandomSkill: AbstractEffect
 			}
 		}
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		SkillCaster.triggerCast(effector, effected, _skills.GetRandomElement().getSkill());

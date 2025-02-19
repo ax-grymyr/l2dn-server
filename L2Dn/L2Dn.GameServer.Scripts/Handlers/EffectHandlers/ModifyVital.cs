@@ -92,9 +92,9 @@ public class ModifyVital: AbstractEffect
 			}
 			case ModifyType.PER:
 			{
-				effected.setCurrentCp(effected.getCurrentCp() + (effected.getMaxCp() * (_cp / 100.0)));
-				effected.setCurrentHp(effected.getCurrentHp() + (effected.getMaxHp() * (_hp / 100.0)));
-				effected.setCurrentMp(effected.getCurrentMp() + (effected.getMaxMp() * (_mp / 100.0)));
+				effected.setCurrentCp(effected.getCurrentCp() + effected.getMaxCp() * (_cp / 100.0));
+				effected.setCurrentHp(effected.getCurrentHp() + effected.getMaxHp() * (_hp / 100.0));
+				effected.setCurrentMp(effected.getCurrentMp() + effected.getMaxMp() * (_mp / 100.0));
 				break;
 			}
 		}

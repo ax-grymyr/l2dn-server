@@ -14,38 +14,46 @@ public class AddSkillBySkill: AbstractEffect
 	private readonly int _existingSkillId;
 	private readonly int _existingSkillLevel;
 	private readonly SkillHolder _addedSkill;
-	
+
 	public AddSkillBySkill(StatSet @params)
 	{
 		_existingSkillId = @params.getInt("existingSkillId");
 		_existingSkillLevel = @params.getInt("existingSkillLevel");
 		_addedSkill = new SkillHolder(@params.getInt("addedSkillId"), @params.getInt("addedSkillLevel"));
 	}
-	
-	public override bool canPump(Creature effector, Creature effected, Skill skill)
+
+	public override bool canPump(Creature? effector, Creature effected, Skill? skill)
 	{
-		return effected.isPlayer() && !effected.isTransformed() && (effected.getSkillLevel(_existingSkillId) == _existingSkillLevel);
+		return effected.isPlayer() && !effected.isTransformed() && effected.getSkillLevel(_existingSkillId) == _existingSkillLevel;
 	}
-	
+
 	public override void pump(Creature effected, Skill skill)
-	{
-		effected.getActingPlayer().addSkill(_addedSkill.getSkill(), false);
+    {
+        Player? player = effected.getActingPlayer();
+        if (player == null)
+            return;
+
+        player.addSkill(_addedSkill.getSkill(), false);
 		Utilities.ThreadPool.schedule(() =>
 		{
-			effected.getActingPlayer().sendSkillList();
-			effected.getActingPlayer().getStat().recalculateStats(false);
-			effected.getActingPlayer().broadcastUserInfo();
+            player.sendSkillList();
+            player.getStat().recalculateStats(false);
+            player.broadcastUserInfo();
 		}, 100);
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
+        Player? player = effected.getActingPlayer();
+        if (player == null)
+            return;
+
 		effected.removeSkill(_addedSkill.getSkill(), false);
 		Utilities.ThreadPool.schedule(() =>
 		{
-			effected.getActingPlayer().sendSkillList();
-			effected.getActingPlayer().getStat().recalculateStats(false);
-			effected.getActingPlayer().broadcastUserInfo();
+            player.sendSkillList();
+            player.getStat().recalculateStats(false);
+            player.broadcastUserInfo();
 		}, 100);
 	}
 }

@@ -20,31 +20,31 @@ public abstract class AbstractDailyMissionHandler
 {
 	public const int MISSION_LEVEL_POINTS = 97224;
 	private const int CLAN_EXP = 94481;
-	
+
 	protected readonly Logger LOGGER = LogManager.GetLogger(nameof(AbstractDailyMissionHandler));
-	
+
 	private readonly DailyMissionDataHolder _holder;
-	
+
 	protected AbstractDailyMissionHandler(DailyMissionDataHolder holder)
 	{
 		_holder = holder;
 		init();
 	}
-	
+
 	public DailyMissionDataHolder getHolder()
 	{
 		return _holder;
 	}
-	
+
 	public abstract bool isAvailable(Player player);
-	
+
 	public abstract void init();
-	
+
 	public virtual int getProgress(Player player)
 	{
 		return player.getDailyMissions().getProgress(_holder.getId());
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public virtual void reset()
 	{
@@ -54,7 +54,7 @@ public abstract class AbstractDailyMissionHandler
 		}
 
 		int missionId = getHolder().getId();
-		
+
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -65,16 +65,16 @@ public abstract class AbstractDailyMissionHandler
 		{
 			LOGGER.Warn("Error while deleting rewards from database: " + e);
 		}
-		
+
 		World.getInstance().getPlayers().ForEach(r => r.getDailyMissions().reset(missionId, false));
 	}
-	
+
 	public bool requestReward(Player player)
 	{
 		if (isAvailable(player))
 		{
 			giveRewards(player);
-			
+
 			DailyMissionPlayerEntry entry = player.getDailyMissions().getOrCreateEntry(_holder.getId());
 			entry.setStatus(DailyMissionStatus.COMPLETED);
 			entry.setLastCompleted(DateTime.UtcNow);
@@ -82,10 +82,10 @@ public abstract class AbstractDailyMissionHandler
 			player.getDailyMissions().storeEntry(entry);
 			return true;
 		}
-		
+
 		return false;
 	}
-	
+
 	protected void giveRewards(Player player)
 	{
 		foreach (ItemHolder holder in _holder.getRewards())
@@ -94,7 +94,7 @@ public abstract class AbstractDailyMissionHandler
 			{
 				case CLAN_EXP:
 				{
-					Clan clan = player.getClan();
+					Clan? clan = player.getClan();
 					if (clan != null)
 					{
 						int expAmount = (int) holder.getCount();

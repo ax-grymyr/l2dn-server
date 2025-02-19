@@ -26,7 +26,7 @@ public class SummonNpc: AbstractEffect
 	private readonly bool _isSummonSpawn;
 	private readonly bool _singleInstance; // Only one instance of this NPC is allowed.
 	private readonly bool _isAggressive;
-	
+
 	public SummonNpc(StatSet @params)
 	{
 		_despawnDelay = @params.getInt("despawnDelay", 0);
@@ -37,47 +37,47 @@ public class SummonNpc: AbstractEffect
 		_singleInstance = @params.getBoolean("singleInstance", false);
 		_isAggressive = @params.getBoolean("aggressive", true); // Used by Decoy.
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.SUMMON_NPC;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effected.isPlayer() || effected.isAlikeDead() || effected.getActingPlayer().inObserverMode())
+        Player? player = effected.getActingPlayer();
+		if (!effected.isPlayer() || player == null || effected.isAlikeDead() || player.inObserverMode())
 		{
 			return;
 		}
-		
-		if ((_npcId <= 0) || (_npcCount <= 0))
+
+		if (_npcId <= 0 || _npcCount <= 0)
 		{
 			LOGGER.Warn(GetType().Name + ": Invalid NPC ID or count skill ID: " + skill.getId());
 			return;
 		}
-		
-		Player player = effected.getActingPlayer();
+
 		if (player.isMounted())
 		{
 			return;
 		}
-		
-		NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(_npcId);
+
+		NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(_npcId);
 		if (npcTemplate == null)
 		{
 			LOGGER.Warn(GetType().Name + ": Spawn of the nonexisting NPC ID: " + _npcId + ", skill ID:" + skill.getId());
 			return;
 		}
-		
+
 		int x = player.getX();
 		int y = player.getY();
 		int z = player.getZ();
-		
+
 		if (skill.getTargetType() == TargetType.GROUND)
 		{
 			Location3D? wordPosition = player.getActingPlayer().getCurrentSkillWorldPosition();
@@ -94,13 +94,13 @@ public class SummonNpc: AbstractEffect
 			y = effected.getY();
 			z = effected.getZ();
 		}
-		
+
 		if (_randomOffset)
 		{
-			x += (Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20));
-			y += (Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20));
+			x += Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20);
+			y += Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20);
 		}
-		
+
 		// If only single instance is allowed, delete previous NPCs.
 		if (_singleInstance)
 		{
@@ -112,7 +112,7 @@ public class SummonNpc: AbstractEffect
 				}
 			}
 		}
-		
+
 		switch (npcTemplate.getType())
 		{
 			case "Decoy":
@@ -163,7 +163,13 @@ public class SummonNpc: AbstractEffect
 				spawn.Location = new Location(x, y, z, player.getHeading());
 				spawn.stopRespawn();
 
-				Npc npc = spawn.doSpawn(_isSummonSpawn);
+				Npc? npc = spawn.doSpawn(_isSummonSpawn);
+                if (npc == null)
+                {
+                    LOGGER.Warn(GetType().Name + ": Unable to spawn NPC. ");
+                    return;
+                }
+
 				player.addSummonedNpc(npc); // npc.setSummoner(player);
 				npc.setName(npcTemplate.getName());
 				npc.setTitle(npcTemplate.getName());

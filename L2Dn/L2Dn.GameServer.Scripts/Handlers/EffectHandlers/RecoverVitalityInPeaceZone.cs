@@ -16,54 +16,56 @@ public class RecoverVitalityInPeaceZone: AbstractEffect
 {
 	private readonly double _amount;
 	private readonly int _ticks;
-	
+
 	public RecoverVitalityInPeaceZone(StatSet @params)
 	{
 		_amount = @params.getDouble("amount", 0);
 		_ticks = @params.getInt("ticks", 10);
 	}
-	
+
 	public override int getTicks()
 	{
 		return _ticks;
 	}
-	
-	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
 	{
-		if ((effected == null) //
+        Player? effectedPlayer = effected.getActingPlayer();
+		if (effectedPlayer == null //
 			|| effected.isDead() //
 			|| !effected.isPlayer() //
 			|| !effected.isInsideZone(ZoneId.PEACE))
 		{
 			return false;
 		}
-		
-		double vitality = effected.getActingPlayer().getVitalityPoints();
+
+		double vitality = effectedPlayer.getVitalityPoints();
 		vitality += _amount;
 		if (vitality >= PlayerStat.MAX_VITALITY_POINTS)
 		{
 			vitality = PlayerStat.MAX_VITALITY_POINTS;
 		}
-		effected.getActingPlayer().setVitalityPoints((int) vitality, true);
-		
+        effectedPlayer.setVitalityPoints((int) vitality, true);
+
 		return skill.isToggle();
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		if ((effected != null) //
-			&& effected.isPlayer())
+        Player? effectedPlayer = effected.getActingPlayer();
+		if (effectedPlayer != null //
+            && effected.isPlayer())
 		{
-			BuffInfo info = effected.getEffectList().getBuffInfoBySkillId(skill.getId());
-			if ((info != null) && !info.isRemoved())
+			BuffInfo? info = effected.getEffectList().getBuffInfoBySkillId(skill.getId());
+			if (info != null && !info.isRemoved())
 			{
-				double vitality = effected.getActingPlayer().getVitalityPoints();
+				double vitality = effectedPlayer.getVitalityPoints();
 				vitality += _amount * 100;
 				if (vitality >= PlayerStat.MAX_VITALITY_POINTS)
 				{
 					vitality = PlayerStat.MAX_VITALITY_POINTS;
 				}
-				effected.getActingPlayer().setVitalityPoints((int) vitality, true);
+                effectedPlayer.setVitalityPoints((int) vitality, true);
 			}
 		}
 	}

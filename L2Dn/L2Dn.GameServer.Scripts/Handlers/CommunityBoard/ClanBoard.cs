@@ -18,11 +18,11 @@ public class ClanBoard: IWriteBoardHandler
     private static readonly Logger _logger = LogManager.GetLogger(nameof(ClanBoard));
     
 	private static readonly string[] COMMANDS =
-	{
-		"_bbsclan",
+    [
+        "_bbsclan",
 		"_bbsclan_list",
-		"_bbsclan_clanhome"
-	};
+		"_bbsclan_clanhome",
+    ];
 	
 	public string[] getCommunityBoardCommands()
 	{

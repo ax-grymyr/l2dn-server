@@ -24,9 +24,9 @@ public class ConsumeBody: AbstractEffect
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		if (!effected.isDead() //
-			|| (effector.getTarget() != effected) //
+			|| effector.getTarget() != effected //
 			|| (!effected.isNpc() && !effected.isSummon()) //
-			|| (effected.isSummon() && (effector != effected.getActingPlayer())))
+			|| (effected.isSummon() && effector != effected.getActingPlayer()))
 		{
 			return;
 		}

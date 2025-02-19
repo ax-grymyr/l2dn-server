@@ -29,7 +29,7 @@ public class ResistAbnormalByCategory: AbstractEffect
 			// Only this one is in use it seems
 			case DispelSlotType.DEBUFF:
 			{
-				effected.getStat().mergeMul(Stat.RESIST_ABNORMAL_DEBUFF, 1 + (_amount / 100));
+				effected.getStat().mergeMul(Stat.RESIST_ABNORMAL_DEBUFF, 1 + _amount / 100);
 				break;
 			}
 		}

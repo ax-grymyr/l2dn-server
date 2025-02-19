@@ -15,12 +15,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class StatBonusSkillCritical: AbstractEffect
 {
 	private readonly double _stat;
-	private readonly Condition _armorTypeCondition;
-	
+	private readonly Condition? _armorTypeCondition;
+
 	public StatBonusSkillCritical(StatSet @params)
 	{
 		_stat = (int)@params.getEnum("stat", BaseStat.DEX);
-		
+
 		ItemTypeMask armorTypesMask = ItemTypeMask.Zero;
 		List<string> armorTypes = @params.getList<string>("armorType");
 		if (armorTypes != null)
@@ -37,15 +37,15 @@ public class StatBonusSkillCritical: AbstractEffect
 				}
 			}
 		}
-		
+
 		_armorTypeCondition = armorTypesMask != ItemTypeMask.Zero ? new ConditionUsingItemType(armorTypesMask) : null;
 	}
-	
+
 	public override void pump(Creature effected, Skill skill)
 	{
-		if ((_armorTypeCondition == null) || _armorTypeCondition.test(effected, effected, skill))
+		if (_armorTypeCondition == null || _armorTypeCondition.test(effected, effected, skill))
 		{
-			effected.getStat().mergeAdd(Stat.STAT_BONUS_SKILL_CRITICAL, _stat); // TODO: why ordinal value is added 
+			effected.getStat().mergeAdd(Stat.STAT_BONUS_SKILL_CRITICAL, _stat); // TODO: why ordinal value is added
 		}
 	}
 }

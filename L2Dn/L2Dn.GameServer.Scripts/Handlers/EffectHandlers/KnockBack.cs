@@ -26,7 +26,7 @@ public class KnockBack: AbstractEffect
 	private readonly bool _knockDown;
 	private readonly FlyType _type;
 
-	private static readonly Set<Creature> ACTIVE_KNOCKBACKS = new();
+	private static readonly Set<Creature> ACTIVE_KNOCKBACKS = [];
 
 	public KnockBack(StatSet @params)
 	{

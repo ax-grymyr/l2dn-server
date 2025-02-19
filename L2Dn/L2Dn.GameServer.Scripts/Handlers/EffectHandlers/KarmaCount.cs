@@ -14,7 +14,7 @@ public class KarmaCount: AbstractEffect
 {
 	private readonly int _amount;
 	private readonly int _mode;
-	
+
 	public KarmaCount(StatSet @params)
 	{
 		_amount = @params.getInt("amount", 0);
@@ -36,26 +36,26 @@ public class KarmaCount: AbstractEffect
 			}
 		}
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		Player player = effected.getActingPlayer();
+		Player? player = effected.getActingPlayer();
 		if (player == null)
 		{
 			return;
 		}
-		
+
 		// Check if player has no karma.
 		if (player.getReputation() >= 0)
 		{
 			return;
 		}
-		
+
 		switch (_mode)
 		{
 			case 0: // diff

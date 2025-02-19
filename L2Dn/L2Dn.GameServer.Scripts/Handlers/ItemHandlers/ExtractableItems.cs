@@ -27,13 +27,13 @@ public class ExtractableItems: IItemHandler
 
 	public bool useItem(Playable playable, Item item, bool forceUse)
 	{
-		if (!playable.isPlayer())
+        Player? player = playable.getActingPlayer();
+		if (!playable.isPlayer() || player == null)
 		{
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
-		
-		Player player = playable.getActingPlayer();
+
 		EtcItem etcitem = (EtcItem) item.getTemplate();
 		List<ExtractableProduct> exitems = etcitem.getExtractableItems();
 		if (exitems == null)
@@ -41,13 +41,13 @@ public class ExtractableItems: IItemHandler
 			_logger.Info("No extractable data defined for " + etcitem);
 			return false;
 		}
-		
+
 		if (!player.isInventoryUnder80(false))
 		{
 			player.sendPacket(SystemMessageId.NOT_ENOUGH_SPACE_IN_INVENTORY_UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_IS_LESS_THAN_80_AND_SLOT_COUNT_IS_LESS_THAN_90_OF_CAPACITY);
 			return false;
 		}
-		
+
 		// destroy item
 		if (!DailyTaskManager.RESET_ITEMS.Contains(item.getId()) &&
 		    !player.destroyItem("Extract", item.ObjectId, 1, player, true))
@@ -64,21 +64,21 @@ public class ExtractableItems: IItemHandler
 			{
 				foreach (ExtractableProduct expi in exitems)
 				{
-					if ((etcitem.getExtractableCountMax() > 0) && (extractedItems.Count == etcitem.getExtractableCountMax()))
+					if (etcitem.getExtractableCountMax() > 0 && extractedItems.Count == etcitem.getExtractableCountMax())
 					{
 						break;
 					}
-					
+
 					if (Rnd.get(100000) <= expi.getChance())
 					{
 						long min = (long) (expi.getMin() * Config.RATE_EXTRACTABLE);
 						long max = (long) (expi.getMax() * Config.RATE_EXTRACTABLE);
-						long createItemAmount = (max == min) ? min : (Rnd.get((max - min) + 1) + min);
+						long createItemAmount = max == min ? min : Rnd.get(max - min + 1) + min;
 						if (createItemAmount == 0)
 						{
 							continue;
 						}
-						
+
 						// Do not extract the same item.
 						bool alreadyExtracted = false;
 						foreach (Item i in extractedItems.Keys)
@@ -89,46 +89,48 @@ public class ExtractableItems: IItemHandler
 								break;
 							}
 						}
-						if (alreadyExtracted && (exitems.Count >= etcitem.getExtractableCountMax()))
+						if (alreadyExtracted && exitems.Count >= etcitem.getExtractableCountMax())
 						{
 							continue;
 						}
-						
+
 						if (expi.getId() == -1) // Prime points
 						{
 							player.setPrimePoints(player.getPrimePoints() + (int) createItemAmount);
-							player.sendMessage("You have obtained " + (createItemAmount / 100) + " Euro!");
+							player.sendMessage("You have obtained " + createItemAmount / 100 + " Euro!");
 							specialReward = true;
 							continue;
 						}
-						else if (expi.getId() == (int)SpecialItemType.PC_CAFE_POINTS)
-						{
-							int currentPoints = player.getPcCafePoints();
-							int upgradePoints = player.getPcCafePoints() + (int) createItemAmount;
-							player.setPcCafePoints(upgradePoints);
-							SystemMessagePacket message = new SystemMessagePacket(SystemMessageId.YOU_EARNED_S1_PA_POINT_S);
-							message.Params.addInt((int)createItemAmount);
-							player.sendPacket(message);
-							player.sendPacket(new ExPcCafePointInfoPacket(currentPoints, upgradePoints, 1));
-							specialReward = true;
-							continue;
-						}
-						else if (expi.getId() == (int)SpecialItemType.HONOR_COINS)
-						{
-							player.setHonorCoins(player.getHonorCoins() + (int) createItemAmount);
-							player.sendMessage("You have obtained " + (createItemAmount) + " Honor Coin.");
-							specialReward = true;
-							continue;
-						}
-						
-						ItemTemplate template = ItemData.getInstance().getTemplate(expi.getId());
+
+                        if (expi.getId() == (int)SpecialItemType.PC_CAFE_POINTS)
+                        {
+                            int currentPoints = player.getPcCafePoints();
+                            int upgradePoints = player.getPcCafePoints() + (int) createItemAmount;
+                            player.setPcCafePoints(upgradePoints);
+                            SystemMessagePacket message = new SystemMessagePacket(SystemMessageId.YOU_EARNED_S1_PA_POINT_S);
+                            message.Params.addInt((int)createItemAmount);
+                            player.sendPacket(message);
+                            player.sendPacket(new ExPcCafePointInfoPacket(currentPoints, upgradePoints, 1));
+                            specialReward = true;
+                            continue;
+                        }
+
+                        if (expi.getId() == (int)SpecialItemType.HONOR_COINS)
+                        {
+                            player.setHonorCoins(player.getHonorCoins() + (int) createItemAmount);
+                            player.sendMessage("You have obtained " + createItemAmount + " Honor Coin.");
+                            specialReward = true;
+                            continue;
+                        }
+
+                        ItemTemplate? template = ItemData.getInstance().getTemplate(expi.getId());
 						if (template == null)
 						{
 							_logger.Warn("ExtractableItems: Could not find " + item + " product template with id " + expi.getId() + "!");
 							continue;
 						}
-						
-						if (template.isStackable() || (createItemAmount == 1))
+
+						if (template.isStackable() || createItemAmount == 1)
 						{
 							Item newItem = player.addItem("Extract", expi.getId(), createItemAmount, player, false);
 							if (expi.getMaxEnchant() > 0)
@@ -160,56 +162,58 @@ public class ExtractableItems: IItemHandler
 		{
 			foreach (ExtractableProduct expi in exitems)
 			{
-				if ((etcitem.getExtractableCountMax() > 0) && (extractedItems.Count == etcitem.getExtractableCountMax()))
+				if (etcitem.getExtractableCountMax() > 0 && extractedItems.Count == etcitem.getExtractableCountMax())
 				{
 					break;
 				}
-				
+
 				if (Rnd.get(100000) <= expi.getChance())
 				{
 					long min = (long) (expi.getMin() * Config.RATE_EXTRACTABLE);
 					long max = (long) (expi.getMax() * Config.RATE_EXTRACTABLE);
-					long createItemAmount = (max == min) ? min : (Rnd.get((max - min) + 1) + min);
+					long createItemAmount = max == min ? min : Rnd.get(max - min + 1) + min;
 					if (createItemAmount == 0)
 					{
 						continue;
 					}
-					
+
 					if (expi.getId() == -1) // Prime points
 					{
 						player.setPrimePoints(player.getPrimePoints() + (int) createItemAmount);
-						player.sendMessage("You have obtained " + (createItemAmount / 100) + " Euro!");
+						player.sendMessage("You have obtained " + createItemAmount / 100 + " Euro!");
 						specialReward = true;
 						continue;
 					}
-					else if (expi.getId() == (int)SpecialItemType.PC_CAFE_POINTS)
-					{
-						int currentPoints = player.getPcCafePoints();
-						int upgradePoints = player.getPcCafePoints() + (int) createItemAmount;
-						player.setPcCafePoints(upgradePoints);
-						SystemMessagePacket message = new SystemMessagePacket(SystemMessageId.YOU_EARNED_S1_PA_POINT_S);
-						message.Params.addInt((int)createItemAmount);
-						player.sendPacket(message);
-						player.sendPacket(new ExPcCafePointInfoPacket(currentPoints, upgradePoints, 1));
-						specialReward = true;
-						continue;
-					}
-					else if (expi.getId() == (int)SpecialItemType.HONOR_COINS)
-					{
-						player.setHonorCoins(player.getHonorCoins() + (int) createItemAmount);
-						player.sendMessage("You have obtained " + (createItemAmount) + " Honor Coin.");
-						specialReward = true;
-						continue;
-					}
-					
-					ItemTemplate template = ItemData.getInstance().getTemplate(expi.getId());
+
+                    if (expi.getId() == (int)SpecialItemType.PC_CAFE_POINTS)
+                    {
+                        int currentPoints = player.getPcCafePoints();
+                        int upgradePoints = player.getPcCafePoints() + (int) createItemAmount;
+                        player.setPcCafePoints(upgradePoints);
+                        SystemMessagePacket message = new SystemMessagePacket(SystemMessageId.YOU_EARNED_S1_PA_POINT_S);
+                        message.Params.addInt((int)createItemAmount);
+                        player.sendPacket(message);
+                        player.sendPacket(new ExPcCafePointInfoPacket(currentPoints, upgradePoints, 1));
+                        specialReward = true;
+                        continue;
+                    }
+
+                    if (expi.getId() == (int)SpecialItemType.HONOR_COINS)
+                    {
+                        player.setHonorCoins(player.getHonorCoins() + (int) createItemAmount);
+                        player.sendMessage("You have obtained " + createItemAmount + " Honor Coin.");
+                        specialReward = true;
+                        continue;
+                    }
+
+                    ItemTemplate? template = ItemData.getInstance().getTemplate(expi.getId());
 					if (template == null)
 					{
 						_logger.Warn("ExtractableItems: Could not find " + item + " product template with id " + expi.getId() + "!");
 						continue;
 					}
-					
-					if (template.isStackable() || (createItemAmount == 1))
+
+					if (template.isStackable() || createItemAmount == 1)
 					{
 						Item newItem = player.addItem("Extract", expi.getId(), createItemAmount, player, false);
 						if (expi.getMaxEnchant() > 0)
@@ -236,7 +240,7 @@ public class ExtractableItems: IItemHandler
 				}
 			}
 		}
-		
+
 		if (extractedItems.Count == 0 && !specialReward)
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CHANGE_THE_ITEM);
@@ -247,12 +251,12 @@ public class ExtractableItems: IItemHandler
 			InventoryUpdatePacket playerIU = new InventoryUpdatePacket(items);
 			player.sendPacket(playerIU);
 		}
-		
+
 		foreach (var entry in extractedItems)
 		{
 			sendMessage(player, entry.Key, entry.Value);
 		}
-		
+
 		AutoPeelRequest request = player.getRequest<AutoPeelRequest>();
 		if (request != null)
 		{
@@ -264,7 +268,7 @@ public class ExtractableItems: IItemHandler
 				{
 					rewards.Add(new ItemHolder(entry.Key.getId(), entry.Value));
 				}
-				
+
 				player.sendPacket(new ExResultItemAutoPeelPacket(true, request.getTotalPeelCount(), request.getRemainingPeelCount() - 1, rewards));
 			}
 			else
@@ -272,10 +276,10 @@ public class ExtractableItems: IItemHandler
 				player.sendPacket(new ExStopItemAutoPeelPacket(false));
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	private void addItem(Map<Item, long> extractedItems, Item newItem, long count)
 	{
 		if (extractedItems.ContainsKey(newItem))
@@ -287,7 +291,7 @@ public class ExtractableItems: IItemHandler
 			extractedItems.put(newItem, count);
 		}
 	}
-	
+
 	private void sendMessage(Player player, Item item, long count)
 	{
 		SystemMessagePacket sm;
@@ -308,7 +312,7 @@ public class ExtractableItems: IItemHandler
 			sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1);
 			sm.Params.addItemName(item);
 		}
-		
+
 		player.sendPacket(sm);
 	}
 }

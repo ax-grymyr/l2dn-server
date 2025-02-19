@@ -11,9 +11,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.CommunityBoard;
 public class HomepageBoard: IParseBoardHandler
 {
 	private static readonly string[] COMMANDS =
-	{
-		"_bbslink"
-	};
+    [
+        "_bbslink",
+    ];
 	
 	public string[] getCommunityBoardCommands()
 	{

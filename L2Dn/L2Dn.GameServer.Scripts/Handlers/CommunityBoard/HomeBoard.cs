@@ -28,22 +28,22 @@ public class HomeBoard: IParseBoardHandler
 	private static readonly string NAVIGATION_PATH = "html/CommunityBoard/Custom/navigation.html";
 	
 	private static readonly string[] COMMANDS =
-	{
-		"_bbshome",
+    [
+        "_bbshome",
 		"_bbstop",
-	};
+    ];
 	
 	private static readonly string[] CUSTOM_COMMANDS =
-	{
-		Config.PREMIUM_SYSTEM_ENABLED && Config.COMMUNITY_PREMIUM_SYSTEM_ENABLED ? "_bbspremium" : null,
+    [
+        Config.PREMIUM_SYSTEM_ENABLED && Config.COMMUNITY_PREMIUM_SYSTEM_ENABLED ? "_bbspremium" : null,
 		Config.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbsexcmultisell" : null,
 		Config.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbsmultisell" : null,
 		Config.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbssell" : null,
 		Config.COMMUNITYBOARD_ENABLE_TELEPORTS ? "_bbsteleport" : null,
 		Config.COMMUNITYBOARD_ENABLE_BUFFS ? "_bbsbuff" : null,
 		Config.COMMUNITYBOARD_ENABLE_HEAL ? "_bbsheal" : null,
-		Config.COMMUNITYBOARD_ENABLE_DELEVEL ? "_bbsdelevel" : null
-	};
+		Config.COMMUNITYBOARD_ENABLE_DELEVEL ? "_bbsdelevel" : null,
+    ];
 	
 	private static readonly Func<string, Player, bool> COMBAT_CHECK = (command, player) =>
 	{
@@ -63,7 +63,7 @@ public class HomeBoard: IParseBoardHandler
 	
 	public string[] getCommunityBoardCommands()
 	{
-		List<string> commands = new();
+		List<string> commands = [];
 		commands.AddRange(COMMANDS);
 		commands.AddRange(CUSTOM_COMMANDS);
         return commands.Where(x => x != null).ToArray();

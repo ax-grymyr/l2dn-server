@@ -25,7 +25,7 @@ public class BlinkSwap: AbstractEffect
 	
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
-		return (effected != null) && GeoEngine.getInstance().canSeeTarget(effected, effector);
+		return effected != null && GeoEngine.getInstance().canSeeTarget(effected, effector);
 	}
 	
 	public override bool isInstant()

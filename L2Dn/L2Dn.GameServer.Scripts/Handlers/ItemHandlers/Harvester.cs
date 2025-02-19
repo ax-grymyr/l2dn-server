@@ -24,7 +24,8 @@ public class Harvester: IItemHandler
 			return false;
 		}
 
-		if (!playable.isPlayer())
+        Player? player = playable.getActingPlayer();
+		if (!playable.isPlayer() || player == null)
 		{
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
@@ -37,8 +38,7 @@ public class Harvester: IItemHandler
 			return false;
 		}
 
-		Player player = playable.getActingPlayer();
-		WorldObject target = player.getTarget();
+		WorldObject? target = player.getTarget();
 		if (target == null || !target.isMonster() || !((Creature)target).isDead())
 		{
 			player.sendPacket(SystemMessageId.INVALID_TARGET);

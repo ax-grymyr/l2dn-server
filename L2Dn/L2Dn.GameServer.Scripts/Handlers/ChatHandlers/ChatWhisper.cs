@@ -40,7 +40,7 @@ public class ChatWhisper: IChatHandler
 			return;
 		}
 		
-		if (Config.FAKE_PLAYERS_ENABLED && (FakePlayerData.getInstance().getProperName(target) != null))
+		if (Config.FAKE_PLAYERS_ENABLED && FakePlayerData.getInstance().getProperName(target) != null)
 		{
 			if (FakePlayerData.getInstance().isTalkable(target))
 			{
@@ -63,7 +63,7 @@ public class ChatWhisper: IChatHandler
 		}
 		
 		Player receiver = World.getInstance().getPlayer(target);
-		if ((receiver != null) && !receiver.isSilenceMode(activeChar.ObjectId))
+		if (receiver != null && !receiver.isSilenceMode(activeChar.ObjectId))
 		{
 			if (Config.JAIL_DISABLE_CHAT && receiver.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 			{
@@ -75,7 +75,7 @@ public class ChatWhisper: IChatHandler
 				activeChar.sendPacket(SystemMessageId.THAT_PERSON_IS_IN_MESSAGE_REFUSAL_MODE);
 				return;
 			}
-			if ((receiver.getClient() == null) || receiver.getClient()?.IsDetached == true)
+			if (receiver.getClient() == null || receiver.getClient()?.IsDetached == true)
 			{
 				activeChar.sendMessage("Player is in offline mode.");
 				return;
@@ -85,7 +85,7 @@ public class ChatWhisper: IChatHandler
 				activeChar.sendMessage("Player belongs to the opposing faction.");
 				return;
 			}
-			if ((activeChar.getLevel() < Config.MINIMUM_CHAT_LEVEL) && !activeChar.getWhisperers().Contains(receiver.ObjectId) && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+			if (activeChar.getLevel() < Config.MINIMUM_CHAT_LEVEL && !activeChar.getWhisperers().Contains(receiver.ObjectId) && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 			{
 				var sm = new SystemMessagePacket(SystemMessageId.CHARACTERS_LV_S1_OR_LOWER_CAN_RESPOND_TO_A_WHISPER_BUT_CANNOT_INITIATE_IT);
 				sm.Params.addInt(Config.MINIMUM_CHAT_LEVEL);

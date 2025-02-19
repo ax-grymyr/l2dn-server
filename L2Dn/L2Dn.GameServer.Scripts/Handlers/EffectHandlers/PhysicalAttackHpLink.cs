@@ -106,10 +106,10 @@ public class PhysicalAttackHpLink: AbstractEffect
 			// ...................____________Melee Damage_____________......................................___________________Ranged Damage____________________
 			// ATTACK CALCULATION 77 * ((pAtk * lvlMod) + power) / pdef            RANGED ATTACK CALCULATION 70 * ((pAtk * lvlMod) + power + patk + power) / pdef
 			// ```````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^``````````````````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-			double baseMod = (weaponMod * ((attack * effector.getLevelMod()) + power + rangedBonus)) / defence;
+			double baseMod = weaponMod * (attack * effector.getLevelMod() + power + rangedBonus) / defence;
 			damage = baseMod * ssmod * critMod * weaponTraitMod * generalTraitMod * weaknessMod * attributeMod * pvpPveMod * randomMod;
 			damage *= effector.getStat().getValue(Stat.PHYSICAL_SKILL_POWER, 1);
-			damage *= -((effector.getCurrentHp() * 2) / effector.getMaxHp()) + 2;
+			damage *= -(effector.getCurrentHp() * 2 / effector.getMaxHp()) + 2;
 		}
 		
 		effector.doAttack(damage, effected, skill, false, false, critical, false);

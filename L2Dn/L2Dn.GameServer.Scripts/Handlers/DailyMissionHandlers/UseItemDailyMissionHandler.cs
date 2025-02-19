@@ -73,7 +73,7 @@ public class UseItemDailyMissionHandler: AbstractDailyMissionHandler
 		Player player = @event.getPlayer();
 		if (_minLevel > 0)
 		{
-			if ((player.getLevel() < _minLevel) || (player.getLevel() > _maxLevel) || _itemIds.isEmpty())
+			if (player.getLevel() < _minLevel || player.getLevel() > _maxLevel || _itemIds.isEmpty())
 			{
 				return;
 			}

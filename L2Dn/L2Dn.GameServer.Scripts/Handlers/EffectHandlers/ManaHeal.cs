@@ -35,13 +35,13 @@ public class ManaHeal: AbstractEffect
 			return;
 		}
 		
-		if ((effected != effector) && effected.isAffected(EffectFlag.FACEOFF))
+		if (effected != effector && effected.isAffected(EffectFlag.FACEOFF))
 		{
 			return;
 		}
 		
 		double amount = _power;
-		if ((item != null) && (item.isPotion() || item.isElixir()))
+		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			amount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_MP, 0);
 		}

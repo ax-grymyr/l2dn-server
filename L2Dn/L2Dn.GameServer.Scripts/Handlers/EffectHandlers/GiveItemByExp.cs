@@ -14,17 +14,17 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class GiveItemByExp: AbstractEffect
 {
 	private static readonly Map<Player, long> PLAYER_VALUES = new();
-	
+
 	private readonly long _exp;
 	private readonly int _itemId;
-	
+
 	public GiveItemByExp(StatSet @params)
 	{
 		_exp = @params.getLong("exp", 0);
 		_itemId = @params.getInt("itemId", 0);
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isPlayer())
 		{
@@ -32,29 +32,32 @@ public class GiveItemByExp: AbstractEffect
 			player.Events.Subscribe<OnPlayableExpChanged>(this, onExperienceReceived);
 		}
 	}
-	
-	public override void onExit(Creature effector, Creature effected, Skill skill)
-	{
-		if (effected.isPlayer())
-		{
-			PLAYER_VALUES.remove(effected.getActingPlayer());
 
-			if (effected is Player player)
-				player.Events.Unsubscribe<OnPlayableExpChanged>(onExperienceReceived);
+	public override void onExit(Creature effector, Creature effected, Skill skill)
+    {
+        Player? player = effected.getActingPlayer();
+		if (effected.isPlayer() && player != null)
+		{
+			PLAYER_VALUES.remove(player);
+
+			player.Events.Unsubscribe<OnPlayableExpChanged>(onExperienceReceived);
 		}
 	}
-	
+
 	private void onExperienceReceived(OnPlayableExpChanged ev)
 	{
 		Playable playable = ev.getPlayable();
 		long exp = ev.getNewExp() - ev.getOldExp();
-		
+
 		if (exp < 1)
 		{
 			return;
 		}
-		
-		Player player = playable.getActingPlayer();
+
+		Player? player = playable.getActingPlayer();
+        if (player == null)
+            return;
+
 		long sum = PLAYER_VALUES.GetValueOrDefault(player) + exp;
 		if (sum >= _exp)
 		{

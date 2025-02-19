@@ -37,7 +37,7 @@ public class CriticalRate: AbstractConditionalHpEffect
 			}
 			case StatModifierType.PER:
 			{
-				effected.getStat().mergeMul(_mulStat, (_amount / 100));
+				effected.getStat().mergeMul(_mulStat, _amount / 100);
 				break;
 			}
 		}

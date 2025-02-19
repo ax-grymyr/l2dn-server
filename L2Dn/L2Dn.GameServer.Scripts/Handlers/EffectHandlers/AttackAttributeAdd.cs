@@ -29,7 +29,7 @@ public class AttackAttributeAdd: AbstractEffect
 		foreach (AttributeType attribute in AttributeTypeUtil.AttributeTypes)
 		{
 			int attributeValue = effected.getStat().getAttackElementValue(attribute);
-			if ((attributeValue > 0) && (attributeValue > maxValue))
+			if (attributeValue > 0 && attributeValue > maxValue)
 			{
 				maxAttribute = attribute;
 				maxValue = attributeValue;

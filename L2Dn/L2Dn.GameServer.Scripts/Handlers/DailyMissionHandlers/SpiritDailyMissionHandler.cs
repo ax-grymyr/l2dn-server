@@ -39,7 +39,7 @@ public class SpiritDailyMissionHandler: AbstractDailyMissionHandler
 	public override bool isAvailable(Player player)
 	{
 		DailyMissionPlayerEntry? entry = player.getDailyMissions().getEntry(getHolder().getId());
-		return (entry != null) && (entry.getStatus() == DailyMissionStatus.AVAILABLE);
+		return entry != null && entry.getStatus() == DailyMissionStatus.AVAILABLE;
 	}
 	
 	private void onElementalSpiritLearn(OnPlayerElementalSpiritLearn @event)

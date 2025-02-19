@@ -41,7 +41,7 @@ public class Confuse: AbstractEffect
 	{
 		effected.getAI().notifyEvent(CtrlEvent.EVT_CONFUSED);
 
-		List<Creature> targetList = new();
+		List<Creature> targetList = [];
 		// Getting the possible targets
 
 		World.getInstance().forEachVisibleObject<Creature>(effected, x => targetList.Add(x));

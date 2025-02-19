@@ -14,25 +14,25 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class AddTeleportBookmarkSlot: AbstractEffect
 {
 	private readonly int _amount;
-	
+
 	public AddTeleportBookmarkSlot(StatSet @params)
 	{
 		_amount = @params.getInt("amount", 0);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effected.isPlayer())
+        Player? player = effected.getActingPlayer();
+		if (!effected.isPlayer() || player == null)
 		{
 			return;
 		}
-		
-		Player player = effected.getActingPlayer();
+
 		player.setBookMarkSlot(player.getBookMarkSlot() + _amount);
 		player.sendPacket(SystemMessageId.THE_NUMBER_OF_MY_TELEPORTS_SLOTS_HAS_BEEN_INCREASED);
 	}

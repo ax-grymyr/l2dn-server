@@ -24,7 +24,7 @@ public class StatUp: AbstractEffect
 		if (stats.contains(","))
 		{
 			_singleStat = null;
-			_multipleStats = new();
+			_multipleStats = [];
 			foreach (string stat in stats.Split(","))
 			{
 				_multipleStats.add(Enum.Parse<Stat>("STAT_" + stat));

@@ -14,8 +14,8 @@ public class Grow: AbstractEffect
 	public Grow(StatSet @params)
 	{
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isNpc())
 		{
@@ -24,7 +24,7 @@ public class Grow: AbstractEffect
 			npc.setCollisionRadius(npc.getTemplate().getCollisionRadiusGrown());
 		}
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		if (effected.isNpc())

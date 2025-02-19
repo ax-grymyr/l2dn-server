@@ -16,27 +16,27 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class SendSystemMessageToClan: AbstractEffect
 {
 	private readonly SystemMessagePacket _message;
-	
+
 	public SendSystemMessageToClan(StatSet @params)
 	{
 		int id = @params.getInt("id", 0);
 		_message = new SystemMessagePacket((SystemMessageId)id);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		Player player = effected.getActingPlayer();
-		if ((player == null))
+		Player? player = effected.getActingPlayer();
+		if (player == null)
 		{
 			return;
 		}
-		
-		Clan clan = player.getClan();
+
+		Clan? clan = player.getClan();
 		if (clan != null)
 		{
 			clan.broadcastToOnlineMembers(_message);

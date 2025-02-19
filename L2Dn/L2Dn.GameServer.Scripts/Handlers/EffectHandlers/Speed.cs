@@ -17,13 +17,13 @@ public class Speed: AbstractEffect
 {
 	private readonly double _amount;
 	private readonly StatModifierType _mode;
-	private ConditionUsingItemType _condition;
-	
+	private ConditionUsingItemType? _condition;
+
 	public Speed(StatSet @params)
 	{
 		_amount = @params.getDouble("amount", 0);
 		_mode = @params.getEnum("mode", StatModifierType.DIFF);
-		
+
 		ItemTypeMask weaponTypesMask = ItemTypeMask.Zero;
 		List<string> weaponTypes = @params.getList<string>("weaponType");
 		if (weaponTypes != null)
@@ -45,7 +45,7 @@ public class Speed: AbstractEffect
 			_condition = new ConditionUsingItemType(weaponTypesMask);
 		}
 	}
-	
+
 	public override void pump(Creature effected, Skill skill)
 	{
 		if (_condition == null || _condition.test(effected, effected, skill))
@@ -64,12 +64,12 @@ public class Speed: AbstractEffect
 				}
 				case StatModifierType.PER:
 				{
-					effected.getStat().mergeMul(Stat.RUN_SPEED, (_amount / 100) + 1);
-					effected.getStat().mergeMul(Stat.WALK_SPEED, (_amount / 100) + 1);
-					effected.getStat().mergeMul(Stat.SWIM_RUN_SPEED, (_amount / 100) + 1);
-					effected.getStat().mergeMul(Stat.SWIM_WALK_SPEED, (_amount / 100) + 1);
-					effected.getStat().mergeMul(Stat.FLY_RUN_SPEED, (_amount / 100) + 1);
-					effected.getStat().mergeMul(Stat.FLY_WALK_SPEED, (_amount / 100) + 1);
+					effected.getStat().mergeMul(Stat.RUN_SPEED, _amount / 100 + 1);
+					effected.getStat().mergeMul(Stat.WALK_SPEED, _amount / 100 + 1);
+					effected.getStat().mergeMul(Stat.SWIM_RUN_SPEED, _amount / 100 + 1);
+					effected.getStat().mergeMul(Stat.SWIM_WALK_SPEED, _amount / 100 + 1);
+					effected.getStat().mergeMul(Stat.FLY_RUN_SPEED, _amount / 100 + 1);
+					effected.getStat().mergeMul(Stat.FLY_WALK_SPEED, _amount / 100 + 1);
 					break;
 				}
 			}

@@ -21,6 +21,6 @@ public class TwoHandedStance: AbstractEffect
 	
 	public override void pump(Creature effected, Skill skill)
 	{
-		effected.getStat().mergeAdd(Stat.PHYSICAL_ATTACK, (_amount * effected.getShldDef()) / 100);
+		effected.getStat().mergeAdd(Stat.PHYSICAL_ATTACK, _amount * effected.getShldDef() / 100);
 	}
 }

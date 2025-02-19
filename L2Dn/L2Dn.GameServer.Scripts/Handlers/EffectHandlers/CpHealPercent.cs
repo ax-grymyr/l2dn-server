@@ -37,10 +37,10 @@ public class CpHealPercent: AbstractEffect
 		
 		double amount = 0;
 		double power = _power;
-		bool full = (power == 100.0);
+		bool full = power == 100.0;
 		
-		amount = full ? effected.getMaxCp() : (effected.getMaxCp() * power) / 100.0;
-		if ((item != null) && (item.isPotion() || item.isElixir()))
+		amount = full ? effected.getMaxCp() : effected.getMaxCp() * power / 100.0;
+		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			amount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_CP, 0);
 		}
@@ -54,7 +54,7 @@ public class CpHealPercent: AbstractEffect
 			effected.broadcastStatusUpdate(effector);
 		}
 		
-		if ((effector != null) && (effector != effected))
+		if (effector != null && effector != effected)
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_RECOVERED_S2_CP_WITH_C1_S_HELP);
 			sm.Params.addString(effector.getName());

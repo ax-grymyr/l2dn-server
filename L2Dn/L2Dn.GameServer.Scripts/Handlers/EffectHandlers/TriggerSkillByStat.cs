@@ -21,7 +21,7 @@ public class TriggerSkillByStat: AbstractEffect
 	private readonly int _skillSubLevel;
 	private readonly int _min;
 	private readonly int _max;
-	
+
 	public TriggerSkillByStat(StatSet @params)
 	{
 		_stat = @params.getEnum<Stat>("stat");
@@ -31,24 +31,28 @@ public class TriggerSkillByStat: AbstractEffect
 		_min = @params.getInt("min", 0);
 		_max = @params.getInt("max", 9999);
 	}
-	
+
 	public override void pump(Creature effected, Skill skill)
 	{
 		Creature target = effected;
-		
+
 		// In some cases, without ThreadPool, values did not apply.
 		ThreadPool.schedule(() =>
 		{
 			int currentValue = (int) effected.getStat().getValue(_stat);
-			
+
 			// Synchronized because the same skill could be used twice and isAffectedBySkill ignored.
 			lock (target)
 			{
-				if ((currentValue >= _min) && (currentValue <= _max))
+				if (currentValue >= _min && currentValue <= _max)
 				{
 					if (!target.isAffectedBySkill(_skillId))
-					{
-						SkillCaster.triggerCast(target, target, SkillData.getInstance().getSkill(_skillId, _skillLevel, _skillSubLevel));
+                    {
+                        Skill? triggerSkill = SkillData.getInstance().getSkill(_skillId, _skillLevel, _skillSubLevel);
+                        if (triggerSkill == null)
+                            return;
+
+						SkillCaster.triggerCast(target, target, triggerSkill);
 					}
 				}
 				else

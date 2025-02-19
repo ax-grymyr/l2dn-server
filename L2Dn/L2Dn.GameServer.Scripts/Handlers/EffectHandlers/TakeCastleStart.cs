@@ -19,21 +19,21 @@ public class TakeCastleStart: AbstractEffect
 	public TakeCastleStart(StatSet @params)
 	{
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		if (!effector.isPlayer())
 		{
 			return;
 		}
-		
-		Castle castle = CastleManager.getInstance().getCastle(effected);
-		if ((castle != null) && castle.getSiege().isInProgress())
+
+		Castle? castle = CastleManager.getInstance().getCastle(effected);
+		if (castle != null && castle.getSiege().isInProgress())
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_OPPOSING_CLAN_HAS_STARTED_S1);
 			sm.Params.addSkillName(skill.getId());

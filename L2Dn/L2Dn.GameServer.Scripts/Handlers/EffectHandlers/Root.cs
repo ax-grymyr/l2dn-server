@@ -16,17 +16,17 @@ public class Root: AbstractEffect
 	public Root(StatSet @params)
 	{
 	}
-	
+
 	public override long getEffectFlags()
 	{
 		return EffectFlag.ROOTED.getMask();
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.ROOT;
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		if (!effected.isPlayer())
@@ -34,14 +34,14 @@ public class Root: AbstractEffect
 			effected.getAI().notifyEvent(CtrlEvent.EVT_THINK);
 		}
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
-		if ((effected == null) || effected.isRaid())
+		if (effected == null || effected.isRaid())
 		{
 			return;
 		}
-		
+
 		effected.stopMove(null);
 		effected.getAI().notifyEvent(CtrlEvent.EVT_ROOTED);
 	}

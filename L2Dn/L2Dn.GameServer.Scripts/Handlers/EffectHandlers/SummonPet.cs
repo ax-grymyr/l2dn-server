@@ -22,57 +22,63 @@ public class SummonPet: AbstractEffect
 	public SummonPet(StatSet @params)
 	{
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.SUMMON_PET;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effector.isPlayer() || !effected.isPlayer() || effected.isAlikeDead())
+        Player? player = effector.getActingPlayer();
+		if (!effector.isPlayer() || player == null || !effected.isPlayer() || effected.isAlikeDead())
 		{
 			return;
 		}
-		
-		Player player = effector.getActingPlayer();
+
 		if (player.hasPet() || player.isMounted())
 		{
 			player.sendPacket(SystemMessageId.YOU_ALREADY_HAVE_A_PET);
 			return;
 		}
-		
-		PetItemHolder holder = player.removeScript<PetItemHolder>();
+
+		PetItemHolder? holder = player.removeScript<PetItemHolder>();
 		if (holder == null)
 		{
 			LOGGER.Warn( "Summoning pet without attaching PetItemHandler!");
 			return;
 		}
-		
+
 		Item collar = holder.getItem();
 		if (player.getInventory().getItemByObjectId(collar.ObjectId) != collar)
 		{
 			LOGGER.Warn("Player: " + player + " is trying to summon pet from item that he doesn't owns.");
 			return;
 		}
-		
+
 		PetEvolveHolder evolveData = player.getPetEvolve(collar.ObjectId);
 		PetData petData = evolveData.getEvolve() == EvolveLevel.None ? PetDataTable.getInstance().getPetDataByEvolve(collar.getId(), evolveData.getEvolve()) : PetDataTable.getInstance().getPetDataByEvolve(collar.getId(), evolveData.getEvolve(), evolveData.getIndex());
-		if ((petData == null) || (petData.getNpcId() == -1))
+		if (petData == null || petData.getNpcId() == -1)
 		{
 			return;
 		}
-		
-		NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(petData.getNpcId());
+
+		NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(petData.getNpcId());
+        if (npcTemplate == null)
+        {
+            LOGGER.Error($"NPC template id={petData.getNpcId()} not found");
+            return;
+        }
+
 		Pet pet = Pet.spawnPet(npcTemplate, player, collar);
 		player.setPet(pet);
 		pet.setShowSummonAnimation(true);
-		
+
 		// Pets must have their master buffs upon spawn.
 		foreach (BuffInfo effect in player.getEffectList().getEffects())
 		{
@@ -82,7 +88,7 @@ public class SummonPet: AbstractEffect
 				sk.applyEffects(player, pet, false, effect.getTime() ?? TimeSpan.Zero);
 			}
 		}
-		
+
 		if (!pet.isRespawned())
 		{
 			pet.setCurrentHp(pet.getMaxHp());

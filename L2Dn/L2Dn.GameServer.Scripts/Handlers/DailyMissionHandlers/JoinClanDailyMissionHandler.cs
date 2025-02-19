@@ -19,7 +19,7 @@ public class JoinClanDailyMissionHandler: AbstractDailyMissionHandler
 	public override bool isAvailable(Player player)
 	{
 		DailyMissionPlayerEntry? entry = player.getDailyMissions().getEntry(getHolder().getId());
-		return (entry != null) && (entry.getStatus() == DailyMissionStatus.AVAILABLE);
+		return entry != null && entry.getStatus() == DailyMissionStatus.AVAILABLE;
 	}
 	
 	public override void init()

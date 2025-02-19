@@ -24,7 +24,7 @@ public class AttackAttribute: AbstractEffect
 		if (attributes.contains(","))
 		{
 			_singleStat = null;
-			_multipleStats = new Set<Stat>();
+			_multipleStats = [];
 			foreach (string attribute in attributes.Split(","))
 			{
 				_multipleStats.add(Enum.Parse<Stat>(attribute + "_POWER"));

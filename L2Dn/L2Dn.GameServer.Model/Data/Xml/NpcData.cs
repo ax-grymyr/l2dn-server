@@ -664,8 +664,12 @@ public class NpcData: DataReaderBase
 	 */
 	public NpcTemplate? getTemplate(int id)
 	{
-		return _npcs.GetValueOrDefault(id);
-	}
+		NpcTemplate? template = _npcs.GetValueOrDefault(id);
+        if(template is null)
+            LOGGER.Warn($"NPC template id={id} requested but not found.");
+
+        return template;
+    }
 
 	/**
 	 * Gets the template by name.

@@ -13,13 +13,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class DisableSkill: AbstractEffect
 {
 	private readonly Set<int> _disabledSkills;
-	
+
 	public DisableSkill(StatSet @params)
 	{
 		string disable = @params.getString("disable");
 		if (!string.IsNullOrEmpty(disable))
 		{
-			_disabledSkills = new();
+			_disabledSkills = [];
 			foreach (string slot in disable.Split(";"))
 			{
 				_disabledSkills.add(int.Parse(slot));
@@ -27,11 +27,11 @@ public class DisableSkill: AbstractEffect
 		}
 		else
 		{
-			_disabledSkills = new();
+			_disabledSkills = [];
 		}
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		foreach (int disableSkillId in _disabledSkills)
 		{
@@ -42,7 +42,7 @@ public class DisableSkill: AbstractEffect
 			}
 		}
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		foreach (int enableSkillId in _disabledSkills)
@@ -52,7 +52,7 @@ public class DisableSkill: AbstractEffect
 			{
 				if (effected.isPlayer())
 				{
-					effected.getActingPlayer().enableSkill(knownSkill, false);
+					effected.getActingPlayer()?.enableSkill(knownSkill, false);
 				}
 				else
 				{

@@ -22,14 +22,14 @@ public class FishShots: IItemHandler
 
 	public bool useItem(Playable playable, Item item, bool forceUse)
 	{
-		if (!playable.isPlayer())
+        Player? player = playable.getActingPlayer();
+		if (!playable.isPlayer() || player == null)
 		{
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
 
-		Player player = playable.getActingPlayer();
-		Item weaponInst = player.getActiveWeaponInstance();
+		Item? weaponInst = player.getActiveWeaponInstance();
 		Weapon weaponItem = player.getActiveWeaponItem();
 		if (weaponInst == null || weaponItem.getItemType() != WeaponType.FISHINGROD)
 		{
@@ -57,7 +57,7 @@ public class FishShots: IItemHandler
 
 		player.chargeShot(ShotType.FISH_SOULSHOTS);
 		player.destroyItemWithoutTrace("Consume", item.ObjectId, 1, null, false);
-		WorldObject oldTarget = player.getTarget();
+		WorldObject? oldTarget = player.getTarget();
 		player.setTarget(player);
 
 		List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);

@@ -18,25 +18,25 @@ public class TriggerSkillByKill: AbstractEffect
 {
 	private readonly int _chance;
 	private readonly SkillHolder _skill;
-	
+
 	public TriggerSkillByKill(StatSet @params)
 	{
 		_chance = @params.getInt("chance", 100);
 		_skill = new SkillHolder(@params.getInt("skillId", 0), @params.getInt("skillLevel", 0));
 	}
-	
+
 	private void onCreatureKilled(OnCreatureKilled ev, Creature target)
 	{
-		if ((_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLevel() == 0)))
+		if (_chance == 0 || _skill.getSkillId() == 0 || _skill.getSkillLevel() == 0)
 		{
 			return;
 		}
-		
+
 		if (Rnd.get(100) > _chance)
 		{
 			return;
 		}
-		
+
 		Skill triggerSkill = _skill.getSkill();
 
 		if (ev.getAttacker() == target)
@@ -44,13 +44,13 @@ public class TriggerSkillByKill: AbstractEffect
 			SkillCaster.triggerCast(target, target, triggerSkill);
 		}
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		effected.Events.UnsubscribeAll<OnCreatureKilled>(this);
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		effected.Events.Subscribe<OnCreatureKilled>(this, ev => onCreatureKilled(ev, effected));
 	}

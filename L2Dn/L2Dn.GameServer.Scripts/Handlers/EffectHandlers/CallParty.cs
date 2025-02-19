@@ -15,23 +15,22 @@ public class CallParty: AbstractEffect
 	public CallParty(StatSet @params)
 	{
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		Party party = effector.getParty();
-		if (party == null)
-		{
+		Party? party = effector.getParty();
+        Player? player = effector.getActingPlayer();
+		if (party == null || player == null)
 			return;
-		}
-		
+
 		foreach (Player partyMember in party.getMembers())
 		{
-			if (CallPc.checkSummonTargetStatus(partyMember, effector.getActingPlayer()) && (effector != partyMember))
+			if (CallPc.checkSummonTargetStatus(partyMember, player) && effector != partyMember)
 			{
 				partyMember.teleToLocation(effector.Location, true);
 			}

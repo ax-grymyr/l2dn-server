@@ -16,11 +16,11 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class Transformation: AbstractEffect
 {
 	private readonly List<int> _id;
-	
+
 	public Transformation(StatSet @params)
 	{
-		string ids = @params.getString("transformationId", null);
-		_id = new();
+		string ids = @params.getString("transformationId", string.Empty);
+		_id = [];
 		if (!string.IsNullOrEmpty(ids))
 		{
 			foreach (string id in ids.Split(";"))
@@ -29,20 +29,20 @@ public class Transformation: AbstractEffect
 			}
 		}
 	}
-	
+
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
 		return !effected.isDoor();
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (_id.Count != 0)
 		{
 			effected.transform(_id.GetRandomElement(), true);
 		}
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		effected.stopTransformation(false);

@@ -29,8 +29,8 @@ public class TriggerSkillByDamage: AbstractEffect
 	private readonly TargetType _targetType;
 	private readonly InstanceType _attackerType;
 	private readonly int _skillLevelScaleTo;
-	private readonly List<SkillHolder> _triggerSkills;
-	
+	private readonly List<SkillHolder>? _triggerSkills;
+
 	public TriggerSkillByDamage(StatSet @params)
 	{
 		_minAttackerLevel = @params.getInt("minAttackerLevel", 1);
@@ -42,7 +42,7 @@ public class TriggerSkillByDamage: AbstractEffect
 		_targetType = @params.getEnum("targetType", TargetType.SELF);
 		_attackerType = @params.getEnum("attackerType", InstanceType.Creature);
 		_skillLevelScaleTo = @params.getInt("skillLevelScaleTo", 0);
-		
+
 		// Specific skills by level.
 		string triggerSkills = @params.getString("triggerSkills", "");
 		if (string.IsNullOrEmpty(triggerSkills))
@@ -52,7 +52,7 @@ public class TriggerSkillByDamage: AbstractEffect
 		else
 		{
 			string[] split = triggerSkills.Split(";");
-			_triggerSkills = new();
+			_triggerSkills = [];
 			foreach (string skill in split)
 			{
 				string[] splitSkill = skill.Split(",");
@@ -60,63 +60,65 @@ public class TriggerSkillByDamage: AbstractEffect
 			}
 		}
 	}
-	
+
 	private void onDamageReceivedEvent(OnCreatureDamageReceived @event)
 	{
-		if (@event.isDamageOverTime() || (_chance == 0) || ((_triggerSkills == null) && ((_skill.getSkillId() == 0) || (_skill.getSkillLevel() == 0))))
+		if (@event.isDamageOverTime() || _chance == 0 || (_triggerSkills == null && (_skill.getSkillId() == 0 || _skill.getSkillLevel() == 0)))
 		{
 			return;
 		}
-		
+
 		if (@event.getAttacker() == @event.getTarget())
 		{
 			return;
 		}
-		
-		if ((@event.getAttacker().getLevel() < _minAttackerLevel) || (@event.getAttacker().getLevel() > _maxAttackerLevel))
+
+		if (@event.getAttacker().getLevel() < _minAttackerLevel || @event.getAttacker().getLevel() > _maxAttackerLevel)
 		{
 			return;
 		}
-		
+
 		if (@event.getDamage() < _minDamage)
 		{
 			return;
 		}
-		
-		if ((_chance < 100) && (Rnd.get(100) > _chance))
+
+		if (_chance < 100 && Rnd.get(100) > _chance)
 		{
 			return;
 		}
-		
-		if ((_hpPercent < 100) && (@event.getTarget().getCurrentHpPercent() > _hpPercent))
+
+		if (_hpPercent < 100 && @event.getTarget().getCurrentHpPercent() > _hpPercent)
 		{
 			return;
 		}
-		
+
 		if (!@event.getAttacker().InstanceType.IsType(_attackerType))
 		{
 			return;
 		}
-		
-		WorldObject target = null;
+
+		WorldObject? target = null;
 		try
-		{
-			target = TargetHandler.getInstance().getHandler(_targetType).getTarget(@event.getTarget(), @event.getAttacker(), _triggerSkills == null ? _skill.getSkill() : _triggerSkills[0].getSkill(), false, false, false);
-		}
+        {
+            target = TargetHandler.getInstance().getHandler(_targetType)?.getTarget(@event.getTarget(),
+                @event.getAttacker(), _triggerSkills == null ? _skill.getSkill() : _triggerSkills[0].getSkill(), false,
+                false, false);
+        }
 		catch (Exception e)
 		{
 			LOGGER.Warn("Exception in ITargetTypeHandler.getTarget(): " + e);
 		}
-		if ((target == null) || !target.isCreature())
+		if (target == null || !target.isCreature())
 		{
 			return;
 		}
-		
-		Skill triggerSkill = null;
+
+		Skill? triggerSkill = null;
 		if (_triggerSkills == null)
 		{
-			BuffInfo buffInfo = ((Creature) target).getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
-			if ((_skillLevelScaleTo <= 0) || (buffInfo == null))
+			BuffInfo? buffInfo = ((Creature) target).getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
+			if (_skillLevelScaleTo <= 0 || buffInfo == null)
 			{
 				triggerSkill = _skill.getSkill();
 			}
@@ -124,8 +126,11 @@ public class TriggerSkillByDamage: AbstractEffect
 			{
 				triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(), Math.Min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
 			}
-			
-			if ((buffInfo == null) || (buffInfo.getSkill().getLevel() < triggerSkill.getLevel()))
+
+            if (triggerSkill == null)
+                return;
+
+			if (buffInfo == null || buffInfo.getSkill().getLevel() < triggerSkill.getLevel())
 			{
 				SkillCaster.triggerCast(@event.getAttacker(), (Creature) target, triggerSkill);
 			}
@@ -146,7 +151,7 @@ public class TriggerSkillByDamage: AbstractEffect
 						triggerSkill = holder.getSkill();
 						break;
 					}
-					
+
 					// Already at last skill.
 					return;
 				}
@@ -156,17 +161,17 @@ public class TriggerSkillByDamage: AbstractEffect
 			{
 				triggerSkill = _triggerSkills[0].getSkill();
 			}
-			
+
 			SkillCaster.triggerCast(@event.getAttacker(), (Creature) target, triggerSkill);
 		}
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		effected.Events.Unsubscribe<OnCreatureDamageReceived>(onDamageReceivedEvent);
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		effected.Events.Subscribe<OnCreatureDamageReceived>(this, onDamageReceivedEvent);
 	}

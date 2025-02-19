@@ -9,15 +9,15 @@ namespace L2Dn.GameServer.Scripts.Handlers.ItemHandlers;
  */
 public class ItemSkills: ItemSkillsTemplate
 {
-	public override bool useItem(Playable playable, Item item, bool forceUse)
-	{
-		Player player = playable.getActingPlayer();
-		if ((player != null) && player.isInOlympiadMode())
-		{
-			player.sendPacket(SystemMessageId.THE_ITEM_CANNOT_BE_USED_IN_THE_OLYMPIAD);
-			return false;
-		}
+    public override bool useItem(Playable playable, Item item, bool forceUse)
+    {
+        Player? player = playable.getActingPlayer();
+        if (player != null && player.isInOlympiadMode())
+        {
+            player.sendPacket(SystemMessageId.THE_ITEM_CANNOT_BE_USED_IN_THE_OLYMPIAD);
+            return false;
+        }
 
-		return base.useItem(playable, item, forceUse);
-	}
+        return base.useItem(playable, item, forceUse);
+    }
 }

@@ -15,41 +15,43 @@ public class Detection: AbstractEffect
 	public Detection(StatSet @params)
 	{
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effector.isPlayer() || !effected.isPlayer())
+        Player? player = effector.getActingPlayer();
+        Player? target = effected.getActingPlayer();
+		if (!effector.isPlayer() || !effected.isPlayer() || player == null || target == null)
 		{
 			return;
 		}
-		
-		Player player = effector.getActingPlayer();
-		Player target = effected.getActingPlayer();
+
 		bool hasParty = player.isInParty();
 		bool hasClan = player.getClanId() > 0;
 		bool hasAlly = player.getAllyId() > 0;
-		
+
 		if (target.isInvisible())
 		{
-			if (hasParty && (target.isInParty()) && (player.getParty().getLeaderObjectId() == target.getParty().getLeaderObjectId()))
+			if (hasParty && target.isInParty() && player.getParty()?.getLeaderObjectId() == target.getParty()?.getLeaderObjectId())
 			{
 				return;
 			}
-			else if (hasClan && (player.getClanId() == target.getClanId()))
-			{
-				return;
-			}
-			else if (hasAlly && (player.getAllyId() == target.getAllyId()))
-			{
-				return;
-			}
-			
-			// Remove Hide.
+
+            if (hasClan && player.getClanId() == target.getClanId())
+            {
+                return;
+            }
+
+            if (hasAlly && player.getAllyId() == target.getAllyId())
+            {
+                return;
+            }
+
+            // Remove Hide.
 			target.getEffectList().stopEffects(AbnormalType.HIDE);
 		}
 	}

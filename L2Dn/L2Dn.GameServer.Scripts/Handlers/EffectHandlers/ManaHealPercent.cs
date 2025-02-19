@@ -35,17 +35,17 @@ public class ManaHealPercent: AbstractEffect
 	
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if ((effected == null) || effected.isDead() || effected.isDoor() || effected.isMpBlocked())
+		if (effected == null || effected.isDead() || effected.isDoor() || effected.isMpBlocked())
 		{
 			return;
 		}
 		
 		double amount = 0;
 		double power = _power;
-		bool full = (power == 100.0);
+		bool full = power == 100.0;
 		
-		amount = full ? effected.getMaxMp() : (effected.getMaxMp() * power) / 100.0;
-		if ((item != null) && (item.isPotion() || item.isElixir()))
+		amount = full ? effected.getMaxMp() : effected.getMaxMp() * power / 100.0;
+		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			amount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_MP, 0);
 		}

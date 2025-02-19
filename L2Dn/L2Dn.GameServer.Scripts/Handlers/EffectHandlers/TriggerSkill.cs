@@ -20,56 +20,58 @@ public class TriggerSkill: AbstractEffect
 	private readonly SkillHolder _skill;
 	private readonly TargetType _targetType;
 	private readonly bool _adjustLevel;
-	
+
 	public TriggerSkill(StatSet @params)
 	{
 		_skill = new SkillHolder(@params.getInt("skillId"), @params.getInt("skillLevel", 1));
-		_targetType = @params.getEnum<TargetType>("targetType", TargetType.TARGET);
+		_targetType = @params.getEnum("targetType", TargetType.TARGET);
 		_adjustLevel = @params.getBoolean("adjustLevel", false);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if ((effected == null) || !effected.isCreature() || !effector.isPlayer())
+        Player? player = effector.getActingPlayer();
+		if (effected == null || !effected.isCreature() || !effector.isPlayer() || player == null)
 		{
 			return;
 		}
-		
-		Skill triggerSkill = _adjustLevel ? SkillData.getInstance().getSkill(_skill.getSkillId(), skill.getLevel()) : _skill.getSkill();
+
+		Skill? triggerSkill = _adjustLevel ? SkillData.getInstance().getSkill(_skill.getSkillId(), skill.getLevel()) : _skill.getSkill();
 		if (triggerSkill == null)
 		{
 			return;
 		}
-		
-		WorldObject target = null;
+
+		WorldObject? target = null;
 		try
-		{
-			target = TargetHandler.getInstance().getHandler(_targetType).getTarget(effector, effected, triggerSkill, false, false, false);
-		}
+        {
+            target = TargetHandler.getInstance().getHandler(_targetType)?.
+                getTarget(effector, effected, triggerSkill, false, false, false);
+        }
 		catch (Exception e)
 		{
 			LOGGER.Warn("Exception in ITargetTypeHandler.getTarget(): " + e);
 		}
-		
-		if ((target == null) || !target.isCreature())
+
+		if (target == null || !target.isCreature())
 		{
 			return;
 		}
-		
-		SkillUseHolder queuedSkill = effector.getActingPlayer().getQueuedSkill();
+
+		SkillUseHolder queuedSkill = player.getQueuedSkill();
 		if (queuedSkill != null)
 		{
 			ThreadPool.schedule(() =>
 			{
-				effector.getActingPlayer().setQueuedSkill(queuedSkill.getSkill(), queuedSkill.getItem(), queuedSkill.isCtrlPressed(), queuedSkill.isShiftPressed());
+                player.setQueuedSkill(queuedSkill.getSkill(), queuedSkill.getItem(), queuedSkill.isCtrlPressed(), queuedSkill.isShiftPressed());
 			}, 10);
 		}
-		
-		effector.getActingPlayer().setQueuedSkill(triggerSkill, null, false, false);
+
+        player.setQueuedSkill(triggerSkill, null, false, false);
 	}
 }

@@ -13,16 +13,16 @@ public class DamageBlock: AbstractEffect
 {
 	private readonly bool _blockHp;
 	private readonly bool _blockMp;
-	
+
 	public DamageBlock(StatSet @params)
 	{
-		string type = @params.getString("type", null);
+		string type = @params.getString("type", string.Empty);
 		_blockHp = type.equalsIgnoreCase("BLOCK_HP");
 		_blockMp = type.equalsIgnoreCase("BLOCK_MP");
 	}
-	
+
 	public override long getEffectFlags()
 	{
-		return _blockHp ? EffectFlag.HP_BLOCK.getMask() : (_blockMp ? EffectFlag.MP_BLOCK.getMask() : EffectFlag.NONE.getMask());
+		return _blockHp ? EffectFlag.HP_BLOCK.getMask() : _blockMp ? EffectFlag.MP_BLOCK.getMask() : EffectFlag.NONE.getMask();
 	}
 }

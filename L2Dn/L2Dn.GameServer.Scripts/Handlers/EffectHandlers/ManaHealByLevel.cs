@@ -40,7 +40,7 @@ public class ManaHealByLevel: AbstractEffect
 			return;
 		}
 		
-		if ((effected != effector) && effected.isAffected(EffectFlag.FACEOFF))
+		if (effected != effector && effected.isAffected(EffectFlag.FACEOFF))
 		{
 			return;
 		}

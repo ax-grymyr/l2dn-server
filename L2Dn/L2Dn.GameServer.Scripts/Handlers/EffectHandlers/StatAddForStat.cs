@@ -35,7 +35,7 @@ public class StatAddForStat: AbstractEffect
 	public override void pump(Creature effected, Skill skill)
 	{
 		int currentValue = (int) effected.getStat().getValue(_stat);
-		if ((currentValue >= _min) && (currentValue <= _max))
+		if (currentValue >= _min && currentValue <= _max)
 		{
 			effected.getStat().mergeAdd(_addStat, _amount);
 		}

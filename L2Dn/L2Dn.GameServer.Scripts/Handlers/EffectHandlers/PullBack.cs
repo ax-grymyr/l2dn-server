@@ -43,12 +43,12 @@ public class PullBack: AbstractEffect
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
 		// Prevent pulling raids and town NPCs.
-		if ((effected == null) || effected.isRaid() || (effected.isNpc() && !effected.isAttackable()))
+		if (effected == null || effected.isRaid() || (effected.isNpc() && !effected.isAttackable()))
 		{
 			return;
 		}
 		// Prevent pulling debuff blocked characters.
-		if ((effected.isDebuffBlocked()))
+		if (effected.isDebuffBlocked())
 		{
 			return;
 		}

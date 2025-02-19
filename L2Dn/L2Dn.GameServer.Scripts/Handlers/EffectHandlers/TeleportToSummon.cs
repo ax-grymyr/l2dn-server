@@ -19,54 +19,56 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class TeleportToSummon: AbstractEffect
 {
 	private readonly double _maxDistance;
-	
+
 	public TeleportToSummon(StatSet @params)
 	{
 		_maxDistance = @params.getDouble("distance", -1);
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.TELEPORT_TO_TARGET;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
 		return effected.hasServitors();
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		L2Dn.GameServer.Model.Actor.Summon summon = effected.getActingPlayer().getFirstServitor();
-		
-		if ((_maxDistance > 0) && (effector.Distance2D(summon) >= _maxDistance))
+		L2Dn.GameServer.Model.Actor.Summon? summon = effected.getActingPlayer()?.getFirstServitor();
+        if (summon == null)
+            return;
+
+		if (_maxDistance > 0 && effector.Distance2D(summon) >= _maxDistance)
 		{
 			return;
 		}
-		
+
 		int px = summon.getX();
 		int py = summon.getY();
 		double ph = HeadingUtil.ConvertHeadingToDegrees(summon.getHeading());
-		
+
 		ph += 180;
 		if (ph > 360)
 		{
 			ph -= 360;
 		}
-		
-		ph = (Math.PI * ph) / 180;
-		int x = (int) (px + (25 * Math.Cos(ph)));
-		int y = (int) (py + (25 * Math.Sin(ph)));
+
+		ph = Math.PI * ph / 180;
+		int x = (int) (px + 25 * Math.Cos(ph));
+		int y = (int) (py + 25 * Math.Sin(ph));
 		int z = summon.getZ();
 
 		Location3D loc = GeoEngine.getInstance().getValidLocation(effector.Location.Location3D, new Location3D(x, y, z),
 			effector.getInstanceWorld());
-		
+
 		effector.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effector.broadcastPacket(new FlyToLocationPacket(effector, loc, FlyType.DUMMY));
 		effector.abortAttack();

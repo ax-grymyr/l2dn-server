@@ -16,7 +16,7 @@ public class TransferDamageToPlayer: AbstractStatAddEffect
 	public TransferDamageToPlayer(StatSet @params): base(@params, Stat.TRANSFER_DAMAGE_TO_PLAYER)
 	{
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
 		if (effected.isPlayable() && effector.isPlayer())
@@ -24,12 +24,13 @@ public class TransferDamageToPlayer: AbstractStatAddEffect
 			((Playable) effected).setTransferDamageTo(null);
 		}
 	}
-	
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item item)
-	{
-		if (effected.isPlayable() && effector.isPlayer())
+
+	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        Player? player = effector.getActingPlayer();
+		if (effected.isPlayable() && effector.isPlayer() && player != null)
 		{
-			((Playable) effected).setTransferDamageTo(effector.getActingPlayer());
+			((Playable) effected).setTransferDamageTo(player);
 		}
 	}
 }

@@ -20,11 +20,11 @@ public class Disarmor: AbstractEffect
 {
 	private readonly Map<int, int> _unequippedItems; // PlayerObjId, ItemObjId
 	private readonly long _slot;
-	
+
 	public Disarmor(StatSet @params)
 	{
 		_unequippedItems = new();
-		
+
 		string slot = @params.getString("slot", "chest");
 		_slot = ItemData.SLOTS.GetValueOrDefault(slot, ItemTemplate.SLOT_NONE);
 		if (_slot == ItemTemplate.SLOT_NONE)
@@ -32,27 +32,27 @@ public class Disarmor: AbstractEffect
 			LOGGER.Error("Unknown bodypart slot for effect: " + slot);
 		}
 	}
-	
+
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
-		return (_slot != ItemTemplate.SLOT_NONE) && effected.isPlayer();
+		return _slot != ItemTemplate.SLOT_NONE && effected.isPlayer();
 	}
-	
+
 	public override void continuousInstant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effected.isPlayer())
+        Player? player = effected.getActingPlayer();
+		if (!effected.isPlayer() || player == null)
 		{
 			return;
 		}
-		
-		Player player = effected.getActingPlayer();
+
 		List<Item> unequipped = player.getInventory().unEquipItemInBodySlotAndRecord(_slot);
 		if (unequipped.Count != 0)
 		{
 			InventoryUpdatePacket iu = new InventoryUpdatePacket(unequipped.Select(x => new ItemInfo(x, ItemChangeType.MODIFIED)).ToList());
 			player.sendInventoryUpdate(iu);
 			player.broadcastUserInfo();
-			
+
 			SystemMessagePacket sm;
 			Item unequippedItem = unequipped[0];
 			if (unequippedItem.getEnchantLevel() > 0)
@@ -66,27 +66,27 @@ public class Disarmor: AbstractEffect
 				sm = new SystemMessagePacket(SystemMessageId.S1_UNEQUIPPED);
 				sm.Params.addItemName(unequippedItem);
 			}
-			
+
 			player.sendPacket(sm);
 			effected.getInventory().blockItemSlot(_slot);
 			_unequippedItems.put(effected.ObjectId, unequippedItem.ObjectId);
 		}
 	}
-	
+
 	public override void onExit(Creature effector, Creature effected, Skill skill)
 	{
-		if (!effected.isPlayer())
+        Player? player = effected.getActingPlayer();
+		if (!effected.isPlayer() || player == null)
 		{
 			return;
 		}
-		
+
 		int disarmedObjId = _unequippedItems.remove(effected.ObjectId);
-		if ((disarmedObjId != null) && (disarmedObjId > 0))
+		if (disarmedObjId != null && disarmedObjId > 0)
 		{
-			Player player = effected.getActingPlayer();
 			player.getInventory().unblockItemSlot(_slot);
-			
-			Item item = player.getInventory().getItemByObjectId(disarmedObjId);
+
+			Item? item = player.getInventory().getItemByObjectId(disarmedObjId);
 			if (item != null)
 			{
 				player.getInventory().equipItem(item);
@@ -106,7 +106,7 @@ public class Disarmor: AbstractEffect
 						sm = new SystemMessagePacket(SystemMessageId.S1_EQUIPPED);
 						sm.Params.addItemName(item);
 					}
-					
+
 					player.sendPacket(sm);
 				}
 			}

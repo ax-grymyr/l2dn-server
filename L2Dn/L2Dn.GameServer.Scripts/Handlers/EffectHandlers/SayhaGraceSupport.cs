@@ -16,20 +16,23 @@ public class SayhaGraceSupport: AbstractEffect
 	public SayhaGraceSupport(StatSet @params)
 	{
 	}
-	
+
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
-		return (effected != null) && effected.isPlayer();
+		return effected != null && effected.isPlayer();
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		Player player = effected.getActingPlayer();
+		Player? player = effected.getActingPlayer();
+        if (player is null)
+            return;
+
 		double rnd = Rnd.nextDouble() * 100;
 		if (rnd <= 0.1) // 4h
 		{
