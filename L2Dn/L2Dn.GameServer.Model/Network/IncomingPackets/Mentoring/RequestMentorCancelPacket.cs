@@ -60,7 +60,7 @@ public struct RequestMentorCancelPacket: IIncomingPacket<GameSession>
 			else if (player.isMentee())
 			{
 				Mentee? mentor = MentorManager.getInstance().getMentor(player.ObjectId);
-				if ((mentor != null) && (mentor.getObjectId() == objectId))
+				if (mentor != null && mentor.getObjectId() == objectId)
 				{
 					MentorManager.getInstance().cancelAllMentoringBuffs(player);
 

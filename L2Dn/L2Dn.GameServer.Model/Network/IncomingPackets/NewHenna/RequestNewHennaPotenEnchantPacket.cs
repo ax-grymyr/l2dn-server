@@ -28,13 +28,12 @@ public struct RequestNewHennaPotenEnchantPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
 		int dailyStep = player.getDyePotentialDailyStep();
-		DyePotentialFee currentFee = HennaPatternPotentialData.getInstance().getFee(dailyStep);
 		int dailyCount = player.getDyePotentialDailyCount();
 		if (_slotId < 1 || _slotId > 4)
 		{
 			return ValueTask.CompletedTask;
 		}
-		
+
 		HennaPoten hennaPattern = player.getHennaPoten(_slotId);
 		int enchantExp = hennaPattern.getEnchantExp();
 		int fullExpNeeded = HennaPatternPotentialData.getInstance().getExpForLevel(hennaPattern.getEnchantLevel());
@@ -42,10 +41,11 @@ public struct RequestNewHennaPotenEnchantPacket: IIncomingPacket<GameSession>
 		{
 			player.sendPacket(new NewHennaPotenEnchantPacket(_slotId, hennaPattern.getEnchantLevel(),
 				hennaPattern.getEnchantExp(), dailyStep, dailyCount, hennaPattern.getActiveStep(), true));
-			
+
 			return ValueTask.CompletedTask;
 		}
-		
+
+        DyePotentialFee? currentFee = HennaPatternPotentialData.getInstance().getFee(dailyStep);
 		if (currentFee == null || dailyCount <= 0)
 			return ValueTask.CompletedTask;
 
@@ -53,12 +53,12 @@ public struct RequestNewHennaPotenEnchantPacket: IIncomingPacket<GameSession>
 		ItemHolder? itemFee = currentFee.getItems().FirstOrDefault(ih => ih.getId() == costItemId);
 		if (itemFee == null || !player.destroyItemByItemId(GetType().Name, itemFee.getId(), itemFee.getCount(), player, true))
 			return ValueTask.CompletedTask;
-		
+
 		dailyCount -= 1;
 		if (dailyCount <= 0 && dailyStep != HennaPatternPotentialData.getInstance().getMaxPotenEnchantStep())
 		{
 			dailyStep += 1;
-			DyePotentialFee newFee = HennaPatternPotentialData.getInstance().getFee(dailyStep);
+			DyePotentialFee? newFee = HennaPatternPotentialData.getInstance().getFee(dailyStep);
 			if (newFee != null)
 			{
 				dailyCount = 0;
@@ -70,7 +70,7 @@ public struct RequestNewHennaPotenEnchantPacket: IIncomingPacket<GameSession>
 		{
 			player.setDyePotentialDailyCount(dailyCount);
 		}
-		
+
 		double totalChance = 0;
 		double random = Rnd.nextDouble() * 100;
 		foreach (var entry in currentFee.getEnchantExp())
@@ -92,14 +92,14 @@ public struct RequestNewHennaPotenEnchantPacket: IIncomingPacket<GameSession>
 				}
 				hennaPattern.setEnchantExp(newEnchantExp);
 				hennaPattern.setSlotPosition(_slotId);
-				
+
 				player.sendPacket(new NewHennaPotenEnchantPacket(_slotId, hennaPattern.getEnchantLevel(),
 					hennaPattern.getEnchantExp(), dailyStep, dailyCount, hennaPattern.getActiveStep(), true));
-				
+
 				return ValueTask.CompletedTask;
 			}
 		}
-        
+
         return ValueTask.CompletedTask;
     }
 }

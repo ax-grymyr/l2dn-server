@@ -357,7 +357,7 @@ public class Clan: IIdentifiable, INamable
 	 * @param name the name of the required clan member.
 	 * @return the clan member for a given name.
 	 */
-	public ClanMember getClanMember(string name)
+	public ClanMember? getClanMember(string name)
 	{
 		foreach (ClanMember temp in _members.Values)
 		{
@@ -373,7 +373,7 @@ public class Clan: IIdentifiable, INamable
 	 * @param objectId the required clan member object Id.
 	 * @return the clan member for a given {@code objectId}.
 	 */
-	public ClanMember getClanMember(int objectId)
+	public ClanMember? getClanMember(int objectId)
 	{
 		return _members.get(objectId);
 	}

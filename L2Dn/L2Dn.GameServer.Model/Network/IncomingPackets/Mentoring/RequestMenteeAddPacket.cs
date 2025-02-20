@@ -23,10 +23,10 @@ public struct RequestMenteeAddPacket: IIncomingPacket<GameSession>
         if (mentor == null)
             return ValueTask.CompletedTask;
 
-        Player mentee = World.getInstance().getPlayer(_target);
+        Player? mentee = World.getInstance().getPlayer(_target);
         if (mentee == null)
             return ValueTask.CompletedTask;
-		
+
         if (ConfirmMenteeAddPacket.validate(mentor, mentee))
         {
             SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OFFERED_TO_BECOME_S1_S_MENTOR);
@@ -34,7 +34,7 @@ public struct RequestMenteeAddPacket: IIncomingPacket<GameSession>
             mentor.sendPacket(sm);
             mentee.sendPacket(new ExMentorAddPacket(mentor));
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

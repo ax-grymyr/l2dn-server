@@ -42,7 +42,7 @@ public struct RequestHuntPassRewardAllPacket: IIncomingPacket<GameSession>
 		{
 			rewardIndex = huntPass.getRewardStep();
 			premiumRewardIndex = huntPass.getPremiumRewardStep();
-			if ((rewardIndex >= HuntPassData.getInstance().getRewardsCount()) && (premiumRewardIndex >= HuntPassData.getInstance().getPremiumRewardsCount()))
+			if (rewardIndex >= HuntPassData.getInstance().getRewardsCount() && premiumRewardIndex >= HuntPassData.getInstance().getPremiumRewardsCount())
 			{
 				break;
 			}
@@ -80,6 +80,12 @@ public struct RequestHuntPassRewardAllPacket: IIncomingPacket<GameSession>
 			}
 
 			ItemTemplate? itemTemplate = ItemData.getInstance().getTemplate(reward.getId());
+            if (itemTemplate == null)
+            {
+                player.removeRequest<RewardRequest>();
+                return ValueTask.CompletedTask;
+            }
+
 			long weight = itemTemplate.getWeight() * reward.getCount();
 			long slots = itemTemplate.isStackable() ? 1 : reward.getCount();
 			if (!player.getInventory().validateWeight(weight) || !player.getInventory().validateCapacity(slots))
@@ -152,9 +158,9 @@ public struct RequestHuntPassRewardAllPacket: IIncomingPacket<GameSession>
 			return;
 		}
 
-		if (huntPass.isPremium() && ((huntPass.getPremiumRewardStep() < rewardIndex) ||
-		                             (huntPass.getPremiumRewardStep() >=
-		                              HuntPassData.getInstance().getPremiumRewardsCount())))
+		if (huntPass.isPremium() && (huntPass.getPremiumRewardStep() < rewardIndex ||
+		                             huntPass.getPremiumRewardStep() >=
+                                     HuntPassData.getInstance().getPremiumRewardsCount()))
 		{
 			return;
 		}

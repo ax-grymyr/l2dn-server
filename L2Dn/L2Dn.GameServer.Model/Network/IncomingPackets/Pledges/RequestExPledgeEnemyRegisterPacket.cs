@@ -43,7 +43,7 @@ public struct RequestExPledgeEnemyRegisterPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		Clan enemyClan = ClanTable.getInstance().getClanByName(_pledgeName);
+		Clan? enemyClan = ClanTable.getInstance().getClanByName(_pledgeName);
 		if (enemyClan == null)
 		{
 			connection.Send(new SystemMessagePacket(SystemMessageId.A_CLAN_WAR_CANNOT_BE_DECLARED_AGAINST_A_CLAN_THAT_DOES_NOT_EXIST));

@@ -89,7 +89,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		if (Config.RESTORE_PLAYER_INSTANCE)
 		{
 			Instance? instance = InstanceManager.getInstance().getPlayerInstance(player, false);
-			if ((instance != null) && (instance.getId() == vars.getInt(PlayerVariables.INSTANCE_RESTORE, 0)))
+			if (instance != null && instance.getId() == vars.getInt(PlayerVariables.INSTANCE_RESTORE, 0))
 			{
 				player.setInstance(instance);
 			}
@@ -294,7 +294,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			clan.broadcastToOnlineMembers(new ExPledgeCountPacket(clan));
 			connection.Send(new PledgeSkillListPacket(clan));
 			ClanHall? ch = ClanHallData.getInstance().getClanHallByClan(clan);
-			if ((ch != null) && (ch.getCostFailDay() > 0) && (ch.getResidenceId() < 186))
+			if (ch != null && ch.getCostFailDay() > 0 && ch.getResidenceId() < 186)
 			{
 				sm = new SystemMessagePacket(SystemMessageId.THE_PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_DEPOSIT_THE_NECESSARY_AMOUNT_OF_ADENA_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW);
 				sm.Params.addLong(ch.getLease());
@@ -365,7 +365,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				if (quest != null)
 				{
 					QuestState? questState = player.getQuestState(quest.Name);
-					if ((questState == null) && quest.canStartQuest(player) && !newQuest.getConditions().getSpecificStart())
+					if (questState == null && quest.canStartQuest(player) && !newQuest.getConditions().getSpecificStart())
 					{
 						connection.Send(new ExQuestDialogPacket(quest.getId(), QuestDialogType.ACCEPT));
 						break; // Only send first dialog.
@@ -423,7 +423,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 
 		AnnouncementsTable.getInstance().showAnnouncements(player);
 
-		if ((Config.SERVER_RESTART_SCHEDULE_ENABLED) && (Config.SERVER_RESTART_SCHEDULE_MESSAGE))
+		if (Config.SERVER_RESTART_SCHEDULE_ENABLED && Config.SERVER_RESTART_SCHEDULE_MESSAGE)
 		{
 			connection.Send(new CreatureSayPacket(null, ChatType.BATTLEFIELD, "[SERVER]",
 				"Next restart is scheduled at " + ServerRestartManager.getInstance().getNextRestartTime() + "."));
@@ -503,7 +503,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		// Attacker or spectator logging in to a siege zone.
 		// Actually should be checked for inside castle only?
 		if (!player.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS) && player.isInsideZone(ZoneId.SIEGE) &&
-		    (!player.isInSiege() || (player.getSiegeState() < 2)))
+		    (!player.isInSiege() || player.getSiegeState() < 2))
 		{
 			player.teleToLocation(TeleportWhereType.TOWN);
 		}
@@ -515,12 +515,12 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			foreach (Item item in player.getInventory().getItems())
 			{
 				if (item.isEquipable() //
-				    && ((item.isWeapon() && (item.getEnchantLevel() >
-				                             EnchantItemGroupsData.getInstance().getMaxWeaponEnchant())) //
-				        || ((item.getTemplate().getType2() == ItemTemplate.TYPE2_ACCESSORY) && (item.getEnchantLevel() >
-					        EnchantItemGroupsData.getInstance().getMaxAccessoryEnchant())) //
-				        || (item.isArmor() && (item.getTemplate().getType2() != ItemTemplate.TYPE2_ACCESSORY) &&
-				            (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxArmorEnchant()))))
+				    && ((item.isWeapon() && item.getEnchantLevel() >
+                            EnchantItemGroupsData.getInstance().getMaxWeaponEnchant()) //
+				        || (item.getTemplate().getType2() == ItemTemplate.TYPE2_ACCESSORY && item.getEnchantLevel() >
+                            EnchantItemGroupsData.getInstance().getMaxAccessoryEnchant()) //
+				        || (item.isArmor() && item.getTemplate().getType2() != ItemTemplate.TYPE2_ACCESSORY &&
+				            item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxArmorEnchant())))
 				{
 					_logger.Info("Over-enchanted (+" + item.getEnchantLevel() + ") " + item +
 					             " has been removed from " + player);
@@ -529,7 +529,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				}
 			}
 
-			if (punish && (Config.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE))
+			if (punish && Config.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE)
 			{
 				player.sendMessage("[Server]: You have over-enchanted items!");
 				player.sendMessage("[Server]: Respect our server rules.");
@@ -540,13 +540,13 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 
 		// Remove demonic weapon if character is not cursed weapon equipped.
         Item? item8190 = player.getInventory().getItemByItemId(8190);
-		if ((item8190 != null) && !player.isCursedWeaponEquipped())
+		if (item8190 != null && !player.isCursedWeaponEquipped())
 		{
 			player.destroyItem("Zariche", item8190, null, true);
 		}
 
         Item? item8689 = player.getInventory().getItemByItemId(8689);
-		if ((item8689 != null) && !player.isCursedWeaponEquipped())
+		if (item8689 != null && !player.isCursedWeaponEquipped())
 		{
 			player.destroyItem("Akamanah", item8689, null, true);
 		}
@@ -663,7 +663,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			connection.Send(new ExSteadyBoxUiInitPacket(player));
 		}
 
-		if ((player.getLevel() >= 40) && (player.getClassId().GetLevel() > 1))
+		if (player.getLevel() >= 40 && player.getClassId().GetLevel() > 1)
 		{
 			player.initElementalSpirits();
 		}
@@ -692,7 +692,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 
 		// Old ammunition check.
 		Item? leftHandItem = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
-		if ((leftHandItem != null) && ((leftHandItem.getItemType() == EtcItemType.ARROW) || (leftHandItem.getItemType() == EtcItemType.BOLT) || (leftHandItem.getItemType() == EtcItemType.ELEMENTAL_ORB)))
+		if (leftHandItem != null && (leftHandItem.getItemType() == EtcItemType.ARROW || leftHandItem.getItemType() == EtcItemType.BOLT || leftHandItem.getItemType() == EtcItemType.ELEMENTAL_ORB))
 		{
 			player.getInventory().unEquipItemInBodySlot(Inventory.PAPERDOLL_LHAND);
 		}

@@ -30,21 +30,22 @@ public struct RequestExAcquirePetSkillPacket: IIncomingPacket<GameSession>
         if (pet == null)
             return ValueTask.CompletedTask;
 
-        Skill skill = SkillData.getInstance().getSkill(_skillId, _skillLevel);
+        Skill? skill = SkillData.getInstance().getSkill(_skillId, _skillLevel);
         if (skill == null)
             return ValueTask.CompletedTask;
 
         int skillId = _skillId;
         int skillLevel = _skillLevel;
         PetSkillAcquireHolder? reqItem = PetAcquireList.getInstance()
-            .getSkills(pet.getPetData().getType()).FirstOrDefault(it => it.getSkillId() == skillId && it.getSkillLevel() == skillLevel);
+            .getSkills(pet.getPetData().getType())?.FirstOrDefault(it => it.getSkillId() == skillId && it.getSkillLevel() == skillLevel);
 
         if (reqItem != null)
         {
-            if (reqItem.getItem() != null)
+            ItemHolder? item = reqItem.getItem();
+            if (item != null)
             {
-                if (player.destroyItemByItemId("PetAcquireSkill", reqItem.getItem().getId(),
-                        reqItem.getItem().getCount(), null, true))
+                if (player.destroyItemByItemId("PetAcquireSkill", item.getId(),
+                        item.getCount(), null, true))
                 {
                     pet.addSkill(skill);
                     pet.storePetSkills(_skillId, _skillLevel);

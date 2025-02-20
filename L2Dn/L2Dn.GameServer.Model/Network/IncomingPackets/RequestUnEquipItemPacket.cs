@@ -38,11 +38,11 @@ public struct RequestUnEquipItemPacket: IIncomingPacket<GameSession>
 		}
 		
 		// Arrows and bolts.
-		if ((_slot == ItemTemplate.SLOT_L_HAND) && (item.getTemplate() is EtcItem))
+		if (_slot == ItemTemplate.SLOT_L_HAND && item.getTemplate() is EtcItem)
 			return ValueTask.CompletedTask;
 		
 		// Prevent of unequipping a cursed weapon.
-		if ((_slot == ItemTemplate.SLOT_LR_HAND) && (player.isCursedWeaponEquipped() || player.isCombatFlagEquipped()))
+		if (_slot == ItemTemplate.SLOT_LR_HAND && (player.isCursedWeaponEquipped() || player.isCombatFlagEquipped()))
 			return ValueTask.CompletedTask;
 		
 		// Prevent player from unequipping items in special conditions.

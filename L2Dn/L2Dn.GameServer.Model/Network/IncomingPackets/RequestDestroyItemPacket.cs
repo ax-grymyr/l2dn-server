@@ -53,7 +53,7 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 		// }
 
 		long count = _count;
-		if (player.isProcessingTransaction() || (player.getPrivateStoreType() != PrivateStoreType.NONE))
+		if (player.isProcessingTransaction() || player.getPrivateStoreType() != PrivateStoreType.NONE)
 		{
 			player.sendPacket(SystemMessageId.WHILE_OPERATING_A_PRIVATE_STORE_OR_WORKSHOP_YOU_CANNOT_DISCARD_DESTROY_OR_TRADE_AN_ITEM);
 			return ValueTask.CompletedTask;
@@ -74,7 +74,7 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 			if (player.isGM())
 			{
 				WorldObject? obj = World.getInstance().findObject(_objectId);
-				if ((obj != null) && obj.isItem())
+				if (obj != null && obj.isItem())
 				{
 					if (_count > ((Item) obj).getCount())
 					{
@@ -113,7 +113,7 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (!itemToRemove.isStackable() && (count > 1))
+		if (!itemToRemove.isStackable() && count > 1)
 		{
 			Util.handleIllegalPlayerAction(player,
 				"[RequestDestroyItem] Character " + player.getName() + " of account " + player.getAccountName() +
@@ -137,7 +137,7 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 		if (itemToRemove.getTemplate().isPetItem())
 		{
 			Summon? pet = player.getPet();
-			if ((pet != null) && (pet.getControlObjectId() == _objectId))
+			if (pet != null && pet.getControlObjectId() == _objectId)
 			{
 				pet.unSummon(player);
 			}

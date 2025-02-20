@@ -29,7 +29,7 @@ public struct ExRequestSetEnchantChallengePointPacket: IIncomingPacket<GameSessi
 	    if (player == null)
 		    return ValueTask.CompletedTask;
 
-	    EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
+	    EnchantItemRequest? request = player.getRequest<EnchantItemRequest>();
 	    if (request == null || request.isProcessing())
 	    {
 		    player.sendPacket(new ExSetEnchantChallengePointPacket(false));
@@ -93,7 +93,14 @@ public struct ExRequestSetEnchantChallengePointPacket: IIncomingPacket<GameSessi
 	    }
 
 	    EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId());
-	    double chance = scrollTemplate.getChance(player, item);
+        if (scrollTemplate == null)
+        {
+            player.sendPacket(new ExSetEnchantChallengePointPacket(false));
+            player.removeRequest<EnchantItemRequest>();
+            return ValueTask.CompletedTask;
+        }
+
+        double chance = scrollTemplate.getChance(player, item);
 
 	    double challengePointsChance = 0;
 	    int pendingGroupId = player.getChallengeInfo().getChallengePointsPendingRecharge()[0];

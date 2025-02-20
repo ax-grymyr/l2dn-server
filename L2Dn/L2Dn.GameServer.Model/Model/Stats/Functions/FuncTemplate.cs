@@ -14,13 +14,13 @@ namespace L2Dn.GameServer.Model.Stats.Functions;
 public class FuncTemplate
 {
 	private readonly Type _functionClass;
-	private readonly Condition _attachCond;
-	private readonly Condition _applayCond;
+	private readonly Condition? _attachCond;
+	private readonly Condition? _applayCond;
 	private readonly Stat _stat;
 	private readonly int _order;
 	private readonly double _value;
 
-	public FuncTemplate(Condition attachCond, Condition applayCond, string functionName, int order, Stat stat,
+	public FuncTemplate(Condition? attachCond, Condition? applayCond, string functionName, int order, Stat stat,
 		double value)
 	{
 		Enums.StatFunction function = Enum.Parse<Enums.StatFunction>(functionName, true);

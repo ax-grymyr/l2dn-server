@@ -24,18 +24,21 @@ public struct RequestDivideAdenaCancelPacket: IIncomingPacket<GameSession>
 
         if (_cancel)
         {
-            AdenaDistributionRequest request = player.getRequest<AdenaDistributionRequest>();
-            foreach (Player p in request.getPlayers())
+            AdenaDistributionRequest? request = player.getRequest<AdenaDistributionRequest>();
+            if (request != null)
             {
-                if (p != null)
+                foreach (Player p in request.getPlayers())
                 {
-                    p.sendPacket(SystemMessageId.ADENA_DISTRIBUTION_HAS_BEEN_CANCELLED);
-                    p.sendPacket(ExDivideAdenaCancelPacket.STATIC_PACKET);
-                    p.removeRequest<AdenaDistributionRequest>();
+                    if (p != null)
+                    {
+                        p.sendPacket(SystemMessageId.ADENA_DISTRIBUTION_HAS_BEEN_CANCELLED);
+                        p.sendPacket(ExDivideAdenaCancelPacket.STATIC_PACKET);
+                        p.removeRequest<AdenaDistributionRequest>();
+                    }
                 }
             }
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

@@ -788,7 +788,7 @@ public class Pet: Summon
 	 * @param reference Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public Item transferItem(string process, int objectId, long count, Inventory target, Player actor, WorldObject reference)
+	public Item transferItem(string process, int objectId, long count, Inventory target, Player actor, WorldObject? reference)
 	{
 		Item oldItem = _inventory.getItemByObjectId(objectId);
 		Item playerOldItem = target.getItemByItemId(oldItem.getId());

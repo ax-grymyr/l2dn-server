@@ -18,7 +18,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets.StoreReview;
 public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession>
 {
     public const int MAX_ITEM_PER_PAGE = 120;
-	
+
     private string _searchWord;
     private StoreType _storeType;
     private StoreItemType _itemType;
@@ -75,22 +75,22 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 				}
 			}
 		});
-		
+
 		int nSize = items.Count;
 		int maxPage = Math.Max(1,
 			nSize / (MAX_ITEM_PER_PAGE * 1F) > nSize / MAX_ITEM_PER_PAGE
 				? nSize / MAX_ITEM_PER_PAGE + 1
 				: nSize / MAX_ITEM_PER_PAGE);
-		
+
 		for (int pageIndex = 1; pageIndex <= maxPage; pageIndex++)
 		{
 			int nsize = pageIndex == maxPage
 				? nSize % MAX_ITEM_PER_PAGE > 0 || nSize == 0 ? nSize % MAX_ITEM_PER_PAGE : MAX_ITEM_PER_PAGE
 				: MAX_ITEM_PER_PAGE;
-			
+
 			player.sendPacket(new ExPrivateStoreSearchItemPacket(pageIndex, maxPage, nsize, items));
 		}
-		
+
 		List<PrivateStoreHistoryManager.ItemHistoryTransaction> history = new();
 		List<PrivateStoreHistoryManager.ItemHistoryTransaction> historyTemp = new();
 		PrivateStoreHistoryManager.getInstance().getHistory().ForEach(transaction =>
@@ -100,14 +100,14 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 				history.Add(transaction);
 			}
 		});
-		
+
 		int page = 1;
 		maxPage = Math.Max(1, history.Count / (MAX_ITEM_PER_PAGE * 1F) > history.Count / MAX_ITEM_PER_PAGE ? history.Count / MAX_ITEM_PER_PAGE + 1 : history.Count / MAX_ITEM_PER_PAGE);
-		
+
 		for (int index = 0; index < history.Count; index++)
 		{
 			historyTemp.Add(history[index]);
-			
+
 			if (index == history.Count - 1 || index == MAX_ITEM_PER_PAGE - 1 || (index > 0 && index % (MAX_ITEM_PER_PAGE - 1) == 0))
 			{
 				player.sendPacket(new ExPrivateStoreSearchHistoryPacket(page, maxPage, historyTemp));
@@ -115,15 +115,15 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 				historyTemp.Clear();
 			}
 		}
-		
+
 		if (page == 1)
 		{
 			player.sendPacket(new ExPrivateStoreSearchHistoryPacket(1, 1, historyTemp));
 		}
-		
+
 		return ValueTask.CompletedTask;
 	}
-	
+
 	private static bool isItemVisibleForShop(TradeItem item, StoreItemType itemType, StoreSubItemType itemSubtype, int searchCollection)
 	{
 		/**
@@ -154,7 +154,7 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 			// Equipment - Misc
 			return item.getItem().isEquipable() && !item.getItem().isWeapon() && !isEquipmentArmor(item.getItem()) && !isAccessory(item.getItem());
 		}
-		
+
 		/**
 		 * Exping / Enhancement
 		 */
@@ -193,7 +193,7 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 			// Exping / Enhancement - Misc
 			return isEnhancementMisc(item.getItem());
 		}
-		
+
 		/**
 		 * Groceries
 		 */
@@ -222,7 +222,7 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 			// Groceries - Misc
 			return isGroceryMisc(item.getItem());
 		}
-		
+
 		/**
 		 * Collections
 		 */
@@ -246,57 +246,57 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 			// Collections - Misc
 			return isCollectionMisc(item.getItem());
 		}
-		
+
 		return true;
 	}
-	
+
 	private static bool isEquipmentArmor(ItemTemplate item)
 	{
 		return item.isArmor() && (item.getBodyPart() == ItemTemplate.SLOT_CHEST || item.getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR || item.getBodyPart() == ItemTemplate.SLOT_HEAD || item.getBodyPart() == ItemTemplate.SLOT_LEGS || item.getBodyPart() == ItemTemplate.SLOT_FEET || item.getBodyPart() == ItemTemplate.SLOT_GLOVES || item.getBodyPart() == (ItemTemplate.SLOT_CHEST | ItemTemplate.SLOT_LEGS));
 	}
-	
+
 	private static bool isAccessory(ItemTemplate item)
 	{
 		return item.isArmor() && (item.getBodyPart() == (ItemTemplate.SLOT_L_BRACELET | ItemTemplate.SLOT_R_BRACELET | ItemTemplate.SLOT_BROOCH) || item.getBodyPart() == (ItemTemplate.SLOT_R_FINGER | ItemTemplate.SLOT_L_FINGER) || item.getBodyPart() == ItemTemplate.SLOT_NECK || item.getBodyPart() == (ItemTemplate.SLOT_R_EAR | ItemTemplate.SLOT_L_EAR));
 	}
-	
+
 	private static bool isEnchantScroll(ItemTemplate item)
 	{
 		if (!(item is EtcItem))
 		{
 			return false;
 		}
-		
-		IItemHandler ih = ItemHandler.getInstance().getHandler((EtcItem) item);
-		
+
+		IItemHandler? ih = ItemHandler.getInstance().getHandler((EtcItem) item);
+
 		return ih != null && ih.GetType().Name.equals("EnchantScrolls");
 	}
-	
+
 	private static bool isCrystal(ItemTemplate item)
 	{
 		return EnsoulData.getInstance().getStone(item.getId()) != null;
 	}
-	
+
 	private static bool isLifeStone(ItemTemplate item)
 	{
 		return VariationData.getInstance().hasVariation(item.getId());
 	}
-	
+
 	private static bool isDye(ItemTemplate item)
 	{
 		return HennaData.getInstance().getHennaByItemId(item.getId()) != null;
 	}
-	
+
 	private static bool isSpellBook(ItemTemplate item)
 	{
 		return item.getName().contains("Spellbook: ");
 	}
-	
+
 	private static bool isEnhancementMisc(ItemTemplate item)
 	{
 		return item.getId() >= 91031 && item.getId() <= 91038;
 	}
-	
+
 	private static bool isEnhancementItem(ItemTemplate item)
 	{
 		return isEnchantScroll(item) || isCrystal(item) || isLifeStone(item) || isDye(item) || isSpellBook(item) ||
@@ -311,27 +311,30 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 
 	private static bool isPackOrCraft(ItemTemplate item)
 	{
-		if (item.getId() == 92477 || item.getId() == 91462 || item.getId() == 92478 || item.getId() == 92479 || item.getId() == 92480 || item.getId() == 92481 || item.getId() == 49756 || item.getId() == 93906 || item.getId() == 93907 || item.getId() == 93908 || item.getId() == 93909 || item.getId() == 93910 || item.getId() == 91076)
-		{
-			return true;
-		}
-		
-		if (!(item is EtcItem))
+        if (item.getId() == 92477 || item.getId() == 91462 || item.getId() == 92478 || item.getId() == 92479 ||
+            item.getId() == 92480 || item.getId() == 92481 || item.getId() == 49756 || item.getId() == 93906 ||
+            item.getId() == 93907 || item.getId() == 93908 || item.getId() == 93909 || item.getId() == 93910 ||
+            item.getId() == 91076)
+        {
+            return true;
+        }
+
+        if (!(item is EtcItem))
 		{
 			return false;
 		}
-		
-		IItemHandler ih = ItemHandler.getInstance().getHandler((EtcItem) item);
+
+		IItemHandler? ih = ItemHandler.getInstance().getHandler((EtcItem) item);
 		return ih != null && ih.GetType().Name.equals("ExtractableItems");
 	}
-	
+
 	private static bool isGroceryMisc(ItemTemplate item)
 	{
 		// Kinda fallback trash category to ensure no skipping any items.
 		return !item.isEquipable() && !isEnhancementItem(item) && !isCollection(item) && !item.isPotion() &&
 		       !item.isScroll() && !isTicket(item) && !isPackOrCraft(item);
 	}
-	
+
 	private static bool isCollection(ItemTemplate item)
 	{
 		foreach (CollectionDataHolder collectionHolder in CollectionData.getInstance().getCollections())
@@ -346,29 +349,29 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 		}
 		return false;
 	}
-	
+
 	private static bool isCollectionEquipement(ItemTemplate item)
 	{
 		return isCollection(item) && item.isEquipable();
 	}
-	
+
 	private static bool isCollectionEnchanted(ItemTemplate item)
 	{
 		return isCollection(item) && item.getName().contains("Spellbook: ");
 	}
-	
+
 	private static bool isCollectionMisc(ItemTemplate item)
 	{
 		return item.getId() >= 93906 && item.getId() <= 93910;
 	}
-	
+
 	private enum StoreType
 	{
 		SELL = 0x00,
 		BUY = 0x01,
 		ALL = 0x03
 	}
-	
+
 	private enum StoreItemType
 	{
 		ALL = 0xFF,
@@ -376,7 +379,7 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 		ENHANCEMENT_OR_EXPING = 0x02,
 		GROCERY_OR_COLLECTION_MISC = 0x04
 	}
-	
+
 	private enum StoreSubItemType
 	{
 		ALL = 0xFF,

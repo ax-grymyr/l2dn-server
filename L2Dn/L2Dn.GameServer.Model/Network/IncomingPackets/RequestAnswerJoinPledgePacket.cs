@@ -88,7 +88,7 @@ public struct RequestAnswerJoinPledgePacket: IIncomingPacket<GameSession>
 
 				if (clan.getCastleId() > 0)
 				{
-					Castle castle = CastleManager.getInstance().getCastleByOwner(clan);
+					Castle? castle = CastleManager.getInstance().getCastleByOwner(clan);
 					if (castle != null)
 					{
 						castle.giveResidentialSkills(player);
@@ -96,7 +96,7 @@ public struct RequestAnswerJoinPledgePacket: IIncomingPacket<GameSession>
 				}
 				if (clan.getFortId() > 0)
 				{
-					Fort fort = FortManager.getInstance().getFortByOwner(clan);
+					Fort? fort = FortManager.getInstance().getFortByOwner(clan);
 					if (fort != null)
 					{
 						fort.giveResidentialSkills(player);

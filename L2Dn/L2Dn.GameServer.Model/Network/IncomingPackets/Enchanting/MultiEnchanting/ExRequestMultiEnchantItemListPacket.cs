@@ -41,17 +41,16 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 
 		player.getChallengeInfo().setChallengePointsPendingRecharge(-1, -1);
 
-		EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
+		EnchantItemRequest? request = player.getRequest<EnchantItemRequest>();
 		if (request == null)
 			return ValueTask.CompletedTask;
 
-		if ((request.getEnchantingScroll() == null) || request.isProcessing())
+		if (request.getEnchantingScroll() == null || request.isProcessing())
 			return ValueTask.CompletedTask;
 
 		Item scroll = request.getEnchantingScroll();
 		if (scroll.getCount() < _slotId)
 		{
-			player.removeRequest<EnchantItemRequest>();
 			player.removeRequest<EnchantItemRequest>();
 			player.sendPacket(new ExResultSetMultiEnchantItemListPacket(player, 1));
 			PacketLogger.Instance.Warn("MultiEnchant - player " + player.ObjectId + " " + player.getName() +
@@ -87,7 +86,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 		for (int slotCounter = 0; slotCounter < slots.Length; slotCounter++)
 		{
 			int i = slots[slotCounter];
-			if ((i == -1) || (request.getMultiEnchantingItemsBySlot(i) == -1))
+			if (i == -1 || request.getMultiEnchantingItemsBySlot(i) == -1)
 			{
 				player.sendPacket(new ExResultMultiEnchantItemListPacket(player, true));
 				player.removeRequest<EnchantItemRequest>();
@@ -119,7 +118,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 
 			lock (enchantItem)
 			{
-				if ((enchantItem.getOwnerId() != player.ObjectId) || !enchantItem.isEnchantable())
+				if (enchantItem.getOwnerId() != player.ObjectId || !enchantItem.isEnchantable())
 				{
 					player.sendPacket(SystemMessageId.AUGMENTATION_REQUIREMENTS_ARE_NOT_FULFILLED);
 					player.removeRequest<EnchantItemRequest>();
@@ -263,9 +262,10 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 						else
 						{
 							int[] challengePoints = EnchantChallengePointData.getInstance().handleFailure(player, enchantItem);
-							if ((challengePoints[0] != -1) && (challengePoints[1] != -1))
+							if (challengePoints[0] != -1 && challengePoints[1] != -1)
 							{
-								failChallengePointInfoList.compute(challengePoints[0], (k, v) => v == null ? challengePoints[1] : v + challengePoints[1]);
+                                // TODO: verify logic
+								failChallengePointInfoList.compute(challengePoints[0], (_, v) => v + challengePoints[1]);
 							}
 
 							if (player.getInventory().destroyItem("Enchant", enchantItem, player, null) == null)
@@ -310,7 +310,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 							int count = 0;
 							if (enchantItem.getTemplate().isCrystallizable())
 							{
-								count = Math.Max(0, enchantItem.getCrystalCount() - ((enchantItem.getTemplate().getCrystalCount() + 1) / 2));
+								count = Math.Max(0, enchantItem.getCrystalCount() - (enchantItem.getTemplate().getCrystalCount() + 1) / 2);
 							}
 
 							Item? crystals = null;
@@ -332,7 +332,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 							// 	iu.addItem(crystals); // TODO: packet not sent
 							// }
 
-							if ((crystalId == 0) || (count == 0))
+							if (crystalId == 0 || count == 0)
 							{
 								ItemHolder itemHolder = new ItemHolder(0, 0);
 								failureReward.put(failureReward.Count + 1, itemHolder);
@@ -345,8 +345,8 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								result.put(i, "FAIL");
 							}
 
-							ItemChanceHolder destroyReward = ItemCrystallizationData.getInstance().getItemOnDestroy(player, enchantItem);
-							if ((destroyReward != null) && (Rnd.get(100) < destroyReward.getChance()))
+							ItemChanceHolder? destroyReward = ItemCrystallizationData.getInstance().getItemOnDestroy(player, enchantItem);
+							if (destroyReward != null && Rnd.get(100) < destroyReward.getChance())
 							{
 								failureReward.put(failureReward.Count + 1, destroyReward);
 								player.addItem("Enchant", destroyReward.getId(), destroyReward.getCount(), null, true);
@@ -392,7 +392,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 			{
 				int[] intArray = new int[2];
 				intArray[0] = request.getMultiEnchantingItemsBySlot(i);
-				intArray[1] = player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(i)).getEnchantLevel();
+				intArray[1] = player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(i))?.getEnchantLevel() ?? 0; // TODO
 				successEnchant.put(i, intArray);
 			}
 			else if (result.get(i).equals("NO_CRYSTAL") || result.get(i).equals("FAIL"))
@@ -439,7 +439,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 		int slotId = -1;
 		for (int i = 1; i <= request.getMultiEnchantingItemsCount(); i++)
 		{
-			if ((request.getMultiEnchantingItemsCount() == 0) || (objectId == 0))
+			if (request.getMultiEnchantingItemsCount() == 0 || objectId == 0)
 			{
 				return slotId;
 			}

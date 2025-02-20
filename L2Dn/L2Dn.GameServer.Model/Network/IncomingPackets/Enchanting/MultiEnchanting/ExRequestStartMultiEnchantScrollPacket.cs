@@ -24,14 +24,19 @@ public struct ExRequestStartMultiEnchantScrollPacket: IIncomingPacket<GameSessio
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (player.getRequest<EnchantItemRequest>() == null)
+        EnchantItemRequest? request = player.getRequest<EnchantItemRequest>();
+        if (request == null)
         {
-            player.addRequest(new EnchantItemRequest(player, _scrollObjectId));
+            player.addRequest(request = new EnchantItemRequest(player, _scrollObjectId));
         }
 
-        EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
-
         Item? scroll = player.getInventory().getItemByObjectId(_scrollObjectId);
+        if (scroll == null)
+        {
+            player.sendPacket(new ExResetSelectMultiEnchantScrollPacket(player, _scrollObjectId, 1));
+            return ValueTask.CompletedTask;
+        }
+
         EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
         if (scrollTemplate == null || scrollTemplate.isBlessed() || scrollTemplate.isBlessedDown() ||
             scrollTemplate.isSafe() || scrollTemplate.isGiant())

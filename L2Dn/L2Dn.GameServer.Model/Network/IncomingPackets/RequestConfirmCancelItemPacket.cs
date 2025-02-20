@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
@@ -37,7 +38,8 @@ public struct RequestConfirmCancelItemPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (!item.isAugmented())
+        VariationInstance? augmentation = item.getAugmentation();
+        if (!item.isAugmented() || augmentation == null)
         {
             player.sendPacket(SystemMessageId.AUGMENTATION_REMOVAL_CAN_ONLY_BE_DONE_ON_AN_AUGMENTED_ITEM);
             return ValueTask.CompletedTask;
@@ -49,7 +51,7 @@ public struct RequestConfirmCancelItemPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        long price = VariationData.getInstance().getCancelFee(item.getId(), item.getAugmentation().getMineralId());
+        long price = VariationData.getInstance().getCancelFee(item.getId(), augmentation.getMineralId());
         if (price < 0)
         {
             player.sendPacket(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM);

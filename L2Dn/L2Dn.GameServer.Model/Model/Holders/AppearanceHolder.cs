@@ -27,7 +27,7 @@ public class AppearanceHolder
 		_handType = element.Attribute("handType").GetEnum(AppearanceHandType.NONE);
 		_magicType = element.Attribute("magicType").GetEnum(AppearanceMagicType.NONE);
 		_targetType = element.Attribute("targetType").GetEnum(AppearanceTargetType.NONE);
-		_bodyPart = ItemData.SLOTS.get(element.Attribute("bodyPart").GetString("none"));
+		_bodyPart = ItemData._slotNameMap.get(element.Attribute("bodyPart").GetString("none"));
 	}
 	
 	public WeaponType getWeaponType()

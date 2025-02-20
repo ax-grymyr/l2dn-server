@@ -38,8 +38,8 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 		if (player == null)
 			return ValueTask.CompletedTask;
 
-		EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
-		if ((request == null) || request.isProcessing())
+		EnchantItemRequest? request = player.getRequest<EnchantItemRequest>();
+		if (request == null || request.isProcessing())
 			return ValueTask.CompletedTask;
 
 		request.setEnchantingItem(_objectId);
@@ -61,7 +61,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 		Item item = request.getEnchantingItem();
 		Item scroll = request.getEnchantingScroll();
 		Item support = request.getSupportItem();
-		if ((item == null) || (scroll == null))
+		if (item == null || scroll == null)
 		{
 			player.removeRequest<EnchantItemRequest>();
 			return ValueTask.CompletedTask;
@@ -85,7 +85,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 		}
 
 		// First validation check, also over enchant check.
-		if (!scrollTemplate.isValid(item, supportTemplate) || (Config.DISABLE_OVER_ENCHANTING && ((item.getEnchantLevel() == scrollTemplate.getMaxEnchantLevel()) || (!(item.getTemplate().getEnchantLimit() == 0) && (item.getEnchantLevel() == item.getTemplate().getEnchantLimit())))))
+		if (!scrollTemplate.isValid(item, supportTemplate) || (Config.DISABLE_OVER_ENCHANTING && (item.getEnchantLevel() == scrollTemplate.getMaxEnchantLevel() || (!(item.getTemplate().getEnchantLimit() == 0) && item.getEnchantLevel() == item.getTemplate().getEnchantLimit()))))
 		{
 			player.sendPacket(SystemMessageId.AUGMENTATION_REQUIREMENTS_ARE_NOT_FULFILLED);
 			player.removeRequest<EnchantItemRequest>();
@@ -113,7 +113,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 		}
 
 		// Attempting to destroy support if exists.
-		if ((support != null) && (player.getInventory().destroyItem("Enchant", support.ObjectId, 1, player, item) == null))
+		if (support != null && player.getInventory().destroyItem("Enchant", support.ObjectId, 1, player, item) == null)
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
 			Util.handleIllegalPlayerAction(player, player + " tried to enchant with a support item he doesn't have", Config.DEFAULT_PUNISH);
@@ -126,7 +126,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 		lock (item)
 		{
 			// Last validation check.
-			if ((item.getOwnerId() != player.ObjectId) || !item.isEnchantable())
+			if (item.getOwnerId() != player.ObjectId || !item.isEnchantable())
 			{
 				player.sendPacket(SystemMessageId.AUGMENTATION_REQUIREMENTS_ARE_NOT_FULFILLED);
 				player.removeRequest<EnchantItemRequest>();
@@ -189,13 +189,13 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 						else
 						{
 							int enchantValue = 1;
-							if ((challengePointsGroupId > 0) && (challengePointsOptionIndex == EnchantChallengePointData.OptionOverUpProb))
+							if (challengePointsGroupId > 0 && challengePointsOptionIndex == EnchantChallengePointData.OptionOverUpProb)
                             {
                                 EnchantChallengePointData.EnchantChallengePointsOptionInfo? optionInfo =
                                     EnchantChallengePointData.getInstance().getOptionInfo(challengePointsGroupId,
                                         challengePointsOptionIndex);
 
-								if ((optionInfo != null) && (item.getEnchantLevel() >= optionInfo.MinEnchant) && (item.getEnchantLevel() <= optionInfo.MaxEnchant) && (Rnd.get(100) < optionInfo.Chance))
+								if (optionInfo != null && item.getEnchantLevel() >= optionInfo.MinEnchant && item.getEnchantLevel() <= optionInfo.MaxEnchant && Rnd.get(100) < optionInfo.Chance)
 								{
 									enchantValue = 2;
 								}
@@ -284,8 +284,8 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 					}
 
 					// Announce the success.
-					if ((item.getEnchantLevel() >= (item.isArmor() ? Config.MIN_ARMOR_ENCHANT_ANNOUNCE : Config.MIN_WEAPON_ENCHANT_ANNOUNCE)) //
-						&& (item.getEnchantLevel() <= (item.isArmor() ? Config.MAX_ARMOR_ENCHANT_ANNOUNCE : Config.MAX_WEAPON_ENCHANT_ANNOUNCE)))
+					if (item.getEnchantLevel() >= (item.isArmor() ? Config.MIN_ARMOR_ENCHANT_ANNOUNCE : Config.MIN_WEAPON_ENCHANT_ANNOUNCE) //
+						&& item.getEnchantLevel() <= (item.isArmor() ? Config.MAX_ARMOR_ENCHANT_ANNOUNCE : Config.MAX_WEAPON_ENCHANT_ANNOUNCE))
 					{
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_ENCHANTED_S3_UP_TO_S2);
 						sm.Params.addString(player.getName());
@@ -323,10 +323,10 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 				case EnchantResultType.FAILURE:
 				{
 					bool challengePointsSafe = false;
-					if ((challengePointsGroupId > 0) && (challengePointsOptionIndex == EnchantChallengePointData.OptionNumProtectProb))
+					if (challengePointsGroupId > 0 && challengePointsOptionIndex == EnchantChallengePointData.OptionNumProtectProb)
 					{
-						EnchantChallengePointData.EnchantChallengePointsOptionInfo optionInfo = EnchantChallengePointData.getInstance().getOptionInfo(challengePointsGroupId, challengePointsOptionIndex);
-						if ((optionInfo != null) && (item.getEnchantLevel() >= optionInfo.MinEnchant) && (item.getEnchantLevel() <= optionInfo.MaxEnchant) && (Rnd.get(100) < optionInfo.Chance))
+						EnchantChallengePointData.EnchantChallengePointsOptionInfo? optionInfo = EnchantChallengePointData.getInstance().getOptionInfo(challengePointsGroupId, challengePointsOptionIndex);
+						if (optionInfo != null && item.getEnchantLevel() >= optionInfo.MinEnchant && item.getEnchantLevel() <= optionInfo.MaxEnchant && Rnd.get(100) < optionInfo.Chance)
 						{
 							challengePointsSafe = true;
 						}
@@ -426,7 +426,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 								EnchantChallengePointData.EnchantChallengePointsOptionInfo? optionInfo =
                                     EnchantChallengePointData.getInstance().getOptionInfo(challengePointsGroupId, challengePointsOptionIndex);
 
-								if ((optionInfo != null) && (item.getEnchantLevel() >= optionInfo.MinEnchant) && (item.getEnchantLevel() <= optionInfo.MaxEnchant) && (Rnd.get(100) < optionInfo.Chance))
+								if (optionInfo != null && item.getEnchantLevel() >= optionInfo.MinEnchant && item.getEnchantLevel() <= optionInfo.MaxEnchant && Rnd.get(100) < optionInfo.Chance)
 								{
 									challengePointsBlessed = true;
 								}
@@ -436,14 +436,14 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 								EnchantChallengePointData.EnchantChallengePointsOptionInfo? optionInfo =
                                     EnchantChallengePointData.getInstance().getOptionInfo(challengePointsGroupId, challengePointsOptionIndex);
 
-								if ((optionInfo != null) && (item.getEnchantLevel() >= optionInfo.MinEnchant) && (item.getEnchantLevel() <= optionInfo.MaxEnchant) && (Rnd.get(100) < optionInfo.Chance))
+								if (optionInfo != null && item.getEnchantLevel() >= optionInfo.MinEnchant && item.getEnchantLevel() <= optionInfo.MaxEnchant && Rnd.get(100) < optionInfo.Chance)
 								{
 									challengePointsBlessedDown = true;
 								}
 							}
 						}
 
-						if (challengePointsBlessed || challengePointsBlessedDown || scrollTemplate.isBlessed() || scrollTemplate.isBlessedDown() || scrollTemplate.isCursed() /* || ((supportTemplate != null) && supportTemplate.isDown()) */ || ((supportTemplate != null) && supportTemplate.isBlessed()))
+						if (challengePointsBlessed || challengePointsBlessedDown || scrollTemplate.isBlessed() || scrollTemplate.isBlessedDown() || scrollTemplate.isCursed() /* || ((supportTemplate != null) && supportTemplate.isDown()) */ || (supportTemplate != null && supportTemplate.isBlessed()))
 						{
 							// Blessed enchant: Enchant value down by 1.
 							if (scrollTemplate.isBlessedDown() || challengePointsBlessedDown || scrollTemplate.isCursed())
@@ -590,7 +590,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 							int count = 0;
 							if (item.getTemplate().isCrystallizable())
 							{
-								count = Math.Max(0, item.getCrystalCount() - ((item.getTemplate().getCrystalCount() + 1) / 2));
+								count = Math.Max(0, item.getCrystalCount() - (item.getTemplate().getCrystalCount() + 1) / 2);
 							}
 
 							Item? crystals = null;
@@ -609,14 +609,14 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 								itemsToUpdate.Add(new ItemInfo(crystals));
 							}
 
-							if ((crystalId == 0) || (count == 0))
+							if (crystalId == 0 || count == 0)
 							{
 								player.sendPacket(new EnchantResultPacket(EnchantResultPacket.NO_CRYSTAL, null, null, 0));
 							}
 							else
 							{
-								ItemChanceHolder destroyReward = ItemCrystallizationData.getInstance().getItemOnDestroy(player, item);
-								if ((destroyReward != null) && (Rnd.get(100) < destroyReward.getChance()))
+								ItemChanceHolder? destroyReward = ItemCrystallizationData.getInstance().getItemOnDestroy(player, item);
+								if (destroyReward != null && Rnd.get(100) < destroyReward.getChance())
 								{
 									player.addItem("Enchant", destroyReward, player, true);
 									player.sendPacket(new EnchantResultPacket(EnchantResultPacket.FAIL, new ItemHolder(crystalId, count), destroyReward, 0));

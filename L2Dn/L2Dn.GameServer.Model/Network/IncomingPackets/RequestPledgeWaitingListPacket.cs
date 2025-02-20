@@ -17,7 +17,7 @@ public struct RequestPledgeWaitingListPacket: IIncomingPacket<GameSession>
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
         Player? player = session.Player;
-        if (player == null || (player.getClanId() != _clanId))
+        if (player == null || player.getClanId() != _clanId)
             return ValueTask.CompletedTask;
 
         player.sendPacket(new ExPledgeWaitingListPacket(_clanId));

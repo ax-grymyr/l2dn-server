@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets.Friends;
 public struct RequestSendFriendMsgPacket: IIncomingPacket<GameSession>
 {
     private static readonly Logger LOGGER_CHAT = LogManager.GetLogger("chat");
-	
+
     private string _message;
     private string _reciever;
 
@@ -28,17 +28,17 @@ public struct RequestSendFriendMsgPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        if (string.IsNullOrEmpty(_message) || (_message.Length > 300))
+
+        if (string.IsNullOrEmpty(_message) || _message.Length > 300)
             return ValueTask.CompletedTask;
-		
-        Player targetPlayer = World.getInstance().getPlayer(_reciever);
-        if ((targetPlayer == null) || !targetPlayer.getFriendList().Contains(player.ObjectId))
+
+        Player? targetPlayer = World.getInstance().getPlayer(_reciever);
+        if (targetPlayer == null || !targetPlayer.getFriendList().Contains(player.ObjectId))
         {
             player.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);
             return ValueTask.CompletedTask;
         }
-		
+
         if (Config.LOG_CHAT)
         {
             StringBuilder sb = new StringBuilder();
@@ -50,7 +50,7 @@ public struct RequestSendFriendMsgPacket: IIncomingPacket<GameSession>
             sb.Append(_message);
             LOGGER_CHAT.Info(sb.ToString());
         }
-		
+
         targetPlayer.sendPacket(new L2FriendSayPacket(player.getName(), _reciever, _message));
         return ValueTask.CompletedTask;
     }

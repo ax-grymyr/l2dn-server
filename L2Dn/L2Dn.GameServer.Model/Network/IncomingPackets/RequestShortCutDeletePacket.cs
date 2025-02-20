@@ -25,7 +25,7 @@ public struct RequestShortCutDeletePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 		
-        if ((_page > 23) || (_page < 0))
+        if (_page > 23 || _page < 0)
             return ValueTask.CompletedTask;
 		
         // Delete the shortcut.
@@ -42,7 +42,7 @@ public struct RequestShortCutDeletePacket: IIncomingPacket<GameSession>
                 player.removeAutoShortcut(_slot, _page);
                 foreach (Shortcut shortcut in player.getAllShortCuts())
                 {
-                    if ((oldShortcut.getId() == shortcut.getId()) && (oldShortcut.getType() == shortcut.getType()))
+                    if (oldShortcut.getId() == shortcut.getId() && oldShortcut.getType() == shortcut.getType())
                     {
                         player.addAutoShortcut(shortcut.getSlot(), shortcut.getPage());
                         removed = false;

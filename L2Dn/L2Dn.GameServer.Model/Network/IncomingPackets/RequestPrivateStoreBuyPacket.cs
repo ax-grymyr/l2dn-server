@@ -66,7 +66,7 @@ public struct RequestPrivateStoreBuyPacket: IIncomingPacket<GameSession>
 		// }
 
 		WorldObject? obj = World.getInstance().getPlayer(_storePlayerId);
-		if ((obj == null) || player.isCursedWeaponEquipped())
+		if (obj == null || player.isCursedWeaponEquipped())
 			return ValueTask.CompletedTask;
 
 		Player storePlayer = (Player)obj;
@@ -76,8 +76,8 @@ public struct RequestPrivateStoreBuyPacket: IIncomingPacket<GameSession>
 		if (player.getInstanceWorld() != storePlayer.getInstanceWorld())
 			return ValueTask.CompletedTask;
 
-		if (!((storePlayer.getPrivateStoreType() == PrivateStoreType.SELL) ||
-		      (storePlayer.getPrivateStoreType() == PrivateStoreType.PACKAGE_SELL)))
+		if (!(storePlayer.getPrivateStoreType() == PrivateStoreType.SELL ||
+		      storePlayer.getPrivateStoreType() == PrivateStoreType.PACKAGE_SELL))
 			return ValueTask.CompletedTask;
 
 		TradeList storeList = storePlayer.getSellList();
@@ -91,7 +91,7 @@ public struct RequestPrivateStoreBuyPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if ((storePlayer.getPrivateStoreType() == PrivateStoreType.PACKAGE_SELL) && (storeList.getItemCount() > _items.size()))
+		if (storePlayer.getPrivateStoreType() == PrivateStoreType.PACKAGE_SELL && storeList.getItemCount() > _items.size())
 		{
 			string msgErr = "[RequestPrivateStoreBuy] " + player + " tried to buy less items than sold by package-sell, ban this player for bot usage!";
 			Util.handleIllegalPlayerAction(player, msgErr, Config.DEFAULT_PUNISH);
@@ -114,7 +114,7 @@ public struct RequestPrivateStoreBuyPacket: IIncomingPacket<GameSession>
 		// Update offline trade record, if realtime saving is enabled
         GameSession? storePlayerClient = storePlayer.getClient();
 		if (Config.OFFLINE_TRADE_ENABLE && Config.STORE_OFFLINE_TRADE_IN_REALTIME &&
-		    ((storePlayerClient == null) || storePlayerClient.IsDetached))
+		    (storePlayerClient == null || storePlayerClient.IsDetached))
 		{
 			OfflineTraderTable.getInstance().onTransaction(storePlayer, storeList.getItemCount() == 0, false);
 		}

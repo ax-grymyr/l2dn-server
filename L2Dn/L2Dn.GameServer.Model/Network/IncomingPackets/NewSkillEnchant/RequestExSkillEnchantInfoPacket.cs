@@ -28,24 +28,24 @@ public struct RequestExSkillEnchantInfoPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Skill skill = player.getKnownSkill(_skillId);
+        Skill? skill = player.getKnownSkill(_skillId);
         if (skill == null)
         {
             PacketLogger.Instance.Warn(player.getName() + " trying enchant skill, what missed on server" + _skillId +
                                        " level-" + _skillLevel + " subLevel-" + _skillSubLevel);
-            
+
             return ValueTask.CompletedTask;
         }
 
-        SkillEnchantHolder skillEnchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.getId());
+        SkillEnchantHolder? skillEnchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.getId());
         if (skillEnchantHolder == null)
         {
             PacketLogger.Instance.Warn("Skill does not exist at SkillEnchantData id-" + _skillId);
             return ValueTask.CompletedTask;
         }
-		
+
         player.sendPacket(new ExSkillEnchantInfoPacket(skill, player));
-        
+
         return ValueTask.CompletedTask;
     }
 }

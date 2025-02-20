@@ -39,7 +39,7 @@ public struct RequestPetGetItemPacket: IIncomingPacket<GameSession>
         }
 
         Castle? castle = CastleManager.getInstance().getCastle(item);
-        if ((castle != null) && (SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), item.getId()) != null))
+        if (castle != null && SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), item.getId()) != null)
         {
             connection.Send(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
@@ -51,8 +51,8 @@ public struct RequestPetGetItemPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        Pet pet = player.getPet();
-        if (pet.isDead() || pet.isControlBlocked())
+        Pet? pet = player.getPet();
+        if (pet == null || pet.isDead() || pet.isControlBlocked())
         {
             connection.Send(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;

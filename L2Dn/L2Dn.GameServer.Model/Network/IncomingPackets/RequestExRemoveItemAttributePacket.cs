@@ -15,7 +15,6 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 public struct RequestExRemoveItemAttributePacket: IIncomingPacket<GameSession>
 {
     private int _objectId;
-    private long _price;
     private AttributeType _element;
 
     public void ReadContent(PacketBitReader reader)

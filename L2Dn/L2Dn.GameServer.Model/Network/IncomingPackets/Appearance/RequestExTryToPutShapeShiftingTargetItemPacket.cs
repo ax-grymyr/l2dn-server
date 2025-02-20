@@ -27,7 +27,7 @@ public struct RequestExTryToPutShapeShiftingTargetItemPacket: IIncomingPacket<Ga
         if (player == null)
             return ValueTask.CompletedTask;
 
-		ShapeShiftingItemRequest request = player.getRequest<ShapeShiftingItemRequest>();
+		ShapeShiftingItemRequest? request = player.getRequest<ShapeShiftingItemRequest>();
 		if (request == null || player.isInStoreMode() || player.isCrafting() || player.isProcessingRequest() ||
 		    player.isProcessingTransaction())
 		{

@@ -42,7 +42,7 @@ public struct RequestRaidBossSpawnInfoPacket: IIncomingPacket<GameSession>
                 if (status != RaidBossStatus.UNDEFINED)
                 {
                     Npc? npc = DbSpawnManager.getInstance().getNpc(bossId);
-                    if ((npc != null) && npc.isInCombat())
+                    if (npc != null && npc.isInCombat())
                     {
                         statuses.put(bossId, RaidBossStatus.COMBAT);
                     }
@@ -61,7 +61,7 @@ public struct RequestRaidBossSpawnInfoPacket: IIncomingPacket<GameSession>
             {
                 if (boss.isDead() || !boss.isSpawned())
                 {
-                    if ((bossId == BAIUM) && (GrandBossManager.getInstance().getStatus(BAIUM) == 0))
+                    if (bossId == BAIUM && GrandBossManager.getInstance().getStatus(BAIUM) == 0)
                     {
                         statuses.put(bossId, RaidBossStatus.ALIVE);
                     }

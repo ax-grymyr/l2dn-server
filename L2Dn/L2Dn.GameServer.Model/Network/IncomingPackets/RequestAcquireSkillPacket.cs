@@ -94,7 +94,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 			}
 		}
 
-		SkillLearn s = SkillTreeData.getInstance().getSkillLearn(_skillType, player.getOriginalSkill(_id), _level, player);
+		SkillLearn? s = SkillTreeData.getInstance().getSkillLearn(_skillType, player.getOriginalSkill(_id), _level, player);
 		if (s == null)
 			return ValueTask.CompletedTask;
 

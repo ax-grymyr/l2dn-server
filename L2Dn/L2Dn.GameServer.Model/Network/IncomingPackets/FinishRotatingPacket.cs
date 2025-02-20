@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -20,17 +21,18 @@ public struct FinishRotatingPacket: IIncomingPacket<GameSession>
     {
         if (!Config.ENABLE_KEYBOARD_MOVEMENT)
             return ValueTask.CompletedTask;
-		
+
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         StopRotationPacket sr;
-        if (player.isInAirShip() && player.getAirShip().isCaptain(player))
+        AirShip? airShip = player.getAirShip();
+        if (player.isInAirShip() && airShip != null && airShip.isCaptain(player))
         {
-            player.getAirShip().setHeading(_degree);
-            sr = new StopRotationPacket(player.getAirShip().ObjectId, _degree, 0);
-            player.getAirShip().broadcastPacket(sr);
+            airShip.setHeading(_degree);
+            sr = new StopRotationPacket(airShip.ObjectId, _degree, 0);
+            airShip.broadcastPacket(sr);
         }
         else
         {

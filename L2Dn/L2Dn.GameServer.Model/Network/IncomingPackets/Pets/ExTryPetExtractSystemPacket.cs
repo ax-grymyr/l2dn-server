@@ -29,15 +29,28 @@ public struct ExTryPetExtractSystemPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
 		Item? petItem = player.getInventory().getItemByObjectId(_itemObjId);
-		if (petItem == null || (player.getPet() != null && player.getPet().getControlItem() == petItem))
+        Pet? playerPet = player.getPet();
+		if (petItem == null || (playerPet != null && playerPet.getControlItem() == petItem))
 		{
 			player.sendPacket(new ResultPetExtractSystemPacket(false));
 			return ValueTask.CompletedTask;
 		}
 
-		PetData petData = PetDataTable.getInstance().getPetDataByItemId(petItem.getId());
+		PetData? petData = PetDataTable.getInstance().getPetDataByItemId(petItem.getId());
+        if (petData == null)
+        {
+            player.sendPacket(new ResultPetExtractSystemPacket(false));
+            return ValueTask.CompletedTask;
+        }
+
 		NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(petData.getNpcId());
-		Pet pet = new Pet(npcTemplate, player, petItem);
+        if (npcTemplate == null)
+        {
+            player.sendPacket(new ResultPetExtractSystemPacket(false));
+            return ValueTask.CompletedTask;
+        }
+
+        Pet pet = new Pet(npcTemplate, player, petItem);
 		PetInventory petInventory = pet.getInventory();
 		PlayerInventory playerInventory = player.getInventory();
 		if (petInventory == null || playerInventory == null)
@@ -55,10 +68,10 @@ public struct ExTryPetExtractSystemPacket: IIncomingPacket<GameSession>
 
 		petInventory.transferItemsToOwner();
 
-		Pet petInfo = Pet.restore(petItem, NpcData.getInstance().getTemplate(petData.getNpcId()), player);
-		int petId = PetDataTable.getInstance().getPetDataByItemId(petItem.getId()).getType();
+        int petId = PetDataTable.getInstance().getPetDataByItemId(petItem.getId())?.getType() ?? 0; // TODO
+		Pet petInfo = Pet.restore(petItem, npcTemplate, player);
 		int petLevel = petInfo.getLevel();
-		PetExtractionHolder holder = PetExtractData.getInstance().getExtraction(petId, petLevel);
+		PetExtractionHolder? holder = PetExtractData.getInstance().getExtraction(petId, petLevel);
 		if (holder != null)
 		{
 			int extractItemId = holder.getExtractItem();

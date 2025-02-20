@@ -20,15 +20,15 @@ public struct ExRequestViewMultiEnchantResultPacket: IIncomingPacket<GameSession
         if (player == null)
             return ValueTask.CompletedTask;
 
-        EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
+        EnchantItemRequest? request = player.getRequest<EnchantItemRequest>();
         if (request == null)
             return ValueTask.CompletedTask;
 
         player.sendPacket(new ExResultMultiEnchantItemListPacket(player, request.getMultiSuccessEnchantList(),
             request.getMultiFailureEnchantList(), true));
-        
+
         player.sendPacket(new ShortCutInitPacket(player));
-        
+
         return ValueTask.CompletedTask;
     }
 }

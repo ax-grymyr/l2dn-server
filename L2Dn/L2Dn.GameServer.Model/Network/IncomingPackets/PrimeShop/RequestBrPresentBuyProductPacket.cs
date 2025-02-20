@@ -17,7 +17,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets.PrimeShop;
 public struct RequestBrPresentBuyProductPacket: IIncomingPacket<GameSession>
 {
     private static int HERO_COINS = 23805;
-	
+
     private int _brId;
     private int _count;
     private string _charName;
@@ -45,24 +45,24 @@ public struct RequestBrPresentBuyProductPacket: IIncomingPacket<GameSession>
 			player.sendPacket(new ExBRBuyProductPacket(ExBrProductReplyType.INVALID_USER));
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.hasItemRequest() || player.hasRequest<PrimeShopRequest>())
 		{
 			player.sendPacket(new ExBRBuyProductPacket(ExBrProductReplyType.INVALID_USER_STATE));
 			return ValueTask.CompletedTask;
 		}
-		
+
 		player.addRequest(new PrimeShopRequest(player));
-		
-		PrimeShopGroup item = PrimeShopData.getInstance().getItem(_brId);
-		
-		if (item.isVipGift())
+
+		PrimeShopGroup? item = PrimeShopData.getInstance().getItem(_brId);
+
+		if (item != null && item.isVipGift())
 		{
 			player.sendMessage("You cannot gift a Vip Gift!");
 			return ValueTask.CompletedTask;
 		}
-		
-		if (validatePlayer(item, _count, player))
+
+		if (ValidatePlayer(item, _count, player) && item != null)
 		{
 			int price = item.getPrice() * _count;
 			if (price < 1)
@@ -71,7 +71,7 @@ public struct RequestBrPresentBuyProductPacket: IIncomingPacket<GameSession>
 				player.removeRequest<PrimeShopRequest>();
 				return ValueTask.CompletedTask;
 			}
-			
+
 			int paymentId = validatePaymentId(item, price);
 			if (paymentId < 0)
 			{
@@ -79,7 +79,7 @@ public struct RequestBrPresentBuyProductPacket: IIncomingPacket<GameSession>
 				player.removeRequest<PrimeShopRequest>();
 				return ValueTask.CompletedTask;
 			}
-			
+
 			if (paymentId > 0)
 			{
 				if (!player.destroyItemByItemId("PrimeShop-" + item.getBrId(), paymentId, price, player, true))
@@ -104,21 +104,21 @@ public struct RequestBrPresentBuyProductPacket: IIncomingPacket<GameSession>
 					player.updateVipPoints(price);
 				}
 			}
-			
+
 			player.sendPacket(new ExBRBuyProductPacket(ExBrProductReplyType.SUCCESS));
 			player.sendPacket(new ExBRGamePointPacket(player));
-			
+
 			Message mail = new Message(receiverId, _mailTitle, _mailBody, MailType.PRIME_SHOP_GIFT);
 			Mail attachement = mail.createAttachments();
-			
+
 			foreach (PrimeShopItem subItem in item.getItems())
 			{
 				attachement.addItem("Prime Shop Gift", subItem.getId(), subItem.getCount() * _count, player, this);
 			}
-			
+
 			MailManager.getInstance().sendMessage(mail);
 		}
-		
+
 		player.removeRequest<PrimeShopRequest>();
 
 		return ValueTask.CompletedTask;
@@ -130,14 +130,14 @@ public struct RequestBrPresentBuyProductPacket: IIncomingPacket<GameSession>
      * @param player
      * @return
      */
-    private static bool validatePlayer(PrimeShopGroup item, int count, Player player)
+    private static bool ValidatePlayer(PrimeShopGroup? item, int count, Player player)
     {
 	    if (item == null)
 	    {
 		    player.sendPacket(new ExBRBuyProductPacket(ExBrProductReplyType.INVALID_PRODUCT));
 		    Util.handleIllegalPlayerAction(player, player + " tried to buy invalid brId from Prime",
 			    Config.DEFAULT_PUNISH);
-		    
+
 		    return false;
 	    }
 
@@ -145,7 +145,7 @@ public struct RequestBrPresentBuyProductPacket: IIncomingPacket<GameSession>
 	    {
 		    Util.handleIllegalPlayerAction(player,
 			    player + " tried to buy invalid itemcount [" + count + "] from Prime", Config.DEFAULT_PUNISH);
-		    
+
 		    player.sendPacket(new ExBRBuyProductPacket(ExBrProductReplyType.INVALID_USER_STATE));
 		    return false;
 	    }

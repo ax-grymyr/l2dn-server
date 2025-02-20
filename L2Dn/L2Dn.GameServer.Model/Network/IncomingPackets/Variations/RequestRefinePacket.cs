@@ -29,11 +29,11 @@ public struct RequestRefinePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-		Item targetItem = player.getInventory().getItemByObjectId(_targetItemObjId);
+		Item? targetItem = player.getInventory().getItemByObjectId(_targetItemObjId);
 		if (targetItem == null)
 			return ValueTask.CompletedTask;
 
-		Item mineralItem = player.getInventory().getItemByObjectId(_mineralItemObjId);
+		Item? mineralItem = player.getInventory().getItemByObjectId(_mineralItemObjId);
 		if (mineralItem == null)
 			return ValueTask.CompletedTask;
 
@@ -42,7 +42,7 @@ public struct RequestRefinePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 
 		Item? feeItem = player.getInventory().getItemByItemId(fee.getItemId());
-		if ((feeItem == null) && (fee.getItemId() != 0))
+		if (feeItem == null && fee.getItemId() != 0)
 			return ValueTask.CompletedTask;
 
 		if (!RefinePacketHelper.isValid(player, targetItem, mineralItem, feeItem, fee))
@@ -60,7 +60,7 @@ public struct RequestRefinePacket: IIncomingPacket<GameSession>
 		}
 
 		long adenaFee = fee.getAdenaFee();
-		if ((adenaFee > 0) && (player.getAdena() < adenaFee))
+		if (adenaFee > 0 && player.getAdena() < adenaFee)
 		{
 			player.sendPacket(ExVariationResultPacket.FAIL);
 			player.sendPacket(SystemMessageId.AUGMENTATION_FAILED_DUE_TO_INAPPROPRIATE_CONDITIONS);

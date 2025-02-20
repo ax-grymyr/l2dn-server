@@ -42,7 +42,7 @@ public struct RequestTryEnSoulExtractionPacket: IIncomingPacket<GameSession>
         {
             option = item.getSpecialAbility(_position);
             // If position is invalid, check the other one.
-            if ((option == null) && (_position == 0))
+            if (option == null && _position == 0)
             {
                 option = item.getSpecialAbility(1);
                 if (option != null)

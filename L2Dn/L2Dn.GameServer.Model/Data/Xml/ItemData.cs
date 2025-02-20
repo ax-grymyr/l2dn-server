@@ -43,51 +43,51 @@ public class ItemData: DataReaderBase
 	private readonly Map<int, Weapon> _weapons = new();
 	private readonly Map<string, ImmutableArray<string>> _tables = new();
 
-	public static readonly Map<string, long> SLOTS = new();
+	public static readonly Map<string, long> _slotNameMap = new();
 
 	static ItemData()
 	{
-		SLOTS.put("shirt", ItemTemplate.SLOT_UNDERWEAR);
-		SLOTS.put("lbracelet", ItemTemplate.SLOT_L_BRACELET);
-		SLOTS.put("rbracelet", ItemTemplate.SLOT_R_BRACELET);
-		SLOTS.put("talisman", ItemTemplate.SLOT_DECO);
-		SLOTS.put("chest", ItemTemplate.SLOT_CHEST);
-		SLOTS.put("fullarmor", ItemTemplate.SLOT_FULL_ARMOR);
-		SLOTS.put("head", ItemTemplate.SLOT_HEAD);
-		SLOTS.put("hair", ItemTemplate.SLOT_HAIR);
-		SLOTS.put("hairall", ItemTemplate.SLOT_HAIRALL);
-		SLOTS.put("underwear", ItemTemplate.SLOT_UNDERWEAR);
-		SLOTS.put("back", ItemTemplate.SLOT_BACK);
-		SLOTS.put("neck", ItemTemplate.SLOT_NECK);
-		SLOTS.put("legs", ItemTemplate.SLOT_LEGS);
-		SLOTS.put("feet", ItemTemplate.SLOT_FEET);
-		SLOTS.put("gloves", ItemTemplate.SLOT_GLOVES);
-		SLOTS.put("chest,legs", ItemTemplate.SLOT_CHEST | ItemTemplate.SLOT_LEGS);
-		SLOTS.put("belt", ItemTemplate.SLOT_BELT);
-		SLOTS.put("rhand", ItemTemplate.SLOT_R_HAND);
-		SLOTS.put("lhand", ItemTemplate.SLOT_L_HAND);
-		SLOTS.put("lrhand", ItemTemplate.SLOT_LR_HAND);
-		SLOTS.put("rear;lear", ItemTemplate.SLOT_R_EAR | ItemTemplate.SLOT_L_EAR);
-		SLOTS.put("rfinger;lfinger", ItemTemplate.SLOT_R_FINGER | ItemTemplate.SLOT_L_FINGER);
-		SLOTS.put("wolf", ItemTemplate.SLOT_WOLF);
-		SLOTS.put("greatwolf", ItemTemplate.SLOT_GREATWOLF);
-		SLOTS.put("hatchling", ItemTemplate.SLOT_HATCHLING);
-		SLOTS.put("strider", ItemTemplate.SLOT_STRIDER);
-		SLOTS.put("babypet", ItemTemplate.SLOT_BABYPET);
-		SLOTS.put("brooch", ItemTemplate.SLOT_BROOCH);
-		SLOTS.put("brooch_jewel", ItemTemplate.SLOT_BROOCH_JEWEL);
-		SLOTS.put("agathion", ItemTemplate.SLOT_AGATHION);
-		SLOTS.put("artifactbook", ItemTemplate.SLOT_ARTIFACT_BOOK);
-		SLOTS.put("artifact", ItemTemplate.SLOT_ARTIFACT);
-		SLOTS.put("none", ItemTemplate.SLOT_NONE);
+		_slotNameMap.put("shirt", ItemTemplate.SLOT_UNDERWEAR);
+		_slotNameMap.put("lbracelet", ItemTemplate.SLOT_L_BRACELET);
+		_slotNameMap.put("rbracelet", ItemTemplate.SLOT_R_BRACELET);
+		_slotNameMap.put("talisman", ItemTemplate.SLOT_DECO);
+		_slotNameMap.put("chest", ItemTemplate.SLOT_CHEST);
+		_slotNameMap.put("fullarmor", ItemTemplate.SLOT_FULL_ARMOR);
+		_slotNameMap.put("head", ItemTemplate.SLOT_HEAD);
+		_slotNameMap.put("hair", ItemTemplate.SLOT_HAIR);
+		_slotNameMap.put("hairall", ItemTemplate.SLOT_HAIRALL);
+		_slotNameMap.put("underwear", ItemTemplate.SLOT_UNDERWEAR);
+		_slotNameMap.put("back", ItemTemplate.SLOT_BACK);
+		_slotNameMap.put("neck", ItemTemplate.SLOT_NECK);
+		_slotNameMap.put("legs", ItemTemplate.SLOT_LEGS);
+		_slotNameMap.put("feet", ItemTemplate.SLOT_FEET);
+		_slotNameMap.put("gloves", ItemTemplate.SLOT_GLOVES);
+		_slotNameMap.put("chest,legs", ItemTemplate.SLOT_CHEST | ItemTemplate.SLOT_LEGS);
+		_slotNameMap.put("belt", ItemTemplate.SLOT_BELT);
+		_slotNameMap.put("rhand", ItemTemplate.SLOT_R_HAND);
+		_slotNameMap.put("lhand", ItemTemplate.SLOT_L_HAND);
+		_slotNameMap.put("lrhand", ItemTemplate.SLOT_LR_HAND);
+		_slotNameMap.put("rear;lear", ItemTemplate.SLOT_R_EAR | ItemTemplate.SLOT_L_EAR);
+		_slotNameMap.put("rfinger;lfinger", ItemTemplate.SLOT_R_FINGER | ItemTemplate.SLOT_L_FINGER);
+		_slotNameMap.put("wolf", ItemTemplate.SLOT_WOLF);
+		_slotNameMap.put("greatwolf", ItemTemplate.SLOT_GREATWOLF);
+		_slotNameMap.put("hatchling", ItemTemplate.SLOT_HATCHLING);
+		_slotNameMap.put("strider", ItemTemplate.SLOT_STRIDER);
+		_slotNameMap.put("babypet", ItemTemplate.SLOT_BABYPET);
+		_slotNameMap.put("brooch", ItemTemplate.SLOT_BROOCH);
+		_slotNameMap.put("brooch_jewel", ItemTemplate.SLOT_BROOCH_JEWEL);
+		_slotNameMap.put("agathion", ItemTemplate.SLOT_AGATHION);
+		_slotNameMap.put("artifactbook", ItemTemplate.SLOT_ARTIFACT_BOOK);
+		_slotNameMap.put("artifact", ItemTemplate.SLOT_ARTIFACT);
+		_slotNameMap.put("none", ItemTemplate.SLOT_NONE);
 
 		// retail compatibility
-		SLOTS.put("onepiece", ItemTemplate.SLOT_FULL_ARMOR);
-		SLOTS.put("hair2", ItemTemplate.SLOT_HAIR2);
-		SLOTS.put("dhair", ItemTemplate.SLOT_HAIRALL);
-		SLOTS.put("alldress", ItemTemplate.SLOT_ALLDRESS);
-		SLOTS.put("deco1", ItemTemplate.SLOT_DECO);
-		SLOTS.put("waist", ItemTemplate.SLOT_BELT);
+		_slotNameMap.put("onepiece", ItemTemplate.SLOT_FULL_ARMOR);
+		_slotNameMap.put("hair2", ItemTemplate.SLOT_HAIR2);
+		_slotNameMap.put("dhair", ItemTemplate.SLOT_HAIRALL);
+		_slotNameMap.put("alldress", ItemTemplate.SLOT_ALLDRESS);
+		_slotNameMap.put("deco1", ItemTemplate.SLOT_DECO);
+		_slotNameMap.put("waist", ItemTemplate.SLOT_BELT);
 	}
 
 	protected ItemData()
@@ -127,7 +127,7 @@ public class ItemData: DataReaderBase
 		int id = element.GetAttributeValueAsInt32("id");
 		string name = element.GetAttributeValueAsString("name");
 		string className = element.GetAttributeValueAsString("type");
-		string additionalName = element.Attribute("additionalName").GetString(null);
+		string additionalName = element.Attribute("additionalName").GetString(string.Empty);
 
 		StatSet set = new();
 		set.set("item_id", id);
@@ -1121,7 +1121,7 @@ public class ItemData: DataReaderBase
 					{
 						long old = mask;
 						string item = st.nextToken().Trim();
-						if (SLOTS.TryGetValue(item, out long value))
+						if (_slotNameMap.TryGetValue(item, out long value))
 						{
 							mask |= value;
 						}
@@ -1292,7 +1292,7 @@ public class ItemData: DataReaderBase
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item
 	 */
-	public Item createItem(string process, int itemId, long count, Creature? actor, object? reference)
+	public Item createItem(string process, int itemId, long count, Creature actor, object? reference)
 	{
 		// Create and Init the Item corresponding to the Item Identifier
 		Item item = new Item(IdManager.getInstance().getNextId(), itemId);

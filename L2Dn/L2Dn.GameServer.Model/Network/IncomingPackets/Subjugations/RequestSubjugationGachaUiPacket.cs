@@ -21,12 +21,12 @@ public struct RequestSubjugationGachaUiPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        PurgePlayerHolder holder = player.getPurgePoints().get(_category);
+        PurgePlayerHolder? holder = player.getPurgePoints().get(_category);
         if (holder != null)
         {
             player.sendPacket(new ExSubjugationGachaUiPacket(holder.getKeys()));
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

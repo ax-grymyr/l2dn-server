@@ -17,7 +17,7 @@ public struct RequestRecipeShopManagePrevPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (player.isAlikeDead() || (player.getTarget() == null) || !player.getTarget().isPlayer())
+        if (player.isAlikeDead() || player.getTarget() == null || !player.getTarget().isPlayer())
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;

@@ -39,7 +39,7 @@ public struct RequestNewEnchantPushTwoPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        CompoundRequest request = player.getRequest<CompoundRequest>();
+        CompoundRequest? request = player.getRequest<CompoundRequest>();
         if (request == null || request.isProcessing())
         {
             player.sendPacket(ExEnchantTwoFailPacket.STATIC_PACKET);

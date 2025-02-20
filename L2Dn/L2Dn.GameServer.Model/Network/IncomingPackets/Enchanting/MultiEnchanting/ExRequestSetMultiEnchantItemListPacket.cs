@@ -26,13 +26,13 @@ public struct ExRequestSetMultiEnchantItemListPacket: IIncomingPacket<GameSessio
         if (player == null)
             return ValueTask.CompletedTask;
 
-        EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
+        EnchantItemRequest? request = player.getRequest<EnchantItemRequest>();
         if (request == null)
         {
             player.sendPacket(new ExResultSetMultiEnchantItemListPacket(player, 1));
             return ValueTask.CompletedTask;
         }
-		
+
         if (request.getMultiEnchantingItemsBySlot(_slotId) != -1)
         {
             request.clearMultiEnchantingItemsBySlot();
@@ -45,10 +45,10 @@ public struct ExRequestSetMultiEnchantItemListPacket: IIncomingPacket<GameSessio
         {
             request.addMultiEnchantingItems(_slotId, _itemObjectId[_slotId]);
         }
-		
+
         player.sendPacket(new ExResultSetMultiEnchantItemListPacket(player, 0));
         player.sendPacket(new ChangedEnchantTargetItemProbabilityListPacket(player, true));
-        
+
         return ValueTask.CompletedTask;
     }
 }

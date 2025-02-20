@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.TaskManagers;
@@ -58,9 +59,10 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 					}
 				}
 
-				if ((skill == null) && player.hasPet())
+                Pet? pet = player.getPet();
+				if (skill == null && player.hasPet() && pet != null)
 				{
-					skill = player.getPet().getKnownSkill(skillId);
+					skill = pet.getKnownSkill(skillId);
 				}
 			}
 		}
@@ -107,7 +109,7 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 		}
 
 		// start
-		if ((item != null) && !item.isPotion())
+		if (item != null && !item.isPotion())
 		{
 			// auto supply
 			if (Config.ENABLE_AUTO_ITEM)
@@ -122,7 +124,7 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 			{
 				if (_slot == 1)
 				{
-					if (Config.ENABLE_AUTO_POTION && (item != null) && item.isPotion())
+					if (Config.ENABLE_AUTO_POTION && item != null && item.isPotion())
 					{
 						AutoUseTaskManager.getInstance().setAutoPotionItem(player, item.getId());
 						return ValueTask.CompletedTask;
@@ -130,7 +132,7 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 				}
 				else if (_slot == 2)
 				{
-					if (Config.ENABLE_AUTO_PET_POTION && (item != null) && item.isPotion())
+					if (Config.ENABLE_AUTO_PET_POTION && item != null && item.isPotion())
 					{
 						AutoUseTaskManager.getInstance().setAutoPetPotionItem(player, item.getId());
 						return ValueTask.CompletedTask;
@@ -139,7 +141,7 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 			}
 
 			// auto skill
-			if (Config.ENABLE_AUTO_SKILL && (skill != null))
+			if (Config.ENABLE_AUTO_SKILL && skill != null)
 			{
 				if (skill.isBad())
 				{

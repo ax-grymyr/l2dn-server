@@ -30,7 +30,7 @@ public struct ExRequestItemAutoPeelPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        AutoPeelRequest request = player.getRequest<AutoPeelRequest>();
+        AutoPeelRequest? request = player.getRequest<AutoPeelRequest>();
         Item? item;
         if (request == null)
         {

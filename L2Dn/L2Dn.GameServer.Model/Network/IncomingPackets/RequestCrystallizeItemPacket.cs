@@ -85,7 +85,7 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
 
 			if (_count > item.getCount())
 			{
-				_count = player.getInventory().getItemByObjectId(_objectId).getCount();
+				_count = item.getCount();
 			}
 		}
 

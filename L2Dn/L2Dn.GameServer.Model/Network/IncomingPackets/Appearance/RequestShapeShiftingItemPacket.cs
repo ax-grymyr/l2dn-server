@@ -33,7 +33,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-		ShapeShiftingItemRequest request = player.getRequest<ShapeShiftingItemRequest>();
+		ShapeShiftingItemRequest? request = player.getRequest<ShapeShiftingItemRequest>();
 		if (player.isInStoreMode() || player.isCrafting() || player.isProcessingRequest() || player.isProcessingTransaction() || request == null)
 		{
 			player.sendPacket(ExShapeShiftingResultPacket.CLOSE);

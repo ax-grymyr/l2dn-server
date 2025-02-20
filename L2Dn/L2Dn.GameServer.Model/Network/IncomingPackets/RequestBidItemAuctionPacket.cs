@@ -31,7 +31,7 @@ public struct RequestBidItemAuctionPacket: IIncomingPacket<GameSession>
         //     return ValueTask.CompletedTask;
         // }
 		
-        if ((_bid < 0) || (_bid > Inventory.MAX_ADENA))
+        if (_bid < 0 || _bid > Inventory.MAX_ADENA)
             return ValueTask.CompletedTask;
 		
         ItemAuctionInstance instance = ItemAuctionManager.getInstance().getManagerInstance(_instanceId);

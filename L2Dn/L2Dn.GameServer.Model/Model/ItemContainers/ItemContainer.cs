@@ -493,7 +493,7 @@ public abstract class ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public virtual Item? destroyItemByItemId(string process, int itemId, long count, Player actor, object reference)
+	public virtual Item? destroyItemByItemId(string process, int itemId, long count, Player actor, object? reference)
 	{
 		Item? item = getItemByItemId(itemId);
 		return item == null ? null : destroyItem(process, item, count, actor, reference);

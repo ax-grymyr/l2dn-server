@@ -40,15 +40,15 @@ public struct RequestExSkillEnchantChargePacket: IIncomingPacket<GameSession>
 	    if (player == null || _itemList is null)
 		    return ValueTask.CompletedTask;
 
-	    Skill skill = player.getKnownSkill(_skillId);
+	    Skill? skill = player.getKnownSkill(_skillId);
 	    if (skill == null)
 		    return ValueTask.CompletedTask;
 
-	    SkillEnchantHolder skillEnchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.getId());
+	    SkillEnchantHolder? skillEnchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.getId());
 	    if (skillEnchantHolder == null)
 		    return ValueTask.CompletedTask;
 
-	    EnchantStarHolder starHolder = SkillEnchantData.getInstance().getEnchantStar(skillEnchantHolder.getStarLevel());
+	    EnchantStarHolder? starHolder = SkillEnchantData.getInstance().getEnchantStar(skillEnchantHolder.getStarLevel());
 	    if (starHolder == null)
 		    return ValueTask.CompletedTask;
 
@@ -66,7 +66,7 @@ public struct RequestExSkillEnchantChargePacket: IIncomingPacket<GameSession>
 			    continue;
 		    }
 
-		    EnchantItemExpHolder itemExpHolder =
+		    EnchantItemExpHolder? itemExpHolder =
 			    SkillEnchantData.getInstance().getEnchantItem(starHolder.getLevel(), item.getId());
 		    if (itemExpHolder != null)
 		    {

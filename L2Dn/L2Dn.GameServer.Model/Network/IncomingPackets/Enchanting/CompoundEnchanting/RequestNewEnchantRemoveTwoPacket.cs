@@ -29,36 +29,36 @@ public struct RequestNewEnchantRemoveTwoPacket: IIncomingPacket<GameSession>
             player.sendPacket(ExEnchantOneFailPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         if (player.isProcessingTransaction() || player.isProcessingRequest())
         {
             player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_SYSTEM_DURING_TRADING_PRIVATE_STORE_AND_WORKSHOP_SETUP);
             player.sendPacket(ExEnchantOneFailPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
-        CompoundRequest request = player.getRequest<CompoundRequest>();
+
+        CompoundRequest? request = player.getRequest<CompoundRequest>();
         if (request == null || request.isProcessing())
         {
             player.sendPacket(ExEnchantTwoRemoveFailPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         Item item = request.getItemTwo();
         if (item == null || item.ObjectId != _objectId)
         {
             player.sendPacket(ExEnchantTwoRemoveFailPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         request.setItemTwo(0);
         if (request.getItemOne() == null)
         {
             player.removeRequest<CompoundRequest>();
         }
-		
+
         player.sendPacket(ExEnchantTwoRemoveOkPacket.STATIC_PACKET);
-        
+
         return ValueTask.CompletedTask;
     }
 }

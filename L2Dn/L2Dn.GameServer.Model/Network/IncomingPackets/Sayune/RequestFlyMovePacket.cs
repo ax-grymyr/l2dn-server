@@ -20,12 +20,12 @@ public struct RequestFlyMovePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        SayuneRequest request = player.getRequest<SayuneRequest>();
+        SayuneRequest? request = player.getRequest<SayuneRequest>();
         if (request == null)
             return ValueTask.CompletedTask;
-		
+
         request.move(player, _locationId);
-        
+
         return ValueTask.CompletedTask;
     }
 }

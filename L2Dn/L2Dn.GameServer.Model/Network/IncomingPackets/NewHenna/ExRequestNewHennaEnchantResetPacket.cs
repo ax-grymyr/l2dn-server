@@ -34,12 +34,14 @@ public struct ExRequestNewHennaEnchantResetPacket: IIncomingPacket<GameSession>
             PacketLogger.Instance.Warn(e);
             return ValueTask.CompletedTask;
         }
-		
+
         if (dailyReset <= 9)
         {
-            if (player.destroyItemByItemId("Reset fee", enchant.getId(), enchant.getCount(), player, true))
+            DyePotentialFee? newFee = HennaPatternPotentialData.getInstance().getFee(1 /* daily step */);
+            if (newFee == null)
+                player.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS); // TODO: verify
+            else if (player.destroyItemByItemId("Reset fee", enchant.getId(), enchant.getCount(), player, true))
             {
-                DyePotentialFee newFee = HennaPatternPotentialData.getInstance().getFee(1 /* daily step */);
                 player.setDyePotentialDailyCount(newFee.getDailyCount());
                 player.setDyePotentialDailyEnchantReset(dailyReset + 1);
                 player.sendPacket(new NewHennaPotenEnchantResetPacket(true));
@@ -50,7 +52,7 @@ public struct ExRequestNewHennaEnchantResetPacket: IIncomingPacket<GameSession>
                 player.sendPacket(SystemMessageId.NOT_ENOUGH_MONEY_TO_USE_THE_FUNCTION);
             }
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

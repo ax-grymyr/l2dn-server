@@ -31,7 +31,7 @@ public struct RequestPartyMatchConfigPacket: IIncomingPacket<GameSession>
 
         Party? party = player.getParty();
         CommandChannel? cc = party?.getCommandChannel();
-        if ((party != null) && (cc != null) && (cc.getLeader() == player))
+        if (party != null && cc != null && cc.getLeader() == player)
         {
             if (player.getMatchingRoom() == null)
             {
@@ -39,11 +39,11 @@ public struct RequestPartyMatchConfigPacket: IIncomingPacket<GameSession>
                     party.getDistributionType(), 1, player.getLevel(), 50, player));
             }
         }
-        else if ((cc != null) && (cc.getLeader() != player))
+        else if (cc != null && cc.getLeader() != player)
         {
             player.sendPacket(SystemMessageId.THE_COMMAND_CHANNEL_AFFILIATED_PARTY_S_PARTY_MEMBER_CANNOT_USE_THE_MATCHING_SCREEN);
         }
-        else if ((party != null) && (party.getLeader() != player))
+        else if (party != null && party.getLeader() != player)
         {
             player.sendPacket(SystemMessageId.THE_LIST_OF_PARTY_ROOMS_CAN_ONLY_BE_VIEWED_BY_A_PERSON_WHO_IS_NOT_PART_OF_A_PARTY);
         }

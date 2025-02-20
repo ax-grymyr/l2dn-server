@@ -29,8 +29,11 @@ public struct RequestSubjugationGachaPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        PurgePlayerHolder playerKeys = player.getPurgePoints().get(_category);
-        Map<int, double> subjugationData = SubjugationGacha.getInstance().getSubjugation(_category);
+        PurgePlayerHolder? playerKeys = player.getPurgePoints().get(_category);
+        Map<int, double>? subjugationData = SubjugationGacha.getInstance().getSubjugation(_category);
+        if (subjugationData == null)
+            return ValueTask.CompletedTask;
+
         KeyValuePair<int, double>[] subjugationDataArray = subjugationData.ToArray();
         double maxBound = subjugationDataArray.Sum(x => x.Value);
         if (playerKeys != null && playerKeys.getKeys() >= _amount && player.getInventory().getAdena() > 20000L * _amount)
@@ -52,14 +55,14 @@ public struct RequestSubjugationGachaPacket: IIncomingPacket<GameSession>
                         player.addItem("Purge Gacha", itemId, 1, player, true);
                         break;
                     }
-                    
+
                     rate += itemChance;
                 }
             }
             player.sendPacket(new ExSubjugationGachaUiPacket(curKeys));
             player.sendPacket(new ExSubjugationGachaPacket(rewards));
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

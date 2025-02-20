@@ -38,10 +38,10 @@ public struct RequestExMagicSkillUseGroundPacket: IIncomingPacket<GameSession>
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         // Get the Skill template corresponding to the skillID received from the client
-        Skill skill = SkillData.getInstance().getSkill(_skillId, level);
-		
+        Skill? skill = SkillData.getInstance().getSkill(_skillId, level);
+
         // Check the validity of the skill
         if (skill != null)
         {
@@ -57,7 +57,7 @@ public struct RequestExMagicSkillUseGroundPacket: IIncomingPacket<GameSession>
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             PacketLogger.Instance.Warn("No skill found with id " + _skillId + " and level " + level + " !!");
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

@@ -134,7 +134,11 @@ public sealed class EnsoulData: DataReaderBase
 			if (!ensoulStones.TryAdd(id, stone))
 				_logger.Error(GetType().Name + $": Duplicated ensoul stone id={id}.");
 
-			((EtcItem)ItemData.getInstance().getTemplate(stone.getId())).setEnsoulStone();
+            EtcItem? etcItem = (EtcItem?)ItemData.getInstance().getTemplate(stone.getId());
+            if (etcItem == null)
+                _logger.Error(GetType().Name + $": Item not found id={id}.");
+            else
+                etcItem.setEnsoulStone();
 		}
 
 		_ensoulStones = ensoulStones.ToFrozenDictionary();

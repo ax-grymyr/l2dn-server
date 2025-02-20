@@ -173,9 +173,14 @@ public class SkillTreeData: DataReaderBase
 			{
 				int removingSkillId = xmlRemovingSkill.Id;
 				skillLearn.addRemoveSkills(removingSkillId);
-				if (!xmlRemovingSkill.OnlyReplaceByLearn)
-					_removeSkillCache.computeIfAbsent(classId.Value, k => new()).add(removingSkillId);
-			}
+                if (!xmlRemovingSkill.OnlyReplaceByLearn)
+                {
+                    if (classId is null)
+                        throw new InvalidOperationException("ClassId is null for removing skill " + removingSkillId + "!");
+
+                    _removeSkillCache.computeIfAbsent(classId.Value, k => new()).add(removingSkillId);
+                }
+            }
 
 			long skillHashCode = SkillData.getSkillHashCode(skillLearn.getSkillId(), skillLearn.getSkillLevel());
 			switch (type)
@@ -271,6 +276,9 @@ public class SkillTreeData: DataReaderBase
 				}
 				case XmlSkillTreeType.awakeningSaveSkillTree:
 				{
+                    if (classId is null)
+                        throw new InvalidOperationException("ClassId is null for awakeningSaveSkillTree " + skillLearn.getSkillId() + "!");
+
 					_awakeningSaveSkillTree.computeIfAbsent(classId.Value, k => new())
 						.add(skillLearn.getSkillId());
 					break;
@@ -285,6 +293,9 @@ public class SkillTreeData: DataReaderBase
 
 		if (type == XmlSkillTreeType.transferSkillTree)
 		{
+            if (classId is null)
+                throw new InvalidOperationException("ClassId is null for transferSkillTree!");
+
 			_transferSkillTrees.put(classId.Value, transferSkillTree);
 		}
 		else if (type == XmlSkillTreeType.classSkillTree && classId is not null)
@@ -326,13 +337,14 @@ public class SkillTreeData: DataReaderBase
 		// Add all skills that belong to all classes.
 		skillTree.putAll(_commonSkillTree);
 		CharacterClass? currentClassId = classId;
-		while (currentClassId != null && _classSkillTrees.get(currentClassId.Value) != null)
-		{
-			skillTree.putAll(_classSkillTrees.get(currentClassId.Value));
-			currentClassId = _parentClassMap.get(currentClassId.Value);
-		}
+        while (currentClassId != null &&
+               _classSkillTrees.TryGetValue(currentClassId.Value, out Map<long, SkillLearn>? classSkillTree))
+        {
+            skillTree.putAll(classSkillTree);
+            currentClassId = _parentClassMap.get(currentClassId.Value);
+        }
 
-		return skillTree;
+        return skillTree;
 	}
 
 	/**
@@ -341,7 +353,7 @@ public class SkillTreeData: DataReaderBase
 	 * @param classId the transfer skill tree Id
 	 * @return the complete Transfer Skill Tree for a given {@code classId}
 	 */
-	public Map<long, SkillLearn> getTransferSkillTree(CharacterClass classId)
+	public Map<long, SkillLearn>? getTransferSkillTree(CharacterClass classId)
 	{
 		return _transferSkillTrees.get(classId);
 	}
@@ -628,7 +640,7 @@ public class SkillTreeData: DataReaderBase
 		// Manage skill unlearn for player skills.
 		foreach (Skill knownSkill in player.getSkillList())
 		{
-			SkillLearn skillLearn = getClassSkill(player.getOriginalSkill(knownSkill.getId()), knownSkill.getLevel(), classId);
+			SkillLearn? skillLearn = getClassSkill(player.getOriginalSkill(knownSkill.getId()), knownSkill.getLevel(), classId);
 			if (skillLearn == null)
 			{
 				continue;
@@ -674,7 +686,7 @@ public class SkillTreeData: DataReaderBase
 		// Manage skill unlearn for player replaced skills.
 		foreach (int skillId in player.getReplacedSkills())
 		{
-			SkillLearn skillLearn = getClassSkill(skillId, 1, classId);
+			SkillLearn? skillLearn = getClassSkill(skillId, 1, classId);
 			if (skillLearn != null)
 			{
 				Set<int> removeSkills = skillLearn.getRemoveSkills();
@@ -822,7 +834,7 @@ public class SkillTreeData: DataReaderBase
 		// Manage skill unlearn for player skills.
 		foreach (Skill knownSkill in player.getSkillList())
 		{
-			SkillLearn skillLearn = getClassSkill(player.getOriginalSkill(knownSkill.getId()), knownSkill.getLevel(), player.getClassId());
+			SkillLearn? skillLearn = getClassSkill(player.getOriginalSkill(knownSkill.getId()), knownSkill.getLevel(), player.getClassId());
 			if (skillLearn == null)
 			{
 				continue;
@@ -1051,7 +1063,7 @@ public class SkillTreeData: DataReaderBase
 		{
 			if (!skill.isResidencialSkill() && clan.getLevel() >= skill.getGetLevel())
 			{
-				Skill oldSkill = clan.getSkills().get(skill.getSkillId());
+				Skill? oldSkill = clan.getSkills().get(skill.getSkillId());
 				if (oldSkill != null)
 				{
 					if (oldSkill.getLevel() + 1 == skill.getSkillLevel())
@@ -1153,7 +1165,7 @@ public class SkillTreeData: DataReaderBase
 		List<SkillLearn> result = new();
 		foreach (SkillLearn skill  in  _dualClassSkillTree.Values)
 		{
-			Skill oldSkill = player.getSkills().get(skill.getSkillId());
+			Skill? oldSkill = player.getSkills().get(skill.getSkillId());
 			if ((oldSkill == null && skill.getSkillLevel() == 1) || (oldSkill != null && oldSkill.getLevel() == skill.getSkillLevel() - 1))
 			{
 				result.Add(skill);
@@ -1299,7 +1311,7 @@ public class SkillTreeData: DataReaderBase
 	 * @param classId the class skill tree Id
 	 * @return the class skill from the Class Skill Trees for a given {@code classId}, {@code id} and {@code lvl}
 	 */
-	public SkillLearn getClassSkill(int id, int lvl, CharacterClass classId)
+	public SkillLearn? getClassSkill(int id, int lvl, CharacterClass classId)
 	{
 		return getCompleteClassSkillTree(classId).get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1310,7 +1322,7 @@ public class SkillTreeData: DataReaderBase
 	 * @param lvl the fishing skill level
 	 * @return Fishing skill from the Fishing Skill Tree for a given {@code id} and {@code lvl}
 	 */
-	private SkillLearn getFishingSkill(int id, int lvl)
+	private SkillLearn? getFishingSkill(int id, int lvl)
 	{
 		return _fishingSkillTree.get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1321,7 +1333,7 @@ public class SkillTreeData: DataReaderBase
 	 * @param lvl the pledge skill level
 	 * @return the pledge skill from the Clan Skill Tree for a given {@code id} and {@code lvl}
 	 */
-	public SkillLearn getPledgeSkill(int id, int lvl)
+	public SkillLearn? getPledgeSkill(int id, int lvl)
 	{
 		return _pledgeSkillTree.get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1480,7 +1492,7 @@ public class SkillTreeData: DataReaderBase
 
 				if (minLevelForNewSkill <= skill.getGetLevel())
 				{
-					Skill oldSkill = player.getKnownSkill(player.getReplacementSkill(skill.getSkillId()));
+					Skill? oldSkill = player.getKnownSkill(player.getReplacementSkill(skill.getSkillId()));
 					if (oldSkill != null)
 					{
 						if (oldSkill.getLevel() == skill.getSkillLevel() - 1)
@@ -1499,7 +1511,7 @@ public class SkillTreeData: DataReaderBase
 		// Manage skill unlearn for player skills.
 		foreach (Skill knownSkill  in  player.getSkillList())
 		{
-			SkillLearn skillLearn = getClassSkill(player.getOriginalSkill(knownSkill.getId()), knownSkill.getLevel(), classId);
+			SkillLearn? skillLearn = getClassSkill(player.getOriginalSkill(knownSkill.getId()), knownSkill.getLevel(), classId);
 			if (skillLearn == null)
 			{
 				continue;
@@ -1586,20 +1598,23 @@ public class SkillTreeData: DataReaderBase
 		// Check previous classes as well, in case classes where skipped.
 		while (CharacterClassInfo.GetClassInfo(currentClass).getParent() != null)
 		{
-			Set<int> removedList = _removeSkillCache.get(currentClass);
+			Set<int>? removedList = _removeSkillCache.get(currentClass);
 			if (removedList != null)
 			{
 				foreach (int skillId  in  removedList)
 				{
 					int currentLevel = player.getSkillLevel(skillId);
 					if (currentLevel > 0)
-					{
-						player.removeSkill(SkillData.getInstance().getSkill(skillId, currentLevel));
+                    {
+                        Skill? skill = SkillData.getInstance().getSkill(skillId, currentLevel);
+                        if (skill != null)
+						    player.removeSkill(skill);
 					}
 				}
 			}
 
-			currentClass = CharacterClassInfo.GetClassInfo(currentClass).getParent().getId();
+			currentClass = CharacterClassInfo.GetClassInfo(currentClass).getParent()?.getId() ??
+                throw new InvalidOperationException("No parent class for " + currentClass);
 		}
 	}
 
@@ -1658,24 +1673,26 @@ public class SkillTreeData: DataReaderBase
 		return _awakeningSaveSkillTree.GetValueOrDefault(classId)?.Contains(skillId) ?? false;
 	}
 
-	/**
-	 * Adds the skills.
-	 * @param gmchar the player to add the Game Master skills
-	 * @param auraSkills if {@code true} it will add "GM Aura" skills, else will add the "GM regular" skills
-	 */
-	public void addSkills(Player gmchar, bool auraSkills)
-	{
-		ICollection<SkillLearn> skills = auraSkills ? _gameMasterAuraSkillTree.Values : _gameMasterSkillTree.Values;
-		SkillData st = SkillData.getInstance();
-		foreach (SkillLearn sl  in  skills)
-		{
-			gmchar.addSkill(st.getSkill(sl.getSkillId(), sl.getSkillLevel()), false); // Don't Save GM skills to database
-		}
-	}
+    /**
+     * Adds the skills.
+     * @param gmchar the player to add the Game Master skills
+     * @param auraSkills if {@code true} it will add "GM Aura" skills, else will add the "GM regular" skills
+     */
+    public void addSkills(Player gmchar, bool auraSkills)
+    {
+        ICollection<SkillLearn> skills = auraSkills ? _gameMasterAuraSkillTree.Values : _gameMasterSkillTree.Values;
+        SkillData st = SkillData.getInstance();
+        foreach (SkillLearn sl in skills)
+        {
+            Skill? skill = st.getSkill(sl.getSkillId(), sl.getSkillLevel());
+            if (skill is not null)
+                gmchar.addSkill(skill, false); // Don't Save GM skills to database
+        }
+    }
 
-	/**
-	 * Create and store hash values for skills for easy and fast checks.
-	 */
+    /**
+     * Create and store hash values for skills for easy and fast checks.
+     */
 	private void generateCheckArrays()
 	{
 		int i;
@@ -1807,12 +1824,15 @@ public class SkillTreeData: DataReaderBase
 
 		int maxLevel = SkillData.getInstance().getMaxLevel(skill.getId());
 		long hashCode = SkillData.getSkillHashCode(skill.getId(), Math.Min(skill.getLevel(), maxLevel));
-		if (Array.BinarySearch(_skillsByClassIdHashCodes.get(player.getClassId()), hashCode) >= 0)
+
+        long[]? skillsByClassIdHashCodes = _skillsByClassIdHashCodes.get(player.getClassId());
+		if (skillsByClassIdHashCodes != null && Array.BinarySearch(skillsByClassIdHashCodes, hashCode) >= 0)
 		{
 			return true;
 		}
 
-		if (Array.BinarySearch(_skillsByRaceHashCodes.get(player.getRace()), hashCode) >= 0)
+        long[]? skillsByRaceHashCodes = _skillsByRaceHashCodes.get(player.getRace());
+		if (skillsByRaceHashCodes != null && Array.BinarySearch(skillsByRaceHashCodes, hashCode) >= 0)
 		{
 			return true;
 		}

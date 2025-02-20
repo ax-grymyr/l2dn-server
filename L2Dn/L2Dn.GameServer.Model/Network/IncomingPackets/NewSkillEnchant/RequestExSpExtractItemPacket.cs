@@ -19,8 +19,8 @@ public struct RequestExSpExtractItemPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if ((player.getSp() >= 5000000000L) && (player.getAdena() >= 3000000) && (player.getVariables()
-                .getInt(PlayerVariables.DAILY_EXTRACT_ITEM + Inventory.SP_POUCH, 5) > 0))
+        if (player.getSp() >= 5000000000L && player.getAdena() >= 3000000 && player.getVariables()
+                .getInt(PlayerVariables.DAILY_EXTRACT_ITEM + Inventory.SP_POUCH, 5) > 0)
         {
             player.removeExpAndSp(0, 5000000000L);
             player.broadcastUserInfo();

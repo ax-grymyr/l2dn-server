@@ -32,7 +32,7 @@ public struct RequestPartyMatchListPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 		
-        if ((_roomId <= 0) && (player.getMatchingRoom() == null))
+        if (_roomId <= 0 && player.getMatchingRoom() == null)
         {
             PartyMatchingRoom room = new PartyMatchingRoom(_roomTitle, _lootType, _minLevel, _maxLevel, _maxMembers, player);
             player.setMatchingRoom(room);
@@ -40,7 +40,7 @@ public struct RequestPartyMatchListPacket: IIncomingPacket<GameSession>
         else
         {
             MatchingRoom room = player.getMatchingRoom();
-            if ((room.getId() == _roomId) && (room.getRoomType() == MatchingRoomType.PARTY) && room.isLeader(player))
+            if (room.getId() == _roomId && room.getRoomType() == MatchingRoomType.PARTY && room.isLeader(player))
             {
                 room.setLootType(_lootType);
                 room.setMinLevel(_minLevel);

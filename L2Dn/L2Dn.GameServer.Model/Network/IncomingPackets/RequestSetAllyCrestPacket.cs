@@ -48,7 +48,7 @@ public struct RequestSetAllyCrestPacket: IIncomingPacket<GameSession>
         }
 
         Clan leaderClan = ClanTable.getInstance().getClan(player.getAllyId().Value);
-        if ((player.getClanId() != leaderClan.getId()) || !player.isClanLeader())
+        if (player.getClanId() != leaderClan.getId() || !player.isClanLeader())
         {
             player.sendPacket(SystemMessageId.ACCESS_ONLY_FOR_THE_CHANNEL_FOUNDER);
             return ValueTask.CompletedTask;

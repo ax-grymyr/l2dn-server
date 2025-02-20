@@ -35,7 +35,7 @@ public struct RequestActionUsePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 
 		// Don't do anything if player is dead or confused
-		if ((player.isFakeDeath() && (_actionId != 0)) || player.isDead() || player.isControlBlocked())
+		if ((player.isFakeDeath() && _actionId != 0) || player.isDead() || player.isControlBlocked())
 		{
 			connection.Send(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;

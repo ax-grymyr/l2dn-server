@@ -24,7 +24,7 @@ public struct RequestTargetActionMenuPacket: IIncomingPacket<GameSession>
         // }
 		
         Player? player = session.Player;
-        if ((player == null) || player.isTargetingDisabled())
+        if (player == null || player.isTargetingDisabled())
             return ValueTask.CompletedTask;
 		
         foreach (WorldObject obj in World.getInstance().getVisibleObjects<WorldObject>(player))

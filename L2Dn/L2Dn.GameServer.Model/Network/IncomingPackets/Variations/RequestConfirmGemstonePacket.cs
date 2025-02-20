@@ -30,34 +30,34 @@ public struct RequestConfirmGemstonePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Item targetItem = player.getInventory().getItemByObjectId(_targetItemObjId);
+        Item? targetItem = player.getInventory().getItemByObjectId(_targetItemObjId);
         if (targetItem == null)
             return ValueTask.CompletedTask;
-		
-        Item refinerItem = player.getInventory().getItemByObjectId(_mineralItemObjId);
+
+        Item? refinerItem = player.getInventory().getItemByObjectId(_mineralItemObjId);
         if (refinerItem == null)
             return ValueTask.CompletedTask;
-		
-        Item gemStoneItem = player.getInventory().getItemByObjectId(_feeItemObjId);
+
+        Item? gemStoneItem = player.getInventory().getItemByObjectId(_feeItemObjId);
         if (gemStoneItem == null)
             return ValueTask.CompletedTask;
-		
-        VariationFee fee = VariationData.getInstance().getFee(targetItem.getId(), refinerItem.getId());
+
+        VariationFee? fee = VariationData.getInstance().getFee(targetItem.getId(), refinerItem.getId());
         if (!RefinePacketHelper.isValid(player, targetItem, refinerItem, gemStoneItem, fee))
         {
             player.sendPacket(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM);
             return ValueTask.CompletedTask;
         }
-		
+
         // Check for fee count.
         if (_feeCount != fee.getItemCount())
         {
             player.sendPacket(SystemMessageId.GEMSTONE_QUANTITY_IS_INCORRECT);
             return ValueTask.CompletedTask;
         }
-		
+
         player.sendPacket(new ExPutCommissionResultForVariationMakePacket(_feeItemObjId, _feeCount, gemStoneItem.getId()));
-        
+
         return ValueTask.CompletedTask;
     }
 }

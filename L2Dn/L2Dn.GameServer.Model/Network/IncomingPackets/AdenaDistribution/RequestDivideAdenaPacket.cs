@@ -26,7 +26,7 @@ public struct RequestDivideAdenaPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-		AdenaDistributionRequest request = player.getRequest<AdenaDistributionRequest>();
+		AdenaDistributionRequest? request = player.getRequest<AdenaDistributionRequest>();
 		if (request == null)
 			return ValueTask.CompletedTask;
 

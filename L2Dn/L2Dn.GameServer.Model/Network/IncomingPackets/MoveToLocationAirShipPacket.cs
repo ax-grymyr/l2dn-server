@@ -36,10 +36,10 @@ public struct MoveToLocationAirShipPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (!player.isInAirShip())
+        AirShip? ship = player.getAirShip();
+        if (!player.isInAirShip() || ship == null)
             return ValueTask.CompletedTask;
 
-        AirShip ship = player.getAirShip();
         if (!ship.isCaptain(player))
             return ValueTask.CompletedTask;
 

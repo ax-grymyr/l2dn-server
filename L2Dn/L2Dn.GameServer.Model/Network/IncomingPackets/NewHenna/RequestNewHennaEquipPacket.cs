@@ -54,7 +54,7 @@ public struct RequestNewHennaEquipPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		Henna henna = HennaData.getInstance().getHennaByItemId(item.getId());
+		Henna? henna = HennaData.getInstance().getHennaByItemId(item.getId());
 		if (henna == null)
 		{
 			PacketLogger.Instance.Warn(player + ": Invalid Henna SymbolId " + _symbolId + " " + _slotId + " " + item.getTemplate());
@@ -66,7 +66,7 @@ public struct RequestNewHennaEquipPacket: IIncomingPacket<GameSession>
 		long count = player.getInventory().getInventoryItemCount(henna.getDyeItemId(), -1);
 		if (henna.isAllowedClass(player) && count >= henna.getWearCount() &&
 		    (player.getAdena() >= henna.getWearFee() ||
-		     player.getInventory().getItemByItemId(91663).getCount() >= henna.getL2CoinFee()) &&
+		     player.getInventory().getItemByItemId(91663)?.getCount() >= henna.getL2CoinFee()) && // TODO: unhardcode
 		    player.addHenna(_slotId, henna))
 		{
 			int feeType = 0;
@@ -86,7 +86,7 @@ public struct RequestNewHennaEquipPacket: IIncomingPacket<GameSession>
             if (player.getAdena() > 0)
             {
                 InventoryUpdatePacket iu =
-                    new InventoryUpdatePacket(new ItemInfo(player.getInventory().getAdenaInstance(),
+                    new InventoryUpdatePacket(new ItemInfo(player.getInventory().getAdenaInstance()!,
                         ItemChangeType.MODIFIED));
 
                 player.sendInventoryUpdate(iu);

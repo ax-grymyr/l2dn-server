@@ -19,7 +19,7 @@ public struct RequestPrivateStoreSellPacket: IIncomingPacket<GameSession>
     {
         _storePlayerId = reader.ReadInt32();
         int itemsCount = reader.ReadInt32();
-        if ((itemsCount <= 0) || (itemsCount > Config.MAX_ITEM_IN_PACKET))
+        if (itemsCount <= 0 || itemsCount > Config.MAX_ITEM_IN_PACKET)
         {
             return;
         }
@@ -49,7 +49,7 @@ public struct RequestPrivateStoreSellPacket: IIncomingPacket<GameSession>
                 reader.ReadInt32(); // sa effect
             }
 
-            if (/* (slot < 1) || */ (itemId < 1) || (count < 1) || (price < 0))
+            if (/* (slot < 1) || */ itemId < 1 || count < 1 || price < 0)
             {
                 _items = null;
                 return;
@@ -85,13 +85,13 @@ public struct RequestPrivateStoreSellPacket: IIncomingPacket<GameSession>
         // }
 
         Player? storePlayer = World.getInstance().getPlayer(_storePlayerId);
-        if ((storePlayer == null) || !player.IsInsideRadius3D(storePlayer, Npc.INTERACTION_DISTANCE))
+        if (storePlayer == null || !player.IsInsideRadius3D(storePlayer, Npc.INTERACTION_DISTANCE))
             return ValueTask.CompletedTask;
 
         if (player.getInstanceWorld() != storePlayer.getInstanceWorld())
             return ValueTask.CompletedTask;
 
-        if ((storePlayer.getPrivateStoreType() != PrivateStoreType.BUY) || player.isCursedWeaponEquipped())
+        if (storePlayer.getPrivateStoreType() != PrivateStoreType.BUY || player.isCursedWeaponEquipped())
             return ValueTask.CompletedTask;
 
         TradeList storeList = storePlayer.getBuyList();
@@ -117,7 +117,7 @@ public struct RequestPrivateStoreSellPacket: IIncomingPacket<GameSession>
         // Update offline trade record, if realtime saving is enabled
         GameSession? storePlayerClient = storePlayer.getClient();
         if (Config.OFFLINE_TRADE_ENABLE && Config.STORE_OFFLINE_TRADE_IN_REALTIME &&
-            ((storePlayerClient == null) || storePlayerClient.IsDetached))
+            (storePlayerClient == null || storePlayerClient.IsDetached))
         {
             OfflineTraderTable.getInstance().onTransaction(storePlayer, storeList.getItemCount() == 0, false);
         }

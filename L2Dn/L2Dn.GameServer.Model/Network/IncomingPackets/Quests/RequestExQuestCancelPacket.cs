@@ -29,7 +29,7 @@ public struct RequestExQuestCancelPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         QuestState? qs = quest.getQuestState(player, false);
-        if ((qs != null) && !qs.isCompleted())
+        if (qs != null && !qs.isCompleted())
         {
             qs.setSimulated(false);
             qs.exitQuest(QuestType.REPEATABLE);

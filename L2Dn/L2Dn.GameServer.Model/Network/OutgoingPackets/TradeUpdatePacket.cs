@@ -8,22 +8,22 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct TradeUpdatePacket: IOutgoingPacket
 {
     private readonly int _sendType;
-    private readonly TradeItem _item;
+    private readonly TradeItem? _item;
     private readonly long _newCount;
     private readonly long _count;
-	
-    public TradeUpdatePacket(int sendType, Player player, TradeItem item, long count)
+
+    public TradeUpdatePacket(int sendType, Player? player, TradeItem? item, long count)
     {
         _sendType = sendType;
         _count = count;
         _item = item;
-        _newCount = player == null ? 0 : player.getInventory().getItemByObjectId(item.getObjectId()).getCount() - item.getCount();
+        _newCount = player == null || item == null ? 0 : player.getInventory().getItemByObjectId(item.getObjectId())?.getCount() ?? 0 - item.getCount();
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.TRADE_UPDATE);
-        
+
         writer.WriteByte((byte)_sendType);
         writer.WriteInt32(1);
         if (_sendType == 2)

@@ -23,7 +23,7 @@ public struct RequestGiveNickNamePacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         // Noblesse can bestow a title to themselves
         if (player.isNoble() && _target.equalsIgnoreCase(player.getName()))
         {
@@ -33,23 +33,30 @@ public struct RequestGiveNickNamePacket: IIncomingPacket<GameSession>
         }
         else
         {
+            Clan? clan = player.getClan();
+            if (clan == null)
+            {
+                connection.Send(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT); // TODO: check this message
+                return ValueTask.CompletedTask;
+            }
+
             // Can the player change/give a title?
             if (!player.hasClanPrivilege(ClanPrivilege.CL_GIVE_TITLE))
             {
                 connection.Send(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
                 return ValueTask.CompletedTask;
             }
-			
-            if (player.getClan().getLevel() < 3)
+
+            if (clan.getLevel() < 3)
             {
                 connection.Send(SystemMessageId.A_PLAYER_CAN_ONLY_BE_GRANTED_A_TITLE_IF_THE_CLAN_IS_LEVEL_3_OR_ABOVE);
                 return ValueTask.CompletedTask;
             }
-			
-            ClanMember member1 = player.getClan().getClanMember(_target);
+
+            ClanMember? member1 = clan.getClanMember(_target);
             if (member1 != null)
             {
-                Player member = member1.getPlayer();
+                Player? member = member1.getPlayer();
                 if (member != null)
                 {
                     // is target from the same clan?

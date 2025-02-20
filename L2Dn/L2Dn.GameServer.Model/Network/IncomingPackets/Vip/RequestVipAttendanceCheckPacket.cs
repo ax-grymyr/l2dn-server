@@ -25,7 +25,7 @@ public struct RequestVipAttendanceCheckPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
         
-        if (Config.VIP_ONLY_ATTENDANCE_REWARDS && (player.getVipTier() <= 0))
+        if (Config.VIP_ONLY_ATTENDANCE_REWARDS && player.getVipTier() <= 0)
         {
             player.sendPacket(SystemMessageId.YOUR_VIP_RANK_IS_TOO_LOW_TO_RECEIVE_THE_REWARD);
             return ValueTask.CompletedTask;

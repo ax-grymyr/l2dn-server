@@ -27,7 +27,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 		Player? player = session.Player;
 		if (player == null)
 			return ValueTask.CompletedTask;
-		
+
 		// Check if class id is valid.
 		bool canChange = false;
 		foreach (CharacterClassInfo info in player.getClassId().GetClassInfo().getNextClassIds())
@@ -38,15 +38,15 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 				break;
 			}
 		}
-		
+
 		if (!canChange)
 		{
 			PacketLogger.Instance.Warn(player + " tried to change class from " + player.getClassId() + " to " +
 			                           _classId + "!");
-			
+
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Check for player proper class group and level.
 		canChange = false;
 		int playerLevel = player.getLevel();
@@ -62,20 +62,20 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 		{
 			canChange = CategoryData.getInstance().isInCategory(CategoryType.FOURTH_CLASS_GROUP, _classId);
 		}
-		
+
 		// Change class.
 		if (canChange)
 		{
 			player.setClassId(_classId);
 			if (player.isSubClassActive())
 			{
-				player.getSubClasses().get(player.getClassIndex()).setClassId(player.getActiveClass());
+				player.getSubClasses().get(player.getClassIndex())?.setClassId(player.getActiveClass());
 			}
 			else
 			{
 				player.setBaseClass(player.getActiveClass());
 			}
-			
+
 			// Class change rewards.
 			if (!Config.DISABLE_TUTORIAL)
 			{
@@ -93,7 +93,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 						player.addItem("ExRequestClassChange", 93496, 1, player, true); // 1st Class Transfer Gift Box.
 						break;
 					}
-					
+
 					case CharacterClass.WARRIOR:
 					{
 						player.addItem("ExRequestClassChange", 93028, 1, player, true); // Aden Sword.
@@ -102,7 +102,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 						player.addItem("ExRequestClassChange", 93496, 1, player, true); // 1st Class Transfer Gift Box.
 						break;
 					}
-					
+
 					case CharacterClass.ROGUE:
 					case CharacterClass.ELVEN_SCOUT:
 					case CharacterClass.ASSASSIN:
@@ -114,7 +114,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 						player.addItem("ExRequestClassChange", 93496, 1, player, true); // 1st Class Transfer Gift Box.
 						break;
 					}
-					
+
 					case CharacterClass.WIZARD:
 					case CharacterClass.CLERIC:
 					case CharacterClass.ELVEN_WIZARD:
@@ -128,7 +128,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 						player.addItem("ExRequestClassChange", 93496, 1, player, true); // 1st Class Transfer Gift Box.
 						break;
 					}
-					
+
 					case CharacterClass.ORC_RAIDER:
 					{
 						player.addItem("ExRequestClassChange", 93032, 1, player, true); // Two-handed Sword of Aden.
@@ -136,7 +136,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 						player.addItem("ExRequestClassChange", 93497, 1, player, true); // 1st Class Transfer Gift Box.
 						break;
 					}
-					
+
 					case CharacterClass.ORC_MONK:
 					{
 						player.addItem("ExRequestClassChange", 93035, 1, player, true); // Aden Fist.
@@ -144,7 +144,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 						player.addItem("ExRequestClassChange", 93497, 1, player, true); // 1st Class Transfer Gift Box.
 						break;
 					}
-					
+
 					case CharacterClass.ARTISAN:
 					case CharacterClass.SCAVENGER:
 					{
@@ -154,7 +154,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 						player.addItem("ExRequestClassChange", 93496, 1, player, true); // 1st Class Transfer Gift Box.
 						break;
 					}
-					
+
 					case CharacterClass.TROOPER:
 					{
 						player.addItem("ExRequestClassChange", 93037, 1, player, true); // Aden Ancient Sword.
@@ -162,7 +162,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 						player.addItem("ExRequestClassChange", 93496, 1, player, true); // 1st Class Transfer Gift Box.
 						break;
 					}
-					
+
 					case CharacterClass.WARDER:
 					{
 						player.addItem("ExRequestClassChange", 93030, 1, player, true); // Aden Bow.
@@ -171,7 +171,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 						player.addItem("ExRequestClassChange", 93496, 1, player, true); // 1st Class Transfer Gift Box.
 						break;
 					}
-					
+
 					case CharacterClass.SOUL_FINDER:
 					{
 						player.addItem("ExRequestClassChange", 93036, 1, player, true); // Aden Rapier.
@@ -179,7 +179,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 						player.addItem("ExRequestClassChange", 93496, 1, player, true); // 1st Class Transfer Gift Box.
 						break;
 					}
-					
+
 					case CharacterClass.SHARPSHOOTER:
 					{
 						player.addItem("ExRequestClassChange", 94892, 1, player, true); // D-Grade Elemental Orb Sealed.
@@ -188,7 +188,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 						player.addItem("ExRequestClassChange", 93496, 1, player, true); // 1st Class Transfer Gift Box.
 						break;
 					}
-					
+
 					case CharacterClass.RIDER:
 					{
 						player.addItem("ExRequestClassChange", 93034, 1, player, true); // Aden Spear.
@@ -196,7 +196,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 						player.addItem("ExRequestClassChange", 93496, 1, player, true); // 1st Class Transfer Gift Box.
 						break;
 					}
-					
+
 					case CharacterClass.ASSASSIN_MALE_1:
 					case CharacterClass.ASSASSIN_FEMALE_1:
 					{
@@ -205,7 +205,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 						player.addItem("ExRequestClassChange", 93496, 1, player, true); // 1st Class Transfer Gift Box.
 						break;
 					}
-					
+
 					case CharacterClass.ASSASSIN_FEMALE_3:
 					case CharacterClass.ASSASSIN_MALE_3:
 					{
@@ -214,7 +214,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 					}
 				}
 			}
-			
+
 			// Elemental Spirits.
 			if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP))
 			{
@@ -222,7 +222,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 				{
 					player.initElementalSpirits();
 				}
-				
+
 				foreach (ElementalSpirit spirit in player.getSpirits())
 				{
 					if (spirit.getStage() == 0)
@@ -230,24 +230,24 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 						spirit.upgrade();
 					}
 				}
-				
+
 				UserInfoPacket userInfo = new UserInfoPacket(player);
 				userInfo.addComponentType(UserInfoType.ATT_SPIRITS);
 				player.sendPacket(userInfo);
 				player.sendPacket(new ElementalSpiritInfoPacket(player, 0));
 				player.sendPacket(new ExElementalSpiritAttackTypePacket(player));
 			}
-			
+
 			if (Config.AUTO_LEARN_SKILLS)
 			{
 				player.giveAvailableSkills(Config.AUTO_LEARN_FS_SKILLS, true, Config.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
 			}
-			
+
 			player.store(false); // Save player cause if server crashes before this char is saved, he will lose class.
 			player.broadcastUserInfo();
 			player.sendSkillList();
 			player.sendPacket(new PlaySoundPacket("ItemSound.quest_fanfare_2"));
-			
+
 			if (Config.DISABLE_TUTORIAL && !player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) //
 				&& ((player.isInCategory(CategoryType.SECOND_CLASS_GROUP) && playerLevel >= 38) //
 					|| (player.isInCategory(CategoryType.THIRD_CLASS_GROUP) && playerLevel >= 76)))

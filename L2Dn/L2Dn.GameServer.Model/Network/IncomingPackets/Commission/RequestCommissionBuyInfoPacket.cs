@@ -30,7 +30,7 @@ public struct RequestCommissionBuyInfoPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 		
-        if (!player.isInventoryUnder80(false) || (player.getWeightPenalty() >= 3))
+        if (!player.isInventoryUnder80(false) || player.getWeightPenalty() >= 3)
         {
             player.sendPacket(SystemMessageId.TO_BUY_CANCEL_YOU_NEED_TO_FREE_20_OF_WEIGHT_AND_10_OF_SLOTS_IN_YOUR_INVENTORY);
             player.sendPacket(ExResponseCommissionBuyInfoPacket.FAILED);

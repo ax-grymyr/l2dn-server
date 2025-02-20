@@ -37,8 +37,8 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 	private short _earthDefence;
 	private short _holyDefence;
 	private short _darkDefence;
-	private EnsoulOption?[] _soulCrystalOptions;
-	private EnsoulOption?[] _soulCrystalSpecialOptions;
+	private EnsoulOption[] _soulCrystalOptions;
+	private EnsoulOption[] _soulCrystalSpecialOptions;
 
 	public void ReadContent(PacketBitReader reader)
 	{
@@ -180,7 +180,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        ItemInfo itemEnchantment = list.getItemEnchantment(_entryId);
+        ItemInfo? itemEnchantment = list.getItemEnchantment(_entryId);
 
         // Validate the requested item with its full stats.
 		//@formatter:off

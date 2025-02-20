@@ -74,7 +74,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			if (player.isGM())
 			{
 				WorldObject? obj = World.getInstance().findObject(_objectId);
-				if ((obj != null) && obj.isItem())
+				if (obj != null && obj.isItem())
 				{
 					AdminCommandHandler.getInstance().useAdminCommand(player, "admin_use_item " + _objectId, true);
 				}
@@ -83,7 +83,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (item.isQuestItem() && (item.getTemplate().getDefaultAction() != ActionType.NONE))
+		if (item.isQuestItem() && item.getTemplate().getDefaultAction() != ActionType.NONE)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_QUEST_ITEMS);
 			return ValueTask.CompletedTask;
@@ -110,14 +110,14 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 		}
 
 		int itemId = item.getId();
-		if (player.isFishing() && ((itemId < 6535) || (itemId > 6540)))
+		if (player.isFishing() && (itemId < 6535 || itemId > 6540))
 		{
 			// You cannot do anything else while fishing
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_FISHING_3);
 			return ValueTask.CompletedTask;
 		}
 
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && (player.getReputation() < 0))
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && player.getReputation() < 0)
 		{
 			List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 			if (skills != null)
@@ -160,7 +160,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 		if (item.isEquipable())
 		{
 			// Don't allow to put formal wear while a cursed weapon is equipped.
-			if (player.isCursedWeaponEquipped() && (itemId == 6408))
+			if (player.isCursedWeaponEquipped() && itemId == 6408)
 			{
 				return ValueTask.CompletedTask;
 			}
@@ -185,18 +185,18 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			if (item.isArmor())
 			{
 				// Prevent equip shields for Death Knight, Sylph, Vanguard or Assassin players.
-				if ((item.getItemType() == ArmorType.SHIELD) && (player.isDeathKnight() || (player.getRace() == Race.SYLPH) || player.isVanguard() || player.isAssassin()))
+				if (item.getItemType() == ArmorType.SHIELD && (player.isDeathKnight() || player.getRace() == Race.SYLPH || player.isVanguard() || player.isAssassin()))
 				{
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 					return ValueTask.CompletedTask;
 				}
 			}
-			else if (item.isWeapon() && (item.getItemType() != WeaponType.FISHINGROD)) // Fishing rods are enabled for all players.
+			else if (item.isWeapon() && item.getItemType() != WeaponType.FISHINGROD) // Fishing rods are enabled for all players.
 			{
 				// Prevent equip pistols for non Sylph players.
 				if (item.getItemType() == WeaponType.PISTOLS)
 				{
-					if ((player.getRace() != Race.SYLPH))
+					if (player.getRace() != Race.SYLPH)
 					{
 						player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 						return ValueTask.CompletedTask;
@@ -205,7 +205,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 				else
 				{
 					// Prevent Dwarf players equip rapiers.
-					if ((player.getRace() == Race.DWARF))
+					if (player.getRace() == Race.DWARF)
 					{
 						if (item.getItemType() == WeaponType.RAPIER)
 						{
@@ -214,7 +214,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 						}
 					}
 					// Prevent Orc players equip rapiers.
-					else if ((player.getRace() == Race.ORC))
+					else if (player.getRace() == Race.ORC)
 					{
 						if (item.getItemType() == WeaponType.RAPIER)
 						{
@@ -223,7 +223,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 						}
 					}
 					// Prevent Sylph players to equip other weapons than Pistols.
-					else if ((player.getRace() == Race.SYLPH))
+					else if (player.getRace() == Race.SYLPH)
 					{
 						if (item.getItemType() != WeaponType.PISTOLS)
 						{
@@ -250,7 +250,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 						}
 					}
 					// Prevent other races using Ancient swords.
-					else if ((player.getRace() != Race.KAMAEL))
+					else if (player.getRace() != Race.KAMAEL)
 					{
 						if (item.getItemType() == WeaponType.ANCIENTSWORD)
 						{
@@ -263,9 +263,9 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 
 			// Prevent players to equip weapon while wearing combat flag
 			// Don't allow weapon/shield equipment if a cursed weapon is equipped.
-			if ((item.getTemplate().getBodyPart() == ItemTemplate.SLOT_LR_HAND) || (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_L_HAND) || (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_R_HAND))
+			if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_LR_HAND || item.getTemplate().getBodyPart() == ItemTemplate.SLOT_L_HAND || item.getTemplate().getBodyPart() == ItemTemplate.SLOT_R_HAND)
 			{
-				if ((player.getActiveWeaponItem() != null) && (player.getActiveWeaponItem().getId() == FortManager.ORC_FORTRESS_FLAG))
+				if (player.getActiveWeaponItem() != null && player.getActiveWeaponItem().getId() == FortManager.ORC_FORTRESS_FLAG)
 				{
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 					return ValueTask.CompletedTask;
@@ -282,7 +282,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			}
 			else if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_DECO)
 			{
-				if (!item.isEquipped() && (player.getInventory().getTalismanSlots() == 0))
+				if (!item.isEquipped() && player.getInventory().getTalismanSlots() == 0)
 				{
 					player.sendPacket(SystemMessageId.NO_EQUIPMENT_SLOT_AVAILABLE);
 					return ValueTask.CompletedTask;
@@ -290,7 +290,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			}
 			else if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_BROOCH_JEWEL)
 			{
-				if (!item.isEquipped() && (player.getInventory().getBroochJewelSlots() == 0))
+				if (!item.isEquipped() && player.getInventory().getBroochJewelSlots() == 0)
 				{
 					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_CANNOT_EQUIP_S1_WITHOUT_EQUIPPING_A_BROOCH);
 					sm.Params.addItemName(item);
@@ -300,7 +300,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			}
 			else if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_AGATHION)
 			{
-				if (!item.isEquipped() && (player.getInventory().getAgathionSlots() == 0))
+				if (!item.isEquipped() && player.getInventory().getAgathionSlots() == 0)
 				{
 					player.sendPacket(SystemMessageId.NO_EQUIPMENT_SLOT_AVAILABLE);
 					return ValueTask.CompletedTask;
@@ -308,7 +308,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			}
 			else if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_ARTIFACT)
 			{
-				if (!item.isEquipped() && (player.getInventory().getArtifactSlots() == 0))
+				if (!item.isEquipped() && player.getInventory().getArtifactSlots() == 0)
 				{
 					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 					sm.Params.addItemName(item);
@@ -319,9 +319,9 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 
 			// Over-enchant protection.
 			if (Config.OVER_ENCHANT_PROTECTION && !player.isGM() //
-				&& ((item.isWeapon() && (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxWeaponEnchant())) //
-					|| ((item.getTemplate().getType2() == ItemTemplate.TYPE2_ACCESSORY) && (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxAccessoryEnchant())) //
-					|| (item.isArmor() && (item.getTemplate().getType2() != ItemTemplate.TYPE2_ACCESSORY) && (item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxArmorEnchant()))))
+				&& ((item.isWeapon() && item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxWeaponEnchant()) //
+					|| (item.getTemplate().getType2() == ItemTemplate.TYPE2_ACCESSORY && item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxAccessoryEnchant()) //
+					|| (item.isArmor() && item.getTemplate().getType2() != ItemTemplate.TYPE2_ACCESSORY && item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxArmorEnchant())))
 			{
 				PacketLogger.Instance.Info("Over-enchanted (+" + item.getEnchantLevel() + ") " + item + " has been removed from " + player);
 				player.getInventory().destroyItem("Over-enchant protection", item, player, null);
@@ -360,7 +360,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 		else
 		{
 			EtcItem etcItem = item.getEtcItem();
-			if ((etcItem != null) && (etcItem.getExtractableItems() != null) && (player.hasRequest<AutoPeelRequest>()))
+			if (etcItem != null && etcItem.getExtractableItems() != null && player.hasRequest<AutoPeelRequest>())
 			{
 				return ValueTask.CompletedTask;
 			}
@@ -368,7 +368,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			IItemHandler handler = ItemHandler.getInstance().getHandler(etcItem);
 			if (handler == null)
 			{
-				if ((etcItem != null) && (etcItem.getHandlerName() != null))
+				if (etcItem != null && etcItem.getHandlerName() != null)
 				{
 					PacketLogger.Instance.Warn("Unmanaged Item handler: " + etcItem.getHandlerName() + " for Item Id: " + itemId + "!");
 				}

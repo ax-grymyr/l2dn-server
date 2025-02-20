@@ -30,8 +30,8 @@ public struct RequestExPvpBookShareRevengeReqShareRevengeInfoPacket: IIncomingPa
 
         if (!_victimName.equals(player.getName()))
             return ValueTask.CompletedTask;
-		
-        Player killer = World.getInstance().getPlayer(_killerName);
+
+        Player? killer = World.getInstance().getPlayer(_killerName);
         if (killer == null || !killer.isOnline())
         {
             SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_OFFLINE);
@@ -39,9 +39,9 @@ public struct RequestExPvpBookShareRevengeReqShareRevengeInfoPacket: IIncomingPa
             player.sendPacket(sm);
             return ValueTask.CompletedTask;
         }
-		
+
         RevengeHistoryManager.getInstance().requestHelp(player, killer, _type);
- 
+
         return ValueTask.CompletedTask;
     }
 }

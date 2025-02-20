@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
@@ -62,11 +63,12 @@ public struct ActionPacket: IIncomingPacket<GameSession>
 		}
 
 		WorldObject? obj;
+        AirShip? airShip = player.getAirShip();
 		if (player.getTargetId() == _objectId)
 		{
 			obj = player.getTarget();
 		}
-		else if (player.isInAirShip() && (player.getAirShip().getHelmObjectId() == _objectId))
+		else if (player.isInAirShip() && airShip != null && airShip.getHelmObjectId() == _objectId)
 		{
 			obj = player.getAirShip();
 		}

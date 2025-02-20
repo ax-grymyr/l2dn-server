@@ -925,9 +925,12 @@ public class StatSet
 		return (Map<K, V>) obj;
 	}
 
-	public virtual void set(string name, object value)
-	{
-		_set.put(name, value);
+	public virtual void set(string name, object? value)
+    {
+        if (value is null)
+            _set.TryRemove(name, out _);
+        else
+		    _set[name] = value;
 	}
 
 	public virtual void set(string name, bool value)

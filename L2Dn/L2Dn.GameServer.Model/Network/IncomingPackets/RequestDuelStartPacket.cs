@@ -113,7 +113,7 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 		{
 			// Player must be in a party & the party leader
 			Party? party = player.getParty();
-			if ((party == null) || !party.isLeader(player))
+			if (party == null || !party.isLeader(player))
 			{
 				player.sendMessage("You have to be the leader of a party in order to request a party duel.");
 				return ValueTask.CompletedTask;

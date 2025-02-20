@@ -24,7 +24,7 @@ public struct RequestGetItemFromPetPacket: IIncomingPacket<GameSession>
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
         Player? player = session.Player;
-        if ((_amount <= 0) || (player == null) || !player.hasPet())
+        if (_amount <= 0 || player == null || !player.hasPet())
             return ValueTask.CompletedTask;
 
         // TODO: flood protection
@@ -33,25 +33,25 @@ public struct RequestGetItemFromPetPacket: IIncomingPacket<GameSession>
         //     player.sendMessage("You get items from pet too fast.");
         //     return;
         // }
-		
+
         if (player.hasItemRequest())
             return ValueTask.CompletedTask;
-		
-        Pet pet = player.getPet();
-        Item item = pet.getInventory().getItemByObjectId(_objectId);
-        if (item == null)
+
+        Pet? pet = player.getPet();
+        Item? item = pet?.getInventory().getItemByObjectId(_objectId);
+        if (pet == null || item == null)
             return ValueTask.CompletedTask;
-		
+
         if (_amount > item.getCount())
         {
             Util.handleIllegalPlayerAction(player,
                 GetType().Name + ": Character " + player.getName() + " of account " + player.getAccountName() +
                 " tried to get item with oid " + _objectId + " from pet but has invalid count " + _amount +
                 " item count: " + item.getCount(), Config.DEFAULT_PUNISH);
-            
+
             return ValueTask.CompletedTask;
         }
-		
+
         Item transferedItem = pet.transferItem("Transfer", _objectId, _amount, player.getInventory(), player, pet);
         if (transferedItem != null)
         {

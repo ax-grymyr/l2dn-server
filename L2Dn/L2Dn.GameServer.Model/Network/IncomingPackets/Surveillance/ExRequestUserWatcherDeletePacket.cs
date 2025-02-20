@@ -43,7 +43,7 @@ public struct ExRequestUserWatcherDeletePacket: IIncomingPacket<GameSession>
             player.sendPacket(sm);
             return ValueTask.CompletedTask;
         }
-		
+
         try
         {
             int characterId = player.ObjectId;
@@ -55,20 +55,20 @@ public struct ExRequestUserWatcherDeletePacket: IIncomingPacket<GameSession>
         {
             PacketLogger.Instance.Warn("ExRequestUserWatcherDelete: Could not add surveillance objectid: " + e);
         }
-		
+
         sm = new SystemMessagePacket(SystemMessageId.YOU_VE_REMOVED_C1_FROM_YOUR_SURVEILLANCE_LIST);
         sm.Params.addString(_name);
         player.sendPacket(sm);
-		
+
         player.getSurveillanceList().remove(targetId);
         player.sendPacket(new ExUserWatcherTargetListPacket(player));
-		
-        Player target = World.getInstance().getPlayer(targetId);
-        if ((target != null) && target.isVisibleFor(player))
+
+        Player? target = World.getInstance().getPlayer(targetId);
+        if (target != null && target.isVisibleFor(player))
         {
             player.sendPacket(new RelationChangedPacket());
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

@@ -60,7 +60,7 @@ public struct RequestStopPledgeWarPacket: IIncomingPacket<GameSession>
 
 		foreach (ClanMember member in playerClan.getMembers())
 		{
-			if ((member == null) || (member.getPlayer() == null))
+			if (member == null || member.getPlayer() == null)
 			{
 				continue;
 			}

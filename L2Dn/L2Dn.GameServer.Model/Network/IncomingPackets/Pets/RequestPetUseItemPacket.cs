@@ -32,18 +32,18 @@ public struct RequestPetUseItemPacket: IIncomingPacket<GameSession>
 	    // TODO flood protection
 		// if (!client.getFloodProtectors().canUseItem())
 		// 	return ValueTask.CompletedTask;
-		
-		Pet pet = player.getPet();
-		Item item = pet.getInventory().getItemByObjectId(_objectId);
-		if (item == null)
+
+		Pet? pet = player.getPet();
+		Item? item = pet?.getInventory().getItemByObjectId(_objectId);
+		if (pet == null || item == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (!item.getTemplate().isForNpc())
 		{
 			player.sendPacket(SystemMessageId.THIS_PET_CANNOT_USE_THIS_ITEM);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.isAlikeDead() || pet.isDead())
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
@@ -51,7 +51,7 @@ public struct RequestPetUseItemPacket: IIncomingPacket<GameSession>
 			player.sendPacket(sm);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// If the item has reuse time and it has not passed.
 		// Message from reuse delay must come from item.
 		TimeSpan reuseDelay = item.getReuseDelay();
@@ -61,15 +61,15 @@ public struct RequestPetUseItemPacket: IIncomingPacket<GameSession>
 			if (reuse > TimeSpan.Zero)
 				return ValueTask.CompletedTask;
 		}
-		
+
 		if (!item.isEquipped() && !item.getTemplate().checkCondition(pet, pet, true))
 			return ValueTask.CompletedTask;
-		
+
 		useItem(pet, item, player);
 
 		return ValueTask.CompletedTask;
 	}
-	
+
 	private static void useItem(Pet pet, Item item, Player player)
 	{
 		if (item.isEquipable())
@@ -79,7 +79,7 @@ public struct RequestPetUseItemPacket: IIncomingPacket<GameSession>
 				player.sendPacket(SystemMessageId.THIS_PET_CANNOT_USE_THIS_ITEM);
 				return;
 			}
-			
+
 			if (item.isEquipped())
 			{
 				pet.getInventory().unEquipItemInSlot(item.getLocationSlot());
@@ -88,13 +88,13 @@ public struct RequestPetUseItemPacket: IIncomingPacket<GameSession>
 			{
 				pet.getInventory().equipItem(item);
 			}
-			
+
 			player.sendPacket(new PetItemListPacket(pet.getInventory().getItems()));
 			pet.updateAndBroadcastStatus(1);
 		}
 		else
 		{
-			IItemHandler handler = ItemHandler.getInstance().getHandler(item.getEtcItem());
+			IItemHandler? handler = ItemHandler.getInstance().getHandler(item.getEtcItem());
 			if (handler != null)
 			{
 				if (handler.useItem(pet, item, false))
@@ -104,7 +104,7 @@ public struct RequestPetUseItemPacket: IIncomingPacket<GameSession>
 					{
 						player.addTimeStampItem(item, reuseDelay);
 					}
-					
+
 					player.sendPacket(new PetItemListPacket(pet.getInventory().getItems()));
 					pet.updateAndBroadcastStatus(1);
 				}

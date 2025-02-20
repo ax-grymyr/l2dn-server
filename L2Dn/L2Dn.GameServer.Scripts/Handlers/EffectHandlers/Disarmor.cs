@@ -26,7 +26,7 @@ public class Disarmor: AbstractEffect
 		_unequippedItems = new();
 
 		string slot = @params.getString("slot", "chest");
-		_slot = ItemData.SLOTS.GetValueOrDefault(slot, ItemTemplate.SLOT_NONE);
+		_slot = ItemData._slotNameMap.GetValueOrDefault(slot, ItemTemplate.SLOT_NONE);
 		if (_slot == ItemTemplate.SLOT_NONE)
 		{
 			LOGGER.Error("Unknown bodypart slot for effect: " + slot);
@@ -82,7 +82,7 @@ public class Disarmor: AbstractEffect
 		}
 
 		int disarmedObjId = _unequippedItems.remove(effected.ObjectId);
-		if (disarmedObjId != null && disarmedObjId > 0)
+		if (disarmedObjId > 0)
 		{
 			player.getInventory().unblockItemSlot(_slot);
 

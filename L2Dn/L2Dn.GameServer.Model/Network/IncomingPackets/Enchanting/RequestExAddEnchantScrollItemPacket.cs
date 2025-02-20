@@ -26,14 +26,14 @@ public struct RequestExAddEnchantScrollItemPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (player.getRequest<EnchantItemRequest>() == null)
+        EnchantItemRequest? request = player.getRequest<EnchantItemRequest>();
+        if (request == null)
         {
-            player.addRequest(new EnchantItemRequest(player, _scrollObjectId));
+            player.addRequest(request = new EnchantItemRequest(player, _scrollObjectId));
         }
-        
-        EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
+
         request.setEnchantingScroll(_scrollObjectId);
-		
+
         Item scroll = request.getEnchantingScroll();
         if (scroll == null)
         {
@@ -44,7 +44,7 @@ public struct RequestExAddEnchantScrollItemPacket: IIncomingPacket<GameSession>
             request.setEnchantingScroll(Player.ID_NONE);
             return ValueTask.CompletedTask;
         }
-		
+
         EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
         if (scrollTemplate == null)
         {
@@ -54,10 +54,10 @@ public struct RequestExAddEnchantScrollItemPacket: IIncomingPacket<GameSession>
             request.setEnchantingScroll(Player.ID_NONE);
             return ValueTask.CompletedTask;
         }
-		
+
         request.setTimestamp(DateTime.UtcNow);
         player.sendPacket(new ExPutEnchantScrollItemResultPacket(_scrollObjectId));
-        
+
         return ValueTask.CompletedTask;
     }
 }

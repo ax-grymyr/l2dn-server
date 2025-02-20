@@ -25,7 +25,7 @@ public struct ExEvolvePetPacket: IIncomingPacket<GameSession>
         if (activeChar == null)
             return ValueTask.CompletedTask;
 
-		Pet pet = activeChar.getPet();
+		Pet? pet = activeChar.getPet();
 		if (pet == null)
 			return ValueTask.CompletedTask;
 
@@ -54,6 +54,9 @@ public struct ExEvolvePetPacket: IIncomingPacket<GameSession>
 	private void doEvolve(Player activeChar, Pet pet, EvolveLevel evolveLevel)
 	{
 		Item? controlItem = pet.getControlItem();
+        if (controlItem == null)
+            return;
+
 		pet.unSummon(activeChar);
 		List<PetData> pets = PetDataTable.getInstance().getPetDatasByEvolve(controlItem.getId(), evolveLevel);
 		PetData targetPet = pets.GetRandomElement();
@@ -62,6 +65,9 @@ public struct ExEvolvePetPacket: IIncomingPacket<GameSession>
 			return;
 
 		NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(evolveLevel == EvolveLevel.Second ? pet.getId() + 2 : petData.getNpcId());
+        if (npcTemplate == null)
+            return;
+
 		Pet evolved = Pet.spawnPet(npcTemplate, activeChar, controlItem);
 		if (evolved == null)
 			return;

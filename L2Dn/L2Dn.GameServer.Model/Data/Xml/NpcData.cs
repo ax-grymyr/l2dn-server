@@ -79,7 +79,7 @@ public class NpcData: DataReaderBase
 		set.set("type", type);
 		set.set("name", element.GetAttributeValueAsString("name"));
 		set.set("usingServerSideName", element.Attribute("usingServerSideName").GetBoolean(false));
-		set.set("title", element.GetAttributeValueAsString("title", null));
+		set.set("title", element.GetAttributeValueAsString("title", string.Empty));
 		set.set("usingServerSideTitle", element.Attribute("usingServerSideTitle").GetBoolean(false));
 		set.set("elementalType", element.Attribute("element").GetEnum(ElementalType.NONE));
 
@@ -145,7 +145,7 @@ public class NpcData: DataReaderBase
 				set.set("accuracy", e.GetAttributeValueAsFloatOrNull("accuracy")); // TODO: Implement me
 				set.set("basePAtkSpd", e.GetAttributeValueAsFloat("attackSpeed"));
 				set.set("reuseDelay", e.GetAttributeValueAsInt32OrNull("reuseDelay")); // TODO: Implement me
-				set.set("baseAtkType", e.GetAttributeValueAsString("type", null));
+				set.set("baseAtkType", e.GetAttributeValueAsString("type", string.Empty));
 				set.set("baseAtkRange", e.GetAttributeValueAsInt32("range"));
 				set.set("distance", e.GetAttributeValueAsInt32OrNull("distance")); // TODO: Implement me
 				set.set("width", e.GetAttributeValueAsInt32OrNull("width")); // TODO: Implement me
@@ -265,7 +265,7 @@ public class NpcData: DataReaderBase
 		{
 			int skillId = el.GetAttributeValueAsInt32("id");
 			int skillLevel = el.GetAttributeValueAsInt32("level");
-			Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+			Skill? skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 			if (skill != null)
 			{
 				skills.put(skill.getId(), skill);
@@ -300,7 +300,7 @@ public class NpcData: DataReaderBase
 
 		element.Elements("ai").ForEach(el =>
 		{
-			set.set("aiType", el.GetAttributeValueAsString("type", null));
+			set.set("aiType", el.GetAttributeValueAsString("type", string.Empty));
 			set.set("aggroRange", el.GetAttributeValueAsInt32OrNull("aggroRange"));
 			set.set("clanHelpRange", el.GetAttributeValueAsInt32OrNull("clanHelpRange"));
 			set.set("isChaos", el.GetAttributeValueAsBooleanOrNull("isChaos"));
@@ -410,7 +410,7 @@ public class NpcData: DataReaderBase
 			set.set("collisionHeightGrown", el.GetAttributeValueAsDoubleOrNull("grown"));
 		});
 
-		NpcTemplate template = _npcs.get(npcId);
+		NpcTemplate? template = _npcs.get(npcId);
 		if (template == null)
 		{
 			template = new NpcTemplate(set);
@@ -433,7 +433,7 @@ public class NpcData: DataReaderBase
 
 		if (skills != null)
 		{
-			Map<AISkillScope, List<Skill>> aiSkillLists = null;
+			Map<AISkillScope, List<Skill>>? aiSkillLists = null;
 			foreach (Skill skill in skills.Values)
 			{
 				if (!skill.isPassive())
@@ -513,7 +513,7 @@ public class NpcData: DataReaderBase
 
 					foreach (AISkillScope aiSkillScope in aiSkillScopes)
 					{
-						List<Skill> aiSkills = aiSkillLists.get(aiSkillScope);
+						List<Skill>? aiSkills = aiSkillLists.get(aiSkillScope);
 						if (aiSkills == null)
 						{
 							aiSkills = new();
@@ -616,13 +616,13 @@ public class NpcData: DataReaderBase
 	 * @return the clan id for the given clan name
 	 */
 	private int getOrCreateClanId(string clanName)
-	{
-		int id = _clans.get(clanName);
-		if (id == null)
-		{
-			id = _clans.Count;
-			_clans.put(clanName, id);
-		}
+    {
+        if (!_clans.TryGetValue(clanName, out int id))
+        {
+            id = _clans.Count;
+            _clans[clanName] = id;
+        }
+
 		return id;
 	}
 
@@ -632,10 +632,9 @@ public class NpcData: DataReaderBase
 	 * @return the clan id for the given clan name if it exists, -1 otherwise
 	 */
 	public int getClanId(string clanName)
-	{
-		int id = _clans.get(clanName);
-		return id != null ? id : -1;
-	}
+    {
+        return _clans.GetValueOrDefault(clanName, -1);
+    }
 
 	public Set<string> getClansByIds(Set<int> clanIds)
 	{

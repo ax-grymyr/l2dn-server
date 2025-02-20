@@ -77,11 +77,11 @@ public struct ExTimedHuntingZoneEnterPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		TimedHuntingZoneHolder holder = TimedHuntingZoneData.getInstance().getHuntingZone(_zoneId);
+		TimedHuntingZoneHolder? holder = TimedHuntingZoneData.getInstance().getHuntingZone(_zoneId);
 		if (holder == null)
 			return ValueTask.CompletedTask;
 
-		if ((player.getLevel() < holder.getMinLevel()) || (player.getLevel() > holder.getMaxLevel()))
+		if (player.getLevel() < holder.getMinLevel() || player.getLevel() > holder.getMaxLevel())
 		{
 			player.sendMessage("Your level does not correspond the zone equivalent.");
 			return ValueTask.CompletedTask;
@@ -90,7 +90,7 @@ public struct ExTimedHuntingZoneEnterPacket: IIncomingPacket<GameSession>
 		// TODO: Move shared instance cooldown to XML.
 		DateTime currentTime = DateTime.UtcNow;
 		int instanceId = holder.getInstanceId();
-		if ((instanceId > 0) && holder.isSoloInstance())
+		if (instanceId > 0 && holder.isSoloInstance())
 		{
 			if (instanceId == 228) // Cooldown for Training Zone instance.
 			{
@@ -116,7 +116,7 @@ public struct ExTimedHuntingZoneEnterPacket: IIncomingPacket<GameSession>
 		// TODO verify time calculations
 		DateTime endTime = currentTime + TimeSpan.FromMilliseconds(player.getTimedHuntingZoneRemainingTime(_zoneId));
 		DateTime lastEntryTime = new DateTime(player.getVariables().getLong(PlayerVariables.HUNTING_ZONE_ENTRY + _zoneId, 0));
-		if ((lastEntryTime + holder.getResetDelay()) < currentTime)
+		if (lastEntryTime + holder.getResetDelay() < currentTime)
 		{
 			if (endTime == currentTime)
 			{
@@ -157,7 +157,8 @@ public struct ExTimedHuntingZoneEnterPacket: IIncomingPacket<GameSession>
 			}
 			else // Instanced zones.
 			{
-				QuestManager.getInstance().getQuest("TimedHunting").notifyEvent("ENTER " + _zoneId, null, player);
+                // TODO: unhardcore quest name
+				QuestManager.getInstance().getQuest("TimedHunting")?.notifyEvent("ENTER " + _zoneId, null, player);
 			}
 		}
 		else

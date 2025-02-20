@@ -27,34 +27,37 @@ public struct ExApplyVariationOptionPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        VariationRequest request = player.getRequest<VariationRequest>();
+        VariationRequest? request = player.getRequest<VariationRequest>();
+        if (request == null)
+            return ValueTask.CompletedTask;
+
         Item targetItem = request.getAugmentedItem();
         VariationInstance augment = request.getAugment();
         int option1Id = augment.getOption1Id();
         int option2Id = augment.getOption2Id();
-		
-        if ((targetItem.ObjectId != _enchantedObjectId) || (_option1 != option1Id) || (_option2 != option2Id))
+
+        if (targetItem.ObjectId != _enchantedObjectId || _option1 != option1Id || _option2 != option2Id)
         {
             player.sendPacket(new ApplyVariationOptionPacket(0, 0, 0, 0));
             return ValueTask.CompletedTask;
         }
-		
+
         targetItem.setAugmentation(augment, true);
-		
+
         player.sendPacket(new ApplyVariationOptionPacket(1, _enchantedObjectId, _option1, _option2));
-		
+
         // Apply new augment.
         if (targetItem.isEquipped())
         {
-            targetItem.getAugmentation().applyBonus(player);
+            targetItem.getAugmentation()?.applyBonus(player);
         }
-		
+
         // Recalculate all stats.
         player.getStat().recalculateStats(true);
-		
+
         player.sendItemList();
         player.removeRequest<VariationRequest>();
-        
+
         return ValueTask.CompletedTask;
     }
 }

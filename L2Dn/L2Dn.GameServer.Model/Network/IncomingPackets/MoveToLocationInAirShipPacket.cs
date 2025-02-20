@@ -47,13 +47,13 @@ public struct MoveToLocationInAirShipPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (!player.isInAirShip())
+        AirShip? airShip = player.getAirShip();
+        if (!player.isInAirShip() || airShip == null)
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
 
-        AirShip airShip = player.getAirShip();
         if (airShip.ObjectId != _shipId)
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);

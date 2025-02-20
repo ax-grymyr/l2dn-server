@@ -34,65 +34,71 @@ public struct ExTeleportToRaidPositionPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
- 		TeleportListHolder teleport = RaidTeleportListData.getInstance().getTeleport(_raidId);
+ 		TeleportListHolder? teleport = RaidTeleportListData.getInstance().getTeleport(_raidId);
 		if (teleport == null)
 		{
 			PacketLogger.Instance.Warn("No registered teleport location for raid id: " + _raidId);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Dead characters cannot use teleports.
 		if (player.isDead())
 		{
 			player.sendPacket(SystemMessageId.DEAD_CHARACTERS_CANNOT_USE_TELEPORTS);
 			return ValueTask.CompletedTask;
 		}
-		
-		NpcTemplate template = NpcData.getInstance().getTemplate(_raidId);
-		if (template.isType("GrandBoss") && (GrandBossManager.getInstance().getStatus(_raidId) != 0))
+
+		NpcTemplate? template = NpcData.getInstance().getTemplate(_raidId);
+        if (template == null)
+        {
+            player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_BECAUSE_THE_TARGET_IS_DEAD); // TODO: verify this message
+            return ValueTask.CompletedTask;
+        }
+
+		if (template.isType("GrandBoss") && GrandBossManager.getInstance().getStatus(_raidId) != 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_RIGHT_NOW);
 			return ValueTask.CompletedTask;
 		}
-		
-		if (template.isType("RaidBoss") && (DbSpawnManager.getInstance().getStatus(_raidId) != RaidBossStatus.ALIVE))
+
+		if (template.isType("RaidBoss") && DbSpawnManager.getInstance().getStatus(_raidId) != RaidBossStatus.ALIVE)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_RIGHT_NOW);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Players should not be able to teleport if in combat, or in a special location.
 		if (player.isCastingNow() || player.isInCombat() || player.isImmobilized() || player.isInInstance() || player.isOnEvent() || player.isInOlympiadMode() || player.inObserverMode() || player.isInTraingCamp() || player.isInsideZone(ZoneId.TIMED_HUNTING))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_RIGHT_NOW);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Karma related configurations.
-		if ((!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT || !Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK) && (player.getReputation() < 0))
+		if ((!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT || !Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK) && player.getReputation() < 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_RIGHT_NOW);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Cannot escape effect.
 		if (player.isAffected(EffectFlag.CANNOT_ESCAPE))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_RIGHT_NOW);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		Location3D location = teleport.getLocation();
 		if (!Config.TELEPORT_WHILE_SIEGE_IN_PROGRESS)
 		{
-			Castle castle = CastleManager.getInstance().getCastle(location);
-			if ((castle != null) && castle.getSiege().isInProgress())
+			Castle? castle = CastleManager.getInstance().getCastle(location);
+			if (castle != null && castle.getSiege().isInProgress())
 			{
 				player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_TO_A_VILLAGE_THAT_IS_IN_A_SIEGE);
 				return ValueTask.CompletedTask;
 			}
 		}
-		
+
 		int price;
 		if (DateTime.UtcNow - player.getVariables().getDateTime("LastFreeRaidTeleportTime", DateTime.MinValue) > TimeSpan.FromDays(1))
 		{
@@ -103,7 +109,7 @@ public struct ExTeleportToRaidPositionPacket: IIncomingPacket<GameSession>
 		{
 			price = teleport.getPrice();
 		}
-		
+
 		if (price > 0)
 		{
 			if (player.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < price)
@@ -114,10 +120,10 @@ public struct ExTeleportToRaidPositionPacket: IIncomingPacket<GameSession>
 
 			player.destroyItemByItemId("TeleportToRaid", Inventory.LCOIN_ID, price, player, true);
 		}
-		
+
 		player.abortCast();
 		player.stopMove(null);
-		
+
 		player.setTeleportLocation(new Location(location, 0));
 		player.doCast(CommonSkill.TELEPORT.getSkill());
 		player.sendPacket(new ExRaidTeleportInfoPacket(player));

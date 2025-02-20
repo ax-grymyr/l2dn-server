@@ -90,8 +90,8 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	private int _itemId;
 	private int _displayId;
 	private string _name;
-	private string? _additionalName;
-	private string? _icon;
+	private string _additionalName;
+	private string _icon;
 	private int _weight;
 	private bool _stackable;
 	private MaterialType _materialType;
@@ -160,8 +160,8 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 		_itemId = set.getInt("item_id");
 		_displayId = set.getInt("displayId", _itemId);
 		_name = set.getString("name");
-		_additionalName = set.getString("additionalName", null);
-		_icon = set.getString("icon", null);
+		_additionalName = set.getString("additionalName", string.Empty);
+		_icon = set.getString("icon", string.Empty);
 		_weight = set.getInt("weight", 0);
 		_materialType = set.getEnum("material", MaterialType.STEEL);
 		_equipReuseDelay = TimeSpan.FromSeconds(set.getInt("equip_reuse_delay", 0));
@@ -175,7 +175,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 		int autoDestroyTime = set.getInt("auto_destroy_time", -1);
 		_autoDestroyTime = autoDestroyTime < 0 ? null : TimeSpan.FromSeconds(autoDestroyTime);
 
-		_bodyPart = ItemData.SLOTS.get(set.getString("bodypart", "none"));
+		_bodyPart = ItemData._slotNameMap.get(set.getString("bodypart", "none"));
 		_referencePrice = set.getInt("price", 0);
 		_crystalType = set.getEnum("crystal_type", CrystalType.NONE);
 		_crystalCount = set.getInt("crystal_count", 0);

@@ -19,18 +19,18 @@ public struct RequestExRemoveEnchantSupportItemPacket: IIncomingPacket<GameSessi
         if (player == null)
             return ValueTask.CompletedTask;
 
-        EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
+        EnchantItemRequest? request = player.getRequest<EnchantItemRequest>();
         if (request == null || request.isProcessing())
             return ValueTask.CompletedTask;
-		
+
         Item supportItem = request.getSupportItem();
         if (supportItem == null || supportItem.getCount() >= 0)
         {
             request.setSupportItem(Player.ID_NONE);
         }
-        
+
         request.setTimestamp(DateTime.UtcNow);
-		
+
         player.sendPacket(ExRemoveEnchantSupportItemResultPacket.STATIC_PACKET);
         player.sendPacket(new ChangedEnchantTargetItemProbabilityListPacket(player, false));
 

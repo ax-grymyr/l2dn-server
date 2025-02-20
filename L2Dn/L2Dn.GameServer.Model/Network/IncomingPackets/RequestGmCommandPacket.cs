@@ -29,7 +29,7 @@ public struct RequestGmCommandPacket: IIncomingPacket<GameSession>
         if (!thisPlayer.isGM() || !thisPlayer.getAccessLevel().allowAltG())
             return ValueTask.CompletedTask;
 
-        Player player = World.getInstance().getPlayer(_targetName);
+        Player? player = World.getInstance().getPlayer(_targetName);
         Clan? clan = ClanTable.getInstance().getClanByName(_targetName);
 
         // player name was incorrect?

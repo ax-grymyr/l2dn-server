@@ -28,10 +28,10 @@ public struct ConfirmMenteeAddPacket: IIncomingPacket<GameSession>
         if (mentee == null)
             return ValueTask.CompletedTask;
 
-        Player mentor = World.getInstance().getPlayer(_mentor);
+        Player? mentor = World.getInstance().getPlayer(_mentor);
         if (mentor == null)
             return ValueTask.CompletedTask;
-		
+
         if (_confirmed == 0)
         {
             SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_DECLINED_S1_S_MENTORING_OFFER);
@@ -54,15 +54,15 @@ public struct ConfirmMenteeAddPacket: IIncomingPacket<GameSession>
                 });
 
                 ctx.SaveChanges();
-				
+
                 MentorManager.getInstance().addMentor(mentor.ObjectId, mentee.ObjectId);
-				
+
                 // Notify to scripts
                 if (mentor.Events.HasSubscribers<OnPlayerMenteeAdd>())
                 {
                     mentor.Events.NotifyAsync(new OnPlayerMenteeAdd(mentor, mentee));
                 }
-				
+
                 SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.FROM_NOW_ON_S1_WILL_BE_YOUR_MENTEE);
                 sm.Params.addString(mentee.getName());
                 mentor.sendPacket(sm);
@@ -76,7 +76,7 @@ public struct ConfirmMenteeAddPacket: IIncomingPacket<GameSession>
                 PacketLogger.Instance.Warn(GetType().Name + ": " + e);
             }
         }
-        
+
         return ValueTask.CompletedTask;
     }
 

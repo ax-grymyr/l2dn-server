@@ -41,14 +41,14 @@ public struct RequestFriendInvitePacket: IIncomingPacket<GameSession>
 				sm.Params.addString(_name);
 				player.sendPacket(sm);
 			}
-			
+
 			return ValueTask.CompletedTask;
 		}
-		
-		Player friend = World.getInstance().getPlayer(_name);
-		
+
+		Player? friend = World.getInstance().getPlayer(_name);
+
 		// Target is not found in the game.
-		if ((friend == null) || !friend.isOnline() || friend.isInvisible())
+		if (friend == null || !friend.isOnline() || friend.isInvisible())
 		{
 			player.sendPacket(SystemMessageId.THE_USER_WHO_REQUESTED_TO_BECOME_FRIENDS_IS_NOT_FOUND_IN_THE_GAME);
 			return ValueTask.CompletedTask;
@@ -67,14 +67,14 @@ public struct RequestFriendInvitePacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.A_USER_CURRENTLY_PARTICIPATING_IN_THE_OLYMPIAD_CANNOT_SEND_PARTY_AND_FRIEND_INVITATIONS);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Cannot request friendship in an event.
 		if (player.isOnEvent())
 		{
 			player.sendMessage("You cannot request friendship while participating in an event.");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Target blocked active player.
 		if (BlockList.isBlocked(friend, player))
 		{
@@ -90,14 +90,14 @@ public struct RequestFriendInvitePacket: IIncomingPacket<GameSession>
 			player.sendPacket(sm);
 		    return ValueTask.CompletedTask;
 		}
-		
+
 		// Target already in friend list.
 		if (player.getFriendList().Contains(friend.ObjectId))
 		{
 			player.sendPacket(SystemMessageId.THIS_PLAYER_IS_ALREADY_REGISTERED_ON_YOUR_FRIENDS_LIST);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Target is busy.
 		if (friend.isProcessingRequest())
 		{
@@ -106,7 +106,7 @@ public struct RequestFriendInvitePacket: IIncomingPacket<GameSession>
 			player.sendPacket(sm);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		// Check, if tatget blocked sends requests in game.
 		if (checkInviteByIgnoredSettings(friend, player))
 		{
@@ -118,11 +118,11 @@ public struct RequestFriendInvitePacket: IIncomingPacket<GameSession>
 		// Friend request sent.
 		player.onTransactionRequest(friend);
 		friend.sendPacket(new FriendAddRequestPacket(player.getName()));
-		
+
 		sm = new SystemMessagePacket(SystemMessageId.YOU_VE_REQUESTED_C1_TO_BE_ON_YOUR_FRIENDS_LIST);
 		sm.Params.addString(_name);
 		player.sendPacket(sm);
-		
+
 		return ValueTask.CompletedTask;
 	}
 
@@ -130,8 +130,8 @@ public struct RequestFriendInvitePacket: IIncomingPacket<GameSession>
     {
 	    ClientSettings targetClientSettings = target.getClientSettings();
 	    bool condition = targetClientSettings.isFriendRequestRestrictedFromOthers();
-	    if (condition && !targetClientSettings.isFriendRequestRestrictedFromClan() && (target.getClan() != null) &&
-	        (requestor.getClan() != null) && (target.getClan() == requestor.getClan()))
+	    if (condition && !targetClientSettings.isFriendRequestRestrictedFromClan() && target.getClan() != null &&
+	        requestor.getClan() != null && target.getClan() == requestor.getClan())
 	    {
 		    return false;
 	    }

@@ -48,7 +48,7 @@ public struct RequestRejectPostAttachmentPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (!msg.hasAttachments() || (msg.getMailType() != MailType.REGULAR))
+        if (!msg.hasAttachments() || msg.getMailType() != MailType.REGULAR)
             return ValueTask.CompletedTask;
 
         MailManager.getInstance().sendMessage(new Message(msg));

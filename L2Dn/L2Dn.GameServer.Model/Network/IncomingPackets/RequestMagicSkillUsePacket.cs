@@ -35,7 +35,7 @@ public struct RequestMagicSkillUsePacket: IIncomingPacket<GameSession>
         Skill? skill = player.getKnownSkill(_magicId);
         if (skill == null)
         {
-            if ((_magicId == (int)CommonSkill.HAIR_ACCESSORY_SET) || ((_magicId > 1565) && (_magicId < 1570))) // subClass change SkillTree
+            if (_magicId == (int)CommonSkill.HAIR_ACCESSORY_SET || (_magicId > 1565 && _magicId < 1570)) // subClass change SkillTree
             {
                 skill = SkillData.getInstance().getSkill(_magicId, 1);
             }
@@ -54,12 +54,12 @@ public struct RequestMagicSkillUsePacket: IIncomingPacket<GameSession>
                         }
                     }
                 }
-                if ((skill == null) && player.hasPet())
+                if (skill == null && player.hasPet())
                 {
                     pet = player.getPet();
                     skill = pet.getKnownSkill(_magicId);
                 }
-                if ((skill != null) && (pet != null))
+                if (skill != null && pet != null)
                 {
                     player.onActionRequest();
                     pet.setTarget(null);

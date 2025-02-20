@@ -27,13 +27,13 @@ public struct RequestExTryToPutEnchantSupportItemPacket: IIncomingPacket<GameSes
         if (player == null)
             return ValueTask.CompletedTask;
 
-        EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
+        EnchantItemRequest? request = player.getRequest<EnchantItemRequest>();
         if (request == null || request.isProcessing())
             return ValueTask.CompletedTask;
-		
+
         request.setEnchantingItem(_enchantObjectId);
         request.setSupportItem(_supportObjectId);
-		
+
         Item item = request.getEnchantingItem();
         Item scroll = request.getEnchantingScroll();
         Item support = request.getSupportItem();
@@ -45,7 +45,7 @@ public struct RequestExTryToPutEnchantSupportItemPacket: IIncomingPacket<GameSes
             request.setSupportItem(Player.ID_NONE);
             return ValueTask.CompletedTask;
         }
-		
+
         EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
         EnchantSupportItem? supportTemplate = EnchantItemData.getInstance().getSupportItem(support.getId());
         if (scrollTemplate == null || supportTemplate == null || !scrollTemplate.isValid(item, supportTemplate))
@@ -56,12 +56,12 @@ public struct RequestExTryToPutEnchantSupportItemPacket: IIncomingPacket<GameSes
             player.sendPacket(new ExPutEnchantSupportItemResultPacket(0));
             return ValueTask.CompletedTask;
         }
-		
+
         request.setSupportItem(support.ObjectId);
         request.setTimestamp(DateTime.UtcNow);
         player.sendPacket(new ExPutEnchantSupportItemResultPacket(_supportObjectId));
         player.sendPacket(new ChangedEnchantTargetItemProbabilityListPacket(player, false));
-        
+
         return ValueTask.CompletedTask;
     }
 }

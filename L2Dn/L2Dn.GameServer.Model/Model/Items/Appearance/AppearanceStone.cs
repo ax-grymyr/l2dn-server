@@ -86,7 +86,7 @@ public class AppearanceStone
 			addCrystalType(crystalType);
 		}
 
-		long bodyPart = ItemData.SLOTS.get(element.Attribute("bodyPart").GetString("none"));
+		long bodyPart = ItemData._slotNameMap.get(element.Attribute("bodyPart").GetString("none"));
 		if (bodyPart != ItemTemplate.SLOT_NONE)
 		{
 			addBodyPart(bodyPart);

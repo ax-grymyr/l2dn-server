@@ -27,8 +27,14 @@ public struct RequestMissionLevelReceiveRewardPacket: IIncomingPacket<GameSessio
         if (player == null)
             return ValueTask.CompletedTask;
 
-        MissionLevelHolder holder = MissionLevel.getInstance()
+        MissionLevelHolder? holder = MissionLevel.getInstance()
 	        .getMissionBySeason(MissionLevel.getInstance().getCurrentSeason());
+
+        if (holder == null)
+        {
+            player.removeRequest<RewardRequest>();
+            return ValueTask.CompletedTask;
+        }
 
 		if (player.hasRequest<RewardRequest>())
 			return ValueTask.CompletedTask;
@@ -40,14 +46,14 @@ public struct RequestMissionLevelReceiveRewardPacket: IIncomingPacket<GameSessio
 		{
 			case 1:
 			{
-				if (!holder.getNormalRewards().ContainsKey(_level) || info.getCollectedNormalRewards().Contains(_level) ||
-				    (info.getCurrentLevel() != _level && info.getCurrentLevel() < _level))
+                ItemHolder? reward = holder.getNormalRewards().get(_level);
+				if (reward == null || info.getCollectedNormalRewards().Contains(_level) ||
+                    (info.getCurrentLevel() != _level && info.getCurrentLevel() < _level))
 				{
 					player.removeRequest<RewardRequest>();
 					return ValueTask.CompletedTask;
 				}
 
-				ItemHolder reward = holder.getNormalRewards().get(_level);
 				player.addItem("Mission Level", reward.getId(), reward.getCount(), null, true);
 				info.addToCollectedNormalRewards(_level);
 				info.storeInfoInVariable(player);
@@ -55,14 +61,14 @@ public struct RequestMissionLevelReceiveRewardPacket: IIncomingPacket<GameSessio
 			}
 			case 2:
 			{
-				if (!holder.getKeyRewards().ContainsKey(_level) || info.getCollectedKeyRewards().Contains(_level) ||
-				    (info.getCurrentLevel() != _level && info.getCurrentLevel() < _level))
+                ItemHolder? reward = holder.getKeyRewards().get(_level);
+				if (reward == null || info.getCollectedKeyRewards().Contains(_level) ||
+                    (info.getCurrentLevel() != _level && info.getCurrentLevel() < _level))
 				{
 					player.removeRequest<RewardRequest>();
 					return ValueTask.CompletedTask;
 				}
 
-				ItemHolder reward = holder.getKeyRewards().get(_level);
 				player.addItem("Mission Level", reward.getId(), reward.getCount(), null, true);
 				info.addToCollectedKeyReward(_level);
 				info.storeInfoInVariable(player);
@@ -70,21 +76,22 @@ public struct RequestMissionLevelReceiveRewardPacket: IIncomingPacket<GameSessio
 			}
 			case 3:
 			{
-				if (holder.getSpecialReward() == null || info.getCollectedSpecialReward() || (info.getCurrentLevel() != _level && info.getCurrentLevel() < _level))
+                ItemHolder? specialReward = holder.getSpecialReward();
+				if (specialReward == null || info.getCollectedSpecialReward() || (info.getCurrentLevel() != _level && info.getCurrentLevel() < _level))
 				{
 					player.removeRequest<RewardRequest>();
 					return ValueTask.CompletedTask;
 				}
 
-				ItemHolder reward = holder.getSpecialReward();
-				player.addItem("Mission Level", reward.getId(), reward.getCount(), null, true);
+				player.addItem("Mission Level", specialReward.getId(), specialReward.getCount(), null, true);
 				info.setCollectedSpecialReward(true);
 				info.storeInfoInVariable(player);
 				break;
 			}
 			case 4:
-			{
-				if (!holder.getBonusRewardIsAvailable() || holder.getBonusReward() == null || !info.getCollectedSpecialReward() || info.getCollectedBonusReward() || (info.getCurrentLevel() != _level && info.getCurrentLevel() < _level))
+            {
+                ItemHolder? bonusReward = holder.getBonusReward();
+				if (!holder.getBonusRewardIsAvailable() || bonusReward == null || !info.getCollectedSpecialReward() || info.getCollectedBonusReward() || (info.getCurrentLevel() != _level && info.getCurrentLevel() < _level))
 				{
 					player.removeRequest<RewardRequest>();
 					return ValueTask.CompletedTask;
@@ -117,8 +124,7 @@ public struct RequestMissionLevelReceiveRewardPacket: IIncomingPacket<GameSessio
 					info.setCollectedBonusReward(true);
 				}
 
-				ItemHolder reward = holder.getBonusReward();
-				player.addItem("Mission Level", reward.getId(), reward.getCount(), null, true);
+				player.addItem("Mission Level", bonusReward.getId(), bonusReward.getCount(), null, true);
 				info.storeInfoInVariable(player);
 				break;
 			}

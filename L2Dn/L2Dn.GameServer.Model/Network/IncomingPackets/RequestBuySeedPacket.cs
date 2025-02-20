@@ -113,7 +113,7 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
 			}
 
 			// Calculate weight
-			ItemTemplate template = ItemData.getInstance().getTemplate(ih.getId());
+			ItemTemplate? template = ItemData.getInstance().getTemplate(ih.getId());
 			totalWeight += ih.getCount() * template.getWeight();
 
 			// Calculate slots

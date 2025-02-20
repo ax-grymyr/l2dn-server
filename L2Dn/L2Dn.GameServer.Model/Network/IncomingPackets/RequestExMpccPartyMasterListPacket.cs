@@ -25,7 +25,7 @@ public struct RequestExMpccPartyMasterListPacket: IIncomingPacket<GameSession>
         {
             Set<string> leadersName = [];
             leadersName.addAll(room.getMembers().Select(x => x.getParty()).Where(x => x != null)
-                .Select(x => x.getLeader().getName()));
+                .Select(x => x!.getLeader().getName()));
 
             player.sendPacket(new ExMPCCPartyMasterListPacket(leadersName));
         }

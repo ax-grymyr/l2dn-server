@@ -59,12 +59,15 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
 		}
 
 		Item? item = pet.getInventory().getItemByObjectId(_objectId);
+        if (item == null)
+        {
+            player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+            return ValueTask.CompletedTask;
+        }
 
 		// No UseItem is allowed while the player is in special conditions
 		if (player.hasBlockActions() || player.isControlBlocked() || player.isAlikeDead())
-		{
 			return ValueTask.CompletedTask;
-		}
 
 		// Char cannot use item when dead
 		if (player.isDead() || pet.isDead() || !player.getInventory().canManipulateWithItemId(item.getId()))
@@ -81,7 +84,7 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
 		}
 
 		_itemId = item.getId();
-		if (player.isFishing() && ((_itemId < 6535) || (_itemId > 6540)))
+		if (player.isFishing() && (_itemId < 6535 || _itemId > 6540))
 		{
 			// You cannot do anything else while fishing
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_FISHING_3);
@@ -99,9 +102,9 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
 			}
 			// Prevent players to equip weapon while wearing combat flag
 			// Don't allow weapon/shield equipment if a cursed weapon is equipped.
-			if ((item.getTemplate().getBodyPart() == ItemTemplate.SLOT_LR_HAND) || (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_L_HAND) || (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_R_HAND))
+			if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_LR_HAND || item.getTemplate().getBodyPart() == ItemTemplate.SLOT_L_HAND || item.getTemplate().getBodyPart() == ItemTemplate.SLOT_R_HAND)
 			{
-				if ((player.getActiveWeaponItem() != null) && (player.getActiveWeaponItem().getId() == FortManager.ORC_FORTRESS_FLAG))
+				if (player.getActiveWeaponItem() != null && player.getActiveWeaponItem().getId() == FortManager.ORC_FORTRESS_FLAG)
 				{
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 					return ValueTask.CompletedTask;
@@ -109,7 +112,7 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
 			}
 			else if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_DECO)
 			{
-				if (!item.isEquipped() && (player.getInventory().getTalismanSlots() == 0))
+				if (!item.isEquipped() && player.getInventory().getTalismanSlots() == 0)
 				{
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 					return ValueTask.CompletedTask;
@@ -117,7 +120,7 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
 			}
 			else if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_BROOCH_JEWEL)
 			{
-				if (!item.isEquipped() && (player.getInventory().getBroochJewelSlots() == 0))
+				if (!item.isEquipped() && player.getInventory().getBroochJewelSlots() == 0)
 				{
 					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_CANNOT_EQUIP_S1_WITHOUT_EQUIPPING_A_BROOCH);
 					sm.Params.addItemName(item);
@@ -127,7 +130,7 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
 			}
 			else if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_AGATHION)
 			{
-				if (!item.isEquipped() && (player.getInventory().getAgathionSlots() == 0))
+				if (!item.isEquipped() && player.getInventory().getAgathionSlots() == 0)
 				{
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 					return ValueTask.CompletedTask;
@@ -135,7 +138,7 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
 			}
 			else if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_ARTIFACT)
 			{
-				if (!item.isEquipped() && (player.getInventory().getArtifactSlots() == 0))
+				if (!item.isEquipped() && player.getInventory().getArtifactSlots() == 0)
 				{
 					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 					sm.Params.addItemName(item);

@@ -109,7 +109,7 @@ public struct RequestExAskJoinMPCCPacket: IIncomingPacket<GameSession>
 	private void askJoinMPCC(Player requestor, Player target)
 	{
 		bool hasRight = false;
-		if (requestor.isClanLeader() && (requestor.getClan().getLevel() >= 5))
+		if (requestor.isClanLeader() && requestor.getClan().getLevel() >= 5)
 		{
 			// Clan leader of level5 Clan or higher.
 			hasRight = true;
@@ -120,7 +120,7 @@ public struct RequestExAskJoinMPCCPacket: IIncomingPacket<GameSession>
 			// TODO: Should destroyed after successful invite?
 			hasRight = true;
 		}
-		else if ((requestor.getPledgeClass() >= SocialClass.ELDER) && (requestor.getKnownSkill(391) != null))
+		else if (requestor.getPledgeClass() >= SocialClass.ELDER && requestor.getKnownSkill(391) != null)
 		{
 			// At least Baron or higher and the skill Clan Imperium
 			hasRight = true;

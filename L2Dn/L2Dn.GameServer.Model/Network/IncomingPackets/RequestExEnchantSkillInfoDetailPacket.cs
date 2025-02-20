@@ -26,13 +26,13 @@ public struct RequestExEnchantSkillInfoDetailPacket: IIncomingPacket<GameSession
     {
         if (_skillId <= 0 || _skillLevel <= 0 || _skillSubLevel < 0)
             return ValueTask.CompletedTask;
-		
+
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        player.sendPacket(new ExEnchantSkillInfoDetailPacket(_type, _skillId, _skillLevel, _skillSubLevel, player));
-        
+
+        player.sendPacket(new ExEnchantSkillInfoDetailPacket(_type, _skillId, _skillLevel, _skillSubLevel));
+
         return ValueTask.CompletedTask;
     }
 }

@@ -23,7 +23,7 @@ public struct RequestAskJoinPartyRoomPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         // Send PartyRoom invite request (with activeChar) name to the target
-        Player target = World.getInstance().getPlayer(_name);
+        Player? target = World.getInstance().getPlayer(_name);
         if (target != null)
         {
             if (!target.isProcessingRequest())
@@ -42,7 +42,7 @@ public struct RequestAskJoinPartyRoomPacket: IIncomingPacket<GameSession>
         {
             player.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

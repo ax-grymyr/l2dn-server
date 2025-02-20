@@ -26,7 +26,7 @@ public struct RequestFriendDelPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         SystemMessagePacket sm;
         int id = CharInfoTable.getInstance().getIdByName(_name);
         if (id == -1)
@@ -36,7 +36,7 @@ public struct RequestFriendDelPacket: IIncomingPacket<GameSession>
             player.sendPacket(sm);
             return ValueTask.CompletedTask;
         }
-		
+
         if (!player.getFriendList().Contains(id))
         {
             sm = new SystemMessagePacket(SystemMessageId.C1_IS_NOT_ON_YOUR_FRIEND_LIST);
@@ -44,7 +44,7 @@ public struct RequestFriendDelPacket: IIncomingPacket<GameSession>
             player.sendPacket(sm);
             return ValueTask.CompletedTask;
         }
-		
+
         try
         {
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -52,22 +52,22 @@ public struct RequestFriendDelPacket: IIncomingPacket<GameSession>
             ctx.CharacterFriends.Where(r =>
                     r.CharacterId == playerId && r.FriendId == id || r.CharacterId == id && r.FriendId == playerId)
                 .ExecuteDelete();
-			
+
             // Player deleted from your friend list
             sm = new SystemMessagePacket(SystemMessageId.S1_HAS_BEEN_REMOVED_FROM_YOUR_FRIEND_LIST_2);
             sm.Params.addString(_name);
             player.sendPacket(sm);
-			
+
             player.getFriendList().remove(id);
             player.sendPacket(new FriendRemovePacket(_name, 1));
-			
-            Player target = World.getInstance().getPlayer(_name);
+
+            Player? target = World.getInstance().getPlayer(_name);
             if (target != null)
             {
                 target.getFriendList().remove(player.ObjectId);
                 target.sendPacket(new FriendRemovePacket(player.getName(), 1));
             }
-			
+
             CharInfoTable.getInstance().removeFriendMemo(player.ObjectId, id);
         }
         catch (Exception e)

@@ -37,7 +37,7 @@ public struct RequestBlessOptionEnchantPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		BlessingItemRequest request = player.getRequest<BlessingItemRequest>();
+		BlessingItemRequest? request = player.getRequest<BlessingItemRequest>();
 		if (request == null || request.isProcessing())
 		{
 			player.sendPacket(new ExBlessOptionEnchantPacket(EnchantResultPacket.ERROR));

@@ -33,7 +33,7 @@ public struct ExBalrogWarTeleportPacket: IIncomingPacket<GameSession>
         }
 
         // Players should not be able to teleport if in a special location.
-        if ((player.getMovieHolder() != null) || player.isFishing() || player.isInInstance() || player.isOnEvent() ||
+        if (player.getMovieHolder() != null || player.isFishing() || player.isInInstance() || player.isOnEvent() ||
             player.isInOlympiadMode() || player.inObserverMode() || player.isInTraingCamp() ||
             player.isInsideZone(ZoneId.TIMED_HUNTING))
         {
@@ -42,7 +42,7 @@ public struct ExBalrogWarTeleportPacket: IIncomingPacket<GameSession>
         }
 
         // Cannot teleport in combat.
-        if ((player.isInCombat() || player.isCastingNow()))
+        if (player.isInCombat() || player.isCastingNow())
         {
             player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_WHILE_IN_COMBAT);
             return ValueTask.CompletedTask;

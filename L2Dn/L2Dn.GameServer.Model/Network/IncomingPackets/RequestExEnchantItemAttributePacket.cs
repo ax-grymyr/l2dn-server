@@ -32,7 +32,7 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-		EnchantItemAttributeRequest request = player.getRequest<EnchantItemAttributeRequest>();
+		EnchantItemAttributeRequest? request = player.getRequest<EnchantItemAttributeRequest>();
 		if (request == null)
 			return ValueTask.CompletedTask;
 
@@ -310,12 +310,13 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 	}
 
 	public static int getPowerToAdd(int stoneId, int oldValue, Item item)
-	{
-		if (ElementalAttributeData.getInstance().getItemElement(stoneId) != AttributeType.NONE)
+    {
+        ElementalItemHolder? elemental = ElementalAttributeData.getInstance().getItemElemental(stoneId);
+		if (ElementalAttributeData.getInstance().getItemElement(stoneId) != AttributeType.NONE && elemental != null)
 		{
-			if (ElementalAttributeData.getInstance().getItemElemental(stoneId).getPower() > 0)
+			if (elemental.getPower() > 0)
 			{
-				return ElementalAttributeData.getInstance().getItemElemental(stoneId).getPower();
+				return elemental.getPower();
 			}
 			if (item.isWeapon())
 			{

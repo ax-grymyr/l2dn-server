@@ -3432,7 +3432,7 @@ public class Player: Playable
 	 * @param reference : WorldObject Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public Item transferItem(string process, int objectId, long count, Inventory target, WorldObject reference)
+	public Item transferItem(string process, int objectId, long count, Inventory target, WorldObject? reference)
 	{
 		Item oldItem = checkItemManipulation(objectId, count, "transfer");
 		if (oldItem == null)
@@ -8134,7 +8134,7 @@ public class Player: Playable
 	 * @param slot the character inventory henna slot.
 	 * @return the Henna of this Player corresponding to the selected slot.
 	 */
-	public Henna getHenna(int slot)
+	public Henna? getHenna(int slot)
 	{
 		if ((slot < 1) || (slot > getAvailableHennaSlots()))
 		{
@@ -14069,10 +14069,10 @@ public class Player: Playable
 	 * @param requestClass
 	 * @return object that is instance of {@code requestClass} param, {@code null} if not instance or not set.
 	 */
-	public T getRequest<T>()
+	public T? getRequest<T>()
         where T: AbstractRequest
 	{
-		return (T)(_requests.get(typeof(T)));
+		return (T?)(_requests.get(typeof(T)));
 	}
 
 	/**

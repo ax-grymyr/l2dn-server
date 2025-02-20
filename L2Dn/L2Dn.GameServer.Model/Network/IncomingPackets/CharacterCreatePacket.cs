@@ -12,6 +12,7 @@ using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.NetworkAuthServer;
@@ -219,7 +220,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 			newChar.getStat().addSp(Config.STARTING_SP);
 		}
 
-		List<PlayerItemTemplate> initialItems = InitialEquipmentData.getInstance().getEquipmentList(newChar.getClassId());
+		List<PlayerItemTemplate>? initialItems = InitialEquipmentData.getInstance().getEquipmentList(newChar.getClassId());
 		if (initialItems != null)
 		{
 			foreach (PlayerItemTemplate ie in initialItems)
@@ -241,8 +242,10 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		}
 
 		foreach (SkillLearn skill in SkillTreeData.getInstance().getAvailableSkills(newChar, newChar.getClassId(), false, true, false))
-		{
-			newChar.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), true);
+        {
+            Skill? skillTemplate = SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel());
+            if (skillTemplate != null)
+			    newChar.addSkill(skillTemplate, true);
 		}
 
 		// Register all shortcuts for actions, skills and items for this new character.

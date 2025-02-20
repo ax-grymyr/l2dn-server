@@ -39,7 +39,7 @@ public struct RequestPledgeWaitingUserAcceptPacket: IIncomingPacket<GameSession>
 			if (target != null)
 			{
 				DateTime currentTime = DateTime.UtcNow;
-				if ((target.getClan() == null) && (target.getClanJoinExpiryTime() < currentTime))
+				if (target.getClan() == null && target.getClanJoinExpiryTime() < currentTime)
 				{
 					target.sendPacket(new JoinPledgePacket(clan.getId()));
 

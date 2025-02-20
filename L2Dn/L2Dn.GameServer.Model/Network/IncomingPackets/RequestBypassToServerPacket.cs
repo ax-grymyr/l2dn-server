@@ -279,7 +279,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 	 */
 	private static void comeHere(Player player)
 	{
-		WorldObject obj = player.getTarget();
+		WorldObject? obj = player.getTarget();
 		if (obj == null)
 		{
 			return;

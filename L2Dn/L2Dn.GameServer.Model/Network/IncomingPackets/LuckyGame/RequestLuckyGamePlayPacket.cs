@@ -35,10 +35,10 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
 		int index = _type == LuckyGameType.LUXURY ? 102 : 2; // move to event config
-		LuckyGameDataHolder holder = LuckyGameData.getInstance().getLuckyGameDataByIndex(index);
+		LuckyGameDataHolder? holder = LuckyGameData.getInstance().getLuckyGameDataByIndex(index);
 		if (holder == null)
 			return ValueTask.CompletedTask;
-		
+
 		long tickets = _type == LuckyGameType.LUXURY ? player.getInventory().getInventoryItemCount(LUXURY_FORTUNE_READING_TICKET, -1) : player.getInventory().getInventoryItemCount(FORTUNE_READING_TICKET, -1);
 		if (tickets < _reading)
 		{
@@ -46,10 +46,10 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 			player.sendPacket(_type == LuckyGameType.LUXURY
 				? ExBettingLuckyGameResultPacket.LUXURY_INVALID_ITEM_COUNT
 				: ExBettingLuckyGameResultPacket.NORMAL_INVALID_ITEM_COUNT);
-			
+
 			return ValueTask.CompletedTask;
 		}
-		
+
 		int playCount = player.getVariables().getInt(PlayerVariables.FORTUNE_TELLING_VARIABLE, 0);
 		bool blackCat = player.getVariables().getBoolean(PlayerVariables.FORTUNE_TELLING_BLACK_CAT_VARIABLE, false);
 		Map<LuckyGameItemType, List<ItemHolder>> rewards = new();
@@ -82,20 +82,21 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 						break;
 					}
 				}
-				
+
 				if (playCount == holder.getMaxModifyRewardGame())
 				{
 					rewards.computeIfAbsent(LuckyGameItemType.RARE, _ => new())
 						.Add(modifyReward.GetRandomElement());
-					
+
 					blackCat = true;
 				}
 			}
 		}
 
+        // TODO: check items are defined before calculation
 		int totalWeight = rewards.Values.Select(list =>
-			list.Select(item => ItemData.getInstance().getTemplate(item.getId()).getWeight()).Sum()).Sum();
-		
+			list.Select(item => ItemData.getInstance().getTemplate(item.getId())?.getWeight() ?? 0).Sum()).Sum();
+
 		// Check inventory capacity
 		if (rewards.Count != 0 && (!player.getInventory().validateCapacity(rewards.Count) || !player.getInventory().validateWeight(totalWeight)))
 		{
@@ -103,22 +104,22 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 			player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_EITHER_FULL_OR_OVERWEIGHT);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (!player.destroyItemByItemId("LuckyGame", _type == LuckyGameType.LUXURY ? LUXURY_FORTUNE_READING_TICKET : FORTUNE_READING_TICKET, _reading, player, true))
 		{
 			player.sendPacket(_type == LuckyGameType.LUXURY ? ExBettingLuckyGameResultPacket.LUXURY_INVALID_ITEM_COUNT : ExBettingLuckyGameResultPacket.NORMAL_INVALID_ITEM_COUNT);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		for (int i = 0; i < _reading; i++)
 		{
 			int serverGameNumber = LuckyGameData.getInstance().increaseGame();
 			holder.getUniqueReward().Where(reward => reward.getPoints() == serverGameNumber).ForEach(item =>
 				rewards.computeIfAbsent(LuckyGameItemType.UNIQUE, _ => new()).Add(item));
 		}
-		
+
 		player.sendPacket(new ExBettingLuckyGameResultPacket(LuckyGameResultType.SUCCESS, _type, rewards, (int) (_type == LuckyGameType.LUXURY ? player.getInventory().getInventoryItemCount(LUXURY_FORTUNE_READING_TICKET, -1) : player.getInventory().getInventoryItemCount(FORTUNE_READING_TICKET, -1))));
-		
+
 		foreach (var reward in rewards)
 		{
 			foreach (ItemHolder r in reward.Value)
@@ -135,15 +136,15 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 				}
 			}
 		}
-		
+
 		player.sendItemList();
-		
+
 		player.getVariables().set(PlayerVariables.FORTUNE_TELLING_VARIABLE, playCount >= 50 ? playCount - 50 : playCount);
 		if (blackCat && playCount < 50)
 		{
 			player.getVariables().set(PlayerVariables.FORTUNE_TELLING_BLACK_CAT_VARIABLE, true);
 		}
-        
+
         return ValueTask.CompletedTask;
     }
 }

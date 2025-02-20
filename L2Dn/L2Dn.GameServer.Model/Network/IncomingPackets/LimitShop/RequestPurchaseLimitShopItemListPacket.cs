@@ -49,7 +49,7 @@ public struct RequestPurchaseLimitShopItemListPacket: IIncomingPacket<GameSessio
         }
 		
         // Calculate the number of pages.
-        int totalPages = (products.Count / MAX_PAGE_SIZE) + ((products.Count % MAX_PAGE_SIZE) == 0 ? 0 : 1);
+        int totalPages = products.Count / MAX_PAGE_SIZE + (products.Count % MAX_PAGE_SIZE == 0 ? 0 : 1);
 		
         // Iterate over pages.
         for (int page = 0; page < totalPages; page++)

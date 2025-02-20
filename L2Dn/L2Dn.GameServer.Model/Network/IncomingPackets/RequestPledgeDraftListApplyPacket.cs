@@ -22,7 +22,7 @@ public struct RequestPledgeDraftListApplyPacket: IIncomingPacket<GameSession>
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
         Player? player = session.Player;
-        if (player == null || (player.getClan() != null))
+        if (player == null || player.getClan() != null)
             return ValueTask.CompletedTask;
 
         if (player.getClan() != null)

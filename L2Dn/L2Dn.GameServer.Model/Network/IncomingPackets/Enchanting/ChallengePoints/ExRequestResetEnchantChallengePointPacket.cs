@@ -3,7 +3,6 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Request;
 using L2Dn.GameServer.Model.Items.Enchant;
 using L2Dn.GameServer.Model.Items.Types;
-using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.OutgoingPackets.Enchanting;
 using L2Dn.Model.Enums;
 using L2Dn.Network;
@@ -23,14 +22,21 @@ public struct ExRequestResetEnchantChallengePointPacket: IIncomingPacket<GameSes
         if (player == null)
             return ValueTask.CompletedTask;
 
-        player.getChallengeInfo().setChallengePointsPendingRecharge(-1, -1);
-        player.sendPacket(new ExResetEnchantChallengePointPacket(true));
-
-        EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
+        EnchantItemRequest? request = player.getRequest<EnchantItemRequest>();
         if (request == null || request.isProcessing())
             return ValueTask.CompletedTask;
 
         EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId());
+        if (scrollTemplate == null)
+        {
+            player.sendPacket(new ExResetEnchantChallengePointPacket(false));
+            player.removeRequest<EnchantItemRequest>();
+            return ValueTask.CompletedTask;
+        }
+
+        player.getChallengeInfo().setChallengePointsPendingRecharge(-1, -1);
+        player.sendPacket(new ExResetEnchantChallengePointPacket(true));
+
         double chance = scrollTemplate.getChance(player, request.getEnchantingItem());
 
         CrystalType crystalLevel = request.getEnchantingItem().getTemplate().getCrystalType().getLevel();

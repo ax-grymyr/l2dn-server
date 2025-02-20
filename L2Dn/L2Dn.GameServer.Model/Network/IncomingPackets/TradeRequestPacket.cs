@@ -55,7 +55,7 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 		// If there is no target, target is far away or
 		// they are in different instances
 		// trade request is ignored and there is no system message.
-		if ((target == null) || !player.isInSurroundingRegion(target) || (target.getInstanceWorld() != player.getInstanceWorld()))
+		if (target == null || !player.isInSurroundingRegion(target) || target.getInstanceWorld() != player.getInstanceWorld())
 			return ValueTask.CompletedTask;
 
 		// If target and acting player are the same, trade request is ignored
@@ -129,13 +129,13 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 		}
 
 		// L2J Customs: Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && (player.getReputation() < 0))
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && player.getReputation() < 0)
 		{
 			player.sendMessage("You cannot trade while you are in a chaotic state.");
 			return ValueTask.CompletedTask;
 		}
 
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && (partner.getReputation() < 0))
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && partner.getReputation() < 0)
 		{
 			player.sendMessage("You cannot request a trade while your target is in a chaotic state.");
 			return ValueTask.CompletedTask;
@@ -147,7 +147,7 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if ((player.getPrivateStoreType() != PrivateStoreType.NONE) || (partner.getPrivateStoreType() != PrivateStoreType.NONE))
+		if (player.getPrivateStoreType() != PrivateStoreType.NONE || partner.getPrivateStoreType() != PrivateStoreType.NONE)
 		{
 			player.sendPacket(SystemMessageId.WHILE_OPERATING_A_PRIVATE_STORE_OR_WORKSHOP_YOU_CANNOT_DISCARD_DESTROY_OR_TRADE_AN_ITEM);
 			return ValueTask.CompletedTask;

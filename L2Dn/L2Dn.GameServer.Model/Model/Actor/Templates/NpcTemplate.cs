@@ -78,7 +78,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	private int _baseAttackAngle;
 	private Map<int, Skill> _skills;
 	private Map<AISkillScope, List<Skill>> _aiSkillLists;
-	private Set<int> _clans;
+	private Set<int>? _clans;
 	private Set<int>? _ignoreClanNpcIds;
 	private List<DropGroupHolder>? _dropGroups;
 	private List<DropHolder>? _dropListDeath;
@@ -513,7 +513,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 		return _skills;
 	}
 
-	public void setSkills(Map<int, Skill> skills)
+	public void setSkills(Map<int, Skill>? skills)
 	{
 		_skills = skills != null ? skills : new();
 	}
@@ -528,7 +528,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 		_aiSkillLists = aiSkillLists ?? [];
 	}
 
-	public Set<int> getClans()
+	public Set<int>? getClans()
 	{
 		return _clans;
 	}
@@ -556,7 +556,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	/**
 	 * @param clans A sorted array of clan ids
 	 */
-	public void setClans(Set<int> clans)
+	public void setClans(Set<int>? clans)
 	{
 		_clans = clans != null ? clans : null;
 	}
@@ -569,7 +569,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	public bool isClan(string clanName, params string[] clanNames)
 	{
 		// Using local variable for the sake of reloading since it can be turned to null.
-		Set<int> clans = _clans;
+		Set<int>? clans = _clans;
 		if (clans == null)
 		{
 			return false;
@@ -605,7 +605,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	public bool isClan(Set<int> clans)
 	{
 		// Using local variable for the sake of reloading since it can be turned to null.
-		Set<int> clanSet = _clans;
+		Set<int>? clanSet = _clans;
 		if (clanSet == null || clans == null)
 		{
 			return false;
@@ -627,7 +627,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 		return false;
 	}
 
-	public Set<int> getIgnoreClanNpcIds()
+	public Set<int>? getIgnoreClanNpcIds()
 	{
 		return _ignoreClanNpcIds;
 	}
@@ -640,7 +640,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	/**
 	 * @param ignoreClanNpcIds the ignore clan npc ids
 	 */
-	public void setIgnoreClanNpcIds(Set<int> ignoreClanNpcIds)
+	public void setIgnoreClanNpcIds(Set<int>? ignoreClanNpcIds)
 	{
 		_ignoreClanNpcIds = ignoreClanNpcIds != null ? ignoreClanNpcIds : null;
 	}
@@ -689,34 +689,34 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 		_dropListFortune.Add(dropHolder);
 	}
 
-	public List<DropGroupHolder> getDropGroups()
+	public List<DropGroupHolder>? getDropGroups()
 	{
 		return _dropGroups;
 	}
 
-	public List<DropHolder> getDropList()
+	public List<DropHolder>? getDropList()
 	{
 		return _dropListDeath;
 	}
 
-	public List<DropHolder> getSpoilList()
+	public List<DropHolder>? getSpoilList()
 	{
 		return _dropListSpoil;
 	}
 
-	public List<ItemHolder> calculateDrops(DropType dropType, Creature victim, Creature killer)
+	public List<ItemHolder>? calculateDrops(DropType dropType, Creature victim, Creature killer)
 	{
 		if (dropType == DropType.DROP)
 		{
 			// calculate group drops
-			List<ItemHolder> groupDrops = null;
+			List<ItemHolder>? groupDrops = null;
 			if (_dropGroups != null)
 			{
 				groupDrops = calculateGroupDrops(victim, killer);
 			}
 
 			// calculate ungrouped drops
-			List<ItemHolder> ungroupedDrops = null;
+			List<ItemHolder>? ungroupedDrops = null;
 			if (_dropListDeath != null)
 			{
 				ungroupedDrops = calculateUngroupedDrops(dropType, victim, killer);
@@ -759,13 +759,13 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 		// level difference calculations
 		int levelDifference = killer.getLevel() - victim.getLevel();
 
-		List<ItemHolder> calculatedDrops = null;
+		List<ItemHolder>? calculatedDrops = null;
 		int dropOccurrenceCounter = victim.isRaid() ? Config.DROP_MAX_OCCURRENCES_RAIDBOSS : Config.DROP_MAX_OCCURRENCES_NORMAL;
 		if (dropOccurrenceCounter > 0)
 		{
-			Player player = killer.getActingPlayer();
-			List<ItemHolder> randomDrops = null;
-			ItemHolder cachedItem = null;
+			Player? player = killer.getActingPlayer();
+			List<ItemHolder>? randomDrops = null;
+			ItemHolder? cachedItem = null;
 			double totalChance; // total group chance is 100
 			foreach (DropGroupHolder group in _dropGroups)
 			{
@@ -773,7 +773,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 				foreach (DropHolder dropItem in group.getDropList())
 				{
 					int itemId = dropItem.getItemId();
-					ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+					ItemTemplate? item = ItemData.getInstance().getTemplate(itemId);
 					bool champion = victim.isChampion();
 
 					// chance
@@ -786,7 +786,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 							rateChance *= Config.CHAMPION_ADENAS_REWARDS_CHANCE;
 						}
 					}
-					else if (item.hasExImmediateEffect())
+					else if (item != null && item.hasExImmediateEffect())
 					{
 						rateChance *= Config.RATE_HERB_DROP_CHANCE_MULTIPLIER;
 					}
@@ -808,7 +808,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 							{
 								rateChance *= value;
 							}
-							else if (item.hasExImmediateEffect())
+							else if (item != null && item.hasExImmediateEffect())
 							{
 								// TODO: Premium herb chance? :)
 							}
@@ -824,7 +824,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 
 						// bonus drop rate effect
 						rateChance *= player.getStat().getMul(Stat.BONUS_DROP_RATE, 1);
-						if (item.getId() == Inventory.LCOIN_ID)
+						if (item != null && item.getId() == Inventory.LCOIN_ID)
 						{
 							rateChance *= player.getStat().getMul(Stat.BONUS_DROP_RATE_LCOIN, 1);
 						}
@@ -865,7 +865,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 					}
 
 					// calculate chances
-					ItemHolder drop = calculateGroupDrop(group, dropItem, victim, killer, groupItemChance);
+					ItemHolder? drop = calculateGroupDrop(group, dropItem, victim, killer, groupItemChance);
 					if (drop == null)
 					{
 						continue;
@@ -953,16 +953,16 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 
 	private List<ItemHolder> calculateUngroupedDrops(DropType dropType, Creature victim, Creature killer)
 	{
-		List<DropHolder> dropList = dropType == DropType.SPOIL ? _dropListSpoil :
+		List<DropHolder>? dropList = dropType == DropType.SPOIL ? _dropListSpoil :
 			dropType == DropType.FORTUNE ? _dropListFortune : _dropListDeath;
 
 		// level difference calculations
 		int levelDifference = killer.getLevel() - victim.getLevel();
 
 		int dropOccurrenceCounter = victim.isRaid() ? Config.DROP_MAX_OCCURRENCES_RAIDBOSS : Config.DROP_MAX_OCCURRENCES_NORMAL;
-		List<ItemHolder> calculatedDrops = null;
-		List<ItemHolder> randomDrops = null;
-		ItemHolder cachedItem = null;
+		List<ItemHolder>? calculatedDrops = null;
+		List<ItemHolder>? randomDrops = null;
+		ItemHolder? cachedItem = null;
 		if (dropOccurrenceCounter > 0)
 		{
 			foreach (DropHolder dropItem in dropList)
@@ -971,14 +971,14 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 				// items that have 100% drop chance without server rate multipliers drop normally
 				if (dropOccurrenceCounter == 0 && dropItem.getChance() < 100 && randomDrops != null && calculatedDrops != null)
 				{
-					// remove highest chance item (temporarily if no other item replaces it)
+					// remove the highest chance item (temporarily if no other item replaces it)
 					cachedItem = randomDrops[0];
 					randomDrops.RemoveAt(0);
 					calculatedDrops.Remove(cachedItem);
 					dropOccurrenceCounter = 1;
 				}
 
-				// prevent to drop item if level of monster lower then level of player by [Config]
+				// prevent to drop item if level of monster lower than level of player by [Config]
 				if (levelDifference > (dropItem.getItemId() == Inventory.ADENA_ID
 					    ? Config.DROP_ADENA_MAX_LEVEL_LOWEST_DIFFERENCE
 					    : Config.DROP_ITEM_MAX_LEVEL_LOWEST_DIFFERENCE))
@@ -987,7 +987,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 				}
 
 				// calculate chances
-				ItemHolder drop = calculateUngroupedDrop(dropItem, victim, killer);
+				ItemHolder? drop = calculateUngroupedDrop(dropItem, victim, killer);
 				if (drop == null)
 				{
 					continue;
@@ -1074,10 +1074,10 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	 * @param chance
 	 * @return ItemHolder
 	 */
-	private ItemHolder calculateGroupDrop(DropGroupHolder group, DropHolder dropItem, Creature victim, Creature killer, double chance)
+	private ItemHolder? calculateGroupDrop(DropGroupHolder group, DropHolder dropItem, Creature victim, Creature killer, double chance)
 	{
 		int itemId = dropItem.getItemId();
-		ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+		ItemTemplate? item = ItemData.getInstance().getTemplate(itemId);
 		bool champion = victim.isChampion();
 
 		// calculate if item will drop
@@ -1093,7 +1093,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 					rateAmount *= Config.CHAMPION_ADENAS_REWARDS_AMOUNT;
 				}
 			}
-			else if (item.hasExImmediateEffect())
+			else if (item != null && item.hasExImmediateEffect())
 			{
 				rateAmount *= Config.RATE_HERB_DROP_AMOUNT_MULTIPLIER;
 			}
@@ -1107,7 +1107,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 			}
 
 			// premium amount
-			Player player = killer.getActingPlayer();
+			Player? player = killer.getActingPlayer();
 			if (player != null)
 			{
 				if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
@@ -1116,7 +1116,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 					{
 						rateAmount *= value1;
 					}
-					else if (item.hasExImmediateEffect())
+					else if (item != null && item.hasExImmediateEffect())
 					{
 						// TODO: Premium herb amount? :)
 					}
@@ -1151,7 +1151,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	 * @param killer
 	 * @return ItemHolder
 	 */
-	private ItemHolder calculateUngroupedDrop(DropHolder dropItem, Creature victim, Creature killer)
+	private ItemHolder? calculateUngroupedDrop(DropHolder dropItem, Creature victim, Creature killer)
 	{
 		switch (dropItem.getDropType())
 		{
@@ -1159,7 +1159,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 			case DropType.LUCKY:
 			{
 				int itemId = dropItem.getItemId();
-				ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+				ItemTemplate? item = ItemData.getInstance().getTemplate(itemId);
 				bool champion = victim.isChampion();
 
 				// chance
@@ -1172,7 +1172,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 						rateChance *= Config.CHAMPION_ADENAS_REWARDS_CHANCE;
 					}
 				}
-				else if (item.hasExImmediateEffect())
+				else if (item != null && item.hasExImmediateEffect())
 				{
 					rateChance *= Config.RATE_HERB_DROP_CHANCE_MULTIPLIER;
 				}
@@ -1186,7 +1186,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 				}
 
 				// premium chance
-				Player player = killer.getActingPlayer();
+				Player? player = killer.getActingPlayer();
 				if (player != null)
 				{
 					if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
@@ -1195,7 +1195,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 						{
 							rateChance *= value1;
 						}
-						else if (item.hasExImmediateEffect())
+						else if (item != null && item.hasExImmediateEffect())
 						{
 							// TODO: Premium herb chance? :)
 						}
@@ -1211,7 +1211,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 
 					// bonus drop rate effect
 					rateChance *= player.getStat().getMul(Stat.BONUS_DROP_RATE, 1);
-					if (item.getId() == Inventory.LCOIN_ID)
+					if (item != null && item.getId() == Inventory.LCOIN_ID)
 					{
 						rateChance *= player.getStat().getMul(Stat.BONUS_DROP_RATE_LCOIN, 1);
 					}
@@ -1230,7 +1230,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 							rateAmount *= Config.CHAMPION_ADENAS_REWARDS_AMOUNT;
 						}
 					}
-					else if (item.hasExImmediateEffect())
+					else if (item != null && item.hasExImmediateEffect())
 					{
 						rateAmount *= Config.RATE_HERB_DROP_AMOUNT_MULTIPLIER;
 					}
@@ -1252,7 +1252,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 							{
 								rateAmount *= value2;
 							}
-							else if (item.hasExImmediateEffect())
+							else if (item != null && item.hasExImmediateEffect())
 							{
 								// TODO: Premium herb amount? :)
 							}
@@ -1284,7 +1284,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 				// chance
 				double rateChance = Config.RATE_SPOIL_DROP_CHANCE_MULTIPLIER;
 				// premium chance
-				Player player = killer.getActingPlayer();
+				Player? player = killer.getActingPlayer();
 				if (player != null)
 				{
 					if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())

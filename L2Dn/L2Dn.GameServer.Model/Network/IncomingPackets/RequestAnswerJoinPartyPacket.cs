@@ -25,8 +25,8 @@ public struct RequestAnswerJoinPartyPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        PartyRequest request = player.getRequest<PartyRequest>();
-        if ((request == null) || request.isProcessing() || !player.removeRequest<PartyRequest>())
+        PartyRequest? request = player.getRequest<PartyRequest>();
+        if (request == null || request.isProcessing() || !player.removeRequest<PartyRequest>())
             return ValueTask.CompletedTask;
 
         request.setProcessing(true);
@@ -37,7 +37,7 @@ public struct RequestAnswerJoinPartyPacket: IIncomingPacket<GameSession>
 
         Party party = request.getParty();
         Party? requestorParty = requestor.getParty();
-        if ((requestorParty != null) && (requestorParty != party))
+        if (requestorParty != null && requestorParty != party)
             return ValueTask.CompletedTask;
 
         requestor.sendPacket(new JoinPartyPacket(_response, requestor));

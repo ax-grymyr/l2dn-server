@@ -21,7 +21,7 @@ public struct RequestFortressSiegeInfoPacket: IIncomingPacket<GameSession>
 
         foreach (Fort fort in FortManager.getInstance().getForts())
         {
-            if ((fort != null) && fort.getSiege().isInProgress())
+            if (fort != null && fort.getSiege().isInProgress())
             {
                 player.sendPacket(new ExShowFortressSiegeInfoPacket(fort));
             }

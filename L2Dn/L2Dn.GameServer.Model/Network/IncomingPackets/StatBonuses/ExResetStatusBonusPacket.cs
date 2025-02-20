@@ -66,7 +66,7 @@ public struct ExResetStatusBonusPacket: IIncomingPacket<GameSession>
         Item? item = player.getInventory().getItemByItemId(Inventory.LCOIN_ID);
 	    long lcoin = item?.getCount() ?? 0;
 
-	    if ((adena < adenaCost) || (lcoin < lcoinCost))
+	    if (adena < adenaCost || lcoin < lcoinCost)
 	    {
 		    player.sendPacket(SystemMessageId.NOT_ENOUGH_MONEY_TO_USE_THE_FUNCTION);
 		    return ValueTask.CompletedTask;

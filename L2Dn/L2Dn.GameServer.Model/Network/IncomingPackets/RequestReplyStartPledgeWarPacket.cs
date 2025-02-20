@@ -32,7 +32,7 @@ public struct RequestReplyStartPledgeWarPacket: IIncomingPacket<GameSession>
         {
             Clan? attacked = player.getClan();
             Clan? attacker = requestor.getClan();
-            if ((attacked != null) && (attacker != null))
+            if (attacked != null && attacker != null)
             {
                 ClanWar clanWar = attacker.getWarWith(attacked.getId());
                 if (clanWar.getState() == ClanWarState.BLOOD_DECLARATION)

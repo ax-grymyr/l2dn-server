@@ -48,7 +48,7 @@ public struct AnswerTradeRequestPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 		
-        if ((_response == 1) && !partner.isRequestExpired())
+        if (_response == 1 && !partner.isRequestExpired())
         {
             player.startTrade(partner);
         }

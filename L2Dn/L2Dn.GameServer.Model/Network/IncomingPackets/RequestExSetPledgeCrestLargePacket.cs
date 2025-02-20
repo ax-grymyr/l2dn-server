@@ -38,7 +38,7 @@ public struct RequestExSetPledgeCrestLargePacket: IIncomingPacket<GameSession>
         if (clan == null)
             return ValueTask.CompletedTask;
 
-        if ((_length < 0) || (_length > 2176))
+        if (_length < 0 || _length > 2176)
         {
             player.sendPacket(SystemMessageId.THE_SIZE_OF_THE_UPLOADED_SYMBOL_DOES_NOT_MEET_THE_STANDARD_REQUIREMENTS);
             return ValueTask.CompletedTask;

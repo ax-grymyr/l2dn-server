@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Request;
+using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.AdenaDistribution;
 using L2Dn.GameServer.Utilities;
@@ -29,7 +30,7 @@ public struct RequestDivideAdenaStartPacket: IIncomingPacket<GameSession>
         }
 
         CommandChannel commandChannel = party.getCommandChannel();
-        if ((commandChannel != null) && !commandChannel.isLeader(player))
+        if (commandChannel != null && !commandChannel.isLeader(player))
         {
             player.sendPacket(SystemMessageId.YOU_CANNOT_PROCEED_AS_YOU_ARE_NOT_AN_ALLIANCE_LEADER_OR_PARTY_LEADER);
             return ValueTask.CompletedTask;
@@ -54,7 +55,14 @@ public struct RequestDivideAdenaStartPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        int adenaObjectId = player.getInventory().getAdenaInstance().ObjectId;
+        Item? adenaInstance = player.getInventory().getAdenaInstance();
+        if (adenaInstance == null)
+        {
+            player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA_2);
+            return ValueTask.CompletedTask;
+        }
+
+        int adenaObjectId = adenaInstance.ObjectId;
         targets.ForEach(t =>
         {
             t.sendPacket(SystemMessageId.ADENA_DISTRIBUTION_HAS_STARTED);

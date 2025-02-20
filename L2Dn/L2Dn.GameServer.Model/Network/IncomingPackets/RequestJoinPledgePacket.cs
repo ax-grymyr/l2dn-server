@@ -32,7 +32,7 @@ public struct RequestJoinPledgePacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         WorldObject? playerTarget = player.getTarget();
-        if ((playerTarget != null) && (FakePlayerData.getInstance().isTalkable(playerTarget.getName())))
+        if (playerTarget != null && FakePlayerData.getInstance().isTalkable(playerTarget.getName()))
         {
             if (FakePlayerData.getInstance().getInfo(playerTarget.getId()).getClanId() > 0)
             {

@@ -104,14 +104,14 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 			}
 		}
 
-		SkillEnchantHolder skillEnchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.getId());
+		SkillEnchantHolder? skillEnchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.getId());
 		if (skillEnchantHolder == null)
 		{
 			LOGGER.Warn(GetType().Name + " request enchant skill dont have star lvl skillId-" + skill.getId());
 			return ValueTask.CompletedTask;
 		}
 
-		EnchantStarHolder starHolder = SkillEnchantData.getInstance().getEnchantStar(skillEnchantHolder.getStarLevel());
+		EnchantStarHolder? starHolder = SkillEnchantData.getInstance().getEnchantStar(skillEnchantHolder.getStarLevel());
 		if (starHolder == null)
 		{
 			LOGGER.Warn(GetType().Name + " request enchant skill dont have star lvl-" + skill.getId());

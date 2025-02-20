@@ -25,7 +25,7 @@ public struct RequestNewHennaUnequipInfoPacket: IIncomingPacket<GameSession>
         Henna? henna = null;
         for (int slot = 1; slot <= 4; slot++)
         {
-            Henna equipedHenna = player.getHenna(slot);
+            Henna? equipedHenna = player.getHenna(slot);
             if (equipedHenna != null && equipedHenna.getDyeId() == _hennaId)
             {
                 henna = equipedHenna;

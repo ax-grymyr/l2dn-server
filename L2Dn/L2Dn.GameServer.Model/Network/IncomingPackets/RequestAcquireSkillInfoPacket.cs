@@ -34,30 +34,30 @@ public struct RequestAcquireSkillInfoPacket: IIncomingPacket<GameSession>
 			PacketLogger.Instance.Warn(GetType().Name + ": Invalid Id: " + _id + " or level: " + _level + "!");
 			return ValueTask.CompletedTask;
 		}
-		
+
 		Player? player = session.Player;
 		if (player == null)
 			return ValueTask.CompletedTask;
-		
+
 		Npc trainer = player.getLastFolkNPC();
 		if (_skillType != AcquireSkillType.CLASS &&
 		    (trainer == null || !trainer.isNpc() || (!trainer.canInteract(player) && !player.isGM())))
 			return ValueTask.CompletedTask;
-		
+
 		// Consider skill replacements.
 		int id = player.getOriginalSkill(_id);
-		
-		Skill skill = SkillData.getInstance().getSkill(id, _level);
+
+		Skill? skill = SkillData.getInstance().getSkill(id, _level);
 		if (skill == null)
 		{
 			PacketLogger.Instance.Warn($"Skill Id: {id} level: {_level} is undefined. {GetType().Name} failed.");
 			return ValueTask.CompletedTask;
 		}
-		
-		SkillLearn s = SkillTreeData.getInstance().getSkillLearn(_skillType, id, _level, player);
+
+		SkillLearn? s = SkillTreeData.getInstance().getSkillLearn(_skillType, id, _level, player);
 		if (s == null)
 			return ValueTask.CompletedTask;
-		
+
 		switch (_skillType)
 		{
 			case AcquireSkillType.TRANSFORM:
@@ -79,7 +79,7 @@ public struct RequestAcquireSkillInfoPacket: IIncomingPacket<GameSession>
 			{
 				if (!player.isClanLeader())
 					break;
-				
+
 				connection.Send(new AcquireSkillInfoPacket(player, _skillType, s));
 				break;
 			}

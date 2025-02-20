@@ -44,7 +44,7 @@ public struct RequestExEnchantSkillInfoPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         Skill? playerSkill = player.getKnownSkill(_skillId);
-        if (playerSkill.getLevel() != _skillLevel || playerSkill.getSubLevel() != _skillSubLevel)
+        if (playerSkill == null || playerSkill.getLevel() != _skillLevel || playerSkill.getSubLevel() != _skillSubLevel)
             return ValueTask.CompletedTask;
 
         player.sendPacket(new ExEnchantSkillInfoPacket(_skillId, _skillLevel, _skillSubLevel, playerSkill.getSubLevel()));

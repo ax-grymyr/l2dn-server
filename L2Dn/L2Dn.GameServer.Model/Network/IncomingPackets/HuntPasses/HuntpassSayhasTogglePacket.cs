@@ -34,7 +34,7 @@ public struct HuntpassSayhasTogglePacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 		
-        if (_sayhaToggle && (timeEarned > 0) && (timeEarned > timeUsed))
+        if (_sayhaToggle && timeEarned > 0 && timeEarned > timeUsed)
         {
             huntPass.setSayhasSustention(true);
         }

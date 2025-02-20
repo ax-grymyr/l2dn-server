@@ -28,7 +28,7 @@ public struct RequestClanAskJoinByNamePacket: IIncomingPacket<GameSession>
         if (clan == null)
             return ValueTask.CompletedTask;
 
-        Player invitedPlayer = World.getInstance().getPlayer(_playerName);
+        Player? invitedPlayer = World.getInstance().getPlayer(_playerName);
         if (!clan.checkClanJoinCondition(player, invitedPlayer, _pledgeType))
             return ValueTask.CompletedTask;
 
