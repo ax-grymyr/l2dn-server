@@ -5485,8 +5485,8 @@ public class Player: Playable
 		SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_BEGIN_TRADING_WITH_C1);
 		msg.Params.addPcName(partner);
 		sendPacket(msg);
-		sendPacket(new TradeStartPacket(1, this));
-		sendPacket(new TradeStartPacket(2, this));
+		sendPacket(new TradeStartPacket(1, this, partner));
+		sendPacket(new TradeStartPacket(2, this, partner));
 	}
 
 	public void onTradeConfirm(Player partner)

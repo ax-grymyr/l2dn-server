@@ -1783,7 +1783,7 @@ public class Item: WorldObject
 					continue;
 				}
 
-				if (!condition.TestImpl(player, player, null, _itemTemplate))
+				if (!condition.test(player, player, null, _itemTemplate))
 				{
 					return false;
 				}

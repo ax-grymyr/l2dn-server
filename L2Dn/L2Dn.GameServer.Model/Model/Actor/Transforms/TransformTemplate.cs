@@ -12,7 +12,7 @@ public sealed class TransformTemplate
 {
 	private readonly float? _collisionRadius;
 	private readonly float? _collisionHeight;
-	private readonly WeaponType? _baseAttackType;
+	private readonly WeaponType _baseAttackType;
 	private List<SkillHolder> _skills;
 	private List<AdditionalSkillHolder> _additionalSkills;
 	private List<AdditionalItemHolder> _additionalItems;
@@ -25,7 +25,7 @@ public sealed class TransformTemplate
 	{
 		_collisionRadius = set.Contains("radius") ? set.getFloat("radius") : null;
 		_collisionHeight = set.Contains("height") ? set.getFloat("height") : null;
-		_baseAttackType = set.getEnum<WeaponType>("attackType", WeaponType.NONE);
+		_baseAttackType = set.getEnum("attackType", WeaponType.NONE);
 		if (set.contains("range"))
 		{
 			addStats(Stat.PHYSICAL_ATTACK_RANGE, set.getDouble("range", 0));
@@ -208,7 +208,7 @@ public sealed class TransformTemplate
 		return _collisionHeight;
 	}
 
-	public WeaponType? getBaseAttackType()
+	public WeaponType getBaseAttackType()
 	{
 		return _baseAttackType;
 	}

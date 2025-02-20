@@ -881,7 +881,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 				continue;
 			}
 
-			if (!preCondition.test(creature, target, skill))
+			if (!preCondition.test(creature, target))
 			{
 				if (creature.isSummon())
 				{

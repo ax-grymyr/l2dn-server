@@ -15,6 +15,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
+using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -25,13 +26,7 @@ namespace L2Dn.GameServer.Model.Sieges;
 
 public class Siege: Siegable
 {
-	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(Siege));
-
-	// typeId's
-	public const sbyte OWNER = -1;
-	public const sbyte DEFENDER = 0;
-	public const sbyte ATTACKER = 1;
-	public const sbyte DEFENDER_NOT_APPROVED = 2;
+	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Siege));
 
 	private int _controlTowerCount;
 
@@ -46,17 +41,17 @@ public class Siege: Siegable
 	private readonly Castle _castle;
 	private bool _isInProgress;
 	private bool _isNormalSide = true; // true = Atk is Atk, false = Atk is Def
-	protected bool _isRegistrationOver;
-	protected DateTime _siegeEndDate;
-	protected ScheduledFuture? _scheduledStartSiegeTask;
-	protected ScheduledFuture? _scheduledSiegeInfoTask;
-	protected int _firstOwnerClanId = -1;
+    private bool _isRegistrationOver;
+    private DateTime _siegeEndDate;
+    private ScheduledFuture? _scheduledStartSiegeTask;
+    private ScheduledFuture? _scheduledSiegeInfoTask;
+    private int _firstOwnerClanId = -1;
 
 	public Siege(Castle castle)
 	{
 		_castle = castle;
 
-		SiegeScheduleDate schedule = SiegeScheduleData.getInstance().getScheduleDateForCastleId(_castle.getResidenceId());
+		SiegeScheduleDate? schedule = SiegeScheduleData.getInstance().getScheduleDateForCastleId(_castle.getResidenceId());
 		if (schedule != null && schedule.siegeEnabled())
 		{
 			startAutoTask();
@@ -676,7 +671,7 @@ public class Siege: Siegable
 		{
 			return;
 		}
-		saveSiegeClan(ClanTable.getInstance().getClan(clanId), DEFENDER, true);
+		saveSiegeClan(ClanTable.getInstance().getClan(clanId), SiegeParticipantType.Defender, true);
 		loadSiegeClan();
 	}
 
@@ -759,7 +754,9 @@ public class Siege: Siegable
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int castleId = _castle.getResidenceId();
-			ctx.CastleSiegeClans.Where(r => r.CastleId == castleId && r.Type == 2).ExecuteDelete();
+            ctx.CastleSiegeClans.
+                Where(r => r.CastleId == castleId && r.Type == SiegeParticipantType.DefenderNotApproved).
+                ExecuteDelete();
 
 			_defenderWaitingClans.clear();
 		}
@@ -901,14 +898,14 @@ public class Siege: Siegable
 			}
 			else
 			{
-				saveSiegeClan(player.getClan(), ATTACKER, false); // Save to database
+				saveSiegeClan(player.getClan(), SiegeParticipantType.Attacker, false); // Save to database
 			}
 			return;
 		}
 
-		if (checkIfCanRegister(player, ATTACKER))
+		if (checkIfCanRegister(player, SiegeParticipantType.Attacker))
 		{
-			saveSiegeClan(player.getClan(), ATTACKER, false); // Save to database
+			saveSiegeClan(player.getClan(), SiegeParticipantType.Attacker, false); // Save to database
 		}
 	}
 
@@ -916,12 +913,7 @@ public class Siege: Siegable
 	 * Register a clan as defender.
 	 * @param player the player to register
 	 */
-	public void registerDefender(Player player)
-	{
-		registerDefender(player, false);
-	}
-
-	public void registerDefender(Player player, bool force)
+	public void registerDefender(Player player, bool force = false)
 	{
 		if (_castle.getOwnerId() <= 0)
 		{
@@ -937,14 +929,14 @@ public class Siege: Siegable
 			}
 			else
 			{
-				saveSiegeClan(player.getClan(), DEFENDER_NOT_APPROVED, false); // Save to database
+				saveSiegeClan(player.getClan(), SiegeParticipantType.DefenderNotApproved, false); // Save to database
 			}
 			return;
 		}
 
-		if (checkIfCanRegister(player, DEFENDER_NOT_APPROVED))
+		if (checkIfCanRegister(player, SiegeParticipantType.DefenderNotApproved))
 		{
-			saveSiegeClan(player.getClan(), DEFENDER_NOT_APPROVED, false); // Save to database
+			saveSiegeClan(player.getClan(), SiegeParticipantType.DefenderNotApproved, false); // Save to database
 		}
 	}
 
@@ -1126,7 +1118,7 @@ public class Siege: Siegable
 	 * @param typeId -1 = owner 0 = defender, 1 = attacker, 2 = defender waiting
 	 * @return true if the player can register.
 	 */
-	private bool checkIfCanRegister(Player player, sbyte typeId)
+	private bool checkIfCanRegister(Player player, SiegeParticipantType typeId)
 	{
 		if (_isRegistrationOver)
 		{
@@ -1158,11 +1150,11 @@ public class Siege: Siegable
 		{
 			player.sendPacket(SystemMessageId.YOUR_APPLICATION_HAS_BEEN_DENIED_BECAUSE_YOU_HAVE_ALREADY_SUBMITTED_A_REQUEST_FOR_ANOTHER_CASTLE_SIEGE);
 		}
-		else if (typeId == ATTACKER && getAttackerClans().Count >= SiegeManager.getInstance().getAttackerMaxClans())
+		else if (typeId == SiegeParticipantType.Attacker && getAttackerClans().Count >= SiegeManager.getInstance().getAttackerMaxClans())
 		{
 			player.sendPacket(SystemMessageId.NO_MORE_REGISTRATIONS_MAY_BE_ACCEPTED_FOR_THE_ATTACKER_SIDE);
 		}
-		else if ((typeId == DEFENDER || typeId == DEFENDER_NOT_APPROVED || typeId == OWNER) && getDefenderClans().Count + getDefenderWaitingClans().Count >= SiegeManager.getInstance().getDefenderMaxClans())
+		else if ((typeId == SiegeParticipantType.Defender || typeId == SiegeParticipantType.DefenderNotApproved || typeId == SiegeParticipantType.Owner) && getDefenderClans().Count + getDefenderWaitingClans().Count >= SiegeManager.getInstance().getDefenderMaxClans())
 		{
 			player.sendPacket(SystemMessageId.NO_MORE_REGISTRATIONS_MAY_BE_ACCEPTED_FOR_THE_DEFENDER_SIDE);
 		}
@@ -1250,16 +1242,16 @@ public class Siege: Siegable
 			var query = ctx.CastleSiegeClans.Where(r => r.CastleId == castleId);
 			foreach (var record in query)
 			{
-				int typeId = record.Type;
-				if (typeId == DEFENDER)
+				SiegeParticipantType typeId = record.Type;
+				if (typeId == SiegeParticipantType.Defender)
 				{
 					addDefender(record.ClanId);
 				}
-				else if (typeId == ATTACKER)
+				else if (typeId == SiegeParticipantType.Attacker)
 				{
 					addAttacker(record.ClanId);
 				}
-				else if (typeId == DEFENDER_NOT_APPROVED)
+				else if (typeId == SiegeParticipantType.DefenderNotApproved)
 				{
 					addDefenderWaiting(record.ClanId);
 				}
@@ -1370,7 +1362,7 @@ public class Siege: Siegable
 	 * @param typeId -1 = owner 0 = defender, 1 = attacker, 2 = defender waiting
 	 * @param isUpdateRegistration
 	 */
-	private void saveSiegeClan(Clan clan, byte typeId, bool isUpdateRegistration)
+	private void saveSiegeClan(Clan clan, SiegeParticipantType typeId, bool isUpdateRegistration)
 	{
 		if (clan.getCastleId() > 0)
 		{
@@ -1379,14 +1371,16 @@ public class Siege: Siegable
 
 		try
 		{
-			if (typeId == DEFENDER || typeId == DEFENDER_NOT_APPROVED || typeId == OWNER)
-			{
-				if (getDefenderClans().Count + getDefenderWaitingClans().Count >= SiegeManager.getInstance().getDefenderMaxClans())
-				{
-					return;
-				}
-			}
-			else if (getAttackerClans().Count >= SiegeManager.getInstance().getAttackerMaxClans())
+            if (typeId is SiegeParticipantType.Defender or SiegeParticipantType.DefenderNotApproved
+                or SiegeParticipantType.Owner)
+            {
+                if (getDefenderClans().Count + getDefenderWaitingClans().Count >=
+                    SiegeManager.getInstance().getDefenderMaxClans())
+                {
+                    return;
+                }
+            }
+            else if (getAttackerClans().Count >= SiegeManager.getInstance().getAttackerMaxClans())
 			{
 				return;
 			}
@@ -1412,15 +1406,15 @@ public class Siege: Siegable
 					.ExecuteUpdate(s => s.SetProperty(r => r.Type, typeId));
 			}
 
-			if (typeId == DEFENDER || typeId == OWNER)
+			if (typeId is SiegeParticipantType.Defender or SiegeParticipantType.Owner)
 			{
 				addDefender(clan.getId());
 			}
-			else if (typeId == ATTACKER)
+			else if (typeId == SiegeParticipantType.Attacker)
 			{
 				addAttacker(clan.getId());
 			}
-			else if (typeId == DEFENDER_NOT_APPROVED)
+			else if (typeId == SiegeParticipantType.DefenderNotApproved)
 			{
 				addDefenderWaiting(clan.getId());
 			}

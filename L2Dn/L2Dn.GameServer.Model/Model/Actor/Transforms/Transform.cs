@@ -403,12 +403,11 @@ public class Transform: IIdentifiable
 		if (template != null)
 		{
 			WeaponType weaponType = template.getBaseAttackType();
-			if (weaponType != null)
-			{
+			if (weaponType != WeaponType.NONE)
 				return weaponType;
-			}
 		}
-		return defaultAttackType;
+
+        return defaultAttackType;
 	}
 
 	public double getStats(Creature creature, Stat stat, double defaultValue)
