@@ -625,7 +625,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 		player.updateShortCuts(_id, skill.getLevel(), skill.getSubLevel());
 		player.sendPacket(new ShortCutInitPacket(player));
 		player.sendPacket(ExBasicActionListPacket.STATIC_PACKET);
-		player.sendPacket(new ExAcquireSkillResultPacket(skill.getId(), skill.getLevel(), true, SystemMessageId.YOU_HAVE_LEARNED_THE_SKILL_S1));
+		player.sendPacket(new ExAcquireSkillResultPacket(skill.getId(), skill.getLevel(), true, SystemMessageId.YOU_HAVE_LEARNED_THE_SKILL_S1_2));
 		player.sendSkillList(skill.getId());
 
 		// If skill is expand type then sends packet:
