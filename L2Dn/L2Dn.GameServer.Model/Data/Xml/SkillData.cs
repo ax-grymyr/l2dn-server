@@ -567,7 +567,7 @@ public class SkillData: DataReaderBase
 		return values;
 	}
 
-	public object parseValue(XElement element, bool blockValue, bool parseAttributes, Map<string, double> variables)
+    private object? parseValue(XElement element, bool blockValue, bool parseAttributes, Map<string, double> variables)
 	{
 		StatSet? statSet = null;
 		List<object>? list = null;
@@ -599,7 +599,7 @@ public class SkillData: DataReaderBase
 						list = new();
 					}
 
-					object value = parseValue(n, false, true, variables);
+					object? value = parseValue(n, false, true, variables);
 					if (value != null)
 					{
 						list.Add(value);
@@ -619,7 +619,7 @@ public class SkillData: DataReaderBase
 				}
 				default:
 				{
-					object value = parseValue(n, false, true, variables);
+					object? value = parseValue(n, false, true, variables);
 					if (value != null)
                     {
                         statSet ??= new StatSet();
@@ -667,7 +667,7 @@ public class SkillData: DataReaderBase
 			}
 		}
 
-        return statSet ?? throw new InvalidOperationException("Cannot parse value for node [" + element + "]");
+        return statSet;
     }
 
 	private void parseAttributes(XElement element, string prefix, StatSet statSet, Map<string, double> variables)

@@ -743,16 +743,19 @@ public class StatSet
 	public T getEnum<T>(string key, T defaultValue)
 		where T: struct, Enum
 	{
-		object val = _set.get(key);
-		if (val == null)
+		if (!_set.TryGetValue(key, out object? val) || val is null)
 			return defaultValue;
 
 		if (val is T value)
 			return value;
 
+        string str = val.ToString() ?? string.Empty;
+        if (string.IsNullOrWhiteSpace(str))
+            return defaultValue;
+
 		try
 		{
-			return Enum.Parse<T>(val.ToString() ?? string.Empty, true);
+			return Enum.Parse<T>(str, true);
 		}
 		catch (Exception e)
 		{
