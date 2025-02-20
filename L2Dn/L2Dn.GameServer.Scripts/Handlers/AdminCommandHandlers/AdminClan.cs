@@ -86,7 +86,7 @@ public class AdminClan: IAdminCommandHandler
 					return false;
 				}
 
-				ClanMember member = clan.getClanMember(player.ObjectId);
+				ClanMember? member = clan.getClanMember(player.ObjectId);
 				if (member != null)
 				{
 					if (player.isAcademyMember())
@@ -135,7 +135,7 @@ public class AdminClan: IAdminCommandHandler
 						break;
 					}
 
-					ClanMember member = clan.getClanMember(clan.getNewLeaderId() ?? 0);
+					ClanMember? member = clan.getClanMember(clan.getNewLeaderId() ?? 0);
 					if (member == null)
 					{
 						break;

@@ -62,7 +62,7 @@ public readonly struct ExMissionLevelRewardListPacket: IOutgoingPacket
             bool check = false;
             for (int level = _maxNormalLevel; level <= _holder.getMaxLevel(); level++)
             {
-                if ((level <= _info.getCurrentLevel()) && !_collectedBonusRewards.Contains(level))
+                if (level <= _info.getCurrentLevel() && !_collectedBonusRewards.Contains(level))
                 {
                     check = true;
                     break;
@@ -92,13 +92,13 @@ public readonly struct ExMissionLevelRewardListPacket: IOutgoingPacket
         int availableRewards = 0;
         foreach (int level in _holder.getNormalRewards().Keys)
         {
-            if ((level <= _info.getCurrentLevel()) && !_collectedNormalRewards.Contains(level))
+            if (level <= _info.getCurrentLevel() && !_collectedNormalRewards.Contains(level))
                 availableRewards++;
         }
 
         foreach (int level in _holder.getKeyRewards().Keys)
         {
-            if ((level <= _info.getCurrentLevel()) && !_collectedKeyRewards.Contains(level))
+            if (level <= _info.getCurrentLevel() && !_collectedKeyRewards.Contains(level))
                 availableRewards++;
         }
 
@@ -108,7 +108,7 @@ public readonly struct ExMissionLevelRewardListPacket: IOutgoingPacket
             List<int> collectedBonusRewards = _info.getListOfCollectedBonusRewards();
             for (int level = _maxNormalLevel; level <= _holder.getMaxLevel(); level++)
             {
-                if ((level <= _info.getCurrentLevel()) && !collectedBonusRewards.Contains(level))
+                if (level <= _info.getCurrentLevel() && !collectedBonusRewards.Contains(level))
                 {
                     availableRewards++;
                     break;
@@ -116,16 +116,16 @@ public readonly struct ExMissionLevelRewardListPacket: IOutgoingPacket
             }
         }
         else if (_holder.getBonusRewardIsAvailable() && _holder.getBonusRewardByLevelUp() &&
-                 (_info.getCurrentLevel() >= _maxNormalLevel))
+                 _info.getCurrentLevel() >= _maxNormalLevel)
         {
             availableRewards++;
         }
-        else if (_holder.getBonusRewardIsAvailable() && (_info.getCurrentLevel() >= _holder.getMaxLevel()) &&
+        else if (_holder.getBonusRewardIsAvailable() && _info.getCurrentLevel() >= _holder.getMaxLevel() &&
                  !_info.getCollectedBonusReward() && _info.getCollectedSpecialReward())
         {
             availableRewards++;
         }
-        else if ((_info.getCurrentLevel() >= _holder.getMaxLevel()) && !_info.getCollectedBonusReward())
+        else if (_info.getCurrentLevel() >= _holder.getMaxLevel() && !_info.getCollectedBonusReward())
         {
             availableRewards++;
         }
@@ -149,7 +149,7 @@ public readonly struct ExMissionLevelRewardListPacket: IOutgoingPacket
         }
 
         if (_holder.getBonusRewardByLevelUp() && _info.getCollectedSpecialReward() &&
-            _holder.getBonusRewardIsAvailable() && (_maxNormalLevel <= _info.getCurrentLevel()))
+            _holder.getBonusRewardIsAvailable() && _maxNormalLevel <= _info.getCurrentLevel())
         {
             for (int level = _maxNormalLevel; level <= _holder.getMaxLevel(); level++)
             {
@@ -161,7 +161,7 @@ public readonly struct ExMissionLevelRewardListPacket: IOutgoingPacket
             }
         }
         else if (_info.getCollectedSpecialReward() && _holder.getBonusRewardIsAvailable() &&
-                 (_maxNormalLevel <= _info.getCurrentLevel()))
+                 _maxNormalLevel <= _info.getCurrentLevel())
         {
             totalRewards++;
         }
@@ -208,13 +208,13 @@ public readonly struct ExMissionLevelRewardListPacket: IOutgoingPacket
         }
 
         if (_holder.getBonusRewardByLevelUp() && _info.getCollectedSpecialReward() &&
-            _holder.getBonusRewardIsAvailable() && (_maxNormalLevel <= _info.getCurrentLevel()))
+            _holder.getBonusRewardIsAvailable() && _maxNormalLevel <= _info.getCurrentLevel())
         {
             writer.WriteInt32(3); // Type
             int sendLevel = 0;
             for (int level = _maxNormalLevel; level <= _holder.getMaxLevel(); level++)
             {
-                if ((level <= _info.getCurrentLevel()) && !_collectedBonusRewards.Contains(level))
+                if (level <= _info.getCurrentLevel() && !_collectedBonusRewards.Contains(level))
                 {
                     sendLevel = level;
                     break;
@@ -225,7 +225,7 @@ public readonly struct ExMissionLevelRewardListPacket: IOutgoingPacket
             writer.WriteInt32(2); // State
         }
         else if (_info.getCollectedSpecialReward() && _holder.getBonusRewardIsAvailable() &&
-                 (_maxNormalLevel <= _info.getCurrentLevel()))
+                 _maxNormalLevel <= _info.getCurrentLevel())
         {
             writer.WriteInt32(3); // Type
             writer.WriteInt32(_holder.getMaxLevel()); // Level

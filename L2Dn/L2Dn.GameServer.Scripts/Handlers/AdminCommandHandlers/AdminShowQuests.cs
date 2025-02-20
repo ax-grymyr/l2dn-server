@@ -217,7 +217,7 @@ public class AdminShowQuests: IAdminCommandHandler
 					string? qname = null;
 					QuestState? qs = null;
 
-					Quest quest = QuestManager.getInstance().getQuest(qnumber);
+					Quest? quest = QuestManager.getInstance().getQuest(qnumber);
 					if (quest != null)
 					{
 						qname = quest.Name;

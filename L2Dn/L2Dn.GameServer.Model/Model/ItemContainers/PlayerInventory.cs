@@ -357,7 +357,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public override Item addItem(string process, Item item, Player actor, object reference)
+	public override Item addItem(string process, Item item, Player actor, object? reference)
 	{
 		Item addedItem = base.addItem(process, item, actor, reference);
 		if (addedItem != null)

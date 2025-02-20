@@ -44,9 +44,12 @@ public struct ExElementalSpiritExtractPacket: IIncomingPacket<GameSession>
             spirit.reduceLevel();
             player.addItem("ElementalSpiritExtract", spirit.getExtractItem(), amount, player, true);
 
-            UserInfoPacket userInfo = new UserInfoPacket(player);
-            userInfo.addComponentType(UserInfoType.ATT_SPIRITS);
-            connection.Send(userInfo);
+            if (!player.isSubclassLocked())
+            {
+                UserInfoPacket userInfo = new UserInfoPacket(player);
+                userInfo.AddComponentType(UserInfoType.ATT_SPIRITS);
+                connection.Send(userInfo);
+            }
         }
 
         connection.Send(new ElementalSpiritExtractPacket(player, _type, canExtract));

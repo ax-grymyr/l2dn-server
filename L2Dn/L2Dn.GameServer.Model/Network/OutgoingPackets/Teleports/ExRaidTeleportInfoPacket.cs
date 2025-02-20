@@ -17,7 +17,7 @@ public readonly struct ExRaidTeleportInfoPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_RAID_TELEPORT_INFO);
         // TODO: use TimeSpan
-        writer.WriteInt32((DateTime.UtcNow.getEpochSecond() -
-                           _player.getVariables().getLong("LastFreeRaidTeleportTime", 0)) < 86400000);
+        writer.WriteInt32(DateTime.UtcNow.getEpochSecond() -
+            _player.getVariables().getLong("LastFreeRaidTeleportTime", 0) < 86400000);
     }
 }

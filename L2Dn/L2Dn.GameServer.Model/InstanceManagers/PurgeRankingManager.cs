@@ -23,14 +23,14 @@ public class PurgeRankingManager
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(PurgeRankingManager));
 	private static readonly Map<int, Map<int, StatSet>> _ranking = new();
-	
+
 	public PurgeRankingManager()
 	{
 		updateRankingFromDB();
 
 		DateTime time = DateTime.UtcNow;
 		int nextDate = time.Minute;
-		while ((nextDate % 5) != 0)
+		while (nextDate % 5 != 0)
 		{
 			nextDate = nextDate + 1;
 		}
@@ -41,13 +41,13 @@ public class PurgeRankingManager
 
 		ThreadPool.scheduleAtFixedRate(updateRankingFromDB, delay, TimeSpan.FromSeconds(300));
 	}
-	
+
 	private void updateRankingFromDB()
 	{
 		// Weekly rewards.
 		DateTime now = DateTime.UtcNow;
 		DateTime lastPurgeRewards = GlobalVariablesManager.getInstance().getDateTime(GlobalVariablesManager.PURGE_REWARD_TIME, DateTime.MinValue);
-		if ((now.DayOfWeek == DayOfWeek.Sunday) && ((now - lastPurgeRewards) > TimeSpan.FromSeconds(604800 /* 1 week */ - 600 /* task delay x2 */)))
+		if (now.DayOfWeek == DayOfWeek.Sunday && now - lastPurgeRewards > TimeSpan.FromSeconds(604800 /* 1 week */ - 600 /* task delay x2 */))
 		{
 			GlobalVariablesManager.getInstance().set(GlobalVariablesManager.PURGE_REWARD_TIME, now);
 			for (int category = 1; category <= 9; category++)
@@ -119,9 +119,9 @@ public class PurgeRankingManager
 						MailManager.getInstance().sendMessage(msg);
 
 						// Notify to scripts.
-						Player player = World.getInstance().getPlayer(charId);
-						Item item = attachment.getItemByItemId(reward);
-						if (player != null)
+						Player? player = World.getInstance().getPlayer(charId);
+						Item? item = attachment.getItemByItemId(reward);
+						if (player != null && item != null)
 						{
 							EventContainer itemEvents = item.getTemplate().Events;
 							if (itemEvents.HasSubscribers<OnItemPurgeReward>())
@@ -141,7 +141,7 @@ public class PurgeRankingManager
 							LOGGER.Error("Failed to delete character subjugation info " + charId, e);
 						}
 
-						Player onlinePlayer = World.getInstance().getPlayer(charId);
+						Player? onlinePlayer = World.getInstance().getPlayer(charId);
 						if (onlinePlayer != null)
 						{
 							onlinePlayer.getPurgePoints().Clear();
@@ -157,17 +157,17 @@ public class PurgeRankingManager
 
 		// Clear ranking.
 		_ranking.Clear();
-		
+
 		// Restore ranking.
 		for (int category = 1; category <= 9; category++)
 		{
 			restoreByCategories(category);
 		}
 	}
-	
+
 	private void restoreByCategories(int category)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
@@ -190,7 +190,7 @@ public class PurgeRankingManager
 			LOGGER.Error("Could not restore subjugation ranking data" + e);
 		}
 	}
-	
+
 	public Map<string, int> getTop5(int category)
 	{
 		Map<string, int> top5 = new();
@@ -198,18 +198,16 @@ public class PurgeRankingManager
 		{
 			try
 			{
-				if (_ranking.get(category) == null)
-				{
-					continue;
-				}
-				
-				StatSet ss = _ranking.get(category).get(i);
+				StatSet? ss = _ranking.get(category)?.get(i);
 				if (ss == null)
 				{
 					continue;
 				}
-				
-				string charName = CharInfoTable.getInstance().getNameById(ss.getInt("charId"));
+
+				string? charName = CharInfoTable.getInstance().getNameById(ss.getInt("charId"));
+                if (charName == null)
+                    continue;
+                
 				int points = ss.getInt("points");
 				top5.put(charName, points);
 			}
@@ -218,30 +216,33 @@ public class PurgeRankingManager
 				LOGGER.Error(e);
 			}
 		}
-		
+
 		//return top5.sorted(Entry.<String, int> comparingByValue().reversed()).collect(Collectors.toMap(Entry::getKey, Entry::getValue, (e1, e2) => e2, LinkedHashMap::new));
 		return top5; // TODO: figure out the sort order
 	}
-	
+
 	public (int, int) getPlayerRating(int category, int charId)
-	{
-		if (_ranking.get(category) == null)
+    {
+        Map<int, StatSet>? rankingCategory = _ranking.get(category);
+		if (rankingCategory == null)
 		{
 			return (0, 0);
 		}
-		
-		var kvp = _ranking.get(category).FirstOrDefault(it => it.Value.getInt("charId") == charId);
+
+        KeyValuePair<int, StatSet> kvp = rankingCategory.
+            FirstOrDefault(it => it.Value.getInt("charId") == charId);
+
 		if (kvp.Value is null)
 			return (0, 0);
-		
+
 		return (kvp.Key, kvp.Value.getInt("points"));
 	}
-	
+
 	public static PurgeRankingManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly PurgeRankingManager INSTANCE = new PurgeRankingManager();

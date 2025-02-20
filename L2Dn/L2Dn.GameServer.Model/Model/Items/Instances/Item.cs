@@ -658,14 +658,10 @@ public class Item: WorldObject
 	/**
 	 * @return the characteristics of the EtcItem, {@code false} otherwise.
 	 */
-	public EtcItem getEtcItem()
-	{
-		if (_itemTemplate is EtcItem)
-		{
-			return (EtcItem) _itemTemplate;
-		}
-		return null;
-	}
+	public EtcItem? getEtcItem()
+    {
+        return _itemTemplate as EtcItem;
+    }
 
 	/**
 	 * @return the characteristics of the Weapon.
@@ -1556,7 +1552,7 @@ public class Item: WorldObject
 	 * @param locY
 	 * @param locZ
 	 */
-	public void dropMe(Creature dropper, Location3D location)
+	public void dropMe(Creature? dropper, Location3D location)
 	{
 		Location3D loc = location;
 		if (dropper != null)

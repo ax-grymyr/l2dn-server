@@ -115,7 +115,7 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 		}
 		
 		/* EnchantFailRewardItem */
-		if (((_successEnchant.Count == 0) && (request.getMultiFailItemsCount() != 0)) || (_isResult && (request.getMultiFailItemsCount() != 0)))
+		if ((_successEnchant.Count == 0 && request.getMultiFailItemsCount() != 0) || (_isResult && request.getMultiFailItemsCount() != 0))
 		{
 			writer.WriteInt32(request.getMultiFailItemsCount());
 			var failureReward = request.getMultiEnchantFailItems();

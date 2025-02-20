@@ -2537,11 +2537,14 @@ public class Clan: IIdentifiable, INamable
 		}
 
 		// the player should know that he has less sp now :p
-		UserInfoPacket ui = new UserInfoPacket(player, false);
-		ui.addComponentType(UserInfoType.CURRENT_HPMPCP_EXP_SP);
-		player.sendPacket(ui);
+        if (!player.isSubclassLocked())
+        {
+            UserInfoPacket ui = new UserInfoPacket(player, false);
+            ui.AddComponentType(UserInfoType.CURRENT_HPMPCP_EXP_SP);
+            player.sendPacket(ui);
+        }
 
-		player.sendItemList();
+        player.sendItemList();
 
 		changeLevel(_level + 1);
 

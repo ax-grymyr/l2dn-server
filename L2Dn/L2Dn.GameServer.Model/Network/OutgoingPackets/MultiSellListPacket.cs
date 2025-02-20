@@ -49,14 +49,14 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 
 		for (int index = _index, end = _index + size; index < end; index++)
 		{
-			ItemInfo itemEnchantment = _list.getItemEnchantment(index);
+			ItemInfo? itemEnchantment = _list.getItemEnchantment(index);
 			MultisellEntryHolder entry = _list.getEntries()[index];
-			if ((itemEnchantment == null) && _list.isMaintainEnchantment())
+			if (itemEnchantment == null && _list.isMaintainEnchantment())
 			{
 				foreach (ItemChanceHolder holder in entry.getIngredients())
 				{
 					Item? item = _player.getInventory().getItemByItemId(holder.getId());
-					if ((item != null) && item.isEquipable())
+					if (item != null && item.isEquipable())
 					{
 						itemEnchantment = new ItemInfo(item);
 						break;
@@ -77,7 +77,7 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 			{
 				ItemTemplate? template = ItemData.getInstance().getTemplate(product.getId());
 				ItemInfo? displayItemEnchantment =
-					_list.isMaintainEnchantment() && (itemEnchantment != null) && (template != null) &&
+					_list.isMaintainEnchantment() && itemEnchantment != null && template != null &&
 					template.GetType() == itemEnchantment.getItem().GetType()
 						? itemEnchantment
 						: null;
@@ -109,7 +109,7 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 			foreach (ItemChanceHolder ingredient in entry.getIngredients())
 			{
 				ItemTemplate? template = ItemData.getInstance().getTemplate(ingredient.getId());
-				ItemInfo? displayItemEnchantment = (itemEnchantment != null) && (template != null) &&
+				ItemInfo? displayItemEnchantment = itemEnchantment != null && template != null &&
 				                                  template.GetType() == itemEnchantment.GetType()
 					? itemEnchantment
 					: null;

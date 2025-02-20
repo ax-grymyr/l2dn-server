@@ -54,7 +54,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 		// 	return ValueTask.CompletedTask;
 		// }
 
-		ItemContainer warehouse = player.getActiveWarehouse();
+		ItemContainer? warehouse = player.getActiveWarehouse();
 		if (warehouse == null)
 			return ValueTask.CompletedTask;
 

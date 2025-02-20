@@ -15,7 +15,7 @@ public readonly struct ExAbnormalStatusUpdateFromTargetPacket: IOutgoingPacket
         _effects = new List<BuffInfo>();
         foreach (BuffInfo info in creature.getEffectList().getEffects())
         {
-            if ((info != null) && info.isInUse() && !info.getSkill().isToggle())
+            if (info != null && info.isInUse() && !info.getSkill().isToggle())
             {
                 _effects.Add(info);
             }

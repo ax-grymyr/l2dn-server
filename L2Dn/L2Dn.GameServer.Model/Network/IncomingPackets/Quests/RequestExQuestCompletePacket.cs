@@ -21,12 +21,12 @@ public struct RequestExQuestCompletePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Quest quest = QuestManager.getInstance().getQuest(_questId);
+        Quest? quest = QuestManager.getInstance().getQuest(_questId);
         if (quest == null)
             return ValueTask.CompletedTask;
-		
+
         quest.notifyEvent("COMPLETE", null, player);
-        
+
         return ValueTask.CompletedTask;
     }
 }

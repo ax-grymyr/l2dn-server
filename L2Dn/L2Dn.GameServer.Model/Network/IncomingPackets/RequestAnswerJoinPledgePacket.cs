@@ -56,6 +56,8 @@ public struct RequestAnswerJoinPledgePacket: IIncomingPacket<GameSession>
 			}
 
 			Clan? clan = requestor.getClan();
+            if (clan == null)
+                return ValueTask.CompletedTask;
 
 			// we must double-check this cause during response time conditions can be changed,
 			// i.e. another player could join clan
@@ -66,7 +68,7 @@ public struct RequestAnswerJoinPledgePacket: IIncomingPacket<GameSession>
 					return ValueTask.CompletedTask;
 				}
 
-				player.sendPacket(new JoinPledgePacket(requestor.getClanId().Value));
+				player.sendPacket(new JoinPledgePacket(clan.getId()));
 				player.setPledgeType(pledgeType);
 				if (pledgeType == Clan.SUBUNIT_ACADEMY)
 				{

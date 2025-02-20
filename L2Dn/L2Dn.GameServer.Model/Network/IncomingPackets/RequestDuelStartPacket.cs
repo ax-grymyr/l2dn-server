@@ -31,7 +31,7 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 		if (FakePlayerData.getInstance().isTalkable(_player))
 		{
 			SystemMessagePacket sm;
-			string name = FakePlayerData.getInstance().getProperName(_player);
+			string name = FakePlayerData.getInstance().getProperName(_player) ?? string.Empty;
 			if (player.isInsideZone(ZoneId.PVP) || player.isInsideZone(ZoneId.PEACE) || player.isInsideZone(ZoneId.SIEGE))
 			{
 				sm = new SystemMessagePacket(SystemMessageId.C1_IS_IN_AN_AREA_WHERE_DUEL_IS_NOT_ALLOWED_AND_YOU_CANNOT_APPLY_FOR_A_DUEL);
@@ -73,7 +73,7 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		Player targetChar = World.getInstance().getPlayer(_player);
+		Player? targetChar = World.getInstance().getPlayer(_player);
 		if (targetChar == null)
 		{
 			player.sendPacket(SystemMessageId.THERE_IS_NO_OPPONENT_TO_RECEIVE_YOUR_CHALLENGE_FOR_A_DUEL);

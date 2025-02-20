@@ -71,7 +71,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
         _type = BUY_SELL_LIST_SELL;
         _sellList = [];
         _refundList = [];
-        Summon pet = player.getPet();
+        Summon? pet = player.getPet();
         foreach (Item item in player.getInventory().getItems())
         {
             if (!item.isEquipped() && item.isSellable() &&

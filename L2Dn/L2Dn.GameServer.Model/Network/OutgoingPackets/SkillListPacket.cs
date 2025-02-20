@@ -7,20 +7,20 @@ public readonly struct SkillListPacket: IOutgoingPacket
 {
     private readonly List<SkillDto> _skills;
     private readonly int _lastLearnedSkillId = 0;
-	
+
     public SkillListPacket(int lastLearnedSkillId)
     {
         _skills = new List<SkillDto>();
         _lastLearnedSkillId = lastLearnedSkillId;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.SKILL_LIST);
 
         _skills.Sort((a, b) => a.Toggle.CompareTo(b.Toggle));
         writer.WriteInt32(_skills.Count);
-        
+
         // Toggle skills
         foreach (SkillDto temp in _skills)
         {
@@ -32,13 +32,13 @@ public readonly struct SkillListPacket: IOutgoingPacket
             writer.WriteByte(temp.Disabled); // iSkillDisabled
             writer.WriteByte(temp.Enchanted); // CanEnchant
         }
-        
+
         writer.WriteInt32(_lastLearnedSkillId);
     }
-	
+
     public void addSkill(int id, int reuseDelayGroup, int level, int subLevel, bool passive, bool disabled, bool enchanted)
     {
-        bool toggle = SkillData.getInstance().getSkill(id, level, subLevel).isToggle();
+        bool toggle = SkillData.getInstance().getSkill(id, level, subLevel)?.isToggle() ?? false;
         _skills.Add(new SkillDto(id, reuseDelayGroup, level, subLevel, passive, disabled, enchanted, toggle));
     }
 

@@ -167,7 +167,7 @@ public struct RequestSendPostPacket: IIncomingPacket<GameSession>
 		if (FakePlayerData.getInstance().isTalkable(_receiver))
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_BLOCKED_YOU_YOU_CANNOT_SEND_MAIL_TO_THIS_CHARACTER);
-			sm.Params.addString(FakePlayerData.getInstance().getProperName(_receiver));
+			sm.Params.addString(FakePlayerData.getInstance().getProperName(_receiver) ?? string.Empty);
 			player.sendPacket(sm);
 			return ValueTask.CompletedTask;
 		}

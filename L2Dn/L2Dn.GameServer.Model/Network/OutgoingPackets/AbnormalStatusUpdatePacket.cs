@@ -25,7 +25,7 @@ public readonly struct AbnormalStatusUpdatePacket: IOutgoingPacket
         writer.WriteInt16((short)_effects.Count);
         foreach (BuffInfo info in _effects)
         {
-            if ((info != null) && info.isInUse()) // TODO: does this make count invalid?????
+            if (info != null && info.isInUse()) // TODO: does this make count invalid?????
             {
                 writer.WriteInt32(info.getSkill().getDisplayId());
                 writer.WriteInt16((short)info.getSkill().getDisplayLevel());

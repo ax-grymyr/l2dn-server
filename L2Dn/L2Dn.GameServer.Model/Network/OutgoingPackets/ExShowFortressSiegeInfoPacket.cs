@@ -11,7 +11,7 @@ public readonly struct ExShowFortressSiegeInfoPacket: IOutgoingPacket
     private readonly int _size;
     private readonly int _csize;
     private readonly int _csize2;
-	
+
     /**
      * @param fort
      */
@@ -19,15 +19,15 @@ public readonly struct ExShowFortressSiegeInfoPacket: IOutgoingPacket
     {
         _fortId = fort.getResidenceId();
         _size = fort.getFortSize();
-        List<FortSiegeSpawn> commanders = FortSiegeManager.getInstance().getCommanderSpawnList(_fortId);
-        _csize = ((commanders == null) ? 0 : commanders.Count);
+        List<FortSiegeSpawn>? commanders = FortSiegeManager.getInstance().getCommanderSpawnList(_fortId);
+        _csize = commanders == null ? 0 : commanders.Count;
         _csize2 = fort.getSiege().getCommanders().size();
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SHOW_FORTRESS_SIEGE_INFO);
-        
+
         writer.WriteInt32(_fortId); // Fortress Id
         writer.WriteInt32(_size); // Total Barracks Count
         if (_csize > 0)

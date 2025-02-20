@@ -31,7 +31,7 @@ public class ItemAuctionLink: IBypassHandler
 			return true;
 		}
 
-		ItemAuctionInstance au = ItemAuctionManager.getInstance().getManagerInstance(target.getId());
+		ItemAuctionInstance? au = ItemAuctionManager.getInstance().getManagerInstance(target.getId());
 		if (au == null)
 		{
 			return false;

@@ -19,29 +19,32 @@ public class DuelManager
 	};
 	private readonly Map<int, Duel> _duels = new();
 	private readonly AtomicInteger _currentDuelId = new AtomicInteger();
-	
+
 	protected DuelManager()
 	{
 	}
-	
-	public Duel getDuel(int duelId)
+
+	public Duel? getDuel(int duelId)
 	{
 		return _duels.get(duelId);
 	}
-	
+
 	public void addDuel(Player playerA, Player playerB, bool partyDuel)
 	{
-		if ((playerA == null) || (playerB == null))
-		{
+		if (playerA == null || playerB == null)
 			return;
-		}
-		
+
+        Party? partyA = playerA.getParty();
+        Party? partyB = playerB.getParty();
+        if (partyA == null || partyB == null)
+            return;
+
 		// return if a player has PvPFlag
 		string engagedInPvP = "The duel was canceled because a duelist engaged in PvP combat.";
 		if (partyDuel)
 		{
 			bool playerInPvP = false;
-			foreach (Player temp in playerA.getParty().getMembers())
+			foreach (Player temp in partyA.getMembers())
 			{
 				if (temp.getPvpFlag() != PvpFlagStatus.None)
 				{
@@ -51,7 +54,7 @@ public class DuelManager
 			}
 			if (!playerInPvP)
 			{
-				foreach (Player temp in playerB.getParty().getMembers())
+				foreach (Player temp in partyB.getMembers())
 				{
 					if (temp.getPvpFlag() != PvpFlagStatus.None)
 					{
@@ -63,18 +66,18 @@ public class DuelManager
 			// A player has PvP flag
 			if (playerInPvP)
 			{
-				foreach (Player temp in playerA.getParty().getMembers())
+				foreach (Player temp in partyA.getMembers())
 				{
 					temp.sendMessage(engagedInPvP);
 				}
-				foreach (Player temp in playerB.getParty().getMembers())
+				foreach (Player temp in partyB.getMembers())
 				{
 					temp.sendMessage(engagedInPvP);
 				}
 				return;
 			}
 		}
-		else if ((playerA.getPvpFlag() != PvpFlagStatus.None) || (playerB.getPvpFlag() != PvpFlagStatus.None))
+		else if (playerA.getPvpFlag() != PvpFlagStatus.None || playerB.getPvpFlag() != PvpFlagStatus.None)
 		{
 			playerA.sendMessage(engagedInPvP);
 			playerB.sendMessage(engagedInPvP);
@@ -83,39 +86,41 @@ public class DuelManager
 		int duelId = _currentDuelId.incrementAndGet();
 		_duels.put(duelId, new Duel(playerA, playerB, partyDuel, duelId));
 	}
-	
+
 	public void removeDuel(Duel duel)
 	{
 		_duels.remove(duel.getId());
 	}
-	
+
 	public void doSurrender(Player player)
 	{
-		if ((player == null) || !player.isInDuel())
+		if (player == null || !player.isInDuel())
 		{
 			return;
 		}
-		Duel duel = getDuel(player.getDuelId());
-		duel.doSurrender(player);
+
+        Duel? duel = getDuel(player.getDuelId());
+		duel?.doSurrender(player);
 	}
-	
+
 	/**
 	 * Updates player states.
 	 * @param player - the dying player
 	 */
 	public void onPlayerDefeat(Player player)
 	{
-		if ((player == null) || !player.isInDuel())
+		if (player == null || !player.isInDuel())
 		{
 			return;
 		}
-		Duel duel = getDuel(player.getDuelId());
+
+		Duel? duel = getDuel(player.getDuelId());
 		if (duel != null)
 		{
 			duel.onPlayerDefeat(player);
 		}
 	}
-	
+
 	/**
 	 * Registers a buff which will be removed if the duel ends
 	 * @param player
@@ -123,34 +128,34 @@ public class DuelManager
 	 */
 	public void onBuff(Player player, Skill buff)
 	{
-		if ((player == null) || !player.isInDuel() || (buff == null))
+		if (player == null || !player.isInDuel() || buff == null)
 		{
 			return;
 		}
-		Duel duel = getDuel(player.getDuelId());
+		Duel? duel = getDuel(player.getDuelId());
 		if (duel != null)
 		{
 			duel.onBuff(player, buff);
 		}
 	}
-	
+
 	/**
 	 * Removes player from duel.
 	 * @param player - the removed player
 	 */
 	public void onRemoveFromParty(Player player)
 	{
-		if ((player == null) || !player.isInDuel())
+		if (player == null || !player.isInDuel())
 		{
 			return;
 		}
-		Duel duel = getDuel(player.getDuelId());
+		Duel? duel = getDuel(player.getDuelId());
 		if (duel != null)
 		{
 			duel.onRemoveFromParty(player);
 		}
 	}
-	
+
 	/**
 	 * Broadcasts a packet to the team opposing the given player.
 	 * @param player
@@ -159,41 +164,44 @@ public class DuelManager
 	public void broadcastToOppositTeam<TPacket>(Player player, TPacket packet)
 		where TPacket: struct, IOutgoingPacket
 	{
-		if ((player == null) || !player.isInDuel())
+		if (player == null || !player.isInDuel())
 		{
 			return;
 		}
-		Duel duel = getDuel(player.getDuelId());
+		Duel? duel = getDuel(player.getDuelId());
 		if (duel == null)
 		{
 			return;
 		}
-		if ((duel.getPlayerA() == null) || (duel.getPlayerB() == null))
-		{
+
+        Player playerA = duel.getPlayerA();
+        Player playerB = duel.getPlayerB();
+		if (playerA == null || playerB == null)
 			return;
-		}
-		
-		if (duel.getPlayerA() == player)
+
+		if (playerA == player)
 		{
 			duel.broadcastToTeam2(packet);
 		}
-		else if (duel.getPlayerB() == player)
+		else if (playerB == player)
 		{
 			duel.broadcastToTeam1(packet);
 		}
 		else if (duel.isPartyDuel())
-		{
-			if ((duel.getPlayerA().getParty() != null) && duel.getPlayerA().getParty().getMembers().Contains(player))
+        {
+            Party? partyA = playerA.getParty();
+            Party? partyB = playerB.getParty();
+			if (partyA != null && partyA.getMembers().Contains(player))
 			{
 				duel.broadcastToTeam2(packet);
 			}
-			else if ((duel.getPlayerB().getParty() != null) && duel.getPlayerB().getParty().getMembers().Contains(player))
+			else if (partyB != null && partyB.getMembers().Contains(player))
 			{
 				duel.broadcastToTeam1(packet);
 			}
 		}
 	}
-	
+
 	/**
 	 * Gets new a random Olympiad Stadium instance name.
 	 * @return an instance name
@@ -202,12 +210,12 @@ public class DuelManager
 	{
 		return ARENAS[Rnd.get(ARENAS.Length)];
 	}
-	
+
 	public static DuelManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly DuelManager INSTANCE = new DuelManager();

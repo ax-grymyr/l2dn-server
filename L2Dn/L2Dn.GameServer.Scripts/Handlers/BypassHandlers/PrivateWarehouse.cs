@@ -66,7 +66,7 @@ public class PrivateWarehouse: IBypassHandler
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		player.setActiveWarehouse(player.getWarehouse());
 
-		if (player.getActiveWarehouse().getSize() == 0)
+		if (player.getWarehouse().getSize() == 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_NOT_DEPOSITED_ANY_ITEMS_IN_YOUR_WAREHOUSE);
 			return;

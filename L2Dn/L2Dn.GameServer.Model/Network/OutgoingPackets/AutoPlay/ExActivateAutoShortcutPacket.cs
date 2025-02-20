@@ -10,7 +10,7 @@ public readonly struct ExActivateAutoShortcutPacket: IOutgoingPacket
 	
     public ExActivateAutoShortcutPacket(Shortcut shortcut, bool active)
     {
-        _position = shortcut.getSlot() + (shortcut.getPage() * ShortCuts.MAX_SHORTCUTS_PER_BAR);
+        _position = shortcut.getSlot() + shortcut.getPage() * ShortCuts.MAX_SHORTCUTS_PER_BAR;
         _active = active;
     }
 	

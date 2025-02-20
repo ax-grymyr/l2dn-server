@@ -23,7 +23,7 @@ public readonly struct ExCraftRandomInfoPacket: IOutgoingPacket
         for (int i = 0; i < rewards.Count; i++)
         {
             RandomCraftRewardItemHolder holder = rewards[i];
-            if ((holder != null) && (holder.getItemId() != 0))
+            if (holder != null && holder.getItemId() != 0)
             {
                 writer.WriteByte(holder.isLocked()); // Locked
                 writer.WriteInt32(holder.getLockLeft()); // Rolls it will stay locked

@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class PremiumManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PremiumManager));
-	
+
 	private class PremiumExpireTask(Player player): Runnable
 	{
 		public void run()
@@ -24,13 +24,13 @@ public class PremiumManager
 			player.setPremiumStatus(false);
 		}
 	}
-	
+
 	// Data Cache
 	private readonly Map<int, DateTime> _premiumData = new();
-	
+
 	// expireTasks
 	private readonly Map<int, ScheduledFuture> _expiretasks = new();
-	
+
 	private PremiumManager()
 	{
 		void PlayerLoginEvent(OnPlayerLogin @event)
@@ -60,7 +60,7 @@ public class PremiumManager
 		GlobalEvents.Players.Subscribe<OnPlayerLogin>(this, PlayerLoginEvent);
 		GlobalEvents.Players.Subscribe<OnPlayerLogout>(this, PlayerLogoutEvent);
 	}
-	
+
 	/**
 	 * @param player
 	 * @param delay
@@ -69,23 +69,23 @@ public class PremiumManager
 	{
 		_expiretasks.put(player.getAccountId(), ThreadPool.schedule(new PremiumExpireTask(player), delay));
 	}
-	
+
 	/**
 	 * @param player
 	 */
 	private void stopExpireTask(Player player)
 	{
-		ScheduledFuture task = _expiretasks.remove(player.getAccountId());
+		ScheduledFuture? task = _expiretasks.remove(player.getAccountId());
 		if (task != null)
 		{
 			task.cancel(false);
 			task = null;
 		}
 	}
-	
+
 	private void loadPremiumData(int accountId)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (AccountPremium? record in ctx.AccountPremiums.Where(r => r.AccountId == accountId))
@@ -98,12 +98,12 @@ public class PremiumManager
 			LOGGER.Warn("Problem with PremiumManager: " + e);
 		}
 	}
-	
+
 	public DateTime? getPremiumExpiration(int accountId)
     {
         return _premiumData.TryGetValue(accountId, out DateTime time) ? time : null;
     }
-	
+
 	public void addPremiumTime(int accountId, TimeSpan value)
 	{
 		// new premium task at least from now
@@ -111,11 +111,11 @@ public class PremiumManager
 		DateTime now = DateTime.UtcNow;
 		if (oldPremiumExpiration < now || oldPremiumExpiration is null)
 			oldPremiumExpiration = now;
-		
+
 		DateTime newPremiumExpiration = oldPremiumExpiration.Value + value;
-		
+
 		// UPDATE DATABASE
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.AccountPremiums.Where(r => r.AccountId == accountId)
@@ -125,10 +125,10 @@ public class PremiumManager
 		{
 			LOGGER.Warn("Problem with PremiumManager: " + e);
 		}
-		
+
 		// UPDATE CACHE
 		_premiumData.put(accountId, newPremiumExpiration);
-		
+
 		// UPDATE PLAYER PREMIUM STATUS
 		foreach (Player player in World.getInstance().getPlayers())
 		{
@@ -144,7 +144,7 @@ public class PremiumManager
 			}
 		}
 	}
-	
+
 	public void removePremiumStatus(int accountId, bool checkOnline)
 	{
 		if (checkOnline)
@@ -159,12 +159,12 @@ public class PremiumManager
 				}
 			}
 		}
-		
+
 		// UPDATE CACHE
 		_premiumData.remove(accountId);
-		
+
 		// UPDATE DATABASE
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.AccountPremiums.Where(r => r.AccountId == accountId).ExecuteDelete();
@@ -174,12 +174,12 @@ public class PremiumManager
 			LOGGER.Warn("Problem with PremiumManager: " + e);
 		}
 	}
-	
+
 	public static PremiumManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly PremiumManager INSTANCE = new PremiumManager();

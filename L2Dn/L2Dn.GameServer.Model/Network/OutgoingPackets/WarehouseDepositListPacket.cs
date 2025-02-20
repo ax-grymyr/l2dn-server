@@ -36,11 +36,11 @@ public readonly struct WarehouseDepositListPacket: IOutgoingPacket
         bool isPrivate = _whType == PRIVATE;
         foreach (Item temp in player.getInventory().getAvailableItems(true, isPrivate, false))
         {
-            if ((temp != null) && temp.isDepositable(isPrivate))
+            if (temp != null && temp.isDepositable(isPrivate))
             {
                 _items.Add(temp);
             }
-            if ((temp != null) && temp.isDepositable(isPrivate) && temp.isStackable())
+            if (temp != null && temp.isDepositable(isPrivate) && temp.isStackable())
             {
                 _itemsStackable.Add(temp.getDisplayId());
             }

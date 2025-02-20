@@ -26,7 +26,7 @@ public struct ExRequestSharedLocationTeleportPacket: IIncomingPacket<GameSession
         if (player == null)
             return ValueTask.CompletedTask;
 
-        SharedTeleportHolder teleport = SharedTeleportManager.getInstance().getTeleport(_id);
+        SharedTeleportHolder? teleport = SharedTeleportManager.getInstance().getTeleport(_id);
         if (teleport == null || teleport.getCount() == 0)
         {
             player.sendPacket(SystemMessageId.TELEPORTATION_LIMIT_FOR_THE_COORDINATES_RECEIVED_IS_REACHED);

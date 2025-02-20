@@ -21,7 +21,7 @@ public class NpcWalkerNode
         _delay = delay;
         _runToLocation = runToLocation;
         _npcString = npcString;
-        _chatString = (chatText == null) ? "" : chatText;
+        _chatString = chatText;
     }
 
     public Location3D Location => _location;
@@ -43,7 +43,7 @@ public class NpcWalkerNode
 
     public string getChatText()
     {
-        if (_npcString != null)
+        if (_npcString != 0)
         {
             throw new InvalidOperationException("npcString is defined for walker route!");
         }

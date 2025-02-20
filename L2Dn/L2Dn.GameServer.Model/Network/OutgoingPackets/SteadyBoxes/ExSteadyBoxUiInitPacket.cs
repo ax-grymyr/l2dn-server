@@ -70,7 +70,7 @@ public readonly struct ExSteadyBoxUiInitPacket: IOutgoingPacket
             writer.WriteInt64(TIME_PRICE[i]);
         }
 		
-        TimeSpan rewardTimeStage = (_player.getAchievementBox().getBoxOpenTime() - DateTime.UtcNow) ?? TimeSpan.Zero;
+        TimeSpan rewardTimeStage = _player.getAchievementBox().getBoxOpenTime() - DateTime.UtcNow ?? TimeSpan.Zero;
         writer.WriteInt32((int)rewardTimeStage.TotalSeconds);
     }
 }

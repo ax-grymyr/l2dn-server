@@ -21,12 +21,12 @@ public struct RequestAddExpandQuestAlarmPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Quest quest = QuestManager.getInstance().getQuest(_questId);
+        Quest? quest = QuestManager.getInstance().getQuest(_questId);
         if (quest != null)
         {
             quest.sendNpcLogList(player);
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

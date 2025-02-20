@@ -11,14 +11,14 @@ public readonly struct ExRankingCharInfoPacket: IOutgoingPacket
     private readonly Player _player;
     private readonly Map<int, StatSet> _playerList;
     private readonly Map<int, StatSet> _snapshotList;
-	
+
     public ExRankingCharInfoPacket(Player player)
     {
         _player = player;
         _playerList = RankManager.getInstance().getRankList();
         _snapshotList = RankManager.getInstance().getSnapshotList();
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_RANKING_CHAR_INFO);
@@ -27,7 +27,7 @@ public readonly struct ExRankingCharInfoPacket: IOutgoingPacket
         {
             foreach (int id in _playerList.Keys)
             {
-                StatSet player = _playerList.get(id);
+                StatSet player = _playerList[id];
                 if (player.getInt("charId") == _player.ObjectId)
                 {
                     writer.WriteInt32(id); // server rank
@@ -35,7 +35,7 @@ public readonly struct ExRankingCharInfoPacket: IOutgoingPacket
                     writer.WriteInt32(player.getInt("classRank")); // class rank
                     foreach (int id2 in _snapshotList.Keys)
                     {
-                        StatSet snapshot = _snapshotList.get(id2);
+                        StatSet snapshot = _snapshotList[id2];
                         if (player.getInt("charId") == snapshot.getInt("charId"))
                         {
                             writer.WriteInt32(id2); // server rank snapshot
@@ -49,7 +49,7 @@ public readonly struct ExRankingCharInfoPacket: IOutgoingPacket
                     }
                 }
             }
-			
+
             writer.WriteInt32(0); // server rank
             writer.WriteInt32(0); // race rank
             writer.WriteInt32(0); // server rank snapshot

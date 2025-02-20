@@ -83,8 +83,8 @@ public class FortSiege: Siegable
 
 		public void run()
 		{
-			FORTRESS_ZONE.broadcastPacket(new ExShowScreenMessagePacket(2, -1, 2, 0, 0, 0, 0, true, 8000, false, null,
-				NpcStringId.FLAG_SENTRY_GREG_HAS_APPEARED, null));
+			FORTRESS_ZONE.broadcastPacket(new ExShowScreenMessagePacket(2, (SystemMessageId)(-1), 2, 0, 0, 0, 0, true, 8000, false, string.Empty,
+				NpcStringId.FLAG_SENTRY_GREG_HAS_APPEARED));
 
 			if (!_fortSiege._isInProgress)
 			{

@@ -288,9 +288,9 @@ public class NpcViewMod: IBypassHandler
 	private static string getDropListButtons(Npc npc)
 	{
 		StringBuilder sb = new StringBuilder();
-		List<DropGroupHolder> dropListGroups = npc.getTemplate().getDropGroups();
-		List<DropHolder> dropListDeath = npc.getTemplate().getDropList();
-		List<DropHolder> dropListSpoil = npc.getTemplate().getSpoilList();
+		List<DropGroupHolder>? dropListGroups = npc.getTemplate().getDropGroups();
+		List<DropHolder>? dropListDeath = npc.getTemplate().getDropList();
+		List<DropHolder>? dropListSpoil = npc.getTemplate().getSpoilList();
 		if (dropListGroups != null || dropListDeath != null || dropListSpoil != null)
 		{
 			sb.Append("<table width=275 cellpadding=0 cellspacing=0><tr>");
@@ -313,17 +313,20 @@ public class NpcViewMod: IBypassHandler
 	{
 		List<DropHolder>? dropList = null;
 		if (dropType == DropType.SPOIL)
-		{
-			dropList = new(npc.getTemplate().getSpoilList());
+        {
+            List<DropHolder>? spoilList = npc.getTemplate().getSpoilList();
+			dropList = [];
+            if (spoilList != null)
+                dropList.AddRange(spoilList);
 		}
 		else
 		{
-			List<DropHolder> drops = npc.getTemplate().getDropList();
+			List<DropHolder>? drops = npc.getTemplate().getDropList();
 			if (drops != null)
 			{
 				dropList = new(drops);
 			}
-			List<DropGroupHolder> dropGroups = npc.getTemplate().getDropGroups();
+			List<DropGroupHolder>? dropGroups = npc.getTemplate().getDropGroups();
 			if (dropGroups != null)
 			{
 				if (dropList == null)

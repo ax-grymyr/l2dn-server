@@ -359,13 +359,13 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 		}
 		else
 		{
-			EtcItem etcItem = item.getEtcItem();
+			EtcItem? etcItem = item.getEtcItem();
 			if (etcItem != null && etcItem.getExtractableItems() != null && player.hasRequest<AutoPeelRequest>())
 			{
 				return ValueTask.CompletedTask;
 			}
 
-			IItemHandler handler = ItemHandler.getInstance().getHandler(etcItem);
+			IItemHandler? handler = ItemHandler.getInstance().getHandler(etcItem);
 			if (handler == null)
 			{
 				if (etcItem != null && etcItem.getHandlerName() != null)

@@ -72,7 +72,7 @@ public struct RequestSetSeedPacket: IIncomingPacket<GameSession>
         List<SeedProduction> list = new(_items.Count);
         foreach (SeedProduction sp in _items)
         {
-            Seed s = manor.getSeed(sp.getId());
+            Seed? s = manor.getSeed(sp.getId());
             if (s != null && sp.getStartAmount() <= s.getSeedLimit() && sp.getPrice() >= s.getSeedMinPrice() &&
                 sp.getPrice() <= s.getSeedMaxPrice())
             {

@@ -125,7 +125,7 @@ public class IdManager
 				// statement.executeUpdate("UPDATE characters SET clanid=0, clan_privs=0, wantspeace=0, subpledge=0, lvl_joined_academy=0, apprentice=0, sponsor=0, clan_join_expiry_time=0, clan_create_expiry_time=0 WHERE characters.clanid > 0 AND characters.clanid NOT IN (SELECT clan_id FROM clan_data);");
 				// statement.executeUpdate("UPDATE fort SET owner=0 WHERE owner NOT IN (SELECT clan_id FROM clan_data);");
 				
-				LOGGER.Info("IdManager: Cleaned " + cleanCount + " elements from database in " + ((DateTime.UtcNow - cleanupStart) / 1000) + " seconds.");
+				LOGGER.Info("IdManager: Cleaned " + cleanCount + " elements from database in " + (DateTime.UtcNow - cleanupStart) / 1000 + " seconds.");
 			}
 			catch (Exception e)
 			{

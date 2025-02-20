@@ -12,6 +12,7 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
+using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -22,10 +23,11 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class RankingPowerManager
 {
 	private const int LEADER_STATUE = 18485;
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(RankingPowerManager));
 	private static readonly TimeSpan COOLDOWN = TimeSpan.FromSeconds(43200);
-	private static readonly SkillHolder LEADER_POWER = new SkillHolder(52018, 1);
+	private static readonly SkillHolder LEADER_POWER = new(52018, 1);
 
-	private Decoy _decoyInstance;
+	private Decoy? _decoyInstance;
 	private ScheduledFuture? _decoyTask;
 
 	protected RankingPowerManager()
@@ -54,7 +56,13 @@ public class RankingPowerManager
 	{
 		Location location = player.Location;
 
-		NpcTemplate template = NpcData.getInstance().getTemplate(LEADER_STATUE);
+		NpcTemplate? template = NpcData.getInstance().getTemplate(LEADER_STATUE);
+        if (template == null)
+        {
+            _logger.Error($"Leader statue template is missing (npcId={LEADER_STATUE}).");
+            return;
+        }
+
 		_decoyInstance = new Decoy(template, player, COOLDOWN, false);
 		_decoyInstance.setTargetable(false);
 		_decoyInstance.setImmobilized(true);
@@ -68,13 +76,19 @@ public class RankingPowerManager
 
 	private void cloneTask()
 	{
+        if (_decoyInstance == null)
+        {
+            _logger.Error("Leader statue instance is missing.");
+            return;
+        }
+
 		_decoyTask = ThreadPool.scheduleAtFixedRate(() =>
 		{
 			World.getInstance().forEachVisibleObjectInRange<Player>(_decoyInstance, 300, nearby =>
 			{
 				BuffInfo? info = nearby.getEffectList().getBuffInfoBySkillId(LEADER_POWER.getSkillId());
-				if ((info == null) ||
-				    (info.getTime() < (LEADER_POWER.getSkill().getAbnormalTime() - TimeSpan.FromSeconds(60))))
+				if (info == null ||
+				    info.getTime() < LEADER_POWER.getSkill().getAbnormalTime() - TimeSpan.FromSeconds(60))
 				{
 					nearby.sendPacket(new MagicSkillUsePacket(_decoyInstance, nearby, LEADER_POWER.getSkillId(),
 						LEADER_POWER.getSkillLevel(), TimeSpan.Zero, TimeSpan.Zero));

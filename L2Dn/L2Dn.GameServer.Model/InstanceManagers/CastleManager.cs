@@ -112,7 +112,7 @@ public class CastleManager
 
 	public int getCircletByCastleId(int castleId)
 	{
-		if ((castleId > 0) && (castleId < 10))
+		if (castleId > 0 && castleId < 10)
 		{
 			return _castleCirclets[castleId];
 		}

@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.Packets;
@@ -9,18 +10,17 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct WarehouseWithdrawalListPacket: IOutgoingPacket
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(WarehouseWithdrawalListPacket));
-    
+
     public const int PRIVATE = 1;
     public const int CLAN = 2;
     public const int CASTLE = 3; // not sure
     public const int FREIGHT = 1;
-	
+
     private readonly int _sendType;
-    private readonly Player _player;
     private readonly long _playerAdena;
     private readonly int _invSize;
     private readonly List<Item> _items;
-    private readonly List<int> _itemsStackable;
+    private readonly List<int> _itemsStackable; // TODO: not used
     /**
      * <ul>
      * <li>0x01-Private Warehouse</li>
@@ -30,22 +30,24 @@ public readonly struct WarehouseWithdrawalListPacket: IOutgoingPacket
      * </ul>
      */
     private readonly int _whType;
-	
+
     public WarehouseWithdrawalListPacket(int sendType, Player player, int type)
     {
         _sendType = sendType;
-        _player = player;
         _whType = type;
-        _playerAdena = _player.getAdena();
+        _playerAdena = player.getAdena();
         _invSize = player.getInventory().getSize();
-        if (_player.getActiveWarehouse() == null)
+        _items = [];
+        _itemsStackable = [];
+
+        ItemContainer? activeWarehouse = player.getActiveWarehouse();
+        if (activeWarehouse == null)
         {
-            _logger.Error("error while sending withdraw request to: " + _player.getName());
+            _logger.Error("error while sending withdraw request to: " + player.getName());
             return;
         }
-        
-        _items = _player.getActiveWarehouse().getItems().ToList();
-        _itemsStackable = new List<int>();
+
+        _items = activeWarehouse.getItems().ToList();
         foreach (Item item in _items)
         {
             if (item.isStackable())
@@ -54,7 +56,7 @@ public readonly struct WarehouseWithdrawalListPacket: IOutgoingPacket
             }
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.WAREHOUSE_WITHDRAW_LIST);

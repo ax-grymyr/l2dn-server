@@ -70,9 +70,13 @@ public struct ExElementalSpiritSetTalentPacket: IIncomingPacket<GameSession>
 
         if (result)
         {
-            UserInfoPacket userInfo = new UserInfoPacket(player, false);
-            userInfo.addComponentType(UserInfoType.ATT_SPIRITS);
-            connection.Send(userInfo);
+            if (!player.isSubclassLocked())
+            {
+                UserInfoPacket userInfo = new UserInfoPacket(player, false);
+                userInfo.AddComponentType(UserInfoType.ATT_SPIRITS);
+                connection.Send(userInfo);
+            }
+
             connection.Send(SystemMessageId.CHARACTERISTICS_WERE_APPLIED_SUCCESSFULLY);
         }
 

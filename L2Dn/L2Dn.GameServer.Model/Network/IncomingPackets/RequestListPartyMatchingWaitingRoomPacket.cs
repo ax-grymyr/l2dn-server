@@ -11,7 +11,7 @@ public struct RequestListPartyMatchingWaitingRoomPacket: IIncomingPacket<GameSes
     private int _page;
     private int _minLevel;
     private int _maxLevel;
-    private List<CharacterClass>? _classId; // 1 - waitlist 0 - room waitlist
+    private List<CharacterClass> _classId; // 1 - waitlist 0 - room waitlist
     private string? _query;
 
     public void ReadContent(PacketBitReader reader)
@@ -20,15 +20,13 @@ public struct RequestListPartyMatchingWaitingRoomPacket: IIncomingPacket<GameSes
         _minLevel = reader.ReadInt32();
         _maxLevel = reader.ReadInt32();
         int size = reader.ReadInt32();
+        _classId = [];
         if (size > 0 && size < 128)
         {
-            _classId = new();
             for (int i = 0; i < size; i++)
-            {
                 _classId.Add((CharacterClass)reader.ReadInt32());
-            }
         }
-        
+
         if (reader.Length >= 4)
             _query = reader.ReadString();
     }
@@ -40,7 +38,7 @@ public struct RequestListPartyMatchingWaitingRoomPacket: IIncomingPacket<GameSes
             return ValueTask.CompletedTask;
 
         player.sendPacket(new ExListPartyMatchingWaitingRoomPacket(_page, _minLevel, _maxLevel, _classId, _query ?? string.Empty));
-        
+
         return ValueTask.CompletedTask;
     }
 }

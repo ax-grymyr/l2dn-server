@@ -27,7 +27,7 @@ public struct RequestPledgeMemberInfoPacket: IIncomingPacket<GameSession>
         if (clan == null)
             return ValueTask.CompletedTask;
 
-        ClanMember member = clan.getClanMember(_player);
+        ClanMember? member = clan.getClanMember(_player);
         if (member == null)
             return ValueTask.CompletedTask;
 

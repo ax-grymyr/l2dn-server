@@ -43,7 +43,7 @@ public readonly struct SiegeInfoPacket: IOutgoingPacket
         }
         
         writer.WriteInt32(DateTime.UtcNow.getEpochSecond());
-        if (!_castle.isTimeRegistrationOver() && _player.isClanLeader() && (_player.getClanId() == _castle.getOwnerId()))
+        if (!_castle.isTimeRegistrationOver() && _player.isClanLeader() && _player.getClanId() == _castle.getOwnerId())
         {
             DateTime cal = _castle.getSiegeDate();
             cal = new DateTime(cal.Year, cal.Month, cal.Day);

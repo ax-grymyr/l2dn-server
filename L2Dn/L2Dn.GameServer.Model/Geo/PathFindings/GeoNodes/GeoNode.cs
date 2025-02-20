@@ -7,7 +7,7 @@ public class GeoNode: AbstractNode<GeoNodeLoc>
 {
 	private readonly int _neighborsIdx;
 	private short _cost;
-	private GeoNode[]? _neighbors;
+	private GeoNode[] _neighbors = [];
 
 	public GeoNode(GeoNodeLoc loc, int neighborsIdx): base(loc)
 	{
@@ -24,7 +24,7 @@ public class GeoNode: AbstractNode<GeoNodeLoc>
 		_cost = (short) cost;
 	}
 
-	public GeoNode[]? getNeighbors()
+	public GeoNode[] getNeighbors()
 	{
 		return _neighbors;
 	}

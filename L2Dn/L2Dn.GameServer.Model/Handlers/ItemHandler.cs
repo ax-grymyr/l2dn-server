@@ -42,7 +42,7 @@ public class ItemHandler: IHandler<IItemHandler, EtcItem>
 	 * @param item
 	 * @return IItemHandler
 	 */
-	public IItemHandler? getHandler(EtcItem item)
+	public IItemHandler? getHandler(EtcItem? item)
 	{
 		if ((item == null) || (item.getHandlerName() == null))
 		{

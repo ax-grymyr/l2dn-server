@@ -28,7 +28,7 @@ public readonly struct ExSteadyOneBoxUpdatePacket: IOutgoingPacket
         writer.WriteInt32((int)boxholder.getState());
         writer.WriteInt32((int)boxholder.getType());
         
-        TimeSpan rewardTimeStage = (_achievementBox.getBoxOpenTime() - DateTime.UtcNow) ?? TimeSpan.Zero;
+        TimeSpan rewardTimeStage = _achievementBox.getBoxOpenTime() - DateTime.UtcNow ?? TimeSpan.Zero;
         writer.WriteInt32((int)rewardTimeStage.TotalSeconds);
     }
 }

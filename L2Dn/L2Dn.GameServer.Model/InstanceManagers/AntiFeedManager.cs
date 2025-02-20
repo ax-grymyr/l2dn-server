@@ -47,7 +47,7 @@ internal class AntiFeedManager
 			return false;
 		}
 
-		Player targetPlayer = target.getActingPlayer();
+		Player? targetPlayer = target.getActingPlayer();
 		if (targetPlayer == null)
 		{
 			return false;
@@ -59,15 +59,15 @@ internal class AntiFeedManager
 			return false;
 		}
 
-		if ((Config.ANTIFEED_INTERVAL > 0) && _lastDeathTimes.ContainsKey(targetPlayer.ObjectId) &&
-		    (DateTime.UtcNow - _lastDeathTimes.get(targetPlayer.ObjectId)) < TimeSpan.FromMilliseconds(Config.ANTIFEED_INTERVAL))
+		if (Config.ANTIFEED_INTERVAL > 0 && _lastDeathTimes.ContainsKey(targetPlayer.ObjectId) &&
+		    DateTime.UtcNow - _lastDeathTimes.get(targetPlayer.ObjectId) < TimeSpan.FromMilliseconds(Config.ANTIFEED_INTERVAL))
 		{
 			return false;
 		}
 
-		if (Config.ANTIFEED_DUALBOX && (attacker != null))
+		if (Config.ANTIFEED_DUALBOX && attacker != null)
 		{
-			Player attackerPlayer = attacker.getActingPlayer();
+			Player? attackerPlayer = attacker.getActingPlayer();
 			if (attackerPlayer == null)
 			{
 				return false;
@@ -75,7 +75,7 @@ internal class AntiFeedManager
 
 			GameSession? targetClient = targetPlayer.getClient();
 			GameSession? attackerClient = attackerPlayer.getClient();
-			if ((targetClient == null) || (attackerClient == null) ||
+			if (targetClient == null || attackerClient == null ||
 			    targetClient.IsDetached || attackerClient.IsDetached)
 			{
 				// unable to check ip address
@@ -139,7 +139,7 @@ internal class AntiFeedManager
 
 		int addrHash = client.IpAddress.GetHashCode();
 		AtomicInteger connectionCount = @event.computeIfAbsent(addrHash, k => new AtomicInteger());
-		if ((connectionCount.get() + 1) <= (max + Config.DUALBOX_CHECK_WHITELIST.GetValueOrDefault(addrHash, 0)))
+		if (connectionCount.get() + 1 <= max + Config.DUALBOX_CHECK_WHITELIST.GetValueOrDefault(addrHash, 0))
 		{
 			connectionCount.incrementAndGet();
 			return true;
@@ -181,7 +181,7 @@ internal class AntiFeedManager
 		int addrHash = client.IpAddress.GetHashCode();
 		return @event.computeIfPresent(addrHash, (k, v) =>
 		{
-			if ((v == null) || (v.decrementAndGet() == 0))
+			if (v == null || v.decrementAndGet() == 0)
 			{
 				return null;
 			}
@@ -223,7 +223,7 @@ internal class AntiFeedManager
 			if (eventId == OLYMPIAD_ID)
 			{
 				AtomicInteger? count = entry.Value.get(clientIp.GetHashCode());
-				if ((count != null) && (OlympiadManager.getInstance().isRegistered(player) || (player.getOlympiadGameId() != -1)))
+				if (count != null && (OlympiadManager.getInstance().isRegistered(player) || player.getOlympiadGameId() != -1))
 				{
 					count.decrementAndGet();
 				}

@@ -21,11 +21,11 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class RankManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(RankManager));
-	
+
 	public static readonly TimeSpan TIME_LIMIT = TimeSpan.FromDays(30);
 	public static readonly DateTime CURRENT_TIME = DateTime.UtcNow;
 	public const int PLAYER_LIMIT = 500;
-	
+
 	private readonly Map<int, StatSet> _mainList = new();
 	private Map<int, StatSet> _snapshotList = new();
 	private readonly Map<int, StatSet> _mainOlyList = new();
@@ -36,12 +36,12 @@ public class RankManager
 	private Map<int, StatSet> _snapshotPetList = new();
 	private readonly Map<int, StatSet> _mainClanList = new();
 	private Map<int, StatSet> _snapshotClanList = new();
-	
+
 	protected RankManager()
 	{
 		ThreadPool.scheduleAtFixedRate(update, 0, 1800000);
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	private void update()
 	{
@@ -56,19 +56,19 @@ public class RankManager
 		_mainPetList.Clear();
 		_snapshotClanList = _mainClanList;
 		_mainClanList.Clear();
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.Characters
 				.Where(c => CURRENT_TIME - c.LastAccess < TIME_LIMIT && c.AccessLevel == 0 && c.Level >= 40)
 				.OrderByDescending(c => c.Exp).ThenByDescending(c => c.OnlineTime).Take(PLAYER_LIMIT);
-			
+
 			int i = 1;
 			foreach (Character character in query)
 			{
 				int charId = character.Id;
-				CharacterClass classId = character.Class.GetRootClass(); 
+				CharacterClass classId = character.Class.GetRootClass();
 				Race race = character.Class.GetRace();
 
 				StatSet player = new StatSet();
@@ -77,19 +77,15 @@ public class RankManager
 				player.set("level", character.Level);
 				player.set("classId", (int)classId);
 				player.set("race", (int)race);
-					
+
 				loadRaceRank(charId, race, player);
 				loadClassRank(charId, classId, player);
 				int? clanId = character.ClanId;
-				if (clanId != 0)
-				{
-					player.set("clanName", ClanTable.getInstance().getClan(clanId.Value).getName());
-				}
-				else
-				{
-					player.set("clanName", "");
-				}
-					
+                player.set("clanName",
+                    clanId == null
+                        ? string.Empty
+                        : ClanTable.getInstance().getClan(clanId.Value)?.getName() ?? string.Empty);
+
 				_mainList.put(i, player);
 				i++;
 			}
@@ -98,7 +94,7 @@ public class RankManager
 		{
 			LOGGER.Error("Could not load chars total rank data: " + this + " - " + e);
 		}
-		
+
 		// load olympiad data.
 		try
 		{
@@ -118,7 +114,7 @@ public class RankManager
 					n.CompetitionsWon,
 					n.CompetitionsLost
 				}).Take(PLAYER_LIMIT);
-				
+
 			int i = 1;
 			foreach (var record in query)
 			{
@@ -127,30 +123,15 @@ public class RankManager
 				player.set("charId", charId);
 				player.set("name", record.Name);
 				int? clanId = record.ClanId;
-				if (clanId != null)
-				{
-					player.set("clanName", ClanTable.getInstance().getClan(clanId.Value).getName());
-				}
-				else
-				{
-					player.set("clanName", "");
-				}
-				
+    			player.set("clanName", clanId != null ? ClanTable.getInstance().getClan(clanId.Value)?.getName() ?? string.Empty : string.Empty);
 				player.set("level", record.Level);
 				CharacterClass classId = record.Class;
 				player.set("classId", (int)classId);
-				if (clanId != null)
-				{
-					player.set("clanLevel", ClanTable.getInstance().getClan(clanId.Value).getLevel());
-				}
-				else
-				{
-					player.set("clanLevel", 0);
-				}
+				player.set("clanLevel", clanId != null ? ClanTable.getInstance().getClan(clanId.Value)?.getLevel() ?? 0 : 0);
 				player.set("competitions_won", record.CompetitionsWon);
 				player.set("competitions_lost", record.CompetitionsLost);
 				player.set("olympiad_points", record.OlympiadPoints);
-					
+
 				if (Hero.getInstance().getCompleteHeroes().TryGetValue(charId, out StatSet? hero))
 				{
 					player.set("count", hero.getInt("count", 0));
@@ -161,9 +142,9 @@ public class RankManager
 					player.set("count", 0);
 					player.set("legend_count", 0);
 				}
-					
+
 				loadClassRank(charId, classId, player);
-					
+
 				_mainOlyList.put(i, player);
 				i++;
 			}
@@ -172,8 +153,8 @@ public class RankManager
 		{
 			LOGGER.Warn("Could not load olympiad total rank data: " + this + " - " + e);
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.Characters
@@ -189,7 +170,7 @@ public class RankManager
 					c.Kills,
 					c.PvpKills
 				}).Take(PLAYER_LIMIT);
-			
+
 			int i = 1;
 			foreach (var record in query)
 			{
@@ -206,15 +187,8 @@ public class RankManager
 				player.set("points", record.PvpKills);
 				loadRaceRank(charId, race, player);
 				int? clanId = record.ClanId;
-				if (clanId != null)
-				{
-					player.set("clanName", ClanTable.getInstance().getClan(clanId.Value).getName());
-				}
-				else
-				{
-					player.set("clanName", "");
-				}
-					
+                player.set("clanName", clanId != null ? ClanTable.getInstance().getClan(clanId.Value)?.getName() ?? string.Empty : string.Empty);
+
 				_mainPvpList.put(i, player);
 				i++;
 			}
@@ -223,7 +197,7 @@ public class RankManager
 		{
 			LOGGER.Error("Could not load pvp total rank data: " + this + " - " + e);
 		}
-		
+
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -250,7 +224,7 @@ public class RankManager
 						p.ItemObjectId,
 						item.ItemId
 					}).Take(PLAYER_LIMIT);
-				
+
 			int i = 1;
 			foreach (var record in query)
 			{
@@ -265,8 +239,16 @@ public class RankManager
 				pet.set("level", record.PetLevel);
 				pet.set("evolve_level", record.PetEvolveLevel);
 				pet.set("exp", record.PetExp);
-				pet.set("clanName", record.ClanId != null ? ClanTable.getInstance().getClan(record.ClanId.Value).getName() : "");
-				PetData petData = PetDataTable.getInstance().getPetDataByItemId(record.ItemId);
+                int? clanId = record.ClanId;
+                pet.set("clanName", clanId != null ? ClanTable.getInstance().getClan(clanId.Value)?.getName() ?? string.Empty : string.Empty);
+
+                PetData? petData = PetDataTable.getInstance().getPetDataByItemId(record.ItemId);
+                if (petData == null)
+                {
+                    LOGGER.Warn("Could not find pet data for item id: " + record.ItemId);
+                    continue;
+                }
+
 				pet.set("petType", petData.getType());
 				pet.set("npcId", petData.getNpcId());
 				_mainPetList.put(i++, pet);
@@ -276,8 +258,8 @@ public class RankManager
 		{
 			LOGGER.Error("Could not load pet total rank data: " + this + " - " + e);
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = (from c in ctx.Characters
@@ -295,7 +277,7 @@ public class RankManager
 					ClanExp = clan.Exp,
 				}).Take(PLAYER_LIMIT);
 
-			
+
 			int i = 1;
 			foreach (var record in query)
 			{
@@ -316,7 +298,7 @@ public class RankManager
 			LOGGER.Error("Could not load clan total rank data: " + this + " - " + e);
 		}
 	}
-	
+
 	private void loadClassRank(int charId, CharacterClass classId, StatSet player)
 	{
 		try
@@ -337,7 +319,7 @@ public class RankManager
 				{
 					player.set("classRank", i + 1);
 				}
-				
+
 				i++;
 			}
 
@@ -351,13 +333,13 @@ public class RankManager
 			LOGGER.Warn("Could not load chars classId olympiad rank data: " + this + " - " + e);
 		}
 	}
-	
+
 	private void loadRaceRank(int charId, Race race, StatSet player)
 	{
-		try 
+		try
 		{
 			List<CharacterClass> classes = EnumUtil.GetValues<CharacterClass>().Where(c => c.GetRace() == race).ToList();
-			
+
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.Characters
 				.Where(c => CURRENT_TIME - c.LastAccess < TIME_LIMIT && c.AccessLevel == 0 && c.Level >= 40 &&
@@ -371,7 +353,7 @@ public class RankManager
 				{
 					player.set("raceRank", i + 1);
 				}
-				
+
 				i++;
 			}
 
@@ -385,57 +367,57 @@ public class RankManager
 			LOGGER.Error("Could not load chars race rank data: " + this + " - " + e);
 		}
 	}
-	
+
 	public Map<int, StatSet> getRankList()
 	{
 		return _mainList;
 	}
-	
+
 	public Map<int, StatSet> getSnapshotList()
 	{
 		return _snapshotList;
 	}
-	
+
 	public Map<int, StatSet> getOlyRankList()
 	{
 		return _mainOlyList;
 	}
-	
+
 	public Map<int, StatSet> getSnapshotOlyList()
 	{
 		return _snapshotOlyList;
 	}
-	
+
 	public Map<int, StatSet> getPvpRankList()
 	{
 		return _mainPvpList;
 	}
-	
+
 	public Map<int, StatSet> getSnapshotPvpRankList()
 	{
 		return _snapshotPvpList;
 	}
-	
+
 	public Map<int, StatSet> getPetRankList()
 	{
 		return _mainPetList;
 	}
-	
+
 	public Map<int, StatSet> getSnapshotPetRankList()
 	{
 		return _snapshotPetList;
 	}
-	
+
 	public Map<int, StatSet> getClanRankList()
 	{
 		return _mainClanList;
 	}
-	
+
 	public Map<int, StatSet> getSnapshotClanRankList()
 	{
 		return _snapshotClanList;
 	}
-	
+
 	public int getPlayerGlobalRank(Player player)
 	{
 		int playerOid = player.ObjectId;
@@ -450,7 +432,7 @@ public class RankManager
 		}
 		return 0;
 	}
-	
+
 	public int getPlayerRaceRank(Player player)
 	{
 		int playerOid = player.ObjectId;
@@ -464,7 +446,7 @@ public class RankManager
 		}
 		return 0;
 	}
-	
+
 	public int getPlayerClassRank(Player player)
 	{
 		int playerOid = player.ObjectId;
@@ -478,13 +460,13 @@ public class RankManager
 		}
 		return 0;
 	}
-	
+
 	public ICollection<int> getTop50()
 	{
 		List<int> result = new();
 		for (int i = 1; i <= 50; i++)
 		{
-			StatSet rank = _mainList.get(i);
+			StatSet? rank = _mainList.get(i);
 			if (rank == null)
 			{
 				break;
@@ -493,12 +475,12 @@ public class RankManager
 		}
 		return result;
 	}
-	
+
 	public static RankManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly RankManager INSTANCE = new RankManager();

@@ -201,7 +201,7 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 		}
 
 		writer.WriteByte(0); // isTrueHero() ? 100 : 0
-		writer.WriteByte((_fpcHolder.getHair() > 0) || (_fpcHolder.getEquipHair2() > 0));
+		writer.WriteByte(_fpcHolder.getHair() > 0 || _fpcHolder.getEquipHair2() > 0);
 		writer.WriteByte(0); // Used Ability Points
 		writer.WriteInt32(0); // CursedWeaponClassId
 

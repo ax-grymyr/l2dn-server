@@ -37,13 +37,21 @@ public class GeoPathFinding: PathFinding
 			return null;
 		}
 
-		Location3D startLoc = start.getLoc().Location;
+        GeoNodeLoc? startGeoLoc = start.getLoc();
+        if (startGeoLoc == null)
+            return null;
+
+        GeoNodeLoc? endGeoLoc = end.getLoc();
+        if (endGeoLoc == null)
+            return null;
+
+		Location3D startLoc = startGeoLoc.Location;
 		if (Math.Abs(startLoc.Z - location.Z) > 55)
 		{
 			return null; // Not correct layer.
 		}
 
-		Location3D endLoc = end.getLoc().Location;
+		Location3D endLoc = endGeoLoc.Location;
 		if (Math.Abs(endLoc.Z - targetLocation.Z) > 55)
 		{
 			return null; // Not correct layer.
@@ -83,8 +91,10 @@ public class GeoPathFinding: PathFinding
 		// List of Nodes to Visit.
 		List<GeoNode> toVisit = new();
 		toVisit.Add(start);
-		int targetX = end.getLoc().getNodeX();
-		int targetY = end.getLoc().getNodeY();
+
+        GeoNodeLoc endLoc = end.getLoc() ?? throw new InvalidOperationException();
+		int targetX = endLoc.getNodeX();
+		int targetY = endLoc.getNodeY();
 
 		int dx, dy;
 		bool added;
@@ -122,8 +132,9 @@ public class GeoPathFinding: PathFinding
 				{
 					added = false;
 					n.setParent(node);
-					dx = targetX - n.getLoc().getNodeX();
-					dy = targetY - n.getLoc().getNodeY();
+                    GeoNodeLoc nLoc = n.getLoc() ?? throw new InvalidOperationException();
+					dx = targetX - nLoc.getNodeX();
+					dy = targetY - nLoc.getNodeY();
 					n.setCost(dx * dx + dy * dy);
 					for (int index = 0; index < toVisit.Count; index++)
 					{
@@ -154,30 +165,33 @@ public class GeoPathFinding: PathFinding
 		int directionX;
 		int directionY;
 
-		AbstractNode<GeoNodeLoc> tempNode = node;
-		while (tempNode.getParent() != null)
+		AbstractNode<GeoNodeLoc>? tempNode = node;
+		while (tempNode?.getParent() != null)
 		{
 			// Only add a new route point if moving direction changes.
-			directionX = tempNode.getLoc().getNodeX() - tempNode.getParent().getLoc().getNodeX();
-			directionY = tempNode.getLoc().getNodeY() - tempNode.getParent().getLoc().getNodeY();
+            GeoNodeLoc tempNodeLoc = tempNode.getLoc() ?? throw new InvalidOperationException();
+            GeoNodeLoc tempNodeParentLoc = tempNode.getParent()?.getLoc() ?? throw new InvalidOperationException();
+			directionX = tempNodeLoc.getNodeX() - tempNodeParentLoc.getNodeX();
+			directionY = tempNodeLoc.getNodeY() - tempNodeParentLoc.getNodeY();
 
 			if (directionX != previousDirectionX || directionY != previousDirectionY)
 			{
 				previousDirectionX = directionX;
 				previousDirectionY = directionY;
-				path.Insert(0, tempNode.getLoc());
+				path.Insert(0, tempNodeLoc);
 			}
+
 			tempNode = tempNode.getParent();
 		}
 		return path;
 	}
 
-	private GeoNode[]? readNeighbors(GeoNode n)
+	private GeoNode[] readNeighbors(GeoNode n)
     {
         GeoNodeLoc? loc = n.getLoc();
 		if (loc == null)
 		{
-			return null;
+			return [];
 		}
 
 		int idx = n.getNeighborsIdx();

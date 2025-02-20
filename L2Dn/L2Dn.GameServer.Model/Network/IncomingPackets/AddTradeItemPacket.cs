@@ -28,7 +28,7 @@ public struct AddTradeItemPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        TradeList trade = player.getActiveTradeList();
+        TradeList? trade = player.getActiveTradeList();
         if (trade == null)
         {
             PacketLogger.Instance.Warn("Character: " + player.getName() + " requested item:" + _objectId +
@@ -38,7 +38,8 @@ public struct AddTradeItemPacket: IIncomingPacket<GameSession>
         }
 
         Player partner = trade.getPartner();
-        if (partner == null || World.getInstance().getPlayer(partner.ObjectId) == null || partner.getActiveTradeList() == null)
+        TradeList? partnerTrade = partner.getActiveTradeList();
+        if (partner == null || World.getInstance().getPlayer(partner.ObjectId) == null || partnerTrade == null)
         {
             // Trade partner not found, cancel trade
             if (partner != null)
@@ -52,7 +53,7 @@ public struct AddTradeItemPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (trade.isConfirmed() || partner.getActiveTradeList().isConfirmed())
+        if (trade.isConfirmed() || partnerTrade.isConfirmed())
         {
             player.sendPacket(SystemMessageId.YOU_MAY_NO_LONGER_ADJUST_ITEMS_IN_THE_TRADE_BECAUSE_THE_TRADE_HAS_BEEN_CONFIRMED);
             return ValueTask.CompletedTask;
@@ -73,12 +74,12 @@ public struct AddTradeItemPacket: IIncomingPacket<GameSession>
 
         Item? item1 = player.getInventory().getItemByObjectId(_objectId);
         TradeItem item2 = trade.addItem(_objectId, _count);
-        if (item2 != null)
+        if (item1 != null && item2 != null)
         {
             player.sendPacket(new TradeOwnAddPacket(1, item2));
             player.sendPacket(new TradeOwnAddPacket(2, item2));
-            player.sendPacket(new TradeUpdatePacket(1, null, null, 0));
-            player.sendPacket(new TradeUpdatePacket(2, player, item2, item1.getCount() - item2.getCount()));
+            player.sendPacket(new TradeUpdatePacket(null, 0, 0));
+            player.sendPacket(new TradeUpdatePacket(item2, item1.getCount() - item2.getCount(), item2.getCount()));
             partner.sendPacket(new TradeOtherAddPacket(1, item2));
             partner.sendPacket(new TradeOtherAddPacket(2, item2));
         }

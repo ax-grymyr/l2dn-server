@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Model.Clans;
 public class ClanMember
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClanMember));
-	
+
 	private readonly Clan _clan;
 	private int _objectId;
 	private string _name;
@@ -31,7 +31,7 @@ public class ClanMember
 	private int _apprentice;
 	private int? _sponsor;
 	private TimeSpan _onlineTime;
-	
+
 	/**
 	 * Used to restore a clan member from the database.
 	 * @param clan the clan where the clan member belongs.
@@ -41,9 +41,8 @@ public class ClanMember
 	public ClanMember(Clan clan, Character clanMember)
 	{
 		if (clan == null)
-		{
 			throw new ArgumentNullException(nameof(clan),"Cannot create a Clan Member with a null clan.");
-		}
+
 		_clan = clan;
 		_name = clanMember.Name;
 		_level = clanMember.Level;
@@ -57,7 +56,7 @@ public class ClanMember
 		_sex = clanMember.Sex;
 		_race = clanMember.Class.GetRace();
 	}
-	
+
 	/**
 	 * Creates a clan member from a player instance.
 	 * @param clan the clan where the player belongs
@@ -83,7 +82,7 @@ public class ClanMember
 		_sex = player.getAppearance().getSex();
 		_race = player.getRace();
 	}
-	
+
 	/**
 	 * Sets the player instance.
 	 * @param player the new player instance
@@ -105,7 +104,7 @@ public class ClanMember
 			_sex = _player.getAppearance().getSex();
 			_race = _player.getRace();
 		}
-		
+
 		if (player != null)
 		{
 			_clan.addSkillEffects(player);
@@ -120,7 +119,7 @@ public class ClanMember
 		}
 		_player = player;
 	}
-	
+
 	/**
 	 * Gets the player instance.
 	 * @return the player instance
@@ -129,7 +128,7 @@ public class ClanMember
 	{
 		return _player;
 	}
-	
+
 	/**
 	 * Verifies if the clan member is online.
 	 * @return {@code true} if is online
@@ -146,7 +145,7 @@ public class ClanMember
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Gets the class id.
 	 * @return the classId
@@ -155,7 +154,7 @@ public class ClanMember
 	{
 		return _player != null ? _player.getClassId() : _classId;
 	}
-	
+
 	/**
 	 * Gets the level.
 	 * @return the level
@@ -164,7 +163,7 @@ public class ClanMember
 	{
 		return _player != null ? _player.getLevel() : _level;
 	}
-	
+
 	/**
 	 * Gets the name.
 	 * @return the name
@@ -173,7 +172,7 @@ public class ClanMember
 	{
 		return _player != null ? _player.getName() : _name;
 	}
-	
+
 	/**
 	 * Gets the object id.
 	 * @return Returns the objectId.
@@ -182,7 +181,7 @@ public class ClanMember
 	{
 		return _player != null ? _player.ObjectId : _objectId;
 	}
-	
+
 	/**
 	 * Gets the title.
 	 * @return the title
@@ -191,7 +190,7 @@ public class ClanMember
 	{
 		return _player != null ? _player.getTitle() : _title;
 	}
-	
+
 	/**
 	 * Gets the pledge type.
 	 * @return the pledge type
@@ -200,7 +199,7 @@ public class ClanMember
 	{
 		return _player != null ? _player.getPledgeType() : _pledgeType;
 	}
-	
+
 	/**
 	 * Sets the pledge type.
 	 * @param pledgeType the new pledge type
@@ -218,13 +217,13 @@ public class ClanMember
 			updatePledgeType();
 		}
 	}
-	
+
 	/**
 	 * Update pledge type.
 	 */
 	public void updatePledgeType()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = getObjectId();
@@ -236,7 +235,7 @@ public class ClanMember
 			LOGGER.Error("Could not update pledge type: " + e);
 		}
 	}
-	
+
 	/**
 	 * Gets the power grade.
 	 * @return the power grade
@@ -245,7 +244,7 @@ public class ClanMember
 	{
 		return _player != null ? _player.getPowerGrade() : _powerGrade;
 	}
-	
+
 	/**
 	 * Sets the power grade.
 	 * @param powerGrade the new power grade
@@ -263,13 +262,13 @@ public class ClanMember
 			updatePowerGrade();
 		}
 	}
-	
+
 	/**
 	 * Update the characters table of the database with power grade.
 	 */
 	public void updatePowerGrade()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = getObjectId();
@@ -281,7 +280,7 @@ public class ClanMember
 			LOGGER.Warn("Could not update power _grade: " + e);
 		}
 	}
-	
+
 	/**
 	 * Sets the apprentice and sponsor.
 	 * @param apprenticeID the apprentice id
@@ -292,7 +291,7 @@ public class ClanMember
 		_apprentice = apprenticeID;
 		_sponsor = sponsorID;
 	}
-	
+
 	/**
 	 * Gets the player's race ordinal.
 	 * @return the race ordinal
@@ -301,7 +300,7 @@ public class ClanMember
 	{
 		return _player != null ? _player.getRace() : _race;
 	}
-	
+
 	/**
 	 * Gets the player's sex.
 	 * @return the sex
@@ -310,7 +309,7 @@ public class ClanMember
 	{
 		return _player != null ? _player.getAppearance().getSex() : _sex;
 	}
-	
+
 	/**
 	 * Gets the sponsor.
 	 * @return the sponsor
@@ -319,7 +318,7 @@ public class ClanMember
 	{
 		return _player != null ? _player.getSponsor() : _sponsor;
 	}
-	
+
 	/**
 	 * Gets the apprentice.
 	 * @return the apprentice
@@ -328,7 +327,7 @@ public class ClanMember
 	{
 		return _player != null ? _player.getApprentice() : _apprentice;
 	}
-	
+
 	/**
 	 * Gets the apprentice or sponsor name.
 	 * @return the apprentice or sponsor name
@@ -340,7 +339,7 @@ public class ClanMember
 			_apprentice = _player.getApprentice();
 			_sponsor = _player.getSponsor();
 		}
-		
+
 		if (_apprentice != 0)
 		{
 			ClanMember apprentice = _clan.getClanMember(_apprentice);
@@ -350,7 +349,7 @@ public class ClanMember
 			}
 			return "Error";
 		}
-		
+
 		if (_sponsor != null)
 		{
 			ClanMember sponsor = _clan.getClanMember(_sponsor.Value);
@@ -362,7 +361,7 @@ public class ClanMember
 		}
 		return "";
 	}
-	
+
 	/**
 	 * Gets the clan.
 	 * @return the clan
@@ -371,7 +370,7 @@ public class ClanMember
 	{
 		return _clan;
 	}
-	
+
 	/**
 	 * Calculate pledge class.
 	 * @param player the player
@@ -384,7 +383,7 @@ public class ClanMember
 		{
 			return pledgeClass;
 		}
-		
+
 		Clan clan = player.getClan();
 		if (clan != null)
 		{
@@ -761,20 +760,20 @@ public class ClanMember
 				}
 			}
 		}
-		
+
 		if (player.isNoble() && (pledgeClass < SocialClass.ELDER))
 		{
 			pledgeClass = SocialClass.ELDER;
 		}
-		
+
 		if (player.isHero() && (pledgeClass < SocialClass.COUNT))
 		{
 			pledgeClass = SocialClass.COUNT;
 		}
-		
+
 		return pledgeClass;
 	}
-	
+
 	/**
 	 * Save apprentice and sponsor.
 	 * @param apprentice the apprentice
@@ -782,7 +781,7 @@ public class ClanMember
 	 */
 	public void saveApprenticeAndSponsor(int apprentice, int? sponsor)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = getObjectId();
@@ -795,17 +794,17 @@ public class ClanMember
 			LOGGER.Warn("Could not save apprentice/sponsor: " + e);
 		}
 	}
-	
+
 	public TimeSpan getOnlineTime()
 	{
 		return _onlineTime;
 	}
-	
+
 	public void setOnlineTime(TimeSpan onlineTime)
 	{
 		_onlineTime = onlineTime;
 	}
-	
+
 	public void resetBonus()
 	{
 		_onlineTime = TimeSpan.Zero;
@@ -813,19 +812,19 @@ public class ClanMember
 		vars.set("CLAIMED_CLAN_REWARDS", (int)ClanRewardType.None);
 		vars.storeMe();
 	}
-	
+
 	public int getOnlineStatus()
 	{
 		return !isOnline() ? 0 : _onlineTime >= (Config.ALT_CLAN_MEMBERS_TIME_FOR_BONUS) ? 2 : 1;
 	}
-	
+
 	public bool isRewardClaimed(ClanRewardType type)
 	{
 		PlayerVariables vars = getVariables();
 		ClanRewardType claimedRewards = (ClanRewardType)vars.getInt("CLAIMED_CLAN_REWARDS", (int)ClanRewardType.All);
 		return (claimedRewards & type) == type;
 	}
-	
+
 	public void setRewardClaimed(ClanRewardType type)
 	{
 		PlayerVariables vars = getVariables();
@@ -834,7 +833,7 @@ public class ClanMember
 		vars.set("CLAIMED_CLAN_REWARDS", (int)claimedRewards);
 		vars.storeMe();
 	}
-	
+
 	private PlayerVariables getVariables()
 	{
 		return _player != null ? _player.getVariables() : new PlayerVariables(_objectId);

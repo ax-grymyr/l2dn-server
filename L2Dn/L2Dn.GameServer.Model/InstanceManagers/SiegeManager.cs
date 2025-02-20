@@ -38,7 +38,7 @@ public class SiegeManager
 	public void addSiegeSkills(Player character)
 	{
 		foreach (Skill sk in SkillData.getInstance()
-			         .getSiegeSkills(character.isNoble(), character.getClan().getCastleId() > 0))
+			         .getSiegeSkills(character.isNoble(), character.getClan()?.getCastleId() > 0))
 		{
 			character.addSkill(sk, false);
 		}
@@ -79,7 +79,7 @@ public class SiegeManager
 	public void removeSiegeSkills(Player character)
 	{
 		foreach (Skill sk in SkillData.getInstance()
-			         .getSiegeSkills(character.isNoble(), character.getClan().getCastleId() > 0))
+			         .getSiegeSkills(character.isNoble(), character.getClan()?.getCastleId() > 0))
 		{
 			character.removeSkill(sk);
 		}
@@ -124,7 +124,7 @@ public class SiegeManager
 				catch (Exception e)
 				{
 					LOGGER.Warn(GetType().Name + ": Error while loading control tower(s) for " + castle.getName() +
-					            " castle.");
+					            " castle: " + e);
 				}
 			}
 
@@ -156,7 +156,7 @@ public class SiegeManager
 				catch (Exception e)
 				{
 					LOGGER.Warn(GetType().Name + ": Error while loading flame tower(s) for " + castle.getName() +
-					            " castle.");
+					            " castle: " + e);
 				}
 			}
 
@@ -170,12 +170,12 @@ public class SiegeManager
 		}
 	}
 
-	public List<TowerSpawn> getControlTowers(int castleId)
+	public List<TowerSpawn>? getControlTowers(int castleId)
 	{
 		return _controlTowers.get(castleId);
 	}
 
-	public List<TowerSpawn> getFlameTowers(int castleId)
+	public List<TowerSpawn>? getFlameTowers(int castleId)
 	{
 		return _flameTowers.get(castleId);
 	}
@@ -249,7 +249,7 @@ public class SiegeManager
 		return sieges;
 	}
 
-	public Siege getSiege(int castleId)
+	public Siege? getSiege(int castleId)
 	{
 		foreach (Castle castle in CastleManager.getInstance().getCastles())
 		{
@@ -269,7 +269,7 @@ public class SiegeManager
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (CastleTrapUpgrade record in ctx.CastleTrapUpgrades.Where(c => c.CastleId == castleId))
 			{
-				_flameTowers.get(castleId)[record.TowerIndex].setUpgradeLevel(record.Level);
+				_flameTowers[castleId][record.TowerIndex].setUpgradeLevel(record.Level);
 			}
 		}
 		catch (Exception e)
@@ -283,7 +283,7 @@ public class SiegeManager
 		foreach (Castle castle in CastleManager.getInstance().getCastles())
 		{
 			int diff = (int)(castle.getSiegeDate() - DateTime.UtcNow).TotalMilliseconds;
-			if (((diff > 0) && (diff < 86400000)) || castle.getSiege().isInProgress())
+			if ((diff > 0 && diff < 86400000) || castle.getSiege().isInProgress())
 			{
 				player.sendPacket(new MercenaryCastleWarCastleSiegeHudInfoPacket(castle.getResidenceId()));
 			}

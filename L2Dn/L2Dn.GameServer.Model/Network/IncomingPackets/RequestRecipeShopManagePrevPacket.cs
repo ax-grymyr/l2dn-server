@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -17,13 +18,15 @@ public struct RequestRecipeShopManagePrevPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (player.isAlikeDead() || player.getTarget() == null || !player.getTarget().isPlayer())
+        WorldObject? target = player.getTarget();
+        Player? targetPlayer = target?.getActingPlayer();
+        if (player.isAlikeDead() || target == null || !target.isPlayer() || targetPlayer == null)
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
-        player.sendPacket(new RecipeShopSellListPacket(player, player.getTarget().getActingPlayer()));
+
+        player.sendPacket(new RecipeShopSellListPacket(player, targetPlayer));
 
         return ValueTask.CompletedTask;
     }

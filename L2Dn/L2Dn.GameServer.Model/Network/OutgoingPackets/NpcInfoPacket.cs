@@ -48,13 +48,13 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		if (npc.getHeading() > 0)
 			_helper.AddComponent(NpcInfoType.HEADING);
 
-		if ((npc.getStat().getPAtkSpd() > 0) || (npc.getStat().getMAtkSpd() > 0))
+		if (npc.getStat().getPAtkSpd() > 0 || npc.getStat().getMAtkSpd() > 0)
 			_helper.AddComponent(NpcInfoType.ATK_CAST_SPEED);
 
 		if (npc.getRunSpeed() > 0)
 			_helper.AddComponent(NpcInfoType.SPEED_MULTIPLIER);
 
-		if ((npc.getLeftHandItem() > 0) || (npc.getRightHandItem() > 0))
+		if (npc.getLeftHandItem() > 0 || npc.getRightHandItem() > 0)
 			_helper.AddComponent(NpcInfoType.EQUIPPED);
 
 		if (npc.getTeam() != Team.NONE)
@@ -121,7 +121,7 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		if (clanId > 0)
 		{
 			Clan? clan = ClanTable.getInstance().getClan(clanId.Value);
-			if ((clan != null) && ((npc.getTemplate().getId() == 34156 /* Clan Stronghold Device */) ||
+			if (clan != null && (npc.getTemplate().getId() == 34156 /* Clan Stronghold Device */ ||
 			                       (!npc.isMonster() && npc.isInsideZone(ZoneId.PEACE))))
 			{
 				_clanId = clan.getId();

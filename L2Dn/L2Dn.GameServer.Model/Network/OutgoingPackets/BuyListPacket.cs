@@ -33,7 +33,7 @@ public readonly struct BuyListPacket: IOutgoingPacket
         writer.WriteInt16((short)_list.Count);
         foreach (Product product in _list)
         {
-            if ((product.getCount() > 0) || !product.hasLimitedStock())
+            if (product.getCount() > 0 || !product.hasLimitedStock())
             {
                 InventoryPacketHelper.WriteItem(writer, product);
                 writer.WriteInt64((long)(product.getPrice() * (1.0 + _castleTaxRate + product.getBaseTaxRate())));

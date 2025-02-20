@@ -26,7 +26,7 @@ public struct RequestPledgeRecruitInfoPacket: IIncomingPacket<GameSession>
         if (clan == null)
             return ValueTask.CompletedTask;
 
-        player.sendPacket(new ExPledgeRecruitInfoPacket(_clanId));
+        player.sendPacket(new ExPledgeRecruitInfoPacket(clan));
 
         return ValueTask.CompletedTask;
     }

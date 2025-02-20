@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 public struct RequestDeleteSentPostPacket: IIncomingPacket<GameSession>
 {
     private const int BATCH_LENGTH = 4; // length of the one item
-	
+
     private int[] _msgIds;
 
     public void ReadContent(PacketBitReader reader)
@@ -21,7 +21,7 @@ public struct RequestDeleteSentPostPacket: IIncomingPacket<GameSession>
         {
             return;
         }
-		
+
         _msgIds = new int[count];
         for (int i = 0; i < count; i++)
             _msgIds[i] = reader.ReadInt32();
@@ -35,16 +35,16 @@ public struct RequestDeleteSentPostPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         // if (!player.isInsideZone(ZoneId.PEACE))
         // {
         // player.sendPacket(SystemMessageId.THE_MAILBOX_FUNCTIONS_CAN_BE_USED_ONLY_IN_PEACE_ZONES_OUTSIDE_OF_THEM_YOU_CAN_ONLY_CHECK_ITS_CONTENTS);
         // return;
         // }
-		
+
         foreach (int msgId in _msgIds)
         {
-            Message msg = MailManager.getInstance().getMessage(msgId);
+            Message? msg = MailManager.getInstance().getMessage(msgId);
             if (msg == null)
             {
                 continue;
@@ -54,14 +54,14 @@ public struct RequestDeleteSentPostPacket: IIncomingPacket<GameSession>
                 Util.handleIllegalPlayerAction(player, player + " tried to delete not own post!", Config.DEFAULT_PUNISH);
                 return ValueTask.CompletedTask;
             }
-			
+
             if (msg.hasAttachments() || msg.isDeletedBySender())
                 return ValueTask.CompletedTask;
-			
+
             msg.setDeletedBySender();
         }
         player.sendPacket(new ExChangePostStatePacket(false, _msgIds, Message.DELETED));
-        
+
         return ValueTask.CompletedTask;
     }
 }

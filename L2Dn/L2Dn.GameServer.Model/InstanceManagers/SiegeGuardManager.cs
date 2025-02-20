@@ -25,13 +25,13 @@ public class SiegeGuardManager
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SiegeGuardManager));
 	private static readonly Set<Item> _droppedTickets = new();
 	private static readonly Map<int, Set<Spawn>> _siegeGuardSpawn = new();
-	
+
 	protected SiegeGuardManager()
 	{
 		_droppedTickets.clear();
 		load();
 	}
-	
+
 	private void load()
 	{
 		try
@@ -41,15 +41,15 @@ public class SiegeGuardManager
 			{
 				int npcId = record.NpcId;
 				Location3D location = new(record.X, record.Y, record.Z);
-				Castle castle = CastleManager.getInstance().getCastle(location);
+				Castle? castle = CastleManager.getInstance().getCastle(location);
 				if (castle == null)
 				{
 					LOGGER.Error($"Siege guard ticket cannot be placed! Castle is null at {location}");
 					continue;
 				}
 
-				SiegeGuardHolder holder = getSiegeGuardByNpc(castle.getResidenceId(), npcId);
-				if ((holder != null) && !castle.getSiege().isInProgress())
+				SiegeGuardHolder? holder = getSiegeGuardByNpc(castle.getResidenceId(), npcId);
+				if (holder != null && !castle.getSiege().isInProgress())
 				{
 					Item dropticket = new Item(holder.getItemId());
 					dropticket.setItemLocation(ItemLocation.VOID);
@@ -66,14 +66,14 @@ public class SiegeGuardManager
 			LOGGER.Warn(e);
 		}
 	}
-	
+
 	/**
 	 * Finds {@code SiegeGuardHolder} equals to castle id and npc id.
 	 * @param castleId the ID of the castle
 	 * @param itemId the ID of the item
 	 * @return the {@code SiegeGuardHolder} for this castle ID and item ID if any, otherwise {@code null}
 	 */
-	public SiegeGuardHolder getSiegeGuardByItem(int castleId, int itemId)
+	public SiegeGuardHolder? getSiegeGuardByItem(int castleId, int itemId)
 	{
 		foreach (SiegeGuardHolder holder in CastleData.getInstance().getSiegeGuardsForCastle(castleId))
 		{
@@ -84,14 +84,14 @@ public class SiegeGuardManager
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Finds {@code SiegeGuardHolder} equals to castle id and npc id.
 	 * @param castleId the ID of the castle
 	 * @param npcId the ID of the npc
 	 * @return the {@code SiegeGuardHolder} for this castle ID and npc ID if any, otherwise {@code null}
 	 */
-	public SiegeGuardHolder getSiegeGuardByNpc(int castleId, int npcId)
+	public SiegeGuardHolder? getSiegeGuardByNpc(int castleId, int npcId)
 	{
 		foreach (SiegeGuardHolder holder in CastleData.getInstance().getSiegeGuardsForCastle(castleId))
 		{
@@ -102,7 +102,7 @@ public class SiegeGuardManager
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Checks if {@code Player} is too much close to another ticket.
 	 * @param player the Player
@@ -119,7 +119,7 @@ public class SiegeGuardManager
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Checks if castle is under npc limit.
 	 * @param castleId the ID of the castle
@@ -128,8 +128,11 @@ public class SiegeGuardManager
 	 */
 	public bool isAtNpcLimit(int castleId, int itemId)
 	{
-		SiegeGuardHolder holder = getSiegeGuardByItem(castleId, itemId);
-		long count = 0;
+		SiegeGuardHolder? holder = getSiegeGuardByItem(castleId, itemId);
+        if (holder == null)
+            return true; // TODO: verify this
+
+        long count = 0;
 		foreach (Item ticket in _droppedTickets)
 		{
 			if (ticket.getId() == itemId)
@@ -139,7 +142,7 @@ public class SiegeGuardManager
 		}
 		return count >= holder.getMaxNpcAmout();
 	}
-	
+
 	/**
 	 * Adds ticket in current world.
 	 * @param itemId the ID of the item
@@ -147,21 +150,21 @@ public class SiegeGuardManager
 	 */
 	public void addTicket(int itemId, Player player)
 	{
-		Castle castle = CastleManager.getInstance().getCastle(player);
+		Castle? castle = CastleManager.getInstance().getCastle(player);
 		if (castle == null)
 		{
 			return;
 		}
-		
+
 		if (isAtNpcLimit(castle.getResidenceId(), itemId))
 		{
 			return;
 		}
-		
-		SiegeGuardHolder holder = getSiegeGuardByItem(castle.getResidenceId(), itemId);
+
+		SiegeGuardHolder? holder = getSiegeGuardByItem(castle.getResidenceId(), itemId);
 		if (holder != null)
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.CastleSiegeGuards.Add(new CastleSiegeGuard()
@@ -182,7 +185,7 @@ public class SiegeGuardManager
 			{
 				LOGGER.Warn("Error adding siege guard for castle " + castle.getName() + ": " + e);
 			}
-			
+
 			spawnMercenary(player.Location, holder);
 			Item dropticket = new Item(itemId);
 			dropticket.setItemLocation(ItemLocation.VOID);
@@ -191,7 +194,7 @@ public class SiegeGuardManager
 			_droppedTickets.add(dropticket);
 		}
 	}
-	
+
 	/**
 	 * Spawns Siege Guard in current world.
 	 * @param pos the object containing the spawn location coordinates
@@ -199,7 +202,7 @@ public class SiegeGuardManager
 	 */
 	private void spawnMercenary(Location location, SiegeGuardHolder holder)
 	{
-		NpcTemplate template = NpcData.getInstance().getTemplate(holder.getNpcId());
+		NpcTemplate? template = NpcData.getInstance().getTemplate(holder.getNpcId());
 		if (template != null)
 		{
 			Defender npc = new Defender(template);
@@ -211,7 +214,7 @@ public class SiegeGuardManager
 			npc.setImmobilized(holder.isStationary());
 		}
 	}
-	
+
 	/**
 	 * Delete all tickets from a castle.
 	 * @param castleId the ID of the castle
@@ -220,43 +223,43 @@ public class SiegeGuardManager
 	{
 		foreach (Item ticket in _droppedTickets)
 		{
-			if ((ticket != null) && (getSiegeGuardByItem(castleId, ticket.getId()) != null))
+			if (ticket != null && getSiegeGuardByItem(castleId, ticket.getId()) != null)
 			{
 				ticket.decayMe();
 				_droppedTickets.remove(ticket);
 			}
 		}
 	}
-	
+
 	/**
 	 * remove a single ticket and its associated spawn from the world (used when the castle lord picks up a ticket, for example).
 	 * @param item the item ID
 	 */
 	public void removeTicket(Item item)
 	{
-		Castle castle = CastleManager.getInstance().getCastle(item);
+		Castle? castle = CastleManager.getInstance().getCastle(item);
 		if (castle == null)
 		{
 			return;
 		}
-		
-		SiegeGuardHolder holder = getSiegeGuardByItem(castle.getResidenceId(), item.getId());
+
+		SiegeGuardHolder? holder = getSiegeGuardByItem(castle.getResidenceId(), item.getId());
 		if (holder == null)
 		{
 			return;
 		}
-		
+
 		removeSiegeGuard(holder.getNpcId(), item.Location.Location3D);
 		_droppedTickets.remove(item);
 	}
-	
+
 	/**
 	 * Loads all siege guards for castle.
 	 * @param castle the castle instance
 	 */
 	private void loadSiegeGuard(Castle castle)
 	{
-		try 
+		try
 		{
 			int castleId = castle.getResidenceId();
 			bool isHired = castle.getOwnerId() > 0;
@@ -279,7 +282,7 @@ public class SiegeGuardManager
 			LOGGER.Warn("Error loading siege guard for castle " + castle.getName() + ": " + e);
 		}
 	}
-	
+
 	/**
 	 * Remove single siege guard.
 	 * @param npcId the ID of NPC
@@ -299,7 +302,7 @@ public class SiegeGuardManager
 			LOGGER.Warn("Error deleting hired siege guard at " + location + " : " + e);
 		}
 	}
-	
+
 	/**
 	 * Remove all siege guards for castle.
 	 * @param castle the castle instance
@@ -317,7 +320,7 @@ public class SiegeGuardManager
 			LOGGER.Warn("Error deleting hired siege guard for castle " + castle.getName() + ": " + e);
 		}
 	}
-	
+
 	/**
 	 * Spawn all siege guards for castle.
 	 * @param castle the castle instance
@@ -326,25 +329,25 @@ public class SiegeGuardManager
 	{
 		try
 		{
-			bool isHired = (castle.getOwnerId() > 0);
+			bool isHired = castle.getOwnerId() > 0;
 			loadSiegeGuard(castle);
-			
+
 			foreach (Spawn spawn in getSpawnedGuards(castle.getResidenceId()))
 			{
 				if (spawn != null)
 				{
 					spawn.init();
-					if (isHired || (spawn.getRespawnDelay() == TimeSpan.Zero))
+					if (isHired || spawn.getRespawnDelay() == TimeSpan.Zero)
 					{
 						spawn.stopRespawn();
 					}
-					
-					SiegeGuardHolder holder = getSiegeGuardByNpc(castle.getResidenceId(), spawn.getLastSpawn().getId());
+
+					SiegeGuardHolder? holder = getSiegeGuardByNpc(castle.getResidenceId(), spawn.getLastSpawn().getId());
 					if (holder == null)
 					{
 						continue;
 					}
-					
+
 					spawn.getLastSpawn().setImmobilized(holder.isStationary());
 				}
 			}
@@ -354,7 +357,7 @@ public class SiegeGuardManager
 			LOGGER.Error("Error spawning siege guards for castle " + castle.getName(), e);
 		}
 	}
-	
+
 	/**
 	 * Unspawn all siege guards for castle.
 	 * @param castle the castle instance
@@ -363,7 +366,7 @@ public class SiegeGuardManager
 	{
 		foreach (Spawn spawn in getSpawnedGuards(castle.getResidenceId()))
 		{
-			if ((spawn != null) && (spawn.getLastSpawn() != null))
+			if (spawn != null && spawn.getLastSpawn() != null)
 			{
 				spawn.stopRespawn();
 				spawn.getLastSpawn().doDie(spawn.getLastSpawn());
@@ -371,12 +374,12 @@ public class SiegeGuardManager
 		}
 		getSpawnedGuards(castle.getResidenceId()).clear();
 	}
-	
+
 	public Set<Spawn> getSpawnedGuards(int castleId)
 	{
 		return _siegeGuardSpawn.computeIfAbsent(castleId, key => new());
 	}
-	
+
 	/**
 	 * Gets the single instance of {@code MercTicketManager}.
 	 * @return single instance of {@code MercTicketManager}
@@ -385,7 +388,7 @@ public class SiegeGuardManager
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly SiegeGuardManager INSTANCE = new SiegeGuardManager();

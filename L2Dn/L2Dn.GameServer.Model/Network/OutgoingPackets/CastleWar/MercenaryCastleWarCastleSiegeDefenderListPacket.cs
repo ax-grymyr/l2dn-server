@@ -39,7 +39,7 @@ public readonly struct MercenaryCastleWarCastleSiegeDefenderListPacket: IOutgoin
 			writer.WriteInt32(size);
 
 			// Owners.
-			Clan owner = castle.getOwner();
+			Clan? owner = castle.getOwner();
 			if (owner != null)
 			{
 				writer.WriteInt32(owner.getId());
@@ -64,7 +64,7 @@ public readonly struct MercenaryCastleWarCastleSiegeDefenderListPacket: IOutgoin
 			foreach (SiegeClan clan in castle.getSiege().getDefenderClans())
 			{
 				Clan? defender = ClanTable.getInstance().getClan(clan.getClanId());
-				if ((defender == null) || (defender == castle.getOwner()))
+				if (defender == null || defender == castle.getOwner())
 				{
 					continue;
 				}

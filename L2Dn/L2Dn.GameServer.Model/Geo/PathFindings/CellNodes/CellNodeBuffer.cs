@@ -41,7 +41,7 @@ public class CellNodeBuffer
 		return Monitor.TryEnter(_lock);
 	}
 
-	public CellNode findPath(int x, int y, int z, int tx, int ty, int tz)
+	public CellNode? findPath(int x, int y, int z, int tx, int ty, int tz)
 	{
 		_timeStamp = DateTime.UtcNow;
 		_baseX = x + (tx - x - _mapSize) / 2; // Middle of the line (x,y) - (tx,ty).
@@ -50,16 +50,18 @@ public class CellNodeBuffer
 		_targetY = ty;
 		_targetZ = tz;
 		_current = getNode(x, y, z);
-		_current.setCost(getCost(x, y, z, Config.HIGH_WEIGHT));
+		_current!.setCost(getCost(x, y, z, Config.HIGH_WEIGHT)); // TODO
 
 		for (int count = 0; count < MAX_ITERATIONS; count++)
-		{
-			if (_current.getLoc().getNodeX() == _targetX && _current.getLoc().getNodeY() == _targetY && Math.Abs(_current.getLoc().Z - _targetZ) < 64)
-			{
-				return _current; // Found.
-			}
+        {
+            NodeLoc currentLoc = _current?.getLoc() ?? throw new InvalidOperationException();
+            if (currentLoc.getNodeX() == _targetX && currentLoc.getNodeY() == _targetY &&
+                Math.Abs(currentLoc.Z - _targetZ) < 64)
+            {
+                return _current; // Found.
+            }
 
-			getNeighbors();
+            getNeighbors();
 			if (_current.getNext() == null)
 			{
 				return null; // No more ways.
@@ -74,7 +76,7 @@ public class CellNodeBuffer
 	{
 		_current = null;
 
-		CellNode node;
+		CellNode? node;
 		for (int i = 0; i < _mapSize; i++)
 		{
 			for (int j = 0; j < _mapSize; j++)
@@ -103,7 +105,7 @@ public class CellNodeBuffer
 	public List<CellNode> debugPath()
 	{
 		List<CellNode> result = new();
-		for (CellNode n = _current; n.getParent() != null; n = (CellNode) n.getParent())
+		for (CellNode? n = _current; n?.getParent() != null; n = (CellNode?)n.getParent())
 		{
 			result.Add(n);
 			n.setCost(-n.getCost());
@@ -113,7 +115,7 @@ public class CellNodeBuffer
 		{
 			for (int j = 0; j < _mapSize; j++)
 			{
-				CellNode n = _buffer[i][j];
+				CellNode? n = _buffer[i][j];
 				if (n == null || !n.isInUse() || n.getCost() <= 0)
 				{
 					continue;
@@ -126,15 +128,16 @@ public class CellNodeBuffer
 	}
 
 	private void getNeighbors()
-	{
-		if (_current.getLoc().canGoNone())
+    {
+        NodeLoc currentLoc = _current?.getLoc() ?? throw new InvalidOperationException();
+		if (currentLoc.canGoNone())
 		{
 			return;
 		}
 
-		int x = _current.getLoc().getNodeX();
-		int y = _current.getLoc().getNodeY();
-		int z = _current.getLoc().Z;
+		int x = currentLoc.getNodeX();
+		int y = currentLoc.getNodeY();
+		int z = currentLoc.Z;
 
 		CellNode? nodeE = null;
 		CellNode? nodeS = null;
@@ -142,25 +145,25 @@ public class CellNodeBuffer
 		CellNode? nodeN = null;
 
 		// East
-		if (_current.getLoc().canGoEast())
+		if (currentLoc.canGoEast())
 		{
 			nodeE = addNode(x + 1, y, z, false);
 		}
 
 		// South
-		if (_current.getLoc().canGoSouth())
+		if (currentLoc.canGoSouth())
 		{
 			nodeS = addNode(x, y + 1, z, false);
 		}
 
 		// West
-		if (_current.getLoc().canGoWest())
+		if (currentLoc.canGoWest())
 		{
 			nodeW = addNode(x - 1, y, z, false);
 		}
 
 		// North
-		if (_current.getLoc().canGoNorth())
+		if (currentLoc.canGoNorth())
 		{
 			nodeN = addNode(x, y - 1, z, false);
 		}
@@ -171,25 +174,25 @@ public class CellNodeBuffer
 		}
 
 		// SouthEast
-		if (nodeE != null && nodeS != null && nodeE.getLoc().canGoSouth() && nodeS.getLoc().canGoEast())
+		if (nodeE != null && nodeS != null && nodeE.getLoc()?.canGoSouth() == true && nodeS.getLoc()?.canGoEast() == true)
 		{
 			addNode(x + 1, y + 1, z, true);
 		}
 
 		// SouthWest
-		if (nodeS != null && nodeW != null && nodeW.getLoc().canGoSouth() && nodeS.getLoc().canGoWest())
+		if (nodeS != null && nodeW != null && nodeW.getLoc()?.canGoSouth() == true && nodeS.getLoc()?.canGoWest() == true)
 		{
 			addNode(x - 1, y + 1, z, true);
 		}
 
 		// NorthEast
-		if (nodeN != null && nodeE != null && nodeE.getLoc().canGoNorth() && nodeN.getLoc().canGoEast())
+		if (nodeN != null && nodeE != null && nodeE.getLoc()?.canGoNorth() == true && nodeN.getLoc()?.canGoEast() == true)
 		{
 			addNode(x + 1, y - 1, z, true);
 		}
 
 		// NorthWest
-		if (nodeN != null && nodeW != null && nodeW.getLoc().canGoNorth() && nodeN.getLoc().canGoWest())
+		if (nodeN != null && nodeW != null && nodeW.getLoc()?.canGoNorth() == true && nodeN.getLoc()?.canGoWest() == true)
 		{
 			addNode(x - 1, y - 1, z, true);
 		}
@@ -219,9 +222,10 @@ public class CellNodeBuffer
 		{
 			result.setInUse();
 			// Re-init node if needed.
-			if (result.getLoc() != null)
+            NodeLoc? resultLoc = result.getLoc();
+			if (resultLoc != null)
 			{
-				result.getLoc().set(x, y, z);
+                resultLoc.set(x, y, z);
 			}
 			else
 			{
@@ -244,12 +248,14 @@ public class CellNodeBuffer
 			return newNode;
 		}
 
-		int geoZ = newNode.getLoc().Z;
+        NodeLoc newNodeLoc = newNode.getLoc() ?? throw new InvalidOperationException();
+		int geoZ = newNodeLoc.Z;
 
-		int stepZ = Math.Abs(geoZ - _current.getLoc().Z);
+        NodeLoc currentLoc = _current?.getLoc() ?? throw new InvalidOperationException();
+		int stepZ = Math.Abs(geoZ - currentLoc.Z);
 		float weight = diagonal ? Config.DIAGONAL_WEIGHT : Config.LOW_WEIGHT;
 
-		if (!newNode.getLoc().canGoAll() || stepZ > 16)
+		if (!newNodeLoc.canGoAll() || stepZ > 16)
 		{
 			weight = Config.HIGH_WEIGHT;
 		}
@@ -299,7 +305,8 @@ public class CellNodeBuffer
 	private bool isHighWeight(int x, int y, int z)
 	{
 		CellNode? result = getNode(x, y, z);
-		return result == null || !result.getLoc().canGoAll() || Math.Abs(result.getLoc().Z - z) > 16;
+        NodeLoc? resultLoc = result?.getLoc();
+		return result == null || resultLoc == null || !resultLoc.canGoAll() || Math.Abs(resultLoc.Z - z) > 16;
 	}
 
 	private double getCost(int x, int y, int z, float weight)

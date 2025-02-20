@@ -14,7 +14,7 @@ public readonly struct ExValidateLocationInAirShipPacket: IOutgoingPacket
     public ExValidateLocationInAirShipPacket(Player player)
     {
         _player = player;
-        _shipId = _player.getAirShip().ObjectId;
+        _shipId = _player.getAirShip()?.ObjectId ?? 0; // TODO: pass airShipId as parameter
         _location = new Location(player.getInVehiclePosition(), player.getHeading());
     }
 

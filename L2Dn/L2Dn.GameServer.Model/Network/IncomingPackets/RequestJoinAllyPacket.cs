@@ -43,11 +43,13 @@ public struct RequestJoinAllyPacket: IIncomingPacket<GameSession>
         if (!player.getRequest().setRequest(target, this))
             return ValueTask.CompletedTask;
 
+        string allyName = clan.getAllyName() ?? string.Empty;
+
         SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_LEADER_S2_HAS_REQUESTED_AN_ALLIANCE);
-        sm.Params.addString(clan.getAllyName());
+        sm.Params.addString(allyName);
         sm.Params.addString(player.getName());
         target.sendPacket(sm);
-        target.sendPacket(new AskJoinAllyPacket(player.ObjectId, clan.getAllyName()));
+        target.sendPacket(new AskJoinAllyPacket(player.ObjectId, allyName));
 
         return ValueTask.CompletedTask;
     }

@@ -29,7 +29,7 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class WalkingManager: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(WalkingManager));
-	
+
 	// Repeat style:
 	// -1 - no repeat
 	// 0 - go back
@@ -41,7 +41,7 @@ public class WalkingManager: DataReaderBase
 	public const byte REPEAT_GO_FIRST = 1;
 	public const byte REPEAT_TELE_FIRST = 2;
 	public const byte REPEAT_RANDOM = 3;
-	
+
 	private readonly Set<int> _targetedNpcIds = new();
 	private readonly Map<string, WalkRoute> _routes = new(); // all available routes
 	private readonly Map<int, WalkInfo> _activeRoutes = new(); // each record represents NPC, moving by predefined route from _routes, and moving progress
@@ -49,12 +49,12 @@ public class WalkingManager: DataReaderBase
 	private readonly Map<Npc, ScheduledFuture> _startMoveTasks = new();
 	private readonly Map<Npc, ScheduledFuture> _repeatMoveTasks = new();
 	private readonly Map<Npc, ScheduledFuture> _arriveTasks = new();
-	
+
 	protected WalkingManager()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		LoadXmlDocument(DataFileLocation.Data, "Routes.xml").Elements("routes").Elements("route").ForEach(parseRoute);
@@ -106,7 +106,7 @@ public class WalkingManager: DataReaderBase
 				int z = r.GetAttributeValueAsInt32("Z");
 				int delay = r.GetAttributeValueAsInt32("delay");
 				bool run = r.GetAttributeValueAsBoolean("run");
-				string? chatString = r.Attribute("string")?.GetString();
+				string chatString = r.Attribute("string")?.GetString() ?? string.Empty;
 				NpcStringId? npcString = (NpcStringId?)r.Attribute("npcString")?.GetInt32();
 				if (npcString is null)
 					npcString = (NpcStringId?)r.Attribute("npcStringId")?.GetInt32();
@@ -158,22 +158,23 @@ public class WalkingManager: DataReaderBase
 	 * @return {@code true} if given NPC, or its leader is controlled by Walking Manager and moves currently.
 	 */
 	public bool isOnWalk(Npc npc)
-	{
-		Monster monster = npc.isMonster() ? ((Monster) npc).getLeader() == null ? (Monster) npc : ((Monster) npc).getLeader() : null;
-		if (((monster != null) && !isRegistered(monster)) || !isRegistered(npc))
-		{
+    {
+        Monster? monster = npc.isMonster()
+            ? ((Monster)npc).getLeader() == null ? (Monster)npc : ((Monster)npc).getLeader()
+            : null;
+
+		if ((monster != null && !isRegistered(monster)) || !isRegistered(npc))
 			return false;
-		}
-		
-		WalkInfo walk = monster != null ? _activeRoutes.get(monster.ObjectId) : _activeRoutes.get(npc.ObjectId);
-		return !walk.isStoppedByAttack() && !walk.isSuspended();
+
+		WalkInfo? walk = monster != null ? _activeRoutes.get(monster.ObjectId) : _activeRoutes.get(npc.ObjectId);
+		return walk != null && !walk.isStoppedByAttack() && !walk.isSuspended();
 	}
-	
-	public WalkRoute getRoute(string route)
+
+	public WalkRoute? getRoute(string route)
 	{
 		return _routes.get(route);
 	}
-	
+
 	/**
 	 * @param npc NPC to check
 	 * @return {@code true} if given NPC id is registered as a route target.
@@ -182,7 +183,7 @@ public class WalkingManager: DataReaderBase
 	{
 		return _targetedNpcIds.Contains(npc.getId());
 	}
-	
+
 	/**
 	 * @param npc NPC to check
 	 * @return {@code true} if given NPC controlled by Walking Manager.
@@ -191,7 +192,7 @@ public class WalkingManager: DataReaderBase
 	{
 		return _activeRoutes.ContainsKey(npc.ObjectId);
 	}
-	
+
 	/**
 	 * @param npc
 	 * @return name of route
@@ -200,7 +201,7 @@ public class WalkingManager: DataReaderBase
 	{
 		return _activeRoutes.GetValueOrDefault(npc.ObjectId)?.getRoute().getName() ?? string.Empty;
 	}
-	
+
 	/**
 	 * Start to move given NPC by given route
 	 * @param npc NPC to move
@@ -208,23 +209,23 @@ public class WalkingManager: DataReaderBase
 	 */
 	public void startMoving(Npc npc, string routeName)
 	{
-		if (_routes.ContainsKey(routeName) && (npc != null) && !npc.isDead()) // check, if these route and NPC present
+		if (_routes.ContainsKey(routeName) && npc != null && !npc.isDead()) // check, if these route and NPC present
 		{
 			if (!_activeRoutes.ContainsKey(npc.ObjectId)) // new walk task
 			{
 				// only if not already moved / not engaged in battle... should not happens if called on spawn
-				if ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE))
+				if (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE || npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 				{
 					WalkInfo walk = new WalkInfo(routeName);
 					NpcWalkerNode node = walk.getCurrentNode();
-					
+
 					// adjust next waypoint, if NPC spawns at first waypoint
-					if ((npc.getX() == node.Location.X) && (npc.getY() == node.Location.Y))
+					if (npc.getX() == node.Location.X && npc.getY() == node.Location.Y)
 					{
 						walk.calculateNextNode(npc);
 						node = walk.getCurrentNode();
 					}
-					
+
 					if (!npc.IsInsideRadius3D(node.Location, 3000))
 					{
 						LOGGER.Warn(GetType().Name + ": " + "Route '" + routeName + "': NPC (id=" + npc.getId() +
@@ -236,7 +237,7 @@ public class WalkingManager: DataReaderBase
 						Location teleLoc = new(node.Location, npc.getHeading());
 						npc.teleToLocation(teleLoc);
 					}
-					
+
 					if (node.runToLocation())
 					{
 						npc.setRunning();
@@ -246,22 +247,22 @@ public class WalkingManager: DataReaderBase
 						npc.setWalking();
 					}
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, node.Location);
-					
-					ScheduledFuture task = _repeatMoveTasks.get(npc);
-					if ((task == null) || task.isCancelled() || task.isDone())
+
+					ScheduledFuture? task = _repeatMoveTasks.get(npc);
+					if (task == null || task.isCancelled() || task.isDone())
 					{
 						ScheduledFuture newTask = ThreadPool.scheduleAtFixedRate(new StartMovingTask(npc, routeName), 10000, 10000);
 						_repeatMoveTasks.put(npc, newTask);
 						walk.setWalkCheckTask(newTask); // start walk check task, for resuming walk after fight
 					}
-					
+
 					npc.setWalker();
 					_activeRoutes.put(npc.ObjectId, walk); // register route
 				}
 				else
 				{
-					ScheduledFuture task = _startMoveTasks.get(npc);
-					if ((task == null) || task.isCancelled() || task.isDone())
+					ScheduledFuture? task = _startMoveTasks.get(npc);
+					if (task == null || task.isCancelled() || task.isDone())
 					{
 						_startMoveTasks.put(npc, ThreadPool.schedule(new StartMovingTask(npc, routeName), 10000));
 					}
@@ -269,19 +270,19 @@ public class WalkingManager: DataReaderBase
 			}
 			else // walk was stopped due to some reason (arrived to node, script action, fight or something else), resume it
 			{
-				if (_activeRoutes.TryGetValue(npc.ObjectId, out WalkInfo? walk) && ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)))
+				if (_activeRoutes.TryGetValue(npc.ObjectId, out WalkInfo? walk) && (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE || npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE))
 				{
 					if (walk == null)
 					{
 						return;
 					}
-					
+
 					// Prevent call simultaneously from scheduled task and onArrived() or temporarily stop walking for resuming in future
 					if (walk.isBlocked() || walk.isSuspended())
 					{
 						return;
 					}
-					
+
 					walk.setBlocked(true);
 					NpcWalkerNode node = walk.getCurrentNode();
 					if (node.runToLocation())
@@ -299,7 +300,7 @@ public class WalkingManager: DataReaderBase
 			}
 		}
 	}
-	
+
 	/**
 	 * Cancel NPC moving permanently
 	 * @param npc NPC to cancel
@@ -307,7 +308,7 @@ public class WalkingManager: DataReaderBase
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void cancelMoving(Npc npc)
 	{
-		WalkInfo walk = _activeRoutes.remove(npc.ObjectId);
+		WalkInfo? walk = _activeRoutes.remove(npc.ObjectId);
 		if (walk != null)
 		{
 			ScheduledFuture task = walk.getWalkCheckTask();
@@ -317,14 +318,14 @@ public class WalkingManager: DataReaderBase
 			}
 		}
 	}
-	
+
 	/**
 	 * Resumes previously stopped moving
 	 * @param npc NPC to resume
 	 */
 	public void resumeMoving(Npc npc)
 	{
-		WalkInfo walk = _activeRoutes.get(npc.ObjectId);
+		WalkInfo? walk = _activeRoutes.get(npc.ObjectId);
 		if (walk != null)
 		{
 			walk.setSuspended(false);
@@ -332,7 +333,7 @@ public class WalkingManager: DataReaderBase
 			startMoving(npc, walk.getRoute().getName());
 		}
 	}
-	
+
 	/**
 	 * Pause NPC moving until it will be resumed
 	 * @param npc NPC to pause moving
@@ -341,17 +342,20 @@ public class WalkingManager: DataReaderBase
 	 */
 	public void stopMoving(Npc npc, bool suspend, bool stoppedByAttack)
 	{
-		Monster monster = npc.isMonster() ? ((Monster) npc).getLeader() == null ? (Monster) npc : ((Monster) npc).getLeader() : null;
-		if (((monster != null) && !isRegistered(monster)) || !isRegistered(npc))
+		Monster? monster = npc.isMonster() ? ((Monster) npc).getLeader() == null ? (Monster) npc : ((Monster) npc).getLeader() : null;
+		if ((monster != null && !isRegistered(monster)) || !isRegistered(npc))
 		{
 			return;
 		}
-		
-		WalkInfo walk = monster != null ? _activeRoutes.get(monster.ObjectId) : _activeRoutes.get(npc.ObjectId);
-		walk.setSuspended(suspend);
-		walk.setStoppedByAttack(stoppedByAttack);
-		
-		if (monster != null)
+
+		WalkInfo? walk = monster != null ? _activeRoutes.get(monster.ObjectId) : _activeRoutes.get(npc.ObjectId);
+        if (walk != null)
+        {
+            walk.setSuspended(suspend);
+            walk.setStoppedByAttack(stoppedByAttack);
+        }
+
+        if (monster != null) // TODO: does it make sense? methods are virtual
 		{
 			monster.stopMove(null);
 			monster.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -362,7 +366,7 @@ public class WalkingManager: DataReaderBase
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		}
 	}
-	
+
 	/**
 	 * Manage "node arriving"-related tasks: schedule move to next node; send ON_NODE_ARRIVED event to Quest script
 	 * @param npc NPC to manage
@@ -373,29 +377,29 @@ public class WalkingManager: DataReaderBase
 		{
 			return;
 		}
-		
+
 		// Notify quest
 		if (npc.Events.HasSubscribers<OnNpcMoveNodeArrived>())
 		{
 			npc.Events.NotifyAsync(new OnNpcMoveNodeArrived(npc));
 		}
-		
+
 		// Opposite should not happen... but happens sometime
-		if ((walk.getCurrentNodeId() < 0) || (walk.getCurrentNodeId() >= walk.getRoute().getNodesCount()))
+		if (walk.getCurrentNodeId() < 0 || walk.getCurrentNodeId() >= walk.getRoute().getNodesCount())
 		{
 			return;
 		}
-		
+
 		List<NpcWalkerNode> nodelist = walk.getRoute().getNodeList();
 		NpcWalkerNode node = nodelist[Math.Min(walk.getCurrentNodeId(), nodelist.Count - 1)];
 		if (!npc.IsInsideRadius2D(node.Location, 10))
 		{
 			return;
 		}
-		
+
 		walk.calculateNextNode(npc);
 		walk.setBlocked(true); // prevents to be ran from walk check task, if there is delay in this node.
-		if (node.getNpcString() != null)
+		if (node.getNpcString() != 0)
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, node.getNpcString());
 		}
@@ -403,14 +407,14 @@ public class WalkingManager: DataReaderBase
 		{
 			npc.broadcastSay(ChatType.NPC_GENERAL, node.getChatText());
 		}
-		
-		ScheduledFuture task = _arriveTasks.get(npc);
-		if ((task == null) || task.isCancelled() || task.isDone())
+
+		ScheduledFuture? task = _arriveTasks.get(npc);
+		if (task == null || task.isCancelled() || task.isDone())
 		{
-			_arriveTasks.put(npc, ThreadPool.schedule(new ArrivedTask(npc, walk), 100 + (node.getDelay() * 1000)));
+			_arriveTasks.put(npc, ThreadPool.schedule(new ArrivedTask(npc, walk), 100 + node.getDelay() * 1000));
 		}
 	}
-	
+
 	/**
 	 * Manage "on death"-related tasks: permanently cancel moving of died NPC
 	 * @param npc NPC to manage
@@ -419,7 +423,7 @@ public class WalkingManager: DataReaderBase
 	{
 		cancelMoving(npc);
 	}
-	
+
 	/**
 	 * Manage "on spawn"-related tasks: start NPC moving, if there is route attached to its spawn point
 	 * @param npc NPC to manage
@@ -435,12 +439,12 @@ public class WalkingManager: DataReaderBase
 			}
 		}
 	}
-	
+
 	public static WalkingManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly WalkingManager INSTANCE = new WalkingManager();

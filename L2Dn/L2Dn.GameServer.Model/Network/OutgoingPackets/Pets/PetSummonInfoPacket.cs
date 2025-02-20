@@ -151,7 +151,7 @@ public readonly struct PetSummonInfoPacket: IOutgoingPacket
 		writer.WriteByte(0); // Maximum Summon Points
 
 		Set<AbnormalVisualEffect> aves = _summon.getEffectList().getCurrentAbnormalVisualEffects();
-		Team team = (Config.BLUE_TEAM_ABNORMAL_EFFECT != null) && (Config.RED_TEAM_ABNORMAL_EFFECT != null) ? _summon.getTeam() : Team.NONE;
+		Team team = Config.BLUE_TEAM_ABNORMAL_EFFECT != null && Config.RED_TEAM_ABNORMAL_EFFECT != null ? _summon.getTeam() : Team.NONE;
 		writer.WriteInt16((short)(aves.size() + (_summon.isInvisible() ? 1 : 0) + (team != Team.NONE ? 1 : 0))); // Confirmed
 		foreach (AbnormalVisualEffect ave in aves)
 		{
@@ -170,7 +170,7 @@ public readonly struct PetSummonInfoPacket: IOutgoingPacket
 				writer.WriteInt16((short)Config.BLUE_TEAM_ABNORMAL_EFFECT);
 			}
 		}
-		else if ((team == Team.RED) && (Config.RED_TEAM_ABNORMAL_EFFECT != null))
+		else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != null)
 		{
 			writer.WriteInt16((short)Config.RED_TEAM_ABNORMAL_EFFECT);
 		}

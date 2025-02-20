@@ -28,14 +28,14 @@ public readonly struct ExEnchantSkillInfoPacket: IOutgoingPacket
         writer.WriteInt32(_skillId);
         writer.WriteInt16((short)_skillLevel);
         writer.WriteInt16((short)_skillSubLevel);
-        writer.WriteInt32((_skillSubLevel % 1000) != EnchantSkillGroupsData.getInstance().MaxEnchantLevel);
+        writer.WriteInt32(_skillSubLevel % 1000 != EnchantSkillGroupsData.getInstance().MaxEnchantLevel);
         writer.WriteInt32(_skillSubLevel > 1000);
         writer.WriteInt32(_routes.size());
         foreach (int route in _routes)
         {
             int routeId = route / 1000;
             int currentRouteId = _skillSubLevel / 1000;
-            int subLevel = _currentSubLevel > 0 ? (route + (_currentSubLevel % 1000)) - 1 : route;
+            int subLevel = _currentSubLevel > 0 ? route + _currentSubLevel % 1000 - 1 : route;
             writer.WriteInt16((short)_skillLevel);
             writer.WriteInt16((short)(currentRouteId != routeId ? subLevel : Math.Min(subLevel + 1, route + (EnchantSkillGroupsData.getInstance().MaxEnchantLevel - 1))));
         }

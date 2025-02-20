@@ -94,7 +94,9 @@ public struct RequestNewHennaEquipPacket: IIncomingPacket<GameSession>
 
             player.sendPacket(new NewHennaEquipPacket(_slotId, henna.getDyeId(), true));
 			player.getStat().recalculateStats(true);
-			player.sendPacket(new UserInfoPacket(player));
+
+            if (!player.isSubclassLocked())
+			    player.sendPacket(new UserInfoPacket(player));
 		}
 		else
 		{

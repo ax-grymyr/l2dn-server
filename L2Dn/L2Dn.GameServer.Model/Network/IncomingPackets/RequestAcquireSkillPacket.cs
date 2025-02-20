@@ -587,10 +587,14 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 			if (levelUpSp > 0)
 			{
 				player.setSp(player.getSp() - levelUpSp);
-				UserInfoPacket ui = new UserInfoPacket(player);
-				ui.addComponentType(UserInfoType.CURRENT_HPMPCP_EXP_SP);
-				player.sendPacket(ui);
-			}
+
+                if (!player.isSubclassLocked())
+                {
+                    UserInfoPacket ui = new UserInfoPacket(player);
+                    ui.AddComponentType(UserInfoType.CURRENT_HPMPCP_EXP_SP);
+                    player.sendPacket(ui);
+                }
+            }
 			return true;
 		}
 		return false;

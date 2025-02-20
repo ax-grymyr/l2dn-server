@@ -64,25 +64,25 @@ public class InstanceManager: DataReaderBase
 			(XmlInstanceConditionType.HasResidence,
 				(template, parameters, leader, html) => new ConditionHasResidence(template, parameters, leader, html)),
 		}.ToFrozenDictionary(t => t.Type, t => t.Factory);
-	
+
 	// Client instance names
 	private readonly Map<int, string> _instanceNames = new();
-	
+
 	// Instance templates holder
 	private readonly Map<int, InstanceTemplate> _instanceTemplates = new();
-	
+
 	// Created instance worlds
 	private int _currentInstanceId;
 	private readonly Map<int, Instance> _instanceWorlds = new();
-	
+
 	// Player reenter times
 	private readonly Map<int, Map<int, DateTime>> _playerTimes = new();
-	
+
 	private InstanceManager()
 	{
 		load();
 	}
-	
+
 	// --------------------------------------------------------------------
 	// Instance data loader
 	// --------------------------------------------------------------------
@@ -94,22 +94,22 @@ public class InstanceManager: DataReaderBase
 		LoadXmlDocument<XmlInstanceNameList>(DataFileLocation.Data, "InstanceNames.xml")
 			.Instances
 			.ForEach(instance => _instanceNames.put(instance.Id, instance.Name));
-		
+
 		_logger.Info(GetType().Name +": Loaded " + _instanceNames.Count + " instance names.");
-		
+
 		// Load instance templates
 		_instanceTemplates.Clear();
 
 		LoadXmlDocuments<XmlInstance>(DataFileLocation.Data, "instances", true)
 			.ForEach(t => parseInstanceTemplate(t.FilePath, t.Document));
-		
+
 		_logger.Info(GetType().Name +": Loaded " + _instanceTemplates.Count + " instance templates.");
 		// Load player's reenter data
 		_playerTimes.Clear();
 		restoreInstanceTimes();
 		_logger.Info(GetType().Name +": Loaded instance reenter times for " + _playerTimes.Count + " players.");
 	}
-	
+
 	/**
 	 * Parse instance template from XML file.
 	 * @param instanceNode start XML tag
@@ -127,7 +127,7 @@ public class InstanceManager: DataReaderBase
 		string name = xmlInstance.Name;
 		if (string.IsNullOrEmpty(name))
 			name = _instanceNames[id];
-		
+
 		InstanceTemplate template = new(id, name, xmlInstance.MaxWorlds);
 
 		XmlInstanceTime? xmlInstanceTime = xmlInstance.Time;
@@ -150,11 +150,11 @@ public class InstanceManager: DataReaderBase
 		{
 			template.setExpRate(xmlInstanceRates.ExpSpecified ? xmlInstanceRates.Exp : Config.RATE_INSTANCE_XP);
 			template.setSPRate(xmlInstanceRates.SpSpecified ? xmlInstanceRates.Sp : Config.RATE_INSTANCE_SP);
-			
+
 			template.setExpPartyRate(xmlInstanceRates.PartyExpSpecified
 				? xmlInstanceRates.PartyExp
 				: Config.RATE_INSTANCE_PARTY_XP);
-			
+
 			template.setSPPartyRate(xmlInstanceRates.PartySpSpecified
 				? xmlInstanceRates.PartySp
 				: Config.RATE_INSTANCE_PARTY_SP);
@@ -170,7 +170,7 @@ public class InstanceManager: DataReaderBase
 				ImmutableArray<Location> locations = xmlInstanceEnterLocations.Locations
 					.Select(loc => new Location(loc.X, loc.Y, loc.Z, loc.Heading))
 					.ToImmutableArray();
-				
+
 				template.setEnterLocation(xmlInstanceEnterLocations.Type, locations);
 			}
 
@@ -182,7 +182,7 @@ public class InstanceManager: DataReaderBase
 					case InstanceTeleportType.ORIGIN:
 					case InstanceTeleportType.TOWN:
 						break;
-					
+
 					default:
 					{
 						ImmutableArray<Location3D> locations = xmlInstanceExitLocations.Locations
@@ -196,7 +196,7 @@ public class InstanceManager: DataReaderBase
 						}
 						else
 							template.setExitLocation(type, locations);
-						
+
 						break;
 					}
 				}
@@ -219,12 +219,12 @@ public class InstanceManager: DataReaderBase
 			{
 				_logger.Warn(GetType().Name + ": Cannot find template for door: " + doorId + ", instance: " +
 				             template.getName() + " (" + template.getId() + ")");
-				
+
 				continue;
 			}
 
 			template.addDoor(doorId, doorTemplate);
-			
+
 			bool defaultOpen = xmlDoor.OpenStatus?.Default == XmlDoorDefaultOpenStatus.open;
 			if (defaultOpen != doorTemplate.isOpenByDefault())
 			{
@@ -240,7 +240,7 @@ public class InstanceManager: DataReaderBase
 			List<int> exceptionBuffList = [];
 			foreach (XmlInstanceRemoveBuffsSkill xmlInstanceRemoveBuffsSkill in xmlInstanceRemoveBuffs.Skills)
 				exceptionBuffList.Add(xmlInstanceRemoveBuffsSkill.Id);
-					
+
 			template.setRemoveBuff(removeBuffType, exceptionBuffList);
 		}
 
@@ -258,7 +258,7 @@ public class InstanceManager: DataReaderBase
 					DayOfWeek? day = xmlInstanceReenterReset.DayOfWeekSpecified
 						? (DayOfWeek)xmlInstanceReenterReset.DayOfWeek
 						: null;
-					
+
 					int hour = xmlInstanceReenterReset.Hour;
 					int minute = xmlInstanceReenterReset.Minute;
 					data.Add(new InstanceReenterTimeHolder(day, hour, minute));
@@ -290,7 +290,7 @@ public class InstanceManager: DataReaderBase
 				else
 					statSet[xmlParameter.Name] = value;
 			}
-			
+
 			template.setParameters(statSet);
 		}
 
@@ -323,15 +323,15 @@ public class InstanceManager: DataReaderBase
 
 			template.setConditions(conditions);
 		}
-		
+
 		// Save template
 		_instanceTemplates.put(id, template);
 	}
-	
+
 	// --------------------------------------------------------------------
 	// Instance data loader - END
 	// --------------------------------------------------------------------
-	
+
 	/**
 	 * Create new instance from given template.
 	 * @param template template used for instance creation
@@ -340,9 +340,9 @@ public class InstanceManager: DataReaderBase
 	 */
 	public Instance createInstance(InstanceTemplate template, Player player)
 	{
-		return template != null ? new Instance(getNewInstanceId(), template, player) : null;
+		return new Instance(getNewInstanceId(), template, player);
 	}
-	
+
 	/**
 	 * Create new instance with template defined in datapack.
 	 * @param id template id of instance
@@ -356,10 +356,10 @@ public class InstanceManager: DataReaderBase
 			_logger.Warn(GetType().Name + ": Missing template for instance with id " + id + "!");
 			return null;
 		}
-		
+
 		return new Instance(getNewInstanceId(), template, player);
 	}
-	
+
 	/**
 	 * Get instance world with given ID.
 	 * @param instanceId ID of instance
@@ -369,7 +369,7 @@ public class InstanceManager: DataReaderBase
 	{
 		return _instanceWorlds.GetValueOrDefault(instanceId);
 	}
-	
+
 	/**
 	 * Get all active instances.
 	 * @return Collection of all instances
@@ -378,7 +378,7 @@ public class InstanceManager: DataReaderBase
 	{
 		return _instanceWorlds.Values;
 	}
-	
+
 	/**
 	 * Get instance world for player.
 	 * @param player player who wants to get instance world
@@ -400,10 +400,10 @@ public class InstanceManager: DataReaderBase
 					return instance;
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	/**
 	 * Get ID for newly created instance.
 	 * @return instance id
@@ -421,7 +421,7 @@ public class InstanceManager: DataReaderBase
 		while (_instanceWorlds.ContainsKey(_currentInstanceId));
 		return _currentInstanceId;
 	}
-	
+
 	/**
 	 * Register instance world.
 	 * @param instance instance which should be registered
@@ -430,7 +430,7 @@ public class InstanceManager: DataReaderBase
 	{
 		_instanceWorlds.TryAdd(instance.getId(), instance);
 	}
-	
+
 	/**
 	 * Unregister instance world.<br>
 	 * <b><font color=red>To remove instance world properly use {@link Instance#destroy()}.</font></b>
@@ -440,7 +440,7 @@ public class InstanceManager: DataReaderBase
 	{
 		_instanceWorlds.Remove(instanceId, out _);
 	}
-	
+
 	/**
 	 * Get instance name from file "InstanceNames.xml"
 	 * @param templateId template ID of instance
@@ -450,13 +450,13 @@ public class InstanceManager: DataReaderBase
 	{
 		return _instanceNames.GetValueOrDefault(templateId);
 	}
-	
+
 	/**
 	 * Restore instance reenter data for all players.
 	 */
 	private void restoreInstanceTimes()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (CharacterInstance record in ctx.CharacterInstances.OrderBy(r => r.CharacterId))
@@ -468,7 +468,7 @@ public class InstanceManager: DataReaderBase
 					// Load params
 					int charId = record.CharacterId;
 					int instanceId = record.InstanceId;
-					
+
 					// Set penalty
 					setReenterPenalty(charId, instanceId, time);
 				}
@@ -479,7 +479,7 @@ public class InstanceManager: DataReaderBase
 			_logger.Warn(GetType().Name + ": Cannot restore players instance reenter data: " + e);
 		}
 	}
-	
+
 	/**
 	 * Get all instance re-enter times for specified player.<br>
 	 * This method also removes the penalties that have already expired.
@@ -502,11 +502,11 @@ public class InstanceManager: DataReaderBase
 				invalidPenalty.Add(entry.Key);
 			}
 		}
-		
+
 		// Remove them
 		if (invalidPenalty.Count != 0)
 		{
-			try 
+			try
 			{
 				int playerId = player.ObjectId;
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -522,7 +522,7 @@ public class InstanceManager: DataReaderBase
 		}
 		return instanceTimes;
 	}
-	
+
 	/**
 	 * Set re-enter penalty for specified player.<br>
 	 * <font color=red><b>This method store penalty into memory only. Use {@link Instance#setReenterTime} to set instance penalty properly.</b></font>
@@ -534,7 +534,7 @@ public class InstanceManager: DataReaderBase
 	{
 		_playerTimes.computeIfAbsent(objectId, k => new()).put(id, time);
 	}
-	
+
 	/**
 	 * Get re-enter time to instance (by template ID) for player.<br>
 	 * This method also removes penalty if expired.
@@ -550,7 +550,7 @@ public class InstanceManager: DataReaderBase
 		{
 			return DateTime.MinValue;
 		}
-		
+
 		// If reenter time is higher than current, delete it.
 		if (time <= DateTime.UtcNow)
 		{
@@ -559,7 +559,7 @@ public class InstanceManager: DataReaderBase
 		}
 		return time;
 	}
-	
+
 	/**
 	 * Remove re-enter penalty for specified instance from player.
 	 * @param player player who wants to delete penalty
@@ -567,22 +567,21 @@ public class InstanceManager: DataReaderBase
 	 */
 	public void deleteInstanceTime(Player player, int id)
 	{
-		try 
+		try
 		{
 			int playerId = player.ObjectId;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterInstances.Where(r => r.CharacterId == playerId && r.InstanceId == id).ExecuteDelete();
-			if (_playerTimes.get(player.ObjectId) != null)
-			{
-				_playerTimes.get(player.ObjectId).remove(id);
-			}
+            Map<int, DateTime>? playerTimes = _playerTimes.get(player.ObjectId);
+			if (playerTimes != null)
+                playerTimes.remove(id);
 		}
 		catch (Exception e)
 		{
 			_logger.Warn(GetType().Name + ": Could not delete character instance reenter data: " + e);
 		}
 	}
-	
+
 	/**
 	 * Get instance template by template ID.
 	 * @param id template id of instance
@@ -592,7 +591,7 @@ public class InstanceManager: DataReaderBase
 	{
 		return _instanceTemplates.GetValueOrDefault(id);
 	}
-	
+
 	/**
 	 * Get all instances template.
 	 * @return Collection of all instance templates
@@ -601,7 +600,7 @@ public class InstanceManager: DataReaderBase
 	{
 		return _instanceTemplates.Values;
 	}
-	
+
 	/**
 	 * Get count of created instance worlds with same template ID.
 	 * @param templateId template id of instance
@@ -611,7 +610,7 @@ public class InstanceManager: DataReaderBase
 	{
 		return _instanceWorlds.Count(p => p.Value.getTemplateId() == templateId);
 	}
-	
+
 	/**
 	 * Gets the single instance of {@code InstanceManager}.
 	 * @return single instance of {@code InstanceManager}
@@ -620,7 +619,7 @@ public class InstanceManager: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly InstanceManager INSTANCE = new();

@@ -16,7 +16,7 @@ public class AirShipManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AirShipManager));
 
-	private CreatureTemplate _airShipTemplate;
+	private readonly CreatureTemplate _airShipTemplate;
 	private readonly Map<int, StatSet> _airShipsInfo = new();
 	private readonly Map<int, AirShip> _airShips = new();
 	private readonly Map<int, AirShipTeleportList> _teleports = new();
@@ -154,7 +154,7 @@ public class AirShipManager
 	public bool hasAirShip(int ownerId)
 	{
 		AirShip? ship = _airShips.get(ownerId);
-		return (ship != null) && (ship.isSpawned() || ship.isTeleporting());
+		return ship != null && (ship.isSpawned() || ship.isTeleporting());
 	}
 
 	public void registerAirShipTeleportList(int dockId, int locationId, VehiclePathPoint[][] tp, int[] fuelConsumption)
@@ -169,12 +169,12 @@ public class AirShipManager
 
 	public void sendAirShipTeleportList(Player player)
 	{
-		if ((player == null) || !player.isInAirShip())
+        AirShip? ship = player.getAirShip();
+		if (player == null || !player.isInAirShip() || ship == null)
 		{
 			return;
 		}
 
-		AirShip ship = player.getAirShip();
 		if (!ship.isCaptain(player) || !ship.isInDock() || ship.isMoving())
 		{
 			return;
@@ -197,7 +197,7 @@ public class AirShipManager
 			return null;
 		}
 
-		if ((index < -1) || (index >= all.getRoute().Length))
+		if (index < -1 || index >= all.getRoute().Length)
 		{
 			return null;
 		}
@@ -213,7 +213,7 @@ public class AirShipManager
 			return 0;
 		}
 
-		if ((index < -1) || (index >= all.getFuel().Length))
+		if (index < -1 || index >= all.getFuel().Length)
 		{
 			return 0;
 		}

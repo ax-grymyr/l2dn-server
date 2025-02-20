@@ -23,7 +23,7 @@ public readonly struct ExListMpccWaitingPacket: IOutgoingPacket
         }
 
         _rooms = new List<MatchingRoom>();
-        for (int i = startIndex; i < (startIndex + chunkSize); i++)
+        for (int i = startIndex; i < startIndex + chunkSize; i++)
         {
             _rooms.Add(rooms[i]);
         }

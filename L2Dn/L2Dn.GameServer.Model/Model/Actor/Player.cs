@@ -259,7 +259,7 @@ public class Player: Playable
 	private readonly PlayerWarehouse _warehouse;
 	private PlayerRefund _refund;
 	private PrivateStoreType _privateStoreType = PrivateStoreType.NONE;
-	private TradeList _activeTradeList;
+	private TradeList? _activeTradeList;
 	private ItemContainer _activeWarehouse;
 	private Map<int, ManufactureItem> _manufactureItems;
 	private string _storeName = "";
@@ -3936,18 +3936,23 @@ public class Player: Playable
 
 	public void updateUserInfo()
 	{
-		sendPacket(new UserInfoPacket(this));
-		sendPacket(new ExUserViewInfoParameterPacket(this));
+        if (!isSubclassLocked())
+            sendPacket(new UserInfoPacket(this));
+
+        sendPacket(new ExUserViewInfoParameterPacket(this));
 	}
 
 	public void broadcastUserInfo(params UserInfoType[] types)
 	{
 		// Send user info to the current player
-		UserInfoPacket ui = new UserInfoPacket(this, false);
-		types.ForEach(x => ui.addComponentType(x));
-		sendPacket(ui);
+        if (!isSubclassLocked())
+        {
+            UserInfoPacket ui = new UserInfoPacket(this, false);
+            types.ForEach(x => ui.AddComponentType(x));
+            sendPacket(ui);
+        }
 
-		// Broadcast char info to all known players
+        // Broadcast char info to all known players
 		broadcastCharInfo();
 	}
 
@@ -5451,7 +5456,7 @@ public class Player: Playable
 	/**
 	 * @return active Warehouse.
 	 */
-	public ItemContainer getActiveWarehouse()
+	public ItemContainer? getActiveWarehouse()
 	{
 		return _activeWarehouse;
 	}
@@ -5468,7 +5473,7 @@ public class Player: Playable
 	/**
 	 * @return active TradeList.
 	 */
-	public TradeList getActiveTradeList()
+	public TradeList? getActiveTradeList()
 	{
 		return _activeTradeList;
 	}
@@ -10911,7 +10916,7 @@ public class Player: Playable
 		return (Shuttle) _vehicle;
 	}
 
-	public Vehicle getVehicle()
+	public Vehicle? getVehicle()
 	{
 		return _vehicle;
 	}
@@ -14841,10 +14846,13 @@ public class Player: Playable
 			}
 		}
 
-		UserInfoPacket userInfo = new UserInfoPacket(this, false);
-		userInfo.addComponentType(UserInfoType.ATT_SPIRITS);
-		sendPacket(userInfo);
-	}
+        if (!isSubclassLocked())
+        {
+            UserInfoPacket userInfo = new UserInfoPacket(this, false);
+            userInfo.AddComponentType(UserInfoType.ATT_SPIRITS);
+            sendPacket(userInfo);
+        }
+    }
 
 	public ElementalSpirit[] getSpirits()
 	{

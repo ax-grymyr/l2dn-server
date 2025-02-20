@@ -39,7 +39,7 @@ public readonly struct ExVipAttendanceListPacket: IOutgoingPacket
         if (_available)
         {
             writer.WriteByte((byte)(_index + 1)); // RollBookDay
-            if ((_delayreward == TimeSpan.Zero) && (_available))
+            if (_delayreward == TimeSpan.Zero && _available)
             {
                 writer.WriteByte((byte)(_index + 1)); // AttendanceDay
             }
@@ -56,7 +56,7 @@ public readonly struct ExVipAttendanceListPacket: IOutgoingPacket
         else
         {
             writer.WriteByte(_index); // RollBookDay
-            if ((_delayreward == TimeSpan.Zero) && (_available))
+            if (_delayreward == TimeSpan.Zero && _available)
             {
                 writer.WriteByte((byte)(_index + 1)); // AttendanceDay
             }

@@ -206,7 +206,7 @@ public class MentorManager
 		bool isAllMenteesOffline = true;
 		foreach (Mentee men in getMentees(mentorId))
 		{
-			if (men.isOnline() && (men.getObjectId() != menteeId))
+			if (men.isOnline() && men.getObjectId() != menteeId)
 			{
 				isAllMenteesOffline = false;
 				break;
@@ -219,7 +219,7 @@ public class MentorManager
 	{
 		foreach (Mentee mentee in getMentees(menteorId))
 		{
-			if ((mentee != null) && mentee.isOnline())
+			if (mentee != null && mentee.isOnline())
 			{
 				return true;
 			}

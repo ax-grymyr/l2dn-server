@@ -19,6 +19,6 @@ public readonly struct TimeRestrictFieldUserAlarmPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.EX_TIME_RESTRICT_FIELD_USER_ALARM);
         
         writer.WriteInt32(_zoneId);
-        writer.WriteInt32((_player.getTimedHuntingZoneRemainingTime(_zoneId) / 1000) + 59); // RemainTime (zone left time)
+        writer.WriteInt32(_player.getTimedHuntingZoneRemainingTime(_zoneId) / 1000 + 59); // RemainTime (zone left time)
     }
 }

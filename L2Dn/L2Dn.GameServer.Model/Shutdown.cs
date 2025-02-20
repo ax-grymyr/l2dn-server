@@ -131,7 +131,7 @@ public class Shutdown
 	 * @param seconds seconds until shutdown
 	 * @param restart true if the server will restart after shutdown
 	 */
-	public void startShutdown(Player player, int seconds, bool restart)
+	public void startShutdown(Player? player, int seconds, bool restart)
 	{
 		_shutdownMode = restart ? GM_RESTART : GM_SHUTDOWN;
 

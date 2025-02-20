@@ -33,11 +33,11 @@ public struct RequestNewHennaUnequipPacket: IIncomingPacket<GameSession>
         //     player.sendPacket(new NewHennaUnequipPacket(_slotId, 0));
         //     return ValueTask.CompletedTask;
         // }
-		
+
         if (_slotId > player.getHennaPotenList().Length)
             return ValueTask.CompletedTask;
-		
-        Henna henna = player.getHenna(_slotId);
+
+        Henna? henna = player.getHenna(_slotId);
         if (henna == null)
         {
             PacketLogger.Instance.Warn(GetType().Name + ": " + player + " requested Henna Draw remove without any henna.");
@@ -45,9 +45,9 @@ public struct RequestNewHennaUnequipPacket: IIncomingPacket<GameSession>
             player.sendPacket(new NewHennaUnequipPacket(_slotId, 0));
             return ValueTask.CompletedTask;
         }
-		
+
         int feeType = 0;
-		
+
         if (_itemId == 57)
         {
             feeType = henna.getCancelFee();
@@ -56,13 +56,15 @@ public struct RequestNewHennaUnequipPacket: IIncomingPacket<GameSession>
         {
             feeType = henna.getCancelL2CoinFee();
         }
-		
+
         if (player.destroyItemByItemId("FeeType", _itemId, feeType, player, false))
         {
             player.removeHenna(_slotId);
             player.getStat().recalculateStats(true);
             player.sendPacket(new NewHennaUnequipPacket(_slotId, 1));
-            player.sendPacket(new UserInfoPacket(player));
+
+            if (!player.isSubclassLocked())
+                player.sendPacket(new UserInfoPacket(player));
         }
         else
         {
@@ -74,11 +76,11 @@ public struct RequestNewHennaUnequipPacket: IIncomingPacket<GameSession>
             {
                 player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_L2_COINS_ADD_MORE_L2_COINS_AND_TRY_AGAIN);
             }
-            
+
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             player.sendPacket(new NewHennaUnequipPacket(_slotId, 0));
         }
-       
+
         return ValueTask.CompletedTask;
     }
 }

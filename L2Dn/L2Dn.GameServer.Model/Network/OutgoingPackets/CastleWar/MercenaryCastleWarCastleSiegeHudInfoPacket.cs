@@ -25,7 +25,7 @@ public readonly struct MercenaryCastleWarCastleSiegeHudInfoPacket: IOutgoingPack
         writer.WriteInt32(_castleId);
         if (castle.getSiege().isInProgress())
         {
-            int remainingTimeInSeconds = (int)(CastleManager.getInstance().getCastleById(_castleId).getSiegeDate() +
+            int remainingTimeInSeconds = (int)(castle.getSiegeDate() +
                 SiegeManager.getInstance().getSiegeLength() - DateTime.UtcNow).TotalSeconds;
 
             writer.WriteInt32(1);
@@ -34,10 +34,7 @@ public readonly struct MercenaryCastleWarCastleSiegeHudInfoPacket: IOutgoingPack
         }
         else
         {
-            int remainingTimeInSeconds =
-                (int)(CastleManager.getInstance().getCastleById(_castleId).getSiegeDate() - DateTime.UtcNow)
-                .TotalSeconds;
-
+            int remainingTimeInSeconds = (int)(castle.getSiegeDate() - DateTime.UtcNow).TotalSeconds;
             writer.WriteInt32(0);
             writer.WriteInt32(0);
             writer.WriteInt32(remainingTimeInSeconds);

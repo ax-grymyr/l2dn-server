@@ -51,9 +51,12 @@ public struct ExElementalSpiritAbsorbPacket: IIncomingPacket<GameSession>
             connection.Send(SystemMessageId.SUCCESSFUL_ABSORPTION);
             spirit.addExperience(absorbItem.getExperience() * _amount);
 
-            UserInfoPacket userInfo = new UserInfoPacket(player, false);
-            userInfo.addComponentType(UserInfoType.ATT_SPIRITS);
-            connection.Send(userInfo);
+            if (!player.isSubclassLocked())
+            {
+                UserInfoPacket userInfo = new UserInfoPacket(player, false);
+                userInfo.AddComponentType(UserInfoType.ATT_SPIRITS);
+                connection.Send(userInfo);
+            }
         }
 
         connection.Send(new ElementalSpiritAbsorbPacket(player, _type, canAbsorb));

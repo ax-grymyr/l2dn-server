@@ -87,7 +87,7 @@ public class DailyTaskManager
 			resetVitalityDaily();
 		}
 
-		if (Config.ENABLE_HUNT_PASS && (calendar.Day == Config.HUNT_PASS_PERIOD))
+		if (Config.ENABLE_HUNT_PASS && calendar.Day == Config.HUNT_PASS_PERIOD)
 		{
 			resetHuntPass();
 		}
@@ -271,7 +271,7 @@ public class DailyTaskManager
 		// Set<Player> updates = new();
 		foreach (int skillId in RESET_SKILLS)
 		{
-			Skill skill = SkillData.getInstance().getSkill(skillId, 1 /* No known need for more levels */);
+			Skill? skill = SkillData.getInstance().getSkill(skillId, 1 /* No known need for more levels */);
 			if (skill != null)
 			{
 				foreach (Player player in World.getInstance().getPlayers())

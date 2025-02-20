@@ -26,12 +26,12 @@ public class SellBuffsManager: DataReaderBase
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SellBuffsManager));
 	private static readonly Set<int> ALLOWED_BUFFS = new();
 	private const string HTML_FOLDER = "html/mods/SellBuffs/";
-	
+
 	protected SellBuffsManager()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		if (Config.SELLBUFF_ENABLED)
@@ -40,46 +40,46 @@ public class SellBuffsManager: DataReaderBase
 
 			ALLOWED_BUFFS.addAll(LoadXmlDocument(DataFileLocation.Data, "SellBuffData.xml").Elements("list")
 				.Elements("skill").Attributes("id").Select(a => (int)a));
-			
+
 			LOGGER.Info(GetType().Name +": Loaded " + ALLOWED_BUFFS.Count + " allowed buffs.");
 		}
 	}
-	
+
 	public void sendSellMenu(Player player)
 	{
 		string html = HtmCache.getInstance()
 			.getHtm(HTML_FOLDER + (player.isSellingBuffs() ? "BuffMenu_already.html" : "BuffMenu.html"),
 				player.getLang());
-		
+
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
-	
+
 	public void sendBuffChoiceMenu(Player player, int index)
 	{
 		string html = HtmCache.getInstance().getHtm(HTML_FOLDER + "BuffChoice.html", player.getLang());
 		html = html.Replace("%list%", buildSkillMenu(player, index));
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
-	
+
 	public void sendBuffEditMenu(Player player)
 	{
 		string html = HtmCache.getInstance().getHtm(HTML_FOLDER + "BuffChoice.html", player.getLang());
 		html = html.Replace("%list%", buildEditMenu(player));
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
-	
+
 	public void sendBuffMenu(Player player, Player seller, int index)
 	{
 		if (!seller.isSellingBuffs() || seller.getSellingBuffs().Count == 0)
 		{
 			return;
 		}
-		
+
 		string html = HtmCache.getInstance().getHtm(HTML_FOLDER + "BuffBuyMenu.html", player.getLang());
 		html = html.Replace("%list%", buildBuffMenu(seller, index));
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
-	
+
 	public void startSellBuffs(Player player, string title)
 	{
 		player.sitDown();
@@ -91,7 +91,7 @@ public class SellBuffsManager: DataReaderBase
 		player.broadcastPacket(new ExPrivateStoreSetWholeMsgPacket(player));
 		sendSellMenu(player);
 	}
-	
+
 	public void stopSellBuffs(Player player)
 	{
 		player.setSellingBuffs(false);
@@ -100,7 +100,7 @@ public class SellBuffsManager: DataReaderBase
 		player.broadcastUserInfo();
 		sendSellMenu(player);
 	}
-	
+
 	private string buildBuffMenu(Player seller, int index)
 	{
 		int ceiling = 10;
@@ -109,33 +109,33 @@ public class SellBuffsManager: DataReaderBase
 		int emptyFields = 0;
 		StringBuilder sb = new StringBuilder();
 		List<SellBuffHolder> sellList = new();
-		
+
 		int count = 0;
 		foreach (SellBuffHolder holder in seller.getSellingBuffs())
 		{
 			count++;
-			if ((count > index) && (count <= (ceiling + index)))
+			if (count > index && count <= ceiling + index)
 			{
 				sellList.Add(holder);
 			}
 		}
-		
-		if ((count > 10) && (count > (index + 10)))
+
+		if (count > 10 && count > index + 10)
 		{
 			nextIndex = index + 10;
 		}
-		
+
 		if (index >= 10)
 		{
 			previousIndex = index - 10;
 		}
-		
+
 		emptyFields = ceiling - sellList.Count;
-		
+
 		sb.Append("<br>");
 		sb.Append(HtmlUtil.getMpGauge(250, (long) seller.getCurrentMp(), seller.getMaxMp(), false));
 		sb.Append("<br>");
-		
+
 		sb.Append("<table border=0 cellpadding=0 cellspacing=0 background=\"L2UI_CH3.refinewnd_back_Pattern\">");
 		sb.Append("<tr><td><br><br><br></td></tr>");
 		sb.Append("<tr>");
@@ -148,30 +148,30 @@ public class SellBuffsManager: DataReaderBase
 		sb.Append("<td> <button action=\"\" value=\"Action\" width=100 height=23 back=\"L2UI_CT1.OlympiadWnd_DF_Watch_Down\" fore=\"L2UI_CT1.OlympiadWnd_DF_Watch\"> </td>"); // Action
 		sb.Append("<td fixwidth=\"20\"></td>");
 		sb.Append("</tr>");
-		
+
 		foreach (SellBuffHolder holder in sellList)
 		{
-			Skill skill = seller.getKnownSkill(holder.getSkillId());
+			Skill? skill = seller.getKnownSkill(holder.getSkillId());
 			if (skill == null)
 			{
 				emptyFields++;
 				continue;
 			}
-			
-			ItemTemplate item = ItemData.getInstance().getTemplate(Config.SELLBUFF_PAYMENT_ID);
-			
+
+			ItemTemplate? item = ItemData.getInstance().getTemplate(Config.SELLBUFF_PAYMENT_ID);
+
 			sb.Append("<tr>");
 			sb.Append("<td fixwidth=\"20\"></td>");
 			sb.Append("<td align=center><img src=\"" + skill.getIcon() + "\" width=\"32\" height=\"32\"></td>");
-			sb.Append("<td align=left>" + skill.getName() + (skill.getLevel() > 100 ? "<font color=\"LEVEL\"> + " + (skill.getLevel() % 100) + "</font></td>" : "</td>"));
-			sb.Append("<td align=center>" + ((skill.getLevel() > 100) ? SkillData.getInstance().getMaxLevel(skill.getId()) : skill.getLevel()) + "</td>");
-			sb.Append("<td align=center> <font color=\"1E90FF\">" + (skill.getMpConsume() * Config.SELLBUFF_MP_MULTIPLER) + "</font></td>");
+			sb.Append("<td align=left>" + skill.getName() + (skill.getLevel() > 100 ? "<font color=\"LEVEL\"> + " + skill.getLevel() % 100 + "</font></td>" : "</td>"));
+			sb.Append("<td align=center>" + (skill.getLevel() > 100 ? SkillData.getInstance().getMaxLevel(skill.getId()) : skill.getLevel()) + "</td>");
+			sb.Append("<td align=center> <font color=\"1E90FF\">" + skill.getMpConsume() * Config.SELLBUFF_MP_MULTIPLER + "</font></td>");
 			sb.Append("<td align=center> " + Util.formatAdena(holder.getPrice()) + " <font color=\"LEVEL\"> " + (item != null ? item.getName() : "") + "</font> </td>");
 			sb.Append("<td align=center fixwidth=\"50\"><button value=\"Buy Buff\" action=\"bypass -h sellbuffbuyskill " + seller.ObjectId + " " + skill.getId() + " " + index + "\" width=\"85\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 			sb.Append("</tr>");
 			sb.Append("<tr><td><br><br></td></tr>");
 		}
-		
+
 		for (int i = 0; i < emptyFields; i++)
 		{
 			sb.Append("<tr>");
@@ -185,17 +185,17 @@ public class SellBuffsManager: DataReaderBase
 			sb.Append("</tr>");
 			sb.Append("<tr><td><br><br></td></tr>");
 		}
-		
+
 		sb.Append("</table>");
-		
+
 		sb.Append("<table width=\"250\" border=\"0\">");
 		sb.Append("<tr>");
-		
+
 		if (previousIndex > -1)
 		{
 			sb.Append("<td align=left><button value=\"Previous Page\" action=\"bypass -h sellbuffbuymenu " + seller.ObjectId + " " + previousIndex + "\" width=\"100\" height=\"30\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 		}
-		
+
 		if (nextIndex > -1)
 		{
 			sb.Append("<td align=right><button value=\"Next Page\" action=\"bypass -h sellbuffbuymenu " + seller.ObjectId + " " + nextIndex + "\" width=\"100\" height=\"30\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
@@ -204,11 +204,11 @@ public class SellBuffsManager: DataReaderBase
 		sb.Append("</table>");
 		return sb.ToString();
 	}
-	
+
 	private string buildEditMenu(Player player)
 	{
 		StringBuilder sb = new StringBuilder();
-		
+
 		sb.Append("<table border=0 cellpadding=0 cellspacing=0 background=\"L2UI_CH3.refinewnd_back_Pattern\">");
 		sb.Append("<tr><td><br><br><br></td></tr>");
 		sb.Append("<tr>");
@@ -222,7 +222,7 @@ public class SellBuffsManager: DataReaderBase
 		sb.Append("<td> <button action=\"\" value=\"Remove\" width=85 height=23 back=\"L2UI_CT1.OlympiadWnd_DF_Watch_Down\" fore=\"L2UI_CT1.OlympiadWnd_DF_Watch\"> </td>"); // Remove Buff
 		sb.Append("<td fixwidth=\"20\"></td>");
 		sb.Append("</tr>");
-		
+
 		if (player.getSellingBuffs().Count == 0)
 		{
 			sb.Append("</table>");
@@ -233,17 +233,17 @@ public class SellBuffsManager: DataReaderBase
 		{
 			foreach (SellBuffHolder holder in player.getSellingBuffs())
 			{
-				Skill skill = player.getKnownSkill(holder.getSkillId());
+				Skill? skill = player.getKnownSkill(holder.getSkillId());
 				if (skill == null)
 				{
 					continue;
 				}
-				
+
 				sb.Append("<tr>");
 				sb.Append("<td fixwidth=\"20\"></td>");
 				sb.Append("<td align=center><img src=\"" + skill.getIcon() + "\" width=\"32\" height=\"32\"></td>"); // Icon
-				sb.Append("<td align=left>" + skill.getName() + (skill.getLevel() > 100 ? "<font color=\"LEVEL\"> + " + (skill.getLevel() % 100) + "</font></td>" : "</td>")); // Name + enchant
-				sb.Append("<td align=center>" + ((skill.getLevel() > 100) ? SkillData.getInstance().getMaxLevel(skill.getId()) : skill.getLevel()) + "</td>"); // Level
+				sb.Append("<td align=left>" + skill.getName() + (skill.getLevel() > 100 ? "<font color=\"LEVEL\"> + " + skill.getLevel() % 100 + "</font></td>" : "</td>")); // Name + enchant
+				sb.Append("<td align=center>" + (skill.getLevel() > 100 ? SkillData.getInstance().getMaxLevel(skill.getId()) : skill.getLevel()) + "</td>"); // Level
 				sb.Append("<td align=center> " + Util.formatAdena(holder.getPrice()) + " </td>"); // Price show
 				sb.Append("<td align=center><edit var=\"price_" + skill.getId() + "\" width=120 type=\"number\"></td>"); // Price edit
 				sb.Append("<td align=center><button value=\"Edit\" action=\"bypass -h sellbuffchangeprice " + skill.getId() + " $price_" + skill.getId() + "\" width=\"85\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
@@ -253,10 +253,10 @@ public class SellBuffsManager: DataReaderBase
 			}
 			sb.Append("</table>");
 		}
-		
+
 		return sb.ToString();
 	}
-	
+
 	private string buildSkillMenu(Player player, int index)
 	{
 		int ceiling = index + 10;
@@ -264,31 +264,31 @@ public class SellBuffsManager: DataReaderBase
 		int previousIndex = -1;
 		StringBuilder sb = new StringBuilder();
 		List<Skill> skillList = new();
-		
+
 		int count = 0;
 		foreach (Skill skill in player.getAllSkills())
 		{
 			if (ALLOWED_BUFFS.Contains(skill.getId()) && !isInSellList(player, skill))
 			{
 				count++;
-				
-				if ((count > index) && (count <= ceiling))
+
+				if (count > index && count <= ceiling)
 				{
 					skillList.Add(skill);
 				}
 			}
 		}
-		
-		if ((count > 10) && (count > (index + 10)))
+
+		if (count > 10 && count > index + 10)
 		{
 			nextIndex = index + 10;
 		}
-		
+
 		if (index >= 10)
 		{
 			previousIndex = index - 10;
 		}
-		
+
 		sb.Append("<table border=0 cellpadding=0 cellspacing=0 background=\"L2UI_CH3.refinewnd_back_Pattern\">");
 		sb.Append("<tr><td><br><br><br></td></tr>");
 		sb.Append("<tr>");
@@ -300,7 +300,7 @@ public class SellBuffsManager: DataReaderBase
 		sb.Append("<td> <button action=\"\" value=\"Action\" width=125 height=23 back=\"L2UI_CT1.OlympiadWnd_DF_Watch_Down\" fore=\"L2UI_CT1.OlympiadWnd_DF_Watch\"> </td>"); // Action
 		sb.Append("<td fixwidth=\"20\"></td>");
 		sb.Append("</tr>");
-		
+
 		if (skillList.Count == 0)
 		{
 			sb.Append("</table>");
@@ -314,8 +314,8 @@ public class SellBuffsManager: DataReaderBase
 				sb.Append("<tr>");
 				sb.Append("<td fixwidth=\"20\"></td>");
 				sb.Append("<td align=center><img src=\"" + skill.getIcon() + "\" width=\"32\" height=\"32\"></td>");
-				sb.Append("<td align=left>" + skill.getName() + (skill.getLevel() > 100 ? "<font color=\"LEVEL\"> + " + (skill.getLevel() % 100) + "</font></td>" : "</td>"));
-				sb.Append("<td align=center>" + ((skill.getLevel() > 100) ? SkillData.getInstance().getMaxLevel(skill.getId()) : skill.getLevel()) + "</td>");
+				sb.Append("<td align=left>" + skill.getName() + (skill.getLevel() > 100 ? "<font color=\"LEVEL\"> + " + skill.getLevel() % 100 + "</font></td>" : "</td>"));
+				sb.Append("<td align=center>" + (skill.getLevel() > 100 ? SkillData.getInstance().getMaxLevel(skill.getId()) : skill.getLevel()) + "</td>");
 				sb.Append("<td align=center><edit var=\"price_" + skill.getId() + "\" width=120 type=\"number\"></td>");
 				sb.Append("<td align=center fixwidth=\"50\"><button value=\"Add Buff\" action=\"bypass -h sellbuffaddskill " + skill.getId() + " $price_" + skill.getId() + "\" width=\"85\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 				sb.Append("</tr>");
@@ -323,15 +323,15 @@ public class SellBuffsManager: DataReaderBase
 			}
 			sb.Append("</table>");
 		}
-		
+
 		sb.Append("<table width=\"250\" border=\"0\">");
 		sb.Append("<tr>");
-		
+
 		if (previousIndex > -1)
 		{
 			sb.Append("<td align=left><button value=\"Previous Page\" action=\"bypass -h sellbuffadd " + previousIndex + "\" width=\"100\" height=\"30\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 		}
-		
+
 		if (nextIndex > -1)
 		{
 			sb.Append("<td align=right><button value=\"Next Page\" action=\"bypass -h sellbuffadd " + nextIndex + "\" width=\"100\" height=\"30\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
@@ -340,7 +340,7 @@ public class SellBuffsManager: DataReaderBase
 		sb.Append("</table>");
 		return sb.ToString();
 	}
-	
+
 	public bool isInSellList(Player player, Skill skill)
 	{
 		foreach (SellBuffHolder holder in player.getSellingBuffs())
@@ -352,7 +352,7 @@ public class SellBuffsManager: DataReaderBase
 		}
 		return false;
 	}
-	
+
 	public bool canStartSellBuffs(Player player)
 	{
 		if (player.isAlikeDead())
@@ -370,7 +370,7 @@ public class SellBuffsManager: DataReaderBase
 			player.sendMessage("You can't sell buffs while registered in an event!");
 			return false;
 		}
-		else if (player.isCursedWeaponEquipped() || (player.getReputation() < 0))
+		else if (player.isCursedWeaponEquipped() || player.getReputation() < 0)
 		{
 			player.sendMessage("You can't sell buffs in Chaotic state!");
 			return false;
@@ -402,7 +402,7 @@ public class SellBuffsManager: DataReaderBase
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Gets the single instance of {@code SellBuffsManager}.
 	 * @return single instance of {@code SellBuffsManager}
@@ -411,7 +411,7 @@ public class SellBuffsManager: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly SellBuffsManager INSTANCE = new SellBuffsManager();

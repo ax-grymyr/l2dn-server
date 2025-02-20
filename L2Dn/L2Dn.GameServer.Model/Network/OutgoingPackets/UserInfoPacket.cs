@@ -5,7 +5,6 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Clans;
-using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
@@ -35,36 +34,32 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 
 	public UserInfoPacket(Player player, bool addAll = true)
 	{
-		if (!player.isSubclassLocked()) // Changing class.
+		_helper = new MaskablePacketHelper<UserInfoType>(4);
+		_player = player;
+		_relation = calculateRelation(player);
+		_moveMultiplier = player.getMovementSpeedMultiplier();
+		_runSpd = (int) Math.Round(player.getRunSpeed() / _moveMultiplier);
+		_walkSpd = (int) Math.Round(player.getWalkSpeed() / _moveMultiplier);
+		_swimRunSpd = (int) Math.Round(player.getSwimRunSpeed() / _moveMultiplier);
+		_swimWalkSpd = (int) Math.Round(player.getSwimWalkSpeed() / _moveMultiplier);
+		_flyRunSpd = player.isFlying() ? _runSpd : 0;
+		_flyWalkSpd = player.isFlying() ? _walkSpd : 0;
+		_enchantLevel = player.getInventory().getWeaponEnchant();
+		_armorEnchant = player.getInventory().getArmorMinEnchant();
+		_title = player.getTitle();
+
+		if (player.isGM() && player.isInvisible())
 		{
-			_helper = new MaskablePacketHelper<UserInfoType>(4);
-			_player = player;
-			_relation = calculateRelation(player);
-			_moveMultiplier = player.getMovementSpeedMultiplier();
-			_runSpd = (int) Math.Round(player.getRunSpeed() / _moveMultiplier);
-			_walkSpd = (int) Math.Round(player.getWalkSpeed() / _moveMultiplier);
-			_swimRunSpd = (int) Math.Round(player.getSwimRunSpeed() / _moveMultiplier);
-			_swimWalkSpd = (int) Math.Round(player.getSwimWalkSpeed() / _moveMultiplier);
-			_flyRunSpd = player.isFlying() ? _runSpd : 0;
-			_flyWalkSpd = player.isFlying() ? _walkSpd : 0;
-			_enchantLevel = player.getInventory().getWeaponEnchant();
-			_armorEnchant = player.getInventory().getArmorMinEnchant();
-			_title = player.getTitle();
-
-			if (player.isGM() && player.isInvisible())
-			{
-				_title = "[Invisible]";
-			}
-
-			if (addAll)
-				_helper.AddAllComponents();
+			_title = "[Invisible]";
 		}
+
+		if (addAll)
+			_helper.AddAllComponents();
 	}
 
-	public void addComponentType(UserInfoType component)
+	public void AddComponentType(UserInfoType component)
 	{
-		if (_helper != null)
-			_helper.AddComponent(component);
+		_helper.AddComponent(component);
 	}
 
 	public void WriteContent(PacketBitWriter writer)
@@ -234,7 +229,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteInt32(_player.getX());
 			writer.WriteInt32(_player.getY());
 			writer.WriteInt32(_player.getZ());
-			writer.WriteInt32(_player.isInVehicle() ? _player.getVehicle().ObjectId : 0);
+			writer.WriteInt32(_player.getVehicle()?.ObjectId ?? 0);
 		}
 
 		if (_helper.HasComponent(UserInfoType.SPEED))

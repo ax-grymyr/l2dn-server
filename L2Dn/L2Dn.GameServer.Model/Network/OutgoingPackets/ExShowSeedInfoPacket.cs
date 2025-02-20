@@ -30,7 +30,7 @@ public readonly struct ExShowSeedInfoPacket: IOutgoingPacket
             writer.WriteInt32(0);
             return;
         }
-        
+
         writer.WriteInt32(_seeds.Count);
         foreach (SeedProduction seed in _seeds)
         {
@@ -38,7 +38,7 @@ public readonly struct ExShowSeedInfoPacket: IOutgoingPacket
             writer.WriteInt64(seed.getAmount()); // Left to buy
             writer.WriteInt64(seed.getStartAmount()); // Started amount
             writer.WriteInt64(seed.getPrice()); // Sell Price
-            Seed s = CastleManorManager.getInstance().getSeed(seed.getId());
+            Seed? s = CastleManorManager.getInstance().getSeed(seed.getId());
             if (s == null)
             {
                 writer.WriteInt32(0); // Seed level

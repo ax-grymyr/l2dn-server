@@ -22,12 +22,12 @@ public struct ExRequestSharedLocationTeleportUiPacket: IIncomingPacket<GameSessi
         if (player == null)
             return ValueTask.CompletedTask;
 
-        SharedTeleportHolder teleport = SharedTeleportManager.getInstance().getTeleport(_id);
+        SharedTeleportHolder? teleport = SharedTeleportManager.getInstance().getTeleport(_id);
         if (teleport == null)
             return ValueTask.CompletedTask;
-		
+
         player.sendPacket(new ExShowSharedLocationTeleportUiPacket(teleport));
-        
+
         return ValueTask.CompletedTask;
     }
 }

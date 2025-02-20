@@ -40,7 +40,7 @@ public struct RequestVoteNewPacket: IIncomingPacket<GameSession>
                 }
 
                 sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_RECOMMENDED_C1_YOU_HAVE_S2_RECOMMENDATIONS_LEFT);
-                sm.Params.addString(FakePlayerData.getInstance().getProperName(obj.getName()));
+                sm.Params.addString(FakePlayerData.getInstance().getProperName(obj.getName()) ?? string.Empty);
                 sm.Params.addInt(player.getRecomLeft());
                 player.sendPacket(sm);
 

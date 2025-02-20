@@ -7,6 +7,7 @@ using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 using L2Dn.Packets;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.Ranking;
 
@@ -19,7 +20,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 	private readonly int _class;
 	private readonly Map<int, StatSet> _playerList;
 	private readonly Map<int, StatSet> _snapshotList;
-	
+
 	public ExRankingCharRankersPacket(Player player, int group, int scope, int race, int baseclass)
 	{
 		_player = player;
@@ -30,11 +31,11 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 		_playerList = RankManager.getInstance().getRankList();
 		_snapshotList = RankManager.getInstance().getSnapshotList();
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.EX_RANKING_CHAR_RANKERS);
-		
+
 		writer.WriteByte((byte)_group);
 		writer.WriteByte((byte)_scope);
 		writer.WriteInt32(_race);
@@ -51,7 +52,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						writer.WriteInt32(count);
 						foreach (int id in _playerList.Keys)
 						{
-							StatSet player = _playerList.get(id);
+							StatSet player = _playerList[id];
 							writer.WriteSizedString(player.getString("name"));
 							writer.WriteSizedString(player.getString("clanName"));
 							writer.WriteInt32(Config.SERVER_ID);
@@ -63,7 +64,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 							{
 								foreach (int id2 in _snapshotList.Keys)
 								{
-									StatSet snapshot = _snapshotList.get(id2);
+									StatSet snapshot = _snapshotList[id2];
 									if (player.getInt("charId") == snapshot.getInt("charId"))
 									{
 										writer.WriteInt32(id2); // server rank snapshot
@@ -85,12 +86,12 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						bool found = false;
 						foreach (int id in _playerList.Keys)
 						{
-							StatSet player = _playerList.get(id);
+							StatSet player = _playerList[id];
 							if (player.getInt("charId") == _player.ObjectId)
 							{
 								found = true;
-								int first = id > 10 ? (id - 9) : 1;
-								int last = _playerList.Count >= (id + 10) ? id + 10 : id + (_playerList.Count - id);
+								int first = id > 10 ? id - 9 : 1;
+								int last = _playerList.Count >= id + 10 ? id + 10 : id + (_playerList.Count - id);
 								if (first == 1)
 								{
 									writer.WriteInt32(last - (first - 1));
@@ -101,7 +102,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 								}
 								for (int id2 = first; id2 <= last; id2++)
 								{
-									StatSet plr = _playerList.get(id2);
+									StatSet plr = _playerList[id2];
 									writer.WriteSizedString(plr.getString("name"));
 									writer.WriteSizedString(plr.getString("clanName"));
 									writer.WriteInt32(Config.SERVER_ID);
@@ -113,7 +114,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 									{
 										foreach (int id3 in _snapshotList.Keys)
 										{
-											StatSet snapshot = _snapshotList.get(id3);
+											StatSet snapshot = _snapshotList[id3];
 											if (player.getInt("charId") == snapshot.getInt("charId"))
 											{
 												writer.WriteInt32(id3); // server rank snapshot
@@ -139,7 +140,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						int count = 0;
 						for (int j = 1; j <= _playerList.Count; j++)
 						{
-							StatSet player = _playerList.get(j);
+							StatSet player = _playerList[j];
 							if (_race == player.getInt("race"))
 							{
 								count++;
@@ -149,7 +150,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						int i = 1;
 						foreach (int id in _playerList.Keys)
 						{
-							StatSet player = _playerList.get(id);
+							StatSet player = _playerList[id];
 							if (_race == player.getInt("race"))
 							{
 								writer.WriteSizedString(player.getString("name"));
@@ -165,16 +166,16 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 									int j = 1;
 									foreach (int id2 in _snapshotList.Keys)
 									{
-										StatSet snapshot = _snapshotList.get(id2);
+										StatSet snapshot = _snapshotList[id2];
 										if (_race == snapshot.getInt("race"))
 										{
-											snapshotRaceList.put(j, _snapshotList.get(id2));
+											snapshotRaceList.put(j, _snapshotList[id2]);
 											j++;
 										}
 									}
 									foreach (int id2 in snapshotRaceList.Keys)
 									{
-										StatSet snapshot = snapshotRaceList.get(id2);
+										StatSet snapshot = snapshotRaceList[id2];
 										if (player.getInt("charId") == snapshot.getInt("charId"))
 										{
 											writer.WriteInt32(id2); // server rank snapshot
@@ -200,21 +201,21 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						int i = 1;
 						foreach (int id in _playerList.Keys)
 						{
-							StatSet set = _playerList.get(id);
+							StatSet set = _playerList[id];
 							if (_player.getRace() == (Race)set.getInt("race"))
 							{
-								raceList.put(i, _playerList.get(id));
+								raceList.put(i, _playerList[id]);
 								i++;
 							}
 						}
 						foreach (int id in raceList.Keys)
 						{
-							StatSet player = raceList.get(id);
+							StatSet player = raceList[id];
 							if (player.getInt("charId") == _player.ObjectId)
 							{
 								found = true;
-								int first = id > 10 ? (id - 9) : 1;
-								int last = raceList.Count >= (id + 10) ? id + 10 : id + (raceList.Count - id);
+								int first = id > 10 ? id - 9 : 1;
+								int last = raceList.Count >= id + 10 ? id + 10 : id + (raceList.Count - id);
 								if (first == 1)
 								{
 									writer.WriteInt32(last - (first - 1));
@@ -225,7 +226,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 								}
 								for (int id2 = first; id2 <= last; id2++)
 								{
-									StatSet plr = raceList.get(id2);
+									StatSet plr = raceList[id2];
 									writer.WriteSizedString(plr.getString("name"));
 									writer.WriteSizedString(plr.getString("clanName"));
 									writer.WriteInt32(Config.SERVER_ID);
@@ -254,17 +255,18 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						int i = 1;
 						foreach (int id in _playerList.Keys)
 						{
-							StatSet set = _playerList.get(id);
-							if (_player.getClan().getName() == set.getString("clanName"))
+							StatSet set = _playerList[id];
+                            Clan? clan = _player.getClan();
+							if (clan?.getName() == set.getString("clanName"))
 							{
-								clanList.put(i, _playerList.get(id));
+								clanList.put(i, _playerList[id]);
 								i++;
 							}
 						}
 						writer.WriteInt32(clanList.Count);
 						foreach (int id in clanList.Keys)
 						{
-							StatSet player = clanList.get(id);
+							StatSet player = clanList[id];
 							writer.WriteSizedString(player.getString("name"));
 							writer.WriteSizedString(player.getString("clanName"));
 							writer.WriteInt32(Config.SERVER_ID);
@@ -276,7 +278,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 							{
 								foreach (int id2 in _snapshotList.Keys)
 								{
-									StatSet snapshot = _snapshotList.get(id2);
+									StatSet snapshot = _snapshotList[id2];
 									if (player.getInt("charId") == snapshot.getInt("charId"))
 									{
 										writer.WriteInt32(id2); // server rank snapshot
@@ -309,7 +311,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						{
 							foreach (int id2 in _playerList.Keys)
 							{
-								StatSet temp = _playerList.get(id2);
+								StatSet temp = _playerList[id2];
 								if (temp.getInt("charId") == id)
 								{
 									friendList.add(temp.getInt("charId"));
@@ -321,7 +323,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						writer.WriteInt32(count);
 						foreach (int id in _playerList.Keys)
 						{
-							StatSet player = _playerList.get(id);
+							StatSet player = _playerList[id];
 							if (friendList.Contains(player.getInt("charId")))
 							{
 								writer.WriteSizedString(player.getString("name"));
@@ -335,7 +337,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 								{
 									foreach (int id2 in _snapshotList.Keys)
 									{
-										StatSet snapshot = _snapshotList.get(id2);
+										StatSet snapshot = _snapshotList[id2];
 										if (player.getInt("charId") == snapshot.getInt("charId"))
 										{
 											writer.WriteInt32(id2); // server rank snapshot
@@ -357,14 +359,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 					{
 						writer.WriteInt32(1);
 						writer.WriteSizedString(_player.getName());
-						if (_player.getClan() != null)
-						{
-							writer.WriteSizedString(_player.getClan().getName());
-						}
-						else
-						{
-							writer.WriteSizedString("");
-						}
+						writer.WriteSizedString(_player.getClan()?.getName() ?? string.Empty);
 						writer.WriteInt32(Config.SERVER_ID);
 						writer.WriteInt32(_player.getStat().getBaseLevel());
 						writer.WriteInt32((int)_player.getBaseClass());
@@ -374,7 +369,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						{
 							foreach (int id in _snapshotList.Keys)
 							{
-								StatSet snapshot = _snapshotList.get(id);
+								StatSet snapshot = _snapshotList[id];
 								if (_player.ObjectId == snapshot.getInt("charId"))
 								{
 									writer.WriteInt32(id); // server rank snapshot
@@ -399,7 +394,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						int count = 0;
 						for (int j = 1; j <= _playerList.Count; j++)
 						{
-							StatSet player = _playerList.get(j);
+							StatSet player = _playerList[j];
 							if (_class == player.getInt("classId"))
 							{
 								count++;
@@ -409,7 +404,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						int i = 1;
 						foreach (int id in _playerList.Keys)
 						{
-							StatSet player = _playerList.get(id);
+							StatSet player = _playerList[id];
 							if (_class == player.getInt("classId"))
 							{
 								writer.WriteSizedString(player.getString("name"));
@@ -425,16 +420,16 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 									int j = 1;
 									foreach (int id2 in _snapshotList.Keys)
 									{
-										StatSet snapshot = _snapshotList.get(id2);
+										StatSet snapshot = _snapshotList[id2];
 										if (_class == snapshot.getInt("classId"))
 										{
-											snapshotClassList.put(j, _snapshotList.get(id2));
+											snapshotClassList.put(j, _snapshotList[id2]);
 											j++;
 										}
 									}
 									foreach (int id2 in snapshotClassList.Keys)
 									{
-										StatSet snapshot = snapshotClassList.get(id2);
+										StatSet snapshot = snapshotClassList[id2];
 										if (player.getInt("charId") == snapshot.getInt("charId"))
 										{
 											writer.WriteInt32(id2); // server rank snapshot
@@ -456,27 +451,27 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 					else
 					{
 						bool found = false;
-						
+
 						Map<int, StatSet> classList = new();
 						int i = 1;
 						foreach (int id in _playerList.Keys)
 						{
-							StatSet set = _playerList.get(id);
+							StatSet set = _playerList[id];
 							if (_player.getBaseClass() == (CharacterClass)set.getInt("classId"))
 							{
-								classList.put(i, _playerList.get(id));
+								classList.put(i, _playerList[id]);
 								i++;
 							}
 						}
-						
+
 						foreach (int id in classList.Keys)
 						{
-							StatSet player = classList.get(id);
+							StatSet player = classList[id];
 							if (player.getInt("charId") == _player.ObjectId)
 							{
 								found = true;
-								int first = id > 10 ? (id - 9) : 1;
-								int last = classList.Count >= (id + 10) ? id + 10 : id + (classList.Count - id);
+								int first = id > 10 ? id - 9 : 1;
+								int last = classList.Count >= id + 10 ? id + 10 : id + (classList.Count - id);
 								if (first == 1)
 								{
 									writer.WriteInt32(last - (first - 1));
@@ -487,7 +482,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 								}
 								for (int id2 = first; id2 <= last; id2++)
 								{
-									StatSet plr = classList.get(id2);
+									StatSet plr = classList[id2];
 									writer.WriteSizedString(plr.getString("name"));
 									writer.WriteSizedString(plr.getString("clanName"));
 									writer.WriteInt32(Config.SERVER_ID);

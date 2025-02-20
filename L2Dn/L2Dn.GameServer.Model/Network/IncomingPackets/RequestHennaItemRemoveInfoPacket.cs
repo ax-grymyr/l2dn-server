@@ -22,15 +22,15 @@ public struct RequestHennaItemRemoveInfoPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null || _symbolId == 0)
             return ValueTask.CompletedTask;
-		
-        Henna henna = HennaData.getInstance().getHenna(_symbolId);
+
+        Henna? henna = HennaData.getInstance().getHenna(_symbolId);
         if (henna == null)
         {
             PacketLogger.Instance.Warn("Invalid Henna Id: " + _symbolId + " from " + player);
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
+
         player.sendPacket(new HennaItemRemoveInfoPacket(henna, player));
         return ValueTask.CompletedTask;
     }

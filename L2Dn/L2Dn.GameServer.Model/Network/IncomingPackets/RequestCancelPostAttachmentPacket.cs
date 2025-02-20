@@ -35,7 +35,7 @@ public struct RequestCancelPostAttachmentPacket: IIncomingPacket<GameSession>
 		// if (!client.getFloodProtectors().canPerformTransaction())
 		// 	return ValueTask.CompletedTask;
 
-		Message msg = MailManager.getInstance().getMessage(_msgId);
+		Message? msg = MailManager.getInstance().getMessage(_msgId);
 		if (msg == null)
 			return ValueTask.CompletedTask;
 

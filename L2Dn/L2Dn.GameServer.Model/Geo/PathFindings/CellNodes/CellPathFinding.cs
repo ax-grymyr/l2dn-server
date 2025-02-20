@@ -102,7 +102,7 @@ public class CellPathFinding: PathFinding
 		List<AbstractNodeLoc>? path = null;
 		try
 		{
-			CellNode result = buffer.findPath(gx, gy, gz, gtx, gty, gtz);
+			CellNode? result = buffer.findPath(gx, gy, gz, gtx, gty, gtz);
 
 			if (debug)
 			{
@@ -110,12 +110,14 @@ public class CellPathFinding: PathFinding
 				{
 					if (n.getCost() < 0)
 					{
-						dropDebugItem(1831, (int) (-n.getCost() * 10), n.getLoc());
+                        NodeLoc loc = n.getLoc() ?? throw new InvalidOperationException();
+						dropDebugItem(1831, (int) (-n.getCost() * 10), loc);
 					}
 					else
 					{
 						// Known nodes.
-						dropDebugItem(57, (int) (n.getCost() * 10), n.getLoc());
+                        NodeLoc loc = n.getLoc() ?? throw new InvalidOperationException();
+						dropDebugItem(57, (int) (n.getCost() * 10), loc);
 					}
 				}
 			}
@@ -207,15 +209,19 @@ public class CellPathFinding: PathFinding
 		int previousDirectionX = int.MinValue;
 		int previousDirectionY = int.MinValue;
 
-        AbstractNode<NodeLoc> tempNode = node;
-		while (tempNode.getParent() != null)
+        AbstractNode<NodeLoc>? tempNode = node;
+		while (tempNode?.getParent() != null)
 		{
             int directionX;
             int directionY;
-            if (!Config.ADVANCED_DIAGONAL_STRATEGY && (tempNode.getParent().getParent() != null))
+            NodeLoc tempNodeLoc = tempNode.getLoc() ?? throw new InvalidOperationException();
+            NodeLoc tempNodeParentLoc = tempNode.getParent()?.getLoc() ?? throw new InvalidOperationException();
+            AbstractNode<NodeLoc>? tempNodeParentParent = tempNode.getParent()?.getParent();
+            if (!Config.ADVANCED_DIAGONAL_STRATEGY && (tempNodeParentParent != null))
 			{
-				int tmpX = tempNode.getLoc().getNodeX() - tempNode.getParent().getParent().getLoc().getNodeX();
-				int tmpY = tempNode.getLoc().getNodeY() - tempNode.getParent().getParent().getLoc().getNodeY();
+                NodeLoc tempNodeParentParentLoc = tempNodeParentParent.getLoc() ?? throw new InvalidOperationException();
+				int tmpX = tempNodeLoc.getNodeX() - tempNodeParentParentLoc.getNodeX();
+				int tmpY = tempNodeLoc.getNodeY() - tempNodeParentParentLoc.getNodeY();
 				if (Math.Abs(tmpX) == Math.Abs(tmpY))
 				{
 					directionX = tmpX;
@@ -223,14 +229,14 @@ public class CellPathFinding: PathFinding
 				}
 				else
 				{
-					directionX = tempNode.getLoc().getNodeX() - tempNode.getParent().getLoc().getNodeX();
-					directionY = tempNode.getLoc().getNodeY() - tempNode.getParent().getLoc().getNodeY();
+					directionX = tempNodeLoc.getNodeX() - tempNodeParentLoc.getNodeX();
+					directionY = tempNodeLoc.getNodeY() - tempNodeParentLoc.getNodeY();
 				}
 			}
 			else
 			{
-				directionX = tempNode.getLoc().getNodeX() - tempNode.getParent().getLoc().getNodeX();
-				directionY = tempNode.getLoc().getNodeY() - tempNode.getParent().getLoc().getNodeY();
+				directionX = tempNodeLoc.getNodeX() - tempNodeParentLoc.getNodeX();
+				directionY = tempNodeLoc.getNodeY() - tempNodeParentLoc.getNodeY();
 			}
 
 			// Only add a new route point if moving direction changes.
@@ -239,7 +245,7 @@ public class CellPathFinding: PathFinding
 				previousDirectionX = directionX;
 				previousDirectionY = directionY;
 
-				path.Insert(0, tempNode.getLoc()); // TODO: very inefficient
+				path.Insert(0, tempNodeLoc); // TODO: very inefficient
 				tempNode.setLoc(null);
 			}
 

@@ -40,7 +40,7 @@ public readonly struct MagicSkillUsePacket: IOutgoingPacket
 		_actionId = actionId;
 		_castingType = castingType;
 		_isGroundTargetSkill = isGroundTargetSkill;
-		_groundLocation = creature.isPlayer() ? creature.getActingPlayer().getCurrentSkillWorldPosition() : null;
+		_groundLocation = creature.isPlayer() ? creature.getActingPlayer()?.getCurrentSkillWorldPosition() : null;
 	}
 
 	public MagicSkillUsePacket(Creature creature, WorldObject target, int skillId, int skillLevel, TimeSpan hitTime,
@@ -91,7 +91,7 @@ public readonly struct MagicSkillUsePacket: IOutgoingPacket
 		writer.WriteInt32(_actionId >= 0
 			? _actionId
 			: 0); // ID from RequestActionUse. Used to set cooldown on summon skills.
-		
+
 		if (_groundLocation == null)
 		{
 			writer.WriteInt32(-1); // 306

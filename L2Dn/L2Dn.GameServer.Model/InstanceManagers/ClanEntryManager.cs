@@ -14,24 +14,24 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class ClanEntryManager
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClanEntryManager));
-	
+
 	private static readonly Map<int, PledgeWaitingInfo> _waitingList = new();
 	private static readonly Map<int, PledgeRecruitInfo> _clanList = new();
 	private static readonly Map<int, Map<int, PledgeApplicantInfo>> _applicantList = new();
 	private static readonly Map<int, ScheduledFuture> _clanLocked = new();
 	private static readonly Map<int, ScheduledFuture> _playerLocked = new();
 	private static readonly TimeSpan LOCK_TIME = TimeSpan.FromMinutes(5);
-	
+
 	protected ClanEntryManager()
 	{
 		load();
 	}
-	
+
 	private void load()
 	{
 		using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
-		try 
+		try
 		{
 			foreach (PledgeRecruit pledgeRecruit in ctx.PledgeRecruits)
 			{
@@ -41,7 +41,7 @@ public class ClanEntryManager
 					new PledgeRecruitInfo(clanId, pledgeRecruit.Karma, pledgeRecruit.Information,
 						pledgeRecruit.DetailedInformation, pledgeRecruit.ApplicationType,
 						pledgeRecruit.RecruitType));
-				
+
 				// Remove non existing clan data.
 				if (ClanTable.getInstance().getClan(clanId) == null)
 				{
@@ -54,7 +54,7 @@ public class ClanEntryManager
 		{
 			LOGGER.Error(GetType().Name + ": Failed to load: " + e);
 		}
-		
+
 		try
 		{
 			var query = from waitingList in ctx.PledgeWaitingLists
@@ -68,21 +68,21 @@ public class ClanEntryManager
 					character.Level,
 					CharacterName = character.Name,
 				};
-            
+
 			foreach (var record in query)
 			{
 				_waitingList.put(record.CharacterId,
 					new PledgeWaitingInfo(record.CharacterId, record.Level, record.Karma,
 						record.Class, record.CharacterName));
 			}
-			
+
 			LOGGER.Info(GetType().Name +": Loaded " + _waitingList.Count + " players in waiting list.");
 		}
 		catch (Exception e)
 		{
 			LOGGER.Error(GetType().Name + ": Failed to load: " + e);
 		}
-		
+
 		try
 		{
 			var query = from applicant in ctx.PledgeApplicants
@@ -97,14 +97,14 @@ public class ClanEntryManager
 					character.Level,
 					CharacterName = character.Name,
 				};
-            
+
 			foreach (var record in query)
 			{
 				_applicantList.computeIfAbsent(record.ClanId, k => new()).put(record.ClanId,
 					new PledgeApplicantInfo(record.CharacterId, record.CharacterName, record.Level,
 						record.Karma, record.ClanId, record.Message));
 			}
-			
+
 			LOGGER.Info(GetType().Name +": Loaded " + _applicantList.Count + " player applications.");
 		}
 		catch (Exception e)
@@ -112,37 +112,37 @@ public class ClanEntryManager
 			LOGGER.Error(GetType().Name + ": Failed to load: " + e);
 		}
 	}
-	
+
 	public Map<int, PledgeWaitingInfo> getWaitingList()
 	{
 		return _waitingList;
 	}
-	
+
 	public Map<int, PledgeRecruitInfo> getClanList()
 	{
 		return _clanList;
 	}
-	
+
 	public Map<int, Map<int, PledgeApplicantInfo>> getApplicantList()
 	{
 		return _applicantList;
 	}
-	
+
 	public Map<int, PledgeApplicantInfo> getApplicantListForClan(int clanId)
 	{
 		return _applicantList.GetValueOrDefault(clanId, []);
 	}
-	
+
 	public PledgeApplicantInfo? getPlayerApplication(int clanId, int playerId)
 	{
 		return _applicantList.GetValueOrDefault(clanId)?.GetValueOrDefault(playerId);
 	}
-	
+
 	public bool removePlayerApplication(int clanId, int playerId)
 	{
 		Map<int, PledgeApplicantInfo>? clanApplicantList = _applicantList.GetValueOrDefault(clanId);
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.PledgeApplicants.Where(a => a.CharacterId == playerId && a.ClanId == clanId).ExecuteDelete();
@@ -151,16 +151,16 @@ public class ClanEntryManager
 		{
 			LOGGER.Error(e);
 		}
-        
-		return (clanApplicantList != null) && (clanApplicantList.remove(playerId) != null);
+
+		return clanApplicantList != null && clanApplicantList.remove(playerId) != null;
 	}
-	
+
 	public bool addPlayerApplicationToClan(int clanId, PledgeApplicantInfo info)
 	{
 		if (!_playerLocked.ContainsKey(info.getPlayerId()))
 		{
 			_applicantList.computeIfAbsent(clanId, k => new()).put(info.getPlayerId(), info);
-			
+
 			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -178,12 +178,12 @@ public class ClanEntryManager
 			{
 				LOGGER.Error(e);
 			}
-			
+
 			return true;
 		}
 		return false;
 	}
-	
+
 	public int getClanIdForPlayerApplication(int playerId)
 	{
 		foreach (var entry in _applicantList)
@@ -195,7 +195,7 @@ public class ClanEntryManager
 		}
 		return 0;
 	}
-	
+
 	public bool addToWaitingList(int playerId, PledgeWaitingInfo info)
 	{
 		if (!_playerLocked.ContainsKey(playerId))
@@ -215,13 +215,13 @@ public class ClanEntryManager
 			{
 				LOGGER.Error(e);
 			}
-			
+
 			_waitingList.put(playerId, info);
 			return true;
 		}
 		return false;
 	}
-	
+
 	public bool removeFromWaitingList(int playerId)
 	{
 		if (_waitingList.ContainsKey(playerId))
@@ -235,14 +235,14 @@ public class ClanEntryManager
 			{
 				LOGGER.Error(e);
 			}
-			
+
 			_waitingList.remove(playerId);
 			lockPlayer(playerId);
 			return true;
 		}
 		return false;
 	}
-	
+
 	public bool addToClanList(int clanId, PledgeRecruitInfo info)
 	{
 		if (!_clanList.ContainsKey(clanId) && !_clanLocked.ContainsKey(clanId))
@@ -266,13 +266,13 @@ public class ClanEntryManager
 			{
 				LOGGER.Error(e);
 			}
-			
+
 			_clanList.put(clanId, info);
 			return true;
 		}
 		return false;
 	}
-	
+
 	public bool updateClanList(int clanId, PledgeRecruitInfo info)
 	{
 		if (_clanList.ContainsKey(clanId) && !_clanLocked.ContainsKey(clanId))
@@ -297,10 +297,10 @@ public class ClanEntryManager
 			_clanList[clanId] = info;
 			return result;
 		}
-        
+
 		return false;
 	}
-	
+
 	public bool removeFromClanList(int clanId)
 	{
 		if (_clanList.ContainsKey(clanId))
@@ -314,21 +314,21 @@ public class ClanEntryManager
 			{
 				LOGGER.Error(e);
 			}
-			
+
 			_clanList.remove(clanId);
 			lockClan(clanId);
 			return true;
 		}
 		return false;
 	}
-	
+
 	public List<PledgeWaitingInfo> getSortedWaitingList(int levelMin, int levelMax, int role, int sortByValue, bool descending)
 	{
 		List<PledgeWaitingInfo> result = new();
 		foreach (PledgeWaitingInfo p in _waitingList.Values)
 		{
 			// TODO: Handle Role.
-			if ((p.getPlayerLvl() >= levelMin) && (p.getPlayerLvl() <= levelMax))
+			if (p.getPlayerLvl() >= levelMin && p.getPlayerLvl() <= levelMax)
 			{
 				result.Add(p);
 			}
@@ -357,11 +357,11 @@ public class ClanEntryManager
 			finalComparison = (a, b) => -comparison(a, b);
 		else
 			finalComparison = comparison;
-		
+
 		result.Sort(finalComparison);
 		return result;
 	}
-	
+
 	public List<PledgeWaitingInfo> queryWaitingListByName(string name)
 	{
 		List<PledgeWaitingInfo> result = new();
@@ -374,7 +374,7 @@ public class ClanEntryManager
 		}
 		return result;
 	}
-	
+
 	public List<PledgeRecruitInfo> getSortedClanListByName(string query, int type)
 	{
 		List<PledgeRecruitInfo> result = new();
@@ -400,39 +400,39 @@ public class ClanEntryManager
 		}
 		return result;
 	}
-	
-	public PledgeRecruitInfo getClanById(int clanId)
+
+	public PledgeRecruitInfo? getClanById(int clanId)
 	{
 		return _clanList.get(clanId);
 	}
-	
+
 	public bool isClanRegistred(int clanId)
 	{
 		return _clanList.get(clanId) != null;
 	}
-	
+
 	public bool isPlayerRegistred(int playerId)
 	{
 		return _waitingList.get(playerId) != null;
 	}
-	
+
 	public List<PledgeRecruitInfo> getUnSortedClanList()
 	{
 		return _clanList.Values.ToList();
 	}
-	
+
 	public List<PledgeRecruitInfo> getSortedClanList(int clanLevel, int karma, int sortByValue, bool descending)
 	{
 		List<PledgeRecruitInfo> sortedList = new();
 		for (int i = 0; i < sortedList.Count; i++)
 		{
 			PledgeRecruitInfo currentInfo = sortedList[i];
-			if (((clanLevel < 0) && (karma >= 0) && (karma != currentInfo.getKarma())) || ((clanLevel >= 0) && (karma < 0) && (clanLevel != (currentInfo.getClan() != null ? currentInfo.getClanLevel() : 0))) || ((clanLevel >= 0) && (karma >= 0) && ((clanLevel != (currentInfo.getClan() != null ? currentInfo.getClanLevel() : 0)) || (karma != currentInfo.getKarma()))))
+			if ((clanLevel < 0 && karma >= 0 && karma != currentInfo.getKarma()) || (clanLevel >= 0 && karma < 0 && clanLevel != (currentInfo.getClan() != null ? currentInfo.getClanLevel() : 0)) || (clanLevel >= 0 && karma >= 0 && (clanLevel != (currentInfo.getClan() != null ? currentInfo.getClanLevel() : 0) || karma != currentInfo.getKarma())))
 			{
 				sortedList.RemoveAt(i--);
 			}
 		}
-		
+
 		int sortBy = Math.Clamp(sortByValue, 1, 4);
 		Comparison<PledgeRecruitInfo> comparison;
 		switch (sortBy)
@@ -450,42 +450,44 @@ public class ClanEntryManager
 				comparison = (a, b) => a.getKarma().CompareTo(b.getKarma());
 				break;
 		}
-        
+
 		Comparison<PledgeRecruitInfo> finalComparison;
 		if (descending)
 			finalComparison = (a, b) => -comparison(a, b);
 		else
 			finalComparison = comparison;
-		
+
 		sortedList.Sort(finalComparison);
 		return sortedList;
 	}
-	
+
 	public TimeSpan getPlayerLockTime(int playerId)
 	{
-		return _playerLocked.get(playerId) == null ? TimeSpan.Zero : _playerLocked.get(playerId).getDelay();
+        ScheduledFuture? playerLock = _playerLocked.get(playerId);
+		return playerLock == null ? TimeSpan.Zero : playerLock.getDelay();
 	}
-	
+
 	public TimeSpan getClanLockTime(int playerId)
 	{
-		return _clanLocked.get(playerId) == null ? TimeSpan.Zero : _clanLocked.get(playerId).getDelay();
+        ScheduledFuture? clanLock = _clanLocked.get(playerId);
+		return clanLock == null ? TimeSpan.Zero : clanLock.getDelay();
 	}
-	
+
 	private void lockPlayer(int playerId)
 	{
 		_playerLocked.put(playerId, ThreadPool.schedule(() => _playerLocked.remove(playerId), LOCK_TIME));
 	}
-	
+
 	private void lockClan(int clanId)
 	{
 		_clanLocked.put(clanId, ThreadPool.schedule(() => _clanLocked.remove(clanId), LOCK_TIME));
 	}
-	
+
 	public static ClanEntryManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ClanEntryManager INSTANCE = new ClanEntryManager();

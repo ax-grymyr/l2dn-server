@@ -5,6 +5,7 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Interfaces;
@@ -156,16 +157,17 @@ public class MapRegionManager: DataReaderBase
 	 */
 	public Location getTeleToLocation(Creature creature, TeleportWhereType teleportWhere)
 	{
-		if (creature.isPlayer())
+        Player? player = creature.getActingPlayer();
+		if (creature.isPlayer() && player != null)
 		{
-			Player player = creature.getActingPlayer();
-			Castle castle;
-			if (player.getClan() != null && !player.isFlyingMounted() && !player.isFlying()) // flying players in gracia cant use teleports to aden continent
+			Castle? castle;
+            Clan? clan = player.getClan();
+			if (clan != null && !player.isFlyingMounted() && !player.isFlying()) // flying players in gracia cant use teleports to aden continent
 			{
 				// If teleport to clan hall
 				if (teleportWhere == TeleportWhereType.CLANHALL)
 				{
-					ClanHall? clanhall = ClanHallData.getInstance().getClanHallByClan(player.getClan());
+					ClanHall? clanhall = ClanHallData.getInstance().getClanHallByClan(clan);
 					if (clanhall != null && !player.isFlyingMounted())
 					{
 						return new Location(clanhall.getOwnerLocation(), 0);
@@ -175,13 +177,13 @@ public class MapRegionManager: DataReaderBase
 				// If teleport to castle
 				if (teleportWhere == TeleportWhereType.CASTLE)
 				{
-					castle = CastleManager.getInstance().getCastleByOwner(player.getClan());
+					castle = CastleManager.getInstance().getCastleByOwner(clan);
 					// Otherwise check if player is on castle or fortress ground
 					// and player's clan is defender
 					if (castle == null)
 					{
 						castle = CastleManager.getInstance().getCastle(player);
-						if (!(castle != null && castle.getSiege().isInProgress() && castle.getSiege().getDefenderClan(player.getClan()) != null))
+						if (!(castle != null && castle.getSiege().isInProgress() && castle.getSiege().getDefenderClan(clan) != null))
 						{
 							castle = null;
 						}
@@ -202,13 +204,13 @@ public class MapRegionManager: DataReaderBase
 				Fort? fort;
 				if (teleportWhere == TeleportWhereType.FORTRESS)
 				{
-					fort = FortManager.getInstance().getFortByOwner(player.getClan());
+					fort = FortManager.getInstance().getFortByOwner(clan);
 					// Otherwise check if player is on castle or fortress ground
 					// and player's clan is defender
 					if (fort == null)
 					{
 						fort = FortManager.getInstance().getFort(player);
-						if (!(fort != null && fort.getSiege().isInProgress() && fort.getOwnerClan() == player.getClan()))
+						if (!(fort != null && fort.getSiege().isInProgress() && fort.getOwnerClan() == clan))
 						{
 							fort = null;
 						}
@@ -234,7 +236,7 @@ public class MapRegionManager: DataReaderBase
 						if (castle.getSiege().isInProgress())
 						{
 							// Check if player's clan is attacker
-							Set<Npc> flags = castle.getSiege().getFlag(player.getClan());
+							Set<Npc> flags = castle.getSiege().getFlag(clan);
 							if (flags != null && !flags.isEmpty())
 							{
 								// Spawn to flag - Need more work to get player to the nearest flag
@@ -247,7 +249,7 @@ public class MapRegionManager: DataReaderBase
 						if (fort.getSiege().isInProgress())
 						{
 							// Check if player's clan is attacker
-							Set<Npc> flags = fort.getSiege().getFlag(player.getClan());
+							Set<Npc> flags = fort.getSiege().getFlag(clan);
 							if (flags != null && !flags.isEmpty())
 							{
 								// Spawn to flag - Need more work to get player to the nearest flag
@@ -278,13 +280,14 @@ public class MapRegionManager: DataReaderBase
 			// Checking if needed to be respawned in "far" town from the castle;
 			// Check if player's clan is participating
 			castle = CastleManager.getInstance().getCastle(player);
-			if (castle != null && castle.getSiege().isInProgress() && (castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan())))
-			{
-				return new Location(castle.getResidenceZone().getOtherSpawnLoc(), player.getHeading());
-			}
+            if (castle != null && clan != null && castle.getSiege().isInProgress() &&
+                (castle.getSiege().checkIsDefender(clan) || castle.getSiege().checkIsAttacker(clan)))
+            {
+                return new Location(castle.getResidenceZone().getOtherSpawnLoc(), player.getHeading());
+            }
 
-			// Checking if in an instance
-			Instance inst = player.getInstanceWorld();
+            // Checking if in an instance
+			Instance? inst = player.getInstanceWorld();
 			if (inst != null)
 			{
 				Location3D? loc = inst.getExitLocation(player);
@@ -297,11 +300,12 @@ public class MapRegionManager: DataReaderBase
 
 		if (Config.FACTION_SYSTEM_ENABLED && Config.FACTION_RESPAWN_AT_BASE)
 		{
-			if (creature.getActingPlayer().isGood())
+			if (player != null && player.isGood())
 			{
 				return Config.FACTION_GOOD_BASE_LOCATION;
 			}
-			if (creature.getActingPlayer().isEvil())
+
+			if (player != null && player.isEvil())
 			{
 				return Config.FACTION_EVIL_BASE_LOCATION;
 			}
@@ -317,24 +321,52 @@ public class MapRegionManager: DataReaderBase
 		{
 			RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(player.Location.Location3D);
 			if (zone != null)
-			{
-				return getRestartRegion(player, zone.getRespawnPoint(player)).getChaoticSpawnLoc();
-			}
-			// Opposing race check.
-			if (getMapRegion(player).getBannedRace().TryGetValue(player.getRace(), out string? value))
-			{
-				return _regions.GetValueOrDefault(value).getChaoticSpawnLoc();
-			}
-			return getMapRegion(player).getChaoticSpawnLoc();
+            {
+                string? respawnPoint = zone.getRespawnPoint(player);
+                if (respawnPoint != null)
+                {
+                    MapRegion? restartRegion = getRestartRegion(player, respawnPoint);
+                    if (restartRegion != null)
+                        return restartRegion.getChaoticSpawnLoc();
+                }
+            }
+
+			// Opposing race check
+            MapRegion? mapRegion = getMapRegion(player);
+            if (mapRegion != null)
+            {
+                if (mapRegion.getBannedRace().TryGetValue(player.getRace(), out string? value))
+                {
+                    MapRegion? restartRegion = _regions.GetValueOrDefault(value);
+                    if (restartRegion != null)
+                        return restartRegion.getChaoticSpawnLoc();
+                }
+
+                return mapRegion.getChaoticSpawnLoc();
+            }
+
+            MapRegion? defaultRegion = _regions.GetValueOrDefault(DefaultRespawn);
+            if (defaultRegion != null)
+                return defaultRegion.getChaoticSpawnLoc();
+
+            throw new InvalidOperationException("No default respawn location found.");
 		}
 		catch (Exception e)
 		{
+            _logger.Error(e);
+
 			if (player.isFlyingMounted())
-			{
-				return _regions.GetValueOrDefault("union_base_of_kserth").getChaoticSpawnLoc();
+            {
+                MapRegion? restartRegion = _regions.GetValueOrDefault("union_base_of_kserth");
+                if (restartRegion != null)
+				    return restartRegion.getChaoticSpawnLoc();
 			}
 
-			return _regions.GetValueOrDefault(DefaultRespawn).getChaoticSpawnLoc();
+            MapRegion? defaultRegion = _regions.GetValueOrDefault(DefaultRespawn);
+            if (defaultRegion != null)
+                return defaultRegion.getChaoticSpawnLoc();
+
+            throw new InvalidOperationException("No default respawn location found.");
 		}
 	}
 
@@ -345,19 +377,45 @@ public class MapRegionManager: DataReaderBase
 			RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(creature.Location.Location3D);
 			if (zone != null)
 			{
-				return getRestartRegion(creature, zone.getRespawnPoint((Player) creature)).getSpawnLoc();
+                string? respawnPoint = zone.getRespawnPoint((Player)creature);
+                if (respawnPoint != null)
+                {
+                    MapRegion? restartRegion = getRestartRegion(creature, respawnPoint);
+                    if (restartRegion != null)
+                        return restartRegion.getSpawnLoc();
+                }
 			}
+
 			// Opposing race check.
-			if (getMapRegion(creature).getBannedRace().TryGetValue(creature.getRace(), out string? value))
-			{
-				return _regions.GetValueOrDefault(value).getChaoticSpawnLoc();
-			}
-			return getMapRegion(creature).getSpawnLoc();
-		}
+            MapRegion? mapRegion = getMapRegion(creature);
+            if (mapRegion != null)
+            {
+                if (mapRegion.getBannedRace().TryGetValue(creature.getRace(), out string? value))
+                {
+                    MapRegion? restartRegion = _regions.GetValueOrDefault(value);
+                    if (restartRegion != null)
+                        return restartRegion.getChaoticSpawnLoc();
+                }
+
+                return mapRegion.getSpawnLoc();
+            }
+
+            MapRegion? defaultRegion = _regions.GetValueOrDefault(DefaultRespawn);
+            if (defaultRegion != null)
+                return defaultRegion.getSpawnLoc();
+
+            throw new InvalidOperationException("No default respawn location found.");
+        }
 		catch (Exception e)
-		{
+        {
+            _logger.Error(e);
+
 			// Port to the default respawn if no closest town found.
-			return _regions.GetValueOrDefault(DefaultRespawn).getSpawnLoc();
+            MapRegion? defaultRegion = _regions.GetValueOrDefault(DefaultRespawn);
+            if (defaultRegion != null)
+                return defaultRegion.getSpawnLoc();
+
+            throw new InvalidOperationException("No default respawn location found.");
 		}
 	}
 
@@ -366,22 +424,36 @@ public class MapRegionManager: DataReaderBase
 	 * @param point
 	 * @return
 	 */
-	public MapRegion? getRestartRegion(Creature creature, string point)
+	public MapRegion getRestartRegion(Creature creature, string point)
 	{
 		try
 		{
-			Player player = (Player) creature;
 			MapRegion? region = _regions.GetValueOrDefault(point);
-			if (region.getBannedRace().TryGetValue(player.getRace(), out string? value))
-			{
-				getRestartRegion(player, value);
-			}
+            if (region != null)
+            {
+                if (region.getBannedRace().TryGetValue(creature.getRace(), out string? value))
+                {
+                    MapRegion? restartRegion = _regions.GetValueOrDefault(value);
+                    if (restartRegion != null)
+                        return restartRegion;
+                }
+            }
 
-			return region;
+            MapRegion? defaultRegion = _regions.GetValueOrDefault(DefaultRespawn);
+            if (defaultRegion != null)
+                return defaultRegion;
+
+            throw new InvalidOperationException("No default restart region found.");
 		}
 		catch (Exception e)
 		{
-			return _regions.GetValueOrDefault(DefaultRespawn);
+            _logger.Error(e);
+
+            MapRegion? defaultRegion = _regions.GetValueOrDefault(DefaultRespawn);
+            if (defaultRegion != null)
+                return defaultRegion;
+
+            throw new InvalidOperationException("No default restart region found.");
 		}
 	}
 

@@ -25,7 +25,7 @@ public readonly struct SendMacroListPacket: IOutgoingPacket
         writer.WriteInt32(_updateType != MacroUpdateType.LIST ? _macro.getId() : 0); // modified, created or deleted macro's id
         writer.WriteByte((byte)_count); // count of Macros
         writer.WriteByte(_macro != null); // unknown
-        if ((_macro != null) && (_updateType != MacroUpdateType.DELETE))
+        if (_macro != null && _updateType != MacroUpdateType.DELETE)
         {
             writer.WriteInt32(_macro.getId()); // Macro ID
             writer.WriteString(_macro.getName()); // Macro Name

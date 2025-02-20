@@ -89,7 +89,7 @@ public struct ExRequestChangeClassVerifyingPacket: IIncomingPacket<GameSession>
 
 	private static bool IsQuestCompleted(Player player, int questId)
 	{
-		Quest quest = QuestManager.getInstance().getQuest(questId);
+		Quest? quest = QuestManager.getInstance().getQuest(questId);
 		if (quest is null)
 			return false;
 

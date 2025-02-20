@@ -8,7 +8,7 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct ExAlchemySkillListPacket: IOutgoingPacket
 {
     private readonly List<Skill> _skills;
-	
+
     public ExAlchemySkillListPacket(Player player)
     {
         _skills = new List<Skill>();
@@ -19,14 +19,16 @@ public readonly struct ExAlchemySkillListPacket: IOutgoingPacket
                 _skills.Add(s);
             }
         }
-        
-        _skills.Add(SkillData.getInstance().getSkill((int)CommonSkill.ALCHEMY_CUBE, 1));
+
+        Skill? skill = SkillData.getInstance().getSkill((int)CommonSkill.ALCHEMY_CUBE, 1);
+        if (skill != null)
+            _skills.Add(skill);
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_ALCHEMY_SKILL_LIST);
-        
+
         writer.WriteInt32(_skills.Count);
         foreach (Skill skill in _skills)
         {

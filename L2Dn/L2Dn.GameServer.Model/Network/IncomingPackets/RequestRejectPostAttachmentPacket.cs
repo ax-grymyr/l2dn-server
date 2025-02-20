@@ -38,7 +38,7 @@ public struct RequestRejectPostAttachmentPacket: IIncomingPacket<GameSession>
         // return;
         // }
 
-        Message msg = MailManager.getInstance().getMessage(_msgId);
+        Message? msg = MailManager.getInstance().getMessage(_msgId);
         if (msg == null)
             return ValueTask.CompletedTask;
 

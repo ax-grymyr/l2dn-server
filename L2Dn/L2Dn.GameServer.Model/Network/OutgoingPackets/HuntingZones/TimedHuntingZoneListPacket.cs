@@ -36,7 +36,7 @@ public readonly struct TimedHuntingZoneListPacket: IOutgoingPacket
 			writer.WriteInt32(holder.getMaxLevel());
 			writer.WriteInt32(holder.getInitialTime() / 1000); // remain time base
 			int remainingTime = _player.getTimedHuntingZoneRemainingTime(holder.getZoneId());
-			if ((remainingTime == 0) && ((_player.getTimedHuntingZoneInitialEntry(holder.getZoneId()) + holder.getResetDelay()) < currentTime))
+			if (remainingTime == 0 && _player.getTimedHuntingZoneInitialEntry(holder.getZoneId()) + holder.getResetDelay() < currentTime)
 			{
 				remainingTime = holder.getInitialTime();
 			}
@@ -45,7 +45,7 @@ public readonly struct TimedHuntingZoneListPacket: IOutgoingPacket
 			writer.WriteInt32(_player.getVariables().getInt(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId(), holder.getRemainRefillTime()));
 			writer.WriteInt32(holder.getRefillTimeMax());
 			bool isFieldActivated = !_isInTimedHuntingZone;
-			if ((holder.getZoneId() == 18) && !GlobalVariablesManager.getInstance().getBoolean("AvailableFrostLord", false))
+			if (holder.getZoneId() == 18 && !GlobalVariablesManager.getInstance().getBoolean("AvailableFrostLord", false))
 			{
 				isFieldActivated = false;
 			}

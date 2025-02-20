@@ -75,32 +75,44 @@ public class DropSearchBoard: IParseBoardHandler
 	private void buildDropIndex()
 	{
 		NpcData.getInstance().getTemplates(npc => npc.getDropGroups() != null).ForEach(npcTemplate =>
-		{
-			foreach (DropGroupHolder dropGroup in npcTemplate.getDropGroups())
-			{
-				double chance = dropGroup.getChance() / 100;
-				foreach (DropHolder dropHolder in dropGroup.getDropList())
+        {
+            List<DropGroupHolder>? dropGroups = npcTemplate.getDropGroups();
+            if (dropGroups != null)
+            {
+                foreach (DropGroupHolder dropGroup in dropGroups)
                 {
-                    addToDropList(npcTemplate,
-                        new DropHolder(dropHolder.getDropType(), dropHolder.getItemId(), dropHolder.getMin(),
-                            dropHolder.getMax(), dropHolder.getChance() * chance));
+                    double chance = dropGroup.getChance() / 100;
+                    foreach (DropHolder dropHolder in dropGroup.getDropList())
+                    {
+                        addToDropList(npcTemplate,
+                            new DropHolder(dropHolder.getDropType(), dropHolder.getItemId(), dropHolder.getMin(),
+                                dropHolder.getMax(), dropHolder.getChance() * chance));
+                    }
                 }
-			}
-		});
+            }
+        });
 		NpcData.getInstance().getTemplates(npc => npc.getDropList() != null).ForEach(npcTemplate =>
-		{
-			foreach (DropHolder dropHolder in npcTemplate.getDropList())
-			{
-				addToDropList(npcTemplate, dropHolder);
-			}
-		});
+        {
+            List<DropHolder>? dropList = npcTemplate.getDropList();
+            if (dropList != null)
+            {
+                foreach (DropHolder dropHolder in dropList)
+                {
+                    addToDropList(npcTemplate, dropHolder);
+                }
+            }
+        });
 		NpcData.getInstance().getTemplates(npc => npc.getSpoilList() != null).ForEach(npcTemplate =>
-		{
-			foreach (DropHolder dropHolder in npcTemplate.getSpoilList())
-			{
-				addToDropList(npcTemplate, dropHolder);
-			}
-		});
+        {
+            List<DropHolder>? spoilList = npcTemplate.getSpoilList();
+            if (spoilList != null)
+            {
+                foreach (DropHolder dropHolder in spoilList)
+                {
+                    addToDropList(npcTemplate, dropHolder);
+                }
+            }
+        });
 
         DROP_INDEX_CACHE.Values.ForEach(l
             => l.Sort((d1, d2) => d1.npcLevel.CompareTo(d2.npcLevel)));

@@ -22,9 +22,9 @@ public readonly struct QuestListPacket: IOutgoingPacket
                 {
                     _activeQuests.Add(qs);
                 }
-                else if (qs.isCompleted() && !(((questId > 255) && (questId < 10256)) || (questId > 11023)))
+                else if (qs.isCompleted() && !((questId > 255 && questId < 10256) || questId > 11023))
                 {
-                    _oneTimeQuestMask[(questId % 10000) / 8] |= (byte)(1 << (questId % 8));
+                    _oneTimeQuestMask[questId % 10000 / 8] |= (byte)(1 << (questId % 8));
                 }
             }
         }

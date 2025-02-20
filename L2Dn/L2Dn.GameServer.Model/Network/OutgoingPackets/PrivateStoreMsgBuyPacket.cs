@@ -7,20 +7,17 @@ public readonly struct PrivateStoreMsgBuyPacket: IOutgoingPacket
 {
     private readonly int _objId;
     private readonly string _storeMsg;
-	
+
     public PrivateStoreMsgBuyPacket(Player player)
     {
         _objId = player.ObjectId;
-        if (player.getBuyList() != null)
-        {
-            _storeMsg = player.getBuyList().getTitle();
-        }
+        _storeMsg = player.getBuyList().getTitle();
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.PRIVATE_STORE_BUY_MSG);
-        
+
         writer.WriteInt32(_objId);
         writer.WriteString(_storeMsg);
     }

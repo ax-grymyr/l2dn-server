@@ -3,6 +3,7 @@ using L2Dn.GameServer.Db;
 using L2Dn.GameServer.InstanceManagers.Tasks;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Utilities;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +22,7 @@ public class GrandBossManager: IStorable
 	protected static Map<int, GrandBoss> _bosses = new();
 	protected static Map<int, StatSet> _storedInfo = new();
 	private readonly Map<int, int> _bossStatus = new();
-	
+
 	protected GrandBossManager()
 	{
 		init();
@@ -36,7 +37,8 @@ public class GrandBossManager: IStorable
 			foreach (DbGrandBoss boss in ctx.GrandBosses)
 			{
 				int bossId = boss.Id;
-				if (NpcData.getInstance().getTemplate(bossId) != null)
+                NpcTemplate? bossTemplate = NpcData.getInstance().getTemplate(bossId);
+				if (bossTemplate != null)
 				{
 					StatSet info = new StatSet();
 					info.set("loc_x", boss.X);
@@ -49,14 +51,12 @@ public class GrandBossManager: IStorable
 					int status = boss.Status;
 					_bossStatus.put(bossId, status);
 					_storedInfo.put(bossId, info);
-					LOGGER.Info(GetType().Name + ": " + NpcData.getInstance().getTemplate(bossId).getName() + "(" +
-					            bossId + ") status is " + status);
+                    LOGGER.Info($"{GetType().Name}: {bossTemplate.getName()}({bossId}) status is {status}");
+
 					if (status > 0)
-					{
-						LOGGER.Info(GetType().Name + ": Next spawn date of " +
-						            NpcData.getInstance().getTemplate(bossId).getName() + " is " +
-						            boss.RespawnTime);
-					}
+                    {
+                        LOGGER.Info($"{GetType().Name}: Next spawn date of {bossTemplate.getName()} is {boss.RespawnTime}");
+                    }
 				}
 				else
 				{
@@ -78,14 +78,21 @@ public class GrandBossManager: IStorable
 	{
 		return _bossStatus.GetValueOrDefault(bossId, -1);
 	}
-	
+
 	public void setStatus(int bossId, int status)
 	{
+        NpcTemplate? bossTemplate = NpcData.getInstance().getTemplate(bossId);
+        if (bossTemplate == null)
+        {
+            LOGGER.Warn(GetType().Name + ": Could not find GrandBoss NPC template for " + bossId);
+            return;
+        }
+        
 		_bossStatus.put(bossId, status);
-		LOGGER.Info(GetType().Name +": Updated " + NpcData.getInstance().getTemplate(bossId).getName() + "(" + bossId + ") status to " + status + ".");
+		LOGGER.Info(GetType().Name +": Updated " + bossTemplate.getName() + "(" + bossId + ") status to " + status + ".");
 		updateDb(bossId, true);
 	}
-	
+
 	/**
 	 * Adds a GrandBoss to the list of bosses.
 	 * @param boss
@@ -97,37 +104,35 @@ public class GrandBossManager: IStorable
 			_bosses.put(boss.getId(), boss);
 		}
 	}
-	
-	public GrandBoss getBoss(int bossId)
+
+	public GrandBoss? getBoss(int bossId)
 	{
 		return _bosses.get(bossId);
 	}
-	
-	public StatSet getStatSet(int bossId)
+
+	public StatSet? getStatSet(int bossId)
 	{
 		return _storedInfo.get(bossId);
 	}
-	
+
 	public void setStatSet(int bossId, StatSet info)
 	{
 		_storedInfo.put(bossId, info);
 		updateDb(bossId, false);
 	}
-	
+
 	public bool storeMe()
 	{
 		try
 		{
-			const string UPDATE_GRAND_BOSS_DATA = "UPDATE grandboss_data set loc_x = ?, loc_y = ?, loc_z = ?, heading = ?, respawn_time = ?, currentHP = ?, currentMP = ?, status = ? where boss_id = ?";
-
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (var e in _storedInfo)
 			{
 				int bossId = e.Key;
-				GrandBoss boss = _bosses.get(bossId);
+				GrandBoss? boss = _bosses.get(bossId);
 				StatSet info = e.Value;
 				int status = _bossStatus.get(bossId);
-				if ((boss == null) || (info == null))
+				if (boss == null || info == null)
 				{
 					ctx.GrandBosses.Where(b => b.Id == bossId).ExecuteUpdate(s => s.SetProperty(b => b.Status, status));
 				}
@@ -151,16 +156,16 @@ public class GrandBossManager: IStorable
 		}
 		return true;
 	}
-	
+
 	private void updateDb(int bossId, bool statusOnly)
 	{
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			GrandBoss boss = _bosses.get(bossId);
-			StatSet info = _storedInfo.get(bossId);
+			GrandBoss? boss = _bosses.get(bossId);
+			StatSet? info = _storedInfo.get(bossId);
 			int status = _bossStatus.get(bossId);
-			if (statusOnly || (boss == null) || (info == null))
+			if (statusOnly || boss == null || info == null)
 			{
 				ctx.GrandBosses.Where(b => b.Id == bossId).ExecuteUpdate(s => s.SetProperty(b => b.Status, status));
 			}
@@ -181,19 +186,19 @@ public class GrandBossManager: IStorable
 			LOGGER.Warn("Couldn't update grandbosses to database:" + e);
 		}
 	}
-	
+
 	/**
 	 * Saves all Grand Boss info and then clears all info from memory, including all schedules.
 	 */
 	public void cleanUp()
 	{
 		storeMe();
-		
+
 		_bosses.Clear();
 		_storedInfo.Clear();
 		_bossStatus.Clear();
 	}
-	
+
 	/**
 	 * Gets the single instance of {@code GrandBossManager}.
 	 * @return single instance of {@code GrandBossManager}
@@ -202,7 +207,7 @@ public class GrandBossManager: IStorable
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly GrandBossManager INSTANCE = new GrandBossManager();

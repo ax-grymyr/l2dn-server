@@ -7,7 +7,7 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct ExOlympiadUserInfoPacket: IOutgoingPacket
 {
     private readonly Player _player;
-    private readonly Participant _par = null;
+    private readonly Participant _par;
     private readonly int _curHp;
     private readonly int _maxHp;
     private readonly int _curCp;

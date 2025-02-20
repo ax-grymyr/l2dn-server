@@ -27,8 +27,12 @@ public struct RequestPledgePowerPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        player.sendPacket(new ManagePledgePowerPacket(player.getClan(), _action, _rank));
+
+        Clan? clan = player.getClan();
+        if (clan == null)
+            return ValueTask.CompletedTask;
+
+        player.sendPacket(new ManagePledgePowerPacket(clan, _action, _rank));
         if (_action == 2 && player.isClanLeader())
         {
             if (_rank == 9)
@@ -42,10 +46,10 @@ public struct RequestPledgePowerPacket: IIncomingPacket<GameSession>
                 // => Leaves only CP_CL_VIEW_WAREHOUSE, CP_CH_OPEN_DOOR, CP_CS_OPEN_DOOR?
                 _privs &= ClanPrivilege.CL_VIEW_WAREHOUSE | ClanPrivilege.CH_OPEN_DOOR | ClanPrivilege.CS_OPEN_DOOR;
             }
-            
-            player.getClan().setRankPrivs(_rank, _privs);
+
+            clan.setRankPrivs(_rank, _privs);
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

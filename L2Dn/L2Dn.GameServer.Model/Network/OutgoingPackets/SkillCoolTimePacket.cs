@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
 
@@ -9,23 +10,25 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct SkillCoolTimePacket: IOutgoingPacket
 {
     private readonly List<TimeStamp> _reuseTimestamps;
-	
+
     public SkillCoolTimePacket(Player player)
     {
         _reuseTimestamps = new List<TimeStamp>();
         foreach (TimeStamp ts in player.getSkillReuseTimeStamps().Values)
         {
-            if (ts.hasNotPassed() && !SkillData.getInstance().getSkill(ts.getSkillId(), ts.getSkillLevel(), ts.getSkillSubLevel()).isNotBroadcastable())
+            Skill? skill = SkillData.getInstance().getSkill(ts.getSkillId(), ts.getSkillLevel(), ts.getSkillSubLevel());
+            bool isNotBroadcastable = skill?.isNotBroadcastable() ?? false;
+            if (ts.hasNotPassed() && !isNotBroadcastable)
             {
                 _reuseTimestamps.Add(ts);
             }
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.SKILL_COOL_TIME);
-        
+
         writer.WriteInt32(_reuseTimestamps.Count);
         foreach (TimeStamp ts in _reuseTimestamps)
         {

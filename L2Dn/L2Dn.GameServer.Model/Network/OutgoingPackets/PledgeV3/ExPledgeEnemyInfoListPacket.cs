@@ -15,8 +15,8 @@ public readonly struct ExPledgeEnemyInfoListPacket: IOutgoingPacket
         _playerClan = playerClan;
         _warList = playerClan.getWarList().Values
             .Where(it =>
-                (it.getClanWarState(playerClan) == ClanWarState.MUTUAL) ||
-                (it.getAttackerClanId() == playerClan.getId())).ToList();
+                it.getClanWarState(playerClan) == ClanWarState.MUTUAL ||
+                it.getAttackerClanId() == playerClan.getId()).ToList();
     }
 	
     public void WriteContent(PacketBitWriter writer)

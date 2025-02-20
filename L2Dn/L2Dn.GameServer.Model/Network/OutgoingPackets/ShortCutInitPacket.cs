@@ -26,7 +26,7 @@ public readonly struct ShortCutInitPacket: IOutgoingPacket
         foreach (Shortcut sc in _shortCuts)
         {
             writer.WriteInt32((int)sc.getType());
-            writer.WriteInt32(sc.getSlot() + (sc.getPage() * 12));
+            writer.WriteInt32(sc.getSlot() + sc.getPage() * 12);
             writer.WriteByte(0); // 228
 
             switch (sc.getType())

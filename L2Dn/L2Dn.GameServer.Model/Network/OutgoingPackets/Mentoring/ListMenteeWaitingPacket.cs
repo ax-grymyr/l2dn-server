@@ -39,7 +39,7 @@ public readonly struct ListMenteeWaitingPacket: IOutgoingPacket
         writer.WriteInt32(_possibleCandiates.Count % PLAYERS_PER_PAGE);
         foreach (Player player in _possibleCandiates)
         {
-            if ((1 <= (PLAYERS_PER_PAGE * _page)) && (1 > (PLAYERS_PER_PAGE * (_page - 1))))
+            if (1 <= PLAYERS_PER_PAGE * _page && 1 > PLAYERS_PER_PAGE * (_page - 1))
             {
                 writer.WriteString(player.getName());
                 writer.WriteInt32((int)player.getActiveClass());

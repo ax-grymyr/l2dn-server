@@ -19,13 +19,13 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 
 	public void WriteContent(PacketBitWriter writer)
 	{
-		EnchantItemRequest request = _player.getRequest<EnchantItemRequest>();
+		EnchantItemRequest? request = _player.getRequest<EnchantItemRequest>();
 		if (request == null)
 		{
 			return;
 		}
 
-		if ((request.getEnchantingItem() == null) || request.isProcessing() || (request.getEnchantingScroll() == null))
+		if (request.getEnchantingItem() == null || request.isProcessing() || request.getEnchantingScroll() == null)
 		{
 			return;
 		}
@@ -41,7 +41,7 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 		{
 			enchantSupportItem = EnchantItemData.getInstance().getSupportItem(request.getSupportItem().getId());
 		}
-		if (enchantScroll.isBlessed() || ((request.getSupportItem() != null) && (enchantSupportItem != null) && enchantSupportItem.isBlessed()))
+		if (enchantScroll.isBlessed() || (request.getSupportItem() != null && enchantSupportItem != null && enchantSupportItem.isBlessed()))
 		{
 			addedItem.setEnchantLevel(0);
 		}
@@ -58,7 +58,7 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 			addedItem = null;
 			if (enchantItem.getTemplate().isCrystallizable())
 			{
-				result = new ItemHolder(enchantItem.getTemplate().getCrystalItemId(), Math.Max(0, enchantItem.getCrystalCount() - ((enchantItem.getTemplate().getCrystalCount() + 1) / 2)));
+				result = new ItemHolder(enchantItem.getTemplate().getCrystalItemId(), Math.Max(0, enchantItem.getCrystalCount() - (enchantItem.getTemplate().getCrystalCount() + 1) / 2));
 			}
 		}
 

@@ -34,11 +34,11 @@ public class Freight: IBypassHandler
 				if (freight.getSize() > 0)
 				{
 					player.setActiveWarehouse(freight);
-					foreach (Item i in player.getActiveWarehouse().getItems())
+					foreach (Item i in freight.getItems())
 					{
 						if (i.isTimeLimitedItem() && i.getRemainingTime() <= TimeSpan.Zero)
 						{
-							player.getActiveWarehouse().destroyItem("ItemInstance", i, player, null);
+                            freight.destroyItem("ItemInstance", i, player, null);
 						}
 					}
 					player.sendPacket(new WarehouseWithdrawalListPacket(1, player, WarehouseWithdrawalListPacket.FREIGHT));

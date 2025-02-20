@@ -8,25 +8,25 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class GraciaSeedsManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(GraciaSeedsManager));
-	
+
 	public const string ENERGY_SEEDS = "EnergySeeds";
-	
+
 	private const byte SOITYPE = 2;
 	private const byte SOATYPE = 3;
-	
+
 	// Seed of Destruction
 	private const byte SODTYPE = 1;
 	private int _SoDTiatKilled = 0;
 	private int _SoDState = 1;
 	private DateTime _SoDLastStateChangeDate;
-	
+
 	protected GraciaSeedsManager()
 	{
 		_SoDLastStateChangeDate = DateTime.UtcNow;
 		loadData();
 		handleSodStages();
 	}
-	
+
 	public void saveData(byte seedType)
 	{
 		switch (seedType)
@@ -56,7 +56,7 @@ public class GraciaSeedsManager
 			}
 		}
 	}
-	
+
 	public void loadData()
 	{
 		// Seed of Destruction variables
@@ -72,7 +72,7 @@ public class GraciaSeedsManager
 			saveData(SODTYPE);
 		}
 	}
-	
+
 	private void handleSodStages()
 	{
 		switch (_SoDState)
@@ -110,10 +110,10 @@ public class GraciaSeedsManager
 			}
 		}
 	}
-	
+
 	public void updateSodState()
 	{
-		Quest quest = QuestManager.getInstance().getQuest(ENERGY_SEEDS);
+		Quest? quest = QuestManager.getInstance().getQuest(ENERGY_SEEDS);
 		if (quest == null)
 		{
 			LOGGER.Warn(GetType().Name + ": missing EnergySeeds Quest!");
@@ -123,7 +123,7 @@ public class GraciaSeedsManager
 			quest.notifyEvent("StopSoDAi", null, null);
 		}
 	}
-	
+
 	public void increaseSoDTiatKilled()
 	{
 		if (_SoDState == 1)
@@ -134,7 +134,7 @@ public class GraciaSeedsManager
 				setSoDState(2, false);
 			}
 			saveData(SODTYPE);
-			Quest esQuest = QuestManager.getInstance().getQuest(ENERGY_SEEDS);
+			Quest? esQuest = QuestManager.getInstance().getQuest(ENERGY_SEEDS);
 			if (esQuest == null)
 			{
 				LOGGER.Warn(GetType().Name + ": missing EnergySeeds Quest!");
@@ -145,12 +145,12 @@ public class GraciaSeedsManager
 			}
 		}
 	}
-	
+
 	public int getSoDTiatKilled()
 	{
 		return _SoDTiatKilled;
 	}
-	
+
 	public void setSoDState(int value, bool doSave)
 	{
 		LOGGER.Info(GetType().Name +": New Seed of Destruction state => " + value + ".");
@@ -161,15 +161,15 @@ public class GraciaSeedsManager
 		{
 			_SoDTiatKilled = 0;
 		}
-		
+
 		handleSodStages();
-		
+
 		if (doSave)
 		{
 			saveData(SODTYPE);
 		}
 	}
-	
+
 	public TimeSpan? getSoDTimeForNextStateChange()
 	{
 		switch (_SoDState)
@@ -180,7 +180,7 @@ public class GraciaSeedsManager
 			}
 			case 2:
 			{
-				return ((_SoDLastStateChangeDate + TimeSpan.FromMilliseconds(Config.SOD_STAGE_2_LENGTH)) - DateTime.UtcNow);
+				return _SoDLastStateChangeDate + TimeSpan.FromMilliseconds(Config.SOD_STAGE_2_LENGTH) - DateTime.UtcNow;
 			}
 			case 3:
 			{
@@ -194,17 +194,17 @@ public class GraciaSeedsManager
 			}
 		}
 	}
-	
+
 	public DateTime getSoDLastStateChangeDate()
 	{
 		return _SoDLastStateChangeDate;
 	}
-	
+
 	public int getSoDState()
 	{
 		return _SoDState;
 	}
-	
+
 	/**
 	 * Gets the single instance of {@code GraciaSeedsManager}.
 	 * @return single instance of {@code GraciaSeedsManager}
@@ -213,7 +213,7 @@ public class GraciaSeedsManager
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly GraciaSeedsManager INSTANCE = new GraciaSeedsManager();

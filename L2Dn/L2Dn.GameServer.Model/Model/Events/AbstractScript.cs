@@ -1501,7 +1501,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @param despawnDelay time in milliseconds till the NPC is despawned (0 - only despawned on server shutdown)
 	 * @return the {@link Npc} object of the newly spawned NPC, {@code null} if the NPC doesn't exist
 	 */
-	public static Npc addSpawn(Npc summoner, int npcId, Location3D location, int heading, bool randomOffset, TimeSpan despawnDelay)
+	public static Npc addSpawn(Npc? summoner, int npcId, Location3D location, int heading, bool randomOffset, TimeSpan despawnDelay)
 	{
 		return addSpawn(summoner, npcId, location.X, location.Y, location.Z, heading, randomOffset, despawnDelay, false, 0);
 	}
@@ -1665,7 +1665,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, int, int, int, int, bool, long)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool)
 	 */
-	public static Npc addSpawn(Npc summoner, int npcId, int xValue, int yValue, int zValue, int heading, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn, int instance)
+	public static Npc? addSpawn(Npc? summoner, int npcId, int xValue, int yValue, int zValue, int heading, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn, int instance)
 	{
 		try
 		{

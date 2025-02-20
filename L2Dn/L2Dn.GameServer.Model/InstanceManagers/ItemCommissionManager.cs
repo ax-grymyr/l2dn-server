@@ -23,7 +23,7 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class ItemCommissionManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemCommissionManager));
-	
+
 	private const int INTERACTION_DISTANCE = 250;
 	private const int ITEMS_LIMIT_PER_REQUEST = 999;
 	private const int MAX_ITEMS_REGISTRED_PER_PLAYER = 10;
@@ -33,7 +33,7 @@ public class ItemCommissionManager
 	private static readonly int[] DURATION = [1, 3, 5, 7, 15, 30];
 
 	private readonly Map<long, CommissionItem> _commissionItems = new();
-	
+
 	protected ItemCommissionManager()
 	{
 		Map<int, Item> itemInstances = new();
@@ -49,7 +49,7 @@ public class ItemCommissionManager
 			foreach (DbCommissionItem item in ctx.CommissionItems)
 			{
 				int commissionId = item.Id;
-				Item itemInstance = itemInstances.get(item.ItemObjectId);
+				Item? itemInstance = itemInstances.get(item.ItemObjectId);
 				if (itemInstance == null)
 				{
 					LOGGER.Error(GetType().Name + ": Failed loading commission item with commission id " + commissionId + " because item instance does not exist or failed to load.");
@@ -58,7 +58,7 @@ public class ItemCommissionManager
 
 				CommissionItem commissionItem = new CommissionItem(commissionId, itemInstance, item.PricePerUnit,
 					item.StartTime, item.DurationInDays, item.DiscountInPercentage);
-				
+
 				_commissionItems.put(commissionItem.getCommissionId(), commissionItem);
 				if (commissionItem.getEndTime() < DateTime.UtcNow)
 				{
@@ -69,7 +69,7 @@ public class ItemCommissionManager
 					TimeSpan delay = commissionItem.getEndTime() - DateTime.UtcNow;
 					if (delay < TimeSpan.Zero)
 						delay = TimeSpan.Zero;
-					
+
 					commissionItem.setSaleEndTask(ThreadPool.schedule(() => expireSale(commissionItem), delay));
 				}
 			}
@@ -79,7 +79,7 @@ public class ItemCommissionManager
 			LOGGER.Error(GetType().Name + ": Failed loading commission items." + e);
 		}
 	}
-	
+
 	/**
 	 * Shows the player the auctions filtered by filter.
 	 * @param player the player
@@ -99,26 +99,26 @@ public class ItemCommissionManager
 				}
 			}
 		}
-		
+
 		if (commissionItems.Count == 0)
 		{
 			player.sendPacket(new ExResponseCommissionListPacket(CommissionListReplyType.ITEM_DOES_NOT_EXIST));
 			return;
 		}
-		
+
 		int chunks = commissionItems.Count / ExResponseCommissionListPacket.MAX_CHUNK_SIZE;
-		if (commissionItems.Count > (chunks * ExResponseCommissionListPacket.MAX_CHUNK_SIZE))
+		if (commissionItems.Count > chunks * ExResponseCommissionListPacket.MAX_CHUNK_SIZE)
 		{
 			chunks++;
 		}
-		
+
 		for (int i = chunks - 1; i >= 0; i--)
 		{
 			player.sendPacket(new ExResponseCommissionListPacket(CommissionListReplyType.AUCTIONS, commissionItems, i,
 				i * ExResponseCommissionListPacket.MAX_CHUNK_SIZE));
 		}
 	}
-	
+
 	/**
 	 * Shows the player his auctions.
 	 * @param player the player
@@ -137,7 +137,7 @@ public class ItemCommissionManager
 				}
 			}
 		}
-		
+
 		if (commissionItems.Count != 0)
 		{
 			player.sendPacket(new ExResponseCommissionListPacket(CommissionListReplyType.PLAYER_AUCTIONS, commissionItems));
@@ -147,7 +147,7 @@ public class ItemCommissionManager
 			player.sendPacket(new ExResponseCommissionListPacket(CommissionListReplyType.PLAYER_AUCTIONS_EMPTY));
 		}
 	}
-	
+
 	/**
 	 * Registers an item for the given player.
 	 * @param player the player
@@ -165,7 +165,7 @@ public class ItemCommissionManager
 			player.sendPacket(ExResponseCommissionRegisterPacket.FAILED);
 			return;
 		}
-		
+
 		long totalPrice = itemCount * pricePerUnit;
 		if (totalPrice <= MIN_REGISTRATION_AND_SALE_FEE)
 		{
@@ -173,15 +173,15 @@ public class ItemCommissionManager
 			player.sendPacket(ExResponseCommissionRegisterPacket.FAILED);
 			return;
 		}
-		
-		Item itemInstance = player.getInventory().getItemByObjectId(itemObjectId);
-		if ((itemInstance == null) || !itemInstance.isAvailable(player, false, false) || (itemInstance.getCount() < itemCount))
+
+		Item? itemInstance = player.getInventory().getItemByObjectId(itemObjectId);
+		if (itemInstance == null || !itemInstance.isAvailable(player, false, false) || itemInstance.getCount() < itemCount)
 		{
 			player.sendPacket(SystemMessageId.THE_ITEM_HAS_FAILED_TO_BE_REGISTERED);
 			player.sendPacket(ExResponseCommissionRegisterPacket.FAILED);
 			return;
 		}
-		
+
 		byte durationInDays = (byte) DURATION[durationType];
 
 		lock (this)
@@ -203,7 +203,7 @@ public class ItemCommissionManager
 			}
 
 			long registrationFee = (long)Math.Max(MIN_REGISTRATION_AND_SALE_FEE,
-				(totalPrice * REGISTRATION_FEE_PER_DAY) * Math.Min(durationInDays, (short)7));
+				totalPrice * REGISTRATION_FEE_PER_DAY * Math.Min(durationInDays, (short)7));
 			if (!player.getInventory().reduceAdena("Commission Registration Fee", registrationFee, player, null))
 			{
 				player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA_TO_REGISTER_THE_ITEM);
@@ -266,7 +266,7 @@ public class ItemCommissionManager
 
 				CommissionItem commissionItem = new CommissionItem(commissionId, itemInstance, pricePerUnit, startTime,
 					durationInDays, discountInPercentage);
-				
+
 				TimeSpan delay = commissionItem.getEndTime() - DateTime.UtcNow;
 				if (delay < TimeSpan.Zero)
 					delay = TimeSpan.Zero;
@@ -288,7 +288,7 @@ public class ItemCommissionManager
 			}
 		}
 	}
-	
+
 	/**
 	 * Deletes an item and returns it to the player.
 	 * @param player the player
@@ -296,35 +296,35 @@ public class ItemCommissionManager
 	 */
 	public void deleteItem(Player player, long commissionId)
 	{
-		CommissionItem commissionItem = getCommissionItem(commissionId);
+		CommissionItem? commissionItem = getCommissionItem(commissionId);
 		if (commissionItem == null)
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CANCEL_THE_SALE);
 			player.sendPacket(ExResponseCommissionDeletePacket.FAILED);
 			return;
 		}
-		
+
 		if (commissionItem.getItemInstance().getOwnerId() != player.ObjectId)
 		{
 			player.sendPacket(ExResponseCommissionDeletePacket.FAILED);
 			return;
 		}
-		
-		if (!player.isInventoryUnder80(false) || (player.getWeightPenalty() >= 3))
+
+		if (!player.isInventoryUnder80(false) || player.getWeightPenalty() >= 3)
 		{
 			player.sendPacket(SystemMessageId.TO_BUY_CANCEL_YOU_NEED_TO_FREE_20_OF_WEIGHT_AND_10_OF_SLOTS_IN_YOUR_INVENTORY);
 			player.sendPacket(SystemMessageId.FAILED_TO_CANCEL_THE_SALE);
 			player.sendPacket(ExResponseCommissionDeletePacket.FAILED);
 			return;
 		}
-		
-		if ((_commissionItems.remove(commissionId) == null) || !commissionItem.getSaleEndTask().cancel(false))
+
+		if (_commissionItems.remove(commissionId) == null || commissionItem.getSaleEndTask()?.cancel(false) != true)
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CANCEL_THE_SALE);
 			player.sendPacket(ExResponseCommissionDeletePacket.FAILED);
 			return;
 		}
-		
+
 		if (deleteItemFromDB(commissionId))
 		{
 			player.getInventory().addItem("Commission Cancellation", commissionItem.getItemInstance(), player, null);
@@ -337,7 +337,7 @@ public class ItemCommissionManager
 			player.sendPacket(ExResponseCommissionDeletePacket.FAILED);
 		}
 	}
-	
+
 	/**
 	 * Buys the item for the given player.
 	 * @param player the player
@@ -345,14 +345,14 @@ public class ItemCommissionManager
 	 */
 	public void buyItem(Player player, long commissionId)
 	{
-		CommissionItem commissionItem = getCommissionItem(commissionId);
+		CommissionItem? commissionItem = getCommissionItem(commissionId);
 		if (commissionItem == null)
 		{
 			player.sendPacket(SystemMessageId.ITEM_PURCHASE_HAS_FAILED);
 			player.sendPacket(ExResponseCommissionBuyItemPacket.FAILED);
 			return;
 		}
-		
+
 		Item itemInstance = commissionItem.getItemInstance();
 		if (itemInstance.getOwnerId() == player.ObjectId)
 		{
@@ -360,14 +360,14 @@ public class ItemCommissionManager
 			player.sendPacket(ExResponseCommissionBuyItemPacket.FAILED);
 			return;
 		}
-		
-		if (!player.isInventoryUnder80(false) || (player.getWeightPenalty() >= 3))
+
+		if (!player.isInventoryUnder80(false) || player.getWeightPenalty() >= 3)
 		{
 			player.sendPacket(SystemMessageId.TO_BUY_CANCEL_YOU_NEED_TO_FREE_20_OF_WEIGHT_AND_10_OF_SLOTS_IN_YOUR_INVENTORY);
 			player.sendPacket(ExResponseCommissionBuyItemPacket.FAILED);
 			return;
 		}
-		
+
 		long totalPrice = itemInstance.getCount() * commissionItem.getPricePerUnit();
 		if (!player.getInventory().reduceAdena("Commission Registration Fee", totalPrice, player, null))
 		{
@@ -375,26 +375,26 @@ public class ItemCommissionManager
 			player.sendPacket(ExResponseCommissionBuyItemPacket.FAILED);
 			return;
 		}
-		
-		if ((_commissionItems.remove(commissionId) == null) || !commissionItem.getSaleEndTask().cancel(false))
+
+		if (_commissionItems.remove(commissionId) == null || commissionItem.getSaleEndTask()?.cancel(false) != true)
 		{
 			player.getInventory().addAdena("Commission error refund", totalPrice, player, null);
 			player.sendPacket(SystemMessageId.ITEM_PURCHASE_HAS_FAILED);
 			player.sendPacket(ExResponseCommissionBuyItemPacket.FAILED);
 			return;
 		}
-		
+
 		if (deleteItemFromDB(commissionId))
 		{
 			float discountFee = (float) commissionItem.getDiscountInPercentage() / 100;
-			
-			long saleFee = (long) Math.Max(MIN_REGISTRATION_AND_SALE_FEE, (totalPrice * SALE_FEE_PER_DAY) * Math.Min(commissionItem.getDurationInDays(), 7));
+
+			long saleFee = (long) Math.Max(MIN_REGISTRATION_AND_SALE_FEE, totalPrice * SALE_FEE_PER_DAY * Math.Min(commissionItem.getDurationInDays(), 7));
 			long addDiscount = (long) (saleFee * discountFee);
 			Message mail = new Message(itemInstance.getOwnerId(), itemInstance, MailType.COMMISSION_ITEM_SOLD);
 			Mail attachement = mail.createAttachments();
-			attachement.addItem("Commission Item Sold", Inventory.ADENA_ID, (totalPrice - saleFee) + addDiscount, player, null);
+			attachement.addItem("Commission Item Sold", Inventory.ADENA_ID, totalPrice - saleFee + addDiscount, player, null);
 			MailManager.getInstance().sendMessage(mail);
-			
+
 			player.sendPacket(new ExResponseCommissionBuyItemPacket(commissionItem));
 			player.getInventory().addItem("Commission Buy Item", commissionItem.getItemInstance(), player, null);
 		}
@@ -404,7 +404,7 @@ public class ItemCommissionManager
 			player.sendPacket(ExResponseCommissionBuyItemPacket.FAILED);
 		}
 	}
-	
+
 	/**
 	 * Deletes a commission item from database.
 	 * @param commissionId the commission item
@@ -412,10 +412,10 @@ public class ItemCommissionManager
 	 */
 	private bool deleteItemFromDB(long commissionId)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int deleted = ctx.CommissionItems.Where(c => c.Id == commissionId).ExecuteDelete();				
+			int deleted = ctx.CommissionItems.Where(c => c.Id == commissionId).ExecuteDelete();
 			if (deleted > 0)
 			{
 				return true;
@@ -427,30 +427,30 @@ public class ItemCommissionManager
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Expires the sale of a commission item and sends the item back to the player.
 	 * @param commissionItem the comission item
 	 */
 	private void expireSale(CommissionItem commissionItem)
 	{
-		if ((_commissionItems.remove(commissionItem.getCommissionId()) != null) && deleteItemFromDB(commissionItem.getCommissionId()))
+		if (_commissionItems.remove(commissionItem.getCommissionId()) != null && deleteItemFromDB(commissionItem.getCommissionId()))
 		{
 			Message mail = new Message(commissionItem.getItemInstance().getOwnerId(), commissionItem.getItemInstance(), MailType.COMMISSION_ITEM_RETURNED);
 			MailManager.getInstance().sendMessage(mail);
 		}
 	}
-	
+
 	/**
 	 * Gets the commission item.
 	 * @param commissionId the commission id to get
 	 * @return the commission item if it exists, {@code null} otherwise
 	 */
-	public CommissionItem getCommissionItem(long commissionId)
+	public CommissionItem? getCommissionItem(long commissionId)
 	{
 		return _commissionItems.get(commissionId);
 	}
-	
+
 	/**
 	 * @param objectId
 	 * @return {@code true} if player with the objectId has commission items, {@code false} otherwise
@@ -466,7 +466,7 @@ public class ItemCommissionManager
 		}
 		return false;
 	}
-	
+
 	/**
 	 * @param player the player
 	 * @param itemId the item id
@@ -476,14 +476,14 @@ public class ItemCommissionManager
 	{
 		foreach (CommissionItem item in _commissionItems.Values)
 		{
-			if ((item.getItemInstance().getOwnerId() == player.ObjectId) && (item.getItemInstance().getTemplate().getId() == itemId))
+			if (item.getItemInstance().getOwnerId() == player.ObjectId && item.getItemInstance().getTemplate().getId() == itemId)
 			{
 				return true;
 			}
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Checks if the player is allowed to interact with commission manager.
 	 * @param player the player
@@ -498,7 +498,7 @@ public class ItemCommissionManager
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Gets the single instance.
 	 * @return the single instance
@@ -507,7 +507,7 @@ public class ItemCommissionManager
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ItemCommissionManager INSTANCE = new ItemCommissionManager();

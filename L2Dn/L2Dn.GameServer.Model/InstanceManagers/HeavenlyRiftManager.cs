@@ -5,6 +5,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
+using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -14,20 +15,24 @@ namespace L2Dn.GameServer.InstanceManagers;
  */
 public class HeavenlyRiftManager
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(HeavenlyRiftManager));
 	private static readonly TimeSpan _despawnTime = TimeSpan.FromMilliseconds(1800000);
-	protected static readonly ZoneType ZONE = ZoneManager.getInstance().getZoneByName("heavenly_rift");
+
+    private static readonly ZoneType _zone =
+        ZoneManager.getInstance().getZoneByName("heavenly_rift") ??
+        throw new InvalidOperationException("Zone heavenly_rift not found");
 
 	public static ZoneType getZone()
 	{
-		return ZONE;
+		return _zone;
 	}
 
 	public static int getAliveNpcCount(int npcId)
 	{
 		int result = 0;
-		foreach (Creature creature in ZONE.getCharactersInside())
+		foreach (Creature creature in _zone.getCharactersInside())
 		{
-			if (creature.isMonster() && !creature.isDead() && (creature.getId() == npcId))
+			if (creature.isMonster() && !creature.isDead() && creature.getId() == npcId)
 			{
 				result++;
 			}
@@ -38,7 +43,7 @@ public class HeavenlyRiftManager
 
 	public static void startEvent20Bomb(Player player)
 	{
-		ZONE.broadcastPacket(new ExShowScreenMessagePacket(NpcStringId.SET_OFF_BOMBS_AND_GET_TREASURES, 2, 5000));
+		_zone.broadcastPacket(new ExShowScreenMessagePacket(NpcStringId.SET_OFF_BOMBS_AND_GET_TREASURES, 2, 5000));
 		spawnMonster(18003, 113352, 12936, 10976, _despawnTime);
 		spawnMonster(18003, 113592, 13272, 10976, _despawnTime);
 		spawnMonster(18003, 113816, 13592, 10976, _despawnTime);
@@ -63,7 +68,7 @@ public class HeavenlyRiftManager
 
 	public static void startEventTower(Player player)
 	{
-		ZONE.broadcastPacket(new ExShowScreenMessagePacket(NpcStringId.PROTECT_THE_CENTRAL_TOWER_FROM_DIVINE_ANGELS, 2,
+		_zone.broadcastPacket(new ExShowScreenMessagePacket(NpcStringId.PROTECT_THE_CENTRAL_TOWER_FROM_DIVINE_ANGELS, 2,
 			5000));
 		spawnMonster(18004, 112648, 14072, 10976, _despawnTime);
 		ThreadPool.schedule(() =>
@@ -77,7 +82,7 @@ public class HeavenlyRiftManager
 
 	public static void startEvent40Angels(Player player)
 	{
-		ZONE.broadcastPacket(new ExShowScreenMessagePacket(NpcStringId.DESTROY_WEAKENED_DIVINE_ANGELS, 2, 5000));
+		_zone.broadcastPacket(new ExShowScreenMessagePacket(NpcStringId.DESTROY_WEAKENED_DIVINE_ANGELS, 2, 5000));
 		for (int i = 0; i < 40; ++i)
 		{
 			spawnMonster(20139, 112696, 13960, 10958, _despawnTime);
@@ -90,11 +95,18 @@ public class HeavenlyRiftManager
 		{
 			Spawn spawn = new Spawn(npcId);
 			spawn.Location = new Location(x, y, z, 0);
-			Npc npc = spawn.doSpawn();
+			Npc? npc = spawn.doSpawn();
+            if (npc == null)
+            {
+                _logger.Error("Failed to spawn monster with id: " + npcId);
+                return;
+            }
+
 			npc.scheduleDespawn(despawnTime);
 		}
 		catch (Exception e)
 		{
+            _logger.Error(e);
 		}
 	}
 
@@ -109,13 +121,13 @@ public class HeavenlyRiftManager
 
 		public void run()
 		{
-			foreach (Creature creature in ZONE.getCharactersInside())
+			foreach (Creature creature in _zone.getCharactersInside())
 			{
 				if (creature.isPlayer())
 				{
 					creature.teleToLocation(new Location3D(114264, 13352, -5104));
 				}
-				else if (creature.isNpc() && (creature.getId() != 30401))
+				else if (creature.isNpc() && creature.getId() != 30401)
 				{
 					creature.decayMe();
 				}

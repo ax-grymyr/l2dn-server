@@ -26,8 +26,8 @@ public readonly struct ExQuestAcceptableListPacket: IOutgoingPacket
 
         foreach (NewQuest newQuest in newQuests)
         {
-            Quest quest = questManager.getQuest(newQuest.getId());
-            if ((quest != null) && quest.canStartQuest(_player))
+            Quest? quest = questManager.getQuest(newQuest.getId());
+            if (quest != null && quest.canStartQuest(_player))
             {
                 QuestState? questState = _player.getQuestState(quest.Name);
                 if (questState == null)

@@ -11,7 +11,7 @@ public readonly struct ExShowCropSettingPacket: IOutgoingPacket
     private readonly Set<Seed> _seeds;
     private readonly Map<int, CropProcure> _current;
     private readonly Map<int, CropProcure> _next;
-	
+
     public ExShowCropSettingPacket(int manorId)
     {
         CastleManorManager manor = CastleManorManager.getInstance();
@@ -22,7 +22,7 @@ public readonly struct ExShowCropSettingPacket: IOutgoingPacket
         foreach (Seed s in _seeds)
         {
             // Current period
-            CropProcure cp = manor.getCropProcure(manorId, s.getCropId(), false);
+            CropProcure? cp = manor.getCropProcure(manorId, s.getCropId(), false);
             if (cp != null)
             {
                 _current.put(s.getCropId(), cp);
@@ -35,11 +35,11 @@ public readonly struct ExShowCropSettingPacket: IOutgoingPacket
             }
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SHOW_CROP_SETTING);
-        
+
         writer.WriteInt32(_manorId); // manor id
         writer.WriteInt32(_seeds.size()); // size
         foreach (Seed s in _seeds)
@@ -83,7 +83,7 @@ public readonly struct ExShowCropSettingPacket: IOutgoingPacket
                 writer.WriteByte(0);
             }
         }
-        
+
         _next.Clear();
         _current.Clear();
     }

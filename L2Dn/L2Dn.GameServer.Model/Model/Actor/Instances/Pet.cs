@@ -1623,7 +1623,8 @@ public class Pet: Summon
 
 		if (getInventoryLimit() != oldInvLimit)
 		{
-			getOwner().sendPacket(new ExStorageMaxCountPacket(getOwner()));
+            if (!getOwner().isSubclassLocked())
+			    getOwner().sendPacket(new ExStorageMaxCountPacket(getOwner()));
 		}
 	}
 }

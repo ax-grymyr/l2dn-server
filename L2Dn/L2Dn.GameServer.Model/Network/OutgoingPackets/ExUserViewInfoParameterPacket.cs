@@ -45,40 +45,40 @@ public readonly struct ExUserViewInfoParameterPacket: IOutgoingPacket
 		// Soulshot Damage - Activation
 		writer.WriteInt16(index++);
 		writer.WriteInt32(
-			(_player.isChargedShot(ShotType.BLESSED_SOULSHOTS) || _player.isChargedShot(ShotType.SOULSHOTS))
-				? (10000 + (int)((_player.getActiveRubyJewel()?.getBonus() ?? 0) * 1000))
+			_player.isChargedShot(ShotType.BLESSED_SOULSHOTS) || _player.isChargedShot(ShotType.SOULSHOTS)
+				? 10000 + (int)((_player.getActiveRubyJewel()?.getBonus() ?? 0) * 1000)
 				: 0);
 
 		// Spiritshot Damage - Activation
 		writer.WriteInt16(index++);
 		writer.WriteInt32(
-			(_player.isChargedShot(ShotType.BLESSED_SPIRITSHOTS) || _player.isChargedShot(ShotType.SPIRITSHOTS))
-				? (10000 + (int)((_player.getActiveShappireJewel()?.getBonus() ?? 0) * 1000))
+			_player.isChargedShot(ShotType.BLESSED_SPIRITSHOTS) || _player.isChargedShot(ShotType.SPIRITSHOTS)
+				? 10000 + (int)((_player.getActiveShappireJewel()?.getBonus() ?? 0) * 1000)
 				: 0);
 
 		// Soulshot Damage - Enchanted Weapons
 		writer.WriteInt16(index++);
 		writer.WriteInt32(
-			(((_player.getActiveWeaponInstance() != null) && _player.getActiveWeaponInstance().isEnchanted())
-				? (int)(_player.getActiveWeaponInstance().getEnchantLevel() *
-				        (_player.getActiveWeaponItem().getItemGrade() == ItemGrade.S ? 1.6 :
-					        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.A ? 1.4 :
-					        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.B ? 0.7 :
-					        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.C ? 0.4 :
-					        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.D ? 0.4 : 0) * 100)
-				: 0));
+			_player.getActiveWeaponInstance() != null && _player.getActiveWeaponInstance().isEnchanted()
+                ? (int)(_player.getActiveWeaponInstance().getEnchantLevel() *
+                    (_player.getActiveWeaponItem().getItemGrade() == ItemGrade.S ? 1.6 :
+                        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.A ? 1.4 :
+                        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.B ? 0.7 :
+                        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.C ? 0.4 :
+                        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.D ? 0.4 : 0) * 100)
+                : 0);
 
 		// Spiritshot Damage - Enchanted Weapons
 		writer.WriteInt16(index++);
 		writer.WriteInt32(
-			(((_player.getActiveWeaponInstance() != null) && _player.getActiveWeaponInstance().isEnchanted())
-				? (int)(_player.getActiveWeaponInstance().getEnchantLevel() *
-				        (_player.getActiveWeaponItem().getItemGrade() == ItemGrade.S ? 1.6 :
-					        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.A ? 1.4 :
-					        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.B ? 0.7 :
-					        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.C ? 0.4 :
-					        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.D ? 0.4 : 0) * 100)
-				: 0));
+			_player.getActiveWeaponInstance() != null && _player.getActiveWeaponInstance().isEnchanted()
+                ? (int)(_player.getActiveWeaponInstance().getEnchantLevel() *
+                    (_player.getActiveWeaponItem().getItemGrade() == ItemGrade.S ? 1.6 :
+                        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.A ? 1.4 :
+                        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.B ? 0.7 :
+                        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.C ? 0.4 :
+                        _player.getActiveWeaponItem().getItemGrade() == ItemGrade.D ? 0.4 : 0) * 100)
+                : 0);
 
 		// Soulshot Damage - Misc.
 		writer.WriteInt16(index++);
@@ -151,8 +151,8 @@ public readonly struct ExUserViewInfoParameterPacket: IOutgoingPacket
 		// Damage Bonus - Sword
 		writer.WriteInt16(index++);
 		writer.WriteInt32(
-			((_player.getActiveWeaponInstance() != null) &&
-			 (_player.getActiveWeaponInstance().getItemType() == WeaponType.SWORD))
+			_player.getActiveWeaponInstance() != null &&
+            _player.getActiveWeaponInstance().getItemType() == WeaponType.SWORD
 				? _player.getStat().getWeaponBonusPAtk()
 				: 0);
 
@@ -167,33 +167,33 @@ public readonly struct ExUserViewInfoParameterPacket: IOutgoingPacket
 		// Damage Bonus - Ancient Sword
 		writer.WriteInt16(index++);
 		writer.WriteInt32(
-			(_player.getActiveWeaponInstance() != null) &&
-			(_player.getActiveWeaponInstance().getItemType() == WeaponType.ANCIENTSWORD)
+			_player.getActiveWeaponInstance() != null &&
+			_player.getActiveWeaponInstance().getItemType() == WeaponType.ANCIENTSWORD
 				? _player.getStat().getWeaponBonusPAtk()
 				: 0);
 
 		// Damage Bonus - Dagger
 		writer.WriteInt16(index++);
 		writer.WriteInt32(
-			(_player.getActiveWeaponInstance() != null) &&
-			(_player.getActiveWeaponInstance().getItemType() == WeaponType.DAGGER)
+			_player.getActiveWeaponInstance() != null &&
+			_player.getActiveWeaponInstance().getItemType() == WeaponType.DAGGER
 				? _player.getStat().getWeaponBonusPAtk()
 				: 0);
 
 		// Damage Bonus - Rapier
 		writer.WriteInt16(index++);
 		writer.WriteInt32(
-			(_player.getActiveWeaponInstance() != null) &&
-			(_player.getActiveWeaponInstance().getItemType() == WeaponType.RAPIER)
+			_player.getActiveWeaponInstance() != null &&
+			_player.getActiveWeaponInstance().getItemType() == WeaponType.RAPIER
 				? _player.getStat().getWeaponBonusPAtk()
 				: 0);
 
 		// Damage Bonus - Blunt Weapon (one hand)
 		writer.WriteInt16(index++);
-		writer.WriteInt32((_player.getActiveWeaponInstance() != null) &&
-		                  ((_player.getActiveWeaponInstance().getItemType() == WeaponType.ETC) ||
-		                   (_player.getActiveWeaponInstance().getItemType() == WeaponType.BLUNT) ||
-		                   (_player.getActiveWeaponInstance().getItemType() == WeaponType.DUALBLUNT))
+		writer.WriteInt32(_player.getActiveWeaponInstance() != null &&
+		                  (_player.getActiveWeaponInstance().getItemType() == WeaponType.ETC ||
+		                   _player.getActiveWeaponInstance().getItemType() == WeaponType.BLUNT ||
+		                   _player.getActiveWeaponInstance().getItemType() == WeaponType.DUALBLUNT)
 			? _player.getStat().getWeaponBonusPAtk()
 			: 0);
 
@@ -212,42 +212,42 @@ public readonly struct ExUserViewInfoParameterPacket: IOutgoingPacket
 		// Damage Bonus - Spear
 		writer.WriteInt16(index++);
 		writer.WriteInt32(
-			(_player.getActiveWeaponInstance() != null) &&
-			(_player.getActiveWeaponInstance().getItemType() == WeaponType.POLE)
+			_player.getActiveWeaponInstance() != null &&
+			_player.getActiveWeaponInstance().getItemType() == WeaponType.POLE
 				? _player.getStat().getWeaponBonusPAtk()
 				: 0);
 
 		// Damage Bonus - Fists
 		writer.WriteInt16(index++);
 		writer.WriteInt32(
-			(_player.getActiveWeaponInstance() != null) &&
-			((_player.getActiveWeaponInstance().getItemType() == WeaponType.FIST) ||
-			 (_player.getActiveWeaponInstance().getItemType() == WeaponType.DUALFIST))
+			_player.getActiveWeaponInstance() != null &&
+			(_player.getActiveWeaponInstance().getItemType() == WeaponType.FIST ||
+			 _player.getActiveWeaponInstance().getItemType() == WeaponType.DUALFIST)
 				? _player.getStat().getWeaponBonusPAtk()
 				: 0);
 
 		// Damage Bonus - Dual Swords
 		writer.WriteInt16(index++);
 		writer.WriteInt32(
-			(_player.getActiveWeaponInstance() != null) &&
-			(_player.getActiveWeaponInstance().getItemType() == WeaponType.DUAL)
+			_player.getActiveWeaponInstance() != null &&
+			_player.getActiveWeaponInstance().getItemType() == WeaponType.DUAL
 				? _player.getStat().getWeaponBonusPAtk()
 				: 0);
 
 		// Damage Bonus - Bow
 		writer.WriteInt16(index++);
-		writer.WriteInt32((_player.getActiveWeaponInstance() != null) &&
-		                  ((_player.getActiveWeaponInstance().getItemType() == WeaponType.BOW) ||
-		                   (_player.getActiveWeaponInstance().getItemType() == WeaponType.CROSSBOW) ||
-		                   (_player.getActiveWeaponInstance().getItemType() == WeaponType.TWOHANDCROSSBOW))
+		writer.WriteInt32(_player.getActiveWeaponInstance() != null &&
+		                  (_player.getActiveWeaponInstance().getItemType() == WeaponType.BOW ||
+		                   _player.getActiveWeaponInstance().getItemType() == WeaponType.CROSSBOW ||
+		                   _player.getActiveWeaponInstance().getItemType() == WeaponType.TWOHANDCROSSBOW)
 			? _player.getStat().getWeaponBonusPAtk()
 			: 0);
 
 		// Damage Bonus - Firearms
 		writer.WriteInt16(index++);
 		writer.WriteInt32(
-			(_player.getActiveWeaponInstance() != null) &&
-			(_player.getActiveWeaponInstance().getItemType() == WeaponType.PISTOLS)
+			_player.getActiveWeaponInstance() != null &&
+			_player.getActiveWeaponInstance().getItemType() == WeaponType.PISTOLS
 				? _player.getStat().getWeaponBonusPAtk()
 				: 0);
 
@@ -270,11 +270,11 @@ public readonly struct ExUserViewInfoParameterPacket: IOutgoingPacket
 
 		// Soulshot Damage Resistance
 		writer.WriteInt16(index++);
-		writer.WriteInt32((int)(100 - (_player.getStat().getValue(Stat.SOULSHOT_RESISTANCE, 1) * 100)));
+		writer.WriteInt32((int)(100 - _player.getStat().getValue(Stat.SOULSHOT_RESISTANCE, 1) * 100));
 
 		// Spiritshot Damage Resistance
 		writer.WriteInt16(index++);
-		writer.WriteInt32((int)(100 - (_player.getStat().getValue(Stat.SPIRITSHOT_RESISTANCE, 1) * 100)));
+		writer.WriteInt32((int)(100 - _player.getStat().getValue(Stat.SPIRITSHOT_RESISTANCE, 1) * 100));
 
 		// Received basic PvP Damage
 		writer.WriteInt16(index++);
@@ -460,7 +460,7 @@ public readonly struct ExUserViewInfoParameterPacket: IOutgoingPacket
 		// ################################## EVASION ##############################
 		// P. Evasion (%)
 		writer.WriteInt16(index++);
-		writer.WriteInt32(((_player.getEvasionRate() * 100) / Config.MAX_EVASION));
+		writer.WriteInt32(_player.getEvasionRate() * 100 / Config.MAX_EVASION);
 
 		// P. Evasion (num.)
 		writer.WriteInt16(index++);
@@ -468,7 +468,7 @@ public readonly struct ExUserViewInfoParameterPacket: IOutgoingPacket
 
 		// M. Evasion (%)
 		writer.WriteInt16(index++);
-		writer.WriteInt32(((_player.getMagicEvasionRate() * 100) / Config.MAX_EVASION));
+		writer.WriteInt32(_player.getMagicEvasionRate() * 100 / Config.MAX_EVASION);
 
 		// M. Evasion (num.)
 		writer.WriteInt16(index++);
@@ -493,7 +493,7 @@ public readonly struct ExUserViewInfoParameterPacket: IOutgoingPacket
 		// ################################## SPEED ##############################
 		// Atk. Spd. (%)
 		writer.WriteInt16(index++);
-		writer.WriteInt32(((_player.getPAtkSpd() * 100) / Config.MAX_PATK_SPEED));
+		writer.WriteInt32(_player.getPAtkSpd() * 100 / Config.MAX_PATK_SPEED);
 
 		// Atk. Spd. (num.)
 		writer.WriteInt16(index++);
@@ -501,7 +501,7 @@ public readonly struct ExUserViewInfoParameterPacket: IOutgoingPacket
 
 		// Casting Spd. (%)
 		writer.WriteInt16(index++);
-		writer.WriteInt32((_player.getMAtkSpd() * 100) / Config.MAX_MATK_SPEED);
+		writer.WriteInt32(_player.getMAtkSpd() * 100 / Config.MAX_MATK_SPEED);
 
 		// Casting Spd. (num.)
 		writer.WriteInt16(index++);
@@ -509,7 +509,7 @@ public readonly struct ExUserViewInfoParameterPacket: IOutgoingPacket
 
 		// Speed (%)
 		writer.WriteInt16(index++);
-		writer.WriteInt32((int)((_player.getMoveSpeed() * 100) / Config.MAX_RUN_SPEED));
+		writer.WriteInt32((int)(_player.getMoveSpeed() * 100 / Config.MAX_RUN_SPEED));
 
 		// Speed (num.)
 		writer.WriteInt16(index++);
@@ -656,11 +656,11 @@ public readonly struct ExUserViewInfoParameterPacket: IOutgoingPacket
 
 		// HP Recovery Rate while walking (%)
 		writer.WriteInt16(index++);
-		writer.WriteInt32((_player.isMoving() && !_player.isRunning()) ? _player.getStat().getHpRegen() : 0);
+		writer.WriteInt32(_player.isMoving() && !_player.isRunning() ? _player.getStat().getHpRegen() : 0);
 
 		// HP Recovery Rate while walking (num.)
 		writer.WriteInt16(index++);
-		writer.WriteInt32((_player.isMoving() && !_player.isRunning()) ? _player.getStat().getHpRegen() : 0);
+		writer.WriteInt32(_player.isMoving() && !_player.isRunning() ? _player.getStat().getHpRegen() : 0);
 
 		// HP Recovery Rate while running (%)
 		writer.WriteInt16(index++);
@@ -696,11 +696,11 @@ public readonly struct ExUserViewInfoParameterPacket: IOutgoingPacket
 
 		// MP Recovery Rate while walking (%)
 		writer.WriteInt16(index++);
-		writer.WriteInt32((_player.isMoving() && !_player.isRunning()) ? _player.getStat().getMpRegen() : 0);
+		writer.WriteInt32(_player.isMoving() && !_player.isRunning() ? _player.getStat().getMpRegen() : 0);
 
 		// MP Recovery Rate while walking (num.)
 		writer.WriteInt16(index++);
-		writer.WriteInt32((_player.isMoving() && !_player.isRunning()) ? _player.getStat().getMpRegen() : 0);
+		writer.WriteInt32(_player.isMoving() && !_player.isRunning() ? _player.getStat().getMpRegen() : 0);
 
 		// MP Recovery Rate while running (%)
 		writer.WriteInt16(index++);
@@ -736,11 +736,11 @@ public readonly struct ExUserViewInfoParameterPacket: IOutgoingPacket
 
 		// CP Recovery Rate while walking (%)
 		writer.WriteInt16(index++);
-		writer.WriteInt32((_player.isMoving() && !_player.isRunning()) ? _player.getStat().getCpRegen() : 0);
+		writer.WriteInt32(_player.isMoving() && !_player.isRunning() ? _player.getStat().getCpRegen() : 0);
 
 		// CP Recovery Rate while walking (num.)
 		writer.WriteInt16(index++);
-		writer.WriteInt32((_player.isMoving() && !_player.isRunning()) ? _player.getStat().getCpRegen() : 0);
+		writer.WriteInt32(_player.isMoving() && !_player.isRunning() ? _player.getStat().getCpRegen() : 0);
 
 		// CP Recovery Rate while running (%)
 		writer.WriteInt16(index++);

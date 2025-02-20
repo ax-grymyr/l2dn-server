@@ -28,7 +28,7 @@ public readonly struct PledgeShowMemberListAddPacket: IOutgoingPacket
         _name = cm.getName();
         _level = cm.getLevel();
         _classId = cm.getClassId();
-        _isOnline = (cm.isOnline() ? cm.getObjectId() : 0);
+        _isOnline = cm.isOnline() ? cm.getObjectId() : 0;
         _pledgeType = cm.getPledgeType();
     }
 	

@@ -23,7 +23,7 @@ public readonly struct PledgeReceiveMemberInfoPacket: IOutgoingPacket
         // clan or subpledge name
         if (_member.getPledgeType() != 0)
         {
-            writer.WriteString((_member.getClan().getSubPledge(_member.getPledgeType())).getName());
+            writer.WriteString(_member.getClan().getSubPledge(_member.getPledgeType()).getName());
         }
         else
         {

@@ -22,6 +22,6 @@ public readonly struct TimedHuntingZoneEnterPacket: IOutgoingPacket
         writer.WriteByte(1); // bEnterSuccess
         writer.WriteInt32(_zoneId);
         writer.WriteInt32(DateTime.UtcNow.getEpochSecond()); // nEnterTimeStamp
-        writer.WriteInt32((_player.getTimedHuntingZoneRemainingTime(_zoneId) / 1000) + 59); // nRemainTime (zone left time)
+        writer.WriteInt32(_player.getTimedHuntingZoneRemainingTime(_zoneId) / 1000 + 59); // nRemainTime (zone left time)
     }
 }

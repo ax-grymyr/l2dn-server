@@ -10,38 +10,36 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct TradeStartPacket: IOutgoingPacket
 {
     private readonly int _sendType;
-    private readonly Player _player;
     private readonly Player _partner;
     private readonly ICollection<Item> _itemList;
     private readonly int _mask;
 
-    public TradeStartPacket(int sendType, Player player)
+    public TradeStartPacket(int sendType, Player player, Player partner)
     {
         _sendType = sendType;
-        _player = player;
-        _partner = player.getActiveTradeList().getPartner();
-        _itemList = _player.getInventory().getAvailableItems(true,
-            (_player.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && Config.GM_TRADE_RESTRICTED_ITEMS), false);
+        _partner = partner;
+        _itemList = player.getInventory().getAvailableItems(true,
+            player.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && Config.GM_TRADE_RESTRICTED_ITEMS, false);
 
-        if (_partner != null)
+        if (partner != null)
         {
             if (player.getFriendList().Contains(_partner.ObjectId))
             {
                 _mask |= 0x01;
             }
 
-            if ((player.getClanId() > 0) && (player.getClanId() == _partner.getClanId()))
+            if (player.getClanId() > 0 && player.getClanId() == _partner.getClanId())
             {
                 _mask |= 0x02;
             }
 
-            if ((MentorManager.getInstance().getMentee(player.ObjectId, _partner.ObjectId) != null) ||
-                (MentorManager.getInstance().getMentee(_partner.ObjectId, player.ObjectId) != null))
+            if (MentorManager.getInstance().getMentee(player.ObjectId, _partner.ObjectId) != null ||
+                MentorManager.getInstance().getMentee(_partner.ObjectId, player.ObjectId) != null)
             {
                 _mask |= 0x04;
             }
 
-            if ((player.getAllyId() > 0) && (player.getAllyId() == _partner.getAllyId()))
+            if (player.getAllyId() > 0 && player.getAllyId() == _partner.getAllyId())
             {
                 _mask |= 0x08;
             }
@@ -56,11 +54,6 @@ public readonly struct TradeStartPacket: IOutgoingPacket
 
     public void WriteContent(PacketBitWriter writer)
     {
-        if ((_player.getActiveTradeList() == null) || (_partner == null))
-        {
-            return;
-        }
-
         writer.WritePacketCode(OutgoingPacketCodes.TRADE_START);
 
         writer.WriteByte((byte)_sendType);

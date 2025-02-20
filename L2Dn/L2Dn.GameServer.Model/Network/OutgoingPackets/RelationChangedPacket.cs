@@ -29,7 +29,7 @@ public struct RelationChangedPacket: IOutgoingPacket
 	public const byte SEND_DEFAULT = 1;
 	public const byte SEND_ONE = 2;
 	public const byte SEND_MULTI = 4;
-	
+
 	private struct Relation
 	{
 		public int ObjId;
@@ -39,60 +39,81 @@ public struct RelationChangedPacket: IOutgoingPacket
 		public PvpFlagStatus PvpFlag;
 	}
 
-	private readonly Relation _relation;
-	private readonly bool _singleRelation;
+	private Relation? _relation;
 	private List<Relation>? _relations;
-	
+
 	public RelationChangedPacket(Playable activeChar, long relation, bool autoAttackable)
-	{
-		_singleRelation = true;
-		_relation.ObjId = activeChar.ObjectId;
-		_relation.RelationCode = relation;
-		_relation.AutoAttackable = autoAttackable;
-		_relation.Reputation = activeChar.getReputation();
-		_relation.PvpFlag = activeChar.getPvpFlag();
-	}
-	
+    {
+        _relation = new Relation
+        {
+            ObjId = activeChar.ObjectId,
+            RelationCode = relation,
+            AutoAttackable = autoAttackable,
+            Reputation = activeChar.getReputation(),
+            PvpFlag = activeChar.getPvpFlag(),
+        };
+    }
+
 	public RelationChangedPacket()
 	{
 	}
-	
+
 	public void addRelation(Playable activeChar, long relation, bool autoAttackable)
 	{
 		if (activeChar.isInvisible())
 			return;
 
-		if (_relations == null)
-			_relations = new();
-		
-		Relation r = new Relation();
-		r.ObjId = activeChar.ObjectId;
-		r.RelationCode = relation;
-		r.AutoAttackable = autoAttackable;
-		r.Reputation = activeChar.getReputation();
-		r.PvpFlag = activeChar.getPvpFlag();
-		
-		_relations.Add(r);
-	}
-	
+        Relation r = new Relation
+        {
+            ObjId = activeChar.ObjectId,
+            RelationCode = relation,
+            AutoAttackable = autoAttackable,
+            Reputation = activeChar.getReputation(),
+            PvpFlag = activeChar.getPvpFlag(),
+        };
+
+        if (_relations != null)
+        {
+            _relations.Add(r);
+            return;
+
+        }
+
+        if (_relation != null)
+        {
+            _relations = [_relation.Value, r];
+            _relation = null;
+            return;
+        }
+
+        _relation = r;
+    }
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.RELATION_CHANGED);
-		if (_singleRelation)
+		if (_relation != null)
 		{
 			writer.WriteByte(SEND_ONE);
-			WriteRelation(writer, _relation);
+			WriteRelation(writer, _relation.Value);
 		}
 		else
 		{
 			writer.WriteByte(SEND_MULTI);
-			writer.WriteInt16((short)_relations.Count);
-			foreach (Relation r in _relations)
-				WriteRelation(writer, r);
-		}
+            if (_relations is null)
+            {
+                writer.WriteInt16(0);
+            }
+            else
+            {
+                writer.WriteInt16((short)_relations.Count);
+                foreach (Relation r in _relations)
+                    WriteRelation(writer, r);
+            }
+        }
 	}
 
-	private static void WriteRelation(PacketBitWriter writer, Relation relation)
+	private static void WriteRelation(PacketBitWriter writer, in Relation relation)
 	{
 		writer.WriteInt32(relation.ObjId);
 		//if ((_mask & SEND_DEFAULT) != SEND_DEFAULT)

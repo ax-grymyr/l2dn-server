@@ -54,7 +54,6 @@ public struct CharacterInfoPacket: IOutgoingPacket
 	];
 
 	private readonly Player _player;
-	private readonly Clan? _clan;
 	private int _objId;
 	private Location _location;
 	private readonly int _mAtkSpd;
@@ -76,11 +75,12 @@ public struct CharacterInfoPacket: IOutgoingPacket
 	{
 		_player = player;
 		_objId = player.ObjectId;
-		_clan = player.getClan();
-		if (_player.getVehicle() != null && _player.getInVehiclePosition() != null)
+
+        Vehicle? vehicle = _player.getVehicle();
+		if (vehicle != null)
 		{
 			_location = new Location(_player.getInVehiclePosition(), _player.getHeading());
-			_vehicleId = _player.getVehicle().ObjectId;
+			_vehicleId = vehicle.ObjectId;
 		}
 		else
 		{
@@ -206,7 +206,8 @@ public struct CharacterInfoPacket: IOutgoingPacket
 			? CursedWeaponsManager.getInstance().getLevel(_player.getCursedWeaponEquippedId())
 			: 0));
 
-		writer.WriteInt32(_clan != null ? _clan.getReputationScore() : 0);
+        Clan? clan = _player.getClan();
+		writer.WriteInt32(clan != null ? clan.getReputationScore() : 0);
 		writer.WriteInt32(_player.getTransformationDisplayId()); // Confirmed
 		writer.WriteInt32(_player.getAgathionId()); // Confirmed
 		writer.WriteByte(0); // nPvPRestrainStatus
@@ -218,7 +219,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		writer.WriteByte(0); // cBRLectureMark
 
 		Set<AbnormalVisualEffect> abnormalVisualEffects = _player.getEffectList().getCurrentAbnormalVisualEffects();
-		Team team = Config.BLUE_TEAM_ABNORMAL_EFFECT != null && Config.RED_TEAM_ABNORMAL_EFFECT != null
+		Team team = Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None
 			? _player.getTeam()
 			: Team.NONE;
 		writer.WriteInt32(abnormalVisualEffects.size() + (_gmSeeInvis ? 1 : 0) +
@@ -235,12 +236,12 @@ public struct CharacterInfoPacket: IOutgoingPacket
 
 		if (team == Team.BLUE)
 		{
-			if (Config.BLUE_TEAM_ABNORMAL_EFFECT != null)
+			if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 			{
 				writer.WriteInt16((short)Config.BLUE_TEAM_ABNORMAL_EFFECT);
 			}
 		}
-		else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != null)
+		else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 		{
 			writer.WriteInt16((short)Config.RED_TEAM_ABNORMAL_EFFECT);
 		}
@@ -251,7 +252,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		writer.WriteInt32(0); // nCursedWeaponClassId
 
 		// AFK animation.
-		if (_player.getClan() != null && CastleManager.getInstance().getCastleByOwner(_player.getClan()) != null)
+		if (clan != null && CastleManager.getInstance().getCastleByOwner(clan) != null)
 		{
 			writer.WriteInt32(_player.isClanLeader() ? 100 : 101);
 		}

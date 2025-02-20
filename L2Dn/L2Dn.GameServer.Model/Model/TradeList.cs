@@ -20,7 +20,7 @@ public class TradeList
 	private readonly Player _owner;
 	private Player _partner;
 	private readonly Set<TradeItem> _items = [];
-	private string? _title;
+	private string _title = string.Empty;
 	private bool _packaged;
 
 	private bool _confirmed;
@@ -46,12 +46,12 @@ public class TradeList
 		return _partner;
 	}
 
-	public void setTitle(string? title)
+	public void setTitle(string title)
 	{
 		_title = title;
 	}
 
-	public string? getTitle()
+	public string getTitle()
 	{
 		return _title;
 	}

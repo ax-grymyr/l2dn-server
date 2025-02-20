@@ -25,7 +25,7 @@ public readonly struct PartySmallWindowAllPacket: IOutgoingPacket
 
         foreach (Player member in _party.getMembers())
         {
-            if ((member != null) && (member != _exclude))
+            if (member != null && member != _exclude)
             {
                 writer.WriteInt32(member.ObjectId);
                 writer.WriteString(member.getName());

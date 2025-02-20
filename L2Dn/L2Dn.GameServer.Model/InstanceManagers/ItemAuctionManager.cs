@@ -17,10 +17,10 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class ItemAuctionManager: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemAuctionManager));
-	
+
 	private readonly Map<int, ItemAuctionInstance> _managerInstances = new();
 	private AtomicInteger _auctionIds = new AtomicInteger();
-	
+
 	protected ItemAuctionManager()
 	{
 		if (!Config.ALT_ITEM_AUCTION_ENABLED)
@@ -28,8 +28,8 @@ public class ItemAuctionManager: DataReaderBase
 			LOGGER.Info(GetType().Name +": Disabled.");
 			return;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			_auctionIds.set(ctx.ItemAuctions.Select(a => a.AuctionId).OrderByDescending(a => a).FirstOrDefault());
@@ -38,10 +38,10 @@ public class ItemAuctionManager: DataReaderBase
 		{
 			LOGGER.Error("Failed loading auctions." + e);
 		}
-		
+
 		load();
 	}
-	
+
 	public void load()
 	{
 		_managerInstances.Clear();
@@ -51,7 +51,7 @@ public class ItemAuctionManager: DataReaderBase
 
 		LOGGER.Info(GetType().Name +": Loaded " + _managerInstances.Count + " instances.");
 	}
-	
+
 	private void parseElement(XElement element)
 	{
 		try
@@ -59,7 +59,7 @@ public class ItemAuctionManager: DataReaderBase
 			int instanceId = element.GetAttributeValueAsInt32("id");
 			if (_managerInstances.ContainsKey(instanceId))
 				throw new Exception("Dublicated instanceId " + instanceId);
-			
+
 			ItemAuctionInstance instance = new ItemAuctionInstance(instanceId, _auctionIds, element);
 			_managerInstances.put(instanceId, instance);
 		}
@@ -68,7 +68,7 @@ public class ItemAuctionManager: DataReaderBase
 			LOGGER.Error(GetType().Name + ": Failed loading auctions from xml." + e);
 		}
 	}
-	
+
 	public void shutdown()
 	{
 		foreach (ItemAuctionInstance instance in _managerInstances.Values)
@@ -76,17 +76,17 @@ public class ItemAuctionManager: DataReaderBase
 			instance.shutdown();
 		}
 	}
-	
-	public ItemAuctionInstance getManagerInstance(int instanceId)
+
+	public ItemAuctionInstance? getManagerInstance(int instanceId)
 	{
 		return _managerInstances.get(instanceId);
 	}
-	
+
 	public int getNextAuctionId()
 	{
 		return _auctionIds.incrementAndGet();
 	}
-	
+
 	public static void deleteAuction(int auctionId)
 	{
 		try
@@ -100,7 +100,7 @@ public class ItemAuctionManager: DataReaderBase
 			LOGGER.Error("ItemAuctionManagerInstance: Failed deleting auction: " + auctionId, e);
 		}
 	}
-	
+
 	/**
 	 * Gets the single instance of {@code ItemAuctionManager}.
 	 * @return single instance of {@code ItemAuctionManager}
@@ -109,7 +109,7 @@ public class ItemAuctionManager: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ItemAuctionManager INSTANCE = new ItemAuctionManager();

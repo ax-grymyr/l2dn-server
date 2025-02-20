@@ -13,22 +13,22 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class SharedTeleportManager
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(SharedTeleportManager));
-	
+
 	private const int TELEPORT_COUNT = 5;
-	
+
 	private readonly Map<int, SharedTeleportHolder> _sharedTeleports = new();
 	private int _lastSharedTeleportId = 0;
-	
+
 	protected SharedTeleportManager()
 	{
 		LOGGER.Info(GetType().Name +": initialized.");
 	}
-	
-	public SharedTeleportHolder getTeleport(int id)
+
+	public SharedTeleportHolder? getTeleport(int id)
 	{
 		return _sharedTeleports.get(id);
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public int nextId(Creature creature)
 	{
@@ -38,7 +38,7 @@ public class SharedTeleportManager
 
 		return nextId;
 	}
-	
+
 	/**
 	 * Gets the single instance of {@code SharedTeleportManager}.
 	 * @return single instance of {@code SharedTeleportManager}
@@ -47,7 +47,7 @@ public class SharedTeleportManager
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly SharedTeleportManager INSTANCE = new();

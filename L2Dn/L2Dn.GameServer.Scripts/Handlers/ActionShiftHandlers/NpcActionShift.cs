@@ -118,11 +118,11 @@ public class NpcActionShift: IActionShiftHandler
 				}
 				else if (npc.getSpawn().hasRespawnRandom())
 				{
-					htmlContent.Replace("%resp%", (npc.getSpawn().getRespawnMinDelay() / 1000) + "-" + (npc.getSpawn().getRespawnMaxDelay() / 1000) + " sec");
+					htmlContent.Replace("%resp%", npc.getSpawn().getRespawnMinDelay() / 1000 + "-" + npc.getSpawn().getRespawnMaxDelay() / 1000 + " sec");
 				}
 				else
 				{
-					htmlContent.Replace("%resp%", (npc.getSpawn().getRespawnMinDelay() / 1000) + " sec");
+					htmlContent.Replace("%resp%", npc.getSpawn().getRespawnMinDelay() / 1000 + " sec");
 				}
 				htmlContent.Replace("%chaseRange%", npc.getSpawn().getChaseRange().ToString());
 			}
@@ -139,9 +139,10 @@ public class NpcActionShift: IActionShiftHandler
 			htmlContent.Replace("%spawnai%", "<font color=FF0000>--</font>");
 
 			if (npc.hasAI())
-			{
-				Set<string> clans = NpcData.getInstance().getClansByIds(npc.getTemplate().getClans());
-				Set<int> ignoreClanNpcIds = npc.getTemplate().getIgnoreClanNpcIds();
+            {
+                Set<int>? npcClans = npc.getTemplate().getClans();
+				Set<string> clans = npcClans == null ? [] : NpcData.getInstance().getClansByIds(npcClans);
+				Set<int>? ignoreClanNpcIds = npc.getTemplate().getIgnoreClanNpcIds();
 				string clansString = !clans.isEmpty() ? string.Join(", ", clans) : "";
 				string ignoreClanNpcIdsString = ignoreClanNpcIds != null ? string.Join(", ", ignoreClanNpcIds) : "";
 

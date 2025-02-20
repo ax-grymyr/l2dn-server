@@ -27,8 +27,8 @@ public struct RequestRecipeBookDestroyPacket: IIncomingPacket<GameSession>
         // {
         //     return;
         // }
-		
-        RecipeList rp = RecipeData.getInstance().getRecipeList(_recipeId);
+
+        RecipeList? rp = RecipeData.getInstance().getRecipeList(_recipeId);
         if (rp == null)
             return ValueTask.CompletedTask;
 

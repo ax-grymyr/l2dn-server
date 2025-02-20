@@ -14,7 +14,7 @@ public class PcCafePointsManager
 	public void run(Player player)
 	{
 		// PC-points only premium accounts
-		if (!Config.PC_CAFE_ENABLED || !Config.PC_CAFE_RETAIL_LIKE || (!player.hasEnteredWorld()))
+		if (!Config.PC_CAFE_ENABLED || !Config.PC_CAFE_RETAIL_LIKE || !player.hasEnteredWorld())
 		{
 			return;
 		}
@@ -24,7 +24,7 @@ public class PcCafePointsManager
 	
 	public void giveRetailPcCafePont(Player player)
 	{
-		if (!Config.PC_CAFE_ENABLED || !Config.PC_CAFE_RETAIL_LIKE || (player.getOnlineStatus() == CharacterOnlineStatus.Offline) || (!player.hasPremiumStatus() && Config.PC_CAFE_ONLY_PREMIUM) || player.isInOfflineMode())
+		if (!Config.PC_CAFE_ENABLED || !Config.PC_CAFE_RETAIL_LIKE || player.getOnlineStatus() == CharacterOnlineStatus.Offline || (!player.hasPremiumStatus() && Config.PC_CAFE_ONLY_PREMIUM) || player.isInOfflineMode())
 		{
 			return;
 		}
@@ -43,7 +43,7 @@ public class PcCafePointsManager
 		}
 		
 		SystemMessagePacket message;
-		if (Config.PC_CAFE_ENABLE_DOUBLE_POINTS && (Rnd.get(100) < Config.PC_CAFE_DOUBLE_POINTS_CHANCE))
+		if (Config.PC_CAFE_ENABLE_DOUBLE_POINTS && Rnd.get(100) < Config.PC_CAFE_DOUBLE_POINTS_CHANCE)
 		{
 			points *= 2;
 			message = new SystemMessagePacket(SystemMessageId.DOUBLE_POINTS_YOU_EARNED_S1_PA_POINT_S);
@@ -53,7 +53,7 @@ public class PcCafePointsManager
 			message = new SystemMessagePacket(SystemMessageId.YOU_EARNED_S1_PA_POINT_S);
 		}
 		
-		if ((player.getPcCafePoints() + points) > Config.PC_CAFE_MAX_POINTS)
+		if (player.getPcCafePoints() + points > Config.PC_CAFE_MAX_POINTS)
 		{
 			points = Config.PC_CAFE_MAX_POINTS - player.getPcCafePoints();
 		}
@@ -66,7 +66,7 @@ public class PcCafePointsManager
 	
 	public void givePcCafePoint(Player player, double exp)
 	{
-		if (Config.PC_CAFE_RETAIL_LIKE || !Config.PC_CAFE_ENABLED || player.isInsideZone(ZoneId.PEACE) || player.isInsideZone(ZoneId.PVP) || player.isInsideZone(ZoneId.SIEGE) || (player.getOnlineStatus() == CharacterOnlineStatus.Offline) || player.isJailed())
+		if (Config.PC_CAFE_RETAIL_LIKE || !Config.PC_CAFE_ENABLED || player.isInsideZone(ZoneId.PEACE) || player.isInsideZone(ZoneId.PVP) || player.isInsideZone(ZoneId.SIEGE) || player.getOnlineStatus() == CharacterOnlineStatus.Offline || player.isJailed())
 		{
 			return;
 		}
@@ -77,7 +77,7 @@ public class PcCafePointsManager
 			return;
 		}
 		
-		if (Config.PC_CAFE_ONLY_VIP && (player.getVipTier() <= 0))
+		if (Config.PC_CAFE_ONLY_VIP && player.getVipTier() <= 0)
 		{
 			return;
 		}
@@ -96,7 +96,7 @@ public class PcCafePointsManager
 			points = Rnd.get(points / 2, points);
 		}
 		
-		if ((points == 0) && (exp > 0) && Config.PC_CAFE_REWARD_LOW_EXP_KILLS && (Rnd.get(100) < Config.PC_CAFE_LOW_EXP_KILLS_CHANCE))
+		if (points == 0 && exp > 0 && Config.PC_CAFE_REWARD_LOW_EXP_KILLS && Rnd.get(100) < Config.PC_CAFE_LOW_EXP_KILLS_CHANCE)
 		{
 			points = 1; // minimum points
 		}
@@ -106,7 +106,7 @@ public class PcCafePointsManager
 			return;
 		}
 		
-		if (Config.PC_CAFE_ENABLE_DOUBLE_POINTS && (Rnd.get(100) < Config.PC_CAFE_DOUBLE_POINTS_CHANCE))
+		if (Config.PC_CAFE_ENABLE_DOUBLE_POINTS && Rnd.get(100) < Config.PC_CAFE_DOUBLE_POINTS_CHANCE)
 		{
 			points *= 2;
 			message = new SystemMessagePacket(SystemMessageId.DOUBLE_POINTS_YOU_EARNED_S1_PA_POINT_S);
@@ -115,7 +115,7 @@ public class PcCafePointsManager
 		{
 			message = new SystemMessagePacket(SystemMessageId.DOUBLE_POINTS_YOU_EARNED_S1_PA_POINT_S);
 		}
-		if ((player.getPcCafePoints() + points) > Config.PC_CAFE_MAX_POINTS)
+		if (player.getPcCafePoints() + points > Config.PC_CAFE_MAX_POINTS)
 		{
 			points = Config.PC_CAFE_MAX_POINTS - player.getPcCafePoints();
 		}

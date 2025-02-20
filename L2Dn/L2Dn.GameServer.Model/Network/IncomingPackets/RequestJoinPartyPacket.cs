@@ -41,7 +41,7 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 		if (FakePlayerData.getInstance().isTalkable(_name))
 		{
 			sm = new SystemMessagePacket(SystemMessageId.C1_HAS_BEEN_INVITED_TO_THE_PARTY);
-			sm.Params.addString(FakePlayerData.getInstance().getProperName(_name));
+			sm.Params.addString(FakePlayerData.getInstance().getProperName(_name) ?? string.Empty);
 			requestor.sendPacket(sm);
 			if (!requestor.isProcessingRequest())
 			{
@@ -56,7 +56,7 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		Player target = World.getInstance().getPlayer(_name);
+		Player? target = World.getInstance().getPlayer(_name);
 		if (target == null)
 		{
 			requestor.sendPacket(SystemMessageId.SELECT_A_PLAYER_YOU_WANT_TO_INVITE_TO_YOUR_PARTY);
@@ -169,7 +169,12 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 	 */
 	private void addTargetToParty(Player target, Player requestor)
 	{
-		Party party = requestor.getParty();
+		Party? party = requestor.getParty();
+        if (party == null)
+        {
+            requestor.sendPacket(SystemMessageId.YOU_ARE_NOT_IN_A_PARTY);
+            return;
+        }
 
 		// summary of ppl already in party and ppl that get invitation
 		if (!party.isLeader(requestor))

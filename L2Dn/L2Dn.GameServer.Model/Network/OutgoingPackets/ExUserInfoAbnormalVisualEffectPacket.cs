@@ -39,7 +39,7 @@ public readonly struct ExUserInfoAbnormalVisualEffectPacket: IOutgoingPacket
                 writer.WriteInt16((short)Config.BLUE_TEAM_ABNORMAL_EFFECT);
             }
         }
-        else if ((team == Team.RED) && (Config.RED_TEAM_ABNORMAL_EFFECT != null))
+        else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != null)
         {
             writer.WriteInt16((short)Config.RED_TEAM_ABNORMAL_EFFECT);
         }

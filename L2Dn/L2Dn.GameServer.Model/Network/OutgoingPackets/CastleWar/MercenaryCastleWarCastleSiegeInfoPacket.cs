@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.InstanceManagers;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.Packets;
 
@@ -35,8 +36,9 @@ public readonly struct MercenaryCastleWarCastleSiegeInfoPacket: IOutgoingPacket
             writer.WriteInt32(0); // seconds?
             writer.WriteInt32(0); // crest?
 
-            writer.WriteSizedString(castle.getOwner() != null ? castle.getOwner().getName() : "-");
-            writer.WriteSizedString(castle.getOwner() != null ? castle.getOwner().getLeaderName() : "-");
+            Clan? clan = castle.getOwner();
+            writer.WriteSizedString(clan != null ? clan.getName() : "-");
+            writer.WriteSizedString(clan != null ? clan.getLeaderName() : "-");
 
             writer.WriteInt32(0); // crest?
             writer.WriteInt32(castle.getSiege().getAttackerClans().Count);

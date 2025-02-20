@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Model.Enums;
@@ -24,7 +25,7 @@ public struct RequestExAskJoinMPCCPacket: IIncomingPacket<GameSession>
 	    if (player == null)
 		    return ValueTask.CompletedTask;
 
-		Player target = World.getInstance().getPlayer(_name);
+		Player? target = World.getInstance().getPlayer(_name);
 		if (target == null)
 			return ValueTask.CompletedTask;
 
@@ -34,9 +35,9 @@ public struct RequestExAskJoinMPCCPacket: IIncomingPacket<GameSession>
 
 		SystemMessagePacket sm;
 		// activeChar is in a Party?
-		if (player.isInParty())
+        Party? activeParty = player.getParty();
+		if (player.isInParty() && activeParty != null)
 		{
-			Party? activeParty = player.getParty();
 			// activeChar is PartyLeader? && activeChars Party is already in a CommandChannel?
 			if (activeParty.getLeader() == player)
 			{
@@ -45,10 +46,11 @@ public struct RequestExAskJoinMPCCPacket: IIncomingPacket<GameSession>
 				{
 					// in CC and the CCLeader
 					// target in a party?
-					if (target.isInParty())
+                    Party? targetParty = target.getParty();
+					if (target.isInParty() && targetParty != null)
 					{
 						// targets party already in a CChannel?
-						if (target.getParty().isInCommandChannel())
+						if (targetParty.isInCommandChannel())
 						{
 							sm = new SystemMessagePacket(SystemMessageId.C1_S_PARTY_IS_ALREADY_A_MEMBER_OF_THE_COMMAND_CHANNEL);
 							sm.Params.addString(target.getName());
@@ -75,10 +77,11 @@ public struct RequestExAskJoinMPCCPacket: IIncomingPacket<GameSession>
 				else
 				{
 					// target in a party?
-					if (target.isInParty())
+                    Party? targetParty = target.getParty();
+					if (target.isInParty() && targetParty != null)
 					{
 						// targets party already in a CChannel?
-						if (target.getParty().isInCommandChannel())
+						if (targetParty.isInCommandChannel())
 						{
 							sm = new SystemMessagePacket(SystemMessageId.C1_S_PARTY_IS_ALREADY_A_MEMBER_OF_THE_COMMAND_CHANNEL);
 							sm.Params.addString(target.getName());
@@ -109,7 +112,8 @@ public struct RequestExAskJoinMPCCPacket: IIncomingPacket<GameSession>
 	private void askJoinMPCC(Player requestor, Player target)
 	{
 		bool hasRight = false;
-		if (requestor.isClanLeader() && requestor.getClan().getLevel() >= 5)
+        Clan? requestorClan = requestor.getClan();
+		if (requestorClan != null && requestor.isClanLeader() && requestorClan.getLevel() >= 5)
 		{
 			// Clan leader of level5 Clan or higher.
 			hasRight = true;
@@ -133,7 +137,10 @@ public struct RequestExAskJoinMPCCPacket: IIncomingPacket<GameSession>
 		}
 
 		// Get the target's party leader, and do whole actions on him.
-		Player targetLeader = target.getParty().getLeader();
+		Player? targetLeader = target.getParty()?.getLeader();
+        if (targetLeader == null)
+            return;
+
 		SystemMessagePacket sm;
 		if (!targetLeader.isProcessingRequest())
 		{

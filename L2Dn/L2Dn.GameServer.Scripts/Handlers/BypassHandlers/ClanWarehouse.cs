@@ -1,12 +1,13 @@
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Clans;
+using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Warehouse = L2Dn.GameServer.Model.Actor.Instances.Warehouse;
 
 namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 
@@ -68,19 +69,20 @@ public class ClanWarehouse: IBypassHandler
                     return true;
                 }
 
-                player.setActiveWarehouse(clan.getWarehouse());
+                ItemContainer activeWarehouse = clan.getWarehouse();
+                player.setActiveWarehouse(activeWarehouse);
 
-                if (player.getActiveWarehouse().getSize() == 0)
+                if (activeWarehouse.getSize() == 0)
                 {
                     player.sendPacket(SystemMessageId.YOU_HAVE_NOT_DEPOSITED_ANY_ITEMS_IN_YOUR_WAREHOUSE);
                     return true;
                 }
 
-                foreach (Item i in player.getActiveWarehouse().getItems())
+                foreach (Item i in activeWarehouse.getItems())
                 {
                     if (i.isTimeLimitedItem() && i.getRemainingTime() <= TimeSpan.Zero)
                     {
-                        player.getActiveWarehouse().destroyItem("ItemInstance", i, player, null);
+                        activeWarehouse.destroyItem("ItemInstance", i, player, null);
                     }
                 }
 

@@ -257,7 +257,7 @@ public class ExtractableItems: IItemHandler
 			sendMessage(player, entry.Key, entry.Value);
 		}
 
-		AutoPeelRequest request = player.getRequest<AutoPeelRequest>();
+		AutoPeelRequest? request = player.getRequest<AutoPeelRequest>();
 		if (request != null)
 		{
 			if (request.isProcessing())

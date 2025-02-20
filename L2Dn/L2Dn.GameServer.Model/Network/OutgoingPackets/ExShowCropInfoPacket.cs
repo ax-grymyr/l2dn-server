@@ -6,22 +6,22 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct ExShowCropInfoPacket: IOutgoingPacket
 {
-    private readonly List<CropProcure> _crops;
+    private readonly List<CropProcure>? _crops;
     private readonly int _manorId;
     private readonly bool _hideButtons;
-	
+
     public ExShowCropInfoPacket(int manorId, bool nextPeriod, bool hideButtons)
     {
         _manorId = manorId;
         _hideButtons = hideButtons;
         CastleManorManager manor = CastleManorManager.getInstance();
-        _crops = (nextPeriod && !manor.isManorApproved()) ? null : manor.getCropProcure(manorId, nextPeriod);
+        _crops = nextPeriod && !manor.isManorApproved() ? null : manor.getCropProcure(manorId, nextPeriod);
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SHOW_CROP_INFO);
-        
+
         writer.WriteByte(_hideButtons); // Hide "Crop Sales" button
         writer.WriteInt32(_manorId); // Manor ID
         writer.WriteInt32(0);
@@ -35,7 +35,7 @@ public readonly struct ExShowCropInfoPacket: IOutgoingPacket
                 writer.WriteInt64(crop.getStartAmount()); // Buy
                 writer.WriteInt64(crop.getPrice()); // Buy price
                 writer.WriteByte((byte)crop.getReward()); // Reward
-                Seed seed = CastleManorManager.getInstance().getSeedByCrop(crop.getId());
+                Seed? seed = CastleManorManager.getInstance().getSeedByCrop(crop.getId());
                 if (seed == null)
                 {
                     writer.WriteInt32(0); // Seed level

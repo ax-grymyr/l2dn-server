@@ -15,7 +15,7 @@ public readonly struct AllianceInfoPacket: IOutgoingPacket
 
     public AllianceInfoPacket(int allianceId)
     {
-        Clan leader = ClanTable.getInstance().getClan(allianceId);
+        Clan? leader = ClanTable.getInstance().getClan(allianceId);
         _name = leader.getAllyName() ?? string.Empty;
         _leaderC = leader.getName();
         _leaderP = leader.getLeaderName();

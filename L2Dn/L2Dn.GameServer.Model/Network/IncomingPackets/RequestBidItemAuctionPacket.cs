@@ -30,11 +30,11 @@ public struct RequestBidItemAuctionPacket: IIncomingPacket<GameSession>
         //     player.sendMessage("You are bidding too fast.");
         //     return ValueTask.CompletedTask;
         // }
-		
+
         if (_bid < 0 || _bid > Inventory.MAX_ADENA)
             return ValueTask.CompletedTask;
-		
-        ItemAuctionInstance instance = ItemAuctionManager.getInstance().getManagerInstance(_instanceId);
+
+        ItemAuctionInstance? instance = ItemAuctionManager.getInstance().getManagerInstance(_instanceId);
         if (instance != null)
         {
             ItemAuction auction = instance.getCurrentAuction();
@@ -43,7 +43,7 @@ public struct RequestBidItemAuctionPacket: IIncomingPacket<GameSession>
                 auction.registerBid(player, _bid);
             }
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

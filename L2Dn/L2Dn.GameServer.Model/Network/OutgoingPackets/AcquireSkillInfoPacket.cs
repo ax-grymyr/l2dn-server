@@ -41,11 +41,11 @@ public readonly struct AcquireSkillInfoPacket: IOutgoingPacket
         _type = skillType;
         _reqs = new();
         
-        if ((skillType != AcquireSkillType.PLEDGE) || Config.LIFE_CRYSTAL_NEEDED)
+        if (skillType != AcquireSkillType.PLEDGE || Config.LIFE_CRYSTAL_NEEDED)
         {
             foreach (List<ItemHolder> item in skillLearn.getRequiredItems())
             {
-                if (!Config.DIVINE_SP_BOOK_NEEDED && (_id == (int)CommonSkill.DIVINE_INSPIRATION))
+                if (!Config.DIVINE_SP_BOOK_NEEDED && _id == (int)CommonSkill.DIVINE_INSPIRATION)
                 {
                     continue;
                 }

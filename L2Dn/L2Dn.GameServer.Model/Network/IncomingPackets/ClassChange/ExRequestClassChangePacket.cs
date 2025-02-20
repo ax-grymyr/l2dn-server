@@ -231,10 +231,14 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 					}
 				}
 
-				UserInfoPacket userInfo = new UserInfoPacket(player);
-				userInfo.addComponentType(UserInfoType.ATT_SPIRITS);
-				player.sendPacket(userInfo);
-				player.sendPacket(new ElementalSpiritInfoPacket(player, 0));
+                if (!player.isSubclassLocked())
+                {
+                    UserInfoPacket userInfo = new UserInfoPacket(player);
+                    userInfo.AddComponentType(UserInfoType.ATT_SPIRITS);
+                    player.sendPacket(userInfo);
+                }
+
+                player.sendPacket(new ElementalSpiritInfoPacket(player, 0));
 				player.sendPacket(new ExElementalSpiritAttackTypePacket(player));
 			}
 

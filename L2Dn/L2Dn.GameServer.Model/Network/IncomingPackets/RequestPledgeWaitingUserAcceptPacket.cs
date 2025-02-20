@@ -46,7 +46,7 @@ public struct RequestPledgeWaitingUserAcceptPacket: IIncomingPacket<GameSession>
 					// player.setPowerGrade(9); // academy
 					target.setPowerGrade(5); // New member starts at 5, not confirmed.
 					clan.addClanMember(target);
-					target.setClanPrivileges(target.getClan().getRankPrivs(target.getPowerGrade()));
+					target.setClanPrivileges(clan.getRankPrivs(target.getPowerGrade()));
 					target.sendPacket(SystemMessageId.ENTERED_THE_CLAN);
 
 					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_HAS_JOINED_THE_CLAN);

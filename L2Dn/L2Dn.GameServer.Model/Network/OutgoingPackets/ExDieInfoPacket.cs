@@ -39,10 +39,10 @@ public readonly struct ExDieInfoPacket: IOutgoingPacket
             }
             else
             {
-                Clan clan = damageHolder.getCreature().getClan();
+                Clan? clan = damageHolder.getCreature().getClan();
                 writer.WriteInt16(0);
                 writer.WriteString(damageHolder.getCreature().getName());
-                writer.WriteString(clan == null ? "" : clan.getName());
+                writer.WriteString(clan?.getName() ?? string.Empty);
             }
 
             writer.WriteInt32(damageHolder.getSkillId());

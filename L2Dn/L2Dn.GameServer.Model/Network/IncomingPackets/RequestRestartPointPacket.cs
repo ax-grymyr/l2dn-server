@@ -66,7 +66,8 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 		}
 
 		Castle? castle = CastleManager.getInstance().getCastle(player.Location.Location3D);
-		if (castle != null && castle.getSiege().isInProgress() && player.getClan() != null && castle.getSiege().checkIsAttacker(player.getClan()))
+        Clan? clan = player.getClan();
+		if (castle != null && castle.getSiege().isInProgress() && clan != null && castle.getSiege().checkIsAttacker(clan))
 		{
 			// Schedule respawn delay for attacker
 			ThreadPool.schedule(new DeathTask(player, _requestedPointType, _resItemID), castle.getSiege().getAttackerRespawnDelay());
@@ -96,14 +97,15 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 		{
 			case 1: // to clanhall
 			{
-				if (player.getClan() == null || player.getClan().getHideoutId() == 0)
+                Clan? clan = player.getClan();
+				if (clan == null || clan.getHideoutId() == 0)
 				{
 					PacketLogger.Instance.Warn("Player [" + player.getName() + "] called RestartPointPacket - To Clanhall and he doesn't have Clanhall!");
 					return;
 				}
 
 				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.CLANHALL);
-				ClanHall? residence = ClanHallData.getInstance().getClanHallByClan(player.getClan());
+				ClanHall? residence = ClanHallData.getInstance().getClanHallByClan(clan);
 				if (residence != null && residence.hasFunction(ResidenceFunctionType.EXP_RESTORE))
 				{
 					player.restoreExp(residence.getFunction(ResidenceFunctionType.EXP_RESTORE).getValue());
@@ -113,9 +115,9 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 			}
 			case 2: // to castle
 			{
-				Clan clan = player.getClan();
+				Clan? clan = player.getClan();
 				Castle? castle = CastleManager.getInstance().getCastle(player);
-				if (castle != null && castle.getSiege().isInProgress())
+				if (castle != null && clan != null && castle.getSiege().isInProgress())
 				{
 					// Siege in progress
 					if (castle.getSiege().checkIsDefender(clan))
@@ -159,7 +161,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 			}
 			case 3: // to fortress
 			{
-				Clan clan = player.getClan();
+				Clan? clan = player.getClan();
 				if (clan == null || clan.getFortId() == 0)
 				{
 					PacketLogger.Instance.Warn("Player [" + player.getName() + "] called RestartPointPacket - To Fortress and he doesn't have Fortress!");
@@ -168,7 +170,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 
 				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.FORTRESS);
 
-				Fort fort = FortManager.getInstance().getFortByOwner(clan);
+				Fort? fort = FortManager.getInstance().getFortByOwner(clan);
 				if (fort != null)
 				{
 					Fort.FortFunction fortFunction = fort.getFortFunction(Fort.FUNC_RESTORE_EXP);
@@ -182,15 +184,16 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 			case 4: // to siege HQ
 			{
 				SiegeClan? siegeClan = null;
-				Castle castle = CastleManager.getInstance().getCastle(player);
-				Fort fort = FortManager.getInstance().getFort(player);
-				if (castle != null && castle.getSiege().isInProgress())
+				Castle? castle = CastleManager.getInstance().getCastle(player);
+				Fort? fort = FortManager.getInstance().getFort(player);
+                Clan? clan = player.getClan();
+				if (castle != null && clan != null && castle.getSiege().isInProgress())
 				{
-					siegeClan = castle.getSiege().getAttackerClan(player.getClan());
+					siegeClan = castle.getSiege().getAttackerClan(clan);
 				}
-				else if (fort != null && fort.getSiege().isInProgress())
+				else if (fort != null && clan != null && fort.getSiege().isInProgress())
 				{
-					siegeClan = fort.getSiege().getAttackerClan(player.getClan());
+					siegeClan = fort.getSiege().getAttackerClan(clan);
 				}
 
 				if (siegeClan == null || siegeClan.getFlag().isEmpty())

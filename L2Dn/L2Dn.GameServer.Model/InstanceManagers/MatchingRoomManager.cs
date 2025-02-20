@@ -43,8 +43,8 @@ public class MatchingRoomManager
 		List<Player> players = new();
 		foreach (Player player in _waitingList)
 		{
-			if ((player != null) && (player.getLevel() >= minLevel) && (player.getLevel() <= maxLevel) &&
-			    ((classIds == null) || classIds.Contains(player.getClassId())) && (string.IsNullOrEmpty(query) ||
+			if (player != null && player.getLevel() >= minLevel && player.getLevel() <= maxLevel &&
+			    (classIds == null || classIds.Contains(player.getClassId())) && (string.IsNullOrEmpty(query) ||
 				    player.getName().ToLower().Contains(query)))
 			{
 				players.Add(player);
@@ -77,8 +77,8 @@ public class MatchingRoomManager
 		{
 			foreach (MatchingRoom room in rooms.Values)
 			{
-				if (((location < 0) || (room.getLocation() == location)) //
-					&& ((type == PartyMatchingRoomLevelType.ALL) || ((room.getMinLevel() >= requestorLevel) && (room.getMaxLevel() <= requestorLevel))))
+				if ((location < 0 || room.getLocation() == location) //
+					&& (type == PartyMatchingRoomLevelType.ALL || (room.getMinLevel() >= requestorLevel && room.getMaxLevel() <= requestorLevel)))
 				{
 					result.Add(room);
 				}
@@ -99,8 +99,8 @@ public class MatchingRoomManager
 		{
 			foreach (MatchingRoom room in rooms.Values)
 			{
-				if ((room.getLocation() == location) //
-					&& ((room.getMinLevel() <= level) && (room.getMaxLevel() >= level)))
+				if (room.getLocation() == location && //
+                    room.getMinLevel() <= level && room.getMaxLevel() >= level)
 				{
 					result.Add(room);
 				}
@@ -120,8 +120,8 @@ public class MatchingRoomManager
 		{
 			foreach (MatchingRoom room in rooms.Values)
 			{
-				if ((room.getLocation() == location) //
-					&& ((room.getMinLevel() <= level) && (room.getMaxLevel() >= level)))
+				if (room.getLocation() == location && //
+                    room.getMinLevel() <= level && room.getMaxLevel() >= level)
 				{
 					return room;
 				}

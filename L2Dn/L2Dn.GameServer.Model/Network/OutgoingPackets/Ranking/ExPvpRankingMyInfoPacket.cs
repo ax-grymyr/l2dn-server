@@ -11,24 +11,24 @@ public readonly struct ExPvpRankingMyInfoPacket: IOutgoingPacket
     private readonly Player _player;
     private readonly Map<int, StatSet> _playerList;
     private readonly Map<int, StatSet> _snapshotList;
-	
+
     public ExPvpRankingMyInfoPacket(Player player)
     {
         _player = player;
         _playerList = RankManager.getInstance().getPvpRankList();
         _snapshotList = RankManager.getInstance().getSnapshotPvpRankList();
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_PVP_RANKING_MY_INFO);
-        
+
         if (_playerList.Count != 0)
         {
             bool found = false;
             foreach (int id in _playerList.Keys)
             {
-                StatSet ss = _playerList.get(id);
+                StatSet ss = _playerList[id];
                 if (ss.getInt("charId") == _player.ObjectId)
                 {
                     int playerId = _player.ObjectId;

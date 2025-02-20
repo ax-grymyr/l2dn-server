@@ -131,7 +131,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	private SkillChannelized _channelized;
 
-	private BuffFinishTask _buffFinishTask;
+	private BuffFinishTask? _buffFinishTask;
 
 	private Transform? _transform;
 
@@ -261,7 +261,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	/**
 	 * @return character inventory, default null, overridden in Playable types and in Npc
 	 */
-	public virtual Inventory getInventory()
+	public virtual Inventory? getInventory()
 	{
 		return null;
 	}
@@ -287,7 +287,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public override bool isInsideZone(ZoneId zone)
 	{
-		Instance instance = getInstanceWorld();
+		Instance? instance = getInstanceWorld();
 		switch (zone)
 		{
 			case ZoneId.PVP:
@@ -356,7 +356,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public bool transform(int id, bool addSkills)
 	{
-		Transform transform = TransformData.getInstance().getTransform(id);
+		Transform? transform = TransformData.getInstance().getTransform(id);
 		if (transform != null)
 		{
 			this.transform(transform, addSkills);
@@ -444,7 +444,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * Overridden in Player.
 	 * @return the access level.
 	 */
-	public virtual AccessLevel getAccessLevel()
+	public virtual AccessLevel? getAccessLevel()
 	{
 		return null;
 	}
@@ -2714,8 +2714,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				else if (isPlayer())
 				{
 					UserInfoPacket info = new UserInfoPacket(getActingPlayer(), false);
-					info.addComponentType(UserInfoType.SLOTS);
-					info.addComponentType(UserInfoType.ENCHANTLEVEL);
+					info.AddComponentType(UserInfoType.SLOTS);
+					info.AddComponentType(UserInfoType.ENCHANTLEVEL);
 
 					bool updateWeight = false;
 					foreach (Stat stat in currentChanges)
@@ -2730,13 +2730,13 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 							case Stat.FLY_RUN_SPEED:
 							case Stat.FLY_WALK_SPEED:
 							{
-								info.addComponentType(UserInfoType.MULTIPLIER);
+								info.AddComponentType(UserInfoType.MULTIPLIER);
 								break;
 							}
 							case Stat.PHYSICAL_ATTACK_SPEED:
 							{
-								info.addComponentType(UserInfoType.MULTIPLIER);
-								info.addComponentType(UserInfoType.STATS);
+								info.AddComponentType(UserInfoType.MULTIPLIER);
+								info.AddComponentType(UserInfoType.STATS);
 								break;
 							}
 							case Stat.PHYSICAL_ATTACK:
@@ -2751,22 +2751,22 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 							case Stat.MAGIC_ATTACK_SPEED:
 							case Stat.MAGICAL_DEFENCE:
 							{
-								info.addComponentType(UserInfoType.STATS);
+								info.AddComponentType(UserInfoType.STATS);
 								break;
 							}
 							case Stat.MAX_CP:
 							{
-								info.addComponentType(UserInfoType.MAX_HPCPMP);
+								info.AddComponentType(UserInfoType.MAX_HPCPMP);
 								break;
 							}
 							case Stat.MAX_HP:
 							{
-								info.addComponentType(UserInfoType.MAX_HPCPMP);
+								info.AddComponentType(UserInfoType.MAX_HPCPMP);
 								break;
 							}
 							case Stat.MAX_MP:
 							{
-								info.addComponentType(UserInfoType.MAX_HPCPMP);
+								info.AddComponentType(UserInfoType.MAX_HPCPMP);
 								break;
 							}
 							case Stat.STAT_STR:
@@ -2776,7 +2776,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 							case Stat.STAT_WIT:
 							case Stat.STAT_MEN:
 							{
-								info.addComponentType(UserInfoType.BASE_STATS);
+								info.AddComponentType(UserInfoType.BASE_STATS);
 								updateWeight = true;
 								break;
 							}
@@ -2787,7 +2787,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 							case Stat.HOLY_RES:
 							case Stat.DARK_RES:
 							{
-								info.addComponentType(UserInfoType.ELEMENTALS);
+								info.AddComponentType(UserInfoType.ELEMENTALS);
 								break;
 							}
 							case Stat.FIRE_POWER:
@@ -2797,7 +2797,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 							case Stat.HOLY_POWER:
 							case Stat.DARK_POWER:
 							{
-								info.addComponentType(UserInfoType.ATK_ELEMENTAL);
+								info.AddComponentType(UserInfoType.ATK_ELEMENTAL);
 								break;
 							}
 							case Stat.WEIGHT_LIMIT:
@@ -2815,7 +2815,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 							case Stat.ELEMENTAL_SPIRIT_WIND_ATTACK:
 							case Stat.ELEMENTAL_SPIRIT_WIND_DEFENSE:
 							{
-								info.addComponentType(UserInfoType.ATT_SPIRITS);
+								info.AddComponentType(UserInfoType.ATT_SPIRITS);
 								break;
 							}
 						}
@@ -2827,7 +2827,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						player.refreshOverloaded(true);
 					}
 
-					sendPacket(info);
+                    if (!player.isSubclassLocked())
+					    sendPacket(info);
 
 					player.broadcastCharInfo();
 
@@ -4052,12 +4053,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				if (target.isPlayable())
 				{
 					player.setAssassinationPoints(player.getAssassinationPoints() + 1000);
-					player.sendPacket(new UserInfoPacket(player));
+                    if (!player.isSubclassLocked())
+					    player.sendPacket(new UserInfoPacket(player));
 				}
 				else if (target.isAttackable())
 				{
 					player.setAssassinationPoints(player.getAssassinationPoints() + 5);
-					player.sendPacket(new UserInfoPacket(player));
+                    if (!player.isSubclassLocked())
+    					player.sendPacket(new UserInfoPacket(player));
 				}
 			}
 		}

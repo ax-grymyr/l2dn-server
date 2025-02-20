@@ -37,8 +37,8 @@ public readonly struct ExPetInfoPacket: IOutgoingPacket
 		
 		_summon = summon;
 		_attacker = attacker;
-		_relation = (attacker != null) && (summon.getOwner() != null) ? summon.getOwner().getRelation(attacker) : 0;
-		_title = (summon.getOwner() != null) && summon.getOwner().isOnline() ? summon.getOwner().getName() : "";
+		_relation = attacker != null && summon.getOwner() != null ? summon.getOwner().getRelation(attacker) : 0;
+		_title = summon.getOwner() != null && summon.getOwner().isOnline() ? summon.getOwner().getName() : "";
 		_value = value;
 		_abnormalVisualEffects = summon.getEffectList().getCurrentAbnormalVisualEffects();
 		
@@ -67,7 +67,7 @@ public readonly struct ExPetInfoPacket: IOutgoingPacket
 		{
 			_helper.AddComponent(NpcInfoType.HEADING);
 		}
-		if ((summon.getStat().getPAtkSpd() > 0) || (summon.getStat().getMAtkSpd() > 0))
+		if (summon.getStat().getPAtkSpd() > 0 || summon.getStat().getMAtkSpd() > 0)
 		{
 			_helper.AddComponent(NpcInfoType.ATK_CAST_SPEED);
 		}
@@ -75,7 +75,7 @@ public readonly struct ExPetInfoPacket: IOutgoingPacket
 		{
 			_helper.AddComponent(NpcInfoType.SPEED_MULTIPLIER);
 		}
-		if ((summon.getWeapon() > 0) || (summon.getArmor() > 0))
+		if (summon.getWeapon() > 0 || summon.getArmor() > 0)
 		{
 			_helper.AddComponent(NpcInfoType.EQUIPPED);
 		}
@@ -174,12 +174,12 @@ public readonly struct ExPetInfoPacket: IOutgoingPacket
 					}
 					case NpcInfoType.TITLE:
 					{
-						_initSize += npcInfoType.GetBlockLength() + (_title.Length * 2);
+						_initSize += npcInfoType.GetBlockLength() + _title.Length * 2;
 						break;
 					}
 					case NpcInfoType.NAME:
 					{
-						_blockSize += npcInfoType.GetBlockLength() + (summon.getName().Length * 2);
+						_blockSize += npcInfoType.GetBlockLength() + summon.getName().Length * 2;
 						break;
 					}
 					default:

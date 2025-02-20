@@ -21,14 +21,14 @@ public readonly struct AgitDecoInfoPacket: IOutgoingPacket
 
 		// Fireplace
 		ResidenceFunction? function = _residense.getFunction(ResidenceFunctionType.HP_REGEN);
-		if ((function == null) || (function.getLevel() == 0))
+		if (function == null || function.getLevel() == 0)
 		{
 			writer.WriteByte(0);
 		}
-		else if (((_residense.getGrade() == ClanHallGrade.GRADE_NONE) && (function.getLevel() < 2)) ||
-		         ((_residense.getGrade() == ClanHallGrade.GRADE_D) && (function.getLevel() < 3)) ||
-		         ((_residense.getGrade() == ClanHallGrade.GRADE_C) && (function.getLevel() < 4)) ||
-		         ((_residense.getGrade() == ClanHallGrade.GRADE_B) && (function.getLevel() < 5)))
+		else if ((_residense.getGrade() == ClanHallGrade.GRADE_NONE && function.getLevel() < 2) ||
+		         (_residense.getGrade() == ClanHallGrade.GRADE_D && function.getLevel() < 3) ||
+		         (_residense.getGrade() == ClanHallGrade.GRADE_C && function.getLevel() < 4) ||
+		         (_residense.getGrade() == ClanHallGrade.GRADE_B && function.getLevel() < 5))
 		{
 			writer.WriteByte(1);
 		}
@@ -39,15 +39,15 @@ public readonly struct AgitDecoInfoPacket: IOutgoingPacket
 
 		// Carpet - Statue
 		function = _residense.getFunction(ResidenceFunctionType.MP_REGEN);
-		if ((function == null) || (function.getLevel() == 0))
+		if (function == null || function.getLevel() == 0)
 		{
 			writer.WriteByte(0);
 			writer.WriteByte(0);
 		}
-		else if ((((_residense.getGrade() == ClanHallGrade.GRADE_NONE) ||
-		           (_residense.getGrade() == ClanHallGrade.GRADE_D)) && (function.getLevel() < 2)) ||
-		         ((_residense.getGrade() == ClanHallGrade.GRADE_C) && (function.getLevel() < 3)) ||
-		         ((_residense.getGrade() == ClanHallGrade.GRADE_B) && (function.getLevel() < 4)))
+		else if (((_residense.getGrade() == ClanHallGrade.GRADE_NONE ||
+		           _residense.getGrade() == ClanHallGrade.GRADE_D) && function.getLevel() < 2) ||
+		         (_residense.getGrade() == ClanHallGrade.GRADE_C && function.getLevel() < 3) ||
+		         (_residense.getGrade() == ClanHallGrade.GRADE_B && function.getLevel() < 4))
 		{
 			writer.WriteByte(1);
 			writer.WriteByte(1);
@@ -60,7 +60,7 @@ public readonly struct AgitDecoInfoPacket: IOutgoingPacket
 
 		// Chandelier
 		function = _residense.getFunction(ResidenceFunctionType.EXP_RESTORE);
-		if ((function == null) || (function.getLevel() == 0))
+		if (function == null || function.getLevel() == 0)
 		{
 			writer.WriteByte(0);
 		}
@@ -75,7 +75,7 @@ public readonly struct AgitDecoInfoPacket: IOutgoingPacket
 
 		// Mirror
 		function = _residense.getFunction(ResidenceFunctionType.TELEPORT);
-		if ((function == null) || (function.getLevel() == 0))
+		if (function == null || function.getLevel() == 0)
 		{
 			writer.WriteByte(0);
 		}
@@ -92,7 +92,7 @@ public readonly struct AgitDecoInfoPacket: IOutgoingPacket
 		writer.WriteByte(0);
 		// Curtain
 		function = _residense.getFunction(ResidenceFunctionType.CURTAIN);
-		if ((function == null) || (function.getLevel() == 0))
+		if (function == null || function.getLevel() == 0)
 		{
 			writer.WriteByte(0);
 		}
@@ -107,12 +107,12 @@ public readonly struct AgitDecoInfoPacket: IOutgoingPacket
 
 		// Magic Curtain
 		function = _residense.getFunction(ResidenceFunctionType.ITEM);
-		if ((function == null) || (function.getLevel() == 0))
+		if (function == null || function.getLevel() == 0)
 		{
 			writer.WriteByte(0);
 		}
-		else if (((_residense.getGrade() == ClanHallGrade.GRADE_NONE) && (function.getLevel() < 2)) ||
-		         (function.getLevel() < 3))
+		else if ((_residense.getGrade() == ClanHallGrade.GRADE_NONE && function.getLevel() < 2) ||
+		         function.getLevel() < 3)
 		{
 			writer.WriteByte(1);
 		}
@@ -123,14 +123,14 @@ public readonly struct AgitDecoInfoPacket: IOutgoingPacket
 
 		// Support
 		function = _residense.getFunction(ResidenceFunctionType.BUFF);
-		if ((function == null) || (function.getLevel() == 0))
+		if (function == null || function.getLevel() == 0)
 		{
 			writer.WriteByte(0);
 		}
-		else if (((_residense.getGrade() == ClanHallGrade.GRADE_NONE) && (function.getLevel() < 2)) ||
-		         ((_residense.getGrade() == ClanHallGrade.GRADE_D) && (function.getLevel() < 4)) ||
-		         ((_residense.getGrade() == ClanHallGrade.GRADE_C) && (function.getLevel() < 5)) ||
-		         ((_residense.getGrade() == ClanHallGrade.GRADE_B) && (function.getLevel() < 8)))
+		else if ((_residense.getGrade() == ClanHallGrade.GRADE_NONE && function.getLevel() < 2) ||
+		         (_residense.getGrade() == ClanHallGrade.GRADE_D && function.getLevel() < 4) ||
+		         (_residense.getGrade() == ClanHallGrade.GRADE_C && function.getLevel() < 5) ||
+		         (_residense.getGrade() == ClanHallGrade.GRADE_B && function.getLevel() < 8))
 		{
 			writer.WriteByte(1);
 		}
@@ -141,7 +141,7 @@ public readonly struct AgitDecoInfoPacket: IOutgoingPacket
 
 		// Flag
 		function = _residense.getFunction(ResidenceFunctionType.OUTERFLAG);
-		if ((function == null) || (function.getLevel() == 0))
+		if (function == null || function.getLevel() == 0)
 		{
 			writer.WriteByte(0);
 		}
@@ -156,7 +156,7 @@ public readonly struct AgitDecoInfoPacket: IOutgoingPacket
 
 		// Front platform
 		function = _residense.getFunction(ResidenceFunctionType.PLATFORM);
-		if ((function == null) || (function.getLevel() == 0))
+		if (function == null || function.getLevel() == 0)
 		{
 			writer.WriteByte(0);
 		}
@@ -171,12 +171,12 @@ public readonly struct AgitDecoInfoPacket: IOutgoingPacket
 
 		// Item create?
 		function = _residense.getFunction(ResidenceFunctionType.ITEM);
-		if ((function == null) || (function.getLevel() == 0))
+		if (function == null || function.getLevel() == 0)
 		{
 			writer.WriteByte(0);
 		}
-		else if (((_residense.getGrade() == ClanHallGrade.GRADE_NONE) && (function.getLevel() < 2)) ||
-		         (function.getLevel() < 3))
+		else if ((_residense.getGrade() == ClanHallGrade.GRADE_NONE && function.getLevel() < 2) ||
+		         function.getLevel() < 3)
 		{
 			writer.WriteByte(1);
 		}

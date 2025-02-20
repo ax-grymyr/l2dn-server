@@ -31,7 +31,7 @@ public struct RequestPledgeSetMemberPowerGradePacket: IIncomingPacket<GameSessio
         if (!player.hasClanPrivilege(ClanPrivilege.CL_MANAGE_RANKS))
             return ValueTask.CompletedTask;
 
-        ClanMember member = clan.getClanMember(_member);
+        ClanMember? member = clan.getClanMember(_member);
         if (member == null)
             return ValueTask.CompletedTask;
 

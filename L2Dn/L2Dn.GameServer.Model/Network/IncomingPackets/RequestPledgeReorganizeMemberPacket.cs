@@ -36,11 +36,11 @@ public struct RequestPledgeReorganizeMemberPacket: IIncomingPacket<GameSession>
         if (!player.hasClanPrivilege(ClanPrivilege.CL_MANAGE_RANKS))
             return ValueTask.CompletedTask;
 
-        ClanMember member1 = clan.getClanMember(_memberName);
+        ClanMember? member1 = clan.getClanMember(_memberName);
         if (member1 == null || member1.getObjectId() == clan.getLeaderId())
             return ValueTask.CompletedTask;
 
-        ClanMember member2 = clan.getClanMember(_selectedMember);
+        ClanMember? member2 = clan.getClanMember(_selectedMember);
         if (member2 == null || member2.getObjectId() == clan.getLeaderId())
             return ValueTask.CompletedTask;
 

@@ -50,11 +50,11 @@ public class CastleManorManager: DataReaderBase, IStorable
 			int hour = currentTime.Hour;
 			int min = currentTime.Minute;
 			int maintenanceMin = Config.ALT_MANOR_REFRESH_MIN + Config.ALT_MANOR_MAINTENANCE_MIN;
-			if (((hour >= Config.ALT_MANOR_REFRESH_TIME) && (min >= maintenanceMin)) || (hour < Config.ALT_MANOR_APPROVE_TIME) || ((hour == Config.ALT_MANOR_APPROVE_TIME) && (min <= Config.ALT_MANOR_APPROVE_MIN)))
+			if ((hour >= Config.ALT_MANOR_REFRESH_TIME && min >= maintenanceMin) || hour < Config.ALT_MANOR_APPROVE_TIME || (hour == Config.ALT_MANOR_APPROVE_TIME && min <= Config.ALT_MANOR_APPROVE_MIN))
 			{
 				_mode = ManorMode.MODIFIABLE;
 			}
-			else if ((hour == Config.ALT_MANOR_REFRESH_TIME) && ((min >= Config.ALT_MANOR_REFRESH_MIN) && (min < maintenanceMin)))
+			else if (hour == Config.ALT_MANOR_REFRESH_TIME && min >= Config.ALT_MANOR_REFRESH_MIN && min < maintenanceMin)
 			{
 				_mode = ManorMode.MAINTENANCE;
 			}
@@ -225,7 +225,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 				// Update manor period
 				foreach (Castle castle in CastleManager.getInstance().getCastles())
 				{
-					Clan owner = castle.getOwner();
+					Clan? owner = castle.getOwner();
 					if (owner == null)
 					{
 						continue;
@@ -233,7 +233,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 
 					int castleId = castle.getResidenceId();
 					ItemContainer cwh = owner.getWarehouse();
-					foreach (CropProcure crop in _procure.get(castleId))
+					foreach (CropProcure crop in _procure[castleId])
 					{
 						if (crop.getStartAmount() > 0)
 						{
@@ -241,14 +241,16 @@ public class CastleManorManager: DataReaderBase, IStorable
 							if (crop.getStartAmount() != crop.getAmount())
 							{
 								long count = (long) ((crop.getStartAmount() - crop.getAmount()) * 0.9);
-								if ((count < 1) && (Rnd.get(99) < 90))
+								if (count < 1 && Rnd.get(99) < 90)
 								{
 									count = 1;
 								}
 
 								if (count > 0)
-								{
-									cwh.addItem("Manor", getSeedByCrop(crop.getId()).getMatureId(), count, null, null);
+                                {
+                                    Seed? seed = getSeedByCrop(crop.getId());
+                                    if (seed != null) // TODO: exception
+									    cwh.addItem("Manor", seed.getMatureId(), count, null, null);
 								}
 							}
 							// Reserved and not used money giving back to treasury
@@ -260,8 +262,8 @@ public class CastleManorManager: DataReaderBase, IStorable
 					}
 
 					// Change next period to current and prepare next period data
-					List<SeedProduction> nextProduction = _productionNext.get(castleId);
-					List<CropProcure> nextProcure = _procureNext.get(castleId);
+					List<SeedProduction> nextProduction = _productionNext[castleId];
+					List<CropProcure> nextProcure = _procureNext[castleId];
 					_production.put(castleId, nextProduction);
 					_procure.put(castleId, nextProcure);
 
@@ -297,11 +299,11 @@ public class CastleManorManager: DataReaderBase, IStorable
 				// Notify clan leader about manor mode change
 				foreach (Castle castle in CastleManager.getInstance().getCastles())
 				{
-					Clan owner = castle.getOwner();
+					Clan? owner = castle.getOwner();
 					if (owner != null)
 					{
 						ClanMember clanLeader = owner.getLeader();
-						if ((clanLeader != null) && clanLeader.isOnline())
+						if (clanLeader != null && clanLeader.isOnline())
 						{
 							clanLeader.getPlayer().sendPacket(SystemMessageId.THE_MANOR_INFORMATION_HAS_BEEN_UPDATED);
 						}
@@ -315,7 +317,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 				_mode = ManorMode.APPROVED;
 				foreach (Castle castle in CastleManager.getInstance().getCastles())
 				{
-					Clan owner = castle.getOwner();
+					Clan? owner = castle.getOwner();
 					if (owner == null)
 					{
 						continue;
@@ -324,23 +326,27 @@ public class CastleManorManager: DataReaderBase, IStorable
 					int slots = 0;
 					int castleId = castle.getResidenceId();
 					ItemContainer cwh = owner.getWarehouse();
-					foreach (CropProcure crop in _procureNext.get(castleId))
-					{
-						if ((crop.getStartAmount() > 0) && (cwh.getAllItemsByItemId(getSeedByCrop(crop.getId()).getMatureId()) == null))
+					foreach (CropProcure crop in _procureNext[castleId])
+                    {
+                        Seed? seed = getSeedByCrop(crop.getId());
+                        if (seed == null)
+                            continue;
+
+						if (crop.getStartAmount() > 0 && cwh.getAllItemsByItemId(seed.getMatureId()) == null)
 						{
 							slots++;
 						}
 					}
 
 					long manorCost = getManorCost(castleId, true);
-					if (!cwh.validateCapacity(slots) && (castle.getTreasury() < manorCost))
+					if (!cwh.validateCapacity(slots) && castle.getTreasury() < manorCost)
 					{
-						_productionNext.get(castleId).Clear();
-						_procureNext.get(castleId).Clear();
+						_productionNext.get(castleId)?.Clear();
+						_procureNext.get(castleId)?.Clear();
 
 						// Notify clan leader
 						ClanMember clanLeader = owner.getLeader();
-						if ((clanLeader != null) && clanLeader.isOnline())
+						if (clanLeader != null && clanLeader.isOnline())
 						{
 							clanLeader.getPlayer().sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_FUNDS_IN_THE_CLAN_WAREHOUSE_FOR_THE_MANOR_TO_OPERATE);
 						}
@@ -473,7 +479,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 
 	public List<SeedProduction> getSeedProduction(int castleId, bool nextPeriod)
 	{
-		return (nextPeriod) ? _productionNext.get(castleId) : _production.get(castleId);
+		return nextPeriod ? _productionNext[castleId] : _production[castleId];
 	}
 
 	public SeedProduction? getSeedProduct(int castleId, int seedId, bool nextPeriod)
@@ -490,7 +496,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 
 	public List<CropProcure> getCropProcure(int castleId, bool nextPeriod)
 	{
-		return (nextPeriod) ? _procureNext.get(castleId) : _procure.get(castleId);
+		return nextPeriod ? _procureNext[castleId] : _procure[castleId];
 	}
 
 	public CropProcure? getCropProcure(int castleId, int cropId, bool nextPeriod)
@@ -512,12 +518,12 @@ public class CastleManorManager: DataReaderBase, IStorable
 		long total = 0;
 		foreach (SeedProduction seed in production)
 		{
-			Seed s = getSeed(seed.getId());
-			total += (s == null) ? 1 : (s.getSeedReferencePrice() * seed.getStartAmount());
+			Seed? s = getSeed(seed.getId());
+			total += s == null ? 1 : s.getSeedReferencePrice() * seed.getStartAmount();
 		}
 		foreach (CropProcure crop in procure)
 		{
-			total += (crop.getPrice() * crop.getStartAmount());
+			total += crop.getPrice() * crop.getStartAmount();
 		}
 		return total;
 	}
@@ -594,10 +600,10 @@ public class CastleManorManager: DataReaderBase, IStorable
 			return;
 		}
 
-		_procure.get(castleId).Clear();
-		_procureNext.get(castleId).Clear();
-		_production.get(castleId).Clear();
-		_productionNext.get(castleId).Clear();
+		_procure.get(castleId)?.Clear();
+		_procureNext.get(castleId)?.Clear();
+		_production.get(castleId)?.Clear();
+		_productionNext.get(castleId)?.Clear();
 
 		if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
@@ -692,12 +698,12 @@ public class CastleManorManager: DataReaderBase, IStorable
 		return result;
 	}
 
-	public Seed getSeed(int seedId)
+	public Seed? getSeed(int seedId)
 	{
 		return _seeds.get(seedId);
 	}
 
-	public Seed getSeedByCrop(int cropId, int castleId)
+	public Seed? getSeedByCrop(int cropId, int castleId)
 	{
 		foreach (Seed s in getSeedsForCastle(castleId))
 		{
@@ -709,7 +715,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 		return null;
 	}
 
-	public Seed getSeedByCrop(int cropId)
+	public Seed? getSeedByCrop(int cropId)
 	{
 		foreach (Seed s in _seeds.Values)
 		{

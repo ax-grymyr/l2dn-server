@@ -203,13 +203,14 @@ public class Quest: AbstractScript, IIdentifiable
 	 *            create a new QuestState
 	 * @return the QuestState object for this quest or null if it doesn't exist
 	 */
-	public QuestState? getQuestState(Player player, bool initIfNone)
+	public QuestState getQuestState(Player player, bool initIfNone)
 	{
 		QuestState? qs = player.getQuestState(Name);
 		if (qs != null || !initIfNone)
 		{
 			return qs;
 		}
+
 		return newQuestState(player);
 	}
 

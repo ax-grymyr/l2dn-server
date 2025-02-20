@@ -295,7 +295,7 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 
 	public static int getLimit(Item item, int sotneId)
 	{
-		ElementalItemHolder elementItem = ElementalAttributeData.getInstance().getItemElemental(sotneId);
+		ElementalItemHolder? elementItem = ElementalAttributeData.getInstance().getItemElemental(sotneId);
 		if (elementItem == null)
 		{
 			return 0;

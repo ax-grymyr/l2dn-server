@@ -11,13 +11,13 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct RecipeItemMakeInfoPacket: IOutgoingPacket
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(RecipeItemMakeInfoPacket));
-    
+
     private readonly int _id;
     private readonly Player _player;
     private readonly bool _success;
     private readonly double _craftRate;
     private readonly double _craftCritical;
-	
+
     public RecipeItemMakeInfoPacket(int id, Player player, bool success)
     {
         _id = id;
@@ -26,7 +26,7 @@ public readonly struct RecipeItemMakeInfoPacket: IOutgoingPacket
         _craftRate = _player.getStat().getValue(Stat.CRAFT_RATE, 0);
         _craftCritical = _player.getStat().getValue(Stat.CRAFTING_CRITICAL, 0);
     }
-	
+
     public RecipeItemMakeInfoPacket(int id, Player player)
     {
         _id = id;
@@ -35,16 +35,16 @@ public readonly struct RecipeItemMakeInfoPacket: IOutgoingPacket
         _craftRate = _player.getStat().getValue(Stat.CRAFT_RATE, 0);
         _craftCritical = _player.getStat().getValue(Stat.CRAFTING_CRITICAL, 0);
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
-        RecipeList recipe = RecipeData.getInstance().getRecipeList(_id);
+        RecipeList? recipe = RecipeData.getInstance().getRecipeList(_id);
         if (recipe == null)
         {
             _logger.Error("Character: " + _player + ": Requested unexisting recipe with id = " + _id);
             return;
         }
-		
+
         writer.WritePacketCode(OutgoingPacketCodes.RECIPE_ITEM_MAKE_INFO);
         writer.WriteInt32(_id);
         writer.WriteInt32(!recipe.isDwarvenRecipe()); // 0 = Dwarven - 1 = Common

@@ -47,11 +47,14 @@ public class VitalityPointUp: AbstractEffect
 
         player.updateVitalityPoints(_value, false, false);
 
-		UserInfoPacket ui = new UserInfoPacket(player);
-		ui.addComponentType(UserInfoType.VITA_FAME);
-        player.sendPacket(ui);
+        if (!player.isSubclassLocked())
+        {
+            UserInfoPacket ui = new UserInfoPacket(player);
+            ui.AddComponentType(UserInfoType.VITA_FAME);
+            player.sendPacket(ui);
+        }
 
-		// Send item list to update vitality items with red icons in inventory.
+        // Send item list to update vitality items with red icons in inventory.
 		ThreadPool.schedule(() =>
 		{
 			List<Item> items = [];

@@ -24,8 +24,8 @@ public readonly struct ExBlockDetailInfoPacket: IOutgoingPacket
 		_friend = World.getInstance().getPlayer(_name);
 
 		DateTime now = DateTime.UtcNow;
-		TimeSpan onlineTime = (now - _friend.getLastAccess()) ?? TimeSpan.Zero;
-		_lastAccess = (_friend == null) || _friend.isBlocked(player) ? 0 :
+		TimeSpan onlineTime = now - _friend?.getLastAccess() ?? TimeSpan.Zero;
+		_lastAccess = _friend == null || _friend.isBlocked(player) ? 0 :
 			_friend.isOnline() ? now.getEpochSecond() * 1000 :
 			(int)onlineTime.TotalSeconds; // TODO probably incorrect time
 	}

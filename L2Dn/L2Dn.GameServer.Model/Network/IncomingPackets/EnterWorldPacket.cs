@@ -82,7 +82,8 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		//LoginServerThread.getInstance().sendClientTracert(player.getAccountName(), adress);
 		//client.setClientTracert(_tracert);
 
-		connection.Send(new UserInfoPacket(player));
+        if (!player.isSubClassActive())
+		    connection.Send(new UserInfoPacket(player));
 
 		// Restore to instanced area if enabled.
 		PlayerVariables vars = player.getVariables();
@@ -361,7 +362,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			connection.Send(new ExQuestNotificationAllPacket(player));
 			foreach (NewQuest newQuest in NewQuestData.getInstance().getQuests())
 			{
-				Quest quest = QuestManager.getInstance().getQuest(newQuest.getId());
+				Quest? quest = QuestManager.getInstance().getQuest(newQuest.getId());
 				if (quest != null)
 				{
 					QuestState? questState = player.getQuestState(quest.Name);
@@ -843,7 +844,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		Clan? clan = player.getClan();
 		if (clan != null)
 		{
-			clan.getClanMember(player.ObjectId).setPlayer(player);
+			clan.getClanMember(player.ObjectId)?.setPlayer(player); // TODO: verify null checking
 
 			SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.CLAN_MEMBER_S1_HAS_LOGGED_IN);
 			msg.Params.addString(player.getName());

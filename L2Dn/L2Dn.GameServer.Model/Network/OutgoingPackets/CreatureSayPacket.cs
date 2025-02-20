@@ -36,15 +36,15 @@ public struct CreatureSayPacket: IOutgoingPacket
             {
                 _mask |= 0x01;
             }
-            if ((receiver.getClanId() > 0) && (receiver.getClanId() == sender.getClanId()))
+            if (receiver.getClanId() > 0 && receiver.getClanId() == sender.getClanId())
             {
                 _mask |= 0x02;
             }
-            if ((MentorManager.getInstance().getMentee(receiver.ObjectId, sender.ObjectId) != null) || (MentorManager.getInstance().getMentee(sender.ObjectId, receiver.ObjectId) != null))
+            if (MentorManager.getInstance().getMentee(receiver.ObjectId, sender.ObjectId) != null || MentorManager.getInstance().getMentee(sender.ObjectId, receiver.ObjectId) != null)
             {
                 _mask |= 0x04;
             }
-            if ((receiver.getAllyId() > 0) && (receiver.getAllyId() == sender.getAllyId()))
+            if (receiver.getAllyId() > 0 && receiver.getAllyId() == sender.getAllyId())
             {
                 _mask |= 0x08;
             }
@@ -108,7 +108,7 @@ public struct CreatureSayPacket: IOutgoingPacket
         if (_text != null)
         {
             writer.WriteString(_text);
-            if ((_sender != null) && (_sender.isPlayer() || _sender.isFakePlayer()) && (_chatType == ChatType.WHISPER))
+            if (_sender != null && (_sender.isPlayer() || _sender.isFakePlayer()) && _chatType == ChatType.WHISPER)
             {
                 writer.WriteByte((byte)_mask);
                 if ((_mask & 0x10) == 0)
@@ -126,16 +126,16 @@ public struct CreatureSayPacket: IOutgoingPacket
         }
 
         // Rank
-        if ((_sender != null) && _sender.isPlayer())
+        if (_sender != null && _sender.isPlayer())
         {
             Clan clan = _sender.getClan();
-            if ((clan != null) && ((_chatType == ChatType.CLAN) || (_chatType == ChatType.ALLIANCE)))
+            if (clan != null && (_chatType == ChatType.CLAN || _chatType == ChatType.ALLIANCE))
             {
                 writer.WriteByte(0); // unknown clan byte
             }
 
             int rank = RankManager.getInstance().getPlayerGlobalRank(_sender.getActingPlayer());
-            if ((rank == 0) || (rank > 100))
+            if (rank == 0 || rank > 100)
             {
                 writer.WriteByte(0);
             }

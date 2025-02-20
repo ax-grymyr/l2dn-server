@@ -13,13 +13,13 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 {
     public void WriteContent(PacketBitWriter writer)
 	{
-		EnchantItemRequest request = player.getRequest<EnchantItemRequest>();
+		EnchantItemRequest? request = player.getRequest<EnchantItemRequest>();
 		if (request == null)
 		{
 			return;
 		}
 
-		if ((!isMulti && (request.getEnchantingItem() == null)) || request.isProcessing() || (request.getEnchantingScroll() == null))
+		if ((!isMulti && request.getEnchantingItem() == null) || request.isProcessing() || request.getEnchantingScroll() == null)
 		{
 			return;
 		}
@@ -38,7 +38,7 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 			// 100,00 % = 10000, because last 2 numbers going after float comma.
 			double baseRate;
 			double passiveRate;
-			if (!isMulti || (request.getMultiEnchantingItemsBySlot(i) != 0))
+			if (!isMulti || request.getMultiEnchantingItemsBySlot(i) != 0)
 			{
 				baseRate = getBaseRate(request, i);
 				passiveRate = getPassiveRate(request, i);
@@ -52,7 +52,7 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 			double supportRate = getSupportRate(request);
 			if (passiveRate != 0)
 			{
-				passiveBaseRate = (baseRate * passiveRate) / 10000;
+				passiveBaseRate = baseRate * passiveRate / 10000;
 			}
 			double totalRate = baseRate + supportRate + passiveBaseRate;
 			if (totalRate >= 10000)
@@ -83,7 +83,7 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 	private int getSupportRate(EnchantItemRequest request)
 	{
 		double supportRate = 0;
-		if (!isMulti && (request.getSupportItem() != null))
+		if (!isMulti && request.getSupportItem() != null)
 		{
 			supportRate = EnchantItemData.getInstance().getSupportItem(request.getSupportItem().getId()).getBonusRate();
 			supportRate = supportRate * 100;
@@ -99,7 +99,7 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 			if (!isMulti)
 			{
 				CrystalType crystalLevel = request.getEnchantingItem().getTemplate().getCrystalType().getLevel();
-				if ((crystalLevel == CrystalType.NONE.getLevel()) || (crystalLevel == CrystalType.EVENT.getLevel()))
+				if (crystalLevel == CrystalType.NONE.getLevel() || crystalLevel == CrystalType.EVENT.getLevel())
 				{
 					passiveRate = 0;
 				}
@@ -111,7 +111,7 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 			else
 			{
 				CrystalType crystalLevel = player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(iteration)).getTemplate().getCrystalType().getLevel();
-				if ((crystalLevel == CrystalType.NONE.getLevel()) || (crystalLevel == CrystalType.EVENT.getLevel()))
+				if (crystalLevel == CrystalType.NONE.getLevel() || crystalLevel == CrystalType.EVENT.getLevel())
 				{
 					passiveRate = 0;
 				}

@@ -44,13 +44,13 @@ public readonly struct ExBRProductListPacket: IOutgoingPacket
 			writer.WriteByte((byte)brItem.getStopMinute());
 			
 			// Daily account limit.
-			if ((brItem.getAccountDailyLimit() > 0) && (_player.getAccountVariables().getInt(AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + brItem.getBrId(), 0) >= brItem.getAccountDailyLimit()))
+			if (brItem.getAccountDailyLimit() > 0 && _player.getAccountVariables().getInt(AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + brItem.getBrId(), 0) >= brItem.getAccountDailyLimit())
 			{
 				writer.WriteInt32(brItem.getAccountDailyLimit());
 				writer.WriteInt32(brItem.getAccountDailyLimit());
 			}
 			// General account limit.
-			else if ((brItem.getAccountBuyLimit() > 0) && (_player.getAccountVariables().getInt(AccountVariables.PRIME_SHOP_PRODUCT_COUNT + brItem.getBrId(), 0) >= brItem.getAccountBuyLimit()))
+			else if (brItem.getAccountBuyLimit() > 0 && _player.getAccountVariables().getInt(AccountVariables.PRIME_SHOP_PRODUCT_COUNT + brItem.getBrId(), 0) >= brItem.getAccountBuyLimit())
 			{
 				writer.WriteInt32(brItem.getAccountBuyLimit());
 				writer.WriteInt32(brItem.getAccountBuyLimit());

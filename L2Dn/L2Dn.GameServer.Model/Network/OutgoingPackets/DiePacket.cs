@@ -45,34 +45,34 @@ public readonly struct DiePacket: IOutgoingPacket
 				SiegeClan? siegeClan = null;
 				Castle? castle = CastleManager.getInstance().getCastle(creature);
 				Fort? fort = FortManager.getInstance().getFort(creature);
-				if ((castle != null) && castle.getSiege().isInProgress())
+				if (castle != null && castle.getSiege().isInProgress())
 				{
 					siegeClan = castle.getSiege().getAttackerClan(clan);
-					isInCastleDefense = (siegeClan == null) && castle.getSiege().checkIsDefender(clan);
+					isInCastleDefense = siegeClan == null && castle.getSiege().checkIsDefender(clan);
 				}
-				else if ((fort != null) && fort.getSiege().isInProgress())
+				else if (fort != null && fort.getSiege().isInProgress())
 				{
 					siegeClan = fort.getSiege().getAttackerClan(clan);
-					isInFortDefense = (siegeClan == null) && fort.getSiege().checkIsDefender(clan);
+					isInFortDefense = siegeClan == null && fort.getSiege().checkIsDefender(clan);
 				}
 
 				// ClanHall check.
-				if ((clan != null) && (clan.getHideoutId() > 0))
+				if (clan != null && clan.getHideoutId() > 0)
 				{
 					_flags += 2;
 				}
 				// Castle check.
-				if (((clan != null) && (clan.getCastleId() > 0)) || isInCastleDefense)
+				if ((clan != null && clan.getCastleId() > 0) || isInCastleDefense)
 				{
 					_flags += 4;
 				}
 				// Fortress check.
-				if (((clan != null) && (clan.getFortId() > 0)) || isInFortDefense)
+				if ((clan != null && clan.getFortId() > 0) || isInFortDefense)
 				{
 					_flags += 8;
 				}
 				// Outpost check.
-				if (((siegeClan != null) && !isInCastleDefense && !isInFortDefense && !siegeClan.getFlag().isEmpty()))
+				if (siegeClan != null && !isInCastleDefense && !isInFortDefense && !siegeClan.getFlag().isEmpty())
 				{
 					_flags += 16;
 				}
@@ -96,7 +96,7 @@ public readonly struct DiePacket: IOutgoingPacket
 		writer.WriteInt32((int)_delayFeather.TotalSeconds); // Feather item time.
 		writer.WriteByte(0); // Hide die animation.
 		writer.WriteInt32(0);
-		if ((_player != null) && Config.RESURRECT_BY_PAYMENT_ENABLED)
+		if (_player != null && Config.RESURRECT_BY_PAYMENT_ENABLED)
 		{
 			int resurrectTimes = _player.getVariables().getInt(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, 0) + 1;
 			int originalValue = resurrectTimes - 1;
@@ -128,7 +128,7 @@ public readonly struct DiePacket: IOutgoingPacket
 
 	private void getValues(PacketBitWriter writer, int originalValue)
 	{
-		if ((Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES == null) || (Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES == null))
+		if (Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES == null || Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES == null)
 		{
 			writer.WriteInt32(0); // Adena resurrection
 			writer.WriteInt32(-1); // Adena count%
@@ -148,7 +148,7 @@ public readonly struct DiePacket: IOutgoingPacket
 				break;
 			}
 
-			if ((_player.getLevel() >= level) && (levelListSecond.LastIndexOf(level) != (levelListSecond.Count - 1)))
+			if (_player.getLevel() >= level && levelListSecond.LastIndexOf(level) != levelListSecond.Count - 1)
 			{
 				continue;
 			}
@@ -181,7 +181,7 @@ public readonly struct DiePacket: IOutgoingPacket
 				break;
 			}
 
-			if ((_player.getLevel() >= level) && (levelListFirst.LastIndexOf(level) != (levelListFirst.Count - 1)))
+			if (_player.getLevel() >= level && levelListFirst.LastIndexOf(level) != levelListFirst.Count - 1)
 			{
 				continue;
 			}

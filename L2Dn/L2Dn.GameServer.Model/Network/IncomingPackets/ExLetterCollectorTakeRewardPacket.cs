@@ -29,17 +29,21 @@ public struct ExLetterCollectorTakeRewardPacket: IIncomingPacket<GameSession>
         if (inventory == null)
             return ValueTask.CompletedTask;
 
-        LetterCollectorManager.LetterCollectorRewardHolder lcrh = LetterCollectorManager.getInstance().getRewards(_wordId);
+        LetterCollectorManager.LetterCollectorRewardHolder? lcrh = LetterCollectorManager.getInstance().getRewards(_wordId);
         if (lcrh == null)
             return ValueTask.CompletedTask;
 
-        foreach (ItemHolder needLetter in LetterCollectorManager.getInstance().getWord(_wordId))
+        List<ItemHolder>? word = LetterCollectorManager.getInstance().getWord(_wordId);
+        if (word == null)
+            return ValueTask.CompletedTask;
+
+        foreach (ItemHolder needLetter in word)
         {
             if (inventory.getInventoryItemCount(needLetter.getId(), -1) < needLetter.getCount())
                 return ValueTask.CompletedTask;
         }
 
-        foreach (ItemHolder destroyLetter in LetterCollectorManager.getInstance().getWord(_wordId))
+        foreach (ItemHolder destroyLetter in word)
         {
             if (!player.destroyItemByItemId("LetterCollector", destroyLetter.getId(), destroyLetter.getCount(), player, true))
                 return ValueTask.CompletedTask;

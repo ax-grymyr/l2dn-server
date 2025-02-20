@@ -40,33 +40,46 @@ public struct RequestGmCommandPacket: IIncomingPacket<GameSession>
         {
             case 1: // player status
             {
-                connection.Send(new GMViewCharacterInfoPacket(player));
-                connection.Send(new GMHennaInfoPacket(player));
+                if (player != null)
+                {
+                    connection.Send(new GMViewCharacterInfoPacket(player));
+                    connection.Send(new GMHennaInfoPacket(player));
+                }
+
                 break;
             }
             case 2: // player clan
             {
-                if (player != null && player.getClan() != null)
+                Clan? playerClan = player?.getClan();
+                if (player != null && playerClan != null)
                 {
-                    connection.Send(new GMViewPledgeInfoPacket(player.getClan(), player));
+                    connection.Send(new GMViewPledgeInfoPacket(playerClan, player));
                 }
                 break;
             }
             case 3: // player skills
             {
-                connection.Send(new GMViewSkillInfoPacket(player));
+                if (player != null)
+                    connection.Send(new GMViewSkillInfoPacket(player));
+
                 break;
             }
             case 4: // player quests
             {
-                connection.Send(new GMViewQuestInfoPacket(player));
+                if (player != null)
+                    connection.Send(new GMViewQuestInfoPacket(player));
+
                 break;
             }
             case 5: // player inventory
             {
-                connection.Send(new GMViewItemListPacket(1, player));
-                connection.Send(new GMViewItemListPacket(2, player));
-                connection.Send(new GMHennaInfoPacket(player));
+                if (player != null)
+                {
+                    connection.Send(new GMViewItemListPacket(1, player));
+                    connection.Send(new GMViewItemListPacket(2, player));
+                    connection.Send(new GMHennaInfoPacket(player));
+                }
+
                 break;
             }
             case 6: // player warehouse
@@ -78,7 +91,7 @@ public struct RequestGmCommandPacket: IIncomingPacket<GameSession>
                     connection.Send(new GMViewWarehouseWithdrawListPacket(2, player));
                     // clan warehouse
                 }
-                else
+                else if (clan != null)
                 {
                     connection.Send(new GMViewWarehouseWithdrawListPacket(1, clan));
                     connection.Send(new GMViewWarehouseWithdrawListPacket(2, clan));

@@ -57,7 +57,7 @@ public struct RequestMagicSkillUsePacket: IIncomingPacket<GameSession>
                 if (skill == null && player.hasPet())
                 {
                     pet = player.getPet();
-                    skill = pet.getKnownSkill(_magicId);
+                    skill = pet?.getKnownSkill(_magicId);
                 }
                 if (skill != null && pet != null)
                 {

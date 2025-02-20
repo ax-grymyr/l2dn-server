@@ -19,7 +19,7 @@ public readonly struct ExRpItemLinkPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.EX_RP_ITEM_LINK);
         
         Player player = _item.getActingPlayer();
-        if ((player != null) && player.isOnline())
+        if (player != null && player.isOnline())
         {
             writer.WriteByte(1);
             writer.WriteInt32(player.ObjectId);

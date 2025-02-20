@@ -35,7 +35,7 @@ public struct RequestRaidBossSpawnInfoPacket: IIncomingPacket<GameSession>
 
         foreach (var bossId in _bossIds)
         {
-            GrandBoss boss = GrandBossManager.getInstance().getBoss(bossId);
+            GrandBoss? boss = GrandBossManager.getInstance().getBoss(bossId);
             if (boss == null)
             {
                 RaidBossStatus status = DbSpawnManager.getInstance().getStatus(bossId);
@@ -82,7 +82,7 @@ public struct RequestRaidBossSpawnInfoPacket: IIncomingPacket<GameSession>
         }
 
         connection.Send(new ExRaidBossSpawnInfoPacket(statuses));
-        
+
         return ValueTask.CompletedTask;
     }
 }

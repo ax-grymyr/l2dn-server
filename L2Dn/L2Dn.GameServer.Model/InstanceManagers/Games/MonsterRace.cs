@@ -17,7 +17,7 @@ namespace L2Dn.GameServer.InstanceManagers.Games;
 public class MonsterRace
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(MonsterRace));
-	
+
 	public enum RaceState
 	{
 		ACCEPTING_BETS,
@@ -25,28 +25,28 @@ public class MonsterRace
 		STARTING_RACE,
 		RACE_END
 	}
-	
-	protected static readonly PlaySoundPacket SOUND_1 = new PlaySoundPacket(1, "S_Race", 0, 0, 0, 0, 0);
-	protected static readonly PlaySoundPacket SOUND_2 = new PlaySoundPacket("ItemSound2.race_start");
+
+	protected static readonly PlaySoundPacket SOUND_1 = new(1, "S_Race", 0, 0, 0, 0, 0);
+	protected static readonly PlaySoundPacket SOUND_2 = new("ItemSound2.race_start");
 
 	protected static readonly int[][] CODES = [[-1, 0], [0, 15322], [13765, -1]];
-	
-	protected readonly int[] _npcTemplates; // List holding npc templates, shuffled on a new race.
+
+	protected readonly int[] _npcTemplates = []; // List holding npc templates, shuffled on a new race.
 	protected readonly List<HistoryInfo> _history = new(); // List holding old race records.
 	protected readonly Map<int, long> _betsPerLane = new(); // Map holding all bets for each lane ; values setted to 0 after every race.
 	protected readonly List<double> _odds = new(); // List holding sorted odds per lane ; cleared at new odds calculation.
-	
+
 	protected int _raceNumber = 1;
 	protected int _finalCountdown = 0;
 	protected RaceState _state = RaceState.RACE_END;
-	
+
 	protected MonsterRaceInfoPacket _packet;
-	
+
 	private readonly Npc[] _monsters = new Npc[8];
-	private int[][] _speeds;
+	private int[][] _speeds = [];
 	private readonly int[] _first = new int[2];
 	private readonly int[] _second = new int[2];
-	
+
 	protected MonsterRace()
 	{
 		if (!Config.ALLOW_RACE)
@@ -57,30 +57,30 @@ public class MonsterRace
 		_speeds = new int[8][];
 		for (int i = 0; i < _speeds.Length; i++)
 			_speeds[i] = new int[20];
-		
+
 		// Feed _history with previous race results.
 		loadHistory();
-		
+
 		// Feed _betsPerLane with stored information on bets.
 		loadBets();
-		
+
 		// Feed _npcTemplates, we will only have to shuffle it when needed.
 		const int startNpcId = 31003;
 		const int endNpcId = 31027;
 		_npcTemplates = new int[endNpcId - startNpcId];
 		for (int i = startNpcId; i < endNpcId; i++)
 			_npcTemplates[i - startNpcId] = i;
-		
+
 		ThreadPool.scheduleAtFixedRate(new Announcement(this), 0, 1000);
 	}
-	
+
 	public class HistoryInfo
 	{
 		private readonly int _raceId;
 		private int _first;
 		private int _second;
 		private double _oddRate;
-		
+
 		public HistoryInfo(int raceId, int first, int second, double oddRate)
 		{
 			_raceId = raceId;
@@ -88,43 +88,43 @@ public class MonsterRace
 			_second = second;
 			_oddRate = oddRate;
 		}
-		
+
 		public int getRaceId()
 		{
 			return _raceId;
 		}
-		
+
 		public int getFirst()
 		{
 			return _first;
 		}
-		
+
 		public int getSecond()
 		{
 			return _second;
 		}
-		
+
 		public double getOddRate()
 		{
 			return _oddRate;
 		}
-		
+
 		public void setFirst(int first)
 		{
 			_first = first;
 		}
-		
+
 		public void setSecond(int second)
 		{
 			_second = second;
 		}
-		
+
 		public void setOddRate(double oddRate)
 		{
 			_oddRate = oddRate;
 		}
 	}
-	
+
 	private class Announcement: Runnable
 	{
 		private readonly MonsterRace _race;
@@ -133,24 +133,24 @@ public class MonsterRace
 		{
 			_race = race;
 		}
-		
+
 		public void run()
 		{
 			if (_race._finalCountdown > 1200)
 			{
 				_race._finalCountdown = 0;
 			}
-			
+
 			switch (_race._finalCountdown)
 			{
 				case 0:
 				{
 					_race.newRace();
 					_race.newSpeeds();
-					
+
 					_race._state = RaceState.ACCEPTING_BETS;
 					_race._packet = new MonsterRaceInfoPacket(CODES[0][0], CODES[0][1], _race.getMonsters(), _race.getSpeeds());
-					
+
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.TICKETS_ARE_NOW_AVAILABLE_FOR_MONSTER_RACE_S1);
 					msg.Params.addInt(_race._raceNumber);
 					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(_race._packet, msg);
@@ -218,9 +218,9 @@ public class MonsterRace
 				case 900: // 15 min
 				{
 					_race._state = RaceState.WAITING;
-					
+
 					_race.calculateOdds();
-					
+
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.TICKETS_ARE_NOW_AVAILABLE_FOR_MONSTER_RACE_S1);
 					msg.Params.addInt(_race._raceNumber);
 					SystemMessagePacket msg2 = new SystemMessagePacket(SystemMessageId.TICKETS_SALES_ARE_CLOSED_FOR_MONSTER_RACE_S1_YOU_CAN_SEE_THE_AMOUNT_OF_WIN);
@@ -231,7 +231,7 @@ public class MonsterRace
 				case 960: // 16 min
 				case 1020: // 17 min
 				{
-					int minutes = (_race._finalCountdown == 960) ? 2 : 1;
+					int minutes = _race._finalCountdown == 960 ? 2 : 1;
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.MONSTER_RACE_S2_WILL_BEGIN_IN_S1_MIN);
 					msg.Params.addInt(minutes);
 					msg.Params.addInt(_race._raceNumber);
@@ -274,23 +274,23 @@ public class MonsterRace
 				case 1085: // 18 min 5 sec
 				{
 					_race._packet = new MonsterRaceInfoPacket(CODES[2][0], CODES[2][1], _race.getMonsters(), _race.getSpeeds());
-					
+
 					Broadcast.toAllPlayersInZoneType<DerbyTrackZone>().SendPackets(_race._packet);
 					break;
 				}
 				case 1115: // 18 min 35 sec
 				{
 					_race._state = RaceState.RACE_END;
-					
+
 					// Populate history info with data, stores it in database.
 					HistoryInfo info = _race._history[^1];
 					info.setFirst(_race.getFirstPlace());
 					info.setSecond(_race.getSecondPlace());
 					info.setOddRate(_race._odds[_race.getFirstPlace() - 1]);
-					
+
 					_race.saveHistory(info);
 					_race.clearBets();
-					
+
 					SystemMessagePacket msg = new(SystemMessageId.FIRST_PRIZE_GOES_TO_THE_PLAYER_IN_LANE_S1_SECOND_PRIZE_GOES_TO_THE_PLAYER_IN_LANE_S2);
 					msg.Params.addInt(_race.getFirstPlace());
 					msg.Params.addInt(_race.getSecondPlace());
@@ -311,25 +311,31 @@ public class MonsterRace
 					break;
 				}
 			}
-			
+
 			_race._finalCountdown += 1;
 		}
 	}
-	
+
 	public void newRace()
 	{
 		// Edit _history.
 		_history.Add(new HistoryInfo(_raceNumber, 0, 0, 0));
-		
+
 		// Randomize _npcTemplates.
 		Random.Shared.Shuffle(_npcTemplates);
-		
+
 		// Setup 8 new creatures ; pickup the first 8 from _npcTemplates.
 		for (int i = 0; i < 8; i++)
 		{
 			try
 			{
-				NpcTemplate template = NpcData.getInstance().getTemplate(_npcTemplates[i]);
+                NpcTemplate? template = NpcData.getInstance().getTemplate(_npcTemplates[i]);
+                if (template is null)
+                {
+                    LOGGER.Warn("MonsterRace: Can't find template for npcId " + _npcTemplates[i]);
+                    continue;
+                }
+
 				_monsters[i] = template.CreateInstance();
 			}
 			catch (Exception e)
@@ -338,13 +344,13 @@ public class MonsterRace
 			}
 		}
 	}
-	
+
 	public void newSpeeds()
 	{
 		int total = 0;
 		_first[1] = 0;
 		_second[1] = 0;
-		
+
 		for (int i = 0; i < 8; i++)
 		{
 			total = 0;
@@ -360,7 +366,7 @@ public class MonsterRace
 				}
 				total += _speeds[i][j];
 			}
-			
+
 			if (total >= _first[1])
 			{
 				_second[0] = _first[0];
@@ -375,7 +381,7 @@ public class MonsterRace
 			}
 		}
 	}
-	
+
 	/**
 	 * Load past races informations, feeding _history arrayList.<br>
 	 * Also sets _raceNumber, based on latest HistoryInfo loaded.
@@ -396,10 +402,10 @@ public class MonsterRace
 		{
 			LOGGER.Error("MonsterRace: Can't load history: " + e);
 		}
-		
+
 		LOGGER.Info("MonsterRace: loaded " + _history.Count + " records, currently on race #" + _raceNumber);
 	}
-	
+
 	/**
 	 * Save an history record into database.
 	 * @param history The infos to store.
@@ -424,7 +430,7 @@ public class MonsterRace
 			LOGGER.Error("MonsterRace: Can't save history: " + e);
 		}
 	}
-	
+
 	/**
 	 * Load current bets per lane ; initialize the map keys.
 	 */
@@ -440,7 +446,7 @@ public class MonsterRace
 			LOGGER.Warn("MonsterRace: Can't load bets: " + e);
 		}
 	}
-	
+
 	/**
 	 * Save the current lane bet into database.
 	 * @param lane : The lane to affect.
@@ -467,7 +473,7 @@ public class MonsterRace
 			LOGGER.Warn("MonsterRace: Can't save bet: " + e);
 		}
 	}
-	
+
 	/**
 	 * Clear all lanes bets, either on database or Map.
 	 */
@@ -477,7 +483,7 @@ public class MonsterRace
 		{
 			_betsPerLane.put(key, 0L);
 		}
-		
+
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -488,7 +494,7 @@ public class MonsterRace
 			LOGGER.Warn("MonsterRace: Can't clear bets: " + e);
 		}
 	}
-	
+
 	/**
 	 * Setup lane bet, based on previous value (if any).
 	 * @param lane : The lane to edit.
@@ -497,16 +503,16 @@ public class MonsterRace
 	 */
 	public void setBetOnLane(int lane, long amount, bool saveOnDb)
 	{
-		long sum = (_betsPerLane.TryGetValue(lane, out long bet)) ? bet + amount : amount;
-		
+		long sum = _betsPerLane.TryGetValue(lane, out long bet) ? bet + amount : amount;
+
 		_betsPerLane.put(lane, sum);
-		
+
 		if (saveOnDb)
 		{
 			saveBet(lane, sum);
 		}
 	}
-	
+
 	/**
 	 * Calculate odds for every lane, based on others lanes.
 	 */
@@ -514,74 +520,74 @@ public class MonsterRace
 	{
 		// Clear previous List holding old odds.
 		_odds.Clear();
-		
+
 		// Sort bets lanes per lane.
 		Map<int, long> sortedLanes = new();
-		
+
 		// Pass a first loop in order to calculate total sum of all lanes.
 		long sumOfAllLanes = 0;
 		foreach (long amount in sortedLanes.Values)
 		{
 			sumOfAllLanes += amount;
 		}
-		
+
 		// As we get the sum, we can now calculate the odd rate of each lane.
 		foreach (long amount  in sortedLanes.Values)
 		{
-			_odds.Add((amount == 0) ? 0D : Math.Max(1.25, (sumOfAllLanes * 0.7) / amount));
+			_odds.Add(amount == 0 ? 0D : Math.Max(1.25, sumOfAllLanes * 0.7 / amount));
 		}
 	}
-	
+
 	public Npc[] getMonsters()
 	{
 		return _monsters;
 	}
-	
+
 	public int[][] getSpeeds()
 	{
 		return _speeds;
 	}
-	
+
 	public int getFirstPlace()
 	{
 		return _first[0];
 	}
-	
+
 	public int getSecondPlace()
 	{
 		return _second[0];
 	}
-	
+
 	public MonsterRaceInfoPacket getRacePacket()
 	{
 		return _packet;
 	}
-	
+
 	public RaceState getCurrentRaceState()
 	{
 		return _state;
 	}
-	
+
 	public int getRaceNumber()
 	{
 		return _raceNumber;
 	}
-	
+
 	public List<HistoryInfo> getHistory()
 	{
 		return _history;
 	}
-	
+
 	public List<double> getOdds()
 	{
 		return _odds;
 	}
-	
+
 	public static MonsterRace getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly MonsterRace INSTANCE = new MonsterRace();

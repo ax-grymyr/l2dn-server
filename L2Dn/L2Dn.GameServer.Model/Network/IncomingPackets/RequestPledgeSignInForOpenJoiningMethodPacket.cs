@@ -26,7 +26,7 @@ public struct RequestPledgeSignInForOpenJoiningMethodPacket: IIncomingPacket<Gam
 	    if (player == null)
 		    return ValueTask.CompletedTask;
 
-	    PledgeRecruitInfo pledgeRecruitInfo = ClanEntryManager.getInstance().getClanById(_clanId);
+	    PledgeRecruitInfo? pledgeRecruitInfo = ClanEntryManager.getInstance().getClanById(_clanId);
 	    if (pledgeRecruitInfo == null)
 		    return ValueTask.CompletedTask;
 
@@ -63,7 +63,7 @@ public struct RequestPledgeSignInForOpenJoiningMethodPacket: IIncomingPacket<Gam
 	    // player.setPowerGrade(9); // academy
 	    player.setPowerGrade(5); // New member starts at 5, not confirmed.
 	    clan.addClanMember(player);
-	    player.setClanPrivileges(player.getClan().getRankPrivs(player.getPowerGrade()));
+	    player.setClanPrivileges(clan.getRankPrivs(player.getPowerGrade()));
 	    player.sendPacket(SystemMessageId.ENTERED_THE_CLAN);
 
 	    sm = new SystemMessagePacket(SystemMessageId.S1_HAS_JOINED_THE_CLAN);
@@ -72,7 +72,7 @@ public struct RequestPledgeSignInForOpenJoiningMethodPacket: IIncomingPacket<Gam
 
 	    if (clan.getCastleId() > 0)
 	    {
-		    Castle castle = CastleManager.getInstance().getCastleByOwner(clan);
+		    Castle? castle = CastleManager.getInstance().getCastleByOwner(clan);
 		    if (castle != null)
 		    {
 			    castle.giveResidentialSkills(player);
@@ -81,7 +81,7 @@ public struct RequestPledgeSignInForOpenJoiningMethodPacket: IIncomingPacket<Gam
 
 	    if (clan.getFortId() > 0)
 	    {
-		    Fort fort = FortManager.getInstance().getFortByOwner(clan);
+		    Fort? fort = FortManager.getInstance().getFortByOwner(clan);
 		    if (fort != null)
 		    {
 			    fort.giveResidentialSkills(player);

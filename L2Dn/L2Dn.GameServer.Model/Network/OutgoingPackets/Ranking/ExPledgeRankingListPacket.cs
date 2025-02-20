@@ -2,6 +2,7 @@
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
 
@@ -13,7 +14,7 @@ public readonly struct ExPledgeRankingListPacket: IOutgoingPacket
 	private readonly int _category;
 	private readonly Map<int, StatSet> _rankingClanList;
 	private readonly Map<int, StatSet> _snapshotClanList;
-	
+
 	public ExPledgeRankingListPacket(Player player, int category)
 	{
 		_player = player;
@@ -21,11 +22,11 @@ public readonly struct ExPledgeRankingListPacket: IOutgoingPacket
 		_rankingClanList = RankManager.getInstance().getClanRankList();
 		_snapshotClanList = RankManager.getInstance().getSnapshotClanRankList();
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.EX_PLEDGE_RANKING_LIST);
-		
+
 		writer.WriteByte((byte)_category);
 		if (_rankingClanList.Count != 0)
 		{
@@ -36,7 +37,7 @@ public readonly struct ExPledgeRankingListPacket: IOutgoingPacket
 			writer.WriteInt32(0);
 		}
 	}
-	
+
 	private void writeScopeData(PacketBitWriter writer, bool isTop150, Map<int, StatSet> list, Map<int, StatSet> snapshot)
 	{
 		int? clanId = _player.getClanId();
@@ -45,7 +46,7 @@ public readonly struct ExPledgeRankingListPacket: IOutgoingPacket
 		List<KeyValuePair<int, StatSet>> limited = isTop150 ? list.OrderBy(r => r.Key).Take(150).ToList() :
 			playerData.Value == null ? new List<KeyValuePair<int, StatSet>>() :
 			list.Skip(Math.Max(0, indexOf - 10)).Take(20).ToList();
-		
+
 		writer.WriteInt32(limited.Count);
 		int rank = 1;
 		foreach (var data in limited)
@@ -61,12 +62,13 @@ public readonly struct ExPledgeRankingListPacket: IOutgoingPacket
 					writer.WriteInt32(!isTop150 ? ssData.Key : curRank); // server rank snapshot
 				}
 			}
-			
+
+            Clan? clan = ClanTable.getInstance().getClan(player.getInt("clan_id"));
 			writer.WriteSizedString(player.getString("clan_name"));
 			writer.WriteInt32(player.getInt("clan_level"));
 			writer.WriteSizedString(player.getString("char_name"));
 			writer.WriteInt32(player.getInt("level"));
-			writer.WriteInt32(ClanTable.getInstance().getClan(player.getInt("clan_id")) != null ? ClanTable.getInstance().getClan(player.getInt("clan_id")).getMembersCount() : 0);
+			writer.WriteInt32(clan != null ? clan.getMembersCount() : 0);
 			writer.WriteInt32((int)Math.Min(int.MaxValue, player.getLong("exp")));
 		}
 	}

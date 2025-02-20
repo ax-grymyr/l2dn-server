@@ -20,7 +20,7 @@ internal readonly struct MagicSkillLaunchedPacket: IOutgoingPacket
         _skillId = skillId;
         _skillLevel = skillLevel;
         _castingType = castingType;
-        _targets = (targets == null || targets.Count == 0) ? [creature] : targets;
+        _targets = targets == null || targets.Count == 0 ? [creature] : targets;
     }
 
     public MagicSkillLaunchedPacket(Creature creature, int skillId, int skillLevel, SkillCastingType castingType,

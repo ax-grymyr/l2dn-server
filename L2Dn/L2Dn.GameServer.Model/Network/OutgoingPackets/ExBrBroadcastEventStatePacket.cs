@@ -9,7 +9,7 @@ public readonly struct ExBrBroadcastEventStatePacket: IOutgoingPacket
     public const int HALLOWEEN_EVENT = 20091031; // event state (0 - hide, 1 - show)
     public const int RAISING_RUDOLPH = 20091225; // event state (0 - hide, 1 - show)
     public const int LOVERS_JUBILEE = 20100214; // event state (0 - hide, 1 - show)
-	
+
     private readonly int _eventId;
     private readonly int _eventState;
     private readonly int _param0;
@@ -19,13 +19,15 @@ public readonly struct ExBrBroadcastEventStatePacket: IOutgoingPacket
     private readonly int _param4;
     private readonly string _param5;
     private readonly string _param6;
-	
+
     public ExBrBroadcastEventStatePacket(int eventId, int eventState)
     {
         _eventId = eventId;
         _eventState = eventState;
+        _param5 = string.Empty;
+        _param6 = string.Empty;
     }
-	
+
     public ExBrBroadcastEventStatePacket(int eventId, int eventState, int param0, int param1, int param2, int param3, int param4, string param5, string param6)
     {
         _eventId = eventId;
@@ -38,11 +40,11 @@ public readonly struct ExBrBroadcastEventStatePacket: IOutgoingPacket
         _param5 = param5;
         _param6 = param6;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_BR_BROADCAST_EVENT_STATE);
-        
+
         writer.WriteInt32(_eventId);
         writer.WriteInt32(_eventState);
         writer.WriteInt32(_param0);

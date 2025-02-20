@@ -147,7 +147,7 @@ public class OfflineTraderTable
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var trades = ctx.CharacterOfflineTrades.ToList();
-			foreach (var trade in trades)
+			foreach (CharacterOfflineTrade trade in trades)
 			{
 				DateTime time = trade.Time;
 				if (Config.OFFLINE_MAX_DAYS > 0)
@@ -204,7 +204,7 @@ public class OfflineTraderTable
 									}
 								}
 
-								player.getBuyList().setTitle(trade.Title);
+								player.getBuyList().setTitle(trade.Title ?? string.Empty);
 								break;
 							}
 							case PrivateStoreType.SELL:
@@ -230,7 +230,7 @@ public class OfflineTraderTable
 									}
 								}
 
-								player.getSellList().setTitle(trade.Title);
+								player.getSellList().setTitle(trade.Title ?? string.Empty);
 								player.getSellList().setPackaged(type == PrivateStoreType.PACKAGE_SELL);
 								break;
 							}

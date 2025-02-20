@@ -25,18 +25,18 @@ public struct RequestInfoItemAuctionPacket: IIncomingPacket<GameSession>
         // TODO: flood protection
         // if (!client.getFloodProtectors().canUseItemAuction())
         //     return ValueTask.CompletedTask;
-		
-        ItemAuctionInstance instance = ItemAuctionManager.getInstance().getManagerInstance(_instanceId);
+
+        ItemAuctionInstance? instance = ItemAuctionManager.getInstance().getManagerInstance(_instanceId);
         if (instance == null)
             return ValueTask.CompletedTask;
-		
+
         ItemAuction auction = instance.getCurrentAuction();
         if (auction == null)
             return ValueTask.CompletedTask;
-		
+
         player.updateLastItemAuctionRequest();
         player.sendPacket(new ExItemAuctionInfoPacket(true, auction, instance.getNextAuction()));
-        
+
         return ValueTask.CompletedTask;
     }
 }

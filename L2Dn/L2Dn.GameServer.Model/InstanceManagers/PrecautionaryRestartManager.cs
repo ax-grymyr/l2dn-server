@@ -30,7 +30,7 @@ public class PrecautionaryRestartManager
 			}
 
 			if (Config.PRECAUTIONARY_RESTART_CPU &&
-			    (getCpuLoad(SYSTEM_CPU_LOAD_VAR) > Config.PRECAUTIONARY_RESTART_PERCENTAGE))
+			    getCpuLoad(SYSTEM_CPU_LOAD_VAR) > Config.PRECAUTIONARY_RESTART_PERCENTAGE)
 			{
 				if (serverBizzy())
 				{
@@ -44,7 +44,7 @@ public class PrecautionaryRestartManager
 				Shutdown.getInstance().startShutdown(null, 600, true);
 			}
 
-			if (Config.PRECAUTIONARY_RESTART_MEMORY && (getProcessRamLoad() > Config.PRECAUTIONARY_RESTART_PERCENTAGE))
+			if (Config.PRECAUTIONARY_RESTART_MEMORY && getProcessRamLoad() > Config.PRECAUTIONARY_RESTART_PERCENTAGE)
 			{
 				if (serverBizzy())
 				{
@@ -87,6 +87,7 @@ public class PrecautionaryRestartManager
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 		}
 
 		return 0; // TODO: not implemented currently
@@ -105,7 +106,7 @@ public class PrecautionaryRestartManager
 	{
 		foreach (Castle castle in CastleManager.getInstance().getCastles())
 		{
-			if ((castle != null) && castle.getSiege().isInProgress())
+			if (castle != null && castle.getSiege().isInProgress())
 			{
 				return true;
 			}
@@ -113,7 +114,7 @@ public class PrecautionaryRestartManager
 
 		foreach (Fort fort in FortManager.getInstance().getForts())
 		{
-			if ((fort != null) && fort.getSiege().isInProgress())
+			if (fort != null && fort.getSiege().isInProgress())
 			{
 				return true;
 			}
@@ -121,7 +122,7 @@ public class PrecautionaryRestartManager
 
 		foreach (Player player in World.getInstance().getPlayers())
 		{
-			if ((player == null) || player.isInOfflineMode())
+			if (player == null || player.isInOfflineMode())
 			{
 				continue;
 			}
@@ -141,8 +142,8 @@ public class PrecautionaryRestartManager
 				return true;
 			}
 
-			WorldObject target = player.getTarget();
-			if ((target is RaidBoss) || (target is GrandBoss))
+			WorldObject? target = player.getTarget();
+			if (target is RaidBoss or GrandBoss)
 			{
 				return true;
 			}

@@ -29,18 +29,18 @@ public struct RequestPledgeSetAcademyMasterPacket: IIncomingPacket<GameSession>
 		Clan? clan = player.getClan();
 		if (clan == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (!player.hasClanPrivilege(ClanPrivilege.CL_APPRENTICE))
 		{
 			player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_THE_RIGHT_TO_DISMISS_MENTEES);
 			return ValueTask.CompletedTask;
 		}
-		
-		ClanMember currentMember = clan.getClanMember(_currPlayerName);
-		ClanMember targetMember = clan.getClanMember(_targetPlayerName);
+
+		ClanMember? currentMember = clan.getClanMember(_currPlayerName);
+		ClanMember? targetMember = clan.getClanMember(_targetPlayerName);
 		if (currentMember == null || targetMember == null)
 			return ValueTask.CompletedTask;
-		
+
 		ClanMember apprenticeMember;
 		ClanMember sponsorMember;
 		if (currentMember.getPledgeType() == Clan.SUBUNIT_ACADEMY)
@@ -53,7 +53,7 @@ public struct RequestPledgeSetAcademyMasterPacket: IIncomingPacket<GameSession>
 			apprenticeMember = targetMember;
 			sponsorMember = currentMember;
 		}
-		
+
 		Player apprentice = apprenticeMember.getPlayer();
 		Player sponsor = sponsorMember.getPlayer();
 		SystemMessagePacket sm;
@@ -68,7 +68,7 @@ public struct RequestPledgeSetAcademyMasterPacket: IIncomingPacket<GameSession>
 			{
 				apprenticeMember.setApprenticeAndSponsor(0, 0);
 			}
-			
+
 			if (sponsor != null)
 			{
 				sponsor.setApprentice(0);
@@ -77,7 +77,7 @@ public struct RequestPledgeSetAcademyMasterPacket: IIncomingPacket<GameSession>
 			{
 				sponsorMember.setApprenticeAndSponsor(0, 0);
 			}
-			
+
 			apprenticeMember.saveApprenticeAndSponsor(0, 0);
 			sponsorMember.saveApprenticeAndSponsor(0, 0);
 			sm = new SystemMessagePacket(SystemMessageId.S2_C1_S_MENTEE_IS_DISMISSED);
@@ -98,7 +98,7 @@ public struct RequestPledgeSetAcademyMasterPacket: IIncomingPacket<GameSession>
 			{
 				apprenticeMember.setApprenticeAndSponsor(0, sponsorMember.getObjectId());
 			}
-			
+
 			if (sponsor != null)
 			{
 				sponsor.setApprentice(apprenticeMember.getObjectId());
@@ -107,16 +107,16 @@ public struct RequestPledgeSetAcademyMasterPacket: IIncomingPacket<GameSession>
 			{
 				sponsorMember.setApprenticeAndSponsor(apprenticeMember.getObjectId(), 0);
 			}
-			
+
 			// saving to database even if online, since both must match
 			apprenticeMember.saveApprenticeAndSponsor(0, sponsorMember.getObjectId());
 			sponsorMember.saveApprenticeAndSponsor(apprenticeMember.getObjectId(), 0);
 			sm = new SystemMessagePacket(SystemMessageId.S1_HAS_BECOME_S2_S_MENTOR);
 		}
-        
+
 		sm.Params.addString(sponsorMember.getName());
 		sm.Params.addString(apprenticeMember.getName());
-		
+
 		if (sponsor != player && sponsor != apprentice)
 		{
 			player.sendPacket(sm);

@@ -23,7 +23,7 @@ public readonly struct ExRequestNewInvitePartyInquiryPacket: IOutgoingPacket
 		_sayType = sayType;
 
 		int rank = RankManager.getInstance().getPlayerGlobalRank(player);
-		_charRankGrade = (rank == 1) ? 1 : (rank <= 30) ? 2 : (rank <= 100) ? 3 : 0;
+		_charRankGrade = rank == 1 ? 1 : rank <= 30 ? 2 : rank <= 100 ? 3 : 0;
 
 		int castle = 0;
 		Clan? clan = _player.getClan();

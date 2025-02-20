@@ -36,7 +36,7 @@ public readonly struct PartySpelledPacket: IOutgoingPacket
         writer.WriteInt32(_effects.Count + _effects2.Count);
         foreach (BuffInfo info in _effects)
         {
-            if ((info != null) && info.isInUse())
+            if (info != null && info.isInUse())
             {
                 writer.WriteInt32(info.getSkill().getDisplayId());
                 writer.WriteInt16((short)info.getSkill().getDisplayLevel());

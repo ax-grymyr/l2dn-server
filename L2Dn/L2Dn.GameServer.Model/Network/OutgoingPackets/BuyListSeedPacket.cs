@@ -18,7 +18,7 @@ public readonly struct BuyListSeedPacket: IOutgoingPacket
         _list = new List<SeedProduction>();
         foreach (SeedProduction s in CastleManorManager.getInstance().getSeedProduction(castleId, false))
         {
-            if ((s.getAmount() > 0) && (s.getPrice() > 0))
+            if (s.getAmount() > 0 && s.getPrice() > 0)
             {
                 _list.Add(s);
             }

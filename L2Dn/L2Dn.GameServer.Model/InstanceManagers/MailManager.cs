@@ -16,18 +16,18 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class MailManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(MailManager));
-	
+
 	private readonly Map<int, Message> _messages = new();
-	
+
 	protected MailManager()
 	{
 		load();
 	}
-	
+
 	private void load()
 	{
 		int count = 0;
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (DbMailMessage record in ctx.MailMessages.OrderBy(m=>m.ExpirationTime))
@@ -36,7 +36,7 @@ public class MailManager
 				Message msg = new Message(record);
 				int msgId = msg.getId();
 				_messages.put(msgId, msg);
-				
+
 				MessageDeletionTaskManager.getInstance().add(msgId, msg.getExpiration());
 			}
 		}
@@ -46,69 +46,69 @@ public class MailManager
 		}
 		LOGGER.Info(GetType().Name +": Loaded " + count + " messages.");
 	}
-	
-	public Message getMessage(int msgId)
+
+	public Message? getMessage(int msgId)
 	{
 		return _messages.get(msgId);
 	}
-	
+
 	public ICollection<Message> getMessages()
 	{
 		return _messages.Values;
 	}
-	
+
 	public bool hasUnreadPost(Player player)
 	{
 		int objectId = player.ObjectId;
 		foreach (Message msg in _messages.Values)
 		{
-			if ((msg != null) && (msg.getReceiverId() == objectId) && msg.isUnread())
+			if (msg != null && msg.getReceiverId() == objectId && msg.isUnread())
 			{
 				return true;
 			}
 		}
 		return false;
 	}
-	
+
 	public int getInboxSize(int objectId)
 	{
 		int size = 0;
 		foreach (Message msg in _messages.Values)
 		{
-			if ((msg != null) && (msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver())
+			if (msg != null && msg.getReceiverId() == objectId && !msg.isDeletedByReceiver())
 			{
 				size++;
 			}
 		}
 		return size;
 	}
-	
+
 	public int getOutboxSize(int objectId)
 	{
 		int size = 0;
 		foreach (Message msg in _messages.Values)
 		{
-			if ((msg != null) && (msg.getSenderId() == objectId) && !msg.isDeletedBySender())
+			if (msg != null && msg.getSenderId() == objectId && !msg.isDeletedBySender())
 			{
 				size++;
 			}
 		}
 		return size;
 	}
-	
+
 	public List<Message> getInbox(int objectId)
 	{
 		List<Message> inbox = new();
 		foreach (Message msg in _messages.Values)
 		{
-			if ((msg != null) && (msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver())
+			if (msg != null && msg.getReceiverId() == objectId && !msg.isDeletedByReceiver())
 			{
 				inbox.Add(msg);
 			}
 		}
 		return inbox;
 	}
-	
+
 	public int getUnreadCount(Player player)
 	{
 		int count = 0;
@@ -121,19 +121,19 @@ public class MailManager
 		}
 		return count;
 	}
-	
+
 	public int getMailsInProgress(int objectId)
 	{
 		int count = 0;
 		foreach (Message msg in _messages.Values)
 		{
-			if ((msg != null) && (msg.getMailType() == MailType.REGULAR))
+			if (msg != null && msg.getMailType() == MailType.REGULAR)
 			{
-				if ((msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver() && !msg.isReturned() && msg.hasAttachments())
+				if (msg.getReceiverId() == objectId && !msg.isDeletedByReceiver() && !msg.isReturned() && msg.hasAttachments())
 				{
 					count++;
 				}
-				else if ((msg.getSenderId() == objectId) && !msg.isDeletedBySender() && !msg.isReturned() && msg.hasAttachments())
+				else if (msg.getSenderId() == objectId && !msg.isDeletedBySender() && !msg.isReturned() && msg.hasAttachments())
 				{
 					count++;
 				}
@@ -141,24 +141,24 @@ public class MailManager
 		}
 		return count;
 	}
-	
+
 	public List<Message> getOutbox(int objectId)
 	{
 		List<Message> outbox = new();
 		foreach (Message msg in _messages.Values)
 		{
-			if ((msg != null) && (msg.getSenderId() == objectId) && !msg.isDeletedBySender())
+			if (msg != null && msg.getSenderId() == objectId && !msg.isDeletedBySender())
 			{
 				outbox.Add(msg);
 			}
 		}
 		return outbox;
 	}
-	
+
 	public void sendMessage(Message msg)
 	{
 		_messages.put(msg.getId(), msg);
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.MailMessages.Add(new DbMailMessage()
@@ -179,7 +179,7 @@ public class MailManager
 				IsLocked = msg.isLocked(),
 				ItemId = msg.getItemId(),
 				EnchantLevel = (short)msg.getEnchantLvl(),
-				Elementals = string.Join(";", msg.getElementals()) 
+				Elementals = string.Join(";", msg.getElementals())
 			});
 
 			ctx.SaveChanges();
@@ -188,21 +188,21 @@ public class MailManager
 		{
 			LOGGER.Warn(GetType().Name + ": Error saving message:" + e);
 		}
-		
-		Player receiver = World.getInstance().getPlayer(msg.getReceiverId());
+
+		Player? receiver = World.getInstance().getPlayer(msg.getReceiverId());
 		if (receiver != null)
 		{
 			int unreadMessageCount = getUnreadCount(receiver);
 			receiver.sendPacket(new ExNoticePostArrivedPacket(true));
 			receiver.sendPacket(new ExUnReadMailCountPacket(unreadMessageCount));
 		}
-		
+
 		MessageDeletionTaskManager.getInstance().add(msg.getId(), msg.getExpiration());
 	}
-	
+
 	public void markAsReadInDb(int msgId)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteUpdate(s => s.SetProperty(m => m.IsUnread, false));
@@ -212,10 +212,10 @@ public class MailManager
 			LOGGER.Warn(GetType().Name + ": Error marking as read message:" + e);
 		}
 	}
-	
+
 	public void markAsDeletedBySenderInDb(int msgId)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteUpdate(s => s.SetProperty(m => m.IsDeletedBySender, true));
@@ -225,10 +225,10 @@ public class MailManager
 			LOGGER.Warn(GetType().Name + ": Error marking as deleted by sender message:" + e);
 		}
 	}
-	
+
 	public void markAsDeletedByReceiverInDb(int msgId)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteUpdate(s => s.SetProperty(m => m.IsDeletedByReceiver, true));
@@ -238,10 +238,10 @@ public class MailManager
 			LOGGER.Warn(GetType().Name + ": Error marking as deleted by receiver message:" + e);
 		}
 	}
-	
+
 	public void removeAttachmentsInDb(int msgId)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteUpdate(s => s.SetProperty(m => m.HasAttachments, false));
@@ -251,10 +251,10 @@ public class MailManager
 			LOGGER.Warn(GetType().Name + ": Error removing attachments in message:" + e);
 		}
 	}
-	
+
 	public void deleteMessageInDb(int msgId)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.MailMessages.Where(m => m.MessageId == msgId).ExecuteDelete();
@@ -263,11 +263,11 @@ public class MailManager
 		{
 			LOGGER.Warn(GetType().Name + ": Error deleting message:" + e);
 		}
-		
+
 		_messages.remove(msgId);
 		IdManager.getInstance().releaseId(msgId);
 	}
-	
+
 	/**
 	 * Gets the single instance of {@code MailManager}.
 	 * @return single instance of {@code MailManager}
@@ -276,7 +276,7 @@ public class MailManager
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly MailManager INSTANCE = new MailManager();

@@ -21,11 +21,11 @@ public struct RequestPledgeRecruitBoardDetailPacket: IIncomingPacket<GameSession
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        PledgeRecruitInfo pledgeRecruitInfo = ClanEntryManager.getInstance().getClanById(_clanId);
+
+        PledgeRecruitInfo? pledgeRecruitInfo = ClanEntryManager.getInstance().getClanById(_clanId);
         if (pledgeRecruitInfo == null)
             return ValueTask.CompletedTask;
-		
+
         player.sendPacket(new ExPledgeRecruitBoardDetailPacket(pledgeRecruitInfo));
 
         return ValueTask.CompletedTask;

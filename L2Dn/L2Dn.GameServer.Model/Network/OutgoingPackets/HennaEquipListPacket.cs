@@ -33,7 +33,7 @@ public readonly struct HennaEquipListPacket: IOutgoingPacket
         {
             // Player must have at least one dye in inventory
             // to be able to see the Henna that can be applied with it.
-            if ((_player.getInventory().getItemByItemId(henna.getDyeItemId())) != null)
+            if (_player.getInventory().getItemByItemId(henna.getDyeItemId()) != null)
             {
                 writer.WriteInt32(henna.getDyeId()); // dye Id
                 writer.WriteInt32(henna.getDyeItemId()); // item Id of the dye

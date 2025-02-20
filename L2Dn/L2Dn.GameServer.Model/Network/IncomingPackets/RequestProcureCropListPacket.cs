@@ -173,20 +173,15 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 		return ValueTask.CompletedTask;
 	}
 
-	private class CropHolder: UniqueItemHolder
-	{
-		private int _manorId;
-		private CropProcure _cp;
-		private int _rewardId = 0;
+	private sealed class CropHolder(int objectId, int id, long count, int manorId)
+        : UniqueItemHolder(id, objectId, count)
+    {
+        private CropProcure? _cp;
+		private int _rewardId;
 
-		public CropHolder(int objectId, int id, long count, int manorId): base(id, objectId, count)
+        public int getManorId()
 		{
-			_manorId = manorId;
-		}
-
-		public int getManorId()
-		{
-			return _manorId;
+			return manorId;
 		}
 
 		public long getPrice()
@@ -198,8 +193,9 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 		{
 			if (_cp == null)
 			{
-				_cp = CastleManorManager.getInstance().getCropProcure(_manorId, getId(), false);
+				_cp = CastleManorManager.getInstance().getCropProcure(manorId, getId(), false);
 			}
+
 			return _cp;
 		}
 

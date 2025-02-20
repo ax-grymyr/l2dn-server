@@ -56,15 +56,16 @@ public struct RequestActionUsePacket: IIncomingPacket<GameSession>
 		}
 
 		// Don't allow to do some action if player is transformed
-		if (player.isTransformed())
+        Transform? transform = player.getTransformation();
+		if (player.isTransformed() && transform != null)
 		{
-			TransformTemplate transformTemplate = player.getTransformation().getTemplate(player);
+			TransformTemplate transformTemplate = transform.getTemplate(player);
 			ImmutableArray<int> allowedActions = transformTemplate.getBasicActionList();
 			if (allowedActions.IsDefaultOrEmpty || allowedActions.BinarySearch(_actionId) < 0)
 			{
 				connection.Send(ActionFailedPacket.STATIC_PACKET);
 				PacketLogger.Instance.Warn(player + " used action which he does not have! Id = " + _actionId +
-				                           " transform: " + player.getTransformation().getId());
+				                           " transform: " + transform.getId());
 
 				return ValueTask.CompletedTask;
 			}

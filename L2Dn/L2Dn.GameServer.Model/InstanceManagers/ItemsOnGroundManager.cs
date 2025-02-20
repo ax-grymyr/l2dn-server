@@ -17,9 +17,9 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class ItemsOnGroundManager: Runnable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemsOnGroundManager));
-	
+
 	private readonly Set<Item> _items = new();
-	
+
 	protected ItemsOnGroundManager()
 	{
 		if (Config.SAVE_DROPPED_ITEM_INTERVAL > 0)
@@ -28,7 +28,7 @@ public class ItemsOnGroundManager: Runnable
 		}
 		load();
 	}
-	
+
 	private void load()
 	{
 		// If SaveDroppedItem is false, may want to delete all items previously stored to avoid add old items on reactivate
@@ -36,16 +36,16 @@ public class ItemsOnGroundManager: Runnable
 		{
 			emptyTable();
 		}
-		
+
 		if (!Config.SAVE_DROPPED_ITEM)
 		{
 			return;
 		}
-		
+
 		// if DestroyPlayerDroppedItem was previously false, items currently protected will be added to ItemsAutoDestroy
 		if (Config.DESTROY_DROPPED_PLAYER_ITEM)
 		{
-			try 
+			try
 			{
 				DateTime time = DateTime.UtcNow;
 
@@ -62,9 +62,9 @@ public class ItemsOnGroundManager: Runnable
 				LOGGER.Error(GetType().Name + ": Error while updating table ItemsOnGround: " + e);
 			}
 		}
-		
+
 		// Add items to world
-		try 
+		try
 		{
 			int count = 0;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -74,7 +74,7 @@ public class ItemsOnGroundManager: Runnable
 				item = new Item(itemOnGround.ObjectId, itemOnGround.ItemId);
 				World.getInstance().addObject(item);
 				// this check and..
-				if (item.isStackable() && (itemOnGround.Count > 1))
+				if (item.isStackable() && itemOnGround.Count > 1)
 				{
 					item.setCount(itemOnGround.Count);
 				}
@@ -83,39 +83,46 @@ public class ItemsOnGroundManager: Runnable
 				{
 					item.setEnchantLevel(itemOnGround.EnchantLevel);
 				}
-				
+
 				item.setXYZ(itemOnGround.X, itemOnGround.Y, itemOnGround.Z);
-				item.setWorldRegion(World.getInstance().getRegion(item));
-				item.getWorldRegion().addVisibleObject(item);
+                WorldRegion? region = World.getInstance().getRegion(item);
+                if (region == null)
+                {
+                    LOGGER.Error("Region not found for item " + item.getId() + " " + item.getName());
+                    continue;
+                }
+
+				item.setWorldRegion(region);
+				region.addVisibleObject(item);
 				DateTime? dropTime = itemOnGround.DropTime;
 				item.setDropTime(dropTime ?? DateTime.MinValue); // TODO
 				item.setProtected(dropTime is null);
 				item.setSpawned(true);
-				World.getInstance().addVisibleObject(item, item.getWorldRegion());
+				World.getInstance().addVisibleObject(item, region);
 				_items.add(item);
 				count++;
 				// add to ItemsAutoDestroy only items not protected
-				if (!Config.LIST_PROTECTED_ITEMS.Contains(item.getId()) && (dropTime is not null) &&
-				    (((Config.AUTODESTROY_ITEM_AFTER > 0) && !item.getTemplate().hasExImmediateEffect()) ||
-				     ((Config.HERB_AUTO_DESTROY_TIME > 0) && item.getTemplate().hasExImmediateEffect())))
+				if (!Config.LIST_PROTECTED_ITEMS.Contains(item.getId()) && dropTime is not null &&
+				    ((Config.AUTODESTROY_ITEM_AFTER > 0 && !item.getTemplate().hasExImmediateEffect()) ||
+				     (Config.HERB_AUTO_DESTROY_TIME > 0 && item.getTemplate().hasExImmediateEffect())))
 				{
 					ItemsAutoDestroyTaskManager.getInstance().addItem(item);
 				}
 			}
-			
+
 			LOGGER.Info(GetType().Name +": Loaded " + count + " items.");
 		}
 		catch (Exception e)
 		{
 			LOGGER.Error(GetType().Name + ": Error while loading ItemsOnGround " + e);
 		}
-		
+
 		if (Config.EMPTY_DROPPED_ITEM_TABLE_AFTER_LOAD)
 		{
 			emptyTable();
 		}
 	}
-	
+
 	public void save(Item item)
 	{
 		if (Config.SAVE_DROPPED_ITEM)
@@ -123,7 +130,7 @@ public class ItemsOnGroundManager: Runnable
 			_items.add(item);
 		}
 	}
-	
+
 	public void removeObject(Item item)
 	{
 		if (Config.SAVE_DROPPED_ITEM)
@@ -131,20 +138,20 @@ public class ItemsOnGroundManager: Runnable
 			_items.remove(item);
 		}
 	}
-	
+
 	public void saveInDb()
 	{
 		run();
 	}
-	
+
 	public void cleanUp()
 	{
 		_items.clear();
 	}
-	
+
 	public void emptyTable()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.ItemsOnGround.ExecuteDelete();
@@ -154,7 +161,7 @@ public class ItemsOnGroundManager: Runnable
 			LOGGER.Error(GetType().Name + ": Error while cleaning table ItemsOnGround " + e1);
 		}
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void run()
 	{
@@ -162,25 +169,25 @@ public class ItemsOnGroundManager: Runnable
 		{
 			return;
 		}
-		
+
 		emptyTable();
-		
+
 		if (_items.isEmpty())
 		{
 			return;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			
+
 			foreach (Item item in _items)
 			{
 				if (item == null)
 				{
 					continue;
 				}
-				
+
 				if (CursedWeaponsManager.getInstance().isCursed(item.getId()))
 				{
 					continue; // Cursed Items not saved to ground, prevent double save
@@ -207,7 +214,7 @@ public class ItemsOnGroundManager: Runnable
 			LOGGER.Error(GetType().Name + ": SQL error while storing items on ground: " + e);
 		}
 	}
-	
+
 	/**
 	 * Gets the single instance of {@code ItemsOnGroundManager}.
 	 * @return single instance of {@code ItemsOnGroundManager}
@@ -216,7 +223,7 @@ public class ItemsOnGroundManager: Runnable
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ItemsOnGroundManager INSTANCE = new ItemsOnGroundManager();

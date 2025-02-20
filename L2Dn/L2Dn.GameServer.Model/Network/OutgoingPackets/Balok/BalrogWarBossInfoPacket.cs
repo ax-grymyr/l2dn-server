@@ -30,7 +30,7 @@ public readonly struct BalrogWarBossInfoPacket: IOutgoingPacket
         
         long globalpoints = BattleWithBalokManager.getInstance().getGlobalPoints();
         int globalstage = BattleWithBalokManager.getInstance().getGlobalStage();
-        if ((globalpoints < 320000) && (globalstage <= 2))
+        if (globalpoints < 320000 && globalstage <= 2)
         {
             writer.WriteInt32(1);
             writer.WriteInt32(1);
@@ -50,7 +50,7 @@ public readonly struct BalrogWarBossInfoPacket: IOutgoingPacket
             int bossId3 = 25958 + 1000000;
             int bossId4 = 0;
             int bossId5 = 0;
-            if ((globalpoints >= 800000) && (globalstage >= 3))
+            if (globalpoints >= 800000 && globalstage >= 3)
             {
                 bossId4 = 25959 + 1000000;
                 bossId5 = 25960 + 1000000;

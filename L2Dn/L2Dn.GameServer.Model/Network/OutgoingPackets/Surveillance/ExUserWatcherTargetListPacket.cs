@@ -13,10 +13,10 @@ public readonly struct ExUserWatcherTargetListPacket: IOutgoingPacket
 
     public ExUserWatcherTargetListPacket(Player player)
     {
-        _info = new List<TargetInfo>();
+        _info = [];
         foreach (int objId in player.getSurveillanceList())
         {
-            string name = CharInfoTable.getInstance().getNameById(objId);
+            string name = CharInfoTable.getInstance().getNameById(objId) ?? string.Empty;
             Player? target = World.getInstance().getPlayer(objId);
             bool online = false;
             int level;

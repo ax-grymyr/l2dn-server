@@ -9,8 +9,8 @@ public readonly struct ExWorldCharCntPacket: IOutgoingPacket
 	
     public ExWorldCharCntPacket(Player player)
     {
-        _points = (player.getLevel() < Config.WORLD_CHAT_MIN_LEVEL) ||
-                  (Config.VIP_SYSTEM_ENABLED && (player.getVipTier() <= 0))
+        _points = player.getLevel() < Config.WORLD_CHAT_MIN_LEVEL ||
+                  (Config.VIP_SYSTEM_ENABLED && player.getVipTier() <= 0)
             ? 0
             : Math.Max(player.getWorldChatPoints() - player.getWorldChatUsed(), 0);
     }

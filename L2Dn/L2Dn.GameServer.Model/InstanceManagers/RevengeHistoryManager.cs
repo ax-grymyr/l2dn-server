@@ -24,7 +24,7 @@ public class RevengeHistoryManager
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(RevengeHistoryManager));
 
 	private static readonly Map<int, List<RevengeHistoryHolder>> REVENGE_HISTORY = new();
-	private static readonly SkillHolder HIDE_SKILL = new SkillHolder(922, 1);
+	private static readonly SkillHolder HIDE_SKILL = new(922, 1);
 	private static readonly TimeSpan REVENGE_DURATION = TimeSpan.FromHours(6); // Six hours.
 	private static readonly int[] LOCATION_PRICE =
 	{
@@ -212,7 +212,7 @@ public class RevengeHistoryManager
 			return;
 		}
 
-		Player killer = World.getInstance().getPlayer(killerName);
+		Player? killer = World.getInstance().getPlayer(killerName);
 		if (killer == null || !killer.isOnline())
 		{
 			player.sendPacket(SystemMessageId.THE_ENEMY_IS_OFFLINE_AND_CANNOT_BE_FOUND_RIGHT_NOW);
@@ -238,7 +238,7 @@ public class RevengeHistoryManager
 		}
 	}
 
-	private bool checkTeleportConditions(Player player, Player killer)
+	private static bool CheckTeleportConditions(Player player, Player? killer)
 	{
 		if (killer == null || !killer.isOnline())
 		{
@@ -303,8 +303,8 @@ public class RevengeHistoryManager
 			return;
 		}
 
-		Player killer = World.getInstance().getPlayer(killerName);
-		if (!checkTeleportConditions(player, killer))
+		Player? killer = World.getInstance().getPlayer(killerName);
+        if (!CheckTeleportConditions(player, killer) || killer == null)
 		{
 			return;
 		}
@@ -358,8 +358,8 @@ public class RevengeHistoryManager
 			return;
 		}
 
-		Player killer = World.getInstance().getPlayer(killerName);
-		if (!checkTeleportConditions(player, killer))
+		Player? killer = World.getInstance().getPlayer(killerName);
+		if (!CheckTeleportConditions(player, killer) || killer == null)
 		{
 			return;
 		}

@@ -24,7 +24,7 @@ public struct RequestExQuestCancelPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Quest quest = QuestManager.getInstance().getQuest(_questId);
+        Quest? quest = QuestManager.getInstance().getQuest(_questId);
         if (quest is null)
             return ValueTask.CompletedTask;
 

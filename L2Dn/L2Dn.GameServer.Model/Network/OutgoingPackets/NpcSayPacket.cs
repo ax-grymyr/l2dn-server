@@ -14,7 +14,7 @@ public readonly struct NpcSayPacket: IOutgoingPacket
 	private readonly string _text;
 	private readonly NpcStringId? _npcString;
 	private readonly List<string> _parameters;
-	
+
 	/**
 	 * @param objectId
 	 * @param messageType
@@ -27,16 +27,18 @@ public readonly struct NpcSayPacket: IOutgoingPacket
 		_textType = messageType;
 		_npcId = 1000000 + npcId;
 		_text = text;
-	}
-	
+        _parameters = [];
+    }
+
 	public NpcSayPacket(Npc npc, ChatType messageType, string text)
 	{
 		_objectId = npc.ObjectId;
 		_textType = messageType;
 		_npcId = 1000000 + npc.getTemplate().getDisplayId();
 		_text = text;
+        _parameters = [];
 	}
-	
+
 	public NpcSayPacket(int objectId, ChatType messageType, int npcId, NpcStringId npcString)
 	{
 		_objectId = objectId;
@@ -45,16 +47,16 @@ public readonly struct NpcSayPacket: IOutgoingPacket
 		_npcString = npcString;
 		_parameters = new();
 	}
-	
+
 	public NpcSayPacket(Npc npc, ChatType messageType, NpcStringId npcString)
 	{
 		_objectId = npc.ObjectId;
 		_textType = messageType;
 		_npcId = 1000000 + npc.getTemplate().getDisplayId();
 		_npcString = npcString;
-		_parameters = new();
+		_parameters = [];
 	}
-	
+
 	/**
 	 * @param text the text to add as a parameter for this packet's message (replaces S1, S2 etc.)
 	 * @return this NpcSay packet object
@@ -64,18 +66,18 @@ public readonly struct NpcSayPacket: IOutgoingPacket
 		_parameters.Add(text);
 		return this;
 	}
-	
+
 	/**
 	 * @param params a list of strings to add as parameters for this packet's message (replaces S1, S2 etc.)
 	 * @return this NpcSay packet object
 	 */
 	public NpcSayPacket addStringParameters(params string[] @params)
 	{
-		if ((@params != null) && (@params.Length > 0))
+		if (@params != null && @params.Length > 0)
 		{
 			foreach (string item in @params)
 			{
-				if ((item != null) && (item.Length > 0))
+				if (item != null && item.Length > 0)
 				{
 					_parameters.Add(item);
 				}

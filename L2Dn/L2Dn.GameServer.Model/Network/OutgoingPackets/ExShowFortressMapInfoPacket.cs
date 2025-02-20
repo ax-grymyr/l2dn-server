@@ -9,20 +9,20 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct ExShowFortressMapInfoPacket: IOutgoingPacket
 {
     private readonly Fort _fortress;
-	
+
     public ExShowFortressMapInfoPacket(Fort fortress)
     {
         _fortress = fortress;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SHOW_FORTRESS_MAP_INFO);
-        
+
         writer.WriteInt32(_fortress.getResidenceId());
         writer.WriteInt32(_fortress.getSiege().isInProgress()); // fortress siege status
         writer.WriteInt32(_fortress.getFortSize()); // barracks count
-        List<FortSiegeSpawn> commanders = FortSiegeManager.getInstance().getCommanderSpawnList(_fortress.getResidenceId());
+        List<FortSiegeSpawn>? commanders = FortSiegeManager.getInstance().getCommanderSpawnList(_fortress.getResidenceId());
         if (commanders != null && commanders.Count != 0 && _fortress.getSiege().isInProgress())
         {
             switch (commanders.Count)
@@ -73,7 +73,7 @@ public readonly struct ExShowFortressMapInfoPacket: IOutgoingPacket
             }
         }
     }
-	
+
     /**
      * @param npcId
      * @return

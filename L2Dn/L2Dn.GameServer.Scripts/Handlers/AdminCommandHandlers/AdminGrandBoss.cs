@@ -300,7 +300,13 @@ public class AdminGrandBoss: IAdminCommandHandler
             }
         }
 
-        StatSet info = GrandBossManager.getInstance().getStatSet(grandBossId);
+        StatSet? info = GrandBossManager.getInstance().getStatSet(grandBossId);
+        if (info == null)
+        {
+            BuilderUtil.sendSysMessage(activeChar, $"No GrandBoss info ID={grandBossId}!");
+            return;
+        }
+
         string bossRespawn = info.getDateTime("respawn_time").ToString("yyyy-MM-dd HH:mm:ss");
 
         HtmlContent htmlContent = HtmlContent.LoadFromFile(htmlPath, activeChar);

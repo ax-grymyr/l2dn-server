@@ -6,7 +6,7 @@ using L2Dn.Packets;
 namespace L2Dn.GameServer.Network.OutgoingPackets.Commission;
 
 public readonly struct ExResponseCommissionListPacket(
-    CommissionListReplyType replyType, List<CommissionItem>? items = null, int chunkId = 0, int listIndexStart = 0)
+    CommissionListReplyType replyType, List<CommissionItem> items, int chunkId = 0, int listIndexStart = 0)
     : IOutgoingPacket
 {
     public const int MAX_CHUNK_SIZE = 120;

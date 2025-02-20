@@ -32,10 +32,10 @@ public struct MonsterRaceInfoPacket: IOutgoingPacket
             writer.WriteInt32(_monsters[i].ObjectId); // npcObjectID
             writer.WriteInt32(_monsters[i].getTemplate().getDisplayId() + 1000000); // npcID
             writer.WriteInt32(14107); // origin X
-            writer.WriteInt32(181875 + (58 * (7 - i))); // origin Y
+            writer.WriteInt32(181875 + 58 * (7 - i)); // origin Y
             writer.WriteInt32(-3566); // origin Z
             writer.WriteInt32(12080); // end X
-            writer.WriteInt32(181875 + (58 * (7 - i))); // end Y
+            writer.WriteInt32(181875 + 58 * (7 - i)); // end Y
             writer.WriteInt32(-3566); // end Z
             writer.WriteDouble(_monsters[i].getTemplate().getFCollisionHeight()); // coll. height
             writer.WriteDouble(_monsters[i].getTemplate().getFCollisionRadius()); // coll. radius

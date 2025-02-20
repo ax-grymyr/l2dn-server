@@ -73,7 +73,7 @@ public struct RequestSetCropPacket: IIncomingPacket<GameSession>
         List<CropProcure> list = new(_items.Count);
         foreach (CropProcure cp in _items)
         {
-            Seed s = manor.getSeedByCrop(cp.getId(), _manorId);
+            Seed? s = manor.getSeedByCrop(cp.getId(), _manorId);
             if (s != null && cp.getStartAmount() <= s.getCropLimit() && cp.getPrice() >= s.getCropMinPrice() &&
                 cp.getPrice() <= s.getCropMaxPrice())
             {

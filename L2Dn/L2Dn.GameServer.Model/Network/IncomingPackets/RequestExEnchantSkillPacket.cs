@@ -125,6 +125,12 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 		if (Rnd.get(100) <= SkillEnchantData.getInstance().getChanceEnchantMap(skill))
 		{
 			Skill? enchantedSkill = SkillData.getInstance().getSkill(_skillId, _skillLevel, _skillSubLevel);
+            if (enchantedSkill == null)
+            {
+                LOGGER.Warn(GetType().Name + " request enchant skill dont have skillId-" + _skillId + " lvl-" + _skillLevel + " sublvl-" + _skillSubLevel);
+                return ValueTask.CompletedTask;
+            }
+
 			if (Config.LOG_SKILL_ENCHANTS)
 			{
 				StringBuilder sb = new StringBuilder();
@@ -164,7 +170,6 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 		player.broadcastUserInfo();
 		player.sendSkillList();
 
-		skill = player.getKnownSkill(_skillId);
 		player.reduceAdena("Try enchant skill", 1_000_000, null, true);
 		player.sendPacket(new ExSkillEnchantInfoPacket(skill, player));
 		player.updateShortCuts(skill.getId(), skill.getLevel(), skill.getSubLevel());

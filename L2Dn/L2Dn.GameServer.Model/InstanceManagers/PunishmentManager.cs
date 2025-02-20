@@ -13,14 +13,14 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class PunishmentManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PunishmentManager));
-	
+
 	private readonly Map<PunishmentAffect, PunishmentHolder> _tasks = new();
-	
+
 	protected PunishmentManager()
 	{
 		load();
 	}
-	
+
 	private void load()
 	{
 		// Initiate task holders.
@@ -28,12 +28,12 @@ public class PunishmentManager
 		{
 			_tasks.put(affect, new PunishmentHolder());
 		}
-		
+
 		int initiated = 0;
 		int expired = 0;
-		
+
 		// Load punishments.
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (DbPunishment record in ctx.Punishments)
@@ -52,7 +52,7 @@ public class PunishmentManager
 				else
 				{
 					initiated++;
-					_tasks.get(affect).addPunishment(new PunishmentTask(id, key, affect, type, expirationTime, reason, punishedBy, true));
+					_tasks[affect].addPunishment(new PunishmentTask(id, key, affect, type, expirationTime, reason, punishedBy, true));
 				}
 			}
 		}
@@ -60,50 +60,50 @@ public class PunishmentManager
 		{
 			LOGGER.Warn(GetType().Name + ": Error while loading punishments: " + e);
 		}
-		
+
 		LOGGER.Info(GetType().Name +": Loaded " + initiated + " active and " + expired + " expired punishments.");
 	}
-	
+
 	public void startPunishment(PunishmentTask task)
 	{
-		_tasks.get(task.getAffect()).addPunishment(task);
+		_tasks[task.getAffect()].addPunishment(task);
 	}
-	
+
 	public void stopPunishment(PunishmentAffect affect, PunishmentType type)
 	{
-		PunishmentHolder holder = _tasks.get(affect);
+		PunishmentHolder? holder = _tasks.get(affect);
 		if (holder != null)
 		{
 			holder.stopPunishment(type);
 		}
 	}
-	
+
 	public void stopPunishment(string key, PunishmentAffect affect, PunishmentType type)
 	{
-		PunishmentTask task = getPunishment(key, affect, type);
+		PunishmentTask? task = getPunishment(key, affect, type);
 		if (task != null)
 		{
-			_tasks.get(affect).stopPunishment(task);
+			_tasks[affect].stopPunishment(task);
 		}
 	}
-	
+
 	public bool hasPunishment(string key, PunishmentAffect affect, PunishmentType type)
 	{
-		PunishmentHolder holder = _tasks.get(affect);
+		PunishmentHolder holder = _tasks[affect];
 		return holder.hasPunishment(key, type);
 	}
-	
+
 	public DateTime? getPunishmentExpiration(string key, PunishmentAffect affect, PunishmentType type)
 	{
-		PunishmentTask p = getPunishment(key, affect, type);
+		PunishmentTask? p = getPunishment(key, affect, type);
 		return p != null ? p.getExpirationTime() : null;
 	}
-	
-	private PunishmentTask getPunishment(string key, PunishmentAffect affect, PunishmentType type)
+
+	private PunishmentTask? getPunishment(string key, PunishmentAffect affect, PunishmentType type)
 	{
-		return _tasks.get(affect).getPunishment(key, type);
+		return _tasks[affect].getPunishment(key, type);
 	}
-	
+
 	/**
 	 * Gets the single instance of {@code PunishmentManager}.
 	 * @return single instance of {@code PunishmentManager}
@@ -112,7 +112,7 @@ public class PunishmentManager
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly PunishmentManager INSTANCE = new PunishmentManager();

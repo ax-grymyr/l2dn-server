@@ -69,7 +69,7 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 		SystemMessagePacket sm;
 		if (FakePlayerData.getInstance().isTalkable(target.getName()))
 		{
-			string name = FakePlayerData.getInstance().getProperName(target.getName());
+			string name = FakePlayerData.getInstance().getProperName(target.getName()) ?? string.Empty;
 			bool npcInRange = false;
 			foreach (Npc npc in World.getInstance().getVisibleObjectsInRange<Npc>(player, 150))
 			{
@@ -105,8 +105,8 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		Player partner = target.getActingPlayer();
-		if (partner.isInOlympiadMode() || player.isInOlympiadMode())
+		Player? partner = target.getActingPlayer();
+		if (partner == null || partner.isInOlympiadMode() || player.isInOlympiadMode())
 		{
 			player.sendMessage("A user currently participating in the Olympiad cannot accept or request a trade.");
 			return ValueTask.CompletedTask;

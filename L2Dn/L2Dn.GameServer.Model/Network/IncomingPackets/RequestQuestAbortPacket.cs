@@ -24,7 +24,7 @@ public struct RequestQuestAbortPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Quest qe = QuestManager.getInstance().getQuest(_questId);
+        Quest? qe = QuestManager.getInstance().getQuest(_questId);
         if (qe != null)
         {
             QuestState? qs = player.getQuestState(qe.Name);
