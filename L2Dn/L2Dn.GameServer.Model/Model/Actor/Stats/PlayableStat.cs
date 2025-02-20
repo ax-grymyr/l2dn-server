@@ -33,13 +33,13 @@ public class PlayableStat: CreatureStat
 			}
 		}
 		
-		if (((getExp() + amount) < 0) || ((amount > 0) && (getExp() == (getExpForLevel(getMaxLevel()) - 1))))
+		if (getExp() + amount < 0 || (amount > 0 && getExp() == getExpForLevel(getMaxLevel()) - 1))
 		{
 			return true;
 		}
 		
 		long value = amount;
-		if ((getExp() + value) >= getExpForLevel(getMaxLevel()))
+		if (getExp() + value >= getExpForLevel(getMaxLevel()))
 		{
 			value = getExpForLevel(getMaxLevel()) - 1 - getExp();
 		}
@@ -64,13 +64,13 @@ public class PlayableStat: CreatureStat
 			break;
 		}
 		
-		if ((level != getLevel()) && (level >= minimumLevel))
+		if (level != getLevel() && level >= minimumLevel)
 		{
 			addLevel(level - getLevel());
 		}
 		
 		int newLevel = getLevel();
-		if ((newLevel > oldLevel) && getActiveChar().isPlayer())
+		if (newLevel > oldLevel && getActiveChar().isPlayer())
 		{
 			Player player = getActiveChar().getActingPlayer();
 			if (SkillTreeData.getInstance().hasAvailableSkills(player, player.getClassId()))
@@ -95,12 +95,12 @@ public class PlayableStat: CreatureStat
 	public bool removeExp(long amount)
 	{
 		long value = amount;
-		if (((getExp() - value) < getExpForLevel(getLevel())) && (!Config.PLAYER_DELEVEL || (Config.PLAYER_DELEVEL && (getLevel() <= Config.DELEVEL_MINIMUM))))
+		if (getExp() - value < getExpForLevel(getLevel()) && (!Config.PLAYER_DELEVEL || (Config.PLAYER_DELEVEL && getLevel() <= Config.DELEVEL_MINIMUM)))
 		{
 			value = getExp() - getExpForLevel(getLevel());
 		}
 		
-		if ((getExp() - value) < 0)
+		if (getExp() - value < 0)
 		{
 			value = getExp() - 1;
 		}
@@ -122,7 +122,7 @@ public class PlayableStat: CreatureStat
 			level = --tmp;
 			break;
 		}
-		if ((level != getLevel()) && (level >= minimumLevel))
+		if (level != getLevel() && level >= minimumLevel)
 		{
 			addLevel(level - getLevel());
 		}
@@ -148,9 +148,9 @@ public class PlayableStat: CreatureStat
 	public virtual bool addLevel(int amount)
 	{
 		int value = amount;
-		if ((getLevel() + value) > (getMaxLevel() - 1))
+		if (getLevel() + value > getMaxLevel() - 1)
 		{
-			if (getLevel() < (getMaxLevel() - 1))
+			if (getLevel() < getMaxLevel() - 1)
 			{
 				value = getMaxLevel() - 1 - getLevel();
 			}
@@ -160,12 +160,12 @@ public class PlayableStat: CreatureStat
 			}
 		}
 		
-		bool levelIncreased = (getLevel() + value) > getLevel();
+		bool levelIncreased = getLevel() + value > getLevel();
 		value += getLevel();
 		setLevel(value);
 		
 		// Sync up exp with current level
-		if ((getExp() >= getExpForLevel(getLevel() + 1)) || (getExpForLevel(getLevel()) > getExp()))
+		if (getExp() >= getExpForLevel(getLevel() + 1) || getExpForLevel(getLevel()) > getExp())
 		{
 			setExp(getExpForLevel(getLevel()));
 		}
@@ -201,7 +201,7 @@ public class PlayableStat: CreatureStat
 		}
 		
 		long value = amount;
-		if (currentSp > (Config.MAX_SP - value))
+		if (currentSp > Config.MAX_SP - value)
 		{
 			value = Config.MAX_SP - currentSp;
 		}
@@ -246,7 +246,7 @@ public class PlayableStat: CreatureStat
 	public override int getPhysicalAttackAngle()
 	{
 		Weapon weapon = getActiveChar().getActiveWeaponItem();
-		return (weapon != null ? weapon.getBaseAttackAngle() + (int) getActiveChar().getStat().getValue(Stat.WEAPON_ATTACK_ANGLE_BONUS, 0) : base.getPhysicalAttackAngle());
+		return weapon != null ? weapon.getBaseAttackAngle() + (int) getActiveChar().getStat().getValue(Stat.WEAPON_ATTACK_ANGLE_BONUS, 0) : base.getPhysicalAttackAngle();
 	}
 	
 	private void addReputationToClanBasedOnLevel(Player player, int leveledUpCount)
@@ -266,59 +266,59 @@ public class PlayableStat: CreatureStat
 		for (int i = 0; i < leveledUpCount; i++)
 		{
 			int level = player.getLevel() - i;
-			if ((level >= 20) && (level <= 25))
+			if (level >= 20 && level <= 25)
 			{
 				reputation += Config.LVL_UP_20_AND_25_REP_SCORE;
 			}
-			else if ((level >= 26) && (level <= 30))
+			else if (level >= 26 && level <= 30)
 			{
 				reputation += Config.LVL_UP_26_AND_30_REP_SCORE;
 			}
-			else if ((level >= 31) && (level <= 35))
+			else if (level >= 31 && level <= 35)
 			{
 				reputation += Config.LVL_UP_31_AND_35_REP_SCORE;
 			}
-			else if ((level >= 36) && (level <= 40))
+			else if (level >= 36 && level <= 40)
 			{
 				reputation += Config.LVL_UP_36_AND_40_REP_SCORE;
 			}
-			else if ((level >= 41) && (level <= 45))
+			else if (level >= 41 && level <= 45)
 			{
 				reputation += Config.LVL_UP_41_AND_45_REP_SCORE;
 			}
-			else if ((level >= 46) && (level <= 50))
+			else if (level >= 46 && level <= 50)
 			{
 				reputation += Config.LVL_UP_46_AND_50_REP_SCORE;
 			}
-			else if ((level >= 51) && (level <= 55))
+			else if (level >= 51 && level <= 55)
 			{
 				reputation += Config.LVL_UP_51_AND_55_REP_SCORE;
 			}
-			else if ((level >= 56) && (level <= 60))
+			else if (level >= 56 && level <= 60)
 			{
 				reputation += Config.LVL_UP_56_AND_60_REP_SCORE;
 			}
-			else if ((level >= 61) && (level <= 65))
+			else if (level >= 61 && level <= 65)
 			{
 				reputation += Config.LVL_UP_61_AND_65_REP_SCORE;
 			}
-			else if ((level >= 66) && (level <= 70))
+			else if (level >= 66 && level <= 70)
 			{
 				reputation += Config.LVL_UP_66_AND_70_REP_SCORE;
 			}
-			else if ((level >= 71) && (level <= 75))
+			else if (level >= 71 && level <= 75)
 			{
 				reputation += Config.LVL_UP_71_AND_75_REP_SCORE;
 			}
-			else if ((level >= 76) && (level <= 80))
+			else if (level >= 76 && level <= 80)
 			{
 				reputation += Config.LVL_UP_76_AND_80_REP_SCORE;
 			}
-			else if ((level >= 81) && (level <= 90))
+			else if (level >= 81 && level <= 90)
 			{
 				reputation += Config.LVL_UP_81_AND_90_REP_SCORE;
 			}
-			else if ((level >= 91) && (level <= 120))
+			else if (level >= 91 && level <= 120)
 			{
 				reputation += Config.LVL_UP_91_PLUS_REP_SCORE;
 			}

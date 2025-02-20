@@ -33,9 +33,9 @@ public class Seed
 
 		// Set prices
 		ItemTemplate? item = ItemData.getInstance().getTemplate(_cropId);
-		_cropReferencePrice = (item != null) ? item.getReferencePrice() : 1;
+		_cropReferencePrice = item != null ? item.getReferencePrice() : 1;
 		item = ItemData.getInstance().getTemplate(_seedId);
-		_seedReferencePrice = (item != null) ? item.getReferencePrice() : 1;
+		_seedReferencePrice = item != null ? item.getReferencePrice() : 1;
 	}
 
 	public int getCastleId()
@@ -60,7 +60,7 @@ public class Seed
 
 	public int getReward(int type)
 	{
-		return (type == 1) ? _reward1 : _reward2;
+		return type == 1 ? _reward1 : _reward2;
 	}
 
 	public int getLevel()

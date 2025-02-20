@@ -107,7 +107,7 @@ public class AutoAnnouncement : Announcement, Runnable
 	
 	public override bool deleteMe()
 	{
-		if ((_task != null) && !_task.isCancelled())
+		if (_task != null && !_task.isCancelled())
 		{
 			_task.cancel(false);
 		}
@@ -117,7 +117,7 @@ public class AutoAnnouncement : Announcement, Runnable
 	
 	public void restartMe()
 	{
-		if ((_task != null) && !_task.isCancelled())
+		if (_task != null && !_task.isCancelled())
 		{
 			_task.cancel(false);
 		}
@@ -127,11 +127,11 @@ public class AutoAnnouncement : Announcement, Runnable
 	
 	public void run()
 	{
-		if ((_currentState == -1) || (_currentState > 0))
+		if (_currentState == -1 || _currentState > 0)
 		{
 			foreach (string content in getContent().Split(Environment.NewLine))
 			{
-				Broadcast.toAllOnlinePlayers(content, (getType() == AnnouncementType.AUTO_CRITICAL));
+				Broadcast.toAllOnlinePlayers(content, getType() == AnnouncementType.AUTO_CRITICAL);
 			}
 			
 			if (_currentState != -1)

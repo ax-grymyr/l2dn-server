@@ -28,7 +28,7 @@ public class Door : Creature
 	private bool _isAttackableDoor;
 	private bool _isInverted;
 	private int _meshindex = 1;
-	private ScheduledFuture _autoCloseTask;
+	private ScheduledFuture? _autoCloseTask;
 
 	public Door(DoorTemplate template, bool? isOpened = null): base(template)
 	{
@@ -172,7 +172,7 @@ public class Door : Creature
 		_open = open;
 		if (getChildId() > 0)
 		{
-			Door sibling = getSiblingDoor(getChildId());
+			Door? sibling = getSiblingDoor(getChildId());
 			if (sibling != null)
 			{
 				sibling.notifyChildEvent(open);
@@ -222,62 +222,63 @@ public class Door : Creature
 		return dmg;
 	}
 
-	public Castle getCastle()
+	public Castle? getCastle()
 	{
 		return CastleManager.getInstance().getCastle(this);
 	}
 
-	public Fort getFort()
+	public Fort? getFort()
 	{
 		return InstanceManagers.FortManager.getInstance().getFort(this);
 	}
 
 	public bool isEnemy()
-	{
-		if (getCastle() != null && getCastle().getResidenceId() > 0 && getCastle().getZone().isActive() && isShowHp())
+    {
+        Castle? castle = getCastle();
+		if (castle != null && castle.getResidenceId() > 0 && castle.getZone().isActive() && isShowHp())
 		{
 			return true;
 		}
-		else if (getFort() != null && getFort().getResidenceId() > 0 && getFort().getZone().isActive() && isShowHp())
+
+        Fort? fort = getFort();
+        if (fort != null && fort.getResidenceId() > 0 && fort.getZone().isActive() && isShowHp())
 		{
 			return true;
 		}
+
 		return false;
 	}
 
 	public override bool isAutoAttackable(Creature attacker)
 	{
 		// Doors can`t be attacked by NPCs
-		if (!attacker.isPlayable())
-		{
+        Player? actingPlayer = attacker.getActingPlayer();
+		if (!attacker.isPlayable() || actingPlayer == null)
 			return false;
-		}
-		else if (_isAttackableDoor)
-		{
-			return true;
-		}
-		else if (!isShowHp())
-		{
-			return false;
-		}
 
-		Player actingPlayer = attacker.getActingPlayer();
+        if (_isAttackableDoor)
+            return true;
+
+        if (!isShowHp())
+            return false;
 
 		// Attackable only during siege by everyone (not owner)
-		bool isCastle = getCastle() != null && getCastle().getResidenceId() > 0 && getCastle().getZone().isActive();
-		bool isFort = getFort() != null && getFort().getResidenceId() > 0 && getFort().getZone().isActive();
+        Castle? castle = getCastle();
+        Fort? fort = getFort();
+		bool isCastle = castle != null && castle.getResidenceId() > 0 && castle.getZone().isActive();
+		bool isFort = fort != null && fort.getResidenceId() > 0 && fort.getZone().isActive();
 		if (isFort)
 		{
-			Clan clan = actingPlayer.getClan();
-			if (clan != null && clan == getFort().getOwnerClan())
+			Clan? clan = actingPlayer.getClan();
+			if (clan != null && fort != null && clan == fort.getOwnerClan())
 			{
 				return false;
 			}
 		}
 		else if (isCastle)
 		{
-			Clan clan = actingPlayer.getClan();
-			if (clan != null && clan.getId() == getCastle().getOwnerId())
+			Clan? clan = actingPlayer.getClan();
+			if (clan != null && castle != null && clan.getId() == castle.getOwnerId())
 			{
 				return false;
 			}
@@ -339,7 +340,9 @@ public class Door : Creature
 				continue;
 			}
 
-			if (player.isGM() || (getCastle() != null && getCastle().getResidenceId() > 0) || (getFort() != null && getFort().getResidenceId() > 0))
+            Castle? castle = getCastle();
+            Fort? fort = getFort();
+			if (player.isGM() || (castle != null && castle.getResidenceId() > 0) || (fort != null && fort.getResidenceId() > 0))
 			{
 				player.sendPacket(targetableSu);
 			}
@@ -388,7 +391,7 @@ public class Door : Creature
 	public void closeMe()
 	{
 		// remove close task
-		ScheduledFuture oldTask = _autoCloseTask;
+		ScheduledFuture? oldTask = _autoCloseTask;
 		if (oldTask != null)
 		{
 			_autoCloseTask = null;
@@ -412,16 +415,16 @@ public class Door : Creature
 	private void manageGroupOpen(bool open, string groupName)
 	{
 		Set<int> set = DoorData.getInstance().getDoorsByGroup(groupName);
-		Door first = null;
+		Door? first = null;
 		foreach (int id in set)
 		{
-			Door door = getSiblingDoor(id);
+			Door? door = getSiblingDoor(id);
 			if (first == null)
 			{
 				first = door;
 			}
 
-			if (door.isOpen() != open)
+			if (door != null && door.isOpen() != open)
 			{
 				door.setOpen(open);
 				door.broadcastStatusUpdate();
@@ -505,7 +508,7 @@ public class Door : Creature
 		return getTemplate().getChildDoorId();
 	}
 
-	public override void reduceCurrentHp(double value, Creature attacker, Skill skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
+	public override void reduceCurrentHp(double value, Creature attacker, Skill? skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
 	{
 		if (isWall() && !isInInstance())
 		{
@@ -530,8 +533,10 @@ public class Door : Creature
 			return false;
 		}
 
-		bool isFort = getFort() != null && getFort().getResidenceId() > 0 && getFort().getSiege().isInProgress();
-		bool isCastle = getCastle() != null && getCastle().getResidenceId() > 0 && getCastle().getSiege().isInProgress();
+        Fort? fort = getFort();
+        Castle? castle = getCastle();
+		bool isFort = fort != null && fort.getResidenceId() > 0 && fort.getSiege().isInProgress();
+		bool isCastle = castle != null && castle.getResidenceId() > 0 && castle.getSiege().isInProgress();
 		if (isFort || isCastle)
 		{
 			broadcastPacket(new SystemMessagePacket(SystemMessageId.THE_CASTLE_GATE_HAS_BEEN_DESTROYED));
@@ -580,9 +585,9 @@ public class Door : Creature
 	 * @param doorId
 	 * @return
 	 */
-	private Door getSiblingDoor(int doorId)
+	private Door? getSiblingDoor(int doorId)
 	{
-		Instance inst = getInstanceWorld();
+		Instance? inst = getInstanceWorld();
 		return inst != null ? inst.getDoor(doorId) : DoorData.getInstance().getDoor(doorId);
 	}
 
@@ -593,7 +598,7 @@ public class Door : Creature
 			return;
 		}
 
-		ScheduledFuture oldTask = _autoCloseTask;
+		ScheduledFuture? oldTask = _autoCloseTask;
 		if (oldTask != null)
 		{
 			_autoCloseTask = null;

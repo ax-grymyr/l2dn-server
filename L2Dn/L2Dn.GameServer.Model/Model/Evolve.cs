@@ -21,7 +21,7 @@ public class Evolve
 	
 	public static bool doEvolve(Player player, Npc npc, int itemIdtake, int itemIdgive, int petminLevel)
 	{
-		if ((itemIdtake == 0) || (itemIdgive == 0) || (petminLevel == 0))
+		if (itemIdtake == 0 || itemIdgive == 0 || petminLevel == 0)
 		{
 			return false;
 		}
@@ -50,7 +50,7 @@ public class Evolve
 		}
 		
 		int oldnpcID = oldData.getNpcId();
-		if ((currentPet.getStat().getLevel() < petminLevel) || (currentPet.getId() != oldnpcID))
+		if (currentPet.getStat().getLevel() < petminLevel || currentPet.getId() != oldnpcID)
 		{
 			return false;
 		}
@@ -120,7 +120,7 @@ public class Evolve
 	
 	public static bool doRestore(Player player, Npc npc, int itemIdtake, int itemIdgive, int petminLevel)
 	{
-		if ((itemIdtake == 0) || (itemIdgive == 0) || (petminLevel == 0))
+		if (itemIdtake == 0 || itemIdgive == 0 || petminLevel == 0)
 		{
 			return false;
 		}

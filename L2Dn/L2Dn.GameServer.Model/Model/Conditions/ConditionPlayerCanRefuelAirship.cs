@@ -14,13 +14,10 @@ public sealed class ConditionPlayerCanRefuelAirship(int value): Condition
     protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
     {
         Player? player = effector.getActingPlayer();
+        AirShip? airShip = player?.getAirShip();
 
-        bool canRefuelAirship = true;
-        if (player?.getAirShip() == null || player.getAirShip() is not ControllableAirShip ||
-            player.getAirShip().getFuel() + value > player.getAirShip().getMaxFuel())
-        {
-            canRefuelAirship = false;
-        }
+        bool canRefuelAirship =
+            !(airShip is not ControllableAirShip || airShip.getFuel() + value > airShip.getMaxFuel());
 
         return canRefuelAirship;
     }

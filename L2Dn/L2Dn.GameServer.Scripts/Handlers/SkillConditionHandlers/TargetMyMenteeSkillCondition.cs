@@ -16,7 +16,7 @@ public class TargetMyMenteeSkillCondition: ISkillCondition
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
-        if ((target == null) || !target.isPlayer())
+        if (target == null || !target.isPlayer())
         {
             return false;
         }

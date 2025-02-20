@@ -51,7 +51,7 @@ public class Teleporter: Npc
 			}
 			case "showTeleports":
 			{
-				string listName = (st.hasMoreTokens()) ? st.nextToken() : TeleportType.NORMAL.ToString();
+				string listName = st.hasMoreTokens() ? st.nextToken() : TeleportType.NORMAL.ToString();
 				TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), listName);
 				if (holder == null)
 				{
@@ -68,7 +68,7 @@ public class Teleporter: Npc
 			}
 			case "showTeleportsHunting":
 			{
-				string listName = (st.hasMoreTokens()) ? st.nextToken() : TeleportType.HUNTING.ToString();
+				string listName = st.hasMoreTokens() ? st.nextToken() : TeleportType.HUNTING.ToString();
 				TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), listName);
 				if (holder == null)
 				{
@@ -140,17 +140,17 @@ public class Teleporter: Npc
 		if (value == 0)
 		{
 			pom = npcId.ToString();
-			if ((player != null) && QUEST_RECOMENDATIONS.TryGetValue(npcId, out List<TeleporterQuestRecommendationHolder>? holders))
+			if (player != null && QUEST_RECOMENDATIONS.TryGetValue(npcId, out List<TeleporterQuestRecommendationHolder>? holders))
 			{
 				foreach (TeleporterQuestRecommendationHolder rec in holders)
 				{
 					bool breakOuterLoop = false;
 					QuestState qs = player.getQuestState(rec.getQuestName());
-					if ((qs != null) && qs.isStarted())
+					if (qs != null && qs.isStarted())
 					{
 						foreach (QuestCondType cond in rec.getConditions())
 						{
-							if ((cond == (QuestCondType)(-1)) || qs.isCond(cond))
+							if (cond == (QuestCondType)(-1) || qs.isCond(cond))
 							{
 								pom = rec.getHtml();
 								breakOuterLoop = true;
@@ -166,7 +166,7 @@ public class Teleporter: Npc
 		}
 		else
 		{
-			pom = (npcId + "-" + value);
+			pom = npcId + "-" + value;
 		}
 
 		return "html/teleporter/" + pom + ".htm";
@@ -183,7 +183,7 @@ public class Teleporter: Npc
 
 		// Teleporter is on castle ground
 		string filename = "html/teleporter/castleteleporter-no.htm";
-		if ((player.getClan() != null) && (getCastle().getOwnerId() == player.getClanId())) // Clan owns castle
+		if (player.getClan() != null && getCastle().getOwnerId() == player.getClanId()) // Clan owns castle
 		{
 			filename = getHtmlPath(getId(), 0, player); // Owner message window
 		}

@@ -27,13 +27,13 @@ public class RegenMPFinalizer: StatFunction
 		if (creature.isPlayer())
 		{
 			Player player = creature.getActingPlayer();
-			if (player.isInsideZone(ZoneId.CLAN_HALL) && (player.getClan() != null) &&
-			    (player.getClan().getHideoutId() > 0))
+			if (player.isInsideZone(ZoneId.CLAN_HALL) && player.getClan() != null &&
+			    player.getClan().getHideoutId() > 0)
 			{
 				ClanHallZone? zone = ZoneManager.getInstance().getZone<ClanHallZone>(player.Location.Location3D);
 				int posChIndex = zone == null ? -1 : zone.getResidenceId();
 				int clanHallIndex = player.getClan().getHideoutId();
-				if ((clanHallIndex > 0) && (clanHallIndex == posChIndex))
+				if (clanHallIndex > 0 && clanHallIndex == posChIndex)
 				{
 					AbstractResidence residense =
 						ClanHallData.getInstance().getClanHallById(player.getClan().getHideoutId());
@@ -48,13 +48,13 @@ public class RegenMPFinalizer: StatFunction
 				}
 			}
 
-			if (player.isInsideZone(ZoneId.CASTLE) && (player.getClan() != null) &&
-			    (player.getClan().getCastleId() > 0))
+			if (player.isInsideZone(ZoneId.CASTLE) && player.getClan() != null &&
+			    player.getClan().getCastleId() > 0)
 			{
 				CastleZone? zone = ZoneManager.getInstance().getZone<CastleZone>(player.Location.Location3D);
 				int posCastleIndex = zone == null ? -1 : zone.getResidenceId();
 				int? castleIndex = player.getClan().getCastleId();
-				if ((castleIndex > 0) && (castleIndex == posCastleIndex))
+				if (castleIndex > 0 && castleIndex == posCastleIndex)
 				{
 					Castle castle = CastleManager.getInstance().getCastleById(castleIndex.Value);
 					if (castle != null)
@@ -62,18 +62,18 @@ public class RegenMPFinalizer: StatFunction
 						Castle.CastleFunction func = castle.getCastleFunction(Castle.FUNC_RESTORE_MP);
 						if (func != null)
 						{
-							baseValue *= (func.getLvl() / 100);
+							baseValue *= func.getLvl() / 100;
 						}
 					}
 				}
 			}
 
-			if (player.isInsideZone(ZoneId.FORT) && (player.getClan() != null) && (player.getClan().getFortId() > 0))
+			if (player.isInsideZone(ZoneId.FORT) && player.getClan() != null && player.getClan().getFortId() > 0)
 			{
 				FortZone? zone = ZoneManager.getInstance().getZone<FortZone>(player.Location.Location3D);
 				int posFortIndex = zone == null ? -1 : zone.getResidenceId();
 				int? fortIndex = player.getClan().getFortId();
-				if ((fortIndex > 0) && (fortIndex == posFortIndex))
+				if (fortIndex > 0 && fortIndex == posFortIndex)
 				{
 					Fort fort = FortManager.getInstance().getFortById(fortIndex.Value);
 					if (fort != null)
@@ -81,7 +81,7 @@ public class RegenMPFinalizer: StatFunction
 						Fort.FortFunction func = fort.getFortFunction(Fort.FUNC_RESTORE_MP);
 						if (func != null)
 						{
-							baseValue *= (func.getLevel() / 100);
+							baseValue *= func.getLevel() / 100;
 						}
 					}
 				}

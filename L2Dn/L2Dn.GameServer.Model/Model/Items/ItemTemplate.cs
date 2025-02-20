@@ -216,12 +216,12 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 		_reuseDelay = TimeSpan.FromMilliseconds(set.getInt("reuse_delay", 0));
 		_sharedReuseGroup = set.getInt("shared_reuse_group", 0);
 		_commissionItemType = set.getEnum("commissionItemType", CommissionItemType.OTHER_ITEM);
-		_common = ((_itemId >= 11605) && (_itemId <= 12361));
-		_heroItem = ((_itemId >= 6611) && (_itemId <= 6621)) || ((_itemId >= 9388) && (_itemId <= 9390)) || (_itemId == 6842);
-		_pvpItem = ((_itemId >= 10667) && (_itemId <= 10835)) || ((_itemId >= 12852) && (_itemId <= 12977)) || ((_itemId >= 14363) && (_itemId <= 14525)) || (_itemId == 14528) || (_itemId == 14529) || (_itemId == 14558) || ((_itemId >= 15913) && (_itemId <= 16024)) || ((_itemId >= 16134) && (_itemId <= 16147)) || (_itemId == 16149) || (_itemId == 16151) || (_itemId == 16153) || (_itemId == 16155) || (_itemId == 16157) || (_itemId == 16159) || ((_itemId >= 16168) && (_itemId <= 16176)) || ((_itemId >= 16179) && (_itemId <= 16220));
+		_common = _itemId >= 11605 && _itemId <= 12361;
+		_heroItem = (_itemId >= 6611 && _itemId <= 6621) || (_itemId >= 9388 && _itemId <= 9390) || _itemId == 6842;
+		_pvpItem = (_itemId >= 10667 && _itemId <= 10835) || (_itemId >= 12852 && _itemId <= 12977) || (_itemId >= 14363 && _itemId <= 14525) || _itemId == 14528 || _itemId == 14529 || _itemId == 14558 || (_itemId >= 15913 && _itemId <= 16024) || (_itemId >= 16134 && _itemId <= 16147) || _itemId == 16149 || _itemId == 16151 || _itemId == 16153 || _itemId == 16155 || _itemId == 16157 || _itemId == 16159 || (_itemId >= 16168 && _itemId <= 16176) || (_itemId >= 16179 && _itemId <= 16220);
 
 		// Sealed item checks.
-		if ((_additionalName != null) && _additionalName.Equals("Sealed"))
+		if (_additionalName != null && _additionalName.Equals("Sealed"))
 		{
 			if (_tradeable)
 			{
@@ -360,7 +360,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	 */
 	public bool isCrystallizable()
 	{
-		return (_crystalType != CrystalType.NONE) && (_crystalCount > 0);
+		return _crystalType != CrystalType.NONE && _crystalCount > 0;
 	}
 
 	/**
@@ -435,11 +435,11 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 				case TYPE2_SHIELD_ARMOR:
 				case TYPE2_ACCESSORY:
 				{
-					return _crystalCount + (CrystalTypeInfo.Get(_crystalType).getCrystalEnchantBonusArmor() * ((3 * enchantLevel) - 6));
+					return _crystalCount + CrystalTypeInfo.Get(_crystalType).getCrystalEnchantBonusArmor() * (3 * enchantLevel - 6);
 				}
 				case TYPE2_WEAPON:
 				{
-					return _crystalCount + (CrystalTypeInfo.Get(_crystalType).getCrystalEnchantBonusWeapon() * ((2 * enchantLevel) - 3));
+					return _crystalCount + CrystalTypeInfo.Get(_crystalType).getCrystalEnchantBonusWeapon() * (2 * enchantLevel - 3);
 				}
 				default:
 				{
@@ -454,11 +454,11 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 				case TYPE2_SHIELD_ARMOR:
 				case TYPE2_ACCESSORY:
 				{
-					return _crystalCount + (CrystalTypeInfo.Get(_crystalType).getCrystalEnchantBonusArmor() * enchantLevel);
+					return _crystalCount + CrystalTypeInfo.Get(_crystalType).getCrystalEnchantBonusArmor() * enchantLevel;
 				}
 				case TYPE2_WEAPON:
 				{
-					return _crystalCount + (CrystalTypeInfo.Get(_crystalType).getCrystalEnchantBonusWeapon() * enchantLevel);
+					return _crystalCount + CrystalTypeInfo.Get(_crystalType).getCrystalEnchantBonusWeapon() * enchantLevel;
 				}
 				default:
 				{
@@ -849,7 +849,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 		}
 
 		// Don't allow hero equipment and restricted items during Olympiad
-		if ((isOlyRestrictedItem() || _heroItem) && (creature.isPlayer() && creature.getActingPlayer().isInOlympiadMode()))
+		if ((isOlyRestrictedItem() || _heroItem) && creature.isPlayer() && creature.getActingPlayer().isInOlympiadMode())
 		{
 			if (isEquipable())
 			{
@@ -862,7 +862,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 			return false;
 		}
 
-		if (_isEventRestricted && (creature.isPlayer() && (creature.getActingPlayer().isOnEvent())))
+		if (_isEventRestricted && creature.isPlayer() && creature.getActingPlayer().isOnEvent())
 		{
 			creature.sendMessage("You cannot use this item in the event.");
 			return false;
@@ -915,7 +915,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 
 	public bool isConditionAttached()
 	{
-		return (_preConditions != null) && _preConditions.Count != 0;
+		return _preConditions != null && _preConditions.Count != 0;
 	}
 
 	public bool isQuestItem()
@@ -1053,7 +1053,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 		if (_funcTemplates != null)
 		{
 			FuncTemplate? template = _funcTemplates.get(stat);
-			if ((template != null) && ((template.getFunctionClass() == typeof(FuncAdd)) || (template.getFunctionClass() == typeof(FuncSet))))
+			if (template != null && (template.getFunctionClass() == typeof(FuncAdd) || template.getFunctionClass() == typeof(FuncSet)))
 			{
 				return template.getValue();
 			}

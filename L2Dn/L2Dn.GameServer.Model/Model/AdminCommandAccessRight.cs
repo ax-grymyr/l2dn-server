@@ -37,7 +37,7 @@ public class AdminCommandAccessRight
      */
     public bool hasAccess(AccessLevel characterAccessLevel)
     {
-        AccessLevel accessLevel = AdminData.getInstance().getAccessLevel(_accessLevel);
+        AccessLevel? accessLevel = AdminData.getInstance().getAccessLevel(_accessLevel);
         return accessLevel != null && (accessLevel.getLevel() == characterAccessLevel.getLevel() ||
                                        characterAccessLevel.hasChildAccess(accessLevel));
     }

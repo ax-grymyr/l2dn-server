@@ -381,7 +381,7 @@ public static class StatUtil
 	{
 		double mul = creature.getStat().getMulValue(stat);
 		double add = creature.getStat().getAddValue(stat);
-		return (mul * baseValue) + add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType());
+		return mul * baseValue + add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType());
 	}
 }
 

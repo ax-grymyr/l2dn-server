@@ -10,6 +10,6 @@ public class MountEnabledSkillList
 	
 	public static bool contains(int skillId)
 	{
-		return (skillId == STRIDER_SIEGE_ASSAULT) || (skillId == WYVERN_BREATH);
+		return skillId == STRIDER_SIEGE_ASSAULT || skillId == WYVERN_BREATH;
 	}
 }

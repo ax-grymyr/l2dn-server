@@ -50,12 +50,12 @@ public class Participant
 	 */
 	public bool updatePlayer()
 	{
-		if ((player == null) || !player.isOnline())
+		if (player == null || !player.isOnline())
 		{
 			player = World.getInstance().getPlayer(getObjectId());
 		}
 
-		return (player != null);
+		return player != null;
 	}
 
 	/**

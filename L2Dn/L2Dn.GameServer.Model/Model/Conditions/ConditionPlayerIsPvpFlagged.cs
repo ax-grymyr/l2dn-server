@@ -14,6 +14,6 @@ public sealed class ConditionPlayerIsPvpFlagged(bool value): Condition
     protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
     {
         Player? player = effector.getActingPlayer();
-        return player is not null && (player.getPvpFlag() != PvpFlagStatus.None) == value;
+        return player is not null && player.getPvpFlag() != PvpFlagStatus.None == value;
     }
 }

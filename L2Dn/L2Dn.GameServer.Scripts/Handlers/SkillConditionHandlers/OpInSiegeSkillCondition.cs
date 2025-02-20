@@ -33,13 +33,13 @@ public class OpInSiegeSkillCondition: ISkillCondition
 
 	private bool valid(Creature caster, int id)
 	{
-		FortSiege fortSiege = FortSiegeManager.getInstance().getSiege(id);
+		FortSiege? fortSiege = FortSiegeManager.getInstance().getSiege(id);
 		if (fortSiege != null)
 		{
 			return fortSiege.isInProgress() && fortSiege.getFort().getZone().isInsideZone(caster);
 		}
 
-		Siege castleSiege = SiegeManager.getInstance().getSiege(id);
+		Siege? castleSiege = SiegeManager.getInstance().getSiege(id);
 		if (castleSiege != null)
 		{
 			return castleSiege.isInProgress() && castleSiege.getCastle().getZone().isInsideZone(caster);

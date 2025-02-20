@@ -19,14 +19,14 @@ public abstract class Tower: Npc
     public override bool canBeAttacked()
     {
         // Attackable during siege by attacker only
-        return (getCastle() != null) && (getCastle().getResidenceId() > 0) && getCastle().getSiege().isInProgress();
+        return getCastle() != null && getCastle().getResidenceId() > 0 && getCastle().getSiege().isInProgress();
     }
 
     public override bool isAutoAttackable(Creature attacker)
     {
         // Attackable during siege by attacker only
-        return (attacker != null) && attacker.isPlayer() && (getCastle() != null) &&
-               (getCastle().getResidenceId() > 0) && getCastle().getSiege().isInProgress() &&
+        return attacker != null && attacker.isPlayer() && getCastle() != null &&
+               getCastle().getResidenceId() > 0 && getCastle().getSiege().isInProgress() &&
                getCastle().getSiege().checkIsAttacker(((Player)attacker).getClan());
     }
 
@@ -42,7 +42,7 @@ public abstract class Tower: Npc
             // Set the target of the Player player
             player.setTarget(this);
         }
-        else if (interact && isAutoAttackable(player) && (Math.Abs(player.getZ() - getZ()) < 100) &&
+        else if (interact && isAutoAttackable(player) && Math.Abs(player.getZ() - getZ()) < 100 &&
                  GeoEngine.getInstance().canSeeTarget(player, this))
         {
             // Notify the Player AI with AI_INTENTION_INTERACT

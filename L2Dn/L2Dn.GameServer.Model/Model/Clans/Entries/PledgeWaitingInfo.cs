@@ -34,7 +34,7 @@ public class PledgeWaitingInfo
 
     public CharacterClass getPlayerClassId()
     {
-        if (isOnline() && (getPlayer().getBaseClass() != _playerClassId))
+        if (isOnline() && getPlayer().getBaseClass() != _playerClassId)
         {
             _playerClassId = getPlayer().getClassId();
         }
@@ -44,7 +44,7 @@ public class PledgeWaitingInfo
 
     public int getPlayerLvl()
     {
-        if (isOnline() && (getPlayer().getLevel() != _playerLvl))
+        if (isOnline() && getPlayer().getLevel() != _playerLvl)
         {
             _playerLvl = getPlayer().getLevel();
         }
@@ -74,6 +74,6 @@ public class PledgeWaitingInfo
 
     public bool isOnline()
     {
-        return (getPlayer() != null) && (getPlayer().getOnlineStatus() != CharacterOnlineStatus.Offline);
+        return getPlayer() != null && getPlayer().getOnlineStatus() != CharacterOnlineStatus.Offline;
     }
 }

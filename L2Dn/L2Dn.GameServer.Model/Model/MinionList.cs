@@ -43,7 +43,7 @@ public class MinionList
 	 */
 	public void spawnMinions(List<MinionHolder> minions)
 	{
-		if (_master.isAlikeDead() || (minions == null))
+		if (_master.isAlikeDead() || minions == null)
 		{
 			return;
 		}
@@ -101,7 +101,7 @@ public class MinionList
 			{
 				foreach (ScheduledFuture task in _respawnTasks)
 				{
-					if ((task != null) && !task.isCancelled() && !task.isDone())
+					if (task != null && !task.isCancelled() && !task.isDone())
 					{
 						task.cancel(true);
 					}
@@ -126,7 +126,7 @@ public class MinionList
 		_spawnedMinions.Remove(minion);
 		
 		int time = respawnTime < 0 ? _master.isRaid() ? (int) Config.RAID_MINION_RESPAWN_TIMER : 0 : respawnTime;
-		if ((time > 0) && !_master.isAlikeDead())
+		if (time > 0 && !_master.isAlikeDead())
 		{
 			_respawnTasks.Add(ThreadPool.schedule(new MinionRespawnTask(this, minion), time));
 		}
@@ -158,7 +158,7 @@ public class MinionList
 		
 		foreach (Monster minion in _spawnedMinions)
 		{
-			if ((minion != null) && !minion.isDead() && (callerIsMaster || !minion.isInCombat()))
+			if (minion != null && !minion.isDead() && (callerIsMaster || !minion.isInCombat()))
 			{
 				minion.addDamageHate(attacker, 0, aggro);
 			}
@@ -174,26 +174,26 @@ public class MinionList
 		int minRadius = (int) _master.getCollisionRadius() + 30;
 		foreach (Monster minion in _spawnedMinions)
 		{
-			if ((minion != null) && !minion.isDead() && !minion.isMovementDisabled())
+			if (minion != null && !minion.isDead() && !minion.isMovementDisabled())
 			{
 				int newX = Rnd.get(minRadius * 2, offset * 2); // x
 				int newY = Rnd.get(newX, offset * 2); // distance
-				newY = (int) Math.Sqrt((newY * newY) - (newX * newX)); // y
-				if (newX > (offset + minRadius))
+				newY = (int) Math.Sqrt(newY * newY - newX * newX); // y
+				if (newX > offset + minRadius)
 				{
-					newX = (_master.getX() + newX) - offset;
+					newX = _master.getX() + newX - offset;
 				}
 				else
 				{
-					newX = (_master.getX() - newX) + minRadius;
+					newX = _master.getX() - newX + minRadius;
 				}
-				if (newY > (offset + minRadius))
+				if (newY > offset + minRadius)
 				{
-					newY = (_master.getY() + newY) - offset;
+					newY = _master.getY() + newY - offset;
 				}
 				else
 				{
-					newY = (_master.getY() - newY) + minRadius;
+					newY = _master.getY() - newY + minRadius;
 				}
 				
 				minion.teleToLocation(new Location(newX, newY, _master.getZ(), 0));
@@ -295,22 +295,22 @@ public class MinionList
 		int minRadius = (int) master.getCollisionRadius() + 30;
 		int newX = Rnd.get(minRadius * 2, offset * 2); // x
 		int newY = Rnd.get(newX, offset * 2); // distance
-		newY = (int) Math.Sqrt((newY * newY) - (newX * newX)); // y
-		if (newX > (offset + minRadius))
+		newY = (int) Math.Sqrt(newY * newY - newX * newX); // y
+		if (newX > offset + minRadius)
 		{
-			newX = (master.getX() + newX) - offset;
+			newX = master.getX() + newX - offset;
 		}
 		else
 		{
-			newX = (master.getX() - newX) + minRadius;
+			newX = master.getX() - newX + minRadius;
 		}
-		if (newY > (offset + minRadius))
+		if (newY > offset + minRadius)
 		{
-			newY = (master.getY() + newY) - offset;
+			newY = master.getY() + newY - offset;
 		}
 		else
 		{
-			newY = (master.getY() - newY) + minRadius;
+			newY = master.getY() - newY + minRadius;
 		}
 		
 		minion.spawnMe(new Location3D(newX, newY, master.getZ()));
@@ -331,7 +331,7 @@ public class MinionList
 		int count = 0;
 		foreach (Monster minion in _spawnedMinions)
 		{
-			if ((minion != null) && (minion.getId() == minionId))
+			if (minion != null && minion.getId() == minionId)
 			{
 				count++;
 			}

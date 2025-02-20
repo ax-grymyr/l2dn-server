@@ -19,6 +19,6 @@ public class ConditionCommandChannelLeader: Condition
 	protected override bool test(Player player, Npc npc)
 	{
 		AbstractPlayerGroup group = player.getCommandChannel();
-		return (group != null) && group.isLeader(player);
+		return group != null && group.isLeader(player);
 	}
 }

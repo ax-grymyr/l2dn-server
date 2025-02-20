@@ -104,7 +104,7 @@ public class CommandChannelMatchingRoom: MatchingRoom
 		if (leaderParty != null)
 		{
 			CommandChannel cc = leaderParty.getCommandChannel();
-			if ((leaderParty == playerParty) || ((cc != null) && cc.getParties().Contains(playerParty)))
+			if (leaderParty == playerParty || (cc != null && cc.getParties().Contains(playerParty)))
 			{
 				return MatchingMemberType.COMMAND_CHANNEL_PARTY_MEMBER;
 			}

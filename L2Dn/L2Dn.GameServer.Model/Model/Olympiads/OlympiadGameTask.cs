@@ -38,7 +38,7 @@ public class OlympiadGameTask: Runnable
 
 	public bool isGameStarted()
 	{
-		return (_state >= OlympiadGameState.GAME_STARTED) && (_state <= OlympiadGameState.CLEANUP);
+		return _state >= OlympiadGameState.GAME_STARTED && _state <= OlympiadGameState.CLEANUP;
 	}
 
 	public bool isBattleStarted()
@@ -74,7 +74,7 @@ public class OlympiadGameTask: Runnable
 
 	public void attachGame(AbstractOlympiadGame game)
 	{
-		if ((game != null) && (_state != OlympiadGameState.IDLE))
+		if (game != null && _state != OlympiadGameState.IDLE)
 		{
 			LOGGER.Warn("Attempt to overwrite non-finished game in state " + _state);
 			return;
@@ -219,7 +219,7 @@ public class OlympiadGameTask: Runnable
 						}
 					}
 
-					if (checkBattle() || (_countDown > Config.ALT_OLY_BATTLE))
+					if (checkBattle() || _countDown > Config.ALT_OLY_BATTLE)
 					{
 						_state = OlympiadGameState.GAME_STOPPED;
 					}
@@ -291,7 +291,7 @@ public class OlympiadGameTask: Runnable
 	private int getDelay(int[] times)
 	{
 		int time;
-		for (int i = 0; i < (times.Length - 1); i++)
+		for (int i = 0; i < times.Length - 1; i++)
 		{
 			time = times[i];
 			if (time >= _countDown)

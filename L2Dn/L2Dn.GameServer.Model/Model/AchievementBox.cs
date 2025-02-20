@@ -245,7 +245,7 @@ public class AchievementBox
 		}
 
 		AchievementBoxHolder holder = getAchievementBox()[slotId - 1];
-		if ((holder == null) || (_boxTimeForOpen != null))
+		if (holder == null || _boxTimeForOpen != null)
 		{
 			return;
 		}
@@ -292,7 +292,7 @@ public class AchievementBox
 		}
 
 		AchievementBoxHolder holder = getAchievementBox()[slotId - 1];
-		if ((holder != null) && _owner.destroyItemByItemId("Take Achievement Box", Inventory.LCOIN_ID, fee, _owner, true))
+		if (holder != null && _owner.destroyItemByItemId("Take Achievement Box", Inventory.LCOIN_ID, fee, _owner, true))
 		{
 			if (_pendingBoxSlotId == slotId)
 			{
@@ -304,7 +304,7 @@ public class AchievementBox
 
 	public bool setBoxTimeForOpen(TimeSpan time)
 	{
-		if ((_boxOpenTask != null) && !(_boxOpenTask.isDone() || _boxOpenTask.isCancelled()))
+		if (_boxOpenTask != null && !(_boxOpenTask.isDone() || _boxOpenTask.isCancelled()))
 		{
 			return false;
 		}
@@ -315,12 +315,12 @@ public class AchievementBox
 
 	public void tryFinishBox()
 	{
-		if ((_boxTimeForOpen == null) || (_boxTimeForOpen >= DateTime.UtcNow))
+		if (_boxTimeForOpen == null || _boxTimeForOpen >= DateTime.UtcNow)
 		{
 			return;
 		}
 
-		if ((_owner == null) || !_owner.isOnline())
+		if (_owner == null || !_owner.isOnline())
 		{
 			return;
 		}
@@ -392,7 +392,7 @@ public class AchievementBox
 
 	public void unlockSlot(int slotId)
 	{
-		if (((slotId - 1) != getBoxOwned()) || (slotId > 4))
+		if (slotId - 1 != getBoxOwned() || slotId > 4)
 		{
 			return;
 		}

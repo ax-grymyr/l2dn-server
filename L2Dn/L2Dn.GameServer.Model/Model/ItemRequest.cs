@@ -63,6 +63,6 @@ public class ItemRequest
             return false;
         }
         
-        return (_objectId != ((ItemRequest) obj)._objectId);
+        return _objectId != ((ItemRequest) obj)._objectId;
     }
 }

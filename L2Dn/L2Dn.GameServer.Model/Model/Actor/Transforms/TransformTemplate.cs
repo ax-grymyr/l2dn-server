@@ -170,7 +170,7 @@ public sealed class TransformTemplate
 	 */
 	public int getDefense(int type, int defaultValue)
 	{
-		return (_baseDefense == null) ? defaultValue : _baseDefense.GetValueOrDefault(type, defaultValue);
+		return _baseDefense == null ? defaultValue : _baseDefense.GetValueOrDefault(type, defaultValue);
 	}
 
 	private void addStats(Stat stat, double value)

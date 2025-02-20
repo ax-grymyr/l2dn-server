@@ -37,7 +37,7 @@ public class ElementalSpirit
 
 	public void addExperience(int experience)
 	{
-		if ((_data.getLevel() == _template.getMaxLevel()) && (_data.getExperience() >= _template.getMaxExperienceAtLevel(_template.getMaxLevel())))
+		if (_data.getLevel() == _template.getMaxLevel() && _data.getExperience() >= _template.getMaxExperienceAtLevel(_template.getMaxLevel()))
 		{
 			return;
 		}
@@ -94,7 +94,7 @@ public class ElementalSpirit
 	{
 		int stage = _data.getStage();
 		int level = _data.getLevel();
-		int points = (stage > 3 ? ((stage - 2) * 20) : (stage - 1) * 10) + (stage > 2 ? (level * 2) : level * 1);
+		int points = (stage > 3 ? (stage - 2) * 20 : (stage - 1) * 10) + (stage > 2 ? level * 2 : level * 1);
 		return Math.Max(points - _data.getAttackPoints() - _data.getDefensePoints() - _data.getCritDamagePoints() - _data.getCritRatePoints(), 0);
 	}
 
@@ -131,7 +131,7 @@ public class ElementalSpirit
 
 	public bool canEvolve()
 	{
-		return (_data.getStage() < 5) && (_data.getLevel() == 10) && (_data.getExperience() == getExperienceToNextLevel());
+		return _data.getStage() < 5 && _data.getLevel() == 10 && _data.getExperience() == getExperienceToNextLevel();
 	}
 
 	public void upgrade()
@@ -192,12 +192,12 @@ public class ElementalSpirit
 
 	public int getAttack()
 	{
-		return _template.getAttackAtLevel(_data.getLevel()) + (_data.getAttackPoints() * 5);
+		return _template.getAttackAtLevel(_data.getLevel()) + _data.getAttackPoints() * 5;
 	}
 
 	public int getDefense()
 	{
-		return _template.getDefenseAtLevel(_data.getLevel()) + (_data.getDefensePoints() * 5);
+		return _template.getDefenseAtLevel(_data.getLevel()) + _data.getDefensePoints() * 5;
 	}
 
 	public int getMaxCharacteristics()

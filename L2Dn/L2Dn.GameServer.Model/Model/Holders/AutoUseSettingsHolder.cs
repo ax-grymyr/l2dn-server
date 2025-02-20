@@ -96,7 +96,7 @@ public class AutoUseSettingsHolder
 
 	public bool isEmpty()
 	{
-		return _autoSupplyItems.isEmpty() && (_autoPotionItem == 0) && (_autoPetPotionItem == 0) &&
+		return _autoSupplyItems.isEmpty() && _autoPotionItem == 0 && _autoPetPotionItem == 0 &&
 		       _autoSkills.Count == 0 && _autoBuffs.isEmpty() && _autoActions.isEmpty();
 	}
 }

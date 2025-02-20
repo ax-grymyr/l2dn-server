@@ -34,7 +34,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 	
 	protected static Participant[] createListOfParticipants(Set<int> set)
 	{
-		if ((set == null) || set.isEmpty() || (set.size() < 2))
+		if (set == null || set.isEmpty() || set.size() < 2)
 		{
 			return null;
 		}
@@ -50,7 +50,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			set.Remove(playerOneObjectId);
 			
 			playerOne = World.getInstance().getPlayer(playerOneObjectId);
-			if ((playerOne == null) || !playerOne.isOnline())
+			if (playerOne == null || !playerOne.isOnline())
 			{
 				continue;
 			}
@@ -60,7 +60,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			set.Remove(playerTwoObjectId);
 			
 			playerTwo = World.getInstance().getPlayer(playerTwoObjectId);
-			if ((playerTwo == null) || !playerTwo.isOnline())
+			if (playerTwo == null || !playerTwo.isOnline())
 			{
 				set.add(playerOneObjectId);
 				continue;
@@ -77,7 +77,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 	
 	public override bool containsParticipant(int playerId)
 	{
-		return ((_playerOne != null) && (_playerOne.getObjectId() == playerId)) || ((_playerTwo != null) && (_playerTwo.getObjectId() == playerId));
+		return (_playerOne != null && _playerOne.getObjectId() == playerId) || (_playerTwo != null && _playerTwo.getObjectId() == playerId);
 	}
 	
 	public override void sendOlympiadInfo(Creature creature)
@@ -144,7 +144,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			return false;
 		}
 		
-		if ((_playerOne.getPlayer() == null) || (_playerTwo.getPlayer() == null))
+		if (_playerOne.getPlayer() == null || _playerTwo.getPlayer() == null)
 		{
 			return false;
 		}
@@ -158,12 +158,12 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 	
 	public override void cleanEffects()
 	{
-		if ((_playerOne.getPlayer() != null) && !_playerOne.isDefaulted() && !_playerOne.isDisconnected() && (_playerOne.getPlayer().getOlympiadGameId() == _stadiumId))
+		if (_playerOne.getPlayer() != null && !_playerOne.isDefaulted() && !_playerOne.isDisconnected() && _playerOne.getPlayer().getOlympiadGameId() == _stadiumId)
 		{
 			cleanEffects(_playerOne.getPlayer());
 		}
 		
-		if ((_playerTwo.getPlayer() != null) && !_playerTwo.isDefaulted() && !_playerTwo.isDisconnected() && (_playerTwo.getPlayer().getOlympiadGameId() == _stadiumId))
+		if (_playerTwo.getPlayer() != null && !_playerTwo.isDefaulted() && !_playerTwo.isDisconnected() && _playerTwo.getPlayer().getOlympiadGameId() == _stadiumId)
 		{
 			cleanEffects(_playerTwo.getPlayer());
 		}
@@ -171,11 +171,11 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 	
 	public override void portPlayersBack()
 	{
-		if ((_playerOne.getPlayer() != null) && !_playerOne.isDefaulted() && !_playerOne.isDisconnected())
+		if (_playerOne.getPlayer() != null && !_playerOne.isDefaulted() && !_playerOne.isDisconnected())
 		{
 			portPlayerBack(_playerOne.getPlayer());
 		}
-		if ((_playerTwo.getPlayer() != null) && !_playerTwo.isDefaulted() && !_playerTwo.isDisconnected())
+		if (_playerTwo.getPlayer() != null && !_playerTwo.isDefaulted() && !_playerTwo.isDisconnected())
 		{
 			portPlayerBack(_playerTwo.getPlayer());
 		}
@@ -183,12 +183,12 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 	
 	public override void playersStatusBack()
 	{
-		if ((_playerOne.getPlayer() != null) && !_playerOne.isDefaulted() && !_playerOne.isDisconnected() && (_playerOne.getPlayer().getOlympiadGameId() == _stadiumId))
+		if (_playerOne.getPlayer() != null && !_playerOne.isDefaulted() && !_playerOne.isDisconnected() && _playerOne.getPlayer().getOlympiadGameId() == _stadiumId)
 		{
 			playerStatusBack(_playerOne.getPlayer());
 		}
 		
-		if ((_playerTwo.getPlayer() != null) && !_playerTwo.isDefaulted() && !_playerTwo.isDisconnected() && (_playerTwo.getPlayer().getOlympiadGameId() == _stadiumId))
+		if (_playerTwo.getPlayer() != null && !_playerTwo.isDefaulted() && !_playerTwo.isDisconnected() && _playerTwo.getPlayer().getOlympiadGameId() == _stadiumId)
 		{
 			playerStatusBack(_playerTwo.getPlayer());
 		}
@@ -221,12 +221,12 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			return false;
 		}
 		
-		if ((_playerOne.getPlayer() == null) || _playerOne.isDisconnected())
+		if (_playerOne.getPlayer() == null || _playerOne.isDisconnected())
 		{
 			return false;
 		}
 		
-		if ((_playerTwo.getPlayer() == null) || _playerTwo.isDisconnected())
+		if (_playerTwo.getPlayer() == null || _playerTwo.isDisconnected())
 		{
 			return false;
 		}
@@ -283,8 +283,8 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		List<OlympiadInfo> list1 = new(1);
 		List<OlympiadInfo> list2 = new(1);
 		
-		bool _pOneCrash = ((_playerOne.getPlayer() == null) || _playerOne.isDisconnected());
-		bool _pTwoCrash = ((_playerTwo.getPlayer() == null) || _playerTwo.isDisconnected());
+		bool _pOneCrash = _playerOne.getPlayer() == null || _playerOne.isDisconnected();
+		bool _pTwoCrash = _playerTwo.getPlayer() == null || _playerTwo.isDisconnected();
 		
 		int playerOnePoints = _playerOne.getStats().OlympiadPoints;
 		int playerTwoPoints = _playerTwo.getStats().OlympiadPoints;
@@ -496,10 +496,10 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			string winner = "draw";
 			
 			// Calculate Fight time
-			TimeSpan _fightTime = (DateTime.UtcNow - _startTime);
+			TimeSpan _fightTime = DateTime.UtcNow - _startTime;
 			
 			double playerOneHp = 0;
-			if ((_playerOne.getPlayer() != null) && !_playerOne.getPlayer().isDead())
+			if (_playerOne.getPlayer() != null && !_playerOne.getPlayer().isDead())
 			{
 				playerOneHp = _playerOne.getPlayer().getCurrentHp() + _playerOne.getPlayer().getCurrentCp();
 				if (playerOneHp < 0.5)
@@ -509,7 +509,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			}
 			
 			double playerTwoHp = 0;
-			if ((_playerTwo.getPlayer() != null) && !_playerTwo.getPlayer().isDead())
+			if (_playerTwo.getPlayer() != null && !_playerTwo.getPlayer().isDead())
 			{
 				playerTwoHp = _playerTwo.getPlayer().getCurrentHp() + _playerTwo.getPlayer().getCurrentCp();
 				if (playerTwoHp < 0.5)
@@ -522,14 +522,14 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			_playerOne.updatePlayer();
 			_playerTwo.updatePlayer();
 			
-			if (((_playerOne.getPlayer() == null) || !_playerOne.getPlayer().isOnline()) && ((_playerTwo.getPlayer() == null) || !_playerTwo.getPlayer().isOnline()))
+			if ((_playerOne.getPlayer() == null || !_playerOne.getPlayer().isOnline()) && (_playerTwo.getPlayer() == null || !_playerTwo.getPlayer().isOnline()))
 			{
 				_playerOne.getStats().CompetitionsDrawn++;
 				_playerTwo.getStats().CompetitionsDrawn++;
 				sm = new SystemMessagePacket(SystemMessageId.THE_DUEL_HAS_ENDED_IN_A_TIE);
 				stadium.broadcastPacket(sm);
 			}
-			else if ((_playerTwo.getPlayer() == null) || !_playerTwo.getPlayer().isOnline() || ((playerTwoHp == 0) && (playerOneHp != 0)) || ((_damageP1 > _damageP2) && (playerTwoHp != 0) && (playerOneHp != 0)))
+			else if (_playerTwo.getPlayer() == null || !_playerTwo.getPlayer().isOnline() || (playerTwoHp == 0 && playerOneHp != 0) || (_damageP1 > _damageP2 && playerTwoHp != 0 && playerOneHp != 0))
 			{
 				sm = new SystemMessagePacket(SystemMessageId.CONGRATULATIONS_C1_YOU_WIN_THE_MATCH);
 				sm.Params.addString(_playerOne.getName());
@@ -559,7 +559,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 					olympiadEvents.NotifyAsync(new OnOlympiadMatchResult(_playerOne, _playerTwo, getType()));
 				}
 			}
-			else if ((_playerOne.getPlayer() == null) || !_playerOne.getPlayer().isOnline() || ((playerOneHp == 0) && (playerTwoHp != 0)) || ((_damageP2 > _damageP1) && (playerOneHp != 0) && (playerTwoHp != 0)))
+			else if (_playerOne.getPlayer() == null || !_playerOne.getPlayer().isOnline() || (playerOneHp == 0 && playerTwoHp != 0) || (_damageP2 > _damageP1 && playerOneHp != 0 && playerTwoHp != 0))
 			{
 				sm = new SystemMessagePacket(SystemMessageId.CONGRATULATIONS_C1_YOU_WIN_THE_MATCH);
 				sm.Params.addString(_playerTwo.getName());
@@ -642,7 +642,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 	{
 		Player player1 = _playerOne.getPlayer();
 		Player player2 = _playerTwo.getPlayer();
-		if ((player1 == null) || (player2 == null))
+		if (player1 == null || player2 == null)
 		{
 			return;
 		}
@@ -750,13 +750,13 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 	public override void untransformPlayers()
 	{
 		Player player1 = _playerOne.getPlayer();
-		if ((player1 != null) && player1.isTransformed())
+		if (player1 != null && player1.isTransformed())
 		{
 			player1.stopTransformation(true);
 		}
 		
 		Player player2 = _playerTwo.getPlayer();
-		if ((player2 != null) && player2.isTransformed())
+		if (player2 != null && player2.isTransformed())
 		{
 			player2.stopTransformation(true);
 		}

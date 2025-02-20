@@ -55,7 +55,7 @@ public class Decoy : Creature
 				TimeSpan skillDelay = TimeSpan.FromMilliseconds(template.getParameters().getFloat("skill_delay", 2) * 1000);
 				_skillTask = ThreadPool.scheduleAtFixedRate(() =>
 				{
-					if ((isDead() || !isSpawned()) && (_skillTask != null))
+					if ((isDead() || !isSpawned()) && _skillTask != null)
 					{
 						_skillTask.cancel(false);
 						_skillTask = null;
@@ -84,23 +84,14 @@ public class Decoy : Creature
 		return true;
 	}
 
-	private class HateSpam : Runnable
-	{
-		private readonly Decoy _player;
-		private readonly Skill _skill;
-
-		public HateSpam(Decoy player, Skill hate)
-		{
-			_player = player;
-			_skill = hate;
-		}
-
-		public void run()
+	private sealed class HateSpam(Decoy player, Skill hate): Runnable
+    {
+        public void run()
 		{
 			try
 			{
-				_player.setTarget(_player);
-				_player.doCast(_skill);
+				player.setTarget(player);
+				player.doCast(hate);
 			}
 			catch (Exception e)
 			{

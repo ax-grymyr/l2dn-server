@@ -121,13 +121,13 @@ public class Clan: IIdentifiable, INamable
 		_warehouse.restore();
 
 		ClanRewardBonus? availableOnlineBonus = getAvailableBonus(ClanRewardType.MEMBERS_ONLINE);
-		if ((_lastMembersOnlineBonus == null) && (availableOnlineBonus != null))
+		if (_lastMembersOnlineBonus == null && availableOnlineBonus != null)
 		{
 			_lastMembersOnlineBonus = availableOnlineBonus;
 		}
 
 		ClanRewardBonus? availableHuntingBonus = getAvailableBonus(ClanRewardType.HUNTING_MONSTERS);
-		if ((_lastHuntingBonus == null) && (availableHuntingBonus != null))
+		if (_lastHuntingBonus == null && availableHuntingBonus != null)
 		{
 			_lastHuntingBonus = availableHuntingBonus;
 		}
@@ -634,7 +634,7 @@ public class Clan: IIdentifiable, INamable
 		List<Player> result = new();
 		foreach (ClanMember member in _members.Values)
 		{
-			if ((member.getObjectId() != exclude) && member.isOnline() && (member.getPlayer() != null))
+			if (member.getObjectId() != exclude && member.isOnline() && member.getPlayer() != null)
 			{
 				result.Add(member.getPlayer());
 			}
@@ -705,7 +705,7 @@ public class Clan: IIdentifiable, INamable
 	private void setLevel(int level)
 	{
 		_level = level;
-		if ((_level >= 2) && (_forum == null) && Config.ENABLE_COMMUNITY_BOARD)
+		if (_level >= 2 && _forum == null && Config.ENABLE_COMMUNITY_BOARD)
 		{
 			Forum forum = ForumsBBSManager.getInstance().getForumByName("ClanRoot");
 			if (forum != null)
@@ -821,7 +821,7 @@ public class Clan: IIdentifiable, INamable
 	 */
 	public bool isMember(int id)
 	{
-		return ((id != 0) && _members.ContainsKey(id));
+		return id != 0 && _members.ContainsKey(id);
 	}
 
 	/**
@@ -1337,7 +1337,7 @@ public class Clan: IIdentifiable, INamable
 
 			foreach (ClanMember temp in _members.Values)
 			{
-				if ((temp != null) && (temp.getPlayer() != null) && temp.isOnline())
+				if (temp != null && temp.getPlayer() != null && temp.isOnline())
 				{
 					if (subType == -2)
 					{
@@ -1371,7 +1371,7 @@ public class Clan: IIdentifiable, INamable
 			{
 				try
 				{
-					if ((temp != null) && temp.isOnline() && (skill.getMinPledgeClass() <= temp.getPlayer().getPledgeClass()))
+					if (temp != null && temp.isOnline() && skill.getMinPledgeClass() <= temp.getPlayer().getPledgeClass())
 					{
 						temp.getPlayer().addSkill(skill, false); // Skill is not saved to player DB
 					}
@@ -1395,7 +1395,7 @@ public class Clan: IIdentifiable, INamable
 		foreach (Skill skill in _skills.Values)
 		{
 			SkillLearn skillLearn = SkillTreeData.getInstance().getPledgeSkill(skill.getId(), skill.getLevel());
-			if ((skillLearn == null) || (skillLearn.getSocialClass() == null) || (playerSocialClass >= skillLearn.getSocialClass()))
+			if (skillLearn == null || skillLearn.getSocialClass() == null || playerSocialClass >= skillLearn.getSocialClass())
 			{
 				player.addSkill(skill, false); // Skill is not saved to player DB
 			}
@@ -1405,7 +1405,7 @@ public class Clan: IIdentifiable, INamable
 			foreach (Skill skill in _subPledgeSkills.Values)
 			{
 				SkillLearn skillLearn = SkillTreeData.getInstance().getSubPledgeSkill(skill.getId(), skill.getLevel());
-				if ((skillLearn == null) || (skillLearn.getSocialClass() == null) || (playerSocialClass >= skillLearn.getSocialClass()))
+				if (skillLearn == null || skillLearn.getSocialClass() == null || playerSocialClass >= skillLearn.getSocialClass())
 				{
 					player.addSkill(skill, false); // Skill is not saved to player DB
 				}
@@ -1533,7 +1533,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		foreach (ClanMember member in _members.Values)
 		{
-			if ((member != null) && member.isOnline())
+			if (member != null && member.isOnline())
 			{
 				member.getPlayer().sendPacket(packet);
 			}
@@ -1544,7 +1544,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		foreach (ClanMember member in _members.Values)
 		{
-			if ((member != null) && member.isOnline() && !BlockList.isBlocked(member.getPlayer(), broadcaster))
+			if (member != null && member.isOnline() && !BlockList.isBlocked(member.getPlayer(), broadcaster))
 			{
 				member.getPlayer().sendPacket(packet);
 			}
@@ -1556,7 +1556,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		foreach (ClanMember member in _members.Values)
 		{
-			if ((member != null) && member.isOnline() && (member.getPlayer() != player))
+			if (member != null && member.isOnline() && member.getPlayer() != player)
 			{
 				member.getPlayer().sendPacket(packet);
 			}
@@ -1795,7 +1795,7 @@ public class Clan: IIdentifiable, INamable
 
 		// Royal Guard 5000 points per each
 		// Order of Knights 10000 points per each
-		if ((pledgeType != -1) && (((_reputationScore < Config.ROYAL_GUARD_COST) && (pledgeType < SUBUNIT_KNIGHT1)) || ((_reputationScore < Config.KNIGHT_UNIT_COST) && (pledgeType > SUBUNIT_ROYAL2))))
+		if (pledgeType != -1 && ((_reputationScore < Config.ROYAL_GUARD_COST && pledgeType < SUBUNIT_KNIGHT1) || (_reputationScore < Config.KNIGHT_UNIT_COST && pledgeType > SUBUNIT_ROYAL2)))
 		{
 			player.sendPacket(SystemMessageId.THE_CLAN_REPUTATION_IS_TOO_LOW);
 			return null;
@@ -1970,7 +1970,7 @@ public class Clan: IIdentifiable, INamable
 
 			foreach (ClanMember cm in _members.Values)
 			{
-				if (cm.isOnline() && (cm.getPowerGrade() == rank) && (cm.getPlayer() != null))
+				if (cm.isOnline() && cm.getPowerGrade() == rank && cm.getPlayer() != null)
 				{
 					cm.getPlayer().setClanPrivileges(privs);
 					cm.getPlayer().updateUserInfo();
@@ -2049,23 +2049,23 @@ public class Clan: IIdentifiable, INamable
 
 	private void setReputationScore(int value)
 	{
-		if ((_reputationScore >= 0) && (value < 0))
+		if (_reputationScore >= 0 && value < 0)
 		{
 			broadcastToOnlineMembers(new SystemMessagePacket(SystemMessageId.SINCE_THE_CLAN_REPUTATION_HAS_DROPPED_BELOW_0_YOUR_CLAN_SKILL_S_WILL_BE_DE_ACTIVATED));
 			foreach (ClanMember member in _members.Values)
 			{
-				if (member.isOnline() && (member.getPlayer() != null))
+				if (member.isOnline() && member.getPlayer() != null)
 				{
 					skillsStatus(member.getPlayer(), true);
 				}
 			}
 		}
-		else if ((_reputationScore < 0) && (value >= 0))
+		else if (_reputationScore < 0 && value >= 0)
 		{
 			broadcastToOnlineMembers(new SystemMessagePacket(SystemMessageId.CLAN_SKILLS_WILL_NOW_BE_ACTIVATED_SINCE_THE_CLAN_REPUTATION_IS_1_OR_HIGHER));
 			foreach (ClanMember member in _members.Values)
 			{
-				if (member.isOnline() && (member.getPlayer() != null))
+				if (member.isOnline() && member.getPlayer() != null)
 				{
 					skillsStatus(member.getPlayer(), false);
 				}
@@ -2169,7 +2169,7 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(sm);
 			return false;
 		}
-		if (((target.getLevel() > 40) || (target.getClassId().GetLevel() >= 2)) && (pledgeType == -1))
+		if ((target.getLevel() > 40 || target.getClassId().GetLevel() >= 2) && pledgeType == -1)
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_DOES_NOT_MEET_THE_REQUIREMENTS_TO_JOIN_A_CLAN_ACADEMY);
 			sm.Params.addString(target.getName());
@@ -2207,14 +2207,14 @@ public class Clan: IIdentifiable, INamable
 		}
 
 		int? playerAllyId = player.getAllyId();
-		if ((playerAllyId is null) || !player.isClanLeader() || (player.getClanId() != playerAllyId))
+		if (playerAllyId is null || !player.isClanLeader() || player.getClanId() != playerAllyId)
 		{
 			player.sendPacket(SystemMessageId.ACCESS_ONLY_FOR_THE_CHANNEL_FOUNDER);
 			return false;
 		}
 
 		Clan leaderClan = player.getClan();
-		if ((leaderClan.getAllyPenaltyExpiryTime() > DateTime.UtcNow) && (leaderClan.getAllyPenaltyType() == PENALTY_TYPE_DISMISS_CLAN))
+		if (leaderClan.getAllyPenaltyExpiryTime() > DateTime.UtcNow && leaderClan.getAllyPenaltyType() == PENALTY_TYPE_DISMISS_CLAN)
 		{
 			player.sendPacket(SystemMessageId.YOU_CAN_ACCEPT_A_NEW_CLAN_IN_THE_ALLIANCE_IN_24_H_AFTER_DISMISSING_ANOTHER_ONE);
 			return false;
@@ -2353,7 +2353,7 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(SystemMessageId.TO_CREATE_AN_ALLIANCE_YOUR_CLAN_MUST_BE_LV_5_OR_HIGHER);
 			return;
 		}
-		if ((_allyPenaltyExpiryTime > DateTime.UtcNow) && (_allyPenaltyType == PENALTY_TYPE_DISSOLVE_ALLY))
+		if (_allyPenaltyExpiryTime > DateTime.UtcNow && _allyPenaltyType == PENALTY_TYPE_DISSOLVE_ALLY)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_CREATE_A_NEW_ALLIANCE_WITHIN_1_DAY_OF_DISSOLUTION);
 			return;
@@ -2368,7 +2368,7 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(SystemMessageId.INCORRECT_ALLIANCE_NAME_PLEASE_TRY_AGAIN);
 			return;
 		}
-		if ((allyName.Length > 16) || (allyName.Length < 2))
+		if (allyName.Length > 16 || allyName.Length < 2)
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_LENGTH_FOR_AN_ALLIANCE_NAME);
 			return;
@@ -2397,7 +2397,7 @@ public class Clan: IIdentifiable, INamable
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_IN_AN_ALLIANCE);
 			return;
 		}
-		if (!player.isClanLeader() || (_clanId != _allyId))
+		if (!player.isClanLeader() || _clanId != _allyId)
 		{
 			player.sendPacket(SystemMessageId.ACCESS_ONLY_FOR_THE_CHANNEL_FOUNDER);
 			return;
@@ -2453,7 +2453,7 @@ public class Clan: IIdentifiable, INamable
 			case 0:
 			{
 				// Upgrade to 1
-				if ((player.getSp() >= 1000) && (player.getAdena() >= 150000) && (_members.Count >= 1) && player.reduceAdena("ClanLvl", 150000, player.getTarget(), true))
+				if (player.getSp() >= 1000 && player.getAdena() >= 150000 && _members.Count >= 1 && player.reduceAdena("ClanLvl", 150000, player.getTarget(), true))
 				{
 					player.setSp(player.getSp() - 1000);
 					SystemMessagePacket sp = new SystemMessagePacket(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
@@ -2466,7 +2466,7 @@ public class Clan: IIdentifiable, INamable
 			case 1:
 			{
 				// Upgrade to 2
-				if ((player.getSp() >= 15000) && (player.getAdena() >= 300000) && (_members.Count >= 1) && player.reduceAdena("ClanLvl", 300000, player.getTarget(), true))
+				if (player.getSp() >= 15000 && player.getAdena() >= 300000 && _members.Count >= 1 && player.reduceAdena("ClanLvl", 300000, player.getTarget(), true))
 				{
 					player.setSp(player.getSp() - 15000);
 					SystemMessagePacket sp = new SystemMessagePacket(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
@@ -2479,7 +2479,7 @@ public class Clan: IIdentifiable, INamable
 			case 2:
 			{
 				// Upgrade to 3 (itemId 1419 == Blood Mark)
-				if ((player.getSp() >= 100000) && (player.getInventory().getItemByItemId(1419) != null) && (_members.Count >= 1) && player.destroyItemByItemId("ClanLvl", 1419, 100, player.getTarget(), true))
+				if (player.getSp() >= 100000 && player.getInventory().getItemByItemId(1419) != null && _members.Count >= 1 && player.destroyItemByItemId("ClanLvl", 1419, 100, player.getTarget(), true))
 				{
 					player.setSp(player.getSp() - 100000);
 					SystemMessagePacket sp = new SystemMessagePacket(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
@@ -2495,7 +2495,7 @@ public class Clan: IIdentifiable, INamable
 			case 3:
 			{
 				// Upgrade to 4 (itemId 1419 == Blood Mark)
-				if ((player.getSp() >= 1000000) && (player.getInventory().getItemByItemId(1419) != null) && (_members.Count >= 1) && player.destroyItemByItemId("ClanLvl", 1419, 5000, player.getTarget(), true))
+				if (player.getSp() >= 1000000 && player.getInventory().getItemByItemId(1419) != null && _members.Count >= 1 && player.destroyItemByItemId("ClanLvl", 1419, 5000, player.getTarget(), true))
 				{
 					player.setSp(player.getSp() - 1000000);
 					SystemMessagePacket sp = new SystemMessagePacket(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
@@ -2511,7 +2511,7 @@ public class Clan: IIdentifiable, INamable
 			case 4:
 			{
 				// Upgrade to 5 (itemId 1419 == Blood Mark)
-				if ((player.getSp() >= 5000000) && (player.getInventory().getItemByItemId(1419) != null) && (_members.Count >= 1) && player.destroyItemByItemId("ClanLvl", 1419, 10000, player.getTarget(), true))
+				if (player.getSp() >= 5000000 && player.getInventory().getItemByItemId(1419) != null && _members.Count >= 1 && player.destroyItemByItemId("ClanLvl", 1419, 10000, player.getTarget(), true))
 				{
 					player.setSp(player.getSp() - 5000000);
 					SystemMessagePacket sp = new SystemMessagePacket(SystemMessageId.YOUR_SP_HAS_DECREASED_BY_S1);
@@ -2703,12 +2703,12 @@ public class Clan: IIdentifiable, INamable
 	{
 		Skill? current = _subPledgeSkills.get(skillId);
 		// is next level?
-		if ((current != null) && ((current.getLevel() + 1) == skillLevel))
+		if (current != null && current.getLevel() + 1 == skillLevel)
 		{
 			return true;
 		}
 		// is first level?
-		if ((current == null) && (skillLevel == 1))
+		if (current == null && skillLevel == 1)
 		{
 			return true;
 		}
@@ -2722,12 +2722,12 @@ public class Clan: IIdentifiable, INamable
 			}
 			current = subunit.getSkill(skillId);
 			// is next level?
-			if ((current != null) && ((current.getLevel() + 1) == skillLevel))
+			if (current != null && current.getLevel() + 1 == skillLevel)
 			{
 				return true;
 			}
 			// is first level?
-			if ((current == null) && (skillLevel == 1))
+			if (current == null && skillLevel == 1)
 			{
 				return true;
 			}
@@ -2754,12 +2754,12 @@ public class Clan: IIdentifiable, INamable
 			current = _subPledges.get(subType)?.getSkill(id);
 		}
 		// is next level?
-		if ((current != null) && ((current.getLevel() + 1) == skill.getLevel()))
+		if (current != null && current.getLevel() + 1 == skill.getLevel())
 		{
 			return true;
 		}
 		// is first level?
-		if ((current == null) && (skill.getLevel() == 1))
+		if (current == null && skill.getLevel() == 1)
 		{
 			return true;
 		}
@@ -2968,7 +2968,7 @@ public class Clan: IIdentifiable, INamable
 	public bool canClaimBonusReward(Player player, ClanRewardType type)
 	{
 		ClanMember clanMember = getClanMember(player.ObjectId);
-		return (clanMember != null) && (getAvailableBonus(type) != null) && !clanMember.isRewardClaimed(type);
+		return clanMember != null && getAvailableBonus(type) != null && !clanMember.isRewardClaimed(type);
 	}
 
 	public void resetClanBonus()
@@ -3053,14 +3053,14 @@ public class Clan: IIdentifiable, INamable
 
 	public void addExp(int objId, int value)
 	{
-		if ((_exp + value) <= ClanLevelData.getInstance().getMaxExp())
+		if (_exp + value <= ClanLevelData.getInstance().getMaxExp())
 		{
 			_exp += value;
 			broadcastToOnlineMembers(new ExPledgeV3InfoPacket(_exp, getRank(), getNotice(), isNoticeEnabled()));
 		}
 
 		int nextLevel = _level + 1;
-		if ((nextLevel <= ClanLevelData.getInstance().getMaxLevel()) && (ClanLevelData.getInstance().getLevelExp(nextLevel) <= _exp))
+		if (nextLevel <= ClanLevelData.getInstance().getMaxLevel() && ClanLevelData.getInstance().getLevelExp(nextLevel) <= _exp)
 		{
 			changeLevel(nextLevel);
 		}
@@ -3096,7 +3096,7 @@ public class Clan: IIdentifiable, INamable
 		{
 			if (bonus.getRequiredAmount() <= currentAmount)
 			{
-				if ((availableBonus == null) || (availableBonus.getLevel() < bonus.getLevel()))
+				if (availableBonus == null || availableBonus.getLevel() < bonus.getLevel())
 				{
 					availableBonus = bonus;
 				}

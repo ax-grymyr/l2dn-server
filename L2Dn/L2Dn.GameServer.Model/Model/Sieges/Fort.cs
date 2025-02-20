@@ -163,7 +163,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 					{
 						return;
 					}
-					if ((_fort._fortOwner.getWarehouse().getAdena() >= _fortFunction._fee) || !_fortFunction._cwh)
+					if (_fort._fortOwner.getWarehouse().getAdena() >= _fortFunction._fee || !_fortFunction._cwh)
 					{
 						int fee = _fortFunction._endDate is null ? _fortFunction._tempFee : _fortFunction._fee;
 						_fortFunction.setEndTime(DateTime.UtcNow + _fortFunction._rate);
@@ -234,7 +234,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		initNpcCommanders(); // npc Commanders (not monsters) (Spawned during siege)
 		spawnNpcCommanders(); // spawn npc Commanders
 		initSpecialEnvoys(); // envoys from castles (Spawned after fort taken)
-		if ((_fortOwner != null) && (_state == 0))
+		if (_fortOwner != null && _state == 0)
 		{
 			spawnSpecialEnvoys();
 		}
@@ -272,7 +272,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	public bool checkIfInZone(Location3D location)
 	{
 		SiegeZone zone = getZone();
-		return (zone != null) && zone.isInsideZone(location);
+		return zone != null && zone.isInsideZone(location);
 	}
 	
 	public SiegeZone getZone()
@@ -362,14 +362,14 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		getSiege().announceToPlayer(sm);
 		
 		Clan oldowner = _fortOwner;
-		if ((oldowner != null) && (clan != oldowner))
+		if (oldowner != null && clan != oldowner)
 		{
 			// Remove points from old owner
 			this.updateClansReputation(oldowner, true);
 			try
 			{
 				Player oldleader = oldowner.getLeader().getPlayer();
-				if ((oldleader != null) && (oldleader.getMountType() == MountType.WYVERN))
+				if (oldleader != null && oldleader.getMountType() == MountType.WYVERN)
 				{
 					oldleader.dismount();
 				}
@@ -608,7 +608,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 				}
 
 				initial = period - initial;
-				if ((Config.FS_MAX_OWN_TIME <= 0) || (getOwnedTime() < TimeSpan.FromSeconds(Config.FS_MAX_OWN_TIME * 3600)))
+				if (Config.FS_MAX_OWN_TIME <= 0 || getOwnedTime() < TimeSpan.FromSeconds(Config.FS_MAX_OWN_TIME * 3600))
 				{
 					_fortUpdater[0] = ThreadPool.scheduleAtFixedRate(
 						new FortUpdater(this, clan, runCount, FortUpdaterType.PERIODIC_UPDATE), initial,
@@ -692,7 +692,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		{
 			return false;
 		}
-		if ((lease > 0) && !player.destroyItemByItemId("Consume", Inventory.ADENA_ID, lease, null, true))
+		if (lease > 0 && !player.destroyItemByItemId("Consume", Inventory.ADENA_ID, lease, null, true))
 		{
 			return false;
 		}
@@ -700,11 +700,11 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		{
 			_function.put(type, new FortFunction(this, type, lvl, lease, 0, rate, null, false));
 		}
-		else if ((lvl == 0) && (lease == 0))
+		else if (lvl == 0 && lease == 0)
 		{
 			removeFunction(type);
 		}
-		else if ((lease - _function.get(type).getLease()) > 0)
+		else if (lease - _function.get(type).getLease() > 0)
 		{
 			_function.remove(type);
 			_function.put(type, new FortFunction(this, type, lvl, lease, 0, rate, null, false));
@@ -728,7 +728,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		foreach (Door door in DoorData.getInstance().getDoors())
 		{
-			if ((door.getFort() != null) && (door.getFort().getResidenceId() == getResidenceId()))
+			if (door.getFort() != null && door.getFort().getResidenceId() == getResidenceId())
 			{
 				_doors.Add(door);
 			}
@@ -739,7 +739,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		foreach (StaticObject obj in StaticObjectData.getInstance().getStaticObjects())
 		{
-			if ((obj.getType() == 3) && obj.getName().startsWith(getName()))
+			if (obj.getType() == 3 && obj.getName().startsWith(getName()))
 			{
 				_flagPole = obj;
 				break;
@@ -1073,7 +1073,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	 */
 	public int getCastleIdByAmbassador(int npcId)
 	{
-		if ((_envoyCastles == null) || !_envoyCastles.TryGetValue(npcId, out int value))
+		if (_envoyCastles == null || !_envoyCastles.TryGetValue(npcId, out int value))
 		{
 			return -1;
 		}

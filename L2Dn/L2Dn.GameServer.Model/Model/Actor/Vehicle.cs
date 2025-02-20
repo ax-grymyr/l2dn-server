@@ -68,7 +68,7 @@ public abstract class Vehicle: Creature
 	{
 		_runState = 0;
 		_currentPath = path;
-		if ((_currentPath != null) && (_currentPath.Length > 0))
+		if (_currentPath != null && _currentPath.Length > 0)
 		{
 			VehiclePathPoint point = _currentPath[0];
 			if (point.getMoveSpeed() > 0)
@@ -141,7 +141,7 @@ public abstract class Vehicle: Creature
 						{
 							_monitorTask = ThreadPool.scheduleAtFixedRate(() =>
 							{
-								if (!isInDock() && (this.Distance3D(_monitorLocation) == 0))
+								if (!isInDock() && this.Distance3D(_monitorLocation) == 0)
 								{
 									if (_currentPath != null)
 									{
@@ -241,13 +241,13 @@ public abstract class Vehicle: Creature
 
 	public virtual bool addPassenger(Player player)
 	{
-		if ((player == null) || _passengers.Contains(player))
+		if (player == null || _passengers.Contains(player))
 		{
 			return false;
 		}
 
 		// already in other vehicle
-		if ((player.getVehicle() != null) && (player.getVehicle() != this))
+		if (player.getVehicle() != null && player.getVehicle() != this)
 		{
 			return false;
 		}
@@ -302,12 +302,12 @@ public abstract class Vehicle: Creature
 	{
 		World.getInstance().forEachVisibleObjectInRange<Player>(this, 1000, player =>
 		{
-			if (player.isInBoat() && (player.getBoat() == this))
+			if (player.isInBoat() && player.getBoat() == this)
 			{
 				if (itemId > 0)
 				{
 					Item ticket = player.getInventory().getItemByItemId(itemId);
-					if ((ticket == null) || (player.getInventory().destroyItem("Boat", ticket, count, player, this) == null))
+					if (ticket == null || player.getInventory().destroyItem("Boat", ticket, count, player, this) == null)
 					{
 						player.sendPacket(SystemMessageId.YOU_DO_NOT_POSSESS_THE_CORRECT_TICKET_TO_BOARD_THE_BOAT);
 						player.teleToLocation(new Location(oustX, oustY, oustZ, 0), true);
@@ -327,7 +327,7 @@ public abstract class Vehicle: Creature
 		bool result = base.updatePosition();
 		foreach (Player player in _passengers)
 		{
-			if ((player != null) && (player.getVehicle() == this))
+			if (player != null && player.getVehicle() == this)
 			{
 				player.setXYZ(getX(), getY(), getZ());
 				player.revalidateZone(false);

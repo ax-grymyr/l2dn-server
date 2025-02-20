@@ -177,7 +177,7 @@ public class Message
 					_elementals[(int)type] = item.getDefenceAttribute(type);
 				}
 			}
-			else if (item.isWeapon() && (item.getAttackAttributeType() != AttributeType.NONE))
+			else if (item.isWeapon() && item.getAttackAttributeType() != AttributeType.NONE)
 			{
 				_elementals[(int)item.getAttackAttributeType()] = item.getAttackAttributePower();
 			}
@@ -387,7 +387,7 @@ public class Message
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public Mail createAttachments()
 	{
-		if (_hasAttachments || (_attachments != null))
+		if (_hasAttachments || _attachments != null)
 		{
 			return null;
 		}

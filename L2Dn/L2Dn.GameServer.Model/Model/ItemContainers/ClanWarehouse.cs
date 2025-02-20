@@ -38,7 +38,7 @@ public class ClanWarehouse: Warehouse
 
 	public override bool validateCapacity(long slots)
 	{
-		return (_items.size() + slots) <= Config.WAREHOUSE_SLOTS_CLAN;
+		return _items.size() + slots <= Config.WAREHOUSE_SLOTS_CLAN;
 	}
 
 	public override Item addItem(string process, int itemId, long count, Player actor, object reference)

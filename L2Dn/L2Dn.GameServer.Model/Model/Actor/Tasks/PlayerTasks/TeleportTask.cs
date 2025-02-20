@@ -19,7 +19,7 @@ public class TeleportTask: Runnable
 	
 	public void run()
 	{
-		if ((_player != null) && _player.isOnline())
+		if (_player != null && _player.isOnline())
 		{
 			_player.teleToLocation(_loc, true);
 		}

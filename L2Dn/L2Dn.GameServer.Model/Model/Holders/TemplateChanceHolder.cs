@@ -24,7 +24,7 @@ public class TemplateChanceHolder
 	
 	public bool calcChance(int chance)
 	{
-		return (_maxChance > chance) && (chance >= _minChance);
+		return _maxChance > chance && chance >= _minChance;
 	}
 	
 	public override string ToString()

@@ -62,7 +62,7 @@ public static class BaseStatUtil
 
 	public static int calcValue(this BaseStat stat, Creature creature)
 	{
-		if ((creature != null))
+		if (creature != null)
 		{
 			// return (int) Math.min(_stat.finalize(creature, Optional.empty()), MAX_STAT_VALUE - 1);
 			return (int)creature.getStat().getValue(stat.GetStat());

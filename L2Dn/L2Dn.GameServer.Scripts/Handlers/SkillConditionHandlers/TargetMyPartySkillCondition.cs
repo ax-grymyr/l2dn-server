@@ -18,15 +18,15 @@ public class TargetMyPartySkillCondition: ISkillCondition
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
-        if ((target == null) || !target.isPlayer())
+        if (target == null || !target.isPlayer())
         {
             return false;
         }
 
         Party? party = caster.getParty();
         Party? targetParty = target.getActingPlayer()?.getParty();
-        return ((party == null)
-            ? (_includeMe && (caster == target))
-            : (_includeMe ? party == targetParty : (party == targetParty) && (caster != target)));
+        return party == null
+            ? _includeMe && caster == target
+            : _includeMe ? party == targetParty : party == targetParty && caster != target;
     }
 }

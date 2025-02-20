@@ -87,7 +87,7 @@ public class Party : AbstractPlayerGroup
 	public void setPendingInvitation(bool value)
 	{
 		_pendingInvitation = value;
-		_pendingInviteTimeout = GameTimeTaskManager.getInstance().getGameTicks() + (Player.REQUEST_TIMEOUT * GameTimeTaskManager.TICKS_PER_SECOND);
+		_pendingInviteTimeout = GameTimeTaskManager.getInstance().getGameTicks() + Player.REQUEST_TIMEOUT * GameTimeTaskManager.TICKS_PER_SECOND;
 	}
 	
 	/**
@@ -97,7 +97,7 @@ public class Party : AbstractPlayerGroup
 	 */
 	public bool isInvitationRequestExpired()
 	{
-		return (_pendingInviteTimeout <= GameTimeTaskManager.getInstance().getGameTicks());
+		return _pendingInviteTimeout <= GameTimeTaskManager.getInstance().getGameTicks();
 	}
 	
 	/**
@@ -219,7 +219,7 @@ public class Party : AbstractPlayerGroup
 	{
 		foreach (Player member in _members)
 		{
-			if ((member != null) && (member.ObjectId != player.ObjectId))
+			if (member != null && member.ObjectId != player.ObjectId)
 			{
 				member.sendPacket(packet);
 			}
@@ -426,7 +426,7 @@ public class Party : AbstractPlayerGroup
 		}
 		
 		Creature tacticalTarget = _tacticalSigns.get(tacticalSignId);
-		if ((tacticalTarget != null) && !tacticalTarget.isInvisible() && tacticalTarget.isTargetable() && !player.isTargetingDisabled())
+		if (tacticalTarget != null && !tacticalTarget.isInvisible() && tacticalTarget.isTargetable() && !player.isTargetingDisabled())
 		{
 			player.setTarget(tacticalTarget);
 		}
@@ -452,7 +452,7 @@ public class Party : AbstractPlayerGroup
 		if (_members.Contains(player))
 		{
 			bool isLeader = this.isLeader(player);
-			if (!_disbanding && ((_members.Count == 2) || (isLeader && !Config.ALT_LEAVE_PARTY_LEADER && (type != PartyMessageType.DISCONNECTED))))
+			if (!_disbanding && (_members.Count == 2 || (isLeader && !Config.ALT_LEAVE_PARTY_LEADER && type != PartyMessageType.DISCONNECTED)))
 			{
 				disbandParty();
 				return;
@@ -469,7 +469,7 @@ public class Party : AbstractPlayerGroup
 			try
 			{
 				// Channeling a player!
-				if (player.isChanneling() && (player.getSkillChannelizer().hasChannelized()))
+				if (player.isChanneling() && player.getSkillChannelizer().hasChannelized())
 				{
 					player.abortCast();
 				}
@@ -491,7 +491,7 @@ public class Party : AbstractPlayerGroup
 				msg.Params.addString(player.getName());
 				broadcastPacket(msg);
 			}
-			else if ((type == PartyMessageType.LEFT) || (type == PartyMessageType.DISCONNECTED))
+			else if (type == PartyMessageType.LEFT || type == PartyMessageType.DISCONNECTED)
 			{
 				player.sendPacket(SystemMessageId.YOU_HAVE_LEFT_THE_PARTY);
 				msg = new SystemMessagePacket(SystemMessageId.C1_HAS_LEFT_THE_PARTY);
@@ -517,7 +517,7 @@ public class Party : AbstractPlayerGroup
 			{
 				player.sendPacket(ExCloseMPCCPacket.STATIC_PACKET);
 			}
-			if (isLeader && (_members.Count > 1) && (Config.ALT_LEAVE_PARTY_LEADER || (type == PartyMessageType.DISCONNECTED)))
+			if (isLeader && _members.Count > 1 && (Config.ALT_LEAVE_PARTY_LEADER || type == PartyMessageType.DISCONNECTED))
 			{
 				msg = new SystemMessagePacket(SystemMessageId.C1_HAS_BECOME_THE_PARTY_LEADER);
 				msg.Params.addString(getLeader().getName());
@@ -595,7 +595,7 @@ public class Party : AbstractPlayerGroup
 	
 	public override void setLeader(Player player)
 	{
-		if ((player != null) && !player.isInDuel())
+		if (player != null && !player.isInDuel())
 		{
 			if (_members.Contains(player))
 			{
@@ -783,7 +783,7 @@ public class Party : AbstractPlayerGroup
 		int sqLevelSum = 0;
 		foreach (Player member in validMembers)
 		{
-			sqLevelSum += (member.getLevel() * member.getLevel());
+			sqLevelSum += member.getLevel() * member.getLevel();
 		}
 		
 		foreach (Player member in rewardedMembers)
@@ -809,7 +809,7 @@ public class Party : AbstractPlayerGroup
 				}
 				
 				double sqLevel = member.getLevel() * member.getLevel();
-				double preCalculation = (sqLevel / sqLevelSum) * penalty;
+				double preCalculation = sqLevel / sqLevelSum * penalty;
 				
 				// Add the XP/SP points to the requested party member
 				double exp = member.getStat().getValue(Stat.EXPSP_RATE, xpReward * preCalculation);
@@ -876,10 +876,10 @@ public class Party : AbstractPlayerGroup
 			int levelDiff = topLvl - player.getLevel();
 			foreach (Range<int> gap in Config.PARTY_XP_CUTOFF_GAPS)
 			{
-				if ((levelDiff >= gap.Left) && (levelDiff <= gap.Right))
+				if (levelDiff >= gap.Left && levelDiff <= gap.Right)
 				{
-					xp = (addExp * Config.PARTY_XP_CUTOFF_GAP_PERCENTS[i]) / 100;
-					sp = (addSp * Config.PARTY_XP_CUTOFF_GAP_PERCENTS[i]) / 100;
+					xp = addExp * Config.PARTY_XP_CUTOFF_GAP_PERCENTS[i] / 100;
+					sp = addSp * Config.PARTY_XP_CUTOFF_GAP_PERCENTS[i] / 100;
 					player.addExpAndSp(xp, sp, vit);
 					break;
 				}
@@ -924,7 +924,7 @@ public class Party : AbstractPlayerGroup
 			{
 				foreach (Player member in members)
 				{
-					if ((topLvl - member.getLevel()) <= Config.PARTY_XP_CUTOFF_LEVEL)
+					if (topLvl - member.getLevel() <= Config.PARTY_XP_CUTOFF_LEVEL)
 					{
 						validMembers.Add(member);
 					}
@@ -936,12 +936,12 @@ public class Party : AbstractPlayerGroup
 				int sqLevelSum = 0;
 				foreach (Player member in members)
 				{
-					sqLevelSum += (member.getLevel() * member.getLevel());
+					sqLevelSum += member.getLevel() * member.getLevel();
 				}
 				foreach (Player member in members)
 				{
 					int sqLevel = member.getLevel() * member.getLevel();
-					if ((sqLevel * 100) >= (sqLevelSum * Config.PARTY_XP_CUTOFF_PERCENT))
+					if (sqLevel * 100 >= sqLevelSum * Config.PARTY_XP_CUTOFF_PERCENT)
 					{
 						validMembers.Add(member);
 					}
@@ -953,7 +953,7 @@ public class Party : AbstractPlayerGroup
 				int sqLevelSum = 0;
 				foreach (Player member in members)
 				{
-					sqLevelSum += (member.getLevel() * member.getLevel());
+					sqLevelSum += member.getLevel() * member.getLevel();
 				}
 				int i = members.Count - 1;
 				if (i < 1)
@@ -967,7 +967,7 @@ public class Party : AbstractPlayerGroup
 				foreach (Player member in members)
 				{
 					int sqLevel = member.getLevel() * member.getLevel();
-					if (sqLevel >= (sqLevelSum / (members.Count * members.Count)))
+					if (sqLevel >= sqLevelSum / (members.Count * members.Count))
 					{
 						validMembers.Add(member);
 					}
@@ -1005,13 +1005,13 @@ public class Party : AbstractPlayerGroup
 	private double getExpBonus(int membersCount, Instance instance)
 	{
 		float rateMul = instance != null ? instance.getExpPartyRate() : Config.RATE_PARTY_XP;
-		return (membersCount < 2) ? (getBaseExpSpBonus(membersCount)) : (getBaseExpSpBonus(membersCount) * rateMul);
+		return membersCount < 2 ? getBaseExpSpBonus(membersCount) : getBaseExpSpBonus(membersCount) * rateMul;
 	}
 	
 	private double getSpBonus(int membersCount, Instance instance)
 	{
 		float rateMul = instance != null ? instance.getSPPartyRate() : Config.RATE_PARTY_SP;
-		return (membersCount < 2) ? (getBaseExpSpBonus(membersCount)) : (getBaseExpSpBonus(membersCount) * rateMul);
+		return membersCount < 2 ? getBaseExpSpBonus(membersCount) : getBaseExpSpBonus(membersCount) * rateMul;
 	}
 	
 	public override int getLevel()
@@ -1089,7 +1089,7 @@ public class Party : AbstractPlayerGroup
 		}
 		
 		_changeDistributionTypeAnswers.add(member.ObjectId);
-		if (_changeDistributionTypeAnswers.size() >= (getMemberCount() - 1))
+		if (_changeDistributionTypeAnswers.size() >= getMemberCount() - 1)
 		{
 			finishLootRequest(true);
 		}

@@ -54,13 +54,13 @@ public class PlayerStatus: PlayableStatus
 		}
 
 		// If OFFLINE_MODE_NO_DAMAGE is enabled and player is offline and he is in store/craft mode, no damage is taken.
-		if (Config.OFFLINE_MODE_NO_DAMAGE && (getActiveChar().getClient() != null) &&
+		if (Config.OFFLINE_MODE_NO_DAMAGE && getActiveChar().getClient() != null &&
 		    getActiveChar().getClient().IsDetached &&
-		    ((Config.OFFLINE_TRADE_ENABLE && ((getActiveChar().getPrivateStoreType() == PrivateStoreType.SELL) ||
-		                                      (getActiveChar().getPrivateStoreType() == PrivateStoreType.BUY))) ||
+		    ((Config.OFFLINE_TRADE_ENABLE && (getActiveChar().getPrivateStoreType() == PrivateStoreType.SELL ||
+		                                      getActiveChar().getPrivateStoreType() == PrivateStoreType.BUY)) ||
 		     (Config.OFFLINE_CRAFT_ENABLE && (getActiveChar().isCrafting() ||
-		                                      (getActiveChar().getPrivateStoreType() ==
-		                                       PrivateStoreType.MANUFACTURE)))))
+		                                      getActiveChar().getPrivateStoreType() ==
+                                              PrivateStoreType.MANUFACTURE))))
 		{
 			return;
 		}
@@ -112,7 +112,7 @@ public class PlayerStatus: PlayableStatus
 		int fullValue = (int)amount;
 		int tDmg = 0;
 		int mpDam = 0;
-		if ((attacker != null) && (attacker != getActiveChar()))
+		if (attacker != null && attacker != getActiveChar())
 		{
 			Player attackerPlayer = attacker.getActingPlayer();
 			if (attackerPlayer != null)
@@ -143,9 +143,9 @@ public class PlayerStatus: PlayableStatus
 
 			// Check and calculate transfered damage
 			Summon summon = getActiveChar().getFirstServitor();
-			if ((summon != null) && Util.checkIfInRange(1000, getActiveChar(), summon, true))
+			if (summon != null && Util.checkIfInRange(1000, getActiveChar(), summon, true))
 			{
-				tDmg = ((int)amount * (int)getActiveChar().getStat().getValue(Stat.TRANSFER_DAMAGE_SUMMON_PERCENT, 0)) /
+				tDmg = (int)amount * (int)getActiveChar().getStat().getValue(Stat.TRANSFER_DAMAGE_SUMMON_PERCENT, 0) /
 				       100;
 
 				// Only transfer dmg up to current HP, it should not be killed
@@ -159,7 +159,7 @@ public class PlayerStatus: PlayableStatus
 				}
 			}
 
-			mpDam = ((int)amount * (int)getActiveChar().getStat().getValue(Stat.MANA_SHIELD_PERCENT, 0)) / 100;
+			mpDam = (int)amount * (int)getActiveChar().getStat().getValue(Stat.MANA_SHIELD_PERCENT, 0) / 100;
 			if (mpDam > 0)
 			{
 				mpDam = (int)(amount - mpDam);
@@ -182,26 +182,26 @@ public class PlayerStatus: PlayableStatus
 			}
 
 			Player caster = getActiveChar().getTransferingDamageTo();
-			if ((caster != null) && (getActiveChar().getParty() != null) &&
+			if (caster != null && getActiveChar().getParty() != null &&
 			    Util.checkIfInRange(1000, getActiveChar(), caster, true) && !caster.isDead() &&
-			    (getActiveChar() != caster) && getActiveChar().getParty().getMembers().Contains(caster))
+			    getActiveChar() != caster && getActiveChar().getParty().getMembers().Contains(caster))
 			{
 				int transferDmg = 0;
 				transferDmg =
-					((int)amount * (int)getActiveChar().getStat().getValue(Stat.TRANSFER_DAMAGE_TO_PLAYER, 0)) / 100;
+					(int)amount * (int)getActiveChar().getStat().getValue(Stat.TRANSFER_DAMAGE_TO_PLAYER, 0) / 100;
 				transferDmg = Math.Min((int)caster.getCurrentHp() - 1, transferDmg);
 				if (transferDmg > 0)
 				{
 					int membersInRange = 0;
 					foreach (Player member in caster.getParty().getMembers())
 					{
-						if (Util.checkIfInRange(1000, member, caster, false) && (member != caster))
+						if (Util.checkIfInRange(1000, member, caster, false) && member != caster)
 						{
 							membersInRange++;
 						}
 					}
 
-					if ((attacker.isPlayable() || attacker.isFakePlayer()) && (caster.getCurrentCp() > 0))
+					if ((attacker.isPlayable() || attacker.isFakePlayer()) && caster.getCurrentCp() > 0)
 					{
 						if (caster.getCurrentCp() > transferDmg)
 						{
@@ -237,7 +237,7 @@ public class PlayerStatus: PlayableStatus
 				}
 			}
 
-			if ((fullValue > 0) && !isDOT)
+			if (fullValue > 0 && !isDOT)
 			{
 				// Send a System Message to the Player
 				SystemMessagePacket smsg = new SystemMessagePacket(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
@@ -260,7 +260,7 @@ public class PlayerStatus: PlayableStatus
 				smsg.Params.addPopup(getActiveChar().ObjectId, attacker.ObjectId, -fullValue);
 				getActiveChar().sendPacket(smsg);
 
-				if ((tDmg > 0) && (summon != null) && (attackerPlayer != null))
+				if (tDmg > 0 && summon != null && attackerPlayer != null)
 				{
 					smsg = new SystemMessagePacket(SystemMessageId
 						.YOU_VE_DEALT_S1_DAMAGE_TO_YOUR_TARGET_AND_S2_DAMAGE_TO_THEIR_SERVITOR);
@@ -301,7 +301,7 @@ public class PlayerStatus: PlayableStatus
 			setCurrentHp(newHp);
 		}
 
-		if ((getActiveChar().getCurrentHp() < 0.5) && !isHPConsumption && !getActiveChar().isUndying())
+		if (getActiveChar().getCurrentHp() < 0.5 && !isHPConsumption && !getActiveChar().isUndying())
 		{
 			getActiveChar().abortAttack();
 			getActiveChar().abortCast();
@@ -374,7 +374,7 @@ public class PlayerStatus: PlayableStatus
 		}
 
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other Player to inform
-		if ((currentCp != _currentCp) && broadcastPacket)
+		if (currentCp != _currentCp && broadcastPacket)
 		{
 			getActiveChar().broadcastStatusUpdate();
 		}

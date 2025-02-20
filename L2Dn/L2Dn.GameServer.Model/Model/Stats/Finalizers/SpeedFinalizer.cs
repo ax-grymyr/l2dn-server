@@ -28,7 +28,7 @@ public class SpeedFinalizer: StatFunction
 
 		int speedStat = (int)creature.getStat().getAdd(Stat.STAT_BONUS_SPEED, -1);
 		ImmutableArray<BaseStat> baseStats = EnumUtil.GetValues<BaseStat>();
-		if ((speedStat >= 0) && (speedStat < baseStats.Length))
+		if (speedStat >= 0 && speedStat < baseStats.Length)
 		{
 			BaseStat baseStat = baseStats[speedStat];
 			double bonusDex = Math.Max(0, baseStat.calcValue(creature) - 55);
@@ -59,7 +59,7 @@ public class SpeedFinalizer: StatFunction
 			return Math.Max(enchantLevel - 3, 0) + Math.Max(enchantLevel - 6, 0);
 		}
 
-		return (0.6 * Math.Max(enchantLevel - 3, 0)) + (0.6 * Math.Max(enchantLevel - 6, 0));
+		return 0.6 * Math.Max(enchantLevel - 3, 0) + 0.6 * Math.Max(enchantLevel - 6, 0);
 	}
 
 	private double getBaseSpeed(Creature creature, Stat stat)
@@ -76,7 +76,7 @@ public class SpeedFinalizer: StatFunction
 				{
 					baseValue = data.getSpeedOnRide(stat);
 					// if level diff with mount >= 10, it decreases move speed by 50%
-					if ((player.getMountLevel() - creature.getLevel()) >= 10)
+					if (player.getMountLevel() - creature.getLevel() >= 10)
 					{
 						baseValue /= 2;
 					}

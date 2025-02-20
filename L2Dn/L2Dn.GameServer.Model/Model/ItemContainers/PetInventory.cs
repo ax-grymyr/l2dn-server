@@ -51,7 +51,7 @@ public class PetInventory: Inventory
     public bool validateCapacity(Item item)
     {
         int slots = 0;
-        if (!(item.isStackable() && (getItemByItemId(item.getId()) != null)) &&
+        if (!(item.isStackable() && getItemByItemId(item.getId()) != null) &&
             !item.getTemplate().hasExImmediateEffect())
         {
             slots++;
@@ -62,7 +62,7 @@ public class PetInventory: Inventory
 
     public override bool validateCapacity(long slots)
     {
-        return ((_items.size() + slots) <= _owner.getInventoryLimit());
+        return _items.size() + slots <= _owner.getInventoryLimit();
     }
 
     public bool validateWeight(Item item, long count)
@@ -80,7 +80,7 @@ public class PetInventory: Inventory
 
     public override bool validateWeight(long weight)
     {
-        return ((_totalWeight + weight) <= _owner.getMaxLoad());
+        return _totalWeight + weight <= _owner.getMaxLoad();
     }
 
     public override ItemLocation getBaseLocation()

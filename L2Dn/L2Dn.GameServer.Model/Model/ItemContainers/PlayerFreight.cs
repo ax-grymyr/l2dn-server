@@ -43,7 +43,7 @@ public class PlayerFreight: ItemContainer
 
     public override bool validateCapacity(long slots)
     {
-        return ((getSize() + slots) <= Config.ALT_FREIGHT_SLOTS);
+        return getSize() + slots <= Config.ALT_FREIGHT_SLOTS;
     }
 
     protected override void refreshWeight()

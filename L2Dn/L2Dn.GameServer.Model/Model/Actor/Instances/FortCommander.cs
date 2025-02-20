@@ -26,13 +26,13 @@ public class FortCommander : Defender
 	 */
 	public override bool isAutoAttackable(Creature attacker)
 	{
-		if ((attacker == null) || !attacker.isPlayer())
+		if (attacker == null || !attacker.isPlayer())
 		{
 			return false;
 		}
 
 		// Attackable during siege by all except defenders
-		return ((getFort() != null) && (getFort().getResidenceId() > 0) && getFort().getSiege().isInProgress() && !getFort().getSiege().checkIsDefender(attacker.getClan()));
+		return getFort() != null && getFort().getResidenceId() > 0 && getFort().getSiege().isInProgress() && !getFort().getSiege().checkIsDefender(attacker.getClan());
 	}
 
 	public override void addDamageHate(Creature attacker, long damage, long aggro)
@@ -83,7 +83,7 @@ public class FortCommander : Defender
 	{
 		Creature attacker = creature;
 		Spawn spawn = getSpawn();
-		if ((spawn != null) && canTalk())
+		if (spawn != null && canTalk())
 		{
 			List<FortSiegeSpawn> commanders = FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId());
 			foreach (FortSiegeSpawn spawn2 in commanders)

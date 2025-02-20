@@ -171,7 +171,7 @@ public class SkillChannelizer: Runnable
 					}
 
 					BuffInfo info = creature.getEffectList().getBuffInfoBySkillId(skill.getChannelingSkillId());
-					if ((info == null) || (info.getSkill().getLevel() < skillLevel))
+					if (info == null || info.getSkill().getLevel() < skillLevel)
 					{
 						Skill channeledSkill =
 							SkillData.getInstance().getSkill(skill.getChannelingSkillId(), skillLevel);

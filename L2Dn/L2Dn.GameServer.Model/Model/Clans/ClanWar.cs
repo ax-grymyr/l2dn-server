@@ -60,9 +60,9 @@ public class ClanWar
 		_attackerKillCount = attackerKillCount;
 		_attackedKillCount = attackedKillCount;
 		_winnerClanId = winnerClan;
-		if ((_startTime + TIME_TO_CANCEL_NON_MUTUAL_CLAN_WAR) > DateTime.UtcNow)
+		if (_startTime + TIME_TO_CANCEL_NON_MUTUAL_CLAN_WAR > DateTime.UtcNow)
 		{
-			_cancelTask = ThreadPool.schedule(clanWarTimeout, (_startTime + TIME_TO_CANCEL_NON_MUTUAL_CLAN_WAR) - DateTime.UtcNow);
+			_cancelTask = ThreadPool.schedule(clanWarTimeout, _startTime + TIME_TO_CANCEL_NON_MUTUAL_CLAN_WAR - DateTime.UtcNow);
 		}
 		
 		if (_endTime is not null)
@@ -86,7 +86,7 @@ public class ClanWar
 		Clan killerClan = killer.getClan();
 		
 		// Reputation increase by killing an enemy (over level 4) in a clan war under the condition of mutual war declaration
-		if ((victim.getLevel() > 4) && (_state == ClanWarState.MUTUAL))
+		if (victim.getLevel() > 4 && _state == ClanWarState.MUTUAL)
 		{
 			// however, when the other side reputation score is 0 or below, your clan cannot acquire any reputation points from them.
 			if (victimClan.getReputationScore() > 0)
@@ -113,7 +113,7 @@ public class ClanWar
 				Interlocked.Increment(ref _attackedKillCount);
 			}
 		}
-		else if ((_state == ClanWarState.BLOOD_DECLARATION) && (victimClan.getId() == _attackerClanId) && (victim.getReputation() >= 0))
+		else if (_state == ClanWarState.BLOOD_DECLARATION && victimClan.getId() == _attackerClanId && victim.getReputation() >= 0)
 		{
 			int killCount = Interlocked.Increment(ref _attackedKillCount);
 			if (killCount >= 5)
@@ -167,7 +167,7 @@ public class ClanWar
 	{
 		Clan attackerClan = ClanTable.getInstance().getClan(_attackerClanId);
 		Clan attackedClan = ClanTable.getInstance().getClan(_attackedClanId);
-		if ((attackerClan != null) && (attackedClan != null))
+		if (attackerClan != null && attackedClan != null)
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_WAR_DECLARED_BY_THE_S1_CLAN_HAS_ENDED);
 			sm.Params.addString(attackerClan.getName());

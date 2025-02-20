@@ -58,7 +58,7 @@ public class Weapon: ItemTemplate
 		_mpConsume = set.getInt("mp_consume", 0);
 		_baseAttackRange = set.getInt("attack_range", 40);
 		string[] damageRange = set.getString("damage_range", "").Split(";"); // 0?;0?;fan sector;base attack angle
-		if ((damageRange.Length >= 4) &&
+		if (damageRange.Length >= 4 &&
 		    int.TryParse(damageRange[2], CultureInfo.InvariantCulture, out int baseAttackRadius) &&
 		    int.TryParse(damageRange[3], CultureInfo.InvariantCulture, out int baseAttackAngle))
 		{
@@ -72,19 +72,19 @@ public class Weapon: ItemTemplate
 		}
 		
 		string[] reducedSoulshots = set.getString("reduced_soulshot", "").Split(",");
-		_reducedSoulshotChance = (reducedSoulshots.Length == 2) ? int.Parse(reducedSoulshots[0]) : 0;
-		_reducedSoulshot = (reducedSoulshots.Length == 2) ? int.Parse(reducedSoulshots[1]) : 0;
+		_reducedSoulshotChance = reducedSoulshots.Length == 2 ? int.Parse(reducedSoulshots[0]) : 0;
+		_reducedSoulshot = reducedSoulshots.Length == 2 ? int.Parse(reducedSoulshots[1]) : 0;
 		
 		string[] reducedMpConsume = set.getString("reduced_mp_consume", "").Split(",");
-		_reducedMpConsumeChance = (reducedMpConsume.Length == 2) ? int.Parse(reducedMpConsume[0]) : 0;
-		_reducedMpConsume = (reducedMpConsume.Length == 2) ? int.Parse(reducedMpConsume[1]) : 0;
+		_reducedMpConsumeChance = reducedMpConsume.Length == 2 ? int.Parse(reducedMpConsume[0]) : 0;
+		_reducedMpConsume = reducedMpConsume.Length == 2 ? int.Parse(reducedMpConsume[1]) : 0;
 		_changeWeaponId = set.getInt("change_weaponId", 0);
 		_isForceEquip = set.getBoolean("isForceEquip", false);
 		_isAttackWeapon = set.getBoolean("isAttackWeapon", true);
 		_useWeaponSkillsOnly = set.getBoolean("useWeaponSkillsOnly", false);
 		
 		// Check if ranged weapon reuse delay is missing.
-		if ((_reuseDelay == TimeSpan.Zero) && _type.isRanged())
+		if (_reuseDelay == TimeSpan.Zero && _type.isRanged())
 		{
 			_reuseDelay = TimeSpan.FromMilliseconds(1500);
 		}
@@ -253,7 +253,7 @@ public class Weapon: ItemTemplate
 					return;
 				}
 				
-				if (skill.isBad() && (Formulas.calcShldUse(caster, target) == Formulas.SHIELD_DEFENSE_PERFECT_BLOCK))
+				if (skill.isBad() && Formulas.calcShldUse(caster, target) == Formulas.SHIELD_DEFENSE_PERFECT_BLOCK)
 				{
 					return;
 				}

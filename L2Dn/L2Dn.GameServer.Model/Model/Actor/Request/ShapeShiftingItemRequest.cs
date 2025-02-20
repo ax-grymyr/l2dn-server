@@ -44,12 +44,12 @@ public class ShapeShiftingItemRequest: AbstractRequest
 
     public override bool isUsing(int objectId)
     {
-        if ((_appearanceStone == null) || (_appearanceExtractItem == null))
+        if (_appearanceStone == null || _appearanceExtractItem == null)
         {
             return false;
         }
 
-        return (objectId > 0) && ((objectId == _appearanceStone.ObjectId) ||
-                                  (objectId == _appearanceExtractItem.ObjectId));
+        return objectId > 0 && (objectId == _appearanceStone.ObjectId ||
+                                  objectId == _appearanceExtractItem.ObjectId);
     }
 }

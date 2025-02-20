@@ -42,12 +42,12 @@ public class Cubic: Creature
 
 	public void deactivate()
 	{
-		if ((_skillUseTask != null) && !_skillUseTask.isDone())
+		if (_skillUseTask != null && !_skillUseTask.isDone())
 		{
 			_skillUseTask.cancel(true);
 		}
 		_skillUseTask = null;
-		if ((_expireTask != null) && !_expireTask.isDone())
+		if (_expireTask != null && !_expireTask.isDone())
 		{
 			_expireTask.cancel(true);
 		}
@@ -102,7 +102,7 @@ public class Cubic: Creature
 	{
 		CubicSkill skill = chooseSkill();
 		WorldObject target = _owner.getTarget();
-		if ((skill != null) && (target != null))
+		if (skill != null && target != null)
 		{
 			tryToUseSkill(target, skill);
 		}
@@ -147,14 +147,14 @@ public class Cubic: Creature
 			if ((commulativeChance += cubicSkill.getTriggerRate()) > random)
 			{
 				Skill skill = cubicSkill.getSkill();
-				if ((skill != null) && (Rnd.get(100) < cubicSkill.getSuccessRate()))
+				if (skill != null && Rnd.get(100) < cubicSkill.getSuccessRate())
 				{
 					Party party = _owner.getParty();
 					IEnumerable<Creature> stream;
 					if (party != null)
 					{
 						stream = World.getInstance().getVisibleObjectsInRange<Creature>(_owner, Config.ALT_PARTY_RANGE,
-							c => (c.getParty() == party) && _template.validateConditions(this, _owner, c) &&
+							c => c.getParty() == party && _template.validateConditions(this, _owner, c) &&
 							     cubicSkill.validateConditions(this, _owner, c));
 					}
 					else
@@ -170,9 +170,9 @@ public class Cubic: Creature
 					}
 
 					Creature? target = stream.MinBy(c => c.getCurrentHpPercent());
-					if ((target != null) && (!target.isDead())) // Life Cubic should not try to heal dead targets.
+					if (target != null && !target.isDead()) // Life Cubic should not try to heal dead targets.
 					{
-						if (Rnd.nextDouble() > (target.getCurrentHp() / target.getMaxHp()))
+						if (Rnd.nextDouble() > target.getCurrentHp() / target.getMaxHp())
 						{
 							activateCubicSkill(skill, target);
 						}
@@ -196,7 +196,7 @@ public class Cubic: Creature
 	{
 		WorldObject target = worldObject;
 		Skill skill = cubicSkill.getSkill();
-		if ((_template.getTargetType() != CubicTargetType.MASTER) && !((_template.getTargetType() == CubicTargetType.BY_SKILL) && (cubicSkill.getTargetType() == CubicTargetType.MASTER)))
+		if (_template.getTargetType() != CubicTargetType.MASTER && !(_template.getTargetType() == CubicTargetType.BY_SKILL && cubicSkill.getTargetType() == CubicTargetType.MASTER))
 		{
 			target = skill.getTarget(_owner, target, false, false, false);
 		}
@@ -208,7 +208,7 @@ public class Cubic: Creature
 				return;
 			}
 
-			if (_template.validateConditions(this, _owner, target) && cubicSkill.validateConditions(this, _owner, target) && (Rnd.get(100) < cubicSkill.getSuccessRate()))
+			if (_template.validateConditions(this, _owner, target) && cubicSkill.validateConditions(this, _owner, target) && Rnd.get(100) < cubicSkill.getSuccessRate())
 			{
 				activateCubicSkill(skill, target);
 			}
@@ -227,12 +227,12 @@ public class Cubic: Creature
 
 	public override void sendDamageMessage(Creature target, Skill skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
 	{
-		if (miss || (_owner == null))
+		if (miss || _owner == null)
 		{
 			return;
 		}
 
-		if (_owner.isInOlympiadMode() && target.isPlayer() && ((Player) target).isInOlympiadMode() && (((Player) target).getOlympiadGameId() == _owner.getOlympiadGameId()))
+		if (_owner.isInOlympiadMode() && target.isPlayer() && ((Player) target).isInOlympiadMode() && ((Player) target).getOlympiadGameId() == _owner.getOlympiadGameId())
 		{
 			OlympiadGameManager.getInstance().notifyCompetitorDamage(_owner, damage);
 		}
@@ -247,7 +247,7 @@ public class Cubic: Creature
 			sm.Params.addString(getName());
 			sm.Params.addString(target.getName());
 			sm.Params.addInt(damage);
-			sm.Params.addPopup(target.ObjectId, _owner.ObjectId, (damage * -1));
+			sm.Params.addPopup(target.ObjectId, _owner.ObjectId, damage * -1);
 			_owner.sendPacket(sm);
 		}
 	}
@@ -337,7 +337,7 @@ public class Cubic: Creature
 	public override double getRandomDamageMultiplier()
 	{
 		int random = (int) _owner.getStat().getValue(Stat.RANDOM_DAMAGE);
-		return (1 + ((double) Rnd.get(-random, random) / 100));
+		return 1 + (double) Rnd.get(-random, random) / 100;
 	}
 
 	public override int getMagicAccuracy()

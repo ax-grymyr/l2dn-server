@@ -141,7 +141,7 @@ public abstract class AbstractPlayerGroup
 	{
 		forEachMember(m =>
 		{
-			if ((m != null) && !BlockList.isBlocked(m, broadcaster))
+			if (m != null && !BlockList.isBlocked(m, broadcaster))
 			{
 				m.sendPacket(msg);
 			}

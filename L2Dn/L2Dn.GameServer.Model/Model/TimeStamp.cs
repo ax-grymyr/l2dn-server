@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Model;
  * <b>Filter this carefully as it becomes redundant to store reuse for small delays.</b>
  * @author Yesod, Zoey76, Mobius
  */
-public class TimeStamp
+public sealed class TimeStamp
 {
 	/** Item or skill ID. */
 	private readonly int _id1;
@@ -23,7 +23,7 @@ public class TimeStamp
 	private DateTime? _stamp;
 	/** Shared reuse group. */
 	private readonly int _group;
-	
+
 	/**
 	 * Skill time stamp constructor.
 	 * @param skill the skill upon the stamp will be created.
@@ -39,7 +39,7 @@ public class TimeStamp
 		_stamp = systime != null ? systime.Value : reuse > TimeSpan.Zero ? DateTime.UtcNow + reuse : null;
 		_group = skill.getReuseDelayGroup();
 	}
-	
+
 	/**
 	 * Item time stamp constructor.
 	 * @param item the item upon the stamp will be created.
@@ -55,7 +55,7 @@ public class TimeStamp
 		_stamp = systime != null ? systime.Value : reuse > TimeSpan.Zero ? DateTime.UtcNow + reuse : null;
 		_group = item.getSharedReuseGroup();
 	}
-	
+
 	/**
 	 * Gets the time stamp.
 	 * @return the time stamp, either the system time where this time stamp was created or the custom time assigned
@@ -64,7 +64,7 @@ public class TimeStamp
 	{
 		return _stamp;
 	}
-	
+
 	/**
 	 * Gets the item ID.
 	 * @return the item ID
@@ -73,7 +73,7 @@ public class TimeStamp
 	{
 		return _id1;
 	}
-	
+
 	/**
 	 * Gets the item object ID.
 	 * @return the item object ID
@@ -82,7 +82,7 @@ public class TimeStamp
 	{
 		return _id2;
 	}
-	
+
 	/**
 	 * Gets the skill ID.
 	 * @return the skill ID
@@ -91,7 +91,7 @@ public class TimeStamp
 	{
 		return _id1;
 	}
-	
+
 	/**
 	 * Gets the skill level.
 	 * @return the skill level
@@ -100,7 +100,7 @@ public class TimeStamp
 	{
 		return _id2;
 	}
-	
+
 	/**
 	 * Gets the skill sub level.
 	 * @return the skill level
@@ -109,7 +109,7 @@ public class TimeStamp
 	{
 		return _id3;
 	}
-	
+
 	/**
 	 * Gets the reuse.
 	 * @return the reuse
@@ -118,7 +118,7 @@ public class TimeStamp
 	{
 		return _reuse;
 	}
-	
+
 	/**
 	 * Get the shared reuse group.<br>
 	 * Only used on items.
@@ -128,7 +128,7 @@ public class TimeStamp
 	{
 		return _group;
 	}
-	
+
 	/**
 	 * Gets the remaining time.
 	 * @return the remaining time for this time stamp to expire
@@ -146,10 +146,10 @@ public class TimeStamp
 			_stamp = null;
 			remainingTime = TimeSpan.Zero;
 		}
-		
+
 		return remainingTime;
 	}
-	
+
 	/**
 	 * Verifies if the reuse delay has passed.
 	 * @return {@code true} if this time stamp has expired, {@code false} otherwise
@@ -160,13 +160,13 @@ public class TimeStamp
 		{
 			return false;
 		}
-		
+
 		bool hasNotPassed = DateTime.UtcNow < _stamp.Value;
 		if (!hasNotPassed)
 		{
 			_stamp = null;
 		}
-		
+
 		return hasNotPassed;
 	}
 }

@@ -41,14 +41,15 @@ public struct RequestSetAllyCrestPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (player.getAllyId() is null)
+        int? allyId = player.getAllyId();
+        if (allyId is null)
         {
             player.sendPacket(SystemMessageId.ACCESS_ONLY_FOR_THE_CHANNEL_FOUNDER);
             return ValueTask.CompletedTask;
         }
 
-        Clan leaderClan = ClanTable.getInstance().getClan(player.getAllyId().Value);
-        if (player.getClanId() != leaderClan.getId() || !player.isClanLeader())
+        Clan? leaderClan = ClanTable.getInstance().getClan(allyId.Value);
+        if (leaderClan == null || player.getClanId() != leaderClan.getId() || !player.isClanLeader())
         {
             player.sendPacket(SystemMessageId.ACCESS_ONLY_FOR_THE_CHANNEL_FOUNDER);
             return ValueTask.CompletedTask;

@@ -173,7 +173,7 @@ public static class SkillOperateTypeUtil
 	 */
 	public static bool isSelfContinuous(this SkillOperateType skillOperateType)
 	{
-		return (skillOperateType == SkillOperateType.A3);
+		return skillOperateType == SkillOperateType.A3;
 	}
 	
 	/**
@@ -182,7 +182,7 @@ public static class SkillOperateTypeUtil
 	 */
 	public static bool isPassive(this SkillOperateType skillOperateType)
 	{
-		return (skillOperateType == SkillOperateType.P);
+		return skillOperateType == SkillOperateType.P;
 	}
 	
 	/**
@@ -191,7 +191,7 @@ public static class SkillOperateTypeUtil
 	 */
 	public static bool isToggle(this SkillOperateType skillOperateType)
 	{
-		return (skillOperateType == SkillOperateType.T) || (skillOperateType == SkillOperateType.TG) || (skillOperateType == SkillOperateType.AU);
+		return skillOperateType == SkillOperateType.T || skillOperateType == SkillOperateType.TG || skillOperateType == SkillOperateType.AU;
 	}
 	
 	/**
@@ -200,7 +200,7 @@ public static class SkillOperateTypeUtil
 	 */
 	public static bool isAura(this SkillOperateType skillOperateType)
 	{
-		return (skillOperateType == SkillOperateType.A5) || (skillOperateType == SkillOperateType.A6) || (skillOperateType == SkillOperateType.AU);
+		return skillOperateType == SkillOperateType.A5 || skillOperateType == SkillOperateType.A6 || skillOperateType == SkillOperateType.AU;
 	}
 	
 	/**
@@ -208,7 +208,7 @@ public static class SkillOperateTypeUtil
 	 */
 	public static bool isHidingMessages(this SkillOperateType skillOperateType)
 	{
-		return (skillOperateType == SkillOperateType.P) || (skillOperateType == SkillOperateType.A5) || (skillOperateType == SkillOperateType.A6) || (skillOperateType == SkillOperateType.TG);
+		return skillOperateType == SkillOperateType.P || skillOperateType == SkillOperateType.A5 || skillOperateType == SkillOperateType.A6 || skillOperateType == SkillOperateType.TG;
 	}
 	
 	/**
@@ -216,8 +216,8 @@ public static class SkillOperateTypeUtil
 	 */
 	public static bool isNotBroadcastable(this SkillOperateType skillOperateType)
 	{
-		return (skillOperateType == SkillOperateType.AU) || (skillOperateType == SkillOperateType.A5) || 
-		       (skillOperateType == SkillOperateType.A6) || (skillOperateType == SkillOperateType.TG) || (skillOperateType == SkillOperateType.T);
+		return skillOperateType == SkillOperateType.AU || skillOperateType == SkillOperateType.A5 || 
+		       skillOperateType == SkillOperateType.A6 || skillOperateType == SkillOperateType.TG || skillOperateType == SkillOperateType.T;
 	}
 	
 	/**
@@ -247,7 +247,7 @@ public static class SkillOperateTypeUtil
 	 */
 	public static bool isSynergy(this SkillOperateType skillOperateType)
 	{
-		return (skillOperateType == SkillOperateType.A6);
+		return skillOperateType == SkillOperateType.A6;
 	}
 	
 	public static bool isFlyType(this SkillOperateType skillOperateType)

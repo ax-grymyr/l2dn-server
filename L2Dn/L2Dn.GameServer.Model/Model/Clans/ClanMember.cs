@@ -89,7 +89,7 @@ public class ClanMember
 	 */
 	public void setPlayer(Player player)
 	{
-		if ((player == null) && (_player != null))
+		if (player == null && _player != null)
 		{
 			// this is here to keep the data when the player logs off
 			_name = _player.getName();
@@ -108,7 +108,7 @@ public class ClanMember
 		if (player != null)
 		{
 			_clan.addSkillEffects(player);
-			if ((_clan.getLevel() > 3) && player.isClanLeader())
+			if (_clan.getLevel() > 3 && player.isClanLeader())
 			{
 				SiegeManager.getInstance().addSiegeSkills(player);
 			}
@@ -135,11 +135,11 @@ public class ClanMember
 	 */
 	public bool isOnline()
 	{
-		if ((_player == null) || !_player.isOnline())
+		if (_player == null || !_player.isOnline())
 		{
 			return false;
 		}
-		if ((_player.getClient() == null) || _player.getClient().IsDetached)
+		if (_player.getClient() == null || _player.getClient().IsDetached)
 		{
 			return false;
 		}
@@ -761,12 +761,12 @@ public class ClanMember
 			}
 		}
 
-		if (player.isNoble() && (pledgeClass < SocialClass.ELDER))
+		if (player.isNoble() && pledgeClass < SocialClass.ELDER)
 		{
 			pledgeClass = SocialClass.ELDER;
 		}
 
-		if (player.isHero() && (pledgeClass < SocialClass.COUNT))
+		if (player.isHero() && pledgeClass < SocialClass.COUNT)
 		{
 			pledgeClass = SocialClass.COUNT;
 		}
@@ -815,7 +815,7 @@ public class ClanMember
 
 	public int getOnlineStatus()
 	{
-		return !isOnline() ? 0 : _onlineTime >= (Config.ALT_CLAN_MEMBERS_TIME_FOR_BONUS) ? 2 : 1;
+		return !isOnline() ? 0 : _onlineTime >= Config.ALT_CLAN_MEMBERS_TIME_FOR_BONUS ? 2 : 1;
 	}
 
 	public bool isRewardClaimed(ClanRewardType type)

@@ -20,6 +20,6 @@ public class OpPledgeSkillCondition: ISkillCondition
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         Clan? clan = caster.getClan();
-        return (clan != null) && (clan.getLevel() >= _level);
+        return clan != null && clan.getLevel() >= _level;
     }
 }

@@ -31,7 +31,7 @@ public class ZoneCuboid: ZoneForm
 	
 	public override bool isInsideZone(int x, int y, int z)
 	{
-		return _r.Contains(x, y) && (z >= _z1) && (z <= _z2);
+		return _r.Contains(x, y) && z >= _z1 && z <= _z2;
 	}
 	
 	public override bool intersectsRectangle(int ax1, int ax2, int ay1, int ay2)

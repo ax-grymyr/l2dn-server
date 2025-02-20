@@ -223,13 +223,13 @@ public class Skill: IIdentifiable
 		_subordinationAbnormalType = set.getEnum("subordinationAbnormalType", AbnormalType.NONE);
 		TimeSpan abnormalTime = TimeSpan.FromSeconds(set.getDouble("abnormalTime", 0));
 		if (Config.ENABLE_MODIFY_SKILL_DURATION && Config.SKILL_DURATION_LIST.ContainsKey(_id) &&
-		    (_operateType != SkillOperateType.T))
+		    _operateType != SkillOperateType.T)
 		{
-			if ((_level < 100) || (_level > 140))
+			if (_level < 100 || _level > 140)
 			{
 				abnormalTime = Config.SKILL_DURATION_LIST[_id];
 			}
-			else if ((_level >= 100) && (_level < 140))
+			else if (_level >= 100 && _level < 140)
 			{
 				abnormalTime += Config.SKILL_DURATION_LIST[_id];
 			}
@@ -498,7 +498,7 @@ public class Skill: IIdentifiable
 	 */
 	public Set<AbnormalVisualEffect> getAbnormalVisualEffects()
 	{
-		return (_abnormalVisualEffects != null) ? _abnormalVisualEffects : new();
+		return _abnormalVisualEffects != null ? _abnormalVisualEffects : new();
 	}
 
 	/**
@@ -507,7 +507,7 @@ public class Skill: IIdentifiable
 	 */
 	public bool hasAbnormalVisualEffects()
 	{
-		return (_abnormalVisualEffects != null) && !_abnormalVisualEffects.isEmpty();
+		return _abnormalVisualEffects != null && !_abnormalVisualEffects.isEmpty();
 	}
 
 	/**
@@ -880,9 +880,9 @@ public class Skill: IIdentifiable
 	 */
 	public int getAffectLimit()
 	{
-		if ((_affectLimit[0] > 0) || (_affectLimit[1] > 0))
+		if (_affectLimit[0] > 0 || _affectLimit[1] > 0)
 		{
-			return (_affectLimit[0] + Rnd.get(_affectLimit[1]));
+			return _affectLimit[0] + Rnd.get(_affectLimit[1]);
 		}
 
 		return 0;
@@ -969,7 +969,7 @@ public class Skill: IIdentifiable
 	 */
 	public bool isTransformation()
 	{
-		return (_abnormalType == AbnormalType.TRANSFORM) || (_abnormalType == AbnormalType.CHANGEBODY);
+		return _abnormalType == AbnormalType.TRANSFORM || _abnormalType == AbnormalType.CHANGEBODY;
 	}
 
 	public int getEffectPoint()
@@ -1009,7 +1009,7 @@ public class Skill: IIdentifiable
 
 	public bool is7Signs()
 	{
-		return (_id > 4360) && (_id < 4367);
+		return _id > 4360 && _id < 4367;
 	}
 
 	/**
@@ -1068,7 +1068,7 @@ public class Skill: IIdentifiable
 		    !checkConditions(SkillConditionScope.TARGET, creature, @object))
 		{
 			if (sendMessage &&
-			    !((creature == @object) && isBad())) // Self targeted bad skills should not send a message.
+			    !(creature == @object && isBad())) // Self targeted bad skills should not send a message.
 			{
 				SystemMessagePacket sm =
 					new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
@@ -1212,7 +1212,7 @@ public class Skill: IIdentifiable
 	public bool hasEffects(EffectScope effectScope)
 	{
 		List<AbstractEffect> effects = _effectLists.get(effectScope);
-		return (effects != null) && effects.Count != 0;
+		return effects != null && effects.Count != 0;
 	}
 
 	/**
@@ -1225,7 +1225,7 @@ public class Skill: IIdentifiable
 	public void applyEffectScope(EffectScope? effectScope, BuffInfo info, bool applyInstantEffects,
 		bool addContinuousEffects)
 	{
-		if ((effectScope != null) && hasEffects(effectScope.Value))
+		if (effectScope != null && hasEffects(effectScope.Value))
 		{
 			foreach (AbstractEffect effect in getEffects(effectScope.Value))
 			{
@@ -1325,7 +1325,7 @@ public class Skill: IIdentifiable
 		if (!self && !passive)
 		{
 			BuffInfo info = new BuffInfo(effector, effected, this, !instant, item, null);
-			if (addContinuousEffects && (abnormalTime > TimeSpan.Zero))
+			if (addContinuousEffects && abnormalTime > TimeSpan.Zero)
 			{
 				info.setAbnormalTime(abnormalTime);
 			}
@@ -1350,7 +1350,7 @@ public class Skill: IIdentifiable
 				}
 
 				// Check for mesmerizing debuffs and increase resist level.
-				if (_isDebuff && (_basicProperty != BasicProperty.NONE) && effected.hasBasicPropertyResist())
+				if (_isDebuff && _basicProperty != BasicProperty.NONE && effected.hasBasicPropertyResist())
 				{
 					BasicPropertyResist resist = effected.getBasicPropertyResist(_basicProperty);
 					resist.increaseResistLevel();
@@ -1381,7 +1381,7 @@ public class Skill: IIdentifiable
 			                                     Formulas.calcEffectSuccess(effector, effector, this)));
 
 			BuffInfo info = new BuffInfo(effector, effector, this, !instant, item, null);
-			if (addContinuousEffects && (abnormalTime > TimeSpan.Zero))
+			if (addContinuousEffects && abnormalTime > TimeSpan.Zero)
 			{
 				info.setAbnormalTime(abnormalTime);
 			}
@@ -1582,7 +1582,7 @@ public class Skill: IIdentifiable
 	public bool canBeStolen()
 	{
 		return !isPassive() && !isToggle() && !_isDebuff && !_irreplacableBuff && !isHeroSkill() && !isGMSkill() &&
-		       !(isStatic() && (getId() != (int)CommonSkill.CARAVANS_SECRET_MEDICINE)) && _canBeDispelled;
+		       !(isStatic() && getId() != (int)CommonSkill.CARAVANS_SECRET_MEDICINE) && _canBeDispelled;
 	}
 
 	public bool isClanSkill()
@@ -1740,13 +1740,13 @@ public class Skill: IIdentifiable
 	public Skill? getAttachedSkill(Creature creature)
 	{
 		// If character is double casting, return double cast skill.
-		if ((_doubleCastSkill > 0) && creature.isAffected(EffectFlag.DOUBLE_CAST))
+		if (_doubleCastSkill > 0 && creature.isAffected(EffectFlag.DOUBLE_CAST))
 		{
 			return SkillData.getInstance().getSkill(getDoubleCastSkill(), getLevel(), getSubLevel());
 		}
 
 		// Default toggle group ID, assume nothing attached.
-		if ((_attachToggleGroupId <= 0) || (_attachSkills == null))
+		if (_attachToggleGroupId <= 0 || _attachSkills == null)
 		{
 			return null;
 		}

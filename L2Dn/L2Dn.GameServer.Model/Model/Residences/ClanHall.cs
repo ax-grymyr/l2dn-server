@@ -184,7 +184,7 @@ public class ClanHall: AbstractResidence
 	public override int getOwnerId()
 	{
 		Clan owner = _owner;
-		return (owner != null) ? owner.getId() : 0;
+		return owner != null ? owner.getId() : 0;
 	}
 
 	/**
@@ -213,7 +213,7 @@ public class ClanHall: AbstractResidence
 			}
 
 			int failDays = getCostFailDay();
-			DateTime time = failDays > 0 ? (failDays > 8 ? DateTime.UtcNow : _paidUntil.AddDays(failDays + 1)) : _paidUntil;
+			DateTime time = failDays > 0 ? failDays > 8 ? DateTime.UtcNow : _paidUntil.AddDays(failDays + 1) : _paidUntil;
 
 			_checkPaymentTask = ThreadPool.schedule(new CheckPaymentTask(this), Algorithms.Max(TimeSpan.Zero, time - DateTime.UtcNow));
 		}
@@ -260,7 +260,7 @@ public class ClanHall: AbstractResidence
 	 */
 	public DateTime getNextPayment()
 	{
-		return (_checkPaymentTask != null) ? DateTime.UtcNow + _checkPaymentTask.getDelay() : DateTime.MinValue;
+		return _checkPaymentTask != null ? DateTime.UtcNow + _checkPaymentTask.getDelay() : DateTime.MinValue;
 	}
 
 	public Location3D getOwnerLocation()

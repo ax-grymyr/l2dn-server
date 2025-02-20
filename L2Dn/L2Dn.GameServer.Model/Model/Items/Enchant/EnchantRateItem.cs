@@ -62,11 +62,11 @@ public class EnchantRateItem
 		{
 			return false;
 		}
-		else if ((_slot != 0) && ((item.getBodyPart() & _slot) == 0))
+		else if (_slot != 0 && (item.getBodyPart() & _slot) == 0)
 		{
 			return false;
 		}
-		else if ((_isMagicWeapon != null) && (item.isMagicWeapon() != _isMagicWeapon.Value))
+		else if (_isMagicWeapon != null && item.isMagicWeapon() != _isMagicWeapon.Value)
 		{
 			return false;
 		}

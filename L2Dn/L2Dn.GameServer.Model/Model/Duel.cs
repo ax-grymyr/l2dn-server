@@ -358,7 +358,7 @@ public class Duel
 			// Party duels take place in arenas - should be no other players there
 			return false;
 		}
-		else if ((_playerA.getPvpFlag() != PvpFlagStatus.None) || (_playerB.getPvpFlag() != PvpFlagStatus.None))
+		else if (_playerA.getPvpFlag() != PvpFlagStatus.None || _playerB.getPvpFlag() != PvpFlagStatus.None)
 		{
 			if (sendMessage)
 			{
@@ -376,7 +376,7 @@ public class Duel
 	 */
 	public void startDuel()
 	{
-		if ((_playerA == null) || (_playerB == null) || _playerA.isInDuel() || _playerB.isInDuel())
+		if (_playerA == null || _playerB == null || _playerA.isInDuel() || _playerB.isInDuel())
 		{
 			_playerConditions.Clear();
 			DuelManager.getInstance().removeDuel(this);
@@ -411,7 +411,7 @@ public class Duel
 			
 			foreach (Door door in _duelInstance.getDoors())
 			{
-				if ((door != null) && !door.isOpen())
+				if (door != null && !door.isOpen())
 				{
 					door.openMe();
 				}
@@ -618,7 +618,7 @@ public class Duel
 			return;
 		}
 		
-		if (_partyDuel && (_playerA.getParty() != null))
+		if (_partyDuel && _playerA.getParty() != null)
 		{
 			foreach (Player temp in _playerA.getParty().getMembers())
 			{
@@ -643,7 +643,7 @@ public class Duel
 			return;
 		}
 		
-		if (_partyDuel && (_playerB.getParty() != null))
+		if (_partyDuel && _playerB.getParty() != null)
 		{
 			foreach (Player temp in _playerB.getParty().getMembers())
 			{
@@ -662,7 +662,7 @@ public class Duel
 	 */
 	public Player getWinner()
 	{
-		if (!_finished || (_playerA == null) || (_playerB == null))
+		if (!_finished || _playerA == null || _playerB == null)
 		{
 			return null;
 		}
@@ -683,7 +683,7 @@ public class Duel
 	 */
 	public Player getLooser()
 	{
-		if (!_finished || (_playerA == null) || (_playerB == null))
+		if (!_finished || _playerA == null || _playerB == null)
 		{
 			return null;
 		}
@@ -709,7 +709,7 @@ public class Duel
 			return;
 		}
 		
-		if (_partyDuel && (looser.getParty() != null))
+		if (_partyDuel && looser.getParty() != null)
 		{
 			foreach (Player temp in looser.getParty().getMembers())
 			{
@@ -759,7 +759,7 @@ public class Duel
 	 */
 	public void endDuel(DuelResult result)
 	{
-		if ((_playerA == null) || (_playerB == null))
+		if (_playerA == null || _playerB == null)
 		{
 			// clean up
 			_playerConditions.Clear();
@@ -835,7 +835,7 @@ public class Duel
 	public DuelResult checkEndDuelCondition()
 	{
 		// one of the players might leave during duel
-		if ((_playerA == null) || (_playerB == null))
+		if (_playerA == null || _playerB == null)
 		{
 			return DuelResult.CANCELED;
 		}
@@ -868,7 +868,7 @@ public class Duel
 		else if (!_partyDuel)
 		{
 			// Duel was interrupted e.g.: player was attacked by mobs / other players
-			if ((_playerA.getDuelState() == DUELSTATE_INTERRUPTED) || (_playerB.getDuelState() == DUELSTATE_INTERRUPTED))
+			if (_playerA.getDuelState() == DUELSTATE_INTERRUPTED || _playerB.getDuelState() == DUELSTATE_INTERRUPTED)
 			{
 				return DuelResult.CANCELED;
 			}
@@ -975,7 +975,7 @@ public class Duel
 		}
 		else
 		{
-			if ((player != _playerA) && (player != _playerB))
+			if (player != _playerA && player != _playerB)
 			{
 				LOGGER.Warn("Error in onPlayerDefeat(): player is not part of this 1vs1 duel");
 			}
@@ -1005,7 +1005,7 @@ public class Duel
 		
 		// this player is leaving his party during party duel
 		// if he's either playerA or playerB cancel the duel and port the players back
-		if ((player == _playerA) || (player == _playerB))
+		if (player == _playerA || player == _playerB)
 		{
 			foreach (PlayerCondition cond in _playerConditions.Values)
 			{

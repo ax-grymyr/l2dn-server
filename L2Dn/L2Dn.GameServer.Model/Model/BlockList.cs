@@ -21,11 +21,7 @@ public class BlockList
 	public BlockList(Player owner)
 	{
 		_owner = owner;
-		_blockList = OFFLINE_LIST.get(owner.ObjectId);
-		if (_blockList == null)
-		{
-			_blockList = loadList(_owner.ObjectId);
-		}
+		_blockList = OFFLINE_LIST.get(owner.ObjectId) ?? loadList(_owner.ObjectId);
 	}
 
 	private void addToBlockList(int target)

@@ -4,9 +4,9 @@ public class BuilderObject: Builder
 {
     private readonly int _index;
 
-public     BuilderObject(int id)
+    public BuilderObject(int id)
     {
-        if ((id < 1) || (id > 9))
+        if (id < 1 || id > 9)
         {
             throw new ArgumentOutOfRangeException(nameof(id), "Illegal Id: " + id);
         }
@@ -21,7 +21,7 @@ public     BuilderObject(int id)
 
     public override string toString(params object[] @params)
     {
-        if ((@params == null) || (@params.Length == 0))
+        if (@params == null || @params.Length == 0)
         {
             return "null";
         }

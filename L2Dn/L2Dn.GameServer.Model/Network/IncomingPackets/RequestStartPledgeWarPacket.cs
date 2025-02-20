@@ -124,7 +124,7 @@ public struct RequestStartPledgeWarPacket: IIncomingPacket<GameSession>
 					}
 				}
 
-				connection.Send(new PledgeReceiveWarListPacket(player.getClan(), 0));
+				connection.Send(new PledgeReceiveWarListPacket(clanDeclaringWar, 0));
 				return ValueTask.CompletedTask;
 			}
 		}
@@ -148,7 +148,7 @@ public struct RequestStartPledgeWarPacket: IIncomingPacket<GameSession>
 			}
 		}
 
-		connection.Send(new PledgeReceiveWarListPacket(player.getClan(), 0));
+		connection.Send(new PledgeReceiveWarListPacket(clanDeclaringWar, 0));
 		return ValueTask.CompletedTask;
     }
 }

@@ -182,7 +182,7 @@ public class WarehouseItem
 	 */
 	public bool isWeapon()
 	{
-		return (_item is Weapon);
+		return _item is Weapon;
 	}
 	
 	/**
@@ -190,7 +190,7 @@ public class WarehouseItem
 	 */
 	public bool isArmor()
 	{
-		return (_item is Armor);
+		return _item is Armor;
 	}
 	
 	/**
@@ -198,7 +198,7 @@ public class WarehouseItem
 	 */
 	public bool isEtcItem()
 	{
-		return (_item is EtcItem);
+		return _item is EtcItem;
 	}
 	
 	/**

@@ -14,39 +14,39 @@ public class ControllableAirShip : AirShip
 {
 	private const int HELM = 13556;
 	private const int LOW_FUEL = 40;
-	
-	private int _fuel = 0;
-	private int _maxFuel = 0;
-	
+
+	private int _fuel;
+	private int _maxFuel;
+
 	private readonly int _ownerId;
 	private int _helmId;
-	private Player _captain = null;
-	
+	private Player _captain;
+
 	private ScheduledFuture _consumeFuelTask;
 	private ScheduledFuture _checkTask;
-	
+
 	public ControllableAirShip(CreatureTemplate template, int ownerId): base(template)
 	{
 		InstanceType = InstanceType.ControllableAirShip;
 		_ownerId = ownerId;
 		_helmId = IdManager.getInstance().getNextId(); // not forget to release !
 	}
-	
+
 	public override ControllableAirShipStat getStat()
 	{
 		return (ControllableAirShipStat)base.getStat();
 	}
-	
+
 	public override void initCharStat()
 	{
 		setStat(new ControllableAirShipStat(this));
 	}
-	
+
 	public override bool canBeControlled()
 	{
 		return base.canBeControlled() && !isInDock();
 	}
-	
+
 	public override bool isOwner(Player player)
 	{
 		if (_ownerId == 0)
@@ -55,32 +55,32 @@ public class ControllableAirShip : AirShip
 		}
 		return player.getClanId() == _ownerId || player.ObjectId == _ownerId;
 	}
-	
+
 	public override int getOwnerId()
 	{
 		return _ownerId;
 	}
-	
+
 	public override bool isCaptain(Player player)
 	{
 		return _captain != null && player == _captain;
 	}
-	
+
 	public override int getCaptainId()
 	{
 		return _captain != null ? _captain.ObjectId : 0;
 	}
-	
+
 	public override int getHelmObjectId()
 	{
 		return _helmId;
 	}
-	
+
 	public override int getHelmItemId()
 	{
 		return HELM;
 	}
-	
+
 	public override bool setCaptain(Player player)
 	{
 		if (player == null)
@@ -172,12 +172,12 @@ public class ControllableAirShip : AirShip
 		updateAbnormalVisualEffects();
 		return true;
 	}
-	
+
 	public override int getFuel()
 	{
 		return _fuel;
 	}
-	
+
 	public override void setFuel(int f)
 	{
 		int old = _fuel;
@@ -193,7 +193,7 @@ public class ControllableAirShip : AirShip
 		{
 			_fuel = f;
 		}
-		
+
 		if (_fuel == 0 && old > 0)
 		{
 			broadcastToPassengers(new SystemMessagePacket(SystemMessageId.THE_AIRSHIP_S_FUEL_EP_HAS_RUN_OUT_THE_AIRSHIP_S_SPEED_HAS_DECREASED_GREATLY));
@@ -203,41 +203,41 @@ public class ControllableAirShip : AirShip
 			broadcastToPassengers(new SystemMessagePacket(SystemMessageId.THE_AIRSHIP_S_FUEL_EP_WILL_SOON_RUN_OUT));
 		}
 	}
-	
+
 	public override int getMaxFuel()
 	{
 		return _maxFuel;
 	}
-	
+
 	public override void setMaxFuel(int mf)
 	{
 		_maxFuel = mf;
 	}
-	
+
 	public override void oustPlayer(Player player)
 	{
 		if (player == _captain)
 		{
 			setCaptain(null); // no need to broadcast userinfo here
 		}
-		
+
 		base.oustPlayer(player);
 	}
-	
+
 	public override void onSpawn()
 	{
 		base.onSpawn();
 		_checkTask = ThreadPool.scheduleAtFixedRate(new CheckTask(this), 60000, 10000);
 		_consumeFuelTask = ThreadPool.scheduleAtFixedRate(new ConsumeFuelTask(this), 60000, 60000);
 	}
-	
+
 	public override bool deleteMe()
 	{
 		if (!base.deleteMe())
 		{
 			return false;
 		}
-		
+
 		if (_checkTask != null)
 		{
 			_checkTask.cancel(false);
@@ -248,11 +248,11 @@ public class ControllableAirShip : AirShip
 			_consumeFuelTask.cancel(false);
 			_consumeFuelTask = null;
 		}
-		
+
 		broadcastPacket(new DeleteObjectPacket(_helmId));
 		return true;
 	}
-	
+
 	public override void sendInfo(Player player)
 	{
 		base.sendInfo(player);
@@ -261,7 +261,7 @@ public class ControllableAirShip : AirShip
 			_captain.sendInfo(player);
 		}
 	}
-	
+
 	protected class ConsumeFuelTask : Runnable
 	{
 		private readonly ControllableAirShip _ship;
@@ -270,7 +270,7 @@ public class ControllableAirShip : AirShip
 		{
 			_ship = ship;
 		}
-		
+
 		public void run()
 		{
 			int fuel = _ship.getFuel();
@@ -281,13 +281,13 @@ public class ControllableAirShip : AirShip
 				{
 					fuel = 0;
 				}
-				
+
 				_ship.setFuel(fuel);
 				_ship.updateAbnormalVisualEffects();
 			}
 		}
 	}
-	
+
 	protected class CheckTask : Runnable
 	{
 		private readonly ControllableAirShip _ship;
@@ -296,7 +296,7 @@ public class ControllableAirShip : AirShip
 		{
 			_ship = ship;
 		}
-		
+
 		public void run()
 		{
 			if (_ship.isSpawned() && _ship.isEmpty() && !_ship.isInDock())
@@ -306,7 +306,7 @@ public class ControllableAirShip : AirShip
 			}
 		}
 	}
-	
+
 	protected class DecayTask : Runnable
 	{
 		private readonly ControllableAirShip _ship;
@@ -315,7 +315,7 @@ public class ControllableAirShip : AirShip
 		{
 			_ship = ship;
 		}
-		
+
 		public void run()
 		{
 			_ship.deleteMe();

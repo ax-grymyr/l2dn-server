@@ -32,9 +32,9 @@ public class ShortCuts : IRestorable
 	
 	public Shortcut getShortCut(int slot, int page)
 	{
-		Shortcut sc = _shortCuts.get(slot + (page * MAX_SHORTCUTS_PER_BAR));
+		Shortcut sc = _shortCuts.get(slot + page * MAX_SHORTCUTS_PER_BAR);
 		// Verify shortcut
-		if ((sc != null) && (sc.getType() == ShortcutType.ITEM) && (_owner.getInventory().getItemByObjectId(sc.getId()) == null))
+		if (sc != null && sc.getType() == ShortcutType.ITEM && _owner.getInventory().getItemByObjectId(sc.getId()) == null)
 		{
 			deleteShortCut(sc.getSlot(), sc.getPage());
 			sc = null;
@@ -55,7 +55,7 @@ public class ShortCuts : IRestorable
 			}
 			shortcut.setSharedReuseGroup(item.getSharedReuseGroup());
 		}
-		registerShortCutInDb(shortcut, _shortCuts.put(shortcut.getSlot() + (shortcut.getPage() * MAX_SHORTCUTS_PER_BAR), shortcut));
+		registerShortCutInDb(shortcut, _shortCuts.put(shortcut.getSlot() + shortcut.getPage() * MAX_SHORTCUTS_PER_BAR, shortcut));
 	}
 	
 	private void registerShortCutInDb(Shortcut shortcut, Shortcut oldShortCut)
@@ -103,8 +103,8 @@ public class ShortCuts : IRestorable
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void deleteShortCut(int slot, int page)
 	{
-		Shortcut old = _shortCuts.remove(slot + (page * MAX_SHORTCUTS_PER_BAR));
-		if ((old == null) || (_owner == null))
+		Shortcut old = _shortCuts.remove(slot + page * MAX_SHORTCUTS_PER_BAR);
+		if (old == null || _owner == null)
 		{
 			return;
 		}
@@ -116,7 +116,7 @@ public class ShortCuts : IRestorable
 	{
 		foreach (Shortcut shortcut in _shortCuts.Values)
 		{
-			if ((shortcut.getType() == ShortcutType.ITEM) && (shortcut.getId() == objectId))
+			if (shortcut.getType() == ShortcutType.ITEM && shortcut.getId() == objectId)
 			{
 				deleteShortCut(shortcut.getSlot(), shortcut.getPage());
 				break;
@@ -163,7 +163,7 @@ public class ShortCuts : IRestorable
 				int id = record.ShortCutId;
 				int level = record.SkillLevel;
 				int subLevel = record.SkillSubLevel;
-				_shortCuts.put(slot + (page * MAX_SHORTCUTS_PER_BAR), new Shortcut(slot, page, type, id, level, subLevel, 1));
+				_shortCuts.put(slot + page * MAX_SHORTCUTS_PER_BAR, new Shortcut(slot, page, type, id, level, subLevel, 1));
 			}
 		}
 		catch (Exception e)
@@ -204,7 +204,7 @@ public class ShortCuts : IRestorable
 		// Update all the shortcuts for this skill
 		foreach (Shortcut sc in _shortCuts.Values)
 		{
-			if ((sc.getId() == skillId) && (sc.getType() == ShortcutType.SKILL))
+			if (sc.getId() == skillId && sc.getType() == ShortcutType.SKILL)
 			{
 				Shortcut newsc = new Shortcut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(), skillLevel, skillSubLevel, 1);
 				newsc.setAutoUse(sc.isAutoUse());

@@ -33,7 +33,7 @@ public class PurgePlayerHolder
 
 	public int getRemainingKeys()
 	{
-		if ((_keys == 0) && (_remainingKeys == 0))
+		if (_keys == 0 && _remainingKeys == 0)
 		{
 			_remainingKeys = 40;
 		}

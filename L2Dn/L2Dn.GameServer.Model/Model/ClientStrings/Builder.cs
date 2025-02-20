@@ -26,10 +26,10 @@ public abstract class Builder
         for (; index1 < arrayLength; index1++)
         {
             c = array[index1];
-            if ((c == '$') && (index1 < (arrayLength - 2)))
+            if (c == '$' && index1 < arrayLength - 2)
             {
                 c2 = array[index1 + 1];
-                if ((c2 == 'c') || (c2 == 's') || (c2 == 'p') || (c2 == 'C') || (c2 == 'S') || (c2 == 'P'))
+                if (c2 == 'c' || c2 == 's' || c2 == 'p' || c2 == 'C' || c2 == 'S' || c2 == 'P')
                 {
                     c3 = array[index1 + 2];
                     if (char.IsDigit(c3))

@@ -90,17 +90,17 @@ public class Territory
 		
 		double dx1 = p1._x - x;
 		double dx2 = p2._x - x;
-		if ((dx1 >= 0) && (dx2 >= 0))
+		if (dx1 >= 0 && dx2 >= 0)
 		{
 			return true;
 		}
 		
-		if ((dx1 < 0) && (dx2 < 0))
+		if (dx1 < 0 && dx2 < 0)
 		{
 			return false;
 		}
 		
-		double dx0 = (dy1 * (p1._x - p2._x)) / (p1._y - p2._y);
+		double dx0 = dy1 * (p1._x - p2._x) / (p1._y - p2._y);
 		return dx0 <= dx1;
 	}
 	
@@ -116,7 +116,7 @@ public class Territory
 				intersectCount++;
 			}
 		}
-		return (intersectCount % 2) == 1;
+		return intersectCount % 2 == 1;
 	}
 	
 	public Location3D? getRandomPoint()
@@ -145,7 +145,7 @@ public class Territory
 				foreach (Point p1 in _points)
 				{
 					double distance = double.Hypot(p1._x - x, p1._y - y);
-					if ((curdistance == 0) || (distance < curdistance))
+					if (curdistance == 0 || distance < curdistance)
 					{
 						curdistance = distance;
 						zmin = p1._zmin;

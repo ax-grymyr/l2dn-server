@@ -40,7 +40,7 @@ public class Doppelganger : Attackable
     {
         base.onSpawn();
 
-        if (_copySummonerEffects && (getSummoner() != null))
+        if (_copySummonerEffects && getSummoner() != null)
         {
             foreach (BuffInfo summonerInfo in getSummoner().getEffectList().getEffects())
             {
@@ -58,7 +58,7 @@ public class Doppelganger : Attackable
 	{
 		if (followSummoner)
 		{
-			if ((getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE) || (getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE))
+			if (getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE || getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE)
 			{
 				setRunning();
 				getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, getSummoner());
@@ -77,7 +77,7 @@ public class Doppelganger : Attackable
 
 	public void stopAttackTask()
 	{
-		if ((_attackTask != null) && !_attackTask.isCancelled() && !_attackTask.isDone())
+		if (_attackTask != null && !_attackTask.isCancelled() && !_attackTask.isDone())
 		{
 			_attackTask.cancel(false);
 			_attackTask = null;
@@ -116,7 +116,7 @@ public class Doppelganger : Attackable
 
 	public override bool isAutoAttackable(Creature attacker)
 	{
-		return (getSummoner() != null) ? getSummoner().isAutoAttackable(attacker) : base.isAutoAttackable(attacker);
+		return getSummoner() != null ? getSummoner().isAutoAttackable(attacker) : base.isAutoAttackable(attacker);
 	}
 
 	public override void doAttack(double damage, Creature target, Skill skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
@@ -127,7 +127,7 @@ public class Doppelganger : Attackable
 
 	public override void sendDamageMessage(Creature target, Skill skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
 	{
-		if (miss || (getSummoner() == null) || !getSummoner().isPlayer())
+		if (miss || getSummoner() == null || !getSummoner().isPlayer())
 		{
 			return;
 		}
@@ -135,7 +135,7 @@ public class Doppelganger : Attackable
 		// Prevents the double spam of system messages, if the target is the owning player.
 		if (target.ObjectId != getSummoner().ObjectId)
 		{
-			if (getActingPlayer().isInOlympiadMode() && (target.isPlayer()) && ((Player) target).isInOlympiadMode() && (((Player) target).getOlympiadGameId() == getActingPlayer().getOlympiadGameId()))
+			if (getActingPlayer().isInOlympiadMode() && target.isPlayer() && ((Player) target).isInOlympiadMode() && ((Player) target).getOlympiadGameId() == getActingPlayer().getOlympiadGameId())
 			{
 				OlympiadGameManager.getInstance().notifyCompetitorDamage(getSummoner().getActingPlayer(), damage);
 			}
@@ -151,7 +151,7 @@ public class Doppelganger : Attackable
 				sm.Params.addNpcName(this);
 				sm.Params.addString(target.getName());
 				sm.Params.addInt(damage);
-				sm.Params.addPopup(target.ObjectId, ObjectId, (damage * -1));
+				sm.Params.addPopup(target.ObjectId, ObjectId, damage * -1);
 			}
 
 			sendPacket(sm);
@@ -162,7 +162,7 @@ public class Doppelganger : Attackable
 	{
 		base.reduceCurrentHp(damage, attacker, skill);
 
-		if ((getSummoner() != null) && getSummoner().isPlayer() && (attacker != null) && !isDead() && !isHpBlocked())
+		if (getSummoner() != null && getSummoner().isPlayer() && attacker != null && !isDead() && !isHpBlocked())
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
 			sm.Params.addNpcName(this);

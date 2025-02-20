@@ -176,7 +176,7 @@ public class CreatureAI: AbstractAI
 	 */
 	protected override void onIntentionAttack(Creature target)
 	{
-		if ((target == null) || !target.isTargetable())
+		if (target == null || !target.isTargetable())
 		{
 			clientActionFailed();
 			return;
@@ -245,7 +245,7 @@ public class CreatureAI: AbstractAI
 	 */
 	protected override void onIntentionCast(Skill skill, WorldObject? target, Item? item, bool forceUse, bool dontMove)
 	{
-		if ((getIntention() == CtrlIntention.AI_INTENTION_REST) && skill.isMagic())
+		if (getIntention() == CtrlIntention.AI_INTENTION_REST && skill.isMagic())
 		{
 			clientActionFailed();
 			return;
@@ -350,7 +350,7 @@ public class CreatureAI: AbstractAI
 			return;
 		}
 
-		if (_actor.isMovementDisabled() || (_actor.getMoveSpeed() <= 0))
+		if (_actor.isMovementDisabled() || _actor.getMoveSpeed() <= 0)
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the Player actor
 			clientActionFailed();
@@ -410,7 +410,7 @@ public class CreatureAI: AbstractAI
 		// Stop the actor auto-attack client side by sending Server->Client packet AutoAttackStop (broadcast)
 		clientStopAutoAttack();
 
-		if (obj.isItem() && (((Item) obj).getItemLocation() != ItemLocation.VOID))
+		if (obj.isItem() && ((Item) obj).getItemLocation() != ItemLocation.VOID)
 		{
 			return;
 		}
@@ -421,7 +421,7 @@ public class CreatureAI: AbstractAI
 		// Set the AI pick up target
 		setTarget(obj);
 
-		if ((obj.getX() == 0) && (obj.getY() == 0))
+		if (obj.getX() == 0 && obj.getY() == 0)
 		{
 			// LOGGER.warning("Object in coords 0,0 - using a temporary fix");
 			obj.setXYZ(getActor().getX(), getActor().getY(), getActor().getZ() + 5);
@@ -666,7 +666,7 @@ public class CreatureAI: AbstractAI
 	protected override void onEvtArrivedBlocked(Location location)
 	{
 		// If the Intention was AI_INTENTION_MOVE_TO, set the Intention to AI_INTENTION_ACTIVE
-		if ((getIntention() == CtrlIntention.AI_INTENTION_MOVE_TO) || (getIntention() == CtrlIntention.AI_INTENTION_CAST))
+		if (getIntention() == CtrlIntention.AI_INTENTION_MOVE_TO || getIntention() == CtrlIntention.AI_INTENTION_CAST)
 		{
 			setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		}
@@ -824,7 +824,7 @@ public class CreatureAI: AbstractAI
 
 		if (!_actor.IsInsideRadius2D(worldPosition.Location2D, offset + _actor.getTemplate().getCollisionRadius()))
 		{
-			if (_actor.isMovementDisabled() || (_actor.getMoveSpeed() <= 0))
+			if (_actor.isMovementDisabled() || _actor.getMoveSpeed() <= 0)
 			{
 				return true;
 			}
@@ -911,7 +911,7 @@ public class CreatureAI: AbstractAI
 				return false;
 			}
 
-			if (_actor.isMovementDisabled() || (_actor.getMoveSpeed() <= 0))
+			if (_actor.isMovementDisabled() || _actor.getMoveSpeed() <= 0)
 			{
 				// If player is trying attack target but he cannot move to attack target
 				// change his intention to idle
@@ -923,7 +923,7 @@ public class CreatureAI: AbstractAI
 			}
 
 			// while flying there is no move to cast
-			if ((_actor.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST) && _actor.isPlayer() && _actor.checkTransformed(transform => !transform.isCombat()))
+			if (_actor.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST && _actor.isPlayer() && _actor.checkTransformed(transform => !transform.isCombat()))
 			{
 				_actor.sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_CANCELLED);
 				_actor.sendPacket(ActionFailedPacket.STATIC_PACKET);

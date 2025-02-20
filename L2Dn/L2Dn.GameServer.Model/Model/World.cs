@@ -39,8 +39,8 @@ public sealed class World
 	public const int WORLD_X_MIN = (TILE_X_MIN - TILE_ZERO_COORD_X) * TILE_SIZE;
 	public const int WORLD_Y_MIN = (TILE_Y_MIN - TILE_ZERO_COORD_Y) * TILE_SIZE;
 
-	public const int WORLD_X_MAX = ((TILE_X_MAX - TILE_ZERO_COORD_X) + 1) * TILE_SIZE;
-	public const int WORLD_Y_MAX = ((TILE_Y_MAX - TILE_ZERO_COORD_Y) + 1) * TILE_SIZE;
+	public const int WORLD_X_MAX = (TILE_X_MAX - TILE_ZERO_COORD_X + 1) * TILE_SIZE;
+	public const int WORLD_Y_MAX = (TILE_Y_MAX - TILE_ZERO_COORD_Y + 1) * TILE_SIZE;
 
 	/** Calculated offset used so top left region is 0,0 */
 	public const int OFFSET_X = -(WORLD_X_MIN >> SHIFT_BY);
@@ -94,11 +94,11 @@ public sealed class World
 			for (int ry = 0; ry <= REGIONS_Y; ry++)
 			{
 				List<WorldRegion> surroundingRegions = new List<WorldRegion>();
-				for (int sx = rx - 1; sx <= (rx + 1); sx++)
+				for (int sx = rx - 1; sx <= rx + 1; sx++)
 				{
-					for (int sy = ry - 1; sy <= (ry + 1); sy++)
+					for (int sy = ry - 1; sy <= ry + 1; sy++)
 					{
-						if (((sx >= 0) && (sx < REGIONS_X) && (sy >= 0) && (sy < REGIONS_Y)))
+						if (sx >= 0 && sx < REGIONS_X && sy >= 0 && sy < REGIONS_Y)
 						{
 							surroundingRegions.Add(_worldRegions[sx][sy]);
 						}
@@ -336,7 +336,7 @@ public sealed class World
 					if (ai != null)
 					{
 						ai.describeStateToPlayer((Player) @object);
-						if (wo.isMonster() && (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE))
+						if (wo.isMonster() && ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 						{
 							ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 						}
@@ -353,7 +353,7 @@ public sealed class World
 					if (ai != null)
 					{
 						ai.describeStateToPlayer((Player) wo);
-						if (@object.isMonster() && (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE))
+						if (@object.isMonster() && ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 						{
 							ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 						}
@@ -391,7 +391,7 @@ public sealed class World
 	 */
 	public void removeVisibleObject(WorldObject obj, WorldRegion oldRegion)
 	{
-		if ((obj == null) || (oldRegion == null))
+		if (obj == null || oldRegion == null)
 		{
 			return;
 		}
@@ -461,7 +461,7 @@ public sealed class World
 	public void switchRegion(WorldObject obj, WorldRegion newRegion)
 	{
 		WorldRegion? oldRegion = obj.getWorldRegion();
-		if ((oldRegion == null) || (oldRegion == newRegion))
+		if (oldRegion == null || oldRegion == newRegion)
 		{
 			return;
 		}
@@ -547,7 +547,7 @@ public sealed class World
 
 			foreach (WorldObject wo in visibleObjects)
 			{
-				if ((wo == obj) || (wo.getInstanceWorld() != obj.getInstanceWorld()))
+				if (wo == obj || wo.getInstanceWorld() != obj.getInstanceWorld())
 				{
 					continue;
 				}
@@ -561,7 +561,7 @@ public sealed class World
 						if (ai != null)
 						{
 							ai.describeStateToPlayer((Player) obj);
-							if (wo.isMonster() && (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE))
+							if (wo.isMonster() && ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 							{
 								ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 							}
@@ -578,7 +578,7 @@ public sealed class World
 						if (ai != null)
 						{
 							ai.describeStateToPlayer((Player) wo);
-							if (obj.isMonster() && (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE))
+							if (obj.isMonster() && ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 							{
 								ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 							}
@@ -637,7 +637,7 @@ public sealed class World
 
 			foreach (WorldObject wo in visibleObjects)
 			{
-				if ((wo == @object) || !(wo is T))
+				if (wo == @object || !(wo is T))
 				{
 					continue;
 				}
@@ -699,7 +699,7 @@ public sealed class World
 
 			foreach (WorldObject wo in visibleObjects)
 			{
-				if ((wo == obj) || !(wo is T))
+				if (wo == obj || !(wo is T))
 				{
 					continue;
 				}

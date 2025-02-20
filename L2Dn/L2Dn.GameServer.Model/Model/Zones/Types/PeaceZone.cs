@@ -24,7 +24,7 @@ public class PeaceZone : ZoneType
 			Player player = creature.getActingPlayer();
 			// PVP possible during siege, now for siege participants only
 			// Could also check if this town is in siege, or if any siege is going on
-			if ((player.getSiegeState() != 0) && (Config.PEACE_ZONE_MODE == 1))
+			if (player.getSiegeState() != 0 && Config.PEACE_ZONE_MODE == 1)
 			{
 				return;
 			}
@@ -73,7 +73,7 @@ public class PeaceZone : ZoneType
 		{
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				if ((player != null) && isInsideZone(player))
+				if (player != null && isInsideZone(player))
 				{
 					revalidateInZone(player);
 

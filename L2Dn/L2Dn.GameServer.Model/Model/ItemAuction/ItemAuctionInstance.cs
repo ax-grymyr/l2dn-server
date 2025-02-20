@@ -183,7 +183,7 @@ public class ItemAuctionInstance
 				{
 					case ItemAuctionState.CREATED:
 					{
-						if (auctions[0].getStartingTime() < (DateTime.UtcNow + START_TIME_SPACE))
+						if (auctions[0].getStartingTime() < DateTime.UtcNow + START_TIME_SPACE)
 						{
 							currentAuction = auctions[0];
 							nextAuction = createAuction(DateTime.UtcNow + START_TIME_SPACE);
@@ -234,7 +234,7 @@ public class ItemAuctionInstance
 				}
 				foreach (ItemAuction auction in auctions)
 				{
-					if ((auction.getStartingTime() > currentTime) && (currentAuction != auction))
+					if (auction.getStartingTime() > currentTime && currentAuction != auction)
 					{
 						nextAuction = auction;
 						break;
@@ -253,7 +253,7 @@ public class ItemAuctionInstance
 		_currentAuction = currentAuction;
 		_nextAuction = nextAuction;
 
-		if ((currentAuction != null) && (currentAuction.getAuctionState() != ItemAuctionState.FINISHED))
+		if (currentAuction != null && currentAuction.getAuctionState() != ItemAuctionState.FINISHED)
 		{
 			if (currentAuction.getAuctionState() == ItemAuctionState.STARTED)
 			{
@@ -525,10 +525,10 @@ public class ItemAuctionInstance
 				return null;
 			}
 
-			if ((auctionState == ItemAuctionState.FINISHED) && (startingTime <
-			                                                    (DateTime.UtcNow -
-			                                                     TimeSpan.FromDays(
-				                                                     Config.ALT_ITEM_AUCTION_EXPIRED_AFTER))))
+			if (auctionState == ItemAuctionState.FINISHED && startingTime <
+                DateTime.UtcNow -
+                TimeSpan.FromDays(
+                    Config.ALT_ITEM_AUCTION_EXPIRED_AFTER))
 			{
 				LOGGER.Info(GetType().Name + ": Clearing expired auction: " + auctionId);
 				ctx.ItemAuctions.Where(r => r.AuctionId == auctionId).ExecuteDelete();

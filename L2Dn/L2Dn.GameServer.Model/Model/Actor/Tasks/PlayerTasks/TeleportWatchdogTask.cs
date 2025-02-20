@@ -17,7 +17,7 @@ public class TeleportWatchdogTask: Runnable
 	
 	public void run()
 	{
-		if ((_player == null) || !_player.isTeleporting())
+		if (_player == null || !_player.isTeleporting())
 		{
 			return;
 		}

@@ -46,11 +46,11 @@ public class Monster: Attackable
     {
         if (isFakePlayer())
         {
-            return Config.FAKE_PLAYER_AUTO_ATTACKABLE || isInCombat() || attacker.isMonster() || (getScriptValue() > 0);
+            return Config.FAKE_PLAYER_AUTO_ATTACKABLE || isInCombat() || attacker.isMonster() || getScriptValue() > 0;
         }
 
         // Check if the Monster target is aggressive
-        if (Config.GUARD_ATTACK_AGGRO_MOB && getTemplate().isAggressive() && (attacker is Guard))
+        if (Config.GUARD_ATTACK_AGGRO_MOB && getTemplate().isAggressive() && attacker is Guard)
         {
             return true;
         }
@@ -79,7 +79,7 @@ public class Monster: Attackable
 
     public override void onSpawn()
     {
-        if (!isTeleporting() && (_master != null))
+        if (!isTeleporting() && _master != null)
         {
             setRandomWalking(false);
             setIsRaidMinion(_master.isRaid());
@@ -161,7 +161,7 @@ public class Monster: Attackable
      */
     public override bool isWalker()
     {
-        return ((_master == null) ? base.isWalker() : _master.isWalker());
+        return _master == null ? base.isWalker() : _master.isWalker();
     }
 
     /**
@@ -169,7 +169,7 @@ public class Monster: Attackable
      */
     public override bool giveRaidCurse()
     {
-        return (isRaidMinion() && (_master != null)) ? _master.giveRaidCurse() : base.giveRaidCurse();
+        return isRaidMinion() && _master != null ? _master.giveRaidCurse() : base.giveRaidCurse();
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
@@ -177,7 +177,7 @@ public class Monster: Attackable
     {
         // Might need some exceptions here, but it will prevent the monster buffing player bug.
         Monster? target = getLeader();
-        if (!skill.isBad() && (target != null) && target.isPlayer())
+        if (!skill.isBad() && target != null && target.isPlayer())
         {
             abortAllSkillCasters();
             return;

@@ -43,7 +43,7 @@ public class ResidenceHallTeleportZone : ResidenceTeleportZone
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void checkTeleportTask()
 	{
-		if ((_teleTask == null) || _teleTask.isDone())
+		if (_teleTask == null || _teleTask.isDone())
 		{
 			_teleTask = ThreadPool.schedule(new TeleportTask(this), 30000);
 		}

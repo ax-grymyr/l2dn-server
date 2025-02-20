@@ -16,6 +16,6 @@ public class OpUnlockSkillCondition: ISkillCondition
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
-        return (target != null) && (target.isDoor() || (target is Chest));
+        return target != null && (target.isDoor() || target is Chest);
     }
 }

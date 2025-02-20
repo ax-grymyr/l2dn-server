@@ -58,7 +58,7 @@ public class QuestTimer
 
 	public void cancelTask()
 	{
-		if ((_scheduler != null) && !_scheduler.isDone() && !_scheduler.isCancelled())
+		if (_scheduler != null && !_scheduler.isDone() && !_scheduler.isCancelled())
 		{
 			_scheduler.cancel(false);
 			_scheduler = null;
@@ -76,22 +76,22 @@ public class QuestTimer
 	 */
 	public bool equals(Quest quest, string name, Npc npc, Player player)
 	{
-		if ((quest == null) || (quest != _quest))
+		if (quest == null || quest != _quest)
 		{
 			return false;
 		}
 
-		if ((name == null) || !name.equals(_name))
+		if (name == null || !name.equals(_name))
 		{
 			return false;
 		}
 
-		return (npc == _npc) && (player == _player);
+		return npc == _npc && player == _player;
 	}
 
 	public bool isActive()
 	{
-		return (_scheduler != null) && !_scheduler.isCancelled() && !_scheduler.isDone();
+		return _scheduler != null && !_scheduler.isCancelled() && !_scheduler.isDone();
 	}
 
 	public bool isRepeating()

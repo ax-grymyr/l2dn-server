@@ -86,7 +86,7 @@ public abstract class Condition
 	{
 		// Send HTML message if condition has any
 		string html = _parameters.getString("html", null);
-		if ((html != null) && (htmlCallback != null))
+		if (html != null && htmlCallback != null)
 		{
 			// Send HTML only to player who make request to enter
 			htmlCallback(group[0], html);

@@ -85,7 +85,7 @@ public class SummonAI : PlayableAI, Runnable
 	private void thinkAttack()
 	{
 		WorldObject? target = getTarget();
-		Creature? attackTarget = (target != null) && target.isCreature() ? (Creature) target : null;
+		Creature? attackTarget = target != null && target.isCreature() ? (Creature) target : null;
 		if (attackTarget is null || checkTargetLostOrDead(attackTarget))
 		{
 			setTarget(null);
@@ -121,7 +121,7 @@ public class SummonAI : PlayableAI, Runnable
 		}
 
 		WorldObject? target = getCastTarget();
-		if (checkTargetLost(target))
+		if (checkTargetLost(target) || target == null)
 		{
 			setTarget(null);
 			setCastTarget(null);
@@ -144,7 +144,7 @@ public class SummonAI : PlayableAI, Runnable
 	private void thinkPickUp()
 	{
 		WorldObject? target = getTarget();
-		if (checkTargetLost(target))
+		if (checkTargetLost(target) || target == null)
 		{
 			return;
 		}
@@ -161,7 +161,7 @@ public class SummonAI : PlayableAI, Runnable
 	private void thinkInteract()
 	{
 		WorldObject? target = getTarget();
-		if (checkTargetLost(target))
+		if (checkTargetLost(target) || target == null)
 		{
 			return;
 		}
@@ -258,7 +258,7 @@ public class SummonAI : PlayableAI, Runnable
 	private void allServitorsDefend(Creature attacker)
 	{
 		Creature owner = getActor().getOwner();
-		if ((owner != null) && owner.getActingPlayer().hasServitors())
+		if (owner != null && owner.getActingPlayer().hasServitors())
 		{
 			foreach (Summon summon in owner.getActingPlayer().getServitors().Values)
 			{
@@ -284,7 +284,7 @@ public class SummonAI : PlayableAI, Runnable
 
 		Creature owner = getActor().getOwner();
 		// trying to avoid if summon near owner
-		if ((owner != null) && (owner != attacker) && owner.IsInsideRadius3D(_actor, 2 * AVOID_RADIUS))
+		if (owner != null && owner != attacker && owner.IsInsideRadius3D(_actor, 2 * AVOID_RADIUS))
 		{
 			_startAvoid = true;
 		}
@@ -306,7 +306,7 @@ public class SummonAI : PlayableAI, Runnable
 			{
 				summon.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, owner);
 			}
-			else if ((owner != attacker) && !summon.isMoving() && summon.canAttack(attacker, false))
+			else if (owner != attacker && !summon.isMoving() && summon.canAttack(attacker, false))
 			{
 				summon.doAttack(attacker);
 			}
@@ -318,7 +318,7 @@ public class SummonAI : PlayableAI, Runnable
 		if (_startAvoid)
 		{
 			_startAvoid = false;
-			if (!_clientMoving && !_actor.isDead() && !_actor.isMovementDisabled() && (_actor.getMoveSpeed() > 0))
+			if (!_clientMoving && !_actor.isDead() && !_actor.isMovementDisabled() && _actor.getMoveSpeed() > 0)
 			{
 				int ownerX = ((Summon) _actor).getOwner().getX();
 				int ownerY = ((Summon) _actor).getOwner().getY();
@@ -361,7 +361,7 @@ public class SummonAI : PlayableAI, Runnable
 		if (getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
         {
             WorldObject? lastTarget = getTarget();
-			_lastAttack = (lastTarget != null) && lastTarget.isCreature() ? (Creature)lastTarget : null;
+			_lastAttack = lastTarget != null && lastTarget.isCreature() ? (Creature)lastTarget : null;
 		}
 		else
 		{

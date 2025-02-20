@@ -45,7 +45,7 @@ public class DropProtection: Runnable
             return true;
         }
 
-        if ((_owner.getParty() != null) && (_owner.getParty() == actor.getParty()))
+        if (_owner.getParty() != null && _owner.getParty() == actor.getParty())
         {
             return true;
         }

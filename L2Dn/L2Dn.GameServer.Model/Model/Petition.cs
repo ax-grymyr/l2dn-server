@@ -47,7 +47,7 @@ public class Petition
 	{
 		setState(endState);
 		
-		if ((_responder != null) && _responder.isOnline())
+		if (_responder != null && _responder.isOnline())
 		{
 			if (endState == PetitionState.RESPONDER_REJECT)
 			{
@@ -71,7 +71,7 @@ public class Petition
 		}
 		
 		// End petition consultation and inform them, if they are still online. And if petitioner is online, enable Evaluation button
-		if ((_petitioner != null) && _petitioner.isOnline())
+		if (_petitioner != null && _petitioner.isOnline())
 		{
 			_petitioner.sendPacket(SystemMessageId.GLOBAL_SUPPORT_HAS_ALREADY_RESPONDED_TO_YOUR_REQUEST_PLEASE_GIVE_US_FEEDBACK_ON_THE_SERVICE_QUALITY);
 			_petitioner.sendPacket(PetitionVotePacket.STATIC_PACKET);
@@ -119,7 +119,7 @@ public class Petition
 	public void sendPetitionerPacket<TPacket>(TPacket responsePacket)
 		where TPacket: struct, IOutgoingPacket
 	{
-		if ((_petitioner == null) || !_petitioner.isOnline())
+		if (_petitioner == null || !_petitioner.isOnline())
 		{
 			// Allows petitioners to see the results of their petition when
 			// they log back into the game.
@@ -134,7 +134,7 @@ public class Petition
 	public void sendResponderPacket<TPacket>(TPacket responsePacket)
 		where TPacket: struct, IOutgoingPacket
 	{
-		if ((_responder == null) || !_responder.isOnline())
+		if (_responder == null || !_responder.isOnline())
 		{
 			endPetitionConsultation(PetitionState.RESPONDER_MISSING);
 			return;

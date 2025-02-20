@@ -254,11 +254,11 @@ public class Instance : IIdentifiable, INamable
 		if (_players.isEmpty())
 		{
 			TimeSpan emptyTime = _template.getEmptyDestroyTime();
-			if ((_template.getDuration() == TimeSpan.Zero) || (emptyTime == TimeSpan.Zero))
+			if (_template.getDuration() == TimeSpan.Zero || emptyTime == TimeSpan.Zero)
 			{
 				destroy();
 			}
-			else if ((emptyTime >= TimeSpan.Zero) && (_emptyDestroyTask == null) && (getRemainingTime() < emptyTime))
+			else if (emptyTime >= TimeSpan.Zero && _emptyDestroyTask == null && getRemainingTime() < emptyTime)
 			{
 				_emptyDestroyTask = ThreadPool.schedule(destroy, emptyTime);
 			}
@@ -642,7 +642,7 @@ public class Instance : IIdentifiable, INamable
 		List<Npc> result = new();
 		foreach (Npc npc in _npcs)
 		{
-			if ((npc.getCurrentHp() > 0) && Array.IndexOf(id, npc.getId()) >= 0)
+			if (npc.getCurrentHp() > 0 && Array.IndexOf(id, npc.getId()) >= 0)
 			{
 				result.Add(npc);
 			}
@@ -698,7 +698,7 @@ public class Instance : IIdentifiable, INamable
 		int count = 0;
 		foreach (Npc npc in _npcs)
 		{
-			if ((npc.getCurrentHp() > 0) && Array.IndexOf(id, npc.getId()) >= 0)
+			if (npc.getCurrentHp() > 0 && Array.IndexOf(id, npc.getId()) >= 0)
 			{
 				count++;
 			}
@@ -787,7 +787,7 @@ public class Instance : IIdentifiable, INamable
 			_cleanUpTask = null;
 		}
 
-		if ((_emptyDestroyTask != null) && (duration.Value < _emptyDestroyTask.getDelay()))
+		if (_emptyDestroyTask != null && duration.Value < _emptyDestroyTask.getDelay())
 		{
 			_emptyDestroyTask.cancel(true);
 			_emptyDestroyTask = null;
@@ -855,7 +855,7 @@ public class Instance : IIdentifiable, INamable
 	public void ejectPlayer(Player player)
 	{
 		Instance? world = player.getInstanceWorld();
-		if ((world != null) && world == this)
+		if (world != null && world == this)
 		{
 			Location3D? loc = _template.getExitLocation(player);
 			if (loc != null)
@@ -902,7 +902,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public TimeSpan? getRemainingTime()
 	{
-		return _endTime is null ? null : (_endTime.Value - DateTime.UtcNow);
+		return _endTime is null ? null : _endTime.Value - DateTime.UtcNow;
 	}
 
 	/**
@@ -968,7 +968,7 @@ public class Instance : IIdentifiable, INamable
 			{
 				InstanceManager.getInstance().setReenterPenalty(playerId, getTemplateId(), time);
 				Player player = World.getInstance().getPlayer(playerId);
-				if ((player != null) && player.isOnline())
+				if (player != null && player.isOnline())
 				{
 					player.sendPacket(msg);
 				}
@@ -1015,7 +1015,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public void onDeath(Player player)
 	{
-		if (!player.isOnEvent() && (_template.getEjectTime() > TimeSpan.Zero))
+		if (!player.isOnEvent() && _template.getEjectTime() > TimeSpan.Zero)
 		{
 			// Send message
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.IF_YOU_ARE_NOT_RESURRECTED_IN_S1_MIN_YOU_WILL_BE_TELEPORTED_OUT_OF_THE_INSTANCE_ZONE);

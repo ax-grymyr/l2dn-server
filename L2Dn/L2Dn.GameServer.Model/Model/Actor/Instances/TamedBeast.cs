@@ -164,7 +164,7 @@ public class TamedBeast: FeedableBeast
 
 	public void castBeastSkills()
 	{
-		if ((_owner == null) || (_beastSkills == null))
+		if (_owner == null || _beastSkills == null)
 		{
 			return;
 		}
@@ -173,7 +173,7 @@ public class TamedBeast: FeedableBeast
 		foreach (Skill skill in _beastSkills)
 		{
 			ThreadPool.schedule(new buffCast(this, skill), delay);
-			delay += (TimeSpan.FromMilliseconds(100) + skill.getHitTime());
+			delay += TimeSpan.FromMilliseconds(100) + skill.getHitTime();
 		}
 		ThreadPool.schedule(new buffCast(this, null), delay);
 	}
@@ -284,7 +284,7 @@ public class TamedBeast: FeedableBeast
 	public void onOwnerGotAttacked(Creature attacker)
 	{
 		// check if the owner is no longer around...if so, despawn
-		if ((_owner == null) || !_owner.isOnline())
+		if (_owner == null || !_owner.isOnline())
 		{
 			deleteMe();
 			return;
@@ -307,7 +307,7 @@ public class TamedBeast: FeedableBeast
 			return;
 		}
 
-		float HPRatio = ((float) _owner.getCurrentHp()) / _owner.getMaxHp();
+		float HPRatio = (float) _owner.getCurrentHp() / _owner.getMaxHp();
 
 		// if the owner has a lot of HP, then debuff the enemy with a random debuff among the available skills
 		// use of more than one debuff at this moment is acceptable
@@ -316,7 +316,7 @@ public class TamedBeast: FeedableBeast
 			foreach (Skill skill in getTemplate().getSkills().Values)
 			{
 				// if the skill is a debuff, check if the attacker has it already [ attacker.getEffect(Skill skill) ]
-				if (skill.isDebuff() && (Rnd.get(3) < 1) && ((attacker != null) && attacker.isAffectedBySkill(skill.getId())))
+				if (skill.isDebuff() && Rnd.get(3) < 1 && attacker != null && attacker.isAffectedBySkill(skill.getId()))
 				{
 					sitCastAndFollow(skill, attacker);
 				}
@@ -336,7 +336,7 @@ public class TamedBeast: FeedableBeast
 			foreach (Skill skill in getTemplate().getSkills().Values)
 			{
 				// if the skill is a buff, check if the owner has it already [ owner.getEffect(Skill skill) ]
-				if ((Rnd.get(5) < chance) && skill.hasEffectType(EffectType.CPHEAL, EffectType.HEAL, EffectType.MANAHEAL_BY_LEVEL, EffectType.MANAHEAL_PERCENT))
+				if (Rnd.get(5) < chance && skill.hasEffectType(EffectType.CPHEAL, EffectType.HEAL, EffectType.MANAHEAL_BY_LEVEL, EffectType.MANAHEAL_PERCENT))
 				{
 					sitCastAndFollow(skill, _owner);
 				}
@@ -380,7 +380,7 @@ public class TamedBeast: FeedableBeast
 			if (_tamedBeast._isFreyaBeast)
 			{
 				item = owner.getInventory().getItemByItemId(foodTypeSkillId);
-				if ((item != null) && (item.getCount() >= 1))
+				if (item != null && item.getCount() >= 1)
 				{
 					owner.destroyItem("BeastMob", item, 1, _tamedBeast, true);
 					_tamedBeast.broadcastPacket(new SocialActionPacket(_tamedBeast.ObjectId, 3));
@@ -406,7 +406,7 @@ public class TamedBeast: FeedableBeast
 				}
 
 				// if the owner has enough food, call the item handler (use the food and triffer all necessary actions)
-				if ((item != null) && (item.getCount() >= 1))
+				if (item != null && item.getCount() >= 1)
 				{
 					WorldObject oldTarget = owner.getTarget();
 					owner.setTarget(_tamedBeast);
@@ -420,7 +420,7 @@ public class TamedBeast: FeedableBeast
 				{
 					// if the owner has no food, the beast immediately despawns, except when it was only
 					// newly spawned. Newly spawned beasts can last up to 5 minutes
-					if (_tamedBeast.getRemainingTime() < (MAX_DURATION - 300000))
+					if (_tamedBeast.getRemainingTime() < MAX_DURATION - 300000)
 					{
 						_tamedBeast.setRemainingTime(-1);
 					}
@@ -452,7 +452,7 @@ public class TamedBeast: FeedableBeast
 			Player owner = _tamedBeast.getOwner();
 
 			// check if the owner is no longer around...if so, despawn
-			if ((owner == null) || !owner.isOnline())
+			if (owner == null || !owner.isOnline())
 			{
 				_tamedBeast.deleteMe();
 				return;
@@ -496,7 +496,7 @@ public class TamedBeast: FeedableBeast
 				}
 			}
 			// if the owner has less than 60% of this beast's available buff, cast a random buff
-			if (((_numBuffs * 2) / 3) > totalBuffsOnOwner)
+			if (_numBuffs * 2 / 3 > totalBuffsOnOwner)
 			{
 				_tamedBeast.sitCastAndFollow(buffToGive, owner);
 			}
@@ -507,7 +507,7 @@ public class TamedBeast: FeedableBeast
 
 	public override void onAction(Player player, bool interact)
 	{
-		if ((player == null) || !canTarget(player))
+		if (player == null || !canTarget(player))
 		{
 			return;
 		}
@@ -520,7 +520,7 @@ public class TamedBeast: FeedableBeast
 		}
 		else if (interact)
 		{
-			if (isAutoAttackable(player) && (Math.Abs(player.getZ() - getZ()) < 100))
+			if (isAutoAttackable(player) && Math.Abs(player.getZ() - getZ()) < 100)
 			{
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
 			}

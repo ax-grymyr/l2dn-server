@@ -19,7 +19,7 @@ public class PEvasionRateFinalizer: StatFunction
 		if (creature.isPlayer())
 		{
 			// [Square(DEX)] * 5 + level;
-			baseValue += (Math.Sqrt(creature.getDEX()) * 5) + level;
+			baseValue += Math.Sqrt(creature.getDEX()) * 5 + level;
 			if (level > 69)
 			{
 				baseValue += level - 69;
@@ -56,10 +56,10 @@ public class PEvasionRateFinalizer: StatFunction
 		else
 		{
 			// [Square(DEX)] * 5 + level;
-			baseValue += (Math.Sqrt(creature.getDEX()) * 5) + level;
+			baseValue += Math.Sqrt(creature.getDEX()) * 5 + level;
 			if (level > 69)
 			{
-				baseValue += (level - 69) + 2;
+				baseValue += level - 69 + 2;
 			}
 		}
 
@@ -71,9 +71,9 @@ public class PEvasionRateFinalizer: StatFunction
 	{
 		if (isBlessed)
 		{
-			return (0.3 * Math.Max(enchantLevel - 3, 0)) + (0.3 * Math.Max(enchantLevel - 6, 0));
+			return 0.3 * Math.Max(enchantLevel - 3, 0) + 0.3 * Math.Max(enchantLevel - 6, 0);
 		}
 
-		return (0.2 * Math.Max(enchantLevel - 3, 0)) + (0.2 * Math.Max(enchantLevel - 6, 0));
+		return 0.2 * Math.Max(enchantLevel - 3, 0) + 0.2 * Math.Max(enchantLevel - 6, 0);
 	}
 }

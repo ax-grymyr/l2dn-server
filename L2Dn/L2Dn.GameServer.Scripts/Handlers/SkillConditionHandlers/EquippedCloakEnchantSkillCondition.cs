@@ -20,12 +20,12 @@ public class EquippedCloakEnchantSkillCondition: ISkillCondition
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
-        if ((caster == null) || !caster.isPlayer())
+        if (caster == null || !caster.isPlayer())
         {
             return false;
         }
 
-        Item? cloak = caster.getInventory().getPaperdollItem(Inventory.PAPERDOLL_CLOAK);
+        Item? cloak = caster.getInventory()?.getPaperdollItem(Inventory.PAPERDOLL_CLOAK);
         if (cloak == null)
         {
             return false;

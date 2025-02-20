@@ -24,7 +24,7 @@ public class Merchant: Folk
         return base.isAutoAttackable(attacker);
     }
 
-    public override string getHtmlPath(int npcId, int value, Player player)
+    public override string getHtmlPath(int npcId, int value, Player? player)
     {
         string pom;
         if (value == 0)
@@ -46,7 +46,7 @@ public class Merchant: Folk
 
     public void showBuyWindow(Player player, int value, bool applyCastleTax)
     {
-        ProductList buyList = BuyListData.getInstance().getBuyList(value);
+        ProductList? buyList = BuyListData.getInstance().getBuyList(value);
         if (buyList == null)
         {
             LOGGER.Warn("BuyList not found! BuyListId:" + value);
@@ -63,7 +63,7 @@ public class Merchant: Folk
 
         player.setInventoryBlockingStatus(true);
 
-        player.sendPacket(new ExBuySellListPacket(buyList, player, (applyCastleTax) ? getCastleTaxRate(TaxType.BUY) : 0));
+        player.sendPacket(new ExBuySellListPacket(buyList, player, applyCastleTax ? getCastleTaxRate(TaxType.BUY) : 0));
         player.sendPacket(new ExBuySellListPacket(player, false));
         player.sendPacket(new ExBuySellListPacket(false));
     }

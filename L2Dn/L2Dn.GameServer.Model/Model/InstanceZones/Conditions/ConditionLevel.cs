@@ -25,6 +25,6 @@ public class ConditionLevel: Condition
 
 	protected override bool test(Player player, Npc npc)
 	{
-		return (player.getLevel() >= _min) && (player.getLevel() <= _max);
+		return player.getLevel() >= _min && player.getLevel() <= _max;
 	}
 }

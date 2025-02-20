@@ -28,7 +28,7 @@ public class Radar
 	{
 		foreach (RadarMarker rm in _markers)
 		{
-			if ((rm._x == x) && (rm._y == y) && (rm._z == z))
+			if (rm._x == x && rm._y == y && rm._z == z)
 			{
 				_markers.remove(rm);
 			}
@@ -83,10 +83,10 @@ public class Radar
 		{
 			int prime = 31;
 			int result = 1;
-			result = (prime * result) + _type;
-			result = (prime * result) + _x;
-			result = (prime * result) + _y;
-			result = (prime * result) + _z;
+			result = prime * result + _type;
+			result = prime * result + _x;
+			result = prime * result + _y;
+			result = prime * result + _z;
 			return result;
 		}
 		
@@ -102,7 +102,7 @@ public class Radar
 			}
 			
 			RadarMarker other = (RadarMarker) obj;
-			return (_type == other._type) && (_x == other._x) && (_y == other._y) && (_z == other._z);
+			return _type == other._type && _x == other._x && _y == other._y && _z == other._z;
 		}
 	}
 }

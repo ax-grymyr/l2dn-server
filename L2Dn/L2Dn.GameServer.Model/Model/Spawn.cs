@@ -230,7 +230,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		_spawnedNpcs.Remove(oldNpc);
 		
 		// Check if respawn is possible to prevent multiple respawning caused by lag
-		if (_doRespawn && ((_scheduledCount + _currentCount) < _maximumCount))
+		if (_doRespawn && _scheduledCount + _currentCount < _maximumCount)
 		{
 			// Update the current number of SpawnTask in progress or stand by of this Spawn
 			_scheduledCount++;
@@ -362,7 +362,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 				return null;
 			}
 		}
-		else if ((_location.X == 0) && (_location.Y == 0))
+		else if (_location.X == 0 && _location.Y == 0)
 		{
 			LOGGER.Warn("NPC " + npc + " doesn't have spawn location!");
 			return null;
@@ -377,9 +377,9 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		WaterZone? water = ZoneManager.getInstance().getZone<WaterZone>(newLocation);
 		
 		// If random spawn system is enabled.
-		if (Config.ENABLE_RANDOM_MONSTER_SPAWNS && (_location.Heading != -1) && npc.isMonster() &&
-		    !npc.isQuestMonster() && !WalkingManager.getInstance().isTargeted(npc) && (getInstanceId() == 0) &&
-		    !getTemplate().isUndying() && !npc.isRaid() && !npc.isRaidMinion() && !npc.isFlying() && (water == null) &&
+		if (Config.ENABLE_RANDOM_MONSTER_SPAWNS && _location.Heading != -1 && npc.isMonster() &&
+		    !npc.isQuestMonster() && !WalkingManager.getInstance().isTargeted(npc) && getInstanceId() == 0 &&
+		    !getTemplate().isUndying() && !npc.isRaid() && !npc.isRaidMinion() && !npc.isFlying() && water == null &&
 		    !Config.MOBS_LIST_NOT_RANDOM.Contains(npc.getId()))
 		{
 			int randX = newLocation.X + Rnd.get(Config.MOB_MIN_SPAWN_RANGE, Config.MOB_MAX_SPAWN_RANGE);
@@ -394,7 +394,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		}
 
 		// Correct Z of monsters.
-		if (npc.isMonster() && !npc.isFlying() && (water == null))
+		if (npc.isMonster() && !npc.isFlying() && water == null)
 		{
 			// Do not correct Z distances greater than 300.
 			int geoZ = GeoEngine.getInstance().getHeight(newLocation);

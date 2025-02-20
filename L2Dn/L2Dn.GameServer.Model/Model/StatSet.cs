@@ -288,7 +288,7 @@ public class StatSet
 
 		if (val is int)
 		{
-			return ((int) val);
+			return (int) val;
 		}
 
 		try
@@ -347,7 +347,7 @@ public class StatSet
 		}
 		if (val is int)
 		{
-			return new int[] { ((int) val) };
+			return new int[] { (int) val };
 		}
 		int c = 0;
 		string[] vals = ((string) val).Split(splitOn);
@@ -393,7 +393,7 @@ public class StatSet
 			return;
 		}
 
-		if ((list == null) || list.Count == 0)
+		if (list == null || list.Count == 0)
 		{
 			remove(key);
 			return;
@@ -439,7 +439,7 @@ public class StatSet
 			return;
 		}
 
-		if ((map == null) || map.Count == 0)
+		if (map == null || map.Count == 0)
 		{
 			remove(key);
 			return;
@@ -468,7 +468,7 @@ public class StatSet
 		}
 		if (val is DateTime)
 		{
-			return ((DateTime) val);
+			return (DateTime) val;
 		}
 		try
 		{
@@ -489,7 +489,7 @@ public class StatSet
 		}
 		if (val is long)
 		{
-			return ((long) val);
+			return (long) val;
 		}
 		try
 		{
@@ -510,7 +510,7 @@ public class StatSet
 		}
 		if (val is DateTime)
 		{
-			return ((DateTime) val);
+			return (DateTime) val;
 		}
 		try
 		{
@@ -531,7 +531,7 @@ public class StatSet
 		}
 		if (val is long)
 		{
-			return ((long) val);
+			return (long) val;
 		}
 		try
 		{
@@ -629,7 +629,7 @@ public class StatSet
 		}
 		if (val is double)
 		{
-			return ((double) val);
+			return (double) val;
 		}
 		try
 		{
@@ -764,7 +764,7 @@ public class StatSet
 		where A: class
 	{
 		object obj = _set.get(name);
-		if ((obj == null) || !(obj is A))
+		if (obj == null || !(obj is A))
 		{
 			return null;
 		}
@@ -776,7 +776,7 @@ public class StatSet
 		where A: class
 	{
 		object obj = _set.get(name);
-		if ((obj == null) || !(obj is A))
+		if (obj == null || !(obj is A))
 		{
 			return defaultValue;
 		}
@@ -915,8 +915,8 @@ public class StatSet
 		}
 
 		Map<K, V> originalList = (Map<K, V>)obj;
-		if (originalList.Count != 0 && ((!originalList.Keys.All(k=>k is K)) ||
-		                                (!originalList.Values.All(v=>v is V))))
+		if (originalList.Count != 0 && (!originalList.Keys.All(k=>k is K) ||
+		                                !originalList.Values.All(v=>v is V)))
 		{
 			LOGGER.Warn($"getMap<{typeof(K).Name}, {typeof(V).Name}>(\"{key}\") requested with wrong type: " +
 			            obj.GetType().Name + "!");

@@ -65,7 +65,7 @@ public class MacroList: IRestorable
 		
 		foreach (Shortcut sc in _owner.getAllShortCuts())
 		{
-			if ((sc.getId() == id) && (sc.getType() == ShortcutType.MACRO))
+			if (sc.getId() == id && sc.getType() == ShortcutType.MACRO)
 			{
 				_owner.deleteShortCut(sc.getSlot(), sc.getPage());
 			}
@@ -102,7 +102,7 @@ public class MacroList: IRestorable
 			foreach (MacroCmd cmd in macro.getCommands())
 			{
 				sb.Append((int)cmd.getType() + "," + cmd.getD1() + "," + cmd.getD2());
-				if ((cmd.getCmd() != null) && (cmd.getCmd().Length > 0))
+				if (cmd.getCmd() != null && cmd.getCmd().Length > 0)
 				{
 					sb.Append("," + cmd.getCmd());
 				}

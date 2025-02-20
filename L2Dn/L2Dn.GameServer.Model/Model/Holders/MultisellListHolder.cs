@@ -76,6 +76,6 @@ public class MultisellListHolder: IIdentifiable
 
 	public bool isNpcAllowed(int npcId)
 	{
-		return (_npcsAllowed != null) && _npcsAllowed.Contains(npcId);
+		return _npcsAllowed != null && _npcsAllowed.Contains(npcId);
 	}
 }

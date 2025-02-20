@@ -27,7 +27,7 @@ public class OpSweeperSkillCondition: ISkillCondition
                 {
                     foreach (WorldObject wo in targets)
                     {
-                        if ((wo != null) && wo.isAttackable())
+                        if (wo != null && wo.isAttackable())
                         {
                             Attackable attackable = (Attackable)wo;
                             if (attackable.isDead())

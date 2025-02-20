@@ -135,7 +135,7 @@ public class CreatureStatus
 		if (attacker != null)
 		{
 			Player attackerPlayer = attacker.getActingPlayer();
-			if ((attackerPlayer != null) && attackerPlayer.isGM() && !attackerPlayer.getAccessLevel().canGiveDamage())
+			if (attackerPlayer != null && attackerPlayer.isGM() && !attackerPlayer.getAccessLevel().canGiveDamage())
 			{
 				return;
 			}
@@ -162,7 +162,7 @@ public class CreatureStatus
 			setCurrentHp(Math.Max(_currentHp - value, creature.isUndying() ? 1 : 0));
 		}
 		
-		if ((creature.getCurrentHp() < 0.5)) // Die
+		if (creature.getCurrentHp() < 0.5) // Die
 		{
 			creature.doDie(attacker);
 		}
@@ -185,7 +185,7 @@ public class CreatureStatus
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void startHpMpRegeneration()
 	{
-		if ((_regTask == null) && !_creature.isDead())
+		if (_regTask == null && !_creature.isDead())
 		{
 			// Get the Regeneration period
 			int period = Formulas.getRegeneratePeriod(_creature);
@@ -381,7 +381,7 @@ public class CreatureStatus
 	protected virtual void doRegeneration()
 	{
 		// Modify the current HP/MP of the Creature and broadcast Server->Client packet StatusUpdate
-		if (!_creature.isDead() && ((_currentHp < _creature.getMaxRecoverableHp()) || (_currentMp < _creature.getMaxRecoverableMp())))
+		if (!_creature.isDead() && (_currentHp < _creature.getMaxRecoverableHp() || _currentMp < _creature.getMaxRecoverableMp()))
 		{
 			double newHp = _currentHp + _creature.getStat().getValue(Stat.REGENERATE_HP_RATE);
 			double newMp = _currentMp + _creature.getStat().getValue(Stat.REGENERATE_MP_RATE);

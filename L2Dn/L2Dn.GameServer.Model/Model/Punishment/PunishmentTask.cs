@@ -120,7 +120,7 @@ public class PunishmentTask: Runnable
 		onStart();
 		if (_expirationTime != null) // Has expiration?
 		{
-			_task = ThreadPool.schedule(this, (_expirationTime.Value - DateTime.UtcNow));
+			_task = ThreadPool.schedule(this, _expirationTime.Value - DateTime.UtcNow);
 		}
 	}
 
@@ -209,7 +209,7 @@ public class PunishmentTask: Runnable
 			}
 		}
 
-		if ((_type == PunishmentType.CHAT_BAN) && (_affect == PunishmentAffect.CHARACTER))
+		if (_type == PunishmentType.CHAT_BAN && _affect == PunishmentAffect.CHARACTER)
 		{
 			Player player = World.getInstance().getPlayer(int.Parse(_key));
 			if (player != null)

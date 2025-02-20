@@ -34,7 +34,7 @@ public class Hit
             addMask(AttackType.SHOT_USED);
         }
 		
-        if ((target.isCreature() && ((Creature) target).isHpBlocked()) || (shld > 0))
+        if ((target.isCreature() && ((Creature) target).isHpBlocked()) || shld > 0)
         {
             addMask(AttackType.BLOCKED);
         }

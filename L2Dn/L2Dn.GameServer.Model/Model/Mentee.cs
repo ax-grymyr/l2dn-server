@@ -62,7 +62,7 @@ public class Mentee
 	
     public CharacterClass getClassId()
     {
-        if (isOnline() && (getPlayer().getClassId() != _classId))
+        if (isOnline() && getPlayer().getClassId() != _classId)
         {
             _classId = getPlayer().getClassId();
         }
@@ -71,7 +71,7 @@ public class Mentee
 	
     public int getLevel()
     {
-        if (isOnline() && (getPlayer().getLevel() != _currentLevel))
+        if (isOnline() && getPlayer().getLevel() != _currentLevel)
         {
             _currentLevel = getPlayer().getLevel();
         }
@@ -85,7 +85,7 @@ public class Mentee
 	
     public bool isOnline()
     {
-        return (getPlayer() != null) && (getPlayer().isOnline());
+        return getPlayer() != null && getPlayer().isOnline();
     }
 	
     public CharacterOnlineStatus isOnlineInt()

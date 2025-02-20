@@ -79,7 +79,7 @@ public class SubClassHolder
 
 	public void setExp(long expValue)
 	{
-		if (!_dualClass && (expValue > (ExperienceData.getInstance().getExpForLevel(MAX_LEVEL + 1) - 1)))
+		if (!_dualClass && expValue > ExperienceData.getInstance().getExpForLevel(MAX_LEVEL + 1) - 1)
 		{
 			_exp = ExperienceData.getInstance().getExpForLevel(MAX_LEVEL + 1) - 1;
 			return;
@@ -110,7 +110,7 @@ public class SubClassHolder
 
 	public void setLevel(int levelValue)
 	{
-		if (!_dualClass && (levelValue > MAX_LEVEL))
+		if (!_dualClass && levelValue > MAX_LEVEL)
 		{
 			_level = MAX_LEVEL;
 			return;

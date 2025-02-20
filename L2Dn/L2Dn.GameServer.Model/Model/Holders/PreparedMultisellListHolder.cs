@@ -74,7 +74,7 @@ public class PreparedMultisellListHolder: MultisellListHolder
 
 	public bool checkNpcObjectId(int npcObjectId)
 	{
-		return (_npcObjectId == 0) || (_npcObjectId == npcObjectId);
+		return _npcObjectId == 0 || _npcObjectId == npcObjectId;
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class PreparedMultisellListHolder: MultisellListHolder
 	 */
 	public long getIngredientCount(ItemHolder ingredient)
 	{
-		return (long)((ingredient.getId() == Inventory.ADENA_ID)
+		return (long)(ingredient.getId() == Inventory.ADENA_ID
 			? Math.Round(ingredient.getCount() * getIngredientMultiplier() * (1 + getTaxRate()))
 			: Math.Round(ingredient.getCount() * getIngredientMultiplier()));
 	}

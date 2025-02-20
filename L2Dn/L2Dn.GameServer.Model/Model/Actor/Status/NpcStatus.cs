@@ -21,7 +21,7 @@ public class NpcStatus: CreatureStatus
         if (attacker != null)
         {
             Player attackerPlayer = attacker.getActingPlayer();
-            if ((attackerPlayer != null) && attackerPlayer.isInDuel())
+            if (attackerPlayer != null && attackerPlayer.isInDuel())
             {
                 attackerPlayer.setDuelState(Duel.DUELSTATE_INTERRUPTED);
             }

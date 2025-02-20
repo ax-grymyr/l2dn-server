@@ -129,7 +129,7 @@ public class TimerHolder<T>: TimerHolder
 			getPlayer().removeTimerHolder(this);
 		}
 
-		if ((_task == null) || _task.isCancelled() || _task.isDone())
+		if (_task == null || _task.isCancelled() || _task.isDone())
 		{
 			return;
 		}
@@ -143,7 +143,7 @@ public class TimerHolder<T>: TimerHolder
 	 */
 	public override void cancelTask()
 	{
-		if ((_task != null) && !_task.isDone() && !_task.isCancelled())
+		if (_task != null && !_task.isDone() && !_task.isCancelled())
 		{
 			_task.cancel(false);
 		}
@@ -154,7 +154,7 @@ public class TimerHolder<T>: TimerHolder
 	 */
 	public override TimeSpan? getRemainingTime()
 	{
-		if ((_task == null) || _task.isCancelled() || _task.isDone())
+		if (_task == null || _task.isCancelled() || _task.isDone())
 		{
 			return null;
 		}
@@ -170,7 +170,7 @@ public class TimerHolder<T>: TimerHolder
 	 */
 	public bool isEqual(T @event, Npc npc, Player player)
 	{
-		return _event.Equals(@event) && (getNpc() == npc) && (getPlayer() == player);
+		return _event.Equals(@event) && getNpc() == npc && getPlayer() == player;
 	}
 
 	/**
@@ -179,7 +179,7 @@ public class TimerHolder<T>: TimerHolder
 	 */
 	public bool isEqual(TimerHolder<T> timer)
 	{
-		return _event.Equals(timer._event) && (getNpc() == timer.getNpc()) && (getPlayer() == timer.getPlayer());
+		return _event.Equals(timer._event) && getNpc() == timer.getNpc() && getPlayer() == timer.getPlayer();
 	}
 
 	public override void run()

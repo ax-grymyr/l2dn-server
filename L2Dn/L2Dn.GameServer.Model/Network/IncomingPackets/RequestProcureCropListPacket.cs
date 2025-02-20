@@ -92,7 +92,13 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			ItemTemplate template = ItemData.getInstance().getTemplate(i.getRewardId());
+			ItemTemplate? template = ItemData.getInstance().getTemplate(i.getRewardId());
+            if (template == null)
+            {
+                player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+                return ValueTask.CompletedTask;
+            }
+
 			weight += i.getCount() * template.getWeight();
 			if (!template.isStackable())
 			{

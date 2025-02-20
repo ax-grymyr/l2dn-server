@@ -42,12 +42,12 @@ public class Defender : Attackable
 		Player? player = attacker.getActingPlayer();
 
 		// Check if siege is in progress
-		if (((_fort != null) && _fort.getZone().isActive()) || ((_castle != null) && _castle.getZone().isActive()))
+		if ((_fort != null && _fort.getZone().isActive()) || (_castle != null && _castle.getZone().isActive()))
 		{
-			 int activeSiegeId = (_fort != null) ? _fort.getResidenceId() : _castle.getResidenceId();
+			 int activeSiegeId = _fort != null ? _fort.getResidenceId() : _castle.getResidenceId();
 
 			// Check if player is an enemy of this defender npc
-			if ((player != null) && (((player.getSiegeState() == 2) && !player.isRegisteredOnThisSiegeField(activeSiegeId)) || (player.getSiegeState() == 1) || (player.getSiegeState() == 0)))
+			if (player != null && ((player.getSiegeState() == 2 && !player.isRegisteredOnThisSiegeField(activeSiegeId)) || player.getSiegeState() == 1 || player.getSiegeState() == 0))
 			{
 				return true;
 			}
@@ -90,7 +90,7 @@ public class Defender : Attackable
 
 		_fort = InstanceManagers.FortManager.getInstance().getFort(Location.Location3D);
 		_castle = CastleManager.getInstance().getCastle(Location.Location3D);
-		if ((_fort == null) && (_castle == null))
+		if (_fort == null && _castle == null)
 		{
 			LOGGER.Warn("Defender spawned outside of Fortress or Castle zone!" + this);
 		}
@@ -116,7 +116,7 @@ public class Defender : Attackable
 		else if (interact)
 		{
 			// this max heigth difference might need some tweaking
-			if (isAutoAttackable(player) && !isAlikeDead() && (Math.Abs(player.getZ() - getZ()) < 600))
+			if (isAutoAttackable(player) && !isAlikeDead() && Math.Abs(player.getZ() - getZ()) < 600)
 			{
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
 			}
@@ -138,7 +138,7 @@ public class Defender : Attackable
 			double lowestHpValue = double.MaxValue;
 			foreach (Creature nearby in World.getInstance().getVisibleObjectsInRange<Creature>(this, skill.getCastRange()))
 			{
-				if ((nearby == null) || nearby.isDead() || !GeoEngine.getInstance().canSeeTarget(this, nearby))
+				if (nearby == null || nearby.isDead() || !GeoEngine.getInstance().canSeeTarget(this, nearby))
 				{
 					continue;
 				}
@@ -154,7 +154,7 @@ public class Defender : Attackable
 				else if (nearby.isPlayer())
 				{
 					Player player = (Player) nearby;
-					if ((player.getSiegeState() == 2) && !player.isRegisteredOnThisSiegeField(getScriptValue()))
+					if (player.getSiegeState() == 2 && !player.isRegisteredOnThisSiegeField(getScriptValue()))
 					{
 						double targetHp = nearby.getCurrentHp();
 						if (lowestHpValue > targetHp)
@@ -179,16 +179,16 @@ public class Defender : Attackable
 
 		if (!(attacker is Defender))
 		{
-			if ((damage == 0) && (aggro <= 1) && (attacker.isPlayable()))
+			if (damage == 0 && aggro <= 1 && attacker.isPlayable())
 			{
 				Player? player = attacker.getActingPlayer();
 				// Check if siege is in progress
-				if (((_fort != null) && _fort.getZone().isActive()) || ((_castle != null) && _castle.getZone().isActive()))
+				if ((_fort != null && _fort.getZone().isActive()) || (_castle != null && _castle.getZone().isActive()))
 				{
-					int activeSiegeId = (_fort != null) ? _fort.getResidenceId() : _castle.getResidenceId();
+					int activeSiegeId = _fort != null ? _fort.getResidenceId() : _castle.getResidenceId();
 
 					// Do not add hate on defenders.
-					if ((player.getSiegeState() == 2) && player.isRegisteredOnThisSiegeField(activeSiegeId))
+					if (player.getSiegeState() == 2 && player.isRegisteredOnThisSiegeField(activeSiegeId))
 					{
 						return;
 					}

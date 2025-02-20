@@ -127,7 +127,7 @@ public class TimerExecutor<T>
 		if (!holder.isRepeating())
 		{
 			Set<TimerHolder<T>> timers = _timers.get(holder.getEvent());
-			if ((timers == null) || timers.isEmpty())
+			if (timers == null || timers.isEmpty())
 			{
 				return;
 			}
@@ -167,7 +167,7 @@ public class TimerExecutor<T>
 	public bool hasTimer(T @event, Npc npc, Player player)
 	{
 		Set<TimerHolder<T>> timers = _timers.get(@event);
-		if ((timers == null) || timers.isEmpty())
+		if (timers == null || timers.isEmpty())
 		{
 			return false;
 		}
@@ -190,7 +190,7 @@ public class TimerExecutor<T>
 	public bool cancelTimers(T @event)
 	{
 		Set<TimerHolder<T>> timers = _timers.remove(@event);
-		if ((timers == null) || timers.isEmpty())
+		if (timers == null || timers.isEmpty())
 		{
 			return false;
 		}
@@ -208,7 +208,7 @@ public class TimerExecutor<T>
 	public bool cancelTimer(T @event, Npc npc, Player player)
 	{
 		Set<TimerHolder<T>> timers = _timers.get(@event);
-		if ((timers == null) || timers.isEmpty())
+		if (timers == null || timers.isEmpty())
 		{
 			return false;
 		}

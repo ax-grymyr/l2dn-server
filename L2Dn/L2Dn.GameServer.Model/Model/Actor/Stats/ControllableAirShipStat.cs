@@ -15,7 +15,7 @@ public class ControllableAirShipStat: VehicleStat
 
     public override double getMoveSpeed()
     {
-        if (getActiveChar().isInDock() || (getActiveChar().getFuel() > 0))
+        if (getActiveChar().isInDock() || getActiveChar().getFuel() > 0)
         {
             return base.getMoveSpeed();
         }

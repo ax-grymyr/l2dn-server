@@ -42,7 +42,7 @@ public class ResidenceTeleportZone : ZoneRespawn
 	{
 		foreach (Player player in getPlayersInside())
 		{
-			if ((player != null) && player.isOnline())
+			if (player != null && player.isOnline())
 			{
 				player.teleToLocation(new Location(getSpawnLoc(), 0), 200);
 			}

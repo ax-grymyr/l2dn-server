@@ -53,8 +53,8 @@ public abstract class MatchingRoom: IIdentifiable
 
 	public void addMember(Player player)
 	{
-		if ((player.getLevel() < _minLevel) || (player.getLevel() > _maxLevel) ||
-		    ((_members != null) && (_members.size() >= _maxCount)))
+		if (player.getLevel() < _minLevel || player.getLevel() > _maxLevel ||
+		    (_members != null && _members.size() >= _maxCount))
 		{
 			notifyInvalidCondition(player);
 			return;

@@ -151,7 +151,7 @@ public abstract class Playable: Creature
 		{
 			foreach (QuestState qs in actingPlayer.getNotifyQuestOfDeath())
 			{
-				qs.getQuest().notifyDeath((killer == null ? this : killer), this, qs);
+				qs.getQuest().notifyDeath(killer == null ? this : killer, this, qs);
 			}
 		}
 
@@ -182,11 +182,11 @@ public abstract class Playable: Creature
 	public bool checkIfPvP(Player target)
 	{
 		Player player = getActingPlayer();
-		if ((player == null) //
-			|| (target == null) //
-			|| (player == target) //
-			|| (target.getReputation() < 0) //
-			|| (target.getPvpFlag() != PvpFlagStatus.None) //
+		if (player == null //
+			|| target == null //
+			|| player == target //
+			|| target.getReputation() < 0 //
+			|| target.getPvpFlag() != PvpFlagStatus.None //
 			|| target.isOnDarkSide())
 		{
 			return true;
@@ -197,10 +197,10 @@ public abstract class Playable: Creature
 		}
 
 		Clan playerClan = player.getClan();
-		if ((playerClan != null) && !player.isAcademyMember() && !target.isAcademyMember())
+		if (playerClan != null && !player.isAcademyMember() && !target.isAcademyMember())
 		{
 			ClanWar war = playerClan.getWarWith(target.getClanId());
-			return (war != null) && (war.getState() == ClanWarState.MUTUAL);
+			return war != null && war.getState() == ClanWarState.MUTUAL;
 		}
 		return false;
 	}

@@ -157,6 +157,6 @@ public class EnchantItemRequest: AbstractRequest
 	
 	public override bool isUsing(int objectId)
 	{
-		return (objectId > 0) && ((objectId == _enchantingItemObjectId) || (objectId == _enchantingScrollObjectId) || (objectId == _supportItemObjectId));
+		return objectId > 0 && (objectId == _enchantingItemObjectId || objectId == _enchantingScrollObjectId || objectId == _supportItemObjectId);
 	}
 }

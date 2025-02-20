@@ -77,7 +77,7 @@ public class MapRegion
 		
 		foreach (int[] map in _maps)
 		{
-			if ((map[0] == x) && (map[1] == y))
+			if (map[0] == x && map[1] == y)
 			{
 				return true;
 			}

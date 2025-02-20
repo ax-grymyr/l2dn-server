@@ -19,37 +19,37 @@ namespace L2Dn.GameServer.Model;
 public class ContactList
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ContactList));
-	
+
 	private readonly Player _player;
 	private readonly Set<string> _contacts = new();
-	
+
 	private const string QUERY_ADD = "INSERT INTO character_contacts (charId, contactId) VALUES (?, ?)";
 	private const string QUERY_REMOVE = "DELETE FROM character_contacts WHERE charId = ? and contactId = ?";
 	private const string QUERY_LOAD = "SELECT contactId FROM character_contacts WHERE charId = ?";
-	
+
 	public ContactList(Player player)
 	{
 		_player = player;
 		restore();
 	}
-	
+
 	public void restore()
 	{
 		_contacts.clear();
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _player.ObjectId;
 			var query = ctx.CharacterContacts.Where(r => r.CharacterId == characterId).Select(r => r.ContactId);
 			foreach (var contactId in query)
 			{
-				string contactName = CharInfoTable.getInstance().getNameById(contactId);
-				if ((contactName == null) || contactName.equals(_player.getName()) || (contactId == _player.ObjectId))
+				string? contactName = CharInfoTable.getInstance().getNameById(contactId);
+				if (contactName == null || contactName.equals(_player.getName()) || contactId == _player.ObjectId)
 				{
 					continue;
 				}
-					
+
 				_contacts.add(contactName);
 			}
 		}
@@ -58,11 +58,11 @@ public class ContactList
 			LOGGER.Error("Error found in " + _player.getName() + "'s ContactsList: " + e);
 		}
 	}
-	
+
 	public bool add(string name)
 	{
 		SystemMessagePacket sm;
-		
+
 		int contactId = CharInfoTable.getInstance().getIdByName(name);
 		if (_contacts.Contains(name))
 		{
@@ -97,8 +97,8 @@ public class ContactList
 				}
 			}
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.CharacterContacts.Add(new DbCharacterContact()
@@ -108,9 +108,9 @@ public class ContactList
 			});
 
 			ctx.SaveChanges();
-			
+
 			_contacts.add(name);
-			
+
 			sm = new SystemMessagePacket(SystemMessageId.S1_WAS_SUCCESSFULLY_ADDED_TO_YOUR_CONTACT_LIST);
 			sm.Params.addString(name);
 			_player.sendPacket(sm);
@@ -121,7 +121,7 @@ public class ContactList
 		}
 		return true;
 	}
-	
+
 	public void remove(string name)
 	{
 		int contactId = CharInfoTable.getInstance().getIdByName(name);
@@ -135,15 +135,15 @@ public class ContactList
 			// TODO: Message?
 			return;
 		}
-		
+
 		_contacts.remove(name);
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _player.ObjectId;
 			ctx.CharacterContacts.Where(r => r.CharacterId == characterId && r.ContactId == contactId).ExecuteDelete();
-			
+
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_WAS_SUCCESSFULLY_DELETED_FROM_YOUR_CONTACT_LIST);
 			sm.Params.addString(name);
 			_player.sendPacket(sm);
@@ -153,7 +153,7 @@ public class ContactList
 			LOGGER.Error("Error found in " + _player.getName() + "'s ContactsList: " + e);
 		}
 	}
-	
+
 	public Set<string> getAllContacts()
 	{
 		return _contacts;

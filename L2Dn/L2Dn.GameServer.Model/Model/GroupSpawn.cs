@@ -29,7 +29,7 @@ public class GroupSpawn: Spawn
             }
 
             Location3D newLocation = default;
-            if ((Location.X == 0) && (Location.Y == 0))
+            if (Location.X == 0 && Location.Y == 0)
             {
                 if (getLocationId() == 0)
                 {

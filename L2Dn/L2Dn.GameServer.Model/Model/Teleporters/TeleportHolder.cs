@@ -54,7 +54,7 @@ public class TeleportHolder
 	 */
 	public bool isNoblesse()
 	{
-		return (_type == TeleportType.NOBLES_ADENA) || (_type == TeleportType.NOBLES_TOKEN);
+		return _type == TeleportType.NOBLES_ADENA || _type == TeleportType.NOBLES_TOKEN;
 	}
 
 	/**
@@ -135,7 +135,7 @@ public class TeleportHolder
 				}
 			}
 
-			bool isQuestTeleport = (questZoneId >= 0) && (loc.getQuestZoneId() == questZoneId);
+			bool isQuestTeleport = questZoneId >= 0 && loc.getQuestZoneId() == questZoneId;
 			if (isQuestTeleport)
 			{
 				sbF.Append("<button align=left icon=\"quest\" action=\"bypass -h " + bypass + " " + _name + " " +
@@ -201,7 +201,7 @@ public class TeleportHolder
 				player.sendPacket(msg);
 				return;
 			}
-			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && (player.getReputation() < 0))
+			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && player.getReputation() < 0)
 			{
 				player.sendMessage("Go away, you're not welcome here.");
 				return;
@@ -251,8 +251,8 @@ public class TeleportHolder
 	private bool shouldPayFee(Player player, TeleportLocation loc)
 	{
 		return !isNormalTeleport() ||
-		       (((player.getLevel() > Config.MAX_FREE_TELEPORT_LEVEL) || player.isSubClassActive()) &&
-		        ((loc.getFeeId() != 0) && (loc.getFeeCount() > 0)));
+		       ((player.getLevel() > Config.MAX_FREE_TELEPORT_LEVEL || player.isSubClassActive()) &&
+                   loc.getFeeId() != 0 && loc.getFeeCount() > 0);
 	}
 
 	/**
@@ -267,7 +267,7 @@ public class TeleportHolder
 	{
 		if (isNormalTeleport())
 		{
-			if (!player.isSubClassActive() && (player.getLevel() <= Config.MAX_FREE_TELEPORT_LEVEL))
+			if (!player.isSubClassActive() && player.getLevel() <= Config.MAX_FREE_TELEPORT_LEVEL)
 			{
 				return 0;
 			}
@@ -275,7 +275,7 @@ public class TeleportHolder
 			DateTime cal = DateTime.UtcNow;
 			int hour = cal.Hour;
 			DayOfWeek dayOfWeek = cal.DayOfWeek;
-			if ((hour >= 20) && ((dayOfWeek >= DayOfWeek.Monday) && (dayOfWeek <= DayOfWeek.Tuesday)))
+			if (hour >= 20 && dayOfWeek >= DayOfWeek.Monday && dayOfWeek <= DayOfWeek.Tuesday)
 			{
 				return loc.getFeeCount() / 2;
 			}
@@ -286,7 +286,7 @@ public class TeleportHolder
 
 	private bool isNormalTeleport()
 	{
-		return (_type == TeleportType.NORMAL) || (_type == TeleportType.HUNTING);
+		return _type == TeleportType.NORMAL || _type == TeleportType.HUNTING;
 	}
 
 	/**

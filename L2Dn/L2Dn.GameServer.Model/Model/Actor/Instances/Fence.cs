@@ -21,10 +21,10 @@ public class Fence : WorldObject
 
 	public Fence(int x, int y, string name, int width, int length, int height, FenceState state): base(IdManager.getInstance().getNextId())
 	{
-		_xMin = x - (width / 2);
-		_xMax = x + (width / 2);
-		_yMin = y - (length / 2);
-		_yMax = y + (length / 2);
+		_xMin = x - width / 2;
+		_xMax = x + width / 2;
+		_yMin = y - length / 2;
+		_yMax = y + length / 2;
 		_name = name;
 		_width = width;
 		_length = length;

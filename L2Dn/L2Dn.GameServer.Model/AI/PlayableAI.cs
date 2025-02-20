@@ -21,10 +21,11 @@ public abstract class PlayableAI : CreatureAI
 	}
 
 	protected override void onIntentionAttack(Creature target)
-	{
-		if ((target != null) && target.isPlayable())
+    {
+        Player? targetActingPlayer = target.getActingPlayer();
+		if (target.isPlayable() && targetActingPlayer != null)
 		{
-			if (target.getActingPlayer().isProtectionBlessingAffected() && ((_actor.getActingPlayer().getLevel() - target.getActingPlayer().getLevel()) >= 10) && (_actor.getActingPlayer().getReputation() < 0) && !(target.isInsideZone(ZoneId.PVP)))
+			if (targetActingPlayer.isProtectionBlessingAffected() && _actor.getActingPlayer().getLevel() - targetActingPlayer.getLevel() >= 10 && _actor.getActingPlayer().getReputation() < 0 && !target.isInsideZone(ZoneId.PVP))
 			{
 				// If attacker have karma and have level >= 10 than his target and target have
 				// Newbie Protection Buff,
@@ -33,7 +34,7 @@ public abstract class PlayableAI : CreatureAI
 				return;
 			}
 
-			if (_actor.getActingPlayer().isProtectionBlessingAffected() && ((target.getActingPlayer().getLevel() - _actor.getActingPlayer().getLevel()) >= 10) && (target.getActingPlayer().getReputation() < 0) && !(target.isInsideZone(ZoneId.PVP)))
+			if (_actor.getActingPlayer().isProtectionBlessingAffected() && targetActingPlayer.getLevel() - _actor.getActingPlayer().getLevel() >= 10 && target.getActingPlayer().getReputation() < 0 && !target.isInsideZone(ZoneId.PVP))
 			{
 				// If target have karma and have level >= 10 than his target and actor have
 				// Newbie Protection Buff,
@@ -42,14 +43,14 @@ public abstract class PlayableAI : CreatureAI
 				return;
 			}
 
-			if (target.getActingPlayer().isCursedWeaponEquipped() && (_actor.getActingPlayer().getLevel() <= 20))
+			if (targetActingPlayer.isCursedWeaponEquipped() && _actor.getActingPlayer().getLevel() <= 20)
 			{
 				_actor.getActingPlayer().sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 				clientActionFailed();
 				return;
 			}
 
-			if (_actor.getActingPlayer().isCursedWeaponEquipped() && (target.getActingPlayer().getLevel() <= 20))
+			if (_actor.getActingPlayer().isCursedWeaponEquipped() && targetActingPlayer.getLevel() <= 20)
 			{
 				_actor.getActingPlayer().sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 				clientActionFailed();
@@ -62,9 +63,10 @@ public abstract class PlayableAI : CreatureAI
 
 	protected override void onIntentionCast(Skill skill, WorldObject? target, Item? item, bool forceUse, bool dontMove)
 	{
-		if ((target != null) && (target.isPlayable()) && skill.isBad())
+        Player? targetActingPlayer = target?.getActingPlayer();
+		if (target != null && target.isPlayable() && skill.isBad() && targetActingPlayer != null)
 		{
-			if (target.getActingPlayer().isProtectionBlessingAffected() && ((_actor.getActingPlayer().getLevel() - target.getActingPlayer().getLevel()) >= 10) && (_actor.getActingPlayer().getReputation() < 0) && !target.isInsideZone(ZoneId.PVP))
+			if (targetActingPlayer.isProtectionBlessingAffected() && _actor.getActingPlayer().getLevel() - targetActingPlayer.getLevel() >= 10 && _actor.getActingPlayer().getReputation() < 0 && !target.isInsideZone(ZoneId.PVP))
 			{
 				// If attacker have karma and have level >= 10 than his target and target have
 				// Newbie Protection Buff,
@@ -73,7 +75,7 @@ public abstract class PlayableAI : CreatureAI
 				return;
 			}
 
-			if (_actor.getActingPlayer().isProtectionBlessingAffected() && ((target.getActingPlayer().getLevel() - _actor.getActingPlayer().getLevel()) >= 10) && (target.getActingPlayer().getReputation() < 0) && !target.isInsideZone(ZoneId.PVP))
+			if (_actor.getActingPlayer().isProtectionBlessingAffected() && targetActingPlayer.getLevel() - _actor.getActingPlayer().getLevel() >= 10 && target.getActingPlayer().getReputation() < 0 && !target.isInsideZone(ZoneId.PVP))
 			{
 				// If target have karma and have level >= 10 than his target and actor have
 				// Newbie Protection Buff,
@@ -82,7 +84,7 @@ public abstract class PlayableAI : CreatureAI
 				return;
 			}
 
-			if (target.getActingPlayer().isCursedWeaponEquipped() && ((_actor.getActingPlayer().getLevel() <= 20) || (target.getActingPlayer().getLevel() <= 20)))
+			if (targetActingPlayer.isCursedWeaponEquipped() && (_actor.getActingPlayer().getLevel() <= 20 || targetActingPlayer.getLevel() <= 20))
 			{
 				_actor.getActingPlayer().sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 				clientActionFailed();

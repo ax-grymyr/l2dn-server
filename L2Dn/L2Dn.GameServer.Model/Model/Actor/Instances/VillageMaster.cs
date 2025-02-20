@@ -98,9 +98,9 @@ public class VillageMaster: Folk
 		return base.isAutoAttackable(attacker);
 	}
 
-	public override string getHtmlPath(int npcId, int value, Player player)
+	public override string getHtmlPath(int npcId, int value, Player? player)
 	{
-		string pom = "";
+		string pom;
 		if (value == 0)
 		{
 			pom = npcId.ToString();
@@ -396,7 +396,7 @@ public class VillageMaster: Folk
 					}
 
 					subsAvailable = getAvailableSubClasses(player);
-					if ((subsAvailable != null) && !subsAvailable.isEmpty())
+					if (subsAvailable != null && !subsAvailable.isEmpty())
 					{
 						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_Add.htm", player);
 						StringBuilder content1 = new StringBuilder(200);
@@ -409,7 +409,7 @@ public class VillageMaster: Folk
 					}
 					else
 					{
-						if ((player.getRace() == Race.ELF) || (player.getRace() == Race.DARK_ELF))
+						if (player.getRace() == Race.ELF || player.getRace() == Race.DARK_ELF)
 						{
 							HtmlContent htmlText1 = HtmlContent.LoadFromFile("html/villagemaster/SubClass_Fail_Elves.htm", player);
 							html = new NpcHtmlMessagePacket(ObjectId, 0, htmlText1);
@@ -465,7 +465,7 @@ public class VillageMaster: Folk
 					}
 					break;
 				case 3: // Change/Cancel Subclass - Initial
-					if ((player.getSubClasses() == null) || player.getSubClasses().Count == 0)
+					if (player.getSubClasses() == null || player.getSubClasses().Count == 0)
 					{
 						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_ModifyEmpty.htm", player);
 						break;
@@ -627,14 +627,14 @@ public class VillageMaster: Folk
 					return;
 				case 6: // Change/Cancel Subclass - Choice
 					// validity check
-					if ((paramOne < 1) || (paramOne > Config.MAX_SUBCLASS))
+					if (paramOne < 1 || paramOne > Config.MAX_SUBCLASS)
 					{
 						return;
 					}
 
 					subsAvailable = getAvailableSubClasses(player);
 					// another validity check
-					if ((subsAvailable == null) || subsAvailable.isEmpty())
+					if (subsAvailable == null || subsAvailable.isEmpty())
 					{
 						// TODO: Retail message
 						player.sendMessage("There are no sub classes available at this time.");
@@ -725,7 +725,7 @@ public class VillageMaster: Folk
 
 	protected string getSubClassMenu(Race race)
 	{
-		if (Config.ALT_GAME_SUBCLASS_EVERYWHERE || (race != Race.KAMAEL))
+		if (Config.ALT_GAME_SUBCLASS_EVERYWHERE || race != Race.KAMAEL)
 		{
 			return "html/villagemaster/SubClass.htm";
 		}
@@ -747,13 +747,13 @@ public class VillageMaster: Folk
 		}
 
 		QuestState qs = player.getQuestState("Q00234_FatesWhisper"); // TODO: Not added with Saviors.
-		if ((qs == null) || !qs.isCompleted())
+		if (qs == null || !qs.isCompleted())
 		{
 			return false;
 		}
 
 		qs = player.getQuestState("Q00235_MimirsElixir"); // TODO: Not added with Saviors.
-		if ((qs == null) || !qs.isCompleted())
+		if (qs == null || !qs.isCompleted())
 		{
 			return false;
 		}
@@ -826,7 +826,7 @@ public class VillageMaster: Folk
 	{
 		Set<CharacterClass> subclasses = null;
 		CharacterClass pClass = classId;
-		if (CategoryData.getInstance().isInCategory(CategoryType.THIRD_CLASS_GROUP, classId) || (CategoryData.getInstance().isInCategory(CategoryType.FOURTH_CLASS_GROUP, classId)))
+		if (CategoryData.getInstance().isInCategory(CategoryType.THIRD_CLASS_GROUP, classId) || CategoryData.getInstance().isInCategory(CategoryType.FOURTH_CLASS_GROUP, classId))
 		{
 			subclasses = new();
 			subclasses.addAll(mainSubclassSet);
@@ -948,7 +948,7 @@ public class VillageMaster: Folk
 		}
 
 		Set<CharacterClass> availSubs = getSubclasses(player, baseClassId);
-		if ((availSubs == null) || availSubs.isEmpty())
+		if (availSubs == null || availSubs.isEmpty())
 		{
 			return false;
 		}
@@ -1000,7 +1000,7 @@ public class VillageMaster: Folk
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DISSOLVE_A_CLAN_WHILE_ENGAGED_IN_A_WAR);
 			return;
 		}
-		if ((clan.getCastleId() != 0) || (clan.getHideoutId() != 0) || (clan.getFortId() != 0))
+		if (clan.getCastleId() != 0 || clan.getHideoutId() != 0 || clan.getFortId() != 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_CAN_T_DISBAND_THE_CLAN_THAT_HAS_A_CLAN_HALL_OR_CASTLE);
 			return;
@@ -1114,7 +1114,7 @@ public class VillageMaster: Folk
 		if (pledgeType != Clan.SUBUNIT_ACADEMY)
 		{
 			ClanMember member = clan.getClanMember(leaderName);
-			if ((member == null) || (member.getPledgeType() != 0) || (clan.getLeaderSubPledge(member.getObjectId()) > 0))
+			if (member == null || member.getPledgeType() != 0 || clan.getLeaderSubPledge(member.getObjectId()) > 0)
 			{
 				if (pledgeType >= Clan.SUBUNIT_KNIGHT1)
 				{
@@ -1223,14 +1223,14 @@ public class VillageMaster: Folk
 
 		Clan clan = player.getClan();
 		Clan.SubPledge subPledge = player.getClan().getSubPledge(clanName);
-		if ((null == subPledge) || (subPledge.getId() == Clan.SUBUNIT_ACADEMY))
+		if (null == subPledge || subPledge.getId() == Clan.SUBUNIT_ACADEMY)
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_IS_INVALID);
 			return;
 		}
 
 		ClanMember member = clan.getClanMember(leaderName);
-		if ((member == null) || (member.getPledgeType() != 0) || (clan.getLeaderSubPledge(member.getObjectId()) > 0))
+		if (member == null || member.getPledgeType() != 0 || clan.getLeaderSubPledge(member.getObjectId()) > 0)
 		{
 			if (subPledge.getId() >= Clan.SUBUNIT_KNIGHT1)
 			{

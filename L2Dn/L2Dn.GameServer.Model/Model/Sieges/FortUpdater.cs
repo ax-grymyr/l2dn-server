@@ -35,7 +35,7 @@ public class FortUpdater: Runnable
 				case FortUpdaterType.PERIODIC_UPDATE:
 				{
 					_runCount++;
-					if ((_fort.getOwnerClan() == null) || (_fort.getOwnerClan() != _clan))
+					if (_fort.getOwnerClan() == null || _fort.getOwnerClan() != _clan)
 					{
 						return;
 					}
@@ -62,7 +62,7 @@ public class FortUpdater: Runnable
 				}
 				case FortUpdaterType.MAX_OWN_TIME:
 				{
-					if ((_fort.getOwnerClan() == null) || (_fort.getOwnerClan() != _clan))
+					if (_fort.getOwnerClan() == null || _fort.getOwnerClan() != _clan)
 					{
 						return;
 					}

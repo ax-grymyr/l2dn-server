@@ -50,9 +50,9 @@ public class PDefenseFinalizer: StatFunction
 				foreach (int slot in SLOTS)
 				{
 					if (!inv.isPaperdollSlotEmpty(slot) || //
-					    ((slot == Inventory.PAPERDOLL_LEGS) && !inv.isPaperdollSlotEmpty(Inventory.PAPERDOLL_CHEST) &&
-					     (inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST).getTemplate().getBodyPart() ==
-					      ItemTemplate.SLOT_FULL_ARMOR)))
+					    (slot == Inventory.PAPERDOLL_LEGS && !inv.isPaperdollSlotEmpty(Inventory.PAPERDOLL_CHEST) &&
+					     inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST).getTemplate().getBodyPart() ==
+                         ItemTemplate.SLOT_FULL_ARMOR))
 					{
 						int defaultStatValue = player.getTemplate().getBaseDefBySlot(slot);
 						baseValue -= creature.getTransformation()?.getBaseDefBySlot(player, slot) ?? defaultStatValue;
@@ -78,7 +78,7 @@ public class PDefenseFinalizer: StatFunction
 	{
 		double mul = Math.Max(creature.getStat().getMul(stat), 0.5);
 		double add = creature.getStat().getAdd(stat);
-		return Math.Max((baseValue * mul) + add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType()),
+		return Math.Max(baseValue * mul + add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType()),
 			creature.getTemplate().getBaseValue(stat, 0) * 0.2);
 	}
 }

@@ -50,7 +50,7 @@ public class PlayerSkillHolder: ISkillsHolder
 	public int getSkillLevel(int skillId)
 	{
 		Skill skill = getKnownSkill(skillId);
-		return (skill == null) ? 0 : skill.getLevel();
+		return skill == null ? 0 : skill.getLevel();
 	}
 
 	/**

@@ -53,7 +53,7 @@ public class MDefenseFinalizer : StatFunction
 				}
 			}
 		}
-		else if (creature.isPet() && (creature.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_NECK) != 0))
+		else if (creature.isPet() && creature.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_NECK) != 0)
 		{
 			baseValue -= 13;
 		}
@@ -71,6 +71,6 @@ public class MDefenseFinalizer : StatFunction
 	{
 		double mul = Math.Max(creature.getStat().getMul(stat), 0.5);
 		double add = creature.getStat().getAdd(stat);
-		return Math.Max((baseValue * mul) + add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType()), creature.getTemplate().getBaseValue(stat, 0) * 0.2);
+		return Math.Max(baseValue * mul + add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType()), creature.getTemplate().getBaseValue(stat, 0) * 0.2);
 	}
 }

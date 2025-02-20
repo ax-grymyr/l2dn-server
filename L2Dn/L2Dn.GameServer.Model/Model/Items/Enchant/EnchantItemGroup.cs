@@ -44,7 +44,7 @@ public class EnchantItemGroup
 		{
 			foreach (RangeChanceHolder holder in _chances)
 			{
-				if ((holder.getMin() <= index) && (holder.getMax() >= index))
+				if (holder.getMin() <= index && holder.getMax() >= index)
 				{
 					return holder.getChance();
 				}
@@ -67,7 +67,7 @@ public class EnchantItemGroup
 		{
 			foreach (RangeChanceHolder holder in _chances)
 			{
-				if ((holder.getChance() > 0) && (holder.getMax() > _maximumEnchant))
+				if (holder.getChance() > 0 && holder.getMax() > _maximumEnchant)
 				{
 					_maximumEnchant = holder.getMax();
 				}

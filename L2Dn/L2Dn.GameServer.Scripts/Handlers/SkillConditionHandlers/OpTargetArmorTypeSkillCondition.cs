@@ -30,7 +30,7 @@ public class OpTargetArmorTypeSkillCondition: ISkillCondition
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
-        if ((target == null) || !target.isCreature())
+        if (target == null || !target.isCreature())
         {
             return false;
         }

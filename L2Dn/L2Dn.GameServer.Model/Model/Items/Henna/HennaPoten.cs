@@ -75,7 +75,7 @@ public class HennaPoten
 
 	public bool isPotentialAvailable()
 	{
-		return (_henna != null) && (_enchantLevel > 1);
+		return _henna != null && _enchantLevel > 1;
 	}
 
 	public int getActiveStep()

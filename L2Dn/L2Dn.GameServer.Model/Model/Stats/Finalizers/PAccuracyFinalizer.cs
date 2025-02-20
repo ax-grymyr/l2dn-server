@@ -17,7 +17,7 @@ public class PAccuracyFinalizer : StatFunction
 		
 		// [Square(DEX)] * 5 + level + weapon hitbonus;
 		int level = creature.getLevel();
-		baseValue += (Math.Sqrt(creature.getDEX()) * 5) + level;
+		baseValue += Math.Sqrt(creature.getDEX()) * 5 + level;
 		if (level > 69)
 		{
 			baseValue += level - 69;
@@ -56,8 +56,8 @@ public class PAccuracyFinalizer : StatFunction
 	{
 		if (isBlessed)
 		{
-			return (0.3 * Math.Max(enchantLevel - 3, 0)) + (0.3 * Math.Max(enchantLevel - 6, 0));
+			return 0.3 * Math.Max(enchantLevel - 3, 0) + 0.3 * Math.Max(enchantLevel - 6, 0);
 		}
-		return (0.2 * Math.Max(enchantLevel - 3, 0)) + (0.2 * Math.Max(enchantLevel - 6, 0));
+		return 0.2 * Math.Max(enchantLevel - 3, 0) + 0.2 * Math.Max(enchantLevel - 6, 0);
 	}
 }

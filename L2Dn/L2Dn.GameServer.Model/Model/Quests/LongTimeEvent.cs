@@ -188,7 +188,7 @@ public class LongTimeEvent: Quest
 									continue;
 								}
 
-								if ((finalChance < 0) || (finalChance > 100))
+								if (finalChance < 0 || finalChance > 100)
 								{
 									LOGGER.Warn(Name + " event: item " + itemId +
 									            " - incorrect drop chance, item was not added in droplist");
@@ -250,7 +250,7 @@ public class LongTimeEvent: Quest
 						{
 							string? msgType = d.Attribute("type")?.GetString();
 							string? msgText = d.Attribute("text")?.GetString();
-							if ((msgType != null) && (msgText != null))
+							if (msgType != null && msgText != null)
 							{
 								if (msgType.equalsIgnoreCase("onEnd"))
 								{

@@ -41,9 +41,9 @@ public class PCriticalRateFinalizer: StatFunction
 	{
 		if (isBlessed)
 		{
-			return (0.5 * Math.Max(enchantLevel - 3, 0)) + (0.5 * Math.Max(enchantLevel - 6, 0));
+			return 0.5 * Math.Max(enchantLevel - 3, 0) + 0.5 * Math.Max(enchantLevel - 6, 0);
 		}
 
-		return (0.34 * Math.Max(enchantLevel - 3, 0)) + (0.34 * Math.Max(enchantLevel - 6, 0));
+		return 0.34 * Math.Max(enchantLevel - 3, 0) + 0.34 * Math.Max(enchantLevel - 6, 0);
 	}
 }

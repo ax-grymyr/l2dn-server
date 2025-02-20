@@ -31,7 +31,7 @@ public class SiegeFlag: Npc
 		{
 			_siege = FortSiegeManager.getInstance().getSiege(player.Location.Location3D);
 		}
-		if ((_clan == null) || (_siege == null))
+		if (_clan == null || _siege == null)
 		{
 			throw new ArgumentException("Player is not in clan or siege.");
 		}
@@ -64,7 +64,7 @@ public class SiegeFlag: Npc
 		{
 			return false;
 		}
-		if ((_siege != null) && (_clan != null))
+		if (_siege != null && _clan != null)
 		{
 			SiegeClan sc = _siege.getAttackerClan(_clan);
 			if (sc != null)
@@ -82,7 +82,7 @@ public class SiegeFlag: Npc
 
 	public override void onAction(Player player, bool interact)
 	{
-		if ((player == null) || !canTarget(player))
+		if (player == null || !canTarget(player))
 		{
 			return;
 		}
@@ -95,7 +95,7 @@ public class SiegeFlag: Npc
 		}
 		else if (interact)
 		{
-			if (isAutoAttackable(player) && (Math.Abs(player.getZ() - getZ()) < 100))
+			if (isAutoAttackable(player) && Math.Abs(player.getZ() - getZ()) < 100)
 			{
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
 			}
@@ -125,7 +125,7 @@ public class SiegeFlag: Npc
 	public override void reduceCurrentHp(double damage, Creature attacker, Skill skill)
 	{
 		base.reduceCurrentHp(damage, attacker, skill);
-		if (canTalk() && (((getCastle() != null) && getCastle().getSiege().isInProgress()) || ((getFort() != null) && getFort().getSiege().isInProgress())) && (_clan != null))
+		if (canTalk() && ((getCastle() != null && getCastle().getSiege().isInProgress()) || (getFort() != null && getFort().getSiege().isInProgress())) && _clan != null)
 		{
 			// send warning to owners of headquarters that theirs base is under attack
 			_clan.broadcastToOnlineMembers(new SystemMessagePacket(SystemMessageId.SIEGE_CAMP_IS_UNDER_ATTACK));

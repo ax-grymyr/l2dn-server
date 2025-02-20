@@ -621,7 +621,7 @@ public class Olympiad
 				}
 				else if (Config.ALT_OLY_PERIOD_MULTIPLIER >= 7)
 				{
-					_nextWeeklyChange = nextChange + (WEEKLY_PERIOD / 2);
+					_nextWeeklyChange = nextChange + WEEKLY_PERIOD / 2;
 				}
 				else
 				{
@@ -639,7 +639,7 @@ public class Olympiad
 				}
 				else
 				{
-					_nextWeeklyChange = nextChange + (WEEKLY_PERIOD / 2);
+					_nextWeeklyChange = nextChange + WEEKLY_PERIOD / 2;
 				}
 				break;
 			}
@@ -1026,7 +1026,7 @@ public class Olympiad
 	
 	private int getOlympiadTradePoint(int objectId)
 	{
-		if ((_period != 1) || NOBLES_RANK.Count == 0)
+		if (_period != 1 || NOBLES_RANK.Count == 0)
 		{
 			return 0;
 		}
@@ -1037,7 +1037,7 @@ public class Olympiad
 		}
 		
 		NobleData noble = NOBLES.get(objectId);
-		if ((noble == null) || (noble.OlympiadPoints == 0))
+		if (noble == null || noble.OlympiadPoints == 0)
 		{
 			return 0;
 		}

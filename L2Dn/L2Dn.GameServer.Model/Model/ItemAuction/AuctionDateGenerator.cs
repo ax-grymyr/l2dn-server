@@ -52,7 +52,7 @@ public class AuctionDateGenerator
 		DateTime time = timeValue;
 		if (time < date)
 		{
-			time += ((date - time) / add) * add;
+			time += (date - time) / add * add;
 			if (time < date)
 			{
 				time += add;
@@ -64,9 +64,9 @@ public class AuctionDateGenerator
 	
 	private void checkDayOfWeek(DayOfWeek? defaultValue)
 	{
-		if ((_dayOfWeek < DayOfWeek.Sunday) || (_dayOfWeek > DayOfWeek.Saturday))
+		if (_dayOfWeek < DayOfWeek.Sunday || _dayOfWeek > DayOfWeek.Saturday)
 		{
-			if ((defaultValue == null) && (_interval < 1))
+			if (defaultValue == null && _interval < 1)
 			{
 				throw new ArgumentException("Illegal params for '" + FIELD_DAY_OF_WEEK + "': " + (_dayOfWeek == null ? "not found" : _dayOfWeek));
 			}
@@ -81,7 +81,7 @@ public class AuctionDateGenerator
 	
 	private void checkHourOfDay(int defaultValue)
 	{
-		if ((_hourOfDay < 0) || (_hourOfDay > 23))
+		if (_hourOfDay < 0 || _hourOfDay > 23)
 		{
 			if (defaultValue == -1)
 			{
@@ -93,7 +93,7 @@ public class AuctionDateGenerator
 	
 	private void checkMinuteOfHour(int defaultValue)
 	{
-		if ((_minuteOfHour < 0) || (_minuteOfHour > 59))
+		if (_minuteOfHour < 0 || _minuteOfHour > 59)
 		{
 			if (defaultValue == -1)
 			{

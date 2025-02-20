@@ -145,7 +145,7 @@ public class Npc: Creature
 	{
 		// Send a packet SocialAction to all Player in the _KnownPlayers of the Npc
 		DateTime now = DateTime.UtcNow;
-		if ((now - _lastSocialBroadcast) > MINIMUM_SOCIAL_INTERVAL)
+		if (now - _lastSocialBroadcast > MINIMUM_SOCIAL_INTERVAL)
 		{
 			_lastSocialBroadcast = now;
 			broadcastSocialAction(animationId);
@@ -157,7 +157,7 @@ public class Npc: Creature
 	 */
 	public virtual bool hasRandomAnimation()
 	{
-		return ((Config.MAX_NPC_ANIMATION > 0) && _isRandomAnimationEnabled && (getAiType() != AIType.CORPSE));
+		return Config.MAX_NPC_ANIMATION > 0 && _isRandomAnimationEnabled && getAiType() != AIType.CORPSE;
 	}
 
 	/**
@@ -390,7 +390,7 @@ public class Npc: Creature
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return false;
 		}
-		if (player.isLockedTarget() && (player.getLockedTarget() != this))
+		if (player.isLockedTarget() && player.getLockedTarget() != this)
 		{
 			player.sendPacket(SystemMessageId.FAILED_TO_CHANGE_ENMITY);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -445,7 +445,7 @@ public class Npc: Creature
 	 */
 	public void setTaxZone(TaxZone? zone)
 	{
-		_taxZone = ((zone != null) && !isInInstance()) ? zone : null;
+		_taxZone = zone != null && !isInInstance() ? zone : null;
 	}
 
 	/**
@@ -454,7 +454,7 @@ public class Npc: Creature
 	 */
 	public Castle? getTaxCastle()
 	{
-		return (_taxZone != null) ? _taxZone.getCastle() : null;
+		return _taxZone != null ? _taxZone.getCastle() : null;
 	}
 
 	/**
@@ -464,8 +464,8 @@ public class Npc: Creature
 	 */
 	public double getCastleTaxRate(TaxType type)
 	{
-		Castle castle = getTaxCastle();
-		return (castle != null) ? (castle.getTaxPercent(type) / 100.0) : 0;
+		Castle? castle = getTaxCastle();
+		return castle != null ? castle.getTaxPercent(type) / 100.0 : 0;
 	}
 
 	/**
@@ -484,7 +484,7 @@ public class Npc: Creature
 	/**
 	 * @return the nearest Castle this Npc belongs to. Otherwise null.
 	 */
-	public Castle getCastle()
+	public Castle? getCastle()
 	{
 		return CastleManager.getInstance().findNearestCastle(this);
 	}
@@ -513,7 +513,7 @@ public class Npc: Creature
 	 * @param maxDistance long
 	 * @return Castle
 	 */
-	public Castle getCastle(long maxDistance)
+	public Castle? getCastle(long maxDistance)
 	{
 		return CastleManager.getInstance().findNearestCastle(this, maxDistance);
 	}
@@ -521,7 +521,7 @@ public class Npc: Creature
 	/**
 	 * @return the nearest Fort this Npc belongs to. Otherwise null.
 	 */
-	public Fort getFort()
+	public Fort? getFort()
 	{
 		return FortManager.getInstance().findNearestFort(this);
 	}
@@ -531,7 +531,7 @@ public class Npc: Creature
 	 * @param maxDistance long
 	 * @return Fort
 	 */
-	public Fort getFort(long maxDistance)
+	public Fort? getFort(long maxDistance)
 	{
 		return FortManager.getInstance().findNearestFort(this, maxDistance);
 	}
@@ -682,28 +682,28 @@ public class Npc: Creature
 
 		if (player.getReputation() < 0)
 		{
-			if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (this is Merchant))
+			if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && this is Merchant)
 			{
 				if (showPkDenyChatWindow(player, "merchant"))
 				{
 					return;
 				}
 			}
-			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && (this is Teleporter))
+			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && this is Teleporter)
 			{
 				if (showPkDenyChatWindow(player, "teleporter"))
 				{
 					return;
 				}
 			}
-			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && (this is Warehouse))
+			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && this is Warehouse)
 			{
 				if (showPkDenyChatWindow(player, "warehouse"))
 				{
 					return;
 				}
 			}
-			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (this is Fisherman))
+			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && this is Fisherman)
 			{
 				if (showPkDenyChatWindow(player, "fisherman"))
 				{
@@ -712,7 +712,7 @@ public class Npc: Creature
 			}
 		}
 
-		if (getTemplate().isType("Auctioneer") && (value == 0))
+		if (getTemplate().isType("Auctioneer") && value == 0)
 		{
 			return;
 		}
@@ -733,7 +733,7 @@ public class Npc: Creature
 				}
 				else
 				{
-					filename = (getHtmlPath(npcId, value, player));
+					filename = getHtmlPath(npcId, value, player);
 				}
 				break;
 			}
@@ -741,22 +741,22 @@ public class Npc: Creature
 			{
 				if (player.isAcademyMember())
 				{
-					filename = (getHtmlPath(npcId, 1, player));
+					filename = getHtmlPath(npcId, 1, player);
 				}
 				else
 				{
-					filename = (getHtmlPath(npcId, value, player));
+					filename = getHtmlPath(npcId, value, player);
 				}
 				break;
 			}
 			default:
 			{
-				if (((npcId >= 31093) && (npcId <= 31094)) || ((npcId >= 31172) && (npcId <= 31201)) || ((npcId >= 31239) && (npcId <= 31254)))
+				if ((npcId >= 31093 && npcId <= 31094) || (npcId >= 31172 && npcId <= 31201) || (npcId >= 31239 && npcId <= 31254))
 				{
 					return;
 				}
 				// Get the text of the selected HTML file in function of the npcId and of the page number
-				filename = (getHtmlPath(npcId, value, player));
+				filename = getHtmlPath(npcId, value, player);
 				break;
 			}
 		}
@@ -848,12 +848,12 @@ public class Npc: Creature
 		_currentCollisionHeight = getTemplate().getFCollisionHeight();
 		_currentCollisionRadius = getTemplate().getFCollisionRadius();
 
-		Weapon? weapon = (killer != null) ? killer.getActiveWeaponItem() : null;
-		_killingBlowWeaponId = (weapon != null) ? weapon.getId() : 0;
-		if (_isFakePlayer && (killer != null) && killer.isPlayable())
+		Weapon? weapon = killer != null ? killer.getActiveWeaponItem() : null;
+		_killingBlowWeaponId = weapon != null ? weapon.getId() : 0;
+		if (_isFakePlayer && killer != null && killer.isPlayable())
 		{
 			Player player = killer.getActingPlayer();
-			if (isScriptValue(0) && (getReputation() >= 0))
+			if (isScriptValue(0) && getReputation() >= 0)
 			{
 				if (Config.FAKE_PLAYER_KILL_KARMA)
 				{
@@ -864,7 +864,7 @@ public class Npc: Creature
 					// pk item rewards
 					if (Config.REWARD_PK_ITEM)
 					{
-						if (!(Config.DISABLE_REWARDS_IN_INSTANCES && (getInstanceId() != 0)) && //
+						if (!(Config.DISABLE_REWARDS_IN_INSTANCES && getInstanceId() != 0) && //
 							!(Config.DISABLE_REWARDS_IN_PVP_ZONES && isInsideZone(ZoneId.PVP)))
 						{
 							player.addItem("PK Item Reward", Config.REWARD_PK_ITEM_ID, Config.REWARD_PK_ITEM_AMOUNT, this, Config.REWARD_PK_ITEM_MESSAGE);
@@ -895,7 +895,7 @@ public class Npc: Creature
 				// pvp item rewards
 				if (Config.REWARD_PVP_ITEM)
 				{
-					if (!(Config.DISABLE_REWARDS_IN_INSTANCES && (getInstanceId() != 0)) && //
+					if (!(Config.DISABLE_REWARDS_IN_INSTANCES && getInstanceId() != 0) && //
 						!(Config.DISABLE_REWARDS_IN_PVP_ZONES && isInsideZone(ZoneId.PVP)))
 					{
 						player.addItem("PvP Item Reward", Config.REWARD_PVP_ITEM_ID, Config.REWARD_PVP_ITEM_AMOUNT, this, Config.REWARD_PVP_ITEM_MESSAGE);
@@ -931,7 +931,7 @@ public class Npc: Creature
 		}
 
 		// Apply Mp Rewards
-		if ((getTemplate().getMpRewardValue() > 0) && (killer != null) && killer.isPlayable())
+		if (getTemplate().getMpRewardValue() > 0 && killer != null && killer.isPlayable())
 		{
 			Player killerPlayer = killer.getActingPlayer();
 			new MpRewardTask(killerPlayer, this);
@@ -946,7 +946,7 @@ public class Npc: Creature
 				{
 					foreach (Player member in party.getMembers())
 					{
-						if ((member != killerPlayer) && (member.Distance3D(this) <= Config.ALT_PARTY_RANGE))
+						if (member != killerPlayer && member.Distance3D(this) <= Config.ALT_PARTY_RANGE)
 						{
 							new MpRewardTask(member, this);
 							foreach (Summon summon in member.getServitors().Values)
@@ -999,7 +999,7 @@ public class Npc: Creature
 			WalkingManager.getInstance().onSpawn(this);
 		}
 
-		if (isInsideZone(ZoneId.TAX) && (getCastle() != null) && (Config.SHOW_CREST_WITHOUT_QUEST || getCastle().getShowNpcCrest()) && (getCastle().getOwnerId() != 0))
+		if (isInsideZone(ZoneId.TAX) && getCastle() != null && (Config.SHOW_CREST_WITHOUT_QUEST || getCastle().getShowNpcCrest()) && getCastle().getOwnerId() != 0)
 		{
 			setClanId(getCastle().getOwnerId());
 		}
@@ -1082,7 +1082,7 @@ public class Npc: Creature
 		base.onDecay();
 
 		// Decrease its spawn counter
-		if ((_spawn != null) && !DbSpawnManager.getInstance().isDefined(getId()))
+		if (_spawn != null && !DbSpawnManager.getInstance().isDefined(getId()))
 		{
 			_spawn.decreaseCount(this);
 		}
@@ -1097,7 +1097,7 @@ public class Npc: Creature
 		}
 
 		// Remove from instance world
-		Instance instance = getInstanceWorld();
+		Instance? instance = getInstanceWorld();
 		if (instance != null)
 		{
 			instance.removeNpc(this);
@@ -1255,7 +1255,7 @@ public class Npc: Creature
 
 	public override void notifyQuestEventSkillFinished(Skill skill, WorldObject target)
 	{
-		if ((target != null) && Events.HasSubscribers<OnNpcSkillFinished>())
+		if (target != null && Events.HasSubscribers<OnNpcSkillFinished>())
 		{
 			Events.NotifyAsync(new OnNpcSkillFinished(this, target.getActingPlayer(), skill));
 		}
@@ -1263,7 +1263,7 @@ public class Npc: Creature
 
 	public override bool isMovementDisabled()
 	{
-		return base.isMovementDisabled() || !getTemplate().canMove() || (getAiType() == AIType.CORPSE);
+		return base.isMovementDisabled() || !getTemplate().canMove() || getAiType() == AIType.CORPSE;
 	}
 
 	public AIType getAiType()
@@ -1342,7 +1342,7 @@ public class Npc: Creature
 		}
 		else
 		{
-			if (physical && (_soulshotamount > 0))
+			if (physical && _soulshotamount > 0)
 			{
 				if (Rnd.get(100) > getTemplate().getSoulShotChance())
 				{
@@ -1352,7 +1352,7 @@ public class Npc: Creature
 				Broadcast.toSelfAndKnownPlayersInRadius(this, new MagicSkillUsePacket(this, this, 2154, 1, TimeSpan.Zero, TimeSpan.Zero), 600);
 				chargeShot(ShotType.SOULSHOTS);
 			}
-			if (magic && (_spiritshotamount > 0))
+			if (magic && _spiritshotamount > 0)
 			{
 				if (Rnd.get(100) > getTemplate().getSpiritShotChance())
 				{
@@ -1406,7 +1406,7 @@ public class Npc: Creature
 	 */
 	public bool staysInSpawnLoc()
 	{
-		return ((_spawn != null) && (_spawn.Location.X == getX()) && (_spawn.Location.Y == getY()));
+		return _spawn != null && _spawn.Location.X == getX() && _spawn.Location.Y == getY();
 	}
 
 	/**
@@ -1422,7 +1422,7 @@ public class Npc: Creature
 	 */
 	public NpcVariables getVariables()
 	{
-		NpcVariables vars = getScript<NpcVariables>();
+		NpcVariables? vars = getScript<NpcVariables>();
 		return vars != null ? vars : addScript(new NpcVariables(getTemplate().getId()));
 	}
 
@@ -1465,14 +1465,14 @@ public class Npc: Creature
 	 */
 	public Location3D getPointInRange(int radiusMin, int radiusMax)
 	{
-		if ((radiusMax == 0) || (radiusMax < radiusMin))
+		if (radiusMax == 0 || radiusMax < radiusMin)
 		{
 			return new Location3D(getX(), getY(), getZ());
 		}
 
 		int radius = Rnd.get(radiusMin, radiusMax);
 		double angle = Rnd.nextDouble() * 2 * Math.PI;
-		return new Location3D((int) (getX() + (radius * Math.Cos(angle))), (int) (getY() + (radius * Math.Sin(angle))), getZ());
+		return new Location3D((int) (getX() + radius * Math.Cos(angle)), (int) (getY() + radius * Math.Sin(angle)), getZ());
 	}
 
 	/**
@@ -1505,14 +1505,14 @@ public class Npc: Creature
 			}
 
 			// Randomize drop position.
-			int newX = (getX() + Rnd.get((RANDOM_ITEM_DROP_LIMIT * 2) + 1)) - RANDOM_ITEM_DROP_LIMIT;
-			int newY = (getY() + Rnd.get((RANDOM_ITEM_DROP_LIMIT * 2) + 1)) - RANDOM_ITEM_DROP_LIMIT;
+			int newX = getX() + Rnd.get(RANDOM_ITEM_DROP_LIMIT * 2 + 1) - RANDOM_ITEM_DROP_LIMIT;
+			int newY = getY() + Rnd.get(RANDOM_ITEM_DROP_LIMIT * 2 + 1) - RANDOM_ITEM_DROP_LIMIT;
 			int newZ = getZ() + 20;
 
 			item.dropMe(this, new Location3D(newX, newY, newZ));
 
 			// Add drop to auto destroy item task.
-			if (!Config.LIST_PROTECTED_ITEMS.Contains(itemId) && (((Config.AUTODESTROY_ITEM_AFTER > 0) && !item.getTemplate().hasExImmediateEffect()) || ((Config.HERB_AUTO_DESTROY_TIME > 0) && item.getTemplate().hasExImmediateEffect())))
+			if (!Config.LIST_PROTECTED_ITEMS.Contains(itemId) && ((Config.AUTODESTROY_ITEM_AFTER > 0 && !item.getTemplate().hasExImmediateEffect()) || (Config.HERB_AUTO_DESTROY_TIME > 0 && item.getTemplate().hasExImmediateEffect())))
 			{
 				ItemsAutoDestroyTaskManager.getInstance().addItem(item);
 			}
@@ -1721,10 +1721,10 @@ public class Npc: Creature
 		if (_spawn != null) // Minions doesn't have Spawn object bound
 		{
 			NpcSpawnTemplate npcSpawnTemplate = _spawn.getNpcSpawnTemplate();
-			if ((npcSpawnTemplate != null) && (npcSpawnTemplate.getParameters() != null) && !npcSpawnTemplate.getParameters().isEmpty())
+			if (npcSpawnTemplate != null && npcSpawnTemplate.getParameters() != null && !npcSpawnTemplate.getParameters().isEmpty())
 			{
 				StatSet @params = getTemplate().getParameters();
-				if ((@params != null) && @params.getSet().Count != 0)
+				if (@params != null && @params.getSet().Count != 0)
 				{
 					StatSet set = new StatSet();
 					set.merge(@params);

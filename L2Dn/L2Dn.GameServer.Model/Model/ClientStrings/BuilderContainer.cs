@@ -35,7 +35,7 @@ public class BuilderContainer: Builder
             {
                 builder = _builders[i];
                 paramIndex = builder.getIndex();
-                build = (paramIndex != -1) && (paramIndex < paramsLength)
+                build = paramIndex != -1 && paramIndex < paramsLength
                     ? builder.toString(@params[paramIndex])
                     : builder.toString();
                 buildTextLen += build.Length;

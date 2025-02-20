@@ -56,7 +56,7 @@ public class ItemAuction
 		
 		foreach (ItemAuctionBid bid in _auctionBids)
 		{
-			if ((_highestBid == null) || (_highestBid.getLastBid() < bid.getLastBid()))
+			if (_highestBid == null || _highestBid.getLastBid() < bid.getLastBid())
 			{
 				_highestBid = bid;
 			}
@@ -260,7 +260,7 @@ public class ItemAuction
 		
 		lock (_auctionBids)
 		{
-			if ((_highestBid != null) && (newBid < _highestBid.getLastBid()))
+			if (_highestBid != null && newBid < _highestBid.getLastBid())
 			{
 				player.sendPacket(SystemMessageId.YOUR_BID_MUST_BE_HIGHER_THAN_THE_CURRENT_HIGHEST_BID);
 				return;
@@ -329,7 +329,7 @@ public class ItemAuction
 			_highestBid = bid;
 		}
 		
-		if ((_endingTime - DateTime.UtcNow) <= TimeSpan.FromMinutes(10)) // 10 minutes
+		if (_endingTime - DateTime.UtcNow <= TimeSpan.FromMinutes(10)) // 10 minutes
 		{
 			switch (_auctionEndingExtendState)
 			{
@@ -352,7 +352,7 @@ public class ItemAuction
 				}
 				case ItemAuctionExtendState.EXTEND_BY_3_MIN:
 				{
-					if ((Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID > 0) && (getAndSetLastBidPlayerObjectId(player.ObjectId) != player.ObjectId))
+					if (Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID > 0 && getAndSetLastBidPlayerObjectId(player.ObjectId) != player.ObjectId)
 					{
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A;
 						_endingTime += TimeSpan.FromMilliseconds(Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
@@ -361,7 +361,7 @@ public class ItemAuction
 				}
 				case ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A:
 				{
-					if ((getAndSetLastBidPlayerObjectId(player.ObjectId) != player.ObjectId) && (_scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B))
+					if (getAndSetLastBidPlayerObjectId(player.ObjectId) != player.ObjectId && _scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B)
 					{
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B;
 						_endingTime += TimeSpan.FromMilliseconds(Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
@@ -370,7 +370,7 @@ public class ItemAuction
 				}
 				case ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B:
 				{
-					if ((getAndSetLastBidPlayerObjectId(player.ObjectId) != player.ObjectId) && (_scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A))
+					if (getAndSetLastBidPlayerObjectId(player.ObjectId) != player.ObjectId && _scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A)
 					{
 						_endingTime += TimeSpan.FromMilliseconds(Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A;
@@ -420,7 +420,7 @@ public class ItemAuction
 			}
 			case ItemAuctionState.FINISHED:
 			{
-				if (_startingTime < (DateTime.UtcNow - TimeSpan.FromDays(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER)))
+				if (_startingTime < DateTime.UtcNow - TimeSpan.FromDays(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER))
 				{
 					return false;
 				}
@@ -483,7 +483,7 @@ public class ItemAuction
 		{
 			foreach (ItemAuctionBid bid in _auctionBids)
 			{
-				if ((bid == null) || !bid.isCanceled())
+				if (bid == null || !bid.isCanceled())
 				{
 					continue;
 				}
@@ -529,7 +529,7 @@ public class ItemAuction
 		for (int i = _auctionBids.Count; i-- > 0;)
 		{
 			ItemAuctionBid bid = _auctionBids[i];
-			if ((bid != null) && (bid.getPlayerObjId() == playerObjId))
+			if (bid != null && bid.getPlayerObjId() == playerObjId)
 			{
 				return i;
 			}

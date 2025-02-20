@@ -16,12 +16,12 @@ public class TargetMyPledgeSkillCondition: ISkillCondition
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
-        if ((target == null) || !target.isPlayer())
+        if (target == null || !target.isPlayer())
         {
             return false;
         }
 
         Clan? clan = caster.getClan();
-        return (clan != null) && (clan == target.getActingPlayer()?.getClan());
+        return clan != null && clan == target.getActingPlayer()?.getClan();
     }
 }

@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Model;
 public class ChallengePoint
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ChallengePoint));
-	
+
 	private readonly Player _owner;
 	private int _nowGroup;
 	private int _nowPoint;
@@ -21,18 +21,18 @@ public class ChallengePoint
 		-1,
 		-1,
 	};
-	
+
 	public ChallengePoint(Player owner)
 	{
 		_owner = owner;
 		_nowGroup = 0;
 		_nowPoint = 0;
 	}
-	
+
 	public void storeChallengePoints()
 	{
 		// LOGGER.info("Storing Challenge Points for " + _owner);
-		
+
 		if (_challengePoints.Count == 0)
 		{
 			return;
@@ -88,7 +88,7 @@ public class ChallengePoint
 			LOGGER.Error("Could not store Challenge Points for " + _owner + " " + e);
 		}
 	}
-	
+
 	public void restoreChallengePoints()
 	{
 		_challengePoints.Clear();
@@ -110,7 +110,7 @@ public class ChallengePoint
 				int groupId = record.GroupId;
 				int optionIndex = record.OptionIndex;
 				int count = record.Count;
-				Map<int, int> options = _challengePointsRecharges.get(groupId);
+				Map<int, int>? options = _challengePointsRecharges.get(groupId);
 				if (options == null)
 				{
 					options = new();
@@ -123,45 +123,45 @@ public class ChallengePoint
 		{
 			LOGGER.Error("Could not restore Challenge Points for " + _owner + " " + e);
 		}
-		
+
 		// LOGGER.info("Restored Challenge Points recharges for " + _owner);
 		// LOGGER.info("Restored Challenge Points for " + _owner);
 	}
-	
+
 	public int getNowPoint()
 	{
 		int nowPoint = _nowPoint;
 		_nowPoint = 0;
 		return nowPoint;
 	}
-	
+
 	public int getNowGroup()
 	{
 		int nowGroup = _nowGroup;
 		_nowGroup = 0;
 		return nowGroup;
 	}
-	
+
 	public void setNowGroup(int val)
 	{
 		_nowGroup = val;
 	}
-	
+
 	public void setNowPoint(int val)
 	{
 		_nowPoint = val;
 	}
-	
+
 	public Map<int, int> getChallengePoints()
 	{
 		return _challengePoints;
 	}
-	
+
 	public int getChallengePointsRecharges(int groupId, int optionIndex)
 	{
 		return _challengePointsRecharges.GetValueOrDefault(groupId)?.GetValueOrDefault(optionIndex) ?? 0;
 	}
-	
+
 	public void addChallengePointsRecharge(int groupId, int optionIndex, int amount)
 	{
 		Map<int, int>? options = _challengePointsRecharges.GetValueOrDefault(groupId);
@@ -170,21 +170,21 @@ public class ChallengePoint
 			options = new();
 			_challengePointsRecharges.put(groupId, options);
 		}
-		
-		options.compute(optionIndex, (k, v) => v == null ? amount : v + amount);
+
+		options.compute(optionIndex, (_, v) => v + amount);
 	}
-	
+
 	public void setChallengePointsPendingRecharge(int groupId, int optionIndex)
 	{
 		_challengePointsPendingRecharge[0] = groupId;
 		_challengePointsPendingRecharge[1] = optionIndex;
 	}
-	
+
 	public int[] getChallengePointsPendingRecharge()
 	{
 		return _challengePointsPendingRecharge;
 	}
-	
+
 	public ChallengePointInfoHolder[] initializeChallengePoints()
 	{
 		Map<int, int> challengePoints = getChallengePoints();
@@ -204,7 +204,7 @@ public class ChallengePoint
 		}
 		return info;
 	}
-	
+
 	public bool canAddPoints(int categoryId, int points)
 	{
 		int totalPoints = _challengePoints.GetValueOrDefault(categoryId) + points;

@@ -81,7 +81,7 @@ public class OpResurrectionSkillCondition: ISkillCondition
                     caster.sendPacket(SystemMessageId.REJECT_RESURRECTION);
                 }
             }
-            else if ((player != null) && player.isRevivingPet())
+            else if (player != null && player.isRevivingPet())
             {
                 canResurrect = false;
                 if (caster.isPlayer())

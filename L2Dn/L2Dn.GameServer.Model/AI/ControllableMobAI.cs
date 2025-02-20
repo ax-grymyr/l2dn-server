@@ -112,7 +112,7 @@ public class ControllableMobAI : AttackableAI
 	protected override void thinkCast()
 	{
 		WorldObject? target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
-		if ((target == null) || !target.isCreature() || ((Creature) target).isAlikeDead())
+		if (target == null || !target.isCreature() || ((Creature) target).isAlikeDead())
 		{
 			target = _skill.getTarget(_actor, findNextRndTarget(), _forceUse, _dontMove, false);
 		}
@@ -130,7 +130,7 @@ public class ControllableMobAI : AttackableAI
 			// check distant skills
 			foreach (Skill sk in _actor.getAllSkills())
 			{
-				if (Util.checkIfInRange(sk.getCastRange(), _actor, target, true) && !_actor.isSkillDisabled(sk) && (_actor.getCurrentMp() > _actor.getStat().getMpConsume(sk)))
+				if (Util.checkIfInRange(sk.getCastRange(), _actor, target, true) && !_actor.isSkillDisabled(sk) && _actor.getCurrentMp() > _actor.getStat().getMpConsume(sk))
 				{
 					_actor.doCast(sk);
 					return;
@@ -148,7 +148,7 @@ public class ControllableMobAI : AttackableAI
 	protected void thinkAttackGroup()
 	{
 		Creature? target = getForcedTarget();
-		if ((target == null) || target.isAlikeDead())
+		if (target == null || target.isAlikeDead())
 		{
 			// try to get next group target
 			setForcedTarget(findNextGroupTarget());
@@ -169,13 +169,13 @@ public class ControllableMobAI : AttackableAI
 		double dist2 = _actor.DistanceSquare2D(target);
 		int range = _actor.getPhysicalAttackRange() + _actor.getTemplate().getCollisionRadius() + target.getTemplate().getCollisionRadius();
 		int maxRange = range;
-		if (!_actor.isMuted() && (dist2 > ((range + 20) * (range + 20))))
+		if (!_actor.isMuted() && dist2 > (range + 20) * (range + 20))
 		{
 			// check distant skills
 			foreach (Skill sk in _actor.getAllSkills())
 			{
 				int castRange = sk.getCastRange();
-				if (((castRange * castRange) >= dist2) && !_actor.isSkillDisabled(sk) && (_actor.getCurrentMp() > _actor.getStat().getMpConsume(sk)))
+				if (castRange * castRange >= dist2 && !_actor.isSkillDisabled(sk) && _actor.getCurrentMp() > _actor.getStat().getMpConsume(sk))
 				{
 					_actor.doCast(sk);
 					return;
@@ -197,7 +197,7 @@ public class ControllableMobAI : AttackableAI
 	protected void thinkForceAttack()
     {
         Creature? forcedTarget = getForcedTarget();
-		if ((forcedTarget == null) || forcedTarget.isAlikeDead())
+		if (forcedTarget == null || forcedTarget.isAlikeDead())
 		{
 			clientStopMoving(null);
 			setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -209,13 +209,13 @@ public class ControllableMobAI : AttackableAI
 		double dist2 = _actor.DistanceSquare2D(forcedTarget);
 		int range = _actor.getPhysicalAttackRange() + _actor.getTemplate().getCollisionRadius() + forcedTarget.getTemplate().getCollisionRadius();
 		int maxRange = range;
-		if (!_actor.isMuted() && (dist2 > ((range + 20) * (range + 20))))
+		if (!_actor.isMuted() && dist2 > (range + 20) * (range + 20))
 		{
 			// check distant skills
 			foreach (Skill sk in _actor.getAllSkills())
 			{
 				int castRange = sk.getCastRange();
-				if (((castRange * castRange) >= dist2) && !_actor.isSkillDisabled(sk) && (_actor.getCurrentMp() > _actor.getStat().getMpConsume(sk)))
+				if (castRange * castRange >= dist2 && !_actor.isSkillDisabled(sk) && _actor.getCurrentMp() > _actor.getStat().getMpConsume(sk))
 				{
 					_actor.doCast(sk);
 					return;
@@ -238,7 +238,7 @@ public class ControllableMobAI : AttackableAI
 	protected override void thinkAttack()
 	{
 		Creature? target = getForcedTarget();
-		if ((target == null) || target.isAlikeDead())
+		if (target == null || target.isAlikeDead())
 		{
 			if (target != null)
 			{
@@ -273,13 +273,13 @@ public class ControllableMobAI : AttackableAI
 			double dist2 = _actor.DistanceSquare2D(target);
 			int range = _actor.getPhysicalAttackRange() + _actor.getTemplate().getCollisionRadius() + target.getTemplate().getCollisionRadius();
 			int maxRange = range;
-			if (!_actor.isMuted() && (dist2 > ((range + 20) * (range + 20))))
+			if (!_actor.isMuted() && dist2 > (range + 20) * (range + 20))
 			{
 				// check distant skills
 				foreach (Skill sk in _actor.getAllSkills())
 				{
 					int castRange = sk.getCastRange();
-					if (((castRange * castRange) >= dist2) && !_actor.isSkillDisabled(sk) && (_actor.getCurrentMp() > _actor.getStat().getMpConsume(sk)))
+					if (castRange * castRange >= dist2 && !_actor.isSkillDisabled(sk) && _actor.getCurrentMp() > _actor.getStat().getMpConsume(sk))
 					{
 						_actor.doCast(sk);
 						return;
@@ -314,12 +314,12 @@ public class ControllableMobAI : AttackableAI
 				target = hated;
 			}
 
-			if (!_actor.isMuted() && (Rnd.get(5) == 3))
+			if (!_actor.isMuted() && Rnd.get(5) == 3)
 			{
 				foreach (Skill sk in _actor.getAllSkills())
 				{
 					int castRange = sk.getCastRange();
-					if (((castRange * castRange) >= dist2) && !_actor.isSkillDisabled(sk) && (_actor.getCurrentMp() < _actor.getStat().getMpConsume(sk)))
+					if (castRange * castRange >= dist2 && !_actor.isSkillDisabled(sk) && _actor.getCurrentMp() < _actor.getStat().getMpConsume(sk))
 					{
 						_actor.doCast(sk);
 						return;
@@ -341,7 +341,7 @@ public class ControllableMobAI : AttackableAI
 		else
 		{
 			WorldObject? target = _actor.getTarget();
-			hated = (target != null) && target.isCreature() ? (Creature) target : null;
+			hated = target != null && target.isCreature() ? (Creature) target : null;
 		}
 
 		if (hated != null)
@@ -353,7 +353,7 @@ public class ControllableMobAI : AttackableAI
 
 	private bool checkAutoAttackCondition(Creature target)
 	{
-		if ((target == null) || !_actor.isAttackable())
+		if (target == null || !_actor.isAttackable())
 		{
 			return false;
 		}
@@ -364,7 +364,7 @@ public class ControllableMobAI : AttackableAI
 		}
 
 		Attackable me = (Attackable) _actor;
-		if (target.isAlikeDead() || !me.IsInsideRadius2D(target, me.getAggroRange()) || (Math.Abs(_actor.getZ() - target.getZ()) > 100))
+		if (target.isAlikeDead() || !me.IsInsideRadius2D(target, me.getAggroRange()) || Math.Abs(_actor.getZ() - target.getZ()) > 100)
 		{
 			return false;
 		}

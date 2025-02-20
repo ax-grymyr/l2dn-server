@@ -18,22 +18,21 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 
 public class Servitor : Summon, Runnable
 {
-	private float _expMultiplier = 0;
+	private float _expMultiplier;
 	private ItemHolder _itemConsume;
 	private TimeSpan? _lifeTime;
 	private TimeSpan? _lifeTimeRemaining;
 	private TimeSpan _consumeItemInterval;
 	private TimeSpan _consumeItemIntervalRemaining;
-	protected ScheduledFuture? _summonLifeTask;
-	
+	private ScheduledFuture? _summonLifeTask;
 	private int _referenceSkill;
-	
+
 	public Servitor(NpcTemplate template, Player owner): base(template, owner)
 	{
 		InstanceType = InstanceType.Servitor;
 		setShowSummonAnimation(true);
 	}
-	
+
 	public override void onSpawn()
 	{
 		base.onSpawn();
@@ -42,106 +41,106 @@ public class Servitor : Summon, Runnable
 			_summonLifeTask = ThreadPool.scheduleAtFixedRate(this, 0, 5000);
 		}
 	}
-	
+
 	public override int getLevel()
 	{
 		return getTemplate() != null ? getTemplate().getLevel() : 0;
 	}
-	
+
 	public override int getSummonType()
 	{
 		return 1;
 	}
-	
+
 	// ************************************/
-	
+
 	public void setExpMultiplier(float expMultiplier)
 	{
 		_expMultiplier = expMultiplier;
 	}
-	
+
 	public float getExpMultiplier()
 	{
 		return _expMultiplier;
 	}
-	
+
 	// ************************************/
-	
+
 	public void setItemConsume(ItemHolder item)
 	{
 		_itemConsume = item;
 	}
-	
+
 	public ItemHolder getItemConsume()
 	{
 		return _itemConsume;
 	}
-	
+
 	// ************************************/
-	
+
 	public void setItemConsumeInterval(TimeSpan interval)
 	{
 		_consumeItemInterval = interval;
 		_consumeItemIntervalRemaining = interval;
 	}
-	
+
 	public TimeSpan getItemConsumeInterval()
 	{
 		return _consumeItemInterval;
 	}
-	
+
 	// ************************************/
-	
+
 	public void setLifeTime(TimeSpan? lifeTime)
 	{
 		_lifeTime = lifeTime;
 		_lifeTimeRemaining = lifeTime;
 	}
-	
+
 	public TimeSpan? getLifeTime()
 	{
 		return _lifeTime;
 	}
-	
+
 	// ************************************/
-	
+
 	public void setLifeTimeRemaining(TimeSpan? time)
 	{
 		_lifeTimeRemaining = time;
 	}
-	
+
 	public TimeSpan? getLifeTimeRemaining()
 	{
 		return _lifeTimeRemaining;
 	}
-	
+
 	// ************************************/
-	
+
 	public void setReferenceSkill(int skillId)
 	{
 		_referenceSkill = skillId;
 	}
-	
+
 	public int getReferenceSkill()
 	{
 		return _referenceSkill;
 	}
-	
+
 	public override bool doDie(Creature killer)
 	{
 		if (!base.doDie(killer))
 		{
 			return false;
 		}
-		
+
 		if (_summonLifeTask != null)
 		{
 			_summonLifeTask.cancel(false);
 		}
-		
+
 		return true;
 	}
-	
+
 	/**
 	 * Servitors' skills automatically change their level based on the servitor's level.<br>
 	 * Until level 70, the servitor gets 1 lv of skill per 10 levels.<br>
@@ -156,14 +155,14 @@ public class Servitor : Summon, Runnable
 		{
 			skillLevel += (petLevel - 65) / 10;
 		}
-		
+
 		// Adjust the level for servitors less than level 1.
 		if (skillLevel < 1)
 		{
 			skillLevel = 1;
 		}
-		
-		Skill skillToCast = SkillData.getInstance().getSkill(skill.getId(), skillLevel);
+
+		Skill? skillToCast = SkillData.getInstance().getSkill(skill.getId(), skillLevel);
 		if (skillToCast != null)
 		{
 			base.doCast(skillToCast);
@@ -173,19 +172,19 @@ public class Servitor : Summon, Runnable
 			base.doCast(skill);
 		}
 	}
-	
+
 	public override void setRestoreSummon(bool value)
 	{
 		_restoreSummon = value;
 	}
-	
+
 	public override void stopSkillEffects(SkillFinishType type, int skillId)
 	{
 		base.stopSkillEffects(type, skillId);
-		Map<int, ICollection<SummonEffectTable.SummonEffect>> servitorEffects = SummonEffectTable.getInstance().getServitorEffects(getOwner());
+		Map<int, ICollection<SummonEffectTable.SummonEffect>>? servitorEffects = SummonEffectTable.getInstance().getServitorEffects(getOwner());
 		if (servitorEffects != null)
 		{
-			ICollection<SummonEffectTable.SummonEffect> effects = servitorEffects.get(_referenceSkill);
+			ICollection<SummonEffectTable.SummonEffect>? effects = servitorEffects.get(_referenceSkill);
 			if (effects != null && effects.Count != 0)
 			{
 				foreach (SummonEffectTable.SummonEffect effect in effects)
@@ -199,14 +198,14 @@ public class Servitor : Summon, Runnable
 			}
 		}
 	}
-	
+
 	public override void storeMe()
 	{
 		if (_referenceSkill == 0)
 		{
 			return;
 		}
-		
+
 		if (Config.RESTORE_SERVITOR_ON_RECONNECT)
 		{
 			if (isDead())
@@ -219,19 +218,19 @@ public class Servitor : Summon, Runnable
 			}
 		}
 	}
-	
+
 	public override void storeEffect(bool storeEffects)
 	{
 		if (!Config.SUMMON_STORE_SKILL_COOLTIME)
 		{
 			return;
 		}
-		
+
 		if (getOwner() == null || getOwner().isInOlympiadMode())
 		{
 			return;
 		}
-		
+
 		// Clear list for overwrite
 		if (SummonEffectTable.getInstance().getServitorEffectsOwner().GetValueOrDefault(getOwner().ObjectId)?
 		    .ContainsKey(getOwner().getClassIndex()) ?? false)
@@ -240,21 +239,21 @@ public class Servitor : Summon, Runnable
 				?.Clear();
 		}
 
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			
+
 			// Delete all current stored effects for summon to avoid dupe
 			int ownerId = getOwner().ObjectId;
 			int ownerClassIndex = getOwner().getClassIndex();
 			ctx.SummonSkillReuses.Where(r =>
 					r.OwnerId == ownerId && r.OwnerClassIndex == ownerClassIndex && r.SummonSkillId == _referenceSkill)
 				.ExecuteDelete();
-			
+
 			int buffIndex = 0;
-			
+
 			Set<long> storedSkills = new();
-			
+
 			// Store all effect data along with calculated remaining
 			if (storeEffects)
 			{
@@ -300,7 +299,7 @@ public class Servitor : Summon, Runnable
 
 					int skillId = skill.getId();
 					int skillLevel = skill.getLevel();
-					
+
 					// Search by primary key
 					DbSummonSkillReuse? record = ctx.SummonSkillReuses.SingleOrDefault(r =>
 						r.OwnerId == ownerId && r.OwnerClassIndex == ownerClassIndex &&
@@ -357,14 +356,14 @@ public class Servitor : Summon, Runnable
 			LOGGER.Warn("Could not store summon effect data: " + e);
 		}
 	}
-	
+
 	public override void restoreEffects()
 	{
 		if (getOwner().isInOlympiadMode())
 		{
 			return;
 		}
-		
+
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -385,7 +384,7 @@ public class Servitor : Summon, Runnable
 					{
 						continue;
 					}
-							
+
 					// TODO: Rework me!
 					if (skill.hasEffects(EffectScope.GENERAL))
 					{
@@ -440,32 +439,32 @@ public class Servitor : Summon, Runnable
 			}
 		}
 	}
-	
+
 	public override void unSummon(Player owner)
 	{
 		if (_summonLifeTask != null)
 		{
 			_summonLifeTask.cancel(false);
 		}
-		
+
 		base.unSummon(owner);
-		
+
 		if (!_restoreSummon)
 		{
 			CharSummonTable.getInstance().removeServitor(owner, ObjectId);
 		}
 	}
-	
+
 	public override bool destroyItem(string process, int objectId, long count, WorldObject reference, bool sendMessage)
 	{
 		return getOwner().destroyItem(process, objectId, count, reference, sendMessage);
 	}
-	
+
 	public override bool destroyItemByItemId(string process, int itemId, long count, WorldObject reference, bool sendMessage)
 	{
 		return getOwner().destroyItemByItemId(process, itemId, count, reference, sendMessage);
 	}
-	
+
 	public override AttributeType getAttackElement()
 	{
 		if (getOwner() != null)
@@ -474,7 +473,7 @@ public class Servitor : Summon, Runnable
 		}
 		return base.getAttackElement();
 	}
-	
+
 	public override int getAttackElementValue(AttributeType attackAttribute)
 	{
 		if (getOwner() != null)
@@ -483,7 +482,7 @@ public class Servitor : Summon, Runnable
 		}
 		return base.getAttackElementValue(attackAttribute);
 	}
-	
+
 	public override int getDefenseElementValue(AttributeType defenseAttribute)
 	{
 		if (getOwner() != null)
@@ -492,12 +491,12 @@ public class Servitor : Summon, Runnable
 		}
 		return base.getDefenseElementValue(defenseAttribute);
 	}
-	
+
 	public override bool isServitor()
 	{
 		return true;
 	}
-	
+
 	public void run()
 	{
 		TimeSpan usedtime = TimeSpan.FromMilliseconds(5000);
@@ -510,7 +509,7 @@ public class Servitor : Summon, Runnable
 			}
 			return;
 		}
-		
+
 		// check if the summon's lifetime has ran out
 		if (_lifeTimeRemaining < TimeSpan.Zero)
 		{
@@ -518,11 +517,11 @@ public class Servitor : Summon, Runnable
 			unSummon(getOwner());
 			return;
 		}
-		
+
 		if (_consumeItemInterval > TimeSpan.Zero)
 		{
 			_consumeItemIntervalRemaining -= usedtime;
-			
+
 			// check if it is time to consume another item
 			if (_consumeItemIntervalRemaining <= TimeSpan.Zero && _itemConsume.getCount() > 0 && _itemConsume.getId() > 0 && !isDead())
 			{
@@ -531,7 +530,7 @@ public class Servitor : Summon, Runnable
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.A_SUMMONED_MONSTER_USES_S1);
 					msg.Params.addItemName(_itemConsume.getId());
 					sendPacket(msg);
-					
+
 					// Reset
 					_consumeItemIntervalRemaining = _consumeItemInterval;
 				}
@@ -546,14 +545,14 @@ public class Servitor : Summon, Runnable
 		int lifeTimeInMs = (int)(_lifeTime ?? TimeSpan.Zero).TotalMilliseconds;
 		int lifeTimeRemainingInMs = (int)(_lifeTimeRemaining ?? TimeSpan.Zero).TotalMilliseconds;
 		sendPacket(new SetSummonRemainTimePacket(lifeTimeInMs, lifeTimeRemainingInMs));
-		
+
 		// Using same task to check if owner is in visible range
 		if (this.Distance3D(getOwner()) > 2000)
 		{
 			getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, getOwner());
 		}
 	}
-	
+
 	public override void doPickupItem(WorldObject @object)
 	{
 	}

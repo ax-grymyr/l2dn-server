@@ -71,7 +71,7 @@ public class AppearanceStone
 				{
 					foreach (CrystalType cryType in EnumUtil.GetValues<CrystalType>())
 					{
-						if ((cryType != CrystalType.NONE) && (cryType != CrystalType.EVENT))
+						if (cryType != CrystalType.NONE && cryType != CrystalType.EVENT)
 						{
 							addCrystalType(cryType);
 						}
@@ -277,18 +277,18 @@ public class AppearanceStone
 
 				if ((targetItem.isWeapon() && !getTargetTypes().Contains(AppearanceTargetType.WEAPON)) ||
 				    (targetItem.isArmor() && !getTargetTypes().Contains(AppearanceTargetType.ARMOR) &&
-				     !((targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIR) ||
-				       (targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIR2) ||
-				       (targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIRALL))) ||
+				     !(targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIR ||
+				       targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIR2 ||
+				       targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIRALL)) ||
 				    (targetItem.isEtcItem() && !getTargetTypes().Contains(AppearanceTargetType.ACCESSORY)))
 				{
 					player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 					return false;
 				}
 
-				if (((targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIR) ||
-				     (targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIR2) ||
-				     (targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIRALL)) &&
+				if ((targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIR ||
+				     targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIR2 ||
+				     targetItem.getTemplate().getBodyPart() == ItemTemplate.SLOT_HAIRALL) &&
 				    !getTargetTypes().Contains(AppearanceTargetType.ACCESSORY))
 				{
 					player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
@@ -342,9 +342,9 @@ public class AppearanceStone
 					}
 					case AppearanceTargetType.ACCESSORY:
 					{
-						if ((targetItem.getTemplate().getBodyPart() != ItemTemplate.SLOT_HAIR) &&
-						    (targetItem.getTemplate().getBodyPart() != ItemTemplate.SLOT_HAIR2) &&
-						    (targetItem.getTemplate().getBodyPart() != ItemTemplate.SLOT_HAIRALL))
+						if (targetItem.getTemplate().getBodyPart() != ItemTemplate.SLOT_HAIR &&
+						    targetItem.getTemplate().getBodyPart() != ItemTemplate.SLOT_HAIR2 &&
+						    targetItem.getTemplate().getBodyPart() != ItemTemplate.SLOT_HAIRALL)
 						{
 							player.sendPacket(SystemMessageId.HEAD_ACCESSORIES_ONLY);
 							return false;
@@ -390,15 +390,15 @@ public class AppearanceStone
 
 		if (_weaponType != WeaponType.NONE)
 		{
-			if (!targetItem.isWeapon() || (targetItem.getItemType() != _weaponType))
+			if (!targetItem.isWeapon() || targetItem.getItemType() != _weaponType)
 			{
 				if (_weaponType != WeaponType.CROSSBOW)
 				{
 					player.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_EXTRACTED);
 					return false;
 				}
-				else if ((targetItem.getItemType() != WeaponType.CROSSBOW) &&
-				         (targetItem.getItemType() != WeaponType.TWOHANDCROSSBOW))
+				else if (targetItem.getItemType() != WeaponType.CROSSBOW &&
+				         targetItem.getItemType() != WeaponType.TWOHANDCROSSBOW)
 				{
 					player.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_EXTRACTED);
 					return false;
@@ -461,7 +461,7 @@ public class AppearanceStone
 			{
 				case ArmorType.SHIELD:
 				{
-					if (!targetItem.isArmor() || (targetItem.getItemType() != ArmorType.SHIELD))
+					if (!targetItem.isArmor() || targetItem.getItemType() != ArmorType.SHIELD)
 					{
 						player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 						return false;
@@ -471,7 +471,7 @@ public class AppearanceStone
 				}
 				case ArmorType.SIGIL:
 				{
-					if (!targetItem.isArmor() || (targetItem.getItemType() != ArmorType.SIGIL))
+					if (!targetItem.isArmor() || targetItem.getItemType() != ArmorType.SIGIL)
 					{
 						player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);
 						return false;
@@ -489,22 +489,22 @@ public class AppearanceStone
 	{
 		foreach (AppearanceHolder holder in _allVisualIds)
 		{
-			if (targetItem.isArmor() && (holder.getBodyPart() != 0) &&
-			    (targetItem.getTemplate().getBodyPart() != holder.getBodyPart()))
+			if (targetItem.isArmor() && holder.getBodyPart() != 0 &&
+			    targetItem.getTemplate().getBodyPart() != holder.getBodyPart())
 			{
 				continue;
 			}
 
 			if (holder.getWeaponType() != WeaponType.NONE)
 			{
-				if (!targetItem.isWeapon() || (targetItem.getItemType() != holder.getWeaponType()))
+				if (!targetItem.isWeapon() || targetItem.getItemType() != holder.getWeaponType())
 				{
 					if (holder.getWeaponType() != WeaponType.CROSSBOW)
 					{
 						continue;
 					}
-					else if ((targetItem.getItemType() != WeaponType.CROSSBOW) &&
-					         (targetItem.getItemType() != WeaponType.TWOHANDCROSSBOW))
+					else if (targetItem.getItemType() != WeaponType.CROSSBOW &&
+					         targetItem.getItemType() != WeaponType.TWOHANDCROSSBOW)
 					{
 						continue;
 					}
@@ -563,7 +563,7 @@ public class AppearanceStone
 				{
 					case ArmorType.SHIELD:
 					{
-						if (!targetItem.isArmor() || (targetItem.getItemType() != ArmorType.SHIELD))
+						if (!targetItem.isArmor() || targetItem.getItemType() != ArmorType.SHIELD)
 						{
 							continue;
 						}
@@ -572,7 +572,7 @@ public class AppearanceStone
 					}
 					case ArmorType.SIGIL:
 					{
-						if (!targetItem.isArmor() || (targetItem.getItemType() != ArmorType.SIGIL))
+						if (!targetItem.isArmor() || targetItem.getItemType() != ArmorType.SIGIL)
 						{
 							continue;
 						}

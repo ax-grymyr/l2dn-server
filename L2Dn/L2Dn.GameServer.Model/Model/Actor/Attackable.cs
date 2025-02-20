@@ -145,7 +145,7 @@ public class Attackable: Npc
 	 */
 	public override void reduceCurrentHp(double value, Creature? attacker, Skill? skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
 	{
-		if (_isRaid && !isMinion() && (attacker != null) && (attacker.getParty() != null) && attacker.getParty().isInCommandChannel() && attacker.getParty().getCommandChannel().meetRaidWarCondition(this))
+		if (_isRaid && !isMinion() && attacker != null && attacker.getParty() != null && attacker.getParty().isInCommandChannel() && attacker.getParty().getCommandChannel().meetRaidWarCondition(this))
 		{
 			if (_firstCommandChannelAttacked == null) // looting right isn't set
 			{
@@ -176,7 +176,7 @@ public class Attackable: Npc
 			addDamage(attacker, (int) value, skill);
 
 			// Check Raidboss attack. Character will be petrified if attacking a raid that's more than 8 levels lower. In retail you deal damage to raid before curse.
-			if (_isRaid && giveRaidCurse() && !Config.RAID_DISABLE_CURSE && (attacker.getLevel() > (getLevel() + 8)))
+			if (_isRaid && giveRaidCurse() && !Config.RAID_DISABLE_CURSE && attacker.getLevel() > getLevel() + 8)
 			{
 				Skill raidCurse = CommonSkill.RAID_CURSE2.getSkill();
 				if (raidCurse != null)
@@ -196,7 +196,7 @@ public class Attackable: Npc
 			}
 
 			master = master.getLeader();
-			if ((master != null) && master.hasMinions())
+			if (master != null && master.hasMinions())
 			{
 				master.getMinionList().onAssist(this, attacker);
 			}
@@ -234,9 +234,9 @@ public class Attackable: Npc
 			return false;
 		}
 
-		if ((killer != null) && (killer.getActingPlayer() != null))
+		if (killer != null && killer.getActingPlayer() != null)
 		{
-			if ((killer.getClan() != null) && (Rnd.get(100) < 2))
+			if (killer.getClan() != null && Rnd.get(100) < 2)
 			{
 				killer.getClan().addExp(killer.ObjectId, 1);
 			}
@@ -252,7 +252,7 @@ public class Attackable: Npc
 		if (isMonster())
 		{
 			Monster mob = (Monster) this;
-			if ((mob.getLeader() != null) && mob.getLeader().hasMinions())
+			if (mob.getLeader() != null && mob.getLeader().hasMinions())
 			{
 				int respawnTime = Config.MINIONS_RESPAWN_TIME.ContainsKey(getId()) ? Config.MINIONS_RESPAWN_TIME[getId()] * 1000 : -1;
 				mob.getLeader().getMinionList().onMinionDie(mob, respawnTime);
@@ -397,7 +397,7 @@ public class Attackable: Npc
 			// Calculate raidboss points
 			if (_isRaid && !_isRaidMinion)
 			{
-				Player player = (maxDealer != null) && maxDealer.isOnline() ? maxDealer : lastAttacker.getActingPlayer();
+				Player player = maxDealer != null && maxDealer.isOnline() ? maxDealer : lastAttacker.getActingPlayer();
 				broadcastPacket(new SystemMessagePacket(SystemMessageId.CONGRATULATIONS_YOUR_RAID_WAS_SUCCESSFUL));
 				int raidbossPoints = (int) (getTemplate().getRaidPoints() * Config.RATE_RAIDBOSS_POINTS);
 				Party party = player.getParty();
@@ -453,7 +453,7 @@ public class Attackable: Npc
 				}
 			}
 
-			if ((mostDamageParty != null) && (mostDamageParty.damage > maxDamage))
+			if (mostDamageParty != null && mostDamageParty.damage > maxDamage)
 			{
 				Player leader = mostDamageParty.party.getLeader();
 				doItemDrop(leader);
@@ -461,7 +461,7 @@ public class Attackable: Npc
 			}
 			else
 			{
-				doItemDrop((maxDealer != null) && maxDealer.isOnline() ? maxDealer : lastAttacker);
+				doItemDrop(maxDealer != null && maxDealer.isOnline() ? maxDealer : lastAttacker);
 				EventDropManager.getInstance().doEventDrop(lastAttacker, this);
 			}
 
@@ -524,7 +524,7 @@ public class Attackable: Npc
 
 							// Check for an over-hit enabled strike
 							Creature overhitAttacker = _overhitAttacker;
-							if (_overhit && (overhitAttacker != null) && (overhitAttacker.getActingPlayer() != null) && (attacker == overhitAttacker.getActingPlayer()))
+							if (_overhit && overhitAttacker != null && overhitAttacker.getActingPlayer() != null && attacker == overhitAttacker.getActingPlayer())
 							{
 								attacker.sendPacket(SystemMessageId.OVER_HIT);
 								attacker.sendPacket(new ExMagicAttackInfoPacket(overhitAttacker.ObjectId, ObjectId, ExMagicAttackInfoPacket.OVERHIT));
@@ -603,7 +603,7 @@ public class Attackable: Npc
 						List<Player> groupMembers = attackerParty.isInCommandChannel() ? attackerParty.getCommandChannel().getMembers() : attackerParty.getMembers();
 						foreach (Player partyPlayer in groupMembers)
 						{
-							if ((partyPlayer == null) || partyPlayer.isDead())
+							if (partyPlayer == null || partyPlayer.isDead())
 							{
 								continue;
 							}
@@ -653,7 +653,7 @@ public class Attackable: Npc
 						// If the party didn't killed this Attackable alone
 						if (partyDmg < totalDamage)
 						{
-							partyMul = ((double) partyDmg / totalDamage);
+							partyMul = (double) partyDmg / totalDamage;
 						}
 
 						// Calculate Exp and SP rewards
@@ -672,7 +672,7 @@ public class Attackable: Npc
 						// Check for an over-hit enabled strike
 						// (When in party, the over-hit exp bonus is given to the whole party and splitted proportionally through the party members)
 						Creature overhitAttacker = _overhitAttacker;
-						if (_overhit && (overhitAttacker != null) && (overhitAttacker.getActingPlayer() != null) && (attacker == overhitAttacker.getActingPlayer()))
+						if (_overhit && overhitAttacker != null && overhitAttacker.getActingPlayer() != null && attacker == overhitAttacker.getActingPlayer())
 						{
 							attacker.sendPacket(SystemMessageId.OVER_HIT);
 							attacker.sendPacket(new ExMagicAttackInfoPacket(overhitAttacker.ObjectId, ObjectId, ExMagicAttackInfoPacket.OVERHIT));
@@ -700,19 +700,19 @@ public class Attackable: Npc
 
 	private void rewardAttributeExp(Player player, long damage, long totalDamage)
 	{
-		if ((getAttributeExp() > 0) && (getElementalSpiritType() != ElementalType.NONE) && (player.getActiveElementalSpiritType() > 0))
+		if (getAttributeExp() > 0 && getElementalSpiritType() != ElementalType.NONE && player.getActiveElementalSpiritType() > 0)
 		{
 			ElementalSpirit spirit = player.getElementalSpirit(getElementalSpiritType().getSuperior());
 			if (spirit != null)
 			{
-				spirit.addExperience((int) (((getAttributeExp() * damage) / totalDamage) * player.getElementalSpiritXpBonus()));
+				spirit.addExperience((int) (getAttributeExp() * damage / totalDamage * player.getElementalSpiritXpBonus()));
 			}
 		}
 	}
 
 	public override void addAttackerToAttackByList(Creature creature)
 	{
-		if ((creature == null) || (creature == this))
+		if (creature == null || creature == this)
 		{
 			return;
 		}
@@ -739,7 +739,7 @@ public class Attackable: Npc
 		Creature damageDealer = null;
 		foreach (AggroInfo info in _aggroList.Values)
 		{
-			if ((info != null) && (info.getDamage() > damage) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, this, info.getAttacker(), true))
+			if (info != null && info.getDamage() > damage && Util.checkIfInRange(Config.ALT_PARTY_RANGE, this, info.getAttacker(), true))
 			{
 				damage = info.getDamage();
 				damageDealer = info.getAttacker();
@@ -776,7 +776,7 @@ public class Attackable: Npc
 				getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, attacker);
 
 				// Calculate the amount of hate this attackable receives from this attack.
-				double hateValue = (damage * 100) / (getLevel() + 7);
+				double hateValue = damage * 100 / (getLevel() + 7);
 				if (skill == null)
 				{
 					hateValue *= attacker.getStat().getMul(Stat.HATE_ATTACK, 1);
@@ -806,7 +806,7 @@ public class Attackable: Npc
 	public virtual void addDamageHate(Creature creature, long damage, long aggroValue)
 	{
 		Creature attacker = creature;
-		if ((attacker == null) || (attacker == this))
+		if (attacker == null || attacker == this)
 		{
 			return;
 		}
@@ -819,7 +819,7 @@ public class Attackable: Npc
 
 		Player targetPlayer = attacker.getActingPlayer();
 		Creature summoner = attacker.getSummoner();
-		if (attacker.isNpc() && (summoner != null) && summoner.isPlayer() && !attacker.isTargetable())
+		if (attacker.isNpc() && summoner != null && summoner.isPlayer() && !attacker.isTargetable())
 		{
 			targetPlayer = summoner.getActingPlayer();
 			attacker = summoner;
@@ -833,12 +833,12 @@ public class Attackable: Npc
 		// making this hack because not possible to determine if damage made by trap
 		// so just check for triggered trap here
 		long aggro = aggroValue;
-		if ((targetPlayer == null) || (targetPlayer.getTrap() == null) || !targetPlayer.getTrap().isTriggered())
+		if (targetPlayer == null || targetPlayer.getTrap() == null || !targetPlayer.getTrap().isTriggered())
 		{
 			ai.addHate(aggro);
 		}
 
-		if ((targetPlayer != null) && (aggro == 0))
+		if (targetPlayer != null && aggro == 0)
 		{
 			addDamageHate(attacker, 0, 1);
 
@@ -854,14 +854,14 @@ public class Attackable: Npc
 				Events.NotifyAsync(new OnAttackableAggroRangeEnter(this, targetPlayer, attacker.isSummon()));
 			}
 		}
-		else if ((targetPlayer == null) && (aggro == 0))
+		else if (targetPlayer == null && aggro == 0)
 		{
 			aggro = 1;
 			ai.addHate(1);
 		}
 
 		// Set the intention to the Attackable to AI_INTENTION_ACTIVE
-		if ((aggro != 0) && (getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE))
+		if (aggro != 0 && getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 		{
 			getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		}
@@ -903,7 +903,7 @@ public class Attackable: Npc
 		}
 
 		ai1.addHate(amount);
-		if ((ai1.getHate() >= 0) && (getMostHated() == null))
+		if (ai1.getHate() >= 0 && getMostHated() == null)
 		{
 			((AttackableAI) getAI()).setGlobalAggro(-25);
 			clearAggroList();
@@ -1039,7 +1039,7 @@ public class Attackable: Npc
 	 */
 	public long getHating(Creature target)
 	{
-		if (_aggroList.Count == 0 || (target == null))
+		if (_aggroList.Count == 0 || target == null)
 		{
 			return 0;
 		}
@@ -1312,9 +1312,9 @@ public class Attackable: Npc
 	 */
 	public bool isOldCorpse(Player attacker, TimeSpan remainingTime, bool sendMessage)
 	{
-		if (isDead() && (DecayTaskManager.getInstance().getRemainingTime(this) < remainingTime))
+		if (isDead() && DecayTaskManager.getInstance().getRemainingTime(this) < remainingTime)
 		{
-			if (sendMessage && (attacker != null))
+			if (sendMessage && attacker != null)
 			{
 				attacker.sendPacket(SystemMessageId.THE_CORPSE_IS_TOO_OLD_THE_SKILL_CANNOT_BE_USED);
 			}
@@ -1330,7 +1330,7 @@ public class Attackable: Npc
 	 */
 	public bool checkSpoilOwner(Player sweeper, bool sendMessage)
 	{
-		if ((sweeper.ObjectId != _spoilerObjectId) && !sweeper.isInLooterParty(_spoilerObjectId))
+		if (sweeper.ObjectId != _spoilerObjectId && !sweeper.isInLooterParty(_spoilerObjectId))
 		{
 			if (sendMessage)
 			{
@@ -1410,7 +1410,7 @@ public class Attackable: Npc
 	private double[] calculateExpAndSp(int charLevel, long damage, long totalDamage)
 	{
 		// According to https://l2central.info/essence/articles/409.html?lang=ru
-		if ((charLevel - getLevel()) > 14)
+		if (charLevel - getLevel() > 14)
 		{
 			return new double[]
 			{
@@ -1421,15 +1421,15 @@ public class Attackable: Npc
 
 		return new double[]
 		{
-			Math.Max(0, (getExpReward() * damage) / totalDamage),
-			Math.Max(0, (getSpReward() * damage) / totalDamage)
+			Math.Max(0, getExpReward() * damage / totalDamage),
+			Math.Max(0, getSpReward() * damage / totalDamage)
 		};
 	}
 
 	public double calculateOverhitExp(double exp)
 	{
 		// Get the percentage based on the total of extra (over-hit) damage done relative to the total (maximum) ammount of HP on the Attackable
-		double overhitPercentage = ((_overhitDamage * 100) / getMaxHp());
+		double overhitPercentage = _overhitDamage * 100 / getMaxHp();
 
 		// Over-hit damage percentages are limited to 25% max
 		if (overhitPercentage > 25)
@@ -1439,7 +1439,7 @@ public class Attackable: Npc
 
 		// Get the overhit exp bonus according to the above over-hit damage percentage
 		// (1/1 basis - 13% of over-hit damage, 13% of extra exp is given, and so on...)
-		return (overhitPercentage / 100) * exp;
+		return overhitPercentage / 100 * exp;
 	}
 
 	/**
@@ -1503,7 +1503,7 @@ public class Attackable: Npc
 		_champion = false;
 
 		// Set champion on next spawn
-		if (Config.CHAMPION_ENABLE && isMonster() && !isQuestMonster() && !getTemplate().isUndying() && !_isRaid && !_isRaidMinion && (Config.CHAMPION_FREQUENCY > 0) && (getLevel() >= Config.CHAMP_MIN_LEVEL) && (getLevel() <= Config.CHAMP_MAX_LEVEL) && (Config.CHAMPION_ENABLE_IN_INSTANCES || (getInstanceId() == 0)))
+		if (Config.CHAMPION_ENABLE && isMonster() && !isQuestMonster() && !getTemplate().isUndying() && !_isRaid && !_isRaidMinion && Config.CHAMPION_FREQUENCY > 0 && getLevel() >= Config.CHAMP_MIN_LEVEL && getLevel() <= Config.CHAMP_MAX_LEVEL && (Config.CHAMPION_ENABLE_IN_INSTANCES || getInstanceId() == 0))
 		{
 			if (Rnd.get(100) < Config.CHAMPION_FREQUENCY)
 			{
@@ -1563,7 +1563,7 @@ public class Attackable: Npc
 	 */
 	public void setSeeded(Player seeder)
 	{
-		if ((_seed != null) && (_seederObjId == seeder.ObjectId))
+		if (_seed != null && _seederObjId == seeder.ObjectId)
 		{
 			_seeded = true;
 			int count = 1;
@@ -1660,7 +1660,7 @@ public class Attackable: Npc
 	// This is located here because Monster and FriendlyMob both extend this class. The other non-pc instances extend either Npc or Monster.
 	public override bool hasRandomAnimation()
 	{
-		return ((Config.MAX_MONSTER_ANIMATION > 0) && isRandomAnimationEnabled() && !(this is GrandBoss));
+		return Config.MAX_MONSTER_ANIMATION > 0 && isRandomAnimationEnabled() && !(this is GrandBoss);
 	}
 
 	public void setCommandChannelTimer(CommandChannelTimer commandChannelTimer)
@@ -1703,7 +1703,7 @@ public class Attackable: Npc
 	{
 		clearAggroList();
 
-		if (hasAI() && (getSpawn() != null))
+		if (hasAI() && getSpawn() != null)
 		{
 			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().Location.Location3D);
 		}
@@ -1714,12 +1714,12 @@ public class Attackable: Npc
 	 */
 	public virtual int getVitalityPoints(int level, double exp, bool isBoss)
 	{
-		if ((getLevel() <= 0) || (getExpReward() <= 0) || (isBoss && (Config.VITALITY_CONSUME_BY_BOSS == 0)))
+		if (getLevel() <= 0 || getExpReward() <= 0 || (isBoss && Config.VITALITY_CONSUME_BY_BOSS == 0))
 		{
 			return 0;
 		}
 
-		int points = Math.Max((int) ((exp / (isBoss ? Config.VITALITY_CONSUME_BY_BOSS : Config.VITALITY_CONSUME_BY_MOB)) * Math.Max(level - getLevel(), 1)), level < 40 ? 5 : 100);
+		int points = Math.Max((int) (exp / (isBoss ? Config.VITALITY_CONSUME_BY_BOSS : Config.VITALITY_CONSUME_BY_MOB) * Math.Max(level - getLevel(), 1)), level < 40 ? 5 : 100);
 		return -points;
 	}
 

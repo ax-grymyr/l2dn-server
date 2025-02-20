@@ -138,7 +138,7 @@ public class ItemInfo
 		_soulCrystalOptions = item.getSpecialAbilities();
 		_soulCrystalSpecialOptions = item.getAdditionalSpecialAbilities();
 		_visualId = item.getVisualId();
-		_visualExpiration = item.getVisualLifeTime() != null ? (item.getVisualLifeTime().Value - DateTime.UtcNow) : null;
+		_visualExpiration = item.getVisualLifeTime() != null ? item.getVisualLifeTime().Value - DateTime.UtcNow : null;
 		_reuseDelay = item.getReuseDelay();
 		_owner = item.getActingPlayer();
 	}
@@ -166,7 +166,7 @@ public class ItemInfo
 		_enchantLevel = item.getEnchant();
 		
 		// Get the augmentation bonus
-		if ((item.getAugmentationOption1() >= 0) && (item.getAugmentationOption2() >= 0))
+		if (item.getAugmentationOption1() >= 0 && item.getAugmentationOption2() >= 0)
 		{
 			_augmentation = new VariationInstance(0, item.getAugmentationOption1(), item.getAugmentationOption2());
 		}
@@ -389,7 +389,7 @@ public class ItemInfo
 	
 	public bool soulCrystalOptionsMatch(EnsoulOption[] soulCrystalOptions)
 	{
-		if ((_soulCrystalOptions == null))
+		if (_soulCrystalOptions == null)
 		{
 			return false;
 		}

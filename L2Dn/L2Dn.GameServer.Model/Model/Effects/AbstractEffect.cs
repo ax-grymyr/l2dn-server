@@ -38,7 +38,7 @@ public abstract class AbstractEffect
 
 	public double getTicksMultiplier()
 	{
-		return (getTicks() * Config.EFFECT_TICK_RATIO) / 1000f;
+		return getTicks() * Config.EFFECT_TICK_RATIO / 1000f;
 	}
 
 	/**

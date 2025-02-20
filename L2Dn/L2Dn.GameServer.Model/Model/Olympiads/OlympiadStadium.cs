@@ -82,7 +82,7 @@ public class OlympiadStadium
 		ExOlympiadUserInfoPacket packet = new ExOlympiadUserInfoPacket(player);
 		foreach (Player target in _instance.getPlayers())
 		{
-			if (target.inObserverMode() || (target.getOlympiadSide() != player.getOlympiadSide()))
+			if (target.inObserverMode() || target.getOlympiadSide() != player.getOlympiadSide())
 			{
 				target.sendPacket(packet);
 			}

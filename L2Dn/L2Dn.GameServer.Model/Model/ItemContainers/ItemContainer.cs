@@ -126,7 +126,7 @@ public abstract class ItemContainer
 		long count = 0;
 		foreach (Item item in _items)
 		{
-			if ((item.getId() == itemId) && ((item.getEnchantLevel() == enchantLevel) || (enchantLevel < 0)) && (includeEquipped || !item.isEquipped()))
+			if (item.getId() == itemId && (item.getEnchantLevel() == enchantLevel || enchantLevel < 0) && (includeEquipped || !item.isEquipped()))
 			{
 				if (item.isStackable())
 				{
@@ -167,7 +167,7 @@ public abstract class ItemContainer
 		Item? olditem = getItemByItemId(newItem.getId());
 
 		// If stackable item is found in inventory just add to current quantity
-		if ((olditem != null) && olditem.isStackable())
+		if (olditem != null && olditem.isStackable())
 		{
 			long count = newItem.getCount();
 			olditem.changeCount(process, count, actor, reference);
@@ -206,7 +206,7 @@ public abstract class ItemContainer
 		Item? item = getItemByItemId(itemId);
 
 		// If stackable item is found in inventory just add to current quantity
-		if ((item != null) && item.isStackable())
+		if (item != null && item.isStackable())
 		{
 			item.changeCount(process, count, actor, reference);
 			item.setLastChange(ItemChangeType.MODIFIED);
@@ -245,7 +245,7 @@ public abstract class ItemContainer
 			}
 
 			// If additional items where created send InventoryUpdate.
-			if (actor != null && (count > 1) && (item != null) && !item.isStackable() && (item.getItemLocation() == ItemLocation.INVENTORY))
+			if (actor != null && count > 1 && item != null && !item.isStackable() && item.getItemLocation() == ItemLocation.INVENTORY)
 			{
 				InventoryUpdatePacket iu = new InventoryUpdatePacket(items);
 				actor.sendInventoryUpdate(iu);
@@ -296,7 +296,7 @@ public abstract class ItemContainer
 			}
 
 			// If possible, move entire item object
-			if ((sourceitem.getCount() == count) && (targetitem == null) && !sourceitem.isStackable())
+			if (sourceitem.getCount() == count && targetitem == null && !sourceitem.isStackable())
 			{
 				removeItem(sourceitem);
 				target.addItem(process, sourceitem, actor, reference);
@@ -326,7 +326,7 @@ public abstract class ItemContainer
 
 			// Updates database
 			sourceitem.updateDatabase(true);
-			if ((targetitem != sourceitem) && (targetitem != null))
+			if (targetitem != sourceitem && targetitem != null)
 			{
 				targetitem.updateDatabase();
 			}
@@ -571,7 +571,7 @@ public abstract class ItemContainer
 	 */
 	public virtual void deleteMe()
 	{
-		if ((this is PlayerInventory) || (this is PlayerWarehouse) || (getOwner() != null))
+		if (this is PlayerInventory || this is PlayerWarehouse || getOwner() != null)
 		{
 			foreach (Item item in _items)
 			{
@@ -621,7 +621,7 @@ public abstract class ItemContainer
 				Player? owner = getOwner()?.getActingPlayer();
 
 				// If stackable item is found in inventory just add to current quantity
-				if (item.isStackable() && (getItemByItemId(item.getId()) != null))
+				if (item.isStackable() && getItemByItemId(item.getId()) != null)
 				{
 					addItem("Restore", item, owner, null);
 				}
@@ -658,7 +658,7 @@ public abstract class ItemContainer
 	public bool validateCapacityByItemId(int itemId, long count)
 	{
 		ItemTemplate? template = ItemData.getInstance().getTemplate(itemId);
-		return (template == null) || (template.isStackable() ? validateCapacity(1) : validateCapacity(count));
+		return template == null || (template.isStackable() ? validateCapacity(1) : validateCapacity(count));
 	}
 
 	/**
@@ -669,6 +669,6 @@ public abstract class ItemContainer
 	public bool validateWeightByItemId(int itemId, long count)
 	{
 		ItemTemplate? template = ItemData.getInstance().getTemplate(itemId);
-		return (template == null) || validateWeight(template.getWeight() * count);
+		return template == null || validateWeight(template.getWeight() * count);
 	}
 }

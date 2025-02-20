@@ -19,8 +19,8 @@ public class OpTargetNpcSkillCondition: ISkillCondition
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
-        WorldObject? actualTarget = (caster == null) || !caster.isPlayer() ? target : caster.getTarget();
-        return (actualTarget != null) && (actualTarget.isNpc() || actualTarget.isDoor()) &&
+        WorldObject? actualTarget = caster == null || !caster.isPlayer() ? target : caster.getTarget();
+        return actualTarget != null && (actualTarget.isNpc() || actualTarget.isDoor()) &&
             _npcIds.Contains(actualTarget.getId());
     }
 }

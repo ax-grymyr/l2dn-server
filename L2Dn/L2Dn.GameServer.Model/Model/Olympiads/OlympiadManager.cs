@@ -44,7 +44,7 @@ public class OlympiadManager
 		List<Set<int>> result = null;
 		foreach (var classList in _classBasedRegisters)
 		{
-			if ((classList.Value != null) && (classList.Value.size() >= Config.ALT_OLY_CLASSED))
+			if (classList.Value != null && classList.Value.size() >= Config.ALT_OLY_CLASSED)
 			{
 				if (result == null)
 				{
@@ -91,7 +91,7 @@ public class OlympiadManager
 		}
 
 		Set<int> classed = _classBasedRegisters.get(getClassGroup(noble));
-		if ((classed != null) && classed.Contains(objId))
+		if (classed != null && classed.Contains(objId))
 		{
 			if (showMessage)
 			{
@@ -212,7 +212,7 @@ public class OlympiadManager
 					return false;
 				}
 
-				if ((Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0) && !AntiFeedManager.getInstance()
+				if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0 && !AntiFeedManager.getInstance()
 					    .tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player,
 						    Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
 				{
@@ -240,7 +240,7 @@ public class OlympiadManager
 					return false;
 				}
 
-				if ((Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0) && !AntiFeedManager.getInstance()
+				if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0 && !AntiFeedManager.getInstance()
 					    .tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player,
 						    Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
 				{
@@ -275,7 +275,7 @@ public class OlympiadManager
 
 		if ((!noble.isInCategory(CategoryType.THIRD_CLASS_GROUP) &&
 		     !noble.isInCategory(CategoryType.FOURTH_CLASS_GROUP)) ||
-		    (noble.getLevel() < 55)) // Classic noble equivalent check.
+		    noble.getLevel() < 55) // Classic noble equivalent check.
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId
 				.CHARACTER_C1_DOES_NOT_MEET_THE_CONDITIONS_ONLY_CHARACTERS_WHO_HAVE_CHANGED_TWO_OR_MORE_CLASSES_CAN_PARTICIPATE_IN_OLYMPIAD);
@@ -308,7 +308,7 @@ public class OlympiadManager
 		}
 
 		Set<int> classed = _classBasedRegisters.get(getClassGroup(noble));
-		if ((classed != null) && classed.remove(objId))
+		if (classed != null && classed.remove(objId))
 		{
 			if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
 			{
@@ -325,7 +325,7 @@ public class OlympiadManager
 	public void removeDisconnectedCompetitor(Player player)
 	{
 		OlympiadGameTask task = OlympiadGameManager.getInstance().getOlympiadTask(player.getOlympiadGameId());
-		if ((task != null) && task.isGameStarted())
+		if (task != null && task.isGameStarted())
 		{
 			task.getGame().handleDisconnect(player);
 		}

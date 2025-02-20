@@ -29,14 +29,14 @@ public class EquipArmorSkillCondition: ISkillCondition
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
-        if ((caster == null) || !caster.isPlayer())
+        if (caster == null || !caster.isPlayer())
         {
             return false;
         }
 
         // Get the itemMask of the weared chest (if exists).
-        Inventory inv = caster.getInventory();
-        Item? chest = inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
+        Inventory? inv = caster.getInventory();
+        Item? chest = inv?.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
         if (chest == null)
         {
             return false;

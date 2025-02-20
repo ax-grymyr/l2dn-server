@@ -44,6 +44,6 @@ public class EnchantItemAttributeRequest: AbstractRequest
 
     public override bool isUsing(int objectId)
     {
-        return (objectId > 0) && ((objectId == _enchantingItemObjectId) || (objectId == _enchantingStoneObjectId));
+        return objectId > 0 && (objectId == _enchantingItemObjectId || objectId == _enchantingStoneObjectId);
     }
 }

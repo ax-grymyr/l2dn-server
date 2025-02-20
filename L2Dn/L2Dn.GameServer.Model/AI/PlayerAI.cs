@@ -49,11 +49,11 @@ public class PlayerAI : PlayableAI
 
 		object? localArg0 = args.Length > 0 ? args[0] : null;
 		object? localArg1 = args.Length > 1 ? args[1] : null;
-		object? globalArg0 = (_intentionArgs != null) && (_intentionArgs.Length > 0) ? _intentionArgs[0] : null;
-		object? globalArg1 = (_intentionArgs != null) && (_intentionArgs.Length > 1) ? _intentionArgs[1] : null;
+		object? globalArg0 = _intentionArgs != null && _intentionArgs.Length > 0 ? _intentionArgs[0] : null;
+		object? globalArg1 = _intentionArgs != null && _intentionArgs.Length > 1 ? _intentionArgs[1] : null;
 
 		// do nothing if next intention is same as current one.
-		if ((intention == _intention) && (globalArg0 == localArg0) && (globalArg1 == localArg1))
+		if (intention == _intention && globalArg0 == localArg0 && globalArg1 == localArg1)
 		{
 			base.changeIntention(intention, args);
 			return;
@@ -252,7 +252,7 @@ public class PlayerAI : PlayableAI
 		}
 
 		WorldObject? target = getTarget();
-		if ((target == null) || !target.isCreature())
+		if (target == null || !target.isCreature())
 		{
 			return;
 		}
@@ -274,7 +274,7 @@ public class PlayerAI : PlayableAI
 	private void thinkCast()
 	{
 		WorldObject? target = getCastTarget();
-		if ((_skill.getTargetType() == TargetType.GROUND) && _actor.isPlayer())
+		if (_skill.getTargetType() == TargetType.GROUND && _actor.isPlayer())
 		{
 			Location3D? location = ((Player)_actor).getCurrentSkillWorldPosition();
 			if (location != null && maybeMoveToPosition(location.Value, _actor.getMagicalAttackRange(_skill)))
@@ -286,7 +286,7 @@ public class PlayerAI : PlayableAI
 		{
 			if (checkTargetLost(target))
 			{
-				if (_skill.isBad() && (target != null))
+				if (_skill.isBad() && target != null)
 				{
 					// Notify the target
 					setCastTarget(null);
@@ -294,7 +294,7 @@ public class PlayerAI : PlayableAI
 				}
 				return;
 			}
-			if ((target != null) && maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
+			if (target != null && maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
 			{
 				return;
 			}
@@ -302,7 +302,7 @@ public class PlayerAI : PlayableAI
 
 		// Check if target has changed.
 		WorldObject? currentTarget = _actor.getTarget();
-		if ((currentTarget != target) && (currentTarget != null) && (target != null))
+		if (currentTarget != target && currentTarget != null && target != null)
 		{
 			_actor.setTarget(target);
 			_actor.doCast(_skill, _item, _forceUse, _dontMove);
@@ -359,7 +359,7 @@ public class PlayerAI : PlayableAI
 
 	public override void onEvtThink()
 	{
-		if (_thinking && (getIntention() != CtrlIntention.AI_INTENTION_CAST))
+		if (_thinking && getIntention() != CtrlIntention.AI_INTENTION_CAST)
 		{
 			return;
 		}

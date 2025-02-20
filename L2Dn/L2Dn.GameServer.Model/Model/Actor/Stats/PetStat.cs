@@ -16,7 +16,7 @@ public class PetStat: SummonStat
 	public override bool addExp(long value)
 	{
 		if (getActiveChar().isUncontrollable() ||
-		    !base.addExp((long)(value * (1 + (getValue(Stat.BONUS_EXP_PET, 0) / 100)))))
+		    !base.addExp((long)(value * (1 + getValue(Stat.BONUS_EXP_PET, 0) / 100))))
 		{
 			return false;
 		}
@@ -27,7 +27,7 @@ public class PetStat: SummonStat
 
 	public bool addExpAndSp(double addToExp)
 	{
-		long finalExp = (long)(addToExp * (1 + (getValue(Stat.BONUS_EXP_PET, 0) / 100)));
+		long finalExp = (long)(addToExp * (1 + getValue(Stat.BONUS_EXP_PET, 0) / 100));
 		if (getActiveChar().isUncontrollable() || !addExp(finalExp))
 		{
 			return false;
@@ -42,7 +42,7 @@ public class PetStat: SummonStat
 
 	public override bool addLevel(int value)
 	{
-		if ((getLevel() + value) > (getMaxLevel() - 1))
+		if (getLevel() + value > getMaxLevel() - 1)
 		{
 			return false;
 		}

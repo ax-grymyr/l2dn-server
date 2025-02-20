@@ -292,7 +292,7 @@ public class Hero
 					{
 						string name = CharInfoTable.getInstance().getNameById(charTwoId);
 						string cls = ClassListData.getInstance().getClass(charTwoClass).getClientCode();
-						if ((name != null) && (cls != null))
+						if (name != null && cls != null)
 						{
 							StatSet fight = new StatSet();
 							fight.set("oponent", name);
@@ -324,7 +324,7 @@ public class Hero
 					{
 						string name = CharInfoTable.getInstance().getNameById(charOneId);
 						string cls = ClassListData.getInstance().getClass(charOneClass).getClientCode();
-						if ((name != null) && (cls != null))
+						if (name != null && cls != null)
 						{
 							StatSet fight = new StatSet();
 							fight.set("oponent", name);
@@ -406,7 +406,7 @@ public class Hero
 		{
 			string htmContent = HtmCache.getInstance().getHtm("html/olympiad/herodiary.htm", player.getLang());
 			string heroMessage = HERO_MESSAGE.get(charid);
-			if ((htmContent != null) && (heroMessage != null))
+			if (htmContent != null && heroMessage != null)
 			{
 				HtmlContent diaryReply = HtmlContent.LoadFromText(htmContent, player); 
 				diaryReply.Replace("%heroname%", CharInfoTable.getInstance().getNameById(charid));
@@ -447,7 +447,7 @@ public class Hero
 						}
 					}
 					
-					if (breakat < (list.Count - 1))
+					if (breakat < list.Count - 1)
 					{
 						diaryReply.Replace("%buttprev%", "<button value=\"Prev\" action=\"bypass _diary?class=" + heroclass + "&page=" + (page + 1) + "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 					}
@@ -534,7 +534,7 @@ public class Hero
 						}
 					}
 					
-					if (breakat < (heroFights.Count - 1))
+					if (breakat < heroFights.Count - 1)
 					{
 						fightReply.Replace("%buttprev%", "<button value=\"Prev\" action=\"bypass _match?class=" + heroclass + "&page=" + (page + 1) + "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 					}
@@ -589,7 +589,7 @@ public class Hero
 			for (int i = 0; i < Inventory.PAPERDOLL_TOTALSLOTS; i++)
 			{
 				Item equippedItem = player.getInventory().getPaperdollItem(i);
-				if ((equippedItem != null) && equippedItem.isHeroItem())
+				if (equippedItem != null && equippedItem.isHeroItem())
 				{
 					player.getInventory().unEquipItemInSlot(i);
 				}
@@ -598,7 +598,7 @@ public class Hero
 			List<ItemInfo> items = new List<ItemInfo>();
 			foreach (Item item in player.getInventory().getAvailableItems(false, false, false))
 			{
-				if ((item != null) && item.isHeroItem())
+				if (item != null && item.isHeroItem())
 				{
 					player.destroyItem("Hero", item, null, true);
 					items.Add(new ItemInfo(item, ItemChangeType.REMOVED));
@@ -725,7 +725,7 @@ public class Hero
 		
 		NpcTemplate template = NpcData.getInstance().getTemplate(npcId);
 		List<StatSet> list = HERO_DIARY.get(charId);
-		if ((list == null) || (template == null))
+		if (list == null || template == null)
 		{
 			return;
 		}
@@ -745,7 +745,7 @@ public class Hero
 		
 		Castle castle = CastleManager.getInstance().getCastleById(castleId);
 		List<StatSet> list = HERO_DIARY.get(charId);
-		if ((list == null) || (castle == null))
+		if (list == null || castle == null)
 		{
 			return;
 		}
@@ -877,7 +877,7 @@ public class Hero
 		hero.set(CLAIMED, true);
 		
 		Clan clan = player.getClan();
-		if ((clan != null) && (clan.getLevel() >= 3))
+		if (clan != null && clan.getLevel() >= 3)
 		{
 			clan.addReputationScore(Config.HERO_POINTS);
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.CLAN_MEMBER_C1_HAS_BECOME_THE_HERO_CLAN_REPUTATION_POINTS_S2);

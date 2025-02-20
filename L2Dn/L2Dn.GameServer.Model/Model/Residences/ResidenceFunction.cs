@@ -45,7 +45,7 @@ public class ResidenceFunction
 	private void init()
 	{
 		ResidenceFunctionTemplate template = getTemplate();
-		if ((template != null) && (_expiration > DateTime.UtcNow))
+		if (template != null && _expiration > DateTime.UtcNow)
 		{
 			_task = ThreadPool.schedule(onFunctionExpiration, _expiration - DateTime.UtcNow);
 		}
@@ -145,7 +145,7 @@ public class ResidenceFunction
 
 		ItemContainer wh = clan.getWarehouse();
 		Item item = wh.getItemByItemId(template.getCost().getId());
-		if ((item == null) || (item.getCount() < template.getCost().getCount()))
+		if (item == null || item.getCount() < template.getCost().getCount())
 		{
 			return false;
 		}
@@ -164,7 +164,7 @@ public class ResidenceFunction
 	 */
 	public void cancelExpiration()
 	{
-		if ((_task != null) && !_task.isDone())
+		if (_task != null && !_task.isDone())
 		{
 			_task.cancel(true);
 		}

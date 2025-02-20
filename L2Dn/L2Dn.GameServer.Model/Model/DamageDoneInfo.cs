@@ -29,7 +29,7 @@ public class DamageDoneInfo
 	
     public override bool Equals(object? obj)
     {
-        return (this == obj) || ((obj is DamageDoneInfo) && (((DamageDoneInfo) obj).getAttacker() == _attacker));
+        return this == obj || (obj is DamageDoneInfo && ((DamageDoneInfo) obj).getAttacker() == _attacker);
     }
 	
     public override int GetHashCode()

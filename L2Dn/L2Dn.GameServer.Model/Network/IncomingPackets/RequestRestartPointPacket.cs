@@ -108,7 +108,9 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 				ClanHall? residence = ClanHallData.getInstance().getClanHallByClan(clan);
 				if (residence != null && residence.hasFunction(ResidenceFunctionType.EXP_RESTORE))
 				{
-					player.restoreExp(residence.getFunction(ResidenceFunctionType.EXP_RESTORE).getValue());
+                    ResidenceFunction? residenceFunction = residence.getFunction(ResidenceFunctionType.EXP_RESTORE);
+                    if (residenceFunction != null)
+					    player.restoreExp(residenceFunction.getValue());
 				}
 
 				break;

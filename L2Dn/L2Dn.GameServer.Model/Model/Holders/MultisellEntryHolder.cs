@@ -20,7 +20,7 @@ public class MultisellEntryHolder
 		foreach (ItemChanceHolder product in products)
 		{
 			ItemTemplate item = ItemData.getInstance().getTemplate(product.getId());
-			if ((item == null) || !item.isStackable())
+			if (item == null || !item.isStackable())
 			{
 				_stackable = false;
 				return;

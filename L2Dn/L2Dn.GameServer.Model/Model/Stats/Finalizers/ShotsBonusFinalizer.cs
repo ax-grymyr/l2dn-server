@@ -19,29 +19,29 @@ public class ShotsBonusFinalizer: StatFunction
 		if (player != null)
 		{
 			Item weapon = player.getActiveWeaponInstance();
-			if ((weapon != null) && weapon.isEnchanted())
+			if (weapon != null && weapon.isEnchanted())
 			{
 				switch (weapon.getWeaponItem().getItemGrade())
 				{
 					case ItemGrade.D:
 					case ItemGrade.C:
 					{
-						baseValue += (weapon.getEnchantLevel() * 0.4) / 100;
+						baseValue += weapon.getEnchantLevel() * 0.4 / 100;
 						break;
 					}
 					case ItemGrade.B:
 					{
-						baseValue += (weapon.getEnchantLevel() * 0.7) / 100;
+						baseValue += weapon.getEnchantLevel() * 0.7 / 100;
 						break;
 					}
 					case ItemGrade.A:
 					{
-						baseValue += (weapon.getEnchantLevel() * 1.4) / 100;
+						baseValue += weapon.getEnchantLevel() * 1.4 / 100;
 						break;
 					}
 					case ItemGrade.S:
 					{
-						baseValue += (weapon.getEnchantLevel() * 1.6) / 100;
+						baseValue += weapon.getEnchantLevel() * 1.6 / 100;
 						break;
 					}
 				}

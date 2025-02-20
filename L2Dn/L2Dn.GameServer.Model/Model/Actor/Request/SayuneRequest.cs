@@ -22,58 +22,59 @@ public class SayuneRequest : AbstractRequest
 		foreach (SayuneEntry entry in map.getInnerEntries())
 			_possibleEntries.Enqueue(entry);
 	}
-	
+
 	public override bool isUsing(int objectId)
 	{
 		return false;
 	}
-	
-	private SayuneEntry findEntry(int pos)
+
+	private SayuneEntry? findEntry(int pos)
 	{
 		if (_possibleEntries.Count == 0)
 		{
 			return null;
 		}
-		else if (_isSelecting)
-		{
-			foreach (SayuneEntry entry in _possibleEntries)
-			{
-				if (entry.getId() == pos)
-				{
-					return entry;
-				}
-			}
-			return null;
-		}
 
-		if (_possibleEntries.TryDequeue(out SayuneEntry? sayuneEntry))
+        if (_isSelecting)
+        {
+            foreach (SayuneEntry entry in _possibleEntries)
+            {
+                if (entry.getId() == pos)
+                {
+                    return entry;
+                }
+            }
+            return null;
+        }
+
+        if (_possibleEntries.TryDequeue(out SayuneEntry? sayuneEntry))
 			return sayuneEntry;
-		
+
 		return null;
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void move(Player player, int pos)
 	{
-		SayuneEntry map = SayuneData.getInstance().getMap(_mapId);
+		SayuneEntry? map = SayuneData.getInstance().getMap(_mapId);
 		if (map == null || map.getInnerEntries().Count == 0)
 		{
 			player.sendMessage("MapId: " + _mapId + " was not found in the map!");
 			return;
 		}
-		
-		SayuneEntry nextEntry = findEntry(pos);
+
+		SayuneEntry? nextEntry = findEntry(pos);
 		if (nextEntry == null)
 		{
 			player.removeRequest<SayuneRequest>();
 			return;
 		}
-		
+
 		// If player was selecting unset and set his possible path
 		if (_isSelecting)
 		{
 			_isSelecting = false;
-			
+
 			// Set next possible path
 			if (!nextEntry.isSelector())
 			{
@@ -83,7 +84,7 @@ public class SayuneRequest : AbstractRequest
 					_possibleEntries.Enqueue(entry);
 			}
 		}
-		
+
 		SayuneType type = pos == 0 && nextEntry.isSelector() ? SayuneType.START_LOC : nextEntry.isSelector() ? SayuneType.MULTI_WAY_LOC : SayuneType.ONE_WAY_LOC;
 		List<SayuneEntry> locations = nextEntry.isSelector() ? nextEntry.getInnerEntries() : [nextEntry];
 		if (nextEntry.isSelector())
@@ -95,20 +96,20 @@ public class SayuneRequest : AbstractRequest
 
 			_isSelecting = true;
 		}
-		
+
 		player.sendPacket(new ExFlyMovePacket(player, type, _mapId, locations));
-		
+
 		SayuneEntry activeEntry = locations[0];
 		Broadcast.toKnownPlayersInRadius(player, new ExFlyMoveBroadcastPacket(player, type, map.getId(), activeEntry.Location), 1000);
 		player.setXYZ(activeEntry.Location.X, activeEntry.Location.Y, activeEntry.Location.Z);
 	}
-	
+
 	public void onLogout()
 	{
-		SayuneEntry map = SayuneData.getInstance().getMap(_mapId);
+		SayuneEntry? map = SayuneData.getInstance().getMap(_mapId);
 		if (map != null && map.getInnerEntries().Count != 0)
 		{
-			SayuneEntry nextEntry = findEntry(0);
+			SayuneEntry? nextEntry = findEntry(0);
 			if (_isSelecting || (nextEntry != null && nextEntry.isSelector()))
 			{
 				// If player is on selector or next entry is selector go back to first entry

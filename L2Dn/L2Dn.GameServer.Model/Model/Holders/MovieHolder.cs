@@ -34,7 +34,7 @@ public class MovieHolder
 
 		_votedPlayers.add(player);
 
-		if (((_votedPlayers.size() * 100) / _players.Count) >= 50)
+		if (_votedPlayers.size() * 100 / _players.Count >= 50)
 		{
 			_players.ForEach(p => p.stopMovie());
 		}

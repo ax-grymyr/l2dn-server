@@ -38,7 +38,7 @@ public abstract class AbstractRequest
 
     public bool isTimeout()
     {
-        return (_timeOutTask != null) && !_timeOutTask.isDone();
+        return _timeOutTask != null && !_timeOutTask.isDone();
     }
 
     public bool isProcessing()

@@ -18,7 +18,7 @@ public class FuncMul: AbstractFunction
 
 	public override double calc(Creature effector, Creature effected, Skill skill, double initVal)
 	{
-		if ((getApplayCond() == null) || getApplayCond().test(effector, effected, skill))
+		if (getApplayCond() == null || getApplayCond().test(effector, effected, skill))
 		{
 			return initVal * getValue();
 		}

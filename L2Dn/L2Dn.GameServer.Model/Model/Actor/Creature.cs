@@ -155,7 +155,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	/** Future Skill Cast */
 	protected Map<SkillCastingType, SkillCaster> _skillCasters = new();
 
-	private readonly AtomicInteger _abnormalShieldBlocks = new AtomicInteger();
+	private readonly AtomicInteger _abnormalShieldBlocks = new();
 
 	private readonly Map<int, RelationCache> _knownRelations = new();
 
@@ -931,7 +931,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			}
 
 			// Get the active weapon item corresponding to the active weapon instance (always equipped in the right hand)
-			Weapon weaponItem = getActiveWeaponItem();
+			Weapon? weaponItem = getActiveWeaponItem();
 			WeaponType weaponType = getAttackType();
 
 			// BOW and CROSSBOW checks
@@ -1074,7 +1074,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 					// int reuse = (int) (Formulas.calculateReuseTime(this, weaponItem) / (Math.Max(1, _stat.getAttackSpeedMultiplier() - 1)));
 
 					// Consume ammunition.
-					Inventory inventory = getInventory();
+					Inventory? inventory = getInventory();
 					if (inventory != null)
 					{
 						inventory.reduceAmmunitionCount(crossbow ? EtcItemType.BOLT : EtcItemType.ARROW);
@@ -1379,10 +1379,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * @return if the item has a reuse time stamp, the remaining time, otherwise -1
 	 */
 	public TimeSpan getItemRemainingReuseTime(int itemObjId)
-	{
-		TimeStamp reuseStamp = _reuseTimeStampsItems.get(itemObjId);
-		return reuseStamp != null ? reuseStamp.getRemaining() : TimeSpan.Zero;
-	}
+    {
+        return _reuseTimeStampsItems.TryGetValue(itemObjId, out TimeStamp? reuseStamp)
+            ? reuseStamp.getRemaining()
+            : TimeSpan.Zero;
+    }
 
 	/**
 	 * Gets the item remaining reuse time for a given shared reuse item group.
@@ -2946,7 +2947,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return false;
 		}
 
-		if (move.onGeodataPathIndex == (move.geoPath.Count - 1))
+		if (move.onGeodataPathIndex == move.geoPath.Count - 1)
 		{
 			return false;
 		}
@@ -3272,7 +3273,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		move.moveTimestamp = gameTicks;
 
 		// Broadcast MoveToLocation when Playable tries to reach a Playable target (once per second).
-		if (isPlayable() && ((gameTicks - move.lastBroadcastTime) >= 3) && isOnGeodataPath(move))
+		if (isPlayable() && gameTicks - move.lastBroadcastTime >= 3 && isOnGeodataPath(move))
 		{
 			move.lastBroadcastTime = gameTicks;
 			broadcastPacket(new MoveToLocationPacket(this));
@@ -4224,7 +4225,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public bool isInActiveRegion()
 	{
-		WorldRegion region = getWorldRegion();
+		WorldRegion? region = getWorldRegion();
 		return region != null && region.isActive();
 	}
 

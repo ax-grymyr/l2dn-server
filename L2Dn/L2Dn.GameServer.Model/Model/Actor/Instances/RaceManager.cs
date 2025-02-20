@@ -14,34 +14,34 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 public class RaceManager: Npc
 {
 	protected static readonly int[] TICKET_PRICES = [100, 500, 1000, 5000, 10000, 20000, 50000, 100000];
-	
+
 	public RaceManager(NpcTemplate template): base(template)
 	{
 	}
-	
+
 	public override void onBypassFeedback(Player player, string command)
 	{
 		if (command.startsWith("BuyTicket"))
 		{
-			if (!Config.ALLOW_RACE || (MonsterRace.getInstance().getCurrentRaceState() != MonsterRace.RaceState.ACCEPTING_BETS))
+			if (!Config.ALLOW_RACE || MonsterRace.getInstance().getCurrentRaceState() != MonsterRace.RaceState.ACCEPTING_BETS)
 			{
 				player.sendPacket(SystemMessageId.MONSTER_RACE_TICKETS_ARE_NO_LONGER_AVAILABLE);
 				base.onBypassFeedback(player, "Chat 0");
 				return;
 			}
-			
+
 			int val = int.Parse(command.Substring(10));
 			if (val == 0)
 			{
 				player.setRaceTicket(0, 0);
 				player.setRaceTicket(1, 0);
 			}
-			
-			if (((val == 10) && (player.getRaceTicket(0) == 0)) || ((val == 20) && (player.getRaceTicket(0) == 0) && (player.getRaceTicket(1) == 0)))
+
+			if ((val == 10 && player.getRaceTicket(0) == 0) || (val == 20 && player.getRaceTicket(0) == 0 && player.getRaceTicket(1) == 0))
 			{
 				val = 0;
 			}
-			
+
 			string search, replace;
 
 			HtmlContent htmlContent;
@@ -71,7 +71,7 @@ public class RaceManager: Npc
 				{
 					return;
 				}
-				
+
 				htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 3, player), player);
 				htmlContent.Replace("0place", player.getRaceTicket(0).ToString());
 				search = "Mob1";
@@ -90,11 +90,11 @@ public class RaceManager: Npc
 			}
 			else if (val == 20)
 			{
-				if ((player.getRaceTicket(0) == 0) || (player.getRaceTicket(1) == 0))
+				if (player.getRaceTicket(0) == 0 || player.getRaceTicket(1) == 0)
 				{
 					return;
 				}
-				
+
 				htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 4, player), player);
 				htmlContent.Replace("0place", player.getRaceTicket(0).ToString());
 				search = "Mob1";
@@ -112,18 +112,18 @@ public class RaceManager: Npc
 			}
 			else
 			{
-				if ((player.getRaceTicket(0) == 0) || (player.getRaceTicket(1) == 0))
+				if (player.getRaceTicket(0) == 0 || player.getRaceTicket(1) == 0)
 				{
 					return;
 				}
-				
+
 				int ticket = player.getRaceTicket(0);
 				int priceId = player.getRaceTicket(1);
 				if (!player.reduceAdena("Race", TICKET_PRICES[priceId - 1], this, true))
 				{
 					return;
 				}
-				
+
 				player.setRaceTicket(0, 0);
 				player.setRaceTicket(1, 0);
 				Item item = new Item(IdManager.getInstance().getNextId(), 4443);
@@ -136,23 +136,23 @@ public class RaceManager: Npc
 				msg.Params.addInt(MonsterRace.getInstance().getRaceNumber());
 				msg.Params.addItemName(4443);
 				player.sendPacket(msg);
-				
+
 				// Refresh lane bet.
 				MonsterRace.getInstance().setBetOnLane(ticket, TICKET_PRICES[priceId - 1], true);
 				base.onBypassFeedback(player, "Chat 0");
 				return;
 			}
-			
+
 			htmlContent.Replace("1race", MonsterRace.getInstance().getRaceNumber().ToString());
 			htmlContent.Replace("%objectId%", ObjectId.ToString());
-			
+
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
 		else if (command.equals("ShowOdds"))
 		{
-			if (!Config.ALLOW_RACE || (MonsterRace.getInstance().getCurrentRaceState() == MonsterRace.RaceState.ACCEPTING_BETS))
+			if (!Config.ALLOW_RACE || MonsterRace.getInstance().getCurrentRaceState() == MonsterRace.RaceState.ACCEPTING_BETS)
 			{
 				player.sendPacket(SystemMessageId.MONSTER_RACE_PAYOUT_INFORMATION_IS_NOT_AVAILABLE_WHILE_TICKETS_ARE_BEING_SOLD);
 				base.onBypassFeedback(player, "Chat 0");
@@ -164,10 +164,10 @@ public class RaceManager: Npc
 			{
 				int n = i + 1;
 				htmlContent.Replace("Mob" + n, MonsterRace.getInstance().getMonsters()[i].getTemplate().getName());
-				
+
 				// Odd
 				double odd = MonsterRace.getInstance().getOdds()[i];
-				htmlContent.Replace("Odd" + n, (odd > 0D) ? odd.ToString("N1") : "&$804;");
+				htmlContent.Replace("Odd" + n, odd > 0D ? odd.ToString("N1") : "&$804;");
 			}
 
 			htmlContent.Replace("1race", MonsterRace.getInstance().getRaceNumber().ToString());
@@ -191,7 +191,7 @@ public class RaceManager: Npc
 				string search = "Mob" + n;
 				htmlContent.Replace(search, MonsterRace.getInstance().getMonsters()[i].getTemplate().getName());
 			}
-			
+
 			htmlContent.Replace("%objectId%", ObjectId.ToString());
 
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
@@ -205,10 +205,10 @@ public class RaceManager: Npc
 				base.onBypassFeedback(player, "Chat 0");
 				return;
 			}
-			
+
 			// Generate data.
 			StringBuilder sb = new();
-			
+
 			// Retrieve player's tickets.
 			foreach (Item ticket in player.getInventory().getAllItemsByItemId(4443))
 			{
@@ -240,24 +240,24 @@ public class RaceManager: Npc
 		{
 			// Retrieve ticket objectId.
 			int val = int.Parse(command.Substring(11));
-			if (!Config.ALLOW_RACE || (val == 0))
+			if (!Config.ALLOW_RACE || val == 0)
 			{
 				base.onBypassFeedback(player, "Chat 0");
 				return;
 			}
-			
+
 			// Retrieve ticket on player's inventory.
-			Item ticket = player.getInventory().getItemByObjectId(val);
+			Item? ticket = player.getInventory().getItemByObjectId(val);
 			if (ticket == null)
 			{
 				base.onBypassFeedback(player, "Chat 0");
 				return;
 			}
-			
+
 			int raceId = ticket.getEnchantLevel();
 			int lane = ticket.getCustomType1();
 			int bet = ticket.getCustomType2() * 100;
-			
+
 			// Retrieve HistoryInfo for that race.
 			MonsterRace.HistoryInfo info = MonsterRace.getInstance().getHistory()[raceId - 1];
 			if (info == null)
@@ -265,13 +265,13 @@ public class RaceManager: Npc
 				base.onBypassFeedback(player, "Chat 0");
 				return;
 			}
-			
+
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 8, player), player);
 			htmlContent.Replace("%raceId%", raceId.ToString());
 			htmlContent.Replace("%lane%", lane.ToString());
 			htmlContent.Replace("%bet%", bet.ToString());
 			htmlContent.Replace("%firstLane%", info.getFirst().ToString());
-			htmlContent.Replace("%odd%", (lane == info.getFirst()) ? info.getOddRate().ToString("N2") : "0.01");
+			htmlContent.Replace("%odd%", lane == info.getFirst() ? info.getOddRate().ToString("N2") : "0.01");
 			htmlContent.Replace("%objectId%", ObjectId.ToString());
 			htmlContent.Replace("%ticketObjectId%", val.ToString());
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
@@ -282,24 +282,24 @@ public class RaceManager: Npc
 		{
 			// Retrieve ticket objectId.
 			int val = int.Parse(command.Substring(13));
-			if (!Config.ALLOW_RACE || (val == 0))
+			if (!Config.ALLOW_RACE || val == 0)
 			{
 				base.onBypassFeedback(player, "Chat 0");
 				return;
 			}
-			
+
 			// Delete ticket on player's inventory.
-			Item ticket = player.getInventory().getItemByObjectId(val);
+			Item? ticket = player.getInventory().getItemByObjectId(val);
 			if (ticket == null)
 			{
 				base.onBypassFeedback(player, "Chat 0");
 				return;
 			}
-			
+
 			int raceId = ticket.getEnchantLevel();
 			int lane = ticket.getCustomType1();
 			int bet = ticket.getCustomType2() * 100;
-			
+
 			// Retrieve HistoryInfo for that race.
 			MonsterRace.HistoryInfo info = MonsterRace.getInstance().getHistory()[raceId - 1];
 			if (info == null)
@@ -307,13 +307,13 @@ public class RaceManager: Npc
 				base.onBypassFeedback(player, "Chat 0");
 				return;
 			}
-			
+
 			// Destroy the ticket.
 			if (player.destroyItem("MonsterTrack", ticket, this, true))
 			{
-				player.addAdena("MonsterTrack", (int) (bet * ((lane == info.getFirst()) ? info.getOddRate() : 0.01)), this, true);
+				player.addAdena("MonsterTrack", (int) (bet * (lane == info.getFirst() ? info.getOddRate() : 0.01)), this, true);
 			}
-			
+
 			base.onBypassFeedback(player, "Chat 0");
 			return;
 		}
@@ -324,10 +324,10 @@ public class RaceManager: Npc
 				base.onBypassFeedback(player, "Chat 0");
 				return;
 			}
-			
+
 			// Generate data.
 			StringBuilder sb = new StringBuilder();
-			
+
 			// Use whole history, pickup from 'last element' and stop at 'latest element - 7'.
 			List<MonsterRace.HistoryInfo> history = MonsterRace.getInstance().getHistory();
 			for (int i = history.Count - 1; i >= Math.Max(0, history.Count - 7); i--)

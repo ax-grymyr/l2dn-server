@@ -12,6 +12,6 @@ public sealed class ConditionWithSkill(bool withSkill): Condition
 {
     protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
     {
-        return (skill != null) == withSkill;
+        return skill != null == withSkill;
     }
 }

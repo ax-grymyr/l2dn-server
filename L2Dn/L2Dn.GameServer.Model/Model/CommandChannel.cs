@@ -175,7 +175,7 @@ public class CommandChannel: AbstractPlayerGroup
 			return false;
 		}
 
-		return (getMemberCount() >= Config.LOOT_RAIDS_PRIVILEGE_CC_SIZE);
+		return getMemberCount() >= Config.LOOT_RAIDS_PRIVILEGE_CC_SIZE;
 	}
 
 	/**
@@ -193,7 +193,7 @@ public class CommandChannel: AbstractPlayerGroup
 	 */
 	public override bool containsPlayer(Player player)
 	{
-		if ((_parties != null) && !_parties.isEmpty())
+		if (_parties != null && !_parties.isEmpty())
 		{
 			foreach (Party party in _parties)
 			{
@@ -213,7 +213,7 @@ public class CommandChannel: AbstractPlayerGroup
 	 */
 	public override bool forEachMember(Func<Player, bool> function)
 	{
-		if ((_parties != null) && !_parties.isEmpty())
+		if (_parties != null && !_parties.isEmpty())
 		{
 			foreach (Party party in _parties)
 			{

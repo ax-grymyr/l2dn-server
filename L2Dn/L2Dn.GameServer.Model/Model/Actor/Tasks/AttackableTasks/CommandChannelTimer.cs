@@ -19,7 +19,7 @@ public class CommandChannelTimer: Runnable
             return;
         }
 
-        if ((DateTime.UtcNow - _attackable.getCommandChannelLastAttack()) >
+        if (DateTime.UtcNow - _attackable.getCommandChannelLastAttack() >
             TimeSpan.FromMilliseconds(Config.LOOT_RAIDS_PRIVILEGE_INTERVAL))
         {
             _attackable.setCommandChannelTimer(null);

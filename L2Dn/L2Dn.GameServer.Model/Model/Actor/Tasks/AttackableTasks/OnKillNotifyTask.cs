@@ -20,7 +20,7 @@ public class OnKillNotifyTask: Runnable
 
     public void run()
     {
-        if ((_quest != null) && (_attackable != null) && (_killer != null))
+        if (_quest != null && _attackable != null && _killer != null)
         {
             _quest.notifyKill(_attackable, _killer, _isSummon);
         }

@@ -81,7 +81,7 @@ public struct RequestAnswerJoinPledgePacket: IIncomingPacket<GameSession>
 				}
 
 				clan.addClanMember(player);
-				player.setClanPrivileges(player.getClan().getRankPrivs(player.getPowerGrade()));
+				player.setClanPrivileges(clan.getRankPrivs(player.getPowerGrade()));
 				player.sendPacket(SystemMessageId.ENTERED_THE_CLAN);
 
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_HAS_JOINED_THE_CLAN);

@@ -34,50 +34,53 @@ public class Doorman : Folk
 			showChatWindow(player);
 			return;
 		}
-		else if (command.startsWith("open_doors"))
-		{
-			if (isOwnerClan(player))
-			{
-				if (isUnderSiege())
-				{
-					cannotManageDoors(player);
-				}
-				else
-				{
-					openDoors(player, command);
-				}
-			}
-			return;
-		}
-		else if (command.startsWith("close_doors"))
-		{
-			if (isOwnerClan(player))
-			{
-				if (isUnderSiege())
-				{
-					cannotManageDoors(player);
-				}
-				else
-				{
-					closeDoors(player, command);
-				}
-			}
-			return;
-		}
-		else if (command.startsWith("tele"))
-		{
-			if (isOwnerClan(player))
-			{
-				TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), TeleportType.OTHER.ToString());
-				if (holder != null)
-				{
-					int locId = int.Parse(command.Substring(5).Trim());
-					holder.doTeleport(player, this, locId);
-				}
-			}
-			return;
-		}
-		base.onBypassFeedback(player, command);
+
+        if (command.startsWith("open_doors"))
+        {
+            if (isOwnerClan(player))
+            {
+                if (isUnderSiege())
+                {
+                    cannotManageDoors(player);
+                }
+                else
+                {
+                    openDoors(player, command);
+                }
+            }
+            return;
+        }
+
+        if (command.startsWith("close_doors"))
+        {
+            if (isOwnerClan(player))
+            {
+                if (isUnderSiege())
+                {
+                    cannotManageDoors(player);
+                }
+                else
+                {
+                    closeDoors(player, command);
+                }
+            }
+            return;
+        }
+
+        if (command.startsWith("tele"))
+        {
+            if (isOwnerClan(player))
+            {
+                TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), TeleportType.OTHER.ToString());
+                if (holder != null)
+                {
+                    int locId = int.Parse(command.Substring(5).Trim());
+                    holder.doTeleport(player, this, locId);
+                }
+            }
+            return;
+        }
+        base.onBypassFeedback(player, command);
 	}
 
 	public override void showChatWindow(Player player)

@@ -15,6 +15,6 @@ public class OpTargetPcSkillCondition: ISkillCondition
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
-        return (target != null) && target.isPlayer();
+        return target != null && target.isPlayer();
     }
 }

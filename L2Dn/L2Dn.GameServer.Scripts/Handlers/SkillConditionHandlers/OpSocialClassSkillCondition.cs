@@ -19,17 +19,17 @@ public class OpSocialClassSkillCondition: ISkillCondition
 	public bool canUse(Creature caster, Skill skill, WorldObject? target)
 	{
 		Player? player = caster.getActingPlayer();
-		if ((player == null) || (player.getClan() == null))
+		if (player == null || player.getClan() == null)
 		{
 			return false;
 		}
 
 		bool isClanLeader = player.isClanLeader();
-		if ((_socialClass == -1) && !isClanLeader)
+		if (_socialClass == -1 && !isClanLeader)
 		{
 			return false;
 		}
 
-		return isClanLeader || (player.getPledgeType() >= _socialClass);
+		return isClanLeader || player.getPledgeType() >= _socialClass;
 	}
 }

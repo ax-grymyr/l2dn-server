@@ -87,12 +87,12 @@ public abstract class AbstractOlympiadGame
 	 */
 	protected static SystemMessagePacket? checkDefaulted(Player player)
 	{
-		if ((player == null) || !player.isOnline())
+		if (player == null || !player.isOnline())
 		{
 			return new SystemMessagePacket(SystemMessageId.YOUR_OPPONENT_MADE_HASTE_WITH_THEIR_TAIL_BETWEEN_THEIR_LEGS_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
 		
-		if ((player.getClient() == null) || player.getClient().IsDetached)
+		if (player.getClient() == null || player.getClient().IsDetached)
 		{
 			return new SystemMessagePacket(SystemMessageId.YOUR_OPPONENT_MADE_HASTE_WITH_THEIR_TAIL_BETWEEN_THEIR_LEGS_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
@@ -140,7 +140,7 @@ public abstract class AbstractOlympiadGame
 	protected static bool portPlayerToArena(Participant par, Location loc, int id, Instance instance)
 	{
 		Player player = par.getPlayer();
-		if ((player == null) || !player.isOnline())
+		if (player == null || !player.isOnline())
 		{
 			return false;
 		}
@@ -298,7 +298,7 @@ public abstract class AbstractOlympiadGame
 				player.setAgathionId(0);
 			}
 			Summon pet = player.getPet();
-			if ((pet != null) && !pet.isDead())
+			if (pet != null && !pet.isDead())
 			{
 				pet.setTarget(null);
 				pet.abortAttack();
@@ -405,7 +405,7 @@ public abstract class AbstractOlympiadGame
 	
 	public static void rewardParticipant(Player player, IReadOnlyList<ItemHolder> list)
 	{
-		if ((player == null) || !player.isOnline() || (list == null))
+		if (player == null || !player.isOnline() || list == null)
 		{
 			return;
 		}

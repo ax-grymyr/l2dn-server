@@ -20,7 +20,7 @@ public class TargetNotAffectedBySkillSkillCondition: ISkillCondition
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
-        if ((target == null) || !target.isCreature())
+        if (target == null || !target.isCreature())
         {
             return false;
         }
@@ -28,7 +28,7 @@ public class TargetNotAffectedBySkillSkillCondition: ISkillCondition
         BuffInfo? buffInfo = ((Creature)target).getEffectList().getBuffInfoBySkillId(_skillId);
         if (_skillLevel > 0)
         {
-            return (buffInfo == null) || (buffInfo.getSkill().getLevel() < _skillLevel);
+            return buffInfo == null || buffInfo.getSkill().getLevel() < _skillLevel;
         }
 
         return buffInfo == null;

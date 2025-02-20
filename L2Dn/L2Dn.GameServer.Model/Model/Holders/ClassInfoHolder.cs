@@ -47,31 +47,31 @@ public sealed class ClassInfoHolder
 	private int getClassClientId()
 	{
 		int classClientId = (int)_classId;
-		if ((classClientId >= 0) && (classClientId <= 57))
+		if (classClientId >= 0 && classClientId <= 57)
 		{
 			classClientId += 247;
 		}
-		else if ((classClientId >= 88) && (classClientId <= 118))
+		else if (classClientId >= 88 && classClientId <= 118)
 		{
 			classClientId += 1071;
 		}
-		else if ((classClientId >= 123) && (classClientId <= 136))
+		else if (classClientId >= 123 && classClientId <= 136)
 		{
 			classClientId += 1438;
 		}
-		else if ((classClientId >= 139) && (classClientId <= 146))
+		else if (classClientId >= 139 && classClientId <= 146)
 		{
 			classClientId += 2338;
 		}
-		else if ((classClientId >= 148) && (classClientId <= 181))
+		else if (classClientId >= 148 && classClientId <= 181)
 		{
 			classClientId += 2884;
 		}
-		else if ((classClientId >= 182) && (classClientId <= 189))
+		else if (classClientId >= 182 && classClientId <= 189)
 		{
 			classClientId += 3121;
 		}
-		else if ((classClientId >= 192) && (classClientId <= 211))
+		else if (classClientId >= 192 && classClientId <= 211)
 		{
 			classClientId += 12817; // TODO: Find proper ids.
 		}

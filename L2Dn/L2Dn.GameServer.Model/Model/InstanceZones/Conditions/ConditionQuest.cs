@@ -36,6 +36,6 @@ public class ConditionQuest: Condition
 		}
 
 		QuestCondType cond = (QuestCondType)getParameters().getInt("cond", -1);
-		return (cond == (QuestCondType)(-1)) || qs.isCond(cond);
+		return cond == (QuestCondType)(-1) || qs.isCond(cond);
 	}
 }

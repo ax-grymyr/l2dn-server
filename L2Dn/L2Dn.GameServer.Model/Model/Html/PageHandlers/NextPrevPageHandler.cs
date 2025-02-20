@@ -14,7 +14,7 @@ public class NextPrevPageHandler: IPageHandler
 		IHtmlStyle style)
 	{
 		// Beginning
-		sb.Append(style.applyBypass(bypassFormatter.formatBypass(bypass, 0), "<<", (currentPage - 1) < 0));
+		sb.Append(style.applyBypass(bypassFormatter.formatBypass(bypass, 0), "<<", currentPage - 1 < 0));
 
 		// Separator
 		sb.Append(style.applySeparator());
@@ -32,6 +32,6 @@ public class NextPrevPageHandler: IPageHandler
 		sb.Append(style.applySeparator());
 
 		// End
-		sb.Append(style.applyBypass(bypassFormatter.formatBypass(bypass, pages), ">>", (currentPage + 1) > pages));
+		sb.Append(style.applyBypass(bypassFormatter.formatBypass(bypass, pages), ">>", currentPage + 1 > pages));
 	}
 }

@@ -19,7 +19,7 @@ public class MEvasionRateFinalizer : StatFunction
 		if (creature.isPlayer())
 		{
 			// [Square(WIT)] * 3 + level;
-			baseValue += (Math.Sqrt(creature.getWIT()) * 3) + (level * 2);
+			baseValue += Math.Sqrt(creature.getWIT()) * 3 + level * 2;
 			
 			// Enchanted helm bonus
 			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_HEAD);
@@ -27,10 +27,10 @@ public class MEvasionRateFinalizer : StatFunction
 		else
 		{
 			// [Square(DEX)] * 6 + level;
-			baseValue += (Math.Sqrt(creature.getWIT()) * 3) + (level * 2);
+			baseValue += Math.Sqrt(creature.getWIT()) * 3 + level * 2;
 			if (level > 69)
 			{
-				baseValue += (level - 69) + 2;
+				baseValue += level - 69 + 2;
 			}
 		}
 
@@ -42,8 +42,8 @@ public class MEvasionRateFinalizer : StatFunction
 	{
 		if (isBlessed)
 		{
-			return (0.3 * Math.Max(enchantLevel - 3, 0)) + (0.3 * Math.Max(enchantLevel - 6, 0));
+			return 0.3 * Math.Max(enchantLevel - 3, 0) + 0.3 * Math.Max(enchantLevel - 6, 0);
 		}
-		return (0.2 * Math.Max(enchantLevel - 3, 0)) + (0.2 * Math.Max(enchantLevel - 6, 0));
+		return 0.2 * Math.Max(enchantLevel - 3, 0) + 0.2 * Math.Max(enchantLevel - 6, 0);
 	}
 }

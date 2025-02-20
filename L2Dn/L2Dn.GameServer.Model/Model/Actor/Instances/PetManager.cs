@@ -16,9 +16,9 @@ public class PetManager: Merchant
 		InstanceType = InstanceType.PetManager;
 	}
 
-	public override string getHtmlPath(int npcId, int value, Player player)
+	public override string getHtmlPath(int npcId, int value, Player? player)
 	{
-		string pom = "";
+		string pom;
 		if (value == 0)
 		{
 			pom = npcId.ToString(CultureInfo.InvariantCulture);
@@ -34,7 +34,7 @@ public class PetManager: Merchant
 	public override void showChatWindow(Player player)
 	{
 		string filename = "html/petmanager/" + getId() + ".htm";
-		if ((getId() == 36478) && player.hasSummon())
+		if (getId() == 36478 && player.hasSummon())
 		{
 			filename = "html/petmanager/restore-unsummonpet.htm";
 		}

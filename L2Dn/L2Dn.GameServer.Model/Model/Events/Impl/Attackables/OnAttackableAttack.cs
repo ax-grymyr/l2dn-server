@@ -8,45 +8,31 @@ namespace L2Dn.GameServer.Model.Events.Impl.Attackables;
  * An instantly executed event when Attackable is attacked by Player.
  * @author UnAfraid
  */
-public class OnAttackableAttack: EventBase
+public sealed class OnAttackableAttack(Player? attacker, Attackable target, int damage, Skill skill, bool summon)
+    : EventBase
 {
-	private readonly Player _attacker;
-	private readonly Attackable _target;
-	private readonly int _damage;
-	private readonly Skill _skill;
-	private readonly bool _isSummon;
-	
-	public OnAttackableAttack(Player attacker, Attackable target, int damage, Skill skill, bool isSummon)
-	{
-		_attacker = attacker;
-		_target = target;
-		_damage = damage;
-		_skill = skill;
-		_isSummon = isSummon;
-	}
-	
-	public Player getAttacker()
-	{
-		return _attacker;
-	}
-	
-	public Attackable getTarget()
-	{
-		return _target;
-	}
-	
-	public int getDamage()
-	{
-		return _damage;
-	}
-	
-	public Skill getSkill()
-	{
-		return _skill;
-	}
-	
-	public bool isSummon()
-	{
-		return _isSummon;
-	}
+    public Player? getAttacker()
+    {
+        return attacker;
+    }
+
+    public Attackable getTarget()
+    {
+        return target;
+    }
+
+    public int getDamage()
+    {
+        return damage;
+    }
+
+    public Skill getSkill()
+    {
+        return skill;
+    }
+
+    public bool isSummon()
+    {
+        return summon;
+    }
 }

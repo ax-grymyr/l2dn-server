@@ -43,7 +43,7 @@ public class MaxHpFinalizer : StatFunction
 		double mul = creature.getStat().getMul(stat);
 		double add = creature.getStat().getAdd(stat);
 		
-		double maxHp = (mul * baseValue) + add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType());
+		double maxHp = mul * baseValue + add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType());
 		bool isPlayer = creature.isPlayer();
 		
 		Inventory inv = creature.getInventory();
@@ -58,7 +58,7 @@ public class MaxHpFinalizer : StatFunction
 				
 				mul = creature.getStat().getMul(Stat.HP_LIMIT);
 				add = creature.getStat().getAdd(Stat.HP_LIMIT);
-				return Math.Min(maxHp, (Config.MAX_HP * mul) + add);
+				return Math.Min(maxHp, Config.MAX_HP * mul + add);
 			}
 			return maxHp;
 		}
@@ -72,7 +72,7 @@ public class MaxHpFinalizer : StatFunction
 			if (item.isArmor() && item.isEnchanted())
 			{
 				long bodyPart = item.getTemplate().getBodyPart();
-				if ((bodyPart != ItemTemplate.SLOT_NECK) && (bodyPart != ItemTemplate.SLOT_LR_EAR) && (bodyPart != ItemTemplate.SLOT_LR_FINGER))
+				if (bodyPart != ItemTemplate.SLOT_NECK && bodyPart != ItemTemplate.SLOT_LR_EAR && bodyPart != ItemTemplate.SLOT_LR_FINGER)
 				{
 					maxHp += EnchantItemHPBonusData.getInstance().getHPBonus(item);
 				}
@@ -84,7 +84,7 @@ public class MaxHpFinalizer : StatFunction
 		{
 			mul = creature.getStat().getMul(Stat.HP_LIMIT);
 			add = creature.getStat().getAdd(Stat.HP_LIMIT);
-			hpLimit = (Config.MAX_HP * mul) + add;
+			hpLimit = Config.MAX_HP * mul + add;
 		}
 		else
 		{

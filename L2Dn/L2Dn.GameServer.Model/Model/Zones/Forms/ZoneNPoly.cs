@@ -32,7 +32,7 @@ public class ZoneNPoly: ZoneForm
 	
 	public override bool isInsideZone(int x, int y, int z)
 	{
-		return _p.contains(x, y) && (z >= _z1) && (z <= _z2);
+		return _p.contains(x, y) && z >= _z1 && z <= _z2;
 	}
 	
 	public override bool intersectsRectangle(int ax1, int ax2, int ay1, int ay2)
@@ -74,13 +74,13 @@ public class ZoneNPoly: ZoneForm
 	{
 		for (int i = 0; i < _p.npoints; i++)
 		{
-			int nextIndex = (i + 1) == _p.xpoints.Length ? 0 : i + 1;
+			int nextIndex = i + 1 == _p.xpoints.Length ? 0 : i + 1;
 			int vx = _p.xpoints[nextIndex] - _p.xpoints[i];
 			int vy = _p.ypoints[nextIndex] - _p.ypoints[i];
-			float length = (float) Math.Sqrt((vx * vx) + (vy * vy)) / STEP;
+			float length = (float) Math.Sqrt(vx * vx + vy * vy) / STEP;
 			for (int o = 1; o <= length; o++)
 			{
-				dropDebugItem(Inventory.ADENA_ID, 1, (int) (_p.xpoints[i] + ((o / length) * vx)), (int) (_p.ypoints[i] + ((o / length) * vy)), z);
+				dropDebugItem(Inventory.ADENA_ID, 1, (int) (_p.xpoints[i] + o / length * vx), (int) (_p.ypoints[i] + o / length * vy), z);
 			}
 		}
 	}
@@ -96,7 +96,7 @@ public class ZoneNPoly: ZoneForm
 		int y = Rnd.get(minY, maxY);
 
 		int antiBlocker = 0;
-		while (!_p.contains(x, y) && (antiBlocker++ < 1000))
+		while (!_p.contains(x, y) && antiBlocker++ < 1000)
 		{
 			x = Rnd.get(minX, maxX);
 			y = Rnd.get(minY, maxY);

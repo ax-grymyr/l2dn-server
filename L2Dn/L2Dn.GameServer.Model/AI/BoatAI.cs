@@ -33,7 +33,7 @@ public class BoatAI: VehicleAI
             _actor.stopMove(loc);
         }
 
-        if (_clientMoving || (loc != null))
+        if (_clientMoving || loc != null)
         {
             _clientMoving = false;
             _actor.broadcastPacket(new VehicleStartedPacket(getActor().ObjectId, 0));

@@ -63,9 +63,9 @@ public class FriendlyNpcAI : AttackableAI
 		}
 
 		WorldObject? target = getTarget();
-		Creature? originalAttackTarget = (target != null) && target.isCreature() ? (Creature) target : null;
+		Creature? originalAttackTarget = target != null && target.isCreature() ? (Creature) target : null;
 		// Check if target is dead or if timeout is expired to stop this attack
-		if ((originalAttackTarget == null) || originalAttackTarget.isAlikeDead())
+		if (originalAttackTarget == null || originalAttackTarget.isAlikeDead())
 		{
 			// Stop hating this target after the attack timeout or if target is dead
 			if (originalAttackTarget != null)
@@ -84,11 +84,11 @@ public class FriendlyNpcAI : AttackableAI
 		setTarget(originalAttackTarget);
 
 		int combinedCollision = collision + originalAttackTarget.getTemplate().getCollisionRadius();
-		if (!npc.isMovementDisabled() && (Rnd.get(100) <= 3))
+		if (!npc.isMovementDisabled() && Rnd.get(100) <= 3)
 		{
 			foreach (Attackable nearby in World.getInstance().getVisibleObjects<Attackable>(npc))
 			{
-				if (npc.IsInsideRadius2D(nearby, collision) && (nearby != originalAttackTarget))
+				if (npc.IsInsideRadius2D(nearby, collision) && nearby != originalAttackTarget)
 				{
 					int newX = combinedCollision + Rnd.get(40);
 					if (Rnd.nextBoolean())
@@ -125,10 +125,10 @@ public class FriendlyNpcAI : AttackableAI
 		}
 
 		// Calculate Archer movement.
-		if ((!npc.isMovementDisabled()) && (npc.getAiType() == AIType.ARCHER) && (Rnd.get(100) < 15))
+		if (!npc.isMovementDisabled() && npc.getAiType() == AIType.ARCHER && Rnd.get(100) < 15)
 		{
 			double distance2 = npc.DistanceSquare2D(originalAttackTarget);
-			if (Math.Sqrt(distance2) <= (60 + combinedCollision))
+			if (Math.Sqrt(distance2) <= 60 + combinedCollision)
 			{
 				int posX = npc.getX();
 				int posY = npc.getY();
@@ -173,7 +173,7 @@ public class FriendlyNpcAI : AttackableAI
 			}
 		}
 
-		if ((dist2 > range) || !GeoEngine.getInstance().canSeeTarget(npc, originalAttackTarget))
+		if (dist2 > range || !GeoEngine.getInstance().canSeeTarget(npc, originalAttackTarget))
 		{
 			if (originalAttackTarget.isMoving())
 			{
@@ -193,7 +193,7 @@ public class FriendlyNpcAI : AttackableAI
     protected override void thinkCast()
     {
         WorldObject? target = getCastTarget();
-        if (checkTargetLost(target))
+        if (checkTargetLost(target) || target == null)
         {
             setCastTarget(null);
             setTarget(null);

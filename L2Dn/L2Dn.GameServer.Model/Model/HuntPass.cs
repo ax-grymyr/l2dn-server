@@ -195,7 +195,7 @@ public class HuntPass
 	
 	public void setRewardStep(int step)
 	{
-		if (_isPremium && (_premiumRewardStep <= _rewardStep))
+		if (_isPremium && _premiumRewardStep <= _rewardStep)
 		{
 			return;
 		}

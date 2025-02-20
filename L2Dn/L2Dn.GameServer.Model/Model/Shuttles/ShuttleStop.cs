@@ -58,6 +58,6 @@ public class ShuttleStop
 
     public bool hasDoorChanged()
     {
-        return (DateTime.UtcNow - _lastDoorStatusChanges) <= TimeSpan.FromSeconds(1);
+        return DateTime.UtcNow - _lastDoorStatusChanges <= TimeSpan.FromSeconds(1);
     }
 }

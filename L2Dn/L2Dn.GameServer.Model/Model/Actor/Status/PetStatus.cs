@@ -29,7 +29,7 @@ public class PetStatus: SummonStatus
 
         if (attacker != null)
         {
-            if (!isDOT && (getActiveChar().getOwner() != null))
+            if (!isDOT && getActiveChar().getOwner() != null)
             {
                 SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_DEALS_S2_DAMAGE_TO_THE_PET);
                 sm.Params.addString(attacker.getName());

@@ -27,6 +27,6 @@ public class PAttackSpeedFinalizer: StatFunction
 	{
 		double mul = Math.Max(creature.getStat().getMul(stat), 0.7);
 		double add = creature.getStat().getAdd(stat);
-		return (baseValue * mul) + add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType());
+		return baseValue * mul + add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType());
 	}
 }

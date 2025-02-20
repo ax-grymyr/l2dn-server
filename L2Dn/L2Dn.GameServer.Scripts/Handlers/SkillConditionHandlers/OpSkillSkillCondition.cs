@@ -25,8 +25,8 @@ public class OpSkillSkillCondition: ISkillCondition
 		Skill? requestedSkill = caster.getKnownSkill(_skillId);
 		if (_hasLearned)
 		{
-			return (requestedSkill != null) && (requestedSkill.getLevel() == _skillLevel);
+			return requestedSkill != null && requestedSkill.getLevel() == _skillLevel;
 		}
-		return (requestedSkill == null) || (requestedSkill.getLevel() != _skillLevel);
+		return requestedSkill == null || requestedSkill.getLevel() != _skillLevel;
 	}
 }

@@ -63,8 +63,8 @@ public class FortDoorman: Doorman
 
     protected sealed override bool isOwnerClan(Player player)
     {
-        return (player.getClan() != null) && (getFort() != null) && (getFort().getOwnerClan() != null) &&
-               (player.getClanId() == getFort().getOwnerClan().getId());
+        return player.getClan() != null && getFort() != null && getFort().getOwnerClan() != null &&
+               player.getClanId() == getFort().getOwnerClan().getId();
     }
 
     protected sealed override bool isUnderSiege()

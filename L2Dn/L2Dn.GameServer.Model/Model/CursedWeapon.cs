@@ -63,7 +63,7 @@ public class CursedWeapon : INamable
 	{
 		if (_isActivated)
 		{
-			if ((_player != null) && _player.isOnline())
+			if (_player != null && _player.isOnline())
 			{
 				// Remove from player
 				LOGGER.Info(_name + " being removed online.");
@@ -114,7 +114,7 @@ public class CursedWeapon : INamable
 		{
 			// either this cursed weapon is in the inventory of someone who has another cursed weapon equipped,
 			// OR this cursed weapon is on the ground.
-			if ((_player != null) && (_player.getInventory().getItemByItemId(_itemId) != null))
+			if (_player != null && _player.getInventory().getItemByItemId(_itemId) != null)
 			{
 				// Destroy
 				_player.getInventory().destroyItemByItemId("", _itemId, 1, _player, null);
@@ -249,7 +249,7 @@ public class CursedWeapon : INamable
 	 */
 	public void giveSkill()
 	{
-		int level = 1 + (_nbKills / _stageKills);
+		int level = 1 + _nbKills / _stageKills;
 		if (level > _skillMaxLevel)
 		{
 			level = _skillMaxLevel;
@@ -297,7 +297,7 @@ public class CursedWeapon : INamable
 	public void reActivate()
 	{
 		_isActivated = true;
-		if ((_endTime <= DateTime.Now))
+		if (_endTime <= DateTime.Now)
 		{
 			endOfLife();
 		}
@@ -315,7 +315,7 @@ public class CursedWeapon : INamable
 			dropIt(attackable, player);
 			
 			// Start the Life Task
-			_endTime = DateTime.Now.AddMilliseconds((_duration * 60000));
+			_endTime = DateTime.Now.AddMilliseconds(_duration * 60000);
 			_removeTask = ThreadPool.scheduleAtFixedRate(new RemoveTask(this), _durationLost * 12000, _durationLost * 12000);
 			return true;
 		}
@@ -441,11 +441,11 @@ public class CursedWeapon : INamable
 	{
 		_nbKills++;
 		
-		if ((_player != null) && _player.isOnline())
+		if (_player != null && _player.isOnline())
 		{
 			_player.setPkKills(_nbKills);
 			_player.updateUserInfo();
-			if (((_nbKills % _stageKills) == 0) && (_nbKills <= (_stageKills * (_skillMaxLevel - 1))))
+			if (_nbKills % _stageKills == 0 && _nbKills <= _stageKills * (_skillMaxLevel - 1))
 			{
 				giveSkill();
 			}
@@ -593,11 +593,11 @@ public class CursedWeapon : INamable
 	
 	public int getLevel()
 	{
-		if (_nbKills > (_stageKills * _skillMaxLevel))
+		if (_nbKills > _stageKills * _skillMaxLevel)
 		{
 			return _skillMaxLevel;
 		}
-		return (_nbKills / _stageKills);
+		return _nbKills / _stageKills;
 	}
 	
 	public TimeSpan getTimeLeft()
@@ -612,12 +612,12 @@ public class CursedWeapon : INamable
 			return;
 		}
 		
-		if (_isActivated && (_player != null))
+		if (_isActivated && _player != null)
 		{
 			// Go to player holding the weapon
 			player.teleToLocation(_player.Location, true);
 		}
-		else if (_isDropped && (_item != null))
+		else if (_isDropped && _item != null)
 		{
 			// Go to item on the ground
 			player.teleToLocation(_item.Location, true);
@@ -630,12 +630,12 @@ public class CursedWeapon : INamable
 	
 	public Location3D? getWorldPosition()
 	{
-		if (_isActivated && (_player != null))
+		if (_isActivated && _player != null)
 		{
 			return _player.Location.Location3D;
 		}
 
-		if (_isDropped && (_item != null))
+		if (_isDropped && _item != null)
 		{
 			return _item.Location.Location3D;
 		}

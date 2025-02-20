@@ -212,7 +212,7 @@ public abstract class Summon: Playable
 
 	public virtual long getExpForNextLevel()
 	{
-		if (getLevel() >= (ExperienceData.getInstance().getMaxPetLevel() - 1))
+		if (getLevel() >= ExperienceData.getInstance().getMaxPetLevel() - 1)
 		{
 			return 0;
 		}
@@ -430,7 +430,7 @@ public abstract class Summon: Playable
 					party.broadcastToPartyMembers(owner, new ExPartyPetWindowDeletePacket(this));
 				}
 
-				if ((getInventory() != null) && (getInventory().getSize() > 0))
+				if (getInventory() != null && getInventory().getSize() > 0)
 				{
 					_owner.setPetInvItems(true);
 					sendPacket(SystemMessageId.THERE_ARE_ITEMS_IN_THE_PET_S_INVENTORY_TAKE_THEM_OUT_FIRST);
@@ -467,7 +467,7 @@ public abstract class Summon: Playable
 
 	public void setAttackRange(int range)
 	{
-		_attackRange = (range < 36) ? 36 : range;
+		_attackRange = range < 36 ? 36 : range;
 	}
 
 	public void setFollowStatus(bool value)
@@ -490,7 +490,7 @@ public abstract class Summon: Playable
 
 	public override bool isAutoAttackable(Creature attacker)
 	{
-		return (_owner != null) && _owner.isAutoAttackable(attacker);
+		return _owner != null && _owner.isAutoAttackable(attacker);
 	}
 
 	public virtual int getControlObjectId()
@@ -498,12 +498,7 @@ public abstract class Summon: Playable
 		return 0;
 	}
 
-	public Weapon getActiveWeapon()
-	{
-		return null;
-	}
-
-	public override PetInventory getInventory()
+	public override PetInventory? getInventory()
 	{
 		return null;
 	}
@@ -512,22 +507,22 @@ public abstract class Summon: Playable
 	{
 	}
 
-	public override Item getActiveWeaponInstance()
+	public override Item? getActiveWeaponInstance()
 	{
 		return null;
 	}
 
-	public override Weapon getActiveWeaponItem()
+	public override Weapon? getActiveWeaponItem()
 	{
 		return null;
 	}
 
-	public override Item getSecondaryWeaponInstance()
+	public override Item? getSecondaryWeaponInstance()
 	{
 		return null;
 	}
 
-	public override Weapon getSecondaryWeaponItem()
+	public override Weapon? getSecondaryWeaponItem()
 	{
 		return null;
 	}
@@ -557,7 +552,7 @@ public abstract class Summon: Playable
 	 */
 	public override bool isInParty()
 	{
-		return (_owner != null) && _owner.isInParty();
+		return _owner != null && _owner.isInParty();
 	}
 
 	/**
@@ -579,7 +574,7 @@ public abstract class Summon: Playable
 	public override bool useMagic(Skill skill, Item? item, bool forceUse, bool dontMove)
 	{
 		// Null skill, dead summon or null owner are reasons to prevent casting.
-		if ((skill == null) || isDead() || (_owner == null))
+		if (skill == null || isDead() || _owner == null)
 		{
 			return false;
 		}
@@ -610,7 +605,7 @@ public abstract class Summon: Playable
 			{
 				target = skill.getTarget(this, forceUse && (!currentTarget.isPlayable() || !currentTarget.isInsideZone(ZoneId.PEACE) || !currentTarget.isInsideZone(ZoneId.NO_PVP)), dontMove, false);
 				Player currentTargetPlayer = currentTarget.getActingPlayer();
-				if (!forceUse && (currentTargetPlayer != null) && !currentTargetPlayer.isAutoAttackable(_owner))
+				if (!forceUse && currentTargetPlayer != null && !currentTargetPlayer.isAutoAttackable(_owner))
 				{
 					sendPacket(SystemMessageId.INVALID_TARGET);
 					return false;
@@ -645,7 +640,7 @@ public abstract class Summon: Playable
 		}
 
 		// Check if the summon has enough MP
-		if (getCurrentMp() < (getStat().getMpConsume(skill) + getStat().getMpInitialConsume(skill)))
+		if (getCurrentMp() < getStat().getMpConsume(skill) + getStat().getMpInitialConsume(skill))
 		{
 			// Send a System Message to the caster
 			sendPacket(SystemMessageId.NOT_ENOUGH_MP);
@@ -707,7 +702,7 @@ public abstract class Summon: Playable
 
 	public override void sendDamageMessage(Creature target, Skill skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
 	{
-		if (miss || (_owner == null))
+		if (miss || _owner == null)
 		{
 			return;
 		}
@@ -727,7 +722,7 @@ public abstract class Summon: Playable
 				}
 			}
 
-			if (_owner.isInOlympiadMode() && target.isPlayer() && ((Player) target).isInOlympiadMode() && (((Player) target).getOlympiadGameId() == _owner.getOlympiadGameId()))
+			if (_owner.isInOlympiadMode() && target.isPlayer() && ((Player) target).isInOlympiadMode() && ((Player) target).getOlympiadGameId() == _owner.getOlympiadGameId())
 			{
 				OlympiadGameManager.getInstance().notifyCompetitorDamage(getOwner(), damage);
 			}
@@ -743,7 +738,7 @@ public abstract class Summon: Playable
 				sm.Params.addNpcName(this);
 				sm.Params.addString(target.getName());
 				sm.Params.addInt(damage);
-				sm.Params.addPopup(target.ObjectId, ObjectId, (damage * -1));
+				sm.Params.addPopup(target.ObjectId, ObjectId, damage * -1);
 			}
 
 			sendPacket(sm);
@@ -754,7 +749,7 @@ public abstract class Summon: Playable
 	{
 		base.reduceCurrentHp(damage, attacker, skill);
 
-		if (!isDead() && !isHpBlocked() && (_owner != null) && (attacker != null) && (!_owner.isAffected(EffectFlag.DUELIST_FURY) || attacker.isAffected(EffectFlag.FACEOFF)))
+		if (!isDead() && !isHpBlocked() && _owner != null && attacker != null && (!_owner.isAffected(EffectFlag.DUELIST_FURY) || attacker.isAffected(EffectFlag.FACEOFF)))
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
 			sm.Params.addNpcName(this);
@@ -767,7 +762,7 @@ public abstract class Summon: Playable
 
 	public override void doCast(Skill skill)
 	{
-		if ((skill.getTarget(this, false, false, false) == null) && !_owner.getAccessLevel().allowPeaceAttack())
+		if (skill.getTarget(this, false, false, false) == null && !_owner.getAccessLevel().allowPeaceAttack())
 		{
 			// Send a System Message to the Player
 			_owner.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
@@ -782,7 +777,7 @@ public abstract class Summon: Playable
 
 	public override bool isInCombat()
 	{
-		return (_owner != null) && _owner.isInCombat();
+		return _owner != null && _owner.isInCombat();
 	}
 
 	public override Player getActingPlayer()
@@ -815,7 +810,7 @@ public abstract class Summon: Playable
 	{
 		World.getInstance().forEachVisibleObject<Player>(this, player =>
 		{
-			if ((player == _owner))
+			if (player == _owner)
 			{
 				return;
 			}
@@ -906,7 +901,7 @@ public abstract class Summon: Playable
 	 */
 	public void doAttack(WorldObject target)
 	{
-		if ((_owner != null) && (target != null))
+		if (_owner != null && target != null)
 		{
 			setTarget(target);
 			getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
@@ -930,7 +925,7 @@ public abstract class Summon: Playable
 			return false;
 		}
 
-		if ((target == null) || (this == target) || (_owner == target))
+		if (target == null || this == target || _owner == target)
 		{
 			return false;
 		}
@@ -950,7 +945,7 @@ public abstract class Summon: Playable
 			return false;
 		}
 
-		if (isPet() && ((getLevel() - _owner.getLevel()) > 20))
+		if (isPet() && getLevel() - _owner.getLevel() > 20)
 		{
 			sendPacket(SystemMessageId.YOUR_PET_IS_TOO_HIGH_LEVEL_TO_CONTROL);
 			sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -993,7 +988,7 @@ public abstract class Summon: Playable
 		}
 
 		// Siege golems AI doesn't support attacking other than doors/walls at the moment.
-		if (target.isDoor() && (getTemplate().getRace() != Race.SIEGE_WEAPON))
+		if (target.isDoor() && getTemplate().getRace() != Race.SIEGE_WEAPON)
 		{
 			return false;
 		}
@@ -1026,7 +1021,7 @@ public abstract class Summon: Playable
 	{
 		Item item;
 		IItemHandler handler;
-		if ((_owner.getAutoSoulShot() == null) || _owner.getAutoSoulShot().isEmpty())
+		if (_owner.getAutoSoulShot() == null || _owner.getAutoSoulShot().isEmpty())
 		{
 			return;
 		}
@@ -1036,7 +1031,7 @@ public abstract class Summon: Playable
 			item = _owner.getInventory().getItemByItemId(itemId);
 			if (item != null)
 			{
-				if (magic && ((item.getTemplate().getDefaultAction() == ActionType.SPIRITSHOT) || /* Old BeastSpiritShot item support. */ (item.getTemplate().getDefaultAction() == ActionType.SUMMON_SPIRITSHOT)))
+				if (magic && (item.getTemplate().getDefaultAction() == ActionType.SPIRITSHOT || /* Old BeastSpiritShot item support. */ item.getTemplate().getDefaultAction() == ActionType.SUMMON_SPIRITSHOT))
 				{
 					handler = ItemHandler.getInstance().getHandler(item.getEtcItem());
 					if (handler != null)
@@ -1045,7 +1040,7 @@ public abstract class Summon: Playable
 					}
 				}
 
-				if (physical && ((item.getTemplate().getDefaultAction() == ActionType.SOULSHOT) || /* Old BeastSoulShot item support. */ (item.getTemplate().getDefaultAction() == ActionType.SUMMON_SOULSHOT)))
+				if (physical && (item.getTemplate().getDefaultAction() == ActionType.SOULSHOT || /* Old BeastSoulShot item support. */ item.getTemplate().getDefaultAction() == ActionType.SUMMON_SOULSHOT))
 				{
 					handler = ItemHandler.getInstance().getHandler(item.getEtcItem());
 					if (handler != null)
@@ -1063,12 +1058,12 @@ public abstract class Summon: Playable
 
 	public override int? getClanId()
 	{
-		return (_owner != null) ? _owner.getClanId() : null;
+		return _owner != null ? _owner.getClanId() : null;
 	}
 
 	public override int? getAllyId()
 	{
-		return (_owner != null) ? _owner.getAllyId() : null;
+		return _owner != null ? _owner.getAllyId() : null;
 	}
 
 	public void setSummonPoints(int summonPoints)
@@ -1107,7 +1102,7 @@ public abstract class Summon: Playable
 
 	public override bool isOnEvent()
 	{
-		return (_owner != null) && _owner.isOnEvent();
+		return _owner != null && _owner.isOnEvent();
 	}
 
 	public override string ToString()

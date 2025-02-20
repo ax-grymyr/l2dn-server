@@ -209,7 +209,7 @@ public class PlayerRandomCraft
 		}
 		_player.addRequest(new RandomCraftRequest(_player));
 		
-		if ((_fullCraftPoints > 0) && _player.reduceAdena("RandomCraft Refresh", Config.RANDOM_CRAFT_REFRESH_FEE, _player, true))
+		if (_fullCraftPoints > 0 && _player.reduceAdena("RandomCraft Refresh", Config.RANDOM_CRAFT_REFRESH_FEE, _player, true))
 		{
 			_player.sendPacket(new ExCraftInfoPacket(_player));
 			_player.sendPacket(new ExCraftRandomRefreshPacket());
@@ -224,7 +224,7 @@ public class PlayerRandomCraft
 			for (int i = 0; i < 5; i++)
 			{
 				RandomCraftRewardItemHolder holder;
-				if (i > (_rewardList.Count - 1))
+				if (i > _rewardList.Count - 1)
 				{
 					holder = null;
 				}
@@ -344,7 +344,7 @@ public class PlayerRandomCraft
 	
 	public void addCraftPoints(int value)
 	{
-		if ((_craftPoints - 1) < MAX_CRAFT_POINTS)
+		if (_craftPoints - 1 < MAX_CRAFT_POINTS)
 		{
 			_craftPoints += value;
 		}

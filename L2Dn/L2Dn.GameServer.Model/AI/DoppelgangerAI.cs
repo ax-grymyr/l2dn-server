@@ -66,7 +66,7 @@ public class DoppelgangerAI : CreatureAI
 		}
 
 		WorldObject? target = getCastTarget();
-		if (checkTargetLost(target))
+		if (checkTargetLost(target) || target == null)
 		{
 			setCastTarget(null);
 			setTarget(null);
@@ -176,7 +176,7 @@ public class DoppelgangerAI : CreatureAI
 		if (getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
         {
             WorldObject? currentTarget = getTarget();
-			_lastAttack = (currentTarget != null) && currentTarget.isCreature() ? (Creature)currentTarget : null;
+			_lastAttack = currentTarget != null && currentTarget.isCreature() ? (Creature)currentTarget : null;
 		}
 		else
 		{
@@ -189,7 +189,7 @@ public class DoppelgangerAI : CreatureAI
 	public override void moveToPawn(WorldObject pawn, int offsetValue)
 	{
 		// Check if actor can move
-		if (!_actor.isMovementDisabled() && (_actor.getMoveSpeed() > 0))
+		if (!_actor.isMovementDisabled() && _actor.getMoveSpeed() > 0)
 		{
 			int offset = offsetValue;
 			if (offset < 10)
@@ -200,7 +200,7 @@ public class DoppelgangerAI : CreatureAI
 			// prevent possible extra calls to this function (there is none?),
 			// also don't send movetopawn packets too often
 			bool sendPacket = true;
-			if (_clientMoving && (getTarget() == pawn))
+			if (_clientMoving && getTarget() == pawn)
 			{
 				if (_clientMovingToPawnOffset == offset)
 				{
@@ -213,7 +213,7 @@ public class DoppelgangerAI : CreatureAI
 				else if (_actor.isOnGeodataPath())
 				{
 					// minimum time to calculate new route is 2 seconds
-					if (GameTimeTaskManager.getInstance().getGameTicks() < (_moveToPawnTimeout + 10))
+					if (GameTimeTaskManager.getInstance().getGameTicks() < _moveToPawnTimeout + 10)
 					{
 						return;
 					}

@@ -116,7 +116,7 @@ public class SiegeZone : ZoneType
 				if (player.isRegisteredOnThisSiegeField(getSettings().getSiegeableId()))
 				{
 					player.setInSiege(true); // in siege
-					if (getSettings().getSiege().giveFame() && (getSettings().getSiege().getFameFrequency() > 0))
+					if (getSettings().getSiege().giveFame() && getSettings().getSiege().getFameFrequency() > 0)
 					{
 						player.startFameTask(
 							TimeSpan.FromMilliseconds(getSettings().getSiege().getFameFrequency() * 1000),
@@ -125,7 +125,7 @@ public class SiegeZone : ZoneType
 				}
 
 				creature.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_A_COMBAT_ZONE);
-				if (!Config.ALLOW_WYVERN_DURING_SIEGE && (player.getMountType() == MountType.WYVERN))
+				if (!Config.ALLOW_WYVERN_DURING_SIEGE && player.getMountType() == MountType.WYVERN)
 				{
 					player.sendPacket(SystemMessageId.THIS_AREA_CANNOT_BE_ENTERED_WHILE_MOUNTED_ATOP_OF_A_WYVERN_YOU_WILL_BE_DISMOUNTED_FROM_YOUR_WYVERN_IF_YOU_DO_NOT_LEAVE);
 					player.enteredNoLanding(DISMOUNT_DELAY);
@@ -169,7 +169,7 @@ public class SiegeZone : ZoneType
 			player.stopFameTask();
 			player.setInSiege(false);
 
-			if ((getSettings().getSiege() is FortSiege) && (player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG) != null))
+			if (getSettings().getSiege() is FortSiege && player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG) != null)
 			{
 				// drop combat flag
 				Fort? fort = FortManager.getInstance().getFortById(getSettings().getSiegeableId());

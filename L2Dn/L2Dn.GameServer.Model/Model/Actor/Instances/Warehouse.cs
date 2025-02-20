@@ -26,9 +26,9 @@ public class Warehouse: Folk
         return true;
     }
 
-    public override string getHtmlPath(int npcId, int value, Player player)
+    public override string getHtmlPath(int npcId, int value, Player? player)
     {
-        string pom = "";
+        string pom;
         if (value == 0)
         {
             pom = npcId.ToString(CultureInfo.InvariantCulture);

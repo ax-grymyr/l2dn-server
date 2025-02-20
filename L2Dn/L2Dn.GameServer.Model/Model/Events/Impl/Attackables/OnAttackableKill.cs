@@ -7,31 +7,20 @@ namespace L2Dn.GameServer.Model.Events.Impl.Attackables;
  * An instantly executed event when Attackable is killed by Player.
  * @author UnAfraid
  */
-public class OnAttackableKill: EventBase
+public class OnAttackableKill(Player? attacker, Attackable target, bool summon): EventBase
 {
-	private readonly Player _attacker;
-	private readonly Attackable _target;
-	private readonly bool _isSummon;
-
-	public OnAttackableKill(Player attacker, Attackable target, bool isSummon)
+    public Player? getAttacker()
 	{
-		_attacker = attacker;
-		_target = target;
-		_isSummon = isSummon;
-	}
-
-	public Player getAttacker()
-	{
-		return _attacker;
+		return attacker;
 	}
 
 	public Attackable getTarget()
 	{
-		return _target;
+		return target;
 	}
 
 	public bool isSummon()
 	{
-		return _isSummon;
+		return summon;
 	}
 }

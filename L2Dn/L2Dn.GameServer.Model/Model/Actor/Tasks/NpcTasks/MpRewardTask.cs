@@ -34,7 +34,7 @@ public class MpRewardTask
         {
             case MpRewardType.PER:
             {
-                return (creature.getMaxMp() * (template.getMpRewardValue() / 100d)) / template.getMpRewardTicks();
+                return creature.getMaxMp() * (template.getMpRewardValue() / 100d) / template.getMpRewardTicks();
             }
         }
         return template.getMpRewardValue() / template.getMpRewardTicks();
@@ -42,7 +42,7 @@ public class MpRewardTask
 	
     private void run()
     {
-        if ((--_count <= 0) || (_creature.isPlayer() && !_creature.getActingPlayer().isOnline()))
+        if (--_count <= 0 || (_creature.isPlayer() && !_creature.getActingPlayer().isOnline()))
         {
             _task.cancel(false);
             return;

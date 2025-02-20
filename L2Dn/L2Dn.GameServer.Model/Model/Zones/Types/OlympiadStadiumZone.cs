@@ -79,7 +79,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 	protected override void onEnter(Creature creature)
     {
         OlympiadGameTask? olympiadTask = getSettings().getOlympiadTask();
-		if ((olympiadTask != null) && olympiadTask.isBattleStarted())
+		if (olympiadTask != null && olympiadTask.isBattleStarted())
 		{
 			creature.setInsideZone(ZoneId.PVP, true);
 			if (creature.isPlayer())
@@ -116,7 +116,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 	protected override void onExit(Creature creature)
 	{
         OlympiadGameTask? olympiadTask = getSettings().getOlympiadTask();
-		if ((olympiadTask != null) && olympiadTask.isBattleStarted())
+		if (olympiadTask != null && olympiadTask.isBattleStarted())
 		{
 			creature.setInsideZone(ZoneId.PVP, false);
 			if (creature.isPlayer())

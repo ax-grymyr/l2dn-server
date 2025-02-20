@@ -29,6 +29,6 @@ public class PlayerWarehouse: Warehouse
 
     public override bool validateCapacity(long slots)
     {
-        return ((_items.size() + slots) <= _owner.getWareHouseLimit());
+        return _items.size() + slots <= _owner.getWareHouseLimit();
     }
 }

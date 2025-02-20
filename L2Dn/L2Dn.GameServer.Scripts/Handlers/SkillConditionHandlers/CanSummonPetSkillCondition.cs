@@ -20,7 +20,7 @@ public class CanSummonPetSkillCondition: ISkillCondition
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         Player? player = caster.getActingPlayer();
-        if ((player == null) || player.isSpawnProtected() || player.isTeleportProtected())
+        if (player == null || player.isSpawnProtected() || player.isTeleportProtected())
         {
             return false;
         }
@@ -36,8 +36,8 @@ public class CanSummonPetSkillCondition: ISkillCondition
             player.sendPacket(SystemMessageId.YOU_MAY_NOT_SUMMON_MULTIPLE_PETS_AT_THE_SAME_TIME);
             canSummon = false;
         }
-        else if ((player.getActiveTradeList() != null) || player.hasItemRequest() ||
-                 (player.getPrivateStoreType() != PrivateStoreType.NONE))
+        else if (player.getActiveTradeList() != null || player.hasItemRequest() ||
+                 player.getPrivateStoreType() != PrivateStoreType.NONE)
         {
             player.sendPacket(SystemMessageId.CANNOT_BE_SUMMONED_WHILE_TRADING);
             canSummon = false;

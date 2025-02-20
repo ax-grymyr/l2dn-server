@@ -1669,7 +1669,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		try
 		{
-			if ((xValue == 0) && (yValue == 0))
+			if (xValue == 0 && yValue == 0)
 			{
 				_logger.Error("addSpawn(): invalid spawn coordinates for NPC #" + npcId + "!");
 				return null;
@@ -1795,7 +1795,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			{
 				if (item.getId() == itemId)
 				{
-					if ((count + item.getCount()) > long.MaxValue) // TODO! overflow
+					if (count + item.getCount() > long.MaxValue) // TODO! overflow
 					{
 						return long.MaxValue;
 					}
@@ -1848,7 +1848,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 */
 	protected static bool hasAllItems(Player player, bool checkCount, params ItemHolder[] itemList)
 	{
-		if ((itemList == null) || (itemList.Length == 0))
+		if (itemList == null || itemList.Length == 0)
 		{
 			return false;
 		}
@@ -1881,7 +1881,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 */
 	public static bool hasQuestItems(Player player, params int[] itemIds)
 	{
-		if ((itemIds == null) || (itemIds.Length == 0))
+		if (itemIds == null || itemIds.Length == 0)
 		{
 			return false;
 		}
@@ -1985,7 +1985,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 				foreach (Message message in inbox)
 				{
 					Mail mail = message.getAttachments();
-					if ((mail != null) && (mail.getItemByItemId(itemId) != null))
+					if (mail != null && mail.getItemByItemId(itemId) != null)
 					{
 						return true;
 					}
@@ -1997,7 +1997,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 				foreach (Message message in outbox)
 				{
 					Mail mail = message.getAttachments();
-					if ((mail != null) && (mail.getItemByItemId(itemId) != null))
+					if (mail != null && mail.getItemByItemId(itemId) != null)
 					{
 						return true;
 					}
@@ -2240,7 +2240,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 
 		// set enchant level for item if that item is not adena
-		if ((enchantlevel > 0) && (itemId != Inventory.ADENA_ID))
+		if (enchantlevel > 0 && itemId != Inventory.ADENA_ID)
 		{
 			item.setEnchantLevel(enchantlevel);
 		}
@@ -2279,7 +2279,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 
 		// set enchant level for item if that item is not adena
-		if ((attributeType != null) && (attributeValue > 0))
+		if (attributeType != null && attributeValue > 0)
 		{
 			item.setAttribute(new AttributeHolder(attributeType, attributeValue), true);
 			if (item.isEquipped())
@@ -2349,7 +2349,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 
 		long currentCount = getQuestItemsCount(player, itemId);
-		if ((limit > 0) && (currentCount >= limit))
+		if (limit > 0 && currentCount >= limit)
 		{
 			return true;
 		}
@@ -2357,9 +2357,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		long minAmountWithBonus = (long) (minAmount * Config.RATE_QUEST_DROP);
 		long maxAmountWithBonus = (long) (maxAmount * Config.RATE_QUEST_DROP);
 		double dropChanceWithBonus = dropChance * Config.RATE_QUEST_DROP; // TODO separate configs for rate and amount
-		if ((npc != null) && Config.CHAMPION_ENABLE && npc.isChampion())
+		if (npc != null && Config.CHAMPION_ENABLE && npc.isChampion())
 		{
-			if ((itemId == Inventory.ADENA_ID) || (itemId == Inventory.ANCIENT_ADENA_ID))
+			if (itemId == Inventory.ADENA_ID || itemId == Inventory.ANCIENT_ADENA_ID)
 			{
 				dropChanceWithBonus *= Config.CHAMPION_ADENAS_REWARDS_CHANCE;
 				minAmountWithBonus = (long)(minAmountWithBonus * Config.CHAMPION_ADENAS_REWARDS_AMOUNT);
@@ -2373,12 +2373,12 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			}
 		}
 
-		long amountToGive = (minAmountWithBonus == maxAmountWithBonus) ? minAmountWithBonus : Rnd.get(minAmountWithBonus, maxAmountWithBonus);
+		long amountToGive = minAmountWithBonus == maxAmountWithBonus ? minAmountWithBonus : Rnd.get(minAmountWithBonus, maxAmountWithBonus);
 		double random = Rnd.nextDouble();
 		// Inventory slot check (almost useless for non-stacking items)
-		if ((dropChanceWithBonus >= random) && (amountToGive > 0) && player.getInventory().validateCapacityByItemId(itemId))
+		if (dropChanceWithBonus >= random && amountToGive > 0 && player.getInventory().validateCapacityByItemId(itemId))
 		{
-			if ((limit > 0) && ((currentCount + amountToGive) > limit))
+			if (limit > 0 && currentCount + amountToGive > limit)
 			{
 				amountToGive = limit - currentCount;
 			}
@@ -2387,7 +2387,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			if (player.addItem("Quest", itemId, amountToGive, npc, true) != null)
 			{
 				// limit reached (if there is no limit, this block doesn't execute)
-				if ((currentCount + amountToGive) == limit)
+				if (currentCount + amountToGive == limit)
 				{
 					if (playSound)
 					{
@@ -2434,7 +2434,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 
 		// Tests on count value in order not to have negative value
 		long amount = amountValue;
-		if ((amountValue < 0) || (amountValue > item.getCount()))
+		if (amountValue < 0 || amountValue > item.getCount())
 		{
 			amount = item.getCount();
 		}
@@ -2483,7 +2483,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return false;
 		}
-		if ((itemList == null) || (itemList.Length == 0))
+		if (itemList == null || itemList.Length == 0)
 		{
 			return false;
 		}
@@ -2586,7 +2586,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			addSp = (long)(addSp * Config.PREMIUM_RATE_QUEST_SP);
 		}
 
-		player.addExpAndSp((long) player.getStat().getValue(Stat.EXPSP_RATE, (addExp * Config.RATE_QUEST_REWARD_XP)), (int) player.getStat().getValue(Stat.EXPSP_RATE, (addSp * Config.RATE_QUEST_REWARD_SP)));
+		player.addExpAndSp((long) player.getStat().getValue(Stat.EXPSP_RATE, addExp * Config.RATE_QUEST_REWARD_XP), (int) player.getStat().getValue(Stat.EXPSP_RATE, addSp * Config.RATE_QUEST_REWARD_SP));
 		PcCafePointsManager.getInstance().givePcCafePoint(player, (long) (addExp * Config.RATE_QUEST_REWARD_XP));
 	}
 
@@ -2846,7 +2846,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 */
 	protected void addSkillCastDesire(Npc npc, WorldObject target, Skill skill, int desire)
 	{
-		if (npc.isAttackable() && (target != null) && target.isCreature())
+		if (npc.isAttackable() && target != null && target.isCreature())
 		{
 			((Attackable) npc).addDamageHate((Creature) target, 0, desire);
 		}
@@ -3019,7 +3019,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			foreach (Player player in instance.getPlayers())
 			{
-				if ((player != null) && (player.getInstanceWorld() == instance))
+				if (player != null && player.getInstanceWorld() == instance)
 				{
 					playMovie(player, movie);
 				}

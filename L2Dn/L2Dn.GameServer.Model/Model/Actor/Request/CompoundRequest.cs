@@ -43,6 +43,6 @@ public class CompoundRequest: AbstractRequest
 
     public override bool isUsing(int objectId)
     {
-        return (objectId > 0) && ((objectId == _itemOne) || (objectId == _itemTwo));
+        return objectId > 0 && (objectId == _itemOne || objectId == _itemTwo);
     }
 }

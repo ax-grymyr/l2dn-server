@@ -2,7 +2,6 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Attackables;
 using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Skills;
@@ -115,7 +114,7 @@ public class FriendlyNpc : Attackable
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 	}
 
-	public override string getHtmlPath(int npcId, int value, Player player)
+	public override string getHtmlPath(int npcId, int value, Player? player)
 	{
 		string pom = "";
 		if (value == 0)

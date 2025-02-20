@@ -44,8 +44,8 @@ public class PAttackFinalizer : StatFunction
 	{
 		if (isBlessed)
 		{
-			return (3 * Math.Max(enchantLevel - 3, 0)) + (3 * Math.Max(enchantLevel - 6, 0));
+			return 3 * Math.Max(enchantLevel - 3, 0) + 3 * Math.Max(enchantLevel - 6, 0);
 		}
-		return (2 * Math.Max(enchantLevel - 3, 0)) + (2 * Math.Max(enchantLevel - 6, 0));
+		return 2 * Math.Max(enchantLevel - 3, 0) + 2 * Math.Max(enchantLevel - 6, 0);
 	}
 }

@@ -52,6 +52,6 @@ public class MaxMpFinalizer : StatFunction
 			}
 		}
 		
-		return (mul * baseValue) + add + addItem + creature.getStat().getMoveTypeValue(stat, creature.getMoveType());
+		return mul * baseValue + add + addItem + creature.getStat().getMoveTypeValue(stat, creature.getMoveType());
 	}
 }

@@ -426,7 +426,7 @@ public abstract class AbstractAI : Ctrl
 
 			// prevent possible extra calls to this function (there is none?),
 			// also don't send movetopawn packets too often
-			if (_clientMoving && (_target == pawn))
+			if (_clientMoving && _target == pawn)
 			{
 				if (_clientMovingToPawnOffset == offset)
 				{
@@ -436,7 +436,7 @@ public abstract class AbstractAI : Ctrl
 					}
 				}
 				// minimum time to calculate new route is 2 seconds
-				else if (_actor.isOnGeodataPath() && (GameTimeTaskManager.getInstance().getGameTicks() < (_moveToPawnTimeout + 10)))
+				else if (_actor.isOnGeodataPath() && GameTimeTaskManager.getInstance().getGameTicks() < _moveToPawnTimeout + 10)
 				{
 					return;
 				}
@@ -475,7 +475,7 @@ public abstract class AbstractAI : Ctrl
 				else
 				{
 					WorldRegion? region = _actor.getWorldRegion();
-					if ((region != null) && region.isActive() && !_actor.isMovementSuspended())
+					if (region != null && region.isActive() && !_actor.isMovementSuspended())
 					{
 						_actor.broadcastPacket(new MoveToPawnPacket(_actor, pawn, offset));
 					}
@@ -666,7 +666,7 @@ public abstract class AbstractAI : Ctrl
 	{
 		if (_actor.isVisibleFor(player) && _clientMoving)
 		{
-			if ((_clientMovingToPawnOffset != 0) && isFollowing())
+			if (_clientMovingToPawnOffset != 0 && isFollowing())
 			{
 				// Send a Server->Client packet MoveToPawn to the actor and all Player in its _knownPlayers
 				player.sendPacket(new MoveToPawnPacket(_actor, _target, _clientMovingToPawnOffset));
@@ -681,7 +681,7 @@ public abstract class AbstractAI : Ctrl
 
 	public bool isFollowing()
     {
-        return (_target != null) && _target.isCreature() && ((_intention == CtrlIntention.AI_INTENTION_FOLLOW) ||
+        return _target != null && _target.isCreature() && (_intention == CtrlIntention.AI_INTENTION_FOLLOW ||
             CreatureFollowTaskManager.getInstance().isFollowing(_actor));
     }
 

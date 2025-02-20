@@ -1275,10 +1275,19 @@ public class ItemData: DataReaderBase
 	{
 		if (id >= _allTemplates.Length || id < 0)
 		{
+            LOGGER.Error("Requested ItemTemplate ID=" + id + " not found!");
 			return null;
 		}
-		return _allTemplates[id];
-	}
+
+		ItemTemplate? template = _allTemplates[id];
+        if (template == null)
+        {
+            LOGGER.Error("Requested ItemTemplate ID=" + id + " not found!");
+            return null;
+        }
+
+        return template;
+    }
 
 	/**
 	 * Create the Item corresponding to the Item Identifier and quantity add logs the activity. <b><u>Actions</u>:</b>

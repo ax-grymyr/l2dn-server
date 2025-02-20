@@ -60,7 +60,7 @@ public class TrainingHolder
 	
 	public bool isValid(Player player)
 	{
-		return Config.TRAINING_CAMP_ENABLE && (player.ObjectId == _objectId) && (player.getClassIndex() == _classIndex);
+		return Config.TRAINING_CAMP_ENABLE && player.ObjectId == _objectId && player.getClassIndex() == _classIndex;
 	}
 	
 	public TimeSpan getElapsedTime()

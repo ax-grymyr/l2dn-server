@@ -29,16 +29,16 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 
 public class Pet: Summon
 {
-	protected static readonly Logger LOGGER_PET = LogManager.GetLogger(nameof(Pet));
+    private static readonly Logger LOGGER_PET = LogManager.GetLogger(nameof(Pet));
 
-	protected int _curFed;
-	protected readonly PetInventory _inventory;
+    private int _curFed;
+    private readonly PetInventory _inventory;
 	private readonly bool _mountable;
 	private readonly int _controlObjectId;
 	private bool _respawned;
-	private int _petType = 0;
-	private int _curWeightPenalty = 0;
-	private long _expBeforeDeath = 0;
+	private int _petType;
+	private int _curWeightPenalty;
+	private long _expBeforeDeath;
 	private PetData _data;
 	private PetLevelData _leveldata;
 	private EvolveLevel _evolveLevel = EvolveLevel.None;
@@ -138,7 +138,7 @@ public class Pet: Summon
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (DbPetSkill record in ctx.PetSkills.Where(r => r.PetItemObjectId == _controlObjectId))
 			{
-				Skill skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel);
+				Skill? skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel);
 				if (skill == null)
 				{
 					continue;
@@ -198,8 +198,8 @@ public class Pet: Summon
 		{
 			try
 			{
-				Summon pet = _pet.getOwner().getPet();
-				BuffInfo buffInfo = _pet.getOwner() != null ? _pet.getOwner().getEffectList().getBuffInfoBySkillId(49300) : null;
+				Summon? pet = _pet.getOwner().getPet();
+				BuffInfo? buffInfo = _pet.getOwner() != null ? _pet.getOwner().getEffectList().getBuffInfoBySkillId(49300) : null;
 				int buffLvl = buffInfo == null ? 0 : buffInfo.getSkill().getLevel();
 				int feedCons = buffLvl != 0 ? getFeedConsume() + getFeedConsume() / 100 * buffLvl * 50 : getFeedConsume();
 				if (_pet.getOwner() == null || pet == null || pet.ObjectId != _pet.ObjectId)
@@ -207,16 +207,17 @@ public class Pet: Summon
 					_pet.stopFeed();
 					return;
 				}
-				else if (_pet._curFed > feedCons)
-				{
-					_pet.setCurrentFed(_pet._curFed - feedCons);
-				}
-				else
-				{
-					_pet.setCurrentFed(0);
-				}
 
-				_pet.broadcastStatusUpdate();
+                if (_pet._curFed > feedCons)
+                {
+                    _pet.setCurrentFed(_pet._curFed - feedCons);
+                }
+                else
+                {
+                    _pet.setCurrentFed(0);
+                }
+
+                _pet.broadcastStatusUpdate();
 
 				Set<int> foodIds = _pet.getPetData().getFood();
 				if (foodIds.isEmpty())
@@ -238,7 +239,7 @@ public class Pet: Summon
 					return;
 				}
 
-				Item food = null;
+				Item? food = null;
 				foreach (int id in foodIds)
 				{
 					food = _pet.getOwner().getInventory().getItemByItemId(id);
@@ -251,7 +252,7 @@ public class Pet: Summon
 				if (food != null && _pet.isHungry() && _pet.getOwner().getAutoUseSettings().getAutoSupplyItems().Contains(food.getId()) &&
 				    !pet.isInsideZone(ZoneId.PEACE))
 				{
-					IItemHandler handler = ItemHandler.getInstance().getHandler(food.getEtcItem());
+					IItemHandler? handler = ItemHandler.getInstance().getHandler(food.getEtcItem());
 					if (handler != null)
 					{
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOUR_PET_WAS_HUNGRY_SO_IT_ATE_S1);
@@ -403,7 +404,7 @@ public class Pet: Summon
 	/**
 	 * Returns the pet's currently equipped weapon instance (if any).
 	 */
-	public override Item getActiveWeaponInstance()
+	public override Item? getActiveWeaponInstance()
 	{
 		if (_inventory != null)
 		{
@@ -423,7 +424,7 @@ public class Pet: Summon
 	/**
 	 * Returns the pet's currently equipped weapon (if any).
 	 */
-	public override Weapon getActiveWeaponItem()
+	public override Weapon? getActiveWeaponItem()
 	{
 		Item weapon = getActiveWeaponInstance();
 		if (weapon == null)
@@ -433,13 +434,13 @@ public class Pet: Summon
 		return (Weapon) weapon.getTemplate();
 	}
 
-	public override Item getSecondaryWeaponInstance()
+	public override Item? getSecondaryWeaponInstance()
 	{
 		// temporary? unavailable
 		return null;
 	}
 
-	public override Weapon getSecondaryWeaponItem()
+	public override Weapon? getSecondaryWeaponItem()
 	{
 		// temporary? unavailable
 		return null;
@@ -569,12 +570,13 @@ public class Pet: Summon
 			sendPacket(smsg);
 			return;
 		}
-		else if (FortSiegeManager.getInstance().isCombat(target.getId()))
-		{
-			return;
-		}
 
-		lock (target)
+        if (FortSiegeManager.getInstance().isCombat(target.getId()))
+        {
+            return;
+        }
+
+        lock (target)
 		{
 			// Check if the target to pick up is visible
 			if (!target.isSpawned())

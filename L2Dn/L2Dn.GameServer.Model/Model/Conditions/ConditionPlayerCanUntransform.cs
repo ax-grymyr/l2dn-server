@@ -32,6 +32,6 @@ public sealed class ConditionPlayerCanUntransform(bool value): Condition
             canUntransform = false;
         }
 
-        return (value == canUntransform);
+        return value == canUntransform;
     }
 }

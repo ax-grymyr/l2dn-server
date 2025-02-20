@@ -84,7 +84,7 @@ public class PageBuilder<T>
 		if (_bodyHandler is null)
 			throw new InvalidOperationException("Body was not set!");
 
-		int pages = (_elements.Count / _elementsPerPage) + ((_elements.Count % _elementsPerPage) > 0 ? 1 : 0);
+		int pages = _elements.Count / _elementsPerPage + (_elements.Count % _elementsPerPage > 0 ? 1 : 0);
 		StringBuilder pagerTemplate = new StringBuilder();
 		if (pages > 1)
 		{
@@ -114,7 +114,7 @@ public class PageBuilder<T>
 
 			apply(pages, element, sb);
 
-			if (i >= (elementsPerPage + start))
+			if (i >= elementsPerPage + start)
 			{
 				break;
 			}

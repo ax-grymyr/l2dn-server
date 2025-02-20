@@ -35,7 +35,7 @@ public class SayuneZone: ZoneType
 	protected override void onEnter(Creature creature)
 	{
 		if (creature.isPlayer() &&
-		    ( /* creature.isInCategory(CategoryType.SIXTH_CLASS_GROUP) || */ Config.FREE_JUMPS_FOR_ALL) &&
+            /* creature.isInCategory(CategoryType.SIXTH_CLASS_GROUP) || */Config.FREE_JUMPS_FOR_ALL &&
 		    !creature.getActingPlayer().isMounted() && !creature.isTransformed())
 		{
 			creature.setInsideZone(ZoneId.SAYUNE, true);

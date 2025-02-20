@@ -16,7 +16,7 @@ public class ConsumeBodySkillCondition: ISkillCondition
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
-        if ((target != null) && (target.isMonster() || target.isSummon()))
+        if (target != null && (target.isMonster() || target.isSummon()))
         {
             Creature creature = (Creature)target;
             if (creature.isDead() && creature.isSpawned())

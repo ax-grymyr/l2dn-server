@@ -19,7 +19,7 @@ public class VillageMasterFighter: VillageMaster
 
     protected sealed override bool checkVillageMasterRace(CharacterClass pClass)
     {
-        return (pClass.GetRace() == Race.HUMAN) || (pClass.GetRace() == Race.ELF);
+        return pClass.GetRace() == Race.HUMAN || pClass.GetRace() == Race.ELF;
     }
 
     protected sealed override bool checkVillageMasterTeachType(CharacterClass pClass)

@@ -321,7 +321,7 @@ public class QuestState
 		// always exist (i.e. it can never be skipped). So if cond is 2, we can still safely
 		// assume no steps have been skipped.
 		// Finally, more than 31 steps CANNOT be supported in any way with skipping.
-		if ((cond < 3) || (cond > 31))
+		if (cond < 3 || cond > 31)
 		{
 			unset("__compltdStateFlags");
 		}
@@ -335,7 +335,7 @@ public class QuestState
 		{
 			// Check if this step also doesn't skip anything. If so, no further work is needed also, in this case, no work is needed if the state is being reset to a smaller value in those cases, skip forward to informing the client about the change...
 			// ELSE, if we just now skipped for the first time...prepare the flags!!!
-			if (cond > (old + 1))
+			if (cond > old + 1)
 			{
 				// set the most significant bit to 1 (indicates that there exist skipped states)
 				// also, ensure that the least significant bit is an 1 (the first step is never skipped, no matter what the cond says)
@@ -355,7 +355,7 @@ public class QuestState
 			completedStateFlags &= (1 << cond) - 1; // note, this also unsets the flag indicating that there exist skips
 			
 			// now, check if this resulted in no steps being skipped any more
-			if (completedStateFlags == ((1 << cond) - 1))
+			if (completedStateFlags == (1 << cond) - 1)
 			{
 				unset("__compltdStateFlags");
 			}
@@ -516,7 +516,7 @@ public class QuestState
 				val &= 0x7fffffff;
 				for (int i = 1; i < 32; i++)
 				{
-					val = (val >> 1);
+					val = val >> 1;
 					if (val == 0)
 					{
 						val = i;
@@ -665,7 +665,7 @@ public class QuestState
 	 */
 	public bool isMemoStateEx(int slot, int memoStateEx)
 	{
-		return (getMemoStateEx(slot) == memoStateEx);
+		return getMemoStateEx(slot) == memoStateEx;
 	}
 	
 	/**
@@ -889,7 +889,7 @@ public class QuestState
 	public bool isNowAvailable()
 	{
 		string val = get(RESTART_VAR);
-		return (val != null) && (new DateTime(long.Parse(val)) <= DateTime.Now);
+		return val != null && new DateTime(long.Parse(val)) <= DateTime.Now;
 	}
 	
 	public void setSimulated(bool simulated)

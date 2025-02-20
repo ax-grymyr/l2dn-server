@@ -206,7 +206,7 @@ public class PetData
 			{
 				if (petLvl < 70)
 				{
-					lvl = (petLvl / 10);
+					lvl = petLvl / 10;
 					if (lvl <= 0)
 					{
 						lvl = 1;
@@ -214,7 +214,7 @@ public class PetData
 				}
 				else
 				{
-					lvl = (7 + ((petLvl - 70) / 5));
+					lvl = 7 + (petLvl - 70) / 5;
 				}
 				
 				// formula usable for skill that have 10 or more skill levels
@@ -225,12 +225,12 @@ public class PetData
 				}
 				break;
 			}
-			else if ((temp.getMinLevel() <= petLvl) && (temp.getSkillLevel() > lvl))
+			else if (temp.getMinLevel() <= petLvl && temp.getSkillLevel() > lvl)
 			{
 				lvl = temp.getSkillLevel();
 			}
 		}
-		if (found && (lvl == 0))
+		if (found && lvl == 0)
 		{
 			return 1;
 		}

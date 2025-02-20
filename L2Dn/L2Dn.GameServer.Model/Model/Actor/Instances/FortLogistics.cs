@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -12,27 +13,28 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 
 public class FortLogistics : Merchant
 {
-	private static readonly int[] SUPPLY_BOX_IDS =
-	[
-		35665, 35697, 35734, 35766, 35803, 35834, 35866, 35903, 35935, 35973, 36010, 36042, 36080, 36117, 36148, 36180,
-		36218, 36256, 36293, 36325, 36363
-	];
-	
+    private static readonly int[] SUPPLY_BOX_IDS =
+    [
+        35665, 35697, 35734, 35766, 35803, 35834, 35866, 35903, 35935, 35973, 36010, 36042, 36080, 36117, 36148,
+        36180, 36218, 36256, 36293, 36325, 36363,
+    ];
+
 	public FortLogistics(NpcTemplate template): base(template)
 	{
 		InstanceType = InstanceType.FortLogistics;
 	}
-	
+
 	public override void onBypassFeedback(Player player, string command)
 	{
 		if (player.getLastFolkNPC().ObjectId != ObjectId)
 		{
 			return;
 		}
-		
+
 		StringTokenizer st = new StringTokenizer(command, " ");
 		string actualCommand = st.nextToken(); // Get actual command
-		bool isMyLord = player.isClanLeader() && (player.getClan().getFortId() == (getFort() != null ? getFort().getResidenceId() : -1));
+        Clan? clan = player.getClan();
+		bool isMyLord = clan != null && player.isClanLeader() && clan.getFortId() == (getFort() != null ? getFort().getResidenceId() : -1);
 
 		if (actualCommand.equalsIgnoreCase("rewards"))
 		{
@@ -40,7 +42,7 @@ public class FortLogistics : Merchant
 			if (isMyLord)
 			{
 				htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-rewards.htm", player);
-				htmlContent.Replace("%bloodoath%", player.getClan().getBloodOathCount().ToString());
+				htmlContent.Replace("%bloodoath%", clan.getBloodOathCount().ToString());
 			}
 			else
 			{
@@ -55,11 +57,11 @@ public class FortLogistics : Merchant
 			HtmlContent htmlContent;
 			if (isMyLord)
 			{
-				int blood = player.getClan().getBloodOathCount();
+				int blood = clan.getBloodOathCount();
 				if (blood > 0)
 				{
 					player.addItem("Quest", 9910, blood, this, true);
-					player.getClan().resetBloodOathCount();
+                    clan.resetBloodOathCount();
 					htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-blood.htm", player);
 				}
 				else
@@ -71,7 +73,7 @@ public class FortLogistics : Merchant
 			{
 				htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-noprivs.htm", player);
 			}
-			
+
 			htmlContent.Replace("%objectId%", ObjectId.ToString());
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
@@ -95,7 +97,7 @@ public class FortLogistics : Merchant
 			{
 				htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-1.htm", player); // TODO: Missing HTML?
 			}
-			
+
 			htmlContent.Replace("%objectId%", ObjectId.ToString());
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
@@ -115,7 +117,7 @@ public class FortLogistics : Merchant
 					if (level > 0)
 					{
 						// spawn box
-						NpcTemplate boxTemplate = NpcData.getInstance().getTemplate(SUPPLY_BOX_IDS[level - 1]);
+						NpcTemplate? boxTemplate = NpcData.getInstance().getTemplate(SUPPLY_BOX_IDS[level - 1]);
 						Monster box = new Monster(boxTemplate);
 						box.setCurrentHp(box.getMaxHp());
 						box.setCurrentMp(box.getMaxMp());
@@ -123,7 +125,7 @@ public class FortLogistics : Merchant
 						box.spawnMe(new Location3D(getX() - 23, getY() + 41, getZ()));
 						getFort().setSupplyLevel(0);
 						getFort().saveFortVariables();
-						
+
 						htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-supply.htm", player);
 					}
 					else
@@ -136,7 +138,7 @@ public class FortLogistics : Merchant
 			{
 				htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-noprivs.htm", player);
 			}
-			
+
 			htmlContent.Replace("%objectId%", ObjectId.ToString());
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
@@ -146,16 +148,16 @@ public class FortLogistics : Merchant
 			base.onBypassFeedback(player, command);
 		}
 	}
-	
+
 	public override void showChatWindow(Player player)
 	{
 		showMessageWindow(player, 0);
 	}
-	
+
 	private void showMessageWindow(Player player, int value)
 	{
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-		
+
 		string filename;
 		if (value == 0)
 		{
@@ -165,7 +167,7 @@ public class FortLogistics : Merchant
 		{
 			filename = "html/fortress/logistics-" + value + ".htm";
 		}
-		
+
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
 		htmlContent.Replace("%objectId%", ObjectId.ToString());
 		htmlContent.Replace("%npcId%", getId().ToString());
@@ -181,7 +183,7 @@ public class FortLogistics : Merchant
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 	}
-	
+
 	public override string getHtmlPath(int npcId, int value, Player player)
 	{
 		string pom = "";
@@ -195,7 +197,7 @@ public class FortLogistics : Merchant
 		}
 		return "html/fortress/" + pom + ".htm";
 	}
-	
+
 	public override bool hasRandomAnimation()
 	{
 		return false;

@@ -53,7 +53,7 @@ public class SwampZone : ZoneType
 
 	private Castle? getCastle()
 	{
-		if ((_castleId > 0) && (_castle == null))
+		if (_castleId > 0 && _castle == null)
 		{
 			_castle = CastleManager.getInstance().getCastleById(_castleId);
 		}
@@ -72,7 +72,7 @@ public class SwampZone : ZoneType
 
 			// defenders not affected
 			Player player = creature.getActingPlayer();
-			if ((player != null) && player.isInSiege() && (player.getSiegeState() == 2))
+			if (player != null && player.isInSiege() && player.getSiegeState() == 2)
 			{
 				return;
 			}

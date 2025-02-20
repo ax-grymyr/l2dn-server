@@ -22,7 +22,7 @@ public class ControlTower: Tower
         {
             getCastle().getSiege().killedCT(this);
 
-            if ((_guards != null) && !_guards.isEmpty())
+            if (_guards != null && !_guards.isEmpty())
             {
                 foreach (Spawn spawn in _guards)
                 {

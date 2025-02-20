@@ -15,16 +15,16 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 public class SchemeBuffer : Npc
 {
 	private const int PAGE_LIMIT = 6;
-	
+
 	public SchemeBuffer(NpcTemplate template): base(template)
 	{
 	}
-	
+
 	public override void onBypassFeedback(Player player, string commandValue)
 	{
 		// Simple hack to use createscheme bypass with a space.
 		string command = commandValue.Replace("createscheme ", "createscheme;");
-		
+
 		StringTokenizer st = new StringTokenizer(command, ";");
 		string currentCommand = st.nextToken();
 		if (currentCommand.startsWith("menu"))
@@ -37,14 +37,14 @@ public class SchemeBuffer : Npc
 		else if (currentCommand.startsWith("cleanup"))
 		{
 			player.stopAllEffects();
-			
-			Summon summon = player.getPet();
+
+			Summon? summon = player.getPet();
 			if (summon != null)
 			{
 				summon.stopAllEffects();
 			}
 			player.getServitors().Values.ForEach(servitor => servitor.stopAllEffects());
-			
+
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
 			htmlContent.Replace("%objectId%", ObjectId.ToString());
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
@@ -54,14 +54,14 @@ public class SchemeBuffer : Npc
 		{
 			player.setCurrentHpMp(player.getMaxHp(), player.getMaxMp());
 			player.setCurrentCp(player.getMaxCp());
-			
-			Summon summon = player.getPet();
+
+			Summon? summon = player.getPet();
 			if (summon != null)
 			{
 				summon.setCurrentHpMp(summon.getMaxHp(), summon.getMaxMp());
 			}
 			player.getServitors().Values.ForEach(servitor => servitor.setCurrentHpMp(servitor.getMaxHp(), servitor.getMaxMp()));
-			
+
 			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
 			htmlContent.Replace("%objectId%", ObjectId.ToString());
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
@@ -76,11 +76,11 @@ public class SchemeBuffer : Npc
 			string schemeName = st.nextToken();
 			int cost = int.Parse(st.nextToken());
 			bool buffSummons = st.hasMoreTokens() && st.nextToken().equalsIgnoreCase("pet");
-			if (buffSummons && (player.getPet() == null) && !player.hasServitors())
+			if (buffSummons && player.getPet() == null && !player.hasServitors())
 			{
 				player.sendMessage("You don't have a pet.");
 			}
-			else if ((cost == 0) || ((Config.BUFFER_ITEM_ID == 57) && player.reduceAdena("NPC Buffer", cost, this, true)) || ((Config.BUFFER_ITEM_ID != 57) && player.destroyItemByItemId("NPC Buffer", Config.BUFFER_ITEM_ID, cost, player, true)))
+			else if (cost == 0 || (Config.BUFFER_ITEM_ID == 57 && player.reduceAdena("NPC Buffer", cost, this, true)) || (Config.BUFFER_ITEM_ID != 57 && player.destroyItemByItemId("NPC Buffer", Config.BUFFER_ITEM_ID, cost, player, true)))
 			{
 				foreach (int skillId in SchemeBufferTable.getInstance().getScheme(player.ObjectId, schemeName))
 				{
@@ -141,7 +141,7 @@ public class SchemeBuffer : Npc
 			{
 				skills.Remove(skillId);
 			}
-			
+
 			showEditSchemeWindow(player, groupType, schemeName, page);
 		}
 		else if (currentCommand.startsWith("createscheme"))
@@ -170,14 +170,14 @@ public class SchemeBuffer : Npc
 						player.sendMessage("Maximum schemes amount is already reached.");
 						return;
 					}
-					
+
 					if (schemes.ContainsKey(schemeName))
 					{
 						player.sendMessage("The scheme name already exists.");
 						return;
 					}
 				}
-				
+
 				SchemeBufferTable.getInstance().setScheme(player.ObjectId, schemeName.Trim(), new List<int>());
 				showGiveBuffsWindow(player);
 			}
@@ -191,8 +191,8 @@ public class SchemeBuffer : Npc
 			try
 			{
 				string schemeName = st.nextToken();
-				Map<string, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.ObjectId);
-				if ((schemes != null) && schemes.ContainsKey(schemeName))
+				Map<string, List<int>>? schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.ObjectId);
+				if (schemes != null && schemes.ContainsKey(schemeName))
 				{
 					schemes.remove(schemeName);
 				}
@@ -204,7 +204,7 @@ public class SchemeBuffer : Npc
 			showGiveBuffsWindow(player);
 		}
 	}
-	
+
 	public override string getHtmlPath(int npcId, int value, Player player)
 	{
 		string filename = "";
@@ -218,7 +218,7 @@ public class SchemeBuffer : Npc
 		}
 		return "html/mods/SchemeBuffer/" + filename + ".htm";
 	}
-	
+
 	/**
 	 * Sends an html packet to player with Give Buffs menu info for player and pet, depending on targetType parameter {player, pet}
 	 * @param player : The player to make checks on.
@@ -226,8 +226,8 @@ public class SchemeBuffer : Npc
 	private void showGiveBuffsWindow(Player player)
 	{
 		StringBuilder sb = new StringBuilder(200);
-		Map<string, List<int>> schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.ObjectId);
-		if ((schemes == null) || schemes.Count == 0)
+		Map<string, List<int>>? schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.ObjectId);
+		if (schemes == null || schemes.Count == 0)
 		{
 			sb.Append("<font color=\"LEVEL\">You haven't defined any scheme.</font>");
 		}
@@ -237,7 +237,7 @@ public class SchemeBuffer : Npc
 			{
 				int cost = getFee(scheme.Value);
 				sb.Append("<font color=\"LEVEL\">" + scheme.Key + " [" + scheme.Value.Count + " skill(s)]" +
-				          ((cost > 0) ? " - cost: " + cost : "") + "</font><br1>");
+				          (cost > 0 ? " - cost: " + cost : "") + "</font><br1>");
 				sb.Append("<a action=\"bypass -h npc_%objectId%_givebuffs;" + scheme.Key + ";" + cost +
 				          "\">Use on Me</a>&nbsp;|&nbsp;");
 				sb.Append("<a action=\"bypass -h npc_%objectId%_givebuffs;" + scheme.Key + ";" + cost +
@@ -247,7 +247,7 @@ public class SchemeBuffer : Npc
 				sb.Append("<a action=\"bypass npc_%objectId%_deletescheme;" + scheme.Key + "\">Delete</a><br>");
 			}
 		}
-		
+
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 1, player), player);
 		htmlContent.Replace("%schemes%", sb.ToString());
 		htmlContent.Replace("%max_schemes%", Config.BUFFER_MAX_SCHEMES.ToString());
@@ -255,7 +255,7 @@ public class SchemeBuffer : Npc
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 	}
-	
+
 	/**
 	 * This sends an html packet to player with Edit Scheme Menu info. This allows player to edit each created scheme (add/delete skills)
 	 * @param player : The player to make checks on.
@@ -272,7 +272,7 @@ public class SchemeBuffer : Npc
 		htmlContent.Replace("%count%",
 			getCountOf(schemeSkills, false) + " / " + player.getStat().getMaxBuffCount() + " buffs, " +
 			getCountOf(schemeSkills, true) + " / " + Config.DANCES_MAX_AMOUNT + " dances/songs");
-		
+
 		htmlContent.Replace("%typesframe%", getTypesFrame(groupType, schemeName));
 		htmlContent.Replace("%skilllistframe%", getGroupSkillList(player, groupType, schemeName, page));
 		htmlContent.Replace("%objectId%", ObjectId.ToString());
@@ -312,7 +312,7 @@ public class SchemeBuffer : Npc
 		int row = 0;
 		foreach (int skillId in skills)
 		{
-			sb.Append(((row % 2) == 0 ? "<table width=\"280\" bgcolor=\"000000\"><tr>" : "<table width=\"280\"><tr>"));
+			sb.Append(row % 2 == 0 ? "<table width=\"280\" bgcolor=\"000000\"><tr>" : "<table width=\"280\"><tr>");
 
 			Skill skill = SkillData.getInstance().getSkill(skillId, 1);
 			if (schemeSkills.Contains(skillId))
@@ -376,7 +376,7 @@ public class SchemeBuffer : Npc
 	{
 		StringBuilder sb = new StringBuilder(500);
 		sb.Append("<table>");
-		
+
 		int count = 0;
 		foreach (string type in SchemeBufferTable.getInstance().getSkillTypes())
 		{
@@ -384,7 +384,7 @@ public class SchemeBuffer : Npc
 			{
 				sb.Append("<tr>");
 			}
-			
+
 			if (groupType.equalsIgnoreCase(type))
 			{
 				sb.Append("<td width=65>" + type + "</td>");
@@ -393,7 +393,7 @@ public class SchemeBuffer : Npc
 			{
 				sb.Append("<td width=65><a action=\"bypass npc_%objectId%_editschemes;" + type + ";" + schemeName + ";1\">" + type + "</a></td>");
 			}
-			
+
 			count++;
 			if (count == 4)
 			{
@@ -401,17 +401,17 @@ public class SchemeBuffer : Npc
 				count = 0;
 			}
 		}
-		
+
 		if (!sb.ToString().EndsWith("</tr>"))
 		{
 			sb.Append("</tr>");
 		}
-		
+
 		sb.Append("</table>");
-		
+
 		return sb.ToString();
 	}
-	
+
 	/**
 	 * @param list : A list of skill ids.
 	 * @return a global fee for all skills contained in list.
@@ -422,16 +422,16 @@ public class SchemeBuffer : Npc
 		{
 			return list.Count * Config.BUFFER_STATIC_BUFF_COST;
 		}
-		
+
 		int fee = 0;
 		foreach (int sk in list)
 		{
 			fee += SchemeBufferTable.getInstance().getAvailableBuff(sk).getPrice();
 		}
-		
+
 		return fee;
 	}
-	
+
 	private static int getCountOf(List<int> skills, bool dances)
 	{
 		int count = 0;

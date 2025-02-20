@@ -38,7 +38,7 @@ public class Guard: Attackable
 
 		if (Config.FACTION_SYSTEM_ENABLED && Config.FACTION_GUARDS_ENABLED && attacker.isPlayable())
 		{
-			Player player = attacker.getActingPlayer();
+			Player? player = attacker.getActingPlayer();
 			if ((player.isGood() && getTemplate().isClan(Config.FACTION_EVIL_TEAM_NAME)) ||
 			    (player.isEvil() && getTemplate().isClan(Config.FACTION_GOOD_TEAM_NAME)))
 			{
@@ -88,9 +88,9 @@ public class Guard: Attackable
 	 * @param npcId The Identifier of the Npc whose text must be display
 	 * @param value The number of the page to display
 	 */
-	public override string getHtmlPath(int npcId, int value, Player player)
+	public override string getHtmlPath(int npcId, int value, Player? player)
 	{
-		string pom = "";
+		string pom;
 		if (value == 0)
 		{
 			pom = npcId.ToString(CultureInfo.InvariantCulture);

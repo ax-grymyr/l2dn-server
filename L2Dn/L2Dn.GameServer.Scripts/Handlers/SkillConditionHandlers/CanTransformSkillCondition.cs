@@ -25,7 +25,7 @@ public class CanTransformSkillCondition: ISkillCondition
     {
         bool canTransform = true;
         Player? player = caster.getActingPlayer();
-        if ((player == null) || player.isAlikeDead() || player.isCursedWeaponEquipped())
+        if (player == null || player.isAlikeDead() || player.isCursedWeaponEquipped())
         {
             canTransform = false;
         }

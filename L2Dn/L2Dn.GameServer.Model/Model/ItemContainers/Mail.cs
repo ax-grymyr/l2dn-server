@@ -93,7 +93,7 @@ public class Mail: ItemContainer
 				World.getInstance().addObject(item);
 
 				// If stackable item is found just add to current quantity
-				if (item.isStackable() && (getItemByItemId(item.getId()) != null))
+				if (item.isStackable() && getItemByItemId(item.getId()) != null)
 				{
 					addItem("Restore", item, null, null);
 				}

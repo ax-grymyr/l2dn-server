@@ -94,7 +94,8 @@ public struct RequestShortCutRegisterPacket: IIncomingPacket<GameSession>
                     }
                     case ShortcutType.ITEM:
                     {
-                        if (player.getInventory().getItemByObjectId(oldShortcut.getId()).isPotion())
+                        Item? item = player.getInventory().getItemByObjectId(oldShortcut.getId());
+                        if (item != null && item.isPotion())
                         {
                             AutoUseTaskManager.getInstance().removeAutoPotionItem(player);
                         }

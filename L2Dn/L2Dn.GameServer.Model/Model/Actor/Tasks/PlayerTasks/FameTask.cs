@@ -21,12 +21,12 @@ public class FameTask: Runnable
 
 	public void run()
 	{
-		if ((_player == null) || (_player.isDead() && !Config.FAME_FOR_DEAD_PLAYERS))
+		if (_player == null || (_player.isDead() && !Config.FAME_FOR_DEAD_PLAYERS))
 		{
 			return;
 		}
 
-		if (((_player.getClient() == null) || _player.getClient().IsDetached) && !Config.OFFLINE_FAME)
+		if ((_player.getClient() == null || _player.getClient().IsDetached) && !Config.OFFLINE_FAME)
 		{
 			return;
 		}

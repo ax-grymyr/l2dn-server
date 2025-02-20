@@ -28,7 +28,7 @@ public class PetFeedTask: Runnable
 		{
 			try
 			{
-				if (!_player.isMounted() || (_player.getMountNpcId() == 0) || (_player.getPetData(_player.getMountNpcId()) == null))
+				if (!_player.isMounted() || _player.getMountNpcId() == 0 || _player.getPetData(_player.getMountNpcId()) == null)
 				{
 					_player.stopFeed();
 					return;
@@ -65,7 +65,7 @@ public class PetFeedTask: Runnable
 					}
 				}
 				
-				if ((food != null) && _player.isHungry())
+				if (food != null && _player.isHungry())
 				{
 					IItemHandler handler = ItemHandler.getInstance().getHandler(food.getEtcItem());
 					if (handler != null)
