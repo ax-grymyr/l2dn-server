@@ -15,7 +15,7 @@ public abstract class Condition
 	private readonly bool _leaderOnly;
 	private readonly bool _showMessageAndHtml;
 	private SystemMessageId? _systemMsg;
-	private Action<SystemMessagePacket, Player> _systemMsgParams;
+	private Action<SystemMessagePacket, Player>? _systemMsgParams;
 
 	/**
 	 * Create new condition
@@ -85,8 +85,8 @@ public abstract class Condition
 	private void sendMessage(List<Player> group, Player member, Action<Player, string> htmlCallback)
 	{
 		// Send HTML message if condition has any
-		string html = _parameters.getString("html", null);
-		if (html != null && htmlCallback != null)
+		string html = _parameters.getString("html", string.Empty);
+		if (string.IsNullOrEmpty(html) && htmlCallback != null)
 		{
 			// Send HTML only to player who make request to enter
 			htmlCallback(group[0], html);
@@ -98,8 +98,8 @@ public abstract class Condition
 		}
 
 		// Send text message if condition has any
-		string message = _parameters.getString("message", null);
-		if (message != null)
+		string message = _parameters.getString("message", string.Empty);
+		if (!string.IsNullOrEmpty(message))
 		{
 			if (_leaderOnly)
 			{

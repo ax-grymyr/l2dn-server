@@ -21,7 +21,7 @@ public class OlympiadGameNonClassed: OlympiadGameNormal
 		return Config.ALT_OLY_DIVIDER_NON_CLASSED;
 	}
 
-	public static OlympiadGameNonClassed createGame(int id, Set<int> list)
+	public static OlympiadGameNonClassed? createGame(int id, Set<int> list)
 	{
 		Participant[] opponents = createListOfParticipants(list);
 		if (opponents == null)

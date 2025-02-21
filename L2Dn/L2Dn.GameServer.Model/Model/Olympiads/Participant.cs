@@ -9,37 +9,37 @@ namespace L2Dn.GameServer.Model.Olympiads;
  */
 public class Participant
 {
-	private readonly int objectId;
-	private Player player;
-	private readonly string name;
-	private readonly int side;
-	private readonly CharacterClass baseClass;
-	private bool disconnected = false;
-	private bool defaulted = false;
-	private readonly NobleData stats;
+	private readonly int _objectId;
+	private Player _player;
+	private readonly string _name;
+	private readonly int _side;
+	private readonly CharacterClass _baseClass;
+	private bool _disconnected;
+	private bool _defaulted;
+	private readonly NobleData _stats;
 	public string clanName;
 	public int? clanId;
 
 	public Participant(Player plr, int olympiadSide)
 	{
-		objectId = plr.ObjectId;
-		player = plr;
-		name = plr.getName();
-		side = olympiadSide;
-		baseClass = plr.getBaseClass();
-		stats = Olympiad.getNobleStats(objectId);
-		clanName = plr.getClan() != null ? plr.getClan().getName() : "";
+		_objectId = plr.ObjectId;
+		_player = plr;
+		_name = plr.getName();
+		_side = olympiadSide;
+		_baseClass = plr.getBaseClass();
+		_stats = Olympiad.getNobleStats(_objectId);
+		clanName = plr.getClan()?.getName() ?? string.Empty;
 		clanId = plr.getClanId();
 	}
 
 	public Participant(int objId, int olympiadSide)
 	{
-		objectId = objId;
-		player = null;
-		name = "-";
-		side = olympiadSide;
-		baseClass = 0;
-		stats = null;
+		_objectId = objId;
+		_player = null;
+		_name = "-";
+		_side = olympiadSide;
+		_baseClass = 0;
+		_stats = null;
 		clanName = "";
 		clanId = 0;
 	}
@@ -50,12 +50,12 @@ public class Participant
 	 */
 	public bool updatePlayer()
 	{
-		if (player == null || !player.isOnline())
+		if (_player == null || !_player.isOnline())
 		{
-			player = World.getInstance().getPlayer(getObjectId());
+			_player = World.getInstance().getPlayer(getObjectId());
 		}
 
-		return player != null;
+		return _player != null;
 	}
 
 	/**
@@ -63,7 +63,7 @@ public class Participant
 	 */
 	public string getName()
 	{
-		return name;
+		return _name;
 	}
 
 	/**
@@ -87,7 +87,7 @@ public class Participant
 	 */
 	public Player getPlayer()
 	{
-		return player;
+		return _player;
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class Participant
 	 */
 	public int getObjectId()
 	{
-		return objectId;
+		return _objectId;
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class Participant
 	 */
 	public NobleData getStats()
 	{
-		return stats;
+		return _stats;
 	}
 
 	/**
@@ -111,7 +111,7 @@ public class Participant
 	 */
 	public void setPlayer(Player noble)
 	{
-		player = noble;
+		_player = noble;
 	}
 
 	/**
@@ -119,7 +119,7 @@ public class Participant
 	 */
 	public int getSide()
 	{
-		return side;
+		return _side;
 	}
 
 	/**
@@ -127,7 +127,7 @@ public class Participant
 	 */
 	public CharacterClass getBaseClass()
 	{
-		return baseClass;
+		return _baseClass;
 	}
 
 	/**
@@ -135,7 +135,7 @@ public class Participant
 	 */
 	public bool isDisconnected()
 	{
-		return disconnected;
+		return _disconnected;
 	}
 
 	/**
@@ -143,7 +143,7 @@ public class Participant
 	 */
 	public void setDisconnected(bool value)
 	{
-		disconnected = value;
+		_disconnected = value;
 	}
 
 	/**
@@ -151,7 +151,7 @@ public class Participant
 	 */
 	public bool isDefaulted()
 	{
-		return defaulted;
+		return _defaulted;
 	}
 
 	/**
@@ -159,6 +159,6 @@ public class Participant
 	 */
 	public void setDefaulted(bool value)
 	{
-		defaulted = value;
+		_defaulted = value;
 	}
 }

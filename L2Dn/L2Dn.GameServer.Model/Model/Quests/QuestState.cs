@@ -39,7 +39,7 @@ public class QuestState
 	private QuestCondType _cond = QuestCondType.NONE;
 	
 	/** Used for simulating Quest onTalk */
-	private bool _simulated = false;
+	private bool _simulated;
 	
 	/** A map of key=>value pairs containing the quest state variables and their values */
 	private Map<string, string> _vars;
@@ -47,7 +47,7 @@ public class QuestState
 	/**
 	 * bool flag letting QuestStateManager know to exit quest when cleaning up
 	 */
-	private bool _isExitQuestOnCleanUp = false;
+	private bool _isExitQuestOnCleanUp;
 	
 	/**
 	 * Constructor of the QuestState. Creates the QuestState object and sets the player's progress of the quest to this QuestState.

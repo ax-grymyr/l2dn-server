@@ -85,7 +85,7 @@ public class EquipmentUpgradeNormalHolder
 		return _chanceToReceiveBonusItems;
 	}
 
-	public List<ItemEnchantHolder> getItems(UpgradeDataType upgradeDataType)
+	public List<ItemEnchantHolder>? getItems(UpgradeDataType upgradeDataType)
 	{
 		return _items.get(upgradeDataType);
 	}

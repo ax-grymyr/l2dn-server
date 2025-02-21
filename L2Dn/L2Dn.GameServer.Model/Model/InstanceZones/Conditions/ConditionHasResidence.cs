@@ -17,7 +17,7 @@ public class ConditionHasResidence: Condition
 
 	protected override bool test(Player player, Npc npc)
 	{
-		Clan clan = player.getClan();
+		Clan? clan = player.getClan();
 		if (clan == null)
 		{
 			return false;

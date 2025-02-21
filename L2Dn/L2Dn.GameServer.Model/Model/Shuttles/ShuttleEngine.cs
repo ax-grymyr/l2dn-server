@@ -13,7 +13,7 @@ public class ShuttleEngine: Runnable
     private const int DELAY = 15 * 1000;
 
     private readonly Shuttle _shuttle;
-    private int _cycle = 0;
+    private int _cycle;
     private readonly Door _door1;
     private readonly Door _door2;
 

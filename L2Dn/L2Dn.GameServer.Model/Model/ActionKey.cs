@@ -7,10 +7,10 @@
 public class ActionKey
 {
     private readonly int _cat;
-    private int _cmd = 0;
-    private int _key = 0;
-    private int _tgKey1 = 0;
-    private int _tgKey2 = 0;
+    private int _cmd;
+    private int _key;
+    private int _tgKey1;
+    private int _tgKey2;
     private int _show = 1;
 	
     /**

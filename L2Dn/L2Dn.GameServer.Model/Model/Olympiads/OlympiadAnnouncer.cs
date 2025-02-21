@@ -13,7 +13,7 @@ public class OlympiadAnnouncer: Runnable
 {
 	private const int OLY_MANAGER = 31688;
 
-	private int _currentStadium = 0;
+	private int _currentStadium;
 
 	public void run()
 	{

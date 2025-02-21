@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Utilities;
+using NLog;
 
 namespace L2Dn.GameServer.Model.Holders;
 
@@ -7,17 +8,14 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class AutoUseSettingsHolder
 {
-	private readonly Set<int> _autoSupplyItems = new();
-	private readonly Set<int> _autoActions = new();
-	private readonly Set<int> _autoBuffs = new();
-	private readonly List<int> _autoSkills = new();
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(AutoUseSettingsHolder));
+	private readonly Set<int> _autoSupplyItems = [];
+	private readonly Set<int> _autoActions = [];
+	private readonly Set<int> _autoBuffs = [];
+	private readonly List<int> _autoSkills = [];
 	private int _autoPotionItem;
 	private int _autoPetPotionItem;
 	private int _skillIndex;
-
-	public AutoUseSettingsHolder()
-	{
-	}
 
 	public ICollection<int> getAutoSupplyItems()
 	{
@@ -78,6 +76,7 @@ public class AutoUseSettingsHolder
 		}
 		catch (Exception e)
 		{
+            _logger.Error(e);
 			resetSkillOrder();
 		}
 

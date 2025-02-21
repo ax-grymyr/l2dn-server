@@ -16,31 +16,31 @@ public class MobGroup
 	private readonly NpcTemplate _npcTemplate;
 	private readonly int _groupId;
 	private readonly int _maxMobCount;
-	
-	private Set<ControllableMob> _mobs;
-	
+
+	private Set<ControllableMob> _mobs = [];
+
 	public MobGroup(int groupId, NpcTemplate npcTemplate, int maxMobCount)
 	{
 		_groupId = groupId;
 		_npcTemplate = npcTemplate;
 		_maxMobCount = maxMobCount;
 	}
-	
+
 	public int getActiveMobCount()
 	{
 		return getMobs().size();
 	}
-	
+
 	public int getGroupId()
 	{
 		return _groupId;
 	}
-	
+
 	public int getMaxMobCount()
 	{
 		return _maxMobCount;
 	}
-	
+
 	public Set<ControllableMob> getMobs()
 	{
 		if (_mobs == null)
@@ -49,13 +49,13 @@ public class MobGroup
 		}
 		return _mobs;
 	}
-	
+
 	public string getStatus()
 	{
 		try
 		{
 			ControllableMobAI mobGroupAI = (ControllableMobAI) getMobs().First().getAI();
-			
+
 			switch (mobGroupAI.getAlternateAI())
 			{
 				case ControllableMobAI.AI_NORMAL:
@@ -86,15 +86,16 @@ public class MobGroup
 		}
 		catch (Exception e)
 		{
+            _logger.Error(e);
 			return "Unspawned";
 		}
 	}
-	
+
 	public NpcTemplate getTemplate()
 	{
 		return _npcTemplate;
 	}
-	
+
 	public bool isGroupMember(ControllableMob mobInst)
 	{
 		foreach (ControllableMob groupMember in getMobs())
@@ -103,23 +104,23 @@ public class MobGroup
 			{
 				continue;
 			}
-			
+
 			if (groupMember.ObjectId == mobInst.ObjectId)
 			{
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 	public void spawnGroup(int x, int y, int z)
 	{
 		if (!getMobs().isEmpty())
 		{
 			return;
 		}
-		
+
 		try
 		{
 			for (int i = 0; i < _maxMobCount; i++)
@@ -133,7 +134,7 @@ public class MobGroup
 				spawn.stopRespawn();
 
 				SpawnTable.getInstance().addNewSpawn(spawn, false);
-				getMobs().add((ControllableMob) spawn.doGroupSpawn());
+				getMobs().add((ControllableMob)spawn.doGroupSpawn());
 			}
 		}
 		catch (Exception e)
@@ -141,23 +142,23 @@ public class MobGroup
 			_logger.Error(e);
 		}
 	}
-	
+
 	public void spawnGroup(Player player)
 	{
 		spawnGroup(player.getX(), player.getY(), player.getZ());
 	}
-	
+
 	public void teleportGroup(Player player)
 	{
 		removeDead();
-		
+
 		foreach (ControllableMob mobInst in getMobs())
 		{
 			if (mobInst == null)
 			{
 				continue;
 			}
-			
+
 			if (!mobInst.isDead())
 			{
 				int x = player.getX() + Rnd.get(50);
@@ -167,16 +168,16 @@ public class MobGroup
 			}
 		}
 	}
-	
-	public ControllableMob getRandomMob()
+
+	public ControllableMob? getRandomMob()
 	{
 		removeDead();
-		
+
 		if (getMobs().isEmpty())
 		{
 			return null;
 		}
-		
+
 		int choice = Rnd.get(getMobs().size());
 		foreach (ControllableMob mob in getMobs())
 		{
@@ -187,114 +188,114 @@ public class MobGroup
 		}
 		return null;
 	}
-	
+
 	public void unspawnGroup()
 	{
 		removeDead();
-		
+
 		if (getMobs().isEmpty())
 		{
 			return;
 		}
-		
+
 		foreach (ControllableMob mobInst in getMobs())
 		{
 			if (mobInst == null)
 			{
 				continue;
 			}
-			
+
 			if (!mobInst.isDead())
 			{
 				mobInst.deleteMe();
 			}
-			
+
 			SpawnTable.getInstance().deleteSpawn(mobInst.getSpawn(), false);
 		}
-		
+
 		getMobs().clear();
 	}
-	
+
 	public void killGroup(Player player)
 	{
 		removeDead();
-		
+
 		foreach (ControllableMob mobInst in getMobs())
 		{
 			if (mobInst == null)
 			{
 				continue;
 			}
-			
+
 			if (!mobInst.isDead())
 			{
 				mobInst.reduceCurrentHp(mobInst.getMaxHp() + 1, player, null);
 			}
-			
+
 			SpawnTable.getInstance().deleteSpawn(mobInst.getSpawn(), false);
 		}
-		
+
 		getMobs().clear();
 	}
-	
+
 	public void setAttackRandom()
 	{
 		removeDead();
-		
+
 		foreach (ControllableMob mobInst in getMobs())
 		{
 			if (mobInst == null)
 			{
 				continue;
 			}
-			
+
 			ControllableMobAI ai = (ControllableMobAI) mobInst.getAI();
 			ai.setAlternateAI(ControllableMobAI.AI_NORMAL);
 			ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		}
 	}
-	
+
 	public void setAttackTarget(Creature target)
 	{
 		removeDead();
-		
+
 		foreach (ControllableMob mobInst in getMobs())
 		{
 			if (mobInst == null)
 			{
 				continue;
 			}
-			
+
 			((ControllableMobAI) mobInst.getAI()).forceAttack(target);
 		}
 	}
-	
+
 	public void setIdleMode()
 	{
 		removeDead();
-		
+
 		foreach (ControllableMob mobInst in getMobs())
 		{
 			if (mobInst == null)
 			{
 				continue;
 			}
-			
+
 			((ControllableMobAI) mobInst.getAI()).stop();
 		}
 	}
-	
+
 	public void returnGroup(Creature creature)
 	{
 		setIdleMode();
-		
+
 		foreach (ControllableMob mobInst in getMobs())
 		{
 			if (mobInst == null)
 			{
 				continue;
 			}
-			
+
 			int signX = Rnd.nextBoolean() ? -1 : 1;
 			int signY = Rnd.nextBoolean() ? -1 : 1;
 			int randX = Rnd.get(MobGroupTable.RANDOM_RANGE);
@@ -303,61 +304,61 @@ public class MobGroup
 			ai.moveTo(new Location3D(creature.getX() + signX * randX, creature.getY() + signY * randY, creature.getZ()));
 		}
 	}
-	
+
 	public void setFollowMode(Creature creature)
 	{
 		removeDead();
-		
+
 		foreach (ControllableMob mobInst in getMobs())
 		{
 			if (mobInst == null)
 			{
 				continue;
 			}
-			
+
 			((ControllableMobAI) mobInst.getAI()).follow(creature);
 		}
 	}
-	
+
 	public void setCastMode()
 	{
 		removeDead();
-		
+
 		foreach (ControllableMob mobInst in getMobs())
 		{
 			if (mobInst == null)
 			{
 				continue;
 			}
-			
+
 			((ControllableMobAI) mobInst.getAI()).setAlternateAI(ControllableMobAI.AI_CAST);
 		}
 	}
-	
+
 	public void setNoMoveMode(bool enabled)
 	{
 		removeDead();
-		
+
 		foreach (ControllableMob mobInst in getMobs())
 		{
 			if (mobInst == null)
 			{
 				continue;
 			}
-			
+
 			((ControllableMobAI) mobInst.getAI()).setNotMoving(enabled);
 		}
 	}
-	
+
 	protected void removeDead()
 	{
 		getMobs().removeIf(x => x.isDead());
 	}
-	
+
 	public void setInvul(bool invulState)
 	{
 		removeDead();
-		
+
 		foreach (ControllableMob mobInst in getMobs())
 		{
 			if (mobInst != null)
@@ -366,18 +367,18 @@ public class MobGroup
 			}
 		}
 	}
-	
+
 	public void setAttackGroup(MobGroup otherGrp)
 	{
 		removeDead();
-		
+
 		foreach (ControllableMob mobInst in getMobs())
 		{
 			if (mobInst == null)
 			{
 				continue;
 			}
-			
+
 			ControllableMobAI ai = (ControllableMobAI) mobInst.getAI();
 			ai.forceAttackGroup(otherGrp);
 			ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);

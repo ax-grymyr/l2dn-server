@@ -17,8 +17,8 @@ namespace L2Dn.GameServer.Model.Olympiads;
  */
 public abstract class OlympiadGameNormal: AbstractOlympiadGame
 {
-	protected int _damageP1 = 0;
-	protected int _damageP2 = 0;
+	protected int _damageP1;
+	protected int _damageP2;
 	
 	protected Participant _playerOne;
 	protected Participant _playerTwo;

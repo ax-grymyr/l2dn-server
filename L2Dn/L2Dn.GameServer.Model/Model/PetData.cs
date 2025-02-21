@@ -19,8 +19,8 @@ public class PetData
 	private int _load = 20000;
 	private int _hungryLimit = 1;
 	private int _minLevel = byte.MaxValue;
-	private int _maxLevel = 0;
-	private bool _syncLevel = false;
+	private int _maxLevel;
+	private bool _syncLevel;
 	private readonly  Set<int> _food = new();
 	private readonly  int _petType;
 	private readonly  int _index;

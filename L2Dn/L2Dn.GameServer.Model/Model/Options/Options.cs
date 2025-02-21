@@ -13,10 +13,10 @@ namespace L2Dn.GameServer.Model.Options;
 public class Options
 {
 	private readonly int _id;
-	private List<AbstractEffect> _effects;
-	private List<Skill> _activeSkill;
-	private List<Skill> _passiveSkill;
-	private List<OptionSkillHolder> _activationSkills;
+	private List<AbstractEffect> _effects = [];
+	private List<Skill> _activeSkill = [];
+	private List<Skill> _passiveSkill = [];
+	private List<OptionSkillHolder> _activationSkills = [];
 
 	/**
 	 * @param id
@@ -266,9 +266,10 @@ public class Options
 			updateTimeStamp = true;
 		}
 
-		if (updateTimeStamp && playable.isPlayer())
+        Player? player = playable.getActingPlayer();
+		if (updateTimeStamp && playable.isPlayer() && player != null)
 		{
-			playable.sendPacket(new SkillCoolTimePacket(playable.getActingPlayer()));
+			playable.sendPacket(new SkillCoolTimePacket(player));
 		}
 	}
 }

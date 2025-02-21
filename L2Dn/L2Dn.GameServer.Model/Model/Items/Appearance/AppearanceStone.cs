@@ -26,12 +26,12 @@ public class AppearanceStone
 	private readonly ArmorType _armorType;
 	private readonly AppearanceHandType _handType;
 	private readonly AppearanceMagicType _magicType;
-	private Set<CrystalType> _crystalTypes;
-	private Set<AppearanceTargetType> _targetTypes;
-	private Set<long> _bodyParts;
-	private Set<Race> _races;
-	private Set<Race> _racesNot;
-	private Set<AppearanceHolder> _allVisualIds;
+	private Set<CrystalType> _crystalTypes = [];
+	private Set<AppearanceTargetType> _targetTypes = [];
+	private Set<long> _bodyParts = [];
+	private Set<Race> _races = [];
+	private Set<Race> _racesNot = [];
+	private Set<AppearanceHolder> _allVisualIds = [];
 
 	public AppearanceStone(XElement element)
 	{
@@ -55,7 +55,7 @@ public class AppearanceStone
 		CrystalType crystalType = element.Attribute("grade").GetEnum(CrystalType.NONE);
 
 		// If no crystal type is defined, we must add all defaults.
-		if (crystalType == null)
+		if (crystalType == CrystalType.NONE)
 		{
 			switch (targetType)
 			{
@@ -485,7 +485,7 @@ public class AppearanceStone
 		return true;
 	}
 
-	public AppearanceHolder findVisualChange(Item targetItem)
+	public AppearanceHolder? findVisualChange(Item targetItem)
 	{
 		foreach (AppearanceHolder holder in _allVisualIds)
 		{
@@ -551,7 +551,7 @@ public class AppearanceStone
 						{
 							continue;
 						}
-						
+
 						break;
 					}
 				}

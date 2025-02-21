@@ -6,7 +6,7 @@ namespace L2Dn.GameServer.Model.Items.Enchant;
 public class EnchantScrollGroup
 {
 	private readonly int _id;
-	private List<EnchantRateItem> _rateGroups;
+	private List<EnchantRateItem> _rateGroups = [];
 
 	public EnchantScrollGroup(int id)
 	{
@@ -27,11 +27,6 @@ public class EnchantScrollGroup
 	 */
 	public void addRateGroup(EnchantRateItem group)
 	{
-		if (_rateGroups == null)
-		{
-			_rateGroups = new();
-		}
-
 		_rateGroups.Add(group);
 	}
 
@@ -40,14 +35,14 @@ public class EnchantScrollGroup
 	 */
 	public List<EnchantRateItem> getRateGroups()
 	{
-		return _rateGroups != null ? _rateGroups : new();
+		return _rateGroups;
 	}
 
 	/**
 	 * @param item
 	 * @return {@link EnchantRateItem}, {@code NULL} in case non of rate items can be used with.
 	 */
-	public EnchantRateItem getRateGroup(ItemTemplate item)
+	public EnchantRateItem? getRateGroup(ItemTemplate item)
 	{
 		foreach (EnchantRateItem group in getRateGroups())
 		{

@@ -22,7 +22,7 @@ public class PunishmentTask: Runnable
 	private readonly string _reason;
 	private readonly string _punishedBy;
 	private bool _isStored;
-	private ScheduledFuture _task = null;
+	private ScheduledFuture _task;
 
 	public PunishmentTask(string key, PunishmentAffect affect, PunishmentType type, DateTime? expirationTime, string reason,
 		string punishedBy): this(0, key, affect, type, expirationTime, reason, punishedBy, false)

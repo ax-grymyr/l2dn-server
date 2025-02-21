@@ -6112,7 +6112,7 @@ public class Player: Playable
 	 * Set the _party object of the Player (without joining it).
 	 * @param party
 	 */
-	public void setParty(Party party)
+	public void setParty(Party? party)
 	{
 		_party = party;
 	}
@@ -14202,7 +14202,7 @@ public class Player: Playable
 		return _matchingRoom;
 	}
 
-	public void setMatchingRoom(MatchingRoom matchingRoom)
+	public void setMatchingRoom(MatchingRoom? matchingRoom)
 	{
 		_matchingRoom = matchingRoom;
 	}

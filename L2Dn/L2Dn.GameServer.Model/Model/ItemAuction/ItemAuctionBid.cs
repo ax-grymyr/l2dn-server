@@ -38,7 +38,7 @@ public class ItemAuctionBid
         return _lastBid <= 0;
     }
 
-    public Player getPlayer()
+    public Player? getPlayer()
     {
         return World.getInstance().getPlayer(_playerObjId);
     }

@@ -6,10 +6,10 @@ namespace L2Dn.GameServer.Model.Interfaces;
 public interface ISkillsHolder
 {
     Map<int, Skill> getSkills();
-	
-    Skill addSkill(Skill skill);
-	
-    Skill getKnownSkill(int skillId);
-	
+
+    Skill? addSkill(Skill skill);
+
+    Skill? getKnownSkill(int skillId);
+
     int getSkillLevel(int skillId);
 }

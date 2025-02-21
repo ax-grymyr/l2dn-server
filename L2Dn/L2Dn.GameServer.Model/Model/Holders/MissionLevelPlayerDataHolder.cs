@@ -2,6 +2,7 @@ using System.Text;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Variables;
+using NLog;
 
 namespace L2Dn.GameServer.Model.Holders;
 
@@ -10,18 +11,19 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class MissionLevelPlayerDataHolder
 {
-	private int _currentLevel = 0;
-	private int _currentEXP = 0;
-	private readonly List<int> _collectedNormalRewards = new();
-	private readonly List<int> _collectedKeyRewards = new();
-	private bool _collectedSpecialReward = false;
-	private bool _collectedBonusReward = false;
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(MissionLevelPlayerDataHolder));
+	private int _currentLevel;
+	private int _currentExp;
+	private readonly List<int> _collectedNormalRewards = [];
+	private readonly List<int> _collectedKeyRewards = [];
+	private bool _collectedSpecialReward;
+	private bool _collectedBonusReward;
 
 	/**
 	 * @implNote used only for missions where on bonus_reward_by_level_up;
 	 * @apiNote store levels of taken bonus reward. If last reward be on 20 on 20, 21, 22... you will be get bonus reward;
 	 */
-	private readonly List<int> _listOfCollectedBonusRewards = new();
+	private readonly List<int> _listOfCollectedBonusRewards = [];
 
 	public MissionLevelPlayerDataHolder()
 	{
@@ -42,7 +44,7 @@ public class MissionLevelPlayerDataHolder
 
 			if (key.Equals("LevelXP"))
 			{
-				_currentEXP = int.Parse(values[0]);
+				_currentExp = int.Parse(values[0]);
 				continue;
 			}
 
@@ -53,10 +55,19 @@ public class MissionLevelPlayerDataHolder
 			}
 
 			if (key.Equals("BonusReward"))
-			{
+            {
+                MissionLevelHolder? missionLevelHolder = MissionLevel.getInstance().
+                    getMissionBySeason(MissionLevel.getInstance().getCurrentSeason());
+
+                if (missionLevelHolder is null)
+                {
+                    _logger.Error("No mission level data for current season");
+                    _collectedBonusReward = false;
+                    continue;
+                }
+
 				_collectedBonusReward = bool.Parse(values[0]);
-				if (_collectedBonusReward && MissionLevel.getInstance()
-					    .getMissionBySeason(MissionLevel.getInstance().getCurrentSeason()).getBonusRewardByLevelUp())
+				if (_collectedBonusReward && missionLevelHolder.getBonusRewardByLevelUp())
 				{
 					_collectedBonusReward = false;
 				}
@@ -85,9 +96,18 @@ public class MissionLevelPlayerDataHolder
 
 			if (key.Equals("ListOfBonusRewards"))
 			{
-				_listOfCollectedBonusRewards.AddRange(valuesData);
-				if (!_collectedBonusReward && _listOfCollectedBonusRewards.Count != 0 && !MissionLevel.getInstance()
-					    .getMissionBySeason(MissionLevel.getInstance().getCurrentSeason()).getBonusRewardByLevelUp())
+                MissionLevelHolder? missionLevelHolder = MissionLevel.getInstance().
+                    getMissionBySeason(MissionLevel.getInstance().getCurrentSeason());
+
+                if (missionLevelHolder is null)
+                {
+                    _logger.Error("No mission level data for current season");
+                    _collectedBonusReward = false;
+                    continue;
+                }
+
+                _listOfCollectedBonusRewards.AddRange(valuesData);
+				if (!_collectedBonusReward && _listOfCollectedBonusRewards.Count != 0 && !missionLevelHolder.getBonusRewardByLevelUp())
 				{
 					_collectedBonusReward = true;
 				}
@@ -100,7 +120,7 @@ public class MissionLevelPlayerDataHolder
 		StringBuilder sb = new StringBuilder();
 		// CurrentLevel:5;LevelXP:10;ListOfBaseRewards:2,19,20;ListOfKeyRewards:;SpecialRewards:;BonusRewards:;ListOfBonusRewards:;
 		sb.Append("CurrentLevel").Append(':').Append(_currentLevel).Append(';');
-		sb.Append("LevelXP").Append(':').Append(_currentEXP).Append(';');
+		sb.Append("LevelXP").Append(':').Append(_currentExp).Append(';');
 		sb.Append("ListOfNormalRewards").Append(':');
 		sb.AppendJoin(',', _collectedNormalRewards);
 		sb.Append(';');
@@ -128,8 +148,15 @@ public class MissionLevelPlayerDataHolder
 
 	public void calculateEXP(int exp)
 	{
-		MissionLevelHolder holder = MissionLevel.getInstance()
+		MissionLevelHolder? holder = MissionLevel.getInstance()
 			.getMissionBySeason(MissionLevel.getInstance().getCurrentSeason());
+
+        if (holder is null)
+        {
+            _logger.Error("No mission level data for current season");
+            return;
+        }
+
 		if (getCurrentLevel() >= holder.getMaxLevel())
 		{
 			return;
@@ -156,6 +183,7 @@ public class MissionLevelPlayerDataHolder
 			}
 			catch (NullReferenceException e)
 			{
+                _logger.Error(e);
 				break;
 			}
 		}
@@ -173,12 +201,12 @@ public class MissionLevelPlayerDataHolder
 
 	public int getCurrentEXP()
 	{
-		return _currentEXP;
+		return _currentExp;
 	}
 
 	public void setCurrentEXP(int currentEXP)
 	{
-		_currentEXP = currentEXP;
+		_currentExp = currentEXP;
 	}
 
 	public List<int> getCollectedNormalRewards()

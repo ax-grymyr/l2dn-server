@@ -19,12 +19,12 @@ public class MinionList
 	protected readonly Monster _master;
 	private readonly List<Monster> _spawnedMinions = new();
 	private readonly List<ScheduledFuture> _respawnTasks = new();
-	
+
 	public MinionList(Monster master)
 	{
 		_master = master ?? throw new ArgumentNullException(nameof(master), "MinionList: Master is null!");
 	}
-	
+
 	/**
 	 * @return list of the spawned (alive) minions.
 	 */
@@ -32,7 +32,7 @@ public class MinionList
 	{
 		return _spawnedMinions;
 	}
-	
+
 	/**
 	 * Manage the spawn of Minions.<br>
 	 * <br>
@@ -47,7 +47,7 @@ public class MinionList
 		{
 			return;
 		}
-		
+
 		int minionCount;
 		int minionId;
 		int minionsToSpawn;
@@ -65,7 +65,7 @@ public class MinionList
 			}
 		}
 	}
-	
+
 	/**
 	 * Called on the minion spawn and added them in the list of the spawned minions.
 	 * @param minion
@@ -74,7 +74,7 @@ public class MinionList
 	{
 		_spawnedMinions.Add(minion);
 	}
-	
+
 	/**
 	 * Called on the master death/delete.
 	 * @param force - When true, force delete of the spawned minions. By default minions are deleted only for raidbosses.
@@ -96,7 +96,7 @@ public class MinionList
 
 				_spawnedMinions.Clear();
 			}
-			
+
 			if (_respawnTasks.Count != 0)
 			{
 				foreach (ScheduledFuture task in _respawnTasks)
@@ -110,7 +110,7 @@ public class MinionList
 			}
 		}
 	}
-	
+
 	/**
 	 * Called on the minion death/delete. Removed minion from the list of the spawned minions and reuse if possible.
 	 * @param minion
@@ -124,14 +124,14 @@ public class MinionList
 			minion.setLeader(null);
 		}
 		_spawnedMinions.Remove(minion);
-		
+
 		int time = respawnTime < 0 ? _master.isRaid() ? (int) Config.RAID_MINION_RESPAWN_TIMER : 0 : respawnTime;
 		if (time > 0 && !_master.isAlikeDead())
 		{
 			_respawnTasks.Add(ThreadPool.schedule(new MinionRespawnTask(this, minion), time));
 		}
 	}
-	
+
 	/**
 	 * Called if master/minion was attacked. Master and all free minions receive aggro against attacker.
 	 * @param caller
@@ -143,19 +143,19 @@ public class MinionList
 		{
 			return;
 		}
-		
+
 		if (!_master.isAlikeDead() && !_master.isInCombat())
 		{
 			_master.addDamageHate(attacker, 0, 1);
 		}
-		
+
 		bool callerIsMaster = caller == _master;
 		int aggro = callerIsMaster ? 10 : 1;
 		if (_master.isRaid())
 		{
 			aggro *= 10;
 		}
-		
+
 		foreach (Monster minion in _spawnedMinions)
 		{
 			if (minion != null && !minion.isDead() && (callerIsMaster || !minion.isInCombat()))
@@ -164,7 +164,7 @@ public class MinionList
 			}
 		}
 	}
-	
+
 	/**
 	 * Called from onTeleported() of the master Alive and able to move minions teleported to master.
 	 */
@@ -195,33 +195,33 @@ public class MinionList
 				{
 					newY = _master.getY() - newY + minRadius;
 				}
-				
+
 				minion.teleToLocation(new Location(newX, newY, _master.getZ(), 0));
 			}
 		}
 	}
-	
+
 	private void spawnMinion(int minionId)
 	{
 		if (minionId == 0)
 		{
 			return;
 		}
-		
+
 		spawnMinion(_master, minionId);
 	}
-	
+
 	private class MinionRespawnTask: Runnable
 	{
 		private readonly MinionList _list;
 		private readonly Monster _minion;
-		
+
 		public MinionRespawnTask(MinionList list, Monster minion)
 		{
 			_list = list;
 			_minion = minion;
 		}
-		
+
 		public void run()
 		{
 			// minion can be already spawned or deleted
@@ -229,7 +229,7 @@ public class MinionList
 			{
 				// _minion.refreshId();
 				initializeNpc(_list._master, _minion);
-				
+
 				// assist master
 				if (_list._master.getAggroList().Count != 0)
 				{
@@ -239,7 +239,7 @@ public class MinionList
 			}
 		}
 	}
-	
+
 	/**
 	 * Init a Minion and add it in the world as a visible object.<br>
 	 * <br>
@@ -253,33 +253,33 @@ public class MinionList
 	 * @param minionId The NpcTemplate Identifier of the Minion to spawn
 	 * @return
 	 */
-	public static Monster spawnMinion(Monster master, int minionId)
+	public static Monster? spawnMinion(Monster master, int minionId)
 	{
 		// Get the template of the Minion to spawn
-		NpcTemplate minionTemplate = NpcData.getInstance().getTemplate(minionId);
+		NpcTemplate? minionTemplate = NpcData.getInstance().getTemplate(minionId);
 		if (minionTemplate == null)
 		{
 			return null;
 		}
 		return initializeNpc(master, new Monster(minionTemplate));
 	}
-	
+
 	protected static Monster initializeNpc(Monster master, Monster minion)
 	{
 		minion.stopAllEffects();
 		minion.setDead(false);
 		minion.setDecayed(false);
-		
+
 		// Set the Minion HP, MP and Heading
 		minion.setCurrentHpMp(minion.getMaxHp(), minion.getMaxMp());
 		minion.setHeading(master.getHeading());
-		
+
 		// Set the Minion leader to this RaidBoss
 		minion.setLeader(master);
-		
+
 		// move monster to masters instance
 		minion.setInstance(master.getInstanceWorld());
-		
+
 		// Set custom Npc server side name and title
 		if (minion.getTemplate().isUsingServerSideName())
 		{
@@ -289,7 +289,7 @@ public class MinionList
 		{
 			minion.setTitle(minion.getTemplate().getTitle());
 		}
-		
+
 		// Init the position of the Minion and add it in the world as a visible object
 		int offset = 200;
 		int minRadius = (int) master.getCollisionRadius() + 30;
@@ -312,20 +312,20 @@ public class MinionList
 		{
 			newY = master.getY() - newY + minRadius;
 		}
-		
+
 		minion.spawnMe(new Location3D(newX, newY, master.getZ()));
-		
+
 		// Make sure info is broadcasted in instances
 		if (minion.getInstanceId() > 0)
 		{
 			minion.broadcastInfo();
 		}
-		
+
 		return minion;
 	}
-	
+
 	// Statistics part
-	
+
 	private int countSpawnedMinionsById(int minionId)
 	{
 		int count = 0;
@@ -338,12 +338,12 @@ public class MinionList
 		}
 		return count;
 	}
-	
+
 	public int countSpawnedMinions()
 	{
 		return _spawnedMinions.Count;
 	}
-	
+
 	public long lazyCountSpawnedMinionsGroups()
 	{
 		return _spawnedMinions.Distinct().Count();

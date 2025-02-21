@@ -41,16 +41,11 @@ public class OlympiadManager
 
 	public List<Set<int>> hasEnoughRegisteredClassed()
 	{
-		List<Set<int>> result = null;
+		List<Set<int>> result = [];
 		foreach (var classList in _classBasedRegisters)
 		{
 			if (classList.Value != null && classList.Value.size() >= Config.ALT_OLY_CLASSED)
 			{
-				if (result == null)
-				{
-					result = new();
-				}
-
 				result.Add(classList.Value);
 			}
 		}
@@ -90,7 +85,7 @@ public class OlympiadManager
 			return true;
 		}
 
-		Set<int> classed = _classBasedRegisters.get(getClassGroup(noble));
+		Set<int>? classed = _classBasedRegisters.get(getClassGroup(noble));
 		if (classed != null && classed.Contains(objId))
 		{
 			if (showMessage)
@@ -119,10 +114,10 @@ public class OlympiadManager
 			return false;
 		}
 
-		AbstractOlympiadGame game;
+		AbstractOlympiadGame? game;
 		for (int i = OlympiadGameManager.getInstance().getNumberOfStadiums(); --i >= 0;)
 		{
-			game = OlympiadGameManager.getInstance().getOlympiadTask(i).getGame();
+			game = OlympiadGameManager.getInstance().getOlympiadTask(i)?.getGame();
 			if (game == null)
 			{
 				continue;
@@ -198,7 +193,7 @@ public class OlympiadManager
 				CharacterName = player.getName(),
 				OlympiadPoints = Olympiad.DEFAULT_POINTS
 			};
-			
+
 			Olympiad.addNobleStats(charId, statDat);
 		}
 
@@ -222,7 +217,7 @@ public class OlympiadManager
 
 					NpcHtmlMessagePacket message =
 						new NpcHtmlMessagePacket(player.getClient()?.HtmlActionValidator.OriginObjectId, 0, htmlContent);
-					
+
 					player.sendPacket(message);
 					return false;
 				}
@@ -251,7 +246,7 @@ public class OlympiadManager
 
 					NpcHtmlMessagePacket message =
 						new NpcHtmlMessagePacket(player.getClient()?.HtmlActionValidator.OriginObjectId, 0, htmlContent);
-					
+
 					player.sendPacket(message);
 					return false;
 				}
@@ -307,7 +302,7 @@ public class OlympiadManager
 			return true;
 		}
 
-		Set<int> classed = _classBasedRegisters.get(getClassGroup(noble));
+		Set<int>? classed = _classBasedRegisters.get(getClassGroup(noble));
 		if (classed != null && classed.remove(objId))
 		{
 			if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
@@ -324,10 +319,10 @@ public class OlympiadManager
 
 	public void removeDisconnectedCompetitor(Player player)
 	{
-		OlympiadGameTask task = OlympiadGameManager.getInstance().getOlympiadTask(player.getOlympiadGameId());
+		OlympiadGameTask? task = OlympiadGameManager.getInstance().getOlympiadTask(player.getOlympiadGameId());
 		if (task != null && task.isGameStarted())
 		{
-			task.getGame().handleDisconnect(player);
+			task.getGame()?.handleDisconnect(player);
 		}
 
 		int objId = player.ObjectId;

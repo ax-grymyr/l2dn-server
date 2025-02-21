@@ -36,7 +36,7 @@ public class TradeItem
 	private int _visualId;
 	private int _augmentationOption1 = -1;
 	private int _augmentationOption2 = -1;
-	private bool _isBlessed = false;
+	private bool _isBlessed;
 	
 	public TradeItem(Item item, long count, long price)
 	{

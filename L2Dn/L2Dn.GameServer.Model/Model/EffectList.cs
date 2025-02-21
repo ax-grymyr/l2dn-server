@@ -530,7 +530,7 @@ public class EffectList
 	 */
 	public void stopSkillEffects(SkillFinishType type, int skillId)
 	{
-		BuffInfo info = getBuffInfoBySkillId(skillId);
+		BuffInfo? info = getBuffInfoBySkillId(skillId);
 		if (info != null)
 		{
 			remove(info, type, true, true);
@@ -898,7 +898,7 @@ public class EffectList
 		// Fix for stacking trigger skills
 		if (skill.isTriggeredSkill())
 		{
-			BuffInfo triggerInfo = info.getEffected().getEffectList().getBuffInfoBySkillId(skill.getId());
+			BuffInfo? triggerInfo = info.getEffected().getEffectList().getBuffInfoBySkillId(skill.getId());
 			if (triggerInfo != null && triggerInfo.getSkill().getLevel() >= skill.getLevel())
 			{
 				return;
@@ -1071,10 +1071,10 @@ public class EffectList
 		{
 			_updateEffectIconTask = ThreadPool.schedule(() =>
 			{
-				Player player = _owner.getActingPlayer();
+				Player? player = _owner.getActingPlayer();
 				if (player != null)
 				{
-					Party party = player.getParty();
+					Party? party = player.getParty();
 					AbnormalStatusUpdatePacket? asu = _owner.isPlayer() && _updateAbnormalStatus.get() ? new AbnormalStatusUpdatePacket(new List<BuffInfo>()) : null;
 					PartySpelledPacket? ps = party != null || _owner.isSummon() ? new PartySpelledPacket(_owner) : null;
 					ExOlympiadSpelledInfoPacket? os = player.isInOlympiadMode() && player.isOlympiadStart() ? new ExOlympiadSpelledInfoPacket(player) : null;
@@ -1123,7 +1123,7 @@ public class EffectList
 					// Send icon update to all olympiad observers.
 					if (os != null)
 					{
-						OlympiadGameTask game = OlympiadGameManager.getInstance().getOlympiadTask(player.getOlympiadGameId());
+						OlympiadGameTask? game = OlympiadGameManager.getInstance().getOlympiadTask(player.getOlympiadGameId());
 						if (game != null && game.isBattleStarted())
 						{
 							game.getStadium().broadcastPacketToObservers(os.Value);

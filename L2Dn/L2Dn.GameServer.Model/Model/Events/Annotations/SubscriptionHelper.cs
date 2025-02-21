@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Model.Events.Annotations;
 internal static class SubscriptionHelper
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(SubscriptionHelper));
-    
+
     private static readonly MethodInfo _subscribeMethod =
         typeof(SubscriptionHelper).GetMethod(nameof(SubscribeMethod), BindingFlags.Static | BindingFlags.NonPublic)!;
 
@@ -26,7 +26,7 @@ internal static class SubscriptionHelper
 		    _logger.Warn($"Subscription type {subscriptionType} is not supported in {methodName}");
 		    return Array.Empty<EventContainer>();
 	    }
-	    
+
 	    if (method.ReturnType != typeof(void))
 	    {
 		    _logger.Warn($"Invalid return type: {methodName}");
@@ -99,7 +99,7 @@ internal static class SubscriptionHelper
 			    break;
 		    }
 	    }
-	    
+
 	    ImmutableList<EventContainer> eventContainers = GetEventContainers(subscriptionType, methodName, ids, idRanges, levels, levelRanges);
 	    MethodInfo genericSubscribeMethod = _subscribeMethod.MakeGenericMethod(eventType);
 	    foreach (EventContainer container in eventContainers)
@@ -213,7 +213,7 @@ internal static class SubscriptionHelper
 
                 if (range.Left <= 0)
 	                _logger.Warn($"Invalid {typeof(T).Name} Id range [{range.Left}..{range.Right}] in {source}");
-                
+
 			    int min = Math.Max(1, range.Left);
 			    int max = Math.Max(min, range.Right);
 			    for (int id = min; id <= max; id++)
@@ -233,8 +233,8 @@ internal static class SubscriptionHelper
 	    }
 
 	    return (builder, idSet);
-    }  
-    
+    }
+
     private static ImmutableList<EventContainer> GetEventContainers<T>(IReadOnlyCollection<int>? ids,
 	    IReadOnlyCollection<Range<int>>? idRanges, string source, Func<int, T?> func)
 	    where T: class, IEventContainerProvider
@@ -251,7 +251,7 @@ internal static class SubscriptionHelper
 		    _logger.Warn($"No {typeof(T).Name} found with provided ids in {source}");
 		    return ImmutableList<EventContainer>.Empty;
 	    }
-	    
+
 	    return builder.ToImmutable();
     }
 
@@ -266,7 +266,7 @@ internal static class SubscriptionHelper
 		    return ImmutableList<EventContainer>.Empty;
 	    }
 
-	    Func<int, NpcTemplate> func = static x => NpcData.getInstance().getTemplate(x);
+	    Func<int, NpcTemplate?> func = static x => NpcData.getInstance().getTemplate(x);
 	    var (builder, idSet) = CheckIdsAndGetEventContainers(ids, idRanges, source, func);
 
 	    if (levels != null && levels.Count != 0)
@@ -336,5 +336,5 @@ internal static class SubscriptionHelper
     {
         Action<T> action = (Action<T>)Delegate.CreateDelegate(typeof(Action<T>), obj, method);
         container.Subscribe(obj, action);
-    } 
+    }
 }

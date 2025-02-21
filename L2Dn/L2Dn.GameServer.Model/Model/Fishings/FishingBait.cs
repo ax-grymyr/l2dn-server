@@ -15,7 +15,7 @@ public class FishingBait
     private readonly TimeSpan _waitMin;
     private readonly TimeSpan _waitMax;
     private readonly bool _isPremiumOnly;
-    private readonly List<FishingCatch> _rewards = new();
+    private readonly List<FishingCatch> _rewards = [];
 
     public FishingBait(int itemId, int level, int minPlayerLevel, int maxPlayerLevel, double chance, TimeSpan timeMin,
         TimeSpan timeMax, TimeSpan waitMin, TimeSpan waitMax, bool isPremiumOnly)
@@ -92,7 +92,7 @@ public class FishingBait
         _rewards.Add(catchData);
     }
 
-    public FishingCatch getRandom()
+    public FishingCatch? getRandom()
     {
         float random = Rnd.get(100);
         foreach (FishingCatch fishingCatchData in _rewards)

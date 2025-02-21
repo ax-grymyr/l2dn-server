@@ -208,7 +208,7 @@ public class PlayerInventory: Inventory
 		{
 			if (item != null && item.isAvailable(_owner, false, false))
 			{
-				TradeItem adjItem = tradeList.adjustAvailableItem(item);
+				TradeItem? adjItem = tradeList.adjustAvailableItem(item);
 				if (adjItem != null)
 				{
 					result.Add(adjItem);
@@ -242,7 +242,7 @@ public class PlayerInventory: Inventory
 		}
 		if (notAllEquipped)
 		{
-			Item adjItem = getItemByItemId(item.getItem().getId());
+			Item? adjItem = getItemByItemId(item.getItem().getId());
 			item.setObjectId(adjItem.ObjectId);
 			item.setEnchant(adjItem.getEnchantLevel());
 
@@ -357,9 +357,9 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public override Item addItem(string process, Item item, Player actor, object? reference)
+	public override Item? addItem(string process, Item item, Player? actor, object? reference)
 	{
-		Item addedItem = base.addItem(process, item, actor, reference);
+		Item? addedItem = base.addItem(process, item, actor, reference);
 		if (addedItem != null)
 		{
 			if (addedItem.getId() == ADENA_ID && !addedItem.Equals(_adena))
@@ -405,7 +405,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public override Item addItem(string process, int itemId, long count, Player actor, object? reference)
+	public override Item addItem(string process, int itemId, long count, Player? actor, object? reference)
 	{
 		return addItem(process, itemId, count, actor, reference, true);
 	}
@@ -420,9 +420,9 @@ public class PlayerInventory: Inventory
 	 * @param update : Update inventory (not used by MultiSellChoose packet / it sends update after finish)
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public Item addItem(string process, int itemId, long count, Player actor, object? reference, bool update)
+	public Item? addItem(string process, int itemId, long count, Player? actor, object? reference, bool update)
 	{
-		Item item = base.addItem(process, itemId, count, actor, reference);
+		Item? item = base.addItem(process, itemId, count, actor, reference);
 		if (item != null)
 		{
 			if (item.getId() == ADENA_ID && !item.Equals(_adena))
@@ -535,7 +535,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public override Item? destroyItem(string process, Item item, Player? actor, object? reference)
+	public override Item? destroyItem(string? process, Item item, Player? actor, object? reference)
 	{
 		return destroyItem(process, item, item.getCount(), actor, reference);
 	}
@@ -548,7 +548,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public override Item? destroyItem(string process, Item item, long count, Player actor, object? reference)
+	public override Item? destroyItem(string? process, Item item, long count, Player actor, object? reference)
 	{
 		Item? destroyedItem = base.destroyItem(process, item, count, actor, reference);
 
@@ -1130,7 +1130,7 @@ public class PlayerInventory: Inventory
 	 * @param reference
 	 * @return Amount of items left.
 	 */
-	public bool updateItemCountNoDbUpdate(string process, Item item, long countDelta, Player creator, object reference)
+	public bool updateItemCountNoDbUpdate(string? process, Item item, long countDelta, Player creator, object? reference)
 	{
 		List<ItemInfo> items = new List<ItemInfo>();
 		long left = item.getCount() + countDelta;
@@ -1146,7 +1146,7 @@ public class PlayerInventory: Inventory
 					}
 					else
 					{
-						item.changeCountWithoutTrace(-1, creator, reference);
+						item.changeCountWithoutTrace(countDelta, creator, reference);
 					}
 
 					item.setLastChange(ItemChangeType.MODIFIED);
@@ -1182,7 +1182,7 @@ public class PlayerInventory: Inventory
 	 * @param reference
 	 * @return Amount of items left.
 	 */
-	public bool updateItemCount(string process, Item item, long countDelta, Player creator, object reference)
+	public bool updateItemCount(string? process, Item item, long countDelta, Player creator, object? reference)
 	{
 		if (item != null)
 		{

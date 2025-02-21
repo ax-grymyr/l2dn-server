@@ -25,9 +25,9 @@ namespace L2Dn.GameServer.Model.Quests;
 public class LongTimeEvent: Quest
 {
 	protected string _eventName;
-	protected DateRange _eventPeriod = null;
-	protected bool _active = false;
-	protected bool _enableShrines = false;
+	protected DateRange _eventPeriod;
+	protected bool _active;
+	protected bool _enableShrines;
 	
 	// Messages
 	protected string _onEnterMsg = "";

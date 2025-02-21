@@ -23,13 +23,13 @@ public class ConditionQuest: Condition
 	protected override bool test(Player player, Npc npc)
 	{
 		int id = getParameters().getInt("id");
-		Quest q = QuestManager.getInstance().getQuest(id);
+		Quest? q = QuestManager.getInstance().getQuest(id);
 		if (q == null)
 		{
 			return false;
 		}
 
-		QuestState qs = player.getQuestState(q.Name);
+		QuestState? qs = player.getQuestState(q.Name);
 		if (qs == null)
 		{
 			return false;

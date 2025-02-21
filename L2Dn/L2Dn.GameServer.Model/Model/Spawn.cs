@@ -54,7 +54,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	private readonly List<Npc> _spawnedNpcs = new();
     private bool _randomWalk; // Is no random walk
 	private NpcSpawnTemplate _spawnTemplate;
-	
+
 	/**
 	 * Constructor of Spawn.<br>
 	 * <br>
@@ -92,10 +92,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	 */
 	public Spawn(int npcId)
 	{
-		_template = NpcData.getInstance().getTemplate(npcId);
-		if (_template is null)
-			throw new ArgumentException("NpcTemplate not found for NPC ID: " + npcId);
-
+		_template = NpcData.getInstance().getTemplate(npcId) ?? throw new ArgumentException("NpcTemplate not found for NPC ID: " + npcId);;
 		_location = new Location(0, 0, -10000, 0);
 	}
 
@@ -112,7 +109,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		return _maximumCount;
 	}
-	
+
 	/**
 	 * @return the String Identifier of this spawn.
 	 */
@@ -120,7 +117,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		return _name;
 	}
-	
+
 	/**
 	 * Set the String Identifier of this spawn.
 	 * @param name
@@ -129,7 +126,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		_name = name;
 	}
-	
+
 	/**
 	 * @return the Identifier of the location area where Npc can be spawned.
 	 */
@@ -137,7 +134,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		return _locationId;
 	}
-	
+
 	/**
 	 * Gets the NPC ID.
 	 * @return the NPC ID
@@ -146,7 +143,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		return _template.getId();
 	}
-	
+
 	/**
 	 * @return min respawn delay.
 	 */
@@ -154,7 +151,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		return _respawnMinDelay;
 	}
-	
+
 	/**
 	 * @return max respawn delay.
 	 */
@@ -162,7 +159,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		return _respawnMaxDelay;
 	}
-	
+
 	/**
 	 * @return respawn pattern
 	 */
@@ -170,7 +167,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		return _respawnPattern;
 	}
-	
+
 	/**
 	 * Set the maximum number of Npc that this Spawn can manage.
 	 * @param amount
@@ -179,7 +176,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		_maximumCount = amount;
 	}
-	
+
 	/**
 	 * Set the Identifier of the location area where Npc can be spawned.
 	 * @param id
@@ -188,7 +185,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		_locationId = id;
 	}
-	
+
 	/**
 	 * Set Minimum Respawn Delay.
 	 * @param date
@@ -197,7 +194,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		_respawnMinDelay = date;
 	}
-	
+
 	/**
 	 * Set Maximum Respawn Delay.
 	 * @param date
@@ -206,7 +203,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		_respawnMaxDelay = date;
 	}
-	
+
 	/**
 	 * Decrease the current number of Npc of this Spawn and if necessary create a SpawnTask to launch after the respawn Delay. <b><u>Actions</u>:</b>
 	 * <li>Decrease the current number of Npc of this Spawn</li>
@@ -222,24 +219,24 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		{
 			return;
 		}
-		
+
 		// Decrease the current number of Npc of this Spawn
 		_currentCount--;
-		
+
 		// Remove this NPC from list of spawned
 		_spawnedNpcs.Remove(oldNpc);
-		
+
 		// Check if respawn is possible to prevent multiple respawning caused by lag
 		if (_doRespawn && _scheduledCount + _currentCount < _maximumCount)
 		{
 			// Update the current number of SpawnTask in progress or stand by of this Spawn
 			_scheduledCount++;
-			
+
 			// Schedule the next respawn.
 			RespawnTaskManager.getInstance().add(oldNpc, DateTime.UtcNow + (hasRespawnRandom() ? Rnd.get(_respawnMinDelay, _respawnMaxDelay) : _respawnMinDelay));
 		}
 	}
-	
+
 	/**
 	 * Create the initial spawning and set _doRespawn to False, if respawn time set to 0, or set it to True otherwise.
 	 * @return The number of Npc that were spawned
@@ -251,10 +248,10 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 			doSpawn();
 		}
 		_doRespawn = _respawnMinDelay > TimeSpan.Zero;
-		
+
 		return _currentCount;
 	}
-	
+
 	/**
 	 * @return true if respawn enabled
 	 */
@@ -262,7 +259,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		return _doRespawn;
 	}
-	
+
 	/**
 	 * Set _doRespawn to False to stop respawn in this Spawn.
 	 */
@@ -270,7 +267,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		_doRespawn = false;
 	}
-	
+
 	/**
 	 * Set _doRespawn to True to start or restart respawn in this Spawn.
 	 */
@@ -278,12 +275,12 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	{
 		_doRespawn = true;
 	}
-	
+
 	public Npc? doSpawn()
 	{
 		return _doRespawn ? doSpawn(false) : null;
 	}
-	
+
 	/**
 	 * Create the Npc, add it to the world and lauch its OnSpawn action.<br>
 	 * <br>
@@ -318,7 +315,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 				_currentCount++;
 				return null;
 			}
-			
+
 			// Call the constructor of the Npc
 			Npc npc = _template.CreateInstance();
 			npc.setInstanceById(_instanceId); // Must be done before object is spawned into visible world
@@ -326,7 +323,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 			{
 				npc.setShowSummonAnimation(isSummonSpawn);
 			}
-			
+
 			return initializeNpc(npc);
 		}
 		catch (Exception e)
@@ -335,12 +332,12 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		}
 		return null;
 	}
-	
+
 	/**
 	 * @param npc
 	 * @return
 	 */
-	private Npc initializeNpc(Npc npc)
+	private Npc? initializeNpc(Npc npc)
 	{
 		// Reset some variables
 		npc.onRespawn();
@@ -372,10 +369,10 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 			// The Npc is spawned at the exact position (Lox, Locy, Locz)
 			newLocation = _location.Location3D;
 		}
-		
+
 		// Check if npc is in water.
 		WaterZone? water = ZoneManager.getInstance().getZone<WaterZone>(newLocation);
-		
+
 		// If random spawn system is enabled.
 		if (Config.ENABLE_RANDOM_MONSTER_SPAWNS && _location.Heading != -1 && npc.isMonster() &&
 		    !npc.isQuestMonster() && !WalkingManager.getInstance().isTargeted(npc) && getInstanceId() == 0 &&
@@ -403,10 +400,10 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 				newLocation = newLocation with { Z = geoZ };
 			}
 		}
-		
+
 		// Set is not random walk default value
 		npc.setRandomWalking(_randomWalk);
-		
+
 		// Set the heading of the Npc (random heading if not defined)
 		if (_location.Heading == -1)
 		{
@@ -416,7 +413,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		{
 			npc.setHeading(_location.Heading);
 		}
-		
+
 		// Set custom Npc server side name and title
 		if (npc.getTemplate().isUsingServerSideName())
 		{
@@ -426,38 +423,38 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		{
 			npc.setTitle(npc.getTemplate().getTitle());
 		}
-		
+
 		// Link the Npc to this Spawn
 		npc.setSpawn(this);
-		
+
 		// Spawn NPC
 		npc.spawnMe(newLocation);
-		
+
 		// Make sure info is broadcasted in instances
 		if (npc.getInstanceId() > 0)
 		{
 			npc.broadcastInfo();
 		}
-		
+
 		if (_spawnTemplate != null)
 		{
 			_spawnTemplate.notifySpawnNpc(npc);
 		}
-		
+
 		_spawnedNpcs.Add(npc);
-		
+
 		// Increase the current number of Npcs managed by this Spawn
 		_currentCount++;
-		
+
 		// Minions
 		if (npc.isMonster() && NpcData.getMasterMonsterIDs().Contains(npc.getId()))
 		{
 			((Monster) npc).getMinionList().spawnMinions(npc.getParameters().getMinionList("Privates"));
 		}
-		
+
 		return npc;
 	}
-	
+
 	/**
 	 * Set bounds for random calculation and delay for respawn
 	 * @param delay delay in seconds
@@ -471,10 +468,10 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 			{
 				LOGGER.Error("respawn delay is negative for spawn:" + this);
 			}
-			
+
 			TimeSpan minDelay = delay.Value - (randomInterval ?? TimeSpan.Zero);
 			TimeSpan maxDelay = delay.Value + (randomInterval ?? TimeSpan.Zero);
-			
+
 			_respawnMinDelay = Algorithms.Max(TimeSpan.FromSeconds(10), minDelay);
 			_respawnMaxDelay = Algorithms.Max(TimeSpan.FromSeconds(10), maxDelay);
 		}
@@ -484,27 +481,27 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 			_respawnMaxDelay = TimeSpan.Zero;
 		}
 	}
-	
+
 	public void setRespawnPattern(SchedulingPattern respawnPattern)
 	{
 		_respawnPattern = respawnPattern;
 	}
-	
+
 	public void setRespawnDelay(TimeSpan delay)
 	{
 		setRespawnDelay(delay, TimeSpan.Zero);
 	}
-	
+
 	public TimeSpan getRespawnDelay()
 	{
 		return (_respawnMinDelay + _respawnMaxDelay) / 2;
 	}
-	
+
 	public bool hasRespawnRandom()
 	{
 		return _respawnMinDelay != _respawnMaxDelay;
 	}
-	
+
 	public int getChaseRange()
 	{
 		if (_spawnTemplate == null)
@@ -513,13 +510,13 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		}
 		return _spawnTemplate.getChaseRange();
 	}
-	
-	public Npc getLastSpawn()
+
+	public Npc? getLastSpawn()
 	{
-		Npc? npc = _spawnedNpcs.Count > 0 ? _spawnedNpcs[0] : null; 
+		Npc? npc = _spawnedNpcs.Count > 0 ? _spawnedNpcs[0] : null;
 		return npc;
 	}
-	
+
 	public bool deleteLastNpc()
 	{
 		if (_spawnedNpcs.Count > 0)
@@ -528,66 +525,66 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 			_spawnedNpcs.RemoveAt(0);
 			return npc.deleteMe();
 		}
-			
+
 		return false;
 	}
-	
+
 	public List<Npc> getSpawnedNpcs()
 	{
 		return _spawnedNpcs;
 	}
-	
+
 	public void respawnNpc(Npc oldNpc)
 	{
 		if (_doRespawn)
 		{
 			// oldNpc.refreshID();
 			initializeNpc(oldNpc);
-			
+
 			// Register NPC back to instance world.
-			Instance instance = oldNpc.getInstanceWorld();
+			Instance? instance = oldNpc.getInstanceWorld();
 			if (instance != null)
 			{
 				instance.addNpc(oldNpc);
 			}
 		}
 	}
-	
+
 	public NpcTemplate getTemplate()
 	{
 		return _template;
 	}
-	
+
 	public int getInstanceId()
 	{
 		return _instanceId;
 	}
-	
+
 	public void setInstanceId(int instanceId)
 	{
 		_instanceId = instanceId;
 	}
-	
+
 	public bool getRandomWalking()
 	{
 		return _randomWalk;
 	}
-	
+
 	public void setRandomWalking(bool value)
 	{
 		_randomWalk = value;
 	}
-	
+
 	public void setSpawnTemplate(NpcSpawnTemplate npcSpawnTemplate)
 	{
 		_spawnTemplate = npcSpawnTemplate;
 	}
-	
+
 	public NpcSpawnTemplate getNpcSpawnTemplate()
 	{
 		return _spawnTemplate;
 	}
-	
+
 	public override string ToString()
 	{
 		return "Spawn ID: " + _template.getId() + " at " + _location;

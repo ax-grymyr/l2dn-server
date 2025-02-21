@@ -22,7 +22,7 @@ public class SkillChannelizer: Runnable
 	private List<Creature> _channelized;
 
 	private Skill _skill;
-	private ScheduledFuture _task = null;
+	private ScheduledFuture _task;
 
 	public SkillChannelizer(Creature channelizer)
 	{

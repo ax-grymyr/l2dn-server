@@ -34,7 +34,7 @@ public class RevengeHistoryHolder
 		_type = type;
 		_wasShared = false;
 		_killerName = killer.getName();
-		_killerClanName = killer.getClan() == null ? "" : killer.getClan().getName();
+		_killerClanName = killer.getClan()?.getName() ?? string.Empty;
 		_killerLevel = killer.getLevel();
 		_killerRaceId = killer.getRace();
 		_killerClassId = killer.getClassId();
@@ -44,7 +44,7 @@ public class RevengeHistoryHolder
 		_teleportRemaining = 5;
 		_sharedTeleportRemaining = 1;
 		_victimName = victim.getName();
-		_victimClanName = victim.getClan() == null ? "" : victim.getClan().getName();
+		_victimClanName = victim.getClan()?.getName() ?? string.Empty;
 		_victimLevel = victim.getLevel();
 		_victimRaceId = victim.getRace();
 		_victimClassId = victim.getClassId();
@@ -56,7 +56,7 @@ public class RevengeHistoryHolder
 		_type = type;
 		_wasShared = true;
 		_killerName = killer.getName();
-		_killerClanName = killer.getClan() == null ? "" : killer.getClan().getName();
+		_killerClanName = killer.getClan()?.getName() ?? string.Empty;
 		_killerLevel = killer.getLevel();
 		_killerRaceId = killer.getRace();
 		_killerClassId = killer.getClassId();
@@ -66,7 +66,7 @@ public class RevengeHistoryHolder
 		_teleportRemaining = 0;
 		_sharedTeleportRemaining = sharedTeleportRemaining;
 		_victimName = victim.getName();
-		_victimClanName = victim.getClan() == null ? "" : victim.getClan().getName();
+		_victimClanName = victim.getClan()?.getName() ?? string.Empty;
 		_victimLevel = victim.getLevel();
 		_victimRaceId = victim.getRace();
 		_victimClassId = victim.getClassId();

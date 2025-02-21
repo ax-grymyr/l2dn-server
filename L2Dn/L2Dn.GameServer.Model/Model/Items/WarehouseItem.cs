@@ -28,14 +28,14 @@ public class WarehouseItem
 	private readonly int _locationSlot;
 	private readonly int _enchant;
 	private readonly CrystalType _grade;
-	private readonly VariationInstance _augmentation;
+	private readonly VariationInstance? _augmentation;
 	private readonly int _customType1;
 	private readonly int _customType2;
 	private readonly int? _mana;
-	
+
 	private AttributeType _elemAtkType = AttributeType.NONE;
-	private int _elemAtkPower = 0;
-	
+	private int _elemAtkPower;
+
 	private readonly int[] _elemDefAttr =
 	{
 		0,
@@ -45,14 +45,14 @@ public class WarehouseItem
 		0,
 		0
 	};
-	
+
 	private readonly ImmutableArray<int> _enchantOptions;
 	private readonly ICollection<EnsoulOption> _soulCrystalOptions;
 	private readonly ICollection<EnsoulOption> _soulCrystalSpecialOptions;
-	
+
 	private readonly TimeSpan? _time;
 	private readonly bool _isBlessed;
-	
+
 	public WarehouseItem(Item item)
 	{
 		ArgumentNullException.ThrowIfNull(item);
@@ -80,7 +80,7 @@ public class WarehouseItem
 		_soulCrystalSpecialOptions = item.getAdditionalSpecialAbilities();
 		_isBlessed = item.isBlessed();
 	}
-	
+
 	/**
 	 * @return the item.
 	 */
@@ -88,7 +88,7 @@ public class WarehouseItem
 	{
 		return _item;
 	}
-	
+
 	/**
 	 * @return the unique objectId.
 	 */
@@ -96,7 +96,7 @@ public class WarehouseItem
 	{
 		return _object;
 	}
-	
+
 	/**
 	 * @return the owner.
 	 */
@@ -104,7 +104,7 @@ public class WarehouseItem
 	{
 		return _owner;
 	}
-	
+
 	/**
 	 * @return the location slot.
 	 */
@@ -112,7 +112,7 @@ public class WarehouseItem
 	{
 		return _locationSlot;
 	}
-	
+
 	/**
 	 * @return the count.
 	 */
@@ -120,7 +120,7 @@ public class WarehouseItem
 	{
 		return _count;
 	}
-	
+
 	/**
 	 * @return the first type.
 	 */
@@ -128,7 +128,7 @@ public class WarehouseItem
 	{
 		return _item.getType1();
 	}
-	
+
 	/**
 	 * @return the second type.
 	 */
@@ -136,7 +136,7 @@ public class WarehouseItem
 	{
 		return _item.getType2();
 	}
-	
+
 	/**
 	 * @return the second type.
 	 */
@@ -144,7 +144,7 @@ public class WarehouseItem
 	{
 		return _item.getItemType();
 	}
-	
+
 	/**
 	 * @return the ItemId.
 	 */
@@ -152,7 +152,7 @@ public class WarehouseItem
 	{
 		return _item.getId();
 	}
-	
+
 	/**
 	 * @return the part of body used with this item.
 	 */
@@ -160,7 +160,7 @@ public class WarehouseItem
 	{
 		return _item.getBodyPart();
 	}
-	
+
 	/**
 	 * @return the enchant level.
 	 */
@@ -168,7 +168,7 @@ public class WarehouseItem
 	{
 		return _enchant;
 	}
-	
+
 	/**
 	 * @return the item grade
 	 */
@@ -176,7 +176,7 @@ public class WarehouseItem
 	{
 		return _grade;
 	}
-	
+
 	/**
 	 * @return {@code true} if the item is a weapon, {@code false} otherwise.
 	 */
@@ -184,7 +184,7 @@ public class WarehouseItem
 	{
 		return _item is Weapon;
 	}
-	
+
 	/**
 	 * @return {@code true} if the item is an armor, {@code false} otherwise.
 	 */
@@ -192,7 +192,7 @@ public class WarehouseItem
 	{
 		return _item is Armor;
 	}
-	
+
 	/**
 	 * @return {@code true} if the item is an etc item, {@code false} otherwise.
 	 */
@@ -200,7 +200,7 @@ public class WarehouseItem
 	{
 		return _item is EtcItem;
 	}
-	
+
 	/**
 	 * @return the name of the item
 	 */
@@ -208,15 +208,15 @@ public class WarehouseItem
 	{
 		return _item.getName();
 	}
-	
+
 	/**
 	 * @return the augmentation If.
 	 */
-	public VariationInstance getAugmentation()
+	public VariationInstance? getAugmentation()
 	{
 		return _augmentation;
 	}
-	
+
 	/**
 	 * @return the name of the item
 	 */
@@ -224,62 +224,62 @@ public class WarehouseItem
 	{
 		return _item.getName();
 	}
-	
+
 	public int getCustomType1()
 	{
 		return _customType1;
 	}
-	
+
 	public int getCustomType2()
 	{
 		return _customType2;
 	}
-	
+
 	public int? getMana()
 	{
 		return _mana;
 	}
-	
+
 	public AttributeType getAttackElementType()
 	{
 		return _elemAtkType;
 	}
-	
+
 	public int getAttackElementPower()
 	{
 		return _elemAtkPower;
 	}
-	
+
 	public int getElementDefAttr(byte i)
 	{
 		return _elemDefAttr[i];
 	}
-	
+
 	public ImmutableArray<int> getEnchantOptions()
 	{
 		return _enchantOptions;
 	}
-	
+
 	public ICollection<EnsoulOption> getSoulCrystalOptions()
 	{
 		return _soulCrystalOptions;
 	}
-	
+
 	public ICollection<EnsoulOption> getSoulCrystalSpecialOptions()
 	{
 		return _soulCrystalSpecialOptions;
 	}
-	
+
 	public TimeSpan? getTime()
 	{
 		return _time;
 	}
-	
+
 	public bool isBlessed()
 	{
 		return _isBlessed;
 	}
-	
+
 	/**
 	 * @return the name of the item
 	 */

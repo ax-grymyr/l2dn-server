@@ -10,10 +10,10 @@ public class Couple
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Couple));
 	
-	private int _id = 0;
-	private int _player1Id = 0;
-	private int _player2Id = 0;
-	private bool _maried = false;
+	private int _id;
+	private int _player1Id;
+	private int _player2Id;
+	private bool _maried;
 	private DateTime _affiancedDate;
 	private DateTime? _weddingDate;
 	

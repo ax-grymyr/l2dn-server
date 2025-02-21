@@ -8,8 +8,8 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  */
 public class ConditionZone : ZoneType
 {
-	private bool NO_ITEM_DROP = false;
-	private bool NO_BOOKMARK = false;
+	private bool NO_ITEM_DROP;
+	private bool NO_BOOKMARK;
 	
 	public ConditionZone(int id): base(id)
 	{

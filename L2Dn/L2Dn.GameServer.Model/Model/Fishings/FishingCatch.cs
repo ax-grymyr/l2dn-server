@@ -1,30 +1,19 @@
 ﻿namespace L2Dn.GameServer.Model.Fishings;
 
-public class FishingCatch
+public class FishingCatch(int itemId, float chance, float multiplier)
 {
-    private readonly int _itemId;
-    private readonly float _chance;
-    private readonly float _multiplier;
-	
-    public FishingCatch(int itemId, float chance, float multiplier)
-    {
-        _itemId = itemId;
-        _chance = chance;
-        _multiplier = multiplier;
-    }
-	
     public int getItemId()
     {
-        return _itemId;
+        return itemId;
     }
-	
+
     public float getChance()
     {
-        return _chance;
+        return chance;
     }
-	
+
     public float getMultiplier()
     {
-        return _multiplier;
+        return multiplier;
     }
 }

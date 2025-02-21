@@ -37,7 +37,7 @@ public class PlayerSkillHolder: ISkillsHolder
 	 * Add a skill to the skills map.
 	 * @param skill
 	 */
-	public Skill addSkill(Skill skill)
+	public Skill? addSkill(Skill skill)
 	{
 		return _skills.put(skill.getId(), skill);
 	}
@@ -49,7 +49,7 @@ public class PlayerSkillHolder: ISkillsHolder
 	 */
 	public int getSkillLevel(int skillId)
 	{
-		Skill skill = getKnownSkill(skillId);
+		Skill? skill = getKnownSkill(skillId);
 		return skill == null ? 0 : skill.getLevel();
 	}
 
@@ -57,12 +57,12 @@ public class PlayerSkillHolder: ISkillsHolder
 	 * @param skillId The identifier of the Skill to check the knowledge
 	 * @return the skill from the known skill.
 	 */
-	public Skill getKnownSkill(int skillId)
+	public Skill? getKnownSkill(int skillId)
 	{
 		return _skills.get(skillId);
 	}
 
-	public Skill removeSkill(Skill skill)
+	public Skill? removeSkill(Skill skill)
 	{
 		return _skills.remove(skill.getId());
 	}

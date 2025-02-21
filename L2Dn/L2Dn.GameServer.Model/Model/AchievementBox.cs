@@ -20,9 +20,9 @@ public class AchievementBox
 
 	private readonly Player _owner;
 	private int _boxOwned = 1;
-	private int _monsterPoints = 0;
-	private int _pvpPoints = 0;
-	private int _pendingBoxSlotId = 0;
+	private int _monsterPoints;
+	private int _pvpPoints;
+	private int _pendingBoxSlotId;
 	private DateTime _pvpEndDate;
 	private DateTime? _boxTimeForOpen;
 	private readonly List<AchievementBoxHolder> _achievementBox = new();

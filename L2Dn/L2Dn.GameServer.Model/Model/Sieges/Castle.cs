@@ -34,21 +34,21 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	private readonly EventContainer _eventContainer;
 	private readonly List<Door> _doors = new();
 	private readonly List<Npc> _sideNpcs = new();
-	int _ownerId = 0;
-	private Siege _siege = null;
+	int _ownerId;
+	private Siege _siege;
 	private DateTime _siegeDate;
 	private bool _isTimeRegistrationOver = true; // true if Castle Lords set the time, or 24h is elapsed after the siege
 	private DateTime? _siegeTimeRegistrationEndDate; // last siege end date + 1 day
 	private CastleSide _castleSide;
-	private long _treasury = 0;
-	private bool _showNpcCrest = false;
-	private SiegeZone _zone = null;
+	private long _treasury;
+	private bool _showNpcCrest;
+	private SiegeZone _zone;
 	private ResidenceTeleportZone _teleZone;
-	private Clan? _formerOwner = null;
+	private Clan? _formerOwner;
 	private readonly Set<Artefact> _artefacts = new();
 	private readonly Map<int, CastleFunction> _function = new();
-	private int _ticketBuyCount = 0;
-	private bool _isFirstMidVictory = false;
+	private int _ticketBuyCount;
+	private bool _isFirstMidVictory;
 
 	/** Castle Functions */
 	public const int FUNC_TELEPORT = 1;

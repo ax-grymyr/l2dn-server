@@ -16,15 +16,15 @@ public class HuntPass
 	private readonly Player _user;
 	private int _availableSayhaTime;
 	private int _points;
-	private bool _isPremium = false;
-	private bool _rewardAlert = false;
+	private bool _isPremium;
+	private bool _rewardAlert;
 	
 	private int _rewardStep;
 	private int _currentStep;
 	private int _premiumRewardStep;
 	
-	private bool _toggleSayha = false;
-	private ScheduledFuture _sayhasSustentionTask = null;
+	private bool _toggleSayha;
+	private ScheduledFuture _sayhasSustentionTask;
 	private DateTime? _toggleStartTime;
 	private int _usedSayhaTime;
 	

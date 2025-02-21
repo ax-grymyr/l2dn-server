@@ -94,13 +94,13 @@ public class CommandChannelMatchingRoom: MatchingRoom
 			return MatchingMemberType.COMMAND_CHANNEL_LEADER;
 		}
 
-		Party playerParty = player.getParty();
+		Party? playerParty = player.getParty();
 		if (playerParty == null)
 		{
 			return MatchingMemberType.WAITING_PLAYER_NO_PARTY;
 		}
 
-		Party leaderParty = getLeader().getParty();
+		Party? leaderParty = getLeader().getParty();
 		if (leaderParty != null)
 		{
 			CommandChannel cc = leaderParty.getCommandChannel();

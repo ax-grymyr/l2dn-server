@@ -80,7 +80,7 @@ public class StatSet
 	 */
 	public bool getBoolean(string key)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Boolean value required, but not specified");
@@ -97,6 +97,7 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Boolean value required, but found: " + val);
 		}
 	}
@@ -109,7 +110,7 @@ public class StatSet
 	 */
 	public bool getBoolean(string key, bool defaultValue)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -124,13 +125,14 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			return defaultValue;
 		}
 	}
 
 	public byte getByte(string key)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Byte value required, but not specified");
@@ -145,13 +147,14 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Byte value required, but found: " + val);
 		}
 	}
 
 	public byte getByte(string key, byte defaultValue)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -166,6 +169,7 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Byte value required, but found: " + val);
 		}
 	}
@@ -186,7 +190,7 @@ public class StatSet
 
 	public byte[] getByteArray(string key, string splitOn)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Byte value required, but not specified");
@@ -206,6 +210,7 @@ public class StatSet
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				throw new InvalidCastException("Byte value required, but found: " + val);
 			}
 		}
@@ -224,7 +229,7 @@ public class StatSet
 
 	public short getShort(string key)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Short value required, but not specified");
@@ -239,13 +244,14 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Short value required, but found: " + val);
 		}
 	}
 
 	public short getShort(string key, short defaultValue)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -260,6 +266,7 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Short value required, but found: " + val);
 		}
 	}
@@ -280,7 +287,7 @@ public class StatSet
 
 	public virtual int getInt(string key)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Integer value required, but not specified: " + key + "!");
@@ -297,13 +304,14 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Integer value required, but found: " + val + "!");
 		}
 	}
 
 	public int getInt(string key, int defaultValue)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -320,6 +328,7 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Integer value required, but found: " + val);
 		}
 	}
@@ -340,7 +349,7 @@ public class StatSet
 
 	public int[] getIntArray(string key, string splitOn)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Integer value required, but not specified");
@@ -360,6 +369,7 @@ public class StatSet
 			}
 			catch (Exception e)
 			{
+                LOGGER.Error(e);
 				throw new InvalidCastException("Integer value required, but found: " + val);
 			}
 		}
@@ -461,7 +471,7 @@ public class StatSet
 
 	public DateTime getDateTime(string key)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("DateTime value required, but not specified");
@@ -476,13 +486,14 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("DateTime value required, but found: " + val);
 		}
 	}
 
 	public long getLong(string key)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Long value required, but not specified");
@@ -497,13 +508,14 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Long value required, but found: " + val);
 		}
 	}
 
 	public DateTime getDateTime(string key, DateTime defaultValue)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -518,13 +530,14 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("DateTime value required, but found: " + val);
 		}
 	}
 
 	public long getLong(string key, long defaultValue)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -539,6 +552,7 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Long value required, but found: " + val);
 		}
 	}
@@ -559,7 +573,7 @@ public class StatSet
 
 	public float getFloat(string key)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Float value required, but not specified");
@@ -577,13 +591,14 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Float value required, but found: " + val);
 		}
 	}
 
 	public float getFloat(string key, float defaultValue)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 			return defaultValue;
 
@@ -602,6 +617,7 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Float value required, but found: " + val);
 		}
 	}
@@ -622,7 +638,7 @@ public class StatSet
 
 	public double getDouble(string key)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Double value required, but not specified");
@@ -637,13 +653,14 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Double value required, but found: " + val);
 		}
 	}
 
 	public double getDouble(string key, double defaultValue)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -661,6 +678,7 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Double value required, but found: " + val);
 		}
 	}
@@ -681,7 +699,7 @@ public class StatSet
 
 	public string getString(string key)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("String value required, but not specified");
@@ -709,7 +727,7 @@ public class StatSet
 
 	public TimeSpan getDuration(string key, TimeSpan defaultValue)
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			return defaultValue;
@@ -721,7 +739,7 @@ public class StatSet
 	public T getEnum<T>(string key)
 		where T: struct, Enum
 	{
-		object val = _set.get(key);
+		object? val = _set.get(key);
 		if (val == null)
 		{
 			throw new InvalidCastException("Enum value of type " + typeof(T).Name + " required, but not specified");
@@ -736,6 +754,7 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Enum value of type " + typeof(T).Name + " required, but found: " + val);
 		}
 	}
@@ -759,6 +778,7 @@ public class StatSet
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			throw new InvalidCastException("Enum value of type " + typeof(T).Name + " required, but found: " + val);
 		}
 	}
@@ -766,7 +786,7 @@ public class StatSet
 	public A getObject<A>(string name)
 		where A: class
 	{
-		object obj = _set.get(name);
+		object? obj = _set.get(name);
 		if (obj == null || !(obj is A))
 		{
 			return null;
@@ -778,7 +798,7 @@ public class StatSet
 	public A getObject<A>(string name, A defaultValue)
 		where A: class
 	{
-		object obj = _set.get(name);
+		object? obj = _set.get(name);
 		if (obj == null || !(obj is A))
 		{
 			return defaultValue;
@@ -788,7 +808,7 @@ public class StatSet
 
 	public SkillHolder getSkillHolder(string key)
 	{
-		object obj = _set.get(key);
+		object? obj = _set.get(key);
 		if (!(obj is SkillHolder))
 		{
 			return null;
@@ -798,7 +818,7 @@ public class StatSet
 
 	public Location? getLocation(string key)
 	{
-		object obj = _set.get(key);
+		object? obj = _set.get(key);
 		if (obj is Location location)
 			return location;
 		return null;
@@ -806,7 +826,7 @@ public class StatSet
 
 	public List<MinionHolder> getMinionList(string key)
 	{
-		object obj = _set.get(key);
+		object? obj = _set.get(key);
 		if (!(obj is List<MinionHolder>))
 		{
 			return new();
@@ -817,7 +837,7 @@ public class StatSet
 
 	public List<T> getList<T>(string key)
 	{
-		object obj = _set.get(key);
+		object? obj = _set.get(key);
 		if (obj is null)
 			if (typeof(T).IsClass || typeof(T).IsInterface)
 				return default;
@@ -888,13 +908,13 @@ public class StatSet
 	public List<T> getEnumList<T>(string key)
 		where T: struct, Enum
 	{
-		object obj = _set.get(key);
-		if (!(obj is List<T>))
+		object? obj = _set.get(key);
+		if (obj is not List<T> list)
 		{
 			return null;
 		}
 
-		return (List<T>) obj;
+		return list;
 	}
 
 	/**

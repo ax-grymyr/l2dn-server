@@ -8,9 +8,9 @@ namespace L2Dn.GameServer.Model;
 
 public class DropProtection: Runnable
 {
-    private volatile bool _isProtected = false;
-    private Creature _owner = null;
-    private ScheduledFuture _task = null;
+    private volatile bool _isProtected;
+    private Creature? _owner;
+    private ScheduledFuture? _task;
 
     private const long PROTECTED_MILLIS_TIME = 15000;
 
@@ -27,7 +27,7 @@ public class DropProtection: Runnable
         return _isProtected;
     }
 
-    public Creature getOwner()
+    public Creature? getOwner()
     {
         return _owner;
     }

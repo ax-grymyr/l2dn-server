@@ -5,7 +5,7 @@ namespace L2Dn.GameServer.Model;
 public class DamageDoneInfo
 {
     private readonly Player _attacker;
-    private long _damage = 0;
+    private long _damage;
 	
     public DamageDoneInfo(Player attacker)
     {

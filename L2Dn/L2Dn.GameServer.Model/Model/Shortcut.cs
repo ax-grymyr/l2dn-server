@@ -21,7 +21,7 @@ public class Shortcut
 	/** Shared reuse group. */
 	private int _sharedReuseGroup = -1;
 	/** Auto use enabled. */
-	private bool _autoUse = false;
+	private bool _autoUse;
 	
 	public Shortcut(int slot, int page, ShortcutType type, int id, int level, int subLevel, int characterType)
 	{

@@ -24,8 +24,8 @@ public class Message
 	private readonly int _senderId;
 	private readonly int _receiverId;
 	private readonly DateTime _expiration;
-	private string _senderName = null;
-	private string _receiverName = null;
+	private string _senderName;
+	private string _receiverName;
 	private readonly  string _subject;
 	private readonly  string _content;
 	private bool _unread;
@@ -35,7 +35,7 @@ public class Message
 	private bool _deletedByReceiver;
 	private readonly  long _reqAdena;
 	private bool _hasAttachments;
-	private Mail _attachments = null;
+	private Mail _attachments;
 	
 	private int _itemId;
 	private int _enchantLvl;

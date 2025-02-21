@@ -71,7 +71,7 @@ public class CombinationHenna
 		_rewards.put(item.getType(), item);
 	}
 
-	public CombinationHennaReward getReward(CombinationItemType type)
+	public CombinationHennaReward? getReward(CombinationItemType type)
 	{
 		return _rewards.get(type);
 	}

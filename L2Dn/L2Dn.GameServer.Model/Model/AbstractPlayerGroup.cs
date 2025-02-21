@@ -31,7 +31,7 @@ public abstract class AbstractPlayerGroup
 	/**
 	 * @return the leader of this group
 	 */
-	public abstract Player getLeader();
+	public abstract Player? getLeader();
 
 	/**
 	 * Change the leader of this group to the specified player.

@@ -21,11 +21,11 @@ public class SubClassHolder
 
 	private CharacterClass _class;
 	private long _exp = ExperienceData.getInstance().getExpForLevel(Config.BASE_SUBCLASS_LEVEL);
-	private long _sp = 0;
+	private long _sp;
 	private int _level = Config.BASE_SUBCLASS_LEVEL;
 	private int _classIndex = 1;
-	private int _vitalityPoints = 0;
-	private bool _dualClass = false;
+	private int _vitalityPoints;
+	private bool _dualClass;
 
 	public SubClassHolder()
 	{

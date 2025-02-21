@@ -6,26 +6,15 @@ namespace L2Dn.GameServer.Model.Options;
 /**
  * @author Pere, Mobius
  */
-public class OptionDataCategory
+public sealed class OptionDataCategory(Map<Options, double> options, Set<int> itemIds, double chance)
 {
-	private readonly Map<Options, double> _options;
-	private readonly Set<int> _itemIds;
-	private readonly double _chance;
-
-	public OptionDataCategory(Map<Options, double> options, Set<int> itemIds, double chance)
+    public Options getRandomOptions()
 	{
-		_options = options;
-		_itemIds = itemIds;
-		_chance = chance;
-	}
-
-	public Options getRandomOptions()
-	{
-		Options result = null;
+		Options? result = null;
 		do
 		{
 			double random = Rnd.nextDouble() * 100.0;
-			foreach (var entry in _options)
+			foreach (KeyValuePair<Options, double> entry in options)
 			{
 				if (entry.Value >= random)
 				{
@@ -42,11 +31,11 @@ public class OptionDataCategory
 
 	public Set<int> getItemIds()
 	{
-		return _itemIds;
+		return itemIds;
 	}
 
 	public double getChance()
 	{
-		return _chance;
+		return chance;
 	}
 }

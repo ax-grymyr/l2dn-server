@@ -15,11 +15,11 @@ public class OlympiadGameManager: Runnable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(OlympiadGameManager));
 	private const int STADIUM_COUNT = 80; // TODO dynamic
-	
+
 	private volatile bool _battleStarted;
 	private readonly List<OlympiadStadium> _tasks;
 	private int _delay;
-	
+
 	protected OlympiadGameManager()
 	{
 		ICollection<OlympiadStadiumZone> zones = ZoneManager.getInstance().getAllZones<OlympiadStadiumZone>();
@@ -27,10 +27,10 @@ public class OlympiadGameManager: Runnable
 		{
 			throw new InvalidOperationException("No olympiad stadium zones defined !");
 		}
-		
+
 		OlympiadStadiumZone[] array = zones.ToArray();
 		_tasks = new(STADIUM_COUNT);
-		
+
 		int zonesCount = array.Length;
 		for (int i = 0; i < STADIUM_COUNT; i++)
 		{
@@ -38,37 +38,37 @@ public class OlympiadGameManager: Runnable
 			stadium.registerTask(new OlympiadGameTask(stadium));
 			_tasks.Add(stadium);
 		}
-		
+
 		LOGGER.Info("Olympiad System: Loaded " + _tasks.Count + " stadiums.");
 	}
-	
+
 	public bool isBattleStarted()
 	{
 		return _battleStarted;
 	}
-	
+
 	public void startBattle()
 	{
 		_battleStarted = true;
 	}
-	
+
 	public void run()
 	{
 		if (Olympiad.getInstance().isOlympiadEnd())
 		{
 			return;
 		}
-		
+
 		if (Olympiad.getInstance().inCompPeriod())
 		{
-			AbstractOlympiadGame newGame;
-			List<Set<int>> readyClassed = OlympiadManager.getInstance().hasEnoughRegisteredClassed();
+			AbstractOlympiadGame? newGame;
+			List<Set<int>>? readyClassed = OlympiadManager.getInstance().hasEnoughRegisteredClassed();
 			bool readyNonClassed = OlympiadManager.getInstance().hasEnoughRegisteredNonClassed();
 			if (readyClassed != null || readyNonClassed)
 			{
 				// reset delay broadcast
 				_delay = 0;
-				
+
 				// set up the games queue
 				for (int i = 0; i < _tasks.Count; i++)
 				{
@@ -103,7 +103,7 @@ public class OlympiadGameManager: Runnable
 							}
 						}
 					}
-					
+
 					// stop generating games if no more participants
 					if (readyClassed == null && !readyNonClassed)
 					{
@@ -123,14 +123,14 @@ public class OlympiadGameManager: Runnable
 						{
 							continue;
 						}
-						
-						Player noble = World.getInstance().getPlayer(id);
+
+						Player? noble = World.getInstance().getPlayer(id);
 						if (noble != null)
 						{
 							noble.sendPacket(new SystemMessagePacket(SystemMessageId.THE_GAMES_MAY_BE_DELAYED_DUE_TO_AN_INSUFFICIENT_NUMBER_OF_PLAYERS_WAITING));
 						}
 					}
-					
+
 					foreach (Set<int> list in OlympiadManager.getInstance().getRegisteredClassBased().Values)
 					{
 						foreach (int id in list)
@@ -139,15 +139,15 @@ public class OlympiadGameManager: Runnable
 							{
 								continue;
 							}
-							
-							Player noble = World.getInstance().getPlayer(id);
+
+							Player? noble = World.getInstance().getPlayer(id);
 							if (noble != null)
 							{
 								noble.sendPacket(new SystemMessagePacket(SystemMessageId.THE_GAMES_MAY_BE_DELAYED_DUE_TO_AN_INSUFFICIENT_NUMBER_OF_PLAYERS_WAITING));
 							}
 						}
 					}
-					
+
 					_delay = 0;
 				}
 			}
@@ -163,7 +163,7 @@ public class OlympiadGameManager: Runnable
 			}
 		}
 	}
-	
+
 	public bool isAllTasksFinished()
 	{
 		foreach (OlympiadStadium stadium in _tasks)
@@ -176,8 +176,8 @@ public class OlympiadGameManager: Runnable
 		}
 		return true;
 	}
-	
-	public OlympiadGameTask getOlympiadTask(int id)
+
+	public OlympiadGameTask? getOlympiadTask(int id)
 	{
 		if (id < 0 || id >= _tasks.Count)
 		{
@@ -185,42 +185,42 @@ public class OlympiadGameManager: Runnable
 		}
 		return _tasks[id].getTask();
 	}
-	
+
 	public int getNumberOfStadiums()
 	{
 		return _tasks.Count;
 	}
-	
+
 	public void notifyCompetitorDamage(Player attacker, int damage)
 	{
 		if (attacker == null)
 		{
 			return;
 		}
-		
+
 		int id = attacker.getOlympiadGameId();
 		if (id < 0 || id >= _tasks.Count)
 		{
 			return;
 		}
-		
+
 		AbstractOlympiadGame game = _tasks[id].getTask().getGame();
 		if (game != null)
 		{
 			game.addDamage(attacker, damage);
 		}
 	}
-	
+
 	public List<OlympiadStadium> getTasks()
 	{
 		return _tasks;
 	}
-	
+
 	public static OlympiadGameManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static OlympiadGameManager INSTANCE = new OlympiadGameManager();

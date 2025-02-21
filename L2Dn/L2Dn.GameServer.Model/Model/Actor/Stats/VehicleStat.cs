@@ -2,8 +2,8 @@
 
 public class VehicleStat: CreatureStat
 {
-    private float _moveSpeed = 0;
-    private int _rotationSpeed = 0;
+    private float _moveSpeed;
+    private int _rotationSpeed;
 
     public VehicleStat(Vehicle activeChar): base(activeChar)
     {

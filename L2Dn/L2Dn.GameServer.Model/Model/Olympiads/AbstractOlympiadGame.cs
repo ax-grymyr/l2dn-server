@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -26,7 +27,7 @@ public abstract class AbstractOlympiadGame
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(AbstractOlympiadGame));
 	protected static readonly Logger LOGGER_OLYMPIAD = LogManager.GetLogger("olympiad");
-	
+
 	protected const string POINTS = "olympiad_points";
 	protected const string COMP_DONE = "competitions_done";
 	protected const string COMP_WON = "competitions_won";
@@ -36,32 +37,32 @@ public abstract class AbstractOlympiadGame
 	protected const string COMP_DONE_WEEK_CLASSED = "competitions_done_week_classed";
 	protected const string COMP_DONE_WEEK_NON_CLASSED = "competitions_done_week_non_classed";
 	protected const string COMP_DONE_WEEK_TEAM = "competitions_done_week_team";
-	
+
 	protected DateTime _startTime;
 	protected bool _aborted = false;
 	protected readonly int _stadiumId;
-	
+
 	protected AbstractOlympiadGame(int id)
 	{
 		_stadiumId = id;
 	}
-	
+
 	public bool isAborted()
 	{
 		return _aborted;
 	}
-	
+
 	public int getStadiumId()
 	{
 		return _stadiumId;
 	}
-	
+
 	public virtual bool makeCompetitionStart()
 	{
 		_startTime = DateTime.UtcNow;
 		return !_aborted;
 	}
-	
+
 	protected void addPointsToParticipant(Participant par, int points)
 	{
 		par.getStats().OlympiadPoints += points;
@@ -70,7 +71,7 @@ public abstract class AbstractOlympiadGame
 		sm.Params.addInt(points);
 		broadcastPacket(sm);
 	}
-	
+
 	protected void removePointsFromParticipant(Participant par, int points)
 	{
 		par.getStats().OlympiadPoints -= points;
@@ -79,7 +80,7 @@ public abstract class AbstractOlympiadGame
 		sm.Params.addInt(points);
 		broadcastPacket(sm);
 	}
-	
+
 	/**
 	 * Function return null if player passed all checks or SystemMessage with reason for broadcast to opponent(s).
 	 * @param player
@@ -91,18 +92,19 @@ public abstract class AbstractOlympiadGame
 		{
 			return new SystemMessagePacket(SystemMessageId.YOUR_OPPONENT_MADE_HASTE_WITH_THEIR_TAIL_BETWEEN_THEIR_LEGS_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
-		
-		if (player.getClient() == null || player.getClient().IsDetached)
+
+        GameSession? client = player.getClient();
+		if (client == null || client.IsDetached)
 		{
 			return new SystemMessagePacket(SystemMessageId.YOUR_OPPONENT_MADE_HASTE_WITH_THEIR_TAIL_BETWEEN_THEIR_LEGS_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
-		
+
 		// safety precautions
 		if (player.inObserverMode())
 		{
 			return new SystemMessagePacket(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
-		
+
 		SystemMessagePacket sm;
 		if (player.isDead())
 		{
@@ -133,10 +135,10 @@ public abstract class AbstractOlympiadGame
 			player.sendPacket(sm);
 			return new SystemMessagePacket(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
 		}
-		
+
 		return null;
 	}
-	
+
 	protected static bool portPlayerToArena(Participant par, Location loc, int id, Instance instance)
 	{
 		Player player = par.getPlayer();
@@ -144,7 +146,7 @@ public abstract class AbstractOlympiadGame
 		{
 			return false;
 		}
-		
+
 		try
 		{
 			player.setLastLocation();
@@ -153,7 +155,7 @@ public abstract class AbstractOlympiadGame
 				player.standUp();
 			}
 			player.setTarget(null);
-			
+
 			player.setOlympiadGameId(id);
 			player.setInOlympiadMode(true);
 			player.setOlympiadStart(false);
@@ -168,7 +170,7 @@ public abstract class AbstractOlympiadGame
 		}
 		return true;
 	}
-	
+
 	protected void removals(Player player, bool removeParty)
 	{
 		try
@@ -177,19 +179,19 @@ public abstract class AbstractOlympiadGame
 			{
 				return;
 			}
-			
+
 			// Remove Buffs
 			player.stopAllEffectsExceptThoseThatLastThroughDeath();
 			player.getEffectList().stopEffects(info => info.getSkill().isBlockedInOlympiad(), true, true);
-			
+
 			// Remove Clan Skills
-			Clan clan = player.getClan();
+			Clan? clan = player.getClan();
 			if (clan != null)
 			{
 				clan.removeSkillEffects(player);
 				if (clan.getCastleId() > 0)
 				{
-					Castle castle = CastleManager.getInstance().getCastleByOwner(clan);
+					Castle? castle = CastleManager.getInstance().getCastleByOwner(clan);
 					if (castle != null)
 					{
 						castle.removeResidentialSkills(player);
@@ -197,7 +199,7 @@ public abstract class AbstractOlympiadGame
 				}
 				if (clan.getFortId() > 0)
 				{
-					Fort fort = FortManager.getInstance().getFortByOwner(clan);
+					Fort? fort = FortManager.getInstance().getFortByOwner(clan);
 					if (fort != null)
 					{
 						fort.removeResidentialSkills(player);
@@ -207,24 +209,24 @@ public abstract class AbstractOlympiadGame
 			// Abort casting if player casting
 			player.abortAttack();
 			player.abortCast();
-			
+
 			// Force the character to be visible
 			player.setInvisible(false);
-			
+
 			// Heal Player fully
 			player.setCurrentCp(player.getMaxCp());
 			player.setCurrentHp(player.getMaxHp());
 			player.setCurrentMp(player.getMaxMp());
-			
+
 			// Remove Summon's Buffs
 			if (player.hasSummon())
 			{
-				Summon pet = player.getPet();
+				Summon? pet = player.getPet();
 				if (pet != null)
 				{
 					pet.unSummon(player);
 				}
-				
+
 				player.getServitors().Values.ForEach(s =>
 				{
 					s.stopAllEffectsExceptThoseThatLastThroughDeath();
@@ -233,14 +235,14 @@ public abstract class AbstractOlympiadGame
 					s.abortCast();
 				});
 			}
-			
+
 			// stop any cubic that has been given by other player.
 			player.stopCubicsByOthers();
-			
+
 			// Remove player from his party
 			if (removeParty)
 			{
-				Party party = player.getParty();
+				Party? party = player.getParty();
 				if (party != null)
 				{
 					party.removePartyMember(player, PartyMessageType.EXPELLED);
@@ -252,9 +254,9 @@ public abstract class AbstractOlympiadGame
 				player.setAgathionId(0);
 				player.broadcastUserInfo();
 			}
-			
+
 			player.checkItemRestriction();
-			
+
 			// enable skills with cool time <= 15 minutes
 			foreach (Skill skill in player.getAllSkills())
 			{
@@ -263,7 +265,7 @@ public abstract class AbstractOlympiadGame
 					player.enableSkill(skill);
 				}
 			}
-			
+
 			player.sendSkillList();
 			player.sendPacket(new SkillCoolTimePacket(player));
 		}
@@ -272,7 +274,7 @@ public abstract class AbstractOlympiadGame
 			LOGGER.Warn(e);
 		}
 	}
-	
+
 	protected void cleanEffects(Player player)
 	{
 		try
@@ -283,12 +285,12 @@ public abstract class AbstractOlympiadGame
 			player.abortAttack();
 			player.abortCast();
 			player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			
+
 			if (player.isDead())
 			{
 				player.setDead(false);
 			}
-			
+
 			player.stopAllEffectsExceptThoseThatLastThroughDeath();
 			player.getEffectList().stopEffects(info => info.getSkill().isBlockedInOlympiad(), true, true);
 			player.clearSouls();
@@ -297,7 +299,7 @@ public abstract class AbstractOlympiadGame
 			{
 				player.setAgathionId(0);
 			}
-			Summon pet = player.getPet();
+			Summon? pet = player.getPet();
 			if (pet != null && !pet.isDead())
 			{
 				pet.setTarget(null);
@@ -307,7 +309,7 @@ public abstract class AbstractOlympiadGame
 				pet.stopAllEffectsExceptThoseThatLastThroughDeath();
 				pet.getEffectList().stopEffects(info => info.getSkill().isBlockedInOlympiad(), true, true);
 			}
-			
+
 			foreach (Summon s in player.getServitors().Values)
 			{
 				if (!s.isDead())
@@ -320,7 +322,7 @@ public abstract class AbstractOlympiadGame
 					s.getEffectList().stopEffects(info => info.getSkill().isBlockedInOlympiad(), true, true);
 				}
 			}
-			
+
 			player.setCurrentCp(player.getMaxCp());
 			player.setCurrentHp(player.getMaxHp());
 			player.setCurrentMp(player.getMaxMp());
@@ -331,7 +333,7 @@ public abstract class AbstractOlympiadGame
 			LOGGER.Warn(e);
 		}
 	}
-	
+
 	protected void playerStatusBack(Player player)
 	{
 		try
@@ -340,21 +342,21 @@ public abstract class AbstractOlympiadGame
 			{
 				player.untransform();
 			}
-			
+
 			player.setInOlympiadMode(false);
 			player.setOlympiadStart(false);
 			player.setOlympiadSide(-1);
 			player.setOlympiadGameId(-1);
 			player.sendPacket(new ExOlympiadModePacket(0));
-			
+
 			// Add Clan Skills
-			Clan clan = player.getClan();
+			Clan? clan = player.getClan();
 			if (clan != null)
 			{
 				clan.addSkillEffects(player);
 				if (clan.getCastleId() > 0)
 				{
-					Castle castle = CastleManager.getInstance().getCastleByOwner(clan);
+					Castle? castle = CastleManager.getInstance().getCastleByOwner(clan);
 					if (castle != null)
 					{
 						castle.giveResidentialSkills(player);
@@ -362,7 +364,7 @@ public abstract class AbstractOlympiadGame
 				}
 				if (clan.getFortId() > 0)
 				{
-					Fort fort = FortManager.getInstance().getFortByOwner(clan);
+					Fort? fort = FortManager.getInstance().getFortByOwner(clan);
 					if (fort != null)
 					{
 						fort.giveResidentialSkills(player);
@@ -370,13 +372,13 @@ public abstract class AbstractOlympiadGame
 				}
 				player.sendSkillList();
 			}
-			
+
 			// heal again after adding clan skills
 			player.setCurrentCp(player.getMaxCp());
 			player.setCurrentHp(player.getMaxHp());
 			player.setCurrentMp(player.getMaxMp());
 			player.getStatus().startHpMpRegeneration();
-			
+
 			if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
 			{
 				AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, player);
@@ -387,7 +389,7 @@ public abstract class AbstractOlympiadGame
 			LOGGER.Warn("playerStatusBack(): " + e);
 		}
 	}
-	
+
 	protected void portPlayerBack(Player player)
 	{
 		if (player == null)
@@ -402,14 +404,14 @@ public abstract class AbstractOlympiadGame
 			player.unsetLastLocation();
 		}
 	}
-	
+
 	public static void rewardParticipant(Player player, IReadOnlyList<ItemHolder> list)
 	{
 		if (player == null || !player.isOnline() || list == null)
 		{
 			return;
 		}
-		
+
 		try
 		{
 			List<ItemInfo> items = new List<ItemInfo>();
@@ -427,7 +429,7 @@ public abstract class AbstractOlympiadGame
 				sm.Params.addLong(holder.getCount());
 				player.sendPacket(sm);
 			});
-			
+
 			InventoryUpdatePacket iu = new InventoryUpdatePacket(items);
 			player.sendInventoryUpdate(iu);
 		}
@@ -436,55 +438,55 @@ public abstract class AbstractOlympiadGame
 			LOGGER.Error(e);
 		}
 	}
-	
+
 	public abstract CompetitionType getType();
-	
+
 	public abstract string[] getPlayerNames();
-	
+
 	public abstract bool containsParticipant(int playerId);
-	
+
 	public abstract void sendOlympiadInfo(Creature creature);
-	
+
 	public abstract void broadcastOlympiadInfo(OlympiadStadium stadium);
-	
+
 	public abstract void broadcastPacket<TPacket>(TPacket packet)
 		where TPacket: struct, IOutgoingPacket;
-	
+
 	public abstract bool needBuffers();
-	
+
 	public abstract bool checkDefaulted();
-	
+
 	public abstract void removals();
-	
+
 	public abstract bool portPlayersToArena(ImmutableArray<Location3D> spawns, Instance instance);
-	
+
 	public abstract void cleanEffects();
-	
+
 	public abstract void portPlayersBack();
-	
+
 	public abstract void playersStatusBack();
-	
+
 	public abstract void clearPlayers();
-	
+
 	public abstract void handleDisconnect(Player player);
-	
+
 	public abstract void resetDamage();
-	
+
 	public abstract void addDamage(Player player, int damage);
-	
+
 	public abstract bool checkBattleStatus();
-	
+
 	public abstract bool haveWinner();
-	
+
 	public abstract void validateWinner(OlympiadStadium stadium);
-	
+
 	protected abstract int getDivider();
-	
+
 	public abstract void healPlayers();
-	
+
 	public abstract void untransformPlayers();
 
 	public abstract void makePlayersInvul();
-	
+
 	public abstract void removePlayersInvul();
 }

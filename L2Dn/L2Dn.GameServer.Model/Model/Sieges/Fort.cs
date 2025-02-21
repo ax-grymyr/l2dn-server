@@ -30,21 +30,21 @@ public class Fort: AbstractResidence, IEventContainerProvider
 
 	private readonly EventContainer _eventContainer;
 	private readonly List<Door> _doors = new();
-	private StaticObject _flagPole = null;
-	private FortSiege _siege = null;
+	private StaticObject _flagPole;
+	private FortSiege _siege;
 	private DateTime _siegeDate;
 	private DateTime? _lastOwnedTime;
 	private SiegeZone _zone;
-	private Clan? _fortOwner = null;
-	private int _fortType = 0;
-	private int _state = 0;
-	private int _castleId = 0;
-	private int _supplyLvL = 0;
+	private Clan? _fortOwner;
+	private int _fortType;
+	private int _state;
+	private int _castleId;
+	private int _supplyLvL;
 	private readonly Map<int, FortFunction> _function = new();
 	private readonly ScheduledFuture[] _fortUpdater = new ScheduledFuture[2];
 	
 	// Spawn Data
-	private bool _isSuspiciousMerchantSpawned = false;
+	private bool _isSuspiciousMerchantSpawned;
 	private readonly Set<Spawn> _siegeNpcs = new();
 	private readonly Set<Spawn> _npcCommanders = new();
 	private readonly Set<Spawn> _specialEnvoys = new();

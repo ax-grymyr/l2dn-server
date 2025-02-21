@@ -10,13 +10,13 @@ namespace L2Dn.GameServer.Model.Events.Impl.Items;
  */
 public class OnClanWhItemDestroy: EventBase
 {
-	private readonly string _process;
+	private readonly string? _process;
 	private readonly Player? _player;
 	private readonly Item _item;
 	private readonly long _count;
 	private readonly ItemContainer _container;
 
-	public OnClanWhItemDestroy(string process, Player? player, Item item, long count, ItemContainer container)
+	public OnClanWhItemDestroy(string? process, Player? player, Item item, long count, ItemContainer container)
 	{
 		_process = process;
 		_player = player;
@@ -25,7 +25,7 @@ public class OnClanWhItemDestroy: EventBase
 		_container = container;
 	}
 
-	public string getProcess()
+	public string? getProcess()
 	{
 		return _process;
 	}

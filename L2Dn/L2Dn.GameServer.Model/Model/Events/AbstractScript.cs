@@ -107,13 +107,13 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		onTimerCancel(holder.getEvent(), holder.getParams(), holder.getNpc(), holder.getPlayer());
 	}
 
-	public virtual void onTimerEvent(string @event, StatSet @params, Npc npc, Player player)
+	public virtual void onTimerEvent(string @event, StatSet? @params, Npc? npc, Player? player)
 	{
 		_logger.Warn("[" + GetType().Name + "]: Timer event arrived at non overriden onTimerEvent method event: " +
 		            @event + " npc: " + npc + " player: " + player);
 	}
 
-	public void onTimerCancel(string @event, StatSet @params, Npc npc, Player player)
+	public virtual void onTimerCancel(string @event, StatSet? @params, Npc? npc, Player? player)
 	{
 	}
 
@@ -167,7 +167,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @param talker this parameter contains a reference to the exact instance of the player who is talking to the NPC.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public virtual string onTalk(Npc npc, Player talker)
+	public virtual string? onTalk(Npc npc, Player talker)
 	{
 		return null;
 	}
@@ -220,17 +220,6 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	}
 
 	/**
-	 * @param player the player to whom to show the result
-	 * @param res the message to show to the player
-	 * @return {@code false} if the message was sent, {@code true} otherwise
-	 * @see #showResult(Player, String, Npc)
-	 */
-	public bool showResult(Player player, string res)
-	{
-		return showResult(player, res, null);
-	}
-
-	/**
 	 * Show a message to the specified player.<br>
 	 * <u><i>Concept:</i></u><br>
 	 * Three cases are managed according to the value of the {@code res} parameter:<br>
@@ -244,7 +233,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @param res the message to show to the player
 	 * @return {@code false} if the message was sent, {@code true} otherwise
 	 */
-	public bool showResult(Player player, string res, Npc npc)
+	public bool showResult(Player player, string? res, Npc? npc = null)
 	{
 		if (string.IsNullOrEmpty(res) || player == null)
 		{
@@ -294,7 +283,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @return the contents of the HTML file that was sent to the player
 	 * @see #showHtmlFile(Player, String, Npc)
 	 */
-	public virtual string showHtmlFile(Player player, string filename, Npc npc)
+	public virtual string showHtmlFile(Player player, string filename, Npc? npc)
 	{
 		// Create handler to file linked to the quest
 		string content = getHtm(player, filename);
@@ -316,7 +305,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
 
-		return content;
+		return content!; // TODO: verify this
 	}
 
 	/**
@@ -349,7 +338,8 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 */
 	public string getPath()
 	{
-		string path = GetType().FullName.Replace('.', '/');
+        string typeName = GetType().FullName ?? throw new InvalidOperationException($"Type {GetType()} FullName is null");
+		string path = typeName.Replace('.', '/');
 		return path.Substring(0, path.LastIndexOf('/' + GetType().Name)); // TODO
 	}
 
@@ -1487,7 +1477,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, Location location)
+	public static Npc? addSpawn(int npcId, Location location)
 	{
 		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, false, TimeSpan.Zero, false, 0);
 	}
@@ -1501,7 +1491,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @param despawnDelay time in milliseconds till the NPC is despawned (0 - only despawned on server shutdown)
 	 * @return the {@link Npc} object of the newly spawned NPC, {@code null} if the NPC doesn't exist
 	 */
-	public static Npc addSpawn(Npc? summoner, int npcId, Location3D location, int heading, bool randomOffset, TimeSpan despawnDelay)
+	public static Npc? addSpawn(Npc? summoner, int npcId, Location3D location, int heading, bool randomOffset, TimeSpan despawnDelay)
 	{
 		return addSpawn(summoner, npcId, location.X, location.Y, location.Z, heading, randomOffset, despawnDelay, false, 0);
 	}
@@ -1515,7 +1505,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, Location location, bool isSummonSpawn)
+	public static Npc? addSpawn(int npcId, Location location, bool isSummonSpawn)
 	{
 		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, false, TimeSpan.Zero, isSummonSpawn, 0);
 	}
@@ -1530,7 +1520,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, Location location, bool randomOffset, TimeSpan despawnDelay)
+	public static Npc? addSpawn(int npcId, Location location, bool randomOffset, TimeSpan despawnDelay)
 	{
 		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, randomOffset, despawnDelay, false, 0);
 	}
@@ -1546,7 +1536,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, Location location, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn)
+	public static Npc? addSpawn(int npcId, Location location, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn)
 	{
 		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, randomOffset, despawnDelay, isSummonSpawn, 0);
 	}
@@ -1565,7 +1555,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(Npc summoner, int npcId, Location location, bool randomOffset, int instanceId)
+	public static Npc? addSpawn(Npc summoner, int npcId, Location location, bool randomOffset, int instanceId)
 	{
 		return addSpawn(summoner, npcId, location.X, location.Y, location.Z, location.Heading, randomOffset, TimeSpan.Zero, false, instanceId);
 	}
@@ -1585,7 +1575,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, Location location, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn, int instanceId)
+	public static Npc? addSpawn(int npcId, Location location, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn, int instanceId)
 	{
 		return addSpawn(npcId, location.X, location.Y, location.Z, location.Heading, randomOffset, despawnDelay, isSummonSpawn, instanceId);
 	}
@@ -1603,7 +1593,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, int x, int y, int z, int heading, bool randomOffset, TimeSpan despawnDelay)
+	public static Npc? addSpawn(int npcId, int x, int y, int z, int heading, bool randomOffset, TimeSpan despawnDelay)
 	{
 		return addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, false, 0);
 	}
@@ -1622,7 +1612,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, IPositionable, bool, long, bool, int)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool, int)
 	 */
-	public static Npc addSpawn(int npcId, int x, int y, int z, int heading, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn)
+	public static Npc? addSpawn(int npcId, int x, int y, int z, int heading, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn)
 	{
 		return addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, isSummonSpawn, 0);
 	}
@@ -1643,7 +1633,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @see #addSpawn(int, int, int, int, int, bool, long)
 	 * @see #addSpawn(int, int, int, int, int, bool, long, bool)
 	 */
-	public static Npc addSpawn(int npcId, int x, int y, int z, int heading, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn, int instanceId)
+	public static Npc? addSpawn(int npcId, int x, int y, int z, int heading, bool randomOffset, TimeSpan despawnDelay, bool isSummonSpawn, int instanceId)
 	{
 		return addSpawn(null, npcId, x, y, z, heading, randomOffset, despawnDelay, isSummonSpawn, instanceId);
 	}
@@ -1698,7 +1688,13 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			spawn.Location = new Location(x, y, zValue, heading);
 			spawn.stopRespawn();
 
-			Npc npc = spawn.doSpawn(isSummonSpawn);
+			Npc? npc = spawn.doSpawn(isSummonSpawn);
+            if (npc == null)
+            {
+    			_logger.Warn($"Could not spawn NPC #{npcId}");
+                return null;
+            }
+
 			if (despawnDelay > TimeSpan.Zero)
 			{
 				npc.scheduleDespawn(despawnDelay);
@@ -1742,9 +1738,15 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @param instanceId
 	 * @return
 	 */
-	public Trap addTrap(int trapId, Location location, int instanceId)
+	public Trap? addTrap(int trapId, Location location, int instanceId)
 	{
-		NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(trapId);
+		NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(trapId);
+        if (npcTemplate == null)
+        {
+            _logger.Warn("Failed to add trap with ID: " + trapId);
+            return null;
+        }
+
 		Trap trap = new Trap(npcTemplate, instanceId, -1);
 		trap.setCurrentHp(trap.getMaxHp());
 		trap.setCurrentMp(trap.getMaxMp());
@@ -1946,7 +1948,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		// Pet.
 		if (player.hasPet())
 		{
-			PetInventory petInventory = player.getPet().getInventory();
+			PetInventory? petInventory = player.getPet()?.getInventory();
 			if (petInventory != null)
 			{
 				foreach (int itemId in itemIds)
@@ -1963,7 +1965,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			foreach (Summon summon in player.getServitors().Values)
 			{
-				PetInventory summonInventory = summon.getInventory();
+				PetInventory? summonInventory = summon.getInventory();
 				if (summonInventory != null)
 				{
 					foreach (int itemId in itemIds)
@@ -2023,7 +2025,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 */
 	public static int getEnchantLevel(Player player, int itemId)
 	{
-		Item enchantedItem = player.getInventory().getItemByItemId(itemId);
+		Item? enchantedItem = player.getInventory().getItemByItemId(itemId);
 		if (enchantedItem == null)
 		{
 			return 0;
@@ -2077,7 +2079,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			return;
 		}
 
-		ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+		ItemTemplate? item = ItemData.getInstance().getTemplate(itemId);
 		if (item == null)
 		{
 			return;
@@ -2132,7 +2134,8 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			}
 		}
 		catch (Exception e)
-		{
+        {
+            _logger.Error(e);
 			count = long.MaxValue;
 		}
 
@@ -2279,7 +2282,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 
 		// set enchant level for item if that item is not adena
-		if (attributeType != null && attributeValue > 0)
+		if (attributeValue > 0)
 		{
 			item.setAttribute(new AttributeHolder(attributeType, attributeValue), true);
 			if (item.isEquipped())
@@ -2341,7 +2344,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @param playSound if true, plays ItemSound.quest_itemget when items are given and ItemSound.quest_middle when the limit is reached
 	 * @return {@code true} if limit > 0 and the limit was reached or if limit <= 0 and items were given; {@code false} in all other cases
 	 */
-	public static bool giveItemRandomly(Player player, Npc npc, int itemId, long minAmount, long maxAmount, long limit, double dropChance, bool playSound)
+	public static bool giveItemRandomly(Player player, Npc? npc, int itemId, long minAmount, long maxAmount, long limit, double dropChance, bool playSound)
 	{
 		if (player.isSimulatingTalking())
 		{
@@ -2426,7 +2429,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 
 		// Get object item from player's inventory list
-		Item item = player.getInventory().getItemByItemId(itemId);
+		Item? item = player.getInventory().getItemByItemId(itemId);
 		if (item == null)
 		{
 			return false;
@@ -2560,7 +2563,14 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			return;
 		}
 
-		player.sendPacket(new PlaySoundPacket(sound.GetSoundName()));
+        string? soundName = sound.GetSoundName();
+        if (string.IsNullOrEmpty(soundName))
+        {
+            _logger.Warn($"No sound name for QuestSound={sound}");
+            return;
+        }
+
+		player.sendPacket(new PlaySoundPacket(soundName));
 	}
 
 	/**
@@ -2657,11 +2667,13 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return;
 		}
-		if ((includeParty || includeCommandChannel) && player.isInParty())
+
+        Party? party = player.getParty();
+		if ((includeParty || includeCommandChannel) && player.isInParty() && party != null)
 		{
-			if (includeCommandChannel && player.getParty().isInCommandChannel())
+			if (includeCommandChannel && party.isInCommandChannel())
 			{
-				player.getParty().getCommandChannel().forEachMember(member =>
+                party.getCommandChannel().forEachMember(member =>
 				{
 					actionForEachPlayer(member, npc, isSummon);
 					return true;
@@ -2669,7 +2681,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			}
 			else if (includeParty)
 			{
-				player.getParty().forEachMember(member =>
+                party.forEachMember(member =>
 				{
 					actionForEachPlayer(member, npc, isSummon);
 					return true;
@@ -2700,7 +2712,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 */
 	public void openDoor(int doorId, int instanceId)
 	{
-		Door door = getDoor(doorId, instanceId);
+		Door? door = getDoor(doorId, instanceId);
 		if (door == null)
 		{
 			_logger.Warn(GetType().Name + ": called openDoor(" + doorId + ", " + instanceId +
@@ -2719,7 +2731,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 */
 	public void closeDoor(int doorId, int instanceId)
 	{
-		Door door = getDoor(doorId, instanceId);
+		Door? door = getDoor(doorId, instanceId);
 		if (door == null)
 		{
 			_logger.Warn(
@@ -2737,10 +2749,10 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @param instanceId the ID of the instance the door is in (0 if the door is not not inside an instance)
 	 * @return the found door or {@code null} if no door with that ID and instance ID was found
 	 */
-	public Door getDoor(int doorId, int instanceId)
+	public Door? getDoor(int doorId, int instanceId)
 	{
-		Door door;
-		Instance instance = InstanceManager.getInstance().getInstance(instanceId);
+		Door? door;
+		Instance? instance = InstanceManager.getInstance().getInstance(instanceId);
 		if (instance != null)
 		{
 			door = instance.getDoor(doorId);

@@ -6,7 +6,7 @@ namespace L2Dn.GameServer.Model;
 
 public class SiegeClan
 {
-    private int _clanId = 0;
+    private int _clanId;
     private readonly Set<Npc> _flags = new();
     private SiegeClanType _type;
 	

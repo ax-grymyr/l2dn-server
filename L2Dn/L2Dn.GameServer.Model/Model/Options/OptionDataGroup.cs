@@ -6,23 +6,16 @@ namespace L2Dn.GameServer.Model.Options;
 /**
  * @author Pere, Mobius
  */
-public class OptionDataGroup
+public sealed class OptionDataGroup(List<OptionDataCategory> categories)
 {
-	private readonly List<OptionDataCategory> _categories;
-
-	public OptionDataGroup(List<OptionDataCategory> categories)
+    public Options? getRandomEffect(int itemId)
 	{
-		_categories = categories;
-	}
-
-	public Options getRandomEffect(int itemId)
-	{
-		List<OptionDataCategory> exclutions = new();
-		Options result = null;
+		List<OptionDataCategory> exclutions = [];
+		Options? result = null;
 		do
 		{
 			double random = Rnd.nextDouble() * 100.0;
-			foreach (OptionDataCategory category in _categories)
+			foreach (OptionDataCategory category in categories)
 			{
 				if (!category.getItemIds().isEmpty() && !category.getItemIds().Contains(itemId))
 				{
@@ -42,7 +35,7 @@ public class OptionDataGroup
 
 				random -= category.getChance();
 			}
-		} while (result == null && exclutions.Count < _categories.Count);
+		} while (result == null && exclutions.Count < categories.Count);
 
 		return result;
 	}

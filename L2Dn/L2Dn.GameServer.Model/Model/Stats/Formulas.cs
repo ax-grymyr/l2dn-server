@@ -1166,7 +1166,7 @@ public class Formulas
 		return canceled;
 	}
 
-	public static bool calcCancelSuccess(BuffInfo info, int cancelMagicLvl, int rate, Skill skill, Creature target)
+	public static bool calcCancelSuccess(BuffInfo info, int cancelMagicLvl, int rate, Skill? skill, Creature target)
 	{
 		int abnormalTimeSeconds = (int)(info.getAbnormalTime() ?? TimeSpan.Zero).TotalSeconds;
 		int chance = (int)(rate + (cancelMagicLvl - info.getSkill().getMagicLevel()) * 2 +

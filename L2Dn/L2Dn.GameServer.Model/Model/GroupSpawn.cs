@@ -19,7 +19,7 @@ public class GroupSpawn: Spawn
         setAmount(1);
     }
 
-    public Npc doGroupSpawn()
+    public Npc? doGroupSpawn()
     {
         try
         {
@@ -28,7 +28,7 @@ public class GroupSpawn: Spawn
                 return null;
             }
 
-            Location3D newLocation = default;
+            Location3D newLocation;
             if (Location.X == 0 && Location.Y == 0)
             {
                 if (getLocationId() == 0)

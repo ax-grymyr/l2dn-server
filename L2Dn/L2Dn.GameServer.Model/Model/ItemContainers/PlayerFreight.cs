@@ -5,7 +5,7 @@ namespace L2Dn.GameServer.Model.ItemContainers;
 
 public class PlayerFreight: ItemContainer
 {
-    private readonly Player _owner;
+    private readonly Player? _owner;
     private readonly int _ownerId;
 
     public PlayerFreight(int objectId)
@@ -26,7 +26,7 @@ public class PlayerFreight: ItemContainer
         return _ownerId;
     }
 
-    public override Player getOwner()
+    public override Player? getOwner()
     {
         return _owner;
     }

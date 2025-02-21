@@ -16,7 +16,8 @@ public class ConditionPartyLeader: Condition
 	}
 
 	protected override bool test(Player player, Npc npc)
-	{
-		return player.isInParty() && player.getParty().isLeader(player);
-	}
+    {
+        Party? party = player.getParty();
+        return player.isInParty() && party != null && party.isLeader(player);
+    }
 }

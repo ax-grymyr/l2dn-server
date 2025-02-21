@@ -8,14 +8,14 @@ namespace L2Dn.GameServer.Model.Items;
 */
 public class EtcItem: ItemTemplate
 {
-	private string _handler;
+	private string _handler = string.Empty;
 	private EtcItemType _type;
-	private List<ExtractableProduct> _extractableItems;
+	private List<ExtractableProduct> _extractableItems = [];
 	private int _extractableCountMin;
 	private int _extractableCountMax;
 	private bool _isInfinite;
-	private bool _isMineral = false;
-	private bool _isEnsoulStone = false;
+	private bool _isMineral;
+	private bool _isEnsoulStone;
 
 	/**
  * Constructor for EtcItem.
@@ -41,7 +41,7 @@ public class EtcItem: ItemTemplate
 			_type2 = ItemTemplate.TYPE2_MONEY;
 		}
 
-		_handler = set.getString("handler", null); // ! null !
+		_handler = set.getString("handler", string.Empty); // ! null !
 
 		_extractableCountMin = set.getInt("extractableCountMin", 0);
 		_extractableCountMax = set.getInt("extractableCountMax", 0);

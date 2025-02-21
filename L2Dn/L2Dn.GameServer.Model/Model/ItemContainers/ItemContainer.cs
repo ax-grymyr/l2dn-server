@@ -33,8 +33,9 @@ public abstract class ItemContainer
 	 * @return int the owner object Id
 	 */
 	public virtual int getOwnerId()
-	{
-		return getOwner() == null ? 0 : getOwner().ObjectId;
+    {
+        Creature? owner = getOwner();
+		return owner == null ? 0 : owner.ObjectId;
 	}
 
 	/**
@@ -161,7 +162,7 @@ public abstract class ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public virtual Item addItem(string process, Item item, Player actor, object? reference)
+	public virtual Item? addItem(string process, Item item, Player? actor, object? reference)
 	{
 		Item newItem = item;
 		Item? olditem = getItemByItemId(newItem.getId());
@@ -266,7 +267,7 @@ public abstract class ItemContainer
 	 * @param reference Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public virtual Item? transferItem(string process, int objectId, long countValue, ItemContainer target, Player actor, object? reference)
+	public virtual Item? transferItem(string process, int objectId, long countValue, ItemContainer target, Player? actor, object? reference)
 	{
 		if (target == null)
 		{
@@ -421,7 +422,7 @@ public abstract class ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public virtual Item? destroyItem(string process, Item item, Player actor, object? reference)
+	public virtual Item? destroyItem(string process, Item item, Player? actor, object? reference)
 	{
 		return destroyItem(process, item, item.getCount(), actor, reference);
 	}
@@ -435,7 +436,7 @@ public abstract class ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public virtual Item? destroyItem(string process, Item item, long count, Player actor, object? reference)
+	public virtual Item? destroyItem(string? process, Item item, long count, Player? actor, object? reference)
 	{
 		lock (item)
 		{

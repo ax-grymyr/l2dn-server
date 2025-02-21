@@ -23,9 +23,9 @@ public class PlayerRandomCraft
 	private readonly Player _player;
 	private readonly List<RandomCraftRewardItemHolder> _rewardList = new(5);
 	
-	private int _fullCraftPoints = 0;
-	private int _craftPoints = 0;
-	private bool _isSayhaRoll = false;
+	private int _fullCraftPoints;
+	private int _craftPoints;
+	private bool _isSayhaRoll;
 	
 	public PlayerRandomCraft(Player player)
 	{

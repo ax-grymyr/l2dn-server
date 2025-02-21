@@ -6,12 +6,12 @@ namespace L2Dn.GameServer.Model.Events.Timers;
 
 public abstract class TimerHolder: Runnable
 {
-	private readonly StatSet _params;
-	private readonly Npc _npc;
-	private readonly Player _player;
+	private readonly StatSet? _params;
+	private readonly Npc? _npc;
+	private readonly Player? _player;
 	private readonly bool _isRepeating;
 
-	protected TimerHolder(StatSet @params, Npc npc, Player player, bool isRepeating)
+	protected TimerHolder(StatSet? @params, Npc? npc, Player? player, bool isRepeating)
 	{
 		_params = @params;
 		_npc = npc;
@@ -22,7 +22,7 @@ public abstract class TimerHolder: Runnable
 	/**
 	 * @return the parameters of this timer
 	 */
-	public StatSet getParams()
+	public StatSet? getParams()
 	{
 		return _params;
 	}
@@ -30,7 +30,7 @@ public abstract class TimerHolder: Runnable
 	/**
 	 * @return the npc of this timer
 	 */
-	public Npc getNpc()
+	public Npc? getNpc()
 	{
 		return _npc;
 	}
@@ -38,7 +38,7 @@ public abstract class TimerHolder: Runnable
 	/**
 	 * @return the player of this timer
 	 */
-	public Player getPlayer()
+	public Player? getPlayer()
 	{
 		return _player;
 	}
@@ -78,8 +78,8 @@ public class TimerHolder<T>: TimerHolder
 	private readonly IEventTimerEvent<T> _eventScript;
 	private readonly IEventTimerCancel<T> _cancelScript;
 	private readonly TimerExecutor<T> _postExecutor;
-	
-	public TimerHolder(T @event, StatSet @params, TimeSpan timeInMs, Npc npc, Player player, bool isRepeating,
+
+	public TimerHolder(T @event, StatSet? @params, TimeSpan timeInMs, Npc? npc, Player? player, bool isRepeating,
 		IEventTimerEvent<T> eventScript, IEventTimerCancel<T> cancelScript, TimerExecutor<T> postExecutor)
 		: base(@params, npc, player, isRepeating)
 	{
@@ -119,15 +119,8 @@ public class TimerHolder<T>: TimerHolder
 	 */
 	public override void cancelTimer()
 	{
-		if (getNpc() != null)
-		{
-			getNpc().removeTimerHolder(this);
-		}
-
-		if (getPlayer() != null)
-		{
-			getPlayer().removeTimerHolder(this);
-		}
+		getNpc()?.removeTimerHolder(this);
+		getPlayer()?.removeTimerHolder(this);
 
 		if (_task == null || _task.isCancelled() || _task.isDone())
 		{

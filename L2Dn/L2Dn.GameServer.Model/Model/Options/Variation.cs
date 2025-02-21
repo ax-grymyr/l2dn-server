@@ -34,7 +34,7 @@ public class Variation
 		_effects[order] = group;
 	}
 
-	public Options getRandomEffect(int order, int targetItemId)
+	public Options? getRandomEffect(int order, int targetItemId)
 	{
 		if (_effects == null)
 		{

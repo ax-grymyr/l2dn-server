@@ -75,8 +75,8 @@ public class Olympiad
 	protected ScheduledFuture _scheduledOlympiadEnd;
 	protected ScheduledFuture _scheduledWeeklyTask;
 	protected ScheduledFuture _scheduledValdationTask;
-	protected ScheduledFuture _gameManager = null;
-	protected ScheduledFuture _gameAnnouncer = null;
+	protected ScheduledFuture _gameManager;
+	protected ScheduledFuture _gameAnnouncer;
 
 	private readonly EventContainer _eventContainer = new("Olympiad", GlobalEvents.Global);
 	

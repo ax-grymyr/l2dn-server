@@ -28,8 +28,8 @@ public sealed class Fishing
 	private Location3D? _baitLocation;
 
 	private readonly Player _player;
-	private ScheduledFuture _reelInTask;
-	private ScheduledFuture _startFishingTask;
+	private ScheduledFuture? _reelInTask;
+	private ScheduledFuture? _startFishingTask;
 	private bool _isFishing;
 
 	public Fishing(Player player)
@@ -58,9 +58,9 @@ public sealed class Fishing
 		return !_player.isDead() && !_player.isAlikeDead() && !_player.hasBlockActions() && !_player.isSitting();
 	}
 
-	private FishingBait getCurrentBaitData()
+	private FishingBait? getCurrentBaitData()
 	{
-		Item bait = _player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
+		Item? bait = _player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 		return bait != null ? FishingData.getInstance().getBaitData(bait.getId()) : null;
 	}
 
@@ -114,7 +114,7 @@ public sealed class Fishing
 			return;
 		}
 
-		FishingBait baitData = getCurrentBaitData();
+		FishingBait? baitData = getCurrentBaitData();
 		if (baitData == null)
 		{
 			_player.sendPacket(SystemMessageId.YOU_MUST_PUT_BAIT_ON_YOUR_HOOK_BEFORE_YOU_CAN_FISH);
@@ -152,7 +152,7 @@ public sealed class Fishing
 			return;
 		}
 
-		Item rod = _player.getActiveWeaponInstance();
+		Item? rod = _player.getActiveWeaponInstance();
 		if (rod == null || rod.getItemType() != WeaponType.FISHINGROD)
 		{
 			_player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_A_FISHING_ROD_EQUIPPED);
@@ -161,7 +161,7 @@ public sealed class Fishing
 			return;
 		}
 
-		FishingRod rodData = FishingData.getInstance().getRodData(rod.getId());
+		FishingRod? rodData = FishingData.getInstance().getRodData(rod.getId());
 		if (rodData == null)
 		{
 			_player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_A_FISHING_ROD_EQUIPPED);
@@ -240,7 +240,7 @@ public sealed class Fishing
 	{
 		// Fish may or may not eat the hook. If it does - it consumes fishing bait and fishing shot.
 		// Then player may or may not catch the fish. Using fishing shots increases chance to win.
-		FishingBait baitData = getCurrentBaitData();
+		FishingBait? baitData = getCurrentBaitData();
 		if (baitData == null)
 		{
 			reelIn(FishingEndReason.LOSE, false);
@@ -277,7 +277,7 @@ public sealed class Fishing
 		FishingEndReason reason = reasonValue;
 		try
 		{
-			Item bait = _player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
+			Item? bait = _player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 			if (consumeBait && (bait == null || !_player.getInventory().updateItemCount(null, bait, -1, _player, null)))
 			{
 				reason = FishingEndReason.LOSE; // no bait - no reward
@@ -286,8 +286,8 @@ public sealed class Fishing
 
 			if (reason == FishingEndReason.WIN && bait != null)
 			{
-				FishingBait baitData = FishingData.getInstance().getBaitData(bait.getId());
-				FishingCatch fishingCatchData = baitData.getRandom();
+				FishingBait? baitData = FishingData.getInstance().getBaitData(bait.getId());
+				FishingCatch? fishingCatchData = baitData?.getRandom();
 				if (fishingCatchData != null)
 				{
 					FishingData fishingData = FishingData.getInstance();
@@ -297,7 +297,7 @@ public sealed class Fishing
 
 					long sp = (long)(Rnd.get(fishingData.getSpRateMin(), fishingData.getSpRateMax()) * lvlModifier *
 						_player.getStat().getMul(Stat.FISHING_EXP_SP_BONUS, 1));
-					
+
 					_player.addExpAndSp(xp, sp, true);
 					_player.getInventory().addItem("Fishing Reward", fishingCatchData.getItemId(), 1, _player, null);
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACQUIRED_S1);

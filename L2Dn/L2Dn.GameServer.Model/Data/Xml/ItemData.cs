@@ -1301,7 +1301,7 @@ public class ItemData: DataReaderBase
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item
 	 */
-	public Item createItem(string process, int itemId, long count, Creature actor, object? reference)
+	public Item createItem(string process, int itemId, long count, Creature? actor, object? reference)
 	{
 		// Create and Init the Item corresponding to the Item Identifier
 		Item item = new Item(IdManager.getInstance().getNextId(), itemId);
@@ -1443,7 +1443,7 @@ public class ItemData: DataReaderBase
 	 * @param actor the player requesting the item destroy.
 	 * @param reference the object referencing current action like NPC selling item or previous item in transformation.
 	 */
-	public void destroyItem(string process, Item item, Player actor, object? reference)
+	public void destroyItem(string? process, Item item, Player? actor, object? reference)
 	{
 		lock (item)
 		{

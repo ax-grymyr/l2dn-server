@@ -766,7 +766,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	 * @param condition
 	 * @return {@code List} of {@link ItemSkillHolder} if item has skills and matches the condition, {@code null} otherwise
 	 */
-	public List<ItemSkillHolder> getSkills(Predicate<ItemSkillHolder> condition)
+	public List<ItemSkillHolder>? getSkills(Predicate<ItemSkillHolder> condition)
 	{
 		if (_skills == null)
 		{
@@ -788,7 +788,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	 * @param type
 	 * @return {@code List} of {@link ItemSkillHolder} if item has skills, {@code null} otherwise
 	 */
-	public List<ItemSkillHolder> getSkills(ItemSkillType type)
+	public List<ItemSkillHolder>? getSkills(ItemSkillType type)
 	{
 		if (_skills == null)
 		{
@@ -849,7 +849,8 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 		}
 
 		// Don't allow hero equipment and restricted items during Olympiad
-		if ((isOlyRestrictedItem() || _heroItem) && creature.isPlayer() && creature.getActingPlayer().isInOlympiadMode())
+        Player? player = creature.getActingPlayer();
+		if ((isOlyRestrictedItem() || _heroItem) && creature.isPlayer() && player != null && player.isInOlympiadMode())
 		{
 			if (isEquipable())
 			{
@@ -862,7 +863,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 			return false;
 		}
 
-		if (_isEventRestricted && creature.isPlayer() && creature.getActingPlayer().isOnEvent())
+		if (_isEventRestricted && creature.isPlayer() && player != null && player.isOnEvent())
 		{
 			creature.sendMessage("You cannot use this item in the event.");
 			return false;

@@ -103,8 +103,8 @@ public class PartyMatchingRoom: MatchingRoom
 			return MatchingMemberType.PARTY_LEADER;
 		}
 
-		Party leaderParty = getLeader().getParty();
-		Party playerParty = player.getParty();
+		Party? leaderParty = getLeader().getParty();
+		Party? playerParty = player.getParty();
 		if (leaderParty != null && playerParty != null && playerParty == leaderParty)
 		{
 			return MatchingMemberType.PARTY_MEMBER;

@@ -20,10 +20,10 @@ public class OlympiadGameTask: Runnable
 	private static readonly int[] TELEPORT_TO_TOWN_TIMES = [40, 30, 20, 10, 5, 4, 3, 2, 1, 0];
 
 	private readonly OlympiadStadium _stadium;
-	private AbstractOlympiadGame _game;
+	private AbstractOlympiadGame? _game;
 	private OlympiadGameState _state = OlympiadGameState.IDLE;
-	private bool _needAnnounce = false;
-	private int _countDown = 0;
+	private bool _needAnnounce;
+	private int _countDown;
 
 	public OlympiadGameTask(OlympiadStadium stadium)
 	{
@@ -67,7 +67,7 @@ public class OlympiadGameTask: Runnable
 		return _stadium;
 	}
 
-	public AbstractOlympiadGame getGame()
+	public AbstractOlympiadGame? getGame()
 	{
 		return _game;
 	}

@@ -43,10 +43,10 @@ public class Item: WorldObject
 
 	/** Owner */
 	private int _ownerId;
-	private Player _owner;
+	private Player? _owner;
 
 	/** ID of who dropped the item last, used for knownlist */
-	private int _dropperObjectId = 0;
+	private int _dropperObjectId;
 
 	/** Quantity of the item */
 	private long _count = 1;
@@ -55,7 +55,7 @@ public class Item: WorldObject
 	/** Remaining time (in milliseconds) */
 	private DateTime? _time;
 	/** Quantity of the item can decrease */
-	private bool _decrease = false;
+	private bool _decrease;
 
 	/** ID of the item */
 	private readonly int _itemId;
@@ -88,7 +88,7 @@ public class Item: WorldObject
 
 	private DateTime? _dropTime;
 
-	private bool _published = false;
+	private bool _published;
 
 	private bool _protected;
 
@@ -302,7 +302,7 @@ public class Item: WorldObject
 			sb.Append(getName());
 			sb.Append(")");
 
-			string targetName = creator.getTarget() != null ? creator.getTarget().getName() : "no-target";
+			string targetName = creator.getTarget()?.getName() ?? "no-target";
 
 			string referenceName = "no-reference";
 			if (reference is WorldObject)
@@ -522,7 +522,7 @@ public class Item: WorldObject
 	}
 
 	// No logging (function designed for shots only)
-	public void changeCountWithoutTrace(int count, Player creator, object reference)
+	public void changeCountWithoutTrace(long count, Player creator, object? reference)
 	{
 		changeCount(null, count, creator, reference);
 	}
@@ -666,7 +666,7 @@ public class Item: WorldObject
 	/**
 	 * @return the characteristics of the Weapon.
 	 */
-	public Weapon getWeaponItem()
+	public Weapon? getWeaponItem()
 	{
 		if (_itemTemplate is Weapon)
 		{
@@ -678,7 +678,7 @@ public class Item: WorldObject
 	/**
 	 * @return the characteristics of the Armor.
 	 */
-	public Armor getArmorItem()
+	public Armor? getArmorItem()
 	{
 		if (_itemTemplate is Armor)
 		{
@@ -871,7 +871,7 @@ public class Item: WorldObject
 	 */
 	public bool isAvailable(Player player, bool allowAdena, bool allowNonTradeable)
 	{
-		Summon pet = player.getPet();
+		Summon? pet = player.getPet();
 
 		return !isEquipped() // Not equipped
 			&& _itemTemplate.getType2() != ItemTemplate.TYPE2_QUEST // Not Quest Item
@@ -919,7 +919,7 @@ public class Item: WorldObject
 		// Agathion skills.
 		if (isEquipped() && _itemTemplate.getBodyPart() == ItemTemplate.SLOT_AGATHION)
 		{
-			AgathionSkillHolder agathionSkills = AgathionData.getInstance().getSkills(getId());
+			AgathionSkillHolder? agathionSkills = AgathionData.getInstance().getSkills(getId());
 			if (agathionSkills != null)
 			{
 				bool update = false;
@@ -1185,7 +1185,7 @@ public class Item: WorldObject
 		}
 	}
 
-	public ICollection<AttributeHolder> getAttributes()
+	public ICollection<AttributeHolder>? getAttributes()
 	{
 		return _elementals != null ? _elementals.Values : null;
 	}
@@ -1221,13 +1221,13 @@ public class Item: WorldObject
 
 	public AttributeType getAttackAttributeType()
 	{
-		AttributeHolder holder = getAttackAttribute();
+		AttributeHolder? holder = getAttackAttribute();
 		return holder != null ? holder.getType() : AttributeType.NONE;
 	}
 
 	public int getAttackAttributePower()
 	{
-		AttributeHolder holder = getAttackAttribute();
+		AttributeHolder? holder = getAttackAttribute();
 		return holder != null ? holder.getValue() : 0;
 	}
 
@@ -1237,7 +1237,7 @@ public class Item: WorldObject
 		{
 			if (_itemTemplate.getAttributes() != null)
 			{
-				AttributeHolder attribute = _itemTemplate.getAttribute(element);
+				AttributeHolder? attribute = _itemTemplate.getAttribute(element);
 				if (attribute != null)
 				{
 					return attribute.getValue();
@@ -1245,7 +1245,7 @@ public class Item: WorldObject
 			}
 			else if (_elementals != null)
 			{
-				AttributeHolder attribute = getAttribute(element);
+				AttributeHolder? attribute = getAttribute(element);
 				if (attribute != null)
 				{
 					return attribute.getValue();
@@ -1265,7 +1265,7 @@ public class Item: WorldObject
 		}
 		else
 		{
-			AttributeHolder attribute = getAttribute(holder.getType());
+			AttributeHolder? attribute = getAttribute(holder.getType());
 			if (attribute != null)
 			{
 				attribute.setValue(holder.getValue());
@@ -1400,7 +1400,7 @@ public class Item: WorldObject
 			_consumingMana = false;
 		}
 
-		Player player = getActingPlayer();
+		Player? player = getActingPlayer();
 		if (player != null)
 		{
 			SystemMessagePacket sm;
@@ -1574,7 +1574,7 @@ public class Item: WorldObject
 		setDropperObjectId(dropper != null ? dropper.ObjectId : 0); // Set the dropper Id for the knownlist packets in sendInfo
 
 		// Add the Item dropped in the world as a visible object
-		WorldRegion region = getWorldRegion();
+		WorldRegion? region = getWorldRegion();
 		region.addVisibleObject(this);
 		World.getInstance().addVisibleObject(this, region);
 		if (Config.SAVE_DROPPED_ITEM)
@@ -1773,7 +1773,7 @@ public class Item: WorldObject
 			return true;
 		}
 
-		Player player = getActingPlayer();
+		Player? player = getActingPlayer();
 		if (player != null)
 		{
 			foreach (Condition condition in _itemTemplate.getConditions())
@@ -1791,7 +1791,7 @@ public class Item: WorldObject
 
 			if (player.hasRequest<AutoPeelRequest>())
 			{
-				EtcItem etcItem = getEtcItem();
+				EtcItem? etcItem = getEtcItem();
 				if (etcItem != null && etcItem.getExtractableItems() != null)
 				{
 					return false;
@@ -1851,7 +1851,7 @@ public class Item: WorldObject
 
 	public void endOfLife()
 	{
-		Player player = getActingPlayer();
+		Player? player = getActingPlayer();
 		if (player != null)
 		{
 			if (isEquipped())
@@ -1970,7 +1970,7 @@ public class Item: WorldObject
 
 	public int getOlyEnchantLevel()
 	{
-		Player player = getActingPlayer();
+		Player? player = getActingPlayer();
 		int enchant = _enchantLevel;
 
 		if (player == null)
@@ -2011,7 +2011,7 @@ public class Item: WorldObject
 			return;
 		}
 
-		Player player = getActingPlayer();
+		Player? player = getActingPlayer();
 		if (player != null)
 		{
 			_itemTemplate.forEachSkill(ItemSkillType.NORMAL, holder =>
@@ -2032,7 +2032,7 @@ public class Item: WorldObject
 			return;
 		}
 
-		Player player = getActingPlayer();
+		Player? player = getActingPlayer();
 		if (player != null)
 		{
 			_itemTemplate.forEachSkill(ItemSkillType.NORMAL, holder =>
@@ -2051,7 +2051,7 @@ public class Item: WorldObject
 		return true;
 	}
 
-	public override Player getActingPlayer()
+	public override Player? getActingPlayer()
 	{
 		if (_owner == null && _ownerId != 0)
 		{
@@ -2074,7 +2074,7 @@ public class Item: WorldObject
 		if (command.StartsWith("Quest"))
 		{
 			string questName = command.Substring(6);
-			string @event = null;
+			string? @event = null;
 			int idx = questName.IndexOf(' ');
 			if (idx > 0)
 			{
@@ -2258,7 +2258,7 @@ public class Item: WorldObject
 			Skill skill = option.getSkill();
 			if (skill != null)
 			{
-				Player player = getActingPlayer();
+				Player? player = getActingPlayer();
 				if (player != null)
 				{
 					player.removeSkill(skill.getId());
@@ -2281,7 +2281,7 @@ public class Item: WorldObject
 		Skill skill = option.getSkill();
 		if (skill != null)
 		{
-			Player player = getActingPlayer();
+			Player? player = getActingPlayer();
 			if (player != null && player.getSkillLevel(skill.getId()) != skill.getLevel())
 			{
 				player.addSkill(skill, false);
@@ -2299,7 +2299,7 @@ public class Item: WorldObject
 		Skill skill = option.getSkill();
 		if (skill != null)
 		{
-			Player player = getActingPlayer();
+			Player? player = getActingPlayer();
 			if (player != null)
 			{
 				player.removeSkill(skill, false, true);
@@ -2319,7 +2319,7 @@ public class Item: WorldObject
 				int optionId = record.OptionId;
 				int type = record.Type;
 				int position = record.Position;
-				EnsoulOption option = EnsoulData.getInstance().getOption(optionId);
+				EnsoulOption? option = EnsoulData.getInstance().getOption(optionId);
 				if (option != null)
 				{
 					addSpecialAbility(option, position, type, false);
@@ -2405,7 +2405,7 @@ public class Item: WorldObject
 	 */
 	public void clearEnchantStats()
 	{
-		Player player = getActingPlayer();
+		Player? player = getActingPlayer();
 		if (player == null)
 		{
 			_enchantOptions.Clear();
@@ -2424,7 +2424,7 @@ public class Item: WorldObject
 	 */
 	public void applyEnchantStats()
 	{
-		Player player = getActingPlayer();
+		Player? player = getActingPlayer();
 		ImmutableArray<int> enchantOptions = getEnchantOptions();
 		if (!isEquipped() || player == null || enchantOptions.IsDefaultOrEmpty)
 		{
@@ -2458,7 +2458,7 @@ public class Item: WorldObject
 
 	public ItemVariables getVariables()
 	{
-		ItemVariables vars = getScript<ItemVariables>();
+		ItemVariables? vars = getScript<ItemVariables>();
 		return vars != null ? vars : addScript(new ItemVariables(ObjectId));
 	}
 
@@ -2470,10 +2470,10 @@ public class Item: WorldObject
 			int appearanceStoneId = getVariables().getInt(ItemVariables.VISUAL_APPEARANCE_STONE_ID, 0);
 			if (appearanceStoneId > 0)
 			{
-				AppearanceStone stone = AppearanceItemData.getInstance().getStone(appearanceStoneId);
+				AppearanceStone? stone = AppearanceItemData.getInstance().getStone(appearanceStoneId);
 				if (stone != null)
 				{
-					Player player = getActingPlayer();
+					Player? player = getActingPlayer();
 					if (player != null)
 					{
 						if (!stone.getRaces().isEmpty() && !stone.getRaces().Contains(player.getRace()))
@@ -2551,7 +2551,7 @@ public class Item: WorldObject
 		vars.remove(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME);
 		vars.storeMe();
 
-		Player player = getActingPlayer();
+		Player? player = getActingPlayer();
 		if (player != null)
 		{
 			InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(this, ItemChangeType.MODIFIED));
@@ -2607,10 +2607,10 @@ public class Item: WorldObject
 		int appearanceStoneId = getAppearanceStoneId();
 		if (appearanceStoneId > 0)
 		{
-			AppearanceStone stone = AppearanceItemData.getInstance().getStone(appearanceStoneId);
+			AppearanceStone? stone = AppearanceItemData.getInstance().getStone(appearanceStoneId);
 			if (stone != null && stone.getType() == AppearanceType.FIXED)
 			{
-				Player player = getActingPlayer();
+				Player? player = getActingPlayer();
 				if (player != null)
 				{
 					bool update = false;
@@ -2649,10 +2649,10 @@ public class Item: WorldObject
 		int appearanceStoneId = getAppearanceStoneId();
 		if (appearanceStoneId > 0)
 		{
-			AppearanceStone stone = AppearanceItemData.getInstance().getStone(appearanceStoneId);
+			AppearanceStone? stone = AppearanceItemData.getInstance().getStone(appearanceStoneId);
 			if (stone != null && stone.getType() == AppearanceType.FIXED)
 			{
-				Player player = getActingPlayer();
+				Player? player = getActingPlayer();
 				if (player != null)
 				{
 					bool update = false;
