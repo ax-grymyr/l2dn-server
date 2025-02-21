@@ -47,7 +47,7 @@ public struct RequestPledgeRecruitBoardAccessPacket: IIncomingPacket<GameSession
             return ValueTask.CompletedTask;
         }
 
-        PledgeRecruitInfo pledgeRecruitInfo = new PledgeRecruitInfo(clan.getId(), _karma, _information, _detailedInformation, _applicationType, _recruitingType);
+        PledgeRecruitInfo pledgeRecruitInfo = new PledgeRecruitInfo(clan, _karma, _information, _detailedInformation, _applicationType, _recruitingType);
 
         switch (_applyType)
         {

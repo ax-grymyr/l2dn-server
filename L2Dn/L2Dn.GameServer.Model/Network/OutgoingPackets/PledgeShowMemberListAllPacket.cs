@@ -20,7 +20,7 @@ public readonly struct PledgeShowMemberListAllPacket: IOutgoingPacket
     {
         _clan = clan;
         _pledgeId = pledge?.getId() ?? 0;
-        _leaderName = pledge == null ? clan.getLeaderName() : CharInfoTable.getInstance().getNameById(pledge.getLeaderId());
+        _leaderName = (pledge == null ? clan.getLeaderName() : CharInfoTable.getInstance().getNameById(pledge.getLeaderId())) ?? string.Empty;
         _name = pledge == null ? clan.getName() : pledge.getName();
         _members = _clan.getMembers();
         _isSubPledge = isSubPledge;

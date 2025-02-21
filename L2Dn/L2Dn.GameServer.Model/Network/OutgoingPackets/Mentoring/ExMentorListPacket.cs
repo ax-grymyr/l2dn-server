@@ -7,20 +7,36 @@ namespace L2Dn.GameServer.Network.OutgoingPackets.Mentoring;
 
 public readonly struct ExMentorListPacket: IOutgoingPacket
 {
-    private readonly int _type;
+    private enum MentoringType
+    {
+        None,
+        Mentee,
+        Mentor,
+    }
+
+    private readonly MentoringType _type;
     private readonly ICollection<Mentee> _mentees;
-	
+
     public ExMentorListPacket(Player player)
     {
         if (player.isMentor())
         {
-            _type = 1;
+            _type = MentoringType.Mentee;
             _mentees = MentorManager.getInstance().getMentees(player.ObjectId);
         }
         else if (player.isMentee())
         {
-            _type = 2;
-            _mentees = [MentorManager.getInstance().getMentor(player.ObjectId)];
+            Mentee? mentor = MentorManager.getInstance().getMentor(player.ObjectId);
+            if (mentor == null)
+            {
+                _type = MentoringType.None;
+                _mentees = [];
+            }
+            else
+            {
+                _type = MentoringType.Mentor;
+                _mentees = [mentor];
+            }
         }
         // else if (player.isInCategory(CategoryType.SIXTH_CLASS_GROUP)) // Not a mentor, Not a mentee, so can be a mentor
         // {
@@ -30,15 +46,15 @@ public readonly struct ExMentorListPacket: IOutgoingPacket
         else
         {
             _mentees = [];
-            _type = 0;
+            _type = MentoringType.None;
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_MENTOR_LIST);
-        
-        writer.WriteInt32(_type);
+
+        writer.WriteInt32((int)_type);
         writer.WriteInt32(0);
         writer.WriteInt32(_mentees.Count);
         foreach (Mentee mentee in _mentees)

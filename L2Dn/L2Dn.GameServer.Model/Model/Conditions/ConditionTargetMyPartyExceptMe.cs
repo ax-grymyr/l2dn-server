@@ -25,14 +25,18 @@ public sealed class ConditionTargetMyPartyExceptMe(bool value): Condition
             player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_ON_YOURSELF);
             isPartyMember = false;
         }
-        else if (!player.isInParty() || !player.getParty().Equals(effected.getParty()))
+        else
         {
-            SystemMessagePacket sm =
-                new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
+            Party? party = player.getParty();
+            if (!player.isInParty() || party == null || !party.Equals(effected.getParty()))
+            {
+                SystemMessagePacket sm =
+                    new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
 
-            sm.Params.addSkillName(skill);
-            player.sendPacket(sm);
-            isPartyMember = false;
+                sm.Params.addSkillName(skill);
+                player.sendPacket(sm);
+                isPartyMember = false;
+            }
         }
 
         return value == isPartyMember;

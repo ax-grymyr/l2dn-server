@@ -12,6 +12,7 @@ public class PledgeWaitingInfo
     private int _playerLvl;
     private readonly int _karma;
     private string _playerName;
+    private Player? _player;
 
     public PledgeWaitingInfo(int playerId, int playerLvl, int karma, CharacterClass classId, string playerName)
     {
@@ -34,9 +35,10 @@ public class PledgeWaitingInfo
 
     public CharacterClass getPlayerClassId()
     {
-        if (isOnline() && getPlayer().getBaseClass() != _playerClassId)
+        Player? player = getPlayer();
+        if (player != null && isOnline() && player.getBaseClass() != _playerClassId)
         {
-            _playerClassId = getPlayer().getClassId();
+            _playerClassId = player.getClassId();
         }
 
         return _playerClassId;
@@ -44,9 +46,10 @@ public class PledgeWaitingInfo
 
     public int getPlayerLvl()
     {
-        if (isOnline() && getPlayer().getLevel() != _playerLvl)
+        Player? player = getPlayer();
+        if (player != null && isOnline() && player.getLevel() != _playerLvl)
         {
-            _playerLvl = getPlayer().getLevel();
+            _playerLvl = player.getLevel();
         }
 
         return _playerLvl;
@@ -59,21 +62,23 @@ public class PledgeWaitingInfo
 
     public string getPlayerName()
     {
-        if (isOnline() && !getPlayer().getName().equalsIgnoreCase(_playerName))
+        Player? player = getPlayer();
+        if (player != null && isOnline() && !player.getName().equalsIgnoreCase(_playerName))
         {
-            _playerName = getPlayer().getName();
+            _playerName = player.getName();
         }
 
         return _playerName;
     }
 
-    public Player getPlayer()
+    public Player? getPlayer()
     {
-        return World.getInstance().getPlayer(_playerId);
+        return _player ??= World.getInstance().getPlayer(_playerId);
     }
 
     public bool isOnline()
     {
-        return getPlayer() != null && getPlayer().getOnlineStatus() != CharacterOnlineStatus.Offline;
+        Player? player = getPlayer();
+        return player != null && player.getOnlineStatus() != CharacterOnlineStatus.Offline;
     }
 }

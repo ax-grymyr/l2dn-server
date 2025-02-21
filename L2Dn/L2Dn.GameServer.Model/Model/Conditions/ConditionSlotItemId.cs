@@ -16,7 +16,7 @@ public class ConditionSlotItemId(int slot, int itemId, int enchantLevel): Condit
         if (effector == null || !effector.isPlayer())
             return false;
 
-        Item? itemSlot = effector.getInventory().getPaperdollItem(Slot);
+        Item? itemSlot = effector.getInventory()?.getPaperdollItem(Slot);
         if (itemSlot == null)
             return itemId == 0;
 

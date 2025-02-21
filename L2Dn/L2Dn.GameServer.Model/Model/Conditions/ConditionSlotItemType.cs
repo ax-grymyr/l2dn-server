@@ -17,7 +17,7 @@ public sealed class ConditionSlotItemType(int slot, ItemTypeMask mask): Conditio
         if (effector == null || !effector.isPlayer())
             return false;
 
-        Item? itemSlot = effector.getInventory().getPaperdollItem(Slot);
+        Item? itemSlot = effector.getInventory()?.getPaperdollItem(Slot);
         if (itemSlot == null)
             return false;
 

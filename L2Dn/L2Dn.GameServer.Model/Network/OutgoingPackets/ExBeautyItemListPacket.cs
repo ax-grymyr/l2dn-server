@@ -11,15 +11,18 @@ public readonly struct ExBeautyItemListPacket: IOutgoingPacket
     private const int HAIR_TYPE = 0;
     private const int FACE_TYPE = 1;
     private const int COLOR_TYPE = 2;
-	
+
     private readonly int _colorCount;
     private readonly BeautyData _beautyData;
     private readonly Map<int, List<BeautyItem>> _colorData;
-	
+
     public ExBeautyItemListPacket(Player player)
     {
         _colorData = new Map<int, List<BeautyItem>>();
-        _beautyData = BeautyShopData.getInstance().getBeautyData(player.getRace(), player.getAppearance().getSex());
+        _beautyData = BeautyShopData.getInstance().getBeautyData(player.getRace(), player.getAppearance().getSex()) ??
+            throw new InvalidOperationException(
+                $"No beauty data for race {player.getRace()} and sex {player.getAppearance().getSex()}"); // TODO: null checking hack
+
         foreach (BeautyItem hair in _beautyData.getHairList().Values)
         {
             List<BeautyItem> colors = new();
@@ -28,15 +31,15 @@ public readonly struct ExBeautyItemListPacket: IOutgoingPacket
                 colors.Add(color);
                 _colorCount++;
             }
-            
-            _colorData.put(hair.getId(), colors);
+
+            _colorData[hair.getId()] = colors;
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_BEAUTY_ITEM_LIST);
-        
+
         writer.WriteInt32(HAIR_TYPE);
         writer.WriteInt32(_beautyData.getHairList().Count);
         foreach (BeautyItem hair in _beautyData.getHairList().Values)
@@ -48,6 +51,7 @@ public readonly struct ExBeautyItemListPacket: IOutgoingPacket
             writer.WriteInt32(hair.getBeautyShopTicket());
             writer.WriteInt32(1); // Limit
         }
+
         writer.WriteInt32(FACE_TYPE);
         writer.WriteInt32(_beautyData.getFaceList().Count);
         foreach (BeautyItem face in _beautyData.getFaceList().Values)
@@ -59,6 +63,7 @@ public readonly struct ExBeautyItemListPacket: IOutgoingPacket
             writer.WriteInt32(face.getBeautyShopTicket());
             writer.WriteInt32(1); // Limit
         }
+
         writer.WriteInt32(COLOR_TYPE);
         writer.WriteInt32(_colorCount);
         foreach (var entry in _colorData)

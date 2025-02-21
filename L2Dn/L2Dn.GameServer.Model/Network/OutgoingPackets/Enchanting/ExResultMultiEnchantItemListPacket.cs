@@ -23,18 +23,19 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 	{
 		_player = player;
 		_error = error;
-		_successEnchant = new();
-		_failureEnchant = new();
-		_failChallengePointInfoList = new();
-	}
+		_successEnchant = [];
+		_failureEnchant = [];
+		_failChallengePointInfoList = [];
+        _failureReward = [];
+    }
 
 	public ExResultMultiEnchantItemListPacket(Player player, Map<int, ItemHolder> failureReward)
 	{
 		_player = player;
 		_failureReward = failureReward;
-		_successEnchant = new();
-		_failureEnchant = new();
-		_failChallengePointInfoList = new();
+		_successEnchant = [];
+		_failureEnchant = [];
+		_failChallengePointInfoList = [];
 	}
 
 	public ExResultMultiEnchantItemListPacket(Player player, Map<int, int[]> successEnchant, Map<int, int> failureEnchant)
@@ -42,7 +43,8 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 		_player = player;
 		_successEnchant = successEnchant;
 		_failureEnchant = failureEnchant;
-		_failChallengePointInfoList = new();
+		_failChallengePointInfoList = [];
+        _failureReward = [];
 	}
 
 	public ExResultMultiEnchantItemListPacket(Player player, Map<int, int[]> successEnchant, Map<int, int> failureEnchant, bool isResult)
@@ -51,7 +53,8 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 		_successEnchant = successEnchant;
 		_failureEnchant = failureEnchant;
 		_isResult = isResult;
-		_failChallengePointInfoList = new();
+		_failChallengePointInfoList = [];
+        _failureReward = [];
 	}
 
 	public ExResultMultiEnchantItemListPacket(Player player, Map<int, int[]> successEnchant, Map<int, int> failureEnchant, Map<int, int> failChallengePointInfoList, bool isResult)
@@ -61,6 +64,7 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 		_failureEnchant = failureEnchant;
 		_isResult = isResult;
 		_failChallengePointInfoList = failChallengePointInfoList;
+        _failureReward = [];
 	}
 
 	public void WriteContent(PacketBitWriter writer)

@@ -14,6 +14,9 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 {
     public void WriteContent(PacketBitWriter writer)
 	{
+        // TODO: packet writes 6 integer values, but requires a lot of calculations
+        //       to get the values. Logic must be moved out of packets.
+
 		EnchantItemRequest? request = player.getRequest<EnchantItemRequest>();
 		if (request == null)
 			return;
@@ -73,25 +76,33 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 		}
 	}
 
-	private int getBaseRate(EnchantItemRequest request, int iteration)
-	{
-		EnchantScroll? enchantScroll = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId());
-		return (int) Math.Min(100, enchantScroll.getChance(player, isMulti ? player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(iteration)) : request.getEnchantingItem()) + enchantScroll.getBonusRate()) * 100;
-	}
+    private int getBaseRate(EnchantItemRequest request, int iteration)
+    {
+        EnchantScroll? enchantScroll =
+            EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId());
 
-	private int getSupportRate(EnchantItemRequest request)
-	{
-		double supportRate = 0;
-		if (!isMulti && request.getSupportItem() != null)
-		{
-			supportRate = EnchantItemData.getInstance().getSupportItem(request.getSupportItem().getId()).getBonusRate();
-			supportRate *= 100;
-		}
+        // TODO: null check suppressed
+        return (int)Math.Min(100,
+            enchantScroll!.getChance(player,
+                isMulti
+                    ? player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(iteration))!
+                    : request.getEnchantingItem()) + enchantScroll.getBonusRate()) * 100;
+    }
+
+    private int getSupportRate(EnchantItemRequest request)
+    {
+        double supportRate = 0;
+        if (!isMulti && request.getSupportItem() != null)
+        {
+            // TODO: null check suppressed
+            supportRate = EnchantItemData.getInstance().getSupportItem(request.getSupportItem().getId())!.getBonusRate();
+            supportRate *= 100;
+        }
 
         return (int)supportRate;
-	}
+    }
 
-	private int getPassiveRate(EnchantItemRequest request, int iteration)
+    private int getPassiveRate(EnchantItemRequest request, int iteration)
 	{
 		double passiveRate = 0;
 		if (player.getStat().getValue(Stat.ENCHANT_RATE) != 0)
@@ -109,8 +120,11 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 				}
 			}
 			else
-			{
-				CrystalType crystalLevel = player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(iteration)).getTemplate().getCrystalType().getLevel();
+            {
+                CrystalType crystalLevel = player.getInventory().
+                    getItemByObjectId(request.getMultiEnchantingItemsBySlot(iteration))?.getTemplate().getCrystalType().
+                    getLevel() ?? CrystalType.NONE;
+
 				if (crystalLevel == CrystalType.NONE.getLevel() || crystalLevel == CrystalType.EVENT.getLevel())
 				{
 					passiveRate = 0;

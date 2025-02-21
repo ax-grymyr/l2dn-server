@@ -16,9 +16,9 @@ public readonly struct AllianceInfoPacket: IOutgoingPacket
     public AllianceInfoPacket(int allianceId)
     {
         Clan? leader = ClanTable.getInstance().getClan(allianceId);
-        _name = leader.getAllyName() ?? string.Empty;
-        _leaderC = leader.getName();
-        _leaderP = leader.getLeaderName();
+        _name = leader?.getAllyName() ?? string.Empty; // TODO: null checking hack, ensure only valid arguments are passed
+        _leaderC = leader?.getName() ?? string.Empty;
+        _leaderP = leader?.getLeaderName() ?? string.Empty;
         ICollection<Clan> allies = ClanTable.getInstance().getClanAllies(allianceId);
         _allies = new ClanInfo[allies.Count];
         int idx = 0;

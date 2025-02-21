@@ -19,8 +19,8 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 	[
 		Inventory.PAPERDOLL_RHAND,
 		Inventory.PAPERDOLL_LHAND,
-		Inventory.PAPERDOLL_RHAND
-	];
+		Inventory.PAPERDOLL_RHAND,
+    ];
 
 	private static readonly int[] PAPERDOLL_ORDER_VISUAL_ID =
 	[
@@ -32,8 +32,8 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 		Inventory.PAPERDOLL_LEGS,
 		Inventory.PAPERDOLL_FEET,
 		Inventory.PAPERDOLL_HAIR,
-		Inventory.PAPERDOLL_HAIR2
-	];
+		Inventory.PAPERDOLL_HAIR2,
+    ];
 
 	private readonly Npc _npc;
 	private readonly int _objId;
@@ -72,7 +72,9 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 		_swimWalkSpd = (int) Math.Round(npc.getSwimWalkSpeed() / _moveMultiplier);
 		_flyRunSpd = npc.isFlying() ? _runSpd : 0;
 		_flyWalkSpd = npc.isFlying() ? _walkSpd : 0;
-		_fpcHolder = FakePlayerData.getInstance().getInfo(npc.getId());
+        _fpcHolder = FakePlayerData.getInstance().getInfo(npc.getId()) ??
+            throw new ArgumentException("Fake player data not found", nameof(npc));
+
 		_clan = ClanTable.getInstance().getClan(_fpcHolder.getClanId());
 	}
 

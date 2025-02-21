@@ -16,7 +16,7 @@ public struct CreatureSayPacket: IOutgoingPacket
     private readonly int _charId = 0;
     private readonly int _messageId = -1;
     private readonly int _mask;
-    private List<string> _parameters;
+    private readonly List<string> _parameters; // TODO: not used?
     private readonly bool _shareLocation;
 
     public CreatureSayPacket(Player sender, Player? receiver, string name, ChatType chatType, string text)
@@ -40,7 +40,8 @@ public struct CreatureSayPacket: IOutgoingPacket
             {
                 _mask |= 0x02;
             }
-            if (MentorManager.getInstance().getMentee(receiver.ObjectId, sender.ObjectId) != null || MentorManager.getInstance().getMentee(sender.ObjectId, receiver.ObjectId) != null)
+            if (MentorManager.getInstance().getMentee(receiver.ObjectId, sender.ObjectId) != null ||
+                MentorManager.getInstance().getMentee(sender.ObjectId, receiver.ObjectId) != null)
             {
                 _mask |= 0x04;
             }
@@ -54,6 +55,8 @@ public struct CreatureSayPacket: IOutgoingPacket
         {
             _mask |= 0x10;
         }
+
+        _parameters = [];
     }
 
     public CreatureSayPacket(Creature? sender, ChatType chatType, string senderName, string text)
@@ -68,6 +71,7 @@ public struct CreatureSayPacket: IOutgoingPacket
         _senderName = senderName;
         _text = text;
         _shareLocation = shareLocation;
+        _parameters = [];
     }
 
     public CreatureSayPacket(Creature? sender, ChatType chatType, NpcStringId npcStringId)
@@ -79,6 +83,8 @@ public struct CreatureSayPacket: IOutgoingPacket
         {
             _senderName = sender.getName();
         }
+
+        _parameters = [];
     }
 
     public CreatureSayPacket(ChatType chatType, int charId, SystemMessageId systemMessageId)
@@ -87,6 +93,7 @@ public struct CreatureSayPacket: IOutgoingPacket
         _chatType = chatType;
         _charId = charId;
         _messageId = (int)systemMessageId;
+        _parameters = [];
     }
 
     public void WriteContent(PacketBitWriter writer)
@@ -95,13 +102,9 @@ public struct CreatureSayPacket: IOutgoingPacket
         writer.WriteInt32(_sender?.ObjectId ?? 0);
         writer.WriteInt32((int)_chatType);
         if (_senderName != null)
-        {
             writer.WriteString(_senderName);
-        }
         else
-        {
             writer.WriteInt32(_charId);
-        }
 
         writer.WriteInt32(_messageId); // High Five NPCString ID
 
@@ -126,40 +129,29 @@ public struct CreatureSayPacket: IOutgoingPacket
         }
 
         // Rank
-        if (_sender != null && _sender.isPlayer())
+        Player? player = _sender?.getActingPlayer();
+        if (_sender != null && _sender.isPlayer() && player != null)
         {
-            Clan clan = _sender.getClan();
+            Clan? clan = _sender.getClan();
             if (clan != null && (_chatType == ChatType.CLAN || _chatType == ChatType.ALLIANCE))
             {
                 writer.WriteByte(0); // unknown clan byte
             }
 
-            int rank = RankManager.getInstance().getPlayerGlobalRank(_sender.getActingPlayer());
+            int rank = RankManager.getInstance().getPlayerGlobalRank(player);
             if (rank == 0 || rank > 100)
-            {
                 writer.WriteByte(0);
-            }
             else if (rank <= 10)
-            {
                 writer.WriteByte(1);
-            }
             else if (rank <= 50)
-            {
                 writer.WriteByte(2);
-            }
             else if (rank <= 100)
-            {
                 writer.WriteByte(3);
-            }
 
             if (clan != null)
-            {
-                writer.WriteByte((byte)clan.getCastleId());
-            }
+                writer.WriteByte((byte)(clan.getCastleId() ?? 0));
             else
-            {
                 writer.WriteByte(0);
-            }
 
             if (_shareLocation)
             {

@@ -35,7 +35,7 @@ public struct RequestPledgeWaitingApplyPacket: IIncomingPacket<GameSession>
         if (clan == null)
             return ValueTask.CompletedTask;
 
-        PledgeApplicantInfo info = new PledgeApplicantInfo(player.ObjectId, player.getName(), player.getLevel(), _karma, _clanId, _message);
+        PledgeApplicantInfo info = new PledgeApplicantInfo(player.ObjectId, player.getName(), player.getLevel(), _karma, clan, _message);
         if (ClanEntryManager.getInstance().addPlayerApplicationToClan(_clanId, info))
         {
             player.sendPacket(new ExPledgeRecruitApplyInfoPacket(ClanEntryStatus.WAITING));

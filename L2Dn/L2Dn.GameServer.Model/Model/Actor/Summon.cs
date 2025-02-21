@@ -500,6 +500,7 @@ public abstract class Summon: Playable
 
 	public override PetInventory? getInventory()
 	{
+        // TODO: maybe create NullInventory class to avoid null checking?
 		return null;
 	}
 

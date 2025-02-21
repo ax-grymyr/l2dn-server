@@ -27,7 +27,7 @@ public readonly struct PetSummonInfoPacket: IOutgoingPacket
 	private readonly int _maxFed;
 	private readonly int _curFed;
 	private readonly int _statusMask = 0;
-	
+
 	public PetSummonInfoPacket(Summon summon, int value)
 	{
 		_summon = summon;
@@ -73,7 +73,7 @@ public readonly struct PetSummonInfoPacket: IOutgoingPacket
 			_statusMask |= 0x20;
 		}
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.PET_INFO);
@@ -126,7 +126,7 @@ public readonly struct PetSummonInfoPacket: IOutgoingPacket
 		writer.WriteInt64(_summon.getStat().getExp()); // 0% absolute value
 		writer.WriteInt64(Math.Min(_summon.getExpForThisLevel(), _summon.getStat().getExp())); // 0% absolute value
 		writer.WriteInt64(_summon.getExpForNextLevel()); // 100% absolute value
-		writer.WriteInt32(_summon.isPet() ? _summon.getInventory().getTotalWeight() : 0); // weight
+		writer.WriteInt32(_summon.isPet() ? _summon.getInventory()?.getTotalWeight() ?? 0 : 0); // weight
 		writer.WriteInt32(_summon.getMaxLoad()); // max weight it can carry
 		writer.WriteInt32(_summon.getPAtk()); // patk
 		writer.WriteInt32(_summon.getPDef()); // pdef
@@ -151,30 +151,34 @@ public readonly struct PetSummonInfoPacket: IOutgoingPacket
 		writer.WriteByte(0); // Maximum Summon Points
 
 		Set<AbnormalVisualEffect> aves = _summon.getEffectList().getCurrentAbnormalVisualEffects();
-		Team team = Config.BLUE_TEAM_ABNORMAL_EFFECT != null && Config.RED_TEAM_ABNORMAL_EFFECT != null ? _summon.getTeam() : Team.NONE;
+        Team team = Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None &&
+            Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None
+                ? _summon.getTeam()
+                : Team.NONE;
+
 		writer.WriteInt16((short)(aves.size() + (_summon.isInvisible() ? 1 : 0) + (team != Team.NONE ? 1 : 0))); // Confirmed
 		foreach (AbnormalVisualEffect ave in aves)
 		{
 			writer.WriteInt16((short)ave); // Confirmed
 		}
-		
+
 		if (_summon.isInvisible())
 		{
 			writer.WriteInt16((short)AbnormalVisualEffect.STEALTH);
 		}
-		
+
 		if (team == Team.BLUE)
 		{
-			if (Config.BLUE_TEAM_ABNORMAL_EFFECT != null)
+			if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 			{
 				writer.WriteInt16((short)Config.BLUE_TEAM_ABNORMAL_EFFECT);
 			}
 		}
-		else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != null)
+		else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 		{
 			writer.WriteInt16((short)Config.RED_TEAM_ABNORMAL_EFFECT);
 		}
-		
+
 		writer.WriteByte((byte)_statusMask);
 		if (_summon.isPet())
 		{

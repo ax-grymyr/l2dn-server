@@ -211,7 +211,7 @@ public class Item: WorldObject
 	 */
 	public void pickupMe(Creature creature)
 	{
-		WorldRegion oldregion = getWorldRegion();
+		WorldRegion? oldregion = getWorldRegion();
 
 		// Create a server->client GetItem packet to pick up the Item
 		creature.broadcastPacket(new GetItemPacket(this, creature.ObjectId));
@@ -222,7 +222,7 @@ public class Item: WorldObject
 		}
 
 		// if this item is a mercenary ticket, remove the spawns!
-		Castle castle = CastleManager.getInstance().getCastle(this);
+		Castle? castle = CastleManager.getInstance().getCastle(this);
 		if (castle != null && SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), getId()) != null)
 		{
 			SiegeGuardManager.getInstance().removeTicket(this);

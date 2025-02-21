@@ -8,78 +8,85 @@ namespace L2Dn.GameServer.Model.Clans.Entries;
 public class PledgeApplicantInfo
 {
 	private readonly int _playerId;
-	private readonly int _requestClanId;
+	private readonly Clan _requestClan;
 	private string _playerName;
 	private int _playerLvl;
 	private CharacterClass _classId;
 	private readonly int _karma;
 	private readonly string _message;
-	
-	public PledgeApplicantInfo(int playerId, string playerName, int playerLevel, int karma, int requestClanId, string message)
+    private Player? _player;
+
+	public PledgeApplicantInfo(int playerId, string playerName, int playerLevel, int karma, Clan requestClan, string message)
 	{
 		_playerId = playerId;
-		_requestClanId = requestClanId;
+		_requestClan = requestClan;
 		_playerName = playerName;
 		_playerLvl = playerLevel;
 		_karma = karma;
 		_message = message;
 	}
-	
+
 	public int getPlayerId()
 	{
 		return _playerId;
 	}
-	
-	public int getRequestClanId()
+
+	public Clan getRequestClan()
 	{
-		return _requestClanId;
+		return _requestClan;
 	}
-	
+
 	public string getPlayerName()
 	{
-		if (isOnline() && !getPlayer().getName().equalsIgnoreCase(_playerName))
+        Player? player = getPlayer();
+		if (player != null && isOnline() && !player.getName().equalsIgnoreCase(_playerName))
 		{
-			_playerName = getPlayer().getName();
+			_playerName = player.getName();
 		}
+
 		return _playerName;
 	}
-	
+
 	public int getPlayerLvl()
 	{
-		if (isOnline() && getPlayer().getLevel() != _playerLvl)
+        Player? player = getPlayer();
+		if (player != null && isOnline() && player.getLevel() != _playerLvl)
 		{
-			_playerLvl = getPlayer().getLevel();
+			_playerLvl = player.getLevel();
 		}
+
 		return _playerLvl;
 	}
-	
+
 	public CharacterClass getClassId()
 	{
-		if (isOnline() && getPlayer().getBaseClass() != _classId)
+        Player? player = getPlayer();
+		if (player != null && isOnline() && player.getBaseClass() != _classId)
 		{
-			_classId = getPlayer().getClassId();
+			_classId = player.getClassId();
 		}
 
 		return _classId;
 	}
-	
+
 	public string getMessage()
 	{
 		return _message;
 	}
-	
+
 	public int getKarma()
 	{
 		return _karma;
 	}
-	
-	public Player getPlayer()
+
+	public Player? getPlayer()
 	{
-		return World.getInstance().getPlayer(_playerId);
+		return _player ??= World.getInstance().getPlayer(_playerId);
 	}
-	
+
 	public bool isOnline()
-	{
-		return getPlayer() != null && getPlayer().getOnlineStatus() != CharacterOnlineStatus.Offline;
+    {
+        Player? player = getPlayer();
+		return player != null && player.getOnlineStatus() != CharacterOnlineStatus.Offline;
 	}
 }

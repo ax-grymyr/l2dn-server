@@ -16,7 +16,7 @@ public readonly struct PrivateStoreMsgSellPacket: IOutgoingPacket
 
         TradeList sellList = player.getSellList();
         if (sellList != null || player.isSellingBuffs())
-            _storeMsg = sellList.getTitle();
+            _storeMsg = sellList?.getTitle() ?? string.Empty; // TODO: null checking hack, msg must be passed to the constructor instead
     }
 
     public void WriteContent(PacketBitWriter writer)

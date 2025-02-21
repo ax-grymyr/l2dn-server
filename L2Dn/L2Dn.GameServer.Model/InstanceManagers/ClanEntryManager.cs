@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Clans.Entries;
 using L2Dn.GameServer.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using Clan = L2Dn.GameServer.Model.Clans.Clan;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -36,17 +37,17 @@ public class ClanEntryManager
 			foreach (PledgeRecruit pledgeRecruit in ctx.PledgeRecruits)
 			{
 				int clanId = pledgeRecruit.ClanId;
+                Clan? clan = ClanTable.getInstance().getClan(clanId);
+                if (clan == null)
+                {
+                    removeFromClanList(clanId); // Remove non existing clan data.
+                    continue;
+                }
 
-				_clanList.put(clanId,
-					new PledgeRecruitInfo(clanId, pledgeRecruit.Karma, pledgeRecruit.Information,
+                _clanList.put(clanId,
+					new PledgeRecruitInfo(clan, pledgeRecruit.Karma, pledgeRecruit.Information,
 						pledgeRecruit.DetailedInformation, pledgeRecruit.ApplicationType,
 						pledgeRecruit.RecruitType));
-
-				// Remove non existing clan data.
-				if (ClanTable.getInstance().getClan(clanId) == null)
-				{
-					removeFromClanList(clanId);
-				}
 			}
 			LOGGER.Info(GetType().Name +": Loaded " + _clanList.Count + " clan entries.");
 		}
@@ -100,9 +101,16 @@ public class ClanEntryManager
 
 			foreach (var record in query)
 			{
+                Clan? clan = ClanTable.getInstance().getClan(record.ClanId);
+                if (clan == null)
+                {
+                    removeFromClanList(record.ClanId); // Remove non-existing clan data.
+                    continue;
+                }
+
 				_applicantList.computeIfAbsent(record.ClanId, k => new()).put(record.ClanId,
 					new PledgeApplicantInfo(record.CharacterId, record.CharacterName, record.Level,
-						record.Karma, record.ClanId, record.Message));
+						record.Karma, clan, record.Message));
 			}
 
 			LOGGER.Info(GetType().Name +": Loaded " + _applicantList.Count + " player applications.");
@@ -167,7 +175,7 @@ public class ClanEntryManager
 				ctx.PledgeApplicants.Add(new PledgeApplicant()
 				{
 					CharacterId = info.getPlayerId(),
-					ClanId = info.getRequestClanId(),
+					ClanId = info.getRequestClan().getId(),
 					Karma = info.getKarma(),
 					Message = info.getMessage(),
 				});

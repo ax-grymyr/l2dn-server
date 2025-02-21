@@ -16,19 +16,18 @@ public class ConditionUsingItemType(ItemTypeMask mask): Condition
     protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
     {
         if (effector == null)
-        {
             return false;
-        }
 
         bool isArmor = (mask & ((ItemTypeMask)ArmorType.MAGIC | ArmorType.LIGHT | ArmorType.HEAVY)) !=
             ItemTypeMask.Zero;
 
         if (!effector.isPlayer())
-        {
             return !isArmor && (mask & effector.getAttackType()) != ItemTypeMask.Zero;
-        }
 
-        Inventory inv = effector.getInventory();
+        Inventory? inv = effector.getInventory();
+        if (inv == null)
+            return false;
+
         // If ConditionUsingItemType is one between Light, Heavy or Magic.
         if (isArmor)
         {

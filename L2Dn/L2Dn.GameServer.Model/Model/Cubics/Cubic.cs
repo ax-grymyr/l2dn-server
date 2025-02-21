@@ -19,437 +19,448 @@ namespace L2Dn.GameServer.Model.Cubics;
 
 public class Cubic: Creature
 {
-	private readonly Player _owner;
-	private readonly Player _caster;
-	private readonly CubicTemplate _template;
-	private ScheduledFuture? _skillUseTask;
-	private ScheduledFuture? _expireTask;
+    private readonly Player _owner;
+    private readonly Player _caster;
+    private readonly CubicTemplate _template;
+    private ScheduledFuture? _skillUseTask;
+    private ScheduledFuture? _expireTask;
 
-	public Cubic(Player owner, Player? caster, CubicTemplate template): base(template)
-	{
-		InstanceType = InstanceType.Cubic;
-		_owner = owner;
-		_caster = caster ?? owner;
-		_template = template;
-		activate();
-	}
+    public Cubic(Player owner, Player? caster, CubicTemplate template): base(template)
+    {
+        InstanceType = InstanceType.Cubic;
+        _owner = owner;
+        _caster = caster ?? owner;
+        _template = template;
+        activate();
+    }
 
-	private void activate()
-	{
-		_skillUseTask = ThreadPool.scheduleAtFixedRate(readyToUseSkill, 0, _template.getDelay() * 1000);
-		_expireTask = ThreadPool.schedule(deactivate, _template.getDuration() * 1000);
-	}
+    private void activate()
+    {
+        _skillUseTask = ThreadPool.scheduleAtFixedRate(readyToUseSkill, 0, _template.getDelay() * 1000);
+        _expireTask = ThreadPool.schedule(deactivate, _template.getDuration() * 1000);
+    }
 
-	public void deactivate()
-	{
-		if (_skillUseTask != null && !_skillUseTask.isDone())
-		{
-			_skillUseTask.cancel(true);
-		}
-		_skillUseTask = null;
-		if (_expireTask != null && !_expireTask.isDone())
-		{
-			_expireTask.cancel(true);
-		}
-		_expireTask = null;
-		_owner.getCubics().remove(_template.getId());
-		_owner.sendPacket(new ExUserInfoCubicPacket(_owner));
-		_owner.broadcastCharInfo();
-	}
+    public void deactivate()
+    {
+        if (_skillUseTask != null && !_skillUseTask.isDone())
+        {
+            _skillUseTask.cancel(true);
+        }
 
-	private void readyToUseSkill()
-	{
-		switch (_template.getTargetType())
-		{
-			case CubicTargetType.TARGET:
-			{
-				actionToCurrentTarget();
-				break;
-			}
-			case CubicTargetType.BY_SKILL:
-			{
-				actionToTargetBySkill();
-				break;
-			}
-			case CubicTargetType.HEAL:
-			{
-				actionHeal();
-				break;
-			}
-			case CubicTargetType.MASTER:
-			{
-				actionToMaster();
-				break;
-			}
-		}
-	}
+        _skillUseTask = null;
+        if (_expireTask != null && !_expireTask.isDone())
+        {
+            _expireTask.cancel(true);
+        }
 
-	private CubicSkill chooseSkill()
-	{
-		double random = Rnd.nextDouble() * 100;
-		double commulativeChance = 0;
-		foreach (CubicSkill cubicSkill in _template.getCubicSkills())
-		{
-			if ((commulativeChance += cubicSkill.getTriggerRate()) > random)
-			{
-				return cubicSkill;
-			}
-		}
-		return null;
-	}
+        _expireTask = null;
+        _owner.getCubics().remove(_template.getId());
+        _owner.sendPacket(new ExUserInfoCubicPacket(_owner));
+        _owner.broadcastCharInfo();
+    }
 
-	private void actionToCurrentTarget()
-	{
-		CubicSkill skill = chooseSkill();
-		WorldObject target = _owner.getTarget();
-		if (skill != null && target != null)
-		{
-			tryToUseSkill(target, skill);
-		}
-	}
+    private void readyToUseSkill()
+    {
+        switch (_template.getTargetType())
+        {
+            case CubicTargetType.TARGET:
+            {
+                actionToCurrentTarget();
+                break;
+            }
+            case CubicTargetType.BY_SKILL:
+            {
+                actionToTargetBySkill();
+                break;
+            }
+            case CubicTargetType.HEAL:
+            {
+                actionHeal();
+                break;
+            }
+            case CubicTargetType.MASTER:
+            {
+                actionToMaster();
+                break;
+            }
+        }
+    }
 
-	private void actionToTargetBySkill()
-	{
-		CubicSkill skill = chooseSkill();
-		if (skill != null)
-		{
-			switch (skill.getTargetType())
-			{
-				case CubicTargetType.TARGET:
-				{
-					WorldObject target = _owner.getTarget();
-					if (target != null)
-					{
-						tryToUseSkill(target, skill);
-					}
-					break;
-				}
-				case CubicTargetType.HEAL:
-				{
-					actionHeal();
-					break;
-				}
-				case CubicTargetType.MASTER:
-				{
-					tryToUseSkill(_owner, skill);
-					break;
-				}
-			}
-		}
-	}
+    private CubicSkill? chooseSkill()
+    {
+        double random = Rnd.nextDouble() * 100;
+        double commulativeChance = 0;
+        foreach (CubicSkill cubicSkill in _template.getCubicSkills())
+        {
+            if ((commulativeChance += cubicSkill.getTriggerRate()) > random)
+                return cubicSkill;
+        }
 
-	private void actionHeal()
-	{
-		double random = Rnd.nextDouble() * 100;
-		double commulativeChance = 0;
-		foreach (CubicSkill cubicSkill in _template.getCubicSkills())
-		{
-			if ((commulativeChance += cubicSkill.getTriggerRate()) > random)
-			{
-				Skill skill = cubicSkill.getSkill();
-				if (skill != null && Rnd.get(100) < cubicSkill.getSuccessRate())
-				{
-					Party party = _owner.getParty();
-					IEnumerable<Creature> stream;
-					if (party != null)
-					{
-						stream = World.getInstance().getVisibleObjectsInRange<Creature>(_owner, Config.ALT_PARTY_RANGE,
-							c => c.getParty() == party && _template.validateConditions(this, _owner, c) &&
-							     cubicSkill.validateConditions(this, _owner, c));
-					}
-					else
-					{
-						stream = _owner.getServitorsAndPets().Where(summon =>
-							_template.validateConditions(this, _owner, summon) &&
-							cubicSkill.validateConditions(this, _owner, summon));
-					}
+        return null;
+    }
 
-					if (_template.validateConditions(this, _owner, _owner) && cubicSkill.validateConditions(this, _owner, _owner))
-					{
-						stream = stream.Concat([_owner]);
-					}
+    private void actionToCurrentTarget()
+    {
+        CubicSkill? skill = chooseSkill();
+        WorldObject? target = _owner.getTarget();
+        if (skill != null && target != null)
+        {
+            tryToUseSkill(target, skill);
+        }
+    }
 
-					Creature? target = stream.MinBy(c => c.getCurrentHpPercent());
-					if (target != null && !target.isDead()) // Life Cubic should not try to heal dead targets.
-					{
-						if (Rnd.nextDouble() > target.getCurrentHp() / target.getMaxHp())
-						{
-							activateCubicSkill(skill, target);
-						}
-						break;
-					}
-				}
-			}
-		}
-	}
+    private void actionToTargetBySkill()
+    {
+        CubicSkill? skill = chooseSkill();
+        if (skill != null)
+        {
+            switch (skill.getTargetType())
+            {
+                case CubicTargetType.TARGET:
+                {
+                    WorldObject? target = _owner.getTarget();
+                    if (target != null)
+                    {
+                        tryToUseSkill(target, skill);
+                    }
 
-	private void actionToMaster()
-	{
-		CubicSkill skill = chooseSkill();
-		if (skill != null)
-		{
-			tryToUseSkill(_owner, skill);
-		}
-	}
+                    break;
+                }
+                case CubicTargetType.HEAL:
+                {
+                    actionHeal();
+                    break;
+                }
+                case CubicTargetType.MASTER:
+                {
+                    tryToUseSkill(_owner, skill);
+                    break;
+                }
+            }
+        }
+    }
 
-	private void tryToUseSkill(WorldObject worldObject, CubicSkill cubicSkill)
-	{
-		WorldObject target = worldObject;
-		Skill skill = cubicSkill.getSkill();
-		if (_template.getTargetType() != CubicTargetType.MASTER && !(_template.getTargetType() == CubicTargetType.BY_SKILL && cubicSkill.getTargetType() == CubicTargetType.MASTER))
-		{
-			target = skill.getTarget(_owner, target, false, false, false);
-		}
+    private void actionHeal()
+    {
+        double random = Rnd.nextDouble() * 100;
+        double commulativeChance = 0;
+        foreach (CubicSkill cubicSkill in _template.getCubicSkills())
+        {
+            if ((commulativeChance += cubicSkill.getTriggerRate()) > random)
+            {
+                Skill skill = cubicSkill.getSkill();
+                if (skill != null && Rnd.get(100) < cubicSkill.getSuccessRate())
+                {
+                    Party? party = _owner.getParty();
+                    IEnumerable<Creature> stream;
+                    if (party != null)
+                    {
+                        stream = World.getInstance().getVisibleObjectsInRange<Creature>(_owner, Config.ALT_PARTY_RANGE,
+                            c => c.getParty() == party && _template.validateConditions(this, _owner, c) &&
+                                cubicSkill.validateConditions(this, _owner, c));
+                    }
+                    else
+                    {
+                        stream = _owner.getServitorsAndPets().Where(summon =>
+                            _template.validateConditions(this, _owner, summon) &&
+                            cubicSkill.validateConditions(this, _owner, summon));
+                    }
 
-		if (target != null)
-		{
-			if (target.isDoor() && !cubicSkill.canUseOnStaticObjects())
-			{
-				return;
-			}
+                    if (_template.validateConditions(this, _owner, _owner) &&
+                        cubicSkill.validateConditions(this, _owner, _owner))
+                    {
+                        stream = stream.Concat([_owner]);
+                    }
 
-			if (_template.validateConditions(this, _owner, target) && cubicSkill.validateConditions(this, _owner, target) && Rnd.get(100) < cubicSkill.getSuccessRate())
-			{
-				activateCubicSkill(skill, target);
-			}
-		}
-	}
+                    Creature? target = stream.MinBy(c => c.getCurrentHpPercent());
+                    if (target != null && !target.isDead()) // Life Cubic should not try to heal dead targets.
+                    {
+                        if (Rnd.nextDouble() > target.getCurrentHp() / target.getMaxHp())
+                        {
+                            activateCubicSkill(skill, target);
+                        }
 
-	private void activateCubicSkill(Skill skill, WorldObject target)
-	{
-		if (!_owner.hasSkillReuse(skill.getReuseHashCode()))
-		{
-			_caster.broadcastPacket(new MagicSkillUsePacket(_owner, target, skill.getDisplayId(), skill.getDisplayLevel(), skill.getHitTime(), skill.getReuseDelay()));
-			skill.activateSkill(this, target);
-			_owner.addTimeStamp(skill, skill.getReuseDelay());
-		}
-	}
+                        break;
+                    }
+                }
+            }
+        }
+    }
 
-	public override void sendDamageMessage(Creature target, Skill skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
-	{
-		if (miss || _owner == null)
-		{
-			return;
-		}
+    private void actionToMaster()
+    {
+        CubicSkill? skill = chooseSkill();
+        if (skill != null)
+        {
+            tryToUseSkill(_owner, skill);
+        }
+    }
 
-		if (_owner.isInOlympiadMode() && target.isPlayer() && ((Player) target).isInOlympiadMode() && ((Player) target).getOlympiadGameId() == _owner.getOlympiadGameId())
-		{
-			OlympiadGameManager.getInstance().notifyCompetitorDamage(_owner, damage);
-		}
+    private void tryToUseSkill(WorldObject worldObject, CubicSkill cubicSkill)
+    {
+        WorldObject target = worldObject;
+        Skill skill = cubicSkill.getSkill();
+        if (_template.getTargetType() != CubicTargetType.MASTER &&
+            !(_template.getTargetType() == CubicTargetType.BY_SKILL &&
+                cubicSkill.getTargetType() == CubicTargetType.MASTER))
+        {
+            target = skill.getTarget(_owner, target, false, false, false);
+        }
 
-		if (target.isHpBlocked() && !target.isNpc())
-		{
-			_owner.sendPacket(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
-		}
-		else
-		{
-			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_DEALT_S3_DAMAGE_TO_C2);
-			sm.Params.addString(getName());
-			sm.Params.addString(target.getName());
-			sm.Params.addInt(damage);
-			sm.Params.addPopup(target.ObjectId, _owner.ObjectId, damage * -1);
-			_owner.sendPacket(sm);
-		}
-	}
+        if (target != null)
+        {
+            if (target.isDoor() && !cubicSkill.canUseOnStaticObjects())
+            {
+                return;
+            }
 
-	public override void sendPacket<TPacket>(TPacket packet)
-	{
-		if (_owner != null)
-		{
-			_owner.sendPacket(packet);
-		}
-	}
+            if (_template.validateConditions(this, _owner, target) &&
+                cubicSkill.validateConditions(this, _owner, target) && Rnd.get(100) < cubicSkill.getSuccessRate())
+            {
+                activateCubicSkill(skill, target);
+            }
+        }
+    }
 
-	public override Player getActingPlayer()
-	{
-		return _owner;
-	}
+    private void activateCubicSkill(Skill skill, WorldObject target)
+    {
+        if (!_owner.hasSkillReuse(skill.getReuseHashCode()))
+        {
+            _caster.broadcastPacket(new MagicSkillUsePacket(_owner, target, skill.getDisplayId(),
+                skill.getDisplayLevel(), skill.getHitTime(), skill.getReuseDelay()));
 
-	/**
-	 * @return the {@link Creature} that casted this cubic
-	 */
-	public Creature getCaster()
-	{
-		return _caster;
-	}
+            skill.activateSkill(this, target);
+            _owner.addTimeStamp(skill, skill.getReuseDelay());
+        }
+    }
 
-	/**
-	 * @return {@code true} if cubic is casted from someone else but the owner, {@code false}
-	 */
-	public bool isGivenByOther()
-	{
-		return _caster != _owner;
-	}
+    public override void sendDamageMessage(Creature target, Skill skill, int damage, double elementalDamage, bool crit,
+        bool miss, bool elementalCrit)
+    {
+        if (miss || _owner == null)
+        {
+            return;
+        }
 
-	/**
-	 * @return the owner's name.
-	 */
-	public override string getName()
-	{
-		return _owner.getName();
-	}
+        if (_owner.isInOlympiadMode() && target.isPlayer() && ((Player)target).isInOlympiadMode() &&
+            ((Player)target).getOlympiadGameId() == _owner.getOlympiadGameId())
+        {
+            OlympiadGameManager.getInstance().notifyCompetitorDamage(_owner, damage);
+        }
 
-	/**
-	 * @return the owner's level.
-	 */
-	public override int getLevel()
-	{
-		return _owner.getLevel();
-	}
+        if (target.isHpBlocked() && !target.isNpc())
+        {
+            _owner.sendPacket(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
+        }
+        else
+        {
+            SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_DEALT_S3_DAMAGE_TO_C2);
+            sm.Params.addString(getName());
+            sm.Params.addString(target.getName());
+            sm.Params.addInt(damage);
+            sm.Params.addPopup(target.ObjectId, _owner.ObjectId, damage * -1);
+            _owner.sendPacket(sm);
+        }
+    }
 
-	public override int getX()
-	{
-		return _owner.getX();
-	}
+    public override void sendPacket<TPacket>(TPacket packet)
+    {
+        if (_owner != null)
+        {
+            _owner.sendPacket(packet);
+        }
+    }
 
-	public override int getY()
-	{
-		return _owner.getY();
-	}
+    public override Player getActingPlayer()
+    {
+        return _owner;
+    }
 
-	public override int getZ()
-	{
-		return _owner.getZ();
-	}
+    /**
+     * @return the {@link Creature} that casted this cubic
+     */
+    public Creature getCaster()
+    {
+        return _caster;
+    }
 
-	public override int getHeading()
-	{
-		return _owner.getHeading();
-	}
+    /**
+     * @return {@code true} if cubic is casted from someone else but the owner, {@code false}
+     */
+    public bool isGivenByOther()
+    {
+        return _caster != _owner;
+    }
 
-	public override int getInstanceId()
-	{
-		return _owner.getInstanceId();
-	}
+    /**
+     * @return the owner's name.
+     */
+    public override string getName()
+    {
+        return _owner.getName();
+    }
 
-	public override bool isInInstance()
-	{
-		return _owner.isInInstance();
-	}
+    /**
+     * @return the owner's level.
+     */
+    public override int getLevel()
+    {
+        return _owner.getLevel();
+    }
 
-	public override Instance getInstanceWorld()
-	{
-		return _owner.getInstanceWorld();
-	}
+    public override int getX()
+    {
+        return _owner.getX();
+    }
 
-	public override Location Location => _owner.Location;
+    public override int getY()
+    {
+        return _owner.getY();
+    }
 
-	public override double getRandomDamageMultiplier()
-	{
-		int random = (int) _owner.getStat().getValue(Stat.RANDOM_DAMAGE);
-		return 1 + (double) Rnd.get(-random, random) / 100;
-	}
+    public override int getZ()
+    {
+        return _owner.getZ();
+    }
 
-	public override int getMagicAccuracy()
-	{
-		return _owner.getMagicAccuracy();
-	}
+    public override int getHeading()
+    {
+        return _owner.getHeading();
+    }
 
-	/**
-	 * @return the {@link CubicTemplate} of this cubic
-	 */
-	public override CubicTemplate getTemplate()
-	{
-		return _template;
-	}
+    public override int getInstanceId()
+    {
+        return _owner.getInstanceId();
+    }
 
-	public override int getId()
-	{
-		return _template.getId();
-	}
+    public override bool isInInstance()
+    {
+        return _owner.isInInstance();
+    }
 
-	public override int getPAtk()
-	{
-		return _template.getBasePAtk();
-	}
+    public override Instance? getInstanceWorld()
+    {
+        return _owner.getInstanceWorld();
+    }
 
-	public override int getMAtk()
-	{
-		return _template.getBaseMAtk();
-	}
+    public override Location Location => _owner.Location;
 
-	public override Item getActiveWeaponInstance()
-	{
-		return null;
-	}
+    public override double getRandomDamageMultiplier()
+    {
+        int random = (int)_owner.getStat().getValue(Stat.RANDOM_DAMAGE);
+        return 1 + (double)Rnd.get(-random, random) / 100;
+    }
 
-	public override Weapon getActiveWeaponItem()
-	{
-		return null;
-	}
+    public override int getMagicAccuracy()
+    {
+        return _owner.getMagicAccuracy();
+    }
 
-	public override Item getSecondaryWeaponInstance()
-	{
-		return null;
-	}
+    /**
+     * @return the {@link CubicTemplate} of this cubic
+     */
+    public override CubicTemplate getTemplate()
+    {
+        return _template;
+    }
 
-	public override ItemTemplate getSecondaryWeaponItem()
-	{
-		return null;
-	}
+    public override int getId()
+    {
+        return _template.getId();
+    }
 
-	public override bool isAutoAttackable(Creature attacker)
-	{
-		return false;
-	}
+    public override int getPAtk()
+    {
+        return _template.getBasePAtk();
+    }
 
-	public override bool spawnMe()
-	{
-		return true;
-	}
+    public override int getMAtk()
+    {
+        return _template.getBaseMAtk();
+    }
 
-	public override void onSpawn()
-	{
-	}
+    public override Item? getActiveWeaponInstance()
+    {
+        return null;
+    }
 
-	public override bool deleteMe()
-	{
-		return true;
-	}
+    public override Weapon? getActiveWeaponItem()
+    {
+        return null;
+    }
 
-	public override bool decayMe()
-	{
-		return true;
-	}
+    public override Item? getSecondaryWeaponInstance()
+    {
+        return null;
+    }
 
-	public override void onDecay()
-	{
-	}
+    public override ItemTemplate? getSecondaryWeaponItem()
+    {
+        return null;
+    }
 
-	[MethodImpl(MethodImplOptions.Synchronized)]
-	public override void onTeleported()
-	{
-	}
+    public override bool isAutoAttackable(Creature attacker)
+    {
+        return false;
+    }
 
-	public override void sendInfo(Player player)
-	{
-	}
+    public override bool spawnMe()
+    {
+        return true;
+    }
 
-	public override bool isInvul()
-	{
-		return _owner.isInvul();
-	}
+    public override void onSpawn()
+    {
+    }
 
-	public override bool isTargetable()
-	{
-		return false;
-	}
+    public override bool deleteMe()
+    {
+        return true;
+    }
 
-	public override bool isUndying()
-	{
-		return true;
-	}
+    public override bool decayMe()
+    {
+        return true;
+    }
 
-	/**
-	 * Considered a player in order to send messages, calculate magic fail formula etc...
-	 */
-	public override bool isPlayer()
-	{
-		return true;
-	}
+    public override void onDecay()
+    {
+    }
 
-	public override bool isCubic()
-	{
-		return true;
-	}
+    [MethodImpl(MethodImplOptions.Synchronized)]
+    public override void onTeleported()
+    {
+    }
+
+    public override void sendInfo(Player player)
+    {
+    }
+
+    public override bool isInvul()
+    {
+        return _owner.isInvul();
+    }
+
+    public override bool isTargetable()
+    {
+        return false;
+    }
+
+    public override bool isUndying()
+    {
+        return true;
+    }
+
+    /**
+     * Considered a player in order to send messages, calculate magic fail formula etc...
+     */
+    public override bool isPlayer()
+    {
+        return true;
+    }
+
+    public override bool isCubic()
+    {
+        return true;
+    }
 }

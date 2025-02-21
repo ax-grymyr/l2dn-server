@@ -19,7 +19,10 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 
 	public void WriteContent(PacketBitWriter writer)
 	{
-		EnchantItemRequest? request = _player.getRequest<EnchantItemRequest>();
+        // TODO: packet writes 6 integer values, but requires a lot of calculations
+        //       to get the values. Logic must be moved out of packets.
+
+        EnchantItemRequest? request = _player.getRequest<EnchantItemRequest>();
 		if (request == null)
 		{
 			return;
@@ -30,7 +33,8 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 			return;
 		}
 
-		EnchantScroll? enchantScroll = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId());
+        // TODO: null check enforced
+		EnchantScroll enchantScroll = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId())!;
 		Item enchantItem = request.getEnchantingItem();
 		Item? addedItem = new Item(enchantItem.getId());
 		addedItem.setOwnerId(_player.ObjectId);
@@ -41,6 +45,7 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 		{
 			enchantSupportItem = EnchantItemData.getInstance().getSupportItem(request.getSupportItem().getId());
 		}
+
 		if (enchantScroll.isBlessed() || (request.getSupportItem() != null && enchantSupportItem != null && enchantSupportItem.isBlessed()))
 		{
 			addedItem.setEnchantLevel(0);

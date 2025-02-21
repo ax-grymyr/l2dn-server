@@ -22,7 +22,9 @@ internal readonly struct PledgeShowMemberListUpdatePacket: IOutgoingPacket
     private readonly bool _hasSponsor;
 
     public PledgeShowMemberListUpdatePacket(Player player)
-        : this(player.getClan().getClanMember(player.ObjectId))
+        : this((player.getClan() ?? throw new ArgumentException("Player is not in a clan", nameof(player))).
+            getClanMember(player.ObjectId) ??
+            throw new ArgumentException("Clan member not found for player", nameof(player)))
     {
     }
 

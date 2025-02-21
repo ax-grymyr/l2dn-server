@@ -26,6 +26,7 @@ public readonly struct ExShowSellCropListPacket: IOutgoingPacket
                 _cropsItems.put(cropId, item);
             }
         }
+
         foreach (CropProcure crop in CastleManorManager.getInstance().getCropProcure(_manorId, false))
         {
             if (_cropsItems.ContainsKey(crop.getId()) && crop.getAmount() > 0)
@@ -43,14 +44,16 @@ public readonly struct ExShowSellCropListPacket: IOutgoingPacket
         writer.WriteInt32(_cropsItems.Count); // size
         foreach (Item item in _cropsItems.Values)
         {
-            Seed seed = CastleManorManager.getInstance().getSeedByCrop(item.getId());
+            // TODO: This is null checking hack
+            // TODO: the proper structures and the valid arguments must be passed to the constructor
+            Seed? seed = CastleManorManager.getInstance().getSeedByCrop(item.getId());
             writer.WriteInt32(item.ObjectId); // Object id
             writer.WriteInt32(item.getId()); // crop id
-            writer.WriteInt32(seed.getLevel()); // seed level
+            writer.WriteInt32(seed?.getLevel() ?? 0); // seed level
             writer.WriteByte(1);
-            writer.WriteInt32(seed.getReward(1)); // reward 1 id
+            writer.WriteInt32(seed?.getReward(1) ?? 0); // reward 1 id
             writer.WriteByte(1);
-            writer.WriteInt32(seed.getReward(2)); // reward 2 id
+            writer.WriteInt32(seed?.getReward(2) ?? 0); // reward 2 id
 
             if (_castleCrops.TryGetValue(item.getId(), out CropProcure? crop))
             {

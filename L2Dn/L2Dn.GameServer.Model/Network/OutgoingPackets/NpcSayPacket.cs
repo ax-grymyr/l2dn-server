@@ -45,8 +45,9 @@ public readonly struct NpcSayPacket: IOutgoingPacket
 		_textType = messageType;
 		_npcId = 1000000 + npcId;
 		_npcString = npcString;
-		_parameters = new();
-	}
+		_parameters = [];
+        _text = string.Empty;
+    }
 
 	public NpcSayPacket(Npc npc, ChatType messageType, NpcStringId npcString)
 	{
@@ -55,7 +56,8 @@ public readonly struct NpcSayPacket: IOutgoingPacket
 		_npcId = 1000000 + npc.getTemplate().getDisplayId();
 		_npcString = npcString;
 		_parameters = [];
-	}
+        _text = string.Empty;
+}
 
 	/**
 	 * @param text the text to add as a parameter for this packet's message (replaces S1, S2 etc.)
@@ -73,16 +75,12 @@ public readonly struct NpcSayPacket: IOutgoingPacket
 	 */
 	public NpcSayPacket addStringParameters(params string[] @params)
 	{
-		if (@params != null && @params.Length > 0)
+		foreach (string item in @params)
 		{
-			foreach (string item in @params)
-			{
-				if (item != null && item.Length > 0)
-				{
-					_parameters.Add(item);
-				}
-			}
+			if (!string.IsNullOrEmpty(item))
+				_parameters.Add(item);
 		}
+
 		return this;
 	}
 
