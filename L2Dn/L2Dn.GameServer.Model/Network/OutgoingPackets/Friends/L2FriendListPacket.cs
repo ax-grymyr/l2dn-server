@@ -40,7 +40,7 @@ public readonly struct L2FriendListPacket: IOutgoingPacket
 				classId = CharInfoTable.getInstance().getClassIdById(objId);
 			}
 
-			_info.Add(new FriendInfo(objId, name, online, classId, level));
+			_info.Add(new FriendInfo(objId, name ?? string.Empty, online, classId, level));
 		}
 	}
 

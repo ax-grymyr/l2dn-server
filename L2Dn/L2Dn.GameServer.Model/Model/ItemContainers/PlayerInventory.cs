@@ -610,10 +610,10 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public override Item destroyItemByItemId(string process, int itemId, long count, Player actor, object reference)
+	public override Item? destroyItemByItemId(string process, int itemId, long count, Player actor, object? reference)
 	{
 		// Attempt to find non equipped items.
-		Item destroyItem = null;
+		Item? destroyItem = null;
 		ICollection<Item> items = getAllItemsByItemId(itemId);
 		foreach (Item item in items)
 		{

@@ -20,47 +20,48 @@ public class Lethal: AbstractEffect
 {
 	private readonly double _fullLethal;
 	private readonly double _halfLethal;
-	
+
 	public Lethal(StatSet @params)
 	{
 		_fullLethal = @params.getDouble("fullLethal", 0);
 		_halfLethal = @params.getDouble("halfLethal", 0);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.LETHAL_ATTACK;
 	}
-	
+
 	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
-	{
-		if (effector.isPlayer() && !effector.getAccessLevel().canGiveDamage())
+    {
+        AccessLevel? accessLevel = effector.getAccessLevel();
+		if (effector.isPlayer() && accessLevel != null && !accessLevel.canGiveDamage())
 		{
 			return;
 		}
-		
+
 		if (skill.getMagicLevel() < effected.getLevel() - 6)
 		{
 			return;
 		}
-		
+
 		if (!effected.isLethalable() || effected.isHpBlocked())
 		{
 			return;
 		}
-		
+
 		if (effector.isPlayer() && effected.isPlayer() && effected.isAffected(EffectFlag.DUELIST_FURY) && !effector.isAffected(EffectFlag.DUELIST_FURY))
 		{
 			return;
 		}
-		
+
 		double chanceMultiplier = Formulas.calcAttributeBonus(effector, effected, skill) * Formulas.calcGeneralTraitBonus(effector, effected, skill.getTraitType(), false);
-		
+
 		// Calculate instant kill resistance first.
 		if (Rnd.get(100) < effected.getStat().getValue(Stat.INSTANT_KILL_RESIST, 0))
 		{
@@ -68,7 +69,7 @@ public class Lethal: AbstractEffect
 			sm.Params.addString(effected.getName());
 			sm.Params.addString(effector.getName());
 			effected.sendPacket(sm);
-			
+
 			SystemMessagePacket sm2 = new SystemMessagePacket(SystemMessageId.C1_S_ATTACK_WENT_ASTRAY);
 			sm2.Params.addString(effector.getName());
 			effector.sendPacket(sm2);
@@ -107,7 +108,7 @@ public class Lethal: AbstractEffect
 			}
 			effector.sendPacket(SystemMessageId.HALF_KILL);
 		}
-		
+
 		// No matter if lethal succeeded or not, its reflected.
 		Formulas.calcCounterAttack(effector, effected, skill, false);
 	}

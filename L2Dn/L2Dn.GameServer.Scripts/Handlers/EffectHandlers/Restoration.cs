@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
+using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
@@ -55,13 +56,13 @@ public class Restoration: AbstractEffect
 		}
 		else if (effected.isPet() && effectedPlayer != null)
 		{
-			Item? newItem = effected.getInventory().addItem("Skill", _itemId, _itemCount, effectedPlayer, effector);
+			Item? newItem = effectedPlayer.getInventory().addItem("Skill", _itemId, _itemCount, effectedPlayer, effector);
 			if (newItem != null && _itemEnchantmentLevel > 0)
 			{
 				newItem.setEnchantLevel(_itemEnchantmentLevel);
 			}
 
-			effectedPlayer.sendPacket(new PetItemListPacket(effected.getInventory().getItems()));
+			effectedPlayer.sendPacket(new PetItemListPacket(effectedPlayer.getInventory().getItems()));
 		}
 	}
 

@@ -1,26 +1,25 @@
-﻿using L2Dn.GameServer.Model;
+﻿using System.Collections.Immutable;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
-public readonly struct NewCharacterSuccessPacket: IOutgoingPacket
+public readonly struct NewCharacterSuccessPacket(ImmutableArray<PlayerTemplate> templates): IOutgoingPacket
 {
-    private readonly List<PlayerTemplate> _templates;
-
-    public NewCharacterSuccessPacket(List<PlayerTemplate> templates)
-    {
-        _templates = templates;
-    }
-
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.NEW_CHARACTER_SUCCESS);
 
-        writer.WriteInt32(_templates.Count);
-        foreach (PlayerTemplate chr in _templates)
+        if (templates.IsDefaultOrEmpty)
         {
-            // TODO: Unhardcode these
+            writer.WriteInt32(0);
+            return;
+        }
+
+        writer.WriteInt32(templates.Length);
+        foreach (PlayerTemplate chr in templates)
+        {
+            // TODO: Unhardcode numbers
             writer.WriteInt32((int)chr.getRace());
             writer.WriteInt32((int)chr.getClassId());
             writer.WriteInt32(99);

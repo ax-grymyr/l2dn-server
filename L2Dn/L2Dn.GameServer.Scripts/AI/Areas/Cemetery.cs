@@ -30,8 +30,11 @@ public class Cemetery: AbstractScript
 
     private void OnKill(OnAttackableKill onAttackableKill)
     {
+        Player? killer = onAttackableKill.getAttacker();
+        if (killer == null)
+            return;
+
         Npc npc = onAttackableKill.getTarget();
-        Player killer = onAttackableKill.getAttacker();
         bool isSummon = onAttackableKill.isSummon();
         if (getRandom(100) < 10)
         {

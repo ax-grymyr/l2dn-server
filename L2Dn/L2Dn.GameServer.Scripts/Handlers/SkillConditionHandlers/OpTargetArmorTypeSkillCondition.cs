@@ -36,10 +36,10 @@ public class OpTargetArmorTypeSkillCondition: ISkillCondition
         }
 
         Creature targetCreature = (Creature)target;
-        Inventory inv = targetCreature.getInventory();
+        Inventory? inv = targetCreature.getInventory();
 
         // Get the chest armor.
-        Item? chest = inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
+        Item? chest = inv?.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
         if (chest == null)
         {
             return false;
@@ -52,7 +52,7 @@ public class OpTargetArmorTypeSkillCondition: ISkillCondition
         long chestBodyPart = chest.getTemplate().getBodyPart();
 
         // Get the legs armor.
-        Item? legs = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
+        Item? legs = inv?.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
 
         // Get the legs item type.
         ItemType? legsType = null;

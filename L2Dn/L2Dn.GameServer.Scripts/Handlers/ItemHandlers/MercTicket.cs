@@ -38,7 +38,7 @@ public class MercTicket: /*AbstractNpcAI, */ IItemHandler
 		}
 
 		int castleId = castle.getResidenceId();
-		SiegeGuardHolder holder = SiegeGuardManager.getInstance().getSiegeGuardByItem(castleId, item.getId());
+		SiegeGuardHolder? holder = SiegeGuardManager.getInstance().getSiegeGuardByItem(castleId, item.getId());
 		if (holder == null || castleId != holder.getCastleId())
 		{
 			player.sendPacket(SystemMessageId.MERCENARIES_CANNOT_BE_POSITIONED_HERE);

@@ -15,7 +15,7 @@ public readonly struct L2FriendPacket: IOutgoingPacket
 	private readonly bool _online;
 	private readonly int _objid;
 	private readonly string _name;
-	
+
 	/**
 	 * @param action - true for adding, false for remove
 	 * @param objId
@@ -24,14 +24,14 @@ public readonly struct L2FriendPacket: IOutgoingPacket
 	{
 		_action = action;
 		_objid = objId;
-		_name = CharInfoTable.getInstance().getNameById(objId);
+		_name = CharInfoTable.getInstance().getNameById(objId) ?? string.Empty;
 		_online = World.getInstance().getPlayer(objId) != null;
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.L2_FRIEND);
-		
+
 		writer.WriteInt32(_action ? 1 : 3); // 1-add 3-remove
 		writer.WriteInt32(_objid);
 		writer.WriteString(_name);

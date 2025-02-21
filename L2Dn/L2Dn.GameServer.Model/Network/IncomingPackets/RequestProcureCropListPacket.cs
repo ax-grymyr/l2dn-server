@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Network;
@@ -27,7 +28,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
             return;
         }
 
-        _items = new(count);
+        _items = new List<CropHolder>(count);
         for (int i = 0; i < count; i++)
         {
             int objId = reader.ReadInt32();
@@ -61,13 +62,14 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 		}
 
 		Npc manager = player.getLastFolkNPC();
-		if (!(manager is Merchant) || !manager.canInteract(player))
+        Castle? castle = manager.getCastle();
+		if (!(manager is Merchant) || !manager.canInteract(player) || castle == null)
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
 		}
 
-		int castleId = manager.getCastle().getResidenceId();
+		int castleId = castle.getResidenceId();
 		if (manager.getParameters().getInt("manor_id", -1) != castleId)
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -85,7 +87,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			CropProcure cp = i.getCropProcure();
+			CropProcure? cp = i.getCropProcure();
 			if (cp == null || cp.getAmount() < i.getCount())
 			{
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -128,12 +130,14 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 
 		// Proceed the purchase
 		foreach (CropHolder i in _items)
-		{
-			long rewardPrice = ItemData.getInstance().getTemplate(i.getRewardId()).getReferencePrice();
+        {
+            ItemTemplate? rewardItemTemplate = ItemData.getInstance().getTemplate(i.getRewardId());
+            if (rewardItemTemplate == null)
+                continue;
+
+			long rewardPrice = rewardItemTemplate.getReferencePrice();
 			if (rewardPrice == 0)
-			{
 				continue;
-			}
 
 			long rewardItemCount = i.getPrice() / rewardPrice;
 			if (rewardItemCount < 1)
@@ -159,7 +163,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 				continue;
 			}
 
-			CropProcure cp = i.getCropProcure();
+			CropProcure cp = i.getCropProcure()!;
 			if (!cp.decreaseAmount(i.getCount()) || (fee > 0 && !player.reduceAdena("Manor", fee, manager, true)) || !player.destroyItem("Manor", i.ObjectId, i.getCount(), manager, true))
 			{
 				continue;
@@ -192,26 +196,20 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 
 		public long getPrice()
 		{
-			return getCount() * _cp.getPrice();
+			return getCount() * (_cp?.getPrice() ?? 0);
 		}
 
-		public CropProcure getCropProcure()
-		{
-			if (_cp == null)
-			{
-				_cp = CastleManorManager.getInstance().getCropProcure(manorId, getId(), false);
-			}
-
-			return _cp;
-		}
+		public CropProcure? getCropProcure()
+        {
+            return _cp ??= CastleManorManager.getInstance().getCropProcure(manorId, getId(), false);
+        }
 
 		public int getRewardId()
-		{
-			if (_rewardId == 0)
-			{
-				_rewardId = CastleManorManager.getInstance().getSeedByCrop(_cp.getId()).getReward(_cp.getReward());
-			}
-			return _rewardId;
+        {
+			if (_rewardId == 0 && _cp != null)
+				_rewardId = CastleManorManager.getInstance().getSeedByCrop(_cp.getId())?.getReward(_cp.getReward()) ?? 0;
+
+            return _rewardId;
 		}
 	}
 }

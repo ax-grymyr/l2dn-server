@@ -17,15 +17,14 @@ public readonly struct ExMissionLevelRewardListPacket: IOutgoingPacket
     private readonly List<int> _collectedKeyRewards;
     private readonly List<int> _collectedBonusRewards;
 
-    public ExMissionLevelRewardListPacket(Player player)
+    public ExMissionLevelRewardListPacket(Player player, MissionLevelHolder holder)
     {
         _player = player;
-
-        _holder = MissionLevel.getInstance().getMissionBySeason(MissionLevel.getInstance().getCurrentSeason());
+        _holder = holder;
         _currentSeason = MissionLevel.getInstance().getCurrentSeason();
 
         // After normal rewards there will be bonus.
-        _maxNormalLevel = _holder.getBonusLevel();
+        _maxNormalLevel = holder.getBonusLevel();
 
         _info = _player.getMissionLevelProgress();
         _collectedNormalRewards = _info.getCollectedNormalRewards();
@@ -51,7 +50,7 @@ public readonly struct ExMissionLevelRewardListPacket: IOutgoingPacket
 
         int year = _currentSeason / 100;
         int month = _currentSeason % 100;
-        
+
         writer.WriteInt32(_info.getCurrentLevel()); // Level
         writer.WriteInt32(getPercent()); // PointPercent
         writer.WriteInt32(year); // SeasonYear

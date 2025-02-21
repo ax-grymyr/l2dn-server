@@ -130,7 +130,7 @@ public struct RequestMissionLevelReceiveRewardPacket: IIncomingPacket<GameSessio
 			}
 		}
 
-		player.sendPacket(new ExMissionLevelRewardListPacket(player));
+ 		player.sendPacket(new ExMissionLevelRewardListPacket(player, holder));
 
 		ThreadPool.schedule(() => player.removeRequest<RewardRequest>(), 300);
 

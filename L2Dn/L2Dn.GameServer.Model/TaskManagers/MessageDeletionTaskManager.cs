@@ -38,7 +38,7 @@ public class MessageDeletionTaskManager: Runnable
 				if (currentTime > entry.Value)
 				{
 					int messageId = entry.Key;
-					Message message = MailManager.getInstance().getMessage(messageId);
+					Message? message = MailManager.getInstance().getMessage(messageId);
 					if (message == null)
 					{
 						toRemove.Add(messageId);

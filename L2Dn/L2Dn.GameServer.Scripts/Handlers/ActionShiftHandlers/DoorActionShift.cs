@@ -27,8 +27,8 @@ public class DoorActionShift: IActionShiftHandler
 			player.setTarget(target);
 			Door door = (Door) target;
 			ClanHall? clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.getId());
-			Fort fort = door.getFort();
-			Castle castle = door.getCastle();
+			Fort? fort = door.getFort();
+			Castle? castle = door.getCastle();
 			player.sendPacket(new StaticObjectInfoPacket(door, player.isGM()));
 
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/doorinfo.htm", player);

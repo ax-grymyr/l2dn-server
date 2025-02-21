@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
@@ -51,8 +52,9 @@ public struct RequestChangeNicknameEmotePacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         Item? item = player.getInventory().getItemByItemId(_itemId);
-        if (item == null || item.getEtcItem() == null || item.getEtcItem().getHandlerName() == null ||
-            !item.getEtcItem().getHandlerName().equalsIgnoreCase("NicknameColor"))
+        EtcItem? etcItem = item?.getEtcItem();
+        if (item == null || etcItem == null || etcItem.getHandlerName() == null ||
+            !etcItem.getHandlerName().equalsIgnoreCase("NicknameColor"))
         {
             return ValueTask.CompletedTask;
         }

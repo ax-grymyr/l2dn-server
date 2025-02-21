@@ -61,14 +61,18 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 		for (int i = 0; i < _soulCrystalOptions.Length; i++)
 		{
 			int ensoulId = reader.ReadInt32(); // Ensoul option id
-			_soulCrystalOptions[i] = EnsoulData.getInstance().getOption(ensoulId);
+            EnsoulOption? option = EnsoulData.getInstance().getOption(ensoulId);
+            if (option != null)
+			    _soulCrystalOptions[i] = option;
 		}
 
 		_soulCrystalSpecialOptions = new EnsoulOption[reader.ReadByte()]; // Special ensoul size
 		for (int i = 0; i < _soulCrystalSpecialOptions.Length; i++)
 		{
 			int ensoulId = reader.ReadInt32(); // Special ensoul option id.
-			_soulCrystalSpecialOptions[i] = EnsoulData.getInstance().getOption(ensoulId);
+            EnsoulOption? option = EnsoulData.getInstance().getOption(ensoulId);
+            if (option != null)
+                _soulCrystalSpecialOptions[i] = option;
 		}
 	}
 
@@ -315,8 +319,11 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 
 					if (found < ingredient.getCount())
 					{
+                        ItemTemplate? ingredientTemplate = ItemData.getInstance().getTemplate(ingredient.getId());
+                        string ingredientName = ingredientTemplate != null ? ingredientTemplate.getName() : "Unknown"; // TODO: refactor later
+
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.REQUIRED_S1);
-						sm.Params.addString("+" + ingredient.getEnchantmentLevel() + " " + ItemData.getInstance().getTemplate(ingredient.getId()).getName());
+						sm.Params.addString("+" + ingredient.getEnchantmentLevel() + " " + ingredientName);
 						player.sendPacket(sm);
 					    return ValueTask.CompletedTask;
 					}
@@ -393,7 +400,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				else if (ingredient.getEnchantmentLevel() > 0)
 				{
 					// Take the enchanted item.
-					Item destroyedItem = inventory.destroyItem("Multisell", inventory.getAllItemsByItemId(ingredient.getId(), ingredient.getEnchantmentLevel()).First(), totalCount, player, npc);
+					Item? destroyedItem = inventory.destroyItem("Multisell", inventory.getAllItemsByItemId(ingredient.getId(), ingredient.getEnchantmentLevel()).First(), totalCount, player, npc);
 					if (destroyedItem != null)
 					{
 						itemEnchantmentProcessed = true;
@@ -435,7 +442,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				else
 				{
 					// Take a regular item.
-					Item destroyedItem = inventory.destroyItemByItemId("Multisell", ingredient.getId(), totalCount, player, npc);
+					Item? destroyedItem = inventory.destroyItemByItemId("Multisell", ingredient.getId(), totalCount, player, npc);
 					if (destroyedItem != null)
 					{
 						itemsToUpdate.Add(new ItemInfo(destroyedItem));
@@ -459,7 +466,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			List<ItemChanceHolder> products = entry.getProducts();
 			if (list.isChanceMultisell())
 			{
-				ItemChanceHolder randomProduct = ItemChanceHolder.getRandomHolder(entry.getProducts());
+				ItemChanceHolder? randomProduct = ItemChanceHolder.getRandomHolder(entry.getProducts());
 				products = randomProduct != null ? [randomProduct] : [];
 			}
 
@@ -618,7 +625,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				{
 					if (ingredient.getId() == Inventory.ADENA_ID)
 					{
-						taxPaid += (long)(ingredient.getCount() * list.getIngredientMultiplier() * list.getTaxRate() * _amount);
+						taxPaid += checked((long)(ingredient.getCount() * list.getIngredientMultiplier() * list.getTaxRate() * _amount));
 					}
 				}
 				if (taxPaid > 0)
@@ -629,6 +636,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 		}
 		catch (ArithmeticException ae)
 		{
+            PacketLogger.Instance.Error(ae);
 			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_QUANTITY_THAT_CAN_BE_INPUTTED);
 			return ValueTask.CompletedTask;
 		}
@@ -651,7 +659,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 	 * @param totalCount
 	 * @return {@code false} if ingredient amount is not enough, {@code true} otherwise.
 	 */
-	private bool checkIngredients(Player player, PreparedMultisellListHolder list, PlayerInventory inventory, Clan clan, int ingredientId, long totalCount)
+	private bool checkIngredients(Player player, PreparedMultisellListHolder list, PlayerInventory inventory, Clan? clan, int ingredientId, long totalCount)
 	{
 		SpecialItemType specialItem = (SpecialItemType)ingredientId;
 		if (Enum.IsDefined(specialItem))

@@ -11,6 +11,7 @@ using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events.Impl.Items;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
@@ -132,7 +133,7 @@ public class AutoUseTaskManager
 						TimeSpan reuseDelay = item.getReuseDelay();
 						if (reuseDelay <= TimeSpan.Zero || player.getItemRemainingReuseTime(item.ObjectId) <= TimeSpan.Zero)
 						{
-							EtcItem etcItem = item.getEtcItem();
+							EtcItem? etcItem = item.getEtcItem();
 							IItemHandler? handler = ItemHandler.getInstance().getHandler(etcItem);
 							if (handler != null && handler.useItem(player, item, false))
 							{
@@ -167,7 +168,7 @@ public class AutoUseTaskManager
 							TimeSpan reuseDelay = item.getReuseDelay();
 							if (reuseDelay <= TimeSpan.Zero || player.getItemRemainingReuseTime(item.ObjectId) <= TimeSpan.Zero)
 							{
-								EtcItem etcItem = item.getEtcItem();
+								EtcItem? etcItem = item.getEtcItem();
 								IItemHandler? handler = ItemHandler.getInstance().getHandler(etcItem);
 								if (handler != null && handler.useItem(player, item, false))
 								{
@@ -209,7 +210,7 @@ public class AutoUseTaskManager
 									TimeSpan reuseDelay = item.getReuseDelay();
 									if (reuseDelay <= TimeSpan.Zero || player.getItemRemainingReuseTime(item.ObjectId) <= TimeSpan.Zero)
 									{
-										EtcItem etcItem = item.getEtcItem();
+										EtcItem? etcItem = item.getEtcItem();
 										IItemHandler? handler = ItemHandler.getInstance().getHandler(etcItem);
 										if (handler != null && handler.useItem(player, item, false) && reuseDelay > TimeSpan.Zero)
 										{
@@ -523,12 +524,16 @@ public class AutoUseTaskManager
 
 		private bool canUseMagic(Playable playable, WorldObject target, Skill skill)
 		{
-			if (skill.getItemConsumeCount() > 0 && playable.getInventory().getInventoryItemCount(skill.getItemConsumeId(), -1) < skill.getItemConsumeCount())
-			{
-				return false;
-			}
+            Inventory? inventory = playable.getInventory();
 
-			if (skill.getMpConsume() > 0 && playable.getCurrentMp() < skill.getMpConsume())
+            if (skill.getItemConsumeCount() > 0 &&
+                inventory != null && inventory.getInventoryItemCount(skill.getItemConsumeId(), -1) <
+                skill.getItemConsumeCount())
+            {
+                return false;
+            }
+
+            if (skill.getMpConsume() > 0 && playable.getCurrentMp() < skill.getMpConsume())
 			{
 				return false;
 			}
@@ -574,12 +579,14 @@ public class AutoUseTaskManager
 				return false;
 			}
 
-			if (skill.getItemConsumeCount() > 0 && summon.getInventory().getInventoryItemCount(skill.getItemConsumeId(), -1) < skill.getItemConsumeCount())
-			{
-				return false;
-			}
+            Inventory? inventory = summon.getInventory();
+            if (skill.getItemConsumeCount() > 0 && inventory != null &&
+                inventory.getInventoryItemCount(skill.getItemConsumeId(), -1) < skill.getItemConsumeCount())
+            {
+                return false;
+            }
 
-			if (skill.getTargetType()==TargetType.SELF || skill.getTargetType()==TargetType.SUMMON)
+            if (skill.getTargetType()==TargetType.SELF || skill.getTargetType()==TargetType.SUMMON)
 			{
 				BuffInfo? summonInfo = summon.getEffectList().getBuffInfoBySkillId(skill.getId());
 				return summonInfo != null && summonInfo.getTime() >= TimeSpan.FromSeconds(REUSE_MARGIN_TIME);

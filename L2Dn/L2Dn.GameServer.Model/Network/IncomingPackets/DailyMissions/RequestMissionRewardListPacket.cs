@@ -1,4 +1,6 @@
-﻿using L2Dn.GameServer.Model.Actor;
+﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets.DailyMissions;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -17,9 +19,15 @@ public struct RequestMissionRewardListPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        ExMissionLevelRewardListPacket packet = new ExMissionLevelRewardListPacket(player);
+        MissionLevelHolder? holder = MissionLevel.getInstance()
+            .getMissionBySeason(MissionLevel.getInstance().getCurrentSeason());
+
+        if (holder == null)
+            return ValueTask.CompletedTask;
+
+        ExMissionLevelRewardListPacket packet = new ExMissionLevelRewardListPacket(player, holder);
         connection.Send(ref packet);
-        
+
         return ValueTask.CompletedTask;
     }
 }

@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 
@@ -35,11 +36,13 @@ public class OpEquipItemSkillCondition: ISkillCondition
         {
             case SkillConditionAffectType.CASTER:
             {
-                foreach (int itemId in _itemIds)
+                Inventory? inventory = caster.getInventory();
+                if (inventory != null)
                 {
-                    if (caster.getInventory().isItemEquipped(itemId))
+                    foreach (int itemId in _itemIds)
                     {
-                        return true;
+                        if (inventory.isItemEquipped(itemId))
+                            return true;
                     }
                 }
 
@@ -64,7 +67,8 @@ public class OpEquipItemSkillCondition: ISkillCondition
             case SkillConditionAffectType.BOTH:
             {
                 Player? player = target?.getActingPlayer();
-                if (target != null && target.isPlayer() && player != null)
+                Inventory? casterInventory = caster.getInventory();
+                if (target != null && target.isPlayer() && player != null && casterInventory != null)
                 {
                     foreach (int itemId in _itemIds)
                     {
@@ -72,10 +76,8 @@ public class OpEquipItemSkillCondition: ISkillCondition
                         {
                             foreach (int id in _itemIds)
                             {
-                                if (caster.getInventory().isItemEquipped(id))
-                                {
+                                if (casterInventory.isItemEquipped(id))
                                     return true;
-                                }
                             }
                         }
                     }

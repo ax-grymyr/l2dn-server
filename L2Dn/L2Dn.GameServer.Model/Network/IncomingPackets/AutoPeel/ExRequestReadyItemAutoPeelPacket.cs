@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Request;
+using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.OutgoingPackets.AutoPeel;
 using L2Dn.GameServer.Utilities;
@@ -24,8 +25,9 @@ public struct ExRequestReadyItemAutoPeelPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         Item? item = player.getInventory().getItemByObjectId(_itemObjectId);
-        if (item == null || !item.isEtcItem() || item.getEtcItem().getExtractableItems() == null ||
-            item.getEtcItem().getExtractableItems().Count == 0)
+        EtcItem? etcItem = item?.getEtcItem();
+        if (item == null || !item.isEtcItem() || etcItem == null || etcItem.getExtractableItems() == null ||
+            etcItem.getExtractableItems().Count == 0)
         {
             player.sendPacket(new ExReadyItemAutoPeelPacket(false, _itemObjectId));
             return ValueTask.CompletedTask;

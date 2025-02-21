@@ -84,7 +84,10 @@ public class MonsterDailyMissionHandler: AbstractDailyMissionHandler
             return;
         }
 
-        Player player = @event.getAttacker();
+        Player? player = @event.getAttacker();
+        if (player == null)
+            return;
+        
         int monsterLevel = monster.getLevel();
         if (_minLevel > 0 && (monsterLevel < _minLevel || monsterLevel > _maxLevel ||
                 player.getLevel() - monsterLevel > 15))

@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Request;
 using L2Dn.GameServer.Model.Items.Enchant;
+using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.Model.Enums;
@@ -15,9 +16,7 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 	{
 		EnchantItemRequest? request = player.getRequest<EnchantItemRequest>();
 		if (request == null)
-		{
 			return;
-		}
 
 		if ((!isMulti && request.getEnchantingItem() == null) || request.isProcessing() || request.getEnchantingScroll() == null)
 		{
@@ -86,9 +85,10 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 		if (!isMulti && request.getSupportItem() != null)
 		{
 			supportRate = EnchantItemData.getInstance().getSupportItem(request.getSupportItem().getId()).getBonusRate();
-			supportRate = supportRate * 100;
+			supportRate *= 100;
 		}
-		return (int) supportRate;
+
+        return (int)supportRate;
 	}
 
 	private int getPassiveRate(EnchantItemRequest request, int iteration)

@@ -252,10 +252,11 @@ public class Attackable: Npc
 		if (isMonster())
 		{
 			Monster mob = (Monster) this;
-			if (mob.getLeader() != null && mob.getLeader().hasMinions())
+            Monster? leader = mob.getLeader();
+			if (leader != null && leader.hasMinions())
 			{
 				int respawnTime = Config.MINIONS_RESPAWN_TIME.ContainsKey(getId()) ? Config.MINIONS_RESPAWN_TIME[getId()] * 1000 : -1;
-				mob.getLeader().getMinionList().onMinionDie(mob, respawnTime);
+                leader.getMinionList().onMinionDie(mob, respawnTime);
 			}
 
 			if (mob.hasMinions())

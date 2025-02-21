@@ -5,6 +5,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Html;
+using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -20,42 +21,32 @@ public class TerritoryStatus: IBypassHandler
 	public bool useBypass(string command, Player player, Creature? target)
 	{
 		if (target == null || !target.isNpc())
-		{
 			return false;
-		}
 
 		Npc npc = (Npc)target;
-		HtmlContent htmlContent;
+        Castle? castle = npc.getCastle();
+        Clan? clan = castle == null ? null : ClanTable.getInstance().getClan(castle.getOwnerId());
+
+        HtmlContent htmlContent;
+		if (castle != null && castle.getOwnerId() > 0 && clan != null)
 		{
-            Clan? clan = ClanTable.getInstance().getClan(npc.getCastle().getOwnerId());
-			if (npc.getCastle().getOwnerId() > 0 && clan != null)
-			{
-				htmlContent = HtmlContent.LoadFromFile("html/territorystatus.htm", player);
-				htmlContent.Replace("%clanname%", clan.getName());
-				htmlContent.Replace("%clanleadername%", clan.getLeaderName());
-			}
-			else
-			{
-				htmlContent = HtmlContent.LoadFromFile("html/territorynoclan.htm", player);
-			}
+			htmlContent = HtmlContent.LoadFromFile("html/territorystatus.htm", player);
+			htmlContent.Replace("%clanname%", clan.getName());
+			htmlContent.Replace("%clanleadername%", clan.getLeaderName());
+		}
+		else
+		{
+			htmlContent = HtmlContent.LoadFromFile("html/territorynoclan.htm", player);
 		}
 
-		htmlContent.Replace("%castlename%", npc.getCastle().getName());
-		htmlContent.Replace("%taxpercent%", npc.getCastle().getTaxPercent(TaxType.BUY).ToString());
+		htmlContent.Replace("%castlename%", castle?.getName() ?? string.Empty);
+		htmlContent.Replace("%taxpercent%", castle?.getTaxPercent(TaxType.BUY).ToString() ?? string.Empty);
 		htmlContent.Replace("%objectId%", npc.ObjectId.ToString());
 
-		{
-			if (npc.getCastle().getResidenceId() > 6)
-			{
-				htmlContent.Replace("%territory%", "The Kingdom of Elmore");
-			}
-			else
-			{
-				htmlContent.Replace("%territory%", "The Kingdom of Aden");
-			}
-		}
+        htmlContent.Replace("%territory%",
+            castle?.getResidenceId() > 6 ? "The Kingdom of Elmore" : "The Kingdom of Aden");
 
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent);
+        NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 		return true;
 	}

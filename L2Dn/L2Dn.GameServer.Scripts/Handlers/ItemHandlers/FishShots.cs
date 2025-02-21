@@ -42,7 +42,8 @@ public class FishShots: IItemHandler
 		}
 
 		long count = item.getCount();
-		bool gradeCheck = item.isEtcItem() && item.getEtcItem().getDefaultAction() == ActionType.FISHINGSHOT &&
+        EtcItem? etcItem = item.getEtcItem();
+		bool gradeCheck = item.isEtcItem() && etcItem != null && etcItem.getDefaultAction() == ActionType.FISHINGSHOT &&
 			weaponInst.getTemplate().getCrystalTypePlus() == item.getTemplate().getCrystalTypePlus();
 		if (!gradeCheck)
 		{

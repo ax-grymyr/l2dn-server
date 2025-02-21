@@ -61,12 +61,20 @@ public struct SetPrivateStoreListBuyPacket: IIncomingPacket<GameSession>
 			int visualId = reader.ReadInt32();
 
 			EnsoulOption[] soulCrystalOptions = new EnsoulOption[reader.ReadByte()];
-			for (int k = 0; k < soulCrystalOptions.Length; k++)
-				soulCrystalOptions[k] = EnsoulData.getInstance().getOption(reader.ReadInt32());
+            for (int k = 0; k < soulCrystalOptions.Length; k++)
+            {
+                EnsoulOption? option = EnsoulData.getInstance().getOption(reader.ReadInt32());
+                if (option != null)
+                    soulCrystalOptions[k] = option;
+            }
 
-			EnsoulOption[] soulCrystalSpecialOptions = new EnsoulOption[reader.ReadByte()];
-			for (int k = 0; k < soulCrystalSpecialOptions.Length; k++)
-				soulCrystalSpecialOptions[k] = EnsoulData.getInstance().getOption(reader.ReadInt32());
+            EnsoulOption[] soulCrystalSpecialOptions = new EnsoulOption[reader.ReadByte()];
+            for (int k = 0; k < soulCrystalSpecialOptions.Length; k++)
+            {
+                EnsoulOption? option = EnsoulData.getInstance().getOption(reader.ReadInt32());
+                if (option != null)
+                    soulCrystalSpecialOptions[k] = option;
+            }
 
 			// Unknown.
 			reader.ReadByte();

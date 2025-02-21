@@ -2,36 +2,26 @@
 
 namespace L2Dn.GameServer.Model.Ensoul;
 
-public class EnsoulOption: SkillHolder
+public class EnsoulOption(int id, string name, string desc, int skillId, int skillLevel)
+    : SkillHolder(skillId, skillLevel)
 {
-    private readonly int _id;
-    private readonly string _name;
-    private readonly string _desc;
-
-    public EnsoulOption(int id, string name, string desc, int skillId, int skillLevel): base(skillId, skillLevel)
-    {
-        _id = id;
-        _name = name;
-        _desc = desc;
-    }
-
     public int getId()
     {
-        return _id;
+        return id;
     }
 
     public string getName()
     {
-        return _name;
+        return name;
     }
 
     public string getDesc()
     {
-        return _desc;
+        return desc;
     }
 
     public override string ToString()
     {
-        return "Ensoul Id: " + _id + " Name: " + _name + " Desc: " + _desc;
+        return "Ensoul Id: " + id + " Name: " + name + " Desc: " + desc;
     }
 }

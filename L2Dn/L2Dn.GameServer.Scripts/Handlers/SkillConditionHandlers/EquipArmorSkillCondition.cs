@@ -58,7 +58,7 @@ public class EquipArmorSkillCondition: ISkillCondition
         }
 
         // Check legs armor.
-        Item? legs = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
+        Item? legs = inv?.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
         if (legs == null)
         {
             return false;

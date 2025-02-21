@@ -59,7 +59,7 @@ public class BeeHive: AbstractScript
 		if (!onAttackableAttack.isSummon())
 			return;
 
-		Pet? pet = onAttackableAttack.getAttacker().getPet();
+		Pet? pet = onAttackableAttack.getAttacker()?.getPet();
 		if (pet == null || pet.getCurrentFed() == 0 || pet.isDead() || pet.isAffectedBySkill(SKILLS[0]) || pet.isAffectedBySkill(SKILLS[1]))
 		{
 			return;
@@ -74,8 +74,11 @@ public class BeeHive: AbstractScript
 
 	private void OnKill(OnAttackableKill onAttackableKill)
 	{
+        Player? killer = onAttackableKill.getAttacker();
+        if (killer == null)
+            return;
+
 		Npc npc = onAttackableKill.getTarget();
-		Player killer = onAttackableKill.getAttacker();
 		if (killer.hasPet() && (npc.getId() == PET_70_MONSTER || npc.getId() == PET_80_MONSTER))
 		{
 			if (getRandom(1000) < 1)

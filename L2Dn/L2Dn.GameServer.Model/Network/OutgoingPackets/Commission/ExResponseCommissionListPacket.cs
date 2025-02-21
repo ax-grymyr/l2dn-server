@@ -22,7 +22,7 @@ public readonly struct ExResponseCommissionListPacket(
             {
                 writer.WriteInt32(DateTime.UtcNow.getEpochSecond());
                 writer.WriteInt32(chunkId);
-                int chunkSize = items.Count - listIndexStart;
+                int chunkSize = items!.Count - listIndexStart; // TODO: !!!
                 if (chunkSize > MAX_CHUNK_SIZE)
                     chunkSize = MAX_CHUNK_SIZE;
 

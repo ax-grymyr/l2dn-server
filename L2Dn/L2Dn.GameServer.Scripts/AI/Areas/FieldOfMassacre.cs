@@ -31,17 +31,20 @@ public class FieldOfMassacre: AbstractScript
 
     private void OnKill(OnAttackableKill onAttackableKill)
     {
+        Player? killer = onAttackableKill.getAttacker();
+        if (killer == null)
+            return;
+
         if (getRandom(100) < 10)
         {
             Npc npc = onAttackableKill.getTarget();
-            Player killer = onAttackableKill.getAttacker();
             bool isSummon = onAttackableKill.isSummon();
 
             Npc spawnBanshee = addSpawn(GUARD_BUTCHER, npc.Location, false, TimeSpan.FromMilliseconds(300000));
             Playable attacker = isSummon
                 ? (Playable?)killer.getServitors().Values.FirstOrDefault() ?? (Playable?)killer.getPet() ?? killer
                 : killer;
-            
+
             addAttackPlayerDesire(spawnBanshee, attacker);
             npc.deleteMe();
         }

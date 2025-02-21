@@ -27,8 +27,11 @@ public sealed class PlainsOfGlory: AbstractScript
 
     private void OnKill(OnAttackableKill onAttackableKill)
     {
+        Player? killer = onAttackableKill.getAttacker();
+        if (killer == null)
+            return;
+
         Npc npc = onAttackableKill.getTarget();
-        Player killer = onAttackableKill.getAttacker();
         bool isSummon = onAttackableKill.isSummon();
         if (getRandom(100) < 10)
         {
@@ -36,7 +39,7 @@ public sealed class PlainsOfGlory: AbstractScript
             Playable attacker = isSummon
                 ? (Playable?)killer.getServitors().Values.FirstOrDefault() ?? (Playable?)killer.getPet() ?? killer
                 : killer;
-            
+
             addAttackPlayerDesire(spawnBanshee, attacker);
             npc.deleteMe();
         }

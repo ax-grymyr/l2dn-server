@@ -66,8 +66,8 @@ public struct RequestAutoSoulShotPacket: IIncomingPacket<GameSession>
 	    {
 		    if (player.hasSummon())
 		    {
-			    bool isSoulshot = item.getEtcItem().getDefaultAction() == ActionType.SUMMON_SOULSHOT;
-			    bool isSpiritshot = item.getEtcItem().getDefaultAction() == ActionType.SUMMON_SPIRITSHOT;
+			    bool isSoulshot = item.getEtcItem()?.getDefaultAction() == ActionType.SUMMON_SOULSHOT;
+			    bool isSpiritshot = item.getEtcItem()?.getDefaultAction() == ActionType.SUMMON_SPIRITSHOT;
 			    if (isSoulshot)
 			    {
 				    int soulshotCount = 0;
@@ -154,9 +154,9 @@ public struct RequestAutoSoulShotPacket: IIncomingPacket<GameSession>
 	    }
 	    else if (isPlayerShot(item.getTemplate()))
 	    {
-		    bool isSoulshot = item.getEtcItem().getDefaultAction() == ActionType.SOULSHOT;
-		    bool isSpiritshot = item.getEtcItem().getDefaultAction() == ActionType.SPIRITSHOT;
-		    bool isFishingshot = item.getEtcItem().getDefaultAction() == ActionType.FISHINGSHOT;
+		    bool isSoulshot = item.getEtcItem()?.getDefaultAction() == ActionType.SOULSHOT;
+		    bool isSpiritshot = item.getEtcItem()?.getDefaultAction() == ActionType.SPIRITSHOT;
+		    bool isFishingshot = item.getEtcItem()?.getDefaultAction() == ActionType.FISHINGSHOT;
 		    if (player.getActiveWeaponItem() == player.getFistsWeaponItem())
 		    {
 			    player.sendPacket(isSoulshot

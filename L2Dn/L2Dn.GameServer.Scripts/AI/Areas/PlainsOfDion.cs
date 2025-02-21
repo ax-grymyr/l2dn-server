@@ -42,8 +42,11 @@ public sealed class PlainsOfDion: AbstractScript
 
     private void OnAttack(OnAttackableAttack onAttackableAttack)
     {
+        Player? player = onAttackableAttack.getAttacker();
+        if (player == null)
+            return;
+
         Npc npc = onAttackableAttack.getTarget();
-        Player player = onAttackableAttack.getAttacker();
         if (npc.isScriptValue(0))
         {
             int i = getRandom(5);

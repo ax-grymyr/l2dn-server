@@ -120,7 +120,8 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 			}
 
 			// Target must be in a party
-			if (!targetChar.isInParty())
+            Party? targetParty = targetChar.getParty();
+			if (!targetChar.isInParty() || targetParty == null)
 			{
 				player.sendPacket(SystemMessageId.SINCE_THE_PERSON_YOU_CHALLENGED_IS_NOT_CURRENTLY_IN_A_PARTY_THEY_CANNOT_DUEL_AGAINST_YOUR_PARTY);
 				return ValueTask.CompletedTask;
@@ -144,7 +145,7 @@ public struct RequestDuelStartPacket: IIncomingPacket<GameSession>
 			}
 
 			Player? partyLeader = null; // snatch party leader of targetChar's party
-			foreach (Player temp in targetChar.getParty().getMembers())
+			foreach (Player temp in targetParty.getMembers())
 			{
 				if (partyLeader == null)
 				{

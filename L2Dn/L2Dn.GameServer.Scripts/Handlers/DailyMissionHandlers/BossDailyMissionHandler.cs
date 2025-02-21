@@ -53,7 +53,7 @@ public class BossDailyMissionHandler: AbstractDailyMissionHandler
 	private void onAttackableKill(OnAttackableKill @event)
 	{
 		Attackable monster = @event.getTarget();
-		Player player = @event.getAttacker();
+		Player? player = @event.getAttacker();
 		if (monster.isRaid() && monster.getInstanceId() > 0 && player != null)
 		{
 			Party? party = player.getParty();

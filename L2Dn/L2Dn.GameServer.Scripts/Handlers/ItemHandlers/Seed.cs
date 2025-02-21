@@ -58,7 +58,7 @@ public class Seed: IItemHandler
             return false;
         }
 
-        Model.Seed seed = CastleManorManager.getInstance().getSeed(item.getId());
+        Model.Seed? seed = CastleManorManager.getInstance().getSeed(item.getId());
 		if (seed == null)
 		{
 			return false;

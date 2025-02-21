@@ -27,11 +27,9 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
         _manorId = reader.ReadInt32();
         int count = reader.ReadInt32();
         if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != reader.Length)
-        {
             return;
-        }
 
-        _items = new(count);
+        _items = new List<ItemHolder>(count);
         for (int i = 0; i < count; i++)
         {
             int itemId = reader.ReadInt32();
@@ -48,137 +46,146 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-	    Player? player = session.Player;
-	    if (player == null)
-		    return ValueTask.CompletedTask;
+        Player? player = session.Player;
+        if (player == null)
+            return ValueTask.CompletedTask;
 
-	    if (_items == null)
-	    {
-		    player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-		    return ValueTask.CompletedTask;
-	    }
+        if (_items == null)
+        {
+            player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+            return ValueTask.CompletedTask;
+        }
 
-	    // TODO: flood protection
-		// if (!client.getFloodProtectors().canPerformTransaction())
-		// {
-		// 	player.sendMessage("You are buying seeds too fast!");
-		// 	return ValueTask.CompletedTask;
-		// }
+        // TODO: flood protection
+        // if (!client.getFloodProtectors().canPerformTransaction())
+        // {
+        // 	player.sendMessage("You are buying seeds too fast!");
+        // 	return ValueTask.CompletedTask;
+        // }
 
-		CastleManorManager manor = CastleManorManager.getInstance();
-		if (manor.isUnderMaintenance())
-		{
-			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-			return ValueTask.CompletedTask;
-		}
+        CastleManorManager manor = CastleManorManager.getInstance();
+        if (manor.isUnderMaintenance())
+        {
+            player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+            return ValueTask.CompletedTask;
+        }
 
-		Castle? castle = CastleManager.getInstance().getCastleById(_manorId);
-		if (castle == null)
-		{
-			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-			return ValueTask.CompletedTask;
-		}
+        Castle? castle = CastleManager.getInstance().getCastleById(_manorId);
+        if (castle == null)
+        {
+            player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+            return ValueTask.CompletedTask;
+        }
 
-		Npc manager = player.getLastFolkNPC();
-		if (!(manager is Merchant) || !manager.canInteract(player) || manager.getParameters().getInt("manor_id", -1) != _manorId)
-		{
-			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-			return ValueTask.CompletedTask;
-		}
+        Npc manager = player.getLastFolkNPC();
+        if (!(manager is Merchant) || !manager.canInteract(player) ||
+            manager.getParameters().getInt("manor_id", -1) != _manorId)
+        {
+            player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+            return ValueTask.CompletedTask;
+        }
 
-		long totalPrice = 0;
-		long slots = 0;
-		long totalWeight = 0;
+        long totalPrice = 0;
+        long slots = 0;
+        long totalWeight = 0;
 
-		Map<int, SeedProduction> productInfo = new();
-		foreach (ItemHolder ih in _items)
-		{
-			SeedProduction? sp = manor.getSeedProduct(_manorId, ih.getId(), false);
-			if (sp == null || sp.getPrice() <= 0 || sp.getAmount() < ih.getCount() || Inventory.MAX_ADENA / ih.getCount() < sp.getPrice())
-			{
-				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-				return ValueTask.CompletedTask;
-			}
+        Map<int, SeedProduction> productInfo = new();
+        foreach (ItemHolder ih in _items)
+        {
+            SeedProduction? sp = manor.getSeedProduct(_manorId, ih.getId(), false);
+            if (sp == null || sp.getPrice() <= 0 || sp.getAmount() < ih.getCount() ||
+                Inventory.MAX_ADENA / ih.getCount() < sp.getPrice())
+            {
+                player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+                return ValueTask.CompletedTask;
+            }
 
-			// Calculate price
-			totalPrice += sp.getPrice() * ih.getCount();
-			if (totalPrice > Inventory.MAX_ADENA)
-			{
-				Util.handleIllegalPlayerAction(player,
-					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-					" tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.DEFAULT_PUNISH);
+            // Calculate price
+            totalPrice += sp.getPrice() * ih.getCount();
+            if (totalPrice > Inventory.MAX_ADENA)
+            {
+                Util.handleIllegalPlayerAction(player,
+                    "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
+                    " tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.DEFAULT_PUNISH);
 
-				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-				return ValueTask.CompletedTask;
-			}
+                player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+                return ValueTask.CompletedTask;
+            }
 
-			// Calculate weight
-			ItemTemplate? template = ItemData.getInstance().getTemplate(ih.getId());
-			totalWeight += ih.getCount() * template.getWeight();
+            // Calculate weight
+            ItemTemplate? template = ItemData.getInstance().getTemplate(ih.getId());
+            if (template == null)
+            {
+                player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+                return ValueTask.CompletedTask;
+            }
 
-			// Calculate slots
-			if (!template.isStackable())
-			{
-				slots += ih.getCount();
-			}
-			else if (player.getInventory().getItemByItemId(ih.getId()) == null)
-			{
-				slots++;
-			}
-			productInfo.put(ih.getId(), sp);
-		}
+            totalWeight += ih.getCount() * template.getWeight();
 
-		if (!player.getInventory().validateWeight(totalWeight))
-		{
-			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_WEIGHT_LIMIT);
-			return ValueTask.CompletedTask;
-		}
+            // Calculate slots
+            if (!template.isStackable())
+            {
+                slots += ih.getCount();
+            }
+            else if (player.getInventory().getItemByItemId(ih.getId()) == null)
+            {
+                slots++;
+            }
 
-		if (!player.getInventory().validateCapacity(slots))
-		{
-			player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
-			return ValueTask.CompletedTask;
-		}
+            productInfo.put(ih.getId(), sp);
+        }
 
-		if (totalPrice < 0 || player.getAdena() < totalPrice)
-		{
-			player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
-			return ValueTask.CompletedTask;
-		}
+        if (!player.getInventory().validateWeight(totalWeight))
+        {
+            player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_WEIGHT_LIMIT);
+            return ValueTask.CompletedTask;
+        }
 
-		// Proceed the purchase
-		foreach (ItemHolder i in _items)
-		{
-			SeedProduction sp = productInfo.get(i.getId());
-			long price = sp.getPrice() * i.getCount();
+        if (!player.getInventory().validateCapacity(slots))
+        {
+            player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
+            return ValueTask.CompletedTask;
+        }
 
-			// Take Adena and decrease seed amount
-			if (!sp.decreaseAmount(i.getCount()) || !player.reduceAdena("Buy", price, player, false))
-			{
-				// failed buy, reduce total price
-				totalPrice -= price;
-				continue;
-			}
+        if (totalPrice < 0 || player.getAdena() < totalPrice)
+        {
+            player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
+            return ValueTask.CompletedTask;
+        }
 
-			// Add item to player's inventory
-			player.addItem("Buy", i.getId(), i.getCount(), manager, true);
-		}
+        // Proceed the purchase
+        foreach (ItemHolder i in _items)
+        {
+            SeedProduction sp = productInfo[i.getId()];
+            long price = sp.getPrice() * i.getCount();
 
-		// Adding to treasury for Manor Castle
-		if (totalPrice > 0)
-		{
-			castle.addToTreasuryNoTax(totalPrice);
+            // Take Adena and decrease seed amount
+            if (!sp.decreaseAmount(i.getCount()) || !player.reduceAdena("Buy", price, player, false))
+            {
+                // failed buy, reduce total price
+                totalPrice -= price;
+                continue;
+            }
 
-			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_ADENA_DISAPPEARED);
-			sm.Params.addLong(totalPrice);
-			player.sendPacket(sm);
+            // Add item to player's inventory
+            player.addItem("Buy", i.getId(), i.getCount(), manager, true);
+        }
 
-			if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
-			{
-				manor.updateCurrentProduction(_manorId, productInfo.Values);
-			}
-		}
+        // Adding to treasury for Manor Castle
+        if (totalPrice > 0)
+        {
+            castle.addToTreasuryNoTax(totalPrice);
 
-		return ValueTask.CompletedTask;
+            SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_ADENA_DISAPPEARED);
+            sm.Params.addLong(totalPrice);
+            player.sendPacket(sm);
+
+            if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
+            {
+                manor.updateCurrentProduction(_manorId, productInfo.Values);
+            }
+        }
+
+        return ValueTask.CompletedTask;
     }
 }

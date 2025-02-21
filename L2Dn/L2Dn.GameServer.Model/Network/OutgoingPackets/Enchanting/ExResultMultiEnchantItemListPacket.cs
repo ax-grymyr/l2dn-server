@@ -18,7 +18,7 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 	private readonly Map<int, int> _failureEnchant;
 	private readonly Map<int, ItemHolder> _failureReward;
 	private readonly Map<int, int> _failChallengePointInfoList;
-	
+
 	public ExResultMultiEnchantItemListPacket(Player player, bool error)
 	{
 		_player = player;
@@ -27,7 +27,7 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 		_failureEnchant = new();
 		_failChallengePointInfoList = new();
 	}
-	
+
 	public ExResultMultiEnchantItemListPacket(Player player, Map<int, ItemHolder> failureReward)
 	{
 		_player = player;
@@ -36,7 +36,7 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 		_failureEnchant = new();
 		_failChallengePointInfoList = new();
 	}
-	
+
 	public ExResultMultiEnchantItemListPacket(Player player, Map<int, int[]> successEnchant, Map<int, int> failureEnchant)
 	{
 		_player = player;
@@ -44,7 +44,7 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 		_failureEnchant = failureEnchant;
 		_failChallengePointInfoList = new();
 	}
-	
+
 	public ExResultMultiEnchantItemListPacket(Player player, Map<int, int[]> successEnchant, Map<int, int> failureEnchant, bool isResult)
 	{
 		_player = player;
@@ -53,7 +53,7 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 		_isResult = isResult;
 		_failChallengePointInfoList = new();
 	}
-	
+
 	public ExResultMultiEnchantItemListPacket(Player player, Map<int, int[]> successEnchant, Map<int, int> failureEnchant, Map<int, int> failChallengePointInfoList, bool isResult)
 	{
 		_player = player;
@@ -62,25 +62,25 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 		_isResult = isResult;
 		_failChallengePointInfoList = failChallengePointInfoList;
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
-		EnchantItemRequest request = _player.getRequest<EnchantItemRequest>();
+		EnchantItemRequest? request = _player.getRequest<EnchantItemRequest>();
 		if (request == null)
 		{
 			return;
 		}
-		
+
 		writer.WritePacketCode(OutgoingPacketCodes.EX_RES_MULTI_ENCHANT_ITEM_LIST);
-		
+
 		if (_error)
 		{
 			writer.WriteByte(0);
 			return;
 		}
-		
+
 		writer.WriteByte(1);
-		
+
 		/* EnchantSuccessItem */
 		if (_failureReward.Count == 0)
 		{
@@ -98,7 +98,7 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 		{
 			writer.WriteInt32(0);
 		}
-		
+
 		/* EnchantFailItem */
 		writer.WriteInt32(_failureEnchant.Count);
 		if (_failureEnchant.Count != 0)
@@ -113,7 +113,7 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 		{
 			writer.WriteInt32(0);
 		}
-		
+
 		/* EnchantFailRewardItem */
 		if ((_successEnchant.Count == 0 && request.getMultiFailItemsCount() != 0) || (_isResult && request.getMultiFailItemsCount() != 0))
 		{
@@ -135,9 +135,9 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 		{
 			writer.WriteInt32(0);
 		}
-		
+
 		/* EnchantFailChallengePointInfo */
-		
+
 		writer.WriteInt32(_failChallengePointInfoList.Count);
 		foreach (var item in _failChallengePointInfoList)
 		{
