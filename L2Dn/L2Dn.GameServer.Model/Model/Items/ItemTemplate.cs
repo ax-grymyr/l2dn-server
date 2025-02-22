@@ -386,7 +386,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	 */
 	public int getCrystalItemId()
 	{
-		return CrystalTypeInfo.Get(_crystalType).getCrystalId();
+		return _crystalType.getCrystalId();
 	}
 
 	/**
@@ -435,11 +435,11 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 				case TYPE2_SHIELD_ARMOR:
 				case TYPE2_ACCESSORY:
 				{
-					return _crystalCount + CrystalTypeInfo.Get(_crystalType).getCrystalEnchantBonusArmor() * (3 * enchantLevel - 6);
+					return _crystalCount + _crystalType.getCrystalEnchantBonusArmor() * (3 * enchantLevel - 6);
 				}
 				case TYPE2_WEAPON:
 				{
-					return _crystalCount + CrystalTypeInfo.Get(_crystalType).getCrystalEnchantBonusWeapon() * (2 * enchantLevel - 3);
+					return _crystalCount + _crystalType.getCrystalEnchantBonusWeapon() * (2 * enchantLevel - 3);
 				}
 				default:
 				{
@@ -454,11 +454,11 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 				case TYPE2_SHIELD_ARMOR:
 				case TYPE2_ACCESSORY:
 				{
-					return _crystalCount + CrystalTypeInfo.Get(_crystalType).getCrystalEnchantBonusArmor() * enchantLevel;
+					return _crystalCount + _crystalType.getCrystalEnchantBonusArmor() * enchantLevel;
 				}
 				case TYPE2_WEAPON:
 				{
-					return _crystalCount + CrystalTypeInfo.Get(_crystalType).getCrystalEnchantBonusWeapon() * enchantLevel;
+					return _crystalCount + _crystalType.getCrystalEnchantBonusWeapon() * enchantLevel;
 				}
 				default:
 				{
