@@ -474,7 +474,7 @@ public abstract class AbstractAI : Ctrl
 				}
 				else
 				{
-					WorldRegion? region = _actor.getWorldRegion();
+					WorldRegion region = _actor.getWorldRegion();
 					if (region != null && region.Active && !_actor.isMovementSuspended())
 					{
 						_actor.broadcastPacket(new MoveToPawnPacket(_actor, pawn, offset));

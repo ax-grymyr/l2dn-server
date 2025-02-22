@@ -211,7 +211,7 @@ public class Item: WorldObject
 	 */
 	public void pickupMe(Creature creature)
 	{
-		WorldRegion? oldregion = getWorldRegion();
+		WorldRegion oldregion = getWorldRegion();
 
 		// Create a server->client GetItem packet to pick up the Item
 		creature.broadcastPacket(new GetItemPacket(this, creature.ObjectId));
@@ -1574,7 +1574,7 @@ public class Item: WorldObject
 		setDropperObjectId(dropper != null ? dropper.ObjectId : 0); // Set the dropper Id for the knownlist packets in sendInfo
 
 		// Add the Item dropped in the world as a visible object
-		WorldRegion? region = getWorldRegion();
+		WorldRegion region = getWorldRegion();
 		region.AddVisibleObject(this);
 		World.getInstance().addVisibleObject(this, region);
 		if (Config.SAVE_DROPPED_ITEM)

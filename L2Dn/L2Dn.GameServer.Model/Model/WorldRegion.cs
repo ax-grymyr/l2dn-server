@@ -47,11 +47,9 @@ public sealed class WorldRegion
     public IReadOnlyCollection<Fence> Fences => _fences;
     public IReadOnlyCollection<WorldObject> VisibleObjects => _visibleObjects;
 
-    /**
-     * Add the WorldObject in the WorldObjectHashSet(WorldObject) _visibleObjects containing WorldObject visible in this WorldRegion<br>
-     * If WorldObject is a Player, Add the Player in the WorldObjectHashSet(Player) _allPlayable containing Player of all player in game in this WorldRegion
-     * @param object
-     */
+    /// <summary>
+    /// Adds the WorldObject to the visible objects.
+    /// </summary>
     public void AddVisibleObject(WorldObject worldObject)
     {
         _visibleObjects.Add(worldObject);
@@ -72,10 +70,10 @@ public sealed class WorldRegion
             StartActivation();
     }
 
-    /**
-     * Remove the WorldObject from the WorldObjectHashSet(WorldObject) _visibleObjects in this WorldRegion. If WorldObject is a Player, remove it from the WorldObjectHashSet(Player) _allPlayable of this WorldRegion
-     * @param object
-     */
+
+    /// <summary>
+    /// Removes the WorldObject from the visible objects.
+    /// </summary>
     public void RemoveVisibleObject(WorldObject worldObject)
     {
         if (_visibleObjects.Count == 0)
@@ -167,9 +165,7 @@ public sealed class WorldRegion
     private void SetActive(bool value)
     {
         if (_active == value)
-        {
             return;
-        }
 
         _active = value;
 
@@ -188,9 +184,11 @@ public sealed class WorldRegion
         SwitchAi(value);
     }
 
-    /**
-     * Immediately sets self as active and starts a timer to set neighbors as active this timer is to avoid turning on neighbors in the case when a person just teleported into a region and then teleported out immediately...there is no reason to activate all the neighbors in that case.
-     */
+    /// <summary>
+    /// Immediately sets self as active and starts a timer to set neighbors as active this timer is to avoid turning
+    /// on neighbors in the case when a person just teleported into a region and then teleported out immediately.
+    /// There is no reason to activate all the neighbors in that case.
+    /// </summary>
     private void StartActivation()
     {
         // First set self to active and do self-tasks...
@@ -214,9 +212,11 @@ public sealed class WorldRegion
         }
     }
 
-    /**
-     * starts a timer to set neighbors (including self) as inactive this timer is to avoid turning off neighbors in the case when a person just moved out of a region that he may very soon return to. There is no reason to turn self & neighbors off in that case.
-     */
+    /// <summary>
+    /// Starts a timer to set neighbors (including self) as inactive.
+    /// This timer is to avoid turning off neighbors in the case when a person just moved out of a region
+    /// that he may very soon return to. There is no reason to turn self & neighbors off in that case.
+    /// </summary>
     private void StartDeactivation()
     {
         // If the timer to activate neighbors is running, cancel it.

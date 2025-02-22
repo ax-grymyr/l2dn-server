@@ -396,7 +396,7 @@ public sealed class World
 
 	public void switchRegion(WorldObject obj, WorldRegion newRegion)
 	{
-		WorldRegion? oldRegion = obj.getWorldRegion();
+		WorldRegion oldRegion = obj.getWorldRegion();
 		if (oldRegion == null || oldRegion == newRegion)
 		{
 			return;
@@ -701,7 +701,7 @@ public sealed class World
 				((Creature) @object).deleteMe();
 			}
 
-			@object.getWorldRegion()?.RemoveVisibleObject(@object);
+			@object.getWorldRegion().RemoveVisibleObject(@object);
 		}
 	}
 

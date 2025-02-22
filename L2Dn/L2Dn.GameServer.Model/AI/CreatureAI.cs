@@ -124,7 +124,7 @@ public class CreatureAI: AbstractAI
 		changeIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 
 		// Check if region and its neighbors are active.
-		WorldRegion? region = _actor.getWorldRegion();
+		WorldRegion region = _actor.getWorldRegion();
 		if (region is null || !region.AreNeighborsActive)
 		{
 			return;

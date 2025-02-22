@@ -18,20 +18,19 @@ namespace L2Dn.GameServer.Model;
 /**
  * Base class for all interactive objects.
  */
-public abstract class WorldObject(int objectId)
-	: IIdentifiable, INamable, IUniqueId, IHasLocation, IEquatable<WorldObject>
+public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocation, IEquatable<WorldObject>
 {
 	/** Object ID */
-	private readonly int _objectId = objectId;
+	private readonly int _objectId;
 
 	/** Name */
 	private string _name = string.Empty;
 
-	/** World Region */
-	private WorldRegion? _worldRegion;
-
 	/** Location */
 	private Location _location = new(0, 0, -10000, 0);
+
+    /** World Region */
+    private WorldRegion _worldRegion;
 
 	/** Instance */
 	private Instance? _instance;
@@ -40,6 +39,12 @@ public abstract class WorldObject(int objectId)
 	private bool _isInvisible;
 	private bool _isTargetable = true;
 	private Map<string, object>? _scripts;
+
+    protected WorldObject(int objectId)
+    {
+        _objectId = objectId;
+        _worldRegion = World.getInstance().getRegion(_location.X, _location.Y);
+    }
 
 	public abstract int getId();
 
@@ -107,7 +112,7 @@ public abstract class WorldObject(int objectId)
 			World.getInstance().addObject(this);
 
 			// Add the WorldObject spawn to _visibleObjects and if necessary to _allplayers of its WorldRegion
-			_worldRegion?.AddVisibleObject(this);
+			_worldRegion.AddVisibleObject(this);
 		}
 
 		// this can synchronize on others instances, so it's out of synchronized, to avoid deadlocks
@@ -477,14 +482,11 @@ public abstract class WorldObject(int objectId)
 		setXYZInvisible(location);
 	}
 
-	public WorldRegion? getWorldRegion()
-	{
-		return _worldRegion;
-	}
+	public WorldRegion getWorldRegion() => _worldRegion;
 
-	public void setWorldRegion(WorldRegion? region)
+    public void setWorldRegion(WorldRegion region)
 	{
-		if (region == null && _worldRegion != null)
+		if (region != _worldRegion)
 		{
 			_worldRegion.RemoveVisibleObject(this);
 		}
@@ -574,10 +576,10 @@ public abstract class WorldObject(int objectId)
 
 		if (_isSpawned)
 		{
-			WorldRegion? newRegion = World.getInstance().getRegion(this);
-			if (newRegion != null && newRegion != _worldRegion)
+			WorldRegion newRegion = World.getInstance().getRegion(this);
+			if (newRegion != _worldRegion)
 			{
-				_worldRegion?.RemoveVisibleObject(this);
+				_worldRegion.RemoveVisibleObject(this);
 				newRegion.AddVisibleObject(this);
 				World.getInstance().switchRegion(this, newRegion);
 				setWorldRegion(newRegion);
@@ -708,9 +710,9 @@ public abstract class WorldObject(int objectId)
 		return false;
 	}
 
-	public bool isInSurroundingRegion(WorldObject? worldObject)
+	public bool isInSurroundingRegion(WorldObject worldObject)
 	{
-		WorldRegion? worldRegion = worldObject?.getWorldRegion();
+		WorldRegion? worldRegion = worldObject.getWorldRegion();
 		if (worldRegion is null)
 			return false;
 

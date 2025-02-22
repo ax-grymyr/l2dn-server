@@ -253,7 +253,7 @@ public class AttackableAI: CreatureAI
 	protected virtual void thinkActive()
 	{
 		// Check if region and its neighbors are active.
-		WorldRegion? region = _actor.getWorldRegion();
+		WorldRegion region = _actor.getWorldRegion();
 		if (region == null || !region.AreNeighborsActive)
 		{
 			return;
@@ -1258,7 +1258,7 @@ public class AttackableAI: CreatureAI
 		}
 
 		// Check if region and its neighbors are active.
-		WorldRegion? region = _actor.getWorldRegion();
+		WorldRegion region = _actor.getWorldRegion();
 		if (region == null || !region.AreNeighborsActive)
 		{
 			return;
