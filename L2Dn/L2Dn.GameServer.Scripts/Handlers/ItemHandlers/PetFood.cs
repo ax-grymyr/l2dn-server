@@ -25,7 +25,7 @@ public class PetFood: IItemHandler
 			return false;
 		}
 
-		List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
+		List<ItemSkillHolder>? skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 		if (skills != null)
 		{
 			skills.ForEach(holder => useFood(playable, holder.getSkillId(), holder.getSkillLevel(), item));

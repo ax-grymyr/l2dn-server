@@ -488,7 +488,7 @@ public class AdminSpawn: IAdminCommandHandler
 		foreach (Spawn spawn in SpawnTable.getInstance().getSpawns(npcId))
 		{
 			index++;
-			Npc npc = spawn.getLastSpawn();
+			Npc? npc = spawn.getLastSpawn();
 			if (teleportIndex > -1)
 			{
 				if (teleportIndex == index)
@@ -599,7 +599,7 @@ public class AdminSpawn: IAdminCommandHandler
 				spawn.stopRespawn();
 			}
 
-			spawn.getLastSpawn().broadcastInfo();
+			spawn.getLastSpawn()?.broadcastInfo();
 			BuilderUtil.sendSysMessage(activeChar, "Created " + template1.getName() + " on " + target.ObjectId);
 		}
 		catch (Exception e)
@@ -642,7 +642,7 @@ public class AdminSpawn: IAdminCommandHandler
 			{
 				spawn.stopRespawn();
 			}
-			spawn.getLastSpawn().broadcastInfo();
+			spawn.getLastSpawn()?.broadcastInfo();
 			BuilderUtil.sendSysMessage(activeChar, "Created " + template1.getName() + " on " + target.ObjectId);
 		}
 		catch (Exception e)

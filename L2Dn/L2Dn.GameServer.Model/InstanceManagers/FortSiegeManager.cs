@@ -291,14 +291,14 @@ public class FortSiegeManager
 		}
 	}
 
-	public List<FortSiegeSpawn>? getCommanderSpawnList(int fortId)
+	public List<FortSiegeSpawn> getCommanderSpawnList(int fortId)
 	{
-		return _commanderSpawnList.get(fortId);
+		return _commanderSpawnList.get(fortId) ?? [];
 	}
 
-	public List<CombatFlag>? getFlagList(int fortId)
+	public List<CombatFlag> getFlagList(int fortId)
 	{
-		return _flagList.get(fortId);
+		return _flagList.get(fortId) ?? [];
 	}
 
 	public int getAttackerMaxClans()

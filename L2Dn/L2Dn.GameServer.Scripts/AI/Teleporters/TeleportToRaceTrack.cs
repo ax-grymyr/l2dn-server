@@ -10,7 +10,7 @@ public sealed class TeleportToRaceTrack: AbstractScript
 {
 	// NPC
 	private const int RaceManager = 30995;
-	
+
 	// Locations
 	private static readonly Location3D _raceTrackTeleport = new(12661, 181687, -3540);
 
@@ -27,17 +27,17 @@ public sealed class TeleportToRaceTrack: AbstractScript
 		(31275, new Location3D(147930, -55281, -2728)), // Tatiana
 		(31210, new Location3D(12882, 181053, -3560)), // Race Track Gatekeeper
 	}.ToImmutableDictionary(x => x.Item1, x => x.Item2);
-	
+
 	// Other
 	private const string MonsterReturn = "MONSTER_RETURN";
-	
+
 	public TeleportToRaceTrack()
 	{
 		addTalkId(RaceManager);
 		addTalkId(_teleporterLocations.Keys.ToArray());
 	}
-	
-	public override string onTalk(Npc npc, Player player)
+
+	public override string? onTalk(Npc npc, Player player)
 	{
 		if (npc.getId() == RaceManager)
 		{

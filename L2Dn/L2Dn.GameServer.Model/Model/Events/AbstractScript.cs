@@ -1743,7 +1743,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(trapId);
         if (npcTemplate == null)
         {
-            _logger.Warn("Failed to add trap with ID: " + trapId);
+            _logger.Warn("No trap template with id=" + trapId);
             return null;
         }
 

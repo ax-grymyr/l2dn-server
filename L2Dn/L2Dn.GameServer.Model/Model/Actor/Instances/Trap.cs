@@ -28,12 +28,12 @@ public class Trap: Npc
 	private bool _isInArena;
 	private bool _isTriggered;
 	private readonly int _lifeTime;
-	private Player _owner;
+	private Player? _owner;
 	private readonly Set<int> _playersWhoDetectedMe = new();
-	private readonly SkillHolder _skill;
+	private readonly SkillHolder? _skill;
 	private int _remainingTime;
 	// Tasks
-	private ScheduledFuture _trapTask;
+	private ScheduledFuture? _trapTask;
 
 	public Trap(NpcTemplate template, int instanceId, int lifeTime): base(template)
 	{
@@ -121,7 +121,10 @@ public class Trap: Npc
 			return true;
 		}
 
-		if (_owner.isInParty() && creature.isInParty() && _owner.getParty().getLeaderObjectId() == creature.getParty().getLeaderObjectId())
+        Party? party = _owner.getParty();
+        Party? creatureParty = creature.getParty();
+		if (_owner.isInParty() && creature.isInParty() && party != null && creatureParty != null &&
+            party.getLeaderObjectId() == creatureParty.getLeaderObjectId())
 		{
 			return true;
 		}
@@ -134,12 +137,9 @@ public class Trap: Npc
 		return base.deleteMe();
 	}
 
-	public override Player getActingPlayer()
-	{
-		return _owner;
-	}
+	public override Player? getActingPlayer() => _owner;
 
-	public override Weapon? getActiveWeaponItem()
+    public override Weapon? getActiveWeaponItem()
 	{
 		return null;
 	}
@@ -153,17 +153,11 @@ public class Trap: Npc
 	 * Get the owner of this trap.
 	 * @return the owner
 	 */
-	public Player getOwner()
-	{
-		return _owner;
-	}
+	public Player? getOwner() => _owner;
 
-	public override PvpFlagStatus getPvpFlag()
-	{
-		return _owner != null ? _owner.getPvpFlag() : PvpFlagStatus.None;
-	}
+    public override PvpFlagStatus getPvpFlag() => _owner?.getPvpFlag() ?? PvpFlagStatus.None;
 
-	public override Item? getSecondaryWeaponInstance()
+    public override Item? getSecondaryWeaponInstance()
 	{
 		return null;
 	}
@@ -173,16 +167,9 @@ public class Trap: Npc
 		return null;
 	}
 
-	public Skill getSkill()
-	{
-		if (_skill == null)
-		{
-			return null;
-		}
-		return _skill.getSkill();
-	}
+	public Skill? getSkill() => _skill?.getSkill();
 
-	public override bool isAutoAttackable(Creature attacker)
+    public override bool isAutoAttackable(Creature attacker)
 	{
 		return !canBeSeen(attacker);
 	}

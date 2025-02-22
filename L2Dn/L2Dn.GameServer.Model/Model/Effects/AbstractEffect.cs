@@ -94,7 +94,7 @@ public abstract class AbstractEffect
 	 * @param item
 	 * @return if {@code true} this effect will continue forever, if {@code false} it will stop after abnormal time has passed
 	 */
-	public virtual bool onActionTime(Creature effector, Creature effected, Skill? skill, Item? item)
+	public virtual bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		return false;
 	}

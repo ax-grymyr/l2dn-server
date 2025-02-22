@@ -14,9 +14,9 @@ public class Fisherman: Merchant
         InstanceType = InstanceType.Fisherman;
     }
 
-    public override string getHtmlPath(int npcId, int value, Player player)
+    public override string getHtmlPath(int npcId, int value, Player? player)
     {
-        string pom = "";
+        string pom;
         if (value == 0)
         {
             pom = npcId.ToString();

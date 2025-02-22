@@ -6,7 +6,6 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 

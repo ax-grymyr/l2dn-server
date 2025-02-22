@@ -61,7 +61,7 @@ public class FishShots: IItemHandler
 		WorldObject? oldTarget = player.getTarget();
 		player.setTarget(player);
 
-		List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
+		List<ItemSkillHolder>? skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 		if (skills == null)
 		{
 			_logger.Warn(GetType().Name + ": is missing skills!");

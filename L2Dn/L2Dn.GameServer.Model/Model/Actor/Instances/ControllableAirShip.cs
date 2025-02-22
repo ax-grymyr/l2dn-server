@@ -20,10 +20,10 @@ public class ControllableAirShip : AirShip
 
 	private readonly int _ownerId;
 	private int _helmId;
-	private Player _captain;
+	private Player? _captain;
 
-	private ScheduledFuture _consumeFuelTask;
-	private ScheduledFuture _checkTask;
+	private ScheduledFuture? _consumeFuelTask;
+	private ScheduledFuture? _checkTask;
 
 	public ControllableAirShip(CreatureTemplate template, int ownerId): base(template)
 	{
@@ -81,7 +81,7 @@ public class ControllableAirShip : AirShip
 		return HELM;
 	}
 
-	public override bool setCaptain(Player player)
+	public override bool setCaptain(Player? player)
 	{
 		if (player == null)
 		{

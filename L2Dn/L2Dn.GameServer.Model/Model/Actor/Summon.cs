@@ -41,7 +41,7 @@ public abstract class Summon: Playable
 	private bool _previousFollowStatus = true;
 	protected bool _restoreSummon = true;
 	private int _summonPoints;
-	private ScheduledFuture _abnormalEffectTask;
+	private ScheduledFuture? _abnormalEffectTask;
 
 	private static readonly int[] PASSIVE_SUMMONS =
 	{
@@ -89,16 +89,18 @@ public abstract class Summon: Playable
 			{
 				sendPacket(new PetSummonInfoPacket(this, 1));
 				sendPacket(new ExPetSkillListPacket(true, (Pet) this));
-				if (getInventory() != null)
+
+                PetInventory? inventory = getInventory();
+				if (inventory != null)
 				{
-					sendPacket(new PetItemListPacket(getInventory().getItems()));
+					sendPacket(new PetItemListPacket(inventory.getItems()));
 				}
 			}
 			sendPacket(new RelationChangedPacket(this, _owner.getRelation(_owner), false));
 			World.getInstance().forEachVisibleObject<Player>(getOwner(), player => player.sendPacket(new RelationChangedPacket(this, _owner.getRelation(player), isAutoAttackable(player))));
 		}
 
-		Party party = _owner.getParty();
+		Party? party = _owner.getParty();
 		if (party != null)
 		{
 			party.broadcastToPartyMembers(_owner, new ExPartyPetWindowAddPacket(this));
@@ -297,7 +299,7 @@ public abstract class Summon: Playable
 					return;
 				}
 
-				AggroInfo info = target.getAggroList().get(this);
+				AggroInfo? info = target.getAggroList().get(this);
 				if (info != null)
 				{
 					target.addDamageHate(_owner, info.getDamage(), info.getHate());
@@ -346,7 +348,7 @@ public abstract class Summon: Playable
 		if (owner != null)
 		{
 			owner.sendPacket(new PetDeletePacket(getSummonType(), ObjectId));
-			Party party = owner.getParty();
+			Party? party = owner.getParty();
 			if (party != null)
 			{
 				party.broadcastToPartyMembers(owner, new ExPartyPetWindowDeletePacket(this));
@@ -382,7 +384,7 @@ public abstract class Summon: Playable
 		}
 	}
 
-	public virtual void unSummon(Player? owner)
+	public virtual void unSummon(Player owner)
 	{
 		if (isSpawned())
 		{
@@ -430,7 +432,8 @@ public abstract class Summon: Playable
 					party.broadcastToPartyMembers(owner, new ExPartyPetWindowDeletePacket(this));
 				}
 
-				if (getInventory() != null && getInventory().getSize() > 0)
+                PetInventory? inventory = getInventory();
+				if (inventory != null && inventory.getSize() > 0)
 				{
 					_owner.setPetInvItems(true);
 					sendPacket(SystemMessageId.THERE_ARE_ITEMS_IN_THE_PET_S_INVENTORY_TAKE_THEM_OUT_FIRST);
@@ -539,7 +542,7 @@ public abstract class Summon: Playable
 	/**
 	 * Return the Party object of its Player owner or null.
 	 */
-	public override Party getParty()
+	public override Party? getParty()
 	{
 		if (_owner == null)
 		{
@@ -601,11 +604,11 @@ public abstract class Summon: Playable
 		}
 		else
 		{
-			WorldObject currentTarget = _owner.getTarget();
+			WorldObject? currentTarget = _owner.getTarget();
 			if (currentTarget != null)
 			{
 				target = skill.getTarget(this, forceUse && (!currentTarget.isPlayable() || !currentTarget.isInsideZone(ZoneId.PEACE) || !currentTarget.isInsideZone(ZoneId.NO_PVP)), dontMove, false);
-				Player currentTargetPlayer = currentTarget.getActingPlayer();
+				Player? currentTargetPlayer = currentTarget.getActingPlayer();
 				if (!forceUse && currentTargetPlayer != null && !currentTargetPlayer.isAutoAttackable(_owner))
 				{
 					sendPacket(SystemMessageId.INVALID_TARGET);
@@ -799,7 +802,7 @@ public abstract class Summon: Playable
 			sendPacket(new PetStatusUpdatePacket(this));
 			broadcastNpcInfo(value);
 
-			Party party = _owner.getParty();
+			Party? party = _owner.getParty();
 			if (party != null)
 			{
 				party.broadcastToPartyMembers(_owner, new ExPartyPetWindowUpdatePacket(this));
@@ -1020,19 +1023,18 @@ public abstract class Summon: Playable
 
 	public override void rechargeShots(bool physical, bool magic, bool fish)
 	{
-		Item item;
-		IItemHandler handler;
-		if (_owner.getAutoSoulShot() == null || _owner.getAutoSoulShot().isEmpty())
+        if (_owner.getAutoSoulShot() == null || _owner.getAutoSoulShot().isEmpty())
 		{
 			return;
 		}
 
 		foreach (int itemId in _owner.getAutoSoulShot())
-		{
-			item = _owner.getInventory().getItemByItemId(itemId);
-			if (item != null)
+        {
+            Item? item = _owner.getInventory().getItemByItemId(itemId);
+            if (item != null)
 			{
-				if (magic && (item.getTemplate().getDefaultAction() == ActionType.SPIRITSHOT || /* Old BeastSpiritShot item support. */ item.getTemplate().getDefaultAction() == ActionType.SUMMON_SPIRITSHOT))
+                IItemHandler? handler;
+                if (magic && (item.getTemplate().getDefaultAction() == ActionType.SPIRITSHOT || /* Old BeastSpiritShot item support. */ item.getTemplate().getDefaultAction() == ActionType.SUMMON_SPIRITSHOT))
 				{
 					handler = ItemHandler.getInstance().getHandler(item.getEtcItem());
 					if (handler != null)
@@ -1054,7 +1056,7 @@ public abstract class Summon: Playable
 			{
 				_owner.removeAutoSoulShot(itemId);
 			}
-		}
+        }
 	}
 
 	public override int? getClanId()
@@ -1083,10 +1085,13 @@ public abstract class Summon: Playable
 		if (owner != null)
 		{
 			owner.sendPacket(iu);
-			if (getInventory() != null)
+
+            PetInventory? inventory = getInventory();
+			if (inventory != null)
 			{
-				owner.sendPacket(new PetItemListPacket(getInventory().getItems()));
+				owner.sendPacket(new PetItemListPacket(inventory.getItems()));
 			}
+
 			owner.sendPacket(new PetSummonInfoPacket(this, 1));
 		}
 	}

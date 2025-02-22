@@ -105,8 +105,7 @@ public class ShuttleData: DataReaderBase
 	{
 		foreach (ShuttleDataHolder data in _shuttles.Values)
 		{
-			Shuttle shuttle = new Shuttle(new CreatureTemplate(new StatSet()));
-			shuttle.setData(data);
+			Shuttle shuttle = new Shuttle(new CreatureTemplate(new StatSet()), data);
 			shuttle.setHeading(data.Location.Heading);
 			shuttle.setLocationInvisible(data.Location.Location3D);
 			shuttle.spawnMe();

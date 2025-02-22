@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
@@ -18,9 +19,12 @@ public class ControlTower: Tower
 
     public override bool doDie(Creature? killer)
     {
-        if (getCastle().getSiege().isInProgress())
+        // TODO: null checking hack
+        Castle castle = getCastle() ?? throw new InvalidOperationException("Castle is null in ControlTower.doDie");
+
+        if (castle.getSiege().isInProgress())
         {
-            getCastle().getSiege().killedCT(this);
+            castle.getSiege().killedCT(this);
 
             if (_guards != null && !_guards.isEmpty())
             {

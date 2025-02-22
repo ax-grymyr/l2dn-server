@@ -249,8 +249,8 @@ public class VariationData: DataReaderBase
 
 	private VariationInstance generateRandomVariation(Variation variation, int targetItemId)
 	{
-		Options option1 = variation.getRandomEffect(0, targetItemId);
-		Options option2 = variation.getRandomEffect(1, targetItemId);
+		Options? option1 = variation.getRandomEffect(0, targetItemId);
+		Options? option2 = variation.getRandomEffect(1, targetItemId);
 		return new VariationInstance(variation.getMineralId(), option1, option2);
 	}
 

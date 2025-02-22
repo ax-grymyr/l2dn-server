@@ -5210,7 +5210,7 @@ public class Player: Playable
 	 * <li>Send a Server=>Client StatusUpdate packet with its new Experience</li><br>
 	 * @param killer
 	 */
-	public void calculateDeathExpPenalty(Creature killer)
+	public void calculateDeathExpPenalty(Creature? killer)
 	{
 		int lvl = getLevel();
 		double percentLost = PlayerXpPercentLostData.getInstance().getXpPercent(getLevel());
@@ -5648,7 +5648,7 @@ public class Player: Playable
 	 * Set the _clan object, _clanId, _clanLeader Flag and title of the Player.
 	 * @param clan
 	 */
-	public void setClan(Clan clan)
+	public void setClan(Clan? clan)
 	{
 		_clan = clan;
 		if (clan == null)

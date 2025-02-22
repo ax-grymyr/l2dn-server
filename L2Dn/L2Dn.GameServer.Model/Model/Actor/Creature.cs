@@ -122,7 +122,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	/** Creatures effect list. */
 	private readonly EffectList _effectList;
 	/** The creature that summons this character. */
-	private Creature _summoner;
+	private Creature? _summoner;
 
 	/** Map of summoned NPCs by this creature. */
 	private Map<int, Npc> _summonedNpcs;
@@ -4503,7 +4503,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		return _stat.getEvasionRate();
 	}
 
-	public int getMagicalAttackRange(Skill skill)
+	public int getMagicalAttackRange(Skill? skill)
 	{
 		return _stat.getMagicalAttackRange(skill);
 	}
@@ -5272,7 +5272,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	/**
 	 * @return the character that summoned this NPC.
 	 */
-	public Creature getSummoner()
+	public Creature? getSummoner()
 	{
 		return _summoner;
 	}

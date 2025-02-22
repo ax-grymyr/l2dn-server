@@ -43,8 +43,9 @@ public class Defender : Attackable
 
 		// Check if siege is in progress
 		if ((_fort != null && _fort.getZone().isActive()) || (_castle != null && _castle.getZone().isActive()))
-		{
-			 int activeSiegeId = _fort != null ? _fort.getResidenceId() : _castle.getResidenceId();
+        {
+            // TODO: null checking hack: both fort and castle cannot be null at the same time here
+            int activeSiegeId = _fort?.getResidenceId() ?? (_castle?.getResidenceId() ?? 0);
 
 			// Check if player is an enemy of this defender npc
 			if (player != null && ((player.getSiegeState() == 2 && !player.isRegisteredOnThisSiegeField(activeSiegeId)) || player.getSiegeState() == 1 || player.getSiegeState() == 0))
@@ -179,13 +180,13 @@ public class Defender : Attackable
 
 		if (!(attacker is Defender))
 		{
-			if (damage == 0 && aggro <= 1 && attacker.isPlayable())
+            Player? player = attacker.getActingPlayer();
+			if (damage == 0 && aggro <= 1 && attacker.isPlayable() && player != null)
 			{
-				Player? player = attacker.getActingPlayer();
 				// Check if siege is in progress
 				if ((_fort != null && _fort.getZone().isActive()) || (_castle != null && _castle.getZone().isActive()))
 				{
-					int activeSiegeId = _fort != null ? _fort.getResidenceId() : _castle.getResidenceId();
+					int activeSiegeId = _fort?.getResidenceId() ?? _castle?.getResidenceId() ?? 0;
 
 					// Do not add hate on defenders.
 					if (player.getSiegeState() == 2 && player.isRegisteredOnThisSiegeField(activeSiegeId))

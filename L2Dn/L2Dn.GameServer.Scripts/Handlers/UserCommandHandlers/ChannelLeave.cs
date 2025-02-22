@@ -22,7 +22,8 @@ public class ChannelLeave: IUserCommandHandler
         }
 
         Party? party = player.getParty();
-        if (party is null || !party.isLeader(player))
+        Player? leader = party?.getLeader();
+        if (party is null || !party.isLeader(player) || leader == null)
         {
             player.sendPacket(SystemMessageId.ONLY_THE_PARTY_LEADER_CAN_LEAVE_THE_COMMAND_CHANNEL);
             return false;
@@ -32,10 +33,10 @@ public class ChannelLeave: IUserCommandHandler
         {
             CommandChannel channel = party.getCommandChannel();
             channel.removeParty(party);
-            party.getLeader().sendPacket(SystemMessageId.YOU_HAVE_LEFT_THE_COMMAND_CHANNEL);
+            leader.sendPacket(SystemMessageId.YOU_HAVE_LEFT_THE_COMMAND_CHANNEL);
 
             SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_S_PARTY_HAS_LEFT_THE_COMMAND_CHANNEL);
-            sm.Params.addPcName(party.getLeader());
+            sm.Params.addPcName(leader);
             channel.broadcastPacket(sm);
             return true;
         }

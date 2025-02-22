@@ -42,7 +42,7 @@ public class Pet: Summon
 	private PetData _data;
 	private PetLevelData _leveldata;
 	private EvolveLevel _evolveLevel = EvolveLevel.None;
-	private ScheduledFuture _feedTask;
+	private ScheduledFuture? _feedTask;
 
 	private void deletePetEvolved()
 	{
@@ -161,6 +161,7 @@ public class Pet: Summon
 		{
 			_leveldata = PetDataTable.getInstance().getPetLevelData(getTemplate().getId(), getStat().getLevel());
 		}
+
 		return _leveldata;
 	}
 
@@ -170,6 +171,7 @@ public class Pet: Summon
 		{
 			_data = PetDataTable.getInstance().getPetData(getTemplate().getId());
 		}
+
 		setPetType(_data.getDefaultPetType());
 		return _data;
 	}
@@ -285,9 +287,9 @@ public class Pet: Summon
 	}
 
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	public static Pet spawnPet(NpcTemplate template, Player owner, Item control)
+	public static Pet? spawnPet(NpcTemplate template, Player owner, Item control)
 	{
-		Pet existingPet = World.getInstance().getPet(owner.ObjectId);
+		Pet? existingPet = World.getInstance().getPet(owner.ObjectId);
 		if (existingPet != null) // owner has a pet listed in world
 		{
 			existingPet.unSummon(owner);
@@ -426,7 +428,7 @@ public class Pet: Summon
 	 */
 	public override Weapon? getActiveWeaponItem()
 	{
-		Item weapon = getActiveWeaponInstance();
+		Item? weapon = getActiveWeaponInstance();
 		if (weapon == null)
 		{
 			return null;
@@ -462,7 +464,7 @@ public class Pet: Summon
 	 */
 	public override bool destroyItem(string process, int objectId, long count, WorldObject? reference, bool sendMessage)
 	{
-		Item item = _inventory.destroyItem(process, objectId, count, getOwner(), reference);
+		Item? item = _inventory.destroyItem(process, objectId, count, getOwner(), reference);
 		if (item == null)
 		{
 			if (sendMessage)
@@ -506,7 +508,7 @@ public class Pet: Summon
 	 */
 	public override bool destroyItemByItemId(string process, int itemId, long count, WorldObject reference, bool sendMessage)
 	{
-		Item item = _inventory.destroyItemByItemId(process, itemId, count, getOwner(), reference);
+		Item? item = _inventory.destroyItemByItemId(process, itemId, count, getOwner(), reference);
 		if (item == null)
 		{
 			if (sendMessage)
@@ -642,7 +644,7 @@ public class Pet: Summon
 		// Herbs
 		if (target.getTemplate().hasExImmediateEffect())
 		{
-			IItemHandler handler = ItemHandler.getInstance().getHandler(target.getEtcItem());
+			IItemHandler? handler = ItemHandler.getInstance().getHandler(target.getEtcItem());
 			if (handler == null)
 			{
 				LOGGER.Warn("No item handler registered for item ID: " + target.getId() + ".");
@@ -691,7 +693,7 @@ public class Pet: Summon
 			}
 			else
 			{
-				Item item = getOwner().getInventory().addItem("Pet Pickup", target, getOwner(), this);
+				Item? item = getOwner().getInventory().addItem("Pet Pickup", target, getOwner(), this);
 				if (item != null)
 				{
 					getOwner().sendPacket(new PetItemListPacket(getInventory().getItems()));
@@ -746,7 +748,7 @@ public class Pet: Summon
 		DecayTaskManager.getInstance().add(this);
 		if (owner != null)
 		{
-			BuffInfo buffInfo = owner.getEffectList().getBuffInfoBySkillId(49300);
+			BuffInfo? buffInfo = owner.getEffectList().getBuffInfoBySkillId(49300);
 			owner.getEffectList().add(new BuffInfo(owner, owner,
 				SkillData.getInstance().getSkill(49300,
 					buffInfo == null ? 1 : Math.Min(buffInfo.getSkill().getLevel() + 1, 10)), false, null, null));
@@ -790,11 +792,11 @@ public class Pet: Summon
 	 * @param reference Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public Item transferItem(string process, int objectId, long count, Inventory target, Player actor, WorldObject? reference)
+	public Item? transferItem(string process, int objectId, long count, Inventory target, Player actor, WorldObject? reference)
 	{
-		Item oldItem = _inventory.getItemByObjectId(objectId);
+		Item? oldItem = _inventory.getItemByObjectId(objectId);
 		Item playerOldItem = target.getItemByItemId(oldItem.getId());
-		Item newItem = _inventory.transferItem(process, objectId, count, target, actor, reference);
+		Item? newItem = _inventory.transferItem(process, objectId, count, target, actor, reference);
 		if (newItem == null)
 		{
 			return null;
@@ -897,7 +899,7 @@ public class Pet: Summon
 
 	public void dropItemHere(Item item, bool protect)
 	{
-		Item dropit = _inventory.dropItem("Drop", item.ObjectId, item.getCount(), getOwner(), this);
+		Item? dropit = _inventory.dropItem("Drop", item.ObjectId, item.getCount(), getOwner(), this);
 		if (dropit != null)
 		{
 			if (protect)
@@ -942,7 +944,7 @@ public class Pet: Summon
 				pet.setName(record.Name);
 
 				long exp = record.Exp;
-				PetLevelData info = PetDataTable.getInstance().getPetLevelData(pet.getId(), pet.getLevel());
+				PetLevelData? info = PetDataTable.getInstance().getPetLevelData(pet.getId(), pet.getLevel());
 				// DS: update experience based by level
 				// Avoiding pet delevels due to exp per level values changed.
 				if (info != null && exp < info.getPetMaxExp())
@@ -987,7 +989,7 @@ public class Pet: Summon
 	public override void stopSkillEffects(SkillFinishType type, int skillId)
 	{
 		base.stopSkillEffects(type, skillId);
-		ICollection<SummonEffectTable.SummonEffect> effects = SummonEffectTable.getInstance().getPetEffects().get(getControlObjectId());
+		ICollection<SummonEffectTable.SummonEffect>? effects = SummonEffectTable.getInstance().getPetEffects().get(getControlObjectId());
 		if (effects != null && effects.Count != 0)
 		{
 			foreach (SummonEffectTable.SummonEffect effect in effects)
@@ -1011,16 +1013,6 @@ public class Pet: Summon
 		if (!Config.RESTORE_PET_ON_RECONNECT)
 		{
 			_restoreSummon = false;
-		}
-
-		string req;
-		if (!_respawned)
-		{
-			req = "INSERT INTO pets (name,level,curHp,curMp,exp,sp,fed,ownerId,restore,item_obj_id) VALUES (?,?,?,?,?,?,?,?,?,?)";
-		}
-		else
-		{
-			req = "UPDATE pets SET name=?,level=?,curHp=?,curMp=?,exp=?,sp=?,fed=?,ownerId=?,restore=? WHERE item_obj_id = ?";
 		}
 
 		try
@@ -1064,7 +1056,7 @@ public class Pet: Summon
 			LOGGER_PET.Error("Failed to store Pet [ObjectId: " + ObjectId + "] data: " + e);
 		}
 
-		Item itemInst = getControlItem();
+		Item? itemInst = getControlItem();
 		if (itemInst != null && itemInst.getEnchantLevel() != getStat().getLevel())
 		{
 			itemInst.setEnchantLevel(getStat().getLevel());
@@ -1171,7 +1163,7 @@ public class Pet: Summon
 					         .OrderBy(r => r.BuffIndex))
 				{
 					TimeSpan effectCurTime = record.RemainingTime;
-					Skill skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel);
+					Skill? skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel);
 					if (skill == null)
 					{
 						continue;
@@ -1425,7 +1417,7 @@ public class Pet: Summon
 
 	public override int getWeapon()
 	{
-		Item weapon = _inventory.getPaperdollItem(Inventory.PAPERDOLL_RHAND);
+		Item? weapon = _inventory.getPaperdollItem(Inventory.PAPERDOLL_RHAND);
 		if (weapon != null)
 		{
 			return weapon.getId();
@@ -1435,7 +1427,7 @@ public class Pet: Summon
 
 	public override int getArmor()
 	{
-		Item weapon = _inventory.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
+		Item? weapon = _inventory.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
 		if (weapon != null)
 		{
 			return weapon.getId();
@@ -1445,7 +1437,7 @@ public class Pet: Summon
 
 	public int getJewel()
 	{
-		Item weapon = _inventory.getPaperdollItem(Inventory.PAPERDOLL_NECK);
+		Item? weapon = _inventory.getPaperdollItem(Inventory.PAPERDOLL_NECK);
 		if (weapon != null)
 		{
 			return weapon.getId();
@@ -1465,7 +1457,7 @@ public class Pet: Summon
 
 	public override void setName(string name)
 	{
-		Item controlItem = getControlItem();
+		Item? controlItem = getControlItem();
 		if (controlItem != null)
 		{
 			if (controlItem.getCustomType2() == (name == null ? 1 : 0))

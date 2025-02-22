@@ -668,8 +668,11 @@ public abstract class AbstractAI : Ctrl
 		{
 			if (_clientMovingToPawnOffset != 0 && isFollowing())
 			{
-				// Send a Server->Client packet MoveToPawn to the actor and all Player in its _knownPlayers
-				player.sendPacket(new MoveToPawnPacket(_actor, _target, _clientMovingToPawnOffset));
+                // TODO: null checking hack
+                WorldObject target = _target ?? throw new InvalidOperationException("Target is null in describeStateToPlayer.");
+
+                // Send a Server->Client packet MoveToPawn to the actor and all Player in its _knownPlayers
+				player.sendPacket(new MoveToPawnPacket(_actor, target, _clientMovingToPawnOffset));
 			}
 			else
 			{

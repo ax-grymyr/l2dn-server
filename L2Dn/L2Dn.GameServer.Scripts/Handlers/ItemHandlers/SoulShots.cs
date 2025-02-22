@@ -27,7 +27,7 @@ public class SoulShots: IItemHandler
 
 		Item? weaponInst = player.getActiveWeaponInstance();
 		Weapon weaponItem = player.getActiveWeaponItem();
-		List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
+		List<ItemSkillHolder>? skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 		if (skills == null)
 		{
 			_logger.Warn(GetType().Name + ": is missing skills!");
@@ -134,7 +134,6 @@ public class SoulShots: IItemHandler
 
 		int itemId = item.getId();
 		long shotCount = item.getCount();
-		List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 		short shotConsumption = 0;
 		if (pet != null && !pet.isChargedShot(ShotType.SOULSHOTS))
 		{
@@ -149,6 +148,7 @@ public class SoulShots: IItemHandler
 			}
 		}
 
+        List<ItemSkillHolder>? skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 		if (skills == null)
 		{
 			_logger.Warn(GetType().Name + ": is missing skills!");

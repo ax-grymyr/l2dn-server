@@ -116,7 +116,7 @@ public class CharSummonTable
 			return;
 		}
 
-		Pet pet = Pet.spawnPet(npcTemplate, player, item);
+		Pet? pet = Pet.spawnPet(npcTemplate, player, item);
 		if (pet == null)
 		{
 			LOGGER.Warn(GetType().Name + ": Null pet instance for: " + player + " and pet NPC template:" + npcTemplate);

@@ -2,6 +2,7 @@ using System.Runtime.CompilerServices;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Zones.Types;
@@ -335,9 +336,10 @@ public class SpawnTable
 
 	private void notifyRemoved(Spawn spawn)
 	{
-		if (spawn != null && spawn.getLastSpawn() != null && spawn.getNpcSpawnTemplate() != null)
+        Npc? lastSpawn = spawn.getLastSpawn();
+		if (lastSpawn != null && spawn.getNpcSpawnTemplate() != null)
 		{
-			spawn.getNpcSpawnTemplate().notifyDespawnNpc(spawn.getLastSpawn());
+			spawn.getNpcSpawnTemplate().notifyDespawnNpc(lastSpawn);
 		}
 	}
 

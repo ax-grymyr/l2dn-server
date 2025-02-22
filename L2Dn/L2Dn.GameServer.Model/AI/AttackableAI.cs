@@ -224,21 +224,24 @@ public class AttackableAI: CreatureAI
 	}
 
 	protected virtual void thinkCast()
-	{
-		WorldObject target = _skill.getTarget(_actor, getTarget(), _forceUse, _dontMove, false);
+    {
+        // TODO: null checking hack
+        Skill skill = _skill ?? throw new InvalidOperationException("Skill is null in thinkCast");
+
+		WorldObject target = skill.getTarget(_actor, getTarget(), _forceUse, _dontMove, false);
 		if (checkTargetLost(target))
 		{
 			setCastTarget(null);
 			return;
 		}
 
-		if (maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
+		if (maybeMoveToPawn(target, _actor.getMagicalAttackRange(skill)))
 		{
 			return;
 		}
 
 		setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-		_actor.doCast(_skill, _item, _forceUse, _dontMove);
+		_actor.doCast(skill, _item, _forceUse, _dontMove);
 	}
 
 	/**
@@ -352,7 +355,8 @@ public class AttackableAI: CreatureAI
 				{
 					// For each Creature check if the target is autoattackable
 					if (isAggressiveTowards(t)) // check aggression
-					{
+                    {
+                        Player? tPlayer = t.getActingPlayer();
 						if (t.isFakePlayer())
 						{
 							if (!npc.isFakePlayer() || (npc.isFakePlayer() && Config.FAKE_PLAYER_AGGRO_FPC))
@@ -364,14 +368,12 @@ public class AttackableAI: CreatureAI
 								}
 							}
 						}
-						else if (t.isPlayable())
+						else if (t.isPlayable() && tPlayer != null)
 						{
 							EventContainer events = getActiveChar().Events;
 							if (events.HasSubscribers<OnAttackableHate>())
 							{
-								OnAttackableHate onAttackableHate =
-									new(getActiveChar(), t.getActingPlayer(), t.isSummon());
-
+								OnAttackableHate onAttackableHate = new(getActiveChar(), tPlayer, t.isSummon());
 								if (events.Notify(onAttackableHate) && onAttackableHate.Terminate)
 								{
 									return;
@@ -442,10 +444,12 @@ public class AttackableAI: CreatureAI
 		}
 
 		// Order this attackable to return to its spawn because there's no target to attack
+        WorldObject? target2 = getTarget();
+        Player? target2Player = target2?.getActingPlayer();
         if (!npc.isWalker() && npc.getSpawn() != null &&
-            npc.Distance2D(npc.getSpawn().Location.Location2D) > Config.MAX_DRIFT_RANGE && (getTarget() == null ||
-                getTarget().isInvisible() || (getTarget().isPlayer() && !Config.ATTACKABLES_CAMP_PLAYER_CORPSES &&
-                    getTarget().getActingPlayer().isAlikeDead())))
+            npc.Distance2D(npc.getSpawn().Location.Location2D) > Config.MAX_DRIFT_RANGE && (target2 == null ||
+                target2.isInvisible() || (target2.isPlayer() && !Config.ATTACKABLES_CAMP_PLAYER_CORPSES &&
+                    target2Player != null && target2Player.isAlikeDead())))
         {
             npc.setWalking();
             npc.returnHome();
@@ -453,13 +457,15 @@ public class AttackableAI: CreatureAI
         }
 
         // Do not leave dead player
-		if (getTarget() != null && getTarget().isPlayer() && getTarget().getActingPlayer().isAlikeDead())
+        WorldObject? target3 = getTarget();
+        Player? target3Player = target3?.getActingPlayer();
+		if (target3 != null && target3.isPlayer() && target3Player != null && target3Player.isAlikeDead())
 		{
 			return;
 		}
 
 		// Minions following leader
-		Creature leader = npc.getLeader();
+		Creature? leader = npc.getLeader();
 		if (leader != null && !leader.isAlikeDead())
 		{
 			int offset;
@@ -682,7 +688,7 @@ public class AttackableAI: CreatureAI
 
 		// Handle all WorldObject of its Faction inside the Faction Range
 
-		Set<int> clans = template.getClans();
+		Set<int>? clans = template.getClans();
 		if (clans != null && !clans.isEmpty())
 		{
 			int factionRange = template.getClanHelpRange() + collision;
@@ -724,7 +730,8 @@ public class AttackableAI: CreatureAI
 							return;
 						}
 
-						if (finalTarget.isPlayable())
+                        Player? finalTargetPlayer = finalTarget.getActingPlayer();
+						if (finalTarget.isPlayable() && finalTargetPlayer != null)
 						{
 							// By default, when a faction member calls for help, attack the caller's attacker.
 							// Notify the AI with EVT_AGGRESSION
@@ -733,7 +740,7 @@ public class AttackableAI: CreatureAI
 							if (nearby.Events.HasSubscribers<OnAttackableFactionCall>())
 							{
 								nearby.Events.NotifyAsync(new OnAttackableFactionCall(nearby, npc,
-									finalTarget.getActingPlayer(), finalTarget.isSummon()));
+                                    finalTargetPlayer, finalTarget.isSummon()));
 							}
 						}
 						else if (nearby.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK)
@@ -1021,7 +1028,7 @@ public class AttackableAI: CreatureAI
 		_actor.doAutoAttack(target);
 	}
 
-	private bool checkSkillTarget(Skill skill, WorldObject target)
+	private bool checkSkillTarget(Skill skill, WorldObject? target)
 	{
 		if (target == null)
 		{
@@ -1297,7 +1304,7 @@ public class AttackableAI: CreatureAI
 		}
 		catch (Exception e)
 		{
-			// LOGGER.warning(getClass().getSimpleName() + ": " + this.getActor().getName() + " - onEvtThink() failed!");
+			LOGGER.Error(GetType().Name + ": " + getActor().getName() + " - onEvtThink() failed: " + e);
 		}
 		finally
 		{
@@ -1354,16 +1361,16 @@ public class AttackableAI: CreatureAI
 
 		if (me.isMonster())
 		{
-			Monster master = (Monster) me;
+			Monster master = (Monster)me;
 			if (master.hasMinions())
 			{
 				master.getMinionList().onAssist(me, attacker);
 			}
 
-			master = master.getLeader();
-			if (master != null && master.hasMinions())
+            Monster? leader = master.getLeader();
+			if (leader != null && leader.hasMinions())
 			{
-				master.getMinionList().onAssist(me, attacker);
+                leader.getMinionList().onAssist(me, attacker);
 			}
 		}
 
@@ -1413,10 +1420,10 @@ public class AttackableAI: CreatureAI
 					master.getMinionList().onAssist(me, target);
 				}
 
-				master = master.getLeader();
-				if (master != null && master.hasMinions())
+				Monster? leader = master.getLeader();
+				if (leader != null && leader.hasMinions())
 				{
-					master.getMinionList().onAssist(me, target);
+                    leader.getMinionList().onAssist(me, target);
 				}
 			}
 		}

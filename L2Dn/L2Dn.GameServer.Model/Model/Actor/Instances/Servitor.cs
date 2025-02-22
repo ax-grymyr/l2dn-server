@@ -379,7 +379,7 @@ public class Servitor : Summon, Runnable
 				foreach (DbSummonSkillReuse record in query)
 				{
 					TimeSpan effectCurTime = record.RemainingTime;
-					Skill skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel);
+					Skill? skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel);
 					if (skill == null)
 					{
 						continue;

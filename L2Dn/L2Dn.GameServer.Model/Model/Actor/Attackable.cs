@@ -1105,7 +1105,7 @@ public class Attackable: Npc
 			return;
 		}
 
-		Player player = mainDamageDealer.getActingPlayer();
+		Player? player = mainDamageDealer.getActingPlayer();
 
 		// Don't drop anything if the last attacker or owner isn't Player
 		if (player == null)

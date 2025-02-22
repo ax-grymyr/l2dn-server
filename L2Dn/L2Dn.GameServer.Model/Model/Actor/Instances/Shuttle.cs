@@ -9,11 +9,12 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 
 public class Shuttle: Vehicle
 {
-	private ShuttleDataHolder _shuttleData;
+	private readonly ShuttleDataHolder _shuttleData;
 
-	public Shuttle(CreatureTemplate template): base(template)
+	public Shuttle(CreatureTemplate template, ShuttleDataHolder shuttleData): base(template)
 	{
 		InstanceType = InstanceType.Shuttle;
+        _shuttleData = shuttleData;
 		setAI(new ShuttleAI(this));
 	}
 
@@ -103,11 +104,6 @@ public class Shuttle: Vehicle
 	public void broadcastShuttleInfo()
 	{
 		broadcastPacket(new ExShuttleInfoPacket(this));
-	}
-
-	public void setData(ShuttleDataHolder data)
-	{
-		_shuttleData = data;
 	}
 
 	public ShuttleDataHolder getShuttleData()

@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
@@ -32,7 +33,8 @@ public class FortCommander : Defender
 		}
 
 		// Attackable during siege by all except defenders
-		return getFort() != null && getFort().getResidenceId() > 0 && getFort().getSiege().isInProgress() && !getFort().getSiege().checkIsDefender(attacker.getClan());
+        Fort? fort = getFort();
+		return fort != null && fort.getResidenceId() > 0 && fort.getSiege().isInProgress() && !fort.getSiege().checkIsDefender(attacker.getClan());
 	}
 
 	public override void addDamageHate(Creature attacker, long damage, long aggro)
@@ -55,9 +57,11 @@ public class FortCommander : Defender
 			return false;
 		}
 
-		if (getFort().getSiege().isInProgress())
+        // TODO: null checking hack
+        Fort fort = getFort() ?? throw new InvalidOperationException("fort is null in FortCommander.doDie");
+		if (fort.getSiege().isInProgress())
 		{
-			getFort().getSiege().killedCommander(this);
+			fort.getSiege().killedCommander(this);
 		}
 
 		return true;

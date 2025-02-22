@@ -1165,15 +1165,16 @@ public class FortManager: Merchant
 	}
 
 	protected int validateCondition(Player player)
-	{
-		if (getFort() != null && getFort().getResidenceId() > 0 && player.getClan() != null)
+    {
+        Fort? fort = getFort();
+		if (fort != null && fort.getResidenceId() > 0 && player.getClan() != null)
         {
-            if (getFort().getZone().isActive())
+            if (fort.getZone().isActive())
 			{
 				return COND_BUSY_BECAUSE_OF_SIEGE; // Busy because of siege
 			}
 
-            if (getFort().getOwnerClan() != null && getFort().getOwnerClan().getId() == player.getClanId())
+            if (fort.getOwnerClan() != null && fort.getOwnerClan().getId() == player.getClanId())
             {
                 return COND_OWNER; // Owner
             }
@@ -1191,10 +1192,11 @@ public class FortManager: Merchant
 
 	private void showVaultWindowWithdraw(Player player)
 	{
-		if (player.isClanLeader() || player.hasClanPrivilege(ClanPrivilege.CL_VIEW_WAREHOUSE))
+        Clan? clan = player.getClan();
+		if (clan != null && (player.isClanLeader() || player.hasClanPrivilege(ClanPrivilege.CL_VIEW_WAREHOUSE)))
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-			player.setActiveWarehouse(player.getClan().getWarehouse());
+			player.setActiveWarehouse(clan.getWarehouse());
 			player.sendPacket(new WarehouseWithdrawalListPacket(1, player, WarehouseWithdrawalListPacket.CLAN));
 		}
 		else

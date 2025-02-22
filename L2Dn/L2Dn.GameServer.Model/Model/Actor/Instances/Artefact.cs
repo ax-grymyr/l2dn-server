@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -29,7 +30,10 @@ public class Artefact: Npc
     public override void onSpawn()
     {
         base.onSpawn();
-        getCastle().registerArtefact(this);
+
+        // TODO: null checking hack
+        Castle castle = getCastle() ?? throw new InvalidOperationException("Castle is null in Artefact.onSpawn");
+        castle.registerArtefact(this);
     }
 
     public override bool isArtefact()
@@ -53,11 +57,11 @@ public class Artefact: Npc
         player.sendPacket(ActionFailedPacket.STATIC_PACKET);
     }
 
-    public override void reduceCurrentHp(double damage, Creature attacker, Skill skill)
+    public override void reduceCurrentHp(double damage, Creature attacker, Skill? skill)
     {
     }
 
-    public override void reduceCurrentHp(double value, Creature attacker, Skill skill, bool isDOT, bool directlyToHp,
+    public override void reduceCurrentHp(double value, Creature attacker, Skill? skill, bool isDOT, bool directlyToHp,
         bool critical, bool reflect)
     {
     }

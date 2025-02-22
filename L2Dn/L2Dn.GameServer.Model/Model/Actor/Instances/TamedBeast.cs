@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
@@ -28,23 +29,24 @@ public class TamedBeast: FeedableBeast
 	private const int BUFF_INTERVAL = 5000; // 5 seconds
 	private int _remainingTime = MAX_DURATION;
 	private Location3D _homeLocation;
-	protected Player _owner;
-	private ScheduledFuture _buffTask;
-	private ScheduledFuture _durationCheckTask;
-	protected bool _isFreyaBeast;
-	private Set<Skill> _beastSkills;
+	private Player _owner;
+	private ScheduledFuture? _buffTask;
+	private ScheduledFuture? _durationCheckTask;
+	private readonly bool _isFreyaBeast;
+	private Set<Skill> _beastSkills = [];
 
-	public TamedBeast(int npcTemplateId): base(NpcData.getInstance().getTemplate(npcTemplateId))
+	public TamedBeast(NpcTemplate npcTemplate): base(npcTemplate)
 	{
 		InstanceType = InstanceType.TamedBeast;
 		setHome(this);
 	}
 
-	public TamedBeast(int npcTemplateId, Player owner, int foodSkillId, Location3D location,
-		bool isFreyaBeast = false): base(NpcData.getInstance().getTemplate(npcTemplateId))
+	public TamedBeast(NpcTemplate npcTemplate, Player owner, int foodSkillId, Location3D location,
+		bool isFreyaBeast = false): base(npcTemplate)
 	{
 		InstanceType = InstanceType.TamedBeast;
 		_isFreyaBeast = isFreyaBeast;
+        _owner = owner;
 		setCurrentHp(getMaxHp());
 		setCurrentMp(getMaxMp());
 		setFoodType(foodSkillId);
@@ -172,32 +174,23 @@ public class TamedBeast: FeedableBeast
 		TimeSpan delay = TimeSpan.FromMilliseconds(100);
 		foreach (Skill skill in _beastSkills)
 		{
-			ThreadPool.schedule(new buffCast(this, skill), delay);
+			ThreadPool.schedule(new BuffCast(this, skill), delay);
 			delay += TimeSpan.FromMilliseconds(100) + skill.getHitTime();
 		}
-		ThreadPool.schedule(new buffCast(this, null), delay);
+		ThreadPool.schedule(new BuffCast(this, null), delay);
 	}
 
-	private class buffCast: Runnable
-	{
-		private readonly TamedBeast _tamedBeast;
-		private readonly Skill _skill;
-
-		public buffCast(TamedBeast tamedBeast, Skill skill)
+	private class BuffCast(TamedBeast tamedBeast, Skill? skill): Runnable
+    {
+        public void run()
 		{
-			_tamedBeast = tamedBeast;
-			_skill = skill;
-		}
-
-		public void run()
-		{
-			if (_skill == null)
+			if (skill == null)
 			{
-				_tamedBeast.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _tamedBeast._owner);
+				tamedBeast.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, tamedBeast._owner);
 			}
 			else
 			{
-				_tamedBeast.sitCastAndFollow(_skill, _tamedBeast._owner);
+				tamedBeast.sitCastAndFollow(skill, tamedBeast._owner);
 			}
 		}
 	}
@@ -260,7 +253,8 @@ public class TamedBeast: FeedableBeast
 		{
 			_buffTask.cancel(true);
 		}
-		_durationCheckTask.cancel(true);
+
+		_durationCheckTask?.cancel(true);
 		stopHpMpRegeneration();
 
 		// clean up variables
@@ -376,7 +370,7 @@ public class TamedBeast: FeedableBeast
 		{
 			int foodTypeSkillId = _tamedBeast.getFoodType();
 			Player owner = _tamedBeast.getOwner();
-			Item item = null;
+			Item? item = null;
 			if (_tamedBeast._isFreyaBeast)
 			{
 				item = owner.getInventory().getItemByItemId(foodTypeSkillId);
@@ -408,12 +402,15 @@ public class TamedBeast: FeedableBeast
 				// if the owner has enough food, call the item handler (use the food and triffer all necessary actions)
 				if (item != null && item.getCount() >= 1)
 				{
-					WorldObject oldTarget = owner.getTarget();
+					WorldObject? oldTarget = owner.getTarget();
 					owner.setTarget(_tamedBeast);
 
 					// emulate a call to the owner using food, but bypass all checks for range, etc
 					// this also causes a call to the AI tasks handling feeding, which may call onReceiveFood as required.
-					SkillCaster.triggerCast(owner, _tamedBeast, SkillData.getInstance().getSkill(foodTypeSkillId, 1));
+                    Skill skill = SkillData.getInstance().getSkill(foodTypeSkillId, 1) ??
+                        throw new InvalidOperationException($"Skill not found, id={foodTypeSkillId}");
+
+					SkillCaster.triggerCast(owner, _tamedBeast, skill);
 					owner.setTarget(oldTarget);
 				}
 				else
@@ -477,7 +474,7 @@ public class TamedBeast: FeedableBeast
 			int totalBuffsOnOwner = 0;
 			int i = 0;
 			int rand = Rnd.get(_numBuffs);
-			Skill buffToGive = null;
+			Skill? buffToGive = null;
 
 			// get this npc's skills: getSkills()
 			foreach (Skill skill in _tamedBeast.getTemplate().getSkills().Values)
@@ -495,8 +492,9 @@ public class TamedBeast: FeedableBeast
 					}
 				}
 			}
+
 			// if the owner has less than 60% of this beast's available buff, cast a random buff
-			if (_numBuffs * 2 / 3 > totalBuffsOnOwner)
+			if (buffToGive != null && _numBuffs * 2 / 3 > totalBuffsOnOwner)
 			{
 				_tamedBeast.sitCastAndFollow(buffToGive, owner);
 			}

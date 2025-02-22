@@ -40,13 +40,14 @@ public class Doppelganger : Attackable
     {
         base.onSpawn();
 
-        if (_copySummonerEffects && getSummoner() != null)
+        Creature? summoner = getSummoner();
+        if (_copySummonerEffects && summoner != null)
         {
-            foreach (BuffInfo summonerInfo in getSummoner().getEffectList().getEffects())
+            foreach (BuffInfo summonerInfo in summoner.getEffectList().getEffects())
             {
                 if (summonerInfo.getAbnormalTime() > TimeSpan.Zero)
                 {
-                    BuffInfo info = new BuffInfo(getSummoner(), this, summonerInfo.getSkill(), false, null, null);
+                    BuffInfo info = new BuffInfo(summoner, this, summonerInfo.getSkill(), false, null, null);
                     info.setAbnormalTime(summonerInfo.getAbnormalTime());
                     getEffectList().add(info);
                 }
@@ -106,17 +107,20 @@ public class Doppelganger : Attackable
 
 	public override PvpFlagStatus getPvpFlag()
 	{
-		return getSummoner() != null ? getSummoner().getPvpFlag() : PvpFlagStatus.None;
+        Creature? summoner = getSummoner();
+		return summoner?.getPvpFlag() ?? PvpFlagStatus.None;
 	}
 
 	public override Team getTeam()
 	{
-		return getSummoner() != null ? getSummoner().getTeam() : Team.NONE;
+        Creature? summoner = getSummoner();
+		return summoner?.getTeam() ?? Team.NONE;
 	}
 
 	public override bool isAutoAttackable(Creature attacker)
 	{
-		return getSummoner() != null ? getSummoner().isAutoAttackable(attacker) : base.isAutoAttackable(attacker);
+        Creature? summoner = getSummoner();
+		return summoner?.isAutoAttackable(attacker) ?? base.isAutoAttackable(attacker);
 	}
 
 	public override void doAttack(double damage, Creature target, Skill skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
@@ -127,25 +131,27 @@ public class Doppelganger : Attackable
 
 	public override void sendDamageMessage(Creature target, Skill skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
 	{
-		if (miss || getSummoner() == null || !getSummoner().isPlayer())
-		{
+        Creature? summoner = getSummoner();
+        Player? actingPlayer = getActingPlayer();
+		if (miss || summoner == null || !summoner.isPlayer() || actingPlayer == null)
 			return;
-		}
 
 		// Prevents the double spam of system messages, if the target is the owning player.
-		if (target.ObjectId != getSummoner().ObjectId)
-		{
-			if (getActingPlayer().isInOlympiadMode() && target.isPlayer() && ((Player) target).isInOlympiadMode() && ((Player) target).getOlympiadGameId() == getActingPlayer().getOlympiadGameId())
-			{
-				OlympiadGameManager.getInstance().notifyCompetitorDamage(getSummoner().getActingPlayer(), damage);
-			}
+		if (target.ObjectId != summoner.ObjectId)
+        {
+            if (actingPlayer.isInOlympiadMode() && target.isPlayer() && ((Player)target).isInOlympiadMode() &&
+                ((Player)target).getOlympiadGameId() == actingPlayer.getOlympiadGameId())
+            {
+                OlympiadGameManager.getInstance().notifyCompetitorDamage(actingPlayer, damage);
+            }
 
-			SystemMessagePacket sm;
-			if ((target.isHpBlocked() && !target.isNpc()) || (target.isPlayer() && target.isAffected(EffectFlag.DUELIST_FURY) && !getActingPlayer().isAffected(EffectFlag.FACEOFF)))
-			{
-				sm = new SystemMessagePacket(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
-			}
-			else
+            SystemMessagePacket sm;
+            if ((target.isHpBlocked() && !target.isNpc()) || (target.isPlayer() &&
+                    target.isAffected(EffectFlag.DUELIST_FURY) && !actingPlayer.isAffected(EffectFlag.FACEOFF)))
+            {
+                sm = new SystemMessagePacket(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
+            }
+            else
 			{
 				sm = new SystemMessagePacket(SystemMessageId.C1_HAS_DEALT_S3_DAMAGE_TO_C2);
 				sm.Params.addNpcName(this);
@@ -158,11 +164,12 @@ public class Doppelganger : Attackable
 		}
 	}
 
-	public override void reduceCurrentHp(double damage, Creature attacker, Skill skill)
+	public override void reduceCurrentHp(double damage, Creature attacker, Skill? skill)
 	{
 		base.reduceCurrentHp(damage, attacker, skill);
 
-		if (getSummoner() != null && getSummoner().isPlayer() && attacker != null && !isDead() && !isHpBlocked())
+        Creature? summoner = getSummoner();
+		if (summoner != null && summoner.isPlayer() && attacker != null && !isDead() && !isHpBlocked())
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
 			sm.Params.addNpcName(this);
@@ -173,9 +180,10 @@ public class Doppelganger : Attackable
 		}
 	}
 
-	public override Player getActingPlayer()
+	public override Player? getActingPlayer()
 	{
-		return getSummoner() != null ? getSummoner().getActingPlayer() : base.getActingPlayer();
+        Creature? summoner = getSummoner();
+		return summoner != null ? summoner.getActingPlayer() : base.getActingPlayer();
 	}
 
 	public override bool deleteMe()
@@ -191,18 +199,12 @@ public class Doppelganger : Attackable
 
 	public override void sendPacket<TPacket>(TPacket packet)
 	{
-		if (getSummoner() != null)
-		{
-			getSummoner().sendPacket(packet);
-		}
+		getSummoner()?.sendPacket(packet);
 	}
 
 	public override void sendPacket(SystemMessageId id)
 	{
-		if (getSummoner() != null)
-		{
-			getSummoner().sendPacket(id);
-		}
+		getSummoner()?.sendPacket(id);
 	}
 
 	public override string ToString()

@@ -38,9 +38,13 @@ public class Decoy : Creature
 
 		if (aggressive)
 		{
-			int hateSpamSkillId = 5272;
-			int skilllevel = Math.Min(getTemplate().getDisplayId() - 13070, SkillData.getInstance().getMaxLevel(hateSpamSkillId));
-			_hateSpam = ThreadPool.scheduleAtFixedRate(new HateSpam(this, SkillData.getInstance().getSkill(hateSpamSkillId, skilllevel)), 2000, 5000);
+			const int hateSpamSkillId = 5272; // TODO: to list of common skills
+            int skillLevel = Math.Min(getTemplate().getDisplayId() - 13070, SkillData.getInstance().getMaxLevel(hateSpamSkillId));
+            Skill hateSpamSkill = SkillData.getInstance().getSkill(hateSpamSkillId, skillLevel) ??
+                throw new InvalidOperationException("Decoy: Skill not found: " + hateSpamSkillId + " level: " +
+                    skillLevel);
+
+			_hateSpam = ThreadPool.scheduleAtFixedRate(new HateSpam(this, hateSpamSkill), 2000, 5000);
 		}
 
 		SkillHolder skill = template.getParameters().getSkillHolder("decoy_skill");

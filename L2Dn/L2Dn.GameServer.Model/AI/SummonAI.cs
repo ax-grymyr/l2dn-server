@@ -138,7 +138,11 @@ public class SummonAI : PlayableAI, Runnable
 		summon.setFollowStatus(false);
 		setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		_startFollow = val;
-		_actor.doCast(_skill, _item, _skill.isBad(), _dontMove);
+
+        // TODO: null checking hack
+        Skill skill = _skill ?? throw new InvalidOperationException("_skill is null in SummonAI.thinkCast.");
+
+		_actor.doCast(skill, _item, skill.isBad(), _dontMove);
 	}
 
 	private void thinkPickUp()
@@ -258,9 +262,10 @@ public class SummonAI : PlayableAI, Runnable
 	private void allServitorsDefend(Creature attacker)
 	{
 		Creature owner = getActor().getOwner();
-		if (owner != null && owner.getActingPlayer().hasServitors())
+        Player? ownerPlayer = owner.getActingPlayer();
+		if (owner != null && ownerPlayer != null && ownerPlayer.hasServitors())
 		{
-			foreach (Summon summon in owner.getActingPlayer().getServitors().Values)
+			foreach (Summon summon in ownerPlayer.getServitors().Values)
 			{
 				if (((SummonAI) summon.getAI()).isDefending())
 				{

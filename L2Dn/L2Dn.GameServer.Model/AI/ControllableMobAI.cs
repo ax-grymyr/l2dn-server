@@ -111,10 +111,13 @@ public class ControllableMobAI : AttackableAI
 
 	protected override void thinkCast()
 	{
-		WorldObject? target = _skill.getTarget(_actor, _forceUse, _dontMove, false);
+        // TODO: null checking hack
+        Skill skill = _skill ?? throw new InvalidOperationException("Skill is null in thinkCast.");
+
+		WorldObject? target = skill.getTarget(_actor, _forceUse, _dontMove, false);
 		if (target == null || !target.isCreature() || ((Creature) target).isAlikeDead())
 		{
-			target = _skill.getTarget(_actor, findNextRndTarget(), _forceUse, _dontMove, false);
+			target = skill.getTarget(_actor, findNextRndTarget(), _forceUse, _dontMove, false);
 		}
 
 		if (target == null)
@@ -130,12 +133,14 @@ public class ControllableMobAI : AttackableAI
 			// check distant skills
 			foreach (Skill sk in _actor.getAllSkills())
 			{
-				if (Util.checkIfInRange(sk.getCastRange(), _actor, target, true) && !_actor.isSkillDisabled(sk) && _actor.getCurrentMp() > _actor.getStat().getMpConsume(sk))
-				{
-					_actor.doCast(sk);
-					return;
-				}
-				maxRange = Math.Max(maxRange, sk.getCastRange());
+                if (Util.checkIfInRange(sk.getCastRange(), _actor, target, true) && !_actor.isSkillDisabled(sk) &&
+                    _actor.getCurrentMp() > _actor.getStat().getMpConsume(sk))
+                {
+                    _actor.doCast(sk);
+                    return;
+                }
+
+                maxRange = Math.Max(maxRange, sk.getCastRange());
 			}
 
 			if (!_isNotMoving)

@@ -4,6 +4,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Html;
+using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -34,7 +35,8 @@ public class FortLogistics : Merchant
 		StringTokenizer st = new StringTokenizer(command, " ");
 		string actualCommand = st.nextToken(); // Get actual command
         Clan? clan = player.getClan();
-		bool isMyLord = clan != null && player.isClanLeader() && clan.getFortId() == (getFort() != null ? getFort().getResidenceId() : -1);
+        Fort? fort = getFort();
+		bool isMyLord = clan != null && player.isClanLeader() && clan.getFortId() == (fort != null ? fort.getResidenceId() : -1);
 
 		if (actualCommand.equalsIgnoreCase("rewards"))
 		{
@@ -184,7 +186,7 @@ public class FortLogistics : Merchant
 		player.sendPacket(html);
 	}
 
-	public override string getHtmlPath(int npcId, int value, Player player)
+	public override string getHtmlPath(int npcId, int value, Player? player)
 	{
 		string pom = "";
 		if (value == 0)

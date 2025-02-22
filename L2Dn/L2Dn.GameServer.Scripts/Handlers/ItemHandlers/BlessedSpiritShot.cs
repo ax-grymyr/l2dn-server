@@ -26,7 +26,7 @@ public class BlessedSpiritShot: IItemHandler
 
 		Item? weaponInst = player.getActiveWeaponInstance();
 		Weapon weaponItem = player.getActiveWeaponItem();
-		List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
+		List<ItemSkillHolder>? skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 		if (skills == null)
 		{
 			_logger.Warn(GetType().Name + ": is missing skills!");
@@ -127,7 +127,6 @@ public class BlessedSpiritShot: IItemHandler
 
 		int itemId = item.getId();
 		bool isBlessed = itemId == 6647 || itemId == 20334; // TODO: Unhardcode these!
-		List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 		ShotType shotType = isBlessed ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS;
 		short shotConsumption = 0;
 		if (pet != null && !pet.isChargedShot(shotType))
@@ -143,6 +142,7 @@ public class BlessedSpiritShot: IItemHandler
 			}
 		}
 
+        List<ItemSkillHolder>? skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 		if (skills == null)
 		{
 			_logger.Warn(GetType().Name + ": is missing skills!");

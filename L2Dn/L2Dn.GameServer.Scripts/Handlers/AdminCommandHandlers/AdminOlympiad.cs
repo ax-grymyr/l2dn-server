@@ -56,7 +56,7 @@ public class AdminOlympiad: IAdminCommandHandler
 
 				for (int i = 0; i < OlympiadGameManager.getInstance().getNumberOfStadiums(); i++)
 				{
-					OlympiadGameTask task = OlympiadGameManager.getInstance().getOlympiadTask(i);
+					OlympiadGameTask? task = OlympiadGameManager.getInstance().getOlympiadTask(i);
 					if (task != null)
 					{
 						lock (task)

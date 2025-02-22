@@ -622,7 +622,7 @@ public class SkillTreeData: DataReaderBase
 					continue;
 				}
 
-				Skill oldSkill = holder.getKnownSkill(player.getReplacementSkill(skill.getSkillId()));
+				Skill? oldSkill = holder.getKnownSkill(player.getReplacementSkill(skill.getSkillId()));
 				if (oldSkill != null)
 				{
 					if (oldSkill.getLevel() == skill.getSkillLevel() - 1)
@@ -757,7 +757,7 @@ public class SkillTreeData: DataReaderBase
 
 					// Remove skill from player's skill list or prepared holder's skill list
 					Skill? playerSkillToRemove = player.getKnownSkill(skillId);
-					Skill holderSkillToRemove = holder.getKnownSkill(skillId);
+					Skill? holderSkillToRemove = holder.getKnownSkill(skillId);
 
 					// If player has the skill remove it
 					if (playerSkillToRemove != null)

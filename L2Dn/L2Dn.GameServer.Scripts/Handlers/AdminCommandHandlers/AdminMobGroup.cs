@@ -138,7 +138,7 @@ public class AdminMobGroup: IAdminCommandHandler
 			return;
 		}
 
-		MobGroup group = MobGroupTable.getInstance().getGroup(groupId);
+		MobGroup? group = MobGroupTable.getInstance().getGroup(groupId);
 		if (group == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Invalid group specified.");
@@ -161,7 +161,7 @@ public class AdminMobGroup: IAdminCommandHandler
 			BuilderUtil.sendSysMessage(activeChar, "Incorrect command arguments.");
 			return;
 		}
-		MobGroup group = MobGroupTable.getInstance().getGroup(groupId);
+		MobGroup? group = MobGroupTable.getInstance().getGroup(groupId);
 		if (group == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Invalid group specified.");
@@ -183,7 +183,7 @@ public class AdminMobGroup: IAdminCommandHandler
 			BuilderUtil.sendSysMessage(activeChar, "Incorrect command arguments.");
 			return;
 		}
-		MobGroup group = MobGroupTable.getInstance().getGroup(groupId);
+		MobGroup? group = MobGroupTable.getInstance().getGroup(groupId);
 		if (group == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Invalid group specified.");
@@ -205,7 +205,7 @@ public class AdminMobGroup: IAdminCommandHandler
 			BuilderUtil.sendSysMessage(activeChar, "Incorrect command arguments.");
 			return;
 		}
-		MobGroup group = MobGroupTable.getInstance().getGroup(groupId);
+		MobGroup? group = MobGroupTable.getInstance().getGroup(groupId);
 		if (group == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Invalid group specified.");
@@ -227,7 +227,7 @@ public class AdminMobGroup: IAdminCommandHandler
 			BuilderUtil.sendSysMessage(activeChar, "Incorrect command arguments.");
 			return;
 		}
-		MobGroup group = MobGroupTable.getInstance().getGroup(groupId);
+		MobGroup? group = MobGroupTable.getInstance().getGroup(groupId);
 		if (group == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Invalid group specified.");
@@ -289,7 +289,7 @@ public class AdminMobGroup: IAdminCommandHandler
 			return;
 		}
 
-		MobGroup group = MobGroupTable.getInstance().getGroup(groupId);
+		MobGroup? group = MobGroupTable.getInstance().getGroup(groupId);
 		if (group == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Invalid group specified.");
@@ -338,7 +338,7 @@ public class AdminMobGroup: IAdminCommandHandler
 			return;
 		}
 
-		MobGroup group = MobGroupTable.getInstance().getGroup(groupId);
+		MobGroup? group = MobGroupTable.getInstance().getGroup(groupId);
 		if (group == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Invalid group specified.");
@@ -374,7 +374,7 @@ public class AdminMobGroup: IAdminCommandHandler
 			return;
 		}
 
-		MobGroup group = MobGroupTable.getInstance().getGroup(groupId);
+		MobGroup? group = MobGroupTable.getInstance().getGroup(groupId);
 		if (group == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Invalid group specified.");
@@ -402,7 +402,7 @@ public class AdminMobGroup: IAdminCommandHandler
 			return;
 		}
 
-		MobGroup group = MobGroupTable.getInstance().getGroup(groupId);
+		MobGroup? group = MobGroupTable.getInstance().getGroup(groupId);
 		if (group == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Invalid group specified.");
@@ -428,7 +428,7 @@ public class AdminMobGroup: IAdminCommandHandler
 			return;
 		}
 
-		MobGroup group = MobGroupTable.getInstance().getGroup(groupId);
+		MobGroup? group = MobGroupTable.getInstance().getGroup(groupId);
 		if (group == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Invalid group specified.");
@@ -455,7 +455,7 @@ public class AdminMobGroup: IAdminCommandHandler
 			return;
 		}
 
-		MobGroup group = MobGroupTable.getInstance().getGroup(groupId);
+		MobGroup? group = MobGroupTable.getInstance().getGroup(groupId);
 		if (group == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Invalid group specified.");
@@ -499,14 +499,14 @@ public class AdminMobGroup: IAdminCommandHandler
 			return;
 		}
 
-		MobGroup group = MobGroupTable.getInstance().getGroup(groupId);
+		MobGroup? group = MobGroupTable.getInstance().getGroup(groupId);
 		if (group == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Invalid group specified.");
 			return;
 		}
 
-		MobGroup othGroup = MobGroupTable.getInstance().getGroup(othGroupId);
+		MobGroup? othGroup = MobGroupTable.getInstance().getGroup(othGroupId);
 		if (othGroup == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Incorrect target group.");
@@ -533,7 +533,7 @@ public class AdminMobGroup: IAdminCommandHandler
 			return;
 		}
 
-		MobGroup group = MobGroupTable.getInstance().getGroup(groupId);
+		MobGroup? group = MobGroupTable.getInstance().getGroup(groupId);
 		if (group == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Invalid group specified.");
@@ -581,7 +581,7 @@ public class AdminMobGroup: IAdminCommandHandler
 			return;
 		}
 
-		MobGroup group = MobGroupTable.getInstance().getGroup(groupId);
+		MobGroup? group = MobGroupTable.getInstance().getGroup(groupId);
 		if (group == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Invalid group specified.");

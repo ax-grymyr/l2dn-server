@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Model.Quests.NewQuestData;
+using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Teleporters;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Teleports;
@@ -134,7 +135,7 @@ public class Teleporter: Npc
 		return defaultVal;
 	}
 
-	public override string getHtmlPath(int npcId, int value, Player player)
+	public override string getHtmlPath(int npcId, int value, Player? player)
 	{
 		string pom;
 		if (value == 0)
@@ -145,7 +146,7 @@ public class Teleporter: Npc
 				foreach (TeleporterQuestRecommendationHolder rec in holders)
 				{
 					bool breakOuterLoop = false;
-					QuestState qs = player.getQuestState(rec.getQuestName());
+					QuestState? qs = player.getQuestState(rec.getQuestName());
 					if (qs != null && qs.isStarted())
 					{
 						foreach (QuestCondType cond in rec.getConditions())
@@ -181,13 +182,17 @@ public class Teleporter: Npc
 			return;
 		}
 
+        // TODO: why castle check and castle access are done differently?
+        // TODO: null checking hack
+        Castle castle = getCastle() ?? throw new InvalidOperationException("Castle is null");
+
 		// Teleporter is on castle ground
 		string filename = "html/teleporter/castleteleporter-no.htm";
-		if (player.getClan() != null && getCastle().getOwnerId() == player.getClanId()) // Clan owns castle
+		if (player.getClan() != null && castle.getOwnerId() == player.getClanId()) // Clan owns castle
 		{
 			filename = getHtmlPath(getId(), 0, player); // Owner message window
 		}
-		else if (getCastle().getSiege().isInProgress()) // Teleporter is busy due siege
+		else if (castle.getSiege().isInProgress()) // Teleporter is busy due siege
 		{
 			filename = "html/teleporter/castleteleporter-busy.htm"; // Busy because of siege
 		}

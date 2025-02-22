@@ -509,7 +509,7 @@ public class SkillData: DataReaderBase
 	private Map<int, Map<int, object>> parseValues(XElement element)
 	{
 		Map<int, Map<int, object>> values = new();
-		object parsedValue = parseValue(element, true, false, new());
+		object? parsedValue = parseValue(element, true, false, new());
 		if (parsedValue != null)
 		{
 			values.computeIfAbsent(-1, k => new()).put(-1, parsedValue);

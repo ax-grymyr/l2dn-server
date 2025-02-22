@@ -82,7 +82,11 @@ public class DoppelgangerAI : CreatureAI
 		getActor().followSummoner(false);
 		setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		_startFollow = val;
-		_actor.doCast(_skill, _item, _forceUse, _dontMove);
+
+        // TODO: null checking hack
+        Skill skill = _skill ?? throw new InvalidOperationException("_skill is null in thinkCast.");
+
+        _actor.doCast(skill, _item, _forceUse, _dontMove);
 	}
 
 	private void thinkInteract()

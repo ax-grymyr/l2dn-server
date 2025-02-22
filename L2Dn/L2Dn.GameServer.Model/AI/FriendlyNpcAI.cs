@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
@@ -205,6 +206,9 @@ public class FriendlyNpcAI : AttackableAI
             return;
         }
 
-        _actor.doCast(_skill, _item, _forceUse, _dontMove);
+        // TODO: null checking hack
+        Skill skill = _skill ?? throw new InvalidOperationException("Skill is null in thinkCast.");
+
+        _actor.doCast(skill, _item, _forceUse, _dontMove);
     }
 }

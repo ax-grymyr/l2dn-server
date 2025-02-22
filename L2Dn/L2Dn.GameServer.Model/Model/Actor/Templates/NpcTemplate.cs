@@ -78,8 +78,8 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	private int _baseAttackAngle;
 	private Map<int, Skill> _skills;
 	private Map<AISkillScope, List<Skill>> _aiSkillLists;
-	private Set<int>? _clans;
-	private Set<int>? _ignoreClanNpcIds;
+	private Set<int> _clans = [];
+	private Set<int> _ignoreClanNpcIds = [];
 	private List<DropGroupHolder>? _dropGroups;
 	private List<DropHolder>? _dropListDeath;
 	private List<DropHolder>? _dropListSpoil;
@@ -528,7 +528,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 		_aiSkillLists = aiSkillLists ?? [];
 	}
 
-	public Set<int>? getClans()
+	public Set<int> getClans()
 	{
 		return _clans;
 	}
@@ -558,7 +558,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	 */
 	public void setClans(Set<int>? clans)
 	{
-		_clans = clans != null ? clans : null;
+		_clans = clans ?? [];
 	}
 
 	/**
@@ -569,20 +569,14 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	public bool isClan(string clanName, params string[] clanNames)
 	{
 		// Using local variable for the sake of reloading since it can be turned to null.
-		Set<int>? clans = _clans;
-		if (clans == null)
-		{
-			return false;
-		}
-
 		int clanId = NpcData.getInstance().getClanId("ALL");
-		if (clans.Contains(clanId))
+		if (_clans.Contains(clanId))
 		{
 			return true;
 		}
 
 		clanId = NpcData.getInstance().getClanId(clanName);
-		if (clans.Contains(clanId))
+		if (_clans.Contains(clanId))
 		{
 			return true;
 		}
@@ -590,7 +584,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 		foreach (string name in clanNames)
 		{
 			clanId = NpcData.getInstance().getClanId(name);
-			if (clans.Contains(clanId))
+			if (_clans.Contains(clanId))
 			{
 				return true;
 			}
@@ -602,39 +596,33 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	 * @param clans A set of clan names to check if they belong to this NPC template clans.
 	 * @return {@code true} if at least one of the clan names belong to this NPC template clans, {@code false} otherwise.
 	 */
-	public bool isClan(Set<int> clans)
-	{
-		// Using local variable for the sake of reloading since it can be turned to null.
-		Set<int>? clanSet = _clans;
-		if (clanSet == null || clans == null)
-		{
-			return false;
-		}
+	public bool isClan(Set<int>? clans)
+    {
+        if (clans == null)
+            return false;
 
+		// Using local variable for the sake of reloading since it can be turned to null.
 		int clanId = NpcData.getInstance().getClanId("ALL");
-		if (clanSet.Contains(clanId))
-		{
+		if (_clans.Contains(clanId))
 			return true;
-		}
 
 		foreach (int id in clans)
 		{
-			if (clanSet.Contains(id))
-			{
+			if (_clans.Contains(id))
 				return true;
-			}
 		}
+
 		return false;
 	}
 
-	public Set<int>? getIgnoreClanNpcIds()
+	public Set<int> getIgnoreClanNpcIds()
 	{
 		return _ignoreClanNpcIds;
 	}
 
 	public bool hasIgnoreClanNpcIds()
 	{
-		return _ignoreClanNpcIds != null;
+		return _ignoreClanNpcIds.Count != 0;
 	}
 
 	/**
@@ -642,7 +630,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	 */
 	public void setIgnoreClanNpcIds(Set<int>? ignoreClanNpcIds)
 	{
-		_ignoreClanNpcIds = ignoreClanNpcIds != null ? ignoreClanNpcIds : null;
+		_ignoreClanNpcIds = ignoreClanNpcIds ?? [];
 	}
 
 	public void removeDropGroups()

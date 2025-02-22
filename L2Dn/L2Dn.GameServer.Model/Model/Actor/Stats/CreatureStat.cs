@@ -185,7 +185,7 @@ public class CreatureStat
 	 * @param skill
 	 * @return the Magical Attack range (base+modifier) of the Creature.
 	 */
-	public int getMagicalAttackRange(Skill skill)
+	public int getMagicalAttackRange(Skill? skill)
 	{
 		if (skill != null)
 		{

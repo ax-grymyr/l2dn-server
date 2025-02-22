@@ -39,13 +39,24 @@ public class PlayerAI : PlayableAI
 	protected override void changeIntention(CtrlIntention intention, params object?[] args)
 	{
 		// do nothing unless CAST intention
-		// however, forget interrupted actions when starting to use an offensive skill
-		if (intention != CtrlIntention.AI_INTENTION_CAST || ((Skill)args[0]).isBad())
+		if (intention != CtrlIntention.AI_INTENTION_CAST)
 		{
 			_nextIntention = null;
 			base.changeIntention(intention, args);
 			return;
 		}
+
+        // TODO: null checking hack
+        if (args[0] is not Skill skill)
+            throw new InvalidOperationException("First argument is not a skill in PlayerAI.changeIntention with intention=CAST.");
+
+        // however, forget interrupted actions when starting to use an offensive skill
+        if (skill.isBad())
+        {
+            _nextIntention = null;
+            base.changeIntention(intention, args);
+            return;
+        }
 
 		object? localArg0 = args.Length > 0 ? args[0] : null;
 		object? localArg1 = args.Length > 1 ? args[1] : null;
@@ -134,10 +145,14 @@ public class PlayerAI : PlayableAI
 	{
 		base.onEvtAttacked(attacker);
 
+        // TODO: null checking hack
+        Player actorActingPlayer = _actor.getActingPlayer() ??
+            throw new InvalidOperationException("Actor is not a player in PlayerAI.onEvtAttacked.");
+
 		// Summons in defending mode defend its master when attacked.
-		if (_actor.getActingPlayer().hasServitors())
+		if (actorActingPlayer.hasServitors())
 		{
-			foreach (Summon summon in _actor.getActingPlayer().getServitors().Values)
+			foreach (Summon summon in actorActingPlayer.getServitors().Values)
 			{
 				if (((SummonAI) summon.getAI()).isDefending())
 				{
@@ -151,10 +166,14 @@ public class PlayerAI : PlayableAI
 	{
 		base.onEvtEvaded(attacker);
 
+        // TODO: null checking hack
+        Player actorActingPlayer = _actor.getActingPlayer() ??
+            throw new InvalidOperationException("Actor is not a player in PlayerAI.onEvtEvaded.");
+
 		// Summons in defending mode defend its master when attacked.
-		if (_actor.getActingPlayer().hasServitors())
+		if (actorActingPlayer.hasServitors())
 		{
-			foreach (Summon summon in _actor.getActingPlayer().getServitors().Values)
+			foreach (Summon summon in actorActingPlayer.getServitors().Values)
 			{
 				if (((SummonAI) summon.getAI()).isDefending())
 				{
@@ -227,11 +246,15 @@ public class PlayerAI : PlayableAI
 
 	private void thinkAttack()
 	{
-		SkillUseHolder queuedSkill = _actor.getActingPlayer().getQueuedSkill();
+        // TODO: null checking hack
+        Player actorActingPlayer = _actor.getActingPlayer() ??
+            throw new InvalidOperationException("Actor is not a player in PlayerAI.thinkAttack.");
+
+        SkillUseHolder queuedSkill = actorActingPlayer.getQueuedSkill();
 		if (queuedSkill != null)
 		{
 			// Remove the skill from queue.
-			_actor.getActingPlayer().setQueuedSkill(null, null, false, false);
+            actorActingPlayer.setQueuedSkill(null, null, false, false);
 
 			// Check if player has the needed MP for the queued skill.
 			if (_actor.getCurrentMp() >= _actor.getStat().getMpInitialConsume(queuedSkill.getSkill()))
@@ -246,7 +269,7 @@ public class PlayerAI : PlayableAI
 				}
 
 				// Use queued skill.
-				_actor.getActingPlayer().useMagic(queuedSkill.getSkill(), queuedSkill.getItem(), queuedSkill.isCtrlPressed(), queuedSkill.isShiftPressed());
+                actorActingPlayer.useMagic(queuedSkill.getSkill(), queuedSkill.getItem(), queuedSkill.isCtrlPressed(), queuedSkill.isShiftPressed());
 				return;
 			}
 		}
@@ -273,11 +296,14 @@ public class PlayerAI : PlayableAI
 
 	private void thinkCast()
 	{
-		WorldObject? target = getCastTarget();
-		if (_skill.getTargetType() == TargetType.GROUND && _actor.isPlayer())
+        // TODO: null checking hack
+        Skill skill = _skill ?? throw new InvalidOperationException("_skill is null in PlayerAI.thinkCast.");
+
+        WorldObject? target = getCastTarget();
+		if (skill.getTargetType() == TargetType.GROUND && _actor.isPlayer())
 		{
 			Location3D? location = ((Player)_actor).getCurrentSkillWorldPosition();
-			if (location != null && maybeMoveToPosition(location.Value, _actor.getMagicalAttackRange(_skill)))
+			if (location != null && maybeMoveToPosition(location.Value, _actor.getMagicalAttackRange(skill)))
 			{
 				return;
 			}
@@ -286,7 +312,7 @@ public class PlayerAI : PlayableAI
 		{
 			if (checkTargetLost(target))
 			{
-				if (_skill.isBad() && target != null)
+				if (skill.isBad() && target != null)
 				{
 					// Notify the target
 					setCastTarget(null);
@@ -294,7 +320,7 @@ public class PlayerAI : PlayableAI
 				}
 				return;
 			}
-			if (target != null && maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
+			if (target != null && maybeMoveToPawn(target, _actor.getMagicalAttackRange(skill)))
 			{
 				return;
 			}
@@ -305,12 +331,12 @@ public class PlayerAI : PlayableAI
 		if (currentTarget != target && currentTarget != null && target != null)
 		{
 			_actor.setTarget(target);
-			_actor.doCast(_skill, _item, _forceUse, _dontMove);
+			_actor.doCast(skill, _item, _forceUse, _dontMove);
 			_actor.setTarget(currentTarget);
 			return;
 		}
 
-		_actor.doCast(_skill, _item, _forceUse, _dontMove);
+		_actor.doCast(skill, _item, _forceUse, _dontMove);
 	}
 
 	private void thinkPickUp()

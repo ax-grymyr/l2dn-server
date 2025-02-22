@@ -31,7 +31,7 @@ public class Harvester: IItemHandler
 			return false;
 		}
 
-		List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
+		List<ItemSkillHolder>? skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 		if (skills == null)
 		{
 			_logger.Warn(GetType().Name + ": is missing skills!");

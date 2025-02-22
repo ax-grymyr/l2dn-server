@@ -36,9 +36,9 @@ public class Guard: Attackable
 			return true;
 		}
 
-		if (Config.FACTION_SYSTEM_ENABLED && Config.FACTION_GUARDS_ENABLED && attacker.isPlayable())
+        Player? player = attacker.getActingPlayer();
+		if (Config.FACTION_SYSTEM_ENABLED && Config.FACTION_GUARDS_ENABLED && attacker.isPlayable() && player != null)
 		{
-			Player? player = attacker.getActingPlayer();
 			if ((player.isGood() && getTemplate().isClan(Config.FACTION_EVIL_TEAM_NAME)) ||
 			    (player.isEvil() && getTemplate().isClan(Config.FACTION_GOOD_TEAM_NAME)))
 			{

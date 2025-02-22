@@ -84,7 +84,7 @@ public class Clan: IIdentifiable, INamable
 	private readonly ItemContainer _warehouse;
 	private readonly Map<int, ClanWar> _atWarWith = new();
 
-	private Forum _forum;
+	private Forum? _forum;
 
 	private readonly Map<int, Skill> _skills = new();
 	private readonly Map<int, RankPrivs> _privs = new();
@@ -384,7 +384,7 @@ public class Clan: IIdentifiable, INamable
 	 */
 	public void removeClanMember(int objectId, DateTime? clanJoinExpiryTime)
 	{
-		ClanMember exMember = _members.remove(objectId);
+		ClanMember? exMember = _members.remove(objectId);
 		if (exMember == null)
 		{
 			LOGGER.Warn("Member Object ID: " + objectId + " not found in clan while trying to remove");
@@ -402,7 +402,7 @@ public class Clan: IIdentifiable, INamable
 
 		if (exMember.getApprentice() != 0)
 		{
-			ClanMember apprentice = getClanMember(exMember.getApprentice());
+			ClanMember? apprentice = getClanMember(exMember.getApprentice());
 			if (apprentice != null)
 			{
 				if (apprentice.getPlayer() != null)
@@ -421,7 +421,7 @@ public class Clan: IIdentifiable, INamable
 		int? sponsorId = exMember.getSponsor();
 		if (sponsorId != null)
 		{
-			ClanMember sponsor = getClanMember(sponsorId.Value);
+			ClanMember? sponsor = getClanMember(sponsorId.Value);
 			if (sponsor != null)
 			{
 				if (sponsor.getPlayer() != null)
@@ -466,7 +466,7 @@ public class Clan: IIdentifiable, INamable
 			// remove Residential skills
 			if (getCastleId() > 0)
 			{
-				Castle castle = CastleManager.getInstance().getCastleByOwner(this);
+				Castle? castle = CastleManager.getInstance().getCastleByOwner(this);
 				if (castle != null)
 				{
 					castle.removeResidentialSkills(player);
@@ -474,7 +474,7 @@ public class Clan: IIdentifiable, INamable
 			}
 			if (getFortId() > 0)
 			{
-				Fort fort = FortManager.getInstance().getFortByOwner(this);
+				Fort? fort = FortManager.getInstance().getFortByOwner(this);
 				if (fort != null)
 				{
 					fort.removeResidentialSkills(player);
@@ -707,7 +707,7 @@ public class Clan: IIdentifiable, INamable
 		_level = level;
 		if (_level >= 2 && _forum == null && Config.ENABLE_COMMUNITY_BOARD)
 		{
-			Forum forum = ForumsBBSManager.getInstance().getForumByName("ClanRoot");
+			Forum? forum = ForumsBBSManager.getInstance().getForumByName("ClanRoot");
 			if (forum != null)
 			{
 				_forum = forum.getChildByName(_name);
@@ -1196,9 +1196,12 @@ public class Clan: IIdentifiable, INamable
 			{
 				int id = clanSkill.SkillId;
 				int level = clanSkill.SkillLevel;
-				// Create a Skill object for each record
-				Skill skill = SkillData.getInstance().getSkill(id, level);
-				// Add the Skill object to the Clan _skills
+
+                // Create a Skill object for each record
+                Skill skill = SkillData.getInstance().getSkill(id, level) ??
+                    throw new InvalidOperationException("Clan Skill not found for id: " + id); // TODO: null checking hack
+
+                // Add the Skill object to the Clan _skills
 				int subType = clanSkill.SubPledgeId;
 				if (subType == -2)
 				{
@@ -1210,7 +1213,7 @@ public class Clan: IIdentifiable, INamable
 				}
 				else
 				{
-					SubPledge subunit = _subPledges.get(subType);
+					SubPledge? subunit = _subPledges.get(subType);
 					if (subunit != null)
 					{
 						subunit.addNewSkill(skill);
@@ -1291,7 +1294,7 @@ public class Clan: IIdentifiable, INamable
 			}
 			else
 			{
-				SubPledge subunit = getSubPledge(subType);
+				SubPledge? subunit = getSubPledge(subType);
 				if (subunit != null)
 				{
 					oldSkill = subunit.addNewSkill(newSkill);
@@ -1394,7 +1397,7 @@ public class Clan: IIdentifiable, INamable
 		SocialClass playerSocialClass = (SocialClass)player.getPledgeClass() + 1;
 		foreach (Skill skill in _skills.Values)
 		{
-			SkillLearn skillLearn = SkillTreeData.getInstance().getPledgeSkill(skill.getId(), skill.getLevel());
+			SkillLearn? skillLearn = SkillTreeData.getInstance().getPledgeSkill(skill.getId(), skill.getLevel());
 			if (skillLearn == null || skillLearn.getSocialClass() == null || playerSocialClass >= skillLearn.getSocialClass())
 			{
 				player.addSkill(skill, false); // Skill is not saved to player DB
@@ -1404,7 +1407,7 @@ public class Clan: IIdentifiable, INamable
 		{
 			foreach (Skill skill in _subPledgeSkills.Values)
 			{
-				SkillLearn skillLearn = SkillTreeData.getInstance().getSubPledgeSkill(skill.getId(), skill.getLevel());
+				SkillLearn? skillLearn = SkillTreeData.getInstance().getSubPledgeSkill(skill.getId(), skill.getLevel());
 				if (skillLearn == null || skillLearn.getSocialClass() == null || playerSocialClass >= skillLearn.getSocialClass())
 				{
 					player.addSkill(skill, false); // Skill is not saved to player DB
@@ -1413,7 +1416,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		else
 		{
-			SubPledge subunit = getSubPledge(player.getPledgeType());
+			SubPledge? subunit = getSubPledge(player.getPledgeType());
 			if (subunit == null)
 			{
 				return;
@@ -1451,7 +1454,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		else
 		{
-			SubPledge subunit = getSubPledge(player.getPledgeType());
+			SubPledge? subunit = getSubPledge(player.getPledgeType());
 			if (subunit == null)
 			{
 				return;
@@ -1498,7 +1501,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		else
 		{
-			SubPledge subunit = getSubPledge(player.getPledgeType());
+			SubPledge? subunit = getSubPledge(player.getPledgeType());
 			if (subunit != null)
 			{
 				foreach (Skill skill in subunit.getSkills())
@@ -1731,7 +1734,7 @@ public class Clan: IIdentifiable, INamable
 	 * @param pledgeType
 	 * @return
 	 */
-	public SubPledge getSubPledge(int pledgeType)
+	public SubPledge? getSubPledge(int pledgeType)
 	{
 		return _subPledges == null ? null : _subPledges.get(pledgeType);
 	}
@@ -1771,9 +1774,9 @@ public class Clan: IIdentifiable, INamable
 		return _subPledges.Values;
 	}
 
-	public SubPledge createSubPledge(Player player, int pledgeTypeValue, int leaderId, string subPledgeName)
+	public SubPledge? createSubPledge(Player player, int pledgeTypeValue, int leaderId, string subPledgeName)
 	{
-		SubPledge subPledge = null;
+		SubPledge? subPledge = null;
 		int pledgeType = getAvailablePledgeTypes(pledgeTypeValue);
 		if (pledgeType == 0)
 		{
@@ -1937,10 +1940,11 @@ public class Clan: IIdentifiable, INamable
 	}
 
 	public void setRankPrivs(int rank, ClanPrivilege privs)
-	{
-		if (_privs.get(rank) != null)
+    {
+        RankPrivs? rankPrivs = _privs.get(rank);
+		if (rankPrivs != null)
 		{
-			_privs.get(rank).setPrivs(privs);
+            rankPrivs.setPrivs(privs);
 
 			try
 			{
@@ -2213,7 +2217,7 @@ public class Clan: IIdentifiable, INamable
 			return false;
 		}
 
-		Clan leaderClan = player.getClan();
+		Clan? leaderClan = player.getClan();
 		if (leaderClan.getAllyPenaltyExpiryTime() > DateTime.UtcNow && leaderClan.getAllyPenaltyType() == PENALTY_TYPE_DISMISS_CLAN)
 		{
 			player.sendPacket(SystemMessageId.YOU_CAN_ACCEPT_A_NEW_CLAN_IN_THE_ALLIANCE_IN_24_H_AFTER_DISMISSING_ANOTHER_ONE);
@@ -2857,7 +2861,7 @@ public class Clan: IIdentifiable, INamable
 		_atWarWith.remove(clanId);
 	}
 
-	public ClanWar getWarWith(int? clanId)
+	public ClanWar? getWarWith(int? clanId)
 	{
 		if (clanId is null)
 			return null;
@@ -2868,7 +2872,7 @@ public class Clan: IIdentifiable, INamable
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void addMemberOnlineTime(Player player)
 	{
-		ClanMember clanMember = getClanMember(player.ObjectId);
+		ClanMember? clanMember = getClanMember(player.ObjectId);
 		if (clanMember != null)
 		{
 			clanMember.setOnlineTime(clanMember.getOnlineTime() + TimeSpan.FromMinutes(1));
@@ -2967,7 +2971,7 @@ public class Clan: IIdentifiable, INamable
 
 	public bool canClaimBonusReward(Player player, ClanRewardType type)
 	{
-		ClanMember clanMember = getClanMember(player.ObjectId);
+		ClanMember? clanMember = getClanMember(player.ObjectId);
 		return clanMember != null && getAvailableBonus(type) != null && !clanMember.isRewardClaimed(type);
 	}
 
