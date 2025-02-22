@@ -44,7 +44,7 @@ public class Party : AbstractPlayerGroup
 	private ScheduledFuture? _changeDistributionTypeRequestTask;
 	private Set<int> _changeDistributionTypeAnswers;
 	private int _itemLastLoot;
-	private CommandChannel _commandChannel;
+	private CommandChannel? _commandChannel;
 	private ScheduledFuture? _positionBroadcastTask;
 	private bool _disbanding;
 	private Map<int, Creature> _tacticalSigns;
@@ -1035,7 +1035,7 @@ public class Party : AbstractPlayerGroup
 		return _commandChannel;
 	}
 
-	public void setCommandChannel(CommandChannel channel)
+	public void setCommandChannel(CommandChannel? channel)
 	{
 		_commandChannel = channel;
 	}

@@ -191,10 +191,11 @@ public abstract class ZoneType: IEventContainerProvider
 
 		// Check level
 		if (creature.getLevel() < _minLevel || creature.getLevel() > _maxLevel)
-		{
-			if (creature.isPlayer())
+        {
+            Player? player = creature.getActingPlayer();
+			if (creature.isPlayer() && player != null)
 			{
-				creature.getActingPlayer().sendPacket(new ExShowScreenMessagePacket(
+                player.sendPacket(new ExShowScreenMessagePacket(
 					SystemMessageId.YOU_CANNOT_ENTER_AS_YOUR_LEVEL_DOES_NOT_MEET_THE_REQUIREMENTS,
 					ExShowScreenMessagePacket.TOP_CENTER, 10000));
 			}
@@ -508,10 +509,11 @@ public abstract class ZoneType: IEventContainerProvider
 	{
 		List<Player> players = new();
 		foreach (Creature ch in _characterList.Values)
-		{
-			if (ch != null && ch.isPlayer())
+        {
+            Player? player = ch.getActingPlayer();
+			if (ch != null && ch.isPlayer() && player != null)
 			{
-				players.Add(ch.getActingPlayer());
+				players.Add(player);
 			}
 		}
 		return players;
@@ -608,10 +610,11 @@ public abstract class ZoneType: IEventContainerProvider
 	public virtual void oustAllPlayers()
 	{
 		foreach (Creature obj in _characterList.Values)
-		{
-			if (obj != null && obj.isPlayer() && obj.getActingPlayer().isOnline())
+        {
+            Player? player = obj.getActingPlayer();
+			if (obj != null && obj.isPlayer() && player != null && player.isOnline())
 			{
-				obj.getActingPlayer().teleToLocation(TeleportWhereType.TOWN);
+                player.teleToLocation(TeleportWhereType.TOWN);
 			}
 		}
 	}
@@ -628,13 +631,10 @@ public abstract class ZoneType: IEventContainerProvider
 
 		foreach (Creature creature in _characterList.Values)
 		{
-			if (creature != null && creature.isPlayer())
+            Player? player = creature.getActingPlayer();
+			if (creature != null && creature.isPlayer() && player != null && player.isOnline())
 			{
-				Player player = creature.getActingPlayer();
-				if (player.isOnline())
-				{
-					player.teleToLocation(loc);
-				}
+				player.teleToLocation(loc);
 			}
 		}
 	}

@@ -24,10 +24,10 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class ZoneManager: DataReaderBase
 {
 	private const int ShiftBy = 15;
-	private const int OffsetX = -World.WORLD_X_MIN >> ShiftBy;
-	private const int OffsetY = -World.WORLD_Y_MIN >> ShiftBy;
-	private const int RegionCountX = (World.WORLD_X_MAX >> ShiftBy) + OffsetX + 1;
-	private const int RegionCountY = (World.WORLD_Y_MAX >> ShiftBy) + OffsetY + 1;
+	private const int OffsetX = -WorldMap.WorldXMin >> ShiftBy;
+	private const int OffsetY = -WorldMap.WorldYMin >> ShiftBy;
+	private const int RegionCountX = WorldMap.RegionCountX;
+	private const int RegionCountY = WorldMap.RegionCountY;
 
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(ZoneManager));
 

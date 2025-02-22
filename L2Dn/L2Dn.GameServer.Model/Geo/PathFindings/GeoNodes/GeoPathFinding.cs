@@ -23,11 +23,11 @@ public class GeoPathFinding: PathFinding
 
 	public override List<AbstractNodeLoc>? findPath(Location3D location, Location3D targetLocation, Instance? instance, bool playable)
 	{
-		int gx = (location.X - World.WORLD_X_MIN) >> 4;
-		int gy = (location.Y - World.WORLD_Y_MIN) >> 4;
+		int gx = (location.X - WorldMap.WorldXMin) >> 4;
+		int gy = (location.Y - WorldMap.WorldYMin) >> 4;
 		short gz = (short)location.Z;
-		int gtx = (targetLocation.X - World.WORLD_X_MIN) >> 4;
-		int gty = (targetLocation.Y - World.WORLD_Y_MIN) >> 4;
+		int gtx = (targetLocation.X - WorldMap.WorldXMin) >> 4;
+		int gty = (targetLocation.Y - WorldMap.WorldYMin) >> 4;
 		short gtz = (short)targetLocation.Z;
 
 		GeoNode? start = readNode(gx, gy, gz);
@@ -368,9 +368,9 @@ public class GeoPathFinding: PathFinding
 
 	protected GeoPathFinding()
 	{
-		for (int regionX = World.TILE_X_MIN; regionX <= World.TILE_X_MAX; regionX++)
+		for (int regionX = WorldMap.TileXMin; regionX <= WorldMap.TileXMax; regionX++)
 		{
-			for (int regionY = World.TILE_Y_MIN; regionY <= World.TILE_Y_MAX; regionY++)
+			for (int regionY = WorldMap.TileYMin; regionY <= WorldMap.TileYMax; regionY++)
 			{
 				loadPathNodeFile((byte) regionX, (byte) regionY);
 			}

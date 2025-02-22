@@ -21,7 +21,7 @@ public class ActionData: DataReaderBase
 		load();
 	}
 
-	public void load()
+    private void load()
 	{
 		XmlActionData document = LoadXmlDocument<XmlActionData>(DataFileLocation.Data, "ActionData.xml");
 

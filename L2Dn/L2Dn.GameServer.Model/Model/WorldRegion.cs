@@ -25,7 +25,7 @@ public class WorldRegion
 	private readonly int _regionX;
 	private readonly int _regionY;
 	private bool _active = Config.GRIDS_ALWAYS_ON;
-	private ScheduledFuture _neighborsTask;
+	private ScheduledFuture? _neighborsTask;
 	private readonly AtomicInteger _activeNeighbors = new();
 
 	public WorldRegion(int regionX, int regionY)

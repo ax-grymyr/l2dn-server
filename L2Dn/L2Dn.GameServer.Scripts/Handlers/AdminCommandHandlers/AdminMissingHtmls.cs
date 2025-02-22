@@ -28,12 +28,12 @@ public class AdminMissingHtmls: IAdminCommandHandler
 		{
 			case "admin_geomap_missing_htmls":
 			{
-				int x = ((activeChar.getX() - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
-				int y = ((activeChar.getY() - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
-				int topLeftX = (x - World.TILE_ZERO_COORD_X) * World.TILE_SIZE;
-				int topLeftY = (y - World.TILE_ZERO_COORD_Y) * World.TILE_SIZE;
-				int bottomRightX = (x - World.TILE_ZERO_COORD_X) * World.TILE_SIZE + World.TILE_SIZE - 1;
-				int bottomRightY = (y - World.TILE_ZERO_COORD_Y) * World.TILE_SIZE + World.TILE_SIZE - 1;
+				int x = ((activeChar.getX() - WorldMap.WorldXMin) >> 15) + WorldMap.TileXMin;
+				int y = ((activeChar.getY() - WorldMap.WorldYMin) >> 15) + WorldMap.TileYMin;
+				int topLeftX = (x - WorldMap.TileZeroCoordX) * WorldMap.TileSize;
+				int topLeftY = (y - WorldMap.TileZeroCoordY) * WorldMap.TileSize;
+				int bottomRightX = (x - WorldMap.TileZeroCoordX) * WorldMap.TileSize + WorldMap.TileSize - 1;
+				int bottomRightY = (y - WorldMap.TileZeroCoordY) * WorldMap.TileSize + WorldMap.TileSize - 1;
 				BuilderUtil.sendSysMessage(activeChar, "GeoMap: " + x + "_" + y + " (" + topLeftX + "," + topLeftY + " to " + bottomRightX + "," + bottomRightY + ")");
 				List<int> results = [];
 				foreach (WorldObject obj in World.getInstance().getVisibleObjects())

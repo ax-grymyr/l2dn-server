@@ -51,8 +51,8 @@ public class GeoEngine
 		int loadedRegions = 0;
 		try
 		{
-			for (int regionX = World.TILE_X_MIN; regionX <= World.TILE_X_MAX; regionX++)
-			for (int regionY = World.TILE_Y_MIN; regionY <= World.TILE_Y_MAX; regionY++)
+			for (int regionX = WorldMap.TileXMin; regionX <= WorldMap.TileXMax; regionX++)
+			for (int regionY = WorldMap.TileYMin; regionY <= WorldMap.TileYMax; regionY++)
 			{
 				string geoFilePath = Path.Combine(Config.GEODATA_PATH, $"{regionX}_{regionY}.l2j");
 				if (!File.Exists(geoFilePath))

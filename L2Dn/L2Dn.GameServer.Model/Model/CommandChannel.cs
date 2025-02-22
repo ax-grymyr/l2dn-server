@@ -22,7 +22,7 @@ public class CommandChannel: AbstractPlayerGroup
 	public CommandChannel(Player leader)
 	{
 		_commandLeader = leader;
-		Party party = leader.getParty();
+		Party? party = leader.getParty();
 		_parties.add(party);
 		_channelLvl = party.getLevel();
 		party.setCommandChannel(this);

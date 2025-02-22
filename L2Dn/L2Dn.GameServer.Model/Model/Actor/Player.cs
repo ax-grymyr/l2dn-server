@@ -15112,11 +15112,12 @@ public class Player: Playable
 
 		foreach (MapHolder map in holder.getMaps())
 		{
-			if (map.getX() == ((locX - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN && map.getY() == ((locY - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN)
-			{
-				return true;
-			}
-		}
+            if (map.getX() == ((locX - WorldMap.WorldXMin) >> 15) + WorldMap.TileXMin &&
+                map.getY() == ((locY - WorldMap.WorldYMin) >> 15) + WorldMap.TileYMin)
+            {
+                return true;
+            }
+        }
 
 		return false;
 	}

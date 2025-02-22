@@ -42,12 +42,12 @@ public abstract class PathFinding
 
 	public byte getRegionX(int nodePos)
 	{
-		return (byte) ((nodePos >> 8) + World.TILE_X_MIN);
+		return (byte) ((nodePos >> 8) + WorldMap.TileXMin);
 	}
 
 	public byte getRegionY(int nodePos)
 	{
-		return (byte) ((nodePos >> 8) + World.TILE_Y_MIN);
+		return (byte) ((nodePos >> 8) + WorldMap.TileYMin);
 	}
 
 	public short getRegionOffset(byte rx, byte ry)
@@ -62,7 +62,7 @@ public abstract class PathFinding
 	 */
 	public int calculateWorldX(short nodeX)
 	{
-		return World.WORLD_X_MIN + (nodeX * 128) + 48;
+		return WorldMap.WorldXMin + (nodeX * 128) + 48;
 	}
 
 	/**
@@ -72,7 +72,7 @@ public abstract class PathFinding
 	 */
 	public int calculateWorldY(short nodeY)
 	{
-		return World.WORLD_Y_MIN + (nodeY * 128) + 48;
+		return WorldMap.WorldYMin + (nodeY * 128) + 48;
 	}
 
 	public virtual string[]? getStat()

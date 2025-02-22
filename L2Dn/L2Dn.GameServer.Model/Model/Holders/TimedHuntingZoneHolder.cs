@@ -60,12 +60,12 @@ public class TimedHuntingZoneHolder
 
 	private static int getMapY(int y)
 	{
-		return ((y - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
+		return ((y - WorldMap.WorldYMin) >> 15) + WorldMap.TileYMin;
 	}
 
 	private static int getMapX(int x)
 	{
-		return ((x - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
+		return ((x - WorldMap.WorldXMin) >> 15) + WorldMap.TileXMin;
 	}
 
 	public int getZoneId()

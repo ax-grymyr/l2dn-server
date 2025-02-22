@@ -125,15 +125,15 @@ public abstract class WorldObject(int objectId)
 		{
 			int spawnX = location.X switch
 			{
-				> World.WORLD_X_MAX => World.WORLD_X_MAX - 5000,
-				< World.WORLD_X_MIN => World.WORLD_X_MIN + 5000,
+				> WorldMap.WorldXMax => WorldMap.WorldXMax - 5000,
+				< WorldMap.WorldXMin => WorldMap.WorldXMin + 5000,
 				_ => location.X,
 			};
 
 			int spawnY = location.Y switch
 			{
-				> World.WORLD_Y_MAX => World.WORLD_Y_MAX - 5000,
-				< World.WORLD_Y_MIN => World.WORLD_Y_MIN + 5000,
+				> WorldMap.WorldYMax => WorldMap.WorldYMax - 5000,
+				< WorldMap.WorldYMin => WorldMap.WorldYMin + 5000,
 				_ => location.Y,
 			};
 
@@ -456,15 +456,15 @@ public abstract class WorldObject(int objectId)
 	{
 		int correctX = location.X switch
 		{
-			> World.WORLD_X_MAX => World.WORLD_X_MAX - 5000,
-			< World.WORLD_X_MIN => World.WORLD_X_MIN + 5000,
+			> WorldMap.WorldXMax => WorldMap.WorldXMax - 5000,
+			< WorldMap.WorldXMin => WorldMap.WorldXMin + 5000,
 			_ => location.X,
 		};
 
 		int correctY = location.Y switch
 		{
-			> World.WORLD_Y_MAX => World.WORLD_Y_MAX - 5000,
-			< World.WORLD_Y_MIN => World.WORLD_Y_MIN + 5000,
+			> WorldMap.WorldYMax => WorldMap.WorldYMax - 5000,
+			< WorldMap.WorldYMin => WorldMap.WorldYMin + 5000,
 			_ => location.Y,
 		};
 
@@ -534,7 +534,7 @@ public abstract class WorldObject(int objectId)
 	 */
 	public virtual int getInstanceId()
 	{
-		Instance instance = _instance;
+		Instance? instance = _instance;
 		return instance != null ? instance.getId() : 0;
 	}
 

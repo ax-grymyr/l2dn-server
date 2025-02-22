@@ -1,30 +1,19 @@
 ﻿namespace L2Dn.GameServer.Model;
 
-public class ActionDataHolder
+public class ActionDataHolder(int id, string handler, int optionId)
 {
-    private readonly int _id;
-    private readonly string _handler;
-    private readonly int _optionId;
-	
-    public ActionDataHolder(int id, string handler, int optionId)
-    {
-        _id = id;
-        _handler = handler;
-        _optionId = optionId;
-    }
-	
     public int getId()
     {
-        return _id;
+        return id;
     }
-	
+
     public string getHandler()
     {
-        return _handler;
+        return handler;
     }
-	
+
     public int getOptionId()
     {
-        return _optionId;
+        return optionId;
     }
 }

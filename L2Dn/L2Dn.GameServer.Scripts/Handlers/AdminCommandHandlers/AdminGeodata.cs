@@ -149,13 +149,13 @@ public class AdminGeodata: IAdminCommandHandler
 			}
 			case "admin_geomap":
 			{
-				int x = ((activeChar.getX() - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
-				int y = ((activeChar.getY() - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
+				int x = ((activeChar.getX() - WorldMap.WorldXMin) >> 15) + WorldMap.TileXMin;
+				int y = ((activeChar.getY() - WorldMap.WorldYMin) >> 15) + WorldMap.TileYMin;
                 BuilderUtil.sendSysMessage(activeChar,
-                    "GeoMap: " + x + "_" + y + " (" + (x - World.TILE_ZERO_COORD_X) * World.TILE_SIZE + "," +
-                    (y - World.TILE_ZERO_COORD_Y) * World.TILE_SIZE + " to " +
-                    ((x - World.TILE_ZERO_COORD_X) * World.TILE_SIZE + World.TILE_SIZE - 1) + "," +
-                    ((y - World.TILE_ZERO_COORD_Y) * World.TILE_SIZE + World.TILE_SIZE - 1) + ")");
+                    "GeoMap: " + x + "_" + y + " (" + (x - WorldMap.TileZeroCoordX) * WorldMap.TileSize + "," +
+                    (y - WorldMap.TileZeroCoordY) * WorldMap.TileSize + " to " +
+                    ((x - WorldMap.TileZeroCoordX) * WorldMap.TileSize + WorldMap.TileSize - 1) + "," +
+                    ((y - WorldMap.TileZeroCoordY) * WorldMap.TileSize + WorldMap.TileSize - 1) + ")");
 				break;
 			}
 			case "admin_geocell":
@@ -184,8 +184,8 @@ public class AdminGeodata: IAdminCommandHandler
 					return false;
 				}
 
-				int x = ((activeChar.getX() - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
-				int y = ((activeChar.getY() - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
+                int x = ((activeChar.getX() - WorldMap.WorldXMin) >> 15) + WorldMap.TileXMin;
+                int y = ((activeChar.getY() - WorldMap.WorldYMin) >> 15) + WorldMap.TileYMin;
 				string fileName = string.Format(GeoEngine.FILE_NAME_FORMAT, x, y);
 				IRegion region = GeoEngine.getInstance().getRegion(GeoEngine.getGeoX(activeChar.getX()), GeoEngine.getGeoY(activeChar.getY()));
 				if (region is NullRegion)
@@ -220,17 +220,17 @@ public class AdminGeodata: IAdminCommandHandler
 				int count = 0;
 				int worldX = -327680; // Top left Gracia X coord.
 				int worldY = -262144; // Top left Gracia Y coord.
-				for (int regionX = World.TILE_X_MIN - 1; regionX <= World.TILE_X_MAX; regionX++)
+				for (int regionX = WorldMap.TileXMin - 1; regionX <= WorldMap.TileXMax; regionX++)
 				{
-					for (int regionY = World.TILE_Y_MIN - 1; regionY <= World.TILE_Y_MAX; regionY++)
+					for (int regionY = WorldMap.TileYMin - 1; regionY <= WorldMap.TileYMax; regionY++)
 					{
 						int geoX = GeoEngine.getGeoX(worldX);
 						int geoY = GeoEngine.getGeoY(worldY);
 						IRegion region = GeoEngine.getInstance().getRegion(geoX, geoY);
 						if (!(region is NullRegion))
 						{
-							int x = ((worldX - World.WORLD_X_MIN) >> 15) + World.TILE_X_MIN;
-							int y = ((worldY - World.WORLD_Y_MIN) >> 15) + World.TILE_Y_MIN;
+							int x = ((worldX - WorldMap.WorldXMin) >> 15) + WorldMap.TileXMin;
+							int y = ((worldY - WorldMap.WorldYMin) >> 15) + WorldMap.TileYMin;
 							string fileName = string.Format(GeoEngine.FILE_NAME_FORMAT, x, y);
 							if (region.saveToFile(fileName))
 							{
@@ -242,9 +242,9 @@ public class AdminGeodata: IAdminCommandHandler
 								BuilderUtil.sendSysMessage(activeChar, "Could not save region " + x + "_" + y);
 							}
 						}
-						worldY += World.TILE_SIZE;
+						worldY += WorldMap.TileSize;
 					}
-					worldX += World.TILE_SIZE;
+					worldX += WorldMap.TileSize;
 					worldY = -262144;
 				}
 				BuilderUtil.sendSysMessage(activeChar, "Saved " + count + " regions.");

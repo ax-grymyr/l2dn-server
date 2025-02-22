@@ -44,7 +44,7 @@ public abstract class AbstractPlayerGroup
 	 */
 	public int getLeaderObjectId()
 	{
-		Player leader = getLeader();
+		Player? leader = getLeader();
 		if (leader == null)
 		{
 			return 0;
@@ -64,7 +64,7 @@ public abstract class AbstractPlayerGroup
 			return false;
 		}
 
-		Player leader = getLeader();
+		Player? leader = getLeader();
 		if (leader == null)
 		{
 			return false;

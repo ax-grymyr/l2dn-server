@@ -383,10 +383,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		// Mobius: Tempfix for untransform not showing stats.
 		// Resend UserInfo to player.
-		if (isPlayer())
+        Player? player = getActingPlayer();
+		if (isPlayer() && player != null)
 		{
 			getStat().recalculateStats(true);
-			getActingPlayer().updateUserInfo();
+			player.updateUserInfo();
 		}
 	}
 
@@ -462,12 +463,13 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * <font color=#FF0000><b><u>Caution</u>: This method DOESN'T SEND Server=>Client packets to players</b></font>
 	 */
 	public virtual void onDecay()
-	{
-		if (isPlayer())
+    {
+        Player? player = getActingPlayer();
+		if (isPlayer() && player != null)
 		{
-			if (getActingPlayer().isInTimedHuntingZone())
+			if (player.isInTimedHuntingZone())
 			{
-				getActingPlayer().stopTimedHuntingZoneTask();
+                player.stopTimedHuntingZoneTask();
 				abortCast();
 				stopMove(null);
 				this.teleToLocation(TeleportWhereType.TOWN);
@@ -519,7 +521,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		{
 			if (Config.GRANDBOSS_SPAWN_ANNOUNCEMENTS && (!isInInstance() || Config.GRANDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 			{
-				string name = NpcData.getInstance().getTemplate(getId()).getName();
+				string? name = NpcData.getInstance().getTemplate(getId())?.getName(); // TODO: wtf? why not use _template?
 				if (name != null)
 				{
 					Broadcast.toAllOnlinePlayers(name + " has spawned!");
@@ -529,7 +531,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 		else if (isRaid() && Config.RAIDBOSS_SPAWN_ANNOUNCEMENTS && (!isInInstance() || Config.RAIDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 		{
-			string name = NpcData.getInstance().getTemplate(getId()).getName();
+			string? name = NpcData.getInstance().getTemplate(getId())?.getName(); // TODO: wtf? why not use _template?
 			if (name != null)
 			{
 				Broadcast.toAllOnlinePlayers(name + " has spawned!");
@@ -618,7 +620,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public void broadcastMoveToLocation()
 	{
-		MoveData move = _move;
+		MoveData? move = _move;
 		if (move == null)
 		{
 			return;
@@ -757,7 +759,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	public virtual void teleToLocation(Location location, Instance? instance)
 	{
 		// Prevent teleporting for players that disconnected unexpectedly.
-		if (isPlayer() && !getActingPlayer().isOnline())
+        Player? player = getActingPlayer();
+		if (isPlayer() && player != null && !player.isOnline())
 		{
 			return;
 		}
@@ -830,7 +833,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		sendPacket(new ExTeleportToLocationActivatePacket(this));
 
 		// Allow recall of the detached characters.
-		if (!isPlayer() || (getActingPlayer().getClient() != null && getActingPlayer().getClient().IsDetached))
+        GameSession? client = player?.getClient();
+		if (!isPlayer() || client == null || client.IsDetached)
 		{
 			onTeleported();
 		}
@@ -879,16 +883,17 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				}
 			}
 
-			if (getActingPlayer() != null)
+            Player? player = getActingPlayer();
+			if (player != null)
 			{
-				if (getActingPlayer().inObserverMode())
+				if (player.inObserverMode())
 				{
 					sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_FUNCTION_IN_THE_SPECTATOR_MODE);
 					sendPacket(ActionFailedPacket.STATIC_PACKET);
 					return;
 				}
 
-				if (getActingPlayer().isSiegeFriend(target))
+				if (player.isSiegeFriend(target))
 				{
 					sendPacket(SystemMessageId
 						.FORCE_ATTACK_IS_IMPOSSIBLE_AGAINST_A_TEMPORARY_ALLIED_MEMBER_DURING_A_SIEGE);
@@ -897,7 +902,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				}
 
 				// Checking if target has moved to peace zone
-				if (target.isInsidePeaceZone(getActingPlayer()))
+				if (target.isInsidePeaceZone(player))
 				{
 					getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 					sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -905,8 +910,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				}
 
 				// Events.
-				if (getActingPlayer().isOnEvent() && !getActingPlayer().isOnSoloEvent() && target.isPlayable() &&
-				    getActingPlayer().getTeam() == target.getActingPlayer().getTeam())
+                Player? targetPlayer = target.getActingPlayer();
+				if (player.isOnEvent() && !player.isOnSoloEvent() && target.isPlayable() && targetPlayer != null &&
+                    player.getTeam() == targetPlayer.getTeam())
 				{
 					sendPacket(ActionFailedPacket.STATIC_PACKET);
 					return;
@@ -968,7 +974,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 					}
 
 					// Check for arrows and MP
-					if (isPlayer())
+					if (isPlayer() && player != null)
 					{
 						// Check if there are arrows to use or else cancel the attack.
 						if (!checkAndEquipAmmunition(weaponItem.getItemType().isPistols() ? EtcItemType.ELEMENTAL_ORB :
@@ -991,7 +997,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 						// Checking if target has moved to peace zone - only for player-bow attacks at the moment
 						// Other melee is checked in movement code and for offensive spells a check is done every time
-						if (target.isInsidePeaceZone(getActingPlayer()))
+						if (target.isInsidePeaceZone(player))
 						{
 							getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 							sendPacket(SystemMessageId.YOU_CANNOT_ATTACK_IN_A_PEACEFUL_ZONE);
@@ -1155,7 +1161,6 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			}
 
 			// Flag the attacker if it's a Player outside a PvP area
-			Player player = getActingPlayer();
 			if (player != null && !player.isInsideZone(ZoneId.PVP) &&
 			    player != target) // Prevent players from flagging in PvP Zones.
 			{
@@ -1466,7 +1471,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public TimeSpan getSkillRemainingReuseTime(long hashCode)
 	{
-		TimeStamp reuseStamp = _reuseTimeStampsSkills.get(hashCode);
+		TimeStamp? reuseStamp = _reuseTimeStampsSkills.get(hashCode);
 		return reuseStamp != null ? reuseStamp.getRemaining() : TimeSpan.Zero;
 	}
 
@@ -1477,7 +1482,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public bool hasSkillReuse(long hashCode)
 	{
-		TimeStamp reuseStamp = _reuseTimeStampsSkills.get(hashCode);
+		TimeStamp? reuseStamp = _reuseTimeStampsSkills.get(hashCode);
 		return reuseStamp != null && reuseStamp.hasNotPassed();
 	}
 
@@ -1487,7 +1492,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * @return if the skill has a reuse time stamp, the skill reuse time stamp, otherwise {@code null}
 	 */
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	public TimeStamp getSkillReuseTimeStamp(long hashCode)
+	public TimeStamp? getSkillReuseTimeStamp(long hashCode)
 	{
 		return _reuseTimeStampsSkills.get(hashCode);
 	}
@@ -1639,12 +1644,12 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			killer._eventContainer.Notify(new OnCreatureKilled(killer, this));
 		}
 
-		if (killer != null && killer.isPlayer())
+        Player? killerPlayer = killer.getActingPlayer();
+		if (killer != null && killer.isPlayer() && killerPlayer != null)
 		{
-			Player player = killer.getActingPlayer();
-			if (player.isAssassin() && player.isAffectedBySkill((int)CommonSkill.BRUTALITY))
+			if (killerPlayer.isAssassin() && killerPlayer.isAffectedBySkill((int)CommonSkill.BRUTALITY))
 			{
-				player.setAssassinationPoints(player.getAssassinationPoints() + 10000);
+				killerPlayer.setAssassinationPoints(killerPlayer.getAssassinationPoints() + 10000);
 			}
 		}
 
@@ -1677,10 +1682,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			}
 
 			// Clan help range aggro on kill.
-			if (killer != null && killer.isPlayable() && !killer.getActingPlayer().isGM())
+			if (killer != null && killer.isPlayable() && killerPlayer != null && !killerPlayer.isGM())
 			{
 				NpcTemplate template = ((Attackable) this).getTemplate();
-				Set<int> clans = template.getClans();
+				Set<int>? clans = template.getClans();
 				if (clans != null && !clans.isEmpty())
 				{
 					World.getInstance().forEachVisibleObjectInRange<Attackable>(this, template.getClanHelpRange(), called =>
@@ -1707,7 +1712,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						if (called.Events.HasSubscribers<OnAttackableFactionCall>())
 						{
 							called.Events.Notify(new OnAttackableFactionCall(called, (Attackable)this,
-								killer.getActingPlayer(), killer.isSummon()));
+								killerPlayer, killer.isSummon()));
 						}
 					});
 				}
@@ -1741,7 +1746,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		{
 			if (Config.GRANDBOSS_DEFEAT_ANNOUNCEMENTS && (!isInInstance() || Config.GRANDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 			{
-				string name = NpcData.getInstance().getTemplate(getId()).getName();
+				string? name = NpcData.getInstance().getTemplate(getId())?.getName(); // TODO: why not use _template?
 				if (name != null)
 				{
 					Broadcast.toAllOnlinePlayers(name + " has been defeated!");
@@ -1751,7 +1756,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 		else if (isRaid() && Config.RAIDBOSS_DEFEAT_ANNOUNCEMENTS && (!isInInstance() || Config.RAIDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 		{
-			string name = NpcData.getInstance().getTemplate(getId()).getName();
+			string? name = NpcData.getInstance().getTemplate(getId())?.getName(); // TODO: why not use _template?
 			if (name != null)
 			{
 				Broadcast.toAllOnlinePlayers(name + " has been defeated!");
@@ -1863,7 +1868,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public CreatureAI getAI()
 	{
-		CreatureAI ai = _ai;
+		CreatureAI? ai = _ai;
 		if (ai == null)
 		{
 			lock (this)
@@ -2157,9 +2162,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		{
 			broadcastPacket(new ChangeMoveTypePacket(this));
 		}
-		if (isPlayer())
+
+        Player? player = getActingPlayer();
+		if (isPlayer() && player != null)
 		{
-			getActingPlayer().broadcastUserInfo();
+            player.broadcastUserInfo();
 		}
 		else if (isSummon())
 		{
@@ -2626,7 +2633,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public int getAffectedSkillLevel(int skillId)
 	{
-		BuffInfo info = _effectList.getBuffInfoBySkillId(skillId);
+		BuffInfo? info = _effectList.getBuffInfoBySkillId(skillId);
 		return info == null ? 0 : info.getSkill().getLevel();
 	}
 
@@ -2869,7 +2876,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public int getXdestination()
 	{
-		MoveData move = _move;
+		MoveData? move = _move;
 		if (move != null)
 		{
 			return move.xDestination;
@@ -2883,7 +2890,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public int getYdestination()
 	{
-		MoveData move = _move;
+		MoveData? move = _move;
 		if (move != null)
 		{
 			return move.yDestination;
@@ -2897,7 +2904,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public int getZdestination()
 	{
-		MoveData move = _move;
+		MoveData? move = _move;
 		if (move != null)
 		{
 			return move.zDestination;
@@ -2927,7 +2934,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public bool isOnGeodataPath()
 	{
-		MoveData move = _move;
+		MoveData? move = _move;
 		if (move == null)
 		{
 			return false;
@@ -2961,9 +2968,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * Otherwise, it returns null.
 	 * @return List of {@link AbstractNodeLoc} representing the movement path, or null if move is undefined.
 	 */
-	public List<AbstractNodeLoc> getGeoPath()
+	public List<AbstractNodeLoc>? getGeoPath()
 	{
-		MoveData move = _move;
+		MoveData? move = _move;
 		if (move != null)
 		{
 			return move.geoPath;
@@ -3185,7 +3192,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 					}
 					else // Check for nearby doors or fences.
 					{
-						WorldRegion region = getWorldRegion();
+						WorldRegion? region = getWorldRegion();
 						if (region != null)
 						{
 							bool hasDoors = region.getDoors().Count != 0;
@@ -3236,7 +3243,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		// Target collision should be subtracted from current distance.
 		double collision;
-		WorldObject target = _target;
+		WorldObject? target = _target;
 		if (target != null && target.isCreature() && hasAI() && getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
 		{
 			collision = ((Creature) target).getCollisionRadius();
@@ -3515,7 +3522,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		MoveData move = new MoveData();
 
 		// GEODATA MOVEMENT CHECKS AND PATHFINDING
-		WorldRegion region = getWorldRegion();
+		WorldRegion? region = getWorldRegion();
 		move.disregardingGeodata = region == null || !region.areNeighborsActive();
 		move.onGeodataPathIndex = -1; // Initialize not on geodata path
 		if (!move.disregardingGeodata && !_isFlying && !isInWater && !isVehicle() && !_cursorKeyMovement)
@@ -3531,8 +3538,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			{
 				Location3D originalLoc = loc;
 				double originalDistance = distance;
-				int gtx = (originalLoc.X - World.WORLD_X_MIN) >> 4;
-				int gty = (originalLoc.Y - World.WORLD_Y_MIN) >> 4;
+				int gtx = (originalLoc.X - WorldMap.WorldXMin) >> 4;
+				int gty = (originalLoc.Y - WorldMap.WorldYMin) >> 4;
 				if (isOnGeodataPath())
 				{
 					try
@@ -3596,7 +3603,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 								double tempDistance = double.Hypot(sX - originalLoc.X, sY - originalLoc.Y);
 								if (tempDistance < shortDistance)
 								{
-									List<AbstractNodeLoc> tempPath = PathFinding.getInstance().findPath(curLoc, new Location3D(sX, sY, originalLoc.Z), getInstanceWorld(), false);
+									List<AbstractNodeLoc>? tempPath = PathFinding.getInstance().findPath(curLoc, new Location3D(sX, sY, originalLoc.Z), getInstanceWorld(), false);
 
 									if (tempPath != null && tempPath.Count > 1)
 									{
@@ -3721,7 +3728,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return false;
 		}
 
-		MoveData md = _move;
+		MoveData? md = _move;
 		if (md == null)
 		{
 			return false;
@@ -3789,7 +3796,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public bool validateMovementHeading(int heading)
 	{
-		MoveData m = _move;
+		MoveData? m = _move;
 		if (m == null)
 		{
 			return true;
@@ -3884,7 +3891,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		foreach (Hit hit in attack.getHits())
 		{
-			Creature target = (Creature) hit.getTarget();
+			Creature? target = (Creature?) hit.getTarget();
 			if (target == null || target.isDead() || !isInSurroundingRegion(target))
 			{
 				continue;
@@ -3931,7 +3938,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		// First dual attack is the first hit only.
 		Hit hit = attack.getHits()[0];
-		Creature target = (Creature) hit.getTarget();
+		Creature? target = (Creature?) hit.getTarget();
 		if (target == null || target.isDead() || !isInSurroundingRegion(target))
 		{
 			getAI().notifyEvent(CtrlEvent.EVT_CANCEL);
@@ -3960,7 +3967,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		for (int i = 1; i < attack.getHits().Count; i++)
 		{
 			Hit hit = attack.getHits()[i];
-			Creature target = (Creature) hit.getTarget();
+			Creature? target = (Creature?) hit.getTarget();
 			if (target == null || target.isDead() || !isInSurroundingRegion(target))
 			{
 				continue;
@@ -4024,9 +4031,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			weapon.applyConditionalSkills(this, target, null, ItemSkillType.ON_CRITICAL_SKILL);
 		}
 
-		if (isPlayer() && !target.isHpBlocked())
+        Player? player = getActingPlayer();
+		if (isPlayer() && player != null && !target.isHpBlocked())
 		{
-			Player player = getActingPlayer();
 
 			// If hit by a cursed weapon, CP is reduced to 0.
 			// If a cursed weapon is hit by a Hero, CP is reduced to 0.
@@ -4143,8 +4150,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 		if (player.isInOlympiadMode() && player.getTarget() != null && player.getTarget().isPlayable())
 		{
-			Player target = null;
-			WorldObject obj = player.getTarget();
+			Player? target = null;
+			WorldObject? obj = player.getTarget();
 			if (obj != null && obj.isPlayable())
 			{
 				target = obj.getActingPlayer();
@@ -4193,7 +4200,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public bool isInsidePeaceZone(WorldObject attacker, WorldObject target)
 	{
-		Instance instanceWorld = getInstanceWorld();
+		Instance? instanceWorld = getInstanceWorld();
 		if (target == null || !((target.isPlayable() || target.isFakePlayer()) && attacker.isPlayable()) || (instanceWorld != null && instanceWorld.isPvP()))
 		{
 			return false;
@@ -4266,14 +4273,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * @param skill The Skill to add to the Creature
 	 * @return The Skill replaced or null if just added a new Skill
 	 */
-	public virtual Skill addSkill(Skill skill)
+	public virtual Skill? addSkill(Skill skill)
 	{
-		Skill oldSkill = null;
-		Skill newSkill = skill;
+		Skill? oldSkill = null;
+		Skill? newSkill = skill;
 		if (newSkill != null)
 		{
 			// Mobius: Keep sublevel on skill level increase.
-			Skill existingSkill = _skills.get(newSkill.getId());
+			Skill? existingSkill = _skills.get(newSkill.getId());
 			if (existingSkill != null && existingSkill.getSubLevel() > 0 && newSkill.getSubLevel() == 0 && existingSkill.getLevel() < newSkill.getLevel())
 			{
 				newSkill = SkillData.getInstance().getSkill(newSkill.getId(), newSkill.getLevel(), existingSkill.getSubLevel());
@@ -4314,7 +4321,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	public Skill removeSkill(int skillId, bool cancelEffect)
 	{
 		// Remove the skill from the Creature _skills
-		Skill oldSkill = _skills.remove(skillId);
+		Skill? oldSkill = _skills.remove(skillId);
 		// Remove all its Func objects from the Creature calculator set
 		if (oldSkill != null)
 		{
@@ -4341,9 +4348,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public void removeAllSkills()
 	{
-		if (isPlayer())
+        Player? player = getActingPlayer();
+		if (isPlayer() && player != null)
 		{
-			Player player = getActingPlayer();
 			while (_skills.Count != 0)
 			{
 				player.removeSkill(_skills.First().Value);

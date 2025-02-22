@@ -21,9 +21,9 @@ public class EffectZone : ZoneType
 	protected bool _bypassConditions;
 	private bool _isShowDangerIcon;
 	private bool _removeEffectsOnExit;
-	protected Map<int, int> _skills;
-	protected volatile ScheduledFuture _task;
-	
+	protected Map<int, int> _skills = [];
+	protected volatile ScheduledFuture? _task;
+
 	public EffectZone(int id):base(id)
 	{
 		_chance = 100;
@@ -34,7 +34,7 @@ public class EffectZone : ZoneType
 		_isShowDangerIcon = true;
 		_removeEffectsOnExit = false;
 	}
-	
+
 	public override void setParameter(string name, string value)
 	{
 		switch (name)
@@ -73,7 +73,7 @@ public class EffectZone : ZoneType
 			{
 				string[] propertySplit =
 					(value.EndsWith(';') ? value[..^1] : value).Split(";");
-				
+
 				_skills = new();
 				foreach (string skill in propertySplit)
 				{
@@ -112,12 +112,12 @@ public class EffectZone : ZoneType
 			}
 		}
 	}
-	
+
 	protected override void onEnter(Creature creature)
 	{
 		if (_skills != null)
 		{
-			ScheduledFuture task = _task;
+			ScheduledFuture? task = _task;
 			if (task == null)
 			{
 				lock (this)
@@ -130,7 +130,7 @@ public class EffectZone : ZoneType
 				}
 			}
 		}
-		
+
 		if (creature.isPlayer())
 		{
 			creature.setInsideZone(ZoneId.ALTERED, true);
@@ -141,7 +141,7 @@ public class EffectZone : ZoneType
 			}
 		}
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
 		if (creature.isPlayer())
@@ -159,7 +159,7 @@ public class EffectZone : ZoneType
 			{
 				foreach (var e in _skills)
 				{
-					Skill skill = SkillData.getInstance().getSkill(e.Key, e.Value);
+					Skill? skill = SkillData.getInstance().getSkill(e.Key, e.Value);
 					if (skill != null && creature.isAffectedBySkill(skill.getId()))
 					{
 						creature.stopSkillEffects(SkillFinishType.REMOVED, skill.getId());
@@ -167,19 +167,19 @@ public class EffectZone : ZoneType
 				}
 			}
 		}
-		
+
 		if (getCharactersInside().Count == 0 && _task != null)
 		{
 			_task.cancel(true);
 			_task = null;
 		}
 	}
-	
+
 	public int getChance()
 	{
 		return _chance;
 	}
-	
+
 	public void addSkill(int skillId, int skillLevel)
 	{
 		if (skillLevel < 1) // remove skill
@@ -187,7 +187,7 @@ public class EffectZone : ZoneType
 			removeSkill(skillId);
 			return;
 		}
-		
+
 		if (_skills == null)
 		{
 			lock (this)
@@ -200,7 +200,7 @@ public class EffectZone : ZoneType
 		}
 		_skills.put(skillId, skillLevel);
 	}
-	
+
 	public void removeSkill(int skillId)
 	{
 		if (_skills != null)
@@ -208,7 +208,7 @@ public class EffectZone : ZoneType
 			_skills.remove(skillId);
 		}
 	}
-	
+
 	public void clearSkills()
 	{
 		if (_skills != null)
@@ -216,7 +216,7 @@ public class EffectZone : ZoneType
 			_skills.Clear();
 		}
 	}
-	
+
 	public int getSkillLevel(int skillId)
 	{
 		if (_skills == null || !_skills.TryGetValue(skillId, out int level))
@@ -225,11 +225,11 @@ public class EffectZone : ZoneType
 		}
 		return level;
 	}
-	
+
 	private class ApplySkill: Runnable
 	{
 		private readonly EffectZone _effectZone;
-		
+
 		public ApplySkill(EffectZone effectZone)
 		{
 			_effectZone = effectZone;
@@ -238,14 +238,14 @@ public class EffectZone : ZoneType
 				throw new InvalidOperationException("No skills defined.");
 			}
 		}
-		
+
 		public void run()
 		{
 			if (!_effectZone.isEnabled())
 			{
 				return;
 			}
-			
+
 			if (_effectZone.getCharactersInside().Count == 0)
 			{
 				if (_effectZone._task != null)
@@ -255,14 +255,14 @@ public class EffectZone : ZoneType
 				}
 				return;
 			}
-			
+
 			foreach (Creature character in _effectZone.getCharactersInside())
 			{
 				if (character != null && character.isPlayer() && !character.isDead() && Rnd.get(100) < _effectZone._chance)
 				{
 					foreach (var e in _effectZone._skills)
 					{
-						Skill skill = SkillData.getInstance().getSkill(e.Key, e.Value);
+						Skill? skill = SkillData.getInstance().getSkill(e.Key, e.Value);
 						if (skill != null && (_effectZone._bypassConditions || skill.checkCondition(character, character, false)))
 						{
 							if (character.getAffectedSkillLevel(skill.getId()) < skill.getLevel())

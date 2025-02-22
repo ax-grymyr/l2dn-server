@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Model.Actor;
@@ -17,38 +16,6 @@ public sealed class World
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(World));
 
 	public static volatile int MAX_CONNECTED_COUNT = 0;
-	public static volatile int OFFLINE_TRADE_COUNT = 0;
-
-	/** Gracia border Flying objects not allowed to the east of it. */
-	public const int GRACIA_MAX_X = -166168;
-	public const int GRACIA_MAX_Z = 6105;
-	public const int GRACIA_MIN_Z = -895;
-
-	/** Bit shift, defines number of regions note, shifting by 15 will result in regions corresponding to map tiles shifting by 11 divides one tile to 16x16 regions. */
-	public const int SHIFT_BY = 11;
-
-	public const int TILE_SIZE = 32768;
-
-	/** Map dimensions. */
-	public const int TILE_X_MIN = 11;
-	public const int TILE_Y_MIN = 10;
-	public const int TILE_X_MAX = 28;
-	public const int TILE_Y_MAX = 26;
-	public const int TILE_ZERO_COORD_X = 20;
-	public const int TILE_ZERO_COORD_Y = 18;
-	public const int WORLD_X_MIN = (TILE_X_MIN - TILE_ZERO_COORD_X) * TILE_SIZE;
-	public const int WORLD_Y_MIN = (TILE_Y_MIN - TILE_ZERO_COORD_Y) * TILE_SIZE;
-
-	public const int WORLD_X_MAX = (TILE_X_MAX - TILE_ZERO_COORD_X + 1) * TILE_SIZE;
-	public const int WORLD_Y_MAX = (TILE_Y_MAX - TILE_ZERO_COORD_Y + 1) * TILE_SIZE;
-
-	/** Calculated offset used so top left region is 0,0 */
-	public const int OFFSET_X = -(WORLD_X_MIN >> SHIFT_BY);
-	public const int OFFSET_Y = -(WORLD_Y_MIN >> SHIFT_BY);
-
-	/** Number of regions. */
-	private const int REGIONS_X = (WORLD_X_MAX >> SHIFT_BY) + OFFSET_X;
-	private const int REGIONS_Y = (WORLD_Y_MAX >> SHIFT_BY) + OFFSET_Y;
 
 	/** Map containing all the players in game. */
 	private static readonly Map<int, Player> _allPlayers = new();
@@ -71,7 +38,7 @@ public sealed class World
 	private static int _partyNumber;
 	private static int _memberInPartyNumber;
 
-	private static readonly WorldRegion[][] _worldRegions = new WorldRegion[REGIONS_X + 1][];
+	private static readonly WorldRegion[][] _worldRegions = new WorldRegion[WorldMap.RegionCountX][];
 
 	private static DateTime _nextPrivateStoreUpdate;
 
@@ -79,26 +46,26 @@ public sealed class World
 	private World()
 	{
 		// Initialize regions.
-		for (int x = 0; x <= REGIONS_X; x++)
+		for (int x = 0; x < WorldMap.RegionCountX; x++)
 		{
-			_worldRegions[x] = new WorldRegion[REGIONS_Y + 1];
-			for (int y = 0; y <= REGIONS_Y; y++)
+			_worldRegions[x] = new WorldRegion[WorldMap.RegionCountY];
+			for (int y = 0; y < WorldMap.RegionCountY; y++)
 			{
 				_worldRegions[x][y] = new WorldRegion(x, y);
 			}
 		}
 
 		// Set surrounding regions.
-		for (int rx = 0; rx <= REGIONS_X; rx++)
+		for (int rx = 0; rx < WorldMap.RegionCountX; rx++)
 		{
-			for (int ry = 0; ry <= REGIONS_Y; ry++)
+			for (int ry = 0; ry < WorldMap.RegionCountY; ry++)
 			{
 				List<WorldRegion> surroundingRegions = new List<WorldRegion>();
 				for (int sx = rx - 1; sx <= rx + 1; sx++)
 				{
 					for (int sy = ry - 1; sy <= ry + 1; sy++)
 					{
-						if (sx >= 0 && sx < REGIONS_X && sy >= 0 && sy < REGIONS_Y)
+						if (sx >= 0 && sx < WorldMap.RegionCountX && sy >= 0 && sy < WorldMap.RegionCountY)
 						{
 							surroundingRegions.Add(_worldRegions[sx][sy]);
 						}
@@ -109,7 +76,7 @@ public sealed class World
 			}
 		}
 
-		LOGGER.Info(GetType().Name + ": (" + REGIONS_X + " by " + REGIONS_Y + ") World Region Grid set up.");
+		LOGGER.Info(GetType().Name + ": (" + WorldMap.RegionCountX + " by " + WorldMap.RegionCountY + ") World Region Grid set up.");
 	}
 
 	/**
@@ -728,7 +695,7 @@ public sealed class World
 	{
 		try
 		{
-			return _worldRegions[(@object.getX() >> SHIFT_BY) + OFFSET_X][(@object.getY() >> SHIFT_BY) + OFFSET_Y];
+			return _worldRegions[(@object.getX() / WorldMap.RegionSize) + WorldMap.RegionOffsetX][(@object.getY() / WorldMap.RegionSize) + WorldMap.RegionOffsetY];
 		}
 		catch (IndexOutOfRangeException) // Precaution. Moved at invalid region?
 		{
@@ -741,12 +708,12 @@ public sealed class World
 	{
 		try
 		{
-			return _worldRegions[(x >> SHIFT_BY) + OFFSET_X][(y >> SHIFT_BY) + OFFSET_Y];
+			return _worldRegions[(x / WorldMap.RegionSize) + WorldMap.RegionOffsetX][(y / WorldMap.RegionSize) + WorldMap.RegionOffsetY];
 		}
 		catch (IndexOutOfRangeException e)
 		{
-			LOGGER.Warn(GetType().Name + ": Incorrect world region X: " + ((x >> SHIFT_BY) + OFFSET_X) + " Y: " +
-			            ((y >> SHIFT_BY) + OFFSET_Y) + ":" + e);
+			LOGGER.Warn(GetType().Name + ": Incorrect world region X: " + ((x / WorldMap.RegionSize) + WorldMap.RegionOffsetX) + " Y: " +
+			            ((y / WorldMap.RegionSize) + WorldMap.RegionOffsetY) + ":" + e);
 
 			return null;
 		}
