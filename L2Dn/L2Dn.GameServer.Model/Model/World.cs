@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Collections.Immutable;
+using System.Runtime.CompilerServices;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Model.Actor;
@@ -38,45 +39,13 @@ public sealed class World
 	private static int _partyNumber;
 	private static int _memberInPartyNumber;
 
-	private static readonly WorldRegion[][] _worldRegions = new WorldRegion[WorldMap.RegionCountX][];
+    private readonly WorldRegionCollection _worldRegions = new();
 
 	private static DateTime _nextPrivateStoreUpdate;
 
 	/** Constructor of World. */
 	private World()
 	{
-		// Initialize regions.
-		for (int x = 0; x < WorldMap.RegionCountX; x++)
-		{
-			_worldRegions[x] = new WorldRegion[WorldMap.RegionCountY];
-			for (int y = 0; y < WorldMap.RegionCountY; y++)
-			{
-				_worldRegions[x][y] = new WorldRegion(x, y);
-			}
-		}
-
-		// Set surrounding regions.
-		for (int rx = 0; rx < WorldMap.RegionCountX; rx++)
-		{
-			for (int ry = 0; ry < WorldMap.RegionCountY; ry++)
-			{
-				List<WorldRegion> surroundingRegions = new List<WorldRegion>();
-				for (int sx = rx - 1; sx <= rx + 1; sx++)
-				{
-					for (int sy = ry - 1; sy <= ry + 1; sy++)
-					{
-						if (sx >= 0 && sx < WorldMap.RegionCountX && sy >= 0 && sy < WorldMap.RegionCountY)
-						{
-							surroundingRegions.Add(_worldRegions[sx][sy]);
-						}
-					}
-				}
-				WorldRegion[] regionArray = surroundingRegions.ToArray();
-				_worldRegions[rx][ry].setSurroundingRegions(regionArray);
-			}
-		}
-
-		LOGGER.Info(GetType().Name + ": (" + WorldMap.RegionCountX + " by " + WorldMap.RegionCountY + ") World Region Grid set up.");
 	}
 
 	/**
@@ -287,7 +256,7 @@ public sealed class World
 	 */
 	public void addVisibleObject(WorldObject @object, WorldRegion newRegion)
 	{
-		if (!newRegion.isActive())
+		if (!newRegion.Active)
 		{
 			return;
 		}
@@ -363,13 +332,13 @@ public sealed class World
 			return;
 		}
 
-		oldRegion.removeVisibleObject(obj);
+		oldRegion.RemoveVisibleObject(obj);
 
 		// Go through all surrounding WorldRegion Creatures
-		WorldRegion[] surroundingRegions = oldRegion.getSurroundingRegions();
+		ImmutableArray<WorldRegion> surroundingRegions = oldRegion.SurroundingRegions;
 		for (int i = 0; i < surroundingRegions.Length; i++)
 		{
-			ICollection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
+            IReadOnlyCollection<WorldObject> visibleObjects = surroundingRegions[i].VisibleObjects;
 			if (visibleObjects.Count == 0)
 			{
 				continue;
@@ -433,16 +402,16 @@ public sealed class World
 			return;
 		}
 
-		WorldRegion[] oldSurroundingRegions = oldRegion.getSurroundingRegions();
+		ImmutableArray<WorldRegion> oldSurroundingRegions = oldRegion.SurroundingRegions;
 		for (int i = 0; i < oldSurroundingRegions.Length; i++)
 		{
 			WorldRegion worldRegion = oldSurroundingRegions[i];
-			if (newRegion.isSurroundingRegion(worldRegion))
+			if (newRegion.IsSurroundingRegion(worldRegion))
 			{
 				continue;
 			}
 
-			ICollection<WorldObject> visibleObjects = worldRegion.getVisibleObjects();
+            IReadOnlyCollection<WorldObject> visibleObjects = worldRegion.VisibleObjects;
 			if (visibleObjects.Count == 0)
 			{
 				continue;
@@ -497,16 +466,16 @@ public sealed class World
 			}
 		}
 
-		WorldRegion[] newSurroundingRegions = newRegion.getSurroundingRegions();
+		ImmutableArray<WorldRegion> newSurroundingRegions = newRegion.SurroundingRegions;
 		for (int i = 0; i < newSurroundingRegions.Length; i++)
 		{
 			WorldRegion worldRegion = newSurroundingRegions[i];
-			if (oldRegion.isSurroundingRegion(worldRegion))
+			if (oldRegion.IsSurroundingRegion(worldRegion))
 			{
 				continue;
 			}
 
-			ICollection<WorldObject> visibleObjects = worldRegion.getVisibleObjects();
+            IReadOnlyCollection<WorldObject> visibleObjects = worldRegion.VisibleObjects;
 			if (visibleObjects.Count == 0)
 			{
 				continue;
@@ -593,10 +562,10 @@ public sealed class World
 			return;
 		}
 
-		WorldRegion[] surroundingRegions = worldRegion.getSurroundingRegions();
+		ImmutableArray<WorldRegion> surroundingRegions = worldRegion.SurroundingRegions;
 		for (int i = 0; i < surroundingRegions.Length; i++)
 		{
-			ICollection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
+            IReadOnlyCollection<WorldObject> visibleObjects = surroundingRegions[i].VisibleObjects;
 			if (visibleObjects.Count == 0)
 			{
 				continue;
@@ -655,10 +624,10 @@ public sealed class World
 			return;
 		}
 
-		WorldRegion[] surroundingRegions = worldRegion.getSurroundingRegions();
+		ImmutableArray<WorldRegion> surroundingRegions = worldRegion.SurroundingRegions;
 		for (int i = 0; i < surroundingRegions.Length; i++)
 		{
-			ICollection<WorldObject> visibleObjects = surroundingRegions[i].getVisibleObjects();
+            IReadOnlyCollection<WorldObject> visibleObjects = surroundingRegions[i].VisibleObjects;
 			if (visibleObjects.Count == 0)
 			{
 				continue;
@@ -691,42 +660,13 @@ public sealed class World
 	 * @param object the object
 	 * @return
 	 */
-	public WorldRegion? getRegion(WorldObject @object)
-	{
-		try
-		{
-			return _worldRegions[(@object.getX() / WorldMap.RegionSize) + WorldMap.RegionOffsetX][(@object.getY() / WorldMap.RegionSize) + WorldMap.RegionOffsetY];
-		}
-		catch (IndexOutOfRangeException) // Precaution. Moved at invalid region?
-		{
-			disposeOutOfBoundsObject(@object);
-			return null;
-		}
+	public WorldRegion getRegion(WorldObject @object)
+    {
+        // TODO: coordinates must be validated during movement or changing location
+        return _worldRegions.GetRegion(new Location2D(@object.getX(), @object.getY()));
 	}
 
-	public WorldRegion? getRegion(int x, int y)
-	{
-		try
-		{
-			return _worldRegions[(x / WorldMap.RegionSize) + WorldMap.RegionOffsetX][(y / WorldMap.RegionSize) + WorldMap.RegionOffsetY];
-		}
-		catch (IndexOutOfRangeException e)
-		{
-			LOGGER.Warn(GetType().Name + ": Incorrect world region X: " + ((x / WorldMap.RegionSize) + WorldMap.RegionOffsetX) + " Y: " +
-			            ((y / WorldMap.RegionSize) + WorldMap.RegionOffsetY) + ":" + e);
-
-			return null;
-		}
-	}
-
-	/**
-	 * Returns the whole 3d array containing the world regions used by ZoneData.java to setup zones inside the world regions
-	 * @return
-	 */
-	public WorldRegion[][] getWorldRegions()
-	{
-		return _worldRegions;
-	}
+    public WorldRegion getRegion(int x, int y) => _worldRegions.GetRegion(new Location2D(x, y));
 
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void disposeOutOfBoundsObject(WorldObject @object)
@@ -761,7 +701,7 @@ public sealed class World
 				((Creature) @object).deleteMe();
 			}
 
-			@object.getWorldRegion()?.removeVisibleObject(@object);
+			@object.getWorldRegion()?.RemoveVisibleObject(@object);
 		}
 	}
 

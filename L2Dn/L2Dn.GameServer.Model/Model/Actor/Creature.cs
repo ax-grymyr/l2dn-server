@@ -642,7 +642,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		else
 		{
 			WorldRegion? region = getWorldRegion();
-			if (region != null && region.areNeighborsActive())
+			if (region != null && region.AreNeighborsActive)
 			{
 				broadcastPacket(new MoveToLocationPacket(this));
 			}
@@ -658,7 +658,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		else
 		{
 			WorldRegion? region = getWorldRegion();
-			if (region != null && region.areNeighborsActive())
+			if (region != null && region.AreNeighborsActive)
 			{
 				broadcastPacket(new SocialActionPacket(ObjectId, id));
 			}
@@ -3195,8 +3195,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						WorldRegion? region = getWorldRegion();
 						if (region != null)
 						{
-							bool hasDoors = region.getDoors().Count != 0;
-							bool hasFences = region.getFences().Count != 0;
+							bool hasDoors = region.Doors.Count != 0;
+							bool hasFences = region.Fences.Count != 0;
 							if (hasDoors || hasFences)
 							{
 								double angle = HeadingUtil.ConvertHeadingToDegrees(getHeading());
@@ -3523,7 +3523,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		// GEODATA MOVEMENT CHECKS AND PATHFINDING
 		WorldRegion? region = getWorldRegion();
-		move.disregardingGeodata = region == null || !region.areNeighborsActive();
+		move.disregardingGeodata = region == null || !region.AreNeighborsActive;
 		move.onGeodataPathIndex = -1; // Initialize not on geodata path
 		if (!move.disregardingGeodata && !_isFlying && !isInWater && !isVehicle() && !_cursorKeyMovement)
 		{
@@ -4233,7 +4233,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	public bool isInActiveRegion()
 	{
 		WorldRegion? region = getWorldRegion();
-		return region != null && region.isActive();
+		return region != null && region.Active;
 	}
 
 	/**
@@ -5625,7 +5625,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		// Check if region and its neighbors are active.
 		WorldRegion? region = getWorldRegion();
-		if (region == null || !region.areNeighborsActive())
+		if (region == null || !region.AreNeighborsActive)
 		{
 			return;
 		}

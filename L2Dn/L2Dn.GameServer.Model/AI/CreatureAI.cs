@@ -125,7 +125,7 @@ public class CreatureAI: AbstractAI
 
 		// Check if region and its neighbors are active.
 		WorldRegion? region = _actor.getWorldRegion();
-		if (region is null || !region.areNeighborsActive())
+		if (region is null || !region.AreNeighborsActive)
 		{
 			return;
 		}

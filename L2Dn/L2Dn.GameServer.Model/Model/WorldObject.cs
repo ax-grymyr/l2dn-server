@@ -107,7 +107,7 @@ public abstract class WorldObject(int objectId)
 			World.getInstance().addObject(this);
 
 			// Add the WorldObject spawn to _visibleObjects and if necessary to _allplayers of its WorldRegion
-			_worldRegion?.addVisibleObject(this);
+			_worldRegion?.AddVisibleObject(this);
 		}
 
 		// this can synchronize on others instances, so it's out of synchronized, to avoid deadlocks
@@ -486,7 +486,7 @@ public abstract class WorldObject(int objectId)
 	{
 		if (region == null && _worldRegion != null)
 		{
-			_worldRegion.removeVisibleObject(this);
+			_worldRegion.RemoveVisibleObject(this);
 		}
 
 		_worldRegion = region;
@@ -577,8 +577,8 @@ public abstract class WorldObject(int objectId)
 			WorldRegion? newRegion = World.getInstance().getRegion(this);
 			if (newRegion != null && newRegion != _worldRegion)
 			{
-				_worldRegion?.removeVisibleObject(this);
-				newRegion.addVisibleObject(this);
+				_worldRegion?.RemoveVisibleObject(this);
+				newRegion.AddVisibleObject(this);
 				World.getInstance().switchRegion(this, newRegion);
 				setWorldRegion(newRegion);
 			}
@@ -714,7 +714,7 @@ public abstract class WorldObject(int objectId)
 		if (worldRegion is null)
 			return false;
 
-		return _worldRegion != null && worldRegion.isSurroundingRegion(_worldRegion);
+		return _worldRegion != null && worldRegion.IsSurroundingRegion(_worldRegion);
 	}
 
 	public bool Equals(WorldObject? obj)

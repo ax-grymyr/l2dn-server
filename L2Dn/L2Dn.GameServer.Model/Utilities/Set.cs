@@ -4,10 +4,20 @@ using L2Dn.Extensions;
 
 namespace L2Dn.GameServer.Utilities;
 
-public class Set<T>: ICollection<T>
+public sealed class Set<T>: ICollection<T>, IReadOnlyCollection<T>
     where T: notnull
 {
-    private readonly ConcurrentDictionary<T, bool> _dictionary = new();
+    private readonly ConcurrentDictionary<T, bool> _dictionary;
+
+    public Set()
+    {
+        _dictionary = new ConcurrentDictionary<T, bool>();
+    }
+
+    public Set(IEqualityComparer<T>? comparer)
+    {
+        _dictionary = new ConcurrentDictionary<T, bool>(comparer);
+    }
 
     public bool isEmpty()
     {
@@ -88,7 +98,7 @@ public class Set<T>: ICollection<T>
         List<T> keys = _dictionary.Keys.Where(x => predicate(x)).ToList(); // TODO: optimize
         foreach (T key in keys)
             result |= remove(key);
-        
+
         return result;
     }
 

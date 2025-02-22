@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.AI;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.TaskManagers;
@@ -8,405 +9,303 @@ using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model;
 
-public class WorldRegion
+public sealed class WorldRegion
 {
-	/** Set containing visible objects in this world region. */
-	private readonly Set<WorldObject> _visibleObjects = [];
+    private readonly WorldRegionCollection _collection;
+    private readonly int _regionX;
+    private readonly int _regionY;
 
-	/** List containing doors in this world region. */
-	private readonly List<Door> _doors = [];
+    // Array containing nearby regions forming this world region's effective area.
+    private ImmutableArray<WorldRegion> _surroundingRegions;
 
-	/** List containing fences in this world region. */
-	private readonly List<Fence> _fences = [];
+    // Set containing visible objects in this world region.
+    private readonly Set<WorldObject> _visibleObjects = [];
 
-	/** Array containing nearby regions forming this world region's effective area. */
-	private WorldRegion[] _surroundingRegions = [];
+    // Set containing doors in this world region.
+    private readonly Set<Door> _doors = [];
 
-	private readonly int _regionX;
-	private readonly int _regionY;
-	private bool _active = Config.GRIDS_ALWAYS_ON;
-	private ScheduledFuture? _neighborsTask;
-	private readonly AtomicInteger _activeNeighbors = new();
+    // Set containing fences in this world region.
+    private readonly Set<Fence> _fences = [];
 
-	public WorldRegion(int regionX, int regionY)
-	{
-		_regionX = regionX;
-		_regionY = regionY;
-	}
+    private bool _active = Config.GRIDS_ALWAYS_ON;
+    private ScheduledFuture? _neighborsTask;
+    private int _activeNeighbors;
 
-	private void switchAI(bool isOn)
-	{
-		if (_visibleObjects.Count == 0)
-		{
-			return;
-		}
+    public WorldRegion(WorldRegionCollection collection, int regionX, int regionY)
+    {
+        _collection = collection;
+        _regionX = regionX;
+        _regionY = regionY;
+    }
 
-		if (!isOn)
-		{
-			foreach (WorldObject wo in _visibleObjects)
-			{
-				if (wo.isAttackable())
-				{
-					Attackable mob = (Attackable)wo;
+    public int RegionX => _regionX;
+    public int RegionY => _regionY;
+    public ImmutableArray<WorldRegion> SurroundingRegions => _surroundingRegions;
+    public bool Active => _active;
+    public bool AreNeighborsActive => Config.GRIDS_ALWAYS_ON || _activeNeighbors > 0;
+    public IReadOnlyCollection<Door> Doors => _doors;
+    public IReadOnlyCollection<Fence> Fences => _fences;
+    public IReadOnlyCollection<WorldObject> VisibleObjects => _visibleObjects;
 
-					// Set target to null and cancel attack or cast.
-					mob.setTarget(null);
+    /**
+     * Add the WorldObject in the WorldObjectHashSet(WorldObject) _visibleObjects containing WorldObject visible in this WorldRegion<br>
+     * If WorldObject is a Player, Add the Player in the WorldObjectHashSet(Player) _allPlayable containing Player of all player in game in this WorldRegion
+     * @param object
+     */
+    public void AddVisibleObject(WorldObject worldObject)
+    {
+        _visibleObjects.Add(worldObject);
 
-					// Stop movement.
-					mob.stopMove(null);
+        if (worldObject is Door door)
+        {
+            foreach (WorldRegion region in _surroundingRegions)
+                region.AddDoor(door);
+        }
+        else if (worldObject is Fence fence)
+        {
+            foreach (WorldRegion region in _surroundingRegions)
+                region.AddFence(fence);
+        }
 
-					// Stop all active skills effects in progress on the Creature.
-					mob.stopAllEffects();
+        // If this is the first player to enter the region, activate self and neighbors.
+        if (worldObject.isPlayable() && !_active && !Config.GRIDS_ALWAYS_ON)
+            StartActivation();
+    }
 
-					mob.clearAggroList();
-					mob.getAttackByList().clear();
+    /**
+     * Remove the WorldObject from the WorldObjectHashSet(WorldObject) _visibleObjects in this WorldRegion. If WorldObject is a Player, remove it from the WorldObjectHashSet(Player) _allPlayable of this WorldRegion
+     * @param object
+     */
+    public void RemoveVisibleObject(WorldObject worldObject)
+    {
+        if (_visibleObjects.Count == 0)
+            return;
 
-					// Teleport to spawn when too far away.
-					Spawn spawn = mob.getSpawn();
-					if (spawn != null && mob.Distance2D(spawn.Location.Location2D) > Config.MAX_DRIFT_RANGE)
-					{
-						mob.teleToLocation(spawn.Location);
-					}
+        _visibleObjects.Remove(worldObject);
 
-					// Stop the AI tasks.
-					if (mob.hasAI())
-					{
-						mob.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-						mob.getAI().stopAITask();
-					}
+        if (worldObject is Door door)
+        {
+            foreach (WorldRegion region in _surroundingRegions)
+                region.RemoveDoor(door);
+        }
+        else if (worldObject is Fence fence)
+        {
+            foreach (WorldRegion region in _surroundingRegions)
+                region.RemoveFence(fence);
+        }
 
-					// Stop attack task.
-					mob.abortAttack();
+        if (worldObject.isPlayable() && AreNeighborsEmpty() && !Config.GRIDS_ALWAYS_ON)
+            StartDeactivation();
+    }
 
-					RandomAnimationTaskManager.getInstance().remove(mob);
-				}
-				else if (wo is Npc)
-				{
-					RandomAnimationTaskManager.getInstance().remove((Npc)wo);
-				}
-			}
-		}
-		else
-		{
-			foreach (WorldObject wo in _visibleObjects)
-			{
-				if (wo.isAttackable())
-				{
-					// Start HP/MP/CP regeneration task.
-					((Attackable)wo).getStatus().startHpMpRegeneration();
-					RandomAnimationTaskManager.getInstance().add((Npc)wo);
-				}
-				else if (wo.isNpc())
-				{
-					RandomAnimationTaskManager.getInstance().add((Npc)wo);
-				}
-			}
-		}
-	}
+    public bool IsSurroundingRegion(WorldRegion region) =>
+        _regionX >= region.RegionX - 1 && _regionX <= region.RegionX + 1 &&
+        _regionY >= region.RegionY - 1 && _regionY <= region.RegionY + 1;
 
-	public bool isActive()
-	{
-		return _active;
-	}
+    public override string ToString() => $"({_regionX}, {_regionY})";
 
-	public void incrementActiveNeighbors()
-	{
-		_activeNeighbors.incrementAndGet();
-	}
+    internal void CalculateSurroundingRegions()
+    {
+        ImmutableArray<WorldRegion>.Builder arrayBuilder = ImmutableArray.CreateBuilder<WorldRegion>();
+        arrayBuilder.Add(this);
 
-	public void decrementActiveNeighbors()
-	{
-		_activeNeighbors.decrementAndGet();
-	}
+        int xMin = Math.Max(0, _regionX - 1);
+        int xMax = Math.Min(WorldMap.RegionCountX - 1, _regionX + 1);
+        int yMin = Math.Max(0, _regionY - 1);
+        int yMax = Math.Min(WorldMap.RegionCountY - 1, _regionY + 1);
 
-	public bool areNeighborsActive()
-	{
-		return Config.GRIDS_ALWAYS_ON || _activeNeighbors.get() > 0;
-	}
+        for (int rx = xMin; rx <= xMax; rx++)
+        for (int ry = yMin; ry <= yMax; ry++)
+            if (rx != _regionX || ry != _regionY)
+                arrayBuilder.Add(_collection[rx, ry]);
 
-	public bool areNeighborsEmpty()
-	{
-		for (int i = 0; i < _surroundingRegions.Length; i++)
-		{
-			WorldRegion worldRegion = _surroundingRegions[i];
-			if (worldRegion.isActive())
-			{
-				ICollection<WorldObject> regionObjects = worldRegion.getVisibleObjects();
-				if (regionObjects.Count == 0)
-				{
-					continue;
-				}
+        _surroundingRegions = arrayBuilder.ToImmutable();
+    }
 
-				foreach (WorldObject wo in regionObjects)
-				{
-					if (wo != null && wo.isPlayable())
-					{
-						return false;
-					}
-				}
-			}
-		}
+    private bool AreNeighborsEmpty()
+    {
+        foreach (WorldRegion worldRegion in _surroundingRegions)
+        {
+            if (!worldRegion.Active)
+                continue;
 
-		return true;
-	}
+            IReadOnlyCollection<WorldObject> regionObjects = worldRegion.VisibleObjects;
+            if (regionObjects.Count == 0)
+                continue;
 
-	/**
-	 * this function turns this region's AI and geodata on or off
-	 * @param value
-	 */
-	public void setActive(bool value)
-	{
-		if (_active == value)
-		{
-			return;
-		}
+            if (regionObjects.Any(static worldObject => worldObject.isPlayable()))
+                return false;
+        }
 
-		_active = value;
+        return true;
+    }
 
-		if (value)
-		{
-			for (int i = 0; i < _surroundingRegions.Length; i++)
-			{
-				_surroundingRegions[i].incrementActiveNeighbors();
-			}
-		}
-		else
-		{
-			for (int i = 0; i < _surroundingRegions.Length; i++)
-			{
-				_surroundingRegions[i].decrementActiveNeighbors();
-			}
-		}
+    private void AddDoor(Door door)
+    {
+        _doors.Add(door);
+    }
 
-		// Turn the AI on or off to match the region's activation.
-		switchAI(value);
-	}
+    private void RemoveDoor(Door door)
+    {
+        _doors.Remove(door);
+    }
 
-	/**
-	 * Immediately sets self as active and starts a timer to set neighbors as active this timer is to avoid turning on neighbors in the case when a person just teleported into a region and then teleported out immediately...there is no reason to activate all the neighbors in that case.
-	 */
-	private void startActivation()
-	{
-		// First set self to active and do self-tasks...
-		setActive(true);
+    private void AddFence(Fence fence)
+    {
+        _fences.Add(fence);
+    }
 
-		// If the timer to deactivate neighbors is running, cancel it.
-		lock (this)
-		{
-			if (_neighborsTask != null)
-			{
-				_neighborsTask.cancel(true);
-				_neighborsTask = null;
-			}
+    private void RemoveFence(Fence fence)
+    {
+        _fences.Remove(fence);
+    }
 
-			// Then, set a timer to activate the neighbors.
-			_neighborsTask = ThreadPool.schedule(() =>
-			{
-				for (int i = 0; i < _surroundingRegions.Length; i++)
-				{
-					_surroundingRegions[i].setActive(true);
-				}
-			}, 1000 * Config.GRID_NEIGHBOR_TURNON_TIME);
-		}
-	}
+    /// <summary>
+    /// This function turns this region's AI and geodata on or off.
+    /// </summary>
+    /// <param name="value"></param>
+    private void SetActive(bool value)
+    {
+        if (_active == value)
+        {
+            return;
+        }
 
-	/**
-	 * starts a timer to set neighbors (including self) as inactive this timer is to avoid turning off neighbors in the case when a person just moved out of a region that he may very soon return to. There is no reason to turn self & neighbors off in that case.
-	 */
-	private void startDeactivation()
-	{
-		// If the timer to activate neighbors is running, cancel it.
-		lock (this)
-		{
-			if (_neighborsTask != null)
-			{
-				_neighborsTask.cancel(true);
-				_neighborsTask = null;
-			}
+        _active = value;
 
-			// Start a timer to "suggest" a deactivate to self and neighbors.
-			// Suggest means: first check if a neighbor has Players in it. If not, deactivate.
-			_neighborsTask = ThreadPool.schedule(() =>
-			{
-				for (int i = 0; i < _surroundingRegions.Length; i++)
-				{
-					WorldRegion worldRegion = _surroundingRegions[i];
-					if (worldRegion.areNeighborsEmpty())
-					{
-						worldRegion.setActive(false);
-					}
-				}
-			}, 1000 * Config.GRID_NEIGHBOR_TURNOFF_TIME);
-		}
-	}
+        if (value)
+        {
+            foreach (WorldRegion region in _surroundingRegions)
+                Interlocked.Increment(ref region._activeNeighbors);
+        }
+        else
+        {
+            foreach (WorldRegion region in _surroundingRegions)
+                Interlocked.Decrement(ref region._activeNeighbors);
+        }
 
-	/**
-	 * Add the WorldObject in the WorldObjectHashSet(WorldObject) _visibleObjects containing WorldObject visible in this WorldRegion<br>
-	 * If WorldObject is a Player, Add the Player in the WorldObjectHashSet(Player) _allPlayable containing Player of all player in game in this WorldRegion
-	 * @param object
-	 */
-	public void addVisibleObject(WorldObject @object)
-	{
-		if (@object == null)
-		{
-			return;
-		}
+        // Turn the AI on or off to match the region's activation.
+        SwitchAi(value);
+    }
 
-		_visibleObjects.Add(@object);
+    /**
+     * Immediately sets self as active and starts a timer to set neighbors as active this timer is to avoid turning on neighbors in the case when a person just teleported into a region and then teleported out immediately...there is no reason to activate all the neighbors in that case.
+     */
+    private void StartActivation()
+    {
+        // First set self to active and do self-tasks...
+        SetActive(true);
 
-		if (@object.isDoor())
-		{
-			for (int i = 0; i < _surroundingRegions.Length; i++)
-			{
-				_surroundingRegions[i].addDoor((Door)@object);
-			}
-		}
-		else if (@object.isFence())
-		{
-			for (int i = 0; i < _surroundingRegions.Length; i++)
-			{
-				_surroundingRegions[i].addFence((Fence)@object);
-			}
-		}
+        // If the timer to deactivate neighbors is running, cancel it.
+        lock (this)
+        {
+            if (_neighborsTask != null)
+            {
+                _neighborsTask.cancel(true);
+                _neighborsTask = null;
+            }
 
-		// If this is the first player to enter the region, activate self and neighbors.
-		if (@object.isPlayable() && !_active && !Config.GRIDS_ALWAYS_ON)
-		{
-			startActivation();
-		}
-	}
+            // Then, set a timer to activate the neighbors.
+            _neighborsTask = ThreadPool.schedule(() =>
+            {
+                foreach (WorldRegion region in _surroundingRegions)
+                    region.SetActive(true);
+            }, 1000 * Config.GRID_NEIGHBOR_TURNON_TIME);
+        }
+    }
 
-	/**
-	 * Remove the WorldObject from the WorldObjectHashSet(WorldObject) _visibleObjects in this WorldRegion. If WorldObject is a Player, remove it from the WorldObjectHashSet(Player) _allPlayable of this WorldRegion
-	 * @param object
-	 */
-	public void removeVisibleObject(WorldObject @object)
-	{
-		if (@object == null)
-		{
-			return;
-		}
+    /**
+     * starts a timer to set neighbors (including self) as inactive this timer is to avoid turning off neighbors in the case when a person just moved out of a region that he may very soon return to. There is no reason to turn self & neighbors off in that case.
+     */
+    private void StartDeactivation()
+    {
+        // If the timer to activate neighbors is running, cancel it.
+        lock (this)
+        {
+            if (_neighborsTask != null)
+            {
+                _neighborsTask.cancel(true);
+                _neighborsTask = null;
+            }
 
-		if (_visibleObjects.Count == 0)
-		{
-			return;
-		}
+            // Start a timer to "suggest" a deactivate to self and neighbors.
+            // Suggest means: first check if a neighbor has Players in it. If not, deactivate.
+            _neighborsTask = ThreadPool.schedule(() =>
+            {
+                foreach (WorldRegion worldRegion in _surroundingRegions)
+                {
+                    if (worldRegion.AreNeighborsEmpty())
+                        worldRegion.SetActive(false);
+                }
+            }, 1000 * Config.GRID_NEIGHBOR_TURNOFF_TIME);
+        }
+    }
 
-		_visibleObjects.Remove(@object);
+    private void SwitchAi(bool isOn)
+    {
+        if (_visibleObjects.Count == 0)
+            return;
 
-		if (@object.isDoor())
-		{
-			for (int i = 0; i < _surroundingRegions.Length; i++)
-			{
-				_surroundingRegions[i].removeDoor((Door)@object);
-			}
-		}
-		else if (@object.isFence())
-		{
-			for (int i = 0; i < _surroundingRegions.Length; i++)
-			{
-				_surroundingRegions[i].removeFence((Fence)@object);
-			}
-		}
+        if (!isOn)
+        {
+            foreach (WorldObject wo in _visibleObjects)
+            {
+                if (wo.isAttackable())
+                {
+                    Attackable mob = (Attackable)wo;
 
-		if (@object.isPlayable() && areNeighborsEmpty() && !Config.GRIDS_ALWAYS_ON)
-		{
-			startDeactivation();
-		}
-	}
+                    // Set target to null and cancel attack or cast.
+                    mob.setTarget(null);
 
-	public ICollection<WorldObject> getVisibleObjects()
-	{
-		return _visibleObjects;
-	}
+                    // Stop movement.
+                    mob.stopMove(null);
 
-	public void addDoor(Door door)
-	{
-		lock (_doors)
-		{
-			if (!_doors.Contains(door))
-			{
-				_doors.Add(door);
-			}
-		}
-	}
+                    // Stop all active skills effects in progress on the Creature.
+                    mob.stopAllEffects();
 
-	private void removeDoor(Door door)
-	{
-		lock (_doors)
-		{
-			_doors.Remove(door);
-		}
-	}
+                    mob.clearAggroList();
+                    mob.getAttackByList().clear();
 
-	public List<Door> getDoors()
-	{
-		return _doors;
-	}
+                    // Teleport to spawn when too far away.
+                    Spawn spawn = mob.getSpawn();
+                    if (spawn != null && mob.Distance2D(spawn.Location.Location2D) > Config.MAX_DRIFT_RANGE)
+                    {
+                        mob.teleToLocation(spawn.Location);
+                    }
 
-	public void addFence(Fence fence)
-	{
-		lock (_fences)
-		{
-			if (!_fences.Contains(fence))
-			{
-				_fences.Add(fence);
-			}
-		}
-	}
+                    // Stop the AI tasks.
+                    if (mob.hasAI())
+                    {
+                        mob.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+                        mob.getAI().stopAITask();
+                    }
 
-	private void removeFence(Fence fence)
-	{
-		lock (_fences)
-		{
-			_fences.Remove(fence);
-		}
-	}
+                    // Stop attack task.
+                    mob.abortAttack();
 
-	public List<Fence> getFences()
-	{
-		return _fences;
-	}
-
-	public void setSurroundingRegions(WorldRegion[] regions)
-	{
-		_surroundingRegions = regions;
-
-		// Make sure that this region is always the first region to improve bulk operations when this region should be updated first.
-		for (int i = 0; i < _surroundingRegions.Length; i++)
-		{
-			if (_surroundingRegions[i] == this)
-			{
-				WorldRegion first = _surroundingRegions[0];
-				_surroundingRegions[0] = this;
-				_surroundingRegions[i] = first;
-			}
-		}
-	}
-
-	public WorldRegion[] getSurroundingRegions()
-	{
-		return _surroundingRegions;
-	}
-
-	public bool isSurroundingRegion(WorldRegion region)
-	{
-		return region != null && _regionX >= region.getRegionX() - 1 && _regionX <= region.getRegionX() + 1 &&
-			_regionY >= region.getRegionY() - 1 && _regionY <= region.getRegionY() + 1;
-	}
-
-	public int getRegionX()
-	{
-		return _regionX;
-	}
-
-	public int getRegionY()
-	{
-		return _regionY;
-	}
-
-	public override string ToString()
-	{
-		return "(" + _regionX + ", " + _regionY + ")";
-	}
+                    RandomAnimationTaskManager.getInstance().remove(mob);
+                }
+                else if (wo is Npc)
+                {
+                    RandomAnimationTaskManager.getInstance().remove((Npc)wo);
+                }
+            }
+        }
+        else
+        {
+            foreach (WorldObject wo in _visibleObjects)
+            {
+                if (wo.isAttackable())
+                {
+                    // Start HP/MP/CP regeneration task.
+                    ((Attackable)wo).getStatus().startHpMpRegeneration();
+                    RandomAnimationTaskManager.getInstance().add((Npc)wo);
+                }
+                else if (wo.isNpc())
+                {
+                    RandomAnimationTaskManager.getInstance().add((Npc)wo);
+                }
+            }
+        }
+    }
 }

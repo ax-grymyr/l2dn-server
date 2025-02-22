@@ -93,7 +93,7 @@ public class ItemsOnGroundManager: Runnable
                 }
 
 				item.setWorldRegion(region);
-				region.addVisibleObject(item);
+				region.AddVisibleObject(item);
 				DateTime? dropTime = itemOnGround.DropTime;
 				item.setDropTime(dropTime ?? DateTime.MinValue); // TODO
 				item.setProtected(dropTime is null);

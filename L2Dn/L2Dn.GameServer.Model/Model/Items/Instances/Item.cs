@@ -1575,7 +1575,7 @@ public class Item: WorldObject
 
 		// Add the Item dropped in the world as a visible object
 		WorldRegion? region = getWorldRegion();
-		region.addVisibleObject(this);
+		region.AddVisibleObject(this);
 		World.getInstance().addVisibleObject(this, region);
 		if (Config.SAVE_DROPPED_ITEM)
 		{

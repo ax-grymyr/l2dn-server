@@ -12,28 +12,28 @@ namespace L2Dn.GameServer.Model.Actor.Status;
 public class CreatureStatus
 {
 	protected static Logger LOGGER = LogManager.GetLogger(nameof(CreatureStatus));
-	
+
 	private readonly Creature _creature;
-	
+
 	private double _currentHp; // Current HP of the Creature
 	private double _currentMp; // Current MP of the Creature
-	
+
 	/** Array containing all clients that need to be notified about hp/mp updates of the Creature */
-	private Set<Creature> _StatusListener;
-	
-	private ScheduledFuture _regTask;
-	
+	private Set<Creature> _statusListener;
+
+	private ScheduledFuture? _regTask;
+
 	protected int _flagsRegenActive;
-	
+
 	protected const int REGEN_FLAG_CP = 4; // TODO: enum
 	private const int REGEN_FLAG_HP = 1;
 	private const int REGEN_FLAG_MP = 2;
-	
+
 	public CreatureStatus(Creature creature)
 	{
 		_creature = creature;
 	}
-	
+
 	/**
 	 * Add the object to the list of Creature that must be informed of HP/MP updates of this Creature.<br>
 	 * <br>
@@ -55,10 +55,10 @@ public class CreatureStatus
 		{
 			return;
 		}
-		
+
 		getStatusListener().add(obj);
 	}
-	
+
 	/**
 	 * Remove the object from the list of Creature that must be informed of HP/MP updates of this Creature.<br>
 	 * <br>
@@ -78,7 +78,7 @@ public class CreatureStatus
 	{
 		getStatusListener().remove(@object);
 	}
-	
+
 	/**
 	 * Return the list of Creature that must be informed of HP/MP updates of this Creature.<br>
 	 * <br>
@@ -91,18 +91,18 @@ public class CreatureStatus
 	 */
 	public Set<Creature> getStatusListener()
 	{
-		if (_StatusListener == null)
+		if (_statusListener == null)
 		{
-			_StatusListener = new();
+			_statusListener = new();
 		}
-		return _StatusListener;
+		return _statusListener;
 	}
-	
+
 	// place holder, only PcStatus has CP
 	public virtual void reduceCp(int value)
 	{
 	}
-	
+
 	/**
 	 * Reduce the current HP of the Creature and launch the doDie Task if necessary.
 	 * @param value
@@ -112,12 +112,12 @@ public class CreatureStatus
 	{
 		reduceHp(value, attacker, true, false, false);
 	}
-	
+
 	public void reduceHp(double value, Creature attacker, bool isHpConsumption)
 	{
 		reduceHp(value, attacker, true, false, isHpConsumption);
 	}
-	
+
 	public virtual void reduceHp(double value, Creature attacker, bool awake, bool isDOT, bool isHPConsumption)
 	{
 		Creature creature = _creature;
@@ -125,13 +125,13 @@ public class CreatureStatus
 		{
 			return;
 		}
-		
+
 		// invul handling
 		if (creature.isHpBlocked() && !(isDOT || isHPConsumption))
 		{
 			return;
 		}
-		
+
 		if (attacker != null)
 		{
 			Player attackerPlayer = attacker.getActingPlayer();
@@ -140,7 +140,7 @@ public class CreatureStatus
 				return;
 			}
 		}
-		
+
 		if (!isDOT && !isHPConsumption)
 		{
 			if (awake)
@@ -156,23 +156,23 @@ public class CreatureStatus
 				_creature.getEffectList().stopEffects(AbnormalType.REAL_TARGET);
 			}
 		}
-		
+
 		if (value > 0)
 		{
 			setCurrentHp(Math.Max(_currentHp - value, creature.isUndying() ? 1 : 0));
 		}
-		
+
 		if (creature.getCurrentHp() < 0.5) // Die
 		{
 			creature.doDie(attacker);
 		}
 	}
-	
+
 	public void reduceMp(double value)
 	{
 		setCurrentMp(Math.Max(_currentMp - value, 0));
 	}
-	
+
 	/**
 	 * Start the HP/MP/CP Regeneration task.<br>
 	 * <br>
@@ -189,12 +189,12 @@ public class CreatureStatus
 		{
 			// Get the Regeneration period
 			int period = Formulas.getRegeneratePeriod(_creature);
-			
+
 			// Create the HP/MP/CP Regeneration task
 			_regTask = ThreadPool.scheduleAtFixedRate(doRegeneration, period, period);
 		}
 	}
-	
+
 	/**
 	 * Stop the HP/MP/CP Regeneration task.<br>
 	 * <br>
@@ -212,38 +212,38 @@ public class CreatureStatus
 			// Stop the HP/MP/CP Regeneration task
 			_regTask.cancel(false);
 			_regTask = null;
-			
+
 			// Set the RegenActive flag to false
 			_flagsRegenActive = 0;
 		}
 	}
-	
+
 	// place holder, only PcStatus has CP
 	public virtual double getCurrentCp()
 	{
 		return 0;
 	}
-	
+
 	// place holder, only PcStatus has CP
 	public virtual void setCurrentCp(double newCp)
 	{
 	}
-	
+
 	// place holder, only PcStatus has CP
 	public virtual void setCurrentCp(double newCp, bool broadcastPacket)
 	{
 	}
-	
+
 	public double getCurrentHp()
 	{
 		return _currentHp;
 	}
-	
+
 	public void setCurrentHp(double newHp)
 	{
 		setCurrentHp(newHp, true);
 	}
-	
+
 	/**
 	 * Sets the current hp of this character.
 	 * @param newHp the new hp
@@ -255,20 +255,20 @@ public class CreatureStatus
 		// Get the Max HP of the Creature
 		int oldHp = (int) _currentHp;
 		double maxHp = _creature.getStat().getMaxHp();
-		
+
 		lock (this)
 		{
 			if (_creature.isDead())
 			{
 				return false;
 			}
-			
+
 			if (newHp >= maxHp)
 			{
 				// Set the RegenActive flag to false
 				_currentHp = maxHp;
 				_flagsRegenActive &= ~REGEN_FLAG_HP;
-				
+
 				// Stop the HP/MP/CP Regeneration task
 				if (_flagsRegenActive == 0)
 				{
@@ -280,14 +280,14 @@ public class CreatureStatus
 				// Set the RegenActive flag to true
 				_currentHp = newHp;
 				_flagsRegenActive |= REGEN_FLAG_HP;
-				
+
 				// Start the HP/MP/CP Regeneration task with Medium priority
 				startHpMpRegeneration();
 			}
 		}
-		
+
 		bool hpWasChanged = oldHp != _currentHp;
-		
+
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other Player to inform
 		if (hpWasChanged)
 		{
@@ -301,10 +301,10 @@ public class CreatureStatus
 				_creature.Events.NotifyAsync(new OnCreatureHpChange(getActiveChar(), oldHp, _currentHp));
 			}
 		}
-		
+
 		return hpWasChanged;
 	}
-	
+
 	public void setCurrentHpMp(double newHp, double newMp)
 	{
 		bool hpOrMpWasChanged = setCurrentHp(newHp, false);
@@ -314,17 +314,17 @@ public class CreatureStatus
 			_creature.broadcastStatusUpdate();
 		}
 	}
-	
+
 	public double getCurrentMp()
 	{
 		return _currentMp;
 	}
-	
+
 	public void setCurrentMp(double newMp)
 	{
 		setCurrentMp(newMp, true);
 	}
-	
+
 	/**
 	 * Sets the current mp of this character.
 	 * @param newMp the new mp
@@ -336,20 +336,20 @@ public class CreatureStatus
 		// Get the Max MP of the Creature
 		int currentMp = (int) _currentMp;
 		int maxMp = _creature.getStat().getMaxMp();
-		
+
 		lock (this)
 		{
 			if (_creature.isDead())
 			{
 				return false;
 			}
-			
+
 			if (newMp >= maxMp)
 			{
 				// Set the RegenActive flag to false
 				_currentMp = maxMp;
 				_flagsRegenActive &= ~REGEN_FLAG_MP;
-				
+
 				// Stop the HP/MP/CP Regeneration task
 				if (_flagsRegenActive == 0)
 				{
@@ -361,23 +361,23 @@ public class CreatureStatus
 				// Set the RegenActive flag to true
 				_currentMp = newMp;
 				_flagsRegenActive |= REGEN_FLAG_MP;
-				
+
 				// Start the HP/MP/CP Regeneration task with Medium priority
 				startHpMpRegeneration();
 			}
 		}
-		
+
 		bool mpWasChanged = currentMp != _currentMp;
-		
+
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other Player to inform
 		if (mpWasChanged && broadcastPacket)
 		{
 			_creature.broadcastStatusUpdate();
 		}
-		
+
 		return mpWasChanged;
 	}
-	
+
 	protected virtual void doRegeneration()
 	{
 		// Modify the current HP/MP of the Creature and broadcast Server->Client packet StatusUpdate
@@ -392,7 +392,7 @@ public class CreatureStatus
 			stopHpMpRegeneration();
 		}
 	}
-	
+
 	public virtual Creature getActiveChar()
 	{
 		return _creature;

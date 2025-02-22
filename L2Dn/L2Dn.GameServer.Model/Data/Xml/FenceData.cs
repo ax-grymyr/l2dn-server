@@ -102,7 +102,7 @@ public class FenceData: DataReaderBase
 	public bool checkIfFenceBetween(Location3D location, Location3D targetLocation, Instance? instance = null)
 	{
 		WorldRegion? region = World.getInstance().getRegion(location.X, location.Y);
-		List<Fence>? fences = region?.getFences();
+		List<Fence>? fences = region.Fences;
 		if (fences == null || fences.Count == 0)
 		{
 			return false;
