@@ -58,9 +58,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.GameServer.Model.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.Unsafe", "L2Dn.Unsafe\L2Dn.Unsafe.csproj", "{B86895C9-7291-4B71-A52C-60E238AD2DA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.Unsafe.Tests", "L2Dn.Unsafe.Tests\L2Dn.Unsafe.Tests.csproj", "{0E569B5D-F6B6-4AC1-A862-2AC03CD46B74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.Unsafe.Tests", "Tests\L2Dn.Unsafe.Tests\L2Dn.Unsafe.Tests.csproj", "{0E569B5D-F6B6-4AC1-A862-2AC03CD46B74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.Common.Tests", "L2Dn.Common.Tests\L2Dn.Common.Tests.csproj", "{D357C296-12E2-4236-91D3-9606971B16E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Dn.Common.Tests", "Tests\L2Dn.Common.Tests\L2Dn.Common.Tests.csproj", "{D357C296-12E2-4236-91D3-9606971B16E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
