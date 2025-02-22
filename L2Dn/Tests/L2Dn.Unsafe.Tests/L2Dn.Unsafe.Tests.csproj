@@ -20,7 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\L2Dn.Unsafe\L2Dn.Unsafe.csproj" />
+      <ProjectReference Include="..\..\L2Dn.Unsafe\L2Dn.Unsafe.csproj" />
     </ItemGroup>
 
 </Project>
