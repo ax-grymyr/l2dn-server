@@ -17,6 +17,7 @@ public sealed class World
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(World));
 
 	public static volatile int MAX_CONNECTED_COUNT = 0;
+	public static volatile int OFFLINE_TRADE_COUNT = 0;
 
 	/** Map containing all the players in game. */
 	private static readonly Map<int, Player> _allPlayers = new();

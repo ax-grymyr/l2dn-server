@@ -84,7 +84,7 @@ public class OfflineTradeUtil
 		if (client == null || connection == null)
 			return false;
 
-		//World.OFFLINE_TRADE_COUNT++;
+		World.OFFLINE_TRADE_COUNT++;
 
 		connection.Send(ServerClosePacket.STATIC_PACKET, SendPacketOptions.CloseAfterSending);
 		if (!Config.DUALBOX_COUNT_OFFLINE_TRADERS)
