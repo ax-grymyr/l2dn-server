@@ -109,10 +109,24 @@ public class DoorData: DataReaderBase
 
 	public bool checkIfDoorsBetween(Location3D location, Location3D targetLocation, Instance? instance = null,
 		bool doubleFaceCheck = false)
-	{
-		ICollection<Door>? doors = instance?.getDoors() ?? World.getInstance().getRegion(location.X, location.Y).Doors;
-		if (doors == null || doors.Count == 0)
-			return false;
+    {
+        IEnumerable<Door> doors;
+        if (instance != null)
+        {
+            ICollection<Door> instanceDoors = instance.getDoors();
+            if (instanceDoors.Count == 0)
+                return false;
+
+            doors = instanceDoors;
+        }
+        else
+        {
+            IReadOnlyCollection<Door> regionDoors = World.getInstance().getRegion(location.X, location.Y).Doors;
+            if (regionDoors.Count == 0)
+                return false;
+
+            doors = regionDoors;
+        }
 
 		foreach (Door doorInst in doors)
 		{
