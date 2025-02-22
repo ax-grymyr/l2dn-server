@@ -35,8 +35,9 @@ public sealed class WorldRegionCollection
         if (x != location.X || y != location.Y)
             _logger.Warn($"Location {location} is out of bounds. Clamped to ({x}, {y}).");
 
-        int regionX = (x - WorldMap.WorldXMin) / WorldMap.RegionSize + WorldMap.RegionOffsetX;
-        int regionY = (y - WorldMap.WorldYMin) / WorldMap.RegionSize + WorldMap.RegionOffsetY;
+        int regionX = (x - WorldMap.WorldXMin) / WorldMap.RegionSize;
+        int regionY = (y - WorldMap.WorldYMin) / WorldMap.RegionSize;
+
         return _worldRegions[regionX][regionY];
     }
 }

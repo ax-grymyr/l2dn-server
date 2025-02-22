@@ -27,11 +27,6 @@ public static class WorldMap
     // thus each region is 2048x2048 units in size.
     public const int RegionSize = TileSize / 16; // = 2048
 
-    // The top left region has coordinates 0,0.
-    // The offset is used to convert the world coordinates to the region coordinates.
-    public const int RegionOffsetX = -(WorldXMin / RegionSize);
-    public const int RegionOffsetY = -(WorldYMin / RegionSize);
-
     // Number of regions.
     public const int RegionCountX = (TileXMax - TileXMin + 1) * (TileSize / RegionSize);
     public const int RegionCountY = (TileYMax - TileYMin + 1) * (TileSize / RegionSize);
