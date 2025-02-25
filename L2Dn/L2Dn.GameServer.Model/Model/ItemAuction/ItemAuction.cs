@@ -15,7 +15,7 @@ public class ItemAuction
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemAuction));
 	private static readonly TimeSpan ENDING_TIME_EXTEND_5 = TimeSpan.FromMinutes(5);
 	private static readonly TimeSpan ENDING_TIME_EXTEND_3 = TimeSpan.FromMinutes(3);
-	
+
 	private readonly int _auctionId;
 	private readonly int _instanceId;
 	private readonly DateTime _startingTime;
@@ -23,20 +23,20 @@ public class ItemAuction
 	private readonly AuctionItem _auctionItem;
 	private readonly List<ItemAuctionBid> _auctionBids;
 	private readonly object _auctionStateLock;
-	
+
 	private ItemAuctionState _auctionState;
 	private ItemAuctionExtendState _scheduledAuctionEndingExtendState;
 	private ItemAuctionExtendState _auctionEndingExtendState;
-	
+
 	private readonly ItemInfo _itemInfo;
-	
-	private ItemAuctionBid _highestBid;
+
+	private ItemAuctionBid? _highestBid;
 	private int _lastBidPlayerObjId;
-	
-	public ItemAuction(int auctionId, int instanceId, DateTime startingTime, DateTime endingTime, AuctionItem auctionItem):this(auctionId, instanceId, startingTime, endingTime, auctionItem, new(), ItemAuctionState.CREATED) 
+
+	public ItemAuction(int auctionId, int instanceId, DateTime startingTime, DateTime endingTime, AuctionItem auctionItem):this(auctionId, instanceId, startingTime, endingTime, auctionItem, new(), ItemAuctionState.CREATED)
 	{
 	}
-	
+
 	public ItemAuction(int auctionId, int instanceId, DateTime startingTime, DateTime endingTime, AuctionItem auctionItem, List<ItemAuctionBid> auctionBids, ItemAuctionState auctionState)
 	{
 		_auctionId = auctionId;
@@ -49,11 +49,11 @@ public class ItemAuction
 		_auctionStateLock = new object();
 		_scheduledAuctionEndingExtendState = ItemAuctionExtendState.INITIAL;
 		_auctionEndingExtendState = ItemAuctionExtendState.INITIAL;
-		
+
 		Item item = _auctionItem.createNewItemInstance();
 		_itemInfo = new ItemInfo(item);
 		World.getInstance().removeObject(item);
-		
+
 		foreach (ItemAuctionBid bid in _auctionBids)
 		{
 			if (_highestBid == null || _highestBid.getLastBid() < bid.getLastBid())
@@ -62,19 +62,19 @@ public class ItemAuction
 			}
 		}
 	}
-	
+
 	public ItemAuctionState getAuctionState()
 	{
 		ItemAuctionState auctionState;
-		
+
 		lock (_auctionStateLock)
 		{
 			auctionState = _auctionState;
 		}
-		
+
 		return auctionState;
 	}
-	
+
 	public bool setAuctionState(ItemAuctionState expected, ItemAuctionState wanted)
 	{
 		lock (_auctionStateLock)
@@ -83,63 +83,63 @@ public class ItemAuction
 			{
 				return false;
 			}
-			
+
 			_auctionState = wanted;
 			storeMe();
 			return true;
 		}
 	}
-	
+
 	public int getAuctionId()
 	{
 		return _auctionId;
 	}
-	
+
 	public int getInstanceId()
 	{
 		return _instanceId;
 	}
-	
+
 	public ItemInfo getItemInfo()
 	{
 		return _itemInfo;
 	}
-	
+
 	public Item createNewItemInstance()
 	{
 		return _auctionItem.createNewItemInstance();
 	}
-	
+
 	public long getAuctionInitBid()
 	{
 		return _auctionItem.getAuctionInitBid();
 	}
-	
-	public ItemAuctionBid getHighestBid()
+
+	public ItemAuctionBid? getHighestBid()
 	{
 		return _highestBid;
 	}
-	
+
 	public ItemAuctionExtendState getAuctionEndingExtendState()
 	{
 		return _auctionEndingExtendState;
 	}
-	
+
 	public ItemAuctionExtendState getScheduledAuctionEndingExtendState()
 	{
 		return _scheduledAuctionEndingExtendState;
 	}
-	
+
 	public void setScheduledAuctionEndingExtendState(ItemAuctionExtendState state)
 	{
 		_scheduledAuctionEndingExtendState = state;
 	}
-	
+
 	public DateTime getStartingTime()
 	{
 		return _startingTime;
 	}
-	
+
 	public DateTime getEndingTime()
 	{
 		return _endingTime;
@@ -156,10 +156,10 @@ public class ItemAuction
 		TimeSpan span = _endingTime - DateTime.UtcNow;
 		return span < TimeSpan.Zero ? TimeSpan.Zero : span;
 	}
-	
+
 	public void storeMe()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			Db.ItemAuction? record = ctx.ItemAuctions.SingleOrDefault(r => r.AuctionId == _auctionId);
@@ -182,19 +182,19 @@ public class ItemAuction
 			LOGGER.Error(e);
 		}
 	}
-	
+
 	public int getAndSetLastBidPlayerObjectId(int playerObjId)
 	{
 		int lastBid = _lastBidPlayerObjId;
 		_lastBidPlayerObjId = playerObjId;
 		return lastBid;
 	}
-	
+
 	private void updatePlayerBid(ItemAuctionBid bid, bool delete)
 	{
 		updatePlayerBidInternal(bid, delete);
 	}
-	
+
 	private void updatePlayerBidInternal(ItemAuctionBid bid, bool delete)
 	{
 		try
@@ -218,7 +218,7 @@ public class ItemAuction
 						AuctionId = _auctionId,
 						CharacterId = playerObjId
 					};
-					
+
 					ctx.ItemAuctionBids.Add(record);
 				}
 
@@ -231,33 +231,33 @@ public class ItemAuction
 			LOGGER.Error(e);
 		}
 	}
-	
+
 	public void registerBid(Player player, long newBid)
 	{
 		if (player == null)
 		{
 			throw new ArgumentNullException();
 		}
-		
+
 		if (newBid < _auctionItem.getAuctionInitBid())
 		{
 			player.sendPacket(SystemMessageId.YOUR_BID_PRICE_MUST_BE_HIGHER_THAN_THE_MINIMUM_PRICE_CURRENTLY_BEING_BID);
 			return;
 		}
-		
+
 		if (newBid > 100000000000L)
 		{
 			player.sendPacket(SystemMessageId.THE_HIGHEST_BID_IS_OVER_999_9_BILLION_THEREFORE_YOU_CANNOT_PLACE_A_BID);
 			return;
 		}
-		
+
 		if (getAuctionState() != ItemAuctionState.STARTED)
 		{
 			return;
 		}
-		
+
 		int playerObjId = player.ObjectId;
-		
+
 		lock (_auctionBids)
 		{
 			if (_highestBid != null && newBid < _highestBid.getLastBid())
@@ -265,8 +265,8 @@ public class ItemAuction
 				player.sendPacket(SystemMessageId.YOUR_BID_MUST_BE_HIGHER_THAN_THE_CURRENT_HIGHEST_BID);
 				return;
 			}
-			
-			ItemAuctionBid bid = getBidFor(playerObjId);
+
+			ItemAuctionBid? bid = getBidFor(playerObjId);
 			if (bid == null)
 			{
 				if (!reduceItemCount(player, newBid))
@@ -274,7 +274,7 @@ public class ItemAuction
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA_FOR_THIS_BID);
 					return;
 				}
-				
+
 				bid = new ItemAuctionBid(playerObjId, newBid);
 				_auctionBids.Add(bid);
 			}
@@ -287,7 +287,7 @@ public class ItemAuction
 						player.sendPacket(SystemMessageId.YOUR_BID_MUST_BE_HIGHER_THAN_THE_CURRENT_HIGHEST_BID);
 						return;
 					}
-					
+
 					if (!reduceItemCount(player, newBid - bid.getLastBid()))
 					{
 						player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA_FOR_THIS_BID);
@@ -299,19 +299,19 @@ public class ItemAuction
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA_FOR_THIS_BID);
 					return;
 				}
-				
+
 				bid.setLastBid(newBid);
 			}
-			
+
 			onPlayerBid(player, bid);
 			updatePlayerBid(bid, false);
-			
+
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_SUBMITTED_A_BID_FOR_THE_AUCTION_OF_S1);
 			sm.Params.addLong(newBid);
 			player.sendPacket(sm);
 		}
 	}
-	
+
 	private void onPlayerBid(Player player, ItemAuctionBid bid)
 	{
 		if (_highestBid == null)
@@ -320,15 +320,15 @@ public class ItemAuction
 		}
 		else if (_highestBid.getLastBid() < bid.getLastBid())
 		{
-			Player old = _highestBid.getPlayer();
+			Player? old = _highestBid.getPlayer();
 			if (old != null)
 			{
 				old.sendPacket(SystemMessageId.YOU_WERE_OUTBID_THE_NEW_HIGHEST_BID_IS_S1_ADENA);
 			}
-			
+
 			_highestBid = bid;
 		}
-		
+
 		if (_endingTime - DateTime.UtcNow <= TimeSpan.FromMinutes(10)) // 10 minutes
 		{
 			switch (_auctionEndingExtendState)
@@ -381,13 +381,13 @@ public class ItemAuction
 			}
 		}
 	}
-	
+
 	public void broadcastToAllBidders<TPacket>(TPacket packet)
 		where TPacket: struct, IOutgoingPacket
 	{
 		ThreadPool.execute(() => broadcastToAllBiddersInternal(packet));
 	}
-	
+
 	public void broadcastToAllBiddersInternal<TPacket>(TPacket packet)
 		where TPacket: struct, IOutgoingPacket
 	{
@@ -396,7 +396,7 @@ public class ItemAuction
 			ItemAuctionBid bid = _auctionBids[i];
 			if (bid != null)
 			{
-				Player player = bid.getPlayer();
+				Player? player = bid.getPlayer();
 				if (player != null)
 				{
 					player.sendPacket(packet);
@@ -404,14 +404,14 @@ public class ItemAuction
 			}
 		}
 	}
-	
+
 	public bool cancelBid(Player player)
 	{
 		if (player == null)
 		{
 			throw new ArgumentNullException();
 		}
-		
+
 		switch (getAuctionState())
 		{
 			case ItemAuctionState.CREATED:
@@ -427,22 +427,22 @@ public class ItemAuction
 				break;
 			}
 		}
-		
+
 		int playerObjId = player.ObjectId;
-		
+
 		lock (_auctionBids)
 		{
 			if (_highestBid == null)
 			{
 				return false;
 			}
-			
+
 			int bidIndex = getBidIndexFor(playerObjId);
 			if (bidIndex == -1)
 			{
 				return false;
 			}
-			
+
 			ItemAuctionBid bid = _auctionBids[bidIndex];
 			if (bid.getPlayerObjId() == _highestBid.getPlayerObjId())
 			{
@@ -451,34 +451,34 @@ public class ItemAuction
 				{
 					return false;
 				}
-				
+
 				player.sendPacket(SystemMessageId.YOU_CURRENTLY_HAVE_THE_HIGHEST_BID);
 				return true;
 			}
-			
+
 			if (bid.isCanceled())
 			{
 				return false;
 			}
-			
+
 			increaseItemCount(player, bid.getLastBid());
 			bid.cancelBid();
-			
+
 			// delete bid from database if auction already finished
 			updatePlayerBid(bid, getAuctionState() == ItemAuctionState.FINISHED);
-			
+
 			player.sendPacket(SystemMessageId.YOU_HAVE_CANCELED_YOUR_BID);
 		}
 		return true;
 	}
-	
+
 	public void clearCanceledBids()
 	{
 		if (getAuctionState() != ItemAuctionState.FINISHED)
 		{
 			throw new InvalidOperationException("Attempt to clear canceled bids for non-finished auction");
 		}
-		
+
 		lock (_auctionBids)
 		{
 			foreach (ItemAuctionBid bid in _auctionBids)
@@ -491,7 +491,7 @@ public class ItemAuction
 			}
 		}
 	}
-	
+
 	private bool reduceItemCount(Player player, long count)
 	{
 		if (!player.reduceAdena("ItemAuction", count, player, true))
@@ -501,12 +501,12 @@ public class ItemAuction
 		}
 		return true;
 	}
-	
+
 	private void increaseItemCount(Player player, long count)
 	{
 		player.addAdena("ItemAuction", count, player, true);
 	}
-	
+
 	/**
 	 * Returns the last bid for the given player or -1 if he did not made one yet.
 	 * @param player The player that made the bid
@@ -514,16 +514,16 @@ public class ItemAuction
 	 */
 	public long getLastBid(Player player)
 	{
-		ItemAuctionBid bid = getBidFor(player.ObjectId);
+		ItemAuctionBid? bid = getBidFor(player.ObjectId);
 		return bid != null ? bid.getLastBid() : -1L;
 	}
-	
-	public ItemAuctionBid getBidFor(int playerObjId)
+
+	public ItemAuctionBid? getBidFor(int playerObjId)
 	{
 		int index = getBidIndexFor(playerObjId);
 		return index != -1 ? _auctionBids[index] : null;
 	}
-	
+
 	private int getBidIndexFor(int playerObjId)
 	{
 		for (int i = _auctionBids.Count; i-- > 0;)

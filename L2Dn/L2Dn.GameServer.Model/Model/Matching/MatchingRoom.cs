@@ -18,7 +18,7 @@ public abstract class MatchingRoom: IIdentifiable
 	private int _minLevel;
 	private int _maxLevel;
 	private int _maxCount;
-	private Set<Player> _members;
+	private Set<Player> _members = [];
 	private Player _leader;
 
 	public MatchingRoom(string title, PartyDistributionType loot, int minLevel, int maxLevel, int maxmem, Player leader)
@@ -82,7 +82,7 @@ public abstract class MatchingRoom: IIdentifiable
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("MatchingRoom: Problem restoring room history!");
+			LOGGER.Error("MatchingRoom: Problem restoring room history! " + e);
 		}
 	}
 

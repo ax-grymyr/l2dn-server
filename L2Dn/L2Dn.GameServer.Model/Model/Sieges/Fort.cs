@@ -41,7 +41,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	private int _castleId;
 	private int _supplyLvL;
 	private readonly Map<int, FortFunction> _function = new();
-	private readonly ScheduledFuture[] _fortUpdater = new ScheduledFuture[2];
+	private readonly ScheduledFuture?[] _fortUpdater = new ScheduledFuture?[2];
 
 	// Spawn Data
 	private bool _isSuspiciousMerchantSpawned;
@@ -323,7 +323,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			return;
 		}
 
-		Door door = getDoor(doorId);
+		Door? door = getDoor(doorId);
 		if (door != null)
 		{
 			if (open)
@@ -361,7 +361,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		sm.Params.addCastleId(getResidenceId());
 		getSiege().announceToPlayer(sm);
 
-		Clan oldowner = _fortOwner;
+		Clan? oldowner = _fortOwner;
 		if (oldowner != null && clan != oldowner)
 		{
 			// Remove points from old owner
@@ -426,7 +426,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 
 	public void removeOwner(bool updateDB)
 	{
-		Clan clan = _fortOwner;
+		Clan? clan = _fortOwner;
 		if (clan != null)
 		{
 			foreach (Player member in clan.getOnlineMembers(0))
@@ -566,7 +566,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	// This method upgrade door
 	public void upgradeDoor(int doorId, int hp, int pDef, int mDef)
 	{
-		Door door = getDoor(doorId);
+		Door? door = getDoor(doorId);
 		if (door != null)
 		{
 			door.setCurrentHp(door.getMaxHp() + hp);
@@ -596,7 +596,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 
 			if (ownerId != null)
 			{
-				Clan clan = ClanTable.getInstance().getClan(ownerId.Value); // Try to find clan instance
+				Clan? clan = ClanTable.getInstance().getClan(ownerId.Value); // Try to find clan instance
 				clan.setFortId(getResidenceId());
 				setOwnerClan(clan);
 				TimeSpan period = TimeSpan.FromSeconds(Config.FS_UPDATE_FRQ * 60);
@@ -808,7 +808,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 
 	private void updateOwnerInDB()
 	{
-		Clan clan = _fortOwner;
+		Clan? clan = _fortOwner;
 		int? clanId = null;
 		if (clan != null)
 		{

@@ -417,7 +417,7 @@ public abstract class AbstractOlympiadGame
 			List<ItemInfo> items = new List<ItemInfo>();
 			list.ForEach(holder =>
 			{
-				Item item = player.getInventory().addItem("Olympiad", holder.getId(), holder.getCount(), player, null);
+				Item? item = player.getInventory().addItem("Olympiad", holder.getId(), holder.getCount(), player, null);
 				if (item == null)
 				{
 					return;

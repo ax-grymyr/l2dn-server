@@ -11,7 +11,7 @@ public class MpRewardTask
     private readonly double _value;
     private readonly ScheduledFuture _task;
     private readonly Creature _creature;
-	
+
     public MpRewardTask(Creature creature, Npc npc)
     {
         NpcTemplate template = npc.getTemplate();
@@ -21,7 +21,7 @@ public class MpRewardTask
         _task = ThreadPool.scheduleAtFixedRate(run, TimeSpan.FromMilliseconds(Config.EFFECT_TICK_RATIO),
             TimeSpan.FromMilliseconds(Config.EFFECT_TICK_RATIO));
     }
-	
+
     /**
      * @param npc
      * @param creature
@@ -34,20 +34,21 @@ public class MpRewardTask
         {
             case MpRewardType.PER:
             {
-                return creature.getMaxMp() * (template.getMpRewardValue() / 100d) / template.getMpRewardTicks();
+                return creature.getMaxMp() * (template.getMpRewardValue() / 100.0) / template.getMpRewardTicks();
             }
         }
-        return template.getMpRewardValue() / template.getMpRewardTicks();
+        return 1.0 * template.getMpRewardValue() / template.getMpRewardTicks();
     }
-	
+
     private void run()
     {
-        if (--_count <= 0 || (_creature.isPlayer() && !_creature.getActingPlayer().isOnline()))
+        Player? player = _creature.getActingPlayer();
+        if (--_count <= 0 || (_creature.isPlayer() && player != null && !player.isOnline()))
         {
             _task.cancel(false);
             return;
         }
-		
+
         _creature.setCurrentMp(_creature.getCurrentMp() + _value);
     }
 }

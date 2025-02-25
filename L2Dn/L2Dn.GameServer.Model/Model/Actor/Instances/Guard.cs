@@ -49,7 +49,7 @@ public class Guard: Attackable
 		return base.isAutoAttackable(attacker);
 	}
 
-	public override void addDamage(Creature attacker, int damage, Skill skill)
+	public override void addDamage(Creature attacker, int damage, Skill? skill)
 	{
 		base.addDamage(attacker, damage, skill);
 		getAI().startFollow(attacker);

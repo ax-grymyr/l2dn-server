@@ -9,25 +9,25 @@ public class SummonStatus : PlayableStatus
 	public SummonStatus(Summon activeChar): base(activeChar)
 	{
 	}
-	
+
 	public override void reduceHp(double value, Creature attacker)
 	{
 		reduceHp(value, attacker, true, false, false);
 	}
-	
+
 	public override void reduceHp(double amount, Creature attacker, bool awake, bool isDOT, bool isHPConsumption)
 	{
 		if (attacker == null || getActiveChar().isDead())
 		{
 			return;
 		}
-		
-		Player attackerPlayer = attacker.getActingPlayer();
+
+		Player? attackerPlayer = attacker.getActingPlayer();
 		if (attackerPlayer != null && (getActiveChar().getOwner() == null || getActiveChar().getOwner().getDuelId() != attackerPlayer.getDuelId()))
 		{
 			attackerPlayer.setDuelState(Duel.DUELSTATE_INTERRUPTED);
 		}
-		
+
 		double value = amount;
 		Player caster = getActiveChar().getTransferingDamageTo();
 		if (getActiveChar().getOwner().getParty() != null)
@@ -84,15 +84,15 @@ public class SummonStatus : PlayableStatus
 						caster.getStatus().reduceCp((int) caster.getCurrentCp());
 					}
 				}
-				
+
 				caster.reduceCurrentHp(transferDmg, attacker, null);
 				value -= transferDmg;
 			}
 		}
-		
+
 		base.reduceHp(value, attacker, awake, isDOT, isHPConsumption);
 	}
-	
+
 	public override Summon getActiveChar()
 	{
 		return (Summon)base.getActiveChar();

@@ -20,12 +20,12 @@ public class Defender : Attackable
 		InstanceType = InstanceType.Defender;
 	}
 
-	public override void addDamage(Creature attacker, int damage, Skill skill)
+	public override void addDamage(Creature attacker, int damage, Skill? skill)
 	{
 		base.addDamage(attacker, damage, skill);
-		World.getInstance()
-			.forEachVisibleObjectInRange<Defender>(this, 500, defender => defender.addDamageHate(attacker, 0, 10));
-	}
+        World.getInstance().forEachVisibleObjectInRange<Defender>(this, 500,
+            defender => defender.addDamageHate(attacker, 0, 10));
+    }
 
 	/**
 	 * Return True if a siege is in progress and the Creature attacker isn't a Defender.
@@ -171,14 +171,12 @@ public class Defender : Attackable
 		base.useMagic(skill);
 	}
 
-	public override void addDamageHate(Creature attacker, long damage, long aggro)
+	public override void addDamageHate(Creature? attacker, long damage, long aggro)
 	{
 		if (attacker == null)
-		{
 			return;
-		}
 
-		if (!(attacker is Defender))
+		if (attacker is not Defender)
 		{
             Player? player = attacker.getActingPlayer();
 			if (damage == 0 && aggro <= 1 && attacker.isPlayable() && player != null)

@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -26,7 +27,8 @@ public class FameTask: Runnable
 			return;
 		}
 
-		if ((_player.getClient() == null || _player.getClient().IsDetached) && !Config.OFFLINE_FAME)
+        GameSession? client = _player.getClient();
+		if ((client == null || client.IsDetached) && !Config.OFFLINE_FAME)
 		{
 			return;
 		}

@@ -70,7 +70,7 @@ public class Summon: AbstractEffect
         if (template == null)
             return;
 
-		Servitor summon = new(template, player);
+		Servitor summon = new(template, player, _consumeItem);
 		TimeSpan consumeItemInterval = TimeSpan.FromMilliseconds((_consumeItemInterval > 0
 			? _consumeItemInterval
 			: template.getRace() != Race.SIEGE_WEAPON ? 240 : 60) * 1000);

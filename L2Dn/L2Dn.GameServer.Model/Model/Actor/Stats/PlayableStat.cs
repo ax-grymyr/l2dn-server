@@ -70,9 +70,9 @@ public class PlayableStat: CreatureStat
 		}
 
 		int newLevel = getLevel();
-		if (newLevel > oldLevel && getActiveChar().isPlayer())
+        Player? player = getActiveChar().getActingPlayer();
+		if (newLevel > oldLevel && getActiveChar().isPlayer() && player != null)
 		{
-			Player player = getActiveChar().getActingPlayer();
 			if (SkillTreeData.getInstance().hasAvailableSkills(player, player.getClassId()))
 			{
 				getActiveChar().sendPacket(ExNewSkillToLearnByLevelUpPacket.STATIC_PACKET);

@@ -16,22 +16,22 @@ namespace L2Dn.GameServer.Model.ItemContainers;
 public class PlayerRandomCraft
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PlayerRandomCraft));
-	
+
 	public const int MAX_FULL_CRAFT_POINTS = 99;
 	public const int MAX_CRAFT_POINTS = 5000000;
-	
+
 	private readonly Player _player;
 	private readonly List<RandomCraftRewardItemHolder> _rewardList = new(5);
-	
+
 	private int _fullCraftPoints;
 	private int _craftPoints;
 	private bool _isSayhaRoll;
-	
+
 	public PlayerRandomCraft(Player player)
 	{
 		_player = player;
 	}
-	
+
 	public void restore()
 	{
 		try
@@ -68,10 +68,10 @@ public class PlayerRandomCraft
 			LOGGER.Error("Could not restore random craft for " + _player + ": " + e);
 		}
 	}
-	
+
 	public void store()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _player.ObjectId;
@@ -174,10 +174,10 @@ public class PlayerRandomCraft
 			LOGGER.Error("Could not store RandomCraft for: " + _player + ": " + e);
 		}
 	}
-	
+
 	public void storeNew()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _player.ObjectId;
@@ -200,7 +200,7 @@ public class PlayerRandomCraft
 			LOGGER.Error("Could not store new RandomCraft for: " + _player + ": " + e);
 		}
 	}
-	
+
 	public void refresh()
 	{
 		if (_player.hasItemRequest() || _player.hasRequest<RandomCraftRequest>())
@@ -208,7 +208,7 @@ public class PlayerRandomCraft
 			return;
 		}
 		_player.addRequest(new RandomCraftRequest(_player));
-		
+
 		if (_fullCraftPoints > 0 && _player.reduceAdena("RandomCraft Refresh", Config.RANDOM_CRAFT_REFRESH_FEE, _player, true))
 		{
 			_player.sendPacket(new ExCraftInfoPacket(_player));
@@ -220,10 +220,10 @@ public class PlayerRandomCraft
 				_isSayhaRoll = false;
 			}
 			_player.sendPacket(new ExCraftInfoPacket(_player));
-			
+
 			for (int i = 0; i < 5; i++)
 			{
-				RandomCraftRewardItemHolder holder;
+				RandomCraftRewardItemHolder? holder;
 				if (i > _rewardList.Count - 1)
 				{
 					holder = null;
@@ -232,7 +232,7 @@ public class PlayerRandomCraft
 				{
 					holder = _rewardList[i];
 				}
-				
+
 				if (holder == null)
 				{
 					_rewardList.Insert(i, getNewReward());
@@ -248,18 +248,18 @@ public class PlayerRandomCraft
 			}
 			_player.sendPacket(new ExCraftRandomInfoPacket(_player));
 		}
-		
+
 		_player.removeRequest<RandomCraftRequest>();
 	}
-	
-	private RandomCraftRewardItemHolder getNewReward()
+
+	private RandomCraftRewardItemHolder? getNewReward()
 	{
 		if (RandomCraftData.getInstance().isEmpty())
 		{
 			return null;
 		}
-		
-		RandomCraftRewardItemHolder result = null;
+
+		RandomCraftRewardItemHolder? result = null;
 		while (result == null)
 		{
 			result = RandomCraftData.getInstance().getNewReward();
@@ -274,7 +274,7 @@ public class PlayerRandomCraft
 		}
 		return result;
 	}
-	
+
 	public void make()
 	{
 		if (_player.hasItemRequest() || _player.hasRequest<RandomCraftRequest>())
@@ -282,13 +282,13 @@ public class PlayerRandomCraft
 			return;
 		}
 		_player.addRequest(new RandomCraftRequest(_player));
-		
+
 		if (_player.reduceAdena("RandomCraft Make", Config.RANDOM_CRAFT_CREATE_FEE, _player, true))
 		{
 			int madeId = Rnd.get(0, 4);
 			RandomCraftRewardItemHolder holder = _rewardList[madeId];
 			_rewardList.Clear();
-			
+
 			int itemId = holder.getItemId();
 			long itemCount = holder.getItemCount();
 			Item item = _player.addItem("RandomCraft Make", itemId, itemCount, _player, true);
@@ -296,29 +296,29 @@ public class PlayerRandomCraft
 			{
 				Broadcast.toAllOnlinePlayers(new ExItemAnnouncePacket(_player, item, ExItemAnnouncePacket.RANDOM_CRAFT));
 			}
-			
+
 			_player.sendPacket(new ExCraftRandomMakePacket(itemId, itemCount));
 			_player.sendPacket(new ExCraftRandomInfoPacket(_player));
 		}
-		
+
 		_player.removeRequest<RandomCraftRequest>();
 	}
-	
+
 	public List<RandomCraftRewardItemHolder> getRewards()
 	{
 		return _rewardList;
 	}
-	
+
 	public int getFullCraftPoints()
 	{
 		return _fullCraftPoints;
 	}
-	
+
 	public void addFullCraftPoints(int value)
 	{
 		addFullCraftPoints(value, false);
 	}
-	
+
 	public void addFullCraftPoints(int value, bool broadcast)
 	{
 		_fullCraftPoints = Math.Min(_fullCraftPoints + value, MAX_FULL_CRAFT_POINTS);
@@ -335,51 +335,51 @@ public class PlayerRandomCraft
 			_player.sendPacket(new ExCraftInfoPacket(_player));
 		}
 	}
-	
+
 	public void removeFullCraftPoints(int value)
 	{
 		_fullCraftPoints -= value;
 		_player.sendPacket(new ExCraftInfoPacket(_player));
 	}
-	
+
 	public void addCraftPoints(int value)
 	{
 		if (_craftPoints - 1 < MAX_CRAFT_POINTS)
 		{
 			_craftPoints += value;
 		}
-		
+
 		int fullPointsToAdd = _craftPoints / MAX_CRAFT_POINTS;
 		int pointsToRemove = MAX_CRAFT_POINTS * fullPointsToAdd;
-		
+
 		_craftPoints -= pointsToRemove;
 		addFullCraftPoints(fullPointsToAdd);
 		if (_fullCraftPoints >= MAX_FULL_CRAFT_POINTS)
 		{
 			_craftPoints = MAX_CRAFT_POINTS;
 		}
-		
+
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.CRAFT_POINTS_S1);
 		sm.Params.addLong(value);
 		_player.sendPacket(sm);
 		_player.sendPacket(new ExCraftInfoPacket(_player));
 	}
-	
+
 	public int getCraftPoints()
 	{
 		return _craftPoints;
 	}
-	
+
 	public void setIsSayhaRoll(bool value)
 	{
 		_isSayhaRoll = value;
 	}
-	
+
 	public bool isSayhaRoll()
 	{
 		return _isSayhaRoll;
 	}
-	
+
 	public int getLockedSlotCount()
 	{
 		int count = 0;

@@ -18,37 +18,37 @@ namespace L2Dn.GameServer.Model.Quests;
 public class QuestState
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(QuestState));
-	
+
 	// Constants
 	private const string COND_VAR = "cond";
 	private const string COUNT_VAR = "count";
 	private const string RESTART_VAR = "restartTime";
 	private const string MEMO_VAR = "memoState";
 	private const string MEMO_EX_VAR = "memoStateEx";
-	
+
 	/** The name of the quest of this QuestState */
 	private readonly string _questName;
-	
+
 	/** The "owner" of this QuestState object */
 	private readonly Player _player;
-	
+
 	/** The current state of the quest */
 	private byte _state;
-	
+
 	/** The current condition of the quest */
 	private QuestCondType _cond = QuestCondType.NONE;
-	
+
 	/** Used for simulating Quest onTalk */
 	private bool _simulated;
-	
+
 	/** A map of key=>value pairs containing the quest state variables and their values */
 	private Map<string, string> _vars;
-	
+
 	/**
 	 * bool flag letting QuestStateManager know to exit quest when cleaning up
 	 */
 	private bool _isExitQuestOnCleanUp;
-	
+
 	/**
 	 * Constructor of the QuestState. Creates the QuestState object and sets the player's progress of the quest to this QuestState.
 	 * @param quest the {@link Quest} object associated with the QuestState
@@ -62,7 +62,7 @@ public class QuestState
 		_state = state;
 		player.setQuestState(this);
 	}
-	
+
 	/**
 	 * @return the name of the quest of this QuestState
 	 */
@@ -70,7 +70,7 @@ public class QuestState
 	{
 		return _questName;
 	}
-	
+
 	/**
 	 * @return the {@link Quest} object of this QuestState
 	 */
@@ -78,7 +78,7 @@ public class QuestState
 	{
 		return QuestManager.getInstance().getQuest(_questName);
 	}
-	
+
 	/**
 	 * @return the {@link Player} object of the owner of this QuestState
 	 */
@@ -86,7 +86,7 @@ public class QuestState
 	{
 		return _player;
 	}
-	
+
 	/**
 	 * @return the current State of this QuestState
 	 * @see org.l2jmobius.gameserver.model.quest.State
@@ -95,7 +95,7 @@ public class QuestState
 	{
 		return _state;
 	}
-	
+
 	/**
 	 * @return {@code true} if the State of this QuestState is CREATED, {@code false} otherwise
 	 * @see org.l2jmobius.gameserver.model.quest.State
@@ -104,7 +104,7 @@ public class QuestState
 	{
 		return _state == State.CREATED;
 	}
-	
+
 	/**
 	 * @return {@code true} if the State of this QuestState is STARTED, {@code false} otherwise
 	 * @see org.l2jmobius.gameserver.model.quest.State
@@ -113,7 +113,7 @@ public class QuestState
 	{
 		return _state == State.STARTED;
 	}
-	
+
 	/**
 	 * @return {@code true} if the State of this QuestState is COMPLETED, {@code false} otherwise
 	 * @see org.l2jmobius.gameserver.model.quest.State
@@ -122,7 +122,7 @@ public class QuestState
 	{
 		return _state == State.COMPLETED;
 	}
-	
+
 	/**
 	 * @param state the new state of the quest to set
 	 * @see #setState(byte state, bool saveInDb)
@@ -132,7 +132,7 @@ public class QuestState
 	{
 		setState(state, true);
 	}
-	
+
 	/**
 	 * Change the state of this quest to the specified value.
 	 * @param state the new state of the quest to set
@@ -145,12 +145,12 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		if (_state == state)
 		{
 			return;
 		}
-		
+
 		bool newQuest = isCreated();
 		_state = state;
 		if (saveInDb)
@@ -164,10 +164,10 @@ public class QuestState
 				Quest.updateQuestInDb(this);
 			}
 		}
-		
+
 		_player.sendPacket(new QuestListPacket(_player));
 	}
-	
+
 	/**
 	 * Add parameter used in quests.
 	 * @param variable String pointing out the name of the variable for quest
@@ -179,18 +179,18 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		if (_vars == null)
 		{
 			_vars = new();
 		}
-		
+
 		if (value == null)
 		{
 			_vars.put(variable, "");
 			return;
 		}
-		
+
 		if (COND_VAR.Equals(variable))
 		{
 			try
@@ -202,20 +202,20 @@ public class QuestState
 				// TODO: logging
 			}
 		}
-		
+
 		_vars.put(variable, value);
 	}
-	
+
 	public void set(string variable, int value)
 	{
 		if (_simulated)
 		{
 			return;
 		}
-		
+
 		set(variable, value.ToString());
 	}
-	
+
 	/**
 	 * Return value of parameter "value" after adding the couple (var,value) in class variable "vars".<br>
 	 * Actions:<br>
@@ -236,18 +236,18 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		if (_vars == null)
 		{
 			_vars = new();
 		}
-		
+
 		string newValue = value;
 		if (newValue == null)
 		{
 			newValue = "";
 		}
-		
+
 		string old = _vars.put(variable, newValue);
 		if (old != null)
 		{
@@ -257,7 +257,7 @@ public class QuestState
 		{
 			Quest.createQuestVarInDb(this, variable, newValue);
 		}
-		
+
 		if (COND_VAR.Equals(variable))
 		{
 			try
@@ -278,7 +278,7 @@ public class QuestState
 				catch (Exception ignored)
 				{
 				}
-				
+
 				_cond = (QuestCondType)newCond;
 				setCond(newCond, previousVal);
 				getQuest().sendNpcLogList(getPlayer());
@@ -290,7 +290,7 @@ public class QuestState
 			}
 		}
 	}
-	
+
 	/**
 	 * Internally handles the progression of the quest so that it is ready for sending appropriate packets to the client.<br>
 	 * <u><i>Actions :</i></u><br>
@@ -310,12 +310,12 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		if (cond == old)
 		{
 			return;
 		}
-		
+
 		int completedStateFlags = 0;
 		// cond 0 and 1 do not need completedStateFlags. Also, if cond > 1, the 1st step must
 		// always exist (i.e. it can never be skipped). So if cond is 2, we can still safely
@@ -329,7 +329,7 @@ public class QuestState
 		{
 			completedStateFlags = getInt("__compltdStateFlags");
 		}
-		
+
 		// case 1: No steps have been skipped so far...
 		if (completedStateFlags == 0)
 		{
@@ -340,10 +340,10 @@ public class QuestState
 				// set the most significant bit to 1 (indicates that there exist skipped states)
 				// also, ensure that the least significant bit is an 1 (the first step is never skipped, no matter what the cond says)
 				completedStateFlags = unchecked((int)0x80000001);
-				
+
 				// since no flag had been skipped until now, the least significant bits must all be set to 1, up until "old" number of bits.
 				completedStateFlags |= (1 << old) - 1;
-				
+
 				// now, just set the bit corresponding to the passed cond to 1 (current step)
 				completedStateFlags |= 1 << (cond - 1);
 				set("__compltdStateFlags", completedStateFlags.ToString());
@@ -353,7 +353,7 @@ public class QuestState
 		else if (cond < old) // if this is a push back to a previous step, clear all completion flags ahead
 		{
 			completedStateFlags &= (1 << cond) - 1; // note, this also unsets the flag indicating that there exist skips
-			
+
 			// now, check if this resulted in no steps being skipped any more
 			if (completedStateFlags == (1 << cond) - 1)
 			{
@@ -374,12 +374,12 @@ public class QuestState
 			completedStateFlags |= 1 << (cond - 1);
 			set("__compltdStateFlags", completedStateFlags.ToString());
 		}
-		
+
 		// send a packet to the client to inform it of the quest progress (step change)
 		_player.sendPacket(new ExQuestUiPacket(_player));
 		_player.sendPacket(new ExQuestNotificationAllPacket(_player));
 	}
-	
+
 	/**
 	 * Removes a quest variable from the list of existing quest variables.
 	 * @param variable the name of the variable to remove
@@ -390,24 +390,24 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		if (_vars == null)
 		{
 			return;
 		}
-		
-		string old = _vars.remove(variable);
+
+		string? old = _vars.remove(variable);
 		if (old != null)
 		{
 			if (COND_VAR.Equals(variable))
 			{
 				_cond = 0;
 			}
-			
+
 			Quest.deleteQuestVarInDb(this, variable);
 		}
 	}
-	
+
 	/**
 	 * @param variable the name of the variable to get
 	 * @return the value of the variable from the list of quest variables
@@ -418,10 +418,10 @@ public class QuestState
 		{
 			return null;
 		}
-		
+
 		return _vars.get(variable);
 	}
-	
+
 	/**
 	 * @param variable the name of the variable to get
 	 * @return the integer value of the variable or 0 if the variable does not exist or its value is not an integer
@@ -432,13 +432,13 @@ public class QuestState
 		{
 			return 0;
 		}
-		
-		string varStr = _vars.get(variable);
+
+		string? varStr = _vars.get(variable);
 		if (string.IsNullOrEmpty(varStr))
 		{
 			return 0;
 		}
-		
+
 		int varInt = 0;
 		try
 		{
@@ -448,12 +448,12 @@ public class QuestState
 		{
 			LOGGER.Warn(
 				"Quest " + _questName + ", method getInt(" + variable + "), tried to parse a non-integer value (" +
-				varStr + "). Char Id: " + _player.ObjectId, nfe);
+				varStr + "). Char Id: " + _player.ObjectId + ". " + nfe);
 		}
-		
+
 		return varInt;
 	}
-	
+
 	/**
 	 * Checks if the quest state progress ({@code cond}) is at the specified step.
 	 * @param condition the condition to check against
@@ -464,7 +464,7 @@ public class QuestState
 	{
 		return _cond == condition;
 	}
-	
+
 	/**
 	 * Sets the quest state progress ({@code cond}) to the specified step.
 	 * @param condition the new condition of the quest state progress
@@ -477,7 +477,7 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		if (isStarted())
 		{
 			set(COND_VAR, condition.ToString());
@@ -488,7 +488,7 @@ public class QuestState
 			}
 		}
 	}
-	
+
 	/**
 	 * @return the current quest progress ({@code cond})
 	 */
@@ -498,10 +498,10 @@ public class QuestState
 		{
 			return _cond;
 		}
-		
+
 		return 0;
 	}
-	
+
 	/**
 	 * Get bit set representing completed conds.
 	 * @return if none cond is set {@code 0}, otherwise cond bit set.
@@ -528,7 +528,7 @@ public class QuestState
 		}
 		return 0;
 	}
-	
+
 	/**
 	 * Check if a given variable is set for this quest.
 	 * @param variable the variable to check
@@ -541,7 +541,7 @@ public class QuestState
 	{
 		return get(variable) != null;
 	}
-	
+
 	/**
 	 * Sets the quest state progress ({@code cond}) to the specified step.
 	 * @param value the new value of the quest state progress
@@ -555,31 +555,31 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		if (!isStarted())
 		{
 			return;
 		}
-		
+
 		set(COND_VAR, value.ToString());
-		
+
 		if (playQuestMiddle)
 		{
 			string soundName = QuestSound.ITEMSOUND_QUEST_MIDDLE.GetSoundName();
 			_player.sendPacket(new PlaySoundPacket(soundName));
 		}
 	}
-	
+
 	public void setMemoState(int value)
 	{
 		if (_simulated)
 		{
 			return;
 		}
-		
+
 		set(MEMO_VAR, value.ToString());
 	}
-	
+
 	/**
 	 * @return the current Memo State
 	 */
@@ -589,26 +589,26 @@ public class QuestState
 		{
 			return getInt(MEMO_VAR);
 		}
-		
+
 		return 0;
 	}
-	
+
 	public void setCount(int value)
 	{
 		if (_simulated)
 		{
 			return;
 		}
-		
+
 		set(COUNT_VAR, value.ToString());
-		
+
 		string soundName = QuestSound.ITEMSOUND_QUEST_ITEMGET.GetSoundName();
 		_player.sendPacket(new PlaySoundPacket(soundName));
-		
+
 		_player.sendPacket(new ExQuestUiPacket(_player));
 		_player.sendPacket(new ExQuestNotificationAllPacket(_player));
 	}
-	
+
 	/**
 	 * @return the current count
 	 */
@@ -618,15 +618,15 @@ public class QuestState
 		{
 			return getInt(COUNT_VAR);
 		}
-		
+
 		return 0;
 	}
-	
+
 	public bool isMemoState(int memoState)
 	{
 		return getInt(MEMO_VAR) == memoState;
 	}
-	
+
 	/**
 	 * Gets the memo state ex.
 	 * @param slot the slot where the value was saved
@@ -638,10 +638,10 @@ public class QuestState
 		{
 			return getInt(MEMO_EX_VAR + slot);
 		}
-		
+
 		return 0;
 	}
-	
+
 	/**
 	 * Sets the memo state ex.
 	 * @param slot the slot where the value will be saved
@@ -653,10 +653,10 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		set(MEMO_EX_VAR + slot, value.ToString());
 	}
-	
+
 	/**
 	 * Verifies if the given value is equal to the current memos state ex.
 	 * @param slot the slot where the value was saved
@@ -667,7 +667,7 @@ public class QuestState
 	{
 		return getMemoStateEx(slot) == memoStateEx;
 	}
-	
+
 	/**
 	 * @return {@code true} if quest is to be exited on clean up by QuestStateManager, {@code false} otherwise
 	 */
@@ -675,7 +675,7 @@ public class QuestState
 	{
 		return _isExitQuestOnCleanUp;
 	}
-	
+
 	/**
 	 * @param isExitQuestOnCleanUp {@code true} if quest is to be exited on clean up by QuestStateManager, {@code false} otherwise
 	 */
@@ -685,10 +685,10 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		_isExitQuestOnCleanUp = isExitQuestOnCleanUp;
 	}
-	
+
 	/**
 	 * Set condition to 1, state to STARTED and play the "ItemSound.quest_accept".<br>
 	 * Works only if state is CREATED and the quest is not a custom quest.
@@ -699,7 +699,7 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		if (isCreated() && !getQuest().isCustomQuest())
 		{
 			set(COND_VAR, "1");
@@ -712,14 +712,14 @@ public class QuestState
 			_player.sendPacket(new ExQuestNotificationPacket(this));
 			_player.sendPacket(new ExQuestNotificationAllPacket(_player));
 			_player.sendPacket(new ExQuestAcceptableListPacket(_player));
-			
+
 			if (_player.Events.HasSubscribers<OnPlayerQuestAccept>())
 			{
 				_player.Events.NotifyAsync(new OnPlayerQuestAccept(_player, getQuest().getId()));
 			}
 		}
 	}
-	
+
 	/**
 	 * Finishes the quest and removes all quest items associated with this quest from the player's inventory.<br>
 	 * If {@code type} is {@code QuestType.ONE_TIME}, also removes all other quest data associated with this quest.
@@ -734,7 +734,7 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		switch (type)
 		{
 			case QuestType.DAILY:
@@ -751,14 +751,14 @@ public class QuestState
 				break;
 			}
 		}
-		
+
 		// Notify to scripts
 		if (_player.Events.HasSubscribers<OnPlayerQuestComplete>())
 		{
 			_player.Events.NotifyAsync(new OnPlayerQuestComplete(_player, getQuest().getId(), type));
 		}
 	}
-	
+
 	/**
 	 * Finishes the quest and removes all quest items associated with this quest from the player's inventory.<br>
 	 * If {@code type} is {@code QuestType.ONE_TIME}, also removes all other quest data associated with this quest.
@@ -774,17 +774,17 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		exitQuest(type);
 		if (playExitQuest)
 		{
 			string soundName = QuestSound.ITEMSOUND_QUEST_FINISH.GetSoundName();
 			_player.sendPacket(new PlaySoundPacket(soundName));
 		}
-		
+
 		_player.sendPacket(new ExQuestNotificationAllPacket(getPlayer()));
 	}
-	
+
 	/**
 	 * Finishes the quest and removes all quest items associated with this quest from the player's inventory.<br>
 	 * If {@code repeatable} is set to {@code false}, also removes all other quest data associated with this quest.
@@ -799,17 +799,17 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		_player.removeNotifyQuestOfDeath(this);
-		
+
 		if (!isStarted())
 		{
 			return;
 		}
-		
+
 		// Clean registered quest items
 		getQuest().removeRegisteredQuestItems(_player);
-		
+
 		Quest.deleteQuestInDb(this, repeatable);
 		if (repeatable)
 		{
@@ -820,13 +820,13 @@ public class QuestState
 		{
 			setState(State.COMPLETED);
 		}
-		
+
 		_player.sendPacket(new ExQuestNotificationAllPacket(_player));
 		_player.sendPacket(new ExQuestUiPacket(_player));
-		
+
 		_vars = null;
 	}
-	
+
 	/**
 	 * Finishes the quest and removes all quest items associated with this quest from the player's inventory.<br>
 	 * If {@code repeatable} is set to {@code false}, also removes all other quest data associated with this quest.
@@ -842,24 +842,24 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		exitQuest(repeatable);
 		if (playExitQuest)
 		{
 			string soundName = QuestSound.ITEMSOUND_QUEST_FINISH.GetSoundName();
 			_player.sendPacket(new PlaySoundPacket(soundName));
 		}
-		
+
 		_player.sendPacket(new ExQuestNotificationAllPacket(_player));
 		_player.sendPacket(new ExQuestUiPacket(_player));
-		
+
 		// Notify to scripts
 		if (_player.Events.HasSubscribers<OnPlayerQuestComplete>())
 		{
 			_player.Events.NotifyAsync(new OnPlayerQuestComplete(_player, getQuest().getId(), repeatable ? QuestType.REPEATABLE : QuestType.ONE_TIME));
 		}
 	}
-	
+
 	/**
 	 * Set the restart time for the daily quests.<br>
 	 * The time is hardcoded at {@link Quest#getResetHour()} hours, {@link Quest#getResetMinutes()} minutes of the following day.<br>
@@ -871,7 +871,7 @@ public class QuestState
 		{
 			return;
 		}
-		
+
 		DateTime reDo = DateTime.Now;
 		if (reDo.Hour >= getQuest().getResetHour())
 		{
@@ -881,7 +881,7 @@ public class QuestState
 		reDo = new DateTime(reDo.Year, reDo.Month, reDo.Day, getQuest().getResetHour(), getQuest().getResetMinutes(), 0);
 		set(RESTART_VAR, reDo.Ticks.ToString());
 	}
-	
+
 	/**
 	 * Check if a daily quest is available to be started over.
 	 * @return {@code true} if the quest is available, {@code false} otherwise.
@@ -891,7 +891,7 @@ public class QuestState
 		string val = get(RESTART_VAR);
 		return val != null && new DateTime(long.Parse(val)) <= DateTime.Now;
 	}
-	
+
 	public void setSimulated(bool simulated)
 	{
 		_simulated = simulated;

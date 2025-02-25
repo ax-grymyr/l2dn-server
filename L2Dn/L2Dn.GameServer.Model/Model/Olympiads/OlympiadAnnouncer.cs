@@ -17,7 +17,7 @@ public class OlympiadAnnouncer: Runnable
 
 	public void run()
 	{
-		OlympiadGameTask task;
+		OlympiadGameTask? task;
 		for (int i = OlympiadGameManager.getInstance().getNumberOfStadiums(); --i >= 0; _currentStadium++)
 		{
 			if (_currentStadium >= OlympiadGameManager.getInstance().getNumberOfStadiums())
@@ -50,7 +50,7 @@ public class OlympiadAnnouncer: Runnable
 
 				foreach (Spawn spawn in SpawnTable.getInstance().getSpawns(OLY_MANAGER))
 				{
-					Npc manager = spawn.getLastSpawn();
+					Npc? manager = spawn.getLastSpawn();
 					if (manager != null)
 					{
 						manager.broadcastSay(ChatType.NPC_SHOUT, npcString, arenaId);

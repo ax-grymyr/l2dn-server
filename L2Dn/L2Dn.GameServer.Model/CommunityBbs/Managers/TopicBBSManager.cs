@@ -109,7 +109,8 @@ public class TopicBBSManager: BaseBBSManager
 		if (command.equals("_bbsmemo"))
         {
             Forum? memo = player.getMemo();
-			showTopics(memo, player, 1, memo.getID());
+            if (memo != null) // TODO: added check for null, is it correct?
+			    showTopics(memo, player, 1, memo.getID());
 		}
 		else if (command.startsWith("_bbstopics;read"))
 		{

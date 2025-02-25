@@ -80,10 +80,10 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable, IEventContainerProvid
 	private Map<AISkillScope, List<Skill>> _aiSkillLists;
 	private Set<int> _clans = [];
 	private Set<int> _ignoreClanNpcIds = [];
-	private List<DropGroupHolder>? _dropGroups;
-	private List<DropHolder>? _dropListDeath;
-	private List<DropHolder>? _dropListSpoil;
-	private List<DropHolder>? _dropListFortune;
+	private List<DropGroupHolder> _dropGroups;
+	private List<DropHolder> _dropListDeath;
+	private List<DropHolder> _dropListSpoil;
+	private List<DropHolder> _dropListFortune;
 	private float _collisionRadiusGrown;
 	private float _collisionHeightGrown;
 	private int _mpRewardValue;

@@ -762,7 +762,7 @@ public class Attackable: Npc
 	 * @param damage The number of damages given by the attacker Creature
 	 * @param skill
 	 */
-	public virtual void addDamage(Creature? attacker, int damage, Skill? skill)
+	public virtual void addDamage(Creature attacker, int damage, Skill? skill)
 	{
 		if (attacker == null)
 		{
@@ -810,7 +810,7 @@ public class Attackable: Npc
 	 * @param damage The number of damages given by the attacker Creature
 	 * @param aggroValue The hate (=damage) given by the attacker Creature
 	 */
-	public virtual void addDamageHate(Creature? creature, long damage, long aggroValue)
+	public virtual void addDamageHate(Creature creature, long damage, long aggroValue)
 	{
 		Creature? attacker = creature;
 		if (attacker == null || attacker == this)
@@ -1660,7 +1660,7 @@ public class Attackable: Npc
 		return Config.MAX_MONSTER_ANIMATION > 0 && isRandomAnimationEnabled() && !(this is GrandBoss);
 	}
 
-	public void setCommandChannelTimer(CommandChannelTimer commandChannelTimer)
+	public void setCommandChannelTimer(CommandChannelTimer? commandChannelTimer)
 	{
 		_commandChannelTimer = commandChannelTimer;
 	}
@@ -1675,7 +1675,7 @@ public class Attackable: Npc
 		return _firstCommandChannelAttacked;
 	}
 
-	public void setFirstCommandChannelAttacked(CommandChannel firstCommandChannelAttacked)
+	public void setFirstCommandChannelAttacked(CommandChannel? firstCommandChannelAttacked)
 	{
 		_firstCommandChannelAttacked = firstCommandChannelAttacked;
 	}

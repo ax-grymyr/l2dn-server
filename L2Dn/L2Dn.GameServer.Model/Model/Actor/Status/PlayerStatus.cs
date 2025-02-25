@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Actor.Stats;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -40,12 +41,12 @@ public class PlayerStatus: PlayableStatus
 		reduceHp(value, attacker, null, true, false, false, false);
 	}
 
-	public override void reduceHp(double value, Creature attacker, bool awake, bool isDOT, bool isHPConsumption)
+	public override void reduceHp(double value, Creature? attacker, bool awake, bool isDOT, bool isHPConsumption)
 	{
 		reduceHp(value, attacker, null, awake, isDOT, isHPConsumption, false);
 	}
 
-	public void reduceHp(double value, Creature attacker, Skill skill, bool awake, bool isDOT, bool isHPConsumption,
+	public void reduceHp(double value, Creature? attacker, Skill? skill, bool awake, bool isDOT, bool isHPConsumption,
 		bool ignoreCP)
 	{
 		if (getActiveChar().isDead())
@@ -53,9 +54,11 @@ public class PlayerStatus: PlayableStatus
 			return;
 		}
 
-		// If OFFLINE_MODE_NO_DAMAGE is enabled and player is offline and he is in store/craft mode, no damage is taken.
-		if (Config.OFFLINE_MODE_NO_DAMAGE && getActiveChar().getClient() != null &&
-		    getActiveChar().getClient().IsDetached &&
+		// If OFFLINE_MODE_NO_DAMAGE is enabled and player is offline,
+		// and he is in store/craft mode, no damage is taken.
+        GameSession? client = getActiveChar().getClient();
+		if (Config.OFFLINE_MODE_NO_DAMAGE && client != null &&
+            client.IsDetached &&
 		    ((Config.OFFLINE_TRADE_ENABLE && (getActiveChar().getPrivateStoreType() == PrivateStoreType.SELL ||
 		                                      getActiveChar().getPrivateStoreType() == PrivateStoreType.BUY)) ||
 		     (Config.OFFLINE_CRAFT_ENABLE && (getActiveChar().isCrafting() ||
@@ -114,7 +117,7 @@ public class PlayerStatus: PlayableStatus
 		int mpDam = 0;
 		if (attacker != null && attacker != getActiveChar())
 		{
-			Player attackerPlayer = attacker.getActingPlayer();
+			Player? attackerPlayer = attacker.getActingPlayer();
 			if (attackerPlayer != null)
 			{
 				if (attackerPlayer.isGM() && !attackerPlayer.getAccessLevel().canGiveDamage())
@@ -142,7 +145,7 @@ public class PlayerStatus: PlayableStatus
 			}
 
 			// Check and calculate transfered damage
-			Summon summon = getActiveChar().getFirstServitor();
+			Summon? summon = getActiveChar().getFirstServitor();
 			if (summon != null && Util.checkIfInRange(1000, getActiveChar(), summon, true))
 			{
 				tDmg = (int)amount * (int)getActiveChar().getStat().getValue(Stat.TRANSFER_DAMAGE_SUMMON_PERCENT, 0) /
@@ -247,7 +250,7 @@ public class PlayerStatus: PlayableStatus
 				string targetName = attacker.getName();
 				if (Config.MULTILANG_ENABLE && attacker.isNpc())
 				{
-					string[] localisation = NpcNameLocalisationData.getInstance()
+					string[]? localisation = NpcNameLocalisationData.getInstance()
 						.getLocalisation(getActiveChar().getLang(), attacker.getId());
 					if (localisation != null)
 					{
@@ -311,7 +314,7 @@ public class PlayerStatus: PlayableStatus
 				stopHpMpRegeneration();
 				getActiveChar().setDead(true);
 				getActiveChar().setIsPendingRevive(true);
-				Summon pet = getActiveChar().getPet();
+				Summon? pet = getActiveChar().getPet();
 				if (pet != null)
 				{
 					pet.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);

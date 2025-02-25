@@ -15,147 +15,129 @@ namespace L2Dn.GameServer.Model.Actor.Instances;
 
 public class SiegeFlag: Npc
 {
-	private readonly Clan _clan;
-	private Siegable _siege;
-	private readonly bool _isAdvanced;
-	private bool _canTalk;
+    private readonly Clan _clan;
+    private Siegable _siege;
+    private readonly bool _isAdvanced;
+    private bool _canTalk;
 
-	public SiegeFlag(Player player, NpcTemplate template, bool advanced): base(template)
-	{
-		InstanceType = InstanceType.SiegeFlag;
+    public SiegeFlag(Player player, NpcTemplate template, bool advanced): base(template)
+    {
+        InstanceType = InstanceType.SiegeFlag;
 
-		_clan = player.getClan();
-		_canTalk = true;
-		_siege = SiegeManager.getInstance().getSiege(player.Location.Location3D);
-		if (_siege == null)
-		{
-			_siege = FortSiegeManager.getInstance().getSiege(player.Location.Location3D);
-		}
-		if (_clan == null || _siege == null)
-		{
-			throw new ArgumentException("Player is not in clan or siege.");
-		}
+        Clan? clan = player.getClan();
+        Siegable? siege = SiegeManager.getInstance().getSiege(player.Location.Location3D) ??
+            (Siegable?)FortSiegeManager.getInstance().getSiege(player.Location.Location3D);
 
-		SiegeClan? sc = _siege.getAttackerClan(_clan);
-		if (sc == null)
-		{
-			throw new ArgumentException("Cannot find siege clan.");
-		}
+        if (clan == null || siege == null)
+            throw new ArgumentException("Player is not in clan or siege.");
 
-		sc.addFlag(this);
-		_isAdvanced = advanced;
-		getStatus();
-		setInvul(false);
-	}
+        SiegeClan? sc = siege.getAttackerClan(clan);
+        if (sc == null)
+            throw new ArgumentException("Cannot find siege clan.");
 
-	public override bool canBeAttacked()
-	{
-		return !isInvul();
-	}
+        _canTalk = true;
+        _clan = clan;
+        _siege = siege;
 
-	public override bool isAutoAttackable(Creature attacker)
-	{
-		return !isInvul();
-	}
+        sc.addFlag(this);
+        _isAdvanced = advanced;
+        getStatus();
+        setInvul(false);
+    }
 
-	public override bool doDie(Creature? killer)
-	{
-		if (!base.doDie(killer))
-		{
-			return false;
-		}
-		if (_siege != null && _clan != null)
-		{
-			SiegeClan? sc = _siege.getAttackerClan(_clan);
-			if (sc != null)
-			{
-				sc.removeFlag(this);
-			}
-		}
-		return true;
-	}
+    public override bool canBeAttacked()
+    {
+        return !isInvul();
+    }
 
-	public override void onForcedAttack(Player player)
-	{
-		onAction(player);
-	}
+    public override bool isAutoAttackable(Creature attacker)
+    {
+        return !isInvul();
+    }
 
-	public override void onAction(Player player, bool interact)
-	{
-		if (player == null || !canTarget(player))
-		{
-			return;
-		}
+    public override bool doDie(Creature? killer)
+    {
+        if (!base.doDie(killer))
+            return false;
 
-		// Check if the Player already target the Npc
-		if (this != player.getTarget())
-		{
-			// Set the target of the Player player
-			player.setTarget(this);
-		}
-		else if (interact)
-		{
-			if (isAutoAttackable(player) && Math.Abs(player.getZ() - getZ()) < 100)
-			{
-				player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
-			}
-			else
-			{
-				// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
-				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
-			}
-		}
-	}
+        if (_siege != null && _clan != null)
+        {
+            SiegeClan? sc = _siege.getAttackerClan(_clan);
+            if (sc != null)
+            {
+                sc.removeFlag(this);
+            }
+        }
 
-	public bool isAdvancedHeadquarter()
-	{
-		return _isAdvanced;
-	}
+        return true;
+    }
 
-	public override SiegeFlagStatus getStatus()
-	{
-		return (SiegeFlagStatus) base.getStatus();
-	}
+    public override void onForcedAttack(Player player)
+    {
+        onAction(player);
+    }
 
-	public override void initCharStatus()
-	{
-		setStatus(new SiegeFlagStatus(this));
-	}
+    public override void onAction(Player player, bool interact)
+    {
+        if (player == null || !canTarget(player))
+            return;
 
-	public override void reduceCurrentHp(double damage, Creature attacker, Skill? skill)
-	{
-		base.reduceCurrentHp(damage, attacker, skill);
-		if (canTalk() && ((getCastle() != null && getCastle().getSiege().isInProgress()) || (getFort() != null && getFort().getSiege().isInProgress())) && _clan != null)
-		{
-			// send warning to owners of headquarters that theirs base is under attack
-			_clan.broadcastToOnlineMembers(new SystemMessagePacket(SystemMessageId.SIEGE_CAMP_IS_UNDER_ATTACK));
-			setCanTalk(false);
-			ThreadPool.schedule(new ScheduleTalkTask(this), 20000);
-		}
-	}
+        // Check if the Player already target the Npc
+        if (this != player.getTarget())
+        {
+            // Set the target of the Player player
+            player.setTarget(this);
+        }
+        else if (interact)
+        {
+            if (isAutoAttackable(player) && Math.Abs(player.getZ() - getZ()) < 100)
+            {
+                player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
+            }
+            else
+            {
+                // Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
+                player.sendPacket(ActionFailedPacket.STATIC_PACKET);
+            }
+        }
+    }
 
-	private class ScheduleTalkTask: Runnable
-	{
-		private readonly SiegeFlag _siegeFlag;
+    public bool isAdvancedHeadquarter()
+    {
+        return _isAdvanced;
+    }
 
-		public ScheduleTalkTask(SiegeFlag siegeFlag)
-		{
-			_siegeFlag = siegeFlag;
-		}
+    public override SiegeFlagStatus getStatus()
+    {
+        return (SiegeFlagStatus)base.getStatus();
+    }
 
-		public void run()
-		{
-			_siegeFlag.setCanTalk(true);
-		}
-	}
+    public override void initCharStatus()
+    {
+        setStatus(new SiegeFlagStatus(this));
+    }
 
-	void setCanTalk(bool value)
-	{
-		_canTalk = value;
-	}
+    public override void reduceCurrentHp(double damage, Creature attacker, Skill? skill)
+    {
+        base.reduceCurrentHp(damage, attacker, skill);
+        Castle? castle = getCastle();
+        Fort? fort = getFort();
+        if (_canTalk &&
+            ((castle != null && castle.getSiege().isInProgress()) ||
+                (fort != null && fort.getSiege().isInProgress())) && _clan != null)
+        {
+            // send warning to owners of headquarters that theirs base is under attack
+            _clan.broadcastToOnlineMembers(new SystemMessagePacket(SystemMessageId.SIEGE_CAMP_IS_UNDER_ATTACK));
+            _canTalk = false;
+            ThreadPool.schedule(new ScheduleTalkTask(this), 20000);
+        }
+    }
 
-	private bool canTalk()
-	{
-		return _canTalk;
-	}
+    private class ScheduleTalkTask(SiegeFlag siegeFlag): Runnable
+    {
+        public void run()
+        {
+            siegeFlag._canTalk = true;
+        }
+    }
 }

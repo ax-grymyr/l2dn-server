@@ -35,9 +35,10 @@ public class TamedBeast: FeedableBeast
 	private readonly bool _isFreyaBeast;
 	private Set<Skill> _beastSkills = [];
 
-	public TamedBeast(NpcTemplate npcTemplate): base(npcTemplate)
+	public TamedBeast(NpcTemplate npcTemplate, Player owner): base(npcTemplate)
 	{
 		InstanceType = InstanceType.TamedBeast;
+        _owner = owner;
 		setHome(this);
 	}
 
@@ -124,22 +125,17 @@ public class TamedBeast: FeedableBeast
 
 		getAI().stopFollow();
 		if (_buffTask != null)
-		{
 			_buffTask.cancel(true);
-		}
-		if (_durationCheckTask != null)
-		{
+
+        if (_durationCheckTask != null)
 			_durationCheckTask.cancel(true);
-		}
 
 		// clean up variables
 		if (_owner != null)
-		{
 			_owner.getTrainedBeasts().remove(this);
-		}
-		_buffTask = null;
+
+        _buffTask = null;
 		_durationCheckTask = null;
-		_owner = null;
 		_foodSkillId = 0;
 		_remainingTime = 0;
 		return true;
@@ -265,7 +261,6 @@ public class TamedBeast: FeedableBeast
 		setTarget(null);
 		_buffTask = null;
 		_durationCheckTask = null;
-		_owner = null;
 		_foodSkillId = 0;
 		_remainingTime = 0;
 

@@ -231,9 +231,10 @@ public class PlayerStat: PlayableStat
             activeCharClan.broadcastToOnlineMembers(new PledgeShowMemberListUpdatePacket(getActiveChar()));
 		}
 
-		if (getActiveChar().isInParty())
+        Party? party = getActiveChar().getParty();
+		if (getActiveChar().isInParty() && party != null)
 		{
-			getActiveChar().getParty().recalculatePartyLevel(); // Recalculate the party level
+			party.recalculatePartyLevel(); // Recalculate the party level
 		}
 
 		// Maybe add some skills when player levels up in transformation.
@@ -674,7 +675,7 @@ public class PlayerStat: PlayableStat
 
 	public double getElementalSpiritPower(ElementalType type, double @base)
 	{
-		return type == null ? 0 : getValue(type.getAttackStat(), @base);
+		return type == ElementalType.NONE ? 0 : getValue(type.getAttackStat(), @base);
 	}
 
 	public double getElementalSpiritCriticalRate(int @base)
@@ -689,12 +690,12 @@ public class PlayerStat: PlayableStat
 
 	public double getElementalSpiritDefense(ElementalType type, double @base)
 	{
-		return type == null ? 0 : getValue(type.getDefenseStat(), @base);
+		return type == ElementalType.NONE ? 0 : getValue(type.getDefenseStat(), @base);
 	}
 
 	public double getElementSpiritAttack(ElementalType type, double @base)
 	{
-		return type == null ? 0 : getValue(type.getDefenseStat(), @base);
+		return type == ElementalType.NONE ? 0 : getValue(type.getDefenseStat(), @base);
 	}
 
 	public override TimeSpan getReuseTime(Skill skill)

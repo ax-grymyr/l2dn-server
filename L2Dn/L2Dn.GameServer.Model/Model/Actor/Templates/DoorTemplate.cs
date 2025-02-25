@@ -61,10 +61,12 @@ public class DoorTemplate: CreatureTemplate, IIdentifiable
 				_nodeY[i] = nodes.Nodes[i].Y;
 			}
 		}
+        else
+            _nodeX = _nodeY = [];
 
 		_height = 150;
-		
-		XmlDoorLocation? location = xmlDoor.Location; 
+
+		XmlDoorLocation? location = xmlDoor.Location;
 		if (location != null)
 		{
 			_height = location.HeightSpecified ? location.Height : 150;
@@ -83,20 +85,20 @@ public class DoorTemplate: CreatureTemplate, IIdentifiable
 			{
 				"act_open" => 1,
 				"act_close" => -1,
-				_ => 0
-			}; 
-			
+				_ => 0,
+			};
+
 			_masterDoorOpen = doorEvent.MasterOpen switch
 			{
 				"act_open" => 1,
 				"act_close" => -1,
-				_ => 0
-			}; 
+				_ => 0,
+			};
 		}
-		
+
 		_closeTime = -1;
 		_randomTime = -1;
-		
+
 		XmlDoorOpenStatus? openStatus = xmlDoor.OpenStatus;
 		if (openStatus != null)
 		{
@@ -113,18 +115,18 @@ public class DoorTemplate: CreatureTemplate, IIdentifiable
 		_showHp = true;
 		_checkCollision = true;
 		_isTargetable = true;
-		
+
 		XmlDoorStatus? status = xmlDoor.Status;
 		if (status != null)
 		{
-			_showHp = !status.ShowHpSpecified || status.ShowHp; // default: true 
+			_showHp = !status.ShowHpSpecified || status.ShowHp; // default: true
 			_isWall = status.IsWall;
 			_checkCollision = !status.IsCheckCollisionSpecified || status.IsCheckCollision; // default: true
 			_isAttackableDoor = status.Attackable;
 			_isTargetable = !status.TargetableSpecified || status.Targetable; // default: true
 			_stealth = status.IsStealth;
 		}
-		
+
 		_isInverted = xmlDoor.IsInverted;
 	}
 
@@ -156,20 +158,20 @@ public class DoorTemplate: CreatureTemplate, IIdentifiable
 			int nodeY = nodes.Nodes[0].Y;
 			int posX = nodes.Nodes[1].X;
 			int posY = nodes.Nodes[1].Y;
-			
+
 			// (max) radius for movement checks
 			collisionRadius = Math.Min(Math.Abs(nodeX - posX), Math.Abs(nodeY - posY));
 			if (collisionRadius < 20)
 				collisionRadius = 20;
 		}
-		
+
 		// Insert collision data.
 		statSet.set("collision_radius", collisionRadius);
 		statSet.set("collision_height", height);
 
 		return statSet;
-	} 
-	
+	}
+
 	public DoorTemplate(StatSet set): base(set)
 	{
 		_doorId = set.getInt("id");
@@ -192,7 +194,7 @@ public class DoorTemplate: CreatureTemplate, IIdentifiable
 		_emmiter = set.getInt("emmiterId", 0);
 		_showHp = set.getBoolean("showHp", true);
 		_isWall = set.getBoolean("isWall", false);
-		_groupName = set.getString("group", null);
+		_groupName = set.getString("group", string.Empty);
 		_childDoorId = set.getInt("childId", -1);
 		// true if door is opening
 		string masterevent = set.getString("masterClose", "act_nothing");

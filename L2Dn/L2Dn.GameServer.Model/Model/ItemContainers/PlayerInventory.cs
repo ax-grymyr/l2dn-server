@@ -493,7 +493,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public override Item transferItem(string process, int objectId, long count, ItemContainer target, Player actor, object? reference)
+	public override Item transferItem(string process, int objectId, long count, ItemContainer target, Player? actor, object? reference)
 	{
 		Item? item = base.transferItem(process, objectId, count, target, actor, reference);
 

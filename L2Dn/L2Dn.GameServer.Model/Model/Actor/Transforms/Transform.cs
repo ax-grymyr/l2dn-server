@@ -33,8 +33,8 @@ public class Transform: IIdentifiable
 		_canSwim = set.getInt("can_swim", 0) == 1;
 		_canAttack = set.getInt("normal_attackable", 1) == 1;
 		_spawnHeight = set.getInt("spawn_height", 0);
-		_name = set.getString("setName", null);
-		_title = set.getString("setTitle", null);
+		_name = set.getString("setName", string.Empty);
+		_title = set.getString("setTitle", string.Empty);
 	}
 
 	/**
@@ -95,9 +95,8 @@ public class Transform: IIdentifiable
 		}
 
         if (creature.isNpc())
-        {
             return ((Npc) creature).getTemplate().getSex() == Sex.Female ? _femaleTemplate : _maleTemplate;
-        }
+
         return null;
 	}
 

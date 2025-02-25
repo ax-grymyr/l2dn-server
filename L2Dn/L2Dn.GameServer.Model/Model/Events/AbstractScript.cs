@@ -1761,7 +1761,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @param minionId
 	 * @return
 	 */
-	public Npc addMinion(Monster master, int minionId)
+	public Npc? addMinion(Monster master, int minionId)
 	{
 		return MinionList.spawnMinion(master, minionId);
 	}
@@ -2140,7 +2140,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 
 		// Add items to player's inventory
-		Item itemInstance = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
+		Item? itemInstance = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
 		if (itemInstance == null)
 		{
 			return;
@@ -2236,7 +2236,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 
 		// Add items to player's inventory
-		Item item = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
+		Item? item = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
 		if (item == null)
 		{
 			return;
@@ -2275,7 +2275,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 
 		// Add items to player's inventory
-		Item item = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
+		Item? item = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
 		if (item == null)
 		{
 			return;
@@ -2670,10 +2670,11 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 
         Party? party = player.getParty();
 		if ((includeParty || includeCommandChannel) && player.isInParty() && party != null)
-		{
-			if (includeCommandChannel && party.isInCommandChannel())
+        {
+            CommandChannel? commandChannel = party.getCommandChannel();
+			if (includeCommandChannel && party.isInCommandChannel() && commandChannel != null)
 			{
-                party.getCommandChannel().forEachMember(member =>
+                commandChannel.forEachMember(member =>
 				{
 					actionForEachPlayer(member, npc, isSummon);
 					return true;

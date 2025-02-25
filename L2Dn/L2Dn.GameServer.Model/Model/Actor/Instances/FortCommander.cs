@@ -38,7 +38,7 @@ public class FortCommander : Defender
             !fort.getSiege().checkIsDefender(attacker.getClan());
     }
 
-	public override void addDamageHate(Creature attacker, long damage, long aggro)
+	public override void addDamageHate(Creature? attacker, long damage, long aggro)
 	{
 		if (attacker == null)
 		{
@@ -84,7 +84,7 @@ public class FortCommander : Defender
 		}
 	}
 
-	public override void addDamage(Creature creature, int damage, Skill skill)
+	public override void addDamage(Creature creature, int damage, Skill? skill)
 	{
 		Creature attacker = creature;
 		Spawn spawn = getSpawn();

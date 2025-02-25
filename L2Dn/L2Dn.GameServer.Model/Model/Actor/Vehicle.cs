@@ -306,7 +306,7 @@ public abstract class Vehicle: Creature
 			{
 				if (itemId > 0)
 				{
-					Item ticket = player.getInventory().getItemByItemId(itemId);
+					Item? ticket = player.getInventory().getItemByItemId(itemId);
 					if (ticket == null || player.getInventory().destroyItem("Boat", ticket, count, player, this) == null)
 					{
 						player.sendPacket(SystemMessageId.YOU_DO_NOT_POSSESS_THE_CORRECT_TICKET_TO_BOARD_THE_BOAT);

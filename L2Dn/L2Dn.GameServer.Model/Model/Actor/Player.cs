@@ -565,7 +565,7 @@ public class Player: Playable
 
 	private readonly Map<int, PurgePlayerHolder> _purgePoints = [];
 
-	private readonly HuntPass? _huntPass;
+	private readonly HuntPass _huntPass;
 	private readonly AchievementBox? _achivemenetBox;
 
 	private readonly ChallengePoint _challengePoints;
@@ -638,9 +638,11 @@ public class Player: Playable
 	{
 		// Create a new Player with an account name
 		Player player = new Player(template, accountId, accountName, name, sex, face, hairColor, hairStyle);
-		// Set access level
+
+        // Set access level
 		player.setAccessLevel(0, false, false);
-		// Add the player in the characters table of the database
+
+        // Add the player in the characters table of the database
 		if (player.createDb())
 		{
 			CharInfoTable.getInstance().addName(player);
@@ -943,7 +945,7 @@ public class Player: Playable
 		return PlayerTemplateData.getInstance().getTemplate(_baseClass);
 	}
 
-	public HuntPass? getHuntPass()
+	public HuntPass getHuntPass()
 	{
 		return _huntPass;
 	}
@@ -6726,13 +6728,17 @@ public class Player: Playable
 	public Forum? getMail()
 	{
 		if (_forumMail == null)
-		{
-			setMail(ForumsBBSManager.getInstance().getForumByName("MailRoot").getChildByName(getName()));
+        {
+            Forum? rootForum = ForumsBBSManager.getInstance().getForumByName("MailRoot");
+            if (rootForum == null)
+                return null;
+
+            setMail(rootForum.getChildByName(getName()));
 
 			if (_forumMail == null)
 			{
-				ForumsBBSManager.getInstance().createNewForum(getName(), ForumsBBSManager.getInstance().getForumByName("MailRoot"), Forum.MAIL, Forum.OWNERONLY, ObjectId);
-				setMail(ForumsBBSManager.getInstance().getForumByName("MailRoot").getChildByName(getName()));
+				ForumsBBSManager.getInstance().createNewForum(getName(), rootForum, Forum.MAIL, Forum.OWNERONLY, ObjectId);
+				setMail(rootForum.getChildByName(getName()));
 			}
 		}
 
@@ -10772,7 +10778,7 @@ public class Player: Playable
 		getStat().removeExpAndSp(removeExp, removeSp, sendMessage);
 	}
 
-	public override void reduceCurrentHp(double value, Creature attacker, Skill skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
+	public override void reduceCurrentHp(double value, Creature attacker, Skill? skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
 	{
 		base.reduceCurrentHp(value, attacker, skill, isDOT, directlyToHp, critical, reflect);
 

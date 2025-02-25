@@ -28,7 +28,7 @@ public class LongTimeEvent: Quest
 	protected DateRange _eventPeriod;
 	protected bool _active;
 	protected bool _enableShrines;
-	
+
 	// Messages
 	protected string _onEnterMsg = "";
 	protected string _endMsg = "";
@@ -36,10 +36,10 @@ public class LongTimeEvent: Quest
 
 	// NPCs to spawn and their spawn points
 	protected readonly List<NpcSpawn> _spawnList = new();
-	
+
 	// Drop data for event
 	protected readonly List<EventDropHolder> _dropList = new();
-	
+
 	// Items to destroy when event ends
 	protected readonly List<int> _destroyItemsOnEnd = new();
 
@@ -89,7 +89,7 @@ public class LongTimeEvent: Quest
 		TimeSpan millisToEventEnd = _eventPeriod.getEndDate() - DateTime.Now;
 		foreach (NpcSpawn npcSpawn in _spawnList)
 		{
-			Npc npc = addSpawn(npcSpawn.npcId, npcSpawn.loc, false, millisToEventEnd, false);
+			Npc? npc = addSpawn(npcSpawn.npcId, npcSpawn.loc, false, millisToEventEnd, false);
 			TimeSpan respawnDelay = npcSpawn.respawnTime;
 			if (respawnDelay > TimeSpan.Zero)
 			{
@@ -102,7 +102,7 @@ public class LongTimeEvent: Quest
 
 		GlobalEvents.Global.Subscribe(this, (Action<OnServerStart>)SpawnNpcs);
 	}
-    
+
 	/**
 	 * Load event configuration file
 	 */
@@ -164,7 +164,7 @@ public class LongTimeEvent: Quest
 									: 0;
 								int minLevel = d.Attribute("minLevel")?.GetInt32() ?? 1;
 								int maxLevel = d.Attribute("maxLevel")?.GetInt32() ?? int.MaxValue;
-								string monsterIdsValue = d.Attribute("monsterIds")?.GetString();
+								string? monsterIdsValue = d.Attribute("monsterIds")?.GetString();
 								Set<int> monsterIds = new();
 								if (monsterIdsValue != null)
 								{
@@ -201,7 +201,7 @@ public class LongTimeEvent: Quest
 							catch (FormatException nfe)
 							{
 								LOGGER.Warn("Wrong number format in config.xml droplist block for " + Name +
-								            " event");
+								            " event: " + nfe);
 							}
 						}
 					}
@@ -236,7 +236,7 @@ public class LongTimeEvent: Quest
 							catch (FormatException nfe)
 							{
 								LOGGER.Warn("Wrong number format in config.xml spawnlist block for " + Name +
-								            " event");
+								            " event: " + nfe);
 							}
 						}
 					}
@@ -293,7 +293,7 @@ public class LongTimeEvent: Quest
 				catch (FormatException nfe)
 				{
 					LOGGER.Warn("Wrong number format in config.xml destroyItemsOnEnd block for " + Name +
-					            " event");
+					            " event: " + nfe);
 				}
 			}
 		}
@@ -313,44 +313,44 @@ public class LongTimeEvent: Quest
 			_longTimeEvent.startEvent();
 		}
 	}
-	
+
 	protected void startEvent()
 	{
 		// Set Active.
 		_active = true;
-		
+
 		// Add event drops.
 		EventDropManager.getInstance().addDrops(this, _dropList);
-		
+
 		// Add spawns on server start.
 		if (_spawnList.Count != 0)
 		{
 			GlobalEvents.Global.Subscribe(this, (Action<OnServerStart>)SpawnNpcs);
 		}
-		
+
 		// Enable town shrines.
 		if (_enableShrines)
 		{
 			EventShrineManager.getInstance().setEnabled(true);
 		}
-		
+
 		// Event enter announcement.
 		if (!string.IsNullOrEmpty(_onEnterMsg))
 		{
 			// Send message on begin.
 			Broadcast.toAllOnlinePlayers(_onEnterMsg);
-			
+
 			// Add announce for entering players.
 			EventAnnouncement announce = new EventAnnouncement(_eventPeriod, _onEnterMsg);
 			AnnouncementsTable.getInstance().addAnnouncement(announce);
 			_enterAnnounceId = announce.getId();
 		}
-		
+
 		// Schedule event end.
 		TimeSpan millisToEventEnd = _eventPeriod.getEndDate() - DateTime.Now;
 		ThreadPool.schedule(new ScheduleEnd(this), millisToEventEnd);
 	}
-	
+
 	protected class ScheduleEnd: Runnable
 	{
 		private readonly LongTimeEvent _longTimeEvent;
@@ -359,43 +359,43 @@ public class LongTimeEvent: Quest
 		{
 			_longTimeEvent = longTimeEvent;
 		}
-		
+
 		public void run()
 		{
 			_longTimeEvent.stopEvent();
 		}
 	}
-	
+
 	protected void stopEvent()
 	{
 		// Set Active.
 		_active = false;
-		
+
 		// Stop event drops.
 		EventDropManager.getInstance().removeDrops(this);
-		
+
 		// Disable town shrines.
 		if (_enableShrines)
 		{
 			EventShrineManager.getInstance().setEnabled(false);
 		}
-		
+
 		// Destroy items that must exist only on event period.
 		destroyItemsOnEnd();
-		
+
 		// Send message on end.
 		if (!string.IsNullOrEmpty(_endMsg))
 		{
 			Broadcast.toAllOnlinePlayers(_endMsg);
 		}
-		
+
 		// Remove announce for entering players.
 		if (_enterAnnounceId != -1)
 		{
 			AnnouncementsTable.getInstance().deleteAnnouncement(_enterAnnounceId);
 		}
 	}
-	
+
 	protected void destroyItemsOnEnd()
 	{
 		if (_destroyItemsOnEnd.Count != 0)
@@ -410,7 +410,7 @@ public class LongTimeEvent: Quest
 						player.destroyItemByItemId(_eventName, itemId, -1, player, true);
 					}
 				}
-				
+
 				// Update database.
 				try
 				{
@@ -424,12 +424,12 @@ public class LongTimeEvent: Quest
 			}
 		}
 	}
-	
+
 	public DateRange getEventPeriod()
 	{
 		return _eventPeriod;
 	}
-	
+
 	/**
 	 * @return {@code true} if now is event period
 	 */

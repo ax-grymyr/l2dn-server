@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
@@ -67,8 +68,9 @@ public class FortDoorman: Doorman
     protected sealed override bool isOwnerClan(Player player)
     {
         Fort? fort = getFort();
-        return player.getClan() != null && fort != null && fort.getOwnerClan() != null &&
-               player.getClanId() == fort.getOwnerClan().getId();
+        Clan? ownerClan = fort?.getOwnerClan();
+        return player.getClan() != null && fort != null && ownerClan != null &&
+               player.getClanId() == ownerClan.getId();
     }
 
     protected sealed override bool isUnderSiege()

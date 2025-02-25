@@ -195,13 +195,13 @@ public class Trap: Npc
 		_playersWhoDetectedMe.Clear();
 	}
 
-	public override void doAttack(double damage, Creature target, Skill skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
+	public override void doAttack(double damage, Creature target, Skill? skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
 	{
 		base.doAttack(damage, target, skill, isDOT, directlyToHp, critical, reflect);
 		sendDamageMessage(target, skill, (int) damage, 0, critical, false, false);
 	}
 
-	public override void sendDamageMessage(Creature target, Skill skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
+	public override void sendDamageMessage(Creature target, Skill? skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
     {
         Player? owner = _owner;
 		if (miss || owner == null)

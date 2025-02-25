@@ -11,7 +11,7 @@ public class NpcStatus: CreatureStatus
         reduceHp(value, attacker, true, false, false);
     }
 
-    public override void reduceHp(double value, Creature attacker, bool awake, bool isDOT, bool isHpConsumption)
+    public override void reduceHp(double value, Creature? attacker, bool awake, bool isDOT, bool isHpConsumption)
     {
         if (getActiveChar().isDead())
         {
@@ -20,7 +20,7 @@ public class NpcStatus: CreatureStatus
 
         if (attacker != null)
         {
-            Player attackerPlayer = attacker.getActingPlayer();
+            Player? attackerPlayer = attacker.getActingPlayer();
             if (attackerPlayer != null && attackerPlayer.isInDuel())
             {
                 attackerPlayer.setDuelState(Duel.DUELSTATE_INTERRUPTED);

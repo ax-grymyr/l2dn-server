@@ -13,7 +13,7 @@ public class OnCreatureDamageDealt: EventBase
 	private Creature _attacker;
 	private Creature _target;
 	private double _damage;
-	private Skill _skill;
+	private Skill? _skill;
 	private bool _crit;
 	private bool _damageOverTime;
 	private bool _reflect;
@@ -48,12 +48,12 @@ public class OnCreatureDamageDealt: EventBase
 		_damage = damage;
 	}
 
-	public Skill getSkill()
+	public Skill? getSkill()
 	{
 		return _skill;
 	}
 
-	public void setSkill(Skill skill)
+	public void setSkill(Skill? skill)
 	{
 		_skill = skill;
 	}

@@ -13,11 +13,11 @@ public sealed class TransformTemplate
 	private readonly float? _collisionRadius;
 	private readonly float? _collisionHeight;
 	private readonly WeaponType _baseAttackType;
-	private List<SkillHolder> _skills;
-	private List<AdditionalSkillHolder> _additionalSkills;
-	private List<AdditionalItemHolder> _additionalItems;
-	private Map<int, int> _baseDefense;
-	private Map<Stat, double> _baseStats;
+	private List<SkillHolder> _skills = [];
+	private List<AdditionalSkillHolder> _additionalSkills = [];
+	private List<AdditionalItemHolder> _additionalItems = [];
+	private Map<int, int> _baseDefense = [];
+	private Map<Stat, double> _baseStats = [];
 	private ImmutableArray<int> _actions = ImmutableArray<int>.Empty;
 	private readonly Map<int, TransformLevelData> _data = new();
 
@@ -275,7 +275,7 @@ public sealed class TransformTemplate
 		_data.put(data.getLevel(), data);
 	}
 
-	public TransformLevelData getData(int level)
+	public TransformLevelData? getData(int level)
 	{
 		return _data.get(level);
 	}

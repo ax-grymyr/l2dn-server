@@ -1559,7 +1559,7 @@ public class Formulas
 	 * @param weapon
 	 * @return {@code 900000 / PAttackSpeed}
 	 */
-	public static TimeSpan calculateReuseTime(Creature creature, Weapon weapon)
+	public static TimeSpan calculateReuseTime(Creature creature, Weapon? weapon)
 	{
 		if (weapon == null)
 		{

@@ -1,7 +1,6 @@
 ﻿using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Model.Enums;
@@ -110,9 +109,7 @@ public class PetStat: SummonStat
 
         Item? controlItem = getActiveChar().getControlItem();
 		if (controlItem != null)
-		{
             controlItem.setEnchantLevel(getLevel());
-		}
 	}
 
 	public int getMaxFeed()

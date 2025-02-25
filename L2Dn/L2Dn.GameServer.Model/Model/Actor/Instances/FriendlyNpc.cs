@@ -34,7 +34,7 @@ public class FriendlyNpc : Attackable
 		_isAutoAttackable = value;
 	}
 
-	public override void addDamage(Creature attacker, int damage, Skill skill)
+	public override void addDamage(Creature attacker, int damage, Skill? skill)
 	{
 		if (!attacker.isPlayable() && !(attacker is FriendlyNpc))
 		{

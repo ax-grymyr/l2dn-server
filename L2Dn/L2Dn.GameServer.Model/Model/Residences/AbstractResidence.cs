@@ -75,19 +75,19 @@ public abstract class AbstractResidence: INamable
 
 	public virtual void giveResidentialSkills(Player player)
 	{
-		if (_residentialSkills != null && _residentialSkills.Count != 0)
-		{
-			SocialClass playerSocialClass = player.getPledgeClass() + 1;
-			foreach (SkillLearn skill  in  _residentialSkills)
-			{
-				SocialClass? skillSocialClass = skill.getSocialClass();
-				if (skillSocialClass == null || playerSocialClass >= skillSocialClass)
-				{
-					player.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), false);
-				}
-			}
-		}
-	}
+        if (_residentialSkills != null && _residentialSkills.Count != 0)
+        {
+            SocialClass playerSocialClass = player.getPledgeClass() + 1;
+            foreach (SkillLearn skill in _residentialSkills)
+            {
+                SocialClass? skillSocialClass = skill.getSocialClass();
+                if (skillSocialClass == null || playerSocialClass >= skillSocialClass)
+                {
+                    player.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), false);
+                }
+            }
+        }
+    }
 
 	public virtual void removeResidentialSkills(Player player)
 	{

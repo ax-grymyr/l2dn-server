@@ -234,7 +234,7 @@ public class Cubic: Creature
         }
     }
 
-    public override void sendDamageMessage(Creature target, Skill skill, int damage, double elementalDamage, bool crit,
+    public override void sendDamageMessage(Creature target, Skill? skill, int damage, double elementalDamage, bool crit,
         bool miss, bool elementalCrit)
     {
         if (miss || _owner == null)

@@ -22,7 +22,7 @@ public class PunishmentTask: Runnable
 	private readonly string _reason;
 	private readonly string _punishedBy;
 	private bool _isStored;
-	private ScheduledFuture _task;
+	private ScheduledFuture? _task;
 
 	public PunishmentTask(string key, PunishmentAffect affect, PunishmentType type, DateTime? expirationTime, string reason,
 		string punishedBy): this(0, key, affect, type, expirationTime, reason, punishedBy, false)
@@ -167,11 +167,11 @@ public class PunishmentTask: Runnable
 					ExpirationTime = _expirationTime,
 					Reason = _reason,
 					PunishedBy = _punishedBy
-				}; 
+				};
 
 				ctx.Punishments.Add(punishment);
 				ctx.SaveChanges();
-                
+
 				_id = punishment.Id;
 				_isStored = true;
 			}
@@ -181,7 +181,7 @@ public class PunishmentTask: Runnable
 			}
 		}
 
-		IPunishmentHandler handler = PunishmentHandler.getInstance().getHandler(_type);
+		IPunishmentHandler? handler = PunishmentHandler.getInstance().getHandler(_type);
 		if (handler != null)
 		{
 			handler.onStart(this);
@@ -211,14 +211,14 @@ public class PunishmentTask: Runnable
 
 		if (_type == PunishmentType.CHAT_BAN && _affect == PunishmentAffect.CHARACTER)
 		{
-			Player player = World.getInstance().getPlayer(int.Parse(_key));
+			Player? player = World.getInstance().getPlayer(int.Parse(_key));
 			if (player != null)
 			{
 				player.getEffectList().stopAbnormalVisualEffect(AbnormalVisualEffect.NO_CHAT);
 			}
 		}
 
-		IPunishmentHandler handler = PunishmentHandler.getInstance().getHandler(_type);
+		IPunishmentHandler? handler = PunishmentHandler.getInstance().getHandler(_type);
 		if (handler != null)
 		{
 			handler.onEnd(this);

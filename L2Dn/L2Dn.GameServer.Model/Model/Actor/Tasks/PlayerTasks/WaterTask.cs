@@ -6,27 +6,19 @@ namespace L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
  * Task dedicated to make damage to the player while drowning.
  * @author UnAfraid
  */
-public class WaterTask: Runnable
+public sealed class WaterTask(Player player): Runnable
 {
-	private readonly Player _player;
+    public void run()
+    {
+        double reduceHp = player.getMaxHp() / 100.0;
+        if (reduceHp < 1)
+        {
+            reduceHp = 1;
+        }
 
-	public WaterTask(Player player)
-	{
-		_player = player;
-	}
+        player.reduceCurrentHp(reduceHp, player, null, false, true, false, false);
 
-	public void run()
-	{
-		if (_player != null)
-		{
-			double reduceHp = _player.getMaxHp() / 100.0;
-			if (reduceHp < 1)
-			{
-				reduceHp = 1;
-			}
-
-			_player.reduceCurrentHp(reduceHp, _player, null, false, true, false, false);
-			_player.sendMessage("You have taken " + reduceHp + " damage because you were unable to breathe.");
-		}
-	}
+        // TODO: find system message id
+        player.sendMessage("You have taken " + reduceHp + " damage because you were unable to breathe.");
+    }
 }

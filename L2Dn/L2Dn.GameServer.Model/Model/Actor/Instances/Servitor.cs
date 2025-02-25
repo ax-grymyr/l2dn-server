@@ -27,9 +27,10 @@ public class Servitor : Summon, Runnable
 	private ScheduledFuture? _summonLifeTask;
 	private int _referenceSkill;
 
-	public Servitor(NpcTemplate template, Player owner): base(template, owner)
+	public Servitor(NpcTemplate template, Player owner, ItemHolder itemConsume): base(template, owner)
 	{
 		InstanceType = InstanceType.Servitor;
+        _itemConsume = itemConsume;
 		setShowSummonAnimation(true);
 	}
 

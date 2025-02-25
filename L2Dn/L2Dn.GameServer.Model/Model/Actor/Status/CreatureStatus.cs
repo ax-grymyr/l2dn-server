@@ -19,7 +19,7 @@ public class CreatureStatus
 	private double _currentMp; // Current MP of the Creature
 
 	/** Array containing all clients that need to be notified about hp/mp updates of the Creature */
-	private Set<Creature> _statusListener;
+	private Set<Creature> _statusListener = [];
 
 	private ScheduledFuture? _regTask;
 
@@ -118,7 +118,7 @@ public class CreatureStatus
 		reduceHp(value, attacker, true, false, isHpConsumption);
 	}
 
-	public virtual void reduceHp(double value, Creature attacker, bool awake, bool isDOT, bool isHPConsumption)
+	public virtual void reduceHp(double value, Creature? attacker, bool awake, bool isDOT, bool isHPConsumption)
 	{
 		Creature creature = _creature;
 		if (creature.isDead())
@@ -134,7 +134,7 @@ public class CreatureStatus
 
 		if (attacker != null)
 		{
-			Player attackerPlayer = attacker.getActingPlayer();
+			Player? attackerPlayer = attacker.getActingPlayer();
 			if (attackerPlayer != null && attackerPlayer.isGM() && !attackerPlayer.getAccessLevel().canGiveDamage())
 			{
 				return;

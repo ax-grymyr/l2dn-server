@@ -107,7 +107,7 @@ public class SummonMulti: AbstractEffect
         if (template == null)
             return;
 
-		Servitor summon = new Servitor(template, player);
+		Servitor summon = new Servitor(template, player, _consumeItem);
 		int consumeItemInterval = (_consumeItemInterval > 0 ? _consumeItemInterval : template.getRace() != Race.SIEGE_WEAPON ? 240 : 60) * 1000;
 
 		summon.setName(template.getName());

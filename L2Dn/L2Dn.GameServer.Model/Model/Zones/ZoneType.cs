@@ -42,7 +42,7 @@ public abstract class ZoneType: IEventContainerProvider
 	protected bool _enabled;
 	private AbstractZoneSettings _settings;
 	private int _instanceTemplateId;
-	private Map<int, bool> _enabledInInstance;
+	private readonly Map<int, bool> _enabledInInstance = [];
 
 	protected ZoneType(int id)
 	{

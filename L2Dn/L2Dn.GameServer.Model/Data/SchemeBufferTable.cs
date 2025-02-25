@@ -12,14 +12,14 @@ namespace L2Dn.GameServer.Data;
 /**
  * This class loads available skills and stores players' buff schemes into _schemesTable.
  */
-public class SchemeBufferTable: DataReaderBase
+public sealed class SchemeBufferTable: DataReaderBase
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SchemeBufferTable));
 
 	private readonly Map<int, Map<string, List<int>>> _schemesTable = new();
 	private readonly Map<int, BuffSkillHolder> _availableBuffs = new();
 
-	public SchemeBufferTable()
+    private SchemeBufferTable()
 	{
 		try
 		{
@@ -47,13 +47,13 @@ public class SchemeBufferTable: DataReaderBase
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			var schemes = ctx.BufferSchemes;
-			foreach (var scheme in schemes)
+			DbSet<BufferScheme> schemes = ctx.BufferSchemes;
+			foreach (BufferScheme scheme in schemes)
 			{
 				int objectId = scheme.ObjectId;
 				string schemeName = scheme.Name;
 				string[] skills = scheme.Skills.Split(",");
-				List<int> schemeList = new();
+				List<int> schemeList = [];
 				foreach (string skill in skills)
 				{
 					// Don't feed the skills list if the list is empty.
@@ -225,6 +225,6 @@ public class SchemeBufferTable: DataReaderBase
 
 	private static class SingletonHolder
 	{
-		public static readonly SchemeBufferTable INSTANCE = new SchemeBufferTable();
+		public static readonly SchemeBufferTable INSTANCE = new();
 	}
 }

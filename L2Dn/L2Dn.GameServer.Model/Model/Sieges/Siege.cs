@@ -453,7 +453,7 @@ public class Siege: Siegable
 				else
 				{
 					sm = new SystemMessagePacket(SystemMessageId.S1_S_SIEGE_WAS_CANCELED_BECAUSE_THERE_WERE_NO_CLANS_THAT_PARTICIPATED);
-					Clan ownerClan = ClanTable.getInstance().getClan(_firstOwnerClanId);
+					Clan? ownerClan = ClanTable.getInstance().getClan(_firstOwnerClanId);
 					ownerClan.increaseBloodAllianceCount();
 				}
 
@@ -510,7 +510,7 @@ public class Siege: Siegable
 	{
 		foreach (SiegeClan siegeClans in getDefenderClans())
 		{
-			Clan clan = ClanTable.getInstance().getClan(siegeClans.getClanId());
+			Clan? clan = ClanTable.getInstance().getClan(siegeClans.getClanId());
 			if (clan != null)
 			{
 				foreach (Player member in clan.getOnlineMembers(0))
@@ -538,7 +538,7 @@ public class Siege: Siegable
 
 	public void updatePlayerSiegeStateFlags(bool clear)
 	{
-		Clan clan;
+		Clan? clan;
 		foreach (SiegeClan siegeclan in getAttackerClans())
 		{
 			if (siegeclan == null)
@@ -551,14 +551,14 @@ public class Siege: Siegable
 			{
 				if (clear)
 				{
-					member.setSiegeState((byte) 0);
+					member.setSiegeState(0);
 					member.setSiegeSide(0);
 					member.setInSiege(false);
 					member.stopFameTask();
 				}
 				else
 				{
-					member.setSiegeState((byte) 1);
+					member.setSiegeState(1);
 					member.setSiegeSide(_castle.getResidenceId());
 					if (checkIfInZone(member))
 					{
@@ -576,14 +576,14 @@ public class Siege: Siegable
 
 					long relation = member.getRelation(player);
 					bool isAutoAttackable = member.isAutoAttackable(player);
-					RelationCache oldrelation = member.getKnownRelations().get(player.ObjectId);
+					RelationCache? oldrelation = member.getKnownRelations().get(player.ObjectId);
 					if (oldrelation == null || oldrelation.getRelation() != relation || oldrelation.isAutoAttackable() != isAutoAttackable)
 					{
 						RelationChangedPacket rc = new RelationChangedPacket();
 						rc.addRelation(member, relation, isAutoAttackable);
 						if (member.hasSummon())
 						{
-							Summon pet = member.getPet();
+							Summon? pet = member.getPet();
 							if (pet != null)
 							{
 								rc.addRelation(pet, relation, isAutoAttackable);
@@ -636,14 +636,14 @@ public class Siege: Siegable
 
 					long relation = member.getRelation(player);
 					bool isAutoAttackable = member.isAutoAttackable(player);
-					RelationCache oldrelation = member.getKnownRelations().get(player.ObjectId);
+					RelationCache? oldrelation = member.getKnownRelations().get(player.ObjectId);
 					if (oldrelation == null || oldrelation.getRelation() != relation || oldrelation.isAutoAttackable() != isAutoAttackable)
 					{
 						RelationChangedPacket rc = new RelationChangedPacket();
 						rc.addRelation(member, relation, isAutoAttackable);
 						if (member.hasSummon())
 						{
-							Summon pet = member.getPet();
+							Summon? pet = member.getPet();
 							if (pet != null)
 							{
 								rc.addRelation(pet, relation, isAutoAttackable);
@@ -772,7 +772,7 @@ public class Siege: Siegable
 		List<Player> result = new();
 		foreach (SiegeClan siegeclan in getAttackerClans())
 		{
-			Clan clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
+			Clan? clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
 			if (clan != null)
 			{
 				foreach (Player member in clan.getOnlineMembers(0))
@@ -805,7 +805,7 @@ public class Siege: Siegable
 		{
 			if (siegeclan.getClanId() == _castle.getOwnerId())
 			{
-				Clan clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
+				Clan? clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
 				if (clan != null)
 				{
 					foreach (Player member in clan.getOnlineMembers(0))

@@ -61,7 +61,7 @@ public class Artefact: Npc
     {
     }
 
-    public override void reduceCurrentHp(double value, Creature attacker, Skill? skill, bool isDOT, bool directlyToHp,
+    public override void reduceCurrentHp(double value, Creature? attacker, Skill? skill, bool isDOT, bool directlyToHp,
         bool critical, bool reflect)
     {
     }

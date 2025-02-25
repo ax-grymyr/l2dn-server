@@ -18,7 +18,7 @@ public class ResidenceFunction
 	private readonly int _level;
 	private DateTime _expiration;
 	private readonly AbstractResidence _residense;
-	private ScheduledFuture _task;
+	private ScheduledFuture? _task;
 
 	public ResidenceFunction(int id, int level, DateTime expiration, AbstractResidence residense)
 	{
@@ -44,7 +44,7 @@ public class ResidenceFunction
 	 */
 	private void init()
 	{
-		ResidenceFunctionTemplate template = getTemplate();
+		ResidenceFunctionTemplate? template = getTemplate();
 		if (template != null && _expiration > DateTime.UtcNow)
 		{
 			_task = ThreadPool.schedule(onFunctionExpiration, _expiration - DateTime.UtcNow);
@@ -88,7 +88,7 @@ public class ResidenceFunction
 	 */
 	public double getValue()
 	{
-		ResidenceFunctionTemplate template = getTemplate();
+		ResidenceFunctionTemplate? template = getTemplate();
 		return template == null ? 0 : template.getValue();
 	}
 
@@ -97,14 +97,14 @@ public class ResidenceFunction
 	 */
 	public ResidenceFunctionType getType()
 	{
-		ResidenceFunctionTemplate template = getTemplate();
+		ResidenceFunctionTemplate? template = getTemplate();
 		return template == null ? ResidenceFunctionType.NONE : template.getType();
 	}
 
 	/**
 	 * @return the template of this function instance
 	 */
-	public ResidenceFunctionTemplate getTemplate()
+	public ResidenceFunctionTemplate? getTemplate()
 	{
 		return ResidenceFunctionsData.getInstance().getFunction(_id, _level);
 	}
@@ -118,7 +118,7 @@ public class ResidenceFunction
 		{
 			_residense.removeFunction(this);
 
-			Clan clan = ClanTable.getInstance().getClan(_residense.getOwnerId());
+			Clan? clan = ClanTable.getInstance().getClan(_residense.getOwnerId());
 			if (clan != null)
 			{
 				clan.broadcastToOnlineMembers(new AgitDecoInfoPacket(_residense));
@@ -131,20 +131,20 @@ public class ResidenceFunction
 	 */
 	public bool reactivate()
 	{
-		ResidenceFunctionTemplate template = getTemplate();
+		ResidenceFunctionTemplate? template = getTemplate();
 		if (template == null)
 		{
 			return false;
 		}
 
-		Clan clan = ClanTable.getInstance().getClan(_residense.getOwnerId());
+		Clan? clan = ClanTable.getInstance().getClan(_residense.getOwnerId());
 		if (clan == null)
 		{
 			return false;
 		}
 
 		ItemContainer wh = clan.getWarehouse();
-		Item item = wh.getItemByItemId(template.getCost().getId());
+		Item? item = wh.getItemByItemId(template.getCost().getId());
 		if (item == null || item.getCount() < template.getCost().getCount())
 		{
 			return false;

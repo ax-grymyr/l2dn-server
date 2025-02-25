@@ -123,13 +123,13 @@ public class Doppelganger : Attackable
 		return summoner?.isAutoAttackable(attacker) ?? base.isAutoAttackable(attacker);
 	}
 
-	public override void doAttack(double damage, Creature target, Skill skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
+	public override void doAttack(double damage, Creature target, Skill? skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
 	{
 		base.doAttack(damage, target, skill, isDOT, directlyToHp, critical, reflect);
 		sendDamageMessage(target, skill, (int) damage, 0, critical, false, false);
 	}
 
-	public override void sendDamageMessage(Creature target, Skill skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
+	public override void sendDamageMessage(Creature target, Skill? skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
 	{
         Creature? summoner = getSummoner();
         Player? actingPlayer = getActingPlayer();

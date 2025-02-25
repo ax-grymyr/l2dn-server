@@ -508,25 +508,25 @@ public class Door : Creature
 		return getTemplate().getChildDoorId();
 	}
 
-	public override void reduceCurrentHp(double value, Creature attacker, Skill? skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
-	{
-		if (isWall() && !isInInstance())
-		{
-			if (!attacker.isServitor())
-			{
-				return;
-			}
+    public override void reduceCurrentHp(double value, Creature? attacker, Skill? skill, bool isDOT, bool directlyToHp,
+        bool critical, bool reflect)
+    {
+        if (isWall() && !isInInstance())
+        {
+            if (attacker == null || !attacker.isServitor())
+                return;
 
-			Servitor servitor = (Servitor) attacker;
-			if (servitor.getTemplate().getRace() != Race.SIEGE_WEAPON)
-			{
-				return;
-			}
-		}
-		base.reduceCurrentHp(value, attacker, skill, isDOT, directlyToHp, critical, reflect);
-	}
+            Servitor servitor = (Servitor)attacker;
+            if (servitor.getTemplate().getRace() != Race.SIEGE_WEAPON)
+            {
+                return;
+            }
+        }
 
-	public override bool doDie(Creature killer)
+        base.reduceCurrentHp(value, attacker, skill, isDOT, directlyToHp, critical, reflect);
+    }
+
+    public override bool doDie(Creature killer)
 	{
 		if (!base.doDie(killer))
 		{

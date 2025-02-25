@@ -1619,7 +1619,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * @param killer The Creature who killed it
 	 * @return false if the creature hasn't been killed.
 	 */
-	public virtual bool doDie(Creature killer)
+	public virtual bool doDie(Creature? killer)
 	{
 		// killing is only possible one time
 		lock (this)
@@ -4312,7 +4312,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		return oldSkill;
 	}
 
-	public virtual Skill? removeSkill(Skill skill, bool cancelEffect)
+	public virtual Skill? removeSkill(Skill? skill, bool cancelEffect)
 	{
 		return skill != null ? removeSkill(skill.getId(), cancelEffect) : null;
 	}

@@ -19,13 +19,13 @@ public class AchievementBox
 	private static readonly TimeSpan ACHIEVEMENT_BOX_12H = TimeSpan.FromHours(12);
 
 	private readonly Player _owner;
+    private readonly List<AchievementBoxHolder> _achievementBox = [];
 	private int _boxOwned = 1;
 	private int _monsterPoints;
 	private int _pvpPoints;
 	private int _pendingBoxSlotId;
 	private DateTime _pvpEndDate;
 	private DateTime? _boxTimeForOpen;
-	private readonly List<AchievementBoxHolder> _achievementBox = new();
 	private ScheduledFuture? _boxOpenTask;
 
 	public AchievementBox(Player owner)

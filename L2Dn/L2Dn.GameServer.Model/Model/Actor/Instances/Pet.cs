@@ -40,7 +40,7 @@ public class Pet: Summon
 	private int _curWeightPenalty;
 	private long _expBeforeDeath;
 	private PetData _data;
-	private PetLevelData? _leveldata;
+	private PetLevelData _levelData;
 	private EvolveLevel _evolveLevel = EvolveLevel.None;
 	private ScheduledFuture? _feedTask;
 
@@ -155,30 +155,13 @@ public class Pet: Summon
 		}
 	}
 
-	public PetLevelData? getPetLevelData()
+	public PetLevelData getPetLevelData() => _levelData;
+
+    public PetData getPetData() => _data;
+
+    public void setPetData(PetLevelData value)
 	{
-		if (_leveldata == null)
-		{
-			_leveldata = PetDataTable.getInstance().getPetLevelData(getTemplate().getId(), getStat().getLevel());
-		}
-
-		return _leveldata;
-	}
-
-	public PetData getPetData()
-	{
-		if (_data == null)
-		{
-			_data = PetDataTable.getInstance().getPetData(getTemplate().getId());
-		}
-
-		setPetType(_data.getDefaultPetType());
-		return _data;
-	}
-
-	public void setPetData(PetLevelData value)
-	{
-		_leveldata = value;
+		_levelData = value;
 	}
 
 	/**
@@ -278,11 +261,11 @@ public class Pet: Summon
 		private int getFeedConsume()
 		{
 			// if pet is attacking
+            PetLevelData? petLevelData = _pet.getPetLevelData();
 			if (_pet.isAttackingNow())
-			{
-				return _pet.getPetLevelData().getPetFeedBattle();
-			}
-			return _pet.getPetLevelData().getPetFeedNormal();
+				return petLevelData.getPetFeedBattle();
+
+			return petLevelData.getPetFeedNormal();
 		}
 	}
 
@@ -295,7 +278,7 @@ public class Pet: Summon
 			existingPet.unSummon(owner);
 		}
 
-		Pet pet = restore(control, template, owner);
+		Pet? pet = restore(control, template, owner);
 		// add the pet instance to world
 		if (pet != null)
 		{
@@ -307,11 +290,13 @@ public class Pet: Summon
 		return pet;
 	}
 
-	public Pet upgrade(NpcTemplate template)
+	public Pet? upgrade(NpcTemplate template)
 	{
+        // TODO: the method is not used anywhere, review exception below
 		unSummon(getOwner());
-		Pet pet = restore(getControlItem(), template, getOwner());
-		// add the pet instance to world
+		Pet? pet = restore(getControlItem() ?? throw new InvalidOperationException("Control item is null"), template, getOwner());
+
+        // add the pet instance to world
 		if (pet != null)
 		{
 			pet.restoreSkills();
@@ -319,6 +304,7 @@ public class Pet: Summon
 			pet.setTitle(getOwner().getName());
 			World.getInstance().addPet(getOwner().ObjectId, pet);
 		}
+
 		return pet;
 	}
 
@@ -329,7 +315,7 @@ public class Pet: Summon
 	 * @param control
 	 */
 	public Pet(NpcTemplate template, Player owner, Item control): this(template, owner, control,
-		template.getDisplayId() == 12564 ? owner.getLevel() : 1)
+		template.getDisplayId() == 12564 ? owner.getLevel() : 1) // TODO: unhardcode number
 	{
 	}
 
@@ -343,16 +329,24 @@ public class Pet: Summon
 	public Pet(NpcTemplate template, Player owner, Item control, int level): base(template, owner)
 	{
 		InstanceType = InstanceType.Pet;
+        _data = PetDataTable.getInstance().getPetData(template.getId()) ??
+            throw new ArgumentException($"No pet data for id={template.getId()}", nameof(template));
+
+        _petType = _data.getDefaultPetType();
+
+        level = Math.Max(level, PetDataTable.getInstance().getPetMinLevel(template.getId()));
+        _levelData = PetDataTable.getInstance().getPetLevelData(template.getId(), level) ??
+            throw new ArgumentException($"No pet level data for id={template.getId()}, level={level}", nameof(level));
+
+        // TODO: release objectId if exception is thrown above
 
 		_controlObjectId = control.ObjectId;
-		getStat().setLevel(Math.Max(level, PetDataTable.getInstance().getPetMinLevel(template.getId())));
+		getStat().setLevel(level);
 		_inventory = new PetInventory(this);
 		_inventory.restore();
 
 		int npcId = template.getId();
 		_mountable = PetDataTable.isMountable(npcId);
-		getPetData();
-		getPetLevelData();
 	}
 
 	public override PetStat getStat()
@@ -597,14 +591,17 @@ public class Pet: Summon
 				return;
 			}
 
-			if (((isInParty() && getParty().getDistributionType() == PartyDistributionType.FINDERS_KEEPERS) || !isInParty()) && !getOwner().getInventory().validateCapacity(target))
-			{
-				sendPacket(ActionFailedPacket.STATIC_PACKET);
-				sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_ANY_MORE_ITEMS);
-				return;
-			}
+            Party? party = getParty();
+            if (((isInParty() && party != null &&
+                    party.getDistributionType() == PartyDistributionType.FINDERS_KEEPERS) || !isInParty()) &&
+                !getOwner().getInventory().validateCapacity(target))
+            {
+                sendPacket(ActionFailedPacket.STATIC_PACKET);
+                sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_ANY_MORE_ITEMS);
+                return;
+            }
 
-			if (target.getOwnerId() != 0 && target.getOwnerId() != getOwner().ObjectId && !getOwner().isInLooterParty(target.getOwnerId()))
+            if (target.getOwnerId() != 0 && target.getOwnerId() != getOwner().ObjectId && !getOwner().isInLooterParty(target.getOwnerId()))
 			{
 				if (target.getId() == Inventory.ADENA_ID)
 				{
@@ -687,9 +684,10 @@ public class Pet: Summon
 			}
 
 			// If owner is in party and it isnt finders keepers, distribute the item instead of stealing it -.-
-			if (getOwner().isInParty() && getOwner().getParty().getDistributionType() != PartyDistributionType.FINDERS_KEEPERS)
+            Party? ownerParty = getOwner().getParty();
+			if (getOwner().isInParty() && ownerParty != null && ownerParty.getDistributionType() != PartyDistributionType.FINDERS_KEEPERS)
 			{
-				getOwner().getParty().distributeItem(getOwner(), target);
+                ownerParty.distributeItem(getOwner(), target);
 			}
 			else
 			{
@@ -747,12 +745,16 @@ public class Pet: Summon
 
 		DecayTaskManager.getInstance().add(this);
 		if (owner != null)
-		{
-			BuffInfo? buffInfo = owner.getEffectList().getBuffInfoBySkillId(49300);
-			owner.getEffectList().add(new BuffInfo(owner, owner,
-				SkillData.getInstance().getSkill(49300,
-					buffInfo == null ? 1 : Math.Min(buffInfo.getSkill().getLevel() + 1, 10)), false, null, null));
-		}
+        {
+            const int petDeathPenaltySkillId = 49300; // TODO: to common skills
+			BuffInfo? buffInfo = owner.getEffectList().getBuffInfoBySkillId(petDeathPenaltySkillId);
+            int petDeathPenaltySkillLevel = buffInfo == null ? 1 : Math.Min(buffInfo.getSkill().getLevel() + 1, 10);
+            Skill? petDeathPenaltySkill =
+                SkillData.getInstance().getSkill(petDeathPenaltySkillId, petDeathPenaltySkillLevel) ??
+                throw new InvalidOperationException($"Pet death penalty skill id={petDeathPenaltySkillId}, level={petDeathPenaltySkillLevel} not defined");
+
+            owner.getEffectList().add(new BuffInfo(owner, owner, petDeathPenaltySkill, false, null, null));
+        }
 
 		// do not decrease exp if is in duel, arena
 		return true;
@@ -795,12 +797,13 @@ public class Pet: Summon
 	public Item? transferItem(string process, int objectId, long count, Inventory target, Player actor, WorldObject? reference)
 	{
 		Item? oldItem = _inventory.getItemByObjectId(objectId);
-		Item playerOldItem = target.getItemByItemId(oldItem.getId());
+        if (oldItem == null)
+            return null;
+
+		Item? playerOldItem = target.getItemByItemId(oldItem.getId());
 		Item? newItem = _inventory.transferItem(process, objectId, count, target, actor, reference);
 		if (newItem == null)
-		{
 			return null;
-		}
 
 		// Send inventory update packet
 		PetInventoryUpdatePacket petIU;
@@ -838,7 +841,7 @@ public class Pet: Summon
 		// delete from inventory
 		try
 		{
-			Item removedItem;
+			Item? removedItem;
 			if (evolve)
 			{
 				removedItem = owner.getInventory().destroyItem("Evolve", _controlObjectId, 1, getOwner(), this);
@@ -924,7 +927,7 @@ public class Pet: Summon
 		return _mountable;
 	}
 
-	public static Pet restore(Item control, NpcTemplate template, Player owner)
+	public static Pet? restore(Item control, NpcTemplate template, Player owner)
 	{
 		try
 		{
@@ -996,7 +999,7 @@ public class Pet: Summon
 			{
 				if (effect.getSkill().getId() == skillId)
 				{
-					SummonEffectTable.getInstance().getPetEffects().get(getControlObjectId()).Remove(effect);
+					effects.Remove(effect); // TODO: collection modified exception possible
 				}
 			}
 		}
@@ -1234,6 +1237,7 @@ public class Pet: Summon
 			{
 				_inventory.deleteMe();
 			}
+
 			World.getInstance().removePet(owner.ObjectId);
 		}
 	}
@@ -1381,8 +1385,11 @@ public class Pet: Summon
 			{
 				_curWeightPenalty = newWeightPenalty;
 				if (newWeightPenalty > 0)
-				{
-					addSkill(SkillData.getInstance().getSkill(4270, newWeightPenalty));
+                {
+                    Skill weightPenaltySkill = SkillData.getInstance().getSkill(4270, newWeightPenalty) ??
+                        throw new InvalidOperationException($"Weight penalty skill id=4270, level={newWeightPenalty} not found.");
+
+					addSkill(weightPenaltySkill);
 					setOverloaded(getCurrentLoad() >= maxLoad);
 				}
 				else
@@ -1460,10 +1467,10 @@ public class Pet: Summon
 		Item? controlItem = getControlItem();
 		if (controlItem != null)
 		{
-			if (controlItem.getCustomType2() == (name == null ? 1 : 0))
+			if (controlItem.getCustomType2() == (string.IsNullOrEmpty(name) ? 1 : 0))
 			{
 				// name not set yet
-				controlItem.setCustomType2(name != null ? 1 : 0);
+				controlItem.setCustomType2(!string.IsNullOrEmpty(name) ? 1 : 0);
 				controlItem.updateDatabase();
 				InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(controlItem, ItemChangeType.MODIFIED));
 				getOwner().sendInventoryUpdate(iu);
@@ -1473,6 +1480,7 @@ public class Pet: Summon
 		{
 			LOGGER.Warn("Pet control item null, for pet: " + ToString());
 		}
+
 		base.setName(name);
 	}
 

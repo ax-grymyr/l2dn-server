@@ -103,7 +103,7 @@ public class CommandChannelMatchingRoom: MatchingRoom
 		Party? leaderParty = getLeader().getParty();
 		if (leaderParty != null)
 		{
-			CommandChannel cc = leaderParty.getCommandChannel();
+			CommandChannel? cc = leaderParty.getCommandChannel();
 			if (leaderParty == playerParty || (cc != null && cc.getParties().Contains(playerParty)))
 			{
 				return MatchingMemberType.COMMAND_CHANNEL_PARTY_MEMBER;

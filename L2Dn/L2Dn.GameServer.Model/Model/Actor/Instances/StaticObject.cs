@@ -27,7 +27,7 @@ public class StaticObject: Creature
 
 	protected override CreatureAI initAI()
 	{
-		return null;
+		return null!; // TODO: make empty/null AI
 	}
 
 	/**

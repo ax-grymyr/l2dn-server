@@ -14,14 +14,14 @@ namespace L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 public class PetFeedTask: Runnable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(PetFeedTask));
-	
+
 	private readonly Player _player;
-	
+
 	public PetFeedTask(Player player)
 	{
 		_player = player;
 	}
-	
+
 	public void run()
 	{
 		if (_player != null)
@@ -33,7 +33,7 @@ public class PetFeedTask: Runnable
 					_player.stopFeed();
 					return;
 				}
-				
+
 				if (_player.getCurrentFeed() > _player.getFeedConsume())
 				{
 					// eat
@@ -47,14 +47,14 @@ public class PetFeedTask: Runnable
 					_player.dismount();
 					_player.sendPacket(SystemMessageId.YOU_ARE_OUT_OF_FEED_MOUNT_STATUS_CANCELED);
 				}
-				
+
 				Set<int> foodIds = _player.getPetData(_player.getMountNpcId()).getFood();
 				if (foodIds.isEmpty())
 				{
 					return;
 				}
-				
-				Item food = null;
+
+				Item? food = null;
 				foreach (int id in foodIds)
 				{
 					// TODO: possibly pet inv?
@@ -64,10 +64,10 @@ public class PetFeedTask: Runnable
 						break;
 					}
 				}
-				
+
 				if (food != null && _player.isHungry())
 				{
-					IItemHandler handler = ItemHandler.getInstance().getHandler(food.getEtcItem());
+					IItemHandler? handler = ItemHandler.getInstance().getHandler(food.getEtcItem());
 					if (handler != null)
 					{
 						handler.useItem(_player, food, false);
