@@ -24,7 +24,7 @@ public struct RequestReplyStartPledgeWarPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Player requestor = player.getActiveRequester();
+        Player? requestor = player.getActiveRequester();
         if (requestor == null)
             return ValueTask.CompletedTask;
 
@@ -34,7 +34,7 @@ public struct RequestReplyStartPledgeWarPacket: IIncomingPacket<GameSession>
             Clan? attacker = requestor.getClan();
             if (attacked != null && attacker != null)
             {
-                ClanWar clanWar = attacker.getWarWith(attacked.getId());
+                ClanWar? clanWar = attacker.getWarWith(attacked.getId());
                 if (clanWar.getState() == ClanWarState.BLOOD_DECLARATION)
                 {
                     clanWar.mutualClanWarAccepted(attacker, attacked);

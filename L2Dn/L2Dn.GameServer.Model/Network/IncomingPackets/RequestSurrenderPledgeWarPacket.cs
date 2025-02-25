@@ -53,7 +53,7 @@ public struct RequestSurrenderPledgeWarPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        ClanWar clanWar = clan.getWarWith(targetClan.getId());
+        ClanWar? clanWar = clan.getWarWith(targetClan.getId());
         if (clanWar == null)
         {
             SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_NOT_DECLARED_A_CLAN_WAR_AGAINST_THE_CLAN_S1);

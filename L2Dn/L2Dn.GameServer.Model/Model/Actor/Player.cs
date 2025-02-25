@@ -111,13 +111,13 @@ public class Player: Playable
 	private DateTime? _lastAccess;
 	private DateTime _uptime;
 
-	private ScheduledFuture _itemListTask;
-	private ScheduledFuture _skillListTask;
-	private ScheduledFuture _storageCountTask;
-	private ScheduledFuture _userBoostStatTask;
-	private ScheduledFuture _abnormalVisualEffectTask;
-	private ScheduledFuture _updateAndBroadcastStatusTask;
-	private ScheduledFuture _broadcastCharInfoTask;
+	private ScheduledFuture? _itemListTask;
+	private ScheduledFuture? _skillListTask;
+	private ScheduledFuture? _storageCountTask;
+	private ScheduledFuture? _userBoostStatTask;
+	private ScheduledFuture? _abnormalVisualEffectTask;
+	private ScheduledFuture? _updateAndBroadcastStatusTask;
+	private ScheduledFuture? _broadcastCharInfoTask;
 
 	private bool _subclassLock;
 	protected CharacterClass _baseClass;
@@ -129,11 +129,11 @@ public class Player: Playable
 
 	/** data for mounted pets */
 	private int _controlItemId;
-	private PetData _data;
-	private PetLevelData _leveldata;
+	private PetData? _data;
+	private PetLevelData? _leveldata;
 	private int _curFeed;
-	protected ScheduledFuture _mountFeedTask;
-	private ScheduledFuture _dismountTask;
+	protected ScheduledFuture? _mountFeedTask;
+	private ScheduledFuture? _dismountTask;
 	private bool _petItems;
 
 	/** The list of sub-classes this character has. */
@@ -165,12 +165,12 @@ public class Player: Playable
 
 	/** The Fame of this Player */
 	private int _fame;
-	private ScheduledFuture _fameTask;
+	private ScheduledFuture? _fameTask;
 
 	/** The Raidboss points of this Player */
 	private int _raidbossPoints;
 
-	private ScheduledFuture _teleportWatchdog;
+	private ScheduledFuture? _teleportWatchdog;
 
 	/** The Siege state of the Player */
 	private byte _siegeState;
@@ -248,19 +248,19 @@ public class Player: Playable
 	/** The number of recommendation that the Player can give */
 	private int _recomLeft; // how many recommendations I can give to others
 	/** Recommendation task **/
-	private ScheduledFuture _recoGiveTask;
+	private ScheduledFuture? _recoGiveTask;
 	/** Recommendation Two Hours bonus **/
 	protected bool _recoTwoHoursGiven;
 
-	private ScheduledFuture _onlineTimeUpdateTask;
+	private ScheduledFuture? _onlineTimeUpdateTask;
 
 	private readonly PlayerInventory _inventory;
 	private readonly PlayerFreight _freight;
 	private readonly PlayerWarehouse _warehouse;
-	private PlayerRefund _refund;
+	private PlayerRefund? _refund;
 	private PrivateStoreType _privateStoreType = PrivateStoreType.NONE;
 	private TradeList? _activeTradeList;
-	private ItemContainer _activeWarehouse;
+	private ItemContainer? _activeWarehouse;
 	private Map<int, ManufactureItem> _manufactureItems;
 	private string _storeName = "";
 	private TradeList _sellList;
@@ -298,11 +298,11 @@ public class Player: Playable
 	/** The list containing all macros of this player. */
 	private readonly MacroList _macros;
 
-	private readonly Set<Player> _snoopListener = new();
-	private readonly Set<Player> _snoopedPlayer = new();
+	private readonly Set<Player> _snoopListener = [];
+	private readonly Set<Player> _snoopedPlayer = [];
 
-	/** Hennas */
-	private readonly HennaPoten[] _hennaPoten = new HennaPoten[4];
+    /** Hennas */
+    private readonly HennaPoten[] _hennaPoten = [new(), new(), new(), new()]; // 4 items
 	private readonly Map<BaseStat, int> _hennaBaseStats = new();
 	private readonly Map<int, ScheduledFuture> _hennaRemoveSchedules = new();
 
@@ -326,7 +326,7 @@ public class Player: Playable
 
 	private MatchingRoom _matchingRoom;
 
-	private ScheduledFuture _taskWarnUserTakeBreak;
+	private ScheduledFuture? _taskWarnUserTakeBreak;
 
 	// Clan related attributes
 	/** The Clan Identifier of the Player */
@@ -355,8 +355,8 @@ public class Player: Playable
 	private bool _wantsPeace;
 
 	// charges
-	private readonly AtomicInteger _charges = new AtomicInteger();
-	private ScheduledFuture _chargeTask;
+	private readonly AtomicInteger _charges = new();
+	private ScheduledFuture? _chargeTask;
 
 	// Absorbed Souls
 	private const int KAMAEL_LIGHT_MASTER = 45178;
@@ -364,7 +364,7 @@ public class Player: Playable
 	private const int KAMAEL_LIGHT_TRANSFORMATION = 397;
 	private const int KAMAEL_SHADOW_TRANSFORMATION = 398;
 	private readonly Map<SoulType, int> _souls = new();
-	private ScheduledFuture _soulTask;
+	private ScheduledFuture? _soulTask;
 
 	// Death Points
 	private const int DEATH_POINTS_PASSIVE = 45352;
@@ -393,7 +393,7 @@ public class Player: Playable
 	private bool _tradeRefusal; // Trade refusal
 	private bool _exchangeRefusal; // Exchange refusal
 
-	private Party _party;
+	private Party? _party;
 
 	// this is needed to find the inviting player for Party response
 	// there can only be one active party request at once
@@ -439,14 +439,14 @@ public class Player: Playable
 	private readonly BlockList _blockList;
 
 	private readonly Map<int, Skill> _transformSkills = new();
-	private ScheduledFuture _taskRentPet;
-	private ScheduledFuture _taskWater;
+	private ScheduledFuture? _taskRentPet;
+	private ScheduledFuture? _taskWater;
 
-	private Forum _forumMail;
-	private Forum _forumMemo;
+	private Forum? _forumMail;
+	private Forum? _forumMemo;
 
 	/** Skills queued because a skill is already in progress */
-	private SkillUseHolder _queuedSkill;
+	private SkillUseHolder? _queuedSkill;
 
 	private int _cursedWeaponEquippedId;
 	private bool _combatFlagEquippedId;
@@ -480,12 +480,12 @@ public class Player: Playable
 	private static readonly TimeSpan FALLING_VALIDATION_DELAY = TimeSpan.FromSeconds(1);
 	private DateTime? _fallingTimestamp;
 	private volatile int _fallingDamage;
-	private ScheduledFuture _fallingDamageTask;
+	private ScheduledFuture? _fallingDamageTask;
 
 	private int _multiSocialTarget;
 	private int _multiSociaAction;
 
-	private MovieHolder _movieHolder;
+	private MovieHolder? _movieHolder;
 
 	private string? _adminConfirmCmd;
 
@@ -550,30 +550,30 @@ public class Player: Playable
 
 	private DateTime _attendanceDelay;
 
-	private readonly AutoPlaySettingsHolder _autoPlaySettings = new AutoPlaySettingsHolder();
-	private readonly AutoUseSettingsHolder _autoUseSettings = new AutoUseSettingsHolder();
+	private readonly AutoPlaySettingsHolder _autoPlaySettings = new();
+	private readonly AutoUseSettingsHolder _autoUseSettings = new();
 	private bool _autoPlaying;
 	private bool _resumedAutoPlay;
 
-	private ScheduledFuture _timedHuntingZoneTask;
+	private ScheduledFuture? _timedHuntingZoneTask;
 
 	private PlayerRandomCraft _randomCraft;
 
-	private ScheduledFuture _statIncreaseSkillTask;
+	private ScheduledFuture? _statIncreaseSkillTask;
 
-	private readonly List<PlayerCollectionData> _collections = new();
+	private readonly List<PlayerCollectionData> _collections = [];
 	private readonly List<int> _collectionFavorites = new();
 
-	private readonly Map<int, PurgePlayerHolder> _purgePoints = new();
+	private readonly Map<int, PurgePlayerHolder> _purgePoints = [];
 
-	private readonly HuntPass _huntPass;
-	private readonly AchievementBox _achivemenetBox;
+	private readonly HuntPass? _huntPass;
+	private readonly AchievementBox? _achivemenetBox;
 
 	private readonly ChallengePoint _challengePoints;
 
 	private readonly RankingHistory _rankingHistory;
 
-	private readonly Map<int, PetEvolveHolder> _petEvolves = new();
+	private readonly Map<int, PetEvolveHolder> _petEvolves = [];
 
 	private MissionLevelPlayerDataHolder _missionLevelProgress;
 
@@ -680,9 +680,9 @@ public class Player: Playable
 
 	public long getRelation(Player target)
 	{
-		Clan clan = getClan();
-		Party party = getParty();
-		Clan targetClan = target.getClan();
+		Clan? clan = getClan();
+		Party? party = getParty();
+		Clan? targetClan = target.getClan();
 		long result = 0;
 		if (clan != null)
 		{
@@ -777,7 +777,7 @@ public class Player: Playable
 		}
 		if (clan != null && targetClan != null && target.getPledgeType() != Clan.SUBUNIT_ACADEMY && getPledgeType() != Clan.SUBUNIT_ACADEMY)
 		{
-			ClanWar war = clan.getWarWith(target.getClan().getId());
+			ClanWar? war = clan.getWarWith(targetClan.getId());
 			if (war != null)
 			{
 				switch (war.getState())
@@ -946,12 +946,12 @@ public class Player: Playable
 		return PlayerTemplateData.getInstance().getTemplate(_baseClass);
 	}
 
-	public HuntPass getHuntPass()
+	public HuntPass? getHuntPass()
 	{
 		return _huntPass;
 	}
 
-	public AchievementBox getAchievementBox()
+	public AchievementBox? getAchievementBox()
 	{
 		return _achivemenetBox;
 	}
@@ -1245,7 +1245,7 @@ public class Player: Playable
 
 	public void processQuestEvent(string questName, string ev)
 	{
-		Quest quest = QuestManager.getInstance().getQuest(questName);
+		Quest? quest = QuestManager.getInstance().getQuest(questName);
 		if (quest == null || string.IsNullOrEmpty(ev))
 		{
 			return;
@@ -1258,7 +1258,7 @@ public class Player: Playable
 		}
 		else if (_questNpcObject > 0)
 		{
-			WorldObject obj = World.getInstance().findObject(getLastQuestNpcObject());
+			WorldObject? obj = World.getInstance().findObject(getLastQuestNpcObject());
 			if (obj != null && obj.isNpc() && this.IsInsideRadius2D(obj, Npc.INTERACTION_DISTANCE))
 			{
 				Npc npc = (Npc) obj;
@@ -1442,8 +1442,8 @@ public class Player: Playable
 		}
 
 		// Check first castle mid victory.
-		Castle castle = CastleManager.getInstance().getCastleById(_siegeSide);
-		Player targetPlayer = target.getActingPlayer();
+		Castle? castle = CastleManager.getInstance().getCastleById(_siegeSide);
+		Player? targetPlayer = target.getActingPlayer();
 		if (castle != null && targetPlayer != null && !castle.isFirstMidVictory())
 		{
 			return true;
@@ -1505,7 +1505,7 @@ public class Player: Playable
 		if (hasSummon())
 		{
 			RelationChangedPacket rc = new RelationChangedPacket();
-			Summon pet = _pet;
+			Summon? pet = _pet;
 			if (pet != null)
 			{
 				rc.addRelation(pet, getRelation(this), false);
@@ -1526,14 +1526,14 @@ public class Player: Playable
 
 			long relation = getRelation(player);
 			bool isAutoAttackable = this.isAutoAttackable(player);
-			RelationCache oldrelation = getKnownRelations().get(player.ObjectId);
+			RelationCache? oldrelation = getKnownRelations().get(player.ObjectId);
 			if (oldrelation == null || oldrelation.getRelation() != relation || oldrelation.isAutoAttackable() != isAutoAttackable)
 			{
 				RelationChangedPacket rc = new RelationChangedPacket();
 				rc.addRelation(this, relation, isAutoAttackable);
 				if (hasSummon())
 				{
-					Summon pet = _pet;
+					Summon? pet = _pet;
 					if (pet != null)
 					{
 						rc.addRelation(pet, relation, isAutoAttackable);
@@ -1907,10 +1907,9 @@ public class Player: Playable
 		{
 			getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING);
 			getServitors().Values.ForEach(s => s.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING));
-			if (getPet() != null)
-			{
-				getPet().getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING);
-			}
+            Pet? pet = getPet();
+			if (pet != null)
+                pet.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING);
 		}
 
 		_einhasadOverseeingLevel = expectedLevel;
@@ -2007,7 +2006,7 @@ public class Player: Playable
 		}
 
 		// Equip or unEquip
-		List<Item> items = null;
+		List<Item>? items = null;
 		bool isEquiped = item.isEquipped();
 		int oldInvLimit = getInventoryLimit();
 		if (isEquiped)
@@ -2256,7 +2255,7 @@ public class Player: Playable
 			// Remove class permitted hennas.
 			for (int slot = 1; slot < 4; slot++)
 			{
-				Henna henna = getHenna(slot);
+				Henna? henna = getHenna(slot);
 				if (henna != null && !henna.isAllowedClass(getActingPlayer()))
 				{
 					removeHenna(slot);
@@ -2264,7 +2263,7 @@ public class Player: Playable
 			}
 
 			// Update class icon in party and clan
-			if (isInParty())
+			if (isInParty() && _party != null)
 			{
 				_party.broadcastPacket(new PartySmallWindowUpdatePacket(this, PartySmallWindowUpdateType.All));
 			}
@@ -2335,62 +2334,54 @@ public class Player: Playable
 	{
 		// TODO the method looks like dirty hack
 		int classId = (int)characterClass;
-		Weapon weaponItem = null;
+		Weapon? weaponItem = null;
 		if (classId >= 0x00 && classId <= 0x09)
 		{
 			// human fighter fists
-			ItemTemplate temp = ItemData.getInstance().getTemplate(246);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon?)ItemData.getInstance().getTemplate(246);
 		}
 		else if (classId >= 0x0a && classId <= 0x11)
 		{
 			// human mage fists
-			ItemTemplate temp = ItemData.getInstance().getTemplate(251);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon?)ItemData.getInstance().getTemplate(251);
 		}
 		else if (classId >= 0x12 && classId <= 0x18)
 		{
 			// elven fighter fists
-			ItemTemplate temp = ItemData.getInstance().getTemplate(244);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon?)ItemData.getInstance().getTemplate(244);
 		}
 		else if (classId >= 0x19 && classId <= 0x1e)
 		{
 			// elven mage fists
-			ItemTemplate temp = ItemData.getInstance().getTemplate(249);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon?)ItemData.getInstance().getTemplate(249);
 		}
 		else if (classId >= 0x1f && classId <= 0x25)
 		{
 			// dark elven fighter fists
-			ItemTemplate temp = ItemData.getInstance().getTemplate(245);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon?)ItemData.getInstance().getTemplate(245);
 		}
 		else if (classId >= 0x26 && classId <= 0x2b)
 		{
 			// dark elven mage fists
-			ItemTemplate temp = ItemData.getInstance().getTemplate(250);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon?)ItemData.getInstance().getTemplate(250);
 		}
 		else if (classId >= 0x2c && classId <= 0x30)
 		{
 			// orc fighter fists
-			ItemTemplate temp = ItemData.getInstance().getTemplate(248);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon?)ItemData.getInstance().getTemplate(248);
 		}
 		else if (classId >= 0x31 && classId <= 0x34)
 		{
 			// orc mage fists
-			ItemTemplate temp = ItemData.getInstance().getTemplate(252);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon?)ItemData.getInstance().getTemplate(252);
 		}
 		else if (classId >= 0x35 && classId <= 0x39)
 		{
 			// dwarven fists
-			ItemTemplate temp = ItemData.getInstance().getTemplate(247);
-			weaponItem = (Weapon) temp;
+			weaponItem = (Weapon?)ItemData.getInstance().getTemplate(247);
 		}
-		return weaponItem;
+
+        return weaponItem ?? throw new InvalidOperationException("Default fist weapon item not found");
 	}
 
 	/**
@@ -2489,7 +2480,7 @@ public class Player: Playable
 		foreach (Skill skill in skills)
 		{
 			int skillId = skill.getId();
-			Skill oldSkill = getKnownSkill(skillId);
+			Skill? oldSkill = getKnownSkill(skillId);
 			if (oldSkill == skill)
 			{
 				continue;
@@ -2550,10 +2541,9 @@ public class Player: Playable
 		// Get available skills
 		List<SkillLearn> autoGetSkills = SkillTreeData.getInstance().getAvailableAutoGetSkills(this);
 		SkillData st = SkillData.getInstance();
-		Skill skill;
 		foreach (SkillLearn s in autoGetSkills)
 		{
-			skill = st.getSkill(s.getSkillId(), s.getSkillLevel());
+            Skill? skill = st.getSkill(s.getSkillId(), s.getSkillLevel());
 			if (skill != null)
 			{
 				addSkill(skill, true);
@@ -2630,7 +2620,7 @@ public class Player: Playable
 		if (_clan != null && _clan.getLeader().getPlayer() == this)
 		{
 			// if the clan has a castle and it is actually the queried castle, return true
-			Castle castle = CastleManager.getInstance().getCastleByOwner(_clan);
+			Castle? castle = CastleManager.getInstance().getCastleByOwner(_clan);
 			if (castle != null && castle == CastleManager.getInstance().getCastleById(castleId))
 			{
 				return true;
@@ -2916,7 +2906,7 @@ public class Player: Playable
 
 		if (count > 0)
 		{
-			Item adenaItem = _inventory.getAdenaInstance();
+			Item? adenaItem = _inventory.getAdenaInstance();
 			if (!_inventory.reduceAdena(process, count, this, reference))
 			{
 				return false;
@@ -2958,7 +2948,7 @@ public class Player: Playable
 
 		if (count > 0)
 		{
-			Item beautyTickets = _inventory.getBeautyTicketsInstance();
+			Item? beautyTickets = _inventory.getBeautyTicketsInstance();
 			if (!_inventory.reduceBeautyTickets(process, count, this, reference))
 			{
 				return false;
@@ -3036,7 +3026,7 @@ public class Player: Playable
 
 		if (count > 0)
 		{
-			Item ancientAdenaItem = _inventory.getAncientAdenaInstance();
+			Item? ancientAdenaItem = _inventory.getAncientAdenaInstance();
 			if (!_inventory.reduceAncientAdena(process, count, this, reference))
 			{
 				return false;
@@ -3073,7 +3063,7 @@ public class Player: Playable
 	 * @param reference : WorldObject Object referencing current action like NPC selling item or previous item in transformation
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 */
-	public void addItem(string process, Item item, WorldObject reference, bool sendMessage)
+	public void addItem(string process, Item item, WorldObject? reference, bool sendMessage)
 	{
 		if (item.getCount() > 0)
 		{
@@ -3103,7 +3093,7 @@ public class Player: Playable
 			}
 
 			// Add the item to inventory
-			Item newitem = _inventory.addItem(process, item, this, reference);
+			Item? newitem = _inventory.addItem(process, item, this, reference);
 
 			// If over capacity, drop the item
 			if (!canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && !_inventory.validateCapacity(0, item.isQuestItem()) && newitem.isDropable() && (!newitem.isStackable() || newitem.getLastChange() != ItemChangeType.MODIFIED))
@@ -3116,7 +3106,7 @@ public class Player: Playable
 			}
 			else if (FortSiegeManager.getInstance().isCombat(item.getId()) && FortSiegeManager.getInstance().activateCombatFlag(this, item))
 			{
-				Fort fort = FortManager.getInstance().getFort(this);
+				Fort? fort = FortManager.getInstance().getFort(this);
 				fort.getSiege().announceToPlayer(new SystemMessagePacket(SystemMessageId.C1_HAS_ACQUIRED_THE_FLAG), getName());
 			}
 		}
@@ -3146,11 +3136,11 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return
 	 */
-	public Item addItem(string process, int itemId, long count, int enchantLevel, WorldObject? reference, bool sendMessage)
+	public Item? addItem(string process, int itemId, long count, int enchantLevel, WorldObject? reference, bool sendMessage)
 	{
 		if (count > 0)
 		{
-			ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+			ItemTemplate? item = ItemData.getInstance().getTemplate(itemId);
 			if (item == null)
 			{
 				LOGGER.Error("Item doesn't exist so cannot be added. Item ID: " + itemId);
@@ -3213,7 +3203,7 @@ public class Player: Playable
 			else
 			{
 				// Add the item to inventory
-				Item createdItem = _inventory.addItem(process, itemId, count, this, reference);
+				Item? createdItem = _inventory.addItem(process, itemId, count, this, reference);
 				if (enchantLevel > -1)
 				{
 					createdItem.setEnchantLevel(enchantLevel);
@@ -3267,9 +3257,9 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return bool informing if the action was successful
 	 */
-	public bool destroyItem(string process, Item item, long count, WorldObject? reference, bool sendMessage)
+	public bool destroyItem(string? process, Item item, long count, WorldObject? reference, bool sendMessage)
 	{
-		Item destoyedItem = _inventory.destroyItem(process, item, count, this, reference);
+		Item? destoyedItem = _inventory.destroyItem(process, item, count, this, reference);
 		if (destoyedItem == null)
 		{
 			if (sendMessage)
@@ -3325,7 +3315,7 @@ public class Player: Playable
 	 */
 	public override bool destroyItem(string process, int objectId, long count, WorldObject? reference, bool sendMessage)
 	{
-		Item item = _inventory.getItemByObjectId(objectId);
+		Item? item = _inventory.getItemByObjectId(objectId);
 		if (item == null)
 		{
 			if (sendMessage)
@@ -3348,7 +3338,7 @@ public class Player: Playable
 	 */
 	public bool destroyItemWithoutTrace(string process, int objectId, long count, WorldObject? reference, bool sendMessage)
 	{
-		Item item = _inventory.getItemByObjectId(objectId);
+		Item? item = _inventory.getItemByObjectId(objectId);
 		if (item == null || item.getCount() < count)
 		{
 			if (sendMessage)
@@ -3432,9 +3422,9 @@ public class Player: Playable
 	 * @param reference : WorldObject Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public Item transferItem(string process, int objectId, long count, Inventory target, WorldObject? reference)
+	public Item? transferItem(string process, int objectId, long count, Inventory target, WorldObject? reference)
 	{
-		Item oldItem = checkItemManipulation(objectId, count, "transfer");
+		Item? oldItem = checkItemManipulation(objectId, count, "transfer");
 		if (oldItem == null)
 		{
 			return null;
@@ -3533,9 +3523,9 @@ public class Player: Playable
 	 * @param protectItem whether or not dropped item must be protected temporary against other players
 	 * @return bool informing if the action was successful
 	 */
-	public bool dropItem(string process, Item item, WorldObject reference, bool sendMessage, bool protectItem)
+	public bool dropItem(string process, Item item, WorldObject? reference, bool sendMessage, bool protectItem)
 	{
-		Item droppedItem = _inventory.dropItem(process, item, this, reference);
+		Item? droppedItem = _inventory.dropItem(process, item, this, reference);
 		if (droppedItem == null)
 		{
 			if (sendMessage)
@@ -3588,7 +3578,7 @@ public class Player: Playable
 		return true;
 	}
 
-	public bool dropItem(string process, Item item, WorldObject reference, bool sendMessage)
+	public bool dropItem(string process, Item item, WorldObject? reference, bool sendMessage)
 	{
 		return dropItem(process, item, reference, sendMessage, false);
 	}
@@ -3606,10 +3596,10 @@ public class Player: Playable
 	 * @param protectItem
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public Item dropItem(string process, int objectId, long count, Location3D location, WorldObject? reference, bool sendMessage, bool protectItem)
+	public Item? dropItem(string process, int objectId, long count, Location3D location, WorldObject? reference, bool sendMessage, bool protectItem)
 	{
-		Item invitem = _inventory.getItemByObjectId(objectId);
-		Item item = _inventory.dropItem(process, objectId, count, this, reference);
+		Item? invitem = _inventory.getItemByObjectId(objectId);
+		Item? item = _inventory.dropItem(process, objectId, count, this, reference);
 		if (item == null)
 		{
 			if (sendMessage)
@@ -3660,7 +3650,7 @@ public class Player: Playable
 		return item;
 	}
 
-	public Item checkItemManipulation(int objectId, long count, string action)
+	public Item? checkItemManipulation(int objectId, long count, string action)
 	{
 		// TODO: if we remove objects that are not visible from the World, we'll have to remove this check
 		if (World.getInstance().findObject(objectId) == null)
@@ -3669,7 +3659,7 @@ public class Player: Playable
 			return null;
 		}
 
-		Item item = _inventory.getItemByObjectId(objectId);
+		Item? item = _inventory.getItemByObjectId(objectId);
 		if (item == null || item.getOwnerId() != ObjectId)
 		{
 			LOGGER.Info(ObjectId + ": player tried to " + action + " item he is not owner of");
@@ -3883,7 +3873,7 @@ public class Player: Playable
 		bool needCpUpdate = this.needCpUpdate();
 		bool needHpUpdate = this.needHpUpdate();
 		bool needMpUpdate = this.needMpUpdate();
-		Party party = getParty();
+		Party? party = getParty();
 
 		// Check if a party is in progress and party window update is usefull
 		if (_party != null && (needCpUpdate || needHpUpdate || needMpUpdate))
@@ -3906,7 +3896,7 @@ public class Player: Playable
 
 		if (_inOlympiadMode && _olympiadStart && (needCpUpdate || needHpUpdate))
 		{
-			OlympiadGameTask game = OlympiadGameManager.getInstance().getOlympiadTask(getOlympiadGameId());
+			OlympiadGameTask? game = OlympiadGameManager.getInstance().getOlympiadTask(getOlympiadGameId());
 			if (game != null && game.isBattleStarted())
 			{
 				game.getStadium().broadcastStatusUpdate(this);
@@ -3985,14 +3975,14 @@ public class Player: Playable
 						// Update relation.
 						long relation = getRelation(player);
 						bool isAutoAttackable = this.isAutoAttackable(player);
-						RelationCache oldrelation = getKnownRelations().get(player.ObjectId);
+						RelationCache? oldrelation = getKnownRelations().get(player.ObjectId);
 						if (oldrelation == null || oldrelation.getRelation() != relation || oldrelation.isAutoAttackable() != isAutoAttackable)
 						{
 							RelationChangedPacket rc = new RelationChangedPacket();
 							rc.addRelation(this, relation, isAutoAttackable);
 							if (hasSummon())
 							{
-								Summon pet = getPet();
+								Summon? pet = getPet();
 								if (pet != null)
 								{
 									rc.addRelation(pet, relation, isAutoAttackable);
@@ -4290,7 +4280,7 @@ public class Player: Playable
 		// Auto use herbs - pick up
 		if (target.getTemplate().hasExImmediateEffect())
 		{
-			IItemHandler handler = ItemHandler.getInstance().getHandler(target.getEtcItem());
+			IItemHandler? handler = ItemHandler.getInstance().getHandler(target.getEtcItem());
 			if (handler == null)
 			{
 				LOGGER.Warn("No item handler registered for item ID: " + target.getId() + ".");
@@ -4313,7 +4303,7 @@ public class Player: Playable
 		else
 		{
 			// if item is instance of ArmorType or WeaponType broadcast an "Attention" system message
-			if (target.getItemType() is ArmorType || target.getItemType() is WeaponType)
+			if (target.getItemType().IsArmor() || target.getItemType().IsWeapon())
 			{
 				if (target.getEnchantLevel() > 0)
 				{
@@ -4462,7 +4452,7 @@ public class Player: Playable
 		}
 
 		// Get the current target
-		WorldObject oldTarget = getTarget();
+		WorldObject? oldTarget = getTarget();
 		if (oldTarget != null)
 		{
 			if (oldTarget.Equals(newTarget)) // no target change?
@@ -4533,46 +4523,43 @@ public class Player: Playable
 	{
 		Item? weapon = getActiveWeaponInstance();
 		if (weapon == null)
-		{
 			return _fistsWeaponItem;
-		}
-		return (Weapon) weapon.getTemplate();
+
+		return (Weapon)weapon.getTemplate();
 	}
 
-	public Item getChestArmorInstance()
+	public Item? getChestArmorInstance()
 	{
 		return _inventory.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
 	}
 
-	public Item getLegsArmorInstance()
+	public Item? getLegsArmorInstance()
 	{
 		return _inventory.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
 	}
 
-	public Armor getActiveChestArmorItem()
+	public Armor? getActiveChestArmorItem()
 	{
-		Item armor = getChestArmorInstance();
+		Item? armor = getChestArmorInstance();
 		if (armor == null)
-		{
 			return null;
-		}
-		return (Armor) armor.getTemplate();
+
+        return (Armor) armor.getTemplate();
 	}
 
-	public Armor getActiveLegsArmorItem()
+	public Armor? getActiveLegsArmorItem()
 	{
-		Item legs = getLegsArmorInstance();
+		Item? legs = getLegsArmorInstance();
 		if (legs == null)
-		{
 			return null;
-		}
-		return (Armor) legs.getTemplate();
+
+        return (Armor) legs.getTemplate();
 	}
 
 	public bool isWearingHeavyArmor()
 	{
-		Item legs = getLegsArmorInstance();
-		Item armor = getChestArmorInstance();
+		Item? legs = getLegsArmorInstance();
+		Item? armor = getChestArmorInstance();
 		if (armor != null && legs != null && legs.getItemType() == ArmorType.HEAVY && armor.getItemType() == ArmorType.HEAVY)
 		{
 			return true;
@@ -4582,19 +4569,18 @@ public class Player: Playable
 
 	public bool isWearingLightArmor()
 	{
-		Item legs = getLegsArmorInstance();
-		Item armor = getChestArmorInstance();
+		Item? legs = getLegsArmorInstance();
+		Item? armor = getChestArmorInstance();
 		if (armor != null && legs != null && legs.getItemType() == ArmorType.LIGHT && armor.getItemType() == ArmorType.LIGHT)
-		{
 			return true;
-		}
-		return armor != null && _inventory.getPaperdollItem(Inventory.PAPERDOLL_CHEST).getTemplate().getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR && armor.getItemType() == ArmorType.LIGHT;
+
+        return armor != null && _inventory.getPaperdollItem(Inventory.PAPERDOLL_CHEST).getTemplate().getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR && armor.getItemType() == ArmorType.LIGHT;
 	}
 
 	public bool isWearingMagicArmor()
 	{
-		Item legs = getLegsArmorInstance();
-		Item armor = getChestArmorInstance();
+		Item? legs = getLegsArmorInstance();
+		Item? armor = getChestArmorInstance();
 		if (armor != null && legs != null && legs.getItemType() == ArmorType.MAGIC && armor.getItemType() == ArmorType.MAGIC)
 		{
 			return true;
@@ -4605,7 +4591,7 @@ public class Player: Playable
 	/**
 	 * Return the secondary weapon instance (always equipped in the left hand).
 	 */
-	public override Item getSecondaryWeaponInstance()
+	public override Item? getSecondaryWeaponInstance()
 	{
 		return _inventory.getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 	}
@@ -4614,13 +4600,12 @@ public class Player: Playable
 	 * Return the secondary Item item (always equipped in the left hand).<br>
 	 * Arrows, Shield..
 	 */
-	public override ItemTemplate getSecondaryWeaponItem()
+	public override ItemTemplate? getSecondaryWeaponItem()
 	{
-		Item item = _inventory.getPaperdollItem(Inventory.PAPERDOLL_LHAND);
+		Item? item = _inventory.getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 		if (item != null)
-		{
 			return item.getTemplate();
-		}
+
 		return null;
 	}
 
@@ -4643,11 +4628,11 @@ public class Player: Playable
 			removeRequest<AutoPeelRequest>();
 		}
 
-		ICollection<Item> droppedItems = null;
+		ICollection<Item>? droppedItems = null;
 
 		if (killer != null)
 		{
-			Player pk = killer.getActingPlayer();
+			Player? pk = killer.getActingPlayer();
 			bool fpcKill = killer.isFakePlayer();
 			if (pk != null || fpcKill)
 			{
@@ -4739,7 +4724,7 @@ public class Player: Playable
 			}
 			else if (_combatFlagEquippedId)
 			{
-				Fort fort = FortManager.getInstance().getFort(this);
+				Fort? fort = FortManager.getInstance().getFort(this);
 				if (fort != null)
 				{
 					FortSiegeManager.getInstance().dropCombatFlag(this, fort.getResidenceId());
@@ -4759,10 +4744,10 @@ public class Player: Playable
 					droppedItems = onDieDropItem(killer); // Check if any item should be dropped
 					if (!insidePvpZone && pk != null)
 					{
-						Clan pkClan = pk.getClan();
+						Clan? pkClan = pk.getClan();
 						if (pkClan != null && _clan != null && !isAcademyMember() && !pk.isAcademyMember())
 						{
-							ClanWar clanWar = _clan.getWarWith(pkClan.getId());
+							ClanWar? clanWar = _clan.getWarWith(pkClan.getId());
 							if (clanWar != null && AntiFeedManager.getInstance().check(killer, this))
 							{
 								clanWar.onKill(pk, this);
@@ -4881,7 +4866,7 @@ public class Player: Playable
 			return droppedItems;
 		}
 
-		Player pk = killer.getActingPlayer();
+		Player? pk = killer.getActingPlayer();
 		if (getReputation() >= 0 && pk != null && pk.getClan() != null && getClan() != null && pk.getClan().isAtWarWith(_clanId.Value))
             // || _clan.isAtWarWith(((Player)killer).getClanId())
         {
@@ -4980,7 +4965,7 @@ public class Player: Playable
 		}
 
 		// Avoid nulls && check if player != killedPlayer
-		Player killedPlayer = target.getActingPlayer();
+		Player? killedPlayer = target.getActingPlayer();
 		if (killedPlayer == null || this == killedPlayer)
 		{
 			return;
@@ -5010,7 +4995,7 @@ public class Player: Playable
 		{
 			if (!isSiegeFriend(killedPlayer))
 			{
-				Clan targetClan = killedPlayer.getClan();
+				Clan? targetClan = killedPlayer.getClan();
 				if (_clan != null && targetClan != null)
 				{
 					_clan.addSiegeKill();
@@ -5140,7 +5125,7 @@ public class Player: Playable
 
 	public void updatePvPStatus(Creature target)
 	{
-		Player targetPlayer = target.getActingPlayer();
+		Player? targetPlayer = target.getActingPlayer();
 		if (targetPlayer == null)
 		{
 			return;
@@ -5382,9 +5367,9 @@ public class Player: Playable
 	/**
 	 * @return the Player requester of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).
 	 */
-	public Player getActiveRequester()
+	public Player? getActiveRequester()
 	{
-		Player requester = _activeRequester;
+		Player? requester = _activeRequester;
 		if (requester != null && requester.isRequestExpired() && _activeTradeList == null)
 		{
 			_activeRequester = null;
@@ -5703,7 +5688,7 @@ public class Player: Playable
 	 */
 	protected override bool checkAndEquipAmmunition(EtcItemType type)
 	{
-		Item ammunition = null;
+		Item? ammunition = null;
 		Weapon weapon = getActiveWeaponItem();
 		if (type == EtcItemType.ARROW)
 		{
@@ -5794,7 +5779,7 @@ public class Player: Playable
 	public bool disarmWeapons()
 	{
 		// If there is no weapon to disarm then return true.
-		Item wpn = _inventory.getPaperdollItem(Inventory.PAPERDOLL_RHAND);
+		Item? wpn = _inventory.getPaperdollItem(Inventory.PAPERDOLL_RHAND);
 		if (wpn == null)
 		{
 			return true;
@@ -5852,7 +5837,7 @@ public class Player: Playable
 	 */
 	public bool disarmShield()
 	{
-		Item sld = _inventory.getPaperdollItem(Inventory.PAPERDOLL_LHAND);
+		Item? sld = _inventory.getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 		if (sld != null)
 		{
 			List<Item> unequipped = _inventory.unEquipItemInBodySlotAndRecord(sld.getTemplate().getBodyPart());
@@ -5935,102 +5920,111 @@ public class Player: Playable
 	public bool mountPlayer(Summon? pet)
 	{
 		if (pet != null && pet.isMountable() && !isMounted() && !isBetrayed())
-		{
-			if (isDead())
+        {
+            if (isDead())
 			{
 				// A strider cannot be ridden when dead
 				sendPacket(ActionFailedPacket.STATIC_PACKET);
 				sendPacket(SystemMessageId.A_MOUNT_CANNOT_BE_RIDDEN_WHEN_DEAD);
 				return false;
 			}
-			else if (pet.isDead())
-			{
-				// A dead strider cannot be ridden.
-				sendPacket(ActionFailedPacket.STATIC_PACKET);
-				sendPacket(SystemMessageId.A_DEAD_MOUNT_CANNOT_BE_RIDDEN);
-				return false;
-			}
-			else if (pet.isInCombat() || pet.isRooted())
-			{
-				// A strider in battle cannot be ridden
-				sendPacket(ActionFailedPacket.STATIC_PACKET);
-				sendPacket(SystemMessageId.A_MOUNT_IN_BATTLE_CANNOT_BE_RIDDEN);
-				return false;
-			}
-			else if (isInCombat())
-			{
-				// A strider cannot be ridden while in battle
-				sendPacket(ActionFailedPacket.STATIC_PACKET);
-				sendPacket(SystemMessageId.A_MOUNT_CANNOT_BE_RIDDEN_WHILE_IN_BATTLE);
-				return false;
-			}
-			else if (_waitTypeSitting)
-			{
-				// A strider can be ridden only when standing
-				sendPacket(ActionFailedPacket.STATIC_PACKET);
-				sendPacket(SystemMessageId.A_MOUNT_CAN_BE_RIDDEN_ONLY_WHEN_STANDING);
-				return false;
-			}
-			else if (isFishing())
-			{
-				// You can't mount, dismount, break and drop items while fishing
-				sendPacket(ActionFailedPacket.STATIC_PACKET);
-				sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_FISHING_2);
-				return false;
-			}
-			else if (isTransformed() || isCursedWeaponEquipped())
-			{
-				// no message needed, player while transformed doesn't have mount action
-				sendPacket(ActionFailedPacket.STATIC_PACKET);
-				return false;
-			}
-			else if (_inventory.getItemByItemId(FortManager.ORC_FORTRESS_FLAG) != null)
-			{
-				sendPacket(ActionFailedPacket.STATIC_PACKET);
-				// FIXME: Wrong Message
-				sendMessage("You cannot mount a steed while holding a flag.");
-				return false;
-			}
-			else if (pet.isHungry())
-			{
-				sendPacket(ActionFailedPacket.STATIC_PACKET);
-				sendPacket(SystemMessageId.A_HUNGRY_MOUNT_CANNOT_BE_MOUNTED_OR_DISMOUNTED);
-				return false;
-			}
-			else if (!Util.checkIfInRange(200, this, pet, true))
-			{
-				sendPacket(ActionFailedPacket.STATIC_PACKET);
-				sendPacket(SystemMessageId.YOU_ARE_TOO_FAR_AWAY_FROM_YOUR_MOUNT_TO_RIDE);
-				return false;
-			}
-			else if (!pet.isDead() && !isMounted())
-			{
-				mount(pet);
-			}
-		}
+
+            if (pet.isDead())
+            {
+                // A dead strider cannot be ridden.
+                sendPacket(ActionFailedPacket.STATIC_PACKET);
+                sendPacket(SystemMessageId.A_DEAD_MOUNT_CANNOT_BE_RIDDEN);
+                return false;
+            }
+
+            if (pet.isInCombat() || pet.isRooted())
+            {
+                // A strider in battle cannot be ridden
+                sendPacket(ActionFailedPacket.STATIC_PACKET);
+                sendPacket(SystemMessageId.A_MOUNT_IN_BATTLE_CANNOT_BE_RIDDEN);
+                return false;
+            }
+
+            if (isInCombat())
+            {
+                // A strider cannot be ridden while in battle
+                sendPacket(ActionFailedPacket.STATIC_PACKET);
+                sendPacket(SystemMessageId.A_MOUNT_CANNOT_BE_RIDDEN_WHILE_IN_BATTLE);
+                return false;
+            }
+
+            if (_waitTypeSitting)
+            {
+                // A strider can be ridden only when standing
+                sendPacket(ActionFailedPacket.STATIC_PACKET);
+                sendPacket(SystemMessageId.A_MOUNT_CAN_BE_RIDDEN_ONLY_WHEN_STANDING);
+                return false;
+            }
+
+            if (isFishing())
+            {
+                // You can't mount, dismount, break and drop items while fishing
+                sendPacket(ActionFailedPacket.STATIC_PACKET);
+                sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_FISHING_2);
+                return false;
+            }
+
+            if (isTransformed() || isCursedWeaponEquipped())
+            {
+                // no message needed, player while transformed doesn't have mount action
+                sendPacket(ActionFailedPacket.STATIC_PACKET);
+                return false;
+            }
+
+            if (_inventory.getItemByItemId(FortManager.ORC_FORTRESS_FLAG) != null)
+            {
+                sendPacket(ActionFailedPacket.STATIC_PACKET);
+                // FIXME: Wrong Message
+                sendMessage("You cannot mount a steed while holding a flag.");
+                return false;
+            }
+
+            if (pet.isHungry())
+            {
+                sendPacket(ActionFailedPacket.STATIC_PACKET);
+                sendPacket(SystemMessageId.A_HUNGRY_MOUNT_CANNOT_BE_MOUNTED_OR_DISMOUNTED);
+                return false;
+            }
+
+            if (!Util.checkIfInRange(200, this, pet, true))
+            {
+                sendPacket(ActionFailedPacket.STATIC_PACKET);
+                sendPacket(SystemMessageId.YOU_ARE_TOO_FAR_AWAY_FROM_YOUR_MOUNT_TO_RIDE);
+                return false;
+            }
+
+            if (!pet.isDead() && !isMounted())
+            {
+                mount(pet);
+            }
+        }
 		else if (isRentedPet())
 		{
 			stopRentPet();
 		}
 		else if (isMounted())
-		{
-			if (_mountType == MountType.WYVERN && isInsideZone(ZoneId.NO_LANDING))
+        {
+            if (_mountType == MountType.WYVERN && isInsideZone(ZoneId.NO_LANDING))
 			{
 				sendPacket(ActionFailedPacket.STATIC_PACKET);
 				sendPacket(SystemMessageId.YOU_ARE_NOT_ALLOWED_TO_DISMOUNT_IN_THIS_LOCATION);
 				return false;
 			}
-			else if (isHungry())
-			{
-				sendPacket(ActionFailedPacket.STATIC_PACKET);
-				sendPacket(SystemMessageId.A_HUNGRY_MOUNT_CANNOT_BE_MOUNTED_OR_DISMOUNTED);
-				return false;
-			}
-			else
-			{
-				dismount();
-			}
-		}
+
+            if (isHungry())
+            {
+                sendPacket(ActionFailedPacket.STATIC_PACKET);
+                sendPacket(SystemMessageId.A_HUNGRY_MOUNT_CANNOT_BE_MOUNTED_OR_DISMOUNTED);
+                return false;
+            }
+
+            dismount();
+        }
 		return true;
 	}
 
@@ -6178,7 +6172,7 @@ public class Player: Playable
 	 */
 	public void setAccessLevel(int level, bool broadcast, bool updateInDb)
 	{
-		AccessLevel accessLevel = AdminData.getInstance().getAccessLevel(level);
+		AccessLevel? accessLevel = AdminData.getInstance().getAccessLevel(level);
 		if (accessLevel == null)
 		{
 			LOGGER.Warn("Can't find access level " + level + " for " + this);
@@ -6280,7 +6274,7 @@ public class Player: Playable
 
 			long relation = getRelation(player);
 			bool isAutoAttackable = this.isAutoAttackable(player);
-			RelationCache oldrelation = getKnownRelations().get(player.ObjectId);
+			RelationCache? oldrelation = getKnownRelations().get(player.ObjectId);
 			if (oldrelation == null || oldrelation.getRelation() != relation || oldrelation.isAutoAttackable() != isAutoAttackable)
 			{
 				RelationChangedPacket rc = new RelationChangedPacket();
@@ -6419,229 +6413,218 @@ public class Player: Playable
 	 * @param objectId Identifier of the object to initialized
 	 * @return The Player loaded from the database
 	 */
-	private static Player restore(int objectId)
+	private static Player? restore(int objectId)
 	{
-		Player player = null;
-		double currentCp = 0;
-		double currentHp = 0;
-		double currentMp = 0;
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			// Retrieve the Player from the characters table of the database
 			Character? character = ctx.Characters.SingleOrDefault(c => c.Id == objectId);
-			if (character is not null)
-			{
-				// Retrieve account name
-				int accountId = character.AccountId;
-				string accountName = ctx.AccountRefs.Where(a => a.Id == accountId).Select(a => a.Login).Single();
+            if (character is null)
+                return null;
 
-				CharacterClass activeClassId = character.Class;
-				PlayerTemplate template = PlayerTemplateData.getInstance().getTemplate(activeClassId);
-				PlayerAppearance app = new PlayerAppearance(character.Face, character.HairColor, character.HairStyle, character.Sex);
-				player = new Player(objectId, template, accountId, accountName, app);
-				player.setName(character.Name);
-				player.setLastAccess(character.LastAccess);
+            // Retrieve account name
+            int accountId = character.AccountId;
+            string accountName = ctx.AccountRefs.Where(a => a.Id == accountId).Select(a => a.Login).Single();
 
-				player.getStat().setExp(character.Exp);
-				player.setExpBeforeDeath(character.ExpBeforeDeath);
-				player.getStat().setLevel(character.Level);
-				player.getStat().setSp(character.Sp);
+            CharacterClass activeClassId = character.Class;
+            PlayerTemplate? template = PlayerTemplateData.getInstance().getTemplate(activeClassId);
+            PlayerAppearance app = new PlayerAppearance(character.Face, character.HairColor, character.HairStyle, character.Sex);
+            Player player = new Player(objectId, template, accountId, accountName, app);
+            player.setName(character.Name);
+            player.setLastAccess(character.LastAccess);
 
-				player.setWantsPeace(character.WantsPeace);
+            player.getStat().setExp(character.Exp);
+            player.setExpBeforeDeath(character.ExpBeforeDeath);
+            player.getStat().setLevel(character.Level);
+            player.getStat().setSp(character.Sp);
 
-				player.setHeading(character.Heading);
+            player.setWantsPeace(character.WantsPeace);
 
-				player.setInitialReputation(character.Reputation);
-				player.setFame(character.Fame);
-				player.setRaidbossPoints(character.RaidBossPoints);
-				player.setPvpKills(character.PvpKills);
-				player.setPkKills(character.PkKills);
-				player.setOnlineTime(character.OnlineTime);
-				player.setNoble(character.IsNobless);
+            player.setHeading(character.Heading);
 
-				byte? factionId = character.Faction;
-				if (factionId == 1)
-				{
-					player.setGood();
-				}
+            player.setInitialReputation(character.Reputation);
+            player.setFame(character.Fame);
+            player.setRaidbossPoints(character.RaidBossPoints);
+            player.setPvpKills(character.PvpKills);
+            player.setPkKills(character.PkKills);
+            player.setOnlineTime(character.OnlineTime);
+            player.setNoble(character.IsNobless);
 
-				if (factionId == 2)
-				{
-					player.setEvil();
-				}
+            byte? factionId = character.Faction;
+            if (factionId == 1)
+            {
+                player.setGood();
+            }
 
-				player.setClanJoinExpiryTime(character.ClanJoinExpiryTime);
-				if (player.getClanJoinExpiryTime() < DateTime.UtcNow)
-				{
-					player.setClanJoinExpiryTime(null);
-				}
+            if (factionId == 2)
+            {
+                player.setEvil();
+            }
 
-				player.setClanCreateExpiryTime(character.ClanCreateExpiryTime);
-				if (player.getClanCreateExpiryTime() < DateTime.UtcNow)
-				{
-					player.setClanCreateExpiryTime(null);
-				}
+            player.setClanJoinExpiryTime(character.ClanJoinExpiryTime);
+            if (player.getClanJoinExpiryTime() < DateTime.UtcNow)
+            {
+                player.setClanJoinExpiryTime(null);
+            }
 
-				player.setPcCafePoints(character.PcCafePoints);
+            player.setClanCreateExpiryTime(character.ClanCreateExpiryTime);
+            if (player.getClanCreateExpiryTime() < DateTime.UtcNow)
+            {
+                player.setClanCreateExpiryTime(null);
+            }
 
-				int? clanId = character.ClanId;
-				player.setPowerGrade(character.PowerGrade);
-				player.getStat().setVitalityPoints(character.VitalityPoints);
-				player.setPledgeType(character.SubPledge);
-				// player.setApprentice(rset.getInt("apprentice"));
+            player.setPcCafePoints(character.PcCafePoints);
 
-				if (clanId != null)
-				{
-					player.setClan(ClanTable.getInstance().getClan(clanId.Value));
-				}
+            int? clanId = character.ClanId;
+            player.setPowerGrade(character.PowerGrade);
+            player.getStat().setVitalityPoints(character.VitalityPoints);
+            player.setPledgeType(character.SubPledge);
+            // player.setApprentice(rset.getInt("apprentice"));
 
-				if (player.getClan() != null)
-				{
-					if (player.getClan().getLeaderId() != player.ObjectId)
-					{
-						if (player.getPowerGrade() == 0)
-						{
-							player.setPowerGrade(5);
-						}
+            if (clanId != null)
+            {
+                player.setClan(ClanTable.getInstance().getClan(clanId.Value));
+            }
 
-						player.setClanPrivileges(player.getClan().getRankPrivs(player.getPowerGrade()));
-					}
-					else
-					{
-						player.setClanPrivileges(ClanPrivilege.All);
-						player.setPowerGrade(1);
-					}
+            Clan? clan = player.getClan();
+            if (clan != null)
+            {
+                if (clan.getLeaderId() != player.ObjectId)
+                {
+                    if (player.getPowerGrade() == 0)
+                    {
+                        player.setPowerGrade(5);
+                    }
 
-					player.setPledgeClass(ClanMember.calculatePledgeClass(player));
-				}
-				else
-				{
-					if (player.isNoble())
-					{
-						player.setPledgeClass(SocialClass.ELDER);
-					}
+                    player.setClanPrivileges(clan.getRankPrivs(player.getPowerGrade()));
+                }
+                else
+                {
+                    player.setClanPrivileges(ClanPrivilege.All);
+                    player.setPowerGrade(1);
+                }
 
-					if (player.isHero())
-					{
-						player.setPledgeClass(SocialClass.COUNT);
-					}
+                player.setPledgeClass(ClanMember.calculatePledgeClass(player));
+            }
+            else
+            {
+                if (player.isNoble())
+                {
+                    player.setPledgeClass(SocialClass.ELDER);
+                }
 
-					player.setClanPrivileges(ClanPrivilege.None);
-				}
+                if (player.isHero())
+                {
+                    player.setPledgeClass(SocialClass.COUNT);
+                }
 
-				player.setTotalDeaths(character.Deaths);
-				player.setTotalKills(character.Kills);
-				player.setDeleteTimer(character.DeleteTime);
-				player.setTitle(character.Title);
-				player.setAccessLevel(character.AccessLevel, false, false);
-				int titleColor = character.TitleColor;
-				if (titleColor != PlayerAppearance.DEFAULT_TITLE_COLOR)
-				{
-					player.getAppearance().setTitleColor(new Color(titleColor));
-				}
+                player.setClanPrivileges(ClanPrivilege.None);
+            }
 
-				player.setFistsWeaponItem(player.findFistsWeaponItem(activeClassId));
-				player.setUptime(DateTime.UtcNow);
+            player.setTotalDeaths(character.Deaths);
+            player.setTotalKills(character.Kills);
+            player.setDeleteTimer(character.DeleteTime);
+            player.setTitle(character.Title ?? string.Empty);
+            player.setAccessLevel(character.AccessLevel, false, false);
+            int titleColor = character.TitleColor;
+            if (titleColor != PlayerAppearance.DEFAULT_TITLE_COLOR)
+            {
+                player.getAppearance().setTitleColor(new Color(titleColor));
+            }
 
-				currentHp = character.CurrentHp;
-				currentCp = character.CurrentCp;
-				currentMp = character.CurrentMp;
-				player.setClassIndex(0);
-				try
-				{
-					player.setBaseClass(character.BaseClass);
-				}
-				catch (Exception e)
-				{
-					player.setBaseClass(activeClassId);
-					LOGGER.Warn(
-						"Exception during player.setBaseClass for player: " + player + " base class: " +
-						character.BaseClass, e);
-				}
+            player.setFistsWeaponItem(player.findFistsWeaponItem(activeClassId));
+            player.setUptime(DateTime.UtcNow);
 
-				// Restore Subclass Data (cannot be done earlier in function)
-				if (restoreSubClassData(player) && activeClassId != player.getBaseClass())
-				{
-					foreach (SubClassHolder subClass in player.getSubClasses().Values)
-					{
-						if (subClass.getClassDefinition() == activeClassId)
-						{
-							player.setClassIndex(subClass.getClassIndex());
-						}
-					}
-				}
+            player.setClassIndex(0);
+            try
+            {
+                player.setBaseClass(character.BaseClass);
+            }
+            catch (Exception e)
+            {
+                player.setBaseClass(activeClassId);
+                LOGGER.Warn(
+                    "Exception during player.setBaseClass for player: " + player + " base class: " +
+                    character.BaseClass, e);
+            }
 
-				if (player.getClassIndex() == 0 && activeClassId != player.getBaseClass())
-				{
-					// Subclass in use but doesn't exist in DB -
-					// a possible restart-while-modifysubclass cheat has been attempted.
-					// Switching to use base class
-					player.setClassId(player.getBaseClass());
-					LOGGER.Warn(player +
-					            " reverted to base class. Possibly has tried a relogin exploit while subclassing.");
-				}
-				else
-				{
-					player._activeClass = activeClassId;
-				}
+            // Restore Subclass Data (cannot be done earlier in function)
+            if (restoreSubClassData(player) && activeClassId != player.getBaseClass())
+            {
+                foreach (SubClassHolder subClass in player.getSubClasses().Values)
+                {
+                    if (subClass.getClassDefinition() == activeClassId)
+                    {
+                        player.setClassIndex(subClass.getClassIndex());
+                    }
+                }
+            }
 
-				if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS,
-					    player.getBaseTemplate().getClassId()))
-				{
-					player._isDeathKnight = true;
-				}
-				else if (CategoryData.getInstance()
-				         .isInCategory(CategoryType.VANGUARD_ALL_CLASS, player.getBaseTemplate().getClassId()))
-				{
-					player._isVanguard = true;
-				}
-				else if (CategoryData.getInstance()
-				         .isInCategory(CategoryType.ASSASSIN_ALL_CLASS, player.getBaseTemplate().getClassId()))
-				{
-					player._isAssassin = true;
-				}
+            if (player.getClassIndex() == 0 && activeClassId != player.getBaseClass())
+            {
+                // Subclass in use but doesn't exist in DB -
+                // a possible restart-while-modifysubclass cheat has been attempted.
+                // Switching to use base class
+                player.setClassId(player.getBaseClass());
+                LOGGER.Warn(player +
+                    " reverted to base class. Possibly has tried a relogin exploit while subclassing.");
+            }
+            else
+            {
+                player._activeClass = activeClassId;
+            }
 
-				player.setApprentice(character.Apprentice);
-				player.setSponsor(character.SponsorId);
-				player.setLvlJoinedAcademy(character.LevelJoinedAcademy);
+            if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS,
+                    player.getBaseTemplate().getClassId()))
+            {
+                player._isDeathKnight = true;
+            }
+            else if (CategoryData.getInstance()
+                     .isInCategory(CategoryType.VANGUARD_ALL_CLASS, player.getBaseTemplate().getClassId()))
+            {
+                player._isVanguard = true;
+            }
+            else if (CategoryData.getInstance()
+                     .isInCategory(CategoryType.ASSASSIN_ALL_CLASS, player.getBaseTemplate().getClassId()))
+            {
+                player._isAssassin = true;
+            }
 
-				// Set Hero status if it applies.
-				player.setHero(Hero.getInstance().isHero(objectId));
+            player.setApprentice(character.Apprentice);
+            player.setSponsor(character.SponsorId);
+            player.setLvlJoinedAcademy(character.LevelJoinedAcademy);
 
-				CursedWeaponsManager.getInstance().checkPlayer(player);
+            // Set Hero status if it applies.
+            player.setHero(Hero.getInstance().isHero(objectId));
 
-				// Set the x,y,z position of the Player and make it invisible
-				Location3D location = new(character.X, character.Y, character.Z);
-				player.setXYZInvisible(location);
-				player.setLastServerPosition(location);
+            CursedWeaponsManager.getInstance().checkPlayer(player);
 
-				// Set Teleport Bookmark Slot
-				player.setBookMarkSlot(character.BookmarkSlot);
+            // Set the x,y,z position of the Player and make it invisible
+            Location3D location = new(character.X, character.Y, character.Z);
+            player.setXYZInvisible(location);
+            player.setLastServerPosition(location);
 
-				// character creation Time
-				player.setCreateDate(character.Created);
+            // Set Teleport Bookmark Slot
+            player.setBookMarkSlot(character.BookmarkSlot);
 
-				// Language
-				player.setLang(character.Language);
+            // character creation Time
+            player.setCreateDate(character.Created);
 
-				// Retrieve the name and ID of the other characters assigned to this account.
-				var query = ctx.Characters.Where(c => c.AccountId == accountId)
-					.Select(c => new { c.Id, c.Name, c.SlotIndex });
+            // Language
+            player.setLang(character.Language);
 
-				foreach (var record in query)
-				{
-					player._chars.put(record.Id, record.Name);
-				}
-			}
+            // Retrieve the name and ID of the other characters assigned to this account.
+            var query = ctx.Characters.Where(c => c.AccountId == accountId)
+                .Select(c => new { c.Id, c.Name, c.SlotIndex });
 
-			if (player == null)
-			{
-				return null;
-			}
+            foreach (var record in query)
+            {
+                player._chars.put(record.Id, record.Name);
+            }
 
-			if (player.Events.HasSubscribers<OnPlayerLoad>())
+            if (player.Events.HasSubscribers<OnPlayerLoad>())
 			{
 				player.Events.NotifyAsync(new OnPlayerLoad(player));
 			}
@@ -6675,7 +6658,11 @@ public class Player: Playable
 			player.initStatusUpdateCache();
 
 			// Restore current Cp, HP and MP values
-			player.setCurrentCp(currentCp);
+            double currentCp = character.CurrentCp;
+            double currentHp = character.CurrentHp;
+            double currentMp = character.CurrentMp;
+
+            player.setCurrentCp(currentCp);
 			player.setCurrentHp(currentHp);
 			player.setCurrentMp(currentMp);
 
@@ -6688,7 +6675,7 @@ public class Player: Playable
 
 			// Restore pet if exists in the world
 			player.setPet(World.getInstance().getPet(player.ObjectId));
-			Summon pet = player.getPet();
+			Summon? pet = player.getPet();
 			if (pet != null)
 			{
 				pet.setOwner(player);
@@ -6725,18 +6712,20 @@ public class Player: Playable
 			{
 				player.getAchievementBox().restore();
 			}
+
+            return player;
 		}
 		catch (Exception e)
-		{
-			LOGGER.Error("Failed loading character: "+e);
-		}
-		return player;
+        {
+            LOGGER.Error("Failed loading character: " + e);
+            return null;
+        }
 	}
 
 	/**
 	 * @return
 	 */
-	public Forum getMail()
+	public Forum? getMail()
 	{
 		if (_forumMail == null)
 		{
@@ -6748,30 +6737,36 @@ public class Player: Playable
 				setMail(ForumsBBSManager.getInstance().getForumByName("MailRoot").getChildByName(getName()));
 			}
 		}
+
 		return _forumMail;
 	}
 
-	public void setMail(Forum forum)
+	public void setMail(Forum? forum)
 	{
 		_forumMail = forum;
 	}
 
-	public Forum getMemo()
+	public Forum? getMemo()
 	{
 		if (_forumMemo == null)
 		{
-			setMemo(ForumsBBSManager.getInstance().getForumByName("MemoRoot").getChildByName(_accountName));
+            Forum? rootForum = ForumsBBSManager.getInstance().getForumByName("MemoRoot");
+            if (rootForum == null)
+                return null;
+
+			setMemo(rootForum.getChildByName(_accountName));
 
 			if (_forumMemo == null)
 			{
-				ForumsBBSManager.getInstance().createNewForum(_accountName, ForumsBBSManager.getInstance().getForumByName("MemoRoot"), Forum.MEMO, Forum.OWNERONLY, ObjectId);
-				setMemo(ForumsBBSManager.getInstance().getForumByName("MemoRoot").getChildByName(_accountName));
+				ForumsBBSManager.getInstance().createNewForum(_accountName, rootForum, Forum.MEMO, Forum.OWNERONLY, ObjectId);
+				setMemo(rootForum.getChildByName(_accountName));
 			}
 		}
+
 		return _forumMemo;
 	}
 
-	public void setMemo(Forum forum)
+	public void setMemo(Forum? forum)
 	{
 		_forumMemo = forum;
 	}
@@ -6896,7 +6891,7 @@ public class Player: Playable
 			RecipeData rd = RecipeData.getInstance();
             foreach (var record in query)
             {
-	            RecipeList recipe = rd.getRecipeList(record.Id);
+	            RecipeList? recipe = rd.getRecipeList(record.Id);
 	            if (loadCommon)
 				{
 					if (record.Type == 1)
@@ -7008,13 +7003,13 @@ public class Player: Playable
 
 		storeDualInventory();
 
-		PlayerVariables vars = getScript<PlayerVariables>();
+		PlayerVariables? vars = getScript<PlayerVariables>();
 		if (vars != null)
 		{
 			vars.storeMe();
 		}
 
-		AccountVariables aVars = getScript<AccountVariables>();
+		AccountVariables? aVars = getScript<AccountVariables>();
 		if (aVars != null)
 		{
 			aVars.storeMe();
@@ -7255,7 +7250,7 @@ public class Player: Playable
 
 					storedSkills.Add(skill.getReuseHashCode());
 
-					TimeStamp t = getSkillReuseTimeStamp(skill.getReuseHashCode());
+					TimeStamp? t = getSkillReuseTimeStamp(skill.getReuseHashCode());
 
                     ++buffIndex;
 					ctx.CharacterSkillReuses.Add(new CharacterSkillReuse()
@@ -7459,7 +7454,7 @@ public class Player: Playable
 		removeCustomSkill(skill);
 
 		// Remove a skill from the Creature and its stats
-		Skill oldSkill = base.removeSkill(skill, true);
+		Skill? oldSkill = base.removeSkill(skill, true);
 		if (oldSkill != null)
 		{
 			try
@@ -7615,7 +7610,7 @@ public class Player: Playable
 					int subLevel = record.SkillSubLevel;
 
 					// Create a Skill object for each record
-					Skill skill = SkillData.getInstance().getSkill(id, level, subLevel);
+					Skill? skill = SkillData.getInstance().getSkill(id, level, subLevel);
 					if (skill == null)
 					{
 						LOGGER.Warn("Skipped null skill Id: " + id + " Level: " + level + " while restoring player skills for playerObjId: " + ObjectId);
@@ -7658,7 +7653,7 @@ public class Player: Playable
 					TimeSpan reuseDelay = record.ReuseDelay;
 					DateTime? systime = record.SysTime;
 					int restoreType = record.RestoreType;
-					Skill skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel, record.SkillSubLevel);
+					Skill? skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel, record.SkillSubLevel);
 					if (skill == null)
 					{
 						continue;
@@ -7712,7 +7707,7 @@ public class Player: Playable
 				TimeSpan remainingTime;
 
 				// Using item Id
-				Item item = _inventory.getItemByItemId(itemId);
+				Item? item = _inventory.getItemByItemId(itemId);
 				if (item == null)
 				{
 					item = getWarehouse().getItemByItemId(itemId);
@@ -7784,7 +7779,7 @@ public class Player: Playable
 					continue;
 				}
 
-				Henna henna = HennaData.getInstance().getHennaByDyeId(symbolId);
+				Henna? henna = HennaData.getInstance().getHennaByDyeId(symbolId);
 				if (henna == null)
 				{
 					continue;
@@ -8115,7 +8110,7 @@ public class Player: Playable
 			HennaPoten hennaPoten = _hennaPoten[i - 1];
 			if (hennaPoten != null && hennaPoten.getPotenId() > 0 && hennaPoten.isPotentialAvailable() && hennaPoten.getActiveStep() > 0)
 			{
-				Skill hennaSkill = HennaPatternPotentialData.getInstance().getPotentialSkill(hennaPoten.getPotenId(), i, hennaPoten.getActiveStep());
+				Skill? hennaSkill = HennaPatternPotentialData.getInstance().getPotentialSkill(hennaPoten.getPotenId(), i, hennaPoten.getActiveStep());
 				if (hennaSkill != null && hennaSkill.getLevel() > getSkillLevel(hennaSkill.getId()))
 				{
 					addSkill(hennaSkill, false);
@@ -8361,14 +8356,14 @@ public class Player: Playable
 			}
 
 			// Get Player
-			Player attackerPlayer = attacker.getActingPlayer();
-			Clan clan = getClan();
-			Clan attackerClan = attackerPlayer.getClan();
+			Player? attackerPlayer = attacker.getActingPlayer();
+			Clan? clan = getClan();
+			Clan? attackerClan = attackerPlayer.getClan();
 			if (clan != null && attackerClan != null)
 			{
 				if (clan != attackerClan)
 				{
-					Siege siege = SiegeManager.getInstance().getSiege(Location.Location3D);
+					Siege? siege = SiegeManager.getInstance().getSiege(Location.Location3D);
 					if (siege != null)
 					{
 						// Check if a siege is in progress and if attacker and the Player aren't in the Defender clan.
@@ -8381,7 +8376,7 @@ public class Player: Playable
 						if (siege.checkIsAttacker(attackerClan) && siege.checkIsAttacker(clan))
 						{
 							// If first mid victory is achieved, attackers can attack attackers.
-							Castle castle = CastleManager.getInstance().getCastleById(_siegeSide);
+							Castle? castle = CastleManager.getInstance().getCastleById(_siegeSide);
 							return castle != null && castle.isFirstMidVictory();
 						}
 					}
@@ -8390,7 +8385,7 @@ public class Player: Playable
 				// Check if clan is at war
 				if (!getWantsPeace() && !attackerPlayer.getWantsPeace() && !isAcademyMember())
 				{
-					ClanWar war = attackerClan.getWarWith(getClanId());
+					ClanWar? war = attackerClan.getWarWith(getClanId());
 					if (war != null)
 					{
 						ClanWarState warState = war.getState();
@@ -8435,7 +8430,7 @@ public class Player: Playable
 
 		if (attacker is Defender && _clan != null)
 		{
-			Siege siege = SiegeManager.getInstance().getSiege(this);
+			Siege? siege = SiegeManager.getInstance().getSiege(this);
 			return siege != null && siege.checkIsAttacker(_clan);
 		}
 
@@ -8503,7 +8498,7 @@ public class Player: Playable
 		}
 
 		// Support for wizard skills with stances (Fire, Water, Wind, Earth)
-		Skill attachedSkill = usedSkill.getAttachedSkill(this);
+		Skill? attachedSkill = usedSkill.getAttachedSkill(this);
 		if (attachedSkill != null)
 		{
 			usedSkill = attachedSkill;
@@ -8587,8 +8582,8 @@ public class Player: Playable
 
 		// Check if the skill type is toggle and disable it, unless the toggle is necessary to be on.
 		if (usedSkill.isToggle())
-		{
-			if (isAffectedBySkill(usedSkill.getId()))
+        {
+            if (isAffectedBySkill(usedSkill.getId()))
 			{
 				if (!usedSkill.isNecessaryToggle())
 				{
@@ -8597,11 +8592,12 @@ public class Player: Playable
 				sendPacket(ActionFailedPacket.STATIC_PACKET);
 				return false;
 			}
-			else if (usedSkill.getToggleGroupId() > 0)
-			{
-				getEffectList().stopAllTogglesOfGroup(usedSkill.getToggleGroupId());
-			}
-		}
+
+            if (usedSkill.getToggleGroupId() > 0)
+            {
+                getEffectList().stopAllTogglesOfGroup(usedSkill.getToggleGroupId());
+            }
+        }
 
 		// Check if the player uses "Fake Death" skill
 		// Note: do not check this before TOGGLE reset
@@ -8651,7 +8647,7 @@ public class Player: Playable
 			// Upon failed conditions, next action is called.
 			if (usedSkill.getNextAction() != NextActionType.NONE && target != this && target.isAutoAttackable(this))
 			{
-				CreatureAI.IntentionCommand nextIntention = getAI().getNextIntention();
+				CreatureAI.IntentionCommand? nextIntention = getAI().getNextIntention();
 				if (nextIntention == null || nextIntention.getCtrlIntention() != CtrlIntention.AI_INTENTION_MOVE_TO)
 				{
 					if (usedSkill.getNextAction() == NextActionType.ATTACK)
@@ -8696,7 +8692,7 @@ public class Player: Playable
 
 	public bool isInLooterParty(int looterId)
 	{
-		Player looter = World.getInstance().getPlayer(looterId);
+		Player? looter = World.getInstance().getPlayer(looterId);
 
 		// if Player is in a CommandChannel
 		if (isInParty() && _party.isInCommandChannel() && looter != null)
@@ -8771,15 +8767,15 @@ public class Player: Playable
 		{
 			return true;
 		}
-		else
-		// if this is a castle that is currently being sieged, and the rider is NOT a castle owner
-		// he cannot land.
-		// castle owner is the leader of the clan that owns the castle where the pc is
-		if (isInsideZone(ZoneId.SIEGE) && !(getClan() != null && CastleManager.getInstance().getCastle(this) == CastleManager.getInstance().getCastleByOwner(getClan()) && this == getClan().getLeader().getPlayer()))
-		{
-			return true;
-		}
-		return false;
+
+        // if this is a castle that is currently being sieged, and the rider is NOT a castle owner
+        // he cannot land.
+        // castle owner is the leader of the clan that owns the castle where the pc is
+        if (isInsideZone(ZoneId.SIEGE) && !(getClan() != null && CastleManager.getInstance().getCastle(this) == CastleManager.getInstance().getCastleByOwner(getClan()) && this == getClan().getLeader().getPlayer()))
+        {
+            return true;
+        }
+        return false;
 	}
 
 	// returns false if the change of mount type fails.
@@ -8935,7 +8931,7 @@ public class Player: Playable
 	 */
 	public int getEnchantEffect()
 	{
-		Item wpn = getActiveWeaponInstance();
+		Item? wpn = getActiveWeaponInstance();
 		if (wpn == null)
 		{
 			return 0;
@@ -8979,14 +8975,14 @@ public class Player: Playable
 	{
 		foreach (int itemId in _activeSoulShots)
 		{
-			Item item = _inventory.getItemByItemId(itemId);
+			Item? item = _inventory.getItemByItemId(itemId);
 			if (item == null)
 			{
 				removeAutoSoulShot(itemId);
 				continue;
 			}
 
-			IItemHandler handler = ItemHandler.getInstance().getHandler(item.getEtcItem());
+			IItemHandler? handler = ItemHandler.getInstance().getHandler(item.getEtcItem());
 			if (handler == null)
 			{
 				continue;
@@ -9815,8 +9811,8 @@ public class Player: Playable
 
 				if (skillInfo.getGetLevel() <= newClass.getLevel())
 				{
-					Skill prevSkill = prevSkillList.get(skillInfo.getSkillId());
-					Skill newSkill = SkillData.getInstance().getSkill(skillInfo.getSkillId(), skillInfo.getSkillLevel());
+					Skill? prevSkill = prevSkillList.get(skillInfo.getSkillId());
+					Skill? newSkill = SkillData.getInstance().getSkill(skillInfo.getSkillId(), skillInfo.getSkillLevel());
 					if ((prevSkill != null && prevSkill.getLevel() > newSkill.getLevel()) || SkillTreeData.getInstance().isRemoveSkill(subTemplate, skillInfo.getSkillId()))
 					{
 						continue;
@@ -9933,7 +9929,7 @@ public class Player: Playable
 		{
 			return false;
 		}
-		SubClassHolder subClass = _subClasses.get(_classIndex);
+		SubClassHolder? subClass = _subClasses.get(_classIndex);
 		if (subClass == null)
 		{
 			return false;
@@ -9999,7 +9995,7 @@ public class Player: Playable
 	{
 		_activeClass = classId;
 
-		PlayerTemplate pcTemplate = PlayerTemplateData.getInstance().getTemplate(classId);
+		PlayerTemplate? pcTemplate = PlayerTemplateData.getInstance().getTemplate(classId);
 		if (pcTemplate == null)
 		{
 			LOGGER.Error("Missing template for classId: " + classId);
@@ -10314,7 +10310,7 @@ public class Player: Playable
 
 		try
 		{
-			SayuneRequest sayune = getRequest<SayuneRequest>();
+			SayuneRequest? sayune = getRequest<SayuneRequest>();
 			if (sayune != null)
 			{
 				sayune.onLogout();
@@ -10397,7 +10393,7 @@ public class Player: Playable
 		// Teleport summons to player.
 		if (isInsideZone(ZoneId.PEACE) && hasSummon())
 		{
-			Pet pet = getPet();
+			Pet? pet = getPet();
 			if (pet != null)
 			{
 				pet.teleToLocation(Location, true);
@@ -10417,7 +10413,7 @@ public class Player: Playable
 		}
 
 		// Notify instance
-		Instance instance = getInstanceWorld();
+		Instance? instance = getInstanceWorld();
 		if (instance != null)
 		{
 			instance.doRevive(this);
@@ -10517,7 +10513,7 @@ public class Player: Playable
 		_revivePower = 0;
 
 		// Support for specific HP/MP/CP percentage restored.
-		Creature effected = _revivePet ? _pet : this;
+		Creature? effected = _revivePet ? _pet : this;
 		if (effected == null)
 		{
 			_reviveHpPercent = 0;
@@ -10846,7 +10842,7 @@ public class Player: Playable
 	 */
 	public bool validateItemManipulation(int objectId, string action)
 	{
-		Item item = _inventory.getItemByObjectId(objectId);
+		Item? item = _inventory.getItemByObjectId(objectId);
 		if (item == null || item.getOwnerId() != ObjectId)
 		{
 			LOGGER.Info(ObjectId + ": player tried to " + action + " item he is not owner of");
@@ -11029,7 +11025,7 @@ public class Player: Playable
 		{
 			if (_inventory.getItemByItemId(FortManager.ORC_FORTRESS_FLAG) != null)
 			{
-				Fort fort = FortManager.getInstance().getFort(this);
+				Fort? fort = FortManager.getInstance().getFort(this);
 				if (fort != null)
 				{
 					FortSiegeManager.getInstance().dropCombatFlag(this, fort.getResidenceId());
@@ -11201,7 +11197,7 @@ public class Player: Playable
 		{
 			try
 			{
-				Summon pet = _pet;
+				Summon? pet = _pet;
 				if (pet != null)
 				{
 					pet.setRestoreSummon(true);
@@ -11231,7 +11227,7 @@ public class Player: Playable
 			// set the status for pledge member list to OFFLINE
 			try
 			{
-				ClanMember clanMember = _clan.getClanMember(ObjectId);
+				ClanMember? clanMember = _clan.getClanMember(ObjectId);
 				if (clanMember != null)
 				{
 					clanMember.setPlayer(null);
@@ -11283,7 +11279,7 @@ public class Player: Playable
 		}
 
 		// remove player from instance
-		Instance inst = getInstanceWorld();
+		Instance? inst = getInstanceWorld();
 		if (inst != null)
 		{
 			try
@@ -11394,7 +11390,7 @@ public class Player: Playable
 			sm.Params.addString(getName());
 			foreach (int id in getFriendList())
 			{
-				WorldObject obj = World.getInstance().findObject(id);
+				WorldObject? obj = World.getInstance().findObject(id);
 				if (obj != null)
 				{
 					obj.sendPacket(sm);
@@ -12018,9 +12014,8 @@ public class Player: Playable
 	public void updateVitalityPoints(int points, bool useRates, bool quiet)
 	{
 		if (_huntPass != null && _huntPass.toggleSayha())
-		{
 			return;
-		}
+
 		getStat().updateVitalityPoints(points, useRates, quiet);
 	}
 
@@ -12062,7 +12057,7 @@ public class Player: Playable
 	{
 		for (int i = 0; i < Inventory.PAPERDOLL_TOTALSLOTS; i++)
 		{
-			Item equippedItem = _inventory.getPaperdollItem(i);
+			Item? equippedItem = _inventory.getPaperdollItem(i);
 			if (equippedItem != null && !equippedItem.getTemplate().checkCondition(this, this, false))
 			{
 				_inventory.unEquipItemInSlot(i);
@@ -12141,12 +12136,11 @@ public class Player: Playable
 			foreach (Skill skill in currentSkills)
 			{
 				if (!skill.allowOnTransform())
-				{
 					continue;
-				}
 
 				filteredSkills.Add(skill);
 			}
+
 			currentSkills = filteredSkills;
 
 			// Revelation skills.
@@ -12202,10 +12196,12 @@ public class Player: Playable
 		{
 			return;
 		}
-		if (hasPet())
+
+        Pet? pet = getPet();
+		if (hasPet() && pet != null)
 		{
-			setCurrentFeed(_pet.getCurrentFed());
-			_controlItemId = _pet.getControlObjectId();
+			setCurrentFeed(pet.getCurrentFed());
+			_controlItemId = pet.getControlObjectId();
 			TimeSpan duration = TimeSpan.FromMilliseconds(1.0 * getMaxFeed() * 10000 / getFeedConsume());
 			sendPacket(new SetupGaugePacket(3, _curFeed * 10000 / getFeedConsume(), duration));
 			if (!isDead())
@@ -12433,7 +12429,7 @@ public class Player: Playable
 			return;
 		}
 
-		TeleportBookmark bookmark = _tpbookmarks.get(id);
+		TeleportBookmark? bookmark = _tpbookmarks.get(id);
 		if (bookmark != null)
 		{
 			bookmark.setIcon(icon);
@@ -12491,7 +12487,7 @@ public class Player: Playable
 		sm.Params.addItemName(13016);
 		sendPacket(sm);
 
-		TeleportBookmark bookmark = _tpbookmarks.get(id);
+		TeleportBookmark? bookmark = _tpbookmarks.get(id);
 		if (bookmark != null)
 		{
 			if (isInTimedHuntingZone(bookmark.Location.X, bookmark.Location.Y))
@@ -12508,72 +12504,79 @@ public class Player: Playable
 	}
 
 	public bool teleportBookmarkCondition(int type)
-	{
-		if (isInCombat())
+    {
+        if (isInCombat())
 		{
 			sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_DURING_A_BATTLE);
 			return false;
 		}
-		else if (_isInSiege || _siegeState != 0)
-		{
-			sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_WHILE_PARTICIPATING_A_LARGE_SCALE_BATTLE_SUCH_AS_A_CASTLE_SIEGE_FORTRESS_SIEGE_OR_CLAN_HALL_SIEGE);
-			return false;
-		}
-		else if (_isInDuel || _startingDuel)
-		{
-			sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_DURING_A_DUEL);
-			return false;
-		}
-		else if (isFlying())
-		{
-			sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_WHILE_FLYING);
-			return false;
-		}
-		else if (_inOlympiadMode)
-		{
-			sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_WHILE_PARTICIPATING_IN_AN_OLYMPIAD_MATCH);
-			return false;
-		}
-		else if (hasBlockActions() && hasAbnormalType(AbnormalType.PARALYZE))
-		{
-			sendPacket(SystemMessageId.CANNOT_TELEPORT_WHILE_PETRIFIED_OR_PARALYZED);
-			return false;
-		}
-		else if (isDead())
-		{
-			sendPacket(SystemMessageId.YOU_CANNOT_USE_TELEPORT_WHILE_YOU_ARE_DEAD);
-			return false;
-		}
-		else if (isInWater())
-		{
-			sendPacket(SystemMessageId.YOU_CANNOT_USE_TELEPORT_UNDERWATER);
-			return false;
-		}
-		else if (type == 1 && (isInsideZone(ZoneId.SIEGE) || isInsideZone(ZoneId.CLAN_HALL) || isInsideZone(ZoneId.JAIL) || isInsideZone(ZoneId.CASTLE) || isInsideZone(ZoneId.NO_SUMMON_FRIEND) || isInsideZone(ZoneId.FORT)))
-		{
-			sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_TO_REACH_THIS_AREA);
-			return false;
-		}
-		else if (isInsideZone(ZoneId.NO_BOOKMARK) || isInBoat() || isInAirShip() || isInsideZone(ZoneId.TIMED_HUNTING))
-		{
-			if (type == 0)
-			{
-				sendPacket(SystemMessageId.YOU_CANNOT_USE_TELEPORT_IN_THIS_AREA);
-			}
-			else if (type == 1)
-			{
-				sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_TO_REACH_THIS_AREA);
-			}
-			return false;
-		}
-		/*
+
+        if (_isInSiege || _siegeState != 0)
+        {
+            sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_WHILE_PARTICIPATING_A_LARGE_SCALE_BATTLE_SUCH_AS_A_CASTLE_SIEGE_FORTRESS_SIEGE_OR_CLAN_HALL_SIEGE);
+            return false;
+        }
+
+        if (_isInDuel || _startingDuel)
+        {
+            sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_DURING_A_DUEL);
+            return false;
+        }
+
+        if (isFlying())
+        {
+            sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_WHILE_FLYING);
+            return false;
+        }
+
+        if (_inOlympiadMode)
+        {
+            sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_WHILE_PARTICIPATING_IN_AN_OLYMPIAD_MATCH);
+            return false;
+        }
+
+        if (hasBlockActions() && hasAbnormalType(AbnormalType.PARALYZE))
+        {
+            sendPacket(SystemMessageId.CANNOT_TELEPORT_WHILE_PETRIFIED_OR_PARALYZED);
+            return false;
+        }
+
+        if (isDead())
+        {
+            sendPacket(SystemMessageId.YOU_CANNOT_USE_TELEPORT_WHILE_YOU_ARE_DEAD);
+            return false;
+        }
+
+        if (isInWater())
+        {
+            sendPacket(SystemMessageId.YOU_CANNOT_USE_TELEPORT_UNDERWATER);
+            return false;
+        }
+
+        if (type == 1 && (isInsideZone(ZoneId.SIEGE) || isInsideZone(ZoneId.CLAN_HALL) || isInsideZone(ZoneId.JAIL) || isInsideZone(ZoneId.CASTLE) || isInsideZone(ZoneId.NO_SUMMON_FRIEND) || isInsideZone(ZoneId.FORT)))
+        {
+            sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_TO_REACH_THIS_AREA);
+            return false;
+        }
+
+        if (isInsideZone(ZoneId.NO_BOOKMARK) || isInBoat() || isInAirShip() || isInsideZone(ZoneId.TIMED_HUNTING))
+        {
+            if (type == 0)
+            {
+                sendPacket(SystemMessageId.YOU_CANNOT_USE_TELEPORT_IN_THIS_AREA);
+            }
+            else if (type == 1)
+            {
+                sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_TO_REACH_THIS_AREA);
+            }
+            return false;
+        }
+        /*
 		 * TODO: Instant Zone still not implemented else if (isInsideZone(ZoneId.INSTANT)) { sendPacket(new SystemMessage(2357)); return; }
 		 */
-		else
-		{
-			return true;
-		}
-	}
+
+        return true;
+    }
 
 	public void teleportBookmarkAdd(int x, int y, int z, int icon, string tag, string name)
 	{
@@ -13293,7 +13296,7 @@ public class Player: Playable
 	 */
 	public void checkPlayerSkills()
 	{
-		SkillLearn learn;
+		SkillLearn? learn;
 		foreach (var e in getSkills())
 		{
 			learn = SkillTreeData.getInstance().getClassSkill(e.Key, e.Value.getLevel() % 100, getClassId());
@@ -13364,53 +13367,54 @@ public class Player: Playable
 		{
 			return true;
 		}
-		else if (creature.isPlayable())
-		{
-			if (creature.isInsideZone(ZoneId.PVP) && !creature.isInsideZone(ZoneId.SIEGE))
-			{
-				return true;
-			}
 
-			Player target = creature.isSummon() ? ((Summon) creature).getOwner() : (Player) creature;
-			if (isInDuel() && target.isInDuel() && target.getDuelId() == getDuelId())
-			{
-				return true;
-			}
-			else if (isInParty() && target.isInParty())
-			{
-				if (getParty() == target.getParty())
-				{
-					return false;
-				}
-				if ((getParty().getCommandChannel() != null || target.getParty().getCommandChannel() != null) && getParty().getCommandChannel() == target.getParty().getCommandChannel())
-				{
-					return false;
-				}
-			}
-			else if (getClan() != null && target.getClan() != null)
-			{
-				if (getClanId() == target.getClanId())
-				{
-					return false;
-				}
-				if ((getAllyId() > 0 || target.getAllyId() > 0) && getAllyId() == target.getAllyId())
-				{
-					return false;
-				}
-				if (getClan().isAtWarWith(target.getClan().getId()) && target.getClan().isAtWarWith(getClan().getId()))
-				{
-					return true;
-				}
-			}
-			else if (getClan() == null || target.getClan() == null)
-			{
-				if (target.getPvpFlag() != PvpFlagStatus.None && target.getReputation() >= 0)
-				{
-					return false;
-				}
-			}
-		}
-		return true;
+        if (creature.isPlayable())
+        {
+            if (creature.isInsideZone(ZoneId.PVP) && !creature.isInsideZone(ZoneId.SIEGE))
+                return true;
+
+            Player target = creature.isSummon() ? ((Summon) creature).getOwner() : (Player) creature;
+            if (isInDuel() && target.isInDuel() && target.getDuelId() == getDuelId())
+                return true;
+
+            Party? party = getParty();
+            Party? targetParty = target.getParty();
+            if (isInParty() && target.isInParty() && party != null && targetParty != null)
+            {
+                if (party == target.getParty())
+                {
+                    return false;
+                }
+                if ((party.getCommandChannel() != null || targetParty.getCommandChannel() != null) &&
+                     party.getCommandChannel() == targetParty.getCommandChannel())
+                {
+                    return false;
+                }
+            }
+            else if (getClan() != null && target.getClan() != null)
+            {
+                if (getClanId() == target.getClanId())
+                {
+                    return false;
+                }
+                if ((getAllyId() > 0 || target.getAllyId() > 0) && getAllyId() == target.getAllyId())
+                {
+                    return false;
+                }
+                if (getClan().isAtWarWith(target.getClan().getId()) && target.getClan().isAtWarWith(getClan().getId()))
+                {
+                    return true;
+                }
+            }
+            else if (getClan() == null || target.getClan() == null)
+            {
+                if (target.getPvpFlag() != PvpFlagStatus.None && target.getReputation() >= 0)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
 	}
 
 	/**
@@ -13625,7 +13629,7 @@ public class Player: Playable
 	 * Remove a skill level from the custom skill map.
 	 * @param skill the skill to remove
 	 */
-	private void removeCustomSkill(Skill skill)
+	private void removeCustomSkill(Skill? skill)
 	{
 		if (skill != null && _customSkills != null && skill.getDisplayId() != skill.getId())
 		{
@@ -13717,7 +13721,7 @@ public class Player: Playable
 	 */
 	public PlayerVariables getVariables()
 	{
-		PlayerVariables vars = getScript<PlayerVariables>();
+		PlayerVariables? vars = getScript<PlayerVariables>();
 		return vars != null ? vars : addScript(new PlayerVariables(ObjectId));
 	}
 
@@ -13734,7 +13738,7 @@ public class Player: Playable
 	 */
 	public AccountVariables getAccountVariables()
 	{
-		AccountVariables vars = getScript<AccountVariables>();
+		AccountVariables? vars = getScript<AccountVariables>();
 		return vars != null ? vars : addScript(new AccountVariables(getAccountId()));
 	}
 
@@ -13991,7 +13995,7 @@ public class Player: Playable
 			return CastleSide.NEUTRAL;
 		}
 
-		Castle castle = CastleManager.getInstance().getCastleById(castleId.Value);
+		Castle? castle = CastleManager.getInstance().getCastleById(castleId.Value);
 		if (castle == null)
 		{
 			return CastleSide.NEUTRAL;
@@ -14487,13 +14491,11 @@ public class Player: Playable
 		}
 	}
 
-	public TrainingHolder getTraingCampInfo()
+	public TrainingHolder? getTraingCampInfo()
 	{
-		string info = getAccountVariables().getString(TRAINING_CAMP_VAR, null);
-		if (info == null)
-		{
+		string info = getAccountVariables().getString(TRAINING_CAMP_VAR, string.Empty);
+		if (string.IsNullOrEmpty(info))
 			return null;
-		}
 
         string[] comps = info.Split(";");
 		return new TrainingHolder(int.Parse(comps[0]), int.Parse(comps[1]),
@@ -14529,7 +14531,7 @@ public class Player: Playable
 
 	public bool isInTraingCamp()
 	{
-		TrainingHolder trainingHolder = getTraingCampInfo();
+		TrainingHolder? trainingHolder = getTraingCampInfo();
 		return trainingHolder != null && trainingHolder.getEndTime() > DateTime.UtcNow;
 	}
 
@@ -14818,11 +14820,10 @@ public class Player: Playable
 
 	public ElementalSpirit? getElementalSpirit(ElementalType type)
 	{
-		if (_spirits == null || type == null || type == ElementalType.NONE)
-		{
+		if (_spirits == null || type == ElementalType.NONE)
 			return null;
-		}
-		return _spirits[(int)type - 1];
+
+        return _spirits[(int)type - 1];
 	}
 
 	public ElementalType getActiveElementalSpiritType()
@@ -14953,7 +14954,7 @@ public class Player: Playable
 
 			if (shortcut.getType() == ShortcutType.SKILL)
 			{
-				Skill knownSkill = getKnownSkill(shortcut.getId());
+				Skill? knownSkill = getKnownSkill(shortcut.getId());
 				if (knownSkill != null)
 				{
 					shortcut.setAutoUse(true);
@@ -14965,7 +14966,7 @@ public class Player: Playable
 			}
 			else
 			{
-				Item item = getInventory().getItemByObjectId(shortcut.getId());
+				Item? item = getInventory().getItemByObjectId(shortcut.getId());
 				if (item != null)
 				{
 					shortcut.setAutoUse(true);
@@ -14997,7 +14998,7 @@ public class Player: Playable
 				continue;
 			}
 
-			Skill knownSkill = getKnownSkill(shortcut.getId());
+			Skill? knownSkill = getKnownSkill(shortcut.getId());
 			if (knownSkill != null)
 			{
 				shortcut.setAutoUse(true);
@@ -15012,7 +15013,7 @@ public class Player: Playable
 			}
 			else
 			{
-				Item item = getInventory().getItemByObjectId(shortcut.getId());
+				Item? item = getInventory().getItemByObjectId(shortcut.getId());
 				if (item != null)
 				{
 					shortcut.setAutoUse(true);
@@ -15098,7 +15099,7 @@ public class Player: Playable
 
 	public bool isInTimedHuntingZone(int zoneId, int locX, int locY)
 	{
-		TimedHuntingZoneHolder holder = TimedHuntingZoneData.getInstance().getHuntingZone(zoneId);
+		TimedHuntingZoneHolder? holder = TimedHuntingZoneData.getInstance().getHuntingZone(zoneId);
 		if (holder == null)
 		{
 			return false;
@@ -15139,16 +15140,15 @@ public class Player: Playable
 		return false;
 	}
 
-	public TimedHuntingZoneHolder getTimedHuntingZone()
+	public TimedHuntingZoneHolder? getTimedHuntingZone()
 	{
 		foreach (TimedHuntingZoneHolder holder in TimedHuntingZoneData.getInstance().getAllHuntingZones())
 		{
 			if (isInTimedHuntingZone(holder.getZoneId()))
-			{
 				return holder;
-			}
 		}
-		return null;
+
+        return null;
 	}
 
 	public void startTimedHuntingZone(int zoneId, DateTime delay)
@@ -15173,7 +15173,7 @@ public class Player: Playable
 				}
 				else
 				{
-					_timedHuntingZoneTask.cancel(false);
+					_timedHuntingZoneTask?.cancel(false);
 					_timedHuntingZoneTask = null;
 					abortCast();
 					stopMove(null);
@@ -15217,14 +15217,14 @@ public class Player: Playable
 
 	public PetEvolveHolder getPetEvolve(int controlItemId)
 	{
-		PetEvolveHolder evolve = _petEvolves.get(controlItemId);
+		PetEvolveHolder? evolve = _petEvolves.get(controlItemId);
 		if (evolve != null)
 		{
 			return evolve;
 		}
 
-		Item item = getInventory().getItemByObjectId(controlItemId);
-		PetData petData = item == null ? null : PetDataTable.getInstance().getPetDataByItemId(item.getId());
+		Item? item = getInventory().getItemByObjectId(controlItemId);
+		PetData? petData = item == null ? null : PetDataTable.getInstance().getPetDataByItemId(item.getId());
 		return new PetEvolveHolder(petData == null ? 0 : petData.getIndex(), EvolveLevel.None, "", 1, 0);
 	}
 
@@ -15281,23 +15281,21 @@ public class Player: Playable
 
 		_statIncreaseSkillTask = ThreadPool.schedule(() =>
 		{
-			Skill knownSkill;
-			double statValue;
-			bool update = false;
+            bool update = false;
 
 			// Remove stat increase skills.
 			for (CommonSkill i = CommonSkill.STR_INCREASE_BONUS; i <= CommonSkill.MEN_INCREASE_BONUS; i++)
-			{
-				knownSkill = getKnownSkill((int)i);
-				if (knownSkill != null)
+            {
+                Skill? knownSkill = getKnownSkill((int)i);
+                if (knownSkill != null)
 				{
 					removeSkill(knownSkill);
 					update = true;
 				}
-			}
+            }
 
-			// STR bonus.
-			statValue = getStat().getValue(Stat.STAT_STR);
+            // STR bonus.
+            double statValue = getStat().getValue(Stat.STAT_STR);
 			if (statValue >= 60 && statValue < 70)
 			{
 				addSkill(CommonSkill.STR_INCREASE_BONUS.getSkill(1), false);
@@ -15516,30 +15514,25 @@ public class Player: Playable
 
 	private void restoreCollectionBonuses()
 	{
-		Set<int> collectionIds = new();
+		Set<int> collectionIds = [];
 		foreach (PlayerCollectionData collection in _collections)
-		{
 			collectionIds.add(collection.getCollectionId());
-		}
 
 		foreach (int collectionId in collectionIds)
 		{
-			CollectionDataHolder collection = CollectionData.getInstance().getCollection(collectionId);
+			CollectionDataHolder? collection = CollectionData.getInstance().getCollection(collectionId);
 			int count = 0;
 			foreach (PlayerCollectionData data in _collections)
 			{
 				if (data.getCollectionId() == collectionId)
-				{
 					count++;
-				}
 			}
+
 			if (count >= collection.getCompleteCount())
 			{
-				Options.Options options = OptionData.getInstance().getOptions(collection.getOptionId());
+				Options.Options? options = OptionData.getInstance().getOptions(collection.getOptionId());
 				if (options != null)
-				{
 					options.apply(this);
-				}
 			}
 		}
 	}
@@ -15599,10 +15592,7 @@ public class Player: Playable
 
 	private void restoreSubjugation()
 	{
-		if (_purgePoints != null)
-		{
-			_purgePoints.Clear();
-		}
+		_purgePoints.Clear();
 
 		try
         {
@@ -15719,7 +15709,7 @@ public class Player: Playable
 
 				if (itemObjectId > 0)
 				{
-					Item item = getInventory().getItemByObjectId(itemObjectId);
+					Item? item = getInventory().getItemByObjectId(itemObjectId);
 					if (item != null)
 					{
 						useEquippableItem(item, false);

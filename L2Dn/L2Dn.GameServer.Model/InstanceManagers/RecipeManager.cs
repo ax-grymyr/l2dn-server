@@ -363,7 +363,7 @@ public class RecipeManager
                 }
 
 				// attempt to pay for item
-				Item adenatransfer = _target.transferItem("PayManufacture", adenaInstance.ObjectId, _price, _player.getInventory(), _player);
+				Item? adenatransfer = _target.transferItem("PayManufacture", adenaInstance.ObjectId, _price, _player.getInventory(), _player);
 				if (adenatransfer == null)
 				{
 					_target.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
@@ -645,8 +645,8 @@ public class RecipeManager
 				}
 			}
 
-			Item item = _target.getInventory().addItem("Manufacture", itemId, itemCount, _target, _player);
-			if (item.isEquipable() && itemCount == 1 && Rnd.get(100) < _player.getStat().getValue(Stat.CRAFTING_CRITICAL))
+			Item? item = _target.getInventory().addItem("Manufacture", itemId, itemCount, _target, _player);
+			if (item != null && item.isEquipable() && itemCount == 1 && Rnd.get(100) < _player.getStat().getValue(Stat.CRAFTING_CRITICAL))
 			{
 				_target.getInventory().addItem("Manufacture Critical", itemId, itemCount, _target, _player);
 			}

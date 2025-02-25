@@ -261,7 +261,7 @@ public class MapRegionManager: DataReaderBase
 			}
 
 			// Timed Hunting zones.
-			TimedHuntingZoneHolder timedHuntingZone = player.getTimedHuntingZone();
+			TimedHuntingZoneHolder? timedHuntingZone = player.getTimedHuntingZone();
 			if (timedHuntingZone != null)
 			{
 				Location3D? exitLocation = timedHuntingZone.getExitLocation();

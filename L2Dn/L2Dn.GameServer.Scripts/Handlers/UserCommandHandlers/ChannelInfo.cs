@@ -21,12 +21,12 @@ public class ChannelInfo: IUserCommandHandler
         }
 
         Party? party = player.getParty();
-        if (party == null || party.getCommandChannel() == null)
+        CommandChannel? channel = party?.getCommandChannel();
+        if (party == null || channel == null)
         {
             return false;
         }
 
-        CommandChannel channel = party.getCommandChannel();
         player.sendPacket(new ExMultiPartyCommandChannelInfoPacket(channel));
         return true;
     }

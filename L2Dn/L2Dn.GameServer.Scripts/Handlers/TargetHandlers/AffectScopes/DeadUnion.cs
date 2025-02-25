@@ -51,7 +51,7 @@ public class DeadUnion: IAffectScopeHandler
 
 					if (party.getLeaderObjectId() != targetParty.getLeaderObjectId())
 					{
-						CommandChannel targetCommandChannel = targetParty.getCommandChannel();
+						CommandChannel? targetCommandChannel = targetParty.getCommandChannel();
 						if ((commandChannel == null) || (targetCommandChannel == null) || (commandChannel.getLeaderObjectId() != targetCommandChannel.getLeaderObjectId()))
 						{
 							return false;

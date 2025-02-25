@@ -225,7 +225,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		{
 			foreach (PlayerItemTemplate ie in initialItems)
 			{
-				Item item = newChar.getInventory().addItem("Init", ie.getId(), ie.getCount(), newChar, null);
+				Item? item = newChar.getInventory().addItem("Init", ie.getId(), ie.getCount(), newChar, null);
 				if (item == null)
 				{
 					PacketLogger.Instance.Error("Could not create item during char creation: itemId " + ie.getId() +

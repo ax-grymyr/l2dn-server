@@ -26,7 +26,7 @@ public struct RequestExAcceptJoinMPCCPacket: IIncomingPacket<GameSession>
         if (party == null)
             return ValueTask.CompletedTask;
 
-        Player requestor = player.getActiveRequester();
+        Player? requestor = player.getActiveRequester();
         SystemMessagePacket sm;
         if (requestor == null)
             return ValueTask.CompletedTask;
@@ -38,15 +38,16 @@ public struct RequestExAcceptJoinMPCCPacket: IIncomingPacket<GameSession>
         if (_response == 1)
         {
             bool newCc = false;
-            if (!requestorParty.isInCommandChannel())
+            CommandChannel? commandChannel = requestorParty.getCommandChannel();
+            if (!requestorParty.isInCommandChannel() || commandChannel == null)
             {
-                new CommandChannel(requestor); // Create new CC
+                commandChannel = new CommandChannel(requestor); // Create new CC
                 sm = new SystemMessagePacket(SystemMessageId.THE_COMMAND_CHANNEL_HAS_BEEN_FORMED);
                 requestor.sendPacket(sm);
                 newCc = true;
             }
 
-            requestorParty.getCommandChannel().addParty(party);
+            commandChannel.addParty(party);
             if (!newCc)
             {
                 sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_JOINED_THE_COMMAND_CHANNEL);

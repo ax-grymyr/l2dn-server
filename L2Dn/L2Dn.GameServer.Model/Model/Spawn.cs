@@ -482,7 +482,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		}
 	}
 
-	public void setRespawnPattern(SchedulingPattern respawnPattern)
+	public void setRespawnPattern(SchedulingPattern? respawnPattern)
 	{
 		_respawnPattern = respawnPattern;
 	}

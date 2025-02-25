@@ -24,11 +24,11 @@ public struct RequestDuelAnswerStartPacket: IIncomingPacket<GameSession>
 	    Player? player = session.Player;
 	    if (player == null)
 		    return ValueTask.CompletedTask;
-		
-		Player requestor = player.getActiveRequester();
+
+		Player? requestor = player.getActiveRequester();
 		if (requestor == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (_response == 1)
 		{
 			SystemMessagePacket msg1;
@@ -40,18 +40,18 @@ public struct RequestDuelAnswerStartPacket: IIncomingPacket<GameSession>
 				player.sendPacket(msg1);
 				return ValueTask.CompletedTask;
 			}
-			
+
 			if (player.isInDuel())
 			{
 				player.sendPacket(SystemMessageId.YOU_ARE_UNABLE_TO_REQUEST_A_DUEL_AT_THIS_TIME);
 				return ValueTask.CompletedTask;
 			}
-			
+
 			if (_partyDuel)
 			{
 				msg1 = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACCEPTED_C1_S_CHALLENGE_TO_A_PARTY_DUEL_THE_DUEL_WILL_BEGIN_IN_A_FEW_MOMENTS);
 				msg1.Params.addString(requestor.getName());
-				
+
 				msg2 = new SystemMessagePacket(SystemMessageId.C1_HAS_ACCEPTED_YOUR_CHALLENGE_TO_DUEL_AGAINST_THEIR_PARTY_THE_DUEL_WILL_BEGIN_IN_A_FEW_MOMENTS);
 				msg2.Params.addString(player.getName());
 			}
@@ -59,14 +59,14 @@ public struct RequestDuelAnswerStartPacket: IIncomingPacket<GameSession>
 			{
 				msg1 = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACCEPTED_C1_S_CHALLENGE_A_DUEL_THE_DUEL_WILL_BEGIN_IN_A_FEW_MOMENTS);
 				msg1.Params.addString(requestor.getName());
-				
+
 				msg2 = new SystemMessagePacket(SystemMessageId.C1_HAS_ACCEPTED_YOUR_CHALLENGE_TO_A_DUEL_THE_DUEL_WILL_BEGIN_IN_A_FEW_MOMENTS);
 				msg2.Params.addString(player.getName());
 			}
-			
+
 			player.sendPacket(msg1);
 			requestor.sendPacket(msg2);
-			
+
 			DuelManager.getInstance().addDuel(requestor, player, _partyDuel);
 		}
 		else if (_response == -1)
@@ -87,10 +87,10 @@ public struct RequestDuelAnswerStartPacket: IIncomingPacket<GameSession>
 				msg = new SystemMessagePacket(SystemMessageId.C1_HAS_DECLINED_YOUR_CHALLENGE_TO_A_DUEL);
 				msg.Params.addPcName(player);
 			}
-			
+
 			requestor.sendPacket(msg);
 		}
-		
+
 		player.setActiveRequester(null);
 		requestor.onTransactionResponse();
 

@@ -36,7 +36,7 @@ public class SiegeFlag: Npc
 			throw new ArgumentException("Player is not in clan or siege.");
 		}
 
-		SiegeClan sc = _siege.getAttackerClan(_clan);
+		SiegeClan? sc = _siege.getAttackerClan(_clan);
 		if (sc == null)
 		{
 			throw new ArgumentException("Cannot find siege clan.");
@@ -66,7 +66,7 @@ public class SiegeFlag: Npc
 		}
 		if (_siege != null && _clan != null)
 		{
-			SiegeClan sc = _siege.getAttackerClan(_clan);
+			SiegeClan? sc = _siege.getAttackerClan(_clan);
 			if (sc != null)
 			{
 				sc.removeFlag(this);
@@ -122,7 +122,7 @@ public class SiegeFlag: Npc
 		setStatus(new SiegeFlagStatus(this));
 	}
 
-	public override void reduceCurrentHp(double damage, Creature attacker, Skill skill)
+	public override void reduceCurrentHp(double damage, Creature attacker, Skill? skill)
 	{
 		base.reduceCurrentHp(damage, attacker, skill);
 		if (canTalk() && ((getCastle() != null && getCastle().getSiege().isInProgress()) || (getFort() != null && getFort().getSiege().isInProgress())) && _clan != null)

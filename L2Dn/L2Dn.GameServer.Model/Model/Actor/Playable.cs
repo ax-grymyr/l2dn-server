@@ -254,7 +254,7 @@ public abstract class Playable: Creature
 		return _lockedTarget != null;
 	}
 
-	public Creature getLockedTarget()
+	public Creature? getLockedTarget()
 	{
 		return _lockedTarget;
 	}

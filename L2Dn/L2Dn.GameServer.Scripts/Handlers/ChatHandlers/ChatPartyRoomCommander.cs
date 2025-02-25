@@ -21,8 +21,9 @@ public class ChatPartyRoomCommander: IChatHandler
 	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
     {
         Party? party = activeChar.getParty();
-		if (activeChar.isInParty() && party != null && party.isInCommandChannel() &&
-            party.getCommandChannel().getLeader().Equals(activeChar))
+        CommandChannel? commandChannel = party?.getCommandChannel();
+		if (activeChar.isInParty() && party != null && party.isInCommandChannel() && commandChannel != null &&
+            commandChannel.getLeader().Equals(activeChar))
 		{
 			if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.Contains(type))
 			{
@@ -35,7 +36,7 @@ public class ChatPartyRoomCommander: IChatHandler
 				return;
 			}
 
-            party.getCommandChannel().broadcastCreatureSay(new CreatureSayPacket(activeChar, type, activeChar.getName(), text, shareLocation), activeChar);
+            commandChannel.broadcastCreatureSay(new CreatureSayPacket(activeChar, type, activeChar.getName(), text, shareLocation), activeChar);
 		}
 	}
 

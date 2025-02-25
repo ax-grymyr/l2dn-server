@@ -28,7 +28,7 @@ public struct RequestReplySurrenderPledgeWarPacket: IIncomingPacket<GameSession>
         if (playerClan == null)
             return ValueTask.CompletedTask;
 
-        Player requestor = player.getActiveRequester();
+        Player? requestor = player.getActiveRequester();
         if (requestor == null)
             return ValueTask.CompletedTask;
 

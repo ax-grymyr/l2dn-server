@@ -1658,7 +1658,7 @@ public class AdminEditChar: IAdminCommandHandler
 		}
 		if (target.isPet())
 		{
-			htmlContent.Replace("%food%", ((Pet) target).getCurrentFed() + "/" + ((Pet) target).getPetLevelData().getPetMaxFeed());
+			htmlContent.Replace("%food%", ((Pet) target).getCurrentFed() + "/" + ((Pet)target).getPetLevelData().getPetMaxFeed());
 			htmlContent.Replace("%load%", target.getInventory()?.getTotalWeight() + "/" + target.getMaxLoad());
 		}
 		else

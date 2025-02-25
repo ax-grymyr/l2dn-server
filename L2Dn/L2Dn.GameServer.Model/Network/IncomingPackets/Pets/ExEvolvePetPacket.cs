@@ -68,7 +68,7 @@ public struct ExEvolvePetPacket: IIncomingPacket<GameSession>
         if (npcTemplate == null)
             return;
 
-		Pet evolved = Pet.spawnPet(npcTemplate, activeChar, controlItem);
+		Pet? evolved = Pet.spawnPet(npcTemplate, activeChar, controlItem);
 		if (evolved == null)
 			return;
 

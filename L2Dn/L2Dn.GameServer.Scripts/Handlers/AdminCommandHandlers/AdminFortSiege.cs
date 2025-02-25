@@ -103,7 +103,7 @@ public class AdminFortSiege: IAdminCommandHandler
 			}
 			else if (command.equalsIgnoreCase("admin_removefort"))
 			{
-				Clan clan = fort.getOwnerClan();
+				Clan? clan = fort.getOwnerClan();
 				if (clan != null)
 				{
 					fort.removeOwner(true);

@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -56,30 +57,23 @@ public class PetStat: SummonStat
 		// Send a Server->Client packet PetInfo to the Player
 		getActiveChar().updateAndBroadcastStatus(1);
 
-		if (getActiveChar().getControlItem() != null)
+        Item? controlItem = getActiveChar().getControlItem();
+		if (controlItem != null)
 		{
-			getActiveChar().getControlItem().setEnchantLevel(getLevel());
+            controlItem.setEnchantLevel(getLevel());
 		}
 
 		return levelIncreased;
 	}
 
 	public override long getExpForLevel(int level)
-	{
-		try
-		{
-			return PetDataTable.getInstance().getPetLevelData(getActiveChar().getId(), level).getPetMaxExp();
-		}
-		catch (NullReferenceException e)
-		{
-			if (getActiveChar() != null)
-			{
-				LOGGER.Warn("Pet objectId:" + getActiveChar().ObjectId + ", NpcId:" + getActiveChar().getId() +
-				            ", level:" + level + " is missing data from pets_stats table!");
-			}
+    {
+        PetLevelData petData = PetDataTable.getInstance().getPetLevelData(getActiveChar().getId(), level) ??
+            throw new InvalidOperationException("Pet objectId:" + getActiveChar().ObjectId + ", NpcId:" +
+                getActiveChar().getId() +
+                ", level:" + level + " is missing data from pets_stats table!");
 
-			throw;
-		}
+        return petData.getPetMaxExp();
 	}
 
 	public override Pet getActiveChar()
@@ -98,8 +92,13 @@ public class PetStat: SummonStat
 	}
 
 	public override void setLevel(int value)
-	{
-		getActiveChar().setPetData(PetDataTable.getInstance().getPetLevelData(getActiveChar().getTemplate().getId(), value));
+    {
+        PetLevelData petData =
+            PetDataTable.getInstance().getPetLevelData(getActiveChar().getTemplate().getId(), value) ??
+            throw new ArgumentException("No pet data for npc: " + getActiveChar().getTemplate().getId() + " level: " +
+                value);
+
+		getActiveChar().setPetData(petData);
 		if (getActiveChar().getPetLevelData() == null)
 		{
 			throw new ArgumentException("No pet data for npc: " + getActiveChar().getTemplate().getId() + " level: " + value);
@@ -109,9 +108,10 @@ public class PetStat: SummonStat
 
 		getActiveChar().startFeed();
 
-		if (getActiveChar().getControlItem() != null)
+        Item? controlItem = getActiveChar().getControlItem();
+		if (controlItem != null)
 		{
-			getActiveChar().getControlItem().setEnchantLevel(getLevel());
+            controlItem.setEnchantLevel(getLevel());
 		}
 	}
 

@@ -31,7 +31,7 @@ public struct ExTimedHuntingZoneLeavePacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        TimedHuntingZoneHolder huntingZone = player.getTimedHuntingZone();
+        TimedHuntingZoneHolder? huntingZone = player.getTimedHuntingZone();
         if (huntingZone == null)
             return ValueTask.CompletedTask;
 

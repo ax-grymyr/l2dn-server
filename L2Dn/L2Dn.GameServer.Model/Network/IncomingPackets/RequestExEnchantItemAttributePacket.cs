@@ -128,10 +128,11 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (item.isArmor() && item.getAttributes() != null)
+        ICollection<AttributeHolder>? itemAttributes = item.getAttributes();
+		if (item.isArmor() && itemAttributes != null)
 		{
 			// can't add opposite element
-			foreach (AttributeHolder attribute in item.getAttributes())
+			foreach (AttributeHolder attribute in itemAttributes)
 			{
 				if (attribute.getType() == opositeElement)
 				{

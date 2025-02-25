@@ -99,7 +99,8 @@ public class FortManager: Merchant
             {
                 if (player.hasClanPrivilege(ClanPrivilege.CS_DISMISS))
                 {
-                    getFort().banishForeigners(); // Move non-clan members off fortress area
+                    Fort fort = getFort() ?? throw new InvalidOperationException("Fort is null in FortManager.onBypassFeedback");
+                    fort.banishForeigners(); // Move non-clan members off fortress area
                     HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-expeled.htm", player);
                     htmlContent.Replace("%objectId%", ObjectId.ToString());
                     NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
@@ -118,20 +119,21 @@ public class FortManager: Merchant
 
             if (actualCommand.equalsIgnoreCase("receive_report"))
             {
-                if (getFort().getFortState() < 2)
+                Fort fort = getFort() ?? throw new InvalidOperationException("Fort is null in FortManager.onBypassFeedback");
+                if (fort.getFortState() < 2)
                 {
                     HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-report.htm", player);
 
                     htmlContent.Replace("%objectId%", ObjectId.ToString());
                     if (Config.FS_MAX_OWN_TIME > 0)
                     {
-                        TimeSpan time = getFort().getTimeTillRebelArmy() ?? TimeSpan.Zero;
+                        TimeSpan time = fort.getTimeTillRebelArmy() ?? TimeSpan.Zero;
                         htmlContent.Replace("%hr%", time.Hours.ToString());
                         htmlContent.Replace("%min%", time.Minutes.ToString());
                     }
                     else
                     {
-                        TimeSpan time = getFort().getOwnedTime() ?? TimeSpan.Zero;
+                        TimeSpan time = fort.getOwnedTime() ?? TimeSpan.Zero;
                         htmlContent.Replace("%hr%", time.Hours.ToString());
                         htmlContent.Replace("%min%", time.Minutes.ToString());
                     }
@@ -147,19 +149,19 @@ public class FortManager: Merchant
                     htmlContent.Replace("%objectId%", ObjectId.ToString());
                     if (Config.FS_MAX_OWN_TIME > 0)
                     {
-                        TimeSpan time = getFort().getTimeTillRebelArmy() ?? TimeSpan.Zero;
+                        TimeSpan time = fort.getTimeTillRebelArmy() ?? TimeSpan.Zero;
                         htmlContent.Replace("%hr%", time.Hours.ToString());
                         htmlContent.Replace("%min%", time.Minutes.ToString());
                     }
                     else
                     {
-                        TimeSpan time = getFort().getOwnedTime() ?? TimeSpan.Zero;
+                        TimeSpan time = fort.getOwnedTime() ?? TimeSpan.Zero;
                         htmlContent.Replace("%hr%", time.Hours.ToString());
                         htmlContent.Replace("%min%", time.Minutes.ToString());
                     }
 
-                    TimeSpan time2 = getFort().getTimeTillNextFortUpdate();
-                    htmlContent.Replace("%castle%", getFort().getContractedCastle().getName());
+                    TimeSpan time2 = fort.getTimeTillNextFortUpdate();
+                    htmlContent.Replace("%castle%", fort.getContractedCastle().getName());
                     htmlContent.Replace("%hr2%", time2.Hours.ToString());
                     htmlContent.Replace("%min2%", time2.Minutes.ToString());
 
@@ -175,17 +177,18 @@ public class FortManager: Merchant
             {
                 if (player.hasClanPrivilege(ClanPrivilege.CS_OPEN_DOOR))
                 {
+                    Fort fort = getFort() ?? throw new InvalidOperationException("Fort is null in FortManager.onBypassFeedback");
                     if (!string.IsNullOrEmpty(val))
                     {
                         bool open = int.Parse(val) == 1;
                         while (st.hasMoreTokens())
                         {
-                            getFort().openCloseDoor(player, int.Parse(st.nextToken()), open);
+                            fort.openCloseDoor(player, int.Parse(st.nextToken()), open);
                         }
 
                         if (open)
                         {
-                            if (getFort().getResidenceId() == ORC_FORTRESS_ID)
+                            if (fort.getResidenceId() == ORC_FORTRESS_ID)
                             {
                                 return;
                             }
@@ -198,7 +201,7 @@ public class FortManager: Merchant
                         }
                         else
                         {
-                            if (getFort().getResidenceId() == ORC_FORTRESS_ID)
+                            if (fort.getResidenceId() == ORC_FORTRESS_ID)
                             {
                                 return;
                             }
@@ -212,7 +215,7 @@ public class FortManager: Merchant
                     }
                     else
                     {
-                        if (getFort().getResidenceId() == ORC_FORTRESS_ID)
+                        if (fort.getResidenceId() == ORC_FORTRESS_ID)
                         {
                             return;
                         }
@@ -267,9 +270,10 @@ public class FortManager: Merchant
 
             if (actualCommand.equalsIgnoreCase("functions"))
             {
+                Fort fort = getFort() ?? throw new InvalidOperationException("Fort is null in FortManager.onBypassFeedback");
                 if (val.equalsIgnoreCase("tele"))
                 {
-                    if (getFort().getFortFunction(Fort.FUNC_TELEPORT) == null)
+                    if (fort.getFortFunction(Fort.FUNC_TELEPORT) == null)
                     {
                         HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-nac.htm", player);
                         sendHtmlMessage(player, htmlContent);
@@ -278,14 +282,14 @@ public class FortManager: Merchant
                     {
                         HtmlContent htmlContent = HtmlContent.LoadFromFile(
                             "html/fortress/" + getId() + "-t" +
-                            getFort().getFortFunction(Fort.FUNC_TELEPORT).getLevel() + ".htm", player);
+                            fort.getFortFunction(Fort.FUNC_TELEPORT).getLevel() + ".htm", player);
 
                         sendHtmlMessage(player, htmlContent);
                     }
                 }
                 else if (val.equalsIgnoreCase("support"))
                 {
-                    if (getFort().getFortFunction(Fort.FUNC_SUPPORT) == null)
+                    if (fort.getFortFunction(Fort.FUNC_SUPPORT) == null)
                     {
                         HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-nac.htm", player);
                         sendHtmlMessage(player, htmlContent);
@@ -293,7 +297,7 @@ public class FortManager: Merchant
                     else
                     {
                         HtmlContent htmlContent = HtmlContent.LoadFromFile(
-                            "html/fortress/support" + getFort().getFortFunction(Fort.FUNC_SUPPORT).getLevel() + ".htm",
+                            "html/fortress/support" + fort.getFortFunction(Fort.FUNC_SUPPORT).getLevel() + ".htm",
                             player);
 
                         htmlContent.Replace("%mp%", ((int)getCurrentMp()).ToString());
@@ -308,30 +312,30 @@ public class FortManager: Merchant
                 {
                     HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-functions.htm", player);
 
-                    if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP) != null)
+                    if (fort.getFortFunction(Fort.FUNC_RESTORE_EXP) != null)
                     {
                         htmlContent.Replace("%xp_regen%",
-                            getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLevel().ToString());
+                            fort.getFortFunction(Fort.FUNC_RESTORE_EXP).getLevel().ToString());
                     }
                     else
                     {
                         htmlContent.Replace("%xp_regen%", "0");
                     }
 
-                    if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP) != null)
+                    if (fort.getFortFunction(Fort.FUNC_RESTORE_HP) != null)
                     {
                         htmlContent.Replace("%hp_regen%",
-                            getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLevel().ToString());
+                            fort.getFortFunction(Fort.FUNC_RESTORE_HP).getLevel().ToString());
                     }
                     else
                     {
                         htmlContent.Replace("%hp_regen%", "0");
                     }
 
-                    if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP) != null)
+                    if (fort.getFortFunction(Fort.FUNC_RESTORE_MP) != null)
                     {
                         htmlContent.Replace("%mp_regen%",
-                            getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLevel().ToString());
+                            fort.getFortFunction(Fort.FUNC_RESTORE_MP).getLevel().ToString());
                     }
                     else
                     {
@@ -352,7 +356,8 @@ public class FortManager: Merchant
                     {
                         if (st.countTokens() >= 1)
                         {
-                            if (getFort().getOwnerClan() == null)
+                            Fort fort = getFort() ?? throw new InvalidOperationException("Fort is null in FortManager.onBypassFeedback");
+                            if (fort.getOwnerClan() == null)
                             {
                                 player.sendMessage("This fortress has no owner, you cannot change the configuration.");
                                 return;
@@ -495,9 +500,9 @@ public class FortManager: Merchant
                                     int fee;
                                     val = st.nextToken();
 
-                                    if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP) != null)
+                                    if (fort.getFortFunction(Fort.FUNC_RESTORE_HP) != null)
                                     {
-                                        if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLevel() ==
+                                        if (fort.getFortFunction(Fort.FUNC_RESTORE_HP).getLevel() ==
                                             int.Parse(val))
                                         {
                                             htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm",
@@ -536,9 +541,9 @@ public class FortManager: Merchant
                                         }
                                     }
 
-                                    if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_HP, percent, fee,
+                                    if (!fort.updateFunctions(player, Fort.FUNC_RESTORE_HP, percent, fee,
                                             Config.FS_HPREG_FEE_RATIO,
-                                            getFort().getFortFunction(Fort.FUNC_RESTORE_HP) == null))
+                                            fort.getFortFunction(Fort.FUNC_RESTORE_HP) == null))
                                     {
                                         htmlContent = HtmlContent.LoadFromFile("html/fortress/low_adena.htm", player);
                                     }
@@ -558,9 +563,9 @@ public class FortManager: Merchant
                                     HtmlContent htmlContent =
                                         HtmlContent.LoadFromFile("html/fortress/functions-apply_confirmed.htm", player);
 
-                                    if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP) != null)
+                                    if (fort.getFortFunction(Fort.FUNC_RESTORE_MP) != null)
                                     {
-                                        if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLevel() ==
+                                        if (fort.getFortFunction(Fort.FUNC_RESTORE_MP).getLevel() ==
                                             int.Parse(val))
                                         {
                                             htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm",
@@ -595,9 +600,9 @@ public class FortManager: Merchant
                                         }
                                     }
 
-                                    if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_MP, percent, fee,
+                                    if (!fort.updateFunctions(player, Fort.FUNC_RESTORE_MP, percent, fee,
                                             Config.FS_MPREG_FEE_RATIO,
-                                            getFort().getFortFunction(Fort.FUNC_RESTORE_MP) == null))
+                                            fort.getFortFunction(Fort.FUNC_RESTORE_MP) == null))
                                     {
                                         htmlContent = HtmlContent.LoadFromFile("html/fortress/low_adena.htm", player);
                                     }
@@ -617,9 +622,9 @@ public class FortManager: Merchant
                                     HtmlContent htmlContent =
                                         HtmlContent.LoadFromFile("html/fortress/functions-apply_confirmed.htm", player);
 
-                                    if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP) != null)
+                                    if (fort.getFortFunction(Fort.FUNC_RESTORE_EXP) != null)
                                     {
-                                        if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLevel() ==
+                                        if (fort.getFortFunction(Fort.FUNC_RESTORE_EXP).getLevel() ==
                                             int.Parse(val))
                                         {
                                             htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm",
@@ -655,9 +660,9 @@ public class FortManager: Merchant
                                         }
                                     }
 
-                                    if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_EXP, percent, fee,
+                                    if (!fort.updateFunctions(player, Fort.FUNC_RESTORE_EXP, percent, fee,
                                             Config.FS_EXPREG_FEE_RATIO,
-                                            getFort().getFortFunction(Fort.FUNC_RESTORE_EXP) == null))
+                                            fort.getFortFunction(Fort.FUNC_RESTORE_EXP) == null))
                                     {
                                         htmlContent = HtmlContent.LoadFromFile("html/fortress/low_adena.htm", player);
                                     }
@@ -678,16 +683,18 @@ public class FortManager: Merchant
                                 "[<a action=\"bypass -h npc_%objectId%_manage recovery edit_exp 45\">45%</a>][<a action=\"bypass -h npc_%objectId%_manage recovery edit_exp 50\">50%</a>]";
                             string mp =
                                 "[<a action=\"bypass -h npc_%objectId%_manage recovery edit_mp 40\">40%</a>][<a action=\"bypass -h npc_%objectId%_manage recovery edit_mp 50\">50%</a>]";
-                            if (getFort().getFortFunction(Fort.FUNC_RESTORE_HP) != null)
+
+                            Fort fort = getFort() ?? throw new InvalidOperationException("Fort is null in FortManager.onBypassFeedback");
+                            if (fort.getFortFunction(Fort.FUNC_RESTORE_HP) != null)
                             {
                                 htmlContent.Replace("%hp_recovery%",
-                                    getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLevel() +
+                                    fort.getFortFunction(Fort.FUNC_RESTORE_HP).getLevel() +
                                     "%</font> (<font color=\"FFAABB\">" +
-                                    getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getLease() + "</font>Adena /" +
+                                    fort.getFortFunction(Fort.FUNC_RESTORE_HP).getLease() + "</font>Adena /" +
                                     Config.FS_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
                                 htmlContent.Replace("%hp_period%",
                                     "Withdraw the fee for the next time at " +
-                                    getFort().getFortFunction(Fort.FUNC_RESTORE_HP).getEndTime()
+                                    fort.getFortFunction(Fort.FUNC_RESTORE_HP).getEndTime()
                                         ?.ToString("dd/MM/yyyy HH:mm"));
                                 htmlContent.Replace("%change_hp%",
                                     "[<a action=\"bypass -h npc_%objectId%_manage recovery hp_cancel\">Deactivate</a>]" +
@@ -700,16 +707,16 @@ public class FortManager: Merchant
                                 htmlContent.Replace("%change_hp%", hp);
                             }
 
-                            if (getFort().getFortFunction(Fort.FUNC_RESTORE_EXP) != null)
+                            if (fort.getFortFunction(Fort.FUNC_RESTORE_EXP) != null)
                             {
                                 htmlContent.Replace("%exp_recovery%",
-                                    getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLevel() +
+                                    fort.getFortFunction(Fort.FUNC_RESTORE_EXP).getLevel() +
                                     "%</font> (<font color=\"FFAABB\">" +
-                                    getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getLease() + "</font>Adena /" +
+                                    fort.getFortFunction(Fort.FUNC_RESTORE_EXP).getLease() + "</font>Adena /" +
                                     Config.FS_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
                                 htmlContent.Replace("%exp_period%",
                                     "Withdraw the fee for the next time at " +
-                                    getFort().getFortFunction(Fort.FUNC_RESTORE_EXP).getEndTime()
+                                    fort.getFortFunction(Fort.FUNC_RESTORE_EXP).getEndTime()
                                         ?.ToString("dd/MM/yyyy HH:mm"));
                                 htmlContent.Replace("%change_exp%",
                                     "[<a action=\"bypass -h npc_%objectId%_manage recovery exp_cancel\">Deactivate</a>]" +
@@ -722,16 +729,16 @@ public class FortManager: Merchant
                                 htmlContent.Replace("%change_exp%", exp);
                             }
 
-                            if (getFort().getFortFunction(Fort.FUNC_RESTORE_MP) != null)
+                            if (fort.getFortFunction(Fort.FUNC_RESTORE_MP) != null)
                             {
                                 htmlContent.Replace("%mp_recovery%",
-                                    getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLevel() +
+                                    fort.getFortFunction(Fort.FUNC_RESTORE_MP).getLevel() +
                                     "%</font> (<font color=\"FFAABB\">" +
-                                    getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getLease() + "</font>Adena /" +
+                                    fort.getFortFunction(Fort.FUNC_RESTORE_MP).getLease() + "</font>Adena /" +
                                     Config.FS_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
                                 htmlContent.Replace("%mp_period%",
                                     "Withdraw the fee for the next time at " +
-                                    getFort().getFortFunction(Fort.FUNC_RESTORE_MP).getEndTime()
+                                    fort.getFortFunction(Fort.FUNC_RESTORE_MP).getEndTime()
                                         ?.ToString("dd/MM/yyyy HH:mm"));
                                 htmlContent.Replace("%change_mp%",
                                     "[<a action=\"bypass -h npc_%objectId%_manage recovery mp_cancel\">Deactivate</a>]" +
@@ -751,7 +758,8 @@ public class FortManager: Merchant
                     {
                         if (st.countTokens() >= 1)
                         {
-                            if (getFort().getOwnerClan() == null)
+                            Fort fort = getFort() ?? throw new InvalidOperationException("Fort is null in FortManager.onBypassFeedback");
+                            if (fort.getOwnerClan() == null)
                             {
                                 player.sendMessage("This fortress has no owner, you cannot change the configuration.");
                                 return;
@@ -850,9 +858,9 @@ public class FortManager: Merchant
                                     HtmlContent htmlContent =
                                         HtmlContent.LoadFromFile("html/fortress/functions-apply_confirmed.htm", player);
 
-                                    if (getFort().getFortFunction(Fort.FUNC_TELEPORT) != null)
+                                    if (fort.getFortFunction(Fort.FUNC_TELEPORT) != null)
                                     {
-                                        if (getFort().getFortFunction(Fort.FUNC_TELEPORT).getLevel() == int.Parse(val))
+                                        if (fort.getFortFunction(Fort.FUNC_TELEPORT).getLevel() == int.Parse(val))
                                         {
                                             htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm",
                                                 player);
@@ -885,9 +893,9 @@ public class FortManager: Merchant
                                         }
                                     }
 
-                                    if (!getFort().updateFunctions(player, Fort.FUNC_TELEPORT, level, fee,
+                                    if (!fort.updateFunctions(player, Fort.FUNC_TELEPORT, level, fee,
                                             Config.FS_TELE_FEE_RATIO,
-                                            getFort().getFortFunction(Fort.FUNC_TELEPORT) == null))
+                                            fort.getFortFunction(Fort.FUNC_TELEPORT) == null))
                                     {
                                         htmlContent = HtmlContent.LoadFromFile("html/fortress/low_adena.htm", player);
                                     }
@@ -908,9 +916,9 @@ public class FortManager: Merchant
                                     HtmlContent htmlContent =
                                         HtmlContent.LoadFromFile("html/fortress/functions-apply_confirmed.htm", player);
 
-                                    if (getFort().getFortFunction(Fort.FUNC_SUPPORT) != null)
+                                    if (fort.getFortFunction(Fort.FUNC_SUPPORT) != null)
                                     {
-                                        if (getFort().getFortFunction(Fort.FUNC_SUPPORT).getLevel() == int.Parse(val))
+                                        if (fort.getFortFunction(Fort.FUNC_SUPPORT).getLevel() == int.Parse(val))
                                         {
                                             htmlContent = HtmlContent.LoadFromFile("html/fortress/functions-used.htm",
                                                 player);
@@ -945,9 +953,9 @@ public class FortManager: Merchant
                                         }
                                     }
 
-                                    if (!getFort().updateFunctions(player, Fort.FUNC_SUPPORT, level, fee,
+                                    if (!fort.updateFunctions(player, Fort.FUNC_SUPPORT, level, fee,
                                             Config.FS_SUPPORT_FEE_RATIO,
-                                            getFort().getFortFunction(Fort.FUNC_SUPPORT) == null))
+                                            fort.getFortFunction(Fort.FUNC_SUPPORT) == null))
                                     {
                                         htmlContent = HtmlContent.LoadFromFile("html/fortress/low_adena.htm", player);
                                     }
@@ -966,16 +974,18 @@ public class FortManager: Merchant
                                 "[<a action=\"bypass -h npc_%objectId%_manage other edit_tele 1\">Level 1</a>][<a action=\"bypass -h npc_%objectId%_manage other edit_tele 2\">Level 2</a>]";
                             string support =
                                 "[<a action=\"bypass -h npc_%objectId%_manage other edit_support 1\">Level 1</a>][<a action=\"bypass -h npc_%objectId%_manage other edit_support 2\">Level 2</a>]";
-                            if (getFort().getFortFunction(Fort.FUNC_TELEPORT) != null)
+
+                            Fort fort = getFort() ?? throw new InvalidOperationException("Fort is null in FortManager.onBypassFeedback");
+                            if (fort.getFortFunction(Fort.FUNC_TELEPORT) != null)
                             {
                                 htmlContent.Replace("%tele%",
-                                    "Stage " + getFort().getFortFunction(Fort.FUNC_TELEPORT).getLevel() +
+                                    "Stage " + fort.getFortFunction(Fort.FUNC_TELEPORT).getLevel() +
                                     "</font> (<font color=\"FFAABB\">" +
-                                    getFort().getFortFunction(Fort.FUNC_TELEPORT).getLease() + "</font>Adena /" +
+                                    fort.getFortFunction(Fort.FUNC_TELEPORT).getLease() + "</font>Adena /" +
                                     Config.FS_TELE_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
                                 htmlContent.Replace("%tele_period%",
                                     "Withdraw the fee for the next time at " +
-                                    getFort().getFortFunction(Fort.FUNC_TELEPORT).getEndTime()
+                                    fort.getFortFunction(Fort.FUNC_TELEPORT).getEndTime()
                                         ?.ToString("dd/MM/yyyy HH:mm"));
                                 htmlContent.Replace("%change_tele%",
                                     "[<a action=\"bypass -h npc_%objectId%_manage other tele_cancel\">Deactivate</a>]" +
@@ -988,16 +998,16 @@ public class FortManager: Merchant
                                 htmlContent.Replace("%change_tele%", tele);
                             }
 
-                            if (getFort().getFortFunction(Fort.FUNC_SUPPORT) != null)
+                            if (fort.getFortFunction(Fort.FUNC_SUPPORT) != null)
                             {
                                 htmlContent.Replace("%support%",
-                                    "Stage " + getFort().getFortFunction(Fort.FUNC_SUPPORT).getLevel() +
+                                    "Stage " + fort.getFortFunction(Fort.FUNC_SUPPORT).getLevel() +
                                     "</font> (<font color=\"FFAABB\">" +
-                                    getFort().getFortFunction(Fort.FUNC_SUPPORT).getLease() + "</font>Adena /" +
+                                    fort.getFortFunction(Fort.FUNC_SUPPORT).getLease() + "</font>Adena /" +
                                     Config.FS_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
                                 htmlContent.Replace("%support_period%",
                                     "Withdraw the fee for the next time at " +
-                                    getFort().getFortFunction(Fort.FUNC_SUPPORT).getEndTime()
+                                    fort.getFortFunction(Fort.FUNC_SUPPORT).getEndTime()
                                         ?.ToString("dd/MM/yyyy HH:mm"));
                                 htmlContent.Replace("%change_support%",
                                     "[<a action=\"bypass -h npc_%objectId%_manage other support_cancel\">Deactivate</a>]" +

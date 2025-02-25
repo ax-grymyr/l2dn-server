@@ -39,7 +39,7 @@ public class DailyTaskManager
 
 	protected DailyTaskManager()
 	{
-		// Schedule reset everyday at 6:30.
+		// Schedule reset every day at 6:30.
 		DateTime currentTime = DateTime.Now;
 		DateTime calendar = new DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 6, 30, 0, DateTimeKind.Local);
 		if (calendar < currentTime)
@@ -674,6 +674,7 @@ public class DailyTaskManager
 		{
 			player.getHuntPass().resetHuntPass();
 		}
+
 		LOGGER.Info("HuntPassData has been reset.");
 	}
 

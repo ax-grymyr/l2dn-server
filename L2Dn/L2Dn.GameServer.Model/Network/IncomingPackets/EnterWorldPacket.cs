@@ -685,7 +685,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		SiegeManager.getInstance().sendSiegeInfo(player);
 
 		// Activate first agathion when available.
-		Item agathion = player.getInventory().unEquipItemInBodySlot(ItemTemplate.SLOT_AGATHION);
+		Item? agathion = player.getInventory().unEquipItemInBodySlot(ItemTemplate.SLOT_AGATHION);
 		if (agathion != null)
 		{
 			player.getInventory().equipItemAndRecord(agathion);

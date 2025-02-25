@@ -34,12 +34,14 @@ public struct RequestExOustFromMPCCPacket: IIncomingPacket<GameSession>
 
         Party? playerParty = player.getParty();
         Party? targetParty = target.getParty();
+        CommandChannel? playerCommandChannel = playerParty?.getCommandChannel();
+        CommandChannel? targetCommandChannel = targetParty?.getCommandChannel();
         if (target.isInParty() && player.isInParty() && playerParty != null && playerParty.isInCommandChannel() &&
-            targetParty != null && targetParty.isInCommandChannel() &&
-            playerParty.getCommandChannel().getLeader().Equals(player) && playerParty.getCommandChannel()
-                .Equals(targetParty.getCommandChannel()))
+            playerCommandChannel != null && targetParty != null && targetParty.isInCommandChannel() &&
+            targetCommandChannel != null &&
+            playerCommandChannel.getLeader().Equals(player) && playerCommandChannel.Equals(targetCommandChannel))
         {
-            targetParty.getCommandChannel().removeParty(targetParty);
+            playerCommandChannel.removeParty(targetParty);
 
             SystemMessagePacket sm =
                 new SystemMessagePacket(SystemMessageId.YOU_ARE_DISMISSED_FROM_THE_COMMAND_CHANNEL);
@@ -50,7 +52,7 @@ public struct RequestExOustFromMPCCPacket: IIncomingPacket<GameSession>
             {
                 sm = new SystemMessagePacket(SystemMessageId.C1_S_PARTY_IS_DISMISSED_FROM_THE_COMMAND_CHANNEL);
                 sm.Params.addString(targetParty.getLeader().getName());
-                playerParty.getCommandChannel().broadcastPacket(sm);
+                playerCommandChannel.broadcastPacket(sm);
             }
         }
         else

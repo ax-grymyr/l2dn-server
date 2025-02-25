@@ -16,11 +16,11 @@ namespace L2Dn.GameServer.Model.Actor.Stats;
 public class PlayableStat: CreatureStat
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(PlayableStat));
-	
+
 	public PlayableStat(Playable player): base(player)
 	{
 	}
-	
+
 	public virtual bool addExp(long amount)
 	{
 		EventContainer charEvents = getActiveChar().Events;
@@ -32,18 +32,18 @@ public class PlayableStat: CreatureStat
 				return false;
 			}
 		}
-		
+
 		if (getExp() + amount < 0 || (amount > 0 && getExp() == getExpForLevel(getMaxLevel()) - 1))
 		{
 			return true;
 		}
-		
+
 		long value = amount;
 		if (getExp() + value >= getExpForLevel(getMaxLevel()))
 		{
 			value = getExpForLevel(getMaxLevel()) - 1 - getExp();
 		}
-		
+
 		int oldLevel = getLevel();
 		setExp(getExp() + value);
 		int minimumLevel = 1;
@@ -52,7 +52,7 @@ public class PlayableStat: CreatureStat
 			// get minimum level from NpcTemplate
 			minimumLevel = PetDataTable.getInstance().getPetMinLevel(((Pet) getActiveChar()).getTemplate().getId());
 		}
-		
+
 		int level = minimumLevel; // minimum level
 		for (int tmp = level; tmp <= getMaxLevel(); tmp++)
 		{
@@ -63,12 +63,12 @@ public class PlayableStat: CreatureStat
 			level = --tmp;
 			break;
 		}
-		
+
 		if (level != getLevel() && level >= minimumLevel)
 		{
 			addLevel(level - getLevel());
 		}
-		
+
 		int newLevel = getLevel();
 		if (newLevel > oldLevel && getActiveChar().isPlayer())
 		{
@@ -77,21 +77,21 @@ public class PlayableStat: CreatureStat
 			{
 				getActiveChar().sendPacket(ExNewSkillToLearnByLevelUpPacket.STATIC_PACKET);
 			}
-			
+
 			// Check last rewarded level - prevent reputation farming via deleveling
 			int lastPledgedLevel = player.getVariables().getInt(PlayerVariables.LAST_PLEDGE_REPUTATION_LEVEL, 0);
 			if (lastPledgedLevel < newLevel)
 			{
 				int leveledUpCount = newLevel - lastPledgedLevel;
 				addReputationToClanBasedOnLevel(player, leveledUpCount);
-				
+
 				player.getVariables().set(PlayerVariables.LAST_PLEDGE_REPUTATION_LEVEL, newLevel);
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	public bool removeExp(long amount)
 	{
 		long value = amount;
@@ -99,12 +99,12 @@ public class PlayableStat: CreatureStat
 		{
 			value = getExp() - getExpForLevel(getLevel());
 		}
-		
+
 		if (getExp() - value < 0)
 		{
 			value = getExp() - 1;
 		}
-		
+
 		setExp(getExp() - value);
 		int minimumLevel = 1;
 		if (getActiveChar().isPet())
@@ -128,7 +128,7 @@ public class PlayableStat: CreatureStat
 		}
 		return true;
 	}
-	
+
 	public virtual bool removeExpAndSp(long exp, long sp)
 	{
 		bool expRemoved = false;
@@ -141,10 +141,10 @@ public class PlayableStat: CreatureStat
 		{
 			spRemoved = removeSp(sp);
 		}
-		
+
 		return expRemoved || spRemoved;
 	}
-	
+
 	public virtual bool addLevel(int amount)
 	{
 		int value = amount;
@@ -159,33 +159,33 @@ public class PlayableStat: CreatureStat
 				return false;
 			}
 		}
-		
+
 		bool levelIncreased = getLevel() + value > getLevel();
 		value += getLevel();
 		setLevel(value);
-		
+
 		// Sync up exp with current level
 		if (getExp() >= getExpForLevel(getLevel() + 1) || getExpForLevel(getLevel()) > getExp())
 		{
 			setExp(getExpForLevel(getLevel()));
 		}
-		
+
 		if (!levelIncreased && getActiveChar().isPlayer() && !getActiveChar().isGM() && Config.DECREASE_SKILL_LEVEL)
 		{
 			((Player) getActiveChar()).checkPlayerSkills();
 		}
-		
+
 		if (!levelIncreased)
 		{
 			return false;
 		}
-		
+
 		getActiveChar().getStatus().setCurrentHp(getActiveChar().getStat().getMaxHp());
 		getActiveChar().getStatus().setCurrentMp(getActiveChar().getStat().getMaxMp());
-		
+
 		return true;
 	}
-	
+
 	public virtual bool addSp(long amount)
 	{
 		if (amount < 0)
@@ -193,23 +193,23 @@ public class PlayableStat: CreatureStat
 			LOGGER.Warn("wrong usage");
 			return false;
 		}
-		
+
 		long currentSp = getSp();
 		if (currentSp >= Config.MAX_SP)
 		{
 			return false;
 		}
-		
+
 		long value = amount;
 		if (currentSp > Config.MAX_SP - value)
 		{
 			value = Config.MAX_SP - currentSp;
 		}
-		
+
 		setSp(currentSp + value);
 		return true;
 	}
-	
+
 	public bool removeSp(long amount)
 	{
 		long currentSp = getSp();
@@ -221,47 +221,47 @@ public class PlayableStat: CreatureStat
 		setSp(getSp() - amount);
 		return true;
 	}
-	
+
 	public virtual long getExpForLevel(int level)
 	{
 		return ExperienceData.getInstance().getExpForLevel(level);
 	}
-	
+
 	public override Playable getActiveChar()
 	{
 		return (Playable)base.getActiveChar();
 	}
-	
+
 	public virtual int getMaxLevel()
 	{
 		return ExperienceData.getInstance().getMaxLevel();
 	}
-	
+
 	public override int getPhysicalAttackRadius()
 	{
-		Weapon weapon = getActiveChar().getActiveWeaponItem();
+		Weapon? weapon = getActiveChar().getActiveWeaponItem();
 		return weapon != null ? weapon.getBaseAttackRadius() : base.getPhysicalAttackRadius();
 	}
-	
+
 	public override int getPhysicalAttackAngle()
 	{
-		Weapon weapon = getActiveChar().getActiveWeaponItem();
+		Weapon? weapon = getActiveChar().getActiveWeaponItem();
 		return weapon != null ? weapon.getBaseAttackAngle() + (int) getActiveChar().getStat().getValue(Stat.WEAPON_ATTACK_ANGLE_BONUS, 0) : base.getPhysicalAttackAngle();
 	}
-	
+
 	private void addReputationToClanBasedOnLevel(Player player, int leveledUpCount)
 	{
-		Clan clan = player.getClan();
+		Clan? clan = player.getClan();
 		if (clan == null)
 		{
 			return;
 		}
-		
+
 		if (clan.getLevel() < 3) // When a character from clan level 3 or above increases its level, CRP are added
 		{
 			return;
 		}
-		
+
 		int reputation = 0;
 		for (int i = 0; i < leveledUpCount; i++)
 		{
@@ -323,16 +323,16 @@ public class PlayableStat: CreatureStat
 				reputation += Config.LVL_UP_91_PLUS_REP_SCORE;
 			}
 		}
-		
+
 		if (reputation == 0)
 		{
 			return;
 		}
-		
+
 		reputation = (int) Math.Ceiling(reputation * Config.LVL_OBTAINED_REP_SCORE_MULTIPLIER);
-		
+
 		clan.addReputationScore(reputation);
-		
+
 		foreach (ClanMember member in clan.getMembers())
 		{
 			if (member.isOnline())

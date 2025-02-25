@@ -93,8 +93,8 @@ public sealed class DbSpawnManager
 				spawn.setSpawnTemplate(spawnTemplate);
 
 				TimeSpan? respawn = spawnTemplate.getRespawnTime();
-				TimeSpan respawnRandom = spawnTemplate.getRespawnTimeRandom();
-				SchedulingPattern respawnPattern = spawnTemplate.getRespawnPattern();
+				TimeSpan? respawnRandom = spawnTemplate.getRespawnTimeRandom();
+				SchedulingPattern? respawnPattern = spawnTemplate.getRespawnPattern();
 
 				if (respawn != null || respawnPattern != null)
 				{
@@ -259,7 +259,7 @@ public sealed class DbSpawnManager
 			UpdateRecord(npcState);
 	}
 
-	public Npc addNewSpawn(Spawn spawn, bool storeInDb)
+	public Npc? addNewSpawn(Spawn spawn, bool storeInDb)
 	{
 		int npcId = spawn.getId();
 		if (_npcStates.TryGetValue(npcId, out NpcState? npcState) && npcState.Spawn != null)

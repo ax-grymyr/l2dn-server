@@ -7,67 +7,45 @@ namespace L2Dn.GameServer.Data.Sql;
 /**
  * @author Nyaran
  */
-public class SummonEffectTable
+public sealed class SummonEffectTable
 {
-	/** Servitors **/
-	// Map tree
-	// => key: charObjectId, value: classIndex Map
-	// --> key: classIndex, value: servitors Map
-	// ---> key: servitorSkillId, value: Effects list
-	private readonly Map<int, Map<int, Map<int, ICollection<SummonEffect>>>> _servitorEffects = new();
+    /** Servitors **/
+    // Map tree
+    // => key: charObjectId, value: classIndex Map
+    // --> key: classIndex, value: servitors Map
+    // ---> key: servitorSkillId, value: Effects list
+    private readonly Map<int, Map<int, Map<int, ICollection<SummonEffect>>>> _servitorEffects = new();
 
-	public Map<int, Map<int, Map<int, ICollection<SummonEffect>>>> getServitorEffectsOwner()
-	{
-		return _servitorEffects;
-	}
+    /** Pets **/
+    // key: petItemObjectId, value: Effects list
+    private readonly Map<int, ICollection<SummonEffect>> _petEffects = new();
 
-	public Map<int, ICollection<SummonEffect>>? getServitorEffects(Player owner)
-	{
-		Map<int, Map<int, ICollection<SummonEffect>>>? servitorMap = _servitorEffects.get(owner.ObjectId);
-		if (servitorMap == null)
-		{
-			return null;
-		}
-		return servitorMap.get(owner.getClassIndex());
-	}
+    public Map<int, Map<int, Map<int, ICollection<SummonEffect>>>> getServitorEffectsOwner() => _servitorEffects;
 
-	/** Pets **/
-	private readonly Map<int, ICollection<SummonEffect>> _petEffects = new(); // key: petItemObjectId, value: Effects list
+    public Map<int, ICollection<SummonEffect>>? getServitorEffects(Player owner)
+    {
+        Map<int, Map<int, ICollection<SummonEffect>>>? servitorMap = _servitorEffects.get(owner.ObjectId);
+        if (servitorMap == null)
+            return null;
 
-	public Map<int, ICollection<SummonEffect>> getPetEffects()
-	{
-		return _petEffects;
-	}
+        return servitorMap.get(owner.getClassIndex());
+    }
 
-	public class SummonEffect
-	{
-		private readonly Skill _skill;
-		private readonly TimeSpan _effectCurTime;
+    public Map<int, ICollection<SummonEffect>> getPetEffects() => _petEffects;
 
-		public SummonEffect(Skill skill, TimeSpan effectCurTime)
-		{
-			_skill = skill;
-			_effectCurTime = effectCurTime;
-		}
+    public static SummonEffectTable getInstance()
+    {
+        return SingletonHolder.INSTANCE;
+    }
 
-		public Skill getSkill()
-		{
-			return _skill;
-		}
+    private static class SingletonHolder
+    {
+        public static readonly SummonEffectTable INSTANCE = new();
+    }
 
-		public TimeSpan getEffectCurTime()
-		{
-			return _effectCurTime;
-		}
-	}
-
-	public static SummonEffectTable getInstance()
-	{
-		return SingletonHolder.INSTANCE;
-	}
-
-	private static class SingletonHolder
-	{
-		public static readonly SummonEffectTable INSTANCE = new SummonEffectTable();
-	}
+    public sealed class SummonEffect(Skill skill, TimeSpan effectCurTime)
+    {
+        public Skill getSkill() => skill;
+        public TimeSpan getEffectCurTime() => effectCurTime;
+    }
 }

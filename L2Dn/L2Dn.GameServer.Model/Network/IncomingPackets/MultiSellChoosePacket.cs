@@ -421,7 +421,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				else if (!itemEnchantmentProcessed && itemEnchantment != null && itemEnchantment.getItem().getId() == ingredient.getId())
 				{
 					// Take the enchanted item.
-					Item destroyedItem = inventory.destroyItem("Multisell", itemEnchantment.getObjectId(), totalCount, player, npc);
+					Item? destroyedItem = inventory.destroyItem("Multisell", itemEnchantment.getObjectId(), totalCount, player, npc);
 					if (destroyedItem != null)
 					{
 						itemEnchantmentProcessed = true;
@@ -515,7 +515,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				else
 				{
 					// Give item.
-					Item addedItem = inventory.addItem("Multisell", product.getId(), totalCount, player, npc, false);
+					Item? addedItem = inventory.addItem("Multisell", product.getId(), totalCount, player, npc, false);
 
 					// Check if the newly given item should be enchanted.
 					if (itemEnchantmentProcessed && list.isMaintainEnchantment() && itemEnchantment != null &&

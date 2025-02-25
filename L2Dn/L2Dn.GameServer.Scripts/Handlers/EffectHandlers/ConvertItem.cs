@@ -111,7 +111,7 @@ public class ConvertItem: AbstractEffect
 			return;
 		}
 
-		Item newItem = player.getInventory().addItem("ChangeWeapon", newItemId, 1, player, destroyItem);
+		Item? newItem = player.getInventory().addItem("ChangeWeapon", newItemId, 1, player, destroyItem);
 		if (newItem == null)
 		{
 			return;

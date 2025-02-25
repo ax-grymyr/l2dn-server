@@ -29,7 +29,7 @@ public struct RequestDivideAdenaStartPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        CommandChannel commandChannel = party.getCommandChannel();
+        CommandChannel? commandChannel = party.getCommandChannel();
         if (commandChannel != null && !commandChannel.isLeader(player))
         {
             player.sendPacket(SystemMessageId.YOU_CANNOT_PROCEED_AS_YOU_ARE_NOT_AN_ALLIANCE_LEADER_OR_PARTY_LEADER);

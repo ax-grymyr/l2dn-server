@@ -119,7 +119,7 @@ public struct RequestSellItemPacket: IIncomingPacket<GameSession>
 		// Proceed the sell
 		foreach (UniqueItemHolder i in _items)
 		{
-			Item item = player.checkItemManipulation(i.ObjectId, i.getCount(), "sell");
+			Item? item = player.checkItemManipulation(i.ObjectId, i.getCount(), "sell");
 			if (item == null || !item.isSellable())
 			{
 				continue;

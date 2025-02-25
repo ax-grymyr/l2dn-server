@@ -112,8 +112,8 @@ public class Item: WorldObject
 	private readonly DropProtection _dropProtection = new();
 
 	private readonly List<Options.Options> _enchantOptions = new();
-	private readonly EnsoulOption[] _ensoulOptions = new EnsoulOption[2];
-	private readonly EnsoulOption[] _ensoulSpecialOptions = new EnsoulOption[1];
+	private readonly EnsoulOption?[] _ensoulOptions = new EnsoulOption?[2];
+	private readonly EnsoulOption?[] _ensoulSpecialOptions = new EnsoulOption?[1];
 	private bool _isBlessed;
 
 	/**
@@ -235,9 +235,11 @@ public class Item: WorldObject
 
 		// Notify to scripts
 		EventContainer events = getTemplate().Events;
-		if (creature.isPlayer() && events.HasSubscribers<OnPlayerItemPickup>())
+
+        Player? creaturePlayer = creature.getActingPlayer();
+		if (creature.isPlayer() && creaturePlayer != null && events.HasSubscribers<OnPlayerItemPickup>())
 		{
-			events.NotifyAsync(new OnPlayerItemPickup(creature.getActingPlayer(), this));
+			events.NotifyAsync(new OnPlayerItemPickup(creaturePlayer, this));
 		}
 	}
 
@@ -505,7 +507,7 @@ public class Item: WorldObject
 			sb.Append(count);
 			sb.Append(")");
 
-			string targetName = creator.getTarget() != null ? creator.getTarget().getName() : "no-target";
+			string targetName = creator.getTarget()?.getName() ?? "no-target";
 
 			string referenceName = "no-reference";
 			if (reference is WorldObject)
@@ -1203,13 +1205,12 @@ public class Item: WorldObject
 	public AttributeHolder? getAttackAttribute()
 	{
 		if (isWeapon())
-		{
-			if (_itemTemplate.getAttributes() != null)
+        {
+            ICollection<AttributeHolder>? attributes = _itemTemplate.getAttributes();
+			if (attributes != null)
 			{
-				if (_itemTemplate.getAttributes().Count != 0)
-				{
-					return _itemTemplate.getAttributes().First();
-				}
+				if (attributes.Count != 0)
+					return attributes.First();
 			}
 			else if (_elementals != null && _elementals.Count != 0)
 			{
@@ -1583,7 +1584,8 @@ public class Item: WorldObject
 		}
 		setDropperObjectId(0); // Set the dropper Id back to 0 so it no longer shows the drop packet
 
-		if (dropper != null && dropper.isPlayer())
+        Player? dropperPlayer = dropper?.getActingPlayer();
+		if (dropper != null && dropper.isPlayer() && dropperPlayer != null)
 		{
 			_owner = null;
 
@@ -1591,7 +1593,7 @@ public class Item: WorldObject
 			EventContainer events = getTemplate().Events;
 			if (events.HasSubscribers<OnPlayerItemDrop>())
 			{
-				events.NotifyAsync(new OnPlayerItemDrop(dropper.getActingPlayer(), this, loc));
+				events.NotifyAsync(new OnPlayerItemDrop(dropperPlayer, this, loc));
 			}
 		}
 	}
@@ -2107,36 +2109,34 @@ public class Item: WorldObject
 
 	public ICollection<EnsoulOption> getSpecialAbilities()
 	{
-		List<EnsoulOption> result = new();
-		foreach (EnsoulOption ensoulOption in _ensoulOptions)
+		List<EnsoulOption> result = [];
+		foreach (EnsoulOption? ensoulOption in _ensoulOptions)
 		{
 			if (ensoulOption != null)
-			{
 				result.Add(ensoulOption);
-			}
 		}
+
 		return result;
 	}
 
-	public EnsoulOption getSpecialAbility(int index)
+	public EnsoulOption? getSpecialAbility(int index)
 	{
 		return _ensoulOptions[index];
 	}
 
 	public ICollection<EnsoulOption> getAdditionalSpecialAbilities()
 	{
-		List<EnsoulOption> result = new();
-		foreach (EnsoulOption ensoulSpecialOption in _ensoulSpecialOptions)
+		List<EnsoulOption> result = [];
+		foreach (EnsoulOption? ensoulSpecialOption in _ensoulSpecialOptions)
 		{
 			if (ensoulSpecialOption != null)
-			{
 				result.Add(ensoulSpecialOption);
-			}
 		}
+
 		return result;
 	}
 
-	public EnsoulOption getAdditionalSpecialAbility(int index)
+	public EnsoulOption? getAdditionalSpecialAbility(int index)
 	{
 		return _ensoulSpecialOptions[index];
 	}
@@ -2154,7 +2154,7 @@ public class Item: WorldObject
 
 		if (type == 1) // Adding regular ability
 		{
-			EnsoulOption oldOption = _ensoulOptions[position];
+			EnsoulOption? oldOption = _ensoulOptions[position];
 			if (oldOption != null)
 			{
 				removeSpecialAbility(oldOption);
@@ -2166,7 +2166,7 @@ public class Item: WorldObject
 		}
 		else if (type == 2) // Adding special ability
 		{
-			EnsoulOption oldOption = _ensoulSpecialOptions[position];
+			EnsoulOption? oldOption = _ensoulSpecialOptions[position];
 			if (oldOption != null)
 			{
 				removeSpecialAbility(oldOption);
@@ -2187,7 +2187,7 @@ public class Item: WorldObject
 	{
 		if (type == 1)
 		{
-			EnsoulOption option = _ensoulOptions[position];
+			EnsoulOption? option = _ensoulOptions[position];
 			if (option != null)
 			{
 				removeSpecialAbility(option);
@@ -2196,7 +2196,7 @@ public class Item: WorldObject
 				// Rearrange.
 				if (position == 0)
 				{
-					EnsoulOption secondEnsoul = _ensoulOptions[1];
+					EnsoulOption? secondEnsoul = _ensoulOptions[1];
 					if (secondEnsoul != null)
 					{
 						removeSpecialAbility(secondEnsoul);
@@ -2208,7 +2208,7 @@ public class Item: WorldObject
 		}
 		else if (type == 2)
 		{
-			EnsoulOption option = _ensoulSpecialOptions[position];
+			EnsoulOption? option = _ensoulSpecialOptions[position];
 			if (option != null)
 			{
 				removeSpecialAbility(option);
@@ -2219,11 +2219,11 @@ public class Item: WorldObject
 
 	public void clearSpecialAbilities()
 	{
-		foreach (EnsoulOption ensoulOption in _ensoulOptions)
+		foreach (EnsoulOption? ensoulOption in _ensoulOptions)
 		{
 			clearSpecialAbility(ensoulOption);
 		}
-		foreach (EnsoulOption ensoulSpecialOption in _ensoulSpecialOptions)
+		foreach (EnsoulOption? ensoulSpecialOption in _ensoulSpecialOptions)
 		{
 			clearSpecialAbility(ensoulSpecialOption);
 		}
@@ -2236,11 +2236,11 @@ public class Item: WorldObject
 			return;
 		}
 
-		foreach (EnsoulOption ensoulOption in _ensoulOptions)
+		foreach (EnsoulOption? ensoulOption in _ensoulOptions)
 		{
 			applySpecialAbility(ensoulOption);
 		}
-		foreach (EnsoulOption ensoulSpecialOption in _ensoulSpecialOptions)
+		foreach (EnsoulOption? ensoulSpecialOption in _ensoulSpecialOptions)
 		{
 			applySpecialAbility(ensoulSpecialOption);
 		}
@@ -2271,12 +2271,10 @@ public class Item: WorldObject
 		}
 	}
 
-	private void applySpecialAbility(EnsoulOption option)
+	private void applySpecialAbility(EnsoulOption? option)
 	{
 		if (option == null)
-		{
 			return;
-		}
 
 		Skill skill = option.getSkill();
 		if (skill != null)
@@ -2289,7 +2287,7 @@ public class Item: WorldObject
 		}
 	}
 
-	private void clearSpecialAbility(EnsoulOption option)
+	private void clearSpecialAbility(EnsoulOption? option)
 	{
 		if (option == null)
 		{
@@ -2367,27 +2365,23 @@ public class Item: WorldObject
 
 			int itemObjectId = ObjectId;
 			for (int i = 0; i < _ensoulOptions.Length; i++)
-			{
-				if (_ensoulOptions[i] == null)
-				{
+            {
+                EnsoulOption? option = _ensoulOptions[i];
+				if (option == null)
 					continue;
-				}
 
-				DbItemSpecialAbility record = GetOrCreateSpecialAbility(ctx, itemObjectId, _ensoulOptions[i].getId());
+				DbItemSpecialAbility record = GetOrCreateSpecialAbility(ctx, itemObjectId, option.getId());
 				record.Type = 1;
 				record.Position = (byte)i;
 			}
 
 			for (int i = 0; i < _ensoulSpecialOptions.Length; i++)
-			{
-				if (_ensoulSpecialOptions[i] == null)
-				{
+            {
+                EnsoulOption? option = _ensoulSpecialOptions[i];
+				if (option == null)
 					continue;
-				}
 
-				DbItemSpecialAbility record =
-					GetOrCreateSpecialAbility(ctx, itemObjectId, _ensoulSpecialOptions[i].getId());
-
+				DbItemSpecialAbility record = GetOrCreateSpecialAbility(ctx, itemObjectId, option.getId());
 				record.Type = 2;
 				record.Position = (byte)i;
 			}
@@ -2522,9 +2516,10 @@ public class Item: WorldObject
 	public void scheduleVisualLifeTime()
 	{
 		ItemAppearanceTaskManager.getInstance().remove(this);
-		if (getVisualLifeTime() != null)
+        DateTime? visualLifeTime = getVisualLifeTime();
+		if (visualLifeTime != null)
 		{
-			DateTime endTime = getVisualLifeTime().Value;
+			DateTime endTime = visualLifeTime.Value;
 			if (endTime - DateTime.UtcNow > TimeSpan.Zero)
 			{
 				ItemAppearanceTaskManager.getInstance().add(this, endTime);
@@ -2689,7 +2684,7 @@ public class Item: WorldObject
 										}
 									}
 
-									// Active, non offensive, skills start with reuse on equip.
+									// Active, non-offensive, skills start with reuse on equip.
 									if (!skill.isBad() && !skill.isTransformation() && Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0 && player.hasEnteredWorld())
 									{
 										player.addTimeStamp(skill,

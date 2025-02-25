@@ -12,10 +12,10 @@ namespace L2Dn.GameServer.Network.Enums;
 public sealed class CharacterInfo: IHasId<int>
 {
 	private CharacterClass _baseClass;
-	
+
 	public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
-    
+
     public Sex Sex { get; set; }
     public Race Race { get; set; }
 
@@ -31,26 +31,26 @@ public sealed class CharacterInfo: IHasId<int>
     public int Face { get; set; }
     public bool HairAccessoryEnabled { get; set; }
     public bool IsNoble { get; set; }
-    
+
     public int X { get; set; }
     public int Y { get; set; }
     public int Z { get; set; }
-    
+
     public double CurrentHp { get; set; }
     public double CurrentMp { get; set; }
     public double MaxHp { get; set; }
     public double MaxMp { get; set; }
-    
+
     public int Level { get; set; }
     public long Exp { get; set; }
     public long Sp { get; set; }
-    
+
     public int Reputation { get; set; }
     public int PkKills { get; set; }
     public int PvpKills { get; set; }
     public int VitalityPoints { get; set; }
     public int VitalityItemsUsed { get; set; }
-    
+
     public DateTime Created { get; set; }
     public DateTime? LastAccessTime { get; set; }
     public DateTime? DeleteTime { get; set; }
@@ -61,7 +61,7 @@ public sealed class CharacterInfo: IHasId<int>
 
     public CharacterPaperdollSlotInfo[] Paperdoll { get; } =
         new CharacterPaperdollSlotInfo[Inventory.PAPERDOLL_TOTALSLOTS];
-    
+
     public int ChestEnchantLevel { get; set; }
     public int LegsEnchantLevel { get; set; }
     public int HeadEnchantLevel { get; set; }
@@ -76,7 +76,7 @@ public sealed class CharacterInfo: IHasId<int>
         Id = character.Id;
         Name = character.Name;
         Sex = character.Sex;
-        
+
         // Check if the base class is set to zero and also doesn't match with the current active class,
         // otherwise send the base class ID. This prevents chars created before
         // base class was introduced from being displayed incorrectly.
@@ -88,7 +88,7 @@ public sealed class CharacterInfo: IHasId<int>
         HairColor = character.HairColor;
         Face = character.Face;
         IsNoble = character.IsNobless;
-        
+
         IsGood = character.Faction == 1;
         IsEvil = character.Faction == 2;
 
@@ -125,7 +125,7 @@ public sealed class CharacterInfo: IHasId<int>
 	    HeadEnchantLevel = 0;
 	    GlovesEnchantLevel = 0;
 	    BootsEnchantLevel = 0;
-	    
+
 	    PlayerInventory inventory = player.getInventory();
 	    for (int i = 0; i < Paperdoll.Length; i++)
 	    {
@@ -202,7 +202,7 @@ public sealed class CharacterInfo: IHasId<int>
 	    Class = activeClassId;
 
 	    // Get the augmentation id for equipped weapon
-	    VariationInstance variationInstance = inventory.getPaperdollAugmentation(Inventory.PAPERDOLL_RHAND);
+	    VariationInstance? variationInstance = inventory.getPaperdollAugmentation(Inventory.PAPERDOLL_RHAND);
 	    if (variationInstance != null)
 	    {
 		    WeaponAugmentationOption1Id = variationInstance.getOption1Id();
@@ -224,7 +224,7 @@ public sealed class CharacterInfo: IHasId<int>
 	    // DK Human
 	    if (baseClassId >= (CharacterClass)196 && baseClassId <= (CharacterClass)199)
 		    return (CharacterClass)196;
-	    
+
 	    // DK Elf
 	    if (baseClassId >= (CharacterClass)200 && baseClassId <= (CharacterClass)203)
 		    return (CharacterClass)200;
@@ -232,15 +232,15 @@ public sealed class CharacterInfo: IHasId<int>
 	    // DK Dark Elf
 	    if (baseClassId >= (CharacterClass)204 && baseClassId <= (CharacterClass)207)
 		    return (CharacterClass)204;
-	    
+
 	    // Vanguard
 	    if (baseClassId >= (CharacterClass)217 && baseClassId <= (CharacterClass)220)
 		    return (CharacterClass)217;
-	    
+
 	    // Assassin Male
 	    if (baseClassId >= (CharacterClass)221 && baseClassId <= (CharacterClass)224)
 		    return (CharacterClass)221;
-	    
+
 	    // Assassin Female
 	    if (baseClassId >= (CharacterClass)225 && baseClassId <= (CharacterClass)228)
 		    return (CharacterClass)225;

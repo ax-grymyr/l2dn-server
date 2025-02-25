@@ -137,7 +137,7 @@ public class MinionList
 	 * @param caller
 	 * @param attacker
 	 */
-	public void onAssist(Creature caller, Creature attacker)
+	public void onAssist(Creature caller, Creature? attacker)
 	{
 		if (attacker == null)
 		{

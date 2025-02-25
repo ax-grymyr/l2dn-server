@@ -24,17 +24,17 @@ public struct RequestAnswerFriendInvitePacket: IIncomingPacket<GameSession>
 		Player? player = session.Player;
 		if (player == null)
 			return ValueTask.CompletedTask;
-		
-		Player requestor = player.getActiveRequester();
+
+		Player? requestor = player.getActiveRequester();
 		if (requestor == null)
 			return ValueTask.CompletedTask;
-		
+
 		if (player == requestor)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ADD_YOURSELF_TO_YOUR_OWN_FRIEND_LIST);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (player.getFriendList().Contains(requestor.ObjectId) //
 			|| requestor.getFriendList().Contains(player.ObjectId))
 		{
@@ -43,7 +43,7 @@ public struct RequestAnswerFriendInvitePacket: IIncomingPacket<GameSession>
 			requestor.sendPacket(sm);
 			return ValueTask.CompletedTask;
 		}
-		
+
 		if (_response == 1)
 		{
 			try
@@ -65,19 +65,19 @@ public struct RequestAnswerFriendInvitePacket: IIncomingPacket<GameSession>
 
 				SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.THAT_PERSON_HAS_BEEN_SUCCESSFULLY_ADDED_TO_YOUR_FRIEND_LIST);
 				requestor.sendPacket(msg);
-				
+
 				// Player added to your friend list
 				msg = new SystemMessagePacket(SystemMessageId.S1_HAS_BEEN_ADDED_TO_YOUR_FRIEND_LIST);
 				msg.Params.addString(player.getName());
 				requestor.sendPacket(msg);
 				requestor.getFriendList().add(player.ObjectId);
-				
+
 				// has joined as friend.
 				msg = new SystemMessagePacket(SystemMessageId.S1_HAS_BEEN_ADDED_TO_YOUR_FRIEND_LIST_2);
 				msg.Params.addString(requestor.getName());
 				player.sendPacket(msg);
 				player.getFriendList().add(requestor.ObjectId);
-				
+
 				// Send notifications for both player in order to show them online
 				player.sendPacket(new FriendAddRequestResultPacket(requestor, 1));
 				requestor.sendPacket(new FriendAddRequestResultPacket(player, 1));
@@ -91,7 +91,7 @@ public struct RequestAnswerFriendInvitePacket: IIncomingPacket<GameSession>
 		{
 			requestor.sendPacket(SystemMessageId.YOU_HAVE_FAILED_TO_ADD_A_FRIEND_TO_YOUR_FRIENDS_LIST);
 		}
-		
+
 		player.setActiveRequester(null);
 		requestor.onTransactionResponse();
 		return ValueTask.CompletedTask;

@@ -202,20 +202,22 @@ public class Trap: Npc
 	}
 
 	public override void sendDamageMessage(Creature target, Skill skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
-	{
-		if (miss || _owner == null)
+    {
+        Player? owner = _owner;
+		if (miss || owner == null)
 		{
 			return;
 		}
 
-		if (_owner.isInOlympiadMode() && target.isPlayer() && ((Player) target).isInOlympiadMode() && ((Player) target).getOlympiadGameId() == _owner.getOlympiadGameId())
-		{
-			OlympiadGameManager.getInstance().notifyCompetitorDamage(getOwner(), damage);
-		}
+        if (owner.isInOlympiadMode() && target.isPlayer() && ((Player)target).isInOlympiadMode() &&
+            ((Player)target).getOlympiadGameId() == owner.getOlympiadGameId())
+        {
+            OlympiadGameManager.getInstance().notifyCompetitorDamage(owner, damage);
+        }
 
-		if (target.isHpBlocked() && !target.isNpc())
+        if (target.isHpBlocked() && !target.isNpc())
 		{
-			_owner.sendPacket(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
+            owner.sendPacket(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
 		}
 		else
 		{
@@ -224,7 +226,7 @@ public class Trap: Npc
 			sm.Params.addString(target.getName());
 			sm.Params.addInt(damage);
 			sm.Params.addPopup(target.ObjectId, ObjectId, damage * -1);
-			_owner.sendPacket(sm);
+            owner.sendPacket(sm);
 		}
 	}
 
@@ -238,13 +240,13 @@ public class Trap: Npc
 
 	public void setDetected(Creature detector)
 	{
+        Player? detectorPlayer = detector.getActingPlayer();
 		if (_isInArena)
-		{
-			if (detector.isPlayable())
-			{
-				sendInfo(detector.getActingPlayer());
-			}
-			return;
+        {
+			if (detector.isPlayable() && detectorPlayer != null)
+				sendInfo(detectorPlayer);
+
+            return;
 		}
 
 		if (_owner != null && _owner.getPvpFlag() == PvpFlagStatus.None && _owner.getReputation() >= 0)
@@ -260,9 +262,9 @@ public class Trap: Npc
 			Events.NotifyAsync(new OnTrapAction(this, detector, TrapAction.TRAP_DETECTED));
 		}
 
-		if (detector.isPlayable())
+		if (detector.isPlayable() && detectorPlayer != null)
 		{
-			sendInfo(detector.getActingPlayer());
+			sendInfo(detectorPlayer);
 		}
 	}
 

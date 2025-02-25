@@ -178,7 +178,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 		    player.sendItemList();
 	    }
 
-	    Item dropedItem = player.dropItem("Drop", _objectId, _count, _location, null, false, false);
+	    Item? dropedItem = player.dropItem("Drop", _objectId, _count, _location, null, false, false);
 
 	    // player.broadcastUserInfo();
 	    if (player.isGM())

@@ -14,31 +14,32 @@ public class AddHate: AbstractEffect
 {
 	private readonly double _power;
 	private readonly bool _affectSummoner;
-	
+
 	public AddHate(StatSet @params)
 	{
 		_power = @params.getDouble("power", 0);
 		_affectSummoner = @params.getBoolean("affectSummoner", false);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override void instant(Creature creature, Creature effected, Skill skill, Item item)
 	{
 		Creature effector = creature;
-		if (_affectSummoner && effector.getSummoner() != null)
+        Creature? summoner = effector.getSummoner();
+		if (_affectSummoner && summoner != null)
 		{
-			effector = effector.getSummoner();
+			effector = summoner;
 		}
-		
+
 		if (!effected.isAttackable())
 		{
 			return;
 		}
-		
+
 		double val = _power;
 		if (val > 0)
 		{

@@ -846,7 +846,7 @@ public class FortSiege: Siegable
 	 * @param clan The Clan of the player
 	 * @return true if clan is defender
 	 */
-	public bool checkIsDefender(Clan clan)
+	public bool checkIsDefender(Clan? clan)
 	{
 		return clan != null && _fort.getOwnerClan() == clan;
 	}

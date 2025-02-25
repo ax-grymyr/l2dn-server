@@ -41,7 +41,7 @@ public class FortLogistics : Merchant
 		if (actualCommand.equalsIgnoreCase("rewards"))
 		{
 			HtmlContent htmlContent;
-			if (isMyLord)
+			if (isMyLord && clan != null)
 			{
 				htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-rewards.htm", player);
 				htmlContent.Replace("%bloodoath%", clan.getBloodOathCount().ToString());
@@ -57,7 +57,7 @@ public class FortLogistics : Merchant
 		else if (actualCommand.equalsIgnoreCase("blood"))
 		{
 			HtmlContent htmlContent;
-			if (isMyLord)
+			if (isMyLord && clan != null)
 			{
 				int blood = clan.getBloodOathCount();
 				if (blood > 0)
@@ -83,12 +83,12 @@ public class FortLogistics : Merchant
 		else if (actualCommand.equalsIgnoreCase("supplylvl"))
 		{
 			HtmlContent htmlContent;
-			if (getFort().getFortState() == 2)
+			if (fort != null && fort.getFortState() == 2)
 			{
 				if (player.isClanLeader())
 				{
 					htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-supplylvl.htm", player);
-					htmlContent.Replace("%supplylvl%", getFort().getSupplyLevel().ToString());
+					htmlContent.Replace("%supplylvl%", fort.getSupplyLevel().ToString());
 				}
 				else
 				{
@@ -107,26 +107,28 @@ public class FortLogistics : Merchant
 		else if (actualCommand.equalsIgnoreCase("supply"))
 		{
 			HtmlContent htmlContent;
-			if (isMyLord)
+			if (isMyLord && fort != null)
 			{
-				if (getFort().getSiege().isInProgress())
+				if (fort.getSiege().isInProgress())
 				{
 					htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-siege.htm", player);
 				}
 				else
 				{
-					int level = getFort().getSupplyLevel();
+					int level = fort.getSupplyLevel();
 					if (level > 0)
 					{
 						// spawn box
-						NpcTemplate? boxTemplate = NpcData.getInstance().getTemplate(SUPPLY_BOX_IDS[level - 1]);
+						NpcTemplate boxTemplate = NpcData.getInstance().getTemplate(SUPPLY_BOX_IDS[level - 1]) ??
+                            throw new InvalidOperationException($"FortLogistics: supply box template id={SUPPLY_BOX_IDS[level - 1]} not found");
+
 						Monster box = new Monster(boxTemplate);
 						box.setCurrentHp(box.getMaxHp());
 						box.setCurrentMp(box.getMaxMp());
 						box.setHeading(0);
 						box.spawnMe(new Location3D(getX() - 23, getY() + 41, getZ()));
-						getFort().setSupplyLevel(0);
-						getFort().saveFortVariables();
+                        fort.setSupplyLevel(0);
+						fort.saveFortVariables();
 
 						htmlContent = HtmlContent.LoadFromFile("html/fortress/logistics-supply.htm", player);
 					}
@@ -173,9 +175,11 @@ public class FortLogistics : Merchant
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
 		htmlContent.Replace("%objectId%", ObjectId.ToString());
 		htmlContent.Replace("%npcId%", getId().ToString());
-		if (getFort().getOwnerClan() != null)
+
+        Clan? ownerClan = getFort()?.getOwnerClan();
+		if (ownerClan != null)
 		{
-			htmlContent.Replace("%clanname%", getFort().getOwnerClan().getName());
+			htmlContent.Replace("%clanname%", ownerClan.getName());
 		}
 		else
 		{

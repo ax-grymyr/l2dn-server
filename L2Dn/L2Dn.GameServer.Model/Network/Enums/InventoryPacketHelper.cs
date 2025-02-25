@@ -13,13 +13,13 @@ namespace L2Dn.GameServer.Network.Enums;
 public class InventoryPacketHelper
 {
     private readonly List<ItemInfo> _items = new();
-    
+
     public InventoryPacketHelper()
     {
     }
 
     public List<ItemInfo> Items => _items;
-    
+
     public void WriteItems(PacketBitWriter writer)
     {
         writer.WriteInt32(_items.Count); // 140
@@ -82,21 +82,21 @@ public class InventoryPacketHelper
         // }
         if (mask.HasFlag(ItemListType.VISUAL_ID))
             writer.WriteInt32(item.getVisualId()); // Item remodel visual ID
-        
+
         if (mask.HasFlag(ItemListType.SOUL_CRYSTAL))
             WriteItemEnsoulOptions(writer, item);
-        
+
         // TODO:
         // if (containsMask(mask, ItemListType.REUSE_DELAY))
         // {
         // final Player owner = item.getOwner();
         // writer.WriteInt32(owner == null ? 0 : (int) (owner.getItemRemainingReuseTime(item.getObjectId()) / 1000));
         // }
-        
+
         if (mask.HasFlag(ItemListType.BLESSED))
             writer.WriteByte(1);
     }
-    
+
     public static void WriteItem(PacketBitWriter writer, ItemInfo item, long count)
     {
         ItemListType mask = CalculateMask(item);
@@ -164,13 +164,14 @@ public class InventoryPacketHelper
             writer.WriteInt16(0);
         }
     }
-    
+
     private static void WriteItemAugment(PacketBitWriter writer, ItemInfo item)
     {
-        if (item?.getAugmentation() != null)
+        VariationInstance? augmentation = item.getAugmentation();
+        if (augmentation != null)
         {
-            writer.WriteInt32(item.getAugmentation().getOption1Id());
-            writer.WriteInt32(item.getAugmentation().getOption2Id());
+            writer.WriteInt32(augmentation.getOption1Id());
+            writer.WriteInt32(augmentation.getOption2Id());
         }
         else
         {
@@ -178,7 +179,7 @@ public class InventoryPacketHelper
             writer.WriteInt32(0);
         }
     }
-    
+
     private static void WriteItemElemental(PacketBitWriter writer, ItemInfo item)
     {
         if (item != null)
@@ -204,14 +205,14 @@ public class InventoryPacketHelper
             writer.WriteInt16(0);
         }
     }
-	
+
     private static void WriteItemEnchantEffect(PacketBitWriter writer, ItemInfo item)
     {
         // Enchant Effects
         foreach (int op in item.getEnchantOptions())
             writer.WriteInt32(op);
     }
-	
+
     private static void WriteItemEnsoulOptions(PacketBitWriter writer, ItemInfo item)
     {
         if (item != null)
@@ -259,7 +260,7 @@ public class InventoryPacketHelper
         // }
         // }
         // }
-        
+
         if (item.getVisualId() > 0)
         {
             mask |= ItemListType.VISUAL_ID;
@@ -276,7 +277,7 @@ public class InventoryPacketHelper
         // {
         // mask |= ItemListType.REUSE_DELAY.getMask();
         // }
-        
+
         if (item.isBlessed())
         {
             mask |= ItemListType.BLESSED;
@@ -284,7 +285,7 @@ public class InventoryPacketHelper
 
         return mask;
     }
-	
+
 	public static int CalculatePacketSize(ItemInfo item)
 	{
 		ItemListType mask = CalculateMask(item);
@@ -304,7 +305,7 @@ public class InventoryPacketHelper
 		size += 4; // writer.WriteInt32(item.getTime());
 		size += 1; // writeByte(item.isAvailable()); // GOD Item enabled = 1 disabled (red) = 0
 		size += 2; // writeShort(0); // 140 - locked
-		
+
 		if (mask.HasFlag(ItemListType.AUGMENT_BONUS))
 		{
 			size += 8;
@@ -338,7 +339,7 @@ public class InventoryPacketHelper
 		{
 			size += 1;
 		}
-		
+
 		return size;
 	}
 }

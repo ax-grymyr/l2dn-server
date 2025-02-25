@@ -85,7 +85,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 		long slots = 0;
 		foreach (ItemHolder itemHolder in _items)
 		{
-			Item item = player.checkItemManipulation(itemHolder.getId(), itemHolder.getCount(), "deposit");
+			Item? item = player.checkItemManipulation(itemHolder.getId(), itemHolder.getCount(), "deposit");
 			if (item == null)
 			{
 				PacketLogger.Instance.Warn("Error depositing a warehouse object for char " + player.getName() +
@@ -132,7 +132,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 		foreach (ItemHolder itemHolder in _items)
 		{
 			// Check validity of requested item
-			Item oldItem = player.checkItemManipulation(itemHolder.getId(), itemHolder.getCount(), "deposit");
+			Item? oldItem = player.checkItemManipulation(itemHolder.getId(), itemHolder.getCount(), "deposit");
 			if (oldItem == null)
 			{
 				PacketLogger.Instance.Warn("Error depositing a warehouse object for char " + player.getName() +

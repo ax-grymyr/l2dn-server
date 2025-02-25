@@ -8,7 +8,7 @@ using Forum = L2Dn.GameServer.CommunityBbs.BB.Forum;
 
 namespace L2Dn.GameServer.CommunityBbs.Managers;
 
-public class ForumsBBSManager: BaseBBSManager
+public sealed class ForumsBBSManager: BaseBBSManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ForumsBBSManager));
 	private readonly Set<Forum> _table;
@@ -17,7 +17,7 @@ public class ForumsBBSManager: BaseBBSManager
 	/**
 	 * Instantiates a new forums bbs manager.
 	 */
-	protected ForumsBBSManager()
+	private ForumsBBSManager()
 	{
 		_table = new();
 		try
@@ -51,11 +51,6 @@ public class ForumsBBSManager: BaseBBSManager
 	 */
 	public void addForum(Forum ff)
 	{
-		if (ff == null)
-		{
-			return;
-		}
-
 		_table.add(ff);
 
 		if (ff.getID() > _lastid)
@@ -64,7 +59,7 @@ public class ForumsBBSManager: BaseBBSManager
 		}
 	}
 
-	public override void parsecmd(string command, Player player)
+	public override void ParseCmd(string command, Player player)
 	{
 	}
 
@@ -78,11 +73,10 @@ public class ForumsBBSManager: BaseBBSManager
 		foreach (Forum f in _table)
 		{
 			if (f.getName().equals(name))
-			{
 				return f;
-			}
 		}
-		return null;
+
+        return null;
 	}
 
 	/**
@@ -120,14 +114,13 @@ public class ForumsBBSManager: BaseBBSManager
 		foreach (Forum f in _table)
 		{
 			if (f.getID() == idf)
-			{
 				return f;
-			}
-		}
+        }
+
 		return null;
 	}
 
-	public override void parsewrite(string ar1, string ar2, string ar3, string ar4, string ar5, Player player)
+	public override void ParseWrite(string ar1, string ar2, string ar3, string ar4, string ar5, Player player)
 	{
 	}
 
@@ -142,6 +135,6 @@ public class ForumsBBSManager: BaseBBSManager
 
 	private static class SingletonHolder
 	{
-		public static readonly ForumsBBSManager INSTANCE = new ForumsBBSManager();
+		public static readonly ForumsBBSManager INSTANCE = new();
 	}
 }

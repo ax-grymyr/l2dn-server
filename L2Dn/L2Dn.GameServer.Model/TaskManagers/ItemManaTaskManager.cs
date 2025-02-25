@@ -10,68 +10,69 @@ namespace L2Dn.GameServer.TaskManagers;
  */
 public class ItemManaTaskManager: Runnable
 {
-	private static readonly Map<Item, DateTime> ITEMS = new();
-	private const int MANA_CONSUMPTION_RATE = 60000;
-	private static bool _working = false;
-	
-	protected ItemManaTaskManager()
-	{
-		ThreadPool.scheduleAtFixedRate(this, 1000, 1000);
-	}
-	
-	public void run()
-	{
-		if (_working)
-		{
-			return;
-		}
-		_working = true;
-		
-		if (ITEMS.Count != 0)
-		{
-			DateTime currentTime = DateTime.UtcNow;
-			List<Item> toRemove = new List<Item>();
-			foreach (var entry in ITEMS)
-			{
-				if (currentTime > entry.Value)
-				{
-					Item item = entry.Key;
-					toRemove.Add(item);
-					
-					Player player = item.getActingPlayer();
-					if (player == null || player.isInOfflineMode())
-					{
-						continue;
-					}
-					
-					item.decreaseMana(item.isEquipped());
-				}
-			}
+    private const int MANA_CONSUMPTION_RATE = 60000;
+    private static readonly Map<Item, DateTime> _items = [];
+    private static bool _working;
 
-			foreach (Item item in toRemove)
-			{
-				ITEMS.remove(item);
-			}
-		}
-		
-		_working = false;
-	}
-	
-	public void add(Item item)
-	{
-		if (!ITEMS.ContainsKey(item))
-		{
-			ITEMS.put(item, DateTime.UtcNow.AddMilliseconds(MANA_CONSUMPTION_RATE));
-		}
-	}
-	
-	public static ItemManaTaskManager getInstance()
-	{
-		return SingletonHolder.INSTANCE;
-	}
-	
-	private static class SingletonHolder
-	{
-		public static readonly ItemManaTaskManager INSTANCE = new ItemManaTaskManager();
-	}
+    protected ItemManaTaskManager()
+    {
+        ThreadPool.scheduleAtFixedRate(this, 1000, 1000);
+    }
+
+    public void run()
+    {
+        if (_working)
+        {
+            return;
+        }
+
+        _working = true;
+
+        if (_items.Count != 0)
+        {
+            DateTime currentTime = DateTime.UtcNow;
+            List<Item> toRemove = [];
+            foreach (KeyValuePair<Item, DateTime> entry in _items)
+            {
+                if (currentTime > entry.Value)
+                {
+                    Item item = entry.Key;
+                    toRemove.Add(item);
+
+                    Player? player = item.getActingPlayer();
+                    if (player == null || player.isInOfflineMode())
+                    {
+                        continue;
+                    }
+
+                    item.decreaseMana(item.isEquipped());
+                }
+            }
+
+            foreach (Item item in toRemove)
+            {
+                _items.remove(item);
+            }
+        }
+
+        _working = false;
+    }
+
+    public void add(Item item)
+    {
+        if (!_items.ContainsKey(item))
+        {
+            _items.put(item, DateTime.UtcNow.AddMilliseconds(MANA_CONSUMPTION_RATE));
+        }
+    }
+
+    public static ItemManaTaskManager getInstance()
+    {
+        return SingletonHolder.Instance;
+    }
+
+    private static class SingletonHolder
+    {
+        public static readonly ItemManaTaskManager Instance = new();
+    }
 }

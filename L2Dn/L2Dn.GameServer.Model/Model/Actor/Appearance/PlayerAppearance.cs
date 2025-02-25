@@ -1,5 +1,4 @@
 ﻿using L2Dn.GameServer.Db;
-using L2Dn.GameServer.Enums;
 
 namespace L2Dn.GameServer.Model.Actor.Appearance;
 
@@ -153,22 +152,6 @@ public class PlayerAppearance
 	public void setTitleColor(Color titleColor)
 	{
 		_titleColor = titleColor;
-	}
-
-	/**
-	 * @param owner The owner to set.
-	 */
-	public void setOwner(Player owner)
-	{
-		_owner = owner;
-	}
-
-	/**
-	 * @return Returns the owner.
-	 */
-	public Player getOwner()
-	{
-		return _owner;
 	}
 
 	public int? getVisibleClanId()

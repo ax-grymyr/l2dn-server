@@ -12,24 +12,24 @@ namespace L2Dn.GameServer.Model;
 public class HuntPass
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(HuntPass));
-	
+
 	private readonly Player _user;
 	private int _availableSayhaTime;
 	private int _points;
 	private bool _isPremium;
 	private bool _rewardAlert;
-	
+
 	private int _rewardStep;
 	private int _currentStep;
 	private int _premiumRewardStep;
-	
+
 	private bool _toggleSayha;
-	private ScheduledFuture _sayhasSustentionTask;
+	private ScheduledFuture? _sayhasSustentionTask;
 	private DateTime? _toggleStartTime;
 	private int _usedSayhaTime;
-	
+
 	private static DateTime _dayEnd;
-	
+
 	public HuntPass(Player user)
 	{
 		_user = user;
@@ -37,11 +37,11 @@ public class HuntPass
 		huntPassDayEnd();
 		store();
 	}
-	
+
 	public void restoreHuntPass()
 	{
-		try 
-		{ 
+		try
+		{
 			int accountId = _user.getAccountId();
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (Db.HuntPass record in ctx.HuntPasses.Where(r => r.AccountId == accountId))
@@ -61,7 +61,7 @@ public class HuntPass
 			LOGGER.Error("Could not restore Season Pass for playerId: " + _user.getAccountName() + ": " + e);
 		}
 	}
-	
+
 	public void resetHuntPass()
 	{
 		setPoints(0);
@@ -74,15 +74,15 @@ public class HuntPass
 		setRewardAlert(false);
 		store();
 	}
-	
+
 	public string getAccountName()
 	{
 		return _user.getAccountName();
 	}
-	
+
 	public void store()
 	{
-		try 
+		try
 		{
 			int accountId = _user.getAccountId();
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -111,12 +111,12 @@ public class HuntPass
 			LOGGER.Error( "Could not store Season-Pass data for Account " + _user.getAccountName() + ": ", e);
 		}
 	}
-	
+
 	public DateTime getHuntPassDayEnd()
 	{
 		return _dayEnd;
 	}
-	
+
 	public void huntPassDayEnd()
 	{
 		DateTime calendar = DateTime.Now;
@@ -125,34 +125,34 @@ public class HuntPass
 		{
 			calendar = calendar.AddMonths(1);
 		}
-		
+
 		_dayEnd = calendar;
 	}
-	
+
 	public bool toggleSayha()
 	{
 		return _toggleSayha;
 	}
-	
+
 	public int getPoints()
 	{
 		return _points;
 	}
-	
+
 	public void addPassPoint()
 	{
 		if (!Config.ENABLE_HUNT_PASS)
 		{
 			return;
 		}
-		
+
 		// Add points.
 		int points = getPoints() + 1;
 		if (_user.isInTimedHuntingZone())
 		{
 			points++;
 		}
-		
+
 		// Check current step.
 		bool hasNewLevel = false;
 		while (points >= Config.HUNT_PASS_POINTS_FOR_STEP)
@@ -161,10 +161,10 @@ public class HuntPass
 			setCurrentStep(getCurrentStep() + 1);
 			hasNewLevel = true;
 		}
-		
+
 		// Save the current point count.
 		setPoints(points);
-		
+
 		// Send info when needed.
 		if (hasNewLevel)
 		{
@@ -172,108 +172,108 @@ public class HuntPass
 			_user.sendPacket(new HuntPassSimpleInfoPacket(_user));
 		}
 	}
-	
+
 	public void setPoints(int points)
 	{
 		_points = points;
 	}
-	
+
 	public int getCurrentStep()
 	{
 		return _currentStep;
 	}
-	
+
 	public void setCurrentStep(int step)
 	{
 		_currentStep = Math.Max(0, Math.Min(step, HuntPassData.getInstance().getRewardsCount()));
 	}
-	
+
 	public int getRewardStep()
 	{
 		return _rewardStep;
 	}
-	
+
 	public void setRewardStep(int step)
 	{
 		if (_isPremium && _premiumRewardStep <= _rewardStep)
 		{
 			return;
 		}
-		
+
 		_rewardStep = Math.Max(0, Math.Min(step, HuntPassData.getInstance().getRewardsCount()));
 	}
-	
+
 	public bool isPremium()
 	{
 		return _isPremium;
 	}
-	
+
 	public void setPremium(bool premium)
 	{
 		_isPremium = premium;
 	}
-	
+
 	public int getPremiumRewardStep()
 	{
 		return _premiumRewardStep;
 	}
-	
+
 	public void setPremiumRewardStep(int step)
 	{
 		_premiumRewardStep = Math.Max(0, Math.Min(step, HuntPassData.getInstance().getPremiumRewardsCount()));
 	}
-	
+
 	public bool rewardAlert()
 	{
 		return _rewardAlert;
 	}
-	
+
 	public void setRewardAlert(bool enable)
 	{
 		_rewardAlert = enable;
 	}
-	
+
 	public int getAvailableSayhaTime()
 	{
 		return _availableSayhaTime;
 	}
-	
+
 	public void setAvailableSayhaTime(int time)
 	{
 		_availableSayhaTime = time;
 	}
-	
+
 	public void addSayhaTime(int time)
 	{
 		// microsec to sec to database. 1 hour 3600 sec
 		_availableSayhaTime += time * 60;
 	}
-	
+
 	public int getUsedSayhaTime()
 	{
 		return _usedSayhaTime;
 	}
-	
+
 	private void onSayhaEndTime()
 	{
 		setSayhasSustention(false);
 	}
-	
+
 	public void setUsedSayhaTime(int time)
 	{
 		_usedSayhaTime = time;
 	}
-	
+
 	public void addSayhasSustentionTimeUsed(int time)
 	{
 		_usedSayhaTime += time;
 	}
-	
+
 	public DateTime? getToggleStartTime()
 	{
 		return _toggleStartTime;
 	}
-	
+
 	public void setSayhasSustention(bool active)
 	{
 		_toggleSayha = active;

@@ -1,41 +1,38 @@
 ﻿using System.Collections.Immutable;
-using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Stats.Finalizers;
 using L2Dn.Model.Enums;
 using NLog;
-using StatInfo = L2Dn.GameServer.Model.Stats.StatInfo;
 
 namespace L2Dn.GameServer.Model.Stats;
 
 public record StatInfo(
-	Stat Stat,
-	string XmlName,
-	IStatFunction Finalizer,
-	Func<double, double, double> AddFunction,
-	Func<double, double, double> MulFunction,
-	double ResetAddValue = 0,
-	double ResetMulValue = 1)
+    Stat Stat,
+    string XmlName,
+    IStatFunction Finalizer,
+    Func<double, double, double> AddFunction,
+    Func<double, double, double> MulFunction,
+    double ResetAddValue = 0,
+    double ResetMulValue = 1)
 {
-	public StatInfo(Stat stat, string xmlName, IStatFunction valueFinalizer)
-		: this(stat, xmlName, valueFinalizer, DefaultAddFunction, DefaultMulFunction)
-	{
-	}
+    public StatInfo(Stat stat, string xmlName, IStatFunction valueFinalizer)
+        : this(stat, xmlName, valueFinalizer, DefaultAddFunction, DefaultMulFunction)
+    {
+    }
 
-	public StatInfo(Stat stat, string xmlName)
-		: this(stat, xmlName, StatDefaultFinalizer.Instance, DefaultAddFunction, DefaultMulFunction)
-	{
-	}
-	
-	public static double DefaultAddFunction(double x, double y) => x + y;
-	public static double DefaultMulFunction(double x, double y) => x * y;
-    
+    public StatInfo(Stat stat, string xmlName)
+        : this(stat, xmlName, StatDefaultFinalizer.Instance, DefaultAddFunction, DefaultMulFunction)
+    {
+    }
+
+    public static double DefaultAddFunction(double x, double y) => x + y;
+    public static double DefaultMulFunction(double x, double y) => x * y;
 }
 
 public static class StatUtil
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(StatUtil));
-	
+
 	private static readonly ImmutableDictionary<Stat, StatInfo> _stats =
 		new StatInfo[]
 		{
@@ -43,8 +40,7 @@ public static class StatUtil
 			new(Stat.MAX_HP, "maxHp", new MaxHpFinalizer()),
 			new(Stat.MAX_MP, "maxMp", new MaxMpFinalizer()),
 			new(Stat.MAX_CP, "maxCp", new MaxCpFinalizer()),
-			new(Stat.MAX_RECOVERABLE_HP,
-				"maxRecoverableHp"), // The maximum HP that is able to be recovered trough heals
+			new(Stat.MAX_RECOVERABLE_HP, "maxRecoverableHp"), // The maximum HP that is able to be recovered through heals
 			new(Stat.MAX_RECOVERABLE_MP, "maxRecoverableMp"),
 			new(Stat.MAX_RECOVERABLE_CP, "maxRecoverableCp"),
 			new(Stat.REGENERATE_HP_RATE, "regHp", new RegenHPFinalizer()),
@@ -345,18 +341,19 @@ public static class StatUtil
 		var kvp = _stats.FirstOrDefault(r => string.Equals(r.Value.XmlName, str, StringComparison.OrdinalIgnoreCase));
 		if (kvp.Value is null)
 			throw new ArgumentException("Invalid stat name");
-		
+
 		return kvp.Key;
 	}
 
-	public static StatInfo? GetInfo(this Stat stat) => CollectionExtensions.GetValueOrDefault(_stats, stat);
+    public static StatInfo GetInfo(this Stat stat) =>
+        _stats.GetValueOrDefault(stat) ?? throw new ArgumentException($"StatInfo not defined for stat {stat}");
 
 	public static double DoFinalize(this Stat stat, Creature creature, double? baseValue)
 	{
 		IStatFunction? finalizer = stat.GetInfo()?.Finalizer;
 		if (finalizer is null)
 			return defaultValue(creature, baseValue, stat);
-		
+
 		try
 		{
 			return finalizer.calc(creature, baseValue, stat);
@@ -415,7 +412,7 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 	new StatInfo(Stat.HEAL_EFFECT, "healEffect"),
 // 	new StatInfo(Stat.HEAL_EFFECT_ADD, "healEffectAdd"),
 // 	new StatInfo(Stat.FEED_MODIFY, "feedModify"),
-// 	
+//
 // 	// ATTACK & DEFENCE
 // 	new StatInfo(Stat.PHYSICAL_DEFENCE, "pDef", new PDefenseFinalizer()),
 // 	new StatInfo(Stat.MAGICAL_DEFENCE, "mDef", new MDefenseFinalizer()),
@@ -438,7 +435,7 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 	new StatInfo(Stat.REAR_DAMAGE_RATE, "rearDamage"),
 // 	new StatInfo(Stat.AUTO_ATTACK_DAMAGE_BONUS, "autoAttackDamageBonus"),
 // 	new StatInfo(Stat.IGNORE_REDUCE_DAMAGE, "ignoreReduceDamage"),
-// 	
+//
 // 	// ELEMENTAL SPIRITS
 // 	new StatInfo(Stat.ELEMENTAL_SPIRIT_FIRE_ATTACK, "elementalSpiritFireAttack"),
 // 	new StatInfo(Stat.ELEMENTAL_SPIRIT_WATER_ATTACK, "elementalSpiritWaterAttack"),
@@ -451,7 +448,7 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 	new StatInfo(Stat.ELEMENTAL_SPIRIT_CRITICAL_RATE, "elementalSpiritCriticalRate"),
 // 	new StatInfo(Stat.ELEMENTAL_SPIRIT_CRITICAL_DAMAGE, "elementalSpiritCriticalDamage"),
 // 	new StatInfo(Stat.ELEMENTAL_SPIRIT_BONUS_EXP, "elementalSpiritExp"),
-// 	
+//
 // 	// PVP BONUS
 // 	new StatInfo(Stat.PVP_PHYSICAL_ATTACK_DAMAGE, "pvpPhysDmg"),
 // 	new StatInfo(Stat.PVP_MAGICAL_SKILL_DAMAGE, "pvpMagicalDmg"),
@@ -459,7 +456,7 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 	new StatInfo(Stat.PVP_PHYSICAL_ATTACK_DEFENCE, "pvpPhysDef"),
 // 	new StatInfo(Stat.PVP_MAGICAL_SKILL_DEFENCE, "pvpMagicalDef"),
 // 	new StatInfo(Stat.PVP_PHYSICAL_SKILL_DEFENCE, "pvpPhysSkillsDef"),
-// 	
+//
 // 	// PVE BONUS
 // 	new StatInfo(Stat.PVE_PHYSICAL_ATTACK_DAMAGE, "pvePhysDmg"),
 // 	new StatInfo(Stat.PVE_PHYSICAL_SKILL_DAMAGE, "pvePhysSkillDmg"),
@@ -473,13 +470,13 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 	new StatInfo(Stat.PVE_RAID_PHYSICAL_ATTACK_DEFENCE, "pveRaidPhysDef"),
 // 	new StatInfo(Stat.PVE_RAID_PHYSICAL_SKILL_DEFENCE, "pveRaidPhysSkillDef"),
 // 	new StatInfo(Stat.PVE_RAID_MAGICAL_SKILL_DEFENCE, "pveRaidMagicalDef"),
-// 	
+//
 // 	// FIXED BONUS
 // 	new StatInfo(Stat.PVP_DAMAGE_TAKEN, "pvpDamageTaken"),
 // 	new StatInfo(Stat.PVE_DAMAGE_TAKEN, "pveDamageTaken"),
 // 	new StatInfo(Stat.PVE_DAMAGE_TAKEN_MONSTER, "pveDamageTakenMonster"),
 // 	new StatInfo(Stat.PVE_DAMAGE_TAKEN_RAID, "pveDamageTakenRaid"),
-// 	
+//
 // 	// ATTACK & DEFENCE RATES
 // 	new StatInfo(Stat.MAGIC_CRITICAL_DAMAGE, "mCritPower"),
 // 	new StatInfo(Stat.SKILL_POWER_ADD, "skillPowerAdd"),
@@ -528,7 +525,7 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 	new StatInfo(Stat.BONUS_SPOIL_RATE, "bonusSpoilRate"),
 // 	new StatInfo(Stat.BONUS_RAID_POINTS, "bonusRaidPoints"),
 // 	new StatInfo(Stat.ATTACK_CANCEL, "cancel"),
-// 	
+//
 // 	// ACCURACY & RANGE
 // 	new StatInfo(Stat.ACCURACY_COMBAT, "accCombat", new PAccuracyFinalizer()),
 // 	new StatInfo(Stat.ACCURACY_MAGIC, "accMagic", new MAccuracyFinalizer()),
@@ -539,7 +536,7 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 	new StatInfo(Stat.ATTACK_COUNT_MAX, "atkCountMax"),
 // 	new StatInfo(Stat.PHYSICAL_POLEARM_TARGET_SINGLE, "polearmSingleTarget"),
 // 	new StatInfo(Stat.WEAPON_ATTACK_ANGLE_BONUS, "weaponAttackAngleBonus"),
-// 	
+//
 // 	// Run speed, walk & escape speed are calculated proportionally, magic speed is a buff
 // 	new StatInfo(Stat.MOVE_SPEED, "moveSpeed"),
 // 	new StatInfo(Stat.SPEED_LIMIT, "speedLimit"),
@@ -549,7 +546,7 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 	new StatInfo(Stat.SWIM_WALK_SPEED, "slowSimSpd", new SpeedFinalizer()),
 // 	new StatInfo(Stat.FLY_RUN_SPEED, "fastFlySpd", new SpeedFinalizer()),
 // 	new StatInfo(Stat.FLY_WALK_SPEED, "slowFlySpd", new SpeedFinalizer()),
-// 	
+//
 // 	// BASIC STATS
 // 	new StatInfo(Stat.STAT_STR, "STR", new BaseStatFinalizer()),
 // 	new StatInfo(Stat.STAT_CON, "CON", new BaseStatFinalizer()),
@@ -557,20 +554,20 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 	new StatInfo(Stat.STAT_INT, "INT", new BaseStatFinalizer()),
 // 	new StatInfo(Stat.STAT_WIT, "WIT", new BaseStatFinalizer()),
 // 	new StatInfo(Stat.STAT_MEN, "MEN", new BaseStatFinalizer()),
-// 	
+//
 // 	// Special stats, share one slot in Calculator
-// 	
+//
 // 	// VARIOUS
 // 	new StatInfo(Stat.BREATH, "breath"),
 // 	new StatInfo(Stat.FALL, "fall"),
 // 	new StatInfo(Stat.FISHING_EXP_SP_BONUS, "fishingExpSpBonus"),
 // 	new StatInfo(Stat.ENCHANT_RATE, "enchantRate"),
-// 	
+//
 // 	// VULNERABILITIES
 // 	new StatInfo(Stat.DAMAGE_ZONE_VULN, "damageZoneVuln"),
 // 	new StatInfo(Stat.RESIST_DISPEL_BUFF, "cancelVuln"), // Resistance for cancel type skills
 // 	new StatInfo(Stat.RESIST_ABNORMAL_DEBUFF, "debuffVuln"),
-// 	
+//
 // 	// RESISTANCES
 // 	FIRE_RES("fireRes", new AttributeFinalizer(AttributeType.FIRE, false)),
 // 	WIND_RES("windRes", new AttributeFinalizer(AttributeType.WIND, false)),
@@ -584,7 +581,7 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 	new StatInfo(Stat.ABNORMAL_RESIST_PHYSICAL, "abnormalResPhysical"),
 // 	new StatInfo(Stat.ABNORMAL_RESIST_MAGICAL, "abnormalResMagical"),
 // 	new StatInfo(Stat.REAL_DAMAGE_RESIST, "realDamageResist"),
-// 	
+//
 // 	// ELEMENT POWER
 // 	FIRE_POWER("firePower", new AttributeFinalizer(AttributeType.FIRE, true)),
 // 	WATER_POWER("waterPower", new AttributeFinalizer(AttributeType.WATER, true)),
@@ -592,7 +589,7 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 	EARTH_POWER("earthPower", new AttributeFinalizer(AttributeType.EARTH, true)),
 // 	HOLY_POWER("holyPower", new AttributeFinalizer(AttributeType.HOLY, true)),
 // 	DARK_POWER("darkPower", new AttributeFinalizer(AttributeType.DARK, true)),
-// 	
+//
 // 	// PROFICIENCY
 // 	new StatInfo(Stat.REFLECT_DAMAGE_PERCENT, "reflectDam"),
 // 	new StatInfo(Stat.REFLECT_DAMAGE_PERCENT_DEFENSE, "reflectDamDef"),
@@ -608,10 +605,10 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 	new StatInfo(Stat.TRANSFER_DAMAGE_TO_PLAYER, "transDamToPlayer"),
 // 	new StatInfo(Stat.ABSORB_MANA_DAMAGE_PERCENT, "absorbDamMana"),
 // 	new StatInfo(Stat.ABSORB_MANA_DAMAGE_CHANCE, "absorbDamManaChance", new MpVampiricChanceFinalizer()),
-// 	
+//
 // 	new StatInfo(Stat.WEIGHT_LIMIT, "weightLimit"),
 // 	new StatInfo(Stat.WEIGHT_PENALTY, "weightPenalty"),
-// 	
+//
 // 	// ExSkill
 // 	new StatInfo(Stat.INVENTORY_NORMAL, "inventoryLimit"),
 // 	new StatInfo(Stat.STORAGE_PRIVATE, "whLimit"),
@@ -619,66 +616,66 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 	new StatInfo(Stat.TRADE_BUY, "PrivateBuyLimit"),
 // 	new StatInfo(Stat.RECIPE_DWARVEN, "DwarfRecipeLimit"),
 // 	new StatInfo(Stat.RECIPE_COMMON, "CommonRecipeLimit"),
-// 	
+//
 // 	// Skill mastery
 // 	new StatInfo(Stat.SKILL_MASTERY, "skillMastery"),
 // 	new StatInfo(Stat.SKILL_MASTERY_RATE, "skillMasteryRate"),
-// 	
+//
 // 	// Vitality
 // 	new StatInfo(Stat.VITALITY_CONSUME_RATE, "vitalityConsumeRate"),
 // 	new StatInfo(Stat.VITALITY_EXP_RATE, "vitalityExpRate"),
 // 	new StatInfo(Stat.VITALITY_SKILLS, "vitalitySkills"), // Used to count vitality skill bonuses.
-// 	
+//
 // 	// Magic Lamp
 // 	new StatInfo(Stat.MAGIC_LAMP_EXP_RATE, "magicLampExpRate"),
-// 	
+//
 // 	new StatInfo(Stat.LAMP_BONUS_EXP, "LampBonusExp"),
 // 	new StatInfo(Stat.LAMP_BONUS_BUFFS_COUNT, "LampBonusBuffCount"),
-// 	
+//
 // 	// Henna
 // 	new StatInfo(Stat.HENNA_SLOTS_AVAILABLE, "hennaSlots"),
-// 	
+//
 // 	// Souls
 // 	new StatInfo(Stat.MAX_SOULS, "maxSouls"),
-// 	
+//
 // 	new StatInfo(Stat.REDUCE_EXP_LOST_BY_PVP, "reduceExpLostByPvp"),
 // 	new StatInfo(Stat.REDUCE_EXP_LOST_BY_MOB, "reduceExpLostByMob"),
 // 	new StatInfo(Stat.REDUCE_EXP_LOST_BY_RAID, "reduceExpLostByRaid"),
-// 	
+//
 // 	new StatInfo(Stat.REDUCE_DEATH_PENALTY_BY_PVP, "reduceDeathPenaltyByPvp"),
 // 	new StatInfo(Stat.REDUCE_DEATH_PENALTY_BY_MOB, "reduceDeathPenaltyByMob"),
 // 	new StatInfo(Stat.REDUCE_DEATH_PENALTY_BY_RAID, "reduceDeathPenaltyByRaid"),
-// 	
+//
 // 	// Brooches
 // 	new StatInfo(Stat.BROOCH_JEWELS, "broochJewels"),
-// 	
+//
 // 	// Agathions
 // 	new StatInfo(Stat.AGATHION_SLOTS, "agathionSlots"),
-// 	
+//
 // 	// Artifacts
 // 	new StatInfo(Stat.ARTIFACT_SLOTS, "artifactSlots"),
-// 	
+//
 // 	// Summon Points
 // 	new StatInfo(Stat.MAX_SUMMON_POINTS, "summonPoints"),
-// 	
+//
 // 	// Cubic Count
 // 	new StatInfo(Stat.MAX_CUBIC, "cubicCount"),
-// 	
+//
 // 	// The maximum allowed range to be damaged/debuffed from.
 // 	new StatInfo(Stat.SPHERIC_BARRIER_RANGE, "sphericBarrier"),
-// 	
+//
 // 	// Blocks given amount of debuffs.
 // 	new StatInfo(Stat.DEBUFF_BLOCK, "debuffBlock"),
-// 	
+//
 // 	// Affects the random weapon damage.
 // 	new StatInfo(Stat.RANDOM_DAMAGE, "randomDamage", new RandomDamageFinalizer()),
-// 	
+//
 // 	// Affects the random weapon damage.
 // 	new StatInfo(Stat.DAMAGE_LIMIT, "damageCap"),
-// 	
+//
 // 	// Maximun momentum one can charge
 // 	new StatInfo(Stat.MAX_MOMENTUM, "maxMomentum"),
-// 	
+//
 // 	// Which base stat ordinal should alter skill critical formula.
 // 	new StatInfo(Stat.STAT_BONUS_SKILL_CRITICAL, "statSkillCritical"),
 // 	new StatInfo(Stat.STAT_BONUS_SPEED, "statSpeed"),
@@ -688,38 +685,38 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 	new StatInfo(Stat.SPIRITSHOT_RESISTANCE, "spiritshotResistance"),
 // 	new StatInfo(Stat.WORLD_CHAT_POINTS, "worldChatPoints"),
 // 	new StatInfo(Stat.ATTACK_DAMAGE, "attackDamage"),
-// 	
+//
 // 	new StatInfo(Stat.IMMOBILE_DAMAGE_BONUS, "immobileBonus"),
 // 	new StatInfo(Stat.IMMOBILE_DAMAGE_RESIST, "immobileResist"),
-// 	
+//
 // 	new StatInfo(Stat.CRAFT_RATE, "CraftRate"),
 // 	new StatInfo(Stat.ELIXIR_USAGE_LIMIT, "elixirUsageLimit"),
 // 	RESURRECTION_FEE_MODIFIER("resurrectionFeeModifier");
-// 	
+//
 // 	public static final int NUM_STATS = values().length;
-// 	
+//
 // 	private final String _value;
 // 	private final IStatFunction _valueFinalizer;
 // 	private final DoubleBinaryOperator _addFunction;
 // 	private final DoubleBinaryOperator _mulFunction;
 // 	private final Double _resetAddValue;
 // 	private final Double _resetMulValue;
-// 	
+//
 // 	public String getValue()
 // 	{
 // 		return _value;
 // 	}
-// 	
+//
 // 	Stat(String xmlString)
 // 	{
 // 		this(xmlString, Stat::defaultValue, MathUtil::add, MathUtil::mul, 0, 1);
 // 	}
-// 	
+//
 // 	Stat(String xmlString, IStatFunction valueFinalizer)
 // 	{
 // 		this(xmlString, valueFinalizer, MathUtil::add, MathUtil::mul, 0, 1);
 // 	}
-// 	
+//
 // 	Stat(String xmlString, IStatFunction valueFinalizer, DoubleBinaryOperator addFunction, DoubleBinaryOperator mulFunction, double resetAddValue, double resetMulValue)
 // 	{
 // 		_value = xmlString;
@@ -729,7 +726,7 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 		_resetAddValue = resetAddValue;
 // 		_resetMulValue = resetMulValue;
 // 	}
-// 	
+//
 // 	public static Stat valueOfXml(String name)
 // 	{
 // 		String internName = name.intern();
@@ -740,10 +737,10 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 				return s;
 // 			}
 // 		}
-// 		
+//
 // 		throw new NoSuchElementException("Unknown name '" + internName + "' for enum " + Stat.class.getSimpleName());
 // 	}
-// 	
+//
 // 	/**
 // 	 * @param creature
 // 	 * @param baseValue
@@ -761,39 +758,39 @@ public sealed class StatDefaultFinalizer: IStatFunction
 // 			return defaultValue(creature, baseValue, this);
 // 		}
 // 	}
-// 	
+//
 // 	public double functionAdd(double oldValue, double value)
 // 	{
 // 		return _addFunction.applyAsDouble(oldValue, value);
 // 	}
-// 	
+//
 // 	public double functionMul(double oldValue, double value)
 // 	{
 // 		return _mulFunction.applyAsDouble(oldValue, value);
 // 	}
-// 	
+//
 // 	public Double getResetAddValue()
 // 	{
 // 		return _resetAddValue;
 // 	}
-// 	
+//
 // 	public Double getResetMulValue()
 // 	{
 // 		return _resetMulValue;
 // 	}
-// 	
+//
 // 	public static double weaponBaseValue(Creature creature, Stat stat)
 // 	{
 // 		return stat._valueFinalizer.calcWeaponBaseValue(creature, stat);
 // 	}
-// 	
+//
 // 	public static double defaultValue(Creature creature, OptionalDouble base, Stat stat)
 // 	{
 // 		final double mul = creature.getStat().getMul(stat);
 // 		final double add = creature.getStat().getAdd(stat);
 // 		return base.isPresent() ? defaultValue(creature, stat, base.getAsDouble()) : mul * (add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType()));
 // 	}
-// 	
+//
 // 	public static double defaultValue(Creature creature, Stat stat, double baseValue)
 // 	{
 // 		final double mul = creature.getStat().getMul(stat);

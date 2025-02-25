@@ -119,7 +119,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 
 		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && player.getReputation() < 0)
 		{
-			List<ItemSkillHolder> skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
+			List<ItemSkillHolder>? skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 			if (skills != null)
 			{
 				foreach (ItemSkillHolder holder in skills)

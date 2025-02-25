@@ -87,7 +87,7 @@ public class MonsterDailyMissionHandler: AbstractDailyMissionHandler
         Player? player = @event.getAttacker();
         if (player == null)
             return;
-        
+
         int monsterLevel = monster.getLevel();
         if (_minLevel > 0 && (monsterLevel < _minLevel || monsterLevel > _maxLevel ||
                 player.getLevel() - monsterLevel > 15))
@@ -100,7 +100,7 @@ public class MonsterDailyMissionHandler: AbstractDailyMissionHandler
             Party? party = player.getParty();
             if (party != null)
             {
-                CommandChannel channel = party.getCommandChannel();
+                CommandChannel? channel = party.getCommandChannel();
                 List<Player> members = channel != null ? channel.getMembers() : party.getMembers();
                 foreach (Player member in members)
                 {

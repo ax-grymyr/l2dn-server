@@ -10,18 +10,9 @@ public class PostBBSManager: BaseBBSManager
 {
 	private readonly Map<Topic, Post> _postByTopic = new();
 
-	public Post getGPosttByTopic(Topic t)
-	{
-		Post? post = _postByTopic.get(t);
-		if (post == null)
-		{
-			post = new Post(t);
-			_postByTopic.put(t, post);
-		}
-		return post;
-	}
+	public Post getGPosttByTopic(Topic topic) => _postByTopic.GetOrAdd(topic, t => new Post(t));
 
-	public void delPostByTopic(Topic t)
+    public void delPostByTopic(Topic t)
 	{
 		_postByTopic.remove(t);
 	}
@@ -34,7 +25,7 @@ public class PostBBSManager: BaseBBSManager
 		}
 	}
 
-	public override void parsecmd(string command, Player player)
+	public override void ParseCmd(string command, Player player)
 	{
 		if (command.startsWith("_bbsposts;read;"))
 		{
@@ -96,8 +87,8 @@ public class PostBBSManager: BaseBBSManager
     {
         Post.CPost? cPost = p.getCPost(0);
 		string html = "<html><body><br><br><table border=0 width=610><tr><td width=10></td><td width=600 align=left><a action=\"bypass _bbshome\">HOME</a>&nbsp;>&nbsp;<a action=\"bypass _bbsmemo\">" + forum.getName() + " Form</a></td></tr></table><img src=\"L2UI.squareblank\" width=\"1\" height=\"10\"><center><table border=0 cellspacing=0 cellpadding=0><tr><td width=610><img src=\"sek.cbui355\" width=\"610\" height=\"1\"><br1><img src=\"sek.cbui355\" width=\"610\" height=\"1\"></td></tr></table><table fixwidth=610 border=0 cellspacing=0 cellpadding=0><tr><td><img src=\"l2ui.mini_logo\" width=5 height=20></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=1></td><td align=center FIXWIDTH=60 height=29>&$413;</td><td FIXWIDTH=540>" + topic.getName() + "</td><td><img src=\"l2ui.mini_logo\" width=5 height=1></td></tr></table><table fixwidth=610 border=0 cellspacing=0 cellpadding=0><tr><td><img src=\"l2ui.mini_logo\" width=5 height=10></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=1></td><td align=center FIXWIDTH=60 height=29 valign=top>&$427;</td><td align=center FIXWIDTH=540><MultiEdit var =\"Content\" width=535 height=313></td><td><img src=\"l2ui.mini_logo\" width=5 height=1></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=10></td></tr></table><table fixwidth=610 border=0 cellspacing=0 cellpadding=0><tr><td><img src=\"l2ui.mini_logo\" width=5 height=10></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=1></td><td align=center FIXWIDTH=60 height=29>&nbsp;</td><td align=center FIXWIDTH=70><button value=\"&$140;\" action=\"Write Post " + forum.getID() + ";" + topic.getID() + ";0 _ Content Content Content\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\" ></td><td align=center FIXWIDTH=70><button value = \"&$141;\" action=\"bypass _bbsmemo\" back=\"l2ui_ch3.smallbutton2_down\" width=65 height=20 fore=\"l2ui_ch3.smallbutton2\"> </td><td align=center FIXWIDTH=400>&nbsp;</td><td><img src=\"l2ui.mini_logo\" width=5 height=1></td></tr></table></center></body></html>";
-		send1001(html, player);
-		send1002(player, cPost?.getPostText() ?? string.Empty, topic.getName(), topic.getDate().ToString("D", CultureInfo.InvariantCulture));
+		Send1001(html, player);
+		Send1002(player, cPost?.getPostText() ?? string.Empty, topic.getName(), topic.getDate().ToString("D", CultureInfo.InvariantCulture));
 	}
 
 	private void showMemoPost(Topic topic, Player player, Forum forum)
@@ -126,7 +117,7 @@ public class PostBBSManager: BaseBBSManager
 		CommunityBoardHandler.separateAndSend(html, player);
 	}
 
-	public override void parsewrite(string ar1, string ar2, string ar3, string ar4, string ar5, Player player)
+	public override void ParseWrite(string ar1, string ar2, string ar3, string ar4, string ar5, Player player)
 	{
 		StringTokenizer st = new StringTokenizer(ar1, ";");
 		int idf = int.Parse(st.nextToken());
@@ -158,7 +149,7 @@ public class PostBBSManager: BaseBBSManager
 					{
                         cPost.setPostText(ar4);
 						p.updateText(idp);
-						parsecmd("_bbsposts;read;" + f.getID() + ";" + t.getID(), player);
+						ParseCmd("_bbsposts;read;" + f.getID() + ";" + t.getID(), player);
 					}
 				}
 			}

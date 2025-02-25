@@ -85,7 +85,7 @@ public struct RequestStartPledgeWarPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		ClanWar clanWar = clanDeclaringWar.getWarWith(clanDeclaredWar.getId());
+		ClanWar? clanWar = clanDeclaringWar.getWarWith(clanDeclaredWar.getId());
 		if (clanWar != null)
 		{
 			if (clanWar.getClanWarState(clanDeclaringWar) == ClanWarState.WIN)

@@ -21,15 +21,15 @@ public struct AnswerTradeRequestPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         if (!player.getAccessLevel().allowTransaction())
         {
             player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
-		
-        Player partner = player.getActiveRequester();
+
+        Player? partner = player.getActiveRequester();
         if (partner == null)
         {
             // Trade partner not found, cancel trade
@@ -38,7 +38,7 @@ public struct AnswerTradeRequestPacket: IIncomingPacket<GameSession>
             player.setActiveRequester(null);
             return ValueTask.CompletedTask;
         }
-        
+
         if (World.getInstance().getPlayer(partner.ObjectId) == null)
         {
             // Trade partner not found, cancel trade
@@ -47,7 +47,7 @@ public struct AnswerTradeRequestPacket: IIncomingPacket<GameSession>
             player.setActiveRequester(null);
             return ValueTask.CompletedTask;
         }
-		
+
         if (_response == 1 && !partner.isRequestExpired())
         {
             player.startTrade(partner);
@@ -58,7 +58,7 @@ public struct AnswerTradeRequestPacket: IIncomingPacket<GameSession>
             msg.Params.addString(player.getName());
             partner.sendPacket(msg);
         }
-		
+
         // Clears requesting status
         player.setActiveRequester(null);
         partner.onTransactionResponse();

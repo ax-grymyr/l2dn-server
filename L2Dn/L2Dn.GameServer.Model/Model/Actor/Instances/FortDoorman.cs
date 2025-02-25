@@ -45,9 +45,10 @@ public class FortDoorman: Doorman
         StringTokenizer st = new StringTokenizer(command.Substring(10), ", ");
         st.nextToken();
 
+        Fort fort = getFort() ?? throw new InvalidOperationException("fort is null in FortDoorman.openDoors");
         while (st.hasMoreTokens())
         {
-            getFort().openDoor(player, int.Parse(st.nextToken()));
+            fort.openDoor(player, int.Parse(st.nextToken()));
         }
     }
 
@@ -56,9 +57,10 @@ public class FortDoorman: Doorman
         StringTokenizer st = new StringTokenizer(command.Substring(11), ", ");
         st.nextToken();
 
+        Fort fort = getFort() ?? throw new InvalidOperationException("fort is null in FortDoorman.openDoors");
         while (st.hasMoreTokens())
         {
-            getFort().closeDoor(player, int.Parse(st.nextToken()));
+            fort.closeDoor(player, int.Parse(st.nextToken()));
         }
     }
 
@@ -71,6 +73,6 @@ public class FortDoorman: Doorman
 
     protected sealed override bool isUnderSiege()
     {
-        return getFort().getZone().isActive();
+        return getFort()?.getZone().isActive() == true;
     }
 }

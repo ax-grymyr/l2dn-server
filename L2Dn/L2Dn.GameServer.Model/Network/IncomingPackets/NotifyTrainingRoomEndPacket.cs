@@ -19,10 +19,10 @@ public struct NotifyTrainingRoomEndPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        TrainingHolder holder = player.getTraingCampInfo();
+        TrainingHolder? holder = player.getTraingCampInfo();
         if (holder == null)
             return ValueTask.CompletedTask;
-		
+
         if (holder.isTraining())
         {
             holder.setEndTime(DateTime.UtcNow);
@@ -36,7 +36,7 @@ public struct NotifyTrainingRoomEndPacket: IIncomingPacket<GameSession>
             holder.setEndTime(DateTime.UtcNow);
             player.setTraingCampInfo(holder);
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

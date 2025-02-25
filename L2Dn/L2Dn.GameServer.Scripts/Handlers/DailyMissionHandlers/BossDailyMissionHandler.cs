@@ -59,7 +59,7 @@ public class BossDailyMissionHandler: AbstractDailyMissionHandler
 			Party? party = player.getParty();
 			if (party != null)
 			{
-				CommandChannel channel = party.getCommandChannel();
+				CommandChannel? channel = party.getCommandChannel();
 				List<Player> members = channel != null ? channel.getMembers() : party.getMembers();
 				foreach (Player member in members)
 				{

@@ -232,12 +232,10 @@ public class Servitor : Summon, Runnable
 		}
 
 		// Clear list for overwrite
-		if (SummonEffectTable.getInstance().getServitorEffectsOwner().GetValueOrDefault(getOwner().ObjectId)?
-		    .ContainsKey(getOwner().getClassIndex()) ?? false)
-		{
-			SummonEffectTable.getInstance().getServitorEffects(getOwner()).GetValueOrDefault(getReferenceSkill())
-				?.Clear();
-		}
+        SummonEffectTable.getInstance().getServitorEffectsOwner().
+            GetValueOrDefault(getOwner().ObjectId)?.
+            GetValueOrDefault(getOwner().getClassIndex())?.
+            GetValueOrDefault(getReferenceSkill())?.Clear();
 
 		try
 		{
@@ -323,29 +321,11 @@ public class Servitor : Summon, Runnable
 					++buffIndex;
 					record.BuffIndex = (byte)buffIndex;
 
-					// XXX: Rework me!
-					if (!SummonEffectTable.getInstance().getServitorEffectsOwner()
-						    .ContainsKey(getOwner().ObjectId))
-					{
-						SummonEffectTable.getInstance().getServitorEffectsOwner().put(getOwner().ObjectId, new());
-					}
-
-					if (!SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().ObjectId)
-						    .ContainsKey(getOwner().getClassIndex()))
-					{
-						SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().ObjectId)
-							.put(getOwner().getClassIndex(), new());
-					}
-
-					if (!SummonEffectTable.getInstance().getServitorEffects(getOwner())
-						    .ContainsKey(getReferenceSkill()))
-					{
-						SummonEffectTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(),
-							new List<SummonEffectTable.SummonEffect>());
-					}
-
-					SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill())
-						.Add(new SummonEffectTable.SummonEffect(skill, info.getTime() ?? TimeSpan.Zero)); // TODO ???
+                    SummonEffectTable.getInstance().
+                        getServitorEffectsOwner().GetOrAdd(getOwner().ObjectId, _ => []).
+                        GetOrAdd(getOwner().getClassIndex(), _ => []).
+                        GetOrAdd(_referenceSkill, _ => []).
+                        Add(new SummonEffectTable.SummonEffect(skill, info.getTime() ?? TimeSpan.Zero)); // TODO ???
 				}
 
 				ctx.SaveChanges();
@@ -369,11 +349,20 @@ public class Servitor : Summon, Runnable
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int ownerId = getOwner().ObjectId;
 			int ownerClassIndex = getOwner().getClassIndex();
-			if (!SummonEffectTable.getInstance().getServitorEffectsOwner().ContainsKey(getOwner().ObjectId) ||
-			    !SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().ObjectId).ContainsKey(getOwner().getClassIndex()) ||
-			    !SummonEffectTable.getInstance().getServitorEffects(getOwner()).ContainsKey(getReferenceSkill()))
+
+            ICollection<SummonEffectTable.SummonEffect>? effectList = SummonEffectTable.getInstance().getServitorEffectsOwner().
+                GetValueOrDefault(ownerId)?.
+                GetValueOrDefault(ownerClassIndex)?.
+                GetValueOrDefault(_referenceSkill);
+
+			if (effectList is null)
 			{
-				IQueryable<DbSummonSkillReuse> query = ctx.SummonSkillReuses.Where(r =>
+                effectList = SummonEffectTable.getInstance().getServitorEffectsOwner().
+                    GetOrAdd(ownerId, _ => []).
+                    GetOrAdd(ownerClassIndex, _ => []).
+                    GetOrAdd(getReferenceSkill(), _ => []);
+
+                IQueryable<DbSummonSkillReuse> query = ctx.SummonSkillReuses.Where(r =>
 					r.OwnerId == ownerId && r.OwnerClassIndex == ownerClassIndex && r.SummonSkillId == _referenceSkill);
 
 				foreach (DbSummonSkillReuse record in query)
@@ -385,33 +374,8 @@ public class Servitor : Summon, Runnable
 						continue;
 					}
 
-					// TODO: Rework me!
 					if (skill.hasEffects(EffectScope.GENERAL))
-					{
-						if (!SummonEffectTable.getInstance().getServitorEffectsOwner()
-							    .ContainsKey(getOwner().ObjectId))
-						{
-							SummonEffectTable.getInstance().getServitorEffectsOwner()
-								.put(getOwner().ObjectId, new());
-						}
-
-						if (!SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().ObjectId)
-							    .ContainsKey(getOwner().getClassIndex()))
-						{
-							SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().ObjectId)
-								.put(getOwner().getClassIndex(), new());
-						}
-
-						if (!SummonEffectTable.getInstance().getServitorEffects(getOwner())
-							    .ContainsKey(getReferenceSkill()))
-						{
-							SummonEffectTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(),
-								new List<SummonEffectTable.SummonEffect>());
-						}
-
-						SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill())
-							.Add(new SummonEffectTable.SummonEffect(skill, effectCurTime));
-					}
+						effectList.Add(new SummonEffectTable.SummonEffect(skill, effectCurTime));
 				}
 			}
 
@@ -425,17 +389,15 @@ public class Servitor : Summon, Runnable
 		}
 		finally
 		{
-			if (SummonEffectTable.getInstance().getServitorEffectsOwner().ContainsKey(getOwner().ObjectId) &&
-			    SummonEffectTable.getInstance().getServitorEffectsOwner().get(getOwner().ObjectId).ContainsKey(getOwner().getClassIndex()) &&
-			    SummonEffectTable.getInstance().getServitorEffects(getOwner()).ContainsKey(getReferenceSkill()))
+            ICollection<SummonEffectTable.SummonEffect>? effectList = SummonEffectTable.getInstance().getServitorEffectsOwner().
+                GetValueOrDefault(getOwner().ObjectId)?.
+                GetValueOrDefault(getOwner().getClassIndex())?.
+                GetValueOrDefault(_referenceSkill);
+
+            if (effectList != null)
 			{
-				foreach (SummonEffectTable.SummonEffect se in SummonEffectTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill()))
-				{
-					if (se != null)
-					{
-						se.getSkill().applyEffects(this, this, false, se.getEffectCurTime());
-					}
-				}
+				foreach (SummonEffectTable.SummonEffect se in effectList)
+					se.getSkill().applyEffects(this, this, false, se.getEffectCurTime());
 			}
 		}
 	}

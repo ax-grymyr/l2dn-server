@@ -405,7 +405,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public override Item addItem(string process, int itemId, long count, Player? actor, object? reference)
+	public override Item? addItem(string process, int itemId, long count, Player? actor, object? reference)
 	{
 		return addItem(process, itemId, count, actor, reference, true);
 	}
@@ -495,7 +495,7 @@ public class PlayerInventory: Inventory
 	 */
 	public override Item transferItem(string process, int objectId, long count, ItemContainer target, Player actor, object? reference)
 	{
-		Item item = base.transferItem(process, objectId, count, target, actor, reference);
+		Item? item = base.transferItem(process, objectId, count, target, actor, reference);
 
 		if (_adena != null && (_adena.getCount() <= 0 || _adena.getOwnerId() != getOwnerId()))
 		{
@@ -517,9 +517,9 @@ public class PlayerInventory: Inventory
 		return item;
 	}
 
-	public override Item detachItem(string process, Item item, long count, ItemLocation newLocation, Player actor, object? reference)
+	public override Item? detachItem(string process, Item item, long count, ItemLocation newLocation, Player actor, object? reference)
 	{
-		Item detachedItem = base.detachItem(process, item, count, newLocation, actor, reference);
+		Item? detachedItem = base.detachItem(process, item, count, newLocation, actor, reference);
 		if (detachedItem != null && actor != null)
 		{
 			actor.sendItemList();
@@ -595,9 +595,9 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public override Item destroyItem(string process, int objectId, long count, Player actor, object? reference)
+	public override Item? destroyItem(string process, int objectId, long count, Player actor, object? reference)
 	{
-		Item item = getItemByObjectId(objectId);
+		Item? item = getItemByObjectId(objectId);
 		return item == null ? null : destroyItem(process, item, count, actor, reference);
 	}
 
@@ -670,9 +670,9 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public override Item dropItem(string process, Item item, Player actor, object reference)
+	public override Item? dropItem(string process, Item item, Player actor, object reference)
 	{
-		Item droppedItem = base.dropItem(process, item, actor, reference);
+		Item? droppedItem = base.dropItem(process, item, actor, reference);
 
 		if (_adena != null && (_adena.getCount() <= 0 || _adena.getOwnerId() != getOwnerId()))
 		{
@@ -706,9 +706,9 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public override Item dropItem(string process, int objectId, long count, Player actor, object reference)
+	public override Item? dropItem(string process, int objectId, long count, Player actor, object? reference)
 	{
-		Item item = base.dropItem(process, objectId, count, actor, reference);
+		Item? item = base.dropItem(process, objectId, count, actor, reference);
 
 		if (_adena != null && (_adena.getCount() <= 0 || _adena.getOwnerId() != getOwnerId()))
 		{
@@ -882,7 +882,7 @@ public class PlayerInventory: Inventory
 	public bool validateCapacityByItemId(int itemId)
 	{
 		int slots = 0;
-		Item invItem = getItemByItemId(itemId);
+		Item? invItem = getItemByItemId(itemId);
 		if (invItem == null || !invItem.isStackable())
 		{
 			slots++;
@@ -975,7 +975,7 @@ public class PlayerInventory: Inventory
 	 */
 	public bool canManipulateWithItemId(int itemId)
 	{
-		ICollection<int> blockedItems = _blockItems;
+		ICollection<int>? blockedItems = _blockItems;
 		if (blockedItems != null)
 		{
 			switch (_blockMode)
@@ -1031,7 +1031,7 @@ public class PlayerInventory: Inventory
 
 				if (item.getLocationSlot() >= Inventory.PAPERDOLL_AGATHION1 && item.getLocationSlot() <= Inventory.PAPERDOLL_AGATHION5)
 				{
-					AgathionSkillHolder agathionSkills = AgathionData.getInstance().getSkills(item.getId());
+					AgathionSkillHolder? agathionSkills = AgathionData.getInstance().getSkills(item.getId());
 					if (agathionSkills != null)
 					{
 						// Remove old skills.
@@ -1087,7 +1087,7 @@ public class PlayerInventory: Inventory
 			return;
 		}
 
-		Item ammunition = null;
+		Item? ammunition = null;
 		switch (weapon.getItemType().AsWeaponType())
 		{
 			case WeaponType.BOW:

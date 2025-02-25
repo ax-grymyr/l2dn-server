@@ -2,6 +2,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
+using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.Geometry;
@@ -43,9 +44,11 @@ public class Escape: AbstractEffect
 		if (_escapeType != null)
         {
             Player? effectedPlayer = effected.getActingPlayer();
-			if (effected.isInInstance() && effectedPlayer != null && effectedPlayer.isInTimedHuntingZone())
+            TimedHuntingZoneHolder? huntingZone = effectedPlayer?.getTimedHuntingZone();
+			if (effected.isInInstance() && effectedPlayer != null && effectedPlayer.isInTimedHuntingZone() &&
+                huntingZone != null)
             {
-                effected.teleToLocation(new Location(effectedPlayer.getTimedHuntingZone().getEnterLocation(), 0),
+                effected.teleToLocation(new Location(huntingZone.getEnterLocation(), 0),
                     effected.getInstanceId());
             }
 			else

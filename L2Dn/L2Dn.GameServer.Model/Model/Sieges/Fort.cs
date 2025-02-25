@@ -42,16 +42,16 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	private int _supplyLvL;
 	private readonly Map<int, FortFunction> _function = new();
 	private readonly ScheduledFuture[] _fortUpdater = new ScheduledFuture[2];
-	
+
 	// Spawn Data
 	private bool _isSuspiciousMerchantSpawned;
 	private readonly Set<Spawn> _siegeNpcs = new();
 	private readonly Set<Spawn> _npcCommanders = new();
 	private readonly Set<Spawn> _specialEnvoys = new();
-	
+
 	private readonly Map<int, int> _envoyCastles = new();
 	private readonly Set<int> _availableCastles = new();
-	
+
 	/** Fortress Functions */
 	public const int FUNC_TELEPORT = 1;
 	public const int FUNC_RESTORE_HP = 2;
@@ -60,7 +60,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	public const int FUNC_SUPPORT = 5;
 
 	public EventContainer Events => _eventContainer;
-	
+
 	public class FortFunction
 	{
 		private readonly Fort _fort;
@@ -72,7 +72,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		DateTime? _endDate;
 		protected bool _inDebt;
 		public bool _cwh;
-		
+
 		public FortFunction(Fort fort, int type, int level, int lease, int tempLease, TimeSpan rate, DateTime? time, bool cwh)
 		{
 			_fort = fort;
@@ -84,54 +84,54 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			_endDate = time;
 			initializeTask(cwh);
 		}
-		
+
 		public int getType()
 		{
 			return _type;
 		}
-		
+
 		public int getLevel()
 		{
 			return _level;
 		}
-		
+
 		public int getLease()
 		{
 			return _fee;
 		}
-		
+
 		public TimeSpan getRate()
 		{
 			return _rate;
 		}
-		
+
 		public DateTime? getEndTime()
 		{
 			return _endDate;
 		}
-		
+
 		public void setLvl(int lvl)
 		{
 			_level = lvl;
 		}
-		
+
 		public void setLease(int lease)
 		{
 			_fee = lease;
 		}
-		
+
 		public void setEndTime(DateTime? time)
 		{
 			_endDate = time;
 		}
-		
+
 		private void initializeTask(bool cwh)
 		{
 			if (_fort._fortOwner == null)
 			{
 				return;
 			}
-			
+
 			DateTime currentTime = DateTime.UtcNow;
 			if (_endDate > currentTime)
 			{
@@ -142,7 +142,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 				ThreadPool.schedule(new FunctionTask(_fort, this, cwh), 0);
 			}
 		}
-		
+
 		private class FunctionTask: Runnable
 		{
 			private readonly Fort _fort;
@@ -154,7 +154,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 				_fortFunction = fortFunction;
 				_fortFunction._cwh = cwh;
 			}
-			
+
 			public void run()
 			{
 				try
@@ -181,12 +181,12 @@ public class Fort: AbstractResidence, IEventContainerProvider
 				}
 				catch (Exception t)
 				{
-					// Ignore. 
+					// Ignore.
 					// TODO: log
 				}
 			}
 		}
-		
+
 		public void dbSave()
 		{
 			try
@@ -214,7 +214,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	public Fort(int fortId, string fortName): base(fortId, fortName)
 	{
 		_eventContainer = new($"Fort template {fortId}", GlobalEvents.Global);
@@ -225,7 +225,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			setVisibleFlag(true);
 			loadFunctions();
 		}
-		
+
 		initResidenceZone();
 		// initFunctions();
 		initNpcs(); // load and spawn npcs (Always spawned)
@@ -239,22 +239,22 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			spawnSpecialEnvoys();
 		}
 	}
-	
+
 	/**
 	 * Return function with id
 	 * @param type
 	 * @return
 	 */
-	public FortFunction getFortFunction(int type)
+	public FortFunction? getFortFunction(int type)
 	{
 		return _function.get(type);
 	}
-	
+
 	public void endOfSiege(Clan clan)
 	{
 		ThreadPool.execute(new endFortressSiege(this, clan));
 	}
-	
+
 	/**
 	 * Move non clan members off fort area and to nearest town.
 	 */
@@ -262,7 +262,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		getResidenceZone().banishForeigners(_fortOwner.getId());
 	}
-	
+
 	/**
 	 * @param x
 	 * @param y
@@ -274,7 +274,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		SiegeZone zone = getZone();
 		return zone != null && zone.isInsideZone(location);
 	}
-	
+
 	public SiegeZone getZone()
 	{
 		if (_zone == null)
@@ -290,12 +290,12 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		}
 		return _zone;
 	}
-	
+
 	public override FortZone getResidenceZone()
 	{
 		return (FortZone) base.getResidenceZone();
 	}
-	
+
 	/**
 	 * Get the objects distance to this fort
 	 * @param obj
@@ -305,24 +305,24 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		return getZone().getDistanceToZone(obj);
 	}
-	
+
 	public void closeDoor(Player player, int doorId)
 	{
 		openCloseDoor(player, doorId, false);
 	}
-	
+
 	public void openDoor(Player player, int doorId)
 	{
 		openCloseDoor(player, doorId, true);
 	}
-	
+
 	public void openCloseDoor(Player player, int doorId, bool open)
 	{
 		if (player.getClan() != _fortOwner)
 		{
 			return;
 		}
-		
+
 		Door door = getDoor(doorId);
 		if (door != null)
 		{
@@ -336,13 +336,13 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	// This method is used to begin removing all fort upgrades
 	public void removeUpgrade()
 	{
 		removeDoorUpgrade();
 	}
-	
+
 	/**
 	 * This method will set owner for Fort
 	 * @param clan
@@ -356,11 +356,11 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			LOGGER.Warn(GetType().Name + ": Updating Fort owner with null clan!!!");
 			return false;
 		}
-		
+
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_FORTRESS_BATTLE_OF_S1_HAS_FINISHED);
 		sm.Params.addCastleId(getResidenceId());
 		getSiege().announceToPlayer(sm);
-		
+
 		Clan oldowner = _fortOwner;
 		if (oldowner != null && clan != oldowner)
 		{
@@ -385,37 +385,37 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			removeOwner(true);
 		}
 		setFortState(0, 0); // initialize fort state
-		
+
 		// if clan already have castle, don't store him in fortress
 		if (clan.getCastleId() > 0)
 		{
 			getSiege().announceToPlayer(new SystemMessagePacket(SystemMessageId.THE_REBEL_ARMY_RECAPTURED_THE_FORTRESS));
 			return false;
 		}
-		
+
 		// Give points to new owner
 		if (updateClansReputation)
 		{
 			this.updateClansReputation(clan, false);
 		}
-		
+
 		spawnSpecialEnvoys();
 		// if clan have already fortress, remove it
 		if (clan.getFortId() > 0)
 		{
 			FortManager.getInstance().getFortByOwner(clan).removeOwner(true);
 		}
-		
+
 		setSupplyLevel(0);
 		setOwnerClan(clan);
 		updateOwnerInDB(); // Update in database
 		saveFortVariables();
-		
+
 		if (getSiege().isInProgress())
 		{
 			getSiege().endSiege();
 		}
-		
+
 		foreach (Player member in clan.getOnlineMembers(0))
 		{
 			giveResidentialSkills(member);
@@ -423,7 +423,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		}
 		return true;
 	}
-	
+
 	public void removeOwner(bool updateDB)
 	{
 		Clan clan = _fortOwner;
@@ -446,7 +446,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	public void raiseSupplyLvL()
 	{
 		_supplyLvL++;
@@ -455,7 +455,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			_supplyLvL = Config.FS_MAX_SUPPLY_LEVEL;
 		}
 	}
-	
+
 	public void setSupplyLevel(int value)
 	{
 		if (value <= Config.FS_MAX_SUPPLY_LEVEL)
@@ -463,15 +463,15 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			_supplyLvL = value;
 		}
 	}
-	
+
 	public int getSupplyLevel()
 	{
 		return _supplyLvL;
 	}
-	
+
 	public void saveFortVariables()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
@@ -482,7 +482,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Exception: saveFortVariables(): " + e);
 		}
 	}
-	
+
 	/**
 	 * Show or hide flag inside flag pole.
 	 * @param value
@@ -495,7 +495,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			flagPole.setMeshIndex(value ? 1 : 0);
 		}
 	}
-	
+
 	/**
 	 * Respawn all doors on fort grounds.
 	 */
@@ -523,7 +523,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		}
 		loadDoorUpgrade(); // Check for any upgrade the doors may have
 	}
-	
+
 	public void OpenOrcFortressDoors()
 	{
 		foreach (Door door in _doors)
@@ -531,11 +531,11 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			if (!door.isOpen())
 			{
 				door.openMe();
-				
+
 			}
 		}
 	}
-	
+
 	public void CloseOrcFortressDoors()
 	{
 		foreach (Door door in _doors)
@@ -546,7 +546,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	// Orc Fortress
 	public void SetOrcFortressOwnerNpcs(bool val)
 	{
@@ -562,7 +562,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			}
 		}));
 	}
-	
+
 	// This method upgrade door
 	public void upgradeDoor(int doorId, int hp, int pDef, int mDef)
 	{
@@ -573,11 +573,11 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			saveDoorUpgrade(doorId, hp, pDef, mDef);
 		}
 	}
-	
+
 	// This method loads fort
 	protected override void load()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
@@ -636,11 +636,11 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Exception: loadFortData(): " + e);
 		}
 	}
-	
+
 	/** Load All Functions */
 	private void loadFunctions()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
@@ -655,7 +655,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Exception: Fort.loadFunctions(): " + e);
 		}
 	}
-	
+
 	/**
 	 * Remove function In List and in DB
 	 * @param functionType
@@ -663,7 +663,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	public void removeFunction(int functionType)
 	{
 		_function.remove(functionType);
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
@@ -674,7 +674,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Exception: Fort.removeFunctions(int functionType): " + e);
 		}
 	}
-	
+
 	/**
 	 * Remove all fort functions.
 	 */
@@ -685,7 +685,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			removeFunction(id);
 		}
 	}
-	
+
 	public bool updateFunctions(Player player, int type, int lvl, int lease, TimeSpan rate, bool addNew)
 	{
 		if (player == null)
@@ -717,12 +717,12 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		}
 		return true;
 	}
-	
+
 	public void activateInstance()
 	{
 		loadDoor();
 	}
-	
+
 	// This method loads fort door data from database
 	private void loadDoor()
 	{
@@ -734,7 +734,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	private void loadFlagPoles()
 	{
 		foreach (StaticObject obj in StaticObjectData.getInstance().getStaticObjects())
@@ -750,11 +750,11 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			throw new InvalidOperationException("Can't find flagpole for Fort " + this);
 		}
 	}
-	
+
 	// This method loads fort door upgrade data from database
 	private void loadDoorUpgrade()
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
@@ -769,7 +769,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Exception: loadFortDoorUpgrade(): " + e);
 		}
 	}
-	
+
 	private void removeDoorUpgrade()
 	{
 		try
@@ -783,7 +783,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Exception: removeDoorUpgrade(): " + e);
 		}
 	}
-	
+
 	private void saveDoorUpgrade(int doorId, int hp, int pDef, int mDef)
 	{
 		try
@@ -805,7 +805,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Exception: saveDoorUpgrade(int doorId, int hp, int pDef, int mDef): " + e);
 		}
 	}
-	
+
 	private void updateOwnerInDB()
 	{
 		Clan clan = _fortOwner;
@@ -819,8 +819,8 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		{
 			_lastOwnedTime = null;
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
@@ -837,7 +837,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			record.State = 0;
 			record.CastleId = 0;
 			ctx.SaveChanges();
-			
+
 			// Announce to clan members
 			if (clan != null)
 			{
@@ -882,31 +882,31 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			LOGGER.Warn("Exception: updateOwnerInDB(Pledge clan): " + e);
 		}
 	}
-	
+
 	public override int getOwnerId()
 	{
-		Clan clan = _fortOwner;
+		Clan? clan = _fortOwner;
 		return clan != null ? clan.getId() : -1;
 	}
-	
-	public Clan getOwnerClan()
+
+	public Clan? getOwnerClan()
 	{
 		return _fortOwner;
 	}
-	
+
 	public void setOwnerClan(Clan clan)
 	{
 		setVisibleFlag(clan != null);
 		_fortOwner = clan;
 	}
-	
-	public Door getDoor(int doorId)
+
+	public Door? getDoor(int doorId)
 	{
 		if (doorId <= 0)
 		{
 			return null;
 		}
-		
+
 		foreach (Door door in _doors)
 		{
 			if (door.getId() == doorId)
@@ -916,17 +916,17 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		}
 		return null;
 	}
-	
+
 	public List<Door> getDoors()
 	{
 		return _doors;
 	}
-	
+
 	public StaticObject getFlagPole()
 	{
 		return _flagPole;
 	}
-	
+
 	public FortSiege getSiege()
 	{
 		if (_siege == null)
@@ -941,17 +941,17 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		}
 		return _siege;
 	}
-	
+
 	public DateTime getSiegeDate()
 	{
 		return _siegeDate;
 	}
-	
+
 	public void setSiegeDate(DateTime siegeDate)
 	{
 		_siegeDate = siegeDate;
 	}
-	
+
 	/// <summary>
 	/// Seconds
 	/// </summary>
@@ -960,19 +960,19 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		return _lastOwnedTime is null ? null : DateTime.UtcNow - _lastOwnedTime.Value;
 	}
-	
+
 	public TimeSpan? getTimeTillRebelArmy()
 	{
 		return _lastOwnedTime is null
 			? null
 			: _lastOwnedTime + TimeSpan.FromMilliseconds(Config.FS_MAX_OWN_TIME * 3600000) - DateTime.UtcNow;
 	}
-	
+
 	public TimeSpan getTimeTillNextFortUpdate()
 	{
 		return _fortUpdater[0] == null ? TimeSpan.Zero : _fortUpdater[0].getDelay();
 	}
-	
+
 	public void updateClansReputation(Clan owner, bool removePoints)
 	{
 		if (owner != null)
@@ -987,18 +987,18 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	private class endFortressSiege: Runnable
 	{
 		private Fort _f;
 		private Clan _clan;
-		
+
 		public endFortressSiege(Fort f, Clan clan)
 		{
 			_f = f;
 			_clan = clan;
 		}
-		
+
 		public void run()
 		{
 			try
@@ -1011,7 +1011,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			}
 		}
 	}
-	
+
 	/**
 	 * @return Returns state of fortress.<br>
 	 *         0 - not decided yet<br>
@@ -1022,7 +1022,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		return _state;
 	}
-	
+
 	/**
 	 * @param state
 	 *            <ul>
@@ -1036,7 +1036,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		_state = state;
 		_castleId = castleId;
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
@@ -1058,7 +1058,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Exception: setFortState(int state, int castleId): " + e);
 		}
 	}
-	
+
 	/**
 	 * @return the fortress type (0 - small (3 commanders), 1 - big (4 commanders + control room))
 	 */
@@ -1066,7 +1066,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		return _fortType;
 	}
-	
+
 	/**
 	 * @param npcId the Id of the ambassador NPC
 	 * @return the Id of the castle this ambassador represents
@@ -1080,7 +1080,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 
 		return value;
 	}
-	
+
 	/**
 	 * @param npcId the Id of the ambassador NPC
 	 * @return the castle this ambassador represents
@@ -1089,7 +1089,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		return CastleManager.getInstance().getCastleById(getCastleIdByAmbassador(npcId));
 	}
-	
+
 	/**
 	 * @return the Id of the castle contracted with this fortress
 	 */
@@ -1097,7 +1097,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		return _castleId;
 	}
-	
+
 	/**
 	 * @return the castle contracted with this fortress ({@code null} if no contract with any castle)
 	 */
@@ -1105,7 +1105,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		return CastleManager.getInstance().getCastleById(getContractedCastleId());
 	}
-	
+
 	/**
 	 * Check if this is a border fortress (associated with multiple castles).
 	 * @return {@code true} if this is a border fortress (associated with more than one castle), {@code false} otherwise
@@ -1114,7 +1114,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		return _availableCastles.size() > 1;
 	}
-	
+
 	/**
 	 * @return the amount of barracks in this fortress
 	 */
@@ -1122,14 +1122,14 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		return _fortType == 0 ? 3 : 5;
 	}
-	
+
 	public void spawnSuspiciousMerchant()
 	{
 		if (_isSuspiciousMerchantSpawned)
 		{
 			return;
 		}
-		
+
 		_isSuspiciousMerchantSpawned = true;
 		foreach (Spawn spawnDat in _siegeNpcs)
 		{
@@ -1137,7 +1137,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			spawnDat.startRespawn();
 		}
 	}
-	
+
 	public void despawnSuspiciousMerchant()
 	{
 		if (!_isSuspiciousMerchantSpawned)
@@ -1151,7 +1151,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			spawnDat.getLastSpawn().deleteMe();
 		}
 	}
-	
+
 	public void spawnNpcCommanders()
 	{
 		foreach (Spawn spawnDat in _npcCommanders)
@@ -1160,7 +1160,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			spawnDat.startRespawn();
 		}
 	}
-	
+
 	public void despawnNpcCommanders()
 	{
 		foreach (Spawn spawnDat in _npcCommanders)
@@ -1169,7 +1169,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			spawnDat.getLastSpawn().deleteMe();
 		}
 	}
-	
+
 	public void spawnSpecialEnvoys()
 	{
 		foreach (Spawn spawnDat in _specialEnvoys)
@@ -1178,7 +1178,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			spawnDat.startRespawn();
 		}
 	}
-	
+
 	private void initNpcs()
 	{
 		try
@@ -1202,11 +1202,11 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Fort " + getResidenceId() + " initNpcs: Spawn could not be initialized: " + e);
 		}
 	}
-	
+
 	private void initSiegeNpcs()
 	{
 		_siegeNpcs.clear();
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
@@ -1225,11 +1225,11 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Fort " + getResidenceId() + " initSiegeNpcs: Spawn could not be initialized: " + e);
 		}
 	}
-	
+
 	private void initNpcCommanders()
 	{
 		_npcCommanders.clear();
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
@@ -1249,13 +1249,13 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Fort " + getResidenceId() + " initNpcCommanders: Spawn could not be initialized: " + e);
 		}
 	}
-	
+
 	private void initSpecialEnvoys()
 	{
 		_specialEnvoys.clear();
 		_envoyCastles.Clear();
 		_availableCastles.clear();
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int fortId = getResidenceId();
@@ -1278,7 +1278,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			LOGGER.Error("Fort " + getResidenceId() + " initSpecialEnvoys: Spawn could not be initialized: " + e);
 		}
 	}
-	
+
 	protected override void initResidenceZone()
 	{
 		foreach (FortZone zone in ZoneManager.getInstance().getAllZones<FortZone>())

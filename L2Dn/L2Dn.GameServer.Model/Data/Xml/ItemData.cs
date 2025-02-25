@@ -1312,9 +1312,10 @@ public class ItemData: DataReaderBase
 			{
 				Attackable raid = (Attackable)reference;
 				// if in CommandChannel and was killing a World/RaidBoss
-				if (raid.getFirstCommandChannelAttacked() != null && !Config.AUTO_LOOT_RAIDS)
+                CommandChannel? firstCommandChannelAttacked = raid.getFirstCommandChannelAttacked();
+				if (firstCommandChannelAttacked != null && !Config.AUTO_LOOT_RAIDS)
 				{
-					item.setOwnerId(raid.getFirstCommandChannelAttacked().getLeaderObjectId());
+					item.setOwnerId(firstCommandChannelAttacked.getLeaderObjectId());
 					itemLootShedule = ThreadPool.schedule(new ResetOwner(item), Config.LOOT_RAIDS_PRIVILEGE_INTERVAL);
 					item.setItemLootShedule(itemLootShedule);
 				}

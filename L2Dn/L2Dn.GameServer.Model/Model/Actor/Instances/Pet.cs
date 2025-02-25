@@ -40,7 +40,7 @@ public class Pet: Summon
 	private int _curWeightPenalty;
 	private long _expBeforeDeath;
 	private PetData _data;
-	private PetLevelData _leveldata;
+	private PetLevelData? _leveldata;
 	private EvolveLevel _evolveLevel = EvolveLevel.None;
 	private ScheduledFuture? _feedTask;
 
@@ -155,7 +155,7 @@ public class Pet: Summon
 		}
 	}
 
-	public PetLevelData getPetLevelData()
+	public PetLevelData? getPetLevelData()
 	{
 		if (_leveldata == null)
 		{

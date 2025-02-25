@@ -85,11 +85,13 @@ public class SchemeBuffer : Npc
 				{
 					Skill skill = SkillData.getInstance().getSkill(skillId, SchemeBufferTable.getInstance().getAvailableBuff(skillId).getLevel());
 					if (buffSummons)
-					{
-						if (player.getPet() != null)
+                    {
+                        Pet? pet = player.getPet();
+						if (pet != null)
 						{
-							skill.applyEffects(this, player.getPet());
+							skill.applyEffects(this, pet);
 						}
+
 						player.getServitors().Values.ForEach(servitor => skill.applyEffects(this, servitor));
 					}
 					else

@@ -253,7 +253,7 @@ public class ClanTable
 				Fort? fort = FortManager.getInstance().getFortById(fortId.Value);
 				if (fort != null)
 				{
-					Clan owner = fort.getOwnerClan();
+					Clan? owner = fort.getOwnerClan();
 					if (clan == owner)
 					{
 						fort.removeOwner(true);

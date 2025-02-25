@@ -342,7 +342,7 @@ public class WorldExchangeManager: DataReaderBase
 			iu = new InventoryUpdatePacket(new ItemInfo(item, ItemChangeType.REMOVED));
 		}
 
-		Item itemInstance = player.getInventory().detachItem("World Exchange Registration", item, amount, ItemLocation.EXCHANGE, player, null);
+		Item? itemInstance = player.getInventory().detachItem("World Exchange Registration", item, amount, ItemLocation.EXCHANGE, player, null);
 		if (itemInstance == null)
 		{
 			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_IS_NOT_FOUND));
@@ -680,8 +680,17 @@ public class WorldExchangeManager: DataReaderBase
 		{
 			insert(worldExchangeItem.getWorldExchangeId(), false);
 		}
-		Item receivedItem = player.getInventory().addItem("World Exchange Buying", worldExchangeItem.getItemInstance(), player, null);
-		player.sendPacket(new WorldExchangeBuyItemPacket(receivedItem.ObjectId, receivedItem.getCount(), (byte) 1));
+
+		Item? receivedItem = player.getInventory().addItem("World Exchange Buying", worldExchangeItem.getItemInstance(), player, null);
+        if (receivedItem == null)
+        {
+            // TODO: item transfer must be transactional
+            player.sendPacket(new SystemMessagePacket(SystemMessageId.FAILED_TO_BUY_PLEASE_REFRESH_AND_TRY_AGAIN));
+            player.sendPacket(WorldExchangeBuyItemPacket.FAIL);
+            return;
+        }
+
+        player.sendPacket(new WorldExchangeBuyItemPacket(receivedItem.ObjectId, receivedItem.getCount(), 1));
 		SystemMessagePacket sm;
 		if (receivedItem.getEnchantLevel() > 0)
 		{

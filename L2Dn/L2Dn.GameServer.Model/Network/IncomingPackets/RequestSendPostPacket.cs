@@ -248,7 +248,7 @@ public struct RequestSendPostPacket: IIncomingPacket<GameSession>
 			foreach (AttachmentItem i in _items)
 			{
 				// Check validity of requested item
-				Item item = player.checkItemManipulation(i.ObjectId, i.Count, "attach");
+				Item? item = player.checkItemManipulation(i.ObjectId, i.Count, "attach");
 				if (item == null || !item.isTradeable() || item.isEquipped())
 				{
 					player.sendPacket(SystemMessageId.THE_ITEM_THAT_YOU_RE_TRYING_TO_SEND_CANNOT_BE_FORWARDED_BECAUSE_IT_ISN_T_PROPER);
@@ -288,7 +288,7 @@ public struct RequestSendPostPacket: IIncomingPacket<GameSession>
 		foreach (AttachmentItem i in _items)
 		{
 			// Check validity of requested item
-			Item oldItem = player.checkItemManipulation(i.ObjectId, i.Count, "attach");
+			Item? oldItem = player.checkItemManipulation(i.ObjectId, i.Count, "attach");
 			if (oldItem == null || !oldItem.isTradeable() || oldItem.isEquipped())
 			{
 				PacketLogger.Instance.Warn("Error adding attachment for char " + player.getName() +

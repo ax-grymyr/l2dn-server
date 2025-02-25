@@ -29,9 +29,9 @@ public class ChannelLeave: IUserCommandHandler
             return false;
         }
 
-        if (party.isInCommandChannel())
+        CommandChannel? channel = party.getCommandChannel();
+        if (party.isInCommandChannel() && channel != null)
         {
-            CommandChannel channel = party.getCommandChannel();
             channel.removeParty(party);
             leader.sendPacket(SystemMessageId.YOU_HAVE_LEFT_THE_COMMAND_CHANNEL);
 

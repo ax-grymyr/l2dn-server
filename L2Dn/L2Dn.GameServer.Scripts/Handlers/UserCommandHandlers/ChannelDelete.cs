@@ -22,12 +22,12 @@ public class ChannelDelete: IUserCommandHandler
         }
 
         Party? party = player.getParty();
-        if (party != null && party.isLeader(player) && party.isInCommandChannel() &&
-            party.getCommandChannel().getLeader().Equals(player))
+        CommandChannel? commandChannel = party?.getCommandChannel();
+        if (party != null && party.isLeader(player) && party.isInCommandChannel() && commandChannel != null &&
+            commandChannel.getLeader().Equals(player))
         {
-            CommandChannel channel = party.getCommandChannel();
-            channel.broadcastPacket(new SystemMessagePacket(SystemMessageId.THE_COMMAND_CHANNEL_IS_DISBANDED));
-            channel.disbandChannel();
+            commandChannel.broadcastPacket(new SystemMessagePacket(SystemMessageId.THE_COMMAND_CHANNEL_IS_DISBANDED));
+            commandChannel.disbandChannel();
             return true;
         }
 

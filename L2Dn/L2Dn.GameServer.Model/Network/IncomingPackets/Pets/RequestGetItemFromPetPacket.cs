@@ -52,7 +52,7 @@ public struct RequestGetItemFromPetPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        Item transferedItem = pet.transferItem("Transfer", _objectId, _amount, player.getInventory(), player, pet);
+        Item? transferedItem = pet.transferItem("Transfer", _objectId, _amount, player.getInventory(), player, pet);
         if (transferedItem != null)
         {
             player.sendPacket(new PetItemListPacket(pet.getInventory().getItems()));

@@ -23,8 +23,8 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class SiegeGuardManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SiegeGuardManager));
-	private static readonly Set<Item> _droppedTickets = new();
-	private static readonly Map<int, Set<Spawn>> _siegeGuardSpawn = new();
+	private static readonly Set<Item> _droppedTickets = [];
+	private static readonly Map<int, Set<Spawn>> _siegeGuardSpawn = [];
 
 	protected SiegeGuardManager()
 	{
@@ -334,23 +334,22 @@ public class SiegeGuardManager
 
 			foreach (Spawn spawn in getSpawnedGuards(castle.getResidenceId()))
 			{
-				if (spawn != null)
-				{
-					spawn.init();
-					if (isHired || spawn.getRespawnDelay() == TimeSpan.Zero)
-					{
-						spawn.stopRespawn();
-					}
+                spawn.init();
+                if (isHired || spawn.getRespawnDelay() == TimeSpan.Zero)
+                {
+                    spawn.stopRespawn();
+                }
 
-					SiegeGuardHolder? holder = getSiegeGuardByNpc(castle.getResidenceId(), spawn.getLastSpawn().getId());
-					if (holder == null)
-					{
-						continue;
-					}
+                Npc? lastSpawn = spawn.getLastSpawn();
+                if (lastSpawn == null)
+                    continue;
 
-					spawn.getLastSpawn().setImmobilized(holder.isStationary());
-				}
-			}
+                SiegeGuardHolder? holder = getSiegeGuardByNpc(castle.getResidenceId(), lastSpawn.getId());
+                if (holder == null)
+                    continue;
+
+                lastSpawn.setImmobilized(holder.isStationary());
+            }
 		}
 		catch (Exception e)
 		{
@@ -365,22 +364,20 @@ public class SiegeGuardManager
 	public void unspawnSiegeGuard(Castle castle)
 	{
 		foreach (Spawn spawn in getSpawnedGuards(castle.getResidenceId()))
-		{
-			if (spawn != null && spawn.getLastSpawn() != null)
+        {
+            Npc? lastSpawn = spawn.getLastSpawn();
+			if (lastSpawn != null)
 			{
 				spawn.stopRespawn();
-				spawn.getLastSpawn().doDie(spawn.getLastSpawn());
+				lastSpawn.doDie(spawn.getLastSpawn());
 			}
 		}
 		getSpawnedGuards(castle.getResidenceId()).clear();
 	}
 
-	public Set<Spawn> getSpawnedGuards(int castleId)
-	{
-		return _siegeGuardSpawn.computeIfAbsent(castleId, key => new());
-	}
+	public Set<Spawn> getSpawnedGuards(int castleId) => _siegeGuardSpawn.GetValueOrDefault(castleId) ?? [];
 
-	/**
+    /**
 	 * Gets the single instance of {@code MercTicketManager}.
 	 * @return single instance of {@code MercTicketManager}
 	 */
@@ -391,6 +388,6 @@ public class SiegeGuardManager
 
 	private static class SingletonHolder
 	{
-		public static readonly SiegeGuardManager INSTANCE = new SiegeGuardManager();
+		public static readonly SiegeGuardManager INSTANCE = new();
 	}
 }

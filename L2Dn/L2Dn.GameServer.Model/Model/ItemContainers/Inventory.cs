@@ -285,7 +285,7 @@ public abstract class Inventory: ItemContainer
 
 			if (it.hasSkills())
 			{
-				List<ItemSkillHolder> onEnchantSkills = it.getSkills(ItemSkillType.ON_ENCHANT);
+				List<ItemSkillHolder>? onEnchantSkills = it.getSkills(ItemSkillType.ON_ENCHANT);
 				if (onEnchantSkills != null)
 				{
 					foreach (ItemSkillHolder holder in onEnchantSkills)
@@ -306,7 +306,7 @@ public abstract class Inventory: ItemContainer
 
 				if (item.isBlessed())
 				{
-					List<ItemSkillHolder> onBlessingSkills = it.getSkills(ItemSkillType.ON_BLESSING);
+					List<ItemSkillHolder>? onBlessingSkills = it.getSkills(ItemSkillType.ON_BLESSING);
 					if (onBlessingSkills != null)
 					{
 						foreach (ItemSkillHolder holder in onBlessingSkills)
@@ -321,7 +321,7 @@ public abstract class Inventory: ItemContainer
 					}
 				}
 
-				List<ItemSkillHolder> normalSkills = it.getSkills(ItemSkillType.NORMAL);
+				List<ItemSkillHolder>? normalSkills = it.getSkills(ItemSkillType.NORMAL);
 				if (normalSkills != null)
 				{
 					foreach (ItemSkillHolder holder in normalSkills)
@@ -344,7 +344,7 @@ public abstract class Inventory: ItemContainer
 							continue;
 						}
 
-						List<ItemSkillHolder> otherNormalSkills = itm.getTemplate().getSkills(ItemSkillType.NORMAL);
+						List<ItemSkillHolder>? otherNormalSkills = itm.getTemplate().getSkills(ItemSkillType.NORMAL);
 						if (otherNormalSkills == null)
 						{
 							continue;
@@ -400,8 +400,8 @@ public abstract class Inventory: ItemContainer
 					continue;
 				}
 
-				List<ItemSkillHolder> otherEnchantSkills = equipped.getTemplate().getSkills(ItemSkillType.ON_ENCHANT);
-				List<ItemSkillHolder> otherBlessingSkills = equipped.getTemplate().getSkills(ItemSkillType.ON_BLESSING);
+				List<ItemSkillHolder>? otherEnchantSkills = equipped.getTemplate().getSkills(ItemSkillType.ON_ENCHANT);
+				List<ItemSkillHolder>? otherBlessingSkills = equipped.getTemplate().getSkills(ItemSkillType.ON_BLESSING);
 				if (otherEnchantSkills == null && otherBlessingSkills == null)
 				{
 					continue;
@@ -526,7 +526,7 @@ public abstract class Inventory: ItemContainer
 
 			if (item.getTemplate().hasSkills())
 			{
-				List<ItemSkillHolder> onEnchantSkills = item.getTemplate().getSkills(ItemSkillType.ON_ENCHANT);
+				List<ItemSkillHolder>? onEnchantSkills = item.getTemplate().getSkills(ItemSkillType.ON_ENCHANT);
 				if (onEnchantSkills != null)
 				{
 					foreach (ItemSkillHolder holder in onEnchantSkills)
@@ -582,7 +582,7 @@ public abstract class Inventory: ItemContainer
 
 				if (item.isBlessed())
 				{
-					List<ItemSkillHolder> onBlessingSkills = item.getTemplate().getSkills(ItemSkillType.ON_BLESSING);
+					List<ItemSkillHolder>? onBlessingSkills = item.getTemplate().getSkills(ItemSkillType.ON_BLESSING);
 					if (onBlessingSkills != null)
 					{
 						foreach (ItemSkillHolder holder in onBlessingSkills)
@@ -625,7 +625,7 @@ public abstract class Inventory: ItemContainer
 					}
 				}
 
-				List<ItemSkillHolder> normalSkills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
+				List<ItemSkillHolder>? normalSkills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 				if (normalSkills != null)
 				{
 					foreach (ItemSkillHolder holder in normalSkills)
@@ -697,8 +697,8 @@ public abstract class Inventory: ItemContainer
 					continue;
 				}
 
-				List<ItemSkillHolder> otherEnchantSkills = equipped.getTemplate().getSkills(ItemSkillType.ON_ENCHANT);
-				List<ItemSkillHolder> otherBlessingSkills = equipped.getTemplate().getSkills(ItemSkillType.ON_BLESSING);
+				List<ItemSkillHolder>? otherEnchantSkills = equipped.getTemplate().getSkills(ItemSkillType.ON_ENCHANT);
+				List<ItemSkillHolder>? otherBlessingSkills = equipped.getTemplate().getSkills(ItemSkillType.ON_BLESSING);
 				if (otherEnchantSkills == null && otherBlessingSkills == null)
 				{
 					continue;
@@ -1046,7 +1046,7 @@ public abstract class Inventory: ItemContainer
 
 		public void notifyUnequiped(int slot, Item item, Inventory inventory)
 		{
-			Player player = item.getActingPlayer();
+			Player? player = item.getActingPlayer();
 			if (player != null && player.isChangingClass())
 			{
 				return;
@@ -1080,7 +1080,7 @@ public abstract class Inventory: ItemContainer
 
 		public void notifyUnequiped(int slot, Item item, Inventory inventory)
 		{
-			Player player = item.getActingPlayer();
+			Player? player = item.getActingPlayer();
 			if (player != null && player.isChangingClass())
 			{
 				return;
@@ -1114,7 +1114,7 @@ public abstract class Inventory: ItemContainer
 
 		public void notifyUnequiped(int slot, Item item, Inventory inventory)
 		{
-			Player player = item.getActingPlayer();
+			Player? player = item.getActingPlayer();
 			if (player != null && player.isChangingClass())
 			{
 				return;
@@ -1146,7 +1146,7 @@ public abstract class Inventory: ItemContainer
 
 		public void notifyUnequiped(int slot, Item item, Inventory inventory)
 		{
-			Player player = item.getActingPlayer();
+			Player? player = item.getActingPlayer();
 			if (player != null && player.isChangingClass())
 			{
 				return;
@@ -1230,7 +1230,7 @@ public abstract class Inventory: ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public virtual Item? dropItem(string process, Item item, Player actor, object reference)
+	public virtual Item? dropItem(string process, Item item, Player actor, object? reference)
 	{
 		if (item == null)
 		{
@@ -1264,7 +1264,7 @@ public abstract class Inventory: ItemContainer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public virtual Item? dropItem(string process, int objectId, long count, Player actor, object reference)
+	public virtual Item? dropItem(string process, int objectId, long count, Player actor, object? reference)
 	{
 		Item? item = getItemByObjectId(objectId);
 		if (item == null)

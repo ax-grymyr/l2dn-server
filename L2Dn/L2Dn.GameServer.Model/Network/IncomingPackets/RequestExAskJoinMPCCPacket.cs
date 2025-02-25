@@ -42,7 +42,8 @@ public struct RequestExAskJoinMPCCPacket: IIncomingPacket<GameSession>
 			if (activeParty.getLeader() == player)
 			{
 				// if activeChars Party is in CC, is activeChar CCLeader?
-				if (activeParty.isInCommandChannel() && activeParty.getCommandChannel().getLeader().Equals(player))
+                CommandChannel? activeCommandChannel = activeParty.getCommandChannel();
+				if (activeParty.isInCommandChannel() && activeCommandChannel != null && activeCommandChannel.getLeader().Equals(player))
 				{
 					// in CC and the CCLeader
 					// target in a party?
@@ -68,7 +69,7 @@ public struct RequestExAskJoinMPCCPacket: IIncomingPacket<GameSession>
 						player.sendMessage(target.getName() + " doesn't have party and cannot be invited to Command Channel.");
 					}
 				}
-				else if (activeParty.isInCommandChannel() && !activeParty.getCommandChannel().getLeader().Equals(player))
+				else if (activeParty.isInCommandChannel() && activeCommandChannel != null && !activeCommandChannel.getLeader().Equals(player))
 				{
 					// in CC, but not the CCLeader
 					sm = new SystemMessagePacket(SystemMessageId.YOU_DO_NOT_HAVE_AUTHORITY_TO_INVITE_SOMEONE_TO_THE_COMMAND_CHANNEL);

@@ -1,5 +1,4 @@
 using System.Text;
-using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
@@ -52,9 +51,7 @@ public class PetitionManager
 		}
 
 		if (currPetition.getResponder() != null)
-		{
 			return false;
-		}
 
 		currPetition.setResponder(respondingAdmin);
 		currPetition.setState(PetitionState.IN_PROCESS);
@@ -73,7 +70,7 @@ public class PetitionManager
 		currPetition.sendResponderPacket(sm);
 
 		// Set responder name on petitioner instance
-		currPetition.getPetitioner().setLastPetitionGmName(currPetition.getResponder().getName());
+		currPetition.getPetitioner().setLastPetitionGmName(respondingAdmin.getName());
 		return true;
 	}
 
@@ -86,7 +83,8 @@ public class PetitionManager
 				return currPetition.endPetitionConsultation(PetitionState.PETITIONER_CANCEL);
 			}
 
-			if (currPetition.getResponder() != null && currPetition.getResponder().ObjectId == player.ObjectId)
+            Player? responder = currPetition.getResponder();
+			if (responder != null && responder.ObjectId == player.ObjectId)
 			{
 				return currPetition.endPetitionConsultation(PetitionState.RESPONDER_CANCEL);
 			}
@@ -133,7 +131,8 @@ public class PetitionManager
 				continue;
 			}
 
-			if (currPetition.getResponder() != null && currPetition.getResponder().ObjectId == player.ObjectId)
+            Player? responder = currPetition.getResponder();
+			if (responder != null && responder.ObjectId == player.ObjectId)
 			{
 				return currPetition.endPetitionConsultation(PetitionState.COMPLETED);
 			}
@@ -239,11 +238,14 @@ public class PetitionManager
 					continue;
 				}
 
-				if ((currPetition.getPetitioner() != null && currPetition.getPetitioner().ObjectId == player.ObjectId) || (currPetition.getResponder() != null && currPetition.getResponder().ObjectId == player.ObjectId))
-				{
-					return true;
-				}
-			}
+                Player? responder = currPetition.getResponder();
+                if ((currPetition.getPetitioner() != null &&
+                        currPetition.getPetitioner().ObjectId == player.ObjectId) ||
+                    (responder != null && responder.ObjectId == player.ObjectId))
+                {
+                    return true;
+                }
+            }
 		}
 
 		return false;
@@ -318,7 +320,8 @@ public class PetitionManager
 				return true;
 			}
 
-			if (currPetition.getResponder() != null && currPetition.getResponder().ObjectId == player.ObjectId)
+            Player? responder = currPetition.getResponder();
+			if (responder != null && responder.ObjectId == player.ObjectId)
 			{
 				cs = new CreatureSayPacket(player, ChatType.PETITION_GM, player.getName(), messageText);
 				currPetition.addLogMessage(cs);
@@ -383,8 +386,9 @@ public class PetitionManager
 			}
 			else
 			{
-				content.Append("<font color=\"" + (currPetition.getResponder().isOnline() ? "00FF00" : "999999") +
-				                   "\">" + currPetition.getResponder().getName() + "</font>");
+                Player? responder = currPetition.getResponder();
+				content.Append("<font color=\"" + (responder?.isOnline() == true ? "00FF00" : "999999") +
+				                   "\">" + responder?.getName() + "</font>");
 			}
 
 			content.Append("</td>" + currPetition.getTypeAsString() + "<td width=\"140\" align=right>" +

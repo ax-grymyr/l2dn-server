@@ -34,8 +34,9 @@ public class FortCommander : Defender
 
 		// Attackable during siege by all except defenders
         Fort? fort = getFort();
-		return fort != null && fort.getResidenceId() > 0 && fort.getSiege().isInProgress() && !fort.getSiege().checkIsDefender(attacker.getClan());
-	}
+        return fort != null && fort.getResidenceId() > 0 && fort.getSiege().isInProgress() &&
+            !fort.getSiege().checkIsDefender(attacker.getClan());
+    }
 
 	public override void addDamageHate(Creature attacker, long damage, long aggro)
 	{
@@ -88,8 +89,9 @@ public class FortCommander : Defender
 		Creature attacker = creature;
 		Spawn spawn = getSpawn();
 		if (spawn != null && canTalk())
-		{
-			List<FortSiegeSpawn> commanders = FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId());
+        {
+            Fort fort = getFort() ?? throw new InvalidOperationException("Fort is not set in FortCommander.addDamage");
+			List<FortSiegeSpawn> commanders = FortSiegeManager.getInstance().getCommanderSpawnList(fort.getResidenceId());
 			foreach (FortSiegeSpawn spawn2 in commanders)
 			{
 				if (spawn2.getId() == spawn.getId())
@@ -119,8 +121,8 @@ public class FortCommander : Defender
 					}
 
 					if (npcString != null)
-					{
-						broadcastSay(ChatType.NPC_SHOUT, npcString.Value, npcString.Value.GetParamCount() == 1 ? attacker.getName() : null);
+                    {
+						broadcastSay(ChatType.NPC_SHOUT, npcString.Value, npcString.Value.GetParamCount() == 1 ? [attacker.getName()] : []);
 						setCanTalk(false);
 						ThreadPool.schedule(new ScheduleTalkTask(this), 10000);
 					}

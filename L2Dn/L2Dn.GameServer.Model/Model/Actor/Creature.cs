@@ -140,7 +140,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	private bool _cursorKeyMovement;
 	private bool _suspendedMovement;
 
-	private ScheduledFuture _broadcastModifiedStatTask;
+	private ScheduledFuture? _broadcastModifiedStatTask;
 	private readonly Set<Stat> _broadcastModifiedStatChanges = new();
 
 	/** This creature's target. */
@@ -1181,7 +1181,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 	}
 
-	private AttackPacket generateAttackTargetData(Creature target, Weapon weapon, WeaponType weaponType)
+	private AttackPacket generateAttackTargetData(Creature target, Weapon? weapon, WeaponType weaponType)
 	{
 		bool isDual = WeaponType.DUAL == weaponType || WeaponType.DUALBLUNT == weaponType || WeaponType.DUALDAGGER == weaponType || WeaponType.DUALFIST == weaponType;
 		AttackPacket attack = new AttackPacket(this, target);
@@ -1247,7 +1247,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		return attack;
 	}
 
-	private Hit generateHit(Creature target, Weapon weapon, bool shotConsumedValue, bool halfDamage)
+	private Hit generateHit(Creature target, Weapon? weapon, bool shotConsumedValue, bool halfDamage)
 	{
 		int damage = 0;
 		byte shld = 0;
@@ -2390,11 +2390,12 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return Config.CHAMP_TITLE;
 		}
 		// Set trap title
-		if (isTrap() && ((Trap) this).getOwner() != null)
+		if (isTrap() && ((Trap)this).getOwner() is {} trapOwner)
 		{
-			_title = ((Trap) this).getOwner().getName();
+			_title = trapOwner.getName();
 		}
-		return _title != null ? _title : "";
+
+		return _title != null ? _title : string.Empty;
 	}
 
 	/**
@@ -2533,9 +2534,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 
 		// if this is a player instance, start the grace period for this character (grace from mobs only)!
-		if (isPlayer())
+        Player? player = getActingPlayer();
+		if (isPlayer() && player != null)
 		{
-			getActingPlayer().setRecentFakeDeath(true);
+            player.setRecentFakeDeath(true);
 		}
 
 		broadcastPacket(new ChangeWaitTypePacket(this, ChangeWaitTypePacket.WT_STOP_FAKEDEATH));
@@ -2656,7 +2658,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		public bool disregardingGeodata;
 		public int onGeodataPathIndex;
-		public List<AbstractNodeLoc> geoPath;
+		public List<AbstractNodeLoc>? geoPath;
 		public int geoPathAccurateTx;
 		public int geoPathAccurateTy;
 		public int geoPathGtx;
@@ -2678,10 +2680,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 
 		// Don't broadcast modified stats on login.
-		if (isPlayer() && !getActingPlayer().isOnline())
-		{
+        Player? player = getActingPlayer();
+		if (isPlayer() && player != null && !player.isOnline())
 			return;
-		}
 
 		lock (_broadcastModifiedStatChanges)
 		{
@@ -2711,6 +2712,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 					stopMove(null);
 				}
 
+                Player? player = getActingPlayer();
 				if (isSummon())
 				{
 					Summon summon = (Summon) this;
@@ -2719,9 +2721,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						summon.updateAndBroadcastStatus(1);
 					}
 				}
-				else if (isPlayer())
+				else if (isPlayer() && player != null)
 				{
-					UserInfoPacket info = new UserInfoPacket(getActingPlayer(), false);
+					UserInfoPacket info = new UserInfoPacket(player, false);
 					info.AddComponentType(UserInfoType.SLOTS);
 					info.AddComponentType(UserInfoType.ENCHANTLEVEL);
 
@@ -2829,7 +2831,6 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						}
 					}
 
-					Player player = getActingPlayer();
 					if (updateWeight)
 					{
 						player.refreshOverloaded(true);
@@ -3032,9 +3033,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		foreach (SkillCaster skillCaster in getSkillCasters())
 		{
 			skillCaster.stopCasting(true);
-			if (isPlayer())
+            Player? player = getActingPlayer();
+			if (isPlayer() && player != null)
 			{
-				getActingPlayer().setQueuedSkill(null, null, false, false);
+                player.setQueuedSkill(null, null, false, false);
 			}
 		}
 	}
@@ -3059,9 +3061,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		if (skillCaster != null)
 		{
 			skillCaster.stopCasting(true);
-			if (isPlayer())
+            Player? player = getActingPlayer();
+			if (isPlayer() && player != null)
 			{
-				getActingPlayer().setQueuedSkill(null, null, false, false);
+				player.setQueuedSkill(null, null, false, false);
 			}
 			return true;
 		}
@@ -3093,7 +3096,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 
 		// Get movement data
-		MoveData move = _move;
+		MoveData? move = _move;
 		if (move == null)
 		{
 			return true;
@@ -3121,7 +3124,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		double dx = move.xDestination - move.xAccurate;
 		double dy = move.yDestination - move.yAccurate;
 		double dz = move.zDestination - zPrev; // Z coordinate will follow client values
-		if (isPlayer() && !_isFlying)
+        Player? player = getActingPlayer();
+		if (isPlayer() && player != null && !_isFlying)
 		{
 			// In case of cursor movement, avoid moving through obstacles.
 			if (_cursorKeyMovement)
@@ -3137,7 +3141,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				if (!GeoEngine.getInstance().canMoveToTarget(new Location3D(xPrev, yPrev, zPrev), new Location3D(x, y, zPrev), getInstanceWorld()))
 				{
 					_move.onGeodataPathIndex = -1;
-					stopMove(new Location(getActingPlayer().getLastServerPosition(), 0));
+					stopMove(new Location(player.getLastServerPosition(), 0));
 					return false;
 				}
 			}
@@ -4649,7 +4653,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		_status.addStatusListener(obj);
 	}
 
-	public virtual void doAttack(double damageValue, Creature target, Skill skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
+	public virtual void doAttack(double damageValue, Creature target, Skill? skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
 	{
 		// Check if fake players should aggro each other.
 		if (isFakePlayer() && !Config.FAKE_PLAYER_AGGRO_FPC && target.isFakePlayer())
@@ -4778,7 +4782,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		reduceCurrentHp(amount, attacker, skill, false, false, false, false);
 	}
 
-	public virtual void reduceCurrentHp(double amountValue, Creature attacker, Skill? skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
+	public virtual void reduceCurrentHp(double amountValue, Creature? attacker, Skill? skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
 	{
 		double amount = amountValue;
 
@@ -5016,7 +5020,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * @param miss
 	 * @param elementalCrit
 	 */
-	public virtual void sendDamageMessage(Creature target, Skill skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
+	public virtual void sendDamageMessage(Creature target, Skill? skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
 	{
 	}
 
@@ -5239,7 +5243,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public WeaponType getAttackType()
 	{
-		Weapon weapon = getActiveWeaponItem();
+		Weapon? weapon = getActiveWeaponItem();
 		if (weapon != null)
 		{
 			return weapon.getItemType().AsWeaponType();
@@ -5463,7 +5467,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public void removeIgnoreSkillEffects(SkillHolder holder)
 	{
-		IgnoreSkillHolder ignoreSkillHolder = getIgnoreSkillEffects().get(holder.getSkillId());
+		IgnoreSkillHolder? ignoreSkillHolder = getIgnoreSkillEffects().get(holder.getSkillId());
 		if (ignoreSkillHolder != null && ignoreSkillHolder.decreaseInstances() < 1)
 		{
 			getIgnoreSkillEffects().remove(holder.getSkillId());

@@ -24,7 +24,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	private readonly int _id;
 	private readonly int _count;
 	private readonly TimeSpan? _respawnTime;
-	private readonly TimeSpan _respawnTimeRandom;
+	private readonly TimeSpan? _respawnTimeRandom;
 	private readonly SchedulingPattern? _respawnPattern;
 	private readonly int _chaseRange;
 	private readonly List<ChanceLocation> _locations = [];
@@ -76,7 +76,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		_spawnAnimation = npc.SpawnAnimation;
 		_saveInDb = npc.DbSave;
 		_dbName = npc.DbName;
-		_parameters = mergeParameters(spawnTemplate, group);
+		_parameters = MergeParameters(null, spawnTemplate, group);
 
 		int x = npc.X;
 		int y = npc.Y;
@@ -96,24 +96,14 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 			string zoneName = npc.Zone;
 			if (!string.IsNullOrEmpty(zoneName))
 			{
-				SpawnTerritory zone = ZoneManager.getInstance().getSpawnTerritory(zoneName);
-				if (zone == null)
-					throw new InvalidOperationException("Spawn with non existing zone requested " + zoneName);
-
-				_zone = zone;
+				SpawnTerritory? zone = ZoneManager.getInstance().getSpawnTerritory(zoneName);
+                _zone = zone ?? throw new InvalidOperationException("Spawn with non existing zone requested " + zoneName);
 			}
 		}
-
-		mergeParameters(spawnTemplate, group);
 	}
 
-	private StatSet mergeParameters(SpawnTemplate spawnTemplate, SpawnGroup group)
+	private static StatSet MergeParameters(StatSet? parameters, SpawnTemplate spawnTemplate, SpawnGroup group)
 	{
-		if (_parameters == null && spawnTemplate.getParameters() == null && group.getParameters() == null)
-		{
-			return null;
-		}
-
 		StatSet set = new StatSet();
 		if (spawnTemplate.getParameters() != null)
 		{
@@ -123,9 +113,9 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		{
 			set.merge(group.getParameters());
 		}
-		if (_parameters != null)
+		if (parameters != null)
 		{
-			set.merge(_parameters);
+			set.merge(parameters);
 		}
 		return set;
 	}
@@ -165,12 +155,12 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		return _respawnTime;
 	}
 
-	public TimeSpan getRespawnTimeRandom()
+	public TimeSpan? getRespawnTimeRandom()
 	{
 		return _respawnTimeRandom;
 	}
 
-	public SchedulingPattern getRespawnPattern()
+	public SchedulingPattern? getRespawnPattern()
 	{
 		return _respawnPattern;
 	}
@@ -185,7 +175,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		return _locations;
 	}
 
-	public SpawnTerritory getZone()
+	public SpawnTerritory? getZone()
 	{
 		return _zone;
 	}
@@ -372,7 +362,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		}
 		if (_respawnTimeRandom != null)
 		{
-			respawnRandom = _respawnTimeRandom;
+			respawnRandom = _respawnTimeRandom.Value;
 		}
 		if (_respawnPattern != null)
 		{
@@ -396,26 +386,33 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		{
 			if (!DbSpawnManager.getInstance().isDefined(_id))
 			{
-				Npc spawnedNpc = DbSpawnManager.getInstance().addNewSpawn(spawn, true);
-				if (spawnedNpc != null && spawnedNpc.isMonster() && _minions != null)
-				{
-					((Monster) spawnedNpc).getMinionList().spawnMinions(_minions);
-				}
+				Npc? spawnedNpc = DbSpawnManager.getInstance().addNewSpawn(spawn, true);
+                if (spawnedNpc != null)
+                {
+                    if (spawnedNpc.isMonster() && _minions != null)
+                    {
+                        ((Monster)spawnedNpc).getMinionList().spawnMinions(_minions);
+                    }
 
-				_spawnedNpcs.add(spawnedNpc);
-			}
+                    _spawnedNpcs.add(spawnedNpc);
+                }
+            }
 		}
 		else
 		{
-			Npc npc = spawn.doSpawn(_spawnAnimation);
-			if (npc.isMonster() && _minions != null)
-			{
-				((Monster) npc).getMinionList().spawnMinions(_minions);
-			}
-			_spawnedNpcs.add(npc);
+			Npc? npc = spawn.doSpawn(_spawnAnimation);
+            if (npc != null)
+            {
+                if (npc.isMonster() && _minions != null)
+                {
+                    ((Monster)npc).getMinionList().spawnMinions(_minions);
+                }
 
-			SpawnTable.getInstance().addNewSpawn(spawn, false);
-		}
+                _spawnedNpcs.add(npc);
+
+                SpawnTable.getInstance().addNewSpawn(spawn, false);
+            }
+        }
 	}
 
 	public void despawn()

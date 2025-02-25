@@ -72,7 +72,7 @@ public struct RequestExPledgeEnemyRegisterPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		ClanWar clanWar = playerClan.getWarWith(enemyClan.getId());
+		ClanWar? clanWar = playerClan.getWarWith(enemyClan.getId());
 		if (clanWar != null)
 		{
 			if (clanWar.getClanWarState(playerClan) == ClanWarState.WIN)

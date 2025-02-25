@@ -100,9 +100,10 @@ public class AdminInstance: IAdminCommandHandler
 						case "CommandChannel":
 						{
                             Party? party = activeChar.getParty();
-							if (activeChar.isInCommandChannel() && party != null)
+                            CommandChannel? channel = party?.getCommandChannel();
+							if (activeChar.isInCommandChannel() && party != null && channel != null)
 							{
-								members.AddRange(party.getCommandChannel().getMembers());
+								members.AddRange(channel.getMembers());
 							}
 							else if (activeChar.isInParty() && party != null)
 							{

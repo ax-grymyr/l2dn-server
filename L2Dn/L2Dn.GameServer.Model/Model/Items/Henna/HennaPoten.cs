@@ -5,9 +5,9 @@ namespace L2Dn.GameServer.Model.Items.Henna;
 /**
  * @author Serenitty
  */
-public class HennaPoten
+public sealed class HennaPoten
 {
-    private Henna _henna;
+    private Henna? _henna;
     private int _potenId;
     private int _enchantLevel = 1;
     private int _enchantExp;
@@ -17,12 +17,12 @@ public class HennaPoten
     {
     }
 
-    public void setHenna(Henna henna)
+    public void setHenna(Henna? henna)
     {
         _henna = henna;
     }
 
-    public Henna getHenna()
+    public Henna? getHenna()
     {
         return _henna;
     }
@@ -80,7 +80,7 @@ public class HennaPoten
 
     public int getActiveStep()
     {
-        if (!isPotentialAvailable())
+        if (!isPotentialAvailable() || _henna == null)
         {
             return 0;
         }

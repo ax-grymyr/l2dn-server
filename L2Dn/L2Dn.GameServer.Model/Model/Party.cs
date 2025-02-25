@@ -39,30 +39,23 @@ public class Party : AbstractPlayerGroup
 	private bool _pendingInvitation;
 	private long _pendingInviteTimeout;
 	private int _partyLvl;
-	private PartyDistributionType _distributionType = PartyDistributionType.FINDERS_KEEPERS;
+	private PartyDistributionType _distributionType;
 	private PartyDistributionType? _changeRequestDistributionType;
 	private ScheduledFuture? _changeDistributionTypeRequestTask;
-	private Set<int> _changeDistributionTypeAnswers;
+	private Set<int> _changeDistributionTypeAnswers = [];
 	private int _itemLastLoot;
 	private CommandChannel? _commandChannel;
 	private ScheduledFuture? _positionBroadcastTask;
 	private bool _disbanding;
-	private Map<int, Creature> _tacticalSigns;
-	private static readonly int[] TACTICAL_SYS_STRINGS =
-	{
-		0,
-		2664,
-		2665,
-		2666,
-		2667
-	};
+	private Map<int, Creature> _tacticalSigns = [];
+    private static readonly int[] TACTICAL_SYS_STRINGS = [0, 2664, 2665, 2666, 2667];
 
 	/**
 	 * Construct a new Party object with a single member - the leader.
 	 * @param leader the leader of this party
 	 * @param partyDistributionType the item distribution rule of this party
 	 */
-	public Party(Player leader, PartyDistributionType partyDistributionType)
+	public Party(Player leader, PartyDistributionType partyDistributionType = PartyDistributionType.FINDERS_KEEPERS)
 	{
 		_members.Add(leader);
 		_partyLvl = leader.getLevel();
@@ -506,7 +499,7 @@ public class Party : AbstractPlayerGroup
 			player.sendPacket(PartySmallWindowDeleteAllPacket.STATIC_PACKET);
 			player.setParty(null);
 			broadcastPacket(new PartySmallWindowDeletePacket(player));
-			Summon pet = player.getPet();
+			Summon? pet = player.getPet();
 			if (pet != null)
 			{
 				broadcastPacket(new ExPartyPetWindowDeletePacket(pet));
@@ -818,7 +811,7 @@ public class Party : AbstractPlayerGroup
 				exp = calculateExpSpPartyCutoff(member.getActingPlayer(), topLvl, exp, sp, target.useVitalityRate());
 				if (exp > 0)
 				{
-					Clan clan = member.getClan();
+					Clan? clan = member.getClan();
 					if (clan != null)
 					{
 						double finalExp = exp;
@@ -837,16 +830,16 @@ public class Party : AbstractPlayerGroup
 						MagicLampManager.getInstance().addLampExp(member, exp, true);
 					}
 
-					HuntPass huntpass = member.getHuntPass();
+					HuntPass? huntpass = member.getHuntPass();
 					if (huntpass != null)
 					{
 						huntpass.addPassPoint();
 					}
 
-					AchievementBox box = member.getAchievementBox();
+					AchievementBox? box = member.getAchievementBox();
 					if (box != null)
 					{
-						member.getAchievementBox().addPoints(1);
+                        box.addPoints(1);
 					}
 				}
 			}
@@ -1030,7 +1023,7 @@ public class Party : AbstractPlayerGroup
 		return _commandChannel != null;
 	}
 
-	public CommandChannel getCommandChannel()
+	public CommandChannel? getCommandChannel()
 	{
 		return _commandChannel;
 	}
@@ -1043,7 +1036,7 @@ public class Party : AbstractPlayerGroup
 	/**
 	 * @return the leader of this party
 	 */
-	public override Player? getLeader()
+	public override Player getLeader()
 	{
 		if (_members.Count == 0)
 		{
@@ -1057,10 +1050,9 @@ public class Party : AbstractPlayerGroup
 	public void requestLootChange(PartyDistributionType partyDistributionType)
 	{
 		if (_changeRequestDistributionType != null)
-		{
 			return;
-		}
-		_changeRequestDistributionType = partyDistributionType;
+
+        _changeRequestDistributionType = partyDistributionType;
 		_changeDistributionTypeAnswers = new();
 		_changeDistributionTypeRequestTask = ThreadPool.schedule(() => finishLootRequest(false), PARTY_DISTRIBUTION_TYPE_REQUEST_TIMEOUT);
 		broadcastToPartyMembers(getLeader(), new ExAskModifyPartyLootingPacket(getLeader().getName(), partyDistributionType));
@@ -1100,14 +1092,14 @@ public class Party : AbstractPlayerGroup
 	protected void finishLootRequest(bool success)
 	{
 		if (_changeRequestDistributionType == null)
-		{
 			return;
-		}
+
 		if (_changeDistributionTypeRequestTask != null)
 		{
 			_changeDistributionTypeRequestTask.cancel(false);
 			_changeDistributionTypeRequestTask = null;
 		}
+
 		if (success)
 		{
 			broadcastPacket(new ExSetPartyLootingPacket(1, _changeRequestDistributionType.Value));
@@ -1123,7 +1115,7 @@ public class Party : AbstractPlayerGroup
 		}
 
 		_changeRequestDistributionType = null;
-		_changeDistributionTypeAnswers = null;
+		_changeDistributionTypeAnswers.Clear();
 	}
 
 	/**

@@ -454,7 +454,7 @@ public class CreatureStat
 
 	public AttributeType getAttackElement()
 	{
-		Item weaponInstance = _creature.getActiveWeaponInstance();
+		Item? weaponInstance = _creature.getActiveWeaponInstance();
 		// 1st order - weapon element
 		if (weaponInstance != null && weaponInstance.getAttackAttributeType() != AttributeType.NONE)
 		{
@@ -891,9 +891,10 @@ public class CreatureStat
 			}
 
 			// Pump for summon ABILITY_CHANGE abnormal type.
-			if (_creature.isSummon() && _creature.getActingPlayer() != null && _creature.getActingPlayer().hasAbnormalType(AbnormalType.ABILITY_CHANGE))
+            Player? creatureActingPlayer = _creature.getActingPlayer();
+			if (_creature.isSummon() && creatureActingPlayer != null && creatureActingPlayer.hasAbnormalType(AbnormalType.ABILITY_CHANGE))
 			{
-				foreach (BuffInfo info in _creature.getActingPlayer().getEffectList().getEffects())
+				foreach (BuffInfo info in creatureActingPlayer.getEffectList().getEffects())
 				{
 					if (info.isInUse() && info.isAbnormalType(AbnormalType.ABILITY_CHANGE))
 					{
@@ -988,7 +989,7 @@ public class CreatureStat
 
 	public double getMoveTypeValue(Stat stat, MoveType type)
 	{
-		Map<MoveType, double> map = _moveTypeStats.get(stat);
+		Map<MoveType, double>? map = _moveTypeStats.get(stat);
 		return map != null && map.TryGetValue(type, out double value) ? value : 0;
 	}
 
@@ -1019,10 +1020,10 @@ public class CreatureStat
 
 	public double getSkillEvasionTypeValue(int magicType)
 	{
-		LinkedList<double> skillEvasions = _skillEvasionStat.get(magicType);
+		LinkedList<double>? skillEvasions = _skillEvasionStat.get(magicType);
 		if (skillEvasions != null && skillEvasions.Count != 0)
 		{
-			return skillEvasions.Last.Value;
+			return skillEvasions.Last?.Value ?? 0;
 		}
 
 		return 0;

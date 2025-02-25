@@ -37,15 +37,14 @@ public class Sow: AbstractEffect
         }
 
 		Monster target = (Monster) effected;
-
-		if (target.isDead() || !target.getTemplate().canBeSown() || target.isSeeded() || target.getSeederId() != player.ObjectId)
+		if (target.isDead() || !target.getTemplate().canBeSown() || !target.isSeeded() || target.getSeederId() != player.ObjectId)
 		{
 			return;
 		}
 
 		// Consuming used seed
-		Seed seed = target.getSeed();
-		if (!player.destroyItemByItemId("Consume", seed.getSeedId(), 1, target, false))
+        Seed? seed = target.getSeed();
+		if (seed == null || !player.destroyItemByItemId("Consume", seed.getSeedId(), 1, target, false))
 		{
 			return;
 		}

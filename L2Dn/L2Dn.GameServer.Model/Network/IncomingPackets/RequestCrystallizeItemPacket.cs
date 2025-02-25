@@ -210,7 +210,7 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
 		}
 
 		// remove from inventory
-		Item removedItem = player.getInventory().destroyItem("Crystalize", _objectId, _count, player, null);
+		Item? removedItem = player.getInventory().destroyItem("Crystalize", _objectId, _count, player, null);
 		iu = new InventoryUpdatePacket(new ItemInfo(removedItem, ItemChangeType.REMOVED));
 		player.sendInventoryUpdate(iu);
 
@@ -220,7 +220,7 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
 			if (rand < holder.getChance())
 			{
 				// add crystals
-				Item createdItem = player.getInventory().addItem("Crystalize", holder.getId(), holder.getCount(), player, player);
+				Item? createdItem = player.getInventory().addItem("Crystalize", holder.getId(), holder.getCount(), player, player);
 				sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
 				sm.Params.addItemName(createdItem);
 				sm.Params.addLong(holder.getCount());

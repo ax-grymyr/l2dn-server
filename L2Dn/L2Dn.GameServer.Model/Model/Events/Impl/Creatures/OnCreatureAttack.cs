@@ -13,35 +13,35 @@ public class OnCreatureAttack: TerminateEventBase
 {
 	private Creature _attacker;
 	private Creature _target;
-	private Skill _skill;
-	
+	private Skill? _skill;
+
 	public Creature getAttacker()
 	{
 		return _attacker;
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void setAttacker(Creature attacker)
 	{
 		_attacker = attacker;
 	}
-	
+
 	public Creature getTarget()
 	{
 		return _target;
 	}
-	
+
 	public void setTarget(Creature target)
 	{
 		_target = target;
 	}
-	
+
 	public Skill getSkill()
 	{
 		return _skill;
 	}
-	
-	public void setSkill(Skill skill)
+
+	public void setSkill(Skill? skill)
 	{
 		_skill = skill;
 	}

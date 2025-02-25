@@ -215,7 +215,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 				}
 				else
 				{
-					AppearanceHolder holder = appearanceStone.findVisualChange(targetItem);
+					AppearanceHolder? holder = appearanceStone.findVisualChange(targetItem);
 					if (holder != null)
 					{
 						extracItemId = holder.getVisualId();

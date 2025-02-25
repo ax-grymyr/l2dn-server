@@ -175,7 +175,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 				Fort? fort = FortManager.getInstance().getFortByOwner(clan);
 				if (fort != null)
 				{
-					Fort.FortFunction fortFunction = fort.getFortFunction(Fort.FUNC_RESTORE_EXP);
+					Fort.FortFunction? fortFunction = fort.getFortFunction(Fort.FUNC_RESTORE_EXP);
 					if (fortFunction != null)
 					{
 						player.restoreExp(fortFunction.getLevel());

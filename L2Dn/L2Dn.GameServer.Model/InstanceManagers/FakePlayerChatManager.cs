@@ -81,7 +81,7 @@ public class FakePlayerChatManager: DataReaderBase
 			Spawn? spawn = SpawnTable.getInstance().getAnySpawn(FakePlayerData.getInstance().getNpcIdByName(fpcName));
 			if (spawn != null)
 			{
-				Npc npc = spawn.getLastSpawn();
+				Npc? npc = spawn.getLastSpawn();
 				if (npc != null)
 				{
 					if (npc.Distance2D(player) < 3000)
@@ -154,7 +154,7 @@ public class FakePlayerChatManager: DataReaderBase
 		Spawn? spawn = SpawnTable.getInstance().getAnySpawn(FakePlayerData.getInstance().getNpcIdByName(fpcName));
 		if (spawn != null)
 		{
-			Npc npc = spawn.getLastSpawn();
+			Npc? npc = spawn.getLastSpawn();
 			if (npc != null)
 			{
 				player.sendPacket(new CreatureSayPacket(npc, ChatType.WHISPER, fpcName, message));
