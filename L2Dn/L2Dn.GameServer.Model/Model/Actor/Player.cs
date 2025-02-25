@@ -31,7 +31,6 @@ using L2Dn.GameServer.Model.Events.Timers;
 using L2Dn.GameServer.Model.Fishings;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.InstanceZones;
-using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Henna;
@@ -120,9 +119,9 @@ public class Player: Playable
 	private ScheduledFuture? _broadcastCharInfoTask;
 
 	private bool _subclassLock;
-	protected CharacterClass _baseClass;
-	protected CharacterClass _activeClass;
-	protected int _classIndex;
+    private CharacterClass _baseClass;
+    private CharacterClass _activeClass;
+    private int _classIndex;
 	private bool _isDeathKnight;
 	private bool _isVanguard;
 	private bool _isAssassin;
@@ -132,7 +131,7 @@ public class Player: Playable
 	private PetData? _data;
 	private PetLevelData? _leveldata;
 	private int _curFeed;
-	protected ScheduledFuture? _mountFeedTask;
+	private ScheduledFuture? _mountFeedTask;
 	private ScheduledFuture? _dismountTask;
 	private bool _petItems;
 
@@ -246,7 +245,7 @@ public class Player: Playable
 	/** The number of recommendation obtained by the Player */
 	private int _recomHave; // how much I was recommended by others
 	/** The number of recommendation that the Player can give */
-	private int _recomLeft; // how many recommendations I can give to others
+	private int _recomLeft = 20; // how many recommendations I can give to others, 20 by default
 	/** Recommendation task **/
 	private ScheduledFuture? _recoGiveTask;
 	/** Recommendation Two Hours bonus **/
@@ -634,20 +633,13 @@ public class Player: Playable
 	 * @param app the player's appearance
 	 * @return The Player added to the database or null
 	 */
-	public static Player create(PlayerTemplate template, int accountId, string accountName, string name, PlayerAppearance app)
+	public static Player Create(PlayerTemplate template, int accountId, string accountName, string name,
+        Sex sex, byte face, byte hairColor, byte hairStyle)
 	{
 		// Create a new Player with an account name
-		Player player = new Player(template, accountId, accountName, app);
-		// Set the name of the Player
-		player.setName(name);
+		Player player = new Player(template, accountId, accountName, name, sex, face, hairColor, hairStyle);
 		// Set access level
 		player.setAccessLevel(0, false, false);
-		// Set Character's create time
-		player.setCreateDate(DateTime.UtcNow);
-		// Set the base class ID to that of the actual class ID.
-		player.setBaseClass(player.getClassId());
-		// Give 20 recommendations
-		player.setRecomLeft(20);
 		// Add the player in the characters table of the database
 		if (player.createDb())
 		{
@@ -848,13 +840,16 @@ public class Player: Playable
 	 * @param accountName The name of the account including this Player
 	 * @param app
 	 */
-	private Player(int objectId, PlayerTemplate template, int accountId, string accountName, PlayerAppearance app): base(objectId, template)
+	private Player(int objectId, PlayerTemplate template, int accountId, string accountName, string name, Sex sex,
+        byte face, byte hairColor, byte hairStyle)
+        : base(objectId, template)
 	{
 		InstanceType = InstanceType.Player;
 		_accountName = accountName;
 		_accountId = accountId;
-		app.setOwner(this);
-		_appearance = app;
+        setName(name);
+		_appearance = new PlayerAppearance(this, face, hairColor, hairStyle, sex);
+        _baseClass = template.getClassId();
 
 		_contactList = new ContactList(this);
 		_inventory = new PlayerInventory(this);
@@ -882,18 +877,20 @@ public class Player: Playable
 		getAI();
 	}
 
-	/**
-	 * Creates a player.
-	 * @param template the player template
-	 * @param accountName the account name
-	 * @param app the player appearance
-	 */
-	private Player(PlayerTemplate template, int accountId, string accountName, PlayerAppearance app)
-		: this(IdManager.getInstance().getNextId(), template, accountId, accountName, app)
-	{
-	}
+    /**
+     * Creates a player.
+     * @param template the player template
+     * @param accountName the account name
+     * @param app the player appearance
+     */
+    private Player(PlayerTemplate template, int accountId, string accountName, string name, Sex sex, byte face,
+        byte hairColor, byte hairStyle)
+        : this(IdManager.getInstance().getNextId(), template, accountId, accountName, name, sex, face, hairColor,
+            hairStyle)
+    {
+    }
 
-	public override PlayerStat getStat()
+    public override PlayerStat getStat()
 	{
 		return (PlayerStat) base.getStat();
 	}
@@ -970,9 +967,9 @@ public class Player: Playable
 	 * @return the PlayerTemplate link to the Player.
 	 */
 	public override PlayerTemplate getTemplate()
-	{
-		return (PlayerTemplate) base.getTemplate();
-	}
+    {
+        return (PlayerTemplate)base.getTemplate();
+    }
 
 	/**
 	 * @param newclass
@@ -6176,7 +6173,8 @@ public class Player: Playable
 		if (accessLevel == null)
 		{
 			LOGGER.Warn("Can't find access level " + level + " for " + this);
-			accessLevel = AdminData.getInstance().getAccessLevel(0);
+			accessLevel = AdminData.getInstance().getAccessLevel(0) ??
+                throw new InvalidOperationException("Access level 0 is not defined");
 		}
 
 		if (accessLevel.getLevel() == 0 && Config.DEFAULT_ACCESS_LEVEL > 0)
@@ -6185,14 +6183,16 @@ public class Player: Playable
 			if (accessLevel == null)
 			{
 				LOGGER.Warn("Config's default access level (" + Config.DEFAULT_ACCESS_LEVEL + ") is not defined, defaulting to 0!");
-				accessLevel = AdminData.getInstance().getAccessLevel(0);
+                accessLevel = AdminData.getInstance().getAccessLevel(0) ??
+                    throw new InvalidOperationException("Access level 0 is not defined");
+
 				Config.DEFAULT_ACCESS_LEVEL = 0;
 			}
 		}
 
 		_accessLevel = accessLevel;
-		_appearance.setNameColor(_accessLevel.getNameColor());
-		_appearance.setTitleColor(_accessLevel.getTitleColor());
+		_appearance.setNameColor(accessLevel.getNameColor());
+		_appearance.setTitleColor(accessLevel.getTitleColor());
 		if (broadcast)
 		{
 			broadcastUserInfo();
@@ -6215,13 +6215,9 @@ public class Player: Playable
 
 		CharInfoTable.getInstance().addName(this);
 
-		if (accessLevel == null)
+		if (level > 0)
 		{
-			LOGGER.Warn("Tryed to set unregistered access level " + level + " for " + this + ". Setting access level without privileges!");
-		}
-		else if (level > 0)
-		{
-			LOGGER.Warn(_accessLevel.getName() + " access level set for character " + getName() + "! Just a warning to be careful ;)");
+			LOGGER.Warn(accessLevel.getName() + " access level set for character " + getName() + "! Just a warning to be careful ;)");
 		}
 	}
 
@@ -6430,8 +6426,10 @@ public class Player: Playable
 
             CharacterClass activeClassId = character.Class;
             PlayerTemplate? template = PlayerTemplateData.getInstance().getTemplate(activeClassId);
-            PlayerAppearance app = new PlayerAppearance(character.Face, character.HairColor, character.HairStyle, character.Sex);
-            Player player = new Player(objectId, template, accountId, accountName, app);
+
+            Player player = new Player(objectId, template, accountId, accountName, character.Name,
+                character.Sex, character.Face, character.HairColor, character.HairStyle);
+
             player.setName(character.Name);
             player.setLastAccess(character.LastAccess);
 

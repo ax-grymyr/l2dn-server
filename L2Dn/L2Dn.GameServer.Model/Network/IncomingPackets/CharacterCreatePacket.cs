@@ -154,9 +154,9 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			newChar = Player.create(template, session.AccountId, session.AccountName, _name,
-				new PlayerAppearance((byte)_face, (byte)_hairColor, (byte)_hairStyle, _sex));
-		}
+            newChar = Player.Create(template, session.AccountId, session.AccountName, _name, _sex, (byte)_face,
+                (byte)_hairColor, (byte)_hairStyle);
+        }
 
 		// HP and MP are at maximum and CP is zero by default.
 		newChar.setCurrentHp(newChar.getMaxHp());

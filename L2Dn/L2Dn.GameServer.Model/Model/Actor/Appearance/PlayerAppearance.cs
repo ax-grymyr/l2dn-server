@@ -2,18 +2,14 @@
 
 namespace L2Dn.GameServer.Model.Actor.Appearance;
 
-public class PlayerAppearance
+public sealed class PlayerAppearance
 {
 	public const int DEFAULT_TITLE_COLOR = 0xECF9A2;
 
-	private Player _owner;
-
+	private readonly Player _owner;
 	private byte _face;
-
 	private byte _hairColor;
-
 	private byte _hairStyle;
-
 	private Sex _sex;
 
 	/** The current visible name of this player, not necessarily the real one */
@@ -34,8 +30,9 @@ public class PlayerAppearance
 	private int? _visibleAllyId;
 	private int? _visibleAllyCrestId;
 
-	public PlayerAppearance(byte face, byte hColor, byte hStyle, Sex sex)
-	{
+	public PlayerAppearance(Player player, byte face, byte hColor, byte hStyle, Sex sex)
+    {
+        _owner = player;
 		_face = face;
 		_hairColor = hColor;
 		_hairStyle = hStyle;
