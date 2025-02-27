@@ -22,9 +22,9 @@ public enum PlayerCondOverride
 
 public static class PlayerCondOverrideUtil
 {
-    public static int getMask(this PlayerCondOverride value)
+    public static uint getMask(this PlayerCondOverride value)
     {
-        return 1 << (int)value;
+        return 1u << (int)value;
     }
 }
 
@@ -46,26 +46,26 @@ public static class PlayerCondOverrideUtil
 //     SEE_ALL_PLAYERS(13, "Overrides the conditions to see hidden players"),
 //     TARGET_ALL(14, "Overrides target conditions"),
 //     DROP_ALL_ITEMS(15, "Overrides item drop conditions");
-// 	
+//
 //     private final int _mask;
 //     private final String _descr;
-// 	
+//
 //     PlayerCondOverride(int id, String descr)
 //     {
 //     _mask = 1 << id;
 //     _descr = descr;
 // }
-// 	
+//
 // public int getMask()
 // {
 //     return _mask;
 // }
-// 	
+//
 // public String getDescription()
 // {
 //     return _descr;
 // }
-// 	
+//
 // public static PlayerCondOverride getCondOverride(int ordinal)
 // {
 //     try
@@ -77,7 +77,7 @@ public static class PlayerCondOverrideUtil
 //         return null;
 //     }
 // }
-// 	
+//
 // public static long getAllExceptionsMask()
 // {
 //     long result = 0;

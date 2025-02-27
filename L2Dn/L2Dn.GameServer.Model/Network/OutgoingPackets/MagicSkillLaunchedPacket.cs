@@ -11,42 +11,48 @@ internal readonly struct MagicSkillLaunchedPacket: IOutgoingPacket
     private readonly int _skillId;
     private readonly int _skillLevel;
     private readonly SkillCastingType _castingType;
-    private readonly ICollection<WorldObject> _targets;
+    private readonly IReadOnlyCollection<WorldObject>? _targets;
 
-    public MagicSkillLaunchedPacket(Creature creature, int skillId, int skillLevel, SkillCastingType castingType,
-        ICollection<WorldObject> targets)
+    public MagicSkillLaunchedPacket(Creature creature, int skillId, int skillLevel,
+        SkillCastingType castingType = SkillCastingType.NORMAL,
+        IReadOnlyCollection<WorldObject>? targets = null)
     {
         _objectId = creature.ObjectId;
         _skillId = skillId;
         _skillLevel = skillLevel;
         _castingType = castingType;
-        _targets = targets == null || targets.Count == 0 ? [creature] : targets;
+        _targets = targets;
     }
 
-    public MagicSkillLaunchedPacket(Creature creature, int skillId, int skillLevel, SkillCastingType castingType,
-        WorldObject target)
-        : this(creature, skillId, skillLevel, castingType, [target == null ? creature : target])
+    public MagicSkillLaunchedPacket(Creature creature, int skillId, int skillLevel,
+        SkillCastingType castingType, WorldObject? target)
     {
-    }
-
-    public MagicSkillLaunchedPacket(Creature creature, int skillId, int skillLevel)
-        : this(creature, skillId, skillLevel, SkillCastingType.NORMAL, [creature])
-    {
+        _objectId = creature.ObjectId;
+        _skillId = skillId;
+        _skillLevel = skillLevel;
+        _castingType = castingType;
+        _targets = target is null ? null : [target];
     }
 
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.MAGIC_SKILL_LAUNCHED);
-        
+
         writer.WriteInt32((int)_castingType); // MagicSkillUse castingType
         writer.WriteInt32(_objectId);
         writer.WriteInt32(_skillId);
         writer.WriteInt32(_skillLevel);
-        writer.WriteInt32(_targets.Count);
-        
-        foreach (WorldObject target in _targets)
+
+        if (_targets is null || _targets.Count == 0)
         {
-            writer.WriteInt32(target.ObjectId);
+            writer.WriteInt32(1);
+            writer.WriteInt32(_objectId);
+        }
+        else
+        {
+            writer.WriteInt32(_targets.Count);
+            foreach (WorldObject target in _targets)
+                writer.WriteInt32(target.ObjectId);
         }
     }
 }

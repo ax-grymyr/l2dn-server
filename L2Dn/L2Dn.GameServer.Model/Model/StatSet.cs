@@ -378,9 +378,9 @@ public class StatSet
 
 	public List<int> getIntegerList(string key)
 	{
-		string val = getString(key, null);
+		string val = getString(key, string.Empty);
 		List<int> result;
-		if (val != null)
+		if (!string.IsNullOrEmpty(val))
 		{
 			string[] splitVal = val.Split(",");
 			result = new(splitVal.Length + 1);
@@ -423,9 +423,9 @@ public class StatSet
 
 	public Map<int, int> getIntegerMap(string key)
 	{
-		string val = getString(key, null);
+		string val = getString(key, string.Empty);
 		Map<int, int> result;
-		if (val != null)
+		if (!string.IsNullOrEmpty(val))
 		{
 			string[] splitVal = val.Split(",");
 			result = new();
@@ -783,38 +783,25 @@ public class StatSet
 		}
 	}
 
-	public A getObject<A>(string name)
+	public A? getObject<A>(string name)
 		where A: class
 	{
 		object? obj = _set.get(name);
-		if (obj == null || !(obj is A))
-		{
-			return null;
-		}
-
-		return (A) obj;
-	}
+		return obj as A;
+    }
 
 	public A getObject<A>(string name, A defaultValue)
 		where A: class
 	{
 		object? obj = _set.get(name);
-		if (obj == null || !(obj is A))
-		{
-			return defaultValue;
-		}
-		return (A) obj;
-	}
+		return obj as A ?? defaultValue;
+    }
 
-	public SkillHolder getSkillHolder(string key)
+	public SkillHolder? getSkillHolder(string key)
 	{
 		object? obj = _set.get(key);
-		if (!(obj is SkillHolder))
-		{
-			return null;
-		}
-		return (SkillHolder) obj;
-	}
+		return obj as SkillHolder;
+    }
 
 	public Location? getLocation(string key)
 	{
@@ -835,12 +822,12 @@ public class StatSet
 		return (List<MinionHolder>) obj;
 	}
 
-	public List<T> getList<T>(string key)
+	public List<T>? getList<T>(string key)
 	{
 		object? obj = _set.get(key);
 		if (obj is null)
 			if (typeof(T).IsClass || typeof(T).IsInterface)
-				return default;
+				return null;
 			else
 				throw new NotSupportedException();
 
@@ -901,11 +888,11 @@ public class StatSet
 
 	public List<T> getList<T>(string key, List<T> defaultValue)
 	{
-		List<T> list = getList<T>(key);
-		return list == null ? defaultValue : list;
+		List<T>? list = getList<T>(key);
+		return list ?? defaultValue;
 	}
 
-	public List<T> getEnumList<T>(string key)
+	public List<T>? getEnumList<T>(string key)
 		where T: struct, Enum
 	{
 		object? obj = _set.get(key);

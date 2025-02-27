@@ -300,8 +300,13 @@ public class PlayerStat: PlayableStat
 	{
 		if (getActiveChar().isSubClassActive())
 		{
-			return getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).getExp();
+            // TODO: null checking hack, subclasses must be handled differently
+            SubClassHolder subclass = getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()) ??
+                throw new InvalidOperationException("Subsclass is active, but subclass holder is null");
+
+			return subclass.getExp();
 		}
+
 		return base.getExp();
 	}
 
@@ -314,7 +319,11 @@ public class PlayerStat: PlayableStat
 	{
 		if (getActiveChar().isSubClassActive())
 		{
-			getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).setExp(value);
+            // TODO: null checking hack, subclasses must be handled differently
+            SubClassHolder subclass = getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()) ??
+                throw new InvalidOperationException("Subsclass is active, but subclass holder is null");
+
+			subclass.setExp(value);
 		}
 		else
 		{
@@ -398,7 +407,11 @@ public class PlayerStat: PlayableStat
 
 		if (getActiveChar().isSubClassActive())
 		{
-			getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).setLevel(level);
+            // TODO: null checking hack, subclasses must be handled differently
+            SubClassHolder subclass = getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()) ??
+                throw new InvalidOperationException("Subsclass is active, but subclass holder is null");
+
+			subclass.setLevel(level);
 		}
 		else
 		{
@@ -410,8 +423,13 @@ public class PlayerStat: PlayableStat
 	{
 		if (getActiveChar().isSubClassActive())
 		{
-			return getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).getSp();
+            // TODO: null checking hack, subclasses must be handled differently
+            SubClassHolder subclass = getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()) ??
+                throw new InvalidOperationException("Subsclass is active, but subclass holder is null");
+
+			return subclass.getSp();
 		}
+
 		return base.getSp();
 	}
 
@@ -424,7 +442,11 @@ public class PlayerStat: PlayableStat
 	{
 		if (getActiveChar().isSubClassActive())
 		{
-			getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).setSp(value);
+            // TODO: null checking hack, subclasses must be handled differently
+            SubClassHolder subclass = getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()) ??
+                throw new InvalidOperationException("Subsclass is active, but subclass holder is null");
+
+			subclass.setSp(value);
 		}
 		else
 		{
@@ -471,10 +493,15 @@ public class PlayerStat: PlayableStat
 	{
 		if (getActiveChar().isSubClassActive())
 		{
-			getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).setVitalityPoints(value);
+            // TODO: null checking hack, subclasses must be handled differently
+            SubClassHolder subclass = getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()) ??
+                throw new InvalidOperationException("Subsclass is active, but subclass holder is null");
+
+			subclass.setVitalityPoints(value);
 			return;
 		}
-		_vitalityPoints = Math.Min(Math.Max(value, MIN_VITALITY_POINTS), MAX_VITALITY_POINTS);
+
+        _vitalityPoints = Math.Min(Math.Max(value, MIN_VITALITY_POINTS), MAX_VITALITY_POINTS);
 		getActiveChar().sendPacket(new ExVitalityPointInfoPacket(_vitalityPoints));
 	}
 

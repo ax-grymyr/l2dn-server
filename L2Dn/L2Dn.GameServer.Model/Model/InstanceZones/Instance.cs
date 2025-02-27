@@ -53,7 +53,7 @@ public class Instance : IIdentifiable, INamable
 	 * @param template template of instance world
 	 * @param player player who create instance world.
 	 */
-	public Instance(int id, InstanceTemplate template, Player player)
+	public Instance(int id, InstanceTemplate template, Player? player)
 	{
 		// Set basic instance info
 		_id = id;

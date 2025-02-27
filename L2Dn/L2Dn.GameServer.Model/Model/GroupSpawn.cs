@@ -28,10 +28,9 @@ public class GroupSpawn: Spawn
                 return null;
             }
 
-            Location3D newLocation;
-            if (Location.X == 0 && Location.Y == 0)
+            if (Location is { X: 0, Y: 0 }) // TODO: location must be verified when loading spawn data
             {
-                if (getLocationId() == 0)
+                if (getLocationId() == 0) // TODO: ????
                 {
                     return null;
                 }
@@ -39,7 +38,7 @@ public class GroupSpawn: Spawn
                 return null;
             }
 
-            newLocation = Location.Location3D;
+            Location3D newLocation = Location.Location3D;
 
             Npc mob = new ControllableMob(_template);
             mob.setCurrentHpMp(mob.getMaxHp(), mob.getMaxMp());

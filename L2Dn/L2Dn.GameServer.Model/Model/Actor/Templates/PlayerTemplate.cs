@@ -34,7 +34,6 @@ public class PlayerTemplate: CreatureTemplate
 	public PlayerTemplate(StatSet set, ImmutableArray<Location3D> creationPoints): base(set)
 	{
 		_classId = set.getEnum<CharacterClass>("classId");
-		setRace(_classId.GetRace());
 		_baseHp = new float[ExperienceData.getInstance().getMaxLevel() + 1];
 		_baseMp = new float[ExperienceData.getInstance().getMaxLevel() + 1];
 		_baseCp = new float[ExperienceData.getInstance().getMaxLevel() + 1];

@@ -12,45 +12,45 @@ namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
 public class OnCreatureSkillFinishCast: EventBase
 {
 	private Creature _caster;
-	private WorldObject _target;
+	private WorldObject? _target;
 	private Skill _skill;
 	private bool _simultaneously;
-	
+
 	public Creature getCaster()
 	{
 		return _caster;
 	}
-	
+
 	public void setCaster(Creature caster)
 	{
 		_caster = caster;
 	}
-	
-	public WorldObject getTarget()
+
+	public WorldObject? getTarget()
 	{
 		return _target;
 	}
-	
-	public void setTarget(WorldObject target)
+
+	public void setTarget(WorldObject? target)
 	{
 		_target = target;
 	}
-	
+
 	public Skill getSkill()
 	{
 		return _skill;
 	}
-	
+
 	public void setSkill(Skill skill)
 	{
 		_skill = skill;
 	}
-	
+
 	public bool isSimultaneously()
 	{
 		return _simultaneously;
 	}
-	
+
 	public void setSimultaneously(bool simultaneously)
 	{
 		_simultaneously = simultaneously;

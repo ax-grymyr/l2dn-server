@@ -280,7 +280,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			case "schuttgart":
 			case "goddard":
 			{
-				Castle rune = CastleManager.getInstance().getCastle("rune");
+				Castle? rune = CastleManager.getInstance().getCastle("rune");
 				if (rune != null)
 				{
 					long runeTax = (long) (amount * rune.getTaxRate(TaxType.BUY));
@@ -298,7 +298,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			case "innadril":
 			case "oren":
 			{
-				Castle aden = CastleManager.getInstance().getCastle("aden");
+				Castle? aden = CastleManager.getInstance().getCastle("aden");
 				if (aden != null)
 				{
 					long adenTax = (long) (amount * aden.getTaxRate(TaxType.BUY)); // Find out what Aden gets from the current castle instance's income
@@ -1004,7 +1004,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			{
 				int maxreward = Math.Max(0, _formerOwner.getReputationScore());
 				_formerOwner.takeReputationScore(Config.LOOSE_CASTLE_POINTS);
-				Clan owner = ClanTable.getInstance().getClan(getOwnerId());
+				Clan? owner = ClanTable.getInstance().getClan(getOwnerId());
 				if (owner != null)
 				{
 					owner.addReputationScore(Math.Min(Config.TAKE_CASTLE_POINTS, maxreward));
@@ -1193,7 +1193,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 					return;
 				}
 				spawn.Location = holder.Location;
-				Npc npc = spawn.doSpawn(false);
+				Npc? npc = spawn.doSpawn(false);
 				spawn.stopRespawn();
 				npc.broadcastInfo();
 				_sideNpcs.Add(npc);

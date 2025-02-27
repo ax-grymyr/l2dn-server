@@ -69,11 +69,11 @@ public abstract class AbstractEffect
 		return true;
 	}
 
-	public virtual void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public virtual void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 	}
 
-	public virtual void continuousInstant(Creature effector, Creature effected, Skill skill, Item item)
+	public virtual void continuousInstant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 	}
 

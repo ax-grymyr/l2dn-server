@@ -27,17 +27,17 @@ public class Weapon: ItemTemplate
 	private int _baseAttackRadius;
 	private int _baseAttackAngle;
 	private int _changeWeaponId;
-	
+
 	private int _reducedSoulshot;
 	private int _reducedSoulshotChance;
-	
+
 	private int _reducedMpConsume;
 	private int _reducedMpConsumeChance;
-	
+
 	private bool _isForceEquip;
 	private bool _isAttackWeapon;
 	private bool _useWeaponSkillsOnly;
-	
+
 	/**
 	 * Constructor for Weapon.
 	 * @param set the StatSet designating the set of couples (key,value) characterizing the weapon.
@@ -45,7 +45,7 @@ public class Weapon: ItemTemplate
 	public Weapon(StatSet set): base(set)
 	{
 	}
-	
+
 	public override void set(StatSet set)
 	{
 		base.set(set);
@@ -70,11 +70,11 @@ public class Weapon: ItemTemplate
 			_baseAttackRadius = 40;
 			_baseAttackAngle = 0;
 		}
-		
+
 		string[] reducedSoulshots = set.getString("reduced_soulshot", "").Split(",");
 		_reducedSoulshotChance = reducedSoulshots.Length == 2 ? int.Parse(reducedSoulshots[0]) : 0;
 		_reducedSoulshot = reducedSoulshots.Length == 2 ? int.Parse(reducedSoulshots[1]) : 0;
-		
+
 		string[] reducedMpConsume = set.getString("reduced_mp_consume", "").Split(",");
 		_reducedMpConsumeChance = reducedMpConsume.Length == 2 ? int.Parse(reducedMpConsume[0]) : 0;
 		_reducedMpConsume = reducedMpConsume.Length == 2 ? int.Parse(reducedMpConsume[1]) : 0;
@@ -82,7 +82,7 @@ public class Weapon: ItemTemplate
 		_isForceEquip = set.getBoolean("isForceEquip", false);
 		_isAttackWeapon = set.getBoolean("isAttackWeapon", true);
 		_useWeaponSkillsOnly = set.getBoolean("useWeaponSkillsOnly", false);
-		
+
 		// Check if ranged weapon reuse delay is missing.
 		if (_reuseDelay == TimeSpan.Zero && _type.isRanged())
 		{
@@ -105,7 +105,7 @@ public class Weapon: ItemTemplate
 	{
 		return _type;
 	}
-	
+
 	/**
 	 * @return {@code true} if the weapon is magic, {@code false} otherwise.
 	 */
@@ -113,7 +113,7 @@ public class Weapon: ItemTemplate
 	{
 		return _isMagicWeapon;
 	}
-	
+
 	/**
 	 * @return the quantity of SoulShot used.
 	 */
@@ -121,7 +121,7 @@ public class Weapon: ItemTemplate
 	{
 		return _soulShotCount;
 	}
-	
+
 	/**
 	 * @return the quantity of SpiritShot used.
 	 */
@@ -129,7 +129,7 @@ public class Weapon: ItemTemplate
 	{
 		return _spiritShotCount;
 	}
-	
+
 	/**
 	 * @return the reduced quantity of SoultShot used.
 	 */
@@ -137,7 +137,7 @@ public class Weapon: ItemTemplate
 	{
 		return _reducedSoulshot;
 	}
-	
+
 	/**
 	 * @return the chance to use Reduced SoultShot.
 	 */
@@ -145,7 +145,7 @@ public class Weapon: ItemTemplate
 	{
 		return _reducedSoulshotChance;
 	}
-	
+
 	/**
 	 * @return the MP consumption with the weapon.
 	 */
@@ -153,22 +153,22 @@ public class Weapon: ItemTemplate
 	{
 		return _mpConsume;
 	}
-	
+
 	public int getBaseAttackRange()
 	{
 		return _baseAttackRange;
 	}
-	
+
 	public int getBaseAttackRadius()
 	{
 		return _baseAttackRadius;
 	}
-	
+
 	public int getBaseAttackAngle()
 	{
 		return _baseAttackAngle;
 	}
-	
+
 	/**
 	 * @return the reduced MP consumption with the weapon.
 	 */
@@ -176,7 +176,7 @@ public class Weapon: ItemTemplate
 	{
 		return _reducedMpConsume;
 	}
-	
+
 	/**
 	 * @return the chance to use getReducedMpConsume()
 	 */
@@ -184,7 +184,7 @@ public class Weapon: ItemTemplate
 	{
 		return _reducedMpConsumeChance;
 	}
-	
+
 	/**
 	 * @return the Id in which weapon this weapon can be changed.
 	 */
@@ -192,7 +192,7 @@ public class Weapon: ItemTemplate
 	{
 		return _changeWeaponId;
 	}
-	
+
 	/**
 	 * @return {@code true} if the weapon is force equip, {@code false} otherwise.
 	 */
@@ -200,7 +200,7 @@ public class Weapon: ItemTemplate
 	{
 		return _isForceEquip;
 	}
-	
+
 	/**
 	 * @return {@code true} if the weapon is attack weapon, {@code false} otherwise.
 	 */
@@ -208,7 +208,7 @@ public class Weapon: ItemTemplate
 	{
 		return _isAttackWeapon;
 	}
-	
+
 	/**
 	 * @return {@code true} if the weapon is skills only, {@code false} otherwise.
 	 */
@@ -216,7 +216,7 @@ public class Weapon: ItemTemplate
 	{
 		return _useWeaponSkillsOnly;
 	}
-	
+
 	/**
 	 * @param caster the Creature pointing out the caster
 	 * @param target the Creature pointing out the target
@@ -232,7 +232,7 @@ public class Weapon: ItemTemplate
 			{
 				return;
 			}
-			
+
 			if (type == ItemSkillType.ON_MAGIC_SKILL)
 			{
 				// Trigger only if both are good or bad magic.
@@ -240,44 +240,45 @@ public class Weapon: ItemTemplate
 				{
 					return;
 				}
-				
+
 				// No Trigger if not Magic Skill or is toggle
 				if (trigger.isMagic() != skill.isMagic())
 				{
 					return;
 				}
-				
+
 				// No Trigger if skill is toggle
 				if (trigger.isToggle())
 				{
 					return;
 				}
-				
+
 				if (skill.isBad() && Formulas.calcShldUse(caster, target) == Formulas.SHIELD_DEFENSE_PERFECT_BLOCK)
 				{
 					return;
 				}
 			}
-			
+
 			// Skill condition not met
 			if (!skill.checkCondition(caster, target, true))
 			{
 				return;
 			}
-			
-			skill.activateSkill(caster, target);
-			
+
+			skill.activateSkill(caster, [target]);
+
 			// TODO: Verify if this applies ONLY to ON_MAGIC_SKILL!
 			if (type == ItemSkillType.ON_MAGIC_SKILL)
 			{
 				// notify quests of a skill use
-				if (caster.isPlayer())
+                Player? casterPlayer = caster.getActingPlayer();
+				if (caster.isPlayer() && casterPlayer != null)
 				{
 					World.getInstance().forEachVisibleObjectInRange<Npc>(caster, 1000, npc =>
 					{
 						if (npc.Events.HasSubscribers<OnNpcSkillSee>())
 						{
-							npc.Events.NotifyAsync(new OnNpcSkillSee(npc, caster.getActingPlayer(), skill, false, target));
+							npc.Events.NotifyAsync(new OnNpcSkillSee(npc, casterPlayer, skill, false, target));
 						}
 					});
 				}

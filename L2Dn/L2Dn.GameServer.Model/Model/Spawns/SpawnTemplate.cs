@@ -13,10 +13,10 @@ public class SpawnTemplate: ITerritorized, IParameterized<StatSet>
 	private readonly string _ai;
 	private readonly bool _spawnByDefault;
 	private readonly string _filePath;
-	private List<SpawnTerritory> _territories;
-	private List<BannedSpawnTerritory> _bannedTerritories;
+	private List<SpawnTerritory> _territories = [];
+	private List<BannedSpawnTerritory> _bannedTerritories = [];
 	private readonly List<SpawnGroup> _groups = [];
-	private StatSet _parameters;
+	private StatSet _parameters = new();
 
 	public SpawnTemplate(string name, string ai, bool spawnByDefault, string filePath)
 	{
@@ -111,7 +111,7 @@ public class SpawnTemplate: ITerritorized, IParameterized<StatSet>
 	{
 		if (_ai != null)
 		{
-			Quest script = QuestManager.getInstance().getQuest(_ai);
+			Quest? script = QuestManager.getInstance().getQuest(_ai);
 			if (script != null)
 			{
 				@event(script);

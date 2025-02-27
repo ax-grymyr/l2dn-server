@@ -18,7 +18,7 @@ using NLog;
 
 namespace L2Dn.GameServer.Model.Skills;
 
-public class Skill: IIdentifiable
+public sealed class Skill: IIdentifiable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Skill));
 
@@ -93,7 +93,7 @@ public class Skill: IIdentifiable
 	private readonly TimeSpan? _abnormalTime;
 
 	/** Abnormal visual effect: the visual effect displayed ingame. */
-	private Set<AbnormalVisualEffect> _abnormalVisualEffects;
+	private Set<AbnormalVisualEffect> _abnormalVisualEffects = [];
 
 	/** If {@code true} this skill's effect should stay after death. */
 	private readonly bool _stayAfterDeath;
@@ -146,13 +146,12 @@ public class Skill: IIdentifiable
 	private readonly int _shadowSoulMaxConsume;
 	private readonly int _chargeConsume;
 
-	private readonly bool
-		_isTriggeredSkill; // If true the skill will take activation buff slot instead of a normal buff slot
+	private readonly bool _isTriggeredSkill; // If true the skill will take activation buff slot instead of a normal buff slot
 
 	private readonly int _effectPoint;
 
-	private readonly Map<SkillConditionScope, List<ISkillCondition>> _conditionLists = new();
-	private readonly Map<EffectScope, List<AbstractEffect>> _effectLists = new();
+	private readonly Map<SkillConditionScope, List<ISkillCondition>> _conditionLists = [];
+	private readonly Map<EffectScope, List<AbstractEffect>> _effectLists = [];
 
 	private readonly bool _isDebuff;
 
@@ -164,7 +163,7 @@ public class Skill: IIdentifiable
 
 	private readonly string _icon;
 
-	private volatile EffectType[] _effectTypes;
+	private volatile EffectType[]? _effectTypes;
 
 	// Channeling data
 	private readonly int _channelingSkillId;
@@ -237,7 +236,7 @@ public class Skill: IIdentifiable
 
 		_abnormalTime = abnormalTime;
 		_isAbnormalInstant = set.getBoolean("abnormalInstant", false);
-		parseAbnormalVisualEffect(set.getString("abnormalVisualEffect", null));
+		parseAbnormalVisualEffect(set.getString("abnormalVisualEffect", string.Empty));
 		_stayAfterDeath = set.getBoolean("stayAfterDeath", false);
 		_hitTime = TimeSpan.FromMilliseconds(set.getInt("hitTime", 0));
 		_hitCancelTime = TimeSpan.FromMilliseconds(set.getDouble("hitCancelTime", 0));
@@ -259,8 +258,8 @@ public class Skill: IIdentifiable
 		_affectObject = set.getEnum("affectObject", AffectObject.ALL);
 		_affectRange = set.getInt("affectRange", 0);
 
-		string fanRange = set.getString("fanRange", null);
-		if (fanRange != null)
+		string fanRange = set.getString("fanRange", string.Empty);
+		if (!string.IsNullOrEmpty(fanRange))
 		{
 			try
 			{
@@ -273,12 +272,12 @@ public class Skill: IIdentifiable
 			catch (Exception e)
 			{
 				throw new InvalidOperationException("SkillId: " + _id + " invalid fanRange value: " + fanRange +
-				                                    ", \"unk;startDegree;fanAffectRange;fanAffectAngle\" required");
+				                                    ", \"unk;startDegree;fanAffectRange;fanAffectAngle\" required: " + e);
 			}
 		}
 
-		string affectLimit = set.getString("affectLimit", null);
-		if (affectLimit != null)
+		string affectLimit = set.getString("affectLimit", string.Empty);
+		if (!string.IsNullOrEmpty(affectLimit))
 		{
 			try
 			{
@@ -293,12 +292,12 @@ public class Skill: IIdentifiable
 			catch (Exception e)
 			{
 				throw new InvalidOperationException("SkillId: " + _id + " invalid affectLimit value: " + affectLimit +
-				                                    ", \"minAffected-additionalRandom\" required");
+				                                    ", \"minAffected-additionalRandom\" required: " + e);
 			}
 		}
 
-		string affectHeight = set.getString("affectHeight", null);
-		if (affectHeight != null)
+		string affectHeight = set.getString("affectHeight", string.Empty);
+		if (!string.IsNullOrEmpty(affectHeight))
 		{
 			try
 			{
@@ -309,7 +308,7 @@ public class Skill: IIdentifiable
 			catch (Exception e)
 			{
 				throw new InvalidOperationException("SkillId: " + _id + " invalid affectHeight value: " + affectHeight +
-				                                    ", \"minHeight-maxHeight\" required");
+				                                    ", \"minHeight-maxHeight\" required: " + e);
 			}
 
 			if (_affectHeight[0] > _affectHeight[1])
@@ -357,11 +356,11 @@ public class Skill: IIdentifiable
 		_blockActionUseSkill = set.getBoolean("blockActionUseSkill", false);
 		_toggleGroupId = set.getInt("toggleGroupId", -1);
 		_attachToggleGroupId = set.getInt("attachToggleGroupId", -1);
-		_attachSkills = set.getList<StatSet>("attachSkillList", new List<StatSet>())
+		_attachSkills = set.getList("attachSkillList", new List<StatSet>())
 			.Select(AttachSkillHolder.fromStatSet).ToList();
 
-		string abnormalResist = set.getString("abnormalResists", null);
-		if (abnormalResist != null)
+		string abnormalResist = set.getString("abnormalResists", string.Empty);
+		if (!string.IsNullOrEmpty(abnormalResist))
 		{
 			string[] abnormalResistStrings = abnormalResist.Split(";");
 			if (abnormalResistStrings.Length > 0)
@@ -1054,7 +1053,8 @@ public class Skill: IIdentifiable
 			return true;
 		}
 
-		if (creature.isPlayer() && creature.getActingPlayer().isMounted() && isBad() &&
+        Player? player = creature.getActingPlayer();
+		if (creature.isPlayer() && player != null && player.isMounted() && isBad() &&
 		    !MountEnabledSkillList.contains(_id))
 		{
 			SystemMessagePacket sm =
@@ -1089,7 +1089,7 @@ public class Skill: IIdentifiable
 	 * @param sendMessage send SystemMessageId packet if target is incorrect.
 	 * @return {@code WorldObject} this skill can be used on, or {@code null} if there is no such.
 	 */
-	public WorldObject getTarget(Creature creature, bool forceUse, bool dontMove, bool sendMessage)
+	public WorldObject? getTarget(Creature creature, bool forceUse, bool dontMove, bool sendMessage)
 	{
 		return getTarget(creature, creature.getTarget(), forceUse, dontMove, sendMessage);
 	}
@@ -1102,7 +1102,7 @@ public class Skill: IIdentifiable
 	 * @param sendMessage send SystemMessageId packet if target is incorrect.
 	 * @return the selected {@code WorldObject} this skill can be used on, or {@code null} if there is no such.
 	 */
-	public WorldObject getTarget(Creature creature, WorldObject? selectedTarget, bool forceUse, bool dontMove,
+	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, bool forceUse, bool dontMove,
 		bool sendMessage)
 	{
 		ITargetTypeHandler? handler = TargetHandler.getInstance().getHandler(getTargetType());
@@ -1130,16 +1130,14 @@ public class Skill: IIdentifiable
 	public List<WorldObject>? getTargetsAffected(Creature creature, WorldObject? target)
 	{
 		if (target == null)
-		{
 			return null;
-		}
 
 		IAffectScopeHandler? handler = AffectScopeHandler.getInstance().getHandler(getAffectScope());
 		if (handler != null)
 		{
 			try
 			{
-				List<WorldObject> result = new();
+				List<WorldObject> result = [];
 				handler.forEachAffected<WorldObject>(creature, target, this, x => result.Add(x));
 				return result;
 			}
@@ -1211,7 +1209,7 @@ public class Skill: IIdentifiable
 	 */
 	public bool hasEffects(EffectScope effectScope)
 	{
-		List<AbstractEffect> effects = _effectLists.get(effectScope);
+		List<AbstractEffect>? effects = _effectLists.get(effectScope);
 		return effects != null && effects.Count != 0;
 	}
 
@@ -1224,10 +1222,11 @@ public class Skill: IIdentifiable
 	 */
 	public void applyEffectScope(EffectScope? effectScope, BuffInfo info, bool applyInstantEffects,
 		bool addContinuousEffects)
-	{
-		if (effectScope != null && hasEffects(effectScope.Value))
+    {
+        List<AbstractEffect>? effects = effectScope == null ? null : getEffects(effectScope.Value);
+		if (effectScope != null && hasEffects(effectScope.Value) && effects != null)
 		{
-			foreach (AbstractEffect effect in getEffects(effectScope.Value))
+			foreach (AbstractEffect effect in effects)
 			{
 				if (effect.isInstant())
 				{
@@ -1250,9 +1249,10 @@ public class Skill: IIdentifiable
 
 					// tempfix for hp/mp regeneration
 					// TODO: Find where regen stops and make a proper fix
-					if (info.getEffected().isPlayer() && !isBad())
+                    Player? effectedPlayer = info.getEffected().getActingPlayer();
+					if (info.getEffected().isPlayer() && effectedPlayer != null && !isBad())
 					{
-						info.getEffected().getActingPlayer().getStatus().startHpMpRegeneration();
+                        effectedPlayer.getStatus().startHpMpRegeneration();
 					}
 				}
 			}
@@ -1277,7 +1277,7 @@ public class Skill: IIdentifiable
 	 * @param effected the target of the effect
 	 * @param item
 	 */
-	public void applyEffects(Creature effector, Creature effected, Item item)
+	public void applyEffects(Creature effector, Creature effected, Item? item)
 	{
 		applyEffects(effector, effected, false, false, true, TimeSpan.Zero, item);
 	}
@@ -1306,7 +1306,7 @@ public class Skill: IIdentifiable
 	 * @param item
 	 */
 	public void applyEffects(Creature effector, Creature effected, bool self, bool passive, bool instant,
-		TimeSpan abnormalTime, Item item)
+		TimeSpan abnormalTime, Item? item)
 	{
 		// null targets cannot receive any effects.
 		if (effected == null)
@@ -1367,9 +1367,10 @@ public class Skill: IIdentifiable
 						.ForEach(s => applyEffects(effector, s, _isRecoveryHerb, TimeSpan.Zero));
 				}
 
-				if (effected.hasPet())
+                Summon? pet = effected.getPet();
+				if (effected.hasPet() && pet != null)
 				{
-					applyEffects(effector, effector.getPet(), _isRecoveryHerb, TimeSpan.Zero);
+					applyEffects(effector, pet, _isRecoveryHerb, TimeSpan.Zero);
 				}
 			}
 		}
@@ -1390,7 +1391,7 @@ public class Skill: IIdentifiable
 			if (addContinuousEffects)
 			{
 				// Aura skills reset the abnormal time.
-				BuffInfo existingInfo =
+				BuffInfo? existingInfo =
 					_operateType.isAura() ? effector.getEffectList().getBuffInfoBySkillId(_id) : null;
 				if (existingInfo != null)
 				{
@@ -1442,7 +1443,7 @@ public class Skill: IIdentifiable
 	 * @param caster the caster
 	 * @param targets the targets
 	 */
-	public void activateSkill(Creature caster, params WorldObject[] targets)
+	public void activateSkill(Creature caster, List<WorldObject> targets)
 	{
 		activateSkill(caster, null, targets);
 	}
@@ -1453,7 +1454,7 @@ public class Skill: IIdentifiable
 	 * @param item
 	 * @param targets the targets
 	 */
-	public void activateSkill(Creature caster, Item item, params WorldObject[] targets)
+	public void activateSkill(Creature caster, Item? item, List<WorldObject> targets)
 	{
 		foreach (WorldObject targetObject in targets)
 		{
@@ -1606,14 +1607,14 @@ public class Skill: IIdentifiable
 	 */
 	private void parseAbnormalVisualEffect(string abnormalVisualEffects)
 	{
-		if (abnormalVisualEffects != null)
+		if (!string.IsNullOrEmpty(abnormalVisualEffects))
 		{
 			string[] data = abnormalVisualEffects.Split(";");
 			Set<AbnormalVisualEffect> aves = new();
 			foreach (string aveString in data)
 			{
 				AbnormalVisualEffect ave = Enum.Parse<AbnormalVisualEffect>(aveString);
-				if (ave != null)
+				if (ave != AbnormalVisualEffect.None)
 				{
 					aves.add(ave);
 				}
@@ -1685,13 +1686,14 @@ public class Skill: IIdentifiable
 	 * @return {@code true} if at least one of specified {@link EffectType} types is present on this skill effects, {@code false} otherwise.
 	 */
 	public bool hasEffectType(EffectScope effectScope, EffectType effectType, params EffectType[] effectTypes)
-	{
-		if (hasEffects(effectScope))
+    {
+        List<AbstractEffect>? effects = _effectLists.get(effectScope);
+		if (hasEffects(effectScope) || effects == null)
 		{
 			return false;
 		}
 
-		foreach (AbstractEffect effect in _effectLists.get(effectScope))
+		foreach (AbstractEffect effect in effects)
 		{
 			if (effectType == effect.getEffectType())
 			{

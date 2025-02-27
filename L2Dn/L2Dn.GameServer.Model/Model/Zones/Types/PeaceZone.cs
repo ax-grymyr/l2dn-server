@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Actor.Instances;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -19,9 +20,9 @@ public class PeaceZone : ZoneType
 			return;
 		}
 
-		if (creature.isPlayer())
+        Player? player = creature.getActingPlayer();
+		if (creature.isPlayer() && player != null)
 		{
-			Player player = creature.getActingPlayer();
 			// PVP possible during siege, now for siege participants only
 			// Could also check if this town is in siege, or if any siege is going on
 			if (player.getSiegeState() != 0 && Config.PEACE_ZONE_MODE == 1)
@@ -73,13 +74,14 @@ public class PeaceZone : ZoneType
 		{
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				if (player != null && isInsideZone(player))
+				if (isInsideZone(player))
 				{
 					revalidateInZone(player);
 
-					if (player.getPet() != null)
+                    Pet? pet = player.getPet();
+					if (pet != null)
 					{
-						revalidateInZone(player.getPet());
+						revalidateInZone(pet);
 					}
 
 					foreach (Summon summon in player.getServitors().Values)

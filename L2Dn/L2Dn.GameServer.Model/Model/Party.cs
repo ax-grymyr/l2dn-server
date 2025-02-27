@@ -35,7 +35,7 @@ public class Party : AbstractPlayerGroup
 	private static readonly TimeSpan PARTY_POSITION_BROADCAST_INTERVAL = TimeSpan.FromSeconds(12);
 	private static readonly TimeSpan PARTY_DISTRIBUTION_TYPE_REQUEST_TIMEOUT = TimeSpan.FromSeconds(15);
 
-	private readonly List<Player> _members = []; // TODO: CopyOnWriteArrayList
+	private readonly List<Player> _members; // TODO: CopyOnWriteArrayList
 	private bool _pendingInvitation;
 	private long _pendingInviteTimeout;
 	private int _partyLvl;
@@ -57,7 +57,8 @@ public class Party : AbstractPlayerGroup
 	 */
 	public Party(Player leader, PartyDistributionType partyDistributionType = PartyDistributionType.FINDERS_KEEPERS)
 	{
-		_members.Add(leader);
+        // TODO: party is created with at least 2 members
+		_members = [leader];
 		_partyLvl = leader.getLevel();
 		_distributionType = partyDistributionType;
 		World.getInstance().incrementParty();
@@ -432,8 +433,10 @@ public class Party : AbstractPlayerGroup
 	 * @param type the message type {@link PartyMessageType}.
 	 */
 	public void removePartyMember(string name, PartyMessageType type)
-	{
-		removePartyMember(getPlayerByName(name), type);
+    {
+        Player? player = getPlayerByName(name);
+        if (player != null)
+    		removePartyMember(player, type);
 	}
 
 	/**
@@ -519,21 +522,22 @@ public class Party : AbstractPlayerGroup
 				broadcastToPartyMembersNewLeader();
 			}
 			else if (_members.Count == 1)
-			{
-				if (isInCommandChannel())
+            {
+                CommandChannel? commandChannel = _commandChannel;
+				if (isInCommandChannel() && commandChannel != null)
 				{
 					// delete the whole command channel when the party who opened the channel is disbanded
-					if (_commandChannel.getLeader().ObjectId == getLeader().ObjectId)
+					if (commandChannel.getLeader().ObjectId == getLeader().ObjectId)
 					{
-						_commandChannel.disbandChannel();
+						commandChannel.disbandChannel();
 					}
 					else
 					{
-						_commandChannel.removeParty(this);
+						commandChannel.removeParty(this);
 					}
 				}
 
-				Player leader = getLeader();
+				Player? leader = getLeader();
 				if (leader != null)
 				{
 					applyTacticalSigns(leader, true);
@@ -583,8 +587,10 @@ public class Party : AbstractPlayerGroup
 	 * @param name the name of the player to set as the new party leader
 	 */
 	public void changePartyLeader(string name)
-	{
-		setLeader(getPlayerByName(name));
+    {
+        Player? player = getPlayerByName(name);
+        if (player != null)
+		    setLeader(player);
 	}
 
 	public override void setLeader(Player player)
@@ -605,12 +611,12 @@ public class Party : AbstractPlayerGroup
 					_members[0] = player;
 					_members[p1] = temp;
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.C1_HAS_BECOME_THE_PARTY_LEADER);
-					msg.Params.addString(getLeader().getName());
+					msg.Params.addString(player.getName());
 					broadcastPacket(msg);
 					broadcastToPartyMembersNewLeader();
-					if (isInCommandChannel() && _commandChannel.isLeader(temp))
+					if (isInCommandChannel() && _commandChannel != null && _commandChannel.isLeader(temp))
 					{
-						_commandChannel.setLeader(getLeader());
+						_commandChannel.setLeader(player);
 						msg = new SystemMessagePacket(SystemMessageId.COMMAND_CHANNEL_AUTHORITY_HAS_BEEN_TRANSFERRED_TO_C1);
 						msg.Params.addString(_commandChannel.getLeader().getName());
 						_commandChannel.broadcastPacket(msg);
@@ -895,17 +901,10 @@ public class Party : AbstractPlayerGroup
 		int newLevel = 0;
 		foreach (Player member in _members)
 		{
-			if (member == null)
-			{
-				_members.Remove(member);
-				continue;
-			}
-
 			if (member.getLevel() > newLevel)
-			{
 				newLevel = member.getLevel();
-			}
 		}
+
 		_partyLvl = newLevel;
 	}
 
@@ -1039,9 +1038,7 @@ public class Party : AbstractPlayerGroup
 	public override Player getLeader()
 	{
 		if (_members.Count == 0)
-		{
-			return null;
-		}
+            throw new InvalidOperationException("Party has no members.");
 
 		return _members[0];
 	}

@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
@@ -34,88 +35,86 @@ public class SkillCaster: Runnable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SkillCaster));
 
-	private readonly WeakReference<Creature> _caster;
-	private readonly WeakReference<WorldObject> _target;
-	private readonly Skill _skill;
-	private readonly Item _item;
+	private readonly Creature _caster;
+    private readonly Skill _skill;
+	private readonly WorldObject? _target;
+	private readonly Item? _item;
 	private readonly SkillCastingType _castingType;
 	private readonly bool _shiftPressed;
+	private readonly bool _ctrlPressed;
 	private TimeSpan _hitTime;
 	private TimeSpan _cancelTime;
 	private TimeSpan _coolTime;
-	private ICollection<WorldObject> _targets;
-	private ScheduledFuture _task;
+	private List<WorldObject>? _targets;
+	private ScheduledFuture? _task;
 	private int _phase;
 
-	private SkillCaster(Creature caster, WorldObject target, Skill skill, Item item, SkillCastingType castingType,
+	private SkillCaster(Creature caster, WorldObject? target, Skill skill, Item? item, SkillCastingType castingType,
 		bool ctrlPressed, bool shiftPressed, TimeSpan? castTime)
 	{
 		ArgumentNullException.ThrowIfNull(caster);
 		ArgumentNullException.ThrowIfNull(skill);
-		ArgumentNullException.ThrowIfNull(castingType);
 
-		_caster = new WeakReference<Creature>(caster);
-		_target = new WeakReference<WorldObject>(target);
+		_caster = caster;
+		_target = target;
 		_skill = skill;
 		_item = item;
 		_castingType = castingType;
 		_shiftPressed = shiftPressed;
+        _ctrlPressed = ctrlPressed;
 
 		calcSkillTiming(caster, skill, castTime);
 	}
 
-	/**
-	 * Checks if the caster can cast the specified skill on the given target with the selected parameters.
-	 * @param caster the creature trying to cast
-	 * @param target the selected target for cast
-	 * @param skill the skill being cast
-	 * @param item the reference item which requests the skill cast
-	 * @param castingType the type of casting
-	 * @param ctrlPressed force casting
-	 * @param shiftPressed dont move while casting
-	 * @return {@code SkillCaster} object containing casting data if casting has started or {@code null} if casting was not started.
-	 */
-	public static SkillCaster castSkill(Creature caster, WorldObject target, Skill skill, Item item, SkillCastingType castingType, bool ctrlPressed, bool shiftPressed)
-	{
-		// Prevent players from attacking before the Olympiad countdown ends.
-		if (caster.isPlayer() && caster.getActingPlayer().isInOlympiadMode() && !caster.getActingPlayer().isOlympiadStart() && skill.isBad())
-		{
-			return null;
-		}
+    /**
+     * Checks if the caster can cast the specified skill on the given target with the selected parameters.
+     * @param caster the creature trying to cast
+     * @param target the selected target for cast
+     * @param skill the skill being cast
+     * @param item the reference item which requests the skill cast
+     * @param castingType the type of casting
+     * @param ctrlPressed force casting
+     * @param shiftPressed dont move while casting
+     * @return {@code SkillCaster} object containing casting data if casting has started or {@code null} if casting was not started.
+     */
+    public static SkillCaster? castSkill(Creature caster, WorldObject? target, Skill skill, Item? item,
+        SkillCastingType castingType, bool ctrlPressed, bool shiftPressed)
+    {
+        // Prevent players from attacking before the Olympiad countdown ends.
+        Player? player = caster.getActingPlayer();
+        if (caster.isPlayer() && player != null && player.isInOlympiadMode() && !player.isOlympiadStart() &&
+            skill.isBad())
+        {
+            return null;
+        }
 
-		return castSkill(caster, target, skill, item, castingType, ctrlPressed, shiftPressed, null);
-	}
+        return castSkill(caster, target, skill, item, castingType, ctrlPressed, shiftPressed, null);
+    }
 
-	/**
-	 * Checks if the caster can cast the specified skill on the given target with the selected parameters.
-	 * @param caster the creature trying to cast
-	 * @param worldObject the selected target for cast
-	 * @param skill the skill being cast
-	 * @param item the reference item which requests the skill cast
-	 * @param castingType the type of casting
-	 * @param ctrlPressed force casting
-	 * @param shiftPressed dont move while casting
-	 * @param castTime custom cast time in milliseconds or -1 for default.
-	 * @return {@code SkillCaster} object containing casting data if casting has started or {@code null} if casting was not started.
-	 */
+    /**
+     * Checks if the caster can cast the specified skill on the given target with the selected parameters.
+     * @param caster the creature trying to cast
+     * @param worldObject the selected target for cast
+     * @param skill the skill being cast
+     * @param item the reference item which requests the skill cast
+     * @param castingType the type of casting
+     * @param ctrlPressed force casting
+     * @param shiftPressed dont move while casting
+     * @param castTime custom cast time in milliseconds or -1 for default.
+     * @return {@code SkillCaster} object containing casting data if casting has started or {@code null} if casting was not started.
+     */
 	public static SkillCaster? castSkill(Creature caster, WorldObject? worldObject, Skill skill, Item? item, SkillCastingType castingType, bool ctrlPressed, bool shiftPressed, TimeSpan? castTime)
 	{
 		if (caster == null || skill == null)
-		{
 			return null;
-		}
 
 		if (!checkUseConditions(caster, skill, castingType))
-		{
 			return null;
-		}
 
 		// Check true aiming target of the skill.
-		WorldObject target = skill.getTarget(caster, worldObject, ctrlPressed, shiftPressed, false);
+		WorldObject? target = skill.getTarget(caster, worldObject, ctrlPressed, shiftPressed, false);
 		if (target == null)
-		{
 			return null;
-		}
 
 		// You should not heal/buff monsters without pressing the ctrl button.
 		if (caster.isPlayer() && target.isMonster() && !target.isFakePlayer() && skill.getEffectPoint() > 0 && !ctrlPressed)
@@ -124,12 +123,14 @@ public class SkillCaster: Runnable
 			return null;
 		}
 
-		if (skill.getCastRange() > 0 && !Util.checkIfInRange(skill.getCastRange() + (int) caster.getStat().getValue(Stat.MAGIC_ATTACK_RANGE, 0), caster, target, false))
-		{
-			return null;
-		}
+        if (skill.getCastRange() > 0 &&
+            !Util.checkIfInRange(skill.getCastRange() + (int)caster.getStat().getValue(Stat.MAGIC_ATTACK_RANGE, 0),
+                caster, target, false))
+        {
+            return null;
+        }
 
-		// Schedule a thread that will execute 500ms before casting time is over (for animation issues and retail handling).
+        // Schedule a thread that will execute 500ms before casting time is over (for animation issues and retail handling).
 		SkillCaster skillCaster = new SkillCaster(caster, target, skill, item, castingType, ctrlPressed, shiftPressed, castTime);
 		skillCaster.run();
 		return skillCaster;
@@ -142,7 +143,7 @@ public class SkillCaster: Runnable
 		// Skills with instant cast are never launched.
 		if (instantCast)
 		{
-			triggerCast(_caster.get(), _target.get(), _skill, _item, false);
+			triggerCast(_caster, _target, _skill, _item, false);
 			return;
 		}
 
@@ -184,13 +185,10 @@ public class SkillCaster: Runnable
 
 	public bool startCasting()
 	{
-		Creature caster = _caster.get();
-		WorldObject target = _target.get();
-
-		if (caster == null || target == null)
-		{
+		Creature caster = _caster;
+		WorldObject? target = _target;
+		if (target == null)
 			return false;
-		}
 
 		_coolTime = Formulas.calcAtkSpd(caster, _skill, _skill.getCoolTime()); // TODO Get proper formula of this.
 		TimeSpan displayedCastTime = _hitTime + _cancelTime; // For client purposes, it must be displayed to player the skill casting time + launch time.
@@ -236,9 +234,14 @@ public class SkillCaster: Runnable
 		}
 
 		// Reduce talisman mana on skill use
-		if (_skill.getReferenceItemId() > 0 && ItemData.getInstance().getTemplate(_skill.getReferenceItemId()).getBodyPart() == ItemTemplate.SLOT_DECO)
+        ItemTemplate referenceItemTemplate = ItemData.getInstance().getTemplate(_skill.getReferenceItemId()) ??
+            throw new InvalidOperationException("Item template not found for skill reference item ID: " +
+                _skill.getReferenceItemId());
+
+        Inventory? casterInventory2 = caster.getInventory();
+		if (casterInventory2 != null && _skill.getReferenceItemId() > 0 && referenceItemTemplate.getBodyPart() == ItemTemplate.SLOT_DECO)
 		{
-			foreach (Item item in caster.getInventory().getItems())
+			foreach (Item item in casterInventory2.getItems())
 			{
 				if (item.isEquipped() && item.getId() == _skill.getReferenceItemId())
 				{
@@ -285,13 +288,13 @@ public class SkillCaster: Runnable
 		}
 
 		// Send a packet starting the casting.
+        Player? player = caster.getActingPlayer();
 		int actionId = caster.isSummon() ? ActionData.getInstance().getSkillActionId(_skill.getId()) : -1;
 		if (!_skill.isNotBroadcastable())
 		{
 			caster.broadcastPacket(new MagicSkillUsePacket(caster, target, _skill.getDisplayId(), _skill.getDisplayLevel(), displayedCastTime, reuseDelay, _skill.getReuseDelayGroup(), actionId, _castingType));
-			if (caster.isPlayer() && _skill.getTargetType() == TargetType.GROUND && _skill.getAffectScope() == AffectScope.FAN_PB)
+			if (caster.isPlayer() && player != null && _skill.getTargetType() == TargetType.GROUND && _skill.getAffectScope() == AffectScope.FAN_PB)
 			{
-				Player player = caster.getActingPlayer();
 				Location3D? worldPosition = player.getCurrentSkillWorldPosition();
 				if (worldPosition != null)
 				{
@@ -324,20 +327,25 @@ public class SkillCaster: Runnable
 		}
 
 		// Consume reagent item.
-		if (_skill.getItemConsumeId() > 0 && _skill.getItemConsumeCount() > 0 && caster.getInventory() != null)
+        Inventory? casterInventory = caster.getInventory();
+		if (_skill.getItemConsumeId() > 0 && _skill.getItemConsumeCount() > 0 && casterInventory != null)
 		{
 			// Get the Item consumed by the spell.
-			Item requiredItem = caster.getInventory().getItemByItemId(_skill.getItemConsumeId());
+			Item? requiredItem = casterInventory.getItemByItemId(_skill.getItemConsumeId());
+            if (requiredItem is null)
+            {
+                // TODO: Send a message to the player that the item is missing.
+                return false;
+            }
+
 			if (_skill.isBad() || requiredItem.getTemplate().getDefaultAction() == ActionType.NONE) // Non reagent items are removed at finishSkill or item handler.
 			{
 				caster.destroyItem(_skill.ToString(), requiredItem.ObjectId, _skill.getItemConsumeCount(), caster, false);
 			}
 		}
 
-		if (caster.isPlayer())
+		if (caster.isPlayer() && player != null)
 		{
-			Player player = caster.getActingPlayer();
-
 			// Consume fame points.
 			if (_skill.getFamePointConsume() > 0)
 			{
@@ -356,7 +364,7 @@ public class SkillCaster: Runnable
 			// Consume clan reputation points.
 			if (_skill.getClanRepConsume() > 0)
 			{
-				Clan clan = player.getClan();
+				Clan? clan = player.getClan();
 				if (clan == null || clan.getReputationScore() < _skill.getClanRepConsume())
 				{
 					player.sendPacket(SystemMessageId.THE_CLAN_REPUTATION_IS_TOO_LOW);
@@ -374,14 +382,14 @@ public class SkillCaster: Runnable
 		if (target.isCreature())
 		{
 			// Tempfix for the delayed TriggerSkillByDualRange effect skill.
-			List<AbstractEffect> effects = _skill.getEffects(EffectScope.GENERAL);
+			List<AbstractEffect>? effects = _skill.getEffects(EffectScope.GENERAL);
 			if (effects != null && effects.Count != 0)
 			{
 				foreach (AbstractEffect effect in effects)
 				{
 					if (effect.getEffectType() == EffectType.DUAL_RANGE)
 					{
-						effect.instant(caster, (Creature) target, _skill, null);
+						effect.instant(caster, (Creature)target, _skill, null);
 						return false;
 					}
 				}
@@ -400,13 +408,10 @@ public class SkillCaster: Runnable
 
 	public bool launchSkill()
 	{
-		Creature caster = _caster.get();
-		WorldObject target = _target.get();
-
-		if (caster == null || target == null)
-		{
+		Creature caster = _caster;
+		WorldObject? target = _target;
+		if (target == null)
 			return false;
-		}
 
 		if (_skill.getEffectRange() > 0 && !Util.checkIfInRange(_skill.getEffectRange(), caster, target, true))
 		{
@@ -428,26 +433,22 @@ public class SkillCaster: Runnable
 
 		// Display animation of launching skill upon targets.
 		if (!_skill.isNotBroadcastable())
-		{
+        {
 			caster.broadcastPacket(new MagicSkillLaunchedPacket(caster, _skill.getDisplayId(), _skill.getDisplayLevel(), _castingType, _targets));
 		}
+
 		return true;
 	}
 
 	public bool finishSkill()
 	{
-		Creature caster = _caster.get();
-		WorldObject target = _target.get();
-
-		if (caster == null || target == null)
-		{
+		Creature caster = _caster;
+		WorldObject? target = _target;
+		if (target == null)
 			return false;
-		}
 
 		if (_targets == null)
-		{
 			_targets = [target];
-		}
 
 		StatusUpdatePacket su = new StatusUpdatePacket(caster);
 
@@ -485,32 +486,30 @@ public class SkillCaster: Runnable
 			caster.sendPacket(su);
 		}
 
-		if (caster.isPlayer())
+        Player? casterPlayer = caster.getActingPlayer();
+		if (caster.isPlayer() && casterPlayer != null)
 		{
 			// Consume Souls if necessary.
-			if (_skill.getMaxLightSoulConsumeCount() > 0 && !caster.getActingPlayer().decreaseSouls(_skill.getMaxLightSoulConsumeCount(), SoulType.LIGHT))
-			{
+			if (_skill.getMaxLightSoulConsumeCount() > 0 && !casterPlayer.decreaseSouls(_skill.getMaxLightSoulConsumeCount(), SoulType.LIGHT))
 				return false;
-			}
-			if (_skill.getMaxShadowSoulConsumeCount() > 0 && !caster.getActingPlayer().decreaseSouls(_skill.getMaxShadowSoulConsumeCount(), SoulType.SHADOW))
-			{
+
+            if (_skill.getMaxShadowSoulConsumeCount() > 0 && !casterPlayer.decreaseSouls(_skill.getMaxShadowSoulConsumeCount(), SoulType.SHADOW))
 				return false;
-			}
 
 			// Consume charges if necessary.
-			if (_skill.getChargeConsumeCount() > 0 && !caster.getActingPlayer().decreaseCharges(_skill.getChargeConsumeCount()))
-			{
+			if (_skill.getChargeConsumeCount() > 0 && !casterPlayer.decreaseCharges(_skill.getChargeConsumeCount()))
 				return false;
-			}
 		}
 
 		// Consume skill reduced item on success.
-		if (_item != null && _item.getTemplate().getDefaultAction() == ActionType.SKILL_REDUCE_ON_SKILL_SUCCESS && _skill.getItemConsumeId() > 0 && _skill.getItemConsumeCount() > 0 && !caster.destroyItem(_skill.ToString(), _item.ObjectId, _skill.getItemConsumeCount(), target, true))
-		{
-			return false;
-		}
+        if (_item != null && _item.getTemplate().getDefaultAction() == ActionType.SKILL_REDUCE_ON_SKILL_SUCCESS &&
+            _skill.getItemConsumeId() > 0 && _skill.getItemConsumeCount() > 0 && !caster.destroyItem(_skill.ToString(),
+                _item.ObjectId, _skill.getItemConsumeCount(), target, true))
+        {
+            return false;
+        }
 
-		// Notify skill is casted.
+        // Notify skill is casted.
 		if (caster.Events.HasSubscribers<OnCreatureSkillFinishCast>())
 		{
 			caster.onCreatureSkillFinishCast ??= new OnCreatureSkillFinishCast();
@@ -538,16 +537,17 @@ public class SkillCaster: Runnable
 		caster.rechargeShots(_skill.useSoulShot(), _skill.useSpiritShot(), false);
 
 		// Reset current skill world position.
-		if (caster.isPlayer() && _skill.getTargetType() == TargetType.GROUND &&
+        Player? casterPlayer2 = caster.getActingPlayer();
+		if (caster.isPlayer() && casterPlayer2 != null && _skill.getTargetType() == TargetType.GROUND &&
 		    (_skill.getAffectScope() == AffectScope.FAN_PB || _skill.getAffectScope() == AffectScope.FAN))
 		{
-			caster.getActingPlayer().setCurrentSkillWorldPosition(null);
+            casterPlayer2.setCurrentSkillWorldPosition(null);
 		}
 
 		return true;
 	}
 
-	public static void callSkill(Creature caster, WorldObject target, ICollection<WorldObject> targets, Skill skill, Item item)
+	public static void callSkill(Creature caster, WorldObject target, List<WorldObject> targets, Skill skill, Item? item)
 	{
 		// Launch the magic skill in order to calculate its effects
 		try
@@ -591,7 +591,7 @@ public class SkillCaster: Runnable
 				// Static skills not trigger any chance skills
 				if (!skill.isStatic())
 				{
-					Weapon activeWeapon = caster.getActiveWeaponItem();
+					Weapon? activeWeapon = caster.getActiveWeaponItem();
 					// Launch weapon Special ability skill effect if available
 					if (activeWeapon != null && !creature.isDead())
 					{
@@ -612,9 +612,9 @@ public class SkillCaster: Runnable
 			}
 
 			// Launch the magic skill and calculate its effects
-			skill.activateSkill(caster, item, targets.ToArray());
+			skill.activateSkill(caster, item, targets);
 
-			Player player = caster.getActingPlayer();
+			Player? player = caster.getActingPlayer();
 			if (player != null)
 			{
 				foreach (WorldObject obj in targets)
@@ -643,11 +643,12 @@ public class SkillCaster: Runnable
 							((Creature) obj).addAttackerToAttackByList(caster);
 
 							// Summoning a servitor should not renew your own PvP flag time.
-							if (obj.isFakePlayer() && !Config.FAKE_PLAYER_AUTO_ATTACKABLE && (!obj.isServitor() || obj.ObjectId != player.getFirstServitor().ObjectId))
-							{
-								player.updatePvPStatus();
-							}
-						}
+                            if (obj.isFakePlayer() && !Config.FAKE_PLAYER_AUTO_ATTACKABLE &&
+                                (!obj.isServitor() || obj.ObjectId != player.getFirstServitor()?.ObjectId))
+                            {
+                                player.updatePvPStatus();
+                            }
+                        }
 
 						// notify target AI about the attack
 						if (((Creature) obj).hasAI() && !skill.hasEffectType(EffectType.HATE))
@@ -659,8 +660,9 @@ public class SkillCaster: Runnable
 					else if (obj != player)
 					{
 						// Supporting monsters or players results in pvpflag.
+                        Player? objPlayer = obj.getActingPlayer();
 						if ((skill.getEffectPoint() > 0 && obj.isMonster()) //
-							|| (obj.isPlayable() && (obj.getActingPlayer().getPvpFlag() != PvpFlagStatus.None //
+							|| (obj.isPlayable() && objPlayer != null && (objPlayer.getPvpFlag() != PvpFlagStatus.None //
 								|| ((Creature) obj).getReputation() < 0 //
 							)))
 						{
@@ -688,7 +690,7 @@ public class SkillCaster: Runnable
 						Attackable attackable = (Attackable) npcMob;
 						if (skill.getEffectPoint() > 0 && attackable.hasAI() && attackable.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
 						{
-							WorldObject npcTarget = attackable.getTarget();
+							WorldObject? npcTarget = attackable.getTarget();
 							foreach (WorldObject skillTarget in targets)
 							{
 								if (npcTarget == skillTarget || npcMob == skillTarget)
@@ -710,7 +712,7 @@ public class SkillCaster: Runnable
 					{
 						npc.setScriptValue(1); // in combat
 						npc.broadcastInfo(); // update flag status
-						QuestManager.getInstance().getQuest("PvpFlaggingStopTask").notifyEvent("FLAG_CHECK", npc, null);
+						QuestManager.getInstance().getQuest("PvpFlaggingStopTask")?.notifyEvent("FLAG_CHECK", npc, null); // TODO: what is this?
 					}
 				}
 			}
@@ -734,12 +736,8 @@ public class SkillCaster: Runnable
 			_task = null;
 		}
 
-		Creature caster = _caster.get();
-		WorldObject target = _target.get();
-		if (caster == null)
-		{
-			return;
-		}
+		Creature caster = _caster;
+		WorldObject? target = _target;
 
 		caster.removeSkillCaster(_castingType);
 
@@ -756,9 +754,9 @@ public class SkillCaster: Runnable
 		}
 
 		// If there is a queued skill, launch it and wipe the queue.
-		if (caster.isPlayer())
+        Player? currPlayer = caster.getActingPlayer();
+		if (caster.isPlayer() && currPlayer != null)
 		{
-			Player currPlayer = caster.getActingPlayer();
 			SkillUseHolder queuedSkill = currPlayer.getQueuedSkill();
 			if (queuedSkill != null)
 			{
@@ -805,9 +803,10 @@ public class SkillCaster: Runnable
 		else
 		{
 			int addedTime = 0;
-			if (skill.hasEffectType(EffectType.TELEPORT) && creature.isPlayer())
+            Player? creaturePlayer = creature.getActingPlayer();
+			if (skill.hasEffectType(EffectType.TELEPORT) && creature.isPlayer() && creaturePlayer != null)
 			{
-				switch (creature.getActingPlayer().getEinhasadOverseeingLevel())
+				switch (creaturePlayer.getEinhasadOverseeingLevel())
 				{
 					case 6:
 					{
@@ -860,49 +859,40 @@ public class SkillCaster: Runnable
 	{
 		try
 		{
-			if (creature == null || skill == null)
-			{
-				return;
-			}
-
 			if (skill.checkCondition(creature, target, true))
 			{
 				if (creature.isSkillDisabled(skill))
-				{
 					return;
-				}
 
 				if (skill.getReuseDelay() > TimeSpan.Zero)
-				{
 					creature.disableSkill(skill, skill.getReuseDelay());
-				}
 
-				WorldObject currentTarget = target;
+				WorldObject? currentTarget = target;
 				if (!ignoreTargetType)
 				{
-					WorldObject objTarget = skill.getTarget(creature, false, false, false);
+					WorldObject? objTarget = skill.getTarget(creature, false, false, false);
 
 					// Avoid triggering skills on invalid targets.
 					if (objTarget == null)
-					{
 						return;
-					}
 
 					if (objTarget.isCreature())
-					{
 						currentTarget = objTarget;
-					}
 				}
 
-				WorldObject[] targets = skill.getTargetsAffected(creature, currentTarget).ToArray();
+				List<WorldObject>? targets = skill.getTargetsAffected(creature, currentTarget);
 
 				if (!skill.isNotBroadcastable())
 				{
-					creature.broadcastPacket(new MagicSkillUsePacket(creature, currentTarget, skill.getDisplayId(), skill.getLevel(), TimeSpan.Zero, TimeSpan.Zero));
+                    // TODO: null checking hack, probably refactoring required
+                    if (currentTarget is null)
+                        throw new InvalidOperationException("Target is null for MagicSkillUsePacket packet");
+
+                    creature.broadcastPacket(new MagicSkillUsePacket(creature, currentTarget, skill.getDisplayId(), skill.getLevel(), TimeSpan.Zero, TimeSpan.Zero));
 				}
 
 				// Launch the magic skill and calculate its effects
-				skill.activateSkill(creature, item, targets);
+				skill.activateSkill(creature, item, targets ?? []);
 
 				// Notify skill is casted.
 				if (creature.Events.HasSubscribers<OnCreatureSkillFinishCast>())
@@ -936,21 +926,21 @@ public class SkillCaster: Runnable
 	 */
 	public Creature getCaster()
 	{
-		return _caster.get();
+		return _caster;
 	}
 
 	/**
 	 * @return the target this skill is being cast on.
 	 */
-	public WorldObject getTarget()
+	public WorldObject? getTarget()
 	{
-		return _target.get();
+		return _target;
 	}
 
 	/**
 	 * @return the item that has been used in this casting.
 	 */
-	public Item getItem()
+	public Item? getItem()
 	{
 		return _item;
 	}
@@ -987,9 +977,9 @@ public class SkillCaster: Runnable
 	}
 
 	public override string ToString()
-	{
-		return base.ToString() + " [caster: " + _caster.get() + " skill: " + _skill + " target: " + _target.get() + " type: " + _castingType + "]";
-	}
+    {
+        return $"{base.ToString()} [caster: {_caster} skill: {_skill} target: {_target} type: {_castingType}]";
+    }
 
 	/**
 	 * Checks general conditions for casting a skill through the regular casting type.
@@ -1039,7 +1029,7 @@ public class SkillCaster: Runnable
 		}
 
 		// Check if creature is already casting
-		if (castingType != null && caster.isCastingNow(castingType))
+		if (caster.isCastingNow(castingType))
 		{
 			caster.sendPacket(new ActionFailedPacket(castingType));
 			return false;
@@ -1081,10 +1071,10 @@ public class SkillCaster: Runnable
 		}
 
 		// Check if the caster's weapon is limited to use only its own skills
-		Weapon weapon = caster.getActiveWeaponItem();
+		Weapon? weapon = caster.getActiveWeaponItem();
 		if (weapon != null && weapon.useWeaponSkillsOnly() && !caster.canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS))
 		{
-			List<ItemSkillHolder> weaponSkills = weapon.getSkills(ItemSkillType.NORMAL);
+			List<ItemSkillHolder>? weaponSkills = weapon.getSkills(ItemSkillType.NORMAL);
 			if (weaponSkills != null)
 			{
 				bool hasSkill = false;
@@ -1106,10 +1096,11 @@ public class SkillCaster: Runnable
 		}
 
 		// Check if a spell consumes an item.
-		if (skill.getItemConsumeId() > 0 && skill.getItemConsumeCount() > 0 && caster.getInventory() != null)
+        Inventory? casterInventory = caster.getInventory();
+		if (skill.getItemConsumeId() > 0 && skill.getItemConsumeCount() > 0 && casterInventory != null)
 		{
 			// Get the Item consumed by the spell
-			Item requiredItem = caster.getInventory().getItemByItemId(skill.getItemConsumeId());
+			Item? requiredItem = casterInventory.getItemByItemId(skill.getItemConsumeId());
 			if (requiredItem == null || requiredItem.getCount() < skill.getItemConsumeCount())
 			{
 				if (skill.hasEffectType(EffectType.SUMMON))
@@ -1127,9 +1118,9 @@ public class SkillCaster: Runnable
 			}
 		}
 
-		if (caster.isPlayer())
+        Player? player = caster.getActingPlayer();
+		if (caster.isPlayer() && player != null)
 		{
-			Player player = caster.getActingPlayer();
 			if (player.inObserverMode())
 			{
 				return false;
@@ -1165,7 +1156,7 @@ public class SkillCaster: Runnable
 			// Consume clan reputation points
 			if (skill.getClanRepConsume() > 0)
 			{
-				Clan clan = player.getClan();
+				Clan? clan = player.getClan();
 				if (clan == null || clan.getReputationScore() < skill.getClanRepConsume())
 				{
 					player.sendPacket(SystemMessageId.THE_CLAN_REPUTATION_IS_TOO_LOW);
@@ -1193,8 +1184,10 @@ public class SkillCaster: Runnable
 
 				if (skill.isBad() && !player.isOnSoloEvent())
 				{
-					WorldObject target = player.getTarget();
-					if (target != null && target.isPlayable() && player.getTeam() == target.getActingPlayer().getTeam())
+					WorldObject? target = player.getTarget();
+                    Player? targetPlayer = target?.getActingPlayer();
+					if (target != null && target.isPlayable() && targetPlayer != null &&
+                        player.getTeam() == targetPlayer.getTeam())
 					{
 						return false;
 					}

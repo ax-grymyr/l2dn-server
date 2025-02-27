@@ -19,10 +19,10 @@ public class CommandChannel: AbstractPlayerGroup
 	 * Create a new command channel and add the leader's party to it.
 	 * @param leader the leader of this command channel
 	 */
-	public CommandChannel(Player leader)
+	public CommandChannel(Player leader) // TODO: the arguments must be 2 Party, not leaders
 	{
 		_commandLeader = leader;
-		Party? party = leader.getParty();
+		Party party = leader.getParty() ?? throw new ArgumentException("Leader must be in a party.");
 		_parties.add(party);
 		_channelLvl = party.getLevel();
 		party.setCommandChannel(this);

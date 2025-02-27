@@ -16,9 +16,9 @@ public class CubicTemplate: CreatureTemplate
 	private readonly int _useUp;
 	private readonly double _power;
 	private readonly CubicTargetType _targetType;
-	private readonly List<ICubicCondition> _conditions = new();
-	private readonly List<CubicSkill> _skills = new();
-	
+	private readonly List<ICubicCondition> _conditions = [];
+	private readonly List<CubicSkill> _skills = [];
+
 	public CubicTemplate(XmlCubic xmlCubic): base(StatSet.EMPTY_STATSET)
 	{
 		_id = xmlCubic.Id;
@@ -28,72 +28,72 @@ public class CubicTemplate: CreatureTemplate
 		_delay = xmlCubic.Delay;
 		_maxCount = xmlCubic.MaxCount;
 		_useUp = xmlCubic.UseUp;
-		_power = xmlCubic.Power / 10;
+		_power = xmlCubic.Power / 10; // TODO: provide in a set to the base class for BasePAtk and BaseMAtk
 		_targetType = xmlCubic.TargetType;
 	}
-	
+
 	public int getId()
 	{
 		return _id;
 	}
-	
+
 	public int getLevel()
 	{
 		return _level;
 	}
-	
+
 	public int getSlot()
 	{
 		return _slot;
 	}
-	
+
 	public int getDuration()
 	{
 		return _duration;
 	}
-	
+
 	public int getDelay()
 	{
 		return _delay;
 	}
-	
+
 	public int getMaxCount()
 	{
 		return _maxCount;
 	}
-	
+
 	public int getUseUp()
 	{
 		return _useUp;
 	}
-	
+
 	public CubicTargetType getTargetType()
 	{
 		return _targetType;
 	}
-	
+
 	public List<CubicSkill> getCubicSkills()
 	{
 		return _skills;
 	}
-	
+
 	public override int getBasePAtk()
 	{
 		return (int)_power;
 	}
-	
+
 	public override int getBaseMAtk()
 	{
 		return (int)_power;
 	}
-	
+
 	public bool validateConditions(Cubic cubic, Creature owner, WorldObject target)
 	{
 		if (_conditions.Count == 0)
 		{
 			return true;
 		}
-		
+
 		foreach (ICubicCondition condition in _conditions)
 		{
 			if (!condition.test(cubic, owner, target))
@@ -101,10 +101,10 @@ public class CubicTemplate: CreatureTemplate
 				return false;
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	public void addCondition(ICubicCondition condition)
 	{
 		_conditions.Add(condition);

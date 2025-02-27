@@ -130,7 +130,7 @@ public class Attackable: Npc
 			return;
 		}
 
-		WorldObject target = skill.getTarget(this, false, false, false);
+		WorldObject? target = skill.getTarget(this, false, false, false);
 		if (target != null)
 		{
 			getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target);

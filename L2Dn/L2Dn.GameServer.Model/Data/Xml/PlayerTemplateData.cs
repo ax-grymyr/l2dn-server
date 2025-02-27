@@ -1,6 +1,7 @@
 using System.Collections.Frozen;
 using System.Collections.Immutable;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.Geometry;
@@ -94,6 +95,7 @@ public class PlayerTemplateData: DataReaderBase
 		// TODO: get rid of StatSet
 		StatSet set = new();
 		set.set("classId", classId);
+        set.set("race", classId.GetRace());
 		set.set("baseINT", xmlStaticData.BaseInt);
 		set.set("baseSTR", xmlStaticData.BaseStr);
 		set.set("baseCON", xmlStaticData.BaseCon);

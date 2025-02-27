@@ -1175,7 +1175,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				{
 					npc.setScriptValue(1); // in combat
 					broadcastInfo(); // update flag status
-					QuestManager.getInstance().getQuest("PvpFlaggingStopTask").notifyEvent("FLAG_CHECK", npc, null);
+
+					QuestManager.getInstance().getQuest("PvpFlaggingStopTask")?.notifyEvent("FLAG_CHECK", npc, null); // TODO: what is this?
 				}
 			}
 		}
@@ -1325,7 +1326,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 
 		// Try casting the skill
-		SkillCaster skillCaster = SkillCaster.castSkill(this, _target, skill, item, castingType, ctrlPressed, shiftPressed);
+		SkillCaster? skillCaster = SkillCaster.castSkill(this, _target, skill, item, castingType, ctrlPressed, shiftPressed);
 		if (skillCaster == null && isPlayer())
 		{
 			// Skill casting failed, notify player.
@@ -1639,12 +1640,12 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			_eventContainer.Notify(new OnCreatureDeath(killer, this));
 		}
 
-		if (killer.Events.HasSubscribers<OnCreatureKilled>())
+		if (killer != null && killer.Events.HasSubscribers<OnCreatureKilled>())
 		{
 			killer._eventContainer.Notify(new OnCreatureKilled(killer, this));
 		}
 
-        Player? killerPlayer = killer.getActingPlayer();
+        Player? killerPlayer = killer?.getActingPlayer();
 		if (killer != null && killer.isPlayer() && killerPlayer != null)
 		{
 			if (killerPlayer.isAssassin() && killerPlayer.isAffectedBySkill((int)CommonSkill.BRUTALITY))
@@ -3057,7 +3058,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public bool abortCast(Predicate<SkillCaster> filter)
 	{
-		SkillCaster skillCaster = getSkillCaster(x => x.canAbortCast(), filter);
+		SkillCaster? skillCaster = getSkillCaster(x => x.canAbortCast(), filter);
 		if (skillCaster != null)
 		{
 			skillCaster.stopCasting(true);
@@ -3098,9 +3099,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// Get movement data
 		MoveData? move = _move;
 		if (move == null)
-		{
 			return true;
-		}
 
 		// Check if this is the first update
 		if (move.moveTimestamp == 0)
@@ -3140,7 +3139,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				int y = yPrev + y1;
 				if (!GeoEngine.getInstance().canMoveToTarget(new Location3D(xPrev, yPrev, zPrev), new Location3D(x, y, zPrev), getInstanceWorld()))
 				{
-					_move.onGeodataPathIndex = -1;
+					move.onGeodataPathIndex = -1;
 					stopMove(new Location(player.getLastServerPosition(), 0));
 					return false;
 				}
@@ -3161,7 +3160,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 					int y = yPrev + y1;
 					if (!GeoEngine.getInstance().canMoveToTarget(new Location3D(xPrev, yPrev, zPrev), new Location3D(x, y, zPrev), getInstanceWorld()))
 					{
-						_move.onGeodataPathIndex = -1;
+						move.onGeodataPathIndex = -1;
 						if (hasAI())
 						{
 							if (getAI().isFollowing())
@@ -3189,7 +3188,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						if (!GeoEngine.getInstance().canMoveToTarget(new Location3D(xPrev, yPrev, zPrev), new Location3D(x, y, zPrev), getInstanceWorld()))
 						{
 							_suspendedMovement = true;
-							_move.onGeodataPathIndex = -1;
+							move.onGeodataPathIndex = -1;
 							broadcastPacket(new StopMovePacket(this));
 							return false;
 						}
@@ -3214,7 +3213,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 								if ((hasDoors && DoorData.getInstance().checkIfDoorsBetween(new Location3D(xPrev, yPrev, zPrev), new Location3D(x, y, zPrev), getInstanceWorld(), false)) //
 									|| (hasFences && FenceData.getInstance().checkIfFenceBetween(new Location3D(xPrev, yPrev, zPrev), new Location3D(x, y, zPrev), getInstanceWorld())))
 								{
-									_move.onGeodataPathIndex = -1;
+									move.onGeodataPathIndex = -1;
 									if (hasAI())
 									{
 										if (getAI().isFollowing())
@@ -3384,6 +3383,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			_target = null;
 			return;
 		}
+
 		_target = obj;
 	}
 
@@ -3530,8 +3530,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		move.disregardingGeodata = region == null || !region.AreNeighborsActive;
 		move.onGeodataPathIndex = -1; // Initialize not on geodata path
 		if (!move.disregardingGeodata && !_isFlying && !isInWater && !isVehicle() && !_cursorKeyMovement)
-		{
-			bool isInVehicle = isPlayer() && getActingPlayer().getVehicle() != null;
+        {
+            Player? player = getActingPlayer();
+			bool isInVehicle = isPlayer() && player != null && player.getVehicle() != null;
 			if (isInVehicle)
 			{
 				move.disregardingGeodata = true;
@@ -3561,8 +3562,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				}
 
 				// Support for player attack with direct movement. Tested at retail on May 11th 2023.
-				bool directMove = isPlayer() && hasAI() &&
-					getActingPlayer().getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK;
+				bool directMove = isPlayer() && hasAI() && player != null &&
+					player.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK;
 
 				if (directMove //
 				    || (!isInVehicle // Not in vehicle.
@@ -3734,9 +3735,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		MoveData? md = _move;
 		if (md == null)
-		{
 			return false;
-		}
 
 		// Get current position of the Creature
 		int curX = getX();
@@ -3885,7 +3884,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * @param hitTime the time it took for this hit to occur
 	 * @param attackTime the time it takes for the whole attack to complete
 	 */
-	public void onHitTimeNotDual(Weapon weapon, AttackPacket attack, int hitTime, int attackTime)
+	public void onHitTimeNotDual(Weapon? weapon, AttackPacket attack, int hitTime, int attackTime)
 	{
 		if (_isDead)
 		{
@@ -3930,7 +3929,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		CreatureAttackTaskManager.getInstance().onAttackFinish(this, attack, attackTime - hitTime);
 	}
 
-	public void onFirstHitTimeForDual(Weapon weapon, AttackPacket attack, int hitTime, int attackTime, int delayForSecondAttack)
+	public void onFirstHitTimeForDual(Weapon? weapon, AttackPacket attack, int hitTime, int attackTime, int delayForSecondAttack)
 	{
 		if (_isDead)
 		{
@@ -3959,7 +3958,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 	}
 
-	public void onSecondHitTimeForDual(Weapon weapon, AttackPacket attack, int hitTime1, int hitTime2, int attackTime)
+	public void onSecondHitTimeForDual(Weapon? weapon, AttackPacket attack, int hitTime1, int hitTime2, int attackTime)
 	{
 		if (_isDead)
 		{
@@ -3990,7 +3989,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		CreatureAttackTaskManager.getInstance().onAttackFinish(this, attack, attackTime - (hitTime1 + hitTime2));
 	}
 
-	public void onHitTarget(Creature target, Weapon weapon, Hit hit)
+	public void onHitTarget(Creature target, Weapon? weapon, Hit hit)
 	{
 		// reduce targets HP
 		doAttack(hit.getDamage(), target, null, false, false, hit.isCritical(), false);
@@ -4041,12 +4040,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 			// If hit by a cursed weapon, CP is reduced to 0.
 			// If a cursed weapon is hit by a Hero, CP is reduced to 0.
-			if (player.isCursedWeaponEquipped() || (player.isHero() && target.isPlayer() && target.getActingPlayer().isCursedWeaponEquipped()))
-			{
-				target.setCurrentCp(0);
-			}
+            Player? targetPlayer = target.getActingPlayer();
+            if (player.isCursedWeaponEquipped() || (player.isHero() && target.isPlayer() && targetPlayer != null &&
+                    targetPlayer.isCursedWeaponEquipped()))
+            {
+                target.setCurrentCp(0);
+            }
 
-			if (player.isDeathKnight())
+            if (player.isDeathKnight())
 			{
 				if (target.isAttackable() || target.isPlayable())
 				{
@@ -4117,7 +4118,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	public void breakCast()
 	{
 		// Break only one skill at a time while casting.
-		SkillCaster skillCaster = getSkillCaster(c => c.isAnyNormalType());
+		SkillCaster? skillCaster = getSkillCaster(c => c.isAnyNormalType());
 		if (skillCaster != null && skillCaster.getSkill().isMagic())
 		{
 			// Abort the cast of the Creature and send Server=>Client MagicSkillCanceled/ActionFailed packet.
@@ -4152,13 +4153,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return;
 		}
-		if (player.isInOlympiadMode() && player.getTarget() != null && player.getTarget().isPlayable())
+
+        WorldObject? playerTarget = player.getTarget();
+		if (player.isInOlympiadMode() && playerTarget != null && playerTarget.isPlayable())
 		{
 			Player? target = null;
-			WorldObject? obj = player.getTarget();
-			if (obj != null && obj.isPlayable())
+			if (playerTarget != null && playerTarget.isPlayable())
 			{
-				target = obj.getActingPlayer();
+				target = playerTarget.getActingPlayer();
 			}
 
 			if (target == null || (target.isInOlympiadMode() && (!player.isOlympiadStart() || player.getOlympiadGameId() != target.getOlympiadGameId())))
@@ -4168,7 +4170,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				return;
 			}
 		}
-		if (player.getTarget() != null && !player.getTarget().canBeAttacked() && !player.getAccessLevel().allowPeaceAttack())
+
+		if (playerTarget != null && !playerTarget.canBeAttacked() && !player.getAccessLevel().allowPeaceAttack())
 		{
 			// If target is not attackable, send a Server=>Client packet ActionFailed
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -4210,20 +4213,23 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return false;
 		}
 
+        Player? attackerPlayer = attacker.getActingPlayer();
 		if (Config.ALT_GAME_KARMA_PLAYER_CAN_BE_KILLED_IN_PEACEZONE)
 		{
 			// allows red to be attacked and red to attack flagged players
-			if (target.getActingPlayer() != null && target.getActingPlayer().getReputation() < 0)
+            Player? targetPlayer = target.getActingPlayer();
+			if (targetPlayer != null && targetPlayer.getReputation() < 0)
 			{
 				return false;
 			}
-			if (attacker.getActingPlayer() != null && attacker.getActingPlayer().getReputation() < 0 && target.getActingPlayer() != null && target.getActingPlayer().getPvpFlag() != PvpFlagStatus.None)
+
+			if (attackerPlayer != null && attackerPlayer.getReputation() < 0 && targetPlayer != null && targetPlayer.getPvpFlag() != PvpFlagStatus.None)
 			{
 				return false;
 			}
 		}
 
-		if (attacker.getActingPlayer() != null && attacker.getActingPlayer().getAccessLevel().allowPeaceAttack())
+		if (attackerPlayer != null && attackerPlayer.getAccessLevel().allowPeaceAttack())
 		{
 			return false;
 		}
@@ -4280,15 +4286,18 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	public virtual Skill? addSkill(Skill skill)
 	{
 		Skill? oldSkill = null;
-		Skill? newSkill = skill;
+		Skill newSkill = skill;
 		if (newSkill != null)
 		{
 			// Mobius: Keep sublevel on skill level increase.
 			Skill? existingSkill = _skills.get(newSkill.getId());
 			if (existingSkill != null && existingSkill.getSubLevel() > 0 && newSkill.getSubLevel() == 0 && existingSkill.getLevel() < newSkill.getLevel())
-			{
-				newSkill = SkillData.getInstance().getSkill(newSkill.getId(), newSkill.getLevel(), existingSkill.getSubLevel());
-			}
+            {
+                newSkill = SkillData.getInstance().
+                        getSkill(newSkill.getId(), newSkill.getLevel(), existingSkill.getSubLevel()) ??
+                    throw new InvalidOperationException("Skill not found for id " + newSkill.getId() + " level " +
+                        newSkill.getLevel() + " sublevel " + existingSkill.getSubLevel());
+            }
 
 			// Replace oldSkill by newSkill or Add the newSkill
 			oldSkill = _skills.put(newSkill.getId(), newSkill);
@@ -4317,12 +4326,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		return skill != null ? removeSkill(skill.getId(), cancelEffect) : null;
 	}
 
-	public Skill removeSkill(int skillId)
-	{
-		return removeSkill(skillId, true);
-	}
-
-	public Skill removeSkill(int skillId, bool cancelEffect)
+	public Skill? removeSkill(int skillId, bool cancelEffect = true)
 	{
 		// Remove the skill from the Creature _skills
 		Skill? oldSkill = _skills.remove(skillId);
@@ -4384,7 +4388,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public virtual int getSkillLevel(int skillId)
 	{
-		Skill skill = getKnownSkill(skillId);
+		Skill? skill = getKnownSkill(skillId);
 		return skill == null ? 0 : skill.getLevel();
 	}
 
@@ -4857,13 +4861,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			amount = Math.Min(amount, damageCap);
 		}
 
+        Player? player = getActingPlayer();
 		if (Config.CHAMPION_ENABLE && isChampion() && Config.CHAMPION_HP != 0)
 		{
 			_status.reduceHp(amount / Config.CHAMPION_HP, attacker, skill == null || !skill.isToggle(), isDOT, false);
 		}
-		else if (isPlayer())
+		else if (isPlayer() && player != null)
 		{
-			getActingPlayer().getStatus().reduceHp(amount, attacker, skill, skill == null || !skill.isToggle(), isDOT, false, directlyToHp);
+            player.getStatus().reduceHp(amount, attacker, skill, skill == null || !skill.isToggle(), isDOT, false, directlyToHp);
 		}
 		else
 		{
@@ -4875,15 +4880,16 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			attacker.sendDamageMessage(this, skill, (int) amount, elementalDamage, critical, false, elementalCrit);
 		}
 
-		if (isMonster() && attacker is Playable)
+        Player? attackerPlayer = attacker?.getActingPlayer();
+		if (isMonster() && attacker is Playable && attackerPlayer != null)
 		{
-			ElementalSpirit[] playerSpirits = attacker.getActingPlayer().getSpirits();
+			ElementalSpirit[] playerSpirits = attackerPlayer.getSpirits();
 			if (playerSpirits != null)
 			{
 				ElementalType monsterElementalType = getElementalSpiritType();
-				if (monsterElementalType != ElementalType.NONE && attacker.getActingPlayer().getActiveElementalSpiritType() != monsterElementalType)
+				if (monsterElementalType != ElementalType.NONE && attackerPlayer.getActiveElementalSpiritType() != monsterElementalType)
 				{
-					attacker.getActingPlayer().changeElementalSpirit(monsterElementalType.superior());
+                    attackerPlayer.changeElementalSpirit(monsterElementalType.superior());
 				}
 			}
 		}
@@ -4997,11 +5003,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * @return the current weight of the Creature.
 	 */
 	public int getCurrentLoad()
-	{
-		if (isPlayer() || isPet())
-		{
-			return getInventory().getTotalWeight();
-		}
+    {
+        Inventory? inventory = getInventory();
+		if (inventory != null && (isPlayer() || isPet()))
+			return inventory.getTotalWeight();
+
 		return 0;
 	}
 
@@ -5337,12 +5343,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * @param objectId the summoned NPC object ID
 	 * @return the summoned NPC
 	 */
-	public Npc getSummonedNpc(int objectId)
+	public Npc? getSummonedNpc(int objectId)
 	{
 		if (_summonedNpcs != null)
-		{
 			return _summonedNpcs.get(objectId);
-		}
+
 		return null;
 	}
 
@@ -5381,12 +5386,12 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		return _skillCasters.Values;
 	}
 
-	public SkillCaster addSkillCaster(SkillCastingType castingType, SkillCaster skillCaster)
+	public SkillCaster? addSkillCaster(SkillCastingType castingType, SkillCaster skillCaster)
 	{
 		return _skillCasters.put(castingType, skillCaster);
 	}
 
-	public SkillCaster removeSkillCaster(SkillCastingType castingType)
+	public SkillCaster? removeSkillCaster(SkillCastingType castingType)
 	{
 		return _skillCasters.remove(castingType);
 	}
@@ -5406,17 +5411,16 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		return result;
 	}
 
-	public SkillCaster getSkillCaster(Predicate<SkillCaster> filterValue, params Predicate<SkillCaster>[] filters)
+	public SkillCaster? getSkillCaster(Predicate<SkillCaster> filterValue, params Predicate<SkillCaster>[] filters)
 	{
 		Predicate<SkillCaster> filter = s => filterValue(s) && filters.All(f => f(s));
 
 		foreach (SkillCaster skillCaster in _skillCasters.Values)
 		{
 			if (filter(skillCaster))
-			{
 				return skillCaster;
-			}
 		}
+
 		return null;
 	}
 
@@ -5672,23 +5676,24 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		int newValue = type.getValue(this);
 		_statusUpdates.compute(type, (key, oldValue) =>
 		{
-			if (oldValue == null || oldValue != newValue)
+			if (oldValue != newValue)
 			{
 				su.addUpdate(type, newValue);
-				if (isPlayer())
+                Player? player = getActingPlayer();
+				if (isPlayer() && player != null)
 				{
 					if (type == StatusUpdateType.MAX_DP)
 					{
-						su.addUpdate(StatusUpdateType.CUR_DP, getActingPlayer().getDeathPoints());
+						su.addUpdate(StatusUpdateType.CUR_DP, player.getDeathPoints());
 					}
 					else if (type == StatusUpdateType.MAX_BP)
 					{
-						su.addUpdate(StatusUpdateType.CUR_BP, getActingPlayer().getBeastPoints());
+						su.addUpdate(StatusUpdateType.CUR_BP, player.getBeastPoints());
 					}
 					else if (type == StatusUpdateType.MAX_AP)
 					{
-						getActingPlayer().sendPacket(new ExMaxPacket()); // TODO: Investigate this.
-						su.addUpdate(StatusUpdateType.CUR_AP, getActingPlayer().getAssassinationPoints());
+                        player.sendPacket(new ExMaxPacket()); // TODO: Investigate this.
+						su.addUpdate(StatusUpdateType.CUR_AP, player.getAssassinationPoints());
 					}
 				}
 				return newValue;

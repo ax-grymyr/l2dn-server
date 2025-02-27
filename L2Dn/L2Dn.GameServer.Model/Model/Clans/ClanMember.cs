@@ -3,6 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Variables;
+using L2Dn.GameServer.Network;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +21,7 @@ public class ClanMember
 	private readonly Clan _clan;
 	private int _objectId;
 	private string _name;
-	private string? _title;
+	private string _title;
 	private int _powerGrade;
 	private int _level;
 	private CharacterClass _classId;
@@ -49,7 +50,7 @@ public class ClanMember
 		_classId = clanMember.Class;
 		_objectId = clanMember.Id;
 		_pledgeType = clanMember.SubPledge;
-		_title = clanMember.Title;
+		_title = clanMember.Title ?? string.Empty;
 		_powerGrade = clanMember.PowerGrade;
 		_apprentice = clanMember.Apprentice;
 		_sponsor = clanMember.SponsorId;
@@ -117,6 +118,7 @@ public class ClanMember
 				_clan.setLeader(this);
 			}
 		}
+
 		_player = player;
 	}
 
@@ -139,7 +141,9 @@ public class ClanMember
 		{
 			return false;
 		}
-		if (_player.getClient() == null || _player.getClient().IsDetached)
+
+        GameSession? client = _player.getClient();
+		if (client == null || client.IsDetached)
 		{
 			return false;
 		}
@@ -342,7 +346,7 @@ public class ClanMember
 
 		if (_apprentice != 0)
 		{
-			ClanMember apprentice = _clan.getClanMember(_apprentice);
+			ClanMember? apprentice = _clan.getClanMember(_apprentice);
 			if (apprentice != null)
 			{
 				return apprentice.getName();
@@ -352,7 +356,7 @@ public class ClanMember
 
 		if (_sponsor != null)
 		{
-			ClanMember sponsor = _clan.getClanMember(_sponsor.Value);
+			ClanMember? sponsor = _clan.getClanMember(_sponsor.Value);
 			if (sponsor != null)
 			{
 				return sponsor.getName();
@@ -384,7 +388,7 @@ public class ClanMember
 			return pledgeClass;
 		}
 
-		Clan clan = player.getClan();
+		Clan? clan = player.getClan();
 		if (clan != null)
 		{
 			switch (clan.getLevel())

@@ -33,13 +33,14 @@ public class SayuneZone: ZoneType
 	}
 
 	protected override void onEnter(Creature creature)
-	{
-		if (creature.isPlayer() &&
+    {
+        Player? player = creature.getActingPlayer();
+		if (creature.isPlayer() && player != null &&
             /* creature.isInCategory(CategoryType.SIXTH_CLASS_GROUP) || */Config.FREE_JUMPS_FOR_ALL &&
-		    !creature.getActingPlayer().isMounted() && !creature.isTransformed())
+		    !player.isMounted() && !creature.isTransformed())
 		{
 			creature.setInsideZone(ZoneId.SAYUNE, true);
-			ThreadPool.execute(new FlyMoveStartTask(this, creature.getActingPlayer()));
+			ThreadPool.execute(new FlyMoveStartTask(this, player));
 		}
 	}
 

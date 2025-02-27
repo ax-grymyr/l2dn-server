@@ -13,7 +13,7 @@ public static class GlobalEvents
     /// Global npc events.
     /// </summary>
     public static EventContainer Npcs { get; } = new("Global Npcs", Global);
-	
+
     /// <summary>
     /// Global monster events.
     /// </summary>
@@ -22,5 +22,5 @@ public static class GlobalEvents
     /// <summary>
     /// Global player events.
     /// </summary>
-    public static EventContainer Players { get; } = new("Global players", Global);
+    public static EventContainer Players { get; } = new("Global Players", Global);
 }

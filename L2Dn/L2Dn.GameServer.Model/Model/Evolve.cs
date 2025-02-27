@@ -39,7 +39,6 @@ public class Evolve
 			return false;
 		}
 
-		Item? item = null;
 		long petexp = currentPet.getStat().getExp();
 		string oldname = currentPet.getName();
 		Location3D oldLocation = currentPet.Location.Location3D;
@@ -67,15 +66,18 @@ public class Evolve
 			return false;
 		}
 
-		NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(npcID);
+		NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(npcID) ??
+            throw new InvalidOperationException("No template for NPC ID: " + npcID);
+
 		currentPet.unSummon(player);
 
 		// deleting old pet item
 		currentPet.destroyControlItem(player, true);
-		item = player.getInventory().addItem("Evolve", itemIdgive, 1, player, npc);
+		Item item = player.getInventory().addItem("Evolve", itemIdgive, 1, player, npc) ??
+            throw new InvalidOperationException("Failed to add pet control item to inventory");
 
 		// Summoning new pet
-		Pet petSummon = Pet.spawnPet(npcTemplate, player, item);
+		Pet? petSummon = Pet.spawnPet(npcTemplate, player, item);
 		if (petSummon == null)
 		{
 			return false;
@@ -155,16 +157,20 @@ public class Evolve
 			return false;
 		}
 
-		NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(npcId);
+        NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(npcId) ??
+            throw new InvalidOperationException("No template for NPC ID: " + npcId);
 
 		// deleting old pet item
-		Item? removedItem = player.getInventory().destroyItem("PetRestore", item, player, npc);
+        Item removedItem = player.getInventory().destroyItem("PetRestore", item, player, npc) ??
+            throw new InvalidOperationException("Could not destroy pet control item from inventory");
+
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_DISAPPEARED);
 		sm.Params.addItemName(removedItem);
 		player.sendPacket(sm);
 
 		// Give new pet item
-		Item addedItem = player.getInventory().addItem("PetRestore", itemIdgive, 1, player, npc);
+        Item addedItem = player.getInventory().addItem("PetRestore", itemIdgive, 1, player, npc) ??
+            throw new InvalidOperationException("Could not add pet control item to inventory");
 
 		// Summoning new pet
 		Pet? petSummon = Pet.spawnPet(npcTemplate, player, addedItem);

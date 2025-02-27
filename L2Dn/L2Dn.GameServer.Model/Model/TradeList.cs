@@ -137,7 +137,7 @@ public class TradeList
 	 * @param count : int
 	 * @return
 	 */
-	public TradeItem addItem(int objectId, long count)
+	public TradeItem? addItem(int objectId, long count)
 	{
 		return addItem(objectId, count, 0);
 	}
@@ -282,7 +282,7 @@ public class TradeList
 				// If Partner has already confirmed this trade, invalidate the confirmation
 				if (_partner != null)
 				{
-					TradeList partnerList = _partner.getActiveTradeList();
+					TradeList? partnerList = _partner.getActiveTradeList();
 					if (partnerList == null)
 					{
 						LOGGER.Warn(_partner.getName() + ": Trading partner (" + _partner.getName() + ") is invalid in this trade!");
@@ -315,7 +315,7 @@ public class TradeList
 	{
 		foreach (TradeItem titem in _items)
 		{
-			Item item = _owner.getInventory().getItemByObjectId(titem.getObjectId());
+			Item? item = _owner.getInventory().getItemByObjectId(titem.getObjectId());
 			if (item == null || titem.getCount() < 1)
 			{
 				removeItem(titem.getObjectId(), -1, -1);
@@ -359,7 +359,7 @@ public class TradeList
 		// If Partner has already confirmed this trade, proceed exchange
 		if (_partner != null)
 		{
-			TradeList partnerList = _partner.getActiveTradeList();
+			TradeList? partnerList = _partner.getActiveTradeList();
 			if (partnerList == null)
 			{
 				LOGGER.Warn(_partner.getName() + ": Trading partner (" + _partner.getName() + ") is invalid in this trade!");
@@ -435,7 +435,7 @@ public class TradeList
 		// Check for Item validity
 		foreach (TradeItem titem in _items)
 		{
-			Item item = _owner.checkItemManipulation(titem.getObjectId(), titem.getCount(), "transfer");
+			Item? item = _owner.checkItemManipulation(titem.getObjectId(), titem.getCount(), "transfer");
 			if (item == null || item.getCount() < 1)
 			{
 				LOGGER.Warn(_owner.getName() + ": Invalid Item in TradeList");
@@ -457,7 +457,7 @@ public class TradeList
 	{
 		foreach (TradeItem titem in _items)
 		{
-			Item oldItem = _owner.getInventory().getItemByObjectId(titem.getObjectId());
+			Item? oldItem = _owner.getInventory().getItemByObjectId(titem.getObjectId());
 			if (oldItem == null)
 			{
 				return false;
@@ -669,7 +669,7 @@ public class TradeList
 			}
 
 			// Check if requested item is available for manipulation
-			Item oldItem = _owner.checkItemManipulation(item.getObjectId(), item.getCount(), "sell");
+			Item? oldItem = _owner.checkItemManipulation(item.getObjectId(), item.getCount(), "sell");
 			if (oldItem == null || !oldItem.isTradeable())
 			{
 				// private store sell invalid item - disable it
@@ -734,7 +734,7 @@ public class TradeList
 			}
 
 			// Check if requested item is available for manipulation
-			Item oldItem = _owner.checkItemManipulation(item.getObjectId(), item.getCount(), "sell");
+			Item? oldItem = _owner.checkItemManipulation(item.getObjectId(), item.getCount(), "sell");
 			if (oldItem == null)
 			{
 				// should not happen - validation already done
@@ -900,7 +900,7 @@ public class TradeList
 
 			// Check if requested item is available for manipulation
 			int objectId = tradeItem.getObjectId();
-			Item oldItem = player.checkItemManipulation(objectId, item.getCount(), "sell");
+			Item? oldItem = player.checkItemManipulation(objectId, item.getCount(), "sell");
 			// private store - buy use same objectId for buying several non-stackable items
 			if (oldItem == null)
 			{

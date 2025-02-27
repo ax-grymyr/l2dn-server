@@ -194,7 +194,7 @@ public class WalkInfo
 	/**
 	 * @return walking check task.
 	 */
-	public ScheduledFuture getWalkCheckTask()
+	public ScheduledFuture? getWalkCheckTask()
 	{
 		return _walkCheckTask;
 	}
@@ -207,10 +207,7 @@ public class WalkInfo
 		_walkCheckTask = task;
 	}
 
-	public override string ToString()
-	{
-		return "WalkInfo [_routeName=" + _routeName + ", _walkCheckTask=" + _walkCheckTask + ", _blocked=" + _blocked +
-			", _suspended=" + _suspended + ", _stoppedByAttack=" + _stoppedByAttack + ", _currentNode=" +
-			_currentNode + ", _forward=" + _forward + ", _lastActionTime=" + _lastActionTime + "]";
-	}
+	public override string ToString() => $"WalkInfo [_routeName={_routeName}, _walkCheckTask={_walkCheckTask}, " +
+        $"_blocked={_blocked}, _suspended={_suspended}, _stoppedByAttack={_stoppedByAttack}, " +
+        $"_currentNode={_currentNode}, _forward={_forward}, _lastActionTime={_lastActionTime}]";
 }

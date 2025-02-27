@@ -14,33 +14,33 @@ public class Message
 {
 	private static readonly TimeSpan EXPIRATION = TimeSpan.FromDays(15); // 15 days
 	private static readonly TimeSpan COD_EXPIRATION = TimeSpan.FromHours(12); // 12 hours
-	
+
 	// post state
 	public const int DELETED = 0;
 	public const int READED = 1;
 	public const int REJECTED = 2;
-	
+
 	private readonly int _messageId;
 	private readonly int _senderId;
 	private readonly int _receiverId;
 	private readonly DateTime _expiration;
-	private string _senderName;
-	private string _receiverName;
-	private readonly  string _subject;
-	private readonly  string _content;
+	private string? _senderName;
+	private string? _receiverName;
+	private readonly string _subject;
+	private readonly string _content;
 	private bool _unread;
 	private bool _returned;
-	private MailType _messageType = MailType.REGULAR;
+	private readonly MailType _messageType;
 	private bool _deletedBySender;
 	private bool _deletedByReceiver;
-	private readonly  long _reqAdena;
+	private readonly long _reqAdena;
 	private bool _hasAttachments;
-	private Mail _attachments;
-	
-	private int _itemId;
-	private int _enchantLvl;
+	private Mail? _attachments;
+
+	private readonly int _itemId;
+	private readonly int _enchantLvl;
 	private readonly int[] _elementals = new int[6];
-	
+
 	/*
 	 * Constructor for restoring from DB.
 	 */
@@ -61,7 +61,7 @@ public class Message
 		_returned = record.IsReturned;
 		_itemId = record.ItemId;
 		_enchantLvl = record.EnchantLevel;
-		
+
 		string? elemental = record.Elementals;
 		if (elemental != null)
 		{
@@ -70,7 +70,7 @@ public class Message
 				_elementals[i] = int.Parse(elemDef[i]);
 		}
 	}
-	
+
 	/*
 	 * This constructor used for creating new message.
 	 */
@@ -89,7 +89,7 @@ public class Message
 		_reqAdena = reqAdena;
 		_messageType = MailType.REGULAR;
 	}
-	
+
 	/*
 	 * This constructor used for System Mails
 	 */
@@ -109,7 +109,7 @@ public class Message
 		_messageType = sendBySystem;
 		_returned = false;
 	}
-	
+
 	/*
 	 * This constructor is used for creating new System message
 	 */
@@ -128,7 +128,7 @@ public class Message
 		_reqAdena = 0;
 		_messageType = sendBySystem;
 	}
-	
+
 	/*
 	 * This constructor used for auto-generation of the "return attachments" message
 	 */
@@ -149,9 +149,9 @@ public class Message
 		_hasAttachments = true;
 		_attachments = msg.getAttachments();
 		msg.removeAttachments();
-		_attachments.setNewMessageId(_messageId);
+		_attachments?.setNewMessageId(_messageId);
 	}
-	
+
 	public Message(int receiverId, Item item, MailType mailType)
 	{
 		_messageId = IdManager.getInstance().getNextId();
@@ -188,22 +188,22 @@ public class Message
 			attachement.addItem("CommissionReturnItem", item, null, null);
 		}
 	}
-	
+
 	public int getId()
 	{
 		return _messageId;
 	}
-	
+
 	public int getSenderId()
 	{
 		return _senderId;
 	}
-	
+
 	public int getReceiverId()
 	{
 		return _receiverId;
 	}
-	
+
 	public string getSenderName()
 	{
 		switch (_messageType)
@@ -219,9 +219,10 @@ public class Message
 				break;
 			}
 		}
-		return _senderName;
+
+        return _senderName ?? "System";
 	}
-	
+
 	public string getReceiverName()
 	{
 		if (_receiverName == null)
@@ -234,37 +235,37 @@ public class Message
 		}
 		return _receiverName;
 	}
-	
+
 	public string getSubject()
 	{
 		return _subject;
 	}
-	
+
 	public string getContent()
 	{
 		return _content;
 	}
-	
+
 	public bool isLocked()
 	{
 		return _reqAdena > 0;
 	}
-	
+
 	public DateTime getExpiration()
 	{
 		return _expiration;
 	}
-	
+
 	public int getExpirationSeconds()
 	{
 		return _expiration.getEpochSecond(); // TODO: can be wrong
 	}
-	
+
 	public bool isUnread()
 	{
 		return _unread;
 	}
-	
+
 	public void markAsRead()
 	{
 		if (_unread)
@@ -273,12 +274,12 @@ public class Message
 			MailManager.getInstance().markAsReadInDb(_messageId);
 		}
 	}
-	
+
 	public bool isDeletedBySender()
 	{
 		return _deletedBySender;
 	}
-	
+
 	public void setDeletedBySender()
 	{
 		if (!_deletedBySender)
@@ -294,12 +295,12 @@ public class Message
 			}
 		}
 	}
-	
+
 	public bool isDeletedByReceiver()
 	{
 		return _deletedByReceiver;
 	}
-	
+
 	public void setDeletedByReceiver()
 	{
 		if (!_deletedByReceiver)
@@ -315,64 +316,64 @@ public class Message
 			}
 		}
 	}
-	
+
 	public MailType getMailType()
 	{
 		return _messageType;
 	}
-	
+
 	public bool isReturned()
 	{
 		return _returned;
 	}
-	
+
 	public void setReturned(bool value)
 	{
 		_returned = value;
 	}
-	
+
 	public long getReqAdena()
 	{
 		return _reqAdena;
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	public Mail getAttachments()
+	public Mail? getAttachments()
 	{
 		if (!_hasAttachments)
 		{
 			return null;
 		}
-		
+
 		if (_attachments == null)
 		{
 			_attachments = new Mail(_senderId, _messageId);
 			_attachments.restore();
 		}
-		
+
 		return _attachments;
 	}
-	
+
 	public bool hasAttachments()
 	{
 		return _hasAttachments;
 	}
-	
+
 	public int getItemId()
 	{
 		return _itemId;
 	}
-	
+
 	public int getEnchantLvl()
 	{
 		return _enchantLvl;
 	}
-	
+
 	public int[] getElementals()
 	{
 		return _elementals;
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void removeAttachments()
 	{
@@ -383,20 +384,18 @@ public class Message
 			MailManager.getInstance().removeAttachmentsInDb(_messageId);
 		}
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public Mail createAttachments()
 	{
-		if (_hasAttachments || _attachments != null)
-		{
-			return null;
-		}
-		
+		if (_attachments != null)
+			return _attachments;
+
 		_attachments = new Mail(_senderId, _messageId);
 		_hasAttachments = true;
 		return _attachments;
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	protected void unloadAttachments()
 	{

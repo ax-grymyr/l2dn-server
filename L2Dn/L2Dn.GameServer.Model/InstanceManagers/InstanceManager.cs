@@ -349,7 +349,7 @@ public class InstanceManager: DataReaderBase
 	 * @param player player who create instance
 	 * @return newly created instance if template was found, otherwise {@code null}
 	 */
-	public Instance? createInstance(int id, Player player)
+	public Instance? createInstance(int id, Player? player)
 	{
 		if (!_instanceTemplates.TryGetValue(id, out InstanceTemplate? template))
 		{

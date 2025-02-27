@@ -5,7 +5,6 @@ using L2Dn.GameServer.Model.BuyList;
 using L2Dn.GameServer.Model.Ensoul;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model;
@@ -31,7 +30,7 @@ public class ItemInfo
 	private long _count;
 
 	/** The price of the Item */
-	private int _price;
+	private long _price;
 
 	/** The custom Item types (used loto, race tickets) */
 	private int _type1;
@@ -85,6 +84,7 @@ public class ItemInfo
 
 		// Get the Item of the Item
 		_item = item.getTemplate();
+        _price = item.getReferencePrice();
 
 		// Get the enchant level of the Item
 		_enchantLevel = item.getEnchantLevel();
@@ -138,29 +138,27 @@ public class ItemInfo
 		_soulCrystalOptions = item.getSpecialAbilities();
 		_soulCrystalSpecialOptions = item.getAdditionalSpecialAbilities();
 		_visualId = item.getVisualId();
-		_visualExpiration = item.getVisualLifeTime() != null ? item.getVisualLifeTime().Value - DateTime.UtcNow : null;
+		_visualExpiration = item.getVisualLifeTime() - DateTime.UtcNow;
 		_reuseDelay = item.getReuseDelay();
 		_owner = item.getActingPlayer();
 	}
 
 	public ItemInfo(Item item, ItemChangeType change): this(item)
 	{
-		_change = change;
-		_visualExpiration = item.getVisualLifeTime() != null ? item.getVisualLifeTime().Value - DateTime.UtcNow : null;
+        _change = change;
+		_visualExpiration = item.getVisualLifeTime() - DateTime.UtcNow;
 	}
 
 	public ItemInfo(TradeItem item)
 	{
-		if (item == null)
-		{
-			return;
-		}
+        ArgumentNullException.ThrowIfNull(item);
 
-		// Get the Identifier of the Item
+        // Get the Identifier of the Item
 		_objectId = item.getObjectId();
 
 		// Get the Item of the Item
 		_item = item.getItem();
+        _price = _item.getReferencePrice();
 
 		// Get the enchant level of the Item
 		_enchantLevel = item.getEnchant();
@@ -204,11 +202,6 @@ public class ItemInfo
 
 	public ItemInfo(Product item)
 	{
-		if (item == null)
-		{
-			return;
-		}
-
 		// Get the Identifier of the Item
 		_objectId = 0;
 
@@ -244,11 +237,6 @@ public class ItemInfo
 
 	public ItemInfo(WarehouseItem item)
 	{
-		if (item == null)
-		{
-			return;
-		}
-
 		// Get the Identifier of the Item
 		_objectId = item.getObjectId();
 
@@ -312,7 +300,7 @@ public class ItemInfo
 		return _count;
 	}
 
-	public int getPrice()
+	public long getPrice()
 	{
 		return _price;
 	}
