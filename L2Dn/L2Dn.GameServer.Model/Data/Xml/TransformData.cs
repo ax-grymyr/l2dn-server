@@ -42,13 +42,13 @@ public class TransformData: DataReaderBase
 	private void loadElement(string filePath, XElement element)
 	{
 		StatSet set = new StatSet(element);
-		Transform transform = new Transform(set);
 
-		XElement maleElement = element.Elements("Male").Single();
-		XElement femaleElement = element.Elements("Female").Single();
+        XElement maleElement = element.Elements("Male").Single();
+        XElement femaleElement = element.Elements("Female").Single();
 
-		transform.setTemplate(true, loadTemplate(maleElement));
-		transform.setTemplate(false, loadTemplate(femaleElement));
+        TransformTemplate maleTemplate = loadTemplate(maleElement);
+        TransformTemplate femaleTemplate = loadTemplate(femaleElement);
+		Transform transform = new Transform(set, maleTemplate, femaleTemplate);
 
 		_transformData.put(transform.getId(), transform);
 	}

@@ -244,14 +244,15 @@ public class VillageMaster: Folk
 				return;
 			}
 
-			if (!member.isOnline())
+            Player? memberPlayer = member.getPlayer();
+			if (!member.isOnline() || memberPlayer == null)
 			{
 				player.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_CURRENTLY_ONLINE);
 				return;
 			}
 
 			// To avoid clans with null clan leader, academy members shouldn't be eligible for clan leader.
-			if (member.getPlayer().isAcademyMember())
+			if (memberPlayer.isAcademyMember())
 			{
 				player.sendPacket(SystemMessageId.THAT_PRIVILEGE_CANNOT_BE_GRANTED_TO_A_CLAN_ACADEMY_MEMBER);
 				return;
@@ -1248,7 +1249,7 @@ public class VillageMaster: Folk
 		subPledge.setLeaderId(member.getObjectId());
 		clan.updateSubPledgeInDB(subPledge.getId());
 
-		Player leaderPlayer = member.getPlayer();
+		Player? leaderPlayer = member.getPlayer();
 		if (leaderPlayer != null)
 		{
 			leaderPlayer.setPledgeClass(ClanMember.calculatePledgeClass(leaderPlayer));

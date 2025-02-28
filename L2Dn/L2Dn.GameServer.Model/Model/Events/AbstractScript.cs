@@ -1392,7 +1392,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @param npc
 	 * @param killer
 	 */
-	public void onSpawnNpcDeath(SpawnTemplate template, SpawnGroup group, Npc npc, Creature killer)
+	public void onSpawnNpcDeath(SpawnTemplate template, SpawnGroup group, Npc npc, Creature? killer)
 	{
 	}
 
@@ -1986,7 +1986,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			{
 				foreach (Message message in inbox)
 				{
-					Mail mail = message.getAttachments();
+					Mail? mail = message.getAttachments();
 					if (mail != null && mail.getItemByItemId(itemId) != null)
 					{
 						return true;
@@ -1998,7 +1998,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			{
 				foreach (Message message in outbox)
 				{
-					Mail mail = message.getAttachments();
+					Mail? mail = message.getAttachments();
 					if (mail != null && mail.getItemByItemId(itemId) != null)
 					{
 						return true;

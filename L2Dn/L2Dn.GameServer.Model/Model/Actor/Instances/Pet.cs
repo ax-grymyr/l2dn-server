@@ -354,11 +354,6 @@ public class Pet: Summon
 		return (PetStat)base.getStat();
 	}
 
-	public override void initCharStat()
-	{
-		setStat(new PetStat(this));
-	}
-
 	public bool isRespawned()
 	{
 		return _respawned;
@@ -719,7 +714,7 @@ public class Pet: Summon
 		// CharSummonTable.getInstance().getPets().remove(getOwner().getObjectId());
 	}
 
-	public override bool doDie(Creature killer)
+	public override bool doDie(Creature? killer)
 	{
 		Player owner = getOwner();
 		if (owner != null && !owner.isInDuel() && (!isInsideZone(ZoneId.PVP) || isInsideZone(ZoneId.SIEGE)))
@@ -1629,4 +1624,6 @@ public class Pet: Summon
 			    getOwner().sendPacket(new ExStorageMaxCountPacket(getOwner()));
 		}
 	}
+
+    protected override CreatureStat CreateStat() => new PetStat(this);
 }

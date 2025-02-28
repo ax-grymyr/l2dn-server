@@ -55,7 +55,7 @@ public class PlayerRandomCraft
 				}
 				catch (Exception e)
 				{
-					LOGGER.Error("Could not restore random craft for " + _player);
+					LOGGER.Error("Could not restore random craft for " + _player + ": " + e);
 				}
 			}
 			else
@@ -255,9 +255,7 @@ public class PlayerRandomCraft
 	private RandomCraftRewardItemHolder? getNewReward()
 	{
 		if (RandomCraftData.getInstance().isEmpty())
-		{
 			return null;
-		}
 
 		RandomCraftRewardItemHolder? result = null;
 		while (result == null)
@@ -272,15 +270,15 @@ public class PlayerRandomCraft
 				}
 			}
 		}
+
 		return result;
 	}
 
 	public void make()
 	{
 		if (_player.hasItemRequest() || _player.hasRequest<RandomCraftRequest>())
-		{
 			return;
-		}
+
 		_player.addRequest(new RandomCraftRequest(_player));
 
 		if (_player.reduceAdena("RandomCraft Make", Config.RANDOM_CRAFT_CREATE_FEE, _player, true))
@@ -291,8 +289,8 @@ public class PlayerRandomCraft
 
 			int itemId = holder.getItemId();
 			long itemCount = holder.getItemCount();
-			Item item = _player.addItem("RandomCraft Make", itemId, itemCount, _player, true);
-			if (RandomCraftData.getInstance().isAnnounce(itemId))
+			Item? item = _player.addItem("RandomCraft Make", itemId, itemCount, _player, true);
+			if (item != null && RandomCraftData.getInstance().isAnnounce(itemId)) // TODO: what if item is not created
 			{
 				Broadcast.toAllOnlinePlayers(new ExItemAnnouncePacket(_player, item, ExItemAnnouncePacket.RANDOM_CRAFT));
 			}

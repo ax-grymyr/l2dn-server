@@ -311,7 +311,7 @@ public class WalkingManager: DataReaderBase
 		WalkInfo? walk = _activeRoutes.remove(npc.ObjectId);
 		if (walk != null)
 		{
-			ScheduledFuture task = walk.getWalkCheckTask();
+			ScheduledFuture? task = walk.getWalkCheckTask();
 			if (task != null)
 			{
 				task.cancel(true);

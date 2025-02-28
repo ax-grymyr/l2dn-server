@@ -26,11 +26,10 @@ public class FortLogistics : Merchant
 	}
 
 	public override void onBypassFeedback(Player player, string command)
-	{
-		if (player.getLastFolkNPC().ObjectId != ObjectId)
-		{
+    {
+        Npc? lastFolkNpc = player.getLastFolkNPC();
+		if (lastFolkNpc == null || lastFolkNpc.ObjectId != ObjectId)
 			return;
-		}
 
 		StringTokenizer st = new StringTokenizer(command, " ");
 		string actualCommand = st.nextToken(); // Get actual command

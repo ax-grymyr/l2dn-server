@@ -221,7 +221,7 @@ public class Instance : IIdentifiable, INamable
 		List<Player> allowed = new(_allowed.size());
 		foreach (int playerId in _allowed)
 		{
-			Player player = World.getInstance().getPlayer(playerId);
+			Player? player = World.getInstance().getPlayer(playerId);
 			if (player != null)
 			{
 				allowed.Add(player);
@@ -967,7 +967,7 @@ public class Instance : IIdentifiable, INamable
 			_allowed.ForEach(playerId =>
 			{
 				InstanceManager.getInstance().setReenterPenalty(playerId, getTemplateId(), time);
-				Player player = World.getInstance().getPlayer(playerId);
+				Player? player = World.getInstance().getPlayer(playerId);
 				if (player != null && player.isOnline())
 				{
 					player.sendPacket(msg);
@@ -1053,9 +1053,9 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public void onInstanceChange(WorldObject @object, bool enter)
 	{
-		if (@object.isPlayer())
+        Player? player = @object.getActingPlayer();
+		if (@object.isPlayer() && player != null)
 		{
-			Player player = @object.getActingPlayer();
 			if (enter)
 			{
 				addPlayer(player);
@@ -1099,9 +1099,9 @@ public class Instance : IIdentifiable, INamable
 			}
 			else
 			{
-				if (npc.getSpawn() != null)
+				if (npc.getSpawn() is {} spawn)
 				{
-					npc.getSpawn().stopRespawn();
+                    spawn.stopRespawn();
 				}
 				removeNpc(npc);
 			}
@@ -1126,7 +1126,7 @@ public class Instance : IIdentifiable, INamable
 			{
 				player.setLocationInvisible(loc.Value);
 				// If player has death pet, put him out of instance world
-				Summon pet = player.getPet();
+				Summon? pet = player.getPet();
 				if (pet != null)
 				{
 					pet.teleToLocation(new Location(loc.Value, 0), true);

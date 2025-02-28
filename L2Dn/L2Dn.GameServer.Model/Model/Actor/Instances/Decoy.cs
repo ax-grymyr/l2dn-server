@@ -47,7 +47,7 @@ public class Decoy : Creature
 			_hateSpam = ThreadPool.scheduleAtFixedRate(new HateSpam(this, hateSpamSkill), 2000, 5000);
 		}
 
-		SkillHolder skill = template.getParameters().getSkillHolder("decoy_skill");
+		SkillHolder? skill = template.getParameters().getSkillHolder("decoy_skill");
 		if (skill != null)
 		{
 			// Trigger cast instantly (?)...
@@ -72,7 +72,7 @@ public class Decoy : Creature
 		}
 	}
 
-	public override bool doDie(Creature killer)
+	public override bool doDie(Creature? killer)
 	{
 		if (!base.doDie(killer))
 		{

@@ -72,14 +72,15 @@ public class FortCommander : Defender
 	 * This method forces guard to return to home location previously set
 	 */
 	public override void returnHome()
-	{
-		if (!this.IsInsideRadius2D(getSpawn(), 200))
+    {
+        Spawn? spawn = getSpawn();
+		if (spawn != null && !this.IsInsideRadius2D(spawn, 200))
 		{
 			clearAggroList();
 
 			if (hasAI())
 			{
-				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().Location.Location3D);
+				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, spawn.Location.Location3D);
 			}
 		}
 	}
@@ -87,7 +88,7 @@ public class FortCommander : Defender
 	public override void addDamage(Creature creature, int damage, Skill? skill)
 	{
 		Creature attacker = creature;
-		Spawn spawn = getSpawn();
+		Spawn? spawn = getSpawn();
 		if (spawn != null && canTalk())
         {
             Fort fort = getFort() ?? throw new InvalidOperationException("Fort is not set in FortCommander.addDamage");

@@ -374,11 +374,13 @@ public class PlayerStat: PlayableStat
 	}
 
 	public override int getLevel()
-	{
-		if (getActiveChar().isDualClassActive())
+    {
+        SubClassHolder? dualClass = getActiveChar().getDualClass();
+		if (getActiveChar().isDualClassActive() && dualClass != null)
 		{
-			return getActiveChar().getDualClass().getLevel();
+			return dualClass.getLevel();
 		}
+        
 		if (getActiveChar().isSubClassActive())
 		{
 			SubClassHolder? holder = getActiveChar().getSubClasses().get(getActiveChar().getClassIndex());

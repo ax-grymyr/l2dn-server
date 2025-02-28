@@ -5,7 +5,7 @@ namespace L2Dn.GameServer.Model.Actor.Request;
 public class ShapeShiftingItemRequest: AbstractRequest
 {
     private Item _appearanceStone;
-    private Item _appearanceExtractItem;
+    private Item? _appearanceExtractItem;
 
     public ShapeShiftingItemRequest(Player player, Item appearanceStone): base(player)
     {
@@ -22,12 +22,12 @@ public class ShapeShiftingItemRequest: AbstractRequest
         _appearanceStone = appearanceStone;
     }
 
-    public Item getAppearanceExtractItem()
+    public Item? getAppearanceExtractItem()
     {
         return _appearanceExtractItem;
     }
 
-    public void setAppearanceExtractItem(Item appearanceExtractItem)
+    public void setAppearanceExtractItem(Item? appearanceExtractItem)
     {
         _appearanceExtractItem = appearanceExtractItem;
     }

@@ -249,7 +249,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 		    return null;
 	    }
 
-	    player = Player.load(objectId);
+	    player = Player.Load(objectId);
 	    if (player == null)
 		    _logger.Error("Could not restore in slot: " + index);
 

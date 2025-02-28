@@ -42,8 +42,8 @@ public class TrapTask: Runnable
                     }
                 }
 
-                Skill skill = _trap.getSkill();
-                if (skill != null && skill.getTargetsAffected(_trap, _trap).Count != 0)
+                Skill? skill = _trap.getSkill();
+                if (skill != null && skill.getTargetsAffected(_trap, _trap)?.Count != 0)
                 {
                     _trap.triggerTrap(_trap);
                 }

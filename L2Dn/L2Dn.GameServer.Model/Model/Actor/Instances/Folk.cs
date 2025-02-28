@@ -17,17 +17,12 @@ public class Folk: Npc
 		InstanceType = InstanceType.Folk;
 		setInvul(false);
 	}
-	
+
 	public override FolkStatus getStatus()
 	{
 		return (FolkStatus) base.getStatus();
 	}
-	
-	public override void initCharStatus()
-	{
-		setStatus(new FolkStatus(this));
-	}
-	
+
 	/**
 	 * Displays Skill Tree for a given player, npc and class Id.
 	 * @param player the active character.
@@ -61,7 +56,7 @@ public class Folk: Npc
 
 			return;
 		}
-		
+
 		// Normal skills, No LearnedByFS, no AutoGet skills.
 		ICollection<SkillLearn> skillsToLearn = SkillTreeData.getInstance().getAvailableSkills(player, classId, false, false);
 		if (skillsToLearn.Count == 0)
@@ -90,4 +85,6 @@ public class Folk: Npc
 			player.sendPacket(new ExAcquirableSkillListByClassPacket(skillsToLearn, AcquireSkillType.CLASS));
 		}
 	}
+
+    protected override CreatureStatus CreateStatus() => new FolkStatus(this);
 }

@@ -84,15 +84,10 @@ namespace L2Dn.GameServer.Model.Actor;
 public class Player: Playable
 {
 	private const string COND_OVERRIDE_KEY = "cond_override";
-
-	public const string NEWBIE_KEY = "NEWBIE";
-
 	public const int ID_NONE = -1;
-
 	public const int REQUEST_TIMEOUT = 15;
 
-	private int _pcCafePoints;
-
+    private PlayerTemplate _playerTemplate;
 	private GameSession? _client;
 
 	private readonly int _accountId;
@@ -100,6 +95,7 @@ public class Player: Playable
 	private DateTime? _deleteTime;
 	private DateTime _createDate = DateTime.UtcNow;
 
+	private int _pcCafePoints;
 	private string? _lang;
 
 	private volatile bool _isOnline;
@@ -135,7 +131,7 @@ public class Player: Playable
 	private ScheduledFuture? _dismountTask;
 	private bool _petItems;
 
-	/** The list of sub-classes this character has. */
+	/** The list of subclasses this character has. */
 	private readonly Map<int, SubClassHolder> _subClasses = new();
 
 	private readonly PlayerAppearance _appearance;
@@ -249,7 +245,7 @@ public class Player: Playable
 	/** Recommendation task **/
 	private ScheduledFuture? _recoGiveTask;
 	/** Recommendation Two Hours bonus **/
-	protected bool _recoTwoHoursGiven;
+    private bool _recoTwoHoursGiven;
 
 	private ScheduledFuture? _onlineTimeUpdateTask;
 
@@ -260,10 +256,10 @@ public class Player: Playable
 	private PrivateStoreType _privateStoreType = PrivateStoreType.NONE;
 	private TradeList? _activeTradeList;
 	private ItemContainer? _activeWarehouse;
-	private Map<int, ManufactureItem> _manufactureItems;
+	private Map<int, ManufactureItem>? _manufactureItems;
 	private string _storeName = "";
-	private TradeList _sellList;
-	private TradeList _buyList;
+	private TradeList? _sellList;
+	private TradeList? _buyList;
 
 	// Multisell
 	private PreparedMultisellListHolder? _currentMultiSell;
@@ -280,7 +276,7 @@ public class Player: Playable
 	private bool _isEvil;
 
 	/** The Npc corresponding to the last Folk which one the player talked. */
-	private Npc _lastFolkNpc;
+	private Npc? _lastFolkNpc;
 
 	/** Last NPC Id talked on a quest */
 	private int _questNpcObject;
@@ -323,7 +319,7 @@ public class Player: Playable
 	// TODO: This needs to be better integrated and saved/loaded
 	private readonly Radar _radar;
 
-	private MatchingRoom _matchingRoom;
+	private MatchingRoom? _matchingRoom;
 
 	private ScheduledFuture? _taskWarnUserTakeBreak;
 
@@ -387,7 +383,7 @@ public class Player: Playable
 	private bool _messageRefusal; // message refusal mode
 
 	private bool _silenceMode; // silence mode
-	private List<int> _silenceModeExcluded; // silence mode
+	private List<int>? _silenceModeExcluded; // silence mode
 	private bool _dietMode; // ignore weight penalty
 	private bool _tradeRefusal; // Trade refusal
 	private bool _exchangeRefusal; // Exchange refusal
@@ -398,7 +394,7 @@ public class Player: Playable
 	// there can only be one active party request at once
 	private Player? _activeRequester;
 	private long _requestExpireTime;
-	private readonly Model.Request _request;
+	private readonly Model.Request? _request;
 
 	// Used for protection after teleport
 	private DateTime? _spawnProtectEndTime;
@@ -416,7 +412,7 @@ public class Player: Playable
 
 	private readonly Map<Type, AbstractRequest> _requests = new();
 
-	protected bool _inventoryDisable;
+    private bool _inventoryDisable;
 	/** Player's cubics. */
 	private readonly Map<int, Cubic> _cubics = new();
 	/** Active shots. */
@@ -495,7 +491,7 @@ public class Player: Playable
 	private DateTime? _notMoveUntil;
 
 	/** Map containing all custom skills of this player. */
-	private Map<int, Skill> _customSkills;
+	private Map<int, Skill>? _customSkills;
 
 	private volatile int _actionMask;
 
@@ -536,13 +532,13 @@ public class Player: Playable
 	private const string TRAINING_CAMP_DURATION = "TRAINING_CAMP_DURATION";
 
 	// Save responder name for log it
-	private string _lastPetitionGmName;
+	private string _lastPetitionGmName = string.Empty;
 
 	private bool _hasCharmOfCourage;
 
 	private readonly Set<int> _whisperers = new();
 
-	private ElementalSpirit[] _spirits;
+	private ElementalSpirit[] _spirits = [];
 	private ElementalType _activeElementalSpiritType;
 
 	private int _vipTier;
@@ -566,7 +562,7 @@ public class Player: Playable
 	private readonly Map<int, PurgePlayerHolder> _purgePoints = [];
 
 	private readonly HuntPass _huntPass;
-	private readonly AchievementBox? _achivemenetBox;
+	private readonly AchievementBox _achivementBox;
 
 	private readonly ChallengePoint _challengePoints;
 
@@ -574,105 +570,80 @@ public class Player: Playable
 
 	private readonly Map<int, PetEvolveHolder> _petEvolves = [];
 
-	private MissionLevelPlayerDataHolder _missionLevelProgress;
+	private MissionLevelPlayerDataHolder? _missionLevelProgress;
 
 	private int _dualInventorySlot;
-	private List<int> _dualInventorySetA;
-	private List<int> _dualInventorySetB;
+	private List<int> _dualInventorySetA = [];
+	private List<int> _dualInventorySetB = [];
 
 	private readonly List<QuestTimer> _questTimers = new();
 	private readonly List<TimerHolder> _timerHolders = new();
 
 	// Selling buffs system
 	private bool _isSellingBuffs;
-	private List<SellBuffHolder> _sellingBuffs;
+	private List<SellBuffHolder>? _sellingBuffs;
 
-	public bool isSellingBuffs()
-	{
-		return _isSellingBuffs;
-	}
+	public bool isSellingBuffs() => _isSellingBuffs;
 
-	public void setSellingBuffs(bool value)
+    public void setSellingBuffs(bool value)
 	{
 		_isSellingBuffs = value;
 	}
 
-	public List<SellBuffHolder> getSellingBuffs()
-	{
-		if (_sellingBuffs == null)
-		{
-			_sellingBuffs = new();
-		}
-		return _sellingBuffs;
-	}
+	public List<SellBuffHolder> getSellingBuffs() => _sellingBuffs ??= [];
 
-	// Player client settings
-	private ClientSettings _clientSettings;
+    // Player client settings
+	private ClientSettings? _clientSettings;
 
-	public ClientSettings getClientSettings()
-	{
-		if (_clientSettings == null)
-		{
-			_clientSettings = new ClientSettings(this);
-		}
-		return _clientSettings;
-	}
+	public ClientSettings getClientSettings() => _clientSettings ??= new ClientSettings(this);
 
-	/**
-	 * Create a new Player and add it in the characters table of the database.<br>
-	 * <br>
-	 * <b><u>Actions</u>:</b>
-	 * <ul>
-	 * <li>Create a new Player with an account name</li>
-	 * <li>Set the name, the Hair Style, the Hair Color and the Face type of the Player</li>
-	 * <li>Add the player in the characters table of the database</li>
-	 * </ul>
-	 * @param template The PlayerTemplate to apply to the Player
-	 * @param accountName The name of the Player
-	 * @param name The name of the Player
-	 * @param app the player's appearance
-	 * @return The Player added to the database or null
-	 */
-	public static Player Create(PlayerTemplate template, int accountId, string accountName, string name,
+    /**
+     * Create a new Player and add it in the characters table of the database.<br>
+     * <br>
+     * <b><u>Actions</u>:</b>
+     * <ul>
+     * <li>Create a new Player with an account name</li>
+     * <li>Set the name, the Hair Style, the Hair Color and the Face type of the Player</li>
+     * <li>Add the player in the characters table of the database</li>
+     * </ul>
+     * @param template The PlayerTemplate to apply to the Player
+     * @param accountName The name of the Player
+     * @param name The name of the Player
+     * @param app the player's appearance
+     * @return The Player added to the database or null
+     */
+    public static Player Create(PlayerTemplate template, int accountId, string accountName, string name,
         Sex sex, byte face, byte hairColor, byte hairStyle)
-	{
-		// Create a new Player with an account name
-		Player player = new Player(template, accountId, accountName, name, sex, face, hairColor, hairStyle);
+    {
+        // Create a new Player with an account name
+        Player player = new Player(template, accountId, accountName, name, sex, face, hairColor, hairStyle);
 
         // Set access level
-		player.setAccessLevel(0, false, false);
+        player.setAccessLevel(0, false, false);
 
         // Add the player in the characters table of the database
-		if (player.createDb())
-		{
-			CharInfoTable.getInstance().addName(player);
-			return player;
-		}
+        try
+        {
+            player.createDb();
+        }
+        catch (Exception e)
+        {
+            LOGGER.Error("Could not insert char data: " + e);
+            IdManager.getInstance().releaseId(player.ObjectId);
+            throw;
+        }
 
-		return null;
-	}
+        CharInfoTable.getInstance().addName(player);
+        return player;
+    }
 
-	public int getAccountId()
-	{
-		return _client == null ? _accountId : _client.AccountId;
-	}
+    public int getAccountId() => _accountId;
 
-	public string getAccountName()
-	{
-		return _client == null ? _accountName : _client.AccountName;
-	}
+    public string getAccountName() => _accountName;
 
-	public string getAccountNamePlayer()
-	{
-		return _accountName;
-	}
+    public Map<int, string> getAccountChars() => _chars;
 
-	public Map<int, string> getAccountChars()
-	{
-		return _chars;
-	}
-
-	public long getRelation(Player target)
+    public long getRelation(Player target)
 	{
 		Clan? clan = getClan();
 		Party? party = getParty();
@@ -800,22 +771,331 @@ public class Player: Playable
 		return result;
 	}
 
-	/**
-	 * Retrieve a Player from the characters table of the database and add it in _allObjects of the world (call restore method).<br>
-	 * <br>
-	 * <b><u>Actions</u>:</b>
-	 * <ul>
-	 * <li>Retrieve the Player from the characters table of the database</li>
-	 * <li>Add the Player object in _allObjects</li>
-	 * <li>Set the x,y,z position of the Player and make it invisible</li>
-	 * <li>Update the overloaded status of the Player</li>
-	 * </ul>
-	 * @param objectId Identifier of the object to initialized
-	 * @return The Player loaded from the database
-	 */
-	public static Player load(int objectId)
+    /// <summary>
+    /// Loads a player from the database and adds it to the world.
+    /// <b>Actions:</b>
+    /// <ul>
+    /// <li>Retrieve the Player from the characters table of the database</li>
+    /// <li>Add the Player object in _allObjects</li>
+    /// <li>Set the x,y,z position of the Player and make it invisible</li>
+    /// <li>Update the overloaded status of the Player</li>
+    /// </ul>
+    /// </summary>
+    /// <param name="objectId">Identifier of the player to load.</param>
+    /// <returns>The player loaded from the database.</returns>
+	public static Player? Load(int objectId)
 	{
-		return restore(objectId);
+		try
+		{
+			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
+
+			// Retrieve the Player from the characters table of the database
+			Character? character = ctx.Characters.SingleOrDefault(c => c.Id == objectId);
+            if (character is null)
+                return null;
+
+            CharacterClass activeClassId = character.Class;
+            PlayerTemplate? template = PlayerTemplateData.getInstance().getTemplate(activeClassId);
+            if (template == null)
+            {
+                LOGGER.Error($"PlayerTemplate for class={activeClassId} not found");
+                return null;
+            }
+
+            // Retrieve account name
+            int accountId = character.AccountId;
+            string accountName = ctx.AccountRefs.Where(a => a.Id == accountId).Select(a => a.Login).Single();
+
+            Player player = new Player(objectId, template, accountId, accountName, character.Name,
+                character.Sex, character.Face, character.HairColor, character.HairStyle);
+
+            player.setName(character.Name);
+            player.setLastAccess(character.LastAccess);
+
+            player.getStat().setExp(character.Exp);
+            player.setExpBeforeDeath(character.ExpBeforeDeath);
+            player.getStat().setLevel(character.Level);
+            player.getStat().setSp(character.Sp);
+
+            player.setWantsPeace(character.WantsPeace);
+
+            player.setHeading(character.Heading);
+
+            player.setInitialReputation(character.Reputation);
+            player.setFame(character.Fame);
+            player.setRaidbossPoints(character.RaidBossPoints);
+            player.setPvpKills(character.PvpKills);
+            player.setPkKills(character.PkKills);
+            player.setOnlineTime(character.OnlineTime);
+            player.setNoble(character.IsNobless);
+
+            byte? factionId = character.Faction;
+            if (factionId == 1)
+            {
+                player.setGood();
+            }
+
+            if (factionId == 2)
+            {
+                player.setEvil();
+            }
+
+            player.setClanJoinExpiryTime(character.ClanJoinExpiryTime);
+            if (player.getClanJoinExpiryTime() < DateTime.UtcNow)
+            {
+                player.setClanJoinExpiryTime(null);
+            }
+
+            player.setClanCreateExpiryTime(character.ClanCreateExpiryTime);
+            if (player.getClanCreateExpiryTime() < DateTime.UtcNow)
+            {
+                player.setClanCreateExpiryTime(null);
+            }
+
+            player.setPcCafePoints(character.PcCafePoints);
+
+            int? clanId = character.ClanId;
+            player.setPowerGrade(character.PowerGrade);
+            player.getStat().setVitalityPoints(character.VitalityPoints);
+            player.setPledgeType(character.SubPledge);
+            // player.setApprentice(rset.getInt("apprentice"));
+
+            if (clanId != null)
+            {
+                player.setClan(ClanTable.getInstance().getClan(clanId.Value));
+            }
+
+            Clan? clan = player.getClan();
+            if (clan != null)
+            {
+                if (clan.getLeaderId() != player.ObjectId)
+                {
+                    if (player.getPowerGrade() == 0)
+                    {
+                        player.setPowerGrade(5);
+                    }
+
+                    player.setClanPrivileges(clan.getRankPrivs(player.getPowerGrade()));
+                }
+                else
+                {
+                    player.setClanPrivileges(ClanPrivilege.All);
+                    player.setPowerGrade(1);
+                }
+
+                player.setPledgeClass(ClanMember.calculatePledgeClass(player));
+            }
+            else
+            {
+                if (player.isNoble())
+                {
+                    player.setPledgeClass(SocialClass.ELDER);
+                }
+
+                if (player.isHero())
+                {
+                    player.setPledgeClass(SocialClass.COUNT);
+                }
+
+                player.setClanPrivileges(ClanPrivilege.None);
+            }
+
+            player.setTotalDeaths(character.Deaths);
+            player.setTotalKills(character.Kills);
+            player.setDeleteTimer(character.DeleteTime);
+            player.setTitle(character.Title ?? string.Empty);
+            player.setAccessLevel(character.AccessLevel, false, false);
+            int titleColor = character.TitleColor;
+            if (titleColor != PlayerAppearance.DEFAULT_TITLE_COLOR)
+            {
+                player.getAppearance().setTitleColor(new Color(titleColor));
+            }
+
+            player.setUptime(DateTime.UtcNow);
+
+            player.setClassIndex(0);
+            try
+            {
+                player.setBaseClass(character.BaseClass);
+            }
+            catch (Exception e)
+            {
+                player.setBaseClass(activeClassId);
+                LOGGER.Warn(
+                    "Exception during player.setBaseClass for player: " + player + " base class: " +
+                    character.BaseClass, e);
+            }
+
+            // Restore Subclass Data (cannot be done earlier in function)
+            if (restoreSubClassData(player) && activeClassId != player.getBaseClass())
+            {
+                foreach (SubClassHolder subClass in player.getSubClasses().Values)
+                {
+                    if (subClass.getClassDefinition() == activeClassId)
+                    {
+                        player.setClassIndex(subClass.getClassIndex());
+                    }
+                }
+            }
+
+            if (player.getClassIndex() == 0 && activeClassId != player.getBaseClass())
+            {
+                // Subclass in use but doesn't exist in DB -
+                // a possible restart-while-modifysubclass cheat has been attempted.
+                // Switching to use base class
+                player.setClassId(player.getBaseClass());
+                LOGGER.Warn(player +
+                    " reverted to base class. Possibly has tried a relogin exploit while subclassing.");
+            }
+            else
+            {
+                player._activeClass = activeClassId;
+            }
+
+            if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS,
+                    player.getBaseTemplate().getClassId()))
+            {
+                player._isDeathKnight = true;
+            }
+            else if (CategoryData.getInstance()
+                     .isInCategory(CategoryType.VANGUARD_ALL_CLASS, player.getBaseTemplate().getClassId()))
+            {
+                player._isVanguard = true;
+            }
+            else if (CategoryData.getInstance()
+                     .isInCategory(CategoryType.ASSASSIN_ALL_CLASS, player.getBaseTemplate().getClassId()))
+            {
+                player._isAssassin = true;
+            }
+
+            player.setApprentice(character.Apprentice);
+            player.setSponsor(character.SponsorId);
+            player.setLvlJoinedAcademy(character.LevelJoinedAcademy);
+
+            // Set Hero status if it applies.
+            player.setHero(Hero.getInstance().isHero(objectId));
+
+            CursedWeaponsManager.getInstance().checkPlayer(player);
+
+            // Set the x,y,z position of the Player and make it invisible
+            Location3D location = new(character.X, character.Y, character.Z);
+            player.setXYZInvisible(location);
+            player.setLastServerPosition(location);
+
+            // Set Teleport Bookmark Slot
+            player.setBookMarkSlot(character.BookmarkSlot);
+
+            // character creation Time
+            player.setCreateDate(character.Created);
+
+            // Language
+            player.setLang(character.Language);
+
+            // Retrieve the name and ID of the other characters assigned to this account.
+            var query = ctx.Characters.Where(c => c.AccountId == accountId)
+                .Select(c => new { c.Id, c.Name, c.SlotIndex });
+
+            foreach (var record in query)
+            {
+                player._chars.put(record.Id, record.Name);
+            }
+
+            if (player.Events.HasSubscribers<OnPlayerLoad>())
+			{
+				player.Events.NotifyAsync(new OnPlayerLoad(player));
+			}
+
+			if (player.isGM())
+			{
+				long masks = player.getVariables().getLong(COND_OVERRIDE_KEY, int.MaxValue);
+				player.setOverrideCond(masks);
+			}
+
+			// Retrieve from the database all items of this Player and add them to _inventory
+			player.getInventory().restore();
+			player.getWarehouse().restore();
+			player.getFreight().restore();
+			player.restoreItemReuse();
+
+			// Retrieve from the database all secondary data of this Player
+			// Note that Clan, Noblesse and Hero skills are given separately and not here.
+			// Retrieve from the database all skills of this Player and add them to _skills
+			player.restoreCharData();
+
+			// Reward auto-get skills and all available skills if auto-learn skills is true.
+			player.rewardSkills();
+
+			// Restore player shortcuts
+			player.restoreShortCuts();
+
+			player.restorePetEvolvesByItem();
+
+			// Initialize status update cache
+			player.initStatusUpdateCache();
+
+			// Restore current Cp, HP and MP values
+            double currentCp = character.CurrentCp;
+            double currentHp = character.CurrentHp;
+            double currentMp = character.CurrentMp;
+
+            player.setCurrentCp(currentCp);
+			player.setCurrentHp(currentHp);
+			player.setCurrentMp(currentMp);
+
+			player.setOriginalCpHpMp(currentCp, currentHp, currentMp);
+			if (currentHp < 0.5)
+			{
+				player.setDead(true);
+				player.stopHpMpRegeneration();
+			}
+
+			// Restore pet if exists in the world
+			player.setPet(World.getInstance().getPet(player.ObjectId));
+			Summon? pet = player.getPet();
+			if (pet != null)
+			{
+				pet.setOwner(player);
+			}
+
+			if (player.hasServitors())
+			{
+				foreach (Summon summon in player.getServitors().Values)
+				{
+					summon.setOwner(player);
+				}
+			}
+
+			// Recalculate all stats
+			player.getStat().recalculateStats(false);
+
+			// Update the overloaded status of the Player
+			player.refreshOverloaded(false);
+
+			player.restoreFriendList();
+
+            player.getRandomCraft().restore();
+			player.restoreSurveillanceList();
+
+			player.loadRecommendations();
+			player.startRecoGiveTask();
+			player.startOnlineTimeUpdateTask();
+
+			player.setOnlineStatus(true, false);
+
+			PlayerAutoSaveTaskManager.getInstance().add(player);
+
+			if (Config.ENABLE_ACHIEVEMENT_BOX)
+			{
+				player.getAchievementBox().restore();
+			}
+
+            return player;
+		}
+		catch (Exception e)
+        {
+            LOGGER.Error("Failed loading character: " + e);
+            return null;
+        }
 	}
 
 	private void initPcStatusUpdateValues()
@@ -847,6 +1127,7 @@ public class Player: Playable
         : base(objectId, template)
 	{
 		InstanceType = InstanceType.Player;
+        _playerTemplate = template;
 		_accountName = accountName;
 		_accountId = accountId;
         setName(name);
@@ -864,8 +1145,15 @@ public class Player: Playable
 		_fishing = new Fishing(this);
 		_dailyMissions = new PlayerDailyMissionList(this);
 
-		_huntPass = Config.ENABLE_HUNT_PASS ? new HuntPass(this) : null;
-		_achivemenetBox = Config.ENABLE_ACHIEVEMENT_BOX ? new AchievementBox(this) : null;
+		_huntPass = new HuntPass(this);
+        if (Config.ENABLE_HUNT_PASS)
+        {
+            _huntPass.restoreHuntPass();
+            _huntPass.huntPassDayEnd();
+            _huntPass.store();
+        }
+
+        _achivementBox = new AchievementBox(this);
 
 		// Create a Radar object
 		_radar = new Radar(this);
@@ -877,7 +1165,13 @@ public class Player: Playable
 
 		// Create an AI
 		getAI();
-	}
+
+        _randomCraft = new PlayerRandomCraft(this);
+        _accessLevel = AdminData.getInstance().getAccessLevel(0) ??
+            throw new InvalidOperationException("No default access level defined");
+
+        _fistsWeaponItem = findFistsWeaponItem(template.getClassId());
+    }
 
     /**
      * Creates a player.
@@ -892,32 +1186,11 @@ public class Player: Playable
     {
     }
 
-    public override PlayerStat getStat()
-	{
-		return (PlayerStat) base.getStat();
-	}
+    public override PlayerStat getStat() => (PlayerStat)base.getStat();
+    public override PlayerStatus getStatus() => (PlayerStatus)base.getStatus();
+    public PlayerAppearance getAppearance() => _appearance;
 
-	public override void initCharStat()
-	{
-		setStat(new PlayerStat(this));
-	}
-
-	public override PlayerStatus getStatus()
-	{
-		return (PlayerStatus) base.getStatus();
-	}
-
-	public override void initCharStatus()
-	{
-		setStatus(new PlayerStatus(this));
-	}
-
-	public PlayerAppearance getAppearance()
-	{
-		return _appearance;
-	}
-
-	public bool isHairAccessoryEnabled()
+    public bool isHairAccessoryEnabled()
 	{
 		return getVariables().getBoolean(PlayerVariables.HAIR_ACCESSORY_VARIABLE_NAME, true);
 	}
@@ -942,77 +1215,40 @@ public class Player: Playable
 	 */
 	public PlayerTemplate getBaseTemplate()
 	{
-		return PlayerTemplateData.getInstance().getTemplate(_baseClass);
+		return PlayerTemplateData.getInstance().getTemplate(_baseClass) ??
+            throw new InvalidOperationException($"PlayerTemplate for baseClass {_baseClass} not found");
 	}
 
-	public HuntPass getHuntPass()
-	{
-		return _huntPass;
-	}
+	public HuntPass getHuntPass() => _huntPass;
+    public AchievementBox getAchievementBox() => _achivementBox;
+    public ICollection<RankingHistoryDataHolder> getRankingHistoryData() => _rankingHistory.getData();
+    public ChallengePoint getChallengeInfo() => _challengePoints;
 
-	public AchievementBox? getAchievementBox()
-	{
-		return _achivemenetBox;
-	}
-
-	public ICollection<RankingHistoryDataHolder> getRankingHistoryData()
-	{
-		return _rankingHistory.getData();
-	}
-
-	public ChallengePoint getChallengeInfo()
-	{
-		return _challengePoints;
-	}
-
-	/**
+    /**
 	 * @return the PlayerTemplate link to the Player.
 	 */
-	public override PlayerTemplate getTemplate()
-    {
-        return (PlayerTemplate)base.getTemplate();
-    }
+	public override PlayerTemplate getTemplate() => _playerTemplate;
 
-	/**
-	 * @param newclass
-	 */
-	public void setTemplate(CharacterClass newclass)
-	{
-		base.setTemplate(PlayerTemplateData.getInstance().getTemplate(newclass));
-	}
+    protected override CreatureAI initAI() => new PlayerAI(this);
 
-	protected override CreatureAI initAI()
-	{
-		return new PlayerAI(this);
-	}
+    /** Return the Level of the Player. */
+	public override int getLevel() => getStat().getLevel();
 
-	/** Return the Level of the Player. */
-	public override int getLevel()
-	{
-		return getStat().getLevel();
-	}
-
-	public void setBaseClass(CharacterClass classId)
+    public void setBaseClass(CharacterClass classId)
 	{
 		_baseClass = classId;
 	}
 
-	public bool isInStoreMode()
-	{
-		return _privateStoreType != PrivateStoreType.NONE;
-	}
+	public bool isInStoreMode() => _privateStoreType != PrivateStoreType.NONE;
 
-	public bool isInStoreSellOrBuyMode()
+    public bool isInStoreSellOrBuyMode()
 	{
 		return _privateStoreType == PrivateStoreType.BUY || _privateStoreType == PrivateStoreType.SELL || _privateStoreType == PrivateStoreType.PACKAGE_SELL;
 	}
 
-	public bool isCrafting()
-	{
-		return _isCrafting;
-	}
+	public bool isCrafting() => _isCrafting;
 
-	public void setCrafting(bool isCrafting)
+    public void setCrafting(bool isCrafting)
 	{
 		_isCrafting = isCrafting;
 	}
@@ -1020,20 +1256,14 @@ public class Player: Playable
 	/**
 	 * @return a collection containing all Common RecipeList of the Player.
 	 */
-	public ICollection<RecipeList> getCommonRecipeBook()
-	{
-		return _commonRecipeBook.Values;
-	}
+	public ICollection<RecipeList> getCommonRecipeBook() => _commonRecipeBook.Values;
 
-	/**
+    /**
 	 * @return a collection containing all Dwarf RecipeList of the Player.
 	 */
-	public ICollection<RecipeList> getDwarvenRecipeBook()
-	{
-		return _dwarvenRecipeBook.Values;
-	}
+	public ICollection<RecipeList> getDwarvenRecipeBook() => _dwarvenRecipeBook.Values;
 
-	/**
+    /**
 	 * Add a new RecipList to the table _commonrecipebook containing all RecipeList of the Player
 	 * @param recipe The RecipeList to add to the _recipebook
 	 * @param saveToDb
@@ -1105,12 +1335,12 @@ public class Player: Playable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			ctx.CharacterRecipeBooks.Add(new CharacterRecipeBook()
+			ctx.CharacterRecipeBooks.Add(new CharacterRecipeBook
 			{
 				CharacterId = ObjectId,
 				Id = recipeId,
 				ClassIndex = (short)(isDwarf ? _classIndex : 0),
-				Type = isDwarf ? 1 : 0
+				Type = isDwarf ? 1 : 0,
 			});
 
 			ctx.SaveChanges();
@@ -1141,22 +1371,16 @@ public class Player: Playable
 	/**
 	 * @return the Id for the last talked quest NPC.
 	 */
-	public int getLastQuestNpcObject()
-	{
-		return _questNpcObject;
-	}
+	public int getLastQuestNpcObject() => _questNpcObject;
 
-	public void setLastQuestNpcObject(int npcId)
+    public void setLastQuestNpcObject(int npcId)
 	{
 		_questNpcObject = npcId;
 	}
 
-	public bool isSimulatingTalking()
-	{
-		return _simulatedTalking;
-	}
+	public bool isSimulatingTalking() => _simulatedTalking;
 
-	public void setSimulatedTalking(bool value)
+    public void setSimulatedTalking(bool value)
 	{
 		_simulatedTalking = value;
 	}
@@ -1165,12 +1389,9 @@ public class Player: Playable
 	 * @param quest The name of the quest
 	 * @return the QuestState object corresponding to the quest name.
 	 */
-	public QuestState? getQuestState(string quest)
-	{
-		return _quests.get(quest);
-	}
+	public QuestState? getQuestState(string quest) => _quests.get(quest);
 
-	/**
+    /**
 	 * Add a QuestState to the table _quest containing all quests began by the Player.
 	 * @param qs The QuestState to add to _quest
 	 */
@@ -1184,12 +1405,9 @@ public class Player: Playable
 	 * @param quest the quest state to check
 	 * @return {@code true} if the player has the quest state, {@code false} otherwise
 	 */
-	public bool hasQuestState(string quest)
-	{
-		return _quests.ContainsKey(quest);
-	}
+	public bool hasQuestState(string quest) => _quests.ContainsKey(quest);
 
-	public bool hasAnyCompletedQuestStates(List<int> questIds)
+    public bool hasAnyCompletedQuestStates(List<int> questIds)
 	{
 		foreach (QuestState questState in _quests.Values)
 		{
@@ -1213,12 +1431,9 @@ public class Player: Playable
 	/**
 	 * @return List of {@link QuestState}s of the current player.
 	 */
-	public ICollection<QuestState> getAllQuestStates()
-	{
-		return _quests.Values;
-	}
+	public ICollection<QuestState> getAllQuestStates() => _quests.Values;
 
-	/**
+    /**
 	 * @return a table containing all Quest in progress from the table _quests.
 	 */
 	public ICollection<Quest> getAllActiveQuests()
@@ -1250,7 +1465,7 @@ public class Player: Playable
 			return;
 		}
 
-		Npc target = _lastFolkNpc;
+		Npc? target = _lastFolkNpc;
 		if (target != null && this.IsInsideRadius2D(target, Npc.INTERACTION_DISTANCE))
 		{
 			quest.notifyEvent(ev, target, this);
@@ -1267,7 +1482,7 @@ public class Player: Playable
 	}
 
 	/** List of all QuestState instance that needs to be notified of this Player's or its pet's death */
-	private Set<QuestState> _notifyQuestOfDeathList;
+	private Set<QuestState>? _notifyQuestOfDeathList;
 
 	/**
 	 * Add QuestState instance that is to be notified of Player's death.
@@ -1326,22 +1541,16 @@ public class Player: Playable
 	/**
 	 * @return a collection containing all ShortCut of the Player.
 	 */
-	public ICollection<Shortcut> getAllShortCuts()
-	{
-		return _shortCuts.getAllShortCuts();
-	}
+	public ICollection<Shortcut> getAllShortCuts() => _shortCuts.getAllShortCuts();
 
-	/**
+    /**
 	 * @param slot The slot in which the shortCuts is equipped
 	 * @param page The page of shortCuts containing the slot
 	 * @return the ShortCut of the Player corresponding to the position (page-slot).
 	 */
-	public Shortcut getShortCut(int slot, int page)
-	{
-		return _shortCuts.getShortCut(slot, page);
-	}
+	public Shortcut getShortCut(int slot, int page) => _shortCuts.getShortCut(slot, page);
 
-	/**
+    /**
 	 * Add a L2shortCut to the Player _shortCuts
 	 * @param shortcut
 	 */
@@ -1897,9 +2106,12 @@ public class Player: Playable
 		if (expectedLevel > 0)
 		{
 			if (_einhasadOverseeingLevel != expectedLevel)
-			{
+            {
+                Skill skill = SkillData.getInstance().getSkill((int)CommonSkill.EINHASAD_OVERSEEING, expectedLevel) ??
+                    throw new InvalidOperationException($"EINHASAD_OVERSEEING skill id={CommonSkill.EINHASAD_OVERSEEING} not found");
+
 				getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING);
-				SkillData.getInstance().getSkill((int)CommonSkill.EINHASAD_OVERSEEING, expectedLevel).applyEffects(this, this);
+				skill.applyEffects(this, this);
 			}
 		}
 		else
@@ -1965,13 +2177,18 @@ public class Player: Playable
 			{
 				_curWeightPenalty = newWeightPenalty;
 				if (newWeightPenalty > 0 && !_dietMode)
-				{
-					addSkill(SkillData.getInstance().getSkill((int)CommonSkill.WEIGHT_PENALTY, newWeightPenalty));
+                {
+                    Skill skill = SkillData.getInstance().getSkill((int)CommonSkill.WEIGHT_PENALTY, newWeightPenalty) ??
+                        throw new InvalidOperationException(
+                            $"WEIGHT_PENALTY skill id={(int)CommonSkill.WEIGHT_PENALTY}, level={newWeightPenalty} not found");
+
+					addSkill(skill);
 					setOverloaded(getCurrentLoad() > maxLoad);
 				}
 				else
-				{
-					removeSkill(getKnownSkill(4270), false, true);
+                {
+                    Skill? skill = getKnownSkill((int)CommonSkill.WEIGHT_PENALTY);
+					removeSkill(skill, false, true);
 					setOverloaded(false);
 				}
 				if (broadcast)
@@ -2236,7 +2453,10 @@ public class Player: Playable
 			}
 			if (isSubClassActive())
 			{
-				getSubClasses().get(_classIndex).setClassId(id);
+                SubClassHolder subClass = getSubClasses().get(_classIndex) ??
+                    throw new InvalidOperationException($"SubClass is null for index={_classIndex}");
+
+                subClass.setClassId(id);
 			}
 			setTarget(this);
 			broadcastPacket(new MagicSkillUsePacket(this, 5103, 1, TimeSpan.Zero, TimeSpan.Zero));
@@ -2309,15 +2529,6 @@ public class Player: Playable
 	}
 
 	/**
-	 * Set the fists weapon of the Player (used when no weapon is equiped).
-	 * @param weaponItem The fists Weapon to set to the Player
-	 */
-	public void setFistsWeaponItem(Weapon weaponItem)
-	{
-		_fistsWeaponItem = weaponItem;
-	}
-
-	/**
 	 * @return the fists weapon of the Player (used when no weapon is equipped).
 	 */
 	public Weapon getFistsWeaponItem()
@@ -2329,7 +2540,7 @@ public class Player: Playable
 	 * @param classId
 	 * @return the fists weapon of the Player Class (used when no weapon is equipped).
 	 */
-	public Weapon findFistsWeaponItem(CharacterClass characterClass)
+	private static Weapon findFistsWeaponItem(CharacterClass characterClass)
 	{
 		// TODO the method looks like dirty hack
 		int classId = (int)characterClass;
@@ -2404,8 +2615,11 @@ public class Player: Playable
 		}
 
 		foreach (SkillLearn skill in SkillTreeData.getInstance().getRaceSkillTree(getRace()))
-		{
-			addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), true);
+        {
+            Skill skill1 = SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()) ??
+                throw new InvalidOperationException($"Skill id={skill.getSkillId()}, level={skill.getSkillLevel()} not found");
+
+			addSkill(skill1, true);
 		}
 
 		checkItemRestriction();
@@ -2506,7 +2720,8 @@ public class Player: Playable
 			Skill updatedSkill = skill;
 			if (oldSkill != null && oldSkill.getSubLevel() > 0 && skill.getSubLevel() == 0 && oldSkill.getLevel() < skillLevel)
 			{
-				updatedSkill = SkillData.getInstance().getSkill(skillId, skillLevel, oldSkill.getSubLevel());
+				updatedSkill = SkillData.getInstance().getSkill(skillId, skillLevel, oldSkill.getSubLevel()) ??
+                    throw new InvalidOperationException($"Skill with id={skillId}, level={skillLevel}, subLevel={oldSkill.getSubLevel()} not found");
 			}
 
 			addSkill(updatedSkill, false);
@@ -2572,7 +2787,8 @@ public class Player: Playable
 		{
 			return getTemplate().getRace();
 		}
-		return PlayerTemplateData.getInstance().getTemplate(_baseClass).getRace();
+
+        return _baseClass.GetRace();
 	}
 
 	public Radar getRadar()
@@ -2870,15 +3086,16 @@ public class Player: Playable
 		if (count > 0)
 		{
 			_inventory.addAdena(process, count, this, reference);
+            Item? adenaItem = _inventory.getAdenaInstance();
 
 			// Send update packet
 			if (count == getAdena())
 			{
 				sendItemList();
 			}
-			else
+			else if (adenaItem != null)
 			{
-				InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(_inventory.getAdenaInstance(), ItemChangeType.MODIFIED));
+				InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(adenaItem, ItemChangeType.MODIFIED));
 				sendInventoryUpdate(iu);
 			}
 		}
@@ -2912,10 +3129,13 @@ public class Player: Playable
 			}
 
 			// Send update packet
-			InventoryUpdatePacket iu = new InventoryUpdatePacket(adenaItem);
-			sendInventoryUpdate(iu);
+            if (adenaItem != null)
+            {
+                InventoryUpdatePacket iu = new InventoryUpdatePacket(adenaItem); // TODO: what if adena item removed?
+                sendInventoryUpdate(iu);
+            }
 
-			if (sendMessage)
+            if (sendMessage)
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_ADENA_DISAPPEARED);
 				sm.Params.addLong(count);
@@ -2954,10 +3174,13 @@ public class Player: Playable
 			}
 
 			// Send update packet
-			InventoryUpdatePacket iu = new InventoryUpdatePacket(beautyTickets);
-			sendInventoryUpdate(iu);
+            if (beautyTickets != null)
+            {
+                InventoryUpdatePacket iu = new InventoryUpdatePacket(beautyTickets); // what if item is removed?
+                sendInventoryUpdate(iu);
+            }
 
-			if (sendMessage)
+            if (sendMessage)
 			{
 				if (count > 1)
 				{
@@ -2999,9 +3222,13 @@ public class Player: Playable
 		{
 			_inventory.addAncientAdena(process, count, this, reference);
 
-			InventoryUpdatePacket iu = new InventoryUpdatePacket(_inventory.getAncientAdenaInstance());
-			sendInventoryUpdate(iu);
-		}
+            Item? ancientAdenaIntance = _inventory.getAncientAdenaInstance();
+            if (ancientAdenaIntance != null)
+            {
+                InventoryUpdatePacket iu = new InventoryUpdatePacket(ancientAdenaIntance); // TODO: what if item is removed?
+                sendInventoryUpdate(iu);
+            }
+        }
 	}
 
 	/**
@@ -3031,10 +3258,13 @@ public class Player: Playable
 				return false;
 			}
 
-			InventoryUpdatePacket iu = new InventoryUpdatePacket(ancientAdenaItem);
-			sendInventoryUpdate(iu);
+            if (ancientAdenaItem != null)
+            {
+                InventoryUpdatePacket iu = new InventoryUpdatePacket(ancientAdenaItem); // TODO
+                sendInventoryUpdate(iu);
+            }
 
-			if (sendMessage)
+            if (sendMessage)
 			{
 				if (count > 1)
 				{
@@ -3094,18 +3324,26 @@ public class Player: Playable
 			// Add the item to inventory
 			Item? newitem = _inventory.addItem(process, item, this, reference);
 
+            // TODO: null check added, verify
+            if (newitem is null)
+                throw new InvalidOperationException("Added item is null");
+
 			// If over capacity, drop the item
-			if (!canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && !_inventory.validateCapacity(0, item.isQuestItem()) && newitem.isDropable() && (!newitem.isStackable() || newitem.getLastChange() != ItemChangeType.MODIFIED))
-			{
-				dropItem("InvDrop", newitem, null, true, true);
-			}
-			else if (CursedWeaponsManager.getInstance().isCursed(newitem.getId()))
+            if (!canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) &&
+                !_inventory.validateCapacity(0, item.isQuestItem()) && newitem.isDropable() &&
+                (!newitem.isStackable() || newitem.getLastChange() != ItemChangeType.MODIFIED))
+            {
+                dropItem("InvDrop", newitem, null, true, true);
+            }
+            else if (CursedWeaponsManager.getInstance().isCursed(newitem.getId()))
 			{
 				CursedWeaponsManager.getInstance().activate(this, newitem);
 			}
 			else if (FortSiegeManager.getInstance().isCombat(item.getId()) && FortSiegeManager.getInstance().activateCombatFlag(this, item))
 			{
-				Fort? fort = FortManager.getInstance().getFort(this);
+				Fort fort = FortManager.getInstance().getFort(this) ??
+                    throw new InvalidOperationException("Combat item added to inventory but fort is null");
+
 				fort.getSiege().announceToPlayer(new SystemMessagePacket(SystemMessageId.C1_HAS_ACQUIRED_THE_FLAG), getName());
 			}
 		}
@@ -3120,7 +3358,7 @@ public class Player: Playable
 	 * @param sendMessage : bool Specifies whether to send message to Client about this action
 	 * @return
 	 */
-	public Item addItem(string process, int itemId, long count, WorldObject? reference, bool sendMessage)
+	public Item? addItem(string process, int itemId, long count, WorldObject? reference, bool sendMessage)
 	{
 		return addItem(process, itemId, count, -1, reference, sendMessage);
 	}
@@ -3203,6 +3441,10 @@ public class Player: Playable
 			{
 				// Add the item to inventory
 				Item? createdItem = _inventory.addItem(process, itemId, count, this, reference);
+                // TODO: null check added, verify
+                if (createdItem is null)
+                    throw new InvalidOperationException("Added item is null");
+
 				if (enchantLevel > -1)
 				{
 					createdItem.setEnchantLevel(enchantLevel);
@@ -3629,10 +3871,13 @@ public class Player: Playable
 		}
 
 		// Send inventory update packet
-		InventoryUpdatePacket playerIU = new InventoryUpdatePacket(invitem);
-		sendInventoryUpdate(playerIU);
+        if (invitem != null)
+        {
+            InventoryUpdatePacket playerIU = new InventoryUpdatePacket(invitem);
+            sendInventoryUpdate(playerIU);
+        }
 
-		// Sends message to client if requested
+        // Sends message to client if requested
 		if (sendMessage)
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_DROPPED_S1);
@@ -3872,10 +4117,10 @@ public class Player: Playable
 		bool needCpUpdate = this.needCpUpdate();
 		bool needHpUpdate = this.needHpUpdate();
 		bool needMpUpdate = this.needMpUpdate();
-		Party? party = getParty();
 
 		// Check if a party is in progress and party window update is usefull
-		if (_party != null && (needCpUpdate || needHpUpdate || needMpUpdate))
+        Party? party = getParty();
+		if (party != null && (needCpUpdate || needHpUpdate || needMpUpdate))
 		{
 			PartySmallWindowUpdateType partySmallWindowUpdateType = PartySmallWindowUpdateType.None;
 			if (needCpUpdate)
@@ -4057,12 +4302,12 @@ public class Player: Playable
 	 */
 	public override int? getAllyId()
 	{
-		return _clan == null ? 0 : _clan.getAllyId();
+		return _clan?.getAllyId() ?? 0;
 	}
 
 	public int? getAllyCrestId()
 	{
-		return getAllyId() == 0 ? 0 : _clan.getAllyCrestId();
+		return _clan?.getAllyCrestId() ?? 0;
 	}
 
 	public override void sendPacket<TPacket>(TPacket packet)
@@ -4138,8 +4383,11 @@ public class Player: Playable
 	 * @param itemCount the item count
 	 */
 	public void doAutoLoot(Attackable target, int itemId, long itemCount)
-	{
-		if (isInParty() && !ItemData.getInstance().getTemplate(itemId).hasExImmediateEffect())
+    {
+        ItemTemplate itemTemplate = ItemData.getInstance().getTemplate(itemId) ??
+            throw new InvalidOperationException("Item template id={itemId} not found");
+
+		if (isInParty() && _party != null && !itemTemplate.hasExImmediateEffect())
 		{
 			_party.distributeItem(this, itemId, itemCount, false, target);
 		}
@@ -4218,7 +4466,8 @@ public class Player: Playable
 				return;
 			}
 
-			if (((isInParty() && _party.getDistributionType() == PartyDistributionType.FINDERS_KEEPERS) || !isInParty()) && !_inventory.validateCapacity(target))
+            Party? party = _party;
+			if (((isInParty() && party != null && party.getDistributionType() == PartyDistributionType.FINDERS_KEEPERS) || !isInParty()) && !_inventory.validateCapacity(target))
 			{
 				sendPacket(ActionFailedPacket.STATIC_PACKET);
 				sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
@@ -4322,7 +4571,7 @@ public class Player: Playable
 			}
 
 			// Check if a Party is in progress
-			if (isInParty())
+			if (isInParty() && _party != null)
 			{
 				_party.distributeItem(this, target);
 			}
@@ -4405,7 +4654,7 @@ public class Player: Playable
 		}
 	}
 
-	public PreparedMultisellListHolder getMultiSell()
+	public PreparedMultisellListHolder? getMultiSell()
 	{
 		return _currentMultiSell;
 	}
@@ -4428,8 +4677,11 @@ public class Player: Playable
 	{
 		WorldObject? newTarget = worldObject;
 		if (newTarget != null)
-		{
-			bool isInParty = newTarget.isPlayer() && this.isInParty() && _party.containsPlayer(newTarget.getActingPlayer());
+        {
+            Party? party = _party;
+            Player? targetPlayer = newTarget.getActingPlayer();
+			bool isInParty = newTarget.isPlayer() && this.isInParty() && targetPlayer != null && party != null &&
+                party.containsPlayer(targetPlayer);
 
 			// Prevents /target exploiting
 			if (!isInParty && Math.Abs(newTarget.getZ() - getZ()) > 1000)
@@ -4563,7 +4815,8 @@ public class Player: Playable
 		{
 			return true;
 		}
-		return armor != null && _inventory.getPaperdollItem(Inventory.PAPERDOLL_CHEST).getTemplate().getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR && armor.getItemType() == ArmorType.HEAVY;
+
+		return armor != null && armor.getTemplate().getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR && armor.getItemType() == ArmorType.HEAVY;
 	}
 
 	public bool isWearingLightArmor()
@@ -4573,7 +4826,7 @@ public class Player: Playable
 		if (armor != null && legs != null && legs.getItemType() == ArmorType.LIGHT && armor.getItemType() == ArmorType.LIGHT)
 			return true;
 
-        return armor != null && _inventory.getPaperdollItem(Inventory.PAPERDOLL_CHEST).getTemplate().getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR && armor.getItemType() == ArmorType.LIGHT;
+        return armor != null && armor.getTemplate().getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR && armor.getItemType() == ArmorType.LIGHT;
 	}
 
 	public bool isWearingMagicArmor()
@@ -4584,7 +4837,7 @@ public class Player: Playable
 		{
 			return true;
 		}
-		return armor != null && _inventory.getPaperdollItem(Inventory.PAPERDOLL_CHEST).getTemplate().getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR && armor.getItemType() == ArmorType.MAGIC;
+		return armor != null && armor.getTemplate().getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR && armor.getItemType() == ArmorType.MAGIC;
 	}
 
 	/**
@@ -4617,7 +4870,7 @@ public class Player: Playable
 	 * <li>Kill the Player</li><br>
 	 * @param killer
 	 */
-	public override bool doDie(Creature killer)
+	public override bool doDie(Creature? killer)
 	{
 		// Stop auto peel.
 		if (hasRequest<AutoPeelRequest>())
@@ -4729,10 +4982,13 @@ public class Player: Playable
 					FortSiegeManager.getInstance().dropCombatFlag(this, fort.getResidenceId());
 				}
 				else
-				{
-					long slot = _inventory.getSlotFromItem(_inventory.getItemByItemId(FortManager.ORC_FORTRESS_FLAG));
+                {
+                    Item flagItem = _inventory.getItemByItemId(FortManager.ORC_FORTRESS_FLAG) ??
+                        throw new InvalidOperationException("_combatFlagEquippedId is true but no flag in inventory");
+
+					long slot = _inventory.getSlotFromItem(flagItem);
 					_inventory.unEquipItemInBodySlot(slot);
-					destroyItem("OrcFortress CombatFlag", _inventory.getItemByItemId(FortManager.ORC_FORTRESS_FLAG), null, true);
+					destroyItem("OrcFortress CombatFlag", flagItem, null, true);
 				}
 			}
 			else
@@ -4865,8 +5121,10 @@ public class Player: Playable
 			return droppedItems;
 		}
 
+        Clan? clan = getClan();
 		Player? pk = killer.getActingPlayer();
-		if (getReputation() >= 0 && pk != null && pk.getClan() != null && getClan() != null && pk.getClan().isAtWarWith(_clanId.Value))
+        Clan? pkClan = pk?.getClan();
+		if (getReputation() >= 0 && pk != null && pkClan != null && clan != null && pkClan.isAtWarWith(clan.getId()))
             // || _clan.isAtWarWith(((Player)killer).getClanId())
         {
 			return droppedItems;
@@ -5233,7 +5491,8 @@ public class Player: Playable
 			}
 		}
 
-		if (killer != null && killer.isPlayable() && atWarWith(killer.getActingPlayer()))
+        Player? killerPlayer = killer?.getActingPlayer();
+		if (killer != null && killer.isPlayable() && killerPlayer != null && atWarWith(killerPlayer))
 		{
 			lostExp /= 4;
 		}
@@ -5284,7 +5543,7 @@ public class Player: Playable
 		return getServitors().Values.FirstOrDefault();
 	}
 
-	public override Summon getServitor(int objectId)
+	public override Summon? getServitor(int objectId)
 	{
 		return getServitors().get(objectId);
 	}
@@ -5303,7 +5562,7 @@ public class Player: Playable
 	/**
 	 * @return any summoned trap by this player or null.
 	 */
-	public Trap getTrap()
+	public Trap? getTrap()
 	{
 		foreach (Npc npc in getSummonedNpcs())
 		{
@@ -5349,7 +5608,7 @@ public class Player: Playable
 	/**
 	 * @return the Player requester of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).
 	 */
-	public Model.Request getRequest()
+	public Model.Request? getRequest()
 	{
 		return _request;
 	}
@@ -5797,7 +6056,7 @@ public class Player: Playable
 		}
 
 		// Don't allow disarming if the weapon is force equip.
-		if (wpn.getWeaponItem().isForceEquip())
+		if (wpn.getWeaponItem()!.isForceEquip()) // TODO: forced not null
 		{
 			return false;
 		}
@@ -6130,7 +6389,7 @@ public class Player: Playable
 	 */
 	public void leaveParty()
 	{
-		if (isInParty())
+		if (isInParty() && _party != null)
 		{
 			_party.removePartyMember(this, PartyMessageType.DISCONNECTED);
 			_party = null;
@@ -6147,12 +6406,12 @@ public class Player: Playable
 
 	public bool isInCommandChannel()
 	{
-		return isInParty() && _party.isInCommandChannel();
+		return isInParty() && _party != null && _party.isInCommandChannel();
 	}
 
 	public CommandChannel? getCommandChannel()
 	{
-		return isInCommandChannel() ? _party.getCommandChannel() : null;
+		return isInCommandChannel() ? _party?.getCommandChannel() : null;
 	}
 
 	/**
@@ -6335,391 +6594,59 @@ public class Player: Playable
 	 * Create a new player in the characters table of the database.
 	 * @return
 	 */
-	private bool createDb()
+	private void createDb()
 	{
-		try
-		{
-			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			AccountRef? account = ctx.AccountRefs.SingleOrDefault(r => r.Id == _accountId);
-			if (account is null)
-			{
-				account = new AccountRef();
-				account.Id = _accountId;
-				account.Login = _accountName;
-				ctx.AccountRefs.Add(account);
-				ctx.SaveChanges();
-			}
-
-			ctx.Characters.Add(new Character()
-			{
-				Id = ObjectId,
-				AccountId = _accountId,
-                Name = getName(),
-                Level = (short)getLevel(),
-                MaxHp = getMaxHp(),
-                CurrentHp = (int)getCurrentHp(),
-                MaxCp = getMaxCp(),
-                CurrentCp = (int)getCurrentCp(),
-                MaxMp = getMaxMp(),
-                CurrentMp = (int)getCurrentMp(),
-                Face = _appearance.getFace(),
-                HairStyle = _appearance.getHairStyle(),
-                HairColor = _appearance.getHairColor(),
-                Sex = _appearance.getSex(),
-                Exp = getExp(),
-                Sp = getSp(),
-                Reputation = getReputation(),
-                Fame = _fame,
-                RaidBossPoints = _raidbossPoints,
-                PvpKills = _pvpKills,
-                PkKills = _pkKills,
-                ClanId = _clanId,
-                Class = getClassId(),
-                DeleteTime = _deleteTime,
-                HasDwarvenCraft = hasDwarvenCraft(),
-				Title = getTitle(),
-				TitleColor = _appearance.getTitleColor().Value,
-				OnlineStatus = getOnlineStatus(),
-				ClanPrivileges = (int)_clanPrivileges,
-				WantsPeace = _wantsPeace,
-				BaseClass = _baseClass,
-				IsNobless = isNoble(),
-				PowerGrade = 0,
-				VitalityPoints = PlayerStat.MIN_VITALITY_POINTS,
-				Created = _createDate,
-				Kills = getTotalKills(),
-				Deaths = getTotalDeaths()
-			});
-
+		using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
+		AccountRef? account = ctx.AccountRefs.SingleOrDefault(r => r.Id == _accountId);
+		if (account is null)
+        {
+            account = new AccountRef { Id = _accountId, Login = _accountName };
+            ctx.AccountRefs.Add(account);
 			ctx.SaveChanges();
 		}
-		catch (Exception e)
+
+		ctx.Characters.Add(new Character
 		{
-			LOGGER.Error("Could not insert char data: " + e);
-			return false;
-		}
+			Id = ObjectId,
+			AccountId = _accountId,
+            Name = getName(),
+            Level = (short)getLevel(),
+            MaxHp = getMaxHp(),
+            CurrentHp = (int)getCurrentHp(),
+            MaxCp = getMaxCp(),
+            CurrentCp = (int)getCurrentCp(),
+            MaxMp = getMaxMp(),
+            CurrentMp = (int)getCurrentMp(),
+            Face = _appearance.getFace(),
+            HairStyle = _appearance.getHairStyle(),
+            HairColor = _appearance.getHairColor(),
+            Sex = _appearance.getSex(),
+            Exp = getExp(),
+            Sp = getSp(),
+            Reputation = getReputation(),
+            Fame = _fame,
+            RaidBossPoints = _raidbossPoints,
+            PvpKills = _pvpKills,
+            PkKills = _pkKills,
+            ClanId = _clanId,
+            Class = getClassId(),
+            DeleteTime = _deleteTime,
+            HasDwarvenCraft = hasDwarvenCraft(),
+			Title = getTitle(),
+			TitleColor = _appearance.getTitleColor().Value,
+			OnlineStatus = getOnlineStatus(),
+			ClanPrivileges = (int)_clanPrivileges,
+			WantsPeace = _wantsPeace,
+			BaseClass = _baseClass,
+			IsNobless = isNoble(),
+			PowerGrade = 0,
+			VitalityPoints = PlayerStat.MIN_VITALITY_POINTS,
+			Created = _createDate,
+			Kills = getTotalKills(),
+			Deaths = getTotalDeaths(),
+		});
 
-		return true;
-	}
-
-	/**
-	 * Retrieve a Player from the characters table of the database and add it in _allObjects of the L2world. <b><u>Actions</u>:</b>
-	 * <li>Retrieve the Player from the characters table of the database</li>
-	 * <li>Add the Player object in _allObjects</li>
-	 * <li>Set the x,y,z position of the Player and make it invisible</li>
-	 * <li>Update the overloaded status of the Player</li><br>
-	 * @param objectId Identifier of the object to initialized
-	 * @return The Player loaded from the database
-	 */
-	private static Player? restore(int objectId)
-	{
-		try
-		{
-			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-
-			// Retrieve the Player from the characters table of the database
-			Character? character = ctx.Characters.SingleOrDefault(c => c.Id == objectId);
-            if (character is null)
-                return null;
-
-            // Retrieve account name
-            int accountId = character.AccountId;
-            string accountName = ctx.AccountRefs.Where(a => a.Id == accountId).Select(a => a.Login).Single();
-
-            CharacterClass activeClassId = character.Class;
-            PlayerTemplate? template = PlayerTemplateData.getInstance().getTemplate(activeClassId);
-
-            Player player = new Player(objectId, template, accountId, accountName, character.Name,
-                character.Sex, character.Face, character.HairColor, character.HairStyle);
-
-            player.setName(character.Name);
-            player.setLastAccess(character.LastAccess);
-
-            player.getStat().setExp(character.Exp);
-            player.setExpBeforeDeath(character.ExpBeforeDeath);
-            player.getStat().setLevel(character.Level);
-            player.getStat().setSp(character.Sp);
-
-            player.setWantsPeace(character.WantsPeace);
-
-            player.setHeading(character.Heading);
-
-            player.setInitialReputation(character.Reputation);
-            player.setFame(character.Fame);
-            player.setRaidbossPoints(character.RaidBossPoints);
-            player.setPvpKills(character.PvpKills);
-            player.setPkKills(character.PkKills);
-            player.setOnlineTime(character.OnlineTime);
-            player.setNoble(character.IsNobless);
-
-            byte? factionId = character.Faction;
-            if (factionId == 1)
-            {
-                player.setGood();
-            }
-
-            if (factionId == 2)
-            {
-                player.setEvil();
-            }
-
-            player.setClanJoinExpiryTime(character.ClanJoinExpiryTime);
-            if (player.getClanJoinExpiryTime() < DateTime.UtcNow)
-            {
-                player.setClanJoinExpiryTime(null);
-            }
-
-            player.setClanCreateExpiryTime(character.ClanCreateExpiryTime);
-            if (player.getClanCreateExpiryTime() < DateTime.UtcNow)
-            {
-                player.setClanCreateExpiryTime(null);
-            }
-
-            player.setPcCafePoints(character.PcCafePoints);
-
-            int? clanId = character.ClanId;
-            player.setPowerGrade(character.PowerGrade);
-            player.getStat().setVitalityPoints(character.VitalityPoints);
-            player.setPledgeType(character.SubPledge);
-            // player.setApprentice(rset.getInt("apprentice"));
-
-            if (clanId != null)
-            {
-                player.setClan(ClanTable.getInstance().getClan(clanId.Value));
-            }
-
-            Clan? clan = player.getClan();
-            if (clan != null)
-            {
-                if (clan.getLeaderId() != player.ObjectId)
-                {
-                    if (player.getPowerGrade() == 0)
-                    {
-                        player.setPowerGrade(5);
-                    }
-
-                    player.setClanPrivileges(clan.getRankPrivs(player.getPowerGrade()));
-                }
-                else
-                {
-                    player.setClanPrivileges(ClanPrivilege.All);
-                    player.setPowerGrade(1);
-                }
-
-                player.setPledgeClass(ClanMember.calculatePledgeClass(player));
-            }
-            else
-            {
-                if (player.isNoble())
-                {
-                    player.setPledgeClass(SocialClass.ELDER);
-                }
-
-                if (player.isHero())
-                {
-                    player.setPledgeClass(SocialClass.COUNT);
-                }
-
-                player.setClanPrivileges(ClanPrivilege.None);
-            }
-
-            player.setTotalDeaths(character.Deaths);
-            player.setTotalKills(character.Kills);
-            player.setDeleteTimer(character.DeleteTime);
-            player.setTitle(character.Title ?? string.Empty);
-            player.setAccessLevel(character.AccessLevel, false, false);
-            int titleColor = character.TitleColor;
-            if (titleColor != PlayerAppearance.DEFAULT_TITLE_COLOR)
-            {
-                player.getAppearance().setTitleColor(new Color(titleColor));
-            }
-
-            player.setFistsWeaponItem(player.findFistsWeaponItem(activeClassId));
-            player.setUptime(DateTime.UtcNow);
-
-            player.setClassIndex(0);
-            try
-            {
-                player.setBaseClass(character.BaseClass);
-            }
-            catch (Exception e)
-            {
-                player.setBaseClass(activeClassId);
-                LOGGER.Warn(
-                    "Exception during player.setBaseClass for player: " + player + " base class: " +
-                    character.BaseClass, e);
-            }
-
-            // Restore Subclass Data (cannot be done earlier in function)
-            if (restoreSubClassData(player) && activeClassId != player.getBaseClass())
-            {
-                foreach (SubClassHolder subClass in player.getSubClasses().Values)
-                {
-                    if (subClass.getClassDefinition() == activeClassId)
-                    {
-                        player.setClassIndex(subClass.getClassIndex());
-                    }
-                }
-            }
-
-            if (player.getClassIndex() == 0 && activeClassId != player.getBaseClass())
-            {
-                // Subclass in use but doesn't exist in DB -
-                // a possible restart-while-modifysubclass cheat has been attempted.
-                // Switching to use base class
-                player.setClassId(player.getBaseClass());
-                LOGGER.Warn(player +
-                    " reverted to base class. Possibly has tried a relogin exploit while subclassing.");
-            }
-            else
-            {
-                player._activeClass = activeClassId;
-            }
-
-            if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS,
-                    player.getBaseTemplate().getClassId()))
-            {
-                player._isDeathKnight = true;
-            }
-            else if (CategoryData.getInstance()
-                     .isInCategory(CategoryType.VANGUARD_ALL_CLASS, player.getBaseTemplate().getClassId()))
-            {
-                player._isVanguard = true;
-            }
-            else if (CategoryData.getInstance()
-                     .isInCategory(CategoryType.ASSASSIN_ALL_CLASS, player.getBaseTemplate().getClassId()))
-            {
-                player._isAssassin = true;
-            }
-
-            player.setApprentice(character.Apprentice);
-            player.setSponsor(character.SponsorId);
-            player.setLvlJoinedAcademy(character.LevelJoinedAcademy);
-
-            // Set Hero status if it applies.
-            player.setHero(Hero.getInstance().isHero(objectId));
-
-            CursedWeaponsManager.getInstance().checkPlayer(player);
-
-            // Set the x,y,z position of the Player and make it invisible
-            Location3D location = new(character.X, character.Y, character.Z);
-            player.setXYZInvisible(location);
-            player.setLastServerPosition(location);
-
-            // Set Teleport Bookmark Slot
-            player.setBookMarkSlot(character.BookmarkSlot);
-
-            // character creation Time
-            player.setCreateDate(character.Created);
-
-            // Language
-            player.setLang(character.Language);
-
-            // Retrieve the name and ID of the other characters assigned to this account.
-            var query = ctx.Characters.Where(c => c.AccountId == accountId)
-                .Select(c => new { c.Id, c.Name, c.SlotIndex });
-
-            foreach (var record in query)
-            {
-                player._chars.put(record.Id, record.Name);
-            }
-
-            if (player.Events.HasSubscribers<OnPlayerLoad>())
-			{
-				player.Events.NotifyAsync(new OnPlayerLoad(player));
-			}
-
-			if (player.isGM())
-			{
-				long masks = player.getVariables().getLong(COND_OVERRIDE_KEY, int.MaxValue);
-				player.setOverrideCond(masks);
-			}
-
-			// Retrieve from the database all items of this Player and add them to _inventory
-			player.getInventory().restore();
-			player.getWarehouse().restore();
-			player.getFreight().restore();
-			player.restoreItemReuse();
-
-			// Retrieve from the database all secondary data of this Player
-			// Note that Clan, Noblesse and Hero skills are given separately and not here.
-			// Retrieve from the database all skills of this Player and add them to _skills
-			player.restoreCharData();
-
-			// Reward auto-get skills and all available skills if auto-learn skills is true.
-			player.rewardSkills();
-
-			// Restore player shortcuts
-			player.restoreShortCuts();
-
-			player.restorePetEvolvesByItem();
-
-			// Initialize status update cache
-			player.initStatusUpdateCache();
-
-			// Restore current Cp, HP and MP values
-            double currentCp = character.CurrentCp;
-            double currentHp = character.CurrentHp;
-            double currentMp = character.CurrentMp;
-
-            player.setCurrentCp(currentCp);
-			player.setCurrentHp(currentHp);
-			player.setCurrentMp(currentMp);
-
-			player.setOriginalCpHpMp(currentCp, currentHp, currentMp);
-			if (currentHp < 0.5)
-			{
-				player.setDead(true);
-				player.stopHpMpRegeneration();
-			}
-
-			// Restore pet if exists in the world
-			player.setPet(World.getInstance().getPet(player.ObjectId));
-			Summon? pet = player.getPet();
-			if (pet != null)
-			{
-				pet.setOwner(player);
-			}
-
-			if (player.hasServitors())
-			{
-				foreach (Summon summon in player.getServitors().Values)
-				{
-					summon.setOwner(player);
-				}
-			}
-
-			// Recalculate all stats
-			player.getStat().recalculateStats(false);
-
-			// Update the overloaded status of the Player
-			player.refreshOverloaded(false);
-
-			player.restoreFriendList();
-
-			player.restoreRandomCraft();
-			player.restoreSurveillanceList();
-
-			player.loadRecommendations();
-			player.startRecoGiveTask();
-			player.startOnlineTimeUpdateTask();
-
-			player.setOnlineStatus(true, false);
-
-			PlayerAutoSaveTaskManager.getInstance().add(player);
-
-			if (Config.ENABLE_ACHIEVEMENT_BOX)
-			{
-				player.getAchievementBox().restore();
-			}
-
-            return player;
-		}
-		catch (Exception e)
-        {
-            LOGGER.Error("Failed loading character: " + e);
-            return null;
-        }
+		ctx.SaveChanges();
 	}
 
 	/**
@@ -6895,7 +6822,9 @@ public class Player: Playable
 			RecipeData rd = RecipeData.getInstance();
             foreach (var record in query)
             {
-	            RecipeList? recipe = rd.getRecipeList(record.Id);
+	            RecipeList recipe = rd.getRecipeList(record.Id) ??
+                    throw new InvalidOperationException($"RecipeList not found for itemId={record.Id}");
+
 	            if (loadCommon)
 				{
 					if (record.Type == 1)
@@ -7044,9 +6973,9 @@ public class Player: Playable
 			_huntPass.store();
 		}
 
-		if (_achivemenetBox != null)
+		if (_achivementBox != null)
 		{
-			_achivemenetBox.store();
+			_achivementBox.store();
 		}
 	}
 
@@ -7376,7 +7305,8 @@ public class Player: Playable
 		broadcastUserInfo();
 
 		_offlinePlay = true;
-		_client.IsDetached = true;
+        if (_client != null)
+		    _client.IsDetached = true;
 	}
 
 	public bool isOfflinePlay()
@@ -7406,7 +7336,7 @@ public class Player: Playable
 		return _client == null || _client.IsDetached;
 	}
 
-	public override Skill addSkill(Skill newSkill)
+	public override Skill? addSkill(Skill newSkill)
 	{
 		addCustomSkill(newSkill);
 		return base.addSkill(newSkill);
@@ -7421,25 +7351,26 @@ public class Player: Playable
 	 * @param store
 	 * @return The Skill replaced or null if just added a new Skill
 	 */
-	public Skill addSkill(Skill newSkill, bool store)
+	public Skill? addSkill(Skill newSkill, bool store)
 	{
 		// Add a skill to the Player _skills and its Func objects to the calculator set of the Player
-		Skill oldSkill = addSkill(newSkill);
+		Skill? oldSkill = addSkill(newSkill);
 		// Add or update a Player skill in the character_skills table of the database
 		if (store)
 		{
 			storeSkill(newSkill, oldSkill, -1);
 		}
+
 		return oldSkill;
 	}
 
-	public override Skill removeSkill(Skill skill, bool store)
+	public override Skill? removeSkill(Skill? skill, bool store)
 	{
 		removeCustomSkill(skill);
 		return store ? removeSkill(skill) : base.removeSkill(skill, true);
 	}
 
-	public Skill removeSkill(Skill skill, bool store, bool cancelEffect)
+	public Skill? removeSkill(Skill? skill, bool store, bool cancelEffect)
 	{
 		removeCustomSkill(skill);
 		return store ? removeSkill(skill) : base.removeSkill(skill, cancelEffect);
@@ -7453,7 +7384,7 @@ public class Player: Playable
 	 * @param skill The Skill to remove from the Creature
 	 * @return The Skill removed
 	 */
-	public Skill removeSkill(Skill skill)
+	public Skill? removeSkill(Skill? skill)
 	{
 		removeCustomSkill(skill);
 
@@ -7501,7 +7432,7 @@ public class Player: Playable
 	 * @param oldSkill
 	 * @param newClassIndex
 	 */
-	private void storeSkill(Skill newSkill, Skill oldSkill, int newClassIndex)
+	private void storeSkill(Skill newSkill, Skill? oldSkill, int newClassIndex)
 	{
 		int classIndex = newClassIndex > -1 ? newClassIndex : _classIndex;
 		try
@@ -7876,7 +7807,7 @@ public class Player: Playable
 			return false;
 		}
 
-		Henna henna = _hennaPoten[slot - 1].getHenna();
+		Henna? henna = _hennaPoten[slot - 1].getHenna();
 		if (henna == null)
 		{
 			return false;
@@ -7920,9 +7851,10 @@ public class Player: Playable
 		if (henna.getDuration() > 0)
 		{
 			getVariables().remove("HennaDuration" + slot);
-			if (_hennaRemoveSchedules.get(slot) != null)
+            ScheduledFuture? schedule = _hennaRemoveSchedules.get(slot);
+			if (schedule != null)
 			{
-				_hennaRemoveSchedules.get(slot).cancel(false);
+                schedule.cancel(false);
 				_hennaRemoveSchedules.remove(slot);
 			}
 		}
@@ -8021,7 +7953,7 @@ public class Player: Playable
 		_hennaBaseStats.Clear();
 		foreach (HennaPoten hennaPoten in _hennaPoten)
 		{
-			Henna henna = hennaPoten.getHenna();
+			Henna? henna = hennaPoten.getHenna();
 			if (henna == null)
 			{
 				continue;
@@ -8123,7 +8055,7 @@ public class Player: Playable
 		}
 	}
 
-	public HennaPoten getHennaPoten(int slot)
+	public HennaPoten? getHennaPoten(int slot)
 	{
 		if (slot < 1 || slot > _hennaPoten.Length)
 		{
@@ -8160,7 +8092,7 @@ public class Player: Playable
 	{
 		foreach (HennaPoten hennaPoten in _hennaPoten)
 		{
-			Henna henna = hennaPoten.getHenna();
+			Henna? henna = hennaPoten.getHenna();
 			if (henna != null)
 			{
 				return true;
@@ -8322,21 +8254,23 @@ public class Player: Playable
 		}
 
 		// is AutoAttackable if both players are in the same duel and the duel is still going on
-		if (attacker.isPlayable() && _duelState == Duel.DUELSTATE_DUELLING && getDuelId() == attacker.getActingPlayer().getDuelId())
+        Player? attackerPlayer = attacker.getActingPlayer();
+		if (attacker.isPlayable() && _duelState == Duel.DUELSTATE_DUELLING && attackerPlayer != null &&
+            getDuelId() == attackerPlayer.getDuelId())
 		{
 			return true;
 		}
 
 		// Check if the attacker is not in the same party. NOTE: Party checks goes before oly checks in order to prevent patry member autoattack at oly.
-		if (isInParty() && _party.getMembers().Contains(attacker))
+		if (isInParty() && _party != null && _party.getMembers().Contains(attacker))
 		{
 			return false;
 		}
 
 		// Check if the attacker is in olympia and olympia start
-		if (attacker.isPlayer() && attacker.getActingPlayer().isInOlympiadMode())
+		if (attacker.isPlayer() && attackerPlayer != null && attackerPlayer.isInOlympiadMode())
 		{
-			return _inOlympiadMode && _olympiadStart && ((Player) attacker).getOlympiadGameId() == getOlympiadGameId();
+			return _inOlympiadMode && _olympiadStart && ((Player)attacker).getOlympiadGameId() == getOlympiadGameId();
 		}
 
 		// Check if the attacker is in an event
@@ -8354,16 +8288,19 @@ public class Player: Playable
 			}
 
 			// Same Command Channel are friends.
-			if (Config.ALT_COMMAND_CHANNEL_FRIENDS && isInParty() && getParty().getCommandChannel() != null && attacker.isInParty() && attacker.getParty().getCommandChannel() != null && getParty().getCommandChannel() == attacker.getParty().getCommandChannel())
-			{
-				return false;
-			}
+            Party? party = getParty();
+            Party? attackerParty = attacker.getParty();
+            if (Config.ALT_COMMAND_CHANNEL_FRIENDS && isInParty() && party != null && party.getCommandChannel() != null &&
+                attacker.isInParty() && attackerParty != null && attackerParty.getCommandChannel() != null &&
+                party.getCommandChannel() == attackerParty.getCommandChannel())
+            {
+                return false;
+            }
 
-			// Get Player
-			Player? attackerPlayer = attacker.getActingPlayer();
+            // Get Player
 			Clan? clan = getClan();
-			Clan? attackerClan = attackerPlayer.getClan();
-			if (clan != null && attackerClan != null)
+			Clan? attackerClan = attackerPlayer?.getClan();
+			if (clan != null && attackerPlayer != null && attackerClan != null)
 			{
 				if (clan != attackerClan)
 				{
@@ -8393,40 +8330,46 @@ public class Player: Playable
 					if (war != null)
 					{
 						ClanWarState warState = war.getState();
-						if (warState == ClanWarState.MUTUAL || ((warState == ClanWarState.BLOOD_DECLARATION || warState == ClanWarState.DECLARATION) && war.getAttackerClanId() == clan.getId()))
-						{
-							return true;
-						}
-					}
+                        if (warState == ClanWarState.MUTUAL ||
+                            ((warState == ClanWarState.BLOOD_DECLARATION || warState == ClanWarState.DECLARATION) &&
+                                war.getAttackerClanId() == clan.getId()))
+                        {
+                            return true;
+                        }
+                    }
 				}
 			}
 
 			// Check if the Player is in an arena, but NOT siege zone. NOTE: This check comes before clan/ally checks, but after party checks.
 			// This is done because in arenas, clan/ally members can autoattack if they arent in party.
-			if (isInsideZone(ZoneId.PVP) && attackerPlayer.isInsideZone(ZoneId.PVP) && !(isInsideZone(ZoneId.SIEGE) && attackerPlayer.isInsideZone(ZoneId.SIEGE)))
-			{
-				return true;
-			}
+            if (isInsideZone(ZoneId.PVP) && attackerPlayer != null && attackerPlayer.isInsideZone(ZoneId.PVP) &&
+                !(isInsideZone(ZoneId.SIEGE) && attackerPlayer.isInsideZone(ZoneId.SIEGE)))
+            {
+                return true;
+            }
 
-			// Check if the attacker is not in the same clan
+            // Check if the attacker is not in the same clan
 			if (clan != null && clan.isMember(attacker.ObjectId))
 			{
 				return false;
 			}
 
 			// Check if the attacker is not in the same ally
-			if (attacker.isPlayer() && getAllyId() != 0 && getAllyId() == attackerPlayer.getAllyId())
+			if (attacker.isPlayer() && attackerPlayer != null && attackerParty != null && getAllyId() != 0 &&
+                getAllyId() == attackerPlayer.getAllyId())
 			{
 				return false;
 			}
 
 			// Now check again if the Player is in pvp zone, but this time at siege PvP zone, applying clan/ally checks
-			if (isInsideZone(ZoneId.PVP) && attackerPlayer.isInsideZone(ZoneId.PVP) && isInsideZone(ZoneId.SIEGE) && attackerPlayer.isInsideZone(ZoneId.SIEGE))
-			{
-				return true;
-			}
+            if (isInsideZone(ZoneId.PVP) && attackerPlayer != null && attackerPlayer.isInsideZone(ZoneId.PVP) &&
+                isInsideZone(ZoneId.SIEGE) && attackerPlayer.isInsideZone(ZoneId.SIEGE))
+            {
+                return true;
+            }
 
-			if (Config.FACTION_SYSTEM_ENABLED && ((isGood() && attackerPlayer.isEvil()) || (isEvil() && attackerPlayer.isGood())))
+            if (Config.FACTION_SYSTEM_ENABLED && attackerPlayer != null &&
+                ((isGood() && attackerPlayer.isEvil()) || (isEvil() && attackerPlayer.isGood())))
 			{
 				return true;
 			}
@@ -8613,7 +8556,7 @@ public class Player: Playable
 
 		// ************************************* Check Target *******************************************
 		// Create and set a WorldObject containing the target of the skill
-		WorldObject target = usedSkill.getTarget(this, forceUse, dontMove, true);
+		WorldObject? target = usedSkill.getTarget(this, forceUse, dontMove, true);
 		Location3D? worldPosition = _currentSkillWorldPosition;
 		if (usedSkill.getTargetType() == TargetType.GROUND && worldPosition == null)
 		{
@@ -8699,14 +8642,16 @@ public class Player: Playable
 		Player? looter = World.getInstance().getPlayer(looterId);
 
 		// if Player is in a CommandChannel
-		if (isInParty() && _party.isInCommandChannel() && looter != null)
+        Party? party = _party;
+        CommandChannel? commandChannel = party?.getCommandChannel();
+		if (isInParty() && party != null && party.isInCommandChannel() && commandChannel != null && looter != null)
 		{
-			return _party.getCommandChannel().getMembers().Contains(looter);
+			return commandChannel.getMembers().Contains(looter);
 		}
 
-		if (isInParty() && looter != null)
+		if (isInParty() && party != null && looter != null)
 		{
-			return _party.getMembers().Contains(looter);
+			return party.getMembers().Contains(looter);
 		}
 
 		return false;
@@ -8775,10 +8720,14 @@ public class Player: Playable
         // if this is a castle that is currently being sieged, and the rider is NOT a castle owner
         // he cannot land.
         // castle owner is the leader of the clan that owns the castle where the pc is
-        if (isInsideZone(ZoneId.SIEGE) && !(getClan() != null && CastleManager.getInstance().getCastle(this) == CastleManager.getInstance().getCastleByOwner(getClan()) && this == getClan().getLeader().getPlayer()))
+        Clan? clan = getClan();
+        if (isInsideZone(ZoneId.SIEGE) && !(clan != null &&
+                CastleManager.getInstance().getCastle(this) ==
+                CastleManager.getInstance().getCastleByOwner(clan) && this == clan.getLeader().getPlayer()))
         {
             return true;
         }
+
         return false;
 	}
 
@@ -8906,7 +8855,7 @@ public class Player: Playable
 	 * @param cubic
 	 * @return the old cubic for this cubic ID if any, otherwise {@code null}
 	 */
-	public Cubic addCubic(Cubic cubic)
+	public Cubic? addCubic(Cubic cubic)
 	{
 		return _cubics.put(cubic.getTemplate().getId(), cubic);
 	}
@@ -8925,7 +8874,7 @@ public class Player: Playable
 	 * @param cubicId the cubic ID
 	 * @return the cubic with the given cubic ID, {@code null} otherwise
 	 */
-	public Cubic getCubicById(int cubicId)
+	public Cubic? getCubicById(int cubicId)
 	{
 		return _cubics.get(cubicId);
 	}
@@ -8955,7 +8904,7 @@ public class Player: Playable
 	/**
 	 * @return the _lastFolkNpc of the Player corresponding to the last Folk wich one the player talked.
 	 */
-	public Npc getLastFolkNPC()
+	public Npc? getLastFolkNPC()
 	{
 		return _lastFolkNpc;
 	}
@@ -9008,7 +8957,10 @@ public class Player: Playable
 	{
 		foreach (int itemId in _activeSoulShots)
 		{
-			if (ItemData.getInstance().getTemplate(itemId).getCrystalType().getLevel() == crystalType)
+            ItemTemplate template = ItemData.getInstance().getTemplate(itemId) ??
+                throw new InvalidOperationException($"Item template id={itemId} not found");
+
+			if (template.getCrystalType().getLevel() == crystalType)
 			{
 				disableAutoShot(itemId);
 			}
@@ -9208,6 +9160,10 @@ public class Player: Playable
 
 	public void enterOlympiadObserverMode(Location loc, int id)
 	{
+        OlympiadGameTask? olympiadTask = OlympiadGameManager.getInstance().getOlympiadTask(id);
+        if (olympiadTask == null)
+            return;
+
 		if (_pet != null)
 		{
 			_pet.unSummon(this);
@@ -9233,6 +9189,7 @@ public class Player: Playable
 			_party.removePartyMember(this, PartyMessageType.EXPELLED);
 		}
 
+
 		_olympiadGameId = id;
 		if (_waitTypeSitting)
 		{
@@ -9247,7 +9204,8 @@ public class Player: Playable
 		setTarget(null);
 		setInvul(true);
 		setInvisible(true);
-		setInstance(OlympiadGameManager.getInstance().getOlympiadTask(id).getStadium().getInstance());
+
+		setInstance(olympiadTask.getStadium().getInstance());
 		this.teleToLocation(loc, false);
 		sendPacket(new ExOlympiadModePacket(3));
 		broadcastUserInfo();
@@ -9257,7 +9215,10 @@ public class Player: Playable
 	{
 		setTarget(null);
 		setInstance(null);
-		this.teleToLocation(_lastLoc.Value);
+
+        if (_lastLoc != null)
+		    this.teleToLocation(_lastLoc.Value);
+
 		unsetLastLocation();
 		sendPacket(new ObservationReturnPacket(Location.Location3D));
 		setBlockActions(false);
@@ -9287,7 +9248,9 @@ public class Player: Playable
 		setTarget(null);
 		sendPacket(new ExOlympiadModePacket(0));
 		setInstance(null);
-		this.teleToLocation(_lastLoc.Value, true);
+        if (_lastLoc != null)
+		    this.teleToLocation(_lastLoc.Value, true);
+
 		if (!isGM())
 		{
 			setInvisible(false);
@@ -9639,7 +9602,8 @@ public class Player: Playable
 	{
 		base.setTeam(team);
 		broadcastUserInfo();
-		if (Config.BLUE_TEAM_ABNORMAL_EFFECT != null || Config.RED_TEAM_ABNORMAL_EFFECT != null)
+		if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None ||
+            Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 		{
 			sendPacket(new ExUserInfoAbnormalVisualEffectPacket(this));
 		}
@@ -9687,8 +9651,11 @@ public class Player: Playable
 					// Consider skill replacements.
 					int originalSkillId = getOriginalSkill(skill.getId());
 					if (originalSkillId != skill.getDisplayId())
-					{
-						Skill originalSkill = SkillData.getInstance().getSkill(originalSkillId, skill.getLevel(), skill.getSubLevel());
+                    {
+                        Skill originalSkill =
+                            SkillData.getInstance().getSkill(originalSkillId, skill.getLevel(), skill.getSubLevel()) ??
+                            throw new InvalidOperationException($"Skill not found id={originalSkillId}, level={skill.getLevel()}, sublevel={skill.getSubLevel()}");
+
 						skillList.addSkill(originalSkill.getDisplayId(), originalSkill.getReuseDelayGroup(), originalSkill.getDisplayLevel(), originalSkill.getSubLevel(), originalSkill.isPassive(), isDisabled, originalSkill.isEnchantable());
 					}
 					else
@@ -9816,7 +9783,9 @@ public class Player: Playable
 				if (skillInfo.getGetLevel() <= newClass.getLevel())
 				{
 					Skill? prevSkill = prevSkillList.get(skillInfo.getSkillId());
-					Skill? newSkill = SkillData.getInstance().getSkill(skillInfo.getSkillId(), skillInfo.getSkillLevel());
+					Skill newSkill = SkillData.getInstance().getSkill(skillInfo.getSkillId(), skillInfo.getSkillLevel()) ??
+                        throw new InvalidOperationException($"Skill id={skillInfo.getSkillId()}, level={skillInfo.getSkillLevel()} not found");
+
 					if ((prevSkill != null && prevSkill.getLevel() > newSkill.getLevel()) || SkillTreeData.getInstance().isRemoveSkill(subTemplate, skillInfo.getSkillId()))
 					{
 						continue;
@@ -9848,17 +9817,15 @@ public class Player: Playable
 	 */
 	public bool modifySubClass(int classIndex, CharacterClass newClassId, bool isDualClass)
 	{
-		// Notify to scripts before class is removed.
-		if (getSubClasses().Count != 0 && Events.HasSubscribers<OnPlayerProfessionCancel>())
-		{
-			CharacterClass classId = getSubClasses().get(classIndex).getClassDefinition();
-			Events.NotifyAsync(new OnPlayerProfessionCancel(this, classId));
-		}
+        SubClassHolder? subClass = getSubClasses().get(classIndex);
+        if (subClass == null)
+            return false;
 
-		SubClassHolder subClass = getSubClasses().get(classIndex);
-		if (subClass == null)
+        // Notify to scripts before class is removed.
+		if (Events.HasSubscribers<OnPlayerProfessionCancel>())
 		{
-			return false;
+			CharacterClass classId = subClass.getClassDefinition();
+			Events.NotifyAsync(new OnPlayerProfessionCancel(this, classId));
 		}
 
 		if (subClass.isDualClass())
@@ -9918,8 +9885,11 @@ public class Player: Playable
 	public void setDualClassActive(int classIndex)
 	{
 		if (isSubClassActive())
-		{
-			getSubClasses().get(_classIndex).setDualClassActive(true);
+        {
+            SubClassHolder subClass = getSubClasses().get(_classIndex) ??
+                throw new InvalidOperationException($"SubClass is null for index={_classIndex}");
+
+            subClass.setDualClassActive(true);
 		}
 	}
 
@@ -9953,7 +9923,7 @@ public class Player: Playable
 		return false;
 	}
 
-	public SubClassHolder getDualClass()
+	public SubClassHolder? getDualClass()
 	{
 		foreach (SubClassHolder subClass in _subClasses.Values)
 		{
@@ -10003,10 +9973,11 @@ public class Player: Playable
 		if (pcTemplate == null)
 		{
 			LOGGER.Error("Missing template for classId: " + classId);
-			throw new Exception();
+			throw new InvalidOperationException("Missing template for classId: " + classId);
 		}
-		// Set the template of the Player
-		setTemplate(pcTemplate);
+
+        // Set the template of the Player
+		_playerTemplate = pcTemplate;
 
 		// Notify to scripts
 		if (Events.HasSubscribers<OnPlayerProfessionChange>())
@@ -10044,7 +10015,7 @@ public class Player: Playable
 			{
 				if (item != null && item.isEquipped())
 				{
-					item.getAugmentation().removeBonus(this);
+					item.getAugmentation()!.removeBonus(this); // TODO: not null enforced
 				}
 			}
 
@@ -10082,18 +10053,14 @@ public class Player: Playable
 			}
 			else
 			{
-				try
-				{
-					setClassTemplate(getSubClasses().get(classIndex).getClassDefinition());
-				}
-				catch (Exception e)
-				{
-					LOGGER.Warn("Could not switch " + getName() + "'s sub class to class index " + classIndex + ": " + e);
-					return;
-				}
+                SubClassHolder? subClass = getSubClasses().get(classIndex);
+                if (subClass == null)
+                    return;
+
+                setClassTemplate(subClass.getClassDefinition());
 			}
 			_classIndex = classIndex;
-			if (isInParty())
+			if (isInParty() && _party != null)
 			{
 				_party.recalculatePartyLevel();
 			}
@@ -10623,9 +10590,10 @@ public class Player: Playable
 
 		base.onTeleported();
 
-		if (isInAirShip())
+        AirShip? airShip = getAirShip();
+		if (isInAirShip() && airShip != null)
 		{
-			getAirShip().sendInfo(this);
+			airShip.sendInfo(this);
 		}
 		else // Update last player position upon teleport.
 		{
@@ -10778,7 +10746,7 @@ public class Player: Playable
 		getStat().removeExpAndSp(removeExp, removeSp, sendMessage);
 	}
 
-	public override void reduceCurrentHp(double value, Creature attacker, Skill? skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
+	public override void reduceCurrentHp(double value, Creature? attacker, Skill? skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
 	{
 		base.reduceCurrentHp(value, attacker, skill, isDOT, directlyToHp, critical, reflect);
 
@@ -10884,9 +10852,9 @@ public class Player: Playable
 	/**
 	 * @return
 	 */
-	public Boat getBoat()
+	public Boat? getBoat()
 	{
-		return (Boat) _vehicle;
+		return _vehicle as Boat;
 	}
 
 	/**
@@ -10902,7 +10870,7 @@ public class Player: Playable
 	 */
 	public AirShip? getAirShip()
 	{
-		return (AirShip?)_vehicle;
+		return _vehicle as AirShip;
 	}
 
 	public bool isInShuttle()
@@ -10910,9 +10878,9 @@ public class Player: Playable
 		return _vehicle is Shuttle;
 	}
 
-	public Shuttle getShuttle()
+	public Shuttle? getShuttle()
 	{
-		return (Shuttle) _vehicle;
+		return _vehicle as Shuttle;
 	}
 
 	public Vehicle? getVehicle()
@@ -11027,7 +10995,8 @@ public class Player: Playable
 		// remove combat flag
 		try
 		{
-			if (_inventory.getItemByItemId(FortManager.ORC_FORTRESS_FLAG) != null)
+            Item? flagItem = _inventory.getItemByItemId(FortManager.ORC_FORTRESS_FLAG);
+			if (flagItem != null)
 			{
 				Fort? fort = FortManager.getInstance().getFort(this);
 				if (fort != null)
@@ -11036,9 +11005,9 @@ public class Player: Playable
 				}
 				else
 				{
-					long slot = _inventory.getSlotFromItem(_inventory.getItemByItemId(FortManager.ORC_FORTRESS_FLAG));
+					long slot = _inventory.getSlotFromItem(flagItem);
 					_inventory.unEquipItemInBodySlot(slot);
-					destroyItem("CombatFlag", _inventory.getItemByItemId(FortManager.ORC_FORTRESS_FLAG), null, true);
+					destroyItem("CombatFlag", flagItem, null, true);
 				}
 			}
 		}
@@ -11267,7 +11236,7 @@ public class Player: Playable
 		{
 			// Check if the Player is in observer mode to set its position to its position
 			// before entering in observer mode
-			if (_observerMode)
+			if (_observerMode && _lastLoc != null)
 			{
 				setLocationInvisible(_lastLoc.Value);
 			}
@@ -11346,8 +11315,12 @@ public class Player: Playable
 		if (isCursedWeaponEquipped())
 		{
 			try
-			{
-				CursedWeaponsManager.getInstance().getCursedWeapon(_cursedWeaponEquippedId).setPlayer(null);
+            {
+                CursedWeapon cursedWeapon =
+                    CursedWeaponsManager.getInstance().getCursedWeapon(_cursedWeaponEquippedId) ??
+                    throw new InvalidOperationException($"Cursed weapon id={_cursedWeaponEquippedId} not found");
+
+				cursedWeapon.setPlayer(null);
 			}
 			catch (Exception e)
 			{
@@ -11355,7 +11328,7 @@ public class Player: Playable
 			}
 		}
 
-		if (_clanId != null)
+		if (_clan != null)
 		{
 			_clan.broadcastToOtherOnlineMembers(new PledgeShowMemberListUpdatePacket(this), this);
 			_clan.broadcastToOnlineMembers(new ExPledgeCountPacket(_clan));
@@ -11534,7 +11507,7 @@ public class Player: Playable
 		return _mountObjectID;
 	}
 
-	public SkillUseHolder getQueuedSkill()
+	public SkillUseHolder? getQueuedSkill()
 	{
 		return _queuedSkill;
 	}
@@ -11679,7 +11652,12 @@ public class Player: Playable
 				{
 					abortCast();
 					decreaseSouls(100, type);
-					SkillData.getInstance().getSkill(KAMAEL_LIGHT_TRANSFORMATION, skillLevel).applyEffects(this, this);
+
+                    Skill skill1 = SkillData.getInstance().getSkill(KAMAEL_LIGHT_TRANSFORMATION, skillLevel) ??
+                        throw new InvalidOperationException(
+                            $"KAMAEL_LIGHT_TRANSFORMATION skill id={KAMAEL_LIGHT_TRANSFORMATION}, level={skillLevel} not found");
+
+                    skill1.applyEffects(this, this);
 				}
 			}
 			else // Shadow.
@@ -11689,7 +11667,12 @@ public class Player: Playable
 				{
 					abortCast();
 					decreaseSouls(100, type);
-					SkillData.getInstance().getSkill(KAMAEL_SHADOW_TRANSFORMATION, skillLevel).applyEffects(this, this);
+
+                    Skill skill1 = SkillData.getInstance().getSkill(KAMAEL_SHADOW_TRANSFORMATION, skillLevel) ??
+                        throw new InvalidOperationException(
+                            $"KAMAEL_SHADOW_TRANSFORMATION skill id={KAMAEL_SHADOW_TRANSFORMATION}, level={skillLevel} not found");
+
+					skill1.applyEffects(this, this);
 				}
 			}
 		}
@@ -11808,7 +11791,10 @@ public class Player: Playable
 			if (getAffectedSkillLevel(DEVASTATING_MIND) != expectedLevel)
 			{
 				getEffectList().stopSkillEffects(SkillFinishType.REMOVED, DEVASTATING_MIND);
-				SkillData.getInstance().getSkill(DEVASTATING_MIND, expectedLevel).applyEffects(this, this);
+                Skill skill1 = SkillData.getInstance().getSkill(DEVASTATING_MIND, expectedLevel) ??
+                    throw new InvalidOperationException($"DEVASTATING_MIND skill id={DEVASTATING_MIND}, level={expectedLevel} not found");
+
+				skill1.applyEffects(this, this);
 			}
 		}
 		else
@@ -11874,18 +11860,19 @@ public class Player: Playable
 		return this;
 	}
 
-	public override void sendDamageMessage(Creature target, Skill skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
+	public override void sendDamageMessage(Creature target, Skill? skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
 	{
 		// Check if hit is missed
+        Player? targetPlayer = target.getActingPlayer();
 		if (miss)
 		{
 			if (skill == null)
 			{
 				SystemMessagePacket sm;
-				if (target.isPlayer())
+				if (target.isPlayer() && targetPlayer != null)
 				{
 					sm = new SystemMessagePacket(SystemMessageId.C1_HAS_EVADED_C2_S_ATTACK);
-					sm.Params.addPcName(target.getActingPlayer());
+					sm.Params.addPcName(targetPlayer);
 					sm.Params.addString(getName());
 					target.sendPacket(sm);
 				}
@@ -11938,7 +11925,7 @@ public class Player: Playable
 			sendPacket(sm);
 		}
 
-		if (isInOlympiadMode() && target.isPlayer() && target.getActingPlayer().isInOlympiadMode() && target.getActingPlayer().getOlympiadGameId() == getOlympiadGameId())
+		if (isInOlympiadMode() && target.isPlayer() && targetPlayer != null && targetPlayer.isInOlympiadMode() && targetPlayer.getOlympiadGameId() == getOlympiadGameId())
 		{
 			OlympiadGameManager.getInstance().notifyCompetitorDamage(this, damage);
 		}
@@ -11971,7 +11958,7 @@ public class Player: Playable
 			string targetName = target.getName();
 			if (Config.MULTILANG_ENABLE && target.isNpc())
 			{
-				string[] localisation = NpcNameLocalisationData.getInstance().getLocalisation(_lang, target.getId());
+				string[]? localisation = NpcNameLocalisationData.getInstance().getLocalisation(_lang ?? "en", target.getId());
 				if (localisation != null)
 				{
 					targetName = localisation[0];
@@ -12124,7 +12111,7 @@ public class Player: Playable
 	 */
 	public override Skill? getKnownSkill(int skillId)
 	{
-		return _transformSkills.GetValueOrDefault(skillId, base.getKnownSkill(skillId));
+		return _transformSkills.GetValueOrDefault(skillId) ?? base.getKnownSkill(skillId);
 	}
 
 	/**
@@ -12152,13 +12139,19 @@ public class Player: Playable
 			{
 				int revelationSkill = getVariables().getInt(PlayerVariables.REVELATION_SKILL_1_DUAL_CLASS, 0);
 				if (revelationSkill != 0)
-				{
-					addSkill(SkillData.getInstance().getSkill(revelationSkill, 1), false);
+                {
+                    Skill skill1 = SkillData.getInstance().getSkill(revelationSkill, 1) ??
+                        throw new InvalidOperationException($"Skill id={revelationSkill}, level=1 not found");
+
+					addSkill(skill1, false);
 				}
 				revelationSkill = getVariables().getInt(PlayerVariables.REVELATION_SKILL_2_DUAL_CLASS, 0);
 				if (revelationSkill != 0)
 				{
-					addSkill(SkillData.getInstance().getSkill(revelationSkill, 1), false);
+                    Skill skill1 = SkillData.getInstance().getSkill(revelationSkill, 1) ??
+                        throw new InvalidOperationException($"Skill id={revelationSkill}, level=1 not found");
+
+					addSkill(skill1, false);
 				}
 			}
 			else if (!isSubClassActive())
@@ -12166,12 +12159,18 @@ public class Player: Playable
 				int revelationSkill = getVariables().getInt(PlayerVariables.REVELATION_SKILL_1_MAIN_CLASS, 0);
 				if (revelationSkill != 0)
 				{
-					addSkill(SkillData.getInstance().getSkill(revelationSkill, 1), false);
+                    Skill skill1 = SkillData.getInstance().getSkill(revelationSkill, 1) ??
+                        throw new InvalidOperationException($"Skill id={revelationSkill}, level=1 not found");
+
+                    addSkill(skill1, false);
 				}
 				revelationSkill = getVariables().getInt(PlayerVariables.REVELATION_SKILL_2_MAIN_CLASS, 0);
 				if (revelationSkill != 0)
 				{
-					addSkill(SkillData.getInstance().getSkill(revelationSkill, 1), false);
+                    Skill skill1 = SkillData.getInstance().getSkill(revelationSkill, 1) ??
+                        throw new InvalidOperationException($"Skill id={revelationSkill}, level=1 not found");
+
+                    addSkill(skill1, false);
 				}
 			}
 
@@ -12243,8 +12242,10 @@ public class Player: Playable
 	{
 		if (_data == null)
 		{
-			_data = PetDataTable.getInstance().getPetData(npcId);
+			_data = PetDataTable.getInstance().getPetData(npcId) ??
+                throw new InvalidOperationException($"Pet data npcId={npcId} not found");
 		}
+
 		return _data;
 	}
 
@@ -12252,8 +12253,10 @@ public class Player: Playable
 	{
 		if (_leveldata == null)
 		{
-			_leveldata = PetDataTable.getInstance().getPetData(npcId).getPetLevelData(getMountLevel());
+			_leveldata = getPetData(npcId).getPetLevelData(getMountLevel()) ??
+                throw new InvalidOperationException($"Pet level data npcId={npcId}, level={getMountLevel()} not found");
 		}
+
 		return _leveldata;
 	}
 
@@ -12481,7 +12484,9 @@ public class Player: Playable
 		{
 			return;
 		}
-		if (_inventory.getInventoryItemCount(13016, 0) == 0)
+
+        Item? inventoryItem = _inventory.getItemByItemId(13016);
+		if (_inventory.getInventoryItemCount(13016, 0) == 0 || inventoryItem == null)
 		{
 			sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_BECAUSE_YOU_DO_NOT_HAVE_A_TELEPORT_ITEM);
 			return;
@@ -12500,7 +12505,7 @@ public class Player: Playable
 				return;
 			}
 
-			destroyItem("Consume", _inventory.getItemByItemId(13016).ObjectId, 1, null, false);
+			destroyItem("Consume", inventoryItem.ObjectId, 1, null, false);
 			setTeleportLocation(new Location(bookmark.Location, 0));
 			doCast(CommonSkill.MY_TELEPORT.getSkill());
 		}
@@ -12601,8 +12606,9 @@ public class Player: Playable
 		}
 
 		if (Config.BOOKMARK_CONSUME_ITEM_ID > 0)
-		{
-			if (_inventory.getInventoryItemCount(Config.BOOKMARK_CONSUME_ITEM_ID, -1) == 0)
+        {
+            Item? bookmarkConsumeItem = _inventory.getItemByItemId(Config.BOOKMARK_CONSUME_ITEM_ID);
+			if (_inventory.getInventoryItemCount(Config.BOOKMARK_CONSUME_ITEM_ID, -1) == 0 || bookmarkConsumeItem == null)
 			{
 				if (Config.BOOKMARK_CONSUME_ITEM_ID == 20033)
 				{
@@ -12615,7 +12621,7 @@ public class Player: Playable
 				return;
 			}
 
-			destroyItem("Consume", _inventory.getItemByItemId(Config.BOOKMARK_CONSUME_ITEM_ID).ObjectId, 1, null, true);
+			destroyItem("Consume", bookmarkConsumeItem.ObjectId, 1, null, true);
 		}
 
 		int id;
@@ -12663,7 +12669,9 @@ public class Player: Playable
             var query = ctx.CharacterTeleportBookmarks.Where(r => r.CharacterId == characterId);
             foreach (var record in query)
             {
-				_tpbookmarks.put(record.Id, new TeleportBookmark(record.Id, new Location3D(record.X, record.Y, record.Z), record.Icon, record.Tag, record.Name));
+                _tpbookmarks.put(record.Id,
+                    new TeleportBookmark(record.Id, new Location3D(record.X, record.Y, record.Z), record.Icon,
+                        record.Tag ?? string.Empty, record.Name));
             }
 		}
 		catch (Exception e)
@@ -12678,18 +12686,20 @@ public class Player: Playable
 	}
 
 	public override void sendInfo(Player player)
-	{
-		if (isInBoat())
+    {
+        AirShip? airShip = getAirShip();
+        Boat? boat = getBoat();
+		if (isInBoat() && boat != null)
 		{
-			setXYZ(getBoat().Location.Location3D);
+			setXYZ(boat.Location.Location3D);
 			player.sendPacket(new CharacterInfoPacket(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
-			player.sendPacket(new GetOnVehiclePacket(ObjectId, getBoat().ObjectId, _inVehiclePosition));
+			player.sendPacket(new GetOnVehiclePacket(ObjectId, boat.ObjectId, _inVehiclePosition));
 		}
-		else if (isInAirShip())
+		else if (isInAirShip() && airShip != null)
 		{
-			setXYZ(getAirShip().Location.Location3D);
+			setXYZ(airShip.Location.Location3D);
 			player.sendPacket(new CharacterInfoPacket(this, isInvisible() && player.canOverrideCond(PlayerCondOverride.SEE_ALL_PLAYERS)));
-			player.sendPacket(new ExGetOnAirShipPacket(this, getAirShip()));
+			player.sendPacket(new ExGetOnAirShipPacket(this, airShip));
 		}
 		else
 		{
@@ -12777,9 +12787,12 @@ public class Player: Playable
 
 	public void stopMovie()
 	{
-		sendPacket(new ExStopScenePlayerPacket(_movieHolder.getMovie()));
-		setMovieHolder(null);
-	}
+        if (_movieHolder != null)
+        {
+            sendPacket(new ExStopScenePlayerPacket(_movieHolder.getMovie()));
+            setMovieHolder(null);
+        }
+    }
 
 	public bool isAllowedToEnchantSkills()
 	{
@@ -12901,7 +12914,7 @@ public class Player: Playable
 		FriendStatusPacket pkt = new FriendStatusPacket(this, type);
 		foreach (int id in _friendList)
 		{
-			Player friend = World.getInstance().getPlayer(id);
+			Player? friend = World.getInstance().getPlayer(id);
 			if (friend != null)
 			{
 				friend.sendPacket(pkt);
@@ -13014,7 +13027,7 @@ public class Player: Playable
 
 	private void storeRecipeShopList()
 	{
-		if (hasManufactureShop())
+		if (hasManufactureShop() && _manufactureItems != null)
 		{
 			try
 			{
@@ -13031,7 +13044,7 @@ public class Player: Playable
                         CharacterId = characterId,
                         RecipeId = item.getRecipeId(),
                         Price = item.getCost(),
-                        Index = (short)slot
+                        Index = (short)slot,
                     });
 
                     slot++;
@@ -13074,7 +13087,11 @@ public class Player: Playable
 	{
 		if (isMounted() && _mountNpcId > 0)
 		{
-			return NpcData.getInstance().getTemplate(getMountNpcId()).getFCollisionRadius();
+            // TODO: store mountNpcTemplate not id
+            NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(getMountNpcId()) ??
+                throw new InvalidOperationException($"NpcTemplate id={getMountNpcId()} not found");
+
+            return npcTemplate.getFCollisionRadius();
 		}
 
 		float defaultCollisionRadius = _appearance.getSex() == Sex.Female ? getBaseTemplate().getFCollisionRadiusFemale() : getBaseTemplate().getFCollisionRadius();
@@ -13089,7 +13106,11 @@ public class Player: Playable
 	{
 		if (isMounted() && _mountNpcId > 0)
 		{
-			return NpcData.getInstance().getTemplate(getMountNpcId()).getFCollisionHeight();
+            // TODO: store mountNpcTemplate not id
+            NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(getMountNpcId()) ??
+                throw new InvalidOperationException($"NpcTemplate id={getMountNpcId()} not found");
+
+			return npcTemplate.getFCollisionHeight();
 		}
 
 		float defaultCollisionHeight = _appearance.getSex() == Sex.Female ? getBaseTemplate().getFCollisionHeightFemale() : getBaseTemplate().getFCollisionHeight();
@@ -13209,12 +13230,12 @@ public class Player: Playable
 	/**
 	 * @return the _movie
 	 */
-	public MovieHolder getMovieHolder()
+	public MovieHolder? getMovieHolder()
 	{
 		return _movieHolder;
 	}
 
-	public void setMovieHolder(MovieHolder movie)
+	public void setMovieHolder(MovieHolder? movie)
 	{
 		_movieHolder = movie;
 	}
@@ -13241,7 +13262,7 @@ public class Player: Playable
 		return base.isMovementDisabled() || _movieHolder != null || _fishing.isFishing();
 	}
 
-	public string getLang()
+	public string? getLang()
 	{
 		return _lang;
 	}
@@ -13335,7 +13356,10 @@ public class Player: Playable
 		else
 		{
 			LOGGER.Info("Decreasing skill " + skill + " to " + nextLevel + " for " + this);
-			addSkill(SkillData.getInstance().getSkill(skill.getId(), nextLevel), true); // replace with lower one
+            Skill skill1 = SkillData.getInstance().getSkill(skill.getId(), nextLevel) ??
+                throw new InvalidOperationException($"Skill id={skill.getId()}, level={nextLevel} not found");
+
+			addSkill(skill1, true); // replace with lower one
 		}
 	}
 
@@ -13383,6 +13407,8 @@ public class Player: Playable
 
             Party? party = getParty();
             Party? targetParty = target.getParty();
+            Clan? clan = getClan();
+            Clan? targetClan = target.getClan();
             if (isInParty() && target.isInParty() && party != null && targetParty != null)
             {
                 if (party == target.getParty())
@@ -13395,7 +13421,7 @@ public class Player: Playable
                     return false;
                 }
             }
-            else if (getClan() != null && target.getClan() != null)
+            else if (clan != null && targetClan != null)
             {
                 if (getClanId() == target.getClanId())
                 {
@@ -13405,12 +13431,12 @@ public class Player: Playable
                 {
                     return false;
                 }
-                if (getClan().isAtWarWith(target.getClan().getId()) && target.getClan().isAtWarWith(getClan().getId()))
+                if (clan.isAtWarWith(targetClan.getId()) && targetClan.isAtWarWith(clan.getId()))
                 {
                     return true;
                 }
             }
-            else if (getClan() == null || target.getClan() == null)
+            else if (clan == null || targetClan == null)
             {
                 if (target.getPvpFlag() != PvpFlagStatus.None && target.getReputation() >= 0)
                 {
@@ -13472,7 +13498,7 @@ public class Player: Playable
 		}
 	}
 
-	public string getAdminConfirmCmd()
+	public string? getAdminConfirmCmd()
 	{
 		return _adminConfirmCmd;
 	}
@@ -13608,7 +13634,7 @@ public class Player: Playable
 	 * @param skillId the display skill Id
 	 * @return the custom skill
 	 */
-	public Skill getCustomSkill(int skillId)
+	public Skill? getCustomSkill(int skillId)
 	{
 		return _customSkills != null ? _customSkills.get(skillId) : null;
 	}
@@ -13844,9 +13870,10 @@ public class Player: Playable
 		}
 		if (_clan != null && !isAcademyMember()) // Current player
 		{
-			if (target.getClan() != null && !target.isAcademyMember()) // Target player
+            Clan? targetClan = target.getClan();
+			if (targetClan != null && !target.isAcademyMember()) // Target player
 			{
-				return _clan.isAtWarWith(target.getClan());
+				return _clan.isAtWarWith(targetClan);
 			}
 		}
 		return false;
@@ -14205,7 +14232,7 @@ public class Player: Playable
 		return _whisperers;
 	}
 
-	public MatchingRoom getMatchingRoom()
+	public MatchingRoom? getMatchingRoom()
 	{
 		return _matchingRoom;
 	}
@@ -14461,9 +14488,11 @@ public class Player: Playable
 	}
 
 	public GroupType getGroupType()
-	{
-		return isInParty() ? _party.isInCommandChannel() ? GroupType.COMMAND_CHANNEL : GroupType.PARTY : GroupType.None;
-	}
+    {
+        return isInParty() && _party != null
+            ? _party.isInCommandChannel() ? GroupType.COMMAND_CHANNEL : GroupType.PARTY
+            : GroupType.None;
+    }
 
 	public bool isTrueHero()
 	{
@@ -14690,7 +14719,7 @@ public class Player: Playable
 			}
 		}
 
-		if (_activeElementalSpiritType == null)
+		if (_activeElementalSpiritType == ElementalType.NONE)
 		{
 			changeElementalSpirit(ElementalType.FIRE);
 		}
@@ -14708,14 +14737,18 @@ public class Player: Playable
             {
 				ElementalSpiritDataHolder newHolder = new ElementalSpiritDataHolder();
 
+                ElementalType type = (ElementalType)record.Type;
+                byte stage = record.Stage;
+                byte level = record.Level;
+                ElementalSpiritTemplateHolder spirit = ElementalSpiritData.getInstance().getSpirit(type, stage) ??
+                    throw new InvalidOperationException($"No ElementalSpiritTemplate for type={type}, stage={stage}");
+
+				long experience = Math.Min(record.Exp, spirit.getMaxExperienceAtLevel(level));
+
 				newHolder.setCharId(record.CharacterId);
-				ElementalType type = (ElementalType)record.Type;
 				newHolder.setType(type);
-				byte level = record.Level;
 				newHolder.setLevel(level);
-				byte stage = record.Stage;
 				newHolder.setStage(stage);
-				long experience = Math.Min(record.Exp, ElementalSpiritData.getInstance().getSpirit(type, stage).getMaxExperienceAtLevel(level));
 				newHolder.setExperience(experience);
     			newHolder.setAttackPoints(record.AttackPoints);
 				newHolder.setDefensePoints(record.DefensePoints);
@@ -15111,8 +15144,9 @@ public class Player: Playable
 
 		int instanceId = holder.getInstanceId();
 		if (instanceId > 0)
-		{
-			return isInInstance() && instanceId == getInstanceWorld().getTemplateId();
+        {
+            Instance? instance = getInstanceWorld();
+			return isInInstance() && instance != null && instanceId == instance.getTemplateId();
 		}
 
 		foreach (MapHolder map in holder.getMaps())
@@ -15525,6 +15559,12 @@ public class Player: Playable
 		foreach (int collectionId in collectionIds)
 		{
 			CollectionDataHolder? collection = CollectionData.getInstance().getCollection(collectionId);
+            if (collection == null)
+            {
+                LOGGER.Warn($"Collection with id={collectionId} not found");
+                continue;
+            }
+
 			int count = 0;
 			foreach (PlayerCollectionData data in _collections)
 			{
@@ -15761,4 +15801,7 @@ public class Player: Playable
 	{
 		getVariables().set(PlayerVariables.SKILL_TRY_ENCHANT + level, 1);
 	}
+
+    protected override CreatureStat CreateStat() => new PlayerStat(this);
+    protected override CreatureStatus CreateStatus() => new PlayerStatus(this);
 }

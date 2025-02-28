@@ -566,7 +566,7 @@ public abstract class Inventory: ItemContainer
 							addedSkills.put(skill.getId(), skill);
 						}
 
-						// Active, non offensive, skills start with reuse on equip.
+						// Active, non-offensive, skills start with reuse on equip.
 						if (skill.isActive() && !skill.isBad() && !skill.isTransformation() &&
 						    Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 && playable.getActingPlayer().hasEnteredWorld())
 						{

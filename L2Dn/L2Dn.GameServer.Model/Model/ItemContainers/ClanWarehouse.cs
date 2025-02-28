@@ -41,18 +41,21 @@ public class ClanWarehouse: Warehouse
 		return _items.size() + slots <= Config.WAREHOUSE_SLOTS_CLAN;
 	}
 
-	public override Item addItem(string process, int itemId, long count, Player? actor, object? reference)
+	public override Item? addItem(string process, int itemId, long count, Player? actor, object? reference)
 	{
 		Item? item = base.addItem(process, itemId, count, actor, reference);
 
 		// Notify to scripts
-		EventContainer itemEvents = item.getTemplate().Events;
-		if (itemEvents.HasSubscribers<OnClanWhItemAdd>())
-		{
-			itemEvents.NotifyAsync(new OnClanWhItemAdd(process, actor, item, this));
-		}
+        if (item != null)
+        {
+            EventContainer itemEvents = item.getTemplate().Events;
+            if (itemEvents.HasSubscribers<OnClanWhItemAdd>())
+            {
+                itemEvents.NotifyAsync(new OnClanWhItemAdd(process, actor, item, this));
+            }
+        }
 
-		return item;
+        return item;
 	}
 
 	public override Item addItem(string process, Item item, Player actor, object? reference)

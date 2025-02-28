@@ -39,13 +39,13 @@ public class CursedWeapon : INamable
 	private bool _isDropped;
 	// this sets the cursed weapon status to true only if a player has the cursed weapon, otherwise this should be false.
 	private bool _isActivated;
-	private ScheduledFuture _removeTask;
+	private ScheduledFuture? _removeTask;
 
 	private int _nbKills;
 	private DateTime _endTime;
 
 	private int _playerId;
-	protected Player _player;
+	protected Player? _player;
 	private Item _item;
 	private int _playerReputation;
 	private int _playerPkKills;
@@ -516,7 +516,7 @@ public class CursedWeapon : INamable
 		_endTime = endTime;
 	}
 
-	public void setPlayer(Player player)
+	public void setPlayer(Player? player)
 	{
 		_player = player;
 	}

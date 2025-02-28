@@ -187,11 +187,6 @@ public abstract class Vehicle: Creature
 		return (VehicleStat) base.getStat();
 	}
 
-	public override void initCharStat()
-	{
-		setStat(new VehicleStat(this));
-	}
-
 	public bool isInDock()
 	{
 		return _dockId > 0;
@@ -458,4 +453,6 @@ public abstract class Vehicle: Creature
 	{
 		return true;
 	}
+
+    protected override CreatureStat CreateStat() => new VehicleStat(this);
 }

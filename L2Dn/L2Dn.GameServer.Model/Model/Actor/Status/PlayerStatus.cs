@@ -73,7 +73,7 @@ public class PlayerStatus: PlayableStatus
 			return;
 		}
 
-		if (getActiveChar().isAffected(EffectFlag.DUELIST_FURY) && !attacker.isAffected(EffectFlag.FACEOFF))
+		if (getActiveChar().isAffected(EffectFlag.DUELIST_FURY) && attacker != null && !attacker.isAffected(EffectFlag.FACEOFF))
 		{
 			return;
 		}
@@ -184,19 +184,19 @@ public class PlayerStatus: PlayableStatus
 				}
 			}
 
-			Player caster = getActiveChar().getTransferingDamageTo();
-			if (caster != null && getActiveChar().getParty() != null &&
+			Player? caster = getActiveChar().getTransferingDamageTo();
+            Party? party = getActiveChar().getParty();
+            Party? casterParty = caster?.getParty();
+			if (caster != null && party != null &&
 			    Util.checkIfInRange(1000, getActiveChar(), caster, true) && !caster.isDead() &&
-			    getActiveChar() != caster && getActiveChar().getParty().getMembers().Contains(caster))
+			    getActiveChar() != caster && party.getMembers().Contains(caster) && casterParty != null)
 			{
-				int transferDmg = 0;
-				transferDmg =
-					(int)amount * (int)getActiveChar().getStat().getValue(Stat.TRANSFER_DAMAGE_TO_PLAYER, 0) / 100;
+                int transferDmg = (int)amount * (int)getActiveChar().getStat().getValue(Stat.TRANSFER_DAMAGE_TO_PLAYER, 0) / 100;
 				transferDmg = Math.Min((int)caster.getCurrentHp() - 1, transferDmg);
 				if (transferDmg > 0)
 				{
 					int membersInRange = 0;
-					foreach (Player member in caster.getParty().getMembers())
+					foreach (Player member in casterParty.getMembers())
 					{
 						if (Util.checkIfInRange(1000, member, caster, false) && member != caster)
 						{
@@ -251,7 +251,7 @@ public class PlayerStatus: PlayableStatus
 				if (Config.MULTILANG_ENABLE && attacker.isNpc())
 				{
 					string[]? localisation = NpcNameLocalisationData.getInstance()
-						.getLocalisation(getActiveChar().getLang(), attacker.getId());
+						.getLocalisation(getActiveChar()?.getLang() ?? "en", attacker.getId());
 					if (localisation != null)
 					{
 						targetName = localisation[0];
@@ -276,9 +276,10 @@ public class PlayerStatus: PlayableStatus
 
 		if (amount > 0)
 		{
-			getActiveChar().addDamageTaken(attacker, skill != null ? skill.getDisplayId() : 0, amount);
+            if (attacker != null)
+                getActiveChar().addDamageTaken(attacker, skill != null ? skill.getDisplayId() : 0, amount);
 
-			double newHp = Math.Max(getCurrentHp() - amount, getActiveChar().isUndying() ? 1 : 0);
+            double newHp = Math.Max(getCurrentHp() - amount, getActiveChar().isUndying() ? 1 : 0);
 			if (newHp <= 0)
 			{
 				if (getActiveChar().isInDuel())

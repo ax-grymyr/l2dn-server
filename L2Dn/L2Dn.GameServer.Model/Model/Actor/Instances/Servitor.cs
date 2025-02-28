@@ -127,7 +127,7 @@ public class Servitor : Summon, Runnable
 		return _referenceSkill;
 	}
 
-	public override bool doDie(Creature killer)
+	public override bool doDie(Creature? killer)
 	{
 		if (!base.doDie(killer))
 		{

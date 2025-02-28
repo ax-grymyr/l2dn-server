@@ -7,8 +7,6 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.Utilities;
-using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 
@@ -174,11 +172,12 @@ public class OfflineTraderTable
 					continue;
 				}
 
-				Player? player = null;
+				Player? player = Player.Load(trade.CharacterId);
+                if (player == null)
+                    continue;
 
 				try
 				{
-					player = Player.load(trade.CharacterId);
 					player.setOnlineStatus(true, false);
 					player.setOfflineStartTime(time);
 
@@ -419,7 +418,7 @@ public class OfflineTraderTable
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void removeTrader(int traderObjId)
 	{
-		World.OFFLINE_TRADE_COUNT--;
+		Interlocked.Decrement(ref World.OFFLINE_TRADE_COUNT);
 
 		try
 		{

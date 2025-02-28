@@ -70,17 +70,18 @@ public class Defender : Attackable
 		{
 			return;
 		}
-		if (getSpawn() == null)
-		{
+
+        Spawn? spawn = getSpawn();
+		if (spawn == null)
 			return;
-		}
-		if (!this.IsInsideRadius2D(getSpawn(), 40))
+
+        if (!this.IsInsideRadius2D(spawn, 40))
 		{
 			clearAggroList();
 
 			if (hasAI())
 			{
-				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().Location.Location3D);
+				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, spawn.Location.Location3D);
 			}
 		}
 	}

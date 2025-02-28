@@ -22,10 +22,10 @@ public class Transform: IIdentifiable
 	private readonly string _name;
 	private readonly string _title;
 
-	private TransformTemplate _maleTemplate;
-	private TransformTemplate _femaleTemplate;
+	private readonly TransformTemplate _maleTemplate;
+	private readonly TransformTemplate _femaleTemplate;
 
-	public Transform(StatSet set)
+	public Transform(StatSet set, TransformTemplate maleTemplate, TransformTemplate femaleTemplate)
 	{
 		_id = set.getInt("id");
 		_displayId = set.getInt("displayId", _id);
@@ -35,6 +35,8 @@ public class Transform: IIdentifiable
 		_spawnHeight = set.getInt("spawn_height", 0);
 		_name = set.getString("setName", string.Empty);
 		_title = set.getString("setTitle", string.Empty);
+        _maleTemplate = maleTemplate;
+        _femaleTemplate = femaleTemplate;
 	}
 
 	/**
@@ -87,29 +89,18 @@ public class Transform: IIdentifiable
 		return _title;
 	}
 
-	public TransformTemplate getTemplate(Creature creature)
+	public TransformTemplate? getTemplate(Creature creature)
 	{
-		if (creature.isPlayer())
+        Player? player = creature.getActingPlayer();
+		if (creature.isPlayer() && player != null)
 		{
-			return creature.getActingPlayer().getAppearance().getSex() == Sex.Female ? _femaleTemplate : _maleTemplate;
+			return player.getAppearance().getSex() == Sex.Female ? _femaleTemplate : _maleTemplate;
 		}
 
         if (creature.isNpc())
-            return ((Npc) creature).getTemplate().getSex() == Sex.Female ? _femaleTemplate : _maleTemplate;
+            return ((Npc)creature).getTemplate().getSex() == Sex.Female ? _femaleTemplate : _maleTemplate;
 
         return null;
-	}
-
-	public void setTemplate(bool male, TransformTemplate template)
-	{
-		if (male)
-		{
-			_maleTemplate = template;
-		}
-		else
-		{
-			_femaleTemplate = template;
-		}
 	}
 
 	/**
@@ -170,7 +161,7 @@ public class Transform: IIdentifiable
 
 	public float getCollisionHeight(Creature creature, float defaultCollisionHeight)
 	{
-		TransformTemplate template = getTemplate(creature);
+		TransformTemplate? template = getTemplate(creature);
 		if (template != null && template.getCollisionHeight() != null)
 		{
 			return template.getCollisionHeight() ?? defaultCollisionHeight;
@@ -181,7 +172,7 @@ public class Transform: IIdentifiable
 
 	public float getCollisionRadius(Creature creature, float defaultCollisionRadius)
 	{
-		TransformTemplate template = getTemplate(creature);
+		TransformTemplate? template = getTemplate(creature);
 		if (template != null && template.getCollisionRadius() != null)
 		{
 			return template.getCollisionRadius() ?? defaultCollisionRadius;
@@ -195,15 +186,15 @@ public class Transform: IIdentifiable
 		creature.abortAttack();
 		creature.abortCast();
 
-		Player player = creature.getActingPlayer();
+		Player? player = creature.getActingPlayer();
 
 		// Get off the strider or something else if character is mounted
-		if (creature.isPlayer() && player.isMounted())
+		if (creature.isPlayer() && player != null && player.isMounted())
 		{
 			player.dismount();
 		}
 
-		TransformTemplate template = getTemplate(creature);
+		TransformTemplate? template = getTemplate(creature);
 		if (template != null)
 		{
 			// Start flying.
@@ -214,7 +205,7 @@ public class Transform: IIdentifiable
 
 			// Get player a bit higher so he doesn't drops underground after transformation happens
 			creature.setXYZ(creature.getX(), creature.getY(), (int) (creature.getZ() + getCollisionHeight(creature, 0)));
-			if (creature.isPlayer())
+			if (creature.isPlayer() && player != null)
 			{
 				if (_name != null)
 				{
@@ -245,7 +236,7 @@ public class Transform: IIdentifiable
 					// Add collection skills.
 					foreach (SkillLearn s in SkillTreeData.getInstance().getCollectSkillTree().Values)
 					{
-						Skill skill = player.getKnownSkill(s.getSkillId());
+						Skill? skill = player.getKnownSkill(s.getSkillId());
 						if (skill != null)
 						{
 							player.addTransformSkill(skill);
@@ -320,7 +311,7 @@ public class Transform: IIdentifiable
 		creature.abortAttack();
 		creature.abortCast();
 
-		TransformTemplate template = getTemplate(creature);
+		TransformTemplate? template = getTemplate(creature);
 		if (template != null)
 		{
 			// Stop flying.
@@ -329,9 +320,9 @@ public class Transform: IIdentifiable
 				creature.setFlying(false);
 			}
 
-			if (creature.isPlayer())
+            Player? player = creature.getActingPlayer();
+			if (creature.isPlayer() && player != null)
 			{
-				Player player = creature.getActingPlayer();
 				bool hasTransformSkills = player.hasTransformSkills();
 				if (_name != null)
 				{
@@ -383,7 +374,7 @@ public class Transform: IIdentifiable
 	public void onLevelUp(Player player)
 	{
 		// Add skills depending on level.
-		TransformTemplate template = getTemplate(player);
+		TransformTemplate? template = getTemplate(player);
 		if (template != null && template.getAdditionalSkills().Count != 0)
 		{
 			foreach (AdditionalSkillHolder holder in template.getAdditionalSkills())
@@ -398,7 +389,7 @@ public class Transform: IIdentifiable
 
 	public WeaponType getBaseAttackType(Creature creature, WeaponType defaultAttackType)
 	{
-		TransformTemplate template = getTemplate(creature);
+		TransformTemplate? template = getTemplate(creature);
 		if (template != null)
 		{
 			WeaponType weaponType = template.getBaseAttackType();
@@ -412,11 +403,11 @@ public class Transform: IIdentifiable
 	public double getStats(Creature creature, Stat stat, double defaultValue)
 	{
 		double val = defaultValue;
-		TransformTemplate template = getTemplate(creature);
+		TransformTemplate? template = getTemplate(creature);
 		if (template != null)
 		{
 			val = template.getStats(stat, defaultValue);
-			TransformLevelData data = template.getData(creature.getLevel());
+			TransformLevelData? data = template.getData(creature.getLevel());
 			if (data != null)
 			{
 				val = data.getStats(stat, defaultValue);
@@ -428,7 +419,7 @@ public class Transform: IIdentifiable
 	public int getBaseDefBySlot(Player player, int slot)
 	{
 		int defaultValue = player.getTemplate().getBaseDefBySlot(slot);
-		TransformTemplate template = getTemplate(player);
+		TransformTemplate? template = getTemplate(player);
 		return template == null ? defaultValue : template.getDefense(slot, defaultValue);
 	}
 
@@ -439,10 +430,10 @@ public class Transform: IIdentifiable
 	public double getLevelMod(Creature creature)
 	{
 		double val = 1;
-		TransformTemplate template = getTemplate(creature);
+		TransformTemplate? template = getTemplate(creature);
 		if (template != null)
 		{
-			TransformLevelData data = template.getData(creature.getLevel());
+			TransformLevelData? data = template.getData(creature.getLevel());
 			if (data != null)
 			{
 				val = data.getLevelMod();

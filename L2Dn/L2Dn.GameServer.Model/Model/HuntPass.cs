@@ -33,9 +33,6 @@ public class HuntPass
 	public HuntPass(Player user)
 	{
 		_user = user;
-		restoreHuntPass();
-		huntPassDayEnd();
-		store();
 	}
 
 	public void restoreHuntPass()

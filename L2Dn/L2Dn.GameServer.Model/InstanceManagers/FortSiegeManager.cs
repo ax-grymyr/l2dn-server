@@ -464,7 +464,7 @@ public class FortSiegeManager
                         {
                             foreach (Npc npc in nst.getSpawnedNpcs())
                             {
-                                Spawn spawn = npc.getSpawn();
+                                Spawn? spawn = npc.getSpawn();
                                 if (spawn != null)
                                 {
                                     spawn.stopRespawn();

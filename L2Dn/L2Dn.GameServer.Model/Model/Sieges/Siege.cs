@@ -699,7 +699,7 @@ public class Siege: Siegable
 	 * Return true if clan is attacker
 	 * @param clan The Clan of the player
 	 */
-	public bool checkIsAttacker(Clan clan)
+	public bool checkIsAttacker(Clan? clan)
 	{
 		return getAttackerClan(clan) != null;
 	}
@@ -1553,7 +1553,7 @@ public class Siege: Siegable
 		}
 	}
 
-	public SiegeClan? getAttackerClan(Clan clan)
+	public SiegeClan? getAttackerClan(Clan? clan)
 	{
 		if (clan == null)
 		{

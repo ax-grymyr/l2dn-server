@@ -11,7 +11,7 @@ public class CompoundRequest: AbstractRequest
     {
     }
 
-    public Item getItemOne()
+    public Item? getItemOne()
     {
         return getActiveChar().getInventory().getItemByObjectId(_itemOne);
     }
@@ -21,7 +21,7 @@ public class CompoundRequest: AbstractRequest
         _itemOne = itemOne;
     }
 
-    public Item getItemTwo()
+    public Item? getItemTwo()
     {
         return getActiveChar().getInventory().getItemByObjectId(_itemTwo);
     }

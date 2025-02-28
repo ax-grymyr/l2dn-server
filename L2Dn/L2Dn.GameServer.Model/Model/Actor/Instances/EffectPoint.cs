@@ -20,7 +20,7 @@ public class EffectPoint : Npc
 		_owner = owner;
 		setInstance(owner.getInstanceWorld());
 
-		SkillHolder skill = template.getParameters().getSkillHolder("union_skill");
+		SkillHolder? skill = template.getParameters().getSkillHolder("union_skill");
 		if (skill != null)
 		{
 			TimeSpan castTime = TimeSpan.FromMilliseconds(template.getParameters().getFloat("cast_time", 0.1f) * 1000);

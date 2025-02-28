@@ -59,22 +59,12 @@ public abstract class Playable: Creature
 		return (PlayableStat) base.getStat();
 	}
 
-	public override void initCharStat()
-	{
-		setStat(new PlayableStat(this));
-	}
-
 	public override PlayableStatus getStatus()
 	{
 		return (PlayableStatus) base.getStatus();
 	}
 
-	public override void initCharStatus()
-	{
-		setStatus(new PlayableStatus(this));
-	}
-
-	public override bool doDie(Creature killer)
+	public override bool doDie(Creature? killer)
 	{
 		if (Events.HasSubscribers<OnCreatureDeath>())
 		{
@@ -121,14 +111,15 @@ public abstract class Playable: Creature
 			stopEffects(EffectFlag.RESURRECTION_SPECIAL);
 			deleteBuffs = false;
 		}
-		if (isPlayer())
+
+        Player? player = getActingPlayer();
+		if (isPlayer() && player != null)
 		{
-			Player player = getActingPlayer();
 			if (player.hasCharmOfCourage())
 			{
 				if (player.isInSiege())
 				{
-					getActingPlayer().reviveRequest(getActingPlayer(), false, 0, 0, 0, 0);
+					player.reviveRequest(player, false, 0, 0, 0, 0);
 				}
 				player.setCharmOfCourage(false);
 				player.sendPacket(new EtcStatusUpdatePacket(player));
@@ -146,28 +137,27 @@ public abstract class Playable: Creature
 		ZoneManager.getInstance().getRegion(Location.Location2D)?.onDeath(this);
 
 		// Notify Quest of Playable's death
-		Player actingPlayer = getActingPlayer();
-		if (!actingPlayer.isNotifyQuestOfDeathEmpty())
+		if (player != null && !player.isNotifyQuestOfDeathEmpty())
 		{
-			foreach (QuestState qs in actingPlayer.getNotifyQuestOfDeath())
+			foreach (QuestState qs in player.getNotifyQuestOfDeath())
 			{
 				qs.getQuest().notifyDeath(killer == null ? this : killer, this, qs);
 			}
 		}
 
 		// Notify instance
-		if (isPlayer())
+		if (isPlayer() && player != null)
 		{
 			Instance? instance = getInstanceWorld();
 			if (instance != null)
 			{
-				instance.onDeath(getActingPlayer());
+				instance.onDeath(player);
 			}
 		}
 
 		if (killer != null)
 		{
-			Player killerPlayer = killer.getActingPlayer();
+			Player? killerPlayer = killer.getActingPlayer();
 			if (killerPlayer != null)
 			{
 				killerPlayer.onPlayerKill(this);
@@ -181,7 +171,7 @@ public abstract class Playable: Creature
 
 	public bool checkIfPvP(Player target)
 	{
-		Player player = getActingPlayer();
+		Player? player = getActingPlayer();
 		if (player == null //
 			|| target == null //
 			|| player == target //
@@ -191,15 +181,17 @@ public abstract class Playable: Creature
 		{
 			return true;
 		}
-		else if (player.isInParty() && player.getParty().containsPlayer(target))
+
+        Party? party = player.getParty();
+        if (player.isInParty() && party != null && party.containsPlayer(target))
 		{
 			return false;
 		}
 
-		Clan playerClan = player.getClan();
+		Clan? playerClan = player.getClan();
 		if (playerClan != null && !player.isAcademyMember() && !target.isAcademyMember())
 		{
-			ClanWar war = playerClan.getWarWith(target.getClanId());
+			ClanWar? war = playerClan.getWarWith(target.getClanId());
 			return war != null && war.getState() == ClanWarState.MUTUAL;
 		}
 		return false;
@@ -269,7 +261,7 @@ public abstract class Playable: Creature
 		transferDmgTo = val;
 	}
 
-	public Player getTransferingDamageTo()
+	public Player? getTransferingDamageTo()
 	{
 		return transferDmgTo;
 	}
@@ -293,11 +285,8 @@ public abstract class Playable: Creature
 	 */
 	public void removeReplacedSkill(int originalId)
 	{
-		int replacementId = _replacedSkills.remove(originalId);
-		if (replacementId != null)
-		{
-			_originalSkills.remove(replacementId);
-		}
+        if (_replacedSkills.TryRemove(originalId, out int replacementId))
+            _originalSkills.remove(replacementId);
 	}
 
 	/**
@@ -348,4 +337,7 @@ public abstract class Playable: Creature
 	{
 		return true;
 	}
+
+    protected override CreatureStat CreateStat() => new PlayableStat(this);
+    protected override CreatureStatus CreateStatus() => new PlayableStatus(this);
 }

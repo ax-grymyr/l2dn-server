@@ -339,7 +339,7 @@ public class PlayableStat: CreatureStat
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.CLAN_REPUTATION_POINTS_S1);
 				sm.Params.addInt(reputation);
-				member.getPlayer().sendPacket(sm);
+				member.getPlayer()?.sendPacket(sm);
 			}
 		}
 	}

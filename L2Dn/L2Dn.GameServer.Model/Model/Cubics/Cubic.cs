@@ -198,7 +198,7 @@ public class Cubic: Creature
 
     private void tryToUseSkill(WorldObject worldObject, CubicSkill cubicSkill)
     {
-        WorldObject target = worldObject;
+        WorldObject? target = worldObject;
         Skill skill = cubicSkill.getSkill();
         if (_template.getTargetType() != CubicTargetType.MASTER &&
             !(_template.getTargetType() == CubicTargetType.BY_SKILL &&
@@ -229,7 +229,7 @@ public class Cubic: Creature
             _caster.broadcastPacket(new MagicSkillUsePacket(_owner, target, skill.getDisplayId(),
                 skill.getDisplayLevel(), skill.getHitTime(), skill.getReuseDelay()));
 
-            skill.activateSkill(this, target);
+            skill.activateSkill(this, [target]);
             _owner.addTimeStamp(skill, skill.getReuseDelay());
         }
     }

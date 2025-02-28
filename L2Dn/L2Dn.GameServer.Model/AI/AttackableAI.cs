@@ -176,7 +176,7 @@ public class AttackableAI: CreatureAI
 				{
 					intention = CtrlIntention.AI_INTENTION_ACTIVE;
 				}
-				else if (npc.getSpawn() != null && !npc.IsInsideRadius3D(npc.getSpawn(), Config.MAX_DRIFT_RANGE + Config.MAX_DRIFT_RANGE))
+				else if (npc.getSpawn() is {} spawn && !npc.IsInsideRadius3D(spawn, Config.MAX_DRIFT_RANGE + Config.MAX_DRIFT_RANGE))
 				{
 					intention = CtrlIntention.AI_INTENTION_ACTIVE;
 				}
@@ -228,8 +228,8 @@ public class AttackableAI: CreatureAI
         // TODO: null checking hack
         Skill skill = _skill ?? throw new InvalidOperationException("Skill is null in thinkCast");
 
-		WorldObject target = skill.getTarget(_actor, getTarget(), _forceUse, _dontMove, false);
-		if (checkTargetLost(target))
+		WorldObject? target = skill.getTarget(_actor, getTarget(), _forceUse, _dontMove, false);
+		if (checkTargetLost(target) || target == null)
 		{
 			setCastTarget(null);
 			return;
@@ -446,8 +446,9 @@ public class AttackableAI: CreatureAI
 		// Order this attackable to return to its spawn because there's no target to attack
         WorldObject? target2 = getTarget();
         Player? target2Player = target2?.getActingPlayer();
-        if (!npc.isWalker() && npc.getSpawn() != null &&
-            npc.Distance2D(npc.getSpawn().Location.Location2D) > Config.MAX_DRIFT_RANGE && (target2 == null ||
+        Spawn? spawn = npc.getSpawn();
+        if (!npc.isWalker() && spawn != null &&
+            npc.Distance2D(spawn.Location.Location2D) > Config.MAX_DRIFT_RANGE && (target2 == null ||
                 target2.isInvisible() || (target2.isPlayer() && !Config.ATTACKABLES_CAMP_PLAYER_CORPSES &&
                     target2Player != null && target2Player.isAlikeDead())))
         {
@@ -527,7 +528,7 @@ public class AttackableAI: CreatureAI
 			}
 		}
 		// Order to the Monster to random walk (1/100)
-		else if (npc.getSpawn() != null && Rnd.get(RANDOM_WALK_RATE) == 0 && npc.isRandomWalkingEnabled())
+		else if (spawn != null && Rnd.get(RANDOM_WALK_RATE) == 0 && npc.isRandomWalkingEnabled())
 		{
 			foreach (Skill sk in npc.getTemplate().getAISkills(AISkillScope.BUFF))
 			{
@@ -540,10 +541,10 @@ public class AttackableAI: CreatureAI
 				}
 			}
 
-			int x1 = npc.getSpawn().Location.X;
-			int y1 = npc.getSpawn().Location.Y;
-			int z1 = npc.getSpawn().Location.Z;
-			if (npc.IsInsideRadius2D(npc.getSpawn(), Config.MAX_DRIFT_RANGE))
+			int x1 = spawn.Location.X;
+			int y1 = spawn.Location.Y;
+			int z1 = spawn.Location.Z;
+			if (npc.IsInsideRadius2D(spawn, Config.MAX_DRIFT_RANGE))
 			{
 				int deltaX = Rnd.get(Config.MAX_DRIFT_RANGE * 2); // x
 				int deltaY = Rnd.get(deltaX, Config.MAX_DRIFT_RANGE * 2); // distance
@@ -559,7 +560,7 @@ public class AttackableAI: CreatureAI
 				? loc
 				: GeoEngine.getInstance().getValidLocation(npc.Location.Location3D, loc, npc.getInstanceWorld());
 
-			if (npc.getSpawn().Distance2D(moveLoc) <= Config.MAX_DRIFT_RANGE)
+			if (spawn.Distance2D(moveLoc) <= Config.MAX_DRIFT_RANGE)
 			{
 				moveTo(moveLoc);
 			}
@@ -586,7 +587,7 @@ public class AttackableAI: CreatureAI
 
 		if (Config.AGGRO_DISTANCE_CHECK_ENABLED && npc.isMonster() && !npc.isWalker() && !(npc is GrandBoss))
 		{
-			Spawn spawn = npc.getSpawn();
+			Spawn? spawn = npc.getSpawn();
 			if (spawn != null && npc.Distance2D(spawn.Location.Location2D) > (spawn.getChaseRange() > 0 ? Math.Max(Config.MAX_DRIFT_RANGE, spawn.getChaseRange()) : npc.isRaid() ? Config.AGGRO_DISTANCE_CHECK_RAID_RANGE : Config.AGGRO_DISTANCE_CHECK_RANGE))
 			{
 				if ((Config.AGGRO_DISTANCE_CHECK_RAIDS || !npc.isRaid()) && (Config.AGGRO_DISTANCE_CHECK_INSTANCES || !npc.isInInstance()))
@@ -667,10 +668,10 @@ public class AttackableAI: CreatureAI
 			}
 
 			// Monster teleport to spawn
-			if (npc.isMonster() && npc.getSpawn() != null && !npc.isInInstance() &&
+			if (npc.isMonster() && npc.getSpawn() is {} spawn && !npc.isInInstance() &&
 			    (npc.isInCombat() || World.getInstance().getVisibleObjects<Player>(npc).Count == 0))
 			{
-				npc.teleToLocation(npc.getSpawn().Location, false);
+				npc.teleToLocation(spawn.Location, false);
 			}
 
 			return;

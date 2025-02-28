@@ -43,38 +43,22 @@ using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor;
 
-/**
- * Mother class of all character objects of the world (PC, NPC...)<br>
- * Creature:<br>
- * <ul>
- * <li>Door</li>
- * <li>Playable</li>
- * <li>Npc</li>
- * <li>StaticObject</li>
- * <li>Trap</li>
- * <li>Vehicle</li>
- * </ul>
- * <b>Concept of CreatureTemplate:</b><br>
- * Each Creature owns generic and static properties (ex : all Keltir have the same number of HP...).<br>
- * All of those properties are stored in a different template for each type of Creature.<br>
- * Each template is loaded once in the server cache memory (reduce memory use).<br>
- * When a new instance of Creature is spawned, server just create a link between the instance and the template.<br>
- * This link is stored in {@link #_template}
- * @version $Revision: 1.53.2.45.2.34 $ $Date: 2005/04/11 10:06:08 $
- */
+/// <summary>
+/// Mother class of all character objects of the world (PC, NPC...).
+/// </summary>
 public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvider
 {
 	public static readonly Logger LOGGER = LogManager.GetLogger(nameof(Creature));
 
-	private Set<WeakReference<Creature>> _attackByList;
+	private Set<WeakReference<Creature>> _attackByList = [];
 
 	private bool _isDead;
 	private bool _isImmobilized;
 	private bool _isOverloaded; // the char is carrying too much
 	private bool _isPendingRevive;
 	private bool _isRunning;
-	protected bool _showSummonAnimation;
-	protected bool _isTeleporting;
+    private bool _showSummonAnimation;
+    private bool _isTeleporting;
 	private bool _isInvul;
 	private bool _isUndying;
 	private bool _isFlying;
@@ -82,10 +66,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	private bool _blockActions;
 	private readonly Map<int, AtomicInteger> _blockActionsAllowedSkills = new();
 
-	private CreatureStat _stat;
-	private CreatureStatus _status;
-	private CreatureTemplate _template; // The link on the CreatureTemplate object containing generic and static properties of this Creature type (ex : Max HP, Speed...)
-	private string _title;
+	private readonly CreatureStat _stat;
+	private readonly CreatureStatus _status;
+	private readonly CreatureTemplate _template; // The link on the CreatureTemplate object containing generic and static properties of this Creature type (ex : Max HP, Speed...)
+	private string _title = string.Empty;
 
 	public const double MAX_HP_BAR_PX = 352.0;
 
@@ -105,7 +89,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	private readonly Map<long, DateTime> _disabledSkills = new();
 	private bool _allSkillsDisabled;
 
-	private readonly byte[] _zones = new byte[(int)EnumUtil.GetMaxValue<ZoneId>() + 1];
+	private readonly int[] _zones = new int[(int)EnumUtil.GetMaxValue<ZoneId>() + 1];
 	protected Location3D _lastZoneValidateLocation;
 
 	private readonly object _attackLock = new();
@@ -116,20 +100,20 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	private bool _lethalable = true;
 
-	private Map<int, OptionSkillHolder> _triggerSkills;
+	private Map<int, OptionSkillHolder> _triggerSkills = [];
 
-	private Map<int, IgnoreSkillHolder> _ignoreSkillEffects;
+	private Map<int, IgnoreSkillHolder> _ignoreSkillEffects = [];
 	/** Creatures effect list. */
 	private readonly EffectList _effectList;
 	/** The creature that summons this character. */
 	private Creature? _summoner;
 
 	/** Map of summoned NPCs by this creature. */
-	private Map<int, Npc> _summonedNpcs;
+	private Map<int, Npc> _summonedNpcs = [];
 
-	private SkillChannelizer _channelizer;
+	private SkillChannelizer? _channelizer;
 
-	private SkillChannelized _channelized;
+	private SkillChannelized? _channelized;
 
 	private BuffFinishTask? _buffFinishTask;
 
@@ -159,13 +143,13 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	private readonly Map<int, RelationCache> _knownRelations = new();
 
-	private Set<Creature> _seenCreatures;
+	private Set<Creature> _seenCreatures = [];
 	private int _seenCreatureRange = Config.ALT_PARTY_RANGE;
 
 	private readonly Map<StatusUpdateType, int> _statusUpdates = new();
 
 	/** A map holding info about basic property mesmerizing system. */
-	private Map<BasicProperty, BasicPropertyResist> _basicPropertyResists;
+	private Map<BasicProperty, BasicPropertyResist> _basicPropertyResists = [];
 
 	/** A set containing the shot types currently charged. */
 	private Set<ShotType> _chargedShots = new();
@@ -224,8 +208,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// Set its template to the new Creature
 		_template = template;
 		_eventContainer = new EventContainer($"Creature {objectId}", template.Events);
-		initCharStat();
-		initCharStatus();
+        _stat = CreateStat();
+        _status = CreateStatus();
 
 		if (isNpc())
 		{
@@ -318,16 +302,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public void setInsideZone(ZoneId zone, bool state)
 	{
-		lock (_zones)
+		if (state)
 		{
-			if (state)
-			{
-				_zones[(int)zone]++;
-			}
-			else if (_zones[(int)zone] > 0)
-			{
-				_zones[(int)zone]--;
-			}
+			Interlocked.Increment(ref _zones[(int)zone]);
+		}
+		else
+		{
+            if (Interlocked.Decrement(ref _zones[(int)zone]) < 0)
+                Interlocked.Increment(ref _zones[(int)zone]);
 		}
 	}
 
@@ -1659,7 +1641,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		// Calculate rewards for main damage dealer.
 		Creature? mainDamageDealer = isMonster() ? ((Monster) this).getMainDamageDealer() : null;
-		calculateRewards(mainDamageDealer ?? killer);
+        Creature? rewardTarget = mainDamageDealer ?? killer;
+        if (rewardTarget != null) // TODO: null check added, verify
+		    calculateRewards(rewardTarget);
 
 		// Set target to null and cancel Attack or Cast
 		setTarget(null);
@@ -1672,7 +1656,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		if (isAttackable())
 		{
-			Spawn spawn = ((Npc) this).getSpawn();
+			Spawn? spawn = ((Npc)this).getSpawn();
 			if (spawn != null && spawn.isRespawnEnabled())
 			{
 				stopAllEffects();
@@ -2294,58 +2278,18 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		return _stat;
 	}
 
-	/**
-	 * Initializes the CharStat class of the WorldObject, is overwritten in classes that require a different CharStat Type.<br>
-	 * Removes the need for instanceof checks.
-	 */
-	public virtual void initCharStat()
-	{
-		_stat = new CreatureStat(this);
-	}
-
-	public void setStat(CreatureStat value)
-	{
-		_stat = value;
-	}
-
 	public virtual CreatureStatus getStatus()
 	{
 		return _status;
 	}
 
-	/**
-	 * Initializes the CharStatus class of the WorldObject, is overwritten in classes that require a different CharStatus Type.<br>
-	 * Removes the need for instanceof checks.
-	 */
-	public virtual void initCharStatus()
-	{
-		_status = new CreatureStatus(this);
-	}
-
-	public void setStatus(CreatureStatus value)
-	{
-		_status = value;
-	}
-
+    /// <summary>
+    /// The template of the creature. Contains the generic and static properties for each type of creature.
+    /// </summary>
+    /// <returns></returns>
 	public virtual CreatureTemplate getTemplate()
 	{
 		return _template;
-	}
-
-	/**
-	 * Set the template of the Creature.<br>
-	 * <br>
-	 * <b><u>Concept</u>:</b><br>
-	 * <br>
-	 * Each Creature owns generic and static properties (ex : all Keltir have the same number of HP...).<br>
-	 * All of those properties are stored in a different template for each type of Creature.<br>
-	 * Each template is loaded once in the server cache memory (reduce memory use).<br>
-	 * When a new instance of Creature is spawned, server just create a link between the instance and the template This link is stored in <b>_template</b>.
-	 * @param template
-	 */
-	protected void setTemplate(CreatureTemplate template)
-	{
-		_template = template;
 	}
 
 	/**
@@ -2956,7 +2900,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return false;
 		}
 
-		if (move.onGeodataPathIndex == move.geoPath.Count - 1)
+		if (move.onGeodataPathIndex == move.geoPath?.Count - 1) // TODO: null checking added, verify
 		{
 			return false;
 		}
@@ -3634,7 +3578,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 						move.geoPathGty = gty;
 						move.geoPathAccurateTx = originalLoc.X;
 						move.geoPathAccurateTy = originalLoc.Y;
-						AbstractNodeLoc node = move.geoPath[move.onGeodataPathIndex];
+
+                        // TODO: null checking added, verify
+                        AbstractNodeLoc node = move.geoPath?[move.onGeodataPathIndex] ??
+                            throw new InvalidOperationException("Pathfinding error: node is null.");
+
 						loc = node.Location;
 						dLoc = loc - curLoc;
 						distance = verticalMovementOnly ? Math.Pow(dLoc.Z, 2) : dLoc.Length2D;
@@ -3751,7 +3699,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		m.geoPathGty = md.geoPathGty;
 		m.geoPathAccurateTx = md.geoPathAccurateTx;
 		m.geoPathAccurateTy = md.geoPathAccurateTy;
-		Location3D geoNodeLocation = md.geoPath[m.onGeodataPathIndex].Location;
+
+        // TODO: null checking added, verify
+        Location3D geoNodeLocation = md.geoPath?[m.onGeodataPathIndex].Location ??
+            throw new InvalidOperationException("Pathfinding error: node is null.");
+
 		if (md.onGeodataPathIndex == md.geoPath.Count - 2)
 		{
 			m.xDestination = md.geoPathAccurateTx;
@@ -4031,7 +3983,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// Launch weapon Special ability effect if available
 		if (hit.isCritical() && weapon != null)
 		{
-			weapon.applyConditionalSkills(this, target, null, ItemSkillType.ON_CRITICAL_SKILL);
+            // TODO: null checking supressed. Trigger must be not null for ItemSkillType = ON_MAGIC_SKILL
+			weapon.applyConditionalSkills(this, target, null!, ItemSkillType.ON_CRITICAL_SKILL);
 		}
 
         Player? player = getActingPlayer();
@@ -5290,7 +5243,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	/**
 	 * @param summoner the summoner of this NPC.
 	 */
-	public void setSummoner(Creature summoner)
+	public void setSummoner(Creature? summoner)
 	{
 		_summoner = summoner;
 	}
@@ -5847,4 +5800,15 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	{
 		return ElementalType.NONE;
 	}
+
+    /// <summary>
+    /// Creates Stat object of the WorldObject, is overwritten in classes that require a different Stat type.
+    /// </summary>
+    /// <returns></returns>
+    protected virtual CreatureStat CreateStat() => new(this);
+
+    /// <summary>
+    /// Initializes the Status object of the WorldObject, is overwritten in classes that require a different Status type.
+    /// </summary>
+    protected virtual CreatureStatus CreateStatus() => new(this);
 }

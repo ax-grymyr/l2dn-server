@@ -551,10 +551,11 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	{
 		DateTime? time = null;
 		foreach (InstanceReenterTimeHolder data in _reenterData)
-		{
-			if (data.getTime() > TimeSpan.Zero)
+        {
+            TimeSpan? dataTime = data.getTime();
+			if (dataTime > TimeSpan.Zero)
 			{
-				time = DateTime.UtcNow + data.getTime().Value;
+				time = DateTime.UtcNow + dataTime.Value;
 				break;
 			}
 

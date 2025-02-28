@@ -134,7 +134,7 @@ public class CastleManager
 		{
 			return;
 		}
-		Player player = member.getPlayer();
+		Player? player = member.getPlayer();
 		int circletId = getCircletByCastleId(castleId);
 		if (circletId != 0)
 		{

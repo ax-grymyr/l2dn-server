@@ -54,19 +54,9 @@ public class StaticObject: Creature
 		return (StaticObjectStat)base.getStat();
 	}
 
-	public override void initCharStat()
-	{
-		setStat(new StaticObjectStat(this));
-	}
-
 	public override StaticObjectStatus getStatus()
 	{
 		return (StaticObjectStatus)base.getStatus();
-	}
-
-	public override void initCharStatus()
-	{
-		setStatus(new StaticObjectStatus(this));
 	}
 
 	public int getType()
@@ -168,4 +158,7 @@ public class StaticObject: Creature
 	public override void doCast(Skill skill)
 	{
 	}
+
+    protected override CreatureStat CreateStat() => new StaticObjectStat(this);
+    protected override CreatureStatus CreateStatus() => new StaticObjectStatus(this);
 }

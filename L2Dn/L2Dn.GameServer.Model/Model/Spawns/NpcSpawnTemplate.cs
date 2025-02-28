@@ -418,10 +418,15 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 	public void despawn()
 	{
 		_spawnedNpcs.ForEach(npc =>
-		{
-			npc.getSpawn().stopRespawn();
-			SpawnTable.getInstance().deleteSpawn(npc.getSpawn(), false);
-			npc.deleteMe();
+        {
+            Spawn? spawn = npc.getSpawn();
+            if (spawn != null)
+            {
+                spawn.stopRespawn();
+                SpawnTable.getInstance().deleteSpawn(spawn, false);
+            }
+
+            npc.deleteMe();
 		});
 
 		_spawnedNpcs.Clear();
@@ -437,7 +442,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 		_spawnTemplate.notifyEvent(@event => @event.onSpawnDespawnNpc(_spawnTemplate, _group, npc));
 	}
 
-	public void notifyNpcDeath(Npc npc, Creature killer)
+	public void notifyNpcDeath(Npc npc, Creature? killer)
 	{
 		_spawnTemplate.notifyEvent(@event => @event.onSpawnNpcDeath(_spawnTemplate, _group, npc, killer));
 	}

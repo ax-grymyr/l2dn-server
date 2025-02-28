@@ -112,11 +112,6 @@ public class SiegeFlag: Npc
         return (SiegeFlagStatus)base.getStatus();
     }
 
-    public override void initCharStatus()
-    {
-        setStatus(new SiegeFlagStatus(this));
-    }
-
     public override void reduceCurrentHp(double damage, Creature attacker, Skill? skill)
     {
         base.reduceCurrentHp(damage, attacker, skill);
@@ -140,4 +135,6 @@ public class SiegeFlag: Npc
             siegeFlag._canTalk = true;
         }
     }
+
+    protected override CreatureStatus CreateStatus() => new SiegeFlagStatus(this);
 }

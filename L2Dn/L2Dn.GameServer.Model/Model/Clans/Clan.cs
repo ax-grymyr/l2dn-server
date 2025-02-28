@@ -189,9 +189,9 @@ public class Clan: IIdentifiable, INamable
 
 	public void setNewLeader(ClanMember member)
 	{
-		Player newLeader = member.getPlayer();
+		Player? newLeader = member.getPlayer();
 		ClanMember exMember = _leader;
-		Player exLeader = exMember.getPlayer();
+		Player? exLeader = exMember.getPlayer();
 
 		// Notify to scripts
 		if (GlobalEvents.Global.HasSubscribers<OnClanLeaderChange>())
@@ -343,8 +343,12 @@ public class Clan: IIdentifiable, INamable
 	 * @param player the player to be updated.
 	 */
 	public void updateClanMember(Player player)
-	{
-		ClanMember member = new ClanMember(player.getClan(), player);
+    {
+        Clan? clan = player.getClan();
+        if (clan is null)
+            return;
+
+		ClanMember member = new ClanMember(clan, player);
 		if (player.isClanLeader())
 		{
 			setLeader(member);
@@ -394,20 +398,25 @@ public class Clan: IIdentifiable, INamable
 		int leadssubpledge = getLeaderSubPledge(objectId);
 		if (leadssubpledge != 0)
 		{
-			// Sub-unit leader withdraws, position becomes vacant and leader
+			// Subunit leader withdraws, position becomes vacant and leader
 			// should appoint new via NPC
-			getSubPledge(leadssubpledge).setLeaderId(0);
-			updateSubPledgeInDB(leadssubpledge);
-		}
+            SubPledge? subPledge = getSubPledge(leadssubpledge);
+            if (subPledge != null)
+            {
+                subPledge.setLeaderId(0);
+                updateSubPledgeInDB(leadssubpledge);
+            }
+        }
 
 		if (exMember.getApprentice() != 0)
 		{
 			ClanMember? apprentice = getClanMember(exMember.getApprentice());
 			if (apprentice != null)
-			{
-				if (apprentice.getPlayer() != null)
+            {
+                Player? apprenticePlayer = apprentice.getPlayer();
+				if (apprenticePlayer != null)
 				{
-					apprentice.getPlayer().setSponsor(0);
+                    apprenticePlayer.setSponsor(0);
 				}
 				else
 				{
@@ -424,9 +433,10 @@ public class Clan: IIdentifiable, INamable
 			ClanMember? sponsor = getClanMember(sponsorId.Value);
 			if (sponsor != null)
 			{
-				if (sponsor.getPlayer() != null)
+                Player? sponsorPlayer = sponsor.getPlayer();
+				if (sponsorPlayer != null)
 				{
-					sponsor.getPlayer().setApprentice(0);
+                    sponsorPlayer.setApprentice(0);
 				}
 				else
 				{
@@ -443,9 +453,9 @@ public class Clan: IIdentifiable, INamable
 			CastleManager.getInstance().removeCirclet(exMember, _castleId.Value);
 		}
 
-		if (exMember.isOnline())
+        Player? player = exMember.getPlayer();
+		if (exMember.isOnline() && player != null)
 		{
-			Player player = exMember.getPlayer();
 			if (!player.isNoble())
 			{
 				player.setTitle("");
@@ -633,10 +643,11 @@ public class Clan: IIdentifiable, INamable
 	{
 		List<Player> result = new();
 		foreach (ClanMember member in _members.Values)
-		{
-			if (member.getObjectId() != exclude && member.isOnline() && member.getPlayer() != null)
+        {
+            Player? memberPlayer = member.getPlayer();
+			if (member.getObjectId() != exclude && member.isOnline() && memberPlayer != null)
 			{
-				result.Add(member.getPlayer());
+				result.Add(memberPlayer);
 			}
 		}
 		return result;
@@ -713,7 +724,7 @@ public class Clan: IIdentifiable, INamable
 				_forum = forum.getChildByName(_name);
 				if (_forum == null)
 				{
-					_forum = ForumsBBSManager.getInstance().createNewForum(_name, ForumsBBSManager.getInstance().getForumByName("ClanRoot"), Forum.CLAN, Forum.CLANMEMBERONLY, getId());
+					_forum = ForumsBBSManager.getInstance().createNewForum(_name, forum, Forum.CLAN, Forum.CLANMEMBERONLY, getId());
 				}
 			}
 		}
@@ -1268,7 +1279,7 @@ public class Clan: IIdentifiable, INamable
 		return oldSkill;
 	}
 
-	public Skill addNewSkill(Skill newSkill)
+	public Skill? addNewSkill(Skill newSkill)
 	{
 		return addNewSkill(newSkill, -2);
 	}
@@ -1339,25 +1350,26 @@ public class Clan: IIdentifiable, INamable
 			sm.Params.addSkillName(newSkill.getId());
 
 			foreach (ClanMember temp in _members.Values)
-			{
-				if (temp != null && temp.getPlayer() != null && temp.isOnline())
+            {
+                Player? tempPlayer = temp.getPlayer();
+				if (temp != null && tempPlayer != null && temp.isOnline())
 				{
 					if (subType == -2)
 					{
-						if (newSkill.getMinPledgeClass() <= temp.getPlayer().getPledgeClass())
+						if (newSkill.getMinPledgeClass() <= tempPlayer.getPledgeClass())
 						{
-							temp.getPlayer().addSkill(newSkill, false); // Skill is not saved to player DB
-							temp.getPlayer().sendPacket(new PledgeSkillListAddPacket(newSkill.getId(), newSkill.getLevel()));
-							temp.getPlayer().sendPacket(sm);
-							temp.getPlayer().sendSkillList();
+                            tempPlayer.addSkill(newSkill, false); // Skill is not saved to player DB
+                            tempPlayer.sendPacket(new PledgeSkillListAddPacket(newSkill.getId(), newSkill.getLevel()));
+                            tempPlayer.sendPacket(sm);
+                            tempPlayer.sendSkillList();
 						}
 					}
 					else if (temp.getPledgeType() == subType)
 					{
-						temp.getPlayer().addSkill(newSkill, false); // Skill is not saved to player DB
-						temp.getPlayer().sendPacket(new ExSubPledgeSkillAddPacket(subType, newSkill.getId(), newSkill.getLevel()));
-						temp.getPlayer().sendPacket(sm);
-						temp.getPlayer().sendSkillList();
+                        tempPlayer.addSkill(newSkill, false); // Skill is not saved to player DB
+                        tempPlayer.sendPacket(new ExSubPledgeSkillAddPacket(subType, newSkill.getId(), newSkill.getLevel()));
+                        tempPlayer.sendPacket(sm);
+                        tempPlayer.sendSkillList();
 					}
 				}
 			}
@@ -1373,10 +1385,11 @@ public class Clan: IIdentifiable, INamable
 			foreach (ClanMember temp in _members.Values)
 			{
 				try
-				{
-					if (temp != null && temp.isOnline() && skill.getMinPledgeClass() <= temp.getPlayer().getPledgeClass())
+                {
+                    Player? tempPlayer = temp.getPlayer();
+					if (temp != null && tempPlayer != null && temp.isOnline() && skill.getMinPledgeClass() <= tempPlayer.getPledgeClass())
 					{
-						temp.getPlayer().addSkill(skill, false); // Skill is not saved to player DB
+						tempPlayer.addSkill(skill, false); // Skill is not saved to player DB
 					}
 				}
 				catch (Exception e)
@@ -1536,9 +1549,10 @@ public class Clan: IIdentifiable, INamable
 	{
 		foreach (ClanMember member in _members.Values)
 		{
-			if (member != null && member.isOnline())
+            Player? memberPlayer = member.getPlayer();
+			if (member != null && member.isOnline() && memberPlayer != null)
 			{
-				member.getPlayer().sendPacket(packet);
+				memberPlayer.sendPacket(packet);
 			}
 		}
 	}
@@ -1547,9 +1561,10 @@ public class Clan: IIdentifiable, INamable
 	{
 		foreach (ClanMember member in _members.Values)
 		{
-			if (member != null && member.isOnline() && !BlockList.isBlocked(member.getPlayer(), broadcaster))
+            Player? memberPlayer = member.getPlayer();
+			if (member != null && memberPlayer != null && member.isOnline() && !BlockList.isBlocked(memberPlayer, broadcaster))
 			{
-				member.getPlayer().sendPacket(packet);
+                memberPlayer.sendPacket(packet);
 			}
 		}
 	}
@@ -1558,10 +1573,11 @@ public class Clan: IIdentifiable, INamable
 		where TPacket: struct, IOutgoingPacket
 	{
 		foreach (ClanMember member in _members.Values)
-		{
-			if (member != null && member.isOnline() && member.getPlayer() != player)
+        {
+            Player? memberPlayer = member.getPlayer();
+			if (member != null && member.isOnline() && memberPlayer != player && memberPlayer != null)
 			{
-				member.getPlayer().sendPacket(packet);
+                memberPlayer.sendPacket(packet);
 			}
 		}
 	}
@@ -1736,7 +1752,7 @@ public class Clan: IIdentifiable, INamable
 	 */
 	public SubPledge? getSubPledge(int pledgeType)
 	{
-		return _subPledges == null ? null : _subPledges.get(pledgeType);
+		return _subPledges.GetValueOrDefault(pledgeType);
 	}
 
 	/**
@@ -1746,18 +1762,12 @@ public class Clan: IIdentifiable, INamable
 	 */
 	public SubPledge? getSubPledge(string pledgeName)
 	{
-		if (_subPledges == null)
-		{
-			return null;
-		}
-
 		foreach (SubPledge sp in _subPledges.Values)
 		{
 			if (sp.getName().equalsIgnoreCase(pledgeName))
-			{
 				return sp;
-			}
 		}
+
 		return null;
 	}
 
@@ -1776,7 +1786,6 @@ public class Clan: IIdentifiable, INamable
 
 	public SubPledge? createSubPledge(Player player, int pledgeTypeValue, int leaderId, string subPledgeName)
 	{
-		SubPledge? subPledge = null;
 		int pledgeType = getAvailablePledgeTypes(pledgeTypeValue);
 		if (pledgeType == 0)
 		{
@@ -1790,7 +1799,8 @@ public class Clan: IIdentifiable, INamable
 			}
 			return null;
 		}
-		if (_leader.getObjectId() == leaderId)
+
+        if (_leader.getObjectId() == leaderId)
 		{
 			player.sendMessage("Leader is not correct");
 			return null;
@@ -1804,6 +1814,7 @@ public class Clan: IIdentifiable, INamable
 			return null;
 		}
 
+        SubPledge subPledge;
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
@@ -1838,7 +1849,8 @@ public class Clan: IIdentifiable, INamable
 		catch (Exception e)
 		{
 			LOGGER.Error("Error saving sub clan data: " + e);
-		}
+            return null; // TODO: just throw
+        }
 
 		broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(_leader.getClan()));
 		broadcastToOnlineMembers(new PledgeReceiveSubPledgeCreatedPacket(subPledge, _leader.getClan()));
@@ -1888,10 +1900,17 @@ public class Clan: IIdentifiable, INamable
 	public void updateSubPledgeInDB(int pledgeType)
 	{
 		try
-		{
+        {
+            SubPledge? subPledge = getSubPledge(pledgeType);
+            if (subPledge == null)
+            {
+                LOGGER.Warn($"Requested to update non-existing sub-pledge type={pledgeType}");
+                return;
+            }
+
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int leaderId = getSubPledge(pledgeType).getLeaderId();
-			string name = getSubPledge(pledgeType).getName();
+			int leaderId = subPledge.getLeaderId();
+			string name = subPledge.getName();
 			ctx.ClanSubPledges.Where(r => r.ClanId == _clanId && r.SubPledgeId == pledgeType)
 				.ExecuteUpdate(s => s.SetProperty(r => r.LeaderId, leaderId).SetProperty(r => r.Name, name));
 		}
@@ -1917,8 +1936,9 @@ public class Clan: IIdentifiable, INamable
 					continue;
 				}
 
-				_privs.get(rank).setPrivs((ClanPrivilege)privileges);
-			}
+                _privs.GetOrAdd(rank, r => new RankPrivs(r, 0, ClanPrivilege.None)).
+                    setPrivs((ClanPrivilege)privileges);
+            }
 		}
 		catch (Exception e)
 		{
@@ -1936,7 +1956,7 @@ public class Clan: IIdentifiable, INamable
 
 	public ClanPrivilege getRankPrivs(int rank)
 	{
-		return _privs.get(rank) != null ? _privs.get(rank).getPrivs() : ClanPrivilege.None;
+		return _privs.get(rank)?.getPrivs() ?? ClanPrivilege.None;
 	}
 
 	public void setRankPrivs(int rank, ClanPrivilege privs)
@@ -1973,11 +1993,12 @@ public class Clan: IIdentifiable, INamable
 			}
 
 			foreach (ClanMember cm in _members.Values)
-			{
-				if (cm.isOnline() && cm.getPowerGrade() == rank && cm.getPlayer() != null)
+            {
+                Player? cmPlayer = cm.getPlayer();
+				if (cm.isOnline() && cm.getPowerGrade() == rank && cmPlayer != null)
 				{
-					cm.getPlayer().setClanPrivileges(privs);
-					cm.getPlayer().updateUserInfo();
+                    cmPlayer.setClanPrivileges(privs);
+                    cmPlayer.updateUserInfo();
 				}
 			}
 			broadcastClanStatus();
@@ -2058,9 +2079,10 @@ public class Clan: IIdentifiable, INamable
 			broadcastToOnlineMembers(new SystemMessagePacket(SystemMessageId.SINCE_THE_CLAN_REPUTATION_HAS_DROPPED_BELOW_0_YOUR_CLAN_SKILL_S_WILL_BE_DE_ACTIVATED));
 			foreach (ClanMember member in _members.Values)
 			{
-				if (member.isOnline() && member.getPlayer() != null)
+                Player? memberPlayer = member.getPlayer();
+				if (member.isOnline() && memberPlayer != null)
 				{
-					skillsStatus(member.getPlayer(), true);
+					skillsStatus(memberPlayer, true);
 				}
 			}
 		}
@@ -2068,10 +2090,11 @@ public class Clan: IIdentifiable, INamable
 		{
 			broadcastToOnlineMembers(new SystemMessagePacket(SystemMessageId.CLAN_SKILLS_WILL_NOW_BE_ACTIVATED_SINCE_THE_CLAN_REPUTATION_IS_1_OR_HIGHER));
 			foreach (ClanMember member in _members.Values)
-			{
-				if (member.isOnline() && member.getPlayer() != null)
+            {
+                Player? memberPlayer = member.getPlayer();
+				if (member.isOnline() && memberPlayer != null)
 				{
-					skillsStatus(member.getPlayer(), false);
+					skillsStatus(memberPlayer, false);
 				}
 			}
 		}
@@ -2211,13 +2234,13 @@ public class Clan: IIdentifiable, INamable
 		}
 
 		int? playerAllyId = player.getAllyId();
-		if (playerAllyId is null || !player.isClanLeader() || player.getClanId() != playerAllyId)
+        Clan? leaderClan = player.getClan();
+		if (playerAllyId is null || !player.isClanLeader() || leaderClan == null || player.getClanId() != playerAllyId)
 		{
 			player.sendPacket(SystemMessageId.ACCESS_ONLY_FOR_THE_CHANNEL_FOUNDER);
 			return false;
 		}
 
-		Clan? leaderClan = player.getClan();
 		if (leaderClan.getAllyPenaltyExpiryTime() > DateTime.UtcNow && leaderClan.getAllyPenaltyType() == PENALTY_TYPE_DISMISS_CLAN)
 		{
 			player.sendPacket(SystemMessageId.YOU_CAN_ACCEPT_A_NEW_CLAN_IN_THE_ALLIANCE_IN_24_H_AFTER_DISMISSING_ANOTHER_ONE);
@@ -2236,7 +2259,8 @@ public class Clan: IIdentifiable, INamable
 			return false;
 		}
 
-		if (target.getClan() == null)
+        Clan? targetClan = target.getClan();
+		if (targetClan == null)
 		{
 			player.sendPacket(SystemMessageId.THE_TARGET_MUST_BE_A_CLAN_MEMBER);
 			return false;
@@ -2250,12 +2274,11 @@ public class Clan: IIdentifiable, INamable
 			return false;
 		}
 
-		Clan targetClan = target.getClan();
 		if (target.getAllyId() is not null)
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_CLAN_IS_ALREADY_A_MEMBER_OF_S2_ALLIANCE);
 			sm.Params.addString(targetClan.getName());
-			sm.Params.addString(targetClan.getAllyName());
+			sm.Params.addString(targetClan.getAllyName() ?? string.Empty);
 			player.sendPacket(sm);
 			return false;
 		}
@@ -2265,8 +2288,8 @@ public class Clan: IIdentifiable, INamable
 			if (targetClan.getAllyPenaltyType() == PENALTY_TYPE_CLAN_LEAVED)
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_CLAN_CANNOT_JOIN_THE_ALLIANCE_BECAUSE_ONE_DAY_HAS_NOT_YET_PASSED_SINCE_THEY_LEFT_ANOTHER_ALLIANCE);
-				sm.Params.addString(target.getClan().getName());
-				sm.Params.addString(target.getClan().getAllyName());
+				sm.Params.addString(targetClan.getName());
+				sm.Params.addString(targetClan.getAllyName() ?? string.Empty);
 				player.sendPacket(sm);
 				return false;
 			}
@@ -2575,15 +2598,15 @@ public class Clan: IIdentifiable, INamable
 
 		setLevel(level);
 
-		if (_leader.isOnline())
+        Player? leader = _leader.getPlayer();
+		if (leader != null && _leader.isOnline())
 		{
-			Player leader = _leader.getPlayer();
 			if (level > 4)
 			{
 				SiegeManager.getInstance().addSiegeSkills(leader);
 				leader.sendPacket(SystemMessageId.NOW_THAT_YOUR_CLAN_LEVEL_IS_ABOVE_LEVEL_5_IT_CAN_ACCUMULATE_CLAN_REPUTATION);
 			}
-			else if (level < 5)
+			else if (level < 5) // TODO: invalid condition??
 			{
 				SiegeManager.getInstance().removeSiegeSkills(leader);
 			}
@@ -2657,7 +2680,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		else
 		{
-			foreach (Clan clan in ClanTable.getInstance().getClanAllies(getAllyId().Value))
+			foreach (Clan clan in ClanTable.getInstance().getClanAllies(getAllyId() ?? 0))
 			{
 				clan.setAllyCrestId(crestId);
 				foreach (Player member in clan.getOnlineMembers(0))

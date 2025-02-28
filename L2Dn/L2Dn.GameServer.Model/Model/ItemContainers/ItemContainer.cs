@@ -179,7 +179,7 @@ public abstract class ItemContainer
 			newItem.updateDatabase();
 			newItem = olditem;
 		}
-		else // If item hasn't be found in inventory, create new one
+		else // If item has not been found in inventory, create new one
 		{
 			newItem.setOwnerId(process, getOwnerId(), actor, reference);
 			newItem.setItemLocation(getBaseLocation());

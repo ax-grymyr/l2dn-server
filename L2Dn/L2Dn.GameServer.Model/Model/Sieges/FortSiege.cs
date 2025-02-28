@@ -1598,9 +1598,11 @@ public class FortSiege: Siegable
 			foreach (Spawn spawnDat in _siegeGuards)
 			{
 				spawnDat.stopRespawn();
-				if (spawnDat.getLastSpawn() != null)
+
+                Npc? lastSpawn = spawnDat.getLastSpawn();
+				if (lastSpawn != null)
 				{
-					spawnDat.getLastSpawn().doDie(spawnDat.getLastSpawn());
+                    lastSpawn.doDie(lastSpawn);
 				}
 			}
 		}

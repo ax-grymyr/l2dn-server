@@ -4,6 +4,7 @@ using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.ItemContainers;
@@ -303,9 +304,10 @@ public class CastleManorManager: DataReaderBase, IStorable
 					if (owner != null)
 					{
 						ClanMember clanLeader = owner.getLeader();
-						if (clanLeader != null && clanLeader.isOnline())
+                        Player? clanLeaderPlayer = clanLeader.getPlayer();
+						if (clanLeader != null && clanLeader.isOnline() && clanLeaderPlayer != null)
 						{
-							clanLeader.getPlayer().sendPacket(SystemMessageId.THE_MANOR_INFORMATION_HAS_BEEN_UPDATED);
+                            clanLeaderPlayer.sendPacket(SystemMessageId.THE_MANOR_INFORMATION_HAS_BEEN_UPDATED);
 						}
 					}
 				}
@@ -346,9 +348,10 @@ public class CastleManorManager: DataReaderBase, IStorable
 
 						// Notify clan leader
 						ClanMember clanLeader = owner.getLeader();
-						if (clanLeader != null && clanLeader.isOnline())
+                        Player? clanLeaderPlayer = clanLeader.getPlayer();
+						if (clanLeader != null && clanLeader.isOnline() && clanLeaderPlayer != null)
 						{
-							clanLeader.getPlayer().sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_FUNDS_IN_THE_CLAN_WAREHOUSE_FOR_THE_MANOR_TO_OPERATE);
+                            clanLeaderPlayer.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_FUNDS_IN_THE_CLAN_WAREHOUSE_FOR_THE_MANOR_TO_OPERATE);
 						}
 					}
 					else

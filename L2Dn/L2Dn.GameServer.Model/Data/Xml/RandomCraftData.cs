@@ -115,6 +115,7 @@ public class RandomCraftData: DataReaderBase
 				return new RandomCraftRewardItemHolder(reward.getItemId(), reward.getCount(), false, 20);
 			}
 		}
+
 		return null;
 	}
 

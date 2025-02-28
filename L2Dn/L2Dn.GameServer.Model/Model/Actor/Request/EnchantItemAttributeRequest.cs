@@ -12,7 +12,7 @@ public class EnchantItemAttributeRequest: AbstractRequest
         _enchantingStoneObjectId = enchantingStoneObjectId;
     }
 
-    public Item getEnchantingItem()
+    public Item? getEnchantingItem()
     {
         return getActiveChar().getInventory().getItemByObjectId(_enchantingItemObjectId);
     }
@@ -22,7 +22,7 @@ public class EnchantItemAttributeRequest: AbstractRequest
         _enchantingItemObjectId = objectId;
     }
 
-    public Item getEnchantingStone()
+    public Item? getEnchantingStone()
     {
         return getActiveChar().getInventory().getItemByObjectId(_enchantingStoneObjectId);
     }

@@ -87,16 +87,6 @@ public class Door : Creature
 		return (DoorStatus)base.getStatus();
 	}
 
-	public override void initCharStatus()
-	{
-		setStatus(new DoorStatus(this));
-	}
-
-	public override void initCharStat()
-	{
-		setStat(new DoorStat(this));
-	}
-
 	public override DoorStat getStat()
 	{
 		return (DoorStat)base.getStat();
@@ -526,7 +516,7 @@ public class Door : Creature
         base.reduceCurrentHp(value, attacker, skill, isDOT, directlyToHp, critical, reflect);
     }
 
-    public override bool doDie(Creature killer)
+    public override bool doDie(Creature? killer)
 	{
 		if (!base.doDie(killer))
 		{
@@ -671,4 +661,7 @@ public class Door : Creature
 		sb.Append(")");
 		return sb.ToString();
 	}
+
+    protected override CreatureStat CreateStat() => new DoorStat(this);
+    protected override CreatureStatus CreateStatus() => new DoorStatus(this);
 }

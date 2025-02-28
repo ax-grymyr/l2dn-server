@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Model.Actor.Templates;
+using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model.Actor;
@@ -19,15 +20,17 @@ public abstract class Tower: Npc
     public override bool canBeAttacked()
     {
         // Attackable during siege by attacker only
-        return getCastle() != null && getCastle().getResidenceId() > 0 && getCastle().getSiege().isInProgress();
+        Castle? castle = getCastle();
+        return castle != null && castle.getResidenceId() > 0 && castle.getSiege().isInProgress();
     }
 
     public override bool isAutoAttackable(Creature attacker)
     {
         // Attackable during siege by attacker only
-        return attacker != null && attacker.isPlayer() && getCastle() != null &&
-               getCastle().getResidenceId() > 0 && getCastle().getSiege().isInProgress() &&
-               getCastle().getSiege().checkIsAttacker(((Player)attacker).getClan());
+        Castle? castle = getCastle();
+        return attacker != null && attacker.isPlayer() && castle != null &&
+            castle.getResidenceId() > 0 && castle.getSiege().isInProgress() &&
+            castle.getSiege().checkIsAttacker(((Player)attacker).getClan());
     }
 
     public override void onAction(Player player, bool interact)

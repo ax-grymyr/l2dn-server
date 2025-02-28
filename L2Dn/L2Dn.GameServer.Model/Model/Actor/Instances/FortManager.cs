@@ -51,8 +51,9 @@ public sealed class FortManager: Merchant
 	public override void onBypassFeedback(Player player, string command)
 	{
 		// BypassValidation Exploit plug.
-		if (player.getLastFolkNPC().ObjectId != ObjectId)
-			return;
+        Npc? lastFolkNpc = player.getLastFolkNPC();
+        if (lastFolkNpc == null || lastFolkNpc.ObjectId != ObjectId)
+            return;
 
 		int condition = ValidateCondition(player);
 		if (condition <= COND_ALL_FALSE)

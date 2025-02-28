@@ -417,10 +417,11 @@ public class RevengeHistoryManager
 				if (player.getClan() is { } clan)
 				{
 					foreach (ClanMember member in clan.getMembers())
-					{
-						if (member.isOnline())
+                    {
+                        Player? memberPlayer = member.getPlayer();
+						if (member.isOnline() && memberPlayer != null)
 						{
-							targets.Add(member.getPlayer());
+							targets.Add(memberPlayer);
 						}
 						else
 						{

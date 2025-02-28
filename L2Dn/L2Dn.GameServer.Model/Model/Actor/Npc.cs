@@ -1,7 +1,6 @@
 ﻿using System.Globalization;
 using System.Text;
 using L2Dn.GameServer.Cache;
-using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
@@ -54,7 +53,7 @@ public class Npc: Creature
 	/** Ids of NPCs that see creatures through the OnCreatureSee event. */
 	private static readonly Set<int> CREATURE_SEE_IDS = [];
 	/** The Spawn object that manage this Npc */
-	private Spawn _spawn;
+	private Spawn? _spawn;
 	/** The flag to specify if this Npc is busy */
 	private bool _isBusy;
 	/** True if endDecayTask has already been called */
@@ -91,15 +90,15 @@ public class Npc: Creature
 	private NpcStringId? _titleString;
 	private NpcStringId? _nameString;
 
-	private StatSet _params;
-	private volatile int _scriptValue;
+	private StatSet? _params;
+	private int _scriptValue;
 	private RaidBossStatus _raidStatus;
 
 	/** Contains information about local tax payments. */
 	private TaxZone? _taxZone;
 
-	private readonly List<QuestTimer> _questTimers = new();
-	private readonly List<TimerHolder> _timerHolders = new();
+	private readonly List<QuestTimer> _questTimers = [];
+	private readonly List<TimerHolder> _timerHolders = [];
 
 	/**
 	 * Constructor of Npc (use Creature constructor).<br>
@@ -192,19 +191,9 @@ public class Npc: Creature
 		return (NpcStat)base.getStat();
 	}
 
-	public override void initCharStat()
-	{
-		setStat(new NpcStat(this));
-	}
-
 	public override NpcStatus getStatus()
 	{
 		return (NpcStatus) base.getStatus();
-	}
-
-	public override void initCharStatus()
-	{
-		setStatus(new NpcStatus(this));
 	}
 
 	/** Return the NpcTemplate of the Npc. */
@@ -804,7 +793,7 @@ public class Npc: Creature
 	 */
 	public double getSpReward()
 	{
-		Instance instance = getInstanceWorld();
+		Instance? instance = getInstanceWorld();
 		float rateMul = instance != null ? instance.getSPRate() : Config.RATE_SP;
 		return getTemplate().getSP() * rateMul;
 	}
@@ -850,9 +839,9 @@ public class Npc: Creature
 
 		Weapon? weapon = killer != null ? killer.getActiveWeaponItem() : null;
 		_killingBlowWeaponId = weapon != null ? weapon.getId() : 0;
-		if (_isFakePlayer && killer != null && killer.isPlayable())
+        Player? player = killer?.getActingPlayer();
+		if (_isFakePlayer && killer != null && killer.isPlayable() && player != null)
 		{
-			Player player = killer.getActingPlayer();
 			if (isScriptValue(0) && getReputation() >= 0)
 			{
 				if (Config.FAKE_PLAYER_KILL_KARMA)
@@ -931,9 +920,9 @@ public class Npc: Creature
 		}
 
 		// Apply Mp Rewards
-		if (getTemplate().getMpRewardValue() > 0 && killer != null && killer.isPlayable())
+        Player? killerPlayer = killer?.getActingPlayer();
+		if (getTemplate().getMpRewardValue() > 0 && killer != null && killer.isPlayable() && killerPlayer != null)
 		{
-			Player killerPlayer = killer.getActingPlayer();
 			new MpRewardTask(killerPlayer, this);
 			foreach (Summon summon in killerPlayer.getServitors().Values)
 			{
@@ -941,7 +930,7 @@ public class Npc: Creature
 			}
 			if (getTemplate().getMpRewardAffectType() == MpRewardAffectType.PARTY)
 			{
-				Party party = killerPlayer.getParty();
+				Party? party = killerPlayer.getParty();
 				if (party != null)
 				{
 					foreach (Player member in party.getMembers())
@@ -999,12 +988,14 @@ public class Npc: Creature
 			WalkingManager.getInstance().onSpawn(this);
 		}
 
-		if (isInsideZone(ZoneId.TAX) && getCastle() != null && (Config.SHOW_CREST_WITHOUT_QUEST || getCastle().getShowNpcCrest()) && getCastle().getOwnerId() != 0)
-		{
-			setClanId(getCastle().getOwnerId());
-		}
+        Castle? castle = getCastle();
+        if (isInsideZone(ZoneId.TAX) && castle != null &&
+            (Config.SHOW_CREST_WITHOUT_QUEST || castle.getShowNpcCrest()) && castle.getOwnerId() != 0)
+        {
+            setClanId(castle.getOwnerId());
+        }
 
-		if (CREATURE_SEE_IDS.Contains(getId()))
+        if (CREATURE_SEE_IDS.Contains(getId()))
 		{
 			initSeenCreatures();
 		}
@@ -1147,7 +1138,7 @@ public class Npc: Creature
 	/**
 	 * @return the Spawn object that manage this Npc.
 	 */
-	public Spawn getSpawn()
+	public Spawn? getSpawn()
 	{
 		return _spawn;
 	}
@@ -1397,9 +1388,17 @@ public class Npc: Creature
 	 * @return {@code true} if both given NPC and this NPC is in the same spawn group, {@code false} otherwise
 	 */
 	public bool isInMySpawnGroup(Npc npc)
-	{
-		return getSpawn().getNpcSpawnTemplate().getSpawnTemplate().getName().equals(npc.getSpawn().getNpcSpawnTemplate().getSpawnTemplate().getName());
-	}
+    {
+        if (_spawn is null)
+            return false;
+
+        Spawn? npcSpawn = npc.getSpawn();
+        if (npcSpawn is null)
+            return false;
+
+        return _spawn.getNpcSpawnTemplate().getSpawnTemplate().getName() ==
+            npcSpawn.getNpcSpawnTemplate().getSpawnTemplate().getName();
+    }
 
 	/**
 	 * @return {@code true} if NPC currently located in own spawn point, {@code false} otherwise
@@ -1499,10 +1498,7 @@ public class Npc: Creature
 				return null;
 			}
 
-			if (creature != null)
-			{
-				item.getDropProtection().protect(creature);
-			}
+			item.getDropProtection().protect(creature);
 
 			// Randomize drop position.
 			int newX = getX() + Rnd.get(RANDOM_ITEM_DROP_LIMIT * 2 + 1) - RANDOM_ITEM_DROP_LIMIT;
@@ -1870,4 +1866,7 @@ public class Npc: Creature
 		sb.Append(']');
 		return sb.ToString();
 	}
+
+    protected override CreatureStat CreateStat() => new NpcStat(this);
+    protected override CreatureStatus CreateStatus() => new NpcStatus(this);
 }

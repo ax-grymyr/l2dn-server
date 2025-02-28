@@ -13,7 +13,7 @@ public class FolkStatus: NpcStatus
         reduceHp(value, attacker, true, false, false);
     }
 
-    public override void reduceHp(double value, Creature attacker, bool awake, bool isDOT, bool isHpConsumption)
+    public override void reduceHp(double value, Creature? attacker, bool awake, bool isDOT, bool isHpConsumption)
     {
     }
 

@@ -312,7 +312,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return bool : true if adena was reduced
 	 */
-	public bool reduceBeautyTickets(string process, long count, Player actor, object reference)
+	public bool reduceBeautyTickets(string process, long count, Player actor, object? reference)
 	{
 		if (count > 0)
 		{
@@ -612,7 +612,7 @@ public class PlayerInventory: Inventory
 	 */
 	public override Item? destroyItemByItemId(string process, int itemId, long count, Player actor, object? reference)
 	{
-		// Attempt to find non equipped items.
+		// Attempt to find non-equipped items.
 		Item? destroyItem = null;
 		ICollection<Item> items = getAllItemsByItemId(itemId);
 		foreach (Item item in items)
@@ -670,7 +670,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public override Item? dropItem(string process, Item item, Player actor, object reference)
+	public override Item? dropItem(string process, Item item, Player actor, object? reference)
 	{
 		Item? droppedItem = base.dropItem(process, item, actor, reference);
 

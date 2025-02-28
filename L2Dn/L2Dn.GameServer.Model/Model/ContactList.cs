@@ -18,144 +18,144 @@ namespace L2Dn.GameServer.Model;
  */
 public class ContactList
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ContactList));
+    private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ContactList));
 
-	private readonly Player _player;
-	private readonly Set<string> _contacts = new();
+    private readonly Player _player;
+    private readonly Set<string> _contacts = new();
 
-	private const string QUERY_ADD = "INSERT INTO character_contacts (charId, contactId) VALUES (?, ?)";
-	private const string QUERY_REMOVE = "DELETE FROM character_contacts WHERE charId = ? and contactId = ?";
-	private const string QUERY_LOAD = "SELECT contactId FROM character_contacts WHERE charId = ?";
+    public ContactList(Player player)
+    {
+        _player = player;
+        restore();
+    }
 
-	public ContactList(Player player)
-	{
-		_player = player;
-		restore();
-	}
+    public void restore()
+    {
+        _contacts.clear();
 
-	public void restore()
-	{
-		_contacts.clear();
+        try
+        {
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
+            int characterId = _player.ObjectId;
+            var query = ctx.CharacterContacts.Where(r => r.CharacterId == characterId).Select(r => r.ContactId);
+            foreach (var contactId in query)
+            {
+                string? contactName = CharInfoTable.getInstance().getNameById(contactId);
+                if (contactName == null || contactName.equals(_player.getName()) || contactId == _player.ObjectId)
+                {
+                    continue;
+                }
 
-		try
-		{
-			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = _player.ObjectId;
-			var query = ctx.CharacterContacts.Where(r => r.CharacterId == characterId).Select(r => r.ContactId);
-			foreach (var contactId in query)
-			{
-				string? contactName = CharInfoTable.getInstance().getNameById(contactId);
-				if (contactName == null || contactName.equals(_player.getName()) || contactId == _player.ObjectId)
-				{
-					continue;
-				}
+                _contacts.add(contactName);
+            }
+        }
+        catch (Exception e)
+        {
+            LOGGER.Error("Error found in " + _player.getName() + "'s ContactsList: " + e);
+        }
+    }
 
-				_contacts.add(contactName);
-			}
-		}
-		catch (Exception e)
-		{
-			LOGGER.Error("Error found in " + _player.getName() + "'s ContactsList: " + e);
-		}
-	}
+    public bool add(string name)
+    {
+        SystemMessagePacket sm;
 
-	public bool add(string name)
-	{
-		SystemMessagePacket sm;
+        int contactId = CharInfoTable.getInstance().getIdByName(name);
+        if (_contacts.Contains(name))
+        {
+            _player.sendPacket(SystemMessageId.THE_CHARACTER_IS_ALREADY_IN_THE_LIST);
+            return false;
+        }
 
-		int contactId = CharInfoTable.getInstance().getIdByName(name);
-		if (_contacts.Contains(name))
-		{
-			_player.sendPacket(SystemMessageId.THE_CHARACTER_IS_ALREADY_IN_THE_LIST);
-			return false;
-		}
-		else if (_player.getName().equals(name))
-		{
-			_player.sendPacket(SystemMessageId.YOU_CANNOT_ADD_YOUR_OWN_NAME);
-			return false;
-		}
-		else if (_contacts.size() >= 100)
-		{
-			_player.sendPacket(SystemMessageId.THE_MAXIMUM_NUMBER_OF_NAMES_100_HAS_BEEN_REACHED_YOU_CANNOT_REGISTER_ANY_MORE);
-			return false;
-		}
-		else if (contactId < 1)
-		{
-			sm = new SystemMessagePacket(SystemMessageId.THE_NAME_S1_DOESN_T_EXIST_PLEASE_TRY_ANOTHER_NAME);
-			sm.Params.addString(name);
-			_player.sendPacket(sm);
-			return false;
-		}
-		else
-		{
-			foreach (string contactName in _contacts)
-			{
-				if (contactName.equalsIgnoreCase(name))
-				{
-					_player.sendPacket(SystemMessageId.THE_CHARACTER_IS_ALREADY_IN_THE_LIST);
-					return false;
-				}
-			}
-		}
+        if (_player.getName().equals(name))
+        {
+            _player.sendPacket(SystemMessageId.YOU_CANNOT_ADD_YOUR_OWN_NAME);
+            return false;
+        }
 
-		try
-		{
-			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			ctx.CharacterContacts.Add(new DbCharacterContact()
-			{
-				CharacterId = _player.ObjectId,
-				ContactId = contactId
-			});
+        if (_contacts.size() >= 100)
+        {
+            _player.sendPacket(SystemMessageId.
+                THE_MAXIMUM_NUMBER_OF_NAMES_100_HAS_BEEN_REACHED_YOU_CANNOT_REGISTER_ANY_MORE);
 
-			ctx.SaveChanges();
+            return false;
+        }
 
-			_contacts.add(name);
+        if (contactId < 1)
+        {
+            sm = new SystemMessagePacket(SystemMessageId.THE_NAME_S1_DOESN_T_EXIST_PLEASE_TRY_ANOTHER_NAME);
+            sm.Params.addString(name);
+            _player.sendPacket(sm);
+            return false;
+        }
 
-			sm = new SystemMessagePacket(SystemMessageId.S1_WAS_SUCCESSFULLY_ADDED_TO_YOUR_CONTACT_LIST);
-			sm.Params.addString(name);
-			_player.sendPacket(sm);
-		}
-		catch (Exception e)
-		{
-			LOGGER.Error("Error found in " + _player.getName() + "'s ContactsList: " + e);
-		}
-		return true;
-	}
+        foreach (string contactName in _contacts)
+        {
+            if (contactName.equalsIgnoreCase(name))
+            {
+                _player.sendPacket(SystemMessageId.THE_CHARACTER_IS_ALREADY_IN_THE_LIST);
+                return false;
+            }
+        }
 
-	public void remove(string name)
-	{
-		int contactId = CharInfoTable.getInstance().getIdByName(name);
-		if (!_contacts.Contains(name))
-		{
-			_player.sendPacket(SystemMessageId.THE_NAME_IS_NOT_CURRENTLY_REGISTERED);
-			return;
-		}
-		else if (contactId < 1)
-		{
-			// TODO: Message?
-			return;
-		}
+        try
+        {
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
+            ctx.CharacterContacts.Add(
+                new DbCharacterContact() { CharacterId = _player.ObjectId, ContactId = contactId });
 
-		_contacts.remove(name);
+            ctx.SaveChanges();
 
-		try
-		{
-			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = _player.ObjectId;
-			ctx.CharacterContacts.Where(r => r.CharacterId == characterId && r.ContactId == contactId).ExecuteDelete();
+            _contacts.add(name);
 
-			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_WAS_SUCCESSFULLY_DELETED_FROM_YOUR_CONTACT_LIST);
-			sm.Params.addString(name);
-			_player.sendPacket(sm);
-		}
-		catch (Exception e)
-		{
-			LOGGER.Error("Error found in " + _player.getName() + "'s ContactsList: " + e);
-		}
-	}
+            sm = new SystemMessagePacket(SystemMessageId.S1_WAS_SUCCESSFULLY_ADDED_TO_YOUR_CONTACT_LIST);
+            sm.Params.addString(name);
+            _player.sendPacket(sm);
+        }
+        catch (Exception e)
+        {
+            LOGGER.Error("Error found in " + _player.getName() + "'s ContactsList: " + e);
+        }
 
-	public Set<string> getAllContacts()
-	{
-		return _contacts;
-	}
+        return true;
+    }
+
+    public void remove(string name)
+    {
+        int contactId = CharInfoTable.getInstance().getIdByName(name);
+        if (!_contacts.Contains(name))
+        {
+            _player.sendPacket(SystemMessageId.THE_NAME_IS_NOT_CURRENTLY_REGISTERED);
+            return;
+        }
+
+        if (contactId < 1)
+        {
+            // TODO: Message?
+            return;
+        }
+
+        _contacts.remove(name);
+
+        try
+        {
+            using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
+            int characterId = _player.ObjectId;
+            ctx.CharacterContacts.Where(r => r.CharacterId == characterId && r.ContactId == contactId).ExecuteDelete();
+
+            SystemMessagePacket sm =
+                new SystemMessagePacket(SystemMessageId.S1_WAS_SUCCESSFULLY_DELETED_FROM_YOUR_CONTACT_LIST);
+
+            sm.Params.addString(name);
+            _player.sendPacket(sm);
+        }
+        catch (Exception e)
+        {
+            LOGGER.Error("Error found in " + _player.getName() + "'s ContactsList: " + e);
+        }
+    }
+
+    public Set<string> getAllContacts()
+    {
+        return _contacts;
+    }
 }

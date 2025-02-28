@@ -491,7 +491,7 @@ public class ItemCommissionManager
 	 */
 	public static bool isPlayerAllowedToInteract(Player player)
 	{
-		Npc npc = player.getLastFolkNPC();
+		Npc? npc = player.getLastFolkNPC();
 		if (npc is CommissionManager)
 		{
 			return npc.Distance3D(player) <= INTERACTION_DISTANCE;

@@ -168,11 +168,15 @@ public sealed class DbSpawnManager
 		if (!_npcStates.TryGetValue(npc.getId(), out NpcState? npcState))
 			return;
 
+        Spawn? npcSpawn = npc.getSpawn();
+        if (npcSpawn == null)
+            return;
+
 		if (isNpcDead)
 		{
 			npc.setDBStatus(RaidBossStatus.DEAD);
 
-			SchedulingPattern? respawnPattern = npc.getSpawn().getRespawnPattern();
+			SchedulingPattern? respawnPattern = npcSpawn.getRespawnPattern();
 			TimeSpan respawnMinDelay;
 			TimeSpan respawnMaxDelay;
 			TimeSpan respawnDelay;
@@ -186,8 +190,8 @@ public sealed class DbSpawnManager
 			}
 			else
 			{
-				respawnMinDelay = npc.getSpawn().getRespawnMinDelay() * Config.RAID_MIN_RESPAWN_MULTIPLIER;
-				respawnMaxDelay = npc.getSpawn().getRespawnMaxDelay() * Config.RAID_MAX_RESPAWN_MULTIPLIER;
+				respawnMinDelay = npcSpawn.getRespawnMinDelay() * Config.RAID_MIN_RESPAWN_MULTIPLIER;
+				respawnMaxDelay = npcSpawn.getRespawnMaxDelay() * Config.RAID_MAX_RESPAWN_MULTIPLIER;
 				respawnDelay = Rnd.get(respawnMinDelay, respawnMaxDelay);
 				respawnTime = DateTime.UtcNow + respawnDelay;
 			}

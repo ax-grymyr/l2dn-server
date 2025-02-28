@@ -8,28 +8,18 @@ namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
 /**
  * @author Nik
  */
-public class OnCreatureTeleport: LocationEventBase
+public class OnCreatureTeleport(Creature creature, Location location, Instance? destInstance)
+    : LocationEventBase
 {
-	private readonly Creature _creature;
-	private readonly Location _location;
-	private readonly Instance? _destInstance;
-	
-	public OnCreatureTeleport(Creature creature, Location location, Instance? destInstance)
-	{
-		_creature = creature;
-		_location = location;
-		_destInstance = destInstance;
-	}
-	
-	public Creature getCreature()
-	{
-		return _creature;
-	}
+    public Creature getCreature()
+    {
+        return creature;
+    }
 
-	public Location Location => _location;
+    public Location Location => location;
 
-	public Instance getDestInstance()
-	{
-		return _destInstance;
-	}
+    public Instance? getDestInstance()
+    {
+        return destInstance;
+    }
 }

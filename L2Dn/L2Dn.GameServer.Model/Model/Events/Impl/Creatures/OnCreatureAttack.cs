@@ -20,7 +20,6 @@ public class OnCreatureAttack: TerminateEventBase
 		return _attacker;
 	}
 
-	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void setAttacker(Creature attacker)
 	{
 		_attacker = attacker;
@@ -36,7 +35,7 @@ public class OnCreatureAttack: TerminateEventBase
 		_target = target;
 	}
 
-	public Skill getSkill()
+	public Skill? getSkill()
 	{
 		return _skill;
 	}

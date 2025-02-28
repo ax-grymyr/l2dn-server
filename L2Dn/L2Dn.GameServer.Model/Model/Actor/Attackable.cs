@@ -9,14 +9,12 @@ using L2Dn.GameServer.Model.Actor.Status;
 using L2Dn.GameServer.Model.Actor.Tasks.AttackableTasks;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Clans;
-using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Attackables;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.TaskManagers;
@@ -82,11 +80,6 @@ public class Attackable: Npc
 	public override AttackableStatus getStatus()
 	{
 		return (AttackableStatus) base.getStatus();
-	}
-
-	public override void initCharStatus()
-	{
-		setStatus(new AttackableStatus(this));
 	}
 
 	protected override CreatureAI initAI()
@@ -177,8 +170,8 @@ public class Attackable: Npc
 
         // Add damage and hate to the attacker AggroInfo of the Attackable _aggroList
 		if (attacker != null)
-		{
-			addDamage(attacker, (int) value, skill);
+        {
+            addDamage(attacker, (int)value, skill);
 
 			// Check Raidboss attack. Character will be petrified if attacking a raid that's more than 8 levels lower. In retail you deal damage to raid before curse.
 			if (_isRaid && giveRaidCurse() && !Config.RAID_DISABLE_CURSE && attacker.getLevel() > getLevel() + 8)
@@ -404,61 +397,73 @@ public class Attackable: Npc
 			// Calculate raidboss points
 			if (_isRaid && !_isRaidMinion)
 			{
-				Player? player = maxDealer != null && maxDealer.isOnline() ? maxDealer : lastAttacker.getActingPlayer();
-				broadcastPacket(new SystemMessagePacket(SystemMessageId.CONGRATULATIONS_YOUR_RAID_WAS_SUCCESSFUL));
-				int raidbossPoints = (int) (getTemplate().getRaidPoints() * Config.RATE_RAIDBOSS_POINTS);
-				Party? party = player?.getParty();
-				if (party != null)
-				{
-					CommandChannel? command = party.getCommandChannel();
-					List<Player> members = [];
-					if (command != null)
-					{
-						foreach (Player p in command.getMembers())
-						{
-							if (p.Distance3D(this) < Config.ALT_PARTY_RANGE)
-							{
-								members.Add(p);
-							}
-						}
-					}
-					else
-					{
-						foreach (Player p in party.getMembers())
-						{
-							if (p.Distance3D(this) < Config.ALT_PARTY_RANGE)
-							{
-								members.Add(p);
-							}
-						}
-					}
+                broadcastPacket(new SystemMessagePacket(SystemMessageId.CONGRATULATIONS_YOUR_RAID_WAS_SUCCESSFUL));
 
-					members.ForEach(p =>
-					{
-						int points = (int) (Math.Max(raidbossPoints / members.Count, 1) * p.getStat().getValue(Stat.BONUS_RAID_POINTS, 1));
-						p.increaseRaidbossPoints(points);
-						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_EARNED_S1_RAID_POINT_S);
-						sm.Params.addInt(points);
-						p.sendPacket(sm);
-						if (p.isNoble())
-						{
-							Hero.getInstance().setRBkilled(p.ObjectId, getId());
-						}
-					});
-				}
-				else
-				{
-					int points = (int) (Math.Max(raidbossPoints, 1) * player.getStat().getValue(Stat.BONUS_RAID_POINTS, 1));
-					player.increaseRaidbossPoints(points);
-					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_EARNED_S1_RAID_POINT_S);
-					sm.Params.addInt(points);
-					player.sendPacket(sm);
-					if (player.isNoble())
-					{
-						Hero.getInstance().setRBkilled(player.ObjectId, getId());
-					}
-				}
-			}
+                Player? player = maxDealer != null && maxDealer.isOnline() ? maxDealer : lastAttacker.getActingPlayer();
+                if (player != null)
+                {
+                    int raidbossPoints = (int)(getTemplate().getRaidPoints() * Config.RATE_RAIDBOSS_POINTS);
+                    Party? party = player.getParty();
+                    if (party != null)
+                    {
+                        CommandChannel? command = party.getCommandChannel();
+                        List<Player> members = [];
+                        if (command != null)
+                        {
+                            foreach (Player p in command.getMembers())
+                            {
+                                if (p.Distance3D(this) < Config.ALT_PARTY_RANGE)
+                                {
+                                    members.Add(p);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            foreach (Player p in party.getMembers())
+                            {
+                                if (p.Distance3D(this) < Config.ALT_PARTY_RANGE)
+                                {
+                                    members.Add(p);
+                                }
+                            }
+                        }
+
+                        members.ForEach(p =>
+                        {
+                            int points = (int)(Math.Max(raidbossPoints / members.Count, 1) *
+                                p.getStat().getValue(Stat.BONUS_RAID_POINTS, 1));
+
+                            p.increaseRaidbossPoints(points);
+                            SystemMessagePacket sm =
+                                new SystemMessagePacket(SystemMessageId.YOU_HAVE_EARNED_S1_RAID_POINT_S);
+
+                            sm.Params.addInt(points);
+                            p.sendPacket(sm);
+                            if (p.isNoble())
+                            {
+                                Hero.getInstance().setRBkilled(p.ObjectId, getId());
+                            }
+                        });
+                    }
+                    else
+                    {
+                        int points = (int)(Math.Max(raidbossPoints, 1) *
+                            player.getStat().getValue(Stat.BONUS_RAID_POINTS, 1));
+
+                        player.increaseRaidbossPoints(points);
+                        SystemMessagePacket sm =
+                            new SystemMessagePacket(SystemMessageId.YOU_HAVE_EARNED_S1_RAID_POINT_S);
+
+                        sm.Params.addInt(points);
+                        player.sendPacket(sm);
+                        if (player.isNoble())
+                        {
+                            Hero.getInstance().setRBkilled(player.ObjectId, getId());
+                        }
+                    }
+                }
+            }
 
 			if (mostDamageParty != null && mostDamageParty.damage > maxDamage)
 			{
@@ -607,7 +612,11 @@ public class Attackable: Npc
 						// Get all Creature that can be rewarded in the party
 						List<Player> rewardedMembers = new();
 						// Go through all Player in the party
-						List<Player> groupMembers = attackerParty.isInCommandChannel() ? attackerParty.getCommandChannel().getMembers() : attackerParty.getMembers();
+                        CommandChannel? attackerCommandChannel = attackerParty.getCommandChannel();
+                        List<Player> groupMembers = attackerParty.isInCommandChannel() && attackerCommandChannel != null
+                            ? attackerCommandChannel.getMembers()
+                            : attackerParty.getMembers();
+
 						foreach (Player partyPlayer in groupMembers)
 						{
 							if (partyPlayer == null || partyPlayer.isDead())
@@ -628,9 +637,9 @@ public class Attackable: Npc
 
 									if (partyPlayer.getLevel() > partyLvl)
 									{
-										if (attackerParty.isInCommandChannel())
+										if (attackerParty.isInCommandChannel() && attackerCommandChannel != null)
 										{
-											partyLvl = attackerParty.getCommandChannel().getLevel();
+											partyLvl = attackerCommandChannel.getLevel();
 										}
 										else
 										{
@@ -644,10 +653,10 @@ public class Attackable: Npc
 							{
 								rewardedMembers.Add(partyPlayer);
 								if (partyPlayer.getLevel() > partyLvl)
-								{
-									if (attackerParty.isInCommandChannel())
+                                {
+									if (attackerParty.isInCommandChannel() && attackerCommandChannel != null)
 									{
-										partyLvl = attackerParty.getCommandChannel().getLevel();
+										partyLvl = attackerCommandChannel.getLevel();
 									}
 									else
 									{
@@ -840,7 +849,8 @@ public class Attackable: Npc
 		// making this hack because not possible to determine if damage made by trap
 		// so just check for triggered trap here
 		long aggro = aggroValue;
-		if (targetPlayer == null || targetPlayer.getTrap() == null || !targetPlayer.getTrap().isTriggered())
+        Trap? targetTrap = targetPlayer?.getTrap();
+		if (targetPlayer == null || targetTrap == null || !targetTrap.isTriggered())
 		{
 			ai.addHate(aggro);
 		}
@@ -1114,15 +1124,17 @@ public class Attackable: Npc
 		// Don't drop anything if the last attacker or owner isn't Player
 		if (player == null)
 		{
-			// unless its a fake player and they can drop items
+			// unless it is a fake player and they can drop items
 			if (mainDamageDealer.isFakePlayer() && Config.FAKE_PLAYER_CAN_DROP_ITEMS)
 			{
 				ICollection<ItemHolder>? deathItems = npcTemplate.calculateDrops(DropType.DROP, this, mainDamageDealer);
 				if (deathItems != null)
 				{
 					foreach (ItemHolder drop in deathItems)
-					{
-						ItemTemplate? item = ItemData.getInstance().getTemplate(drop.getId());
+                    {
+                        ItemTemplate item = ItemData.getInstance().getTemplate(drop.getId()) ??
+                            throw new InvalidOperationException($"Item template id={drop.getId()} not found");
+
 						// Check if the autoLoot mode is active
 						if (Config.AUTO_LOOT_ITEM_IDS.Contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.AUTO_LOOT) || (_isRaid && Config.AUTO_LOOT_RAIDS))))
 						{
@@ -1130,7 +1142,7 @@ public class Attackable: Npc
 						}
 						else if (Config.AUTO_LOOT_HERBS && item.hasExImmediateEffect())
 						{
-							foreach (SkillHolder skillHolder in item.getAllSkills())
+							foreach (ItemSkillHolder skillHolder in item.getAllSkills())
 							{
 								SkillCaster.triggerCast(mainDamageDealer, null, skillHolder.getSkill(), null, false);
 							}
@@ -1139,7 +1151,7 @@ public class Attackable: Npc
 						else
 						{
 							Item? droppedItem = dropItem(mainDamageDealer, drop); // drop the item on the ground
-							if (Config.FAKE_PLAYER_CAN_PICKUP)
+							if (droppedItem != null && Config.FAKE_PLAYER_CAN_PICKUP)
 							{
 								mainDamageDealer.getFakePlayerDrops().Add(droppedItem);
 							}
@@ -1163,7 +1175,9 @@ public class Attackable: Npc
 			List<int>? announceItems = null;
 			foreach (ItemHolder drop in deathItems1)
 			{
-				ItemTemplate? item = ItemData.getInstance().getTemplate(drop.getId());
+				ItemTemplate item = ItemData.getInstance().getTemplate(drop.getId()) ??
+                    throw new InvalidOperationException($"Item template id={drop.getId()} not found");
+
 				// Check if the autoLoot mode is active
 				if (Config.AUTO_LOOT_ITEM_IDS.Contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.AUTO_LOOT) || (_isRaid && Config.AUTO_LOOT_RAIDS))) || (item.hasExImmediateEffect() && Config.AUTO_LOOT_HERBS))
 				{
@@ -1208,8 +1222,10 @@ public class Attackable: Npc
 				if (fortuneItems != null)
 				{
 					foreach (ItemHolder drop in fortuneItems)
-					{
-						ItemTemplate? item = ItemData.getInstance().getTemplate(drop.getId());
+                    {
+                        ItemTemplate item = ItemData.getInstance().getTemplate(drop.getId()) ??
+                            throw new InvalidOperationException($"Item template id={drop.getId()} not found");
+
 						// Check if the autoLoot mode is active.
 						if (Config.AUTO_LOOT_ITEM_IDS.Contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.AUTO_LOOT) || (_isRaid && Config.AUTO_LOOT_RAIDS))) || (item.hasExImmediateEffect() && Config.AUTO_LOOT_HERBS))
 						{
@@ -1277,8 +1293,11 @@ public class Attackable: Npc
 		if (sweepItems != null)
 		{
 			foreach (ItemHolder item in sweepItems)
-			{
-				lootItems.Add(ItemData.getInstance().getTemplate(item.getId()));
+            {
+                ItemTemplate itemTemplate = ItemData.getInstance().getTemplate(item.getId()) ??
+                    throw new InvalidOperationException($"Item template {item.getId()} not found");
+
+				lootItems.Add(itemTemplate);
 			}
 		}
 		return lootItems;
@@ -1352,7 +1371,7 @@ public class Attackable: Npc
 	 * @param attacker The Creature who hit on the Attackable using the over-hit enabled skill
 	 * @param damage The amount of damage done by the over-hit enabled skill on the Attackable
 	 */
-	public void setOverhitValues(Creature attacker, double damage)
+	public void setOverhitValues(Creature? attacker, double damage)
 	{
 		// Calculate the over-hit damage
 		// Ex: mob had 10 HP left, over-hit skill did 50 damage total, over-hit damage is 40
@@ -1700,9 +1719,10 @@ public class Attackable: Npc
 	{
 		clearAggroList();
 
-		if (hasAI() && getSpawn() != null)
+        Spawn? spawn = getSpawn();
+		if (hasAI() && spawn != null)
 		{
-			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, getSpawn().Location.Location3D);
+			getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, spawn.Location.Location3D);
 		}
 	}
 
@@ -1811,4 +1831,6 @@ public class Attackable: Npc
 		}
 		base.setTarget(@object);
 	}
+
+    protected override CreatureStatus CreateStatus() => new AttackableStatus(this);
 }

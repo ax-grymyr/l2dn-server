@@ -2,12 +2,8 @@
 
 namespace L2Dn.GameServer.Model.Actor.Stats;
 
-public class ControllableAirShipStat: VehicleStat
+public class ControllableAirShipStat(ControllableAirShip activeChar): VehicleStat(activeChar)
 {
-    public ControllableAirShipStat(ControllableAirShip activeChar): base(activeChar)
-    {
-    }
-
     public override ControllableAirShip getActiveChar()
     {
         return (ControllableAirShip)base.getActiveChar();

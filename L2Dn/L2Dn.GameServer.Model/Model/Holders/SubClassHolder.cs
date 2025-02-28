@@ -29,7 +29,7 @@ public class SubClassHolder
 
 	public SubClassHolder()
 	{
-		// Used for specifying ALL attributes of a sub class directly,
+		// Used for specifying ALL attributes of a subclass directly,
 		// using the preset default values.
 	}
 

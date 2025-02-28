@@ -250,7 +250,7 @@ public class PlayerAI : PlayableAI
         Player actorActingPlayer = _actor.getActingPlayer() ??
             throw new InvalidOperationException("Actor is not a player in PlayerAI.thinkAttack.");
 
-        SkillUseHolder queuedSkill = actorActingPlayer.getQueuedSkill();
+        SkillUseHolder? queuedSkill = actorActingPlayer.getQueuedSkill();
 		if (queuedSkill != null)
 		{
 			// Remove the skill from queue.

@@ -37,11 +37,6 @@ public class ControllableAirShip : AirShip
 		return (ControllableAirShipStat)base.getStat();
 	}
 
-	public override void initCharStat()
-	{
-		setStat(new ControllableAirShipStat(this));
-	}
-
 	public override bool canBeControlled()
 	{
 		return base.canBeControlled() && !isInDock();
@@ -321,4 +316,6 @@ public class ControllableAirShip : AirShip
 			_ship.deleteMe();
 		}
 	}
+
+    protected override CreatureStat CreateStat() => new ControllableAirShipStat(this);
 }

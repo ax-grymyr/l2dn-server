@@ -27,7 +27,7 @@ public class ClanMember
 	private CharacterClass _classId;
 	private Sex _sex;
 	private Race _race;
-	private Player _player;
+	private Player? _player;
 	private int _pledgeType;
 	private int _apprentice;
 	private int? _sponsor;
@@ -88,7 +88,7 @@ public class ClanMember
 	 * Sets the player instance.
 	 * @param player the new player instance
 	 */
-	public void setPlayer(Player player)
+	public void setPlayer(Player? player)
 	{
 		if (player == null && _player != null)
 		{
@@ -126,7 +126,7 @@ public class ClanMember
 	 * Gets the player instance.
 	 * @return the player instance
 	 */
-	public Player getPlayer()
+	public Player? getPlayer()
 	{
 		return _player;
 	}

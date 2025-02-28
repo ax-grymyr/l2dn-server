@@ -270,7 +270,7 @@ public class TamedBeast: FeedableBeast
 
 	// notification triggered by the owner when the owner is attacked.
 	// tamed mobs will heal/recharge or debuff the enemy according to their skills
-	public void onOwnerGotAttacked(Creature attacker)
+	public void onOwnerGotAttacked(Creature? attacker)
 	{
 		// check if the owner is no longer around...if so, despawn
 		if (_owner == null || !_owner.isOnline())

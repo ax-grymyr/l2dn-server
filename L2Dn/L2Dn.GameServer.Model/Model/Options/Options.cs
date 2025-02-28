@@ -200,9 +200,11 @@ public class Options
 		}
 
 		playable.getStat().recalculateStats(true);
-		if (playable.isPlayer())
+
+        Player? player = playable.getActingPlayer();
+		if (playable.isPlayer() && player != null)
 		{
-			playable.getActingPlayer().sendSkillList();
+			player.sendSkillList();
 		}
 	}
 
@@ -244,9 +246,11 @@ public class Options
 		}
 
 		playable.getStat().recalculateStats(true);
-		if (playable.isPlayer())
+
+        Player? player = playable.getActingPlayer();
+		if (playable.isPlayer() && player != null)
 		{
-			playable.getActingPlayer().sendSkillList();
+			player.sendSkillList();
 		}
 	}
 

@@ -98,13 +98,14 @@ public abstract class Summon: Playable
 			}
 			sendPacket(new RelationChangedPacket(this, _owner.getRelation(_owner), false));
 			World.getInstance().forEachVisibleObject<Player>(getOwner(), player => player.sendPacket(new RelationChangedPacket(this, _owner.getRelation(player), isAutoAttackable(player))));
+
+            Party? party = _owner.getParty();
+            if (party != null)
+            {
+                party.broadcastToPartyMembers(_owner, new ExPartyPetWindowAddPacket(this));
+            }
 		}
 
-		Party? party = _owner.getParty();
-		if (party != null)
-		{
-			party.broadcastToPartyMembers(_owner, new ExPartyPetWindowAddPacket(this));
-		}
 		setShowSummonAnimation(false); // addVisibleObject created the info packets with summon animation
 		// if someone comes into range now, the animation shouldn't show any more
 		_restoreSummon = false;
@@ -122,19 +123,9 @@ public abstract class Summon: Playable
 		return (SummonStat)base.getStat();
 	}
 
-	public override void initCharStat()
-	{
-		setStat(new SummonStat(this));
-	}
-
 	public override SummonStatus getStatus()
 	{
 		return (SummonStatus) base.getStatus();
-	}
-
-	public override void initCharStatus()
-	{
-		setStatus(new SummonStatus(this));
 	}
 
 	protected override CreatureAI initAI()
@@ -273,7 +264,7 @@ public abstract class Summon: Playable
 		setFollowStatus(true);
 	}
 
-	public override bool doDie(Creature killer)
+	public override bool doDie(Creature? killer)
 	{
 		if (isNoblesseBlessedAffected())
 		{
@@ -311,7 +302,7 @@ public abstract class Summon: Playable
 		return true;
 	}
 
-	public bool doDie(Creature killer, bool decayed)
+	public bool doDie(Creature? killer, bool decayed)
 	{
 		if (!base.doDie(killer))
 		{
@@ -365,12 +356,13 @@ public abstract class Summon: Playable
 		}
 
 		// Pet will be deleted along with all his items.
-		if (getInventory() != null)
+        PetInventory? inventory = getInventory();
+		if (inventory != null)
 		{
 			// Pet related - Removed on Essence.
 			// getInventory().destroyAllItems("pet deleted", _owner, this);
 			// Pet related - Added the following.
-			foreach (Item item in getInventory().getItems())
+			foreach (Item item in inventory.getItems())
 			{
 				World.getInstance().removeObject(item);
 			}
@@ -597,7 +589,7 @@ public abstract class Summon: Playable
 		}
 
 		// Get the target for the skill
-		WorldObject target;
+		WorldObject? target;
 		if (skill.getTargetType() == TargetType.OWNER_PET)
 		{
 			target = _owner;
@@ -704,7 +696,7 @@ public abstract class Summon: Playable
 		_owner = newOwner;
 	}
 
-	public override void sendDamageMessage(Creature target, Skill skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
+	public override void sendDamageMessage(Creature target, Skill? skill, int damage, double elementalDamage, bool crit, bool miss, bool elementalCrit)
 	{
 		if (miss || _owner == null)
 		{
@@ -851,9 +843,10 @@ public abstract class Summon: Playable
 		if (player == _owner)
 		{
 			player.sendPacket(new PetSummonInfoPacket(this, isDead() ? 0 : 1));
-			if (isPet())
+            PetInventory? inventory = getInventory();
+			if (isPet() && inventory != null)
 			{
-				player.sendPacket(new PetItemListPacket(getInventory().getItems()));
+				player.sendPacket(new PetItemListPacket(inventory.getItems()));
 			}
 		}
 		else
@@ -1121,4 +1114,7 @@ public abstract class Summon: Playable
 		sb.Append(_owner);
 		return sb.ToString();
 	}
+
+    protected override CreatureStat CreateStat() => new SummonStat(this);
+    protected override CreatureStatus CreateStatus() => new SummonStatus(this);
 }

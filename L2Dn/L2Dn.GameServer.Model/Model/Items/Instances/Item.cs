@@ -250,7 +250,7 @@ public class Item: WorldObject
 	 * @param creator : Player Player requesting the item creation
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public void setOwnerId(string process, int ownerId, Player creator, object? reference)
+	public void setOwnerId(string process, int ownerId, Player? creator, object? reference)
 	{
 		setOwnerId(ownerId);
 
