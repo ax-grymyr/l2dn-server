@@ -54,7 +54,7 @@ public class Quest: AbstractScript, IIdentifiable
 
 	private int[] _questItemIds = [];
 
-	private readonly NewQuest _questData;
+	private readonly NewQuest? _questData;
 
 	private const string DEFAULT_NO_QUEST_MSG = "<html><body>You are either not on a quest that involves this NPC, " +
 	                                            "or you don't meet this NPC's minimum quest requirements.</body></html>";
@@ -104,37 +104,38 @@ public class Quest: AbstractScript, IIdentifiable
 		// 	QuestManager.getInstance()?.addScript(this);
 		// }
 
-        _questData = Data.Xml.NewQuestData.getInstance().getQuestById(questId) ??
-            throw new ArgumentException($"No quest data for questId={questId}");
+        _questData = Data.Xml.NewQuestData.getInstance().getQuestById(questId);
+        if (_questData != null)
+        {
+            addNewQuestConditions(_questData.getConditions(), null);
 
-		addNewQuestConditions(_questData.getConditions(), null);
+            if (_questData.getQuestType() == 1)
+            {
+                if (_questData.getStartNpcId() > 0)
+                {
+                    addFirstTalkId(_questData.getStartNpcId());
+                }
 
-		if (_questData.getQuestType() == 1)
-		{
-			if (_questData.getStartNpcId() > 0)
-			{
-				addFirstTalkId(_questData.getStartNpcId());
-			}
+                if (_questData.getEndNpcId() > 0 && _questData.getEndNpcId() != _questData.getStartNpcId())
+                {
+                    addFirstTalkId(_questData.getEndNpcId());
+                }
+            }
+            else if (_questData.getQuestType() == 4)
+            {
+                if (_questData.getStartItemId() > 0)
+                {
+                    addItemTalkId(_questData.getStartItemId());
+                }
+            }
 
-			if (_questData.getEndNpcId() > 0 && _questData.getEndNpcId() != _questData.getStartNpcId())
-			{
-				addFirstTalkId(_questData.getEndNpcId());
-			}
-		}
-		else if (_questData.getQuestType() == 4)
-		{
-			if (_questData.getStartItemId() > 0)
-			{
-				addItemTalkId(_questData.getStartItemId());
-			}
-		}
+            if (_questData.getGoal().getItemId() > 0)
+            {
+                registerQuestItems(_questData.getGoal().getItemId());
+            }
+        }
 
-		if (_questData.getGoal().getItemId() > 0)
-		{
-			registerQuestItems(_questData.getGoal().getItemId());
-		}
-
-		onLoad();
+        onLoad();
 	}
 
 	/**
@@ -3096,13 +3097,16 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 	}
 
-	public NewQuest getQuestData()
+	public NewQuest? getQuestData()
 	{
 		return _questData;
 	}
 
 	public void rewardPlayer(Player player)
 	{
+        if (_questData == null)
+            return;
+
 		NewQuestReward reward = _questData.getRewards();
 		if (reward.getItems() != null)
 		{
