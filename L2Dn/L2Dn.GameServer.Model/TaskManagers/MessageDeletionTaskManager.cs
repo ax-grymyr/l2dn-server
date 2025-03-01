@@ -50,14 +50,14 @@ public class MessageDeletionTaskManager: Runnable
 						Player? sender = World.getInstance().getPlayer(message.getSenderId());
 						if (sender != null)
 						{
-							message.getAttachments().returnToWh(sender.getWarehouse());
+							message.getAttachments()?.returnToWh(sender.getWarehouse());
 							sender.sendPacket(SystemMessageId.THE_MAIL_WAS_RETURNED_DUE_TO_THE_EXCEEDED_WAITING_TIME);
 						}
 						else
 						{
-							message.getAttachments().returnToWh(null);
+							message.getAttachments()?.returnToWh(null);
 						}
-						message.getAttachments().deleteMe();
+						message.getAttachments()?.deleteMe();
 						message.removeAttachments();
 
 						Player? receiver = World.getInstance().getPlayer(message.getReceiverId());

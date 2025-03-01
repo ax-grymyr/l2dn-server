@@ -30,7 +30,7 @@ public class Duel
 	public const int DUELSTATE_WINNER = 3;
 	public const int DUELSTATE_INTERRUPTED = 4;
 
-	private static readonly PlaySoundPacket B04_S01 = new PlaySoundPacket(1, "B04_S01", 0, 0, 0, 0, 0);
+	private static readonly PlaySoundPacket B04_S01 = new(1, "B04_S01", 0, 0, 0, 0, 0);
 
 	private const int PARTY_DUEL_DURATION = 300;
 	private const int PLAYER_DUEL_DURATION = 120;
@@ -576,7 +576,7 @@ public class Duel
 		}
 
 		int instanceId = DuelManager.getInstance().getDuelArena();
-		OlympiadStadiumZone zone = null;
+		OlympiadStadiumZone? zone = null;
 		foreach (OlympiadStadiumZone z in ZoneManager.getInstance().getAllZones<OlympiadStadiumZone>())
 		{
 			if (z.getInstanceTemplateId() == instanceId)
@@ -1019,7 +1019,7 @@ public class Duel
 		else
 		// teleport the player back & delete his PlayerCondition record
 		{
-			PlayerCondition cond = _playerConditions.remove(player.ObjectId);
+			PlayerCondition? cond = _playerConditions.remove(player.ObjectId);
 			if (cond != null)
 			{
 				cond.teleportBack();
@@ -1030,7 +1030,7 @@ public class Duel
 
 	public void onBuff(Player player, Skill debuff)
 	{
-		PlayerCondition cond = _playerConditions.get(player.ObjectId);
+		PlayerCondition? cond = _playerConditions.get(player.ObjectId);
 		if (cond != null)
 		{
 			cond.registerDebuff(debuff);

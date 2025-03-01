@@ -231,18 +231,21 @@ public class PlayerInventory: Inventory
 			{
 				if (!adjItem.isEquipped())
 				{
-					notAllEquipped |= true;
+					notAllEquipped = true;
 				}
 			}
 			else
 			{
-				notAllEquipped |= true;
+				notAllEquipped = true;
 				break;
 			}
 		}
+
 		if (notAllEquipped)
-		{
-			Item? adjItem = getItemByItemId(item.getItem().getId());
+        {
+            Item adjItem = getItemByItemId(item.getItem().getId()) ??
+                throw new InvalidOperationException("Item not found!!!"); // TODO: exception added, verify
+
 			item.setObjectId(adjItem.ObjectId);
 			item.setEnchant(adjItem.getEnchantLevel());
 
@@ -493,9 +496,11 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public override Item transferItem(string process, int objectId, long count, ItemContainer target, Player? actor, object? reference)
+	public override Item? transferItem(string process, int objectId, long count, ItemContainer target, Player? actor, object? reference)
 	{
 		Item? item = base.transferItem(process, objectId, count, target, actor, reference);
+        if (item == null)
+            return null;
 
 		if (_adena != null && (_adena.getCount() <= 0 || _adena.getOwnerId() != getOwnerId()))
 		{
@@ -548,7 +553,7 @@ public class PlayerInventory: Inventory
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public override Item? destroyItem(string? process, Item item, long count, Player actor, object? reference)
+	public override Item? destroyItem(string? process, Item item, long count, Player? actor, object? reference)
 	{
 		Item? destroyedItem = base.destroyItem(process, item, count, actor, reference);
 
@@ -567,12 +572,12 @@ public class PlayerInventory: Inventory
 			// Adena UI update.
 			if (destroyedItem.getId() == Inventory.ADENA_ID)
 			{
-				actor.sendPacket(new ExAdenaInvenCountPacket(actor));
+				actor?.sendPacket(new ExAdenaInvenCountPacket(actor));
 			}
 			// LCoin UI update.
 			else if (destroyedItem.getId() == Inventory.LCOIN_ID)
 			{
-				actor.sendPacket(new ExBloodyCoinCountPacket(actor));
+				actor?.sendPacket(new ExBloodyCoinCountPacket(actor));
 			}
 
 			// Notify to scripts
@@ -887,7 +892,11 @@ public class PlayerInventory: Inventory
 		{
 			slots++;
 		}
-		return validateCapacity(slots, ItemData.getInstance().getTemplate(itemId).isQuestItem());
+
+        ItemTemplate itemTemplate = ItemData.getInstance().getTemplate(itemId) ??
+            throw new InvalidOperationException($"ItemTemplate id={itemId} not found");
+
+		return validateCapacity(slots, itemTemplate.isQuestItem());
 	}
 
 	public override bool validateCapacity(long slots)
@@ -963,7 +972,7 @@ public class PlayerInventory: Inventory
 	 * Return Collection<int> with blocked item ids
 	 * @return Collection<int>
 	 */
-	public ICollection<int> getBlockItems()
+	public ICollection<int>? getBlockItems()
 	{
 		return _blockItems;
 	}
@@ -1087,7 +1096,7 @@ public class PlayerInventory: Inventory
 			return;
 		}
 
-		Item? ammunition = null;
+		Item? ammunition;
 		switch (weapon.getItemType().AsWeaponType())
 		{
 			case WeaponType.BOW:
@@ -1112,7 +1121,8 @@ public class PlayerInventory: Inventory
 			return;
 		}
 
-		if (ammunition.getEtcItem().isInfinite())
+        EtcItem? etcItem = ammunition.getEtcItem();
+		if (etcItem != null && etcItem.isInfinite())
 		{
 			return;
 		}

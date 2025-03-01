@@ -23,7 +23,7 @@ public class OlympiadGameNonClassed: OlympiadGameNormal
 
 	public static OlympiadGameNonClassed? createGame(int id, Set<int> list)
 	{
-		Participant[] opponents = createListOfParticipants(list);
+		Participant[]? opponents = createListOfParticipants(list);
 		if (opponents == null)
 		{
 			return null;

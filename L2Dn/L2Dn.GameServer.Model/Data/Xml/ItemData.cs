@@ -1219,19 +1219,15 @@ public class ItemData: DataReaderBase
 	private static ItemTemplate MakeItem(string className, StatSet set, ref ItemTemplate? template)
 	{
 		if (template is not null)
-			template.set(set);
-		else
-		{
-			template = className switch
-			{
-				"Weapon" => new Weapon(set),
-				"Armor" => new Armor(set),
-				"EtcItem" => new EtcItem(set),
-				_ => throw new InvalidOperationException($"Invalid item class: {className}")
-			};
-		}
+            throw new InvalidOperationException("Item must be null");
 
-		return template;
+		return template = className switch
+		{
+			"Weapon" => new Weapon(set),
+			"Armor" => new Armor(set),
+			"EtcItem" => new EtcItem(set),
+			_ => throw new InvalidOperationException($"Invalid item class: {className}"),
+		};
 	}
 
 	/**
@@ -1301,7 +1297,7 @@ public class ItemData: DataReaderBase
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return Item corresponding to the new item
 	 */
-	public Item createItem(string process, int itemId, long count, Creature? actor, object? reference)
+	public Item createItem(string process, int itemId, long count, Creature? actor, object? reference = null)
 	{
 		// Create and Init the Item corresponding to the Item Identifier
 		Item item = new Item(IdManager.getInstance().getNextId(), itemId);
@@ -1323,7 +1319,7 @@ public class ItemData: DataReaderBase
 			else if (!Config.AUTO_LOOT ||
 			         (reference is EventMonster && ((EventMonster)reference).eventDropOnGround()))
 			{
-				item.setOwnerId(actor.ObjectId);
+				item.setOwnerId(actor?.ObjectId ?? 0); // TODO: assign owner id
 				itemLootShedule = ThreadPool.schedule(new ResetOwner(item), 15000);
 				item.setItemLootShedule(itemLootShedule);
 			}
@@ -1423,11 +1419,6 @@ public class ItemData: DataReaderBase
 		}
 
 		return item;
-	}
-
-	public Item createItem(string process, int itemId, long count, Player actor)
-	{
-		return createItem(process, itemId, count, actor, null);
 	}
 
 	/**

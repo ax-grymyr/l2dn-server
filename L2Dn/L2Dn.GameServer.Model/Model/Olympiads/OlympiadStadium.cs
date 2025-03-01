@@ -32,9 +32,11 @@ public class OlympiadStadium
 	{
 		_zone = olyzone;
 		_stadiumId = stadiumId;
-		_instance = InstanceManager.getInstance().createInstance(olyzone.getInstanceTemplateId(), null);
-		_buffers = _instance.getNpcs().Select(n => n.getSpawn()).ToList();
-		_buffers.Select(s => s.getLastSpawn()).ForEach(n => n.deleteMe());
+        _instance = InstanceManager.getInstance().createInstance(olyzone.getInstanceTemplateId(), null) ??
+            throw new ArgumentException($"Cannot create instance with id={olyzone.getInstanceTemplateId()}");
+
+        _buffers = _instance.getNpcs().Select(n => n.getSpawn()).Where(s => s != null).ToList()!;
+		_buffers.Select(s => s.getLastSpawn()).Where(s => s != null).ForEach(n => n!.deleteMe());
 	}
 
 	public OlympiadStadiumZone getZone()
@@ -47,7 +49,7 @@ public class OlympiadStadium
 		_task = task;
 	}
 
-	public OlympiadGameTask getTask()
+	public OlympiadGameTask? getTask()
 	{
 		return _task;
 	}
@@ -74,7 +76,7 @@ public class OlympiadStadium
 
 	public void deleteBuffers()
 	{
-		_buffers.Select(s => s.getLastSpawn()).Where(o => o is not null).ForEach(o => o.deleteMe());
+		_buffers.Select(s => s.getLastSpawn()).Where(o => o is not null).ForEach(o => o!.deleteMe());
 	}
 
 	public void broadcastStatusUpdate(Player player)
@@ -170,7 +172,7 @@ public class OlympiadStadium
 			Location3D loc = spectatorSpawns[Rnd.get(spectatorSpawns.Length)];
 			player.enterOlympiadObserverMode(new Location(loc.X, loc.Y, loc.Z, 0), _stadiumId);
 
-			_task.getGame().sendOlympiadInfo(player);
+			_task.getGame()?.sendOlympiadInfo(player);
 		}
 	}
 }

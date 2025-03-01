@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionPlayerInInstance(bool inInstance): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         if (effector.getActingPlayer() == null)
             return false;

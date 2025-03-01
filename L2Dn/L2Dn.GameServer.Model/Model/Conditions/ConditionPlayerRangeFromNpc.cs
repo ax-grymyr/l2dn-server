@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public class ConditionPlayerRangeFromNpc(Set<int> npcIds, int radius, bool value): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         bool existNpc = false;
         if (!npcIds.isEmpty() && radius > 0)

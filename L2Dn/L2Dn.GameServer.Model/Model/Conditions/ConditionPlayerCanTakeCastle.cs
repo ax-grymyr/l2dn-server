@@ -16,10 +16,10 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionPlayerCanTakeCastle(bool value): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         Player? player = effector.getActingPlayer();
-        if (effector == null || !effector.isPlayer() || player is null || skill is null)
+        if (!effector.isPlayer() || player is null || skill is null)
             return false;
 
         Clan? clan = player.getClan();
@@ -35,7 +35,7 @@ public sealed class ConditionPlayerCanTakeCastle(bool value): Condition
             player.sendPacket(sm);
             canTakeCastle = false;
         }
-        else if (!castle.getArtefacts().Contains(effected))
+        else if (effected == null || !castle.getArtefacts().Contains(effected))
         {
             player.sendPacket(SystemMessageId.INVALID_TARGET);
             canTakeCastle = false;

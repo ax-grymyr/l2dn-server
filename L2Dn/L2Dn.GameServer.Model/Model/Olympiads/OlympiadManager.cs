@@ -184,7 +184,7 @@ public class OlympiadManager
 			return false;
 		}
 
-		NobleData statDat = Olympiad.getNobleStats(charId);
+		NobleData? statDat = Olympiad.getNobleStats(charId);
 		if (statDat == null)
 		{
 			statDat = new NobleData

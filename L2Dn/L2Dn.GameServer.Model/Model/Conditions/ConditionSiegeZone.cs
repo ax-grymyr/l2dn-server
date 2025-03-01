@@ -21,9 +21,12 @@ public sealed class ConditionSiegeZone(int value, bool self): Condition
     public const int COND_FORT_DEFEND = 0x0020;
     public const int COND_FORT_NEUTRAL = 0x0040;
 
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
-        Creature target = self ? effector : effected;
+        Creature? target = self ? effector : effected;
+        if (target is null)
+            return false;
+
         Castle? castle = CastleManager.getInstance().getCastle(target);
         Fort? fort = FortManager.getInstance().getFort(target);
         if (castle == null && fort == null)
@@ -42,12 +45,10 @@ public sealed class ConditionSiegeZone(int value, bool self): Condition
      * @param value the value
      * @return true, if successful
      */
-    private static bool CheckIfOk(Creature? creature, Castle? castle, int value)
+    private static bool CheckIfOk(Creature creature, Castle? castle, int value)
     {
-        if (creature == null || !creature.isPlayer())
-        {
+        if (!creature.isPlayer())
             return false;
-        }
 
         Player player = (Player)creature;
         if (castle == null || castle.getResidenceId() <= 0)
@@ -89,12 +90,10 @@ public sealed class ConditionSiegeZone(int value, bool self): Condition
      * @param value the value
      * @return true, if successful
      */
-    private static bool CheckIfOk(Creature? creature, Fort? fort, int value)
+    private static bool CheckIfOk(Creature creature, Fort? fort, int value)
     {
-        if (creature == null || !creature.isPlayer())
-        {
+        if (!creature.isPlayer())
             return false;
-        }
 
         Player player = (Player)creature;
         if (fort == null || fort.getResidenceId() <= 0)

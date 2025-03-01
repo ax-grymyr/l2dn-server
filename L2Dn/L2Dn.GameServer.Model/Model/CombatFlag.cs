@@ -17,22 +17,22 @@ public class CombatFlag
 	private readonly Location _location;
 	private readonly int _itemId;
 	private readonly int _fortId;
-	
+
 	public CombatFlag(int fortId, int x, int y, int z, int heading, int itemId)
 	{
 		_fortId = fortId;
 		_location = new Location(x, y, z, heading);
 		_itemId = itemId;
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void spawnMe()
 	{
 		// Init the dropped ItemInstance and add it in the world as a visible object at the position where mob was last
-		_itemInstance = ItemData.getInstance().createItem("Combat", _itemId, 1, null, null);
+		_itemInstance = ItemData.getInstance().createItem("Combat", _itemId, 1, null);
 		_itemInstance.dropMe(null, _location.Location3D);
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void unSpawnMe()
 	{
@@ -45,7 +45,7 @@ public class CombatFlag
 			_itemInstance.decayMe();
 		}
 	}
-	
+
 	public bool activate(Player player, Item item)
 	{
 		if (player.isMounted())
@@ -53,29 +53,29 @@ public class CombatFlag
 			player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 			return false;
 		}
-		
+
 		// Player holding it data
 		_player = player;
 		_playerId = _player.ObjectId;
 		_itemInstance = null;
-		
+
 		// Equip with the weapon
 		_item = item;
 		_player.getInventory().equipItem(_item);
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_EQUIPPED);
 		sm.Params.addItemName(_item);
 		_player.sendPacket(sm);
-		
+
 		// Refresh inventory
 		InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(_item));
 		_player.sendInventoryUpdate(iu);
-		
+
 		// Refresh player stats
 		_player.broadcastUserInfo();
 		_player.setCombatFlagEquipped(true);
 		return true;
 	}
-	
+
 	public void dropIt()
 	{
 		// Reset player stats
@@ -88,12 +88,12 @@ public class CombatFlag
 		_player = null;
 		_playerId = 0;
 	}
-	
+
 	public int getPlayerObjectId()
 	{
 		return _playerId;
 	}
-	
+
 	public Item getCombatFlagInstance()
 	{
 		return _itemInstance;

@@ -19,7 +19,7 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionPlayerCanSweep(bool value): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         Player? sweeper = effector.getActingPlayer();
         if (sweeper is null)
@@ -33,7 +33,7 @@ public sealed class ConditionPlayerCanSweep(bool value): Condition
             {
                 foreach (WorldObject wo in targets)
                 {
-                    if (wo != null && wo.isAttackable())
+                    if (wo.isAttackable())
                     {
                         Attackable attackable = (Attackable)wo;
                         if (attackable.isDead())

@@ -19,20 +19,20 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 {
 	protected int _damageP1;
 	protected int _damageP2;
-	
+
 	protected Participant _playerOne;
 	protected Participant _playerTwo;
-	
+
 	protected OlympiadGameNormal(int id, Participant[] opponents): base(id)
 	{
 		_playerOne = opponents[0];
 		_playerTwo = opponents[1];
-		
+
 		_playerOne.getPlayer().setOlympiadGameId(id);
 		_playerTwo.getPlayer().setOlympiadGameId(id);
 	}
-	
-	protected static Participant[] createListOfParticipants(Set<int> set)
+
+	protected static Participant[]? createListOfParticipants(Set<int> set)
 	{
 		if (set == null || set.isEmpty() || set.size() < 2)
 		{
@@ -40,52 +40,52 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		}
 		int playerOneObjectId = 0;
 		int playerTwoObjectId = 0;
-		Player playerOne = null;
-		Player playerTwo = null;
-		
+		Player? playerOne = null;
+		Player? playerTwo = null;
+
 		while (set.size() > 1)
 		{
 			int random = Rnd.get(set.size());
 			playerOneObjectId = set.ElementAt(random);
 			set.Remove(playerOneObjectId);
-			
+
 			playerOne = World.getInstance().getPlayer(playerOneObjectId);
 			if (playerOne == null || !playerOne.isOnline())
 			{
 				continue;
 			}
-			
+
 			random = Rnd.get(set.size());
 			playerTwoObjectId = set.ElementAt(random);
 			set.Remove(playerTwoObjectId);
-			
+
 			playerTwo = World.getInstance().getPlayer(playerTwoObjectId);
 			if (playerTwo == null || !playerTwo.isOnline())
 			{
 				set.add(playerOneObjectId);
 				continue;
 			}
-			
+
 			Participant[] result = new Participant[2];
 			result[0] = new Participant(playerOne, 1);
 			result[1] = new Participant(playerTwo, 2);
-			
+
 			return result;
 		}
 		return null;
 	}
-	
+
 	public override bool containsParticipant(int playerId)
 	{
 		return (_playerOne != null && _playerOne.getObjectId() == playerId) || (_playerTwo != null && _playerTwo.getObjectId() == playerId);
 	}
-	
+
 	public override void sendOlympiadInfo(Creature creature)
 	{
 		creature.sendPacket(new ExOlympiadUserInfoPacket(_playerOne));
 		creature.sendPacket(new ExOlympiadUserInfoPacket(_playerTwo));
 	}
-	
+
 	public override void broadcastOlympiadInfo(OlympiadStadium stadium)
 	{
 		stadium.broadcastPacket(new ExOlympiadUserInfoPacket(_playerOne));
@@ -98,7 +98,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		{
 			_playerOne.getPlayer().sendPacket(packet);
 		}
-		
+
 		if (_playerTwo.updatePlayer())
 		{
 			_playerTwo.getPlayer().sendPacket(packet);
@@ -120,55 +120,55 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		}
 		return result;
 	}
-	
+
 	public override bool needBuffers()
 	{
 		return true;
 	}
-	
+
 	public override void removals()
 	{
 		if (_aborted)
 		{
 			return;
 		}
-		
+
 		removals(_playerOne.getPlayer(), true);
 		removals(_playerTwo.getPlayer(), true);
 	}
-	
+
 	public sealed override bool makeCompetitionStart()
 	{
 		if (!base.makeCompetitionStart())
 		{
 			return false;
 		}
-		
+
 		if (_playerOne.getPlayer() == null || _playerTwo.getPlayer() == null)
 		{
 			return false;
 		}
-		
+
 		_playerOne.getPlayer().setOlympiadStart(true);
 		_playerOne.getPlayer().updateEffectIcons();
 		_playerTwo.getPlayer().setOlympiadStart(true);
 		_playerTwo.getPlayer().updateEffectIcons();
 		return true;
 	}
-	
+
 	public override void cleanEffects()
 	{
 		if (_playerOne.getPlayer() != null && !_playerOne.isDefaulted() && !_playerOne.isDisconnected() && _playerOne.getPlayer().getOlympiadGameId() == _stadiumId)
 		{
 			cleanEffects(_playerOne.getPlayer());
 		}
-		
+
 		if (_playerTwo.getPlayer() != null && !_playerTwo.isDefaulted() && !_playerTwo.isDisconnected() && _playerTwo.getPlayer().getOlympiadGameId() == _stadiumId)
 		{
 			cleanEffects(_playerTwo.getPlayer());
 		}
 	}
-	
+
 	public override void portPlayersBack()
 	{
 		if (_playerOne.getPlayer() != null && !_playerOne.isDefaulted() && !_playerOne.isDisconnected())
@@ -180,28 +180,29 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			portPlayerBack(_playerTwo.getPlayer());
 		}
 	}
-	
+
 	public override void playersStatusBack()
 	{
 		if (_playerOne.getPlayer() != null && !_playerOne.isDefaulted() && !_playerOne.isDisconnected() && _playerOne.getPlayer().getOlympiadGameId() == _stadiumId)
 		{
 			playerStatusBack(_playerOne.getPlayer());
 		}
-		
+
 		if (_playerTwo.getPlayer() != null && !_playerTwo.isDefaulted() && !_playerTwo.isDisconnected() && _playerTwo.getPlayer().getOlympiadGameId() == _stadiumId)
 		{
 			playerStatusBack(_playerTwo.getPlayer());
 		}
 	}
-	
+
 	public override void clearPlayers()
 	{
-		_playerOne.setPlayer(null);
-		_playerOne = null;
-		_playerTwo.setPlayer(null);
-		_playerTwo = null;
+        // TODO: commented, verify
+		// _playerOne.setPlayer(null);
+		// _playerOne = null;
+		// _playerTwo.setPlayer(null);
+		// _playerTwo = null;
 	}
-	
+
 	public override void handleDisconnect(Player player)
 	{
 		if (player.ObjectId == _playerOne.getObjectId())
@@ -213,34 +214,34 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			_playerTwo.setDisconnected(true);
 		}
 	}
-	
+
 	public sealed override bool checkBattleStatus()
 	{
 		if (_aborted)
 		{
 			return false;
 		}
-		
+
 		if (_playerOne.getPlayer() == null || _playerOne.isDisconnected())
 		{
 			return false;
 		}
-		
+
 		if (_playerTwo.getPlayer() == null || _playerTwo.isDisconnected())
 		{
 			return false;
 		}
-		
+
 		return true;
 	}
-	
+
 	public sealed override bool haveWinner()
 	{
 		if (!checkBattleStatus())
 		{
 			return true;
 		}
-		
+
 		bool playerOneLost = true;
 		try
 		{
@@ -251,9 +252,10 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			playerOneLost = true;
 		}
-		
+
 		bool playerTwoLost = true;
 		try
 		{
@@ -264,28 +266,29 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		}
 		catch (Exception e)
 		{
+            LOGGER.Error(e);
 			playerTwoLost = true;
 		}
-		
+
 		return playerOneLost || playerTwoLost;
 	}
-	
+
 	public override void validateWinner(OlympiadStadium stadium)
 	{
 		if (_aborted)
 		{
 			return;
 		}
-		
+
 		bool tie = false;
 		int winside = 0;
-		
+
 		List<OlympiadInfo> list1 = new(1);
 		List<OlympiadInfo> list2 = new(1);
-		
+
 		bool _pOneCrash = _playerOne.getPlayer() == null || _playerOne.isDisconnected();
 		bool _pTwoCrash = _playerTwo.getPlayer() == null || _playerTwo.isDisconnected();
-		
+
 		int playerOnePoints = _playerOne.getStats().OlympiadPoints;
 		int playerTwoPoints = _playerTwo.getStats().OlympiadPoints;
 		int pointDiff = Math.Min(playerOnePoints, playerTwoPoints) / getDivider();
@@ -297,10 +300,10 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		{
 			pointDiff = Config.ALT_OLY_MAX_POINTS;
 		}
-		
+
 		int points;
 		SystemMessagePacket sm;
-		
+
 		// Check for if a player defaulted before battle started
 		if (_playerOne.isDefaulted() || _playerTwo.isDefaulted())
 		{
@@ -313,9 +316,9 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 						points = Math.Min(playerOnePoints / 3, Config.ALT_OLY_MAX_POINTS);
 						removePointsFromParticipant(_playerOne, points);
 						list1.Add(new OlympiadInfo(_playerOne.getName(), _playerOne.getClanName(), _playerOne.getClanId(), _playerOne.getBaseClass(), _damageP1, playerOnePoints - points, -points));
-						
+
 						winside = 2;
-						
+
 						if (Config.ALT_OLY_LOG_FIGHTS)
 						{
 							LOGGER_OLYMPIAD.Info(_playerOne.getName() + " default," + _playerOne + "," + _playerTwo + ",0,0,0,0," + points + "," + getType());
@@ -333,7 +336,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 						points = Math.Min(playerTwoPoints / 3, Config.ALT_OLY_MAX_POINTS);
 						removePointsFromParticipant(_playerTwo, points);
 						list2.Add(new OlympiadInfo(_playerTwo.getName(), _playerTwo.getClanName(), _playerTwo.getClanId(), _playerTwo.getBaseClass(), _damageP2, playerTwoPoints - points, -points));
-						
+
 						if (winside == 2)
 						{
 							tie = true;
@@ -342,7 +345,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 						{
 							winside = 1;
 						}
-						
+
 						if (Config.ALT_OLY_LOG_FIGHTS)
 						{
 							LOGGER_OLYMPIAD.Info(_playerTwo.getName() + " default," + _playerOne + "," + _playerTwo + ",0,0,0,0," + points + "," + getType());
@@ -353,7 +356,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 						LOGGER.Warn("Exception on validateWinner(): " + e);
 					}
 				}
-				
+
 				ExOlympiadMatchResultPacket result;
 				if (winside == 1)
 				{
@@ -363,7 +366,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				{
 					result = new ExOlympiadMatchResultPacket(tie, winside, list2, list1);
 				}
-				
+
 				stadium.broadcastPacket(result);
 				return;
 			}
@@ -373,7 +376,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				return;
 			}
 		}
-		
+
 		// Create results for players if a player crashed
 		EventContainer olympiadEvents = Olympiad.getInstance().Events;
 		if (_pOneCrash || _pTwoCrash)
@@ -385,24 +388,24 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 					sm = new SystemMessagePacket(SystemMessageId.CONGRATULATIONS_C1_YOU_WIN_THE_MATCH);
 					sm.Params.addString(_playerOne.getName());
 					stadium.broadcastPacket(sm);
-					
+
 					_playerOne.getStats().CompetitionsWon++;
 					addPointsToParticipant(_playerOne, pointDiff);
 					list1.Add(new OlympiadInfo(_playerOne.getName(), _playerOne.getClanName(), _playerOne.getClanId(), _playerOne.getBaseClass(), _damageP1, playerOnePoints + pointDiff, pointDiff));
-					
+
 					_playerTwo.getStats().CompetitionsLost++;
 					removePointsFromParticipant(_playerTwo, pointDiff);
 					list2.Add(new OlympiadInfo(_playerTwo.getName(), _playerTwo.getClanName(), _playerTwo.getClanId(), _playerTwo.getBaseClass(), _damageP2, playerTwoPoints - pointDiff, -pointDiff));
-					
+
 					winside = 1;
-					
+
 					rewardParticipant(_playerOne.getPlayer(), Config.ALT_OLY_WINNER_REWARD); // Winner
-					
+
 					if (Config.ALT_OLY_LOG_FIGHTS)
 					{
 						LOGGER_OLYMPIAD.Info(_playerTwo.getName() + " crash," + _playerOne + "," + _playerTwo + ",0,0,0,0," + pointDiff + "," + getType());
 					}
-					
+
 					// Notify to scripts
 					if (olympiadEvents.HasSubscribers<OnOlympiadMatchResult>())
 					{
@@ -414,24 +417,24 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 					sm = new SystemMessagePacket(SystemMessageId.CONGRATULATIONS_C1_YOU_WIN_THE_MATCH);
 					sm.Params.addString(_playerTwo.getName());
 					stadium.broadcastPacket(sm);
-					
+
 					_playerTwo.getStats().CompetitionsWon++;
 					addPointsToParticipant(_playerTwo, pointDiff);
 					list2.Add(new OlympiadInfo(_playerTwo.getName(), _playerTwo.getClanName(), _playerTwo.getClanId(), _playerTwo.getBaseClass(), _damageP2, playerTwoPoints + pointDiff, pointDiff));
-					
+
 					_playerOne.getStats().CompetitionsLost++;
 					removePointsFromParticipant(_playerOne, pointDiff);
 					list1.Add(new OlympiadInfo(_playerOne.getName(), _playerOne.getClanName(), _playerOne.getClanId(), _playerOne.getBaseClass(), _damageP1, playerOnePoints - pointDiff, -pointDiff));
-					
+
 					winside = 2;
-					
+
 					rewardParticipant(_playerTwo.getPlayer(), Config.ALT_OLY_WINNER_REWARD); // Winner
-					
+
 					if (Config.ALT_OLY_LOG_FIGHTS)
 					{
 						LOGGER_OLYMPIAD.Info(_playerOne.getName() + " crash," + _playerOne + "," + _playerTwo + ",0,0,0,0," + pointDiff + "," + getType());
 					}
-					
+
 					// Notify to scripts
 					if (olympiadEvents.HasSubscribers<OnOlympiadMatchResult>())
 					{
@@ -441,29 +444,29 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				else if (_pOneCrash && _pTwoCrash)
 				{
 					stadium.broadcastPacket(new SystemMessagePacket(SystemMessageId.THE_DUEL_HAS_ENDED_IN_A_TIE));
-					
+
 					_playerOne.getStats().CompetitionsLost++;
 					removePointsFromParticipant(_playerOne, pointDiff);
 					list1.Add(new OlympiadInfo(_playerOne.getName(), _playerOne.getClanName(), _playerOne.getClanId(), _playerOne.getBaseClass(), _damageP1, playerOnePoints - pointDiff, -pointDiff));
-					
+
 					_playerTwo.getStats().CompetitionsLost++;
 					removePointsFromParticipant(_playerTwo, pointDiff);
 					list2.Add(new OlympiadInfo(_playerTwo.getName(), _playerTwo.getClanName(), _playerTwo.getClanId(), _playerTwo.getBaseClass(), _damageP2, playerTwoPoints - pointDiff, -pointDiff));
-					
+
 					tie = true;
-					
+
 					if (Config.ALT_OLY_LOG_FIGHTS)
 					{
 						LOGGER_OLYMPIAD.Info("both crash," + _playerOne.getName() + "," + _playerOne + ",0,0,0,0," + _playerTwo + "," + pointDiff + "," + getType());
 					}
 				}
-				
+
 				_playerOne.getStats().CompetitionsDone++;
 				_playerTwo.getStats().CompetitionsDone++;
 
 				_playerOne.getStats().CompetitionsDoneWeek++;
 				_playerTwo.getStats().CompetitionsDoneWeek++;
-				
+
 				ExOlympiadMatchResultPacket result;
 				if (winside == 1)
 				{
@@ -474,14 +477,14 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 					result = new ExOlympiadMatchResultPacket(tie, winside, list2, list1);
 				}
 				stadium.broadcastPacket(result);
-				
+
 				// Notify to scripts
 				if (olympiadEvents.HasSubscribers<OnOlympiadMatchResult>())
 				{
 					olympiadEvents.NotifyAsync(new OnOlympiadMatchResult(null, _playerOne, getType()));
 					olympiadEvents.NotifyAsync(new OnOlympiadMatchResult(null, _playerTwo, getType()));
 				}
-				
+
 				return;
 			}
 			catch (Exception e)
@@ -490,14 +493,14 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				return;
 			}
 		}
-		
+
 		try
 		{
 			string winner = "draw";
-			
+
 			// Calculate Fight time
 			TimeSpan _fightTime = DateTime.UtcNow - _startTime;
-			
+
 			double playerOneHp = 0;
 			if (_playerOne.getPlayer() != null && !_playerOne.getPlayer().isDead())
 			{
@@ -507,7 +510,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 					playerOneHp = 0;
 				}
 			}
-			
+
 			double playerTwoHp = 0;
 			if (_playerTwo.getPlayer() != null && !_playerTwo.getPlayer().isDead())
 			{
@@ -517,11 +520,11 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 					playerTwoHp = 0;
 				}
 			}
-			
+
 			// if players crashed, search if they've relogged
 			_playerOne.updatePlayer();
 			_playerTwo.updatePlayer();
-			
+
 			if ((_playerOne.getPlayer() == null || !_playerOne.getPlayer().isOnline()) && (_playerTwo.getPlayer() == null || !_playerTwo.getPlayer().isOnline()))
 			{
 				_playerOne.getStats().CompetitionsDrawn++;
@@ -537,22 +540,22 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 
 				_playerOne.getStats().CompetitionsWon++;
 				_playerTwo.getStats().CompetitionsLost++;
-				
+
 				addPointsToParticipant(_playerOne, pointDiff);
 				list1.Add(new OlympiadInfo(_playerOne.getName(), _playerOne.getClanName(), _playerOne.getClanId(), _playerOne.getBaseClass(), _damageP1, playerOnePoints + pointDiff, pointDiff));
-				
+
 				removePointsFromParticipant(_playerTwo, pointDiff);
 				list2.Add(new OlympiadInfo(_playerTwo.getName(), _playerTwo.getClanName(), _playerTwo.getClanId(), _playerTwo.getBaseClass(), _damageP2, playerTwoPoints - pointDiff, -pointDiff));
 				winner = _playerOne.getName() + " won";
-				
+
 				winside = 1;
-				
+
 				// Save Fight Result
 				saveResults(_playerOne, _playerTwo, 1, _startTime, _fightTime, getType());
-				
+
 				rewardParticipant(_playerOne.getPlayer(), Config.ALT_OLY_WINNER_REWARD); // Winner
 				rewardParticipant(_playerTwo.getPlayer(), Config.ALT_OLY_LOSER_REWARD); // Loser
-				
+
 				// Notify to scripts
 				if (olympiadEvents.HasSubscribers<OnOlympiadMatchResult>())
 				{
@@ -564,25 +567,25 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				sm = new SystemMessagePacket(SystemMessageId.CONGRATULATIONS_C1_YOU_WIN_THE_MATCH);
 				sm.Params.addString(_playerTwo.getName());
 				stadium.broadcastPacket(sm);
-				
+
 				_playerTwo.getStats().CompetitionsWon++;
 				_playerOne.getStats().CompetitionsLost++;
-				
+
 				addPointsToParticipant(_playerTwo, pointDiff);
 				list2.Add(new OlympiadInfo(_playerTwo.getName(), _playerTwo.getClanName(), _playerTwo.getClanId(), _playerTwo.getBaseClass(), _damageP2, playerTwoPoints + pointDiff, pointDiff));
-				
+
 				removePointsFromParticipant(_playerOne, pointDiff);
 				list1.Add(new OlympiadInfo(_playerOne.getName(), _playerOne.getClanName(), _playerOne.getClanId(), _playerOne.getBaseClass(), _damageP1, playerOnePoints - pointDiff, -pointDiff));
-				
+
 				winner = _playerTwo.getName() + " won";
 				winside = 2;
-				
+
 				// Save Fight Result
 				saveResults(_playerOne, _playerTwo, 2, _startTime, _fightTime, getType());
 
 				rewardParticipant(_playerTwo.getPlayer(), Config.ALT_OLY_WINNER_REWARD); // Winner
 				rewardParticipant(_playerOne.getPlayer(), Config.ALT_OLY_LOSER_REWARD); // Loser
-				
+
 				// Notify to scripts
 				if (olympiadEvents.HasSubscribers<OnOlympiadMatchResult>())
 				{
@@ -593,28 +596,28 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			{
 				// Save Fight Result
 				saveResults(_playerOne, _playerTwo, 0, _startTime, _fightTime, getType());
-				
+
 				sm = new SystemMessagePacket(SystemMessageId.THE_DUEL_HAS_ENDED_IN_A_TIE);
 				stadium.broadcastPacket(sm);
-				
+
 				int value = Math.Min(playerOnePoints / getDivider(), Config.ALT_OLY_MAX_POINTS);
-				
+
 				removePointsFromParticipant(_playerOne, value);
 				list1.Add(new OlympiadInfo(_playerOne.getName(), _playerOne.getClanName(), _playerOne.getClanId(), _playerOne.getBaseClass(), _damageP1, playerOnePoints - value, -value));
-				
+
 				value = Math.Min(playerTwoPoints / getDivider(), Config.ALT_OLY_MAX_POINTS);
 				removePointsFromParticipant(_playerTwo, value);
 				list2.Add(new OlympiadInfo(_playerTwo.getName(), _playerTwo.getClanName(), _playerTwo.getClanId(), _playerTwo.getBaseClass(), _damageP2, playerTwoPoints - value, -value));
-				
+
 				tie = true;
 			}
-			
+
 			_playerOne.getStats().CompetitionsDone++;
 			_playerTwo.getStats().CompetitionsDone++;
 
 			_playerOne.getStats().CompetitionsDoneWeek++;
 			_playerTwo.getStats().CompetitionsDoneWeek++;
-			
+
 			ExOlympiadMatchResultPacket result;
 			if (winside == 1)
 			{
@@ -624,9 +627,9 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			{
 				result = new ExOlympiadMatchResultPacket(tie, winside, list2, list1);
 			}
-			
+
 			stadium.broadcastPacket(result);
-			
+
 			if (Config.ALT_OLY_LOG_FIGHTS)
 			{
 				LOGGER_OLYMPIAD.Info(winner + "," + _playerOne.getName() + "," + _playerOne + "," + _playerTwo + "," + playerOneHp + "," + playerTwoHp + "," + _damageP1 + "," + _damageP2 + "," + pointDiff + "," + getType());
@@ -646,7 +649,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		{
 			return;
 		}
-		
+
 		if (player == player1)
 		{
 			if (!player2.isInvul() && !player2.isHpBlocked())
@@ -662,7 +665,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			}
 		}
 	}
-	
+
 	public override string[] getPlayerNames()
 	{
 		return [_playerOne.getName(), _playerTwo.getName()];
@@ -673,7 +676,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		SystemMessagePacket? reason;
 		_playerOne.updatePlayer();
 		_playerTwo.updatePlayer();
-		
+
 		reason = checkDefaulted(_playerOne.getPlayer());
 		if (reason != null)
 		{
@@ -683,7 +686,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				_playerTwo.getPlayer().sendPacket(reason.Value);
 			}
 		}
-		
+
 		reason = checkDefaulted(_playerTwo.getPlayer());
 		if (reason != null)
 		{
@@ -693,19 +696,19 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				_playerOne.getPlayer().sendPacket(reason.Value);
 			}
 		}
-		
+
 		return _playerOne.isDefaulted() || _playerTwo.isDefaulted();
 	}
-	
+
 	public override void resetDamage()
 	{
 		_damageP1 = 0;
 		_damageP2 = 0;
 	}
-	
+
 	protected void saveResults(Participant one, Participant two, byte winner, DateTime startTime, TimeSpan fightTime, CompetitionType type)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.OlympiadFights.Add(new DbOlympiadFight()
@@ -737,7 +740,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			player1.setCurrentHp(player1.getMaxHp());
 			player1.setCurrentMp(player1.getMaxMp());
 		}
-		
+
 		Player player2 = _playerTwo.getPlayer();
 		if (player2 != null)
 		{
@@ -746,7 +749,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			player2.setCurrentMp(player2.getMaxMp());
 		}
 	}
-	
+
 	public override void untransformPlayers()
 	{
 		Player player1 = _playerOne.getPlayer();
@@ -754,14 +757,14 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		{
 			player1.stopTransformation(true);
 		}
-		
+
 		Player player2 = _playerTwo.getPlayer();
 		if (player2 != null && player2.isTransformed())
 		{
 			player2.stopTransformation(true);
 		}
 	}
-	
+
 	public override void makePlayersInvul()
 	{
 		if (_playerOne.getPlayer() != null)
@@ -773,7 +776,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 			_playerTwo.getPlayer().setInvul(true);
 		}
 	}
-	
+
 	public override void removePlayersInvul()
 	{
 		if (_playerOne.getPlayer() != null)

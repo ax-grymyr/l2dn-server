@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionPlayerMp(int mp): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         return effector.getCurrentMp() * 100 / effector.getMaxMp() <= mp;
     }

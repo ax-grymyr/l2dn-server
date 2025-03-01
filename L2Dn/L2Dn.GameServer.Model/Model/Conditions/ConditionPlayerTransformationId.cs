@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionPlayerTransformationId(int id): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         return id == -1 ? effector.isTransformed() : effector.getTransformationId() == id;
     }

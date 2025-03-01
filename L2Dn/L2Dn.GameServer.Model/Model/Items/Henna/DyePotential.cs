@@ -22,8 +22,10 @@ public class DyePotential
 		_skills = new Skill[maxSkillLevel];
 		for (int i = 1; i <= maxSkillLevel; i++)
 		{
-			_skills[i - 1] = SkillData.getInstance().getSkill(skillId, i);
-		}
+            // TODO pass skills as argument
+            _skills[i - 1] = SkillData.getInstance().getSkill(skillId, i) ??
+                throw new ArgumentException($"Skill id={skillId}, level={i} not found");
+        }
 
 		_maxSkillLevel = maxSkillLevel;
 	}

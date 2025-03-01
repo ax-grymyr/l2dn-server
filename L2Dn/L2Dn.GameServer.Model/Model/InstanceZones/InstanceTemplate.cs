@@ -552,16 +552,14 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 		DateTime? time = null;
 		foreach (InstanceReenterTimeHolder data in _reenterData)
         {
-            TimeSpan? dataTime = data.getTime();
-			if (dataTime > TimeSpan.Zero)
+            if (data.IsInterval)
 			{
-				time = DateTime.UtcNow + dataTime.Value;
+				time = DateTime.UtcNow + data.Interval;
 				break;
 			}
 
 			DateTime calendar = DateTime.Now;
-			calendar = new DateTime(calendar.Year, calendar.Month, calendar.Day, data.getHour().Value,
-				data.getMinute().Value, 0);
+			calendar = new DateTime(calendar.Year, calendar.Month, calendar.Day, data.Hour, data.Minute, 0);
 
 			// If calendar time is lower than current, add one more day
 			if (calendar <= DateTime.Now)
@@ -570,10 +568,10 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 			}
 
 			// Modify calendar day
-			if (data.getDay() != null)
+			if (data.Day != null)
 			{
 				// DayOfWeek starts with Monday(1) but Calendar starts with Sunday(1)
-				DayOfWeek day = data.getDay().Value + 1;
+				DayOfWeek day = data.Day.Value + 1;
 				if (day > DayOfWeek.Saturday)
 				{
 					day = DayOfWeek.Sunday;

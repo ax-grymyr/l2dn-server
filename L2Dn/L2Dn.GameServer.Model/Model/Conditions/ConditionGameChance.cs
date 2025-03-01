@@ -16,7 +16,7 @@ public sealed class ConditionGameChance(int chance): Condition
      * Test impl.
      * @return true, if successful
      */
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         return Rnd.get(100) < chance;
     }

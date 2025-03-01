@@ -10,27 +10,27 @@ namespace L2Dn.GameServer.Model.Events.Impl.Items;
  */
 public class OnPlayerItemTransfer: EventBase
 {
-	private readonly Player _player;
+	private readonly Player? _player;
 	private readonly Item _item;
 	private readonly ItemContainer _container;
-	
-	public OnPlayerItemTransfer(Player player, Item item, ItemContainer container)
+
+	public OnPlayerItemTransfer(Player? player, Item item, ItemContainer container)
 	{
 		_player = player;
 		_item = item;
 		_container = container;
 	}
-	
-	public Player getPlayer()
+
+	public Player? getPlayer()
 	{
 		return _player;
 	}
-	
+
 	public Item getItem()
 	{
 		return _item;
 	}
-	
+
 	public ItemContainer getContainer()
 	{
 		return _container;

@@ -148,6 +148,7 @@ public class Options
 	{
 		if (hasEffects())
 		{
+            // TODO: the skill is used in many effect handlers but here it is null
 			BuffInfo info = new BuffInfo(playable, playable, null, true, null, this);
 			foreach (AbstractEffect effect in _effects)
 			{

@@ -14,7 +14,7 @@ public sealed class ConditionItemId(int itemId): Condition
      * Test impl.
      * @return true, if successful
      */
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         return item != null && item.getId() == itemId;
     }

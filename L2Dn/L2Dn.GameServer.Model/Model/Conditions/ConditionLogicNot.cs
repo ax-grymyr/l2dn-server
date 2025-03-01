@@ -39,7 +39,7 @@ public class ConditionLogicNot: Condition
         base.setListener(listener);
     }
 
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         return !_condition.test(effector, effected, skill, item);
     }

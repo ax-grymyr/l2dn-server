@@ -267,7 +267,7 @@ public sealed class WorldRegion
                     mob.getAttackByList().clear();
 
                     // Teleport to spawn when too far away.
-                    Spawn spawn = mob.getSpawn();
+                    Spawn? spawn = mob.getSpawn();
                     if (spawn != null && mob.Distance2D(spawn.Location.Location2D) > Config.MAX_DRIFT_RANGE)
                     {
                         mob.teleToLocation(spawn.Location);

@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionTargetPlayable: Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         return effected != null && effected.isPlayable();
     }

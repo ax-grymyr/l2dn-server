@@ -9,20 +9,20 @@ namespace L2Dn.GameServer.Model.Events.Impl.Items;
  */
 public class OnPlayerItemDestroy: EventBase
 {
-	private readonly Player _player;
+	private readonly Player? _player;
 	private readonly Item _item;
-	
-	public OnPlayerItemDestroy(Player player, Item item)
+
+	public OnPlayerItemDestroy(Player? player, Item item)
 	{
 		_player = player;
 		_item = item;
 	}
-	
-	public Player getPlayer()
+
+	public Player? getPlayer()
 	{
 		return _player;
 	}
-	
+
 	public Item getItem()
 	{
 		return _item;

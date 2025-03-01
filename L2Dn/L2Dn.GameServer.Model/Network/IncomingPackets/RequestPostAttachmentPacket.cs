@@ -84,7 +84,7 @@ public struct RequestPostAttachmentPacket: IIncomingPacket<GameSession>
 		if (!msg.hasAttachments())
 			return ValueTask.CompletedTask;
 
-		ItemContainer attachments = msg.getAttachments();
+		ItemContainer? attachments = msg.getAttachments();
 		if (attachments == null)
 			return ValueTask.CompletedTask;
 
@@ -214,7 +214,7 @@ public struct RequestPostAttachmentPacket: IIncomingPacket<GameSession>
 			}
 			else
 			{
-				Item paidAdena = ItemData.getInstance().createItem("PayMail", Inventory.ADENA_ID, adena, player, null);
+				Item paidAdena = ItemData.getInstance().createItem("PayMail", Inventory.ADENA_ID, adena, player);
 				paidAdena.setOwnerId(msg.getSenderId());
 				paidAdena.setItemLocation(ItemLocation.INVENTORY);
 				paidAdena.updateDatabase(true);

@@ -3670,7 +3670,7 @@ public class Player: Playable
 		{
 			return null;
 		}
-		Item newItem = _inventory.transferItem(process, objectId, count, target, this, reference);
+		Item? newItem = _inventory.transferItem(process, objectId, count, target, this, reference);
 		if (newItem == null)
 		{
 			return null;
@@ -7530,8 +7530,6 @@ public class Player: Playable
 	{
 		try
 		{
-            const string RESTORE_SKILLS_FOR_CHAR = "SELECT skill_id,skill_level,skill_sub_level FROM character_skills WHERE charId=? AND class_index=?";
-
             int characterId = ObjectId;
 
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();

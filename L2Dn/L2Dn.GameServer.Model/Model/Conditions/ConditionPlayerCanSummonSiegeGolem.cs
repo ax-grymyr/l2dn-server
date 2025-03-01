@@ -14,10 +14,10 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionPlayerCanSummonSiegeGolem(bool value): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         Player? player = effector.getActingPlayer();
-        if (effector is null || !effector.isPlayer() || player is null)
+        if (!effector.isPlayer() || player is null)
         {
             return !value;
         }

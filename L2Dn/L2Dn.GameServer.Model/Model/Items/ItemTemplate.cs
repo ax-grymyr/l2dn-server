@@ -87,63 +87,63 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 
 	private readonly EventContainer _eventContainer;
 
-	private int _itemId;
-	private int _displayId;
-	private string _name;
-	private string _additionalName;
-	private string _icon;
-	private int _weight;
-	private bool _stackable;
-	private MaterialType _materialType;
-	private CrystalType _crystalType;
-	private TimeSpan _equipReuseDelay;
-	private int? _duration; // mana
-	private TimeSpan? _time;
-	private TimeSpan? _autoDestroyTime;
-	private long _bodyPart;
-	private int _referencePrice;
-	private int _crystalCount;
-	private bool _sellable;
-	private bool _dropable;
-	private bool _destroyable;
-	private bool _tradeable;
-	private bool _depositable;
-	private bool _enchantable;
-	private int _enchantLimit;
-	private int _ensoulNormalSlots;
-	private int _ensoulSpecialSlots;
-	private bool _elementable;
-	private bool _questItem;
-	private bool _freightable;
-	private bool _allowSelfResurrection;
-	private bool _isOlyRestricted;
-	private bool _isEventRestricted;
-	private bool _forNpc;
-	private bool _common;
-	private bool _heroItem;
-	private bool _pvpItem;
-	private bool _immediateEffect;
-	private bool _exImmediateEffect;
-	private int _defaultEnchantLevel;
-	private ActionType _defaultAction;
+	private readonly int _itemId;
+	private readonly int _displayId;
+	private readonly string _name;
+	private readonly string _additionalName;
+	private readonly string _icon;
+	private readonly int _weight;
+	private readonly bool _stackable;
+	private readonly MaterialType _materialType;
+	private readonly CrystalType _crystalType;
+	private readonly TimeSpan _equipReuseDelay;
+	private readonly int? _duration; // mana
+	private readonly TimeSpan? _time;
+	private readonly TimeSpan? _autoDestroyTime;
+	private readonly long _bodyPart;
+	private readonly int _referencePrice;
+	private readonly int _crystalCount;
+	private readonly bool _sellable;
+	private readonly bool _dropable;
+	private readonly bool _destroyable;
+	private readonly bool _tradeable;
+	private readonly bool _depositable;
+	private readonly bool _enchantable;
+	private readonly int _enchantLimit;
+	private readonly int _ensoulNormalSlots;
+	private readonly int _ensoulSpecialSlots;
+	private readonly bool _elementable;
+	private readonly bool _questItem;
+	private readonly bool _freightable;
+	private readonly bool _allowSelfResurrection;
+	private readonly bool _isOlyRestricted;
+	private readonly bool _isEventRestricted;
+	private readonly bool _forNpc;
+	private readonly bool _common;
+	private readonly bool _heroItem;
+	private readonly bool _pvpItem;
+	private readonly bool _immediateEffect;
+	private readonly bool _exImmediateEffect;
+	private readonly int _defaultEnchantLevel;
+	private readonly ActionType _defaultAction;
 
 	protected int _type1; // needed for item list (inventory)
 	protected int _type2; // different lists for armor, weapon, etc
-	private Map<AttributeType, AttributeHolder> _elementals;
-	protected Map<Stat, FuncTemplate> _funcTemplates;
-	protected List<Condition> _preConditions;
-	private List<ItemSkillHolder> _skills;
+	private Map<AttributeType, AttributeHolder>? _elementals;
+    private Map<Stat, FuncTemplate>? _funcTemplates;
+    private List<Condition>? _preConditions;
+	private List<ItemSkillHolder>? _skills;
 
-	private int _useSkillDisTime;
+	private readonly int _useSkillDisTime;
 	protected TimeSpan _reuseDelay;
-	private int _sharedReuseGroup;
+	private readonly int _sharedReuseGroup;
 
-	private CommissionItemType _commissionItemType;
+	private readonly CommissionItemType _commissionItemType;
 
-	private bool _isAppearanceable;
-	private bool _isBlessed;
+	private readonly bool _isAppearanceable;
+	private readonly bool _isBlessed;
 
-	private int _artifactSlot;
+	private readonly int _artifactSlot;
 
 	/**
 	 * Constructor of the Item that fill class variables.
@@ -151,12 +151,8 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	 */
 	protected ItemTemplate(StatSet set)
 	{
-		this.set(set);
 		_eventContainer = new($"Item template {_itemId}", GlobalEvents.Global);
-	}
 
-	public virtual void set(StatSet set)
-	{
 		_itemId = set.getInt("item_id");
 		_displayId = set.getInt("displayId", _itemId);
 		_name = set.getString("name");
@@ -221,20 +217,16 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 		_pvpItem = (_itemId >= 10667 && _itemId <= 10835) || (_itemId >= 12852 && _itemId <= 12977) || (_itemId >= 14363 && _itemId <= 14525) || _itemId == 14528 || _itemId == 14529 || _itemId == 14558 || (_itemId >= 15913 && _itemId <= 16024) || (_itemId >= 16134 && _itemId <= 16147) || _itemId == 16149 || _itemId == 16151 || _itemId == 16153 || _itemId == 16155 || _itemId == 16157 || _itemId == 16159 || (_itemId >= 16168 && _itemId <= 16176) || (_itemId >= 16179 && _itemId <= 16220);
 
 		// Sealed item checks.
-		if (_additionalName != null && _additionalName.Equals("Sealed"))
+		if (_additionalName == "Sealed")
 		{
 			if (_tradeable)
-			{
 				LOGGER.Warn("Found tradeable [Sealed] item " + _itemId);
-			}
-			if (_dropable)
-			{
+
+            if (_dropable)
 				LOGGER.Warn("Found dropable [Sealed] item " + _itemId);
-			}
-			if (_sellable)
-			{
+
+            if (_sellable)
 				LOGGER.Warn("Found sellable [Sealed] item " + _itemId);
-			}
 		}
 	}
 
@@ -743,7 +735,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 		_preConditions.Add(c);
 	}
 
-	public List<Condition> getConditions()
+	public List<Condition>? getConditions()
 	{
 		return _preConditions;
 	}
@@ -759,7 +751,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	 */
 	public List<ItemSkillHolder> getAllSkills()
 	{
-		return _skills;
+		return _skills ?? [];
 	}
 
 	/**
@@ -844,9 +836,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	public bool checkCondition(Creature creature, WorldObject @object, bool sendMessage)
 	{
 		if (creature.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && !Config.GM_ITEM_RESTRICTION)
-		{
 			return true;
-		}
 
 		// Don't allow hero equipment and restricted items during Olympiad
         Player? player = creature.getActingPlayer();
@@ -860,6 +850,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 			{
 				creature.sendPacket(SystemMessageId.THE_ITEM_CANNOT_BE_USED_IN_THE_OLYMPIAD);
 			}
+
 			return false;
 		}
 
@@ -869,19 +860,12 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 			return false;
 		}
 
-		if (!isConditionAttached())
-		{
+		if (!isConditionAttached() || _preConditions == null)
 			return true;
-		}
 
-		Creature? target = @object.isCreature() ? (Creature) @object : null;
+        Creature? target = @object.isCreature() ? (Creature)@object : null;
 		foreach (Condition preCondition in _preConditions)
 		{
-			if (preCondition == null)
-			{
-				continue;
-			}
-
 			if (!preCondition.test(creature, target))
 			{
 				if (creature.isSummon())

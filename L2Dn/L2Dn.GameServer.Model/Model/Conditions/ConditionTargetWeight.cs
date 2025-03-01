@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionTargetWeight(int weight): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         Player? target = effected?.getActingPlayer();
         if (effected != null && effected.isPlayer() && target != null)

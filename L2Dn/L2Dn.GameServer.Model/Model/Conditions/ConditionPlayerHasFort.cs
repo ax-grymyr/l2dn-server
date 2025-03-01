@@ -15,7 +15,7 @@ public sealed class ConditionPlayerHasFort(int fort): Condition
      * Test impl.
      * @return true, if successful
      */
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         Player? player = effector.getActingPlayer();
         if (player is null)

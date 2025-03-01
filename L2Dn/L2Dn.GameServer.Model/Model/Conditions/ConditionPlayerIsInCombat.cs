@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionPlayerIsInCombat(bool value): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         bool isInCombat = !AttackStanceTaskManager.getInstance().hasAttackStanceTask(effector);
         return value == isInCombat;

@@ -5,7 +5,6 @@ using L2Dn.Configuration;
 using L2Dn.Events;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
-using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
@@ -34,7 +33,9 @@ public class Olympiad
 	public const string OLYMPIAD_HTML_PATH = "html/olympiad/";
 	public const string UNCLAIMED_OLYMPIAD_POINTS_VAR = "UNCLAIMED_OLYMPIAD_POINTS";
 
-	private static readonly FrozenSet<int> HERO_IDS = CategoryData.getInstance().getCategoryByType(CategoryType.FOURTH_CLASS_GROUP);
+    private static readonly FrozenSet<int> HERO_IDS =
+        CategoryData.getInstance().getCategoryByType(CategoryType.FOURTH_CLASS_GROUP) ??
+        throw new InvalidOperationException("No 4th class group defined");
 
 	private static readonly int COMP_START_HOUR = Config.ALT_OLY_START_TIME; // 6PM
 	private static readonly int COMP_START_MIN = Config.ALT_OLY_MIN; // 00 mins
@@ -70,11 +71,11 @@ public class Olympiad
 	private DateTime _compStart;
 	public static bool _inCompPeriod;
 	protected static bool _compStarted = false;
-	protected ScheduledFuture _scheduledCompStart;
-	protected ScheduledFuture _scheduledCompEnd;
-	protected ScheduledFuture _scheduledOlympiadEnd;
-	protected ScheduledFuture _scheduledWeeklyTask;
-	protected ScheduledFuture _scheduledValdationTask;
+	protected ScheduledFuture? _scheduledCompStart;
+	protected ScheduledFuture? _scheduledCompEnd;
+	protected ScheduledFuture? _scheduledOlympiadEnd;
+	protected ScheduledFuture? _scheduledWeeklyTask;
+	protected ScheduledFuture? _scheduledValdationTask;
 	protected ScheduledFuture? _gameManager;
 	protected ScheduledFuture? _gameAnnouncer;
 
@@ -400,62 +401,48 @@ public class Olympiad
 		updateCompStatus();
 	}
 
-	protected class OlympiadEndTask: Runnable
-	{
-		private readonly Olympiad _olympiad;
-
-		public OlympiadEndTask(Olympiad olympiad)
-		{
-			_olympiad = olympiad;
-		}
-
-		public void run()
+	protected sealed class OlympiadEndTask(Olympiad olympiad): Runnable
+    {
+        public void run()
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.ROUND_S1_OF_THE_OLYMPIAD_HAS_NOW_ENDED);
-			sm.Params.addInt(_olympiad._currentCycle);
+			sm.Params.addInt(olympiad._currentCycle);
 
 			Broadcast.toAllOnlinePlayers(sm);
 
-			if (_olympiad._scheduledWeeklyTask != null)
+			if (olympiad._scheduledWeeklyTask != null)
 			{
-				_olympiad._scheduledWeeklyTask.cancel(true);
+				olympiad._scheduledWeeklyTask.cancel(true);
 			}
 
-			_olympiad.saveNobleData();
+			olympiad.saveNobleData();
 
-			_olympiad._period = 1;
-			List<StatSet> heroesToBe = _olympiad.sortHerosToBe();
+			olympiad._period = 1;
+			List<StatSet> heroesToBe = olympiad.sortHerosToBe();
 			Hero.getInstance().resetData();
 			Hero.getInstance().computeNewHeroes(heroesToBe);
 
-			_olympiad.saveOlympiadStatus();
-			_olympiad.updateMonthlyData();
+			olympiad.saveOlympiadStatus();
+			olympiad.updateMonthlyData();
 
 			DateTime validationEnd = DateTime.UtcNow;
-			_olympiad._validationEnd = validationEnd + VALIDATION_PERIOD;
+			olympiad._validationEnd = validationEnd + VALIDATION_PERIOD;
 
-			_olympiad.loadNoblesRank();
-			_olympiad._scheduledValdationTask = ThreadPool.schedule(new ValidationEndTask(_olympiad), _olympiad.getMillisToValidationEnd());
+			olympiad.loadNoblesRank();
+			olympiad._scheduledValdationTask = ThreadPool.schedule(new ValidationEndTask(olympiad), olympiad.getMillisToValidationEnd());
 		}
 	}
 
-	protected class ValidationEndTask: Runnable
-	{
-		private readonly Olympiad _olympiad;
-
-		public ValidationEndTask(Olympiad olympiad)
-		{
-			_olympiad = olympiad;
-		}
-
-		public void run()
+	protected sealed class ValidationEndTask(Olympiad olympiad): Runnable
+    {
+        public void run()
 		{
 			Broadcast.toAllOnlinePlayers("Olympiad Validation Period has ended");
-			_olympiad._period = 0;
-			_olympiad._currentCycle++;
-			_olympiad.deleteNobles();
-			_olympiad.setNewOlympiadEnd();
-			_olympiad.init();
+			olympiad._period = 0;
+			olympiad._currentCycle++;
+			olympiad.deleteNobles();
+			olympiad.setNewOlympiadEnd();
+			olympiad.init();
 		}
 	}
 
@@ -464,7 +451,7 @@ public class Olympiad
 		return NOBLES.Count;
 	}
 
-	public static NobleData getNobleStats(int playerId)
+	public static NobleData? getNobleStats(int playerId)
 	{
 		return NOBLES.get(playerId);
 	}
@@ -578,12 +565,8 @@ public class Olympiad
 
 	public void manualSelectHeroes()
 	{
-		if (_scheduledOlympiadEnd != null)
-		{
-			_scheduledOlympiadEnd.cancel(true);
-		}
-
-		_scheduledOlympiadEnd = ThreadPool.schedule(new OlympiadEndTask(this), 0);
+        _scheduledOlympiadEnd?.cancel(true);
+        _scheduledOlympiadEnd = ThreadPool.schedule(new OlympiadEndTask(this), 0);
 	}
 
 	protected TimeSpan getMillisToValidationEnd()
@@ -1086,9 +1069,9 @@ public class Olympiad
 
 	public int getNoblePoints(Player player)
 	{
-		if (!NOBLES.ContainsKey(player.ObjectId))
+		if (!NOBLES.TryGetValue(player.ObjectId, out NobleData? nobleData))
 		{
-			NobleData nobleData = new NobleData()
+			nobleData = new NobleData()
 			{
 				Class = player.getBaseClass(),
 				CharacterName = player.getName(),
@@ -1098,7 +1081,7 @@ public class Olympiad
 			addNobleStats(player.ObjectId, nobleData);
 		}
 
-		return NOBLES.get(player.ObjectId).OlympiadPoints;
+		return nobleData.OlympiadPoints;
 	}
 
 	public int getLastNobleOlympiadPoints(int objId)
@@ -1167,7 +1150,7 @@ public class Olympiad
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Olympiad System: Couldn't delete nobles from DB!");
+			LOGGER.Warn("Olympiad System: Couldn't delete nobles from DB! " + e);
 		}
 		NOBLES.Clear();
 	}

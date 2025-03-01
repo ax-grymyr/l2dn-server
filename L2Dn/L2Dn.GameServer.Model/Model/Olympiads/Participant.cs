@@ -27,21 +27,9 @@ public class Participant
 		_name = plr.getName();
 		_side = olympiadSide;
 		_baseClass = plr.getBaseClass();
-		_stats = Olympiad.getNobleStats(_objectId);
+		_stats = Olympiad.getNobleStats(_objectId) ?? throw new InvalidOperationException("No noble stats found for player"); // TODO: verify
 		clanName = plr.getClan()?.getName() ?? string.Empty;
 		clanId = plr.getClanId();
-	}
-
-	public Participant(int objId, int olympiadSide)
-	{
-		_objectId = objId;
-		_player = null;
-		_name = "-";
-		_side = olympiadSide;
-		_baseClass = 0;
-		_stats = null;
-		clanName = "";
-		clanId = 0;
 	}
 
 	/**
@@ -50,12 +38,14 @@ public class Participant
 	 */
 	public bool updatePlayer()
 	{
-		if (_player == null || !_player.isOnline())
+		if (!_player.isOnline())
 		{
-			_player = World.getInstance().getPlayer(getObjectId());
+			Player? player = World.getInstance().getPlayer(getObjectId());
+            if (player != null)
+                _player = player;
 		}
 
-		return _player != null;
+		return true;
 	}
 
 	/**

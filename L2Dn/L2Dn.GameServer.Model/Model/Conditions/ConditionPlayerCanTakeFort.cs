@@ -15,10 +15,10 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionPlayerCanTakeFort(bool value): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         Player? player = effector.getActingPlayer();
-        if (effector == null || !effector.isPlayer() || player is null || skill is null)
+        if (!effector.isPlayer() || player is null || skill is null)
             return false;
 
         bool canTakeFort = !(player.isAlikeDead() || player.isCursedWeaponEquipped() || !player.isClanLeader());

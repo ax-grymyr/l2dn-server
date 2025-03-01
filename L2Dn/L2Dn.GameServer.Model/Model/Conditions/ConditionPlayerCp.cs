@@ -9,8 +9,8 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionPlayerCp(int cp): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
-        return effector != null && effector.getCurrentCp() * 100 / effector.getMaxCp() >= cp;
+        return effector.getCurrentCp() * 100 / effector.getMaxCp() >= cp;
     }
 }

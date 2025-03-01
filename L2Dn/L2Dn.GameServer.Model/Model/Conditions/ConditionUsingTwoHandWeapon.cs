@@ -6,9 +6,9 @@ namespace L2Dn.GameServer.Model.Conditions;
 
 public sealed class ConditionUsingTwoHandWeapon(bool value): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
-        if (effected == null || !effected.isPlayer())
+        if (effected == null || !effected.isPlayer()) // TODO: maybe condition for effector, not for effected? verify
             return false;
 
         ItemTemplate? weapon = effected.getActiveWeaponItem();

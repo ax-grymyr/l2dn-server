@@ -9,8 +9,8 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionTargetPlayer: Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
-        return effected.isPlayer();
+        return effected != null && effected.isPlayer();
     }
 }

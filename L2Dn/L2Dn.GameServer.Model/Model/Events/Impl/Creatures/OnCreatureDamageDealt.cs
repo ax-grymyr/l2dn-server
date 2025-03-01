@@ -18,7 +18,19 @@ public class OnCreatureDamageDealt: EventBase
 	private bool _damageOverTime;
 	private bool _reflect;
 
-	public Creature getAttacker()
+    public OnCreatureDamageDealt(Creature attacker, Creature target, Skill? skill, double damage, bool crit,
+        bool damageOverTime, bool reflect)
+    {
+        _attacker = attacker;
+        _target = target;
+        _skill = skill;
+        _damage = damage;
+        _crit = crit;
+        _damageOverTime = damageOverTime;
+        _reflect = reflect;
+    }
+
+    public Creature getAttacker()
 	{
 		return _attacker;
 	}

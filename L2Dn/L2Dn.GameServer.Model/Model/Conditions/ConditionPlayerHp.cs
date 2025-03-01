@@ -10,8 +10,8 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionPlayerHp(int hp): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
-        return effector != null && effector.getCurrentHp() * 100 / effector.getMaxHp() <= hp;
+        return effector.getCurrentHp() * 100 / effector.getMaxHp() <= hp;
     }
 }

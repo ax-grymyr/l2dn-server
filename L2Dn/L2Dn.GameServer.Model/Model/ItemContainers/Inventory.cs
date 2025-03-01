@@ -107,7 +107,7 @@ public abstract class Inventory: ItemContainer
 
 	private readonly Item?[] _paperdoll;
 	private readonly List<PaperdollListener> _paperdollListeners;
-	private readonly PaperdollCache _paperdollCache = new PaperdollCache();
+	private readonly PaperdollCache _paperdollCache = new();
 
 	// protected to be accessed from child classes only
 	protected int _totalWeight;
@@ -175,13 +175,14 @@ public abstract class Inventory: ItemContainer
 		}
 
 		public void notifyUnequiped(int slot, Item item, Inventory inventory)
-		{
-			if (slot != PAPERDOLL_RHAND || !item.isWeapon())
+        {
+            Weapon? weapon = item.getWeaponItem();
+			if (slot != PAPERDOLL_RHAND || !item.isWeapon() || weapon == null)
 			{
 				return;
 			}
 
-			switch (item.getWeaponItem().getItemType().AsWeaponType())
+			switch (weapon.getItemType().AsWeaponType())
 			{
 				case WeaponType.BOW:
 				case WeaponType.CROSSBOW:
@@ -260,6 +261,10 @@ public abstract class Inventory: ItemContainer
             Playable? playable = (Playable?)inventory.getOwner();
 			if (playable == null)
 				return;
+
+            Player? player = playable.getActingPlayer();
+            if (player is null)
+                return;
 
 			ItemTemplate it = item.getTemplate();
 			Map<int, Skill> addedSkills = new();
@@ -465,7 +470,7 @@ public abstract class Inventory: ItemContainer
 			// Apply skill, if item has "skills on unequip" and it is not a secondary agathion.
 			if (slot < PAPERDOLL_AGATHION2 || slot > PAPERDOLL_AGATHION5)
 			{
-				it.forEachSkill(ItemSkillType.ON_UNEQUIP, holder => holder.getSkill().activateSkill(playable, playable));
+				it.forEachSkill(ItemSkillType.ON_UNEQUIP, holder => holder.getSkill().activateSkill(playable, [playable]));
 			}
 
 			if (update)
@@ -480,17 +485,15 @@ public abstract class Inventory: ItemContainer
 					playable.addSkill(skill);
 				}
 
-                Player? player = playable.getActingPlayer();
-				if (playable.isPlayer() && player != null)
+				if (playable.isPlayer())
 				{
                     player.sendSkillList();
 				}
 			}
 
-            Player? player2 = playable.getActingPlayer();
-			if (updateTimestamp && playable.isPlayer() && player2 != null)
+			if (updateTimestamp && playable.isPlayer())
 			{
-				playable.sendPacket(new SkillCoolTimePacket(player2));
+				playable.sendPacket(new SkillCoolTimePacket(player));
 			}
 
 			if (item.isWeapon())
@@ -504,6 +507,10 @@ public abstract class Inventory: ItemContainer
             Playable? playable = (Playable?)inventory.getOwner();
 			if (playable == null)
 				return;
+
+            Player? player = playable.getActingPlayer();
+            if (player == null)
+                return;
 
 			Map<int, Skill> addedSkills = new();
 			bool updateTimestamp = false;
@@ -568,7 +575,7 @@ public abstract class Inventory: ItemContainer
 
 						// Active, non-offensive, skills start with reuse on equip.
 						if (skill.isActive() && !skill.isBad() && !skill.isTransformation() &&
-						    Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 && playable.getActingPlayer().hasEnteredWorld())
+						    Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 && player.hasEnteredWorld())
 						{
 							playable.addTimeStamp(skill,
 								skill.getReuseDelay() > TimeSpan.Zero
@@ -672,10 +679,10 @@ public abstract class Inventory: ItemContainer
 								}
 							}
 
-							// Active, non offensive, skills start with reuse on equip.
+							// Active, non-offensive, skills start with reuse on equip.
                             if (!skill.isBad() && !skill.isTransformation() &&
                                 Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 &&
-                                playable.getActingPlayer().hasEnteredWorld())
+                                player.hasEnteredWorld())
                             {
                                 playable.addTimeStamp(skill,
                                     skill.getReuseDelay() > TimeSpan.Zero
@@ -745,7 +752,7 @@ public abstract class Inventory: ItemContainer
 
 						// Active, non offensive, skills start with reuse on equip.
                         if (skill.isActive() && !skill.isBad() && !skill.isTransformation() &&
-                            Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 && playable.getActingPlayer().hasEnteredWorld())
+                            Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 && player.hasEnteredWorld())
                         {
                             playable.addTimeStamp(skill,
                                 skill.getReuseDelay() > TimeSpan.Zero
@@ -800,7 +807,7 @@ public abstract class Inventory: ItemContainer
 			// Apply skill, if item has "skills on equip" and it is not a secondary agathion.
 			if (slot < PAPERDOLL_AGATHION2 || slot > PAPERDOLL_AGATHION5)
 			{
-				item.getTemplate().forEachSkill(ItemSkillType.ON_EQUIP, holder => holder.getSkill().activateSkill(playable, playable));
+				item.getTemplate().forEachSkill(ItemSkillType.ON_EQUIP, holder => holder.getSkill().activateSkill(playable, [playable]));
 			}
 
 			if (addedSkills.Count != 0)
@@ -810,24 +817,22 @@ public abstract class Inventory: ItemContainer
 					playable.addSkill(skill);
 				}
 
-                Player? player = playable.getActingPlayer();
-				if (playable.isPlayer() && player != null)
+				if (playable.isPlayer())
 				{
                     player.sendSkillList();
 				}
 			}
 
-            Player? player2 = playable.getActingPlayer();
-			if (updateTimestamp && playable.isPlayer() && player2 != null)
+			if (updateTimestamp && playable.isPlayer())
 			{
-				playable.sendPacket(new SkillCoolTimePacket(player2));
+				playable.sendPacket(new SkillCoolTimePacket(player));
 			}
 		}
 	}
 
 	private class ArmorSetListener: PaperdollListener
 	{
-		private static readonly ArmorSetListener instance = new ArmorSetListener();
+		private static readonly ArmorSetListener instance = new();
 
 		public static ArmorSetListener getInstance()
 		{
@@ -875,7 +880,10 @@ public abstract class Inventory: ItemContainer
         }
 
 		private static bool applySkills(Playable playable, Item item, ArmorSet armorSet, Func<Item, int> idProvider)
-		{
+        {
+            Player player = playable.getActingPlayer() ??
+                throw new InvalidOperationException("Playable player is null, should not happen");
+
 			long piecesCount = armorSet.getPiecesCount(playable, idProvider);
 			if (piecesCount >= armorSet.getMinimumPieces())
 			{
@@ -916,10 +924,10 @@ public abstract class Inventory: ItemContainer
 								}
 							}
 
-							// Active, non offensive, skills start with reuse on equip.
+							// Active, non-offensive, skills start with reuse on equip.
                             if (!itemSkill.isBad() && !itemSkill.isTransformation() &&
                                 Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0 &&
-                                playable.getActingPlayer().hasEnteredWorld())
+                                player.hasEnteredWorld())
                             {
                                 playable.addTimeStamp(itemSkill,
                                     itemSkill.getReuseDelay() > TimeSpan.Zero
@@ -936,7 +944,7 @@ public abstract class Inventory: ItemContainer
 
 				if (updateTimeStamp && playable.isPlayer())
 				{
-					playable.sendPacket(new SkillCoolTimePacket(playable.getActingPlayer()));
+					playable.sendPacket(new SkillCoolTimePacket(player));
 				}
 				return update;
 			}
@@ -997,9 +1005,10 @@ public abstract class Inventory: ItemContainer
 		{
             Playable? playable = (Playable?)inventory.getOwner();
 			if (playable == null)
-			{
 				return;
-			}
+
+            Player player = playable.getActingPlayer() ??
+                throw new InvalidOperationException("Playable player is null, should not happen");
 
 			bool remove = verifyAndRemove(playable, item, x => x.getId());
 
@@ -1024,20 +1033,20 @@ public abstract class Inventory: ItemContainer
 
 			if (remove)
 			{
-				playable.getActingPlayer().checkItemRestriction();
-				playable.getActingPlayer().sendSkillList();
+                player.checkItemRestriction();
+                player.sendSkillList();
 			}
 
 			if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_BROOCH_JEWEL || item.getTemplate().getBodyPart() == ItemTemplate.SLOT_BROOCH)
 			{
-				playable.getActingPlayer().updateActiveBroochJewel();
+                player.updateActiveBroochJewel();
 			}
 		}
 	}
 
 	private class BraceletListener: PaperdollListener
 	{
-		private static readonly BraceletListener instance = new BraceletListener();
+		private static readonly BraceletListener instance = new();
 
 		public static BraceletListener getInstance()
 		{
@@ -1608,7 +1617,7 @@ public abstract class Inventory: ItemContainer
 
 				// Remove agathion skills.
                 Player? player = owner?.getActingPlayer();
-				if (slot >= PAPERDOLL_AGATHION1 && slot <= PAPERDOLL_AGATHION5 && owner.isPlayer() && player != null)
+				if (slot >= PAPERDOLL_AGATHION1 && slot <= PAPERDOLL_AGATHION5 && owner != null && owner.isPlayer() && player != null)
 				{
 					AgathionSkillHolder? agathionSkills = AgathionData.getInstance().getSkills(old.getId());
 					if (agathionSkills != null)
@@ -1657,7 +1666,7 @@ public abstract class Inventory: ItemContainer
 
 				// Add agathion skills.
                 Player? player = owner?.getActingPlayer();
-				if (slot >= PAPERDOLL_AGATHION1 && slot <= PAPERDOLL_AGATHION5 && owner.isPlayer() && player != null)
+				if (slot >= PAPERDOLL_AGATHION1 && slot <= PAPERDOLL_AGATHION5 && owner != null && owner.isPlayer() && player != null)
 				{
 					AgathionSkillHolder? agathionSkills = AgathionData.getInstance().getSkills(item.getId());
 					if (agathionSkills != null)
@@ -1693,11 +1702,12 @@ public abstract class Inventory: ItemContainer
 			}
 
 			_paperdollCache.clearCachedStats();
-			owner.getStat().recalculateStats(!owner.isPlayer());
+			owner?.getStat().recalculateStats(!owner.isPlayer());
 
-			if (owner.isPlayer())
+            Player? ownerPlayer = owner?.getActingPlayer();
+			if (owner != null && owner.isPlayer() && ownerPlayer != null)
 			{
-				owner.sendPacket(new ExUserInfoEquipSlotPacket(owner.getActingPlayer()));
+				owner.sendPacket(new ExUserInfoEquipSlotPacket(ownerPlayer));
 			}
 		}
 
@@ -2136,7 +2146,8 @@ public abstract class Inventory: ItemContainer
 		if (targetSlot == ItemTemplate.SLOT_LR_HAND)
 		{
 			Item? lh = getPaperdollItem(PAPERDOLL_LHAND);
-			if (lh != null && lh.isArmor() && lh.getArmorItem().getItemType() == ArmorType.SHIELD)
+            Armor? armor = lh?.getArmorItem();
+			if (lh != null && lh.isArmor() && armor != null && armor.getItemType() == ArmorType.SHIELD)
 			{
 				setPaperdollItem(PAPERDOLL_LHAND, null);
 			}
@@ -2146,8 +2157,9 @@ public abstract class Inventory: ItemContainer
 		{
 			Item? rh = getPaperdollItem(PAPERDOLL_RHAND);
 			if (rh != null && rh.getTemplate().getBodyPart() == ItemTemplate.SLOT_LR_HAND && !(rh.getItemType() == WeaponType.FISHINGROD && item.getItemType() == EtcItemType.LURE))
-			{
-				if (!item.isArmor() || item.getArmorItem().getItemType() != ArmorType.SIGIL)
+            {
+                Armor? armor = item.getArmorItem();
+				if (!item.isArmor() || armor == null || armor.getItemType() != ArmorType.SIGIL)
 				{
 					setPaperdollItem(PAPERDOLL_RHAND, null);
 				}

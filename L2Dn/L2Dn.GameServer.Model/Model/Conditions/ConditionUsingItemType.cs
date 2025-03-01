@@ -13,11 +13,8 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public class ConditionUsingItemType(ItemTypeMask mask): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
-        if (effector == null)
-            return false;
-
         bool isArmor = (mask & ((ItemTypeMask)ArmorType.MAGIC | ArmorType.LIGHT | ArmorType.HEAVY)) !=
             ItemTypeMask.Zero;
 

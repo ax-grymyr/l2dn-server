@@ -73,7 +73,7 @@ public class Item: WorldObject
 	private int _enchantLevel;
 
 	/** Wear Item */
-	private bool _wear;
+	private readonly bool _wear = false; // TODO: never assigned
 
 	/** Augmented Item */
 	private VariationInstance? _augmentation;
@@ -123,11 +123,10 @@ public class Item: WorldObject
 	 */
 	public Item(int objectId, int itemId): base(objectId)
 	{
-		InstanceType = InstanceType.Item;
+        InstanceType = InstanceType.Item;
 		_itemId = itemId;
-		_itemTemplate = ItemData.getInstance().getTemplate(itemId);
-		if (_itemId == 0 || _itemTemplate == null)
-			throw new ArgumentException();
+        _itemTemplate = ItemData.getInstance().getTemplate(itemId) ??
+            throw new ArgumentException($"ItemTemplate id={itemId} not found");
 
 		base.setName(_itemTemplate.getName());
 		_loc = ItemLocation.VOID;
@@ -165,7 +164,8 @@ public class Item: WorldObject
 	 * @param rs
 	 * @throws SQLException
 	 */
-	public Item(DbItem item): this(item.ObjectId, ItemData.getInstance().getTemplate(item.ItemId))
+	public Item(DbItem item):
+        this(item.ObjectId, ItemData.getInstance().getTemplate(item.ItemId) ?? throw new ArgumentException($"Item template id={item.ItemId} not found"))
 	{
 		_count = item.Count;
 		_ownerId = item.OwnerId;
@@ -912,14 +912,14 @@ public class Item: WorldObject
 	{
 		int newLevel = Math.Max(0, level);
 		if (_enchantLevel == newLevel)
-		{
 			return;
-		}
+
 
 		clearEnchantStats();
 
 		// Agathion skills.
-		if (isEquipped() && _itemTemplate.getBodyPart() == ItemTemplate.SLOT_AGATHION)
+        Player? player = getActingPlayer();
+		if (player != null && isEquipped() && _itemTemplate.getBodyPart() == ItemTemplate.SLOT_AGATHION)
 		{
 			AgathionSkillHolder? agathionSkills = AgathionData.getInstance().getSkills(getId());
 			if (agathionSkills != null)
@@ -928,12 +928,12 @@ public class Item: WorldObject
 				// Remove old skills.
 				foreach (Skill skill in agathionSkills.getMainSkills(_enchantLevel))
 				{
-					getActingPlayer().removeSkill(skill, false, skill.isPassive());
+                    player.removeSkill(skill, false, skill.isPassive());
 					update = true;
 				}
 				foreach (Skill skill in agathionSkills.getSubSkills(_enchantLevel))
 				{
-					getActingPlayer().removeSkill(skill, false, skill.isPassive());
+                    player.removeSkill(skill, false, skill.isPassive());
 					update = true;
 				}
 				// Add new skills.
@@ -941,26 +941,26 @@ public class Item: WorldObject
 				{
 					foreach (Skill skill in agathionSkills.getMainSkills(newLevel))
 					{
-						if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, getActingPlayer(), getActingPlayer()))
+						if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player))
 						{
 							continue;
 						}
-						getActingPlayer().addSkill(skill, false);
+                        player.addSkill(skill, false);
 						update = true;
 					}
 				}
 				foreach (Skill skill in agathionSkills.getSubSkills(newLevel))
 				{
-					if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, getActingPlayer(), getActingPlayer()))
+					if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player))
 					{
 						continue;
 					}
-					getActingPlayer().addSkill(skill, false);
+                    player.addSkill(skill, false);
 					update = true;
 				}
 				if (update)
 				{
-					getActingPlayer().sendSkillList();
+                    player.sendSkillList();
 				}
 			}
 		}
@@ -969,7 +969,7 @@ public class Item: WorldObject
 		applyEnchantStats();
 		_storedInDb = false;
 
-		getActingPlayer().getInventory().getPaperdollCache().clearMaxSetEnchant();
+        player?.getInventory().getPaperdollCache().clearMaxSetEnchant();
 	}
 
 	/**
@@ -998,13 +998,16 @@ public class Item: WorldObject
 	 */
 	public bool setAugmentation(VariationInstance augmentation, bool updateDatabase)
 	{
-		// Remove previous augmentation.
+        Player? player = getActingPlayer();
+
+        // Remove previous augmentation.
 		if (_augmentation != null)
 		{
-			if (isEquipped())
+			if (isEquipped() && player != null)
 			{
-				_augmentation.removeBonus(getActingPlayer());
+				_augmentation.removeBonus(player);
 			}
+
 			removeAugmentation();
 		}
 
@@ -1015,13 +1018,16 @@ public class Item: WorldObject
 		}
 
 		// Notify to scripts.
-		EventContainer events = getTemplate().Events;
-		if (events.HasSubscribers<OnPlayerItemAugment>())
-		{
-			events.NotifyAsync(new OnPlayerItemAugment(getActingPlayer(), this, augmentation, true));
-		}
+        if (player != null)
+        {
+            EventContainer events = getTemplate().Events;
+            if (events.HasSubscribers<OnPlayerItemAugment>())
+            {
+                events.NotifyAsync(new OnPlayerItemAugment(player, this, augmentation, true));
+            }
+        }
 
-		return true;
+        return true;
 	}
 
 	/**
@@ -1030,9 +1036,7 @@ public class Item: WorldObject
 	public void removeAugmentation()
 	{
 		if (_augmentation == null)
-		{
 			return;
-		}
 
 		// Copy augmentation before removing it.
 		VariationInstance augment = _augmentation;
@@ -1050,12 +1054,16 @@ public class Item: WorldObject
 		}
 
 		// Notify to scripts.
-		EventContainer events = getTemplate().Events;
-		if (events.HasSubscribers<OnPlayerItemAugment>())
-		{
-			events.NotifyAsync(new OnPlayerItemAugment(getActingPlayer(), this, augment, false));
-		}
-	}
+        Player? player = getActingPlayer();
+        if (player != null)
+        {
+            EventContainer events = getTemplate().Events;
+            if (events.HasSubscribers<OnPlayerItemAugment>())
+            {
+                events.NotifyAsync(new OnPlayerItemAugment(player, this, augment, false));
+            }
+        }
+    }
 
 	public void restoreAttributes()
 	{
@@ -1766,25 +1774,18 @@ public class Item: WorldObject
 
 	public bool isAvailable()
 	{
-		if (!_itemTemplate.isConditionAttached())
-		{
+        List<Condition>? conditions = _itemTemplate.getConditions();
+		if (!_itemTemplate.isConditionAttached() || conditions == null)
 			return true;
-		}
-		if (_loc == ItemLocation.PET || _loc == ItemLocation.PET_EQUIP)
-		{
+
+        if (_loc == ItemLocation.PET || _loc == ItemLocation.PET_EQUIP)
 			return true;
-		}
 
 		Player? player = getActingPlayer();
 		if (player != null)
-		{
-			foreach (Condition condition in _itemTemplate.getConditions())
+        {
+			foreach (Condition condition in conditions)
 			{
-				if (condition == null)
-				{
-					continue;
-				}
-
 				if (!condition.test(player, player, null, _itemTemplate))
 				{
 					return false;
@@ -1794,7 +1795,7 @@ public class Item: WorldObject
 			if (player.hasRequest<AutoPeelRequest>())
 			{
 				EtcItem? etcItem = getEtcItem();
-				if (etcItem != null && etcItem.getExtractableItems() != null)
+				if (etcItem != null && etcItem.getExtractableItems().Count != 0)
 				{
 					return false;
 				}
@@ -1891,16 +1892,17 @@ public class Item: WorldObject
 	public void scheduleLifeTimeTask()
 	{
 		if (!isTimeLimitedItem())
-		{
 			return;
-		}
-		if (getRemainingTime() <= TimeSpan.Zero)
+
+        if (getRemainingTime() <= TimeSpan.Zero)
 		{
 			endOfLife();
 		}
 		else
 		{
-			ItemLifeTimeTaskManager.getInstance().add(this, getTime().Value);
+            // TODO: getTime() is guaranteed to be not null, checked above,
+            // these 2 methods must be merged to avoid such situations
+			ItemLifeTimeTaskManager.getInstance().add(this, getTime()!.Value);
 		}
 	}
 

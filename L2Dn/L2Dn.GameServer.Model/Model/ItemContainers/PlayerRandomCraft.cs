@@ -235,11 +235,11 @@ public class PlayerRandomCraft
 
 				if (holder == null)
 				{
-					_rewardList.Insert(i, getNewReward());
+					_rewardList.Insert(i, getNewReward() ?? throw new InvalidOperationException("New reward is null"));
 				}
 				else if (!holder.isLocked())
 				{
-					_rewardList[i] = getNewReward();
+					_rewardList[i] = getNewReward() ?? throw new InvalidOperationException("New reward is null");
 				}
 				else
 				{
@@ -258,12 +258,12 @@ public class PlayerRandomCraft
 			return null;
 
 		RandomCraftRewardItemHolder? result = null;
-		while (result == null)
+		while (result == null) // TODO infinite loop???
 		{
 			result = RandomCraftData.getInstance().getNewReward();
 			foreach (RandomCraftRewardItemHolder reward in _rewardList)
 			{
-				if (reward.getItemId() == result.getItemId())
+				if (reward.getItemId() == result?.getItemId())
 				{
 					result = null;
 					break;

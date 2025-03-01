@@ -11,8 +11,11 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionTargetClassIdRestriction(Set<CharacterClass> classId): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
+        if (effected is null)
+            return false;
+
         Player? effectedPlayer = effected.getActingPlayer();
         return effected.isPlayer() && effectedPlayer is not null && classId.Contains(effectedPlayer.getClassId());
     }

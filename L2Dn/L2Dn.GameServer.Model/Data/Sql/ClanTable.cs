@@ -115,11 +115,6 @@ public class ClanTable
 	 */
 	public Clan? createClan(Player player, string clanName)
 	{
-		if (player == null)
-		{
-			return null;
-		}
-
 		// if (player.getLevel() < 10)
 		// {
 		// player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_CRITERIA_IN_ORDER_TO_CREATE_A_CLAN);
@@ -155,10 +150,7 @@ public class ClanTable
 			return null;
 		}
 
-		Clan clan = new Clan(IdManager.getInstance().getNextId(), clanName);
-		ClanMember leader = new ClanMember(clan, player);
-		clan.setLeader(leader);
-		leader.setPlayer(player);
+		Clan clan = new Clan(IdManager.getInstance().getNextId(), clanName, player);
 		clan.store();
 		player.setClan(clan);
 		player.setPledgeClass(ClanMember.calculatePledgeClass(player));

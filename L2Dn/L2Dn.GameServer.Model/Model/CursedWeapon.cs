@@ -181,7 +181,7 @@ public class CursedWeapon : INamable
 		dropIt(attackable, player, null, true);
 	}
 
-	private void dropIt(Attackable attackable, Player player, Creature killer, bool fromMonster)
+	private void dropIt(Attackable attackable, Player player, Creature? killer, bool fromMonster)
 	{
 		_isActivated = false;
 		if (fromMonster)
@@ -236,7 +236,7 @@ public class CursedWeapon : INamable
 		msg.Params.addItemName(_player.getCursedWeaponEquippedId());
 		CursedWeaponsManager.announce(msg);
 
-		CursedWeapon cw = CursedWeaponsManager.getInstance().getCursedWeapon(_player.getCursedWeaponEquippedId());
+		CursedWeapon? cw = CursedWeaponsManager.getInstance().getCursedWeapon(_player.getCursedWeaponEquippedId());
 		SystemMessagePacket msg2 = new SystemMessagePacket(SystemMessageId.S1_HAS_S2_MIN_OF_USAGE_TIME_REMAINING);
 		msg2.Params.addItemName(_player.getCursedWeaponEquippedId());
 		msg2.Params.addInt((int)cw.getTimeLeft().TotalMinutes);

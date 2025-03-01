@@ -3949,7 +3949,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// Notify to scripts when the attack has been done.
 		if (_eventContainer.HasSubscribers<OnCreatureAttack>())
 		{
-			_onCreatureAttack ??= new OnCreatureAttack();
+			_onCreatureAttack ??= new OnCreatureAttack(this, target);
 			_onCreatureAttack.setAttacker(this);
 			_onCreatureAttack.setTarget(target);
 			_onCreatureAttack.setSkill(null);
@@ -3960,7 +3960,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		if (target.Events.HasSubscribers<OnCreatureAttacked>())
 		{
-			_onCreatureAttacked ??= new OnCreatureAttacked();
+			_onCreatureAttacked ??= new OnCreatureAttacked(this, target);
 			_onCreatureAttacked.setAttacker(this);
 			_onCreatureAttacked.setTarget(target);
 			_onCreatureAttacked.setSkill(null);
@@ -4745,8 +4745,10 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		// Notify of this attack only if there is an attacking creature.
 		if (attacker != null)
-		{
-			_onCreatureDamageDealt ??= new OnCreatureDamageDealt();
+        {
+            _onCreatureDamageDealt ??=
+                new OnCreatureDamageDealt(attacker, this, skill, amount, critical, isDOT, reflect);
+
 			_onCreatureDamageDealt.setAttacker(attacker);
 			_onCreatureDamageDealt.setTarget(this);
 			_onCreatureDamageDealt.setDamage(amount);
@@ -4755,10 +4757,11 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			_onCreatureDamageDealt.setDamageOverTime(isDOT);
 			_onCreatureDamageDealt.setReflect(reflect);
 			_onCreatureDamageDealt.Abort = false;
+
 			attacker._eventContainer.Notify(_onCreatureDamageDealt);
 		}
 
-		_onCreatureDamageReceived ??= new OnCreatureDamageReceived();
+		_onCreatureDamageReceived ??= new OnCreatureDamageReceived(attacker, this, skill, amount, critical, isDOT, reflect);
 		_onCreatureDamageReceived.setAttacker(attacker);
 		_onCreatureDamageReceived.setTarget(this);
 		_onCreatureDamageReceived.setDamage(amount);
@@ -4767,6 +4770,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		_onCreatureDamageReceived.setDamageOverTime(isDOT);
 		_onCreatureDamageReceived.setReflect(reflect);
 		_onCreatureDamageReceived.Abort = false;
+
 		if (_eventContainer.Notify(_onCreatureDamageReceived))
 		{
 			if (_onCreatureDamageReceived.Terminate)
@@ -5188,7 +5192,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	{
 		if (target.Events.HasSubscribers<OnCreatureAttackAvoid>())
 		{
-			_onCreatureAttackAvoid ??= new OnCreatureAttackAvoid();
+			_onCreatureAttackAvoid ??= new OnCreatureAttackAvoid(this, target, isDot);
 			_onCreatureAttackAvoid.setAttacker(this);
 			_onCreatureAttackAvoid.setTarget(target);
 			_onCreatureAttackAvoid.setDamageOverTime(isDot);

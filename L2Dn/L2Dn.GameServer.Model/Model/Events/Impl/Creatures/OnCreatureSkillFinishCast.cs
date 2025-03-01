@@ -9,14 +9,15 @@ namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
  * An instantly executed event when Caster has finished using a skill.
  * @author Nik
  */
-public class OnCreatureSkillFinishCast: EventBase
+public class OnCreatureSkillFinishCast(Creature caster, WorldObject? target, Skill skill, bool simultaneously)
+    : EventBase
 {
-	private Creature _caster;
-	private WorldObject? _target;
-	private Skill _skill;
-	private bool _simultaneously;
+	private Creature _caster = caster;
+	private WorldObject? _target = target;
+	private Skill _skill = skill;
+	private bool _simultaneously = simultaneously;
 
-	public Creature getCaster()
+    public Creature getCaster()
 	{
 		return _caster;
 	}

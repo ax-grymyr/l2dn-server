@@ -24,23 +24,19 @@ public class OlympiadGameClassed: OlympiadGameNormal
 
 	public static OlympiadGameClassed? createGame(int id, List<Set<int>> classList)
 	{
-		if (classList == null || classList.Count == 0)
-		{
+		if (classList.Count == 0)
 			return null;
-		}
 
-		Set<int> list;
-		Participant[] opponents;
-		while (classList.Count != 0)
+        while (classList.Count != 0)
 		{
-			list = classList.GetRandomElement();
-			if (list == null || list.Count < 2)
+			Set<int> list = classList.GetRandomElement();
+			if (list.Count < 2)
 			{
 				classList.Remove(list);
 				continue;
 			}
 
-			opponents = createListOfParticipants(list);
+			Participant[]? opponents = createListOfParticipants(list);
 			if (opponents == null)
 			{
 				classList.Remove(list);

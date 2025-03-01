@@ -63,8 +63,8 @@ public class SendMessageLocalisationData: DataReaderBase
 	public static string getLocalisation(Player player, string message)
 	{
 		if (Config.MULTILANG_ENABLE && player != null)
-		{
-			Map<string[], string[]>? localisations = SEND_MESSAGE_LOCALISATIONS.get(player.getLang());
+        {
+            Map<string[], string[]>? localisations = SEND_MESSAGE_LOCALISATIONS.get(player.getLang() ?? "en");
 			if (localisations != null)
 			{
 				// No pretty way of doing something like this.

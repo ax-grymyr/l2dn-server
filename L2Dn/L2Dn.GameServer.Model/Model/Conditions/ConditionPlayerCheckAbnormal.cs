@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public class ConditionPlayerCheckAbnormal(AbnormalType type, int level = -1): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         if (level == -1)
             return effector.getEffectList().hasAbnormalType(type);

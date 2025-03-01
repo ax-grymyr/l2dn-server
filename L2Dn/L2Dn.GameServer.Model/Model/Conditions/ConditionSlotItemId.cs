@@ -11,9 +11,9 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public class ConditionSlotItemId(int slot, int itemId, int enchantLevel): ConditionInventory(slot)
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
-        if (effector == null || !effector.isPlayer())
+        if (!effector.isPlayer())
             return false;
 
         Item? itemSlot = effector.getInventory()?.getPaperdollItem(Slot);

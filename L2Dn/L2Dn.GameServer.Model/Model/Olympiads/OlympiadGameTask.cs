@@ -88,6 +88,9 @@ public class OlympiadGameTask: Runnable
 
 	public void run()
 	{
+        if (_game == null)
+            return;
+
 		try
 		{
 			int delay = 1; // schedule next call after 1s
@@ -304,7 +307,7 @@ public class OlympiadGameTask: Runnable
 			return delay;
 		}
 
-		// should not happens
+		// should not happen
 		_countDown = -1;
 		return 1;
 	}
@@ -315,7 +318,10 @@ public class OlympiadGameTask: Runnable
 	 */
 	private bool startGame()
 	{
-		try
+        if (_game is null)
+            return false;
+
+        try
 		{
 			// Checking for opponents and teleporting to arena
 			if (_game.checkDefaulted())
@@ -353,7 +359,10 @@ public class OlympiadGameTask: Runnable
 	 */
 	private bool startBattle()
 	{
-		try
+        if (_game is null)
+            return false;
+
+        try
 		{
 			if (_game.needBuffers())
 			{
@@ -383,7 +392,10 @@ public class OlympiadGameTask: Runnable
 	 */
 	private bool checkBattle()
 	{
-		try
+        if (_game is null)
+            return false;
+
+        try
 		{
 			return _game.haveWinner();
 		}
@@ -400,7 +412,10 @@ public class OlympiadGameTask: Runnable
 	 */
 	private void stopGame()
 	{
-		try
+        if (_game is null)
+            return;
+
+        try
 		{
 			_game.validateWinner(_stadium);
 		}
@@ -442,6 +457,9 @@ public class OlympiadGameTask: Runnable
 	 */
 	private void cleanupGame()
 	{
+        if (_game is null)
+            return;
+
 		try
 		{
 			_game.removePlayersInvul();

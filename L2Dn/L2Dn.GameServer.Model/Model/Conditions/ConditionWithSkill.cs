@@ -10,8 +10,8 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionWithSkill(bool withSkill): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
-        return skill != null == withSkill;
+        return withSkill == (skill != null);
     }
 }

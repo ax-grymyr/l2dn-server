@@ -26,11 +26,12 @@ public class OlympiadAnnouncer: Runnable
 			}
 
 			task = OlympiadGameManager.getInstance().getOlympiadTask(_currentStadium);
-			if (task != null && task.getGame() != null && task.needAnnounce())
+            AbstractOlympiadGame? game = task?.getGame();
+			if (task != null && game != null && task.needAnnounce())
 			{
 				NpcStringId npcString;
-				string arenaId = (task.getGame().getStadiumId() + 1).ToString();
-				switch (task.getGame().getType())
+				string arenaId = (game.getStadiumId() + 1).ToString();
+				switch (game.getType())
 				{
 					case CompetitionType.NON_CLASSED:
 					{

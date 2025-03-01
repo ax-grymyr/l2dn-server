@@ -12,14 +12,26 @@ namespace L2Dn.GameServer.Model.Events.Impl.Creatures;
 public class OnCreatureDamageReceived: DamageEventBase
 {
 	private Creature? _attacker;
-	private Creature? _target;
+	private Creature _target;
 	private double _damage;
 	private Skill? _skill;
 	private bool _crit;
 	private bool _damageOverTime;
 	private bool _reflect;
 
-	public Creature? getAttacker()
+    public OnCreatureDamageReceived(Creature? attacker, Creature target, Skill? skill, double damage, bool crit,
+        bool damageOverTime, bool reflect)
+    {
+        _attacker = attacker;
+        _target = target;
+        _skill = skill;
+        _damage = damage;
+        _crit = crit;
+        _damageOverTime = damageOverTime;
+        _reflect = reflect;
+    }
+
+    public Creature? getAttacker()
 	{
 		return _attacker;
 	}
@@ -29,12 +41,12 @@ public class OnCreatureDamageReceived: DamageEventBase
 		_attacker = attacker;
 	}
 
-	public Creature? getTarget()
+	public Creature getTarget()
 	{
 		return _target;
 	}
 
-	public void setTarget(Creature? target)
+	public void setTarget(Creature target)
 	{
 		_target = target;
 	}

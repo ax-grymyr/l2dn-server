@@ -8,12 +8,12 @@ namespace L2Dn.GameServer.Model.Items;
 */
 public class EtcItem: ItemTemplate
 {
-	private string _handler = string.Empty;
-	private EtcItemType _type;
+    private readonly EtcItemType _type;
+	private readonly string _handler;
 	private List<ExtractableProduct> _extractableItems = [];
-	private int _extractableCountMin;
-	private int _extractableCountMax;
-	private bool _isInfinite;
+	private readonly int _extractableCountMin;
+	private readonly int _extractableCountMax;
+	private readonly bool _isInfinite;
 	private bool _isMineral;
 	private bool _isEnsoulStone;
 
@@ -23,34 +23,29 @@ public class EtcItem: ItemTemplate
  */
 	public EtcItem(StatSet set): base(set)
 	{
-	}
+        _type = set.getEnum("etcitem_type", EtcItemType.NONE);
+        _type1 = TYPE1_ITEM_QUESTITEM_ADENA;
+        _type2 = TYPE2_OTHER; // default is other
 
-	public override void set(StatSet set)
-	{
-		base.set(set);
-		_type = set.getEnum("etcitem_type", EtcItemType.NONE);
-		_type1 = ItemTemplate.TYPE1_ITEM_QUESTITEM_ADENA;
-		_type2 = ItemTemplate.TYPE2_OTHER; // default is other
+        if (isQuestItem())
+        {
+            _type2 = TYPE2_QUEST;
+        }
+        else if (getId() == Inventory.ADENA_ID || getId() == Inventory.ANCIENT_ADENA_ID)
+        {
+            _type2 = TYPE2_MONEY;
+        }
 
-		if (isQuestItem())
-		{
-			_type2 = ItemTemplate.TYPE2_QUEST;
-		}
-		else if (getId() == Inventory.ADENA_ID || getId() == Inventory.ANCIENT_ADENA_ID)
-		{
-			_type2 = ItemTemplate.TYPE2_MONEY;
-		}
+        _handler = set.getString("handler", string.Empty); // ! null !
 
-		_handler = set.getString("handler", string.Empty); // ! null !
+        _extractableCountMin = set.getInt("extractableCountMin", 0);
+        _extractableCountMax = set.getInt("extractableCountMax", 0);
+        if (_extractableCountMin > _extractableCountMax)
+        {
+            LOGGER.Warn("Item " + this + " extractableCountMin is bigger than extractableCountMax!");
+        }
 
-		_extractableCountMin = set.getInt("extractableCountMin", 0);
-		_extractableCountMax = set.getInt("extractableCountMax", 0);
-		if (_extractableCountMin > _extractableCountMax)
-		{
-			LOGGER.Warn("Item " + this + " extractableCountMin is bigger than extractableCountMax!");
-		}
-
-		_isInfinite = set.getBoolean("is_infinite", false);
+        _isInfinite = set.getBoolean("is_infinite", false);
 	}
 
 	public override ItemType getItemType()

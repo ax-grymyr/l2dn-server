@@ -41,9 +41,6 @@ public class ClanMember
 	 */
 	public ClanMember(Clan clan, Character clanMember)
 	{
-		if (clan == null)
-			throw new ArgumentNullException(nameof(clan),"Cannot create a Clan Member with a null clan.");
-
 		_clan = clan;
 		_name = clanMember.Name;
 		_level = clanMember.Level;
@@ -65,10 +62,6 @@ public class ClanMember
 	 */
 	public ClanMember(Clan clan, Player player)
 	{
-		if (clan == null)
-		{
-			throw new ArgumentNullException(nameof(clan),"Cannot create a Clan Member with a null clan.");
-		}
 		_player = player;
 		_clan = clan;
 		_name = player.getName();

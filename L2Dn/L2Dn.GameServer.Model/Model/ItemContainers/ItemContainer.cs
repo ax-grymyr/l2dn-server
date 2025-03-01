@@ -14,7 +14,7 @@ public abstract class ItemContainer
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemContainer));
 
-	protected readonly Set<Item> _items = new();
+	protected readonly Set<Item> _items = [];
 
 	protected ItemContainer()
 	{
@@ -331,7 +331,7 @@ public abstract class ItemContainer
 			{
 				targetitem.updateDatabase();
 			}
-			if (sourceitem.isAugmented())
+			if (sourceitem.isAugmented() && actor != null)
 			{
 				sourceitem.getAugmentation()?.removeBonus(actor);
 			}
@@ -665,7 +665,7 @@ public abstract class ItemContainer
 	/**
 	 * @param itemId the item Id to verify
 	 * @param count amount of item's weight to validate
-	 * @return {@code true} if the item doesn't exists or it validates its weight
+	 * @return {@code true} if the item doesn't exist, or it validates its weight
 	 */
 	public bool validateWeightByItemId(int itemId, long count)
 	{

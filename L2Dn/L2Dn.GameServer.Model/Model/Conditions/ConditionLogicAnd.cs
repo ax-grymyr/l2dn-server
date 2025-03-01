@@ -51,7 +51,7 @@ public class ConditionLogicAnd: Condition
         base.setListener(listener);
     }
 
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         foreach (Condition c in conditions)
         {

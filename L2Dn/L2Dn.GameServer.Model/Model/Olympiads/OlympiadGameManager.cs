@@ -72,13 +72,16 @@ public class OlympiadGameManager: Runnable
 				// set up the games queue
 				for (int i = 0; i < _tasks.Count; i++)
 				{
-					OlympiadGameTask task = _tasks[i].getTask();
+					OlympiadGameTask? task = _tasks[i].getTask();
+                    if (task == null)
+                        continue;
+
 					lock (task)
 					{
 						if (!task.isRunning())
 						{
 							// Fair arena distribution
-							// 0,2,4,6,8.. arenas checked for classed or teams first
+							// 0,2,4,6,8... arenas checked for classed or teams first
 							if (readyClassed != null)
 							{
 								newGame = OlympiadGameClassed.createGame(i, readyClassed);
@@ -119,11 +122,6 @@ public class OlympiadGameManager: Runnable
 				{
 					foreach (int id in OlympiadManager.getInstance().getRegisteredNonClassBased())
 					{
-						if (id == null)
-						{
-							continue;
-						}
-
 						Player? noble = World.getInstance().getPlayer(id);
 						if (noble != null)
 						{
@@ -135,11 +133,6 @@ public class OlympiadGameManager: Runnable
 					{
 						foreach (int id in list)
 						{
-							if (id == null)
-							{
-								continue;
-							}
-
 							Player? noble = World.getInstance().getPlayer(id);
 							if (noble != null)
 							{
@@ -168,8 +161,8 @@ public class OlympiadGameManager: Runnable
 	{
 		foreach (OlympiadStadium stadium in _tasks)
 		{
-			OlympiadGameTask task = stadium.getTask();
-			if (task.isRunning())
+			OlympiadGameTask? task = stadium.getTask();
+			if (task !=null && task.isRunning())
 			{
 				return false;
 			}
@@ -204,7 +197,7 @@ public class OlympiadGameManager: Runnable
 			return;
 		}
 
-		AbstractOlympiadGame game = _tasks[id].getTask().getGame();
+		AbstractOlympiadGame? game = _tasks[id].getTask()?.getGame();
 		if (game != null)
 		{
 			game.addDamage(attacker, damage);

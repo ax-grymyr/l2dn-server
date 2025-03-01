@@ -12,12 +12,12 @@ public class RespawnTaskManager: Runnable
 {
 	private static readonly Map<Npc, DateTime> PENDING_RESPAWNS = new();
 	private static bool _working = false;
-	
+
 	protected RespawnTaskManager()
 	{
 		ThreadPool.scheduleAtFixedRate(this, 0, 1000);
 	}
-	
+
 	public void run()
 	{
 		if (_working)
@@ -34,7 +34,7 @@ public class RespawnTaskManager: Runnable
 			{
 				PENDING_RESPAWNS.remove(npc);
 
-				Spawn spawn = npc.getSpawn();
+				Spawn? spawn = npc.getSpawn();
 				if (spawn != null)
 				{
 					spawn.respawnNpc(npc);
@@ -45,17 +45,17 @@ public class RespawnTaskManager: Runnable
 
 		_working = false;
 	}
-	
+
 	public void add(Npc npc, DateTime time)
 	{
 		PENDING_RESPAWNS.put(npc, time);
 	}
-	
+
 	public static RespawnTaskManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly RespawnTaskManager INSTANCE = new RespawnTaskManager();

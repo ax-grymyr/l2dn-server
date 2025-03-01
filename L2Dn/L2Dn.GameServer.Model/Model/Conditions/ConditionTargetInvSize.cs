@@ -10,10 +10,13 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionTargetInvSize(int size): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
+        if (effected is null)
+            return false;
+
         Player? target = effected.getActingPlayer();
-        if (effected != null && effected.isPlayer() && target != null)
+        if (effected.isPlayer() && target != null)
             return target.getInventory().getNonQuestSize() <= target.getInventoryLimit() - size;
 
         return false;

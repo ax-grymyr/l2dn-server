@@ -9,9 +9,9 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionUsingSlotType(long mask): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
-        if (effector == null || !effector.isPlayer())
+        if (!effector.isPlayer())
             return false;
 
         Weapon? activeWeapon = effector.getActiveWeaponItem();

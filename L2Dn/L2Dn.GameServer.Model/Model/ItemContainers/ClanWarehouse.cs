@@ -28,7 +28,7 @@ public class ClanWarehouse: Warehouse
 
 	public override Player getOwner()
 	{
-		return _clan.getLeader().getPlayer();
+		return _clan.getLeader().getPlayer() ?? throw new InvalidOperationException("Clan leader is null");
 	}
 
 	public override ItemLocation getBaseLocation()
@@ -58,7 +58,7 @@ public class ClanWarehouse: Warehouse
         return item;
 	}
 
-	public override Item addItem(string process, Item item, Player actor, object? reference)
+	public override Item? addItem(string process, Item item, Player? actor, object? reference)
 	{
 		// Notify to scripts
 		EventContainer itemEvents = item.getTemplate().Events;
@@ -82,10 +82,12 @@ public class ClanWarehouse: Warehouse
 		return base.destroyItem(process, item, count, actor, reference);
 	}
 
-	public override Item? transferItem(string process, int objectId, long count, ItemContainer target, Player actor,
+	public override Item? transferItem(string process, int objectId, long count, ItemContainer target, Player? actor,
 		object? reference)
 	{
 		Item? item = getItemByObjectId(objectId);
+        if (item == null)
+            return null;
 
 		// Notify to scripts
 		EventContainer itemEvents = item.getTemplate().Events;

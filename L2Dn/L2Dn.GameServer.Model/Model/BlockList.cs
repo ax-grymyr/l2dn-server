@@ -142,7 +142,7 @@ public class BlockList
 			return;
 		}
 
-		string charName = CharInfoTable.getInstance().getNameById(targetId);
+		string? charName = CharInfoTable.getInstance().getNameById(targetId);
 		if (listOwner.getFriendList().Contains(targetId))
 		{
 			listOwner.sendPacket(SystemMessageId.THIS_PLAYER_IS_ALREADY_REGISTERED_ON_YOUR_FRIENDS_LIST);
@@ -161,7 +161,7 @@ public class BlockList
 		sm.Params.addString(charName);
 		listOwner.sendPacket(sm);
 
-		Player player = World.getInstance().getPlayer(targetId);
+		Player? player = World.getInstance().getPlayer(targetId);
 		if (player != null)
 		{
 			sm = new SystemMessagePacket(SystemMessageId.C1_HAS_ADDED_YOU_TO_THEIR_IGNORE_LIST);
@@ -179,7 +179,7 @@ public class BlockList
 
 		SystemMessagePacket sm;
 
-		string charName = CharInfoTable.getInstance().getNameById(targetId);
+		string? charName = CharInfoTable.getInstance().getNameById(targetId);
 		if (!listOwner.getBlockList().getBlockList().Contains(targetId))
 		{
 			sm = new SystemMessagePacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
@@ -221,7 +221,7 @@ public class BlockList
 	 */
 	public static bool isInBlockList(int ownerId, int targetId)
 	{
-		Player player = World.getInstance().getPlayer(ownerId);
+		Player? player = World.getInstance().getPlayer(ownerId);
 		if (player != null)
 		{
 			return isBlocked(player, targetId);

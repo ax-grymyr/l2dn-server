@@ -12,7 +12,7 @@ public class ConditionPlayerServitorNpcId(List<int> npcIds): Condition
 {
     private readonly ImmutableArray<int> _npcIds = npcIds is [0] ? default : npcIds.ToImmutableArray();
 
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         Player? actingPlayer = effector.getActingPlayer();
         if (actingPlayer is null || !actingPlayer.hasSummon())

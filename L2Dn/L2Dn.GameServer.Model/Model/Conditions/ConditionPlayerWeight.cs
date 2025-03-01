@@ -21,7 +21,7 @@ public class ConditionPlayerWeight: Condition
         _weight = weight;
     }
 
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         Player? player = effector.getActingPlayer();
         if (player != null && player.getMaxLoad() > 0)

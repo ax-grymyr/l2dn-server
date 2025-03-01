@@ -11,8 +11,8 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionTargetRace(Race race): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
-        return race == effected.getRace();
+        return effected != null && race == effected.getRace();
     }
 }

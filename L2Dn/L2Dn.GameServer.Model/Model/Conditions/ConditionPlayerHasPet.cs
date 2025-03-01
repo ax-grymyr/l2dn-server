@@ -14,7 +14,7 @@ public sealed class ConditionPlayerHasPet(List<int> itemIds): Condition
 {
     private readonly ImmutableArray<int> _controlItemIds = itemIds is [0] ? default : itemIds.ToImmutableArray();
 
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         Summon? pet = effector.getActingPlayer()?.getPet();
         if (pet is null)

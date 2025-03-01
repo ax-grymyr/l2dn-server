@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionPlayerState(PlayerState check, bool required): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         Player? player = effector.getActingPlayer();
         switch (check)
@@ -48,11 +48,11 @@ public sealed class ConditionPlayerState(PlayerState check, bool required): Cond
             }
             case PlayerState.BEHIND:
             {
-                return effector.IsBehindOf(effected) == required;
+                return effected != null && effector.IsBehindOf(effected) == required;
             }
             case PlayerState.FRONT:
             {
-                return effector.IsInFrontOf(effected) == required;
+                return effected != null && effector.IsInFrontOf(effected) == required;
             }
             case PlayerState.CHAOTIC:
             {

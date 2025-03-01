@@ -418,7 +418,7 @@ public class NpcData: DataReaderBase
 		}
 		else
 		{
-			template.set(set);
+			throw new InvalidOperationException("Npc template already exist with id: " + template.getId());
 		}
 
 		if (parameters != null)

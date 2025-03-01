@@ -58,7 +58,7 @@ public class Clan: IIdentifiable, INamable
 	/** Clan subunit type of Order of Knights B-2 */
 	public const int SUBUNIT_KNIGHT4 = 2002;
 
-	private string _name;
+	private string _name = string.Empty;
 	private int _clanId;
 	private ClanMember _leader;
 	private readonly Map<int, ClanMember> _members = new();
@@ -95,7 +95,7 @@ public class Clan: IIdentifiable, INamable
 	private int _rank;
 	private int _exp;
 
-	private string _notice;
+	private string _notice = string.Empty;
 	private bool _noticeEnabled;
 	private const int MAX_NOTICE_LENGTH = 8192;
 	private int? _newLeaderId;
@@ -106,7 +106,7 @@ public class Clan: IIdentifiable, INamable
 	private ClanRewardBonus? _lastMembersOnlineBonus;
 	private ClanRewardBonus? _lastHuntingBonus;
 
-	private volatile ClanVariables _vars;
+	private ClanVariables? _vars;
 
 	/**
 	 * Called if a clan is referenced only by id. In this case all other data needs to be fetched from db
@@ -117,7 +117,8 @@ public class Clan: IIdentifiable, INamable
 		_clanId = clanId;
 		_warehouse = new ClanWarehouse(this);
 		initializePrivs();
-		restore();
+        _leader = null!; // TODO: hack
+		restore(); // TODO: clan must be instantiated in 2 ways: new clan by player or clan restored from db
 		_warehouse.restore();
 
 		ClanRewardBonus? availableOnlineBonus = getAvailableBonus(ClanRewardType.MEMBERS_ONLINE);
@@ -138,12 +139,13 @@ public class Clan: IIdentifiable, INamable
 	 * @param clanId A valid clan Id to create
 	 * @param clanName A valid clan name
 	 */
-	public Clan(int clanId, string clanName)
+	public Clan(int clanId, string clanName, Player leader)
 	{
 		_clanId = clanId;
 		_warehouse = new ClanWarehouse(this);
 		_name = clanName;
 		initializePrivs();
+        _leader = new ClanMember(this, leader);
 	}
 
 	/**
@@ -3034,18 +3036,11 @@ public class Clan: IIdentifiable, INamable
 		return _vars;
 	}
 
-	public bool hasVariables()
-	{
-		return _vars != null;
-	}
-
 	private void storeVariables()
 	{
-		ClanVariables vars = _vars;
+		ClanVariables? vars = _vars;
 		if (vars != null)
-		{
 			vars.storeMe();
-		}
 	}
 
 	public int getClanContribution(int objId)

@@ -9,8 +9,11 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public class ConditionTargetActiveEffectId(int effectId, int effectLevel = -1): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
+        if (effected is null)
+            return false;
+
         BuffInfo? info = effected.getEffectList().getBuffInfoBySkillId(effectId);
         return info != null && (effectLevel == -1 || effectLevel <= info.getSkill().getLevel());
     }

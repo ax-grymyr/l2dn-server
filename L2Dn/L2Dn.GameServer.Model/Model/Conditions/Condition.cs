@@ -89,7 +89,7 @@ public abstract class Condition: ConditionListener
         return _listener;
     }
 
-    public bool test(Creature caster, Creature target, Skill? skill = null, ItemTemplate? item = null)
+    public bool test(Creature caster, Creature? target, Skill? skill = null, ItemTemplate? item = null)
     {
         bool res = TestImpl(caster, target, skill, item);
         if (_listener != null && res != _result)
@@ -109,7 +109,7 @@ public abstract class Condition: ConditionListener
      * @param item the item
      * @return {@code true} if successful, {@code false} otherwise
      */
-    protected abstract bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item);
+    protected abstract bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item);
 
     public void notifyChanged()
     {

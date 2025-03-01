@@ -227,7 +227,7 @@ public abstract class AbstractResidence: INamable
 	{
 		foreach (ResidenceFunction function  in  _functions.Values)
 		{
-			ResidenceFunctionTemplate template = function.getTemplate();
+			ResidenceFunctionTemplate? template = function.getTemplate();
 			if (template != null && template.getType() == type)
 			{
 				return true;

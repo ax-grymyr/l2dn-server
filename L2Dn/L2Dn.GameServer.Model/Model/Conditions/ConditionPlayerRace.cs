@@ -13,10 +13,10 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public sealed class ConditionPlayerRace(Set<Race> races): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         Player? player = effector.getActingPlayer();
-        if (effector == null || !effector.isPlayer() || player is null)
+        if (!effector.isPlayer() || player is null)
             return false;
 
         return races.Contains(player.getRace());

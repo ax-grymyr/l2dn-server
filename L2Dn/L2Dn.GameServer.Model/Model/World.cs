@@ -690,7 +690,7 @@ public sealed class World
 				LOGGER.Warn("Deleting npc " + @object.getName() + " NPCID[" + npc.getId() + "] from invalid location X:" + @object.getX() + " Y:" + @object.getY() + " Z:" + @object.getZ());
 				npc.deleteMe();
 
-				Spawn spawn = npc.getSpawn();
+				Spawn? spawn = npc.getSpawn();
 				if (spawn != null)
 				{
 					LOGGER.Warn("Spawn location: " + spawn.Location);

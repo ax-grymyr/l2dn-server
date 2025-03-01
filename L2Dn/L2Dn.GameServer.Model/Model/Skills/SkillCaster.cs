@@ -512,7 +512,7 @@ public class SkillCaster: Runnable
         // Notify skill is casted.
 		if (caster.Events.HasSubscribers<OnCreatureSkillFinishCast>())
 		{
-			caster.onCreatureSkillFinishCast ??= new OnCreatureSkillFinishCast();
+			caster.onCreatureSkillFinishCast ??= new OnCreatureSkillFinishCast(caster, target, _skill, _skill.isWithoutAction());
 			caster.onCreatureSkillFinishCast.setCaster(caster);
 			caster.onCreatureSkillFinishCast.setTarget(target);
 			caster.onCreatureSkillFinishCast.setSkill(_skill);
@@ -757,7 +757,7 @@ public class SkillCaster: Runnable
         Player? currPlayer = caster.getActingPlayer();
 		if (caster.isPlayer() && currPlayer != null)
 		{
-			SkillUseHolder queuedSkill = currPlayer.getQueuedSkill();
+			SkillUseHolder? queuedSkill = currPlayer.getQueuedSkill();
 			if (queuedSkill != null)
 			{
 				ThreadPool.execute(() =>
@@ -897,7 +897,7 @@ public class SkillCaster: Runnable
 				// Notify skill is casted.
 				if (creature.Events.HasSubscribers<OnCreatureSkillFinishCast>())
 				{
-					creature.onCreatureSkillFinishCast ??= new OnCreatureSkillFinishCast();
+					creature.onCreatureSkillFinishCast ??= new OnCreatureSkillFinishCast(creature, target, skill, skill.isWithoutAction());
 					creature.onCreatureSkillFinishCast.setCaster(creature);
 					creature.onCreatureSkillFinishCast.setTarget(target);
 					creature.onCreatureSkillFinishCast.setSkill(skill);
@@ -1014,7 +1014,7 @@ public class SkillCaster: Runnable
 
 		if (caster.Events.HasSubscribers<OnCreatureSkillUse>())
 		{
-			caster.onCreatureSkillUse ??= new OnCreatureSkillUse();
+			caster.onCreatureSkillUse ??= new OnCreatureSkillUse(caster, skill, skill.isWithoutAction());
 			caster.onCreatureSkillUse.setCaster(caster);
 			caster.onCreatureSkillUse.setSkill(skill);
 			caster.onCreatureSkillUse.setSimultaneously(skill.isWithoutAction());

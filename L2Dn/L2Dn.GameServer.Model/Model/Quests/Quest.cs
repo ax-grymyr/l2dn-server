@@ -171,7 +171,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public int getNpcStringId()
 	{
-		return _questNameNpcStringId != null ? (int)_questNameNpcStringId / 100 : _questId > 10000 ? _questId - 5000 : _questId;
+		return _questNameNpcStringId != 0 ? (int)_questNameNpcStringId / 100 : _questId > 10000 ? _questId - 5000 : _questId;
 	}
 
 	public NpcStringId getQuestNameNpcStringId()
@@ -354,7 +354,7 @@ public class Quest: AbstractScript, IIdentifiable
 			return;
 		}
 
-		List<QuestTimer> timers = _questTimers.get(name);
+		List<QuestTimer>? timers = _questTimers.get(name);
 		if (timers == null || timers.Count == 0)
 		{
 			return;
@@ -384,7 +384,7 @@ public class Quest: AbstractScript, IIdentifiable
 			return;
 		}
 
-		List<QuestTimer> timers = _questTimers.get(name);
+		List<QuestTimer>? timers = _questTimers.get(name);
 		if (timers == null || timers.Count == 0)
 		{
 			return;
@@ -411,7 +411,7 @@ public class Quest: AbstractScript, IIdentifiable
 			return;
 		}
 
-		List<QuestTimer> timers = _questTimers.get(timer.ToString());
+		List<QuestTimer>? timers = _questTimers.get(timer.ToString());
 		if (timers != null)
 		{
 			timers.Remove(timer);
@@ -429,7 +429,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyAttack(Npc npc, Player attacker, int damage, bool isSummon, Skill skill)
 	{
-		string res = null;
+		string? res = null;
 		try
 		{
 			res = onAttack(npc, attacker, damage, isSummon, skill);
@@ -450,7 +450,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyDeath(Creature killer, Creature victim, QuestState qs)
 	{
-		string res = null;
+		string? res = null;
 		try
 		{
 			res = onDeath(killer, victim, qs);
@@ -469,7 +469,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyItemUse(ItemTemplate item, Player player)
 	{
-		string res = null;
+		string? res = null;
 		try
 		{
 			res = onItemUse(item, player);
@@ -489,7 +489,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifySpellFinished(Npc instance, Player player, Skill skill)
 	{
-		string res = null;
+		string? res = null;
 		try
 		{
 			res = onSpellFinished(instance, player, skill);
@@ -510,7 +510,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyTrapAction(Trap trap, Creature trigger, TrapAction action)
 	{
-		string res = null;
+		string? res = null;
 		try
 		{
 			res = onTrapAction(trap, trigger, action);
@@ -524,9 +524,9 @@ public class Quest: AbstractScript, IIdentifiable
 			LOGGER.Warn("Exception on onTrapAction() in notifyTrapAction(): " + e);
 			return;
 		}
-		if (trigger.getActingPlayer() != null)
+		if (trigger.getActingPlayer() is {} player)
 		{
-			showResult(trigger.getActingPlayer(), res);
+			showResult(player, res);
 		}
 	}
 
@@ -592,7 +592,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyEnterWorld(Player player)
 	{
-		string res = null;
+		string? res = null;
 		try
 		{
 			res = onEnterWorld(player);
@@ -612,7 +612,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyKill(Npc npc, Player killer, bool isSummon)
 	{
-		string res = null;
+		string? res = null;
 		try
 		{
 			// Simulated talk should not exist when killing.
@@ -682,7 +682,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyFirstTalk(Npc npc, Player player)
 	{
-		string res = null;
+		string? res = null;
 		try
 		{
 			res = onFirstTalk(npc, player);
@@ -705,7 +705,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyAcquireSkill(Npc npc, Player player, Skill skill, AcquireSkillType type)
 	{
-		string res = null;
+		string? res = null;
 		try
 		{
 			res = onAcquireSkill(npc, player, skill, type);
@@ -725,7 +725,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyItemTalk(Item item, Player player)
 	{
-		string res = null;
+		string? res = null;
 		try
 		{
 			res = onItemTalk(item, player);
@@ -755,7 +755,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyItemEvent(Item item, Player player, string @event)
 	{
-		string res = null;
+		string? res = null;
 		try
 		{
 			res = onItemEvent(item, player, @event);
@@ -781,7 +781,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifySkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, bool isSummon)
 	{
-		string res = null;
+		string? res = null;
 		try
 		{
 			res = onSkillSee(npc, caster, skill, targets, isSummon);
@@ -802,7 +802,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyFactionCall(Npc npc, Npc caller, Player attacker, bool isSummon)
 	{
-		string res = null;
+		string? res = null;
 		try
 		{
 			res = onFactionCall(npc, caller, attacker, isSummon);
@@ -822,7 +822,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyAggroRangeEnter(Npc npc, Player player, bool isSummon)
 	{
-		string res = null;
+		string? res = null;
 		try
 		{
 			res = onAggroRangeEnter(npc, player, isSummon);
@@ -841,12 +841,13 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyCreatureSee(Npc npc, Creature creature)
 	{
-		Player player = null;
+		Player? player = null;
 		if (creature.isPlayer())
 		{
 			player = creature.getActingPlayer();
 		}
-		string res = null;
+
+		string? res = null;
 		try
 		{
 			res = onCreatureSee(npc, creature);
@@ -889,8 +890,8 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyEnterZone(Creature creature, ZoneType zone)
 	{
-		Player player = creature.getActingPlayer();
-		string res = null;
+		Player? player = creature.getActingPlayer();
+		string? res = null;
 		try
 		{
 			res = onEnterZone(creature, zone);
@@ -915,8 +916,8 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void notifyExitZone(Creature creature, ZoneType zone)
 	{
-		Player player = creature.getActingPlayer();
-		string res = null;
+		Player? player = creature.getActingPlayer();
+		string? res = null;
 		try
 		{
 			res = onExitZone(creature, zone);
@@ -1123,7 +1124,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public string onTalk(Npc npc, Player talker, bool simulated)
 	{
-		QuestState qs = talker.getQuestState(Name);
+		QuestState? qs = talker.getQuestState(Name);
 		if (qs != null)
 		{
 			qs.setSimulated(simulated);
@@ -2293,13 +2294,13 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player this parameter represents the player whom the party will taken.
 	 * @return {@code null} if {@code player} is {@code null}, {@code player} itself if the player does not have a party, and a random party member in all other cases
 	 */
-	public Player getRandomPartyMember(Player player)
+	public Player? getRandomPartyMember(Player player)
 	{
 		if (player == null)
 		{
 			return null;
 		}
-		Party party = player.getParty();
+		Party? party = player.getParty();
 		if (party == null || party.getMembers().Count == 0)
 		{
 			return player;
@@ -2329,7 +2330,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 *         If the {@code var} parameter is {@code null}, a random party member is selected without any conditions.<br>
 	 *         The party member must be within a range of 1500 ingame units of the target of the reference player, or, if no target exists, within the same range of the player itself
 	 */
-	public Player getRandomPartyMember(Player player, string var, string value)
+	public Player? getRandomPartyMember(Player player, string var, string value)
 	{
 		// if no valid player instance is passed, there is nothing to check...
 		if (player == null)
@@ -2344,8 +2345,8 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 
 		// normal cases...if the player is not in a party, check the player's state
-		QuestState temp = null;
-		Party party = player.getParty();
+		QuestState? temp = null;
+		Party? party = player.getParty();
 		// if this player is not in a party, just check if this player instance matches the conditions itself
 		if (party == null || party.getMembers().Count == 0)
 		{
@@ -2360,7 +2361,7 @@ public class Quest: AbstractScript, IIdentifiable
 		// if the player is in a party, gather a list of all matching party members (possibly including this player)
 		List<Player> candidates = new();
 		// get the target for enforcing distance limitations.
-		WorldObject target = player.getTarget();
+		WorldObject? target = player.getTarget();
 		if (target == null)
 		{
 			target = player;
@@ -2396,7 +2397,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param state the quest state required of the random party member
 	 * @return {@code null} if nothing was selected or a random party member that has the specified quest state
 	 */
-	public Player getRandomPartyMemberState(Player player, byte state)
+	public Player? getRandomPartyMemberState(Player player, byte state)
 	{
 		// if no valid player instance is passed, there is nothing to check...
 		if (player == null)
@@ -2405,8 +2406,8 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 
 		// normal cases...if the player is not in a party check the player's state
-		QuestState temp = null;
-		Party party = player.getParty();
+		QuestState? temp = null;
+		Party? party = player.getParty();
 		// if this player is not in a party, just check if this player instance matches the conditions itself
 		if (party == null || party.getMembers().Count == 0)
 		{
@@ -2424,7 +2425,7 @@ public class Quest: AbstractScript, IIdentifiable
 		List<Player> candidates = new();
 
 		// get the target for enforcing distance limitations.
-		WorldObject target = player.getTarget();
+		WorldObject? target = player.getTarget();
 		if (target == null)
 		{
 			target = player;
@@ -2461,14 +2462,14 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param npc the NPC used for distance and other checks (if {@link #checkPartyMember(Player, Npc)} is overriden)
 	 * @return the random party member or {@code null}
 	 */
-	public Player getRandomPartyMember(Player player, Npc npc)
+	public Player? getRandomPartyMember(Player player, Npc npc)
 	{
 		if (player == null || !checkDistanceToTarget(player, npc))
 		{
 			return null;
 		}
-		Party party = player.getParty();
-		Player luckyPlayer = null;
+		Party? party = player.getParty();
+		Player? luckyPlayer = null;
 		if (party == null)
 		{
 			if (checkPartyMember(player, npc))
@@ -2514,14 +2515,14 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param target the NPC to use for the distance check (can be null)
 	 * @return the {@link QuestState} object of the random party member or {@code null} if none matched the condition
 	 */
-	public QuestState getRandomPartyMemberState(Player player, QuestCondType condition, int playerChance, Npc target)
+	public QuestState? getRandomPartyMemberState(Player player, QuestCondType condition, int playerChance, Npc target)
 	{
 		if (player == null || playerChance < 1)
 		{
 			return null;
 		}
 
-		QuestState qs = player.getQuestState(Name);
+		QuestState? qs = player.getQuestState(Name);
 		if (!player.isInParty())
 		{
 			return !checkPartyMemberConditions(qs, condition, target) || !checkDistanceToTarget(player, target) ? null : qs;
@@ -2559,7 +2560,7 @@ public class Quest: AbstractScript, IIdentifiable
 		return !checkDistanceToTarget(qs.getPlayer(), target) ? null : qs;
 	}
 
-	private bool checkPartyMemberConditions(QuestState qs, QuestCondType condition, Npc npc)
+	private bool checkPartyMemberConditions(QuestState? qs, QuestCondType condition, Npc npc)
 	{
 		return qs != null && (condition == (QuestCondType)(-1) ? qs.isStarted() : qs.isCond(condition)) && checkPartyMember(qs, npc);
 	}
@@ -2965,7 +2966,7 @@ public class Quest: AbstractScript, IIdentifiable
 		{
 			foreach (int questId in condition.getPreviousQuestIds())
 			{
-				Quest quest = QuestManager.getInstance().getQuest(questId);
+				Quest? quest = QuestManager.getInstance().getQuest(questId);
 				if (quest != null)
 				{
 					if (!condition.getOneOfPreQuests())

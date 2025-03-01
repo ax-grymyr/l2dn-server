@@ -138,7 +138,7 @@ public class VipManager
 
 	public long getPointsDepreciatedOnLevel(int vipTier)
 	{
-		VipInfo tier = VipData.getInstance().getVipTiers().get(vipTier);
+		VipInfo? tier = VipData.getInstance().getVipTiers().get(vipTier);
 		if (tier == null)
 		{
 			return 0;
@@ -148,7 +148,7 @@ public class VipManager
 
 	public long getPointsToLevel(byte vipTier)
 	{
-		VipInfo tier = VipData.getInstance().getVipTiers().get(vipTier);
+		VipInfo? tier = VipData.getInstance().getVipTiers().get(vipTier);
 		if (tier == null)
 		{
 			return 0;

@@ -9,8 +9,11 @@ namespace L2Dn.GameServer.Model.Conditions;
  */
 public class ConditionTargetActiveSkillId(int skillId, int skillLevel = -1): Condition
 {
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
+        if (effected is null)
+            return false;
+
         Skill? knownSkill = effected.getKnownSkill(skillId);
         if (knownSkill != null)
             return skillLevel == -1 || skillLevel <= knownSkill.getLevel();

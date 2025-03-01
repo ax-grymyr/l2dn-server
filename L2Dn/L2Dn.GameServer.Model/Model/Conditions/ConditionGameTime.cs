@@ -15,7 +15,7 @@ public sealed class ConditionGameTime(bool night): Condition
      * Test impl.
      * @return true, if successful
      */
-    protected override bool TestImpl(Creature effector, Creature effected, Skill? skill, ItemTemplate? item)
+    protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         return GameTimeTaskManager.getInstance().isNight() == night;
     }
