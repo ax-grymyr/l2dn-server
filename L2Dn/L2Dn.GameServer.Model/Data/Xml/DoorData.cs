@@ -81,7 +81,7 @@ public class DoorData: DataReaderBase
 		// Register door's group
 		if (template.getGroupName() != null)
 		{
-			_groups.computeIfAbsent(door.getGroupName(), key => new()).add(door.getId());
+			_groups.GetOrAdd(door.getGroupName(), _ => []).add(door.getId());
 		}
 
 		return door;

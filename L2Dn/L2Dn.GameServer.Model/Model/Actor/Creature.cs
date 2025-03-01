@@ -5519,7 +5519,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public void addBlockActionsAllowedSkill(int skillId)
 	{
-		_blockActionsAllowedSkills.computeIfAbsent(skillId, k => new AtomicInteger()).incrementAndGet();
+		_blockActionsAllowedSkills.GetOrAdd(skillId, _ => new AtomicInteger()).incrementAndGet();
 	}
 
 	public void removeBlockActionsAllowedSkill(int skillId)
@@ -5674,7 +5674,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				}
 			}
 		}
-		return _basicPropertyResists.computeIfAbsent(basicProperty, k => new BasicPropertyResist());
+		return _basicPropertyResists.GetOrAdd(basicProperty, _ => new BasicPropertyResist());
 	}
 
 	public virtual int getReputation()

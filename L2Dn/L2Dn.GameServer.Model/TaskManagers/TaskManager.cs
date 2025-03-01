@@ -125,7 +125,7 @@ public class TaskManager // TODO: needs to be completely rewritten
 
 	private void registerTask(Task task)
 	{
-		_tasks.computeIfAbsent(task.getName().GetHashCode(), k =>
+		_tasks.GetOrAdd(task.getName().GetHashCode(), _ =>
 		{
 			task.initializate();
 			return task;

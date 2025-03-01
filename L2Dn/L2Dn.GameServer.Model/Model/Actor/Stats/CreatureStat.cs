@@ -984,7 +984,7 @@ public class CreatureStat
 
 	public void mergePositionTypeValue(Stat stat, Position position, double value, Func<double, double, double> func)
 	{
-		_positionStats.computeIfAbsent(stat, key => new()).merge(position, value, func);
+		_positionStats.GetOrAdd(stat, _ => []).merge(position, value, func);
 	}
 
 	public double getMoveTypeValue(Stat stat, MoveType type)
@@ -995,7 +995,7 @@ public class CreatureStat
 
 	public void mergeMoveTypeValue(Stat stat, MoveType type, double value)
 	{
-		_moveTypeStats.computeIfAbsent(stat, key => new()).merge(type, value, StatInfo.DefaultAddFunction);
+		_moveTypeStats.GetOrAdd(stat, _ => []).merge(type, value, StatInfo.DefaultAddFunction);
 	}
 
 	public double getReuseTypeValue(int magicType)
@@ -1031,12 +1031,12 @@ public class CreatureStat
 
 	public void addSkillEvasionTypeValue(int magicType, double value)
 	{
-		_skillEvasionStat.computeIfAbsent(magicType, k => new()).AddLast(value);
+		_skillEvasionStat.GetOrAdd(magicType, _ => []).AddLast(value);
 	}
 
 	public void removeSkillEvasionTypeValue(int magicType, double value)
 	{
-		_skillEvasionStat.computeIfPresent(magicType, (k, v) =>
+		_skillEvasionStat.computeIfPresent(magicType, (_, v) =>
 		{
 			v.Remove(value);
 			return v.Count != 0 ? v : null;

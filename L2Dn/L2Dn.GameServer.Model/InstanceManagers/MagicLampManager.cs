@@ -40,7 +40,7 @@ public class MagicLampManager
 			{
 				if (lamp.getFromLevel() <= player.getLevel() && player.getLevel() <= lamp.getToLevel() && Rnd.get(100d) < lamp.getChance())
 				{
-					rewards.computeIfAbsent(lamp.getType(), list => new MagicLampHolder(lamp)).inc();
+					rewards.GetOrAdd(lamp.getType(), _ => new MagicLampHolder(lamp)).inc();
 					if (++count >= REWARD_COUNT)
 					{
 						break;

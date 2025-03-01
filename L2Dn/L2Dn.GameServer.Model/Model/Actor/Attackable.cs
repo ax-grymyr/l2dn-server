@@ -330,7 +330,7 @@ public class Attackable: Npc
 					totalDamage += damage;
 
 					// Calculate real damages (Summoners should get own damage plus summon's damage)
-					DamageDoneInfo reward = rewards.computeIfAbsent(attacker, x => new DamageDoneInfo(x));
+					DamageDoneInfo reward = rewards.GetOrAdd(attacker, x => new DamageDoneInfo(x));
 					reward.addDamage(damage);
 
 					if (reward.getDamage() > maxDamage)
@@ -842,7 +842,7 @@ public class Attackable: Npc
 		}
 
 		// Get the AggroInfo of the attacker Creature from the _aggroList of the Attackable
-		AggroInfo ai = _aggroList.computeIfAbsent(attacker, x => new AggroInfo(x));
+		AggroInfo ai = _aggroList.GetOrAdd(attacker, x => new AggroInfo(x));
 		ai.addDamage(damage);
 
 		// traps does not cause aggro

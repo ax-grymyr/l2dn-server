@@ -71,7 +71,7 @@ public sealed class EnchantSkillGroupsData: DataReaderBase
 
 	public void addRouteForSkill(SkillHolder holder, int route)
 	{
-		_enchantSkillTrees.computeIfAbsent(holder, k => new()).add(route);
+		_enchantSkillTrees.GetOrAdd(holder, _ => []).add(route);
 	}
 
 	public Set<int> getRouteForSkill(int skillId, int level)

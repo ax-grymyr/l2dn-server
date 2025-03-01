@@ -56,7 +56,7 @@ public class MatchingRoomManager
 	public int addMatchingRoom(MatchingRoom room)
 	{
 		int roomId = _id.incrementAndGet();
-		_rooms.computeIfAbsent(room.getRoomType(), k => new()).put(roomId, room);
+		_rooms.GetOrAdd(room.getRoomType(), _ => []).put(roomId, room);
 		return roomId;
 	}
 

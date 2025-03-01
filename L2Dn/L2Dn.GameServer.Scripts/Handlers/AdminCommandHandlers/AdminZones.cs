@@ -195,7 +195,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	 */
 	private void setMinZ(Player activeChar, int minZ)
 	{
-		_zones.computeIfAbsent(activeChar.ObjectId, key => new ZoneNodeHolder(activeChar)).setMinZ(minZ);
+		_zones.GetOrAdd(activeChar.ObjectId, _ => new ZoneNodeHolder(activeChar)).setMinZ(minZ);
 	}
 
 	/**
@@ -204,7 +204,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	 */
 	private void setMaxZ(Player activeChar, int maxZ)
 	{
-		_zones.computeIfAbsent(activeChar.ObjectId, key => new ZoneNodeHolder(activeChar)).setMaxZ(maxZ);
+		_zones.GetOrAdd(activeChar.ObjectId, _ => new ZoneNodeHolder(activeChar)).setMaxZ(maxZ);
 	}
 
 	private void buildZonesEditorWindow(Player activeChar)
@@ -249,7 +249,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 		if (zoneType != null && zoneType.getZone() is ZoneNPoly)
 		{
 			ZoneNPoly zone = (ZoneNPoly) zoneType.getZone();
-			ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.ObjectId, val => new ZoneNodeHolder(activeChar));
+			ZoneNodeHolder holder = _zones.GetOrAdd(activeChar.ObjectId, _ => new ZoneNodeHolder(activeChar));
 			holder.getNodes().Clear();
 			holder.setName(zoneType.getName());
 			holder.setMinZ(zone.getLowZ());
@@ -276,7 +276,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			BuilderUtil.sendSysMessage(activeChar, "You cannot use symbols like: < > & \" $ \\");
 			return;
 		}
-		_zones.computeIfAbsent(activeChar.ObjectId, key => new ZoneNodeHolder(activeChar)).setName(name);
+		_zones.GetOrAdd(activeChar.ObjectId, _ => new ZoneNodeHolder(activeChar)).setName(name);
 	}
 
 	/**
@@ -461,7 +461,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 		if (player.hasAction(PlayerAction.ADMIN_POINT_PICKING))
 		{
 			Location3D newLocation = ev.getLocation();
-			ZoneNodeHolder holder = _zones.computeIfAbsent(player.ObjectId, key => new ZoneNodeHolder(player));
+			ZoneNodeHolder holder = _zones.GetOrAdd(player.ObjectId, _ => new ZoneNodeHolder(player));
 			Location3D? changeLog = holder.getChangingLoc();
 			if (changeLog != null)
 			{
@@ -524,7 +524,7 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	private void buildHtmlWindow(Player activeChar, int page)
 	{
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/zone_editor_create.htm", activeChar);
-		ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.ObjectId, key => new ZoneNodeHolder(activeChar));
+		ZoneNodeHolder holder = _zones.GetOrAdd(activeChar.ObjectId, _ => new ZoneNodeHolder(activeChar));
 		AtomicInteger position = new AtomicInteger(page * 20);
 
 		PageResult result = PageBuilder.newBuilder(holder.getNodes(), 20, "bypass -h admin_zones list")

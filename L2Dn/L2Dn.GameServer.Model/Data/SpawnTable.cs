@@ -1,11 +1,8 @@
 using System.Runtime.CompilerServices;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Spawns;
-using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -309,7 +306,7 @@ public class SpawnTable
 	 */
 	private void addSpawn(Spawn spawn)
 	{
-		_spawnTable.computeIfAbsent(spawn.getId(), k => new()).add(spawn);
+		_spawnTable.GetOrAdd(spawn.getId(), _ => []).add(spawn);
 	}
 
 	/**

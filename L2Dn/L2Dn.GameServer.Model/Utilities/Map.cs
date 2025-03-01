@@ -42,11 +42,6 @@ public class Map<TKey, TValue>: ConcurrentDictionary<TKey, TValue>
         return "";
     }
 
-    public TValue computeIfAbsent(TKey key, Func<TKey, TValue> factory)
-    {
-        return GetOrAdd(key, factory);
-    }
-
     public TResult? computeIfPresent<TResult>(TKey key, Func<TKey, TValue, TResult> func)
     {
         if (TryGetValue(key, out var value))

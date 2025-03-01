@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Model.Holders;
 public class PunishmentHolder
 {
 	private readonly Map<string, Map<PunishmentType, PunishmentTask>> _holder = new();
-	
+
 	/**
 	 * Stores the punishment task in the Map.
 	 * @param task
@@ -18,10 +18,10 @@ public class PunishmentHolder
 	{
 		if (!task.isExpired())
 		{
-			_holder.computeIfAbsent(task.getKey().ToString(), k => new()).put(task.getType(), task);
+			_holder.GetOrAdd(task.getKey(), _ => []).put(task.getType(), task);
 		}
 	}
-	
+
 	/**
 	 * Removes previously stopped task from the Map.
 	 * @param task
@@ -39,7 +39,7 @@ public class PunishmentHolder
 			}
 		}
 	}
-	
+
 	public void stopPunishment(PunishmentType type)
 	{
 		foreach (Map<PunishmentType, PunishmentTask> punishments in _holder.Values)
@@ -59,7 +59,7 @@ public class PunishmentHolder
 			}
 		}
 	}
-	
+
 	/**
 	 * @param key
 	 * @param type
@@ -69,7 +69,7 @@ public class PunishmentHolder
 	{
 		return getPunishment(key, type) != null;
 	}
-	
+
 	/**
 	 * @param key
 	 * @param type

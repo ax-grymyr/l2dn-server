@@ -222,8 +222,7 @@ public class OlympiadManager
 					return false;
 				}
 
-				_classBasedRegisters.computeIfAbsent(getClassGroup(player), k=>new())
-					.add(charId);
+				_classBasedRegisters.GetOrAdd(getClassGroup(player), _=> []).add(charId);
 				player.sendPacket(SystemMessageId.YOU_VE_BEEN_REGISTERED_FOR_THE_OLYMPIAD_CLASS_MATCHES);
 				break;
 			}

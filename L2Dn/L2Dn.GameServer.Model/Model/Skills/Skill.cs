@@ -1189,7 +1189,7 @@ public sealed class Skill: IIdentifiable
 	 */
 	public void addEffect(EffectScope effectScope, AbstractEffect effect)
 	{
-		_effectLists.computeIfAbsent(effectScope, k => new()).Add(effect);
+		_effectLists.GetOrAdd(effectScope, _ => []).Add(effect);
 	}
 
 	/**
@@ -1528,7 +1528,7 @@ public sealed class Skill: IIdentifiable
 	 */
 	public void addCondition(SkillConditionScope skillConditionScope, ISkillCondition skillCondition)
 	{
-		_conditionLists.computeIfAbsent(skillConditionScope, k => new()).Add(skillCondition);
+		_conditionLists.GetOrAdd(skillConditionScope, _ => []).Add(skillCondition);
 	}
 
 	/**

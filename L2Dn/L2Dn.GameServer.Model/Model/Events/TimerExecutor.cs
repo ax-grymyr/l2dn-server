@@ -30,7 +30,7 @@ public class TimerExecutor<T>
 	 */
 	private bool addTimer(TimerHolder<T> holder)
 	{
-		Set<TimerHolder<T>> timers = _timers.computeIfAbsent(holder.getEvent(), key => new());
+		Set<TimerHolder<T>> timers = _timers.GetOrAdd(holder.getEvent(), _ => []);
 		removeAndCancelTimers(timers, holder.isEqual);
 		return timers.add(holder);
 	}

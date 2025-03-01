@@ -137,7 +137,7 @@ public class MentorManager
 	 */
 	public void addMentor(int mentorId, int menteeId)
 	{
-		Map<int, Mentee> mentees = _menteeData.computeIfAbsent(mentorId, _ => []);
+		Map<int, Mentee> mentees = _menteeData.GetOrAdd(mentorId, _ => []);
 		if (mentees.TryGetValue(menteeId, out Mentee? mentee))
 		{
 			mentee.load(); // Just reloading data if is already there

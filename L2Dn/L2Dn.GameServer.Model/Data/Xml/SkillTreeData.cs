@@ -178,7 +178,7 @@ public class SkillTreeData: DataReaderBase
                     if (classId is null)
                         throw new InvalidOperationException("ClassId is null for removing skill " + removingSkillId + "!");
 
-                    _removeSkillCache.computeIfAbsent(classId.Value, k => new()).add(removingSkillId);
+                    _removeSkillCache.GetOrAdd(classId.Value, _ => []).add(removingSkillId);
                 }
             }
 
@@ -279,8 +279,7 @@ public class SkillTreeData: DataReaderBase
                     if (classId is null)
                         throw new InvalidOperationException("ClassId is null for awakeningSaveSkillTree " + skillLearn.getSkillId() + "!");
 
-					_awakeningSaveSkillTree.computeIfAbsent(classId.Value, k => new())
-						.add(skillLearn.getSkillId());
+					_awakeningSaveSkillTree.GetOrAdd(classId.Value, _ => []).add(skillLearn.getSkillId());
 					break;
 				}
 				default:

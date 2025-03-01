@@ -209,7 +209,7 @@ public class SkillData: DataReaderBase
 	{
 		Map<int, Set<int>> levels = new();
 		Map<int, Map<int, StatSet>> skillInfo = new();
-		StatSet generalSkillInfo = skillInfo.computeIfAbsent(-1, k => new()).computeIfAbsent(-1, k => new StatSet());
+		StatSet generalSkillInfo = skillInfo.GetOrAdd(-1, _ => []).GetOrAdd(-1, _ => new StatSet());
 		parseAttributes(element, "", generalSkillInfo);
 
 		Map<string, Map<int, Map<int, object>>> variableValues = new();
@@ -235,7 +235,7 @@ public class SkillData: DataReaderBase
 					{
 						skillNode.Elements("effect").ForEach(effectsNode =>
 						{
-							effectParamInfo.computeIfAbsent(effectScope.Value, k => new())
+							effectParamInfo.GetOrAdd(effectScope.Value, _ => [])
 								.Add(parseNamedParamInfo(effectsNode, variableValues));
 						});
 
@@ -247,7 +247,7 @@ public class SkillData: DataReaderBase
 					{
 						skillNode.Elements("condition").ForEach(conditionNode =>
 						{
-							conditionParamInfo.computeIfAbsent(skillConditionScope.Value, k => new())
+							conditionParamInfo.GetOrAdd(skillConditionScope.Value, _ => [])
 								.Add(parseNamedParamInfo(conditionNode, variableValues));
 						});
 					}
@@ -265,7 +265,7 @@ public class SkillData: DataReaderBase
 		int toLevel = generalSkillInfo.getInt(".toLevel", 0);
 		for (int i = fromLevel; i <= toLevel; i++)
 		{
-			levels.computeIfAbsent(i, k => new()).add(0);
+			levels.GetOrAdd(i, _ => []).add(0);
 		}
 
 		skillInfo.ForEach(kvp =>
@@ -286,7 +286,7 @@ public class SkillData: DataReaderBase
 					return;
 				}
 
-				levels.computeIfAbsent(level, k => new()).add(subLevel);
+				levels.GetOrAdd(level, _ => []).add(subLevel);
 			});
 		});
 
@@ -309,7 +309,7 @@ public class SkillData: DataReaderBase
 							return;
 						}
 
-						levels.computeIfAbsent(level, k => new()).add(subLevel);
+						levels.GetOrAdd(level, _ => []).add(subLevel);
 					});
 				});
 
@@ -325,12 +325,12 @@ public class SkillData: DataReaderBase
 						{
 							for (int j = fromSubLevel.Value; j <= toSubLevel.Value; j++)
 							{
-								levels.computeIfAbsent(i, k => new()).add(j);
+								levels.GetOrAdd(i, _ => []).add(j);
 							}
 						}
 						else
 						{
-							levels.computeIfAbsent(i, k => new()).add(0);
+							levels.GetOrAdd(i, _ => []).add(0);
 						}
 					}
 				}
@@ -500,7 +500,7 @@ public class SkillData: DataReaderBase
 			kvp.Value.ForEach(kvp2 =>
 			{
 				var (subLevel, value) = kvp2;
-				info.computeIfAbsent(level, k => new()).computeIfAbsent(subLevel, k => new StatSet())
+				info.GetOrAdd(level, _ => []).GetOrAdd(subLevel, _ => new StatSet())
 					.set(element.Name.LocalName, value);
 			});
 		});
@@ -509,10 +509,10 @@ public class SkillData: DataReaderBase
 	private Map<int, Map<int, object>> parseValues(XElement element)
 	{
 		Map<int, Map<int, object>> values = new();
-		object? parsedValue = parseValue(element, true, false, new());
+		object? parsedValue = parseValue(element, true, false, []);
 		if (parsedValue != null)
 		{
-			values.computeIfAbsent(-1, k => new()).put(-1, parsedValue);
+			values.GetOrAdd(-1, _ => []).put(-1, parsedValue);
 		}
 		else
 		{
@@ -523,11 +523,11 @@ public class SkillData: DataReaderBase
 					int level = n.Attribute("level").GetInt32(-1);
 					if (level >= 0)
 					{
-						parsedValue = parseValue(n, false, false, new());
+						parsedValue = parseValue(n, false, false, []);
 						if (parsedValue != null)
 						{
 							int subLevel = n.Attribute("subLevel").GetInt32(-1);
-							values.computeIfAbsent(level, k => new()).put(subLevel, parsedValue);
+							values.GetOrAdd(level, _ => []).put(subLevel, parsedValue);
 						}
 					}
 					else
@@ -540,7 +540,7 @@ public class SkillData: DataReaderBase
 						{
 							for (int j = fromSubLevel; j <= toSubLevel; j++)
 							{
-								Map<int, object> subValues = values.computeIfAbsent(i, k => new());
+								Map<int, object> subValues = values.GetOrAdd(i, _ => []);
 								Map<string, double> variables = new();
 								variables.put("index", i - fromLevel + 1d);
 								variables.put("subIndex", j - fromSubLevel + 1d);

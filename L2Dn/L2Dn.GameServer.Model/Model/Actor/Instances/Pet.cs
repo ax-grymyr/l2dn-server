@@ -1136,7 +1136,7 @@ public class Pet: Summon
 					});
 
 					SummonEffectTable.getInstance().getPetEffects()
-						.computeIfAbsent(getControlObjectId(), k => new List<SummonEffectTable.SummonEffect>())
+						.GetOrAdd(getControlObjectId(), _ => new List<SummonEffectTable.SummonEffect>())
 						.Add(new SummonEffectTable.SummonEffect(skill, info.getTime() ?? TimeSpan.Zero)); // TODO ???
 				}
 
@@ -1170,7 +1170,7 @@ public class Pet: Summon
 					if (skill.hasEffects(EffectScope.GENERAL))
 					{
 						SummonEffectTable.getInstance().getPetEffects()
-							.computeIfAbsent(getControlObjectId(), k => new List<SummonEffectTable.SummonEffect>())
+							.GetOrAdd(getControlObjectId(), _ => new List<SummonEffectTable.SummonEffect>())
 							.Add(new SummonEffectTable.SummonEffect(skill, effectCurTime));
 					}
 				}

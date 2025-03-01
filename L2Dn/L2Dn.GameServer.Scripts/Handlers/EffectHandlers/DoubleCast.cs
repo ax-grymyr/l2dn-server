@@ -43,7 +43,7 @@ public class DoubleCast: AbstractEffect
 				Skill s = holder.getSkill();
 				if (s != null && !effected.isAffectedBySkill(holder))
 				{
-					_addedToggles.computeIfAbsent(effected.ObjectId, v => []).Add(holder);
+					_addedToggles.GetOrAdd(effected.ObjectId, _ => []).Add(holder);
 					s.applyEffects(effected, effected);
 				}
 			}
@@ -56,7 +56,7 @@ public class DoubleCast: AbstractEffect
 	{
 		if (effected.isPlayer())
 		{
-			_addedToggles.computeIfPresent(effected.ObjectId, (k, v) =>
+			_addedToggles.computeIfPresent(effected.ObjectId, (_, v) =>
 			{
 				v.ForEach(h => effected.stopSkillEffects(h.getSkill()));
 				return (object?)null;

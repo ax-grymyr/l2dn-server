@@ -532,7 +532,7 @@ public class InstanceManager: DataReaderBase
 	 */
 	public void setReenterPenalty(int objectId, int id, DateTime time)
 	{
-		_playerTimes.computeIfAbsent(objectId, k => new()).put(id, time);
+		_playerTimes.GetOrAdd(objectId, _ => []).put(id, time);
 	}
 
 	/**

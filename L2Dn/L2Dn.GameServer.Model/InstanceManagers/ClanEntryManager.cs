@@ -108,7 +108,7 @@ public class ClanEntryManager
                     continue;
                 }
 
-				_applicantList.computeIfAbsent(record.ClanId, k => new()).put(record.ClanId,
+				_applicantList.GetOrAdd(record.ClanId, _ => []).put(record.ClanId,
 					new PledgeApplicantInfo(record.CharacterId, record.CharacterName, record.Level,
 						record.Karma, clan, record.Message));
 			}
@@ -167,7 +167,7 @@ public class ClanEntryManager
 	{
 		if (!_playerLocked.ContainsKey(info.getPlayerId()))
 		{
-			_applicantList.computeIfAbsent(clanId, k => new()).put(info.getPlayerId(), info);
+			_applicantList.GetOrAdd(clanId, _ => []).put(info.getPlayerId(), info);
 
 			try
 			{

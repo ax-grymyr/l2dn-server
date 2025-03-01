@@ -45,7 +45,7 @@ public class CharSummonTable
 				var summons = ctx.CharacterSummons.Select(cs => new { cs.OwnerId, cs.SummonId });
 				foreach (var summon in summons)
 				{
-					_servitors.computeIfAbsent(summon.OwnerId, k => new()).add(summon.SummonId);
+					_servitors.GetOrAdd(summon.OwnerId, _ => []).add(summon.SummonId);
 				}
 			}
 			catch (Exception e)
@@ -205,7 +205,7 @@ public class CharSummonTable
 			return;
 		}
 
-		_servitors.computeIfAbsent(summon.getOwner().ObjectId, k => new()).add(summon.ObjectId);
+		_servitors.GetOrAdd(summon.getOwner().ObjectId, _ => []).add(summon.ObjectId);
 
 		try
 		{

@@ -55,7 +55,7 @@ public class EnchantSkillHolder
 
 	public void addRequiredItem(SkillEnchantType type, ItemHolder item)
 	{
-		_requiredItems.computeIfAbsent(type, k => []).add(item);
+		_requiredItems.GetOrAdd(type, _ => []).add(item);
 	}
 
 	public Set<ItemHolder> getRequiredItems(SkillEnchantType type)

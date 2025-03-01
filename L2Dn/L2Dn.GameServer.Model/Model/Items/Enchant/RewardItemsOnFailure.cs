@@ -21,7 +21,7 @@ public class RewardItemsOnFailure
 	public void addItemToHolder(int itemId, CrystalType grade, int enchantLevel, long count, double chance)
 	{
 		ItemChanceHolder item = new ItemChanceHolder(itemId, chance, count);
-		_rewards.computeIfAbsent(grade, v => new()).put(enchantLevel, item);
+		_rewards.GetOrAdd(grade, _ => []).put(enchantLevel, item);
 		_minEnchantLevel = Math.Min(_minEnchantLevel, enchantLevel);
 		_maxEnchantLevel = Math.Max(_maxEnchantLevel, enchantLevel);
 	}

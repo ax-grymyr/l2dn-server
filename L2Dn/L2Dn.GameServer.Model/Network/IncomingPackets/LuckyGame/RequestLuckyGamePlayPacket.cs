@@ -62,7 +62,7 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 				totalChance += item.getChance();
 				if (totalChance >= chance)
 				{
-					rewards.computeIfAbsent(LuckyGameItemType.COMMON, _ => new()).Add(item);
+					rewards.GetOrAdd(LuckyGameItemType.COMMON, _ => []).Add(item);
 					break;
 				}
 			}
@@ -77,7 +77,7 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 					totalChance += item.getChance();
 					if (totalChance >= chanceModify)
 					{
-						rewards.computeIfAbsent(LuckyGameItemType.RARE, _ => new()).Add(item);
+						rewards.GetOrAdd(LuckyGameItemType.RARE, _ => []).Add(item);
 						blackCat = true;
 						break;
 					}
@@ -85,9 +85,7 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 
 				if (playCount == holder.getMaxModifyRewardGame())
 				{
-					rewards.computeIfAbsent(LuckyGameItemType.RARE, _ => new())
-						.Add(modifyReward.GetRandomElement());
-
+					rewards.GetOrAdd(LuckyGameItemType.RARE, _ => []).Add(modifyReward.GetRandomElement());
 					blackCat = true;
 				}
 			}
@@ -115,7 +113,7 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 		{
 			int serverGameNumber = LuckyGameData.getInstance().increaseGame();
 			holder.getUniqueReward().Where(reward => reward.getPoints() == serverGameNumber).ForEach(item =>
-				rewards.computeIfAbsent(LuckyGameItemType.UNIQUE, _ => new()).Add(item));
+				rewards.GetOrAdd(LuckyGameItemType.UNIQUE, _ => []).Add(item));
 		}
 
 		player.sendPacket(new ExBettingLuckyGameResultPacket(LuckyGameResultType.SUCCESS, _type, rewards, (int) (_type == LuckyGameType.LUXURY ? player.getInventory().getInventoryItemCount(LUXURY_FORTUNE_READING_TICKET, -1) : player.getInventory().getInventoryItemCount(FORTUNE_READING_TICKET, -1))));
