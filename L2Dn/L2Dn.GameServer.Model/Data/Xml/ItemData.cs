@@ -165,19 +165,19 @@ public class ItemData: DataReaderBase
 
 				case "stats":
 				{
-					ItemTemplate currentItem = MakeItem(className, set, ref item);
+					item ??= MakeItem(className, set);
 					el.Elements("stat").ForEach(e =>
 					{
 						Stat type = StatUtil.SearchByXmlName(e.GetAttributeValueAsString("type"));
 						double val = (double)e;
-						currentItem.addFunctionTemplate(new FuncTemplate(null, null, "add", 0x00, type, val));
+                        item.addFunctionTemplate(new FuncTemplate(null, null, "add", 0x00, type, val));
 					});
 					break;
 				}
 
 				case "skills":
 				{
-					ItemTemplate currentItem = MakeItem(className, set, ref item);
+					item ??= MakeItem(className, set);
 					el.Elements("skill").ForEach(e =>
 					{
 						int skillId = e.GetAttributeValueAsInt32("id");
@@ -185,14 +185,14 @@ public class ItemData: DataReaderBase
 						ItemSkillType type = e.Attribute("type").GetEnum(ItemSkillType.NORMAL);
 						int chance = e.Attribute("type_chance").GetInt32(100);
 						int value = e.Attribute("type_value").GetInt32(0);
-						currentItem.addSkill(new ItemSkillHolder(skillId, level, type, chance, value));
+                        item.addSkill(new ItemSkillHolder(skillId, level, type, chance, value));
 					});
 					break;
 				}
 
 				case "capsuled_items":
 				{
-					ItemTemplate currentItem = MakeItem(className, set, ref item);
+					item ??= MakeItem(className, set);
 					el.Elements("item").ForEach(e =>
 					{
 						int itemId = e.GetAttributeValueAsInt32("id");
@@ -201,16 +201,16 @@ public class ItemData: DataReaderBase
 						double chance = e.GetAttributeValueAsDouble("chance");
 						int minEnchant = e.Attribute("minEnchant").GetInt32(0);
 						int maxEnchant = e.Attribute("maxEnchant").GetInt32(0);
-						currentItem.addCapsuledItem(new ExtractableProduct(itemId, min, max, chance, minEnchant, maxEnchant));
+                        item.addCapsuledItem(new ExtractableProduct(itemId, min, max, chance, minEnchant, maxEnchant));
 					});
 					break;
 				}
 
 				case "cond":
 				{
-					ItemTemplate currentItem = MakeItem(className, set, ref item);
+					item ??= MakeItem(className, set);
 					XElement conditionEl = el.Elements().Single();
-					Condition condition = parseCondition(conditionEl, currentItem);
+					Condition condition = parseCondition(conditionEl, item);
 					string? msg = conditionEl.Attribute("msg")?.Value;
 					string? msgId = conditionEl.Attribute("msgId")?.Value;
 					if (condition != null && msg != null)
@@ -230,7 +230,7 @@ public class ItemData: DataReaderBase
 			}
 		});
 
-		MakeItem(className, set, ref item);
+		item ??= MakeItem(className, set);
 
 		switch (item)
 		{
@@ -242,10 +242,8 @@ public class ItemData: DataReaderBase
 				    etcItem.getItemType() == EtcItemType.ELEMENTAL_ORB)
 				{
 					List<ItemSkillHolder> skills = item.getAllSkills();
-					if (skills != null)
-					{
+					if (skills.Count != 0)
 						AmmunitionSkillList.add(skills);
-					}
 				}
 
 				break;
@@ -256,6 +254,7 @@ public class ItemData: DataReaderBase
 			case Weapon weapon:
 				_weapons.put(item.getId(), weapon);
 				break;
+
 			default:
 				throw new InvalidOperationException("Invalid item type");
 		}
@@ -317,7 +316,7 @@ public class ItemData: DataReaderBase
 			"target" => parseTargetCondition(element, template),
 			"using" => parseUsingCondition(element),
 			"game" => parseGameCondition(element),
-			_ => throw new InvalidOperationException($"Invalid condition node: {elementName}")
+			_ => throw new InvalidOperationException($"Invalid condition node: {elementName}"),
 		};
 	}
 	private static Condition parseLogicAnd(XElement element, ItemTemplate template)
@@ -1216,12 +1215,9 @@ public class ItemData: DataReaderBase
 		return logicAnd;
 	}
 
-	private static ItemTemplate MakeItem(string className, StatSet set, ref ItemTemplate? template)
+	private static ItemTemplate MakeItem(string className, StatSet set)
 	{
-		if (template is not null)
-            throw new InvalidOperationException("Item must be null");
-
-		return template = className switch
+		return className switch
 		{
 			"Weapon" => new Weapon(set),
 			"Armor" => new Armor(set),
