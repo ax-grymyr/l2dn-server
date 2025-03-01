@@ -103,26 +103,28 @@ public class TriggerSkillByAttack: AbstractEffect
 			return;
 		}
 
-		// When no normal attacks are allowed.
-		if (!_allowNormalAttack && @event.getSkill() == null)
+        Skill? eventSkill = @event.getSkill();
+
+        // When no normal attacks are allowed.
+		if (!_allowNormalAttack && eventSkill == null)
 		{
 			return;
 		}
 
 		// When no skill attacks are allowed.
-		if (!_allowSkillAttack && @event.getSkill() != null)
+		if (!_allowSkillAttack && eventSkill != null)
 		{
 			return;
 		}
 
 		// When only physical skills are allowed (allowSkillAttack should be set to true).
-		if (_onlyPhysicalSkill && @event.getSkill().isMagic())
+		if (_onlyPhysicalSkill && eventSkill != null && eventSkill.isMagic())
 		{
 			return;
 		}
 
 		// When only magic skills are allowed (allowSkillAttack should be set to true).
-		if (_onlyMagicSkill && !@event.getSkill().isMagic())
+		if (_onlyMagicSkill && eventSkill != null && !eventSkill.isMagic())
 		{
 			return;
 		}

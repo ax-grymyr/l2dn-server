@@ -460,7 +460,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 	 * @param skillLearn the skill to be learn.
 	 * @return {@code true} if all requirements are meet, {@code false} otherwise.
 	 */
-	private bool checkPlayerSkill(Player player, Npc trainer, SkillLearn skillLearn, int skillLevel)
+	private bool checkPlayerSkill(Player player, Npc? trainer, SkillLearn skillLearn, int skillLevel)
 	{
 		if (skillLearn != null && skillLearn.getSkillLevel() == skillLevel)
 		{
@@ -474,7 +474,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 
 			if (skillLearn.getDualClassLevel() > 0)
 			{
-				SubClassHolder playerDualClass = player.getDualClass();
+				SubClassHolder? playerDualClass = player.getDualClass();
 				if (playerDualClass == null || playerDualClass.getLevel() < skillLearn.getDualClassLevel())
 				{
 					return false;
@@ -606,7 +606,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 	 * @param trainer the Npc teaching a skill.
 	 * @param skill the skill to be learn.
 	 */
-	private void giveSkill(Player player, Npc trainer, Skill skill)
+	private void giveSkill(Player player, Npc? trainer, Skill skill)
 	{
 		giveSkill(player, trainer, skill, true);
 	}
@@ -618,7 +618,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 	 * @param skill the skill to be learn.
 	 * @param store
 	 */
-	private void giveSkill(Player player, Npc trainer, Skill skill, bool store)
+	private void giveSkill(Player player, Npc? trainer, Skill skill, bool store)
 	{
 		player.addSkill(skill, store);
 		player.sendItemList();
@@ -648,7 +648,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 	 * @param trainer the Npc which the {@code player} is interacting
 	 * @param player the active character
 	 */
-	private void showSkillList(Npc trainer, Player player)
+	private void showSkillList(Npc? trainer, Player player)
 	{
 		if (_skillType == AcquireSkillType.SUBCLASS)
 		{

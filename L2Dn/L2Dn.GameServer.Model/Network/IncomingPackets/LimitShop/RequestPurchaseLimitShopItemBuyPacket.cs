@@ -352,11 +352,17 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 			{
 				if (Rnd.get(100) < _product.getChance())
 				{
-					rewards.computeIfAbsent(0, k => new LimitShopRandomCraftReward(product.getProductionId(), 0, 0))
+					rewards.computeIfAbsent(0, _ => new LimitShopRandomCraftReward(product.getProductionId(), 0, 0))
 						.Count += (int)_product.getCount();
 
 					Item? item = player.addItem("LCoinShop", _product.getProductionId(), _product.getCount(),
 						_product.getEnchant(), player, true);
+
+                    if (item == null)
+                    {
+                        player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: atomic inventory update
+                        return ValueTask.CompletedTask;
+                    }
 
 					if (_product.isAnnounce())
 					{
@@ -366,11 +372,17 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				}
 				else if (Rnd.get(100) < _product.getChance2() || _product.getProductionId3() == 0)
 				{
-					rewards.computeIfAbsent(1, k => new LimitShopRandomCraftReward(product.getProductionId2(), 0, 1))
+					rewards.computeIfAbsent(1, _ => new LimitShopRandomCraftReward(product.getProductionId2(), 0, 1))
 						.Count += (int)_product.getCount2();
 
 					Item? item = player.addItem("LCoinShop", _product.getProductionId2(), _product.getCount2(), player,
 						true);
+
+                    if (item == null)
+                    {
+                        player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: atomic inventory update
+                        return ValueTask.CompletedTask;
+                    }
 
 					if (_product.isAnnounce2())
 					{
@@ -380,11 +392,17 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				}
 				else if (Rnd.get(100) < _product.getChance3() || _product.getProductionId4() == 0)
 				{
-					rewards.computeIfAbsent(2, k => new LimitShopRandomCraftReward(product.getProductionId3(), 0, 2))
+					rewards.computeIfAbsent(2, _ => new LimitShopRandomCraftReward(product.getProductionId3(), 0, 2))
 						.Count += (int)_product.getCount3();
 
 					Item? item = player.addItem("LCoinShop", _product.getProductionId3(), _product.getCount3(), player,
 						true);
+
+                    if (item == null)
+                    {
+                        player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: atomic inventory update
+                        return ValueTask.CompletedTask;
+                    }
 
 					if (_product.isAnnounce3())
 					{
@@ -394,11 +412,17 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				}
 				else if (Rnd.get(100) < _product.getChance4() || _product.getProductionId5() == 0)
 				{
-					rewards.computeIfAbsent(3, k => new LimitShopRandomCraftReward(product.getProductionId4(), 0, 3))
+					rewards.computeIfAbsent(3, _ => new LimitShopRandomCraftReward(product.getProductionId4(), 0, 3))
 						.Count += (int)_product.getCount4();
 
 					Item? item = player.addItem("LCoinShop", _product.getProductionId4(), _product.getCount4(), player,
 						true);
+
+                    if (item == null)
+                    {
+                        player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: atomic inventory update
+                        return ValueTask.CompletedTask;
+                    }
 
 					if (_product.isAnnounce4())
 					{
@@ -408,11 +432,17 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				}
 				else if (_product.getProductionId5() > 0)
 				{
-					rewards.computeIfAbsent(4, k => new LimitShopRandomCraftReward(product.getProductionId5(), 0, 4))
+					rewards.computeIfAbsent(4, _ => new LimitShopRandomCraftReward(product.getProductionId5(), 0, 4))
 						.Count += (int)_product.getCount5();
 
 					Item? item = player.addItem("LCoinShop", _product.getProductionId5(), _product.getCount5(), player,
 						true);
+
+                    if (item == null)
+                    {
+                        player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: atomic inventory update
+                        return ValueTask.CompletedTask;
+                    }
 
 					if (_product.isAnnounce5())
 					{
@@ -429,6 +459,12 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 
 			Item? item = player.addItem("LCoinShop", _product.getProductionId(), _product.getCount() * _amount,
 				_product.getEnchant(), player, true);
+
+            if (item == null)
+            {
+                player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: atomic inventory update
+                return ValueTask.CompletedTask;
+            }
 
 			if (_product.isAnnounce())
 			{

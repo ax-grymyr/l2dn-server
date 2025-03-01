@@ -16,7 +16,7 @@ public class DispelBySlotProbability: AbstractEffect
 {
 	private readonly Set<AbnormalType> _dispelAbnormals;
 	private readonly int _rate;
-	
+
 	public DispelBySlotProbability(StatSet @params)
 	{
 		string[] dispelEffects = @params.getString("dispel").Split(";");
@@ -27,24 +27,24 @@ public class DispelBySlotProbability: AbstractEffect
 			_dispelAbnormals.add(Enum.Parse<AbnormalType>(slot));
 		}
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.DISPEL;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected == null)
 		{
 			return;
 		}
-		
+
 		// The effectlist should already check if it has buff with this abnormal type or not.
 		effected.getEffectList()
 			.stopEffects(

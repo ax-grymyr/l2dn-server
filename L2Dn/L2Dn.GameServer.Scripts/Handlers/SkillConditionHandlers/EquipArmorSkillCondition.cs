@@ -17,7 +17,7 @@ public class EquipArmorSkillCondition: ISkillCondition
 
     public EquipArmorSkillCondition(StatSet @params)
     {
-        List<ArmorType> armorTypes = @params.getEnumList<ArmorType>("armorType");
+        List<ArmorType>? armorTypes = @params.getEnumList<ArmorType>("armorType");
         if (armorTypes != null)
         {
             foreach (ArmorType armorType in armorTypes)

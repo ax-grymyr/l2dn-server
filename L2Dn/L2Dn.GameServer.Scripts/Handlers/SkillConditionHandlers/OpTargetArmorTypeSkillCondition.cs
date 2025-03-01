@@ -18,7 +18,7 @@ public class OpTargetArmorTypeSkillCondition: ISkillCondition
 
     public OpTargetArmorTypeSkillCondition(StatSet @params)
     {
-        List<string> armorTypes = @params.getList<string>("armorType");
+        List<string>? armorTypes = @params.getList<string>("armorType");
         if (armorTypes != null)
         {
             foreach (string type in armorTypes)

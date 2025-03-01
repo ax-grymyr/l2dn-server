@@ -29,12 +29,12 @@ public class Blink: AbstractEffect
 {
 	private readonly int _flyCourse;
 	private readonly int _flyRadius;
-	
+
 	private readonly FlyType _flyType;
 	private readonly int _flySpeed;
 	private readonly int _flyDelay;
 	private readonly int _animationSpeed;
-	
+
 	public Blink(StatSet @params)
 	{
 		_flyCourse = @params.getInt("angle", 0);
@@ -44,33 +44,33 @@ public class Blink: AbstractEffect
 		_flyDelay = @params.getInt("delay", 0);
 		_animationSpeed = @params.getInt("animationSpeed", 0);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
 		// While affected by escape blocking effect you cannot use Blink or Scroll of Escape
 		return !effected.cannotEscape();
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		double angle = HeadingUtil.ConvertHeadingToDegrees(effected.getHeading());
 		double radian = double.DegreesToRadians(angle);
 		double course = double.DegreesToRadians(_flyCourse);
 		int x1 = (int) (Math.Cos(Math.PI + radian + course) * _flyRadius);
 		int y1 = (int) (Math.Sin(Math.PI + radian + course) * _flyRadius);
-		
+
 		int x = effected.getX() + x1;
 		int y = effected.getY() + y1;
 		int z = effected.getZ();
 
 		Location3D destination = GeoEngine.getInstance().getValidLocation(effected.Location.Location3D,
 			new Location3D(x, y, z), effected.getInstanceWorld());
-		
+
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effected.broadcastPacket(new FlyToLocationPacket(effected, destination, _flyType, _flySpeed, _flyDelay, _animationSpeed));
 		effected.setXYZ(destination);

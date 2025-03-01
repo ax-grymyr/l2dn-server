@@ -67,7 +67,7 @@ public class AdminScan: IAdminCommandHandler
 
 					npc.deleteMe();
 
-					Spawn spawn = npc.getSpawn();
+					Spawn? spawn = npc.getSpawn();
 					if (spawn != null)
 					{
 						spawn.stopRespawn();

@@ -35,7 +35,7 @@ public class Heal: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isDead() || effected.isDoor() || effected.isHpBlocked())
 		{

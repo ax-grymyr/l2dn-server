@@ -47,10 +47,7 @@ public class AdminDoorControl: IAdminCommandHandler
 				{
 					foreach (Castle castle in CastleManager.getInstance().getCastles())
 					{
-						if (castle.getDoor(doorId) != null)
-						{
-							castle.getDoor(doorId).openMe();
-						}
+						castle.getDoor(doorId)?.openMe();
 					}
 				}
 			}
@@ -66,10 +63,7 @@ public class AdminDoorControl: IAdminCommandHandler
 				{
 					foreach (Castle castle in CastleManager.getInstance().getCastles())
 					{
-						if (castle.getDoor(doorId) != null)
-						{
-							castle.getDoor(doorId).closeMe();
-						}
+						castle.getDoor(doorId)?.closeMe();
 					}
 				}
 			}

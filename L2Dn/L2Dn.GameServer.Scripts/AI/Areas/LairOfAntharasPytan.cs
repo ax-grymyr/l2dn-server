@@ -26,12 +26,14 @@ public class LairOfAntharasPytan: AbstractScript
             Npc npc = onAttackableKill.getTarget();
             bool isSummon = onAttackableKill.isSummon();
 
-            Npc spawnBanshee = addSpawn(KNORIKS, npc.Location, false, TimeSpan.FromMilliseconds(300000));
+            Npc? spawnBanshee = addSpawn(KNORIKS, npc.Location, false, TimeSpan.FromMilliseconds(300000));
             Playable attacker = isSummon
                 ? (Playable?)killer.getServitors().Values.FirstOrDefault() ?? (Playable?)killer.getPet() ?? killer
                 : killer;
 
-            addAttackPlayerDesire(spawnBanshee, attacker);
+            if (spawnBanshee != null)
+                addAttackPlayerDesire(spawnBanshee, attacker);
+            
             npc.deleteMe();
         }
     }

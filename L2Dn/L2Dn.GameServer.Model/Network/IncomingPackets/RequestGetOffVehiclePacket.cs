@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -25,7 +26,8 @@ public struct RequestGetOffVehiclePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (!player.isInBoat() || player.getBoat().ObjectId != _boatId || player.getBoat().isMoving() ||
+        Boat? boat = player.getBoat();
+        if (!player.isInBoat() || boat == null || boat.ObjectId != _boatId || boat.isMoving() ||
             !player.IsInsideRadius3D(_location, 1000))
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);

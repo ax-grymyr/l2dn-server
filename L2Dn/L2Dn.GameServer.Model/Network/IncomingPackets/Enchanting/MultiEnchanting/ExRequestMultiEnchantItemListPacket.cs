@@ -45,10 +45,10 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 		if (request == null)
 			return ValueTask.CompletedTask;
 
-		if (request.getEnchantingScroll() == null || request.isProcessing())
+        Item? scroll = request.getEnchantingScroll();
+		if (scroll == null || request.isProcessing())
 			return ValueTask.CompletedTask;
 
-		Item scroll = request.getEnchantingScroll();
 		if (scroll.getCount() < _slotId)
 		{
 			player.removeRequest<EnchantItemRequest>();
@@ -313,11 +313,16 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								count = Math.Max(0, enchantItem.getCrystalCount() - (enchantItem.getTemplate().getCrystalCount() + 1) / 2);
 							}
 
-							Item? crystals = null;
-							int crystalId = enchantItem.getTemplate().getCrystalItemId();
+                            int crystalId = enchantItem.getTemplate().getCrystalItemId();
 							if (count > 0)
 							{
-								crystals = player.getInventory().addItem("Enchant", crystalId, count, player, enchantItem);
+								Item? crystals = player.getInventory().addItem("Enchant", crystalId, count, player, enchantItem);
+                                if (crystals == null)
+                                {
+                                    player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: transactional inventory update
+                                    return ValueTask.CompletedTask;
+                                }
+
 								SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
 								sm.Params.addItemName(crystals);
 								sm.Params.addLong(count);

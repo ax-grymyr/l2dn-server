@@ -127,29 +127,29 @@ public readonly struct GMViewCharacterInfoPacket: IOutgoingPacket
 		writer.WriteInt32(_player.getCurrentLoad());
 		writer.WriteInt32(_player.getMaxLoad());
 		writer.WriteInt32(_player.getPkKills());
-		
+
 		foreach (int slot in PAPERDOLL_ORDER)
 		{
 			writer.WriteInt32(_player.getInventory().getPaperdollObjectId(slot));
 		}
-		
+
 		foreach (int slot in PAPERDOLL_ORDER)
 		{
 			writer.WriteInt32(_player.getInventory().getPaperdollItemDisplayId(slot));
 		}
-		
+
 		for (int slot = 0; slot < 11; slot++)
 		{
-			VariationInstance augment = _player.getInventory().getPaperdollAugmentation(slot);
+			VariationInstance? augment = _player.getInventory().getPaperdollAugmentation(slot);
 			writer.WriteInt32(augment != null ? augment.getOption1Id() : 0); // Confirmed
 			writer.WriteInt32(augment != null ? augment.getOption2Id() : 0); // Confirmed
 		}
-		
+
 		for (int index = 0; index < 98; index++)
 		{
 			writer.WriteInt32(0); // unk
 		}
-		
+
 		writer.WriteByte(0); // unk
 		writer.WriteByte(0); // unk
 		writer.WriteByte((byte)_player.getInventory().getTalismanSlots()); // CT2.3
@@ -203,13 +203,13 @@ public readonly struct GMViewCharacterInfoPacket: IOutgoingPacket
 		writer.WriteInt32(_player.getMaxCp());
 		writer.WriteInt32((int) _player.getCurrentCp());
 		writer.WriteByte(_player.isRunning()); // changes the Speed display on Status Window
-		writer.WriteByte(321 - 256); // TODO: writer.WriteByte(321) ????? 
+		writer.WriteByte(321 - 256); // TODO: writer.WriteByte(321) ?????
 		writer.WriteInt32((int)_player.getPledgeClass()); // changes the text above CP on Status Window
 		writer.WriteByte(_player.isNoble());
 		writer.WriteByte(_player.isHero());
 		writer.WriteInt32(_player.getAppearance().getNameColor().Value);
 		writer.WriteInt32(_player.getAppearance().getTitleColor().Value);
-		
+
 		AttributeType attackAttribute = _player.getAttackElement();
 		writer.WriteInt16((short)attackAttribute);
 		writer.WriteInt16((short)_player.getAttackElementValue(attackAttribute));
@@ -217,7 +217,7 @@ public readonly struct GMViewCharacterInfoPacket: IOutgoingPacket
 		{
 			writer.WriteInt16((short)_player.getDefenseElementValue(type));
 		}
-		
+
 		writer.WriteInt32(_player.getFame());
 		writer.WriteInt32(_player.getVitalityPoints());
 		writer.WriteInt32(0);

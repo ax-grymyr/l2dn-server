@@ -97,8 +97,8 @@ public class QuestLink: IBypassHandler
 			QuestState? qs = player.getQuestState(quest.Name);
 			if (qs == null || qs.isCreated() || (qs.isCompleted() && qs.isNowAvailable()))
 			{
-				string startConditionHtml = quest.getStartConditionHtml(player, npc);
-				if ((startConditionHtml != null && startConditionHtml.Length == 0) || !startingQuests.Contains(quest))
+				string? startConditionHtml = quest.getStartConditionHtml(player, npc);
+				if (!string.IsNullOrEmpty(startConditionHtml) || !startingQuests.Contains(quest))
 				{
 					continue;
 				}

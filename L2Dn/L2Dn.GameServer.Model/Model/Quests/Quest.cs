@@ -702,9 +702,9 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param skill the skill
 	 * @param type the skill learn type
 	 */
-	public void notifyAcquireSkill(Npc npc, Player player, Skill skill, AcquireSkillType type)
+	public void notifyAcquireSkill(Npc? npc, Player player, Skill skill, AcquireSkillType type)
 	{
-		string? res = null;
+		string? res;
 		try
 		{
 			res = onAcquireSkill(npc, player, skill, type);
@@ -1198,7 +1198,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param type the skill learn type
 	 * @return
 	 */
-	public string? onAcquireSkill(Npc npc, Player player, Skill skill, AcquireSkillType type)
+	public string? onAcquireSkill(Npc? npc, Player player, Skill skill, AcquireSkillType type)
 	{
 		return null;
 	}

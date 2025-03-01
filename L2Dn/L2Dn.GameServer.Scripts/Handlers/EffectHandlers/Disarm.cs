@@ -65,7 +65,7 @@ public class Disarm: AbstractEffect
 		}
 
 		int itemObjectId = _disarmedPlayers.remove(effected.ObjectId);
-		if (itemObjectId == null)
+		if (itemObjectId == 0)
 		{
 			return;
 		}

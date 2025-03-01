@@ -13,7 +13,7 @@ public class Op1hWeaponSkillCondition: ISkillCondition
 
     public Op1hWeaponSkillCondition(StatSet @params)
     {
-        List<string> weaponTypes = @params.getList<string>("weaponType");
+        List<string>? weaponTypes = @params.getList<string>("weaponType");
         if (weaponTypes != null)
         {
             foreach (string type in weaponTypes)

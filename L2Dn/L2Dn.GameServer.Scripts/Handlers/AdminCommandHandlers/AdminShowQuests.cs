@@ -319,8 +319,12 @@ public class AdminShowQuests: IAdminCommandHandler
 					break;
 				}
 				case "CREATE":
-				{
-					qs = QuestManager.getInstance().getQuest(int.Parse(val[0])).newQuestState(target);
+                {
+                    Quest? quest = QuestManager.getInstance().getQuest(int.Parse(val[0]));
+                    if (quest is null)
+                        break;
+
+					qs = quest.newQuestState(target);
 					qs.setState(State.STARTED);
 					qs.setCond(QuestCondType.STARTED);
 					target.sendPacket(new QuestListPacket(target));
@@ -330,7 +334,11 @@ public class AdminShowQuests: IAdminCommandHandler
 				}
 				case "CC":
 				{
-					qs = QuestManager.getInstance().getQuest(int.Parse(val[0])).newQuestState(target);
+                    Quest? quest = QuestManager.getInstance().getQuest(int.Parse(val[0]));
+                    if (quest is null)
+                        break;
+
+					qs = quest.newQuestState(target);
 					qs.exitQuest(QuestType.ONE_TIME);
 					target.sendPacket(new QuestListPacket(target));
 					target.sendPacket(new ExShowQuestMarkPacket(qs.getQuest().getId(), (int)qs.getCond()));

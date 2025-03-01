@@ -24,7 +24,7 @@ public class CallLearnedSkill: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		Skill? knownSkill = effector.getKnownSkill(_skillId);
 		if (knownSkill != null)

@@ -19,13 +19,13 @@ public class ModifyVital: AbstractEffect
 		SET,
 		PER
 	}
-	
+
 	// Effect parameters
 	private readonly ModifyType _type;
 	private readonly int _hp;
 	private readonly int _mp;
 	private readonly int _cp;
-	
+
 	public ModifyVital(StatSet @params)
 	{
 		_type = @params.getEnum<ModifyType>("type");
@@ -42,29 +42,29 @@ public class ModifyVital: AbstractEffect
 			_cp = @params.getInt("cp", -1);
 		}
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
+
 	public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
 		return !effected.isRaid() && !effected.isRaidMinion();
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isDead())
 		{
 			return;
 		}
-		
+
 		if (effector.isPlayer() && effected.isPlayer() && effected.isAffected(EffectFlag.DUELIST_FURY) && !effector.isAffected(EffectFlag.DUELIST_FURY))
 		{
 			return;
 		}
-		
+
 		switch (_type)
 		{
 			case ModifyType.DIFF:

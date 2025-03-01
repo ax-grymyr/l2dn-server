@@ -38,8 +38,10 @@ public class ReduceDamage: AbstractEffect
 			newDamage = ev.getDamage() - ev.getDamage() * (_amount / 100);
 		}
 		else // DIFF
-		{
-			newDamage = ev.getDamage() - Math.Max(_amount - ev.getAttacker().getStat().getAddValue(Stat.IGNORE_REDUCE_DAMAGE), 0.0);
+        {
+            Creature? attacker = ev.getAttacker();
+            double ignoreReduceDamage = attacker?.getStat().getAddValue(Stat.IGNORE_REDUCE_DAMAGE) ?? 0.0;
+			newDamage = ev.getDamage() - Math.Max(_amount - ignoreReduceDamage, 0.0);
 		}
 
 		ev.OverrideDamage = true;

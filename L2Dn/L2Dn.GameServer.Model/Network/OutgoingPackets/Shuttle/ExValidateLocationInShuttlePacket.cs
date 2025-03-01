@@ -14,7 +14,7 @@ public readonly struct ExValidateLocationInShuttlePacket: IOutgoingPacket
     public ExValidateLocationInShuttlePacket(Player player)
     {
         _player = player;
-        _shipId = _player.getShuttle().ObjectId;
+        _shipId = _player.getShuttle()?.ObjectId ?? 0; // TODO: pass shuttle id instead
         _location = new Location(player.getInVehiclePosition(), player.getHeading());
     }
 

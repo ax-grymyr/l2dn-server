@@ -17,36 +17,36 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class ManaHealByLevel: AbstractEffect
 {
 	private readonly double _power;
-	
+
 	public ManaHealByLevel(StatSet @params)
 	{
 		_power = @params.getDouble("power", 0);
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.MANAHEAL_BY_LEVEL;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isDead() || effected.isDoor() || effected.isMpBlocked())
 		{
 			return;
 		}
-		
+
 		if (effected != effector && effected.isAffected(EffectFlag.FACEOFF))
 		{
 			return;
 		}
-		
+
 		double amount = _power;
-		
+
 		// recharged mp influenced by difference between target level and skill level
 		// if target is within 5 levels or lower then skill level there's no penalty.
 		amount = effected.getStat().getValue(Stat.MANA_CHARGE, amount);
@@ -95,7 +95,7 @@ public class ManaHealByLevel: AbstractEffect
 				amount = 0; // 0mp recharged
 			}
 		}
-		
+
 		// Prevents overheal and negative amount
 		amount = Math.Max(Math.Min(amount, effected.getMaxRecoverableMp() - effected.getCurrentMp()), 0);
 		if (amount != 0)
@@ -104,7 +104,7 @@ public class ManaHealByLevel: AbstractEffect
 			effected.setCurrentMp(newMp, false);
 			effected.broadcastStatusUpdate(effector);
 		}
-		
+
 		SystemMessagePacket sm = new SystemMessagePacket(effector.ObjectId != effected.ObjectId ? SystemMessageId.YOU_HAVE_RECOVERED_S2_MP_WITH_C1_S_HELP : SystemMessageId.S1_MP_HAS_BEEN_RESTORED);
 		if (effector.ObjectId != effected.ObjectId)
 		{

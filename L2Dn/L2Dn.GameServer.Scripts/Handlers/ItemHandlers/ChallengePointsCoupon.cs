@@ -71,9 +71,7 @@ public class ChallengePointsCoupon: IItemHandler
 		{
 			player.destroyItem("Challenge Coupon", item.ObjectId, 1, null, false);
 			player.getChallengeInfo().getChallengePoints().compute(categoryId,
-				(k, v) => v == null
-					? Math.Min(EnchantChallengePointData.getInstance().getMaxPoints(), pointsToGive)
-					: Math.Min(EnchantChallengePointData.getInstance().getMaxPoints(), v + pointsToGive));
+				(_, v) => Math.Min(EnchantChallengePointData.getInstance().getMaxPoints(), v + pointsToGive));
 
 			player.sendPacket(new ExEnchantChallengePointInfoPacket(player));
 		}

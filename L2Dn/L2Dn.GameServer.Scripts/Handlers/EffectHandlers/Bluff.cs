@@ -15,30 +15,30 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class Bluff: AbstractEffect
 {
 	private readonly int _chance;
-	
+
 	public Bluff(StatSet @params)
 	{
 		_chance = @params.getInt("chance", 100);
 	}
-	
+
 	public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
 		return Formulas.calcProbability(_chance, effector, effected, skill);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		// Headquarters NPC should not rotate
 		if (effected.getId() == 35062 || effected.isRaid() || effected.isRaidMinion())
 		{
 			return;
 		}
-		
+
 		effected.broadcastPacket(new StartRotationPacket(effected.ObjectId, effected.getHeading(), 1, 65535));
 		effected.broadcastPacket(new StopRotationPacket(effected.ObjectId, effector.getHeading(), 65535));
 		effected.setHeading(effector.getHeading());

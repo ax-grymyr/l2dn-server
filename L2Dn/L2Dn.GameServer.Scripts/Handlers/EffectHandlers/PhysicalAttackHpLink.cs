@@ -20,44 +20,44 @@ public class PhysicalAttackHpLink: AbstractEffect
 	private readonly double _power;
 	private readonly double _criticalChance;
 	private readonly bool _overHit;
-	
+
 	public PhysicalAttackHpLink(StatSet @params)
 	{
 		_power = @params.getDouble("power", 0);
 		_criticalChance = @params.getDouble("criticalChance", 0);
 		_overHit = @params.getBoolean("overHit", false);
 	}
-	
+
 	public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
 		return !Formulas.calcSkillEvasion(effector, effected, skill);
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.PHYSICAL_ATTACK_HP_LINK;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effector.isAlikeDead())
 		{
 			return;
 		}
-		
+
 		if (_overHit && effected.isAttackable())
 		{
 			((Attackable) effected).overhitEnabled(true);
 		}
-		
+
 		double attack = effector.getPAtk();
 		double defence = effected.getPDef();
-		
+
 		switch (Formulas.calcShldUse(effector, effected))
 		{
 			case Formulas.SHIELD_DEFENSE_SUCCEED:
@@ -71,10 +71,10 @@ public class PhysicalAttackHpLink: AbstractEffect
 				break;
 			}
 		}
-		
+
 		double damage = 1;
 		bool critical = Formulas.calcCrit(_criticalChance, effector, effected, skill);
-		
+
 		if (defence != -1)
 		{
 			// Trait, elements
@@ -84,7 +84,7 @@ public class PhysicalAttackHpLink: AbstractEffect
 			double attributeMod = Formulas.calcAttributeBonus(effector, effected, skill);
 			double pvpPveMod = Formulas.calculatePvpPveBonus(effector, effected, skill, true);
 			double randomMod = effector.getRandomDamageMultiplier();
-			
+
 			// Skill specific mods.
 			double weaponMod = effector.getAttackType().isRanged() ? 70 : 77;
 			double power = _power + effector.getStat().getValue(Stat.SKILL_POWER_ADD, 0);
@@ -102,7 +102,7 @@ public class PhysicalAttackHpLink: AbstractEffect
 					ssmod = 4 * effector.getStat().getValue(Stat.SHOTS_BONUS) * effected.getStat().getValue(Stat.SOULSHOT_RESISTANCE, 1);
 				}
 			}
-			
+
 			// ...................____________Melee Damage_____________......................................___________________Ranged Damage____________________
 			// ATTACK CALCULATION 77 * ((pAtk * lvlMod) + power) / pdef            RANGED ATTACK CALCULATION 70 * ((pAtk * lvlMod) + power + patk + power) / pdef
 			// ```````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^``````````````````````````````````````^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -111,7 +111,7 @@ public class PhysicalAttackHpLink: AbstractEffect
 			damage *= effector.getStat().getValue(Stat.PHYSICAL_SKILL_POWER, 1);
 			damage *= -(effector.getCurrentHp() * 2 / effector.getMaxHp()) + 2;
 		}
-		
+
 		effector.doAttack(damage, effected, skill, false, false, critical, false);
 	}
 }

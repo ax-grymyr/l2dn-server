@@ -55,7 +55,8 @@ public struct RequestUnEquipItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (item.isWeapon() && item.getWeaponItem().isForceEquip() && !player.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS))
+		if (item.isWeapon() && item.getWeaponItem() is {} weaponItem &&
+            weaponItem.isForceEquip() && !player.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS))
 		{
 			connection.Send(SystemMessageId.THAT_ITEM_CANNOT_BE_TAKEN_OFF);
 			return ValueTask.CompletedTask;

@@ -22,7 +22,7 @@ public class StatBonusSkillCritical: AbstractEffect
 		_stat = (int)@params.getEnum("stat", BaseStat.DEX);
 
 		ItemTypeMask armorTypesMask = ItemTypeMask.Zero;
-		List<string> armorTypes = @params.getList<string>("armorType");
+		List<string>? armorTypes = @params.getList<string>("armorType");
 		if (armorTypes != null)
 		{
 			foreach (string armorType in armorTypes)

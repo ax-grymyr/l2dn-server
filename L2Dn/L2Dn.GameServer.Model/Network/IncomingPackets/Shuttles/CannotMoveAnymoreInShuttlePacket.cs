@@ -24,13 +24,13 @@ public struct CannotMoveAnymoreInShuttlePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (player.isInShuttle() && player.getShuttle().ObjectId == _boatId)
+        if (player.isInShuttle() && player.getShuttle() is {} shuttle && shuttle.ObjectId == _boatId)
         {
             player.setInVehiclePosition(_location.Location3D);
             player.setHeading(_location.Heading);
             player.broadcastPacket(new ExStopMoveInShuttlePacket(player, _boatId));
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

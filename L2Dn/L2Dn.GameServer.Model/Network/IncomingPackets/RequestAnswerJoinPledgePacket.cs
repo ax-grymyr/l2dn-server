@@ -45,15 +45,19 @@ public struct RequestAnswerJoinPledgePacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask; // hax
 			}
 
-			int pledgeType;
-			if (requestor.getRequest().getRequestPacket() is RequestJoinPledgePacket)
+			int pledgeType = 0;
+            if (requestor.getRequest().getRequestPacket() is RequestJoinPledgePacket requestJoinPledgePacket)
+            {
+                pledgeType = requestJoinPledgePacket.getPledgeType();
+            }
+			else if (requestor.getRequest().getRequestPacket() is RequestClanAskJoinByNamePacket requestClanAskJoinByNamePacket)
 			{
-				pledgeType = ((RequestJoinPledgePacket)requestor.getRequest().getRequestPacket()).getPledgeType();
+				pledgeType = requestClanAskJoinByNamePacket.getPledgeType();
 			}
-			else
-			{
-				pledgeType = ((RequestClanAskJoinByNamePacket)requestor.getRequest().getRequestPacket()).getPledgeType();
-			}
+            else
+            {
+                return ValueTask.CompletedTask;
+            }
 
 			Clan? clan = requestor.getClan();
             if (clan == null)

@@ -15,7 +15,7 @@ public class DispelBySlot: AbstractEffect
 {
 	private readonly string _dispel;
 	private readonly Map<AbnormalType, short> _dispelAbnormals;
-	
+
 	public DispelBySlot(StatSet @params)
 	{
 		_dispel = @params.getString("dispel");
@@ -33,18 +33,18 @@ public class DispelBySlot: AbstractEffect
 			_dispelAbnormals = new();
 		}
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.DISPEL_BY_SLOT;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (_dispelAbnormals.Count == 0)
 		{
@@ -55,8 +55,7 @@ public class DispelBySlot: AbstractEffect
 		if (effected.getEffectList().hasAbnormalType(_dispelAbnormals.Keys))
 		{
 			// Dispel transformations (buff and by GM)
-			short transformToDispel = _dispelAbnormals.get(AbnormalType.TRANSFORM);
-			if (transformToDispel != null &&
+			if (_dispelAbnormals.TryGetValue(AbnormalType.TRANSFORM, out short transformToDispel) &&
 			    (transformToDispel == effected.getTransformationId() || transformToDispel < 0))
 			{
 				effected.stopTransformation(true);
@@ -70,8 +69,7 @@ public class DispelBySlot: AbstractEffect
 					return false;
 				}
 
-				short abnormalLevel = _dispelAbnormals.get(info.getSkill().getAbnormalType());
-				return abnormalLevel != null &&
+				return _dispelAbnormals.TryGetValue(info.getSkill().getAbnormalType(), out short abnormalLevel) &&
 				       (abnormalLevel < 0 || abnormalLevel >= info.getSkill().getAbnormalLevel());
 			}, true, true);
 		}

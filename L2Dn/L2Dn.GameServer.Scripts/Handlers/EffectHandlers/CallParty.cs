@@ -21,7 +21,7 @@ public class CallParty: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		Party? party = effector.getParty();
         Player? player = effector.getActingPlayer();

@@ -34,7 +34,7 @@ public abstract class AbstractStatEffect: AbstractEffect
 		_mode = @params.getEnum("mode", StatModifierType.DIFF);
 
 		ItemTypeMask weaponTypesMask = ItemTypeMask.Zero;
-		List<string> weaponTypes = @params.getList<string>("weaponType");
+		List<string>? weaponTypes = @params.getList<string>("weaponType");
 		if (weaponTypes != null)
 		{
 			foreach (string weaponType in weaponTypes)
@@ -52,7 +52,7 @@ public abstract class AbstractStatEffect: AbstractEffect
 		}
 
 		ItemTypeMask armorTypesMask = ItemTypeMask.Zero;
-		List<string> armorTypes = @params.getList<string>("armorType");
+		List<string>? armorTypes = @params.getList<string>("armorType");
 		if (armorTypes != null)
 		{
 			foreach (string armorType in armorTypes)

@@ -19,7 +19,7 @@ public readonly struct ExReplyReceivedPostPacket: IOutgoingPacket
         _msg = msg;
         if (msg.hasAttachments())
         {
-            ItemContainer attachments = msg.getAttachments();
+            ItemContainer? attachments = msg.getAttachments();
             if (attachments != null && attachments.getSize() > 0)
             {
                 _items = attachments.getItems();

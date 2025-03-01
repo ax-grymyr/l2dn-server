@@ -30,7 +30,7 @@ public class FocusSouls: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
         Player? target = effected.getActingPlayer();
 		if (!effected.isPlayer() || effected.isAlikeDead() || target == null)

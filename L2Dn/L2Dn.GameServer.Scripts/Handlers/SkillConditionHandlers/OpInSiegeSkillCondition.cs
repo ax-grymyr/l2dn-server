@@ -16,7 +16,7 @@ public class OpInSiegeSkillCondition: ISkillCondition
 
 	public OpInSiegeSkillCondition(StatSet @params)
 	{
-		_residenceIds.addAll(@params.getList<int>("residenceIds"));
+		_residenceIds.addAll(@params.getList<int>("residenceIds") ?? []);
 	}
 
 	public bool canUse(Creature caster, Skill skill, WorldObject? target)

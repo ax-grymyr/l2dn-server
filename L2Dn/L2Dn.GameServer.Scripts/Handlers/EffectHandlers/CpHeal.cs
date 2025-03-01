@@ -17,35 +17,35 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class CpHeal: AbstractEffect
 {
 	private readonly double _power;
-	
+
 	public CpHeal(StatSet @params)
 	{
 		_power = @params.getDouble("power", 0);
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.CPHEAL;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isDead() || effected.isDoor() || effected.isHpBlocked())
 		{
 			return;
 		}
-		
+
 		double amount = _power;
 		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			amount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_CP, 0);
 		}
-		
+
 		// Prevents overheal and negative amount
 		amount = Math.Max(Math.Min(amount, effected.getMaxRecoverableCp() - effected.getCurrentCp()), 0);
 		if (amount != 0)
@@ -54,7 +54,7 @@ public class CpHeal: AbstractEffect
 			effected.setCurrentCp(newCp, false);
 			effected.broadcastStatusUpdate(effector);
 		}
-		
+
 		if (effector != null && effector != effected)
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_RECOVERED_S2_CP_WITH_C1_S_HELP);

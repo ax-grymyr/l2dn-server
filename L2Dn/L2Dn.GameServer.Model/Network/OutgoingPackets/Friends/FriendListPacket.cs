@@ -28,7 +28,7 @@ public readonly struct FriendListPacket: IOutgoingPacket
 			string? name = CharInfoTable.getInstance().getNameById(objId);
 			Player? player1 = World.getInstance().getPlayer(objId);
 			bool online = false;
-            if (player1 == null)
+            if (player1 == null || name is null)
 			{
 				// TODO: logic must not be in packets
 				try

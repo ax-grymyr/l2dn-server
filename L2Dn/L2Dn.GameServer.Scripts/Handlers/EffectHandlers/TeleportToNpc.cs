@@ -36,7 +36,7 @@ public class TeleportToNpc: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		Location? teleLocation = null;
 		foreach (Npc npc in effector.getSummonedNpcs())

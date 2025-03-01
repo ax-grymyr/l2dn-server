@@ -31,8 +31,14 @@ public struct ExApplyVariationOptionPacket: IIncomingPacket<GameSession>
         if (request == null)
             return ValueTask.CompletedTask;
 
-        Item targetItem = request.getAugmentedItem();
-        VariationInstance augment = request.getAugment();
+        Item? targetItem = request.getAugmentedItem();
+        if (targetItem == null)
+            return ValueTask.CompletedTask;
+
+        VariationInstance? augment = request.getAugment();
+        if (augment == null)
+            return ValueTask.CompletedTask;
+
         int option1Id = augment.getOption1Id();
         int option2Id = augment.getOption2Id();
 

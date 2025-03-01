@@ -33,7 +33,7 @@ public class TriggerSkill: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
         Player? player = effector.getActingPlayer();
 		if (effected == null || !effected.isCreature() || !effector.isPlayer() || player == null)
@@ -63,7 +63,7 @@ public class TriggerSkill: AbstractEffect
 			return;
 		}
 
-		SkillUseHolder queuedSkill = player.getQueuedSkill();
+		SkillUseHolder? queuedSkill = player.getQueuedSkill();
 		if (queuedSkill != null)
 		{
 			ThreadPool.schedule(() =>

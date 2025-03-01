@@ -16,21 +16,9 @@ public class BeeHive: AbstractScript
 	private const int PET_80_MONSTER = 22302; // Rude Tag [Slayer] - BUFF
 	private const int PLAYER_80_MONSTER = 22304; // Giant Rusty
 
-	private static readonly int[] LV_70_MONSTERS =
-	[
-		22293,
-		22294,
-		22295,
-		22296,
-	];
+    private static readonly int[] LV_70_MONSTERS = [22293, 22294, 22295, 22296];
 
-	private static readonly int[] LV_80_MONSTERS =
-	[
-		22298,
-		22299,
-		22300,
-		22301,
-	];
+    private static readonly int[] LV_80_MONSTERS = [22298, 22299, 22300, 22301];
 
 	// Skills
 	private static readonly SkillHolder[] SKILLS =
@@ -104,7 +92,7 @@ public class BeeHive: AbstractScript
 			bool isLow = LV_70_MONSTERS.Contains(npc.getId());
 			if (isLow || LV_80_MONSTERS.Contains(npc.getId()))
 			{
-				Npc spawn;
+				Npc? spawn;
 				if (killer.hasPet())
 				{
 					spawn = addSpawn(isLow ? PET_70_MONSTER : PET_80_MONSTER, npc.Location, false, DESPAWN_TIME);
@@ -113,9 +101,13 @@ public class BeeHive: AbstractScript
 				{
 					spawn = addSpawn(isLow ? PLAYER_70_MONSTER : PLAYER_80_MONSTER, npc.Location, false, DESPAWN_TIME);
 				}
-				spawn.setScriptValue(killer.ObjectId);
-				spawn.setShowSummonAnimation(true);
-				addAttackPlayerDesire(spawn, (Playable?)killer.getPet() ?? killer);
+
+                if (spawn != null)
+                {
+                    spawn.setScriptValue(killer.ObjectId);
+                    spawn.setShowSummonAnimation(true);
+                    addAttackPlayerDesire(spawn, (Playable?)killer.getPet() ?? killer);
+                }
 			}
 		}
 	}

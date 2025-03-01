@@ -22,18 +22,18 @@ public class BlinkSwap: AbstractEffect
 	public BlinkSwap(StatSet @params)
 	{
 	}
-	
+
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
 		return effected != null && GeoEngine.getInstance().canSeeTarget(effected, effector);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		Location3D effectedLoc = effected.Location.Location3D;
 		Location3D effectorLoc = effector.Location.Location3D;

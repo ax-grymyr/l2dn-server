@@ -3472,17 +3472,12 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				int gty = (originalLoc.Y - WorldMap.WorldYMin) >> 4;
 				if (isOnGeodataPath())
 				{
-					try
+                    if (_move != null)
 					{
 						if (gtx == _move.geoPathGtx && gty == _move.geoPathGty)
-						{
 							return;
-						}
+
 						_move.onGeodataPathIndex = -1; // Set not on geodata path.
-					}
-					catch (NullReferenceException)
-					{
-						// nothing
 					}
 				}
 

@@ -72,7 +72,7 @@ public class AdminDelete: IAdminCommandHandler
 
 	private void deleteNpc(Player player, Npc target)
 	{
-		Spawn spawn = target.getSpawn();
+		Spawn? spawn = target.getSpawn();
 		if (spawn != null)
 		{
 			NpcSpawnTemplate? npcSpawnTemplate = spawn.getNpcSpawnTemplate();
@@ -109,7 +109,7 @@ public class AdminDelete: IAdminCommandHandler
 
 	private void deleteGroup(Player player, Npc target)
 	{
-		Spawn spawn = target.getSpawn();
+		Spawn? spawn = target.getSpawn();
 		if (spawn != null)
 		{
 			NpcSpawnTemplate? npcSpawnTemplate = spawn.getNpcSpawnTemplate();

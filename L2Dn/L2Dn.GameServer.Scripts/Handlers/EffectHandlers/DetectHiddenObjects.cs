@@ -17,19 +17,19 @@ public class DetectHiddenObjects: AbstractEffect
 	public DetectHiddenObjects(StatSet @params)
 	{
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (!effected.isDoor())
 		{
 			return;
 		}
-		
+
 		Door door = (Door)effected;
 		if (door.getTemplate().isStealth())
 		{

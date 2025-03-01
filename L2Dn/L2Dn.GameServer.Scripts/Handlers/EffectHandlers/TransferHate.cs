@@ -15,28 +15,28 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class TransferHate: AbstractEffect
 {
 	private readonly int _chance;
-	
+
 	public TransferHate(StatSet @params)
 	{
 		_chance = @params.getInt("chance", 100);
 	}
-	
+
 	public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
 		return Formulas.calcProbability(_chance, effector, effected, skill);
 	}
-	
+
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{
 		return Util.checkIfInRange(skill.getEffectRange(), effector, effected, true);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		World.getInstance().forEachVisibleObjectInRange<Attackable>(effector, skill.getAffectRange(), hater =>
 		{
@@ -44,13 +44,13 @@ public class TransferHate: AbstractEffect
 			{
 				return;
 			}
-			
+
 			long hate = hater.getHating(effector);
 			if (hate <= 0)
 			{
 				return;
 			}
-			
+
 			hater.reduceHate(effector, -hate);
 			hater.addDamageHate(effected, 0, hate);
 		});

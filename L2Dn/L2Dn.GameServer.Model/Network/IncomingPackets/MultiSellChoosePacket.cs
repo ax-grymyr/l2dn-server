@@ -199,7 +199,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 		                                || itemEnchantment.getAttributeDefence(AttributeType.HOLY) != _holyDefence
 		                                || itemEnchantment.getAttributeDefence(AttributeType.DARK) != _darkDefence
 		                                || (itemEnchantment.getAugmentation() == null && (_augmentOption1 != 0 || _augmentOption2 != 0))
-		                                || (itemEnchantment.getAugmentation() != null && (itemEnchantment.getAugmentation().getOption1Id() != _augmentOption1 || itemEnchantment.getAugmentation().getOption2Id() != _augmentOption2))
+		                                || (itemEnchantment.getAugmentation() is {} augmentation && (augmentation.getOption1Id() != _augmentOption1 || augmentation.getOption2Id() != _augmentOption2))
 		                                || (_soulCrystalOptions != null && !itemEnchantment.soulCrystalOptionsMatch(_soulCrystalOptions))
 		                                || (_soulCrystalOptions == null && itemEnchantment.getSoulCrystalOptions().Count != 0)
 		                                || (_soulCrystalSpecialOptions != null && !itemEnchantment.soulCrystalSpecialOptionsMatch(_soulCrystalSpecialOptions))
@@ -516,6 +516,11 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				{
 					// Give item.
 					Item? addedItem = inventory.addItem("Multisell", product.getId(), totalCount, player, npc, false);
+                    if (addedItem == null)
+                    {
+                        player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
+                        return ValueTask.CompletedTask;
+                    }
 
 					// Check if the newly given item should be enchanted.
 					if (itemEnchantmentProcessed && list.isMaintainEnchantment() && itemEnchantment != null &&

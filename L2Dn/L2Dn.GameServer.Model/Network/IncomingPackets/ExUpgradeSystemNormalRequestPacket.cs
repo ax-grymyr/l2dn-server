@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.EquipmentUpgradeNormal;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
@@ -56,9 +57,10 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 
 	    Map<int, long> discounts = new();
 
-		if (upgradeHolder.isHasCategory(UpgradeDataType.MATERIAL))
+        List<ItemEnchantHolder>? materials = upgradeHolder.getItems(UpgradeDataType.MATERIAL);
+		if (upgradeHolder.isHasCategory(UpgradeDataType.MATERIAL) && materials != null)
 		{
-			foreach (ItemEnchantHolder material in upgradeHolder.getItems(UpgradeDataType.MATERIAL))
+			foreach (ItemEnchantHolder material in materials)
 			{
 				if (material.getCount() < 0)
 				{
@@ -97,9 +99,10 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 
 		// Get materials.
 		player.destroyItem("UpgradeNormalEquipment", _objectId, 1, player, true);
-		if (upgradeHolder.isHasCategory(UpgradeDataType.MATERIAL))
+        List<ItemEnchantHolder>? materials2 = upgradeHolder.getItems(UpgradeDataType.MATERIAL);
+		if (upgradeHolder.isHasCategory(UpgradeDataType.MATERIAL) && materials2 != null)
 		{
-			foreach (ItemHolder material in upgradeHolder.getItems(UpgradeDataType.MATERIAL))
+			foreach (ItemEnchantHolder material in materials2)
 			{
 				player.destroyItemByItemId("UpgradeNormalEquipment", material.getId(),
 					material.getCount() - (discounts.Count == 0 ? 0 : discounts.get(material.getId())), player, true);
@@ -117,25 +120,45 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 
 		if (Rnd.get(100d) < upgradeHolder.getChance())
 		{
-			foreach (ItemEnchantHolder successItem in upgradeHolder.getItems(UpgradeDataType.ON_SUCCESS))
-			{
-				Item? addedSuccessItem = player.addItem("UpgradeNormalEquipment", successItem.getId(), successItem.getCount(), player, true);
-				if (successItem.getEnchantLevel() != 0)
-				{
-					isNeedToSendUpdate = true;
-					addedSuccessItem.setEnchantLevel(successItem.getEnchantLevel());
-				}
+            List<ItemEnchantHolder>? itemsOnSuccess = upgradeHolder.getItems(UpgradeDataType.ON_SUCCESS);
+            if (itemsOnSuccess != null)
+            {
+                foreach (ItemEnchantHolder successItem in itemsOnSuccess)
+                {
+                    Item? addedSuccessItem = player.addItem("UpgradeNormalEquipment", successItem.getId(),
+                        successItem.getCount(), player, true);
 
-				addedSuccessItem.updateDatabase(true);
-				resultItems.Add(new UniqueItemEnchantHolder(successItem, addedSuccessItem.ObjectId));
-			}
+                    if (addedSuccessItem == null)
+                    {
+                        player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: proper message, atomic inventory update
+                        return ValueTask.CompletedTask;
+                    }
 
-			if (upgradeHolder.isHasCategory(UpgradeDataType.BONUS_TYPE) && Rnd.get(100d) < upgradeHolder.getChanceToReceiveBonusItems())
+                    if (successItem.getEnchantLevel() != 0)
+                    {
+                        isNeedToSendUpdate = true;
+                        addedSuccessItem.setEnchantLevel(successItem.getEnchantLevel());
+                    }
+
+                    addedSuccessItem.updateDatabase(true);
+                    resultItems.Add(new UniqueItemEnchantHolder(successItem, addedSuccessItem.ObjectId));
+                }
+            }
+
+            List<ItemEnchantHolder>? bonusTypeItems = upgradeHolder.getItems(UpgradeDataType.BONUS_TYPE);
+            if (upgradeHolder.isHasCategory(UpgradeDataType.BONUS_TYPE) && bonusTypeItems != null &&
+                Rnd.get(100d) < upgradeHolder.getChanceToReceiveBonusItems())
 			{
-				foreach (ItemEnchantHolder bonusItem in upgradeHolder.getItems(UpgradeDataType.BONUS_TYPE))
+				foreach (ItemEnchantHolder bonusItem in bonusTypeItems)
 				{
 					Item? addedBonusItem = player.addItem("UpgradeNormalEquipment", bonusItem.getId(),
 						bonusItem.getCount(), player, true);
+
+                    if (addedBonusItem == null)
+                    {
+                        player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: proper message, atomic inventory update
+                        return ValueTask.CompletedTask;
+                    }
 
 					if (bonusItem.getEnchantLevel() != 0)
 					{
@@ -149,13 +172,20 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 			}
 		}
 		else
-		{
-			if (upgradeHolder.isHasCategory(UpgradeDataType.ON_FAILURE))
+        {
+            List<ItemEnchantHolder>? itemsOnFailure = upgradeHolder.getItems(UpgradeDataType.ON_FAILURE);
+			if (upgradeHolder.isHasCategory(UpgradeDataType.ON_FAILURE) && itemsOnFailure != null)
 			{
-				foreach (ItemEnchantHolder failureItem in upgradeHolder.getItems(UpgradeDataType.ON_FAILURE))
+				foreach (ItemEnchantHolder failureItem in itemsOnFailure)
 				{
 					Item? addedFailureItem = player.addItem("UpgradeNormalEquipment", failureItem.getId(),
 						failureItem.getCount(), player, true);
+
+                    if (addedFailureItem == null)
+                    {
+                        player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: proper message, atomic inventory update
+                        return ValueTask.CompletedTask;
+                    }
 
 					if (failureItem.getEnchantLevel() != 0)
 					{

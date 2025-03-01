@@ -77,7 +77,7 @@ public readonly struct PledgeShowMemberListAllPacket: IOutgoingPacket
             writer.WriteInt32(m.getLevel());
             writer.WriteInt32((int)m.getClassId());
 
-            Player player = m.getPlayer();
+            Player? player = m.getPlayer();
             if (player != null)
             {
                 writer.WriteInt32(player.getAppearance().getSex() == Sex.Female); // no visible effect

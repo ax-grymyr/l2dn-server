@@ -524,7 +524,7 @@ public class AdminTeleport: IAdminCommandHandler
 				return;
 			}
 
-			Spawn spawn = target.getSpawn();
+			Spawn? spawn = target.getSpawn();
 			if (spawn == null)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Incorrect monster spawn.");
@@ -565,7 +565,7 @@ public class AdminTeleport: IAdminCommandHandler
 		else if (obj is RaidBoss)
 		{
 			RaidBoss target = (RaidBoss) obj;
-			Spawn spawn = target.getSpawn();
+			Spawn? spawn = target.getSpawn();
 			double curHP = target.getCurrentHp();
 			double curMP = target.getCurrentMp();
 			if (spawn == null)

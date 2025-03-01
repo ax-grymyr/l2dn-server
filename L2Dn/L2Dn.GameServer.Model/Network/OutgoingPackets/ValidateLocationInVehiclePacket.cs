@@ -15,7 +15,7 @@ public readonly struct ValidateLocationInVehiclePacket: IOutgoingPacket
     public ValidateLocationInVehiclePacket(Player player)
     {
         _objectId = player.ObjectId;
-        _boatObjId = player.getBoat().ObjectId;
+        _boatObjId = player.getBoat()?.ObjectId ?? 0; // TODO: pass boat id
         _location = player.getInVehiclePosition();
         _heading = player.getHeading();
     }
@@ -23,7 +23,7 @@ public readonly struct ValidateLocationInVehiclePacket: IOutgoingPacket
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.VALIDATE_LOCATION_IN_VEHICLE);
-        
+
         writer.WriteInt32(_objectId);
         writer.WriteInt32(_boatObjId);
         writer.WriteLocation3D(_location);

@@ -86,7 +86,7 @@ public class Synergy: AbstractEffect
 			Skill partyBuffSkill = partyBuff.getSkill();
 			if (partyBuffSkill != null)
 			{
-				WorldObject target = partyBuffSkill.getTarget(effector, effected, false, false, false);
+				WorldObject? target = partyBuffSkill.getTarget(effector, effected, false, false, false);
 				if (target != null && target.isCreature())
 				{
 					BuffInfo? abnormalBuffInfo = effector.getEffectList().getFirstBuffInfoByAbnormalType(partyBuffSkill.getAbnormalType());

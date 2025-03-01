@@ -38,7 +38,7 @@ public class Disarmor: AbstractEffect
 		return _slot != ItemTemplate.SLOT_NONE && effected.isPlayer();
 	}
 
-	public override void continuousInstant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void continuousInstant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
         Player? player = effected.getActingPlayer();
 		if (!effected.isPlayer() || player == null)
@@ -68,7 +68,7 @@ public class Disarmor: AbstractEffect
 			}
 
 			player.sendPacket(sm);
-			effected.getInventory().blockItemSlot(_slot);
+            player.getInventory().blockItemSlot(_slot);
 			_unequippedItems.put(effected.ObjectId, unequippedItem.ObjectId);
 		}
 	}

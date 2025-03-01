@@ -17,7 +17,7 @@ public class OpEquipItemSkillCondition: ISkillCondition
 
     public OpEquipItemSkillCondition(StatSet @params)
     {
-        List<int> itemIds = @params.getList<int>("itemIds");
+        List<int>? itemIds = @params.getList<int>("itemIds");
         if (itemIds != null)
         {
             _itemIds.addAll(itemIds);

@@ -200,10 +200,11 @@ public class AdminSpawn: IAdminCommandHandler
 			ZoneManager.getInstance().unload();
 			// Delete all spawns.
 			foreach (Npc npc in DbSpawnManager.getInstance().getNpcs())
-			{
-				if (npc != null)
+            {
+                Spawn? spawn = npc.getSpawn();
+				if (spawn != null)
 				{
-					DbSpawnManager.getInstance().deleteSpawn(npc.getSpawn(), true);
+					DbSpawnManager.getInstance().deleteSpawn(spawn, true);
 					npc.deleteMe();
 				}
 			}
@@ -214,7 +215,7 @@ public class AdminSpawn: IAdminCommandHandler
 				{
 					Npc target = (Npc) obj;
 					target.deleteMe();
-					Spawn spawn = target.getSpawn();
+					Spawn? spawn = target.getSpawn();
 					if (spawn != null)
 					{
 						spawn.stopRespawn();
@@ -235,10 +236,11 @@ public class AdminSpawn: IAdminCommandHandler
 			ZoneManager.getInstance().unload();
 			// Delete all spawns.
 			foreach (Npc npc in DbSpawnManager.getInstance().getNpcs())
-			{
-				if (npc != null)
+            {
+                Spawn? spawn = npc.getSpawn();
+				if (spawn != null)
 				{
-					DbSpawnManager.getInstance().deleteSpawn(npc.getSpawn(), true);
+					DbSpawnManager.getInstance().deleteSpawn(spawn, true);
 					npc.deleteMe();
 				}
 			}
@@ -249,7 +251,7 @@ public class AdminSpawn: IAdminCommandHandler
 				{
 					Npc target = (Npc) obj;
 					target.deleteMe();
-					Spawn spawn = target.getSpawn();
+					Spawn? spawn = target.getSpawn();
 					if (spawn != null)
 					{
 						spawn.stopRespawn();
@@ -523,10 +525,11 @@ public class AdminSpawn: IAdminCommandHandler
 	private void printSpawn(Npc target, int type)
 	{
 		int i = target.getId();
-		int x = target.getSpawn().Location.X;
-		int y = target.getSpawn().Location.Y;
-		int z = target.getSpawn().Location.Z;
-		int h = target.getSpawn().Location.Heading;
+        Spawn? spawn = target.getSpawn();
+		int x = spawn?.Location.X ?? 0;
+		int y = spawn?.Location.Y ?? 0;
+		int z = spawn?.Location.Z ?? 0;
+		int h = spawn?.Location.Heading ?? 0;
 		switch (type)
 		{
 			default:

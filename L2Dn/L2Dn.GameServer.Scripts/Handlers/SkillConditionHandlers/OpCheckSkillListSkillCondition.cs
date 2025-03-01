@@ -15,7 +15,7 @@ public class OpCheckSkillListSkillCondition: ISkillCondition
 
     public OpCheckSkillListSkillCondition(StatSet @params)
     {
-        _skillIds = @params.getList<int>("skillIds");
+        _skillIds = @params.getList<int>("skillIds") ?? [];
         _affectType = @params.getEnum<SkillConditionAffectType>("affectType");
     }
 

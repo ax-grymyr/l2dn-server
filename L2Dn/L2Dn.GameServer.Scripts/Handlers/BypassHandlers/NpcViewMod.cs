@@ -178,7 +178,7 @@ public class NpcViewMod: IBypassHandler
 		htmlContent.Replace("%hpGauge%", HtmlUtil.getHpGauge(250, (long) npc.getCurrentHp(), npc.getMaxHp(), false));
 		htmlContent.Replace("%mpGauge%", HtmlUtil.getMpGauge(250, (long) npc.getCurrentMp(), npc.getMaxMp(), false));
 
-		Spawn npcSpawn = npc.getSpawn();
+		Spawn? npcSpawn = npc.getSpawn();
 		if (npcSpawn == null || npcSpawn.getRespawnMinDelay() == TimeSpan.Zero)
 		{
 			htmlContent.Replace("%respawn%", "None");

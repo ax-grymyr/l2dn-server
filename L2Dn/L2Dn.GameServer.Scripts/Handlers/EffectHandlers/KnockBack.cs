@@ -58,7 +58,7 @@ public class KnockBack: AbstractEffect
 		return _knockDown ? EffectType.BLOCK_ACTIONS : base.getEffectType();
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (!_knockDown)
 		{
@@ -66,7 +66,7 @@ public class KnockBack: AbstractEffect
 		}
 	}
 
-	public override void continuousInstant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void continuousInstant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		effected.startParalyze();
 

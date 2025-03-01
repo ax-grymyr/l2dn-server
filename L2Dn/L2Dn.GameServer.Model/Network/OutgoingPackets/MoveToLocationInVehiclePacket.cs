@@ -11,7 +11,7 @@ public readonly struct MoveToLocationInVehiclePacket: IOutgoingPacket
     private readonly int _boatId;
     private readonly Location3D _destination;
     private readonly Location3D _origin;
-	
+
     /**
      * @param player
      * @param destination
@@ -20,15 +20,15 @@ public readonly struct MoveToLocationInVehiclePacket: IOutgoingPacket
     public MoveToLocationInVehiclePacket(Player player, Location3D destination, Location3D origin)
     {
         _objectId = player.ObjectId;
-        _boatId = player.getBoat().ObjectId;
+        _boatId = player.getBoat()?.ObjectId ?? 0; // TODO: pass boat id
         _destination = destination;
         _origin = origin;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.MOVE_TO_LOCATION_IN_VEHICLE);
-        
+
         writer.WriteInt32(_objectId);
         writer.WriteInt32(_boatId);
         writer.WriteLocation3D(_destination);

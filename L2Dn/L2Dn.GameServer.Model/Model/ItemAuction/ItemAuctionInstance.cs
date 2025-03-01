@@ -537,8 +537,6 @@ public class ItemAuctionInstance
 			}
 
 			List<ItemAuctionBid> auctionBids = new();
-			const string SELECT_PLAYERS_ID_BY_AUCTION_ID =
-				"SELECT playerObjId, playerBid FROM item_auction_bid WHERE auctionId = ?";
 			var query = ctx.ItemAuctionBids.Where(r => r.AuctionId == auctionId)
 				.Select(r => new { r.CharacterId, r.Bid });
 

@@ -14,7 +14,7 @@ public class OpTargetNpcSkillCondition: ISkillCondition
 
     public OpTargetNpcSkillCondition(StatSet @params)
     {
-        _npcIds.addAll(@params.getList<int>("npcIds"));
+        _npcIds.addAll(@params.getList<int>("npcIds") ?? []);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

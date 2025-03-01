@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Enchant.Attributes;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Variables;
+using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.EquipmentUpgrade;
 using L2Dn.GameServer.Utilities;
@@ -87,6 +88,12 @@ public struct RequestUpgradeSystemResultPacket: IIncomingPacket<GameSession>
 
 		// Give item.
 		Item? addedItem = player.addItem("UpgradeEquipment", upgradeHolder.getResultItemId(), 1, player, true);
+        if (addedItem == null)
+        {
+            player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: proper message, atomic inventory update
+            return ValueTask.CompletedTask;
+        }
+
 		if (upgradeHolder.isAnnounce())
 		{
 			Broadcast.toAllOnlinePlayers(new ExItemAnnouncePacket(player, addedItem, ExItemAnnouncePacket.UPGRADE));

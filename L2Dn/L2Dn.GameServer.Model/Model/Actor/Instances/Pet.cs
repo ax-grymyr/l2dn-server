@@ -1220,7 +1220,7 @@ public class Pet: Summon
 	}
 
 	[MethodImpl(MethodImplOptions.Synchronized)]
-	public override void unSummon(Player owner)
+	public override void unSummon(Player? owner)
 	{
 		stopFeed();
 		stopHpMpRegeneration();
@@ -1233,7 +1233,8 @@ public class Pet: Summon
 				_inventory.deleteMe();
 			}
 
-			World.getInstance().removePet(owner.ObjectId);
+            if (owner != null) // TODO check added
+			    World.getInstance().removePet(owner.ObjectId);
 		}
 	}
 

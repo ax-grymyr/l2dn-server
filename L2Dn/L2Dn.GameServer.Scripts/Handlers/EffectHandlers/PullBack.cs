@@ -21,7 +21,7 @@ public class PullBack: AbstractEffect
 	private readonly int _delay;
 	private readonly int _animationSpeed;
 	private readonly FlyType _type;
-	
+
 	public PullBack(StatSet @params)
 	{
 		_speed = @params.getInt("speed", 0);
@@ -29,18 +29,18 @@ public class PullBack: AbstractEffect
 		_animationSpeed = @params.getInt("animationSpeed", 0);
 		_type = @params.getEnum("type", FlyType.WARP_FORWARD); // type 9
 	}
-	
+
 	public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
 		return Formulas.calcProbability(100, effector, effected, skill);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		// Prevent pulling raids and town NPCs.
 		if (effected == null || effected.isRaid() || (effected.isNpc() && !effected.isAttackable()))
@@ -52,7 +52,7 @@ public class PullBack: AbstractEffect
 		{
 			return;
 		}
-		
+
 		// In retail, you get debuff, but you are not even moved if there is obstacle. You are still disabled from using skills and moving though.
 		if (GeoEngine.getInstance().canMoveToTarget(effected.Location.Location3D, effector.Location.Location3D,
 			    effected.getInstanceWorld()))

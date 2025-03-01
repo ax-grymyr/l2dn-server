@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class DispelBySlotMyself: AbstractEffect
 {
 	private readonly Set<AbnormalType> _dispelAbnormals;
-	
+
 	public DispelBySlotMyself(StatSet @params)
 	{
 		string dispel = @params.getString("dispel");
@@ -31,18 +31,18 @@ public class DispelBySlotMyself: AbstractEffect
 			_dispelAbnormals = [];
 		}
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.DISPEL_BY_SLOT;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (_dispelAbnormals.isEmpty())
 		{

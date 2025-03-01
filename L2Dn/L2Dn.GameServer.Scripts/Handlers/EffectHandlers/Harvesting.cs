@@ -27,7 +27,7 @@ public class Harvesting: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		Player? player = effector.getActingPlayer();
 		if (!effector.isPlayer() || player == null || !effected.isMonster() || !effected.isDead())
@@ -52,7 +52,7 @@ public class Harvesting: AbstractEffect
 
 					// Send system msg
 					SystemMessagePacket sm;
-					if (item.getCount() == 1)
+					if (harvestedItem.getCount() == 1)
 					{
 						sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1);
 						sm.Params.addItemName(harvestedItem.getId());
@@ -60,7 +60,7 @@ public class Harvesting: AbstractEffect
 					else
 					{
 						sm = new SystemMessagePacket(SystemMessageId.YOU_VE_OBTAINED_S1_X_S2);
-						sm.Params.addItemName(item.getId());
+						sm.Params.addItemName(harvestedItem.getId());
 						sm.Params.addLong(harvestedItem.getCount());
 					}
 					player.sendPacket(sm);
@@ -69,7 +69,7 @@ public class Harvesting: AbstractEffect
 					Party? party = player.getParty();
 					if (party != null)
 					{
-						if (item.getCount() == 1)
+						if (harvestedItem.getCount() == 1)
 						{
 							sm = new SystemMessagePacket(SystemMessageId.C1_HAS_OBTAINED_S2_2);
 							sm.Params.addString(player.getName());

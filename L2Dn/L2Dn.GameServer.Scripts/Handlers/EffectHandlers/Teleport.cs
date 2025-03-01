@@ -24,13 +24,13 @@ public class Teleport: AbstractEffect
 	{
 		return EffectType.TELEPORT;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (_location != default)
 		{

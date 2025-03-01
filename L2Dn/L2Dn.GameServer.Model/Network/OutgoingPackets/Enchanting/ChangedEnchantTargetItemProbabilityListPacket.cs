@@ -21,10 +21,14 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 		if (request == null)
 			return;
 
-		if ((!isMulti && request.getEnchantingItem() == null) || request.isProcessing() || request.getEnchantingScroll() == null)
-		{
+        Item? enchantingItem = request.getEnchantingItem();
+        Item? enchantingScroll = request.getEnchantingScroll();
+		if ((!isMulti && enchantingItem == null) || request.isProcessing() || enchantingScroll == null)
 			return;
-		}
+
+        EnchantScroll? enchantScroll = EnchantItemData.getInstance().getEnchantScroll(enchantingScroll.getId());
+        if (enchantScroll == null)
+            return;
 
 		int count = 1;
 		if (isMulti)
@@ -42,7 +46,7 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 			double passiveRate;
 			if (!isMulti || request.getMultiEnchantingItemsBySlot(i) != 0)
 			{
-				baseRate = getBaseRate(request, i);
+				baseRate = GetBaseRate(request, enchantScroll, i);
 				passiveRate = getPassiveRate(request, i);
 			}
 			else
@@ -51,7 +55,7 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 				passiveRate = 0;
 			}
 			double passiveBaseRate = 0;
-			double supportRate = getSupportRate(request);
+			double supportRate = GetSupportRate(request);
 			if (passiveRate != 0)
 			{
 				passiveBaseRate = baseRate * passiveRate / 10000;
@@ -61,14 +65,16 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 			{
 				totalRate = 10000;
 			}
-			if (!isMulti)
+
+            if (!isMulti && enchantingItem != null)
 			{
-				writer.WriteInt32(request.getEnchantingItem().ObjectId);
+				writer.WriteInt32(enchantingItem.ObjectId);
 			}
 			else
 			{
 				writer.WriteInt32(request.getMultiEnchantingItemsBySlot(i));
 			}
+
 			writer.WriteInt32((int) totalRate); // Total success.
 			writer.WriteInt32((int) baseRate); // Base success.
 			writer.WriteInt32((int) supportRate); // Support success.
@@ -76,26 +82,26 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 		}
 	}
 
-    private int getBaseRate(EnchantItemRequest request, int iteration)
+    private int GetBaseRate(EnchantItemRequest request, EnchantScroll enchantScroll, int iteration)
     {
-        EnchantScroll? enchantScroll =
-            EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId());
+        Item? item = isMulti
+            ? player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(iteration))
+            : request.getEnchantingItem();
 
-        // TODO: null check suppressed
-        return (int)Math.Min(100,
-            enchantScroll!.getChance(player,
-                isMulti
-                    ? player.getInventory().getItemByObjectId(request.getMultiEnchantingItemsBySlot(iteration))!
-                    : request.getEnchantingItem()) + enchantScroll.getBonusRate()) * 100;
+        if (item == null)
+            throw new InvalidOperationException("No enchanting item"); // TODO: verify
+
+        return (int)Math.Min(100, enchantScroll.getChance(player, item) + enchantScroll.getBonusRate()) * 100;
     }
 
-    private int getSupportRate(EnchantItemRequest request)
+    private int GetSupportRate(EnchantItemRequest request)
     {
         double supportRate = 0;
-        if (!isMulti && request.getSupportItem() != null)
+        Item? supportItem = request.getSupportItem();
+        if (!isMulti && supportItem != null)
         {
             // TODO: null check suppressed
-            supportRate = EnchantItemData.getInstance().getSupportItem(request.getSupportItem().getId())!.getBonusRate();
+            supportRate = EnchantItemData.getInstance().getSupportItem(supportItem.getId())?.getBonusRate() ?? 0;
             supportRate *= 100;
         }
 
@@ -106,10 +112,11 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 	{
 		double passiveRate = 0;
 		if (player.getStat().getValue(Stat.ENCHANT_RATE) != 0)
-		{
-			if (!isMulti)
+        {
+            Item? enchantingItem = request.getEnchantingItem();
+			if (!isMulti && enchantingItem != null)
 			{
-				CrystalType crystalLevel = request.getEnchantingItem().getTemplate().getCrystalType().getLevel();
+				CrystalType crystalLevel = enchantingItem.getTemplate().getCrystalType().getLevel();
 				if (crystalLevel == CrystalType.NONE.getLevel() || crystalLevel == CrystalType.EVENT.getLevel())
 				{
 					passiveRate = 0;

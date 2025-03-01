@@ -716,7 +716,7 @@ public class Siege: Siegable
 	 * Return true if clan is defender
 	 * @param clan The Clan of the player
 	 */
-	public bool checkIsDefender(Clan clan)
+	public bool checkIsDefender(Clan? clan)
 	{
 		return getDefenderClan(clan) != null;
 	}
@@ -1628,7 +1628,7 @@ public class Siege: Siegable
 		return _castle;
 	}
 
-	public SiegeClan? getDefenderClan(Clan clan)
+	public SiegeClan? getDefenderClan(Clan? clan)
 	{
 		if (clan == null)
 		{

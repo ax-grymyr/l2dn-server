@@ -27,7 +27,7 @@ public class GiveClanReputation: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Clan? clan = effector.getActingPlayer()?.getClan();
 		if (!effector.isPlayer() || !effected.isPlayer() || effected.isAlikeDead() || clan == null)
@@ -38,12 +38,13 @@ public class GiveClanReputation: AbstractEffect
         clan.addReputationScore(_reputation);
 
 		foreach (ClanMember member in clan.getMembers())
-		{
-			if (member.isOnline())
+        {
+            Player? memberPlayer = member.getPlayer();
+			if (member.isOnline() && memberPlayer != null)
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.CLAN_REPUTATION_POINTS_S1);
 				sm.Params.addInt(_reputation);
-				member.getPlayer().sendPacket(sm);
+				memberPlayer.sendPacket(sm);
 			}
 		}
 	}

@@ -376,7 +376,7 @@ public abstract class Summon: Playable
 		}
 	}
 
-	public virtual void unSummon(Player owner)
+	public virtual void unSummon(Player? owner)
 	{
 		if (isSpawned())
 		{

@@ -70,6 +70,13 @@ public struct ExTryPetExtractSystemPacket: IIncomingPacket<GameSession>
 
         int petId = PetDataTable.getInstance().getPetDataByItemId(petItem.getId())?.getType() ?? 0; // TODO
 		Pet? petInfo = Pet.restore(petItem, npcTemplate, player);
+        if (petInfo == null)
+        {
+            player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_A_PET); // TODO: proper message
+            player.sendPacket(new ResultPetExtractSystemPacket(false));
+            return ValueTask.CompletedTask;
+        }
+
 		int petLevel = petInfo.getLevel();
 		PetExtractionHolder? holder = PetExtractData.getInstance().getExtraction(petId, petLevel);
 		if (holder != null)

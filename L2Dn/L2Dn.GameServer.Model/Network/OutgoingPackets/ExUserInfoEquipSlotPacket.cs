@@ -13,10 +13,10 @@ public readonly struct ExUserInfoEquipSlotPacket: IOutgoingPacket
 {
     private readonly MaskablePacketHelper<InventorySlot> _helper;
     private readonly Player _player;
-    
+
     public ExUserInfoEquipSlotPacket(Player player, bool addAll = true)
     {
-        _helper = new MaskablePacketHelper<InventorySlot>(8); 
+        _helper = new MaskablePacketHelper<InventorySlot>(8);
         _player = player;
         if (addAll)
         {
@@ -28,11 +28,11 @@ public readonly struct ExUserInfoEquipSlotPacket: IOutgoingPacket
     {
         _helper.AddComponent(slot);
     }
-    
+
     public void WriteContent(PacketBitWriter writer)
     {
         ImmutableArray<InventorySlot> allSlots = EnumUtil.GetValues<InventorySlot>();
-        
+
         writer.WritePacketCode(OutgoingPacketCodes.EX_USER_INFO_EQUIP_SLOT);
         writer.WriteInt32(_player.ObjectId);
         writer.WriteInt16((short)allSlots.Length); // 152
@@ -43,7 +43,7 @@ public readonly struct ExUserInfoEquipSlotPacket: IOutgoingPacket
             if (_helper.HasComponent(slot))
             {
                 int paperdollSlot = slot.GetPaperdollSlot();
-                VariationInstance augment = inventory.getPaperdollAugmentation(paperdollSlot);
+                VariationInstance? augment = inventory.getPaperdollAugmentation(paperdollSlot);
                 writer.WriteInt16(22); // 10 + 4 * 3
                 writer.WriteInt32(inventory.getPaperdollObjectId(paperdollSlot));
                 writer.WriteInt32(inventory.getPaperdollItemId(paperdollSlot));

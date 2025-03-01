@@ -15,7 +15,7 @@ public class EquipWeaponSkillCondition: ISkillCondition
 
     public EquipWeaponSkillCondition(StatSet @params)
     {
-        List<WeaponType> weaponTypes = @params.getEnumList<WeaponType>("weaponType");
+        List<WeaponType>? weaponTypes = @params.getEnumList<WeaponType>("weaponType");
         if (weaponTypes != null)
         {
             foreach (WeaponType weaponType in weaponTypes)

@@ -15,7 +15,7 @@ public class TargetRaceSkillCondition: ISkillCondition
 
     public TargetRaceSkillCondition(StatSet @params)
     {
-        List<Race> races = @params.getEnumList<Race>("race");
+        List<Race>? races = @params.getEnumList<Race>("race");
         if (races != null)
         {
             _races.addAll(races);

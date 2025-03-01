@@ -135,7 +135,7 @@ public class MultilayerBlock: IBlock
 		if ((currentNswe & nswe) == 0)
 		{
 			short encodedHeight = (short) (nearestLayerZ << 1); // Shift left by 1 bit.
-			short newNswe = (short)(currentNswe | nswe); // Combine NSWE. // TODO: verify
+			short newNswe = (short)((ushort)currentNswe | nswe); // Combine NSWE. // TODO: verify
 			short newCombinedData = (short) (encodedHeight | newNswe); // Combine height and NSWE.
 			_data[nearestOffset] = (byte) (newCombinedData & 0xff); // Update the first byte at offset.
 			_data[nearestOffset + 1] = (byte) ((newCombinedData >> 8) & 0xff); // Update the second byte at offset + 1.

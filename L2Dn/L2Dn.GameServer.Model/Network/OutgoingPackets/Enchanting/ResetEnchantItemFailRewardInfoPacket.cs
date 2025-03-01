@@ -28,24 +28,28 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 			return;
 		}
 
-		if (request.getEnchantingItem() == null || request.isProcessing() || request.getEnchantingScroll() == null)
+        Item? enchantItem = request.getEnchantingItem();
+        Item? enchantScrollItem = request.getEnchantingScroll();
+		if (enchantItem == null || request.isProcessing() || enchantScrollItem == null)
 		{
 			return;
 		}
 
         // TODO: null check enforced
-		EnchantScroll enchantScroll = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId())!;
-		Item enchantItem = request.getEnchantingItem();
-		Item? addedItem = new Item(enchantItem.getId());
+		EnchantScroll enchantScroll = EnchantItemData.getInstance().getEnchantScroll(enchantScrollItem.getId())!;
+
+        Item? addedItem = new Item(enchantItem.getId());
 		addedItem.setOwnerId(_player.ObjectId);
-		addedItem.setEnchantLevel(request.getEnchantingItem().getEnchantLevel());
-		EnchantSupportItem? enchantSupportItem = null;
-		ItemHolder? result = null;
-		if (request.getSupportItem() != null)
+		addedItem.setEnchantLevel(enchantItem.getEnchantLevel());
+
+        EnchantSupportItem? enchantSupportItem = null;
+        Item? supportItem = request.getSupportItem();
+		if (supportItem != null)
 		{
-			enchantSupportItem = EnchantItemData.getInstance().getSupportItem(request.getSupportItem().getId());
+			enchantSupportItem = EnchantItemData.getInstance().getSupportItem(supportItem.getId());
 		}
 
+        ItemHolder? result = null;
 		if (enchantScroll.isBlessed() || (request.getSupportItem() != null && enchantSupportItem != null && enchantSupportItem.isBlessed()))
 		{
 			addedItem.setEnchantLevel(0);

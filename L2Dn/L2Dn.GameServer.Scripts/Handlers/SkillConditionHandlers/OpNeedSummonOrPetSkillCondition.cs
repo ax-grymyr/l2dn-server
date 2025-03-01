@@ -14,7 +14,7 @@ public class OpNeedSummonOrPetSkillCondition: ISkillCondition
 
     public OpNeedSummonOrPetSkillCondition(StatSet @params)
     {
-        List<int> npcIds = @params.getList<int>("npcIds");
+        List<int>? npcIds = @params.getList<int>("npcIds");
         if (npcIds != null)
         {
             _npcIds.addAll(npcIds);

@@ -159,7 +159,7 @@ public struct ExPetEquipItemPacket: IIncomingPacket<GameSession>
 			}
 
 			// Pets cannot use shields or sigils.
-			if (item.isArmor() && (item.getArmorItem().getItemType() == ArmorType.SHIELD || item.getArmorItem().getItemType() == ArmorType.SIGIL))
+			if (item.isArmor() && item.getArmorItem() is {} armorItem && (armorItem.getItemType() == ArmorType.SHIELD || armorItem.getItemType() == ArmorType.SIGIL))
 			{
 				player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 				return ValueTask.CompletedTask;
@@ -187,27 +187,42 @@ public struct ExPetEquipItemPacket: IIncomingPacket<GameSession>
 			if (player.isCastingNow())
 			{
 				// Create and Bind the next action to the AI.
-				player.getAI().setNextAction(new NextAction(CtrlEvent.EVT_FINISH_CASTING, CtrlIntention.AI_INTENTION_CAST, () =>
-				{
-					Item? transferedItem = player.transferItem("UnequipFromPet", item.ObjectId, 1, pet.getInventory(), null);
-					pet.useEquippableItem(transferedItem, false);
-					sendInfos(pet, player);
-				}));
-			}
+                player.getAI().setNextAction(new NextAction(CtrlEvent.EVT_FINISH_CASTING,
+                    CtrlIntention.AI_INTENTION_CAST, () =>
+                    {
+                        Item? transferedItem =
+                            player.transferItem("UnequipFromPet", item.ObjectId, 1, pet.getInventory(), null);
+
+                        if (transferedItem == null)
+                            player.sendPacket(SystemMessageId.YOUR_PET_S_INVENTORY_IS_FULL); // TODO
+                        else
+                            pet.useEquippableItem(transferedItem, false);
+
+                        sendInfos(pet, player);
+                    }));
+            }
 			else if (player.isAttackingNow())
 			{
 				// Equip or unEquip.
 				ThreadPool.schedule(() =>
 				{
 					Item? transferedItem = player.transferItem("UnequipFromPet", item.ObjectId, 1, pet.getInventory(), null);
-					pet.useEquippableItem(transferedItem, false);
+                    if (transferedItem == null)
+                        player.sendPacket(SystemMessageId.YOUR_PET_S_INVENTORY_IS_FULL); // TODO
+                    else
+					    pet.useEquippableItem(transferedItem, false);
+
 					sendInfos(pet, player);
 				}, player.getAttackEndTime() - DateTime.UtcNow);
 			}
 			else
 			{
 				Item? transferedItem = player.transferItem("UnequipFromPet", item.ObjectId, 1, pet.getInventory(), null);
-				pet.useEquippableItem(transferedItem, false);
+                if (transferedItem == null)
+                    player.sendPacket(SystemMessageId.YOUR_PET_S_INVENTORY_IS_FULL); // TODO
+                else
+    				pet.useEquippableItem(transferedItem, false);
+
 				sendInfos(pet, player);
 			}
 		}

@@ -48,17 +48,18 @@ public class TriggerSkillByDeathBlow: AbstractEffect
 			return;
 		}
 
-		if (@event.getAttacker() == @event.getTarget())
+        Creature? attacker = @event.getAttacker();
+		if (attacker == null || attacker == @event.getTarget())
 		{
 			return;
 		}
 
-		if (@event.getAttacker().getLevel() < _minAttackerLevel || @event.getAttacker().getLevel() > _maxAttackerLevel)
+		if (attacker.getLevel() < _minAttackerLevel || attacker.getLevel() > _maxAttackerLevel)
 		{
 			return;
 		}
 
-		if ((_chance < 100 && Rnd.get(100) > _chance) || !@event.getAttacker().InstanceType.IsType(_attackerType))
+		if ((_chance < 100 && Rnd.get(100) > _chance) || !attacker.InstanceType.IsType(_attackerType))
 		{
 			return;
 		}

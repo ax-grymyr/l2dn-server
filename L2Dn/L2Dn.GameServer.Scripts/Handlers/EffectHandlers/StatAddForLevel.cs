@@ -16,11 +16,11 @@ public class StatAddForLevel: AbstractEffect
 {
 	private readonly Stat _stat;
 	private readonly Map<int, double> _values;
-	
+
 	public StatAddForLevel(StatSet @params)
 	{
 		_stat = @params.getEnum<Stat>("stat");
-		
+
 		List<int> amount = @params.getIntegerList("amount");
 		_values = new();
 		int index = 0;
@@ -28,17 +28,16 @@ public class StatAddForLevel: AbstractEffect
 		{
 			_values.put(level, amount[index++]);
 		}
-		
+
 		if (@params.getEnum("mode", StatModifierType.DIFF) != StatModifierType.DIFF)
 		{
 			LOGGER.Warn(GetType().Name + " can only use DIFF mode.");
 		}
 	}
-	
+
 	public override void pump(Creature effected, Skill skill)
 	{
-		double amount = _values.get(effected.getLevel());
-		if (amount != null)
+		if (_values.TryGetValue(effected.getLevel(), out double amount))
 		{
 			effected.getStat().mergeAdd(_stat, amount);
 		}

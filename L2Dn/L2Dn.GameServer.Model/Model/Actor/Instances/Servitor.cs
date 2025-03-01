@@ -403,7 +403,7 @@ public class Servitor : Summon, Runnable
 		}
 	}
 
-	public override void unSummon(Player owner)
+	public override void unSummon(Player? owner)
 	{
 		if (_summonLifeTask != null)
 		{
@@ -414,7 +414,8 @@ public class Servitor : Summon, Runnable
 
 		if (!_restoreSummon)
 		{
-			CharSummonTable.getInstance().removeServitor(owner, ObjectId);
+            if (owner != null) // TODO: check added
+			    CharSummonTable.getInstance().removeServitor(owner, ObjectId);
 		}
 	}
 

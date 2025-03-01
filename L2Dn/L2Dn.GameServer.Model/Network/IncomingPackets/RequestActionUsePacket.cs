@@ -60,7 +60,7 @@ public struct RequestActionUsePacket: IIncomingPacket<GameSession>
 		if (player.isTransformed() && transform != null)
 		{
 			TransformTemplate? transformTemplate = transform.getTemplate(player);
-			ImmutableArray<int> allowedActions = transformTemplate.getBasicActionList();
+			ImmutableArray<int> allowedActions = transformTemplate?.getBasicActionList() ?? default;
 			if (allowedActions.IsDefaultOrEmpty || allowedActions.BinarySearch(_actionId) < 0)
 			{
 				connection.Send(ActionFailedPacket.STATIC_PACKET);

@@ -86,7 +86,7 @@ public struct DialogAnswerPacket: IIncomingPacket<GameSession>
 		    {
 			    string? cmd = player.getAdminConfirmCmd();
 			    player.setAdminConfirmCmd(null);
-			    if (_answer == 0)
+			    if (_answer == 0 || cmd is null)
 				    return ValueTask.CompletedTask;
 
 			    // The 'useConfirm' must be disabled here, as we don't want to repeat that process.

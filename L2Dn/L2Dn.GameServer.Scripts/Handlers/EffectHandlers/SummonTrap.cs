@@ -29,7 +29,7 @@ public class SummonTrap: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
         Player? player = effected.getActingPlayer();
 		if (!effected.isPlayer() || player == null || effected.isAlikeDead() || player.inObserverMode())
@@ -49,10 +49,7 @@ public class SummonTrap: AbstractEffect
 		}
 
 		// Unsummon previous trap
-		if (player.getTrap() != null)
-		{
-			player.getTrap().unSummon();
-		}
+		player.getTrap()?.unSummon();
 
 		NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(_npcId);
 		if (npcTemplate == null)

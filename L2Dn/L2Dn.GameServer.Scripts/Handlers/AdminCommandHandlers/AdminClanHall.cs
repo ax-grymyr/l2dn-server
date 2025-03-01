@@ -94,7 +94,7 @@ public class AdminClanHall: IAdminCommandHandler
 				}
 				case "take":
 				{
-					Clan clan = clanHall.getOwner();
+					Clan? clan = clanHall.getOwner();
 					if (clan != null)
 					{
 						clanHall.setOwner(null);
@@ -181,7 +181,7 @@ public class AdminClanHall: IAdminCommandHandler
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 			StringBuilder sb = new StringBuilder();
 			htmlContent.Replace("%clanHallId%", clanHall.getResidenceId().ToString());
-			htmlContent.Replace("%clanHallOwner%", clanHall.getOwner() == null ? "<font color=\"00FF00\">Free</font>" : "<font color=\"FF9900\">" + clanHall.getOwner().getName() + "</font>");
+			htmlContent.Replace("%clanHallOwner%", clanHall.getOwner() == null ? "<font color=\"00FF00\">Free</font>" : "<font color=\"FF9900\">" + clanHall.getOwner()?.getName() + "</font>");
 			string grade = clanHall.getGrade().ToString().Replace("GRADE_", "") + " Grade";
 			htmlContent.Replace("%clanHallGrade%", grade);
 			htmlContent.Replace("%clanHallSize%", clanHall.getGrade().ToString());

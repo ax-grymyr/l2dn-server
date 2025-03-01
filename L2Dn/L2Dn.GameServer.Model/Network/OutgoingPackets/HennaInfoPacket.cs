@@ -13,16 +13,11 @@ public readonly struct HennaInfoPacket: IOutgoingPacket
 
     public HennaInfoPacket(Player player)
     {
-        _hennas = new(); 
+        _hennas = new();
         _player = player;
         foreach (HennaPoten hennaPoten in _player.getHennaPotenList())
         {
-            if (hennaPoten == null)
-            {
-                continue;
-            }
-
-            Henna henna = hennaPoten.getHenna();
+            Henna? henna = hennaPoten.getHenna();
             if (henna != null)
             {
                 _hennas.Add(henna);
@@ -33,7 +28,7 @@ public readonly struct HennaInfoPacket: IOutgoingPacket
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.HENNA_INFO);
-        
+
         writer.WriteInt16((short)_player.getHennaValue(BaseStat.INT)); // equip INT
         writer.WriteInt16((short)_player.getHennaValue(BaseStat.STR)); // equip STR
         writer.WriteInt16((short)_player.getHennaValue(BaseStat.CON)); // equip CON
@@ -49,7 +44,7 @@ public readonly struct HennaInfoPacket: IOutgoingPacket
             writer.WriteInt32(henna.getDyeId());
             writer.WriteInt32(henna.isAllowedClass(_player));
         }
-        
+
         writer.WriteInt32(0); // Premium Slot Dye ID
         writer.WriteInt32(0); // Premium Slot Dye Time Left
         writer.WriteInt32(0); // Premium Slot Dye ID isValid

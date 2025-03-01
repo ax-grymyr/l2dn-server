@@ -30,12 +30,13 @@ public struct RequestNewHennaPotenEnchantPacket: IIncomingPacket<GameSession>
 		int dailyStep = player.getDyePotentialDailyStep();
 		int dailyCount = player.getDyePotentialDailyCount();
 		if (_slotId < 1 || _slotId > 4)
-		{
 			return ValueTask.CompletedTask;
-		}
 
 		HennaPoten? hennaPattern = player.getHennaPoten(_slotId);
-		int enchantExp = hennaPattern.getEnchantExp();
+        if (hennaPattern == null)
+            return ValueTask.CompletedTask;
+
+        int enchantExp = hennaPattern.getEnchantExp();
 		int fullExpNeeded = HennaPatternPotentialData.getInstance().getExpForLevel(hennaPattern.getEnchantLevel());
 		if (enchantExp >= fullExpNeeded && hennaPattern.getEnchantLevel() == 20)
 		{

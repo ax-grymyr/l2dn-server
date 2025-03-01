@@ -62,8 +62,9 @@ public struct RequestSetCropPacket: IIncomingPacket<GameSession>
 
         // Check player privileges
         Clan? clan = player.getClan();
+        Npc? lastFolk = player.getLastFolkNPC();
         if (clan == null || clan.getCastleId() != _manorId ||
-            !player.hasClanPrivilege(ClanPrivilege.CS_MANOR_ADMIN) || !player.getLastFolkNPC().canInteract(player))
+            !player.hasClanPrivilege(ClanPrivilege.CS_MANOR_ADMIN) || lastFolk == null || !lastFolk.canInteract(player))
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;

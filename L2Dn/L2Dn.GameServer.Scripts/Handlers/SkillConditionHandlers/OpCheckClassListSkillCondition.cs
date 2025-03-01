@@ -19,7 +19,7 @@ public class OpCheckClassListSkillCondition: ISkillCondition
 
     public OpCheckClassListSkillCondition(StatSet @params)
     {
-        List<CharacterClass> classIds = @params.getEnumList<CharacterClass>("classIds");
+        List<CharacterClass>? classIds = @params.getEnumList<CharacterClass>("classIds");
         if (classIds != null)
         {
             _classIds.addAll(classIds);

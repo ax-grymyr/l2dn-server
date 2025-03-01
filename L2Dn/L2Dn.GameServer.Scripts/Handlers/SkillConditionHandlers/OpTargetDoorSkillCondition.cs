@@ -14,7 +14,7 @@ public class OpTargetDoorSkillCondition: ISkillCondition
 
     public OpTargetDoorSkillCondition(StatSet @params)
     {
-        _doorIds.addAll(@params.getList<int>("doorIds"));
+        _doorIds.addAll(@params.getList<int>("doorIds") ?? []);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

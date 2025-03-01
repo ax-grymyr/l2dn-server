@@ -16,29 +16,29 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class RandomizeHate: AbstractEffect
 {
 	private readonly int _chance;
-	
+
 	public RandomizeHate(StatSet @params)
 	{
 		_chance = @params.getInt("chance", 100);
 	}
-	
+
 	public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
 		return Formulas.calcProbability(_chance, effector, effected, skill);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected == effector || !effected.isAttackable())
 		{
 			return;
 		}
-		
+
 		Attackable effectedMob = (Attackable) effected;
 		List<Creature> targetList = [];
 		World.getInstance().forEachVisibleObject<Creature>(effected, cha =>
@@ -50,7 +50,7 @@ public class RandomizeHate: AbstractEffect
 				{
 					return;
 				}
-				
+
 				targetList.Add(cha);
 			}
 		});
@@ -60,7 +60,7 @@ public class RandomizeHate: AbstractEffect
 		{
 			return;
 		}
-		
+
 		// Choosing randomly a new target
 		Creature target = targetList.GetRandomElement();
 		long hate = effectedMob.getHating(effector);

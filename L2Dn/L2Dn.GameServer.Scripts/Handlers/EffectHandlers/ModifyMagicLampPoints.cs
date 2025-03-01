@@ -24,7 +24,7 @@ public class ModifyMagicLampPoints: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected == null)
 		{

@@ -126,7 +126,7 @@ public sealed class Q00206Tutorial: Quest
     {
         if (player is null)
             return null;
-        
+
         QuestState? qs = getQuestState(player, false);
         if (qs == null)
             return null;
@@ -186,19 +186,22 @@ public sealed class Q00206Tutorial: Quest
         return null;
     }
 
-    public override string onKill(Npc npc, Player killer, bool isSummon)
+    public override string? onKill(Npc npc, Player? killer, bool isSummon)
     {
-	    QuestState? qs = getQuestState(killer, false);
-	    if (qs != null && qs.getMemoState() < 3 && !hasQuestItems(killer, BLUE_GEM) && getRandom(100) < 50)
-	    {
-		    giveItems(killer, BLUE_GEM, 1);
-		    qs.setMemoState(3);
-		    playSound(killer, "ItemSound.quest_tutorial");
-		    playTutorialVoice(killer, "tutorial_voice_013");
-		    killer.sendPacket(new TutorialShowQuestionMarkPacket(QUESTION_MARK_ID_2, 0));
-	    }
+        if (killer != null)
+        {
+            QuestState? qs = getQuestState(killer, false);
+            if (qs != null && qs.getMemoState() < 3 && !hasQuestItems(killer, BLUE_GEM) && getRandom(100) < 50)
+            {
+                giveItems(killer, BLUE_GEM, 1);
+                qs.setMemoState(3);
+                playSound(killer, "ItemSound.quest_tutorial");
+                playTutorialVoice(killer, "tutorial_voice_013");
+                killer.sendPacket(new TutorialShowQuestionMarkPacket(QUESTION_MARK_ID_2, 0));
+            }
+        }
 
-	    return base.onKill(npc, killer, isSummon);
+        return base.onKill(npc, killer, isSummon);
     }
 
     [SubscribeEvent(SubscriptionType.GlobalPlayers)]

@@ -15,7 +15,7 @@ public readonly struct NewHennaListPacket: IOutgoingPacket
     private readonly int _resetCount;
     private readonly int _sendType;
     private readonly List<ItemHolder> _resetData;
-	
+
     public NewHennaListPacket(Player player, int sendType)
     {
         _dailyStep = player.getDyePotentialDailyStep();
@@ -26,11 +26,11 @@ public readonly struct NewHennaListPacket: IOutgoingPacket
         _resetData = HennaPatternPotentialData.getInstance().getEnchantReset();
         _sendType = sendType;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_NEW_HENNA_LIST);
-        
+
         writer.WriteByte((byte)_sendType); // SendType
         writer.WriteInt16((short)_dailyStep);
         writer.WriteInt16((short)_dailyCount);
@@ -48,13 +48,13 @@ public readonly struct NewHennaListPacket: IOutgoingPacket
         {
             writer.WriteInt32(0);
         }
-		
+
         // hennaInfoList
         writer.WriteInt32(_hennaId.Length);
         for (int i = 1; i <= _hennaId.Length; i++)
         {
             HennaPoten hennaPoten = _hennaId[i - 1];
-            Henna henna = _hennaId[i - 1].getHenna();
+            Henna? henna = _hennaId[i - 1].getHenna();
             writer.WriteInt32(henna != null ? henna.getDyeId() : 0);
             writer.WriteInt32(hennaPoten.getPotenId());
             writer.WriteByte(i != _availableSlots);

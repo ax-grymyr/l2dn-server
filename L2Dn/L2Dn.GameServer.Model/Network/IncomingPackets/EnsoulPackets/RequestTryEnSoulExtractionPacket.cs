@@ -92,6 +92,12 @@ public struct RequestTryEnSoulExtractionPacket: IIncomingPacket<GameSession>
         if (runeId > 0)
         {
             Item? addItem = player.addItem("Rune Extract", runeId, 1, player, true);
+            if (addItem == null)
+            {
+                player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: atomic inventory update
+                return ValueTask.CompletedTask;
+            }
+
             itemsToUpdate.Add(new ItemInfo(addItem));
         }
 

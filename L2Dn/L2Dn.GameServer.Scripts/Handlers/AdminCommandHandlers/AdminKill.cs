@@ -104,9 +104,9 @@ public class AdminKill: IAdminCommandHandler
 
 	private void kill(Player activeChar, Creature target)
 	{
-		if (target.isPlayer())
+		if (target is Player player)
 		{
-			if (!target.isGM())
+			if (!player.isGM())
 			{
 				target.stopAllEffects(); // e.g. invincibility effect
 			}

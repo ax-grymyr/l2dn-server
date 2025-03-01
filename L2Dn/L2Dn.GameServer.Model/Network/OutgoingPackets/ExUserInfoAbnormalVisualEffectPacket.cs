@@ -9,12 +9,12 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct ExUserInfoAbnormalVisualEffectPacket: IOutgoingPacket
 {
     private readonly Player _player;
-	
+
     public ExUserInfoAbnormalVisualEffectPacket(Player player)
     {
         _player = player;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_USER_INFO_ABNORMAL_VISUAL_EFFECT);
@@ -34,12 +34,12 @@ public readonly struct ExUserInfoAbnormalVisualEffectPacket: IOutgoingPacket
         }
         if (team == Team.BLUE)
         {
-            if (Config.BLUE_TEAM_ABNORMAL_EFFECT != null)
+            if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
             {
                 writer.WriteInt16((short)Config.BLUE_TEAM_ABNORMAL_EFFECT);
             }
         }
-        else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != null)
+        else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
         {
             writer.WriteInt16((short)Config.RED_TEAM_ABNORMAL_EFFECT);
         }

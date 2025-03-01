@@ -18,7 +18,10 @@ public class OpCheckResidenceSkillCondition: ISkillCondition
 
     public OpCheckResidenceSkillCondition(StatSet @params)
     {
-        _residenceIds.addAll(@params.getList<int>("residenceIds"));
+        List<int>? residenceIds = @params.getList<int>("residenceIds");
+        if (residenceIds != null)
+            _residenceIds.addAll(residenceIds);
+        
         _isWithin = @params.getBoolean("isWithin");
     }
 

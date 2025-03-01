@@ -99,6 +99,14 @@ public struct RequestNewEnchantTryPacket: IIncomingPacket<GameSession>
 	    Item? item = player.addItem("Compound-Result", rewardItem.getId(), rewardItem.getCount(),
 		    rewardItem.getEnchantLevel(), null, true);
 
+        if (item == null)
+        {
+            player.sendPacket(new ExEnchantFailPacket(itemOne.getId(), itemTwo.getId()));
+            player.removeRequest<CompoundRequest>();
+            player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: proper message
+            return ValueTask.CompletedTask;
+        }
+
 	    // Send success or fail packet.
 	    if (success)
 	    {

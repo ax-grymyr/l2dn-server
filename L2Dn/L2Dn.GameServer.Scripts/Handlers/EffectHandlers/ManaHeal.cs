@@ -17,40 +17,40 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class ManaHeal: AbstractEffect
 {
 	private readonly double _power;
-	
+
 	public ManaHeal(StatSet @params)
 	{
 		_power = @params.getDouble("power", 0);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isDead() || effected.isDoor() || effected.isMpBlocked())
 		{
 			return;
 		}
-		
+
 		if (effected != effector && effected.isAffected(EffectFlag.FACEOFF))
 		{
 			return;
 		}
-		
+
 		double amount = _power;
 		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			amount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_MP, 0);
 		}
-		
+
 		if (!skill.isStatic())
 		{
 			amount = effected.getStat().getValue(Stat.MANA_CHARGE, amount);
 		}
-		
+
 		// Prevents overheal and negative amount
 		amount = Math.Max(Math.Min(amount, effected.getMaxRecoverableMp() - effected.getCurrentMp()), 0);
 		if (amount != 0)
@@ -58,7 +58,7 @@ public class ManaHeal: AbstractEffect
 			effected.setCurrentMp(effected.getCurrentMp() + amount);
 			effected.broadcastStatusUpdate(effector);
 		}
-		
+
 		SystemMessagePacket sm;
 		if (effector.ObjectId != effected.ObjectId)
 		{

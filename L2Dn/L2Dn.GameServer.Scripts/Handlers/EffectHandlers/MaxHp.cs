@@ -15,14 +15,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class MaxHp: AbstractStatEffect
 {
 	private readonly bool _heal;
-	
+
 	public MaxHp(StatSet @params): base(@params, Stat.MAX_HP)
 	{
-		
+
 		_heal = @params.getBoolean("heal", false);
 	}
-	
-	public override void continuousInstant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void continuousInstant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (_heal)
 		{

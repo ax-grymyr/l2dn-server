@@ -56,19 +56,14 @@ public class TriggerSkillBySkillAttack: AbstractEffect
 	private void onAttackEvent(OnCreatureDamageDealt @event)
 	{
 		if (@event.isDamageOverTime() || _chance == 0 || _skill.getSkillId() == 0 || _skill.getSkillLevel() == 0 || _attackSkill.getSkillId() == 0)
-		{
 			return;
-		}
 
-		if (@event.getSkill() == null)
-		{
+        Skill? eventSkill = @event.getSkill();
+		if (eventSkill == null)
 			return;
-		}
 
-		if (@event.getSkill().getId() != _attackSkill.getSkillId())
-		{
+		if (eventSkill.getId() != _attackSkill.getSkillId())
 			return;
-		}
 
 		ITargetTypeHandler? targetHandler = TargetHandler.getInstance().getHandler(_targetType);
 		if (targetHandler == null)
@@ -117,7 +112,7 @@ public class TriggerSkillBySkillAttack: AbstractEffect
 
             if (triggerSkill == null)
                 return;
-            
+
 			SkillCaster.triggerCast(@event.getAttacker(), (Creature) target, triggerSkill);
 		}
 	}

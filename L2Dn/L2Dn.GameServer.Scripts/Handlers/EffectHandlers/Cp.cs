@@ -19,31 +19,31 @@ public class Cp: AbstractEffect
 {
 	private readonly int _amount;
 	private readonly StatModifierType _mode;
-	
+
 	public Cp(StatSet @params)
 	{
 		_amount = @params.getInt("amount", 0);
 		_mode = @params.getEnum("mode", StatModifierType.DIFF);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isDead() || effected.isDoor() || effected.isHpBlocked())
 		{
 			return;
 		}
-		
+
 		double basicAmount = _amount;
 		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			basicAmount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_CP, 0);
 		}
-		
+
 		double amount = 0;
 		switch (_mode)
 		{
@@ -58,14 +58,14 @@ public class Cp: AbstractEffect
 				break;
 			}
 		}
-		
+
 		if (amount != 0)
 		{
 			double newCp = amount + effected.getCurrentCp();
 			effected.setCurrentCp(newCp, false);
 			effected.broadcastStatusUpdate(effector);
 		}
-		
+
 		if (amount >= 0)
 		{
 			if (effector != null && effector != effected)

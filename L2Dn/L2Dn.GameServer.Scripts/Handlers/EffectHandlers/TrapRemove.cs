@@ -17,34 +17,34 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class TrapRemove: AbstractEffect
 {
 	private readonly int _power;
-	
+
 	public TrapRemove(StatSet @params)
 	{
 		if (@params.isEmpty())
 		{
 			throw new ArgumentException(GetType().Name + ": effect without power!");
 		}
-		
+
 		_power = @params.getInt("power");
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (!effected.isTrap())
 		{
 			return;
 		}
-		
+
 		if (effected.isAlikeDead())
 		{
 			return;
 		}
-		
+
 		Trap trap = (Trap) effected;
 		if (!trap.canBeSeen(effector))
 		{
@@ -54,18 +54,18 @@ public class TrapRemove: AbstractEffect
 			}
 			return;
 		}
-		
+
 		if (trap.getLevel() > _power)
 		{
 			return;
 		}
-		
+
 		// Notify to scripts
 		if (trap.Events.HasSubscribers<OnTrapAction>())
 		{
 			trap.Events.NotifyAsync(new OnTrapAction(trap, effector, TrapAction.TRAP_DISARMED));
 		}
-		
+
 		trap.unSummon();
 		if (effector.isPlayer())
 		{

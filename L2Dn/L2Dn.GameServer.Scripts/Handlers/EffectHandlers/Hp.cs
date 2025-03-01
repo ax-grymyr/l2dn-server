@@ -19,35 +19,35 @@ public class Hp: AbstractEffect
 {
 	private readonly int _amount;
 	private readonly StatModifierType _mode;
-	
+
 	public Hp(StatSet @params)
 	{
 		_amount = @params.getInt("amount", 0);
 		_mode = @params.getEnum("mode", StatModifierType.DIFF);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isDead() || effected.isDoor() || effected.isHpBlocked() || effected.isRaid())
 		{
 			return;
 		}
-		
+
 		double basicAmount = _amount;
 		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			basicAmount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_HP, 0);
-			
+
 			// Classic Potion Mastery
 			// TODO: Create an effect if more mastery skills are added.
 			basicAmount *= 1 + effected.getAffectedSkillLevel((int)CommonSkill.POTION_MASTERY) / 100.0;
 		}
-		
+
 		double amount = 0;
 		switch (_mode)
 		{
@@ -62,7 +62,7 @@ public class Hp: AbstractEffect
 				break;
 			}
 		}
-		
+
 		if (amount >= 0)
 		{
 			if (amount != 0)
@@ -71,7 +71,7 @@ public class Hp: AbstractEffect
 				effected.setCurrentHp(newHp, false);
 				effected.broadcastStatusUpdate(effector);
 			}
-			
+
 			SystemMessagePacket sm;
 			if (effector.ObjectId != effected.ObjectId)
 			{

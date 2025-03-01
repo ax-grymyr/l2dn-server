@@ -55,7 +55,7 @@ public class TriggerHealPercentBySkill: AbstractEffect
 			return;
 		}
 
-		WorldObject target = @event.getTarget();
+		WorldObject? target = @event.getTarget();
 		if (target == null)
 		{
 			return;

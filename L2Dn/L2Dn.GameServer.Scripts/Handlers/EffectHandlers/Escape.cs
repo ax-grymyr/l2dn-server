@@ -39,7 +39,7 @@ public class Escape: AbstractEffect
 		return base.canStart(effector, effected, skill) && !effected.cannotEscape();
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (_escapeType != null)
         {

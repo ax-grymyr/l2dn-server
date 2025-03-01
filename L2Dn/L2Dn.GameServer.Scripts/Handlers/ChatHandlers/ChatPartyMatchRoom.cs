@@ -17,10 +17,10 @@ public class ChatPartyMatchRoom: IChatHandler
 	{
 		ChatType.PARTYMATCH_ROOM,
 	};
-	
+
 	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
 	{
-		MatchingRoom room = activeChar.getMatchingRoom();
+		MatchingRoom? room = activeChar.getMatchingRoom();
 		if (room != null)
 		{
 			if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.Contains(type))
@@ -33,7 +33,7 @@ public class ChatPartyMatchRoom: IChatHandler
 				activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 				return;
 			}
-			
+
 			CreatureSayPacket cs = new CreatureSayPacket(activeChar, type, activeChar.getName(), text, shareLocation);
 			foreach (Player _member in room.getMembers())
 			{
@@ -58,7 +58,7 @@ public class ChatPartyMatchRoom: IChatHandler
 			}
 		}
 	}
-	
+
 	public ChatType[] getChatTypeList()
 	{
 		return CHAT_TYPES;

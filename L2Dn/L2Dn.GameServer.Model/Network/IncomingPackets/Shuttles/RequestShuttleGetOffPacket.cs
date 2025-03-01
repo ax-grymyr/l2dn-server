@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -24,9 +25,10 @@ public struct RequestShuttleGetOffPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (player.getShuttle() != null)
+        Shuttle? shuttle = player.getShuttle();
+        if (shuttle != null)
         {
-            player.getShuttle().removePassenger(player, _x, _y, _z);
+            shuttle.removePassenger(player, _x, _y, _z);
         }
 
         return ValueTask.CompletedTask;

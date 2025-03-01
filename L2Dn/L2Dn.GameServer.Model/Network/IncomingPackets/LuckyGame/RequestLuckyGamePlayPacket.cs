@@ -125,7 +125,13 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 			foreach (ItemHolder r in reward.Value)
 			{
 				Item? item = player.addItem("LuckyGame", r.getId(), r.getCount(), player, true);
-				if (reward.Key == LuckyGameItemType.UNIQUE)
+                if (item == null)
+                {
+                    player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: atomic inventory update
+                    return ValueTask.CompletedTask;
+                }
+
+                if (reward.Key == LuckyGameItemType.UNIQUE)
 				{
 					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.CONGRATULATIONS_C1_HAS_OBTAINED_S2_X_S3_IN_THE_STANDARD_LUCKY_GAME);
 					sm.Params.addPcName(player);

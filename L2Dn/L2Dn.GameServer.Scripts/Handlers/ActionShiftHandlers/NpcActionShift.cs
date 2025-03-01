@@ -87,10 +87,10 @@ public class NpcActionShift: IActionShiftHandler
 			htmlContent.Replace("%ele_dholy%", npc.getDefenseElementValue(AttributeType.HOLY).ToString());
 			htmlContent.Replace("%ele_ddark%", npc.getDefenseElementValue(AttributeType.DARK).ToString());
 
-			Spawn spawn = npc.getSpawn();
+			Spawn? spawn = npc.getSpawn();
 			if (spawn != null)
 			{
-				NpcSpawnTemplate template = spawn.getNpcSpawnTemplate();
+				NpcSpawnTemplate? template = spawn.getNpcSpawnTemplate();
 				if (template != null)
 				{
 					string fileName = template.getSpawnTemplate().getFile().Replace('\\', '/');
@@ -109,22 +109,22 @@ public class NpcActionShift: IActionShiftHandler
 					htmlContent.Replace("%spawnai%", "<font color=FF0000>" + template.getSpawnTemplate().getAI() + "</font>");
 				}
 
-				Location spawnLocation = template?.getSpawnLocation() ?? npc.getSpawn().Location;
+				Location spawnLocation = template?.getSpawnLocation() ?? spawn.Location;
 				htmlContent.Replace("%spawn%", spawnLocation.X + " " + spawnLocation.Y + " " + spawnLocation.Z);
 
-				if (npc.getSpawn().getRespawnMinDelay() == TimeSpan.Zero)
+				if (spawn.getRespawnMinDelay() == TimeSpan.Zero)
 				{
 					htmlContent.Replace("%resp%", "None");
 				}
-				else if (npc.getSpawn().hasRespawnRandom())
+				else if (spawn.hasRespawnRandom())
 				{
-					htmlContent.Replace("%resp%", npc.getSpawn().getRespawnMinDelay() / 1000 + "-" + npc.getSpawn().getRespawnMaxDelay() / 1000 + " sec");
+					htmlContent.Replace("%resp%", spawn.getRespawnMinDelay() / 1000 + "-" + spawn.getRespawnMaxDelay() / 1000 + " sec");
 				}
 				else
 				{
-					htmlContent.Replace("%resp%", npc.getSpawn().getRespawnMinDelay() / 1000 + " sec");
+					htmlContent.Replace("%resp%", spawn.getRespawnMinDelay() / 1000 + " sec");
 				}
-				htmlContent.Replace("%chaseRange%", npc.getSpawn().getChaseRange().ToString());
+				htmlContent.Replace("%chaseRange%", spawn.getChaseRange().ToString());
 			}
 			else
 			{

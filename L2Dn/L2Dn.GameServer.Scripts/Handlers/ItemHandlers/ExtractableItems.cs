@@ -132,7 +132,10 @@ public class ExtractableItems: IItemHandler
 
 						if (template.isStackable() || createItemAmount == 1)
 						{
-							Item newItem = player.addItem("Extract", expi.getId(), createItemAmount, player, false);
+							Item? newItem = player.addItem("Extract", expi.getId(), createItemAmount, player, false);
+                            if (newItem == null) // TODO: verify
+                                continue;
+
 							if (expi.getMaxEnchant() > 0)
 							{
 								newItem.setEnchantLevel(Rnd.get(expi.getMinEnchant(), expi.getMaxEnchant()));
@@ -144,8 +147,11 @@ public class ExtractableItems: IItemHandler
 						{
 							while (createItemAmount > 0)
 							{
-								Item newItem = player.addItem("Extract", expi.getId(), 1, player, false);
-								if (expi.getMaxEnchant() > 0)
+								Item? newItem = player.addItem("Extract", expi.getId(), 1, player, false);
+                                if (newItem == null) // TODO: verify
+                                    continue;
+
+                                if (expi.getMaxEnchant() > 0)
 								{
 									newItem.setEnchantLevel(Rnd.get(expi.getMinEnchant(), expi.getMaxEnchant()));
 									enchantedItems.Add(newItem);
@@ -215,7 +221,10 @@ public class ExtractableItems: IItemHandler
 
 					if (template.isStackable() || createItemAmount == 1)
 					{
-						Item newItem = player.addItem("Extract", expi.getId(), createItemAmount, player, false);
+						Item? newItem = player.addItem("Extract", expi.getId(), createItemAmount, player, false);
+                        if (newItem == null) // TODO: verify
+                            continue;
+
 						if (expi.getMaxEnchant() > 0)
 						{
 							newItem.setEnchantLevel(Rnd.get(expi.getMinEnchant(), expi.getMaxEnchant()));
@@ -227,8 +236,11 @@ public class ExtractableItems: IItemHandler
 					{
 						while (createItemAmount > 0)
 						{
-							Item newItem = player.addItem("Extract", expi.getId(), 1, player, false);
-							if (expi.getMaxEnchant() > 0)
+							Item? newItem = player.addItem("Extract", expi.getId(), 1, player, false);
+                            if (newItem == null) // TODO: verify
+                                continue;
+
+                            if (expi.getMaxEnchant() > 0)
 							{
 								newItem.setEnchantLevel(Rnd.get(expi.getMinEnchant(), expi.getMaxEnchant()));
 								enchantedItems.Add(newItem);

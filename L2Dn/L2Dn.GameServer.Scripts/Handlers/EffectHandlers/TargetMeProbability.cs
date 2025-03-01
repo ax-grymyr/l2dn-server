@@ -14,23 +14,23 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class TargetMeProbability: AbstractEffect
 {
 	private readonly int _chance;
-	
+
 	public TargetMeProbability(StatSet @params)
 	{
 		_chance = @params.getInt("chance", 100);
 	}
-	
+
 	public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
 	{
 		return Formulas.calcProbability(_chance, effector, effected, skill);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isPlayable() && effected.getTarget() != effector)
 		{

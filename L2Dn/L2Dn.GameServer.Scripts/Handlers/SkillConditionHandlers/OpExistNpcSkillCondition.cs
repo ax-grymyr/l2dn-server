@@ -15,7 +15,7 @@ public class OpExistNpcSkillCondition: ISkillCondition
 
     public OpExistNpcSkillCondition(StatSet @params)
     {
-        _npcIds = @params.getList<int>("npcIds");
+        _npcIds = @params.getList<int>("npcIds") ?? [];
         _range = @params.getInt("range");
         _isAround = @params.getBoolean("isAround");
     }

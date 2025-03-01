@@ -49,7 +49,7 @@ public class AdminCursedWeapons: IAdminCommandHandler
 					BuilderUtil.sendSysMessage(activeChar, "> " + cw.getName() + " (" + cw.getItemId() + ")");
 					if (cw.isActivated())
 					{
-						Player pl = cw.getPlayer();
+						Player? pl = cw.getPlayer();
 						BuilderUtil.sendSysMessage(activeChar, "  Player holding: " + (pl == null ? "null" : pl.getName()));
 						BuilderUtil.sendSysMessage(activeChar, "    Player Reputation: " + cw.getPlayerReputation());
 						BuilderUtil.sendSysMessage(activeChar, "    Time Remaining: " + cw.getTimeLeft() / 60000 + " min.");
@@ -83,7 +83,7 @@ public class AdminCursedWeapons: IAdminCommandHandler
 
 					if (cw.isActivated())
 					{
-						Player pl = cw.getPlayer();
+						Player? pl = cw.getPlayer();
 						replyMSG.Append("<tr><td>Weilder:</td><td>");
 						replyMSG.Append(pl == null ? "null" : pl.getName());
 						replyMSG.Append("</td></tr>");

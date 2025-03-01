@@ -22,7 +22,7 @@ public class UnsummonServitors: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effector.hasServitors())
 		{
@@ -32,7 +32,8 @@ public class UnsummonServitors: AbstractEffect
 				servitor.abortCast();
 				servitor.stopAllEffects();
 
-				servitor.unSummon(effector.getActingPlayer());
+                Player? player = effector.getActingPlayer();
+				servitor.unSummon(player);
 			});
 		}
 	}

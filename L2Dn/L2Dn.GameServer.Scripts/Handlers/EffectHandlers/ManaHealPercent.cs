@@ -17,39 +17,39 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class ManaHealPercent: AbstractEffect
 {
 	private readonly double _power;
-	
+
 	public ManaHealPercent(StatSet @params)
 	{
 		_power = @params.getDouble("power", 0);
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.MANAHEAL_PERCENT;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected == null || effected.isDead() || effected.isDoor() || effected.isMpBlocked())
 		{
 			return;
 		}
-		
+
 		double amount = 0;
 		double power = _power;
 		bool full = power == 100.0;
-		
+
 		amount = full ? effected.getMaxMp() : effected.getMaxMp() * power / 100.0;
 		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			amount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_MP, 0);
 		}
-		
+
 		// Prevents overheal
 		amount = Math.Min(amount, Math.Max(0, effected.getMaxRecoverableMp() - effected.getCurrentMp()));
 		if (amount != 0)

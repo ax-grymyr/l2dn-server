@@ -101,29 +101,36 @@ public struct RequestNewHennaComposePacket: IIncomingPacket<GameSession>
 		if (Rnd.get(0, 100) <= combinationHennas.getChance())
         {
 			CombinationHennaReward? reward = combinationHennas.getReward(CombinationItemType.ON_SUCCESS);
-            Henna? rewardHenna = HennaData.getInstance().getHenna(reward.getHennaId());
-            if (rewardHenna != null)
+            if (reward != null)
             {
-                player.removeHenna(_slotOneIndex, false);
-                player.addHenna(_slotOneIndex, rewardHenna);
-                player.addItem("Henna Improving", reward.getId(), reward.getCount(), null, false);
-                player.sendPacket(new NewHennaPotenComposePacket(reward.getHennaId(),
-                    reward.getId() == 0 ? -1 : reward.getId(), true));
+                Henna? rewardHenna = HennaData.getInstance().getHenna(reward.getHennaId());
+                if (rewardHenna != null)
+                {
+                    player.removeHenna(_slotOneIndex, false);
+                    player.addHenna(_slotOneIndex, rewardHenna);
+                    player.addItem("Henna Improving", reward.getId(), reward.getCount(), null, false);
+                    player.sendPacket(new NewHennaPotenComposePacket(reward.getHennaId(),
+                        reward.getId() == 0 ? -1 : reward.getId(), true));
+                }
             }
         }
 		else
 		{
 			CombinationHennaReward? reward = combinationHennas.getReward(CombinationItemType.ON_FAILURE);
-            Henna? rewardHenna = HennaData.getInstance().getHenna(reward.getHennaId());
-			if (henna.getDyeId() != reward.getHennaId() && rewardHenna != null)
-			{
-				player.removeHenna(_slotOneIndex, false);
-				player.addHenna(_slotOneIndex, rewardHenna);
-			}
+            if (reward != null)
+            {
+                Henna? rewardHenna = HennaData.getInstance().getHenna(reward.getHennaId());
+                if (henna.getDyeId() != reward.getHennaId() && rewardHenna != null)
+                {
+                    player.removeHenna(_slotOneIndex, false);
+                    player.addHenna(_slotOneIndex, rewardHenna);
+                }
 
-			player.addItem("Henna Improving", reward.getId(), reward.getCount(), null, false);
-			player.sendPacket(new NewHennaPotenComposePacket(reward.getHennaId(), reward.getId() == 0 ? -1 : reward.getId(), false));
-		}
+                player.addItem("Henna Improving", reward.getId(), reward.getCount(), null, false);
+                player.sendPacket(new NewHennaPotenComposePacket(reward.getHennaId(),
+                    reward.getId() == 0 ? -1 : reward.getId(), false));
+            }
+        }
 
 		InventoryUpdatePacket iu = new InventoryUpdatePacket(itemsToUpdate);
 		player.sendPacket(iu);

@@ -23,26 +23,34 @@ public class RestorationRandom: AbstractEffect
 	private readonly List<ExtractableProductItem> _products = [];
 
 	public RestorationRandom(StatSet @params)
-	{
-		foreach (StatSet group in @params.getList<StatSet>("items"))
-		{
-			List<RestorationItemHolder> items = [];
-			foreach (StatSet item in group.getList<StatSet>("."))
-			{
-				items.Add(new RestorationItemHolder(item.getInt(".id"), item.getInt(".count"),
-					item.getInt(".minEnchant", 0), item.getInt(".maxEnchant", 0)));
-			}
+    {
+        List<StatSet>? sets = @params.getList<StatSet>("items");
+        if (sets != null)
+        {
+            foreach (StatSet group in sets)
+            {
+                List<RestorationItemHolder> items = [];
+                List<StatSet>? itemSets = group.getList<StatSet>(".");
+                if (itemSets != null)
+                {
+                    foreach (StatSet item in itemSets)
+                    {
+                        items.Add(new RestorationItemHolder(item.getInt(".id"), item.getInt(".count"),
+                            item.getInt(".minEnchant", 0), item.getInt(".maxEnchant", 0)));
+                    }
+                }
 
-			_products.Add(new ExtractableProductItem(items, group.getFloat(".chance")));
-		}
-	}
+                _products.Add(new ExtractableProductItem(items, group.getFloat(".chance")));
+            }
+        }
+    }
 
 	public override bool isInstant()
 	{
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
         Player? player = effected.getActingPlayer();
         if (player == null)
@@ -88,7 +96,9 @@ public class RestorationRandom: AbstractEffect
 			}
 
 			long itemCount = (long) (createdItem.getCount() * Config.RATE_EXTRACTABLE);
-			Item newItem = player.addItem("Extract", createdItem.getId(), itemCount, effector, false);
+			Item? newItem = player.addItem("Extract", createdItem.getId(), itemCount, effector, false);
+            if (newItem == null)
+                continue;
 
 			if (createdItem.getMaxEnchant() > 0)
 			{

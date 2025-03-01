@@ -17,43 +17,43 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class HealPercent: AbstractEffect
 {
 	private readonly int _power;
-	
+
 	public HealPercent(StatSet @params)
 	{
 		_power = @params.getInt("power", 0);
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.HEAL;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isDead() || effected.isDoor() || effected.isHpBlocked())
 		{
 			return;
 		}
-		
+
 		double amount = 0;
 		double power = _power;
 		bool full = power == 100.0;
-		
+
 		amount = full ? effected.getMaxHp() : effected.getMaxHp() * power / 100.0;
 		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			amount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_HP, 0);
-			
+
 			// Classic Potion Mastery
 			// TODO: Create an effect if more mastery skills are added.
 			amount *= 1 + effected.getAffectedSkillLevel((int)CommonSkill.POTION_MASTERY) / 100.0;
 		}
-		
+
 		// Prevents overheal
 		amount = Math.Min(amount, Math.Max(0, effected.getMaxRecoverableHp() - effected.getCurrentHp()));
 		if (amount >= 0)
@@ -64,7 +64,7 @@ public class HealPercent: AbstractEffect
 				effected.setCurrentHp(newHp, false);
 				effected.broadcastStatusUpdate(effector);
 			}
-			
+
 			SystemMessagePacket sm;
 			if (effector.ObjectId != effected.ObjectId)
 			{

@@ -9,24 +9,26 @@ using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.Model.Enums;
 using L2Dn.Packets;
+using NLog;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct DiePacket: IOutgoingPacket
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(DiePacket));
     private readonly int _objectId;
     private readonly bool _isSweepable;
     private readonly int _flags = 1; // To nearest village.
     private readonly TimeSpan _delayFeather;
-    private readonly Player _player;
+    private readonly Player? _player;
 
 	public DiePacket(Creature creature)
 	{
 		_objectId = creature.ObjectId;
 		_isSweepable = creature.isAttackable() && creature.isSweepActive();
-		if (creature.isPlayer())
+        _player = creature.getActingPlayer();
+		if (creature.isPlayer() && _player != null)
 		{
-			_player = creature.getActingPlayer();
 
 			foreach (BuffInfo effect in creature.getEffectList().getEffects())
 			{
@@ -39,7 +41,7 @@ public readonly struct DiePacket: IOutgoingPacket
 
 			if (!_player.isInTimedHuntingZone())
 			{
-				Clan clan = _player.getClan();
+				Clan? clan = _player.getClan();
 				bool isInCastleDefense = false;
 				bool isInFortDefense = false;
 				SiegeClan? siegeClan = null;
@@ -79,7 +81,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			}
 
 			// Feather check.
-			if (creature.getAccessLevel().allowFixedRes() || creature.getInventory().haveItemForSelfResurrection())
+			if (_player.getAccessLevel().allowFixedRes() || _player.getInventory().haveItemForSelfResurrection())
 			{
 				_flags += 32;
 			}
@@ -111,7 +113,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			else
 			{
 				writer.WriteInt32(0);
-				getValues(writer, originalValue);
+				GetValues(writer, _player, originalValue);
 			}
 		}
 		else
@@ -126,9 +128,9 @@ public readonly struct DiePacket: IOutgoingPacket
 		writer.WriteInt32(0);
 	}
 
-	private void getValues(PacketBitWriter writer, int originalValue)
+	private static void GetValues(PacketBitWriter writer, Player player, int originalValue)
 	{
-		if (Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES == null || Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES == null)
+		if (Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES.IsEmpty || Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES.IsEmpty)
 		{
 			writer.WriteInt32(0); // Adena resurrection
 			writer.WriteInt32(-1); // Adena count%
@@ -148,7 +150,7 @@ public readonly struct DiePacket: IOutgoingPacket
 				break;
 			}
 
-			if (_player.getLevel() >= level && levelListSecond.LastIndexOf(level) != levelListSecond.Count - 1)
+			if (player.getLevel() >= level && levelListSecond.LastIndexOf(level) != levelListSecond.Count - 1)
 			{
 				continue;
 			}
@@ -160,6 +162,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				writer.WriteInt32(0); // Adena resurrection
 				writer.WriteInt32(-1); // Adena count%
 				return;
@@ -167,7 +170,7 @@ public readonly struct DiePacket: IOutgoingPacket
 
 			int getValue = maxResTime <= originalValue ? maxResTime : originalValue + 1;
 			ResurrectByPaymentHolder rbph = Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES[level][getValue];
-			writer.WriteInt32((int) (rbph.getAmount() * _player.getStat().getValue(Stat.RESURRECTION_FEE_MODIFIER, 1))); // Adena resurrection
+			writer.WriteInt32((int) (rbph.getAmount() * player.getStat().getValue(Stat.RESURRECTION_FEE_MODIFIER, 1))); // Adena resurrection
 			writer.WriteInt32((int)rbph.getResurrectPercent()); // Adena count%
 			break;
 		}
@@ -181,7 +184,7 @@ public readonly struct DiePacket: IOutgoingPacket
 				break;
 			}
 
-			if (_player.getLevel() >= level && levelListFirst.LastIndexOf(level) != levelListFirst.Count - 1)
+			if (player.getLevel() >= level && levelListFirst.LastIndexOf(level) != levelListFirst.Count - 1)
 			{
 				continue;
 			}
@@ -193,6 +196,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			}
 			catch (Exception e)
 			{
+                _logger.Error(e);
 				writer.WriteInt32(0); // L-Coin resurrection
 				writer.WriteInt32(-1); // L-Coin count%
 				return;
@@ -200,7 +204,7 @@ public readonly struct DiePacket: IOutgoingPacket
 
 			int getValue = maxResTime <= originalValue ? maxResTime : originalValue + 1;
 			ResurrectByPaymentHolder rbph = Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES[level][getValue];
-			writer.WriteInt32((int)(rbph.getAmount() * _player.getStat().getValue(Stat.RESURRECTION_FEE_MODIFIER, 1))); // L-Coin resurrection
+			writer.WriteInt32((int)(rbph.getAmount() * player.getStat().getValue(Stat.RESURRECTION_FEE_MODIFIER, 1))); // L-Coin resurrection
 			writer.WriteInt32((int)rbph.getResurrectPercent()); // L-Coin count%
 			break;
 		}

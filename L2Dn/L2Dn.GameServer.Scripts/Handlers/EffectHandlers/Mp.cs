@@ -19,31 +19,31 @@ public class Mp: AbstractEffect
 {
 	private readonly int _amount;
 	private readonly StatModifierType _mode;
-	
+
 	public Mp(StatSet @params)
 	{
 		_amount = @params.getInt("amount", 0);
 		_mode = @params.getEnum("mode", StatModifierType.DIFF);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isDead() || effected.isDoor() || effected.isMpBlocked())
 		{
 			return;
 		}
-		
+
 		double basicAmount = _amount;
 		if (item != null && (item.isPotion() || item.isElixir()))
 		{
 			basicAmount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_MP, 0);
 		}
-		
+
 		double amount = 0;
 		switch (_mode)
 		{
@@ -58,7 +58,7 @@ public class Mp: AbstractEffect
 				break;
 			}
 		}
-		
+
 		if (amount >= 0)
 		{
 			if (amount != 0)
@@ -67,7 +67,7 @@ public class Mp: AbstractEffect
 				effected.setCurrentMp(newMp, false);
 				effected.broadcastStatusUpdate(effector);
 			}
-			
+
 			SystemMessagePacket sm;
 			if (effector.ObjectId != effected.ObjectId)
 			{

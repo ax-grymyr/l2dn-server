@@ -225,14 +225,14 @@ public class AdminSkill: IAdminCommandHandler
 				if (command.equalsIgnoreCase("admin_castnow"))
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Admin instant casting " + skill.getName() + " (" + skillId + "," + skillLevel + ")");
-					WorldObject target = skill.getTarget(activeChar, true, false, true);
+					WorldObject? target = skill.getTarget(activeChar, true, false, true);
 					if (target != null)
 					{
 						skill.forEachTargetAffected<Creature>(activeChar, target, o =>
 						{
 							if (o.isCreature())
 							{
-								skill.activateSkill(activeChar, o);
+								skill.activateSkill(activeChar, [o]);
 							}
 						});
 					}

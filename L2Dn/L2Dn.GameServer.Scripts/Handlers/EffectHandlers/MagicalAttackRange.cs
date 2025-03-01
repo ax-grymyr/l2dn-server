@@ -38,7 +38,7 @@ public class MagicalAttackRange: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
         Player? effectedPlayer = effected.getActingPlayer();
 		if (effected.isPlayer() && effectedPlayer != null && effectedPlayer.isFakeDeath() && Config.FAKE_DEATH_DAMAGE_STAND)

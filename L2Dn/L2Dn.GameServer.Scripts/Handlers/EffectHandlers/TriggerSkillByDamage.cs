@@ -9,7 +9,6 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Skills.Targets;
-using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -68,12 +67,13 @@ public class TriggerSkillByDamage: AbstractEffect
 			return;
 		}
 
-		if (@event.getAttacker() == @event.getTarget())
+        Creature? attacker = @event.getAttacker();
+		if (attacker == null || attacker == @event.getTarget())
 		{
 			return;
 		}
 
-		if (@event.getAttacker().getLevel() < _minAttackerLevel || @event.getAttacker().getLevel() > _maxAttackerLevel)
+		if (attacker.getLevel() < _minAttackerLevel || attacker.getLevel() > _maxAttackerLevel)
 		{
 			return;
 		}
@@ -93,7 +93,7 @@ public class TriggerSkillByDamage: AbstractEffect
 			return;
 		}
 
-		if (!@event.getAttacker().InstanceType.IsType(_attackerType))
+		if (!attacker.InstanceType.IsType(_attackerType))
 		{
 			return;
 		}
@@ -132,7 +132,7 @@ public class TriggerSkillByDamage: AbstractEffect
 
 			if (buffInfo == null || buffInfo.getSkill().getLevel() < triggerSkill.getLevel())
 			{
-				SkillCaster.triggerCast(@event.getAttacker(), (Creature) target, triggerSkill);
+				SkillCaster.triggerCast(attacker, (Creature) target, triggerSkill);
 			}
 		}
 		else // Multiple trigger skills.
@@ -162,7 +162,7 @@ public class TriggerSkillByDamage: AbstractEffect
 				triggerSkill = _triggerSkills[0].getSkill();
 			}
 
-			SkillCaster.triggerCast(@event.getAttacker(), (Creature) target, triggerSkill);
+			SkillCaster.triggerCast(attacker, (Creature) target, triggerSkill);
 		}
 	}
 

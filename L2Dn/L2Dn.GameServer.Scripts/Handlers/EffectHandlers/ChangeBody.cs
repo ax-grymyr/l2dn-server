@@ -18,13 +18,17 @@ public class ChangeBody: AbstractEffect
 	private readonly Set<TemplateChanceHolder> _transformations = [];
 
 	public ChangeBody(StatSet @params)
-	{
-		foreach (StatSet item in @params.getList<StatSet>("templates"))
-		{
-			_transformations.add(new TemplateChanceHolder(item.getInt(".templateId"), item.getInt(".minChance"),
-				item.getInt(".maxChance")));
-		}
-	}
+    {
+        List<StatSet>? items = @params.getList<StatSet>("templates");
+        if (items != null)
+        {
+            foreach (StatSet item in items)
+            {
+                _transformations.add(new TemplateChanceHolder(item.getInt(".templateId"), item.getInt(".minChance"),
+                    item.getInt(".maxChance")));
+            }
+        }
+    }
 
 	public override bool canStart(Creature effector, Creature effected, Skill skill)
 	{

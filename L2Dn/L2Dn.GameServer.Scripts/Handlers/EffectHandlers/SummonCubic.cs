@@ -39,7 +39,7 @@ public class SummonCubic: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
         Player? player = effected.getActingPlayer();
 		if (!effected.isPlayer() || player == null || effected.isAlikeDead() || player.inObserverMode())
@@ -59,7 +59,7 @@ public class SummonCubic: AbstractEffect
 		}
 
 		// If cubic is already present, it's replaced.
-		Cubic cubic = player.getCubicById(_cubicId);
+		Cubic? cubic = player.getCubicById(_cubicId);
 		if (cubic != null)
 		{
 			if (cubic.getTemplate().getLevel() > _cubicLvl)

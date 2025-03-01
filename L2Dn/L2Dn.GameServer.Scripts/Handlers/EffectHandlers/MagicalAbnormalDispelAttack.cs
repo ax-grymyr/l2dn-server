@@ -40,7 +40,7 @@ public class MagicalAbnormalDispelAttack: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		// First dispells the effect, then does damage. Sometimes the damage is evaded, but debuff is still dispelled.
 		if (effector.isAlikeDead() || _abnormalType == AbnormalType.NONE || !effected.getEffectList().stopEffects(_abnormalType))

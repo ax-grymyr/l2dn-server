@@ -18,25 +18,25 @@ public class StealAbnormal: AbstractEffect
 	private readonly DispelSlotType _slot;
 	private readonly int _rate;
 	private readonly int _max;
-	
+
 	public StealAbnormal(StatSet @params)
 	{
 		_slot = @params.getEnum("slot", DispelSlotType.BUFF);
 		_rate = @params.getInt("rate", 0);
 		_max = @params.getInt("max", 0);
 	}
-	
+
 	public override EffectType getEffectType()
 	{
 		return EffectType.STEAL_ABNORMAL;
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (effected.isPlayer() && effector != effected)
 		{
@@ -45,7 +45,7 @@ public class StealAbnormal: AbstractEffect
 			{
 				return;
 			}
-			
+
 			foreach (BuffInfo infoToSteal in toSteal)
 			{
 				// Invert effected and effector.

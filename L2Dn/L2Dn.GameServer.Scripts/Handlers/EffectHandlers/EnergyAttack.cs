@@ -50,7 +50,7 @@ public class EnergyAttack: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
         Player? attacker = effector.getActingPlayer();
 		if (!effector.isPlayer() || attacker == null)

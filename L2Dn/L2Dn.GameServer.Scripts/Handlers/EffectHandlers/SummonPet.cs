@@ -33,7 +33,7 @@ public class SummonPet: AbstractEffect
         return true;
     }
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Player? player = effector.getActingPlayer();
         if (!effector.isPlayer() || player == null || !effected.isPlayer() || effected.isAlikeDead())
@@ -79,7 +79,10 @@ public class SummonPet: AbstractEffect
             return;
         }
 
-        Pet pet = Pet.spawnPet(npcTemplate, player, collar);
+        Pet? pet = Pet.spawnPet(npcTemplate, player, collar);
+        if (pet == null)
+            return;
+
         player.setPet(pet);
         pet.setShowSummonAnimation(true);
 

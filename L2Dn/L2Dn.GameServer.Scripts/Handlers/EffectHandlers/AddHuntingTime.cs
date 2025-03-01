@@ -29,19 +29,18 @@ public class AddHuntingTime: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
+        if (item == null)
+            return;
+
 		Player? player = effected.getActingPlayer();
 		if (player == null)
-		{
 			return;
-		}
 
 		TimedHuntingZoneHolder? holder = TimedHuntingZoneData.getInstance().getHuntingZone(_zoneId);
 		if (holder == null)
-		{
 			return;
-		}
 
 		DateTime currentTime = DateTime.UtcNow;
 		DateTime endTime = currentTime + TimeSpan.FromMilliseconds(player.getTimedHuntingZoneRemainingTime(_zoneId));

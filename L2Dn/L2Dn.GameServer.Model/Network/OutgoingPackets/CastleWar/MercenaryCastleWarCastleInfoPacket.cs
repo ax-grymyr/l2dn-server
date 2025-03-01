@@ -42,6 +42,6 @@ public readonly struct MercenaryCastleWarCastleInfoPacket: IOutgoingPacket
         writer.WriteInt32(castle.getTaxPercent(TaxType.BUY)); // CastleTaxRate
         writer.WriteInt64((long) (castle.getTreasury() * castle.getTaxRate(TaxType.BUY))); // CurrentIncome
         writer.WriteInt64((long) (castle.getTreasury() + castle.getTreasury() * castle.getTaxRate(TaxType.BUY))); // TotalIncome
-        writer.WriteInt32(castle.getSiegeDate() != null ? castle.getSiegeDate().getEpochSecond() : 0); // NextSiegeTime
+        writer.WriteInt32(castle.getSiegeDate().getEpochSecond()); // NextSiegeTime
     }
 }

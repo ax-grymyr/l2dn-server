@@ -128,7 +128,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 
 		foreach (int slot in PAPERDOLL_ORDER_AUGMENT)
 		{
-			VariationInstance augment = _player.getInventory().getPaperdollAugmentation(slot);
+			VariationInstance? augment = _player.getInventory().getPaperdollAugmentation(slot);
 			writer.WriteInt32(augment != null ? augment.getOption1Id() : 0); // Confirmed
 			writer.WriteInt32(augment != null ? augment.getOption2Id() : 0); // Confirmed
 		}

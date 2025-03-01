@@ -37,15 +37,14 @@ public class Lethal: AbstractEffect
 		return EffectType.LETHAL_ATTACK;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
-        AccessLevel? accessLevel = effector.getAccessLevel();
-		if (effector.isPlayer() && accessLevel != null && !accessLevel.canGiveDamage())
-		{
-			return;
-		}
+        if (effector.isPlayer() && effector.getActingPlayer() is { } player && !player.getAccessLevel().canGiveDamage())
+        {
+            return;
+        }
 
-		if (skill.getMagicLevel() < effected.getLevel() - 6)
+        if (skill.getMagicLevel() < effected.getLevel() - 6)
 		{
 			return;
 		}

@@ -31,7 +31,7 @@ public class Restoration: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (!effected.isPlayable())
 		{
@@ -48,7 +48,13 @@ public class Restoration: AbstractEffect
         Player? effectedPlayer = effected.getActingPlayer();
 		if (effected.isPlayer() && effectedPlayer != null)
 		{
-			Item newItem = effectedPlayer.addItem("Skill", _itemId, _itemCount, effector, true);
+			Item? newItem = effectedPlayer.addItem("Skill", _itemId, _itemCount, effector, true);
+            if (newItem == null)
+            {
+                effected.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: proper message
+                return;
+            }
+
 			if (_itemEnchantmentLevel > 0)
 			{
 				newItem.setEnchantLevel(_itemEnchantmentLevel);

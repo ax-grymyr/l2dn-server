@@ -11,32 +11,32 @@ public class OnPlayerItemAugment: EventBase
 {
 	private readonly Player _player;
 	private readonly Item _item;
-	private readonly VariationInstance _augmentation;
+	private readonly VariationInstance? _augmentation;
 	private readonly bool _isAugment; // true = is being augmented // false = augment is being removed
-	
-	public OnPlayerItemAugment(Player player, Item item, VariationInstance augment, bool isAugment)
+
+	public OnPlayerItemAugment(Player player, Item item, VariationInstance? augment, bool isAugment)
 	{
 		_player = player;
 		_item = item;
 		_augmentation = augment;
 		_isAugment = isAugment;
 	}
-	
+
 	public Player getPlayer()
 	{
 		return _player;
 	}
-	
+
 	public Item getItem()
 	{
 		return _item;
 	}
-	
-	public VariationInstance getAugmentation()
+
+	public VariationInstance? getAugmentation()
 	{
 		return _augmentation;
 	}
-	
+
 	public bool isAugment()
 	{
 		return _isAugment;

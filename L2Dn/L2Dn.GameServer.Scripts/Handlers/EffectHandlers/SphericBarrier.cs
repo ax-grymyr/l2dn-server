@@ -30,7 +30,7 @@ public class SphericBarrier: AbstractStatAddEffect
 
 	private void onDamageReceivedEvent(OnCreatureDamageReceived ev)
 	{
-		if (ev.getAttacker().Distance3D(ev.getTarget()) > _amount)
+		if (ev.getAttacker()?.Distance3D(ev.getTarget()) > _amount)
 		{
 			ev.OverrideDamage = true;
 			ev.OverridenDamage = 0;

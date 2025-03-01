@@ -15,13 +15,13 @@ public class ConsumeBody: AbstractEffect
 	public ConsumeBody(StatSet @params)
 	{
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		if (!effected.isDead() //
 			|| effector.getTarget() != effected //
@@ -30,7 +30,7 @@ public class ConsumeBody: AbstractEffect
 		{
 			return;
 		}
-		
+
 		if (effected.isNpc())
 		{
 			((Npc) effected).endDecayTask();

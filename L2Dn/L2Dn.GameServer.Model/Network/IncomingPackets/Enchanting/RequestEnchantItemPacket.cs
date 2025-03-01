@@ -598,6 +598,12 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 							if (count > 0)
 							{
 								crystals = player.getInventory().addItem("Enchant", crystalId, count, player, item);
+                                if (crystals == null)
+                                {
+                                    player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: atomic inventory update
+                                    return ValueTask.CompletedTask;
+                                }
+
 								SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
 								sm.Params.addItemName(crystals);
 								sm.Params.addLong(count);

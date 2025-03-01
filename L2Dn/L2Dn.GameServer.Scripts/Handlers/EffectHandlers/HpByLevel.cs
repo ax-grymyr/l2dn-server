@@ -15,18 +15,18 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public class HpByLevel: AbstractEffect
 {
 	private readonly double _power;
-	
+
 	public HpByLevel(StatSet @params)
 	{
 		_power = @params.getDouble("power", 0);
 	}
-	
+
 	public override bool isInstant()
 	{
 		return true;
 	}
-	
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		// Calculation
 		double abs = _power;

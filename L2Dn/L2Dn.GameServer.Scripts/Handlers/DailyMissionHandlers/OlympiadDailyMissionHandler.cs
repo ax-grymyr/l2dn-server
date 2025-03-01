@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Olympiads;
+using L2Dn.GameServer.Model.Olympiads;
 
 namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;
 
@@ -14,18 +15,18 @@ public class OlympiadDailyMissionHandler: AbstractDailyMissionHandler
 {
 	private readonly int _amount;
 	private readonly bool _winOnly;
-	
+
 	public OlympiadDailyMissionHandler(DailyMissionDataHolder holder): base(holder)
 	{
 		_amount = holder.getRequiredCompletions();
 		_winOnly = holder.getParams().getBoolean("winOnly", false);
 	}
-	
+
 	public override void init()
 	{
 		GlobalEvents.Global.Subscribe<OnOlympiadMatchResult>(this, onOlympiadMatchResult);
 	}
-	
+
 	public override bool isAvailable(Player player)
 	{
 		DailyMissionPlayerEntry? entry = player.getDailyMissions().getEntry(getHolder().getId());
@@ -48,15 +49,16 @@ public class OlympiadDailyMissionHandler: AbstractDailyMissionHandler
 				}
 			}
 		}
-        
+
 		return false;
 	}
-	
+
 	private void onOlympiadMatchResult(OnOlympiadMatchResult @event)
-	{
-		if (@event.getWinner() != null)
+    {
+        Participant? winner = @event.getWinner();
+		if (winner != null)
 		{
-			Player player = @event.getWinner().getPlayer();
+			Player player = winner.getPlayer();
 			DailyMissionPlayerEntry winnerEntry = player.getDailyMissions().getOrCreateEntry(getHolder().getId());
 			if (winnerEntry.getStatus() == DailyMissionStatus.NOT_AVAILABLE)
 			{
@@ -68,7 +70,7 @@ public class OlympiadDailyMissionHandler: AbstractDailyMissionHandler
 				player.getDailyMissions().storeEntry(winnerEntry);
 			}
 		}
-		
+
 		if (!_winOnly && @event.getLoser() != null)
 		{
 			Player player = @event.getLoser().getPlayer();
@@ -79,7 +81,7 @@ public class OlympiadDailyMissionHandler: AbstractDailyMissionHandler
 				{
 					loseEntry.setStatus(DailyMissionStatus.AVAILABLE);
 				}
-				
+
 				player.getDailyMissions().storeEntry(loseEntry);
 			}
 		}

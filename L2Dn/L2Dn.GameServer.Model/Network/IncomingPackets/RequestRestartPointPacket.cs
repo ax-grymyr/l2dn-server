@@ -328,11 +328,12 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 				break;
 			}
 			default:
-			{
-				if (player.isInTimedHuntingZone())
+            {
+                TimedHuntingZoneHolder? timedHuntingZone = player.getActingPlayer().getTimedHuntingZone();
+				if (player.isInTimedHuntingZone() && timedHuntingZone != null)
 				{
 					instance = player.getInstanceWorld();
-					loc = new Location(player.getActingPlayer().getTimedHuntingZone().getEnterLocation(), 0);
+					loc = new Location(timedHuntingZone.getEnterLocation(), 0);
 				}
 				else
 				{

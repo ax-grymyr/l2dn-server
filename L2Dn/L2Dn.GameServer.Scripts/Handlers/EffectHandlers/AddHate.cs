@@ -26,7 +26,7 @@ public class AddHate: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature creature, Creature effected, Skill skill, Item item)
+	public override void instant(Creature creature, Creature effected, Skill skill, Item? item)
 	{
 		Creature effector = creature;
         Creature? summoner = effector.getSummoner();

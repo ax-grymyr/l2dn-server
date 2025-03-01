@@ -37,7 +37,7 @@ public class Confuse: AbstractEffect
 		return true;
 	}
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item item)
+	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
 	{
 		effected.getAI().notifyEvent(CtrlEvent.EVT_CONFUSED);
 

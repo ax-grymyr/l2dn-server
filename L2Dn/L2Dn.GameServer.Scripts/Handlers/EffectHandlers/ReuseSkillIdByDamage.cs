@@ -44,12 +44,13 @@ public class ReuseSkillIdByDamage: AbstractEffect
 			return;
 		}
 
-		if (@event.getAttacker() == @event.getTarget())
+        Creature? attacker = @event.getAttacker();
+		if (attacker == null || attacker == @event.getTarget())
 		{
 			return;
 		}
 
-		if (@event.getAttacker().getLevel() < _minAttackerLevel || @event.getAttacker().getLevel() > _maxAttackerLevel)
+		if (attacker.getLevel() < _minAttackerLevel || attacker.getLevel() > _maxAttackerLevel)
 		{
 			return;
 		}
@@ -64,17 +65,17 @@ public class ReuseSkillIdByDamage: AbstractEffect
 			return;
 		}
 
-		if (_hpPercent < 100 && @event.getAttacker().getCurrentHpPercent() > _hpPercent)
+		if (_hpPercent < 100 && attacker.getCurrentHpPercent() > _hpPercent)
 		{
 			return;
 		}
 
-		if (!@event.getAttacker().InstanceType.IsType(_attackerType))
+		if (!attacker.InstanceType.IsType(_attackerType))
 		{
 			return;
 		}
 
-		Player player = (Player) @event.getTarget();
+		Player player = (Player)@event.getTarget();
 		Skill? s = player.getKnownSkill(_skillId);
 		if (s != null)
 		{

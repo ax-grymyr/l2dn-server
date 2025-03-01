@@ -211,6 +211,12 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
 
 		// remove from inventory
 		Item? removedItem = player.getInventory().destroyItem("Crystalize", _objectId, _count, player, null);
+        if (removedItem == null)
+        {
+            player.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_CRYSTALLIZED); // TODO: proper message
+            return ValueTask.CompletedTask;
+        }
+
 		iu = new InventoryUpdatePacket(new ItemInfo(removedItem, ItemChangeType.REMOVED));
 		player.sendInventoryUpdate(iu);
 
@@ -221,7 +227,13 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
 			{
 				// add crystals
 				Item? createdItem = player.getInventory().addItem("Crystalize", holder.getId(), holder.getCount(), player, player);
-				sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
+                if (createdItem == null)
+                {
+                    player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: proper message, atomic inventory update
+                    return ValueTask.CompletedTask;
+                }
+
+                sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
 				sm.Params.addItemName(createdItem);
 				sm.Params.addLong(holder.getCount());
 				player.sendPacket(sm);

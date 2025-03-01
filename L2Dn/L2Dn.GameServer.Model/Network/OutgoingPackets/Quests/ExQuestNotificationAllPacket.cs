@@ -22,9 +22,9 @@ public readonly struct ExQuestNotificationAllPacket: IOutgoingPacket
         writer.WriteInt32(quests.Count);
         foreach (Quest quest in quests)
         {
-            QuestState questState = quest.getQuestState(_activeChar, false);
+            QuestState? questState = quest.getQuestState(_activeChar, false);
             writer.WriteInt32(quest.getId());
-            writer.WriteInt32(questState.getCount());
+            writer.WriteInt32(questState?.getCount() ?? 0);
         }
     }
 }

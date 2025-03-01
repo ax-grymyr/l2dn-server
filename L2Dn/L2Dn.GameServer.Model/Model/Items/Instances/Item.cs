@@ -996,7 +996,7 @@ public class Item: WorldObject
 	 * @param updateDatabase
 	 * @return return true if successfully
 	 */
-	public bool setAugmentation(VariationInstance augmentation, bool updateDatabase)
+	public bool setAugmentation(VariationInstance? augmentation, bool updateDatabase)
 	{
         Player? player = getActingPlayer();
 

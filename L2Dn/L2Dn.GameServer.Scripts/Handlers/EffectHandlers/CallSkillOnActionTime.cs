@@ -48,7 +48,7 @@ public class CallSkillOnActionTime: AbstractEffect
 
 			World.getInstance().forEachVisibleObjectInRange<Creature>(effector, _skill.getSkill().getAffectRange(), c =>
 			{
-				WorldObject target = triggerSkill.getTarget(effector, c, false, false, false);
+				WorldObject? target = triggerSkill.getTarget(effector, c, false, false, false);
 
 				if (target != null && target.isCreature())
 				{
