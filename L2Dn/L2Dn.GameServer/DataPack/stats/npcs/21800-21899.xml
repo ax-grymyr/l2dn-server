@@ -1,29 +1,53 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="21800" level="80" type="Monster" name="Kookaburra">
+		<!-- Classic Seven Sings -->
+		<parameters>
+			<param name="MoveAroundSocial" value="72" />
+			<param name="MoveAroundSocial1" value="30" />
+			<param name="MoveAroundSocial2" value="72" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4244" level="6" />
+		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
 		<acquire exp="75552" sp="2039" />
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1418.868755" hpRegen="8.5" mp="2739.075" mpRegen="3" />
-			<attack physical="1033.1240034" magical="740.577283506" random="30" critical="4" accuracy="11.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="380.23713" magical="268.304676" evasion="7" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="3646.048" hpRegen="7.5" mp="2512.2" mpRegen="2.7" />
+			<attack physical="624.93199" magical="426.74754" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="281.55251" magical="206.02791" />
 			<speed>
 				<walk ground="23" />
 				<run ground="190" />
 			</speed>
+			<hitTime>540</hitTime>
+			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
+		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
-			<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
-			<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4244" level="6" /> <!-- NPC Wild Sweep -->
+			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4415" level="3" /> <!-- One-handed Sword -->
+			<skill id="5620" level="10" /> <!-- Short-Range Physical Attack Weakness -->
+			<skill id="4416" level="3" /> <!-- Undead -->
+			<skill id="4408" level="10" /> <!-- HP Increase (1x) -->
+			<skill id="4410" level="15" /> <!-- Extremely Weak P. Atk. -->
+			<skill id="4411" level="13" /> <!-- Extremely Weak M. Atk. -->
+			<skill id="4414" level="3" /> <!-- Heavy Armor Type -->
 		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>ANIMAL</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="8" />
 			<height normal="26.4" />
