@@ -164,7 +164,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 		    }
 	    }
 
-	    SkillUseHolder skillUseHolder = player.getQueuedSkill();
+	    SkillUseHolder? skillUseHolder = player.getQueuedSkill();
 	    if (skillUseHolder != null && player.getKnownSkill(skillUseHolder.getSkillId()) != null)
 	    {
 		    player.sendMessage("You cannot drop an item while casting " + skillUseHolder.getSkill().getName() + ".");

@@ -58,9 +58,9 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		Item item = request.getEnchantingItem();
-		Item scroll = request.getEnchantingScroll();
-		Item support = request.getSupportItem();
+		Item? item = request.getEnchantingItem();
+		Item? scroll = request.getEnchantingScroll();
+		Item? support = request.getSupportItem();
 		if (item == null || scroll == null)
 		{
 			player.removeRequest<EnchantItemRequest>();

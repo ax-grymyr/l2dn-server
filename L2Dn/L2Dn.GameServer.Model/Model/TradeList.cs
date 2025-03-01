@@ -18,7 +18,7 @@ public class TradeList
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(TradeList));
 
 	private readonly Player _owner;
-	private Player _partner;
+	private Player? _partner;
 	private readonly Set<TradeItem> _items = [];
 	private string _title = string.Empty;
 	private bool _packaged;
@@ -36,12 +36,12 @@ public class TradeList
 		return _owner;
 	}
 
-	public void setPartner(Player partner)
+	public void setPartner(Player? partner)
 	{
 		_partner = partner;
 	}
 
-	public Player getPartner()
+	public Player? getPartner()
 	{
 		return _partner;
 	}
@@ -463,7 +463,7 @@ public class TradeList
 				return false;
 			}
 
-			Item newItem = _owner.getInventory().transferItem("Trade", titem.getObjectId(), titem.getCount(), partner.getInventory(), _owner, _partner);
+			Item? newItem = _owner.getInventory().transferItem("Trade", titem.getObjectId(), titem.getCount(), partner.getInventory(), _owner, _partner);
 			if (newItem == null)
 			{
 				return false;
@@ -550,7 +550,12 @@ public class TradeList
 	 */
 	private void doExchange(TradeList partnerList)
 	{
+        Player partner = partnerList.getOwner();
+        if (partner != _partner)
+            return; // TODO: check added
+
 		bool success = false;
+
 
 		// check weight and slots
 		if (!_owner.getInventory().validateWeight(partnerList.calcItemsWeight()) || !partnerList.getOwner().getInventory().validateWeight(calcItemsWeight()))
@@ -575,14 +580,14 @@ public class TradeList
 
 			// Send inventory update packets
 			_owner.sendInventoryUpdate(ownerIU);
-			_partner.sendInventoryUpdate(partnerIU);
+            partner.sendInventoryUpdate(partnerIU);
 
 			success = true;
 		}
 
 		// Visual inconsistencies fix.
 		_owner.sendItemList();
-		_partner.sendItemList();
+        partner.sendItemList();
 
 		// Finish the trade
 		partnerList.getOwner().onTradeFinish(success);
@@ -714,13 +719,16 @@ public class TradeList
 		// Prepare inventory update packets
 		InventoryUpdatePacket ownerIU = new InventoryUpdatePacket();
 		InventoryUpdatePacket playerIU = new InventoryUpdatePacket();
-		Item? adenaItem = playerInventory.getAdenaInstance();
+        Item? adenaItem = playerInventory.getAdenaInstance();
 		if (!playerInventory.reduceAdena("PrivateStore", totalPrice, player, _owner))
 		{
 			player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
 			return 1;
 		}
-		playerIU.addItem(adenaItem);
+
+        if (adenaItem != null)
+		    playerIU.addItem(adenaItem);
+
 		ownerInventory.addAdena("PrivateStore", totalPrice, _owner, player);
 		// ownerIU.addItem(ownerInventory.getAdenaInstance());
 		bool ok = true;
@@ -744,7 +752,7 @@ public class TradeList
 			}
 
 			// Proceed with item transfer
-			Item newItem = ownerInventory.transferItem("PrivateStore", item.getObjectId(), item.getCount(), playerInventory, _owner, player);
+			Item? newItem = ownerInventory.transferItem("PrivateStore", item.getObjectId(), item.getCount(), playerInventory, _owner, player);
 			if (newItem == null)
 			{
 				ok = false;
@@ -929,7 +937,7 @@ public class TradeList
 			}
 
 			// Proceed with item transfer
-			Item newItem = playerInventory.transferItem("PrivateStore", objectId, item.getCount(), ownerInventory, player, _owner);
+			Item? newItem = playerInventory.transferItem("PrivateStore", objectId, item.getCount(), ownerInventory, player, _owner);
 			if (newItem == null)
 			{
 				continue;
@@ -997,14 +1005,19 @@ public class TradeList
 			// Transfer adena
 			if (totalPrice > ownerInventory.getAdena())
 			{
-				// should not happens, just a precaution
+				// should not happen, just a precaution
 				return false;
 			}
-			Item? adenaItem = ownerInventory.getAdenaInstance();
+
+            Item? adenaItem = ownerInventory.getAdenaInstance();
 			ownerInventory.reduceAdena("PrivateStore", totalPrice, _owner, player);
-			ownerIU.addItem(adenaItem);
+            if (adenaItem != null)
+			    ownerIU.addItem(adenaItem);
+
 			playerInventory.addAdena("PrivateStore", totalPrice, player, _owner);
-			playerIU.addItem(playerInventory.getAdenaInstance());
+            Item? playerAdena = playerInventory.getAdenaInstance();
+            if (playerAdena != null)
+			    playerIU.addItem(playerAdena);
 		}
 
 		if (ok)

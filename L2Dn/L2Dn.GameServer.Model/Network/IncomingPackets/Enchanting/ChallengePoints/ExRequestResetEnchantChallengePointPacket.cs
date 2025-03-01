@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Request;
 using L2Dn.GameServer.Model.Items.Enchant;
+using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Network.OutgoingPackets.Enchanting;
 using L2Dn.Model.Enums;
@@ -26,7 +27,15 @@ public struct ExRequestResetEnchantChallengePointPacket: IIncomingPacket<GameSes
         if (request == null || request.isProcessing())
             return ValueTask.CompletedTask;
 
-        EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(request.getEnchantingScroll().getId());
+        Item? enchantingScroll = request.getEnchantingScroll();
+        if (enchantingScroll == null)
+        {
+            player.sendPacket(new ExResetEnchantChallengePointPacket(false));
+            player.removeRequest<EnchantItemRequest>();
+            return ValueTask.CompletedTask;
+        }
+
+        EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(enchantingScroll.getId());
         if (scrollTemplate == null)
         {
             player.sendPacket(new ExResetEnchantChallengePointPacket(false));
@@ -37,16 +46,24 @@ public struct ExRequestResetEnchantChallengePointPacket: IIncomingPacket<GameSes
         player.getChallengeInfo().setChallengePointsPendingRecharge(-1, -1);
         player.sendPacket(new ExResetEnchantChallengePointPacket(true));
 
-        double chance = scrollTemplate.getChance(player, request.getEnchantingItem());
+        Item? enchantingItem = request.getEnchantingItem();
+        if (enchantingItem == null)
+        {
+            player.sendPacket(new ExResetEnchantChallengePointPacket(false));
+            player.removeRequest<EnchantItemRequest>();
+            return ValueTask.CompletedTask;
+        }
 
-        CrystalType crystalLevel = request.getEnchantingItem().getTemplate().getCrystalType().getLevel();
+        double chance = scrollTemplate.getChance(player, enchantingItem);
+
+        CrystalType crystalLevel = enchantingItem.getTemplate().getCrystalType().getLevel();
         double enchantRateStat =
             crystalLevel > CrystalType.NONE.getLevel() && crystalLevel < CrystalType.EVENT.getLevel()
                 ? player.getStat().getValue(Stat.ENCHANT_RATE)
                 : 0;
 
         player.sendPacket(new ExChangedEnchantTargetItemProbListPacket(
-            new ExChangedEnchantTargetItemProbListPacket.EnchantProbInfo(request.getEnchantingItem().ObjectId,
+            new ExChangedEnchantTargetItemProbListPacket.EnchantProbInfo(enchantingItem.ObjectId,
                 (int)((chance + enchantRateStat) * 100), (int)(chance * 100), 0, (int)(enchantRateStat * 100))));
 
         return ValueTask.CompletedTask;

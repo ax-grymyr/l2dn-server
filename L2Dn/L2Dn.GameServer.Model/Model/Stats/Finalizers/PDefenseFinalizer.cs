@@ -36,7 +36,7 @@ public class PDefenseFinalizer: StatFunction
 
 		baseValue += calcEnchantedItemBonus(creature, stat);
 
-		Inventory inv = creature.getInventory();
+		Inventory? inv = creature.getInventory();
 		if (inv != null)
 		{
 			foreach (Item item in inv.getPaperdollItems())
@@ -44,14 +44,14 @@ public class PDefenseFinalizer: StatFunction
 				baseValue += item.getTemplate().getStats(stat, 0);
 			}
 
-			if (creature.isPlayer())
+            Player? player = creature.getActingPlayer();
+			if (creature.isPlayer() && player != null)
 			{
-				Player player = creature.getActingPlayer();
 				foreach (int slot in SLOTS)
 				{
 					if (!inv.isPaperdollSlotEmpty(slot) || //
 					    (slot == Inventory.PAPERDOLL_LEGS && !inv.isPaperdollSlotEmpty(Inventory.PAPERDOLL_CHEST) &&
-					     inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST).getTemplate().getBodyPart() ==
+					     inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST)?.getTemplate().getBodyPart() ==
                          ItemTemplate.SLOT_FULL_ARMOR))
 					{
 						int defaultStatValue = player.getTemplate().getBaseDefBySlot(slot);

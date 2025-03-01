@@ -12,21 +12,20 @@ public class BaseStatFinalizer: StatFunction
 	public override double calc(Creature creature, double? @base, Stat stat)
 	{
 		throwIfPresent(@base);
-		
+
 		// Apply template value
 		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
-		
+
 		// Should not apply armor set and henna bonus to summons.
-		if (creature.isPlayer())
+        Player? player = creature.getActingPlayer();
+		if (creature.isPlayer() && player != null)
 		{
-			Player player = creature.getActingPlayer();
-			
 			// Armor sets calculation
 			baseValue += player.getInventory().getPaperdollCache().getBaseStatValue(player, (BaseStat)stat);
-			
+
 			// Henna calculation
 			baseValue += player.getHennaValue((BaseStat)stat);
-			
+
 			// Bonus stats
 			switch (stat)
 			{
@@ -62,7 +61,7 @@ public class BaseStatFinalizer: StatFunction
 				}
 			}
 		}
-		
+
 		return validateValue(creature, StatUtil.defaultValue(creature, stat, baseValue), 1, BaseStatUtil.MAX_STAT_VALUE - 1);
 	}
 }

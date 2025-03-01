@@ -52,7 +52,7 @@ public class Quest: AbstractScript, IIdentifiable
 	private bool _isCustom;
 	private NpcStringId _questNameNpcStringId;
 
-	private int[] _questItemIds;
+	private int[] _questItemIds = [];
 
 	private readonly NewQuest _questData;
 
@@ -104,35 +104,34 @@ public class Quest: AbstractScript, IIdentifiable
 		// 	QuestManager.getInstance()?.addScript(this);
 		// }
 
-		_questData = Data.Xml.NewQuestData.getInstance().getQuestById(questId);
-		if (_questData != null)
+        _questData = Data.Xml.NewQuestData.getInstance().getQuestById(questId) ??
+            throw new ArgumentException($"No quest data for questId={questId}");
+
+		addNewQuestConditions(_questData.getConditions(), null);
+
+		if (_questData.getQuestType() == 1)
 		{
-			addNewQuestConditions(_questData.getConditions(), null);
-
-			if (_questData.getQuestType() == 1)
+			if (_questData.getStartNpcId() > 0)
 			{
-				if (_questData.getStartNpcId() > 0)
-				{
-					addFirstTalkId(_questData.getStartNpcId());
-				}
-
-				if (_questData.getEndNpcId() > 0 && _questData.getEndNpcId() != _questData.getStartNpcId())
-				{
-					addFirstTalkId(_questData.getEndNpcId());
-				}
-			}
-			else if (_questData.getQuestType() == 4)
-			{
-				if (_questData.getStartItemId() > 0)
-				{
-					addItemTalkId(_questData.getStartItemId());
-				}
+				addFirstTalkId(_questData.getStartNpcId());
 			}
 
-			if (_questData.getGoal().getItemId() > 0)
+			if (_questData.getEndNpcId() > 0 && _questData.getEndNpcId() != _questData.getStartNpcId())
 			{
-				registerQuestItems(_questData.getGoal().getItemId());
+				addFirstTalkId(_questData.getEndNpcId());
 			}
+		}
+		else if (_questData.getQuestType() == 4)
+		{
+			if (_questData.getStartItemId() > 0)
+			{
+				addItemTalkId(_questData.getStartItemId());
+			}
+		}
+
+		if (_questData.getGoal().getItemId() > 0)
+		{
+			registerQuestItems(_questData.getGoal().getItemId());
 		}
 
 		onLoad();
@@ -203,7 +202,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 *            create a new QuestState
 	 * @return the QuestState object for this quest or null if it doesn't exist
 	 */
-	public QuestState getQuestState(Player player, bool initIfNone)
+	public QuestState? getQuestState(Player player, bool initIfNone)
 	{
 		QuestState? qs = player.getQuestState(Name);
 		if (qs != null || !initIfNone)
@@ -229,7 +228,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @return the contents of the HTML file that was sent to the player
 	 * @see #showHtmlFile(Player, String, Npc)
 	 */
-	public override string showHtmlFile(Player player, string filename, Npc npc)
+	public override string? showHtmlFile(Player player, string filename, Npc? npc)
 	{
 		bool questwindow = !filename.endsWith(".html");
 
@@ -427,7 +426,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param isSummon if {@code true}, the attack was actually made by the player's summon
 	 * @param skill the skill used to attack the NPC (can be null)
 	 */
-	public void notifyAttack(Npc npc, Player attacker, int damage, bool isSummon, Skill skill)
+	public void notifyAttack(Npc npc, Player? attacker, int damage, bool isSummon, Skill? skill)
 	{
 		string? res = null;
 		try
@@ -487,7 +486,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player
 	 * @param skill
 	 */
-	public void notifySpellFinished(Npc instance, Player player, Skill skill)
+	public void notifySpellFinished(Npc instance, Player? player, Skill skill)
 	{
 		string? res = null;
 		try
@@ -610,7 +609,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param killer
 	 * @param isSummon
 	 */
-	public void notifyKill(Npc npc, Player killer, bool isSummon)
+	public void notifyKill(Npc npc, Player? killer, bool isSummon)
 	{
 		string? res = null;
 		try
@@ -620,7 +619,7 @@ public class Quest: AbstractScript, IIdentifiable
 			{
 				killer.setSimulatedTalking(false);
 
-				QuestState qs = getQuestState(killer, false);
+				QuestState? qs = getQuestState(killer, false);
 				if (qs != null)
 				{
 					qs.setSimulated(false);
@@ -651,7 +650,7 @@ public class Quest: AbstractScript, IIdentifiable
 				OnNpcQuestStart onNpcQuestStart = new OnNpcQuestStart(npc, player);
 				if (npc.Events.Notify(onNpcQuestStart) && onNpcQuestStart.Quests.Contains(this))
 				{
-					string startConditionHtml = getStartConditionHtml(player, npc);
+					string? startConditionHtml = getStartConditionHtml(player, npc);
 					if (startConditionHtml != null)
 					{
 						res = startConditionHtml;
@@ -743,7 +742,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player
 	 * @return
 	 */
-	public string onItemTalk(Item item, Player player)
+	public string? onItemTalk(Item item, Player player)
 	{
 		return null;
 	}
@@ -940,7 +939,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param winner
 	 * @param looser
 	 */
-	public void notifyOlympiadMatch(Participant winner, Participant looser)
+	public void notifyOlympiadMatch(Participant? winner, Participant looser)
 	{
 		try
 		{
@@ -1011,7 +1010,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param isSummon this parameter if it's {@code false} it denotes that the attacker was indeed the player, else it specifies that the damage was actually dealt by the player's pet.
 	 * @return
 	 */
-	public string onAttack(Npc npc, Player attacker, int damage, bool isSummon)
+	public string? onAttack(Npc npc, Player? attacker, int damage, bool isSummon)
 	{
 		return null;
 	}
@@ -1026,7 +1025,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param skill parameter is the skill that player used to attack NPC.
 	 * @return
 	 */
-	public string onAttack(Npc npc, Player attacker, int damage, bool isSummon, Skill skill)
+	public string? onAttack(Npc npc, Player? attacker, int damage, bool isSummon, Skill? skill)
 	{
 		return onAttack(npc, attacker, damage, isSummon);
 	}
@@ -1039,7 +1038,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param qs this parameter contains a reference to the QuestState of whomever was interested (waiting) for this kill.
 	 * @return
 	 */
-	public string onDeath(Creature killer, Creature victim, QuestState qs)
+	public string? onDeath(Creature killer, Creature victim, QuestState qs)
 	{
 		return onAdvEvent("", killer is Npc ? (Npc) killer : null, qs.getPlayer());
 	}
@@ -1094,7 +1093,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param qs this parameter contains a reference to the quest state of the player who used the link or started the timer.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public string onEvent(string @event, QuestState qs)
+	public string? onEvent(string @event, QuestState qs)
 	{
 		return null;
 	}
@@ -1106,9 +1105,9 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param isSummon this parameter if it's {@code false} it denotes that the attacker was indeed the player, else it specifies that the killer was the player's pet.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public virtual string onKill(Npc npc, Player killer, bool isSummon)
+	public virtual string? onKill(Npc npc, Player? killer, bool isSummon)
 	{
-		if (!getNpcLogList(killer).isEmpty())
+		if (killer != null && !getNpcLogList(killer).isEmpty())
 		{
 			sendNpcLogList(killer);
 		}
@@ -1122,7 +1121,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param simulated Used by QuestLink to determine state of quest.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public string onTalk(Npc npc, Player talker, bool simulated)
+	public string? onTalk(Npc npc, Player talker, bool simulated)
 	{
 		QuestState? qs = talker.getQuestState(Name);
 		if (qs != null)
@@ -1150,7 +1149,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player this parameter contains a reference to the exact instance of the player who is talking to the NPC.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
 	 */
-	public virtual string onFirstTalk(Npc npc, Player player)
+	public virtual string? onFirstTalk(Npc npc, Player player)
 	{
 		return null;
 	}
@@ -1161,7 +1160,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param event
 	 * @return
 	 */
-	public string onItemEvent(Item item, Player player, string @event)
+	public string? onItemEvent(Item item, Player player, string @event)
 	{
 		return null;
 	}
@@ -1173,7 +1172,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player this parameter contains a reference to the exact instance of the player who requested the skill list.
 	 * @return
 	 */
-	public string onAcquireSkillList(Npc npc, Player player)
+	public string? onAcquireSkillList(Npc npc, Player player)
 	{
 		return null;
 	}
@@ -1185,7 +1184,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param skill this parameter contains a reference to the skill that the player requested its info.
 	 * @return
 	 */
-	public string onAcquireSkillInfo(Npc npc, Player player, Skill skill)
+	public string? onAcquireSkillInfo(Npc npc, Player player, Skill skill)
 	{
 		return null;
 	}
@@ -1199,7 +1198,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param type the skill learn type
 	 * @return
 	 */
-	public string onAcquireSkill(Npc npc, Player player, Skill skill, AcquireSkillType type)
+	public string? onAcquireSkill(Npc npc, Player player, Skill skill, AcquireSkillType type)
 	{
 		return null;
 	}
@@ -1211,7 +1210,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player the player who used the item
 	 * @return
 	 */
-	public string onItemUse(ItemTemplate item, Player player)
+	public string? onItemUse(ItemTemplate item, Player player)
 	{
 		return null;
 	}
@@ -1230,7 +1229,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param isSummon if {@code true}, the skill was actually cast by the player's summon, not the player himself
 	 * @return
 	 */
-	public string onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, bool isSummon)
+	public string? onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, bool isSummon)
 	{
 		return null;
 	}
@@ -1242,7 +1241,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param skill the actual skill that was used by the NPC.
 	 * @return
 	 */
-	public string onSpellFinished(Npc npc, Player player, Skill skill)
+	public string? onSpellFinished(Npc npc, Player? player, Skill skill)
 	{
 		return null;
 	}
@@ -1254,7 +1253,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param action this parameter contains a reference to the action that was triggered.
 	 * @return
 	 */
-	public string onTrapAction(Trap trap, Creature trigger, TrapAction action)
+	public string? onTrapAction(Trap trap, Creature trigger, TrapAction action)
 	{
 		return null;
 	}
@@ -1266,7 +1265,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param npc this parameter contains a reference to the exact instance of the NPC who just (re)spawned.
 	 * @return
 	 */
-	public string onSpawn(Npc npc)
+	public string? onSpawn(Npc npc)
 	{
 		return null;
 	}
@@ -1287,7 +1286,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param isSummon this parameter if it's {@code false} it denotes that the attacker was indeed the player, else it specifies that the attacker was the player's summon.
 	 * @return
 	 */
-	public string onFactionCall(Npc npc, Npc caller, Player attacker, bool isSummon)
+	public string? onFactionCall(Npc npc, Npc caller, Player attacker, bool isSummon)
 	{
 		return null;
 	}
@@ -1299,7 +1298,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param isSummon this parameter if it's {@code false} it denotes that the character that entered the aggression range was indeed the player, else it specifies that the character was the player's summon.
 	 * @return
 	 */
-	public string onAggroRangeEnter(Npc npc, Player player, bool isSummon)
+	public string? onAggroRangeEnter(Npc npc, Player player, bool isSummon)
 	{
 		return null;
 	}
@@ -1310,7 +1309,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param creature the creature seen by the NPC
 	 * @return
 	 */
-	public string onCreatureSee(Npc npc, Creature creature)
+	public string? onCreatureSee(Npc npc, Creature creature)
 	{
 		return null;
 	}
@@ -1320,7 +1319,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param player this parameter contains a reference to the exact instance of the player who is entering to the world.
 	 * @return
 	 */
-	public string onEnterWorld(Player player)
+	public string? onEnterWorld(Player player)
 	{
 		return null;
 	}
@@ -1331,7 +1330,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param zone this parameter contains a reference to the zone.
 	 * @return
 	 */
-	public string onEnterZone(Creature creature, ZoneType zone)
+	public string? onEnterZone(Creature creature, ZoneType zone)
 	{
 		return null;
 	}
@@ -1342,7 +1341,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param zone this parameter contains a reference to the zone.
 	 * @return
 	 */
-	public string onExitZone(Creature creature, ZoneType zone)
+	public string? onExitZone(Creature creature, ZoneType zone)
 	{
 		return null;
 	}
@@ -1354,7 +1353,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param reference - WorldObject to pass, if needed
 	 * @return
 	 */
-	public string onEventReceived(string eventName, Npc sender, Npc receiver, WorldObject reference)
+	public string? onEventReceived(string eventName, Npc sender, Npc receiver, WorldObject reference)
 	{
 		return null;
 	}
@@ -1364,7 +1363,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param winner in this match.
 	 * @param looser in this match.
 	 */
-	public void onOlympiadMatchFinish(Participant winner, Participant looser)
+	public void onOlympiadMatchFinish(Participant? winner, Participant looser)
 	{
 	}
 
@@ -1422,7 +1421,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param instance created instance world
 	 * @param player player who create instance world
 	 */
-	public void onInstanceCreated(Instance instance, Player player)
+	public void onInstanceCreated(Instance instance, Player? player)
 	{
 	}
 
@@ -1497,7 +1496,7 @@ public class Quest: AbstractScript, IIdentifiable
 				string statename = record.Value;
 
 				// Search quest associated with the ID
-				Quest q = QuestManager.getInstance().getQuest(questId);
+				Quest? q = QuestManager.getInstance().getQuest(questId);
 				if (q == null)
 				{
 					LOGGER.Warn("Unknown quest " + questId + " for " + player);
@@ -1530,7 +1529,7 @@ public class Quest: AbstractScript, IIdentifiable
 				string var = record.Variable;
 				string value = record.Value;
 				// Get the QuestState saved in the loop before
-				QuestState qs = player.getQuestState(questId);
+				QuestState? qs = player.getQuestState(questId);
 				if (qs == null)
 				{
 					LOGGER.Warn("Lost variable " + var + " in quest " + questId + " for " + player);
@@ -2314,7 +2313,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param cond the value of the "cond" variable that must be matched
 	 * @return a random party member that matches the specified condition, or {@code null} if no match was found
 	 */
-	public Player getRandomPartyMember(Player player, int cond)
+	public Player? getRandomPartyMember(Player player, int cond)
 	{
 		return getRandomPartyMember(player, "cond", cond.ToString(CultureInfo.InvariantCulture));
 	}
@@ -2523,13 +2522,14 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 
 		QuestState? qs = player.getQuestState(Name);
-		if (!player.isInParty())
+        Party? party = player.getParty();
+		if (!player.isInParty() || party == null)
 		{
 			return !checkPartyMemberConditions(qs, condition, target) || !checkDistanceToTarget(player, target) ? null : qs;
 		}
 
 		List<QuestState> candidates = new();
-		if (checkPartyMemberConditions(qs, condition, target) && playerChance > 0)
+		if (qs != null && checkPartyMemberConditions(qs, condition, target) && playerChance > 0)
 		{
 			for (int i = 0; i < playerChance; i++)
 			{
@@ -2537,7 +2537,7 @@ public class Quest: AbstractScript, IIdentifiable
 			}
 		}
 
-		foreach (Player member in player.getParty().getMembers())
+		foreach (Player member in party.getMembers())
 		{
 			if (member == player)
 			{
@@ -2545,7 +2545,7 @@ public class Quest: AbstractScript, IIdentifiable
 			}
 
 			qs = member.getQuestState(Name);
-			if (checkPartyMemberConditions(qs, condition, target))
+			if (qs != null && checkPartyMemberConditions(qs, condition, target))
 			{
 				candidates.Add(qs);
 			}
@@ -2683,7 +2683,7 @@ public class Quest: AbstractScript, IIdentifiable
 		return _isCustom;
 	}
 
-	public Set<NpcLogListHolder> getNpcLogList(Player player)
+	public Set<NpcLogListHolder> getNpcLogList(Player? player)
 	{
 		return new();
 	}
@@ -2744,9 +2744,9 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param npc
 	 * @return the HTML
 	 */
-	public string getStartConditionHtml(Player player, Npc npc)
+	public string? getStartConditionHtml(Player player, Npc npc)
 	{
-		QuestState qs = getQuestState(player, false);
+		QuestState? qs = getQuestState(player, false);
 		if (qs != null && !qs.isCreated())
 		{
 			return null;
@@ -2768,7 +2768,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param questStartRequirement the predicate condition
 	 * @param html the HTML to display if that condition is not met
 	 */
-	public void addCondStart(Predicate<Player> questStartRequirement, string html)
+	public void addCondStart(Predicate<Player> questStartRequirement, string? html)
 	{
 		getStartConditions().add(new QuestCondition(questStartRequirement, html));
 	}
@@ -2810,7 +2810,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param minLevel the minimum player's level to start the quest
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondMinLevel(int minLevel, string html)
+	public void addCondMinLevel(int minLevel, string? html)
 	{
 		addCondStart(p => p.getLevel() >= minLevel, html);
 	}
@@ -2830,7 +2830,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param maxLevel the maximum player's level to start the quest
 	 * @param html the HTML to display if the condition is not met
 	 */
-	public void addCondMaxLevel(int maxLevel, string html)
+	public void addCondMaxLevel(int maxLevel, string? html)
 	{
 		addCondStart(p => p.getLevel() <= maxLevel, html);
 	}
@@ -2892,7 +2892,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addCondCompletedQuest(string name, string html)
 	{
-		addCondStart(p => p.hasQuestState(name) && p.getQuestState(name).isCompleted(), html);
+		addCondStart(p => p.getQuestState(name)?.isCompleted() ?? false, html);
 	}
 
 	/**
@@ -2902,7 +2902,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addCondCompletedQuest(string name, params KeyValuePair<int, string>[] pairs)
 	{
-		addCondStart(p => p.hasQuestState(name) && p.getQuestState(name).isCompleted(), pairs);
+		addCondStart(p => p.getQuestState(name)?.isCompleted() ?? false, pairs);
 	}
 
 	/**
@@ -2912,7 +2912,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addCondStartedQuest(string name, string html)
 	{
-		addCondStart(p => p.hasQuestState(name) && p.getQuestState(name).isStarted(), html);
+		addCondStart(p => p.getQuestState(name)?.isStarted() ?? false, html);
 	}
 
 	/**
@@ -2922,7 +2922,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addCondStartedQuest(string name, params KeyValuePair<int, string>[] pairs)
 	{
-		addCondStart(p => p.hasQuestState(name) && p.getQuestState(name).isStarted(), pairs);
+		addCondStart(p => p.getQuestState(name)?.isStarted() ?? false, pairs);
 	}
 
 	/**
@@ -2955,7 +2955,7 @@ public class Quest: AbstractScript, IIdentifiable
 		addCondStart(p => classIds.Contains(p.getClassId()), html);
 	}
 
-	public void addNewQuestConditions(NewQuestCondition condition, string html)
+	public void addNewQuestConditions(NewQuestCondition condition, string? html)
 	{
 		if (condition.getAllowedClassIds().Count != 0)
 		{
@@ -2971,7 +2971,7 @@ public class Quest: AbstractScript, IIdentifiable
 				{
 					if (!condition.getOneOfPreQuests())
 					{
-						addCondStart(p => p.hasQuestState(quest.Name) && p.getQuestState(quest.Name).isCompleted(), html);
+						addCondStart(p => p.hasQuestState(quest.Name) && p.getQuestState(quest.Name)!.isCompleted(), html);
 					}
 					else
 					{
@@ -3068,7 +3068,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addCondClanLevel(int clanLevel, string html)
 	{
-		addCondStart(p => p.getClan() != null && p.getClan().getLevel() > clanLevel, html);
+		addCondStart(p => p.getClan()?.getLevel() > clanLevel, html);
 	}
 
 	/**
@@ -3078,7 +3078,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 */
 	public void addCondClanLevel(int clanLevel, params KeyValuePair<int, string>[] pairs)
 	{
-		addCondStart(p => p.getClan() != null && p.getClan().getLevel() > clanLevel, pairs);
+		addCondStart(p => p.getClan()?.getLevel() > clanLevel, pairs);
 	}
 
 	public void onQuestAborted(Player player)

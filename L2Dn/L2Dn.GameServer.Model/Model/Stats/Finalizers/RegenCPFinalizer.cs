@@ -11,12 +11,12 @@ public class RegenCPFinalizer: StatFunction
 	public override double calc(Creature creature, double? @base, Stat stat)
 	{
 		throwIfPresent(@base);
-		if (!creature.isPlayer())
+        Player? player = creature.getActingPlayer();
+		if (!creature.isPlayer() || player == null)
 		{
 			return 0;
 		}
 
-		Player player = creature.getActingPlayer();
 		double baseValue = player.getTemplate().getBaseCpRegen(creature.getLevel()) * creature.getLevelMod() *
 		                   BaseStat.CON.calcBonus(creature) * Config.CP_REGEN_MULTIPLIER;
 		if (player.isSitting())

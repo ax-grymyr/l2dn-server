@@ -65,12 +65,12 @@ public class SpeedFinalizer: StatFunction
 	private double getBaseSpeed(Creature creature, Stat stat)
 	{
 		double baseValue = calcWeaponPlusBaseValue(creature, stat);
-		if (creature.isPlayer())
+        Player? player = creature.getActingPlayer();
+		if (creature.isPlayer() && player != null)
 		{
-			Player player = creature.getActingPlayer();
 			if (player.isMounted())
 			{
-				PetLevelData data = PetDataTable.getInstance()
+				PetLevelData? data = PetDataTable.getInstance()
 					.getPetLevelData(player.getMountNpcId(), player.getMountLevel());
 				if (data != null)
 				{

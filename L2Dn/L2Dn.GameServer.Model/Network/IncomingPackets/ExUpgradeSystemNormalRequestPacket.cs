@@ -119,7 +119,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 		{
 			foreach (ItemEnchantHolder successItem in upgradeHolder.getItems(UpgradeDataType.ON_SUCCESS))
 			{
-				Item addedSuccessItem = player.addItem("UpgradeNormalEquipment", successItem.getId(), successItem.getCount(), player, true);
+				Item? addedSuccessItem = player.addItem("UpgradeNormalEquipment", successItem.getId(), successItem.getCount(), player, true);
 				if (successItem.getEnchantLevel() != 0)
 				{
 					isNeedToSendUpdate = true;
@@ -134,7 +134,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 			{
 				foreach (ItemEnchantHolder bonusItem in upgradeHolder.getItems(UpgradeDataType.BONUS_TYPE))
 				{
-					Item addedBonusItem = player.addItem("UpgradeNormalEquipment", bonusItem.getId(),
+					Item? addedBonusItem = player.addItem("UpgradeNormalEquipment", bonusItem.getId(),
 						bonusItem.getCount(), player, true);
 
 					if (bonusItem.getEnchantLevel() != 0)
@@ -154,7 +154,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 			{
 				foreach (ItemEnchantHolder failureItem in upgradeHolder.getItems(UpgradeDataType.ON_FAILURE))
 				{
-					Item addedFailureItem = player.addItem("UpgradeNormalEquipment", failureItem.getId(),
+					Item? addedFailureItem = player.addItem("UpgradeNormalEquipment", failureItem.getId(),
 						failureItem.getCount(), player, true);
 
 					if (failureItem.getEnchantLevel() != 0)

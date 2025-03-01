@@ -34,9 +34,9 @@ public struct RequestExTryToPutEnchantSupportItemPacket: IIncomingPacket<GameSes
         request.setEnchantingItem(_enchantObjectId);
         request.setSupportItem(_supportObjectId);
 
-        Item item = request.getEnchantingItem();
-        Item scroll = request.getEnchantingScroll();
-        Item support = request.getSupportItem();
+        Item? item = request.getEnchantingItem();
+        Item? scroll = request.getEnchantingScroll();
+        Item? support = request.getSupportItem();
         if (item == null || scroll == null || support == null)
         {
             // Message may be custom.

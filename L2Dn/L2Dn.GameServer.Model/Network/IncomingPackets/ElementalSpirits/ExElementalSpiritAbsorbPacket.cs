@@ -38,7 +38,7 @@ public struct ExElementalSpiritAbsorbPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        ElementalSpiritAbsorbItemHolder absorbItem = spirit.getAbsorbItem(_itemId);
+        ElementalSpiritAbsorbItemHolder? absorbItem = spirit.getAbsorbItem(_itemId);
         if (absorbItem == null)
         {
             player.sendPacket(new ElementalSpiritAbsorbPacket(player, _type, false));

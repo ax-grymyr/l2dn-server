@@ -338,7 +338,7 @@ public class InstanceManager: DataReaderBase
 	 * @param player player who create instance.
 	 * @return newly created instance if success, otherwise {@code null}
 	 */
-	public Instance createInstance(InstanceTemplate template, Player player)
+	public Instance createInstance(InstanceTemplate template, Player? player)
 	{
 		return new Instance(getNewInstanceId(), template, player);
 	}

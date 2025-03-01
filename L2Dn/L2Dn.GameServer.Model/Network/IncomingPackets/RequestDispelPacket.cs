@@ -52,7 +52,7 @@ public struct RequestDispelPacket: IIncomingPacket<GameSession>
             if (pet != null && pet.ObjectId == _objectId)
                 pet.stopSkillEffects(SkillFinishType.REMOVED, _skillId);
 
-            Summon servitor = player.getServitor(_objectId);
+            Summon? servitor = player.getServitor(_objectId);
             if (servitor != null)
                 servitor.stopSkillEffects(SkillFinishType.REMOVED, _skillId);
         }

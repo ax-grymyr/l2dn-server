@@ -20,7 +20,7 @@ public struct RequestExMpccPartyMasterListPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        MatchingRoom room = player.getMatchingRoom();
+        MatchingRoom? room = player.getMatchingRoom();
         if (room != null && room.getRoomType() == MatchingRoomType.COMMAND_CHANNEL)
         {
             Set<string> leadersName = [];

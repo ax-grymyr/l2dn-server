@@ -18,9 +18,14 @@ public class ClanHallAuction
 
     private readonly Map<int, Bidder> _bidders = [];
 	private readonly int _clanHallId;
+    private readonly ClanHall _clanHall;
 
-	public ClanHallAuction(int clanHallId)
-	{
+    public ClanHallAuction(int clanHallId)
+    {
+        // TODO: pass clan hall data instead of id
+        _clanHall = ClanHallData.getInstance().getClanHallById(_clanHallId) ??
+            throw new ArgumentException($"Clan hall id={clanHallId} not found");
+
 		_clanHallId = clanHallId;
 		loadBidder();
 	}
@@ -34,7 +39,8 @@ public class ClanHallAuction
 			foreach (var record in query)
 			{
 				Clan? clan = ClanTable.getInstance().getClan(record.ClanId);
-				addBid(clan, record.Bid, record.BidTime);
+                if (clan != null)
+				    addBid(clan, record.Bid, record.BidTime);
 			}
 		}
 		catch (Exception e)
@@ -93,16 +99,15 @@ public class ClanHallAuction
 
 	public long getHighestBid()
 	{
-		ClanHall? clanHall = ClanHallData.getInstance().getClanHallById(_clanHallId);
 		if (getBids().Count != 0)
 			return getBids().Values.Select(b => b.getBid()).Max();
 
-		return clanHall.getMinBid();
+		return _clanHall.getMinBid();
 	}
 
 	public long getClanBid(Clan clan)
 	{
-		return getBids().get(clan.getId()).getBid();
+		return getBids().get(clan.getId())?.getBid() ?? 0;
 	}
 
 	public Bidder? getHighestBidder()
@@ -126,8 +131,7 @@ public class ClanHallAuction
 		if (potentialHighestBidder != null)
 		{
 			Bidder highestBidder = potentialHighestBidder;
-			ClanHall? clanHall = ClanHallData.getInstance().getClanHallById(_clanHallId);
-			clanHall.setOwner(highestBidder.getClan());
+			_clanHall.setOwner(highestBidder.getClan());
 			getBids().Clear();
 
 			try

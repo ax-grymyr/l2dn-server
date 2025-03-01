@@ -33,7 +33,7 @@ public struct RequestExTryToPutEnchantTargetItemPacket: IIncomingPacket<GameSess
 		if (request == null || request.isProcessing())
 			return ValueTask.CompletedTask;
 
-		Item scroll = request.getEnchantingScroll();
+		Item? scroll = request.getEnchantingScroll();
 		if (scroll == null)
 			return ValueTask.CompletedTask;
 

@@ -58,7 +58,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 		if (warehouse == null)
 			return ValueTask.CompletedTask;
 
-		Npc manager = player.getLastFolkNPC();
+		Npc? manager = player.getLastFolkNPC();
 		if ((manager == null || !manager.isWarehouse() || !manager.canInteract(player)) && !player.isGM())
 			return ValueTask.CompletedTask;
 
@@ -146,7 +146,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 				continue;
 			}
 
-			Item newItem = player.getInventory().transferItem(warehouse.getName(), itemHolder.getId(), itemHolder.getCount(), warehouse, player, manager);
+			Item? newItem = player.getInventory().transferItem(warehouse.getName(), itemHolder.getId(), itemHolder.getCount(), warehouse, player, manager);
 			if (newItem == null)
 			{
 				PacketLogger.Instance.Warn("Error depositing a warehouse object for char " + player.getName() +

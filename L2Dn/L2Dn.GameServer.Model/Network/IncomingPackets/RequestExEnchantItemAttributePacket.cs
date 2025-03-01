@@ -70,7 +70,7 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 		}
 
 		Item? item = player.getInventory().getItemByObjectId(_objectId);
-		Item stone = request.getEnchantingStone();
+		Item? stone = request.getEnchantingStone();
 		if (item == null || stone == null)
 		{
 			player.removeRequest<EnchantItemAttributeRequest>();
@@ -120,13 +120,17 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 		int elementValue = oldElement == null ? 0 : oldElement.getValue();
 		int limit = getLimit(item, stoneId);
 		int powerToAdd = getPowerToAdd(stoneId, elementValue, item);
-		if ((item.isWeapon() && oldElement != null && oldElement.getType() != elementToAdd &&
-		     oldElement.getType() != AttributeType.NONE) || (item.isArmor() && item.getAttribute(elementToAdd) == null && item.getAttributes() != null && item.getAttributes().Count >= 3))
-		{
-			player.sendPacket(SystemMessageId.ANOTHER_ELEMENTAL_POWER_HAS_ALREADY_BEEN_ADDED_THIS_ELEMENTAL_POWER_CANNOT_BE_ADDED);
-			player.removeRequest<EnchantItemAttributeRequest>();
-			return ValueTask.CompletedTask;
-		}
+        if ((item.isWeapon() && oldElement != null && oldElement.getType() != elementToAdd &&
+                oldElement.getType() != AttributeType.NONE) || (item.isArmor() &&
+                item.getAttribute(elementToAdd) == null && item.getAttributes() is {} attributes &&
+                attributes.Count >= 3))
+        {
+            player.sendPacket(SystemMessageId.
+                ANOTHER_ELEMENTAL_POWER_HAS_ALREADY_BEEN_ADDED_THIS_ELEMENTAL_POWER_CANNOT_BE_ADDED);
+
+            player.removeRequest<EnchantItemAttributeRequest>();
+            return ValueTask.CompletedTask;
+        }
 
         ICollection<AttributeHolder>? itemAttributes = item.getAttributes();
 		if (item.isArmor() && itemAttributes != null)

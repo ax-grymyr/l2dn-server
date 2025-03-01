@@ -297,7 +297,7 @@ public struct RequestSendPostPacket: IIncomingPacket<GameSession>
 				return false;
 			}
 
-			Item newItem = player.getInventory().transferItem("SendMail", i.ObjectId, i.Count, attachments,
+			Item? newItem = player.getInventory().transferItem("SendMail", i.ObjectId, i.Count, attachments,
 				player, msg.getReceiverName() + "[" + msg.getReceiverId() + "]");
 
 			if (newItem == null)

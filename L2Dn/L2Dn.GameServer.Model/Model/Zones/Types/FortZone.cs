@@ -7,13 +7,9 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A castle zone
  * @author durgus
  */
-public class FortZone : ResidenceZone
+public class FortZone(int id, ZoneForm form): ResidenceZone(id, form)
 {
-	public FortZone(int id): base(id)
-	{
-	}
-	
-	public override void setParameter(string name, string value)
+    public override void setParameter(string name, string value)
 	{
 		if (name.equals("fortId"))
 		{
@@ -24,12 +20,12 @@ public class FortZone : ResidenceZone
 			base.setParameter(name, value);
 		}
 	}
-	
+
 	protected override void onEnter(Creature creature)
 	{
 		creature.setInsideZone(ZoneId.FORT, true);
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
 		creature.setInsideZone(ZoneId.FORT, false);

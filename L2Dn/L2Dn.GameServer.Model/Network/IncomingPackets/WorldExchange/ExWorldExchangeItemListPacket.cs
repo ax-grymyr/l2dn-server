@@ -19,7 +19,7 @@ public struct ExWorldExchangeItemListPacket: IIncomingPacket<GameSession>
         _category = (WorldExchangeItemSubType)reader.ReadInt16();
         _sortType = (WorldExchangeSortType)reader.ReadByte();
         reader.ReadInt32(); // page
-        
+
         int size = reader.ReadInt32();
         if (size > 0 && size < 20000)
         {
@@ -39,14 +39,14 @@ public struct ExWorldExchangeItemListPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         string lang = Config.MULTILANG_ENABLE
-            ? player.getLang() != null ? player.getLang() : Config.WORLD_EXCHANGE_DEFAULT_LANG
-            : Config.WORLD_EXCHANGE_DEFAULT_LANG;
-        
+            ? Config.WORLD_EXCHANGE_DEFAULT_LANG
+            : player.getLang() ?? Config.WORLD_EXCHANGE_DEFAULT_LANG;
+
         if (_itemIdList == null)
         {
             List<WorldExchangeHolder> holders = WorldExchangeManager.getInstance()
                 .getItemBids(player.ObjectId, _category, _sortType, lang);
-            
+
             player.sendPacket(new WorldExchangeItemListPacket(holders, _category));
         }
         else
@@ -54,7 +54,7 @@ public struct ExWorldExchangeItemListPacket: IIncomingPacket<GameSession>
             WorldExchangeManager.getInstance().addCategoryType(_itemIdList, (int)_category);
             List<WorldExchangeHolder> holders =
                 WorldExchangeManager.getInstance().getItemBids(_itemIdList, _sortType, lang);
-            
+
             player.sendPacket(new WorldExchangeItemListPacket(holders, _category));
         }
 

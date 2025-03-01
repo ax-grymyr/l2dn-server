@@ -24,7 +24,7 @@ public class EffectZone : ZoneType
 	protected Map<int, int> _skills = [];
 	protected volatile ScheduledFuture? _task;
 
-	public EffectZone(int id):base(id)
+	public EffectZone(int id, ZoneForm form): base(id, form)
 	{
 		_chance = 100;
 		_initialDelay = 0;
@@ -131,20 +131,22 @@ public class EffectZone : ZoneType
 			}
 		}
 
-		if (creature.isPlayer())
+        Player? player = creature.getActingPlayer();
+		if (creature.isPlayer() && player != null)
 		{
 			creature.setInsideZone(ZoneId.ALTERED, true);
 			if (_isShowDangerIcon)
 			{
 				creature.setInsideZone(ZoneId.DANGER_AREA, true);
-				creature.sendPacket(new EtcStatusUpdatePacket(creature.getActingPlayer()));
+				creature.sendPacket(new EtcStatusUpdatePacket(player));
 			}
 		}
 	}
 
 	protected override void onExit(Creature creature)
-	{
-		if (creature.isPlayer())
+    {
+        Player? player = creature.getActingPlayer();
+		if (creature.isPlayer() && player != null)
 		{
 			creature.setInsideZone(ZoneId.ALTERED, false);
 			if (_isShowDangerIcon)
@@ -152,7 +154,7 @@ public class EffectZone : ZoneType
 				creature.setInsideZone(ZoneId.DANGER_AREA, false);
 				if (!creature.isInsideZone(ZoneId.DANGER_AREA))
 				{
-					creature.sendPacket(new EtcStatusUpdatePacket(creature.getActingPlayer()));
+					creature.sendPacket(new EtcStatusUpdatePacket(player));
 				}
 			}
 			if (_removeEffectsOnExit && _skills != null)
@@ -267,7 +269,7 @@ public class EffectZone : ZoneType
 						{
 							if (character.getAffectedSkillLevel(skill.getId()) < skill.getLevel())
 							{
-								skill.activateSkill(character, character);
+								skill.activateSkill(character, [character]);
 							}
 						}
 					}

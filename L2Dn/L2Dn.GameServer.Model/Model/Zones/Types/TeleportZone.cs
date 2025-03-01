@@ -7,18 +7,18 @@ namespace L2Dn.GameServer.Model.Zones.Types;
 /**
  * @author Sdw
  */
-public class TeleportZone : ZoneType
+public class TeleportZone: ZoneType
 {
 	private int _x = -1;
 	private int _y = -1;
 	private int _z = -1;
-	
-	public TeleportZone(int id): base(id)
-	{
-		setTargetType(InstanceType.Player); // Default only player.
-	}
-	
-	public override void setParameter(string name, string value)
+
+    public TeleportZone(int id, ZoneForm form): base(id, form)
+    {
+        setTargetType(InstanceType.Player); // Default only player.
+    }
+
+    public override void setParameter(string name, string value)
 	{
 		switch (name)
 		{
@@ -44,7 +44,7 @@ public class TeleportZone : ZoneType
 			}
 		}
 	}
-	
+
 	protected override void onEnter(Creature creature)
 	{
 		if (isEnabled())
@@ -52,7 +52,7 @@ public class TeleportZone : ZoneType
 			creature.teleToLocation(new Location(_x, _y, _z, 0));
 		}
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
 	}

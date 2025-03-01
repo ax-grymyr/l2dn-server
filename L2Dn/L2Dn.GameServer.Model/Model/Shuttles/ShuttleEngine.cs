@@ -20,8 +20,8 @@ public class ShuttleEngine: Runnable
     public ShuttleEngine(ShuttleDataHolder data, Shuttle shuttle)
     {
         _shuttle = shuttle;
-        _door1 = DoorData.getInstance().getDoor(data.getDoors()[0]);
-        _door2 = DoorData.getInstance().getDoor(data.getDoors()[1]);
+        _door1 = DoorData.getInstance().getDoor(data.getDoors()[0]) ?? throw new ArgumentException($"DoorTemplate id={data.getDoors()[0]} not found");
+        _door2 = DoorData.getInstance().getDoor(data.getDoors()[1]) ?? throw new ArgumentException($"DoorTemplate id={data.getDoors()[1]} not found");
     }
 
 // TODO: Rework me..

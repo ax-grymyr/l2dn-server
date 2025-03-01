@@ -45,10 +45,9 @@ public class DropProtection: Runnable
             return true;
         }
 
-        if (_owner.getParty() != null && _owner.getParty() == actor.getParty())
-        {
+        Party? ownerParty = _owner?.getParty();
+        if (ownerParty != null && ownerParty == actor.getParty())
             return true;
-        }
 
         /*
          * if (_owner.getClan() != null && _owner.getClan() == actor.getClan()) return true;

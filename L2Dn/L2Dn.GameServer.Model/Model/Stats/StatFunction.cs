@@ -13,34 +13,34 @@ namespace L2Dn.GameServer.Model.Stats;
 public abstract class StatFunction: IStatFunction
 {
     public abstract double calc(Creature creature, double? @base, Stat stat);
-	
+
     protected void throwIfPresent(double? @base)
     {
         if (@base == 0.0)
             return; // TODO hack for now
-        
+
         if (@base is not null)
         {
             throw new InvalidOperationException("base should not be set for " + GetType().Name);
         }
     }
-	
+
     protected double validateValue(Creature creature, double value, double minValue, double maxValue)
     {
         if (value > maxValue && !creature.canOverrideCond(PlayerCondOverride.MAX_STATS_VALUE))
         {
             return maxValue;
         }
-		
+
         return Math.Max(minValue, value);
     }
-	
+
     protected double calcEnchantBodyPart(Creature creature, params int[] slots)
     {
         double value = 0;
         foreach (int slot in slots)
         {
-            Item item = creature.getInventory().getPaperdollItemByItemId(slot);
+            Item? item = creature.getInventory()?.getPaperdollItemByItemId(slot);
             if (item != null && item.getEnchantLevel() >= 4 && item.getTemplate().getCrystalTypePlus() == CrystalType.R)
             {
                 value += calcEnchantBodyPartBonus(item.getEnchantLevel(), item.getTemplate().isBlessed());
@@ -48,7 +48,7 @@ public abstract class StatFunction: IStatFunction
         }
         return value;
     }
-	
+
     protected virtual double calcEnchantBodyPartBonus(int enchantLevel, bool isBlessed)
     {
         return 0;
@@ -57,21 +57,22 @@ public abstract class StatFunction: IStatFunction
     protected double calcWeaponBaseValue(Creature creature, Stat stat)
     {
         double baseTemplateValue = creature.getTemplate().getBaseValue(stat, 0);
-        double baseValue = creature.getTransformation()?.getStats(creature, stat, baseTemplateValue) ?? baseTemplateValue;
-		
+        Transform? transformation = creature.getTransformation();
+        double baseValue = transformation?.getStats(creature, stat, baseTemplateValue) ?? baseTemplateValue;
+
         if (creature.isPet())
         {
             Pet pet = (Pet)creature;
-            Item weapon = pet.getActiveWeaponInstance();
+            Item? weapon = pet.getActiveWeaponInstance();
             double baseVal = stat == Stat.PHYSICAL_ATTACK ? pet.getPetLevelData().getPetPAtk() :
                 stat == Stat.MAGIC_ATTACK ? pet.getPetLevelData().getPetMAtk() : baseTemplateValue;
             baseValue = baseVal + (weapon != null ? weapon.getTemplate().getStats(stat, baseVal) : 0);
         }
-        else if (creature.isPlayer() && (!creature.isTransformed() ||
-                                         creature.getTransformation().getType() == TransformType.COMBAT ||
-                                         creature.getTransformation().getType() == TransformType.MODE_CHANGE))
+        else if (creature.isPlayer() && (!creature.isTransformed() || transformation == null ||
+                     transformation.getType() == TransformType.COMBAT ||
+                     transformation.getType() == TransformType.MODE_CHANGE))
         {
-            Item weapon = creature.getActiveWeaponInstance();
+            Item? weapon = creature.getActiveWeaponInstance();
             baseValue = weapon != null ? weapon.getTemplate().getStats(stat, baseTemplateValue) : baseTemplateValue;
         }
 
@@ -89,7 +90,7 @@ public abstract class StatFunction: IStatFunction
 
         if (creature.isPlayable())
         {
-            Inventory inv = creature.getInventory();
+            Inventory? inv = creature.getInventory();
             if (inv != null)
             {
                 baseValue += inv.getPaperdollCache().getStats(stat);
@@ -101,13 +102,14 @@ public abstract class StatFunction: IStatFunction
 
     protected double calcEnchantedItemBonus(Creature creature, Stat stat)
     {
-        if (!creature.isPlayer())
+        Player? player = creature.getActingPlayer();
+        if (!creature.isPlayer() || player == null)
         {
             return 0;
         }
-		
+
         double value = 0;
-        foreach (Item equippedItem in creature.getInventory().getPaperdollItems(x => x.isEnchanted()))
+        foreach (Item equippedItem in player.getInventory().getPaperdollItems(x => x.isEnchanted()))
         {
             ItemTemplate item = equippedItem.getTemplate();
             long bodypart = item.getBodyPart();
@@ -125,11 +127,11 @@ public abstract class StatFunction: IStatFunction
             {
                 continue;
             }
-			
+
             double blessedBonus = item.isBlessed() ? 1.5 : 1;
             int enchant = equippedItem.getEnchantLevel();
-			
-            if (creature.getActingPlayer().isInOlympiadMode())
+
+            if (player.isInOlympiadMode())
             {
                 if (item.isWeapon())
                 {
@@ -146,7 +148,7 @@ public abstract class StatFunction: IStatFunction
                     }
                 }
             }
-			
+
             if (stat == Stat.MAGICAL_DEFENCE)
             {
                 value += calcEnchantmDefBonus(equippedItem, blessedBonus, enchant);
@@ -166,7 +168,7 @@ public abstract class StatFunction: IStatFunction
         }
         return value;
     }
-	
+
     /**
 	 * @param item
 	 * @param blessedBonus
@@ -191,7 +193,7 @@ public abstract class StatFunction: IStatFunction
             }
         }
     }
-	
+
     protected static double calcEnchantDefBonus(Item item, double blessedBonus, int enchant)
     {
         switch (item.getTemplate().getCrystalTypePlus())
@@ -210,7 +212,7 @@ public abstract class StatFunction: IStatFunction
             }
         }
     }
-	
+
     /**
 	 * @param item
 	 * @param blessedBonus
@@ -249,7 +251,7 @@ public abstract class StatFunction: IStatFunction
             }
         }
     }
-	
+
     /**
 	 * @param item
 	 * @param blessedBonus
@@ -258,13 +260,17 @@ public abstract class StatFunction: IStatFunction
 	 */
     protected static double calcEnchantedPAtkBonus(Item item, double blessedBonus, int enchant)
     {
+        Weapon? weapon = item.getWeaponItem();
+        if (weapon == null)
+            return 0;
+
         switch (item.getTemplate().getCrystalTypePlus())
         {
             case CrystalType.S:
             {
-                if (item.getWeaponItem().getBodyPart() == ItemTemplate.SLOT_LR_HAND && item.getWeaponItem().getItemType() != WeaponType.POLE)
+                if (weapon.getBodyPart() == ItemTemplate.SLOT_LR_HAND && weapon.getItemType() != WeaponType.POLE)
                 {
-                    if (item.getWeaponItem().getItemType().isRanged())
+                    if (weapon.getItemType().isRanged())
                     {
                         // P. Atk. increases by 31 for S bows.
                         // Starting at +4, P. Atk. bonus double.
@@ -280,9 +286,9 @@ public abstract class StatFunction: IStatFunction
             }
             case CrystalType.A:
             {
-                if (item.getWeaponItem().getBodyPart() == ItemTemplate.SLOT_LR_HAND && item.getWeaponItem().getItemType() != WeaponType.POLE)
+                if (weapon.getBodyPart() == ItemTemplate.SLOT_LR_HAND && weapon.getItemType() != WeaponType.POLE)
                 {
-                    if (item.getWeaponItem().getItemType().isRanged())
+                    if (weapon.getItemType().isRanged())
                     {
                         // P. Atk. increases by 16 for A bows.
                         // Starting at +4, P. Atk. bonus triple.
@@ -300,9 +306,9 @@ public abstract class StatFunction: IStatFunction
             case CrystalType.C:
             case CrystalType.D:
             {
-                if (item.getWeaponItem().getBodyPart() == ItemTemplate.SLOT_LR_HAND && item.getWeaponItem().getItemType() != WeaponType.POLE)
+                if (weapon.getBodyPart() == ItemTemplate.SLOT_LR_HAND && weapon.getItemType() != WeaponType.POLE)
                 {
-                    if (item.getWeaponItem().getItemType().isRanged())
+                    if (weapon.getItemType().isRanged())
                     {
                         // P. Atk. increases by 8 for B,C,D bows.
                         // Starting at +4, P. Atk. bonus double.
@@ -318,7 +324,7 @@ public abstract class StatFunction: IStatFunction
             }
             default:
             {
-                if (item.getWeaponItem().getItemType().isRanged())
+                if (weapon.getItemType().isRanged())
                 {
                     // Bows increase by 4.
                     // Starting at +4, P. Atk. bonus double.
@@ -330,7 +336,7 @@ public abstract class StatFunction: IStatFunction
             }
         }
     }
-	
+
     protected static int getFrostLordWeaponBonus(Item item, int enchant)
     {
         return

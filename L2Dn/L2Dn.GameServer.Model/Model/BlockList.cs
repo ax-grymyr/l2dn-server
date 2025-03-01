@@ -137,12 +137,12 @@ public class BlockList
 
 	public static void addToBlockList(Player listOwner, int targetId)
 	{
-		if (listOwner == null)
+        string? charName = CharInfoTable.getInstance().getNameById(targetId);
+		if (listOwner == null || charName == null)
 		{
 			return;
 		}
 
-		string? charName = CharInfoTable.getInstance().getNameById(targetId);
 		if (listOwner.getFriendList().Contains(targetId))
 		{
 			listOwner.sendPacket(SystemMessageId.THIS_PLAYER_IS_ALREADY_REGISTERED_ON_YOUR_FRIENDS_LIST);
@@ -172,14 +172,14 @@ public class BlockList
 
 	public static void removeFromBlockList(Player listOwner, int targetId)
 	{
-		if (listOwner == null)
+        string? charName = CharInfoTable.getInstance().getNameById(targetId);
+		if (listOwner == null || charName == null)
 		{
 			return;
 		}
 
 		SystemMessagePacket sm;
 
-		string? charName = CharInfoTable.getInstance().getNameById(targetId);
 		if (!listOwner.getBlockList().getBlockList().Contains(targetId))
 		{
 			sm = new SystemMessagePacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);

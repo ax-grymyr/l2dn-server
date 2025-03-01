@@ -13,10 +13,10 @@ namespace L2Dn.GameServer.Model.Options;
 public class Options
 {
 	private readonly int _id;
-	private List<AbstractEffect> _effects = [];
-	private List<Skill> _activeSkill = [];
-	private List<Skill> _passiveSkill = [];
-	private List<OptionSkillHolder> _activationSkills = [];
+	private readonly List<AbstractEffect> _effects = [];
+	private readonly List<Skill> _activeSkill = [];
+	private readonly List<Skill> _passiveSkill = [];
+	private readonly List<OptionSkillHolder> _activationSkills = [];
 
 	/**
 	 * @param id
@@ -33,11 +33,6 @@ public class Options
 
 	public void addEffect(AbstractEffect effect)
 	{
-		if (_effects == null)
-		{
-			_effects = new();
-		}
-
 		_effects.Add(effect);
 	}
 
@@ -48,12 +43,12 @@ public class Options
 
 	public bool hasEffects()
 	{
-		return _effects != null;
+		return _effects.Count != 0;
 	}
 
 	public bool hasActiveSkills()
 	{
-		return _activeSkill != null;
+		return _activeSkill.Count != 0;
 	}
 
 	public List<Skill> getActiveSkills()
@@ -63,17 +58,12 @@ public class Options
 
 	public void addActiveSkill(Skill holder)
 	{
-		if (_activeSkill == null)
-		{
-			_activeSkill = new();
-		}
-
 		_activeSkill.Add(holder);
 	}
 
 	public bool hasPassiveSkills()
 	{
-		return _passiveSkill != null;
+		return _passiveSkill.Count != 0;
 	}
 
 	public List<Skill> getPassiveSkills()
@@ -83,36 +73,26 @@ public class Options
 
 	public void addPassiveSkill(Skill holder)
 	{
-		if (_passiveSkill == null)
-		{
-			_passiveSkill = new();
-		}
-
 		_passiveSkill.Add(holder);
 	}
 
 	public bool hasActivationSkills()
 	{
-		return _activationSkills != null;
+		return _activationSkills.Count != 0;
 	}
 
-	public bool hasActivationSkills(OptionSkillType type)
-	{
-		if (_activationSkills != null)
-		{
-			foreach (OptionSkillHolder holder in _activationSkills)
-			{
-				if (holder.getSkillType() == type)
-				{
-					return true;
-				}
-			}
-		}
+    public bool hasActivationSkills(OptionSkillType type)
+    {
+        foreach (OptionSkillHolder holder in _activationSkills)
+        {
+            if (holder.getSkillType() == type)
+                return true;
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	public List<OptionSkillHolder> getActivationSkills()
+    public List<OptionSkillHolder> getActivationSkills()
 	{
 		return _activationSkills;
 	}
@@ -120,15 +100,10 @@ public class Options
 	public List<OptionSkillHolder> getActivationSkills(OptionSkillType type)
 	{
 		List<OptionSkillHolder> temp = new();
-		if (_activationSkills != null)
+		foreach (OptionSkillHolder holder in _activationSkills)
 		{
-			foreach (OptionSkillHolder holder in _activationSkills)
-			{
-				if (holder.getSkillType() == type)
-				{
-					temp.Add(holder);
-				}
-			}
+			if (holder.getSkillType() == type)
+				temp.Add(holder);
 		}
 
 		return temp;
@@ -136,11 +111,6 @@ public class Options
 
 	public void addActivationSkill(OptionSkillHolder holder)
 	{
-		if (_activationSkills == null)
-		{
-			_activationSkills = new();
-		}
-
 		_activationSkills.Add(holder);
 	}
 
@@ -148,8 +118,8 @@ public class Options
 	{
 		if (hasEffects())
 		{
-            // TODO: the skill is used in many effect handlers but here it is null
-			BuffInfo info = new BuffInfo(playable, playable, null, true, null, this);
+            Skill skill = null!; // TODO: WARNING! the skill is used in many AbstractEffects but here it is null
+			BuffInfo info = new BuffInfo(playable, playable, skill, true, null, this);
 			foreach (AbstractEffect effect in _effects)
 			{
 				if (effect.isInstant())

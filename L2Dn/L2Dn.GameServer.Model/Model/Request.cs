@@ -13,18 +13,18 @@ namespace L2Dn.GameServer.Model;
 public class Request
 {
 	private const int REQUEST_TIMEOUT = 15; // in secs
-	
+
 	protected Player _player;
-	protected Player _partner;
+	protected Player? _partner;
 	protected bool _isRequestor;
 	protected bool _isAnswerer;
-	protected object _requestPacket;
-	
+	protected object? _requestPacket;
+
 	public Request(Player player)
 	{
 		_player = player;
 	}
-	
+
 	protected void clear()
 	{
 		_partner = null;
@@ -32,7 +32,7 @@ public class Request
 		_isRequestor = false;
 		_isAnswerer = false;
 	}
-	
+
 	/**
 	 * Set the Player member of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).
 	 * @param partner
@@ -42,15 +42,15 @@ public class Request
 	{
 		_partner = partner;
 	}
-	
+
 	/**
 	 * @return the Player member of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).
 	 */
-	public Player getPartner()
+	public Player? getPartner()
 	{
 		return _partner;
 	}
-	
+
 	/**
 	 * Set the packet that came from requester.
 	 * @param packet
@@ -60,16 +60,16 @@ public class Request
 	{
 		_requestPacket = packet;
 	}
-	
+
 	/**
 	 * Return the packet originally the came from requester.
 	 * @return
 	 */
-	public object getRequestPacket()
+	public object? getRequestPacket()
 	{
 		return _requestPacket;
 	}
-	
+
 	/**
 	 * Checks if request can be made and in success case puts both PC on request state.
 	 * @param partner
@@ -84,19 +84,21 @@ public class Request
 			_player.sendPacket(SystemMessageId.THE_TARGET_CANNOT_BE_INVITED);
 			return false;
 		}
-		if (partner.getRequest().isProcessingRequest())
+
+        if (partner.getRequest().isProcessingRequest() == true)
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_IS_ON_ANOTHER_TASK_PLEASE_TRY_AGAIN_LATER);
 			sm.Params.addString(partner.getName());
 			_player.sendPacket(sm);
 			return false;
 		}
+
 		if (isProcessingRequest())
 		{
 			_player.sendPacket(SystemMessageId.WAITING_FOR_ANOTHER_REPLY);
 			return false;
 		}
-		
+
 		_partner = partner;
 		_requestPacket = packet;
 		setOnRequestTimer(true);
@@ -105,14 +107,14 @@ public class Request
 		_partner.getRequest().setOnRequestTimer(false);
 		return true;
 	}
-	
+
 	private void setOnRequestTimer(bool isRequestor)
 	{
 		_isRequestor = isRequestor;
 		_isAnswerer = !isRequestor;
 		ThreadPool.schedule(clear, REQUEST_TIMEOUT * 1000);
 	}
-	
+
 	/**
 	 * Clears PC request state. Should be called after answer packet receive.
 	 */
@@ -124,7 +126,7 @@ public class Request
 		}
 		clear();
 	}
-	
+
 	/**
 	 * @return {@code true} if a transaction is in progress.
 	 */

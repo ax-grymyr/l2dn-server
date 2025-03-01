@@ -16,7 +16,7 @@ public class MaxHpFinalizer : StatFunction
 	public override double calc(Creature creature, double? @base, Stat stat)
 	{
 		throwIfPresent(@base);
-		
+
 		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
 		if (creature.isPet())
 		{
@@ -25,49 +25,50 @@ public class MaxHpFinalizer : StatFunction
 		}
 		else if (creature.isPlayer())
 		{
-			Player player = creature.getActingPlayer();
+			Player? player = creature.getActingPlayer();
 			if (player != null)
 			{
 				baseValue = player.getTemplate().getBaseHpMax(player.getLevel());
 			}
 		}
-		
+
 		double conBonus = creature.getCON() > 0 ? BaseStat.CON.calcBonus(creature) : 1;
 		baseValue *= conBonus;
-		
+
 		return defaultValue(creature, stat, baseValue);
 	}
-	
+
 	private static double defaultValue(Creature creature, Stat stat, double baseValue)
 	{
 		double mul = creature.getStat().getMul(stat);
 		double add = creature.getStat().getAdd(stat);
-		
+
 		double maxHp = mul * baseValue + add + creature.getStat().getMoveTypeValue(stat, creature.getMoveType());
 		bool isPlayer = creature.isPlayer();
-		
-		Inventory inv = creature.getInventory();
+        Player? player = creature.getActingPlayer();
+
+		Inventory? inv = creature.getInventory();
 		if (inv == null)
 		{
-			if (isPlayer)
+			if (isPlayer && player != null)
 			{
-				if (creature.getActingPlayer().isCursedWeaponEquipped())
+				if (player.isCursedWeaponEquipped())
 				{
 					return double.MaxValue;
 				}
-				
+
 				mul = creature.getStat().getMul(Stat.HP_LIMIT);
 				add = creature.getStat().getAdd(Stat.HP_LIMIT);
 				return Math.Min(maxHp, Config.MAX_HP * mul + add);
 			}
 			return maxHp;
 		}
-		
+
 		// Add maxHP bonus from items
 		foreach (Item item in inv.getPaperdollItems())
 		{
 			maxHp += item.getTemplate().getStats(stat, 0);
-			
+
 			// Apply enchanted item bonus HP
 			if (item.isArmor() && item.isEnchanted())
 			{
@@ -78,9 +79,9 @@ public class MaxHpFinalizer : StatFunction
 				}
 			}
 		}
-		
+
 		double hpLimit;
-		if (isPlayer && !creature.getActingPlayer().isCursedWeaponEquipped())
+		if (isPlayer && player != null && !player.isCursedWeaponEquipped())
 		{
 			mul = creature.getStat().getMul(Stat.HP_LIMIT);
 			add = creature.getStat().getAdd(Stat.HP_LIMIT);
@@ -90,7 +91,7 @@ public class MaxHpFinalizer : StatFunction
 		{
 			hpLimit = double.MaxValue;
 		}
-		
+
 		return Math.Min(maxHp, hpLimit);
 	}
 }

@@ -8,15 +8,11 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * Respawn zone implementation.
  * @author Nyaran
  */
-public class RespawnZone : ZoneRespawn
+public class RespawnZone(int id, ZoneForm form): ZoneRespawn(id, form)
 {
 	private readonly Map<Race, string> _raceRespawnPoint = new();
 
-	public RespawnZone(int id):base(id)
-	{
-	}
-
-	protected override void onEnter(Creature creature)
+    protected override void onEnter(Creature creature)
 	{
 	}
 

@@ -59,7 +59,7 @@ public struct RequestActionUsePacket: IIncomingPacket<GameSession>
         Transform? transform = player.getTransformation();
 		if (player.isTransformed() && transform != null)
 		{
-			TransformTemplate transformTemplate = transform.getTemplate(player);
+			TransformTemplate? transformTemplate = transform.getTemplate(player);
 			ImmutableArray<int> allowedActions = transformTemplate.getBasicActionList();
 			if (allowedActions.IsDefaultOrEmpty || allowedActions.BinarySearch(_actionId) < 0)
 			{

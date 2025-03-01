@@ -21,8 +21,8 @@ public struct RequestDismissPartyRoomPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        MatchingRoom room = player.getMatchingRoom();
+
+        MatchingRoom? room = player.getMatchingRoom();
         if (room == null || room.getId() != _roomId || room.getRoomType() != MatchingRoomType.PARTY ||
             room.getLeader() != player)
         {

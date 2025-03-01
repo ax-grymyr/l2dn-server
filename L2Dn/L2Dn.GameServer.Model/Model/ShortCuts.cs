@@ -14,58 +14,59 @@ namespace L2Dn.GameServer.Model;
 public class ShortCuts : IRestorable
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ShortCuts));
-	
+
 	public const int MAX_SHORTCUTS_PER_BAR = 12;
-	
+
 	private readonly Player _owner;
 	private readonly Map<int, Shortcut> _shortCuts = new();
-	
+
 	public ShortCuts(Player owner)
 	{
 		_owner = owner;
 	}
-	
+
 	public ICollection<Shortcut> getAllShortCuts()
 	{
 		return _shortCuts.Values;
 	}
-	
-	public Shortcut getShortCut(int slot, int page)
+
+	public Shortcut? getShortCut(int slot, int page)
 	{
-		Shortcut sc = _shortCuts.get(slot + page * MAX_SHORTCUTS_PER_BAR);
+		Shortcut? sc = _shortCuts.get(slot + page * MAX_SHORTCUTS_PER_BAR);
 		// Verify shortcut
 		if (sc != null && sc.getType() == ShortcutType.ITEM && _owner.getInventory().getItemByObjectId(sc.getId()) == null)
 		{
 			deleteShortCut(sc.getSlot(), sc.getPage());
 			sc = null;
 		}
+
 		return sc;
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void registerShortCut(Shortcut shortcut)
 	{
 		// Verify shortcut
 		if (shortcut.getType() == ShortcutType.ITEM)
 		{
-			Item item = _owner.getInventory().getItemByObjectId(shortcut.getId());
+			Item? item = _owner.getInventory().getItemByObjectId(shortcut.getId());
 			if (item == null)
-			{
 				return;
-			}
-			shortcut.setSharedReuseGroup(item.getSharedReuseGroup());
+
+            shortcut.setSharedReuseGroup(item.getSharedReuseGroup());
 		}
+
 		registerShortCutInDb(shortcut, _shortCuts.put(shortcut.getSlot() + shortcut.getPage() * MAX_SHORTCUTS_PER_BAR, shortcut));
 	}
-	
-	private void registerShortCutInDb(Shortcut shortcut, Shortcut oldShortCut)
+
+	private void registerShortCutInDb(Shortcut shortcut, Shortcut? oldShortCut)
 	{
 		if (oldShortCut != null)
 		{
 			deleteShortCutFromDb(oldShortCut);
 		}
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _owner.ObjectId;
@@ -95,7 +96,7 @@ public class ShortCuts : IRestorable
 			LOGGER.Warn("Could not store character shortcut: " + e);
 		}
 	}
-	
+
 	/**
 	 * @param slot
 	 * @param page
@@ -103,14 +104,13 @@ public class ShortCuts : IRestorable
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void deleteShortCut(int slot, int page)
 	{
-		Shortcut old = _shortCuts.remove(slot + page * MAX_SHORTCUTS_PER_BAR);
+		Shortcut? old = _shortCuts.remove(slot + page * MAX_SHORTCUTS_PER_BAR);
 		if (old == null || _owner == null)
-		{
 			return;
-		}
-		deleteShortCutFromDb(old);
+
+        deleteShortCutFromDb(old);
 	}
-	
+
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void deleteShortCutByObjectId(int objectId)
 	{
@@ -123,13 +123,13 @@ public class ShortCuts : IRestorable
 			}
 		}
 	}
-	
+
 	/**
 	 * @param shortcut
 	 */
 	private void deleteShortCutFromDb(Shortcut shortcut)
 	{
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _owner.ObjectId;
@@ -145,11 +145,11 @@ public class ShortCuts : IRestorable
 			LOGGER.Error("Could not delete character shortcut: " + e);
 		}
 	}
-	
+
 	public bool restoreMe()
 	{
 		_shortCuts.Clear();
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _owner.ObjectId;
@@ -171,27 +171,27 @@ public class ShortCuts : IRestorable
 			LOGGER.Warn("Could not restore character shortcuts: " + e);
 			return false;
 		}
-		
+
 		// Verify shortcuts
 		foreach (Shortcut sc in getAllShortCuts())
 		{
 			if (sc.getType() == ShortcutType.ITEM)
 			{
-				Item item = _owner.getInventory().getItemByObjectId(sc.getId());
+				Item? item = _owner.getInventory().getItemByObjectId(sc.getId());
 				if (item == null)
 				{
 					deleteShortCut(sc.getSlot(), sc.getPage());
 				}
-				else if (item.isEtcItem())
+				else if (item.getEtcItem() is {} etcItem)
 				{
-					sc.setSharedReuseGroup(item.getEtcItem().getSharedReuseGroup());
+					sc.setSharedReuseGroup(etcItem.getSharedReuseGroup());
 				}
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	/**
 	 * Updates the shortcut bars with the new skill.
 	 * @param skillId the skill Id to search and update.

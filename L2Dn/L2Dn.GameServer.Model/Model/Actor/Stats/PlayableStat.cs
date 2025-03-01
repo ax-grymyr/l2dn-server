@@ -170,9 +170,9 @@ public class PlayableStat: CreatureStat
 			setExp(getExpForLevel(getLevel()));
 		}
 
-		if (!levelIncreased && getActiveChar().isPlayer() && !getActiveChar().isGM() && Config.DECREASE_SKILL_LEVEL)
+		if (!levelIncreased && getActiveChar() is Player player && !player.isGM() && Config.DECREASE_SKILL_LEVEL)
 		{
-			((Player) getActiveChar()).checkPlayerSkills();
+			player.checkPlayerSkills();
 		}
 
 		if (!levelIncreased)

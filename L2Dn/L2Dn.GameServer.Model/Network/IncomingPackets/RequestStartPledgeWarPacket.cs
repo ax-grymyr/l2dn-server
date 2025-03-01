@@ -109,18 +109,20 @@ public struct RequestStartPledgeWarPacket: IIncomingPacket<GameSession>
 				clanWar.mutualClanWarAccepted(clanDeclaredWar, clanDeclaringWar);
 				ClanTable.getInstance().storeClanWars(clanWar);
 				foreach (ClanMember member in clanDeclaringWar.getMembers())
-				{
-					if (member != null && member.isOnline())
+                {
+                    Player? memberPlayer = member.getPlayer();
+                    if (member != null && member.isOnline() && memberPlayer != null)
 					{
-						member.getPlayer().broadcastUserInfo(UserInfoType.CLAN);
+                        memberPlayer.broadcastUserInfo(UserInfoType.CLAN);
 					}
 				}
 
 				foreach (ClanMember member in clanDeclaredWar.getMembers())
 				{
-					if (member != null && member.isOnline())
+                    Player? memberPlayer = member.getPlayer();
+                    if (member != null && member.isOnline() && memberPlayer != null)
 					{
-						member.getPlayer().broadcastUserInfo(UserInfoType.CLAN);
+                        memberPlayer.broadcastUserInfo(UserInfoType.CLAN);
 					}
 				}
 
@@ -134,17 +136,19 @@ public struct RequestStartPledgeWarPacket: IIncomingPacket<GameSession>
 
 		foreach (ClanMember member in clanDeclaringWar.getMembers())
 		{
-			if (member != null && member.isOnline())
+            Player? memberPlayer = member.getPlayer();
+			if (member != null && member.isOnline() && memberPlayer != null)
 			{
-				member.getPlayer().broadcastUserInfo(UserInfoType.CLAN);
+                memberPlayer.broadcastUserInfo(UserInfoType.CLAN);
 			}
 		}
 
 		foreach (ClanMember member in clanDeclaredWar.getMembers())
 		{
-			if (member != null && member.isOnline())
+            Player? memberPlayer = member.getPlayer();
+            if (member != null && member.isOnline() && memberPlayer != null)
 			{
-				member.getPlayer().broadcastUserInfo(UserInfoType.CLAN);
+                memberPlayer.broadcastUserInfo(UserInfoType.CLAN);
 			}
 		}
 

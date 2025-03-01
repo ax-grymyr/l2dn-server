@@ -39,7 +39,7 @@ public struct RequestPledgeBonusRewardPacket: IIncomingPacket<GameSession>
                 SkillHolder skillReward = bonus.getSkillReward();
                 if (skillReward != null)
                 {
-                    skillReward.getSkill().activateSkill(player, player);
+                    skillReward.getSkill().activateSkill(player, [player]);
                 }
 
                 member.setRewardClaimed(_type);

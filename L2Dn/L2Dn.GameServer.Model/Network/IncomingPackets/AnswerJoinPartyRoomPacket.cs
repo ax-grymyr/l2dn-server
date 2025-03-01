@@ -31,7 +31,7 @@ public struct AnswerJoinPartyRoomPacket: IIncomingPacket<GameSession>
 
         if (_answer && !partner.isRequestExpired())
         {
-            MatchingRoom room = partner.getMatchingRoom();
+            MatchingRoom? room = partner.getMatchingRoom();
             if (room == null)
                 return ValueTask.CompletedTask;
 

@@ -31,25 +31,25 @@ public struct RequestPartyMatchListPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        if (_roomId <= 0 && player.getMatchingRoom() == null)
+
+        MatchingRoom? matchingRoom = player.getMatchingRoom();
+        if (_roomId <= 0 || matchingRoom == null)
         {
             PartyMatchingRoom room = new PartyMatchingRoom(_roomTitle, _lootType, _minLevel, _maxLevel, _maxMembers, player);
             player.setMatchingRoom(room);
         }
         else
         {
-            MatchingRoom room = player.getMatchingRoom();
-            if (room.getId() == _roomId && room.getRoomType() == MatchingRoomType.PARTY && room.isLeader(player))
+            if (matchingRoom.getId() == _roomId && matchingRoom.getRoomType() == MatchingRoomType.PARTY && matchingRoom.isLeader(player))
             {
-                room.setLootType(_lootType);
-                room.setMinLevel(_minLevel);
-                room.setMaxLevel(_maxLevel);
-                room.setMaxMembers(_maxMembers);
-                room.setTitle(_roomTitle);
-				
-                PartyRoomInfoPacket packet = new PartyRoomInfoPacket((PartyMatchingRoom)room);
-                foreach (Player member in room.getMembers())
+                matchingRoom.setLootType(_lootType);
+                matchingRoom.setMinLevel(_minLevel);
+                matchingRoom.setMaxLevel(_maxLevel);
+                matchingRoom.setMaxMembers(_maxMembers);
+                matchingRoom.setTitle(_roomTitle);
+
+                PartyRoomInfoPacket packet = new PartyRoomInfoPacket((PartyMatchingRoom)matchingRoom);
+                foreach (Player member in matchingRoom.getMembers())
                 {
                     member.sendPacket(packet);
                 }

@@ -7,13 +7,9 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A Peace Zone
  * @author durgus
  */
-public class PeaceZone : ZoneType
+public class PeaceZone(int id, ZoneForm form): ZoneType(id, form)
 {
-	public PeaceZone(int id): base(id)
-	{
-	}
-
-	protected override void onEnter(Creature creature)
+    protected override void onEnter(Creature creature)
 	{
 		if (!isEnabled())
 		{

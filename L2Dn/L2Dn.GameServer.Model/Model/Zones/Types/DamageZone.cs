@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A damage zone
  * @author durgus
  */
-public class DamageZone : ZoneType
+public class DamageZone: ZoneType
 {
 	private int _damageHPPerSec;
 	private int _damageMPPerSec;
@@ -25,7 +25,7 @@ public class DamageZone : ZoneType
 	private int _reuseTask;
 	protected volatile ScheduledFuture? _task;
 
-	public DamageZone(int id): base(id)
+	public DamageZone(int id, ZoneForm form): base(id, form)
 	{
 		// Setup default damage
 		_damageHPPerSec = 200;

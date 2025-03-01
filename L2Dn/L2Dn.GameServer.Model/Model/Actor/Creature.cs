@@ -413,25 +413,6 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		return _transform.getCollisionHeight(this, defaultCollisionHeight);
 	}
 
-	/**
-	 * This will return true if the player is GM,<br>
-	 * but if the player is not GM it will return false.
-	 * @return GM status
-	 */
-	public virtual bool isGM()
-	{
-		return false;
-	}
-
-	/**
-	 * Overridden in Player.
-	 * @return the access level.
-	 */
-	public virtual AccessLevel? getAccessLevel()
-	{
-		return null;
-	}
-
 	protected void initCharStatusUpdateValues()
 	{
 		_hpUpdateIncCheck = _stat.getMaxHp();
@@ -925,7 +906,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			// BOW and CROSSBOW checks
 			if (weaponItem != null)
 			{
-				if (!weaponItem.isAttackWeapon() && !isGM())
+				if (!weaponItem.isAttackWeapon())
 				{
 					if (weaponItem.getItemType() == WeaponType.FISHINGROD)
 					{

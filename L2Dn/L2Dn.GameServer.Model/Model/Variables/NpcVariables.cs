@@ -15,7 +15,7 @@ public class NpcVariables: AbstractVariables<DbNpcVariable>
     {
         _npcId = npcId;
     }
-    
+
     public override int getInt(string key)
     {
         return base.getInt(key, 0);
@@ -39,7 +39,7 @@ public class NpcVariables: AbstractVariables<DbNpcVariable>
      * @param name the name of the variable
      * @return the stored player or {@code null}
      */
-    public Player getPlayer(string name)
+    public Player? getPlayer(string name)
     {
         return getObject<Player>(name);
     }
@@ -49,7 +49,7 @@ public class NpcVariables: AbstractVariables<DbNpcVariable>
      * @param name the name of the variable
      * @return the stored summon or {@code null}
      */
-    public Summon getSummon(string name)
+    public Summon? getSummon(string name)
     {
         return getObject<Summon>(name);
     }

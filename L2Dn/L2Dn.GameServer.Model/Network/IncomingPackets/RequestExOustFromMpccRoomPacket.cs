@@ -22,7 +22,7 @@ public struct RequestExOustFromMpccRoomPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        MatchingRoom room = player.getMatchingRoom();
+        MatchingRoom? room = player.getMatchingRoom();
         if (room != null && room.getLeader() == player && room.getRoomType() == MatchingRoomType.COMMAND_CHANNEL)
         {
             Player? target = World.getInstance().getPlayer(_objectId);

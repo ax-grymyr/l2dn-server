@@ -7,13 +7,9 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A PVP Zone
  * @author durgus
  */
-public class ArenaZone : ZoneType
+public sealed class ArenaZone(int id, ZoneForm form): ZoneType(id, form)
 {
-	public ArenaZone(int id): base(id)
-	{
-	}
-	
-	protected override void onEnter(Creature creature)
+    protected override void onEnter(Creature creature)
 	{
 		if (creature.isPlayer() && !creature.isInsideZone(ZoneId.PVP))
 		{
@@ -21,7 +17,7 @@ public class ArenaZone : ZoneType
 		}
 		creature.setInsideZone(ZoneId.PVP, true);
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
 		creature.setInsideZone(ZoneId.PVP, false);

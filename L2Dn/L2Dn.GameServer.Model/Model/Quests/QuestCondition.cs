@@ -11,9 +11,9 @@ public class QuestCondition
 {
 	private readonly Predicate<Player> _condition;
 	private readonly Map<int, string> _perNpcDialog = [];
-	private readonly string _html;
+	private readonly string? _html;
 
-	public QuestCondition(Predicate<Player> cond, string html)
+	public QuestCondition(Predicate<Player> cond, string? html)
 	{
 		_condition = cond;
 		_html = html;
@@ -31,7 +31,7 @@ public class QuestCondition
 		return _condition(player);
 	}
 
-	public string getHtml(Npc npc)
+	public string? getHtml(Npc npc)
 	{
 		return _perNpcDialog.get(npc.getId()) ?? _html;
 	}

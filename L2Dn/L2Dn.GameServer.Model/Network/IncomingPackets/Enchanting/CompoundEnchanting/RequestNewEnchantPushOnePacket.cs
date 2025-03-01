@@ -49,7 +49,7 @@ public struct RequestNewEnchantPushOnePacket: IIncomingPacket<GameSession>
 
         // Make sure player owns this item.
         request.setItemOne(_objectId);
-        Item itemOne = request.getItemOne();
+        Item? itemOne = request.getItemOne();
         if (itemOne == null)
         {
             player.sendPacket(ExEnchantOneFailPacket.STATIC_PACKET);

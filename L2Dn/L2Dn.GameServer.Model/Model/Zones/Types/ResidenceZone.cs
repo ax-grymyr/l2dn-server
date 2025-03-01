@@ -6,7 +6,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
 /**
  * @author xban1x
  */
-public abstract class ResidenceZone(int id): ZoneRespawn(id)
+public abstract class ResidenceZone(int id, ZoneForm form): ZoneRespawn(id, form)
 {
 	private int _residenceId;
 

@@ -91,7 +91,7 @@ public struct RequestTryEnSoulExtractionPacket: IIncomingPacket<GameSession>
         // Add rune in player inventory.
         if (runeId > 0)
         {
-            Item addItem = player.addItem("Rune Extract", runeId, 1, player, true);
+            Item? addItem = player.addItem("Rune Extract", runeId, 1, player, true);
             itemsToUpdate.Add(new ItemInfo(addItem));
         }
 

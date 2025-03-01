@@ -50,7 +50,7 @@ public struct RequestNewEnchantRetryToPutItemsPacket: IIncomingPacket<GameSessio
 
         // Make sure player owns first item.
         request.setItemOne(_firstItemObjectId);
-        Item itemOne = request.getItemOne();
+        Item? itemOne = request.getItemOne();
         if (itemOne == null)
         {
             connection.Send(ExEnchantRetryToPutItemFailPacket.STATIC_PACKET);
@@ -60,7 +60,7 @@ public struct RequestNewEnchantRetryToPutItemsPacket: IIncomingPacket<GameSessio
 
         // Make sure player owns second item.
         request.setItemTwo(_secondItemObjectId);
-        Item itemTwo = request.getItemTwo();
+        Item? itemTwo = request.getItemTwo();
         if (itemTwo == null)
         {
             connection.Send(ExEnchantRetryToPutItemFailPacket.STATIC_PACKET);

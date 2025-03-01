@@ -61,8 +61,8 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		Npc manager = player.getLastFolkNPC();
-        Castle? castle = manager.getCastle();
+		Npc? manager = player.getLastFolkNPC();
+        Castle? castle = manager?.getCastle();
 		if (!(manager is Merchant) || !manager.canInteract(player) || castle == null)
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);

@@ -23,17 +23,20 @@ public class ElementalSpirit
 
 	public ElementalSpirit(ElementalType type, Player owner)
 	{
+        _owner = owner;
 		_data = new ElementalSpiritDataHolder(type, owner.ObjectId);
-		_template = ElementalSpiritData.getInstance().getSpirit(type, _data.getStage());
-		_owner = owner;
-	}
+        _template = ElementalSpiritData.getInstance().getSpirit(type, _data.getStage()) ??
+            throw new ArgumentException($"Elemental spirit template type={type}, stage={_data.getStage()} not found");
+    }
 
 	public ElementalSpirit(ElementalSpiritDataHolder data, Player owner)
 	{
 		_owner = owner;
 		_data = data;
-		_template = ElementalSpiritData.getInstance().getSpirit(data.getType(), data.getStage());
-	}
+        _template = ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage()) ??
+            throw new ArgumentException(
+                $"Elemental spirit template type={_data.getType()}, stage={_data.getStage()} not found");
+    }
 
 	public void addExperience(int experience)
 	{
@@ -86,7 +89,12 @@ public class ElementalSpirit
 	public void reduceLevel()
 	{
 		_data.setLevel(Math.Max(1, _data.getLevel() - 1));
-		_data.setExperience(ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage()).getMaxExperienceAtLevel(_data.getLevel() - 1));
+
+        ElementalSpiritTemplateHolder template = ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage()) ??
+            throw new ArgumentException(
+                $"Elemental spirit template type={_data.getType()}, stage={_data.getStage()} not found");
+
+		_data.setExperience(template.getMaxExperienceAtLevel(_data.getLevel() - 1));
 		resetCharacteristics();
 	}
 
@@ -98,7 +106,7 @@ public class ElementalSpirit
 		return Math.Max(points - _data.getAttackPoints() - _data.getDefensePoints() - _data.getCritDamagePoints() - _data.getCritRatePoints(), 0);
 	}
 
-	public ElementalSpiritAbsorbItemHolder getAbsorbItem(int itemId)
+	public ElementalSpiritAbsorbItemHolder? getAbsorbItem(int itemId)
 	{
 		foreach (ElementalSpiritAbsorbItemHolder absorbItem in getAbsorbItems())
 		{
@@ -115,9 +123,12 @@ public class ElementalSpirit
 		float amount = _data.getExperience() / ElementalSpiritData.FragmentXpConsume;
 		if (getLevel() > 1)
 		{
-			amount += ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage())
-				.getMaxExperienceAtLevel(getLevel() - 1) / ElementalSpiritData.FragmentXpConsume;
-		}
+            ElementalSpiritTemplateHolder template = ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage()) ??
+                throw new ArgumentException(
+                    $"Elemental spirit template type={_data.getType()}, stage={_data.getStage()} not found");
+
+            amount += template.getMaxExperienceAtLevel(getLevel() - 1) / ElementalSpiritData.FragmentXpConsume;
+        }
 
 		return (int)amount;
 	}
@@ -139,7 +150,10 @@ public class ElementalSpirit
 		_data.increaseStage();
 		_data.setLevel(1);
 		_data.setExperience(0);
-		_template = ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage());
+
+        _template = ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage()) ??
+            throw new ArgumentException(
+                $"Elemental spirit template type={_data.getType()}, stage={_data.getStage()} not found");
 
 		if (_owner.Events.HasSubscribers<OnPlayerElementalSpiritUpgrade>())
 		{
@@ -149,10 +163,10 @@ public class ElementalSpirit
 
 	public void resetCharacteristics()
 	{
-		_data.setAttackPoints((byte) 0);
-		_data.setDefensePoints((byte) 0);
-		_data.setCritRatePoints((byte) 0);
-		_data.setCritDamagePoints((byte) 0);
+		_data.setAttackPoints(0);
+		_data.setDefensePoints(0);
+		_data.setCritRatePoints(0);
+		_data.setCritDamagePoints(0);
 	}
 
 	public ElementalType getType()

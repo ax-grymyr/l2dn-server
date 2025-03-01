@@ -233,7 +233,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @param res the message to show to the player
 	 * @return {@code false} if the message was sent, {@code true} otherwise
 	 */
-	public bool showResult(Player player, string? res, Npc? npc = null)
+	public bool showResult(Player? player, string? res, Npc? npc = null)
 	{
 		if (string.IsNullOrEmpty(res) || player == null)
 		{
@@ -270,7 +270,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @return the contents of the HTML file that was sent to the player
 	 * @see #showHtmlFile(Player, String, Npc)
 	 */
-	public string showHtmlFile(Player player, string filename)
+	public string? showHtmlFile(Player player, string filename)
 	{
 		return showHtmlFile(player, filename, null);
 	}
@@ -283,7 +283,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 * @return the contents of the HTML file that was sent to the player
 	 * @see #showHtmlFile(Player, String, Npc)
 	 */
-	public virtual string showHtmlFile(Player player, string filename, Npc? npc)
+	public virtual string? showHtmlFile(Player player, string filename, Npc? npc)
 	{
 		// Create handler to file linked to the quest
 		string content = getHtm(player, filename);
@@ -305,7 +305,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 		}
 
-		return content!; // TODO: verify this
+		return content; // TODO: verify this
 	}
 
 	/**

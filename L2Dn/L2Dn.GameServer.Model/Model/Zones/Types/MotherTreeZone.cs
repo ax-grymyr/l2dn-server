@@ -9,18 +9,14 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A mother-trees zone Basic type zone for Hp, MP regen
  * @author durgus
  */
-public class MotherTreeZone : ZoneType
+public class MotherTreeZone(int id, ZoneForm form): ZoneType(id, form)
 {
 	private SystemMessageId _enterMsg;
 	private SystemMessageId _leaveMsg;
 	private int _mpRegen;
 	private int _hpRegen;
-	
-	public MotherTreeZone(int id):base(id)
-	{
-	}
-	
-	public override void setParameter(string name, string value)
+
+    public override void setParameter(string name, string value)
 	{
 		if (name.equals("enterMsgId"))
 		{
@@ -43,12 +39,12 @@ public class MotherTreeZone : ZoneType
 			base.setParameter(name, value);
 		}
 	}
-	
+
 	protected override void onEnter(Creature creature)
 	{
-		if (creature.isPlayer())
+        Player? player = creature.getActingPlayer();
+		if (creature.isPlayer() && player != null)
 		{
-			Player player = creature.getActingPlayer();
 			creature.setInsideZone(ZoneId.MOTHER_TREE, true);
 			if (_enterMsg != 0)
 			{
@@ -56,12 +52,12 @@ public class MotherTreeZone : ZoneType
 			}
 		}
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
-		if (creature.isPlayer())
+        Player? player = creature.getActingPlayer();
+        if (creature.isPlayer() && player != null)
 		{
-			Player player = creature.getActingPlayer();
 			player.setInsideZone(ZoneId.MOTHER_TREE, false);
 			if (_leaveMsg != 0)
 			{
@@ -69,7 +65,7 @@ public class MotherTreeZone : ZoneType
 			}
 		}
 	}
-	
+
 	/**
 	 * @return the _mpRegen
 	 */
@@ -77,7 +73,7 @@ public class MotherTreeZone : ZoneType
 	{
 		return _mpRegen;
 	}
-	
+
 	/**
 	 * @return the _hpRegen
 	 */

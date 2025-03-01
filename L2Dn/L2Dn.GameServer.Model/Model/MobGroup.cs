@@ -134,7 +134,9 @@ public class MobGroup
 				spawn.stopRespawn();
 
 				SpawnTable.getInstance().addNewSpawn(spawn, false);
-				getMobs().add((ControllableMob)spawn.doGroupSpawn());
+                ControllableMob? mob = (ControllableMob?)spawn.doGroupSpawn();
+                if (mob != null)
+				    getMobs().add(mob);
 			}
 		}
 		catch (Exception e)
@@ -200,17 +202,12 @@ public class MobGroup
 
 		foreach (ControllableMob mobInst in getMobs())
 		{
-			if (mobInst == null)
-			{
-				continue;
-			}
-
 			if (!mobInst.isDead())
-			{
 				mobInst.deleteMe();
-			}
 
-			SpawnTable.getInstance().deleteSpawn(mobInst.getSpawn(), false);
+            Spawn? spawn = mobInst.getSpawn();
+            if (spawn != null)
+			    SpawnTable.getInstance().deleteSpawn(spawn, false);
 		}
 
 		getMobs().clear();
@@ -222,17 +219,12 @@ public class MobGroup
 
 		foreach (ControllableMob mobInst in getMobs())
 		{
-			if (mobInst == null)
-			{
-				continue;
-			}
-
 			if (!mobInst.isDead())
-			{
 				mobInst.reduceCurrentHp(mobInst.getMaxHp() + 1, player, null);
-			}
 
-			SpawnTable.getInstance().deleteSpawn(mobInst.getSpawn(), false);
+            Spawn? mobSpawn = mobInst.getSpawn();
+            if (mobSpawn != null)
+			    SpawnTable.getInstance().deleteSpawn(mobSpawn, false);
 		}
 
 		getMobs().clear();

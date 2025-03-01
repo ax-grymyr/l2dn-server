@@ -25,7 +25,7 @@ public struct RequestAnswerJoinAllyPacket: IIncomingPacket<GameSession>
         if (playerClan == null)
             return ValueTask.CompletedTask;
 
-        Player requestor = player.getRequest().getPartner();
+        Player? requestor = player.getRequest().getPartner();
         if (requestor == null)
             return ValueTask.CompletedTask;
 

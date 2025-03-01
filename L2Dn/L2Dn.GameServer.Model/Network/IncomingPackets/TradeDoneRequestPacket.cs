@@ -38,7 +38,8 @@ public struct TradeDoneRequestPacket: IIncomingPacket<GameSession>
 
         if (_response == 1)
         {
-            if (trade.getPartner() == null || World.getInstance().getPlayer(trade.getPartner().ObjectId) == null)
+            Player? tradePartner = trade.getPartner();
+            if (tradePartner == null || World.getInstance().getPlayer(tradePartner.ObjectId) == null)
             {
                 // Trade partner not found, cancel trade
                 player.cancelActiveTrade();
@@ -46,7 +47,7 @@ public struct TradeDoneRequestPacket: IIncomingPacket<GameSession>
                 return ValueTask.CompletedTask;
             }
 
-            if (trade.getOwner().hasItemRequest() || trade.getPartner().hasItemRequest())
+            if (trade.getOwner().hasItemRequest() || tradePartner.hasItemRequest())
                 return ValueTask.CompletedTask;
 
             if (!player.getAccessLevel().allowTransaction())
@@ -56,13 +57,13 @@ public struct TradeDoneRequestPacket: IIncomingPacket<GameSession>
                 return ValueTask.CompletedTask;
             }
 
-            if (player.getInstanceWorld() != trade.getPartner().getInstanceWorld())
+            if (player.getInstanceWorld() != tradePartner.getInstanceWorld())
             {
                 player.cancelActiveTrade();
                 return ValueTask.CompletedTask;
             }
 
-            if (player.Distance3D(trade.getPartner()) > 150)
+            if (player.Distance3D(tradePartner) > 150)
             {
                 player.cancelActiveTrade();
                 return ValueTask.CompletedTask;

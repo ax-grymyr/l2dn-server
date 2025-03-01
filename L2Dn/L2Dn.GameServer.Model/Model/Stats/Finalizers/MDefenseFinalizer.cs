@@ -20,7 +20,7 @@ public class MDefenseFinalizer : StatFunction
 		Inventory.PAPERDOLL_REAR,
 		Inventory.PAPERDOLL_NECK
 	};
-	
+
 	public override double calc(Creature creature, double? @base, Stat stat)
 	{
 		throwIfPresent(@base);
@@ -31,8 +31,8 @@ public class MDefenseFinalizer : StatFunction
 			baseValue = pet.getPetLevelData().getPetMDef();
 		}
 		baseValue += calcEnchantedItemBonus(creature, stat);
-		
-		Inventory inv = creature.getInventory();
+
+		Inventory? inv = creature.getInventory();
 		if (inv != null)
 		{
 			foreach (Item item in inv.getPaperdollItems())
@@ -40,10 +40,10 @@ public class MDefenseFinalizer : StatFunction
 				baseValue += item.getTemplate().getStats(stat, 0);
 			}
 		}
-		
-		if (creature.isPlayer())
+
+        Player? player = creature.getActingPlayer();
+		if (creature.isPlayer() && player != null)
 		{
-			Player player = creature.getActingPlayer();
 			foreach (int slot in SLOTS)
 			{
 				if (!player.getInventory().isPaperdollSlotEmpty(slot))
@@ -53,7 +53,7 @@ public class MDefenseFinalizer : StatFunction
 				}
 			}
 		}
-		else if (creature.isPet() && creature.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_NECK) != 0)
+		else if (creature.isPet() && creature.getInventory()?.getPaperdollObjectId(Inventory.PAPERDOLL_NECK) != 0)
 		{
 			baseValue -= 13;
 		}
@@ -61,12 +61,12 @@ public class MDefenseFinalizer : StatFunction
 		{
 			baseValue *= Config.RAID_MDEFENCE_MULTIPLIER;
 		}
-		
+
 		double bonus = creature.getMEN() > 0 ? BaseStat.MEN.calcBonus(creature) : 1;
 		baseValue *= bonus * creature.getLevelMod();
 		return defaultValue(creature, stat, baseValue);
 	}
-	
+
 	private double defaultValue(Creature creature, Stat stat, double baseValue)
 	{
 		double mul = Math.Max(creature.getStat().getMul(stat), 0.5);

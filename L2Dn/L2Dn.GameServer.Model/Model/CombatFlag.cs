@@ -56,33 +56,40 @@ public class CombatFlag
 
 		// Player holding it data
 		_player = player;
-		_playerId = _player.ObjectId;
+		_playerId = player.ObjectId;
 		_itemInstance = null;
 
 		// Equip with the weapon
 		_item = item;
-		_player.getInventory().equipItem(_item);
+        player.getInventory().equipItem(_item);
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_EQUIPPED);
 		sm.Params.addItemName(_item);
-		_player.sendPacket(sm);
+        player.sendPacket(sm);
 
 		// Refresh inventory
 		InventoryUpdatePacket iu = new InventoryUpdatePacket(new ItemInfo(_item));
-		_player.sendInventoryUpdate(iu);
+        player.sendInventoryUpdate(iu);
 
 		// Refresh player stats
-		_player.broadcastUserInfo();
-		_player.setCombatFlagEquipped(true);
+        player.broadcastUserInfo();
+        player.setCombatFlagEquipped(true);
 		return true;
 	}
 
 	public void dropIt()
-	{
+    {
+        if (_player == null)
+            return;
+
 		// Reset player stats
 		_player.setCombatFlagEquipped(false);
-		long slot = _player.getInventory().getSlotFromItem(_item);
-		_player.getInventory().unEquipItemInBodySlot(slot);
-		_player.destroyItem("CombatFlag", _item, null, true);
+        if (_item != null)
+        {
+            long slot = _player.getInventory().getSlotFromItem(_item);
+            _player.getInventory().unEquipItemInBodySlot(slot);
+            _player.destroyItem("CombatFlag", _item, null, true);
+        }
+
 		_item = null;
 		_player.broadcastUserInfo();
 		_player = null;
@@ -94,7 +101,7 @@ public class CombatFlag
 		return _playerId;
 	}
 
-	public Item getCombatFlagInstance()
+	public Item? getCombatFlagInstance()
 	{
 		return _itemInstance;
 	}

@@ -75,7 +75,7 @@ public struct RequestCancelPostAttachmentPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		ItemContainer attachments = msg.getAttachments();
+		ItemContainer? attachments = msg.getAttachments();
 		if (attachments == null || attachments.getSize() == 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_CANCEL_SENT_MAIL_SINCE_THE_RECIPIENT_RECEIVED_IT);

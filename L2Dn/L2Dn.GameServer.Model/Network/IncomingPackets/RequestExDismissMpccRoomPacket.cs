@@ -18,12 +18,12 @@ public struct RequestExDismissMpccRoomPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        MatchingRoom room = player.getMatchingRoom();
+        MatchingRoom? room = player.getMatchingRoom();
         if (room != null && room.getLeader() == player && room.getRoomType() == MatchingRoomType.COMMAND_CHANNEL)
         {
             room.disbandRoom();
         }
-        
+
         return ValueTask.CompletedTask;
     }
 }

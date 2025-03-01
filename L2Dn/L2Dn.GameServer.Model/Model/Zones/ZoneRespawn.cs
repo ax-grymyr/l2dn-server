@@ -8,7 +8,7 @@ namespace L2Dn.GameServer.Model.Zones;
  * Abstract zone with spawn locations
  * @author DS, Nyaran (rework 10/07/2011)
  */
-public abstract class ZoneRespawn(int id): ZoneType(id)
+public abstract class ZoneRespawn(int id, ZoneForm form): ZoneType(id, form)
 {
 	private ImmutableArray<Location3D> _spawnLocs = ImmutableArray<Location3D>.Empty;
 	private ImmutableArray<Location3D> _otherSpawnLocs = ImmutableArray<Location3D>.Empty;

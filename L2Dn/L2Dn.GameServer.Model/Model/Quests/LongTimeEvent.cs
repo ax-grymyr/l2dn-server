@@ -24,8 +24,8 @@ namespace L2Dn.GameServer.Model.Quests;
  */
 public class LongTimeEvent: Quest
 {
-	protected string _eventName;
-	protected DateRange _eventPeriod;
+	protected string _eventName = string.Empty;
+	protected DateRange _eventPeriod = new(DateTime.MinValue, DateTime.MinValue);
 	protected bool _active;
 	protected bool _enableShrines;
 
@@ -90,14 +90,20 @@ public class LongTimeEvent: Quest
 		foreach (NpcSpawn npcSpawn in _spawnList)
 		{
 			Npc? npc = addSpawn(npcSpawn.npcId, npcSpawn.loc, false, millisToEventEnd, false);
+            if (npc == null)
+                continue;
+
 			TimeSpan respawnDelay = npcSpawn.respawnTime;
 			if (respawnDelay > TimeSpan.Zero)
 			{
-				Spawn spawn = npc.getSpawn();
-				spawn.setRespawnDelay(respawnDelay);
-				spawn.startRespawn();
-				ThreadPool.schedule(() => spawn.stopRespawn(), millisToEventEnd - respawnDelay);
-			}
+				Spawn? spawn = npc.getSpawn();
+                if (spawn != null)
+                {
+                    spawn.setRespawnDelay(respawnDelay);
+                    spawn.startRespawn();
+                    ThreadPool.schedule(() => spawn.stopRespawn(), millisToEventEnd - respawnDelay);
+                }
+            }
 		}
 
 		GlobalEvents.Global.Subscribe(this, (Action<OnServerStart>)SpawnNpcs);

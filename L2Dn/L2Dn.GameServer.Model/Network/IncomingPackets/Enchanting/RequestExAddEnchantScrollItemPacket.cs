@@ -34,7 +34,7 @@ public struct RequestExAddEnchantScrollItemPacket: IIncomingPacket<GameSession>
 
         request.setEnchantingScroll(_scrollObjectId);
 
-        Item scroll = request.getEnchantingScroll();
+        Item? scroll = request.getEnchantingScroll();
         if (scroll == null)
         {
             // Message may be custom.

@@ -30,7 +30,7 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 		if (player == null)
 			return ValueTask.CompletedTask;
 
-		Shortcut shortcut = player.getShortCut(_slot, _page);
+		Shortcut? shortcut = player.getShortCut(_slot, _page);
 		if (shortcut == null)
 			return ValueTask.CompletedTask;
 

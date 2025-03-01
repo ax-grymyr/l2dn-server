@@ -59,7 +59,7 @@ public struct RequestAnswerJoinPartyPacket: IIncomingPacket<GameSession>
 
             player.joinParty(party);
 
-            MatchingRoom requestorRoom = requestor.getMatchingRoom();
+            MatchingRoom? requestorRoom = requestor.getMatchingRoom();
             if (requestorRoom != null)
             {
                 requestorRoom.addMember(player);

@@ -6,17 +6,13 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A scripted zone... Creation of such a zone should require somekind of script reference which can handle onEnter() / onExit()
  * @author durgus
  */
-public class ScriptZone : ZoneType
+public class ScriptZone(int id, ZoneForm form): ZoneType(id, form)
 {
-	public ScriptZone(int id): base(id)
-	{
-	}
-	
-	protected override void onEnter(Creature creature)
+    protected override void onEnter(Creature creature)
 	{
 		creature.setInsideZone(ZoneId.SCRIPT, true);
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
 		creature.setInsideZone(ZoneId.SCRIPT, false);

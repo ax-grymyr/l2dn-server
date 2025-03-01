@@ -9,16 +9,12 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * Tax zone type.
  * @author malyelfik
  */
-public class TaxZone : ZoneType
+public class TaxZone(int id, ZoneForm form): ZoneType(id, form)
 {
 	private int _domainId;
 	private Castle? _castle;
 
-	public TaxZone(int id): base(id)
-	{
-	}
-
-	public override void setParameter(string name, string value)
+    public override void setParameter(string name, string value)
 	{
 		if (name.equalsIgnoreCase("domainId"))
 		{

@@ -95,14 +95,14 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        PreparedMultisellListHolder list = player.getMultiSell();
+        PreparedMultisellListHolder? list = player.getMultiSell();
         if (list == null || list.getId() != _listId)
         {
             player.setMultiSell(null);
             return ValueTask.CompletedTask;
         }
 
-        Npc npc = player.getLastFolkNPC();
+        Npc? npc = player.getLastFolkNPC();
         if (!list.isNpcAllowed(-1))
         {
             if (npc == null //

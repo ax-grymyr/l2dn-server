@@ -14,32 +14,32 @@ public class AttributeFinalizer: StatFunction
 {
 	private readonly AttributeType _type;
 	private readonly bool _isWeapon;
-	
+
 	public AttributeFinalizer(AttributeType type, bool isWeapon)
 	{
 		_type = type;
 		_isWeapon = isWeapon;
 	}
-	
+
 	public override double calc(Creature creature, double? @base, Stat stat)
 	{
 		throwIfPresent(@base);
-		
+
 		double baseValue = creature.getTemplate().getBaseValue(stat, 0);
 		if (creature.isPlayable())
 		{
 			if (_isWeapon)
 			{
-				Item weapon = creature.getActiveWeaponInstance();
+				Item? weapon = creature.getActiveWeaponInstance();
 				if (weapon != null)
 				{
-					AttributeHolder weaponInstanceHolder = weapon.getAttribute(_type);
+					AttributeHolder? weaponInstanceHolder = weapon.getAttribute(_type);
 					if (weaponInstanceHolder != null)
 					{
 						baseValue += weaponInstanceHolder.getValue();
 					}
-					
-					AttributeHolder weaponHolder = weapon.getTemplate().getAttribute(_type);
+
+					AttributeHolder? weaponHolder = weapon.getTemplate().getAttribute(_type);
 					if (weaponHolder != null)
 					{
 						baseValue += weaponHolder.getValue();
@@ -48,18 +48,18 @@ public class AttributeFinalizer: StatFunction
 			}
 			else
 			{
-				Inventory inventory = creature.getInventory();
+				Inventory? inventory = creature.getInventory();
 				if (inventory != null)
 				{
 					foreach (Item item in inventory.getPaperdollItems(x => x.isArmor()))
 					{
-						AttributeHolder weaponInstanceHolder = item.getAttribute(_type);
+						AttributeHolder? weaponInstanceHolder = item.getAttribute(_type);
 						if (weaponInstanceHolder != null)
 						{
 							baseValue += weaponInstanceHolder.getValue();
 						}
-						
-						AttributeHolder weaponHolder = item.getTemplate().getAttribute(_type);
+
+						AttributeHolder? weaponHolder = item.getTemplate().getAttribute(_type);
 						if (weaponHolder != null)
 						{
 							baseValue += weaponHolder.getValue();
@@ -68,7 +68,7 @@ public class AttributeFinalizer: StatFunction
 				}
 			}
 		}
-		
+
 		return StatUtil.defaultValue(creature, stat, baseValue);
 	}
 }

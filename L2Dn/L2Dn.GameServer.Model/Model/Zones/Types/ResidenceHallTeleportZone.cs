@@ -11,23 +11,16 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * Teleport residence zone for clan hall sieges
  * @author BiggBoss
  */
-public class ResidenceHallTeleportZone : ResidenceTeleportZone
+public class ResidenceHallTeleportZone(int id, ZoneForm form): ResidenceTeleportZone(id, form)
 {
-	private int _id;
+	private int _residenceZoneId;
 	private ScheduledFuture? _teleTask;
-	
-	/**
-	 * @param id
-	 */
-	public ResidenceHallTeleportZone(int id): base(id)
-	{
-	}
 
-	public override void setParameter(string name, string value)
+    public override void setParameter(string name, string value)
 	{
 		if (name.equals("residenceZoneId"))
 		{
-			_id = int.Parse(value);
+			_residenceZoneId = int.Parse(value);
 		}
 		else
 		{
@@ -37,7 +30,7 @@ public class ResidenceHallTeleportZone : ResidenceTeleportZone
 
 	public int getResidenceZoneId()
 	{
-		return _id;
+		return _residenceZoneId;
 	}
 
 	[MethodImpl(MethodImplOptions.Synchronized)]

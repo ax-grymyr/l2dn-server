@@ -1,11 +1,6 @@
 using System.Xml.Linq;
-using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
-using L2Dn.GameServer.Db;
-using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
-using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using NLog;
 
@@ -44,13 +39,13 @@ public class NewQuest
 
 		XElement? conditionElement = element.Elements("conditions").SingleOrDefault();
 		_conditions = new NewQuestCondition(conditionElement);
-		
+
 		XElement? goalsElement = element.Elements("goals").SingleOrDefault();
 		_goal = new NewQuestGoal(goalsElement);
-		
+
 		if (_goal.getItemId() > 0)
 		{
-			ItemTemplate template = ItemData.getInstance().getTemplate(_goal.getItemId());
+			ItemTemplate? template = ItemData.getInstance().getTemplate(_goal.getItemId());
 			if (template == null)
 			{
 				LOGGER.Error(GetType().Name + _id + ": Could not find goal item template with id " + _goal.getItemId());

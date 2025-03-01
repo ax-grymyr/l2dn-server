@@ -28,7 +28,7 @@ public struct RequestNewHennaPotenSelectPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         DyePotential? potential = HennaPatternPotentialData.getInstance().getPotential(_potenId);
-        HennaPoten hennaPoten = player.getHennaPoten(_slotId);
+        HennaPoten? hennaPoten = player.getHennaPoten(_slotId);
         if (potential == null || potential.getSlotId() != _slotId)
         {
             player.sendPacket(new NewHennaPotenSelectPacket(_slotId, _potenId, hennaPoten.getActiveStep(), false));

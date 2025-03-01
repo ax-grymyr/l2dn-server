@@ -22,18 +22,10 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 {
     // FIXME: This is for compatibility, will be changed when bypass functionality got an overhaul by NosBit
     private static readonly string[] _possibleNonHtmlCommands =
-    {
-        "_bbs",
-        "bbs",
-        "_mail",
-        "_friend",
-        "_match",
-        "_diary",
-        "_olympiad?command",
-        "menu_select",
-        "manor_menu_select",
-        "pccafe"
-    };
+    [
+        "_bbs", "bbs", "_mail", "_friend", "_match", "_diary", "_olympiad?command", "menu_select",
+        "manor_menu_select", "pccafe",
+    ];
 
     private string _command;
 
@@ -193,7 +185,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 			}
 			else if (_command.startsWith("menu_select"))
 			{
-				Npc lastNpc = player.getLastFolkNPC();
+				Npc? lastNpc = player.getLastFolkNPC();
 				if (lastNpc != null && lastNpc.canInteract(player) && lastNpc.Events.HasSubscribers<OnNpcMenuSelect>())
 				{
 					string[] split = _command.Substring(_command.IndexOf('?') + 1).Split("&");
@@ -204,7 +196,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 			}
 			else if (_command.startsWith("manor_menu_select"))
 			{
-				Npc lastNpc = player.getLastFolkNPC();
+				Npc? lastNpc = player.getLastFolkNPC();
 				if (Config.ALLOW_MANOR && lastNpc != null && lastNpc.canInteract(player) && lastNpc.Events.HasSubscribers<OnNpcManorBypass>())
 				{
 					string[] split = _command.Substring(_command.IndexOf('?') + 1).Split("&");

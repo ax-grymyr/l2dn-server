@@ -1,8 +1,10 @@
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
@@ -22,20 +24,19 @@ public abstract class AbstractResidence: INamable
 
 	private readonly int _residenceId;
 	private readonly string _name;
-	private ResidenceZone? _zone;
+	private readonly ResidenceZone _zone;
 	private readonly Map<int, ResidenceFunction> _functions = new();
 	private List<SkillLearn> _residentialSkills = new();
 
-	public AbstractResidence(int residenceId, string name)
+    protected AbstractResidence(int residenceId, string name, ResidenceZone zone)
 	{
 		_residenceId = residenceId;
 		_name = name;
+        _zone = zone;
 		initResidentialSkills();
 	}
 
 	protected abstract void load();
-
-	protected abstract void initResidenceZone();
 
 	public abstract int getOwnerId();
 
@@ -63,14 +64,9 @@ public abstract class AbstractResidence: INamable
 		return _name;
 	}
 
-	public virtual ResidenceZone? getResidenceZone()
+	public virtual ResidenceZone getResidenceZone()
 	{
 		return _zone;
-	}
-
-	protected void setResidenceZone(ResidenceZone zone)
-	{
-		_zone = zone;
 	}
 
 	public virtual void giveResidentialSkills(Player player)
@@ -83,7 +79,10 @@ public abstract class AbstractResidence: INamable
                 SocialClass? skillSocialClass = skill.getSocialClass();
                 if (skillSocialClass == null || playerSocialClass >= skillSocialClass)
                 {
-                    player.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), false);
+                    Skill skill1 = SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()) ??
+                        throw new InvalidOperationException($"Skill id={skill.getSkillId()}, level={skill.getSkillLevel()} not found");
+
+                    player.addSkill(skill1, false);
                 }
             }
         }
@@ -328,4 +327,39 @@ public abstract class AbstractResidence: INamable
     public override int GetHashCode() => getResidenceId();
 
     public override string ToString() => $"{_name} ({_residenceId})";
+
+    protected static ResidenceZone FindResidenceZone<T>(int residenceId)
+        where T: ResidenceZone
+    {
+        foreach (T zone in ZoneManager.getInstance().getAllZones<T>())
+        {
+            if (zone.getResidenceId() == residenceId)
+                return zone;
+        }
+
+        throw new ArgumentException($"Residence zone for residenceId={residenceId} not found", nameof(residenceId));
+    }
+
+    protected static SiegeZone FindSiegeZone(int residenceId)
+    {
+        foreach (SiegeZone zone in ZoneManager.getInstance().getAllZones<SiegeZone>())
+        {
+            if (zone.getSiegeObjectId() == residenceId)
+                return zone;
+        }
+
+        throw new ArgumentException($"Siege zone for residenceId={residenceId} not found", nameof(residenceId));
+    }
+
+    protected static ResidenceTeleportZone FindResidenceTeleportZone(int residenceId)
+    {
+        foreach (ResidenceTeleportZone zone in ZoneManager.getInstance().getAllZones<ResidenceTeleportZone>())
+        {
+            if (zone.getResidenceId() == residenceId)
+                return zone;
+        }
+
+        throw new ArgumentException($"Residence teleport zone for residenceId={residenceId} not found",
+            nameof(residenceId));
+    }
 }

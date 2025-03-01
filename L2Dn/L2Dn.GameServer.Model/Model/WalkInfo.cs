@@ -13,6 +13,7 @@ namespace L2Dn.GameServer.Model;
  */
 public class WalkInfo
 {
+	private readonly WalkRoute _route;
 	private readonly string _routeName;
 	private ScheduledFuture? _walkCheckTask;
 	private bool _blocked;
@@ -22,18 +23,19 @@ public class WalkInfo
 	private bool _forward = true; // Determines first --> last or first <-- last direction
 	private long _lastActionTime; // Debug field
 
-	public WalkInfo(string routeName)
+	public WalkInfo(WalkRoute route)
 	{
-		_routeName = routeName;
+		_route = route;
+		_routeName = route.getName();
 	}
 
 	/**
 	 * @return name of route of this WalkInfo.
 	 */
 	public WalkRoute getRoute()
-	{
-		return WalkingManager.getInstance().getRoute(_routeName);
-	}
+    {
+        return _route;
+    }
 
 	/**
 	 * @return current node of this WalkInfo.
@@ -103,14 +105,16 @@ public class WalkInfo
 						}
 						case WalkingManager.REPEAT_TELE_FIRST:
 						{
-							npc.teleToLocation(npc.getSpawn().Location);
+                            Spawn? spawn = npc.getSpawn();
+                            if (spawn != null)
+							    npc.teleToLocation(spawn.Location);
+
 							_currentNode = 0;
 							break;
 						}
 					}
 				}
-				else if
-					(_currentNode == WalkingManager.NO_REPEAT) // First node arrived, when direction is first <-- last
+				else if (_currentNode == WalkingManager.NO_REPEAT) // First node arrived, when direction is first <-- last
 				{
 					_currentNode = 1;
 					_forward = true;

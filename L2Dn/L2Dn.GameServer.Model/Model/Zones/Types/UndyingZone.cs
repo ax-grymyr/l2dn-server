@@ -6,17 +6,13 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * An Undying Zone
  * @author UnAfraid
  */
-public class UndyingZone : ZoneType
+public class UndyingZone(int id, ZoneForm form): ZoneType(id, form)
 {
-	public UndyingZone(int id): base(id)
-	{
-	}
-	
-	protected override void onEnter(Creature creature)
+    protected override void onEnter(Creature creature)
 	{
 		creature.setInsideZone(ZoneId.UNDYING, true);
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
 		creature.setInsideZone(ZoneId.UNDYING, false);

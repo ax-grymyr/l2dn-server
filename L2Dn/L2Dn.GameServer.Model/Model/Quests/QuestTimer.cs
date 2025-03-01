@@ -74,7 +74,7 @@ public class QuestTimer
 	 * @param player : Player instance attached to the desired timer (null if no player attached)
 	 * @return bool
 	 */
-	public bool equals(Quest quest, string name, Npc npc, Player player)
+	public bool equals(Quest quest, string name, Npc? npc, Player player)
 	{
 		if (quest == null || quest != _quest)
 		{

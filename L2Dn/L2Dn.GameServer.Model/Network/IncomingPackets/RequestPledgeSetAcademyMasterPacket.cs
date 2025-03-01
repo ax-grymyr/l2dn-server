@@ -54,8 +54,8 @@ public struct RequestPledgeSetAcademyMasterPacket: IIncomingPacket<GameSession>
 			sponsorMember = currentMember;
 		}
 
-		Player apprentice = apprenticeMember.getPlayer();
-		Player sponsor = sponsorMember.getPlayer();
+		Player? apprentice = apprenticeMember.getPlayer();
+		Player? sponsor = sponsorMember.getPlayer();
 		SystemMessagePacket sm;
 		if (!_set)
 		{

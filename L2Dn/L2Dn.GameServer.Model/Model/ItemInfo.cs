@@ -15,61 +15,53 @@ namespace L2Dn.GameServer.Model;
 public class ItemInfo
 {
 	/** Identifier of the Item */
-	private int _objectId;
+	private readonly int _objectId;
 
 	/** The Item template of the Item */
-	private ItemTemplate _item;
+	private readonly ItemTemplate _item;
 
 	/** The level of enchant on the Item */
-	private int _enchantLevel;
+	private readonly int _enchantLevel;
 
 	/** The augmentation of the item */
-	private VariationInstance? _augmentation;
+	private readonly VariationInstance? _augmentation;
 
 	/** The quantity of Item */
-	private long _count;
+	private readonly long _count;
 
 	/** The price of the Item */
-	private long _price;
+	private readonly long _price;
 
 	/** The custom Item types (used loto, race tickets) */
-	private int _type1;
-	private int _type2;
+	private readonly int _type1;
+	private readonly int _type2;
 
 	/** If True the Item is equipped */
-	private int _equipped;
+	private readonly int _equipped;
 
 	/** The action to do clientside (1=ADD, 2=MODIFY, 3=REMOVE) */
-	private ItemChangeType _change;
+	private readonly ItemChangeType _change;
 
 	/** The mana of this item */
-	private int? _mana;
-	private TimeSpan? _time;
-	private bool _isBlessed;
-	private bool _available = true;
+	private readonly int? _mana;
+	private readonly TimeSpan? _time;
+	private readonly bool _isBlessed;
+	private readonly bool _available = true;
 
-	private int _location;
+	private readonly int _location;
 
-	private AttributeType _elemAtkType = AttributeType.NONE;
-	private int _elemAtkPower;
-	private readonly int[] _attributeDefence =
-	{
-		0,
-		0,
-		0,
-		0,
-		0,
-		0
-	};
+	private readonly AttributeType _elemAtkType = AttributeType.NONE;
+	private readonly int _elemAtkPower;
+    private readonly int[] _attributeDefence = [0, 0, 0, 0, 0, 0];
 
-	private ImmutableArray<int> _option;
-	private ICollection<EnsoulOption> _soulCrystalOptions;
-	private ICollection<EnsoulOption> _soulCrystalSpecialOptions;
-	private int _visualId;
-	private TimeSpan? _visualExpiration;
+	private readonly ImmutableArray<int> _option;
+	private readonly ICollection<EnsoulOption> _soulCrystalOptions;
+	private readonly ICollection<EnsoulOption> _soulCrystalSpecialOptions;
+	private readonly int _visualId;
+	private readonly TimeSpan? _visualExpiration;
 
-	private TimeSpan _reuseDelay;
-	private Player? _owner;
+	private readonly TimeSpan _reuseDelay;
+	private readonly Player? _owner;
 
 	/**
 	 * Get all information from Item to generate ItemInfo.

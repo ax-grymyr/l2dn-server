@@ -23,7 +23,7 @@ public struct RequestExRemoveEnchantSupportItemPacket: IIncomingPacket<GameSessi
         if (request == null || request.isProcessing())
             return ValueTask.CompletedTask;
 
-        Item supportItem = request.getSupportItem();
+        Item? supportItem = request.getSupportItem();
         if (supportItem == null || supportItem.getCount() >= 0)
         {
             request.setSupportItem(Player.ID_NONE);

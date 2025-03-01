@@ -20,14 +20,14 @@ public struct EndScenePlayerPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null || _movieId == 0)
             return ValueTask.CompletedTask;
-		
-        MovieHolder holder = player.getMovieHolder();
+
+        MovieHolder? holder = player.getMovieHolder();
         if (holder == null || holder.getMovie() != _movieId)
         {
             // PacketLogger.warning("Player " + client + " sent EndScenePlayer with wrong movie id: " + _movieId);
             return ValueTask.CompletedTask;
         }
-		
+
         player.stopMovie();
 
         return ValueTask.CompletedTask;

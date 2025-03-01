@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Actor.Instances;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -6,22 +7,18 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * No PVP Zone
  * @author Edoo
  */
-public class NoPvPZone : ZoneType
+public class NoPvPZone(int id, ZoneForm form): ZoneType(id, form)
 {
-	public NoPvPZone(int id):base(id)
-	{
-	}
-	
-	protected override void onEnter(Creature creature)
+    protected override void onEnter(Creature creature)
 	{
 		if (!isEnabled())
 		{
 			return;
 		}
-		
-		if (creature.isPlayer())
+
+        Player? player = creature.getActingPlayer();
+        if (creature.isPlayer() && player != null)
 		{
-			Player player = creature.getActingPlayer();
 			// PVP possible during siege, now for siege participants only
 			// Could also check if this town is in siege, or if any siege is going on
 			if (player.getSiegeState() != 0 && Config.PEACE_ZONE_MODE == 1)
@@ -29,33 +26,33 @@ public class NoPvPZone : ZoneType
 				return;
 			}
 		}
-		
+
 		if (Config.PEACE_ZONE_MODE != 2)
 		{
 			creature.setInsideZone(ZoneId.NO_PVP, true);
 		}
-		
+
 		// Send player info to nearby players.
 		if (creature.isPlayer())
 		{
 			creature.broadcastInfo();
 		}
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
 		if (Config.PEACE_ZONE_MODE != 2)
 		{
 			creature.setInsideZone(ZoneId.NO_PVP, false);
 		}
-		
+
 		// Send player info to nearby players.
 		if (creature.isPlayer() && !creature.isTeleporting())
 		{
 			creature.broadcastInfo();
 		}
 	}
-	
+
 	public override void setEnabled(bool value)
 	{
 		base.setEnabled(value);
@@ -66,12 +63,13 @@ public class NoPvPZone : ZoneType
 				if (player != null && isInsideZone(player))
 				{
 					revalidateInZone(player);
-					
-					if (player.getPet() != null)
+
+                    Pet? pet = player.getPet();
+					if (pet != null)
 					{
-						revalidateInZone(player.getPet());
+						revalidateInZone(pet);
 					}
-					
+
 					foreach (Summon summon in player.getServitors().Values)
 					{
 						revalidateInZone(summon);

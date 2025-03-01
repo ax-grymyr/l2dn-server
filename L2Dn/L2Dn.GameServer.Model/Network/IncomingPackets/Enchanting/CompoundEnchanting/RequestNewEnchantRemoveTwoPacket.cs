@@ -44,7 +44,7 @@ public struct RequestNewEnchantRemoveTwoPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        Item item = request.getItemTwo();
+        Item? item = request.getItemTwo();
         if (item == null || item.ObjectId != _objectId)
         {
             player.sendPacket(ExEnchantTwoRemoveFailPacket.STATIC_PACKET);

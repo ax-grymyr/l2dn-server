@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -119,9 +120,10 @@ public class TeleportHolder
 		{
 			string finalName = loc.getName();
 			string confirmDesc = loc.getName();
-			if (loc.getNpcStringId() != null)
+            NpcStringId? npcString = loc.getNpcStringId();
+			if (npcString != null)
 			{
-				NpcStringId stringId = loc.getNpcStringId().Value;
+				NpcStringId stringId = npcString.Value;
 				finalName = "<fstring>" + stringId + "</fstring>";
 				confirmDesc = "F;" + stringId;
 			}
@@ -182,8 +184,9 @@ public class TeleportHolder
 		if (!Config.TELEPORT_WHILE_SIEGE_IN_PROGRESS)
 		{
 			foreach (int castleId in loc.getCastleId())
-			{
-				if (CastleManager.getInstance().getCastleById(castleId).getSiege().isInProgress())
+            {
+                Castle? castle = CastleManager.getInstance().getCastleById(castleId);
+				if (castle != null && castle.getSiege().isInProgress())
 				{
 					player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_TO_A_VILLAGE_THAT_IS_IN_A_SIEGE);
 					return;
@@ -193,25 +196,28 @@ public class TeleportHolder
 
 		// Validate conditions for NORMAL teleport
 		if (isNormalTeleport())
-		{
-			if (!Config.TELEPORT_WHILE_SIEGE_IN_PROGRESS && npc.getCastle().getSiege().isInProgress())
+        {
+            Castle? castle = npc.getCastle();
+            if (!Config.TELEPORT_WHILE_SIEGE_IN_PROGRESS && castle != null && castle.getSiege().isInProgress())
 			{
 				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/teleporter/castleteleporter-busy.htm", player);
 				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent);
 				player.sendPacket(msg);
 				return;
 			}
-			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && player.getReputation() < 0)
-			{
-				player.sendMessage("Go away, you're not welcome here.");
-				return;
-			}
-			else if (player.isCombatFlagEquipped())
-			{
-				player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_WHILE_IN_POSSESSION_OF_A_WARD);
-				return;
-			}
-		}
+
+            if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && player.getReputation() < 0)
+            {
+                player.sendMessage("Go away, you're not welcome here.");
+                return;
+            }
+
+            if (player.isCombatFlagEquipped())
+            {
+                player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_WHILE_IN_POSSESSION_OF_A_WARD);
+                return;
+            }
+        }
 
 		// Notify listeners
 		if (npc.Events.HasSubscribers<OnNpcTeleportRequest>())
@@ -298,25 +304,26 @@ public class TeleportHolder
 	private string getItemName(int itemId, bool fstring)
 	{
 		if (fstring)
-		{
-			if (itemId == Inventory.ADENA_ID)
+        {
+            if (itemId == Inventory.ADENA_ID)
 			{
 				return "<fstring>1000308</fstring>";
 			}
-			else if (itemId == Inventory.ANCIENT_ADENA_ID)
-			{
-				return "<fstring>1000309</fstring>";
-			}
-		}
 
-		ItemTemplate item = ItemData.getInstance().getTemplate(itemId);
+            if (itemId == Inventory.ANCIENT_ADENA_ID)
+            {
+                return "<fstring>1000309</fstring>";
+            }
+        }
+
+		ItemTemplate? item = ItemData.getInstance().getTemplate(itemId);
 		if (item != null)
 		{
 			return item.getName();
 		}
 
 		SpecialItemType specialItem = (SpecialItemType)itemId;
-		if (specialItem != null)
+		if (specialItem != 0)
 		{
 			switch (specialItem)
 			{

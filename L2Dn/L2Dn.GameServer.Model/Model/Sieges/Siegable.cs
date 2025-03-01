@@ -23,11 +23,11 @@ public interface Siegable
 
 	bool checkIsAttacker(Clan clan);
 
-	SiegeClan getDefenderClan(int clanId);
+	SiegeClan? getDefenderClan(int clanId);
 
-	SiegeClan getDefenderClan(Clan clan);
+	SiegeClan? getDefenderClan(Clan clan);
 
-	ICollection<SiegeClan> getDefenderClans();
+	ICollection<SiegeClan>? getDefenderClans();
 
 	bool checkIsDefender(Clan clan);
 

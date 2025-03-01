@@ -11,107 +11,97 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * another type of zone where your speed is changed
  * @author kerberos, Pandragon
  */
-public class SwampZone : ZoneType
+public class SwampZone(int id, ZoneForm form): ZoneType(id, form)
 {
-	private double _move_bonus;
-	private int _castleId;
-	private Castle? _castle;
-	private int _eventId;
+    private double _moveBonus = 0.5; // Setup default speed reduce (in %)
+    private int _castleId; // no castle by default
+    private Castle? _castle;
+    private int _eventId; // no event by default
 
-	public SwampZone(int id): base(id)
-	{
-		// Setup default speed reduce (in %)
-		_move_bonus = 0.5;
+    public override void setParameter(string name, string value)
+    {
+        if (name.equals("move_bonus"))
+        {
+            _moveBonus = double.Parse(value, CultureInfo.InvariantCulture);
+        }
+        else if (name.equals("castleId"))
+        {
+            _castleId = int.Parse(value);
+        }
+        else if (name.equals("eventId"))
+        {
+            _eventId = int.Parse(value);
+        }
+        else
+        {
+            base.setParameter(name, value);
+        }
+    }
 
-		// no castle by default
-		_castleId = 0;
-		_castle = null;
+    private Castle? getCastle()
+    {
+        if (_castleId > 0 && _castle == null)
+        {
+            _castle = CastleManager.getInstance().getCastleById(_castleId);
+        }
 
-		// no event by default
-		_eventId = 0;
-	}
+        return _castle;
+    }
 
-	public override void setParameter(string name, string value)
-	{
-		if (name.equals("move_bonus"))
-		{
-			_move_bonus = double.Parse(value, CultureInfo.InvariantCulture);
-		}
-		else if (name.equals("castleId"))
-		{
-			_castleId = int.Parse(value);
-		}
-		else if (name.equals("eventId"))
-		{
-			_eventId = int.Parse(value);
-		}
-		else
-		{
-			base.setParameter(name, value);
-		}
-	}
+    protected override void onEnter(Creature creature)
+    {
+        Player? player = creature.getActingPlayer();
+        if (getCastle() is { } castle)
+        {
+            // castle zones active only during siege
+            if (!castle.getSiege().isInProgress() || !isEnabled())
+            {
+                return;
+            }
 
-	private Castle? getCastle()
-	{
-		if (_castleId > 0 && _castle == null)
-		{
-			_castle = CastleManager.getInstance().getCastleById(_castleId);
-		}
-		return _castle;
-	}
+            // defenders not affected
+            if (player != null && player.isInSiege() && player.getSiegeState() == 2)
+            {
+                return;
+            }
+        }
 
-	protected override void onEnter(Creature creature)
-	{
-		if (getCastle() != null)
-		{
-			// castle zones active only during siege
-			if (!getCastle().getSiege().isInProgress() || !isEnabled())
-			{
-				return;
-			}
+        creature.setInsideZone(ZoneId.SWAMP, true);
+        if (creature.isPlayer() && player != null)
+        {
+            if (_eventId > 0)
+            {
+                creature.sendPacket(new OnEventTriggerPacket(_eventId, true));
+            }
 
-			// defenders not affected
-			Player player = creature.getActingPlayer();
-			if (player != null && player.isInSiege() && player.getSiegeState() == 2)
-			{
-				return;
-			}
-		}
+            player.broadcastUserInfo();
+        }
+    }
 
-		creature.setInsideZone(ZoneId.SWAMP, true);
-		if (creature.isPlayer())
-		{
-			if (_eventId > 0)
-			{
-				creature.sendPacket(new OnEventTriggerPacket(_eventId, true));
-			}
+    protected override void onExit(Creature creature)
+    {
+        // don't broadcast info if not needed
+        if (creature.isInsideZone(ZoneId.SWAMP))
+        {
+            creature.setInsideZone(ZoneId.SWAMP, false);
+            Player? player = creature.getActingPlayer();
+            if (creature.isPlayer() && player != null)
+            {
+                if (_eventId > 0)
+                {
+                    creature.sendPacket(new OnEventTriggerPacket(_eventId, false));
+                }
 
-			creature.getActingPlayer().broadcastUserInfo();
-		}
-	}
+                if (!creature.isTeleporting())
+                {
+                    player.broadcastUserInfo();
+                }
+            }
+        }
+    }
 
-	protected override void onExit(Creature creature)
-	{
-		// don't broadcast info if not needed
-		if (creature.isInsideZone(ZoneId.SWAMP))
-		{
-			creature.setInsideZone(ZoneId.SWAMP, false);
-			if (creature.isPlayer())
-			{
-				if (_eventId > 0)
-				{
-					creature.sendPacket(new OnEventTriggerPacket(_eventId, false));
-				}
-				if (!creature.isTeleporting())
-				{
-					creature.getActingPlayer().broadcastUserInfo();
-				}
-			}
-		}
-	}
-
-	public double getMoveBonus()
-	{
-		return _move_bonus;
-	}
+    public double getMoveBonus()
+    {
+        return _moveBonus;
+    }
 }

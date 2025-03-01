@@ -24,14 +24,14 @@ public abstract class ZoneType: IEventContainerProvider
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(ZoneType));
 
 	private readonly int _id;
-	protected ZoneForm _zone;
-	protected List<ZoneForm> _blockedZones;
+	private readonly ZoneForm _zone;
+	protected List<ZoneForm> _blockedZones = [];
 	private readonly Map<int, Creature> _characterList = new();
 	private readonly EventContainer _eventContainer;
 
 	/** Parameters to affect specific characters */
 	private bool _checkAffected;
-	private string _name;
+	private string _name = string.Empty;
 	private int _minLevel;
 	private int _maxLevel;
 	private Race[]? _race;
@@ -40,13 +40,14 @@ public abstract class ZoneType: IEventContainerProvider
 	private InstanceType _target = InstanceType.Creature; // default all chars
 	private bool _allowStore;
 	protected bool _enabled;
-	private AbstractZoneSettings _settings;
+	private AbstractZoneSettings _settings = new();
 	private int _instanceTemplateId;
 	private readonly Map<int, bool> _enabledInInstance = [];
 
-	protected ZoneType(int id)
+	protected ZoneType(int id, ZoneForm form)
 	{
-		_eventContainer = new($"Zone template {id}", GlobalEvents.Global);
+		_eventContainer = new EventContainer($"Zone template {id}", GlobalEvents.Global);
+        _zone = form;
 		_id = id;
 		_minLevel = 0;
 		_maxLevel = 0xFF;
@@ -269,19 +270,6 @@ public abstract class ZoneType: IEventContainerProvider
 	}
 
 	/**
-	 * Set the zone for this ZoneType Instance
-	 * @param zone
-	 */
-	public void setZone(ZoneForm zone)
-	{
-		if (_zone != null)
-		{
-			throw new InvalidOperationException("Zone already set");
-		}
-		_zone = zone;
-	}
-
-	/**
 	 * Returns this zones zone form.
 	 * @return {@link #_zone}
 	 */
@@ -468,10 +456,7 @@ public abstract class ZoneType: IEventContainerProvider
 
 	public void setSettings(AbstractZoneSettings settings)
 	{
-		if (_settings != null)
-		{
-			_settings.clear();
-		}
+		_settings?.clear();
 		_settings = settings;
 	}
 
@@ -583,17 +568,6 @@ public abstract class ZoneType: IEventContainerProvider
 
 	public void setEnabled(bool state, int instanceId)
 	{
-		if (_enabledInInstance == null)
-		{
-			lock (this)
-			{
-				if (_enabledInInstance == null)
-				{
-					_enabledInInstance = new();
-				}
-			}
-		}
-
 		_enabledInInstance.put(instanceId, state);
 	}
 

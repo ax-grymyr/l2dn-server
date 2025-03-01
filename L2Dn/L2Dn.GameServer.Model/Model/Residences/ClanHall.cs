@@ -40,11 +40,11 @@ public class ClanHall: AbstractResidence
 	// Dynamic parameters
 	private Clan? _owner;
 	private DateTime _paidUntil;
-	protected ScheduledFuture? _checkPaymentTask;
+	private ScheduledFuture? _checkPaymentTask;
 
 	public ClanHall(int id, string name, ClanHallGrade grade, ClanHallType type, long minBid, long lease, long deposit,
 		Location3D ownerLocation, Location3D banishLocation)
-		: base(id, name)
+		: base(id, name, FindResidenceZone<ClanHallZone>(id))
 	{
 		_grade = grade;
 		_type = type;
@@ -57,7 +57,6 @@ public class ClanHall: AbstractResidence
 		load();
 
 		// Init Clan Hall zone and Functions
-		initResidenceZone();
 		initFunctions();
 	}
 
@@ -106,18 +105,6 @@ public class ClanHall: AbstractResidence
 		}
 	}
 
-	protected override void initResidenceZone()
-	{
-		foreach (ClanHallZone zone in ZoneManager.getInstance().getAllZones<ClanHallZone>())
-		{
-			if (zone.getResidenceId() == getResidenceId())
-			{
-				setResidenceZone(zone);
-				break;
-			}
-		}
-	}
-
 	public int getCostFailDay()
 	{
 		TimeSpan failDay = _paidUntil - DateTime.UtcNow;
@@ -129,7 +116,7 @@ public class ClanHall: AbstractResidence
 	 */
 	public void banishOthers()
 	{
-		getResidenceZone().banishForeigners(getOwnerId());
+		getResidenceZone()?.banishForeigners(getOwnerId());
 	}
 
 	/**
@@ -172,7 +159,7 @@ public class ClanHall: AbstractResidence
 	 * Gets the {@link Clan} which own this {@link ClanHall}.
 	 * @return {@link Clan} which own this {@link ClanHall}
 	 */
-	public Clan getOwner()
+	public Clan? getOwner()
 	{
 		return _owner;
 	}
@@ -345,8 +332,5 @@ public class ClanHall: AbstractResidence
 		}
 	}
 
-	public override string ToString()
-	{
-		return GetType().Name + ":" + getName() + "[" + getResidenceId() + "]";
-	}
+	public override string ToString() => $"{GetType().Name}:{getName()}[{getResidenceId()}]";
 }

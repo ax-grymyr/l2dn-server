@@ -37,7 +37,7 @@ public struct RequestBidItemAuctionPacket: IIncomingPacket<GameSession>
         ItemAuctionInstance? instance = ItemAuctionManager.getInstance().getManagerInstance(_instanceId);
         if (instance != null)
         {
-            ItemAuction auction = instance.getCurrentAuction();
+            ItemAuction? auction = instance.getCurrentAuction();
             if (auction != null)
             {
                 auction.registerBid(player, _bid);

@@ -34,7 +34,7 @@ public struct RequestNewHennaPotenEnchantPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		HennaPoten hennaPattern = player.getHennaPoten(_slotId);
+		HennaPoten? hennaPattern = player.getHennaPoten(_slotId);
 		int enchantExp = hennaPattern.getEnchantExp();
 		int fullExpNeeded = HennaPatternPotentialData.getInstance().getExpForLevel(hennaPattern.getEnchantLevel());
 		if (enchantExp >= fullExpNeeded && hennaPattern.getEnchantLevel() == 20)

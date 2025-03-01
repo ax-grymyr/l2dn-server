@@ -24,7 +24,7 @@ public struct RequestWithdrawalPartyPacket: IIncomingPacket<GameSession>
         {
             party.removePartyMember(player, PartyMessageType.LEFT);
 
-            MatchingRoom room = player.getMatchingRoom();
+            MatchingRoom? room = player.getMatchingRoom();
             if (room != null)
             {
                 room.deleteMember(player, false);

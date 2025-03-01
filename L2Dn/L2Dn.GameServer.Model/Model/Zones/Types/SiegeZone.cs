@@ -3,6 +3,8 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Actor.Transforms;
+using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
@@ -15,17 +17,16 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A siege zone
  * @author durgus
  */
-public class SiegeZone : ZoneType
+public class SiegeZone: ZoneType
 {
 	private const int DISMOUNT_DELAY = 5;
 
-	public SiegeZone(int id): base(id)
+	public SiegeZone(int id, ZoneForm form): base(id, form)
 	{
 		AbstractZoneSettings? settings = ZoneManager.getSettings(getName());
 		if (settings == null)
-		{
 			settings = new Settings();
-		}
+
 		setSettings(settings);
 	}
 
@@ -75,7 +76,7 @@ public class SiegeZone : ZoneType
 
 	public override Settings getSettings()
 	{
-		return (Settings) base.getSettings();
+		return (Settings)base.getSettings();
 	}
 
 	public override void setParameter(string name, string value)
@@ -110,17 +111,17 @@ public class SiegeZone : ZoneType
 			creature.setInsideZone(ZoneId.SIEGE, true);
 			creature.setInsideZone(ZoneId.NO_SUMMON_FRIEND, true); // FIXME: Custom ?
 
-			if (creature.isPlayer())
+            Player? player = creature.getActingPlayer();
+			if (creature.isPlayer() && player != null)
 			{
-				Player player = creature.getActingPlayer();
 				if (player.isRegisteredOnThisSiegeField(getSettings().getSiegeableId()))
 				{
 					player.setInSiege(true); // in siege
-					if (getSettings().getSiege().giveFame() && getSettings().getSiege().getFameFrequency() > 0)
+                    Siegable? siege = getSettings().getSiege();
+					if (siege != null && siege.giveFame() && siege.getFameFrequency() > 0)
 					{
-						player.startFameTask(
-							TimeSpan.FromMilliseconds(getSettings().getSiege().getFameFrequency() * 1000),
-							getSettings().getSiege().getFameAmount());
+						player.startFameTask(TimeSpan.FromMilliseconds(siege.getFameFrequency() * 1000),
+                            siege.getFameAmount());
 					}
 				}
 
@@ -136,7 +137,8 @@ public class SiegeZone : ZoneType
 					player.dismount();
 				}
 
-				if (!Config.ALLOW_MOUNTS_DURING_SIEGE && player.isTransformed() && player.getTransformation().isRiding())
+                Transform? transformation = player.getTransformation();
+				if (!Config.ALLOW_MOUNTS_DURING_SIEGE && player.isTransformed() && transformation != null && transformation.isRiding())
 				{
 					player.untransform();
 				}
@@ -149,9 +151,9 @@ public class SiegeZone : ZoneType
 		creature.setInsideZone(ZoneId.PVP, false);
 		creature.setInsideZone(ZoneId.SIEGE, false);
 		creature.setInsideZone(ZoneId.NO_SUMMON_FRIEND, false); // FIXME: Custom ?
-		if (getSettings().isActiveSiege() && creature.isPlayer())
+        Player? player = creature.getActingPlayer();
+		if (getSettings().isActiveSiege() && creature.isPlayer() && player != null)
 		{
-			Player player = creature.getActingPlayer();
 			creature.sendPacket(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE);
 			if (player.getMountType() == MountType.WYVERN)
 			{
@@ -163,13 +165,13 @@ public class SiegeZone : ZoneType
 				player.startPvPFlag();
 			}
 		}
-		if (creature.isPlayer())
+		if (creature.isPlayer() && player != null)
 		{
-			Player player = creature.getActingPlayer();
 			player.stopFameTask();
 			player.setInSiege(false);
 
-			if (getSettings().getSiege() is FortSiege && player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG) != null)
+            Item? flagItem = player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG);
+			if (getSettings().getSiege() is FortSiege && flagItem != null)
 			{
 				// drop combat flag
 				Fort? fort = FortManager.getInstance().getFortById(getSettings().getSiegeableId());
@@ -179,9 +181,9 @@ public class SiegeZone : ZoneType
 				}
 				else
 				{
-					long slot = player.getInventory().getSlotFromItem(player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG));
+					long slot = player.getInventory().getSlotFromItem(flagItem);
 					player.getInventory().unEquipItemInBodySlot(slot);
-					player.destroyItem("CombatFlag", player.getInventory().getItemByItemId(FortManager.ORC_FORTRESS_FLAG), null, true);
+					player.destroyItem("CombatFlag", flagItem, null, true);
 				}
 			}
 
@@ -208,16 +210,17 @@ public class SiegeZone : ZoneType
 	public override void onDieInside(Creature creature)
 	{
 		// debuff participants only if they die inside siege zone
-		if (getSettings().isActiveSiege() && creature.isPlayer() && creature.getActingPlayer().isRegisteredOnThisSiegeField(getSettings().getSiegeableId()))
+        Player? player = creature.getActingPlayer();
+		if (getSettings().isActiveSiege() && creature.isPlayer() && player != null && player.isRegisteredOnThisSiegeField(getSettings().getSiegeableId()))
 		{
 			int level = 1;
-			BuffInfo info = creature.getEffectList().getBuffInfoBySkillId(5660);
+			BuffInfo? info = creature.getEffectList().getBuffInfoBySkillId(5660);
 			if (info != null)
 			{
 				level = Math.Min(level + info.getSkill().getLevel(), 5);
 			}
 
-			Skill skill = SkillData.getInstance().getSkill(5660, level);
+			Skill? skill = SkillData.getInstance().getSkill(5660, level);
 			if (skill != null)
 			{
 				skill.applyEffects(creature, creature);
@@ -247,8 +250,7 @@ public class SiegeZone : ZoneType
 		}
 		else
 		{
-			Player player;
-			foreach (Creature creature in getCharactersInside())
+            foreach (Creature creature in getCharactersInside())
 			{
 				if (creature == null)
 				{
@@ -259,9 +261,9 @@ public class SiegeZone : ZoneType
 				creature.setInsideZone(ZoneId.SIEGE, false);
 				creature.setInsideZone(ZoneId.NO_SUMMON_FRIEND, false);
 
-				if (creature.isPlayer())
+                Player? player = creature.getActingPlayer();
+				if (creature.isPlayer() && player != null)
 				{
-					player = creature.getActingPlayer();
 					creature.sendPacket(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE);
 					player.stopFameTask();
 					if (player.getMountType() == MountType.WYVERN)

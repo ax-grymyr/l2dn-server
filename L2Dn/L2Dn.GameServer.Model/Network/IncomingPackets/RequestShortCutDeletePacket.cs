@@ -24,18 +24,18 @@ public struct RequestShortCutDeletePacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         if (_page > 23 || _page < 0)
             return ValueTask.CompletedTask;
-		
+
         // Delete the shortcut.
-        Shortcut oldShortcut = player.getShortCut(_slot, _page);
+        Shortcut? oldShortcut = player.getShortCut(_slot, _page);
         player.deleteShortCut(_slot, _page);
-		
+
         if (oldShortcut != null)
         {
             bool removed = true;
-			
+
             // Keep other similar shortcuts activated.
             if (oldShortcut.isAutoUse())
             {
@@ -49,7 +49,7 @@ public struct RequestShortCutDeletePacket: IIncomingPacket<GameSession>
                     }
                 }
             }
-			
+
             // Remove auto used ids.
             if (removed)
             {
@@ -74,7 +74,7 @@ public struct RequestShortCutDeletePacket: IIncomingPacket<GameSession>
                 }
             }
         }
-		
+
         player.restoreAutoShortcutVisual();
         return ValueTask.CompletedTask;
     }

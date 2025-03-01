@@ -26,7 +26,7 @@ public class FuncDiv: AbstractFunction
 			}
 			catch (Exception e)
 			{
-				LOG.Warn(nameof(FuncDiv) + ": Division by zero: " + getValue() + "!");
+				LOG.Warn(nameof(FuncDiv) + ": Division by zero: " + getValue() + "! " + e);
 			}
 		}
 

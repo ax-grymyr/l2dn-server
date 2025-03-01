@@ -912,7 +912,7 @@ public class Npc: Creature
 
 		if (_spawn != null)
 		{
-			NpcSpawnTemplate npcTemplate = _spawn.getNpcSpawnTemplate();
+			NpcSpawnTemplate? npcTemplate = _spawn.getNpcSpawnTemplate();
 			if (npcTemplate != null)
 			{
 				npcTemplate.notifyNpcDeath(this, killer);
@@ -1396,8 +1396,8 @@ public class Npc: Creature
         if (npcSpawn is null)
             return false;
 
-        return _spawn.getNpcSpawnTemplate().getSpawnTemplate().getName() ==
-            npcSpawn.getNpcSpawnTemplate().getSpawnTemplate().getName();
+        return _spawn.getNpcSpawnTemplate()?.getSpawnTemplate().getName() ==
+            npcSpawn.getNpcSpawnTemplate()?.getSpawnTemplate().getName(); // TODO: verify
     }
 
 	/**
@@ -1716,7 +1716,7 @@ public class Npc: Creature
 
 		if (_spawn != null) // Minions doesn't have Spawn object bound
 		{
-			NpcSpawnTemplate npcSpawnTemplate = _spawn.getNpcSpawnTemplate();
+			NpcSpawnTemplate? npcSpawnTemplate = _spawn.getNpcSpawnTemplate();
 			if (npcSpawnTemplate != null && npcSpawnTemplate.getParameters() != null && !npcSpawnTemplate.getParameters().isEmpty())
 			{
 				StatSet @params = getTemplate().getParameters();

@@ -95,17 +95,17 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		Item extractItem = request.getAppearanceExtractItem();
-		int extracItemId = 0;
+		Item? extractItem = request.getAppearanceExtractItem();
+        if (extractItem == null)
+        {
+            player.sendPacket(ExShapeShiftingResultPacket.CLOSE);
+            player.removeRequest<ShapeShiftingItemRequest>();
+            return ValueTask.CompletedTask;
+        }
+
+        int extracItemId = 0;
 		if (appearanceStone.getType() != AppearanceType.RESTORE && appearanceStone.getType() != AppearanceType.FIXED)
 		{
-			if (extractItem == null)
-			{
-				player.sendPacket(ExShapeShiftingResultPacket.CLOSE);
-				player.removeRequest<ShapeShiftingItemRequest>();
-				return ValueTask.CompletedTask;
-			}
-
 			if (extractItem.getOwnerId() != player.ObjectId)
 			{
 				player.sendPacket(ExShapeShiftingResultPacket.CLOSE);

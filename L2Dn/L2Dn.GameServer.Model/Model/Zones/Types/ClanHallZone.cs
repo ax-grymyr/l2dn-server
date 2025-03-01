@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A clan hall zone
  * @author durgus
  */
-public class ClanHallZone(int id): ResidenceZone(id)
+public class ClanHallZone(int id, ZoneForm form): ResidenceZone(id, form)
 {
 	public override void setParameter(string name, string value)
 	{

@@ -14,14 +14,19 @@ namespace L2Dn.GameServer.Model.Residences;
  */
 public class ResidenceFunction
 {
+    private readonly ResidenceFunctionTemplate _template;
 	private readonly int _id;
 	private readonly int _level;
 	private DateTime _expiration;
 	private readonly AbstractResidence _residense;
 	private ScheduledFuture? _task;
 
+    // TODO: pass template instead of id and level
 	public ResidenceFunction(int id, int level, DateTime expiration, AbstractResidence residense)
-	{
+    {
+        _template = ResidenceFunctionsData.getInstance().getFunction(_id, _level) ??
+            throw new ArgumentException($"Residence function template id={id}, level={level} not found");
+
 		_id = id;
 		_level = level;
 		_expiration = expiration;
@@ -31,10 +36,12 @@ public class ResidenceFunction
 
 	public ResidenceFunction(int id, int level, AbstractResidence residense)
 	{
+        _template = ResidenceFunctionsData.getInstance().getFunction(_id, _level) ??
+            throw new ArgumentException($"Residence function template id={id}, level={level} not found");
+
 		_id = id;
 		_level = level;
-		ResidenceFunctionTemplate template = getTemplate();
-		_expiration = DateTime.UtcNow + template.getDuration();
+		_expiration = DateTime.UtcNow + _template.getDuration();
 		_residense = residense;
 		init();
 	}
@@ -44,8 +51,7 @@ public class ResidenceFunction
 	 */
 	private void init()
 	{
-		ResidenceFunctionTemplate? template = getTemplate();
-		if (template != null && _expiration > DateTime.UtcNow)
+		if (_expiration > DateTime.UtcNow)
 		{
 			_task = ThreadPool.schedule(onFunctionExpiration, _expiration - DateTime.UtcNow);
 		}
@@ -97,16 +103,15 @@ public class ResidenceFunction
 	 */
 	public ResidenceFunctionType getType()
 	{
-		ResidenceFunctionTemplate? template = getTemplate();
-		return template == null ? ResidenceFunctionType.NONE : template.getType();
+		return _template.getType();
 	}
 
 	/**
 	 * @return the template of this function instance
 	 */
-	public ResidenceFunctionTemplate? getTemplate()
+	public ResidenceFunctionTemplate getTemplate()
 	{
-		return ResidenceFunctionsData.getInstance().getFunction(_id, _level);
+		return _template;
 	}
 
 	/**

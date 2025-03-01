@@ -26,6 +26,8 @@ public class QuestState
 	private const string MEMO_VAR = "memoState";
 	private const string MEMO_EX_VAR = "memoStateEx";
 
+    private readonly Quest _quest;
+
 	/** The name of the quest of this QuestState */
 	private readonly string _questName;
 
@@ -42,7 +44,7 @@ public class QuestState
 	private bool _simulated;
 
 	/** A map of key=>value pairs containing the quest state variables and their values */
-	private Map<string, string> _vars;
+	private Map<string, string>? _vars;
 
 	/**
 	 * bool flag letting QuestStateManager know to exit quest when cleaning up
@@ -56,7 +58,8 @@ public class QuestState
 	 * @param state the initial state of the quest
 	 */
 	public QuestState(Quest quest, Player player, byte state)
-	{
+    {
+        _quest = quest;
 		_questName = quest.Name;
 		_player = player;
 		_state = state;
@@ -76,7 +79,7 @@ public class QuestState
 	 */
 	public Quest getQuest()
 	{
-		return QuestManager.getInstance().getQuest(_questName);
+		return _quest;
 	}
 
 	/**
@@ -197,9 +200,9 @@ public class QuestState
 			{
 				_cond = (QuestCondType)int.Parse(value);
 			}
-			catch (Exception ignored)
+			catch (Exception exception)
 			{
-				// TODO: logging
+                LOGGER.Error(exception);
 			}
 		}
 
@@ -248,7 +251,7 @@ public class QuestState
 			newValue = "";
 		}
 
-		string old = _vars.put(variable, newValue);
+		string? old = _vars.put(variable, newValue);
 		if (old != null)
 		{
 			Quest.updateQuestVarInDb(this, variable, newValue);
@@ -265,18 +268,20 @@ public class QuestState
 				int previousVal = 0;
 				try
 				{
-					previousVal = int.Parse(old);
+					previousVal = int.Parse(old ?? string.Empty);
 				}
-				catch (Exception ignored)
+				catch (Exception exception)
 				{
+                    LOGGER.Error(exception);
 				}
 				int newCond = 0;
 				try
 				{
 					newCond = int.Parse(newValue);
 				}
-				catch (Exception ignored)
+				catch (Exception exception)
 				{
+                    LOGGER.Error(exception);
 				}
 
 				_cond = (QuestCondType)newCond;
@@ -412,7 +417,7 @@ public class QuestState
 	 * @param variable the name of the variable to get
 	 * @return the value of the variable from the list of quest variables
 	 */
-	public string get(string variable)
+	public string? get(string variable)
 	{
 		if (_vars == null)
 		{
@@ -483,9 +488,10 @@ public class QuestState
 			set(COND_VAR, condition.ToString());
 			if (condition == QuestCondType.DONE)
 			{
-				string soundName = QuestSound.ITEMSOUND_QUEST_MIDDLE.GetSoundName();
-				_player.sendPacket(new PlaySoundPacket(soundName));
-			}
+				string? soundName = QuestSound.ITEMSOUND_QUEST_MIDDLE.GetSoundName();
+                if (soundName != null)
+                    _player.sendPacket(new PlaySoundPacket(soundName));
+            }
 		}
 	}
 
@@ -565,8 +571,9 @@ public class QuestState
 
 		if (playQuestMiddle)
 		{
-			string soundName = QuestSound.ITEMSOUND_QUEST_MIDDLE.GetSoundName();
-			_player.sendPacket(new PlaySoundPacket(soundName));
+			string? soundName = QuestSound.ITEMSOUND_QUEST_MIDDLE.GetSoundName();
+            if (soundName != null)
+			    _player.sendPacket(new PlaySoundPacket(soundName));
 		}
 	}
 
@@ -602,8 +609,9 @@ public class QuestState
 
 		set(COUNT_VAR, value.ToString());
 
-		string soundName = QuestSound.ITEMSOUND_QUEST_ITEMGET.GetSoundName();
-		_player.sendPacket(new PlaySoundPacket(soundName));
+		string? soundName = QuestSound.ITEMSOUND_QUEST_ITEMGET.GetSoundName();
+        if (soundName != null)
+		    _player.sendPacket(new PlaySoundPacket(soundName));
 
 		_player.sendPacket(new ExQuestUiPacket(_player));
 		_player.sendPacket(new ExQuestNotificationAllPacket(_player));
@@ -706,8 +714,10 @@ public class QuestState
 			set(COUNT_VAR, "0");
 			setState(State.STARTED);
 
-			string soundName = QuestSound.ITEMSOUND_QUEST_ACCEPT.GetSoundName();
-			_player.sendPacket(new PlaySoundPacket(soundName));
+			string? soundName = QuestSound.ITEMSOUND_QUEST_ACCEPT.GetSoundName();
+            if (soundName is not null)
+			    _player.sendPacket(new PlaySoundPacket(soundName));
+
 			_player.sendPacket(new ExQuestUiPacket(_player));
 			_player.sendPacket(new ExQuestNotificationPacket(this));
 			_player.sendPacket(new ExQuestNotificationAllPacket(_player));
@@ -778,8 +788,9 @@ public class QuestState
 		exitQuest(type);
 		if (playExitQuest)
 		{
-			string soundName = QuestSound.ITEMSOUND_QUEST_FINISH.GetSoundName();
-			_player.sendPacket(new PlaySoundPacket(soundName));
+			string? soundName = QuestSound.ITEMSOUND_QUEST_FINISH.GetSoundName();
+            if (soundName is not null)
+			    _player.sendPacket(new PlaySoundPacket(soundName));
 		}
 
 		_player.sendPacket(new ExQuestNotificationAllPacket(getPlayer()));
@@ -846,8 +857,9 @@ public class QuestState
 		exitQuest(repeatable);
 		if (playExitQuest)
 		{
-			string soundName = QuestSound.ITEMSOUND_QUEST_FINISH.GetSoundName();
-			_player.sendPacket(new PlaySoundPacket(soundName));
+			string? soundName = QuestSound.ITEMSOUND_QUEST_FINISH.GetSoundName();
+            if (soundName is not null)
+			    _player.sendPacket(new PlaySoundPacket(soundName));
 		}
 
 		_player.sendPacket(new ExQuestNotificationAllPacket(_player));
@@ -888,7 +900,7 @@ public class QuestState
 	 */
 	public bool isNowAvailable()
 	{
-		string val = get(RESTART_VAR);
+		string? val = get(RESTART_VAR);
 		return val != null && new DateTime(long.Parse(val)) <= DateTime.Now;
 	}
 

@@ -8,15 +8,11 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * based on Kerberos work for custom CastleTeleportZone
  * @author Nyaran
  */
-public class ResidenceTeleportZone : ZoneRespawn
+public class ResidenceTeleportZone(int id, ZoneForm form): ZoneRespawn(id, form)
 {
 	private int _residenceId;
-	
-	public ResidenceTeleportZone(int id): base(id)
-	{
-	}
-	
-	public override void setParameter(string name, string value)
+
+    public override void setParameter(string name, string value)
 	{
 		if (name.equals("residenceId"))
 		{
@@ -27,17 +23,17 @@ public class ResidenceTeleportZone : ZoneRespawn
 			base.setParameter(name, value);
 		}
 	}
-	
+
 	protected override void onEnter(Creature creature)
 	{
 		creature.setInsideZone(ZoneId.NO_SUMMON_FRIEND, true); // FIXME: Custom ?
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
 		creature.setInsideZone(ZoneId.NO_SUMMON_FRIEND, false); // FIXME: Custom ?
 	}
-	
+
 	public override void oustAllPlayers()
 	{
 		foreach (Player player in getPlayersInside())
@@ -48,7 +44,7 @@ public class ResidenceTeleportZone : ZoneRespawn
 			}
 		}
 	}
-	
+
 	public int getResidenceId()
 	{
 		return _residenceId;

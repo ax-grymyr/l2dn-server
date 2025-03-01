@@ -1377,7 +1377,7 @@ public class ItemData: DataReaderBase
 			}
 		}
 
-		if (actor != null && actor.isGM() && Config.GMAUDIT)
+		if (actor != null && actor is Player player && player.isGM() && Config.GMAUDIT)
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.Append(process);

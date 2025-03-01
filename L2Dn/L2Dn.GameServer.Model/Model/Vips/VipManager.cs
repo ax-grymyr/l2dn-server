@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Vip;
+using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Vips;
 
@@ -121,19 +122,21 @@ public class VipManager
 
 	private VipInfo getVipInfo(long points)
 	{
-		for (byte i = 0; i < VipData.getInstance().getVipTiers().Count; i++)
+        Map<int, VipInfo> vipTiers = VipData.getInstance().getVipTiers();
+
+		for (byte i = 0; i < vipTiers.Count; i++)
 		{
-			if (points < VipData.getInstance().getVipTiers().get(i).getPointsRequired())
+			if (points < vipTiers[i].getPointsRequired())
 			{
 				byte temp = (byte) (i - 1);
 				if (temp > VIP_MAX_TIER)
 				{
 					temp = VIP_MAX_TIER;
 				}
-				return VipData.getInstance().getVipTiers().get(temp);
+				return vipTiers[temp];
 			}
 		}
-		return VipData.getInstance().getVipTiers().get(VIP_MAX_TIER);
+		return vipTiers[VIP_MAX_TIER];
 	}
 
 	public long getPointsDepreciatedOnLevel(int vipTier)

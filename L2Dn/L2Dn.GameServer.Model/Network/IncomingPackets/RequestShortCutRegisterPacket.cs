@@ -63,7 +63,7 @@ public struct RequestShortCutRegisterPacket: IIncomingPacket<GameSession>
         }
 
         // Delete the shortcut.
-        Shortcut oldShortcut = player.getShortCut(_slot, _page);
+        Shortcut? oldShortcut = player.getShortCut(_slot, _page);
         player.deleteShortCut(_slot, _page);
         if (oldShortcut != null)
         {

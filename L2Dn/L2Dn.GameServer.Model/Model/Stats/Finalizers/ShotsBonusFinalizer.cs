@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.Model.Enums;
 
@@ -15,13 +16,14 @@ public class ShotsBonusFinalizer: StatFunction
 		throwIfPresent(@base);
 
 		double baseValue = 1;
-		Player player = creature.getActingPlayer();
+		Player? player = creature.getActingPlayer();
 		if (player != null)
 		{
-			Item weapon = player.getActiveWeaponInstance();
-			if (weapon != null && weapon.isEnchanted())
+			Item? weapon = player.getActiveWeaponInstance();
+            Weapon? weaponItem = weapon?.getWeaponItem();
+			if (weaponItem != null && weapon != null && weapon.isEnchanted())
 			{
-				switch (weapon.getWeaponItem().getItemGrade())
+				switch (weaponItem.getItemGrade())
 				{
 					case ItemGrade.D:
 					case ItemGrade.C:

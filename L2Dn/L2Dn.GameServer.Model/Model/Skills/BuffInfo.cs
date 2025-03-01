@@ -403,7 +403,8 @@ public class BuffInfo
 				smId = SystemMessageId.S1_HAS_WORN_OFF;
 			}
 
-			if (smId != null && _effected.getActingPlayer() != null && _effected.getActingPlayer().isOnline())
+            Player? effectedPlayer = _effected.getActingPlayer();
+			if (smId != null && effectedPlayer != null && effectedPlayer.isOnline())
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(smId.Value);
 				sm.Params.addSkillName(_skill);

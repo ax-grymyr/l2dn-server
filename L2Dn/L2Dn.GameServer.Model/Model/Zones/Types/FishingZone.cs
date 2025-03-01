@@ -11,25 +11,22 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A fishing zone
  * @author durgus
  */
-public class FishingZone : ZoneType
+public class FishingZone(int id, ZoneForm form): ZoneType(id, form)
 {
-	public FishingZone(int id): base(id)
-	{
-	}
-	
-	protected override void onEnter(Creature creature)
-	{
-		if (creature.isPlayer())
+    protected override void onEnter(Creature creature)
+    {
+        Player? player = creature.getActingPlayer();
+		if (creature.isPlayer() && player != null)
 		{
 			if ((Config.ALLOW_FISHING || creature.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS)) && !creature.isInsideZone(ZoneId.FISHING))
 			{
-				WeakReference<Player> weakPlayer = new WeakReference<Player>(creature.getActingPlayer());
+				WeakReference<Player> weakPlayer = new WeakReference<Player>(player);
 				ThreadPool.execute(new FishingAvailableTask(weakPlayer));
 			}
 			creature.setInsideZone(ZoneId.FISHING, true);
 		}
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
 		if (creature.isPlayer())
@@ -38,7 +35,7 @@ public class FishingZone : ZoneType
 			creature.sendPacket(ExAutoFishAvailablePacket.NO);
 		}
 	}
-	
+
 	/*
 	 * getWaterZ() this added function returns the Z value for the water surface. In effect this simply returns the upper Z value of the zone. This required some modification of ZoneForm, and zone form extensions.
 	 */
@@ -47,18 +44,11 @@ public class FishingZone : ZoneType
 		return getZone().getHighZ();
 	}
 
-	protected class FishingAvailableTask: Runnable
-	{
-		private readonly WeakReference<Player> _weakPlayer;
-
-		public FishingAvailableTask(WeakReference<Player> weakPlayer)
+	protected class FishingAvailableTask(WeakReference<Player> weakPlayer): Runnable
+    {
+        public void run()
 		{
-			_weakPlayer = weakPlayer;
-		}
-
-		public void run()
-		{
-			Player player = _weakPlayer.get();
+			Player? player = weakPlayer.get();
 			if (player != null)
 			{
 				Fishing fishing = player.getFishing();

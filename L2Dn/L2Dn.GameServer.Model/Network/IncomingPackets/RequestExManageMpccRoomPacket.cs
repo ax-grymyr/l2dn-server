@@ -33,7 +33,7 @@ public struct RequestExManageMpccRoomPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        MatchingRoom room = player.getMatchingRoom();
+        MatchingRoom? room = player.getMatchingRoom();
         if (room == null || room.getId() != _roomId || room.getRoomType() != MatchingRoomType.COMMAND_CHANNEL ||
             room.getLeader() != player)
         {
@@ -44,10 +44,10 @@ public struct RequestExManageMpccRoomPacket: IIncomingPacket<GameSession>
         room.setMaxMembers(_maxMembers);
         room.setMinLevel(_minLevel);
         room.setMaxLevel(_maxLevel);
-		
+
         room.getMembers().ForEach(p => p.sendPacket(new ExMPCCRoomInfoPacket((CommandChannelMatchingRoom) room)));
         player.sendPacket(SystemMessageId.THE_COMMAND_CHANNEL_MATCHING_ROOM_INFORMATION_WAS_EDITED);
-        
+
         return ValueTask.CompletedTask;
     }
 }

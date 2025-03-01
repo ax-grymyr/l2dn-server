@@ -19,10 +19,10 @@ public class SkillChannelizer: Runnable
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SkillChannelizer));
 
 	private readonly Creature _channelizer;
-	private List<Creature> _channelized;
+	private List<Creature>? _channelized;
 
-	private Skill _skill;
-	private ScheduledFuture _task;
+	private Skill? _skill;
+	private ScheduledFuture? _task;
 
 	public SkillChannelizer(Creature channelizer)
 	{
@@ -34,7 +34,7 @@ public class SkillChannelizer: Runnable
 		return _channelizer;
 	}
 
-	public List<Creature> getChannelized()
+	public List<Creature>? getChannelized()
 	{
 		return _channelized;
 	}
@@ -69,25 +69,25 @@ public class SkillChannelizer: Runnable
 		}
 
 		// Cancel the task and unset it.
-		_task.cancel(false);
+		_task?.cancel(false);
 		_task = null;
 
 		// Cancel target channelization and unset it.
-		if (_channelized != null)
+		if (_channelized != null && _skill != null)
 		{
 			foreach (Creature creature in _channelized)
 			{
 				creature.getSkillChannelized().removeChannelizer(_skill.getChannelingSkillId(), _channelizer);
 			}
-
-			_channelized = null;
 		}
 
-		// unset skill.
+        _channelized = null;
+
+        // unset skill.
 		_skill = null;
 	}
 
-	public Skill getSkill()
+	public Skill? getSkill()
 	{
 		return _skill;
 	}
@@ -99,13 +99,13 @@ public class SkillChannelizer: Runnable
 
 	public void run()
 	{
-		if (!isChanneling())
+		if (!isChanneling() || _skill is null)
 		{
 			return;
 		}
 
 		Skill skill = _skill;
-		List<Creature> channelized = _channelized;
+		List<Creature>? channelized = _channelized;
 
 		try
 		{
@@ -129,7 +129,7 @@ public class SkillChannelizer: Runnable
 
 			// Apply channeling skills on the targets.
 			List<Creature> targetList = new();
-			WorldObject target = skill.getTarget(_channelizer, false, false, false);
+			WorldObject? target = skill.getTarget(_channelizer, false, false, false);
 			if (target != null)
 			{
 				skill.forEachTargetAffected<Creature>(_channelizer, target, o =>
@@ -154,12 +154,13 @@ public class SkillChannelizer: Runnable
 				{
 					continue;
 				}
-				else if (!GeoEngine.getInstance().canSeeTarget(_channelizer, creature))
-				{
-					continue;
-				}
 
-				if (skill.getChannelingSkillId() > 0)
+                if (!GeoEngine.getInstance().canSeeTarget(_channelizer, creature))
+                {
+                    continue;
+                }
+
+                if (skill.getChannelingSkillId() > 0)
 				{
 					int maxSkillLevel = SkillData.getInstance().getMaxLevel(skill.getChannelingSkillId());
 					int skillLevel =
@@ -170,10 +171,10 @@ public class SkillChannelizer: Runnable
 						continue;
 					}
 
-					BuffInfo info = creature.getEffectList().getBuffInfoBySkillId(skill.getChannelingSkillId());
+					BuffInfo? info = creature.getEffectList().getBuffInfoBySkillId(skill.getChannelingSkillId());
 					if (info == null || info.getSkill().getLevel() < skillLevel)
 					{
-						Skill channeledSkill =
+						Skill? channeledSkill =
 							SkillData.getInstance().getSkill(skill.getChannelingSkillId(), skillLevel);
 						if (channeledSkill == null)
 						{

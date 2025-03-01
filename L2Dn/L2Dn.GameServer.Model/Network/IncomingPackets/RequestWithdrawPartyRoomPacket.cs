@@ -20,14 +20,14 @@ public struct RequestWithdrawPartyRoomPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
-        MatchingRoom room = player.getMatchingRoom();
+
+        MatchingRoom? room = player.getMatchingRoom();
         if (room == null)
             return ValueTask.CompletedTask;
-		
+
         if (room.getId() != _roomId || room.getRoomType() != MatchingRoomType.PARTY)
             return ValueTask.CompletedTask;
-		
+
         room.deleteMember(player, false);
 
         return ValueTask.CompletedTask;

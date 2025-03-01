@@ -911,16 +911,20 @@ public class EffectList
 			if (info.getEffector() != info.getEffected() && skill.isBad())
 			{
 				// Check if effected is debuff blocked.
-				if (info.getEffected().isDebuffBlocked() || (info.getEffector().isGM() && !info.getEffector().getAccessLevel().canGiveDamage()))
-				{
-					return;
-				}
+                if (info.getEffected().isDebuffBlocked() ||
+                    (info.getEffector() is Player effectorPlayer && effectorPlayer.isGM() &&
+                        !effectorPlayer.getAccessLevel().canGiveDamage()))
+                {
+                    return;
+                }
 
-				if (info.getEffector().isPlayer() && info.getEffected().isPlayer() && info.getEffected().isAffected(EffectFlag.DUELIST_FURY) && !info.getEffector().isAffected(EffectFlag.DUELIST_FURY))
-				{
-					return;
-				}
-			}
+                if (info.getEffector().isPlayer() && info.getEffected().isPlayer() &&
+                    info.getEffected().isAffected(EffectFlag.DUELIST_FURY) &&
+                    !info.getEffector().isAffected(EffectFlag.DUELIST_FURY))
+                {
+                    return;
+                }
+            }
 
 			// Check if buff skills are blocked.
 			if (info.getEffected().isBuffBlocked() && !skill.isBad())
@@ -1035,13 +1039,14 @@ public class EffectList
 	}
 
 	private void addOption(BuffInfo info)
-	{
-		if (info.getOption() != null)
+    {
+        Options.Options? option = info.getOption();
+		if (option != null)
 		{
 			// Remove previous options of this id.
 			foreach (BuffInfo b in _options)
 			{
-				if (b != null && b.getOption().getId() == info.getOption().getId())
+				if (b.getOption()?.getId() == option.getId())
 				{
 					b.setInUse(false);
 					_options.remove(b);

@@ -30,7 +30,8 @@ public struct RequestSurrenderPledgeWarPacket: IIncomingPacket<GameSession>
 
         foreach (ClanMember member in clan.getMembers())
         {
-            if (member != null && member.isOnline() && member.getPlayer().isInCombat())
+            Player? memberPlayer = member.getPlayer();
+            if (member != null && member.isOnline() && memberPlayer != null && memberPlayer.isInCombat())
             {
                 connection.Send(SystemMessageId.THE_CLAN_WAR_CANNOT_BE_STOPPED_BECAUSE_SOMEONE_FROM_YOUR_CLAN_IS_STILL_ENGAGED_IN_BATTLE);
                 connection.Send(ActionFailedPacket.STATIC_PACKET);

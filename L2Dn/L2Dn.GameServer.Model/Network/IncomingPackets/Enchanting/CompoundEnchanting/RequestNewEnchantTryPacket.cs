@@ -51,8 +51,8 @@ public struct RequestNewEnchantTryPacket: IIncomingPacket<GameSession>
 
 	    request.setProcessing(true);
 
-	    Item itemOne = request.getItemOne();
-	    Item itemTwo = request.getItemTwo();
+	    Item? itemOne = request.getItemOne();
+	    Item? itemTwo = request.getItemTwo();
 	    if (itemOne == null || itemTwo == null)
 	    {
 		    player.sendPacket(ExEnchantFailPacket.STATIC_PACKET);
@@ -96,7 +96,7 @@ public struct RequestNewEnchantTryPacket: IIncomingPacket<GameSession>
 	    CombinationItemReward rewardItem = combinationItem.getReward(success);
 
 	    // Add item (early).
-	    Item item = player.addItem("Compound-Result", rewardItem.getId(), rewardItem.getCount(),
+	    Item? item = player.addItem("Compound-Result", rewardItem.getId(), rewardItem.getCount(),
 		    rewardItem.getEnchantLevel(), null, true);
 
 	    // Send success or fail packet.

@@ -30,11 +30,11 @@ public class Fort: AbstractResidence, IEventContainerProvider
 
 	private readonly EventContainer _eventContainer;
 	private readonly List<Door> _doors = new();
-	private StaticObject _flagPole;
-	private FortSiege _siege;
+	private StaticObject? _flagPole;
+	private FortSiege? _siege;
 	private DateTime _siegeDate;
 	private DateTime? _lastOwnedTime;
-	private SiegeZone _zone;
+	private readonly SiegeZone _zone;
 	private Clan? _fortOwner;
 	private int _fortType;
 	private int _state;
@@ -85,32 +85,13 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			initializeTask(cwh);
 		}
 
-		public int getType()
-		{
-			return _type;
-		}
+		public int getType() => _type;
+        public int getLevel() => _level;
+        public int getLease() => _fee;
+        public TimeSpan getRate() => _rate;
+        public DateTime? getEndTime() => _endDate;
 
-		public int getLevel()
-		{
-			return _level;
-		}
-
-		public int getLease()
-		{
-			return _fee;
-		}
-
-		public TimeSpan getRate()
-		{
-			return _rate;
-		}
-
-		public DateTime? getEndTime()
-		{
-			return _endDate;
-		}
-
-		public void setLvl(int lvl)
+        public void setLvl(int lvl)
 		{
 			_level = lvl;
 		}
@@ -179,10 +160,9 @@ public class Fort: AbstractResidence, IEventContainerProvider
 						_fort.removeFunction(_fortFunction._type);
 					}
 				}
-				catch (Exception t)
+				catch (Exception exception)
 				{
-					// Ignore.
-					// TODO: log
+                    LOGGER.Error(exception);
 				}
 			}
 		}
@@ -215,9 +195,11 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		}
 	}
 
-	public Fort(int fortId, string fortName): base(fortId, fortName)
+	public Fort(int fortId, string fortName): base(fortId, fortName, FindResidenceZone<FortZone>(fortId))
 	{
 		_eventContainer = new($"Fort template {fortId}", GlobalEvents.Global);
+        _zone = FindSiegeZone(fortId);
+
 		load();
 		loadFlagPoles();
 		if (_fortOwner != null)
@@ -226,7 +208,6 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			loadFunctions();
 		}
 
-		initResidenceZone();
 		// initFunctions();
 		initNpcs(); // load and spawn npcs (Always spawned)
 		initSiegeNpcs(); // load suspicious merchants (Despawned 10mins before siege)
@@ -259,9 +240,9 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	 * Move non clan members off fort area and to nearest town.
 	 */
 	public void banishForeigners()
-	{
-		getResidenceZone().banishForeigners(_fortOwner.getId());
-	}
+    {
+        getResidenceZone().banishForeigners(_fortOwner?.getId() ?? 0);
+    }
 
 	/**
 	 * @param x
@@ -271,23 +252,12 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	 */
 	public bool checkIfInZone(Location3D location)
 	{
-		SiegeZone zone = getZone();
+		SiegeZone? zone = getZone();
 		return zone != null && zone.isInsideZone(location);
 	}
 
 	public SiegeZone getZone()
 	{
-		if (_zone == null)
-		{
-			foreach (SiegeZone zone in ZoneManager.getInstance().getAllZones<SiegeZone>())
-			{
-				if (zone.getSiegeObjectId() == getResidenceId())
-				{
-					_zone = zone;
-					break;
-				}
-			}
-		}
 		return _zone;
 	}
 
@@ -303,7 +273,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	 */
 	public double getDistance(WorldObject obj)
 	{
-		return getZone().getDistanceToZone(obj);
+		return getZone()?.getDistanceToZone(obj) ?? double.MaxValue;
 	}
 
 	public void closeDoor(Player player, int doorId)
@@ -368,7 +338,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			this.updateClansReputation(oldowner, true);
 			try
 			{
-				Player oldleader = oldowner.getLeader().getPlayer();
+				Player? oldleader = oldowner.getLeader().getPlayer();
 				if (oldleader != null && oldleader.getMountType() == MountType.WYVERN)
 				{
 					oldleader.dismount();
@@ -403,7 +373,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		// if clan have already fortress, remove it
 		if (clan.getFortId() > 0)
 		{
-			FortManager.getInstance().getFortByOwner(clan).removeOwner(true);
+			FortManager.getInstance().getFortByOwner(clan)?.removeOwner(true);
 		}
 
 		setSupplyLevel(0);
@@ -489,7 +459,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	 */
 	public void setVisibleFlag(bool value)
 	{
-		StaticObject flagPole = _flagPole;
+		StaticObject? flagPole = _flagPole;
 		if (flagPole != null)
 		{
 			flagPole.setMeshIndex(value ? 1 : 0);
@@ -595,8 +565,10 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			}
 
 			if (ownerId != null)
-			{
-				Clan? clan = ClanTable.getInstance().getClan(ownerId.Value); // Try to find clan instance
+            {
+                Clan clan = ClanTable.getInstance().getClan(ownerId.Value) ??
+                    throw new InvalidOperationException($"Clan id={ownerId.Value} not found");
+
 				clan.setFortId(getResidenceId());
 				setOwnerClan(clan);
 				TimeSpan period = TimeSpan.FromSeconds(Config.FS_UPDATE_FRQ * 60);
@@ -704,18 +676,23 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		{
 			removeFunction(type);
 		}
-		else if (lease - _function.get(type).getLease() > 0)
-		{
-			_function.remove(type);
-			_function.put(type, new FortFunction(this, type, lvl, lease, 0, rate, null, false));
-		}
-		else
-		{
-			_function.get(type).setLease(lease);
-			_function.get(type).setLvl(lvl);
-			_function.get(type).dbSave();
-		}
-		return true;
+        else
+        {
+            FortFunction func = _function.get(type) ?? throw new InvalidOperationException($"Fort function type={type} is null");
+            if (lease - func.getLease() > 0)
+            {
+                _function.remove(type);
+                _function.put(type, new FortFunction(this, type, lvl, lease, 0, rate, null, false));
+            }
+            else
+            {
+                func.setLease(lease);
+                func.setLvl(lvl);
+                func.dbSave();
+            }
+        }
+
+        return true;
 	}
 
 	public void activateInstance()
@@ -728,7 +705,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		foreach (Door door in DoorData.getInstance().getDoors())
 		{
-			if (door.getFort() != null && door.getFort().getResidenceId() == getResidenceId())
+			if (door.getFort() is {} fort && fort.getResidenceId() == getResidenceId())
 			{
 				_doors.Add(door);
 			}
@@ -842,21 +819,14 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			if (clan != null)
 			{
 				clan.setFortId(getResidenceId()); // Set has fort flag for new owner
-				SystemMessagePacket sm;
-				sm = new SystemMessagePacket(SystemMessageId.S1_IS_VICTORIOUS_IN_THE_FORTRESS_BATTLE_OF_S2);
+                SystemMessagePacket sm = new(SystemMessageId.S1_IS_VICTORIOUS_IN_THE_FORTRESS_BATTLE_OF_S2);
 				sm.Params.addString(clan.getName());
 				sm.Params.addCastleId(getResidenceId());
 				World.getInstance().getPlayers().ForEach(p => p.sendPacket(sm));
 				clan.broadcastToOnlineMembers(new PledgeShowInfoUpdatePacket(clan));
 				clan.broadcastToOnlineMembers(new PlaySoundPacket(1, "Siege_Victory", 0, 0, 0, 0, 0));
-				if (_fortUpdater[0] != null)
-				{
-					_fortUpdater[0].cancel(false);
-				}
-				if (_fortUpdater[1] != null)
-				{
-					_fortUpdater[1].cancel(false);
-				}
+				_fortUpdater[0]?.cancel(false);
+				_fortUpdater[1]?.cancel(false);
 				_fortUpdater[0] = ThreadPool.scheduleAtFixedRate(new FortUpdater(this, clan, 0, FortUpdaterType.PERIODIC_UPDATE), Config.FS_UPDATE_FRQ * 60000, Config.FS_UPDATE_FRQ * 60000); // Schedule owner tasks to start running
 				if (Config.FS_MAX_OWN_TIME > 0)
 				{
@@ -865,15 +835,9 @@ public class Fort: AbstractResidence, IEventContainerProvider
 			}
 			else
 			{
-				if (_fortUpdater[0] != null)
-				{
-					_fortUpdater[0].cancel(false);
-				}
+				_fortUpdater[0]?.cancel(false);
 				_fortUpdater[0] = null;
-				if (_fortUpdater[1] != null)
-				{
-					_fortUpdater[1].cancel(false);
-				}
+				_fortUpdater[1]?.cancel(false);
 				_fortUpdater[1] = null;
 			}
 		}
@@ -894,7 +858,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		return _fortOwner;
 	}
 
-	public void setOwnerClan(Clan clan)
+	public void setOwnerClan(Clan? clan)
 	{
 		setVisibleFlag(clan != null);
 		_fortOwner = clan;
@@ -922,7 +886,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		return _doors;
 	}
 
-	public StaticObject getFlagPole()
+	public StaticObject? getFlagPole()
 	{
 		return _flagPole;
 	}
@@ -970,7 +934,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 
 	public TimeSpan getTimeTillNextFortUpdate()
 	{
-		return _fortUpdater[0] == null ? TimeSpan.Zero : _fortUpdater[0].getDelay();
+		return _fortUpdater[0]?.getDelay() ?? TimeSpan.Zero;
 	}
 
 	public void updateClansReputation(Clan owner, bool removePoints)
@@ -1085,7 +1049,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	 * @param npcId the Id of the ambassador NPC
 	 * @return the castle this ambassador represents
 	 */
-	public Castle getCastleByAmbassador(int npcId)
+	public Castle? getCastleByAmbassador(int npcId)
 	{
 		return CastleManager.getInstance().getCastleById(getCastleIdByAmbassador(npcId));
 	}
@@ -1101,7 +1065,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	/**
 	 * @return the castle contracted with this fortress ({@code null} if no contract with any castle)
 	 */
-	public Castle getContractedCastle()
+	public Castle? getContractedCastle()
 	{
 		return CastleManager.getInstance().getCastleById(getContractedCastleId());
 	}
@@ -1148,7 +1112,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		foreach (Spawn spawnDat in _siegeNpcs)
 		{
 			spawnDat.stopRespawn();
-			spawnDat.getLastSpawn().deleteMe();
+			spawnDat.getLastSpawn()?.deleteMe();
 		}
 	}
 
@@ -1166,7 +1130,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		foreach (Spawn spawnDat in _npcCommanders)
 		{
 			spawnDat.stopRespawn();
-			spawnDat.getLastSpawn().deleteMe();
+			spawnDat.getLastSpawn()?.deleteMe();
 		}
 	}
 
@@ -1276,18 +1240,6 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		{
 			// problem with initializing spawn, go to next one
 			LOGGER.Error("Fort " + getResidenceId() + " initSpecialEnvoys: Spawn could not be initialized: " + e);
-		}
-	}
-
-	protected override void initResidenceZone()
-	{
-		foreach (FortZone zone in ZoneManager.getInstance().getAllZones<FortZone>())
-		{
-			if (zone.getResidenceId() == getResidenceId())
-			{
-				setResidenceZone(zone);
-				break;
-			}
 		}
 	}
 }

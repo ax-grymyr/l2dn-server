@@ -7,15 +7,11 @@ namespace L2Dn.GameServer.Model.Zones.Types;
 /**
  * @author UnAfraid
  */
-public class SayuneZone: ZoneType
+public class SayuneZone(int id, ZoneForm form): ZoneType(id, form)
 {
 	private int _mapId = -1;
 
-	public SayuneZone(int id): base(id)
-	{
-	}
-
-	public override void setParameter(string name, string value)
+    public override void setParameter(string name, string value)
 	{
 		switch (name)
 		{

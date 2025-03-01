@@ -91,18 +91,20 @@ public class Formulas
 		// }
 
 		double balanceMod = 1;
-		if (attacker.isPlayable())
+        Player? attackerPlayer = attacker.getActingPlayer();
+		if (attacker.isPlayable() && attackerPlayer != null)
 		{
 			balanceMod = target.isPlayable()
-				? CollectionExtensions.GetValueOrDefault(Config.PVP_BLOW_SKILL_DAMAGE_MULTIPLIERS, attacker.getActingPlayer().getClassId(), 1)
-				: CollectionExtensions.GetValueOrDefault(Config.PVE_BLOW_SKILL_DAMAGE_MULTIPLIERS, attacker.getActingPlayer().getClassId(), 1);
+				? CollectionExtensions.GetValueOrDefault(Config.PVP_BLOW_SKILL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1)
+				: CollectionExtensions.GetValueOrDefault(Config.PVE_BLOW_SKILL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
 		}
 
-		if (target.isPlayable())
+        Player? targetPlayer = target.getActingPlayer();
+		if (target.isPlayable() && targetPlayer != null)
 		{
 			defence *= attacker.isPlayable()
-				? CollectionExtensions.GetValueOrDefault(Config.PVP_BLOW_SKILL_DEFENCE_MULTIPLIERS, target.getActingPlayer().getClassId(), 1)
-				: CollectionExtensions.GetValueOrDefault(Config.PVE_BLOW_SKILL_DEFENCE_MULTIPLIERS, target.getActingPlayer().getClassId(), 1);
+				? CollectionExtensions.GetValueOrDefault(Config.PVP_BLOW_SKILL_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1)
+				: CollectionExtensions.GetValueOrDefault(Config.PVE_BLOW_SKILL_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1);
 		}
 
 		double skillPower = power + attacker.getStat().getValue(Stat.SKILL_POWER_ADD, 0);
@@ -215,11 +217,12 @@ public class Formulas
 				}
 
 				balanceMod = 1;
-				if (creature.isPlayable())
+                Player? creaturePlayer = creature.getActingPlayer();
+				if (creature.isPlayable() && creaturePlayer != null)
 				{
 					balanceMod = target.isPlayable()
-						? CollectionExtensions.GetValueOrDefault(Config.PVP_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creature.getActingPlayer().getClassId(), 1)
-						: CollectionExtensions.GetValueOrDefault(Config.PVE_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creature.getActingPlayer().getClassId(), 1);
+						? CollectionExtensions.GetValueOrDefault(Config.PVP_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer.getClassId(), 1)
+						: CollectionExtensions.GetValueOrDefault(Config.PVE_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer.getClassId(), 1);
 				}
 
 				double finalRate = target.getStat().getValue(Stat.DEFENCE_MAGIC_CRITICAL_RATE, rate) +
@@ -257,11 +260,12 @@ public class Formulas
 			                          100;
 
 			balanceMod = 1;
-			if (creature.isPlayable())
+            Player? creaturePlayer2 = creature.getActingPlayer();
+			if (creature.isPlayable() && creaturePlayer2 != null)
 			{
 				balanceMod = target.isPlayable()
-					? CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creature.getActingPlayer().getClassId(), 1)
-					: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creature.getActingPlayer().getClassId(), 1);
+					? CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer2.getClassId(), 1)
+					: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer2.getClassId(), 1);
 			}
 
 			return Math.Clamp(rate * statBonus * rateBonus * rateDefenceBonus * balanceMod, 5, 90) > Rnd.get(100);
@@ -285,11 +289,12 @@ public class Formulas
 		rate = Math.Clamp(rate, 3, 97);
 
 		balanceMod = 1;
-		if (creature.isPlayable())
+        Player? creaturePlayer3 = creature.getActingPlayer();
+		if (creature.isPlayable() && creaturePlayer3 != null)
 		{
 			balanceMod = target.isPlayable()
-				? CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS, creature.getActingPlayer().getClassId(), 1)
-				: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS, creature.getActingPlayer().getClassId(), 1);
+				? CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer3.getClassId(), 1)
+				: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer3.getClassId(), 1);
 		}
 
 		return rate * balanceMod > Rnd.get(100);
@@ -345,22 +350,24 @@ public class Formulas
 				// Magic critical damage.
 				criticalDamage = attacker.getStat().getValue(Stat.MAGIC_CRITICAL_DAMAGE, 1);
 				defenceCriticalDamage = target.getStat().getValue(Stat.DEFENCE_MAGIC_CRITICAL_DAMAGE, 1);
-				if (attacker.isPlayable())
+                Player? attackerPlayer = attacker.getActingPlayer();
+				if (attacker.isPlayable() && attackerPlayer != null)
 				{
 					balanceMod = target.isPlayable()
-						? CollectionExtensions.GetValueOrDefault(Config.PVP_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attacker.getActingPlayer().getClassId(), 1)
-						: CollectionExtensions.GetValueOrDefault(Config.PVE_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attacker.getActingPlayer().getClassId(), 1);
+						? CollectionExtensions.GetValueOrDefault(Config.PVP_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1)
+						: CollectionExtensions.GetValueOrDefault(Config.PVE_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
 				}
 			}
 			else
 			{
 				criticalDamage = attacker.getStat().getValue(Stat.PHYSICAL_SKILL_CRITICAL_DAMAGE, 1);
 				defenceCriticalDamage = target.getStat().getValue(Stat.DEFENCE_PHYSICAL_SKILL_CRITICAL_DAMAGE, 1);
-				if (attacker.isPlayable())
+                Player? attackerPlayer = attacker.getActingPlayer();
+				if (attacker.isPlayable() && attackerPlayer != null)
 				{
 					balanceMod = target.isPlayable()
-						? CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attacker.getActingPlayer().getClassId(), 1)
-						: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attacker.getActingPlayer().getClassId(), 1);
+						? CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1)
+						: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
 				}
 			}
 		}
@@ -369,11 +376,12 @@ public class Formulas
 			// Autoattack critical damage.
 			criticalDamage = attacker.getStat().getValue(Stat.CRITICAL_DAMAGE, 1) * attacker.getStat().getPositionTypeValue(Stat.CRITICAL_DAMAGE, attacker.PositionTo(target));
 			defenceCriticalDamage = target.getStat().getValue(Stat.DEFENCE_CRITICAL_DAMAGE, 1);
-			if (attacker.isPlayable())
+            Player? attackerPlayer = attacker.getActingPlayer();
+            if (attacker.isPlayable() && attackerPlayer != null)
 			{
 				balanceMod = target.isPlayable()
-					? CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS, attacker.getActingPlayer().getClassId(), 1)
-					: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS, attacker.getActingPlayer().getClassId(), 1);
+					? CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1)
+					: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
 			}
 		}
 
@@ -441,7 +449,7 @@ public class Formulas
 		}
 		if (Config.ALT_GAME_CANCEL_BOW && target.isAttackingNow())
 		{
-			Weapon wpn = target.getActiveWeaponItem();
+			Weapon? wpn = target.getActiveWeaponItem();
 			if (wpn != null && wpn.getItemType() == WeaponType.BOW)
 			{
 				init = 15;
@@ -503,7 +511,7 @@ public class Formulas
 		if (creature.isPet())
 		{
 			Pet pet = (Pet)creature;
-			Item weapon = pet.getActiveWeaponInstance();
+			Item? weapon = pet.getActiveWeaponInstance();
 			double baseVal = stat == Stat.PHYSICAL_ATTACK ? pet.getPetLevelData().getPetPAtk() :
 				stat == Stat.MAGIC_ATTACK ? pet.getPetLevelData().getPetMAtk() : baseTemplateValue;
 			baseValue = baseVal + (weapon != null ? weapon.getTemplate().getStats(stat, baseVal) : 0);
@@ -634,10 +642,9 @@ public class Formulas
 			}
 		}
 
-		if (sendSysMsg && target.isPlayer())
+        Player? enemy = target.getActingPlayer();
+		if (sendSysMsg && target.isPlayer() && enemy != null)
 		{
-			Player enemy = target.getActingPlayer();
-
 			switch (shldSuccess)
 			{
 				case SHIELD_DEFENSE_SUCCEED:
@@ -788,11 +795,12 @@ public class Formulas
 					? skill.getMagicLevel()
 					: attacker.getLevel()));
 
-			if (attacker.getActingPlayer() != null && !target.isRaid() && !target.isRaidMinion() &&
+            Player? attackerPlayer = attacker.getActingPlayer();
+			if (attackerPlayer != null && !target.isRaid() && !target.isRaidMinion() &&
 			    target.getLevel() >= Config.MIN_NPC_LEVEL_MAGIC_PENALTY &&
-			    target.getLevel() - attacker.getActingPlayer().getLevel() >= 3)
+			    target.getLevel() - attackerPlayer.getLevel() >= 3)
 			{
-				int levelDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 2;
+				int levelDiff = target.getLevel() - attackerPlayer.getLevel() - 2;
 				if (levelDiff >= Config.NPC_SKILL_CHANCE_PENALTY.Length)
 				{
 					targetModifier = Config.NPC_SKILL_CHANCE_PENALTY[Config.NPC_SKILL_CHANCE_PENALTY.Length - 1];
@@ -855,9 +863,10 @@ public class Formulas
 		// Bonus Spiritshot
 		double shotsBonus = attacker.getStat().getValue(Stat.SHOTS_BONUS) * target.getStat().getValue(Stat.SPIRITSHOT_RESISTANCE, 1);
 		double sapphireBonus = 0;
-		if (attacker.isPlayer())
+        Player? attackerPlayer = attacker.getActingPlayer();
+		if (attacker.isPlayer() && attackerPlayer != null)
 		{
-			sapphireBonus = attacker.getActingPlayer().getActiveShappireJewel()?.getBonus() ?? 0;
+			sapphireBonus = attackerPlayer.getActiveShappireJewel()?.getBonus() ?? 0;
 		}
 		mAtk *= bss ? 4 * (shotsBonus + sapphireBonus) : sps ? 2 * (shotsBonus + sapphireBonus) : 1;
 
@@ -917,18 +926,21 @@ public class Formulas
 	public static bool calcSkillEvasion(Creature creature, Creature target, Skill skill)
 	{
 		if (Rnd.get(100) < target.getStat().getSkillEvasionTypeValue(skill.getMagicType()))
-		{
-			if (creature.isPlayer())
+        {
+            Player? creaturePlayer = creature.getActingPlayer();
+			if (creature.isPlayer() && creaturePlayer != null)
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_DODGED_THE_ATTACK);
 				sm.Params.addString(target.getName());
-				creature.getActingPlayer().sendPacket(sm);
+                creaturePlayer.sendPacket(sm);
 			}
-			if (target.isPlayer())
+
+            Player? targetPlayer = target.getActingPlayer();
+			if (target.isPlayer() && targetPlayer != null)
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_DODGED_C1_S_ATTACK);
 				sm.Params.addString(creature.getName());
-				target.getActingPlayer().sendPacket(sm);
+				targetPlayer.sendPacket(sm);
 			}
 			return true;
 		}
@@ -938,7 +950,8 @@ public class Formulas
 	public static bool calcSkillMastery(Creature actor, Skill skill)
 	{
 		// Non players are not affected by Skill Mastery.
-		if (!actor.isPlayer())
+        Player? actorPlayer = actor.getActingPlayer();
+		if (!actor.isPlayer() || actorPlayer == null)
 		{
 			return false;
 		}
@@ -953,7 +966,7 @@ public class Formulas
 		double chance = baseStats[val].calcBonus(actor) * actor.getStat().getMul(Stat.SKILL_MASTERY_RATE, 1);
 
 		return Rnd.nextDouble() * 100.0 < chance *
-			CollectionExtensions.GetValueOrDefault(Config.SKILL_MASTERY_CHANCE_MULTIPLIERS, actor.getActingPlayer().getClassId(), 1);
+			CollectionExtensions.GetValueOrDefault(Config.SKILL_MASTERY_CHANCE_MULTIPLIERS, actorPlayer.getClassId(), 1);
 	}
 
 	/**
@@ -1081,7 +1094,7 @@ public class Formulas
 	 */
 	public static bool calcBlowSuccess(Creature creature, Creature target, Skill skill, double chanceBoost)
 	{
-		Weapon weapon = creature.getActiveWeaponItem();
+		Weapon? weapon = creature.getActiveWeaponItem();
 		double weaponCritical = weapon != null
 			? weapon.getStats(Stat.CRITICAL_RATE, creature.getTemplate().getBaseCritRate())
 			: creature.getTemplate().getBaseCritRate();
@@ -1425,7 +1438,7 @@ public class Formulas
 			}
 		}
 
-		Weapon weapon = attacker.getActiveWeaponItem();
+		Weapon? weapon = attacker.getActiveWeaponItem();
 		bool isRanged = weapon != null && weapon.getItemType().isRanged();
 		double shotsBonus = attacker.getStat().getValue(Stat.SHOTS_BONUS) * target.getStat().getValue(Stat.SOULSHOT_RESISTANCE, 1);
 
@@ -1581,11 +1594,11 @@ public class Formulas
 
 	public static double calculatePvpPveBonus(Creature attacker, Creature target, Skill? skill, bool crit)
 	{
-		Player attackerPlayer = attacker.getActingPlayer();
-		Player targetPlayer = attacker.getActingPlayer();
+		Player? attackerPlayer = attacker.getActingPlayer();
+		Player? targetPlayer = attacker.getActingPlayer();
 
 		// PvP bonus
-		if (attacker.isPlayable() && target.isPlayable())
+		if (attacker.isPlayable() && target.isPlayable() && attackerPlayer != null && targetPlayer != null)
 		{
 			double pvpAttack;
 			double pvpDefense;
@@ -1704,9 +1717,9 @@ public class Formulas
 
 	public static bool calcSpiritElementalCrit(Creature attacker, Creature target)
 	{
-		if (attacker.isPlayer())
+        Player? attackerPlayer = attacker.getActingPlayer();
+		if (attacker.isPlayer() && attackerPlayer != null)
 		{
-			Player attackerPlayer = attacker.getActingPlayer();
 			ElementalType type = attackerPlayer.getActiveElementalSpiritType();
 			if (ElementalType.NONE == type)
 			{
@@ -1722,9 +1735,9 @@ public class Formulas
 
 	public static double calcSpiritElementalDamage(Creature attacker, Creature target, double baseDamage, bool isCrit)
 	{
-		if (attacker.isPlayer())
+        Player? attackerPlayer = attacker.getActingPlayer();
+		if (attacker.isPlayer() && attackerPlayer != null)
 		{
-			Player attackerPlayer = attacker.getActingPlayer();
 			ElementalType type = attackerPlayer.getActiveElementalSpiritType();
 			if (ElementalType.NONE == type)
 			{

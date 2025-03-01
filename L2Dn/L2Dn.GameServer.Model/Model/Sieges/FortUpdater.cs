@@ -35,12 +35,13 @@ public class FortUpdater: Runnable
 				case FortUpdaterType.PERIODIC_UPDATE:
 				{
 					_runCount++;
-					if (_fort.getOwnerClan() == null || _fort.getOwnerClan() != _clan)
+                    Clan? ownerClan = _fort.getOwnerClan();
+					if (ownerClan == null || ownerClan != _clan)
 					{
 						return;
 					}
 
-					_fort.getOwnerClan().increaseBloodOathCount();
+                    ownerClan.increaseBloodOathCount();
 
 					if (_fort.getFortState() == 2)
 					{
@@ -48,7 +49,7 @@ public class FortUpdater: Runnable
 						{
 							_clan.getWarehouse().destroyItemByItemId("FS_fee_for_Castle", Inventory.ADENA_ID,
 								Config.FS_FEE_FOR_CASTLE, null, null);
-							_fort.getContractedCastle().addToTreasuryNoTax(Config.FS_FEE_FOR_CASTLE);
+							_fort.getContractedCastle()?.addToTreasuryNoTax(Config.FS_FEE_FOR_CASTLE);
 							_fort.raiseSupplyLvL();
 						}
 						else

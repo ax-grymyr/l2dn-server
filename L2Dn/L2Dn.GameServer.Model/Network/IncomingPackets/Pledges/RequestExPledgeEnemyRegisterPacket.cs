@@ -113,19 +113,21 @@ public struct RequestExPledgeEnemyRegisterPacket: IIncomingPacket<GameSession>
 	{
 		foreach (ClanMember member in playerClan.getMembers())
 		{
-			if (member != null && member.isOnline())
+            Player? player = member.getPlayer();
+            if (member != null && member.isOnline() && player != null)
 			{
-				member.getPlayer().sendPacket(new ExPledgeEnemyInfoListPacket(playerClan));
-				member.getPlayer().broadcastUserInfo();
+                player.sendPacket(new ExPledgeEnemyInfoListPacket(playerClan));
+                player.broadcastUserInfo();
 			}
 		}
 
 		foreach (ClanMember member in enemyClan.getMembers())
 		{
-			if (member != null && member.isOnline())
+            Player? player = member.getPlayer();
+            if (member != null && member.isOnline() && player != null)
 			{
-				member.getPlayer().sendPacket(new ExPledgeEnemyInfoListPacket(enemyClan));
-				member.getPlayer().broadcastUserInfo();
+                player.sendPacket(new ExPledgeEnemyInfoListPacket(enemyClan));
+                player.broadcastUserInfo();
 			}
 		}
 	}

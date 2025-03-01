@@ -86,7 +86,7 @@ public struct RequestUpgradeSystemResultPacket: IIncomingPacket<GameSession>
 		}
 
 		// Give item.
-		Item addedItem = player.addItem("UpgradeEquipment", upgradeHolder.getResultItemId(), 1, player, true);
+		Item? addedItem = player.addItem("UpgradeEquipment", upgradeHolder.getResultItemId(), 1, player, true);
 		if (upgradeHolder.isAnnounce())
 		{
 			Broadcast.toAllOnlinePlayers(new ExItemAnnouncePacket(player, addedItem, ExItemAnnouncePacket.UPGRADE));

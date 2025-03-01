@@ -150,10 +150,13 @@ public class ArmorSet
 		}
 
 		Inventory? inv = playable.getInventory();
+        if (inv == null)
+            return 0;
+
 		int enchantLevel = sbyte.MaxValue;
 		foreach (int armorSlot in ARMORSET_SLOTS)
 		{
-			Item itemPart = inv.getPaperdollItem(armorSlot);
+			Item? itemPart = inv.getPaperdollItem(armorSlot);
 			if (itemPart != null && Array.IndexOf(_requiredItems, itemPart.getId()) >= 0 && enchantLevel > itemPart.getEnchantLevel())
 			{
 				enchantLevel = itemPart.getEnchantLevel();
@@ -175,6 +178,9 @@ public class ArmorSet
 	public int getArtifactSlotMask(Playable playable, int bookSlot)
 	{
 		Inventory? inv = playable.getInventory();
+        if (inv == null)
+            return 0;
+
 		int slotMask = 0;
 		switch (bookSlot)
 		{
@@ -182,7 +188,7 @@ public class ArmorSet
 			{
 				foreach (int artifactSlot in ARTIFACT_1_SLOTS)
 				{
-					Item itemPart = inv.getPaperdollItem(artifactSlot);
+					Item? itemPart = inv.getPaperdollItem(artifactSlot);
 					if (itemPart != null && Array.IndexOf(_requiredItems, itemPart.getId()) >= 0)
 					{
 						slotMask += artifactSlot;
@@ -194,7 +200,7 @@ public class ArmorSet
 			{
 				foreach (int artifactSlot in ARTIFACT_2_SLOTS)
 				{
-					Item itemPart = inv.getPaperdollItem(artifactSlot);
+					Item? itemPart = inv.getPaperdollItem(artifactSlot);
 					if (itemPart != null && Array.IndexOf(_requiredItems, itemPart.getId()) >= 0)
 					{
 						slotMask += artifactSlot;
@@ -206,7 +212,7 @@ public class ArmorSet
 			{
 				foreach (int artifactSlot in ARTIFACT_3_SLOTS)
 				{
-					Item itemPart = inv.getPaperdollItem(artifactSlot);
+					Item? itemPart = inv.getPaperdollItem(artifactSlot);
 					if (itemPart != null && Array.IndexOf(_requiredItems, itemPart.getId()) >= 0)
 					{
 						slotMask += artifactSlot;
@@ -219,8 +225,12 @@ public class ArmorSet
 	}
 
 	public bool hasOptionalEquipped(Playable playable, Func<Item, int> idProvider)
-	{
-		foreach (Item item in playable.getInventory().getPaperdollItems())
+    {
+        Inventory? inventory = playable.getInventory();
+        if (inventory == null)
+            return false;
+
+		foreach (Item item in inventory.getPaperdollItems())
 		{
 			if (Array.IndexOf(_optionalItems, idProvider(item)) >= 0)
 			{
@@ -237,11 +247,11 @@ public class ArmorSet
 	 */
 	public long getPiecesCount(Playable playable, Func<Item, int> idProvider)
 	{
-		return playable.getInventory().getPaperdollItemCount(item => Array.IndexOf(_requiredItems, idProvider(item)) >= 0);
+		return playable.getInventory()?.getPaperdollItemCount(item => Array.IndexOf(_requiredItems, idProvider(item)) >= 0) ?? 0;
 	}
 
 	public long getPiecesCountById(Playable playable)
 	{
-		return playable.getInventory().getPaperdollItemCount(item => Array.IndexOf(_requiredItems, item.getId()) >= 0);
+		return playable.getInventory()?.getPaperdollItemCount(item => Array.IndexOf(_requiredItems, item.getId()) >= 0) ?? 0;
 	}
 }

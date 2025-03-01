@@ -100,7 +100,7 @@ public struct RequestNewHennaComposePacket: IIncomingPacket<GameSession>
 
 		if (Rnd.get(0, 100) <= combinationHennas.getChance())
         {
-			CombinationHennaReward reward = combinationHennas.getReward(CombinationItemType.ON_SUCCESS);
+			CombinationHennaReward? reward = combinationHennas.getReward(CombinationItemType.ON_SUCCESS);
             Henna? rewardHenna = HennaData.getInstance().getHenna(reward.getHennaId());
             if (rewardHenna != null)
             {
@@ -113,7 +113,7 @@ public struct RequestNewHennaComposePacket: IIncomingPacket<GameSession>
         }
 		else
 		{
-			CombinationHennaReward reward = combinationHennas.getReward(CombinationItemType.ON_FAILURE);
+			CombinationHennaReward? reward = combinationHennas.getReward(CombinationItemType.ON_FAILURE);
             Henna? rewardHenna = HennaData.getInstance().getHenna(reward.getHennaId());
 			if (henna.getDyeId() != reward.getHennaId() && rewardHenna != null)
 			{

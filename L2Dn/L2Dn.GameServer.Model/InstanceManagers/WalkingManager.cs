@@ -209,14 +209,14 @@ public class WalkingManager: DataReaderBase
 	 */
 	public void startMoving(Npc npc, string routeName)
 	{
-		if (_routes.ContainsKey(routeName) && npc != null && !npc.isDead()) // check, if these route and NPC present
+		if (_routes.TryGetValue(routeName, out WalkRoute? route) && npc != null && !npc.isDead()) // check, if these route and NPC present
 		{
 			if (!_activeRoutes.ContainsKey(npc.ObjectId)) // new walk task
 			{
-				// only if not already moved / not engaged in battle... should not happens if called on spawn
+				// only if not already moved / not engaged in battle... should not happen if called on spawn
 				if (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE || npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 				{
-					WalkInfo walk = new WalkInfo(routeName);
+					WalkInfo walk = new WalkInfo(route);
 					NpcWalkerNode node = walk.getCurrentNode();
 
 					// adjust next waypoint, if NPC spawns at first waypoint

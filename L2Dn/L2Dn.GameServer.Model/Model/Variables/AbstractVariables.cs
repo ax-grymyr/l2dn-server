@@ -69,7 +69,7 @@ public abstract class AbstractVariables<T>: StatSet, IRestorable, IStorable, IDe
 		base.set(name, value);
 	}
 
-	public override void set(string name, object value)
+	public override void set(string name, object? value)
 	{
 		_hasChanges = 1;
 		base.set(name, value);

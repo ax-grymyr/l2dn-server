@@ -23,14 +23,12 @@ namespace L2Dn.GameServer.Model;
  * The heading of the Npc can be a random heading if not defined (value= -1) or an exact heading (ex : merchant...).
  * @author Nightmare
  */
-public class Spawn : IIdentifiable, INamable, IHasLocation
+public class Spawn : IIdentifiable, IHasLocation
 {
 	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(Spawn));
 
 	private Location _location;
 
-	/** String identifier of this spawn */
-	private string _name;
 	/** The link on the NpcTemplate object containing generic and static properties of this spawn (ex : RewardExp, RewardSP, AggroRange...) */
 	private NpcTemplate _template;
 	/** The maximum number of Npc that can manage this Spawn */
@@ -53,7 +51,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	private bool _doRespawn = true;
 	private readonly List<Npc> _spawnedNpcs = new();
     private bool _randomWalk; // Is no random walk
-	private NpcSpawnTemplate _spawnTemplate;
+	private NpcSpawnTemplate? _spawnTemplate;
 
 	/**
 	 * Constructor of Spawn.<br>
@@ -108,23 +106,6 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 	public int getAmount()
 	{
 		return _maximumCount;
-	}
-
-	/**
-	 * @return the String Identifier of this spawn.
-	 */
-	public string getName()
-	{
-		return _name;
-	}
-
-	/**
-	 * Set the String Identifier of this spawn.
-	 * @param name
-	 */
-	public void setName(string name)
-	{
-		_name = name;
 	}
 
 	/**
@@ -342,7 +323,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		// Reset some variables
 		npc.onRespawn();
 
-		Location3D newLocation = new(0, 0, -10000);
+		Location3D newLocation;
 
 		// If Locx and Locy are not defined, the Npc must be spawned in an area defined by location or spawn territory.
 		if (_spawnTemplate != null)
@@ -580,7 +561,7 @@ public class Spawn : IIdentifiable, INamable, IHasLocation
 		_spawnTemplate = npcSpawnTemplate;
 	}
 
-	public NpcSpawnTemplate getNpcSpawnTemplate()
+	public NpcSpawnTemplate? getNpcSpawnTemplate()
 	{
 		return _spawnTemplate;
 	}

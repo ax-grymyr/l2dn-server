@@ -49,7 +49,8 @@ public struct RequestOustPledgeMemberPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (member.isOnline() && member.getPlayer().isInCombat())
+        Player? memberPlayer = member.getPlayer();
+        if (member.isOnline() && memberPlayer != null && memberPlayer.isInCombat())
         {
             player.sendPacket(SystemMessageId.A_CLAN_MEMBER_MAY_NOT_BE_DISMISSED_DURING_COMBAT);
             return ValueTask.CompletedTask;
@@ -69,9 +70,10 @@ public struct RequestOustPledgeMemberPacket: IIncomingPacket<GameSession>
         // Remove the Player From the Member list
         clan.broadcastToOnlineMembers(new PledgeShowMemberListDeletePacket(_target));
         clan.broadcastToOnlineMembers(new ExPledgeCountPacket(clan));
-        if (member.isOnline())
+
+        Player? target = member.getPlayer();
+        if (member.isOnline() && target != null)
         {
-            Player target = member.getPlayer();
             target.sendPacket(SystemMessageId.YOU_ARE_DISMISSED_FROM_A_CLAN_YOU_CANNOT_JOIN_ANOTHER_FOR_24_H);
         }
 

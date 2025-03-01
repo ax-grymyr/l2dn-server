@@ -59,7 +59,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		Npc trainer = player.getLastFolkNPC();
+		Npc? trainer = player.getLastFolkNPC();
 		if (_skillType != AcquireSkillType.CLASS &&
 		    (trainer == null || !trainer.isNpc() || (!trainer.canInteract(player) && !player.isGM())))
 			return ValueTask.CompletedTask;

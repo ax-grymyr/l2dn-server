@@ -84,7 +84,7 @@ public struct DialogAnswerPacket: IIncomingPacket<GameSession>
 
 		    if (player.removeAction(PlayerAction.ADMIN_COMMAND))
 		    {
-			    string cmd = player.getAdminConfirmCmd();
+			    string? cmd = player.getAdminConfirmCmd();
 			    player.setAdminConfirmCmd(null);
 			    if (_answer == 0)
 				    return ValueTask.CompletedTask;

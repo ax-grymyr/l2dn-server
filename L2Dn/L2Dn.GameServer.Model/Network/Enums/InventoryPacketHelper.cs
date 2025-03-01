@@ -150,11 +150,11 @@ public class InventoryPacketHelper
 
     public static void WriteInventoryBlock(PacketBitWriter writer, PlayerInventory inventory)
     {
-        if (inventory.hasInventoryBlock())
+        if (inventory.hasInventoryBlock() && inventory.getBlockItems() is {} blockItems)
         {
-            writer.WriteInt16((short)inventory.getBlockItems().Count);
+            writer.WriteInt16((short)blockItems.Count);
             writer.WriteByte((byte)inventory.getBlockMode());
-            foreach (int id in inventory.getBlockItems())
+            foreach (int id in blockItems)
             {
                 writer.WriteInt32(id);
             }

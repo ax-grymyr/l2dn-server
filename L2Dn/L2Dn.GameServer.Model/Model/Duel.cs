@@ -36,155 +36,132 @@ public class Duel
 	private const int PLAYER_DUEL_DURATION = 120;
 
 	private readonly int _duelId;
-	private Player _playerA;
-	private Player _playerB;
-	private readonly bool _partyDuel;
+	private readonly Player _playerA;
+	private readonly Player _playerB;
+    private readonly Parties? _parties;
 	private readonly DateTime _duelEndTime;
 	private int _surrenderRequest;
 	private int _countdown = 5;
 	private bool _finished;
 
 	private readonly Map<int, PlayerCondition> _playerConditions = new();
-	Instance? _duelInstance;
+	private Instance? _duelInstance;
 
 	public Duel(Player playerA, Player playerB, bool partyDuel, int duelId)
 	{
 		_duelId = duelId;
 		_playerA = playerA;
 		_playerB = playerB;
-		_partyDuel = partyDuel;
-		if (_partyDuel)
-		{
-			foreach (Player member in _playerA.getParty().getMembers())
-			{
-				member.setStartingDuel();
-			}
-			foreach (Player member in _playerB.getParty().getMembers())
-			{
-				member.setStartingDuel();
-			}
-		}
+
+        Party? partyA = playerA.getParty();
+        Party? partyB = playerB.getParty();
+
+        if (partyDuel)
+        {
+            if (partyA == null || partyB == null)
+                return;
+
+            _parties = new Parties(partyA, partyB);
+            foreach (Player member in _parties.PartyA.getMembers())
+                member.setStartingDuel();
+
+            foreach (Player member in _parties.PartyB.getMembers())
+                member.setStartingDuel();
+        }
 		else
 		{
 			_playerA.setStartingDuel();
 			_playerB.setStartingDuel();
 		}
 
-		_duelEndTime = DateTime.UtcNow.AddSeconds(_partyDuel ? PARTY_DUEL_DURATION : PLAYER_DUEL_DURATION);
+		_duelEndTime = DateTime.UtcNow.AddSeconds(IsPartyDuel ? PARTY_DUEL_DURATION : PLAYER_DUEL_DURATION);
 		setFinished(false);
 
-		if (_partyDuel)
+		if (IsPartyDuel)
 		{
 			// inform players that they will be ported shortly
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.IN_A_MOMENT_YOU_WILL_BE_TRANSPORTED_TO_THE_SITE_WHERE_THE_DUEL_WILL_TAKE_PLACE);
 			broadcastToTeam1(sm);
 			broadcastToTeam2(sm);
 		}
+
 		// Schedule duel start
 		ThreadPool.schedule(new ScheduleStartDuelTask(this), 3000);
 	}
 
-	public class PlayerCondition
+    public bool IsPartyDuel => _parties != null;
+
+    private sealed class Parties(Party partyA, Party partyB)
+    {
+        public Party PartyA { get; } = partyA;
+        public Party PartyB { get; } = partyB;
+    }
+
+	public sealed class PlayerCondition
 	{
-		private Player _player;
-		private double _hp;
-		private double _mp;
-		private double _cp;
-		private bool _paDuel;
-		private int _x;
-		private int _y;
-		private int _z;
-		private Set<Skill> _debuffs;
+		private readonly Player _player;
+		private readonly double _hp;
+		private readonly double _mp;
+		private readonly double _cp;
+		private readonly bool _isPartyDuel;
+		private readonly int _x;
+		private readonly int _y;
+		private readonly int _z;
+		private readonly Set<Skill> _debuffs = [];
 
 		public PlayerCondition(Player player, bool partyDuel)
 		{
-			if (player == null)
-			{
-				return;
-			}
 			_player = player;
 			_hp = _player.getCurrentHp();
 			_mp = _player.getCurrentMp();
 			_cp = _player.getCurrentCp();
-			_paDuel = partyDuel;
-			if (_paDuel)
-			{
-				_x = _player.getX();
-				_y = _player.getY();
-				_z = _player.getZ();
-			}
+			_isPartyDuel = partyDuel;
+			_x = _player.getX();
+			_y = _player.getY();
+			_z = _player.getZ();
 		}
 
-		public void restoreCondition()
-		{
-			if (_player == null)
-			{
-				return;
-			}
-			_player.setCurrentHp(_hp);
-			_player.setCurrentMp(_mp);
-			_player.setCurrentCp(_cp);
+        public void restoreCondition()
+        {
+            _player.setCurrentHp(_hp);
+            _player.setCurrentMp(_mp);
+            _player.setCurrentCp(_cp);
 
-			if (_paDuel)
-			{
-				teleportBack();
-			}
-			if (_debuffs != null) // Debuff removal
-			{
-				foreach (Skill skill in _debuffs)
-				{
-					if (skill != null)
-					{
-						_player.stopSkillEffects(SkillFinishType.REMOVED, skill.getId());
-					}
-				}
-			}
-		}
+            if (_isPartyDuel)
+                teleportBack();
 
-		public void registerDebuff(Skill debuff)
-		{
-			if (_debuffs == null)
-			{
-				_debuffs = new();
-			}
+            // Debuff removal
+            foreach (Skill skill in _debuffs)
+                _player.stopSkillEffects(SkillFinishType.REMOVED, skill.getId());
+        }
 
-			_debuffs.add(debuff);
-		}
+        public void registerDebuff(Skill debuff)
+        {
+            _debuffs.add(debuff);
+        }
 
 		public void teleportBack()
 		{
-			if (_paDuel)
-			{
+			if (_isPartyDuel)
 				_player.teleToLocation(new Location3D(_x, _y, _z));
-			}
 		}
 
-		public Player getPlayer()
-		{
-			return _player;
-		}
-	}
+		public Player getPlayer() => _player;
+    }
 
-	public class ScheduleDuelTask : Runnable
-	{
-		private readonly Duel _duel;
-
-		public ScheduleDuelTask(Duel duel)
-		{
-			_duel = duel;
-		}
-
-		public void run()
+	public sealed class ScheduleDuelTask(Duel duel): Runnable
+    {
+        public void run()
 		{
 			try
 			{
-				switch (_duel.checkEndDuelCondition())
+				switch (duel.checkEndDuelCondition())
 				{
 					case DuelResult.CANCELED:
 					{
 						// do not schedule duel end if it was interrupted
-						_duel.setFinished(true);
-						_duel.endDuel(DuelResult.CANCELED);
+						duel.setFinished(true);
+						duel.endDuel(DuelResult.CANCELED);
 						break;
 					}
 					case DuelResult.CONTINUE:
@@ -194,12 +171,12 @@ public class Duel
 					}
 					default:
 					{
-						_duel.setFinished(true);
-						_duel.playKneelAnimation();
-						ThreadPool.schedule(new ScheduleEndDuelTask(_duel, _duel.checkEndDuelCondition()), 5000);
-						if (_duel._duelInstance != null)
+						duel.setFinished(true);
+						duel.playKneelAnimation();
+						ThreadPool.schedule(new ScheduleEndDuelTask(duel, duel.checkEndDuelCondition()), 5000);
+						if (duel._duelInstance != null)
 						{
-							_duel._duelInstance.destroy();
+							duel._duelInstance.destroy();
 						}
 						break;
 					}
@@ -212,27 +189,20 @@ public class Duel
 		}
 	}
 
-	public class ScheduleStartDuelTask : Runnable
-	{
-		private readonly Duel _duel;
-
-		public ScheduleStartDuelTask(Duel duel)
-		{
-			_duel = duel;
-		}
-
-		public void run()
+	public sealed class ScheduleStartDuelTask(Duel duel): Runnable
+    {
+        public void run()
 		{
 			try
 			{
 				// start/continue countdown
-				int count = _duel.countdown();
+				int count = duel.countdown();
 				if (count == 4)
 				{
 					// Save player conditions before teleporting players
-					_duel.savePlayerConditions();
+					duel.savePlayerConditions();
 
-					_duel.teleportPlayers();
+					duel.teleportPlayers();
 
 					// give players 20 seconds to complete teleport and get ready (its ought to be 30 on offical..)
 					ThreadPool.schedule(this, 20000);
@@ -243,7 +213,7 @@ public class Duel
 				}
 				else
 				{
-					_duel.startDuel();
+					duel.startDuel();
 				}
 			}
 			catch (Exception e)
@@ -253,22 +223,13 @@ public class Duel
 		}
 	}
 
-	public class ScheduleEndDuelTask : Runnable
-	{
-		private readonly Duel _duel;
-		private readonly DuelResult _result;
-
-		public ScheduleEndDuelTask(Duel duel, DuelResult result)
-		{
-			_duel = duel;
-			_result = result;
-		}
-
-		public void run()
+	public sealed class ScheduleEndDuelTask(Duel duel, DuelResult result): Runnable
+    {
+        public void run()
 		{
 			try
 			{
-				_duel.endDuel(_result);
+				duel.endDuel(result);
 			}
 			catch (Exception e)
 			{
@@ -277,7 +238,7 @@ public class Duel
 		}
 	}
 
-	public Instance getDueldInstance()
+	public Instance? getDueldInstance()
 	{
 		return _duelInstance;
 	}
@@ -288,37 +249,38 @@ public class Duel
 	private void stopFighting()
 	{
 		ActionFailedPacket af = ActionFailedPacket.STATIC_PACKET;
-		if (_partyDuel)
-		{
-			foreach (Player temp in _playerA.getParty().getMembers())
-			{
-				temp.abortCast();
-				temp.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-				temp.setTarget(null);
-				temp.sendPacket(af);
-				temp.getServitorsAndPets().ForEach(s =>
-				{
-					s.abortCast();
-					s.abortAttack();
-					s.setTarget(null);
-					s.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-				});
-			}
-			foreach (Player temp in _playerB.getParty().getMembers())
-			{
-				temp.abortCast();
-				temp.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-				temp.setTarget(null);
-				temp.sendPacket(af);
-				temp.getServitorsAndPets().ForEach(s =>
-				{
-					s.abortCast();
-					s.abortAttack();
-					s.setTarget(null);
-					s.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-				});
-			}
-		}
+		if (_parties != null)
+        {
+            foreach (Player temp in _parties.PartyA.getMembers())
+            {
+                temp.abortCast();
+                temp.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+                temp.setTarget(null);
+                temp.sendPacket(af);
+                temp.getServitorsAndPets().ForEach(s =>
+                {
+                    s.abortCast();
+                    s.abortAttack();
+                    s.setTarget(null);
+                    s.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+                });
+            }
+
+            foreach (Player temp in _parties.PartyB.getMembers())
+            {
+                temp.abortCast();
+                temp.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+                temp.setTarget(null);
+                temp.sendPacket(af);
+                temp.getServitorsAndPets().ForEach(s =>
+                {
+                    s.abortCast();
+                    s.abortAttack();
+                    s.setTarget(null);
+                    s.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+                });
+            }
+        }
 		else
 		{
 			_playerA.abortCast();
@@ -353,12 +315,13 @@ public class Duel
 	 */
 	public bool isDuelistInPvp(bool sendMessage)
 	{
-		if (_partyDuel)
+		if (IsPartyDuel)
 		{
 			// Party duels take place in arenas - should be no other players there
 			return false;
 		}
-		else if (_playerA.getPvpFlag() != PvpFlagStatus.None || _playerB.getPvpFlag() != PvpFlagStatus.None)
+
+        if (_playerA.getPvpFlag() != PvpFlagStatus.None || _playerB.getPvpFlag() != PvpFlagStatus.None)
 		{
 			if (sendMessage)
 			{
@@ -376,17 +339,17 @@ public class Duel
 	 */
 	public void startDuel()
 	{
-		if (_playerA == null || _playerB == null || _playerA.isInDuel() || _playerB.isInDuel())
+		if (_playerA.isInDuel() || _playerB.isInDuel())
 		{
 			_playerConditions.Clear();
 			DuelManager.getInstance().removeDuel(this);
 			return;
 		}
 
-		if (_partyDuel)
+		if (_parties != null)
 		{
-			// Set duel state and team
-			foreach (Player temp in _playerA.getParty().getMembers())
+            // Set duel state and team
+			foreach (Player temp in _parties.PartyA.getMembers())
 			{
 				temp.cancelActiveTrade();
 				temp.setInDuel(_duelId);
@@ -394,7 +357,8 @@ public class Duel
 				temp.broadcastUserInfo();
 				broadcastToTeam2(new ExDuelUpdateUserInfoPacket(temp));
 			}
-			foreach (Player temp in _playerB.getParty().getMembers())
+
+			foreach (Player temp in _parties.PartyB.getMembers())
 			{
 				temp.cancelActiveTrade();
 				temp.setInDuel(_duelId);
@@ -409,14 +373,15 @@ public class Duel
 			broadcastToTeam1(ExDuelStartPacket.PARTY_DUEL);
 			broadcastToTeam2(ExDuelStartPacket.PARTY_DUEL);
 
-			foreach (Door door in _duelInstance.getDoors())
-			{
-				if (door != null && !door.isOpen())
-				{
-					door.openMe();
-				}
-			}
-		}
+            if (_duelInstance != null)
+            {
+                foreach (Door door in _duelInstance.getDoors())
+                {
+                    if (!door.isOpen())
+                        door.openMe();
+                }
+            }
+        }
 		else
 		{
 			// set isInDuel() state
@@ -442,7 +407,7 @@ public class Duel
 		broadcastToTeam2(B04_S01);
 
 		// start duelling task
-		ThreadPool.schedule(new Duel.ScheduleDuelTask(this), 1000);
+		ThreadPool.schedule(new ScheduleDuelTask(this), 1000);
 	}
 
 	/**
@@ -450,21 +415,18 @@ public class Duel
 	 */
 	public void savePlayerConditions()
 	{
-		if (_partyDuel)
+		if (_parties != null)
 		{
-			foreach (Player player in _playerA.getParty().getMembers())
-			{
-				_playerConditions.put(player.ObjectId, new Duel.PlayerCondition(player, _partyDuel));
-			}
-			foreach (Player player in _playerB.getParty().getMembers())
-			{
-				_playerConditions.put(player.ObjectId, new Duel.PlayerCondition(player, _partyDuel));
-			}
-		}
+            foreach (Player player in _parties.PartyA.getMembers())
+                _playerConditions.put(player.ObjectId, new PlayerCondition(player, true));
+
+            foreach (Player player in _parties.PartyB.getMembers())
+                _playerConditions.put(player.ObjectId, new PlayerCondition(player, true));
+        }
 		else
 		{
-			_playerConditions.put(_playerA.ObjectId, new Duel.PlayerCondition(_playerA, _partyDuel));
-			_playerConditions.put(_playerB.ObjectId, new Duel.PlayerCondition(_playerB, _partyDuel));
+			_playerConditions.put(_playerA.ObjectId, new PlayerCondition(_playerA, false));
+			_playerConditions.put(_playerB.ObjectId, new PlayerCondition(_playerB, false));
 		}
 	}
 
@@ -475,15 +437,16 @@ public class Duel
 	public void restorePlayerConditions(bool abnormalDuelEnd)
 	{
 		// update isInDuel() state for all players
-		if (_partyDuel)
+        if (_parties != null)
 		{
-			foreach (Player temp in _playerA.getParty().getMembers())
+            foreach (Player temp in _parties.PartyA.getMembers())
 			{
 				temp.setInDuel(0);
 				temp.setTeam(Team.NONE);
 				temp.broadcastUserInfo();
 			}
-			foreach (Player temp in _playerB.getParty().getMembers())
+
+            foreach (Player temp in _parties.PartyB.getMembers())
 			{
 				temp.setInDuel(0);
 				temp.setTeam(Team.NONE);
@@ -552,7 +515,7 @@ public class Duel
 	 */
 	public bool isPartyDuel()
 	{
-		return _partyDuel;
+		return IsPartyDuel;
 	}
 
 	public void setFinished(bool mode)
@@ -570,10 +533,8 @@ public class Duel
 	 */
 	public void teleportPlayers()
 	{
-		if (!_partyDuel)
-		{
+		if (_parties == null)
 			return;
-		}
 
 		int instanceId = DuelManager.getInstance().getDuelArena();
 		OlympiadStadiumZone? zone = null;
@@ -591,19 +552,19 @@ public class Duel
 		}
 
 		ImmutableArray<Location3D> spawns = zone.getSpawns();
-		_duelInstance = InstanceManager.getInstance().createInstance(InstanceManager.getInstance().getInstanceTemplate(instanceId), null);
+
+        InstanceTemplate duelInstance = InstanceManager.getInstance().getInstanceTemplate(instanceId) ??
+            throw new InvalidOperationException($"Instance template id={instanceId} not found");
+
+		_duelInstance = InstanceManager.getInstance().createInstance(duelInstance, null);
 
 		Location3D spawn1 = spawns[Rnd.get(spawns.Length / 2)];
-		foreach (Player temp in _playerA.getParty().getMembers())
-		{
+		foreach (Player temp in _parties.PartyA.getMembers())
 			temp.teleToLocation(new Location(spawn1, 0), _duelInstance);
-		}
 
 		Location3D spawn2 = spawns[Rnd.get(spawns.Length / 2, spawns.Length)];
-		foreach (Player temp in _playerB.getParty().getMembers())
-		{
+		foreach (Player temp in _parties.PartyB.getMembers())
 			temp.teleToLocation(new Location(spawn2, 0), _duelInstance);
-		}
 	}
 
 	/**
@@ -613,22 +574,13 @@ public class Duel
 	public void broadcastToTeam1<TPacket>(TPacket packet)
 		where TPacket: struct, IOutgoingPacket
 	{
-		if (_playerA == null)
+		if (_parties != null)
 		{
-			return;
-		}
-
-		if (_partyDuel && _playerA.getParty() != null)
-		{
-			foreach (Player temp in _playerA.getParty().getMembers())
-			{
+			foreach (Player temp in _parties.PartyA.getMembers())
 				temp.sendPacket(packet);
-			}
 		}
 		else
-		{
 			_playerA.sendPacket(packet);
-		}
 	}
 
 	/**
@@ -638,42 +590,30 @@ public class Duel
 	public void broadcastToTeam2<TPacket>(TPacket packet)
 		where TPacket: struct, IOutgoingPacket
 	{
-		if (_playerB == null)
+		if (_parties != null)
 		{
-			return;
-		}
-
-		if (_partyDuel && _playerB.getParty() != null)
-		{
-			foreach (Player temp in _playerB.getParty().getMembers())
-			{
+			foreach (Player temp in _parties.PartyB.getMembers())
 				temp.sendPacket(packet);
-			}
 		}
 		else
-		{
 			_playerB.sendPacket(packet);
-		}
 	}
 
 	/**
 	 * Get the duel winner
 	 * @return winner
 	 */
-	public Player getWinner()
+	public Player? getWinner()
 	{
 		if (!_finished || _playerA == null || _playerB == null)
-		{
 			return null;
-		}
-		if (_playerA.getDuelState() == DUELSTATE_WINNER)
-		{
+
+        if (_playerA.getDuelState() == DUELSTATE_WINNER)
 			return _playerA;
-		}
-		if (_playerB.getDuelState() == DUELSTATE_WINNER)
-		{
+
+        if (_playerB.getDuelState() == DUELSTATE_WINNER)
 			return _playerB;
-		}
+
 		return null;
 	}
 
@@ -681,21 +621,18 @@ public class Duel
 	 * Get the duel looser
 	 * @return looser
 	 */
-	public Player getLooser()
+	public Player? getLooser()
 	{
 		if (!_finished || _playerA == null || _playerB == null)
-		{
 			return null;
-		}
-		if (_playerA.getDuelState() == DUELSTATE_WINNER)
-		{
+
+        if (_playerA.getDuelState() == DUELSTATE_WINNER)
 			return _playerB;
-		}
-		else if (_playerB.getDuelState() == DUELSTATE_WINNER)
-		{
+
+        if (_playerB.getDuelState() == DUELSTATE_WINNER)
 			return _playerA;
-		}
-		return null;
+
+        return null;
 	}
 
 	/**
@@ -703,23 +640,18 @@ public class Duel
 	 */
 	public void playKneelAnimation()
 	{
-		Player looser = getLooser();
+		Player? looser = getLooser();
 		if (looser == null)
-		{
 			return;
-		}
 
-		if (_partyDuel && looser.getParty() != null)
+        Party? party = looser.getParty();
+		if (IsPartyDuel && party != null)
 		{
-			foreach (Player temp in looser.getParty().getMembers())
-			{
+			foreach (Player temp in party.getMembers())
 				temp.broadcastPacket(new SocialActionPacket(temp.ObjectId, 7));
-			}
 		}
 		else
-		{
 			looser.broadcastPacket(new SocialActionPacket(looser.ObjectId, 7));
-		}
 	}
 
 	/**
@@ -775,7 +707,7 @@ public class Duel
 			case DuelResult.TEAM_2_SURRENDER:
 			{
 				restorePlayerConditions(false);
-				sm = _partyDuel ? new SystemMessagePacket(SystemMessageId.C1_S_PARTY_HAS_WON_THE_DUEL) : new SystemMessagePacket(SystemMessageId.C1_HAS_WON_THE_DUEL);
+				sm = IsPartyDuel ? new SystemMessagePacket(SystemMessageId.C1_S_PARTY_HAS_WON_THE_DUEL) : new SystemMessagePacket(SystemMessageId.C1_HAS_WON_THE_DUEL);
 				sm.Params.addString(_playerA.getName());
 
 				broadcastToTeam1(sm);
@@ -786,7 +718,7 @@ public class Duel
 			case DuelResult.TEAM_2_WIN:
 			{
 				restorePlayerConditions(false);
-				sm = _partyDuel ? new SystemMessagePacket(SystemMessageId.C1_S_PARTY_HAS_WON_THE_DUEL) : new SystemMessagePacket(SystemMessageId.C1_HAS_WON_THE_DUEL);
+				sm = IsPartyDuel ? new SystemMessagePacket(SystemMessageId.C1_S_PARTY_HAS_WON_THE_DUEL) : new SystemMessagePacket(SystemMessageId.C1_HAS_WON_THE_DUEL);
 				sm.Params.addString(_playerB.getName());
 
 				broadcastToTeam1(sm);
@@ -819,7 +751,7 @@ public class Duel
 		}
 
 		// Send end duel packet
-		ExDuelEndPacket duelEnd = _partyDuel ? ExDuelEndPacket.PARTY_DUEL : ExDuelEndPacket.PLAYER_DUEL;
+		ExDuelEndPacket duelEnd = IsPartyDuel ? ExDuelEndPacket.PARTY_DUEL : ExDuelEndPacket.PLAYER_DUEL;
 		broadcastToTeam1(duelEnd);
 		broadcastToTeam2(duelEnd);
 
@@ -846,53 +778,57 @@ public class Duel
 			return _surrenderRequest == 1 ? DuelResult.TEAM_1_SURRENDER : DuelResult.TEAM_2_SURRENDER;
 		}
 		// duel timed out
-		else if (getRemainingTime() <= TimeSpan.Zero)
-		{
-			return DuelResult.TIMEOUT;
-		}
-		// Has a player been declared winner yet?
-		else if (_playerA.getDuelState() == DUELSTATE_WINNER)
-		{
-			// If there is a Winner already there should be no more fighting going on
-			stopFighting();
-			return DuelResult.TEAM_1_WIN;
-		}
-		else if (_playerB.getDuelState() == DUELSTATE_WINNER)
-		{
-			// If there is a Winner already there should be no more fighting going on
-			stopFighting();
-			return DuelResult.TEAM_2_WIN;
-		}
 
-		// More end duel conditions for 1on1 duels
-		else if (!_partyDuel)
-		{
-			// Duel was interrupted e.g.: player was attacked by mobs / other players
-			if (_playerA.getDuelState() == DUELSTATE_INTERRUPTED || _playerB.getDuelState() == DUELSTATE_INTERRUPTED)
-			{
-				return DuelResult.CANCELED;
-			}
+        if (getRemainingTime() <= TimeSpan.Zero)
+        {
+            return DuelResult.TIMEOUT;
+        }
+        // Has a player been declared winner yet?
 
-			// Are the players too far apart?
-			if (!_playerA.IsInsideRadius2D(_playerB, 1600))
-			{
-				return DuelResult.CANCELED;
-			}
+        if (_playerA.getDuelState() == DUELSTATE_WINNER)
+        {
+            // If there is a Winner already there should be no more fighting going on
+            stopFighting();
+            return DuelResult.TEAM_1_WIN;
+        }
 
-			// Did one of the players engage in PvP combat?
-			if (isDuelistInPvp(true))
-			{
-				return DuelResult.CANCELED;
-			}
+        if (_playerB.getDuelState() == DUELSTATE_WINNER)
+        {
+            // If there is a Winner already there should be no more fighting going on
+            stopFighting();
+            return DuelResult.TEAM_2_WIN;
+        }
 
-			// is one of the players in a Siege, Peace or PvP zone?
-			if (_playerA.isInsideZone(ZoneId.PEACE) || _playerB.isInsideZone(ZoneId.PEACE) || _playerA.isInsideZone(ZoneId.NO_PVP) || _playerB.isInsideZone(ZoneId.NO_PVP) || _playerA.isInsideZone(ZoneId.SIEGE) || _playerB.isInsideZone(ZoneId.SIEGE) || _playerA.isInsideZone(ZoneId.PVP) || _playerB.isInsideZone(ZoneId.PVP))
-			{
-				return DuelResult.CANCELED;
-			}
-		}
+        // More end duel conditions for 1on1 duels
 
-		return DuelResult.CONTINUE;
+        if (!IsPartyDuel)
+        {
+            // Duel was interrupted e.g.: player was attacked by mobs / other players
+            if (_playerA.getDuelState() == DUELSTATE_INTERRUPTED || _playerB.getDuelState() == DUELSTATE_INTERRUPTED)
+            {
+                return DuelResult.CANCELED;
+            }
+
+            // Are the players too far apart?
+            if (!_playerA.IsInsideRadius2D(_playerB, 1600))
+            {
+                return DuelResult.CANCELED;
+            }
+
+            // Did one of the players engage in PvP combat?
+            if (isDuelistInPvp(true))
+            {
+                return DuelResult.CANCELED;
+            }
+
+            // is one of the players in a Siege, Peace or PvP zone?
+            if (_playerA.isInsideZone(ZoneId.PEACE) || _playerB.isInsideZone(ZoneId.PEACE) || _playerA.isInsideZone(ZoneId.NO_PVP) || _playerB.isInsideZone(ZoneId.NO_PVP) || _playerA.isInsideZone(ZoneId.SIEGE) || _playerB.isInsideZone(ZoneId.SIEGE) || _playerA.isInsideZone(ZoneId.PVP) || _playerB.isInsideZone(ZoneId.PVP))
+            {
+                return DuelResult.CANCELED;
+            }
+        }
+
+        return DuelResult.CONTINUE;
 	}
 
 	/**
@@ -911,31 +847,25 @@ public class Duel
 		stopFighting();
 
 		// TODO: Can every party member cancel a party duel? or only the party leaders?
-		if (_partyDuel)
+		if (_parties != null)
 		{
-			if (_playerA.getParty().getMembers().Contains(player))
+			if (_parties.PartyA.getMembers().Contains(player))
 			{
 				_surrenderRequest = 1;
-				foreach (Player temp in _playerA.getParty().getMembers())
-				{
+				foreach (Player temp in _parties.PartyA.getMembers())
 					temp.setDuelState(DUELSTATE_DEAD);
-				}
-				foreach (Player temp in _playerB.getParty().getMembers())
-				{
+
+                foreach (Player temp in _parties.PartyB.getMembers())
 					temp.setDuelState(DUELSTATE_WINNER);
-				}
 			}
-			else if (_playerB.getParty().getMembers().Contains(player))
+			else if (_parties.PartyB.getMembers().Contains(player))
 			{
 				_surrenderRequest = 2;
-				foreach (Player temp in _playerB.getParty().getMembers())
-				{
+				foreach (Player temp in _parties.PartyB.getMembers())
 					temp.setDuelState(DUELSTATE_DEAD);
-				}
-				foreach (Player temp in _playerA.getParty().getMembers())
-				{
+
+                foreach (Player temp in _parties.PartyA.getMembers())
 					temp.setDuelState(DUELSTATE_WINNER);
-				}
 			}
 		}
 		else if (player == _playerA)
@@ -961,33 +891,26 @@ public class Duel
 		// Set player as defeated
 		player.setDuelState(DUELSTATE_DEAD);
 
-		if (_partyDuel)
+        Party? playerParty = player.getParty();
+		if (_parties != null && playerParty != null)
 		{
-			bool teamdefeated = player.getParty().getMembers().Any(member => member.getDuelState() == DUELSTATE_DUELLING);
-			if (teamdefeated)
+			bool teamDefeated = playerParty.getMembers().Any(member => member.getDuelState() == DUELSTATE_DUELLING);
+			if (teamDefeated)
 			{
-				Player winner = _playerA.getParty().getMembers().Contains(player) ? _playerB : _playerA;
-				foreach (Player temp in winner.getParty().getMembers())
-				{
+				Party winnerParty = _parties.PartyA.getMembers().Contains(player) ? _parties.PartyB : _parties.PartyA;
+				foreach (Player temp in winnerParty.getMembers())
 					temp.setDuelState(DUELSTATE_WINNER);
-				}
 			}
 		}
 		else
 		{
 			if (player != _playerA && player != _playerB)
-			{
 				LOGGER.Warn("Error in onPlayerDefeat(): player is not part of this 1vs1 duel");
-			}
 
 			if (_playerA == player)
-			{
 				_playerB.setDuelState(DUELSTATE_WINNER);
-			}
 			else
-			{
 				_playerA.setDuelState(DUELSTATE_WINNER);
-			}
 		}
 	}
 
@@ -998,10 +921,8 @@ public class Duel
 	public void onRemoveFromParty(Player player)
 	{
 		// if it isn't a party duel ignore this
-		if (!_partyDuel)
-		{
+		if (!IsPartyDuel)
 			return;
-		}
 
 		// this player is leaving his party during party duel
 		// if he's either playerA or playerB cancel the duel and port the players back
@@ -1012,9 +933,6 @@ public class Duel
 				cond.teleportBack();
 				cond.getPlayer().setInDuel(0);
 			}
-
-			_playerA = null;
-			_playerB = null;
 		}
 		else
 		// teleport the player back & delete his PlayerCondition record
@@ -1032,8 +950,6 @@ public class Duel
 	{
 		PlayerCondition? cond = _playerConditions.get(player.ObjectId);
 		if (cond != null)
-		{
 			cond.registerDebuff(debuff);
-		}
 	}
 }

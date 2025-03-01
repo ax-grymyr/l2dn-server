@@ -7,7 +7,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
 /**
  * @author BiggBoss
  */
-public sealed class SiegableHallZone(int id): ClanHallZone(id)
+public sealed class SiegableHallZone(int id, ZoneForm form): ClanHallZone(id, form)
 {
 	private ImmutableArray<Location3D> _challengerLocations = ImmutableArray<Location3D>.Empty;
 

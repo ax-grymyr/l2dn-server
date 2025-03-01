@@ -158,7 +158,7 @@ public sealed class FortManager: Merchant
                 }
 
                 TimeSpan time2 = fort.getTimeTillNextFortUpdate();
-                htmlContent.Replace("%castle%", fort.getContractedCastle().getName());
+                htmlContent.Replace("%castle%", fort.getContractedCastle()?.getName() ?? string.Empty);
                 htmlContent.Replace("%hr2%", time2.Hours.ToString());
                 htmlContent.Replace("%min2%", time2.Minutes.ToString());
 

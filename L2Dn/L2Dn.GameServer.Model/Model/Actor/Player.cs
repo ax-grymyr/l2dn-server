@@ -394,7 +394,7 @@ public class Player: Playable
 	// there can only be one active party request at once
 	private Player? _activeRequester;
 	private long _requestExpireTime;
-	private readonly Model.Request? _request;
+	private readonly Model.Request _request;
 
 	// Used for protection after teleport
 	private DateTime? _spawnProtectEndTime;
@@ -1548,7 +1548,7 @@ public class Player: Playable
 	 * @param page The page of shortCuts containing the slot
 	 * @return the ShortCut of the Player corresponding to the position (page-slot).
 	 */
-	public Shortcut getShortCut(int slot, int page) => _shortCuts.getShortCut(slot, page);
+	public Shortcut? getShortCut(int slot, int page) => _shortCuts.getShortCut(slot, page);
 
     /**
 	 * Add a L2shortCut to the Player _shortCuts
@@ -5608,7 +5608,7 @@ public class Player: Playable
 	/**
 	 * @return the Player requester of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).
 	 */
-	public Model.Request? getRequest()
+	public Model.Request getRequest()
 	{
 		return _request;
 	}
@@ -5778,7 +5778,7 @@ public class Player: Playable
 			return;
 		}
 
-		Player partner = _activeTradeList.getPartner();
+		Player? partner = _activeTradeList.getPartner();
 		if (partner != null)
 		{
 			partner.onTradeCancel(this);
@@ -6417,7 +6417,7 @@ public class Player: Playable
 	/**
 	 * Return True if the Player is a GM.
 	 */
-	public override bool isGM()
+	public bool isGM()
 	{
 		return _accessLevel.isGm();
 	}
@@ -6491,7 +6491,7 @@ public class Player: Playable
 	/**
 	 * @return the _accessLevel of the Player.
 	 */
-	public override AccessLevel getAccessLevel()
+	public AccessLevel getAccessLevel()
 	{
 		return _accessLevel;
 	}
@@ -15069,7 +15069,7 @@ public class Player: Playable
 	public void addAutoShortcut(int slot, int page)
 	{
 		List<int> positions = getVariables().getIntegerList(PlayerVariables.AUTO_USE_SHORTCUTS);
-		Shortcut usedShortcut = getShortCut(slot, page);
+		Shortcut? usedShortcut = getShortCut(slot, page);
 		if (usedShortcut == null)
 		{
 			int position = slot + page * ShortCuts.MAX_SHORTCUTS_PER_BAR;
@@ -15104,7 +15104,7 @@ public class Player: Playable
 		}
 
 		List<int> positions = getVariables().getIntegerList(PlayerVariables.AUTO_USE_SHORTCUTS);
-		Shortcut usedShortcut = getShortCut(slot, page);
+		Shortcut? usedShortcut = getShortCut(slot, page);
 		if (usedShortcut == null)
 		{
 			int position = slot + page * ShortCuts.MAX_SHORTCUTS_PER_BAR;

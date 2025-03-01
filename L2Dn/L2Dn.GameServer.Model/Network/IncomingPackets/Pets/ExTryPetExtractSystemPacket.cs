@@ -69,7 +69,7 @@ public struct ExTryPetExtractSystemPacket: IIncomingPacket<GameSession>
 		petInventory.transferItemsToOwner();
 
         int petId = PetDataTable.getInstance().getPetDataByItemId(petItem.getId())?.getType() ?? 0; // TODO
-		Pet petInfo = Pet.restore(petItem, npcTemplate, player);
+		Pet? petInfo = Pet.restore(petItem, npcTemplate, player);
 		int petLevel = petInfo.getLevel();
 		PetExtractionHolder? holder = PetExtractData.getInstance().getExtraction(petId, petLevel);
 		if (holder != null)

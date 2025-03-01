@@ -77,7 +77,7 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        Npc manager = player.getLastFolkNPC();
+        Npc? manager = player.getLastFolkNPC();
         if (!(manager is Merchant) || !manager.canInteract(player) ||
             manager.getParameters().getInt("manor_id", -1) != _manorId)
         {

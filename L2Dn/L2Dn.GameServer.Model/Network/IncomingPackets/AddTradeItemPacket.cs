@@ -37,8 +37,8 @@ public struct AddTradeItemPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        Player partner = trade.getPartner();
-        TradeList? partnerTrade = partner.getActiveTradeList();
+        Player? partner = trade.getPartner();
+        TradeList? partnerTrade = partner?.getActiveTradeList();
         if (partner == null || World.getInstance().getPlayer(partner.ObjectId) == null || partnerTrade == null)
         {
             // Trade partner not found, cancel trade
@@ -73,7 +73,7 @@ public struct AddTradeItemPacket: IIncomingPacket<GameSession>
         }
 
         Item? item1 = player.getInventory().getItemByObjectId(_objectId);
-        TradeItem item2 = trade.addItem(_objectId, _count);
+        TradeItem? item2 = trade.addItem(_objectId, _count);
         if (item1 != null && item2 != null)
         {
             player.sendPacket(new TradeOwnAddPacket(1, item2));

@@ -30,7 +30,7 @@ public struct RequestInfoItemAuctionPacket: IIncomingPacket<GameSession>
         if (instance == null)
             return ValueTask.CompletedTask;
 
-        ItemAuction auction = instance.getCurrentAuction();
+        ItemAuction? auction = instance.getCurrentAuction();
         if (auction == null)
             return ValueTask.CompletedTask;
 

@@ -23,7 +23,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 	private readonly List<Spawn> _buffers = [];
 	private ImmutableArray<Location3D> _spectatorLocations = ImmutableArray<Location3D>.Empty;
 
-	public OlympiadStadiumZone(int id): base(id)
+	public OlympiadStadiumZone(int id, ZoneForm form): base(id, form)
 	{
 		AbstractZoneSettings? settings = ZoneManager.getSettings(getName());
 		if (settings == null)
@@ -38,12 +38,9 @@ public class OlympiadStadiumZone: ZoneRespawn
 	{
 		private OlympiadGameTask? _task;
 
-		public OlympiadGameTask? getOlympiadTask()
-		{
-			return _task;
-		}
+		public OlympiadGameTask? getOlympiadTask() => _task;
 
-		public void setTask(OlympiadGameTask task)
+        public void setTask(OlympiadGameTask task)
 		{
 			_task = task;
 		}
@@ -85,7 +82,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 			if (creature.isPlayer())
 			{
 				creature.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_A_COMBAT_ZONE);
-                olympiadTask.getGame().sendOlympiadInfo(creature);
+                olympiadTask.getGame()?.sendOlympiadInfo(creature);
 			}
 		}
 
@@ -103,7 +100,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 				else
 				{
 					// check for pet
-					Summon pet = player.getPet();
+					Summon? pet = player.getPet();
 					if (pet != null)
 					{
 						pet.unSummon(player);

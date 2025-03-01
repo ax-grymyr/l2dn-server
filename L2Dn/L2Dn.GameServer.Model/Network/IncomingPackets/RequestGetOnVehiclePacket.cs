@@ -31,7 +31,7 @@ public struct RequestGetOnVehiclePacket: IIncomingPacket<GameSession>
         if (player.isInBoat())
         {
             boat = player.getBoat();
-            if (boat.ObjectId != _boatId)
+            if (boat == null || boat.ObjectId != _boatId)
             {
                 player.sendPacket(ActionFailedPacket.STATIC_PACKET);
                 return ValueTask.CompletedTask;

@@ -48,8 +48,8 @@ public struct RequestNewEnchantPushTwoPacket: IIncomingPacket<GameSession>
 
         // Make sure player owns this item.
         request.setItemTwo(_objectId);
-        Item itemOne = request.getItemOne();
-        Item itemTwo = request.getItemTwo();
+        Item? itemOne = request.getItemOne();
+        Item? itemTwo = request.getItemTwo();
         if (itemOne == null || itemTwo == null)
         {
             player.sendPacket(ExEnchantTwoFailPacket.STATIC_PACKET);

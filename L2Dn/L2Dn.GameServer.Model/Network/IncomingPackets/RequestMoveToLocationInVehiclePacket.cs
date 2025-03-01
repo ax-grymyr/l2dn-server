@@ -74,7 +74,7 @@ public struct RequestMoveToLocationInVehiclePacket: IIncomingPacket<GameSession>
         if (player.isInBoat())
         {
             boat = player.getBoat();
-            if (boat.ObjectId != _boatId)
+            if (boat != null && boat.ObjectId != _boatId)
             {
                 boat = BoatManager.getInstance().getBoat(_boatId);
                 player.setVehicle(boat);

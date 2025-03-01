@@ -2,6 +2,7 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
+using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Zones;
@@ -21,8 +22,9 @@ public class RegenHPFinalizer: StatFunction
 	{
 		throwIfPresent(@base);
 
-		double baseValue = creature.isPlayer()
-			? creature.getActingPlayer().getTemplate().getBaseHpRegen(creature.getLevel())
+        Player? player = creature.getActingPlayer();
+		double baseValue = creature.isPlayer() && player != null
+			? player.getTemplate().getBaseHpRegen(creature.getLevel())
 			: creature.getTemplate().getBaseHpReg();
 		baseValue *= creature.isRaid() ? Config.RAID_HP_REGEN_MULTIPLIER : Config.HP_REGEN_MULTIPLIER;
 		if (Config.CHAMPION_ENABLE && creature.isChampion())
@@ -30,28 +32,26 @@ public class RegenHPFinalizer: StatFunction
 			baseValue *= Config.CHAMPION_HP_REGEN;
 		}
 
-		if (creature.isPlayer())
+		if (creature.isPlayer() && player != null)
 		{
-			Player player = creature.getActingPlayer();
 			double siegeModifier = calcSiegeRegenModifier(player);
 			if (siegeModifier > 0)
 			{
 				baseValue *= siegeModifier;
 			}
 
-			if (player.isInsideZone(ZoneId.CLAN_HALL) && player.getClan() != null &&
-			    player.getClan().getHideoutId() > 0)
+            Clan? clan = player.getClan();
+			if (player.isInsideZone(ZoneId.CLAN_HALL) && clan != null && clan.getHideoutId() > 0)
 			{
 				ClanHallZone? zone = ZoneManager.getInstance().getZone<ClanHallZone>(player.Location.Location3D);
 				int posChIndex = zone == null ? -1 : zone.getResidenceId();
-				int clanHallIndex = player.getClan().getHideoutId();
+				int clanHallIndex = clan.getHideoutId();
 				if (clanHallIndex > 0 && clanHallIndex == posChIndex)
 				{
-					AbstractResidence residense =
-						ClanHallData.getInstance().getClanHallById(player.getClan().getHideoutId());
+					AbstractResidence? residense = ClanHallData.getInstance().getClanHallById(clan.getHideoutId());
 					if (residense != null)
 					{
-						ResidenceFunction func = residense.getFunction(ResidenceFunctionType.HP_REGEN);
+						ResidenceFunction? func = residense.getFunction(ResidenceFunctionType.HP_REGEN);
 						if (func != null)
 						{
 							baseValue *= func.getValue();
@@ -60,18 +60,17 @@ public class RegenHPFinalizer: StatFunction
 				}
 			}
 
-			if (player.isInsideZone(ZoneId.CASTLE) && player.getClan() != null &&
-			    player.getClan().getCastleId() > 0)
+			if (player.isInsideZone(ZoneId.CASTLE) && clan != null && clan.getCastleId() > 0)
 			{
 				CastleZone? zone = ZoneManager.getInstance().getZone<CastleZone>(player.Location.Location3D);
 				int posCastleIndex = zone == null ? -1 : zone.getResidenceId();
-				int? castleIndex = player.getClan().getCastleId();
+				int? castleIndex = clan.getCastleId();
 				if (castleIndex > 0 && castleIndex == posCastleIndex)
 				{
-					Castle castle = CastleManager.getInstance().getCastleById(castleIndex.Value);
+					Castle? castle = CastleManager.getInstance().getCastleById(castleIndex.Value);
 					if (castle != null)
 					{
-						Castle.CastleFunction func = castle.getCastleFunction(Castle.FUNC_RESTORE_HP);
+						Castle.CastleFunction? func = castle.getCastleFunction(Castle.FUNC_RESTORE_HP);
 						if (func != null)
 						{
 							baseValue *= func.getLvl() / 100;
@@ -80,17 +79,17 @@ public class RegenHPFinalizer: StatFunction
 				}
 			}
 
-			if (player.isInsideZone(ZoneId.FORT) && player.getClan() != null && player.getClan().getFortId() > 0)
+			if (player.isInsideZone(ZoneId.FORT) && clan != null && clan.getFortId() > 0)
 			{
 				FortZone? zone = ZoneManager.getInstance().getZone<FortZone>(player.Location.Location3D);
 				int posFortIndex = zone == null ? -1 : zone.getResidenceId();
-				int? fortIndex = player.getClan().getFortId();
+				int? fortIndex = clan.getFortId();
 				if (fortIndex > 0 && fortIndex == posFortIndex)
 				{
-					Fort fort = FortManager.getInstance().getFortById(fortIndex.Value);
+					Fort? fort = FortManager.getInstance().getFortById(fortIndex.Value);
 					if (fort != null)
 					{
-						Fort.FortFunction func = fort.getFortFunction(Fort.FUNC_RESTORE_HP);
+						Fort.FortFunction? func = fort.getFortFunction(Fort.FUNC_RESTORE_HP);
 						if (func != null)
 						{
 							baseValue *= func.getLevel() / 100;
@@ -133,19 +132,20 @@ public class RegenHPFinalizer: StatFunction
 	}
 
 	private static double calcSiegeRegenModifier(Player player)
-	{
-		if (player == null || player.getClan() == null)
+    {
+        Clan? clan = player.getClan();
+		if (clan == null)
 		{
 			return 0;
 		}
 
-		Siege siege = SiegeManager.getInstance().getSiege(player.Location.Location3D);
+		Siege? siege = SiegeManager.getInstance().getSiege(player.Location.Location3D);
 		if (siege == null || !siege.isInProgress())
 		{
 			return 0;
 		}
 
-		SiegeClan siegeClan = siege.getAttackerClan(player.getClan().getId());
+		SiegeClan? siegeClan = siege.getAttackerClan(clan.getId());
 		if (siegeClan == null || siegeClan.getFlag().isEmpty())
 		{
 			return 0;

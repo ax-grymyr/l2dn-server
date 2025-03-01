@@ -27,7 +27,7 @@ public struct RequestOustFromPartyRoomPacket: IIncomingPacket<GameSession>
         if (member == null)
             return ValueTask.CompletedTask;
 
-        MatchingRoom room = player.getMatchingRoom();
+        MatchingRoom? room = player.getMatchingRoom();
         if (room == null || room.getRoomType() != MatchingRoomType.PARTY || room.getLeader() != player ||
             player == member)
         {

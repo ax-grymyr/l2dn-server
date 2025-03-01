@@ -29,7 +29,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
         _shopIndex = reader.ReadByte(); // 3 Lcoin Store, 4 Special Craft, 100 Clan Shop
         _productId = reader.ReadInt32();
         _amount = reader.ReadInt32();
-		
+
         switch (_shopIndex)
         {
             case 3: // Normal Lcoin Shop
@@ -53,7 +53,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
                 break;
             }
         }
-		
+
         reader.ReadInt32(); // SuccessionItemSID
         reader.ReadInt32(); // MaterialItemSID
     }
@@ -72,7 +72,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 			player.sendPacket(new ExBRBuyProductPacket(ExBrProductReplyType.INVENTORY_OVERFLOW));
 			player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId, 0,
 				new List<LimitShopRandomCraftReward>()));
-			
+
 			return ValueTask.CompletedTask;
 		}
 
@@ -81,7 +81,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 			player.sendPacket(new ExBRBuyProductPacket(ExBrProductReplyType.INVENTORY_OVERFLOW));
 			player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId, 0,
 				new List<LimitShopRandomCraftReward>()));
-			
+
 			return ValueTask.CompletedTask;
 		}
 
@@ -90,7 +90,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 			player.sendPacket(SystemMessageId.YOUR_LEVEL_CANNOT_PURCHASE_THIS_ITEM);
 			player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId, 0,
 				new List<LimitShopRandomCraftReward>()));
-			
+
 			return ValueTask.CompletedTask;
 		}
 
@@ -99,13 +99,13 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 			player.sendPacket(new ExBRBuyProductPacket(ExBrProductReplyType.INVALID_USER_STATE));
 			player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId, 0,
 				new List<LimitShopRandomCraftReward>()));
-			
+
 			return ValueTask.CompletedTask;
 		}
 
 		// Add request.
 		player.addRequest(new PrimeShopRequest(player));
-		
+
 		// Check limits.
 		if (_product.getAccountDailyLimit() > 0) // Sale period.
 		{
@@ -116,7 +116,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				player.removeRequest<PrimeShopRequest>();
 				player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId, 0,
 					new List<LimitShopRandomCraftReward>()));
-				
+
 				return ValueTask.CompletedTask;
 			}
 
@@ -140,7 +140,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				player.removeRequest<PrimeShopRequest>();
 				player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId, 0,
 					new List<LimitShopRandomCraftReward>()));
-				
+
 				return ValueTask.CompletedTask;
 			}
 			if (player.getAccountVariables().getInt(AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + _product.getProductionId(), 0) >= amount)
@@ -149,10 +149,10 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				player.removeRequest<PrimeShopRequest>();
 				player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId, 0,
 					new List<LimitShopRandomCraftReward>()));
-				
+
 				return ValueTask.CompletedTask;
 			}
-			
+
 		}
 		else if (_product.getAccountBuyLimit() > 0) // Count limit.
 		{
@@ -163,26 +163,26 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				player.removeRequest<PrimeShopRequest>();
 				player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId, 0,
 					new List<LimitShopRandomCraftReward>()));
-				
+
 				return ValueTask.CompletedTask;
 			}
-			
+
 			if (player.getAccountVariables().getInt(AccountVariables.LCOIN_SHOP_PRODUCT_COUNT + _product.getProductionId(), 0) >= amount)
 			{
 				player.sendMessage("You cannot buy any more of this item."); // TODO: Retail system message?
 				player.removeRequest<PrimeShopRequest>();
 				player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId, 0,
 					new List<LimitShopRandomCraftReward>()));
-				
+
 				return ValueTask.CompletedTask;
 			}
 		}
-		
+
 		// Check existing items.
 		int remainingInfo = Math.Max(0,
 			Math.Max(_product.getAccountBuyLimit(),
 				Math.Max(_product.getAccountDailyLimit(), _product.getAccountMontlyLimit())));
-		
+
 		for (int i = 0; i < _product.getIngredientIds().Length; i++)
 		{
 			if (_product.getIngredientIds()[i] == 0)
@@ -198,17 +198,17 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 					player.removeRequest<PrimeShopRequest>();
 					player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId,
 						remainingInfo, new List<LimitShopRandomCraftReward>()));
-					
+
 					return ValueTask.CompletedTask;
 				}
-				
+
 				if (player.getAdena() < amount)
 				{
 					player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
 					player.removeRequest<PrimeShopRequest>();
 					player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId,
 						remainingInfo, new List<LimitShopRandomCraftReward>()));
-					
+
 					return ValueTask.CompletedTask;
 				}
 			}
@@ -221,17 +221,17 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 					player.removeRequest<PrimeShopRequest>();
 					player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId,
 						remainingInfo, new List<LimitShopRandomCraftReward>()));
-					
+
 					return ValueTask.CompletedTask;
 				}
-				
+
 				if (player.getHonorCoins() < amount)
 				{
 					player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
 					player.removeRequest<PrimeShopRequest>();
 					player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId,
 						remainingInfo, new List<LimitShopRandomCraftReward>()));
-					
+
 					return ValueTask.CompletedTask;
 				}
 			}
@@ -244,17 +244,17 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 					player.removeRequest<PrimeShopRequest>();
 					player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId,
 						remainingInfo, new List<LimitShopRandomCraftReward>()));
-					
+
 					return ValueTask.CompletedTask;
 				}
-				
+
 				if (player.getPcCafePoints() < amount)
 				{
 					player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
 					player.removeRequest<PrimeShopRequest>();
 					player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId,
 						remainingInfo, new List<LimitShopRandomCraftReward>()));
-					
+
 					return ValueTask.CompletedTask;
 				}
 			}
@@ -267,7 +267,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 					player.removeRequest<PrimeShopRequest>();
 					player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId,
 						remainingInfo, new List<LimitShopRandomCraftReward>()));
-					
+
 					return ValueTask.CompletedTask;
 				}
 
@@ -284,7 +284,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				}
 			}
 		}
-		
+
 		// Remove items.
 		for (int i = 0; i < _product.getIngredientIds().Length; i++)
 		{
@@ -332,17 +332,17 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 						player.sendPacket(new ExPurchaseLimitShopItemResultPacket(false, _shopIndex, _productId, remainingInfo, new List<LimitShopRandomCraftReward>()));
 						return ValueTask.CompletedTask;
 					}
-					
+
 					player.destroyItemByItemId("LCoinShop", _product.getIngredientIds()[i], amount, player, true);
 				}
 			}
-			
+
 			if (Config.VIP_SYSTEM_L_SHOP_AFFECT)
 			{
 				player.updateVipPoints(_amount);
 			}
 		}
-		
+
 		// Reward.
 		Map<int, LimitShopRandomCraftReward> rewards = new();
 		if (_product.getProductionId2() > 0)
@@ -354,10 +354,10 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				{
 					rewards.computeIfAbsent(0, k => new LimitShopRandomCraftReward(product.getProductionId(), 0, 0))
 						.Count += (int)_product.getCount();
-					
-					Item item = player.addItem("LCoinShop", _product.getProductionId(), _product.getCount(),
+
+					Item? item = player.addItem("LCoinShop", _product.getProductionId(), _product.getCount(),
 						_product.getEnchant(), player, true);
-					
+
 					if (_product.isAnnounce())
 					{
 						Broadcast.toAllOnlinePlayers(new ExItemAnnouncePacket(player, item,
@@ -368,10 +368,10 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				{
 					rewards.computeIfAbsent(1, k => new LimitShopRandomCraftReward(product.getProductionId2(), 0, 1))
 						.Count += (int)_product.getCount2();
-					
-					Item item = player.addItem("LCoinShop", _product.getProductionId2(), _product.getCount2(), player,
+
+					Item? item = player.addItem("LCoinShop", _product.getProductionId2(), _product.getCount2(), player,
 						true);
-					
+
 					if (_product.isAnnounce2())
 					{
 						Broadcast.toAllOnlinePlayers(new ExItemAnnouncePacket(player, item,
@@ -382,10 +382,10 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				{
 					rewards.computeIfAbsent(2, k => new LimitShopRandomCraftReward(product.getProductionId3(), 0, 2))
 						.Count += (int)_product.getCount3();
-					
-					Item item = player.addItem("LCoinShop", _product.getProductionId3(), _product.getCount3(), player,
+
+					Item? item = player.addItem("LCoinShop", _product.getProductionId3(), _product.getCount3(), player,
 						true);
-					
+
 					if (_product.isAnnounce3())
 					{
 						Broadcast.toAllOnlinePlayers(new ExItemAnnouncePacket(player, item,
@@ -396,10 +396,10 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				{
 					rewards.computeIfAbsent(3, k => new LimitShopRandomCraftReward(product.getProductionId4(), 0, 3))
 						.Count += (int)_product.getCount4();
-					
-					Item item = player.addItem("LCoinShop", _product.getProductionId4(), _product.getCount4(), player,
+
+					Item? item = player.addItem("LCoinShop", _product.getProductionId4(), _product.getCount4(), player,
 						true);
-					
+
 					if (_product.isAnnounce4())
 					{
 						Broadcast.toAllOnlinePlayers(new ExItemAnnouncePacket(player, item,
@@ -410,10 +410,10 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				{
 					rewards.computeIfAbsent(4, k => new LimitShopRandomCraftReward(product.getProductionId5(), 0, 4))
 						.Count += (int)_product.getCount5();
-					
-					Item item = player.addItem("LCoinShop", _product.getProductionId5(), _product.getCount5(), player,
+
+					Item? item = player.addItem("LCoinShop", _product.getProductionId5(), _product.getCount5(), player,
 						true);
-					
+
 					if (_product.isAnnounce5())
 					{
 						Broadcast.toAllOnlinePlayers(new ExItemAnnouncePacket(player, item,
@@ -426,10 +426,10 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 		{
 			rewards.put(0,
 				new LimitShopRandomCraftReward(_product.getProductionId(), (int)(_product.getCount() * _amount), 0));
-			
-			Item item = player.addItem("LCoinShop", _product.getProductionId(), _product.getCount() * _amount,
+
+			Item? item = player.addItem("LCoinShop", _product.getProductionId(), _product.getCount() * _amount,
 				_product.getEnchant(), player, true);
-			
+
 			if (_product.isAnnounce())
 			{
 				Broadcast.toAllOnlinePlayers(new ExItemAnnouncePacket(player, item,
@@ -464,12 +464,12 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 
 		player.sendPacket(new ExPurchaseLimitShopItemResultPacket(true, _shopIndex, _productId,
 			Math.Max(remainingInfo - _amount, 0), rewards.Values));
-		
+
 		player.sendItemList();
-		
+
 		// Remove request.
 		player.removeRequest<PrimeShopRequest>();
-        
+
         return ValueTask.CompletedTask;
     }
 }

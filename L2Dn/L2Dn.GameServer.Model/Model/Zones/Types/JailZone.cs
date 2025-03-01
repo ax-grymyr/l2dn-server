@@ -10,16 +10,12 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A jail zone
  * @author durgus
  */
-public class JailZone : ZoneType
+public class JailZone(int id, ZoneForm form): ZoneType(id, form)
 {
 	private static readonly Location JAIL_IN_LOC = new(-114356, -249645, -2984, 0);
 	private static readonly Location JAIL_OUT_LOC = new(17836, 170178, -3507, 0);
-	
-	public JailZone(int id):base(id)
-	{
-	}
-	
-	protected override void onEnter(Creature creature)
+
+    protected override void onEnter(Creature creature)
 	{
 		if (creature.isPlayer())
 		{
@@ -36,21 +32,21 @@ public class JailZone : ZoneType
 			}
 		}
 	}
-	
+
 	protected override void onExit(Creature creature)
 	{
-		if (creature.isPlayer())
+        Player? player = creature.getActingPlayer();
+		if (creature.isPlayer() && player != null)
 		{
-			Player player = creature.getActingPlayer();
 			player.setInsideZone(ZoneId.JAIL, false);
 			player.setInsideZone(ZoneId.NO_SUMMON_FRIEND, false);
-			
+
 			if (Config.JAIL_IS_PVP)
 			{
 				creature.setInsideZone(ZoneId.PVP, false);
 				creature.sendPacket(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE);
 			}
-			
+
 			if (player.isJailed())
 			{
 				// when a player wants to exit jail even if he is still jailed, teleport him back to jail
@@ -63,12 +59,12 @@ public class JailZone : ZoneType
 			}
 		}
 	}
-	
+
 	public static Location getLocationIn()
 	{
 		return JAIL_IN_LOC;
 	}
-	
+
 	public static Location getLocationOut()
 	{
 		return JAIL_OUT_LOC;

@@ -4,10 +4,12 @@
  * Abstract class for Zone settings.
  * @author UnAfraid
  */
-public abstract class AbstractZoneSettings
+public class AbstractZoneSettings
 {
-     /**
-      * Clear the Zone settings.
-      */
-     public abstract void clear();
+    /**
+     * Clear the Zone settings.
+     */
+    public virtual void clear()
+    {
+    }
 }

@@ -17,13 +17,12 @@ public struct RequestExEscapeScenePacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-		
-        MovieHolder holder = player.getMovieHolder();
+        MovieHolder? holder = player.getMovieHolder();
         if (holder == null)
             return ValueTask.CompletedTask;
-		
+
         holder.playerEscapeVote(player);
-        
+
         return ValueTask.CompletedTask;
     }
 }
