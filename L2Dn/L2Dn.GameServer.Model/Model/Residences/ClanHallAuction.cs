@@ -23,7 +23,7 @@ public class ClanHallAuction
     public ClanHallAuction(int clanHallId)
     {
         // TODO: pass clan hall data instead of id
-        _clanHall = ClanHallData.getInstance().getClanHallById(_clanHallId) ??
+        _clanHall = ClanHallData.getInstance().getClanHallById(clanHallId) ??
             throw new ArgumentException($"Clan hall id={clanHallId} not found");
 
 		_clanHallId = clanHallId;
