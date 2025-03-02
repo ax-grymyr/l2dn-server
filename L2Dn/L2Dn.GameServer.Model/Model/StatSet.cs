@@ -21,7 +21,7 @@ public class StatSet
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(StatSet));
 
 	/** Static empty immutable map, used to avoid multiple null checks over the source. */
-	public static readonly StatSet EMPTY_STATSET = new StatSet(new Map<string, object>());
+	public static readonly StatSet EMPTY_STATSET = new(new Map<string, object>());
 
 	private readonly Map<string, object> _set;
 
@@ -49,12 +49,9 @@ public class StatSet
 	 * Returns the set of values
 	 * @return HashMap
 	 */
-	public Map<string, object> getSet()
-	{
-		return _set;
-	}
+	public Map<string, object> getSet() => _set;
 
-	/**
+    /**
 	 * Add a set of couple values in the current set
 	 * @param newSet : StatSet pointing out the list of couples to add in the current set
 	 */
@@ -67,83 +64,66 @@ public class StatSet
 	 * Verifies if the stat set is empty.
 	 * @return {@code true} if the stat set is empty, {@code false} otherwise
 	 */
-	public bool isEmpty()
-	{
-		return _set.Count == 0;
-	}
+	public bool isEmpty() => _set.Count == 0;
 
-	/**
-	 * Return the bool value associated with key.
-	 * @param key : String designating the key in the set
-	 * @return bool : value associated to the key
-	 * @throws IllegalArgumentException : If value is not set or value is not bool
-	 */
-	public bool getBoolean(string key)
-	{
-		object? val = _set.get(key);
-		if (val == null)
-		{
-			throw new InvalidCastException("Boolean value required, but not specified");
-		}
+    /**
+     * Return the bool value associated with key.
+     * @param key : String designating the key in the set
+     * @return bool : value associated to the key
+     * @throws IllegalArgumentException : If value is not set or value is not bool
+     */
+    public bool getBoolean(string key)
+    {
+        object val = _set.get(key) ?? throw new InvalidCastException("Boolean value required, but not specified");
+        if (val is bool b)
+            return b;
 
-		if (val is bool)
-		{
-			return (bool)val;
-		}
-
-		try
-		{
-			return bool.Parse((string)val);
-		}
-		catch (Exception e)
-		{
+        try
+        {
+            return bool.Parse((string)val);
+        }
+        catch (Exception e)
+        {
             LOGGER.Error(e);
-			throw new InvalidCastException("Boolean value required, but found: " + val);
-		}
-	}
+            throw new InvalidCastException("Boolean value required, but found: " + val);
+        }
+    }
 
-	/**
-	 * Return the bool value associated with key.<br>
-	 * If no value is associated with key, or type of value is wrong, returns defaultValue.
-	 * @param key : String designating the key in the entry set
-	 * @return bool : value associated to the key
-	 */
-	public bool getBoolean(string key, bool defaultValue)
-	{
-		object? val = _set.get(key);
-		if (val == null)
-		{
-			return defaultValue;
-		}
-		if (val is bool)
-		{
-			return (bool) val;
-		}
-		try
-		{
-			return bool.Parse((string) val);
-		}
-		catch (Exception e)
-		{
+    /**
+     * Return the bool value associated with key.<br>
+     * If no value is associated with key, or type of value is wrong, returns defaultValue.
+     * @param key : String designating the key in the entry set
+     * @return bool : value associated to the key
+     */
+    public bool getBoolean(string key, bool defaultValue)
+    {
+        object? val = _set.get(key);
+        if (val == null)
+            return defaultValue;
+
+        if (val is bool b)
+            return b;
+
+        try
+        {
+            return bool.Parse((string)val);
+        }
+        catch (Exception e)
+        {
             LOGGER.Error(e);
-			return defaultValue;
-		}
-	}
+            return defaultValue;
+        }
+    }
 
-	public byte getByte(string key)
-	{
-		object? val = _set.get(key);
-		if (val == null)
+    public byte getByte(string key)
+    {
+        object val = _set.get(key) ?? throw new InvalidCastException("Byte value required, but not specified");
+		if (val is byte b)
+			return b;
+
+        try
 		{
-			throw new InvalidCastException("Byte value required, but not specified");
-		}
-		if (val is byte)
-		{
-			return (byte)val;
-		}
-		try
-		{
-			return byte.Parse((string) val);
+			return byte.Parse((string)val);
 		}
 		catch (Exception e)
 		{
@@ -156,14 +136,12 @@ public class StatSet
 	{
 		object? val = _set.get(key);
 		if (val == null)
-		{
 			return defaultValue;
-		}
-		if (val is byte)
-		{
-			return (byte)val;
-		}
-		try
+
+        if (val is byte b)
+			return b;
+
+        try
 		{
 			return byte.Parse((string)val);
 		}
@@ -174,33 +152,14 @@ public class StatSet
 		}
 	}
 
-	public short increaseByte(string key, byte increaseWith)
-	{
-		byte newValue = (byte) (getByte(key) + increaseWith);
-		set(key, newValue);
-		return newValue;
-	}
-
-	public short increaseByte(string key, byte defaultValue, byte increaseWith)
-	{
-		byte newValue = (byte) (getByte(key, defaultValue) + increaseWith);
-		set(key, newValue);
-		return newValue;
-	}
-
 	public byte[] getByteArray(string key, string splitOn)
-	{
-		object? val = _set.get(key);
-		if (val == null)
-		{
-			throw new InvalidCastException("Byte value required, but not specified");
-		}
-		if (val is byte)
-		{
-			return new byte[] { (byte)val };
-		}
-		int c = 0;
-		string[] vals = ((string) val).Split(splitOn);
+    {
+        object val = _set.get(key) ?? throw new InvalidCastException("Byte value required, but not specified");
+		if (val is byte b)
+			return [b];
+
+        int c = 0;
+		string[] vals = ((string)val).Split(splitOn);
 		byte[] result = new byte[vals.Length];
 		foreach (string v in vals)
 		{
@@ -214,31 +173,17 @@ public class StatSet
 				throw new InvalidCastException("Byte value required, but found: " + val);
 			}
 		}
-		return result;
-	}
 
-	public List<byte> getByteList(string key, string splitOn)
-	{
-		List<byte> result = new();
-		foreach (byte i in getByteArray(key, splitOn))
-		{
-			result.Add(i);
-		}
 		return result;
 	}
 
 	public short getShort(string key)
-	{
-		object? val = _set.get(key);
-		if (val == null)
-		{
-			throw new InvalidCastException("Short value required, but not specified");
-		}
-		if (val is short)
-		{
-			return (short) val;
-		}
-		try
+    {
+        object val = _set.get(key) ?? throw new InvalidCastException("Short value required, but not specified");
+		if (val is short s)
+			return s;
+
+        try
 		{
 			return short.Parse((string) val);
 		}
@@ -253,14 +198,12 @@ public class StatSet
 	{
 		object? val = _set.get(key);
 		if (val == null)
-		{
 			return defaultValue;
-		}
-		if (val is short)
-		{
-			return (short) val;
-		}
-		try
+
+        if (val is short s)
+			return s;
+
+        try
 		{
 			return short.Parse((string) val);
 		}
@@ -271,36 +214,17 @@ public class StatSet
 		}
 	}
 
-	public short increaseShort(string key, short increaseWith)
-	{
-		short newValue = (short) (getShort(key) + increaseWith);
-		set(key, newValue);
-		return newValue;
-	}
+	public int getInt(string key)
+    {
+        object val = _set.get(key) ??
+            throw new InvalidCastException("Integer value required, but not specified: " + key + "!");
 
-	public short increaseShort(string key, short defaultValue, short increaseWith)
-	{
-		short newValue = (short) (getShort(key, defaultValue) + increaseWith);
-		set(key, newValue);
-		return newValue;
-	}
-
-	public virtual int getInt(string key)
-	{
-		object? val = _set.get(key);
-		if (val == null)
-		{
-			throw new InvalidCastException("Integer value required, but not specified: " + key + "!");
-		}
-
-		if (val is int)
-		{
-			return (int) val;
-		}
+		if (val is int i)
+			return i;
 
 		try
 		{
-			return int.Parse((string) val);
+			return int.Parse((string)val);
 		}
 		catch (Exception e)
 		{
@@ -313,13 +237,12 @@ public class StatSet
 	{
 		object? val = _set.get(key);
 		if (val == null)
-		{
 			return defaultValue;
-		}
-		if (val is int i)
+
+        if (val is int i)
 			return i;
 
-		if (val is double d && Math.Round(d) == d)
+		if (val is double d && Math.Abs(Math.Round(d) - d) < 0.0000001)
 			return (int)d;
 
 		try
@@ -333,33 +256,14 @@ public class StatSet
 		}
 	}
 
-	public int increaseInt(string key, int increaseWith)
-	{
-		int newValue = getInt(key) + increaseWith;
-		set(key, newValue);
-		return newValue;
-	}
-
-	public int increaseInt(string key, int defaultValue, int increaseWith)
-	{
-		int newValue = getInt(key, defaultValue) + increaseWith;
-		set(key, newValue);
-		return newValue;
-	}
-
 	public int[] getIntArray(string key, string splitOn)
-	{
-		object? val = _set.get(key);
-		if (val == null)
-		{
-			throw new InvalidCastException("Integer value required, but not specified");
-		}
-		if (val is int)
-		{
-			return new int[] { (int) val };
-		}
-		int c = 0;
-		string[] vals = ((string) val).Split(splitOn);
+    {
+        object val = _set.get(key) ?? throw new InvalidCastException("Array of integers required, but not specified");
+		if (val is int i)
+			return [i];
+
+        int c = 0;
+        string[] vals = ((string)val).Split(splitOn);
 		int[] result = new int[vals.Length];
 		foreach (string v in vals)
 		{
@@ -373,6 +277,7 @@ public class StatSet
 				throw new InvalidCastException("Integer value required, but found: " + val);
 			}
 		}
+
 		return result;
 	}
 
@@ -383,104 +288,25 @@ public class StatSet
 		if (!string.IsNullOrEmpty(val))
 		{
 			string[] splitVal = val.Split(",");
-			result = new(splitVal.Length + 1);
+			result = new List<int>(splitVal.Length + 1);
 			foreach (string split in splitVal)
-			{
 				result.Add(int.Parse(split));
-			}
 		}
 		else
 		{
-			result = new(1);
+			result = new List<int>(1);
 		}
+
 		return result;
-	}
-
-	public void setIntegerList(string key, List<int> list)
-	{
-		if (key == null)
-		{
-			return;
-		}
-
-		if (list == null || list.Count == 0)
-		{
-			remove(key);
-			return;
-		}
-
-		StringBuilder sb = new();
-		foreach (int element in list)
-		{
-			sb.Append(element);
-			sb.Append(',');
-		}
-
-		sb.Remove(sb.Length - 1, 1); // Prettify value.
-
-		set(key, sb.ToString());
-	}
-
-	public Map<int, int> getIntegerMap(string key)
-	{
-		string val = getString(key, string.Empty);
-		Map<int, int> result;
-		if (!string.IsNullOrEmpty(val))
-		{
-			string[] splitVal = val.Split(",");
-			result = new();
-			foreach (string split in splitVal)
-			{
-				string[] entry = split.Split("-");
-				result.put(int.Parse(entry[0]), int.Parse(entry[1]));
-			}
-		}
-		else
-		{
-			result = new();
-		}
-		return result;
-	}
-
-	public void setIntegerMap(string key, Map<int, int> map)
-	{
-		if (key == null)
-		{
-			return;
-		}
-
-		if (map == null || map.Count == 0)
-		{
-			remove(key);
-			return;
-		}
-
-		StringBuilder sb = new();
-		foreach (System.Collections.Generic.KeyValuePair<int, int> entry in map)
-		{
-			sb.Append(entry.Key);
-			sb.Append('-');
-			sb.Append(entry.Value);
-			sb.Append(',');
-		}
-
-		sb.Remove(sb.Length - 1, 1); // Prettify value.
-
-		set(key, sb.ToString());
 	}
 
 	public DateTime getDateTime(string key)
-	{
-		object? val = _set.get(key);
-		if (val == null)
-		{
-			throw new InvalidCastException("DateTime value required, but not specified");
-		}
-		if (val is DateTime)
-		{
-			return (DateTime) val;
-		}
-		try
+    {
+        object val = _set.get(key) ?? throw new InvalidCastException("DateTime value required, but not specified");
+		if (val is DateTime time)
+			return time;
+
+        try
 		{
 			return DateTime.Parse((string) val);
 		}
@@ -492,20 +318,15 @@ public class StatSet
 	}
 
 	public long getLong(string key)
-	{
-		object? val = _set.get(key);
-		if (val == null)
-		{
-			throw new InvalidCastException("Long value required, but not specified");
-		}
-		if (val is long)
-		{
-			return (long) val;
-		}
-		try
-		{
-			return long.Parse((string) val);
-		}
+    {
+        object val = _set.get(key) ?? throw new InvalidCastException("Long value required, but not specified");
+		if (val is long l)
+			return l;
+
+        try
+        {
+            return long.Parse((string)val);
+        }
 		catch (Exception e)
 		{
             LOGGER.Error(e);
@@ -517,17 +338,15 @@ public class StatSet
 	{
 		object? val = _set.get(key);
 		if (val == null)
-		{
 			return defaultValue;
-		}
-		if (val is DateTime)
-		{
-			return (DateTime) val;
-		}
-		try
-		{
-			return DateTime.Parse((string) val);
-		}
+
+        if (val is DateTime time)
+			return time;
+
+        try
+        {
+            return DateTime.Parse((string)val);
+        }
 		catch (Exception e)
 		{
             LOGGER.Error(e);
@@ -539,17 +358,15 @@ public class StatSet
 	{
 		object? val = _set.get(key);
 		if (val == null)
-		{
 			return defaultValue;
-		}
-		if (val is long)
-		{
-			return (long) val;
-		}
-		try
-		{
-			return long.Parse((string) val);
-		}
+
+        if (val is long l)
+			return l;
+
+        try
+        {
+            return long.Parse((string)val);
+        }
 		catch (Exception e)
 		{
             LOGGER.Error(e);
@@ -557,28 +374,9 @@ public class StatSet
 		}
 	}
 
-	public long increaseLong(string key, long increaseWith)
-	{
-		long newValue = getLong(key) + increaseWith;
-		set(key, newValue);
-		return newValue;
-	}
-
-	public long increaseLong(string key, long defaultValue, long increaseWith)
-	{
-		long newValue = getLong(key, defaultValue) + increaseWith;
-		set(key, newValue);
-		return newValue;
-	}
-
 	public float getFloat(string key)
-	{
-		object? val = _set.get(key);
-		if (val == null)
-		{
-			throw new InvalidCastException("Float value required, but not specified");
-		}
-
+    {
+        object? val = _set.get(key) ?? throw new InvalidCastException("Float value required, but not specified");
 		if (val is float f)
 			return f;
 
@@ -586,9 +384,9 @@ public class StatSet
 			return (float)d;
 
 		try
-		{
-			return float.Parse((string) val, CultureInfo.InvariantCulture);
-		}
+        {
+            return float.Parse((string)val, CultureInfo.InvariantCulture);
+        }
 		catch (Exception e)
 		{
             LOGGER.Error(e);
@@ -622,35 +420,19 @@ public class StatSet
 		}
 	}
 
-	public float increaseFloat(string key, float increaseWith)
-	{
-		float newValue = getFloat(key) + increaseWith;
-		set(key, newValue);
-		return newValue;
-	}
-
-	public float increaseFloat(string key, float defaultValue, float increaseWith)
-	{
-		float newValue = getFloat(key, defaultValue) + increaseWith;
-		set(key, newValue);
-		return newValue;
-	}
-
 	public double getDouble(string key)
-	{
-		object? val = _set.get(key);
-		if (val == null)
-		{
-			throw new InvalidCastException("Double value required, but not specified");
-		}
-		if (val is double)
-		{
-			return (double) val;
-		}
+    {
+        object val = _set.get(key) ?? throw new InvalidCastException("Double value required, but not specified");
+		if (val is double d)
+			return d;
+
+		if (val is float f)
+			return f;
+
 		try
-		{
-			return double.Parse((string) val, CultureInfo.InvariantCulture);
-		}
+        {
+            return double.Parse((string)val, CultureInfo.InvariantCulture);
+        }
 		catch (Exception e)
 		{
             LOGGER.Error(e);
@@ -662,12 +444,13 @@ public class StatSet
 	{
 		object? val = _set.get(key);
 		if (val == null)
-		{
 			return defaultValue;
-		}
 
-		if (val is double d)
-			return d;
+        if (val is double d)
+            return d;
+
+        if (val is float f)
+            return f;
 
 		if (val is IConvertible convertible)
 			return convertible.ToDouble(CultureInfo.InvariantCulture);
@@ -683,27 +466,9 @@ public class StatSet
 		}
 	}
 
-	public double increaseDouble(string key, double increaseWith)
-	{
-		double newValue = getDouble(key) + increaseWith;
-		set(key, newValue);
-		return newValue;
-	}
-
-	public double increaseDouble(string key, double defaultValue, double increaseWith)
-	{
-		double newValue = getDouble(key, defaultValue) + increaseWith;
-		set(key, newValue);
-		return newValue;
-	}
-
 	public string getString(string key)
-	{
-		object? val = _set.get(key);
-		if (val == null)
-		{
-			throw new InvalidCastException("String value required, but not specified");
-		}
+    {
+        object val = _set.get(key) ?? throw new InvalidCastException("String value required, but not specified");
 		return val.ToString() ?? string.Empty;
 	}
 
@@ -713,15 +478,12 @@ public class StatSet
 		if (val == null)
 			return defaultValue;
 
-        return val.ToString() ?? string.Empty;
+        return val.ToString() ?? defaultValue;
 	}
 
 	public TimeSpan getDuration(string key)
-	{
-		object? val = _set.get(key);
-		if (val == null)
-			throw new InvalidCastException("String value required, but not specified");
-
+    {
+        object val = _set.get(key) ?? throw new InvalidCastException("String value required, but not specified");
 		return TimeUtil.ParseDuration(val.ToString());
 	}
 
@@ -738,20 +500,17 @@ public class StatSet
 
 	public T getEnum<T>(string key)
 		where T: struct, Enum
-	{
-		object? val = _set.get(key);
-		if (val == null)
-		{
-			throw new InvalidCastException("Enum value of type " + typeof(T).Name + " required, but not specified");
-		}
+    {
+        object val = _set.get(key) ??
+            throw new InvalidCastException("Enum value of type " + typeof(T).Name + " required, but not specified");
 
 		if (val is T value)
 			return value;
 
 		try
-		{
-			return Enum.Parse<T>((string)val, true);
-		}
+        {
+            return Enum.Parse<T>((string)val, true);
+        }
 		catch (Exception e)
 		{
             LOGGER.Error(e);
@@ -769,6 +528,7 @@ public class StatSet
 			return value;
 
         string str = val.ToString() ?? string.Empty;
+
         if (string.IsNullOrWhiteSpace(str))
             return defaultValue;
 
@@ -893,16 +653,32 @@ public class StatSet
 	}
 
 	public List<T>? getEnumList<T>(string key)
-		where T: struct, Enum
+		where T: unmanaged, Enum
 	{
 		object? obj = _set.get(key);
-		if (obj is not List<T> list)
-		{
-			return null;
-		}
+        T? value = TryConvertToEnum<T>(obj);
+        if (value is not null)
+            return [value.Value];
 
-		return list;
-	}
+        if (obj is List<T> list)
+            return list;
+
+        if (obj is IEnumerable<T> enumerable)
+            return enumerable.ToList();
+
+        if (obj is not IEnumerable enumerable2)
+            throw new InvalidCastException("List of enum of type " + typeof(T).Name + " required, but found: " + obj);
+
+        try
+        {
+            return enumerable2.Cast<object?>().Select(ConvertToEnum<T>).ToList();
+        }
+        catch (Exception exception)
+        {
+            LOGGER.Error(exception);
+            throw new InvalidCastException("List of enum of type " + typeof(T).Name + " required, but found: " + obj);
+        }
+    }
 
 	/**
 	 * @param <T>
@@ -915,27 +691,7 @@ public class StatSet
 		throw new NotImplementedException();
 	}
 
-	public Map<K, V>? getMap<K, V>(string key)
-        where K: notnull
-	{
-		object? obj = _set.get(key);
-		if (!(obj is Map<K, V>))
-		{
-			return null;
-		}
-
-		Map<K, V> originalList = (Map<K, V>)obj;
-		if (originalList.Count != 0 && (!originalList.Keys.All(k=>k is K) ||
-		                                !originalList.Values.All(v=>v is V)))
-		{
-			LOGGER.Warn($"getMap<{typeof(K).Name}, {typeof(V).Name}>(\"{key}\") requested with wrong type: " +
-			            obj.GetType().Name + "!");
-		}
-
-		return (Map<K, V>) obj;
-	}
-
-	public virtual void set(string name, object? value)
+	public void set(string name, object? value)
     {
         if (value is null)
             _set.TryRemove(name, out _);
@@ -943,57 +699,53 @@ public class StatSet
 		    _set[name] = value;
 	}
 
-	public virtual void set(string name, bool value)
+	public void set(string name, bool value)
 	{
 		_set.put(name, value ? bool.TrueString : bool.FalseString);
 	}
 
-	public virtual void set(string key, byte value)
+	public void set(string key, byte value)
 	{
 		_set.put(key, value);
 	}
 
-	public virtual void set(string key, short value)
+	public void set(string key, short value)
 	{
 		_set.put(key, value);
 	}
 
-	public virtual void set(string key, int value)
+	public void set(string key, int value)
 	{
 		_set.put(key, value);
 	}
 
-	public virtual void set(string key, long value)
+	public void set(string key, long value)
 	{
 		_set.put(key, value);
 	}
 
-	public virtual void set(string key, float value)
+	public void set(string key, float value)
 	{
 		_set.put(key, value);
 	}
 
-	public virtual void set(string key, double value)
+	public void set(string key, double value)
 	{
 		_set.put(key, value);
 	}
 
-	public virtual void set(string key, string value)
+	public void set(string key, string value)
 	{
-		if (value == null)
-		{
-			return;
-		}
 		_set.put(key, value);
 	}
 
-	public virtual void set<TValue>(string key, TValue value)
+	public void set<TValue>(string key, TValue value)
 		where TValue: struct, Enum
 	{
 		_set.put(key, value);
 	}
 
-	public virtual void remove(string key)
+	public void remove(string key)
 	{
 		_set.remove(key);
 	}
@@ -1012,4 +764,35 @@ public class StatSet
 	{
 		return "StatSet{_set=" + _set + '}';
 	}
+
+    private static T ConvertToEnum<T>(object? value)
+        where T: unmanaged, Enum
+    {
+        return value switch
+        {
+            T val => val,
+            string str => Enum.Parse<T>(str, true),
+            int i => i.ToEnum<T>(),
+            uint i => ((int)i).ToEnum<T>(),
+            long l => l.ToEnum<T>(),
+            ulong l => ((long)l).ToEnum<T>(),
+            _ => Enum.Parse<T>(value?.ToString() ?? string.Empty, true),
+        };
+    }
+
+    private static T? TryConvertToEnum<T>(object? value)
+        where T: unmanaged, Enum
+    {
+        return value switch
+        {
+            null => null,
+            T val => val,
+            string str => Enum.TryParse(str, true, out T v) ? v : null,
+            int i => i.ToEnum<T>(),
+            uint i => ((int)i).ToEnum<T>(),
+            long l => l.ToEnum<T>(),
+            ulong l => ((long)l).ToEnum<T>(),
+            _ => Enum.TryParse(value.ToString() ?? string.Empty, true, out T v) ? v : null,
+        };
+    }
 }

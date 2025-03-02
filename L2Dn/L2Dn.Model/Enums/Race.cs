@@ -36,5 +36,6 @@ public enum Race
     UNK_27,
     UNK_28,
     UNK_29,
-    SYLPH
+    SYLPH,
+    HIGH_ELF,
 }
