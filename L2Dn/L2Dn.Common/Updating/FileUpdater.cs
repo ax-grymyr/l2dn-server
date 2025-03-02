@@ -32,7 +32,7 @@ public static class FileUpdater
         }
         catch (Exception exception)
         {
-            _logger.Warn($"Error downloading {description} file {fileListUrl}: {exception.Message}");
+            _logger.Warn($"Error downloading {description} file {fileListUrl}: {exception}");
             return;
         }
 
@@ -62,7 +62,7 @@ public static class FileUpdater
             }
             catch (Exception exception)
             {
-                _logger.Warn($"Error downloading {description} file {url}: {exception.Message}");
+                _logger.Warn($"Error downloading {description} file {url}: {exception}");
                 error = true;
                 continue;
             }
