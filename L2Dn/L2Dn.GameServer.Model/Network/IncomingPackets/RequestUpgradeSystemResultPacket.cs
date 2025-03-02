@@ -160,9 +160,9 @@ public struct RequestUpgradeSystemResultPacket: IIncomingPacket<GameSession>
 			{
 				ItemVariables oldVars = existingItem.getVariables();
 				ItemVariables newVars = addedItem.getVariables();
-				newVars.set(ItemVariables.VISUAL_ID, oldVars.getInt(ItemVariables.VISUAL_ID, 0));
-				newVars.set(ItemVariables.VISUAL_APPEARANCE_STONE_ID, oldVars.getInt(ItemVariables.VISUAL_APPEARANCE_STONE_ID, 0));
-				newVars.set(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME, oldVars.getLong(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME, 0));
+				newVars.Set(ItemVariables.VISUAL_ID, oldVars.Get(ItemVariables.VISUAL_ID, 0));
+				newVars.Set(ItemVariables.VISUAL_APPEARANCE_STONE_ID, oldVars.Get(ItemVariables.VISUAL_APPEARANCE_STONE_ID, 0));
+				newVars.Set(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME, oldVars.Get(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME, 0L));
 				newVars.storeMe();
 				addedItem.scheduleVisualLifeTime();
 			}

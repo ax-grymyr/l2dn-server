@@ -6,25 +6,25 @@ namespace L2Dn.GameServer.Model.Variables;
 public class ItemVariables: AbstractVariables<DbItemVariable>
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ItemVariables));
-	
+
 	private readonly int _objectId;
-	
+
 	// Static Constants
 	public const string VISUAL_ID = "visualId";
 	public const string VISUAL_APPEARANCE_STONE_ID = "visualAppearanceStoneId";
 	public const string VISUAL_APPEARANCE_LIFE_TIME = "visualAppearanceLifetime";
 	public const string BLESSED = "blessed";
-	
+
 	public ItemVariables(int objectId)
 	{
 		_objectId = objectId;
-		restoreMe();
+		Restore();
 	}
-	
+
 	public static bool hasVariables(int objectId)
 	{
 		// Restore previous variables.
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			return ctx.ItemVariables.Any(r => r.ItemId == objectId);

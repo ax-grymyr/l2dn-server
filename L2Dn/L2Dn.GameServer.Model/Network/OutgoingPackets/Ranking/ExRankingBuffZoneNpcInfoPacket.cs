@@ -8,8 +8,8 @@ public readonly struct ExRankingBuffZoneNpcInfoPacket: IOutgoingPacket
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_RANKING_CHAR_BUFFZONE_NPC_INFO);
-        
-        DateTime cooldown = GlobalVariablesManager.getInstance().getDateTime(GlobalVariablesManager.RANKING_POWER_COOLDOWN, DateTime.MinValue);
+
+        DateTime cooldown = GlobalVariablesManager.getInstance().Get(GlobalVariablesManager.RANKING_POWER_COOLDOWN, DateTime.MinValue);
         DateTime currentTime = DateTime.UtcNow;
         if (cooldown > currentTime)
         {

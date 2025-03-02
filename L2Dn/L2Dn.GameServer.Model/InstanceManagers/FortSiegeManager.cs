@@ -456,23 +456,22 @@ public class FortSiegeManager
 
             SpawnData.getInstance().getSpawns().ForEach(spawnTemplate => spawnTemplate.
                 getGroupsByName(flag.getVariables().
-                    getString(FortSiege.GREG_SPAWN_VAR, FortSiege.ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN)).ForEach(
-                    holder =>
+                    Get(FortSiege.GREG_SPAWN_VAR, FortSiege.ORC_FORTRESS_GREG_BOTTOM_RIGHT_SPAWN)).
+                ForEach(holder =>
+                {
+                    holder.spawnAll();
+                    foreach (NpcSpawnTemplate nst in holder.getSpawns())
                     {
-                        holder.spawnAll();
-                        foreach (NpcSpawnTemplate nst in holder.getSpawns())
+                        foreach (Npc npc in nst.getSpawnedNpcs())
                         {
-                            foreach (Npc npc in nst.getSpawnedNpcs())
+                            Spawn? spawn = npc.getSpawn();
+                            if (spawn != null)
                             {
-                                Spawn? spawn = npc.getSpawn();
-                                if (spawn != null)
-                                {
-                                    spawn.stopRespawn();
-                                }
+                                spawn.stopRespawn();
                             }
                         }
-                    }));
-
+                    }
+                }));
         }
 
         fort.getSiege().addFlagCount(-1);

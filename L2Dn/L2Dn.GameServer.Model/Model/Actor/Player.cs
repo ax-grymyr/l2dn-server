@@ -1007,7 +1007,7 @@ public class Player: Playable
 
 			if (player.isGM())
 			{
-				long masks = player.getVariables().getLong(COND_OVERRIDE_KEY, int.MaxValue);
+				long masks = player.getVariables().Get(COND_OVERRIDE_KEY, long.MaxValue);
 				player.setOverrideCond(masks);
 			}
 
@@ -1192,22 +1192,22 @@ public class Player: Playable
 
     public bool isHairAccessoryEnabled()
 	{
-		return getVariables().getBoolean(PlayerVariables.HAIR_ACCESSORY_VARIABLE_NAME, true);
+		return getVariables().Get(PlayerVariables.HAIR_ACCESSORY_VARIABLE_NAME, true);
 	}
 
 	public void setHairAccessoryEnabled(bool enabled)
 	{
-		getVariables().set(PlayerVariables.HAIR_ACCESSORY_VARIABLE_NAME, enabled);
+		getVariables().Set(PlayerVariables.HAIR_ACCESSORY_VARIABLE_NAME, enabled);
 	}
 
 	public int getLampExp()
 	{
-		return getVariables().getInt(PlayerVariables.MAGIC_LAMP_EXP, 0);
+		return getVariables().Get(PlayerVariables.MAGIC_LAMP_EXP, 0);
 	}
 
 	public void setLampExp(int exp)
 	{
-		getVariables().set(PlayerVariables.MAGIC_LAMP_EXP, exp);
+		getVariables().Set(PlayerVariables.MAGIC_LAMP_EXP, exp);
 	}
 
 	/**
@@ -2888,7 +2888,7 @@ public class Player: Playable
 
 	public DateTime? getClanJoinTime()
 	{
-		DateTime time = getVariables().getDateTime(PlayerVariables.CLAN_JOIN_TIME, DateTime.MinValue);
+		DateTime time = getVariables().Get(PlayerVariables.CLAN_JOIN_TIME, DateTime.MinValue);
 		if (time == DateTime.MinValue)
 			return null;
 		return time;
@@ -2896,7 +2896,7 @@ public class Player: Playable
 
 	public void setClanJoinTime(DateTime time)
 	{
-		getVariables().set(PlayerVariables.CLAN_JOIN_TIME, time);
+		getVariables().Set(PlayerVariables.CLAN_JOIN_TIME, time);
 	}
 
 	public DateTime? getClanCreateExpiryTime()
@@ -7721,7 +7721,7 @@ public class Player: Playable
 				// Task for henna duration
 				if (henna.getDuration() > 0)
 				{
-					TimeSpan remainingTime = getVariables().getDateTime("HennaDuration" + slot, currentTime) - currentTime;
+					TimeSpan remainingTime = getVariables().Get("HennaDuration" + slot, currentTime) - currentTime;
 					if (remainingTime < TimeSpan.Zero)
 					{
 						removeHenna(slot);
@@ -7833,7 +7833,7 @@ public class Player: Playable
 		if (henna.getCancelCount() > 0 && restoreDye)
 		{
             DateTime now = DateTime.UtcNow;
-			TimeSpan remainingTime = getVariables().getDateTime("HennaDuration" + slot, now) - now;
+			TimeSpan remainingTime = getVariables().Get("HennaDuration" + slot, now) - now;
 			if (remainingTime > TimeSpan.Zero || henna.getDuration() < 0)
 			{
 				_inventory.addItem("Henna", henna.getDyeItemId(), henna.getCancelCount(), this, null);
@@ -7848,7 +7848,7 @@ public class Player: Playable
 		// Remove henna duration task
 		if (henna.getDuration() > 0)
 		{
-			getVariables().remove("HennaDuration" + slot);
+			getVariables().Remove("HennaDuration" + slot);
             ScheduledFuture? schedule = _hennaRemoveSchedules.get(slot);
 			if (schedule != null)
 			{
@@ -7913,7 +7913,7 @@ public class Player: Playable
 				// Task for henna duration
 				if (henna.getDuration() > 0)
 				{
-					getVariables().set("HennaDuration" + slotId, DateTime.UtcNow + TimeSpan.FromMilliseconds(henna.getDuration() * 60000));
+					getVariables().Set("HennaDuration" + slotId, DateTime.UtcNow + TimeSpan.FromMilliseconds(henna.getDuration() * 60000));
 					_hennaRemoveSchedules.put(slotId, ThreadPool.schedule(new HennaDurationTask(this, slotId), TimeSpan.FromMilliseconds(henna.getDuration() * 60000)));
 				}
 
@@ -8123,32 +8123,32 @@ public class Player: Playable
 
 	public void setDyePotentialDailyStep(int dailyStep)
 	{
-		getVariables().set(PlayerVariables.DYE_POTENTIAL_DAILY_STEP, dailyStep);
+		getVariables().Set(PlayerVariables.DYE_POTENTIAL_DAILY_STEP, dailyStep);
 	}
 
 	public void setDyePotentialDailyCount(int dailyCount)
 	{
-		getVariables().set(PlayerVariables.DYE_POTENTIAL_DAILY_COUNT, dailyCount);
+		getVariables().Set(PlayerVariables.DYE_POTENTIAL_DAILY_COUNT, dailyCount);
 	}
 
 	public int getDyePotentialDailyStep()
 	{
-		return getVariables().getInt(PlayerVariables.DYE_POTENTIAL_DAILY_STEP, 1);
+		return getVariables().Get(PlayerVariables.DYE_POTENTIAL_DAILY_STEP, 1);
 	}
 
 	public int getDyePotentialDailyCount()
 	{
-		return getVariables().getInt(PlayerVariables.DYE_POTENTIAL_DAILY_COUNT, 20);
+		return getVariables().Get(PlayerVariables.DYE_POTENTIAL_DAILY_COUNT, 20);
 	}
 
 	public int getDyePotentialDailyEnchantReset()
 	{
-		return getVariables().getInt(PlayerVariables.DYE_POTENTIAL_DAILY_COUNT_ENCHANT_RESET, 0);
+		return getVariables().Get(PlayerVariables.DYE_POTENTIAL_DAILY_COUNT_ENCHANT_RESET, 0);
 	}
 
 	public void setDyePotentialDailyEnchantReset(int val)
 	{
-		getVariables().set(PlayerVariables.DYE_POTENTIAL_DAILY_COUNT_ENCHANT_RESET, val);
+		getVariables().Set(PlayerVariables.DYE_POTENTIAL_DAILY_COUNT_ENCHANT_RESET, val);
 	}
 
 	/**
@@ -9828,14 +9828,14 @@ public class Player: Playable
 
 		if (subClass.isDualClass())
 		{
-			getVariables().remove(PlayerVariables.ABILITY_POINTS_DUAL_CLASS);
-			getVariables().remove(PlayerVariables.ABILITY_POINTS_USED_DUAL_CLASS);
-			int revelationSkill = getVariables().getInt(PlayerVariables.REVELATION_SKILL_1_DUAL_CLASS, 0);
+			getVariables().Remove(PlayerVariables.ABILITY_POINTS_DUAL_CLASS);
+			getVariables().Remove(PlayerVariables.ABILITY_POINTS_USED_DUAL_CLASS);
+			int revelationSkill = getVariables().Get(PlayerVariables.REVELATION_SKILL_1_DUAL_CLASS, 0);
 			if (revelationSkill != 0)
 			{
 				removeSkill(revelationSkill);
 			}
-			revelationSkill = getVariables().getInt(PlayerVariables.REVELATION_SKILL_2_DUAL_CLASS, 0);
+			revelationSkill = getVariables().Get(PlayerVariables.REVELATION_SKILL_2_DUAL_CLASS, 0);
 			if (revelationSkill != 0)
 			{
 				removeSkill(revelationSkill);
@@ -11049,18 +11049,18 @@ public class Player: Playable
 		// Store death points.
 		if (_isDeathKnight)
 		{
-			getVariables().set(PlayerVariables.DEATH_POINT_COUNT, _deathPoints);
+			getVariables().Set(PlayerVariables.DEATH_POINT_COUNT, _deathPoints);
 		}
 
 		// Store beast points.
 		if (_isVanguard)
 		{
-			getVariables().set(PlayerVariables.BEAST_POINT_COUNT, _beastPoints);
+			getVariables().Set(PlayerVariables.BEAST_POINT_COUNT, _beastPoints);
 		}
 
 		if (_isAssassin)
 		{
-			getVariables().set(PlayerVariables.ASSASSINATION_POINT_COUNT, _assassinationPoints);
+			getVariables().Set(PlayerVariables.ASSASSINATION_POINT_COUNT, _assassinationPoints);
 		}
 
 		// Make sure player variables are stored.
@@ -12010,9 +12010,9 @@ public class Player: Playable
 
 	public void setSayhaGraceSupportEndTime(DateTime endTime)
 	{
-		if (getVariables().getDateTime(PlayerVariables.SAYHA_GRACE_SUPPORT_ENDTIME, DateTime.MinValue) < DateTime.UtcNow)
+		if (getVariables().Get(PlayerVariables.SAYHA_GRACE_SUPPORT_ENDTIME, DateTime.MinValue) < DateTime.UtcNow)
 		{
-			getVariables().set(PlayerVariables.SAYHA_GRACE_SUPPORT_ENDTIME, endTime);
+			getVariables().Set(PlayerVariables.SAYHA_GRACE_SUPPORT_ENDTIME, endTime);
 			sendPacket(new ExUserBoostStatPacket(this, BonusExpType.VITALITY));
 			sendPacket(new ExVitalityEffectInfoPacket(this));
 		}
@@ -12020,15 +12020,15 @@ public class Player: Playable
 
 	public DateTime? getSayhaGraceSupportEndTime()
 	{
-        DateTime value = getVariables().getDateTime(PlayerVariables.SAYHA_GRACE_SUPPORT_ENDTIME, DateTime.MinValue);
+        DateTime value = getVariables().Get(PlayerVariables.SAYHA_GRACE_SUPPORT_ENDTIME, DateTime.MinValue);
 		return value == DateTime.MinValue ? null : value;
 	}
 
 	public bool setLimitedSayhaGraceEndTime(DateTime endTime)
 	{
-		if (endTime > getVariables().getDateTime(PlayerVariables.LIMITED_SAYHA_GRACE_ENDTIME, DateTime.MinValue))
+		if (endTime > getVariables().Get(PlayerVariables.LIMITED_SAYHA_GRACE_ENDTIME, DateTime.MinValue))
 		{
-			getVariables().set(PlayerVariables.LIMITED_SAYHA_GRACE_ENDTIME, endTime);
+			getVariables().Set(PlayerVariables.LIMITED_SAYHA_GRACE_ENDTIME, endTime);
 			sendPacket(new ExUserBoostStatPacket(this, BonusExpType.VITALITY));
 			sendPacket(new ExVitalityEffectInfoPacket(this));
 			return true;
@@ -12038,7 +12038,7 @@ public class Player: Playable
 
 	public DateTime? getLimitedSayhaGraceEndTime()
 	{
-		DateTime value = getVariables().getDateTime(PlayerVariables.LIMITED_SAYHA_GRACE_ENDTIME, DateTime.MinValue);
+		DateTime value = getVariables().Get(PlayerVariables.LIMITED_SAYHA_GRACE_ENDTIME, DateTime.MinValue);
         return value == DateTime.MinValue ? null : value;
 	}
 
@@ -12135,7 +12135,7 @@ public class Player: Playable
 			// Revelation skills.
 			if (isDualClassActive())
 			{
-				int revelationSkill = getVariables().getInt(PlayerVariables.REVELATION_SKILL_1_DUAL_CLASS, 0);
+				int revelationSkill = getVariables().Get(PlayerVariables.REVELATION_SKILL_1_DUAL_CLASS, 0);
 				if (revelationSkill != 0)
                 {
                     Skill skill1 = SkillData.getInstance().getSkill(revelationSkill, 1) ??
@@ -12143,7 +12143,7 @@ public class Player: Playable
 
 					addSkill(skill1, false);
 				}
-				revelationSkill = getVariables().getInt(PlayerVariables.REVELATION_SKILL_2_DUAL_CLASS, 0);
+				revelationSkill = getVariables().Get(PlayerVariables.REVELATION_SKILL_2_DUAL_CLASS, 0);
 				if (revelationSkill != 0)
 				{
                     Skill skill1 = SkillData.getInstance().getSkill(revelationSkill, 1) ??
@@ -12154,7 +12154,7 @@ public class Player: Playable
 			}
 			else if (!isSubClassActive())
 			{
-				int revelationSkill = getVariables().getInt(PlayerVariables.REVELATION_SKILL_1_MAIN_CLASS, 0);
+				int revelationSkill = getVariables().Get(PlayerVariables.REVELATION_SKILL_1_MAIN_CLASS, 0);
 				if (revelationSkill != 0)
 				{
                     Skill skill1 = SkillData.getInstance().getSkill(revelationSkill, 1) ??
@@ -12162,7 +12162,7 @@ public class Player: Playable
 
                     addSkill(skill1, false);
 				}
-				revelationSkill = getVariables().getInt(PlayerVariables.REVELATION_SKILL_2_MAIN_CLASS, 0);
+				revelationSkill = getVariables().Get(PlayerVariables.REVELATION_SKILL_2_MAIN_CLASS, 0);
 				if (revelationSkill != 0)
 				{
                     Skill skill1 = SkillData.getInstance().getSkill(revelationSkill, 1) ??
@@ -13305,12 +13305,12 @@ public class Player: Playable
 
 	public long getHonorCoins()
 	{
-		return getVariables().getLong("HONOR_COINS", 0);
+		return getVariables().Get("HONOR_COINS", 0L);
 	}
 
 	public void setHonorCoins(long value)
 	{
-		getVariables().set("HONOR_COINS", value);
+		getVariables().Set("HONOR_COINS", value);
 		sendPacket(new ExPledgeCoinInfoPacket(this));
 	}
 
@@ -13727,13 +13727,13 @@ public class Player: Playable
 	public override void addOverrideCond(params PlayerCondOverride[] excs)
 	{
 		base.addOverrideCond(excs);
-		getVariables().set(COND_OVERRIDE_KEY, _exceptions.ToString());
+		getVariables().Set(COND_OVERRIDE_KEY, _exceptions.ToString());
 	}
 
 	public override void removeOverridedCond(params PlayerCondOverride[] excs)
 	{
 		base.removeOverridedCond(excs);
-		getVariables().set(COND_OVERRIDE_KEY, _exceptions.ToString());
+		getVariables().Set(COND_OVERRIDE_KEY, _exceptions.ToString());
 	}
 
 	/**
@@ -13883,7 +13883,7 @@ public class Player: Playable
 	 */
 	public void setVisualHair(int hairId)
 	{
-		getVariables().set("visualHairId", hairId);
+		getVariables().Set("visualHairId", hairId);
 	}
 
 	/**
@@ -13892,7 +13892,7 @@ public class Player: Playable
 	 */
 	public void setVisualHairColor(int colorId)
 	{
-		getVariables().set("visualHairColorId", colorId);
+		getVariables().Set("visualHairColorId", colorId);
 	}
 
 	/**
@@ -13901,7 +13901,7 @@ public class Player: Playable
 	 */
 	public void setVisualFace(int faceId)
 	{
-		getVariables().set("visualFaceId", faceId);
+		getVariables().Set("visualFaceId", faceId);
 	}
 
 	/**
@@ -13909,7 +13909,7 @@ public class Player: Playable
 	 */
 	public int getVisualHair()
 	{
-		return getVariables().getInt("visualHairId", _appearance.getHairStyle());
+		return getVariables().Get("visualHairId", _appearance.getHairStyle());
 	}
 
 	/**
@@ -13917,7 +13917,7 @@ public class Player: Playable
 	 */
 	public int getVisualHairColor()
 	{
-		return getVariables().getInt("visualHairColorId", _appearance.getHairColor());
+		return getVariables().Get("visualHairColorId", _appearance.getHairColor());
 	}
 
 	/**
@@ -13925,7 +13925,7 @@ public class Player: Playable
 	 */
 	public int getVisualFace()
 	{
-		return getVariables().getInt("visualFaceId", _appearance.getFace());
+		return getVariables().Get("visualFaceId", _appearance.getFace());
 	}
 
 	/**
@@ -13949,7 +13949,7 @@ public class Player: Playable
 	 */
 	public int getAbilityPoints()
 	{
-		return getVariables().getInt(isDualClassActive() ? PlayerVariables.ABILITY_POINTS_DUAL_CLASS : PlayerVariables.ABILITY_POINTS_MAIN_CLASS, 0);
+		return getVariables().Get(isDualClassActive() ? PlayerVariables.ABILITY_POINTS_DUAL_CLASS : PlayerVariables.ABILITY_POINTS_MAIN_CLASS, 0);
 	}
 
 	/**
@@ -13958,7 +13958,7 @@ public class Player: Playable
 	 */
 	public void setAbilityPoints(int points)
 	{
-		getVariables().set(isDualClassActive() ? PlayerVariables.ABILITY_POINTS_DUAL_CLASS : PlayerVariables.ABILITY_POINTS_MAIN_CLASS, points);
+		getVariables().Set(isDualClassActive() ? PlayerVariables.ABILITY_POINTS_DUAL_CLASS : PlayerVariables.ABILITY_POINTS_MAIN_CLASS, points);
 	}
 
 	/**
@@ -13966,7 +13966,7 @@ public class Player: Playable
 	 */
 	public int getAbilityPointsUsed()
 	{
-		return getVariables().getInt(isDualClassActive() ? PlayerVariables.ABILITY_POINTS_USED_DUAL_CLASS : PlayerVariables.ABILITY_POINTS_USED_MAIN_CLASS, 0);
+		return getVariables().Get(isDualClassActive() ? PlayerVariables.ABILITY_POINTS_USED_DUAL_CLASS : PlayerVariables.ABILITY_POINTS_USED_MAIN_CLASS, 0);
 	}
 
 	/**
@@ -13980,7 +13980,7 @@ public class Player: Playable
 			Events.NotifyAsync(new OnPlayerAbilityPointsChanged(this, getAbilityPointsUsed(), points));
 		}
 
-		getVariables().set(isDualClassActive() ? PlayerVariables.ABILITY_POINTS_USED_DUAL_CLASS : PlayerVariables.ABILITY_POINTS_USED_MAIN_CLASS, points);
+		getVariables().Set(isDualClassActive() ? PlayerVariables.ABILITY_POINTS_USED_DUAL_CLASS : PlayerVariables.ABILITY_POINTS_USED_MAIN_CLASS, points);
 	}
 
 	/**
@@ -13996,7 +13996,7 @@ public class Player: Playable
 	 */
 	public int getWorldChatUsed()
 	{
-		return getVariables().getInt(PlayerVariables.WORLD_CHAT_VARIABLE_NAME, 0);
+		return getVariables().Get(PlayerVariables.WORLD_CHAT_VARIABLE_NAME, 0);
 	}
 
 	/**
@@ -14005,7 +14005,7 @@ public class Player: Playable
 	 */
 	public void setWorldChatUsed(int timesUsed)
 	{
-		getVariables().set(PlayerVariables.WORLD_CHAT_VARIABLE_NAME, timesUsed);
+		getVariables().Set(PlayerVariables.WORLD_CHAT_VARIABLE_NAME, timesUsed);
 	}
 
 	/**
@@ -14178,7 +14178,7 @@ public class Player: Playable
 	 */
 	public int getPrimePoints()
 	{
-		return getAccountVariables().getInt("PRIME_POINTS", 0);
+		return getAccountVariables().Get("PRIME_POINTS", 0);
 	}
 
 	/**
@@ -14189,7 +14189,7 @@ public class Player: Playable
 	{
 		// Immediate store upon change
 		AccountVariables vars = getAccountVariables();
-		vars.set("PRIME_POINTS", Math.Max(points, 0));
+		vars.Set("PRIME_POINTS", Math.Max(points, 0));
 		vars.storeMe();
 	}
 
@@ -14247,13 +14247,13 @@ public class Player: Playable
 
 	public int getVitalityItemsUsed()
 	{
-		return getVariables().getInt(PlayerVariables.VITALITY_ITEMS_USED_VARIABLE_NAME, 0);
+		return getVariables().Get(PlayerVariables.VITALITY_ITEMS_USED_VARIABLE_NAME, 0);
 	}
 
 	public void setVitalityItemsUsed(int used)
 	{
 		PlayerVariables vars = getVariables();
-		vars.set(PlayerVariables.VITALITY_ITEMS_USED_VARIABLE_NAME, used);
+		vars.Set(PlayerVariables.VITALITY_ITEMS_USED_VARIABLE_NAME, used);
 		vars.storeMe();
 	}
 
@@ -14524,7 +14524,7 @@ public class Player: Playable
 
 	public TrainingHolder? getTraingCampInfo()
 	{
-		string info = getAccountVariables().getString(TRAINING_CAMP_VAR, string.Empty);
+		string? info = getAccountVariables().Get(TRAINING_CAMP_VAR, string.Empty);
 		if (string.IsNullOrEmpty(info))
 			return null;
 
@@ -14535,29 +14535,29 @@ public class Player: Playable
 
 	public void setTraingCampInfo(TrainingHolder holder)
 	{
-		getAccountVariables().set(TRAINING_CAMP_VAR,
+		getAccountVariables().Set(TRAINING_CAMP_VAR,
 			holder.getObjectId() + ";" + holder.getClassIndex() + ";" + holder.getLevel() + ";" +
 			holder.getStartTime().Ticks + ";" + (holder.getEndTime()?.Ticks ?? 0));
 	}
 
 	public void removeTraingCampInfo()
 	{
-		getAccountVariables().remove(TRAINING_CAMP_VAR);
+		getAccountVariables().Remove(TRAINING_CAMP_VAR);
 	}
 
 	public long getTraingCampDuration()
 	{
-		return getAccountVariables().getLong(TRAINING_CAMP_DURATION, 0);
+		return getAccountVariables().Get(TRAINING_CAMP_DURATION, 0L);
 	}
 
 	public void setTraingCampDuration(long duration)
 	{
-		getAccountVariables().set(TRAINING_CAMP_DURATION, duration);
+		getAccountVariables().Set(TRAINING_CAMP_DURATION, duration);
 	}
 
 	public void resetTraingCampDuration()
 	{
-		getAccountVariables().remove(TRAINING_CAMP_DURATION);
+		getAccountVariables().Remove(TRAINING_CAMP_DURATION);
 	}
 
 	public bool isInTraingCamp()
@@ -14582,13 +14582,13 @@ public class Player: Playable
 		int rewardIndex;
 		if (Config.ATTENDANCE_REWARDS_SHARE_ACCOUNT)
 		{
-			receiveDate = getAccountVariables().getDateTime(PlayerVariables.ATTENDANCE_DATE, DateTime.MinValue);
-			rewardIndex = getAccountVariables().getInt(PlayerVariables.ATTENDANCE_INDEX, 0);
+			receiveDate = getAccountVariables().Get(PlayerVariables.ATTENDANCE_DATE, DateTime.MinValue);
+			rewardIndex = getAccountVariables().Get(PlayerVariables.ATTENDANCE_INDEX, 0);
 		}
 		else
 		{
-			receiveDate = getVariables().getDateTime(PlayerVariables.ATTENDANCE_DATE, DateTime.MinValue);
-			rewardIndex = getVariables().getInt(PlayerVariables.ATTENDANCE_INDEX, 0);
+			receiveDate = getVariables().Get(PlayerVariables.ATTENDANCE_DATE, DateTime.MinValue);
+			rewardIndex = getVariables().Get(PlayerVariables.ATTENDANCE_INDEX, 0);
 		}
 
 		// Check if player can receive reward today.
@@ -14619,13 +14619,13 @@ public class Player: Playable
 
 		if (Config.ATTENDANCE_REWARDS_SHARE_ACCOUNT)
 		{
-			getAccountVariables().set(PlayerVariables.ATTENDANCE_DATE, nextReward);
-			getAccountVariables().set(PlayerVariables.ATTENDANCE_INDEX, rewardIndex);
+			getAccountVariables().Set(PlayerVariables.ATTENDANCE_DATE, nextReward);
+			getAccountVariables().Set(PlayerVariables.ATTENDANCE_INDEX, rewardIndex);
 		}
 		else
 		{
-			getVariables().set(PlayerVariables.ATTENDANCE_DATE, nextReward);
-			getVariables().set(PlayerVariables.ATTENDANCE_INDEX, rewardIndex);
+			getVariables().Set(PlayerVariables.ATTENDANCE_DATE, nextReward);
+			getVariables().Set(PlayerVariables.ATTENDANCE_INDEX, rewardIndex);
 		}
 	}
 
@@ -14656,18 +14656,18 @@ public class Player: Playable
 
 	public long getVipPoints()
 	{
-		return getAccountVariables().getLong(AccountVariables.VIP_POINTS, 0L);
+		return getAccountVariables().Get(AccountVariables.VIP_POINTS, 0L);
 	}
 
 	public DateTime? getVipTierExpiration()
 	{
-		DateTime value = getAccountVariables().getDateTime(AccountVariables.VIP_EXPIRATION, DateTime.MinValue);
+		DateTime value = getAccountVariables().Get(AccountVariables.VIP_EXPIRATION, DateTime.MinValue);
         return value == DateTime.MinValue ? null : value;
 	}
 
 	public void setVipTierExpiration(DateTime expiration)
 	{
-		getAccountVariables().set(AccountVariables.VIP_EXPIRATION, expiration);
+		getAccountVariables().Set(AccountVariables.VIP_EXPIRATION, expiration);
 	}
 
 	public void updateVipPoints(long points)
@@ -14677,19 +14677,19 @@ public class Player: Playable
 			return;
 		}
 		int currentVipTier = VipManager.getInstance().getVipTier(getVipPoints());
-		getAccountVariables().set(AccountVariables.VIP_POINTS, getVipPoints() + points);
+		getAccountVariables().Set(AccountVariables.VIP_POINTS, getVipPoints() + points);
 		int newTier = VipManager.getInstance().getVipTier(getVipPoints());
 		if (newTier != currentVipTier)
 		{
 			_vipTier = newTier;
 			if (newTier > 0)
 			{
-				getAccountVariables().set(AccountVariables.VIP_EXPIRATION, DateTime.UtcNow.AddDays(30));
+				getAccountVariables().Set(AccountVariables.VIP_EXPIRATION, DateTime.UtcNow.AddDays(30));
 				VipManager.getInstance().manageTier(this);
 			}
 			else
 			{
-				getAccountVariables().set(AccountVariables.VIP_EXPIRATION, 0L);
+				getAccountVariables().Set(AccountVariables.VIP_EXPIRATION, 0L);
 			}
 		}
 		getAccountVariables().storeMe(); // force to store to prevent falty purchases after a crash.
@@ -14931,16 +14931,12 @@ public class Player: Playable
 
 	public void restoreAutoSettings()
 	{
-		if (!Config.ENABLE_AUTO_PLAY || !getVariables().Contains(PlayerVariables.AUTO_USE_SETTINGS))
-		{
+		if (!Config.ENABLE_AUTO_PLAY)
 			return;
-		}
 
-		List<int> settings = getVariables().getIntegerList(PlayerVariables.AUTO_USE_SETTINGS);
-		if (settings.Count == 0)
-		{
+		List<int>? settings = getVariables().Get<List<int>>(PlayerVariables.AUTO_USE_SETTINGS);
+		if (settings == null || settings.Count == 0)
 			return;
-		}
 
 		int options = settings[0];
 		bool active = Config.RESUME_AUTO_PLAY && settings[1] == 1;
@@ -14972,13 +14968,11 @@ public class Player: Playable
 	}
 
 	public void restoreAutoShortcutVisual()
-	{
-		if (!getVariables().Contains(PlayerVariables.AUTO_USE_SHORTCUTS))
-		{
+    {
+        List<int>? positions = getVariables().Get<List<int>>(PlayerVariables.AUTO_USE_SHORTCUTS);
+		if (positions == null)
 			return;
-		}
 
-		List<int> positions = getVariables().getIntegerList(PlayerVariables.AUTO_USE_SHORTCUTS);
 		foreach (Shortcut shortcut in getAllShortCuts())
 		{
 			int position = shortcut.getSlot() + shortcut.getPage() * ShortCuts.MAX_SHORTCUTS_PER_BAR;
@@ -15012,12 +15006,10 @@ public class Player: Playable
 
 	public void restoreAutoShortcuts()
 	{
-		if (!getVariables().Contains(PlayerVariables.AUTO_USE_SHORTCUTS))
-		{
-			return;
-		}
+        List<int>? positions = getVariables().Get<List<int>>(PlayerVariables.AUTO_USE_SHORTCUTS);
+        if (positions == null)
+            return;
 
-		List<int> positions = getVariables().getIntegerList(PlayerVariables.AUTO_USE_SHORTCUTS);
 		foreach (Shortcut shortcut in getAllShortCuts())
 		{
 			int position = shortcut.getSlot() + shortcut.getPage() * ShortCuts.MAX_SHORTCUTS_PER_BAR;
@@ -15068,7 +15060,7 @@ public class Player: Playable
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void addAutoShortcut(int slot, int page)
 	{
-		List<int> positions = getVariables().getIntegerList(PlayerVariables.AUTO_USE_SHORTCUTS);
+        List<int> positions = getVariables().Get<List<int>>(PlayerVariables.AUTO_USE_SHORTCUTS) ?? [];
 		Shortcut? usedShortcut = getShortCut(slot, page);
 		if (usedShortcut == null)
 		{
@@ -15092,18 +15084,16 @@ public class Player: Playable
 			}
 		}
 
-		getVariables().setIntegerList(PlayerVariables.AUTO_USE_SHORTCUTS, positions);
+		getVariables().Set(PlayerVariables.AUTO_USE_SHORTCUTS, positions);
 	}
 
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void removeAutoShortcut(int slot, int page)
 	{
-		if (!getVariables().Contains(PlayerVariables.AUTO_USE_SHORTCUTS))
-		{
+        List<int>? positions = getVariables().Get<List<int>>(PlayerVariables.AUTO_USE_SHORTCUTS);
+		if (positions == null)
 			return;
-		}
 
-		List<int> positions = getVariables().getIntegerList(PlayerVariables.AUTO_USE_SHORTCUTS);
 		Shortcut? usedShortcut = getShortCut(slot, page);
 		if (usedShortcut == null)
 		{
@@ -15124,7 +15114,7 @@ public class Player: Playable
 			}
 		}
 
-		getVariables().setIntegerList(PlayerVariables.AUTO_USE_SHORTCUTS, positions);
+		getVariables().Set(PlayerVariables.AUTO_USE_SHORTCUTS, positions);
 	}
 
 	public bool isInTimedHuntingZone(int zoneId)
@@ -15205,7 +15195,7 @@ public class Player: Playable
 						sm.Params.addLong(time / 60000);
 						sendPacket(sm);
 					}
-					getVariables().set(PlayerVariables.HUNTING_ZONE_TIME + zoneId, time - 60000);
+					getVariables().Set(PlayerVariables.HUNTING_ZONE_TIME + zoneId, time - 60000);
 				}
 				else
 				{
@@ -15232,12 +15222,12 @@ public class Player: Playable
 
 	public int getTimedHuntingZoneRemainingTime(int zoneId)
 	{
-		return Math.Max(getVariables().getInt(PlayerVariables.HUNTING_ZONE_TIME + zoneId, 0), 0);
+		return Math.Max(getVariables().Get(PlayerVariables.HUNTING_ZONE_TIME + zoneId, 0), 0);
 	}
 
 	public DateTime getTimedHuntingZoneInitialEntry(int zoneId)
 	{
-		return getVariables().getDateTime(PlayerVariables.HUNTING_ZONE_ENTRY + zoneId, DateTime.MinValue);
+		return getVariables().Get(PlayerVariables.HUNTING_ZONE_ENTRY + zoneId, DateTime.MinValue);
 	}
 
 	private void restoreRandomCraft()
@@ -15654,17 +15644,17 @@ public class Player: Playable
 
 	public int getPurgeLastCategory()
 	{
-		return getVariables().getInt(PlayerVariables.PURGE_LAST_CATEGORY, 1);
+		return getVariables().Get(PlayerVariables.PURGE_LAST_CATEGORY, 1);
 	}
 
 	public void setPurgeLastCategory(int category)
 	{
-		getVariables().set(PlayerVariables.PURGE_LAST_CATEGORY, category);
+		getVariables().Set(PlayerVariables.PURGE_LAST_CATEGORY, category);
 	}
 
 	public int getClanDonationPoints()
 	{
-		return getVariables().getInt(PlayerVariables.CLAN_DONATION_POINTS, 3);
+		return getVariables().Get(PlayerVariables.CLAN_DONATION_POINTS, 3);
 	}
 
 	public MissionLevelPlayerDataHolder getMissionLevelProgress()
@@ -15672,9 +15662,10 @@ public class Player: Playable
 		if (_missionLevelProgress == null)
 		{
 			string variable = PlayerVariables.MISSION_LEVEL_PROGRESS + MissionLevel.getInstance().getCurrentSeason();
-			if (getVariables().hasVariable(variable))
+            string? value = getVariables().Get<string>(variable);
+			if (value != null)
 			{
-				_missionLevelProgress = new MissionLevelPlayerDataHolder(getVariables().getString(variable));
+				_missionLevelProgress = new MissionLevelPlayerDataHolder(value);
 			}
 			else
 			{
@@ -15688,18 +15679,19 @@ public class Player: Playable
 
 	private void storeDualInventory()
 	{
-		getVariables().set(PlayerVariables.DUAL_INVENTORY_SLOT, _dualInventorySlot);
-		getVariables().setIntegerList(PlayerVariables.DUAL_INVENTORY_SET_A, _dualInventorySetA);
-		getVariables().setIntegerList(PlayerVariables.DUAL_INVENTORY_SET_B, _dualInventorySetB);
+		getVariables().Set(PlayerVariables.DUAL_INVENTORY_SLOT, _dualInventorySlot);
+		getVariables().Set(PlayerVariables.DUAL_INVENTORY_SET_A, _dualInventorySetA);
+		getVariables().Set(PlayerVariables.DUAL_INVENTORY_SET_B, _dualInventorySetB);
 	}
 
 	public void restoreDualInventory()
 	{
-		_dualInventorySlot = getVariables().getInt(PlayerVariables.DUAL_INVENTORY_SLOT, 0);
+		_dualInventorySlot = getVariables().Get(PlayerVariables.DUAL_INVENTORY_SLOT, 0);
 
-		if (getVariables().Contains(PlayerVariables.DUAL_INVENTORY_SET_A))
+        List<int>? inventorySet = getVariables().Get<List<int>>(PlayerVariables.DUAL_INVENTORY_SET_A);
+		if (inventorySet != null)
 		{
-			_dualInventorySetA = getVariables().getIntegerList(PlayerVariables.DUAL_INVENTORY_SET_A);
+			_dualInventorySetA = inventorySet;
 		}
 		else
 		{
@@ -15708,14 +15700,15 @@ public class Player: Playable
 			{
 				list.Add(getInventory().getPaperdollObjectId(i));
 			}
-			getVariables().setIntegerList(PlayerVariables.DUAL_INVENTORY_SET_A, list);
+			getVariables().Set(PlayerVariables.DUAL_INVENTORY_SET_A, list);
 			_dualInventorySetA = list;
 		}
 
-		if (getVariables().Contains(PlayerVariables.DUAL_INVENTORY_SET_B))
-		{
-			_dualInventorySetB = getVariables().getIntegerList(PlayerVariables.DUAL_INVENTORY_SET_B);
-		}
+        inventorySet = getVariables().Get<List<int>>(PlayerVariables.DUAL_INVENTORY_SET_B);
+        if (inventorySet != null)
+        {
+            _dualInventorySetB = inventorySet;
+        }
 		else
 		{
 			List<int> list = new(Inventory.PAPERDOLL_TOTALSLOTS);
@@ -15723,7 +15716,7 @@ public class Player: Playable
 			{
 				list.Add(0);
 			}
-			getVariables().setIntegerList(PlayerVariables.DUAL_INVENTORY_SET_B, list);
+			getVariables().Set(PlayerVariables.DUAL_INVENTORY_SET_B, list);
 			_dualInventorySetB = list;
 		}
 
@@ -15776,28 +15769,28 @@ public class Player: Playable
 
 	public int getSkillEnchantExp(int level)
 	{
-		return getVariables().getInt(PlayerVariables.SKILL_ENCHANT_STAR + level, 0);
+		return getVariables().Get(PlayerVariables.SKILL_ENCHANT_STAR + level, 0);
 	}
 
 	public void setSkillEnchantExp(int level, long exp)
 	{
-		getVariables().set(PlayerVariables.SKILL_ENCHANT_STAR + level, exp);
+		getVariables().Set(PlayerVariables.SKILL_ENCHANT_STAR + level, exp);
 	}
 
 	public void increaseTrySkillEnchant(int level)
 	{
 		int currentTry = getSkillTryEnchant(level) + 1;
-		getVariables().set(PlayerVariables.SKILL_TRY_ENCHANT + level, currentTry);
+		getVariables().Set(PlayerVariables.SKILL_TRY_ENCHANT + level, currentTry);
 	}
 
 	public int getSkillTryEnchant(int level)
 	{
-		return getVariables().getInt(PlayerVariables.SKILL_TRY_ENCHANT + level, 1);
+		return getVariables().Get(PlayerVariables.SKILL_TRY_ENCHANT + level, 1);
 	}
 
 	public void setSkillTryEnchant(int level)
 	{
-		getVariables().set(PlayerVariables.SKILL_TRY_ENCHANT + level, 1);
+		getVariables().Set(PlayerVariables.SKILL_TRY_ENCHANT + level, 1);
 	}
 
     protected override CreatureStat CreateStat() => new PlayerStat(this);

@@ -90,21 +90,21 @@ public struct RequestBrBuyProductPacket: IIncomingPacket<GameSession>
 
 			if (item.isVipGift())
 			{
-				player.getAccountVariables().set(AccountVariables.VIP_ITEM_BOUGHT, DateTime.UtcNow);
+				player.getAccountVariables().Set(AccountVariables.VIP_ITEM_BOUGHT, DateTime.UtcNow);
 			}
 
 			// Update account variables.
 			if (item.getAccountDailyLimit() > 0)
 			{
-				player.getAccountVariables().set(AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + item.getBrId(),
+				player.getAccountVariables().Set(AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + item.getBrId(),
 					player.getAccountVariables()
-						.getInt(AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + item.getBrId(), 0) +
+						.Get(AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + item.getBrId(), 0) +
 					item.getCount() * _count);
 			}
 			else if (item.getAccountBuyLimit() > 0)
 			{
-				player.getAccountVariables().set(AccountVariables.PRIME_SHOP_PRODUCT_COUNT + item.getBrId(),
-					player.getAccountVariables().getInt(AccountVariables.PRIME_SHOP_PRODUCT_COUNT + item.getBrId(), 0) +
+				player.getAccountVariables().Set(AccountVariables.PRIME_SHOP_PRODUCT_COUNT + item.getBrId(),
+					player.getAccountVariables().Get(AccountVariables.PRIME_SHOP_PRODUCT_COUNT + item.getBrId(), 0) +
 					item.getCount() * _count);
 			}
 
@@ -188,7 +188,7 @@ public struct RequestBrBuyProductPacket: IIncomingPacket<GameSession>
 
 		if (item.getAccountDailyLimit() > 0 &&
 		    count + player.getAccountVariables()
-			    .getInt(AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + item.getBrId(), 0) >
+			    .Get(AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + item.getBrId(), 0) >
 		    item.getAccountDailyLimit())
 		{
 			player.sendPacket(new ExBRBuyProductPacket(ExBrProductReplyType.SOLD_OUT));
@@ -196,7 +196,7 @@ public struct RequestBrBuyProductPacket: IIncomingPacket<GameSession>
 		}
 
 		if (item.getAccountBuyLimit() > 0 &&
-		    count + player.getAccountVariables().getInt(AccountVariables.PRIME_SHOP_PRODUCT_COUNT + item.getBrId(), 0) >
+		    count + player.getAccountVariables().Get(AccountVariables.PRIME_SHOP_PRODUCT_COUNT + item.getBrId(), 0) >
 		    item.getAccountBuyLimit())
 		{
 			player.sendPacket(new ExBRBuyProductPacket(ExBrProductReplyType.SOLD_OUT));
@@ -259,7 +259,7 @@ public struct RequestBrBuyProductPacket: IIncomingPacket<GameSession>
 			return false;
 		}
 
-		return player.getAccountVariables().getLong(AccountVariables.VIP_ITEM_BOUGHT, 0) <= 0;
+		return player.getAccountVariables().Get(AccountVariables.VIP_ITEM_BOUGHT, 0L) <= 0;
 	}
 
 	private static int validatePaymentId(PrimeShopGroup item)

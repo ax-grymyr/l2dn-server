@@ -11,18 +11,18 @@ public readonly struct ExBRProductListPacket: IOutgoingPacket
 	private readonly Player _player;
 	private readonly int _type;
 	private readonly ICollection<PrimeShopGroup> _primeList;
-	
+
 	public ExBRProductListPacket(Player player, int type, ICollection<PrimeShopGroup> items)
 	{
 		_player = player;
 		_type = type;
 		_primeList = items;
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.EX_BR_PRODUCT_LIST);
-		
+
 		writer.WriteInt64(_player.getAdena()); // Adena
 		writer.WriteInt64(0); // Hero coins
 		writer.WriteByte((byte)_type); // Type 0 - Home, 1 - History, 2 - Favorites
@@ -42,15 +42,15 @@ public readonly struct ExBRProductListPacket: IOutgoingPacket
 			writer.WriteByte((byte)brItem.getStartMinute());
 			writer.WriteByte((byte)brItem.getStopHour());
 			writer.WriteByte((byte)brItem.getStopMinute());
-			
+
 			// Daily account limit.
-			if (brItem.getAccountDailyLimit() > 0 && _player.getAccountVariables().getInt(AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + brItem.getBrId(), 0) >= brItem.getAccountDailyLimit())
+			if (brItem.getAccountDailyLimit() > 0 && _player.getAccountVariables().Get(AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + brItem.getBrId(), 0) >= brItem.getAccountDailyLimit())
 			{
 				writer.WriteInt32(brItem.getAccountDailyLimit());
 				writer.WriteInt32(brItem.getAccountDailyLimit());
 			}
 			// General account limit.
-			else if (brItem.getAccountBuyLimit() > 0 && _player.getAccountVariables().getInt(AccountVariables.PRIME_SHOP_PRODUCT_COUNT + brItem.getBrId(), 0) >= brItem.getAccountBuyLimit())
+			else if (brItem.getAccountBuyLimit() > 0 && _player.getAccountVariables().Get(AccountVariables.PRIME_SHOP_PRODUCT_COUNT + brItem.getBrId(), 0) >= brItem.getAccountBuyLimit())
 			{
 				writer.WriteInt32(brItem.getAccountBuyLimit());
 				writer.WriteInt32(brItem.getAccountBuyLimit());
@@ -60,13 +60,13 @@ public readonly struct ExBRProductListPacket: IOutgoingPacket
 				writer.WriteInt32(brItem.getStock());
 				writer.WriteInt32(brItem.getTotal());
 			}
-			
+
 			writer.WriteByte((byte)brItem.getSalePercent());
 			writer.WriteByte((byte)brItem.getMinLevel());
 			writer.WriteByte((byte)brItem.getMaxLevel());
 			writer.WriteInt32(brItem.getMinBirthday());
 			writer.WriteInt32(brItem.getMaxBirthday());
-			
+
 			// Daily account limit.
 			if (brItem.getAccountDailyLimit() > 0)
 			{
@@ -84,7 +84,7 @@ public readonly struct ExBRProductListPacket: IOutgoingPacket
 				writer.WriteInt32(0); // Days
 				writer.WriteInt32(0); // Amount
 			}
-			
+
 			writer.WriteByte((byte)brItem.getItems().Count);
 			foreach (PrimeShopItem item in brItem.getItems())
 			{

@@ -51,7 +51,7 @@ public class AddHuntingTime: AbstractEffect
 			return;
 		}
 
-		long remainRefill = player.getVariables().getInt(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + _zoneId, holder.getRemainRefillTime());
+		long remainRefill = player.getVariables().Get(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + _zoneId, holder.getRemainRefillTime());
 		if (_time < TimeSpan.FromMilliseconds(remainRefill) || remainRefill == 0)
 		{
 			player.getInventory().addItem("AddHuntingTime effect refund", item.getId(), 1, player, player);
@@ -59,9 +59,9 @@ public class AddHuntingTime: AbstractEffect
 			return;
 		}
 
-		long remainTime = player.getVariables().getLong(PlayerVariables.HUNTING_ZONE_TIME + _zoneId, holder.getInitialTime());
-		player.getVariables().set(PlayerVariables.HUNTING_ZONE_TIME + _zoneId, remainTime + (int)_time.TotalMilliseconds);
-		player.getVariables().set(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + _zoneId, remainRefill - (int)(_time.TotalMilliseconds / 1000));
+		long remainTime = player.getVariables().Get(PlayerVariables.HUNTING_ZONE_TIME + _zoneId, holder.getInitialTime());
+		player.getVariables().Set(PlayerVariables.HUNTING_ZONE_TIME + _zoneId, remainTime + (int)_time.TotalMilliseconds);
+		player.getVariables().Set(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + _zoneId, remainRefill - (int)(_time.TotalMilliseconds / 1000));
 		player.sendPacket(new TimedHuntingZoneChargeResultPacket(_zoneId, (int) ((remainTime + _time.TotalMilliseconds) / 1000), (int) (remainRefill - _time.TotalMilliseconds / 1000), (int) _time.TotalMilliseconds / 1000));
 
 		if (player.isInTimedHuntingZone(_zoneId))

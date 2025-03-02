@@ -247,10 +247,10 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 						break;
 					}
 
-					int originalValue = player.getVariables().getInt(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, 0);
+					int originalValue = player.getVariables().Get(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, 0);
 					if (originalValue < Config.RESURRECT_BY_PAYMENT_MAX_FREE_TIMES)
 					{
-						player.getVariables().set(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, originalValue + 1);
+						player.getVariables().Set(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, originalValue + 1);
 						player.doRevive(100.0);
 						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
 						player.teleToLocation(loc.Value, instance, true);
@@ -305,7 +305,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 							return;
 						}
 
-						player.getVariables().set(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, originalValue + 1);
+						player.getVariables().Set(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, originalValue + 1);
 						player.destroyItem("item revive", item, fee, player, true);
 						player.doRevive(rbph.getResurrectPercent());
 						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);

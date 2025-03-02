@@ -52,7 +52,7 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
         {
             if (Config.RESTORE_PLAYER_INSTANCE)
             {
-                player.getVariables().set(PlayerVariables.INSTANCE_RESTORE, world.getId());
+                player.getVariables().Set(PlayerVariables.INSTANCE_RESTORE, world.getId());
             }
             else
             {
@@ -72,7 +72,7 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
 
         if (location != null)
         {
-            player.getVariables().set(PlayerVariables.RESTORE_LOCATION, location.Value.X + ";" + location.Value.Y + ";" + location.Value.Z);
+            player.getVariables().Set(PlayerVariables.RESTORE_LOCATION, location.Value);
         }
 
         //LOGGER_ACCOUNTING.info("Logged out, " + client);

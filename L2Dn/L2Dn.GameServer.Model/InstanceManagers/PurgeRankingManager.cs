@@ -46,10 +46,10 @@ public class PurgeRankingManager
 	{
 		// Weekly rewards.
 		DateTime now = DateTime.UtcNow;
-		DateTime lastPurgeRewards = GlobalVariablesManager.getInstance().getDateTime(GlobalVariablesManager.PURGE_REWARD_TIME, DateTime.MinValue);
+		DateTime lastPurgeRewards = GlobalVariablesManager.getInstance().Get(GlobalVariablesManager.PURGE_REWARD_TIME, DateTime.MinValue);
 		if (now.DayOfWeek == DayOfWeek.Sunday && now - lastPurgeRewards > TimeSpan.FromSeconds(604800 /* 1 week */ - 600 /* task delay x2 */))
 		{
-			GlobalVariablesManager.getInstance().set(GlobalVariablesManager.PURGE_REWARD_TIME, now);
+			GlobalVariablesManager.getInstance().Set(GlobalVariablesManager.PURGE_REWARD_TIME, now);
 			for (int category = 1; category <= 9; category++)
 			{
 				if (getTop5(category) != null)
@@ -207,7 +207,7 @@ public class PurgeRankingManager
 				string? charName = CharInfoTable.getInstance().getNameById(ss.getInt("charId"));
                 if (charName == null)
                     continue;
-                
+
 				int points = ss.getInt("points");
 				top5.put(charName, points);
 			}

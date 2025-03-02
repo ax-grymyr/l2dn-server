@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -151,12 +152,11 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 
 					// Restore player location.
 					PlayerVariables vars = player.getVariables();
-					string restore = vars.getString(PlayerVariables.RESTORE_LOCATION, "");
-					if (!string.IsNullOrEmpty(restore))
+					Location3D? restoreLocation = vars.Get<Location3D?>(PlayerVariables.RESTORE_LOCATION);
+					if (restoreLocation != null)
 					{
-						string[] split = restore.Split(";");
-						player.setXYZ(int.Parse(split[0]), int.Parse(split[1]), int.Parse(split[2]));
-						vars.remove(PlayerVariables.RESTORE_LOCATION);
+						player.setXYZ(restoreLocation.Value.X, restoreLocation.Value.Y, restoreLocation.Value.Z);
+						vars.Remove(PlayerVariables.RESTORE_LOCATION);
 					}
 
 					player.setClient(session);

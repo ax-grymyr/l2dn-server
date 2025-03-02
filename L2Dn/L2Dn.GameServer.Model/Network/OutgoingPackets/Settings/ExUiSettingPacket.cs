@@ -6,20 +6,11 @@ namespace L2Dn.GameServer.Network.OutgoingPackets.Settings;
 
 public readonly struct ExUiSettingPacket: IOutgoingPacket
 {
-    public const string SPLIT_VAR = "	";
-
     private readonly byte[]? _uiKeyMapping;
 
     public ExUiSettingPacket(Player player)
     {
-        if (player.getVariables().hasVariable(PlayerVariables.UI_KEY_MAPPING))
-        {
-            _uiKeyMapping = player.getVariables().getByteArray(PlayerVariables.UI_KEY_MAPPING, SPLIT_VAR);
-        }
-        else
-        {
-            _uiKeyMapping = null;
-        }
+        _uiKeyMapping = player.getVariables().Get<byte[]>(PlayerVariables.UI_KEY_MAPPING);
     }
 
     public void WriteContent(PacketBitWriter writer)

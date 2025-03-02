@@ -366,14 +366,11 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 			case InstanceTeleportType.ORIGIN:
 			{
 				PlayerVariables vars = player.getVariables();
-				if (vars.Contains(PlayerVariables.INSTANCE_ORIGIN))
+                Location3D? origin = vars.Get<Location3D?>(PlayerVariables.INSTANCE_ORIGIN);
+				if (origin != null)
 				{
-					int[] loc = vars.getIntArray(PlayerVariables.INSTANCE_ORIGIN, ";");
-					if (loc != null && loc.Length == 3)
-					{
-						location = new Location3D(loc[0], loc[1], loc[2]);
-					}
-					vars.remove(PlayerVariables.INSTANCE_ORIGIN);
+					location = origin.Value;
+					vars.Remove(PlayerVariables.INSTANCE_ORIGIN);
 				}
 				break;
 			}

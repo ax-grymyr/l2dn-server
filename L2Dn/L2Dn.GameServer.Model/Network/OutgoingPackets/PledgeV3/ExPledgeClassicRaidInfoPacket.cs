@@ -24,7 +24,7 @@ public readonly struct ExPledgeClassicRaidInfoPacket: IOutgoingPacket
         }
         else
         {
-            int stage = GlobalVariablesManager.getInstance().getInt(GlobalVariablesManager.MONSTER_ARENA_VARIABLE + _clan.getId(), 0);
+            int stage = GlobalVariablesManager.getInstance().Get(GlobalVariablesManager.MONSTER_ARENA_VARIABLE + _clan.getId(), 0);
             writer.WriteInt32(stage);
             // Skill rewards.
             writer.WriteInt32(5);

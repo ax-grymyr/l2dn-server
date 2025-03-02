@@ -190,7 +190,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 			case AppearanceType.RESTORE:
 			{
 				targetItem.setVisualId(0);
-				targetItem.getVariables().set(ItemVariables.VISUAL_APPEARANCE_STONE_ID, 0);
+				targetItem.getVariables().Set(ItemVariables.VISUAL_APPEARANCE_STONE_ID, 0);
 				break;
 			}
 			case AppearanceType.NORMAL:
@@ -211,7 +211,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 				{
 					extracItemId = appearanceStone.getVisualId();
 					targetItem.setVisualId(appearanceStone.getVisualId());
-					targetItem.getVariables().set(ItemVariables.VISUAL_APPEARANCE_STONE_ID, appearanceStone.getId());
+					targetItem.getVariables().Set(ItemVariables.VISUAL_APPEARANCE_STONE_ID, appearanceStone.getId());
 				}
 				else
 				{
@@ -220,7 +220,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 					{
 						extracItemId = holder.getVisualId();
 						targetItem.setVisualId(holder.getVisualId());
-						targetItem.getVariables().set(ItemVariables.VISUAL_APPEARANCE_STONE_ID, appearanceStone.getId());
+						targetItem.getVariables().Set(ItemVariables.VISUAL_APPEARANCE_STONE_ID, appearanceStone.getId());
 					}
 				}
 
@@ -231,7 +231,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 
 		if (appearanceStone.getType() != AppearanceType.RESTORE && appearanceStone.getLifeTime() > TimeSpan.Zero)
 		{
-			targetItem.getVariables().set(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME,
+			targetItem.getVariables().Set(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME,
 				DateTime.UtcNow + appearanceStone.getLifeTime());
 
 			targetItem.scheduleVisualLifeTime();

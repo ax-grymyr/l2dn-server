@@ -16,10 +16,10 @@ public class GlobalVariablesManager: AbstractVariables<GlobalVariable>
 	public static readonly string RANKING_POWER_LOCATION = "RANKING_POWER_LOCATION";
 	public static readonly string PURGE_REWARD_TIME = "PURGE_REWARD_TIME";
 	public static readonly string BALOK_REMAIN_TIME = "BALOK_REMAIN_TIME";
-	
+
 	protected GlobalVariablesManager()
 	{
-		restoreMe();
+		Restore();
 	}
 
 	protected override IQueryable<GlobalVariable> GetQuery(GameServerDbContext ctx)
@@ -31,7 +31,7 @@ public class GlobalVariablesManager: AbstractVariables<GlobalVariable>
 	{
 		return new GlobalVariable();
 	}
-	
+
 	/**
 	 * Gets the single instance of {@code GlobalVariablesManager}.
 	 * @return single instance of {@code GlobalVariablesManager}
@@ -40,9 +40,9 @@ public class GlobalVariablesManager: AbstractVariables<GlobalVariable>
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
-		public static readonly GlobalVariablesManager INSTANCE = new GlobalVariablesManager();
+		public static readonly GlobalVariablesManager INSTANCE = new();
 	}
 }

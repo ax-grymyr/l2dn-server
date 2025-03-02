@@ -38,12 +38,8 @@ public class RankingPowerManager
 	public void activatePower(Player player)
 	{
 		Location3D location = player.Location.Location3D;
-		List<int> array = new();
-		array.Add(location.X);
-		array.Add(location.Y);
-		array.Add(location.Z);
-		GlobalVariablesManager.getInstance().setIntegerList(GlobalVariablesManager.RANKING_POWER_LOCATION, array);
-		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.RANKING_POWER_COOLDOWN, DateTime.UtcNow + COOLDOWN);
+		GlobalVariablesManager.getInstance().Set(GlobalVariablesManager.RANKING_POWER_LOCATION, location);
+		GlobalVariablesManager.getInstance().Set(GlobalVariablesManager.RANKING_POWER_COOLDOWN, DateTime.UtcNow + COOLDOWN);
 		createClone(player);
 		cloneTask();
 		SystemMessagePacket msg = new(SystemMessageId.A_RANKING_LEADER_C1_USED_LEADER_POWER_IN_S2);
@@ -116,8 +112,8 @@ public class RankingPowerManager
 		{
 			_decoyInstance.deleteMe();
 		}
-		GlobalVariablesManager.getInstance().remove(GlobalVariablesManager.RANKING_POWER_COOLDOWN);
-		GlobalVariablesManager.getInstance().remove(GlobalVariablesManager.RANKING_POWER_LOCATION);
+		GlobalVariablesManager.getInstance().Remove(GlobalVariablesManager.RANKING_POWER_COOLDOWN);
+		GlobalVariablesManager.getInstance().Remove(GlobalVariablesManager.RANKING_POWER_LOCATION);
 	}
 
 	public static RankingPowerManager getInstance()

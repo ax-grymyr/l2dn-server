@@ -2936,7 +2936,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		if (getMaxOnlineMembers() < currentMaxOnline)
 		{
-			getVariables().set("MAX_ONLINE_MEMBERS", currentMaxOnline);
+			getVariables().Set("MAX_ONLINE_MEMBERS", currentMaxOnline);
 		}
 	}
 
@@ -2952,7 +2952,7 @@ public class Clan: IIdentifiable, INamable
 		int points = (int) value / 2960; // Reduced / 10 for Classic.
 		if (points > 0)
 		{
-			getVariables().set("HUNTING_POINTS", getHuntingPoints() + points);
+			getVariables().Set("HUNTING_POINTS", getHuntingPoints() + points);
 			ClanRewardBonus? availableBonus = getAvailableBonus(ClanRewardType.HUNTING_MONSTERS);
 			if (availableBonus != null)
 			{
@@ -2976,22 +2976,22 @@ public class Clan: IIdentifiable, INamable
 
 	public int getMaxOnlineMembers()
 	{
-		return getVariables().getInt("MAX_ONLINE_MEMBERS", 0);
+		return getVariables().Get("MAX_ONLINE_MEMBERS", 0);
 	}
 
 	public int getHuntingPoints()
 	{
-		return getVariables().getInt("HUNTING_POINTS", 0);
+		return getVariables().Get("HUNTING_POINTS", 0);
 	}
 
 	public int getPreviousMaxOnlinePlayers()
 	{
-		return getVariables().getInt("PREVIOUS_MAX_ONLINE_PLAYERS", 0);
+		return getVariables().Get("PREVIOUS_MAX_ONLINE_PLAYERS", 0);
 	}
 
 	public int getPreviousHuntingPoints()
 	{
-		return getVariables().getInt("PREVIOUS_HUNTING_POINTS", 0);
+		return getVariables().Get("PREVIOUS_HUNTING_POINTS", 0);
 	}
 
 	public bool canClaimBonusReward(Player player, ClanRewardType type)
@@ -3003,12 +3003,12 @@ public class Clan: IIdentifiable, INamable
 	public void resetClanBonus()
 	{
 		// Save current state
-		getVariables().set("PREVIOUS_MAX_ONLINE_PLAYERS", getMaxOnlineMembers());
-		getVariables().set("PREVIOUS_HUNTING_POINTS", getHuntingPoints());
+		getVariables().Set("PREVIOUS_MAX_ONLINE_PLAYERS", getMaxOnlineMembers());
+		getVariables().Set("PREVIOUS_HUNTING_POINTS", getHuntingPoints());
 
 		// Reset
 		_members.Values.ForEach(x => x.resetBonus());
-		getVariables().remove("HUNTING_POINTS");
+		getVariables().Remove("HUNTING_POINTS");
 
 		// force store
 		getVariables().storeMe();
@@ -3045,17 +3045,17 @@ public class Clan: IIdentifiable, INamable
 
 	public int getClanContribution(int objId)
 	{
-		return getVariables().getInt(ClanVariables.CONTRIBUTION + objId, 0);
+		return getVariables().Get(ClanVariables.CONTRIBUTION + objId, 0);
 	}
 
 	public void setClanContribution(int objId, int exp)
 	{
-		getVariables().set(ClanVariables.CONTRIBUTION + objId, exp);
+		getVariables().Set(ClanVariables.CONTRIBUTION + objId, exp);
 	}
 
 	public int getClanContributionWeekly(int objId)
 	{
-		return getVariables().getInt(ClanVariables.CONTRIBUTION_WEEKLY + objId, 0);
+		return getVariables().Get(ClanVariables.CONTRIBUTION_WEEKLY + objId, 0);
 	}
 
 	public List<ClanMember> getContributionList()
@@ -3065,7 +3065,7 @@ public class Clan: IIdentifiable, INamable
 
 	public void setClanContributionWeekly(int objId, int exp)
 	{
-		getVariables().set(ClanVariables.CONTRIBUTION_WEEKLY + objId, exp);
+		getVariables().Set(ClanVariables.CONTRIBUTION_WEEKLY + objId, exp);
 	}
 
 	public int getExp()

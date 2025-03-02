@@ -121,14 +121,14 @@ public class MentorManager
 	{
 		Player? player = World.getInstance().getPlayer(mentorId);
 		PlayerVariables vars = player != null ? player.getVariables() : new PlayerVariables(mentorId);
-		vars.set("Mentor-Penalty-" + mentorId, DateTime.UtcNow + penalty);
+		vars.Set("Mentor-Penalty-" + mentorId, DateTime.UtcNow + penalty);
 	}
 
 	public DateTime getMentorPenalty(int mentorId)
 	{
 		Player? player = World.getInstance().getPlayer(mentorId);
 		PlayerVariables vars = player != null ? player.getVariables() : new PlayerVariables(mentorId);
-		return vars.getDateTime("Mentor-Penalty-" + mentorId, DateTime.MinValue);
+		return vars.Get("Mentor-Penalty-" + mentorId, DateTime.MinValue);
 	}
 
 	/**

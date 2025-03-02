@@ -77,7 +77,7 @@ public struct RequestExPledgeDonationRequestPacket: IIncomingPacket<GameSession>
 				break;
 			}
 		}
-		player.getVariables().set(PlayerVariables.CLAN_DONATION_POINTS, Math.Max(player.getClanDonationPoints() - 1, 0));
+		player.getVariables().Set(PlayerVariables.CLAN_DONATION_POINTS, Math.Max(player.getClanDonationPoints() - 1, 0));
 		criticalSuccess(player, clan, _type);
 		player.sendPacket(new ExBloodyCoinCountPacket(player));
 		player.sendItemList();

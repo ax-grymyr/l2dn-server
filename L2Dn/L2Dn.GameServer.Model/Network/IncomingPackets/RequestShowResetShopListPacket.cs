@@ -87,9 +87,9 @@ public struct RequestShowResetShopListPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        player.getVariables().remove("visualHairId");
-        player.getVariables().remove("visualHairColorId");
-        player.getVariables().remove("visualFaceId");
+        player.getVariables().Remove("visualHairId");
+        player.getVariables().Remove("visualHairColorId");
+        player.getVariables().Remove("visualFaceId");
 
         player.sendPacket(new ExResponseBeautyRegistResetPacket(player, ExResponseBeautyRegistResetPacket.RESTORE,
             ExResponseBeautyRegistResetPacket.SUCCESS));

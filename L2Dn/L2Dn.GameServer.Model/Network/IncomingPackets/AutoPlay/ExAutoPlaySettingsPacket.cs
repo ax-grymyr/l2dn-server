@@ -37,7 +37,7 @@ public struct ExAutoPlaySettingsPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
-		
+
         // Skip first run. Fixes restored settings been overwritten.
         // Client sends a disabled ExAutoPlaySetting upon player login.
         if (player.hasResumedAutoPlay())
@@ -48,14 +48,14 @@ public struct ExAutoPlaySettingsPacket: IIncomingPacket<GameSession>
 
         ExAutoPlaySettingSendPacket autoPlaySettingPacket = new ExAutoPlaySettingSendPacket(_options, _active, _pickUp,
             _nextTargetMode, _shortRange, _potionPercent, _respectfulHunting, _petPotionPercent);
-        
+
         connection.Send(ref autoPlaySettingPacket);
-        
+
         player.getAutoPlaySettings().setAutoPotionPercent(_potionPercent);
-		
+
         if (!Config.ENABLE_AUTO_PLAY)
             return ValueTask.CompletedTask;
-		
+
         List<int> settings =
         [
             _options,
@@ -68,9 +68,9 @@ public struct ExAutoPlaySettingsPacket: IIncomingPacket<GameSession>
             _petPotionPercent,
             _macroIndex
         ];
-        
-        player.getVariables().setIntegerList(PlayerVariables.AUTO_USE_SETTINGS, settings);
-		
+
+        player.getVariables().Set(PlayerVariables.AUTO_USE_SETTINGS, settings);
+
         player.getAutoPlaySettings().setOptions(_options);
         player.getAutoPlaySettings().setPickup(_pickUp);
         player.getAutoPlaySettings().setNextTargetMode(_nextTargetMode);
@@ -78,7 +78,7 @@ public struct ExAutoPlaySettingsPacket: IIncomingPacket<GameSession>
         player.getAutoPlaySettings().setRespectfulHunting(_respectfulHunting);
         player.getAutoPlaySettings().setAutoPetPotionPercent(_petPotionPercent);
         player.getAutoPlaySettings().setMacroIndex(_macroIndex);
-		
+
         if (_active)
         {
             AutoPlayTaskManager.getInstance().startAutoPlay(player);

@@ -41,17 +41,17 @@ public sealed class TeleportToRaceTrack: AbstractScript
 	{
 		if (npc.getId() == RaceManager)
 		{
-			int returnId = player.getVariables().getInt(MonsterReturn, -1);
+			int returnId = player.getVariables().Get(MonsterReturn, -1);
 			if (!_teleporterLocations.TryGetValue(returnId, out Location3D location))
 				location = _teleporterLocations[30059];
 
 			player.teleToLocation(new Location(location, 0));
-			player.getVariables().remove(MonsterReturn);
+			player.getVariables().Remove(MonsterReturn);
 		}
 		else
 		{
 			player.teleToLocation(new Location(_raceTrackTeleport, 0));
-			player.getVariables().set(MonsterReturn, npc.getId());
+			player.getVariables().Set(MonsterReturn, npc.getId());
 		}
 
 		return base.onTalk(npc, player);

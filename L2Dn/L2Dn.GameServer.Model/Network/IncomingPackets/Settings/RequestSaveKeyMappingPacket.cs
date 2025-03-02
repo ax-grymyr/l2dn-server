@@ -7,8 +7,6 @@ namespace L2Dn.GameServer.Network.IncomingPackets.Settings;
 
 public struct RequestSaveKeyMappingPacket: IIncomingPacket<GameSession>
 {
-    public const string SPLIT_VAR = "	";
-	
     private byte[]? _uiKeyMapping;
 
     public void ReadContent(PacketBitReader reader)
@@ -29,14 +27,8 @@ public struct RequestSaveKeyMappingPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        string uiKeyMapping = "";
-        foreach (byte b in _uiKeyMapping)
-        {
-            uiKeyMapping += b + SPLIT_VAR;
-        }
-        
-        player.getVariables().set(PlayerVariables.UI_KEY_MAPPING, uiKeyMapping);
-        
+        player.getVariables().Set(PlayerVariables.UI_KEY_MAPPING, _uiKeyMapping);
+
         return ValueTask.CompletedTask;
     }
 }

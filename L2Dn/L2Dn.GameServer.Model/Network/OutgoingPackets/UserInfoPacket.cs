@@ -398,13 +398,13 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 		{
 			PlayerVariables playerVariables = _player.getVariables();
 			writer.WriteInt16(16);
-			writer.WriteInt16((short)(_player.getLevel() < 76 ? 0 : _player.getLevel() - 75 + _player.getVariables().getInt(PlayerVariables.ELIXIRS_AVAILABLE, 0) + (int) _player.getStat().getValue(Stat.ELIXIR_USAGE_LIMIT, 0))); // Usable points
-			writer.WriteInt16((short)playerVariables.getInt(PlayerVariables.STAT_STR, 0));
-			writer.WriteInt16((short)playerVariables.getInt(PlayerVariables.STAT_DEX, 0));
-			writer.WriteInt16((short)playerVariables.getInt(PlayerVariables.STAT_CON, 0));
-			writer.WriteInt16((short)playerVariables.getInt(PlayerVariables.STAT_INT, 0));
-			writer.WriteInt16((short)playerVariables.getInt(PlayerVariables.STAT_WIT, 0));
-			writer.WriteInt16((short)playerVariables.getInt(PlayerVariables.STAT_MEN, 0));
+			writer.WriteInt16((short)(_player.getLevel() < 76 ? 0 : _player.getLevel() - 75 + _player.getVariables().Get(PlayerVariables.ELIXIRS_AVAILABLE, 0) + (int) _player.getStat().getValue(Stat.ELIXIR_USAGE_LIMIT, 0))); // Usable points
+			writer.WriteInt16((short)playerVariables.Get(PlayerVariables.STAT_STR, 0));
+			writer.WriteInt16((short)playerVariables.Get(PlayerVariables.STAT_DEX, 0));
+			writer.WriteInt16((short)playerVariables.Get(PlayerVariables.STAT_CON, 0));
+			writer.WriteInt16((short)playerVariables.Get(PlayerVariables.STAT_INT, 0));
+			writer.WriteInt16((short)playerVariables.Get(PlayerVariables.STAT_WIT, 0));
+			writer.WriteInt16((short)playerVariables.Get(PlayerVariables.STAT_MEN, 0));
 		}
 
 		if (_helper.HasComponent(UserInfoType.STAT_ABILITIES)) // 235
@@ -412,19 +412,19 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			PlayerVariables playerVariables = _player.getVariables();
 			PlayerTemplate playerTemplate = _player.getTemplate();
 			writer.WriteInt16(18);
-			writer.WriteInt16((short)(_player.getSTR() - playerTemplate.getBaseSTR() - playerVariables.getInt(PlayerVariables.STAT_STR, 0))); // additional STR
-			writer.WriteInt16((short)(_player.getDEX() - playerTemplate.getBaseDEX() - playerVariables.getInt(PlayerVariables.STAT_DEX, 0))); // additional DEX
-			writer.WriteInt16((short)(_player.getCON() - playerTemplate.getBaseCON() - playerVariables.getInt(PlayerVariables.STAT_CON, 0))); // additional CON
-			writer.WriteInt16((short)(_player.getINT() - playerTemplate.getBaseINT() - playerVariables.getInt(PlayerVariables.STAT_INT, 0))); // additional INT
-			writer.WriteInt16((short)(_player.getWIT() - playerTemplate.getBaseWIT() - playerVariables.getInt(PlayerVariables.STAT_WIT, 0))); // additional WIT
-			writer.WriteInt16((short)(_player.getMEN() - playerTemplate.getBaseMEN() - playerVariables.getInt(PlayerVariables.STAT_MEN, 0))); // additional MEN
+			writer.WriteInt16((short)(_player.getSTR() - playerTemplate.getBaseSTR() - playerVariables.Get(PlayerVariables.STAT_STR, 0))); // additional STR
+			writer.WriteInt16((short)(_player.getDEX() - playerTemplate.getBaseDEX() - playerVariables.Get(PlayerVariables.STAT_DEX, 0))); // additional DEX
+			writer.WriteInt16((short)(_player.getCON() - playerTemplate.getBaseCON() - playerVariables.Get(PlayerVariables.STAT_CON, 0))); // additional CON
+			writer.WriteInt16((short)(_player.getINT() - playerTemplate.getBaseINT() - playerVariables.Get(PlayerVariables.STAT_INT, 0))); // additional INT
+			writer.WriteInt16((short)(_player.getWIT() - playerTemplate.getBaseWIT() - playerVariables.Get(PlayerVariables.STAT_WIT, 0))); // additional WIT
+			writer.WriteInt16((short)(_player.getMEN() - playerTemplate.getBaseMEN() - playerVariables.Get(PlayerVariables.STAT_MEN, 0))); // additional MEN
 			writer.WriteInt16(0);
 			writer.WriteInt16(0);
 		}
 
 		if (_helper.HasComponent(UserInfoType.ELIXIR_USED)) // 286
 		{
-			writer.WriteInt16((short)_player.getVariables().getInt(PlayerVariables.ELIXIRS_AVAILABLE, 0)); // count
+			writer.WriteInt16((short)_player.getVariables().Get(PlayerVariables.ELIXIRS_AVAILABLE, 0)); // count
 			writer.WriteInt16(0);
 		}
 

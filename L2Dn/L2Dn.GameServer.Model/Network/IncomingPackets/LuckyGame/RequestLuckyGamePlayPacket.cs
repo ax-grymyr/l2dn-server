@@ -50,8 +50,8 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		int playCount = player.getVariables().getInt(PlayerVariables.FORTUNE_TELLING_VARIABLE, 0);
-		bool blackCat = player.getVariables().getBoolean(PlayerVariables.FORTUNE_TELLING_BLACK_CAT_VARIABLE, false);
+		int playCount = player.getVariables().Get(PlayerVariables.FORTUNE_TELLING_VARIABLE, 0);
+		bool blackCat = player.getVariables().Get(PlayerVariables.FORTUNE_TELLING_BLACK_CAT_VARIABLE, false);
 		Map<LuckyGameItemType, List<ItemHolder>> rewards = new();
 		for (int i = 0; i < _reading; i++)
 		{
@@ -143,10 +143,10 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 
 		player.sendItemList();
 
-		player.getVariables().set(PlayerVariables.FORTUNE_TELLING_VARIABLE, playCount >= 50 ? playCount - 50 : playCount);
+		player.getVariables().Set(PlayerVariables.FORTUNE_TELLING_VARIABLE, playCount >= 50 ? playCount - 50 : playCount);
 		if (blackCat && playCount < 50)
 		{
-			player.getVariables().set(PlayerVariables.FORTUNE_TELLING_BLACK_CAT_VARIABLE, true);
+			player.getVariables().Set(PlayerVariables.FORTUNE_TELLING_BLACK_CAT_VARIABLE, true);
 		}
 
         return ValueTask.CompletedTask;

@@ -121,7 +121,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 			}
 
 			if (player.getAccountVariables()
-				    .getInt(AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + _product.getProductionId(), 0) >= amount)
+				    .Get(AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + _product.getProductionId(), 0) >= amount)
 			{
 				player.sendMessage("You have reached your daily limit."); // TODO: Retail system message?
 				player.removeRequest<PrimeShopRequest>();
@@ -143,7 +143,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 
 				return ValueTask.CompletedTask;
 			}
-			if (player.getAccountVariables().getInt(AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + _product.getProductionId(), 0) >= amount)
+			if (player.getAccountVariables().Get(AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + _product.getProductionId(), 0) >= amount)
 			{
 				player.sendMessage("You have reached your montly limit.");
 				player.removeRequest<PrimeShopRequest>();
@@ -167,7 +167,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				return ValueTask.CompletedTask;
 			}
 
-			if (player.getAccountVariables().getInt(AccountVariables.LCOIN_SHOP_PRODUCT_COUNT + _product.getProductionId(), 0) >= amount)
+			if (player.getAccountVariables().Get(AccountVariables.LCOIN_SHOP_PRODUCT_COUNT + _product.getProductionId(), 0) >= amount)
 			{
 				player.sendMessage("You cannot buy any more of this item."); // TODO: Retail system message?
 				player.removeRequest<PrimeShopRequest>();
@@ -477,25 +477,25 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 		if (_product.getAccountDailyLimit() > 0)
 		{
 			player.getAccountVariables()
-				.set(AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + _product.getProductionId(),
+				.Set(AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + _product.getProductionId(),
 					player.getAccountVariables()
-						.getInt(AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + _product.getProductionId(), 0) +
+						.Get(AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + _product.getProductionId(), 0) +
 					_amount);
 		}
 
 		if (_product.getAccountMontlyLimit() > 0)
 		{
 			player.getAccountVariables()
-				.set(AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + _product.getProductionId(),
+				.Set(AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + _product.getProductionId(),
 					player.getAccountVariables()
-						.getInt(AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + _product.getProductionId(), 0) +
+						.Get(AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + _product.getProductionId(), 0) +
 					_amount);
 		}
 		else if (_product.getAccountBuyLimit() > 0)
 		{
-			player.getAccountVariables().set(AccountVariables.LCOIN_SHOP_PRODUCT_COUNT + _product.getProductionId(),
+			player.getAccountVariables().Set(AccountVariables.LCOIN_SHOP_PRODUCT_COUNT + _product.getProductionId(),
 				player.getAccountVariables()
-					.getInt(AccountVariables.LCOIN_SHOP_PRODUCT_COUNT + _product.getProductionId(), 0) + _amount);
+					.Get(AccountVariables.LCOIN_SHOP_PRODUCT_COUNT + _product.getProductionId(), 0) + _amount);
 		}
 
 		player.sendPacket(new ExPurchaseLimitShopItemResultPacket(true, _shopIndex, _productId,

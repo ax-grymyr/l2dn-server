@@ -20,7 +20,7 @@ public class Elixir: ItemSkills
         }
 
         int effectBonus = (int)playable.getStat().getValue(Stat.ELIXIR_USAGE_LIMIT, 0);
-        int elixirsAvailable = player.getVariables().getInt(PlayerVariables.ELIXIRS_AVAILABLE, 0);
+        int elixirsAvailable = player.getVariables().Get(PlayerVariables.ELIXIRS_AVAILABLE, 0);
         if (playable.getLevel() < 76 || //
             (playable.getLevel() < 85 && elixirsAvailable >= 5 + effectBonus) || //
             (playable.getLevel() < 87 && elixirsAvailable >= 7 + effectBonus) || //
@@ -40,7 +40,7 @@ public class Elixir: ItemSkills
 
         if (base.useItem(playable, item, forceUse))
         {
-            player.getVariables().set(PlayerVariables.ELIXIRS_AVAILABLE, elixirsAvailable + 1);
+            player.getVariables().Set(PlayerVariables.ELIXIRS_AVAILABLE, elixirsAvailable + 1);
 
             var sm = new SystemMessagePacket(SystemMessageId.THANKS_TO_THE_ELIXIR_CHARACTER_S_STAT_POINTS_S1);
             sm.Params.addInt(elixirsAvailable + 1);

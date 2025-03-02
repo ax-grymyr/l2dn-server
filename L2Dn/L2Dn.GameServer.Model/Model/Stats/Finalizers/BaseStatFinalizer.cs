@@ -31,32 +31,32 @@ public class BaseStatFinalizer: StatFunction
 			{
 				case Stat.STAT_STR:
 				{
-					baseValue += player.getVariables().getInt(PlayerVariables.STAT_STR, 0);
+					baseValue += player.getVariables().Get(PlayerVariables.STAT_STR, 0);
 					break;
 				}
 				case Stat.STAT_CON:
 				{
-					baseValue += player.getVariables().getInt(PlayerVariables.STAT_CON, 0);
+					baseValue += player.getVariables().Get(PlayerVariables.STAT_CON, 0);
 					break;
 				}
 				case Stat.STAT_DEX:
 				{
-					baseValue += player.getVariables().getInt(PlayerVariables.STAT_DEX, 0);
+					baseValue += player.getVariables().Get(PlayerVariables.STAT_DEX, 0);
 					break;
 				}
 				case Stat.STAT_INT:
 				{
-					baseValue += player.getVariables().getInt(PlayerVariables.STAT_INT, 0);
+					baseValue += player.getVariables().Get(PlayerVariables.STAT_INT, 0);
 					break;
 				}
 				case Stat.STAT_MEN:
 				{
-					baseValue += player.getVariables().getInt(PlayerVariables.STAT_MEN, 0);
+					baseValue += player.getVariables().Get(PlayerVariables.STAT_MEN, 0);
 					break;
 				}
 				case Stat.STAT_WIT:
 				{
-					baseValue += player.getVariables().getInt(PlayerVariables.STAT_WIT, 0);
+					baseValue += player.getVariables().Get(PlayerVariables.STAT_WIT, 0);
 					break;
 				}
 			}

@@ -25,7 +25,7 @@ public struct RequestExRankingCharSpawnBuffzoneNpcPacket: IIncomingPacket<GameSe
             return ValueTask.CompletedTask;
 
         if (GlobalVariablesManager.getInstance()
-                .getDateTime(GlobalVariablesManager.RANKING_POWER_COOLDOWN, DateTime.MinValue) > DateTime.UtcNow)
+                .Get(GlobalVariablesManager.RANKING_POWER_COOLDOWN, DateTime.MinValue) > DateTime.UtcNow)
         {
             player.sendPacket(SystemMessageId.LEADER_POWER_COOLDOWN);
             return ValueTask.CompletedTask;

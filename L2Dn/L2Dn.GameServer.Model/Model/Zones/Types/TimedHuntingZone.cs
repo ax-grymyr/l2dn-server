@@ -40,7 +40,7 @@ public class TimedHuntingZone(int id, ZoneForm form): ZoneType(id, form)
 				if (remainingTime > 0)
 				{
 					player.startTimedHuntingZone(holder.getZoneId(), DateTime.UtcNow.AddMilliseconds(remainingTime));
-					player.getVariables().set(PlayerVariables.LAST_HUNTING_ZONE_ID, holder.getZoneId());
+					player.getVariables().Set(PlayerVariables.LAST_HUNTING_ZONE_ID, holder.getZoneId());
 					if (holder.isPvpZone())
 					{
 						if (!player.isInsideZone(ZoneId.PVP))
@@ -104,7 +104,7 @@ public class TimedHuntingZone(int id, ZoneForm form): ZoneType(id, form)
 		{
 			player.setInsideZone(ZoneId.TIMED_HUNTING, false);
 
-			int lastHuntingZoneId = player.getVariables().getInt(PlayerVariables.LAST_HUNTING_ZONE_ID, 0);
+			int lastHuntingZoneId = player.getVariables().Get(PlayerVariables.LAST_HUNTING_ZONE_ID, 0);
 			TimedHuntingZoneHolder? holder = TimedHuntingZoneData.getInstance().getHuntingZone(lastHuntingZoneId);
 			if (holder != null)
 			{

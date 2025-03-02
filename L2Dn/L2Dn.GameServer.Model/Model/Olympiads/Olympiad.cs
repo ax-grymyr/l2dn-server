@@ -327,7 +327,7 @@ public class Olympiad
 				Player? player = World.getInstance().getPlayer(noblesId);
 				if (player != null)
 				{
-					player.getVariables().set(UNCLAIMED_OLYMPIAD_POINTS_VAR, points);
+					player.getVariables().Set(UNCLAIMED_OLYMPIAD_POINTS_VAR, points);
 				}
 				else
 				{

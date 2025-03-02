@@ -115,13 +115,13 @@ public struct ExTimedHuntingZoneEnterPacket: IIncomingPacket<GameSession>
 
 		// TODO verify time calculations
 		DateTime endTime = currentTime + TimeSpan.FromMilliseconds(player.getTimedHuntingZoneRemainingTime(_zoneId));
-		DateTime lastEntryTime = new DateTime(player.getVariables().getLong(PlayerVariables.HUNTING_ZONE_ENTRY + _zoneId, 0));
+		DateTime lastEntryTime = player.getVariables().Get<DateTime>(PlayerVariables.HUNTING_ZONE_ENTRY + _zoneId);
 		if (lastEntryTime + holder.getResetDelay() < currentTime)
 		{
 			if (endTime == currentTime)
 			{
 				endTime += TimeSpan.FromMilliseconds(holder.getInitialTime());
-				player.getVariables().set(PlayerVariables.HUNTING_ZONE_ENTRY + _zoneId, currentTime);
+				player.getVariables().Set(PlayerVariables.HUNTING_ZONE_ENTRY + _zoneId, currentTime);
 			}
 		}
 
@@ -146,7 +146,7 @@ public struct ExTimedHuntingZoneEnterPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			player.getVariables().set(PlayerVariables.HUNTING_ZONE_TIME + _zoneId, endTime - currentTime);
+			player.getVariables().Set(PlayerVariables.HUNTING_ZONE_TIME + _zoneId, endTime - currentTime);
 
 			if (instanceId == 0)
 			{

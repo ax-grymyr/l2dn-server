@@ -20,14 +20,14 @@ public struct RequestExSpExtractItemPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         if (player.getSp() >= 5000000000L && player.getAdena() >= 3000000 && player.getVariables()
-                .getInt(PlayerVariables.DAILY_EXTRACT_ITEM + Inventory.SP_POUCH, 5) > 0)
+                .Get(PlayerVariables.DAILY_EXTRACT_ITEM + Inventory.SP_POUCH, 5) > 0)
         {
             player.removeExpAndSp(0, 5000000000L);
             player.broadcastUserInfo();
             player.reduceAdena("SpExtract", 3000000, null, true);
             player.addItem("AddSpExtract", Inventory.SP_POUCH, 1, null, true);
-            int current = player.getVariables().getInt(PlayerVariables.DAILY_EXTRACT_ITEM + Inventory.SP_POUCH, 5);
-            player.getVariables().set(PlayerVariables.DAILY_EXTRACT_ITEM + Inventory.SP_POUCH, current - 1);
+            int current = player.getVariables().Get(PlayerVariables.DAILY_EXTRACT_ITEM + Inventory.SP_POUCH, 5);
+            player.getVariables().Set(PlayerVariables.DAILY_EXTRACT_ITEM + Inventory.SP_POUCH, current - 1);
             player.sendPacket(new ExSpExtractItemPacket());
         }
 

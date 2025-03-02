@@ -89,12 +89,12 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		if (Config.RESTORE_PLAYER_INSTANCE)
 		{
 			Instance? instance = InstanceManager.getInstance().getPlayerInstance(player, false);
-			if (instance != null && instance.getId() == vars.getInt(PlayerVariables.INSTANCE_RESTORE, 0))
+			if (instance != null && instance.getId() == vars.Get(PlayerVariables.INSTANCE_RESTORE, 0))
 			{
 				player.setInstance(instance);
 			}
 
-			vars.remove(PlayerVariables.INSTANCE_RESTORE);
+			vars.Remove(PlayerVariables.INSTANCE_RESTORE);
 		}
 
 		if (!player.isGM())
@@ -575,7 +575,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		}
 
 		// Check if expoff is enabled.
-		if (vars.getBoolean("EXPOFF", false))
+		if (vars.Get("EXPOFF", false))
 		{
 			player.disableExpGain();
 			player.sendMessage("Experience gain is disabled.");
@@ -623,18 +623,18 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		{
 			// Send twice.
 			player.setDeathPoints(500);
-			player.setDeathPoints(player.getVariables().getInt(PlayerVariables.DEATH_POINT_COUNT, 0));
+			player.setDeathPoints(player.getVariables().Get(PlayerVariables.DEATH_POINT_COUNT, 0));
 		}
 		// Vanguard beast points init.
 		else if (player.isVanguard())
 		{
 			player.setBeastPoints(1000);
-			player.setBeastPoints(player.getVariables().getInt(PlayerVariables.BEAST_POINT_COUNT, 1000));
+			player.setBeastPoints(player.getVariables().Get(PlayerVariables.BEAST_POINT_COUNT, 1000));
 		}
 		// Assassin points init.
 		else if (player.isAssassin() && player.isInCategory(CategoryType.FOURTH_CLASS_GROUP))
 		{
-			player.setAssassinationPoints(player.getVariables().getInt(PlayerVariables.ASSASSINATION_POINT_COUNT, 0));
+			player.setAssassinationPoints(player.getVariables().Get(PlayerVariables.ASSASSINATION_POINT_COUNT, 0));
 		}
 
 		// Sayha's Grace.

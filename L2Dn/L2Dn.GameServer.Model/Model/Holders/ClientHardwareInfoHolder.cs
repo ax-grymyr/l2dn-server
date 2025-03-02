@@ -123,7 +123,7 @@ public sealed class ClientHardwareInfoHolder
 		sb.Append(_vgaName);
 		sb.Append(AccountVariables.HWIDSLIT_VAR);
 		sb.Append(_vgaDriverVersion);
-		player.getAccountVariables().set(AccountVariables.HWID, sb.ToString());
+		player.getAccountVariables().Set(AccountVariables.HWID, sb.ToString());
 	}
 
 	/**

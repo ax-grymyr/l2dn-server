@@ -11,16 +11,16 @@ namespace L2Dn.GameServer.Network.OutgoingPackets.NewSkillEnchant;
 public readonly struct ExSpExtractInfoPacket: IOutgoingPacket
 {
     private readonly Player _player;
-	
+
     public ExSpExtractInfoPacket(Player player)
     {
         _player = player;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SP_EXTRACT_INFO);
-        
+
         writer.WriteInt32(Inventory.SP_POUCH); // ItemID
         writer.WriteInt32(1); // ExtractCount
         writer.WriteInt64(5000000000L); // NeedSP
@@ -35,7 +35,7 @@ public readonly struct ExSpExtractInfoPacket: IOutgoingPacket
         writer.WriteInt16((short)InventoryPacketHelper.CalculatePacketSize(new ItemInfo(new Item(Inventory.ADENA_ID))));
         writer.WriteInt32(Inventory.ADENA_ID);
         writer.WriteInt64(1);
-        writer.WriteInt32(_player.getVariables().getInt(PlayerVariables.DAILY_EXTRACT_ITEM + Inventory.SP_POUCH, 5));
+        writer.WriteInt32(_player.getVariables().Get(PlayerVariables.DAILY_EXTRACT_ITEM + Inventory.SP_POUCH, 5));
         writer.WriteInt32(5);
     }
 }

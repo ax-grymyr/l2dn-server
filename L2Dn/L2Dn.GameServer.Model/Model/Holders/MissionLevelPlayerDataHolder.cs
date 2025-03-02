@@ -142,7 +142,7 @@ public class MissionLevelPlayerDataHolder
 	public void storeInfoInVariable(Player player)
 	{
 		player.getVariables()
-			.set(PlayerVariables.MISSION_LEVEL_PROGRESS + MissionLevel.getInstance().getCurrentSeason(),
+			.Set(PlayerVariables.MISSION_LEVEL_PROGRESS + MissionLevel.getInstance().getCurrentSeason(),
 				getVariablesFromInfo());
 	}
 

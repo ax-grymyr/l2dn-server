@@ -12,7 +12,7 @@ public readonly struct ExPurchaseLimitShopItemListNewPacket: IOutgoingPacket
 	private readonly int _page;
 	private readonly int _totalPages;
 	private readonly ICollection<LimitShopProductHolder> _products;
-	
+
 	public ExPurchaseLimitShopItemListNewPacket(Player player, int shopType, int page, int totalPages, ICollection<LimitShopProductHolder> products)
 	{
 		_player = player;
@@ -21,11 +21,11 @@ public readonly struct ExPurchaseLimitShopItemListNewPacket: IOutgoingPacket
 		_totalPages = totalPages;
 		_products = products;
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.EX_PURCHASE_LIMIT_SHOP_ITEM_LIST_NEW);
-		
+
 		writer.WriteByte((byte)_shopType);
 		writer.WriteByte((byte)_page); // 311
 		writer.WriteByte((byte)_totalPages); // 311
@@ -52,35 +52,35 @@ public readonly struct ExPurchaseLimitShopItemListNewPacket: IOutgoingPacket
 			// Check limits.
 			if (product.getAccountDailyLimit() > 0) // Sale period.
 			{
-				if (_player.getAccountVariables().getInt(AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + product.getProductionId(), 0) >= product.getAccountDailyLimit())
+				if (_player.getAccountVariables().Get(AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + product.getProductionId(), 0) >= product.getAccountDailyLimit())
 				{
 					writer.WriteInt32(0);
 				}
 				else
 				{
-					writer.WriteInt32(product.getAccountDailyLimit() - _player.getAccountVariables().getInt(AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + product.getProductionId(), 0));
+					writer.WriteInt32(product.getAccountDailyLimit() - _player.getAccountVariables().Get(AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + product.getProductionId(), 0));
 				}
 			}
 			else if (product.getAccountMontlyLimit() > 0)
 			{
-				if (_player.getAccountVariables().getInt(AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + product.getProductionId(), 0) >= product.getAccountMontlyLimit())
+				if (_player.getAccountVariables().Get(AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + product.getProductionId(), 0) >= product.getAccountMontlyLimit())
 				{
 					writer.WriteInt32(0);
 				}
 				else
 				{
-					writer.WriteInt32(product.getAccountMontlyLimit() - _player.getAccountVariables().getInt(AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + product.getProductionId(), 0));
+					writer.WriteInt32(product.getAccountMontlyLimit() - _player.getAccountVariables().Get(AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + product.getProductionId(), 0));
 				}
 			}
 			else if (product.getAccountBuyLimit() > 0) // Count limit.
 			{
-				if (_player.getAccountVariables().getInt(AccountVariables.LCOIN_SHOP_PRODUCT_COUNT + product.getProductionId(), 0) >= product.getAccountBuyLimit())
+				if (_player.getAccountVariables().Get(AccountVariables.LCOIN_SHOP_PRODUCT_COUNT + product.getProductionId(), 0) >= product.getAccountBuyLimit())
 				{
 					writer.WriteInt32(0);
 				}
 				else
 				{
-					writer.WriteInt32(product.getAccountBuyLimit() - _player.getAccountVariables().getInt(AccountVariables.LCOIN_SHOP_PRODUCT_COUNT + product.getProductionId(), 0));
+					writer.WriteInt32(product.getAccountBuyLimit() - _player.getAccountVariables().Get(AccountVariables.LCOIN_SHOP_PRODUCT_COUNT + product.getProductionId(), 0));
 				}
 			}
 			else // No account limits.

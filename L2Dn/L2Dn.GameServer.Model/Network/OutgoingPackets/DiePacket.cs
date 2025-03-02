@@ -100,7 +100,7 @@ public readonly struct DiePacket: IOutgoingPacket
 		writer.WriteInt32(0);
 		if (_player != null && Config.RESURRECT_BY_PAYMENT_ENABLED)
 		{
-			int resurrectTimes = _player.getVariables().getInt(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, 0) + 1;
+			int resurrectTimes = _player.getVariables().Get(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, 0) + 1;
 			int originalValue = resurrectTimes - 1;
 			if (originalValue < Config.RESURRECT_BY_PAYMENT_MAX_FREE_TIMES)
 			{

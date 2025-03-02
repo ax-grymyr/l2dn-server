@@ -50,7 +50,7 @@ public class VipManager
 		{
 			return false;
 		}
-		return player.getAccountVariables().getLong(AccountVariables.VIP_ITEM_BOUGHT, 0) <= 0;
+		return player.getAccountVariables().Get(AccountVariables.VIP_ITEM_BOUGHT, 0L) <= 0L;
 	}
 
 	private void onVipLogin(OnPlayerLogin @event)

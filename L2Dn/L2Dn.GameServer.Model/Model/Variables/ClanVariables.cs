@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Model.Zones.Types;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 
@@ -6,55 +7,25 @@ namespace L2Dn.GameServer.Model.Variables;
 
 public class ClanVariables: AbstractVariables<DbClanVariable>
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ClanVariables));
-	
-	// Public variable names.
-	public const string CONTRIBUTION = "CONTRIBUTION_";
-	public const string CONTRIBUTION_WEEKLY = "CONTRIBUTION_WEEKLY_";
-	
-	private readonly int _objectId;
-	
-	public ClanVariables(int objectId)
-	{
-		_objectId = objectId;
-		restoreMe();
-	}
+    // Public variable names.
+    public const string CONTRIBUTION = "CONTRIBUTION_";
+    public const string CONTRIBUTION_WEEKLY = "CONTRIBUTION_WEEKLY_";
 
-	protected override IQueryable<DbClanVariable> GetQuery(GameServerDbContext ctx)
-	{
-		return ctx.ClanVariables.Where(r => r.ClanId == _objectId);
-	}
+    private readonly int _objectId;
 
-	protected override DbClanVariable CreateVar()
-	{
-		return new DbClanVariable()
-		{
-			ClanId = _objectId
-		};
-	}
+    public ClanVariables(int objectId)
+    {
+        _objectId = objectId;
+        Restore();
+    }
 
-	public bool deleteWeeklyContribution()
-	{
-		try
-		{
-			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			
-			// Clear previous entries.
-			GetQuery(ctx).Where(r => EF.Functions.Like(r.Name, "CONTRIBUTION_WEEKLY_%")).ExecuteDelete();
+    protected override IQueryable<DbClanVariable> GetQuery(GameServerDbContext ctx) =>
+        ctx.ClanVariables.Where(r => r.ClanId == _objectId);
 
-			// Clear all entries
-			List<string> names = getSet().Select(x => x.Key).Where(x => x.StartsWith("CONTRIBUTION_WEEKLY_")).ToList();
-			foreach (string name in names)
-			{
-				getSet().remove(name);
-			}
-		}
-		catch (Exception e)
-		{
-			LOGGER.Error(GetType().Name + ": Couldn't delete variables for: " + _objectId + ": " + e);
-			return false;
-		}
+    protected override DbClanVariable CreateVar() => new() { ClanId = _objectId };
 
-		return true;
-	}
+    public void DeleteWeeklyContribution()
+    {
+        RemoveAll("CONTRIBUTION_WEEKLY_");
+    }
 }

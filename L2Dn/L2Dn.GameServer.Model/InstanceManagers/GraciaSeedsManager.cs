@@ -34,9 +34,9 @@ public class GraciaSeedsManager
 			case SODTYPE:
 			{
 				// Seed of Destruction
-				GlobalVariablesManager.getInstance().set("SoDState", _SoDState);
-				GlobalVariablesManager.getInstance().set("SoDTiatKilled", _SoDTiatKilled);
-				GlobalVariablesManager.getInstance().set("SoDLSCDate", _SoDLastStateChangeDate.Ticks);
+				GlobalVariablesManager.getInstance().Set("SoDState", _SoDState);
+				GlobalVariablesManager.getInstance().Set("SoDTiatKilled", _SoDTiatKilled);
+				GlobalVariablesManager.getInstance().Set("SoDLSCDate", _SoDLastStateChangeDate.Ticks);
 				break;
 			}
 			case SOITYPE:
@@ -60,11 +60,11 @@ public class GraciaSeedsManager
 	public void loadData()
 	{
 		// Seed of Destruction variables
-		if (GlobalVariablesManager.getInstance().hasVariable("SoDState"))
+		if (GlobalVariablesManager.getInstance().ContainsKey("SoDState"))
 		{
-			_SoDState = GlobalVariablesManager.getInstance().getInt("SoDState");
-			_SoDTiatKilled = GlobalVariablesManager.getInstance().getInt("SoDTiatKilled");
-			_SoDLastStateChangeDate = new DateTime(GlobalVariablesManager.getInstance().getLong("SoDLSCDate"));
+			_SoDState = GlobalVariablesManager.getInstance().Get<int>("SoDState");
+			_SoDTiatKilled = GlobalVariablesManager.getInstance().Get<int>("SoDTiatKilled");
+			_SoDLastStateChangeDate = new DateTime(GlobalVariablesManager.getInstance().Get<long>("SoDLSCDate"));
 		}
 		else
 		{

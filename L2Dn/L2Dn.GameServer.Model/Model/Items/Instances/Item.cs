@@ -185,7 +185,7 @@ public class Item: WorldObject
 			restoreSpecialAbilities();
 		}
 
-		_isBlessed = getVariables().getBoolean(ItemVariables.BLESSED, false);
+		_isBlessed = getVariables().Get(ItemVariables.BLESSED, false);
 	}
 
 	/**
@@ -2460,10 +2460,10 @@ public class Item: WorldObject
 
 	public int getVisualId()
 	{
-		int visualId = getVariables().getInt(ItemVariables.VISUAL_ID, 0);
+		int visualId = getVariables().Get(ItemVariables.VISUAL_ID, 0);
 		if (visualId > 0)
 		{
-			int appearanceStoneId = getVariables().getInt(ItemVariables.VISUAL_APPEARANCE_STONE_ID, 0);
+			int appearanceStoneId = getVariables().Get(ItemVariables.VISUAL_APPEARANCE_STONE_ID, 0);
 			if (appearanceStoneId > 0)
 			{
 				AppearanceStone? stone = AppearanceItemData.getInstance().getStone(appearanceStoneId);
@@ -2494,7 +2494,7 @@ public class Item: WorldObject
 
 	public void setVisualId(int visualId, bool announce)
 	{
-		getVariables().set(ItemVariables.VISUAL_ID, visualId);
+		getVariables().Set(ItemVariables.VISUAL_ID, visualId);
 
 		// When removed, cancel existing lifetime task.
 		if (visualId == 0)
@@ -2506,12 +2506,12 @@ public class Item: WorldObject
 
 	public int getAppearanceStoneId()
 	{
-		return getVariables().getInt(ItemVariables.VISUAL_APPEARANCE_STONE_ID, 0);
+		return getVariables().Get(ItemVariables.VISUAL_APPEARANCE_STONE_ID, 0);
 	}
 
 	public DateTime? getVisualLifeTime()
 	{
-		DateTime time = getVariables().getDateTime(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME, DateTime.MinValue);
+		DateTime time = getVariables().Get(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME, DateTime.MinValue);
 		return time == DateTime.MinValue ? null : time;
 	}
 
@@ -2543,9 +2543,9 @@ public class Item: WorldObject
 		removeVisualSetSkills();
 
 		ItemVariables vars = getVariables();
-		vars.remove(ItemVariables.VISUAL_ID);
-		vars.remove(ItemVariables.VISUAL_APPEARANCE_STONE_ID);
-		vars.remove(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME);
+		vars.Remove(ItemVariables.VISUAL_ID);
+		vars.Remove(ItemVariables.VISUAL_APPEARANCE_STONE_ID);
+		vars.Remove(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME);
 		vars.storeMe();
 
 		Player? player = getActingPlayer();
@@ -2585,11 +2585,11 @@ public class Item: WorldObject
 		ItemVariables vars = getVariables();
 		if (!blessed)
 		{
-			vars.remove(ItemVariables.BLESSED);
+			vars.Remove(ItemVariables.BLESSED);
 		}
 		else
 		{
-			vars.set(ItemVariables.BLESSED, true);
+			vars.Set(ItemVariables.BLESSED, true);
 		}
 		vars.storeMe();
 	}

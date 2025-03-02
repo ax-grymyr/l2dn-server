@@ -100,9 +100,9 @@ public struct ExTeleportToRaidPositionPacket: IIncomingPacket<GameSession>
 		}
 
 		int price;
-		if (DateTime.UtcNow - player.getVariables().getDateTime("LastFreeRaidTeleportTime", DateTime.MinValue) > TimeSpan.FromDays(1))
+		if (DateTime.UtcNow - player.getVariables().Get("LastFreeRaidTeleportTime", DateTime.MinValue) > TimeSpan.FromDays(1))
 		{
-			player.getVariables().set("LastFreeRaidTeleportTime", DateTime.UtcNow);
+			player.getVariables().Set("LastFreeRaidTeleportTime", DateTime.UtcNow);
 			price = 0;
 		}
 		else

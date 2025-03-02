@@ -288,7 +288,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 				if (checkPlayerSkill(player, trainer, s, _level))
 				{
 					PlayerVariables vars = player.getVariables();
-					string list = vars.getString("SubSkillList", "");
+					string list = vars.Get("SubSkillList", string.Empty);
 					if (prevSkillLevel > 0 && list.contains(_id + "-" + prevSkillLevel))
 					{
 						list = list.Replace(_id + "-" + prevSkillLevel, _id + "-" + _level);
@@ -302,7 +302,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 						list += _id + "-" + _level;
 					}
 
-					vars.set("SubSkillList", list);
+					vars.Set("SubSkillList", list);
 					giveSkill(player, trainer, skill, false);
 				}
 				break;
@@ -319,7 +319,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 				if (checkPlayerSkill(player, trainer, s, _level))
 				{
 					PlayerVariables vars = player.getVariables();
-					string list = vars.getString("DualSkillList", "");
+					string list = vars.Get("DualSkillList", string.Empty);
 					if (prevSkillLevel > 0 && list.contains(_id + "-" + prevSkillLevel))
 					{
 						list = list.Replace(_id + "-" + prevSkillLevel, _id + "-" + _level);
@@ -332,7 +332,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 						}
 						list += _id + "-" + _level;
 					}
-					vars.set("DualSkillList", list);
+					vars.Set("DualSkillList", list);
 					giveSkill(player, trainer, skill, false);
 				}
 				break;

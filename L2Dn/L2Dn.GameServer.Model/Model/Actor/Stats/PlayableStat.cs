@@ -79,13 +79,13 @@ public class PlayableStat: CreatureStat
 			}
 
 			// Check last rewarded level - prevent reputation farming via deleveling
-			int lastPledgedLevel = player.getVariables().getInt(PlayerVariables.LAST_PLEDGE_REPUTATION_LEVEL, 0);
+			int lastPledgedLevel = player.getVariables().Get(PlayerVariables.LAST_PLEDGE_REPUTATION_LEVEL, 0);
 			if (lastPledgedLevel < newLevel)
 			{
 				int leveledUpCount = newLevel - lastPledgedLevel;
 				addReputationToClanBasedOnLevel(player, leveledUpCount);
 
-				player.getVariables().set(PlayerVariables.LAST_PLEDGE_REPUTATION_LEVEL, newLevel);
+				player.getVariables().Set(PlayerVariables.LAST_PLEDGE_REPUTATION_LEVEL, newLevel);
 			}
 		}
 

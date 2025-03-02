@@ -126,13 +126,13 @@ public struct RequestShortCutRegisterPacket: IIncomingPacket<GameSession>
         // When id is not auto used, deactivate auto shortcuts.
         if (!player.getAutoUseSettings().isAutoSkill(_id) && !player.getAutoUseSettings().getAutoSupplyItems().Contains(_id))
         {
-            List<int> positions = player.getVariables().getIntegerList(PlayerVariables.AUTO_USE_SHORTCUTS);
             int position = _slot + _page * ShortCuts.MAX_SHORTCUTS_PER_BAR;
-            if (!positions.Contains(position))
+            List<int>? positions = player.getVariables().Get<List<int>>(PlayerVariables.AUTO_USE_SHORTCUTS);
+            if (positions == null || !positions.Contains(position))
                 return ValueTask.CompletedTask;
 
             positions.Remove(position);
-            player.getVariables().setIntegerList(PlayerVariables.AUTO_USE_SHORTCUTS, positions);
+            player.getVariables().Set(PlayerVariables.AUTO_USE_SHORTCUTS, positions);
             return ValueTask.CompletedTask;
         }
 

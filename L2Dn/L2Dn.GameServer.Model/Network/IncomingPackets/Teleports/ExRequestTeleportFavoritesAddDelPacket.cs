@@ -29,34 +29,33 @@ public struct ExRequestTeleportFavoritesAddDelPacket: IIncomingPacket<GameSessio
             PacketLogger.Instance.Warn("No registered teleport location for id: " + _teleportId);
             return ValueTask.CompletedTask;
         }
-		
+
+        List<int>? favoriteTeleports = player.getVariables().Get<List<int>>(PlayerVariables.FAVORITE_TELEPORTS);
+
         List<int> favorites = new();
-        foreach (int id in player.getVariables().getIntegerList(PlayerVariables.FAVORITE_TELEPORTS))
+        if (favoriteTeleports != null)
         {
-            if (TeleportListData.getInstance().getTeleport(_teleportId) == null)
+            foreach (int id in favoriteTeleports)
             {
-                PacketLogger.Instance.Warn("No registered teleport location for id: " + _teleportId);
-            }
-            else
-            {
-                favorites.Add(id);
+                if (TeleportListData.getInstance().getTeleport(_teleportId) == null)
+                    PacketLogger.Instance.Warn("No registered teleport location for id: " + _teleportId);
+                else
+                    favorites.Add(id);
             }
         }
-		
+
         if (_enable)
         {
             if (!favorites.Contains(_teleportId))
-            {
                 favorites.Add(_teleportId);
-            }
         }
         else
         {
             favorites.Remove(_teleportId);
         }
-		
-        player.getVariables().setIntegerList(PlayerVariables.FAVORITE_TELEPORTS, favorites);
-        
+
+        player.getVariables().Set(PlayerVariables.FAVORITE_TELEPORTS, favorites);
+
         return ValueTask.CompletedTask;
     }
 }

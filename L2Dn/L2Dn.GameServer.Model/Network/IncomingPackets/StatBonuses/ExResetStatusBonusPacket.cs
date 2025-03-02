@@ -21,12 +21,12 @@ public struct ExResetStatusBonusPacket: IIncomingPacket<GameSession>
 		    return ValueTask.CompletedTask;
 
 	    PlayerVariables vars = player.getVariables();
-	    int points = vars.getInt(PlayerVariables.STAT_STR, 0) +
-	                 vars.getInt(PlayerVariables.STAT_DEX, 0) +
-	                 vars.getInt(PlayerVariables.STAT_CON, 0) +
-	                 vars.getInt(PlayerVariables.STAT_INT, 0) +
-	                 vars.getInt(PlayerVariables.STAT_WIT, 0) +
-	                 vars.getInt(PlayerVariables.STAT_MEN, 0);
+	    int points = vars.Get(PlayerVariables.STAT_STR, 0) +
+	                 vars.Get(PlayerVariables.STAT_DEX, 0) +
+	                 vars.Get(PlayerVariables.STAT_CON, 0) +
+	                 vars.Get(PlayerVariables.STAT_INT, 0) +
+	                 vars.Get(PlayerVariables.STAT_WIT, 0) +
+	                 vars.Get(PlayerVariables.STAT_MEN, 0);
 
 	    int adenaCost;
 	    int lcoinCost;
@@ -75,16 +75,16 @@ public struct ExResetStatusBonusPacket: IIncomingPacket<GameSession>
 	    if (player.reduceAdena("ExResetStatusBonus", adenaCost, player, true) &&
 	        player.destroyItemByItemId("ExResetStatusBonus", Inventory.LCOIN_ID, lcoinCost, player, true))
 	    {
-		    player.getVariables().remove(PlayerVariables.STAT_POINTS);
-		    player.getVariables().remove(PlayerVariables.STAT_STR);
-		    player.getVariables().remove(PlayerVariables.STAT_DEX);
-		    player.getVariables().remove(PlayerVariables.STAT_CON);
-		    player.getVariables().remove(PlayerVariables.STAT_INT);
-		    player.getVariables().remove(PlayerVariables.STAT_WIT);
-		    player.getVariables().remove(PlayerVariables.STAT_MEN);
+		    player.getVariables().Remove(PlayerVariables.STAT_POINTS);
+		    player.getVariables().Remove(PlayerVariables.STAT_STR);
+		    player.getVariables().Remove(PlayerVariables.STAT_DEX);
+		    player.getVariables().Remove(PlayerVariables.STAT_CON);
+		    player.getVariables().Remove(PlayerVariables.STAT_INT);
+		    player.getVariables().Remove(PlayerVariables.STAT_WIT);
+		    player.getVariables().Remove(PlayerVariables.STAT_MEN);
 
-		    player.getVariables().set(PlayerVariables.ELIXIRS_AVAILABLE,
-			    player.getVariables().getInt(PlayerVariables.ELIXIRS_AVAILABLE, 0));
+		    player.getVariables().Set(PlayerVariables.ELIXIRS_AVAILABLE,
+			    player.getVariables().Get(PlayerVariables.ELIXIRS_AVAILABLE, 0));
 
 		    player.getStat().recalculateStats(true);
 

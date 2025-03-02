@@ -1063,7 +1063,7 @@ public class Instance : IIdentifiable, INamable
 				// Set origin return location if enabled
 				if (_template.getExitLocationType() == InstanceTeleportType.ORIGIN)
                 {
-                    player.getVariables().set(PlayerVariables.INSTANCE_ORIGIN,
+                    player.getVariables().Set(PlayerVariables.INSTANCE_ORIGIN,
                         player.getX() + ";" + player.getY() + ";" + player.getZ());
                 }
 
@@ -1117,7 +1117,7 @@ public class Instance : IIdentifiable, INamable
 		removePlayer(player);
 		if (Config.RESTORE_PLAYER_INSTANCE)
 		{
-			player.getVariables().set(PlayerVariables.INSTANCE_RESTORE, _id);
+			player.getVariables().Set(PlayerVariables.INSTANCE_RESTORE, _id);
 		}
 		else
 		{

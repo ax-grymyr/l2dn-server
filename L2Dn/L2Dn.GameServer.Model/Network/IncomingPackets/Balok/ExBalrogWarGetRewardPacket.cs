@@ -19,22 +19,22 @@ public struct ExBalrogWarGetRewardPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        int availableReward = player.getVariables().getInt(PlayerVariables.BALOK_AVAILABLE_REWARD, 0);
+        int availableReward = player.getVariables().Get(PlayerVariables.BALOK_AVAILABLE_REWARD, 0);
         if (availableReward != 1)
             return ValueTask.CompletedTask;
-		
+
         int count = 1;
         int globalStage = BattleWithBalokManager.getInstance().getGlobalStage();
         if (globalStage < 4)
         {
             count = 30; // sayha potion sealed
         }
-		
+
         int reward = BattleWithBalokManager.getInstance().getReward();
         player.addItem("Battle with Balok", reward, count, player, true);
-        player.getVariables().set(PlayerVariables.BALOK_AVAILABLE_REWARD, -1);
+        player.getVariables().Set(PlayerVariables.BALOK_AVAILABLE_REWARD, -1);
         player.sendPacket(new BalrogWarGetRewardPacket(true));
-        
+
         return ValueTask.CompletedTask;
     }
 }

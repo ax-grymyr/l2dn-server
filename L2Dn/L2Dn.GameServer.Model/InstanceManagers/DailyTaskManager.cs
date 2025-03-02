@@ -46,7 +46,8 @@ public class DailyTaskManager
 			calendar = calendar.AddDays(1);
 
 		// Check if 24 hours have passed since the last daily reset.
-		if (GlobalVariablesManager.getInstance().getLong(GlobalVariablesManager.DAILY_TASK_RESET, 0) < calendar.Ticks)
+        DateTime resetTime = GlobalVariablesManager.getInstance().Get<DateTime>(GlobalVariablesManager.DAILY_TASK_RESET);
+		if (resetTime < calendar)
 		{
 			LOGGER.Info(GetType().Name +": Next schedule at " + calendar.ToString("dd/MM HH:mm") + ".");
 		}
@@ -70,7 +71,7 @@ public class DailyTaskManager
 	private void onReset()
 	{
 		// Store last reset time.
-		GlobalVariablesManager.getInstance().set(GlobalVariablesManager.DAILY_TASK_RESET, DateTime.Now.Ticks);
+		GlobalVariablesManager.getInstance().Set(GlobalVariablesManager.DAILY_TASK_RESET, DateTime.Now);
 
 		// Wednesday weekly tasks.
 		DateTime calendar = DateTime.Now;
@@ -158,7 +159,7 @@ public class DailyTaskManager
 	{
 		foreach (Clan clan in ClanTable.getInstance().getClans())
 		{
-			clan.getVariables().deleteWeeklyContribution();
+			clan.getVariables().DeleteWeeklyContribution();
 		}
 	}
 
@@ -243,7 +244,7 @@ public class DailyTaskManager
 	{
 		foreach (Clan clan in ClanTable.getInstance().getClans())
 		{
-			GlobalVariablesManager.getInstance().remove(GlobalVariablesManager.MONSTER_ARENA_VARIABLE + clan.getId());
+			GlobalVariablesManager.getInstance().Remove(GlobalVariablesManager.MONSTER_ARENA_VARIABLE + clan.getId());
 		}
 	}
 
@@ -344,7 +345,7 @@ public class DailyTaskManager
 		// Update data for online players.
 		foreach (Player player in World.getInstance().getPlayers())
 		{
-			player.getVariables().remove(PlayerVariables.CLAN_DONATION_POINTS);
+			player.getVariables().Remove(PlayerVariables.CLAN_DONATION_POINTS);
 			player.getVariables().storeMe();
 		}
 
@@ -433,7 +434,7 @@ public class DailyTaskManager
 	private void resetVip()
 	{
 		// Delete all entries for received gifts
-		AccountVariables.deleteVariable(AccountVariables.VIP_ITEM_BOUGHT);
+		AccountVariables.DeleteVariable(AccountVariables.VIP_ITEM_BOUGHT);
 
 		// Checks the tier expiration for online players
 		// offline players get handled on next time they log in.
@@ -444,7 +445,7 @@ public class DailyTaskManager
 				VipManager.getInstance().checkVipTierExpiration(player);
 			}
 
-			player.getAccountVariables().restoreMe();
+			// player.getAccountVariables().restoreMe(); // TODO: why it here?
 		}
 	}
 
@@ -482,9 +483,9 @@ public class DailyTaskManager
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				player.getVariables().remove(PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId());
-				player.getVariables().remove(PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId());
-				player.getVariables().remove(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId());
+				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId());
+				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId());
+				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId());
 				player.getVariables().storeMe();
 			}
 		}
@@ -521,9 +522,9 @@ public class DailyTaskManager
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				player.getVariables().remove(PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId());
-				player.getVariables().remove(PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId());
-				player.getVariables().remove(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId());
+				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId());
+				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId());
+				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId());
 				player.getVariables().storeMe();
 			}
 		}
@@ -549,7 +550,7 @@ public class DailyTaskManager
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				player.getAccountVariables().remove("ATTENDANCE_DATE");
+				player.getAccountVariables().Remove("ATTENDANCE_DATE");
 				player.getAccountVariables().storeMe();
 			}
 
@@ -571,7 +572,7 @@ public class DailyTaskManager
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				player.getVariables().remove(PlayerVariables.ATTENDANCE_DATE);
+				player.getVariables().Remove(PlayerVariables.ATTENDANCE_DATE);
 				player.getVariables().storeMe();
 			}
 
@@ -598,7 +599,7 @@ public class DailyTaskManager
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				player.getAccountVariables().remove(AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + holder.getBrId());
+				player.getAccountVariables().Remove(AccountVariables.PRIME_SHOP_PRODUCT_DAILY_COUNT + holder.getBrId());
 				player.getAccountVariables().storeMe();
 			}
 		}
@@ -624,7 +625,7 @@ public class DailyTaskManager
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				player.getAccountVariables().remove(AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + holder.getProductionId());
+				player.getAccountVariables().Remove(AccountVariables.LCOIN_SHOP_PRODUCT_DAILY_COUNT + holder.getProductionId());
 				player.getAccountVariables().storeMe();
 			}
 		}
@@ -649,7 +650,7 @@ public class DailyTaskManager
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				player.getAccountVariables().remove(AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + holder.getProductionId());
+				player.getAccountVariables().Remove(AccountVariables.LCOIN_SHOP_PRODUCT_MONTLY_COUNT + holder.getProductionId());
 				player.getAccountVariables().storeMe();
 			}
 		}
@@ -694,7 +695,7 @@ public class DailyTaskManager
 		// Update data for online players.
 		foreach (Player player in World.getInstance().getPlayers())
 		{
-			player.getVariables().remove(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT);
+			player.getVariables().Remove(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT);
 			player.getVariables().storeMe();
 		}
 
@@ -731,7 +732,7 @@ public class DailyTaskManager
 		// Update data for online players.
 		foreach (Player player in World.getInstance().getPlayers())
 		{
-			player.getVariables().remove(PlayerVariables.DYE_POTENTIAL_DAILY_COUNT);
+			player.getVariables().Remove(PlayerVariables.DYE_POTENTIAL_DAILY_COUNT);
 			player.getVariables().storeMe();
 		}
 
@@ -754,7 +755,7 @@ public class DailyTaskManager
 		// Update data for online players.
 		foreach (Player player in World.getInstance().getPlayers())
 		{
-			player.getAccountVariables().remove("MORGOS_MILITARY_FREE");
+			player.getAccountVariables().Remove("MORGOS_MILITARY_FREE");
 			player.getAccountVariables().storeMe();
 		}
 

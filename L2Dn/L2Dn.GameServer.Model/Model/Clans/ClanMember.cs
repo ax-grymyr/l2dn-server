@@ -806,7 +806,7 @@ public class ClanMember
 	{
 		_onlineTime = TimeSpan.Zero;
 		PlayerVariables vars = getVariables();
-		vars.set("CLAIMED_CLAN_REWARDS", (int)ClanRewardType.None);
+		vars.Set("CLAIMED_CLAN_REWARDS", (int)ClanRewardType.None);
 		vars.storeMe();
 	}
 
@@ -818,16 +818,16 @@ public class ClanMember
 	public bool isRewardClaimed(ClanRewardType type)
 	{
 		PlayerVariables vars = getVariables();
-		ClanRewardType claimedRewards = (ClanRewardType)vars.getInt("CLAIMED_CLAN_REWARDS", (int)ClanRewardType.All);
+		ClanRewardType claimedRewards = (ClanRewardType)vars.Get("CLAIMED_CLAN_REWARDS", (int)ClanRewardType.All);
 		return (claimedRewards & type) == type;
 	}
 
 	public void setRewardClaimed(ClanRewardType type)
 	{
 		PlayerVariables vars = getVariables();
-		ClanRewardType claimedRewards = (ClanRewardType)vars.getInt("CLAIMED_CLAN_REWARDS", (int)ClanRewardType.All);
+		ClanRewardType claimedRewards = (ClanRewardType)vars.Get("CLAIMED_CLAN_REWARDS", (int)ClanRewardType.All);
 		claimedRewards |= type;
-		vars.set("CLAIMED_CLAN_REWARDS", (int)claimedRewards);
+		vars.Set("CLAIMED_CLAN_REWARDS", (int)claimedRewards);
 		vars.storeMe();
 	}
 
