@@ -538,7 +538,7 @@ public class Player: Playable
 
 	private readonly Set<int> _whisperers = new();
 
-	private ElementalSpirit[] _spirits = [];
+	private ElementalSpirit[]? _spirits;
 	private ElementalType _activeElementalSpiritType;
 
 	private int _vipTier;
@@ -14889,7 +14889,7 @@ public class Player: Playable
         }
     }
 
-	public ElementalSpirit[] getSpirits()
+	public ElementalSpirit[]? getSpirits()
 	{
 		return _spirits;
 	}

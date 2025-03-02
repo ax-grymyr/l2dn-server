@@ -217,18 +217,18 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 
 			// Elemental Spirits.
 			if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP))
-			{
-				if (player.getSpirits() == null)
+            {
+                ElementalSpirit[]? spirits = player.getSpirits();
+				if (spirits == null)
 				{
 					player.initElementalSpirits();
-				}
+                    spirits = player.getSpirits() ?? throw new InvalidOperationException("Cannot initialize spirits");
+                }
 
-				foreach (ElementalSpirit spirit in player.getSpirits())
+                foreach (ElementalSpirit spirit in spirits)
 				{
 					if (spirit.getStage() == 0)
-					{
 						spirit.upgrade();
-					}
 				}
 
                 if (!player.isSubclassLocked())

@@ -4816,7 +4816,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
         Player? attackerPlayer = attacker?.getActingPlayer();
 		if (isMonster() && attacker is Playable && attackerPlayer != null)
 		{
-			ElementalSpirit[] playerSpirits = attackerPlayer.getSpirits();
+			ElementalSpirit[]? playerSpirits = attackerPlayer.getSpirits();
 			if (playerSpirits != null)
 			{
 				ElementalType monsterElementalType = getElementalSpiritType();
