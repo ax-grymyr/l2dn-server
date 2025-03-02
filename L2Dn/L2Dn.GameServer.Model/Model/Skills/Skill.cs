@@ -181,7 +181,7 @@ public sealed class Skill: IIdentifiable
 	private readonly bool _isSharedWithSummon;
 	private readonly bool _isNecessaryToggle;
 	private readonly bool _deleteAbnormalOnLeave;
-	private readonly bool _irreplacableBuff; // Stays after death, on subclass change, cant be canceled.
+	private readonly bool _irreplacableBuff; // Stays after death, on subclass change, cannot be canceled.
 	private readonly bool _blockActionUseSkill; // Blocks the use skill client action and is not showed on skill list.
 
 	private readonly int _toggleGroupId;
@@ -497,7 +497,7 @@ public sealed class Skill: IIdentifiable
 	 */
 	public Set<AbnormalVisualEffect> getAbnormalVisualEffects()
 	{
-		return _abnormalVisualEffects != null ? _abnormalVisualEffects : new();
+		return _abnormalVisualEffects != null ? _abnormalVisualEffects : [];
 	}
 
 	/**

@@ -23,56 +23,16 @@ public class SkillData: DataReaderBase
 	private readonly Map<long, Skill> _skills = new();
 	private readonly Map<int, int> _skillsMaxLevel = new();
 
-	private class NamedParamInfo
-	{
-		private readonly string _name;
-		private readonly int? _fromLevel;
-		private readonly int? _toLevel;
-		private readonly int? _fromSubLevel;
-		private readonly int? _toSubLevel;
-		private readonly Map<int, Map<int, StatSet>> _info;
-
-		public NamedParamInfo(string name, int? fromLevel, int? toLevel, int? fromSubLevel, int? toSubLevel,
-			Map<int, Map<int, StatSet>> info)
-		{
-			_name = name;
-			_fromLevel = fromLevel;
-			_toLevel = toLevel;
-			_fromSubLevel = fromSubLevel;
-			_toSubLevel = toSubLevel;
-			_info = info;
-		}
-
-		public string getName()
-		{
-			return _name;
-		}
-
-		public int? getFromLevel()
-		{
-			return _fromLevel;
-		}
-
-		public int? getToLevel()
-		{
-			return _toLevel;
-		}
-
-		public int? getFromSubLevel()
-		{
-			return _fromSubLevel;
-		}
-
-		public int? getToSubLevel()
-		{
-			return _toSubLevel;
-		}
-
-		public Map<int, Map<int, StatSet>> getInfo()
-		{
-			return _info;
-		}
-	}
+	private sealed class NamedParamInfo(string name, int? fromLevel, int? toLevel, int? fromSubLevel, int? toSubLevel,
+        Map<int, Map<int, StatSet>> info)
+    {
+        public string getName() => name;
+        public int? getFromLevel() => fromLevel;
+        public int? getToLevel() => toLevel;
+        public int? getFromSubLevel() => fromSubLevel;
+        public int? getToSubLevel() => toSubLevel;
+        public Map<int, Map<int, StatSet>> getInfo() => info;
+    }
 
 	protected SkillData()
 	{
@@ -93,31 +53,15 @@ public class SkillData: DataReaderBase
 	 * Centralized method for easier change of the hashing sys
 	 * @param skillId The Skill Id
 	 * @param skillLevel The Skill Level
-	 * @return The Skill hash number
-	 */
-	public static long getSkillHashCode(int skillId, int skillLevel)
-	{
-		return getSkillHashCode(skillId, skillLevel, 0);
-	}
-
-	/**
-	 * Centralized method for easier change of the hashing sys
-	 * @param skillId The Skill Id
-	 * @param skillLevel The Skill Level
 	 * @param subSkillLevel The skill sub level
 	 * @return The Skill hash number
 	 */
-	public static long getSkillHashCode(int skillId, int skillLevel, int subSkillLevel)
+	public static long getSkillHashCode(int skillId, int skillLevel, int subSkillLevel = 0)
 	{
 		return skillId * 4294967296L + subSkillLevel * 65536 + skillLevel;
 	}
 
-	public Skill? getSkill(int skillId, int level)
-	{
-		return getSkill(skillId, level, 0);
-	}
-
-	public Skill? getSkill(int skillId, int level, int subLevel)
+	public Skill? getSkill(int skillId, int level, int subLevel = 0)
 	{
 		Skill? result = _skills.get(getSkillHashCode(skillId, level, subLevel));
 		if (result != null)

@@ -4,5 +4,5 @@ public enum GameServerType
 {
     Main,
     Classic,
-    Essence
+    Essence,
 }
