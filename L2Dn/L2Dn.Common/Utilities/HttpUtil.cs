@@ -9,6 +9,8 @@ public static class HttpUtil
         using HttpClientHandler clientHandler = new();
         clientHandler.SslProtocols = SslProtocols.Tls13;
         using HttpClient client = new(clientHandler);
+        client.DefaultRequestHeaders.UserAgent.TryParseAdd(
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36");
 
         int attempt = 0;
         while (attempt < maxAttempts)
