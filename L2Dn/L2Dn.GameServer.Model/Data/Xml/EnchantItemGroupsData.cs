@@ -3,7 +3,7 @@ using System.Globalization;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Enchant;
-using L2Dn.Model.DataPack;
+using L2Dn.Model.Xml;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;

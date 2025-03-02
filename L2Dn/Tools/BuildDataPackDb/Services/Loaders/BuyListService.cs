@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 using L2Dn.DataPack.Db;
-using L2Dn.Model.DataPack;
+using L2Dn.Model.Xml;
 using L2Dn.Utilities;
 using NLog;
 

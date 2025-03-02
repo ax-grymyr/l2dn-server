@@ -2,8 +2,8 @@
 using L2Dn.GameServer.Model.Cubics.Conditions;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Model.DataPack;
 using L2Dn.Model.Enums;
+using L2Dn.Model.Xml;
 
 namespace L2Dn.GameServer.Model.Cubics;
 

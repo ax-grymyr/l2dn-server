@@ -4,7 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Model.DataPack;
+using L2Dn.Model.Xml;
 using L2Dn.Packets;
 using NLog;
 

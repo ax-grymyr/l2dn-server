@@ -1,5 +1,5 @@
 using L2Dn.GameServer.Model.Items.Types;
-using L2Dn.Model.DataPack;
+using L2Dn.Model.Xml;
 
 namespace L2Dn.GameServer.Model.Items.Enchant;
 

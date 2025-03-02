@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.BuyList;
 using L2Dn.GameServer.Model.Items;
-using L2Dn.Model.DataPack;
+using L2Dn.Model.Xml;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;

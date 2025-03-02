@@ -4,8 +4,8 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Model.DataPack;
 using L2Dn.Model.Enums;
+using L2Dn.Model.Xml;
 using L2Dn.Utilities;
 using NLog;
 

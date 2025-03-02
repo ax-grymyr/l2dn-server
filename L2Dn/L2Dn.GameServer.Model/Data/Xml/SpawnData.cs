@@ -9,7 +9,7 @@ using L2Dn.GameServer.Model.Zones.Forms;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
-using L2Dn.Model.DataPack;
+using L2Dn.Model.Xml;
 using L2Dn.Utilities;
 using NLog;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;

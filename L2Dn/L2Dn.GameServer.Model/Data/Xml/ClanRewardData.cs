@@ -2,7 +2,7 @@ using System.Collections.Immutable;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
-using L2Dn.Model.DataPack;
+using L2Dn.Model.Xml;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;

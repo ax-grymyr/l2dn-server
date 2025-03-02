@@ -3,8 +3,8 @@ using System.Collections.Immutable;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Teleporters;
-using L2Dn.Model.DataPack;
 using L2Dn.Model.Enums;
+using L2Dn.Model.Xml;
 using NLog;
 using TeleportLocation = L2Dn.GameServer.Model.Teleporters.TeleportLocation;
 

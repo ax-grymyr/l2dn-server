@@ -1,8 +1,8 @@
 using System.Collections.Frozen;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.BeautyShop;
-using L2Dn.Model.DataPack;
 using L2Dn.Model.Enums;
+using L2Dn.Model.Xml;
 
 namespace L2Dn.GameServer.Data.Xml;
 

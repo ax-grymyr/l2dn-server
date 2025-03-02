@@ -1,7 +1,7 @@
 using System.Collections.Frozen;
 using System.Collections.Immutable;
 using L2Dn.GameServer.Model;
-using L2Dn.Model.DataPack;
+using L2Dn.Model.Xml;
 using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;

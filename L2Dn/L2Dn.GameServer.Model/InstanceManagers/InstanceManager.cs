@@ -14,8 +14,8 @@ using L2Dn.GameServer.Model.InstanceZones.Conditions;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
-using L2Dn.Model.DataPack;
 using L2Dn.Model.Enums;
+using L2Dn.Model.Xml;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 
