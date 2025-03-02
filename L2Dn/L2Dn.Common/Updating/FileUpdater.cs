@@ -25,7 +25,17 @@ public static class FileUpdater
     {
         _logger.Info($"Downloading {description} file list {fileListUrl} ...");
 
-        byte[] fileListBytes = await HttpUtil.DownloadFileAsync(fileListUrl);
+        byte[] fileListBytes;
+        try
+        {
+            fileListBytes = await HttpUtil.DownloadFileAsync(fileListUrl, 5);
+        }
+        catch (Exception exception)
+        {
+            _logger.Warn($"Error downloading {description} file {fileListUrl}: {exception.Message}");
+            return;
+        }
+
         using MemoryStream memoryStream = new(fileListBytes);
         FileList fileList = JsonUtil.DeserializeStream<FileList>(memoryStream);
 
@@ -45,29 +55,17 @@ public static class FileUpdater
             string url = baseUrl + fileListFile.Name;
             _logger.Info($"Downloading {description} file {url} ...");
 
-            byte[]? data = null;
-
-            const int maxAttempts = 5;
-            int attempt = 0;
-            while (attempt < maxAttempts)
+            byte[] data;
+            try
             {
-                attempt++;
-                try
-                {
-                    data = await HttpUtil.DownloadFileAsync(url).ConfigureAwait(false);
-                }
-                catch (Exception exception)
-                {
-                    if (attempt == maxAttempts)
-                    {
-                        _logger.Warn($"Error downloading {description} file {url}: {exception.Message}");
-                        error = true;
-                    }
-                }
+                data = await HttpUtil.DownloadFileAsync(url, 5).ConfigureAwait(false);
             }
-
-            if (data == null)
+            catch (Exception exception)
+            {
+                _logger.Warn($"Error downloading {description} file {url}: {exception.Message}");
+                error = true;
                 continue;
+            }
 
             try
             {
