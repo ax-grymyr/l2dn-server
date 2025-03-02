@@ -1573,7 +1573,7 @@ public class Quest: AbstractScript, IIdentifiable
 
 			if (record is null)
 			{
-				record = new CharacterQuest();
+				record = new DbCharacterQuest();
 				record.CharacterId = characterId;
 				record.Name = questName;
 				record.Variable = var;
@@ -1634,7 +1634,7 @@ public class Quest: AbstractScript, IIdentifiable
 			int characterId = qs.getPlayer().ObjectId;
 			string questName = qs.getQuestName();
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			IQueryable<CharacterQuest> query =
+			IQueryable<DbCharacterQuest> query =
 				ctx.CharacterQuests.Where(r => r.CharacterId == characterId && r.Name == questName);
 
 			if (!repeatable)

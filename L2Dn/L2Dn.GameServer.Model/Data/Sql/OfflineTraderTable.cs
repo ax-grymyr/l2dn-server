@@ -35,7 +35,7 @@ public class OfflineTraderTable
 					if (pc.getPrivateStoreType() != PrivateStoreType.NONE &&
 					    (client == null || client.IsDetached))
 					{
-						var trade = new CharacterOfflineTrade
+						var trade = new DbCharacterOfflineTrade
 						{
 							CharacterId = pc.ObjectId, // Char Id
 							Time = pc.getOfflineStartTime() ?? DateTime.UtcNow,
@@ -53,7 +53,7 @@ public class OfflineTraderTable
 
 								trade.Title = pc.getBuyList().getTitle();
 								ctx.CharacterOfflineTradeItems.AddRange(pc.getBuyList().getItems().Select(i =>
-									new CharacterOfflineTradeItem
+									new DbCharacterOfflineTradeItem
 									{
 										CharacterId = pc.ObjectId,
 										ItemId = i.getItem().getId(),
@@ -75,7 +75,7 @@ public class OfflineTraderTable
 								if (pc.isSellingBuffs())
 								{
 									ctx.CharacterOfflineTradeItems.AddRange(pc.getSellingBuffs().Select(holder =>
-										new CharacterOfflineTradeItem
+										new DbCharacterOfflineTradeItem
 										{
 											CharacterId = pc.ObjectId,
 											ItemId = holder.getSkillId(),
@@ -86,7 +86,7 @@ public class OfflineTraderTable
 								else
 								{
 									ctx.CharacterOfflineTradeItems.AddRange(pc.getSellList().getItems().Select(i =>
-										new CharacterOfflineTradeItem
+										new DbCharacterOfflineTradeItem
 										{
 											CharacterId = pc.ObjectId,
 											ItemId = i.getObjectId(),
@@ -106,7 +106,7 @@ public class OfflineTraderTable
 
 								trade.Title = pc.getStoreName();
 								ctx.CharacterOfflineTradeItems.AddRange(pc.getManufactureItems().Values.Select(i =>
-									new CharacterOfflineTradeItem
+									new DbCharacterOfflineTradeItem
 									{
 										CharacterId = pc.ObjectId,
 										ItemId = i.getRecipeId(),
@@ -145,7 +145,7 @@ public class OfflineTraderTable
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var trades = ctx.CharacterOfflineTrades.ToList();
-			foreach (CharacterOfflineTrade trade in trades)
+			foreach (DbCharacterOfflineTrade trade in trades)
 			{
 				DateTime time = trade.Time;
 				if (Config.OFFLINE_MAX_DAYS > 0)
@@ -323,7 +323,7 @@ public class OfflineTraderTable
 								}
 
 								ctx.CharacterOfflineTradeItems.AddRange(trader.getBuyList().getItems().Select(i =>
-									new CharacterOfflineTradeItem
+									new DbCharacterOfflineTradeItem
 									{
 										CharacterId = traderId,
 										ItemId = i.getItem().getId(),
@@ -344,7 +344,7 @@ public class OfflineTraderTable
 								if (trader.isSellingBuffs())
 								{
 									ctx.CharacterOfflineTradeItems.AddRange(trader.getSellingBuffs().Select(holder =>
-										new CharacterOfflineTradeItem
+										new DbCharacterOfflineTradeItem
 										{
 											CharacterId = traderId,
 											ItemId = holder.getSkillId(),
@@ -355,7 +355,7 @@ public class OfflineTraderTable
 								else
 								{
 									ctx.CharacterOfflineTradeItems.AddRange(trader.getSellList().getItems().Select(i =>
-										new CharacterOfflineTradeItem
+										new DbCharacterOfflineTradeItem
 										{
 											CharacterId = traderId,
 											ItemId = i.getObjectId(),
@@ -375,7 +375,7 @@ public class OfflineTraderTable
 
 								ctx.CharacterOfflineTradeItems.AddRange(trader.getManufactureItems().Values.Select(
 									i =>
-										new CharacterOfflineTradeItem
+										new DbCharacterOfflineTradeItem
 										{
 											CharacterId = traderId,
 											ItemId = i.getRecipeId(),

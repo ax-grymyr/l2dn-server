@@ -71,7 +71,7 @@ public sealed class CharacterInfo: IHasId<int>
     public int WeaponAugmentationOption1Id { get; set; }
     public int WeaponAugmentationOption2Id { get; set; }
 
-    public void LoadFrom(Character character)
+    public void LoadFrom(DbCharacter character)
     {
         Id = character.Id;
         Name = character.Name;

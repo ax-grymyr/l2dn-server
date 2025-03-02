@@ -61,7 +61,7 @@ public class PlayerDailyMissionList
             ctx.CharacterDailyRewards.Where(r => r.CharacterId == characterId && r.RewardId == rewardId)
                 .ExecuteDelete();
 
-            ctx.CharacterDailyRewards.Add(new CharacterDailyReward()
+            ctx.CharacterDailyRewards.Add(new DbCharacterDailyReward()
             {
                 CharacterId = characterId,
                 RewardId = rewardId,
@@ -88,7 +88,7 @@ public class PlayerDailyMissionList
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
             ctx.CharacterDailyRewards.Where(r => r.CharacterId == characterId).ExecuteDelete();
 
-            ctx.CharacterDailyRewards.AddRange(_entries.Values.Select(e => new CharacterDailyReward()
+            ctx.CharacterDailyRewards.AddRange(_entries.Values.Select(e => new DbCharacterDailyReward()
             {
                 CharacterId = characterId,
                 RewardId = e.getRewardId(),

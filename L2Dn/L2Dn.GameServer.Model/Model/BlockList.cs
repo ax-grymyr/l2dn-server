@@ -74,7 +74,7 @@ public class BlockList
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			if (state) // add
 			{
-				ctx.CharacterFriends.Add(new CharacterFriend()
+				ctx.CharacterFriends.Add(new DbCharacterFriend()
 				{
 					CharacterId = _owner.ObjectId,
 					FriendId = targetId,

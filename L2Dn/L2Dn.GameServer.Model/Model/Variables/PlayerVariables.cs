@@ -2,7 +2,7 @@
 
 namespace L2Dn.GameServer.Model.Variables;
 
-public class PlayerVariables: AbstractVariables<CharacterVariable>
+public class PlayerVariables: AbstractVariables<DbCharacterVariable>
 {
     // Public variable names.
     public const string INSTANCE_ORIGIN = "INSTANCE_ORIGIN";
@@ -76,8 +76,8 @@ public class PlayerVariables: AbstractVariables<CharacterVariable>
         Restore();
     }
 
-    protected override IQueryable<CharacterVariable> GetQuery(GameServerDbContext ctx) =>
+    protected override IQueryable<DbCharacterVariable> GetQuery(GameServerDbContext ctx) =>
         ctx.CharacterVariables.Where(r => r.CharacterId == _objectId);
 
-    protected override CharacterVariable CreateVar() => new() { CharacterId = _objectId };
+    protected override DbCharacterVariable CreateVar() => new() { CharacterId = _objectId };
 }

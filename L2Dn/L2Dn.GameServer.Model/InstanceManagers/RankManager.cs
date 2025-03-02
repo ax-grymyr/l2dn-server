@@ -65,7 +65,7 @@ public class RankManager
 				.OrderByDescending(c => c.Exp).ThenByDescending(c => c.OnlineTime).Take(PLAYER_LIMIT);
 
 			int i = 1;
-			foreach (Character character in query)
+			foreach (DbCharacter character in query)
 			{
 				int charId = character.Id;
 				CharacterClass classId = character.Class.GetRootClass();

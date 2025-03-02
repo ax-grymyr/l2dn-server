@@ -1071,7 +1071,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 				var record = ctx.CastleTrapUpgrades.SingleOrDefault(r => r.CastleId == castleId && r.TowerIndex == towerIndex);
 				if (record is null)
 				{
-					record = new CastleTrapUpgrade();
+					record = new DbCastleTrapUpgrade();
 					record.CastleId = (short)castleId;
 					record.TowerIndex = (short)towerIndex;
 					ctx.CastleTrapUpgrades.Add(record);

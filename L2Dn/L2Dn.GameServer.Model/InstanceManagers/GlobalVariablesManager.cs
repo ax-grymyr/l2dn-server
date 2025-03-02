@@ -7,7 +7,7 @@ namespace L2Dn.GameServer.InstanceManagers;
  * Global Variables Manager.
  * @author xban1x
  */
-public class GlobalVariablesManager: AbstractVariables<GlobalVariable>
+public class GlobalVariablesManager: AbstractVariables<DbGlobalVariable>
 {
 	// Public variable names
 	public static readonly string DAILY_TASK_RESET = "DAILY_TASK_RESET";
@@ -22,14 +22,14 @@ public class GlobalVariablesManager: AbstractVariables<GlobalVariable>
 		Restore();
 	}
 
-	protected override IQueryable<GlobalVariable> GetQuery(GameServerDbContext ctx)
+	protected override IQueryable<DbGlobalVariable> GetQuery(GameServerDbContext ctx)
 	{
 		return ctx.GlobalVariables;
 	}
 
-	protected override GlobalVariable CreateVar()
+	protected override DbGlobalVariable CreateVar()
 	{
-		return new GlobalVariable();
+		return new DbGlobalVariable();
 	}
 
 	/**

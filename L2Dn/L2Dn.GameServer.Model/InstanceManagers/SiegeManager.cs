@@ -267,7 +267,7 @@ public class SiegeManager
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (CastleTrapUpgrade record in ctx.CastleTrapUpgrades.Where(c => c.CastleId == castleId))
+			foreach (DbCastleTrapUpgrade record in ctx.CastleTrapUpgrades.Where(c => c.CastleId == castleId))
 			{
 				_flameTowers[castleId][record.TowerIndex].setUpgradeLevel(record.Level);
 			}

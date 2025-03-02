@@ -36,7 +36,7 @@ public sealed class AccountManager: ISingleton<AccountManager>
         }
 
         byte[] passwordHash = GetPasswordHash(password);
-        Account? account = await ctx.Accounts.SingleOrDefaultAsync(a => a.Login == login).ConfigureAwait(false);
+        DbAccount? account = await ctx.Accounts.SingleOrDefaultAsync(a => a.Login == login).ConfigureAwait(false);
         if (account is not null)
         {
             if (!account.PasswordHash.AsSpan().SequenceEqual(passwordHash))
@@ -68,7 +68,7 @@ public sealed class AccountManager: ISingleton<AccountManager>
             return null;
 
         DateTime now = DateTime.UtcNow;
-        account = new Account
+        account = new DbAccount
         {
             Login = login,
             PasswordHash = passwordHash,
@@ -124,7 +124,7 @@ public sealed class AccountManager: ISingleton<AccountManager>
             accountInfo.CharacterCount[serverId] = characterCount;
 
         await using AuthServerDbContext ctx = await DbFactory.Instance.CreateDbContextAsync();
-        AccountCharacterData? record = await ctx.AccountCharacterData.SingleOrDefaultAsync(r
+        DbAccountCharacterData? record = await ctx.AccountCharacterData.SingleOrDefaultAsync(r
             => r.AccountId == accountId && r.ServerId == serverId).ConfigureAwait(false);
 
         int recordCharacterCount = record?.CharacterCount ?? 0;
@@ -133,7 +133,7 @@ public sealed class AccountManager: ISingleton<AccountManager>
         
         if (record is null)
         {
-            record = new AccountCharacterData
+            record = new DbAccountCharacterData
             {
                 AccountId = accountId,
                 ServerId = serverId,

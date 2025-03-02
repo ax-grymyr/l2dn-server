@@ -942,10 +942,10 @@ public class Clan: IIdentifiable, INamable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			Db.Clan? clan = ctx.Clans.SingleOrDefault(c => c.Id == _clanId);
+			Db.DbClan? clan = ctx.Clans.SingleOrDefault(c => c.Id == _clanId);
 			if (clan is null)
 			{
-				clan = new Db.Clan();
+				clan = new Db.DbClan();
 				clan.Id = _clanId;
 				ctx.Clans.Add(clan);
 			}
@@ -989,7 +989,7 @@ public class Clan: IIdentifiable, INamable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			ctx.Clans.Add(new Db.Clan()
+			ctx.Clans.Add(new Db.DbClan()
 			{
 				Id = _clanId,
 				Name = _name,
@@ -1024,7 +1024,7 @@ public class Clan: IIdentifiable, INamable
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = member.getObjectId();
-			Character? record = ctx.Characters.SingleOrDefault(c => c.Id == characterId);
+			DbCharacter? record = ctx.Characters.SingleOrDefault(c => c.Id == characterId);
 			if (record is not null)
 			{
 				record.ClanId = null;
@@ -1053,7 +1053,7 @@ public class Clan: IIdentifiable, INamable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			Db.Clan? record = ctx.Clans.SingleOrDefault(c => c.Id == _clanId);
+			Db.DbClan? record = ctx.Clans.SingleOrDefault(c => c.Id == _clanId);
 			if (record is not null)
 			{
 				setName(record.Name);
@@ -1086,7 +1086,7 @@ public class Clan: IIdentifiable, INamable
 
 				int leaderId = record.LeaderId;
 
-				foreach (Character character in ctx.Characters.Where(c => c.ClanId == _clanId))
+				foreach (DbCharacter character in ctx.Characters.Where(c => c.ClanId == _clanId))
 				{
 					ClanMember member = new ClanMember(this, character);
 					if (member.getObjectId() == leaderId)
@@ -1116,7 +1116,7 @@ public class Clan: IIdentifiable, INamable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			ClanNotice? notice = ctx.ClanNotices.SingleOrDefault(c => c.ClanId == _clanId);
+			DbClanNotice? notice = ctx.ClanNotices.SingleOrDefault(c => c.ClanId == _clanId);
 			if (notice is not null)
 			{
 				_noticeEnabled = notice.Enabled;
@@ -1145,10 +1145,10 @@ public class Clan: IIdentifiable, INamable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			ClanNotice? record = ctx.ClanNotices.SingleOrDefault(c => c.ClanId == _clanId);
+			DbClanNotice? record = ctx.ClanNotices.SingleOrDefault(c => c.ClanId == _clanId);
 			if (record is null)
 			{
-				record = new ClanNotice();
+				record = new DbClanNotice();
 				record.ClanId = _clanId;
 				ctx.ClanNotices.Add(record);
 			}
@@ -1205,7 +1205,7 @@ public class Clan: IIdentifiable, INamable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (ClanSkill clanSkill in ctx.ClanSkills.Where(c => c.ClanId == _clanId))
+			foreach (DbClanSkill clanSkill in ctx.ClanSkills.Where(c => c.ClanId == _clanId))
 			{
 				int id = clanSkill.SkillId;
 				int level = clanSkill.SkillLevel;
@@ -1331,7 +1331,7 @@ public class Clan: IIdentifiable, INamable
 				}
 				else
 				{
-					ctx.ClanSkills.Add(new ClanSkill()
+					ctx.ClanSkills.Add(new DbClanSkill()
 					{
 						ClanId = _clanId,
 						SkillId = newSkill.getId(),
@@ -1731,7 +1731,7 @@ public class Clan: IIdentifiable, INamable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (ClanSubPledge record in ctx.ClanSubPledges.Where(c => c.ClanId == _clanId))
+			foreach (DbClanSubPledge record in ctx.ClanSubPledges.Where(c => c.ClanId == _clanId))
 			{
 				int id = record.SubPledgeId;
 				string name = record.Name;
@@ -1820,7 +1820,7 @@ public class Clan: IIdentifiable, INamable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			ctx.ClanSubPledges.Add(new ClanSubPledge()
+			ctx.ClanSubPledges.Add(new DbClanSubPledge()
 			{
 				ClanId = _clanId,
 				SubPledgeId = pledgeType,
@@ -1971,12 +1971,12 @@ public class Clan: IIdentifiable, INamable
 			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-				ClanPrivileges? record =
+				DbClanPrivileges? record =
 					ctx.ClanPrivileges.SingleOrDefault(r => r.ClanId == _clanId && r.Rank == rank && r.Party == 0);
 
 				if (record is null)
 				{
-					record = new ClanPrivileges()
+					record = new DbClanPrivileges()
 					{
 						ClanId = _clanId,
 						Party = 0,
@@ -2012,12 +2012,12 @@ public class Clan: IIdentifiable, INamable
 			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-				ClanPrivileges? record =
+				DbClanPrivileges? record =
 					ctx.ClanPrivileges.SingleOrDefault(r => r.ClanId == _clanId && r.Rank == rank && r.Party == 0);
 
 				if (record is null)
 				{
-					record = new ClanPrivileges()
+					record = new DbClanPrivileges()
 					{
 						ClanId = _clanId,
 						Party = 0,

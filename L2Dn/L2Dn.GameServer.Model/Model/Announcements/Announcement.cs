@@ -19,7 +19,7 @@ public class Announcement: IAnnouncement
 		_author = author;
 	}
 	
-	public Announcement(Db.Announcement announcement)
+	public Announcement(Db.DbAnnouncement announcement)
 	{
 		_id = announcement.Id;
 		_type = (AnnouncementType)announcement.Type;
@@ -72,7 +72,7 @@ public class Announcement: IAnnouncement
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			var announcement = new Db.Announcement
+			var announcement = new Db.DbAnnouncement
 			{
 				Type = (int)_type,
 				Content = _content,

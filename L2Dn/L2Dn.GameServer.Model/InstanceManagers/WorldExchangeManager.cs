@@ -204,7 +204,7 @@ public class WorldExchangeManager: DataReaderBase
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (WorldExchangeItem record in ctx.WorldExchangeItems)
+			foreach (DbWorldExchangeItem record in ctx.WorldExchangeItems)
 			{
 				bool needChange = false;
 				int worldExchangeId = record.Id;
@@ -1022,7 +1022,7 @@ public class WorldExchangeManager: DataReaderBase
 					continue;
 				}
 
-				ctx.WorldExchangeItems.Add(new WorldExchangeItem() // TODO: it was REPLACE statement
+				ctx.WorldExchangeItems.Add(new DbWorldExchangeItem() // TODO: it was REPLACE statement
 				{
 					Id = holder.getWorldExchangeId(),
 					ItemObjectId = holder.getItemInstance().ObjectId,
@@ -1061,7 +1061,7 @@ public class WorldExchangeManager: DataReaderBase
             }
 
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			ctx.WorldExchangeItems.Add(new WorldExchangeItem() // TODO: it was REPLACE statement
+			ctx.WorldExchangeItems.Add(new DbWorldExchangeItem() // TODO: it was REPLACE statement
 			{
 				Id = holder.getWorldExchangeId(),
 				ItemObjectId = holder.getItemInstance().ObjectId,

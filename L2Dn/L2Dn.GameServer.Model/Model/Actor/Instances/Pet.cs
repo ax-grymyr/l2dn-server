@@ -62,7 +62,7 @@ public class Pet: Summon
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (PetEvolve record in ctx.PetEvolves.Where(r => r.ItemObjectId == _controlObjectId))
+			foreach (DbPetEvolve record in ctx.PetEvolves.Where(r => r.ItemObjectId == _controlObjectId))
 			{
 				setEvolveLevel((EvolveLevel)record.Level);
 			}
@@ -79,12 +79,12 @@ public class Pet: Summon
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			PetEvolve? record = ctx.PetEvolves.SingleOrDefault(r =>
+			DbPetEvolve? record = ctx.PetEvolves.SingleOrDefault(r =>
 				r.ItemObjectId == controlItemObjId && r.Index == index && r.Level == evolveLevel);
 
 			if (record is null)
 			{
-				record = new PetEvolve()
+				record = new DbPetEvolve()
 				{
 					ItemObjectId = controlItemObjId,
 					Index = index,
@@ -930,7 +930,7 @@ public class Pet: Summon
 			int controlObjectId = control.ObjectId;
 
 			Pet pet;
-			Db.Pet? record = ctx.Pets.SingleOrDefault(r => r.ItemObjectId == controlObjectId);
+			Db.DbPet? record = ctx.Pets.SingleOrDefault(r => r.ItemObjectId == controlObjectId);
 			if (record is null)
 			{
 				pet = new Pet(template, owner, control);
@@ -1016,10 +1016,10 @@ public class Pet: Summon
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			Db.Pet? record = ctx.Pets.SingleOrDefault(r => r.ItemObjectId == _controlObjectId);
+			Db.DbPet? record = ctx.Pets.SingleOrDefault(r => r.ItemObjectId == _controlObjectId);
 			if (record is null)
 			{
-				record = new Db.Pet()
+				record = new Db.DbPet()
 				{
 					ItemObjectId = _controlObjectId
 				};

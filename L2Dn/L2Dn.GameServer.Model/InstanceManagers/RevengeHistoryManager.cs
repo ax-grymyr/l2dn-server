@@ -48,7 +48,7 @@ public class RevengeHistoryManager
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (CharacterRevenge record in ctx.CharacterRevenges)
+			foreach (DbCharacterRevenge record in ctx.CharacterRevenges)
 			{
 				int charId = record.CharacterId;
 				List<RevengeHistoryHolder> history = REVENGE_HISTORY.GetValueOrDefault(charId, []);
@@ -120,7 +120,7 @@ public class RevengeHistoryManager
 
 				foreach (RevengeHistoryHolder holder in history)
 				{
-					ctx.CharacterRevenges.Add(new CharacterRevenge()
+					ctx.CharacterRevenges.Add(new DbCharacterRevenge()
 					{
 						CharacterId = entry.Key,
 						Type = (int)holder.getType(),

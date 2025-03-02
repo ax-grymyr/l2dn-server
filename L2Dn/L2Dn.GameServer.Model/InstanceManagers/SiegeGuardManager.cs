@@ -37,7 +37,7 @@ public class SiegeGuardManager
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (CastleSiegeGuard record in ctx.CastleSiegeGuards.Where(r => r.IsHired))
+			foreach (DbCastleSiegeGuard record in ctx.CastleSiegeGuards.Where(r => r.IsHired))
 			{
 				int npcId = record.NpcId;
 				Location3D location = new(record.X, record.Y, record.Z);
@@ -167,7 +167,7 @@ public class SiegeGuardManager
 			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-				ctx.CastleSiegeGuards.Add(new CastleSiegeGuard()
+				ctx.CastleSiegeGuards.Add(new DbCastleSiegeGuard()
 				{
 					CastleId = (short)castle.getResidenceId(),
 					NpcId = holder.getNpcId(),
@@ -265,7 +265,7 @@ public class SiegeGuardManager
 			bool isHired = castle.getOwnerId() > 0;
 
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (CastleSiegeGuard record in ctx.CastleSiegeGuards.Where(r =>
+			foreach (DbCastleSiegeGuard record in ctx.CastleSiegeGuards.Where(r =>
 				         r.CastleId == castleId && r.IsHired == isHired))
 			{
 				Spawn spawn = new Spawn(record.NpcId);

@@ -261,10 +261,10 @@ public class ElementalSpirit
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int charId = _data.getCharId();
 			byte type = (byte)_data.getType();
-			CharacterSpirit? spirit = ctx.CharacterSpirits.SingleOrDefault(r => r.CharacterId == charId && r.Type == type);
+			DbCharacterSpirit? spirit = ctx.CharacterSpirits.SingleOrDefault(r => r.CharacterId == charId && r.Type == type);
 			if (spirit is null)
 			{
-				spirit = new CharacterSpirit()
+				spirit = new DbCharacterSpirit()
 				{
 					CharacterId = charId,
 					Type = type

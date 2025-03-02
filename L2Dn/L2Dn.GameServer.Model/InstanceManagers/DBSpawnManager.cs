@@ -54,7 +54,7 @@ public sealed class DbSpawnManager
 		{
 			List<int> spawnsToRemove = [];
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (NpcRespawn record in ctx.NpcRespawns)
+			foreach (DbNpcRespawn record in ctx.NpcRespawns)
 			{
 				int npcId = record.Id;
 				NpcTemplate? template = NpcData.getInstance().getTemplate(npcId);
@@ -331,10 +331,10 @@ public sealed class DbSpawnManager
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			NpcRespawn? record = ctx.NpcRespawns.SingleOrDefault(r => r.Id == npcId);
+			DbNpcRespawn? record = ctx.NpcRespawns.SingleOrDefault(r => r.Id == npcId);
 			if (record is null)
 			{
-				record = new NpcRespawn() { Id = npcId };
+				record = new DbNpcRespawn() { Id = npcId };
 				ctx.NpcRespawns.Add(record);
 			}
 

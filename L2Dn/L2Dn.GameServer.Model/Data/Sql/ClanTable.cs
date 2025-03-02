@@ -306,7 +306,7 @@ public class ClanTable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			var dbWar = new Db.ClanWar
+			var dbWar = new Db.DbClanWar
 			{
 				Clan1Id = war.getAttackerClanId(),
 				Clan2Id = war.getAttackedClanId(),

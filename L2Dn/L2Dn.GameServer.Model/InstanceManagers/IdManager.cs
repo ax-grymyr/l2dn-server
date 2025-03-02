@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 

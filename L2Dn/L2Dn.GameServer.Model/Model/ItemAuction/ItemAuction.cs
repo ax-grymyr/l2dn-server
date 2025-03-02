@@ -162,10 +162,10 @@ public class ItemAuction
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			Db.ItemAuction? record = ctx.ItemAuctions.SingleOrDefault(r => r.AuctionId == _auctionId);
+			Db.DbItemAuction? record = ctx.ItemAuctions.SingleOrDefault(r => r.AuctionId == _auctionId);
 			if (record is null)
 			{
-				record = new Db.ItemAuction();
+				record = new Db.DbItemAuction();
 				record.AuctionId = _auctionId;
 				ctx.ItemAuctions.Add(record);
 			}
@@ -209,11 +209,11 @@ public class ItemAuction
 			}
 			else
 			{
-				Db.ItemAuctionBid? record =
+				Db.DbItemAuctionBid? record =
 					ctx.ItemAuctionBids.SingleOrDefault(r => r.AuctionId == _auctionId && r.CharacterId == playerObjId);
 				if (record is null)
 				{
-					record = new Db.ItemAuctionBid
+					record = new Db.DbItemAuctionBid
 					{
 						AuctionId = _auctionId,
 						CharacterId = playerObjId

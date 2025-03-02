@@ -34,7 +34,7 @@ public class ClanEntryManager
 
 		try
 		{
-			foreach (PledgeRecruit pledgeRecruit in ctx.PledgeRecruits)
+			foreach (DbPledgeRecruit pledgeRecruit in ctx.PledgeRecruits)
 			{
 				int clanId = pledgeRecruit.ClanId;
                 Clan? clan = ClanTable.getInstance().getClan(clanId);
@@ -172,7 +172,7 @@ public class ClanEntryManager
 			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-				ctx.PledgeApplicants.Add(new PledgeApplicant()
+				ctx.PledgeApplicants.Add(new DbPledgeApplicant()
 				{
 					CharacterId = info.getPlayerId(),
 					ClanId = info.getRequestClan().getId(),
@@ -211,7 +211,7 @@ public class ClanEntryManager
 			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-				ctx.PledgeWaitingLists.Add(new PledgeWaitingList
+				ctx.PledgeWaitingLists.Add(new DbPledgeWaitingList
 				{
 					CharacterId = info.getPlayerId(),
 					Karma = info.getKarma()
@@ -258,7 +258,7 @@ public class ClanEntryManager
 			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-				ctx.PledgeRecruits.Add(new PledgeRecruit()
+				ctx.PledgeRecruits.Add(new DbPledgeRecruit()
 				{
 					ClanId = info.getClanId(),
 					Karma = info.getKarma(),

@@ -150,7 +150,7 @@ public class CharSummonTable
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var summons = ctx.CharacterSummons.Where(s => s.OwnerId == ownerId);
 			Skill? skill;
-			foreach (CharacterSummon dbSummon in summons)
+			foreach (DbCharacterSummon dbSummon in summons)
 			{
 				int summonObjId = dbSummon.SummonId;
 				int skillId = dbSummon.SummonSkillId;
@@ -214,7 +214,7 @@ public class CharSummonTable
 			if (remainingTime < TimeSpan.Zero)
 				remainingTime = TimeSpan.Zero;
 
-			var dbSummon = new CharacterSummon
+			var dbSummon = new DbCharacterSummon
 			{
 				OwnerId = summon.getOwner().ObjectId,
 				SummonId = summon.ObjectId,

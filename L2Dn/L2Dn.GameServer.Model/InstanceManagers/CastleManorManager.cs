@@ -109,7 +109,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 				// Seed production
 				List<SeedProduction> pCurrent = new();
 				List<SeedProduction> pNext = new();
-				foreach(CastleManorProduction production in ctx.CastleManorProduction.Where(p => p.CastleId == castleId))
+				foreach(DbCastleManorProduction production in ctx.CastleManorProduction.Where(p => p.CastleId == castleId))
 				{
 					int seedId = production.SeedId;
 					if (_seeds.ContainsKey(seedId)) // Don't load unknown seeds
@@ -386,7 +386,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 				// Insert new data
 				if (list.Count != 0)
 				{
-					ctx.CastleManorProduction.AddRange(list.Select(sp => new CastleManorProduction()
+					ctx.CastleManorProduction.AddRange(list.Select(sp => new DbCastleManorProduction()
 					{
 						CastleId = (short)castleId,
 						SeedId = sp.getId(),
@@ -553,7 +553,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 				_productionNext.SelectMany(kvp =>
 					kvp.Value.Select(sp => (CastleId: kvp.Key, NextPeriod: true, Production: sp)));
 
-			ctx.CastleManorProduction.AddRange(currentProduction.Concat(nextProduction).Select(t => new CastleManorProduction
+			ctx.CastleManorProduction.AddRange(currentProduction.Concat(nextProduction).Select(t => new DbCastleManorProduction
 			{
 				CastleId = (short)t.CastleId,
 				SeedId = t.Production.getId(),

@@ -68,7 +68,7 @@ public class ItemsOnGroundManager: Runnable
 		{
 			int count = 0;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (ItemOnGround itemOnGround in ctx.ItemsOnGround)
+			foreach (DbItemOnGround itemOnGround in ctx.ItemsOnGround)
 			{
 				Item item;
 				item = new Item(itemOnGround.ObjectId, itemOnGround.ItemId);
@@ -193,7 +193,7 @@ public class ItemsOnGroundManager: Runnable
 					continue; // Cursed Items not saved to ground, prevent double save
 				}
 
-				ctx.ItemsOnGround.Add(new ItemOnGround()
+				ctx.ItemsOnGround.Add(new DbItemOnGround()
 				{
 					ObjectId = item.ObjectId,
 					ItemId = item.getId(),

@@ -41,7 +41,7 @@ public class HuntPass
 		{
 			int accountId = _user.getAccountId();
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (Db.HuntPass record in ctx.HuntPasses.Where(r => r.AccountId == accountId))
+			foreach (Db.DbHuntPass record in ctx.HuntPasses.Where(r => r.AccountId == accountId))
 			{
 				setPoints(record.Points);
 				setCurrentStep(record.CurrentStep);
@@ -83,10 +83,10 @@ public class HuntPass
 		{
 			int accountId = _user.getAccountId();
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			Db.HuntPass? huntPass = ctx.HuntPasses.SingleOrDefault(r => r.AccountId == accountId);
+			Db.DbHuntPass? huntPass = ctx.HuntPasses.SingleOrDefault(r => r.AccountId == accountId);
 			if (huntPass is null)
 			{
-				huntPass = new Db.HuntPass();
+				huntPass = new Db.DbHuntPass();
 				huntPass.AccountId = accountId;
 				ctx.HuntPasses.Add(huntPass);
 			}

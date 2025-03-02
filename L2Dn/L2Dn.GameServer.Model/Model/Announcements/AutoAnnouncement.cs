@@ -22,7 +22,7 @@ public class AutoAnnouncement : Announcement, Runnable
 		restartMe();
 	}
 	
-	public AutoAnnouncement(Db.Announcement announcement): base(announcement)
+	public AutoAnnouncement(Db.DbAnnouncement announcement): base(announcement)
 	{
 		_initial = announcement.InitialDelay;
 		_delay = announcement.Period;
@@ -65,7 +65,7 @@ public class AutoAnnouncement : Announcement, Runnable
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			var announcement = new Db.Announcement
+			var announcement = new Db.DbAnnouncement
 			{
 				Type = (int)getType(),
 				Content = getContent(),

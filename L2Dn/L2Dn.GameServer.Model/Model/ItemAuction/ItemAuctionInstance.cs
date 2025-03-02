@@ -491,7 +491,7 @@ public class ItemAuctionInstance
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			Db.ItemAuction? record = ctx.ItemAuctions.SingleOrDefault(r => r.AuctionId == auctionId);
+			Db.DbItemAuction? record = ctx.ItemAuctions.SingleOrDefault(r => r.AuctionId == auctionId);
 			if (record is null)
 			{
 				LOGGER.Warn(GetType().Name + ": Auction data not found for auction: " + auctionId);

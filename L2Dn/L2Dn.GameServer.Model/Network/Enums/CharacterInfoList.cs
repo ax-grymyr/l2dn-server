@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Model;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
@@ -22,7 +23,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(CharacterInfoList));
 
-    private record CharacterSubClassData(Character Character, CharacterSubClass? SubClass);
+    private record CharacterSubClassData(DbCharacter Character, DbCharacterSubClass? SubClass);
 
     private record PaperdollData(
 	    int CharacterId,
@@ -66,7 +67,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 			    weaponVariation == null ? 0 : weaponVariation.Option2)
 	    );
 
-    private static Func<GameServerDbContext, int, List<string>, IEnumerable<CharacterVariable>> _variablesQuery =
+    private static Func<GameServerDbContext, int, List<string>, IEnumerable<DbCharacterVariable>> _variablesQuery =
 	    EF.CompileQuery((GameServerDbContext ctx, int accountId, List<string> variableNames) =>
 		    from ch in ctx.Characters.Where(r => r.AccountId == accountId)
 		    from chVar in ctx.CharacterVariables.AsNoTracking().Where(r =>
@@ -265,8 +266,8 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
             // Load characters with the active subclasses
             foreach (CharacterSubClassData pair in _characterQuery(ctx, _accountId))
             {
-                Character character = pair.Character;
-                CharacterSubClass? subClass = pair.SubClass;
+                DbCharacter character = pair.Character;
+                DbCharacterSubClass? subClass = pair.SubClass;
                 if (subClass != null)
                 {
                     character.Exp = subClass.Exp;
@@ -328,7 +329,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
             }
 
             // Query character variables
-            foreach (CharacterVariable variable in _variablesQuery(ctx, _accountId, _characterVariablesToLoad))
+            foreach (DbCharacterVariable variable in _variablesQuery(ctx, _accountId, _characterVariablesToLoad))
             {
 	            CharacterInfo? charInfo = _characters.FindById(variable.CharacterId);
 	            if (charInfo != null)

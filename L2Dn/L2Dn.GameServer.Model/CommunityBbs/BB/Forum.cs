@@ -196,7 +196,7 @@ public class Forum
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
-			var forum = new Db.Forum()
+			var forum = new Db.DbForum()
 			{
 				Id = _forumId,
 				Name = _forumName,

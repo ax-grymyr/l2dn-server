@@ -88,7 +88,7 @@ public class PremiumManager
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (AccountPremium? record in ctx.AccountPremiums.Where(r => r.AccountId == accountId))
+			foreach (DbAccountPremium? record in ctx.AccountPremiums.Where(r => r.AccountId == accountId))
 			{
 				_premiumData.put(record.AccountId, record.EndTime);
 			}

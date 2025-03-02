@@ -348,7 +348,7 @@ public class Olympiad
 					try
 					{
 						using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-						ctx.CharacterVariables.Add(new CharacterVariable()
+						ctx.CharacterVariables.Add(new DbCharacterVariable()
 						{
 							CharacterId = noblesId,
 							Name = UNCLAIMED_OLYMPIAD_POINTS_VAR,
@@ -802,7 +802,7 @@ public class Olympiad
 				var record = ctx.OlympiadNobles.SingleOrDefault(r => r.CharacterId == entry.Key);
 				if (record is null)
 				{
-					record = new OlympiadNoble();
+					record = new DbOlympiadNoble();
 					record.CharacterId = entry.Key;
 					ctx.OlympiadNobles.Add(record);
 				}
@@ -865,7 +865,7 @@ public class Olympiad
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.OlympiadNoblesEom.ExecuteDelete();
 
-			ctx.OlympiadNoblesEom.AddRange(ctx.OlympiadNobles.Select(r => new OlympiadNobleEom()
+			ctx.OlympiadNoblesEom.AddRange(ctx.OlympiadNobles.Select(r => new DbOlympiadNobleEom()
 			{
 				CharacterId = r.CharacterId,
 				Class = r.Class,

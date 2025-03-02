@@ -39,7 +39,7 @@ public class ClanMember
 	 * @param clanMember the clan member result set
 	 * @throws SQLException if the columnLabel is not valid or a database error occurs
 	 */
-	public ClanMember(Clan clan, Character clanMember)
+	public ClanMember(Clan clan, DbCharacter clanMember)
 	{
 		_clan = clan;
 		_name = clanMember.Name;

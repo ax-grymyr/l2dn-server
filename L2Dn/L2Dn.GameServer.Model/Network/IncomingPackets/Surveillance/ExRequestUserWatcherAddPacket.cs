@@ -57,7 +57,7 @@ public struct ExRequestUserWatcherAddPacket: IIncomingPacket<GameSession>
         try
         {
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-            ctx.CharacterSurveillances.Add(new CharacterSurveillance()
+            ctx.CharacterSurveillances.Add(new DbCharacterSurveillance()
             {
                 CharacterId = player.ObjectId,
                 TargetId = targetId

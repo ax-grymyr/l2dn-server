@@ -942,7 +942,7 @@ public class Instance : IIdentifiable, INamable
 			// Save to database
 			foreach (int playerId in _allowed)
 			{
-				ctx.CharacterInstances.Add(new CharacterInstance()
+				ctx.CharacterInstances.Add(new DbCharacterInstance()
 				{
 					CharacterId = playerId,
 					InstanceId = _template.getId(),

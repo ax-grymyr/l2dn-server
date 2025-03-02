@@ -1498,7 +1498,7 @@ public class FortSiege: Siegable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			ctx.FortSiegeClans.Add(new FortSiegeClan()
+			ctx.FortSiegeClans.Add(new DbFortSiegeClan()
 			{
 				FortId = (short)_fort.getResidenceId(),
 				ClanId = clan.getId()

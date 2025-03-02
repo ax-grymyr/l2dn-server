@@ -137,7 +137,7 @@ public class Post
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			var post = new Db.Post
+			var post = new Db.DbPost
 			{
 				Id = cp.getPostId(),
 				OwnerName = cp.getPostOwner(),

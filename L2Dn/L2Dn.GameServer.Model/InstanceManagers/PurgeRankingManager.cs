@@ -173,7 +173,7 @@ public class PurgeRankingManager
 
 			int rank = 1;
 			Map<int, StatSet> rankingInCategory = new();
-			foreach (CharacterPurge record in ctx.CharacterPurges.Where(r => r.Category == category)
+			foreach (DbCharacterPurge record in ctx.CharacterPurges.Where(r => r.Category == category)
 				         .OrderByDescending(r => r.Points + r.Keys * 1000000))
 			{
 				StatSet set = new StatSet();

@@ -688,7 +688,7 @@ public class AdminEditChar: IAdminCommandHandler
 				if (player == null)
 				{
 					using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-					IQueryable<Character> query = ctx.Characters.Where(r => r.Name == playerName);
+					IQueryable<DbCharacter> query = ctx.Characters.Where(r => r.Name == playerName);
 					if (changeCreateExpiryTime)
 						query.ExecuteUpdate(s => s.SetProperty(r => r.ClanCreateExpiryTime, (DateTime?)null));
 					else

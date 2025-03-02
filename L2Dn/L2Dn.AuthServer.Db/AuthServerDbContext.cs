@@ -5,7 +5,7 @@ namespace L2Dn.AuthServer.Db;
 public class AuthServerDbContext(DbContextOptions options)
     : DbContext(options)
 {
-    public DbSet<Account> Accounts => Set<Account>();
-    public DbSet<GameServer> GameServers => Set<GameServer>();
-    public DbSet<AccountCharacterData> AccountCharacterData => Set<AccountCharacterData>();
+    public DbSet<DbAccount> Accounts => Set<DbAccount>();
+    public DbSet<DbGameServer> GameServers => Set<DbGameServer>();
+    public DbSet<DbAccountCharacterData> AccountCharacterData => Set<DbAccountCharacterData>();
 }

@@ -77,7 +77,7 @@ public class ShortCuts : IRestorable
 				r.CharacterId == characterId && r.ClassIndex == classIndex && r.Page == page && r.Slot == slot);
 			if (record == null)
 			{
-				record = new CharacterShortCut();
+				record = new DbCharacterShortCut();
 				record.CharacterId = characterId;
 				record.ClassIndex = (byte)classIndex;
 				record.Slot = (byte)slot;

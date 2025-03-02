@@ -55,7 +55,7 @@ public class Topic
 		try 
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			var topic = new Db.Topic
+			var topic = new Db.DbTopic
 			{
 				Id = _id,
 				ForumId = _forumId,

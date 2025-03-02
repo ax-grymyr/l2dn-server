@@ -790,7 +790,7 @@ public class Player: Playable
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			// Retrieve the Player from the characters table of the database
-			Character? character = ctx.Characters.SingleOrDefault(c => c.Id == objectId);
+			DbCharacter? character = ctx.Characters.SingleOrDefault(c => c.Id == objectId);
             if (character is null)
                 return null;
 
@@ -1335,7 +1335,7 @@ public class Player: Playable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			ctx.CharacterRecipeBooks.Add(new CharacterRecipeBook
+			ctx.CharacterRecipeBooks.Add(new DbCharacterRecipeBook
 			{
 				CharacterId = ObjectId,
 				Id = recipeId,
@@ -6597,15 +6597,15 @@ public class Player: Playable
 	private void createDb()
 	{
 		using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-		AccountRef? account = ctx.AccountRefs.SingleOrDefault(r => r.Id == _accountId);
+		DbAccountRef? account = ctx.AccountRefs.SingleOrDefault(r => r.Id == _accountId);
 		if (account is null)
         {
-            account = new AccountRef { Id = _accountId, Login = _accountName };
+            account = new DbAccountRef { Id = _accountId, Login = _accountName };
             ctx.AccountRefs.Add(account);
 			ctx.SaveChanges();
 		}
 
-		ctx.Characters.Add(new Character
+		ctx.Characters.Add(new DbCharacter
 		{
 			Id = ObjectId,
 			AccountId = _accountId,
@@ -6995,10 +6995,10 @@ public class Player: Playable
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = ObjectId;
-            Character? character = ctx.Characters.SingleOrDefault(r => r.Id == characterId);
+            DbCharacter? character = ctx.Characters.SingleOrDefault(r => r.Id == characterId);
             if (character is null)
             {
-	            character = new Character();
+	            character = new DbCharacter();
 	            character.Id = characterId;
 	            ctx.Characters.Add(character);
             }
@@ -7087,12 +7087,12 @@ public class Player: Playable
 			foreach (SubClassHolder subClass in getSubClasses().Values)
 			{
                 int classIndex = subClass.getClassIndex();
-                CharacterSubClass? record =
+                DbCharacterSubClass? record =
 	                ctx.CharacterSubClasses.SingleOrDefault(r => r.CharacterId == characterId && r.ClassIndex == classIndex);
 
                 if (record is null)
                 {
-	                record = new CharacterSubClass();
+	                record = new DbCharacterSubClass();
 	                record.CharacterId = characterId;
                     record.ClassIndex = (byte)classIndex;
                     ctx.CharacterSubClasses.Add(record);
@@ -7186,7 +7186,7 @@ public class Player: Playable
 					TimeStamp? t = getSkillReuseTimeStamp(skill.getReuseHashCode());
 
                     ++buffIndex;
-					ctx.CharacterSkillReuses.Add(new CharacterSkillReuse()
+					ctx.CharacterSkillReuses.Add(new DbCharacterSkillReuse()
                     {
 	                    CharacterId = characterId,
                         ClassIndex = (byte)_classIndex,
@@ -7217,7 +7217,7 @@ public class Player: Playable
 					storedSkills.Add(hash);
 
 					++buffIndex;
-					ctx.CharacterSkillReuses.Add(new CharacterSkillReuse()
+					ctx.CharacterSkillReuses.Add(new DbCharacterSkillReuse()
 					{
 						CharacterId = characterId,
 						ClassIndex = (byte)_classIndex,
@@ -7254,7 +7254,7 @@ public class Player: Playable
 			{
 				if (ts != null && currentTime < ts.getStamp())
 				{
-					ctx.CharacterItemReuses.Add(new CharacterItemReuse()
+					ctx.CharacterItemReuses.Add(new DbCharacterItemReuse()
 					{
 						CharacterId = characterId,
 						ItemId = ts.getItemId(),
@@ -7452,12 +7452,12 @@ public class Player: Playable
 			else if (newSkill != null)
 			{
                 int skillId = newSkill.getId();
-                CharacterSkill? record = ctx.CharacterSkills.SingleOrDefault(r =>
+                DbCharacterSkill? record = ctx.CharacterSkills.SingleOrDefault(r =>
 	                r.CharacterId == characterId && r.ClassIndex == classIndex && r.SkillId == skillId);
 
 				if (record is null)
 				{
-					record = new CharacterSkill();
+					record = new DbCharacterSkill();
 					record.CharacterId = characterId;
 					record.ClassIndex = (byte)classIndex;
 					record.SkillId = skillId;
@@ -7499,12 +7499,12 @@ public class Player: Playable
 			foreach (Skill addSkill in newSkills)
 			{
                 int skillId = addSkill.getId();
-				CharacterSkill? record = ctx.CharacterSkills.SingleOrDefault(r =>
+				DbCharacterSkill? record = ctx.CharacterSkills.SingleOrDefault(r =>
 					r.CharacterId == characterId && r.ClassIndex == classIndex && r.SkillId == skillId);
 
 				if (record is null)
 				{
-					record = new CharacterSkill();
+					record = new DbCharacterSkill();
 					record.CharacterId = characterId;
 					record.ClassIndex = (byte)classIndex;
 					record.SkillId = skillId;
@@ -7895,7 +7895,7 @@ public class Player: Playable
 				try
 				{
 					using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-                    ctx.CharacterHennas.Add(new CharacterHenna()
+                    ctx.CharacterHennas.Add(new DbCharacterHenna()
                     {
                         CharacterId = ObjectId,
                         SymbolId = henna.getDyeId(),
@@ -8008,12 +8008,12 @@ public class Player: Playable
 
                     using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
-                    CharacterHennaPoten? record = ctx.CharacterHennaPotens.SingleOrDefault(r =>
+                    DbCharacterHennaPoten? record = ctx.CharacterHennaPotens.SingleOrDefault(r =>
 	                    r.CharacterId == characterId && r.SlotPosition == slotPosition);
 
                     if (record is null)
                     {
-	                    record = new CharacterHennaPoten();
+	                    record = new DbCharacterHennaPoten();
                         record.CharacterId = characterId;
                         record.SlotPosition = slotPosition;
                     }
@@ -9746,7 +9746,7 @@ public class Player: Playable
                 using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 				// Store the basic info about this new sub-class.
-                ctx.CharacterSubClasses.Add(new CharacterSubClass()
+                ctx.CharacterSubClasses.Add(new DbCharacterSubClass()
                 {
                     CharacterId = ObjectId,
                     SubClass = newClass.getClassDefinition(),
@@ -12636,7 +12636,7 @@ public class Player: Playable
 		try
 		{
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-            ctx.CharacterTeleportBookmarks.Add(new CharacterTeleportBookmark()
+            ctx.CharacterTeleportBookmarks.Add(new DbCharacterTeleportBookmark()
             {
                 CharacterId = ObjectId,
                 Id = id,
@@ -13037,7 +13037,7 @@ public class Player: Playable
                 int slot = 1;
 				foreach (ManufactureItem item in _manufactureItems.Values)
 				{
-                    ctx.CharacterRecipeShopLists.Add(new CharacterRecipeShopList()
+                    ctx.CharacterRecipeShopLists.Add(new DbCharacterRecipeShopList()
                     {
                         CharacterId = characterId,
                         RecipeId = item.getRecipeId(),
@@ -13515,7 +13515,7 @@ public class Player: Playable
 		{
             int characterId = ObjectId;
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-            CharacterRecoBonus? record = ctx.CharacterRecoBonuses.Where(r => r.CharacterId == characterId).
+            DbCharacterRecoBonus? record = ctx.CharacterRecoBonuses.Where(r => r.CharacterId == characterId).
                 SingleOrDefault();
 
             if (record is not null)
@@ -13539,11 +13539,11 @@ public class Player: Playable
 		{
             int characterId = ObjectId;
             using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-            CharacterRecoBonus? record = ctx.CharacterRecoBonuses.SingleOrDefault(r => r.CharacterId == characterId);
+            DbCharacterRecoBonus? record = ctx.CharacterRecoBonuses.SingleOrDefault(r => r.CharacterId == characterId);
 
             if (record is null)
             {
-                record = new CharacterRecoBonus();
+                record = new DbCharacterRecoBonus();
                 record.CharacterId = characterId;
             }
 
@@ -15471,7 +15471,7 @@ public class Player: Playable
                 var record = ctx.AccountCollections.SingleOrDefault(r => r.AccountId == _accountId && r.CollectionId == collectionId && r.Index == index);
                 if (record is null)
                 {
-					record = new AccountCollection();
+					record = new DbAccountCollection();
                     record.AccountId = _accountId;
                     record.CollectionId = (short)collectionId;
                     record.Index = (short)index;
@@ -15497,7 +15497,7 @@ public class Player: Playable
 
             foreach (var data in _collectionFavorites)
             {
-                ctx.AccountCollectionFavorites.Add(new AccountCollectionFavorite()
+                ctx.AccountCollectionFavorites.Add(new DbAccountCollectionFavorite()
                 {
                     AccountId = _accountId,
                     CollectionId = (short)data
@@ -15604,7 +15604,7 @@ public class Player: Playable
                 int category = kvp.Key;
                 PurgePlayerHolder data = kvp.Value;
 
-                ctx.CharacterPurges.Add(new CharacterPurge()
+                ctx.CharacterPurges.Add(new DbCharacterPurge()
                 {
                     CharacterId = characterId,
                     Category = (short)category,

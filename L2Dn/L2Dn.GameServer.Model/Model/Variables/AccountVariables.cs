@@ -2,7 +2,7 @@
 
 namespace L2Dn.GameServer.Model.Variables;
 
-public class AccountVariables: AbstractVariables<AccountVariable>
+public class AccountVariables: AbstractVariables<DbAccountVariable>
 {
     // Public variable names
     public const string HWID = "HWID";
@@ -25,8 +25,8 @@ public class AccountVariables: AbstractVariables<AccountVariable>
         Restore();
     }
 
-    protected override IQueryable<AccountVariable> GetQuery(GameServerDbContext ctx) =>
+    protected override IQueryable<DbAccountVariable> GetQuery(GameServerDbContext ctx) =>
         ctx.AccountVariables.Where(r => r.AccountId == _accountId);
 
-    protected override AccountVariable CreateVar() => new() { AccountId = _accountId };
+    protected override DbAccountVariable CreateVar() => new() { AccountId = _accountId };
 }

@@ -35,7 +35,7 @@ public class PrivateStoreHistoryManager
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (ItemTransactionHistory record in ctx.ItemTransactionHistory)
+			foreach (DbItemTransactionHistory record in ctx.ItemTransactionHistory)
 			{
 				ItemHistoryTransaction item = new ItemHistoryTransaction(record);
 				_items.Add(item);
@@ -174,7 +174,7 @@ public class PrivateStoreHistoryManager
 		private readonly long _price;
 		private long _count;
 
-		public ItemHistoryTransaction(ItemTransactionHistory record)
+		public ItemHistoryTransaction(DbItemTransactionHistory record)
 		{
 			_transactionDate = record.CreatedTime;
 			_itemId = record.ItemId;
@@ -245,7 +245,7 @@ public class PrivateStoreHistoryManager
 			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-				ctx.ItemTransactionHistory.Add(new ItemTransactionHistory()
+				ctx.ItemTransactionHistory.Add(new DbItemTransactionHistory()
 				{
 					CreatedTime = _transactionDate,
 					ItemId = _itemId,

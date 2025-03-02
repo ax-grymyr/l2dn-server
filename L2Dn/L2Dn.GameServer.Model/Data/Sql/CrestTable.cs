@@ -54,7 +54,7 @@ public class CrestTable
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			IOrderedQueryable<Db.Crest> crests = ctx.Crests.OrderByDescending(c => c.Id);
+			IOrderedQueryable<Db.DbCrest> crests = ctx.Crests.OrderByDescending(c => c.Id);
 			foreach (var crest in crests)
 			{
 				int id = crest.Id;

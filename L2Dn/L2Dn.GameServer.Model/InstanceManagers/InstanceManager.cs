@@ -459,7 +459,7 @@ public class InstanceManager: DataReaderBase
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (CharacterInstance record in ctx.CharacterInstances.OrderBy(r => r.CharacterId))
+			foreach (DbCharacterInstance record in ctx.CharacterInstances.OrderBy(r => r.CharacterId))
 			{
 				// Check if instance penalty passed
 				DateTime time = record.Time;

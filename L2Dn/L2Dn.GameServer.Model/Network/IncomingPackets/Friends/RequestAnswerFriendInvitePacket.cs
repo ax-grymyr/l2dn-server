@@ -49,13 +49,13 @@ public struct RequestAnswerFriendInvitePacket: IIncomingPacket<GameSession>
 			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-				ctx.CharacterFriends.Add(new CharacterFriend()
+				ctx.CharacterFriends.Add(new DbCharacterFriend()
 				{
 					CharacterId = requestor.ObjectId,
 					FriendId = player.ObjectId
 				});
 
-				ctx.CharacterFriends.Add(new CharacterFriend()
+				ctx.CharacterFriends.Add(new DbCharacterFriend()
 				{
 					FriendId = requestor.ObjectId,
 					CharacterId = player.ObjectId

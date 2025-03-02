@@ -47,8 +47,8 @@ public sealed class SchemeBufferTable: DataReaderBase
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			DbSet<BufferScheme> schemes = ctx.BufferSchemes;
-			foreach (BufferScheme scheme in schemes)
+			DbSet<DbBufferScheme> schemes = ctx.BufferSchemes;
+			foreach (DbBufferScheme scheme in schemes)
 			{
 				int objectId = scheme.ObjectId;
 				string schemeName = scheme.Name;

@@ -29,7 +29,7 @@ public class MentorManager
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			foreach (CharacterMentee mentee in ctx.CharacterMentees)
+			foreach (DbCharacterMentee mentee in ctx.CharacterMentees)
 			{
 				addMentor(mentee.MentorId, mentee.CharacterId);
 			}

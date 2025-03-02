@@ -47,7 +47,7 @@ public struct ConfirmMenteeAddPacket: IIncomingPacket<GameSession>
             try
             {
                 using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-                ctx.CharacterMentees.Add(new CharacterMentee()
+                ctx.CharacterMentees.Add(new DbCharacterMentee()
                 {
                     CharacterId = mentee.ObjectId,
                     MentorId = mentor.ObjectId
