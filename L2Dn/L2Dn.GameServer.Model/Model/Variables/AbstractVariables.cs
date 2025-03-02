@@ -1,4 +1,5 @@
-﻿using L2Dn.Collections;
+﻿using System.Text.Json;
+using L2Dn.Collections;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,7 @@ public abstract class AbstractVariables<T>: IStorable, IDeletable
     public void Set<TValue>(string name, TValue value) => _values.Set(name, value);
 
     public TValue? Get<TValue>(string name) => _values.Get<TValue>(name);
+
     public TValue Get<TValue>(string name, TValue defaultValue) => _values.Get(name, defaultValue);
 
     public bool Remove(string name) => _values.Remove(name);

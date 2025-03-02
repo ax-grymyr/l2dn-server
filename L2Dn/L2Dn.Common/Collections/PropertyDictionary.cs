@@ -1,10 +1,12 @@
 ﻿using System.Collections.Concurrent;
 using System.Text.Json;
+using NLog;
 
 namespace L2Dn.Collections;
 
 public class PropertyDictionary(StringComparer? comparer = null)
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(PropertyDictionary));
     private static readonly JsonSerializerOptions _serializeOptions =
         new()
         {
@@ -40,23 +42,29 @@ public class PropertyDictionary(StringComparer? comparer = null)
         _changed = true;
     }
 
-    public TValue Get<TValue>(string name, TValue defaultValue)
-    {
-        if (_dictionary.TryGetValue(name, out (string Text, PropertyState State) item) &&
-            item.State != PropertyState.Deleted)
-            return JsonSerializer.Deserialize<TValue>(item.Text, _serializeOptions) ?? defaultValue;
-
-        return defaultValue;
-    }
-
     public TValue? Get<TValue>(string name)
     {
         if (_dictionary.TryGetValue(name, out (string Text, PropertyState State) item) &&
             item.State != PropertyState.Deleted)
-            return JsonSerializer.Deserialize<TValue>(item.Text, _serializeOptions);
+        {
+            TValue? value = default;
+            try
+            {
+                value = JsonSerializer.Deserialize<TValue>(item.Text, _serializeOptions);
+            }
+            catch (JsonException exception)
+            {
+                _logger.Error(
+                    $"Could not deserialize object of type {typeof(TValue)} from string '{item.Text}': {exception}");
+            }
+
+            return value;
+        }
 
         return default;
     }
+
+    public TValue Get<TValue>(string name, TValue defaultValue) => Get<TValue>(name) ?? defaultValue;
 
     public bool Remove(string name)
     {
