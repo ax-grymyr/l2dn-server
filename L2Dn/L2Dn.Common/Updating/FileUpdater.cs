@@ -28,7 +28,7 @@ public static class FileUpdater
         byte[] fileListBytes;
         try
         {
-            fileListBytes = await HttpUtil.DownloadFileAsync(fileListUrl, 5);
+            fileListBytes = await HttpUtil.DownloadFileAsync(fileListUrl, 10);
         }
         catch (Exception exception)
         {
@@ -58,7 +58,7 @@ public static class FileUpdater
             byte[] data;
             try
             {
-                data = await HttpUtil.DownloadFileAsync(url, 5).ConfigureAwait(false);
+                data = await HttpUtil.DownloadFileAsync(url, 10).ConfigureAwait(false);
             }
             catch (Exception exception)
             {

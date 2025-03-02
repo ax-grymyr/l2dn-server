@@ -23,6 +23,8 @@ public static class HttpUtil
                 if (attempt >= maxAttempts)
                     throw;
             }
+
+            await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
         }
 
         throw new HttpRequestException("Could not download file"); // must never happen, the exception is thrown above
