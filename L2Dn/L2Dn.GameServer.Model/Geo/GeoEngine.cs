@@ -24,27 +24,33 @@ public class GeoEngine
 	private const int MAX_SEE_OVER_HEIGHT = 48;
 	private const int SPAWN_Z_DELTA_LIMIT = 100;
 
-	private readonly GeoData _geodata = new GeoData();
+	private readonly GeoData _geodata = new();
 
-	protected GeoEngine()
-	{
-		bool updated = false;
-		GeoDataConfig geoDataConfig = ServerConfig.Instance.DataPack.GeoData;
-		if (geoDataConfig.Update)
-		{
-			FileUpdater.UpdateFiles(geoDataConfig.FileListUrl, Config.GEODATA_PATH, "geodata");
-			updated = true;
-		}
-
-		int loadedRegions = LoadGeoData();
-		if (loadedRegions == 0 && geoDataConfig.Download && !updated)
-		{
-			FileUpdater.UpdateFiles(geoDataConfig.FileListUrl, Config.GEODATA_PATH, "geodata");
-			loadedRegions = LoadGeoData();
-		}
-
+	private GeoEngine()
+    {
+        int loadedRegions = Task.Run(DownloadOrUpdateGeoDataAsync).ConfigureAwait(false).GetAwaiter().GetResult();
 		LOGGER.Info(GetType().Name + ": Loaded " + loadedRegions + " regions.");
 	}
+
+    private async Task<int> DownloadOrUpdateGeoDataAsync()
+    {
+        bool updated = false;
+        GeoDataConfig geoDataConfig = ServerConfig.Instance.DataPack.GeoData;
+        if (geoDataConfig.Update)
+        {
+            await FileUpdater.UpdateFilesAsync(geoDataConfig.FileListUrl, Config.GEODATA_PATH, "geodata");
+            updated = true;
+        }
+
+        int loadedRegions = LoadGeoData();
+        if (loadedRegions == 0 && geoDataConfig.Download && !updated)
+        {
+            await FileUpdater.UpdateFilesAsync(geoDataConfig.FileListUrl, Config.GEODATA_PATH, "geodata");
+            loadedRegions = LoadGeoData();
+        }
+
+        return loadedRegions;
+    }
 
 	private int LoadGeoData()
 	{

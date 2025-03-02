@@ -7,13 +7,13 @@ namespace L2Dn.Updating;
 
 public static class FileUpdater
 {
-    private static readonly Logger _logger = LogManager.GetLogger(nameof(FileUpdater)); 
-    
-    public static void UpdateFiles(string fileListUrl, string path, string description)
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(FileUpdater));
+
+    public static async Task UpdateFilesAsync(string fileListUrl, string path, string description)
     {
         try
         {
-            UpdateFilesPrivate(fileListUrl, path, description);
+            await UpdateFilesPrivateAsync(fileListUrl, path, description);
         }
         catch (Exception exception)
         {
@@ -21,12 +21,11 @@ public static class FileUpdater
         }
     }
 
-    private static void UpdateFilesPrivate(string fileListUrl, string path, string description)
+    private static async Task UpdateFilesPrivateAsync(string fileListUrl, string path, string description)
     {
         _logger.Info($"Downloading {description} file list {fileListUrl} ...");
 
-        byte[] fileListBytes = HttpUtil.DownloadFile(fileListUrl);
-        string str = Encoding.UTF8.GetString(fileListBytes);
+        byte[] fileListBytes = await HttpUtil.DownloadFileAsync(fileListUrl);
         using MemoryStream memoryStream = new(fileListBytes);
         FileList fileList = JsonUtil.DeserializeStream<FileList>(memoryStream);
 
@@ -42,20 +41,33 @@ public static class FileUpdater
             string? hash = CalculateHash(destFilePath);
             if (string.Equals(hash, fileListFile.Hash))
                 continue;
-            
+
             string url = baseUrl + fileListFile.Name;
             _logger.Info($"Downloading {description} file {url} ...");
-            byte[] data;
-            try
+
+            byte[]? data = null;
+
+            const int maxAttempts = 5;
+            int attempt = 0;
+            while (attempt < maxAttempts)
             {
-                data = HttpUtil.DownloadFile(url);
+                attempt++;
+                try
+                {
+                    data = await HttpUtil.DownloadFileAsync(url).ConfigureAwait(false);
+                }
+                catch (Exception exception)
+                {
+                    if (attempt == maxAttempts)
+                    {
+                        _logger.Warn($"Error downloading {description} file {url}: {exception.Message}");
+                        error = true;
+                    }
+                }
             }
-            catch (Exception exception)
-            {
-                _logger.Warn($"Error downloading {description} file {url}: {exception.Message}");
-                error = true;
+
+            if (data == null)
                 continue;
-            }
 
             try
             {
@@ -66,7 +78,7 @@ public static class FileUpdater
                         File.Delete(fn);
                 }
 
-                File.WriteAllBytes(destFilePath, data);
+                await File.WriteAllBytesAsync(destFilePath, data).ConfigureAwait(false);
                 updated = true;
             }
             catch (Exception exception)
