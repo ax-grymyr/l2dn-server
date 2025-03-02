@@ -234,12 +234,13 @@ public class SkillCaster: Runnable
 		}
 
 		// Reduce talisman mana on skill use
-        ItemTemplate referenceItemTemplate = ItemData.getInstance().getTemplate(_skill.getReferenceItemId()) ??
+        ItemTemplate? referenceItemTemplate = _skill.getReferenceItemId() > 0 ?
+            ItemData.getInstance().getTemplate(_skill.getReferenceItemId()) ??
             throw new InvalidOperationException("Item template not found for skill reference item ID: " +
-                _skill.getReferenceItemId());
+                _skill.getReferenceItemId()) : null;
 
         Inventory? casterInventory2 = caster.getInventory();
-		if (casterInventory2 != null && _skill.getReferenceItemId() > 0 && referenceItemTemplate.getBodyPart() == ItemTemplate.SLOT_DECO)
+		if (casterInventory2 != null && referenceItemTemplate != null && referenceItemTemplate.getBodyPart() == ItemTemplate.SLOT_DECO)
 		{
 			foreach (Item item in casterInventory2.getItems())
 			{
