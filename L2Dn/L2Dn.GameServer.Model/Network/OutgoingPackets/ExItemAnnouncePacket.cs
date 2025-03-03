@@ -12,35 +12,27 @@ public readonly struct ExItemAnnouncePacket: IOutgoingPacket
     public const int SPECIAL_CREATION = 3;
     public const int COMPOUND = 8;
     public const int UPGRADE = 10;
-	
+
     private readonly Item _item;
     private readonly int _type;
     private readonly string _announceName;
-	
+
     public ExItemAnnouncePacket(Player player, Item item, int type)
     {
         _item = item;
         _type = type;
         if (player.getClientSettings().isAnnounceEnabled())
-        {
             _announceName = player.getName();
-        }
-        
         else if ("ru".equals(player.getLang()))
-        {
             _announceName = "Некто";
-			
-        }
         else
-        {
             _announceName = "Someone";
-        }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_ITEM_ANNOUNCE);
-        
+
         // _type
         // 0 - enchant
         // 1 - item get from container

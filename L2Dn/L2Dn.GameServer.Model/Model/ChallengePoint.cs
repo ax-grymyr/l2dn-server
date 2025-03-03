@@ -7,42 +7,27 @@ using NLog;
 
 namespace L2Dn.GameServer.Model;
 
-public class ChallengePoint
+public sealed class ChallengePoint(Player owner)
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(ChallengePoint));
 
-	private readonly Player _owner;
-	private int _nowGroup;
-	private int _nowPoint;
-	private readonly Map<int, int> _challengePoints = new();
-	private readonly Map<int, Map<int, int>> _challengePointsRecharges = new();
-	private readonly int[] _challengePointsPendingRecharge =
-	{
-		-1,
-		-1,
-	};
+    private readonly Map<int, int> _challengePoints = [];
+	private readonly Map<int, Map<int, int>> _challengePointsRecharges = [];
+    private readonly int[] _challengePointsPendingRecharge = [-1, -1];
+    private int _nowGroup;
+    private int _nowPoint;
 
-	public ChallengePoint(Player owner)
-	{
-		_owner = owner;
-		_nowGroup = 0;
-		_nowPoint = 0;
-	}
-
-	public void storeChallengePoints()
+    public void storeChallengePoints()
 	{
 		// LOGGER.info("Storing Challenge Points for " + _owner);
-
 		if (_challengePoints.Count == 0)
-		{
 			return;
-		}
 
 		try
 		{
 			// TODO: server is the owner of the database, so it should track the records to add or update
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = _owner.ObjectId;
+			int characterId = owner.ObjectId;
 			foreach (var pair in _challengePoints)
 			{
 				var record =
@@ -85,7 +70,7 @@ public class ChallengePoint
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not store Challenge Points for " + _owner + " " + e);
+			LOGGER.Error("Could not store Challenge Points for " + owner + " " + e);
 		}
 	}
 
@@ -97,7 +82,7 @@ public class ChallengePoint
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = _owner.ObjectId;
+			int characterId = owner.ObjectId;
 			foreach (var record in ctx.EnchantChallengePoints.Where(r => r.CharacterId == characterId))
 			{
 				int groupId = record.GroupId;
@@ -121,7 +106,7 @@ public class ChallengePoint
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not restore Challenge Points for " + _owner + " " + e);
+			LOGGER.Error("Could not restore Challenge Points for " + owner + " " + e);
 		}
 
 		// LOGGER.info("Restored Challenge Points recharges for " + _owner);

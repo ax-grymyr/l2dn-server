@@ -10,7 +10,7 @@ using NLog;
 
 namespace L2Dn.GameServer.Model;
 
-public class AchievementBox
+public sealed class AchievementBox(Player owner)
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AchievementBox));
 
@@ -18,7 +18,6 @@ public class AchievementBox
 	private static readonly TimeSpan ACHIEVEMENT_BOX_6H = TimeSpan.FromHours(6);
 	private static readonly TimeSpan ACHIEVEMENT_BOX_12H = TimeSpan.FromHours(12);
 
-	private readonly Player _owner;
     private readonly List<AchievementBoxHolder> _achievementBox = [];
 	private int _boxOwned = 1;
 	private int _monsterPoints;
@@ -28,12 +27,7 @@ public class AchievementBox
 	private DateTime? _boxTimeForOpen;
 	private ScheduledFuture? _boxOpenTask;
 
-	public AchievementBox(Player owner)
-	{
-		_owner = owner;
-	}
-
-	public DateTime pvpEndDate()
+    public DateTime pvpEndDate()
 	{
 		return _pvpEndDate;
 	}
@@ -81,7 +75,7 @@ public class AchievementBox
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = _owner.ObjectId;
+			int characterId = owner.ObjectId;
 			var record = ctx.AchievementBoxes.SingleOrDefault(r => r.CharacterId == characterId);
 			if (record != null)
 			{
@@ -118,7 +112,7 @@ public class AchievementBox
 				}
 				catch (Exception e)
                 {
-                    LOGGER.Error("Could not restore Achievement box for " + _owner + ": " + e);
+                    LOGGER.Error("Could not restore Achievement box for " + owner + ": " + e);
                 }
 			}
 			else
@@ -129,7 +123,7 @@ public class AchievementBox
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not restore achievement box for " + _owner + ": " + e);
+			LOGGER.Error("Could not restore achievement box for " + owner + ": " + e);
 		}
 	}
 
@@ -140,7 +134,7 @@ public class AchievementBox
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			ctx.AchievementBoxes.Add(new DbAchievementBox()
 			{
-				CharacterId = _owner.ObjectId,
+				CharacterId = owner.ObjectId,
 				BoxOwned = _boxOwned,
 				MonsterPoint = _monsterPoints,
 				PvpPoint = _pvpPoints,
@@ -152,7 +146,7 @@ public class AchievementBox
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not store new Archivement Box for: " + _owner + ": " + e);
+			LOGGER.Error("Could not store new Archivement Box for: " + owner + ": " + e);
 		}
 	}
 
@@ -161,7 +155,7 @@ public class AchievementBox
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int characterId = _owner.ObjectId;
+			int characterId = owner.ObjectId;
 			var record = ctx.AchievementBoxes.SingleOrDefault(r => r.CharacterId == characterId);
 			if (record is null)
 			{
@@ -192,7 +186,7 @@ public class AchievementBox
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Could not store Achievement Box for: " + _owner + ": " + e);
+			LOGGER.Error("Could not store Achievement Box for: " + owner + ": " + e);
 		}
 	}
 
@@ -292,7 +286,7 @@ public class AchievementBox
 		}
 
 		AchievementBoxHolder holder = getAchievementBox()[slotId - 1];
-		if (holder != null && _owner.destroyItemByItemId("Take Achievement Box", Inventory.LCOIN_ID, fee, _owner, true))
+		if (holder != null && owner.destroyItemByItemId("Take Achievement Box", Inventory.LCOIN_ID, fee, owner, true))
 		{
 			if (_pendingBoxSlotId == slotId)
 			{
@@ -320,7 +314,7 @@ public class AchievementBox
 			return;
 		}
 
-		if (_owner == null || !_owner.isOnline())
+		if (owner == null || !owner.isOnline())
 		{
 			return;
 		}
@@ -376,7 +370,7 @@ public class AchievementBox
 
 	public void sendBoxUpdate()
 	{
-		_owner.sendPacket(new ExSteadyAllBoxUpdatePacket(_owner));
+		owner.sendPacket(new ExSteadyAllBoxUpdatePacket(owner));
 	}
 
 	public void cancelTask()
@@ -402,7 +396,7 @@ public class AchievementBox
 		{
 			case 2:
 			{
-				if (_owner.reduceAdena("Adena " + slotId, 100000000, _owner, true))
+				if (owner.reduceAdena("Adena " + slotId, 100000000, owner, true))
 				{
 					paidSlot = true;
 				}
@@ -410,7 +404,7 @@ public class AchievementBox
 			}
 			case 3:
 			{
-				if (_owner.destroyItemByItemId("L coin " + slotId, Inventory.LCOIN_ID, 2000, _owner, true))
+				if (owner.destroyItemByItemId("L coin " + slotId, Inventory.LCOIN_ID, 2000, owner, true))
 				{
 					paidSlot = true;
 				}
@@ -418,7 +412,7 @@ public class AchievementBox
 			}
 			case 4:
 			{
-				if (_owner.destroyItemByItemId("L coin " + slotId, Inventory.LCOIN_ID, 8000, _owner, true))
+				if (owner.destroyItemByItemId("L coin " + slotId, Inventory.LCOIN_ID, 8000, owner, true))
 				{
 					paidSlot = true;
 				}
@@ -516,8 +510,8 @@ public class AchievementBox
 		sendBoxUpdate();
 		if (reward != null)
 		{
-			_owner.addItem("Chest unlock", reward, _owner, true);
-			_owner.sendPacket(new ExSteadyBoxRewardPacket(slotId, reward.getId(), reward.getCount()));
+			owner.addItem("Chest unlock", reward, owner, true);
+			owner.sendPacket(new ExSteadyBoxRewardPacket(slotId, reward.getId(), reward.getCount()));
 		}
 	}
 

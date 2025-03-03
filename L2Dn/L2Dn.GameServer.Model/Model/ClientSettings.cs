@@ -1,12 +1,11 @@
 ﻿using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Variables;
 
 namespace L2Dn.GameServer.Model;
 
 public sealed class ClientSettings
 {
-    private readonly Player _player;
+    private readonly PlayerVariables _variables;
     private bool _announceEnabled = true;
     private bool _partyRequestRestrictedFromOthers;
     private bool _partyRequestRestrictedFromClan;
@@ -15,13 +14,10 @@ public sealed class ClientSettings
     private bool _friendRequestRestrictedFromClan;
     private PartyDistributionType _partyContributionType;
 
-    public ClientSettings(Player player)
+    public ClientSettings(PlayerVariables variables)
     {
-        _player = player;
-
-        ClientSettingsVariable? variable =
-            _player.getVariables().Get<ClientSettingsVariable>(PlayerVariables.CLIENT_SETTINGS);
-
+        _variables = variables;
+        ClientSettingsVariable? variable = variables.Get<ClientSettingsVariable>(PlayerVariables.CLIENT_SETTINGS);
         if (variable != null)
         {
             _announceEnabled = variable.Enabled;
@@ -47,13 +43,10 @@ public sealed class ClientSettings
             Type = _partyContributionType,
         };
 
-        _player.getVariables().Set(PlayerVariables.CLIENT_SETTINGS, variable);
+        _variables.Set(PlayerVariables.CLIENT_SETTINGS, variable);
     }
 
-    public bool isAnnounceEnabled()
-    {
-        return _announceEnabled;
-    }
+    public bool isAnnounceEnabled() => _announceEnabled;
 
     public void setAnnounceEnabled(bool enabled)
     {
@@ -61,60 +54,42 @@ public sealed class ClientSettings
         storeSettings();
     }
 
-    public bool isPartyRequestRestrictedFromOthers()
-    {
-        return _partyRequestRestrictedFromOthers;
-    }
+    public bool isPartyRequestRestrictedFromOthers() => _partyRequestRestrictedFromOthers;
 
     public void setPartyRequestRestrictedFromOthers(bool partyRequestRestrictedFromOthers)
     {
         _partyRequestRestrictedFromOthers = partyRequestRestrictedFromOthers;
     }
 
-    public bool isPartyRequestRestrictedFromClan()
-    {
-        return _partyRequestRestrictedFromClan;
-    }
+    public bool isPartyRequestRestrictedFromClan() => _partyRequestRestrictedFromClan;
 
     public void setPartyRequestRestrictedFromClan(bool partyRequestRestrictedFromClan)
     {
         _partyRequestRestrictedFromClan = partyRequestRestrictedFromClan;
     }
 
-    public bool isPartyRequestRestrictedFromFriends()
-    {
-        return _partyRequestRestrictedFromFriends;
-    }
+    public bool isPartyRequestRestrictedFromFriends() => _partyRequestRestrictedFromFriends;
 
     public void setPartyRequestRestrictedFromFriends(bool partyRequestRestrictedFromFriends)
     {
         _partyRequestRestrictedFromFriends = partyRequestRestrictedFromFriends;
     }
 
-    public bool isFriendRequestRestrictedFromOthers()
-    {
-        return _friendRequestRestrictedFromOthers;
-    }
+    public bool isFriendRequestRestrictedFromOthers() => _friendRequestRestrictedFromOthers;
 
     public void setFriendRequestRestrictedFromOthers(bool friendRequestRestrictedFromOthers)
     {
         _friendRequestRestrictedFromOthers = friendRequestRestrictedFromOthers;
     }
 
-    public bool isFriendRequestRestrictedFromClan()
-    {
-        return _friendRequestRestrictedFromClan;
-    }
+    public bool isFriendRequestRestrictedFromClan() => _friendRequestRestrictedFromClan;
 
     public void setFriendRequestRestrictionFromClan(bool friendRequestRestrictedFromClan)
     {
         _friendRequestRestrictedFromClan = friendRequestRestrictedFromClan;
     }
 
-    public PartyDistributionType getPartyContributionType()
-    {
-        return _partyContributionType;
-    }
+    public PartyDistributionType getPartyContributionType() => _partyContributionType;
 
     public void setPartyContributionType(PartyDistributionType partyContributionType)
     {

@@ -177,11 +177,13 @@ public class Player: Playable
 
 	private int _lastCompassZone; // the last compass zone update send to the client
 
+    private readonly PlayerVariables _variables;
+
 	private readonly ContactList _contactList;
 
 	private int _bookmarkslot; // The Teleport Bookmark Slot
 
-	private readonly Map<int, TeleportBookmark> _tpbookmarks = new();
+	private readonly Map<int, TeleportBookmark> _tpbookmarks = [];
 
 	private bool _canFeed;
 	private bool _isInSiege;
@@ -557,7 +559,7 @@ public class Player: Playable
 	private ScheduledFuture? _statIncreaseSkillTask;
 
 	private readonly List<PlayerCollectionData> _collections = [];
-	private readonly List<int> _collectionFavorites = new();
+	private readonly List<int> _collectionFavorites = [];
 
 	private readonly Map<int, PurgePlayerHolder> _purgePoints = [];
 
@@ -572,12 +574,10 @@ public class Player: Playable
 
 	private MissionLevelPlayerDataHolder? _missionLevelProgress;
 
-	private int _dualInventorySlot;
-	private List<int> _dualInventorySetA = [];
-	private List<int> _dualInventorySetB = [];
+    private readonly DualInventory _dualInventory;
 
-	private readonly List<QuestTimer> _questTimers = new();
-	private readonly List<TimerHolder> _timerHolders = new();
+	private readonly List<QuestTimer> _questTimers = [];
+	private readonly List<TimerHolder> _timerHolders = [];
 
 	// Selling buffs system
 	private bool _isSellingBuffs;
@@ -593,9 +593,9 @@ public class Player: Playable
 	public List<SellBuffHolder> getSellingBuffs() => _sellingBuffs ??= [];
 
     // Player client settings
-	private ClientSettings? _clientSettings;
+	private ClientSettings _clientSettings;
 
-	public ClientSettings getClientSettings() => _clientSettings ??= new ClientSettings(this);
+	public ClientSettings getClientSettings() => _clientSettings;
 
     /**
      * Create a new Player and add it in the characters table of the database.<br>
@@ -1133,9 +1133,12 @@ public class Player: Playable
         setName(name);
 		_appearance = new PlayerAppearance(this, face, hairColor, hairStyle, sex);
         _baseClass = template.getClassId();
+        _variables = new PlayerVariables(objectId);
+        _clientSettings = new ClientSettings(_variables);
 
 		_contactList = new ContactList(this);
 		_inventory = new PlayerInventory(this);
+        _dualInventory = new DualInventory(this);
 		_freight = new PlayerFreight(this);
 		_warehouse = new PlayerWarehouse(this);
 		_shortCuts = new ShortCuts(this);
@@ -2222,12 +2225,12 @@ public class Player: Playable
 		}
 
 		// Equip or unEquip
-		List<Item>? items = null;
+		List<Item>? items;
 		bool isEquiped = item.isEquipped();
 		int oldInvLimit = getInventoryLimit();
 		if (isEquiped)
 		{
-			getDualInventorySet()[item.getLocationSlot()] = 0;
+			_dualInventory[item.getLocationSlot()] = 0;
 
 			SystemMessagePacket sm;
 			if (item.getEnchantLevel() > 0)
@@ -2288,7 +2291,7 @@ public class Player: Playable
 					events.NotifyAsync(new OnPlayerItemEquip(this, item));
 				}
 
-				getDualInventorySet()[item.getLocationSlot()] = item.ObjectId;
+				_dualInventory[item.getLocationSlot()] = item.ObjectId;
 			}
 			else
 			{
@@ -6934,19 +6937,14 @@ public class Player: Playable
 
 		_challengePoints.storeChallengePoints();
 
-		storeDualInventory();
+		_dualInventory.Store();
 
-		PlayerVariables? vars = getScript<PlayerVariables>();
-		if (vars != null)
-		{
-			vars.storeMe();
-		}
+        _clientSettings.storeSettings();
+		_variables.storeMe();
 
 		AccountVariables? aVars = getScript<AccountVariables>();
 		if (aVars != null)
-		{
 			aVars.storeMe();
-		}
 
 		getInventory().updateDatabase();
 		getWarehouse().updateDatabase();
@@ -6955,28 +6953,12 @@ public class Player: Playable
 		if (_spirits != null)
 		{
 			foreach (ElementalSpirit spirit in _spirits)
-			{
-				if (spirit != null)
-				{
-					spirit.save();
-				}
-			}
+				spirit.save();
 		}
 
-		if (_randomCraft != null)
-		{
-			_randomCraft.store();
-		}
-
-		if (_huntPass != null)
-		{
-			_huntPass.store();
-		}
-
-		if (_achivementBox != null)
-		{
-			_achivementBox.store();
-		}
+		_randomCraft.store();
+		_huntPass.store();
+		_achivementBox.store();
 	}
 
 	public override void storeMe()
@@ -13737,21 +13719,9 @@ public class Player: Playable
 	}
 
 	/**
-	 * @return {@code true} if {@link PlayerVariables} instance is attached to current player's scripts, {@code false} otherwise.
-	 */
-	public bool hasVariables()
-	{
-		return getScript<PlayerVariables>() != null;
-	}
-
-	/**
 	 * @return {@link PlayerVariables} instance containing parameters regarding player.
 	 */
-	public PlayerVariables getVariables()
-	{
-		PlayerVariables? vars = getScript<PlayerVariables>();
-		return vars != null ? vars : addScript(new PlayerVariables(ObjectId));
-	}
+	public PlayerVariables getVariables() => _variables;
 
 	/**
 	 * @return {@code true} if {@link AccountVariables} instance is attached to current player's scripts, {@code false} otherwise.
@@ -15677,62 +15647,21 @@ public class Player: Playable
 		return _missionLevelProgress;
 	}
 
-	private void storeDualInventory()
-	{
-		getVariables().Set(PlayerVariables.DUAL_INVENTORY_SLOT, _dualInventorySlot);
-		getVariables().Set(PlayerVariables.DUAL_INVENTORY_SET_A, _dualInventorySetA);
-		getVariables().Set(PlayerVariables.DUAL_INVENTORY_SET_B, _dualInventorySetB);
-	}
-
 	public void restoreDualInventory()
 	{
-		_dualInventorySlot = getVariables().Get(PlayerVariables.DUAL_INVENTORY_SLOT, 0);
-
-        List<int>? inventorySet = getVariables().Get<List<int>>(PlayerVariables.DUAL_INVENTORY_SET_A);
-		if (inventorySet != null)
-		{
-			_dualInventorySetA = inventorySet;
-		}
-		else
-		{
-			List<int> list = new(Inventory.PAPERDOLL_TOTALSLOTS);
-			for (int i = 0; i < Inventory.PAPERDOLL_TOTALSLOTS; i++)
-			{
-				list.Add(getInventory().getPaperdollObjectId(i));
-			}
-			getVariables().Set(PlayerVariables.DUAL_INVENTORY_SET_A, list);
-			_dualInventorySetA = list;
-		}
-
-        inventorySet = getVariables().Get<List<int>>(PlayerVariables.DUAL_INVENTORY_SET_B);
-        if (inventorySet != null)
-        {
-            _dualInventorySetB = inventorySet;
-        }
-		else
-		{
-			List<int> list = new(Inventory.PAPERDOLL_TOTALSLOTS);
-			for (int i = 0; i < Inventory.PAPERDOLL_TOTALSLOTS; i++)
-			{
-				list.Add(0);
-			}
-			getVariables().Set(PlayerVariables.DUAL_INVENTORY_SET_B, list);
-			_dualInventorySetB = list;
-		}
-
-		sendPacket(new ExDualInventorySwapPacket(_dualInventorySlot));
+        _dualInventory.Restore();
+		sendPacket(new ExDualInventorySwapPacket(_dualInventory.Slot));
 	}
 
 	public void setDualInventorySlot(int slot)
 	{
-		_dualInventorySlot = slot;
+		_dualInventory.Slot = slot;
 
 		bool changed = false;
-		List<int> itemObjectIds = getDualInventorySet();
 		for (int i = 0; i < Inventory.PAPERDOLL_TOTALSLOTS; i++)
 		{
 			int existingObjectId = getInventory().getPaperdollObjectId(i);
-			int itemObjectId = itemObjectIds[i];
+			int itemObjectId = _dualInventory[i];
 			if (existingObjectId != itemObjectId)
 			{
 				changed = true;
@@ -15760,11 +15689,6 @@ public class Player: Playable
 			sendItemList();
 			broadcastUserInfo();
 		}
-	}
-
-	private List<int> getDualInventorySet()
-	{
-		return _dualInventorySlot == 0 ? _dualInventorySetA : _dualInventorySetB;
 	}
 
 	public int getSkillEnchantExp(int level)

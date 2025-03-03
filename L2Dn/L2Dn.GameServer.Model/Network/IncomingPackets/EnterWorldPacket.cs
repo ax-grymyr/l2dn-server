@@ -609,7 +609,6 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		player.restoreAutoSettings();
 
 		// Client settings restore.
-		player.getClientSettings();
 		connection.Send(new ExItemAnnounceSettingPacket(player.getClientSettings().isAnnounceEnabled()));
 
 		// Fix for equipped item skills
