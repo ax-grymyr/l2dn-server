@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlVariationData: XmlBase
+public class XmlVariationData
 {
     [XmlArray("variations")]
     [XmlArrayItem("variation")]

@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlBuyList: XmlBase
+public class XmlBuyList
 {
     [XmlAttribute("baseTax")]
     public int BaseTax { get; set; }

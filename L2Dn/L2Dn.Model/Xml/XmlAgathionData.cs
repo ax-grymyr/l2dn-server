@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlAgathionData: XmlBase
+public class XmlAgathionData
 {
     [XmlElement("agathion")]
     public List<XmlAgathion> Agathions { get; set; } = [];

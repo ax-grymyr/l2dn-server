@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlSkillTreeList: XmlBase
+public class XmlSkillTreeList
 {
     [XmlElement("skillTree")]
     public List<XmlSkillTree> SkillTrees { get; set; } = [];

@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlAttendanceRewardList: XmlBase
+public class XmlAttendanceRewardList
 {
     [XmlElement("item")]
     public List<XmlAttendanceReward> Items { get; set; } = [];

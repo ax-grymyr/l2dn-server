@@ -4,7 +4,7 @@ using L2Dn.Model.Enums;
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlDailyMissionData: XmlBase
+public class XmlDailyMissionData
 {
     [XmlElement("reward")]
     public List<XmlDailyMission> DailyMissions { get; set; } = [];

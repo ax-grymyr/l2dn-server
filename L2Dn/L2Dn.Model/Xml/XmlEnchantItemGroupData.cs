@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlEnchantItemGroupData: XmlBase
+public class XmlEnchantItemGroupData
 {
     [XmlElement("enchantRateGroup")]
     public List<XmlEnchantRateGroup> EnchantRateGroups { get; set; } = [];

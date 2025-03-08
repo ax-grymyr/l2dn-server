@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlCollectionData: XmlBase
+public class XmlCollectionData
 {
     [XmlElement("collection")]
     public List<XmlCollection> Collections { get; set; } = [];

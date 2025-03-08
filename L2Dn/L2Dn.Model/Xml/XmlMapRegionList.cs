@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlMapRegionList: XmlBase
+public class XmlMapRegionList
 {
     [XmlAttribute("enabled")]
     public bool Enabled { get; set; }

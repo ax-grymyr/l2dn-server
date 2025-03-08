@@ -24,25 +24,26 @@ public enum BinaryOperator
 
 public abstract record Expression(ExpressionType Type)
 {
-    public abstract double Evaluate(IDictionary<string, double> variables);
+    public abstract double Evaluate(IReadOnlyDictionary<string, double>? variables);
 }
 
 public sealed record NumberExpression(double Number): Expression(ExpressionType.Number)
 {
-    public override double Evaluate(IDictionary<string, double> variables) => Number;
+    public override double Evaluate(IReadOnlyDictionary<string, double>? variables) => Number;
 }
 
 public sealed record VariableExpression(string Variable): Expression(ExpressionType.Variable)
 {
-    public override double Evaluate(IDictionary<string, double> variables) =>
-        variables.TryGetValue(Variable, out double value)
+    public override double Evaluate(IReadOnlyDictionary<string, double>? variables) =>
+        (variables ?? throw new InvalidOperationException("No variables defined")).
+        TryGetValue(Variable, out double value)
             ? value
             : throw new InvalidOperationException($"Variable '{Variable}' is not defined");
 }
 
 public sealed record UnaryOperatorExpression(UnaryOperator Operator, Expression Argument): Expression(ExpressionType.UnaryOperator)
 {
-    public override double Evaluate(IDictionary<string, double> variables) =>
+    public override double Evaluate(IReadOnlyDictionary<string, double>? variables) =>
         Operator switch
         {
             UnaryOperator.Plus => Argument.Evaluate(variables),
@@ -53,7 +54,7 @@ public sealed record UnaryOperatorExpression(UnaryOperator Operator, Expression 
 
 public sealed record BinaryOperatorExpression(BinaryOperator Operator, Expression Argument1, Expression Argument2): Expression(ExpressionType.BinaryOperator)
 {
-    public override double Evaluate(IDictionary<string, double> variables) =>
+    public override double Evaluate(IReadOnlyDictionary<string, double>? variables) =>
         Operator switch
         {
             BinaryOperator.Add => Argument1.Evaluate(variables) + Argument2.Evaluate(variables),
@@ -87,7 +88,7 @@ public static class ExpressionParser
         Parser<Expression> unaryExprParser = unaryOperation.Many().Then(simpleExprParser).Select(tuple =>
             tuple.Item1.Reverse().Aggregate(tuple.Item2,
                 (left, right) => new UnaryOperatorExpression(right, left)));
-        
+
         Parser<BinaryOperator> productOperation = Parse.Char('*').Select(_ => BinaryOperator.Multiply)
             .Or(Parse.Char('/').Select(_ => BinaryOperator.Divide));
 

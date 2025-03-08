@@ -114,6 +114,7 @@ public static class EnumExtensions
 
         throw new InvalidOperationException("Unsupported enum size");
     }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static TEnum BitwiseOr<TEnum>(TEnum left, TEnum right)
         where TEnum: unmanaged, Enum

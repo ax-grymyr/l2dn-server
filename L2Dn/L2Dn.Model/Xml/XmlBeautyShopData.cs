@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlBeautyShopData: XmlBase
+public class XmlBeautyShopData
 {
     [XmlElement("race")]
     public List<XmlBeautyShopRaceData> Races { get; set; } = [];

@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlClanRewardData: XmlBase
+public class XmlClanRewardData
 {
     [XmlArray("membersOnline")]
     [XmlArrayItem("players")]

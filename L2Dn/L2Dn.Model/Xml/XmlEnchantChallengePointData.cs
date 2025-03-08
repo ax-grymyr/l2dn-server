@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlEnchantChallengePointData: XmlBase
+public class XmlEnchantChallengePointData
 {
     [XmlElement("maxPoints")]
     public int MaxPoints { get; set; }

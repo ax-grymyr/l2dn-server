@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("instance")]
-public class XmlInstance: XmlBase
+public class XmlInstance
 {
     [XmlElement("time")]
     public XmlInstanceTime? Time { get; set; }

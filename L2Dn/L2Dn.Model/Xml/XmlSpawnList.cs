@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlSpawnList: XmlBase
+public class XmlSpawnList
 {
     [XmlElement("spawn")]
     public List<XmlSpawn> Spawns { get; set; } = [];

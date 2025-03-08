@@ -10,7 +10,7 @@ namespace L2Dn.Utilities;
 public static class XmlUtil
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(XmlUtil));
-    
+
     public static T Deserialize<T>(string filePath)
         where T: class
     {
@@ -20,7 +20,7 @@ public static class XmlUtil
         document.Load(fileStream);
 
         XmlReaderSettings config = new();
-        
+
         string? schemaLocation = document.DocumentElement?.Attributes["xsi:noNamespaceSchemaLocation"]?.Value;
         if (!string.IsNullOrEmpty(schemaLocation))
         {
@@ -45,6 +45,7 @@ public static class XmlUtil
                 using XmlReader schemaReader = XmlReader.Create(schemaFileStream);
                 config.Schemas.Add(null, schemaReader);
             }
+
             {
                 using FileStream schemaFileStream = File.OpenRead(sharedSchemaPath);
                 using XmlReader schemaReader = XmlReader.Create(schemaFileStream);
@@ -55,20 +56,26 @@ public static class XmlUtil
         // Get the XmlReader object with the configured settings.
         fileStream.Position = 0;
         using XmlReader reader = XmlReader.Create(fileStream, config);
-        
+
         XmlSerializer serializer = new(typeof(T));
 
-        serializer.UnknownElement += (_, args)
-            => _logger.Warn($"Unknown element '{args.Element.Name}' in XML file '{filePath}'.");
+        serializer.UnknownElement += (_, args) => _logger.Warn(
+            $"Unknown element '{args.Element.Name}' in XML file '{filePath}', line {args.LineNumber}, " +
+            $"position {args.LinePosition}.");
 
         serializer.UnknownAttribute += (_, args) =>
-            _logger.Warn($"Unknown attribute '{args.Attr.Name}' in XML file '{filePath}'.");
-        
-        return (T?)serializer.Deserialize(reader) ??
-               throw new InvalidOperationException(
-                   $"Could not deserialize XML file '{filePath}' to object of type '{typeof(T).FullName}'");
+        {
+            if (args.Attr.Name == "xsi:noNamespaceSchemaLocation")
+                return;
+
+            _logger.Warn($"Unknown attribute '{args.Attr.Name}' in XML file '{filePath}', line {args.LineNumber}, " +
+                $"position {args.LinePosition}.");
+        };
+
+        return (T?)serializer.Deserialize(reader) ?? throw new InvalidOperationException(
+            $"Could not deserialize XML file '{filePath}' to object of type '{typeof(T).FullName}'");
     }
-    
+
     public static byte GetByte(this XAttribute? attribute) => GetValue<byte>(attribute);
     public static byte GetByte(this XAttribute? attribute, byte defaultValue) => GetValue(attribute, defaultValue);
     public static int GetInt32(this XAttribute? attribute) => GetValue<int>(attribute);
@@ -82,11 +89,12 @@ public static class XmlUtil
     public static double GetDouble(this XAttribute? attribute, double defaultValue) =>
         GetValue(attribute, defaultValue);
 
-    public static string GetString(this XAttribute? attribute) => attribute is null
-        ? throw new InvalidOperationException("Attribute missing")
-        : attribute.Value;
+    public static string GetString(this XAttribute? attribute) =>
+        attribute is null
+            ? throw new InvalidOperationException("Attribute missing")
+            : attribute.Value;
 
-    public static string GetString(this XAttribute? attribute, string defaultValue) => 
+    public static string GetString(this XAttribute? attribute, string defaultValue) =>
         attribute is null ? defaultValue : attribute.Value;
 
     public static T GetAttributeValue<T>(this XElement element, string attributeName, T defaultValue)
@@ -99,7 +107,7 @@ public static class XmlUtil
         string value = attribute.Value;
         if (T.TryParse(value, CultureInfo.InvariantCulture, out T result))
             return result;
-        
+
         throw new InvalidOperationException($"Invalid attribute '{attributeName}' value in '{element}'");
     }
 
@@ -113,7 +121,7 @@ public static class XmlUtil
         string value = attribute.Value;
         if (T.TryParse(value, CultureInfo.InvariantCulture, out T result))
             return result;
-        
+
         throw new InvalidOperationException($"Invalid attribute '{attributeName}' value in '{element}'");
     }
 
@@ -127,24 +135,48 @@ public static class XmlUtil
         string value = attribute.Value;
         if (T.TryParse(value, CultureInfo.InvariantCulture, out T result))
             return result;
-        
+
         throw new InvalidOperationException($"Invalid attribute '{attributeName}' value in '{element}'");
     }
 
-    public static int GetAttributeValueAsInt32(this XElement element, string attributeName) => element.GetAttributeValue<int>(attributeName);
-    public static int GetAttributeValueAsInt32(this XElement element, string attributeName, int defaultValue) => element.GetAttributeValue(attributeName, defaultValue);
-    public static int? GetAttributeValueAsInt32OrNull(this XElement element, string attributeName) => element.GetAttributeValueOrNull<int>(attributeName);
-    public static long GetAttributeValueAsInt64(this XElement element, string attributeName) => element.GetAttributeValue<long>(attributeName);
-    public static long GetAttributeValueAsInt64(this XElement element, string attributeName, long defaultValue) => element.GetAttributeValue(attributeName, defaultValue);
-    public static long? GetAttributeValueAsInt64OrNull(this XElement element, string attributeName) => element.GetAttributeValueOrNull<long>(attributeName);
-    public static float GetAttributeValueAsFloat(this XElement element, string attributeName) => element.GetAttributeValue<float>(attributeName);
-    public static float GetAttributeValueAsFloat(this XElement element, string attributeName, float defaultValue) => element.GetAttributeValue(attributeName, defaultValue);
-    public static float? GetAttributeValueAsFloatOrNull(this XElement element, string attributeName) => element.GetAttributeValueOrNull<float>(attributeName);
-    public static double GetAttributeValueAsDouble(this XElement element, string attributeName) => element.GetAttributeValue<double>(attributeName);
-    public static double GetAttributeValueAsDouble(this XElement element, string attributeName, double defaultValue) => element.GetAttributeValue(attributeName, defaultValue);
-    public static double? GetAttributeValueAsDoubleOrNull(this XElement element, string attributeName) => element.GetAttributeValueOrNull<double>(attributeName);
+    public static int GetAttributeValueAsInt32(this XElement element, string attributeName) =>
+        element.GetAttributeValue<int>(attributeName);
 
-    public static TEnum GetAttributeValueAsEnum<TEnum>(this XElement element, string attributeName, bool ignoreCase = false)
+    public static int GetAttributeValueAsInt32(this XElement element, string attributeName, int defaultValue) =>
+        element.GetAttributeValue(attributeName, defaultValue);
+
+    public static int? GetAttributeValueAsInt32OrNull(this XElement element, string attributeName) =>
+        element.GetAttributeValueOrNull<int>(attributeName);
+
+    public static long GetAttributeValueAsInt64(this XElement element, string attributeName) =>
+        element.GetAttributeValue<long>(attributeName);
+
+    public static long GetAttributeValueAsInt64(this XElement element, string attributeName, long defaultValue) =>
+        element.GetAttributeValue(attributeName, defaultValue);
+
+    public static long? GetAttributeValueAsInt64OrNull(this XElement element, string attributeName) =>
+        element.GetAttributeValueOrNull<long>(attributeName);
+
+    public static float GetAttributeValueAsFloat(this XElement element, string attributeName) =>
+        element.GetAttributeValue<float>(attributeName);
+
+    public static float GetAttributeValueAsFloat(this XElement element, string attributeName, float defaultValue) =>
+        element.GetAttributeValue(attributeName, defaultValue);
+
+    public static float? GetAttributeValueAsFloatOrNull(this XElement element, string attributeName) =>
+        element.GetAttributeValueOrNull<float>(attributeName);
+
+    public static double GetAttributeValueAsDouble(this XElement element, string attributeName) =>
+        element.GetAttributeValue<double>(attributeName);
+
+    public static double GetAttributeValueAsDouble(this XElement element, string attributeName, double defaultValue) =>
+        element.GetAttributeValue(attributeName, defaultValue);
+
+    public static double? GetAttributeValueAsDoubleOrNull(this XElement element, string attributeName) =>
+        element.GetAttributeValueOrNull<double>(attributeName);
+
+    public static TEnum GetAttributeValueAsEnum<TEnum>(this XElement element, string attributeName,
+        bool ignoreCase = false)
         where TEnum: struct, Enum
     {
         XAttribute? attribute = element.Attribute(attributeName);
@@ -152,9 +184,9 @@ public static class XmlUtil
             throw new InvalidOperationException($"Attribute '{attributeName}' missing in '{element}'");
 
         string value = attribute.Value;
-        if (Enum.TryParse<TEnum>(value, ignoreCase, out TEnum result))
+        if (Enum.TryParse(value, ignoreCase, out TEnum result))
             return result;
-        
+
         throw new InvalidOperationException($"Invalid attribute '{attributeName}' value in '{element}'");
     }
 
@@ -168,7 +200,7 @@ public static class XmlUtil
         string value = attribute.Value;
         if (Enum.TryParse<TEnum>(value, false, out TEnum result))
             return result;
-        
+
         throw new InvalidOperationException($"Invalid attribute '{attributeName}' value in '{element}'");
     }
 
@@ -182,10 +214,10 @@ public static class XmlUtil
         string value = attribute.Value;
         if (Enum.TryParse<TEnum>(value, false, out TEnum result))
             return result;
-        
+
         throw new InvalidOperationException($"Invalid attribute '{attributeName}' value in '{element}'");
     }
-    
+
     public static string GetAttributeValueAsString(this XElement element, string attributeName)
     {
         XAttribute? attribute = element.Attribute(attributeName);
@@ -207,7 +239,7 @@ public static class XmlUtil
         string value = attribute.Value;
         if (bool.TryParse(value, out bool result))
             return result;
-        
+
         throw new InvalidOperationException($"Invalid attribute '{attributeName}' value in '{element}'");
     }
 
@@ -220,10 +252,10 @@ public static class XmlUtil
         string value = attribute.Value;
         if (bool.TryParse(value, out bool result))
             return result;
-        
+
         throw new InvalidOperationException($"Invalid attribute '{attributeName}' value in '{element}'");
     }
-    
+
     public static T GetValue<T>(this XAttribute? attribute)
         where T: struct, IParsable<T>
     {
@@ -233,7 +265,7 @@ public static class XmlUtil
         string value = attribute.Value;
         if (T.TryParse(value, CultureInfo.InvariantCulture, out T result))
             return result;
-        
+
         throw new InvalidOperationException("Invalid attribute value");
     }
 
@@ -246,7 +278,7 @@ public static class XmlUtil
         string value = attribute.Value;
         if (T.TryParse(value, CultureInfo.InvariantCulture, out T result))
             return result;
-        
+
         throw new InvalidOperationException("Invalid attribute value");
     }
 
@@ -261,7 +293,7 @@ public static class XmlUtil
         string value = attribute.Value;
         if (bool.TryParse(value, out bool result))
             return result;
-        
+
         throw new InvalidOperationException("Invalid attribute value");
     }
 
@@ -273,7 +305,7 @@ public static class XmlUtil
         string value = attribute.Value;
         if (bool.TryParse(value, out bool result))
             return result;
-        
+
         throw new InvalidOperationException("Invalid attribute value");
     }
 
@@ -286,7 +318,7 @@ public static class XmlUtil
         string value = attribute.Value;
         if (Enum.TryParse(value, out T result))
             return result;
-        
+
         throw new InvalidOperationException("Invalid attribute value");
     }
 
@@ -299,7 +331,7 @@ public static class XmlUtil
         string value = attribute.Value;
         if (Enum.TryParse(value, out T result))
             return result;
-        
+
         throw new InvalidOperationException("Invalid attribute value");
     }
 

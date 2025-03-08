@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlAdminCommands: XmlBase
+public class XmlAdminCommands
 {
     [XmlElement("admin")]
     public List<XmlAdminCommand> Commands { get; set; } = [];

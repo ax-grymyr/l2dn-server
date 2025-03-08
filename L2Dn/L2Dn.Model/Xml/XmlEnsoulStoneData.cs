@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlEnsoulStoneData: XmlBase
+public class XmlEnsoulStoneData
 {
     [XmlElement("stone")]
     public List<XmlEnsoulStone> Stones { get; set; } = [];

@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlMultiSellList: XmlBase
+public class XmlMultiSellList
 {
     [XmlAttribute("applyTaxes")]
     public bool ApplyTaxes { get; set; }

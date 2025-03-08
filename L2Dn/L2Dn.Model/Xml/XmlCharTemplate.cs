@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlCharTemplate: XmlBase
+public class XmlCharTemplate
 {
     [XmlElement("classId")]
     public int ClassId { get; set; }

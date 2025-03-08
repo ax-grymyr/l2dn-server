@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlArmorSetList: XmlBase
+public class XmlArmorSetList
 {
     [XmlElement("set")]
     public List<XmlArmorSet> Sets { get; set; } = [];
