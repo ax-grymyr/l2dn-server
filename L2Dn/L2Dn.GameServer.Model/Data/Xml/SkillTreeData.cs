@@ -146,10 +146,11 @@ public class SkillTreeData: DataReaderBase
 
 		foreach (XmlSkillTreeSkill xmlSkill in xmlSkillTree.Skills)
 		{
-			SkillLearn skillLearn = new(xmlSkill);
+            Skill? skill = SkillData.getInstance().getSkill(xmlSkill.SkillId, xmlSkill.SkillLevel);
+            if (skill is null)
+                throw new InvalidOperationException($"Skill id={xmlSkill.SkillId}, level={xmlSkill.SkillLevel} does not exist");
 
-			// test if skill exists
-			SkillData.getInstance().getSkill(skillLearn.getSkillId(), skillLearn.getSkillLevel());
+			SkillLearn skillLearn = new(xmlSkill);
 
 			foreach (XmlSkillTreeSkillItem xmlSkillItem in xmlSkill.Items)
 			{

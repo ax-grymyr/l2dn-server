@@ -140,7 +140,7 @@ public class AdminReload: IAdminCommandHandler
 				}
 				case "skill":
 				{
-					SkillData.getInstance().reload();
+					SkillData.getInstance().Reload();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Skills.");
 					break;
 				}

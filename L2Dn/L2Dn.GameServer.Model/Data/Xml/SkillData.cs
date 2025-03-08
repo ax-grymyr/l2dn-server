@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Handlers;
@@ -14,7 +13,6 @@ namespace L2Dn.GameServer.Data.Xml;
 
 /**
  * Skill data parser.
- * @author NosBit
  */
 public class SkillData: DataReaderBase
 {
@@ -26,17 +24,17 @@ public class SkillData: DataReaderBase
 	private sealed class NamedParamInfo(string name, int? fromLevel, int? toLevel, int? fromSubLevel, int? toSubLevel,
         Map<int, Map<int, StatSet>> info)
     {
-        public string getName() => name;
-        public int? getFromLevel() => fromLevel;
-        public int? getToLevel() => toLevel;
-        public int? getFromSubLevel() => fromSubLevel;
-        public int? getToSubLevel() => toSubLevel;
-        public Map<int, Map<int, StatSet>> getInfo() => info;
+        public string Name => name;
+        public int? FromLevel => fromLevel;
+        public int? ToLevel => toLevel;
+        public int? FromSubLevel => fromSubLevel;
+        public int? ToSubLevel => toSubLevel;
+        public Map<int, Map<int, StatSet>> Info => info;
     }
 
-	protected SkillData()
+    private SkillData()
 	{
-		load();
+		Load();
 	}
 
 	/**
@@ -44,7 +42,7 @@ public class SkillData: DataReaderBase
 	 * @param skill The Skill to be hashed
 	 * @return getSkillHashCode(skill.getId(), skill.getLevel())
 	 */
-	public static long getSkillHashCode(Skill skill)
+    private static long GetSkillHashCode(Skill skill)
 	{
 		return getSkillHashCode(skill.getId(), skill.getLevel(), skill.getSubLevel());
 	}
@@ -76,6 +74,7 @@ public class SkillData: DataReaderBase
 		{
 			LOGGER.Warn(GetType().Name + ": Call to unexisting skill level id: " + skillId + " requested level: " +
 			            level + " max level: " + maxLevel + ".");
+
 			return _skills.get(getSkillHashCode(skillId, maxLevel));
 		}
 
@@ -115,48 +114,43 @@ public class SkillData: DataReaderBase
 		return temp.Where(s => s != null).ToList()!; // TODO: review code and refactor
 	}
 
-	public bool isValidating()
-	{
-		return false;
-	}
-
-	[MethodImpl(MethodImplOptions.Synchronized)]
-	public void load()
-	{
+    private void Load()
+    {
 		_skills.Clear();
 		_skillsMaxLevel.Clear();
 
 		LoadXmlDocuments(DataFileLocation.Data, "stats/skills").ForEach(t =>
 		{
-			t.Document.Elements("list").Elements("skill").ForEach(x => loadElement(t.FilePath, x));
+			t.Document.Elements("list").Elements("skill").ForEach(LoadElement);
 		});
 
 		if (Config.CUSTOM_SKILLS_LOAD)
 		{
 			LoadXmlDocuments(DataFileLocation.Data, "stats/skills/custom").ForEach(t =>
 			{
-				t.Document.Elements("list").Elements("skill").ForEach(x => loadElement(t.FilePath, x));
+				t.Document.Elements("list").Elements("skill").ForEach(LoadElement);
 			});
 		}
 
 		LOGGER.Info(GetType().Name + ": Loaded " + _skills.Count + " Skills.");
 	}
 
-	public void reload()
+	public void Reload()
 	{
-		load();
-		// Reload Skill Tree as well.
+		Load();
+
+        // Reload Skill Tree as well.
 		SkillTreeData.getInstance().load();
 	}
 
-	private void loadElement(string filePath, XElement element)
+	private void LoadElement(XElement element)
 	{
-		Map<int, Set<int>> levels = new();
+		Map<int, Set<int>> levels = new(); // key - level, value - sublevel set
 		Map<int, Map<int, StatSet>> skillInfo = new();
 		StatSet generalSkillInfo = skillInfo.GetOrAdd(-1, _ => []).GetOrAdd(-1, _ => new StatSet());
-		parseAttributes(element, "", generalSkillInfo);
+		ParseAttributes(element, string.Empty, generalSkillInfo);
 
-		Map<string, Map<int, Map<int, object>>> variableValues = new();
+		Map<string, Map<int, Map<int, object>>> variableValues = new(); // key - name
 		Map<EffectScope, List<NamedParamInfo>> effectParamInfo = new();
 		Map<SkillConditionScope, List<NamedParamInfo>> conditionParamInfo = new();
 
@@ -168,7 +162,7 @@ public class SkillData: DataReaderBase
 				case "variable":
 				{
 					string name = "@" + skillNode.GetAttributeValueAsString("name");
-					variableValues.put(name, parseValues(skillNode));
+					variableValues.put(name, ParseValues(skillNode));
 					break;
 				}
 
@@ -180,7 +174,7 @@ public class SkillData: DataReaderBase
 						skillNode.Elements("effect").ForEach(effectsNode =>
 						{
 							effectParamInfo.GetOrAdd(effectScope.Value, _ => [])
-								.Add(parseNamedParamInfo(effectsNode, variableValues));
+								.Add(ParseNamedParamInfo(effectsNode, variableValues));
 						});
 
 						break;
@@ -192,12 +186,12 @@ public class SkillData: DataReaderBase
 						skillNode.Elements("condition").ForEach(conditionNode =>
 						{
 							conditionParamInfo.GetOrAdd(skillConditionScope.Value, _ => [])
-								.Add(parseNamedParamInfo(conditionNode, variableValues));
+								.Add(ParseNamedParamInfo(conditionNode, variableValues));
 						});
 					}
 					else
 					{
-						parseInfo(skillNode, variableValues, skillInfo);
+						ParseInfo(skillNode, variableValues, skillInfo);
 					}
 
 					break;
@@ -217,18 +211,13 @@ public class SkillData: DataReaderBase
 			int level = kvp.Key;
 			Map<int, StatSet> subLevelMap = kvp.Value;
 			if (level == -1)
-			{
 				return;
-			}
 
 			subLevelMap.ForEach(kvp2 =>
 			{
 				int subLevel = kvp2.Key;
-				StatSet statSet = kvp2.Value;
 				if (subLevel == -1)
-				{
 					return;
-				}
 
 				levels.GetOrAdd(level, _ => []).add(subLevel);
 			});
@@ -237,34 +226,30 @@ public class SkillData: DataReaderBase
 		effectParamInfo.Values.Concat(conditionParamInfo.Values).ForEach(namedParamInfos =>
 			namedParamInfos.ForEach(namedParamInfo =>
 			{
-				namedParamInfo.getInfo().ForEach(kvp =>
+				namedParamInfo.Info.ForEach(kvp =>
 				{
-					var (level, subLevelMap) = kvp;
+					(int level, Map<int, StatSet> subLevelMap) = kvp;
 					if (level == -1)
-					{
 						return;
-					}
 
 					subLevelMap.ForEach(kvp2 =>
 					{
-						var (subLevel, statSet) = kvp2;
+						(int subLevel, _) = kvp2;
 						if (subLevel == -1)
-						{
 							return;
-						}
 
 						levels.GetOrAdd(level, _ => []).add(subLevel);
 					});
 				});
 
-                int? fromLevel = namedParamInfo.getFromLevel();
-                int? toLevel = namedParamInfo.getToLevel();
+                int? fromLevel = namedParamInfo.FromLevel;
+                int? toLevel = namedParamInfo.ToLevel;
 				if (fromLevel != null && toLevel != null)
 				{
 					for (int i = fromLevel.Value; i <= toLevel.Value; i++)
                     {
-                        int? fromSubLevel = namedParamInfo.getFromSubLevel();
-                        int? toSubLevel = namedParamInfo.getToSubLevel();
+                        int? fromSubLevel = namedParamInfo.FromSubLevel;
+                        int? toSubLevel = namedParamInfo.ToSubLevel;
 						if (fromSubLevel != null && toSubLevel != null)
 						{
 							for (int j = fromSubLevel.Value; j <= toSubLevel.Value; j++)
@@ -283,16 +268,16 @@ public class SkillData: DataReaderBase
 		levels.ForEach(kvp => kvp.Value.ForEach(subLevel =>
 		{
 			// TODO: review code and refactor
-			var (level, subLevels) = kvp;
+			(int level, _) = kvp;
 			StatSet statSet = skillInfo.GetValueOrDefault(level, []).get(subLevel) ?? new StatSet();
-			skillInfo.GetValueOrDefault(level, new()).GetValueOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
+			skillInfo.GetValueOrDefault(level, []).GetValueOrDefault(-1, new StatSet()).getSet()
 				.ForEach(x => statSet.getSet().TryAdd(x.Key, x.Value));
-			skillInfo.GetValueOrDefault(-1, new()).GetValueOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
+			skillInfo.GetValueOrDefault(-1, []).GetValueOrDefault(-1, new StatSet()).getSet()
 				.ForEach(x => statSet.getSet().TryAdd(x.Key, x.Value));
 			statSet.set(".level", level);
 			statSet.set(".subLevel", subLevel);
-			Skill skill = new Skill(statSet);
-			forEachNamedParamInfoParam(effectParamInfo, level, subLevel, (effectScope, @params) =>
+			Skill skill = new(statSet);
+			ForEachNamedParamInfoParam(effectParamInfo, level, subLevel, (effectScope, @params) =>
             {
                 string effectName = @params.getString(".name");
                 @params.remove(".name");
@@ -320,7 +305,7 @@ public class SkillData: DataReaderBase
                 }
             });
 
-			forEachNamedParamInfoParam(conditionParamInfo, level, subLevel, (skillConditionScope, @params) =>
+			ForEachNamedParamInfoParam(conditionParamInfo, level, subLevel, (skillConditionScope, @params) =>
             {
                 string conditionName = @params.getString(".name");
                 @params.remove(".name");
@@ -363,7 +348,7 @@ public class SkillData: DataReaderBase
                 }
             });
 
-			_skills.put(getSkillHashCode(skill), skill);
+			_skills.put(GetSkillHashCode(skill), skill);
 			_skillsMaxLevel.merge(skill.getId(), skill.getLevel(), Math.Max);
 			if (skill.getSubLevel() % 1000 == 1)
 			{
@@ -373,34 +358,34 @@ public class SkillData: DataReaderBase
 		}));
 	}
 
-	private void forEachNamedParamInfoParam<T>(Map<T, List<NamedParamInfo>> paramInfo, int level, int subLevel,
+	private static void ForEachNamedParamInfoParam<T>(Map<T, List<NamedParamInfo>> paramInfo, int level, int subLevel,
 		Action<T, StatSet> consumer)
 		where T: notnull
 	{
 		paramInfo.ForEach(kvp => kvp.Value.ForEach(namedParamInfo =>
 		{
 			// TODO: review code and refactor
-			var (scope, namedParamInfos) = kvp;
-			if (((namedParamInfo.getFromLevel() == null && namedParamInfo.getToLevel() == null) ||
-			     (namedParamInfo.getFromLevel() <= level && namedParamInfo.getToLevel() >= level)) //
-			    && ((namedParamInfo.getFromSubLevel() == null && namedParamInfo.getToSubLevel() == null) ||
-			        (namedParamInfo.getFromSubLevel() <= subLevel && namedParamInfo.getToSubLevel() >= subLevel)))
+			(T scope, _) = kvp;
+			if (((namedParamInfo.FromLevel == null && namedParamInfo.ToLevel == null) ||
+			     (namedParamInfo.FromLevel <= level && namedParamInfo.ToLevel >= level)) //
+			    && ((namedParamInfo.FromSubLevel == null && namedParamInfo.ToSubLevel == null) ||
+			        (namedParamInfo.FromSubLevel <= subLevel && namedParamInfo.ToSubLevel >= subLevel)))
 			{
-				StatSet @params = namedParamInfo.getInfo().GetValueOrDefault(level, new()).get(subLevel) ?? new StatSet();
+				StatSet @params = namedParamInfo.Info.GetValueOrDefault(level, []).get(subLevel) ?? new StatSet();
 
-				namedParamInfo.getInfo().GetValueOrDefault(level, new())
-					.GetValueOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
+				namedParamInfo.Info.GetValueOrDefault(level, [])
+					.GetValueOrDefault(-1, new StatSet()).getSet()
 					.ForEach(x => @params.getSet().TryAdd(x.Key, x.Value));
-				namedParamInfo.getInfo().GetValueOrDefault(-1, new())
-					.GetValueOrDefault(-1, StatSet.EMPTY_STATSET).getSet()
+				namedParamInfo.Info.GetValueOrDefault(-1, [])
+					.GetValueOrDefault(-1, new StatSet()).getSet()
 					.ForEach(x => @params.getSet().TryAdd(x.Key, x.Value));
-				@params.set(".name", namedParamInfo.getName());
+				@params.set(".name", namedParamInfo.Name);
 				consumer(scope, @params);
 			}
 		}));
 	}
 
-	private NamedParamInfo parseNamedParamInfo(XElement element, Map<string, Map<int, Map<int, object>>> variableValues)
+	private NamedParamInfo ParseNamedParamInfo(XElement element, Map<string, Map<int, Map<int, object>>> variableValues)
 	{
 		string name = element.GetAttributeValueAsString("name");
 		int? level = element.GetAttributeValueAsInt32OrNull("level");
@@ -410,50 +395,43 @@ public class SkillData: DataReaderBase
 		int? fromSubLevel = element.GetAttributeValueAsInt32OrNull("fromSubLevel") ?? subLevel;
 		int? toSubLevel = element.GetAttributeValueAsInt32OrNull("toSubLevel") ?? subLevel;
 
-		Map<int, Map<int, StatSet>> info = new();
-		element.Elements().ForEach(el => parseInfo(el, variableValues, info));
+		Map<int, Map<int, StatSet>> info = [];
+		element.Elements().ForEach(el => ParseInfo(el, variableValues, info));
 
 		return new NamedParamInfo(name, fromLevel, toLevel, fromSubLevel, toSubLevel, info);
 	}
 
-	private void parseInfo(XElement element, Map<string, Map<int, Map<int, object>>> variableValues,
+	private static void ParseInfo(XElement element, Map<string, Map<int, Map<int, object>>> variableValues,
 		Map<int, Map<int, StatSet>> info)
 	{
-		Map<int, Map<int, object>> values = parseValues(element);
+		Map<int, Map<int, object>> values = ParseValues(element);
 		object? generalValue = values.GetValueOrDefault(-1)?.GetValueOrDefault(-1);
 		if (generalValue != null)
 		{
-			string stringGeneralValue = generalValue?.ToString() ?? string.Empty;
+			string stringGeneralValue = generalValue.ToString() ?? string.Empty;
 			if (stringGeneralValue.startsWith("@"))
-			{
-				Map<int, Map<int, object>>? variableValue = variableValues.GetValueOrDefault(stringGeneralValue);
-				if (variableValue != null)
-				{
-					values = variableValue;
-				}
-				else
-				{
-					throw new InvalidOperationException("undefined variable " + stringGeneralValue);
-				}
+            {
+                values = variableValues.GetValueOrDefault(stringGeneralValue) ??
+                    throw new InvalidOperationException("undefined variable " + stringGeneralValue);
 			}
 		}
 
 		values.ForEach(kvp =>
 		{
-			var (level, subLevelMap) = kvp;
+			int level = kvp.Key;
 			kvp.Value.ForEach(kvp2 =>
 			{
-				var (subLevel, value) = kvp2;
+				(int subLevel, object value) = kvp2;
 				info.GetOrAdd(level, _ => []).GetOrAdd(subLevel, _ => new StatSet())
 					.set(element.Name.LocalName, value);
 			});
 		});
 	}
 
-	private Map<int, Map<int, object>> parseValues(XElement element)
+	private static Map<int, Map<int, object>> ParseValues(XElement element)
 	{
-		Map<int, Map<int, object>> values = new();
-		object? parsedValue = parseValue(element, true, false, []);
+		Map<int, Map<int, object>> values = [];
+		object? parsedValue = ParseValue(element, true, false, []);
 		if (parsedValue != null)
 		{
 			values.GetOrAdd(-1, _ => []).put(-1, parsedValue);
@@ -467,7 +445,7 @@ public class SkillData: DataReaderBase
 					int level = n.Attribute("level").GetInt32(-1);
 					if (level >= 0)
 					{
-						parsedValue = parseValue(n, false, false, []);
+						parsedValue = ParseValue(n, false, false, []);
 						if (parsedValue != null)
 						{
 							int subLevel = n.Attribute("subLevel").GetInt32(-1);
@@ -496,7 +474,7 @@ public class SkillData: DataReaderBase
 									variables.put("base", double.Parse(baseText));
 								}
 
-								parsedValue = parseValue(n, false, false, variables);
+								parsedValue = ParseValue(n, false, false, variables);
 								if (parsedValue != null)
 								{
 									subValues.put(j, parsedValue);
@@ -511,7 +489,7 @@ public class SkillData: DataReaderBase
 		return values;
 	}
 
-    private object? parseValue(XElement element, bool blockValue, bool parseAttributes, Map<string, double> variables)
+    private static object? ParseValue(XElement element, bool blockValue, bool parseAttributes, Map<string, double> variables)
 	{
 		StatSet? statSet = null;
 		List<object>? list = null;
@@ -519,7 +497,7 @@ public class SkillData: DataReaderBase
 		if (parseAttributes && (!element.Name.LocalName.equals("value") || !blockValue) && element.Attributes().Any())
 		{
 			statSet = new StatSet();
-			this.parseAttributes(element, "", statSet, variables);
+			ParseAttributes(element, string.Empty, statSet, variables);
 		}
 
 		if (!element.HasElements && !string.IsNullOrEmpty(element.Value))
@@ -527,7 +505,7 @@ public class SkillData: DataReaderBase
 			string value = element.Value.Trim();
 			if (!string.IsNullOrEmpty(value))
 			{
-				text = parseNodeValue(value, variables);
+				text = ParseNodeValue(value, variables);
 			}
 		}
 
@@ -543,27 +521,23 @@ public class SkillData: DataReaderBase
 						list = new();
 					}
 
-					object? value = parseValue(n, false, true, variables);
+					object? value = ParseValue(n, false, true, variables);
 					if (value != null)
-					{
 						list.Add(value);
-					}
 
 					break;
 				}
 				case "value":
 				{
 					if (blockValue)
-					{
 						break;
-					}
 
 					// fallthrough
 					goto default;
 				}
 				default:
 				{
-					object? value = parseValue(n, false, true, variables);
+					object? value = ParseValue(n, false, true, variables);
 					if (value != null)
                     {
                         statSet ??= new StatSet();
@@ -596,10 +570,10 @@ public class SkillData: DataReaderBase
 		if (text != null)
 		{
 			if (list != null)
-			{
-				throw new InvalidOperationException("Text and list in same node are not allowed. Node[" + element +
-				                                    "]");
-			}
+            {
+                throw new InvalidOperationException("Text and list in same node are not allowed. Node[" + element +
+                    "]");
+            }
 
 			if (statSet != null)
 			{
@@ -614,42 +588,35 @@ public class SkillData: DataReaderBase
         return statSet;
     }
 
-	private void parseAttributes(XElement element, string prefix, StatSet statSet, Map<string, double> variables)
-	{
-		foreach (XAttribute attribute in element.Attributes())
-		{
-			string name = attribute.Name.LocalName;
-			string value = attribute.Value;
-			statSet.set(prefix + "." + name, parseNodeValue(value, variables));
-		}
-	}
+    private static void ParseAttributes(XElement element, string prefix, StatSet statSet,
+        Map<string, double>? variables = null)
+    {
+        foreach (XAttribute attribute in element.Attributes())
+        {
+            string name = attribute.Name.LocalName;
+            string value = attribute.Value;
+            statSet.set(prefix + "." + name, ParseNodeValue(value, variables));
+        }
+    }
 
-	private void parseAttributes(XElement element, string prefix, StatSet statSet)
-	{
-		parseAttributes(element, prefix, statSet, new());
-	}
+    private static object ParseNodeValue(string value, Map<string, double>? variables)
+    {
+        if (value.startsWith("{") && value.endsWith("}"))
+        {
+            ParserResult<Expression> result = ExpressionParser.Parser(value.Substring(1, value.Length - 2));
+            if (!result.Success)
+                throw new InvalidOperationException($"Invalid expression '{value}'");
 
-	private static object parseNodeValue(string value, Map<string, double> variables)
-	{
-		if (value.startsWith("{") && value.endsWith("}"))
-		{
-			ParserResult<Expression> result = ExpressionParser.Parser(value.Substring(1, value.Length - 2));
-			if (!result.Success)
-				throw new InvalidOperationException($"Invalid expression '{value}'");
+            return result.Result.Evaluate(variables);
+        }
 
-			return result.Result.Evaluate(variables);
-		}
+        return value;
+    }
 
-		return value;
-	}
+    public static SkillData getInstance() => SingletonHolder.INSTANCE;
 
-	public static SkillData getInstance()
-	{
-		return SingletonHolder.INSTANCE;
-	}
-
-	private static class SingletonHolder
-	{
-		public static readonly SkillData INSTANCE = new();
-	}
+    private static class SingletonHolder
+    {
+        public static readonly SkillData INSTANCE = new();
+    }
 }

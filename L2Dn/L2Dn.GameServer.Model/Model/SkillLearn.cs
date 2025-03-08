@@ -1,5 +1,4 @@
 ﻿using L2Dn.GameServer.Data.Xml;
-using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
@@ -8,7 +7,7 @@ using L2Dn.Model.Xml;
 
 namespace L2Dn.GameServer.Model;
 
-public class SkillLearn
+public sealed class SkillLearn
 {
 	private readonly string _skillName;
 	private readonly int _skillId;
@@ -17,15 +16,15 @@ public class SkillLearn
 	private readonly int _getDualClassLevel;
 	private readonly bool _autoGet;
 	private readonly long _levelUpSp;
-	private readonly List<List<ItemHolder>> _requiredItems = new(); // TODO: does this really need to be list of lists?
-	private readonly Set<Race> _races = new();
-	private readonly Set<SkillHolder> _preReqSkills = new();
+	private readonly List<List<ItemHolder>> _requiredItems = []; // TODO: does this really need to be list of lists?
+	private readonly Set<Race> _races = [];
+	private readonly Set<SkillHolder> _preReqSkills = [];
 	private SocialClass? _socialClass;
 	private readonly bool _residenceSkill;
-	private readonly Set<int> _residenceIds = new();
+	private readonly Set<int> _residenceIds = [];
 	private readonly bool _learnedByNpc;
-	private readonly bool _learnedByFS;
-	private readonly Set<int> _removeSkills = new();
+	private readonly bool _learnedByFs;
+	private readonly Set<int> _removeSkills = [];
 	private readonly int _treeId;
 	private readonly int _row;
 	private readonly int _column;
@@ -46,7 +45,7 @@ public class SkillLearn
 		_levelUpSp = xmlSkill.LevelUpSp;
 		_residenceSkill = xmlSkill.ResidenceSkill;
 		_learnedByNpc = xmlSkill.LearnedByNpc;
-		_learnedByFS = xmlSkill.LearnedByFs;
+		_learnedByFs = xmlSkill.LearnedByFs;
 		_treeId = xmlSkill.TreeId;
 		_row = xmlSkill.Row;
 		_column = xmlSkill.Column;
@@ -56,68 +55,44 @@ public class SkillLearn
 	/**
 	 * @return the name of this skill.
 	 */
-	public string getName()
-	{
-		return _skillName;
-	}
+	public string getName() => _skillName;
 
-	/**
+    /**
 	 * @return the ID of this skill.
 	 */
-	public int getSkillId()
-	{
-		return _skillId;
-	}
+	public int getSkillId() => _skillId;
 
-	/**
+    /**
 	 * @return the level of this skill.
 	 */
-	public int getSkillLevel()
-	{
-		return _skillLevel;
-	}
+	public int getSkillLevel() => _skillLevel;
 
-	/**
+    /**
 	 * @return the minimum level required to acquire this skill.
 	 */
-	public int getGetLevel()
-	{
-		return _getLevel;
-	}
+	public int getGetLevel() => _getLevel;
 
-	/**
+    /**
 	 * @return the minimum level of a character dual class required to acquire this skill.
 	 */
-	public int getDualClassLevel()
-	{
-		return _getDualClassLevel;
-	}
+	public int getDualClassLevel() => _getDualClassLevel;
 
-	/**
+    /**
 	 * @return the amount of SP/Clan Reputation to acquire this skill.
 	 */
-	public long getLevelUpSp()
-	{
-		return _levelUpSp;
-	}
+	public long getLevelUpSp() => _levelUpSp;
 
-	/**
+    /**
 	 * @return {@code true} if the skill is auto-get, this skill is automatically delivered.
 	 */
-	public bool isAutoGet()
-	{
-		return _autoGet;
-	}
+	public bool isAutoGet() => _autoGet;
 
-	/**
+    /**
 	 * @return the set with the item holders required to acquire this skill.
 	 */
-	public List<List<ItemHolder>> getRequiredItems()
-	{
-		return _requiredItems;
-	}
+	public List<List<ItemHolder>> getRequiredItems() => _requiredItems;
 
-	/**
+    /**
 	 * Adds a required item holder list to learn this skill.
 	 * @param list the required item holder list.
 	 */
@@ -129,12 +104,9 @@ public class SkillLearn
 	/**
 	 * @return a set with the races that can acquire this skill.
 	 */
-	public Set<Race> getRaces()
-	{
-		return _races;
-	}
+	public Set<Race> getRaces() => _races;
 
-	/**
+    /**
 	 * Adds a required race to learn this skill.
 	 * @param race the required race.
 	 */
@@ -146,12 +118,9 @@ public class SkillLearn
 	/**
 	 * @return the set of skill holders required to acquire this skill.
 	 */
-	public Set<SkillHolder> getPreReqSkills()
-	{
-		return _preReqSkills;
-	}
+	public Set<SkillHolder> getPreReqSkills() => _preReqSkills;
 
-	/**
+    /**
 	 * Adds a required skill holder to learn this skill.
 	 * @param skill the required skill holder.
 	 */
@@ -218,7 +187,7 @@ public class SkillLearn
 	 */
 	public bool isLearnedByFS()
 	{
-		return _learnedByFS;
+		return _learnedByFs;
 	}
 
 	public void addRemoveSkills(int skillId)
