@@ -1,5 +1,4 @@
-﻿using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Handlers;
+﻿using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Scripts.AI.Players;
 using L2Dn.GameServer.Scripts.AI.Teleporters;
@@ -46,7 +45,7 @@ public static class Scripts
         actionHandler.registerHandler(new StaticObjectAction());
         actionHandler.registerHandler(new SummonAction());
         actionHandler.registerHandler(new TrapAction());
-        
+
         // Action shift handlers
         ActionShiftHandler actionShiftHandler = ActionShiftHandler.getInstance();
         actionShiftHandler.registerHandler(new DoorActionShift());
@@ -55,7 +54,7 @@ public static class Scripts
         actionShiftHandler.registerHandler(new PlayerActionShift());
         actionShiftHandler.registerHandler(new StaticObjectActionShift());
         actionShiftHandler.registerHandler(new SummonActionShift());
-        
+
         // Affect object handler
         AffectObjectHandler affectObjectHandler = AffectObjectHandler.getInstance();
         affectObjectHandler.registerHandler(new All());
@@ -69,7 +68,7 @@ public static class Scripts
         affectObjectHandler.registerHandler(new ObjectDeadNpcBody());
         affectObjectHandler.registerHandler(new UndeadRealEnemy());
         affectObjectHandler.registerHandler(new WyvernObject());
-        
+
         // Affect scope handlers
         AffectScopeHandler affectScopeHandler = AffectScopeHandler.getInstance();
         affectScopeHandler.registerHandler(new BalakasScope());
@@ -83,7 +82,7 @@ public static class Scripts
         affectScopeHandler.registerHandler(new PartyPledge());
         affectScopeHandler.registerHandler(new Pledge());
         affectScopeHandler.registerHandler(new PointBlank());
-        affectScopeHandler.registerHandler(new Range());
+        affectScopeHandler.registerHandler(new Handlers.TargetHandlers.AffectScopes.Range());
         affectScopeHandler.registerHandler(new RangeSortByHp());
         affectScopeHandler.registerHandler(new RingRange());
         affectScopeHandler.registerHandler(new Single());
@@ -119,7 +118,7 @@ public static class Scripts
 		bypassHandler.registerHandler(new UpgradeEquipment());
 		bypassHandler.registerHandler(new VoiceCommand());
 		bypassHandler.registerHandler(new Wear());
-        
+
 		// Chat handlers
 		ChatHandler chatHandler = ChatHandler.getInstance();
 		chatHandler.registerHandler(new ChatGeneral());
@@ -135,13 +134,13 @@ public static class Scripts
 		chatHandler.registerHandler(new ChatWhisper());
 		chatHandler.registerHandler(new ChatTrade());
 		chatHandler.registerHandler(new ChatWorld());
-		
+
 		// Condition handlers
 		ConditionHandler conditionHandler = ConditionHandler.getInstance();
 		conditionHandler.registerHandler("CategoryType", stat => new CategoryTypeCondition(stat));
 		conditionHandler.registerHandler("NpcLevel", stat => new NpcLevelCondition(stat));
 		conditionHandler.registerHandler("PlayerLevel", stat => new PlayerLevelCondition(stat));
-		
+
 		// Effect handlers
 		EffectHandler effectHandler = EffectHandler.getInstance();
 		effectHandler.registerHandler("AbnormalShield", stat => new AbnormalShield(stat));
@@ -559,7 +558,7 @@ public static class Scripts
 		effectHandler.registerHandler("WeightLimit", stat => new WeightLimit(stat));
 		effectHandler.registerHandler("WeightPenalty", stat => new WeightPenalty(stat));
 		effectHandler.registerHandler("WorldChatPoints", stat => new WorldChatPoints(stat));
-        
+
 		// Item handlers
 		ItemHandler itemHandler = ItemHandler.getInstance();
 		itemHandler.registerHandler(new AddSpiritExp());
@@ -596,7 +595,7 @@ public static class Scripts
 		itemHandler.registerHandler(new SpecialXMas());
 		itemHandler.registerHandler(new SpiritShot());
 		itemHandler.registerHandler(new SummonItems());
-		
+
 		// Player action handlers
 		PlayerActionHandler playerActionHandler = PlayerActionHandler.getInstance();
 		playerActionHandler.registerHandler(new AirshipAction());
@@ -623,7 +622,7 @@ public static class Scripts
 		playerActionHandler.registerHandler(new TeleportBookmark());
 		playerActionHandler.registerHandler(new UnsummonPet());
 		playerActionHandler.registerHandler(new UnsummonServitor());
-		
+
 		// SkillConditionHandler
 		SkillConditionHandler skillConditionHandler = SkillConditionHandler.getInstance();
 		skillConditionHandler.registerHandler("AssassinationPoints", stat => new AssassinationPointsSkillCondition(stat));
@@ -748,7 +747,7 @@ public static class Scripts
 		skillConditionHandler.registerHandler("TargetMyPledge", stat => new TargetMyPledgeSkillCondition(stat));
 		skillConditionHandler.registerHandler("TargetNotAffectedBySkill", stat => new TargetNotAffectedBySkillSkillCondition(stat));
 		skillConditionHandler.registerHandler("TargetRace", stat => new TargetRaceSkillCondition(stat));
-		
+
 		// Target handlers
 		TargetHandler targetHandler = TargetHandler.getInstance();
 		targetHandler.registerHandler(new AdvanceBase());
@@ -773,7 +772,7 @@ public static class Scripts
 		targetHandler.registerHandler(new Handlers.TargetHandlers.Summon());
 		targetHandler.registerHandler(new Target());
 		targetHandler.registerHandler(new WyvernTarget());
-		
+
 		// User command handlers
 		UserCommandHandler userCommandHandler = UserCommandHandler.getInstance();
 		userCommandHandler.registerHandler(new ClanPenalty());
@@ -791,11 +790,11 @@ public static class Scripts
 		userCommandHandler.registerHandler(new ChannelInfo());
 		userCommandHandler.registerHandler(new MyBirthday());
 		userCommandHandler.registerHandler(new SiegeStatus());
-		
+
 		// Voiced command handlers
 		VoicedCommandHandler voicedCommandHandler = VoicedCommandHandler.getInstance();
         voicedCommandHandler.registerHandler(new ExperienceGain());
-        
+
         if (Config.BANKING_SYSTEM_ENABLED)
             voicedCommandHandler.registerHandler(new Banking());
 
@@ -826,7 +825,7 @@ public static class Scripts
         // TODO: Add configuration options for this voiced commands:
         voicedCommandHandler.registerHandler(new CastleVCmd());
         voicedCommandHandler.registerHandler(new SetVCmd());
-		
+
 		// Punishment handlers
 		PunishmentHandler punishmentHandler = PunishmentHandler.getInstance();
 		punishmentHandler.registerHandler(new BanHandler());
@@ -848,7 +847,7 @@ public static class Scripts
 		dailyMissionHandler.registerHandler("joinclan", h => new JoinClanDailyMissionHandler(h));
 		dailyMissionHandler.registerHandler("purge", h => new PurgeRewardDailyMissionHandler(h));
 		dailyMissionHandler.registerHandler("useitem", h => new UseItemDailyMissionHandler(h));
-		
+
         // Admin command handler
         AdminCommandHandler adminCommandHandler = AdminCommandHandler.getInstance();
         adminCommandHandler.registerHandler(new AdminAdmin());
@@ -930,7 +929,7 @@ public static class Scripts
 		adminCommandHandler.registerHandler(new AdminTransform());
 		adminCommandHandler.registerHandler(new AdminVitality());
 		adminCommandHandler.registerHandler(new AdminZone());
-        
+
         // Community board
         CommunityBoardHandler communityBoardHandler = CommunityBoardHandler.getInstance();
         communityBoardHandler.registerHandler(new ClanBoard());
