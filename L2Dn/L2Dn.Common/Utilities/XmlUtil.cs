@@ -28,7 +28,8 @@ public static class XmlUtil
             config.ValidationType = ValidationType.Schema;
             config.ValidationFlags |= XmlSchemaValidationFlags.ReportValidationWarnings;
             config.ValidationFlags |= XmlSchemaValidationFlags.ProcessSchemaLocation;
-            config.ValidationEventHandler += (_, args) => _logger.Error($"Invalid XML '{filePath}': {args.Message}");
+            config.ValidationEventHandler += (_, args) => _logger.Error($"Invalid XML '{filePath}', " +
+                $"line {args.Exception.LineNumber}, position {args.Exception.LinePosition}: {args.Message}");
 
             string? directory = Path.GetDirectoryName(filePath);
             string schemaPath = string.IsNullOrEmpty(directory)

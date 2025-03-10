@@ -17,4 +17,9 @@ public static class DictionaryExtensions
 
     public static bool IsEmpty<TKey, TValue>(this IReadOnlyDictionary<TKey, TValue> dictionary)
         => dictionary.Count == 0;
+
+    public static TValue GetOrAdd<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey key,
+        Func<TKey, TValue> func)
+        where TKey: notnull =>
+        dictionary.TryGetValue(key, out TValue? value) ? value : dictionary[key] = func(key);
 }
