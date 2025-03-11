@@ -2326,7 +2326,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="47263" toLevel="1" name="Sacred Power">
+	<skill id="47263" toLevel="4" name="Sacred Power">
 		<!-- M. Def. +200. The effect is determined by M. Def. <M. Def. is less than 1500>. - M. Atk. +75. <M. Def.: 1500 - 3999>. - M. Atk. +180. <M. Def.: 4000 - 7999>. - M. Atk. +420. <M. Def.: 8000 and higher>. - M. Atk. +800 -->
 		<icon>icon.s_sacred_power</icon>
 		<operateType>P</operateType>
@@ -3111,7 +3111,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="47276" toLevel="1" name="Chain Strike (Shock)">
+	<skill id="47276" toLevel="3" name="Chain Strike (Shock)">
 		<!-- Enchants Chain Strike. <Enchant effect>. Increases the Chain Strike success rate. With a certain chance, stuns the target for 3 sec. after pulling them. -->
 		<icon>icon.chain_shock</icon>
 		<operateType>P</operateType>

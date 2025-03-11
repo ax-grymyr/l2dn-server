@@ -351,7 +351,7 @@
 				<amount>
 					<value level="1">10</value>
 					<value level="2">20</value>
-					<value level="4">30</value>
+					<value level="3">30</value>
 				</amount>
 			</effect>
 		</effects>
@@ -555,7 +555,6 @@
 					<value level="8">8</value>
 					<value level="9">9</value>
 					<value level="10">10</value>
-					<value level="11">11</value>
 				</skillLevel>
 				<allowWeapons>ALL</allowWeapons>
 				<minDamage>1</minDamage>
@@ -699,7 +698,6 @@
 					<value level="8">8</value>
 					<value level="9">9</value>
 					<value level="10">10</value>
-					<value level="11">11</value>
 				</skillLevel>
 				<allowWeapons>ALL</allowWeapons>
 				<minDamage>1</minDamage>

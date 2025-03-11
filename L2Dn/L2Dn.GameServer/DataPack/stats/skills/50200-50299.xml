@@ -119,7 +119,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="50205" toLevel="10" name="Spinel - Mana Drain">
+	<skill id="50205" toLevel="12" name="Spinel - Mana Drain">
 		<icon>icon.etc_bm_jewel_garnet_i00</icon>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>

@@ -1516,7 +1516,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1629" toLevel="1" name="Throw Dagger in Wrist">
+	<skill id="1629" toLevel="9" name="Throw Dagger in Wrist">
 		<!-- Throws a dagger at the enemy with 396 power, injuring their wrist. Due to the wound, for 1 min., there is a chance that the target's skill casting is interrupted. Requires a dagger. -->
 		<icon>icon.skill1629</icon>
 		<abnormalLevel>8</abnormalLevel>

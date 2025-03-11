@@ -40,11 +40,12 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="52003" toLevel="1" name="Flag Power - Knight">
+	<skill id="52003" toLevel="2" name="Flag Power - Knight">
 		<!-- Flag Power for knights. Increases P. Def./ M. Def./ Debuff Resistance. -->
 		<icon>icon.skill0110</icon>
 		<abnormalLevel>
 			<value level="1">1</value>
+			<value level="2">2</value>
 		</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>PD_UP_SPECIAL</abnormalType>

@@ -1410,7 +1410,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="47012" toLevel="10" name="Freezing Wound">
+	<skill id="47012" toLevel="35" name="Freezing Wound">
 		<icon>icon.freezing_wound</icon>
 		<castRange>100</castRange>
 		<hitTime>2200</hitTime>
@@ -1466,7 +1466,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="47013" toLevel="10" name="Freezing Wound">
+	<skill id="47013" toLevel="35" name="Freezing Wound">
 		<icon>icon.freezing_wound</icon>
 		<castRange>600</castRange>
 		<hitTime>2200</hitTime>

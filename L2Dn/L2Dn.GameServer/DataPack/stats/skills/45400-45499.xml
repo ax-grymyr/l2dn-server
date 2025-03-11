@@ -2516,7 +2516,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="45461" toLevel="1" name="Cold Flames">
+	<skill id="45461" toLevel="2" name="Cold Flames">
 		<!-- <Infection Skill>. Deals damage to the target with 155 power. For 10 sec., drains the enemy's HP/ MP. The amount of drained HP depends on the character's M. Atk. The effect is enhanced if the skill is used against one target (only once). -->
 		<icon>icon.cold_flame</icon>
 		<castRange>700</castRange>

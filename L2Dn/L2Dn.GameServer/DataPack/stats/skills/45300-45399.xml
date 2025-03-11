@@ -2510,7 +2510,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="45335" toLevel="3" name="Stigma of Death">
+	<skill id="45335" toLevel="5" name="Stigma of Death">
 		<!-- Attacks the enemy with 1371 power. Ignores Shield Defense. Ignores 15% of the target's defense. Critical. PvP: Attacks up to 5 targets. PvE: Attacks up to 5 targets. Applies <font color="FF8000">Dark Mark</font> on attack. Effects of several marks do not stack. Debuff/ Anomaly Resistance -5% -->
 		<icon>icon.drain_soul</icon>
 		<operateType>A1</operateType>
@@ -6644,7 +6644,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="45391" toLevel="1" name="Sword Symphony">
+	<skill id="45391" toLevel="5" name="Sword Symphony">
 		<!-- <Sword Attack Range>. Increases attack range. Changes the attack animation. (Only for basic and skill attacks.). <Sword Defense>. When hit, received damage -10% for 10 sec. (Trigger rate: 10%, trigger cooldown: 90 sec.). <Sword Blessing>. For 10 sec., on a critical attack or successful evasion:. Increases Speed. Increases Skill Evasion. (Stacks up to 5 times.) -->
 		<icon>icon.sympony_sword</icon>
 		<abnormalTime>-1</abnormalTime>
@@ -6833,7 +6833,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="45395" toLevel="1" name="Dance of Blood">
+	<skill id="45395" toLevel="5" name="Dance of Blood">
 		<!-- <Blood Influence>. For 5 sec., inflicts a debuff on the target after an attack. Increases received damage. Decreases Speed. (stacks up to 5 times). <Blood Energy>. After an attack, for 5 sec.:. increases P. Atk.,. increases P. Skill Critical Damage. -->
 		<icon>icon.s_blood_dance</icon>
 		<magicLevel>80</magicLevel>

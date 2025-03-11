@@ -751,7 +751,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="48373" toLevel="1" name="Glakias' Summon">
+	<skill id="48373" toLevel="2" name="Glakias' Summon">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>1</isMagic>

@@ -2701,9 +2701,6 @@
 					<value level="5">6</value>
 					<value level="6">9</value>
 					<value level="7">12</value>
-					<value level="8">13</value>
-					<value level="9">14</value>
-					<value level="10">15</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3542,7 +3539,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="50361" toLevel="1" name="Flame Bind">
+	<skill id="50361" toLevel="7" name="Flame Bind">
 		<!-- Surrounds the target with flames and immobilizes it. -->
 		<icon>icon.skill0834</icon>
 		<abnormalLevel>1</abnormalLevel>
@@ -3570,6 +3567,7 @@
 					<value level="4">120</value>
 					<value level="5">150</value>
 					<value level="6">180</value>
+					<value level="7">210</value>
 				</power>
 				<ticks>1</ticks>
 			</effect>

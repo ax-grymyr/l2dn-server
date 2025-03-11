@@ -431,7 +431,7 @@
 		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
 		<itemConsumeCount>
 			<value level="1">10</value>
-			<value fromLevel="1" toLevel="2" fromSubLevel="1001" toSubLevel="1003">15</value>
+			<value fromLevel="1" toLevel="1" fromSubLevel="1001" toSubLevel="1003">15</value>
 		</itemConsumeCount>
 		<operateType>A2</operateType>
 		<reuseDelay>120000</reuseDelay>
@@ -2408,11 +2408,11 @@
 		<icon>icon.skill1559</icon>
 		<operateType>A1</operateType>
 	</skill>
-	<skill id="47380" toLevel="2" name="Legendary Archer">
+	<skill id="47380" toLevel="18" name="Legendary Archer">
 		<!-- For 20 min., transforms into a legendary archer. P. Atk. +25%. P. Skill Power +2%. P. Skill Critical Rate +20%. P. Skill Critical Damage +20%. Max HP +10%. Melee Weapon Resistance +10%. While active, enhances the <font color="FF8000">Lethal Shot</font> skill. -->
 		<icon>
 			<value level="1">icon.s_legendary_archer_hu1</value>
-			<value level="2">icon.s_legendary_archer_master_hu</value>
+			<value fromLevel="2" toLevel="18">icon.s_legendary_archer_master_hu</value>
 		</icon>
 		<operateType>A2</operateType>
 		<mpConsume>200</mpConsume>
@@ -2522,6 +2522,8 @@
 			<value level="16">81</value>
 			<value level="17">82</value>
 			<value level="18">83</value>
+			<value level="19">84</value>
+			<value level="20">85</value>
 		</mpConsume>
 		<effectPoint>
 			<value level="1">-400</value>
@@ -2542,6 +2544,8 @@
 			<value level="16">-475</value>
 			<value level="17">-480</value>
 			<value level="18">-485</value>
+			<value level="19">-490</value>
+			<value level="20">-495</value>
 		</effectPoint>
 		<reuseDelay>1500</reuseDelay>
 		<hitTime>1800</hitTime>
@@ -2632,6 +2636,11 @@
 			<value level="13">78</value>
 			<value level="14">79</value>
 			<value level="15">80</value>
+			<value level="16">81</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="17">82</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="18">83</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="19">84</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="20">85</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 		</mpConsume>
 		<effectPoint>
 			<value level="1">-400</value>
@@ -2698,11 +2707,11 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="47384" toLevel="2" name="Legendary Archer">
+	<skill id="47384" toLevel="15" name="Legendary Archer">
 		<!-- For 20 min., transforms into a legendary archer. P. Atk. +25%. P. Skill Critical Rate +20%. P. Skill Critical Damage +20%. P. Skill Critical Damage +20. Max HP +10%. Melee Weapon Resistance +10%. While active, enhances the <font color="FF8000">Lethal Shot</font> skill. -->
 		<icon>
 			<value level="1">icon.s_legendary_archer_el1</value>
-			<value level="2">icon.s_legendary_archer_master_el</value>
+			<value fromLevel="2" toLevel="15">icon.s_legendary_archer_master_el</value>
 		</icon>
 		<operateType>A2</operateType>
 		<mpConsume>200</mpConsume>
@@ -2801,6 +2810,11 @@
 			<value level="13">78</value>
 			<value level="14">79</value>
 			<value level="15">80</value>
+			<value level="16">81</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="17">82</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="18">83</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="19">84</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="20">85</value> <!-- FIXME: AUTO GENERATED LEVEL -->
 		</mpConsume>
 		<effectPoint>
 			<value level="1">-400</value>
@@ -3247,7 +3261,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="47392" toLevel="1" name="Legendary Archer">
+	<skill id="47392" toLevel="10" name="Legendary Archer">
 		<!-- For 20 min., transforms into a legendary archer. P. Atk. +25%. P. Skill Critical Rate +20%. Received M. Skill Critical Rate -2%. P. Skill Critical Damage +20%. Max HP +10%. Melee Weapon Resistance +10%. While active, enhances the <font color="FF8000">Twin Shot</font> skill. -->
 		<icon>icon.s_legendary_archer_ka1</icon>
 		<operateType>A2</operateType>

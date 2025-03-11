@@ -925,7 +925,6 @@
 		<magicLevel>76</magicLevel>
 		<mpConsume>
 			<value level="1">80</value>
-			<value level="2">85</value>
 		</mpConsume>
 		<operateType>A1</operateType>
 		<reuseDelay>10000</reuseDelay>

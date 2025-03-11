@@ -581,10 +581,6 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="40362" toLevel="1" name="Scroll of Escape: Frost Lord's Castle">
-		<icon>icon.skill0000</icon>
-		<operateType>A1</operateType>
-	</skill>
 	<skill id="40364" toLevel="1" name="Valentine's Day Blessing">
 		<icon>icon.event_altair_enchant_scroll_i00</icon>
 		<operateType>A1</operateType>

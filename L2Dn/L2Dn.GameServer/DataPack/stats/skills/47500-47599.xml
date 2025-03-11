@@ -4398,7 +4398,7 @@
 			<value level="13">-900</value>
 		</effectPoint>
 	</skill>
-	<skill id="47571" toLevel="1" name="Bone Cage">
+	<skill id="47571" toLevel="10" name="Bone Cage">
 		<!-- PvP:. HP -10%. MP -10%. PvE: Attacks the enemy with 8500 power. Ignores Shield Defense. Ignores 25% of the target's defense. Critical. -->
 		<icon>icon.flame_bone_prison</icon>
 		<isTriggeredSkill>true</isTriggeredSkill>

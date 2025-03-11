@@ -754,7 +754,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="87423" toLevel="1" name="Clone's Strike">
+	<skill id="87423" toLevel="3" name="Clone's Strike">
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<effectPoint>-500</effectPoint>
@@ -792,7 +792,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="87424" toLevel="1" name="Clone's Strike (Enchant)">
+	<skill id="87424" toLevel="3" name="Clone's Strike (Enchant)">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<isMagic>0</isMagic>
