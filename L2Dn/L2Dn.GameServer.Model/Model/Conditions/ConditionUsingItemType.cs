@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
@@ -11,8 +12,10 @@ namespace L2Dn.GameServer.Model.Conditions;
  * The Class ConditionUsingItemType.
  * @author mkizub
  */
-public class ConditionUsingItemType(ItemTypeMask mask): Condition
+public sealed class ConditionUsingItemType(ItemTypeMask mask): Condition
 {
+    private ItemTypeMask Mask => mask;
+
     protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         bool isArmor = (mask & ((ItemTypeMask)ArmorType.MAGIC | ArmorType.LIGHT | ArmorType.HEAVY)) !=
@@ -64,4 +67,7 @@ public class ConditionUsingItemType(ItemTypeMask mask): Condition
 
         return (mask & inv.getWearedMask()) != ItemTypeMask.Zero;
     }
+
+    public override int GetHashCode() => HashCode.Combine(mask);
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x.Mask);
 }
