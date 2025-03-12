@@ -3,26 +3,29 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Immobile Buff effect implementation.
- * @author mkizub
- */
-public class BlockMove: AbstractEffect
+/// <summary>
+/// Immobile Buff effect implementation.
+/// </summary>
+public sealed class BlockMove: AbstractEffect
 {
-	public BlockMove(StatSet @params)
-	{
-	}
+    public BlockMove(StatSet @params)
+    {
+    }
 
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
-	{
-		effected.setImmobilized(true);
-	}
+    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        effected.setImmobilized(true);
+    }
 
-	public override void onExit(Creature effector, Creature effected, Skill skill)
-	{
-		effected.setImmobilized(false);
-	}
+    public override void onExit(Creature effector, Creature effected, Skill skill)
+    {
+        effected.setImmobilized(false);
+    }
+
+    public override int GetHashCode() => this.GetSingletonHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj);
 }

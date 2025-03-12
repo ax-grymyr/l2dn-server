@@ -280,7 +280,7 @@ public class EffectList
 	 * Adds {@code AbnormalType}s to the blocked buff slot set.
 	 * @param blockedAbnormalTypes the blocked buff slot set to add
 	 */
-	public void addBlockedAbnormalTypes(Set<AbnormalType> blockedAbnormalTypes)
+	public void addBlockedAbnormalTypes(IEnumerable<AbnormalType> blockedAbnormalTypes)
 	{
 		_blockedAbnormalTypes.addAll(blockedAbnormalTypes);
 	}
@@ -290,7 +290,7 @@ public class EffectList
 	 * @param blockedBuffSlots the blocked buff slot set to remove
 	 * @return {@code true} if the blocked buff slots set has been modified, {@code false} otherwise
 	 */
-	public bool removeBlockedAbnormalTypes(Set<AbnormalType> blockedBuffSlots)
+	public bool removeBlockedAbnormalTypes(IEnumerable<AbnormalType> blockedBuffSlots)
 	{
 		return _blockedAbnormalTypes.removeAll(blockedBuffSlots);
 	}

@@ -1,53 +1,53 @@
+using System.Collections.Frozen;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Resist Skill effect implementaion.
- * @author UnAfraid
- */
-public class ResistSkill: AbstractEffect
+/// <summary>
+/// Resist Skill effect implementaion.
+/// </summary>
+public sealed class ResistSkill: AbstractEffect
 {
-	private readonly List<SkillHolder> _skills = [];
+    private readonly FrozenSet<SkillHolder> _skills;
 
-	public ResistSkill(StatSet @params)
-	{
-		for (int i = 1;; i++)
-		{
-			int skillId = @params.getInt("skillId" + i, 0);
-			int skillLevel = @params.getInt("skillLevel" + i, 0);
-			if (skillId == 0)
-			{
-				break;
-			}
-			_skills.Add(new SkillHolder(skillId, skillLevel));
-		}
+    public ResistSkill(StatSet @params)
+    {
+        List<SkillHolder> skillHolders = new(16);
+        for (int i = 1;; i++)
+        {
+            int skillId = @params.getInt("skillId" + i, 0);
+            int skillLevel = @params.getInt("skillLevel" + i, 0);
+            if (skillId == 0)
+                break;
 
-		if (_skills.Count == 0)
-		{
-			throw new ArgumentException(GetType().Name + ": Without parameters!");
-		}
-	}
+            skillHolders.Add(new SkillHolder(skillId, skillLevel));
+        }
 
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
-	{
-		foreach (SkillHolder holder in _skills)
-		{
-			effected.addIgnoreSkillEffects(holder);
-		}
-	}
+        if (skillHolders.Count == 0)
+            throw new ArgumentException(nameof(ResistSkill) + ": no parameters!");
 
-	public override void onExit(Creature effector, Creature effected, Skill skill)
-	{
-		foreach (SkillHolder holder in _skills)
-		{
-			effected.removeIgnoreSkillEffects(holder);
-		}
-	}
+        _skills = skillHolders.ToFrozenSet();
+    }
+
+    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        foreach (SkillHolder holder in _skills)
+            effected.addIgnoreSkillEffects(holder);
+    }
+
+    public override void onExit(Creature effector, Creature effected, Skill skill)
+    {
+        foreach (SkillHolder holder in _skills)
+            effected.removeIgnoreSkillEffects(holder);
+    }
+
+    public override int GetHashCode() => _skills.GetSetHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x._skills.GetSetComparable());
 }

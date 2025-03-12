@@ -6,96 +6,90 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * @author Sdw, Mobius
- */
-public class AbsorbDamage: AbstractEffect
+public sealed class AbsorbDamage: AbstractEffect
 {
-	private static readonly Map<int, double> DIFF_DAMAGE_HOLDER = new();
-	private static readonly Map<int, double> PER_DAMAGE_HOLDER = new();
+    private static readonly Map<int, double> _diffDamageHolder = new();
+    private static readonly Map<int, double> _perDamageHolder = new();
 
-	private readonly double _damage;
-	private readonly StatModifierType _mode;
+    private readonly double _damage;
+    private readonly StatModifierType _mode;
 
-	public AbsorbDamage(StatSet @params)
-	{
-		_damage = @params.getDouble("damage", 0);
-		_mode = @params.getEnum("mode", StatModifierType.DIFF);
-	}
+    public AbsorbDamage(StatSet @params)
+    {
+        _damage = @params.getDouble("damage", 0);
+        _mode = @params.getEnum("mode", StatModifierType.DIFF);
+    }
 
-	private void onDamageReceivedDiffEvent(OnCreatureDamageReceived ev, Creature effected, Skill skill)
-	{
-		// DOT effects are not taken into account.
-		if (ev.isDamageOverTime())
-		{
-			return;
-		}
+    private static void OnDamageReceivedDiffEvent(OnCreatureDamageReceived ev, Creature effected, Skill skill)
+    {
+        // DOT effects are not taken into account.
+        if (ev.isDamageOverTime())
+            return;
 
-		int objectId = ev.getTarget().ObjectId;
+        int objectId = ev.getTarget().ObjectId;
 
-		double damageLeft = DIFF_DAMAGE_HOLDER.GetValueOrDefault(objectId);
-		double newDamageLeft = Math.Max(damageLeft - ev.getDamage(), 0);
-		double newDamage = Math.Max(ev.getDamage() - damageLeft, 0);
+        double damageLeft = _diffDamageHolder.GetValueOrDefault(objectId);
+        double newDamageLeft = Math.Max(damageLeft - ev.getDamage(), 0);
+        double newDamage = Math.Max(ev.getDamage() - damageLeft, 0);
 
-		if (newDamageLeft > 0)
-		{
-			DIFF_DAMAGE_HOLDER.put(objectId, newDamageLeft);
-		}
-		else
-		{
-			effected.stopSkillEffects(skill);
-		}
+        if (newDamageLeft > 0)
+            _diffDamageHolder.put(objectId, newDamageLeft);
+        else
+            effected.stopSkillEffects(skill);
 
-		ev.OverrideDamage = true;
-		ev.OverridenDamage = newDamage;
-	}
+        ev.OverrideDamage = true;
+        ev.OverridenDamage = newDamage;
+    }
 
-	private void onDamageReceivedPerEvent(OnCreatureDamageReceived ev)
-	{
-		// DOT effects are not taken into account.
-		if (ev.isDamageOverTime())
-		{
-			return;
-		}
+    private static void OnDamageReceivedPerEvent(OnCreatureDamageReceived ev)
+    {
+        // DOT effects are not taken into account.
+        if (ev.isDamageOverTime())
+            return;
 
-		int objectId = ev.getTarget().ObjectId;
+        int objectId = ev.getTarget().ObjectId;
 
-		double damagePercent = PER_DAMAGE_HOLDER.GetValueOrDefault(objectId);
-		double currentDamage = ev.getDamage();
-		double newDamage = currentDamage - currentDamage / 100 * damagePercent;
+        double damagePercent = _perDamageHolder.GetValueOrDefault(objectId);
+        double currentDamage = ev.getDamage();
+        double newDamage = currentDamage - currentDamage / 100 * damagePercent;
 
-		ev.OverrideDamage = true;
-		ev.OverridenDamage = newDamage;
-	}
+        ev.OverrideDamage = true;
+        ev.OverridenDamage = newDamage;
+    }
 
-	public override void onExit(Creature effector, Creature effected, Skill skill)
-	{
-		if (_mode == StatModifierType.DIFF)
-		{
-			effected.Events.UnsubscribeAll<OnCreatureDamageReceived>(this);
-			DIFF_DAMAGE_HOLDER.remove(effected.ObjectId);
-		}
-		else
-		{
-			effected.Events.Unsubscribe<OnCreatureDamageReceived>(onDamageReceivedPerEvent);
-			PER_DAMAGE_HOLDER.remove(effected.ObjectId);
-		}
-	}
+    public override void onExit(Creature effector, Creature effected, Skill skill)
+    {
+        if (_mode == StatModifierType.DIFF)
+        {
+            effected.Events.UnsubscribeAll<OnCreatureDamageReceived>(this);
+            _diffDamageHolder.remove(effected.ObjectId);
+        }
+        else
+        {
+            effected.Events.Unsubscribe<OnCreatureDamageReceived>(OnDamageReceivedPerEvent);
+            _perDamageHolder.remove(effected.ObjectId);
+        }
+    }
 
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
-	{
-		if (_mode == StatModifierType.DIFF)
-		{
-			DIFF_DAMAGE_HOLDER.put(effected.ObjectId, _damage);
-			effected.Events.Subscribe<OnCreatureDamageReceived>(this, ev => onDamageReceivedDiffEvent(ev, effected, skill));
-		}
-		else
-		{
-			PER_DAMAGE_HOLDER.put(effected.ObjectId, _damage);
-			effected.Events.Subscribe<OnCreatureDamageReceived>(this, onDamageReceivedPerEvent);
-		}
-	}
+    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        if (_mode == StatModifierType.DIFF)
+        {
+            _diffDamageHolder.put(effected.ObjectId, _damage);
+            effected.Events.Subscribe<OnCreatureDamageReceived>(this,
+                ev => OnDamageReceivedDiffEvent(ev, effected, skill));
+        }
+        else
+        {
+            _perDamageHolder.put(effected.ObjectId, _damage);
+            effected.Events.Subscribe<OnCreatureDamageReceived>(this, OnDamageReceivedPerEvent);
+        }
+    }
+
+    public override int GetHashCode() => HashCode.Combine(_damage, _mode);
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => (x._damage, x._mode));
 }

@@ -1,18 +1,19 @@
 using System.Collections.Frozen;
 using System.Globalization;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Dispel By Slot effect implementation.
- * @author Gnacik, Zoey76, Adry_85
- */
-public class DispelBySlot: AbstractEffect
+/// <summary>
+/// Dispel By Slot effect implementation.
+/// </summary>
+public sealed class DispelBySlot: AbstractEffect
 {
     private readonly FrozenDictionary<AbnormalType, short> _dispelAbnormals;
 
@@ -38,9 +39,7 @@ public class DispelBySlot: AbstractEffect
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (_dispelAbnormals.Count == 0)
-        {
             return;
-        }
 
         // Continue only if target has any of the abnormals. Save useless cycles.
         if (effected.getEffectList().hasAbnormalType(_dispelAbnormals.Keys))
@@ -65,4 +64,9 @@ public class DispelBySlot: AbstractEffect
             }, true, true);
         }
     }
+
+    public override int GetHashCode() => _dispelAbnormals.GetDictionaryHashCode();
+
+    public override bool Equals(object? obj) =>
+        this.EqualsTo(obj, static x => x._dispelAbnormals.GetDictionaryComparable());
 }

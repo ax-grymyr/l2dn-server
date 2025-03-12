@@ -6,38 +6,36 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Open Dwarf Recipe Book effect implementation.
- * @author Adry_85
- */
-public class OpenDwarfRecipeBook: AbstractEffect
+/// <summary>
+/// Open Dwarf Recipe Book effect implementation.
+/// </summary>
+public sealed class OpenDwarfRecipeBook: AbstractEffect
 {
-	public OpenDwarfRecipeBook(StatSet @params)
-	{
-	}
+    public OpenDwarfRecipeBook(StatSet @params)
+    {
+    }
 
-	public override bool isInstant()
-	{
-		return true;
-	}
+    public override bool isInstant() => true;
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
-	{
+    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    {
         Player? player = effector.getActingPlayer();
-		if (!effector.isPlayer() || player == null)
-		{
-			return;
-		}
+        if (!effector.isPlayer() || player == null)
+            return;
 
-		if (player.getPrivateStoreType() != PrivateStoreType.NONE)
-		{
-			player.sendPacket(SystemMessageId.ITEM_CREATION_IS_NOT_POSSIBLE_WHILE_ENGAGED_IN_A_TRADE);
-			return;
-		}
+        if (player.getPrivateStoreType() != PrivateStoreType.NONE)
+        {
+            player.sendPacket(SystemMessageId.ITEM_CREATION_IS_NOT_POSSIBLE_WHILE_ENGAGED_IN_A_TRADE);
+            return;
+        }
 
-		RecipeManager.getInstance().requestBookOpen(player, true);
-	}
+        RecipeManager.getInstance().requestBookOpen(player, true);
+    }
+
+    public override int GetHashCode() => this.GetSingletonHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj);
 }

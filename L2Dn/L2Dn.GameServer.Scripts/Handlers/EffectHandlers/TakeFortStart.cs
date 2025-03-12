@@ -8,37 +8,34 @@ using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Take Fort Start effect implementation.
- * @author UnAfraid
- */
-public class TakeFortStart: AbstractEffect
+/// <summary>
+/// Take Fort Start effect implementation.
+/// </summary>
+public sealed class TakeFortStart: AbstractEffect
 {
-	public TakeFortStart(StatSet @params)
-	{
-	}
+    public TakeFortStart(StatSet @params)
+    {
+    }
 
-	public override bool isInstant()
-	{
-		return true;
-	}
+    public override bool isInstant() => true;
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Player? player = effector.getActingPlayer();
-		if (!effector.isPlayer() || player == null)
-		{
-			return;
-		}
+        if (!effector.isPlayer() || player == null)
+            return;
 
-		Fort? fort = FortManager.getInstance().getFort(effector);
-		Clan? clan = effector.getClan();
-		if (fort != null && clan != null)
-		{
-			fort.getSiege().announceToPlayer(new SystemMessagePacket(SystemMessageId.S1_IS_TRYING_TO_DISPLAY_THE_FLAG), player.getName());
-		}
-	}
+        Fort? fort = FortManager.getInstance().getFort(effector);
+        Clan? clan = effector.getClan();
+        if (fort != null && clan != null)
+            fort.getSiege().announceToPlayer(new SystemMessagePacket(SystemMessageId.S1_IS_TRYING_TO_DISPLAY_THE_FLAG),
+                player.getName());
+    }
+
+    public override int GetHashCode() => this.GetSingletonHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj);
 }

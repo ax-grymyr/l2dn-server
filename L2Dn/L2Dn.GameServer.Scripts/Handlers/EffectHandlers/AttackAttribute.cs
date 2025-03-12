@@ -1,56 +1,34 @@
+using System.Collections.Frozen;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Stats;
-using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * @author Mobius
- */
-public class AttackAttribute: AbstractEffect
+public sealed class AttackAttribute: AbstractEffect
 {
-	private readonly double _amount;
-	private readonly Stat? _singleStat;
-	private readonly Set<Stat>? _multipleStats;
-	
-	public AttackAttribute(StatSet @params)
-	{
-		_amount = @params.getDouble("amount", 0);
-		string attributes = @params.getString("attribute", "FIRE");
-		if (attributes.contains(","))
-		{
-			_singleStat = null;
-			_multipleStats = [];
-			foreach (string attribute in attributes.Split(","))
-			{
-				_multipleStats.add(Enum.Parse<Stat>(attribute + "_POWER"));
-			}
-		}
-		else
-		{
-			_singleStat = Enum.Parse<Stat>(attributes + "_POWER");
-			_multipleStats = null;
-		}
-	}
-	
-	public override void pump(Creature effected, Skill skill)
-	{
-		if (_singleStat != null)
-		{
-			effected.getStat().mergeAdd(_singleStat.Value, _amount);
-			return;
-		}
+    private readonly FrozenSet<Stat> _stats;
+    private readonly double _amount;
 
-		if (_multipleStats != null)
-		{
-			foreach (Stat stat in _multipleStats)
-			{
-				effected.getStat().mergeAdd(stat, _amount);
-			}
-		}
-	}
+    public AttackAttribute(StatSet @params)
+    {
+        _amount = @params.getDouble("amount", 0);
+        string attributes = @params.getString("attribute", "FIRE");
+        _stats = ParseUtil.ParseEnumSet<Stat>(attributes, string.Empty, "_POWER", ',');
+    }
+
+    public override void pump(Creature effected, Skill skill)
+    {
+        foreach (Stat stat in _stats)
+            effected.getStat().mergeAdd(stat, _amount);
+    }
+
+    public override int GetHashCode() => HashCode.Combine(_stats.GetSetHashCode(), _amount);
+
+    public override bool Equals(object? obj) =>
+        this.EqualsTo(obj, static x => (x._stats.GetSetComparable(), x._amount));
 }

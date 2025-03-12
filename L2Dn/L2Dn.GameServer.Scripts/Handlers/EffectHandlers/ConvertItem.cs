@@ -9,144 +9,128 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Convert Item effect implementation.
- * @author Zoey76
- */
-public class ConvertItem: AbstractEffect
+/// <summary>
+/// Convert Item effect implementation.
+/// </summary>
+public sealed class ConvertItem: AbstractEffect
 {
-	public ConvertItem(StatSet @params)
-	{
-	}
+    public ConvertItem(StatSet @params)
+    {
+    }
 
-	public override bool isInstant()
-	{
-		return true;
-	}
+    public override bool isInstant() => true;
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
-	{
+    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    {
         Player? player = effected.getActingPlayer();
-		if (effected.isAlikeDead() || !effected.isPlayer() || player == null)
-		{
-			return;
-		}
+        if (effected.isAlikeDead() || !effected.isPlayer() || player == null)
+            return;
 
-		if (player.hasItemRequest())
-		{
-			return;
-		}
+        if (player.hasItemRequest())
+            return;
 
-		Weapon weaponItem = player.getActiveWeaponItem();
-		if (weaponItem == null)
-		{
-			return;
-		}
+        Weapon weaponItem = player.getActiveWeaponItem();
+        if (weaponItem == null)
+            return;
 
-		Item? wpn = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
-		if (wpn == null)
-		{
-			wpn = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
-		}
+        Item? wpn = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
+        if (wpn == null)
+            wpn = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 
-		if (wpn == null || wpn.isAugmented() || weaponItem.getChangeWeaponId() == 0)
-		{
-			return;
-		}
+        if (wpn == null || wpn.isAugmented() || weaponItem.getChangeWeaponId() == 0)
+            return;
 
-		int newItemId = weaponItem.getChangeWeaponId();
-		if (newItemId == -1)
-		{
-			return;
-		}
+        int newItemId = weaponItem.getChangeWeaponId();
+        if (newItemId == -1)
+            return;
 
-		int enchantLevel = wpn.getEnchantLevel();
-		AttributeHolder? elementals = wpn.getAttributes() == null ? null : wpn.getAttackAttribute();
-		List<Item> unequipped = player.getInventory().unEquipItemInBodySlotAndRecord(wpn.getTemplate().getBodyPart());
-		InventoryUpdatePacket iu = new InventoryUpdatePacket(unequipped.Select(x => new ItemInfo(x, ItemChangeType.MODIFIED)).ToList());
-		player.sendInventoryUpdate(iu);
+        int enchantLevel = wpn.getEnchantLevel();
+        AttributeHolder? elementals = wpn.getAttributes() == null ? null : wpn.getAttackAttribute();
+        List<Item> unequipped = player.getInventory().unEquipItemInBodySlotAndRecord(wpn.getTemplate().getBodyPart());
+        InventoryUpdatePacket iu =
+            new InventoryUpdatePacket(unequipped.Select(x => new ItemInfo(x, ItemChangeType.MODIFIED)).ToList());
 
-		if (unequipped.Count == 0)
-		{
-			return;
-		}
+        player.sendInventoryUpdate(iu);
 
-		byte count = 0;
-		foreach (Item unequippedItem in unequipped)
-		{
-			if (!(unequippedItem.getTemplate() is Weapon))
-			{
-				count++;
-				continue;
-			}
+        if (unequipped.Count == 0)
+        {
+            return;
+        }
 
-			SystemMessagePacket sm;
-			if (unequippedItem.getEnchantLevel() > 0)
-			{
-				sm = new SystemMessagePacket(SystemMessageId.S1_S2_UNEQUIPPED);
-				sm.Params.addInt(unequippedItem.getEnchantLevel());
-				sm.Params.addItemName(unequippedItem);
-			}
-			else
-			{
-				sm = new SystemMessagePacket(SystemMessageId.S1_UNEQUIPPED);
-				sm.Params.addItemName(unequippedItem);
-			}
+        byte count = 0;
+        foreach (Item unequippedItem in unequipped)
+        {
+            if (!(unequippedItem.getTemplate() is Weapon))
+            {
+                count++;
+                continue;
+            }
 
-			player.sendPacket(sm);
-		}
+            SystemMessagePacket sm;
+            if (unequippedItem.getEnchantLevel() > 0)
+            {
+                sm = new SystemMessagePacket(SystemMessageId.S1_S2_UNEQUIPPED);
+                sm.Params.addInt(unequippedItem.getEnchantLevel());
+                sm.Params.addItemName(unequippedItem);
+            }
+            else
+            {
+                sm = new SystemMessagePacket(SystemMessageId.S1_UNEQUIPPED);
+                sm.Params.addItemName(unequippedItem);
+            }
 
-		if (count == unequipped.Count)
-		{
-			return;
-		}
+            player.sendPacket(sm);
+        }
 
-		Item? destroyItem = player.getInventory().destroyItem("ChangeWeapon", wpn, player, null);
-		if (destroyItem == null)
-		{
-			return;
-		}
+        if (count == unequipped.Count)
+        {
+            return;
+        }
 
-		Item? newItem = player.getInventory().addItem("ChangeWeapon", newItemId, 1, player, destroyItem);
-		if (newItem == null)
-		{
-			return;
-		}
+        Item? destroyItem = player.getInventory().destroyItem("ChangeWeapon", wpn, player, null);
+        if (destroyItem == null)
+            return;
 
-		if (elementals != null)
-		{
-			newItem.setAttribute(elementals, true);
-		}
-		newItem.setEnchantLevel(enchantLevel);
-		player.getInventory().equipItem(newItem);
+        Item? newItem = player.getInventory().addItem("ChangeWeapon", newItemId, 1, player, destroyItem);
+        if (newItem == null)
+            return;
 
-		SystemMessagePacket msg;
-		if (newItem.getEnchantLevel() > 0)
-		{
-			msg = new SystemMessagePacket(SystemMessageId.S1_S2_EQUIPPED);
-			msg.Params.addInt(newItem.getEnchantLevel());
-			msg.Params.addItemName(newItem);
-		}
-		else
-		{
-			msg = new SystemMessagePacket(SystemMessageId.S1_EQUIPPED);
-			msg.Params.addItemName(newItem);
-		}
-		player.sendPacket(msg);
+        if (elementals != null)
+            newItem.setAttribute(elementals, true);
 
-		List<ItemInfo> items =
-		[
-			new ItemInfo(destroyItem, ItemChangeType.REMOVED),
-			new ItemInfo(newItem, ItemChangeType.ADDED)
-		];
+        newItem.setEnchantLevel(enchantLevel);
+        player.getInventory().equipItem(newItem);
 
-		InventoryUpdatePacket u = new InventoryUpdatePacket(items);
-		player.sendInventoryUpdate(u);
+        SystemMessagePacket msg;
+        if (newItem.getEnchantLevel() > 0)
+        {
+            msg = new SystemMessagePacket(SystemMessageId.S1_S2_EQUIPPED);
+            msg.Params.addInt(newItem.getEnchantLevel());
+            msg.Params.addItemName(newItem);
+        }
+        else
+        {
+            msg = new SystemMessagePacket(SystemMessageId.S1_EQUIPPED);
+            msg.Params.addItemName(newItem);
+        }
 
-		player.broadcastUserInfo();
-	}
+        player.sendPacket(msg);
+
+        List<ItemInfo> items =
+        [
+            new(destroyItem, ItemChangeType.REMOVED), new(newItem, ItemChangeType.ADDED),
+        ];
+
+        InventoryUpdatePacket u = new InventoryUpdatePacket(items);
+        player.sendInventoryUpdate(u);
+
+        player.broadcastUserInfo();
+    }
+
+    public override int GetHashCode() => this.GetSingletonHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj);
 }

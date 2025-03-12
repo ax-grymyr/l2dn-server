@@ -3,40 +3,38 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Item Effect: Increase/decrease PK count permanently.
- * @author Nik
- */
-public class PkCount: AbstractEffect
+/// <summary>
+/// Item Effect: Increase/decrease PK count permanently.
+/// </summary>
+public sealed class PkCount: AbstractEffect
 {
-	private readonly int _amount;
+    private readonly int _amount;
 
-	public PkCount(StatSet @params)
-	{
-		_amount = @params.getInt("amount", 0);
-	}
+    public PkCount(StatSet @params)
+    {
+        _amount = @params.getInt("amount", 0);
+    }
 
-	public override bool isInstant()
-	{
-		return true;
-	}
+    public override bool isInstant() => true;
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
-	{
-		Player? player = effected.getActingPlayer();
-		if (player == null)
-		{
-			return;
-		}
+    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        Player? player = effected.getActingPlayer();
+        if (player == null)
+            return;
 
-		if (player.getPkKills() > 0)
-		{
-			int newPkCount = Math.Max(player.getPkKills() + _amount, 0);
-			player.setPkKills(newPkCount);
-			player.updateUserInfo();
-		}
-	}
+        if (player.getPkKills() > 0)
+        {
+            int newPkCount = Math.Max(player.getPkKills() + _amount, 0);
+            player.setPkKills(newPkCount);
+            player.updateUserInfo();
+        }
+    }
+
+    public override int GetHashCode() => _amount;
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x._amount);
 }

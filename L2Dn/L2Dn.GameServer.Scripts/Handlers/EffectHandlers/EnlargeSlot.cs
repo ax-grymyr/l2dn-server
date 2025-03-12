@@ -3,62 +3,39 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Stats;
 using L2Dn.Model.Enums;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * @author Sdw
- */
-public class EnlargeSlot: AbstractEffect
+public sealed class EnlargeSlot: AbstractEffect
 {
-	private readonly StorageType _type;
-	private readonly double _amount;
+    private readonly StorageType _type;
+    private readonly double _amount;
 
-	public EnlargeSlot(StatSet @params)
-	{
-		_amount = @params.getDouble("amount", 0);
-		_type = @params.getEnum("type", StorageType.INVENTORY_NORMAL);
-	}
+    public EnlargeSlot(StatSet @params)
+    {
+        _amount = @params.getDouble("amount", 0);
+        _type = @params.getEnum("type", StorageType.INVENTORY_NORMAL);
+    }
 
-	public override void pump(Creature effected, Skill skill)
-	{
-		Stat stat = Stat.INVENTORY_NORMAL;
+    public override void pump(Creature effected, Skill skill)
+    {
+        Stat stat = _type switch
+        {
+            StorageType.TRADE_BUY => Stat.TRADE_BUY,
+            StorageType.TRADE_SELL => Stat.TRADE_SELL,
+            StorageType.RECIPE_DWARVEN => Stat.RECIPE_DWARVEN,
+            StorageType.RECIPE_COMMON => Stat.RECIPE_COMMON,
+            StorageType.STORAGE_PRIVATE => Stat.STORAGE_PRIVATE,
+            _ => Stat.INVENTORY_NORMAL,
+        };
 
-		switch (_type)
-		{
-			case StorageType.TRADE_BUY:
-			{
-				stat = Stat.TRADE_BUY;
-				break;
-			}
-			case StorageType.TRADE_SELL:
-			{
-				stat = Stat.TRADE_SELL;
-				break;
-			}
-			case StorageType.RECIPE_DWARVEN:
-			{
-				stat = Stat.RECIPE_DWARVEN;
-				break;
-			}
-			case StorageType.RECIPE_COMMON:
-			{
-				stat = Stat.RECIPE_COMMON;
-				break;
-			}
-			case StorageType.STORAGE_PRIVATE:
-			{
-				stat = Stat.STORAGE_PRIVATE;
-				break;
-			}
-		}
+        effected.getStat().mergeAdd(stat, _amount);
+        if (effected.isPlayer())
+            effected.getActingPlayer()?.sendStorageMaxCount();
+    }
 
-		effected.getStat().mergeAdd(stat, _amount);
-		if (effected.isPlayer())
-		{
-			effected.getActingPlayer()?.sendStorageMaxCount();
-		}
-	}
+    public override int GetHashCode() => HashCode.Combine(_type, _amount);
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => (x._type, x._amount));
 }

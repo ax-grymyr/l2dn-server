@@ -5,13 +5,11 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * @author Mobius
- */
-public class Compelling: AbstractEffect
+public sealed class Compelling: AbstractEffect
 {
     public Compelling(StatSet @params)
     {
@@ -25,9 +23,7 @@ public class Compelling: AbstractEffect
     public override bool canStart(Creature effector, Creature effected, Skill skill)
     {
         if (effected == null || effected.isRaid() || (effected.isNpc() && !effected.isAttackable()))
-        {
             return false;
-        }
 
         return effected.isPlayable() || effected.isAttackable();
     }
@@ -47,9 +43,7 @@ public class Compelling: AbstractEffect
     public override void onExit(Creature effector, Creature effected, Skill skill)
     {
         if (!effected.isPlayer())
-        {
             effected.getAI().notifyEvent(CtrlEvent.EVT_THINK);
-        }
     }
 
     private static void CompellingAction(Creature effector, Creature effected)
@@ -57,4 +51,7 @@ public class Compelling: AbstractEffect
         effected.setRunning();
         effected.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, effector.Location.Location3D);
     }
+
+    public override int GetHashCode() => this.GetSingletonHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj);
 }

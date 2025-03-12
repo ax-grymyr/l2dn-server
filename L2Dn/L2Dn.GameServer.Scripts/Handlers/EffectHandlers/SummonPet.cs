@@ -10,36 +10,28 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.Geometry;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Summon Pet effect implementation.
- * @author UnAfraid
- */
-public class SummonPet: AbstractEffect
+/// <summary>
+/// Summon Pet effect implementation.
+/// </summary>
+public sealed class SummonPet: AbstractEffect
 {
     public SummonPet(StatSet @params)
     {
     }
 
-    public override EffectType getEffectType()
-    {
-        return EffectType.SUMMON_PET;
-    }
+    public override EffectType getEffectType() => EffectType.SUMMON_PET;
 
-    public override bool isInstant()
-    {
-        return true;
-    }
+    public override bool isInstant() => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Player? player = effector.getActingPlayer();
         if (!effector.isPlayer() || player == null || !effected.isPlayer() || effected.isAlikeDead())
-        {
             return;
-        }
 
         if (player.hasPet() || player.isMounted())
         {
@@ -68,9 +60,7 @@ public class SummonPet: AbstractEffect
                 getPetDataByEvolve(collar.getId(), evolveData.getEvolve(), evolveData.getIndex());
 
         if (petData == null || petData.getNpcId() == -1)
-        {
             return;
-        }
 
         NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(petData.getNpcId());
         if (npcTemplate == null)
@@ -110,4 +100,7 @@ public class SummonPet: AbstractEffect
         pet.spawnMe(new Location3D(player.getX() + 50, player.getY() + 100, player.getZ()));
         pet.startFeed();
     }
+
+    public override int GetHashCode() => this.GetSingletonHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj);
 }

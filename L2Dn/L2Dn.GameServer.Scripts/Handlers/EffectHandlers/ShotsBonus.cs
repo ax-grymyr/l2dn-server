@@ -1,15 +1,6 @@
 using L2Dn.GameServer.Model;
-using L2Dn.GameServer.Model.Stats;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * @author Mobius
- */
-public class ShotsBonus: AbstractStatEffect
-{
-	public ShotsBonus(StatSet @params): base(@params, Stat.SHOTS_BONUS)
-	{
-	}
-}
+public sealed class ShotsBonus(StatSet @params): AbstractStatEffect(@params, Stat.SHOTS_BONUS);

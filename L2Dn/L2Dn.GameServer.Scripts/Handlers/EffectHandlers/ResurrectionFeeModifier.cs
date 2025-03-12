@@ -1,15 +1,6 @@
 using L2Dn.GameServer.Model;
-using L2Dn.GameServer.Model.Stats;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * @author Mobius
- */
-public class ResurrectionFeeModifier: AbstractStatEffect
-{
-	public ResurrectionFeeModifier(StatSet @params): base(@params, Stat.RESURRECTION_FEE_MODIFIER)
-	{
-	}
-}
+public sealed class ResurrectionFeeModifier(StatSet @params): AbstractStatEffect(@params, Stat.RESURRECTION_FEE_MODIFIER);

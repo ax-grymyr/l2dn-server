@@ -4,12 +4,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * @author JoeAlisson
- */
-public class ElementalSpiritDefense: AbstractStatEffect
-{
-	public ElementalSpiritDefense(StatSet @params): base(@params, @params.getEnum<ElementalType>("type").getDefenseStat())
-	{
-	}
-}
+public sealed class ElementalSpiritDefense(StatSet @params)
+    : AbstractStatEffect(@params, @params.getEnum<ElementalType>("type").getDefenseStat());

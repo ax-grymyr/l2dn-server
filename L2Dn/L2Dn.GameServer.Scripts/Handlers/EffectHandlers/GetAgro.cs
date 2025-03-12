@@ -6,49 +6,47 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Get Agro effect implementation.
- * @author Adry_85, Mobius
- */
-public class GetAgro: AbstractEffect
+/// <summary>
+/// Get Agro effect implementation.
+/// </summary>
+public sealed class GetAgro: AbstractEffect
 {
-	public GetAgro(StatSet @params)
-	{
-	}
+    public GetAgro(StatSet @params)
+    {
+    }
 
-	public override EffectType getEffectType()
-	{
-		return EffectType.AGGRESSION;
-	}
+    public override EffectType getEffectType() => EffectType.AGGRESSION;
 
-	public override bool isInstant()
-	{
-		return true;
-	}
+    public override bool isInstant() => true;
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
-	{
-		if (effected != null && effected.isAttackable())
-		{
-			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, effector);
+    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        if (effected != null && effected.isAttackable())
+        {
+            effected.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, effector);
 
-			// Monsters from the same clan should assist.
-			NpcTemplate template = ((Attackable) effected).getTemplate();
-			Set<int>? clans = template.getClans();
-			if (clans != null)
-			{
-				World.getInstance().forEachVisibleObjectInRange<Attackable>(effected, template.getClanHelpRange(), nearby =>
-				{
-					if (!nearby.isMovementDisabled() && nearby.getTemplate().isClan(clans))
-					{
-						nearby.addDamageHate(effector, 1, 200);
-						nearby.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, effector);
-					}
-				});
-			}
-		}
-	}
+            // Monsters from the same clan should assist.
+            NpcTemplate template = ((Attackable)effected).getTemplate();
+            Set<int>? clans = template.getClans();
+            if (clans != null)
+            {
+                World.getInstance().forEachVisibleObjectInRange<Attackable>(effected, template.getClanHelpRange(),
+                    nearby =>
+                    {
+                        if (!nearby.isMovementDisabled() && nearby.getTemplate().isClan(clans))
+                        {
+                            nearby.addDamageHate(effector, 1, 200);
+                            nearby.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, effector);
+                        }
+                    });
+            }
+        }
+    }
+
+    public override int GetHashCode() => this.GetSingletonHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj);
 }

@@ -7,37 +7,35 @@ using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Take Castle Start effect implementation.
- * @author St3eT
- */
-public class TakeCastleStart: AbstractEffect
+/// <summary>
+/// Take Castle Start effect implementation.
+/// </summary>
+public sealed class TakeCastleStart: AbstractEffect
 {
-	public TakeCastleStart(StatSet @params)
-	{
-	}
+    public TakeCastleStart(StatSet @params)
+    {
+    }
 
-	public override bool isInstant()
-	{
-		return true;
-	}
+    public override bool isInstant() => true;
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
-	{
-		if (!effector.isPlayer())
-		{
-			return;
-		}
+    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        if (!effector.isPlayer())
+            return;
 
-		Castle? castle = CastleManager.getInstance().getCastle(effected);
-		if (castle != null && castle.getSiege().isInProgress())
-		{
-			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_OPPOSING_CLAN_HAS_STARTED_S1);
-			sm.Params.addSkillName(skill.getId());
-			castle.getSiege().announceToPlayer(sm, false);
-		}
-	}
+        Castle? castle = CastleManager.getInstance().getCastle(effected);
+        if (castle != null && castle.getSiege().isInProgress())
+        {
+            SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_OPPOSING_CLAN_HAS_STARTED_S1);
+            sm.Params.addSkillName(skill.getId());
+            castle.getSiege().announceToPlayer(sm, false);
+        }
+    }
+
+    public override int GetHashCode() => this.GetSingletonHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj);
 }

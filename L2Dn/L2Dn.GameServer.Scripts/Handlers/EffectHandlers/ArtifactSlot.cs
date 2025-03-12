@@ -1,15 +1,6 @@
 using L2Dn.GameServer.Model;
-using L2Dn.GameServer.Model.Stats;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * @author hlwrave
- */
-public class ArtifactSlot: AbstractStatAddEffect
-{
-	public ArtifactSlot(StatSet @params): base(@params, Stat.ARTIFACT_SLOTS)
-	{
-	}
-}
+public sealed class ArtifactSlot(StatSet @params): AbstractStatAddEffect(@params, Stat.ARTIFACT_SLOTS);

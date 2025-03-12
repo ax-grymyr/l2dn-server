@@ -5,33 +5,36 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Block Party effect implementation.
- * @author BiggBoss
- */
-public class BlockParty: AbstractEffect
+/// <summary>
+/// Block Party effect implementation.
+/// </summary>
+public sealed class BlockParty: AbstractEffect
 {
-	public BlockParty(StatSet @params)
-	{
-	}
+    public BlockParty(StatSet @params)
+    {
+    }
 
-	public override bool canStart(Creature effector, Creature effected, Skill skill)
-	{
-		return effected != null && effected.isPlayer();
-	}
+    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    {
+        return effected != null && effected.isPlayer();
+    }
 
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
-	{
-		PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, effected.ObjectId.ToString(),
-			PunishmentAffect.CHARACTER, PunishmentType.PARTY_BAN, null, "Party banned by bot report", "system", true));
-	}
+    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, effected.ObjectId.ToString(),
+            PunishmentAffect.CHARACTER, PunishmentType.PARTY_BAN, null, "Party banned by bot report", "system", true));
+    }
 
-	public override void onExit(Creature effector, Creature effected, Skill skill)
-	{
-		PunishmentManager.getInstance().stopPunishment(effected.ObjectId.ToString(), PunishmentAffect.CHARACTER,
-			PunishmentType.PARTY_BAN);
-	}
+    public override void onExit(Creature effector, Creature effected, Skill skill)
+    {
+        PunishmentManager.getInstance().stopPunishment(effected.ObjectId.ToString(), PunishmentAffect.CHARACTER,
+            PunishmentType.PARTY_BAN);
+    }
+
+    public override int GetHashCode() => this.GetSingletonHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj);
 }

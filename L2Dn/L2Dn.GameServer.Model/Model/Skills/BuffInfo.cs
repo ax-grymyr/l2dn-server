@@ -313,13 +313,13 @@ public class BuffInfo
 			}
 
 			// If it's a continuous effect, if has ticks schedule a task with period, otherwise schedule a simple task to end it.
-			if (effect.getTicks() > 0)
+			if (effect.Ticks > 0)
 			{
 				// The task for the effect ticks.
 				EffectTickTask effectTask = new EffectTickTask(this, effect);
 				ScheduledFuture scheduledFuture = ThreadPool.scheduleAtFixedRate(effectTask,
-					effect.getTicks() * TimeSpan.FromMilliseconds(Config.EFFECT_TICK_RATIO),
-					effect.getTicks() * TimeSpan.FromMilliseconds(Config.EFFECT_TICK_RATIO));
+					effect.Ticks * TimeSpan.FromMilliseconds(Config.EFFECT_TICK_RATIO),
+					effect.Ticks * TimeSpan.FromMilliseconds(Config.EFFECT_TICK_RATIO));
 
 				// Adds the task for ticking.
 				addTask(effect, new EffectTaskInfo(effectTask, scheduledFuture));

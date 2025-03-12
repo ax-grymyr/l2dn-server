@@ -6,41 +6,34 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Vitality Point Up effect implementation.
- * @author Adry_85
- */
-public class VitalityPointUp: AbstractEffect
+/// <summary>
+/// Vitality Point Up effect implementation.
+/// </summary>
+public sealed class VitalityPointUp: AbstractEffect
 {
-	private readonly int _value;
+    private readonly int _value;
 
-	public VitalityPointUp(StatSet @params)
-	{
-		_value = @params.getInt("value", 0);
-	}
+    public VitalityPointUp(StatSet @params)
+    {
+        _value = @params.getInt("value", 0);
+    }
 
-	public override EffectType getEffectType()
-	{
-		return EffectType.VITALITY_POINT_UP;
-	}
+    public override EffectType getEffectType() => EffectType.VITALITY_POINT_UP;
 
-	public override bool canStart(Creature effector, Creature effected, Skill skill)
-	{
-		return effected != null && effected.isPlayer();
-	}
+    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    {
+        return effected != null && effected.isPlayer();
+    }
 
-	public override bool isInstant()
-	{
-		return true;
-	}
+    public override bool isInstant() => true;
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
-	{
+    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    {
         Player? player = effected.getActingPlayer();
         if (player == null)
             return;
@@ -55,29 +48,32 @@ public class VitalityPointUp: AbstractEffect
         }
 
         // Send item list to update vitality items with red icons in inventory.
-		ThreadPool.schedule(() =>
-		{
-			List<Item> items = [];
-			foreach (Item i in player.getInventory().getItems())
-			{
-				if (i.getTemplate().hasSkills())
-				{
-					foreach (ItemSkillHolder s in i.getTemplate().getAllSkills())
-					{
-						if (s.getSkill().hasEffectType(EffectType.VITALITY_POINT_UP))
-						{
-							items.Add(i);
-							break;
-						}
-					}
-				}
-			}
+        ThreadPool.schedule(() =>
+        {
+            List<Item> items = [];
+            foreach (Item i in player.getInventory().getItems())
+            {
+                if (i.getTemplate().hasSkills())
+                {
+                    foreach (ItemSkillHolder s in i.getTemplate().getAllSkills())
+                    {
+                        if (s.getSkill().hasEffectType(EffectType.VITALITY_POINT_UP))
+                        {
+                            items.Add(i);
+                            break;
+                        }
+                    }
+                }
+            }
 
-			if (items.Count != 0)
-			{
-				InventoryUpdatePacket iu = new InventoryUpdatePacket(items);
-				player.sendInventoryUpdate(iu);
-			}
-		}, 1000);
-	}
+            if (items.Count != 0)
+            {
+                InventoryUpdatePacket iu = new InventoryUpdatePacket(items);
+                player.sendInventoryUpdate(iu);
+            }
+        }, 1000);
+    }
+
+    public override int GetHashCode() => _value;
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x._value);
 }

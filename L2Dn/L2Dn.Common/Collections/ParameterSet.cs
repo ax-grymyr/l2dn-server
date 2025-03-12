@@ -55,6 +55,10 @@ public sealed class ParameterSet<TKey>
     public long GetInt64(TKey key) => GetValue<long>(key);
     public long GetInt64(TKey key, int defaultValue) => GetInt64Optional(key) ?? defaultValue;
 
+    public decimal? GetDecimalOptional(TKey key) => GetValueOptional<decimal>(key);
+    public decimal GetDecimal(TKey key) => GetValue<decimal>(key);
+    public decimal GetDecimal(TKey key, decimal defaultValue) => GetDecimalOptional(key) ?? defaultValue;
+
     public double? GetDoubleOptional(TKey key) => GetValueOptional<double>(key);
     public double GetDouble(TKey key) => GetValue<double>(key);
     public double GetDouble(TKey key, double defaultValue) => GetDoubleOptional(key) ?? defaultValue;
@@ -66,6 +70,20 @@ public sealed class ParameterSet<TKey>
     public bool? GetBooleanOptional(TKey key) => GetValueOptional<bool>(key);
     public bool GetBoolean(TKey key) => GetValue<bool>(key);
     public bool GetBoolean(TKey key, bool defaultValue) => GetBooleanOptional(key) ?? defaultValue;
+
+    public TimeSpan? GetTimeSpanSecondsOptional(TKey key) => GetTimeSpanOptional(key, TimeSpan.TicksPerSecond);
+    public TimeSpan GetTimeSpanSeconds(TKey key) => GetTimeSpan(key, TimeSpan.TicksPerSecond);
+
+    public TimeSpan GetTimeSpanSeconds(TKey key, TimeSpan defaultValue) =>
+        GetTimeSpanOptional(key, TimeSpan.TicksPerSecond) ?? defaultValue;
+
+    public TimeSpan? GetTimeSpanMilliSecondsOptional(TKey key) =>
+        GetTimeSpanOptional(key, TimeSpan.TicksPerMillisecond);
+
+    public TimeSpan GetTimeSpanMilliSeconds(TKey key) => GetTimeSpan(key, TimeSpan.TicksPerMillisecond);
+
+    public TimeSpan GetTimeSpanMilliSeconds(TKey key, TimeSpan defaultValue) =>
+        GetTimeSpanOptional(key, TimeSpan.TicksPerMillisecond) ?? defaultValue;
 
     private static string ConvertToString(object obj) =>
         obj switch
@@ -95,5 +113,15 @@ public sealed class ParameterSet<TKey>
             return result;
 
         throw new InvalidCastException($"{typeof(T).Name} value required, but found: {s}");
+    }
+
+    private TimeSpan GetTimeSpan(TKey key, long multiplier) =>
+        GetTimeSpanOptional(key, multiplier) ??
+        throw new InvalidCastException("Decimal value required, but not specified");
+
+    private TimeSpan? GetTimeSpanOptional(TKey key, long multiplier)
+    {
+        decimal? value = GetDecimalOptional(key);
+        return value == null ? null : TimeSpan.FromTicks((long)(value.Value * multiplier));
     }
 }

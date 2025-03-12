@@ -1,64 +1,57 @@
+using System.Collections.Frozen;
 using System.Globalization;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
-using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Defence Trait effect implementation.
- * @author NosBit
- */
-public class DefenceTrait: AbstractEffect
+/// <summary>
+/// Defence Trait effect implementation.
+/// </summary>
+public sealed class DefenceTrait: AbstractEffect
 {
-	private readonly Map<TraitType, float> _defenceTraits = new();
+    private readonly FrozenDictionary<TraitType, float> _defenceTraits;
 
-	public DefenceTrait(StatSet @params)
-	{
-		if (@params.isEmpty())
-		{
-			LOGGER.Warn(GetType().Name + ": must have parameters.");
-			return;
-		}
+    public DefenceTrait(StatSet @params)
+    {
+        if (@params.isEmpty())
+            throw new ArgumentException(nameof(DefenceTrait) + ": must have parameters.");
 
-		foreach (var param in @params.getSet())
-		{
-			_defenceTraits.put(Enum.Parse<TraitType>(param.Key),
-				float.Parse(param.Value.ToString() ?? string.Empty, CultureInfo.InvariantCulture) / 100);
-		}
-	}
+        _defenceTraits = @params.getSet().Select(p => new KeyValuePair<TraitType, float>(
+            Enum.Parse<TraitType>(p.Key, true),
+            float.Parse(p.Value.ToString() ?? string.Empty, CultureInfo.InvariantCulture) / 100)).ToFrozenDictionary();
+    }
 
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
-	{
-		foreach (var trait in _defenceTraits)
-		{
-			if (trait.Value < 1.0f)
-			{
-				effected.getStat().mergeDefenceTrait(trait.Key, trait.Value);
-			}
-			else
-			{
-				effected.getStat().mergeInvulnerableTrait(trait.Key);
-			}
-		}
-	}
+    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        foreach ((TraitType key, float value) in _defenceTraits)
+        {
+            if (value < 1.0f)
+                effected.getStat().mergeDefenceTrait(key, value);
+            else
+                effected.getStat().mergeInvulnerableTrait(key);
+        }
+    }
 
-	public override void onExit(Creature effector, Creature effected, Skill skill)
-	{
-		foreach (var trait in _defenceTraits)
-		{
-			if (trait.Value < 1.0f)
-			{
-				effected.getStat().removeDefenceTrait(trait.Key, trait.Value);
-			}
-			else
-			{
-				effected.getStat().removeInvulnerableTrait(trait.Key);
-			}
-		}
-	}
+    public override void onExit(Creature effector, Creature effected, Skill skill)
+    {
+        foreach ((TraitType key, float value) in _defenceTraits)
+        {
+            if (value < 1.0f)
+                effected.getStat().removeDefenceTrait(key, value);
+            else
+                effected.getStat().removeInvulnerableTrait(key);
+        }
+    }
+
+    public override int GetHashCode() => _defenceTraits.GetDictionaryHashCode();
+
+    public override bool Equals(object? obj) =>
+        this.EqualsTo(obj, static x => x._defenceTraits.GetDictionaryComparable());
 }

@@ -3,14 +3,14 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Immobile Pet Buff effect implementation.
- * @author demonia
- */
-public class ImmobilePetBuff: AbstractEffect
+/// <summary>
+/// Immobile Pet Buff effect implementation.
+/// </summary>
+public sealed class ImmobilePetBuff: AbstractEffect
 {
     public ImmobilePetBuff(StatSet @params)
     {
@@ -29,4 +29,7 @@ public class ImmobilePetBuff: AbstractEffect
             effected.setImmobilized(true);
         }
     }
+
+    public override int GetHashCode() => this.GetSingletonHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj);
 }

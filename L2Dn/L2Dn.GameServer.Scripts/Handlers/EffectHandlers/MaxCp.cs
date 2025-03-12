@@ -3,45 +3,44 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Stats;
 using L2Dn.Model.Enums;
+using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * @author Nik
- */
-public class MaxCp: AbstractStatEffect
+public sealed class MaxCp: AbstractStatEffect
 {
-	private readonly bool _heal;
+    private readonly bool _heal;
 
-	public MaxCp(StatSet @params): base(@params, Stat.MAX_CP)
-	{
+    public MaxCp(StatSet @params): base(@params, Stat.MAX_CP)
+    {
+        _heal = @params.getBoolean("heal", false);
+    }
 
-		_heal = @params.getBoolean("heal", false);
-	}
+    public override void continuousInstant(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        if (_heal)
+        {
+            ThreadPool.schedule(() =>
+            {
+                switch (Mode)
+                {
+                    case StatModifierType.DIFF:
+                    {
+                        effected.setCurrentCp(effected.getCurrentCp() + Amount);
+                        break;
+                    }
+                    case StatModifierType.PER:
+                    {
+                        effected.setCurrentCp(effected.getCurrentCp() + effected.getMaxCp() * (Amount / 100));
+                        break;
+                    }
+                }
+            }, 100);
+        }
+    }
 
-	public override void continuousInstant(Creature effector, Creature effected, Skill skill, Item? item)
-	{
-		if (_heal)
-		{
-			ThreadPool.schedule(() =>
-			{
-				switch (_mode)
-				{
-					case StatModifierType.DIFF:
-					{
-						effected.setCurrentCp(effected.getCurrentCp() + _amount);
-						break;
-					}
-					case StatModifierType.PER:
-					{
-						effected.setCurrentCp(effected.getCurrentCp() + effected.getMaxCp() * (_amount / 100));
-						break;
-					}
-				}
-			}, 100);
-		}
-	}
+    public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), _heal);
+    public override bool Equals(object? obj) => base.Equals(obj) && this.EqualsTo(obj, static x => x._heal);
 }

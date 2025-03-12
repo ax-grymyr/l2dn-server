@@ -5,46 +5,39 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * @author Sdw
- */
-public class DeleteTopAgro: AbstractEffect
+public sealed class DeleteTopAgro: AbstractEffect
 {
-	private readonly int _chance;
+    private readonly int _chance;
 
-	public DeleteTopAgro(StatSet @params)
-	{
-		_chance = @params.getInt("chance", 100);
-	}
+    public DeleteTopAgro(StatSet @params)
+    {
+        _chance = @params.getInt("chance", 100);
+    }
 
-	public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
-	{
-		return Formulas.calcProbability(_chance, effector, effected, skill);
-	}
+    public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
+    {
+        return Formulas.calcProbability(_chance, effector, effected, skill);
+    }
 
-	public override EffectType getEffectType()
-	{
-		return EffectType.HATE;
-	}
+    public override EffectType getEffectType() => EffectType.HATE;
 
-	public override bool isInstant()
-	{
-		return true;
-	}
+    public override bool isInstant() => true;
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
-	{
-		if (!effected.isAttackable())
-		{
-			return;
-		}
+    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        if (!effected.isAttackable())
+            return;
 
-		Attackable target = (Attackable) effected;
-		target.stopHating(target.getMostHated());
-		target.setWalking();
-		target.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-	}
+        Attackable target = (Attackable)effected;
+        target.stopHating(target.getMostHated());
+        target.setWalking();
+        target.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+    }
+
+    public override int GetHashCode() => _chance;
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x._chance);
 }

@@ -7,43 +7,44 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Geometry;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Throw Up effect implementation.
- */
-public class FlyAway: AbstractEffect
+/// <summary>
+/// Throw Up effect implementation.
+/// </summary>
+public sealed class FlyAway: AbstractEffect
 {
-	private readonly int _radius;
+    private readonly int _radius;
 
-	public FlyAway(StatSet @params)
-	{
-		_radius = @params.getInt("radius");
-	}
+    public FlyAway(StatSet @params)
+    {
+        _radius = @params.getInt("radius");
+    }
 
-	public override bool isInstant()
-	{
-		return true;
-	}
+    public override bool isInstant() => true;
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
-	{
-		int dx = effector.getX() - effected.getX();
-		int dy = effector.getY() - effected.getY();
-		double distance = Math.Sqrt(dx * dx + dy * dy);
-		double nRadius = effector.getCollisionRadius() + effected.getCollisionRadius() + _radius;
+    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        int dx = effector.getX() - effected.getX();
+        int dy = effector.getY() - effected.getY();
+        double distance = Math.Sqrt(dx * dx + dy * dy);
+        double nRadius = effector.getCollisionRadius() + effected.getCollisionRadius() + _radius;
 
-		int x = (int) (effector.getX() - nRadius * (dx / distance));
-		int y = (int) (effector.getY() - nRadius * (dy / distance));
-		int z = effector.getZ();
+        int x = (int)(effector.getX() - nRadius * (dx / distance));
+        int y = (int)(effector.getY() - nRadius * (dy / distance));
+        int z = effector.getZ();
 
-		Location3D destination = GeoEngine.getInstance().getValidLocation(effected.Location.Location3D,
-			new Location3D(x, y, z), effected.getInstanceWorld());
+        Location3D destination = GeoEngine.getInstance().getValidLocation(effected.Location.Location3D,
+            new Location3D(x, y, z), effected.getInstanceWorld());
 
-		effected.broadcastPacket(new FlyToLocationPacket(effected, destination, FlyType.THROW_UP));
-		effected.setXYZ(destination);
-		effected.broadcastPacket(new ValidateLocationPacket(effected));
-		effected.revalidateZone(true);
-	}
+        effected.broadcastPacket(new FlyToLocationPacket(effected, destination, FlyType.THROW_UP));
+        effected.setXYZ(destination);
+        effected.broadcastPacket(new ValidateLocationPacket(effected));
+        effected.revalidateZone(true);
+    }
+
+    public override int GetHashCode() => _radius;
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x._radius);
 }

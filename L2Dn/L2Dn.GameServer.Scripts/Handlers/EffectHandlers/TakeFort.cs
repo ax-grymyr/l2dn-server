@@ -8,50 +8,50 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Take Fort effect implementation.
- * @author Adry_85
- */
-public class TakeFort: AbstractEffect
+/// <summary>
+/// Take Fort effect implementation.
+/// </summary>
+public sealed class TakeFort: AbstractEffect
 {
-	public TakeFort(StatSet @params)
-	{
-	}
+    public TakeFort(StatSet @params)
+    {
+    }
 
-	public override bool isInstant()
-	{
-		return true;
-	}
+    public override bool isInstant() => true;
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
-	{
+    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    {
         Player? player = effector.getActingPlayer();
-		if (!effector.isPlayer() || player == null)
-			return;
+        if (!effector.isPlayer() || player == null)
+            return;
 
         Clan? clan = player.getClan();
         if (clan == null)
             return;
 
-		Fort? fort = FortManager.getInstance().getFort(effector);
-		if (fort != null && fort.getResidenceId() == FortManager.ORC_FORTRESS)
-		{
-			if (fort.getSiege().isInProgress())
-			{
-				fort.endOfSiege(clan);
-				if (effector.isPlayer())
-				{
-					FortSiegeManager.getInstance().dropCombatFlag(player, FortManager.ORC_FORTRESS);
+        Fort? fort = FortManager.getInstance().getFort(effector);
+        if (fort != null && fort.getResidenceId() == FortManager.ORC_FORTRESS)
+        {
+            if (fort.getSiege().isInProgress())
+            {
+                fort.endOfSiege(clan);
+                if (effector.isPlayer())
+                {
+                    FortSiegeManager.getInstance().dropCombatFlag(player, FortManager.ORC_FORTRESS);
 
-					Message mail = new Message(player.ObjectId, "Orc Fortress", "", MailType.NPC);
-					Mail attachment = mail.createAttachments();
-					attachment.addItem("Orc Fortress", Inventory.ADENA_ID, 30_000_000, player, player);
-					MailManager.getInstance().sendMessage(mail);
-				}
-			}
-		}
-	}
+                    Message mail = new Message(player.ObjectId, "Orc Fortress", "", MailType.NPC);
+                    Mail attachment = mail.createAttachments();
+                    attachment.addItem("Orc Fortress", Inventory.ADENA_ID, 30_000_000, player, player);
+                    MailManager.getInstance().sendMessage(mail);
+                }
+            }
+        }
+    }
+
+    public override int GetHashCode() => this.GetSingletonHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj);
 }

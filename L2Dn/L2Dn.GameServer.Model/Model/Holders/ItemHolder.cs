@@ -19,7 +19,7 @@ public class ItemHolder(int id, long count): IIdentifiable
     public long getCount() => count;
 
     public override bool Equals(object? obj) =>
-        obj == this || obj is ItemHolder other && id == other.getId() && count == other.getCount();
+        ReferenceEquals(obj, this) || obj is ItemHolder other && id == other.getId() && count == other.getCount();
 
     public override int GetHashCode() => HashCode.Combine(id, count);
 

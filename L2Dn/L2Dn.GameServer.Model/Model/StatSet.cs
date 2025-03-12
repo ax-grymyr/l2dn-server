@@ -222,6 +222,9 @@ public class StatSet
 		if (val is int i)
 			return i;
 
+        if (val is IConvertible convertible)
+            return convertible.ToInt32(CultureInfo.InvariantCulture);
+
 		try
 		{
 			return int.Parse((string)val);
@@ -361,7 +364,10 @@ public class StatSet
 			return defaultValue;
 
         if (val is long l)
-			return l;
+            return l;
+
+        if (val is uint u)
+            return u;
 
         try
         {
@@ -426,8 +432,14 @@ public class StatSet
 		if (val is double d)
 			return d;
 
-		if (val is float f)
-			return f;
+        if (val is float f)
+            return f;
+
+        if (val is decimal m)
+            return (double)m;
+
+        if (val is IConvertible convertible)
+            return convertible.ToDouble(CultureInfo.InvariantCulture);
 
 		try
         {
@@ -452,6 +464,9 @@ public class StatSet
         if (val is float f)
             return f;
 
+        if (val is decimal m)
+            return (double)m;
+
 		if (val is IConvertible convertible)
 			return convertible.ToDouble(CultureInfo.InvariantCulture);
 
@@ -466,13 +481,16 @@ public class StatSet
 		}
 	}
 
-	public string getString(string key)
+    public string getString(string key)
     {
-        object val = _set.get(key) ?? throw new InvalidCastException("String value required, but not specified");
-		return val.ToString() ?? string.Empty;
-	}
+        object? val = _set.get(key);
+        if (val is null)
+            throw new InvalidCastException("String value required, but not specified");
 
-	public string getString(string key, string defaultValue)
+        return val.ToString() ?? string.Empty;
+    }
+
+    public string getString(string key, string defaultValue)
 	{
 		object? val = _set.get(key);
 		if (val == null)

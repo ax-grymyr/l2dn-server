@@ -4,45 +4,38 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Root effect implementation.
- * @author mkizub
- */
-public class Root: AbstractEffect
+/// <summary>
+/// Root effect implementation.
+/// </summary>
+public sealed class Root: AbstractEffect
 {
-	public Root(StatSet @params)
-	{
-	}
+    public Root(StatSet @params)
+    {
+    }
 
-	public override long getEffectFlags()
-	{
-		return EffectFlag.ROOTED.getMask();
-	}
+    public override long getEffectFlags() => EffectFlag.ROOTED.getMask();
 
-	public override EffectType getEffectType()
-	{
-		return EffectType.ROOT;
-	}
+    public override EffectType getEffectType() => EffectType.ROOT;
 
-	public override void onExit(Creature effector, Creature effected, Skill skill)
-	{
-		if (!effected.isPlayer())
-		{
-			effected.getAI().notifyEvent(CtrlEvent.EVT_THINK);
-		}
-	}
+    public override void onExit(Creature effector, Creature effected, Skill skill)
+    {
+        if (!effected.isPlayer())
+            effected.getAI().notifyEvent(CtrlEvent.EVT_THINK);
+    }
 
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
-	{
-		if (effected == null || effected.isRaid())
-		{
-			return;
-		}
+    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        if (effected == null || effected.isRaid())
+            return;
 
-		effected.stopMove(null);
-		effected.getAI().notifyEvent(CtrlEvent.EVT_ROOTED);
-	}
+        effected.stopMove(null);
+        effected.getAI().notifyEvent(CtrlEvent.EVT_ROOTED);
+    }
+
+    public override int GetHashCode() => this.GetSingletonHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj);
 }

@@ -5,62 +5,55 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Double Casting effect implementation.
- * @author Nik
- */
-public class DoubleCast: AbstractEffect
+/// <summary>
+/// Double Casting effect implementation.
+/// </summary>
+public sealed class DoubleCast: AbstractEffect
 {
-	private static readonly SkillHolder[] TOGGLE_SKILLS =
-	[
-		new SkillHolder(11007, 1),
-		new SkillHolder(11009, 1),
-		new SkillHolder(11008, 1),
-		new SkillHolder(11010, 1)
-	];
+    private static readonly SkillHolder[] _toggleSkills = [new(11007, 1), new(11009, 1), new(11008, 1), new(11010, 1),];
+    private readonly Map<int, List<SkillHolder>> _addedToggles;
 
-	private readonly Map<int, List<SkillHolder>> _addedToggles;
+    public DoubleCast(StatSet @params)
+    {
+        _addedToggles = [];
+    }
 
-	public DoubleCast(StatSet @params)
-	{
-		_addedToggles = new();
-	}
+    public override long getEffectFlags() => EffectFlag.DOUBLE_CAST.getMask();
 
-	public override long getEffectFlags()
-	{
-		return EffectFlag.DOUBLE_CAST.getMask();
-	}
+    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        if (effected.isPlayer())
+        {
+            foreach (SkillHolder holder in _toggleSkills)
+            {
+                Skill s = holder.getSkill();
+                if (s != null && !effected.isAffectedBySkill(holder))
+                {
+                    _addedToggles.GetOrAdd(effected.ObjectId, _ => []).Add(holder);
+                    s.applyEffects(effected, effected);
+                }
+            }
+        }
 
-	public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
-	{
-		if (effected.isPlayer())
-		{
-			foreach (SkillHolder holder in TOGGLE_SKILLS)
-			{
-				Skill s = holder.getSkill();
-				if (s != null && !effected.isAffectedBySkill(holder))
-				{
-					_addedToggles.GetOrAdd(effected.ObjectId, _ => []).Add(holder);
-					s.applyEffects(effected, effected);
-				}
-			}
-		}
+        base.onStart(effector, effected, skill, item);
+    }
 
-		base.onStart(effector, effected, skill, item);
-	}
+    public override void onExit(Creature effector, Creature effected, Skill skill)
+    {
+        if (effected.isPlayer())
+        {
+            _addedToggles.computeIfPresent(effected.ObjectId, (_, v) =>
+            {
+                v.ForEach(h => effected.stopSkillEffects(h.getSkill()));
+                return (object?)null; // TODO: !!!!!!!!!
+            });
+        }
+    }
 
-	public override void onExit(Creature effector, Creature effected, Skill skill)
-	{
-		if (effected.isPlayer())
-		{
-			_addedToggles.computeIfPresent(effected.ObjectId, (_, v) =>
-			{
-				v.ForEach(h => effected.stopSkillEffects(h.getSkill()));
-				return (object?)null;
-			});
-		}
-	}
+    public override int GetHashCode() => this.GetSingletonHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj);
 }

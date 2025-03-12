@@ -1,15 +1,6 @@
 using L2Dn.GameServer.Model;
-using L2Dn.GameServer.Model.Stats;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * @author Mobius
- */
-public class ExpModifyPet: AbstractStatAddEffect
-{
-	public ExpModifyPet(StatSet @params): base(@params, Stat.BONUS_EXP_PET)
-	{
-	}
-}
+public sealed class ExpModifyPet(StatSet @params): AbstractStatAddEffect(@params, Stat.BONUS_EXP_PET);

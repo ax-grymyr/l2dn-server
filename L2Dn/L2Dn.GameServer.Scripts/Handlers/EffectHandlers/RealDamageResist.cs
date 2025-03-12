@@ -1,15 +1,6 @@
 using L2Dn.GameServer.Model;
-using L2Dn.GameServer.Model.Stats;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * @author Mobius
- */
-public class RealDamageResist: AbstractStatPercentEffect
-{
-	public RealDamageResist(StatSet @params): base(@params, Stat.REAL_DAMAGE_RESIST)
-	{
-	}
-}
+public sealed class RealDamageResist(StatSet @params): AbstractStatPercentEffect(@params, Stat.REAL_DAMAGE_RESIST);

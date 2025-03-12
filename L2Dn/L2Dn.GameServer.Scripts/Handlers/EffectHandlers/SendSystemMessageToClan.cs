@@ -6,40 +6,35 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Item Effect: Increase/decrease PK count permanently.
- * @author Nik
- */
-public class SendSystemMessageToClan: AbstractEffect
+public sealed class SendSystemMessageToClan: AbstractEffect
 {
-	private readonly SystemMessagePacket _message;
+    private readonly SystemMessageId _messageId;
+    private readonly SystemMessagePacket _message;
 
-	public SendSystemMessageToClan(StatSet @params)
-	{
-		int id = @params.getInt("id", 0);
-		_message = new SystemMessagePacket((SystemMessageId)id);
-	}
+    public SendSystemMessageToClan(StatSet @params)
+    {
+        int id = @params.getInt("id", 0);
+        _messageId = (SystemMessageId)id;
+        _message = new SystemMessagePacket((SystemMessageId)id);
+    }
 
-	public override bool isInstant()
-	{
-		return true;
-	}
+    public override bool isInstant() => true;
 
-	public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
-	{
-		Player? player = effected.getActingPlayer();
-		if (player == null)
-		{
-			return;
-		}
+    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    {
+        Player? player = effected.getActingPlayer();
+        if (player == null)
+            return;
 
-		Clan? clan = player.getClan();
-		if (clan != null)
-		{
-			clan.broadcastToOnlineMembers(_message);
-		}
-	}
+        Clan? clan = player.getClan();
+        if (clan != null)
+            clan.broadcastToOnlineMembers(_message);
+    }
+
+    public override int GetHashCode() => HashCode.Combine(_messageId);
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x._messageId);
 }
