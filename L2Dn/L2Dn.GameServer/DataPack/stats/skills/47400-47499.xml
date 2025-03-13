@@ -348,15 +348,15 @@
 			</effect>
 			<effect name="PAtk" fromLevel="1" toLevel="2" fromSubLevel="1001" toSubLevel="1002">
 				<amount>
-					<value level="1" fromSubLevel="1001" toSubLevel="1001">-1000</value>
-					<value level="2" fromSubLevel="1002" toSubLevel="1002">-2000</value>
+					<value fromLevel="1" toLevel="2" fromSubLevel="1001" toSubLevel="1001">-1000</value>
+					<value fromLevel="1" toLevel="2" fromSubLevel="1002" toSubLevel="1002">-2000</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="MAtk" fromLevel="1" toLevel="2" fromSubLevel="1001" toSubLevel="1002">
 				<amount>
-					<value level="1" fromSubLevel="1001" toSubLevel="1001">-1000</value>
-					<value level="2" fromSubLevel="1002" toSubLevel="1002">-2000</value>
+					<value fromLevel="1" toLevel="2" fromSubLevel="1001" toSubLevel="1001">-1000</value>
+					<value fromLevel="1" toLevel="2" fromSubLevel="1002" toSubLevel="1002">-2000</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>

@@ -4480,13 +4480,6 @@
 					<value level="9">10</value>
 					<value level="10">10</value>
 				</IMPRISON>
-				<SLEEP>
-					<value fromLevel="1" toLevel="6">0</value>
-					<value level="7">5</value>
-					<value level="8">10</value>
-					<value level="9">10</value>
-					<value level="10">10</value>
-				</SLEEP>
 				<PULL>
 					<value fromLevel="1" toLevel="6">0</value>
 					<value level="7">5</value>
