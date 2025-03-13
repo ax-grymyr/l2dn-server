@@ -5,8 +5,8 @@ using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Clans;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Clans;
@@ -94,8 +94,8 @@ public class ClanWar
 			// however, when the other side reputation score is 0 or below, your clan cannot acquire any reputation points from them.
 			if (victimClan.getReputationScore() > 0)
 			{
-				victimClan.takeReputationScore(Config.REPUTATION_SCORE_PER_KILL);
-				killerClan.addReputationScore(Config.REPUTATION_SCORE_PER_KILL);
+				victimClan.takeReputationScore(Config.Feature.REPUTATION_SCORE_PER_KILL);
+				killerClan.addReputationScore(Config.Feature.REPUTATION_SCORE_PER_KILL);
 			}
 
 			// System Message notification to clan members

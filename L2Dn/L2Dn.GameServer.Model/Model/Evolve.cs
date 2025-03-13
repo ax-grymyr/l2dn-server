@@ -6,11 +6,11 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using Pet = L2Dn.GameServer.Model.Actor.Instances.Pet;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 

@@ -4,9 +4,9 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -43,11 +43,11 @@ public readonly struct AcquireSkillInfoPacket: IOutgoingPacket
         _type = skillType;
         _reqs = new();
 
-        if (skillType != AcquireSkillType.PLEDGE || Config.LIFE_CRYSTAL_NEEDED)
+        if (skillType != AcquireSkillType.PLEDGE || Config.Character.LIFE_CRYSTAL_NEEDED)
         {
             foreach (List<ItemHolder> item in skillLearn.getRequiredItems())
             {
-                if (!Config.DIVINE_SP_BOOK_NEEDED && _id == (int)CommonSkill.DIVINE_INSPIRATION)
+                if (!Config.Character.DIVINE_SP_BOOK_NEEDED && _id == (int)CommonSkill.DIVINE_INSPIRATION)
                 {
                     continue;
                 }

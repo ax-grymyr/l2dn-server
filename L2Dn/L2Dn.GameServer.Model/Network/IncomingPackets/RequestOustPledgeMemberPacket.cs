@@ -2,10 +2,10 @@
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -58,8 +58,8 @@ public struct RequestOustPledgeMemberPacket: IIncomingPacket<GameSession>
         }
 
         // this also updates the database
-        clan.removeClanMember(member.getObjectId(), DateTime.UtcNow.AddMinutes(Config.ALT_CLAN_JOIN_MINS));
-        clan.setCharPenaltyExpiryTime(DateTime.UtcNow.AddMinutes(Config.ALT_CLAN_JOIN_MINS)); // TODO: check, multiplier was 86400000
+        clan.removeClanMember(member.getObjectId(), DateTime.UtcNow.AddMinutes(Config.Character.ALT_CLAN_JOIN_MINS));
+        clan.setCharPenaltyExpiryTime(DateTime.UtcNow.AddMinutes(Config.Character.ALT_CLAN_JOIN_MINS)); // TODO: check, multiplier was 86400000
         clan.updateClanInDB();
 
         SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_IS_DISMISSED_FROM_THE_CLAN);

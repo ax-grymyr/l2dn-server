@@ -28,7 +28,7 @@ public static class ParseUtil
         ReadOnlySpan<char> span = value.AsSpan();
         foreach (System.Range range in span.Split(separator))
         {
-            ReadOnlySpan<char> v = span[range];
+            ReadOnlySpan<char> v = span[range].Trim();
             if (storageSize < v.Length + addLength)
             {
                 string s = addPrefix + new string(v) + addSuffix;
@@ -64,7 +64,7 @@ public static class ParseUtil
         List<T> list = new(16);
         ReadOnlySpan<char> span = value.AsSpan();
         foreach (System.Range range in span.Split(separator))
-            list.Add(T.Parse(span[range], CultureInfo.InvariantCulture));
+            list.Add(T.Parse(span[range].Trim(), CultureInfo.InvariantCulture));
 
         return list.ToFrozenSet();
     }
@@ -75,7 +75,7 @@ public static class ParseUtil
         List<T> list = new(16);
         ReadOnlySpan<char> span = value.AsSpan();
         foreach (System.Range range in span.Split(separator))
-            list.Add(Enum.Parse<T>(span[range], ignoreCase));
+            list.Add(Enum.Parse<T>(span[range].Trim(), ignoreCase));
 
         return list.ToFrozenSet();
     }

@@ -10,10 +10,10 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.OutgoingPackets.AutoPlay;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.TaskManagers;
@@ -261,7 +261,7 @@ public class AutoPlayTaskManager
 				Player? leader = party == null ? null : party.getLeader();
 				if (Config.ENABLE_AUTO_ASSIST && party != null && leader != null && leader != player && !leader.isDead())
 				{
-					if (leader.Distance3D(player) < Config.ALT_PARTY_RANGE * 2 /* 2? */)
+					if (leader.Distance3D(player) < Config.Character.ALT_PARTY_RANGE * 2 /* 2? */)
 					{
 						WorldObject? leaderTarget = leader.getTarget();
                         Player? leaderTargetPlayer = leaderTarget?.getActingPlayer();

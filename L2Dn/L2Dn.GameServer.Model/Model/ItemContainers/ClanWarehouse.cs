@@ -4,7 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Events.Impl.Items;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.StaticData;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.ItemContainers;
 
@@ -39,7 +39,7 @@ public class ClanWarehouse: Warehouse
 
 	public override bool validateCapacity(long slots)
 	{
-		return _items.size() + slots <= Config.WAREHOUSE_SLOTS_CLAN;
+		return _items.size() + slots <= Config.Character.WAREHOUSE_SLOTS_CLAN;
 	}
 
 	public override Item? addItem(string process, int itemId, long count, Player? actor, object? reference)

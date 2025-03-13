@@ -11,9 +11,9 @@ using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Teleporters;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -123,7 +123,7 @@ public sealed class FortManager: Merchant
                 HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fortress/foreman-report.htm", player);
 
                 htmlContent.Replace("%objectId%", ObjectId.ToString());
-                if (Config.FS_MAX_OWN_TIME > 0)
+                if (Config.Feature.FS_MAX_OWN_TIME > 0)
                 {
                     TimeSpan time = fort.getTimeTillRebelArmy() ?? TimeSpan.Zero;
                     htmlContent.Replace("%hr%", time.Hours.ToString());
@@ -145,7 +145,7 @@ public sealed class FortManager: Merchant
                     HtmlContent.LoadFromFile("html/fortress/foreman-castlereport.htm", player);
 
                 htmlContent.Replace("%objectId%", ObjectId.ToString());
-                if (Config.FS_MAX_OWN_TIME > 0)
+                if (Config.Feature.FS_MAX_OWN_TIME > 0)
                 {
                     TimeSpan time = fort.getTimeTillRebelArmy() ?? TimeSpan.Zero;
                     htmlContent.Replace("%hr%", time.Hours.ToString());
@@ -398,18 +398,18 @@ public sealed class FortManager: Merchant
                             {
                                 case 300:
                                 {
-                                    cost = Config.FS_HPREG1_FEE;
+                                    cost = Config.Feature.FS_HPREG1_FEE;
                                     break;
                                 }
                                 default: // 400
                                 {
-                                    cost = Config.FS_HPREG2_FEE;
+                                    cost = Config.Feature.FS_HPREG2_FEE;
                                     break;
                                 }
                             }
 
                             htmlContent.Replace("%cost%",
-                                cost + "</font>Adena /" + Config.FS_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24 +
+                                cost + "</font>Adena /" + Config.Feature.FS_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24 +
                                 " Day</font>)");
                             htmlContent.Replace("%use%",
                                 "Provides additional HP recovery for clan members in the fortress.<font color=\"00FFFF\">" +
@@ -432,18 +432,18 @@ public sealed class FortManager: Merchant
                             {
                                 case 40:
                                 {
-                                    cost = Config.FS_MPREG1_FEE;
+                                    cost = Config.Feature.FS_MPREG1_FEE;
                                     break;
                                 }
                                 default: // 50
                                 {
-                                    cost = Config.FS_MPREG2_FEE;
+                                    cost = Config.Feature.FS_MPREG2_FEE;
                                     break;
                                 }
                             }
 
                             htmlContent.Replace("%cost%",
-                                cost + "</font>Adena /" + Config.FS_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24 +
+                                cost + "</font>Adena /" + Config.Feature.FS_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24 +
                                 " Day</font>)");
                             htmlContent.Replace("%use%",
                                 "Provides additional MP recovery for clan members in the fortress.<font color=\"00FFFF\">" +
@@ -466,18 +466,18 @@ public sealed class FortManager: Merchant
                             {
                                 case 45:
                                 {
-                                    cost = Config.FS_EXPREG1_FEE;
+                                    cost = Config.Feature.FS_EXPREG1_FEE;
                                     break;
                                 }
                                 default: // 50
                                 {
-                                    cost = Config.FS_EXPREG2_FEE;
+                                    cost = Config.Feature.FS_EXPREG2_FEE;
                                     break;
                                 }
                             }
 
                             htmlContent.Replace("%cost%",
-                                cost + "</font>Adena /" + Config.FS_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24 +
+                                cost + "</font>Adena /" + Config.Feature.FS_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24 +
                                 " Day</font>)");
                             htmlContent.Replace("%use%",
                                 "Restores the Exp of any clan member who is resurrected in the fortress.<font color=\"00FFFF\">" +
@@ -526,18 +526,18 @@ public sealed class FortManager: Merchant
                                     }
                                     case 300:
                                     {
-                                        fee = Config.FS_HPREG1_FEE;
+                                        fee = Config.Feature.FS_HPREG1_FEE;
                                         break;
                                     }
                                     default: // 400
                                     {
-                                        fee = Config.FS_HPREG2_FEE;
+                                        fee = Config.Feature.FS_HPREG2_FEE;
                                         break;
                                     }
                                 }
 
                                 if (!fort.updateFunctions(player, Fort.FUNC_RESTORE_HP, percent, fee,
-                                        Config.FS_HPREG_FEE_RATIO,
+                                        Config.Feature.FS_HPREG_FEE_RATIO,
                                         fort.getFortFunction(Fort.FUNC_RESTORE_HP) == null))
                                 {
                                     htmlContent = HtmlContent.LoadFromFile("html/fortress/low_adena.htm", player);
@@ -585,18 +585,18 @@ public sealed class FortManager: Merchant
                                     }
                                     case 40:
                                     {
-                                        fee = Config.FS_MPREG1_FEE;
+                                        fee = Config.Feature.FS_MPREG1_FEE;
                                         break;
                                     }
                                     default: // 50
                                     {
-                                        fee = Config.FS_MPREG2_FEE;
+                                        fee = Config.Feature.FS_MPREG2_FEE;
                                         break;
                                     }
                                 }
 
                                 if (!fort.updateFunctions(player, Fort.FUNC_RESTORE_MP, percent, fee,
-                                        Config.FS_MPREG_FEE_RATIO,
+                                        Config.Feature.FS_MPREG_FEE_RATIO,
                                         fort.getFortFunction(Fort.FUNC_RESTORE_MP) == null))
                                 {
                                     htmlContent = HtmlContent.LoadFromFile("html/fortress/low_adena.htm", player);
@@ -645,18 +645,18 @@ public sealed class FortManager: Merchant
                                     }
                                     case 45:
                                     {
-                                        fee = Config.FS_EXPREG1_FEE;
+                                        fee = Config.Feature.FS_EXPREG1_FEE;
                                         break;
                                     }
                                     default: // 50
                                     {
-                                        fee = Config.FS_EXPREG2_FEE;
+                                        fee = Config.Feature.FS_EXPREG2_FEE;
                                         break;
                                     }
                                 }
 
                                 if (!fort.updateFunctions(player, Fort.FUNC_RESTORE_EXP, percent, fee,
-                                        Config.FS_EXPREG_FEE_RATIO,
+                                        Config.Feature.FS_EXPREG_FEE_RATIO,
                                         fort.getFortFunction(Fort.FUNC_RESTORE_EXP) == null))
                                 {
                                     htmlContent = HtmlContent.LoadFromFile("html/fortress/low_adena.htm", player);
@@ -684,7 +684,7 @@ public sealed class FortManager: Merchant
                         {
                             htmlContent.Replace("%hp_recovery%", funcRestoreHp.getLevel() +
                                 "%</font> (<font color=\"FFAABB\">" + funcRestoreHp.getLease() + "</font>Adena /" +
-                                Config.FS_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
+                                Config.Feature.FS_HPREG_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
 
                             htmlContent.Replace("%hp_period%",
                                 "Withdraw the fee for the next time at " + funcRestoreHp.getEndTime()
@@ -706,7 +706,7 @@ public sealed class FortManager: Merchant
                         {
                             htmlContent.Replace("%exp_recovery%", funcRestoreExp.getLevel() +
                                 "%</font> (<font color=\"FFAABB\">" + funcRestoreExp.getLease() + "</font>Adena /" +
-                                Config.FS_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
+                                Config.Feature.FS_EXPREG_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
                             htmlContent.Replace("%exp_period%",
                                 "Withdraw the fee for the next time at " +
                                 funcRestoreExp.getEndTime()?.ToString("dd/MM/yyyy HH:mm"));
@@ -727,7 +727,7 @@ public sealed class FortManager: Merchant
                             htmlContent.Replace("%mp_recovery%",
                                 funcRestoreMp.getLevel() + "%</font> (<font color=\"FFAABB\">" +
                                 funcRestoreMp.getLease() + "</font>Adena /" +
-                                Config.FS_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
+                                Config.Feature.FS_MPREG_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
                             htmlContent.Replace("%mp_period%",
                                 "Withdraw the fee for the next time at " +
                                 funcRestoreMp.getEndTime()?.ToString("dd/MM/yyyy HH:mm"));
@@ -787,18 +787,18 @@ public sealed class FortManager: Merchant
                             {
                                 case 1:
                                 {
-                                    cost = Config.FS_SUPPORT1_FEE;
+                                    cost = Config.Feature.FS_SUPPORT1_FEE;
                                     break;
                                 }
                                 default:
                                 {
-                                    cost = Config.FS_SUPPORT2_FEE;
+                                    cost = Config.Feature.FS_SUPPORT2_FEE;
                                     break;
                                 }
                             }
 
                             htmlContent.Replace("%cost%",
-                                cost + "</font>Adena /" + Config.FS_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24 +
+                                cost + "</font>Adena /" + Config.Feature.FS_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24 +
                                 " Day</font>)");
                             htmlContent.Replace("%use%", "Enables the use of supplementary magic.");
                             htmlContent.Replace("%apply%", "other support " + stage);
@@ -818,18 +818,18 @@ public sealed class FortManager: Merchant
                             {
                                 case 1:
                                 {
-                                    cost = Config.FS_TELE1_FEE;
+                                    cost = Config.Feature.FS_TELE1_FEE;
                                     break;
                                 }
                                 default:
                                 {
-                                    cost = Config.FS_TELE2_FEE;
+                                    cost = Config.Feature.FS_TELE2_FEE;
                                     break;
                                 }
                             }
 
                             htmlContent.Replace("%cost%",
-                                cost + "</font>Adena /" + Config.FS_TELE_FEE_RATIO / 1000 / 60 / 60 / 24 +
+                                cost + "</font>Adena /" + Config.Feature.FS_TELE_FEE_RATIO / 1000 / 60 / 60 / 24 +
                                 " Day</font>)");
                             htmlContent.Replace("%use%",
                                 "Teleports clan members in a fort to the target <font color=\"00FFFF\">Stage " +
@@ -874,18 +874,18 @@ public sealed class FortManager: Merchant
                                     }
                                     case 1:
                                     {
-                                        fee = Config.FS_TELE1_FEE;
+                                        fee = Config.Feature.FS_TELE1_FEE;
                                         break;
                                     }
                                     default:
                                     {
-                                        fee = Config.FS_TELE2_FEE;
+                                        fee = Config.Feature.FS_TELE2_FEE;
                                         break;
                                     }
                                 }
 
                                 if (!fort.updateFunctions(player, Fort.FUNC_TELEPORT, level, fee,
-                                        Config.FS_TELE_FEE_RATIO,
+                                        Config.Feature.FS_TELE_FEE_RATIO,
                                         fort.getFortFunction(Fort.FUNC_TELEPORT) == null))
                                 {
                                     htmlContent = HtmlContent.LoadFromFile("html/fortress/low_adena.htm", player);
@@ -935,18 +935,18 @@ public sealed class FortManager: Merchant
                                     }
                                     case 1:
                                     {
-                                        fee = Config.FS_SUPPORT1_FEE;
+                                        fee = Config.Feature.FS_SUPPORT1_FEE;
                                         break;
                                     }
                                     default:
                                     {
-                                        fee = Config.FS_SUPPORT2_FEE;
+                                        fee = Config.Feature.FS_SUPPORT2_FEE;
                                         break;
                                     }
                                 }
 
                                 if (!fort.updateFunctions(player, Fort.FUNC_SUPPORT, level, fee,
-                                        Config.FS_SUPPORT_FEE_RATIO,
+                                        Config.Feature.FS_SUPPORT_FEE_RATIO,
                                         fort.getFortFunction(Fort.FUNC_SUPPORT) == null))
                                 {
                                     htmlContent = HtmlContent.LoadFromFile("html/fortress/low_adena.htm", player);
@@ -973,7 +973,7 @@ public sealed class FortManager: Merchant
                             htmlContent.Replace("%tele%",
                                 "Stage " + funcTeleport.getLevel() + "</font> (<font color=\"FFAABB\">" +
                                 funcTeleport.getLease() + "</font>Adena /" +
-                                Config.FS_TELE_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
+                                Config.Feature.FS_TELE_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
                             htmlContent.Replace("%tele_period%",
                                 "Withdraw the fee for the next time at " +
                                 funcTeleport.getEndTime()?.ToString("dd/MM/yyyy HH:mm"));
@@ -994,7 +994,7 @@ public sealed class FortManager: Merchant
                             htmlContent.Replace("%support%",
                                 "Stage " + funcSupport.getLevel() + "</font> (<font color=\"FFAABB\">" +
                                 funcSupport.getLease() + "</font>Adena /" +
-                                Config.FS_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
+                                Config.Feature.FS_SUPPORT_FEE_RATIO / 1000 / 60 / 60 / 24 + " Day)");
                             htmlContent.Replace("%support_period%",
                                 "Withdraw the fee for the next time at " +
                                 funcSupport.getEndTime()?.ToString("dd/MM/yyyy HH:mm"));

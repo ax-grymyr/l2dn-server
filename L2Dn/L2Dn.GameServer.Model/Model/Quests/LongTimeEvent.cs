@@ -1,4 +1,5 @@
 using System.Xml.Linq;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
@@ -9,11 +10,11 @@ using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Scripts;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Quests;
@@ -115,7 +116,7 @@ public class LongTimeEvent: Quest
 	 */
 	private void loadConfig()
 	{
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "scripts/events", Name, "config.xml");
+		string filePath = Path.Combine(ServerConfig.Instance.DataPack.Path, "scripts/events", Name, "config.xml");
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
 

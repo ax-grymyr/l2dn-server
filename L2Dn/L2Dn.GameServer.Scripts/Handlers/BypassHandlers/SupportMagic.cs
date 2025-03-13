@@ -3,9 +3,9 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 
@@ -58,7 +58,7 @@ public class SupportMagic: IBypassHandler
 	private static readonly int LOWEST_LEVEL = 6;
 	private static readonly int CUBIC_LOWEST = 16;
 	private static readonly int CUBIC_HIGHEST = 34;
-	private static readonly int HASTE_LEVEL_2 = Config.MAX_NEWBIE_BUFF_LEVEL + 1; // disabled
+	private static readonly int HASTE_LEVEL_2 = Config.Character.MAX_NEWBIE_BUFF_LEVEL + 1; // disabled
 
 	public bool useBypass(string command, Player player, Creature? target)
 	{
@@ -93,7 +93,7 @@ public class SupportMagic: IBypassHandler
             return;
         }
 
-        if (level > Config.MAX_NEWBIE_BUFF_LEVEL)
+        if (level > Config.Character.MAX_NEWBIE_BUFF_LEVEL)
         {
             npc.showChatWindow(player, "html/default/SupportMagicHighLevel.htm");
             return;

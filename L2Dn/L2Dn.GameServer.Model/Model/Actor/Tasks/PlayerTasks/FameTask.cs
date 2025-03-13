@@ -1,8 +1,8 @@
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 
@@ -23,7 +23,7 @@ public class FameTask: Runnable
 
 	public void run()
 	{
-		if (_player == null || (_player.isDead() && !Config.FAME_FOR_DEAD_PLAYERS))
+		if (_player == null || (_player.isDead() && !Config.Character.FAME_FOR_DEAD_PLAYERS))
 		{
 			return;
 		}

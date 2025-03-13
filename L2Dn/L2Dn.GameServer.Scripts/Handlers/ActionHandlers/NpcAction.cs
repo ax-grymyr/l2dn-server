@@ -7,9 +7,9 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ActionHandlers;
 
@@ -101,7 +101,7 @@ public class NpcAction: IActionHandler
 						npc.showChatWindow(player);
 					}
 
-					if (Config.PLAYER_MOVEMENT_BLOCK_TIME > 0)
+					if (Config.Character.PLAYER_MOVEMENT_BLOCK_TIME > 0)
 					{
 						player.updateNotMoveUntil();
 					}

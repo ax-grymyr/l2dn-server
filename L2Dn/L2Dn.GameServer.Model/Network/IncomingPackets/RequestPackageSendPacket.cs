@@ -7,10 +7,10 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -26,7 +26,7 @@ public struct RequestPackageSendPacket: IIncomingPacket<GameSession>
         _objectId = reader.ReadInt32();
 
         int count = reader.ReadInt32();
-        if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != reader.Length)
+        if (count <= 0 || count > Config.Character.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != reader.Length)
         {
             return;
         }
@@ -70,11 +70,11 @@ public struct RequestPackageSendPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && player.getReputation() < 0)
+		if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && player.getReputation() < 0)
 			return ValueTask.CompletedTask;
 
 		// Freight price from config per item slot.
-		int fee = _items.Length * Config.ALT_FREIGHT_PRICE;
+		int fee = _items.Length * Config.Character.ALT_FREIGHT_PRICE;
 		long currentAdena = player.getAdena();
 		long slots = 0;
 

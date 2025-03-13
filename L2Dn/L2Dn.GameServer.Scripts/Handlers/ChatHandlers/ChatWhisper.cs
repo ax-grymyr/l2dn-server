@@ -6,7 +6,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ChatHandlers;
 
@@ -99,7 +99,7 @@ public class ChatWhisper: IChatHandler
 			if (!BlockList.isBlocked(receiver, activeChar))
 			{
 				// Allow reciever to send PMs to this char, which is in silence mode.
-				if (Config.SILENCE_MODE_EXCLUDE && activeChar.isSilenceMode())
+				if (Config.Character.SILENCE_MODE_EXCLUDE && activeChar.isSilenceMode())
 				{
 					activeChar.addSilenceModeExcluded(receiver.ObjectId);
 				}

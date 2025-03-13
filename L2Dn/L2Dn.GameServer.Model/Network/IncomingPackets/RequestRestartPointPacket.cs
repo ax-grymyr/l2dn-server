@@ -16,12 +16,12 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
@@ -242,7 +242,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 			}
 			case 9:
 			{
-				if (Config.RESURRECT_BY_PAYMENT_ENABLED)
+				if (Config.Character.RESURRECT_BY_PAYMENT_ENABLED)
 				{
 					if (!player.isDead())
 					{
@@ -250,7 +250,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 					}
 
 					int originalValue = player.getVariables().Get(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, 0);
-					if (originalValue < Config.RESURRECT_BY_PAYMENT_MAX_FREE_TIMES)
+					if (originalValue < Config.Character.RESURRECT_BY_PAYMENT_MAX_FREE_TIMES)
 					{
 						player.getVariables().Set(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, originalValue + 1);
 						player.doRevive(100.0);
@@ -259,19 +259,19 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 						break;
 					}
 
-					int firstID = Config.RESURRECT_BY_PAYMENT_ENABLED ? Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_ITEM : 91663;
-					int secondID = Config.RESURRECT_BY_PAYMENT_ENABLED ? Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_ITEM : 57;
+					int firstID = Config.Character.RESURRECT_BY_PAYMENT_ENABLED ? Config.Character.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_ITEM : 91663;
+					int secondID = Config.Character.RESURRECT_BY_PAYMENT_ENABLED ? Config.Character.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_ITEM : 57;
 					ImmutableDictionary<int, ImmutableDictionary<int, ResurrectByPaymentHolder>>? resMAP = null;
 					Item? item = null;
 					if (resItemID == firstID)
 					{
-						resMAP = Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES;
-						item = player.getInventory().getItemByItemId(Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_ITEM);
+						resMAP = Config.Character.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES;
+						item = player.getInventory().getItemByItemId(Config.Character.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_ITEM);
 					}
 					else if (resItemID == secondID)
 					{
-						resMAP = Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES;
-						item = player.getInventory().getItemByItemId(Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_ITEM);
+						resMAP = Config.Character.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES;
+						item = player.getInventory().getItemByItemId(Config.Character.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_ITEM);
 					}
 
 					if (resMAP == null || item == null)

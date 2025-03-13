@@ -1,7 +1,7 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
-using L2Dn.GameServer.StaticData;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Data.Sql;
 
@@ -43,7 +43,7 @@ public class PetNameTable
 
 		try
 		{
-			return Config.PET_NAME_TEMPLATE.IsMatch(name);
+			return Config.Server.PET_NAME_TEMPLATE.IsMatch(name);
 		}
 		catch (Exception e) // case of illegal pattern
 		{

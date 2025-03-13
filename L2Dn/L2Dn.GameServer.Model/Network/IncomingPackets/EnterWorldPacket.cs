@@ -34,13 +34,13 @@ using L2Dn.GameServer.Network.OutgoingPackets.RandomCraft;
 using L2Dn.GameServer.Network.OutgoingPackets.Settings;
 using L2Dn.GameServer.Network.OutgoingPackets.SteadyBoxes;
 using L2Dn.GameServer.Network.OutgoingPackets.Subjugation;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
@@ -357,7 +357,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		Quest.playerEnter(player);
 
 		// Send quest list.
-		if (!Config.DISABLE_TUTORIAL)
+		if (!Config.Character.DISABLE_TUTORIAL)
 		{
 			connection.Send(new ExQuestNotificationAllPacket(player));
 			foreach (NewQuest newQuest in NewQuestData.getInstance().getQuests())
@@ -375,7 +375,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			}
 		}
 
-		if (Config.PLAYER_SPAWN_PROTECTION > 0)
+		if (Config.Character.PLAYER_SPAWN_PROTECTION > 0)
 		{
 			player.setSpawnProtection(true);
 		}
@@ -424,7 +424,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 
 		AnnouncementsTable.getInstance().showAnnouncements(player);
 
-		if (Config.SERVER_RESTART_SCHEDULE_ENABLED && Config.SERVER_RESTART_SCHEDULE_MESSAGE)
+		if (Config.Server.SERVER_RESTART_SCHEDULE_ENABLED && Config.Server.SERVER_RESTART_SCHEDULE_MESSAGE)
 		{
 			connection.Send(new CreatureSayPacket(null, ChatType.BATTLEFIELD, "[SERVER]",
 				"Next restart is scheduled at " + ServerRestartManager.getInstance().getNextRestartTime() + "."));
@@ -443,7 +443,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			connection.Send(new NpcHtmlMessagePacket(null, 0, htmlContent));
 		}
 
-		if (Config.PETITIONING_ALLOWED)
+		if (Config.Character.PETITIONING_ALLOWED)
 		{
 			PetitionManager.getInstance().checkPetitionMessages(player);
 		}
@@ -510,7 +510,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		}
 
 		// Over-enchant protection.
-		if (Config.OVER_ENCHANT_PROTECTION && !player.isGM())
+		if (Config.Character.OVER_ENCHANT_PROTECTION && !player.isGM())
 		{
 			bool punish = false;
 			foreach (Item item in player.getInventory().getItems())
@@ -530,12 +530,12 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				}
 			}
 
-			if (punish && Config.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE)
+			if (punish && Config.Character.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE)
 			{
 				player.sendMessage("[Server]: You have over-enchanted items!");
 				player.sendMessage("[Server]: Respect our server rules.");
 				connection.Send(new ExShowScreenMessagePacket("You have over-enchanted items!", 6000));
-				Util.handleIllegalPlayerAction(player, player.getName() + " has over-enchanted items.", Config.OVER_ENCHANT_PUNISHMENT);
+				Util.handleIllegalPlayerAction(player, player.getName() + " has over-enchanted items.", Config.Character.OVER_ENCHANT_PUNISHMENT);
 			}
 		}
 
@@ -638,7 +638,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		}
 
 		// Sayha's Grace.
-		if (Config.ENABLE_VITALITY)
+		if (Config.Character.ENABLE_VITALITY)
 		{
 			connection.Send(new ExVitalityEffectInfoPacket(player));
 		}
@@ -703,12 +703,12 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		// Dual inventory.
 		player.restoreDualInventory();
 
-		if (Config.ENABLE_ATTENDANCE_REWARDS)
+		if (Config.Attendance.ENABLE_ATTENDANCE_REWARDS)
 		{
 			AttendanceInfoHolder attendanceInfo = player.getAttendanceInfo();
 			if (attendanceInfo.isRewardAvailable())
 			{
-				player.setAttendanceDelay(Config.ATTENDANCE_REWARD_DELAY);
+				player.setAttendanceDelay(Config.Attendance.ATTENDANCE_REWARD_DELAY);
 			}
 
 			ThreadPool.schedule(() =>
@@ -720,15 +720,15 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 					connection.Send(new ExShowScreenMessagePacket("Your attendance day " + lastRewardIndex + " reward is ready.", ExShowScreenMessagePacket.TOP_CENTER, 7000, 0, true, true));
 					player.sendMessage("Your attendance day " + lastRewardIndex + " reward is ready.");
 					player.sendMessage("Click on General Menu -> Attendance Check.");
-					if (Config.ATTENDANCE_POPUP_WINDOW)
+					if (Config.Attendance.ATTENDANCE_POPUP_WINDOW)
 					{
 						connection.Send(new ExVipAttendanceListPacket(player));
 						connection.Send(new ExVipAttendanceNotifyPacket());
 					}
 				}
-			}, Config.ATTENDANCE_REWARD_DELAY);
+			}, Config.Attendance.ATTENDANCE_REWARD_DELAY);
 
-			if (Config.ATTENDANCE_POPUP_START)
+			if (Config.Attendance.ATTENDANCE_POPUP_START)
 			{
 				connection.Send(new ExVipAttendanceListPacket(player));
 				connection.Send(new ExVipAttendanceNotifyPacket());
@@ -736,7 +736,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		}
 
 		// Delayed HWID checks.
-		if (Config.HARDWARE_INFO_ENABLED)
+		if (Config.Server.HARDWARE_INFO_ENABLED)
 		{
 			// ThreadPool.schedule(() =>
 			// {

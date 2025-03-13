@@ -9,9 +9,9 @@ using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.BypassHandlers;
 

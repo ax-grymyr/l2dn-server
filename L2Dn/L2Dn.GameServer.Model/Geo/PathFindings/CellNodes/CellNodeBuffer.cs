@@ -1,5 +1,5 @@
-using L2Dn.GameServer.StaticData;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Geo.PathFindings.CellNodes;
 

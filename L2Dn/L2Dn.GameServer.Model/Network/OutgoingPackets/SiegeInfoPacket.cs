@@ -3,8 +3,8 @@ using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Sieges;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -49,8 +49,8 @@ public readonly struct SiegeInfoPacket: IOutgoingPacket
             DateTime cal = _castle.getSiegeDate();
             cal = new DateTime(cal.Year, cal.Month, cal.Day);
             writer.WriteInt32(0);
-            writer.WriteInt32(Config.SIEGE_HOUR_LIST.Length);
-            foreach (int hour in Config.SIEGE_HOUR_LIST)
+            writer.WriteInt32(Config.Feature.SIEGE_HOUR_LIST.Length);
+            foreach (int hour in Config.Feature.SIEGE_HOUR_LIST)
             {
                 cal = new DateTime(cal.Year, cal.Month, cal.Day, hour, 0, 0);
                 writer.WriteInt32(cal.getEpochSecond());

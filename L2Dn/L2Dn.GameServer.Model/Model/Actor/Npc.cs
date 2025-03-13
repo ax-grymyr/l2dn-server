@@ -30,12 +30,12 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -673,28 +673,28 @@ public class Npc: Creature
 
 		if (player.getReputation() < 0)
 		{
-			if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && this is Merchant)
+			if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_SHOP && this is Merchant)
 			{
 				if (showPkDenyChatWindow(player, "merchant"))
 				{
 					return;
 				}
 			}
-			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && this is Teleporter)
+			else if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && this is Teleporter)
 			{
 				if (showPkDenyChatWindow(player, "teleporter"))
 				{
 					return;
 				}
 			}
-			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && this is Warehouse)
+			else if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && this is Warehouse)
 			{
 				if (showPkDenyChatWindow(player, "warehouse"))
 				{
 					return;
 				}
 			}
-			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && this is Fisherman)
+			else if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_SHOP && this is Fisherman)
 			{
 				if (showPkDenyChatWindow(player, "fisherman"))
 				{
@@ -937,7 +937,7 @@ public class Npc: Creature
 				{
 					foreach (Player member in party.getMembers())
 					{
-						if (member != killerPlayer && member.Distance3D(this) <= Config.ALT_PARTY_RANGE)
+						if (member != killerPlayer && member.Distance3D(this) <= Config.Character.ALT_PARTY_RANGE)
 						{
 							new MpRewardTask(member, this);
 							foreach (Summon summon in member.getServitors().Values)

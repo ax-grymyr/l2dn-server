@@ -4,11 +4,11 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.ItemAuction;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.InstanceManagers;
 

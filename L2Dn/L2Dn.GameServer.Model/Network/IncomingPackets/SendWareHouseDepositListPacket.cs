@@ -7,10 +7,10 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -22,7 +22,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
     public void ReadContent(PacketBitReader reader)
     {
         int size = reader.ReadInt32();
-        if (size <= 0 || size > Config.MAX_ITEM_IN_PACKET || size * BATCH_LENGTH != reader.Length)
+        if (size <= 0 || size > Config.Character.MAX_ITEM_IN_PACKET || size * BATCH_LENGTH != reader.Length)
             return;
 
         _items = new(size);
@@ -78,7 +78,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 		}
 
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && player.getReputation() < 0)
+		if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && player.getReputation() < 0)
 			return ValueTask.CompletedTask;
 
 		// Freight price from config or normal price per item slot (30)

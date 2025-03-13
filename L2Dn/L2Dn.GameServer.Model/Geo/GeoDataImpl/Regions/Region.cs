@@ -1,9 +1,9 @@
 using L2Dn.Conversion;
 using L2Dn.GameServer.Geo.GeoDataImpl.Blocks;
-using L2Dn.GameServer.StaticData;
 using L2Dn.IO;
 using Microsoft.Extensions.Logging;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Geo.GeoDataImpl.Regions;
 

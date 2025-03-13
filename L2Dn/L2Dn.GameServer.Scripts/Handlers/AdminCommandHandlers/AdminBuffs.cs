@@ -11,10 +11,10 @@ using L2Dn.GameServer.Model.Html.Styles;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using NLog.Fluent;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 

@@ -9,13 +9,13 @@ using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -78,7 +78,7 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
 		if (inventory != null)
 		{
 			Item? item = inventory.getItemByObjectId(_objectId);
-			if (item == null || item.isHeroItem() || (!Config.ALT_ALLOW_AUGMENT_DESTROY && item.isAugmented()))
+			if (item == null || item.isHeroItem() || (!Config.Character.ALT_ALLOW_AUGMENT_DESTROY && item.isAugmented()))
 			{
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				return ValueTask.CompletedTask;

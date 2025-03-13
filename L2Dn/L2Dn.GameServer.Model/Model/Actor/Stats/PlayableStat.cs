@@ -8,9 +8,9 @@ using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Actor.Stats;
 
@@ -96,7 +96,7 @@ public class PlayableStat: CreatureStat
 	public bool removeExp(long amount)
 	{
 		long value = amount;
-		if (getExp() - value < getExpForLevel(getLevel()) && (!Config.PLAYER_DELEVEL || (Config.PLAYER_DELEVEL && getLevel() <= Config.DELEVEL_MINIMUM)))
+		if (getExp() - value < getExpForLevel(getLevel()) && (!Config.Character.PLAYER_DELEVEL || (Config.Character.PLAYER_DELEVEL && getLevel() <= Config.Character.DELEVEL_MINIMUM)))
 		{
 			value = getExp() - getExpForLevel(getLevel());
 		}
@@ -171,7 +171,7 @@ public class PlayableStat: CreatureStat
 			setExp(getExpForLevel(getLevel()));
 		}
 
-		if (!levelIncreased && getActiveChar() is Player player && !player.isGM() && Config.DECREASE_SKILL_LEVEL)
+		if (!levelIncreased && getActiveChar() is Player player && !player.isGM() && Config.Character.DECREASE_SKILL_LEVEL)
 		{
 			player.checkPlayerSkills();
 		}
@@ -196,15 +196,15 @@ public class PlayableStat: CreatureStat
 		}
 
 		long currentSp = getSp();
-		if (currentSp >= Config.MAX_SP)
+		if (currentSp >= Config.Character.MAX_SP)
 		{
 			return false;
 		}
 
 		long value = amount;
-		if (currentSp > Config.MAX_SP - value)
+		if (currentSp > Config.Character.MAX_SP - value)
 		{
-			value = Config.MAX_SP - currentSp;
+			value = Config.Character.MAX_SP - currentSp;
 		}
 
 		setSp(currentSp + value);
@@ -269,59 +269,59 @@ public class PlayableStat: CreatureStat
 			int level = player.getLevel() - i;
 			if (level >= 20 && level <= 25)
 			{
-				reputation += Config.LVL_UP_20_AND_25_REP_SCORE;
+				reputation += Config.Feature.LVL_UP_20_AND_25_REP_SCORE;
 			}
 			else if (level >= 26 && level <= 30)
 			{
-				reputation += Config.LVL_UP_26_AND_30_REP_SCORE;
+				reputation += Config.Feature.LVL_UP_26_AND_30_REP_SCORE;
 			}
 			else if (level >= 31 && level <= 35)
 			{
-				reputation += Config.LVL_UP_31_AND_35_REP_SCORE;
+				reputation += Config.Feature.LVL_UP_31_AND_35_REP_SCORE;
 			}
 			else if (level >= 36 && level <= 40)
 			{
-				reputation += Config.LVL_UP_36_AND_40_REP_SCORE;
+				reputation += Config.Feature.LVL_UP_36_AND_40_REP_SCORE;
 			}
 			else if (level >= 41 && level <= 45)
 			{
-				reputation += Config.LVL_UP_41_AND_45_REP_SCORE;
+				reputation += Config.Feature.LVL_UP_41_AND_45_REP_SCORE;
 			}
 			else if (level >= 46 && level <= 50)
 			{
-				reputation += Config.LVL_UP_46_AND_50_REP_SCORE;
+				reputation += Config.Feature.LVL_UP_46_AND_50_REP_SCORE;
 			}
 			else if (level >= 51 && level <= 55)
 			{
-				reputation += Config.LVL_UP_51_AND_55_REP_SCORE;
+				reputation += Config.Feature.LVL_UP_51_AND_55_REP_SCORE;
 			}
 			else if (level >= 56 && level <= 60)
 			{
-				reputation += Config.LVL_UP_56_AND_60_REP_SCORE;
+				reputation += Config.Feature.LVL_UP_56_AND_60_REP_SCORE;
 			}
 			else if (level >= 61 && level <= 65)
 			{
-				reputation += Config.LVL_UP_61_AND_65_REP_SCORE;
+				reputation += Config.Feature.LVL_UP_61_AND_65_REP_SCORE;
 			}
 			else if (level >= 66 && level <= 70)
 			{
-				reputation += Config.LVL_UP_66_AND_70_REP_SCORE;
+				reputation += Config.Feature.LVL_UP_66_AND_70_REP_SCORE;
 			}
 			else if (level >= 71 && level <= 75)
 			{
-				reputation += Config.LVL_UP_71_AND_75_REP_SCORE;
+				reputation += Config.Feature.LVL_UP_71_AND_75_REP_SCORE;
 			}
 			else if (level >= 76 && level <= 80)
 			{
-				reputation += Config.LVL_UP_76_AND_80_REP_SCORE;
+				reputation += Config.Feature.LVL_UP_76_AND_80_REP_SCORE;
 			}
 			else if (level >= 81 && level <= 90)
 			{
-				reputation += Config.LVL_UP_81_AND_90_REP_SCORE;
+				reputation += Config.Feature.LVL_UP_81_AND_90_REP_SCORE;
 			}
 			else if (level >= 91 && level <= 120)
 			{
-				reputation += Config.LVL_UP_91_PLUS_REP_SCORE;
+				reputation += Config.Feature.LVL_UP_91_PLUS_REP_SCORE;
 			}
 		}
 
@@ -330,7 +330,7 @@ public class PlayableStat: CreatureStat
 			return;
 		}
 
-		reputation = (int) Math.Ceiling(reputation * Config.LVL_OBTAINED_REP_SCORE_MULTIPLIER);
+		reputation = (int) Math.Ceiling(reputation * Config.Feature.LVL_OBTAINED_REP_SCORE_MULTIPLIER);
 
 		clan.addReputationScore(reputation);
 

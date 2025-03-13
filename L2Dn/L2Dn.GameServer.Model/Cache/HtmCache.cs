@@ -1,7 +1,7 @@
 using System.Collections.Concurrent;
 using System.Text;
 using L2Dn.Extensions;
-using L2Dn.GameServer.StaticData;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -19,15 +19,15 @@ public sealed class HtmCache
 
 	public void reload()
 	{
-		reload(Config.DATAPACK_ROOT_PATH);
+		reload(ServerConfig.Instance.DataPack.Path);
 	}
 
-	public void reload(string directoryPath)
+	public void reload(string dataPackPath)
 	{
 		if (Config.HTM_CACHE)
 		{
 			_logger.Info("Html cache start...");
-			ParseDir(directoryPath);
+			ParseDir(dataPackPath);
 			_logger.Info("Cache[HTML]: " + (getMemoryUsage() >> 20) + " megabytes on " + _cache.Count + " files loaded.");
 		}
 		else
@@ -81,7 +81,8 @@ public sealed class HtmCache
 				content = content.replaceAll("bypass -h npc_%objectId%_Quest", "bypass npc_%objectId%_Quest");
 			}
 
-			filePath = Path.GetRelativePath(Config.DATAPACK_ROOT_PATH, filePath);
+            string dataPackPath = ServerConfig.Instance.DataPack.Path;
+			filePath = Path.GetRelativePath(dataPackPath, filePath);
 			if (Config.CHECK_HTML_ENCODING && !filePath.startsWith("lang") &&
 			    content.Any(c => c >= 128))
 			{
@@ -113,14 +114,15 @@ public sealed class HtmCache
 				prefix = "lang/" + lang + "/"; // TODO: cache prefixes
 		}
 
+        string dataPackPath = ServerConfig.Instance.DataPack.Path;
 		string newPath = string.IsNullOrEmpty(prefix) ? path : prefix + path;
 		if (!_cache.TryGetValue(newPath, out string? content))
 		{
 			if (!Config.HTM_CACHE)
 			{
-				content = loadFile(Path.Combine(Config.DATAPACK_ROOT_PATH, newPath));
+				content = loadFile(Path.Combine(dataPackPath, newPath));
 				if (content == null)
-					content = loadFile(Path.Combine(Config.SCRIPT_ROOT_PATH, newPath));
+					content = loadFile(Path.Combine(dataPackPath, newPath));
 			}
 
 			// In case localisation does not exist try the default path.
@@ -130,9 +132,9 @@ public sealed class HtmCache
 				{
 					if (!Config.HTM_CACHE)
 					{
-						content = loadFile(Path.Combine(Config.DATAPACK_ROOT_PATH, path));
+						content = loadFile(Path.Combine(dataPackPath, path));
 						if (content == null)
-							content = loadFile(Path.Combine(Config.SCRIPT_ROOT_PATH, path));
+							content = loadFile(Path.Combine(dataPackPath, path));
 					}
 				}
 			}

@@ -4,11 +4,11 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Clans;
 
@@ -813,7 +813,7 @@ public class ClanMember
 
 	public int getOnlineStatus()
 	{
-		return !isOnline() ? 0 : _onlineTime >= Config.ALT_CLAN_MEMBERS_TIME_FOR_BONUS ? 2 : 1;
+		return !isOnline() ? 0 : _onlineTime >= Config.Character.ALT_CLAN_MEMBERS_TIME_FOR_BONUS ? 2 : 1;
 	}
 
 	public bool isRewardClaimed(ClanRewardType type)

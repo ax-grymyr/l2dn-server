@@ -6,9 +6,9 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -254,7 +254,7 @@ public class PetitionManager
 
 	public bool isPetitioningAllowed()
 	{
-		return Config.PETITIONING_ALLOWED;
+		return Config.Character.PETITIONING_ALLOWED;
 	}
 
 	public bool isPlayerPetitionPending(Player petitioner)

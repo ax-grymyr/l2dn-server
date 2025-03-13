@@ -1,7 +1,7 @@
 ﻿using L2Dn.GameServer.Model.Events;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts;
 

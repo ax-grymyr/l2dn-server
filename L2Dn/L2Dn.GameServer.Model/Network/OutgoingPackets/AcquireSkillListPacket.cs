@@ -4,9 +4,9 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -41,7 +41,7 @@ public readonly struct AcquireSkillListPacket: IOutgoingPacket
             int skillId = _player.getReplacementSkill(skill.getSkillId());
             writer.WriteInt32(skillId);
 
-            if (Config.SERVER_LIST_TYPE == GameServerType.Classic)
+            if (Config.Server.SERVER_LIST_TYPE == GameServerType.Classic)
                 writer.WriteInt16((short)skill.getSkillLevel()); // Classic 16-bit integer
             else
                 writer.WriteInt32(skill.getSkillLevel()); // 414 both Main and Essence 32-bit integer
@@ -73,7 +73,7 @@ public readonly struct AcquireSkillListPacket: IOutgoingPacket
             {
                 writer.WriteInt32(removed.getId());
 
-                if (Config.SERVER_LIST_TYPE == GameServerType.Classic)
+                if (Config.Server.SERVER_LIST_TYPE == GameServerType.Classic)
                     writer.WriteInt16((short)removed.getLevel()); // Classic 16-bit integer
                 else
                     writer.WriteInt32(removed.getLevel()); // 414 both Main and Essence 32-bit integer

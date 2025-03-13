@@ -1,7 +1,7 @@
 ﻿using System.Collections.Immutable;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Zones;
 
@@ -77,14 +77,14 @@ public abstract class ZoneRespawn(int id, ZoneForm form): ZoneType(id, form)
 
 	public Location3D getSpawnLoc()
 	{
-		return Config.RANDOM_RESPAWN_IN_TOWN_ENABLED ? _spawnLocs[Rnd.get(_spawnLocs.Length)] : _spawnLocs[0];
+		return Config.Character.RANDOM_RESPAWN_IN_TOWN_ENABLED ? _spawnLocs[Rnd.get(_spawnLocs.Length)] : _spawnLocs[0];
 	}
 
 	public Location3D getOtherSpawnLoc()
 	{
 		if (_otherSpawnLocs.Length != 0)
 		{
-			return Config.RANDOM_RESPAWN_IN_TOWN_ENABLED
+			return Config.Character.RANDOM_RESPAWN_IN_TOWN_ENABLED
 				? _otherSpawnLocs[Rnd.get(_otherSpawnLocs.Length)]
 				: _otherSpawnLocs[0];
 		}
@@ -96,7 +96,7 @@ public abstract class ZoneRespawn(int id, ZoneForm form): ZoneType(id, form)
 	{
 		if (_chaoticSpawnLocs.Length != 0)
 		{
-			return Config.RANDOM_RESPAWN_IN_TOWN_ENABLED
+			return Config.Character.RANDOM_RESPAWN_IN_TOWN_ENABLED
 				? _chaoticSpawnLocs[Rnd.get(_chaoticSpawnLocs.Length)]
 				: _chaoticSpawnLocs[0];
 		}
@@ -108,7 +108,7 @@ public abstract class ZoneRespawn(int id, ZoneForm form): ZoneType(id, form)
 	{
 		if (_banishSpawnLocs.Length != 0)
 		{
-			return Config.RANDOM_RESPAWN_IN_TOWN_ENABLED
+			return Config.Character.RANDOM_RESPAWN_IN_TOWN_ENABLED
 				? _banishSpawnLocs[Rnd.get(_banishSpawnLocs.Length)]
 				: _banishSpawnLocs[0];
 		}

@@ -2,9 +2,9 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -42,7 +42,7 @@ public struct RequestDispelPacket: IIncomingPacket<GameSession>
         if (skill.getAbnormalType() == AbnormalType.TRANSFORM)
             return ValueTask.CompletedTask;
 
-        if (skill.isDance() && !Config.DANCE_CANCEL_BUFF)
+        if (skill.isDance() && !Config.Character.DANCE_CANCEL_BUFF)
             return ValueTask.CompletedTask;
 
         if (player.ObjectId == _objectId)

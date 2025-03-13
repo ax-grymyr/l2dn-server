@@ -1,10 +1,11 @@
 using L2Dn.GameServer.Cache;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -78,7 +79,7 @@ public class AdminHtml: IAdminCommandHandler
 		}
 		else
 		{
-			content = HtmCache.getInstance().loadFile(Path.Combine(Config.DATAPACK_ROOT_PATH, path));
+			content = HtmCache.getInstance().loadFile(Path.Combine(ServerConfig.Instance.DataPack.Path, path));
 		}
 
 		HtmlContent htmlContent =

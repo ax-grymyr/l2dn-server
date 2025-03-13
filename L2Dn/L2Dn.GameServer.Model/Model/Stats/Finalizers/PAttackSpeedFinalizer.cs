@@ -1,6 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 
@@ -21,7 +21,7 @@ public class PAttackSpeedFinalizer: StatFunction
 		double dexBonus = creature.getDEX() > 0 ? BaseStat.DEX.calcBonus(creature) : 1;
 		baseValue *= dexBonus;
 		return validateValue(creature, defaultValue(creature, stat, baseValue), 1,
-			creature.isPlayable() ? Config.MAX_PATK_SPEED : double.MaxValue);
+			creature.isPlayable() ? Config.Character.MAX_PATK_SPEED : double.MaxValue);
 	}
 
 	private double defaultValue(Creature creature, Stat stat, double baseValue)

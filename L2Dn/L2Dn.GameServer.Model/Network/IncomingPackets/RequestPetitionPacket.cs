@@ -3,9 +3,9 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -47,7 +47,7 @@ public struct RequestPetitionPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (PetitionManager.getInstance().getPendingPetitionCount() == Config.MAX_PETITIONS_PENDING)
+		if (PetitionManager.getInstance().getPendingPetitionCount() == Config.Character.MAX_PETITIONS_PENDING)
 		{
 			player.sendPacket(SystemMessageId.UNABLE_TO_SEND_YOUR_REQUEST_TO_THE_GLOBAL_SUPPORT_PLEASE_TRY_AGAIN_LATER);
 			return ValueTask.CompletedTask;
@@ -55,7 +55,7 @@ public struct RequestPetitionPacket: IIncomingPacket<GameSession>
 
 		SystemMessagePacket sm;
 		int totalPetitions = PetitionManager.getInstance().getPlayerTotalPetitionCount(player) + 1;
-		if (totalPetitions > Config.MAX_PETITIONS_PER_PLAYER)
+		if (totalPetitions > Config.Character.MAX_PETITIONS_PER_PLAYER)
 		{
 			sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_SUBMITTED_MAXIMUM_NUMBER_OF_S1_GLOBAL_SUPPORT_REQUESTS_TODAY_YOU_CANNOT_SUBMIT_MORE_REQUESTS);
 			sm.Params.addInt(totalPetitions);
@@ -76,7 +76,7 @@ public struct RequestPetitionPacket: IIncomingPacket<GameSession>
 
 		sm = new SystemMessagePacket(SystemMessageId.SUPPORT_RECEIVED_S1_TIME_S_GLOBAL_SUPPORT_REQUESTS_LEFT_FOR_TODAY_S2);
 		sm.Params.addInt(totalPetitions);
-		sm.Params.addInt(Config.MAX_PETITIONS_PER_PLAYER - totalPetitions);
+		sm.Params.addInt(Config.Character.MAX_PETITIONS_PER_PLAYER - totalPetitions);
 		player.sendPacket(sm);
 
 		sm = new SystemMessagePacket(SystemMessageId.S1_USERS_ARE_IN_LINE_TO_GET_THE_GLOBAL_SUPPORT);

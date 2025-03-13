@@ -4,11 +4,11 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Zones;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Actor.Stats;
 
@@ -19,7 +19,7 @@ public class CreatureStat
 	private long _sp;
 	private int _level = 1;
 	/** Creature's maximum buff count. */
-	private int _maxBuffCount = Config.BUFFS_MAX_AMOUNT;
+	private int _maxBuffCount = Config.Character.BUFFS_MAX_AMOUNT;
 	private double _vampiricSum;
 	private double _mpVampiricSum;
 
@@ -433,7 +433,7 @@ public class CreatureStat
 		}
 		double mpConsume = skill.getMpConsume();
 		double nextDanceMpCost = Math.Ceiling(skill.getMpConsume() / 2.0);
-		if (skill.isDance() && Config.DANCE_CONSUME_ADDITIONAL_MP && _creature != null && _creature.getDanceCount() > 0)
+		if (skill.isDance() && Config.Character.DANCE_CONSUME_ADDITIONAL_MP && _creature != null && _creature.getDanceCount() > 0)
 		{
 			mpConsume += _creature.getDanceCount() * nextDanceMpCost;
 		}

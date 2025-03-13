@@ -3,9 +3,9 @@ using System.Globalization;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Enchant;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Xml;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -120,7 +120,7 @@ public sealed class EnchantItemGroupsData: DataReaderBase
 		_logger.Info(GetType().Name + ": Loaded " + _itemGroups.Count + " item group templates.");
 		_logger.Info(GetType().Name + ": Loaded " + _scrollGroups.Count + " scroll group templates.");
 
-		if (Config.OVER_ENCHANT_PROTECTION)
+		if (Config.Character.OVER_ENCHANT_PROTECTION)
 		{
 			_logger.Info(GetType().Name + ": Max weapon enchant is set to " + _maxWeaponEnchant + ".");
 			_logger.Info(GetType().Name + ": Max armor enchant is set to " + _maxArmorEnchant + ".");

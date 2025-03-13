@@ -5,7 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ItemHandlers;
 
@@ -23,7 +23,7 @@ public class Recipes: IItemHandler
 			return false;
 		}
 
-		if (!Config.IS_CRAFTING_ENABLED)
+		if (!Config.Character.IS_CRAFTING_ENABLED)
 		{
 			playable.sendMessage("Crafting is disabled, you cannot register this recipe.");
 			return false;

@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Data;
+﻿using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
@@ -8,11 +9,9 @@ using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.NetworkAuthServer;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using NLog;
-using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer;
 
@@ -181,7 +180,7 @@ public class Shutdown
 			_counterInstance.abort();
 		}
 
-		if (Config.PRECAUTIONARY_RESTART_ENABLED)
+		if (Config.Server.PRECAUTIONARY_RESTART_ENABLED)
 		{
 			PrecautionaryRestartManager.getInstance().restartEnabled();
 		}
@@ -208,7 +207,7 @@ public class Shutdown
 		{
 			_counterInstance.abort();
 
-			if (Config.PRECAUTIONARY_RESTART_ENABLED)
+			if (Config.Server.PRECAUTIONARY_RESTART_ENABLED)
 			{
 				PrecautionaryRestartManager.getInstance().restartAborted();
 			}

@@ -1,13 +1,14 @@
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -46,7 +47,7 @@ public class RandomCraftData: DataReaderBase
 		REWARD_DATA.Clear();
 
 		{
-			string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "RandomCraftRewardData.xml");
+			string filePath = Path.Combine(ServerConfig.Instance.DataPack.Path, "RandomCraftRewardData.xml");
 			using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 			XDocument document = XDocument.Load(stream);
 			document.Elements("list").Elements("rewards").Elements("item").ForEach(parseRewardElement);

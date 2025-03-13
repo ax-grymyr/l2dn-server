@@ -8,10 +8,10 @@ using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Variables;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using L2Dn.Packets;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -100,13 +100,13 @@ public readonly struct DiePacket: IOutgoingPacket
 		writer.WriteInt32((int)_delayFeather.TotalSeconds); // Feather item time.
 		writer.WriteByte(0); // Hide die animation.
 		writer.WriteInt32(0);
-		if (_player != null && Config.RESURRECT_BY_PAYMENT_ENABLED)
+		if (_player != null && Config.Character.RESURRECT_BY_PAYMENT_ENABLED)
 		{
 			int resurrectTimes = _player.getVariables().Get(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, 0) + 1;
 			int originalValue = resurrectTimes - 1;
-			if (originalValue < Config.RESURRECT_BY_PAYMENT_MAX_FREE_TIMES)
+			if (originalValue < Config.Character.RESURRECT_BY_PAYMENT_MAX_FREE_TIMES)
 			{
-				writer.WriteInt32(Config.RESURRECT_BY_PAYMENT_MAX_FREE_TIMES - originalValue); // free round resurrection
+				writer.WriteInt32(Config.Character.RESURRECT_BY_PAYMENT_MAX_FREE_TIMES - originalValue); // free round resurrection
 				writer.WriteInt32(0); // Adena resurrection
 				writer.WriteInt32(0); // Adena count%
 				writer.WriteInt32(0); // L-Coin resurrection
@@ -132,7 +132,7 @@ public readonly struct DiePacket: IOutgoingPacket
 
 	private static void GetValues(PacketBitWriter writer, Player player, int originalValue)
 	{
-		if (Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES.IsEmpty || Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES.IsEmpty)
+		if (Config.Character.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES.IsEmpty || Config.Character.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES.IsEmpty)
 		{
 			writer.WriteInt32(0); // Adena resurrection
 			writer.WriteInt32(-1); // Adena count%
@@ -141,11 +141,11 @@ public readonly struct DiePacket: IOutgoingPacket
 			return;
 		}
 
-		List<int> levelListFirst = Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES.Keys.ToList();
-		List<int> levelListSecond = Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES.Keys.ToList();
+		List<int> levelListFirst = Config.Character.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES.Keys.ToList();
+		List<int> levelListSecond = Config.Character.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES.Keys.ToList();
 		foreach (int level in levelListSecond)
 		{
-			if (Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES.Count == 0)
+			if (Config.Character.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES.Count == 0)
 			{
 				writer.WriteInt32(0); // Adena resurrection
 				writer.WriteInt32(-1); // Adena count%
@@ -160,7 +160,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			int maxResTime;
 			try
 			{
-				maxResTime = Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES[level].Keys.Max();
+				maxResTime = Config.Character.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES[level].Keys.Max();
 			}
 			catch (Exception e)
 			{
@@ -171,7 +171,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			}
 
 			int getValue = maxResTime <= originalValue ? maxResTime : originalValue + 1;
-			ResurrectByPaymentHolder rbph = Config.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES[level][getValue];
+			ResurrectByPaymentHolder rbph = Config.Character.RESURRECT_BY_PAYMENT_SECOND_RESURRECT_VALUES[level][getValue];
 			writer.WriteInt32((int) (rbph.getAmount() * player.getStat().getValue(Stat.RESURRECTION_FEE_MODIFIER, 1))); // Adena resurrection
 			writer.WriteInt32((int)rbph.getResurrectPercent()); // Adena count%
 			break;
@@ -179,7 +179,7 @@ public readonly struct DiePacket: IOutgoingPacket
 
 		foreach (int level in levelListFirst)
 		{
-			if (Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES.Count == 0)
+			if (Config.Character.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES.Count == 0)
 			{
 				writer.WriteInt32(0); // L-Coin resurrection
 				writer.WriteInt32(-1); // L-Coin count%
@@ -194,7 +194,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			int maxResTime;
 			try
 			{
-				maxResTime = Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES[level].Keys.Max();
+				maxResTime = Config.Character.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES[level].Keys.Max();
 			}
 			catch (Exception e)
 			{
@@ -205,7 +205,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			}
 
 			int getValue = maxResTime <= originalValue ? maxResTime : originalValue + 1;
-			ResurrectByPaymentHolder rbph = Config.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES[level][getValue];
+			ResurrectByPaymentHolder rbph = Config.Character.RESURRECT_BY_PAYMENT_FIRST_RESURRECT_VALUES[level][getValue];
 			writer.WriteInt32((int)(rbph.getAmount() * player.getStat().getValue(Stat.RESURRECTION_FEE_MODIFIER, 1))); // L-Coin resurrection
 			writer.WriteInt32((int)rbph.getResurrectPercent()); // L-Coin count%
 			break;

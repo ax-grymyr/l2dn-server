@@ -24,7 +24,6 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model;
@@ -32,6 +31,7 @@ using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Quests;
 
@@ -2377,7 +2377,7 @@ public class Quest: AbstractScript, IIdentifiable
 			}
 			temp = partyMember.getQuestState(Name);
 			if (temp != null && temp.get(var) != null && temp.get(var).equalsIgnoreCase(value) &&
-			    partyMember.IsInsideRadius3D(target, Config.ALT_PARTY_RANGE))
+			    partyMember.IsInsideRadius3D(target, Config.Character.ALT_PARTY_RANGE))
 			{
 				candidates.Add(partyMember);
 			}
@@ -2440,7 +2440,7 @@ public class Quest: AbstractScript, IIdentifiable
 				continue;
 			}
 			temp = partyMember.getQuestState(Name);
-			if (temp != null && temp.getState() == state && partyMember.IsInsideRadius3D(target, Config.ALT_PARTY_RANGE))
+			if (temp != null && temp.getState() == state && partyMember.IsInsideRadius3D(target, Config.Character.ALT_PARTY_RANGE))
 			{
 				candidates.Add(partyMember);
 			}
@@ -2570,7 +2570,7 @@ public class Quest: AbstractScript, IIdentifiable
 
 	private static bool checkDistanceToTarget(Player player, Npc target)
 	{
-		return target == null || Util.checkIfInRange(Config.ALT_PARTY_RANGE, player, target, true);
+		return target == null || Util.checkIfInRange(Config.Character.ALT_PARTY_RANGE, player, target, true);
 	}
 
 	/**
@@ -3164,14 +3164,14 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 
 		// Teleport in combat configuration.
-		if (!Config.TELEPORT_WHILE_PLAYER_IN_COMBAT && (player.isInCombat() || player.isCastingNow()))
+		if (!Config.Character.TELEPORT_WHILE_PLAYER_IN_COMBAT && (player.isInCombat() || player.isCastingNow()))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_WHILE_IN_COMBAT);
 			return;
 		}
 
 		// Karma related configurations.
-		if ((!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT || !Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK) && player.getReputation() < 0)
+		if ((!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT || !Config.Character.ALT_GAME_KARMA_PLAYER_CAN_USE_GK) && player.getReputation() < 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_RIGHT_NOW);
 			return;

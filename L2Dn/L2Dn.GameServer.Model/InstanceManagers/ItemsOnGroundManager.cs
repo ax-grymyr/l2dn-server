@@ -2,11 +2,11 @@ using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;

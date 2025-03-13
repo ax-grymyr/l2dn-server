@@ -16,13 +16,13 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Config = L2Dn.GameServer.Configuration.Config;
 using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -485,7 +485,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 				if (_formerOwner == null)
 				{
 					_formerOwner = oldOwner;
-					if (Config.REMOVE_CASTLE_CIRCLETS)
+					if (Config.Character.REMOVE_CASTLE_CIRCLETS)
 					{
 						CastleManager.getInstance().removeCirclet(_formerOwner, getResidenceId());
 					}
@@ -541,7 +541,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		if (clan != null)
 		{
 			_formerOwner = clan;
-			if (Config.REMOVE_CASTLE_CIRCLETS)
+			if (Config.Character.REMOVE_CASTLE_CIRCLETS)
 			{
 				CastleManager.getInstance().removeCirclet(_formerOwner, getResidenceId());
 			}
@@ -926,17 +926,17 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		{
 			case CastleSide.LIGHT:
 			{
-				taxPercent = type == TaxType.BUY ? Config.CASTLE_BUY_TAX_LIGHT : Config.CASTLE_SELL_TAX_LIGHT;
+				taxPercent = type == TaxType.BUY ? Config.Feature.CASTLE_BUY_TAX_LIGHT : Config.Feature.CASTLE_SELL_TAX_LIGHT;
 				break;
 			}
 			case CastleSide.DARK:
 			{
-				taxPercent = type == TaxType.BUY ? Config.CASTLE_BUY_TAX_DARK : Config.CASTLE_SELL_TAX_DARK;
+				taxPercent = type == TaxType.BUY ? Config.Feature.CASTLE_BUY_TAX_DARK : Config.Feature.CASTLE_SELL_TAX_DARK;
 				break;
 			}
 			default:
 			{
-				taxPercent = type == TaxType.BUY ? Config.CASTLE_BUY_TAX_NEUTRAL : Config.CASTLE_SELL_TAX_NEUTRAL;
+				taxPercent = type == TaxType.BUY ? Config.Feature.CASTLE_BUY_TAX_NEUTRAL : Config.Feature.CASTLE_SELL_TAX_NEUTRAL;
 				break;
 			}
 		}
@@ -974,16 +974,16 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			if (_formerOwner != ClanTable.getInstance().getClan(getOwnerId()))
 			{
 				int maxreward = Math.Max(0, _formerOwner.getReputationScore());
-				_formerOwner.takeReputationScore(Config.LOOSE_CASTLE_POINTS);
+				_formerOwner.takeReputationScore(Config.Feature.LOOSE_CASTLE_POINTS);
 				Clan? owner = ClanTable.getInstance().getClan(getOwnerId());
 				if (owner != null)
 				{
-					owner.addReputationScore(Math.Min(Config.TAKE_CASTLE_POINTS, maxreward));
+					owner.addReputationScore(Math.Min(Config.Feature.TAKE_CASTLE_POINTS, maxreward));
 				}
 			}
 			else
 			{
-				_formerOwner.addReputationScore(Config.CASTLE_DEFENDED_POINTS);
+				_formerOwner.addReputationScore(Config.Feature.CASTLE_DEFENDED_POINTS);
 			}
 		}
 		else
@@ -991,7 +991,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 			Clan? owner = ClanTable.getInstance().getClan(getOwnerId());
 			if (owner != null)
 			{
-				owner.addReputationScore(Config.TAKE_CASTLE_POINTS);
+				owner.addReputationScore(Config.Feature.TAKE_CASTLE_POINTS);
 			}
 		}
 	}

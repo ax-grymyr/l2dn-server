@@ -20,13 +20,13 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Stats.Functions;
 using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -1298,7 +1298,7 @@ public class ItemData: DataReaderBase
 	{
 		// Create and Init the Item corresponding to the Item Identifier
 		Item item = new Item(IdManager.getInstance().getNextId(), itemId);
-		if (process.equalsIgnoreCase("loot") && !Config.AUTO_LOOT_ITEM_IDS.Contains(itemId))
+		if (process.equalsIgnoreCase("loot") && !Config.Character.AUTO_LOOT_ITEM_IDS.Contains(itemId))
 		{
 			ScheduledFuture itemLootShedule;
 			if (reference is Attackable && ((Attackable)reference).isRaid()) // loot privilege for raids
@@ -1306,14 +1306,14 @@ public class ItemData: DataReaderBase
 				Attackable raid = (Attackable)reference;
 				// if in CommandChannel and was killing a World/RaidBoss
                 CommandChannel? firstCommandChannelAttacked = raid.getFirstCommandChannelAttacked();
-				if (firstCommandChannelAttacked != null && !Config.AUTO_LOOT_RAIDS)
+				if (firstCommandChannelAttacked != null && !Config.Character.AUTO_LOOT_RAIDS)
 				{
 					item.setOwnerId(firstCommandChannelAttacked.getLeaderObjectId());
-					itemLootShedule = ThreadPool.schedule(new ResetOwner(item), Config.LOOT_RAIDS_PRIVILEGE_INTERVAL);
+					itemLootShedule = ThreadPool.schedule(new ResetOwner(item), Config.Character.LOOT_RAIDS_PRIVILEGE_INTERVAL);
 					item.setItemLootShedule(itemLootShedule);
 				}
 			}
-			else if (!Config.AUTO_LOOT ||
+			else if (!Config.Character.AUTO_LOOT ||
 			         (reference is EventMonster && ((EventMonster)reference).eventDropOnGround()))
 			{
 				item.setOwnerId(actor?.ObjectId ?? 0); // TODO: assign owner id

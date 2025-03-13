@@ -1,4 +1,4 @@
-﻿using L2Dn.GameServer.StaticData;
+﻿using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Actor.Stats;
 
@@ -15,12 +15,12 @@ public class SummonStat: PlayableStat
 
     public override double getRunSpeed()
     {
-        double val = base.getRunSpeed() + Config.RUN_SPD_BOOST;
+        double val = base.getRunSpeed() + Config.Character.RUN_SPD_BOOST;
 
         // Apply max run speed cap.
-        if (val > Config.MAX_RUN_SPEED_SUMMON) // In retail maximum run speed is 350 for summons and 300 for players
+        if (val > Config.Character.MAX_RUN_SPEED_SUMMON) // In retail maximum run speed is 350 for summons and 300 for players
         {
-            return Config.MAX_RUN_SPEED_SUMMON;
+            return Config.Character.MAX_RUN_SPEED_SUMMON;
         }
 
         return val;
@@ -28,12 +28,12 @@ public class SummonStat: PlayableStat
 
     public override double getWalkSpeed()
     {
-        double val = base.getWalkSpeed() + Config.RUN_SPD_BOOST;
+        double val = base.getWalkSpeed() + Config.Character.RUN_SPD_BOOST;
 
         // Apply max run speed cap.
-        if (val > Config.MAX_RUN_SPEED_SUMMON) // In retail maximum run speed is 350 for summons and 300 for players
+        if (val > Config.Character.MAX_RUN_SPEED_SUMMON) // In retail maximum run speed is 350 for summons and 300 for players
         {
-            return Config.MAX_RUN_SPEED_SUMMON;
+            return Config.Character.MAX_RUN_SPEED_SUMMON;
         }
 
         return val;

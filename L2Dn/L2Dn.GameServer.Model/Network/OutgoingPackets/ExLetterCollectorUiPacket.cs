@@ -1,7 +1,7 @@
 ﻿using L2Dn.GameServer.InstanceManagers.Events;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -11,7 +11,7 @@ public readonly struct ExLetterCollectorUiPacket: IOutgoingPacket
 
     public ExLetterCollectorUiPacket(Player player)
     {
-        _minimumLevel = player.getLevel() <= LetterCollectorManager.getInstance().getMaxLevel() ? LetterCollectorManager.getInstance().getMinLevel() : Config.PLAYER_MAXIMUM_LEVEL;
+        _minimumLevel = player.getLevel() <= LetterCollectorManager.getInstance().getMaxLevel() ? LetterCollectorManager.getInstance().getMinLevel() : Config.Character.PLAYER_MAXIMUM_LEVEL;
     }
 
     public void WriteContent(PacketBitWriter writer)

@@ -14,13 +14,13 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using L2Dn.Packets;
 using L2Dn.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model;
@@ -107,7 +107,7 @@ public class Party : AbstractPlayerGroup
 		List<Player> availableMembers = new();
 		foreach (Player member in _members)
 		{
-			if (member.getInventory().validateCapacityByItemId(itemId) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, target, member, true))
+			if (member.getInventory().validateCapacityByItemId(itemId) && Util.checkIfInRange(Config.Character.ALT_PARTY_RANGE, target, member, true))
 			{
 				availableMembers.Add(member);
 			}
@@ -132,7 +132,7 @@ public class Party : AbstractPlayerGroup
 			try
 			{
 				Player member = _members[_itemLastLoot];
-				if (member.getInventory().validateCapacityByItemId(itemId) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, target, member, true))
+				if (member.getInventory().validateCapacityByItemId(itemId) && Util.checkIfInRange(Config.Character.ALT_PARTY_RANGE, target, member, true))
 				{
 					return member;
 				}
@@ -451,7 +451,7 @@ public class Party : AbstractPlayerGroup
 		if (_members.Contains(player))
 		{
 			bool isLeader = this.isLeader(player);
-			if (!_disbanding && (_members.Count == 2 || (isLeader && !Config.ALT_LEAVE_PARTY_LEADER && type != PartyMessageType.DISCONNECTED)))
+			if (!_disbanding && (_members.Count == 2 || (isLeader && !Config.Character.ALT_LEAVE_PARTY_LEADER && type != PartyMessageType.DISCONNECTED)))
 			{
 				disbandParty();
 				return;
@@ -516,7 +516,7 @@ public class Party : AbstractPlayerGroup
 			{
 				player.sendPacket(ExCloseMPCCPacket.STATIC_PACKET);
 			}
-			if (isLeader && _members.Count > 1 && (Config.ALT_LEAVE_PARTY_LEADER || type == PartyMessageType.DISCONNECTED))
+			if (isLeader && _members.Count > 1 && (Config.Character.ALT_LEAVE_PARTY_LEADER || type == PartyMessageType.DISCONNECTED))
 			{
 				msg = new SystemMessagePacket(SystemMessageId.C1_HAS_BECOME_THE_PARTY_LEADER);
 				msg.Params.addString(getLeader().getName());
@@ -746,7 +746,7 @@ public class Party : AbstractPlayerGroup
 		List<Player> toReward = new();
 		foreach (Player member in _members)
 		{
-			if (Util.checkIfInRange(Config.ALT_PARTY_RANGE, target, member, true))
+			if (Util.checkIfInRange(Config.Character.ALT_PARTY_RANGE, target, member, true))
 			{
 				toReward.Add(member);
 			}
@@ -872,16 +872,16 @@ public class Party : AbstractPlayerGroup
 
 		double xp = addExp;
 		double sp = addSp;
-		if (Config.PARTY_XP_CUTOFF_METHOD.equalsIgnoreCase("highfive"))
+		if (Config.Character.PARTY_XP_CUTOFF_METHOD.equalsIgnoreCase("highfive"))
 		{
 			int i = 0;
 			int levelDiff = topLvl - player.getLevel();
-			foreach (Range<int> gap in Config.PARTY_XP_CUTOFF_GAPS)
+			foreach (Range<int> gap in Config.Character.PARTY_XP_CUTOFF_GAPS)
 			{
 				if (levelDiff >= gap.Left && levelDiff <= gap.Right)
 				{
-					xp = addExp * Config.PARTY_XP_CUTOFF_GAP_PERCENTS[i] / 100;
-					sp = addSp * Config.PARTY_XP_CUTOFF_GAP_PERCENTS[i] / 100;
+					xp = addExp * Config.Character.PARTY_XP_CUTOFF_GAP_PERCENTS[i] / 100;
+					sp = addSp * Config.Character.PARTY_XP_CUTOFF_GAP_PERCENTS[i] / 100;
 					player.addExpAndSp(xp, sp, vit);
 					break;
 				}
@@ -913,13 +913,13 @@ public class Party : AbstractPlayerGroup
 	private List<Player> getValidMembers(List<Player> members, int topLvl)
 	{
 		List<Player> validMembers = new();
-		switch (Config.PARTY_XP_CUTOFF_METHOD)
+		switch (Config.Character.PARTY_XP_CUTOFF_METHOD)
 		{
 			case "level":
 			{
 				foreach (Player member in members)
 				{
-					if (topLvl - member.getLevel() <= Config.PARTY_XP_CUTOFF_LEVEL)
+					if (topLvl - member.getLevel() <= Config.Character.PARTY_XP_CUTOFF_LEVEL)
 					{
 						validMembers.Add(member);
 					}
@@ -936,7 +936,7 @@ public class Party : AbstractPlayerGroup
 				foreach (Player member in members)
 				{
 					int sqLevel = member.getLevel() * member.getLevel();
-					if (sqLevel * 100 >= sqLevelSum * Config.PARTY_XP_CUTOFF_PERCENT)
+					if (sqLevel * 100 >= sqLevelSum * Config.Character.PARTY_XP_CUTOFF_PERCENT)
 					{
 						validMembers.Add(member);
 					}

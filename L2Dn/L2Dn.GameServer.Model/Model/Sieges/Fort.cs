@@ -14,12 +14,12 @@ using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Config = L2Dn.GameServer.Configuration.Config;
 using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -421,15 +421,15 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	public void raiseSupplyLvL()
 	{
 		_supplyLvL++;
-		if (_supplyLvL > Config.FS_MAX_SUPPLY_LEVEL)
+		if (_supplyLvL > Config.Feature.FS_MAX_SUPPLY_LEVEL)
 		{
-			_supplyLvL = Config.FS_MAX_SUPPLY_LEVEL;
+			_supplyLvL = Config.Feature.FS_MAX_SUPPLY_LEVEL;
 		}
 	}
 
 	public void setSupplyLevel(int value)
 	{
-		if (value <= Config.FS_MAX_SUPPLY_LEVEL)
+		if (value <= Config.Feature.FS_MAX_SUPPLY_LEVEL)
 		{
 			_supplyLvL = value;
 		}
@@ -572,7 +572,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 
 				clan.setFortId(getResidenceId());
 				setOwnerClan(clan);
-				TimeSpan period = TimeSpan.FromSeconds(Config.FS_UPDATE_FRQ * 60);
+				TimeSpan period = TimeSpan.FromSeconds(Config.Feature.FS_UPDATE_FRQ * 60);
 				int runCount = (int)((getOwnedTime() ?? TimeSpan.Zero) / period);
 				TimeSpan initial = _lastOwnedTime is null ? TimeSpan.Zero : DateTime.UtcNow - _lastOwnedTime.Value;
 				if (initial > period)
@@ -581,12 +581,12 @@ public class Fort: AbstractResidence, IEventContainerProvider
 				}
 
 				initial = period - initial;
-				if (Config.FS_MAX_OWN_TIME <= 0 || getOwnedTime() < TimeSpan.FromSeconds(Config.FS_MAX_OWN_TIME * 3600))
+				if (Config.Feature.FS_MAX_OWN_TIME <= 0 || getOwnedTime() < TimeSpan.FromSeconds(Config.Feature.FS_MAX_OWN_TIME * 3600))
 				{
 					_fortUpdater[0] = ThreadPool.scheduleAtFixedRate(
 						new FortUpdater(this, clan, runCount, FortUpdaterType.PERIODIC_UPDATE), initial,
 						period); // Schedule owner tasks to start running
-					if (Config.FS_MAX_OWN_TIME > 0)
+					if (Config.Feature.FS_MAX_OWN_TIME > 0)
 					{
 						_fortUpdater[1] = ThreadPool.scheduleAtFixedRate(
 							new FortUpdater(this, clan, runCount, FortUpdaterType.MAX_OWN_TIME), 3600000,
@@ -828,8 +828,8 @@ public class Fort: AbstractResidence, IEventContainerProvider
 				clan.broadcastToOnlineMembers(new PlaySoundPacket(1, "Siege_Victory", 0, 0, 0, 0, 0));
 				_fortUpdater[0]?.cancel(false);
 				_fortUpdater[1]?.cancel(false);
-				_fortUpdater[0] = ThreadPool.scheduleAtFixedRate(new FortUpdater(this, clan, 0, FortUpdaterType.PERIODIC_UPDATE), Config.FS_UPDATE_FRQ * 60000, Config.FS_UPDATE_FRQ * 60000); // Schedule owner tasks to start running
-				if (Config.FS_MAX_OWN_TIME > 0)
+				_fortUpdater[0] = ThreadPool.scheduleAtFixedRate(new FortUpdater(this, clan, 0, FortUpdaterType.PERIODIC_UPDATE), Config.Feature.FS_UPDATE_FRQ * 60000, Config.Feature.FS_UPDATE_FRQ * 60000); // Schedule owner tasks to start running
+				if (Config.Feature.FS_MAX_OWN_TIME > 0)
 				{
 					_fortUpdater[1] = ThreadPool.scheduleAtFixedRate(new FortUpdater(this, clan, 0, FortUpdaterType.MAX_OWN_TIME), 3600000, 3600000); // Schedule owner tasks to remove owner
 				}
@@ -930,7 +930,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	{
 		return _lastOwnedTime is null
 			? null
-			: _lastOwnedTime + TimeSpan.FromMilliseconds(Config.FS_MAX_OWN_TIME * 3600000) - DateTime.UtcNow;
+			: _lastOwnedTime + TimeSpan.FromMilliseconds(Config.Feature.FS_MAX_OWN_TIME * 3600000) - DateTime.UtcNow;
 	}
 
 	public TimeSpan getTimeTillNextFortUpdate()
@@ -944,11 +944,11 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		{
 			if (removePoints)
 			{
-				owner.takeReputationScore(Config.LOOSE_FORT_POINTS);
+				owner.takeReputationScore(Config.Feature.LOOSE_FORT_POINTS);
 			}
 			else
 			{
-				owner.addReputationScore(Config.TAKE_FORT_POINTS);
+				owner.addReputationScore(Config.Feature.TAKE_FORT_POINTS);
 			}
 		}
 	}

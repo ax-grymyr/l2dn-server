@@ -18,12 +18,12 @@ using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor;
@@ -324,7 +324,7 @@ public class Attackable: Npc
 				if (damage > 1)
 				{
 					// Check if damage dealer isn't too far from this (killed monster)
-					if (!Util.checkIfInRange(Config.ALT_PARTY_RANGE, this, attacker, true))
+					if (!Util.checkIfInRange(Config.Character.ALT_PARTY_RANGE, this, attacker, true))
 					{
 						continue;
 					}
@@ -414,7 +414,7 @@ public class Attackable: Npc
                         {
                             foreach (Player p in command.getMembers())
                             {
-                                if (p.Distance3D(this) < Config.ALT_PARTY_RANGE)
+                                if (p.Distance3D(this) < Config.Character.ALT_PARTY_RANGE)
                                 {
                                     members.Add(p);
                                 }
@@ -424,7 +424,7 @@ public class Attackable: Npc
                         {
                             foreach (Player p in party.getMembers())
                             {
-                                if (p.Distance3D(this) < Config.ALT_PARTY_RANGE)
+                                if (p.Distance3D(this) < Config.Character.ALT_PARTY_RANGE)
                                 {
                                     members.Add(p);
                                 }
@@ -632,7 +632,7 @@ public class Attackable: Npc
 							// If the Player is in the Attackable rewards add its damages to party damages
 							if (reward2 != null)
 							{
-								if (Util.checkIfInRange(Config.ALT_PARTY_RANGE, this, partyPlayer, true))
+								if (Util.checkIfInRange(Config.Character.ALT_PARTY_RANGE, this, partyPlayer, true))
 								{
 									partyDmg += reward2.getDamage(); // Add Player damages to party damages
 									rewardedMembers.Add(partyPlayer);
@@ -651,7 +651,7 @@ public class Attackable: Npc
 								}
 								rewards.remove(partyPlayer); // Remove the Player from the Attackable rewards
 							}
-							else if (Util.checkIfInRange(Config.ALT_PARTY_RANGE, this, partyPlayer, true))
+							else if (Util.checkIfInRange(Config.Character.ALT_PARTY_RANGE, this, partyPlayer, true))
 							{
 								rewardedMembers.Add(partyPlayer);
 								if (partyPlayer.getLevel() > partyLvl)
@@ -757,7 +757,7 @@ public class Attackable: Npc
 		Creature? damageDealer = null;
 		foreach (AggroInfo info in _aggroList.Values)
 		{
-			if (info != null && info.getDamage() > damage && Util.checkIfInRange(Config.ALT_PARTY_RANGE, this, info.getAttacker(), true))
+			if (info != null && info.getDamage() > damage && Util.checkIfInRange(Config.Character.ALT_PARTY_RANGE, this, info.getAttacker(), true))
 			{
 				damage = info.getDamage();
 				damageDealer = info.getAttacker();
@@ -1138,11 +1138,11 @@ public class Attackable: Npc
                             throw new InvalidOperationException($"Item template id={drop.getId()} not found");
 
 						// Check if the autoLoot mode is active
-						if (Config.AUTO_LOOT_ITEM_IDS.Contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.AUTO_LOOT) || (_isRaid && Config.AUTO_LOOT_RAIDS))))
+						if (Config.Character.AUTO_LOOT_ITEM_IDS.Contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.Character.AUTO_LOOT) || (_isRaid && Config.Character.AUTO_LOOT_RAIDS))))
 						{
 							// do nothing
 						}
-						else if (Config.AUTO_LOOT_HERBS && item.hasExImmediateEffect())
+						else if (Config.Character.AUTO_LOOT_HERBS && item.hasExImmediateEffect())
 						{
 							foreach (ItemSkillHolder skillHolder in item.getAllSkills())
 							{
@@ -1181,7 +1181,7 @@ public class Attackable: Npc
                     throw new InvalidOperationException($"Item template id={drop.getId()} not found");
 
 				// Check if the autoLoot mode is active
-				if (Config.AUTO_LOOT_ITEM_IDS.Contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.AUTO_LOOT) || (_isRaid && Config.AUTO_LOOT_RAIDS))) || (item.hasExImmediateEffect() && Config.AUTO_LOOT_HERBS))
+				if (Config.Character.AUTO_LOOT_ITEM_IDS.Contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.Character.AUTO_LOOT) || (_isRaid && Config.Character.AUTO_LOOT_RAIDS))) || (item.hasExImmediateEffect() && Config.Character.AUTO_LOOT_HERBS))
 				{
 					player.doAutoLoot(this, drop); // Give the item(s) to the Player that has killed the Attackable
 				}
@@ -1229,7 +1229,7 @@ public class Attackable: Npc
                             throw new InvalidOperationException($"Item template id={drop.getId()} not found");
 
 						// Check if the autoLoot mode is active.
-						if (Config.AUTO_LOOT_ITEM_IDS.Contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.AUTO_LOOT) || (_isRaid && Config.AUTO_LOOT_RAIDS))) || (item.hasExImmediateEffect() && Config.AUTO_LOOT_HERBS))
+						if (Config.Character.AUTO_LOOT_ITEM_IDS.Contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.Character.AUTO_LOOT) || (_isRaid && Config.Character.AUTO_LOOT_RAIDS))) || (item.hasExImmediateEffect() && Config.Character.AUTO_LOOT_HERBS))
 						{
 							player.doAutoLoot(this, drop); // Give the item(s) to the Player that has killed the Attackable.
 						}

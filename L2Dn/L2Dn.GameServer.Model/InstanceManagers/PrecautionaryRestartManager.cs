@@ -2,9 +2,9 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Sieges;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -30,22 +30,22 @@ public class PrecautionaryRestartManager
 				return;
 			}
 
-			if (Config.PRECAUTIONARY_RESTART_CPU &&
-			    getCpuLoad(SYSTEM_CPU_LOAD_VAR) > Config.PRECAUTIONARY_RESTART_PERCENTAGE)
+			if (Config.Server.PRECAUTIONARY_RESTART_CPU &&
+			    getCpuLoad(SYSTEM_CPU_LOAD_VAR) > Config.Server.PRECAUTIONARY_RESTART_PERCENTAGE)
 			{
 				if (serverBizzy())
 				{
 					return;
 				}
 
-				LOGGER.Info("PrecautionaryRestartManager: CPU usage over " + Config.PRECAUTIONARY_RESTART_PERCENTAGE +
+				LOGGER.Info("PrecautionaryRestartManager: CPU usage over " + Config.Server.PRECAUTIONARY_RESTART_PERCENTAGE +
 				            "%.");
 				LOGGER.Info("PrecautionaryRestartManager: Server is using " + getCpuLoad(PROCESS_CPU_LOAD_VAR) + "%.");
 				Broadcast.toAllOnlinePlayers("Server will restart in 10 minutes.", false);
 				Shutdown.getInstance().startShutdown(null, 600, true);
 			}
 
-			if (Config.PRECAUTIONARY_RESTART_MEMORY && getProcessRamLoad() > Config.PRECAUTIONARY_RESTART_PERCENTAGE)
+			if (Config.Server.PRECAUTIONARY_RESTART_MEMORY && getProcessRamLoad() > Config.Server.PRECAUTIONARY_RESTART_PERCENTAGE)
 			{
 				if (serverBizzy())
 				{
@@ -53,11 +53,11 @@ public class PrecautionaryRestartManager
 				}
 
 				LOGGER.Info("PrecautionaryRestartManager: Memory usage over " +
-				            Config.PRECAUTIONARY_RESTART_PERCENTAGE + "%.");
+				            Config.Server.PRECAUTIONARY_RESTART_PERCENTAGE + "%.");
 				Broadcast.toAllOnlinePlayers("Server will restart in 10 minutes.", false);
 				Shutdown.getInstance().startShutdown(null, 600, true);
 			}
-		}, Config.PRECAUTIONARY_RESTART_DELAY, Config.PRECAUTIONARY_RESTART_DELAY);
+		}, Config.Server.PRECAUTIONARY_RESTART_DELAY, Config.Server.PRECAUTIONARY_RESTART_DELAY);
 	}
 
 	private static double getCpuLoad(string var)

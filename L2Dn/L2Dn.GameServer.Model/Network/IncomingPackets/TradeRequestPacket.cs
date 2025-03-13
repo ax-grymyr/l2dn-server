@@ -7,10 +7,10 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
@@ -130,13 +130,13 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 		}
 
 		// L2J Customs: Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && player.getReputation() < 0)
+		if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_TRADE && player.getReputation() < 0)
 		{
 			player.sendMessage("You cannot trade while you are in a chaotic state.");
 			return ValueTask.CompletedTask;
 		}
 
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && partner.getReputation() < 0)
+		if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_TRADE && partner.getReputation() < 0)
 		{
 			player.sendMessage("You cannot request a trade while your target is in a chaotic state.");
 			return ValueTask.CompletedTask;

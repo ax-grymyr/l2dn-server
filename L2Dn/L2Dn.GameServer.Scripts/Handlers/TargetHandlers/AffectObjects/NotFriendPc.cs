@@ -4,7 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Zones;
-using L2Dn.GameServer.StaticData;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectObjects;
 
@@ -41,7 +41,7 @@ public class NotFriendPc: IAffectObjectHandler
 				return false;
 			}
 
-			if (Config.ALT_COMMAND_CHANNEL_FRIENDS)
+			if (Config.Character.ALT_COMMAND_CHANNEL_FRIENDS)
 			{
 				CommandChannel? playerCC = player.getCommandChannel();
 				CommandChannel? targetCC = targetPlayer.getCommandChannel();

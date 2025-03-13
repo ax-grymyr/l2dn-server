@@ -1,10 +1,9 @@
-﻿using L2Dn.Model;
-
-namespace L2Dn.GameServer.Configuration;
+﻿namespace L2Dn.GameServer.Configuration;
 
 public class GameServerParamsConfig
 {
     public byte ServerId { get; set; }
+    public bool AcceptAlternateServerId { get; set; } // TODO: implement
     public GameServerType ServerType { get; set; }
     public byte AgeLimit { get; set; } = 15;
     public short MaxPlayerCount { get; set; } = 5000;

@@ -5,9 +5,9 @@ using L2Dn.GameServer.Model.Clans.Entries;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -46,7 +46,7 @@ public struct RequestPledgeSignInForOpenJoiningMethodPacket: IIncomingPacket<Gam
 	    {
 		    sm = new SystemMessagePacket(SystemMessageId.C1_WILL_BE_ABLE_TO_JOIN_YOUR_CLAN_IN_S2_MIN_AFTER_LEAVING_THE_PREVIOUS_ONE);
 		    sm.Params.addString(player.getName());
-		    sm.Params.addInt(Config.ALT_CLAN_JOIN_MINS);
+		    sm.Params.addInt(Config.Character.ALT_CLAN_JOIN_MINS);
 		    player.sendPacket(sm);
 		    return ValueTask.CompletedTask;
 	    }

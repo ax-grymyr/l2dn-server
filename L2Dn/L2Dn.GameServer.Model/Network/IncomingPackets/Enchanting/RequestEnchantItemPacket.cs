@@ -13,12 +13,12 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Enchanting;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
 using L2Dn.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets.Enchanting;
 
@@ -87,7 +87,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 		}
 
 		// First validation check, also over enchant check.
-		if (!scrollTemplate.isValid(item, supportTemplate) || (Config.DISABLE_OVER_ENCHANTING && (item.getEnchantLevel() == scrollTemplate.getMaxEnchantLevel() || (!(item.getTemplate().getEnchantLimit() == 0) && item.getEnchantLevel() == item.getTemplate().getEnchantLimit()))))
+		if (!scrollTemplate.isValid(item, supportTemplate) || (Config.Character.DISABLE_OVER_ENCHANTING && (item.getEnchantLevel() == scrollTemplate.getMaxEnchantLevel() || (!(item.getTemplate().getEnchantLimit() == 0) && item.getEnchantLevel() == item.getTemplate().getEnchantLimit()))))
 		{
 			player.sendPacket(SystemMessageId.AUGMENTATION_REQUIREMENTS_ARE_NOT_FULFILLED);
 			player.removeRequest<EnchantItemRequest>();
@@ -286,8 +286,8 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 					}
 
 					// Announce the success.
-					if (item.getEnchantLevel() >= (item.isArmor() ? Config.MIN_ARMOR_ENCHANT_ANNOUNCE : Config.MIN_WEAPON_ENCHANT_ANNOUNCE) //
-						&& item.getEnchantLevel() <= (item.isArmor() ? Config.MAX_ARMOR_ENCHANT_ANNOUNCE : Config.MAX_WEAPON_ENCHANT_ANNOUNCE))
+					if (item.getEnchantLevel() >= (item.isArmor() ? Config.Character.MIN_ARMOR_ENCHANT_ANNOUNCE : Config.Character.MIN_WEAPON_ENCHANT_ANNOUNCE) //
+						&& item.getEnchantLevel() <= (item.isArmor() ? Config.Character.MAX_ARMOR_ENCHANT_ANNOUNCE : Config.Character.MAX_WEAPON_ENCHANT_ANNOUNCE))
 					{
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_ENCHANTED_S3_UP_TO_S2);
 						sm.Params.addString(player.getName());

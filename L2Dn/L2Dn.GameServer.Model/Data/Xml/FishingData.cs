@@ -1,10 +1,10 @@
 using System.Xml.Linq;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Fishings;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -69,7 +69,7 @@ public class FishingData: DataReaderBase
 		int itemId = element.GetAttributeValueAsInt32("itemId");
 		int level = element.Attribute("level").GetInt32(1);
 		int minPlayerLevel = element.GetAttributeValueAsInt32("minPlayerLevel");
-		int maxPlayerLevel = element.Attribute("maxPlayerLevel").GetInt32(Config.PLAYER_MAXIMUM_LEVEL);
+		int maxPlayerLevel = element.Attribute("maxPlayerLevel").GetInt32(Config.Character.PLAYER_MAXIMUM_LEVEL);
 		double chance = element.GetAttributeValueAsDouble("chance");
 		int timeMin = element.GetAttributeValueAsInt32("timeMin");
 		int timeMax = element.Attribute("timeMax").GetInt32(timeMin);

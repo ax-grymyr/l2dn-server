@@ -17,12 +17,12 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Olympiads;
 
@@ -884,10 +884,10 @@ public class Hero
 		Clan? clan = player.getClan();
 		if (clan != null && clan.getLevel() >= 3)
 		{
-			clan.addReputationScore(Config.HERO_POINTS);
+			clan.addReputationScore(Config.Feature.HERO_POINTS);
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.CLAN_MEMBER_C1_HAS_BECOME_THE_HERO_CLAN_REPUTATION_POINTS_S2);
 			sm.Params.addString(player.getName());
-			sm.Params.addInt(Config.HERO_POINTS);
+			sm.Params.addInt(Config.Feature.HERO_POINTS);
 			clan.broadcastToOnlineMembers(sm);
 		}
 

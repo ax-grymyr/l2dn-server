@@ -6,10 +6,10 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model;
@@ -643,7 +643,7 @@ public class EffectList
 			{
 				case SkillBuffType.TRIGGER:
 				{
-					if (_triggerBuffCount.get() > Config.TRIGGERED_BUFFS_MAX_AMOUNT)
+					if (_triggerBuffCount.get() > Config.Character.TRIGGERED_BUFFS_MAX_AMOUNT)
 					{
 						return true;
 					}
@@ -651,7 +651,7 @@ public class EffectList
 				}
 				case SkillBuffType.DANCE:
 				{
-					if (_danceCount.get() > Config.DANCES_MAX_AMOUNT)
+					if (_danceCount.get() > Config.Character.DANCES_MAX_AMOUNT)
 					{
 						return true;
 					}

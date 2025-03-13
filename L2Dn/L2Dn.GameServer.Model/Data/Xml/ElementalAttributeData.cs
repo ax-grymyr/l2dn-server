@@ -4,11 +4,11 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using L2Dn.Model.Xml;
 using L2Dn.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -67,34 +67,34 @@ public sealed class ElementalAttributeData: DataReaderBase
 	private static readonly ImmutableArray<ImmutableArray<int>> _chanceTable =
 	[
 		[
-			Config.S_WEAPON_STONE, Config.S_ARMOR_STONE, Config.S_WEAPON_CRYSTAL, Config.S_ARMOR_CRYSTAL,
-			Config.S_WEAPON_STONE_SUPER, Config.S_ARMOR_STONE_SUPER, Config.S_WEAPON_CRYSTAL_SUPER,
-			Config.S_ARMOR_CRYSTAL_SUPER, Config.S_WEAPON_JEWEL, Config.S_ARMOR_JEWEL
+			Config.AttributeSystem.S_WEAPON_STONE, Config.AttributeSystem.S_ARMOR_STONE, Config.AttributeSystem.S_WEAPON_CRYSTAL, Config.AttributeSystem.S_ARMOR_CRYSTAL,
+			Config.AttributeSystem.S_WEAPON_STONE_SUPER, Config.AttributeSystem.S_ARMOR_STONE_SUPER, Config.AttributeSystem.S_WEAPON_CRYSTAL_SUPER,
+			Config.AttributeSystem.S_ARMOR_CRYSTAL_SUPER, Config.AttributeSystem.S_WEAPON_JEWEL, Config.AttributeSystem.S_ARMOR_JEWEL
 		],
 		[
-			Config.S80_WEAPON_STONE, Config.S80_ARMOR_STONE, Config.S80_WEAPON_CRYSTAL, Config.S80_ARMOR_CRYSTAL,
-			Config.S80_WEAPON_STONE_SUPER, Config.S80_ARMOR_STONE_SUPER, Config.S80_WEAPON_CRYSTAL_SUPER,
-			Config.S80_ARMOR_CRYSTAL_SUPER, Config.S80_WEAPON_JEWEL, Config.S80_ARMOR_JEWEL
+			Config.AttributeSystem.S80_WEAPON_STONE, Config.AttributeSystem.S80_ARMOR_STONE, Config.AttributeSystem.S80_WEAPON_CRYSTAL, Config.AttributeSystem.S80_ARMOR_CRYSTAL,
+			Config.AttributeSystem.S80_WEAPON_STONE_SUPER, Config.AttributeSystem.S80_ARMOR_STONE_SUPER, Config.AttributeSystem.S80_WEAPON_CRYSTAL_SUPER,
+			Config.AttributeSystem.S80_ARMOR_CRYSTAL_SUPER, Config.AttributeSystem.S80_WEAPON_JEWEL, Config.AttributeSystem.S80_ARMOR_JEWEL
 		],
 		[
-			Config.S84_WEAPON_STONE, Config.S84_ARMOR_STONE, Config.S84_WEAPON_CRYSTAL, Config.S84_ARMOR_CRYSTAL,
-			Config.S84_WEAPON_STONE_SUPER, Config.S84_ARMOR_STONE_SUPER, Config.S84_WEAPON_CRYSTAL_SUPER,
-			Config.S84_ARMOR_CRYSTAL_SUPER, Config.S84_WEAPON_JEWEL, Config.S84_ARMOR_JEWEL
+			Config.AttributeSystem.S84_WEAPON_STONE, Config.AttributeSystem.S84_ARMOR_STONE, Config.AttributeSystem.S84_WEAPON_CRYSTAL, Config.AttributeSystem.S84_ARMOR_CRYSTAL,
+			Config.AttributeSystem.S84_WEAPON_STONE_SUPER, Config.AttributeSystem.S84_ARMOR_STONE_SUPER, Config.AttributeSystem.S84_WEAPON_CRYSTAL_SUPER,
+			Config.AttributeSystem.S84_ARMOR_CRYSTAL_SUPER, Config.AttributeSystem.S84_WEAPON_JEWEL, Config.AttributeSystem.S84_ARMOR_JEWEL
 		],
 		[
-			Config.R_WEAPON_STONE, Config.R_ARMOR_STONE, Config.R_WEAPON_CRYSTAL, Config.R_ARMOR_CRYSTAL,
-			Config.R_WEAPON_STONE_SUPER, Config.R_ARMOR_STONE_SUPER, Config.R_WEAPON_CRYSTAL_SUPER,
-			Config.R_ARMOR_CRYSTAL_SUPER, Config.R_WEAPON_JEWEL, Config.R_ARMOR_JEWEL
+			Config.AttributeSystem.R_WEAPON_STONE, Config.AttributeSystem.R_ARMOR_STONE, Config.AttributeSystem.R_WEAPON_CRYSTAL, Config.AttributeSystem.R_ARMOR_CRYSTAL,
+			Config.AttributeSystem.R_WEAPON_STONE_SUPER, Config.AttributeSystem.R_ARMOR_STONE_SUPER, Config.AttributeSystem.R_WEAPON_CRYSTAL_SUPER,
+			Config.AttributeSystem.R_ARMOR_CRYSTAL_SUPER, Config.AttributeSystem.R_WEAPON_JEWEL, Config.AttributeSystem.R_ARMOR_JEWEL
 		],
 		[
-			Config.R95_WEAPON_STONE, Config.R95_ARMOR_STONE, Config.R95_WEAPON_CRYSTAL, Config.R95_ARMOR_CRYSTAL,
-			Config.R95_WEAPON_STONE_SUPER, Config.R95_ARMOR_STONE_SUPER, Config.R95_WEAPON_CRYSTAL_SUPER,
-			Config.R95_ARMOR_CRYSTAL_SUPER, Config.R95_WEAPON_JEWEL, Config.R95_ARMOR_JEWEL
+			Config.AttributeSystem.R95_WEAPON_STONE, Config.AttributeSystem.R95_ARMOR_STONE, Config.AttributeSystem.R95_WEAPON_CRYSTAL, Config.AttributeSystem.R95_ARMOR_CRYSTAL,
+			Config.AttributeSystem.R95_WEAPON_STONE_SUPER, Config.AttributeSystem.R95_ARMOR_STONE_SUPER, Config.AttributeSystem.R95_WEAPON_CRYSTAL_SUPER,
+			Config.AttributeSystem.R95_ARMOR_CRYSTAL_SUPER, Config.AttributeSystem.R95_WEAPON_JEWEL, Config.AttributeSystem.R95_ARMOR_JEWEL
 		],
 		[
-			Config.R99_WEAPON_STONE, Config.R99_ARMOR_STONE, Config.R99_WEAPON_CRYSTAL, Config.R99_ARMOR_CRYSTAL,
-			Config.R99_WEAPON_STONE_SUPER, Config.R99_ARMOR_STONE_SUPER, Config.R99_WEAPON_CRYSTAL_SUPER,
-			Config.R99_ARMOR_CRYSTAL_SUPER, Config.R99_WEAPON_JEWEL, Config.R99_ARMOR_JEWEL
+			Config.AttributeSystem.R99_WEAPON_STONE, Config.AttributeSystem.R99_ARMOR_STONE, Config.AttributeSystem.R99_WEAPON_CRYSTAL, Config.AttributeSystem.R99_ARMOR_CRYSTAL,
+			Config.AttributeSystem.R99_WEAPON_STONE_SUPER, Config.AttributeSystem.R99_ARMOR_STONE_SUPER, Config.AttributeSystem.R99_WEAPON_CRYSTAL_SUPER,
+			Config.AttributeSystem.R99_ARMOR_CRYSTAL_SUPER, Config.AttributeSystem.R99_WEAPON_JEWEL, Config.AttributeSystem.R99_ARMOR_JEWEL
 		],
 	];
 

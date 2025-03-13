@@ -2,9 +2,9 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Packets;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 

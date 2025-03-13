@@ -8,9 +8,9 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
@@ -127,19 +127,19 @@ public class SiegeZone: ZoneType
 				}
 
 				creature.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_A_COMBAT_ZONE);
-				if (!Config.ALLOW_WYVERN_DURING_SIEGE && player.getMountType() == MountType.WYVERN)
+				if (!Config.Feature.ALLOW_WYVERN_DURING_SIEGE && player.getMountType() == MountType.WYVERN)
 				{
 					player.sendPacket(SystemMessageId.THIS_AREA_CANNOT_BE_ENTERED_WHILE_MOUNTED_ATOP_OF_A_WYVERN_YOU_WILL_BE_DISMOUNTED_FROM_YOUR_WYVERN_IF_YOU_DO_NOT_LEAVE);
 					player.enteredNoLanding(DISMOUNT_DELAY);
 				}
 
-				if (!Config.ALLOW_MOUNTS_DURING_SIEGE && player.isMounted())
+				if (!Config.Feature.ALLOW_MOUNTS_DURING_SIEGE && player.isMounted())
 				{
 					player.dismount();
 				}
 
                 Transform? transformation = player.getTransformation();
-				if (!Config.ALLOW_MOUNTS_DURING_SIEGE && player.isTransformed() && transformation != null && transformation.isRiding())
+				if (!Config.Feature.ALLOW_MOUNTS_DURING_SIEGE && player.isTransformed() && transformation != null && transformation.isRiding())
 				{
 					player.untransform();
 				}

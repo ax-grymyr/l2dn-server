@@ -1,9 +1,9 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -48,7 +48,7 @@ public struct AllyLeavePacket: IIncomingPacket<GameSession>
         clan.setAllyId(0);
         clan.setAllyName(null);
         clan.changeAllyCrest(0, true);
-        clan.setAllyPenaltyExpiryTime(currentTime.AddDays(Config.ALT_ALLY_JOIN_DAYS_WHEN_LEAVED * 86400000), Clan.PENALTY_TYPE_CLAN_LEAVED);
+        clan.setAllyPenaltyExpiryTime(currentTime.AddDays(Config.Character.ALT_ALLY_JOIN_DAYS_WHEN_LEAVED * 86400000), Clan.PENALTY_TYPE_CLAN_LEAVED);
         clan.updateClanInDB();
 
         player.sendPacket(SystemMessageId.YOU_HAVE_LEFT_THE_ALLIANCE);

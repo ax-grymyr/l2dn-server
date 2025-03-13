@@ -16,13 +16,13 @@ using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -139,7 +139,7 @@ public class VillageMaster: Folk
 				return;
 			}
 
-			if (!string.IsNullOrEmpty(cmdParams2) || !isValidName(cmdParams))
+			if (!string.IsNullOrEmpty(cmdParams2) || !IsValidName(cmdParams))
 			{
 				player.sendPacket(SystemMessageId.CLAN_NAME_IS_INVALID);
 				return;
@@ -259,7 +259,7 @@ public class VillageMaster: Folk
 				return;
 			}
 
-			if (Config.ALT_CLAN_LEADER_INSTANT_ACTIVATION)
+			if (Config.Character.ALT_CLAN_LEADER_INSTANT_ACTIVATION)
 			{
 				clan.setNewLeader(member);
 			}
@@ -397,7 +397,7 @@ public class VillageMaster: Folk
 					break;
 				case 1: // Add Subclass - Initial
 					// Avoid giving player an option to add a new sub class, if they have max sub-classes already.
-					if (player.getTotalSubClasses() >= Config.MAX_SUBCLASS)
+					if (player.getTotalSubClasses() >= Config.Character.MAX_SUBCLASS)
 					{
 						htmlText = HtmlContent.LoadFromFile(getSubClassFail(), player);
 						break;
@@ -539,7 +539,7 @@ public class VillageMaster: Folk
 					// }
 
 					bool allowAddition = true;
-					if (player.getTotalSubClasses() >= Config.MAX_SUBCLASS)
+					if (player.getTotalSubClasses() >= Config.Character.MAX_SUBCLASS)
 					{
 						allowAddition = false;
 					}
@@ -565,7 +565,7 @@ public class VillageMaster: Folk
 					 * If quest checking is enabled, verify if the character has completed the Mimir's Elixir (Path to Subclass) and Fate's Whisper (A Grade Weapon) quests by checking for instances of their unique reward items. If they both exist, remove both unique items and continue with adding
 					 * the sub-class.
 					 */
-					if (allowAddition && !Config.ALT_GAME_SUBCLASS_WITHOUT_QUESTS)
+					if (allowAddition && !Config.Character.ALT_GAME_SUBCLASS_WITHOUT_QUESTS)
 					{
 						allowAddition = checkQuests(player);
 					}
@@ -627,7 +627,7 @@ public class VillageMaster: Folk
 					return;
 				case 6: // Change/Cancel Subclass - Choice
 					// validity check
-					if (paramOne < 1 || paramOne > Config.MAX_SUBCLASS)
+					if (paramOne < 1 || paramOne > Config.Character.MAX_SUBCLASS)
 					{
 						return;
 					}
@@ -725,7 +725,7 @@ public class VillageMaster: Folk
 
 	protected string getSubClassMenu(Race race)
 	{
-		if (Config.ALT_GAME_SUBCLASS_EVERYWHERE || race != Race.KAMAEL)
+		if (Config.Character.ALT_GAME_SUBCLASS_EVERYWHERE || race != Race.KAMAEL)
 		{
 			return "html/villagemaster/SubClass.htm";
 		}
@@ -977,7 +977,7 @@ public class VillageMaster: Folk
 	 */
 	public bool checkVillageMaster(CharacterClass pclass)
 	{
-		if (Config.ALT_GAME_SUBCLASS_EVERYWHERE)
+		if (Config.Character.ALT_GAME_SUBCLASS_EVERYWHERE)
 		{
 			return true;
 		}
@@ -1037,7 +1037,7 @@ public class VillageMaster: Folk
 			return;
 		}
 
-		clan.setDissolvingExpiryTime(DateTime.UtcNow + TimeSpan.FromDays(Config.ALT_CLAN_DISSOLVE_DAYS)); // 24*60*60*1000 = 86400000
+		clan.setDissolvingExpiryTime(DateTime.UtcNow + TimeSpan.FromDays(Config.Character.ALT_CLAN_DISSOLVE_DAYS)); // 24*60*60*1000 = 86400000
 		clan.updateClanInDB();
 
 		// The clan leader should take the XP penalty of a full death.
@@ -1081,7 +1081,7 @@ public class VillageMaster: Folk
 			return;
 		}
 
-		if (string.IsNullOrEmpty(clanName) || !clanName.ContainsAlphaNumericOnly() || !isValidName(clanName) ||
+		if (string.IsNullOrEmpty(clanName) || !clanName.ContainsAlphaNumericOnly() || !IsValidName(clanName) ||
 		    2 > clanName.Length)
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_IS_INVALID);
@@ -1187,7 +1187,7 @@ public class VillageMaster: Folk
 			return;
 		}
 
-		if (string.IsNullOrEmpty(pledgeName) || !pledgeName.ContainsAlphaNumericOnly() || !isValidName(pledgeName) ||
+		if (string.IsNullOrEmpty(pledgeName) || !pledgeName.ContainsAlphaNumericOnly() || !IsValidName(pledgeName) ||
 		    2 > pledgeName.Length)
 		{
 			player.sendPacket(SystemMessageId.CLAN_NAME_IS_INVALID);
@@ -1312,8 +1312,8 @@ public class VillageMaster: Folk
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 	}
 
-	private static bool isValidName(string name)
+	private static bool IsValidName(string name)
 	{
-		return Config.CLAN_NAME_TEMPLATE.IsMatch(name);
+		return Config.Server.CLAN_NAME_TEMPLATE.IsMatch(name);
 	}
 }

@@ -1,6 +1,6 @@
 ﻿using System.Xml.Linq;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Model.Holders;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
@@ -63,7 +63,7 @@ public abstract class DataReaderBase
         XmlUtil.Deserialize<T>(filePath);
 
     public static string GetFullPath(DataFileLocation location, string relativePath) =>
-        Path.Combine(location == DataFileLocation.Data ? Config.DATAPACK_ROOT_PATH : "Config", relativePath);
+        Path.Combine(location == DataFileLocation.Data ? ServerConfig.Instance.DataPack.Path : "Config", relativePath);
 
     protected static Location parseLocation(XElement element)
     {

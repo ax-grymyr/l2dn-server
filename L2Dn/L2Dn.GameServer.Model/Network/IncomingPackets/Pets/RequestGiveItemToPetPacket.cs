@@ -4,10 +4,10 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets.Pets;
 
@@ -39,7 +39,7 @@ public struct RequestGiveItemToPetPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && player.getReputation() < 0)
+		if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_TRADE && player.getReputation() < 0)
 			return ValueTask.CompletedTask;
 
 		if (player.getPrivateStoreType() != PrivateStoreType.NONE)

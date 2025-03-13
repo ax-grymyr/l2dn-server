@@ -10,12 +10,12 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -65,7 +65,7 @@ public class RecipeManager
 		}
 
 		// Check if manufacturer is under manufacturing store or private store.
-		if (Config.ALT_GAME_CREATION && _activeMakers.ContainsKey(manufacturer.ObjectId))
+		if (Config.Character.ALT_GAME_CREATION && _activeMakers.ContainsKey(manufacturer.ObjectId))
 		{
 			player.sendPacket(SystemMessageId.PLEASE_CLOSE_THE_SETUP_WINDOW_FOR_YOUR_PRIVATE_WORKSHOP_OR_PRIVATE_STORE_AND_TRY_AGAIN);
 			return;
@@ -74,7 +74,7 @@ public class RecipeManager
 		RecipeItemMaker maker = new RecipeItemMaker(manufacturer, recipeList, player);
 		if (maker.isValid())
 		{
-			if (Config.ALT_GAME_CREATION)
+			if (Config.Character.ALT_GAME_CREATION)
 			{
 				_activeMakers.put(manufacturer.ObjectId, maker);
 				ThreadPool.schedule(maker, 100);
@@ -108,7 +108,7 @@ public class RecipeManager
 		}
 
 		// Check if player is busy (possible if alt game creation is enabled)
-		if (Config.ALT_GAME_CREATION && _activeMakers.ContainsKey(player.ObjectId))
+		if (Config.Character.ALT_GAME_CREATION && _activeMakers.ContainsKey(player.ObjectId))
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S2_S1);
 			sm.Params.addItemName(recipeList.getItemId());
@@ -120,7 +120,7 @@ public class RecipeManager
 		RecipeItemMaker maker = new RecipeItemMaker(player, recipeList, player);
 		if (maker.isValid())
 		{
-			if (Config.ALT_GAME_CREATION)
+			if (Config.Character.ALT_GAME_CREATION)
 			{
 				_activeMakers.put(player.ObjectId, maker);
 				ThreadPool.schedule(maker, 100);
@@ -243,7 +243,7 @@ public class RecipeManager
 			}
 
 			// initial AltStatChange checks
-			if (Config.ALT_GAME_CREATION)
+			if (Config.Character.ALT_GAME_CREATION)
 			{
 				calculateAltStatChange();
 			}
@@ -260,7 +260,7 @@ public class RecipeManager
 
 		public void run()
 		{
-			if (!Config.IS_CRAFTING_ENABLED)
+			if (!Config.Character.IS_CRAFTING_ENABLED)
 			{
 				_target.sendMessage("Item creation is currently disabled.");
 				abort();
@@ -281,7 +281,7 @@ public class RecipeManager
 			// return;
 			// }
 
-			if (Config.ALT_GAME_CREATION && !_activeMakers.ContainsKey(_player.ObjectId))
+			if (Config.Character.ALT_GAME_CREATION && !_activeMakers.ContainsKey(_player.ObjectId))
 			{
 				if (_target != _player)
 				{
@@ -297,7 +297,7 @@ public class RecipeManager
 				return;
 			}
 
-			if (Config.ALT_GAME_CREATION && _items?.Count != 0)
+			if (Config.Character.ALT_GAME_CREATION && _items?.Count != 0)
 			{
 				if (!calculateStatUse(true, true))
 				{
@@ -309,7 +309,7 @@ public class RecipeManager
 				// if still not empty, schedule another pass
 				if (_items?.Count != 0)
 				{
-					_delay = Config.ALT_GAME_CREATION_SPEED * _player.getStat().getReuseTime(_skill) *
+					_delay = Config.Character.ALT_GAME_CREATION_SPEED * _player.getStat().getReuseTime(_skill) *
 					         GameTimeTaskManager.TICKS_PER_SECOND * GameTimeTaskManager.MILLIS_IN_TICK;
 
 					// TODO: Fix this packet to show crafting animation?
@@ -347,7 +347,7 @@ public class RecipeManager
 
 		private void finishCrafting()
 		{
-			if (!Config.ALT_GAME_CREATION)
+			if (!Config.Character.ALT_GAME_CREATION)
 			{
 				calculateStatUse(false, true);
 			}
@@ -514,7 +514,7 @@ public class RecipeManager
 					if (_player.getCurrentHp() <= modifiedValue)
 					{
 						// rest (wait for HP)
-						if (Config.ALT_GAME_CREATION && isWait)
+						if (Config.Character.ALT_GAME_CREATION && isWait)
 						{
 							_player.sendPacket(new SetupGaugePacket(_player.ObjectId, 0, _delay));
 							ThreadPool.schedule(this, TimeSpan.FromMilliseconds(100) + _delay);
@@ -536,7 +536,7 @@ public class RecipeManager
 					if (_player.getCurrentMp() < modifiedValue)
 					{
 						// rest (wait for MP)
-						if (Config.ALT_GAME_CREATION && isWait)
+						if (Config.Character.ALT_GAME_CREATION && isWait)
 						{
 							_player.sendPacket(new SetupGaugePacket(_player.ObjectId, 0, _delay));
 							ThreadPool.schedule(this, TimeSpan.FromMilliseconds(100) + _delay);
@@ -637,7 +637,7 @@ public class RecipeManager
             }
 
 			// check that the current recipe has a rare production or not
-			if (rareProdId != -1 && (rareProdId == itemId || Config.CRAFT_MASTERWORK))
+			if (rareProdId != -1 && (rareProdId == itemId || Config.Character.CRAFT_MASTERWORK))
 			{
 				if (Rnd.get(100) < _recipeList.getRarity())
 				{
@@ -703,7 +703,7 @@ public class RecipeManager
 				_target.sendPacket(sm);
 			}
 
-			if (Config.ALT_GAME_CREATION)
+			if (Config.Character.ALT_GAME_CREATION)
 			{
 				int recipeLevel = _recipeList.getLevel();
 				if (_exp < 0)
@@ -717,8 +717,8 @@ public class RecipeManager
 				}
 				if (itemId == rareProdId)
 				{
-					_exp = (int)(_exp * Config.ALT_GAME_CREATION_RARE_XPSP_RATE);
-					_sp = (int)(_sp * Config.ALT_GAME_CREATION_RARE_XPSP_RATE);
+					_exp = (int)(_exp * Config.Character.ALT_GAME_CREATION_RARE_XPSP_RATE);
+					_sp = (int)(_sp * Config.Character.ALT_GAME_CREATION_RARE_XPSP_RATE);
 				}
 
 				if (_exp < 0)
@@ -738,7 +738,7 @@ public class RecipeManager
 
 				// Added multiplication of Creation speed with XP/SP gain slower crafting => more XP,
 				// faster crafting => less XP you can use ALT_GAME_CREATION_XP_RATE/SP to modify XP/SP gained (default = 1)
-				_player.addExpAndSp((int) _player.getStat().getValue(Stat.EXPSP_RATE, _exp * Config.ALT_GAME_CREATION_XP_RATE * Config.ALT_GAME_CREATION_SPEED), (int) _player.getStat().getValue(Stat.EXPSP_RATE, _sp * Config.ALT_GAME_CREATION_SP_RATE * Config.ALT_GAME_CREATION_SPEED));
+				_player.addExpAndSp((int) _player.getStat().getValue(Stat.EXPSP_RATE, _exp * Config.Character.ALT_GAME_CREATION_XP_RATE * Config.Character.ALT_GAME_CREATION_SPEED), (int) _player.getStat().getValue(Stat.EXPSP_RATE, _sp * Config.Character.ALT_GAME_CREATION_SP_RATE * Config.Character.ALT_GAME_CREATION_SPEED));
 			}
 			updateMakeInfo(true); // success
 		}

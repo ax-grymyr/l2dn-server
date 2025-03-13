@@ -1,9 +1,11 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Frozen;
+using System.Collections.Immutable;
 using System.Globalization;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using L2Dn.Extensions;
+using L2Dn.Utilities;
 using NLog;
 
 namespace L2Dn.Configuration;
@@ -23,16 +25,15 @@ public sealed class ConfigurationParser(string? basePath = null)
         else
             _filePath = filePath;
 
-        _filePath = filePath;
         _values.Clear();
 
-        if (!File.Exists(filePath))
+        if (!File.Exists(_filePath))
         {
             _logger.Warn($"Configuration file '{filePath}' not found");
             return;
         }
 
-        ReadLines(filePath).Select(ParseKeyValue).ForEach(pair =>
+        ReadLines(_filePath).Select(ParseKeyValue).ForEach(pair =>
         {
             if (!_values.TryAdd(pair.Key, pair.Value))
                 _logger.Error($"Duplicated entry '{pair.Key}' in configuration file '{filePath}'");
@@ -52,13 +53,13 @@ public sealed class ConfigurationParser(string? basePath = null)
 
     public bool containsKey(string key) => _values.ContainsKey(key);
 
-    public byte getByte(string key, byte defaultValue = default) => GetValue(key, defaultValue, "integer in range 0-255");
-    public int getInt(string key, int defaultValue = default) => GetValue(key, defaultValue, "integer");
-    public long getLong(string key, long defaultValue = default) => GetValue(key, defaultValue, "64-bit integer");
-    public double getDouble(string key, double defaultValue = default) => GetValue(key, defaultValue, "number");
-    public float getFloat(string key, float defaultValue = default) => GetValue(key, defaultValue, "number");
+    public byte getByte(string key, byte defaultValue = 0) => GetValue(key, defaultValue, "integer in range 0-255");
+    public int getInt(string key, int defaultValue = 0) => GetValue(key, defaultValue, "integer");
+    public long getLong(string key, long defaultValue = 0) => GetValue(key, defaultValue, "64-bit integer");
+    public double getDouble(string key, double defaultValue = 0) => GetValue(key, defaultValue, "number");
+    public float getFloat(string key, float defaultValue = 0) => GetValue(key, defaultValue, "number");
 
-    public bool getBoolean(string key, bool defaultValue = default)
+    public bool getBoolean(string key, bool defaultValue = false)
     {
         if (!_values.TryGetValue(key, out string? value))
             return defaultValue;
@@ -206,10 +207,19 @@ public sealed class ConfigurationParser(string? basePath = null)
             .ToImmutableArray();
     }
 
-    public ImmutableArray<int> GetIntList(string key, char separator = ',', params int[] defaultValues)
+    public FrozenSet<T> GetSet<T>(string key, char separator = ',', params ReadOnlySpan<T> defaultValues)
+        where T: ISpanParsable<T>
     {
         if (!_values.TryGetValue(key, out string? value) || string.IsNullOrWhiteSpace(value))
-            return defaultValues.ToImmutableArray();
+            return [..defaultValues];
+
+        return ParseUtil.ParseSet<T>(value, separator);
+    }
+
+    public ImmutableArray<int> GetIntList(string key, char separator = ',', params ReadOnlySpan<int> defaultValues)
+    {
+        if (!_values.TryGetValue(key, out string? value) || string.IsNullOrWhiteSpace(value))
+            return [..defaultValues];
 
         try
         {
@@ -221,7 +231,7 @@ public sealed class ConfigurationParser(string? basePath = null)
         }
         catch (ConfigurationException)
         {
-            return defaultValues.ToImmutableArray();
+            return [..defaultValues];
         }
     }
 

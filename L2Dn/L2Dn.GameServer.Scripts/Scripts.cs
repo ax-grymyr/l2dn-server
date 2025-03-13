@@ -21,7 +21,7 @@ using L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectScopes;
 using L2Dn.GameServer.Scripts.Handlers.UserCommandHandlers;
 using L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
 using L2Dn.GameServer.Scripts.Quests;
-using L2Dn.GameServer.StaticData;
+using Config = L2Dn.GameServer.Configuration.Config;
 using PlayerAction = L2Dn.GameServer.Scripts.Handlers.ActionHandlers.PlayerAction;
 using Range = L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectScopes.Range;
 using Single = L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectScopes.Single;

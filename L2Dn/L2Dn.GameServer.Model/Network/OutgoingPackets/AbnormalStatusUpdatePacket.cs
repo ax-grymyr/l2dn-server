@@ -1,7 +1,7 @@
 ﻿using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -31,7 +31,7 @@ public readonly struct AbnormalStatusUpdatePacket: IOutgoingPacket
                 writer.WriteInt32(info.getSkill().getDisplayId());
                 writer.WriteInt16((short)info.getSkill().getDisplayLevel());
 
-                if (Config.SERVER_LIST_TYPE != GameServerType.Classic)
+                if (Config.Server.SERVER_LIST_TYPE != GameServerType.Classic)
                     writer.WriteInt16((short)info.getSkill().getSubLevel());
 
                 writer.WriteInt32((int)info.getSkill().getAbnormalType());

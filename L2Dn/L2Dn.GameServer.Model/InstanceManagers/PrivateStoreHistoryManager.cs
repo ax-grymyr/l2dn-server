@@ -2,10 +2,10 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.InstanceManagers;
 

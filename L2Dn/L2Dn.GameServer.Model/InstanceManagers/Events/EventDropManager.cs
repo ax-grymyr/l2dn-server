@@ -1,9 +1,9 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Quests;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.InstanceManagers.Events;
 
@@ -58,7 +58,7 @@ public class EventDropManager
 				{
 					int itemId = drop.getItemId();
 					long itemCount = Rnd.get(drop.getMin(), drop.getMax());
-					if (Config.AUTO_LOOT_ITEM_IDS.Contains(itemId) || Config.AUTO_LOOT || attackable.isFlying())
+					if (Config.Character.AUTO_LOOT_ITEM_IDS.Contains(itemId) || Config.Character.AUTO_LOOT || attackable.isFlying())
 					{
 						player.doAutoLoot(attackable, itemId, itemCount); // Give the item to the player that has killed the attackable.
 					}

@@ -1,6 +1,6 @@
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -22,15 +22,15 @@ public class ServerRestartManager
 			DateTime? lastRestart = null;
 			TimeSpan lastDelay = TimeSpan.Zero;
 
-			foreach (TimeOnly scheduledTime in Config.SERVER_RESTART_SCHEDULE)
+			foreach (TimeOnly scheduledTime in Config.Server.SERVER_RESTART_SCHEDULE)
 			{
 				DateTime restartTime = new DateTime(DateOnly.FromDateTime(currentTime), scheduledTime);
 				if (restartTime < currentTime)
 					restartTime = restartTime.AddDays(1);
 
-				if (!Config.SERVER_RESTART_DAYS.IsDefaultOrEmpty)
+				if (!Config.Server.SERVER_RESTART_DAYS.IsDefaultOrEmpty)
 				{
-					while (!Config.SERVER_RESTART_DAYS.Contains(restartTime.DayOfWeek))
+					while (!Config.Server.SERVER_RESTART_DAYS.Contains(restartTime.DayOfWeek))
 						restartTime = restartTime.AddDays(1);
 				}
 
@@ -52,7 +52,7 @@ public class ServerRestartManager
 			{
 				nextRestartTime = lastRestart;
 
-				ThreadPool.schedule(new ServerRestartTask(), lastDelay - TimeSpan.FromSeconds(Config.SERVER_RESTART_SCHEDULE_COUNTDOWN));
+				ThreadPool.schedule(new ServerRestartTask(), lastDelay - TimeSpan.FromSeconds(Config.Server.SERVER_RESTART_SCHEDULE_COUNTDOWN));
 				LOGGER.Info("Scheduled server restart at " + lastRestart + ".");
 			}
 		}
@@ -72,7 +72,7 @@ public class ServerRestartManager
 	{
 		public void run()
 		{
-			Shutdown.getInstance().startShutdown(null, Config.SERVER_RESTART_SCHEDULE_COUNTDOWN, true);
+			Shutdown.getInstance().startShutdown(null, Config.Server.SERVER_RESTART_SCHEDULE_COUNTDOWN, true);
 		}
 	}
 

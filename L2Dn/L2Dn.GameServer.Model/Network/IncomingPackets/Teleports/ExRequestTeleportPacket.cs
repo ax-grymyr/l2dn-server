@@ -8,11 +8,11 @@ using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets.Teleports;
 
@@ -55,14 +55,14 @@ public struct ExRequestTeleportPacket: IIncomingPacket<GameSession>
 		}
 
 		// Teleport in combat configuration.
-		if (!Config.TELEPORT_WHILE_PLAYER_IN_COMBAT && (player.isInCombat() || player.isCastingNow()))
+		if (!Config.Character.TELEPORT_WHILE_PLAYER_IN_COMBAT && (player.isInCombat() || player.isCastingNow()))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_WHILE_IN_COMBAT);
 			return ValueTask.CompletedTask;
 		}
 
 		// Karma related configurations.
-		if ((!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT || !Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK) && player.getReputation() < 0)
+		if ((!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT || !Config.Character.ALT_GAME_KARMA_PLAYER_CAN_USE_GK) && player.getReputation() < 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_RIGHT_NOW);
 			return ValueTask.CompletedTask;
@@ -76,7 +76,7 @@ public struct ExRequestTeleportPacket: IIncomingPacket<GameSession>
 		}
 
 		Location3D location = teleport.getLocation();
-		if (!Config.TELEPORT_WHILE_SIEGE_IN_PROGRESS)
+		if (!Config.Character.TELEPORT_WHILE_SIEGE_IN_PROGRESS)
 		{
 			Castle? castle = CastleManager.getInstance().getCastle(location);
 			if (castle != null && castle.getSiege().isInProgress())
@@ -86,7 +86,7 @@ public struct ExRequestTeleportPacket: IIncomingPacket<GameSession>
 			}
 		}
 
-		if (player.getLevel() > Config.MAX_FREE_TELEPORT_LEVEL)
+		if (player.getLevel() > Config.Character.MAX_FREE_TELEPORT_LEVEL)
 		{
 			int price = teleport.getPrice();
 			if (price > 0)

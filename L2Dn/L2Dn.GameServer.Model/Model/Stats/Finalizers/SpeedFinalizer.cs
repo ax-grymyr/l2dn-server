@@ -5,9 +5,9 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Types;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 
@@ -39,11 +39,11 @@ public class SpeedFinalizer: StatFunction
 		double maxSpeed;
 		if (creature.isPlayer())
 		{
-			maxSpeed = Config.MAX_RUN_SPEED + creature.getStat().getValue(Stat.SPEED_LIMIT, 0);
+			maxSpeed = Config.Character.MAX_RUN_SPEED + creature.getStat().getValue(Stat.SPEED_LIMIT, 0);
 		}
 		else if (creature.isSummon())
 		{
-			maxSpeed = Config.MAX_RUN_SPEED_SUMMON + creature.getStat().getValue(Stat.SPEED_LIMIT, 0);
+			maxSpeed = Config.Character.MAX_RUN_SPEED_SUMMON + creature.getStat().getValue(Stat.SPEED_LIMIT, 0);
 		}
 		else
 		{
@@ -90,7 +90,7 @@ public class SpeedFinalizer: StatFunction
 				}
 			}
 
-			baseValue += Config.RUN_SPD_BOOST;
+			baseValue += Config.Character.RUN_SPD_BOOST;
 		}
 
 		if (creature.isPlayable() && creature.isInsideZone(ZoneId.SWAMP))

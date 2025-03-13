@@ -18,7 +18,6 @@ using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
@@ -27,6 +26,7 @@ using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Config = L2Dn.GameServer.Configuration.Config;
 using Pet = L2Dn.GameServer.Model.Actor.Instances.Pet;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;

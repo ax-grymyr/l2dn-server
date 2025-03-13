@@ -62,7 +62,6 @@ using L2Dn.GameServer.Network.OutgoingPackets.LimitShop;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
 using L2Dn.GameServer.Network.OutgoingPackets.Surveillance;
 using L2Dn.GameServer.Network.OutgoingPackets.Vip;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
@@ -72,6 +71,7 @@ using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
 using ClanWar = L2Dn.GameServer.Model.Clans.ClanWar;
+using Config = L2Dn.GameServer.Configuration.Config;
 using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
 using Forum = L2Dn.GameServer.CommunityBbs.BB.Forum;
 using Pet = L2Dn.GameServer.Model.Actor.Instances.Pet;
@@ -2355,9 +2355,9 @@ public class Player: Playable
 	public void setFame(int fame)
 	{
 		int newFame = fame;
-		if (fame > Config.MAX_PERSONAL_FAME_POINTS)
+		if (fame > Config.Character.MAX_PERSONAL_FAME_POINTS)
 		{
-			newFame = Config.MAX_PERSONAL_FAME_POINTS;
+			newFame = Config.Character.MAX_PERSONAL_FAME_POINTS;
 		}
 		else if (fame < 0)
 		{
@@ -2434,15 +2434,15 @@ public class Player: Playable
 			{
 				if (_lvlJoinedAcademy <= 16)
 				{
-					_clan.addReputationScore(Config.JOIN_ACADEMY_MAX_REP_SCORE);
+					_clan.addReputationScore(Config.Feature.JOIN_ACADEMY_MAX_REP_SCORE);
 				}
 				else if (_lvlJoinedAcademy >= 39)
 				{
-					_clan.addReputationScore(Config.JOIN_ACADEMY_MIN_REP_SCORE);
+					_clan.addReputationScore(Config.Feature.JOIN_ACADEMY_MIN_REP_SCORE);
 				}
 				else
 				{
-					_clan.addReputationScore(Config.JOIN_ACADEMY_MAX_REP_SCORE - (_lvlJoinedAcademy - 16) * 20);
+					_clan.addReputationScore(Config.Feature.JOIN_ACADEMY_MAX_REP_SCORE - (_lvlJoinedAcademy - 16) * 20);
 				}
 				setLvlJoinedAcademy(0);
 				// oust pledge member from the academy, cuz he has finished his 2nd class transfer
@@ -2502,7 +2502,7 @@ public class Player: Playable
 			// Add AutoGet skills and normal skills and/or learnByFS depending on configurations.
 			rewardSkills();
 
-			if (!canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS) && Config.DECREASE_SKILL_LEVEL)
+			if (!canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS) && Config.Character.DECREASE_SKILL_LEVEL)
 			{
 				checkPlayerSkills();
 			}
@@ -2605,16 +2605,16 @@ public class Player: Playable
 	public void rewardSkills()
 	{
 		// Give all normal skills if activated Auto-Learn is activated, included AutoGet skills.
-		if (Config.AUTO_LEARN_SKILLS)
+		if (Config.Character.AUTO_LEARN_SKILLS)
 		{
-			giveAvailableSkills(Config.AUTO_LEARN_FS_SKILLS, true, Config.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
+			giveAvailableSkills(Config.Character.AUTO_LEARN_FS_SKILLS, true, Config.Character.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
 		}
 		else
 		{
 			giveAvailableAutoGetSkills();
 		}
 
-		if (Config.DECREASE_SKILL_LEVEL && !canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS))
+		if (Config.Character.DECREASE_SKILL_LEVEL && !canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS))
 		{
 			checkPlayerSkills();
 		}
@@ -2732,7 +2732,7 @@ public class Player: Playable
 			addSkill(updatedSkill, false);
 			skillsForStore.Add(updatedSkill);
 
-			if (Config.AUTO_LEARN_SKILLS)
+			if (Config.Character.AUTO_LEARN_SKILLS)
 			{
 				updateShortCuts(skillId, skillLevel, updatedSkill.getSubLevel());
 			}
@@ -2740,7 +2740,7 @@ public class Player: Playable
 
 		storeSkills(skillsForStore, -1);
 
-		if (Config.AUTO_LEARN_SKILLS && skillCounter > 0)
+		if (Config.Character.AUTO_LEARN_SKILLS && skillCounter > 0)
 		{
 			// Sending ShortCutInit breaks auto use shortcuts.
 			// sendPacket(new ShortCutInit(this));
@@ -3959,12 +3959,12 @@ public class Player: Playable
 
 	public void setSpawnProtection(bool protect)
 	{
-		_spawnProtectEndTime = protect ? DateTime.UtcNow.AddMilliseconds(Config.PLAYER_SPAWN_PROTECTION * 1000) : null;
+		_spawnProtectEndTime = protect ? DateTime.UtcNow.AddMilliseconds(Config.Character.PLAYER_SPAWN_PROTECTION * 1000) : null;
 	}
 
 	public void setTeleportProtection(bool protect)
 	{
-		_teleportProtectEndTime = protect ? DateTime.UtcNow.AddMilliseconds(Config.PLAYER_TELEPORT_PROTECTION * 1000) : null;
+		_teleportProtectEndTime = protect ? DateTime.UtcNow.AddMilliseconds(Config.Character.PLAYER_TELEPORT_PROTECTION * 1000) : null;
 	}
 
 	/**
@@ -3973,7 +3973,7 @@ public class Player: Playable
 	 */
 	public void setRecentFakeDeath(bool protect)
 	{
-		_recentFakeDeathEndTime = protect ? GameTimeTaskManager.getInstance().getGameTicks() + Config.PLAYER_FAKEDEATH_UP_PROTECTION * GameTimeTaskManager.TICKS_PER_SECOND : 0;
+		_recentFakeDeathEndTime = protect ? GameTimeTaskManager.getInstance().getGameTicks() + Config.Character.PLAYER_FAKEDEATH_UP_PROTECTION * GameTimeTaskManager.TICKS_PER_SECOND : 0;
 	}
 
 	public bool isRecentFakeDeath()
@@ -5085,7 +5085,7 @@ public class Player: Playable
 			DecayTaskManager.getInstance().add(this);
 			sendPacket(new TimeRestrictFieldDieLimitTimePacket());
 		}
-		else if (Config.DISCONNECT_AFTER_DEATH)
+		else if (Config.Character.DISCONNECT_AFTER_DEATH)
 		{
 			DecayTaskManager.getInstance().add(this);
 		}
@@ -6134,7 +6134,7 @@ public class Player: Playable
 
 	public bool mount(Summon pet)
 	{
-		if (!Config.ALLOW_MOUNTS_DURING_SIEGE && isInsideZone(ZoneId.SIEGE))
+		if (!Config.Feature.ALLOW_MOUNTS_DURING_SIEGE && isInsideZone(ZoneId.SIEGE))
 		{
 			return false;
 		}
@@ -6773,7 +6773,7 @@ public class Player: Playable
 		restoreRecipeBook(true);
 
 		// Restore Recipe Shop list.
-		if (Config.STORE_RECIPE_SHOPLIST)
+		if (Config.Character.STORE_RECIPE_SHOPLIST)
 		{
 			restoreRecipeShopList();
 		}
@@ -6920,7 +6920,7 @@ public class Player: Playable
 		storeItemReuseDelay();
 		storeDyePoten();
 
-		if (Config.STORE_RECIPE_SHOPLIST)
+		if (Config.Character.STORE_RECIPE_SHOPLIST)
 		{
 			storeRecipeShopList();
 		}
@@ -7100,7 +7100,7 @@ public class Player: Playable
 
 	public override void storeEffect(bool storeEffects)
 	{
-		if (!Config.STORE_SKILL_COOLTIME)
+		if (!Config.Character.STORE_SKILL_COOLTIME)
 		{
 			return;
 		}
@@ -7155,7 +7155,7 @@ public class Player: Playable
 					}
 
 					// Dances and songs are not kept in retail.
-					if (skill.isDance() && !Config.ALT_STORE_DANCES)
+					if (skill.isDance() && !Config.Character.ALT_STORE_DANCES)
 					{
 						continue;
 					}
@@ -8272,7 +8272,7 @@ public class Player: Playable
 			// Same Command Channel are friends.
             Party? party = getParty();
             Party? attackerParty = attacker.getParty();
-            if (Config.ALT_COMMAND_CHANNEL_FRIENDS && isInParty() && party != null && party.getCommandChannel() != null &&
+            if (Config.Character.ALT_COMMAND_CHANNEL_FRIENDS && isInParty() && party != null && party.getCommandChannel() != null &&
                 attacker.isInParty() && attackerParty != null && attackerParty.getCommandChannel() != null &&
                 party.getCommandChannel() == attackerParty.getCommandChannel())
             {
@@ -8413,7 +8413,7 @@ public class Player: Playable
 		}
 
 		// If Alternate rule Karma punishment is set to true, forbid skill Return to player with Karma
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && getReputation() < 0 && usedSkill.hasEffectType(EffectType.TELEPORT))
+		if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && getReputation() < 0 && usedSkill.hasEffectType(EffectType.TELEPORT))
 		{
 			sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return false;
@@ -9675,7 +9675,7 @@ public class Player: Playable
 				sendPacket(new ExUserBoostStatPacket(this, BonusExpType.VITALITY));
 				sendPacket(new ExUserBoostStatPacket(this, BonusExpType.BUFFS));
 				sendPacket(new ExUserBoostStatPacket(this, BonusExpType.PASSIVE));
-				if (Config.ENABLE_VITALITY)
+				if (Config.Character.ENABLE_VITALITY)
 				{
 					sendPacket(new ExVitalityEffectInfoPacket(this));
 				}
@@ -9702,7 +9702,7 @@ public class Player: Playable
 
 		try
 		{
-			if (getTotalSubClasses() == Config.MAX_SUBCLASS || classIndex == 0)
+			if (getTotalSubClasses() == Config.Character.MAX_SUBCLASS || classIndex == 0)
 			{
 				return false;
 			}
@@ -9721,8 +9721,8 @@ public class Player: Playable
 			if (isDualClass)
 			{
 				newClass.setDualClassActive(true);
-				newClass.setExp(ExperienceData.getInstance().getExpForLevel(Config.BASE_DUALCLASS_LEVEL));
-				newClass.setLevel(Config.BASE_DUALCLASS_LEVEL);
+				newClass.setExp(ExperienceData.getInstance().getExpForLevel(Config.Character.BASE_DUALCLASS_LEVEL));
+				newClass.setLevel(Config.Character.BASE_DUALCLASS_LEVEL);
 			}
 
 			try
@@ -9757,7 +9757,7 @@ public class Player: Playable
 			Map<int, Skill> prevSkillList = new();
 			foreach (SkillLearn skillInfo in skillTree.Values)
 			{
-				if (skillInfo.getSkillId() == (int)CommonSkill.DIVINE_INSPIRATION && !Config.AUTO_LEARN_DIVINE_INSPIRATION)
+				if (skillInfo.getSkillId() == (int)CommonSkill.DIVINE_INSPIRATION && !Config.Character.AUTO_LEARN_DIVINE_INSPIRATION)
 				{
 					continue;
 				}
@@ -10011,7 +10011,7 @@ public class Player: Playable
 
 			// 1. Call store() before modifying _classIndex to avoid skill effects rollover.
 			// 2. Register the correct _classId against applied 'classIndex'.
-			store(Config.SUBCLASS_STORE_SKILL_COOLTIME);
+			store(Config.Character.SUBCLASS_STORE_SKILL_COOLTIME);
 
 			if (_sellingBuffs != null)
 			{
@@ -10248,7 +10248,7 @@ public class Player: Playable
 		_inventory.applyItemSkills();
 
 		// Buff and status icons.
-		if (Config.STORE_SKILL_COOLTIME)
+		if (Config.Character.STORE_SKILL_COOLTIME)
 		{
 			restoreEffects();
 		}
@@ -10256,7 +10256,7 @@ public class Player: Playable
 		revalidateZone(true);
 
 		notifyFriends(FriendStatusPacket.MODE_ONLINE);
-		if (!canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS) && Config.DECREASE_SKILL_LEVEL)
+		if (!canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS) && Config.Character.DECREASE_SKILL_LEVEL)
 		{
 			checkPlayerSkills();
 		}
@@ -10331,7 +10331,7 @@ public class Player: Playable
 	{
 		base.doRevive();
 
-		if (Config.DISCONNECT_AFTER_DEATH)
+		if (Config.Character.DISCONNECT_AFTER_DEATH)
 		{
 			DecayTaskManager.getInstance().cancel(this);
 		}
@@ -10528,11 +10528,11 @@ public class Player: Playable
 			{
 				sendPacket(SystemMessageId.YOU_ARE_NO_LONGER_PROTECTED_FROM_AGGRESSIVE_MONSTERS);
 			}
-			if (Config.RESTORE_SERVITOR_ON_RECONNECT && !hasSummon() && CharSummonTable.getInstance().getServitors().ContainsKey(ObjectId))
+			if (Config.Character.RESTORE_SERVITOR_ON_RECONNECT && !hasSummon() && CharSummonTable.getInstance().getServitors().ContainsKey(ObjectId))
 			{
 				CharSummonTable.getInstance().restoreServitor(this);
 			}
-			if (Config.RESTORE_PET_ON_RECONNECT && !hasSummon() && CharSummonTable.getInstance().getPets().ContainsKey(ObjectId))
+			if (Config.Character.RESTORE_PET_ON_RECONNECT && !hasSummon() && CharSummonTable.getInstance().getPets().ContainsKey(ObjectId))
 			{
 				CharSummonTable.getInstance().restorePet(this);
 			}
@@ -10587,7 +10587,7 @@ public class Player: Playable
 
 		checkItemRestriction();
 
-		if (Config.PLAYER_TELEPORT_PROTECTION > 0 && !_inOlympiadMode)
+		if (Config.Character.PLAYER_TELEPORT_PROTECTION > 0 && !_inOlympiadMode)
 		{
 			setTeleportProtection(true);
 		}
@@ -10658,13 +10658,13 @@ public class Player: Playable
 		}
 		if (teleport)
 		{
-			if (_teleportWatchdog == null && Config.TELEPORT_WATCHDOG_TIMEOUT > 0)
+			if (_teleportWatchdog == null && Config.Character.TELEPORT_WATCHDOG_TIMEOUT > 0)
 			{
 				lock (this)
 				{
 					if (_teleportWatchdog == null)
 					{
-						_teleportWatchdog = ThreadPool.schedule(new TeleportWatchdogTask(this), Config.TELEPORT_WATCHDOG_TIMEOUT * 1000);
+						_teleportWatchdog = ThreadPool.schedule(new TeleportWatchdogTask(this), Config.Character.TELEPORT_WATCHDOG_TIMEOUT * 1000);
 					}
 				}
 			}
@@ -11390,15 +11390,15 @@ public class Player: Playable
 		int ivlim;
 		if (isGM())
 		{
-			ivlim = Config.INVENTORY_MAXIMUM_GM;
+			ivlim = Config.Character.INVENTORY_MAXIMUM_GM;
 		}
 		else if (getRace() == Race.DWARF)
 		{
-			ivlim = Config.INVENTORY_MAXIMUM_DWARF;
+			ivlim = Config.Character.INVENTORY_MAXIMUM_DWARF;
 		}
 		else
 		{
-			ivlim = Config.INVENTORY_MAXIMUM_NO_DWARF;
+			ivlim = Config.Character.INVENTORY_MAXIMUM_NO_DWARF;
 		}
 		ivlim += (int) getStat().getValue(Stat.INVENTORY_NORMAL, 0);
 		return ivlim;
@@ -11409,11 +11409,11 @@ public class Player: Playable
 		int whlim;
 		if (getRace() == Race.DWARF)
 		{
-			whlim = Config.WAREHOUSE_SLOTS_DWARF;
+			whlim = Config.Character.WAREHOUSE_SLOTS_DWARF;
 		}
 		else
 		{
-			whlim = Config.WAREHOUSE_SLOTS_NO_DWARF;
+			whlim = Config.Character.WAREHOUSE_SLOTS_NO_DWARF;
 		}
 		whlim += (int) getStat().getValue(Stat.STORAGE_PRIVATE, 0);
 		return whlim;
@@ -11424,11 +11424,11 @@ public class Player: Playable
 		int pslim;
 		if (getRace() == Race.DWARF)
 		{
-			pslim = Config.MAX_PVTSTORESELL_SLOTS_DWARF;
+			pslim = Config.Character.MAX_PVTSTORESELL_SLOTS_DWARF;
 		}
 		else
 		{
-			pslim = Config.MAX_PVTSTORESELL_SLOTS_OTHER;
+			pslim = Config.Character.MAX_PVTSTORESELL_SLOTS_OTHER;
 		}
 		pslim += (int) getStat().getValue(Stat.TRADE_SELL, 0);
 		return pslim;
@@ -11439,11 +11439,11 @@ public class Player: Playable
 		int pblim;
 		if (getRace() == Race.DWARF)
 		{
-			pblim = Config.MAX_PVTSTOREBUY_SLOTS_DWARF;
+			pblim = Config.Character.MAX_PVTSTOREBUY_SLOTS_DWARF;
 		}
 		else
 		{
-			pblim = Config.MAX_PVTSTOREBUY_SLOTS_OTHER;
+			pblim = Config.Character.MAX_PVTSTOREBUY_SLOTS_OTHER;
 		}
 		pblim += (int) getStat().getValue(Stat.TRADE_BUY, 0);
 		return pblim;
@@ -11451,14 +11451,14 @@ public class Player: Playable
 
 	public int getDwarfRecipeLimit()
 	{
-		int recdlim = Config.DWARF_RECIPE_LIMIT;
+		int recdlim = Config.Character.DWARF_RECIPE_LIMIT;
 		recdlim += (int) getStat().getValue(Stat.RECIPE_DWARVEN, 0);
 		return recdlim;
 	}
 
 	public int getCommonRecipeLimit()
 	{
-		int recclim = Config.COMMON_RECIPE_LIMIT;
+		int recclim = Config.Character.COMMON_RECIPE_LIMIT;
 		recclim += (int) getStat().getValue(Stat.RECIPE_COMMON, 0);
 		return recclim;
 	}
@@ -12973,7 +12973,7 @@ public class Player: Playable
 	 */
 	public bool isSilenceMode(int playerObjId)
 	{
-		if (Config.SILENCE_MODE_EXCLUDE && _silenceMode && _silenceModeExcluded != null)
+		if (Config.Character.SILENCE_MODE_EXCLUDE && _silenceMode && _silenceModeExcluded != null)
 		{
 			return !_silenceModeExcluded.Contains(playerObjId);
 		}
@@ -13368,7 +13368,7 @@ public class Player: Playable
 
 	public int getQuestInventoryLimit()
 	{
-		return Config.INVENTORY_MAXIMUM_QUEST_ITEMS;
+		return Config.Character.INVENTORY_MAXIMUM_QUEST_ITEMS;
 	}
 
 	public bool canAttackCreature(Creature creature)
@@ -13604,7 +13604,7 @@ public class Player: Playable
 
 	public void updateNotMoveUntil()
 	{
-		_notMoveUntil = DateTime.UtcNow + TimeSpan.FromMilliseconds(Config.PLAYER_MOVEMENT_BLOCK_TIME);
+		_notMoveUntil = DateTime.UtcNow + TimeSpan.FromMilliseconds(Config.Character.PLAYER_MOVEMENT_BLOCK_TIME);
 	}
 
 	public override bool isPlayer()
@@ -14552,7 +14552,7 @@ public class Player: Playable
 		// Get last player reward time.
 		DateTime receiveDate;
 		int rewardIndex;
-		if (Config.ATTENDANCE_REWARDS_SHARE_ACCOUNT)
+		if (Config.Attendance.ATTENDANCE_REWARDS_SHARE_ACCOUNT)
 		{
 			receiveDate = getAccountVariables().Get(PlayerVariables.ATTENDANCE_DATE, DateTime.MinValue);
 			rewardIndex = getAccountVariables().Get(PlayerVariables.ATTENDANCE_INDEX, 0);
@@ -14589,7 +14589,7 @@ public class Player: Playable
 
 		nextReward = new DateTime(nextReward.Year, nextReward.Month, nextReward.Day, 6, 30, 0);
 
-		if (Config.ATTENDANCE_REWARDS_SHARE_ACCOUNT)
+		if (Config.Attendance.ATTENDANCE_REWARDS_SHARE_ACCOUNT)
 		{
 			getAccountVariables().Set(PlayerVariables.ATTENDANCE_DATE, nextReward);
 			getAccountVariables().Set(PlayerVariables.ATTENDANCE_INDEX, rewardIndex);

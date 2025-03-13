@@ -3,9 +3,9 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Stats;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -434,7 +434,7 @@ public readonly struct ExUserViewInfoParameterPacket(Player player): IOutgoingPa
         // ################################## EVASION ##############################
         // P. Evasion (%)
         writer.WriteInt16(index++);
-        writer.WriteInt32(player.getEvasionRate() * 100 / Config.MAX_EVASION);
+        writer.WriteInt32(player.getEvasionRate() * 100 / Config.Character.MAX_EVASION);
 
         // P. Evasion (num.)
         writer.WriteInt16(index++);
@@ -442,7 +442,7 @@ public readonly struct ExUserViewInfoParameterPacket(Player player): IOutgoingPa
 
         // M. Evasion (%)
         writer.WriteInt16(index++);
-        writer.WriteInt32(player.getMagicEvasionRate() * 100 / Config.MAX_EVASION);
+        writer.WriteInt32(player.getMagicEvasionRate() * 100 / Config.Character.MAX_EVASION);
 
         // M. Evasion (num.)
         writer.WriteInt16(index++);
@@ -467,7 +467,7 @@ public readonly struct ExUserViewInfoParameterPacket(Player player): IOutgoingPa
         // ################################## SPEED ##############################
         // Atk. Spd. (%)
         writer.WriteInt16(index++);
-        writer.WriteInt32(player.getPAtkSpd() * 100 / Config.MAX_PATK_SPEED);
+        writer.WriteInt32(player.getPAtkSpd() * 100 / Config.Character.MAX_PATK_SPEED);
 
         // Atk. Spd. (num.)
         writer.WriteInt16(index++);
@@ -475,7 +475,7 @@ public readonly struct ExUserViewInfoParameterPacket(Player player): IOutgoingPa
 
         // Casting Spd. (%)
         writer.WriteInt16(index++);
-        writer.WriteInt32(player.getMAtkSpd() * 100 / Config.MAX_MATK_SPEED);
+        writer.WriteInt32(player.getMAtkSpd() * 100 / Config.Character.MAX_MATK_SPEED);
 
         // Casting Spd. (num.)
         writer.WriteInt16(index++);
@@ -483,7 +483,7 @@ public readonly struct ExUserViewInfoParameterPacket(Player player): IOutgoingPa
 
         // Speed (%)
         writer.WriteInt16(index++);
-        writer.WriteInt32((int)(player.getMoveSpeed() * 100 / Config.MAX_RUN_SPEED));
+        writer.WriteInt32((int)(player.getMoveSpeed() * 100 / Config.Character.MAX_RUN_SPEED));
 
         // Speed (num.)
         writer.WriteInt16(index++);

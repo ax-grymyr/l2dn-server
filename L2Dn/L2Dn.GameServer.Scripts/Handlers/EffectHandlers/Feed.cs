@@ -5,9 +5,9 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 

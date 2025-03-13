@@ -5,10 +5,10 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -21,7 +21,7 @@ public struct SendWareHouseWithDrawListPacket: IIncomingPacket<GameSession>
     public void ReadContent(PacketBitReader reader)
     {
         int count = reader.ReadInt32();
-        if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != reader.Length)
+        if (count <= 0 || count > Config.Character.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != reader.Length)
             return;
 
         _items = new ItemHolder[count];
@@ -66,10 +66,10 @@ public struct SendWareHouseWithDrawListPacket: IIncomingPacket<GameSession>
 		}
 
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && player.getReputation() < 0)
+		if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && player.getReputation() < 0)
 			return ValueTask.CompletedTask;
 
-		if (Config.ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH)
+		if (Config.Character.ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH)
 		{
 			if (warehouse is ClanWarehouse && !player.hasClanPrivilege(ClanPrivilege.CL_VIEW_WAREHOUSE))
 			return ValueTask.CompletedTask;

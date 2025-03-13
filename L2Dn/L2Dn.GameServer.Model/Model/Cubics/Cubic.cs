@@ -9,11 +9,11 @@ using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Cubics;
@@ -156,7 +156,7 @@ public class Cubic: Creature
                     IEnumerable<Creature> stream;
                     if (party != null)
                     {
-                        stream = World.getInstance().getVisibleObjectsInRange<Creature>(_owner, Config.ALT_PARTY_RANGE,
+                        stream = World.getInstance().getVisibleObjectsInRange<Creature>(_owner, Config.Character.ALT_PARTY_RANGE,
                             c => c.getParty() == party && _template.validateConditions(this, _owner, c) &&
                                 cubicSkill.validateConditions(this, _owner, c));
                     }

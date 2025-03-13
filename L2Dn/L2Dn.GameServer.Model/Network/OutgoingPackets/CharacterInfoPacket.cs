@@ -8,11 +8,11 @@ using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Packets;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 

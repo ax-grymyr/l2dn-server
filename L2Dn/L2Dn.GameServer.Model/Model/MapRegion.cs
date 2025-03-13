@@ -1,9 +1,9 @@
 ﻿using L2Dn.Extensions;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model;
 
@@ -134,7 +134,7 @@ public class MapRegion
 
 	public Location3D getSpawnLoc()
 	{
-		if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
+		if (Config.Character.RANDOM_RESPAWN_IN_TOWN_ENABLED)
 		{
 			return _spawnLocs.GetRandomElement();
 		}
@@ -145,7 +145,7 @@ public class MapRegion
 	{
 		if (_otherSpawnLocs != null)
 		{
-			if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
+			if (Config.Character.RANDOM_RESPAWN_IN_TOWN_ENABLED)
 			{
 				return _otherSpawnLocs.GetRandomElement();
 			}
@@ -158,7 +158,7 @@ public class MapRegion
 	{
 		if (_chaoticSpawnLocs != null)
 		{
-			if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
+			if (Config.Character.RANDOM_RESPAWN_IN_TOWN_ENABLED)
 			{
 				return _chaoticSpawnLocs.GetRandomElement();
 			}
@@ -171,7 +171,7 @@ public class MapRegion
 	{
 		if (_banishSpawnLocs != null)
 		{
-			if (Config.RANDOM_RESPAWN_IN_TOWN_ENABLED)
+			if (Config.Character.RANDOM_RESPAWN_IN_TOWN_ENABLED)
 			{
 				return _banishSpawnLocs.GetRandomElement();
 			}

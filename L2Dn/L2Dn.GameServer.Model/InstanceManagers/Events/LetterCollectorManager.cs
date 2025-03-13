@@ -1,8 +1,8 @@
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Holders;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.InstanceManagers.Events;
 
@@ -19,7 +19,7 @@ public class LetterCollectorManager
 	private readonly Map<int, bool> _needToSumAllChance = new();
 
 	private int _minLevel = 1;
-	private int _maxLevel = Config.PLAYER_MAXIMUM_LEVEL;
+	private int _maxLevel = Config.Character.PLAYER_MAXIMUM_LEVEL;
 
 	protected LetterCollectorManager()
 	{
@@ -50,7 +50,7 @@ public class LetterCollectorManager
 	{
 		if (maxLevel < 1)
 		{
-			_maxLevel = Config.PLAYER_MAXIMUM_LEVEL;
+			_maxLevel = Config.Character.PLAYER_MAXIMUM_LEVEL;
 		}
 		else
 		{

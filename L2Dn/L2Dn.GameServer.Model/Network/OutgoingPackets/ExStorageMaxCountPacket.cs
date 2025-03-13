@@ -1,8 +1,8 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Stats;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -24,11 +24,11 @@ public readonly struct ExStorageMaxCountPacket: IOutgoingPacket
         _warehouse = player.getWareHouseLimit();
         _privateSell = player.getPrivateSellStoreLimit();
         _privateBuy = player.getPrivateBuyStoreLimit();
-        _clan = Config.WAREHOUSE_SLOTS_CLAN;
+        _clan = Config.Character.WAREHOUSE_SLOTS_CLAN;
         _receipeD = player.getDwarfRecipeLimit();
         _recipe = player.getCommonRecipeLimit();
         _inventoryExtraSlots = (int) player.getStat().getValue(Stat.INVENTORY_NORMAL, 0);
-        _inventoryQuestItems = Config.INVENTORY_MAXIMUM_QUEST_ITEMS;
+        _inventoryQuestItems = Config.Character.INVENTORY_MAXIMUM_QUEST_ITEMS;
     }
 
     public void WriteContent(PacketBitWriter writer)

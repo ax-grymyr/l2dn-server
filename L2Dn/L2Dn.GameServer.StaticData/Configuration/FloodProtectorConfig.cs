@@ -1,10 +1,9 @@
-﻿namespace L2Dn.GameServer.StaticData;
+﻿namespace L2Dn.GameServer.Configuration;
 
-/**
- * Flood protector configuration
- * @author fordfrog
- */
-public class FloodProtectorConfig
+/// <summary>
+/// Flood protector configuration
+/// </summary>
+public sealed class FloodProtectorConfig
 {
     /**
      * Type used for identification of logging output.

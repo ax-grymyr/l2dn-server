@@ -3,8 +3,8 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 

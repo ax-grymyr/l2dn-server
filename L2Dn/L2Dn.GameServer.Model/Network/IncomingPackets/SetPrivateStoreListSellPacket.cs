@@ -5,11 +5,11 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -22,7 +22,7 @@ public struct SetPrivateStoreListSellPacket: IIncomingPacket<GameSession>
     {
         _packageSale = reader.ReadInt32() == 1;
         int count = reader.ReadInt32();
-        if (count < 1 || count > Config.MAX_ITEM_IN_PACKET)
+        if (count < 1 || count > Config.Character.MAX_ITEM_IN_PACKET)
             return;
 
         _items = new ItemData[count];

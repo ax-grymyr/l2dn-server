@@ -2,7 +2,7 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Utilities;
 

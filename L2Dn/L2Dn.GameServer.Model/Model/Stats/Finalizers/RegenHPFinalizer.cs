@@ -7,9 +7,9 @@ using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Types;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;

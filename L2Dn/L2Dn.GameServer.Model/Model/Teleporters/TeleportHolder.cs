@@ -12,11 +12,11 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Teleporters;
 
@@ -181,7 +181,7 @@ public class TeleportHolder
 		}
 
 		// Check if castle is in siege
-		if (!Config.TELEPORT_WHILE_SIEGE_IN_PROGRESS)
+		if (!Config.Character.TELEPORT_WHILE_SIEGE_IN_PROGRESS)
 		{
 			foreach (int castleId in loc.getCastleId())
             {
@@ -198,7 +198,7 @@ public class TeleportHolder
 		if (isNormalTeleport())
         {
             Castle? castle = npc.getCastle();
-            if (!Config.TELEPORT_WHILE_SIEGE_IN_PROGRESS && castle != null && castle.getSiege().isInProgress())
+            if (!Config.Character.TELEPORT_WHILE_SIEGE_IN_PROGRESS && castle != null && castle.getSiege().isInProgress())
 			{
 				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/teleporter/castleteleporter-busy.htm", player);
 				NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent);
@@ -206,7 +206,7 @@ public class TeleportHolder
 				return;
 			}
 
-            if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && player.getReputation() < 0)
+            if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && player.getReputation() < 0)
             {
                 player.sendMessage("Go away, you're not welcome here.");
                 return;
@@ -257,7 +257,7 @@ public class TeleportHolder
 	private bool shouldPayFee(Player player, TeleportLocation loc)
 	{
 		return !isNormalTeleport() ||
-		       ((player.getLevel() > Config.MAX_FREE_TELEPORT_LEVEL || player.isSubClassActive()) &&
+		       ((player.getLevel() > Config.Character.MAX_FREE_TELEPORT_LEVEL || player.isSubClassActive()) &&
                    loc.getFeeId() != 0 && loc.getFeeCount() > 0);
 	}
 
@@ -273,7 +273,7 @@ public class TeleportHolder
 	{
 		if (isNormalTeleport())
 		{
-			if (!player.isSubClassActive() && player.getLevel() <= Config.MAX_FREE_TELEPORT_LEVEL)
+			if (!player.isSubClassActive() && player.getLevel() <= Config.Character.MAX_FREE_TELEPORT_LEVEL)
 			{
 				return 0;
 			}

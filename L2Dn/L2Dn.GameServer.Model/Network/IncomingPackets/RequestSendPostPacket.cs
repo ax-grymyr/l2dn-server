@@ -8,10 +8,10 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -44,7 +44,7 @@ public struct RequestSendPostPacket: IIncomingPacket<GameSession>
         _text = reader.ReadString();
 
         int attachCount = reader.ReadInt32();
-        if (attachCount < 0 || attachCount > Config.MAX_ITEM_IN_PACKET ||
+        if (attachCount < 0 || attachCount > Config.Character.MAX_ITEM_IN_PACKET ||
             attachCount * BATCH_LENGTH + 8 != reader.Length)
         {
 	        return;

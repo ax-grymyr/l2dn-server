@@ -14,11 +14,11 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -149,7 +149,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 				int repCost = (int) s.getLevelUpSp(); // Hopefully not greater that max int.
 				if (clan.getReputationScore() >= repCost)
 				{
-					if (Config.LIFE_CRYSTAL_NEEDED)
+					if (Config.Character.LIFE_CRYSTAL_NEEDED)
 					{
 						int count = 0;
 						long playerItemCount = 0;
@@ -492,7 +492,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 				return false;
 			}
 
-			if (!Config.DIVINE_SP_BOOK_NEEDED && _id == (int)CommonSkill.DIVINE_INSPIRATION)
+			if (!Config.Character.DIVINE_SP_BOOK_NEEDED && _id == (int)CommonSkill.DIVINE_INSPIRATION)
 			{
 				return true;
 			}
@@ -673,7 +673,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 	 */
 	public static bool canTransform(Player player)
 	{
-		if (Config.ALLOW_TRANSFORM_WITHOUT_QUEST)
+		if (Config.Character.ALLOW_TRANSFORM_WITHOUT_QUEST)
 		{
 			return true;
 		}

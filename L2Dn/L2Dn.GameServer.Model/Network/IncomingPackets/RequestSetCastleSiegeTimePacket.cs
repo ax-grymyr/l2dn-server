@@ -4,10 +4,10 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -86,7 +86,7 @@ public struct RequestSetCastleSiegeTimePacket: IIncomingPacket<GameSession>
 
 	private static bool isSiegeTimeValid(DateTime siegeDate, DateTime chosenDate)
 	{
-		foreach (int hour in Config.SIEGE_HOUR_LIST)
+		foreach (int hour in Config.Feature.SIEGE_HOUR_LIST)
 		{
 			DateTime cal1 = new DateTime(siegeDate.Year, siegeDate.Month, siegeDate.Day, hour, 0, 0);
 			if (cal1 == chosenDate)

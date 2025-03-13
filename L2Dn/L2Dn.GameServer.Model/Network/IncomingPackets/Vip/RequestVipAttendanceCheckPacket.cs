@@ -2,9 +2,9 @@
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.Attendance;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets.Vip;
 
@@ -20,13 +20,13 @@ public struct RequestVipAttendanceCheckPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (Config.PREMIUM_ONLY_ATTENDANCE_REWARDS && !player.hasPremiumStatus())
+        if (Config.Attendance.PREMIUM_ONLY_ATTENDANCE_REWARDS && !player.hasPremiumStatus())
         {
             player.sendPacket(SystemMessageId.YOUR_VIP_RANK_IS_TOO_LOW_TO_RECEIVE_THE_REWARD);
             return ValueTask.CompletedTask;
         }
 
-        if (Config.VIP_ONLY_ATTENDANCE_REWARDS && player.getVipTier() <= 0)
+        if (Config.Attendance.VIP_ONLY_ATTENDANCE_REWARDS && player.getVipTier() <= 0)
         {
             player.sendPacket(SystemMessageId.YOUR_VIP_RANK_IS_TOO_LOW_TO_RECEIVE_THE_REWARD);
             return ValueTask.CompletedTask;

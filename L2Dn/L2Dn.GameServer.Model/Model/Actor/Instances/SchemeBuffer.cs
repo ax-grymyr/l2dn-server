@@ -8,8 +8,8 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -134,7 +134,7 @@ public class SchemeBuffer: Npc
                 {
                     if (skill.isDance())
                     {
-                        if (getCountOf(skills, true) < Config.DANCES_MAX_AMOUNT)
+                        if (getCountOf(skills, true) < Config.Character.DANCES_MAX_AMOUNT)
                         {
                             skills.Add(skillId);
                         }
@@ -299,7 +299,7 @@ public class SchemeBuffer: Npc
         htmlContent.Replace("%schemename%", schemeName);
         htmlContent.Replace("%count%",
             getCountOf(schemeSkills, false) + " / " + player.getStat().getMaxBuffCount() + " buffs, " +
-            getCountOf(schemeSkills, true) + " / " + Config.DANCES_MAX_AMOUNT + " dances/songs");
+            getCountOf(schemeSkills, true) + " / " + Config.Character.DANCES_MAX_AMOUNT + " dances/songs");
 
         htmlContent.Replace("%typesframe%", getTypesFrame(groupType, schemeName));
         htmlContent.Replace("%skilllistframe%", getGroupSkillList(player, groupType, schemeName, page));

@@ -24,12 +24,12 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor;
@@ -76,7 +76,7 @@ public abstract class Summon: Playable
 	{
 		base.onSpawn();
 
-		if (Config.SUMMON_STORE_SKILL_COOLTIME && !isTeleporting())
+		if (Config.Character.SUMMON_STORE_SKILL_COOLTIME && !isTeleporting())
 		{
 			restoreEffects();
 		}

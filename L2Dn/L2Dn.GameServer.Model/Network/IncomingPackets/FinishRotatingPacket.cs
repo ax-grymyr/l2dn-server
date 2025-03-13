@@ -1,9 +1,9 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -20,7 +20,7 @@ public struct FinishRotatingPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        if (!Config.ENABLE_KEYBOARD_MOVEMENT)
+        if (!Config.Character.ENABLE_KEYBOARD_MOVEMENT)
             return ValueTask.CompletedTask;
 
         Player? player = session.Player;

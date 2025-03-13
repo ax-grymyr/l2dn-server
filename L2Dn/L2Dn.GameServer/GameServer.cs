@@ -2,9 +2,9 @@
 using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.NetworkAuthServer;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using Task = System.Threading.Tasks.Task;
 
 namespace L2Dn.GameServer;
@@ -21,16 +21,16 @@ public class GameServer
     public void Start()
     {
         // Preload data
-        Config.Load(@"Config");
+        StaticDataLoader.Load("Config");
         Scripts.Scripts.RegisterHandlers();
-        L2Dn.GameServer.Data.StaticData.Load();
+        Data.StaticData.Load();
         Scripts.Scripts.RegisterQuests();
         Scripts.Scripts.RegisterScripts();
 
 		long totalMem = GC.GetTotalMemory(false) / 1024 / 1024;
 		long usedMem = GC.GetTotalAllocatedBytes() / 1024 / 1024;
 		_logger.Info(GetType().Name + ": Started, using " + usedMem + " of " + totalMem + " MB total memory.");
-		_logger.Info(GetType().Name + ": Maximum number of connected players is " + Config.MAXIMUM_ONLINE_USERS + ".");
+		_logger.Info(GetType().Name + ": Maximum number of connected players is " + Config.Server.MAXIMUM_ONLINE_USERS + ".");
 		_logger.Info(GetType().Name + ": Server loaded in " + (DateTime.UtcNow - _startTime).TotalSeconds + " seconds.");
 
         ClientListenerConfig clientListenerConfig = ServerConfig.Instance.ClientListener;

@@ -1,7 +1,7 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 
@@ -45,7 +45,7 @@ public class RaidBoss: Monster
 
     public override bool useVitalityRate()
     {
-        return Config.RAIDBOSS_USE_VITALITY;
+        return Config.Character.RAIDBOSS_USE_VITALITY;
     }
 
     public void setUseRaidCurse(bool value)

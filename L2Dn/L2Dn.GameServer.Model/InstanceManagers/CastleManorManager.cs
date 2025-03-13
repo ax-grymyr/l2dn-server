@@ -10,12 +10,12 @@ using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;

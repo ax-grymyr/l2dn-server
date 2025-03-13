@@ -6,10 +6,10 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Attendance;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets.Vip;
 
@@ -28,20 +28,20 @@ public struct RequestVipAttendanceItemRewardPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (!Config.ENABLE_ATTENDANCE_REWARDS)
+        if (!Config.Attendance.ENABLE_ATTENDANCE_REWARDS)
         {
             player.sendPacket(SystemMessageId
                 .DUE_TO_A_SYSTEM_ERROR_THE_ATTENDANCE_REWARD_CANNOT_BE_RECEIVED_PLEASE_TRY_AGAIN_LATER_BY_GOING_TO_MENU_ATTENDANCE_CHECK);
             return ValueTask.CompletedTask;
         }
 
-        if (Config.PREMIUM_ONLY_ATTENDANCE_REWARDS && !player.hasPremiumStatus())
+        if (Config.Attendance.PREMIUM_ONLY_ATTENDANCE_REWARDS && !player.hasPremiumStatus())
         {
             player.sendPacket(SystemMessageId.YOUR_VIP_RANK_IS_TOO_LOW_TO_RECEIVE_THE_REWARD);
             return ValueTask.CompletedTask;
         }
 
-        if (Config.VIP_ONLY_ATTENDANCE_REWARDS && player.getVipTier() <= 0)
+        if (Config.Attendance.VIP_ONLY_ATTENDANCE_REWARDS && player.getVipTier() <= 0)
         {
             player.sendPacket(SystemMessageId.YOUR_VIP_RANK_IS_TOO_LOW_TO_RECEIVE_THE_REWARD);
             return ValueTask.CompletedTask;

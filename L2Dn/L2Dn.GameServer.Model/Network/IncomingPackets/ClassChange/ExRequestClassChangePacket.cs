@@ -5,12 +5,12 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.ClassChange;
 using L2Dn.GameServer.Network.OutgoingPackets.ElementalSpirits;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets.ClassChange;
 
@@ -78,7 +78,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 			}
 
 			// Class change rewards.
-			if (!Config.DISABLE_TUTORIAL)
+			if (!Config.Character.DISABLE_TUTORIAL)
 			{
 				switch (player.getClassId())
 				{
@@ -243,9 +243,9 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 				player.sendPacket(new ExElementalSpiritAttackTypePacket(player));
 			}
 
-			if (Config.AUTO_LEARN_SKILLS)
+			if (Config.Character.AUTO_LEARN_SKILLS)
 			{
-				player.giveAvailableSkills(Config.AUTO_LEARN_FS_SKILLS, true, Config.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
+				player.giveAvailableSkills(Config.Character.AUTO_LEARN_FS_SKILLS, true, Config.Character.AUTO_LEARN_SKILLS_WITHOUT_ITEMS);
 			}
 
 			player.store(false); // Save player cause if server crashes before this char is saved, he will lose class.
@@ -253,7 +253,7 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 			player.sendSkillList();
 			player.sendPacket(new PlaySoundPacket("ItemSound.quest_fanfare_2"));
 
-			if (Config.DISABLE_TUTORIAL && !player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) //
+			if (Config.Character.DISABLE_TUTORIAL && !player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) //
 				&& ((player.isInCategory(CategoryType.SECOND_CLASS_GROUP) && playerLevel >= 38) //
 					|| (player.isInCategory(CategoryType.THIRD_CLASS_GROUP) && playerLevel >= 76)))
 			{

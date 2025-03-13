@@ -4,9 +4,9 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -95,8 +95,8 @@ public readonly struct CharacterListPacket(int playKey1, string accountName, Cha
 
 		int size = characters.Count;
 		writer.WriteInt32(size); // Created character count
-		writer.WriteInt32(Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )
-		writer.WriteByte(size == Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // if 1 can't create new char
+		writer.WriteInt32(Config.Server.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )
+		writer.WriteByte(size == Config.Server.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // if 1 can't create new char
 		writer.WriteByte(2); // 0=can't play, 1=can play free until level 85, 2=100% free play
 		writer.WriteInt32(2); // if 1, Korean client
 		writer.WriteByte(0); // Gift message for inactive accounts // 152

@@ -6,10 +6,10 @@ using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 

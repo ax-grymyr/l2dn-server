@@ -1,9 +1,10 @@
 using System.Collections.Immutable;
 using System.Xml.Linq;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Stats;
 
@@ -19,7 +20,7 @@ public static class BaseStatUtil
 	static BaseStatUtil()
 	{
 		// TODO: load bonus values
-		string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "stats/statBonus.xml");
+		string filePath = Path.Combine(ServerConfig.Instance.DataPack.Path, "stats/statBonus.xml");
 		using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 		XDocument document = XDocument.Load(stream);
 

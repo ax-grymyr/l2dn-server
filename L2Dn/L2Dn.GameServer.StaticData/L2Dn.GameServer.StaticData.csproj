@@ -14,6 +14,7 @@
 
     <ItemGroup>
       <Folder Include="Handlers\" />
+      <Folder Include="StaticData\" />
     </ItemGroup>
 
 </Project>

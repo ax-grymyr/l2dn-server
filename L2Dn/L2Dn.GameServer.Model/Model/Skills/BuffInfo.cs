@@ -5,9 +5,9 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Skills;
@@ -319,8 +319,8 @@ public class BuffInfo
 				// The task for the effect ticks.
 				EffectTickTask effectTask = new EffectTickTask(this, effect);
 				ScheduledFuture scheduledFuture = ThreadPool.scheduleAtFixedRate(effectTask,
-					effect.Ticks * TimeSpan.FromMilliseconds(Config.EFFECT_TICK_RATIO),
-					effect.Ticks * TimeSpan.FromMilliseconds(Config.EFFECT_TICK_RATIO));
+					effect.Ticks * TimeSpan.FromMilliseconds(Config.Character.EFFECT_TICK_RATIO),
+					effect.Ticks * TimeSpan.FromMilliseconds(Config.Character.EFFECT_TICK_RATIO));
 
 				// Adds the task for ticking.
 				addTask(effect, new EffectTaskInfo(effectTask, scheduledFuture));

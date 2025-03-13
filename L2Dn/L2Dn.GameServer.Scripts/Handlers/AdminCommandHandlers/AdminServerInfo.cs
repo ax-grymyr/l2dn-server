@@ -8,9 +8,9 @@ using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -33,7 +33,7 @@ public class AdminServerInfo: IAdminCommandHandler
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/serverinfo.htm", activeChar);
 			htmlContent.Replace("%os_name%", Environment.OSVersion.Platform.ToString());
 			htmlContent.Replace("%os_ver%", Environment.OSVersion.VersionString);
-			htmlContent.Replace("%slots%", getPlayersCount("ALL") + "/" + Config.MAXIMUM_ONLINE_USERS);
+			htmlContent.Replace("%slots%", getPlayersCount("ALL") + "/" + Config.Server.MAXIMUM_ONLINE_USERS);
 			htmlContent.Replace("%gameTime%",
 				GameTimeTaskManager.getInstance().getGameHour() + ":" +
 				GameTimeTaskManager.getInstance().getGameMinute());

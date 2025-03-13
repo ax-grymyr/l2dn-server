@@ -1,14 +1,15 @@
 using System.Globalization;
 using L2Dn.GameServer.Cache;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -44,7 +45,7 @@ public class AdminReload: IAdminCommandHandler
 			{
 				case "config":
 				{
-					Config.Load();
+					//Config.Load(); // TODO: reload config
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Configs.");
 					break;
 				}
@@ -97,7 +98,7 @@ public class AdminReload: IAdminCommandHandler
 					if (st.hasMoreElements())
 					{
 						string path = st.nextToken();
-						string filePath = Path.Combine(Config.DATAPACK_ROOT_PATH, "html/" + path);
+						string filePath = Path.Combine(ServerConfig.Instance.DataPack.Path, "html/" + path);
 						if (File.Exists(filePath))
 						{
 							HtmCache.getInstance().reload(filePath);

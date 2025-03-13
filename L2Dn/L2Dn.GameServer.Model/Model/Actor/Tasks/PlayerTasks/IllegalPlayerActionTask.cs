@@ -5,9 +5,9 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 

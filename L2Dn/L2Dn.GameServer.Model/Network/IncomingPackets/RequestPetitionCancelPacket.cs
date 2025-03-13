@@ -4,9 +4,9 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -37,7 +37,7 @@ public struct RequestPetitionCancelPacket: IIncomingPacket<GameSession>
         {
             if (PetitionManager.getInstance().cancelActivePetition(player))
             {
-                int numRemaining = Config.MAX_PETITIONS_PER_PLAYER -
+                int numRemaining = Config.Character.MAX_PETITIONS_PER_PLAYER -
                                    PetitionManager.getInstance().getPlayerTotalPetitionCount(player);
 
                 SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId

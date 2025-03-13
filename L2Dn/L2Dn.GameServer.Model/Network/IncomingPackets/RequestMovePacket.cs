@@ -7,11 +7,11 @@ using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Sayune;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -34,7 +34,7 @@ internal struct RequestMovePacket: IIncomingPacket<GameSession>
 		if (player == null)
 			return ValueTask.CompletedTask;
 
-		if (Config.PLAYER_MOVEMENT_BLOCK_TIME > 0 && !player.isGM() && player.getNotMoveUntil() > DateTime.UtcNow)
+		if (Config.Character.PLAYER_MOVEMENT_BLOCK_TIME > 0 && !player.isGM() && player.getNotMoveUntil() > DateTime.UtcNow)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_MOVE_WHILE_SPEAKING_TO_AN_NPC_ONE_MOMENT_PLEASE);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -71,7 +71,7 @@ internal struct RequestMovePacket: IIncomingPacket<GameSession>
 		}
 		else // 0
 		{
-			if (!Config.ENABLE_KEYBOARD_MOVEMENT)
+			if (!Config.Character.ENABLE_KEYBOARD_MOVEMENT)
 			{
 				return ValueTask.CompletedTask;
 			}

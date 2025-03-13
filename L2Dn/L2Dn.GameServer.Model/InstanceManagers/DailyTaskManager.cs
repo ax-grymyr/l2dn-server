@@ -14,11 +14,11 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Model.Vips;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;
@@ -166,7 +166,7 @@ public class DailyTaskManager
 
 	private void resetVitalityDaily()
 	{
-		if (!Config.ENABLE_VITALITY)
+		if (!Config.Character.ENABLE_VITALITY)
 		{
 			return;
 		}
@@ -209,7 +209,7 @@ public class DailyTaskManager
 
 	private void resetVitalityWeekly()
 	{
-		if (!Config.ENABLE_VITALITY)
+		if (!Config.Character.ENABLE_VITALITY)
 		{
 			return;
 		}
@@ -535,7 +535,7 @@ public class DailyTaskManager
 
 	private void resetAttendanceRewards()
 	{
-		if (Config.ATTENDANCE_REWARDS_SHARE_ACCOUNT)
+		if (Config.Attendance.ATTENDANCE_REWARDS_SHARE_ACCOUNT)
 		{
 			// Update data for offline players.
 			try

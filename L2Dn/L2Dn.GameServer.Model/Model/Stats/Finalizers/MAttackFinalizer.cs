@@ -1,7 +1,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 
@@ -42,7 +42,7 @@ public class MAttackFinalizer: StatFunction
 		double physicalBonus = (creature.getStat().getMul(Stat.MAGIC_ATTACK_BY_PHYSICAL_ATTACK, 1) - 1) * creature.getPAtk();
 		baseValue *= Math.Pow(BaseStat.INT.calcBonus(creature) * creature.getLevelMod(), 2.2072);
 		return validateValue(creature, StatUtil.defaultValue(creature, stat, baseValue + physicalBonus), 0,
-			creature.isPlayable() ? Config.MAX_MATK : double.MaxValue);
+			creature.isPlayable() ? Config.Character.MAX_MATK : double.MaxValue);
 	}
 
 	protected override double calcEnchantBodyPartBonus(int enchantLevel, bool isBlessed)

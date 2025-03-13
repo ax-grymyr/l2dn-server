@@ -1,6 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.StaticData;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.InstanceZones.Conditions;
 
@@ -17,8 +17,8 @@ public class ConditionLevel: Condition
 		base(template, parameters, onlyLeader, showMessageAndHtml)
 	{
 		// Load params
-		_min = Math.Min(Config.PLAYER_MAXIMUM_LEVEL, parameters.getInt("min", 1));
-		_max = Math.Min(Config.PLAYER_MAXIMUM_LEVEL, parameters.getInt("max", int.MaxValue));
+		_min = Math.Min(Config.Character.PLAYER_MAXIMUM_LEVEL, parameters.getInt("min", 1));
+		_max = Math.Min(Config.Character.PLAYER_MAXIMUM_LEVEL, parameters.getInt("max", int.MaxValue));
 		// Set message
 		setSystemMessage(SystemMessageId.C1_DOES_NOT_MEET_LEVEL_REQUIREMENTS_AND_CANNOT_ENTER,
 			(msg, player) => msg.Params.addString(player.getName()));

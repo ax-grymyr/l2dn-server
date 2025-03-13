@@ -1,7 +1,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 
@@ -27,7 +27,7 @@ public class MCritRateFinalizer : StatFunction
 		double maxMagicalCritRate;
 		if (creature.isPlayable())
 		{
-			maxMagicalCritRate = Config.MAX_MCRIT_RATE + creature.getStat().getValue(Stat.ADD_MAX_MAGIC_CRITICAL_RATE, 0);
+			maxMagicalCritRate = Config.Character.MAX_MCRIT_RATE + creature.getStat().getValue(Stat.ADD_MAX_MAGIC_CRITICAL_RATE, 0);
 		}
 		else
 		{

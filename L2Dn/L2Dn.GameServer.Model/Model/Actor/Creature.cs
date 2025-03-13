@@ -32,7 +32,6 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
@@ -40,6 +39,7 @@ using L2Dn.Model.Enums;
 using L2Dn.Packets;
 using L2Dn.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor;
@@ -145,7 +145,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	private readonly Map<int, RelationCache> _knownRelations = new();
 
 	private Set<Creature> _seenCreatures = [];
-	private int _seenCreatureRange = Config.ALT_PARTY_RANGE;
+	private int _seenCreatureRange = Config.Character.ALT_PARTY_RANGE;
 
 	private readonly Map<StatusUpdateType, int> _statusUpdates = new();
 
@@ -350,7 +350,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public void transform(Transform transformation, bool addSkills)
 	{
-		if (!Config.ALLOW_MOUNTS_DURING_SIEGE && transformation.isRiding() && isInsideZone(ZoneId.SIEGE))
+		if (!Config.Feature.ALLOW_MOUNTS_DURING_SIEGE && transformation.isRiding() && isInsideZone(ZoneId.SIEGE))
 		{
 			return;
 		}
@@ -439,7 +439,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				this.teleToLocation(TeleportWhereType.TOWN);
 				setInstance(null);
 			}
-			else if (Config.DISCONNECT_AFTER_DEATH)
+			else if (Config.Character.DISCONNECT_AFTER_DEATH)
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId
 					.SIXTY_MIN_HAVE_PASSED_AFTER_THE_DEATH_OF_YOUR_CHARACTER_SO_YOU_WERE_DISCONNECTED_FROM_THE_GAME);
@@ -1301,7 +1301,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// Players which are 9 levels above a Raid Boss and cast a skill nearby, are silenced with the Raid Curse skill.
 		if (!Config.RAID_DISABLE_CURSE && isPlayer())
 		{
-			World.getInstance().forEachVisibleObjectInRange<Attackable>(this, Config.ALT_PARTY_RANGE, attackable =>
+			World.getInstance().forEachVisibleObjectInRange<Attackable>(this, Config.Character.ALT_PARTY_RANGE, attackable =>
 			{
 				if (attackable.giveRaidCurse() && attackable.isInCombat() && getLevel() - attackable.getLevel() > 8)
 				{
@@ -1797,17 +1797,17 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			setIsPendingRevive(false);
 			setDead(false);
 
-			if (Config.RESPAWN_RESTORE_CP > 0 && _status.getCurrentCp() < _stat.getMaxCp() * Config.RESPAWN_RESTORE_CP)
+			if (Config.Character.RESPAWN_RESTORE_CP > 0 && _status.getCurrentCp() < _stat.getMaxCp() * Config.Character.RESPAWN_RESTORE_CP)
 			{
-				_status.setCurrentCp(_stat.getMaxCp() * Config.RESPAWN_RESTORE_CP);
+				_status.setCurrentCp(_stat.getMaxCp() * Config.Character.RESPAWN_RESTORE_CP);
 			}
-			if (Config.RESPAWN_RESTORE_HP > 0 && _status.getCurrentHp() < _stat.getMaxHp() * Config.RESPAWN_RESTORE_HP)
+			if (Config.Character.RESPAWN_RESTORE_HP > 0 && _status.getCurrentHp() < _stat.getMaxHp() * Config.Character.RESPAWN_RESTORE_HP)
 			{
-				_status.setCurrentHp(_stat.getMaxHp() * Config.RESPAWN_RESTORE_HP);
+				_status.setCurrentHp(_stat.getMaxHp() * Config.Character.RESPAWN_RESTORE_HP);
 			}
-			if (Config.RESPAWN_RESTORE_MP > 0 && _status.getCurrentMp() < _stat.getMaxMp() * Config.RESPAWN_RESTORE_MP)
+			if (Config.Character.RESPAWN_RESTORE_MP > 0 && _status.getCurrentMp() < _stat.getMaxMp() * Config.Character.RESPAWN_RESTORE_MP)
 			{
-				_status.setCurrentMp(_stat.getMaxMp() * Config.RESPAWN_RESTORE_MP);
+				_status.setCurrentMp(_stat.getMaxMp() * Config.Character.RESPAWN_RESTORE_MP);
 			}
 
 			// Start broadcast status
@@ -2367,7 +2367,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		broadcastPacket(new ChangeWaitTypePacket(this, ChangeWaitTypePacket.WT_START_FAKEDEATH));
 
 		// Remove target from those that have the untargetable creature on target.
-		if (Config.FAKE_DEATH_UNTARGET)
+		if (Config.Character.FAKE_DEATH_UNTARGET)
 		{
 			World.getInstance().forEachVisibleObject<Creature>(this, c =>
 			{
@@ -4144,7 +4144,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 
         Player? attackerPlayer = attacker.getActingPlayer();
-		if (Config.ALT_GAME_KARMA_PLAYER_CAN_BE_KILLED_IN_PEACEZONE)
+		if (Config.Character.ALT_GAME_KARMA_PLAYER_CAN_BE_KILLED_IN_PEACEZONE)
 		{
 			// allows red to be attacked and red to attack flagged players
             Player? targetPlayer = target.getActingPlayer();
@@ -4637,7 +4637,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		bool isPvP = isPlayable() && (target.isPlayable() || target.isFakePlayer());
 		if (!isPvP || Config.VAMPIRIC_ATTACK_AFFECTS_PVP)
 		{
-			if (skill == null || Config.VAMPIRIC_ATTACK_WORKS_WITH_SKILLS)
+			if (skill == null || Config.Character.VAMPIRIC_ATTACK_WORKS_WITH_SKILLS)
 			{
 				double absorbHpPercent = getStat().getValue(Stat.ABSORB_DAMAGE_PERCENT, 0);
 				if (absorbHpPercent > 0 && Rnd.nextDouble() < _stat.getValue(Stat.ABSORB_DAMAGE_CHANCE))
@@ -4656,7 +4656,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// Absorb MP from the damage inflicted.
 		if (!isPvP || Config.MP_VAMPIRIC_ATTACK_AFFECTS_PVP)
 		{
-			if (skill != null || Config.MP_VAMPIRIC_ATTACK_WORKS_WITH_MELEE)
+			if (skill != null || Config.Character.MP_VAMPIRIC_ATTACK_WORKS_WITH_MELEE)
 			{
 				double absorbMpPercent = _stat.getValue(Stat.ABSORB_MANA_DAMAGE_PERCENT, 0);
 				if (absorbMpPercent > 0 && Rnd.nextDouble() < _stat.getValue(Stat.ABSORB_MANA_DAMAGE_CHANCE))
@@ -4680,7 +4680,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			int reflectedDamage = 0;
 
 			// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
-			double reflectPercent = Math.Min(target.getStat().getValue(Stat.REFLECT_DAMAGE_PERCENT, 0) - getStat().getValue(Stat.REFLECT_DAMAGE_PERCENT_DEFENSE, 0), target.isPlayer() ? Config.PLAYER_REFLECT_PERCENT_LIMIT : Config.NON_PLAYER_REFLECT_PERCENT_LIMIT);
+			double reflectPercent = Math.Min(target.getStat().getValue(Stat.REFLECT_DAMAGE_PERCENT, 0) - getStat().getValue(Stat.REFLECT_DAMAGE_PERCENT_DEFENSE, 0), target.isPlayer() ? Config.Character.PLAYER_REFLECT_PERCENT_LIMIT : Config.Character.NON_PLAYER_REFLECT_PERCENT_LIMIT);
 			if (reflectPercent > 0)
 			{
 				reflectedDamage = (int) (reflectPercent / 100.0 * damage);
@@ -4918,7 +4918,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		{
 			// Weight Limit = (CON Modifier*69000) * Skills
 			// Source http://l2p.bravehost.com/weightlimit.html (May 2007)
-			double baseLoad = Math.Floor(BaseStat.CON.calcBonus(this) * 69000 * Config.ALT_WEIGHT_LIMIT);
+			double baseLoad = Math.Floor(BaseStat.CON.calcBonus(this) * 69000 * Config.Character.ALT_WEIGHT_LIMIT);
 			return (int) _stat.getValue(Stat.WEIGHT_LIMIT, baseLoad);
 		}
 		return 0;

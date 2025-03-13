@@ -5,7 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.UserCommandHandlers;
 
@@ -30,7 +30,7 @@ public class Unstuck: IUserCommandHandler
             return false;
         }
 
-        int unstuckTimer = (player.getAccessLevel().isGm() ? 1000 : Config.UNSTUCK_INTERVAL * 1000);
+        int unstuckTimer = (player.getAccessLevel().isGm() ? 1000 : Config.Character.UNSTUCK_INTERVAL * 1000);
 
         if (player.isInOlympiadMode())
         {
@@ -57,7 +57,7 @@ public class Unstuck: IUserCommandHandler
 
             player.sendMessage("You use Escape: 1 second.");
         }
-        else if ((Config.UNSTUCK_INTERVAL == 300) && (escape != null))
+        else if ((Config.Character.UNSTUCK_INTERVAL == 300) && (escape != null))
         {
             player.doCast(escape);
             return true;
@@ -74,7 +74,7 @@ public class Unstuck: IUserCommandHandler
                 return false;
             }
 
-            if (Config.UNSTUCK_INTERVAL > 100)
+            if (Config.Character.UNSTUCK_INTERVAL > 100)
             {
                 player.sendMessage("You use Escape: " + (unstuckTimer / 60000) + " minutes.");
             }

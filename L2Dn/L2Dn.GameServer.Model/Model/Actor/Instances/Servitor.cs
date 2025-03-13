@@ -9,11 +9,11 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using Microsoft.EntityFrameworkCore;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
@@ -209,7 +209,7 @@ public class Servitor : Summon, Runnable
 			return;
 		}
 
-		if (Config.RESTORE_SERVITOR_ON_RECONNECT)
+		if (Config.Character.RESTORE_SERVITOR_ON_RECONNECT)
 		{
 			if (isDead())
 			{
@@ -224,7 +224,7 @@ public class Servitor : Summon, Runnable
 
 	public override void storeEffect(bool storeEffects)
 	{
-		if (!Config.SUMMON_STORE_SKILL_COOLTIME)
+		if (!Config.Character.SUMMON_STORE_SKILL_COOLTIME)
 		{
 			return;
 		}
@@ -286,7 +286,7 @@ public class Servitor : Summon, Runnable
 					}
 
 					// Dances and songs are not kept in retail.
-					if (skill.isDance() && !Config.ALT_STORE_DANCES)
+					if (skill.isDance() && !Config.Character.ALT_STORE_DANCES)
 					{
 						continue;
 					}

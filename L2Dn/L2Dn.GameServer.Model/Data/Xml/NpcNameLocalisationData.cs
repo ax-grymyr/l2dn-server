@@ -1,9 +1,9 @@
 using System.Xml.Linq;
 using L2Dn.Extensions;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Data.Xml;
 

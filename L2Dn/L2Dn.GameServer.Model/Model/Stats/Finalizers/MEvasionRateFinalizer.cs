@@ -1,7 +1,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 
@@ -36,7 +36,7 @@ public class MEvasionRateFinalizer : StatFunction
 		}
 
 		return validateValue(creature, StatUtil.defaultValue(creature, stat, baseValue), double.NegativeInfinity,
-			creature.isPlayable() ? Config.MAX_EVASION : double.MaxValue);
+			creature.isPlayable() ? Config.Character.MAX_EVASION : double.MaxValue);
 	}
 
 	protected override double calcEnchantBodyPartBonus(int enchantLevel, bool isBlessed)

@@ -1,7 +1,7 @@
 using L2Dn.GameServer.InstanceManagers.Tasks;
 using L2Dn.GameServer.Model.Quests;
-using L2Dn.GameServer.StaticData;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.InstanceManagers;

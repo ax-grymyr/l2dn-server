@@ -1,7 +1,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 
@@ -26,7 +26,7 @@ public class PCriticalRateFinalizer: StatFunction
 		double maxPhysicalCritRate;
 		if (creature.isPlayable())
 		{
-			maxPhysicalCritRate = Config.MAX_PCRIT_RATE +
+			maxPhysicalCritRate = Config.Character.MAX_PCRIT_RATE +
 			                      creature.getStat().getValue(Stat.ADD_MAX_PHYSICAL_CRITICAL_RATE, 0);
 		}
 		else

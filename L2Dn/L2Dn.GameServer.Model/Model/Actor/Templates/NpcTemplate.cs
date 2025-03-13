@@ -10,12 +10,12 @@ using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using Warehouse = L2Dn.GameServer.Model.Actor.Instances.Warehouse;
 
 namespace L2Dn.GameServer.Model.Actor.Templates;

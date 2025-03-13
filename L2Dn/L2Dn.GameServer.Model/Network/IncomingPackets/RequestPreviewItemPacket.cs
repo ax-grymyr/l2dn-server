@@ -9,12 +9,12 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
@@ -58,7 +58,7 @@ public struct RequestPreviewItemPacket: IIncomingPacket<GameSession>
 	    // }
 
 	    // If Alternate rule Karma punishment is set to true, forbid Wear to player with Karma
-	    if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && player.getReputation() < 0)
+	    if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_SHOP && player.getReputation() < 0)
 		    return ValueTask.CompletedTask;
 
 	    // Check current target of the player and the INTERACTION_DISTANCE

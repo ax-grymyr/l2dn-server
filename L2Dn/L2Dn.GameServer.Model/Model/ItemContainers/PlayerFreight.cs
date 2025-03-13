@@ -1,6 +1,6 @@
 ﻿using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.StaticData;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.ItemContainers;
 
@@ -44,7 +44,7 @@ public class PlayerFreight: ItemContainer
 
     public override bool validateCapacity(long slots)
     {
-        return getSize() + slots <= Config.ALT_FREIGHT_SLOTS;
+        return getSize() + slots <= Config.Character.ALT_FREIGHT_SLOTS;
     }
 
     protected override void refreshWeight()

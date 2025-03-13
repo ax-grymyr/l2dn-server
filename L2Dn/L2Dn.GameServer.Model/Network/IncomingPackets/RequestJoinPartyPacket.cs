@@ -5,9 +5,9 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Request;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
@@ -182,7 +182,7 @@ public struct RequestJoinPartyPacket: IIncomingPacket<GameSession>
 		{
 			requestor.sendPacket(SystemMessageId.ONLY_THE_LEADER_CAN_GIVE_OUT_INVITATIONS);
 		}
-		else if (party.getMemberCount() >= Config.ALT_PARTY_MAX_MEMBERS)
+		else if (party.getMemberCount() >= Config.Character.ALT_PARTY_MAX_MEMBERS)
 		{
 			requestor.sendPacket(SystemMessageId.THE_PARTY_IS_FULL);
 		}

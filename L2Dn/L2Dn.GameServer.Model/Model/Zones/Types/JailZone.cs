@@ -1,8 +1,8 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Geometry;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Zones.Types;

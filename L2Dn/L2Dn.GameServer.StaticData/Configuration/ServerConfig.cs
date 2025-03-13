@@ -2,7 +2,7 @@
 
 namespace L2Dn.GameServer.Configuration;
 
-public class ServerConfig: ConfigBase, ISingleton<ServerConfig>
+public sealed class ServerConfig: ConfigBase, ISingleton<ServerConfig>
 {
     private static ServerConfig _instance = new();
     public static ServerConfig Instance => _instance;

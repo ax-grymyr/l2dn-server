@@ -13,9 +13,9 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.ItemContainers;
 
@@ -37,7 +37,7 @@ public abstract class Inventory: ItemContainer
 	public const int TEMPEST_STONE_ID = 39592;
 	public const int ELCYUM_CRYSTAL_ID = 36514;
 	public const int LCOIN_ID = 91663;
-	public static readonly long MAX_ADENA = Config.MAX_ADENA;
+	public static readonly long MAX_ADENA = Config.Character.MAX_ADENA;
 	public const int SP_POUCH = 98232;
 	public const int SP_POINTS = 15624;
 
@@ -576,12 +576,12 @@ public abstract class Inventory: ItemContainer
 
 						// Active, non-offensive, skills start with reuse on equip.
 						if (skill.isActive() && !skill.isBad() && !skill.isTransformation() &&
-						    Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 && player.hasEnteredWorld())
+						    Config.Character.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 && player.hasEnteredWorld())
 						{
 							playable.addTimeStamp(skill,
 								skill.getReuseDelay() > TimeSpan.Zero
 									? skill.getReuseDelay()
-									: TimeSpan.FromMilliseconds(Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE));
+									: TimeSpan.FromMilliseconds(Config.Character.ITEM_EQUIP_ACTIVE_SKILL_REUSE));
 
 							updateTimestamp = true;
 						}
@@ -682,13 +682,13 @@ public abstract class Inventory: ItemContainer
 
 							// Active, non-offensive, skills start with reuse on equip.
                             if (!skill.isBad() && !skill.isTransformation() &&
-                                Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 &&
+                                Config.Character.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 &&
                                 player.hasEnteredWorld())
                             {
                                 playable.addTimeStamp(skill,
                                     skill.getReuseDelay() > TimeSpan.Zero
                                         ? skill.getReuseDelay()
-                                        : TimeSpan.FromMilliseconds(Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE));
+                                        : TimeSpan.FromMilliseconds(Config.Character.ITEM_EQUIP_ACTIVE_SKILL_REUSE));
                             }
 
                             updateTimestamp = true;
@@ -753,12 +753,12 @@ public abstract class Inventory: ItemContainer
 
 						// Active, non offensive, skills start with reuse on equip.
                         if (skill.isActive() && !skill.isBad() && !skill.isTransformation() &&
-                            Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 && player.hasEnteredWorld())
+                            Config.Character.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 && player.hasEnteredWorld())
                         {
                             playable.addTimeStamp(skill,
                                 skill.getReuseDelay() > TimeSpan.Zero
                                     ? skill.getReuseDelay()
-                                    : TimeSpan.FromMilliseconds(Config.ITEM_EQUIP_ACTIVE_SKILL_REUSE));
+                                    : TimeSpan.FromMilliseconds(Config.Character.ITEM_EQUIP_ACTIVE_SKILL_REUSE));
 
                             updateTimestamp = true;
                         }
@@ -927,13 +927,13 @@ public abstract class Inventory: ItemContainer
 
 							// Active, non-offensive, skills start with reuse on equip.
                             if (!itemSkill.isBad() && !itemSkill.isTransformation() &&
-                                Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0 &&
+                                Config.Character.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0 &&
                                 player.hasEnteredWorld())
                             {
                                 playable.addTimeStamp(itemSkill,
                                     itemSkill.getReuseDelay() > TimeSpan.Zero
                                         ? itemSkill.getReuseDelay()
-                                        : TimeSpan.FromMilliseconds(Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE));
+                                        : TimeSpan.FromMilliseconds(Config.Character.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE));
                             }
 
                             updateTimeStamp = true;

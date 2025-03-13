@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Cache;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Geo;
@@ -11,7 +12,6 @@ using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Vips;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 
 namespace L2Dn.GameServer.Data;
@@ -238,12 +238,12 @@ public static class StaticData
 			OfflineTraderTable.getInstance().restoreOfflineTraders();
 		}
 
-		if (Config.SERVER_RESTART_SCHEDULE_ENABLED)
+		if (Config.Server.SERVER_RESTART_SCHEDULE_ENABLED)
 		{
 			ServerRestartManager.getInstance();
 		}
 
-		if (Config.PRECAUTIONARY_RESTART_ENABLED)
+		if (Config.Server.PRECAUTIONARY_RESTART_ENABLED)
 		{
 			PrecautionaryRestartManager.getInstance();
 		}

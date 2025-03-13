@@ -3,7 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.ItemContainers;
-using L2Dn.GameServer.StaticData;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.TaskManagers.Tasks;
 

@@ -1,7 +1,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 
@@ -38,7 +38,7 @@ public class PAttackFinalizer : StatFunction
 			baseValue *= Config.RAID_PATTACK_MULTIPLIER;
 		}
 		baseValue *= BaseStat.STR.calcBonus(creature) * creature.getLevelMod();
-		return validateValue(creature, StatUtil.defaultValue(creature, stat, baseValue), 0, creature.isPlayable() ? Config.MAX_PATK : double.MaxValue);
+		return validateValue(creature, StatUtil.defaultValue(creature, stat, baseValue), 0, creature.isPlayable() ? Config.Character.MAX_PATK : double.MaxValue);
 	}
 
 	protected override double calcEnchantBodyPartBonus(int enchantLevel, bool isBlessed)

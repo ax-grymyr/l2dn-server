@@ -5,7 +5,7 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Options;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.StaticData;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.Enums;
 
@@ -114,7 +114,7 @@ public static class RefinePacketHelper
 		{
 			return false;
 		}
-		if (item.isPvp() && !Config.ALT_ALLOW_AUGMENT_PVP_ITEMS)
+		if (item.isPvp() && !Config.Character.ALT_ALLOW_AUGMENT_PVP_ITEMS)
 		{
 			return false;
 		}
@@ -139,7 +139,7 @@ public static class RefinePacketHelper
 		}
 
 		// blacklist check
-		if (Config.AUGMENTATION_BLACKLIST.Contains(item.getId()))
+		if (Config.Character.AUGMENTATION_BLACKLIST.Contains(item.getId()))
 		{
 			return false;
 		}

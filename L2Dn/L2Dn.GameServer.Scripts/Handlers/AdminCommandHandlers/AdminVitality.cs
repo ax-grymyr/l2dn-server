@@ -2,9 +2,9 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Stats;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -29,7 +29,7 @@ public class AdminVitality: IAdminCommandHandler
 			return false;
 		}
 
-		if (!Config.ENABLE_VITALITY)
+		if (!Config.Character.ENABLE_VITALITY)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Vitality is not enabled on the server!");
 			return false;

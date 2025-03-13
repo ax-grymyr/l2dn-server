@@ -1,6 +1,6 @@
 ﻿using L2Dn.Extensions;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -26,6 +26,6 @@ public readonly struct ExEnterWorldPacket: IOutgoingPacket
         writer.WriteInt32(_epochInSeconds);
         writer.WriteInt32(-_zoneIdOffsetSeconds);
         writer.WriteInt32(_daylight);
-        writer.WriteInt32(Config.MAX_FREE_TELEPORT_LEVEL);
+        writer.WriteInt32(Config.Character.MAX_FREE_TELEPORT_LEVEL);
     }
 }

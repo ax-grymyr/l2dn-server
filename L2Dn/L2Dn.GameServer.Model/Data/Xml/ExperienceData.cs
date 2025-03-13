@@ -1,8 +1,8 @@
 using System.Collections.Immutable;
 using L2Dn.Extensions;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Xml;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -32,8 +32,8 @@ public class ExperienceData: DataReaderBase
 
 		int maxLevel = document.MaxLevel;
 		int maxPetLevel = document.MaxPetLevel;
-		if (maxLevel > Config.PLAYER_MAXIMUM_LEVEL)
-			maxLevel = Config.PLAYER_MAXIMUM_LEVEL;
+		if (maxLevel > Config.Character.PLAYER_MAXIMUM_LEVEL)
+			maxLevel = Config.Character.PLAYER_MAXIMUM_LEVEL;
 
 		if (maxPetLevel > maxLevel + 1)
 			maxPetLevel = maxLevel + 1; // Pet level should not exceed owner level.
@@ -56,16 +56,16 @@ public class ExperienceData: DataReaderBase
 	 */
 	public long getExpForLevel(int level)
 	{
-		if (level > Config.PLAYER_MAXIMUM_LEVEL)
-			return _expTable[Config.PLAYER_MAXIMUM_LEVEL];
+		if (level > Config.Character.PLAYER_MAXIMUM_LEVEL)
+			return _expTable[Config.Character.PLAYER_MAXIMUM_LEVEL];
 
 		return _expTable[level];
 	}
 
 	public double getTrainingRate(int level)
 	{
-		if (level > Config.PLAYER_MAXIMUM_LEVEL)
-			return _trainingRateTable[Config.PLAYER_MAXIMUM_LEVEL];
+		if (level > Config.Character.PLAYER_MAXIMUM_LEVEL)
+			return _trainingRateTable[Config.Character.PLAYER_MAXIMUM_LEVEL];
 
 		return _trainingRateTable[level];
 	}

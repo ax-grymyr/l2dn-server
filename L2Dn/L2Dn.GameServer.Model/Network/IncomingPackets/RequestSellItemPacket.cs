@@ -7,11 +7,11 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -27,7 +27,7 @@ public struct RequestSellItemPacket: IIncomingPacket<GameSession>
     {
         _listId = reader.ReadInt32();
         int size = reader.ReadInt32();
-        if (size <= 0 || size > Config.MAX_ITEM_IN_PACKET || size * BATCH_LENGTH != reader.Length)
+        if (size <= 0 || size > Config.Character.MAX_ITEM_IN_PACKET || size * BATCH_LENGTH != reader.Length)
             return;
 
         _items = new(size);
@@ -66,7 +66,7 @@ public struct RequestSellItemPacket: IIncomingPacket<GameSession>
 		}
 
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && player.getReputation() < 0)
+		if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_SHOP && player.getReputation() < 0)
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;

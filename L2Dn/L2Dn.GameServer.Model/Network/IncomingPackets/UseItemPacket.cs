@@ -18,11 +18,11 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Ensoul;
 using L2Dn.GameServer.Network.OutgoingPackets.Variations;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
@@ -118,7 +118,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && player.getReputation() < 0)
+		if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && player.getReputation() < 0)
 		{
 			List<ItemSkillHolder>? skills = item.getTemplate().getSkills(ItemSkillType.NORMAL);
 			if (skills != null)
@@ -319,19 +319,19 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			}
 
 			// Over-enchant protection.
-			if (Config.OVER_ENCHANT_PROTECTION && !player.isGM() //
+			if (Config.Character.OVER_ENCHANT_PROTECTION && !player.isGM() //
 				&& ((item.isWeapon() && item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxWeaponEnchant()) //
 					|| (item.getTemplate().getType2() == ItemTemplate.TYPE2_ACCESSORY && item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxAccessoryEnchant()) //
 					|| (item.isArmor() && item.getTemplate().getType2() != ItemTemplate.TYPE2_ACCESSORY && item.getEnchantLevel() > EnchantItemGroupsData.getInstance().getMaxArmorEnchant())))
 			{
 				PacketLogger.Instance.Info("Over-enchanted (+" + item.getEnchantLevel() + ") " + item + " has been removed from " + player);
 				player.getInventory().destroyItem("Over-enchant protection", item, player, null);
-				if (Config.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE)
+				if (Config.Character.OVER_ENCHANT_PUNISHMENT != IllegalActionPunishmentType.NONE)
 				{
 					player.sendMessage("[Server]: You have over-enchanted items!");
 					player.sendMessage("[Server]: Respect our server rules.");
 					player.sendPacket(new ExShowScreenMessagePacket("You have over-enchanted items!", 6000));
-					Util.handleIllegalPlayerAction(player, player.getName() + " has over-enchanted items.", Config.OVER_ENCHANT_PUNISHMENT);
+					Util.handleIllegalPlayerAction(player, player.getName() + " has over-enchanted items.", Config.Character.OVER_ENCHANT_PUNISHMENT);
 				}
 
 				return ValueTask.CompletedTask;

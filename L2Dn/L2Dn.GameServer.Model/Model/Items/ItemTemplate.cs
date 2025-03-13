@@ -15,10 +15,10 @@ using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Stats.Functions;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Items;
 
@@ -603,7 +603,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 	 */
 	public bool isEnchantable()
 	{
-		return _enchantable && !Config.ENCHANT_BLACKLIST.Contains(_itemId);
+		return _enchantable && !Config.Character.ENCHANT_BLACKLIST.Contains(_itemId);
 	}
 
 	/**

@@ -17,13 +17,13 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
@@ -1009,7 +1009,7 @@ public class Pet: Summon
 			return;
 		}
 
-		if (!Config.RESTORE_PET_ON_RECONNECT)
+		if (!Config.Character.RESTORE_PET_ON_RECONNECT)
 		{
 			_restoreSummon = false;
 		}
@@ -1065,7 +1065,7 @@ public class Pet: Summon
 
 	public override void storeEffect(bool storeEffects)
 	{
-		if (!Config.SUMMON_STORE_SKILL_COOLTIME)
+		if (!Config.Character.SUMMON_STORE_SKILL_COOLTIME)
 		{
 			return;
 		}
@@ -1115,7 +1115,7 @@ public class Pet: Summon
 					}
 
 					// Dances and songs are not kept in retail.
-					if (skill.isDance() && !Config.ALT_STORE_DANCES)
+					if (skill.isDance() && !Config.Character.ALT_STORE_DANCES)
 					{
 						continue;
 					}

@@ -4,11 +4,11 @@ using L2Dn.GameServer.Geo.GeoDataImpl;
 using L2Dn.GameServer.Geo.GeoDataImpl.Regions;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.InstanceZones;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Updating;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Geo;
 

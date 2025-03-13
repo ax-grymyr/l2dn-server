@@ -2,9 +2,9 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -62,13 +62,13 @@ public struct AllyDismissPacket: IIncomingPacket<GameSession>
         }
 
         DateTime currentTime = DateTime.UtcNow;
-        leaderClan.setAllyPenaltyExpiryTime(currentTime.AddDays(Config.ALT_ACCEPT_CLAN_DAYS_WHEN_DISMISSED), Clan.PENALTY_TYPE_DISMISS_CLAN);
+        leaderClan.setAllyPenaltyExpiryTime(currentTime.AddDays(Config.Character.ALT_ACCEPT_CLAN_DAYS_WHEN_DISMISSED), Clan.PENALTY_TYPE_DISMISS_CLAN);
         leaderClan.updateClanInDB();
 
         clan.setAllyId(0);
         clan.setAllyName(null);
         clan.changeAllyCrest(0, true);
-        clan.setAllyPenaltyExpiryTime(currentTime.AddDays(Config.ALT_ALLY_JOIN_DAYS_WHEN_DISMISSED), Clan.PENALTY_TYPE_CLAN_DISMISSED);
+        clan.setAllyPenaltyExpiryTime(currentTime.AddDays(Config.Character.ALT_ALLY_JOIN_DAYS_WHEN_DISMISSED), Clan.PENALTY_TYPE_CLAN_DISMISSED);
         clan.updateClanInDB();
 
         player.sendPacket(SystemMessageId.THE_CLAN_IS_DISMISSED_FROM_THE_ALLIANCE);

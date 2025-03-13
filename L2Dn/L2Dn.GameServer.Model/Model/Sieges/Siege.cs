@@ -14,7 +14,6 @@ using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
@@ -22,6 +21,7 @@ using L2Dn.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Sieges;
@@ -568,7 +568,7 @@ public class Siege: Siegable
 					if (checkIfInZone(member))
 					{
 						member.setInSiege(true);
-						member.startFameTask(TimeSpan.FromMilliseconds(Config.CASTLE_ZONE_FAME_TASK_FREQUENCY * 1000), Config.CASTLE_ZONE_FAME_AQUIRE_POINTS);
+						member.startFameTask(TimeSpan.FromMilliseconds(Config.Character.CASTLE_ZONE_FAME_TASK_FREQUENCY * 1000), Config.Character.CASTLE_ZONE_FAME_AQUIRE_POINTS);
 					}
 				}
 				member.updateUserInfo();
@@ -628,7 +628,7 @@ public class Siege: Siegable
 					if (checkIfInZone(member))
 					{
 						member.setInSiege(true);
-						member.startFameTask(TimeSpan.FromMilliseconds(Config.CASTLE_ZONE_FAME_TASK_FREQUENCY * 1000), Config.CASTLE_ZONE_FAME_AQUIRE_POINTS);
+						member.startFameTask(TimeSpan.FromMilliseconds(Config.Character.CASTLE_ZONE_FAME_TASK_FREQUENCY * 1000), Config.Character.CASTLE_ZONE_FAME_AQUIRE_POINTS);
 					}
 				}
 				member.updateUserInfo();
@@ -1744,12 +1744,12 @@ public class Siege: Siegable
 
 	public int getFameFrequency()
 	{
-		return Config.CASTLE_ZONE_FAME_TASK_FREQUENCY;
+		return Config.Character.CASTLE_ZONE_FAME_TASK_FREQUENCY;
 	}
 
 	public int getFameAmount()
 	{
-		return Config.CASTLE_ZONE_FAME_AQUIRE_POINTS;
+		return Config.Character.CASTLE_ZONE_FAME_AQUIRE_POINTS;
 	}
 
 	public void updateSiege()

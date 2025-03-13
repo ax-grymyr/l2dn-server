@@ -5,9 +5,9 @@ using L2Dn.GameServer.Model.Actor.Request;
 using L2Dn.GameServer.Model.Matching;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -44,7 +44,7 @@ public struct RequestAnswerJoinPartyPacket: IIncomingPacket<GameSession>
         requestor.sendPacket(new JoinPartyPacket(_response, requestor));
         if (_response == 1)
         {
-            if (party.getMemberCount() >= Config.ALT_PARTY_MAX_MEMBERS)
+            if (party.getMemberCount() >= Config.Character.ALT_PARTY_MAX_MEMBERS)
             {
                 SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_PARTY_IS_FULL);
                 player.sendPacket(sm);

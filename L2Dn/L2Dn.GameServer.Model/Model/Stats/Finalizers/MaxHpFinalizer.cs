@@ -4,8 +4,8 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 
@@ -60,7 +60,7 @@ public class MaxHpFinalizer : StatFunction
 
 				mul = creature.getStat().getMul(Stat.HP_LIMIT);
 				add = creature.getStat().getAdd(Stat.HP_LIMIT);
-				return Math.Min(maxHp, Config.MAX_HP * mul + add);
+				return Math.Min(maxHp, Config.Character.MAX_HP * mul + add);
 			}
 			return maxHp;
 		}
@@ -86,7 +86,7 @@ public class MaxHpFinalizer : StatFunction
 		{
 			mul = creature.getStat().getMul(Stat.HP_LIMIT);
 			add = creature.getStat().getAdd(Stat.HP_LIMIT);
-			hpLimit = Config.MAX_HP * mul + add;
+			hpLimit = Config.Character.MAX_HP * mul + add;
 		}
 		else
 		{

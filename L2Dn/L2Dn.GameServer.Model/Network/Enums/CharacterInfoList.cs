@@ -9,11 +9,11 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.Enums;
 
@@ -76,7 +76,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 		    select chVar);
 
     private readonly int _accountId;
-    private readonly List<CharacterInfo> _characters = new(Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT);
+    private readonly List<CharacterInfo> _characters = new(Config.Server.MAX_CHARACTERS_NUMBER_PER_ACCOUNT);
     private int? _selected;
 
     public CharacterInfoList(int accountId)
@@ -157,7 +157,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 		    }
 	    }
 
-	    if (Config.DELETE_DAYS == 0)
+	    if (Config.Character.DELETE_DAYS == 0)
 	    {
 		    DeleteCharacter(objectId);
 		    _characters.RemoveAt(index);
@@ -166,7 +166,7 @@ public sealed class CharacterInfoList: IEnumerable<CharacterInfo>
 
 	    try
 	    {
-		    DateTime deleteTime = DateTime.UtcNow.AddDays(Config.DELETE_DAYS);
+		    DateTime deleteTime = DateTime.UtcNow.AddDays(Config.Character.DELETE_DAYS);
 		    using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 		    ctx.Characters.Where(c => c.Id == objectId).ExecuteUpdate(s =>
 			    s.SetProperty(r => r.DeleteTime, deleteTime));

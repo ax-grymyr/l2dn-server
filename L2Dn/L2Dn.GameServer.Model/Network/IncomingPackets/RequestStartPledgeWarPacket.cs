@@ -4,9 +4,9 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -29,7 +29,7 @@ public struct RequestStartPledgeWarPacket: IIncomingPacket<GameSession>
 		if (clanDeclaringWar == null)
 			return ValueTask.CompletedTask;
 
-		if (clanDeclaringWar.getLevel() < 3 || clanDeclaringWar.getMembersCount() < Config.ALT_CLAN_MEMBERS_FOR_WAR)
+		if (clanDeclaringWar.getLevel() < 3 || clanDeclaringWar.getMembersCount() < Config.Character.ALT_CLAN_MEMBERS_FOR_WAR)
 		{
 			connection.Send(SystemMessageId.A_CLAN_WAR_CAN_ONLY_BE_DECLARED_IF_THE_CLAN_IS_LV_3_OR_HIGHER_AND_THE_NUMBER_OF_CLAN_MEMBERS_IS_15_OR_GREATER);
 			connection.Send(ActionFailedPacket.STATIC_PACKET);
@@ -72,7 +72,7 @@ public struct RequestStartPledgeWarPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (clanDeclaredWar.getLevel() < 3 || clanDeclaredWar.getMembersCount() < Config.ALT_CLAN_MEMBERS_FOR_WAR)
+		if (clanDeclaredWar.getLevel() < 3 || clanDeclaredWar.getMembersCount() < Config.Character.ALT_CLAN_MEMBERS_FOR_WAR)
 		{
 			connection.Send(SystemMessageId.A_CLAN_WAR_CAN_ONLY_BE_DECLARED_IF_THE_CLAN_IS_LV_3_OR_HIGHER_AND_THE_NUMBER_OF_CLAN_MEMBERS_IS_15_OR_GREATER);
 			connection.Send(ActionFailedPacket.STATIC_PACKET);

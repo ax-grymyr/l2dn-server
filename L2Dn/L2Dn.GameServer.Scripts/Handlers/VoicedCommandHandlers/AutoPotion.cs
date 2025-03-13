@@ -1,7 +1,7 @@
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
 

@@ -1,8 +1,8 @@
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.ItemContainers;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Sieges;
 
@@ -46,11 +46,11 @@ public class FortUpdater: Runnable
 
 					if (_fort.getFortState() == 2)
 					{
-						if (_clan.getWarehouse().getAdena() >= Config.FS_FEE_FOR_CASTLE)
+						if (_clan.getWarehouse().getAdena() >= Config.Feature.FS_FEE_FOR_CASTLE)
 						{
 							_clan.getWarehouse().destroyItemByItemId("FS_fee_for_Castle", Inventory.ADENA_ID,
-								Config.FS_FEE_FOR_CASTLE, null, null);
-							_fort.getContractedCastle()?.addToTreasuryNoTax(Config.FS_FEE_FOR_CASTLE);
+								Config.Feature.FS_FEE_FOR_CASTLE, null, null);
+							_fort.getContractedCastle()?.addToTreasuryNoTax(Config.Feature.FS_FEE_FOR_CASTLE);
 							_fort.raiseSupplyLvL();
 						}
 						else
@@ -69,7 +69,7 @@ public class FortUpdater: Runnable
 						return;
 					}
 
-					if (_fort.getOwnedTime() > TimeSpan.FromSeconds(Config.FS_MAX_OWN_TIME * 3600))
+					if (_fort.getOwnedTime() > TimeSpan.FromSeconds(Config.Feature.FS_MAX_OWN_TIME * 3600))
 					{
 						_fort.removeOwner(true);
 						_fort.setFortState(0, 0);

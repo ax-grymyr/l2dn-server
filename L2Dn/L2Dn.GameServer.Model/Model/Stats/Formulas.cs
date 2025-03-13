@@ -12,12 +12,12 @@ using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using CollectionExtensions = System.Collections.Generic.CollectionExtensions;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Stats;
 
@@ -143,7 +143,7 @@ public class Formulas
 		double damage = 77 * (power + attacker.getStat().getValue(Stat.SKILL_POWER_ADD, 0)) * Math.Sqrt(mAtk) / mDef * shotsBonus;
 
 		// Failure calculation
-		if (Config.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(attacker, target, skill))
+		if (Config.Character.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(attacker, target, skill))
 		{
 			if (attacker.isPlayer())
 			{
@@ -444,11 +444,11 @@ public class Formulas
 
 		double init = 0;
 
-		if (Config.ALT_GAME_CANCEL_CAST && target.isCastingNow(s => s.canAbortCast()))
+		if (Config.Character.ALT_GAME_CANCEL_CAST && target.isCastingNow(s => s.canAbortCast()))
 		{
 			init = 15;
 		}
-		if (Config.ALT_GAME_CANCEL_BOW && target.isAttackingNow())
+		if (Config.Character.ALT_GAME_CANCEL_BOW && target.isAttackingNow())
 		{
 			Weapon? wpn = target.getActiveWeaponItem();
 			if (wpn != null && wpn.getItemType() == WeaponType.BOW)
@@ -792,7 +792,7 @@ public class Formulas
 		if (attacker.isAttackable() || target.isAttackable())
 		{
 			lvlModifier = Math.Pow(1.3,
-				target.getLevel() - (Config.CALCULATE_MAGIC_SUCCESS_BY_SKILL_MAGIC_LEVEL && skill.getMagicLevel() > 0
+				target.getLevel() - (Config.Character.CALCULATE_MAGIC_SUCCESS_BY_SKILL_MAGIC_LEVEL && skill.getMagicLevel() > 0
 					? skill.getMagicLevel()
 					: attacker.getLevel()));
 
@@ -876,7 +876,7 @@ public class Formulas
 		damage *= calculatePvpPveBonus(attacker, target, skill, mcrit);
 
 		// Failure calculation
-		if (Config.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(attacker, target, skill))
+		if (Config.Character.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(attacker, target, skill))
 		{
 			if (attacker.isPlayer())
 			{
@@ -1110,7 +1110,7 @@ public class Formulas
 		double rate = criticalPosition * critHeightBonus * weaponCritical * chanceBoostMod * blowRateMod * blowRateDefenseMod;
 
 		// Blow rate change is limited (%).
-		return Rnd.get(100) < Math.Min(rate, Config.BLOW_RATE_CHANCE_LIMIT);
+		return Rnd.get(100) < Math.Min(rate, Config.Character.BLOW_RATE_CHANCE_LIMIT);
 	}
 
 	public static List<BuffInfo> calcCancelStealEffects(Creature creature, Creature target, Skill skill, DispelSlotType slot, int rate, int Max)
@@ -1493,7 +1493,7 @@ public class Formulas
 	public static bool calcStunBreak(Creature creature)
 	{
 		// Check if target is stunned and break it with 14% chance. (retail is 14% and 35% on crit?)
-		if (Config.ALT_GAME_STUN_BREAK && creature.hasBlockActions() && Rnd.get(14) == 0)
+		if (Config.Character.ALT_GAME_STUN_BREAK && creature.hasBlockActions() && Rnd.get(14) == 0)
 		{
 			// Any stun that has double duration due to skill mastery, doesn't get removed until its time reaches the usual abnormal time.
 			return creature.getEffectList().hasAbnormalType(AbnormalType.STUN, info => info.getTime() <= info.getSkill().getAbnormalTime());

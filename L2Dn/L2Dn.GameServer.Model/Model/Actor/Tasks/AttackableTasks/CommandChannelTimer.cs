@@ -1,5 +1,5 @@
-﻿using L2Dn.GameServer.StaticData;
-using L2Dn.GameServer.Utilities;
+﻿using L2Dn.GameServer.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Model.Actor.Tasks.AttackableTasks;
@@ -21,7 +21,7 @@ public class CommandChannelTimer: Runnable
         }
 
         if (DateTime.UtcNow - _attackable.getCommandChannelLastAttack() >
-            TimeSpan.FromMilliseconds(Config.LOOT_RAIDS_PRIVILEGE_INTERVAL))
+            TimeSpan.FromMilliseconds(Config.Character.LOOT_RAIDS_PRIVILEGE_INTERVAL))
         {
             _attackable.setCommandChannelTimer(null);
             _attackable.setFirstCommandChannelAttacked(null);

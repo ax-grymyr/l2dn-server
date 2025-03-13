@@ -17,13 +17,13 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.NetworkAuthServer;
 using L2Dn.GameServer.NetworkAuthServer.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -68,9 +68,9 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (Config.FORBIDDEN_NAMES.Count > 0)
+		if (Config.Character.FORBIDDEN_NAMES.Count > 0)
 		{
-			foreach (string st in Config.FORBIDDEN_NAMES)
+			foreach (string st in Config.Character.FORBIDDEN_NAMES)
 			{
 				if (_name.ToLower().Contains(st.ToLower()))
 				{
@@ -123,10 +123,10 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		Player newChar;
 		lock (CharInfoTable.getInstance())
 		{
-			if (Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT != 0 &&
-			    (session.Characters.Count >= Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT ||
+			if (Config.Server.MAX_CHARACTERS_NUMBER_PER_ACCOUNT != 0 &&
+			    (session.Characters.Count >= Config.Server.MAX_CHARACTERS_NUMBER_PER_ACCOUNT ||
 			     CharInfoTable.getInstance().getAccountCharacterCount(session.AccountName) >=
-			     Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT))
+			     Config.Server.MAX_CHARACTERS_NUMBER_PER_ACCOUNT))
 			{
 				CharacterCreateFailPacket createFailPacket = new(CharacterCreateFailReason.TooManyCharacters);
 				connection.Send(ref createFailPacket);
@@ -183,9 +183,9 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 	{
 		World.getInstance().addObject(newChar);
 
-		if (Config.STARTING_ADENA > 0)
+		if (Config.Character.STARTING_ADENA > 0)
 		{
-			newChar.addAdena("Init", Config.STARTING_ADENA, null, false);
+			newChar.addAdena("Init", Config.Character.STARTING_ADENA, null, false);
 		}
 
 		PlayerTemplate template = newChar.getTemplate();
@@ -206,19 +206,19 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 
 		newChar.setTitle("");
 
-		if (Config.ENABLE_VITALITY)
+		if (Config.Character.ENABLE_VITALITY)
 		{
-			newChar.setVitalityPoints(Math.Min(Config.STARTING_VITALITY_POINTS, PlayerStat.MAX_VITALITY_POINTS), true);
+			newChar.setVitalityPoints(Math.Min(Config.Character.STARTING_VITALITY_POINTS, PlayerStat.MAX_VITALITY_POINTS), true);
 		}
 
-		if (Config.STARTING_LEVEL > 1)
+		if (Config.Character.STARTING_LEVEL > 1)
 		{
-			newChar.getStat().addLevel(Config.STARTING_LEVEL - 1);
+			newChar.getStat().addLevel(Config.Character.STARTING_LEVEL - 1);
 		}
 
-		if (Config.STARTING_SP > 0)
+		if (Config.Character.STARTING_SP > 0)
 		{
-			newChar.getStat().addSp(Config.STARTING_SP);
+			newChar.getStat().addSp(Config.Character.STARTING_SP);
 		}
 
 		List<PlayerItemTemplate>? initialItems = InitialEquipmentData.getInstance().getEquipmentList(newChar.getClassId());

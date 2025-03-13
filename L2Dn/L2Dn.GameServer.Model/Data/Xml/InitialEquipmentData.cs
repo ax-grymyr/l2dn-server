@@ -3,11 +3,11 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Items;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -36,7 +36,7 @@ public class InitialEquipmentData: DataReaderBase
 
 		const string normal = "stats/initialEquipment.xml";
 		const string @event = "stats/initialEquipmentEvent.xml";
-		XDocument document = LoadXmlDocument(DataFileLocation.Data, Config.INITIAL_EQUIPMENT_EVENT ? @event : normal);
+		XDocument document = LoadXmlDocument(DataFileLocation.Data, Config.Character.INITIAL_EQUIPMENT_EVENT ? @event : normal);
 		document.Elements("list").Elements("equipment").ForEach(parseEquipment);
 
 		LOGGER.Info(GetType().Name + ": Loaded " + _initialEquipmentList.Count + " initial equipment data.");

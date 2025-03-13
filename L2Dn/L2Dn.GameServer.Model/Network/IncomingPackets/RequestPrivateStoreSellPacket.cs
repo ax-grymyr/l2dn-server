@@ -3,11 +3,11 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.IncomingPackets;
 
@@ -20,7 +20,7 @@ public struct RequestPrivateStoreSellPacket: IIncomingPacket<GameSession>
     {
         _storePlayerId = reader.ReadInt32();
         int itemsCount = reader.ReadInt32();
-        if (itemsCount <= 0 || itemsCount > Config.MAX_ITEM_IN_PACKET)
+        if (itemsCount <= 0 || itemsCount > Config.Character.MAX_ITEM_IN_PACKET)
         {
             return;
         }

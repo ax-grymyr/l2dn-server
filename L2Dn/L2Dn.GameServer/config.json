@@ -15,7 +15,10 @@
   },
 
   "GameServerParams": {
+    // This is the server ID that the Game Server will request.
     "ServerId": 1,
+    // The Login Server will give an other ID to the server if the requested ID is already reserved.
+    "AcceptAlternateServerId": true, // TODO: implement
     "ServerType": "Classic", // Main, Essence, Classic
     "AgeLimit": 0,
     "IsPvpServer": false,
@@ -34,6 +37,8 @@
   },
 
   "DataPack": {
+    "Path": "DataPack",
+    "ScriptPath": "DataPack/scripts",
     "GeoData": {
       "Download": false,
       "Update": false,

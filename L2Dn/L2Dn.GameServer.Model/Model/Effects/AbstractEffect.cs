@@ -1,8 +1,8 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.StaticData;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Effects;
 
@@ -21,7 +21,7 @@ public abstract class AbstractEffect
     /// </summary>
     public int Ticks { get; protected init; }
 
-    protected double TicksMultiplier => Ticks * (Config.EFFECT_TICK_RATIO / 1000.0);
+    protected double TicksMultiplier => Ticks * (Config.Character.EFFECT_TICK_RATIO / 1000.0);
 
     /**
      * Calculates whether this effects land or not.<br>

@@ -11,10 +11,10 @@ using L2Dn.GameServer.Model.BuyList;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using Pet = L2Dn.GameServer.Model.Actor.Instances.Pet;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 

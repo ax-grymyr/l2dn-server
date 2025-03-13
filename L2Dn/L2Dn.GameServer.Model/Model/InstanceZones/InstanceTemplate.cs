@@ -14,11 +14,11 @@ using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Variables;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.InstanceZones;
 
@@ -270,7 +270,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 				_groupMask |= GroupType.Player;
 			}
 			// Party
-			int partySize = Config.ALT_PARTY_MAX_MEMBERS;
+			int partySize = Config.Character.ALT_PARTY_MAX_MEMBERS;
 			if ((max > 1 && max <= partySize) || (min <= partySize && max > partySize))
 			{
 				_groupMask |= GroupType.PARTY;

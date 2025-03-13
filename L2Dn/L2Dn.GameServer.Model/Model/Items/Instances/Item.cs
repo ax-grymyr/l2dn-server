@@ -23,13 +23,13 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Items.Instances;
 
@@ -762,7 +762,7 @@ public class Item: WorldObject
 	 */
 	public bool isDropable()
 	{
-		if (Config.ALT_ALLOW_AUGMENT_TRADE && isAugmented())
+		if (Config.Character.ALT_ALLOW_AUGMENT_TRADE && isAugmented())
 		{
 			return true;
 		}
@@ -775,7 +775,7 @@ public class Item: WorldObject
 	 */
 	public bool isDestroyable()
 	{
-		if (!Config.ALT_ALLOW_AUGMENT_DESTROY && isAugmented())
+		if (!Config.Character.ALT_ALLOW_AUGMENT_DESTROY && isAugmented())
 		{
 			return false;
 		}
@@ -788,7 +788,7 @@ public class Item: WorldObject
 	 */
 	public bool isTradeable()
 	{
-		if (Config.ALT_ALLOW_AUGMENT_TRADE && isAugmented())
+		if (Config.Character.ALT_ALLOW_AUGMENT_TRADE && isAugmented())
 		{
 			return true;
 		}
@@ -801,7 +801,7 @@ public class Item: WorldObject
 	 */
 	public bool isSellable()
 	{
-		if (Config.ALT_ALLOW_AUGMENT_TRADE && isAugmented())
+		if (Config.Character.ALT_ALLOW_AUGMENT_TRADE && isAugmented())
 		{
 			return true;
 		}
@@ -2688,12 +2688,12 @@ public class Item: WorldObject
 									}
 
 									// Active, non-offensive, skills start with reuse on equip.
-									if (!skill.isBad() && !skill.isTransformation() && Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0 && player.hasEnteredWorld())
+									if (!skill.isBad() && !skill.isTransformation() && Config.Character.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0 && player.hasEnteredWorld())
 									{
 										player.addTimeStamp(skill,
 											skill.getReuseDelay() > TimeSpan.Zero
 												? skill.getReuseDelay()
-												: TimeSpan.FromMilliseconds(Config.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE));
+												: TimeSpan.FromMilliseconds(Config.Character.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE));
 									}
 
 									updateTimeStamp = true;

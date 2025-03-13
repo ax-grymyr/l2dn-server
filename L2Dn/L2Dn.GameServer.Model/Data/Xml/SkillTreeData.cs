@@ -7,7 +7,6 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
@@ -15,6 +14,7 @@ using L2Dn.Model.Xml;
 using L2Dn.Utilities;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -603,7 +603,7 @@ public class SkillTreeData: DataReaderBase
 		{
 			SkillLearn skill = entry.Value;
 			if ((skill.getSkillId() == (int)CommonSkill.DIVINE_INSPIRATION &&
-			     !Config.AUTO_LEARN_DIVINE_INSPIRATION && includeAutoGet && !player.isGM()) ||
+			     !Config.Character.AUTO_LEARN_DIVINE_INSPIRATION && includeAutoGet && !player.isGM()) ||
 			    (!includeAutoGet && skill.isAutoGet()) || (!includeByFs && skill.isLearnedByFS()) ||
 			    isRemoveSkill(classId, skill.getSkillId()))
 			{
@@ -1482,7 +1482,7 @@ public class SkillTreeData: DataReaderBase
 		{
 			foreach (SkillLearn skill  in  completeClassSkillTree.Values)
 			{
-				if (skill.getGetLevel() > Config.PLAYER_MAXIMUM_LEVEL)
+				if (skill.getGetLevel() > Config.Character.PLAYER_MAXIMUM_LEVEL)
 				{
 					continue;
 				}

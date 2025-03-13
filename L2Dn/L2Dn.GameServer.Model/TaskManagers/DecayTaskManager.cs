@@ -1,8 +1,8 @@
 using System.Text;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.TaskManagers;
@@ -87,7 +87,7 @@ public class DecayTaskManager: Runnable
 			{
 				delay = 600; // 10 minutes
 			}
-			else if (Config.DISCONNECT_AFTER_DEATH)
+			else if (Config.Character.DISCONNECT_AFTER_DEATH)
 			{
 				delay = 3600; // 1 hour
 			}

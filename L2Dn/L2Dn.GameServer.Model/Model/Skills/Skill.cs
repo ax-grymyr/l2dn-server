@@ -15,12 +15,12 @@ using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using L2Dn.Model.Xml.Skills;
 using L2Dn.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Skills;
 
@@ -227,8 +227,8 @@ public sealed class Skill: IIdentifiable
 		_abnormalType = set.getEnum("abnormalType", AbnormalType.NONE);
 		_subordinationAbnormalType = set.getEnum("subordinationAbnormalType", AbnormalType.NONE);
 		TimeSpan abnormalTime = TimeSpan.FromSeconds(set.getDouble("abnormalTime", 0));
-        if (Config.ENABLE_MODIFY_SKILL_DURATION && _operateType != SkillOperateType.T &&
-            Config.SKILL_DURATION_LIST.TryGetValue(_id, out TimeSpan temp))
+        if (Config.Character.ENABLE_MODIFY_SKILL_DURATION && _operateType != SkillOperateType.T &&
+            Config.Character.SKILL_DURATION_LIST.TryGetValue(_id, out TimeSpan temp))
         {
             if (_level < 100 || _level > 140)
                 abnormalTime = temp;
@@ -245,7 +245,7 @@ public sealed class Skill: IIdentifiable
 		_coolTime = TimeSpan.FromMilliseconds(set.getInt("coolTime", 0));
 		_isDebuff = set.getBoolean("isDebuff", false);
 		_isRecoveryHerb = set.getBoolean("isRecoveryHerb", false);
-		if (!Config.ENABLE_MODIFY_SKILL_REUSE || !Config.SKILL_REUSE_LIST.TryGetValue(_id, out _reuseDelay))
+		if (!Config.Character.ENABLE_MODIFY_SKILL_REUSE || !Config.Character.SKILL_REUSE_LIST.TryGetValue(_id, out _reuseDelay))
 			_reuseDelay = TimeSpan.FromMilliseconds(set.getInt("reuseDelay", 0));
 
 		_reuseDelayGroup = set.getInt("reuseDelayGroup", -1);
@@ -324,8 +324,8 @@ public sealed class Skill: IIdentifiable
 		_magicLevel = set.getInt("magicLevel", 0);
 		_lvlBonusRate = set.getInt("lvlBonusRate", 0);
 		_activateRate = set.contains("activateRate") ? set.getDouble("activateRate") : null;
-		_minChance = set.getInt("minChance", Config.MIN_ABNORMAL_STATE_SUCCESS_RATE);
-		_maxChance = set.getInt("maxChance", Config.MAX_ABNORMAL_STATE_SUCCESS_RATE);
+		_minChance = set.getInt("minChance", Config.Character.MIN_ABNORMAL_STATE_SUCCESS_RATE);
+		_maxChance = set.getInt("maxChance", Config.Character.MAX_ABNORMAL_STATE_SUCCESS_RATE);
 		_nextAction = set.getEnum("nextAction", NextActionType.NONE);
 		_removedOnAnyActionExceptMove = set.getBoolean("removedOnAnyActionExceptMove", false);
 		_removedOnDamage = set.getBoolean("removedOnDamage", false);
@@ -406,8 +406,8 @@ public sealed class Skill: IIdentifiable
         _abnormalType = pars.GetEnum(XmlSkillParameterType.AbnormalType, AbnormalType.NONE);
         _subordinationAbnormalType = pars.GetEnum(XmlSkillParameterType.SubordinationAbnormalType, AbnormalType.NONE);
         TimeSpan abnormalTime = pars.GetTimeSpanSeconds(XmlSkillParameterType.AbnormalTime, TimeSpan.Zero);
-        if (Config.ENABLE_MODIFY_SKILL_DURATION && _operateType != SkillOperateType.T &&
-            Config.SKILL_DURATION_LIST.TryGetValue(_id, out TimeSpan temp))
+        if (Config.Character.ENABLE_MODIFY_SKILL_DURATION && _operateType != SkillOperateType.T &&
+            Config.Character.SKILL_DURATION_LIST.TryGetValue(_id, out TimeSpan temp))
         {
             if (_level < 100 || _level > 140)
                 abnormalTime = temp;
@@ -426,7 +426,7 @@ public sealed class Skill: IIdentifiable
         _coolTime = pars.GetTimeSpanMilliSeconds(XmlSkillParameterType.CoolTime, TimeSpan.Zero);
         _isDebuff = pars.GetBoolean(XmlSkillParameterType.IsDebuff, false);
         _isRecoveryHerb = pars.GetBoolean(XmlSkillParameterType.IsRecoveryHerb, false);
-        if (!Config.ENABLE_MODIFY_SKILL_REUSE || !Config.SKILL_REUSE_LIST.TryGetValue(_id, out _reuseDelay))
+        if (!Config.Character.ENABLE_MODIFY_SKILL_REUSE || !Config.Character.SKILL_REUSE_LIST.TryGetValue(_id, out _reuseDelay))
             _reuseDelay = pars.GetTimeSpanMilliSeconds(XmlSkillParameterType.ReuseDelay, TimeSpan.Zero);
 
         _reuseDelayGroup = pars.GetInt32(XmlSkillParameterType.ReuseDelayGroup, -1);
@@ -502,8 +502,8 @@ public sealed class Skill: IIdentifiable
         _magicLevel = pars.GetInt32(XmlSkillParameterType.MagicLevel, 0);
         _lvlBonusRate = pars.GetInt32(XmlSkillParameterType.LvlBonusRate, 0);
         _activateRate = pars.GetDoubleOptional(XmlSkillParameterType.ActivateRate);
-        _minChance = pars.GetInt32(XmlSkillParameterType.MinChance, Config.MIN_ABNORMAL_STATE_SUCCESS_RATE);
-        _maxChance = pars.GetInt32(XmlSkillParameterType.MaxChance, Config.MAX_ABNORMAL_STATE_SUCCESS_RATE);
+        _minChance = pars.GetInt32(XmlSkillParameterType.MinChance, Config.Character.MIN_ABNORMAL_STATE_SUCCESS_RATE);
+        _maxChance = pars.GetInt32(XmlSkillParameterType.MaxChance, Config.Character.MAX_ABNORMAL_STATE_SUCCESS_RATE);
         _nextAction = pars.GetEnum(XmlSkillParameterType.NextAction, NextActionType.NONE);
         _removedOnAnyActionExceptMove = pars.GetBoolean(XmlSkillParameterType.RemovedOnAnyActionExceptMove, false);
         _removedOnDamage = pars.GetBoolean(XmlSkillParameterType.RemovedOnDamage, false);

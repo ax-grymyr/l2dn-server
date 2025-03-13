@@ -18,9 +18,9 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.DailyMissions;
 using L2Dn.GameServer.Network.OutgoingPackets.Friends;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Actor.Stats;
 
@@ -118,7 +118,7 @@ public class PlayerStat: PlayableStat
 
 		// if this player has a pet and it is in his range he takes from the owner's Exp, give the pet Exp now
 		Summon? sPet = player.getPet();
-		if (sPet != null && Util.checkIfInShortRange(Config.ALT_PARTY_RANGE, player, sPet, false))
+		if (sPet != null && Util.checkIfInShortRange(Config.Character.ALT_PARTY_RANGE, player, sPet, false))
 		{
 			Pet pet = (Pet) sPet;
 			ratioTakenByPlayer = pet.getPetLevelData().getOwnerExpTaken() / 100f;
@@ -556,7 +556,7 @@ public class PlayerStat: PlayableStat
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void updateVitalityPoints(int value, bool useRates, bool quiet)
 	{
-		if (value == 0 || !Config.ENABLE_VITALITY)
+		if (value == 0 || !Config.Character.ENABLE_VITALITY)
 		{
 			return;
 		}
@@ -632,9 +632,9 @@ public class PlayerStat: PlayableStat
 
 		// Check for abnormal bonuses
 		bonus = Math.Max(bonus, 1);
-		if (Config.MAX_BONUS_EXP > 0)
+		if (Config.Character.MAX_BONUS_EXP > 0)
 		{
-			bonus = Math.Min(bonus, Config.MAX_BONUS_EXP);
+			bonus = Math.Min(bonus, Config.Character.MAX_BONUS_EXP);
 		}
 
 		return bonus;
@@ -663,9 +663,9 @@ public class PlayerStat: PlayableStat
 
 		// Check for abnormal bonuses
 		bonus = Math.Max(bonus, 1);
-		if (Config.MAX_BONUS_SP > 0)
+		if (Config.Character.MAX_BONUS_SP > 0)
 		{
-			bonus = Math.Min(bonus, Config.MAX_BONUS_SP);
+			bonus = Math.Min(bonus, Config.Character.MAX_BONUS_SP);
 		}
 
 		return bonus;

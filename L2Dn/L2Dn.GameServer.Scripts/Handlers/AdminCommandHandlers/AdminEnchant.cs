@@ -8,9 +8,9 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 
@@ -178,7 +178,7 @@ public class AdminEnchant: IAdminCommandHandler
 
 			// Set enchant value.
 			int enchant = ench;
-			if (Config.OVER_ENCHANT_PROTECTION && !player.isGM())
+			if (Config.Character.OVER_ENCHANT_PROTECTION && !player.isGM())
 			{
 				if (itemInstance.isWeapon())
 				{

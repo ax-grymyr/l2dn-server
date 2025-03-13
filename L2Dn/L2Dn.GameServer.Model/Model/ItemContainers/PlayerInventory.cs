@@ -11,9 +11,9 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.LimitShop;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.ItemContainers;
 
@@ -907,7 +907,7 @@ public class PlayerInventory: Inventory
 
 	public bool validateCapacity(long slots, bool questItem)
 	{
-		return (slots == 0 && !Config.AUTO_LOOT_SLOT_LIMIT) || questItem ? getQuestSize() + slots <= _owner.getQuestInventoryLimit() : getNonQuestSize() + slots <= _owner.getInventoryLimit();
+		return (slots == 0 && !Config.Character.AUTO_LOOT_SLOT_LIMIT) || questItem ? getQuestSize() + slots <= _owner.getQuestInventoryLimit() : getNonQuestSize() + slots <= _owner.getInventoryLimit();
 	}
 
 	public override bool validateWeight(long weight)

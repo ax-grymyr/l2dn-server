@@ -20,12 +20,12 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.PledgeBonus;
 using L2Dn.GameServer.Network.OutgoingPackets.PledgeV3;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using L2Dn.Packets;
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using Config = L2Dn.GameServer.Configuration.Config;
 using Forum = L2Dn.GameServer.CommunityBbs.BB.Forum;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -452,7 +452,7 @@ public class Clan: IIdentifiable, INamable
 		}
 		exMember.saveApprenticeAndSponsor(0, 0);
 
-		if (Config.REMOVE_CASTLE_CIRCLETS && _castleId != null)
+		if (Config.Character.REMOVE_CASTLE_CIRCLETS && _castleId != null)
 		{
 			CastleManager.getInstance().removeCirclet(exMember, _castleId.Value);
 		}
@@ -470,7 +470,7 @@ public class Clan: IIdentifiable, INamable
 			if (player.isClanLeader())
 			{
 				SiegeManager.getInstance().removeSiegeSkills(player);
-				player.setClanCreateExpiryTime(DateTime.UtcNow.AddDays(Config.ALT_CLAN_CREATE_DAYS));
+				player.setClanCreateExpiryTime(DateTime.UtcNow.AddDays(Config.Character.ALT_CLAN_CREATE_DAYS));
 			}
 
 			// remove Clan skills from Player
@@ -511,7 +511,7 @@ public class Clan: IIdentifiable, INamable
 		else
 		{
 			removeMemberInDatabase(exMember, clanJoinExpiryTime, getLeaderId() == objectId ?
-				DateTime.UtcNow.AddDays(Config.ALT_CLAN_CREATE_DAYS) : DateTime.MinValue);
+				DateTime.UtcNow.AddDays(Config.Character.ALT_CLAN_CREATE_DAYS) : DateTime.MinValue);
 		}
 
 		// Notify to scripts
@@ -895,7 +895,7 @@ public class Clan: IIdentifiable, INamable
 	 */
 	public void increaseBloodOathCount()
 	{
-		_bloodOathCount += Config.FS_BLOOD_OATH_COUNT;
+		_bloodOathCount += Config.Feature.FS_BLOOD_OATH_COUNT;
 		updateBloodOathCountInDB();
 	}
 
@@ -1071,7 +1071,7 @@ public class Clan: IIdentifiable, INamable
 					setAllyPenaltyExpiryTime(null, 0);
 				}
 				setCharPenaltyExpiryTime(record.CharPenaltyExpireTime);
-				if (_charPenaltyExpiryTime + TimeSpan.FromMinutes(Config.ALT_CLAN_JOIN_MINS) < DateTime.UtcNow) // 24*60*60*1000 = 60000
+				if (_charPenaltyExpiryTime + TimeSpan.FromMinutes(Config.Character.ALT_CLAN_JOIN_MINS) < DateTime.UtcNow) // 24*60*60*1000 = 60000
 				{
 					setCharPenaltyExpiryTime(null);
 				}
@@ -1812,7 +1812,7 @@ public class Clan: IIdentifiable, INamable
 
 		// Royal Guard 5000 points per each
 		// Order of Knights 10000 points per each
-		if (pledgeType != -1 && ((_reputationScore < Config.ROYAL_GUARD_COST && pledgeType < SUBUNIT_KNIGHT1) || (_reputationScore < Config.KNIGHT_UNIT_COST && pledgeType > SUBUNIT_ROYAL2)))
+		if (pledgeType != -1 && ((_reputationScore < Config.Feature.ROYAL_GUARD_COST && pledgeType < SUBUNIT_KNIGHT1) || (_reputationScore < Config.Feature.KNIGHT_UNIT_COST && pledgeType > SUBUNIT_ROYAL2)))
 		{
 			player.sendPacket(SystemMessageId.THE_CLAN_REPUTATION_IS_TOO_LOW);
 			return null;
@@ -1841,11 +1841,11 @@ public class Clan: IIdentifiable, INamable
 				// Order of Knights 10000 points per each
 				if (pledgeType < SUBUNIT_KNIGHT1)
 				{
-					setReputationScore(_reputationScore - Config.ROYAL_GUARD_COST);
+					setReputationScore(_reputationScore - Config.Feature.ROYAL_GUARD_COST);
 				}
 				else
 				{
-					setReputationScore(_reputationScore - Config.KNIGHT_UNIT_COST);
+					setReputationScore(_reputationScore - Config.Feature.KNIGHT_UNIT_COST);
 					// TODO: clan lvl9 or more can reinforce knights cheaper if first knight unit already created, use Config.KNIGHT_REINFORCE_COST
 				}
 			}
@@ -2196,7 +2196,7 @@ public class Clan: IIdentifiable, INamable
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_WILL_BE_ABLE_TO_JOIN_YOUR_CLAN_IN_S2_MIN_AFTER_LEAVING_THE_PREVIOUS_ONE);
 			sm.Params.addString(target.getName());
-			sm.Params.addInt(Config.ALT_CLAN_JOIN_MINS);
+			sm.Params.addInt(Config.Character.ALT_CLAN_JOIN_MINS);
 			player.sendPacket(sm);
 			return false;
 		}
@@ -2317,7 +2317,7 @@ public class Clan: IIdentifiable, INamable
 			return false;
 		}
 
-		if (ClanTable.getInstance().getClanAllies(playerAllyId.Value).Count >= Config.ALT_MAX_NUM_OF_CLANS_IN_ALLY)
+		if (ClanTable.getInstance().getClanAllies(playerAllyId.Value).Count >= Config.Character.ALT_MAX_NUM_OF_CLANS_IN_ALLY)
 		{
 			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_LIMIT);
 			return false;
@@ -2456,7 +2456,7 @@ public class Clan: IIdentifiable, INamable
 		setAllyId(0);
 		setAllyName(null);
 		changeAllyCrest(0, false);
-		setAllyPenaltyExpiryTime(currentTime + TimeSpan.FromDays(Config.ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED),
+		setAllyPenaltyExpiryTime(currentTime + TimeSpan.FromDays(Config.Character.ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED),
 			PENALTY_TYPE_DISSOLVE_ALLY);
 
 		updateClanInDB();
@@ -2931,7 +2931,7 @@ public class Clan: IIdentifiable, INamable
 		int currentMaxOnline = 0;
 		foreach (ClanMember member in _members.Values)
 		{
-			if (member.getOnlineTime() > Config.ALT_CLAN_MEMBERS_TIME_FOR_BONUS)
+			if (member.getOnlineTime() > Config.Character.ALT_CLAN_MEMBERS_TIME_FOR_BONUS)
 			{
 				currentMaxOnline++;
 			}

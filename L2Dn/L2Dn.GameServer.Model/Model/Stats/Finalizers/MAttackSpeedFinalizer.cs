@@ -1,6 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
 
@@ -22,7 +22,7 @@ public class MAttackSpeedFinalizer: StatFunction
 		double witBonus = creature.getWIT() > 0 ? BaseStat.WIT.calcBonus(creature) : 1;
 		baseValue *= witBonus;
 		return validateValue(creature, defaultValue(creature, stat, baseValue), 1,
-			creature.isPlayable() ? Config.MAX_MATK_SPEED : double.MaxValue);
+			creature.isPlayable() ? Config.Character.MAX_MATK_SPEED : double.MaxValue);
 	}
 
 	private double defaultValue(Creature creature, Stat stat, double baseValue)

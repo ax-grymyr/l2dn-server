@@ -16,12 +16,12 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
+using Config = L2Dn.GameServer.Configuration.Config;
 using FortManager = L2Dn.GameServer.InstanceManagers.FortManager;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -793,8 +793,8 @@ public class FortSiege: Siegable
                         {
                             member.setInSiege(true);
                             member.startFameTask(
-                                TimeSpan.FromMilliseconds(Config.FORTRESS_ZONE_FAME_TASK_FREQUENCY * 1000),
-                                Config.FORTRESS_ZONE_FAME_AQUIRE_POINTS);
+                                TimeSpan.FromMilliseconds(Config.Character.FORTRESS_ZONE_FAME_TASK_FREQUENCY * 1000),
+                                Config.Character.FORTRESS_ZONE_FAME_AQUIRE_POINTS);
                         }
                     }
 
@@ -831,8 +831,8 @@ public class FortSiege: Siegable
                         {
                             member.setInSiege(true);
                             member.startFameTask(
-                                TimeSpan.FromMilliseconds(Config.FORTRESS_ZONE_FAME_TASK_FREQUENCY * 1000),
-                                Config.FORTRESS_ZONE_FAME_AQUIRE_POINTS);
+                                TimeSpan.FromMilliseconds(Config.Character.FORTRESS_ZONE_FAME_TASK_FREQUENCY * 1000),
+                                Config.Character.FORTRESS_ZONE_FAME_AQUIRE_POINTS);
                         }
                     }
 
@@ -1739,12 +1739,12 @@ public class FortSiege: Siegable
 
 	public int getFameFrequency()
 	{
-		return Config.FORTRESS_ZONE_FAME_TASK_FREQUENCY;
+		return Config.Character.FORTRESS_ZONE_FAME_TASK_FREQUENCY;
 	}
 
 	public int getFameAmount()
 	{
-		return Config.FORTRESS_ZONE_FAME_AQUIRE_POINTS;
+		return Config.Character.FORTRESS_ZONE_FAME_AQUIRE_POINTS;
 	}
 
 	public void updateSiege()

@@ -8,9 +8,9 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -75,7 +75,7 @@ public class PhysicalAttack: AbstractEffect
 
         Player? effectedPlayer = effected.getActingPlayer();
         if (effected.isPlayer() && effectedPlayer != null && effectedPlayer.isFakeDeath() &&
-            Config.FAKE_DEATH_DAMAGE_STAND)
+            Config.Character.FAKE_DEATH_DAMAGE_STAND)
             effected.stopFakeDeath(true);
 
         if (_overHit && effected.isAttackable())

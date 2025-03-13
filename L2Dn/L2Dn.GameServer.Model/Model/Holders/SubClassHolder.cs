@@ -1,8 +1,8 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Model;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Holders;
 
@@ -13,17 +13,17 @@ namespace L2Dn.GameServer.Model.Holders;
  */
 public class SubClassHolder
 {
-	private static readonly int MAX_LEVEL = Config.MAX_SUBCLASS_LEVEL < ExperienceData.getInstance().getMaxLevel()
-		? Config.MAX_SUBCLASS_LEVEL
+	private static readonly int MAX_LEVEL = Config.Character.MAX_SUBCLASS_LEVEL < ExperienceData.getInstance().getMaxLevel()
+		? Config.Character.MAX_SUBCLASS_LEVEL
 		: ExperienceData.getInstance().getMaxLevel() - 1;
 
 	private static readonly int MAX_VITALITY_POINTS = 3500000;
 	private static readonly int MIN_VITALITY_POINTS = 0;
 
 	private CharacterClass _class;
-	private long _exp = ExperienceData.getInstance().getExpForLevel(Config.BASE_SUBCLASS_LEVEL);
+	private long _exp = ExperienceData.getInstance().getExpForLevel(Config.Character.BASE_SUBCLASS_LEVEL);
 	private long _sp;
-	private int _level = Config.BASE_SUBCLASS_LEVEL;
+	private int _level = Config.Character.BASE_SUBCLASS_LEVEL;
 	private int _classIndex = 1;
 	private int _vitalityPoints;
 	private bool _dualClass;
@@ -116,9 +116,9 @@ public class SubClassHolder
 			_level = MAX_LEVEL;
 			return;
 		}
-		else if (levelValue < Config.BASE_SUBCLASS_LEVEL)
+		else if (levelValue < Config.Character.BASE_SUBCLASS_LEVEL)
 		{
-			_level = Config.BASE_SUBCLASS_LEVEL;
+			_level = Config.Character.BASE_SUBCLASS_LEVEL;
 			return;
 		}
 

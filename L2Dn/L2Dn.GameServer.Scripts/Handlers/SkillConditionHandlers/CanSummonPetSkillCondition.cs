@@ -4,8 +4,8 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
@@ -27,7 +27,7 @@ public class CanSummonPetSkillCondition: ISkillCondition
         }
 
         bool canSummon = true;
-        if (Config.RESTORE_PET_ON_RECONNECT && CharSummonTable.getInstance().getPets().ContainsKey(player.ObjectId))
+        if (Config.Character.RESTORE_PET_ON_RECONNECT && CharSummonTable.getInstance().getPets().ContainsKey(player.ObjectId))
         {
             player.sendPacket(SystemMessageId.YOU_MAY_NOT_SUMMON_MULTIPLE_PETS_AT_THE_SAME_TIME);
             canSummon = false;

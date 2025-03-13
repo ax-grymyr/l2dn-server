@@ -10,10 +10,10 @@ using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.Geometry;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
+using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Quests;
 
@@ -267,7 +267,7 @@ public sealed class Q00206Tutorial: Quest
     [SubscribeEvent(SubscriptionType.GlobalPlayers)]
     public void PlayerLogin(OnPlayerLogin ev)
     {
-        if (Config.DISABLE_TUTORIAL)
+        if (Config.Character.DISABLE_TUTORIAL)
             return;
 
         Player player = ev.getPlayer();
