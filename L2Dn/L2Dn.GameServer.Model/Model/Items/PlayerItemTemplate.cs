@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Holders;
 
 namespace L2Dn.GameServer.Model.Items;

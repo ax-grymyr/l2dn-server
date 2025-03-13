@@ -5,5 +5,5 @@ public enum DropType
     DROP,
     SPOIL,
     LUCKY,
-    FORTUNE
+    FORTUNE,
 }

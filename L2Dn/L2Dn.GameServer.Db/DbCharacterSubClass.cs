@@ -1,4 +1,4 @@
-﻿using L2Dn.Model;
+﻿using L2Dn.GameServer.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace L2Dn.GameServer.Db;

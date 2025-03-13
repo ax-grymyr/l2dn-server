@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using L2Dn.GameServer.Dto;
 
 namespace L2Dn.GameServer.Model.Holders;
 

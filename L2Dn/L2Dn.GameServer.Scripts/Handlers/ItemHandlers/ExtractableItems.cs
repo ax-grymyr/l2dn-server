@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;

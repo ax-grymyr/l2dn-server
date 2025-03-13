@@ -1,9 +1,9 @@
 ﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Olympiads;
-using L2Dn.Model;
 using L2Dn.Packets;
 using NLog;
 
@@ -13,16 +13,16 @@ public readonly struct ExOlympiadMyRankingInfoPacket: IOutgoingPacket
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(ExOlympiadMyRankingInfoPacket));
 	private readonly Player _player;
-	
+
 	public ExOlympiadMyRankingInfoPacket(Player player)
 	{
 		_player = player;
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.EX_OLYMPIAD_MY_RANKING_INFO);
-		
+
 		int currentPlace = 0;
 		int currentWins = 0;
 		int currentLoses = 0;
@@ -32,10 +32,10 @@ public readonly struct ExOlympiadMyRankingInfoPacket: IOutgoingPacket
 		int previousLoses = 0;
 		int previousPoints = 0;
 
-		try 
+		try
 		{
 			// TODO: Move query and store data at RankManager.
-			CharacterClass classId = _player.getBaseClass(); 
+			CharacterClass classId = _player.getBaseClass();
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query1 = ctx.OlympiadNobles.Where(r => r.Class == classId).OrderByDescending(r => r.OlympiadPoints)
 				.ThenByDescending(r => r.CompetitionsWon).Take(RankManager.PLAYER_LIMIT);
@@ -73,7 +73,7 @@ public readonly struct ExOlympiadMyRankingInfoPacket: IOutgoingPacket
 		{
 			_logger.Error("Olympiad my ranking: Couldnt load data: " + e);
 		}
-		
+
 		int heroCount = 0;
 		int legendCount = 0;
 		if (Hero.getInstance().getCompleteHeroes().TryGetValue(_player.ObjectId, out StatSet? hero))
@@ -81,7 +81,7 @@ public readonly struct ExOlympiadMyRankingInfoPacket: IOutgoingPacket
 			heroCount = hero.getInt("count", 0);
 			legendCount = hero.getInt("legend_count", 0);
 		}
-		
+
 		DateTime date = DateTime.Today;
 		writer.WriteInt32(date.Year); // Year
 		writer.WriteInt32(date.Month); // Month

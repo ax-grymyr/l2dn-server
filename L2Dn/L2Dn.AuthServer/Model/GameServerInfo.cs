@@ -1,5 +1,4 @@
-﻿using L2Dn.Model;
-using L2Dn.Network;
+﻿using L2Dn.Network;
 using L2Dn.Utilities;
 
 namespace L2Dn.AuthServer.Model;
@@ -18,11 +17,11 @@ internal sealed class GameServerInfo
     public bool IsPvpServer { get; set; }
     public GameServerAttributes Attributes { get; set; }
     public bool IsOnline { get; set; }
-    
+
     public bool Brackets { get; set; }
-    
+
     public string? AccessKey { get; set; }
     public bool FromDatabase { get; set; }
-    
+
     public Connection? Connection { get; set; }
 }

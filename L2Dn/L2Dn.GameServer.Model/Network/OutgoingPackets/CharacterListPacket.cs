@@ -1,5 +1,6 @@
 ﻿using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network.Enums;

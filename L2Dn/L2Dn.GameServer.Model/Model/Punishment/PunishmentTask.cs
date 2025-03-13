@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;

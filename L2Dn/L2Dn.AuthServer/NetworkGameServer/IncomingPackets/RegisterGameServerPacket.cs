@@ -1,6 +1,5 @@
 ﻿using L2Dn.AuthServer.Model;
 using L2Dn.AuthServer.NetworkGameServer.OutgoingPacket;
-using L2Dn.Model;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -53,11 +52,11 @@ internal struct RegisterGameServerPacket: IIncomingPacket<GameServerSession>
         session.ServerInfo = serverInfo;
         if (serverInfo is not null)
             serverInfo.Connection = connection;
-        
+
         RegistrationResultPacket registrationResultPacket = new(result);
         connection.Send(ref registrationResultPacket,
             result != RegistrationResult.Success ? SendPacketOptions.CloseAfterSending : SendPacketOptions.None);
-        
+
         return ValueTask.CompletedTask;
     }
 }

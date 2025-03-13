@@ -2,6 +2,7 @@ using System.Xml.Linq;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
 using L2Dn.Model;
 using L2Dn.Utilities;
 

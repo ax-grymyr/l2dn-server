@@ -1,4 +1,4 @@
-﻿namespace L2Dn.Model;
+﻿namespace L2Dn.GameServer.Enums;
 
 public enum CharacterClass: short
 {

@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using L2Dn.Events;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;

@@ -1,5 +1,6 @@
 using System.Collections.Frozen;
 using System.Collections.Immutable;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Ensoul;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;

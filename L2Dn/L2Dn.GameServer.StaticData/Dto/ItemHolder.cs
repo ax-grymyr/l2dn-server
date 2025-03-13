@@ -1,11 +1,8 @@
-using L2Dn.GameServer.Model.Interfaces;
+namespace L2Dn.GameServer.Dto;
 
-namespace L2Dn.GameServer.Model.Holders;
-
-/**
- * A simple DTO for items; contains item ID and count.
- * @author UnAfraid
- */
+/// <summary>
+/// A simple DTO for items; contains item ID and count.
+/// </summary>
 public class ItemHolder(int id, long count): IIdentifiable
 {
     /**

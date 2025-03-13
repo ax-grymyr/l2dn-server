@@ -8,6 +8,7 @@ using L2Dn.GameServer.CommunityBbs.Managers;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Handlers;

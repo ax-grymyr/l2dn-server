@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using L2Dn.Model;
+using L2Dn.GameServer.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace L2Dn.GameServer.Db;
@@ -10,10 +10,10 @@ public class DbOlympiadFight
 {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
-    
+
     public int Character1Id { get; set; }
     public int Character2Id { get; set; }
-    
+
     public CharacterClass Character1Class { get; set; }
     public CharacterClass Character2Class { get; set; }
     public byte Winner { get; set; }

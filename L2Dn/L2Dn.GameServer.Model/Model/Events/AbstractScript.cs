@@ -4,6 +4,7 @@ using L2Dn.Events;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;

@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;

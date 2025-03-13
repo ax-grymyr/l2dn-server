@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;

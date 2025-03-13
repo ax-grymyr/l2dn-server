@@ -1,4 +1,4 @@
-﻿namespace L2Dn.Model;
+﻿namespace L2Dn;
 
 public enum GameServerType
 {

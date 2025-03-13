@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
 using L2Dn.Model;
 
 namespace L2Dn.GameServer.Model.Olympiads;

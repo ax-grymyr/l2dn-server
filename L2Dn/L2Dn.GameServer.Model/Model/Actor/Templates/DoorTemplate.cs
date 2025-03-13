@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model.Interfaces;
+﻿using L2Dn.GameServer.Dto;
+using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Model.Xml;

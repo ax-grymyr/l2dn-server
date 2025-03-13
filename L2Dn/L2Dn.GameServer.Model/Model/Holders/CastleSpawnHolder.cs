@@ -1,5 +1,5 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.Geometry;
-using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Holders;
 

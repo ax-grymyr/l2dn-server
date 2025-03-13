@@ -1,4 +1,4 @@
-﻿namespace L2Dn.GameServer.Model.Interfaces;
+﻿namespace L2Dn.GameServer.Dto;
 
 public interface IIdentifiable
 {

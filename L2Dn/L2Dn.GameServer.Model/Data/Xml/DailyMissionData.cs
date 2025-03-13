@@ -1,5 +1,7 @@
 using System.Collections.Frozen;
 using System.Collections.Immutable;
+using L2Dn.GameServer.Dto;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;

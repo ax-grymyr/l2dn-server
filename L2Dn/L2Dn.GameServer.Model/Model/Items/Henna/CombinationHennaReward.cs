@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Combination;
 using L2Dn.Model.Enums;

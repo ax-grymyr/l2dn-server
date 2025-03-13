@@ -1,6 +1,7 @@
 using System.Globalization;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;

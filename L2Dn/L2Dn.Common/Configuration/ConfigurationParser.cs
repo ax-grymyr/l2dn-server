@@ -8,25 +8,19 @@ using NLog;
 
 namespace L2Dn.Configuration;
 
-public class ConfigurationParser
+public sealed class ConfigurationParser(string? basePath = null)
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(ConfigurationParser));
     private readonly Dictionary<string, string> _values = new();
-    private readonly string? _basePath;
     private string _filePath = string.Empty;
 
     public string FilePath => _filePath;
 
-    public ConfigurationParser(string? basePath = null)
-    {
-        _basePath = basePath;
-    }
-    
     public void LoadConfig(string filePath)
     {
-        if (!string.IsNullOrEmpty(_basePath) && !Path.IsPathRooted(filePath) && !Path.IsPathFullyQualified(filePath))
-            _filePath = Path.Combine(_basePath, filePath);
-        else 
+        if (!string.IsNullOrEmpty(basePath) && !Path.IsPathRooted(filePath) && !Path.IsPathFullyQualified(filePath))
+            _filePath = Path.Combine(basePath, filePath);
+        else
             _filePath = filePath;
 
         _filePath = filePath;
@@ -41,9 +35,7 @@ public class ConfigurationParser
         ReadLines(filePath).Select(ParseKeyValue).ForEach(pair =>
         {
             if (!_values.TryAdd(pair.Key, pair.Value))
-            {
                 _logger.Error($"Duplicated entry '{pair.Key}' in configuration file '{filePath}'");
-            }
         });
     }
 
@@ -130,7 +122,7 @@ public class ConfigurationParser
                 }
             }
         }
-        
+
         _logger.Error($"Invalid duration value '{value}' in entry '{key}' in configuration file '{_filePath}'");
         return defaultValue;
     }
@@ -163,7 +155,7 @@ public class ConfigurationParser
                 return defaultValues.ToImmutableArray();
             }
         }
-        
+
         return result.ToImmutableArray();
     }
 
@@ -186,7 +178,7 @@ public class ConfigurationParser
             return defaultValues.ToImmutableArray();
         }
     }
-    
+
     public Regex GetRegex(string key, Regex defaultValue)
     {
         if (!_values.TryGetValue(key, out string? value))
@@ -200,7 +192,7 @@ public class ConfigurationParser
         {
             _logger.Error(exception,
                 $"Invalid regular expression in entry {key} in configuration file {_filePath}");
-            
+
             return defaultValue;
         }
     }
@@ -253,7 +245,7 @@ public class ConfigurationParser
     }
 
     public Color GetColor(string key, Color defaultValue = default) => GetValue(key, defaultValue, "color");
-    
+
     public T GetEnum<T>(string key, T defaultValue = default)
         where T: struct, Enum
     {
@@ -266,7 +258,7 @@ public class ConfigurationParser
         string message = typeof(T).GetCustomAttribute<FlagsAttribute>() is null
             ? $"{typeof(T).Name} value"
             : $"list of {typeof(T).Name} values";
-        
+
         _logger.Error($"Invalid {message} '{value}' in entry '{key}' in configuration file '{_filePath}'");
         return defaultValue;
     }
@@ -357,7 +349,7 @@ public class ConfigurationParser
                 continue;
 
             string trimmed = line.Trim();
-            
+
             if (trimmed.EndsWith('\\'))
             {
                 option += trimmed[..^1];

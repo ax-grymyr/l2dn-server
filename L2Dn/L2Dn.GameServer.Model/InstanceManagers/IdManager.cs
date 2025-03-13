@@ -1,6 +1,6 @@
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Model;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 
@@ -12,21 +12,21 @@ namespace L2Dn.GameServer.InstanceManagers;
 public class IdManager
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(IdManager));
-	
+
 	private const int FIRST_OID = 0x10000000;
 	private const int LAST_OID = 0x7FFFFFFF;
-	
+
 	// There are 1,879,048,192 numbers available for object ids.
 	// Whole bitmap takes exactly 224 MB of memory, that's not a large number.
 	private const int FREE_OBJECT_ID_SIZE = LAST_OID - FIRST_OID + 1;
 	private const int IdBitSetCount = FREE_OBJECT_ID_SIZE / IdBitSet.BitCount;
-	
+
 	private readonly IdBitSet[] _bitSets = new IdBitSet[IdBitSetCount];
-	
+
 	public IdManager()
 	{
 		// Update characters online status.
-		try 
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
@@ -39,11 +39,11 @@ public class IdManager
 		{
 			LOGGER.Warn("IdManager: Could not update characters online status: " + e);
 		}
-		
+
 		// Cleanup database.
 		if (Config.DATABASE_CLEAN_UP)
 		{
-			try 
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
@@ -51,11 +51,11 @@ public class IdManager
 				int cleanCount = 0;
 
 				// TODO: configure cascade delete and cascade update in the DB context instead of this shit
-				
+
 				// Characters
 				// cleanCount += ctx.AccountVariables.Where(r => !ctx.AccountRefs.Select(a => a.Id).Contains(r.AccountId))
 				// 	.ExecuteDelete();
-				
+
 				// cleanCount += statement.executeUpdate("DELETE FROM account_gsdata WHERE account_gsdata.account_name NOT IN (SELECT account_name FROM characters);");
 				// cleanCount += statement.executeUpdate("DELETE FROM character_contacts WHERE character_contacts.charId NOT IN (SELECT charId FROM characters);");
 				// cleanCount += statement.executeUpdate("DELETE FROM character_contacts WHERE character_contacts.contactId NOT IN (SELECT charId FROM characters);");
@@ -117,7 +117,7 @@ public class IdManager
 				// cleanCount += statement.executeUpdate("DELETE FROM forums WHERE forums.forum_owner_id NOT IN (SELECT charId FROM characters) AND forums.forum_parent=3;");
 				// cleanCount += statement.executeUpdate("DELETE FROM posts WHERE posts.post_forum_id NOT IN (SELECT forum_id FROM forums);");
 				// cleanCount += statement.executeUpdate("DELETE FROM topic WHERE topic.topic_forum_id NOT IN (SELECT forum_id FROM forums);");
-				
+
 				// Update needed items after cleaning has taken place.
 				// statement.executeUpdate("UPDATE clan_data SET auction_bid_at = 0 WHERE auction_bid_at NOT IN (SELECT auctionId FROM auction_bid);");
 				// statement.executeUpdate("UPDATE clan_data SET new_leader_id = 0 WHERE new_leader_id <> 0 AND new_leader_id NOT IN (SELECT charId FROM characters);");
@@ -125,7 +125,7 @@ public class IdManager
 				// statement.executeUpdate("UPDATE castle SET side='NEUTRAL' WHERE castle.id NOT IN (SELECT hasCastle FROM clan_data);");
 				// statement.executeUpdate("UPDATE characters SET clanid=0, clan_privs=0, wantspeace=0, subpledge=0, lvl_joined_academy=0, apprentice=0, sponsor=0, clan_join_expiry_time=0, clan_create_expiry_time=0 WHERE characters.clanid > 0 AND characters.clanid NOT IN (SELECT clan_id FROM clan_data);");
 				// statement.executeUpdate("UPDATE fort SET owner=0 WHERE owner NOT IN (SELECT clan_id FROM clan_data);");
-				
+
 				LOGGER.Info("IdManager: Cleaned " + cleanCount + " elements from database in " + (DateTime.UtcNow - cleanupStart) / 1000 + " seconds.");
 			}
 			catch (Exception e)
@@ -133,7 +133,7 @@ public class IdManager
 				LOGGER.Error("IdManager: Could not clean up database: " + e);
 			}
 		}
-		
+
 		// Cleanup timestamps.
 		try
 		{
@@ -143,14 +143,14 @@ public class IdManager
 			cleanCount += ctx.CharacterInstances.Where(r => r.Time <= DateTime.UtcNow).ExecuteDelete();
 			cleanCount += ctx.CharacterSkillReuses.Where(r => r.RestoreType == 1 && r.SysTime <= DateTime.UtcNow)
 				.ExecuteDelete();
-			
+
 			LOGGER.Info("IdManager: Cleaned " + cleanCount + " expired timestamps from database.");
 		}
 		catch (Exception e)
 		{
 			LOGGER.Warn("IdManager: Could not clean expired timestamps from database. " + e);
 		}
-		
+
 		// Initialize.
 		try
 		{
@@ -159,7 +159,7 @@ public class IdManager
 			List<int> usedIds = ctx.Characters.Select(c => c.Id).Concat(ctx.Items.Select(i => i.ObjectId))
 				.Concat(ctx.Clans.Select(c => c.Id)).Concat(ctx.ItemsOnGround.Select(c => c.ObjectId))
 				.Concat(ctx.MailMessages.Select(c => c.MessageId)).ToList();
-			
+
 			// Register used ids.
 			foreach (int usedObjectId in usedIds)
 			{
@@ -176,13 +176,13 @@ public class IdManager
 		{
 			LOGGER.Error("IdManager: Could not initialize properly: " + e);
 		}
-		
+
 		// TODO Schedule cleanup task
 
 		int freeIds = FREE_OBJECT_ID_SIZE - _bitSets.Sum(x => x.SetBitCount);
 		LOGGER.Info("IdManager: " + freeIds + " id's available.");
 	}
-	
+
 	public void releaseId(int id)
 	{
 		int index = id - FIRST_OID;
@@ -193,7 +193,7 @@ public class IdManager
 		const int mask = (1 << 23) - 1;
 		_bitSets[bitSetIndex].ReleaseId(index & mask);
 	}
-	
+
 	public int getNextId()
 	{
 		for (int bitSetIndex = 0; bitSetIndex < _bitSets.Length; bitSetIndex++)
@@ -216,12 +216,12 @@ public class IdManager
 		const int mask = (1 << 23) - 1;
 		_bitSets[bitSetIndex].ReserveId(index & mask);
 	}
-	
+
 	public static IdManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly IdManager INSTANCE = new IdManager();

@@ -1,9 +1,8 @@
-using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Model;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.TaskManagers;

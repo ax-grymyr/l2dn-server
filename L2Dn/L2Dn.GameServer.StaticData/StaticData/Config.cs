@@ -1,15 +1,13 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Frozen;
+using System.Collections.Immutable;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 using L2Dn.Configuration;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model.Holders;
-using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
-using L2Dn.Model;
 using NLog;
 
 namespace L2Dn.GameServer;
@@ -1277,7 +1275,7 @@ public class Config
 	public static int DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP;
 	public static int DUALBOX_CHECK_MAX_L2EVENT_PARTICIPANTS_PER_IP;
 	public static bool DUALBOX_COUNT_OFFLINE_TRADERS;
-	public static Map<int, int> DUALBOX_CHECK_WHITELIST = [];
+	public static FrozenDictionary<int, int> DUALBOX_CHECK_WHITELIST = FrozenDictionary<int, int>.Empty;
 	public static bool ENABLE_ONLINE_COMMAND;
 	public static bool ALLOW_CHANGE_PASSWORD;
 	public static bool ALLOW_HUMAN;
@@ -1711,10 +1709,15 @@ public class Config
 		DANCE_CONSUME_ADDITIONAL_MP = parser.getBoolean("DanceConsumeAdditionalMP", true);
 		ALT_STORE_DANCES = parser.getBoolean("AltStoreDances");
 		AUTO_LEARN_DIVINE_INSPIRATION = parser.getBoolean("AutoLearnDivineInspiration");
-		ALT_GAME_CANCEL_BOW = parser.getString("AltGameCancelByHit", "Cast").equalsIgnoreCase("bow") ||
-		                      parser.getString("AltGameCancelByHit", "Cast").equalsIgnoreCase("all");
-		ALT_GAME_CANCEL_CAST = parser.getString("AltGameCancelByHit", "Cast").equalsIgnoreCase("cast") ||
-		                       parser.getString("AltGameCancelByHit", "Cast").equalsIgnoreCase("all");
+
+        ALT_GAME_CANCEL_BOW = string.Equals(parser.getString("AltGameCancelByHit", "Cast"), "bow",
+                StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parser.getString("AltGameCancelByHit", "Cast"), "all", StringComparison.OrdinalIgnoreCase);
+
+        ALT_GAME_CANCEL_CAST = string.Equals(parser.getString("AltGameCancelByHit", "Cast"), "cast",
+                StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parser.getString("AltGameCancelByHit", "Cast"), "all", StringComparison.OrdinalIgnoreCase);
+
 		ALT_GAME_MAGICFAILURES = parser.getBoolean("MagicFailures", true);
 		ALT_GAME_STUN_BREAK = parser.getBoolean("BreakStun");
 		PLAYER_FAKEDEATH_UP_PROTECTION = parser.getInt("PlayerFakeDeathUpProtection");

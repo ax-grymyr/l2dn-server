@@ -1,4 +1,5 @@
 using System.Collections.Frozen;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.Model;
 using L2Dn.Model.Xml;

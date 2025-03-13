@@ -1,4 +1,4 @@
-﻿namespace L2Dn.Model.Enums;
+﻿namespace L2Dn.GameServer.Enums;
 
 public enum SiegeParticipantType: sbyte
 {

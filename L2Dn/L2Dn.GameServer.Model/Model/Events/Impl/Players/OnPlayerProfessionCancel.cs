@@ -1,4 +1,5 @@
 using L2Dn.Events;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.Model;
 

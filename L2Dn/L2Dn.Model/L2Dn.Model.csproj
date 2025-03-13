@@ -14,4 +14,8 @@
         <DotNetCliToolReference Include="Microsoft.XmlSerializer.Generator" Version="9.0.2" />
     </ItemGroup>
     
+    <ItemGroup>
+      <ProjectReference Include="..\L2Dn.GameServer.Enums\L2Dn.GameServer.Enums.csproj" />
+    </ItemGroup>
+    
 </Project>
