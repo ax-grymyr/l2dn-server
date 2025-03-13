@@ -737,21 +737,8 @@ public class Config
 	// --------------------------------------------------
 	// Server Settings
 	// --------------------------------------------------
-	public static int PORT_GAME;
-	public static int PORT_LOGIN;
-	public static string LOGIN_BIND_ADDRESS = string.Empty;
 	public static int LOGIN_TRY_BEFORE_BAN;
 	public static int LOGIN_BLOCK_AFTER_BAN;
-	public static string GAMESERVER_HOSTNAME = string.Empty;
-	public static string DATABASE_DRIVER = string.Empty;
-	public static string DATABASE_URL = string.Empty;
-	public static string DATABASE_LOGIN = string.Empty;
-	public static string DATABASE_PASSWORD = string.Empty;
-	public static int DATABASE_MAX_CONNECTIONS;
-	public static bool BACKUP_DATABASE;
-	public static string MYSQL_BIN_PATH = string.Empty;
-	public static string BACKUP_PATH = string.Empty;
-	public static int BACKUP_DAYS;
 	public static int MAXIMUM_ONLINE_USERS;
 	public static bool HARDWARE_INFO_ENABLED;
 	public static bool KICK_MISSING_HWID;
@@ -799,10 +786,6 @@ public class Config
 	// No classification assigned to the following yet
 	// --------------------------------------------------
 	public static int MAX_ITEM_IN_PACKET;
-	public static int GAME_SERVER_LOGIN_PORT;
-	public static string GAME_SERVER_LOGIN_HOST = string.Empty;
-	public static List<string> GAME_SERVER_SUBNETS = [];
-	public static List<string> GAME_SERVER_HOSTS = [];
 	public static TimeSpan PVP_NORMAL_TIME;
 	public static TimeSpan PVP_PVP_TIME;
 	public static int MAX_REPUTATION;
@@ -1428,21 +1411,8 @@ public class Config
 		ConfigurationParser parser = new(basePath);
 		parser.LoadConfig(SERVER_CONFIG_FILE);
 
-		GAMESERVER_HOSTNAME = parser.getString("GameserverHostname", "0.0.0.0");
-		PORT_GAME = parser.getInt("GameserverPort", 7777);
-		GAME_SERVER_LOGIN_PORT = parser.getInt("LoginPort", 9014);
-		GAME_SERVER_LOGIN_HOST = parser.getString("LoginHost", "127.0.0.1");
 		REQUEST_ID = parser.getInt("RequestServerID");
 		ACCEPT_ALTERNATE_ID = parser.getBoolean("AcceptAlternateID", true);
-		DATABASE_DRIVER = parser.getString("Driver", "org.mariadb.jdbc.Driver");
-		DATABASE_URL = parser.getString("URL", "jdbc:mariadb://localhost/l2jmobius");
-		DATABASE_LOGIN = parser.getString("Login", "root");
-		DATABASE_PASSWORD = parser.getString("Password");
-		DATABASE_MAX_CONNECTIONS = parser.getInt("MaximumDatabaseConnections", 10);
-		BACKUP_DATABASE = parser.getBoolean("BackupDatabase");
-		MYSQL_BIN_PATH = parser.getString("MySqlBinLocation", "C:/xampp/mysql/bin/");
-		BACKUP_PATH = parser.getString("BackupPath", "../backup/");
-		BACKUP_DAYS = parser.getInt("BackupDays", 30);
 		DATAPACK_ROOT_PATH = parser.GetPath("DatapackRoot", "./DataPack");
 		SCRIPT_ROOT_PATH = parser.GetPath("ScriptRoot", "./DataPack/scripts");
 		CHARNAME_TEMPLATE_PATTERN = parser.GetRegex("CnameTemplate", defaultRegex);

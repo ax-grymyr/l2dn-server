@@ -382,10 +382,7 @@ public class Shutdown
 		}
 
 		// Backup database.
-		if (Config.BACKUP_DATABASE)
-		{
-			//DatabaseBackup.performBackup(); // TODO: backup?
-		}
+		//DatabaseBackup.performBackup(); // TODO: backup?
 
 		LOGGER.Info("The server has been successfully shut down in " + (tc1.getEstimatedTime() / 1000) + "seconds.");
 	}
