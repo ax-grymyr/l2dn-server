@@ -1,13 +1,17 @@
-using System.Xml.Linq;
+using System.Diagnostics;
+using System.Globalization;
+using System.Xml.Serialization;
+using L2Dn.Collections;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
+using L2Dn.Model.Xml.Skills;
 using L2Dn.Parsing;
-using L2Dn.Utilities;
 using NLog;
+using Expression = L2Dn.Parsing.Expression;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -16,601 +20,137 @@ namespace L2Dn.GameServer.Data.Xml;
  */
 public class SkillData: DataReaderBase
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(SkillData));
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(SkillData));
 
-	private readonly Map<long, Skill> _skills = new();
-	private readonly Map<int, int> _skillsMaxLevel = new();
+    private readonly Map<long, Skill> _skills = new();
+    private readonly Map<int, int> _skillsMaxLevel = new();
 
-	private sealed class NamedParamInfo(string name, int? fromLevel, int? toLevel, int? fromSubLevel, int? toSubLevel,
-        Map<int, Map<int, StatSet>> info)
-    {
-        public string Name => name;
-        public int? FromLevel => fromLevel;
-        public int? ToLevel => toLevel;
-        public int? FromSubLevel => fromSubLevel;
-        public int? ToSubLevel => toSubLevel;
-        public Map<int, Map<int, StatSet>> Info => info;
-    }
+    public Map<long, Skill> Skills => _skills;
 
     private SkillData()
-	{
-		Load();
-	}
+    {
+        Load();
+    }
 
-	/**
-	 * Provides the skill hash
-	 * @param skill The Skill to be hashed
-	 * @return getSkillHashCode(skill.getId(), skill.getLevel())
-	 */
+    /**
+     * Provides the skill hash
+     * @param skill The Skill to be hashed
+     * @return getSkillHashCode(skill.getId(), skill.getLevel())
+     */
     private static long GetSkillHashCode(Skill skill)
-	{
-		return getSkillHashCode(skill.getId(), skill.getLevel(), skill.getSubLevel());
-	}
+    {
+        return getSkillHashCode(skill.getId(), skill.getLevel(), skill.getSubLevel());
+    }
 
-	/**
-	 * Centralized method for easier change of the hashing sys
-	 * @param skillId The Skill Id
-	 * @param skillLevel The Skill Level
-	 * @param subSkillLevel The skill sub level
-	 * @return The Skill hash number
-	 */
-	public static long getSkillHashCode(int skillId, int skillLevel, int subSkillLevel = 0)
-	{
-		return skillId * 4294967296L + subSkillLevel * 65536 + skillLevel;
-	}
+    /**
+     * Centralized method for easier change of the hashing sys
+     * @param skillId The Skill Id
+     * @param skillLevel The Skill Level
+     * @param subSkillLevel The skill sub level
+     * @return The Skill hash number
+     */
+    public static long getSkillHashCode(int skillId, int skillLevel, int subSkillLevel = 0)
+    {
+        return skillId * 4294967296L + subSkillLevel * 65536 + skillLevel;
+    }
 
-	public Skill? getSkill(int skillId, int level, int subLevel = 0)
-	{
-		Skill? result = _skills.get(getSkillHashCode(skillId, level, subLevel));
-		if (result != null)
-		{
-			return result;
-		}
+    public Skill? getSkill(int skillId, int level, int subLevel = 0)
+    {
+        Skill? result = _skills.get(getSkillHashCode(skillId, level, subLevel));
+        if (result != null)
+        {
+            return result;
+        }
 
-		// skill/level not found, fix for transformation scripts
-		int maxLevel = getMaxLevel(skillId);
-		// requested level too high
-		if (maxLevel > 0 && level > maxLevel)
-		{
-			LOGGER.Warn(GetType().Name + ": Call to unexisting skill level id: " + skillId + " requested level: " +
-			            level + " max level: " + maxLevel + ".");
+        // skill/level not found, fix for transformation scripts
+        int maxLevel = getMaxLevel(skillId);
+        // requested level too high
+        if (maxLevel > 0 && level > maxLevel)
+        {
+            _logger.Warn(GetType().Name + ": Call to unexisting skill level id: " + skillId + " requested level: " +
+                level + " max level: " + maxLevel + ".");
 
-			return _skills.get(getSkillHashCode(skillId, maxLevel));
-		}
+            return _skills.get(getSkillHashCode(skillId, maxLevel));
+        }
 
-		LOGGER.Warn(GetType().Name + ": No skill info found for skill id " + skillId + " and skill level " + level);
-		return null;
-	}
+        _logger.Warn(GetType().Name + ": No skill info found for skill id " + skillId + " and skill level " + level);
+        return null;
+    }
 
-	public int getMaxLevel(int skillId)
+    public int getMaxLevel(int skillId)
     {
         return _skillsMaxLevel.GetValueOrDefault(skillId);
-	}
+    }
 
-	/**
-	 * @param addNoble
-	 * @param hasCastle
-	 * @return an array with siege skills. If addNoble == true, will add also Advanced headquarters.
-	 */
-	public List<Skill> getSiegeSkills(bool addNoble, bool hasCastle)
-	{
-		List<Skill?> temp =
+    /**
+     * @param addNoble
+     * @param hasCastle
+     * @return an array with siege skills. If addNoble == true, will add also Advanced headquarters.
+     */
+    public List<Skill> getSiegeSkills(bool addNoble, bool hasCastle)
+    {
+        List<Skill?> temp =
         [
             _skills.get(getSkillHashCode((int)CommonSkill.SEAL_OF_RULER, 1)),
             _skills.get(getSkillHashCode(247, 1)), // Build Headquarters
         ];
 
         if (addNoble)
-		{
-			temp.Add(_skills.get(getSkillHashCode(326, 1))); // Build Advanced Headquarters
-		}
+        {
+            temp.Add(_skills.get(getSkillHashCode(326, 1))); // Build Advanced Headquarters
+        }
 
-		if (hasCastle)
-		{
-			temp.Add(_skills.get(getSkillHashCode(844, 1))); // Outpost Construction
-			temp.Add(_skills.get(getSkillHashCode(845, 1))); // Outpost Demolition
-		}
+        if (hasCastle)
+        {
+            temp.Add(_skills.get(getSkillHashCode(844, 1))); // Outpost Construction
+            temp.Add(_skills.get(getSkillHashCode(845, 1))); // Outpost Demolition
+        }
 
-		return temp.Where(s => s != null).ToList()!; // TODO: review code and refactor
-	}
+        return temp.Where(s => s != null).ToList()!; // TODO: review code and refactor
+    }
 
     private void Load()
     {
-		_skills.Clear();
-		_skillsMaxLevel.Clear();
+        _skills.Clear();
+        _skillsMaxLevel.Clear();
 
-		LoadXmlDocuments(DataFileLocation.Data, "stats/skills").ForEach(t =>
-		{
-			t.Document.Elements("list").Elements("skill").ForEach(LoadElement);
-		});
+        IEnumerable<(string FilePath, XmlSkillList Document)> skillLists =
+            LoadXmlDocuments<XmlSkillList>(DataFileLocation.Data, "stats/skills");
 
-		if (Config.CUSTOM_SKILLS_LOAD)
-		{
-			LoadXmlDocuments(DataFileLocation.Data, "stats/skills/custom").ForEach(t =>
-			{
-				t.Document.Elements("list").Elements("skill").ForEach(LoadElement);
-			});
-		}
+        if (Config.CUSTOM_SKILLS_LOAD)
+        {
+            skillLists = skillLists.Concat(LoadXmlDocuments<XmlSkillList>(DataFileLocation.Data,
+                "stats/skills/custom"));
+        }
 
-		LOGGER.Info(GetType().Name + ": Loaded " + _skills.Count + " Skills.");
-	}
+        List<Skill> allSkills = skillLists.SelectMany(pair => pair.Document.Skills).SelectMany(LoadSkill).ToList();
+        allSkills.ForEach(skill => _skills.TryAdd(GetSkillHashCode(skill), skill));
+        allSkills.GroupBy(skill => skill.getLevel()).
+            ForEach(g => _skillsMaxLevel[g.Key] = g.Select(s => s.getLevel()).Max());
 
-	public void Reload()
-	{
-		Load();
+        _logger.Info(GetType().Name + ": Loaded " + allSkills.Count + " Skills.");
+    }
+
+    public void Reload()
+    {
+        Load();
 
         // Reload Skill Tree as well.
-		SkillTreeData.getInstance().load();
-	}
+        SkillTreeData.getInstance().load();
+    }
 
-	private void LoadElement(XElement element)
-	{
-		Map<int, Set<int>> levels = new(); // key - level, value - sublevel set
-		Map<int, Map<int, StatSet>> skillInfo = new();
-		StatSet generalSkillInfo = skillInfo.GetOrAdd(-1, _ => []).GetOrAdd(-1, _ => new StatSet());
-		ParseAttributes(element, string.Empty, generalSkillInfo);
-
-		Map<string, Map<int, Map<int, object>>> variableValues = new(); // key - name
-		Map<EffectScope, List<NamedParamInfo>> effectParamInfo = new();
-		Map<SkillConditionScope, List<NamedParamInfo>> conditionParamInfo = new();
-
-		foreach (XElement skillNode in element.Elements())
-		{
-			string skillNodeName = skillNode.Name.LocalName;
-			switch (skillNodeName.toLowerCase())
-			{
-				case "variable":
-				{
-					string name = "@" + skillNode.GetAttributeValueAsString("name");
-					variableValues.put(name, ParseValues(skillNode));
-					break;
-				}
-
-				default:
-				{
-					EffectScope? effectScope = EffectScopeUtil.FindByName(skillNodeName);
-					if (effectScope != null)
-					{
-						skillNode.Elements("effect").ForEach(effectsNode =>
-						{
-							effectParamInfo.GetOrAdd(effectScope.Value, _ => [])
-								.Add(ParseNamedParamInfo(effectsNode, variableValues));
-						});
-
-						break;
-					}
-
-					SkillConditionScope? skillConditionScope = SkillConditionScopeUtil.FindByXmlName(skillNodeName);
-					if (skillConditionScope != null)
-					{
-						skillNode.Elements("condition").ForEach(conditionNode =>
-						{
-							conditionParamInfo.GetOrAdd(skillConditionScope.Value, _ => [])
-								.Add(ParseNamedParamInfo(conditionNode, variableValues));
-						});
-					}
-					else
-					{
-						ParseInfo(skillNode, variableValues, skillInfo);
-					}
-
-					break;
-				}
-			}
-		}
-
-		int fromLevel = generalSkillInfo.getInt(".fromLevel", 1);
-		int toLevel = generalSkillInfo.getInt(".toLevel", 0);
-		for (int i = fromLevel; i <= toLevel; i++)
-		{
-			levels.GetOrAdd(i, _ => []).add(0);
-		}
-
-		skillInfo.ForEach(kvp =>
-		{
-			int level = kvp.Key;
-			Map<int, StatSet> subLevelMap = kvp.Value;
-			if (level == -1)
-				return;
-
-			subLevelMap.ForEach(kvp2 =>
-			{
-				int subLevel = kvp2.Key;
-				if (subLevel == -1)
-					return;
-
-				levels.GetOrAdd(level, _ => []).add(subLevel);
-			});
-		});
-
-		effectParamInfo.Values.Concat(conditionParamInfo.Values).ForEach(namedParamInfos =>
-			namedParamInfos.ForEach(namedParamInfo =>
-			{
-				namedParamInfo.Info.ForEach(kvp =>
-				{
-					(int level, Map<int, StatSet> subLevelMap) = kvp;
-					if (level == -1)
-						return;
-
-					subLevelMap.ForEach(kvp2 =>
-					{
-						(int subLevel, _) = kvp2;
-						if (subLevel == -1)
-							return;
-
-						levels.GetOrAdd(level, _ => []).add(subLevel);
-					});
-				});
-
-                int? fromLevel = namedParamInfo.FromLevel;
-                int? toLevel = namedParamInfo.ToLevel;
-				if (fromLevel != null && toLevel != null)
-				{
-					for (int i = fromLevel.Value; i <= toLevel.Value; i++)
-                    {
-                        int? fromSubLevel = namedParamInfo.FromSubLevel;
-                        int? toSubLevel = namedParamInfo.ToSubLevel;
-						if (fromSubLevel != null && toSubLevel != null)
-						{
-							for (int j = fromSubLevel.Value; j <= toSubLevel.Value; j++)
-							{
-								levels.GetOrAdd(i, _ => []).add(j);
-							}
-						}
-						else
-						{
-							levels.GetOrAdd(i, _ => []).add(0);
-						}
-					}
-				}
-			}));
-
-		levels.ForEach(kvp => kvp.Value.ForEach(subLevel =>
-		{
-			// TODO: review code and refactor
-			(int level, _) = kvp;
-			StatSet statSet = skillInfo.GetValueOrDefault(level, []).get(subLevel) ?? new StatSet();
-			skillInfo.GetValueOrDefault(level, []).GetValueOrDefault(-1, new StatSet()).getSet()
-				.ForEach(x => statSet.getSet().TryAdd(x.Key, x.Value));
-			skillInfo.GetValueOrDefault(-1, []).GetValueOrDefault(-1, new StatSet()).getSet()
-				.ForEach(x => statSet.getSet().TryAdd(x.Key, x.Value));
-			statSet.set(".level", level);
-			statSet.set(".subLevel", subLevel);
-			Skill skill = new(statSet);
-			ForEachNamedParamInfoParam(effectParamInfo, level, subLevel, (effectScope, @params) =>
+    private static IEnumerable<Skill> LoadSkill(XmlSkill xmlSkill)
+    {
+        SkillDataParser parser = new(xmlSkill);
+        for (int level = 1; level <= parser.MaxLevel; level++)
+        {
+            SortedSet<int> subLevels = parser.GetSubLevelsForLevel(level);
+            foreach (int subLevel in subLevels)
             {
-                string effectName = @params.getString(".name");
-                @params.remove(".name");
-                try
-                {
-                    Func<StatSet, AbstractEffect>? effectFunction =
-                        EffectHandler.getInstance().getHandlerFactory(effectName);
-                    if (effectFunction != null)
-                    {
-                        skill.addEffect(effectScope, effectFunction(@params));
-                    }
-                    else
-                    {
-                        LOGGER.Warn(GetType().Name + ": Missing effect for Skill Id[" + statSet.getInt(".id") +
-                            "] Level[" + level + "] SubLevel[" + subLevel + "] Effect Scope[" + effectScope +
-                            "] Effect Name[" + effectName + "]");
-                    }
-                }
-                catch (Exception e)
-                {
-                    LOGGER.Warn(
-                        GetType().Name + ": Failed loading effect for Skill Id[" + statSet.getInt(".id") + "] Level[" +
-                        level + "] SubLevel[" + subLevel + "] Effect Scope[" + effectScope + "] Effect Name[" +
-                        effectName + "]", e);
-                }
-            });
-
-			ForEachNamedParamInfoParam(conditionParamInfo, level, subLevel, (skillConditionScope, @params) =>
-            {
-                string conditionName = @params.getString(".name");
-                @params.remove(".name");
-                try
-                {
-                    Func<StatSet, ISkillCondition>? conditionFunction =
-                        SkillConditionHandler.getInstance().getHandlerFactory(conditionName);
-                    if (conditionFunction != null)
-                    {
-                        if (skill.isPassive())
-                        {
-                            if (skillConditionScope != SkillConditionScope.PASSIVE)
-                            {
-                                LOGGER.Warn(GetType().Name + ": Non passive condition for passive Skill Id[" +
-                                    statSet.getInt(".id") + "] Level[" + level + "] SubLevel[" + subLevel +
-                                    "]");
-                            }
-                        }
-                        else if (skillConditionScope == SkillConditionScope.PASSIVE)
-                        {
-                            LOGGER.Warn(GetType().Name + ": Passive condition for non passive Skill Id[" +
-                                statSet.getInt(".id") + "] Level[" + level + "] SubLevel[" + subLevel + "]");
-                        }
-
-                        skill.addCondition(skillConditionScope, conditionFunction(@params));
-                    }
-                    else
-                    {
-                        LOGGER.Warn(GetType().Name + ": Missing condition for Skill Id[" + statSet.getInt(".id") +
-                            "] Level[" + level + "] SubLevel[" + subLevel + "] Effect Scope[" +
-                            skillConditionScope + "] Effect Name[" + conditionName + "]");
-                    }
-                }
-                catch (Exception e)
-                {
-                    LOGGER.Warn(
-                        GetType().Name + ": Failed loading condition for Skill Id[" + statSet.getInt(".id") +
-                        "] Level[" + level + "] SubLevel[" + subLevel + "] Condition Scope[" + skillConditionScope +
-                        "] Condition Name[" + conditionName + "]", e);
-                }
-            });
-
-			_skills.put(GetSkillHashCode(skill), skill);
-			_skillsMaxLevel.merge(skill.getId(), skill.getLevel(), Math.Max);
-			if (skill.getSubLevel() % 1000 == 1)
-			{
-				EnchantSkillGroupsData.getInstance()
-					.addRouteForSkill(skill.getId(), skill.getLevel(), skill.getSubLevel());
-			}
-		}));
-	}
-
-	private static void ForEachNamedParamInfoParam<T>(Map<T, List<NamedParamInfo>> paramInfo, int level, int subLevel,
-		Action<T, StatSet> consumer)
-		where T: notnull
-	{
-		paramInfo.ForEach(kvp => kvp.Value.ForEach(namedParamInfo =>
-		{
-			// TODO: review code and refactor
-			(T scope, _) = kvp;
-			if (((namedParamInfo.FromLevel == null && namedParamInfo.ToLevel == null) ||
-			     (namedParamInfo.FromLevel <= level && namedParamInfo.ToLevel >= level)) //
-			    && ((namedParamInfo.FromSubLevel == null && namedParamInfo.ToSubLevel == null) ||
-			        (namedParamInfo.FromSubLevel <= subLevel && namedParamInfo.ToSubLevel >= subLevel)))
-			{
-				StatSet @params = namedParamInfo.Info.GetValueOrDefault(level, []).get(subLevel) ?? new StatSet();
-
-				namedParamInfo.Info.GetValueOrDefault(level, [])
-					.GetValueOrDefault(-1, new StatSet()).getSet()
-					.ForEach(x => @params.getSet().TryAdd(x.Key, x.Value));
-				namedParamInfo.Info.GetValueOrDefault(-1, [])
-					.GetValueOrDefault(-1, new StatSet()).getSet()
-					.ForEach(x => @params.getSet().TryAdd(x.Key, x.Value));
-				@params.set(".name", namedParamInfo.Name);
-				consumer(scope, @params);
-			}
-		}));
-	}
-
-	private NamedParamInfo ParseNamedParamInfo(XElement element, Map<string, Map<int, Map<int, object>>> variableValues)
-	{
-		string name = element.GetAttributeValueAsString("name");
-		int? level = element.GetAttributeValueAsInt32OrNull("level");
-		int? fromLevel = element.GetAttributeValueAsInt32OrNull("fromLevel") ?? level;
-		int? toLevel = element.GetAttributeValueAsInt32OrNull("toLevel") ?? level;
-		int? subLevel = element.GetAttributeValueAsInt32OrNull("subLevel");
-		int? fromSubLevel = element.GetAttributeValueAsInt32OrNull("fromSubLevel") ?? subLevel;
-		int? toSubLevel = element.GetAttributeValueAsInt32OrNull("toSubLevel") ?? subLevel;
-
-		Map<int, Map<int, StatSet>> info = [];
-		element.Elements().ForEach(el => ParseInfo(el, variableValues, info));
-
-		return new NamedParamInfo(name, fromLevel, toLevel, fromSubLevel, toSubLevel, info);
-	}
-
-	private static void ParseInfo(XElement element, Map<string, Map<int, Map<int, object>>> variableValues,
-		Map<int, Map<int, StatSet>> info)
-	{
-		Map<int, Map<int, object>> values = ParseValues(element);
-		object? generalValue = values.GetValueOrDefault(-1)?.GetValueOrDefault(-1);
-		if (generalValue != null)
-		{
-			string stringGeneralValue = generalValue.ToString() ?? string.Empty;
-			if (stringGeneralValue.startsWith("@"))
-            {
-                values = variableValues.GetValueOrDefault(stringGeneralValue) ??
-                    throw new InvalidOperationException("undefined variable " + stringGeneralValue);
-			}
-		}
-
-		values.ForEach(kvp =>
-		{
-			int level = kvp.Key;
-			kvp.Value.ForEach(kvp2 =>
-			{
-				(int subLevel, object value) = kvp2;
-				info.GetOrAdd(level, _ => []).GetOrAdd(subLevel, _ => new StatSet())
-					.set(element.Name.LocalName, value);
-			});
-		});
-	}
-
-	private static Map<int, Map<int, object>> ParseValues(XElement element)
-	{
-		Map<int, Map<int, object>> values = [];
-		object? parsedValue = ParseValue(element, true, false, []);
-		if (parsedValue != null)
-		{
-			values.GetOrAdd(-1, _ => []).put(-1, parsedValue);
-		}
-		else
-		{
-			foreach (XElement n in element.Elements())
-			{
-				if (n.Name.LocalName.equalsIgnoreCase("value"))
-				{
-					int level = n.Attribute("level").GetInt32(-1);
-					if (level >= 0)
-					{
-						parsedValue = ParseValue(n, false, false, []);
-						if (parsedValue != null)
-						{
-							int subLevel = n.Attribute("subLevel").GetInt32(-1);
-							values.GetOrAdd(level, _ => []).put(subLevel, parsedValue);
-						}
-					}
-					else
-					{
-						int fromLevel = n.GetAttributeValueAsInt32("fromLevel");
-						int toLevel = n.GetAttributeValueAsInt32("toLevel");
-						int fromSubLevel = n.Attribute("fromSubLevel").GetInt32(-1);
-						int toSubLevel = n.Attribute("toSubLevel").GetInt32(-1);
-						for (int i = fromLevel; i <= toLevel; i++)
-						{
-							for (int j = fromSubLevel; j <= toSubLevel; j++)
-							{
-								Map<int, object> subValues = values.GetOrAdd(i, _ => []);
-								Map<string, double> variables = new();
-								variables.put("index", i - fromLevel + 1d);
-								variables.put("subIndex", j - fromSubLevel + 1d);
-								object? @base = values.GetValueOrDefault(i)?.GetValueOrDefault(-1);
-								string baseText = @base?.ToString() ?? string.Empty;
-								if (@base != null && !(@base is StatSet) && !baseText.equalsIgnoreCase("true") &&
-                                    !baseText.equalsIgnoreCase("false"))
-								{
-									variables.put("base", double.Parse(baseText));
-								}
-
-								parsedValue = ParseValue(n, false, false, variables);
-								if (parsedValue != null)
-								{
-									subValues.put(j, parsedValue);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-		return values;
-	}
-
-    private static object? ParseValue(XElement element, bool blockValue, bool parseAttributes, Map<string, double> variables)
-	{
-		StatSet? statSet = null;
-		List<object>? list = null;
-		object? text = null;
-		if (parseAttributes && (!element.Name.LocalName.equals("value") || !blockValue) && element.Attributes().Any())
-		{
-			statSet = new StatSet();
-			ParseAttributes(element, string.Empty, statSet, variables);
-		}
-
-		if (!element.HasElements && !string.IsNullOrEmpty(element.Value))
-		{
-			string value = element.Value.Trim();
-			if (!string.IsNullOrEmpty(value))
-			{
-				text = ParseNodeValue(value, variables);
-			}
-		}
-
-		foreach (XElement n in element.Elements())
-		{
-			string nodeName = n.Name.LocalName;
-			switch (nodeName)
-			{
-				case "item":
-				{
-					if (list == null)
-					{
-						list = new();
-					}
-
-					object? value = ParseValue(n, false, true, variables);
-					if (value != null)
-						list.Add(value);
-
-					break;
-				}
-				case "value":
-				{
-					if (blockValue)
-						break;
-
-					// fallthrough
-					goto default;
-				}
-				default:
-				{
-					object? value = ParseValue(n, false, true, variables);
-					if (value != null)
-                    {
-                        statSet ??= new StatSet();
-                        statSet.set(nodeName, value);
-                    }
-
-					break;
-				}
-			}
-		}
-
-		if (list != null)
-		{
-			if (text != null)
-			{
-				throw new InvalidOperationException("Text and list in same node are not allowed. Node[" + element +
-				                                    "]");
-			}
-
-			if (statSet != null)
-			{
-				statSet.set(".", list);
-			}
-			else
-			{
-				return list;
-			}
-		}
-
-		if (text != null)
-		{
-			if (list != null)
-            {
-                throw new InvalidOperationException("Text and list in same node are not allowed. Node[" + element +
-                    "]");
+                SkillParameters parameters = parser.GetParameters(level, subLevel);
+                yield return new Skill(parameters);
             }
-
-			if (statSet != null)
-			{
-				statSet.set(".", text);
-			}
-			else
-			{
-				return text;
-			}
-		}
-
-        return statSet;
-    }
-
-    private static void ParseAttributes(XElement element, string prefix, StatSet statSet,
-        Map<string, double>? variables = null)
-    {
-        foreach (XAttribute attribute in element.Attributes())
-        {
-            string name = attribute.Name.LocalName;
-            string value = attribute.Value;
-            statSet.set(prefix + "." + name, ParseNodeValue(value, variables));
         }
-    }
-
-    private static object ParseNodeValue(string value, Map<string, double>? variables)
-    {
-        if (value.startsWith("{") && value.endsWith("}"))
-        {
-            ParserResult<Expression> result = ExpressionParser.Parser(value.Substring(1, value.Length - 2));
-            if (!result.Success)
-                throw new InvalidOperationException($"Invalid expression '{value}'");
-
-            return result.Result.Evaluate(variables);
-        }
-
-        return value;
     }
 
     public static SkillData getInstance() => SingletonHolder.INSTANCE;
@@ -618,5 +158,626 @@ public class SkillData: DataReaderBase
     private static class SingletonHolder
     {
         public static readonly SkillData INSTANCE = new();
+    }
+}
+
+internal sealed class SkillParameters
+{
+    public required int Id { get; init; }
+    public required int Level { get; init; }
+    public required int SubLevel { get; init; }
+    public required string Name { get; init; }
+    public required int? DisplayId { get; init; }
+    public required int? DisplayLevel { get; init; }
+    public required int? ReferenceId { get; init; }
+    public ParameterSet<XmlSkillParameterType> Parameters { get; } = new();
+    public Dictionary<SkillConditionScope, List<ISkillCondition>> Conditions { get; } = [];
+    public Dictionary<EffectScope, List<AbstractEffect>> Effects { get; } = [];
+}
+
+file sealed class SkillDataParser
+{
+    private readonly int _skillId;
+    private readonly string _skillName;
+    private readonly int? _skillDisplayId;
+    private readonly int? _skillDisplayLevel;
+    private readonly int? _referenceId;
+    private readonly Dictionary<string, List<Variable>> _variables = [];
+    private readonly Dictionary<XmlSkillParameterType, List<Parameter>> _parameters = [];
+    private readonly Dictionary<SkillConditionScope, List<Condition>> _conditions = [];
+    private readonly Dictionary<EffectScope, List<Effect>> _effects = [];
+    private readonly int _maxLevel;
+
+    public SkillDataParser(XmlSkill xmlSkill)
+    {
+        _skillId = xmlSkill.Id;
+        _skillName = xmlSkill.Name;
+        _skillDisplayId = xmlSkill.DisplayIdSpecified ? xmlSkill.DisplayId : null;
+        _skillDisplayLevel = xmlSkill.DisplayLevelSpecified ? xmlSkill.DisplayLevel : null;
+        _referenceId = xmlSkill.ReferenceIdSpecified ? xmlSkill.ReferenceId : null;
+        CollectSkillParameters(xmlSkill);
+        _maxLevel = GetMaxLevel(xmlSkill.ToLevel);
+    }
+
+    public int MaxLevel => _maxLevel;
+
+    public SortedSet<int> GetSubLevelsForLevel(int level)
+    {
+        SortedSet<int> subLevels = [0];
+        _variables.Values.SelectMany(x => x).ForEach(x => x.GetSubLevels(subLevels, level));
+        _parameters.Values.SelectMany(x => x).ForEach(x => x.GetSubLevels(subLevels, level));
+        _conditions.Values.SelectMany(x => x).ForEach(x => x.GetSubLevels(subLevels, level));
+        _effects.Values.SelectMany(x => x).ForEach(x => x.GetSubLevels(subLevels, level));
+        return subLevels;
+    }
+
+    public SkillParameters GetParameters(int level, int subLevel)
+    {
+        SkillParameters parameters = new()
+        {
+            Id = _skillId,
+            Level = level,
+            SubLevel = subLevel,
+            Name = _skillName,
+            DisplayId = _skillDisplayId,
+            DisplayLevel = _skillDisplayLevel,
+            ReferenceId = _referenceId,
+        };
+
+        // Calculate variables
+        Dictionary<string, decimal> variables = [];
+        foreach ((string variableName, List<Variable> variableList) in _variables)
+        {
+            FilterByLevel(variableList, level, subLevel).
+                ForEach(v =>
+                {
+                    object value = ParseValue(variables, v, level, subLevel, v.Value);
+                    if (value is not decimal decimalValue && !decimal.TryParse(value.ToString(),
+                            CultureInfo.InvariantCulture, out decimalValue))
+                    {
+                        throw new InvalidOperationException($"Invalid skill id={_skillId} definition: invalid " +
+                            $"variable '{variableName}' value '{value}'");
+                    }
+
+                    variables[variableName] = decimalValue;
+                });
+        }
+
+        // Calculate parameters
+        foreach ((XmlSkillParameterType type, List<Parameter> parameterList) in _parameters)
+        {
+            FilterByLevel(parameterList, level, subLevel).
+                ForEach(parameter =>
+                    parameters.Parameters[type] = ParseValue(variables, parameter, level, subLevel, parameter.Value));
+        }
+
+        // Calculate conditions
+        foreach ((SkillConditionScope conditionScope, List<Condition> conditionList) in _conditions)
+        {
+            FilterByLevel(conditionList, level, subLevel, false).ForEach(condition =>
+            {
+                // Calculate condition parameters
+                StatSet statSet = new();
+                statSet.set("type", condition.Type);
+                foreach ((XmlSkillConditionParameterType type, List<Parameter> parameterList) in condition.Parameters)
+                {
+                    FilterByLevel(parameterList, level, subLevel).
+                        ForEach(parameter =>
+                        {
+                            string paramName =
+                                type.GetCustomAttribute<XmlSkillConditionParameterType, XmlEnumAttribute>()?.Name ??
+                                type.ToString();
+
+                            statSet.set(paramName, ParseValue(variables, parameter, level, subLevel, parameter.Value));
+                        });
+                }
+
+                Func<StatSet, ISkillCondition>? handlerFactory =
+                    SkillConditionHandler.getInstance().getHandlerFactory(condition.Name);
+
+                if (handlerFactory is null)
+                    throw new InvalidOperationException(
+                        $"Invalid skill id={_skillId}: condition handler '{condition.Name}' not found");
+
+                ISkillCondition skillCondition = handlerFactory(statSet);
+
+                parameters.Conditions.GetOrAdd(conditionScope, _ => []).Add(skillCondition);
+            });
+        }
+
+        // Calculate effects
+        foreach ((EffectScope effectScope, List<Effect> effectList) in _effects)
+        {
+            FilterByLevel(effectList, level, subLevel, false).ForEach(effect =>
+            {
+                // Calculate condition parameters
+                StatSet statSet = new();
+                foreach ((XmlSkillEffectParameterType type, List<Parameter> parameterList) in effect.Parameters)
+                {
+                    FilterByLevel(parameterList, level, subLevel).
+                        ForEach(parameter =>
+                        {
+                            string paramName =
+                                type.GetCustomAttribute<XmlSkillEffectParameterType, XmlEnumAttribute>()?.Name ??
+                                type.ToString();
+
+                            statSet.set(paramName, ParseValue(variables, parameter, level, subLevel, parameter.Value));
+                        });
+                }
+
+                Func<StatSet, AbstractEffect>? handlerFactory =
+                    EffectHandler.getInstance().getHandlerFactory(effect.Name);
+
+                if (handlerFactory is null)
+                    throw new InvalidOperationException(
+                        $"Invalid skill id={_skillId}: effect handler '{effect.Name}' not found");
+
+                AbstractEffect skillEffect = handlerFactory(statSet);
+
+                parameters.Effects.GetOrAdd(effectScope, _ => []).Add(skillEffect);
+            });
+        }
+
+        return parameters;
+    }
+
+    private void CollectSkillParameters(XmlSkill xmlSkill)
+    {
+        if (xmlSkill.ParameterTypes is null || xmlSkill.Parameters is null)
+            return;
+
+        foreach ((XmlSkillParameterType type, object value) in xmlSkill.ParameterTypes.Zip(xmlSkill.Parameters))
+        {
+            switch (value)
+            {
+                case XmlSkillVariable xmlSkillVariable:
+                {
+                    if (type != XmlSkillParameterType.Variable)
+                        throw new InvalidOperationException($"Invalid skill id={_skillId} definition");
+
+                    List<Variable> variables = _variables.GetOrAdd(xmlSkillVariable.Name, _ => []);
+                    if (!string.IsNullOrWhiteSpace(xmlSkillVariable.Value))
+                        variables.Add(new Variable(null, null, xmlSkillVariable.Value));
+
+                    variables.AddRange(xmlSkillVariable.Values.Select(xmlSkillLevelValue =>
+                        new Variable(GetLevelRange(xmlSkillLevelValue), GetSubLevelRange(xmlSkillLevelValue),
+                            xmlSkillLevelValue.Value)));
+
+                    break;
+                }
+
+                case XmlSkillConditionList xmlSkillConditionList:
+                {
+                    SkillConditionScope conditionScope = GetConditionScope(type);
+                    List<Condition> conditions = _conditions.GetOrAdd(conditionScope, _ => []);
+
+                    foreach (XmlSkillCondition xmlSkillCondition in xmlSkillConditionList.Conditions)
+                    {
+                        Dictionary<XmlSkillConditionParameterType, List<Parameter>> parameters =
+                            CollectSkillConditionParameters(xmlSkillCondition);
+
+                        conditions.Add(new Condition(GetLevelRange(xmlSkillCondition),
+                            GetSubLevelRange(xmlSkillCondition), xmlSkillCondition.Name, xmlSkillCondition.Type,
+                            parameters));
+                    }
+
+                    break;
+                }
+
+                case XmlSkillEffectList xmlSkillEffectList:
+                {
+                    EffectScope effectScope = GetEffectScope(type);
+                    List<Effect> effects = _effects.GetOrAdd(effectScope, _ => []);
+
+                    foreach (XmlSkillEffect xmlSkillEffect in xmlSkillEffectList.Effects)
+                    {
+                        Dictionary<XmlSkillEffectParameterType, List<Parameter>> parameters =
+                            CollectSkillEffectParameters(xmlSkillEffect);
+
+                        effects.Add(new Effect(GetLevelRange(xmlSkillEffect), GetSubLevelRange(xmlSkillEffect),
+                            xmlSkillEffect.Name, parameters));
+                    }
+
+                    break;
+                }
+
+                case IXmlSkillValue xmlSkillValue:
+                {
+                    List<Parameter> parameters = _parameters.GetOrAdd(type, _ => []);
+                    if (!string.IsNullOrWhiteSpace(xmlSkillValue.Value))
+                        parameters.Add(new Parameter(null, null, xmlSkillValue.Value));
+
+                    parameters.AddRange(xmlSkillValue.Values.Select(xmlSkillLevelValue =>
+                        new Parameter(GetLevelRange(xmlSkillLevelValue), GetSubLevelRange(xmlSkillLevelValue),
+                            xmlSkillLevelValue.Value)));
+
+                    break;
+                }
+
+                default:
+                    _parameters.GetOrAdd(type, _ => []).Add(new Parameter(null, null, value));
+                    break;
+            }
+        }
+
+        // Sort parameters
+        _parameters.Values.ForEach(SortValues);
+    }
+
+    private Dictionary<XmlSkillConditionParameterType, List<Parameter>> CollectSkillConditionParameters(
+        XmlSkillCondition xmlSkillCondition)
+    {
+        Dictionary<XmlSkillConditionParameterType, List<Parameter>> parameters = [];
+        if (xmlSkillCondition.ParameterTypes is null || xmlSkillCondition.Parameters is null)
+            return parameters;
+
+        foreach ((XmlSkillConditionParameterType type, object value) in xmlSkillCondition.ParameterTypes.Zip(
+                     xmlSkillCondition.Parameters))
+        {
+            List<Parameter> parameterList = parameters.GetOrAdd(type, _ => []);
+            switch (value)
+            {
+                case XmlSkillStringList xmlSkillStringList:
+                    parameterList.Add(new Parameter(null, null, xmlSkillStringList.Items));
+                    break;
+
+                case XmlSkillIntList xmlSkillIntList:
+                    parameterList.Add(new Parameter(null, null, xmlSkillIntList.Items));
+                    break;
+
+                case IXmlSkillValue xmlSkillValue:
+                {
+                    if (!string.IsNullOrWhiteSpace(xmlSkillValue.Value))
+                        parameterList.Add(new Parameter(null, null, xmlSkillValue.Value));
+
+                    parameterList.AddRange(xmlSkillValue.Values.Select(xmlSkillLevelValue =>
+                        new Parameter(GetLevelRange(xmlSkillLevelValue), GetSubLevelRange(xmlSkillLevelValue),
+                            xmlSkillLevelValue.Value)));
+
+                    break;
+                }
+
+                default:
+                    parameterList.Add(new Parameter(null, null, value));
+                    break;
+            }
+        }
+
+        // Sort parameters
+        parameters.Values.ForEach(SortValues);
+
+        return parameters;
+    }
+
+    private Dictionary<XmlSkillEffectParameterType, List<Parameter>> CollectSkillEffectParameters(
+        XmlSkillEffect xmlSkillEffect)
+    {
+        Dictionary<XmlSkillEffectParameterType, List<Parameter>> parameters = [];
+        if (xmlSkillEffect.ParameterTypes is null || xmlSkillEffect.Parameters is null)
+            return parameters;
+
+        foreach ((XmlSkillEffectParameterType type, object value) in xmlSkillEffect.ParameterTypes.Zip(xmlSkillEffect.
+                     Parameters))
+        {
+            List<Parameter> parameterList = parameters.GetOrAdd(type, _ => []);
+            switch (value)
+            {
+                case XmlSkillStringList xmlSkillStringList:
+                    parameterList.Add(new Parameter(null, null, xmlSkillStringList.Items));
+                    break;
+
+                case XmlSkillIntList xmlSkillIntList:
+                    parameterList.Add(new Parameter(null, null, xmlSkillIntList.Items));
+                    break;
+
+                case XmlSkillEffectItemList xmlSkillEffectItemList:
+                {
+                    if (xmlSkillEffectItemList.Items.Count != 0)
+                        parameterList.Add(new Parameter(null, null, xmlSkillEffectItemList.Items));
+
+                    parameterList.AddRange(xmlSkillEffectItemList.Values.Select(xmlSkillEffectLevelItemList =>
+                        new Parameter(GetLevelRange(xmlSkillEffectLevelItemList),
+                            GetSubLevelRange(xmlSkillEffectLevelItemList), xmlSkillEffectLevelItemList.Items)));
+
+                    break;
+                }
+
+                case IXmlSkillValue xmlSkillValue:
+                {
+                    if (!string.IsNullOrWhiteSpace(xmlSkillValue.Value))
+                        parameterList.Add(new Parameter(null, null, xmlSkillValue.Value));
+
+                    parameterList.AddRange(xmlSkillValue.Values.Select(xmlSkillLevelValue =>
+                        new Parameter(GetLevelRange(xmlSkillLevelValue), GetSubLevelRange(xmlSkillLevelValue),
+                            xmlSkillLevelValue.Value)));
+
+                    break;
+                }
+
+                default:
+                    parameterList.Add(new Parameter(null, null, value));
+                    break;
+            }
+        }
+
+        // Sort parameters
+        parameters.Values.ForEach(SortValues);
+
+        return parameters;
+    }
+
+    private int GetMaxLevel(int toLevel) =>
+        new[] { 1, toLevel }.
+            Concat(_variables.Values.Select(GetMaxLevel)).
+            Concat(_parameters.Values.Select(GetMaxLevel)).
+            Concat(_conditions.Values.Select(GetMaxLevel)).
+            Concat(_effects.Values.Select(GetMaxLevel)).
+            Max();
+
+    private Range<byte>? GetLevelRange(IXmlSkillLevelRestriction restriction)
+    {
+        if (restriction.LevelSpecified)
+        {
+            if (restriction.Level == 0)
+                throw new ArgumentOutOfRangeException(nameof(restriction), restriction.Level,
+                    $"Invalid skill id={_skillId} definition: invalid level {restriction.Level}");
+
+            if (restriction.FromLevelSpecified || restriction.ToLevelSpecified)
+            {
+                throw new ArgumentException($"Invalid skill id={_skillId} definition: level cannot be specified " +
+                    "with fromLevel or with toLevel.");
+            }
+
+            return Range.Create(restriction.Level, restriction.Level);
+        }
+
+        if (restriction.FromLevelSpecified && restriction.ToLevelSpecified)
+            return Range.Create(restriction.FromLevel, restriction.ToLevel);
+
+        if (restriction.FromLevelSpecified || restriction.ToLevelSpecified)
+        {
+            throw new InvalidOperationException($"Invalid skill id={_skillId} definition: fromLevel and toLevel " +
+                "must be both specified or both skipped.");
+        }
+
+        return null;
+    }
+
+    private Range<ushort>? GetSubLevelRange(IXmlSkillLevelRestriction restriction)
+    {
+        if (restriction.FromSubLevelSpecified && restriction.ToSubLevelSpecified)
+            return Range.Create(restriction.FromSubLevel, restriction.ToSubLevel);
+
+        if (restriction.FromSubLevelSpecified || restriction.ToSubLevelSpecified)
+        {
+            throw new InvalidOperationException($"Invalid skill id={_skillId} definition: fromSubLevel and " +
+                "toSubLevel must be both specified or both skipped.");
+        }
+
+        return null;
+    }
+
+    private static SkillConditionScope GetConditionScope(XmlSkillParameterType type) =>
+        type switch
+        {
+            XmlSkillParameterType.Conditions => SkillConditionScope.GENERAL,
+            XmlSkillParameterType.PassiveConditions => SkillConditionScope.PASSIVE,
+            XmlSkillParameterType.TargetConditions => SkillConditionScope.TARGET,
+            _ => throw new ArgumentException($"Invalid condition list type: {type}"),
+        };
+
+    private static EffectScope GetEffectScope(XmlSkillParameterType type) =>
+        type switch
+        {
+            XmlSkillParameterType.Effects => EffectScope.GENERAL,
+            XmlSkillParameterType.ChannelingEffects => EffectScope.CHANNELING,
+            XmlSkillParameterType.SelfEffects => EffectScope.SELF,
+            XmlSkillParameterType.StartEffects => EffectScope.START,
+            XmlSkillParameterType.EndEffects => EffectScope.END,
+            XmlSkillParameterType.PveEffects => EffectScope.PVE,
+            XmlSkillParameterType.PvpEffects => EffectScope.PVP,
+            _ => throw new ArgumentException($"Invalid effect list type: {type}"),
+        };
+
+    private static long GetSortOrder<T>(T value)
+        where T: struct, ILevelRange
+    {
+        // 1 byte (5) - from level
+        // 1 byte (4) - to level
+        // 2 bytes (2-3) - from sublevel
+        // 2 bytes (0-1) - to sublevel
+        long result = 0;
+        if (value.LevelRange != null)
+            result |= ((long)value.LevelRange.Value.Left << 40) | ((long)value.LevelRange.Value.Right << 32);
+
+        if (value.SubLevelRange != null)
+            result |= ((long)value.SubLevelRange.Value.Left << 16) | value.SubLevelRange.Value.Right;
+
+        return result;
+    }
+
+    private static void SortValues<T>(List<T> list)
+        where T: struct, ILevelRange =>
+        list.Sort((v1, v2) => GetSortOrder(v1).CompareFast(GetSortOrder(v2)));
+
+    private static int GetMaxLevel(Range<byte>? levelRange) =>
+        levelRange is null ? 1 : Math.Max(levelRange.Value.Left, levelRange.Value.Right);
+
+    private static int GetMaxLevel<T>(IEnumerable<T> values)
+        where T: ILevelRange =>
+        values.Select(x => x.MaxLevel).Append(1).Max();
+
+    private static bool ContainsLevel(Range<byte>? levelRange, int level) =>
+        levelRange is null || (levelRange.Value.Left <= level && levelRange.Value.Right >= level);
+
+    private static bool ContainsSubLevel(Range<ushort>? subLevelRange, int subLevel) =>
+        subLevelRange is null || (subLevelRange.Value.Left <= subLevel && subLevelRange.Value.Right >= subLevel);
+
+    private static void CollectSubLevels(SortedSet<int> subLevels, Range<ushort>? subLevelRange)
+    {
+        if (subLevelRange is null)
+            return;
+
+        int right = subLevelRange.Value.Right;
+        for (int subLevel = subLevelRange.Value.Left; subLevel <= right; subLevel++)
+            subLevels.Add(subLevel);
+    }
+
+    private static IEnumerable<T> FilterByLevel<T>(IEnumerable<T> collection, int level, int subLevel, bool sort = true)
+        where T: ILevelRange
+    {
+        IEnumerable<T> filtered = collection.Where(x =>
+            ContainsLevel(x.LevelRange, level) && ContainsSubLevel(x.SubLevelRange, subLevel));
+
+        if (!sort)
+            return filtered;
+
+        return filtered.Select((x, i) => (Item: x, Index: i)).OrderBy(tuple =>
+        {
+            (T x, int index) = tuple;
+
+            // Order items by the level and sublevel match
+            // Lowest priority when level range and sublevel range not defined.
+            // Highest priority when level range has a single value and sublevel range has a single value.
+            int rank = (x.LevelRange, x.SubLevelRange) switch
+            {
+                ({ } levelRange, { } subLevelRange) when levelRange.Left == levelRange.Right && subLevelRange.Left == subLevelRange.Right => 8,
+                ({ } levelRange, not null) when levelRange.Left == levelRange.Right => 7,
+                (not null, { } subLevelRange) when subLevelRange.Left == subLevelRange.Right => 6,
+                (not null, not null) => 5,
+                ({ } levelRange, null) when levelRange.Left == levelRange.Right => 4,
+                (not null, null) => 3,
+                (null, { } subLevelRange) when subLevelRange.Left == subLevelRange.Right => 2,
+                (null, not null) => 1,
+                (null, null) => 0,
+            };
+
+            return ((long)rank << 32) | (uint)index;
+        }).Select(t => t.Item);
+    }
+
+    private object ParseValue<T>(Dictionary<string, decimal> variables, T levelRange, int currentLevel,
+        int currentSubLevel, object value)
+        where T: ILevelRange
+    {
+        if (value is not string s)
+            return value;
+
+        s = s.Trim();
+        if (s.StartsWith('@'))
+        {
+            string variableName = s[1..];
+            if (!variables.TryGetValue(variableName, out decimal variableValue))
+                throw new InvalidOperationException(
+                    $"Invalid skill id={_skillId} definition: variable {variableName} not found");
+
+            return variableValue;
+        }
+
+        if (!s.StartsWith('{') || !s.EndsWith('}'))
+            return value;
+
+        bool indexVariableExists = false;
+        decimal oldIndex = 0;
+        bool subIndexVariableExists = false;
+        decimal oldSubIndex = 0;
+        if (levelRange.LevelRange is not null)
+        {
+            indexVariableExists = variables.TryGetValue("index", out oldIndex);
+            variables["index"] = currentLevel - levelRange.LevelRange.Value.Left + 1;
+        }
+
+        if (levelRange.SubLevelRange is not null)
+        {
+            subIndexVariableExists = variables.TryGetValue("subIndex", out oldSubIndex);
+            variables["subIndex"] = currentSubLevel - levelRange.SubLevelRange.Value.Left + 1;
+        }
+
+        string expression = s.Substring(1, s.Length - 2);
+        ParserResult<Expression> result = ExpressionParser.Parser(expression);
+        if (!result.Success)
+            throw new InvalidOperationException(
+                $"Invalid skill id={_skillId} definition: invalid expression '{value}'");
+
+        decimal newValue = result.Result.Evaluate(variables);
+
+        // restore old index and subIndex
+        if (indexVariableExists)
+            variables["index"] = oldIndex;
+
+        if (subIndexVariableExists)
+            variables["subIndex"] = oldSubIndex;
+
+        return newValue;
+
+    }
+
+    private interface ILevelRange
+    {
+        Range<byte>? LevelRange { get; }
+        Range<ushort>? SubLevelRange { get; }
+        int MaxLevel { get; }
+    }
+
+    private readonly record struct Variable(
+        Range<byte>? LevelRange, Range<ushort>? SubLevelRange, string Value): ILevelRange
+    {
+        public int MaxLevel => GetMaxLevel(LevelRange);
+
+        public void GetSubLevels(SortedSet<int> subLevels, int level)
+        {
+            if (!ContainsLevel(LevelRange, level))
+                return;
+
+            CollectSubLevels(subLevels, SubLevelRange);
+        }
+    }
+
+    private readonly record struct Parameter(
+        Range<byte>? LevelRange, Range<ushort>? SubLevelRange, object Value): ILevelRange
+    {
+        public int MaxLevel => GetMaxLevel(LevelRange);
+
+        public void GetSubLevels(SortedSet<int> subLevels, int level)
+        {
+            if (!ContainsLevel(LevelRange, level))
+                return;
+
+            CollectSubLevels(subLevels, SubLevelRange);
+        }
+    }
+
+    private readonly record struct Condition(
+        Range<byte>? LevelRange, Range<ushort>? SubLevelRange, string Name, string Type,
+        Dictionary<XmlSkillConditionParameterType, List<Parameter>> Parameters): ILevelRange
+    {
+        public int MaxLevel =>
+            Parameters.Values.SelectMany(x => x).Select(x => x.MaxLevel).Append(GetMaxLevel(LevelRange)).Max();
+
+        public void GetSubLevels(SortedSet<int> subLevels, int level)
+        {
+            if (!ContainsLevel(LevelRange, level))
+                return;
+
+            CollectSubLevels(subLevels, SubLevelRange);
+            Parameters.Values.SelectMany(x => x).ForEach(x => x.GetSubLevels(subLevels, level));
+        }
+    }
+
+    private readonly record struct Effect(
+        Range<byte>? LevelRange, Range<ushort>? SubLevelRange, string Name,
+        Dictionary<XmlSkillEffectParameterType, List<Parameter>> Parameters): ILevelRange
+    {
+        public int MaxLevel =>
+            Parameters.Values.SelectMany(x => x).Select(x => x.MaxLevel).Append(GetMaxLevel(LevelRange)).Max();
+
+        public void GetSubLevels(SortedSet<int> subLevels, int level)
+        {
+            if (!ContainsLevel(LevelRange, level))
+                return;
+
+            CollectSubLevels(subLevels, SubLevelRange);
+            Parameters.Values.SelectMany(x => x).ForEach(x => x.GetSubLevels(subLevels, level));
+        }
     }
 }

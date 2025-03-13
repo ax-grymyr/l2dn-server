@@ -1,5 +1,4 @@
 ﻿using System.Xml.Linq;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
@@ -13,7 +12,8 @@ public abstract class DataReaderBase
         LoadXmlDocument(GetFullPath(location, relativeFilePath));
 
     protected static T LoadXmlDocument<T>(DataFileLocation location, string relativeFilePath)
-        where T: class => XmlUtil.Deserialize<T>(GetFullPath(location, relativeFilePath));
+        where T: class =>
+        XmlUtil.Deserialize<T>(GetFullPath(location, relativeFilePath));
 
     protected static IEnumerable<(string FilePath, XDocument Document)> LoadXmlDocuments(DataFileLocation location,
         string relativeDirPath, bool includeSubDirectories = false)
@@ -21,7 +21,7 @@ public abstract class DataReaderBase
         string directoryPath = GetFullPath(location, relativeDirPath);
         if (!Directory.Exists(directoryPath))
             yield break;
-            
+
         IEnumerable<string> files = Directory.EnumerateFiles(GetFullPath(location, relativeDirPath), "*.xml",
             includeSubDirectories ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
 
@@ -39,7 +39,7 @@ public abstract class DataReaderBase
         string directoryPath = GetFullPath(location, relativeDirPath);
         if (!Directory.Exists(directoryPath))
             yield break;
-            
+
         IEnumerable<string> files = Directory.EnumerateFiles(GetFullPath(location, relativeDirPath), "*.xml",
             includeSubDirectories ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
 
@@ -58,7 +58,8 @@ public abstract class DataReaderBase
     }
 
     protected static T LoadXmlDocument<T>(string filePath)
-        where T: class => XmlUtil.Deserialize<T>(filePath);
+        where T: class =>
+        XmlUtil.Deserialize<T>(filePath);
 
     public static string GetFullPath(DataFileLocation location, string relativePath) =>
         Path.Combine(location == DataFileLocation.Data ? Config.DATAPACK_ROOT_PATH : "Config", relativePath);
@@ -86,7 +87,7 @@ public abstract class DataReaderBase
                     parameters.put(name, value);
                     break;
                 }
-                
+
                 case "skill":
                 {
                     string name = parameterNode.GetAttributeValueAsString("name");
@@ -95,7 +96,7 @@ public abstract class DataReaderBase
                     parameters.put(name, new SkillHolder(id, level));
                     break;
                 }
-                
+
                 case "location":
                 {
                     string name = parameterNode.GetAttributeValueAsString("name");
@@ -114,17 +115,18 @@ public abstract class DataReaderBase
                         int max = minionsNode.Attribute("max").GetInt32(0);
                         int respawnTime = minionsNode.GetAttributeValueAsInt32("respawnTime");
                         int weightPoint = minionsNode.Attribute("weightPoint").GetInt32(0);
-                        minions.Add(new MinionHolder(id, count, max, TimeSpan.FromMilliseconds(respawnTime), weightPoint));
+                        minions.Add(new MinionHolder(id, count, max, TimeSpan.FromMilliseconds(respawnTime),
+                            weightPoint));
                     }
-					
+
                     if (minions.Count != 0)
                         parameters.put(name, minions);
-                    
+
                     break;
                 }
             }
         }
-        
+
         return parameters;
     }
 }

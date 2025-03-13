@@ -1,0 +1,1 @@
+﻿// TODO: For now the L2Dn.GameServer.StaticData project references L2Dn.GameServer.Model

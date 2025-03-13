@@ -5,13 +5,13 @@ public enum ExpressionType
     Number,
     Variable,
     UnaryOperator,
-    BinaryOperator
+    BinaryOperator,
 }
 
 public enum UnaryOperator
 {
     Plus,
-    Minus
+    Minus,
 }
 
 public enum BinaryOperator
@@ -19,31 +19,31 @@ public enum BinaryOperator
     Add,
     Subtract,
     Multiply,
-    Divide
+    Divide,
 }
 
 public abstract record Expression(ExpressionType Type)
 {
-    public abstract double Evaluate(IReadOnlyDictionary<string, double>? variables);
+    public abstract decimal Evaluate(IReadOnlyDictionary<string, decimal>? variables);
 }
 
-public sealed record NumberExpression(double Number): Expression(ExpressionType.Number)
+public sealed record NumberExpression(decimal Number): Expression(ExpressionType.Number)
 {
-    public override double Evaluate(IReadOnlyDictionary<string, double>? variables) => Number;
+    public override decimal Evaluate(IReadOnlyDictionary<string, decimal>? variables) => Number;
 }
 
 public sealed record VariableExpression(string Variable): Expression(ExpressionType.Variable)
 {
-    public override double Evaluate(IReadOnlyDictionary<string, double>? variables) =>
+    public override decimal Evaluate(IReadOnlyDictionary<string, decimal>? variables) =>
         (variables ?? throw new InvalidOperationException("No variables defined")).
-        TryGetValue(Variable, out double value)
+        TryGetValue(Variable, out decimal value)
             ? value
             : throw new InvalidOperationException($"Variable '{Variable}' is not defined");
 }
 
 public sealed record UnaryOperatorExpression(UnaryOperator Operator, Expression Argument): Expression(ExpressionType.UnaryOperator)
 {
-    public override double Evaluate(IReadOnlyDictionary<string, double>? variables) =>
+    public override decimal Evaluate(IReadOnlyDictionary<string, decimal>? variables) =>
         Operator switch
         {
             UnaryOperator.Plus => Argument.Evaluate(variables),
@@ -54,14 +54,14 @@ public sealed record UnaryOperatorExpression(UnaryOperator Operator, Expression 
 
 public sealed record BinaryOperatorExpression(BinaryOperator Operator, Expression Argument1, Expression Argument2): Expression(ExpressionType.BinaryOperator)
 {
-    public override double Evaluate(IReadOnlyDictionary<string, double>? variables) =>
+    public override decimal Evaluate(IReadOnlyDictionary<string, decimal>? variables) =>
         Operator switch
         {
             BinaryOperator.Add => Argument1.Evaluate(variables) + Argument2.Evaluate(variables),
             BinaryOperator.Subtract => Argument1.Evaluate(variables) - Argument2.Evaluate(variables),
             BinaryOperator.Multiply => Argument1.Evaluate(variables) * Argument2.Evaluate(variables),
             BinaryOperator.Divide => Argument1.Evaluate(variables) / Argument2.Evaluate(variables),
-            _ => throw new InvalidOperationException("Unknown binary operator")
+            _ => throw new InvalidOperationException("Unknown binary operator"),
         };
 }
 
@@ -71,7 +71,7 @@ public static class ExpressionParser
 
     static ExpressionParser()
     {
-        Parser<Expression> numberParser = Parse.Double.Select(x => (Expression)new NumberExpression(x));
+        Parser<Expression> numberParser = Parse.Decimal.Select(x => (Expression)new NumberExpression(x));
 
         Parser<Expression> variableParser = Parse.Ident.Select(x => (Expression)new VariableExpression(x));
 

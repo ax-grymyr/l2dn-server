@@ -1,3 +1,6 @@
+using System.Collections.Frozen;
+using System.Collections.Immutable;
+using L2Dn.Collections;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
@@ -13,6 +16,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
+using L2Dn.Model.Xml.Skills;
 using L2Dn.Utilities;
 using NLog;
 
@@ -20,7 +24,7 @@ namespace L2Dn.GameServer.Model.Skills;
 
 public sealed class Skill: IIdentifiable
 {
-	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(Skill));
+	private static readonly Logger _logger = LogManager.GetLogger(nameof(Skill));
 
 	/** Skill ID. */
 	private readonly int _id;
@@ -93,7 +97,7 @@ public sealed class Skill: IIdentifiable
 	private readonly TimeSpan? _abnormalTime;
 
 	/** Abnormal visual effect: the visual effect displayed ingame. */
-	private Set<AbnormalVisualEffect> _abnormalVisualEffects = [];
+	private readonly FrozenSet<AbnormalVisualEffect> _abnormalVisualEffects = [];
 
 	/** If {@code true} this skill's effect should stay after death. */
 	private readonly bool _stayAfterDeath;
@@ -124,9 +128,9 @@ public sealed class Skill: IIdentifiable
 	private readonly AffectScope _affectScope;
 	private readonly AffectObject _affectObject;
 	private readonly int _affectRange;
-	private readonly int[] _fanRange = new int[4]; // unk;startDegree;fanAffectRange;fanAffectAngle
-	private readonly int[] _affectLimit = new int[3]; // TODO: Third value is unknown... find it out!
-	private readonly int[] _affectHeight = new int[2];
+	private readonly int[] _fanRange; // unk;startDegree;fanAffectRange;fanAffectAngle
+	private readonly int[] _affectLimit; // TODO: Third value is unknown... find it out!
+	private readonly int[] _affectHeight;
 
 	private readonly NextActionType _nextAction;
 
@@ -186,8 +190,8 @@ public sealed class Skill: IIdentifiable
 
 	private readonly int _toggleGroupId;
 	private readonly int _attachToggleGroupId;
-	private readonly List<AttachSkillHolder> _attachSkills;
-	private readonly Set<AbnormalType> _abnormalResists;
+	private readonly ImmutableArray<AttachSkillHolder> _attachSkills;
+	private readonly FrozenSet<AbnormalType> _abnormalResists;
 
 	private readonly double _magicCriticalRate;
 	private readonly SkillBuffType _buffType;
@@ -202,7 +206,7 @@ public sealed class Skill: IIdentifiable
 		_refId = set.getInt(".referenceId", 0);
 		_displayId = set.getInt(".displayId", _id);
 		_displayLevel = set.getInt(".displayLevel", _level);
-		_name = set.getString(".name", "");
+		_name = set.getString(".name", string.Empty);
 		_operateType = set.getEnum<SkillOperateType>("operateType");
 		_magic = set.getInt("isMagic", 0);
 		_traitType = set.getEnum("trait", TraitType.NONE);
@@ -221,35 +225,26 @@ public sealed class Skill: IIdentifiable
 		_abnormalType = set.getEnum("abnormalType", AbnormalType.NONE);
 		_subordinationAbnormalType = set.getEnum("subordinationAbnormalType", AbnormalType.NONE);
 		TimeSpan abnormalTime = TimeSpan.FromSeconds(set.getDouble("abnormalTime", 0));
-		if (Config.ENABLE_MODIFY_SKILL_DURATION && Config.SKILL_DURATION_LIST.ContainsKey(_id) &&
-		    _operateType != SkillOperateType.T)
-		{
-			if (_level < 100 || _level > 140)
-			{
-				abnormalTime = Config.SKILL_DURATION_LIST[_id];
-			}
-			else if (_level >= 100 && _level < 140)
-			{
-				abnormalTime += Config.SKILL_DURATION_LIST[_id];
-			}
-		}
+        if (Config.ENABLE_MODIFY_SKILL_DURATION && _operateType != SkillOperateType.T &&
+            Config.SKILL_DURATION_LIST.TryGetValue(_id, out TimeSpan temp))
+        {
+            if (_level < 100 || _level > 140)
+                abnormalTime = temp;
+            else if (_level >= 100 && _level < 140)
+                abnormalTime += temp;
+        }
 
-		_abnormalTime = abnormalTime;
+        _abnormalTime = abnormalTime;
 		_isAbnormalInstant = set.getBoolean("abnormalInstant", false);
-		parseAbnormalVisualEffect(set.getString("abnormalVisualEffect", string.Empty));
+		_abnormalVisualEffects = ParseAbnormalVisualEffect(_id, set.getString("abnormalVisualEffect", string.Empty));
 		_stayAfterDeath = set.getBoolean("stayAfterDeath", false);
 		_hitTime = TimeSpan.FromMilliseconds(set.getInt("hitTime", 0));
 		_hitCancelTime = TimeSpan.FromMilliseconds(set.getDouble("hitCancelTime", 0));
 		_coolTime = TimeSpan.FromMilliseconds(set.getInt("coolTime", 0));
 		_isDebuff = set.getBoolean("isDebuff", false);
 		_isRecoveryHerb = set.getBoolean("isRecoveryHerb", false);
-		if (Config.ENABLE_MODIFY_SKILL_REUSE && Config.SKILL_REUSE_LIST.TryGetValue(_id, out _reuseDelay))
-		{
-		}
-		else
-		{
+		if (!Config.ENABLE_MODIFY_SKILL_REUSE || !Config.SKILL_REUSE_LIST.TryGetValue(_id, out _reuseDelay))
 			_reuseDelay = TimeSpan.FromMilliseconds(set.getInt("reuseDelay", 0));
-		}
 
 		_reuseDelayGroup = set.getInt("reuseDelayGroup", -1);
 		_reuseHashCode = SkillData.getSkillHashCode(_reuseDelayGroup > 0 ? _reuseDelayGroup : _id, _level, _subLevel);
@@ -259,63 +254,69 @@ public sealed class Skill: IIdentifiable
 		_affectRange = set.getInt("affectRange", 0);
 
 		string fanRange = set.getString("fanRange", string.Empty);
-		if (!string.IsNullOrEmpty(fanRange))
+        if (string.IsNullOrEmpty(fanRange))
+            _fanRange = [0, 0, 0, 0];
+        else
 		{
 			try
 			{
 				string[] valuesSplit = fanRange.Split(";");
-				_fanRange[0] = int.Parse(valuesSplit[0]);
-				_fanRange[1] = int.Parse(valuesSplit[1]);
-				_fanRange[2] = int.Parse(valuesSplit[2]);
-				_fanRange[3] = int.Parse(valuesSplit[3]);
-			}
-			catch (Exception e)
+                _fanRange =
+                [
+                    int.Parse(valuesSplit[0]), int.Parse(valuesSplit[1]), int.Parse(valuesSplit[2]),
+                    int.Parse(valuesSplit[3]),
+                ];
+            }
+			catch
 			{
-				throw new InvalidOperationException("SkillId: " + _id + " invalid fanRange value: " + fanRange +
-				                                    ", \"unk;startDegree;fanAffectRange;fanAffectAngle\" required: " + e);
+				throw new InvalidOperationException(
+                    $"SkillId: {_id} invalid fanRange value: {fanRange}, " +
+                    "'unk;startDegree;fanAffectRange;fanAffectAngle' required");
 			}
 		}
 
 		string affectLimit = set.getString("affectLimit", string.Empty);
-		if (!string.IsNullOrEmpty(affectLimit))
+        if (string.IsNullOrEmpty(affectLimit))
+            _affectLimit = [0, 0, 0];
+        else
 		{
 			try
 			{
 				string[] valuesSplit = affectLimit.Split("-");
-				_affectLimit[0] = int.Parse(valuesSplit[0]);
-				_affectLimit[1] = int.Parse(valuesSplit[1]);
+                _affectLimit = [int.Parse(valuesSplit[0]), int.Parse(valuesSplit[1]), 0];
 				if (valuesSplit.Length > 2)
-				{
 					_affectLimit[2] = int.Parse(valuesSplit[2]);
-				}
 			}
-			catch (Exception e)
+			catch
 			{
-				throw new InvalidOperationException("SkillId: " + _id + " invalid affectLimit value: " + affectLimit +
-				                                    ", \"minAffected-additionalRandom\" required: " + e);
+				throw new InvalidOperationException(
+                    $"SkillId: {_id} invalid affectLimit value: {affectLimit}, " +
+                    "'minAffected-additionalRandom' required");
 			}
 		}
 
 		string affectHeight = set.getString("affectHeight", string.Empty);
-		if (!string.IsNullOrEmpty(affectHeight))
+        if (string.IsNullOrEmpty(affectHeight))
+            _affectHeight = [0, 0];
+        else
 		{
 			try
 			{
 				string[] valuesSplit = affectHeight.Split(";");
-				_affectHeight[0] = int.Parse(valuesSplit[0]);
-				_affectHeight[1] = int.Parse(valuesSplit[1]);
+				_affectHeight = [int.Parse(valuesSplit[0]), int.Parse(valuesSplit[1])];
 			}
-			catch (Exception e)
+			catch
 			{
-				throw new InvalidOperationException("SkillId: " + _id + " invalid affectHeight value: " + affectHeight +
-				                                    ", \"minHeight-maxHeight\" required: " + e);
+				throw new InvalidOperationException(
+                    $"SkillId: {_id} invalid affectHeight value: {affectHeight}, 'minHeight-maxHeight' required");
 			}
 
 			if (_affectHeight[0] > _affectHeight[1])
-			{
-				throw new InvalidOperationException("SkillId: " + _id + " invalid affectHeight value: " + affectHeight +
-				                                    ", \"minHeight-maxHeight\" required, minHeight is higher than maxHeight!");
-			}
+            {
+                throw new InvalidOperationException(
+                    $"SkillId: {_id} invalid affectHeight value: {affectHeight}, " +
+                    "'minHeight-maxHeight' required, minHeight is higher than maxHeight!");
+            }
 		}
 
 		_magicLevel = set.getInt("magicLevel", 0);
@@ -343,8 +344,8 @@ public sealed class Skill: IIdentifiable
 		_withoutAction = set.getBoolean("withoutAction", false);
 		_icon = set.getString("icon", "icon.skill0000");
 		_channelingSkillId = set.getInt("channelingSkillId", 0);
-		_channelingTickInterval = TimeSpan.FromMilliseconds(set.getFloat("channelingTickInterval", 2000f) * 1000);
-		_channelingStart = TimeSpan.FromMilliseconds(set.getFloat("channelingStart", 0f) * 1000);
+		_channelingTickInterval = TimeSpan.FromSeconds(set.getFloat("channelingTickInterval", 2f));
+		_channelingStart = TimeSpan.FromSeconds(set.getFloat("channelingStart", 0f));
 		_isMentoring = set.getBoolean("isMentoring", false);
 		_doubleCastSkill = set.getInt("doubleCastSkill", 0);
 		_canDoubleCast = set.getBoolean("canDoubleCast", false);
@@ -357,39 +358,12 @@ public sealed class Skill: IIdentifiable
 		_toggleGroupId = set.getInt("toggleGroupId", -1);
 		_attachToggleGroupId = set.getInt("attachToggleGroupId", -1);
 		_attachSkills = set.getList("attachSkillList", new List<StatSet>())
-			.Select(AttachSkillHolder.fromStatSet).ToList();
+			.Select(AttachSkillHolder.FromStatSet).ToImmutableArray();
 
-		string abnormalResist = set.getString("abnormalResists", string.Empty);
-		if (!string.IsNullOrEmpty(abnormalResist))
-		{
-			string[] abnormalResistStrings = abnormalResist.Split(";");
-			if (abnormalResistStrings.Length > 0)
-			{
-				_abnormalResists = new();
-				foreach (string s in abnormalResistStrings)
-				{
-					try
-					{
-						_abnormalResists.add(Enum.Parse<AbnormalType>(s));
-					}
-					catch (Exception e)
-					{
-						LOGGER.Warn("Skill ID[" + _id + "] Expected AbnormalType for abnormalResists but found " + s +
-						            ": " + e);
-					}
-				}
-			}
-			else
-			{
-				_abnormalResists = new();
-			}
-		}
-		else
-		{
-			_abnormalResists = new();
-		}
+        string abnormalResist = set.getString("abnormalResists", string.Empty);
+        _abnormalResists = ParseList<AbnormalType>(_id, abnormalResist);
 
-		_magicCriticalRate = set.getDouble("magicCriticalRate", 0);
+        _magicCriticalRate = set.getDouble("magicCriticalRate", 0);
 		_buffType = _isTriggeredSkill ? SkillBuffType.TRIGGER :
 			isToggle() ? SkillBuffType.TOGGLE :
 			isDance() ? SkillBuffType.DANCE :
@@ -400,7 +374,204 @@ public sealed class Skill: IIdentifiable
 		_isHidingMessages = set.getBoolean("isHidingMessages", false);
 	}
 
-	public TraitType getTraitType()
+    internal Skill(SkillParameters parameters)
+    {
+        _id = parameters.Id;
+        _name = parameters.Name;
+        _level = parameters.Level;
+        _subLevel = parameters.SubLevel;
+        _displayId = parameters.DisplayId ?? parameters.Id;
+        _displayLevel = parameters.DisplayLevel ?? parameters.Level;
+        _refId = parameters.ReferenceId ?? 0;
+
+        ParameterSet<XmlSkillParameterType> pars = parameters.Parameters;
+
+        _operateType = pars.GetEnum<SkillOperateType>(XmlSkillParameterType.OperateType);
+        _magic = pars.GetInt32(XmlSkillParameterType.IsMagic, 0);
+        _traitType = pars.GetEnum(XmlSkillParameterType.Trait, TraitType.NONE);
+        _staticReuse = pars.GetBoolean(XmlSkillParameterType.StaticReuse, false);
+        _mpConsume = pars.GetInt32(XmlSkillParameterType.MpConsume, 0);
+        _mpInitialConsume = pars.GetInt32(XmlSkillParameterType.MpInitialConsume, 0);
+        _mpPerChanneling = pars.GetInt32(XmlSkillParameterType.MpPerChanneling, _mpConsume);
+        _hpConsume = pars.GetInt32(XmlSkillParameterType.HpConsume, 0);
+        _itemConsumeCount = pars.GetInt32(XmlSkillParameterType.ItemConsumeCount, 0);
+        _itemConsumeId = pars.GetInt32(XmlSkillParameterType.ItemConsumeId, 0);
+        _famePointConsume = pars.GetInt32(XmlSkillParameterType.FamePointConsume, 0);
+        _clanRepConsume = pars.GetInt32(XmlSkillParameterType.ClanRepConsume, 0);
+        _castRange = pars.GetInt32(XmlSkillParameterType.CastRange, -1);
+        _effectRange = pars.GetInt32(XmlSkillParameterType.EffectRange, -1);
+        _abnormalLevel = pars.GetInt32(XmlSkillParameterType.AbnormalLevel, 0);
+        _abnormalType = pars.GetEnum(XmlSkillParameterType.AbnormalType, AbnormalType.NONE);
+        _subordinationAbnormalType = pars.GetEnum(XmlSkillParameterType.SubordinationAbnormalType, AbnormalType.NONE);
+        TimeSpan abnormalTime = pars.GetTimeSpanSeconds(XmlSkillParameterType.AbnormalTime, TimeSpan.Zero);
+        if (Config.ENABLE_MODIFY_SKILL_DURATION && _operateType != SkillOperateType.T &&
+            Config.SKILL_DURATION_LIST.TryGetValue(_id, out TimeSpan temp))
+        {
+            if (_level < 100 || _level > 140)
+                abnormalTime = temp;
+            else if (_level >= 100 && _level < 140)
+                abnormalTime += temp;
+        }
+
+        _abnormalTime = abnormalTime;
+        _isAbnormalInstant = pars.GetBoolean(XmlSkillParameterType.AbnormalInstant, false);
+        _abnormalVisualEffects = ParseAbnormalVisualEffect(_id,
+            pars.GetString(XmlSkillParameterType.AbnormalVisualEffect, string.Empty));
+
+        _stayAfterDeath = pars.GetBoolean(XmlSkillParameterType.StayAfterDeath, false);
+        _hitTime = pars.GetTimeSpanMilliSeconds(XmlSkillParameterType.HitTime, TimeSpan.Zero);
+        _hitCancelTime = pars.GetTimeSpanMilliSeconds(XmlSkillParameterType.HitCancelTime, TimeSpan.Zero);
+        _coolTime = pars.GetTimeSpanMilliSeconds(XmlSkillParameterType.CoolTime, TimeSpan.Zero);
+        _isDebuff = pars.GetBoolean(XmlSkillParameterType.IsDebuff, false);
+        _isRecoveryHerb = pars.GetBoolean(XmlSkillParameterType.IsRecoveryHerb, false);
+        if (!Config.ENABLE_MODIFY_SKILL_REUSE || !Config.SKILL_REUSE_LIST.TryGetValue(_id, out _reuseDelay))
+            _reuseDelay = pars.GetTimeSpanMilliSeconds(XmlSkillParameterType.ReuseDelay, TimeSpan.Zero);
+
+        _reuseDelayGroup = pars.GetInt32(XmlSkillParameterType.ReuseDelayGroup, -1);
+        _reuseHashCode = SkillData.getSkillHashCode(_reuseDelayGroup > 0 ? _reuseDelayGroup : _id, _level, _subLevel);
+        _targetType = pars.GetEnum(XmlSkillParameterType.TargetType, TargetType.SELF);
+        _affectScope = pars.GetEnum(XmlSkillParameterType.AffectScope, AffectScope.SINGLE);
+        _affectObject = pars.GetEnum(XmlSkillParameterType.AffectObject, AffectObject.ALL);
+        _affectRange = pars.GetInt32(XmlSkillParameterType.AffectRange, 0);
+
+        string? fanRange = pars.GetStringOptional(XmlSkillParameterType.FanRange);
+        if (string.IsNullOrEmpty(fanRange))
+            _fanRange = [0, 0, 0, 0];
+        else
+        {
+            try
+            {
+                string[] valuesSplit = fanRange.Split(";");
+                _fanRange =
+                [
+                    int.Parse(valuesSplit[0]), int.Parse(valuesSplit[1]), int.Parse(valuesSplit[2]),
+                    int.Parse(valuesSplit[3]),
+                ];
+            }
+            catch
+            {
+                throw new InvalidOperationException($"SkillId: {_id} invalid fanRange value: {fanRange}, " +
+                    "'unk;startDegree;fanAffectRange;fanAffectAngle' required");
+            }
+        }
+
+        string affectLimit = pars.GetString(XmlSkillParameterType.AffectLimit, string.Empty);
+        if (string.IsNullOrEmpty(affectLimit))
+            _affectLimit = [0, 0, 0];
+        else
+        {
+            try
+            {
+                string[] valuesSplit = affectLimit.Split("-");
+                _affectLimit = [int.Parse(valuesSplit[0]), int.Parse(valuesSplit[1]), 0];
+                if (valuesSplit.Length > 2)
+                    _affectLimit[2] = int.Parse(valuesSplit[2]);
+            }
+            catch
+            {
+                throw new InvalidOperationException($"SkillId: {_id} invalid affectLimit value: {affectLimit}, " +
+                    "'minAffected-additionalRandom' required");
+            }
+        }
+
+        string affectHeight = pars.GetString(XmlSkillParameterType.AffectHeight, string.Empty);
+        if (string.IsNullOrEmpty(affectHeight))
+            _affectHeight = [0, 0];
+        else
+        {
+            try
+            {
+                string[] valuesSplit = affectHeight.Split(";");
+                _affectHeight = [int.Parse(valuesSplit[0]), int.Parse(valuesSplit[1])];
+            }
+            catch
+            {
+                throw new InvalidOperationException(
+                    $"SkillId: {_id} invalid affectHeight value: {affectHeight}, 'minHeight-maxHeight' required");
+            }
+
+            if (_affectHeight[0] > _affectHeight[1])
+            {
+                throw new InvalidOperationException($"SkillId: {_id} invalid affectHeight value: {affectHeight}, " +
+                    "'minHeight-maxHeight' required, minHeight is higher than maxHeight!");
+            }
+        }
+
+        _magicLevel = pars.GetInt32(XmlSkillParameterType.MagicLevel, 0);
+        _lvlBonusRate = pars.GetInt32(XmlSkillParameterType.LvlBonusRate, 0);
+        _activateRate = pars.GetDoubleOptional(XmlSkillParameterType.ActivateRate);
+        _minChance = pars.GetInt32(XmlSkillParameterType.MinChance, Config.MIN_ABNORMAL_STATE_SUCCESS_RATE);
+        _maxChance = pars.GetInt32(XmlSkillParameterType.MaxChance, Config.MAX_ABNORMAL_STATE_SUCCESS_RATE);
+        _nextAction = pars.GetEnum(XmlSkillParameterType.NextAction, NextActionType.NONE);
+        _removedOnAnyActionExceptMove = pars.GetBoolean(XmlSkillParameterType.RemovedOnAnyActionExceptMove, false);
+        _removedOnDamage = pars.GetBoolean(XmlSkillParameterType.RemovedOnDamage, false);
+        _removedOnUnequipWeapon = pars.GetBoolean(XmlSkillParameterType.RemovedOnUnequipWeapon, false);
+        _blockedInOlympiad = pars.GetBoolean(XmlSkillParameterType.BlockedInOlympiad, false);
+        _attributeType = pars.GetEnum(XmlSkillParameterType.AttributeType, AttributeType.NONE);
+        _attributeValue = pars.GetInt32(XmlSkillParameterType.AttributeValue, 0);
+        _basicProperty = pars.GetEnum(XmlSkillParameterType.BasicProperty, BasicProperty.NONE);
+        _isSuicideAttack = pars.GetBoolean(XmlSkillParameterType.IsSuicideAttack, false);
+        _minPledgeClass = (SocialClass)pars.GetInt32(XmlSkillParameterType.MinPledgeClass, 0);
+        _lightSoulMaxConsume = pars.GetInt32(XmlSkillParameterType.LightSoulMaxConsume, 0);
+        _shadowSoulMaxConsume = pars.GetInt32(XmlSkillParameterType.ShadowSoulMaxConsume, 0);
+        _chargeConsume = pars.GetInt32(XmlSkillParameterType.ChargeConsume, 0);
+        _isTriggeredSkill = pars.GetBoolean(XmlSkillParameterType.IsTriggeredSkill, false);
+        _effectPoint = pars.GetInt32(XmlSkillParameterType.EffectPoint, 0);
+        _canBeDispelled = pars.GetBoolean(XmlSkillParameterType.CanBeDispelled, true);
+        _excludedFromCheck = pars.GetBoolean(XmlSkillParameterType.ExcludedFromCheck, false);
+        _withoutAction = pars.GetBoolean(XmlSkillParameterType.WithoutAction, false);
+        _icon = pars.GetString(XmlSkillParameterType.Icon, "icon.skill0000");
+        _channelingSkillId = pars.GetInt32(XmlSkillParameterType.ChannelingSkillId, 0);
+        _channelingTickInterval =
+            pars.GetTimeSpanSeconds(XmlSkillParameterType.ChannelingTickInterval, TimeSpan.FromSeconds(2));
+
+        _channelingStart = pars.GetTimeSpanSeconds(XmlSkillParameterType.ChannelingStart, TimeSpan.Zero);
+        _isMentoring = pars.GetBoolean(XmlSkillParameterType.IsMentoring, false);
+        _doubleCastSkill = pars.GetInt32(XmlSkillParameterType.DoubleCastSkill, 0);
+        _canDoubleCast = pars.GetBoolean(XmlSkillParameterType.CanDoubleCast, false);
+        _canCastWhileDisabled = pars.GetBoolean(XmlSkillParameterType.CanCastWhileDisabled, false);
+        _isSharedWithSummon = pars.GetBoolean(XmlSkillParameterType.IsSharedWithSummon, true);
+        _isNecessaryToggle = pars.GetBoolean(XmlSkillParameterType.IsNecessaryToggle, false);
+        _deleteAbnormalOnLeave = pars.GetBoolean(XmlSkillParameterType.DeleteAbnormalOnLeave, false);
+        _irreplacableBuff = pars.GetBoolean(XmlSkillParameterType.IrreplacableBuff, false);
+        _blockActionUseSkill = pars.GetBoolean(XmlSkillParameterType.BlockActionUseSkill, false);
+        _toggleGroupId = pars.GetInt32(XmlSkillParameterType.ToggleGroupId, -1);
+        _attachToggleGroupId = pars.GetInt32(XmlSkillParameterType.AttachToggleGroupId, -1);
+
+        // TODO: add to XML schema, not used
+        _attachSkills = ImmutableArray<AttachSkillHolder>.Empty;
+        //_attachSkills = set.getList(XmlSkillParameterType.AttachSkillList, new List<StatSet>())
+        // .Select(AttachSkillHolder.FromStatSet).ToList();
+
+        string abnormalResist = pars.GetString(XmlSkillParameterType.AbnormalResists, string.Empty);
+        _abnormalResists = ParseList<AbnormalType>(_id, abnormalResist);
+
+        _magicCriticalRate = pars.GetDouble(XmlSkillParameterType.MagicCriticalRate, 0);
+        _buffType = _isTriggeredSkill ? SkillBuffType.TRIGGER :
+            isToggle() ? SkillBuffType.TOGGLE :
+            isDance() ? SkillBuffType.DANCE :
+            _isDebuff ? SkillBuffType.DEBUFF :
+            !isHealingPotionSkill() ? SkillBuffType.BUFF : SkillBuffType.NONE;
+
+        _displayInList = pars.GetBoolean(XmlSkillParameterType.DisplayInList, true);
+        _isHidingMessages = pars.GetBoolean(XmlSkillParameterType.IsHidingMessages, false);
+
+        // effects
+        foreach (EffectScope effectScope in EnumUtil.GetValues<EffectScope>())
+        {
+            if (parameters.Effects.TryGetValue(effectScope, out List<AbstractEffect>? effects))
+                _effectLists[effectScope] = effects;
+        }
+
+        // conditions
+        foreach (SkillConditionScope conditionScope in EnumUtil.GetValues<SkillConditionScope>())
+        {
+            if (parameters.Conditions.TryGetValue(conditionScope, out List<ISkillCondition>? conditions))
+                _conditionLists[conditionScope] = conditions;
+        }
+    }
+
+    public TraitType getTraitType()
 	{
 		return _traitType;
 	}
@@ -495,9 +666,9 @@ public sealed class Skill: IIdentifiable
 	 * Gets the skill abnormal visual effect.
 	 * @return the abnormal visual effect
 	 */
-	public Set<AbnormalVisualEffect> getAbnormalVisualEffects()
+	public FrozenSet<AbnormalVisualEffect> getAbnormalVisualEffects()
 	{
-		return _abnormalVisualEffects != null ? _abnormalVisualEffects : [];
+		return _abnormalVisualEffects;
 	}
 
 	/**
@@ -506,7 +677,7 @@ public sealed class Skill: IIdentifiable
 	 */
 	public bool hasAbnormalVisualEffects()
 	{
-		return _abnormalVisualEffects != null && !_abnormalVisualEffects.isEmpty();
+		return _abnormalVisualEffects.Count != 0;
 	}
 
 	/**
@@ -720,7 +891,7 @@ public sealed class Skill: IIdentifiable
 	 */
 	public int getMagicType()
 	{
-		return _magic;
+		return _magic; // TODO: enum
 	}
 
 	/**
@@ -1114,7 +1285,7 @@ public sealed class Skill: IIdentifiable
 			}
 			catch (Exception e)
 			{
-				LOGGER.Warn("Exception in Skill.getTarget(): " + e);
+				_logger.Warn("Exception in Skill.getTarget(): " + e);
 			}
 		}
 
@@ -1143,7 +1314,7 @@ public sealed class Skill: IIdentifiable
 			}
 			catch (Exception e)
 			{
-				LOGGER.Warn("Exception in Skill.getTargetsAffected(): " + e);
+				_logger.Warn("Exception in Skill.getTargetsAffected(): " + e);
 			}
 		}
 
@@ -1173,7 +1344,7 @@ public sealed class Skill: IIdentifiable
 			}
 			catch (Exception e)
 			{
-				LOGGER.Warn("Exception in Skill.forEachTargetAffected(): " + e);
+				_logger.Warn("Exception in Skill.forEachTargetAffected(): " + e);
 			}
 		}
 		else
@@ -1601,41 +1772,47 @@ public sealed class Skill: IIdentifiable
 		return _withoutAction;
 	}
 
-	/**
-	 * Parses all the abnormal visual effects.
-	 * @param abnormalVisualEffects the abnormal visual effects list
-	 */
-	private void parseAbnormalVisualEffect(string abnormalVisualEffects)
-	{
-		if (!string.IsNullOrEmpty(abnormalVisualEffects))
-		{
-			string[] data = abnormalVisualEffects.Split(";");
-			Set<AbnormalVisualEffect> aves = new();
-			foreach (string aveString in data)
-			{
-				AbnormalVisualEffect ave = Enum.Parse<AbnormalVisualEffect>(aveString);
-				if (ave != AbnormalVisualEffect.None)
-				{
-					aves.add(ave);
-				}
-				else
-				{
-					LOGGER.Warn("Invalid AbnormalVisualEffect(" + this + ") found for Skill(" + aveString + ")");
-				}
-			}
+    /**
+     * Parses all the abnormal visual effects.
+     * @param abnormalVisualEffects the abnormal visual effects list
+     */
+    private static FrozenSet<AbnormalVisualEffect> ParseAbnormalVisualEffect(int skillId, string str)
+    {
+        FrozenSet<AbnormalVisualEffect> set = ParseList<AbnormalVisualEffect>(skillId, str);
+        if (set.Contains(AbnormalVisualEffect.None))
+            throw new InvalidOperationException(
+                $"Invalid skill id={skillId} definition: invalid AbnormalVisualEffect '{str}'");
 
-			if (!aves.isEmpty())
-			{
-				_abnormalVisualEffects = aves;
-			}
-		}
-	}
+        return set;
+    }
 
-	/**
-	 * @param effectType Effect type to check if its present on this skill effects.
-	 * @param effectTypes Effect types to check if are present on this skill effects.
-	 * @return {@code true} if at least one of specified {@link EffectType} types is present on this skill effects, {@code false} otherwise.
-	 */
+    private static FrozenSet<T> ParseList<T>(int skillId, string str, char separator = ';')
+        where T: unmanaged, Enum
+    {
+        if (!string.IsNullOrEmpty(str))
+        {
+            HashSet<T> vals = [];
+            foreach (string s in str.Split(separator))
+            {
+                if (!Enum.TryParse(s, true, out T v))
+                    throw new InvalidOperationException(
+                        $"Invalid skill id={skillId} definition: invalid {typeof(T).Name} '{s}'");
+
+                vals.Add(v);
+            }
+
+            if (vals.Count != 0)
+                return vals.ToFrozenSet();
+        }
+
+        return FrozenSet<T>.Empty;
+    }
+
+    /**
+     * @param effectType Effect type to check if its present on this skill effects.
+     * @param effectTypes Effect types to check if are present on this skill effects.
+     * @return {@code true} if at least one of specified {@link EffectType} types is present on this skill effects, {@code false} otherwise.
+     */
 	public bool hasEffectType(EffectType effectType, params EffectType[] effectTypes)
 	{
 		if (_effectTypes == null)
@@ -1851,12 +2028,12 @@ public sealed class Skill: IIdentifiable
 		return _attachToggleGroupId;
 	}
 
-	public List<AttachSkillHolder> getAttachSkills()
+	public ImmutableArray<AttachSkillHolder> getAttachSkills()
 	{
 		return _attachSkills;
 	}
 
-	public Set<AbnormalType> getAbnormalResists()
+	public FrozenSet<AbnormalType> getAbnormalResists()
 	{
 		return _abnormalResists;
 	}

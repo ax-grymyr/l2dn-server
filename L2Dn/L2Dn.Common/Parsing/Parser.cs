@@ -11,7 +11,7 @@ public readonly record struct ParserInput(string Input, int Position)
 
     public string? Substring(int length) =>
         Input.Length >= Position + length ? Input.Substring(Position, length) : null;
-    
+
     public ParserInput Next() => this with { Position = Position + 1 };
 
     public static implicit operator ParserInput(string input) => new(input, 0);
@@ -65,6 +65,9 @@ public static class Parse
     private static readonly Parser<double> _double = _floatingPointNumber
         .Select(f => double.Parse(f, CultureInfo.InvariantCulture)).Catch("Floating point number overflow");
 
+    private static readonly Parser<decimal> _decimal = _floatingPointNumber
+        .Select(f => decimal.Parse(f, CultureInfo.InvariantCulture)).Catch("Floating point number overflow");
+
     private static readonly Parser<int> _int32 =
         _integer.Select(integer => int.Parse(integer, CultureInfo.InvariantCulture))
             .WithErrorMessage("Integer expected").Catch("Integer overflow");
@@ -85,6 +88,7 @@ public static class Parse
     public static Parser<string> Whitespaces => _whitespaces;
     public static Parser<float> Float => _float;
     public static Parser<double> Double => _double;
+    public static Parser<decimal> Decimal => _decimal;
     public static Parser<int> Int32 => _int32;
     public static Parser<long> Int64 => _int64;
     public static Parser<BigInteger> BigInt => _bigint;
@@ -160,7 +164,7 @@ public static class Parse
         }
     };
 
-    public static Parser<TResult> Select<T, TResult>(this Parser<T> parser, Func<T, TResult> selector) => input => 
+    public static Parser<TResult> Select<T, TResult>(this Parser<T> parser, Func<T, TResult> selector) => input =>
     {
         ParserResult<T> result = parser(input);
         return result.Success
@@ -489,7 +493,7 @@ public static class Parse
 
     private static ParserResult<T> Success<T>(T result, ParserInput next, string? errorMessage = null) =>
         new(true, result, next, errorMessage ?? string.Empty);
-    
+
     private static ParserError Error(string error, ParserInput input) => new(error, input);
 
     private static string CollectChars(IEnumerable<char> chars)

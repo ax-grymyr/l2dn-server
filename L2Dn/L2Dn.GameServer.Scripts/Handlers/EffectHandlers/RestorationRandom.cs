@@ -180,6 +180,16 @@ public sealed class RestorationRandom: AbstractEffect
     public override int GetHashCode() => _products.GetSequenceHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x._products.GetSequentialComparable());
 
+    public bool EqualsApproximately(RestorationRandom other) // TODO: remove after migrating Skill loader to XML deserialization
+    {
+        if (_products.Length != other._products.Length)
+            return false;
+
+        return _products.Zip(other._products).All(pair =>
+            pair.First.Items.SequenceEqual(pair.Second.Items) && pair.First.Chance - 0.001 <= pair.Second.Chance &&
+            pair.Second.Chance <= pair.First.Chance + 0.001);
+    }
+
     private readonly record struct ExtractableProductItem(ImmutableArray<RestorationItemHolder> Items, double Chance)
     {
         public override int GetHashCode() => HashCode.Combine(Items.GetSequenceHashCode(), Chance);
