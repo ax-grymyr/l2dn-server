@@ -3,6 +3,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ChatHandlers;
 
@@ -17,7 +18,7 @@ public class ChatPetition: IChatHandler
 		ChatType.PETITION_PLAYER,
 		ChatType.PETITION_GM,
 	};
-	
+
 	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
 	{
 		if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.Contains(type))
@@ -37,7 +38,7 @@ public class ChatPetition: IChatHandler
 		}
 		PetitionManager.getInstance().sendActivePetitionMessage(activeChar, text);
 	}
-	
+
 	public ChatType[] getChatTypeList()
 	{
 		return CHAT_TYPES;

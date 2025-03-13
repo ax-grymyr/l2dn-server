@@ -1,3 +1,4 @@
+using L2Dn.GameServer.StaticData;
 using NLog;
 
 namespace L2Dn.GameServer.Geo.PathFindings.CellNodes;

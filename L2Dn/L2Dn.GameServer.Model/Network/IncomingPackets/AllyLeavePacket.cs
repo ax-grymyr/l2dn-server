@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
 

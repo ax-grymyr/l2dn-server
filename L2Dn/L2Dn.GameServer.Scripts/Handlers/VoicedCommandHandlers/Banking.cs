@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
@@ -16,7 +17,7 @@ public class Banking: IVoicedCommandHandler
 		"withdraw",
 		"deposit"
 	};
-	
+
 	public bool useVoicedCommand(string command, Player activeChar, string @params)
 	{
 		if (command.equals("bank"))
@@ -59,7 +60,7 @@ public class Banking: IVoicedCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;

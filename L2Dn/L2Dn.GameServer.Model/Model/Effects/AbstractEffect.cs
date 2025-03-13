@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Effects;

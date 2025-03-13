@@ -11,6 +11,7 @@ using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Vips;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 
 namespace L2Dn.GameServer.Data;
@@ -21,7 +22,7 @@ public static class StaticData
     {
         GameTimeTaskManager.getInstance();
         IdManager.getInstance();
-        
+
         World.getInstance();
         MapRegionManager.getInstance();
         ZoneManager.getInstance();
@@ -29,7 +30,7 @@ public static class StaticData
         FenceData.getInstance();
         AnnouncementsTable.getInstance();
         GlobalVariablesManager.getInstance();
-        
+
         ActionData.getInstance();
         CategoryData.getInstance();
         SecondaryAuthData.getInstance();
@@ -44,7 +45,7 @@ public static class StaticData
         SubjugationGacha.getInstance();
         PurgeRankingManager.getInstance();
         NewQuestData.getInstance();
-        
+
         SkillConditionHandler.getInstance(); //.executeScript();
         EffectHandler.getInstance(); //.executeScript();
         SkillData.getInstance();
@@ -52,7 +53,7 @@ public static class StaticData
         PetSkillData.getInstance();
         PetAcquireList.getInstance();
         SkillEnchantData.getInstance();
-        
+
         ConditionHandler.getInstance(); //.executeScript();
         ItemData.getInstance();
         EnchantItemGroupsData.getInstance();
@@ -95,7 +96,7 @@ public static class StaticData
         RandomCraftData.getInstance();
         RevengeHistoryManager.getInstance();
         VipData.getInstance();
-        
+
         ClassListData.getInstance();
         InitialEquipmentData.getInstance();
         InitialShortcutData.getInstance();
@@ -119,16 +120,16 @@ public static class StaticData
         {
             PremiumManager.getInstance();
         }
-        
+
         ClanLevelData.getInstance();
         ClanTable.getInstance();
         ResidenceFunctionsData.getInstance();
         ClanHallData.getInstance();
         ClanHallAuctionManager.getInstance();
         ClanEntryManager.getInstance();
-        
+
         GeoEngine.getInstance();
-        
+
         NpcData.getInstance();
         FakePlayerData.getInstance();
         FakePlayerChatManager.getInstance();
@@ -140,7 +141,7 @@ public static class StaticData
         SchemeBufferTable.getInstance();
         GrandBossManager.getInstance();
         EventDropManager.getInstance();
-        
+
         InstanceManager.getInstance();
 
         Olympiad.getInstance();
@@ -162,7 +163,7 @@ public static class StaticData
         {
             SellBuffsManager.getInstance();
         }
-        
+
         if (Config.MULTILANG_ENABLE)
         {
             //SystemMessageId.loadLocalisations();
@@ -170,13 +171,13 @@ public static class StaticData
             //SendMessageLocalisationData.getInstance();
             //NpcNameLocalisationData.getInstance();
         }
-		
+
         QuestManager.getInstance();
         BoatManager.getInstance();
         AirShipManager.getInstance();
         ShuttleData.getInstance();
         GraciaSeedsManager.getInstance();
-        
+
         SpawnData.getInstance().init();
         DbSpawnManager.getInstance();
 
@@ -190,63 +191,63 @@ public static class StaticData
         CastleManorManager.getInstance();
         SiegeGuardManager.getInstance();
         QuestManager.getInstance().report();
-        
+
 		if (Config.SAVE_DROPPED_ITEM)
 		{
 			ItemsOnGroundManager.getInstance();
 		}
-		
+
 		if (Config.AUTODESTROY_ITEM_AFTER > 0 || Config.HERB_AUTO_DESTROY_TIME > 0)
 		{
 			ItemsAutoDestroyTaskManager.getInstance();
 		}
-		
+
 		MonsterRace.getInstance();
-		
+
 		TaskManager.getInstance();
-		
+
 		DailyTaskManager.getInstance();
-		
+
 		AntiFeedManager.getInstance().registerEvent(AntiFeedManager.GAME_ID);
-		
+
 		if (Config.ALLOW_MAIL)
 		{
 			MailManager.getInstance();
 		}
-		
+
 		if (Config.CUSTOM_MAIL_MANAGER_ENABLED)
 		{
 			CustomMailManager.getInstance();
 		}
-		
+
 		if (GlobalEvents.Global.HasSubscribers<OnServerStart>())
 		{
 			GlobalEvents.Global.NotifyAsync(new OnServerStart());
 		}
-		
+
 		PunishmentManager.getInstance();
 
 		AdminCommandHandler.getInstance();
-		
+
 		//Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
-		
+
 		//_logger.Info("IdManager: Free ObjectID's remaining: " + IdManager.getInstance());
-		
+
 		if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS)
 		{
 			OfflineTraderTable.getInstance().restoreOfflineTraders();
 		}
-		
+
 		if (Config.SERVER_RESTART_SCHEDULE_ENABLED)
 		{
 			ServerRestartManager.getInstance();
 		}
-		
+
 		if (Config.PRECAUTIONARY_RESTART_ENABLED)
 		{
 			PrecautionaryRestartManager.getInstance();
 		}
-		
+
 		// if (Config.DEADLOCK_DETECTOR)
 		// {
 		// 	_deadDetectThread = new DeadLockDetector(Duration.ofSeconds(Config.DEADLOCK_CHECK_INTERVAL), () ->

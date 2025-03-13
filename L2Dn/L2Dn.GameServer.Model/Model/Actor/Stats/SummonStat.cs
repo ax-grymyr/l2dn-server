@@ -1,4 +1,6 @@
-﻿namespace L2Dn.GameServer.Model.Actor.Stats;
+﻿using L2Dn.GameServer.StaticData;
+
+namespace L2Dn.GameServer.Model.Actor.Stats;
 
 public class SummonStat: PlayableStat
 {

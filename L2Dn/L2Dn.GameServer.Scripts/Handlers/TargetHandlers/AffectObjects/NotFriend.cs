@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Zones;
+using L2Dn.GameServer.StaticData;
 
 namespace L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectObjects;
 

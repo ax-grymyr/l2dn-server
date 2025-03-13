@@ -6,6 +6,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -17,14 +18,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 public class AdminReload: IAdminCommandHandler
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(AdminReload));
-	
+
 	private static readonly string[] ADMIN_COMMANDS =
     [
         "admin_reload",
     ];
-	
+
 	private const string RELOAD_USAGE = "Usage: //reload <config|access|npc|quest [quest_id|quest_name]|walker|htm[l] [file|directory]|multisell|buylist|teleport|skill|item|door|effect|handler|enchant|options|fishing>";
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
@@ -37,7 +38,7 @@ public class AdminReload: IAdminCommandHandler
 				activeChar.sendMessage(RELOAD_USAGE);
 				return true;
 			}
-			
+
 			string type = st.nextToken();
 			switch (type.toLowerCase())
 			{
@@ -115,7 +116,7 @@ public class AdminReload: IAdminCommandHandler
 						BuilderUtil.sendSysMessage(activeChar,
 							"Cache[HTML]: " + memoryUsage + " megabytes on " +
 							HtmCache.getInstance().getLoadedFiles() + " files loaded");
-						
+
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Htms.");
 					}
 					break;
@@ -340,7 +341,7 @@ public class AdminReload: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

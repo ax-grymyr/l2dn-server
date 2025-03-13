@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
 using L2Dn.CustomAttributes;
 using L2Dn.Extensions;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Utilities;
 using NLog;
 
@@ -45,10 +46,10 @@ public static class SystemMessageIdUtil
 				}
 			}
 		}
-		
+
 		return paramCount;
 	}
-	
+
 	public static void loadLocalisations()
 	{
 		_localizations = ImmutableDictionary<string, ImmutableDictionary<SystemMessageId, SystemMessageInfo>>.Empty;
@@ -57,7 +58,7 @@ public static class SystemMessageIdUtil
 			_logger.Info("SystemMessageId: MultiLanguage disabled.");
 			return;
 		}
-		
+
 		// ImmutableArray<string> languages = Config.MULTILANG_ALLOWED;
 		// DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		// factory.setValidating(false);
@@ -76,7 +77,7 @@ public static class SystemMessageIdUtil
 		// 	{
 		// 		continue;
 		// 	}
-		// 	
+		//
 		// 	try
 		// 	{
 		// 		doc = factory.newDocumentBuilder().parse(file);
@@ -98,21 +99,21 @@ public static class SystemMessageIdUtil
 		// 								LOGGER.log(Level.WARNING, "SystemMessageId: Unknown SMID '" + node.getNodeValue() + "', lang '" + lang + "'.");
 		// 								continue;
 		// 							}
-		// 							
+		//
 		// 							node = nnmb.getNamedItem("translation");
 		// 							if (node == null)
 		// 							{
 		// 								LOGGER.log(Level.WARNING, "SystemMessageId: No text defined for SMID '" + smId + "', lang '" + lang + "'.");
 		// 								continue;
 		// 							}
-		// 							
+		//
 		// 							text = node.getNodeValue();
 		// 							if (text.isEmpty() || (text.length() > 255))
 		// 							{
 		// 								LOGGER.log(Level.WARNING, "SystemMessageId: Invalid text defined for SMID '" + smId + "' (to long or empty), lang '" + lang + "'.");
 		// 								continue;
 		// 							}
-		// 							
+		//
 		// 							smId.attachLocalizedText(lang, text);
 		// 						}
 		// 					}
@@ -124,18 +125,18 @@ public static class SystemMessageIdUtil
 		// 	{
 		// 		_logger.Error("SystemMessageId: Failed loading '" + file + "': " + e);
 		// 	}
-		// 	
+		//
 		// 	_logger.Info("SystemMessageId: Loaded localisations for [" + lang + "].");
 		// }
 	}
-	
+
 	// public SMLocalisation getLocalisation(String lang)
 	// {
 	// 	if (_localisations == null)
 	// 	{
 	// 		return null;
 	// 	}
-	// 	
+	//
 	// 	SMLocalisation sml;
 	// 	for (int i = _localisations.length; i-- > 0;)
 	// 	{
@@ -145,7 +146,7 @@ public static class SystemMessageIdUtil
 	// 			return sml;
 	// 		}
 	// 	}
-	// 	
+	//
 	// 	return null;
 	// }
 }

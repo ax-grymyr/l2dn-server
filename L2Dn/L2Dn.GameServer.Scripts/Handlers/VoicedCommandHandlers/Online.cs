@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
@@ -14,7 +15,7 @@ public class Online: IVoicedCommandHandler
 	{
 		"online"
 	};
-	
+
 	public bool useVoicedCommand(string command, Player player, string target)
 	{
 		if (command.equals("online") && Config.ENABLE_ONLINE_COMMAND)
@@ -31,7 +32,7 @@ public class Online: IVoicedCommandHandler
 		}
 		return true;
 	}
-	
+
 	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;

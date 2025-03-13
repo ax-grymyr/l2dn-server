@@ -1,4 +1,5 @@
 ﻿using L2Dn.Extensions;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;

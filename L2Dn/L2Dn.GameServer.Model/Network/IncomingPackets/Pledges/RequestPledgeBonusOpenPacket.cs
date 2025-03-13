@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets.PledgeBonus;
 using L2Dn.GameServer.Network.OutgoingPackets.PledgeDonation;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -22,7 +23,7 @@ public struct RequestPledgeBonusOpenPacket: IIncomingPacket<GameSession>
 
         player.sendPacket(new ExPledgeDonationInfoPacket(player.getClanDonationPoints(),
             player.getClanJoinExpiryTime()?.AddMinutes(-Config.ALT_CLAN_JOIN_MINS).AddDays(1) < DateTime.UtcNow));
-        
+
         return ValueTask.CompletedTask;
     }
 }

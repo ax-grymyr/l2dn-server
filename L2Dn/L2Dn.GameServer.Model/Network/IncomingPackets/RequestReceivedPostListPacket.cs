@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -16,13 +17,13 @@ public struct RequestReceivedPostListPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null || !Config.ALLOW_MAIL)
             return ValueTask.CompletedTask;
-		
+
         // if (!activeChar.isInsideZone(ZoneId.PEACE))
         // {
         // player.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_OR_SEND_MAIL_WITH_ATTACHED_ITEMS_IN_NON_PEACE_ZONE_REGIONS);
         // return;
         // }
-		
+
         connection.Send(new ExShowReceivedPostListPacket(player.ObjectId));
         return ValueTask.CompletedTask;
     }

@@ -5,6 +5,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -16,17 +17,17 @@ namespace L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 public class IllegalPlayerActionTask: Runnable
 {
 	private static readonly Logger AUDIT_LOGGER = LogManager.GetLogger("audit");
-	
+
 	private readonly string _message;
 	private readonly IllegalActionPunishmentType _punishment;
 	private readonly Player _actor;
-	
+
 	public IllegalPlayerActionTask(Player actor, string message, IllegalActionPunishmentType punishment)
 	{
 		_message = message;
 		_punishment = punishment;
 		_actor = actor;
-		
+
 		switch (punishment)
 		{
 			case IllegalActionPunishmentType.KICK:

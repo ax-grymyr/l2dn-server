@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -22,13 +23,13 @@ public struct ExWorldExchangeRegisterItemPacket: IIncomingPacket<GameSession>
     {
         if (!Config.ENABLE_WORLD_EXCHANGE)
             return ValueTask.CompletedTask;
-		
+
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
 
         WorldExchangeManager.getInstance().registerItemBid(player, _itemId, _amount, _price);
-        
+
         return ValueTask.CompletedTask;
     }
 }

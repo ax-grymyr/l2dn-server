@@ -1,5 +1,6 @@
 ﻿using System.Xml.Linq;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Utilities;

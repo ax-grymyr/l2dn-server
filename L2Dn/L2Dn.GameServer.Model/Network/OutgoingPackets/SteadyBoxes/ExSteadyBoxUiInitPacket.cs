@@ -1,6 +1,7 @@
 ﻿using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.SteadyBoxes;
@@ -29,18 +30,18 @@ public readonly struct ExSteadyBoxUiInitPacket: IOutgoingPacket
         1500,
         2000
     };
-	
+
     private readonly Player _player;
-	
+
     public ExSteadyBoxUiInitPacket(Player player)
     {
         _player = player;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_STEADY_BOX_UI_INIT);
-		
+
         writer.WriteInt32(Config.ACHIEVEMENT_BOX_POINTS_FOR_REWARD);
         writer.WriteInt32(Config.ACHIEVEMENT_BOX_PVP_POINTS_FOR_REWARD);
         if (Config.ENABLE_ACHIEVEMENT_PVP)
@@ -53,7 +54,7 @@ public readonly struct ExSteadyBoxUiInitPacket: IOutgoingPacket
         }
         writer.WriteInt32(0); // nEventStartTime time for limitkill
         writer.WriteInt32(_player.getAchievementBox().pvpEndDate().getEpochSecond());
-		
+
         writer.WriteInt32(OPEN_PRICE.Length);
         for (int i = 0; i < OPEN_PRICE.Length; i++)
         {
@@ -61,7 +62,7 @@ public readonly struct ExSteadyBoxUiInitPacket: IOutgoingPacket
             writer.WriteInt32(Inventory.LCOIN_ID);
             writer.WriteInt64(OPEN_PRICE[i]);
         }
-		
+
         writer.WriteInt32(TIME_PRICE.Length);
         for (int i = 0; i < TIME_PRICE.Length; i++)
         {
@@ -69,7 +70,7 @@ public readonly struct ExSteadyBoxUiInitPacket: IOutgoingPacket
             writer.WriteInt32(Inventory.LCOIN_ID);
             writer.WriteInt64(TIME_PRICE[i]);
         }
-		
+
         TimeSpan rewardTimeStage = _player.getAchievementBox().getBoxOpenTime() - DateTime.UtcNow ?? TimeSpan.Zero;
         writer.WriteInt32((int)rewardTimeStage.TotalSeconds);
     }

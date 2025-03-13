@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Actor.Request;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.PrimeShop;
 using L2Dn.GameServer.Network.OutgoingPackets.PrimeShop;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;

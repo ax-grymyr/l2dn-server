@@ -2,6 +2,7 @@ using System.Net;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.InstanceManagers;

@@ -3,6 +3,7 @@ using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Olympiads;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Packets;
 using NLog;
 
@@ -11,11 +12,11 @@ namespace L2Dn.GameServer.Network.OutgoingPackets.Ranking;
 public readonly struct ExOlympiadHeroAndLegendInfoPacket: IOutgoingPacket
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(ExOlympiadHeroAndLegendInfoPacket));
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.EX_OLYMPIAD_HERO_AND_LEGEND_INFO);
-		
+
 		if (Hero.getInstance().getHeroes().Count != 0)
 		{
 			try

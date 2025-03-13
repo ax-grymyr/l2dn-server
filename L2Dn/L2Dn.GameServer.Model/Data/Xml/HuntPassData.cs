@@ -3,6 +3,7 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using NLog;
@@ -19,21 +20,21 @@ public class HuntPassData: DataReaderBase
 	private readonly List<ItemHolder> _premiumRewards = new();
 	private int _rewardCount = 0;
 	private int _premiumRewardCount = 0;
-	
+
 	protected HuntPassData()
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		if (Config.ENABLE_HUNT_PASS)
 		{
 			_rewards.Clear();
-			
+
 			XDocument document = LoadXmlDocument(DataFileLocation.Data, "HuntPass.xml");
 			document.Elements("hitConditionBonus").Elements("item").ForEach(parseElement);
-			
+
 			_rewardCount = _rewards.Count;
 			_premiumRewardCount = _premiumRewards.Count;
 			LOGGER.Info(GetType().Name + ": Loaded " + _rewardCount + " HuntPass rewards.");
@@ -43,7 +44,7 @@ public class HuntPassData: DataReaderBase
 			LOGGER.Info(GetType().Name + ": Disabled.");
 		}
 	}
-	
+
 	private void parseElement(XElement element)
 	{
 		int itemId = element.GetAttributeValueAsInt32("id");
@@ -60,32 +61,32 @@ public class HuntPassData: DataReaderBase
 			_premiumRewards.Add(new ItemHolder(premiumitemId, premiumitemCount));
 		}
 	}
-	
+
 	public List<ItemHolder> getRewards()
 	{
 		return _rewards;
 	}
-	
+
 	public int getRewardsCount()
 	{
 		return _rewardCount;
 	}
-	
+
 	public List<ItemHolder> getPremiumRewards()
 	{
 		return _premiumRewards;
 	}
-	
+
 	public int getPremiumRewardsCount()
 	{
 		return _premiumRewardCount;
 	}
-	
+
 	public static HuntPassData getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly HuntPassData INSTANCE = new();

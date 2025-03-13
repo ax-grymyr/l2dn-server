@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -9,7 +10,7 @@ namespace L2Dn.GameServer.Network.IncomingPackets;
 public struct SetPrivateStoreWholeMsgPacket: IIncomingPacket<GameSession>
 {
     private const int MAX_MSG_LENGTH = 29;
-	
+
     private string _msg;
 
     public void ReadContent(PacketBitReader reader)
@@ -22,15 +23,15 @@ public struct SetPrivateStoreWholeMsgPacket: IIncomingPacket<GameSession>
         Player? player = session.Player;
         if (player == null || player.getSellList() == null)
             return ValueTask.CompletedTask;
-		
+
         if (_msg != null && _msg.Length > MAX_MSG_LENGTH)
         {
             Util.handleIllegalPlayerAction(player, player + " tried to overflow private store whole message",
                 Config.DEFAULT_PUNISH);
-            
+
             return ValueTask.CompletedTask;
         }
-		
+
         player.getSellList().setTitle(_msg ?? string.Empty);
         player.sendPacket(new ExPrivateStoreSetWholeMsgPacket(player));
 

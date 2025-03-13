@@ -2,6 +2,7 @@ using System.Text;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using NLog;

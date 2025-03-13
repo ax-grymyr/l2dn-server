@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.BuyList;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Packets;
 using NLog;
 

@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -24,7 +25,7 @@ public struct ExWorldExchangeBuyItemPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         WorldExchangeManager.getInstance().buyItem(player, checked((int)_worldExchangeIndex));
-        
+
         return ValueTask.CompletedTask;
     }
 }

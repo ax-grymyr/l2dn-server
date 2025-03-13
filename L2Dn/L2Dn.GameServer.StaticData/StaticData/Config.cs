@@ -10,7 +10,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.Geometry;
 using NLog;
 
-namespace L2Dn.GameServer;
+namespace L2Dn.GameServer.StaticData;
 
 /// <summary>
 /// This class loads all the game server related configurations from files.

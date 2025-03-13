@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -18,7 +19,7 @@ public class HtmlActionValidator
     /// This can be used for html continuing the conversation with an npc.
     /// </summary>
     public int? OriginObjectId => _originObjId;
-    
+
     /// <summary>
     /// Check if the HTML action was sent in a HTML packet previously.
     /// If the HTML action was not sent for whatever reason, false is returned.
@@ -32,14 +33,14 @@ public class HtmlActionValidator
     {
         for (int i = 0; i < CacheArraySize; ++i)
         {
-            ref CacheArrayItem item = ref _array[i]; 
+            ref CacheArrayItem item = ref _array[i];
             if (ValidateHtmlAction(ref item.Actions, action))
             {
                 _originObjId = originObjectId = item.OriginObjectId;
                 return true;
             }
         }
-		
+
         originObjectId = null;
         return false;
     }
@@ -54,22 +55,22 @@ public class HtmlActionValidator
 
         if (originObjectId < 0)
             throw new ArgumentOutOfRangeException(nameof(originObjectId), originObjectId, null);
-        
+
         if (Config.HTML_ACTION_CACHE_DEBUG)
             _logger.Info("Set html action npc(" + scope + "): " + originObjectId);
 
         _array[(int)scope].OriginObjectId = originObjectId;
-        
+
         ref List<ActionItem>? actions = ref _array[(int)scope].Actions;
         if (actions is null)
 	        actions = new List<ActionItem>();
         else
             actions.Clear();
-        
+
         BuildHtmlBypassCache(scope, html, actions);
         BuildHtmlLinkCache(scope, html, actions);
     }
-    
+
 	private static void BuildHtmlBypassCache(HtmlActionScope scope, string html, List<ActionItem> actions)
 	{
 		// TODO: use spans
@@ -81,28 +82,28 @@ public class HtmlActionValidator
 			bypassEnd = html.IndexOf('"', bypassStartEnd);
 			if (bypassEnd < 0)
 				break;
-			
+
 			int hParamPos = html.IndexOf("-h ", bypassStartEnd, StringComparison.OrdinalIgnoreCase);
 			string bypass;
 			if (hParamPos >= 0 && hParamPos < bypassEnd)
 				bypass = html.Substring(hParamPos + 3, bypassEnd - hParamPos - 3).Trim();
 			else
 				bypass = html.Substring(bypassStartEnd, bypassEnd - bypassStartEnd).Trim();
-			
+
 			int firstParameterStart = bypass.IndexOf(ParamStartChar);
-			bool hasParameters = firstParameterStart >= 0; 
+			bool hasParameters = firstParameterStart >= 0;
 			if (hasParameters)
 				bypass = bypass.Substring(0, firstParameterStart).Trim();
-			
+
 			if (Config.HTML_ACTION_CACHE_DEBUG)
 				_logger.Info("Cached html bypass(" + scope + "): '" + bypass + "'");
 
 			actions.Add(new ActionItem { Action = bypass, Prefix = hasParameters });
-			
+
 			bypassStart = html.IndexOf("=\"bypass ", bypassEnd, StringComparison.OrdinalIgnoreCase);
 		}
 	}
-	
+
 	private static void BuildHtmlLinkCache(HtmlActionScope scope, string html, List<ActionItem> actions)
 	{
 		// TODO: use spans
@@ -116,45 +117,45 @@ public class HtmlActionValidator
 			{
 				break;
 			}
-			
+
 			string htmlLink = html.Substring(linkStartEnd, linkEnd - linkStartEnd).Trim();
 			if (string.IsNullOrEmpty(htmlLink))
 			{
 				_logger.Warn("Html link path is empty!");
 				continue;
 			}
-			
+
 			if (htmlLink.Contains(".."))
 			{
 				_logger.Warn("Html link path is invalid: " + htmlLink);
 				continue;
 			}
-			
+
 			if (Config.HTML_ACTION_CACHE_DEBUG)
 				_logger.Info("Cached html link(" + scope + "): '" + htmlLink + "'");
 
 			// let's keep an action cache with "link " lowercase literal kept
 			actions.Add(new ActionItem { Action = "link " + htmlLink });
-			
+
 			linkStart = html.IndexOf("=\"link ", linkEnd, StringComparison.OrdinalIgnoreCase);
 		}
 	}
-	
+
     public void ClearActions(HtmlActionScope scope)
     {
         if ((int)scope < 0 || (int)scope >= CacheArraySize)
             return;
 
-        ref CacheArrayItem item = ref _array[(int)scope]; 
+        ref CacheArrayItem item = ref _array[(int)scope];
         item.Actions?.Clear();
         item.OriginObjectId = null;
     }
-    
+
     private static bool ValidateHtmlAction(ref List<ActionItem>? actions, string action)
     {
         if (actions is null)
             return false;
-        
+
         foreach (ActionItem cachedAction in actions)
         {
             if (cachedAction.Prefix)
@@ -165,7 +166,7 @@ public class HtmlActionValidator
             else if (string.Equals(cachedAction.Action, action))
                 return true;
         }
-        
+
         return false;
     }
 
@@ -174,17 +175,17 @@ public class HtmlActionValidator
 	    public string Action;
 	    public bool Prefix;
     }
-    
+
     private struct CacheArrayItem
     {
         /// <summary>
         /// Last Html Npcs, null = last html was not bound to an npc.
         /// </summary>
         public int? OriginObjectId;
-        
+
         public List<ActionItem>? Actions;
     }
-    
+
     [InlineArray(CacheArraySize)]
     private struct CacheArray
     {

@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ChatHandlers;
@@ -17,19 +18,19 @@ namespace L2Dn.GameServer.Scripts.Handlers.ChatHandlers;
 public class ChatWorld: IChatHandler
 {
 	private static readonly Map<int, DateTime> REUSE = new();
-	
+
 	private static readonly ChatType[] CHAT_TYPES =
 	{
 		ChatType.WORLD,
 	};
-	
+
 	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
 	{
 		if (!Config.ENABLE_WORLD_CHAT)
 		{
 			return;
 		}
-		
+
 		DateTime now = DateTime.UtcNow;
 		if (REUSE.Count != 0)
 		{
@@ -37,7 +38,7 @@ public class ChatWorld: IChatHandler
 			foreach (int id in expired)
 				REUSE.remove(id);
 		}
-		
+
 		if (activeChar.getLevel() < Config.WORLD_CHAT_MIN_LEVEL)
 		{
 			SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_CAN_USE_WORLD_CHAT_FROM_LV_S1);
@@ -78,12 +79,12 @@ public class ChatWorld: IChatHandler
 
 				}
 			}
-			
+
 			if (shareLocation)
 			{
 				activeChar.destroyItemByItemId("Shared Location", Inventory.LCOIN_ID, Config.SHARING_LOCATION_COST, activeChar, true);
 			}
-			
+
 			CreatureSayPacket cs = new CreatureSayPacket(activeChar, type, activeChar.getName(), text, shareLocation);
 			if (Config.FACTION_SYSTEM_ENABLED && Config.FACTION_SPECIFIC_CHAT)
 			{
@@ -118,7 +119,7 @@ public class ChatWorld: IChatHandler
 					}
 				}
 			}
-			
+
 			activeChar.setWorldChatUsed(activeChar.getWorldChatUsed() + 1);
 			activeChar.sendPacket(new ExWorldCharCntPacket(activeChar));
 			if (Config.WORLD_CHAT_INTERVAL > TimeSpan.Zero)
@@ -127,7 +128,7 @@ public class ChatWorld: IChatHandler
 			}
 		}
 	}
-	
+
 	public ChatType[] getChatTypeList()
 	{
 		return CHAT_TYPES;

@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.StaticData;
 
 namespace L2Dn.GameServer.Model;
 

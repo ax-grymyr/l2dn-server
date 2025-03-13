@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Events.Impl.Items;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.StaticData;
 
 namespace L2Dn.GameServer.Model.ItemContainers;
 

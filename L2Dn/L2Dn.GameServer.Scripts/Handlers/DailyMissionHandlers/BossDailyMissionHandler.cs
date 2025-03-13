@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Attackables;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.DailyMissionHandlers;

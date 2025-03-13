@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -12,12 +13,12 @@ public class RandomAnimationTaskManager: Runnable
 {
 	private static readonly Map<Npc, DateTime> PENDING_ANIMATIONS = new();
 	private static bool _working = false;
-	
+
 	protected RandomAnimationTaskManager()
 	{
 		ThreadPool.scheduleAtFixedRate(this, 0, 1000);
 	}
-	
+
 	public void run()
 	{
 		if (_working)
@@ -25,7 +26,7 @@ public class RandomAnimationTaskManager: Runnable
 			return;
 		}
 		_working = true;
-		
+
 		DateTime currentTime = DateTime.UtcNow;
 		List<Npc> npcs = PENDING_ANIMATIONS.Where(x => currentTime > x.Value).Select(x => x.Key).ToList();
 
@@ -44,7 +45,7 @@ public class RandomAnimationTaskManager: Runnable
 
 		_working = false;
 	}
-	
+
 	public void add(Npc npc)
 	{
 		if (npc.hasRandomAnimation())
@@ -55,17 +56,17 @@ public class RandomAnimationTaskManager: Runnable
 						npc.isAttackable() ? Config.MAX_MONSTER_ANIMATION : Config.MAX_NPC_ANIMATION) * 1000));
 		}
 	}
-	
+
 	public void remove(Npc npc)
 	{
 		PENDING_ANIMATIONS.remove(npc);
 	}
-	
+
 	public static RandomAnimationTaskManager getInstance()
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly RandomAnimationTaskManager INSTANCE = new RandomAnimationTaskManager();

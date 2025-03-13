@@ -4,6 +4,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -38,10 +39,10 @@ public struct RequestPetitionCancelPacket: IIncomingPacket<GameSession>
             {
                 int numRemaining = Config.MAX_PETITIONS_PER_PLAYER -
                                    PetitionManager.getInstance().getPlayerTotalPetitionCount(player);
-                
+
                 SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId
                     .YOUR_GLOBAL_SUPPORT_REQUEST_HAS_BEEN_REVOKED_NUMBER_OR_REQUESTS_YOU_CAN_SEND_S1);
-                
+
                 sm.Params.addString(numRemaining.ToString());
                 player.sendPacket(sm);
 

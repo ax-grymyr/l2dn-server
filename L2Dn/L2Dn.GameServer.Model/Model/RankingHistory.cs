@@ -2,6 +2,7 @@
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.StaticData;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 
@@ -10,26 +11,26 @@ namespace L2Dn.GameServer.Model;
 public class RankingHistory
 {
 	private static readonly Logger LOGGER = LogManager.GetLogger(nameof(RankingHistory));
-	
+
 	private const int NUM_HISTORY_DAYS = 7;
-	
+
 	private readonly Player _player;
 	private readonly List<RankingHistoryDataHolder> _data = new();
 	private DateTime _nextUpdate;
-	
+
 	public RankingHistory(Player player)
 	{
 		_player = player;
 	}
-	
+
 	public void store()
 	{
 		int ranking = RankManager.getInstance().getPlayerGlobalRank(_player);
 		long exp = _player.getExp();
 		DateOnly today = DateOnly.FromDateTime(DateTime.Today);
 		DateOnly oldestDay = today.AddDays(-NUM_HISTORY_DAYS + 1);
-		
-		try 
+
+		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = _player.ObjectId;
@@ -45,7 +46,7 @@ public class RankingHistory
 			record.Ranking = ranking;
 			record.Exp = exp;
 			ctx.SaveChanges();
-			
+
 			// Delete old records
 			ctx.CharacterRankingHistory.Where(r => r.CharacterId == characterId && r.Date < oldestDay).ExecuteDelete();
 		}
@@ -54,7 +55,7 @@ public class RankingHistory
 			LOGGER.Error("Could not insert RankingCharHistory data: " + e);
 		}
 	}
-	
+
 	public List<RankingHistoryDataHolder> getData()
 	{
 		DateTime currentTime = DateTime.UtcNow;
@@ -66,8 +67,8 @@ public class RankingHistory
 				store(); // to update
 			}
 			_nextUpdate = currentTime.AddMilliseconds(Config.CHAR_DATA_STORE_INTERVAL);
-			
-			try 
+
+			try
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int characterId = _player.ObjectId;

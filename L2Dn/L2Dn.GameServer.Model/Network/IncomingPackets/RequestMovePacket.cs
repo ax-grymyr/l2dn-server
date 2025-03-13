@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Sayune;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Network;
@@ -121,18 +122,18 @@ internal struct RequestMovePacket: IIncomingPacket<GameSession>
 					player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 					return ValueTask.CompletedTask;
 				}
-				
+
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, _target);
 				break;
 			}
 		}
-		
+
 		// Remove queued skill upon move request.
 		if (player.getQueuedSkill() != null)
 		{
 			player.setQueuedSkill(null, null, false, false);
 		}
-		
+
 		// Mobius: Check spawn protections.
 		player.onActionRequest();
 

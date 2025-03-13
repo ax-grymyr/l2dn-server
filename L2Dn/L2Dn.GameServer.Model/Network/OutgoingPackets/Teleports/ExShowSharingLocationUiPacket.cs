@@ -1,4 +1,5 @@
-﻿using L2Dn.Packets;
+﻿using L2Dn.GameServer.StaticData;
+using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.Teleports;
 
@@ -9,7 +10,7 @@ public readonly struct ExShowSharingLocationUiPacket: IOutgoingPacket
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SHARED_POSITION_SHARING_UI);
-        
+
         writer.WriteInt64(Config.SHARING_LOCATION_COST);
     }
 }

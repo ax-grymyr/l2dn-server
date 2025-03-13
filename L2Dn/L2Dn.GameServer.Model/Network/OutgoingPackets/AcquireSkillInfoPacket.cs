@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
 
@@ -12,21 +13,21 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct AcquireSkillInfoPacket: IOutgoingPacket
 {
 	/// <summary>
-	/// 
+	///
 	/// </summary>
 	/// <param name="Type">TODO identify</param>
 	/// <param name="ItemId">the item Id</param>
 	/// <param name="Count">the item count</param>
 	/// <param name="Unknown">TODO identify</param>
 	private record struct Req(int Type, int ItemId, long Count, int Unknown);
-    
+
 	private readonly Player _player;
     private readonly AcquireSkillType _type;
     private readonly int _id;
     private readonly int _level;
     private readonly long _spCost;
     private readonly List<Req> _reqs;
-	
+
     /**
 	 * Constructor for the acquire skill info object.
 	 * @param player
@@ -41,7 +42,7 @@ public readonly struct AcquireSkillInfoPacket: IOutgoingPacket
         _spCost = skillLearn.getLevelUpSp();
         _type = skillType;
         _reqs = new();
-        
+
         if (skillType != AcquireSkillType.PLEDGE || Config.LIFE_CRYSTAL_NEEDED)
         {
             foreach (List<ItemHolder> item in skillLearn.getRequiredItems())
@@ -50,12 +51,12 @@ public readonly struct AcquireSkillInfoPacket: IOutgoingPacket
                 {
                     continue;
                 }
-                
+
                 _reqs.Add(new Req(99, item[0].getId(), item[0].getCount(), 50));
             }
         }
     }
-	
+
     /**
 	 * Special constructor for Alternate Skill Learning system.<br>
 	 * Sets a custom amount of SP.
@@ -77,11 +78,11 @@ public readonly struct AcquireSkillInfoPacket: IOutgoingPacket
             _reqs.Add(new Req(99, item[0].getId(), item[0].getCount(), 50));
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.ACQUIRE_SKILL_INFO);
-        
+
         writer.WriteInt32(_player.getReplacementSkill(_id));
         writer.WriteInt32(_level);
         writer.WriteInt64(_spCost);

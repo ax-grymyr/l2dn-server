@@ -2,6 +2,7 @@ using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData;
 
 namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
 

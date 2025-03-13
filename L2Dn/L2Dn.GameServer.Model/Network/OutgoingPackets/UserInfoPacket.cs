@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using L2Dn.Packets;
 using L2Dn.Utilities;

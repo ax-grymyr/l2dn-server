@@ -2,6 +2,7 @@
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.InstanceZones;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 

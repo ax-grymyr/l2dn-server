@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 

@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 
@@ -39,7 +40,7 @@ public class NpcAction: IActionHandler
 		{
 			return false;
 		}
-		
+
 		player.setLastFolkNPC((Npc) target);
 		// Check if the Player already target the Npc
 		if (target != player.getTarget())
@@ -78,19 +79,19 @@ public class NpcAction: IActionHandler
 							npc.onRandomAnimation(Rnd.get(8));
 						}
 					}
-					
+
 					// Stop movement when trying to talk to a moving NPC.
 					if (npc.isMoving())
 					{
 						player.stopMove(null);
 					}
-					
+
 					// Open a chat window on client with the text of the Npc
 					if (npc.Events.HasSubscribers<OnNpcQuestStart>())
 					{
 						player.setLastQuestNpcObject(target.ObjectId);
 					}
-					
+
 					if (npc.Events.HasSubscribers<OnNpcFirstTalk>())
 					{
 						npc.Events.NotifyAsync(new OnNpcFirstTalk(npc, player));
@@ -99,7 +100,7 @@ public class NpcAction: IActionHandler
 					{
 						npc.showChatWindow(player);
 					}
-					
+
 					if (Config.PLAYER_MOVEMENT_BLOCK_TIME > 0)
 					{
 						player.updateNotMoveUntil();
@@ -113,7 +114,7 @@ public class NpcAction: IActionHandler
 		}
 		return true;
 	}
-	
+
 	public InstanceType getInstanceType()
 	{
 		return InstanceType.Npc;

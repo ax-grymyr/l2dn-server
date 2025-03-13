@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;

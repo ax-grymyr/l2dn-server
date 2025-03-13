@@ -4,6 +4,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 using Microsoft.EntityFrameworkCore;

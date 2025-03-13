@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;

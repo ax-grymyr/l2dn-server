@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.HuntPasses;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -40,7 +41,7 @@ public struct RequestHuntPassBuyPremiumPacket: IIncomingPacket<GameSession>
         player.getHuntPass().setPremium(true);
         player.sendPacket(new HuntPassSayhasSupportInfoPacket(player));
         player.sendPacket(new HuntPassInfoPacket(player, _huntPassType));
-        
+
         return ValueTask.CompletedTask;
     }
 }

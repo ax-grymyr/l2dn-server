@@ -3,6 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Packets;
@@ -19,7 +20,7 @@ public readonly struct ExOlympiadRankingInfoPacket: IOutgoingPacket
 	private readonly int _serverId;
 	private readonly Map<int, StatSet> _playerList;
 	private readonly Map<int, StatSet> _snapshotList;
-	
+
 	public ExOlympiadRankingInfoPacket(Player player, RankingOlympiadCategory category, int rankingType, int unk, CharacterClass classId, int serverId)
 	{
 		_player = player;
@@ -31,11 +32,11 @@ public readonly struct ExOlympiadRankingInfoPacket: IOutgoingPacket
 		_playerList = RankManager.getInstance().getOlyRankList();
 		_snapshotList = RankManager.getInstance().getSnapshotOlyList();
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.EX_OLYMPIAD_RANKING_INFO);
-		
+
 		writer.WriteByte((byte)_category); // Tab id
 		writer.WriteByte((byte)_rankingType); // ranking type
 		writer.WriteByte((byte)_unk); // unk, shows 1 all time
@@ -97,7 +98,7 @@ public readonly struct ExOlympiadRankingInfoPacket: IOutgoingPacket
 				limited = (playerData.Key == 0
 					? Enumerable.Empty<System.Collections.Generic.KeyValuePair<int, StatSet>>()
 					: list.Skip(Math.Max(0, indexOf - 10)).Take(20)).ToList();
-				
+
 				break;
 			}
 			default:
@@ -106,7 +107,7 @@ public readonly struct ExOlympiadRankingInfoPacket: IOutgoingPacket
 				break;
 			}
 		}
-		
+
 		writer.WriteInt32(limited.Count);
 		int rank = 1;
 		foreach (var data in limited)
@@ -132,7 +133,7 @@ public readonly struct ExOlympiadRankingInfoPacket: IOutgoingPacket
 			{
 				writer.WriteInt32(scope == RankingOlympiadScope.SELF ? data.Key : curRank);
 			}
-			
+
 			writer.WriteInt32(Config.SERVER_ID); // server id
 			writer.WriteInt32(player.getInt("level")); // level
 			writer.WriteInt32(player.getInt("classId")); // class id

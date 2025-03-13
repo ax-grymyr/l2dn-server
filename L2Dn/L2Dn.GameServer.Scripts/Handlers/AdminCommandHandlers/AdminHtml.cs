@@ -3,6 +3,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
@@ -17,7 +18,7 @@ public class AdminHtml: IAdminCommandHandler
         "admin_html",
 		"admin_loadhtml",
     ];
-	
+
 	public bool useAdminCommand(string command, Player activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
@@ -31,7 +32,7 @@ public class AdminHtml: IAdminCommandHandler
 					BuilderUtil.sendSysMessage(activeChar, "Usage: //html path");
 					return false;
 				}
-				
+
 				string path = st.nextToken();
 				showAdminHtml(activeChar, path);
 				break;
@@ -43,7 +44,7 @@ public class AdminHtml: IAdminCommandHandler
 					BuilderUtil.sendSysMessage(activeChar, "Usage: //loadhtml path");
 					return false;
 				}
-				
+
 				string path = st.nextToken();
 				showHtml(activeChar, path, true);
 				break;
@@ -51,7 +52,7 @@ public class AdminHtml: IAdminCommandHandler
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Shows a html message to activeChar
 	 * @param activeChar activeChar where html is shown
@@ -61,7 +62,7 @@ public class AdminHtml: IAdminCommandHandler
 	{
 		showHtml(activeChar, "html/admin/" + path, false);
 	}
-	
+
 	/**
 	 * Shows a html message to activeChar.
 	 * @param activeChar activeChar where html message is shown.
@@ -83,12 +84,12 @@ public class AdminHtml: IAdminCommandHandler
 		HtmlContent htmlContent =
 			HtmlContent.LoadFromText(content ?? "<html><body>My text is missing:<br>" + path + "</body></html>",
 				activeChar);
-		
+
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 
 		activeChar.sendPacket(html);
 	}
-	
+
 	public string[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

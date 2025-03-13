@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -8,7 +9,7 @@ namespace L2Dn.GameServer.Model.Html;
 
 public sealed class HtmlContent
 {
-    public const string MissingHtml = "<html><body>Html is missing</body></html>";  
+    public const string MissingHtml = "<html><body>Html is missing</body></html>";
     private static readonly Logger _logger = LogManager.GetLogger(nameof(HtmlContent));
     private readonly string? _filePath;
     private readonly HtmlActionValidator? _validator;
@@ -25,15 +26,15 @@ public sealed class HtmlContent
     }
 
     public bool FileLoaded => _fileLoaded;
-    
+
     public void DisableValidation()
     {
         _disableValidation = true;
     }
-    
+
     public void Replace(string pattern, string? value)
     {
-        string val = value?.replaceAll(@"\$", @"\\\$") ?? string.Empty; 
+        string val = value?.replaceAll(@"\$", @"\\\$") ?? string.Empty;
         _html = _html.replaceAll(pattern, val);
     }
 
@@ -48,21 +49,21 @@ public sealed class HtmlContent
         if (html.Length > 17200)
         {
             _logger.Warn($"Html is too long {_html.Length}! this will crash the client! Path: {_filePath}");
-            
+
             html = html.Substring(0, 17200);
         }
-        
+
         if (_validator != null)
         {
             _validator.ClearActions(scope);
-            
+
             if (!_disableValidation)
                 _validator.BuildActions(scope, html, originObjectId);
         }
 
         return html;
     }
-    
+
     /// <summary>
     /// Loads HTML from data pack.
     /// </summary>
@@ -82,7 +83,7 @@ public sealed class HtmlContent
 
         if (Config.GM_DEBUG_HTML_PATHS && player != null && player.isGM())
             BuilderUtil.sendHtmlMessage(player, path);
-        
+
         return new HtmlContent(path, WrapHtml(html), player?.getClient()?.HtmlActionValidator, fileLoaded);
     }
 
@@ -96,7 +97,7 @@ public sealed class HtmlContent
     {
         return new HtmlContent(null, WrapHtml(html), player?.getClient()?.HtmlActionValidator, false);
     }
-    
+
     private static string WrapHtml(string html)
     {
         if (!html.Contains("<html") && !html.StartsWith("..\\L2"))

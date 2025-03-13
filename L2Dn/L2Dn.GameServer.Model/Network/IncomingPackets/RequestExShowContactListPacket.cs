@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -21,7 +22,7 @@ public struct RequestExShowContactListPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         player.sendPacket(new ExShowContactListPacket(player));
-        
+
         return ValueTask.CompletedTask;
     }
 }

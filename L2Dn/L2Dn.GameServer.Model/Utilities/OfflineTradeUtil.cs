@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using NLog;
 

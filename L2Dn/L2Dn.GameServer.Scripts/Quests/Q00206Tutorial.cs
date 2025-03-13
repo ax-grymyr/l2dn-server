@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Geometry;
 using L2Dn.Model;
 using L2Dn.Model.Enums;

@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ChatHandlers;
@@ -21,7 +22,7 @@ public class ChatShout: IChatHandler
 	{
 		ChatType.SHOUT,
 	};
-	
+
 	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
 	{
 		if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.Contains(type))
@@ -41,7 +42,7 @@ public class ChatShout: IChatHandler
 			activeChar.sendPacket(sm);
 			return;
 		}
-		
+
 		if (shareLocation)
 		{
 			if (activeChar.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < Config.SHARING_LOCATION_COST)
@@ -49,16 +50,16 @@ public class ChatShout: IChatHandler
 				activeChar.sendPacket(SystemMessageId.THERE_ARE_NOT_ENOUGH_L_COINS);
 				return;
 			}
-			
+
 			if (activeChar.getMovieHolder() != null || activeChar.isFishing() || activeChar.isInInstance() || activeChar.isOnEvent() || activeChar.isInOlympiadMode() || activeChar.inObserverMode() || activeChar.isInTraingCamp() || activeChar.isInTimedHuntingZone() || activeChar.isInsideZone(ZoneId.SIEGE))
 			{
 				activeChar.sendPacket(SystemMessageId.LOCATION_CANNOT_BE_SHARED_SINCE_THE_CONDITIONS_ARE_NOT_MET);
 				return;
 			}
-			
+
 			activeChar.destroyItemByItemId("Shared Location", Inventory.LCOIN_ID, Config.SHARING_LOCATION_COST, activeChar, true);
 		}
-		
+
 		CreatureSayPacket cs = new CreatureSayPacket(activeChar, type, activeChar.getName(), text, shareLocation);
 		if (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("on") || (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("gm") && activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS)))
 		{
@@ -96,7 +97,7 @@ public class ChatShout: IChatHandler
 			// 	activeChar.sendMessage("Do not spam shout channel.");
 			// 	return;
 			// }
-			
+
 			foreach (Player player in World.getInstance().getPlayers())
 			{
 				if (!BlockList.isBlocked(player, activeChar))
@@ -123,7 +124,7 @@ public class ChatShout: IChatHandler
 			}
 		}
 	}
-	
+
 	public ChatType[] getChatTypeList()
 	{
 		return CHAT_TYPES;

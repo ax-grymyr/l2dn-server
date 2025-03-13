@@ -1,4 +1,4 @@
-﻿namespace L2Dn.GameServer;
+﻿namespace L2Dn.GameServer.StaticData;
 
 /**
  * Flood protector configuration

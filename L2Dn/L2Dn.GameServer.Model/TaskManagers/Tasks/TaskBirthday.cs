@@ -3,6 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.StaticData;
 
 namespace L2Dn.GameServer.TaskManagers.Tasks;
 
@@ -13,12 +14,12 @@ public class TaskBirthday: Task
 {
 	private const string NAME = "birthday";
 	private int _count = 0;
-	
+
 	public override string getName()
 	{
 		return NAME;
 	}
-	
+
 	public override void onTimeElapsed(TaskManager.ExecutedTask task)
 	{
 		DateTime today = DateTime.Today;
@@ -29,24 +30,24 @@ public class TaskBirthday: Task
 			lastExecDate = lastActivation.Value;
 		}
 
-		
+
 		string rangeDate = $"[{lastExecDate:MMM-dd}] - [{today:MMM-dd}]";
 		while (lastExecDate <= today)
 		{
 			checkBirthday(lastExecDate.Month * 100 + lastExecDate.Day);
 			lastExecDate = lastExecDate.AddDays(1);
 		}
-		
+
 		LOGGER.Info("BirthdayManager: " + _count + " gifts sent. " + rangeDate);
 	}
-	
+
 	private void checkBirthday(int day)
 	{
 		try
 		{
 			// If character birthday is 29-Feb and year isn't leap, send gift on 28-feb
 			bool include29February = day == 228 && DateTime.IsLeapYear(DateTime.Today.Year);
-			
+
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			var query = ctx.Characters.Where(r => r.BirthDay == day || (include29February && r.BirthDay == 229)).Select(
 				r => new
@@ -90,7 +91,7 @@ public class TaskBirthday: Task
 			LOGGER.Error("Error checking birthdays: " + e);
 		}
 	}
-	
+
 	/**
 	 * @param num the number to format.
 	 * @return the formatted number starting with a 0 if it is lower or equal than 10.
@@ -99,7 +100,7 @@ public class TaskBirthday: Task
 	{
 		return num <= 9 ? "0" + num : num.ToString();
 	}
-	
+
 	public override void initializate()
 	{
 		TaskManager.addUniqueTask(NAME, TaskTypes.TYPE_GLOBAL_TASK, "1", "06:30:00", "");

@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Olympiads;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
 
@@ -8,16 +9,16 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct ExHeroListPacket: IOutgoingPacket
 {
     private readonly Map<int, StatSet> _heroList;
-	
+
     public ExHeroListPacket()
     {
         _heroList = Hero.getInstance().getHeroes();
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_HERO_LIST);
-        
+
         writer.WriteInt32(_heroList.Count);
         foreach (StatSet hero in _heroList.Values)
         {

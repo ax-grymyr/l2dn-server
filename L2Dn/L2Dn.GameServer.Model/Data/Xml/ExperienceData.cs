@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using L2Dn.Extensions;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Xml;
 using NLog;
 
@@ -13,10 +14,10 @@ public class ExperienceData: DataReaderBase
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(ExperienceData));
 	private static ImmutableArray<long> _expTable = ImmutableArray<long>.Empty;
 	private static ImmutableArray<double> _trainingRateTable = ImmutableArray<double>.Empty;
-	
+
 	private static int _maxLevel;
 	private static int _maxPetLevel;
-	
+
 	/**
 	 * Instantiates a new experience table.
 	 */
@@ -24,7 +25,7 @@ public class ExperienceData: DataReaderBase
 	{
 		load();
 	}
-	
+
 	public void load()
 	{
 		XmlExperienceData document = LoadXmlDocument<XmlExperienceData>(DataFileLocation.Data, "stats/experience.xml");
@@ -42,12 +43,12 @@ public class ExperienceData: DataReaderBase
 		_expTable = document.Levels.ToDictionary(x => x.Level, x => x.ToLevel).ToValueArray().ToImmutableArray();
 		_trainingRateTable = document.Levels.ToDictionary(x => x.Level, x => x.TrainingRate).ToValueArray()
 			.ToImmutableArray();
-		
+
 		_logger.Info($"{GetType().Name}: Loaded {_expTable.Length} levels.");
 		_logger.Info($"{GetType().Name}: Max Player Level is {maxLevel - 1}.");
 		_logger.Info($"{GetType().Name}: Max Pet Level is {maxPetLevel - 1}.");
 	}
-	
+
 	/**
 	 * Gets the exp for level.
 	 * @param level the level required.
@@ -57,10 +58,10 @@ public class ExperienceData: DataReaderBase
 	{
 		if (level > Config.PLAYER_MAXIMUM_LEVEL)
 			return _expTable[Config.PLAYER_MAXIMUM_LEVEL];
-		
+
 		return _expTable[level];
 	}
-	
+
 	public double getTrainingRate(int level)
 	{
 		if (level > Config.PLAYER_MAXIMUM_LEVEL)
@@ -68,7 +69,7 @@ public class ExperienceData: DataReaderBase
 
 		return _trainingRateTable[level];
 	}
-	
+
 	/**
 	 * Gets the max level.
 	 * @return the maximum level acquirable by a player.
@@ -77,7 +78,7 @@ public class ExperienceData: DataReaderBase
 	{
 		return _maxLevel;
 	}
-	
+
 	/**
 	 * Gets the max pet level.
 	 * @return the maximum level acquirable by a pet.
@@ -86,7 +87,7 @@ public class ExperienceData: DataReaderBase
 	{
 		return _maxPetLevel;
 	}
-	
+
 	/**
 	 * Gets the single instance of ExperienceTable.
 	 * @return single instance of ExperienceTable
@@ -95,7 +96,7 @@ public class ExperienceData: DataReaderBase
 	{
 		return SingletonHolder.INSTANCE;
 	}
-	
+
 	private static class SingletonHolder
 	{
 		public static readonly ExperienceData INSTANCE = new();

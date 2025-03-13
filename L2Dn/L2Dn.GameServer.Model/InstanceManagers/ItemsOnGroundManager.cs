@@ -2,6 +2,7 @@ using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using Microsoft.EntityFrameworkCore;

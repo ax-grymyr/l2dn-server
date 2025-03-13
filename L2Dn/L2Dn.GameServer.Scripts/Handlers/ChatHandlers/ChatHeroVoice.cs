@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ChatHandlers;
 
@@ -17,7 +18,7 @@ public class ChatHeroVoice: IChatHandler
 	{
 		ChatType.HERO_VOICE,
 	};
-	
+
 	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
 	{
 		if (!activeChar.isHero() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
@@ -25,7 +26,7 @@ public class ChatHeroVoice: IChatHandler
 			activeChar.sendPacket(SystemMessageId.ONLY_HEROES_CAN_ENTER_THE_HERO_CHANNEL);
 			return;
 		}
-		
+
 		if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.Contains(type))
 		{
 			activeChar.sendPacket(SystemMessageId.IF_YOU_TRY_TO_CHAT_BEFORE_THE_PROHIBITION_IS_REMOVED_THE_PROHIBITION_TIME_WILL_INCREASE_EVEN_FURTHER_S1_SEC_OF_PROHIBITION_IS_LEFT);
@@ -43,7 +44,7 @@ public class ChatHeroVoice: IChatHandler
 		// 	activeChar.sendMessage("Action failed. Heroes are only able to speak in the global channel once every 10 seconds.");
 		// 	return;
 		// }
-		
+
 		CreatureSayPacket cs = new CreatureSayPacket(activeChar, type, activeChar.getName(), text, shareLocation);
 		foreach (Player player in World.getInstance().getPlayers())
 		{
@@ -70,7 +71,7 @@ public class ChatHeroVoice: IChatHandler
 			}
 		}
 	}
-	
+
 	public ChatType[] getChatTypeList()
 	{
 		return CHAT_TYPES;

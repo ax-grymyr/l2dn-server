@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Stats.Finalizers;
@@ -12,15 +13,15 @@ public class MEvasionRateFinalizer : StatFunction
 	public override double calc(Creature creature, double? @base, Stat stat)
 	{
 		throwIfPresent(@base);
-		
+
 		double baseValue = calcWeaponPlusBaseValue(creature, stat);
-		
+
 		int level = creature.getLevel();
 		if (creature.isPlayer())
 		{
 			// [Square(WIT)] * 3 + level;
 			baseValue += Math.Sqrt(creature.getWIT()) * 3 + level * 2;
-			
+
 			// Enchanted helm bonus
 			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_HEAD);
 		}
@@ -37,7 +38,7 @@ public class MEvasionRateFinalizer : StatFunction
 		return validateValue(creature, StatUtil.defaultValue(creature, stat, baseValue), double.NegativeInfinity,
 			creature.isPlayable() ? Config.MAX_EVASION : double.MaxValue);
 	}
-	
+
 	protected override double calcEnchantBodyPartBonus(int enchantLevel, bool isBlessed)
 	{
 		if (isBlessed)

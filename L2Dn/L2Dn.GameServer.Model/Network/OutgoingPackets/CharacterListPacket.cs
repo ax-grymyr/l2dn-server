@@ -4,6 +4,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model;
 using L2Dn.Packets;
 
@@ -91,7 +92,7 @@ public readonly struct CharacterListPacket(int playKey1, string accountName, Cha
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.CHARACTER_SELECTION_INFO);
-		
+
 		int size = characters.Count;
 		writer.WriteInt32(size); // Created character count
 		writer.WriteInt32(Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT); // Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )
@@ -100,10 +101,10 @@ public readonly struct CharacterListPacket(int playKey1, string accountName, Cha
 		writer.WriteInt32(2); // if 1, Korean client
 		writer.WriteByte(0); // Gift message for inactive accounts // 152
 		writer.WriteByte(0); // Balthus Knights, if 1 suggests premium account
-		
+
 		if (size == 0)
 			return;
-        
+
 		for (int i = 0; i < size; i++)
 		{
 			CharacterInfo charInfo = characters.Characters[i];
@@ -124,13 +125,13 @@ public readonly struct CharacterListPacket(int playKey1, string accountName, Cha
 			writer.WriteDouble(charInfo.CurrentMp);
 			writer.WriteInt64(charInfo.Sp);
 			writer.WriteInt64(charInfo.Exp);
-			
+
 			writer.WriteDouble(1.0 *
 			                   (charInfo.Exp - ExperienceData.getInstance()
 				                   .getExpForLevel(charInfo.Level)) /
 			                   (ExperienceData.getInstance().getExpForLevel(charInfo.Level + 1) -
 			                    ExperienceData.getInstance().getExpForLevel(charInfo.Level)));
-			
+
 			writer.WriteInt32(charInfo.Level);
 			writer.WriteInt32(charInfo.Reputation);
 			writer.WriteInt32(charInfo.PkKills);
@@ -144,13 +145,13 @@ public readonly struct CharacterListPacket(int playKey1, string accountName, Cha
 			writer.WriteInt32(0);
 			writer.WriteInt32(0); // Ertheia
 			writer.WriteInt32(0); // Ertheia
-			
+
 			foreach (int slot in _paperdollOrder)
 				writer.WriteInt32(charInfo.Paperdoll[slot].ItemId);
 
 			foreach (int slot in _paperdollOrderVisualId)
 				writer.WriteInt32(charInfo.Paperdoll[slot].ItemVisualId);
-			
+
 			writer.WriteInt16((short)charInfo.ChestEnchantLevel); // Upper Body enchant level
 			writer.WriteInt16((short)charInfo.LegsEnchantLevel); // Lower Body enchant level
 			writer.WriteInt16((short)charInfo.HeadEnchantLevel); // Headgear enchant level
@@ -167,7 +168,7 @@ public readonly struct CharacterListPacket(int playKey1, string accountName, Cha
 				writer.WriteInt32((int)(deleteTime.Value - DateTime.UtcNow).TotalSeconds);
 			else
 				writer.WriteInt32(0);
-			
+
 			writer.WriteInt32((int)charInfo.Class);
 			writer.WriteInt32(i == characters.SelectedIndex);
 			writer.WriteByte((byte)(charInfo.WeaponEnchantLevel > 127 ? 127 : charInfo.WeaponEnchantLevel));

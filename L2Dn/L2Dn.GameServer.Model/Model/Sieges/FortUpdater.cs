@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
 

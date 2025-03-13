@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 
 namespace L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
@@ -16,7 +17,7 @@ public class AutoPotion: IVoicedCommandHandler
 		"potionon",
 		"potionoff"
 	};
-	
+
 	public bool useVoicedCommand(string command, Player activeChar, string target)
 	{
 		if (!Config.AUTO_POTIONS_ENABLED || (activeChar == null))
@@ -28,7 +29,7 @@ public class AutoPotion: IVoicedCommandHandler
 			activeChar.sendMessage("You need to be at least " + Config.AUTO_POTION_MIN_LEVEL + " to use auto potions.");
 			return false;
 		}
-		
+
 		switch (command)
 		{
 			case "apon":
@@ -46,10 +47,10 @@ public class AutoPotion: IVoicedCommandHandler
 				break;
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	public string[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;
