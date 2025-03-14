@@ -54,7 +54,7 @@ public struct ExAutoPlaySettingsPacket: IIncomingPacket<GameSession>
 
         player.getAutoPlaySettings().setAutoPotionPercent(_potionPercent);
 
-        if (!Config.ENABLE_AUTO_PLAY)
+        if (!Config.General.ENABLE_AUTO_PLAY)
             return ValueTask.CompletedTask;
 
         List<int> settings =

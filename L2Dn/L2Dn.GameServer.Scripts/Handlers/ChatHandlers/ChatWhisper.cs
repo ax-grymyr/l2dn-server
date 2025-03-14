@@ -23,13 +23,13 @@ public class ChatWhisper: IChatHandler
 
 	public void handleChat(ChatType type, Player activeChar, string target, string text, bool shareLocation)
 	{
-		if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.Contains(type))
+		if (activeChar.isChatBanned() && Config.General.BAN_CHAT_CHANNELS.Contains(type))
 		{
 			activeChar.sendPacket(SystemMessageId.IF_YOU_TRY_TO_CHAT_BEFORE_THE_PROHIBITION_IS_REMOVED_THE_PROHIBITION_TIME_WILL_INCREASE_EVEN_FURTHER_S1_SEC_OF_PROHIBITION_IS_LEFT);
 			return;
 		}
 
-		if (Config.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+		if (Config.General.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 			return;
@@ -41,11 +41,11 @@ public class ChatWhisper: IChatHandler
 			return;
 		}
 
-		if (Config.FAKE_PLAYERS_ENABLED && FakePlayerData.getInstance().getProperName(target) != null)
+		if (Config.FakePlayers.FAKE_PLAYERS_ENABLED && FakePlayerData.getInstance().getProperName(target) != null)
 		{
 			if (FakePlayerData.getInstance().isTalkable(target))
 			{
-				if (Config.FAKE_PLAYER_CHAT)
+				if (Config.FakePlayers.FAKE_PLAYER_CHAT)
 				{
 					string? name = FakePlayerData.getInstance().getProperName(target);
                     if (name != null)
@@ -69,7 +69,7 @@ public class ChatWhisper: IChatHandler
 		Player? receiver = World.getInstance().getPlayer(target);
 		if (receiver != null && !receiver.isSilenceMode(activeChar.ObjectId))
 		{
-			if (Config.JAIL_DISABLE_CHAT && receiver.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+			if (Config.General.JAIL_DISABLE_CHAT && receiver.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 			{
 				activeChar.sendMessage("Player is in jail.");
 				return;
@@ -84,15 +84,15 @@ public class ChatWhisper: IChatHandler
 				activeChar.sendMessage("Player is in offline mode.");
 				return;
 			}
-			if (Config.FACTION_SYSTEM_ENABLED && Config.FACTION_SPECIFIC_CHAT && ((activeChar.isGood() && receiver.isEvil()) || (activeChar.isEvil() && receiver.isGood())))
+			if (Config.FactionSystem.FACTION_SYSTEM_ENABLED && Config.FactionSystem.FACTION_SPECIFIC_CHAT && ((activeChar.isGood() && receiver.isEvil()) || (activeChar.isEvil() && receiver.isGood())))
 			{
 				activeChar.sendMessage("Player belongs to the opposing faction.");
 				return;
 			}
-			if (activeChar.getLevel() < Config.MINIMUM_CHAT_LEVEL && !activeChar.getWhisperers().Contains(receiver.ObjectId) && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+			if (activeChar.getLevel() < Config.General.MINIMUM_CHAT_LEVEL && !activeChar.getWhisperers().Contains(receiver.ObjectId) && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 			{
 				var sm = new SystemMessagePacket(SystemMessageId.CHARACTERS_LV_S1_OR_LOWER_CAN_RESPOND_TO_A_WHISPER_BUT_CANNOT_INITIATE_IT);
-				sm.Params.addInt(Config.MINIMUM_CHAT_LEVEL);
+				sm.Params.addInt(Config.General.MINIMUM_CHAT_LEVEL);
 				activeChar.sendPacket(sm);
 				return;
 			}

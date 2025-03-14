@@ -32,16 +32,16 @@ public struct ExWorldExchangeItemListPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        if (!Config.ENABLE_WORLD_EXCHANGE)
+        if (!Config.WorldExchange.ENABLE_WORLD_EXCHANGE)
             return ValueTask.CompletedTask;
 
         Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
 
-        string lang = Config.MULTILANG_ENABLE
-            ? Config.WORLD_EXCHANGE_DEFAULT_LANG
-            : player.getLang() ?? Config.WORLD_EXCHANGE_DEFAULT_LANG;
+        string lang = Config.MultilingualSupport.MULTILANG_ENABLE
+            ? Config.WorldExchange.WORLD_EXCHANGE_DEFAULT_LANG
+            : player.getLang() ?? Config.WorldExchange.WORLD_EXCHANGE_DEFAULT_LANG;
 
         if (_itemIdList == null)
         {

@@ -183,9 +183,9 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 		_destroyable = set.getBoolean("is_destroyable", true);
 		_tradeable = set.getBoolean("is_tradable", true);
 		_questItem = set.getBoolean("is_questitem", false);
-		if (Config.CUSTOM_DEPOSITABLE_ENABLED)
+		if (Config.CustomDepositableItems.CUSTOM_DEPOSITABLE_ENABLED)
 		{
-			_depositable = !_questItem || Config.CUSTOM_DEPOSITABLE_QUEST_ITEMS;
+			_depositable = !_questItem || Config.CustomDepositableItems.CUSTOM_DEPOSITABLE_QUEST_ITEMS;
 		}
 		else
 		{
@@ -837,7 +837,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 
 	public bool checkCondition(Creature creature, WorldObject @object, bool sendMessage)
 	{
-		if (creature.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && !Config.GM_ITEM_RESTRICTION)
+		if (creature.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && !Config.General.GM_ITEM_RESTRICTION)
 			return true;
 
 		// Don't allow hero equipment and restricted items during Olympiad
@@ -922,7 +922,7 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 
 	public bool isOlyRestrictedItem()
 	{
-		return _isOlyRestricted || Config.LIST_OLY_RESTRICTED_ITEMS.Contains(_itemId);
+		return _isOlyRestricted || Config.Olympiad.LIST_OLY_RESTRICTED_ITEMS.Contains(_itemId);
 	}
 
 	/**

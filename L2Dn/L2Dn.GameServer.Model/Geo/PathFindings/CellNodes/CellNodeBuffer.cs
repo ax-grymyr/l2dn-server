@@ -51,7 +51,7 @@ public class CellNodeBuffer
 		_targetY = ty;
 		_targetZ = tz;
 		_current = getNode(x, y, z);
-		_current!.setCost(getCost(x, y, z, Config.HIGH_WEIGHT)); // TODO
+		_current!.setCost(getCost(x, y, z, Config.GeoEngine.HIGH_WEIGHT)); // TODO
 
 		for (int count = 0; count < MAX_ITERATIONS; count++)
         {
@@ -169,7 +169,7 @@ public class CellNodeBuffer
 			nodeN = addNode(x, y - 1, z, false);
 		}
 
-		if (!Config.ADVANCED_DIAGONAL_STRATEGY)
+		if (!Config.GeoEngine.ADVANCED_DIAGONAL_STRATEGY)
 		{
 			return;
 		}
@@ -254,27 +254,27 @@ public class CellNodeBuffer
 
         NodeLoc currentLoc = _current?.getLoc() ?? throw new InvalidOperationException();
 		int stepZ = Math.Abs(geoZ - currentLoc.Z);
-		float weight = diagonal ? Config.DIAGONAL_WEIGHT : Config.LOW_WEIGHT;
+		float weight = diagonal ? Config.GeoEngine.DIAGONAL_WEIGHT : Config.GeoEngine.LOW_WEIGHT;
 
 		if (!newNodeLoc.canGoAll() || stepZ > 16)
 		{
-			weight = Config.HIGH_WEIGHT;
+			weight = Config.GeoEngine.HIGH_WEIGHT;
 		}
 		else if (isHighWeight(x + 1, y, geoZ))
 		{
-			weight = Config.MEDIUM_WEIGHT;
+			weight = Config.GeoEngine.MEDIUM_WEIGHT;
 		}
 		else if (isHighWeight(x - 1, y, geoZ))
 		{
-			weight = Config.MEDIUM_WEIGHT;
+			weight = Config.GeoEngine.MEDIUM_WEIGHT;
 		}
 		else if (isHighWeight(x, y + 1, geoZ))
 		{
-			weight = Config.MEDIUM_WEIGHT;
+			weight = Config.GeoEngine.MEDIUM_WEIGHT;
 		}
 		else if (isHighWeight(x, y - 1, geoZ))
 		{
-			weight = Config.MEDIUM_WEIGHT;
+			weight = Config.GeoEngine.MEDIUM_WEIGHT;
 		}
 
 		newNode.setParent(_current);

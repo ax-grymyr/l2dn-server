@@ -25,9 +25,9 @@ public class NpcNameLocalisationData: DataReaderBase
 	{
 		NPC_NAME_LOCALISATIONS.Clear();
 
-		if (Config.MULTILANG_ENABLE)
+		if (Config.MultilingualSupport.MULTILANG_ENABLE)
 		{
-			foreach (string lang in Config.MULTILANG_ALLOWED)
+			foreach (string lang in Config.MultilingualSupport.MULTILANG_ALLOWED)
 			{
 				string filePath = GetFullPath(DataFileLocation.Data, "lang/" + lang + "/NpcNameLocalisation.xml");
 				if (!File.Exists(filePath))

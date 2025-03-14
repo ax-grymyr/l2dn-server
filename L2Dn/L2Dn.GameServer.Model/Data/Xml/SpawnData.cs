@@ -58,7 +58,7 @@ public class SpawnData: DataReaderBase
 	 */
 	public void init()
 	{
-		if (Config.ALT_DEV_NO_SPAWNS)
+		if (Config.General.ALT_DEV_NO_SPAWNS)
 		{
 			return;
 		}
@@ -297,7 +297,7 @@ public class SpawnData: DataReaderBase
 			return;
 		}
 
-		if (!Config.FAKE_PLAYERS_ENABLED && template.isFakePlayer())
+		if (!Config.FakePlayers.FAKE_PLAYERS_ENABLED && template.isFakePlayer())
 			return;
 
 		parseParameters(npc.Parameters, npcTemplate);

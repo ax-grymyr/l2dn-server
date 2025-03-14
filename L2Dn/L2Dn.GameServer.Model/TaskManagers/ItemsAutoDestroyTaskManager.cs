@@ -41,19 +41,19 @@ public class ItemsAutoDestroyTaskManager: Runnable
 				}
 				else if (itemInstance.getTemplate().hasExImmediateEffect())
 				{
-					autoDestroyTime = TimeSpan.FromMilliseconds(Config.HERB_AUTO_DESTROY_TIME);
+					autoDestroyTime = TimeSpan.FromMilliseconds(Config.General.HERB_AUTO_DESTROY_TIME);
 				}
 				else
 				{
-					autoDestroyTime = Config.AUTODESTROY_ITEM_AFTER == 0
+					autoDestroyTime = Config.General.AUTODESTROY_ITEM_AFTER == 0
                         ? TimeSpan.FromMilliseconds(3600000)
-                        : TimeSpan.FromMilliseconds(Config.AUTODESTROY_ITEM_AFTER * 1000);
+                        : TimeSpan.FromMilliseconds(Config.General.AUTODESTROY_ITEM_AFTER * 1000);
 				}
 
 				if (currentTime - itemInstance.getDropTime() > autoDestroyTime)
 				{
 					itemInstance.decayMe();
-					if (Config.SAVE_DROPPED_ITEM)
+					if (Config.General.SAVE_DROPPED_ITEM)
 					{
 						ItemsOnGroundManager.getInstance().removeObject(itemInstance);
 					}

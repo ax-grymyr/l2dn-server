@@ -61,7 +61,7 @@ public struct RequestPackageSendPacket: IIncomingPacket<GameSession>
 
 		if (player.hasItemRequest())
 		{
-			Util.handleIllegalPlayerAction(player, player + " tried to use enchant exploit!", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, player + " tried to use enchant exploit!", Config.General.DEFAULT_PUNISH);
 			return ValueTask.CompletedTask;
 		}
 

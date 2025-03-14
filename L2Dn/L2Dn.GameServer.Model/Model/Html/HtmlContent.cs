@@ -81,7 +81,7 @@ public sealed class HtmlContent
             fileLoaded = false;
         }
 
-        if (Config.GM_DEBUG_HTML_PATHS && player != null && player.isGM())
+        if (Config.General.GM_DEBUG_HTML_PATHS && player != null && player.isGM())
             BuilderUtil.sendHtmlMessage(player, path);
 
         return new HtmlContent(path, WrapHtml(html), player?.getClient()?.HtmlActionValidator, fileLoaded);

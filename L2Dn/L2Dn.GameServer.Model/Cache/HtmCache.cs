@@ -24,7 +24,7 @@ public sealed class HtmCache
 
 	public void reload(string dataPackPath)
 	{
-		if (Config.HTM_CACHE)
+		if (Config.General.HTM_CACHE)
 		{
 			_logger.Info("Html cache start...");
 			ParseDir(dataPackPath);
@@ -75,7 +75,7 @@ public sealed class HtmCache
 			content = content.replaceAll(@"[\t\n]", ""); // Remove tabs and new lines.
 
 			// Automatic removal of -h parameter from specific bypasses.
-			if (Config.HIDE_BYPASS_REMOVAL)
+			if (Config.General.HIDE_BYPASS_REMOVAL)
 			{
 				content = content.replaceAll("bypass -h npc_%objectId%_Chat ", "bypass npc_%objectId%_Chat ");
 				content = content.replaceAll("bypass -h npc_%objectId%_Quest", "bypass npc_%objectId%_Quest");
@@ -83,7 +83,7 @@ public sealed class HtmCache
 
             string dataPackPath = ServerConfig.Instance.DataPack.Path;
 			filePath = Path.GetRelativePath(dataPackPath, filePath);
-			if (Config.CHECK_HTML_ENCODING && !filePath.startsWith("lang") &&
+			if (Config.General.CHECK_HTML_ENCODING && !filePath.startsWith("lang") &&
 			    content.Any(c => c >= 128))
 			{
 				_logger.Warn("HTML encoding check: File " + filePath + " contains non ASCII content.");
@@ -104,11 +104,11 @@ public sealed class HtmCache
 	public string getHtm(string path, string? language = null)
 	{
 		string prefix = string.Empty;
-		if (Config.MULTILANG_ENABLE && !string.IsNullOrEmpty(language))
+		if (Config.MultilingualSupport.MULTILANG_ENABLE && !string.IsNullOrEmpty(language))
 		{
 			string lang = language;
-			if (!Config.MULTILANG_ALLOWED.Contains(lang))
-				lang = Config.MULTILANG_DEFAULT;
+			if (!Config.MultilingualSupport.MULTILANG_ALLOWED.Contains(lang))
+				lang = Config.MultilingualSupport.MULTILANG_DEFAULT;
 
 			if (!string.Equals(lang, "en"))
 				prefix = "lang/" + lang + "/"; // TODO: cache prefixes
@@ -118,7 +118,7 @@ public sealed class HtmCache
 		string newPath = string.IsNullOrEmpty(prefix) ? path : prefix + path;
 		if (!_cache.TryGetValue(newPath, out string? content))
 		{
-			if (!Config.HTM_CACHE)
+			if (!Config.General.HTM_CACHE)
 			{
 				content = loadFile(Path.Combine(dataPackPath, newPath));
 				if (content == null)
@@ -130,7 +130,7 @@ public sealed class HtmCache
 			{
 				if (!_cache.TryGetValue(path, out content))
 				{
-					if (!Config.HTM_CACHE)
+					if (!Config.General.HTM_CACHE)
 					{
 						content = loadFile(Path.Combine(dataPackPath, path));
 						if (content == null)

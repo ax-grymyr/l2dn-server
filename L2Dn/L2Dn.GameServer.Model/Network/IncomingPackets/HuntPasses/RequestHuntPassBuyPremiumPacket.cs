@@ -23,7 +23,7 @@ public struct RequestHuntPassBuyPremiumPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         DateTime calendar = DateTime.Now;
-        if (calendar.Day == Config.HUNT_PASS_PERIOD && calendar.Hour == 6 && calendar.Minute < 30)
+        if (calendar.Day == Config.HuntPass.HUNT_PASS_PERIOD && calendar.Hour == 6 && calendar.Minute < 30)
         {
             player.sendPacket(SystemMessageId
                 .CURRENTLY_UNAVAILABLE_FOR_PURCHASE_YOU_CAN_BUY_THE_SEASON_PASS_ADDITIONAL_REWARDS_ONLY_UNTIL_6_30_A_M_OF_THE_SEASON_S_LAST_DAY);
@@ -31,8 +31,8 @@ public struct RequestHuntPassBuyPremiumPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (!player.destroyItemByItemId("RequestHuntPassBuyPremium", Config.HUNT_PASS_PREMIUM_ITEM_ID,
-                Config.HUNT_PASS_PREMIUM_ITEM_COUNT, player, true))
+        if (!player.destroyItemByItemId("RequestHuntPassBuyPremium", Config.HuntPass.HUNT_PASS_PREMIUM_ITEM_ID,
+                Config.HuntPass.HUNT_PASS_PREMIUM_ITEM_COUNT, player, true))
         {
             player.sendPacket(SystemMessageId.NOT_ENOUGH_MONEY_TO_USE_THE_FUNCTION);
             return ValueTask.CompletedTask;

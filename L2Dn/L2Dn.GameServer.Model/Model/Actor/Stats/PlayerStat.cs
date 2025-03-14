@@ -334,7 +334,7 @@ public class PlayerStat: PlayableStat
 
 	public void setStartingExp(long value)
 	{
-		if (Config.BOTREPORT_ENABLE)
+		if (Config.General.BOTREPORT_ENABLE)
 		{
 			_startingXp = value;
 		}
@@ -483,11 +483,11 @@ public class PlayerStat: PlayableStat
 	{
 		if (getVitalityPoints() > 0)
 		{
-			return getValue(Stat.VITALITY_EXP_RATE, Config.RATE_VITALITY_EXP_MULTIPLIER);
+			return getValue(Stat.VITALITY_EXP_RATE, Config.Rates.RATE_VITALITY_EXP_MULTIPLIER);
 		}
 		if (getActiveChar().getLimitedSayhaGraceEndTime() > DateTime.UtcNow)
 		{
-			return Config.RATE_LIMITED_SAYHA_GRACE_EXP_MULTIPLIER;
+			return Config.Rates.RATE_LIMITED_SAYHA_GRACE_EXP_MULTIPLIER;
 		}
 		return 1;
 	}
@@ -583,12 +583,12 @@ public class PlayerStat: PlayableStat
 			if (points > 0)
 			{
 				// vitality increased
-				points *= Config.RATE_VITALITY_GAIN;
+				points *= Config.Rates.RATE_VITALITY_GAIN;
 			}
 			else
 			{
 				// vitality decreased
-				points *= Config.RATE_VITALITY_LOST;
+				points *= Config.Rates.RATE_VITALITY_LOST;
 			}
 		}
 

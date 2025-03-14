@@ -29,13 +29,13 @@ public class MAttackFinalizer: StatFunction
 			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_CHEST, ItemTemplate.SLOT_FULL_ARMOR);
 		}
 
-		if (Config.CHAMPION_ENABLE && creature.isChampion())
+		if (Config.ChampionMonsters.CHAMPION_ENABLE && creature.isChampion())
 		{
-			baseValue *= Config.CHAMPION_ATK;
+			baseValue *= Config.ChampionMonsters.CHAMPION_ATK;
 		}
 		if (creature.isRaid())
 		{
-			baseValue *= Config.RAID_MATTACK_MULTIPLIER;
+			baseValue *= Config.Npc.RAID_MATTACK_MULTIPLIER;
 		}
 
 		// Calculate modifiers Magic Attack

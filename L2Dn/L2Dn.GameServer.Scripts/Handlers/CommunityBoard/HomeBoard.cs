@@ -37,14 +37,14 @@ public class HomeBoard: IParseBoardHandler
 
 	private static readonly string?[] CUSTOM_COMMANDS = // TODO: keep only non-null values
     [
-        Config.PREMIUM_SYSTEM_ENABLED && Config.COMMUNITY_PREMIUM_SYSTEM_ENABLED ? "_bbspremium" : null,
-		Config.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbsexcmultisell" : null,
-		Config.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbsmultisell" : null,
-		Config.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbssell" : null,
-		Config.COMMUNITYBOARD_ENABLE_TELEPORTS ? "_bbsteleport" : null,
-		Config.COMMUNITYBOARD_ENABLE_BUFFS ? "_bbsbuff" : null,
-		Config.COMMUNITYBOARD_ENABLE_HEAL ? "_bbsheal" : null,
-		Config.COMMUNITYBOARD_ENABLE_DELEVEL ? "_bbsdelevel" : null,
+        Config.PremiumSystem.PREMIUM_SYSTEM_ENABLED && Config.CommunityBoard.COMMUNITY_PREMIUM_SYSTEM_ENABLED ? "_bbspremium" : null,
+		Config.CommunityBoard.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbsexcmultisell" : null,
+		Config.CommunityBoard.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbsmultisell" : null,
+		Config.CommunityBoard.COMMUNITYBOARD_ENABLE_MULTISELLS ? "_bbssell" : null,
+		Config.CommunityBoard.COMMUNITYBOARD_ENABLE_TELEPORTS ? "_bbsteleport" : null,
+		Config.CommunityBoard.COMMUNITYBOARD_ENABLE_BUFFS ? "_bbsbuff" : null,
+		Config.CommunityBoard.COMMUNITYBOARD_ENABLE_HEAL ? "_bbsheal" : null,
+		Config.CommunityBoard.COMMUNITYBOARD_ENABLE_DELEVEL ? "_bbsdelevel" : null,
     ];
 
 	private static readonly Func<string, Player, bool> COMBAT_CHECK = (command, player) =>
@@ -61,7 +61,7 @@ public class HomeBoard: IParseBoardHandler
 		return commandCheck && (player.isCastingNow() || player.isInCombat() || player.isInDuel() || player.isInOlympiadMode() || player.isInsideZone(ZoneId.SIEGE) || player.isInsideZone(ZoneId.PVP) || player.getPvpFlag() > 0 || player.isAlikeDead() || player.isOnEvent());
 	};
 
-	private static readonly Predicate<Player> KARMA_CHECK = player => Config.COMMUNITYBOARD_KARMA_DISABLED && player.getReputation() < 0;
+	private static readonly Predicate<Player> KARMA_CHECK = player => Config.CommunityBoard.COMMUNITYBOARD_KARMA_DISABLED && player.getReputation() < 0;
 
 	public string[] getCommunityBoardCommands()
 	{
@@ -90,10 +90,10 @@ public class HomeBoard: IParseBoardHandler
 		string navigation = HtmCache.getInstance().getHtm(NAVIGATION_PATH, player.getLang());
 		if (command.equals("_bbshome") || command.equals("_bbstop"))
 		{
-			string customPath = Config.CUSTOM_CB_ENABLED ? "Custom/" : "";
+			string customPath = Config.CommunityBoard.CUSTOM_CB_ENABLED ? "Custom/" : "";
 			CommunityBoardHandler.getInstance().addBypass(player, "Home", command);
 			returnHtml = HtmCache.getInstance().getHtm("html/CommunityBoard/" + customPath + "home.html", player.getLang());
-			if (!Config.CUSTOM_CB_ENABLED)
+			if (!Config.CommunityBoard.CUSTOM_CB_ENABLED)
 			{
 				returnHtml = returnHtml.Replace("%fav_count%", getFavoriteCount(player).ToString());
 				returnHtml = returnHtml.Replace("%region_count%", getRegionCount(player).ToString());
@@ -102,7 +102,7 @@ public class HomeBoard: IParseBoardHandler
 		}
 		else if (command.startsWith("_bbstop;"))
 		{
-			string customPath = Config.CUSTOM_CB_ENABLED ? "Custom/" : "";
+			string customPath = Config.CommunityBoard.CUSTOM_CB_ENABLED ? "Custom/" : "";
 			string path = command.Replace("_bbstop;", "");
 			if (path.Length > 0 && path.endsWith(".html"))
 			{
@@ -144,15 +144,15 @@ public class HomeBoard: IParseBoardHandler
 		else if (command.startsWith("_bbsteleport"))
 		{
 			string teleBuypass = command.Replace("_bbsteleport;", "");
-			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < Config.COMMUNITYBOARD_TELEPORT_PRICE)
+			if (player.getInventory().getInventoryItemCount(Config.CommunityBoard.COMMUNITYBOARD_CURRENCY, -1) < Config.CommunityBoard.COMMUNITYBOARD_TELEPORT_PRICE)
 			{
 				player.sendMessage("Not enough currency!");
 			}
-			else if (Config.COMMUNITY_AVAILABLE_TELEPORTS.TryGetValue(teleBuypass, out Location value))
+			else if (Config.CommunityBoard.COMMUNITY_AVAILABLE_TELEPORTS.TryGetValue(teleBuypass, out Location value))
 			{
 				player.disableAllSkills();
 				player.sendPacket(new ShowBoardPacket(false, string.Empty));
-				player.destroyItemByItemId("CB_Teleport", Config.COMMUNITYBOARD_CURRENCY, Config.COMMUNITYBOARD_TELEPORT_PRICE, player, true);
+				player.destroyItemByItemId("CB_Teleport", Config.CommunityBoard.COMMUNITYBOARD_CURRENCY, Config.CommunityBoard.COMMUNITYBOARD_TELEPORT_PRICE, player, true);
 				player.setInstanceById(0);
 				player.teleToLocation(value, 0);
 				ThreadPool.schedule(player.enableAllSkills, 3000);
@@ -164,13 +164,13 @@ public class HomeBoard: IParseBoardHandler
 			string[] buypassOptions = fullBypass.Split(";");
 			int buffCount = buypassOptions.Length - 1;
 			string page = buypassOptions[buffCount];
-			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < Config.COMMUNITYBOARD_BUFF_PRICE * buffCount)
+			if (player.getInventory().getInventoryItemCount(Config.CommunityBoard.COMMUNITYBOARD_CURRENCY, -1) < Config.CommunityBoard.COMMUNITYBOARD_BUFF_PRICE * buffCount)
 			{
 				player.sendMessage("Not enough currency!");
 			}
 			else
 			{
-				player.destroyItemByItemId("CB_Buff", Config.COMMUNITYBOARD_CURRENCY, Config.COMMUNITYBOARD_BUFF_PRICE * buffCount, player, true);
+				player.destroyItemByItemId("CB_Buff", Config.CommunityBoard.COMMUNITYBOARD_CURRENCY, Config.CommunityBoard.COMMUNITYBOARD_BUFF_PRICE * buffCount, player, true);
 				Pet? pet = player.getPet();
 				List<Creature> targets = new(4);
 				targets.Add(player);
@@ -184,7 +184,7 @@ public class HomeBoard: IParseBoardHandler
 				for (int i = 0; i < buffCount; i++)
 				{
 					Skill? skill = SkillData.getInstance().getSkill(int.Parse(buypassOptions[i].Split(",")[0]), int.Parse(buypassOptions[i].Split(",")[1]));
-					if (skill == null || !Config.COMMUNITY_AVAILABLE_BUFFS.Contains(skill.getId()))
+					if (skill == null || !Config.CommunityBoard.COMMUNITY_AVAILABLE_BUFFS.Contains(skill.getId()))
 					{
 						continue;
 					}
@@ -193,7 +193,7 @@ public class HomeBoard: IParseBoardHandler
 						if (skill.isSharedWithSummon() || target.isPlayer())
 						{
 							skill.applyEffects(player, target);
-							if (Config.COMMUNITYBOARD_CAST_ANIMATIONS)
+							if (Config.CommunityBoard.COMMUNITYBOARD_CAST_ANIMATIONS)
 							{
 								player.sendPacket(new MagicSkillUsePacket(player, target, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()));
 								// not recommend broadcast
@@ -209,13 +209,13 @@ public class HomeBoard: IParseBoardHandler
 		else if (command.startsWith("_bbsheal"))
 		{
 			string page = command.Replace("_bbsheal;", "");
-			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < Config.COMMUNITYBOARD_HEAL_PRICE)
+			if (player.getInventory().getInventoryItemCount(Config.CommunityBoard.COMMUNITYBOARD_CURRENCY, -1) < Config.CommunityBoard.COMMUNITYBOARD_HEAL_PRICE)
 			{
 				player.sendMessage("Not enough currency!");
 			}
 			else
 			{
-				player.destroyItemByItemId("CB_Heal", Config.COMMUNITYBOARD_CURRENCY, Config.COMMUNITYBOARD_HEAL_PRICE, player, true);
+				player.destroyItemByItemId("CB_Heal", Config.CommunityBoard.COMMUNITYBOARD_CURRENCY, Config.CommunityBoard.COMMUNITYBOARD_HEAL_PRICE, player, true);
 				player.setCurrentHp(player.getMaxHp());
 				player.setCurrentMp(player.getMaxMp());
 				player.setCurrentCp(player.getMaxCp());
@@ -239,7 +239,7 @@ public class HomeBoard: IParseBoardHandler
 		}
 		else if (command.equals("_bbsdelevel"))
 		{
-			if (player.getInventory().getInventoryItemCount(Config.COMMUNITYBOARD_CURRENCY, -1) < Config.COMMUNITYBOARD_DELEVEL_PRICE)
+			if (player.getInventory().getInventoryItemCount(Config.CommunityBoard.COMMUNITYBOARD_CURRENCY, -1) < Config.CommunityBoard.COMMUNITYBOARD_DELEVEL_PRICE)
 			{
 				player.sendMessage("Not enough currency!");
 			}
@@ -249,7 +249,7 @@ public class HomeBoard: IParseBoardHandler
 			}
 			else
 			{
-				player.destroyItemByItemId("CB_Delevel", Config.COMMUNITYBOARD_CURRENCY, Config.COMMUNITYBOARD_DELEVEL_PRICE, player, true);
+				player.destroyItemByItemId("CB_Delevel", Config.CommunityBoard.COMMUNITYBOARD_CURRENCY, Config.CommunityBoard.COMMUNITYBOARD_DELEVEL_PRICE, player, true);
 				int newLevel = player.getLevel() - 1;
 				player.setExp(ExperienceData.getInstance().getExpForLevel(newLevel));
 				player.getStat().setLevel(newLevel);
@@ -265,16 +265,16 @@ public class HomeBoard: IParseBoardHandler
 			string fullBypass = command.Replace("_bbspremium;", "");
 			string[] buypassOptions = fullBypass.Split(",");
 			int premiumDays = int.Parse(buypassOptions[0]);
-			if (premiumDays < 1 || premiumDays > 30 || player.getInventory().getInventoryItemCount(Config.COMMUNITY_PREMIUM_COIN_ID, -1) < Config.COMMUNITY_PREMIUM_PRICE_PER_DAY * premiumDays)
+			if (premiumDays < 1 || premiumDays > 30 || player.getInventory().getInventoryItemCount(Config.CommunityBoard.COMMUNITY_PREMIUM_COIN_ID, -1) < Config.CommunityBoard.COMMUNITY_PREMIUM_PRICE_PER_DAY * premiumDays)
 			{
 				player.sendMessage("Not enough currency!");
 			}
 			else
 			{
-				player.destroyItemByItemId("CB_Premium", Config.COMMUNITY_PREMIUM_COIN_ID, Config.COMMUNITY_PREMIUM_PRICE_PER_DAY * premiumDays, player, true);
+				player.destroyItemByItemId("CB_Premium", Config.CommunityBoard.COMMUNITY_PREMIUM_COIN_ID, Config.CommunityBoard.COMMUNITY_PREMIUM_PRICE_PER_DAY * premiumDays, player, true);
 				PremiumManager.getInstance().addPremiumTime(player.getAccountId(), TimeSpan.FromDays(premiumDays));
 				player.sendMessage("Your account will now have premium status until " + PremiumManager.getInstance().getPremiumExpiration(player.getAccountId())?.ToString("dd.MM.yyyy HH:mm") + ".");
-				if (Config.PC_CAFE_RETAIL_LIKE)
+				if (Config.PremiumSystem.PC_CAFE_RETAIL_LIKE)
 				{
 					PcCafePointsManager.getInstance().run(player);
 				}
@@ -284,7 +284,7 @@ public class HomeBoard: IParseBoardHandler
 
 		if (returnHtml != null)
 		{
-			if (Config.CUSTOM_CB_ENABLED)
+			if (Config.CommunityBoard.CUSTOM_CB_ENABLED)
 			{
 				returnHtml = returnHtml.Replace("%navigation%", navigation);
 			}

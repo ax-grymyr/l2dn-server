@@ -59,7 +59,7 @@ public struct AuthLoginPacket: IIncomingPacket<GameSession>
                 AuthServerSession.Send(ref accountStatusPacket);
 
                 // Disconnect offline traders
-                if (Config.OFFLINE_DISCONNECT_SAME_ACCOUNT)
+                if (Config.OfflineTrade.OFFLINE_DISCONNECT_SAME_ACCOUNT)
                 {
                     foreach (CharacterInfo charInfo in session.Characters)
                     {

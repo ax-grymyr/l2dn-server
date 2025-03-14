@@ -53,10 +53,10 @@ public class AdminPcCafePoints: IAdminCommandHandler
 				{
 					case "set":
 					{
-						if (value > Config.PC_CAFE_MAX_POINTS)
+						if (value > Config.PremiumSystem.PC_CAFE_MAX_POINTS)
 						{
 							showMenuHtml(activeChar);
-							BuilderUtil.sendSysMessage(activeChar, "You cannot set more than " + Config.PC_CAFE_MAX_POINTS + " PC points!");
+							BuilderUtil.sendSysMessage(activeChar, "You cannot set more than " + Config.PremiumSystem.PC_CAFE_MAX_POINTS + " PC points!");
 							return false;
 						}
 						if (value < 0)
@@ -72,17 +72,17 @@ public class AdminPcCafePoints: IAdminCommandHandler
 					}
 					case "increase":
 					{
-						if (target.getPcCafePoints() == Config.PC_CAFE_MAX_POINTS)
+						if (target.getPcCafePoints() == Config.PremiumSystem.PC_CAFE_MAX_POINTS)
 						{
 							showMenuHtml(activeChar);
 							activeChar.sendMessage(target.getName() + " already have max count of PC points!");
 							return false;
 						}
 
-						int pcCafeCount = Math.Min(target.getPcCafePoints() + value, Config.PC_CAFE_MAX_POINTS);
+						int pcCafeCount = Math.Min(target.getPcCafePoints() + value, Config.PremiumSystem.PC_CAFE_MAX_POINTS);
 						if (pcCafeCount < 0)
 						{
-							pcCafeCount = Config.PC_CAFE_MAX_POINTS;
+							pcCafeCount = Config.PremiumSystem.PC_CAFE_MAX_POINTS;
 						}
 						target.setPcCafePoints(pcCafeCount);
 						target.sendMessage("Admin increased your PC Cafe point(s) by " + value + "!");

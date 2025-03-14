@@ -338,7 +338,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 				}
 			}
 
-			if (Config.VIP_SYSTEM_L_SHOP_AFFECT)
+			if (Config.VipSystem.VIP_SYSTEM_L_SHOP_AFFECT)
 			{
 				player.updateVipPoints(_amount);
 			}

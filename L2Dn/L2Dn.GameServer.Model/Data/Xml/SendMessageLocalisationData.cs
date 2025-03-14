@@ -27,9 +27,9 @@ public class SendMessageLocalisationData: DataReaderBase
 	{
 		SEND_MESSAGE_LOCALISATIONS.Clear();
 
-		if (Config.MULTILANG_ENABLE)
+		if (Config.MultilingualSupport.MULTILANG_ENABLE)
 		{
-			foreach (string lang in Config.MULTILANG_ALLOWED)
+			foreach (string lang in Config.MultilingualSupport.MULTILANG_ALLOWED)
 			{
 				string filePath = GetFullPath(DataFileLocation.Data, "lang/" + lang + "/SendMessageLocalisation.xml");
 				if (!File.Exists(filePath))
@@ -63,7 +63,7 @@ public class SendMessageLocalisationData: DataReaderBase
 
 	public static string getLocalisation(Player player, string message)
 	{
-		if (Config.MULTILANG_ENABLE && player != null)
+		if (Config.MultilingualSupport.MULTILANG_ENABLE && player != null)
         {
             Map<string[], string[]>? localisations = SEND_MESSAGE_LOCALISATIONS.get(player.getLang() ?? "en");
 			if (localisations != null)

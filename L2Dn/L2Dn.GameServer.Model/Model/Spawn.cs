@@ -357,13 +357,13 @@ public class Spawn : IIdentifiable, IHasLocation
 		WaterZone? water = ZoneManager.getInstance().getZone<WaterZone>(newLocation);
 
 		// If random spawn system is enabled.
-		if (Config.ENABLE_RANDOM_MONSTER_SPAWNS && _location.Heading != -1 && npc.isMonster() &&
+		if (Config.RandomSpawns.ENABLE_RANDOM_MONSTER_SPAWNS && _location.Heading != -1 && npc.isMonster() &&
 		    !npc.isQuestMonster() && !WalkingManager.getInstance().isTargeted(npc) && getInstanceId() == 0 &&
 		    !getTemplate().isUndying() && !npc.isRaid() && !npc.isRaidMinion() && !npc.isFlying() && water == null &&
-		    !Config.MOBS_LIST_NOT_RANDOM.Contains(npc.getId()))
+		    !Config.RandomSpawns.MOBS_LIST_NOT_RANDOM.Contains(npc.getId()))
 		{
-			int randX = newLocation.X + Rnd.get(Config.MOB_MIN_SPAWN_RANGE, Config.MOB_MAX_SPAWN_RANGE);
-			int randY = newLocation.Y + Rnd.get(Config.MOB_MIN_SPAWN_RANGE, Config.MOB_MAX_SPAWN_RANGE);
+			int randX = newLocation.X + Rnd.get(Config.RandomSpawns.MOB_MIN_SPAWN_RANGE, Config.RandomSpawns.MOB_MAX_SPAWN_RANGE);
+			int randY = newLocation.Y + Rnd.get(Config.RandomSpawns.MOB_MIN_SPAWN_RANGE, Config.RandomSpawns.MOB_MAX_SPAWN_RANGE);
 			Location3D randLocation = new(randX, randY, newLocation.Z);
 			if (GeoEngine.getInstance().canMoveToTarget(newLocation, randLocation, npc.getInstanceWorld())
 			    && GeoEngine.getInstance().canSeeTarget(newLocation, randLocation, npc.getInstanceWorld()))

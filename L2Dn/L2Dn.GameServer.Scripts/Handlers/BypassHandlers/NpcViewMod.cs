@@ -409,14 +409,14 @@ public class NpcViewMod: IBypassHandler
 			double rateAmount = 1;
 			if (dropType == DropType.SPOIL)
 			{
-				rateChance = Config.RATE_SPOIL_DROP_CHANCE_MULTIPLIER;
-				rateAmount = Config.RATE_SPOIL_DROP_AMOUNT_MULTIPLIER;
+				rateChance = Config.Rates.RATE_SPOIL_DROP_CHANCE_MULTIPLIER;
+				rateAmount = Config.Rates.RATE_SPOIL_DROP_AMOUNT_MULTIPLIER;
 
 				// also check premium rates if available
-				if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
+				if (Config.PremiumSystem.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 				{
-					rateChance *= Config.PREMIUM_RATE_SPOIL_CHANCE;
-					rateAmount *= Config.PREMIUM_RATE_SPOIL_AMOUNT;
+					rateChance *= Config.PremiumSystem.PREMIUM_RATE_SPOIL_CHANCE;
+					rateAmount *= Config.PremiumSystem.PREMIUM_RATE_SPOIL_AMOUNT;
 				}
 
 				// bonus spoil rate effect
@@ -424,44 +424,44 @@ public class NpcViewMod: IBypassHandler
 			}
 			else
 			{
-				if (Config.RATE_DROP_CHANCE_BY_ID.TryGetValue(dropItem.getItemId(), out float value))
+				if (Config.Rates.RATE_DROP_CHANCE_BY_ID.TryGetValue(dropItem.getItemId(), out float value))
 				{
 					rateChance *= value;
 				}
 				else if (item.hasExImmediateEffect())
 				{
-					rateChance *= Config.RATE_HERB_DROP_CHANCE_MULTIPLIER;
+					rateChance *= Config.Rates.RATE_HERB_DROP_CHANCE_MULTIPLIER;
 				}
 				else if (npc.isRaid())
 				{
-					rateChance *= Config.RATE_RAID_DROP_CHANCE_MULTIPLIER;
+					rateChance *= Config.Rates.RATE_RAID_DROP_CHANCE_MULTIPLIER;
 				}
 				else
 				{
-					rateChance *= Config.RATE_DEATH_DROP_CHANCE_MULTIPLIER;
+					rateChance *= Config.Rates.RATE_DEATH_DROP_CHANCE_MULTIPLIER;
 				}
 
-				if (Config.RATE_DROP_AMOUNT_BY_ID.TryGetValue(dropItem.getItemId(), out value))
+				if (Config.Rates.RATE_DROP_AMOUNT_BY_ID.TryGetValue(dropItem.getItemId(), out value))
 				{
 					rateAmount *= value;
 				}
 				else if (item.hasExImmediateEffect())
 				{
-					rateAmount *= Config.RATE_HERB_DROP_AMOUNT_MULTIPLIER;
+					rateAmount *= Config.Rates.RATE_HERB_DROP_AMOUNT_MULTIPLIER;
 				}
 				else if (npc.isRaid())
 				{
-					rateAmount *= Config.RATE_RAID_DROP_AMOUNT_MULTIPLIER;
+					rateAmount *= Config.Rates.RATE_RAID_DROP_AMOUNT_MULTIPLIER;
 				}
 				else
 				{
-					rateAmount *= Config.RATE_DEATH_DROP_AMOUNT_MULTIPLIER;
+					rateAmount *= Config.Rates.RATE_DEATH_DROP_AMOUNT_MULTIPLIER;
 				}
 
 				// also check premium rates if available
-				if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
+				if (Config.PremiumSystem.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 				{
-					if (Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.TryGetValue(dropItem.getItemId(), out double value2))
+					if (Config.PremiumSystem.PREMIUM_RATE_DROP_CHANCE_BY_ID.TryGetValue(dropItem.getItemId(), out double value2))
 					{
 						rateChance *= value2;
 					}
@@ -475,10 +475,10 @@ public class NpcViewMod: IBypassHandler
 					}
 					else
 					{
-						rateChance *= Config.PREMIUM_RATE_DROP_CHANCE;
+						rateChance *= Config.PremiumSystem.PREMIUM_RATE_DROP_CHANCE;
 					}
 
-					if (Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.TryGetValue(dropItem.getItemId(), out value2))
+					if (Config.PremiumSystem.PREMIUM_RATE_DROP_AMOUNT_BY_ID.TryGetValue(dropItem.getItemId(), out value2))
 					{
 						rateAmount *= value2;
 					}
@@ -492,7 +492,7 @@ public class NpcViewMod: IBypassHandler
 					}
 					else
 					{
-						rateAmount *= Config.PREMIUM_RATE_DROP_AMOUNT;
+						rateAmount *= Config.PremiumSystem.PREMIUM_RATE_DROP_AMOUNT;
 					}
 				}
 

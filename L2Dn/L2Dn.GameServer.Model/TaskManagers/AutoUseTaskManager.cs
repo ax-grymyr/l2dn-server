@@ -74,7 +74,7 @@ public class AutoUseTaskManager
 
 				bool isInPeaceZone = player.isInsideZone(ZoneId.PEACE) || player.isInsideZone(ZoneId.SAYUNE);
 
-				if (Config.ENABLE_AUTO_ITEM && !isInPeaceZone)
+				if (Config.General.ENABLE_AUTO_ITEM && !isInPeaceZone)
 				{
 					Pet? pet = player.getPet();
 					foreach (int itemId in player.getAutoUseSettings().getAutoSupplyItems())
@@ -154,7 +154,7 @@ public class AutoUseTaskManager
 					}
 				}
 
-				if (Config.ENABLE_AUTO_POTION && !isInPeaceZone && player.getCurrentHpPercent() < player.getAutoPlaySettings().getAutoPotionPercent())
+				if (Config.General.ENABLE_AUTO_POTION && !isInPeaceZone && player.getCurrentHpPercent() < player.getAutoPlaySettings().getAutoPotionPercent())
 				{
 					int itemId = player.getAutoUseSettings().getAutoPotionItem();
 					if (itemId > 0)
@@ -190,7 +190,7 @@ public class AutoUseTaskManager
 					}
 				}
 
-				if (Config.ENABLE_AUTO_PET_POTION && !isInPeaceZone)
+				if (Config.General.ENABLE_AUTO_PET_POTION && !isInPeaceZone)
 				{
 					Pet? pet = player.getPet();
 					if (pet != null && !pet.isDead())
@@ -224,7 +224,7 @@ public class AutoUseTaskManager
 					}
 				}
 
-				if (Config.ENABLE_AUTO_SKILL)
+				if (Config.General.ENABLE_AUTO_SKILL)
 				{
 					foreach (int skillId in player.getAutoUseSettings().getAutoBuffs())
 					{

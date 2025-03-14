@@ -87,14 +87,14 @@ public class GraciaSeedsManager
 			{
 				// Conquest Complete state, if too much time is passed than change to defense state
 				TimeSpan timePast = DateTime.UtcNow - _SoDLastStateChangeDate;
-				if (timePast >= TimeSpan.FromMilliseconds(Config.SOD_STAGE_2_LENGTH))
+				if (timePast >= TimeSpan.FromMilliseconds(Config.GraciaSeeds.SOD_STAGE_2_LENGTH))
 				{
 					// change to Attack state because Defend statet is not implemented
 					setSoDState(1, true);
 				}
 				else
 				{
-					ThreadPool.schedule(new UpdateSoDStateTask(), TimeSpan.FromMilliseconds(Config.SOD_STAGE_2_LENGTH) - timePast);
+					ThreadPool.schedule(new UpdateSoDStateTask(), TimeSpan.FromMilliseconds(Config.GraciaSeeds.SOD_STAGE_2_LENGTH) - timePast);
 				}
 				break;
 			}
@@ -130,7 +130,7 @@ public class GraciaSeedsManager
 		if (_SoDState == 1)
 		{
 			_SoDTiatKilled++;
-			if (_SoDTiatKilled >= Config.SOD_TIAT_KILL_COUNT)
+			if (_SoDTiatKilled >= Config.GraciaSeeds.SOD_TIAT_KILL_COUNT)
 			{
 				setSoDState(2, false);
 			}
@@ -181,7 +181,7 @@ public class GraciaSeedsManager
 			}
 			case 2:
 			{
-				return _SoDLastStateChangeDate + TimeSpan.FromMilliseconds(Config.SOD_STAGE_2_LENGTH) - DateTime.UtcNow;
+				return _SoDLastStateChangeDate + TimeSpan.FromMilliseconds(Config.GraciaSeeds.SOD_STAGE_2_LENGTH) - DateTime.UtcNow;
 			}
 			case 3:
 			{

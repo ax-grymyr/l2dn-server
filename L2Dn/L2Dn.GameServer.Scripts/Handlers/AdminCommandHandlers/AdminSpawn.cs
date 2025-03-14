@@ -575,7 +575,7 @@ public class AdminSpawn: IAdminCommandHandler
 			template1 = NpcData.getInstance().getTemplateByName(monsterId);
 		}
 
-		if (template1 is null || !Config.FAKE_PLAYERS_ENABLED && template1.isFakePlayer())
+		if (template1 is null || !Config.FakePlayers.FAKE_PLAYERS_ENABLED && template1.isFakePlayer())
 		{
 			activeChar.sendPacket(SystemMessageId.YOUR_TARGET_CANNOT_BE_FOUND);
 			return;
@@ -622,7 +622,7 @@ public class AdminSpawn: IAdminCommandHandler
 		}
 
 		NpcTemplate? template1 = NpcData.getInstance().getTemplate(id);
-		if (template1 is null || !Config.FAKE_PLAYERS_ENABLED && template1.isFakePlayer())
+		if (template1 is null || !Config.FakePlayers.FAKE_PLAYERS_ENABLED && template1.isFakePlayer())
 		{
 			activeChar.sendPacket(SystemMessageId.YOUR_TARGET_CANNOT_BE_FOUND);
 			return;

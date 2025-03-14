@@ -39,8 +39,8 @@ public class RandomAnimationTaskManager: Runnable
 			}
 
 			PENDING_ANIMATIONS.put(npc,
-				currentTime.AddMilliseconds(Rnd.get(npc.isAttackable() ? Config.MIN_MONSTER_ANIMATION : Config.MIN_NPC_ANIMATION,
-					npc.isAttackable() ? Config.MAX_MONSTER_ANIMATION : Config.MAX_NPC_ANIMATION) * 1000));
+				currentTime.AddMilliseconds(Rnd.get(npc.isAttackable() ? Config.General.MIN_MONSTER_ANIMATION : Config.General.MIN_NPC_ANIMATION,
+					npc.isAttackable() ? Config.General.MAX_MONSTER_ANIMATION : Config.General.MAX_NPC_ANIMATION) * 1000));
 		}
 
 		_working = false;
@@ -52,8 +52,8 @@ public class RandomAnimationTaskManager: Runnable
 		{
 			PENDING_ANIMATIONS.TryAdd(npc,
 				DateTime.UtcNow.AddMilliseconds(
-					Rnd.get(npc.isAttackable() ? Config.MIN_MONSTER_ANIMATION : Config.MIN_NPC_ANIMATION,
-						npc.isAttackable() ? Config.MAX_MONSTER_ANIMATION : Config.MAX_NPC_ANIMATION) * 1000));
+					Rnd.get(npc.isAttackable() ? Config.General.MIN_MONSTER_ANIMATION : Config.General.MIN_NPC_ANIMATION,
+						npc.isAttackable() ? Config.General.MAX_MONSTER_ANIMATION : Config.General.MAX_NPC_ANIMATION) * 1000));
 		}
 	}
 

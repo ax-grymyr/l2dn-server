@@ -6,6 +6,6 @@ public static class StaticDataLoader
 {
     public static void Load(string configBasePath)
     {
-        Config.Load(configBasePath, ServerConfig.Instance.DataPack.Path);
+        Config.Load(configBasePath);
     }
 }

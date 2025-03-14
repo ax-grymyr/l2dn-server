@@ -24,7 +24,7 @@ public class FindPvP: IBypassHandler
 
 	public bool useBypass(string command, Player player, Creature? target)
 	{
-		if (!Config.ENABLE_FIND_PVP || target is null || !target.isNpc())
+		if (!Config.FindPvP.ENABLE_FIND_PVP || target is null || !target.isNpc())
 		{
 			return false;
 		}
@@ -121,7 +121,7 @@ public class FindPvP: IBypassHandler
 			player.setSpawnProtection(true);
 			if (!player.isGM())
 			{
-				player.setPvpFlagLasts(DateTime.UtcNow + Config.PVP_PVP_TIME);
+				player.setPvpFlagLasts(DateTime.UtcNow + Config.Pvp.PVP_PVP_TIME);
 				player.startPvPFlag();
 			}
 		}

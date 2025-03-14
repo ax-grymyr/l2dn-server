@@ -14,7 +14,7 @@ public abstract class PathFinding
 {
 	public static PathFinding getInstance()
 	{
-		return Config.PATHFINDING == 1 ? GeoPathFinding.getInstance() : CellPathFinding.getInstance();
+		return Config.GeoEngine.PATHFINDING == 1 ? GeoPathFinding.getInstance() : CellPathFinding.getInstance();
 	}
 
 	public abstract bool pathNodesExist(short regionoffset);

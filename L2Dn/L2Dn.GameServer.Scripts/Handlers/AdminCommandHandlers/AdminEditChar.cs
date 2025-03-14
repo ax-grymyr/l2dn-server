@@ -193,7 +193,7 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				if (Config.DEVELOPER)
+				if (Config.General.DEVELOPER)
 				{
 					LOGGER.Warn("Set reputation error: " + e);
 				}
@@ -237,7 +237,7 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				if (Config.DEVELOPER)
+				if (Config.General.DEVELOPER)
 				{
 					LOGGER.Warn("Set pk error: " + e);
 				}
@@ -268,7 +268,7 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				if (Config.DEVELOPER)
+				if (Config.General.DEVELOPER)
 				{
 					LOGGER.Warn("Set pvp error: " + e);
 				}
@@ -297,7 +297,7 @@ public class AdminEditChar: IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				if (Config.DEVELOPER)
+				if (Config.General.DEVELOPER)
 				{
 					LOGGER.Warn("Set Fame error: " + e);
 				}
@@ -1268,9 +1268,9 @@ public class AdminEditChar: IAdminCommandHandler
 		}
 
 		int newReputation = value;
-		if (newReputation > Config.MAX_REPUTATION)
+		if (newReputation > Config.Pvp.MAX_REPUTATION)
 		{
-			newReputation = Config.MAX_REPUTATION;
+			newReputation = Config.Pvp.MAX_REPUTATION;
 		}
 
 		int oldReputation = player.getReputation();

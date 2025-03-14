@@ -176,7 +176,7 @@ public class Attackable: Npc
             addDamage(attacker, (int)value, skill);
 
 			// Check Raidboss attack. Character will be petrified if attacking a raid that's more than 8 levels lower. In retail you deal damage to raid before curse.
-			if (_isRaid && giveRaidCurse() && !Config.RAID_DISABLE_CURSE && attacker.getLevel() > getLevel() + 8)
+			if (_isRaid && giveRaidCurse() && !Config.Npc.RAID_DISABLE_CURSE && attacker.getLevel() > getLevel() + 8)
 			{
 				Skill raidCurse = CommonSkill.RAID_CURSE2.getSkill();
 				if (raidCurse != null)
@@ -256,7 +256,7 @@ public class Attackable: Npc
             Monster? leader = mob.getLeader();
 			if (leader != null && leader.hasMinions())
 			{
-				int respawnTime = Config.MINIONS_RESPAWN_TIME.ContainsKey(getId()) ? Config.MINIONS_RESPAWN_TIME[getId()] * 1000 : -1;
+				int respawnTime = Config.Npc.MINIONS_RESPAWN_TIME.ContainsKey(getId()) ? Config.Npc.MINIONS_RESPAWN_TIME[getId()] * 1000 : -1;
                 leader.getMinionList().onMinionDie(mob, respawnTime);
 			}
 
@@ -404,7 +404,7 @@ public class Attackable: Npc
                 Player? player = maxDealer != null && maxDealer.isOnline() ? maxDealer : lastAttacker.getActingPlayer();
                 if (player != null)
                 {
-                    int raidbossPoints = (int)(getTemplate().getRaidPoints() * Config.RATE_RAIDBOSS_POINTS);
+                    int raidbossPoints = (int)(getTemplate().getRaidPoints() * Config.Rates.RATE_RAIDBOSS_POINTS);
                     Party? party = player.getParty();
                     if (party != null)
                     {
@@ -528,10 +528,10 @@ public class Attackable: Npc
 							double[] expSp = calculateExpAndSp(attacker.getLevel(), damage, totalDamage);
 							double exp = expSp[0];
 							double sp = expSp[1];
-							if (Config.CHAMPION_ENABLE && _champion)
+							if (Config.ChampionMonsters.CHAMPION_ENABLE && _champion)
 							{
-								exp *= Config.CHAMPION_REWARDS_EXP_SP;
-								sp *= Config.CHAMPION_REWARDS_EXP_SP;
+								exp *= Config.ChampionMonsters.CHAMPION_REWARDS_EXP_SP;
+								sp *= Config.ChampionMonsters.CHAMPION_REWARDS_EXP_SP;
 							}
 
 							exp *= penalty;
@@ -549,16 +549,16 @@ public class Attackable: Npc
 							if (!attacker.isDead())
 							{
 								exp = attacker.getStat().getValue(Stat.EXPSP_RATE, exp) *
-								      Config.EXP_AMOUNT_MULTIPLIERS.GetValueOrDefault(attacker.getClassId(), 1);
+								      Config.ClassBalance.EXP_AMOUNT_MULTIPLIERS.GetValueOrDefault(attacker.getClassId(), 1);
 
 								sp = attacker.getStat().getValue(Stat.EXPSP_RATE, sp) *
-								     Config.SP_AMOUNT_MULTIPLIERS.GetValueOrDefault(attacker.getClassId(), 1);
+								     Config.ClassBalance.SP_AMOUNT_MULTIPLIERS.GetValueOrDefault(attacker.getClassId(), 1);
 
 								// Premium rates
 								if (attacker.hasPremiumStatus())
 								{
-									exp *= Config.PREMIUM_RATE_XP;
-									sp *= Config.PREMIUM_RATE_SP;
+									exp *= Config.PremiumSystem.PREMIUM_RATE_XP;
+									sp *= Config.PremiumSystem.PREMIUM_RATE_SP;
 								}
 
 								attacker.addExpAndSp(exp, sp, useVitalityRate());
@@ -678,10 +678,10 @@ public class Attackable: Npc
 						double[] expSp = calculateExpAndSp(partyLvl, partyDmg, totalDamage);
 						double exp = expSp[0];
 						double sp = expSp[1];
-						if (Config.CHAMPION_ENABLE && _champion)
+						if (Config.ChampionMonsters.CHAMPION_ENABLE && _champion)
 						{
-							exp *= Config.CHAMPION_REWARDS_EXP_SP;
-							sp *= Config.CHAMPION_REWARDS_EXP_SP;
+							exp *= Config.ChampionMonsters.CHAMPION_REWARDS_EXP_SP;
+							sp *= Config.ChampionMonsters.CHAMPION_REWARDS_EXP_SP;
 						}
 
 						exp *= partyMul;
@@ -830,7 +830,7 @@ public class Attackable: Npc
 		}
 
 		// Check if fake players should aggro each other.
-		if (isFakePlayer() && !Config.FAKE_PLAYER_AGGRO_FPC && attacker.isFakePlayer())
+		if (isFakePlayer() && !Config.FakePlayers.FAKE_PLAYER_AGGRO_FPC && attacker.isFakePlayer())
 		{
 			return;
 		}
@@ -1127,7 +1127,7 @@ public class Attackable: Npc
 		if (player == null)
 		{
 			// unless it is a fake player and they can drop items
-			if (mainDamageDealer.isFakePlayer() && Config.FAKE_PLAYER_CAN_DROP_ITEMS)
+			if (mainDamageDealer.isFakePlayer() && Config.FakePlayers.FAKE_PLAYER_CAN_DROP_ITEMS)
 			{
 				ICollection<ItemHolder>? deathItems = npcTemplate.calculateDrops(DropType.DROP, this, mainDamageDealer);
 				if (deathItems != null)
@@ -1153,7 +1153,7 @@ public class Attackable: Npc
 						else
 						{
 							Item? droppedItem = dropItem(mainDamageDealer, drop); // drop the item on the ground
-							if (droppedItem != null && Config.FAKE_PLAYER_CAN_PICKUP)
+							if (droppedItem != null && Config.FakePlayers.FAKE_PLAYER_CAN_PICKUP)
 							{
 								mainDamageDealer.getFakePlayerDrops().Add(droppedItem);
 							}
@@ -1521,13 +1521,13 @@ public class Attackable: Npc
 		_champion = false;
 
 		// Set champion on next spawn
-		if (Config.CHAMPION_ENABLE && isMonster() && !isQuestMonster() && !getTemplate().isUndying() && !_isRaid && !_isRaidMinion && Config.CHAMPION_FREQUENCY > 0 && getLevel() >= Config.CHAMP_MIN_LEVEL && getLevel() <= Config.CHAMP_MAX_LEVEL && (Config.CHAMPION_ENABLE_IN_INSTANCES || getInstanceId() == 0))
+		if (Config.ChampionMonsters.CHAMPION_ENABLE && isMonster() && !isQuestMonster() && !getTemplate().isUndying() && !_isRaid && !_isRaidMinion && Config.ChampionMonsters.CHAMPION_FREQUENCY > 0 && getLevel() >= Config.ChampionMonsters.CHAMP_MIN_LEVEL && getLevel() <= Config.ChampionMonsters.CHAMP_MAX_LEVEL && (Config.ChampionMonsters.CHAMPION_ENABLE_IN_INSTANCES || getInstanceId() == 0))
 		{
-			if (Rnd.get(100) < Config.CHAMPION_FREQUENCY)
+			if (Rnd.get(100) < Config.ChampionMonsters.CHAMPION_FREQUENCY)
 			{
 				_champion = true;
 			}
-			if (Config.SHOW_CHAMPION_AURA)
+			if (Config.ChampionMonsters.SHOW_CHAMPION_AURA)
 			{
 				setTeam(_champion ? Team.RED : Team.NONE, false);
 			}
@@ -1639,7 +1639,7 @@ public class Attackable: Npc
 			{
 				count += diff;
 			}
-			_harvestItem = new ItemHolder(_seed.getCropId(), count * Config.RATE_DROP_MANOR);
+			_harvestItem = new ItemHolder(_seed.getCropId(), count * Config.Rates.RATE_DROP_MANOR);
 		}
 	}
 
@@ -1678,7 +1678,7 @@ public class Attackable: Npc
 	// This is located here because Monster and FriendlyMob both extend this class. The other non-pc instances extend either Npc or Monster.
 	public override bool hasRandomAnimation()
 	{
-		return Config.MAX_MONSTER_ANIMATION > 0 && isRandomAnimationEnabled() && !(this is GrandBoss);
+		return Config.General.MAX_MONSTER_ANIMATION > 0 && isRandomAnimationEnabled() && !(this is GrandBoss);
 	}
 
 	public void setCommandChannelTimer(CommandChannelTimer? commandChannelTimer)
@@ -1733,12 +1733,12 @@ public class Attackable: Npc
 	 */
 	public virtual int getVitalityPoints(int level, double exp, bool isBoss)
 	{
-		if (getLevel() <= 0 || getExpReward() <= 0 || (isBoss && Config.VITALITY_CONSUME_BY_BOSS == 0))
+		if (getLevel() <= 0 || getExpReward() <= 0 || (isBoss && Config.Npc.VITALITY_CONSUME_BY_BOSS == 0))
 		{
 			return 0;
 		}
 
-		int points = Math.Max((int) (exp / (isBoss ? Config.VITALITY_CONSUME_BY_BOSS : Config.VITALITY_CONSUME_BY_MOB) * Math.Max(level - getLevel(), 1)), level < 40 ? 5 : 100);
+		int points = Math.Max((int) (exp / (isBoss ? Config.Npc.VITALITY_CONSUME_BY_BOSS : Config.Npc.VITALITY_CONSUME_BY_MOB) * Math.Max(level - getLevel(), 1)), level < 40 ? 5 : 100);
 		return -points;
 	}
 
@@ -1747,7 +1747,7 @@ public class Attackable: Npc
 	 */
 	public virtual bool useVitalityRate()
 	{
-		return !_champion || Config.CHAMPION_ENABLE_VITALITY;
+		return !_champion || Config.ChampionMonsters.CHAMPION_ENABLE_VITALITY;
 	}
 
 	/** Return True if the Creature is RaidBoss or his minion. */

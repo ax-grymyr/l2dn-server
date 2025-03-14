@@ -51,7 +51,7 @@ public struct RequestNewInvitePartyInquiryPacket: IIncomingPacket<GameSession>
 		// 	return;
 		// }
 
-		if (Config.JAIL_DISABLE_CHAT && player.isJailed() && !player.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+		if (Config.General.JAIL_DISABLE_CHAT && player.isJailed() && !player.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 		{
 			player.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 			return ValueTask.CompletedTask;

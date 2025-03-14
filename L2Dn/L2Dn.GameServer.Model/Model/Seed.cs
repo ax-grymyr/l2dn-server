@@ -76,12 +76,12 @@ public class Seed
 
 	public int getSeedLimit()
 	{
-		return _limitSeeds * Config.RATE_DROP_MANOR;
+		return _limitSeeds * Config.Rates.RATE_DROP_MANOR;
 	}
 
 	public int getCropLimit()
 	{
-		return _limitCrops * Config.RATE_DROP_MANOR;
+		return _limitCrops * Config.Rates.RATE_DROP_MANOR;
 	}
 
 	public int getSeedReferencePrice()

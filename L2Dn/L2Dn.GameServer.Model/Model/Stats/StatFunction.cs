@@ -136,16 +136,16 @@ public abstract class StatFunction: IStatFunction
             {
                 if (item.isWeapon())
                 {
-                    if (Config.ALT_OLY_WEAPON_ENCHANT_LIMIT >= 0 && enchant > Config.ALT_OLY_WEAPON_ENCHANT_LIMIT)
+                    if (Config.Olympiad.ALT_OLY_WEAPON_ENCHANT_LIMIT >= 0 && enchant > Config.Olympiad.ALT_OLY_WEAPON_ENCHANT_LIMIT)
                     {
-                        enchant = Config.ALT_OLY_WEAPON_ENCHANT_LIMIT;
+                        enchant = Config.Olympiad.ALT_OLY_WEAPON_ENCHANT_LIMIT;
                     }
                 }
                 else
                 {
-                    if (Config.ALT_OLY_ARMOR_ENCHANT_LIMIT >= 0 && enchant > Config.ALT_OLY_ARMOR_ENCHANT_LIMIT)
+                    if (Config.Olympiad.ALT_OLY_ARMOR_ENCHANT_LIMIT >= 0 && enchant > Config.Olympiad.ALT_OLY_ARMOR_ENCHANT_LIMIT)
                     {
-                        enchant = Config.ALT_OLY_ARMOR_ENCHANT_LIMIT;
+                        enchant = Config.Olympiad.ALT_OLY_ARMOR_ENCHANT_LIMIT;
                     }
                 }
             }

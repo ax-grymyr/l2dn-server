@@ -33,7 +33,7 @@ public class SayuneZone(int id, ZoneForm form): ZoneType(id, form)
     {
         Player? player = creature.getActingPlayer();
 		if (creature.isPlayer() && player != null &&
-            /* creature.isInCategory(CategoryType.SIXTH_CLASS_GROUP) || */Config.FREE_JUMPS_FOR_ALL &&
+            /* creature.isInCategory(CategoryType.SIXTH_CLASS_GROUP) || */Config.SayuneForAll.FREE_JUMPS_FOR_ALL &&
 		    !player.isMounted() && !creature.isTransformed())
 		{
 			creature.setInsideZone(ZoneId.SAYUNE, true);

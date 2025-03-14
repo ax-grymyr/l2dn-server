@@ -34,7 +34,7 @@ public struct RequestDeleteReceivedPostPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (_msgIds == null || !Config.ALLOW_MAIL)
+        if (_msgIds == null || !Config.General.ALLOW_MAIL)
             return ValueTask.CompletedTask;
 
         // if (!player.isInsideZone(ZoneId.PEACE))
@@ -53,7 +53,7 @@ public struct RequestDeleteReceivedPostPacket: IIncomingPacket<GameSession>
             if (msg.getReceiverId() != player.ObjectId)
             {
                 Util.handleIllegalPlayerAction(player, player + " tried to delete not own post!",
-                    Config.DEFAULT_PUNISH);
+                    Config.General.DEFAULT_PUNISH);
 
                 return ValueTask.CompletedTask;
             }

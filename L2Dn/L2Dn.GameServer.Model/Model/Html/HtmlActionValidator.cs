@@ -56,7 +56,7 @@ public class HtmlActionValidator
         if (originObjectId < 0)
             throw new ArgumentOutOfRangeException(nameof(originObjectId), originObjectId, null);
 
-        if (Config.HTML_ACTION_CACHE_DEBUG)
+        if (Config.General.HTML_ACTION_CACHE_DEBUG)
             _logger.Info("Set html action npc(" + scope + "): " + originObjectId);
 
         _array[(int)scope].OriginObjectId = originObjectId;
@@ -95,7 +95,7 @@ public class HtmlActionValidator
 			if (hasParameters)
 				bypass = bypass.Substring(0, firstParameterStart).Trim();
 
-			if (Config.HTML_ACTION_CACHE_DEBUG)
+			if (Config.General.HTML_ACTION_CACHE_DEBUG)
 				_logger.Info("Cached html bypass(" + scope + "): '" + bypass + "'");
 
 			actions.Add(new ActionItem { Action = bypass, Prefix = hasParameters });
@@ -131,7 +131,7 @@ public class HtmlActionValidator
 				continue;
 			}
 
-			if (Config.HTML_ACTION_CACHE_DEBUG)
+			if (Config.General.HTML_ACTION_CACHE_DEBUG)
 				_logger.Info("Cached html link(" + scope + "): '" + htmlLink + "'");
 
 			// let's keep an action cache with "link " lowercase literal kept

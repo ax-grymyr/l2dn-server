@@ -90,7 +90,7 @@ public struct RequestPreviewItemPacket: IIncomingPacket<GameSession>
 	    {
 		    Util.handleIllegalPlayerAction(player,
 			    "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-			    " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
+			    " sent a false BuyList list_id " + _listId, Config.General.DEFAULT_PUNISH);
 
 		    return ValueTask.CompletedTask;
 	    }
@@ -105,7 +105,7 @@ public struct RequestPreviewItemPacket: IIncomingPacket<GameSession>
 		    {
 			    Util.handleIllegalPlayerAction(player,
 				    "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-				    " sent a false BuyList list_id " + _listId + " and item_id " + itemId, Config.DEFAULT_PUNISH);
+				    " sent a false BuyList list_id " + _listId + " and item_id " + itemId, Config.General.DEFAULT_PUNISH);
 
 			    return ValueTask.CompletedTask;
 		    }
@@ -155,12 +155,12 @@ public struct RequestPreviewItemPacket: IIncomingPacket<GameSession>
 		    }
 
 		    itemList.put(slot, itemId);
-		    totalPrice += Config.WEAR_PRICE;
+		    totalPrice += Config.General.WEAR_PRICE;
 		    if (totalPrice > Inventory.MAX_ADENA)
 		    {
 			    Util.handleIllegalPlayerAction(player,
 				    "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-				    " tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.DEFAULT_PUNISH);
+				    " tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.General.DEFAULT_PUNISH);
 
 			    return ValueTask.CompletedTask;
 		    }
@@ -177,7 +177,7 @@ public struct RequestPreviewItemPacket: IIncomingPacket<GameSession>
 	    {
 		    player.sendPacket(new ShopPreviewInfoPacket(itemList));
 		    // Schedule task
-		    ThreadPool.schedule(new RemoveWearItemsTask(player), Config.WEAR_DELAY * 1000);
+		    ThreadPool.schedule(new RemoveWearItemsTask(player), Config.General.WEAR_DELAY * 1000);
 	    }
 
 	    return ValueTask.CompletedTask;

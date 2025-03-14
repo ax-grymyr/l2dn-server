@@ -94,7 +94,7 @@ public sealed class Fishing
 
 	private void castLine()
 	{
-		if (!Config.ALLOW_FISHING && !_player.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS))
+		if (!Config.General.ALLOW_FISHING && !_player.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS))
 		{
 			_player.sendMessage("Fishing is disabled.");
 			_player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -124,9 +124,9 @@ public sealed class Fishing
 			return;
 		}
 
-		if (Config.PREMIUM_SYSTEM_ENABLED)
+		if (Config.PremiumSystem.PREMIUM_SYSTEM_ENABLED)
 		{
-			if (Config.PREMIUM_ONLY_FISHING && !_player.hasPremiumStatus())
+			if (Config.PremiumSystem.PREMIUM_ONLY_FISHING && !_player.hasPremiumStatus())
 			{
 				_player.sendPacket(SystemMessageId.YOU_CANNOT_FISH_AS_YOU_DO_NOT_MEET_THE_REQUIREMENTS);
 				_player.sendPacket(ActionFailedPacket.STATIC_PACKET);

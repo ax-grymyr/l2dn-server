@@ -577,7 +577,7 @@ public class SkillCaster: Runnable
 				Creature creature = (Creature) obj;
 
 				// Check raid monster/minion attack and check buffing characters who attack raid monsters. Raid is still affected by skills.
-				if (!Config.RAID_DISABLE_CURSE && creature.isRaid() && creature.giveRaidCurse() &&
+				if (!Config.Npc.RAID_DISABLE_CURSE && creature.isRaid() && creature.giveRaidCurse() &&
 				    caster.getLevel() >= creature.getLevel() + 9 && (skill.isBad() || (creature.getTarget() == caster &&
 					    ((Attackable)creature).getAggroList().ContainsKey(caster))))
 				{
@@ -645,7 +645,7 @@ public class SkillCaster: Runnable
 							((Creature) obj).addAttackerToAttackByList(caster);
 
 							// Summoning a servitor should not renew your own PvP flag time.
-                            if (obj.isFakePlayer() && !Config.FAKE_PLAYER_AUTO_ATTACKABLE &&
+                            if (obj.isFakePlayer() && !Config.FakePlayers.FAKE_PLAYER_AUTO_ATTACKABLE &&
                                 (!obj.isServitor() || obj.ObjectId != player.getFirstServitor()?.ObjectId))
                             {
                                 player.updatePvPStatus();
@@ -670,7 +670,7 @@ public class SkillCaster: Runnable
 						{
 							// Consider fake player PvP status.
 							if (!obj.isFakePlayer() //
-								|| (obj.isFakePlayer() && !Config.FAKE_PLAYER_AUTO_ATTACKABLE && (!((Npc) obj).isScriptValue(0) || ((Npc) obj).getReputation() < 0)))
+								|| (obj.isFakePlayer() && !Config.FakePlayers.FAKE_PLAYER_AUTO_ATTACKABLE && (!((Npc) obj).isScriptValue(0) || ((Npc) obj).getReputation() < 0)))
 							{
 								player.updatePvPStatus();
 							}
@@ -705,7 +705,7 @@ public class SkillCaster: Runnable
 					}
 				});
 			}
-			else if (caster.isFakePlayer() && !Config.FAKE_PLAYER_AUTO_ATTACKABLE) // fake player attacks player
+			else if (caster.isFakePlayer() && !Config.FakePlayers.FAKE_PLAYER_AUTO_ATTACKABLE) // fake player attacks player
 			{
 				if (target.isPlayable() || target.isFakePlayer())
 				{

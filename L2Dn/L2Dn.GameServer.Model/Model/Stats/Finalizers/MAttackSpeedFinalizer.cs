@@ -14,9 +14,9 @@ public class MAttackSpeedFinalizer: StatFunction
 		throwIfPresent(@base);
 
 		double baseValue = calcWeaponBaseValue(creature, stat);
-		if (Config.CHAMPION_ENABLE && creature.isChampion())
+		if (Config.ChampionMonsters.CHAMPION_ENABLE && creature.isChampion())
 		{
-			baseValue *= Config.CHAMPION_SPD_ATK;
+			baseValue *= Config.ChampionMonsters.CHAMPION_SPD_ATK;
 		}
 
 		double witBonus = creature.getWIT() > 0 ? BaseStat.WIT.calcBonus(creature) : 1;

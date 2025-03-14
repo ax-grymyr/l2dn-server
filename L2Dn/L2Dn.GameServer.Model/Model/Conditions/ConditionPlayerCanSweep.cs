@@ -45,7 +45,7 @@ public sealed class ConditionPlayerCanSweep(bool value): Condition
                                 if (canSweep)
                                 {
                                     canSweep = !attackable.isOldCorpse(sweeper,
-                                        Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true);
+                                        Config.Npc.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true);
                                 }
 
                                 if (canSweep)

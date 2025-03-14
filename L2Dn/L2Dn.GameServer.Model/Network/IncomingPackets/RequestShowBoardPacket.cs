@@ -19,7 +19,7 @@ public struct RequestShowBoardPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        CommunityBoardHandler.getInstance().handleParseCommand(Config.BBS_DEFAULT, player);
+        CommunityBoardHandler.getInstance().handleParseCommand(Config.General.BBS_DEFAULT, player);
         return ValueTask.CompletedTask;
     }
 }

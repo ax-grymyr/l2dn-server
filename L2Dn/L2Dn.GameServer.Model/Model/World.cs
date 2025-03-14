@@ -80,7 +80,7 @@ public sealed class World
 				Disconnection.of(newPlayer).defaultSequence(ref packet);
 				LOGGER.Warn(GetType().Name + ": Duplicate character!? Disconnected both characters (" + newPlayer.getName() + ")");
 			}
-			else if (Config.FACTION_SYSTEM_ENABLED)
+			else if (Config.FactionSystem.FACTION_SYSTEM_ENABLED)
 			{
 				addFactionPlayerToWorld(newPlayer);
 			}
@@ -110,7 +110,7 @@ public sealed class World
 			}
 			_allPlayers.TryRemove(@object.ObjectId, out _);
 
-			if (Config.FACTION_SYSTEM_ENABLED)
+			if (Config.FactionSystem.FACTION_SYSTEM_ENABLED)
 			{
 				if (player.isGood())
 				{
@@ -205,7 +205,7 @@ public sealed class World
 			DateTime currentTime = DateTime.UtcNow;
 			if (currentTime > _nextPrivateStoreUpdate)
 			{
-				_nextPrivateStoreUpdate = currentTime + TimeSpan.FromMilliseconds(Config.STORE_REVIEW_CACHE_TIME);
+				_nextPrivateStoreUpdate = currentTime + TimeSpan.FromMilliseconds(Config.General.STORE_REVIEW_CACHE_TIME);
 				_allStoreModeBuySellPlayers.Clear();
 				foreach (Player player in _allPlayers.Values)
 				{

@@ -19,7 +19,7 @@ public class RegenCPFinalizer: StatFunction
 		}
 
 		double baseValue = player.getTemplate().getBaseCpRegen(creature.getLevel()) * creature.getLevelMod() *
-		                   BaseStat.CON.calcBonus(creature) * Config.CP_REGEN_MULTIPLIER;
+		                   BaseStat.CON.calcBonus(creature) * Config.Character.CP_REGEN_MULTIPLIER;
 		if (player.isSitting())
 		{
 			baseValue *= 1.5; // Sitting

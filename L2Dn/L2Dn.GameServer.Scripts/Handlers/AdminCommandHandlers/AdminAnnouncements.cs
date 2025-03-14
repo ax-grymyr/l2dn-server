@@ -49,7 +49,7 @@ public class AdminAnnouncements: IAdminCommandHandler
 				}
 				else
 				{
-					if (Config.GM_ANNOUNCER_NAME)
+					if (Config.General.GM_ANNOUNCER_NAME)
 					{
 						announce = announce + " [" + activeChar.getName() + "]";
 					}

@@ -19,7 +19,7 @@ public class OlympiadGameNonClassed: OlympiadGameNormal
 
 	protected override int getDivider()
 	{
-		return Config.ALT_OLY_DIVIDER_NON_CLASSED;
+		return Config.Olympiad.ALT_OLY_DIVIDER_NON_CLASSED;
 	}
 
 	public static OlympiadGameNonClassed? createGame(int id, Set<int> list)

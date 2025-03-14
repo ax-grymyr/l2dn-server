@@ -77,7 +77,7 @@ public struct RequestRefundItemPacket: IIncomingPacket<GameSession>
 		ProductList? buyList = BuyListData.getInstance().getBuyList(_listId);
 		if (buyList == null)
 		{
-			Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false BuyList list_id " + _listId, Config.General.DEFAULT_PUNISH);
 			return ValueTask.CompletedTask;
 		}
 
@@ -100,7 +100,7 @@ public struct RequestRefundItemPacket: IIncomingPacket<GameSession>
 			{
 				Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-					" sent invalid refund index", Config.DEFAULT_PUNISH);
+					" sent invalid refund index", Config.General.DEFAULT_PUNISH);
 
 				return ValueTask.CompletedTask;
 			}
@@ -112,7 +112,7 @@ public struct RequestRefundItemPacket: IIncomingPacket<GameSession>
 				{
 					Util.handleIllegalPlayerAction(player,
 						"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-						" sent duplicate refund index", Config.DEFAULT_PUNISH);
+						" sent duplicate refund index", Config.General.DEFAULT_PUNISH);
 
 					return ValueTask.CompletedTask;
 				}
@@ -129,7 +129,7 @@ public struct RequestRefundItemPacket: IIncomingPacket<GameSession>
 				{
 					Util.handleIllegalPlayerAction(player,
 						"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-						" has duplicate items in refund list", Config.DEFAULT_PUNISH);
+						" has duplicate items in refund list", Config.General.DEFAULT_PUNISH);
 
 					return ValueTask.CompletedTask;
 				}
@@ -162,7 +162,7 @@ public struct RequestRefundItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (!Config.MERCHANT_ZERO_SELL_PRICE && (adena < 0 || !player.reduceAdena("Refund", adena, player.getLastFolkNPC(), false)))
+		if (!Config.MerchantZeroSellPrice.MERCHANT_ZERO_SELL_PRICE && (adena < 0 || !player.reduceAdena("Refund", adena, player.getLastFolkNPC(), false)))
 		{
 			player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);

@@ -58,11 +58,11 @@ public class PlayerStatus: PlayableStatus
 		// If OFFLINE_MODE_NO_DAMAGE is enabled and player is offline,
 		// and he is in store/craft mode, no damage is taken.
         GameSession? client = getActiveChar().getClient();
-		if (Config.OFFLINE_MODE_NO_DAMAGE && client != null &&
+		if (Config.OfflineTrade.OFFLINE_MODE_NO_DAMAGE && client != null &&
             client.IsDetached &&
-		    ((Config.OFFLINE_TRADE_ENABLE && (getActiveChar().getPrivateStoreType() == PrivateStoreType.SELL ||
+		    ((Config.OfflineTrade.OFFLINE_TRADE_ENABLE && (getActiveChar().getPrivateStoreType() == PrivateStoreType.SELL ||
 		                                      getActiveChar().getPrivateStoreType() == PrivateStoreType.BUY)) ||
-		     (Config.OFFLINE_CRAFT_ENABLE && (getActiveChar().isCrafting() ||
+		     (Config.OfflineTrade.OFFLINE_CRAFT_ENABLE && (getActiveChar().isCrafting() ||
 		                                      getActiveChar().getPrivateStoreType() ==
                                               PrivateStoreType.MANUFACTURE))))
 		{
@@ -249,7 +249,7 @@ public class PlayerStatus: PlayableStatus
 
 				// Localisation related.
 				string targetName = attacker.getName();
-				if (Config.MULTILANG_ENABLE && attacker.isNpc())
+				if (Config.MultilingualSupport.MULTILANG_ENABLE && attacker.isNpc())
 				{
 					string[]? localisation = NpcNameLocalisationData.getInstance()
 						.getLocalisation(getActiveChar()?.getLang() ?? "en", attacker.getId());

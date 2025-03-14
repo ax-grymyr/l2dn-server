@@ -42,9 +42,9 @@ public readonly struct ExSteadyBoxUiInitPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_STEADY_BOX_UI_INIT);
 
-        writer.WriteInt32(Config.ACHIEVEMENT_BOX_POINTS_FOR_REWARD);
-        writer.WriteInt32(Config.ACHIEVEMENT_BOX_PVP_POINTS_FOR_REWARD);
-        if (Config.ENABLE_ACHIEVEMENT_PVP)
+        writer.WriteInt32(Config.AchievementBox.ACHIEVEMENT_BOX_POINTS_FOR_REWARD);
+        writer.WriteInt32(Config.AchievementBox.ACHIEVEMENT_BOX_PVP_POINTS_FOR_REWARD);
+        if (Config.AchievementBox.ENABLE_ACHIEVEMENT_PVP)
         {
             writer.WriteInt32(2); // EventID Normal Point + Pvp Point Bar
         }

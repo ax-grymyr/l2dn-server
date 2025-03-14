@@ -27,7 +27,7 @@ public struct SetPrivateStoreMsgSellPacket: IIncomingPacket<GameSession>
         if (_storeMsg != null && _storeMsg.Length > MAX_MSG_LENGTH)
         {
             Util.handleIllegalPlayerAction(player, player + " tried to overflow private store sell message",
-                Config.DEFAULT_PUNISH);
+                Config.General.DEFAULT_PUNISH);
 
             return ValueTask.CompletedTask;
         }

@@ -77,7 +77,7 @@ public class QuestLink: IBypassHandler
 		}
 
 		List<Quest> questList = quests.ToList();
-		if (Config.ORDER_QUEST_LIST_BY_QUESTID)
+		if (Config.General.ORDER_QUEST_LIST_BY_QUESTID)
 		{
 			Map<int, Quest> orderedQuests = new(); // Use TreeMap to order quests
 			foreach (Quest q in questList)

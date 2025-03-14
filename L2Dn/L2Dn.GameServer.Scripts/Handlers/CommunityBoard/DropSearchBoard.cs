@@ -180,14 +180,14 @@ public class DropSearchBoard: IParseBoardHandler
 					double rateAmount = 1;
 					if (cbDropHolder.isSpoil)
 					{
-						rateChance = Config.RATE_SPOIL_DROP_CHANCE_MULTIPLIER;
-						rateAmount = Config.RATE_SPOIL_DROP_AMOUNT_MULTIPLIER;
+						rateChance = Config.Rates.RATE_SPOIL_DROP_CHANCE_MULTIPLIER;
+						rateAmount = Config.Rates.RATE_SPOIL_DROP_AMOUNT_MULTIPLIER;
 
 						// also check premium rates if available
-						if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
+						if (Config.PremiumSystem.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 						{
-							rateChance *= Config.PREMIUM_RATE_SPOIL_CHANCE;
-							rateAmount *= Config.PREMIUM_RATE_SPOIL_AMOUNT;
+							rateChance *= Config.PremiumSystem.PREMIUM_RATE_SPOIL_CHANCE;
+							rateAmount *= Config.PremiumSystem.PREMIUM_RATE_SPOIL_AMOUNT;
 						}
 
 						// bonus spoil rate effect
@@ -196,44 +196,44 @@ public class DropSearchBoard: IParseBoardHandler
 					else
 					{
 						ItemTemplate? item = ItemData.getInstance().getTemplate(cbDropHolder.itemId);
-						if (Config.RATE_DROP_CHANCE_BY_ID.TryGetValue(cbDropHolder.itemId, out float value))
+						if (Config.Rates.RATE_DROP_CHANCE_BY_ID.TryGetValue(cbDropHolder.itemId, out float value))
 						{
 							rateChance *= value;
 						}
 						else if (item != null && item.hasExImmediateEffect())
 						{
-							rateChance *= Config.RATE_HERB_DROP_CHANCE_MULTIPLIER;
+							rateChance *= Config.Rates.RATE_HERB_DROP_CHANCE_MULTIPLIER;
 						}
 						else if (cbDropHolder.isRaid)
 						{
-							rateChance *= Config.RATE_RAID_DROP_CHANCE_MULTIPLIER;
+							rateChance *= Config.Rates.RATE_RAID_DROP_CHANCE_MULTIPLIER;
 						}
 						else
 						{
-							rateChance *= Config.RATE_DEATH_DROP_CHANCE_MULTIPLIER;
+							rateChance *= Config.Rates.RATE_DEATH_DROP_CHANCE_MULTIPLIER;
 						}
 
-						if (Config.RATE_DROP_AMOUNT_BY_ID.TryGetValue(cbDropHolder.itemId, out float value1))
+						if (Config.Rates.RATE_DROP_AMOUNT_BY_ID.TryGetValue(cbDropHolder.itemId, out float value1))
 						{
 							rateAmount *= value1;
 						}
 						else if (item != null && item.hasExImmediateEffect())
 						{
-							rateAmount *= Config.RATE_HERB_DROP_AMOUNT_MULTIPLIER;
+							rateAmount *= Config.Rates.RATE_HERB_DROP_AMOUNT_MULTIPLIER;
 						}
 						else if (cbDropHolder.isRaid)
 						{
-							rateAmount *= Config.RATE_RAID_DROP_AMOUNT_MULTIPLIER;
+							rateAmount *= Config.Rates.RATE_RAID_DROP_AMOUNT_MULTIPLIER;
 						}
 						else
 						{
-							rateAmount *= Config.RATE_DEATH_DROP_AMOUNT_MULTIPLIER;
+							rateAmount *= Config.Rates.RATE_DEATH_DROP_AMOUNT_MULTIPLIER;
 						}
 
 						// also check premium rates if available
-						if (Config.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
+						if (Config.PremiumSystem.PREMIUM_SYSTEM_ENABLED && player.hasPremiumStatus())
 						{
-							if (Config.PREMIUM_RATE_DROP_CHANCE_BY_ID.TryGetValue(cbDropHolder.itemId, out double value2))
+							if (Config.PremiumSystem.PREMIUM_RATE_DROP_CHANCE_BY_ID.TryGetValue(cbDropHolder.itemId, out double value2))
 							{
 								rateChance *= value2;
 							}
@@ -247,10 +247,10 @@ public class DropSearchBoard: IParseBoardHandler
 							}
 							else
 							{
-								rateChance *= Config.PREMIUM_RATE_DROP_CHANCE;
+								rateChance *= Config.PremiumSystem.PREMIUM_RATE_DROP_CHANCE;
 							}
 
-							if (Config.PREMIUM_RATE_DROP_AMOUNT_BY_ID.TryGetValue(cbDropHolder.itemId, out double value3))
+							if (Config.PremiumSystem.PREMIUM_RATE_DROP_AMOUNT_BY_ID.TryGetValue(cbDropHolder.itemId, out double value3))
 							{
 								rateAmount *= value3;
 							}
@@ -264,7 +264,7 @@ public class DropSearchBoard: IParseBoardHandler
 							}
 							else
 							{
-								rateAmount *= Config.PREMIUM_RATE_DROP_AMOUNT;
+								rateAmount *= Config.PremiumSystem.PREMIUM_RATE_DROP_AMOUNT;
 							}
 						}
 

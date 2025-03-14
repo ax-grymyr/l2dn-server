@@ -25,7 +25,7 @@ public struct RequestCancelPostAttachmentPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-	    if (!Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
+	    if (!Config.General.ALLOW_MAIL || !Config.General.ALLOW_ATTACHMENTS)
 		    return ValueTask.CompletedTask;
 
 	    Player? player = session.Player;
@@ -42,7 +42,7 @@ public struct RequestCancelPostAttachmentPacket: IIncomingPacket<GameSession>
 
 		if (msg.getSenderId() != player.ObjectId)
 		{
-			Util.handleIllegalPlayerAction(player, player + " tried to cancel not own post!", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, player + " tried to cancel not own post!", Config.General.DEFAULT_PUNISH);
 			return ValueTask.CompletedTask;
 		}
 
@@ -94,19 +94,19 @@ public struct RequestCancelPostAttachmentPacket: IIncomingPacket<GameSession>
 
 			if (item.getOwnerId() != player.ObjectId)
 			{
-				Util.handleIllegalPlayerAction(player, player + " tried to get not own item from cancelled attachment!", Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(player, player + " tried to get not own item from cancelled attachment!", Config.General.DEFAULT_PUNISH);
 				return ValueTask.CompletedTask;
 			}
 
 			if (item.getItemLocation() != ItemLocation.MAIL)
 			{
-				Util.handleIllegalPlayerAction(player, player + " tried to get items not from mail !", Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(player, player + " tried to get items not from mail !", Config.General.DEFAULT_PUNISH);
 				return ValueTask.CompletedTask;
 			}
 
 			if (item.getLocationSlot() != msg.getId())
 			{
-				Util.handleIllegalPlayerAction(player, player + " tried to get items from different attachment!", Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(player, player + " tried to get items from different attachment!", Config.General.DEFAULT_PUNISH);
 				return ValueTask.CompletedTask;
 			}
 

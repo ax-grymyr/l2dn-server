@@ -20,7 +20,7 @@ public class OlympiadGameClassed: OlympiadGameNormal
 
 	protected override int getDivider()
 	{
-		return Config.ALT_OLY_DIVIDER_CLASSED;
+		return Config.Olympiad.ALT_OLY_DIVIDER_CLASSED;
 	}
 
 	public static OlympiadGameClassed? createGame(int id, List<Set<int>> classList)

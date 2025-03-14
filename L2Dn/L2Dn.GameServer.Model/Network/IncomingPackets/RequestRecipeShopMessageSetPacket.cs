@@ -26,7 +26,7 @@ public struct RequestRecipeShopMessageSetPacket: IIncomingPacket<GameSession>
         if (_name != null && _name.Length > MAX_MSG_LENGTH)
         {
             Util.handleIllegalPlayerAction(player, player + " tried to overflow recipe shop message",
-                Config.DEFAULT_PUNISH);
+                Config.General.DEFAULT_PUNISH);
 
             return ValueTask.CompletedTask;
         }

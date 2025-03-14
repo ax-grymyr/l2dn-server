@@ -18,7 +18,7 @@ public class Online: IVoicedCommandHandler
 
 	public bool useVoicedCommand(string command, Player player, string target)
 	{
-		if (command.equals("online") && Config.ENABLE_ONLINE_COMMAND)
+		if (command.equals("online") && Config.OnlineInfo.ENABLE_ONLINE_COMMAND)
 		{
 			int count = World.getInstance().getPlayers().Count;
 			if (count > 1)

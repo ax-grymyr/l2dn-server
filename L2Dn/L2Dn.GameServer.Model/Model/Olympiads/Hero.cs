@@ -56,7 +56,7 @@ public class Hero
 
 	protected Hero()
 	{
-		if (Config.OLYMPIAD_ENABLED)
+		if (Config.Olympiad.OLYMPIAD_ENABLED)
 		{
 			init();
 		}

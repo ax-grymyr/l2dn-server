@@ -97,7 +97,7 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, string>
 				DateTime begin = DateTime.UtcNow;
 				try
 				{
-					if (Config.GMAUDIT)
+					if (Config.General.GMAUDIT)
 					{
 						WorldObject? target = player.getTarget();
 						// TODO: GMAudit

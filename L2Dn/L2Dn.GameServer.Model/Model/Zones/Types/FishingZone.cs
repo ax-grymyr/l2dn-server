@@ -19,7 +19,7 @@ public class FishingZone(int id, ZoneForm form): ZoneType(id, form)
         Player? player = creature.getActingPlayer();
 		if (creature.isPlayer() && player != null)
 		{
-			if ((Config.ALLOW_FISHING || creature.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS)) && !creature.isInsideZone(ZoneId.FISHING))
+			if ((Config.General.ALLOW_FISHING || creature.canOverrideCond(PlayerCondOverride.ZONE_CONDITIONS)) && !creature.isInsideZone(ZoneId.FISHING))
 			{
 				WeakReference<Player> weakPlayer = new WeakReference<Player>(player);
 				ThreadPool.execute(new FishingAvailableTask(weakPlayer));

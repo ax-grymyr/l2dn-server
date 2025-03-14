@@ -24,7 +24,7 @@ public class VipData: DataReaderBase
 
 	public void load()
 	{
-		if (!Config.VIP_SYSTEM_ENABLED)
+		if (!Config.VipSystem.VIP_SYSTEM_ENABLED)
 		{
 			return;
 		}

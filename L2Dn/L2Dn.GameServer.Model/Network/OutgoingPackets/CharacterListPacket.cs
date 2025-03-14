@@ -184,7 +184,7 @@ public readonly struct CharacterListPacket(int playKey1, string accountName, Cha
 			writer.WriteDouble(0); // Current pet HP
 			writer.WriteDouble(0); // Current pet MP
 			writer.WriteInt32(charInfo.VitalityPoints); // Vitality
-			writer.WriteInt32((int)Config.RATE_VITALITY_EXP_MULTIPLIER * 100); // Vitality Percent
+			writer.WriteInt32((int)Config.Rates.RATE_VITALITY_EXP_MULTIPLIER * 100); // Vitality Percent
 			writer.WriteInt32(charInfo.VitalityItemsUsed); // Remaining vitality item uses
 			writer.WriteInt32(charInfo.AccessLevel != -100); // Char is active or not // TODO add database field
 			writer.WriteByte(charInfo.IsNoble);

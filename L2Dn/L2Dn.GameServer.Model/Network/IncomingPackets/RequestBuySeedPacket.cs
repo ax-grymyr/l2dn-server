@@ -108,7 +108,7 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
             {
                 Util.handleIllegalPlayerAction(player,
                     "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-                    " tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.DEFAULT_PUNISH);
+                    " tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.General.DEFAULT_PUNISH);
 
                 player.sendPacket(ActionFailedPacket.STATIC_PACKET);
                 return ValueTask.CompletedTask;
@@ -182,7 +182,7 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
             sm.Params.addLong(totalPrice);
             player.sendPacket(sm);
 
-            if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
+            if (Config.General.ALT_MANOR_SAVE_ALL_ACTIONS)
             {
                 manor.updateCurrentProduction(_manorId, productInfo.Values);
             }

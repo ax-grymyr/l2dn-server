@@ -14,7 +14,7 @@ public struct RequestSentPostListPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        if (!Config.ALLOW_MAIL)
+        if (!Config.General.ALLOW_MAIL)
             return ValueTask.CompletedTask;
 
         Player? player = session.Player;

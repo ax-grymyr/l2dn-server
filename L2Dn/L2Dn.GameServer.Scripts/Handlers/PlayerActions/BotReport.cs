@@ -14,7 +14,7 @@ public class BotReport: IPlayerActionHandler
 {
 	public void useAction(Player player, ActionDataHolder data, bool ctrlPressed, bool shiftPressed)
 	{
-		if (Config.BOTREPORT_ENABLE)
+		if (Config.General.BOTREPORT_ENABLE)
 		{
 			BotReportTable.getInstance().reportBot(player);
 		}

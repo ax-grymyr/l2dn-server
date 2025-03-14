@@ -47,7 +47,7 @@ public class OfflineTraderTable
 						{
 							case PrivateStoreType.BUY:
 							{
-								if (!Config.OFFLINE_TRADE_ENABLE)
+								if (!Config.OfflineTrade.OFFLINE_TRADE_ENABLE)
 								{
 									continue;
 								}
@@ -67,7 +67,7 @@ public class OfflineTraderTable
 							case PrivateStoreType.SELL:
 							case PrivateStoreType.PACKAGE_SELL:
 							{
-								if (!Config.OFFLINE_TRADE_ENABLE)
+								if (!Config.OfflineTrade.OFFLINE_TRADE_ENABLE)
 								{
 									continue;
 								}
@@ -100,7 +100,7 @@ public class OfflineTraderTable
 							}
 							case PrivateStoreType.MANUFACTURE:
 							{
-								if (!Config.OFFLINE_CRAFT_ENABLE)
+								if (!Config.OfflineTrade.OFFLINE_CRAFT_ENABLE)
 								{
 									continue;
 								}
@@ -149,9 +149,9 @@ public class OfflineTraderTable
 			foreach (DbCharacterOfflineTrade trade in trades)
 			{
 				DateTime time = trade.Time;
-				if (Config.OFFLINE_MAX_DAYS > 0)
+				if (Config.OfflineTrade.OFFLINE_MAX_DAYS > 0)
 				{
-					time = time.AddDays(Config.OFFLINE_MAX_DAYS);
+					time = time.AddDays(Config.OfflineTrade.OFFLINE_MAX_DAYS);
 					if (time <= DateTime.UtcNow)
 					{
 						continue; // TODO: filter in query database
@@ -248,19 +248,19 @@ public class OfflineTraderTable
 						}
 					}
 					player.sitDown();
-					if (Config.OFFLINE_SET_NAME_COLOR)
+					if (Config.OfflineTrade.OFFLINE_SET_NAME_COLOR)
 					{
-						player.getAppearance().setNameColor(Config.OFFLINE_NAME_COLOR);
+						player.getAppearance().setNameColor(Config.OfflineTrade.OFFLINE_NAME_COLOR);
 					}
 
 					player.setPrivateStoreType(type);
 					player.setOnlineStatus(true, true);
 					player.restoreEffects();
-					if (!Config.OFFLINE_ABNORMAL_EFFECTS.IsDefaultOrEmpty)
+					if (!Config.OfflineTrade.OFFLINE_ABNORMAL_EFFECTS.IsDefaultOrEmpty)
 					{
 						player.getEffectList()
 							.startAbnormalVisualEffect(
-								Config.OFFLINE_ABNORMAL_EFFECTS.GetRandomElement());
+								Config.OfflineTrade.OFFLINE_ABNORMAL_EFFECTS.GetRandomElement());
 					}
 
 					player.broadcastUserInfo();
@@ -280,7 +280,7 @@ public class OfflineTraderTable
 			World.OFFLINE_TRADE_COUNT = nTraders;
 			LOGGER.Info(GetType().Name + ": Loaded " + nTraders + " offline traders.");
 
-			if (!Config.STORE_OFFLINE_TRADE_IN_REALTIME)
+			if (!Config.OfflineTrade.STORE_OFFLINE_TRADE_IN_REALTIME)
 			{
 				ctx.CharacterOfflineTradeItems.ExecuteDelete();
 				ctx.CharacterOfflineTrades.ExecuteDelete();

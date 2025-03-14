@@ -28,7 +28,7 @@ public sealed class WorldRegion
     // Set containing fences in this world region.
     private readonly Set<Fence> _fences = [];
 
-    private bool _active = Config.GRIDS_ALWAYS_ON;
+    private bool _active = Config.General.GRIDS_ALWAYS_ON;
     private ScheduledFuture? _neighborsTask;
     private int _activeNeighbors;
 
@@ -43,7 +43,7 @@ public sealed class WorldRegion
     public int RegionY => _regionY;
     public ImmutableArray<WorldRegion> SurroundingRegions => _surroundingRegions;
     public bool Active => _active;
-    public bool AreNeighborsActive => Config.GRIDS_ALWAYS_ON || _activeNeighbors > 0;
+    public bool AreNeighborsActive => Config.General.GRIDS_ALWAYS_ON || _activeNeighbors > 0;
     public IReadOnlyCollection<Door> Doors => _doors;
     public IReadOnlyCollection<Fence> Fences => _fences;
     public IReadOnlyCollection<WorldObject> VisibleObjects => _visibleObjects;
@@ -67,7 +67,7 @@ public sealed class WorldRegion
         }
 
         // If this is the first player to enter the region, activate self and neighbors.
-        if (worldObject.isPlayable() && !_active && !Config.GRIDS_ALWAYS_ON)
+        if (worldObject.isPlayable() && !_active && !Config.General.GRIDS_ALWAYS_ON)
             StartActivation();
     }
 
@@ -93,7 +93,7 @@ public sealed class WorldRegion
                 region.RemoveFence(fence);
         }
 
-        if (worldObject.isPlayable() && AreNeighborsEmpty() && !Config.GRIDS_ALWAYS_ON)
+        if (worldObject.isPlayable() && AreNeighborsEmpty() && !Config.General.GRIDS_ALWAYS_ON)
             StartDeactivation();
     }
 
@@ -209,7 +209,7 @@ public sealed class WorldRegion
             {
                 foreach (WorldRegion region in _surroundingRegions)
                     region.SetActive(true);
-            }, 1000 * Config.GRID_NEIGHBOR_TURNON_TIME);
+            }, 1000 * Config.General.GRID_NEIGHBOR_TURNON_TIME);
         }
     }
 
@@ -238,7 +238,7 @@ public sealed class WorldRegion
                     if (worldRegion.AreNeighborsEmpty())
                         worldRegion.SetActive(false);
                 }
-            }, 1000 * Config.GRID_NEIGHBOR_TURNOFF_TIME);
+            }, 1000 * Config.General.GRID_NEIGHBOR_TURNOFF_TIME);
         }
     }
 
@@ -269,7 +269,7 @@ public sealed class WorldRegion
 
                     // Teleport to spawn when too far away.
                     Spawn? spawn = mob.getSpawn();
-                    if (spawn != null && mob.Distance2D(spawn.Location.Location2D) > Config.MAX_DRIFT_RANGE)
+                    if (spawn != null && mob.Distance2D(spawn.Location.Location2D) > Config.Npc.MAX_DRIFT_RANGE)
                     {
                         mob.teleToLocation(spawn.Location);
                     }

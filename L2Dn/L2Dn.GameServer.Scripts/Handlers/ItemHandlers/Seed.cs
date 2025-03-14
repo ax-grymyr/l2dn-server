@@ -21,7 +21,7 @@ public class Seed: IItemHandler
 {
 	public bool useItem(Playable playable, Item item, bool forceUse)
 	{
-		if (!Config.ALLOW_MANOR)
+		if (!Config.General.ALLOW_MANOR)
 		{
 			return false;
 		}

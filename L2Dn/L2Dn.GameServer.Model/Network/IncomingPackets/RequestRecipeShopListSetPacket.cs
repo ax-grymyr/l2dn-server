@@ -81,7 +81,7 @@ public struct RequestRecipeShopListSetPacket: IIncomingPacket<GameSession>
             {
                 Util.handleIllegalPlayerAction(player,
                     "Warning!! " + player + " of account " + player.getAccountName() +
-                    " tried to set recipe which he dont have.", Config.DEFAULT_PUNISH);
+                    " tried to set recipe which he dont have.", Config.General.DEFAULT_PUNISH);
 
                 return ValueTask.CompletedTask;
             }
@@ -91,7 +91,7 @@ public struct RequestRecipeShopListSetPacket: IIncomingPacket<GameSession>
                 Util.handleIllegalPlayerAction(player,
                     "Warning!! " + player + " of account " + player.getAccountName() +
                     " tried to set price more than " + Inventory.MAX_ADENA + " adena in Private Manufacture.",
-                    Config.DEFAULT_PUNISH);
+                    Config.General.DEFAULT_PUNISH);
 
                 return ValueTask.CompletedTask;
             }

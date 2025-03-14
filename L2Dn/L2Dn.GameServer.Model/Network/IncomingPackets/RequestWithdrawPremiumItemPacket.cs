@@ -33,13 +33,13 @@ public struct RequestWithdrawPremiumItemPacket: IIncomingPacket<GameSession>
 
         if (player.ObjectId != _charId)
         {
-            Util.handleIllegalPlayerAction(player, "[RequestWithDrawPremiumItem] Incorrect owner, Player: " + player.getName(), Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(player, "[RequestWithDrawPremiumItem] Incorrect owner, Player: " + player.getName(), Config.General.DEFAULT_PUNISH);
             return ValueTask.CompletedTask;
         }
 
         if (player.getPremiumItemList().Count == 0)
         {
-            Util.handleIllegalPlayerAction(player, "[RequestWithDrawPremiumItem] Player: " + player.getName() + " try to get item with empty list!", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(player, "[RequestWithDrawPremiumItem] Player: " + player.getName() + " try to get item with empty list!", Config.General.DEFAULT_PUNISH);
             return ValueTask.CompletedTask;
         }
 

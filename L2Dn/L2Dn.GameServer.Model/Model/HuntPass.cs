@@ -118,7 +118,7 @@ public class HuntPass
 	public void huntPassDayEnd()
 	{
 		DateTime calendar = DateTime.Now;
-		calendar = new DateTime(calendar.Year, calendar.Month, Config.HUNT_PASS_PERIOD, 6, 30, 0);
+		calendar = new DateTime(calendar.Year, calendar.Month, Config.HuntPass.HUNT_PASS_PERIOD, 6, 30, 0);
 		if (calendar < DateTime.Now)
 		{
 			calendar = calendar.AddMonths(1);
@@ -139,7 +139,7 @@ public class HuntPass
 
 	public void addPassPoint()
 	{
-		if (!Config.ENABLE_HUNT_PASS)
+		if (!Config.HuntPass.ENABLE_HUNT_PASS)
 		{
 			return;
 		}
@@ -153,9 +153,9 @@ public class HuntPass
 
 		// Check current step.
 		bool hasNewLevel = false;
-		while (points >= Config.HUNT_PASS_POINTS_FOR_STEP)
+		while (points >= Config.HuntPass.HUNT_PASS_POINTS_FOR_STEP)
 		{
-			points -= Config.HUNT_PASS_POINTS_FOR_STEP;
+			points -= Config.HuntPass.HUNT_PASS_POINTS_FOR_STEP;
 			setCurrentStep(getCurrentStep() + 1);
 			hasNewLevel = true;
 		}

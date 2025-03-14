@@ -89,7 +89,7 @@ public class DailyTaskManager
 			resetVitalityDaily();
 		}
 
-		if (Config.ENABLE_HUNT_PASS && calendar.Day == Config.HUNT_PASS_PERIOD)
+		if (Config.HuntPass.ENABLE_HUNT_PASS && calendar.Day == Config.HuntPass.HUNT_PASS_PERIOD)
 		{
 			resetHuntPass();
 		}
@@ -125,7 +125,7 @@ public class DailyTaskManager
 
 		RevengeHistoryManager.getInstance().storeMe();
 
-		if (Config.WORLD_EXCHANGE_LAZY_UPDATE)
+		if (Config.WorldExchange.WORLD_EXCHANGE_LAZY_UPDATE)
 		{
 			WorldExchangeManager.getInstance().storeMe();
 		}
@@ -355,7 +355,7 @@ public class DailyTaskManager
 
 	private void resetWorldChatPoints()
 	{
-		if (!Config.ENABLE_WORLD_CHAT)
+		if (!Config.General.ENABLE_WORLD_CHAT)
 		{
 			return;
 		}
@@ -408,7 +408,7 @@ public class DailyTaskManager
 
 	private void resetTrainingCamp()
 	{
-		if (Config.TRAINING_CAMP_ENABLE)
+		if (Config.TrainingCamp.TRAINING_CAMP_ENABLE)
 		{
 			// Update data for offline players.
 			try

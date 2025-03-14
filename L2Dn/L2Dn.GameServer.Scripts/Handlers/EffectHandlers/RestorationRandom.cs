@@ -114,7 +114,7 @@ public sealed class RestorationRandom: AbstractEffect
             if (createdItem.Id <= 0 || createdItem.Count <= 0)
                 continue;
 
-            long itemCount = (long)(createdItem.Count * Config.RATE_EXTRACTABLE);
+            long itemCount = (long)(createdItem.Count * Config.Rates.RATE_EXTRACTABLE);
             Item? newItem = player.addItem("Extract", createdItem.Id, itemCount, effector, false);
             if (newItem == null)
                 continue;

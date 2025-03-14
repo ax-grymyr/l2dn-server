@@ -38,10 +38,10 @@ public class Guard: Attackable
 		}
 
         Player? player = attacker.getActingPlayer();
-		if (Config.FACTION_SYSTEM_ENABLED && Config.FACTION_GUARDS_ENABLED && attacker.isPlayable() && player != null)
+		if (Config.FactionSystem.FACTION_SYSTEM_ENABLED && Config.FactionSystem.FACTION_GUARDS_ENABLED && attacker.isPlayable() && player != null)
 		{
-			if ((player.isGood() && getTemplate().isClan(Config.FACTION_EVIL_TEAM_NAME)) ||
-			    (player.isEvil() && getTemplate().isClan(Config.FACTION_GOOD_TEAM_NAME)))
+			if ((player.isGood() && getTemplate().isClan(Config.FactionSystem.FACTION_EVIL_TEAM_NAME)) ||
+			    (player.isEvil() && getTemplate().isClan(Config.FactionSystem.FACTION_GOOD_TEAM_NAME)))
 			{
 				return true;
 			}
@@ -135,9 +135,9 @@ public class Guard: Attackable
 		}
 
 		bool interact = interactValue;
-		if (Config.FACTION_SYSTEM_ENABLED && Config.FACTION_GUARDS_ENABLED &&
-		    ((player.isGood() && getTemplate().isClan(Config.FACTION_EVIL_TEAM_NAME)) ||
-		     (player.isEvil() && getTemplate().isClan(Config.FACTION_GOOD_TEAM_NAME))))
+		if (Config.FactionSystem.FACTION_SYSTEM_ENABLED && Config.FactionSystem.FACTION_GUARDS_ENABLED &&
+		    ((player.isGood() && getTemplate().isClan(Config.FactionSystem.FACTION_EVIL_TEAM_NAME)) ||
+		     (player.isEvil() && getTemplate().isClan(Config.FactionSystem.FACTION_GOOD_TEAM_NAME))))
 		{
 			interact = false;
 			// TODO: Fix normal targeting

@@ -13,9 +13,9 @@ public class PAttackSpeedFinalizer: StatFunction
 	{
 		throwIfPresent(@base);
 		double baseValue = calcWeaponBaseValue(creature, stat);
-		if (Config.CHAMPION_ENABLE && creature.isChampion())
+		if (Config.ChampionMonsters.CHAMPION_ENABLE && creature.isChampion())
 		{
-			baseValue *= Config.CHAMPION_SPD_ATK;
+			baseValue *= Config.ChampionMonsters.CHAMPION_SPD_ATK;
 		}
 
 		double dexBonus = creature.getDEX() > 0 ? BaseStat.DEX.calcBonus(creature) : 1;

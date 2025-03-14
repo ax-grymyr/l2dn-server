@@ -1086,7 +1086,7 @@ public class Player: Playable
 
 			PlayerAutoSaveTaskManager.getInstance().add(player);
 
-			if (Config.ENABLE_ACHIEVEMENT_BOX)
+			if (Config.AchievementBox.ENABLE_ACHIEVEMENT_BOX)
 			{
 				player.getAchievementBox().restore();
 			}
@@ -1151,7 +1151,7 @@ public class Player: Playable
 		_dailyMissions = new PlayerDailyMissionList(this);
 
 		_huntPass = new HuntPass(this);
-        if (Config.ENABLE_HUNT_PASS)
+        if (Config.HuntPass.ENABLE_HUNT_PASS)
         {
             _huntPass.restoreHuntPass();
             _huntPass.huntPassDayEnd();
@@ -1780,7 +1780,7 @@ public class Player: Playable
 
 		ZoneManager.getInstance().getRegion(Location.Location2D)?.revalidateZones(this);
 
-		if (Config.ALLOW_WATER)
+		if (Config.General.ALLOW_WATER)
 		{
 			checkWaterState();
 		}
@@ -2029,9 +2029,9 @@ public class Player: Playable
 		}
 
 		int reputation = value;
-		if (reputation > Config.MAX_REPUTATION) // Max count of positive reputation
+		if (reputation > Config.Pvp.MAX_REPUTATION) // Max count of positive reputation
 		{
-			reputation = Config.MAX_REPUTATION;
+			reputation = Config.Pvp.MAX_REPUTATION;
 		}
 
 		if (getReputation() == reputation)
@@ -3021,7 +3021,7 @@ public class Player: Playable
 	 */
 	public bool hasRefund()
 	{
-		return _refund != null && _refund.getSize() > 0 && Config.ALLOW_REFUND;
+		return _refund != null && _refund.getSize() > 0 && Config.General.ALLOW_REFUND;
 	}
 
 	/**
@@ -3782,15 +3782,15 @@ public class Player: Playable
 		}
 
 		droppedItem.dropMe(this, new Location3D(getX() + Rnd.get(50) - 25, getY() + Rnd.get(50) - 25, getZ() + 20));
-		if (Config.AUTODESTROY_ITEM_AFTER > 0 && Config.DESTROY_DROPPED_PLAYER_ITEM && !Config.LIST_PROTECTED_ITEMS.Contains(droppedItem.getId()) && ((droppedItem.isEquipable() && Config.DESTROY_EQUIPABLE_PLAYER_ITEM) || !droppedItem.isEquipable()))
+		if (Config.General.AUTODESTROY_ITEM_AFTER > 0 && Config.General.DESTROY_DROPPED_PLAYER_ITEM && !Config.General.LIST_PROTECTED_ITEMS.Contains(droppedItem.getId()) && ((droppedItem.isEquipable() && Config.General.DESTROY_EQUIPABLE_PLAYER_ITEM) || !droppedItem.isEquipable()))
 		{
 			ItemsAutoDestroyTaskManager.getInstance().addItem(droppedItem);
 		}
 
 		// protection against auto destroy dropped item
-		if (Config.DESTROY_DROPPED_PLAYER_ITEM)
+		if (Config.General.DESTROY_DROPPED_PLAYER_ITEM)
 		{
-			droppedItem.setProtected(droppedItem.isEquipable() && (!droppedItem.isEquipable() || !Config.DESTROY_EQUIPABLE_PLAYER_ITEM));
+			droppedItem.setProtected(droppedItem.isEquipable() && (!droppedItem.isEquipable() || !Config.General.DESTROY_EQUIPABLE_PLAYER_ITEM));
 		}
 		else
 		{
@@ -3856,13 +3856,13 @@ public class Player: Playable
 		}
 
 		item.dropMe(this, location);
-		if (Config.AUTODESTROY_ITEM_AFTER > 0 && Config.DESTROY_DROPPED_PLAYER_ITEM && !Config.LIST_PROTECTED_ITEMS.Contains(item.getId()) && ((item.isEquipable() && Config.DESTROY_EQUIPABLE_PLAYER_ITEM) || !item.isEquipable()))
+		if (Config.General.AUTODESTROY_ITEM_AFTER > 0 && Config.General.DESTROY_DROPPED_PLAYER_ITEM && !Config.General.LIST_PROTECTED_ITEMS.Contains(item.getId()) && ((item.isEquipable() && Config.General.DESTROY_EQUIPABLE_PLAYER_ITEM) || !item.isEquipable()))
 		{
 			ItemsAutoDestroyTaskManager.getInstance().addItem(item);
 		}
-		if (Config.DESTROY_DROPPED_PLAYER_ITEM)
+		if (Config.General.DESTROY_DROPPED_PLAYER_ITEM)
 		{
-			item.setProtected(item.isEquipable() && (!item.isEquipable() || !Config.DESTROY_EQUIPABLE_PLAYER_ITEM));
+			item.setProtected(item.isEquipable() && (!item.isEquipable() || !Config.General.DESTROY_EQUIPABLE_PLAYER_ITEM));
 		}
 		else
 		{
@@ -4524,7 +4524,7 @@ public class Player: Playable
 
 			// Remove the Item from the world and send server=>client GetItem packets
 			target.pickupMe(this);
-			if (Config.SAVE_DROPPED_ITEM)
+			if (Config.General.SAVE_DROPPED_ITEM)
 			{
 				ItemsOnGroundManager.getInstance().removeObject(target);
 			}
@@ -4596,7 +4596,7 @@ public class Player: Playable
 	{
 		base.doAutoAttack(target);
 		setRecentFakeDeath(false);
-		if (target.isFakePlayer() && !Config.FAKE_PLAYER_AUTO_ATTACKABLE)
+		if (target.isFakePlayer() && !Config.FakePlayers.FAKE_PLAYER_AUTO_ATTACKABLE)
 		{
 			updatePvPStatus();
 		}
@@ -4610,7 +4610,7 @@ public class Player: Playable
 
 	public bool canOpenPrivateStore()
 	{
-		if (Config.SHOP_MIN_RANGE_FROM_NPC > 0 || Config.SHOP_MIN_RANGE_FROM_PLAYER > 0)
+		if (Config.PrivateStoreRange.SHOP_MIN_RANGE_FROM_NPC > 0 || Config.PrivateStoreRange.SHOP_MIN_RANGE_FROM_PLAYER > 0)
 		{
 			foreach (Creature creature in World.getInstance().getVisibleObjectsInRange<Creature>(this, 1000))
 			{
@@ -4626,7 +4626,7 @@ public class Player: Playable
 
 	public override int getMinShopDistance()
 	{
-		return _waitTypeSitting ? Config.SHOP_MIN_RANGE_FROM_PLAYER : 0;
+		return _waitTypeSitting ? Config.PrivateStoreRange.SHOP_MIN_RANGE_FROM_PLAYER : 0;
 	}
 
 	public void tryOpenPrivateBuyStore()
@@ -4908,30 +4908,30 @@ public class Player: Playable
 					}
 
 					// pvp/pk item rewards
-					if (!(Config.DISABLE_REWARDS_IN_INSTANCES && getInstanceId() != 0) && //
-						!(Config.DISABLE_REWARDS_IN_PVP_ZONES && isInsideZone(ZoneId.PVP)))
+					if (!(Config.PvpRewardItem.DISABLE_REWARDS_IN_INSTANCES && getInstanceId() != 0) && //
+						!(Config.PvpRewardItem.DISABLE_REWARDS_IN_PVP_ZONES && isInsideZone(ZoneId.PVP)))
 					{
 						// pvp
-						if (Config.REWARD_PVP_ITEM && _pvpFlag != PvpFlagStatus.None)
+						if (Config.PvpRewardItem.REWARD_PVP_ITEM && _pvpFlag != PvpFlagStatus.None)
 						{
-							pk.addItem("PvP Item Reward", Config.REWARD_PVP_ITEM_ID, Config.REWARD_PVP_ITEM_AMOUNT, this, Config.REWARD_PVP_ITEM_MESSAGE);
+							pk.addItem("PvP Item Reward", Config.PvpRewardItem.REWARD_PVP_ITEM_ID, Config.PvpRewardItem.REWARD_PVP_ITEM_AMOUNT, this, Config.PvpRewardItem.REWARD_PVP_ITEM_MESSAGE);
 						}
 						// pk
-						if (Config.REWARD_PK_ITEM && _pvpFlag == PvpFlagStatus.None)
+						if (Config.PvpRewardItem.REWARD_PK_ITEM && _pvpFlag == PvpFlagStatus.None)
 						{
-							pk.addItem("PK Item Reward", Config.REWARD_PK_ITEM_ID, Config.REWARD_PK_ITEM_AMOUNT, this, Config.REWARD_PK_ITEM_MESSAGE);
+							pk.addItem("PK Item Reward", Config.PvpRewardItem.REWARD_PK_ITEM_ID, Config.PvpRewardItem.REWARD_PK_ITEM_AMOUNT, this, Config.PvpRewardItem.REWARD_PK_ITEM_MESSAGE);
 						}
 					}
 				}
 
 				// announce pvp/pk
-				if (Config.ANNOUNCE_PK_PVP && ((pk != null && !pk.isGM()) || fpcKill))
+				if (Config.PvpAnnounce.ANNOUNCE_PK_PVP && ((pk != null && !pk.isGM()) || fpcKill))
 				{
 					string msg = "";
 					if (_pvpFlag == PvpFlagStatus.None)
 					{
-						msg = Config.ANNOUNCE_PK_MSG.Replace("$killer", killer.getName()).Replace("$target", getName());
-						if (Config.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
+						msg = Config.PvpAnnounce.ANNOUNCE_PK_MSG.Replace("$killer", killer.getName()).Replace("$target", getName());
+						if (Config.PvpAnnounce.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
 						{
 							SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_3);
 							sm.Params.addString(msg);
@@ -4944,8 +4944,8 @@ public class Player: Playable
 					}
 					else if (_pvpFlag != PvpFlagStatus.None)
 					{
-						msg = Config.ANNOUNCE_PVP_MSG.Replace("$killer", killer.getName()).Replace("$target", getName());
-						if (Config.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
+						msg = Config.PvpAnnounce.ANNOUNCE_PVP_MSG.Replace("$killer", killer.getName()).Replace("$target", getName());
+						if (Config.PvpAnnounce.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
 						{
 							SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_3);
 							sm.Params.addString(msg);
@@ -4958,7 +4958,7 @@ public class Player: Playable
 					}
 				}
 
-				if (fpcKill && Config.FAKE_PLAYER_KILL_KARMA && _pvpFlag != PvpFlagStatus.None && getReputation() >= 0)
+				if (fpcKill && Config.FakePlayers.FAKE_PLAYER_KILL_KARMA && _pvpFlag != PvpFlagStatus.None && getReputation() >= 0)
 				{
 					killer.setReputation(killer.getReputation() - 150);
 				}
@@ -5135,7 +5135,7 @@ public class Player: Playable
 			return droppedItems;
 		}
 
-		if ((!isInsideZone(ZoneId.PVP) || pk == null) && (!isGM() || Config.KARMA_DROP_GM))
+		if ((!isInsideZone(ZoneId.PVP) || pk == null) && (!isGM() || Config.Pvp.KARMA_DROP_GM))
 		{
 			bool isKarmaDrop = false;
 			int dropEquip = 0;
@@ -5145,22 +5145,22 @@ public class Player: Playable
 			int dropPercent = 0;
 
 			// Classic calculation.
-			if (killer.isPlayable() && getReputation() < 0 && _pkKills >= Config.KARMA_PK_LIMIT)
+			if (killer.isPlayable() && getReputation() < 0 && _pkKills >= Config.Pvp.KARMA_PK_LIMIT)
 			{
 				isKarmaDrop = true;
-				dropPercent = Config.KARMA_RATE_DROP;
-				dropEquip = Config.KARMA_RATE_DROP_EQUIP;
-				dropEquipWeapon = Config.KARMA_RATE_DROP_EQUIP_WEAPON;
-				dropItem = Config.KARMA_RATE_DROP_ITEM;
-				dropLimit = Config.KARMA_DROP_LIMIT;
+				dropPercent = Config.Rates.KARMA_RATE_DROP;
+				dropEquip = Config.Rates.KARMA_RATE_DROP_EQUIP;
+				dropEquipWeapon = Config.Rates.KARMA_RATE_DROP_EQUIP_WEAPON;
+				dropItem = Config.Rates.KARMA_RATE_DROP_ITEM;
+				dropLimit = Config.Rates.KARMA_DROP_LIMIT;
 			}
 			else if (killer.isNpc())
 			{
-				dropPercent = Config.PLAYER_RATE_DROP;
-				dropEquip = Config.PLAYER_RATE_DROP_EQUIP;
-				dropEquipWeapon = Config.PLAYER_RATE_DROP_EQUIP_WEAPON;
-				dropItem = Config.PLAYER_RATE_DROP_ITEM;
-				dropLimit = Config.PLAYER_DROP_LIMIT;
+				dropPercent = Config.Rates.PLAYER_RATE_DROP;
+				dropEquip = Config.Rates.PLAYER_RATE_DROP_EQUIP;
+				dropEquipWeapon = Config.Rates.PLAYER_RATE_DROP_EQUIP_WEAPON;
+				dropItem = Config.Rates.PLAYER_RATE_DROP_ITEM;
+				dropLimit = Config.Rates.PLAYER_DROP_LIMIT;
 			}
 
 			if (dropPercent > 0 && Rnd.get(100) < dropPercent)
@@ -5175,8 +5175,8 @@ public class Player: Playable
                         !itemDrop.isDropable() || itemDrop.getId() == Inventory.ADENA_ID || // Adena
                         itemDrop.getTemplate().getType2() == ItemTemplate.TYPE2_QUEST || // Quest Items
                         (_pet != null && _pet.getControlObjectId() == itemDrop.getId()) || // Control Item of active pet
-                        Config.KARMA_NONDROPPABLE_ITEMS.Contains(itemDrop.getId()) || // Item listed in the non droppable item list
-                        Config.KARMA_NONDROPPABLE_PET_ITEMS.Contains(itemDrop.getId())) // Item listed in the non droppable pet item list
+                        Config.Pvp.KARMA_NONDROPPABLE_ITEMS.Contains(itemDrop.getId()) || // Item listed in the non droppable item list
+                        Config.Pvp.KARMA_NONDROPPABLE_PET_ITEMS.Contains(itemDrop.getId())) // Item listed in the non droppable pet item list
 					{
 						continue;
 					}
@@ -5281,7 +5281,7 @@ public class Player: Playable
 				int levelDiff = killedPlayer.getLevel() - getLevel();
 				if (getReputation() >= 0 && levelDiff < 11 && levelDiff > -11) // TODO: Time check, same player can't be killed again in 8 hours
 				{
-					setReputation(getReputation() + Config.REPUTATION_INCREASE);
+					setReputation(getReputation() + Config.Pvp.REPUTATION_INCREASE);
 				}
 			}
 
@@ -5290,7 +5290,7 @@ public class Player: Playable
 				setPvpKills(_pvpKills + 1);
 				setTotalKills(getTotalKills() + 1);
 				updatePvpTitleAndColor(true);
-				if (Config.ENABLE_ACHIEVEMENT_PVP)
+				if (Config.AchievementBox.ENABLE_ACHIEVEMENT_PVP)
 				{
 					getAchievementBox().addPvpPoints(1);
 				}
@@ -5307,7 +5307,7 @@ public class Player: Playable
 		}
 		else // Calculate new karma and increase pk count.
 		{
-			if (Config.FACTION_SYSTEM_ENABLED)
+			if (Config.FactionSystem.FACTION_SYSTEM_ENABLED)
 			{
 				if ((_isGood && killedPlayer.isGood()) || (_isEvil && killedPlayer.isEvil()))
 				{
@@ -5336,32 +5336,32 @@ public class Player: Playable
 
 	public void updatePvpTitleAndColor(bool broadcastInfo)
 	{
-		if (Config.PVP_COLOR_SYSTEM_ENABLED && !Config.FACTION_SYSTEM_ENABLED) // Faction system uses title colors.
+		if (Config.PvpTitleColor.PVP_COLOR_SYSTEM_ENABLED && !Config.FactionSystem.FACTION_SYSTEM_ENABLED) // Faction system uses title colors.
 		{
-			if (_pvpKills >= Config.PVP_AMOUNT1 && _pvpKills < Config.PVP_AMOUNT2)
+			if (_pvpKills >= Config.PvpTitleColor.PVP_AMOUNT1 && _pvpKills < Config.PvpTitleColor.PVP_AMOUNT2)
 			{
-				setTitle("\u00AE " + Config.TITLE_FOR_PVP_AMOUNT1 + " \u00AE");
-				_appearance.setTitleColor(Config.NAME_COLOR_FOR_PVP_AMOUNT1);
+				setTitle("\u00AE " + Config.PvpTitleColor.TITLE_FOR_PVP_AMOUNT1 + " \u00AE");
+				_appearance.setTitleColor(Config.PvpTitleColor.NAME_COLOR_FOR_PVP_AMOUNT1);
 			}
-			else if (_pvpKills >= Config.PVP_AMOUNT2 && _pvpKills < Config.PVP_AMOUNT3)
+			else if (_pvpKills >= Config.PvpTitleColor.PVP_AMOUNT2 && _pvpKills < Config.PvpTitleColor.PVP_AMOUNT3)
 			{
-				setTitle("\u00AE " + Config.TITLE_FOR_PVP_AMOUNT2 + " \u00AE");
-				_appearance.setTitleColor(Config.NAME_COLOR_FOR_PVP_AMOUNT2);
+				setTitle("\u00AE " + Config.PvpTitleColor.TITLE_FOR_PVP_AMOUNT2 + " \u00AE");
+				_appearance.setTitleColor(Config.PvpTitleColor.NAME_COLOR_FOR_PVP_AMOUNT2);
 			}
-			else if (_pvpKills >= Config.PVP_AMOUNT3 && _pvpKills < Config.PVP_AMOUNT4)
+			else if (_pvpKills >= Config.PvpTitleColor.PVP_AMOUNT3 && _pvpKills < Config.PvpTitleColor.PVP_AMOUNT4)
 			{
-				setTitle("\u00AE " + Config.TITLE_FOR_PVP_AMOUNT3 + " \u00AE");
-				_appearance.setTitleColor(Config.NAME_COLOR_FOR_PVP_AMOUNT3);
+				setTitle("\u00AE " + Config.PvpTitleColor.TITLE_FOR_PVP_AMOUNT3 + " \u00AE");
+				_appearance.setTitleColor(Config.PvpTitleColor.NAME_COLOR_FOR_PVP_AMOUNT3);
 			}
-			else if (_pvpKills >= Config.PVP_AMOUNT4 && _pvpKills < Config.PVP_AMOUNT5)
+			else if (_pvpKills >= Config.PvpTitleColor.PVP_AMOUNT4 && _pvpKills < Config.PvpTitleColor.PVP_AMOUNT5)
 			{
-				setTitle("\u00AE " + Config.TITLE_FOR_PVP_AMOUNT4 + " \u00AE");
-				_appearance.setTitleColor(Config.NAME_COLOR_FOR_PVP_AMOUNT4);
+				setTitle("\u00AE " + Config.PvpTitleColor.TITLE_FOR_PVP_AMOUNT4 + " \u00AE");
+				_appearance.setTitleColor(Config.PvpTitleColor.NAME_COLOR_FOR_PVP_AMOUNT4);
 			}
-			else if (_pvpKills >= Config.PVP_AMOUNT5)
+			else if (_pvpKills >= Config.PvpTitleColor.PVP_AMOUNT5)
 			{
-				setTitle("\u00AE " + Config.TITLE_FOR_PVP_AMOUNT5 + " \u00AE");
-				_appearance.setTitleColor(Config.NAME_COLOR_FOR_PVP_AMOUNT5);
+				setTitle("\u00AE " + Config.PvpTitleColor.TITLE_FOR_PVP_AMOUNT5 + " \u00AE");
+				_appearance.setTitleColor(Config.PvpTitleColor.NAME_COLOR_FOR_PVP_AMOUNT5);
 			}
 
 			if (broadcastInfo)
@@ -5378,7 +5378,7 @@ public class Player: Playable
 			return;
 		}
 
-		setPvpFlagLasts(DateTime.UtcNow + Config.PVP_NORMAL_TIME);
+		setPvpFlagLasts(DateTime.UtcNow + Config.Pvp.PVP_NORMAL_TIME);
 		if (_pvpFlag != PvpFlagStatus.None)
 		{
 			startPvPFlag();
@@ -5398,7 +5398,7 @@ public class Player: Playable
 			return;
 		}
 
-		if (Config.FACTION_SYSTEM_ENABLED && target.isPlayer() && ((isGood() && targetPlayer.isEvil()) || (isEvil() && targetPlayer.isGood())))
+		if (Config.FactionSystem.FACTION_SYSTEM_ENABLED && target.isPlayer() && ((isGood() && targetPlayer.isEvil()) || (isEvil() && targetPlayer.isGood())))
 		{
 			return;
 		}
@@ -5412,11 +5412,11 @@ public class Player: Playable
 		{
 			if (checkIfPvP(targetPlayer))
 			{
-				setPvpFlagLasts(DateTime.UtcNow + Config.PVP_PVP_TIME);
+				setPvpFlagLasts(DateTime.UtcNow + Config.Pvp.PVP_PVP_TIME);
 			}
 			else
 			{
-				setPvpFlagLasts(DateTime.UtcNow + Config.PVP_NORMAL_TIME);
+				setPvpFlagLasts(DateTime.UtcNow + Config.Pvp.PVP_NORMAL_TIME);
 			}
 			if (_pvpFlag != PvpFlagStatus.None)
 			{
@@ -5479,7 +5479,7 @@ public class Player: Playable
 
 		if (getReputation() < 0)
 		{
-			percentLost *= Config.RATE_KARMA_EXP_LOST;
+			percentLost *= Config.Rates.RATE_KARMA_EXP_LOST;
 		}
 
 		// Calculate the Experience loss
@@ -5870,7 +5870,7 @@ public class Player: Playable
 	public void setPrivateStoreType(PrivateStoreType privateStoreType)
 	{
 		_privateStoreType = privateStoreType;
-		if (Config.OFFLINE_DISCONNECT_FINISHED && privateStoreType == PrivateStoreType.NONE && (_client == null || _client.IsDetached))
+		if (Config.OfflineTrade.OFFLINE_DISCONNECT_FINISHED && privateStoreType == PrivateStoreType.NONE && (_client == null || _client.IsDetached))
 		{
 			OfflineTraderTable.getInstance().removeTrader(ObjectId);
 			Disconnection.of(this).storeMe().deleteMe();
@@ -6443,16 +6443,16 @@ public class Player: Playable
                 throw new InvalidOperationException("Access level 0 is not defined");
 		}
 
-		if (accessLevel.getLevel() == 0 && Config.DEFAULT_ACCESS_LEVEL > 0)
+		if (accessLevel.getLevel() == 0 && Config.General.DEFAULT_ACCESS_LEVEL > 0)
 		{
-			accessLevel = AdminData.getInstance().getAccessLevel(Config.DEFAULT_ACCESS_LEVEL);
+			accessLevel = AdminData.getInstance().getAccessLevel(Config.General.DEFAULT_ACCESS_LEVEL);
 			if (accessLevel == null)
 			{
-				LOGGER.Warn("Config's default access level (" + Config.DEFAULT_ACCESS_LEVEL + ") is not defined, defaulting to 0!");
+				LOGGER.Warn("Config's default access level (" + Config.General.DEFAULT_ACCESS_LEVEL + ") is not defined, defaulting to 0!");
                 accessLevel = AdminData.getInstance().getAccessLevel(0) ??
                     throw new InvalidOperationException("Access level 0 is not defined");
 
-				Config.DEFAULT_ACCESS_LEVEL = 0;
+				Config.General.DEFAULT_ACCESS_LEVEL = 0;
 			}
 		}
 
@@ -7278,13 +7278,13 @@ public class Player: Playable
 	{
 		sendPacket(LeaveWorldPacket.STATIC_PACKET);
 
-		if (Config.OFFLINE_PLAY_SET_NAME_COLOR)
+		if (Config.OfflinePlay.OFFLINE_PLAY_SET_NAME_COLOR)
 		{
-			getAppearance().setNameColor(Config.OFFLINE_NAME_COLOR);
+			getAppearance().setNameColor(Config.OfflineTrade.OFFLINE_NAME_COLOR);
 		}
-		if (!Config.OFFLINE_PLAY_ABNORMAL_EFFECTS.IsDefaultOrEmpty)
+		if (!Config.OfflinePlay.OFFLINE_PLAY_ABNORMAL_EFFECTS.IsDefaultOrEmpty)
 		{
-			getEffectList().startAbnormalVisualEffect(Config.OFFLINE_PLAY_ABNORMAL_EFFECTS.GetRandomElement());
+			getEffectList().startAbnormalVisualEffect(Config.OfflinePlay.OFFLINE_PLAY_ABNORMAL_EFFECTS.GetRandomElement());
 		}
 		broadcastUserInfo();
 
@@ -7537,10 +7537,10 @@ public class Player: Playable
 					// Add the Skill object to the Creature _skills and its Func objects to the calculator set of the Creature
 					addSkill(skill);
 
-					if (Config.SKILL_CHECK_ENABLE && (!canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS) || Config.SKILL_CHECK_GM) && !SkillTreeData.getInstance().isSkillAllowed(this, skill))
+					if (Config.General.SKILL_CHECK_ENABLE && (!canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS) || Config.General.SKILL_CHECK_GM) && !SkillTreeData.getInstance().isSkillAllowed(this, skill))
 					{
 						Util.handleIllegalPlayerAction(this, "Player " + getName() + " has invalid skill " + skill.getName() + " (" + skill.getId() + "/" + skill.getLevel() + "), class:" + ClassListData.getInstance().getClass(getClassId()).getClassName(), IllegalActionPunishmentType.BROADCAST);
-						if (Config.SKILL_CHECK_REMOVE)
+						if (Config.General.SKILL_CHECK_REMOVE)
 						{
 							removeSkill(skill);
 						}
@@ -8158,7 +8158,7 @@ public class Player: Playable
 		storeMe();
 		storeRecommendations();
 
-		if (Config.UPDATE_ITEMS_ON_CHAR_STORE)
+		if (Config.General.UPDATE_ITEMS_ON_CHAR_STORE)
 		{
 			getInventory().updateDatabase();
 			getWarehouse().updateDatabase();
@@ -8179,7 +8179,7 @@ public class Player: Playable
 			return false;
 		}
 
-		if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(this) && !(isGM() && Config.GM_RESTART_FIGHTING))
+		if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(this) && !(isGM() && Config.General.GM_RESTART_FIGHTING))
 		{
 			return false;
 		}
@@ -8350,7 +8350,7 @@ public class Player: Playable
                 return true;
             }
 
-            if (Config.FACTION_SYSTEM_ENABLED && attackerPlayer != null &&
+            if (Config.FactionSystem.FACTION_SYSTEM_ENABLED && attackerPlayer != null &&
                 ((isGood() && attackerPlayer.isEvil()) || (isEvil() && attackerPlayer.isGood())))
 			{
 				return true;
@@ -8365,7 +8365,7 @@ public class Player: Playable
 
 		if (attacker is Guard)
 		{
-			if (Config.FACTION_SYSTEM_ENABLED && Config.FACTION_GUARDS_ENABLED && ((_isGood && ((Npc) attacker).getTemplate().isClan(Config.FACTION_EVIL_TEAM_NAME)) || (_isEvil && ((Npc) attacker).getTemplate().isClan(Config.FACTION_GOOD_TEAM_NAME))))
+			if (Config.FactionSystem.FACTION_SYSTEM_ENABLED && Config.FactionSystem.FACTION_GUARDS_ENABLED && ((_isGood && ((Npc) attacker).getTemplate().isClan(Config.FactionSystem.FACTION_EVIL_TEAM_NAME)) || (_isEvil && ((Npc) attacker).getTemplate().isClan(Config.FactionSystem.FACTION_GOOD_TEAM_NAME))))
 			{
 				return true;
 			}
@@ -9584,8 +9584,8 @@ public class Player: Playable
 	{
 		base.setTeam(team);
 		broadcastUserInfo();
-		if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None ||
-            Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
+		if (Config.General.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None ||
+            Config.General.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 		{
 			sendPacket(new ExUserInfoAbnormalVisualEffectPacket(this));
 		}
@@ -10227,7 +10227,7 @@ public class Player: Playable
 	{
 		startWarnUserTakeBreak();
 
-		if (isGM() && !Config.GM_STARTUP_BUILDER_HIDE)
+		if (isGM() && !Config.General.GM_STARTUP_BUILDER_HIDE)
 		{
 			// Bleah, see L2J custom below.
 			if (isInvul())
@@ -11938,7 +11938,7 @@ public class Player: Playable
 
 			// Localisation related.
 			string targetName = target.getName();
-			if (Config.MULTILANG_ENABLE && target.isNpc())
+			if (Config.MultilingualSupport.MULTILANG_ENABLE && target.isNpc())
 			{
 				string[]? localisation = NpcNameLocalisationData.getInstance().getLocalisation(_lang ?? "en", target.getId());
 				if (localisation != null)
@@ -12587,12 +12587,12 @@ public class Player: Playable
 			return;
 		}
 
-		if (Config.BOOKMARK_CONSUME_ITEM_ID > 0)
+		if (Config.General.BOOKMARK_CONSUME_ITEM_ID > 0)
         {
-            Item? bookmarkConsumeItem = _inventory.getItemByItemId(Config.BOOKMARK_CONSUME_ITEM_ID);
-			if (_inventory.getInventoryItemCount(Config.BOOKMARK_CONSUME_ITEM_ID, -1) == 0 || bookmarkConsumeItem == null)
+            Item? bookmarkConsumeItem = _inventory.getItemByItemId(Config.General.BOOKMARK_CONSUME_ITEM_ID);
+			if (_inventory.getInventoryItemCount(Config.General.BOOKMARK_CONSUME_ITEM_ID, -1) == 0 || bookmarkConsumeItem == null)
 			{
-				if (Config.BOOKMARK_CONSUME_ITEM_ID == 20033)
+				if (Config.General.BOOKMARK_CONSUME_ITEM_ID == 20033)
 				{
 					sendPacket(SystemMessageId.YOU_CANNOT_BOOKMARK_THIS_LOCATION_BECAUSE_YOU_DO_NOT_HAVE_A_MY_TELEPORT_FLAG);
 				}
@@ -13251,15 +13251,15 @@ public class Player: Playable
 
 	public bool setLang(string? lang)
 	{
-		if (lang != null && Config.MULTILANG_ENABLE)
+		if (lang != null && Config.MultilingualSupport.MULTILANG_ENABLE)
 		{
-			if (Config.MULTILANG_ALLOWED.Contains(lang))
+			if (Config.MultilingualSupport.MULTILANG_ALLOWED.Contains(lang))
 			{
 				_lang = lang;
 				return true;
 			}
 
-			_lang = Config.MULTILANG_DEFAULT;
+			_lang = Config.MultilingualSupport.MULTILANG_DEFAULT;
 			return false;
 		}
 
@@ -13284,7 +13284,7 @@ public class Player: Playable
 
 	public void setPcCafePoints(int count)
 	{
-		_pcCafePoints = count < Config.PC_CAFE_MAX_POINTS ? count : Config.PC_CAFE_MAX_POINTS;
+		_pcCafePoints = count < Config.PremiumSystem.PC_CAFE_MAX_POINTS ? count : Config.PremiumSystem.PC_CAFE_MAX_POINTS;
 	}
 
 	public long getHonorCoins()
@@ -13579,7 +13579,7 @@ public class Player: Playable
 
 	public bool hasPremiumStatus()
 	{
-		return Config.PREMIUM_SYSTEM_ENABLED && _premiumStatus;
+		return Config.PremiumSystem.PREMIUM_SYSTEM_ENABLED && _premiumStatus;
 	}
 
 	public void setLastPetitionGmName(string gmName)
@@ -13960,7 +13960,7 @@ public class Player: Playable
 	 */
 	public int getWorldChatPoints()
 	{
-		return (int) ((Config.WORLD_CHAT_POINTS_PER_DAY + getStat().getAdd(Stat.WORLD_CHAT_POINTS, 0)) * getStat().getMul(Stat.WORLD_CHAT_POINTS, 1));
+		return (int) ((Config.General.WORLD_CHAT_POINTS_PER_DAY + getStat().getAdd(Stat.WORLD_CHAT_POINTS, 0)) * getStat().getMul(Stat.WORLD_CHAT_POINTS, 1));
 	}
 
 	/**
@@ -14903,7 +14903,7 @@ public class Player: Playable
 
 	public void restoreAutoSettings()
 	{
-		if (!Config.ENABLE_AUTO_PLAY)
+		if (!Config.General.ENABLE_AUTO_PLAY)
 			return;
 
 		List<int>? settings = getVariables().Get<List<int>>(PlayerVariables.AUTO_USE_SETTINGS);
@@ -14911,7 +14911,7 @@ public class Player: Playable
 			return;
 
 		int options = settings[0];
-		bool active = Config.RESUME_AUTO_PLAY && settings[1] == 1;
+		bool active = Config.General.RESUME_AUTO_PLAY && settings[1] == 1;
 		bool pickUp = settings[2] == 1;
 		int nextTargetMode = settings[3];
 		bool shortRange = settings[4] == 1;

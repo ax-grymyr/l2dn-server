@@ -73,7 +73,7 @@ public readonly struct SummonInfoPacket: IOutgoingPacket
 		}
 		if (summon.getTeam() != Team.NONE)
 		{
-			if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
+			if (Config.General.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None && Config.General.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 			{
 				_helper.AddComponent(NpcInfoType.ABNORMALS);
 			}
@@ -351,7 +351,7 @@ public readonly struct SummonInfoPacket: IOutgoingPacket
 		}
 		if (_helper.HasComponent(NpcInfoType.ABNORMALS))
 		{
-			Team team = Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None ? _summon.getTeam() : Team.NONE;
+			Team team = Config.General.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None && Config.General.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None ? _summon.getTeam() : Team.NONE;
 			writer.WriteInt16((short)(_abnormalVisualEffects.size() + (_summon.isInvisible() ? 1 : 0) + (team != Team.NONE ? 1 : 0)));
 			foreach (AbnormalVisualEffect abnormalVisualEffect in _abnormalVisualEffects)
 			{
@@ -363,14 +363,14 @@ public readonly struct SummonInfoPacket: IOutgoingPacket
 			}
 			if (team == Team.BLUE)
 			{
-				if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
+				if (Config.General.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 				{
-					writer.WriteInt16((short)Config.BLUE_TEAM_ABNORMAL_EFFECT);
+					writer.WriteInt16((short)Config.General.BLUE_TEAM_ABNORMAL_EFFECT);
 				}
 			}
-			else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
+			else if (team == Team.RED && Config.General.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 			{
-				writer.WriteInt16((short)Config.RED_TEAM_ABNORMAL_EFFECT);
+				writer.WriteInt16((short)Config.General.RED_TEAM_ABNORMAL_EFFECT);
 			}
 		}
 	}

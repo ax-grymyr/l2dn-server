@@ -46,10 +46,10 @@ public struct DialogAnswerPacket: IIncomingPacket<GameSession>
 		    // Custom .offlineplay voiced command dialog.
 		    if (player.removeAction(PlayerAction.OFFLINE_PLAY))
 		    {
-			    if (_answer == 0 || !Config.ENABLE_OFFLINE_PLAY_COMMAND)
+			    if (_answer == 0 || !Config.OfflinePlay.ENABLE_OFFLINE_PLAY_COMMAND)
 				    return ValueTask.CompletedTask;
 
-			    if (Config.OFFLINE_PLAY_PREMIUM && !player.hasPremiumStatus())
+			    if (Config.OfflinePlay.OFFLINE_PLAY_PREMIUM && !player.hasPremiumStatus())
 			    {
 				    player.sendMessage("This command is only available to premium players.");
 				    return ValueTask.CompletedTask;
@@ -96,8 +96,8 @@ public struct DialogAnswerPacket: IIncomingPacket<GameSession>
 	    }
 	    else if (_messageId == SystemMessageId.DO_YOU_WISH_TO_EXIT_THE_GAME)
 	    {
-		    if (_answer == 0 || !Config.ENABLE_OFFLINE_COMMAND ||
-		        (!Config.OFFLINE_TRADE_ENABLE && !Config.OFFLINE_CRAFT_ENABLE))
+		    if (_answer == 0 || !Config.OfflineTrade.ENABLE_OFFLINE_COMMAND ||
+		        (!Config.OfflineTrade.OFFLINE_TRADE_ENABLE && !Config.OfflineTrade.OFFLINE_CRAFT_ENABLE))
 			    return ValueTask.CompletedTask;
 
 		    if (!player.isInStoreMode())

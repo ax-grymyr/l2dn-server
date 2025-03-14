@@ -29,7 +29,7 @@ public class FakePlayerData: DataReaderBase
 
 	public void load()
 	{
-		if (Config.FAKE_PLAYERS_ENABLED)
+		if (Config.FakePlayers.FAKE_PLAYERS_ENABLED)
 		{
 			_fakePlayerInfos.Clear();
 			_fakePlayerNames.Clear();

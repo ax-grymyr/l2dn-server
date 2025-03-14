@@ -11,6 +11,6 @@ public readonly struct ExShowSharingLocationUiPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SHARED_POSITION_SHARING_UI);
 
-        writer.WriteInt64(Config.SHARING_LOCATION_COST);
+        writer.WriteInt64(Config.General.SHARING_LOCATION_COST);
     }
 }

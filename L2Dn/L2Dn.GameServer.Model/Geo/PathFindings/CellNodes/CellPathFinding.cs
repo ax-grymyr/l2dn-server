@@ -30,7 +30,7 @@ public class CellPathFinding: PathFinding
 	{
 		try
 		{
-			string[] array = Config.PATHFIND_BUFFERS.Split(";");
+			string[] array = Config.GeoEngine.PATHFIND_BUFFERS.Split(";");
 			_allBuffers = new BufferInfo[array.Length];
 
 			string buf;
@@ -81,7 +81,7 @@ public class CellPathFinding: PathFinding
 			return null;
 		}
 
-		bool debug = Config.DEBUG_PATH && playable;
+		bool debug = Config.GeoEngine.DEBUG_PATH && playable;
 
 		if (debug)
 		{
@@ -141,7 +141,7 @@ public class CellPathFinding: PathFinding
 			buffer.free();
 		}
 
-		if ((path.Count < 3) || (Config.MAX_POSTFILTER_PASSES <= 0))
+		if ((path.Count < 3) || (Config.GeoEngine.MAX_POSTFILTER_PASSES <= 0))
 		{
 			_findSuccess++;
 			return path;
@@ -192,7 +192,7 @@ public class CellPathFinding: PathFinding
 		}
 
 		// Only one postfilter pass for AI.
-		while (playable && remove && (path.Count > 2) && (pass < Config.MAX_POSTFILTER_PASSES));
+		while (playable && remove && (path.Count > 2) && (pass < Config.GeoEngine.MAX_POSTFILTER_PASSES));
 
 		if (debug)
 		{
@@ -218,7 +218,7 @@ public class CellPathFinding: PathFinding
             NodeLoc tempNodeLoc = tempNode.getLoc() ?? throw new InvalidOperationException();
             NodeLoc tempNodeParentLoc = tempNode.getParent()?.getLoc() ?? throw new InvalidOperationException();
             AbstractNode<NodeLoc>? tempNodeParentParent = tempNode.getParent()?.getParent();
-            if (!Config.ADVANCED_DIAGONAL_STRATEGY && (tempNodeParentParent != null))
+            if (!Config.GeoEngine.ADVANCED_DIAGONAL_STRATEGY && (tempNodeParentParent != null))
 			{
                 NodeLoc tempNodeParentParentLoc = tempNodeParentParent.getLoc() ?? throw new InvalidOperationException();
 				int tmpX = tempNodeLoc.getNodeX() - tempNodeParentParentLoc.getNodeX();

@@ -23,10 +23,10 @@ public class OfflinePlay: IVoicedCommandHandler
 
 	private static readonly Action<OnPlayerLogin> ON_PLAYER_LOGIN = @event =>
 	{
-		if (Config.ENABLE_OFFLINE_PLAY_COMMAND && !string.IsNullOrEmpty(Config.OFFLINE_PLAY_LOGIN_MESSAGE))
+		if (Config.OfflinePlay.ENABLE_OFFLINE_PLAY_COMMAND && !string.IsNullOrEmpty(Config.OfflinePlay.OFFLINE_PLAY_LOGIN_MESSAGE))
         {
             @event.getPlayer().sendPacket(new CreatureSayPacket(null, ChatType.ANNOUNCEMENT, "OfflinePlay",
-                Config.OFFLINE_PLAY_LOGIN_MESSAGE));
+                Config.OfflinePlay.OFFLINE_PLAY_LOGIN_MESSAGE));
         }
 	};
 
@@ -37,9 +37,9 @@ public class OfflinePlay: IVoicedCommandHandler
 
 	public bool useVoicedCommand(string command, Player player, string target)
 	{
-		if (command.equals("offlineplay") && Config.ENABLE_OFFLINE_PLAY_COMMAND)
+		if (command.equals("offlineplay") && Config.OfflinePlay.ENABLE_OFFLINE_PLAY_COMMAND)
 		{
-			if (Config.OFFLINE_PLAY_PREMIUM && !player.hasPremiumStatus())
+			if (Config.OfflinePlay.OFFLINE_PLAY_PREMIUM && !player.hasPremiumStatus())
 			{
 				player.sendPacket(new ExShowScreenMessagePacket("This command is only available to premium players.", 5000));
 				player.sendMessage("This command is only available to premium players.");

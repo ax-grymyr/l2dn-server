@@ -14,7 +14,7 @@ public readonly struct ExVitalityEffectInfoPacket: IOutgoingPacket
     {
         _points = player.getVitalityPoints();
         _vitalityBonus = (int) player.getStat().getVitalityExpBonus() * 100;
-        _vitalityItemsRemaining = Config.VITALITY_MAX_ITEMS_ALLOWED - player.getVitalityItemsUsed();
+        _vitalityItemsRemaining = Config.Rates.VITALITY_MAX_ITEMS_ALLOWED - player.getVitalityItemsUsed();
     }
 
     public void WriteContent(PacketBitWriter writer)
@@ -25,6 +25,6 @@ public readonly struct ExVitalityEffectInfoPacket: IOutgoingPacket
         writer.WriteInt32(_vitalityBonus); // Vitality Bonus
         writer.WriteInt16(0); // Vitality additional bonus in %
         writer.WriteInt16((short)_vitalityItemsRemaining); // How much vitality items remaining for use
-        writer.WriteInt16((short)Config.VITALITY_MAX_ITEMS_ALLOWED); // Max number of items for use
+        writer.WriteInt16((short)Config.Rates.VITALITY_MAX_ITEMS_ALLOWED); // Max number of items for use
     }
 }

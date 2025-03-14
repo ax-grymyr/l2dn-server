@@ -903,7 +903,7 @@ public abstract class Summon: Playable
 		{
 			setTarget(target);
 			getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
-			if (target.isFakePlayer() && !Config.FAKE_PLAYER_AUTO_ATTACKABLE)
+			if (target.isFakePlayer() && !Config.FakePlayers.FAKE_PLAYER_AUTO_ATTACKABLE)
 			{
 				_owner.updatePvPStatus();
 			}

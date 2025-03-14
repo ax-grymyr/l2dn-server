@@ -15,7 +15,7 @@ public struct RequestReceivedPostListPacket: IIncomingPacket<GameSession>
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
         Player? player = session.Player;
-        if (player == null || !Config.ALLOW_MAIL)
+        if (player == null || !Config.General.ALLOW_MAIL)
             return ValueTask.CompletedTask;
 
         // if (!activeChar.isInsideZone(ZoneId.PEACE))

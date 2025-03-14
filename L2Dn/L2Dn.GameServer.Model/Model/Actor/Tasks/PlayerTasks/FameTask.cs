@@ -29,7 +29,7 @@ public class FameTask: Runnable
 		}
 
         GameSession? client = _player.getClient();
-		if ((client == null || client.IsDetached) && !Config.OFFLINE_FAME)
+		if ((client == null || client.IsDetached) && !Config.OfflineTrade.OFFLINE_FAME)
 		{
 			return;
 		}

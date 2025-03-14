@@ -189,7 +189,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		writer.WriteByte((byte)_player.getTeam()); // Confirmed
 		writer.WriteInt32(_player.getClanCrestLargeId() ?? 0);
 		writer.WriteByte(_player.isNoble()); // Confirmed
-		writer.WriteByte((byte)(_player.isHero() || (_player.isGM() && Config.GM_HERO_AURA)
+		writer.WriteByte((byte)(_player.isHero() || (_player.isGM() && Config.General.GM_HERO_AURA)
 			? 2
 			: 0)); // 152 - Value for enabled changed to 2?
 
@@ -220,7 +220,7 @@ public struct CharacterInfoPacket: IOutgoingPacket
 		writer.WriteByte(0); // cBRLectureMark
 
 		Set<AbnormalVisualEffect> abnormalVisualEffects = _player.getEffectList().getCurrentAbnormalVisualEffects();
-		Team team = Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None
+		Team team = Config.General.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None && Config.General.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None
 			? _player.getTeam()
 			: Team.NONE;
 		writer.WriteInt32(abnormalVisualEffects.size() + (_gmSeeInvis ? 1 : 0) +
@@ -237,14 +237,14 @@ public struct CharacterInfoPacket: IOutgoingPacket
 
 		if (team == Team.BLUE)
 		{
-			if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
+			if (Config.General.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 			{
-				writer.WriteInt16((short)Config.BLUE_TEAM_ABNORMAL_EFFECT);
+				writer.WriteInt16((short)Config.General.BLUE_TEAM_ABNORMAL_EFFECT);
 			}
 		}
-		else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
+		else if (team == Team.RED && Config.General.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 		{
-			writer.WriteInt16((short)Config.RED_TEAM_ABNORMAL_EFFECT);
+			writer.WriteInt16((short)Config.General.RED_TEAM_ABNORMAL_EFFECT);
 		}
 
 		writer.WriteByte(_player.isTrueHero() ? (byte)100 : (byte)0);

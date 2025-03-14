@@ -64,7 +64,7 @@ public class PDefenseFinalizer: StatFunction
 
 		if (creature.isRaid())
 		{
-			baseValue *= Config.RAID_PDEFENCE_MULTIPLIER;
+			baseValue *= Config.Npc.RAID_PDEFENCE_MULTIPLIER;
 		}
 
 		if (creature.getLevel() > 0)

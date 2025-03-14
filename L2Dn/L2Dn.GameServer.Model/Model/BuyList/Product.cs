@@ -48,7 +48,7 @@ public class Product
 		long price = _price;
 		if (_item.getItemType() == EtcItemType.CASTLE_GUARD)
 		{
-			price = (long)(price * Config.RATE_SIEGE_GUARDS_PRICE);
+			price = (long)(price * Config.Rates.RATE_SIEGE_GUARDS_PRICE);
 		}
 
 		return price;

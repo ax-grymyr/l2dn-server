@@ -84,9 +84,9 @@ public class SchemeBuffer: Npc
             {
                 player.sendMessage("You don't have a pet.");
             }
-            else if (cost == 0 || (Config.BUFFER_ITEM_ID == 57 && player.reduceAdena("NPC Buffer", cost, this, true)) ||
-                     (Config.BUFFER_ITEM_ID != 57 &&
-                         player.destroyItemByItemId("NPC Buffer", Config.BUFFER_ITEM_ID, cost, player, true)))
+            else if (cost == 0 || (Config.SchemeBuffer.BUFFER_ITEM_ID == 57 && player.reduceAdena("NPC Buffer", cost, this, true)) ||
+                     (Config.SchemeBuffer.BUFFER_ITEM_ID != 57 &&
+                         player.destroyItemByItemId("NPC Buffer", Config.SchemeBuffer.BUFFER_ITEM_ID, cost, player, true)))
             {
                 // TODO: buffer scheme must be the list of Skill, level pairs
                 foreach (int skillId in SchemeBufferTable.getInstance().getScheme(player.ObjectId, schemeName))
@@ -185,7 +185,7 @@ public class SchemeBuffer: Npc
                 Map<string, List<int>>? schemes = SchemeBufferTable.getInstance().getPlayerSchemes(player.ObjectId);
                 if (schemes != null)
                 {
-                    if (schemes.Count == Config.BUFFER_MAX_SCHEMES)
+                    if (schemes.Count == Config.SchemeBuffer.BUFFER_MAX_SCHEMES)
                     {
                         player.sendMessage("Maximum schemes amount is already reached.");
                         return;
@@ -278,7 +278,7 @@ public class SchemeBuffer: Npc
 
         HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 1, player), player);
         htmlContent.Replace("%schemes%", sb.ToString());
-        htmlContent.Replace("%max_schemes%", Config.BUFFER_MAX_SCHEMES.ToString());
+        htmlContent.Replace("%max_schemes%", Config.SchemeBuffer.BUFFER_MAX_SCHEMES.ToString());
         htmlContent.Replace("%objectId%", ObjectId.ToString());
         NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
         player.sendPacket(html);
@@ -454,9 +454,9 @@ public class SchemeBuffer: Npc
      */
     private static int getFee(List<int> list)
     {
-        if (Config.BUFFER_STATIC_BUFF_COST > 0)
+        if (Config.SchemeBuffer.BUFFER_STATIC_BUFF_COST > 0)
         {
-            return list.Count * Config.BUFFER_STATIC_BUFF_COST;
+            return list.Count * Config.SchemeBuffer.BUFFER_STATIC_BUFF_COST;
         }
 
         int fee = 0;

@@ -47,11 +47,11 @@ public class Monster: Attackable
     {
         if (isFakePlayer())
         {
-            return Config.FAKE_PLAYER_AUTO_ATTACKABLE || isInCombat() || attacker.isMonster() || getScriptValue() > 0;
+            return Config.FakePlayers.FAKE_PLAYER_AUTO_ATTACKABLE || isInCombat() || attacker.isMonster() || getScriptValue() > 0;
         }
 
         // Check if the Monster target is aggressive
-        if (Config.GUARD_ATTACK_AGGRO_MOB && getTemplate().isAggressive() && attacker is Guard)
+        if (Config.Npc.GUARD_ATTACK_AGGRO_MOB && getTemplate().isAggressive() && attacker is Guard)
         {
             return true;
         }

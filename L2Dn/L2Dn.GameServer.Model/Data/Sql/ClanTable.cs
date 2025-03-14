@@ -35,7 +35,7 @@ public class ClanTable
 	protected ClanTable()
 	{
 		// forums has to be loaded before clan data, because of last forum id used should have also memo included
-		if (Config.ENABLE_COMMUNITY_BOARD)
+		if (Config.General.ENABLE_COMMUNITY_BOARD)
 		{
 			ForumsBBSManager.getInstance().initRoot();
 		}

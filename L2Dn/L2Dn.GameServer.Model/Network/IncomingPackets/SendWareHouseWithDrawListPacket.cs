@@ -90,7 +90,7 @@ public struct SendWareHouseWithDrawListPacket: IIncomingPacket<GameSession>
 			{
 				Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-					" tried to withdraw non-existent item from warehouse.", Config.DEFAULT_PUNISH);
+					" tried to withdraw non-existent item from warehouse.", Config.General.DEFAULT_PUNISH);
 
 				return ValueTask.CompletedTask;
 			}

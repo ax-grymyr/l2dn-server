@@ -16,14 +16,14 @@ public class Time: IUserCommandHandler
 	{
 		77
 	};
-	
+
 	public bool useUserCommand(int id, Player player)
 	{
 		if (COMMAND_IDS[0] != id)
 		{
 			return false;
 		}
-		
+
 		int t = GameTimeTaskManager.getInstance().getGameTime();
 		string h = ((t / 60) % 24).ToString();
 		string m;
@@ -35,7 +35,7 @@ public class Time: IUserCommandHandler
 		{
 			m = (t % 60).ToString();
 		}
-		
+
 		SystemMessagePacket sm;
 		if (GameTimeTaskManager.getInstance().isNight())
 		{
@@ -49,16 +49,16 @@ public class Time: IUserCommandHandler
 			sm.Params.addString(h);
 			sm.Params.addString(m);
 		}
-		
+
 		player.sendPacket(sm);
-		if (Config.DISPLAY_SERVER_TIME)
+		if (Config.ServerTime.DISPLAY_SERVER_TIME)
 		{
 			player.sendMessage("Server time is " + DateTime.Today.ToShortTimeString());
 		}
-		
+
 		return true;
 	}
-	
+
 	public int[] getUserCommandList()
 	{
 		return COMMAND_IDS;

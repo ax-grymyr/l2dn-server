@@ -92,7 +92,7 @@ public class PrivateStoreHistoryManager
 			foreach (ItemHistoryTransaction transaction in tempList)
 			{
 				int itemId = transaction.getItemId();
-				if (uniqueItemIds.get(itemId) < Config.STORE_REVIEW_LIMIT)
+				if (uniqueItemIds.get(itemId) < Config.General.STORE_REVIEW_LIMIT)
 				{
 					finalList.Add(transaction);
 					uniqueItemIds.put(itemId, uniqueItemIds.get(itemId) + 1);

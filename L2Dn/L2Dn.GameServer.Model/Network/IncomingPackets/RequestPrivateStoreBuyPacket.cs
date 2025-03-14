@@ -95,7 +95,7 @@ public struct RequestPrivateStoreBuyPacket: IIncomingPacket<GameSession>
 		if (storePlayer.getPrivateStoreType() == PrivateStoreType.PACKAGE_SELL && storeList.getItemCount() > _items.size())
 		{
 			string msgErr = "[RequestPrivateStoreBuy] " + player + " tried to buy less items than sold by package-sell, ban this player for bot usage!";
-			Util.handleIllegalPlayerAction(player, msgErr, Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, msgErr, Config.General.DEFAULT_PUNISH);
 			return ValueTask.CompletedTask;
 		}
 
@@ -114,7 +114,7 @@ public struct RequestPrivateStoreBuyPacket: IIncomingPacket<GameSession>
 
 		// Update offline trade record, if realtime saving is enabled
         GameSession? storePlayerClient = storePlayer.getClient();
-		if (Config.OFFLINE_TRADE_ENABLE && Config.STORE_OFFLINE_TRADE_IN_REALTIME &&
+		if (Config.OfflineTrade.OFFLINE_TRADE_ENABLE && Config.OfflineTrade.STORE_OFFLINE_TRADE_IN_REALTIME &&
 		    (storePlayerClient == null || storePlayerClient.IsDetached))
 		{
 			OfflineTraderTable.getInstance().onTransaction(storePlayer, storeList.getItemCount() == 0, false);

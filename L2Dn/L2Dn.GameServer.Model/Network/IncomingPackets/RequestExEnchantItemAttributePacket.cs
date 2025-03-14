@@ -103,7 +103,7 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 			default:
 			{
 				player.removeRequest<EnchantItemAttributeRequest>();
-				Util.handleIllegalPlayerAction(player, player + " tried to use enchant Exploit!", Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(player, player + " tried to use enchant Exploit!", Config.General.DEFAULT_PUNISH);
 				return ValueTask.CompletedTask;
 			}
 		}
@@ -142,7 +142,7 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 				if (attribute.getType() == opositeElement)
 				{
 					player.removeRequest<EnchantItemAttributeRequest>();
-					Util.handleIllegalPlayerAction(player, player + " tried to add oposite attribute to item!", Config.DEFAULT_PUNISH);
+					Util.handleIllegalPlayerAction(player, player + " tried to add oposite attribute to item!", Config.General.DEFAULT_PUNISH);
 					return ValueTask.CompletedTask;
 				}
 			}

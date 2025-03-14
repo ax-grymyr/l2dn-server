@@ -159,7 +159,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 						}
 
 						result.put(i, "SUCCESS");
-						if (Config.LOG_ITEM_ENCHANTS)
+						if (Config.General.LOG_ITEM_ENCHANTS)
 						{
 							StringBuilder sb = new StringBuilder();
 							if (enchantItem.getEnchantLevel() > 0)
@@ -193,7 +193,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 							// Safe enchant: Remain old value.
 							player.sendPacket(SystemMessageId.ENCHANT_FAILED_THE_ENCHANT_SKILL_FOR_THE_CORRESPONDING_ITEM_WILL_BE_EXACTLY_RETAINED);
 							player.sendPacket(new EnchantResultPacket(EnchantResultPacket.SAFE_FAIL, new ItemHolder(enchantItem.getId(), 1), null, 0));
-							if (Config.LOG_ITEM_ENCHANTS)
+							if (Config.General.LOG_ITEM_ENCHANTS)
 							{
 								StringBuilder sb = new StringBuilder();
 								if (enchantItem.getEnchantLevel() > 0)
@@ -235,7 +235,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 
 							result.put(i, "BLESSED_FAIL");
 							enchantItem.updateDatabase();
-							if (Config.LOG_ITEM_ENCHANTS)
+							if (Config.General.LOG_ITEM_ENCHANTS)
 							{
 								StringBuilder sb = new StringBuilder();
 								if (enchantItem.getEnchantLevel() > 0)
@@ -273,10 +273,10 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 							if (player.getInventory().destroyItem("Enchant", enchantItem, player, null) == null)
 							{
 								// Unable to destroy item, cheater?
-								Util.handleIllegalPlayerAction(player, "Unable to delete item on enchant failure from " + player + ", possible cheater !", Config.DEFAULT_PUNISH);
+								Util.handleIllegalPlayerAction(player, "Unable to delete item on enchant failure from " + player + ", possible cheater !", Config.General.DEFAULT_PUNISH);
 								player.removeRequest<EnchantItemRequest>();
 								result.put(i, "ERROR");
-								if (Config.LOG_ITEM_ENCHANTS)
+								if (Config.General.LOG_ITEM_ENCHANTS)
 								{
 									StringBuilder sb = new StringBuilder();
 									if (enchantItem.getEnchantLevel() > 0)
@@ -360,7 +360,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 								player.sendPacket(new EnchantResultPacket(EnchantResultPacket.FAIL, destroyReward, null, 0));
 							}
 
-							if (Config.LOG_ITEM_ENCHANTS)
+							if (Config.General.LOG_ITEM_ENCHANTS)
 							{
 								StringBuilder sb = new StringBuilder();
 								if (enchantItem.getEnchantLevel() > 0)

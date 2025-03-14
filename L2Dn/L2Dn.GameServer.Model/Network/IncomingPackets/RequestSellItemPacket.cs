@@ -105,7 +105,7 @@ public struct RequestSellItemPacket: IIncomingPacket<GameSession>
 		{
 			Util.handleIllegalPlayerAction(player,
 				"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-				" sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
+				" sent a false BuyList list_id " + _listId, Config.General.DEFAULT_PUNISH);
 
 			return ValueTask.CompletedTask;
 		}
@@ -132,12 +132,12 @@ public struct RequestSellItemPacket: IIncomingPacket<GameSession>
 			{
 				Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-					" tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.DEFAULT_PUNISH);
+					" tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.General.DEFAULT_PUNISH);
 
 				return ValueTask.CompletedTask;
 			}
 
-			if (Config.ALLOW_REFUND)
+			if (Config.General.ALLOW_REFUND)
 			{
 				player.getInventory().transferItem("Sell", i.ObjectId, i.getCount(), player.getRefund(), player, merchant);
 			}
@@ -147,7 +147,7 @@ public struct RequestSellItemPacket: IIncomingPacket<GameSession>
 			}
 		}
 
-		if (!Config.MERCHANT_ZERO_SELL_PRICE)
+		if (!Config.MerchantZeroSellPrice.MERCHANT_ZERO_SELL_PRICE)
 		{
 			player.addAdena("Sell", totalPrice, merchant, false);
 		}

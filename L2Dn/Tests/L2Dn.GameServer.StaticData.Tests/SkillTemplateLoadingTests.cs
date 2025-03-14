@@ -52,7 +52,7 @@ public sealed class SkillTemplateLoadingTests
                 t.Document.Elements("list").Elements("skill").ForEach(LoadElement);
             });
 
-            if (Configuration.Config.CUSTOM_SKILLS_LOAD)
+            if (Configuration.Config.General.CUSTOM_SKILLS_LOAD)
             {
                 LoadXmlDocuments(DataFileLocation.Data, "stats/skills/custom").ForEach(t =>
                 {

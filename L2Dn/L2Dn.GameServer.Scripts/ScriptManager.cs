@@ -20,7 +20,7 @@ public static class ScriptManager
             return script;
         });
 
-        if (Config.ALT_DEV_SHOW_SCRIPTS_LOAD_IN_LOGS)
+        if (Config.General.ALT_DEV_SHOW_SCRIPTS_LOAD_IN_LOGS)
         {
             _logger.Info("Loaded script " + script.GetType().FullName + ".");
         }

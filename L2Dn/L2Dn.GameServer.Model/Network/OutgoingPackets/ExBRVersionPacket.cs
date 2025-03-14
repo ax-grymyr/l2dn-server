@@ -7,7 +7,7 @@ public readonly struct ExBRVersionPacket: IOutgoingPacket
 {
     public void WriteContent(PacketBitWriter writer)
     {
-        if (!Config.ENABLE_WORLD_EXCHANGE)
+        if (!Config.WorldExchange.ENABLE_WORLD_EXCHANGE)
         {
             return;
         }

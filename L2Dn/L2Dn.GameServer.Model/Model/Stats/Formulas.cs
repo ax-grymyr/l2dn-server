@@ -96,16 +96,16 @@ public class Formulas
 		if (attacker.isPlayable() && attackerPlayer != null)
 		{
 			balanceMod = target.isPlayable()
-				? CollectionExtensions.GetValueOrDefault(Config.PVP_BLOW_SKILL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1)
-				: CollectionExtensions.GetValueOrDefault(Config.PVE_BLOW_SKILL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
+				? CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVP_BLOW_SKILL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1)
+				: CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVE_BLOW_SKILL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
 		}
 
         Player? targetPlayer = target.getActingPlayer();
 		if (target.isPlayable() && targetPlayer != null)
 		{
 			defence *= attacker.isPlayable()
-				? CollectionExtensions.GetValueOrDefault(Config.PVP_BLOW_SKILL_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1)
-				: CollectionExtensions.GetValueOrDefault(Config.PVE_BLOW_SKILL_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1);
+				? CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVP_BLOW_SKILL_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1)
+				: CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVE_BLOW_SKILL_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1);
 		}
 
 		double skillPower = power + attacker.getStat().getValue(Stat.SKILL_POWER_ADD, 0);
@@ -222,8 +222,8 @@ public class Formulas
 				if (creature.isPlayable() && creaturePlayer != null)
 				{
 					balanceMod = target.isPlayable()
-						? CollectionExtensions.GetValueOrDefault(Config.PVP_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer.getClassId(), 1)
-						: CollectionExtensions.GetValueOrDefault(Config.PVE_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer.getClassId(), 1);
+						? CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVP_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer.getClassId(), 1)
+						: CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVE_MAGICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer.getClassId(), 1);
 				}
 
 				double finalRate = target.getStat().getValue(Stat.DEFENCE_MAGIC_CRITICAL_RATE, rate) +
@@ -265,8 +265,8 @@ public class Formulas
 			if (creature.isPlayable() && creaturePlayer2 != null)
 			{
 				balanceMod = target.isPlayable()
-					? CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer2.getClassId(), 1)
-					: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer2.getClassId(), 1);
+					? CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVP_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer2.getClassId(), 1)
+					: CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVE_PHYSICAL_SKILL_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer2.getClassId(), 1);
 			}
 
 			return Math.Clamp(rate * statBonus * rateBonus * rateDefenceBonus * balanceMod, 5, 90) > Rnd.get(100);
@@ -294,8 +294,8 @@ public class Formulas
 		if (creature.isPlayable() && creaturePlayer3 != null)
 		{
 			balanceMod = target.isPlayable()
-				? CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer3.getClassId(), 1)
-				: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer3.getClassId(), 1);
+				? CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVP_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer3.getClassId(), 1)
+				: CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVE_PHYSICAL_ATTACK_CRITICAL_CHANCE_MULTIPLIERS, creaturePlayer3.getClassId(), 1);
 		}
 
 		return rate * balanceMod > Rnd.get(100);
@@ -355,8 +355,8 @@ public class Formulas
 				if (attacker.isPlayable() && attackerPlayer != null)
 				{
 					balanceMod = target.isPlayable()
-						? CollectionExtensions.GetValueOrDefault(Config.PVP_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1)
-						: CollectionExtensions.GetValueOrDefault(Config.PVE_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
+						? CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVP_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1)
+						: CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVE_MAGICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
 				}
 			}
 			else
@@ -367,8 +367,8 @@ public class Formulas
 				if (attacker.isPlayable() && attackerPlayer != null)
 				{
 					balanceMod = target.isPlayable()
-						? CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1)
-						: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
+						? CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVP_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1)
+						: CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVE_PHYSICAL_SKILL_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
 				}
 			}
 		}
@@ -381,8 +381,8 @@ public class Formulas
             if (attacker.isPlayable() && attackerPlayer != null)
 			{
 				balanceMod = target.isPlayable()
-					? CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1)
-					: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
+					? CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVP_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1)
+					: CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVE_PHYSICAL_ATTACK_CRITICAL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
 			}
 		}
 
@@ -798,17 +798,17 @@ public class Formulas
 
             Player? attackerPlayer = attacker.getActingPlayer();
 			if (attackerPlayer != null && !target.isRaid() && !target.isRaidMinion() &&
-			    target.getLevel() >= Config.MIN_NPC_LEVEL_MAGIC_PENALTY &&
+			    target.getLevel() >= Config.Npc.MIN_NPC_LEVEL_MAGIC_PENALTY &&
 			    target.getLevel() - attackerPlayer.getLevel() >= 3)
 			{
 				int levelDiff = target.getLevel() - attackerPlayer.getLevel() - 2;
-				if (levelDiff >= Config.NPC_SKILL_CHANCE_PENALTY.Length)
+				if (levelDiff >= Config.Npc.NPC_SKILL_CHANCE_PENALTY.Length)
 				{
-					targetModifier = Config.NPC_SKILL_CHANCE_PENALTY[Config.NPC_SKILL_CHANCE_PENALTY.Length - 1];
+					targetModifier = Config.Npc.NPC_SKILL_CHANCE_PENALTY[Config.Npc.NPC_SKILL_CHANCE_PENALTY.Length - 1];
 				}
 				else
 				{
-					targetModifier = Config.NPC_SKILL_CHANCE_PENALTY[levelDiff];
+					targetModifier = Config.Npc.NPC_SKILL_CHANCE_PENALTY[levelDiff];
 				}
 			}
 		}
@@ -967,7 +967,7 @@ public class Formulas
 		double chance = baseStats[val].calcBonus(actor) * actor.getStat().getMul(Stat.SKILL_MASTERY_RATE, 1);
 
 		return Rnd.nextDouble() * 100.0 < chance *
-			CollectionExtensions.GetValueOrDefault(Config.SKILL_MASTERY_CHANCE_MULTIPLIERS, actorPlayer.getClassId(), 1);
+			CollectionExtensions.GetValueOrDefault(Config.ClassBalance.SKILL_MASTERY_CHANCE_MULTIPLIERS, actorPlayer.getClassId(), 1);
 	}
 
 	/**
@@ -1069,7 +1069,7 @@ public class Formulas
 	 */
 	public static double calcFallDam(Creature creature, int fallHeight)
 	{
-		if (!Config.ENABLE_FALLING_DAMAGE || fallHeight < 0)
+		if (!Config.General.ENABLE_FALLING_DAMAGE || fallHeight < 0)
 		{
 			return 0;
 		}
@@ -1260,7 +1260,7 @@ public class Formulas
 		double karmaLooseMul = KarmaData.getInstance().getMultiplier(player.getLevel());
 		if (finalExp > 0) // Received exp
 		{
-			return (int) (Math.Abs(finalExp / Config.RATE_KARMA_LOST) / karmaLooseMul / 30);
+			return (int) (Math.Abs(finalExp / Config.Rates.RATE_KARMA_LOST) / karmaLooseMul / 30);
 		}
 		return (int) (Math.Abs(finalExp) / karmaLooseMul / 30);
 	}
@@ -1609,27 +1609,27 @@ public class Formulas
 				{
 					// Magical Skill PvP
 					pvpAttack = attacker.getStat().getMul(Stat.PVP_MAGICAL_SKILL_DAMAGE, 1) *
-					            CollectionExtensions.GetValueOrDefault(Config.PVP_MAGICAL_SKILL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
+					            CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVP_MAGICAL_SKILL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
 					pvpDefense = target.getStat().getMul(Stat.PVP_MAGICAL_SKILL_DEFENCE, 1) *
-					             CollectionExtensions.GetValueOrDefault(Config.PVP_MAGICAL_SKILL_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1);
+					             CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVP_MAGICAL_SKILL_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1);
 				}
 				else
 				{
 					// Physical Skill PvP
 					pvpAttack = attacker.getStat().getMul(Stat.PVP_PHYSICAL_SKILL_DAMAGE, 1) *
-					            CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
+					            CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVP_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1);
 					pvpDefense = target.getStat().getMul(Stat.PVP_PHYSICAL_SKILL_DEFENCE, 1) *
-					             CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1);
+					             CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVP_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1);
 				}
 			}
 			else
 			{
 				// Autoattack PvP
 				pvpAttack = attacker.getStat().getMul(Stat.PVP_PHYSICAL_ATTACK_DAMAGE, 1) *
-				            CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(),
+				            CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVP_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(),
 					            1);
 				pvpDefense = target.getStat().getMul(Stat.PVP_PHYSICAL_ATTACK_DEFENCE, 1) *
-				             CollectionExtensions.GetValueOrDefault(Config.PVP_PHYSICAL_ATTACK_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(),
+				             CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVP_PHYSICAL_ATTACK_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(),
 					             1);
 			}
 
@@ -1645,16 +1645,16 @@ public class Formulas
 			double pveRaidDefense;
 
 			double pvePenalty = 1;
-			if (!target.isRaid() && !target.isRaidMinion() && target.getLevel() >= Config.MIN_NPC_LEVEL_DMG_PENALTY && attackerPlayer != null && target.getLevel() - attackerPlayer.getLevel() >= 2)
+			if (!target.isRaid() && !target.isRaidMinion() && target.getLevel() >= Config.Npc.MIN_NPC_LEVEL_DMG_PENALTY && attackerPlayer != null && target.getLevel() - attackerPlayer.getLevel() >= 2)
 			{
 				int levelDiff = target.getLevel() - attackerPlayer.getLevel() - 1;
-				if (levelDiff >= Config.NPC_SKILL_DMG_PENALTY.Length)
+				if (levelDiff >= Config.Npc.NPC_SKILL_DMG_PENALTY.Length)
 				{
-					pvePenalty = Config.NPC_SKILL_DMG_PENALTY[Config.NPC_SKILL_DMG_PENALTY.Length - 1];
+					pvePenalty = Config.Npc.NPC_SKILL_DMG_PENALTY[Config.Npc.NPC_SKILL_DMG_PENALTY.Length - 1];
 				}
 				else
 				{
-					pvePenalty = Config.NPC_SKILL_DMG_PENALTY[levelDiff];
+					pvePenalty = Config.Npc.NPC_SKILL_DMG_PENALTY[levelDiff];
 				}
 			}
 
@@ -1665,10 +1665,10 @@ public class Formulas
 					// Magical Skill PvE
 					pveAttack = attacker.getStat().getMul(Stat.PVE_MAGICAL_SKILL_DAMAGE, 1) * (attackerPlayer == null
 						? 1
-						: CollectionExtensions.GetValueOrDefault(Config.PVE_MAGICAL_SKILL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1));
+						: CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVE_MAGICAL_SKILL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1));
 					pveDefense = target.getStat().getMul(Stat.PVE_MAGICAL_SKILL_DEFENCE, 1) * (targetPlayer == null
 						? 1
-						: CollectionExtensions.GetValueOrDefault(Config.PVE_MAGICAL_SKILL_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1));
+						: CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVE_MAGICAL_SKILL_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1));
 					pveRaidAttack = attacker.isRaid()
 						? attacker.getStat().getMul(Stat.PVE_RAID_MAGICAL_SKILL_DAMAGE, 1)
 						: 1;
@@ -1681,10 +1681,10 @@ public class Formulas
 					// Physical Skill PvE
 					pveAttack = attacker.getStat().getMul(Stat.PVE_PHYSICAL_SKILL_DAMAGE, 1) * (attackerPlayer == null
 						? 1
-						: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1));
+						: CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVE_PHYSICAL_SKILL_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1));
 					pveDefense = target.getStat().getMul(Stat.PVE_PHYSICAL_SKILL_DEFENCE, 1) * (targetPlayer == null
 						? 1
-						: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1));
+						: CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVE_PHYSICAL_SKILL_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1));
 					pveRaidAttack = attacker.isRaid()
 						? attacker.getStat().getMul(Stat.PVE_RAID_PHYSICAL_SKILL_DAMAGE, 1)
 						: 1;
@@ -1698,10 +1698,10 @@ public class Formulas
 				// Autoattack PvE
 				pveAttack = attacker.getStat().getMul(Stat.PVE_PHYSICAL_ATTACK_DAMAGE, 1) * (attackerPlayer == null
 					? 1
-					: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1));
+					: CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVE_PHYSICAL_ATTACK_DAMAGE_MULTIPLIERS, attackerPlayer.getClassId(), 1));
 				pveDefense = target.getStat().getMul(Stat.PVE_PHYSICAL_ATTACK_DEFENCE, 1) * (targetPlayer == null
 					? 1
-					: CollectionExtensions.GetValueOrDefault(Config.PVE_PHYSICAL_ATTACK_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1));
+					: CollectionExtensions.GetValueOrDefault(Config.ClassBalance.PVE_PHYSICAL_ATTACK_DEFENCE_MULTIPLIERS, targetPlayer.getClassId(), 1));
 				pveRaidAttack = attacker.isRaid()
 					? attacker.getStat().getMul(Stat.PVE_RAID_PHYSICAL_ATTACK_DAMAGE, 1)
 					: 1;

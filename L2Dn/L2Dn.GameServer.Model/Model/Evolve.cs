@@ -36,7 +36,7 @@ public class Evolve
 		Pet currentPet = (Pet) pet;
 		if (currentPet.isAlikeDead())
 		{
-			Util.handleIllegalPlayerAction(player, player + " tried to use death pet exploit!", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, player + " tried to use death pet exploit!", Config.General.DEFAULT_PUNISH);
 			return false;
 		}
 

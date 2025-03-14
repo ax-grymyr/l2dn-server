@@ -87,7 +87,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 
 		// Restore to instanced area if enabled.
 		PlayerVariables vars = player.getVariables();
-		if (Config.RESTORE_PLAYER_INSTANCE)
+		if (Config.General.RESTORE_PLAYER_INSTANCE)
 		{
 			Instance? instance = InstanceManager.getInstance().getPlayerInstance(player, false);
 			if (instance != null && instance.getId() == vars.Get(PlayerVariables.INSTANCE_RESTORE, 0))
@@ -106,7 +106,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		// Apply special GM properties to the GM when entering
 		else
 		{
-			if (Config.GM_STARTUP_BUILDER_HIDE &&
+			if (Config.General.GM_STARTUP_BUILDER_HIDE &&
 			    AdminData.getInstance().hasAccess("admin_hide", player.getAccessLevel()))
 			{
 				BuilderUtil.setHiding(player, true);
@@ -119,26 +119,26 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			}
 			else
 			{
-				if (Config.GM_STARTUP_INVULNERABLE &&
+				if (Config.General.GM_STARTUP_INVULNERABLE &&
 				    AdminData.getInstance().hasAccess("admin_invul", player.getAccessLevel()))
 				{
 					player.setInvul(true);
 				}
 
-				if (Config.GM_STARTUP_INVISIBLE &&
+				if (Config.General.GM_STARTUP_INVISIBLE &&
 				    AdminData.getInstance().hasAccess("admin_invisible", player.getAccessLevel()))
 				{
 					player.setInvisible(true);
 					player.getEffectList().startAbnormalVisualEffect(AbnormalVisualEffect.STEALTH);
 				}
 
-				if (Config.GM_STARTUP_SILENCE &&
+				if (Config.General.GM_STARTUP_SILENCE &&
 				    AdminData.getInstance().hasAccess("admin_silence", player.getAccessLevel()))
 				{
 					player.setSilenceMode(true);
 				}
 
-				if (Config.GM_STARTUP_DIET_MODE &&
+				if (Config.General.GM_STARTUP_DIET_MODE &&
 				    AdminData.getInstance().hasAccess("admin_diet", player.getAccessLevel()))
 				{
 					player.setDietMode(true);
@@ -146,7 +146,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				}
 			}
 
-			if (Config.GM_STARTUP_AUTO_LIST &&
+			if (Config.General.GM_STARTUP_AUTO_LIST &&
 			    AdminData.getInstance().hasAccess("admin_gmliston", player.getAccessLevel()))
 			{
 				AdminData.getInstance().addGm(player, false);
@@ -156,12 +156,12 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 				AdminData.getInstance().addGm(player, true);
 			}
 
-			if (Config.GM_GIVE_SPECIAL_SKILLS)
+			if (Config.General.GM_GIVE_SPECIAL_SKILLS)
 			{
 				SkillTreeData.getInstance().addSkills(player, false);
 			}
 
-			if (Config.GM_GIVE_SPECIAL_AURA_SKILLS)
+			if (Config.General.GM_GIVE_SPECIAL_AURA_SKILLS)
 			{
 				SkillTreeData.getInstance().addSkills(player, true);
 			}
@@ -336,21 +336,21 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		}
 
 		// Faction System
-		if (Config.FACTION_SYSTEM_ENABLED)
+		if (Config.FactionSystem.FACTION_SYSTEM_ENABLED)
 		{
 			if (player.isGood())
 			{
-				player.getAppearance().setNameColor(Config.FACTION_GOOD_NAME_COLOR);
-				player.getAppearance().setTitleColor(Config.FACTION_GOOD_NAME_COLOR);
-				player.sendMessage("Welcome " + player.getName() + ", you are fighting for the " + Config.FACTION_GOOD_TEAM_NAME + " faction.");
-				connection.Send(new ExShowScreenMessagePacket("Welcome " + player.getName() + ", you are fighting for the " + Config.FACTION_GOOD_TEAM_NAME + " faction.", 10000));
+				player.getAppearance().setNameColor(Config.FactionSystem.FACTION_GOOD_NAME_COLOR);
+				player.getAppearance().setTitleColor(Config.FactionSystem.FACTION_GOOD_NAME_COLOR);
+				player.sendMessage("Welcome " + player.getName() + ", you are fighting for the " + Config.FactionSystem.FACTION_GOOD_TEAM_NAME + " faction.");
+				connection.Send(new ExShowScreenMessagePacket("Welcome " + player.getName() + ", you are fighting for the " + Config.FactionSystem.FACTION_GOOD_TEAM_NAME + " faction.", 10000));
 			}
 			else if (player.isEvil())
 			{
-				player.getAppearance().setNameColor(Config.FACTION_EVIL_NAME_COLOR);
-				player.getAppearance().setTitleColor(Config.FACTION_EVIL_NAME_COLOR);
-				player.sendMessage("Welcome " + player.getName() + ", you are fighting for the " + Config.FACTION_EVIL_TEAM_NAME + " faction.");
-				connection.Send(new ExShowScreenMessagePacket("Welcome " + player.getName() + ", you are fighting for the " + Config.FACTION_EVIL_TEAM_NAME + " faction.", 10000));
+				player.getAppearance().setNameColor(Config.FactionSystem.FACTION_EVIL_NAME_COLOR);
+				player.getAppearance().setTitleColor(Config.FactionSystem.FACTION_EVIL_NAME_COLOR);
+				player.sendMessage("Welcome " + player.getName() + ", you are fighting for the " + Config.FactionSystem.FACTION_EVIL_TEAM_NAME + " faction.");
+				connection.Send(new ExShowScreenMessagePacket("Welcome " + player.getName() + ", you are fighting for the " + Config.FactionSystem.FACTION_EVIL_TEAM_NAME + " faction.", 10000));
 			}
 		}
 
@@ -388,7 +388,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			CursedWeaponsManager.getInstance().getCursedWeapon(player.getCursedWeaponEquippedId())?.cursedOnLogin();
 		}
 
-		if (Config.PC_CAFE_ENABLED)
+		if (Config.PremiumSystem.PC_CAFE_ENABLED)
 		{
 			if (player.getPcCafePoints() > 0)
 			{
@@ -437,7 +437,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			htmlContent.Replace("%notice_text%", clan.getNotice().replaceAll("(\r\n|\n)", "<br>"));
 			connection.Send(new NpcHtmlMessagePacket(null, 0, htmlContent));
 		}
-		else if (Config.SERVER_NEWS)
+		else if (Config.General.SERVER_NEWS)
 		{
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/servnews.htm", player);
 			connection.Send(new NpcHtmlMessagePacket(null, 0, htmlContent));
@@ -552,7 +552,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			player.destroyItem("Akamanah", item8689, null, true);
 		}
 
-		if (Config.ALLOW_MAIL)
+		if (Config.General.ALLOW_MAIL)
 		{
 			if (MailManager.getInstance().hasUnreadPost(player))
 			{
@@ -560,17 +560,18 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			}
 		}
 
-		if (Config.WELCOME_MESSAGE_ENABLED)
-		{
-			connection.Send(new ExShowScreenMessagePacket(Config.WELCOME_MESSAGE_TEXT, Config.WELCOME_MESSAGE_TIME));
-		}
+		if (Config.ScreenWelcomeMessage.WELCOME_MESSAGE_ENABLED)
+        {
+            connection.Send(new ExShowScreenMessagePacket(Config.ScreenWelcomeMessage.WELCOME_MESSAGE_TEXT,
+                Config.ScreenWelcomeMessage.WELCOME_MESSAGE_TIME));
+        }
 
 		if (player.getPremiumItemList().Count != 0)
 		{
 			connection.Send(ExNotifyPremiumItemPacket.STATIC_PACKET);
 		}
 
-		if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.STORE_OFFLINE_TRADE_IN_REALTIME)
+		if ((Config.OfflineTrade.OFFLINE_TRADE_ENABLE || Config.OfflineTrade.OFFLINE_CRAFT_ENABLE) && Config.OfflineTrade.STORE_OFFLINE_TRADE_IN_REALTIME)
 		{
 			OfflineTraderTable.getInstance().onTransaction(player, true, false);
 		}
@@ -589,7 +590,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			connection.Send(new ExBeautyItemListPacket(player));
 		}
 
-		if (Config.ENABLE_WORLD_CHAT)
+		if (Config.General.ENABLE_WORLD_CHAT)
 		{
 			connection.Send(new ExWorldCharCntPacket(player));
 		}
@@ -648,17 +649,17 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			connection.Send(new ExMagicLampInfoPacket(player));
 		}
 
-		if (Config.ENABLE_RANDOM_CRAFT)
+		if (Config.RandomCraft.ENABLE_RANDOM_CRAFT)
 		{
 			connection.Send(new ExCraftInfoPacket(player));
 		}
 
-		if (Config.ENABLE_HUNT_PASS)
+		if (Config.HuntPass.ENABLE_HUNT_PASS)
 		{
 			connection.Send(new HuntPassSimpleInfoPacket(player));
 		}
 
-		if (Config.ENABLE_ACHIEVEMENT_BOX)
+		if (Config.AchievementBox.ENABLE_ACHIEVEMENT_BOX)
 		{
 			connection.Send(new ExSteadyBoxUiInitPacket(player));
 		}
@@ -827,7 +828,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		// EnterWorld has finished.
 		player.setEnteredWorld();
 
-		if ((player.hasPremiumStatus() || !Config.PC_CAFE_ONLY_PREMIUM) && Config.PC_CAFE_RETAIL_LIKE)
+		if ((player.hasPremiumStatus() || !Config.PremiumSystem.PC_CAFE_ONLY_PREMIUM) && Config.PremiumSystem.PC_CAFE_RETAIL_LIKE)
 		{
 			PcCafePointsManager.getInstance().run(player);
 		}

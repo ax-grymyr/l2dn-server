@@ -35,7 +35,7 @@ public class FakePlayerChatManager: DataReaderBase
 
 	public void load()
 	{
-		if (Config.FAKE_PLAYERS_ENABLED && Config.FAKE_PLAYER_CHAT)
+		if (Config.FakePlayers.FAKE_PLAYERS_ENABLED && Config.FakePlayers.FAKE_PLAYER_CHAT)
 		{
 			MESSAGES.Clear();
 

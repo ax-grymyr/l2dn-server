@@ -129,7 +129,7 @@ public class Npc: Creature
 		// initialize the "current" equipment
 		_currentLHandId = getTemplate().getLHandId();
 		_currentRHandId = getTemplate().getRHandId();
-		_currentEnchant = Config.ENABLE_RANDOM_ENCHANT_EFFECT ? Rnd.get(4, 21) : getTemplate().getWeaponEnchant();
+		_currentEnchant = Config.Npc.ENABLE_RANDOM_ENCHANT_EFFECT ? Rnd.get(4, 21) : getTemplate().getWeaponEnchant();
 
 		// initialize the "current" collisions
 		_currentCollisionHeight = getTemplate().getFCollisionHeight();
@@ -158,7 +158,7 @@ public class Npc: Creature
 	 */
 	public virtual bool hasRandomAnimation()
 	{
-		return Config.MAX_NPC_ANIMATION > 0 && _isRandomAnimationEnabled && getAiType() != AIType.CORPSE;
+		return Config.General.MAX_NPC_ANIMATION > 0 && _isRandomAnimationEnabled && getAiType() != AIType.CORPSE;
 	}
 
 	/**
@@ -215,7 +215,7 @@ public class Npc: Creature
 
 	public override bool canBeAttacked()
 	{
-		return Config.ALT_ATTACKABLE_NPCS;
+		return Config.Npc.ALT_ATTACKABLE_NPCS;
 	}
 
 	/**
@@ -610,7 +610,7 @@ public class Npc: Creature
 		}
 
 		string temp = "html/default/" + pom + ".htm";
-		if (Config.HTM_CACHE)
+		if (Config.General.HTM_CACHE)
 		{
 			// If not running lazy cache the file must be in the cache or it does not exist
 			if (HtmCache.getInstance().contains(temp))
@@ -786,7 +786,7 @@ public class Npc: Creature
 	public double getExpReward()
 	{
 		Instance? instance = getInstanceWorld();
-		float rateMul = instance != null ? instance.getExpRate() : Config.RATE_XP;
+		float rateMul = instance != null ? instance.getExpRate() : Config.Rates.RATE_XP;
 		return getTemplate().getExp() * rateMul;
 	}
 
@@ -796,7 +796,7 @@ public class Npc: Creature
 	public double getSpReward()
 	{
 		Instance? instance = getInstanceWorld();
-		float rateMul = instance != null ? instance.getSPRate() : Config.RATE_SP;
+		float rateMul = instance != null ? instance.getSPRate() : Config.Rates.RATE_SP;
 		return getTemplate().getSP() * rateMul;
 	}
 
@@ -846,26 +846,26 @@ public class Npc: Creature
 		{
 			if (isScriptValue(0) && getReputation() >= 0)
 			{
-				if (Config.FAKE_PLAYER_KILL_KARMA)
+				if (Config.FakePlayers.FAKE_PLAYER_KILL_KARMA)
 				{
 					player.setReputation(player.getReputation() - Formulas.calculateKarmaGain(player.getPkKills(), killer.isSummon()));
 					player.setPkKills(player.getPkKills() + 1);
 					player.broadcastUserInfo(UserInfoType.SOCIAL);
 					player.checkItemRestriction();
 					// pk item rewards
-					if (Config.REWARD_PK_ITEM)
+					if (Config.PvpRewardItem.REWARD_PK_ITEM)
 					{
-						if (!(Config.DISABLE_REWARDS_IN_INSTANCES && getInstanceId() != 0) && //
-							!(Config.DISABLE_REWARDS_IN_PVP_ZONES && isInsideZone(ZoneId.PVP)))
+						if (!(Config.PvpRewardItem.DISABLE_REWARDS_IN_INSTANCES && getInstanceId() != 0) && //
+							!(Config.PvpRewardItem.DISABLE_REWARDS_IN_PVP_ZONES && isInsideZone(ZoneId.PVP)))
 						{
-							player.addItem("PK Item Reward", Config.REWARD_PK_ITEM_ID, Config.REWARD_PK_ITEM_AMOUNT, this, Config.REWARD_PK_ITEM_MESSAGE);
+							player.addItem("PK Item Reward", Config.PvpRewardItem.REWARD_PK_ITEM_ID, Config.PvpRewardItem.REWARD_PK_ITEM_AMOUNT, this, Config.PvpRewardItem.REWARD_PK_ITEM_MESSAGE);
 						}
 					}
 					// announce pk
-					if (Config.ANNOUNCE_PK_PVP && !player.isGM())
+					if (Config.PvpAnnounce.ANNOUNCE_PK_PVP && !player.isGM())
 					{
-						string msg = Config.ANNOUNCE_PK_MSG.Replace("$killer", player.getName()).Replace("$target", getName());
-						if (Config.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
+						string msg = Config.PvpAnnounce.ANNOUNCE_PK_MSG.Replace("$killer", player.getName()).Replace("$target", getName());
+						if (Config.PvpAnnounce.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
 						{
 							SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_3);
 							sm.Params.addString(msg);
@@ -878,25 +878,25 @@ public class Npc: Creature
 					}
 				}
 			}
-			else if (Config.FAKE_PLAYER_KILL_PVP)
+			else if (Config.FakePlayers.FAKE_PLAYER_KILL_PVP)
 			{
 				player.setPvpKills(player.getPvpKills() + 1);
 				player.setTotalKills(player.getTotalKills() + 1);
 				player.broadcastUserInfo(UserInfoType.SOCIAL);
 				// pvp item rewards
-				if (Config.REWARD_PVP_ITEM)
+				if (Config.PvpRewardItem.REWARD_PVP_ITEM)
 				{
-					if (!(Config.DISABLE_REWARDS_IN_INSTANCES && getInstanceId() != 0) && //
-						!(Config.DISABLE_REWARDS_IN_PVP_ZONES && isInsideZone(ZoneId.PVP)))
+					if (!(Config.PvpRewardItem.DISABLE_REWARDS_IN_INSTANCES && getInstanceId() != 0) && //
+						!(Config.PvpRewardItem.DISABLE_REWARDS_IN_PVP_ZONES && isInsideZone(ZoneId.PVP)))
 					{
-						player.addItem("PvP Item Reward", Config.REWARD_PVP_ITEM_ID, Config.REWARD_PVP_ITEM_AMOUNT, this, Config.REWARD_PVP_ITEM_MESSAGE);
+						player.addItem("PvP Item Reward", Config.PvpRewardItem.REWARD_PVP_ITEM_ID, Config.PvpRewardItem.REWARD_PVP_ITEM_AMOUNT, this, Config.PvpRewardItem.REWARD_PVP_ITEM_MESSAGE);
 					}
 				}
 				// announce pvp
-				if (Config.ANNOUNCE_PK_PVP && !player.isGM())
+				if (Config.PvpAnnounce.ANNOUNCE_PK_PVP && !player.isGM())
 				{
-					string msg = Config.ANNOUNCE_PVP_MSG.Replace("$killer", player.getName()).Replace("$target", getName());
-					if (Config.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
+					string msg = Config.PvpAnnounce.ANNOUNCE_PVP_MSG.Replace("$killer", player.getName()).Replace("$target", getName());
+					if (Config.PvpAnnounce.ANNOUNCE_PK_PVP_NORMAL_MESSAGE)
 					{
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_3);
 						sm.Params.addString(msg);
@@ -992,7 +992,7 @@ public class Npc: Creature
 
         Castle? castle = getCastle();
         if (isInsideZone(ZoneId.TAX) && castle != null &&
-            (Config.SHOW_CREST_WITHOUT_QUEST || castle.getShowNpcCrest()) && castle.getOwnerId() != 0)
+            (Config.Npc.SHOW_CREST_WITHOUT_QUEST || castle.getShowNpcCrest()) && castle.getOwnerId() != 0)
         {
             setClanId(castle.getOwnerId());
         }
@@ -1320,7 +1320,7 @@ public class Npc: Creature
 
 	public override void rechargeShots(bool physical, bool magic, bool fish)
 	{
-		if (_isFakePlayer && Config.FAKE_PLAYER_USE_SHOTS)
+		if (_isFakePlayer && Config.FakePlayers.FAKE_PLAYER_USE_SHOTS)
 		{
 			if (physical)
 			{
@@ -1510,14 +1510,14 @@ public class Npc: Creature
 			item.dropMe(this, new Location3D(newX, newY, newZ));
 
 			// Add drop to auto destroy item task.
-			if (!Config.LIST_PROTECTED_ITEMS.Contains(itemId) && ((Config.AUTODESTROY_ITEM_AFTER > 0 && !item.getTemplate().hasExImmediateEffect()) || (Config.HERB_AUTO_DESTROY_TIME > 0 && item.getTemplate().hasExImmediateEffect())))
+			if (!Config.General.LIST_PROTECTED_ITEMS.Contains(itemId) && ((Config.General.AUTODESTROY_ITEM_AFTER > 0 && !item.getTemplate().hasExImmediateEffect()) || (Config.General.HERB_AUTO_DESTROY_TIME > 0 && item.getTemplate().hasExImmediateEffect())))
 			{
 				ItemsAutoDestroyTaskManager.getInstance().addItem(item);
 			}
 			item.setProtected(false);
 
 			// If stackable, end loop as entire count is included in 1 instance of item.
-			if (item.isStackable() || !Config.MULTIPLE_ITEM_DROP)
+			if (item.isStackable() || !Config.General.MULTIPLE_ITEM_DROP)
 			{
 				break;
 			}
@@ -1599,7 +1599,7 @@ public class Npc: Creature
 
 	public override int getMinShopDistance()
 	{
-		return Config.SHOP_MIN_RANGE_FROM_NPC;
+		return Config.PrivateStoreRange.SHOP_MIN_RANGE_FROM_NPC;
 	}
 
 	public override bool isFakePlayer()

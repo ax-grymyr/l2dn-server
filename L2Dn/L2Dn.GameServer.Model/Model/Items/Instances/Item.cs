@@ -255,7 +255,7 @@ public class Item: WorldObject
 	{
 		setOwnerId(ownerId);
 
-		if ((Config.LOG_ITEMS && !Config.LOG_ITEMS_SMALL_LOG && !Config.LOG_ITEMS_IDS_ONLY) || (Config.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || _itemTemplate.getId() == Inventory.ADENA_ID)) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.getId())))
+		if ((Config.General.LOG_ITEMS && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || _itemTemplate.getId() == Inventory.ADENA_ID)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.getId())))
 		{
 			if (_enchantLevel > 0)
 			{
@@ -295,7 +295,7 @@ public class Item: WorldObject
 			}
 		}
 
-		if (creator != null && creator.isGM() && Config.GMAUDIT)
+		if (creator != null && creator.isGM() && Config.General.GMAUDIT)
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.Append(process);
@@ -450,7 +450,7 @@ public class Item: WorldObject
 
 		_storedInDb = false;
 
-		if ((Config.LOG_ITEMS && process != null && !Config.LOG_ITEMS_SMALL_LOG && !Config.LOG_ITEMS_IDS_ONLY) || (Config.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || _itemTemplate.getId() == Inventory.ADENA_ID)) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.getId())))
+		if ((Config.General.LOG_ITEMS && process != null && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || _itemTemplate.getId() == Inventory.ADENA_ID)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.getId())))
 		{
 			if (_enchantLevel > 0)
 			{
@@ -494,7 +494,7 @@ public class Item: WorldObject
 			}
 		}
 
-		if (creator != null && creator.isGM() && Config.GMAUDIT)
+		if (creator != null && creator.isGM() && Config.General.GMAUDIT)
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.Append(process);
@@ -1529,7 +1529,7 @@ public class Item: WorldObject
 				{
 					removeFromDb();
 				}
-				else if (!Config.LAZY_ITEMS_UPDATE || force)
+				else if (!Config.General.LAZY_ITEMS_UPDATE || force)
 				{
 					updateInDb();
 				}
@@ -1587,7 +1587,7 @@ public class Item: WorldObject
 		WorldRegion region = getWorldRegion();
 		region.AddVisibleObject(this);
 		World.getInstance().addVisibleObject(this, region);
-		if (Config.SAVE_DROPPED_ITEM)
+		if (Config.General.SAVE_DROPPED_ITEM)
 		{
 			ItemsOnGroundManager.getInstance().save(this);
 		}
@@ -1941,7 +1941,7 @@ public class Item: WorldObject
 
 	public override bool decayMe()
 	{
-		if (Config.SAVE_DROPPED_ITEM)
+		if (Config.General.SAVE_DROPPED_ITEM)
 		{
 			ItemsOnGroundManager.getInstance().removeObject(this);
 		}
@@ -1987,16 +1987,16 @@ public class Item: WorldObject
 		{
 			if (_itemTemplate.isWeapon())
 			{
-				if (Config.ALT_OLY_WEAPON_ENCHANT_LIMIT >= 0 && enchant > Config.ALT_OLY_WEAPON_ENCHANT_LIMIT)
+				if (Config.Olympiad.ALT_OLY_WEAPON_ENCHANT_LIMIT >= 0 && enchant > Config.Olympiad.ALT_OLY_WEAPON_ENCHANT_LIMIT)
 				{
-					enchant = Config.ALT_OLY_WEAPON_ENCHANT_LIMIT;
+					enchant = Config.Olympiad.ALT_OLY_WEAPON_ENCHANT_LIMIT;
 				}
 			}
 			else
 			{
-				if (Config.ALT_OLY_ARMOR_ENCHANT_LIMIT >= 0 && enchant > Config.ALT_OLY_ARMOR_ENCHANT_LIMIT)
+				if (Config.Olympiad.ALT_OLY_ARMOR_ENCHANT_LIMIT >= 0 && enchant > Config.Olympiad.ALT_OLY_ARMOR_ENCHANT_LIMIT)
 				{
-					enchant = Config.ALT_OLY_ARMOR_ENCHANT_LIMIT;
+					enchant = Config.Olympiad.ALT_OLY_ARMOR_ENCHANT_LIMIT;
 				}
 			}
 		}

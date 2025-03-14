@@ -527,9 +527,7 @@ public class ItemAuctionInstance
 			}
 
 			if (auctionState == ItemAuctionState.FINISHED && startingTime <
-                DateTime.UtcNow -
-                TimeSpan.FromDays(
-                    Config.ALT_ITEM_AUCTION_EXPIRED_AFTER))
+                DateTime.UtcNow - TimeSpan.FromDays(Config.General.ALT_ITEM_AUCTION_EXPIRED_AFTER))
 			{
 				LOGGER.Info(GetType().Name + ": Clearing expired auction: " + auctionId);
 				ctx.ItemAuctions.Where(r => r.AuctionId == auctionId).ExecuteDelete();

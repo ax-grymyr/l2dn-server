@@ -49,7 +49,7 @@ public struct RequestChangeAttributeItemPacket: IIncomingPacket<GameSession>
             player.sendPacket(ExChangeAttributeFailPacket.STATIC);
 
             Util.handleIllegalPlayerAction(player,
-                player + " tried to change attribute without an attribute change crystal.", Config.DEFAULT_PUNISH);
+                player + " tried to change attribute without an attribute change crystal.", Config.General.DEFAULT_PUNISH);
 
             return ValueTask.CompletedTask;
         }

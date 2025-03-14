@@ -56,7 +56,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 
 		if (_level < 1 || _level > 1000 || _id < 1)
 		{
-			Util.handleIllegalPlayerAction(player, "Wrong Packet Data in Aquired Skill", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, "Wrong Packet Data in Aquired Skill", Config.General.DEFAULT_PUNISH);
 			PacketLogger.Instance.Warn("Recived Wrong Packet Data in Aquired Skill - id: " + _id + " level: " + _level + " for " + player);
 			return ValueTask.CompletedTask;
 		}

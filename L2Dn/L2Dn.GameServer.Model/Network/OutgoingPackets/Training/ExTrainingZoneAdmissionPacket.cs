@@ -15,8 +15,8 @@ public readonly struct ExTrainingZoneAdmissionPacket: IOutgoingPacket
     {
         _timeElapsed = timeElapsed;
         _timeRemaining = timeRemaing;
-        _maxExp = Config.TRAINING_CAMP_EXP_MULTIPLIER * (ExperienceData.getInstance().getExpForLevel(level) * ExperienceData.getInstance().getTrainingRate(level) / Config.TRAINING_CAMP_MAX_DURATION);
-        _maxSp = Config.TRAINING_CAMP_SP_MULTIPLIER * (_maxExp / 250d);
+        _maxExp = Config.TrainingCamp.TRAINING_CAMP_EXP_MULTIPLIER * (ExperienceData.getInstance().getExpForLevel(level) * ExperienceData.getInstance().getTrainingRate(level) / Config.TrainingCamp.TRAINING_CAMP_MAX_DURATION);
+        _maxSp = Config.TrainingCamp.TRAINING_CAMP_SP_MULTIPLIER * (_maxExp / 250d);
     }
 
     public void WriteContent(PacketBitWriter writer)

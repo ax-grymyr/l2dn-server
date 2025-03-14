@@ -165,7 +165,7 @@ public class TradeList
 		}
 
 		Item item = (Item) o;
-		if (!(item.isTradeable() || (_owner.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS)) || item.isQuestItem())
+		if (!(item.isTradeable() || (_owner.isGM() && Config.General.GM_TRADE_RESTRICTED_ITEMS)) || item.isQuestItem())
 		{
 			return null;
 		}
@@ -649,7 +649,7 @@ public class TradeList
 			{
 				if (_packaged)
 				{
-					Util.handleIllegalPlayerAction(player, "[TradeList.privateStoreBuy()] " + player + " tried to cheat the package sell and buy only a part of the package! Ban this player for bot usage!", Config.DEFAULT_PUNISH);
+					Util.handleIllegalPlayerAction(player, "[TradeList.privateStoreBuy()] " + player + " tried to cheat the package sell and buy only a part of the package! Ban this player for bot usage!", Config.General.DEFAULT_PUNISH);
 					return 2;
 				}
 
@@ -928,7 +928,7 @@ public class TradeList
 			}
 			if (oldItem.getId() != item.getItemId())
 			{
-				Util.handleIllegalPlayerAction(player, player + " is cheating with sell items", Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(player, player + " is cheating with sell items", Config.General.DEFAULT_PUNISH);
 				return false;
 			}
 

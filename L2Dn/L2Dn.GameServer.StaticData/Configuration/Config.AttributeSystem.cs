@@ -76,10 +76,9 @@ public static partial class Config
         public static int R95_ARMOR_JEWEL;
         public static int R99_ARMOR_JEWEL;
 
-        public static void Load(string configPath)
+        internal static void Load(ConfigurationParser parser)
         {
-            ConfigurationParser parser = new(configPath);
-            parser.LoadConfig(FileNames.Configs.AttributeSystemFile);
+            parser.LoadConfig(FileNames.Configs.AttributeSystem);
 
             S_WEAPON_STONE = parser.getInt("SWeaponStone", 50);
             S80_WEAPON_STONE = parser.getInt("S80WeaponStone", 50);

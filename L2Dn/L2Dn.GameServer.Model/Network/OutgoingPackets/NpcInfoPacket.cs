@@ -60,8 +60,8 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 
 		if (npc.getTeam() != Team.NONE)
 		{
-			if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None &&
-			    Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
+			if (Config.General.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None &&
+			    Config.General.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
 				_helper.AddComponent(NpcInfoType.ABNORMALS);
 			else
 				_helper.AddComponent(NpcInfoType.TEAM);
@@ -94,7 +94,7 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		if (npc.getTemplate().isUsingServerSideName())
 			_helper.AddComponent(NpcInfoType.NAME);
 
-		if (npc.getTemplate().isUsingServerSideTitle() || (npc.isMonster() && (Config.SHOW_NPC_LEVEL || Config.SHOW_NPC_AGGRESSION)) || npc.isChampion() || npc.isTrap())
+		if (npc.getTemplate().isUsingServerSideTitle() || (npc.isMonster() && (Config.Npc.SHOW_NPC_LEVEL || Config.Npc.SHOW_NPC_AGGRESSION)) || npc.isChampion() || npc.isTrap())
 			_helper.AddComponent(NpcInfoType.TITLE);
 
 		if (npc.getNameString() != null)
@@ -391,8 +391,8 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 
 		if (_helper.HasComponent(NpcInfoType.ABNORMALS))
 		{
-			Team team = Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None &&
-			            Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None
+			Team team = Config.General.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None &&
+			            Config.General.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None
 				? _npc.getTeam()
 				: Team.NONE;
 
@@ -407,11 +407,11 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 
 			if (team == Team.BLUE)
 			{
-				if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
-					writer.WriteInt16((short)Config.BLUE_TEAM_ABNORMAL_EFFECT);
+				if (Config.General.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
+					writer.WriteInt16((short)Config.General.BLUE_TEAM_ABNORMAL_EFFECT);
 			}
-			else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
-				writer.WriteInt16((short)Config.RED_TEAM_ABNORMAL_EFFECT);
+			else if (team == Team.RED && Config.General.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
+				writer.WriteInt16((short)Config.General.RED_TEAM_ABNORMAL_EFFECT);
 		}
 	}
 }

@@ -23,9 +23,9 @@ public class ItemsOnGroundManager: Runnable
 
 	protected ItemsOnGroundManager()
 	{
-		if (Config.SAVE_DROPPED_ITEM_INTERVAL > 0)
+		if (Config.General.SAVE_DROPPED_ITEM_INTERVAL > 0)
 		{
-			ThreadPool.scheduleAtFixedRate(this, Config.SAVE_DROPPED_ITEM_INTERVAL, Config.SAVE_DROPPED_ITEM_INTERVAL);
+			ThreadPool.scheduleAtFixedRate(this, Config.General.SAVE_DROPPED_ITEM_INTERVAL, Config.General.SAVE_DROPPED_ITEM_INTERVAL);
 		}
 		load();
 	}
@@ -33,18 +33,18 @@ public class ItemsOnGroundManager: Runnable
 	private void load()
 	{
 		// If SaveDroppedItem is false, may want to delete all items previously stored to avoid add old items on reactivate
-		if (!Config.SAVE_DROPPED_ITEM && Config.CLEAR_DROPPED_ITEM_TABLE)
+		if (!Config.General.SAVE_DROPPED_ITEM && Config.General.CLEAR_DROPPED_ITEM_TABLE)
 		{
 			emptyTable();
 		}
 
-		if (!Config.SAVE_DROPPED_ITEM)
+		if (!Config.General.SAVE_DROPPED_ITEM)
 		{
 			return;
 		}
 
 		// if DestroyPlayerDroppedItem was previously false, items currently protected will be added to ItemsAutoDestroy
-		if (Config.DESTROY_DROPPED_PLAYER_ITEM)
+		if (Config.General.DESTROY_DROPPED_PLAYER_ITEM)
 		{
 			try
 			{
@@ -53,7 +53,7 @@ public class ItemsOnGroundManager: Runnable
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				var query = ctx.ItemsOnGround.Where(r => r.DropTime == null);
 
-				if (!Config.DESTROY_EQUIPABLE_PLAYER_ITEM)
+				if (!Config.General.DESTROY_EQUIPABLE_PLAYER_ITEM)
 					query = query.Where(r => !r.Equipable);
 
 				query.ExecuteUpdate(s => s.SetProperty(r => r.DropTime, time));
@@ -103,9 +103,9 @@ public class ItemsOnGroundManager: Runnable
 				_items.add(item);
 				count++;
 				// add to ItemsAutoDestroy only items not protected
-				if (!Config.LIST_PROTECTED_ITEMS.Contains(item.getId()) && dropTime is not null &&
-				    ((Config.AUTODESTROY_ITEM_AFTER > 0 && !item.getTemplate().hasExImmediateEffect()) ||
-				     (Config.HERB_AUTO_DESTROY_TIME > 0 && item.getTemplate().hasExImmediateEffect())))
+				if (!Config.General.LIST_PROTECTED_ITEMS.Contains(item.getId()) && dropTime is not null &&
+				    ((Config.General.AUTODESTROY_ITEM_AFTER > 0 && !item.getTemplate().hasExImmediateEffect()) ||
+				     (Config.General.HERB_AUTO_DESTROY_TIME > 0 && item.getTemplate().hasExImmediateEffect())))
 				{
 					ItemsAutoDestroyTaskManager.getInstance().addItem(item);
 				}
@@ -118,7 +118,7 @@ public class ItemsOnGroundManager: Runnable
 			LOGGER.Error(GetType().Name + ": Error while loading ItemsOnGround " + e);
 		}
 
-		if (Config.EMPTY_DROPPED_ITEM_TABLE_AFTER_LOAD)
+		if (Config.General.EMPTY_DROPPED_ITEM_TABLE_AFTER_LOAD)
 		{
 			emptyTable();
 		}
@@ -126,7 +126,7 @@ public class ItemsOnGroundManager: Runnable
 
 	public void save(Item item)
 	{
-		if (Config.SAVE_DROPPED_ITEM)
+		if (Config.General.SAVE_DROPPED_ITEM)
 		{
 			_items.add(item);
 		}
@@ -134,7 +134,7 @@ public class ItemsOnGroundManager: Runnable
 
 	public void removeObject(Item item)
 	{
-		if (Config.SAVE_DROPPED_ITEM)
+		if (Config.General.SAVE_DROPPED_ITEM)
 		{
 			_items.remove(item);
 		}
@@ -166,7 +166,7 @@ public class ItemsOnGroundManager: Runnable
 	[MethodImpl(MethodImplOptions.Synchronized)]
 	public void run()
 	{
-		if (!Config.SAVE_DROPPED_ITEM)
+		if (!Config.General.SAVE_DROPPED_ITEM)
 		{
 			return;
 		}

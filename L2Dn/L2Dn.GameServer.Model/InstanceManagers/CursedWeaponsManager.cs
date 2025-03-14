@@ -34,7 +34,7 @@ public class CursedWeaponsManager: DataReaderBase
 
 	public void load()
 	{
-		if (!Config.ALLOW_CURSED_WEAPONS)
+		if (!Config.General.ALLOW_CURSED_WEAPONS)
 		{
 			return;
 		}

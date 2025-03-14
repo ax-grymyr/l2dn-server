@@ -43,17 +43,17 @@ public class OfflineTradeUtil
 			case PrivateStoreType.BUY:
 			case PrivateStoreType.MANUFACTURE:
 			{
-				canSetShop = Config.OFFLINE_TRADE_ENABLE;
+				canSetShop = Config.OfflineTrade.OFFLINE_TRADE_ENABLE;
 				break;
 			}
 			default:
 			{
-				canSetShop = Config.OFFLINE_CRAFT_ENABLE && player.isCrafting();
+				canSetShop = Config.OfflineTrade.OFFLINE_CRAFT_ENABLE && player.isCrafting();
 				break;
 			}
 		}
 
-		if (Config.OFFLINE_MODE_IN_PEACE_ZONE && !player.isInsideZone(ZoneId.PEACE))
+		if (Config.OfflineTrade.OFFLINE_MODE_IN_PEACE_ZONE && !player.isInsideZone(ZoneId.PEACE))
 		{
 			canSetShop = false;
 		}
@@ -88,7 +88,7 @@ public class OfflineTradeUtil
 		World.OFFLINE_TRADE_COUNT++;
 
 		connection.Send(ServerClosePacket.STATIC_PACKET, SendPacketOptions.CloseAfterSending);
-		if (!Config.DUALBOX_COUNT_OFFLINE_TRADERS)
+		if (!Config.DualboxCheck.DUALBOX_COUNT_OFFLINE_TRADERS)
 		{
 			AntiFeedManager.getInstance().onDisconnect(client);
 		}
@@ -119,9 +119,9 @@ public class OfflineTradeUtil
 			s.unSummon(player);
 		});
 
-		if (Config.OFFLINE_SET_NAME_COLOR)
+		if (Config.OfflineTrade.OFFLINE_SET_NAME_COLOR)
 		{
-			player.getAppearance().setNameColor(Config.OFFLINE_NAME_COLOR);
+			player.getAppearance().setNameColor(Config.OfflineTrade.OFFLINE_NAME_COLOR);
 			player.broadcastUserInfo();
 		}
 
@@ -131,7 +131,7 @@ public class OfflineTradeUtil
 		}
 
 		// Store trade on exit, if realtime saving is enabled.
-		if (Config.STORE_OFFLINE_TRADE_IN_REALTIME)
+		if (Config.OfflineTrade.STORE_OFFLINE_TRADE_IN_REALTIME)
 		{
 			OfflineTraderTable.getInstance().onTransaction(player, false, true);
 		}
@@ -139,9 +139,9 @@ public class OfflineTradeUtil
 		player.storeMe();
 		LOGGER_ACCOUNTING.Info("Entering offline mode, " + client);
 
-		if (!Config.OFFLINE_ABNORMAL_EFFECTS.IsDefaultOrEmpty)
+		if (!Config.OfflineTrade.OFFLINE_ABNORMAL_EFFECTS.IsDefaultOrEmpty)
 		{
-			player.getEffectList().startAbnormalVisualEffect(Config.OFFLINE_ABNORMAL_EFFECTS.GetRandomElement());
+			player.getEffectList().startAbnormalVisualEffect(Config.OfflineTrade.OFFLINE_ABNORMAL_EFFECTS.GetRandomElement());
 		}
 
 		return true;

@@ -189,14 +189,14 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		}
 
 		PlayerTemplate template = newChar.getTemplate();
-		if (Config.CUSTOM_STARTING_LOC)
+		if (Config.StartingLocation.CUSTOM_STARTING_LOC)
 		{
-			Location3D createLoc = new(Config.CUSTOM_STARTING_LOC_X, Config.CUSTOM_STARTING_LOC_Y, Config.CUSTOM_STARTING_LOC_Z);
+			Location3D createLoc = new(Config.StartingLocation.CUSTOM_STARTING_LOC_X, Config.StartingLocation.CUSTOM_STARTING_LOC_Y, Config.StartingLocation.CUSTOM_STARTING_LOC_Z);
 			newChar.setXYZInvisible(createLoc);
 		}
-		else if (Config.FACTION_SYSTEM_ENABLED)
+		else if (Config.FactionSystem.FACTION_SYSTEM_ENABLED)
 		{
-			newChar.setXYZInvisible(Config.FACTION_STARTING_LOCATION.Location3D);
+			newChar.setXYZInvisible(Config.FactionSystem.FACTION_STARTING_LOCATION.Location3D);
 		}
 		else
 		{
@@ -286,7 +286,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		    {
 			    // Custom Feature: Disallow a race to be created.
 			    // Example: Humans can not be created if AllowHuman = False in Custom.properties
-			    if (!Config.ALLOW_HUMAN)
+			    if (!Config.AllowedPlayerRaces.ALLOW_HUMAN)
 				    return false;
 
 			    if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId) &&
@@ -301,7 +301,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		    }
 		    case Race.ELF:
 		    {
-			    if (!Config.ALLOW_ELF)
+			    if (!Config.AllowedPlayerRaces.ALLOW_ELF)
 				    return false;
 
 			    if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId) &&
@@ -312,7 +312,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		    }
 		    case Race.DARK_ELF:
 		    {
-			    if (!Config.ALLOW_DARKELF)
+			    if (!Config.AllowedPlayerRaces.ALLOW_DARKELF)
 				    return false;
 
 			    if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId) &&
@@ -327,7 +327,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		    }
 		    case Race.ORC:
 		    {
-			    if (!Config.ALLOW_ORC)
+			    if (!Config.AllowedPlayerRaces.ALLOW_ORC)
 				    return false;
 
 			    if (CategoryData.getInstance().isInCategory(CategoryType.VANGUARD_ALL_CLASS, classId) &&
@@ -338,32 +338,32 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 		    }
 		    case Race.DWARF:
 		    {
-			    if (!Config.ALLOW_DWARF)
+			    if (!Config.AllowedPlayerRaces.ALLOW_DWARF)
 				    return false;
 
 			    break;
 		    }
 		    case Race.KAMAEL:
 		    {
-			    if (!Config.ALLOW_KAMAEL)
+			    if (!Config.AllowedPlayerRaces.ALLOW_KAMAEL)
 				    return false;
 
 			    break;
 		    }
 		    case Race.SYLPH:
 		    {
-			    if (!Config.ALLOW_SYLPH)
+			    if (!Config.AllowedPlayerRaces.ALLOW_SYLPH)
 				    return false;
 
 			    break;
 		    }
 	    }
 
-	    if (!Config.ALLOW_DEATH_KNIGHT &&
+	    if (!Config.AllowedPlayerRaces.ALLOW_DEATH_KNIGHT &&
 	        CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId))
 		    return false;
 
-	    if (!Config.ALLOW_VANGUARD &&
+	    if (!Config.AllowedPlayerRaces.ALLOW_VANGUARD &&
 	        CategoryData.getInstance().isInCategory(CategoryType.VANGUARD_ALL_CLASS, classId))
 		    return false;
 

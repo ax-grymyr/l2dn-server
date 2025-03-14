@@ -22,7 +22,7 @@ public struct RequestRejectPostAttachmentPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        if (!Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
+        if (!Config.General.ALLOW_MAIL || !Config.General.ALLOW_ATTACHMENTS)
             return ValueTask.CompletedTask;
 
         Player? player = session.Player;
@@ -45,7 +45,7 @@ public struct RequestRejectPostAttachmentPacket: IIncomingPacket<GameSession>
 
         if (msg.getReceiverId() != player.ObjectId)
         {
-            Util.handleIllegalPlayerAction(player, player + " tried to reject not own attachment!", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(player, player + " tried to reject not own attachment!", Config.General.DEFAULT_PUNISH);
             return ValueTask.CompletedTask;
         }
 

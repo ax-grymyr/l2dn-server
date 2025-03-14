@@ -53,7 +53,7 @@ public static class SystemMessageIdUtil
 	public static void loadLocalisations()
 	{
 		_localizations = ImmutableDictionary<string, ImmutableDictionary<SystemMessageId, SystemMessageInfo>>.Empty;
-		if (!Config.MULTILANG_ENABLE)
+		if (!Config.MultilingualSupport.MULTILANG_ENABLE)
 		{
 			_logger.Info("SystemMessageId: MultiLanguage disabled.");
 			return;

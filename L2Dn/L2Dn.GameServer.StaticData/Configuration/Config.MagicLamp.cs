@@ -10,10 +10,9 @@ public static partial class Config
         public static int MAGIC_LAMP_MAX_LEVEL_EXP;
         public static double MAGIC_LAMP_CHARGE_RATE;
 
-        public static void Load(string configPath)
+        internal static void Load(ConfigurationParser parser)
         {
-            ConfigurationParser parser = new(configPath);
-            parser.LoadConfig(FileNames.Configs.AttendanceConfigFile);
+            parser.LoadConfig(FileNames.Configs.MagicLamp);
 
             ENABLE_MAGIC_LAMP = parser.getBoolean("MagicLampEnabled");
             MAGIC_LAMP_MAX_LEVEL_EXP = parser.getInt("MagicLampMaxLevelExp", 10000000);

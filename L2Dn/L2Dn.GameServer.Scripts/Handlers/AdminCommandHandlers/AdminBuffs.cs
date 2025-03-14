@@ -249,7 +249,7 @@ public class AdminBuffs: IAdminCommandHandler
 
         if (command.startsWith("admin_switch_gm_buffs"))
         {
-            if (Config.GM_GIVE_SPECIAL_SKILLS != Config.GM_GIVE_SPECIAL_AURA_SKILLS)
+            if (Config.General.GM_GIVE_SPECIAL_SKILLS != Config.General.GM_GIVE_SPECIAL_AURA_SKILLS)
             {
                 bool toAuraSkills = activeChar.getKnownSkill(7041) != null;
                 switchSkills(activeChar, toAuraSkills);
@@ -338,7 +338,7 @@ public class AdminBuffs: IAdminCommandHandler
 		htmlContent.Replace("%effectSize%", effects.Count.ToString());
 		activeChar.sendPacket(html);
 
-		if (Config.GMAUDIT)
+		if (Config.General.GMAUDIT)
 		{
 			// TODO: GMAudit
 			//GMAudit.auditGMAction(activeChar.getName() + " [" + activeChar.getObjectId() + "]", "getbuffs", target.getName() + " (" + target.getObjectId() + ")", "");
@@ -367,7 +367,7 @@ public class AdminBuffs: IAdminCommandHandler
 			}
 
 			showBuffs(activeChar, target, 0, false);
-			if (Config.GMAUDIT)
+			if (Config.General.GMAUDIT)
 			{
 				// TODO: GMAudit
 				//GMAudit.auditGMAction(activeChar.getName() + " [" + activeChar.getObjectId() + "]", "stopbuff", target.getName() + " (" + objId + ")", Integer.toString(skillId));
@@ -393,7 +393,7 @@ public class AdminBuffs: IAdminCommandHandler
 			target.stopAllEffects();
 			BuilderUtil.sendSysMessage(activeChar, "Removed all effects from " + target.getName() + " (" + objId + ")");
 			showBuffs(activeChar, target, 0, false);
-			if (Config.GMAUDIT)
+			if (Config.General.GMAUDIT)
 			{
 				// TODO: GMAudit
 				//GMAudit.auditGMAction(activeChar.getName() + " [" + activeChar.getObjectId() + "]", "stopallbuffs", target.getName() + " (" + objId + ")", "");
@@ -437,7 +437,7 @@ public class AdminBuffs: IAdminCommandHandler
 			// Send the packet
 			HtmlContent htmlContent = HtmlContent.LoadFromText(html.ToString(), activeChar);
 			activeChar.sendPacket(new NpcHtmlMessagePacket(null, 1, htmlContent));
-			if (Config.GMAUDIT)
+			if (Config.General.GMAUDIT)
 			{
 				// TODO: GMAudit
 				//GMAudit.auditGMAction(activeChar.getName() + " [" + activeChar.getObjectId() + "]", "viewblockedeffects", target.getName() + " (" + Integer.toString(target.getObjectId()) + ")", "");

@@ -16,6 +16,6 @@ public readonly struct ExShowSharedLocationTeleportUiPacket(SharedTeleportHolder
         writer.WriteInt32(teleport.getCount());
         writer.WriteInt16(150);
         writer.WriteLocation3D(teleport.getLocation());
-        writer.WriteInt64(Config.TELEPORT_SHARE_LOCATION_COST);
+        writer.WriteInt64(Config.General.TELEPORT_SHARE_LOCATION_COST);
     }
 }

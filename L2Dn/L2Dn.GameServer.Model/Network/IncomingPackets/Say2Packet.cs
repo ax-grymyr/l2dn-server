@@ -107,9 +107,9 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (Config.L2WALKER_PROTECTION && chatType == ChatType.WHISPER && checkBot(text))
+		if (Config.WalkerBotProtection.L2WALKER_PROTECTION && chatType == ChatType.WHISPER && checkBot(text))
 		{
-			Util.handleIllegalPlayerAction(player, "Client Emulator Detect: " + player + " using L2Walker.", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, "Client Emulator Detect: " + player + " using L2Walker.", Config.General.DEFAULT_PUNISH);
 			return ValueTask.CompletedTask;
 		}
 
@@ -125,7 +125,7 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 			{
 				connection.Send(new SystemMessagePacket(SystemMessageId.YOU_HAVE_BEEN_REPORTED_AS_AN_ILLEGAL_PROGRAM_USER_SO_CHATTING_IS_NOT_ALLOWED));
 			}
-			else if (Config.BAN_CHAT_CHANNELS.Contains(chatType))
+			else if (Config.General.BAN_CHAT_CHANNELS.Contains(chatType))
 			{
 				connection.Send(new SystemMessagePacket(SystemMessageId.IF_YOU_TRY_TO_CHAT_BEFORE_THE_PROHIBITION_IS_REMOVED_THE_PROHIBITION_TIME_WILL_INCREASE_EVEN_FURTHER_S1_SEC_OF_PROHIBITION_IS_LEFT));
 			}
@@ -139,7 +139,7 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (player.isJailed() && Config.JAIL_DISABLE_CHAT && (chatType == ChatType.WHISPER || chatType == ChatType.SHOUT ||
+		if (player.isJailed() && Config.General.JAIL_DISABLE_CHAT && (chatType == ChatType.WHISPER || chatType == ChatType.SHOUT ||
 		                                                      chatType == ChatType.TRADE || chatType == ChatType.HERO_VOICE))
 		{
 			player.sendMessage("You can not chat with players outside of the jail.");
@@ -149,7 +149,7 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 		if (chatType == ChatType.PETITION_PLAYER && player.isGM())
 			chatType = ChatType.PETITION_GM;
 
-		if (Config.LOG_CHAT)
+		if (Config.General.LOG_CHAT)
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.Append(chatType);
@@ -185,7 +185,7 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 		}
 
 		// Say Filter implementation
-		if (Config.USE_SAY_FILTER)
+		if (Config.General.USE_SAY_FILTER)
 			text = checkText(text);
 
 		IChatHandler? handler = ChatHandler.getInstance().getHandler(chatType);
@@ -206,9 +206,9 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 	private static string checkText(string text)
 	{
 		string filteredText = text;
-		foreach (string pattern in Config.FILTER_LIST)
+		foreach (string pattern in Config.ChatFilter.FILTER_LIST)
 		{
-			filteredText = filteredText.replaceAll("(?i)" + pattern, Config.CHAT_FILTER_CHARS);
+			filteredText = filteredText.replaceAll("(?i)" + pattern, Config.General.CHAT_FILTER_CHARS);
 		}
 
 		return filteredText;

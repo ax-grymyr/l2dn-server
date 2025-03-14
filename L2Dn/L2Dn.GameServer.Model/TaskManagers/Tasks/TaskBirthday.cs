@@ -68,7 +68,7 @@ public class TaskBirthday: Task
 					continue;
 				}
 
-				string text = Config.ALT_BIRTHDAY_MAIL_TEXT;
+				string text = Config.General.ALT_BIRTHDAY_MAIL_TEXT;
 				if (text.Contains("$c1"))
 				{
 					text = text.Replace("$c1", record.Name);
@@ -79,9 +79,9 @@ public class TaskBirthday: Task
 					text = text.Replace("$s1", age.ToString());
 				}
 
-				Message msg = new Message(playerId, Config.ALT_BIRTHDAY_MAIL_SUBJECT, text, MailType.BIRTHDAY);
+				Message msg = new Message(playerId, Config.General.ALT_BIRTHDAY_MAIL_SUBJECT, text, MailType.BIRTHDAY);
 				Mail attachments = msg.createAttachments();
-				attachments.addItem("Birthday", Config.ALT_BIRTHDAY_GIFT, 1, null, null);
+				attachments.addItem("Birthday", Config.General.ALT_BIRTHDAY_GIFT, 1, null, null);
 				MailManager.getInstance().sendMessage(msg);
 				_count++;
 			}

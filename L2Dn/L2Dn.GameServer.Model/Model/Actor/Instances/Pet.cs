@@ -628,7 +628,7 @@ public class Pet: Summon
 			// Remove from the ground!
 			target.pickupMe(this);
 
-			if (Config.SAVE_DROPPED_ITEM)
+			if (Config.General.SAVE_DROPPED_ITEM)
 			{
 				ItemsOnGroundManager.getInstance().removeObject(target);
 			}
@@ -1275,11 +1275,11 @@ public class Pet: Summon
 	{
 		if (getId() == 12564) // TODO: Remove this stupid hardcode.
 		{
-			getStat().addExpAndSp(addToExp * Config.SINEATER_XP_RATE);
+			getStat().addExpAndSp(addToExp * Config.Rates.SINEATER_XP_RATE);
 		}
 		else
 		{
-			getStat().addExpAndSp(addToExp * Config.PET_XP_RATE);
+			getStat().addExpAndSp(addToExp * Config.Rates.PET_XP_RATE);
 		}
 	}
 
@@ -1347,7 +1347,7 @@ public class Pet: Summon
 
 	public int getInventoryLimit()
 	{
-		return Config.INVENTORY_MAXIMUM_PET;
+		return Config.Npc.INVENTORY_MAXIMUM_PET;
 	}
 
 	public void refreshOverloaded()

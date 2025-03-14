@@ -198,7 +198,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 			else if (_command.startsWith("manor_menu_select"))
 			{
 				Npc? lastNpc = player.getLastFolkNPC();
-				if (Config.ALLOW_MANOR && lastNpc != null && lastNpc.canInteract(player) && lastNpc.Events.HasSubscribers<OnNpcManorBypass>())
+				if (Config.General.ALLOW_MANOR && lastNpc != null && lastNpc.canInteract(player) && lastNpc.Events.HasSubscribers<OnNpcManorBypass>())
 				{
 					string[] split = _command.Substring(_command.IndexOf('?') + 1).Split("&");
 					int ask = int.Parse(split[0].Split("=")[1]);
@@ -209,7 +209,7 @@ public struct RequestBypassToServerPacket: IIncomingPacket<GameSession>
 			}
 			else if (_command.startsWith("pccafe"))
 			{
-				if (!Config.PC_CAFE_ENABLED)
+				if (!Config.PremiumSystem.PC_CAFE_ENABLED)
 					return ValueTask.CompletedTask;
 
 				int multisellId = int.Parse(_command.Substring(10).Trim());

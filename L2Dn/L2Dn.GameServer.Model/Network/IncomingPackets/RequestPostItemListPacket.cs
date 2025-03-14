@@ -14,7 +14,7 @@ public struct RequestPostItemListPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        if (!Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
+        if (!Config.General.ALLOW_MAIL || !Config.General.ALLOW_ATTACHMENTS)
             return ValueTask.CompletedTask;
 
         Player? player = session.Player;

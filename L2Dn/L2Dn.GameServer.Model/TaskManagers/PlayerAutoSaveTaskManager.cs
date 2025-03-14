@@ -40,7 +40,7 @@ public class PlayerAutoSaveTaskManager: Runnable
 					if (player.isOnline())
 					{
 						player.autoSave();
-						PLAYER_TIMES.put(player, currentTime + TimeSpan.FromMilliseconds(Config.CHAR_DATA_STORE_INTERVAL));
+						PLAYER_TIMES.put(player, currentTime + TimeSpan.FromMilliseconds(Config.General.CHAR_DATA_STORE_INTERVAL));
 						break; // Prevent SQL flood.
 					}
 
@@ -59,7 +59,7 @@ public class PlayerAutoSaveTaskManager: Runnable
 
 	public void add(Player player)
 	{
-		PLAYER_TIMES.put(player, DateTime.UtcNow + TimeSpan.FromMilliseconds(Config.CHAR_DATA_STORE_INTERVAL));
+		PLAYER_TIMES.put(player, DateTime.UtcNow + TimeSpan.FromMilliseconds(Config.General.CHAR_DATA_STORE_INTERVAL));
 	}
 
 	public void remove(Player player)

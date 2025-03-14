@@ -19,7 +19,7 @@ public class Offline: IVoicedCommandHandler
 
 	public bool useVoicedCommand(string command, Player player, string target)
 	{
-		if (command.equals("offline") && Config.ENABLE_OFFLINE_COMMAND && (Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE))
+		if (command.equals("offline") && Config.OfflineTrade.ENABLE_OFFLINE_COMMAND && (Config.OfflineTrade.OFFLINE_TRADE_ENABLE || Config.OfflineTrade.OFFLINE_CRAFT_ENABLE))
 		{
 			if (!player.isInStoreMode())
 			{

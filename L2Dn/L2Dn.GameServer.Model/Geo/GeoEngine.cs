@@ -39,14 +39,14 @@ public class GeoEngine
         GeoDataConfig geoDataConfig = ServerConfig.Instance.DataPack.GeoData;
         if (geoDataConfig.Update)
         {
-            await FileUpdater.UpdateFilesAsync(geoDataConfig.FileListUrl, Config.GEODATA_PATH, "geodata");
+            await FileUpdater.UpdateFilesAsync(geoDataConfig.FileListUrl, Config.GeoEngine.GEODATA_PATH, "geodata");
             updated = true;
         }
 
         int loadedRegions = LoadGeoData();
         if (loadedRegions == 0 && geoDataConfig.Download && !updated)
         {
-            await FileUpdater.UpdateFilesAsync(geoDataConfig.FileListUrl, Config.GEODATA_PATH, "geodata");
+            await FileUpdater.UpdateFilesAsync(geoDataConfig.FileListUrl, Config.GeoEngine.GEODATA_PATH, "geodata");
             loadedRegions = LoadGeoData();
         }
 
@@ -61,7 +61,7 @@ public class GeoEngine
 			for (int regionX = WorldMap.TileXMin; regionX <= WorldMap.TileXMax; regionX++)
 			for (int regionY = WorldMap.TileYMin; regionY <= WorldMap.TileYMax; regionY++)
 			{
-				string geoFilePath = Path.Combine(Config.GEODATA_PATH, $"{regionX}_{regionY}.l2j");
+				string geoFilePath = Path.Combine(Config.GeoEngine.GEODATA_PATH, $"{regionX}_{regionY}.l2j");
 				if (!File.Exists(geoFilePath))
 					geoFilePath += ".gz";
 

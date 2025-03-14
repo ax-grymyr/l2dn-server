@@ -116,7 +116,7 @@ public static class StaticData
         MentorManager.getInstance();
         VipManager.getInstance();
 
-        if (Config.PREMIUM_SYSTEM_ENABLED)
+        if (Config.PremiumSystem.PREMIUM_SYSTEM_ENABLED)
         {
             PremiumManager.getInstance();
         }
@@ -159,12 +159,12 @@ public static class StaticData
         TransformData.getInstance();
         BotReportTable.getInstance();
         RankManager.getInstance();
-        if (Config.SELLBUFF_ENABLED)
+        if (Config.SellBuffs.SELLBUFF_ENABLED)
         {
             SellBuffsManager.getInstance();
         }
 
-        if (Config.MULTILANG_ENABLE)
+        if (Config.MultilingualSupport.MULTILANG_ENABLE)
         {
             //SystemMessageId.loadLocalisations();
             //NpcStringId.loadLocalisations();
@@ -192,12 +192,12 @@ public static class StaticData
         SiegeGuardManager.getInstance();
         QuestManager.getInstance().report();
 
-		if (Config.SAVE_DROPPED_ITEM)
+		if (Config.General.SAVE_DROPPED_ITEM)
 		{
 			ItemsOnGroundManager.getInstance();
 		}
 
-		if (Config.AUTODESTROY_ITEM_AFTER > 0 || Config.HERB_AUTO_DESTROY_TIME > 0)
+		if (Config.General.AUTODESTROY_ITEM_AFTER > 0 || Config.General.HERB_AUTO_DESTROY_TIME > 0)
 		{
 			ItemsAutoDestroyTaskManager.getInstance();
 		}
@@ -210,12 +210,12 @@ public static class StaticData
 
 		AntiFeedManager.getInstance().registerEvent(AntiFeedManager.GAME_ID);
 
-		if (Config.ALLOW_MAIL)
+		if (Config.General.ALLOW_MAIL)
 		{
 			MailManager.getInstance();
 		}
 
-		if (Config.CUSTOM_MAIL_MANAGER_ENABLED)
+		if (Config.CustomMailManager.CUSTOM_MAIL_MANAGER_ENABLED)
 		{
 			CustomMailManager.getInstance();
 		}
@@ -233,7 +233,7 @@ public static class StaticData
 
 		//_logger.Info("IdManager: Free ObjectID's remaining: " + IdManager.getInstance());
 
-		if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS)
+		if ((Config.OfflineTrade.OFFLINE_TRADE_ENABLE || Config.OfflineTrade.OFFLINE_CRAFT_ENABLE) && Config.OfflineTrade.RESTORE_OFFLINERS)
 		{
 			OfflineTraderTable.getInstance().restoreOfflineTraders();
 		}

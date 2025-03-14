@@ -130,7 +130,7 @@ public class AdminEnchant: IAdminCommandHandler
 				}
 				catch (IndexOutOfRangeException e)
 				{
-					if (Config.DEVELOPER)
+					if (Config.General.DEVELOPER)
 					{
 						LOGGER.Warn("Set enchant error: " + e);
 					}
@@ -138,7 +138,7 @@ public class AdminEnchant: IAdminCommandHandler
 				}
 				catch (FormatException e)
 				{
-					if (Config.DEVELOPER)
+					if (Config.General.DEVELOPER)
 					{
 						LOGGER.Warn("Set enchant error: " + e);
 					}

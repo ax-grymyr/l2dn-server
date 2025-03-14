@@ -26,7 +26,7 @@ public class RegenMPFinalizer: StatFunction
 		double baseValue = creature.isPlayer() && player != null
 			? player.getTemplate().getBaseMpRegen(creature.getLevel())
 			: creature.getTemplate().getBaseMpReg();
-		baseValue *= creature.isRaid() ? Config.RAID_MP_REGEN_MULTIPLIER : Config.MP_REGEN_MULTIPLIER;
+		baseValue *= creature.isRaid() ? Config.Npc.RAID_MP_REGEN_MULTIPLIER : Config.Character.MP_REGEN_MULTIPLIER;
 		if (creature.isPlayer() && player != null)
         {
             Clan? clan = player.getClan();
@@ -114,7 +114,7 @@ public class RegenMPFinalizer: StatFunction
 		}
 		else if (creature.isPet())
 		{
-			baseValue = ((Pet)creature).getPetLevelData().getPetRegenMP() * Config.PET_MP_REGEN_MULTIPLIER;
+			baseValue = ((Pet)creature).getPetLevelData().getPetRegenMP() * Config.Npc.PET_MP_REGEN_MULTIPLIER;
 		}
 
 		return StatUtil.defaultValue(creature, stat, baseValue);

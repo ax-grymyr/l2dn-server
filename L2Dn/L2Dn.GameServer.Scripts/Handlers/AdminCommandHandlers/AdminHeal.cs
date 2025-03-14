@@ -35,7 +35,7 @@ public class AdminHeal: IAdminCommandHandler
 			}
 			catch (IndexOutOfRangeException e)
 			{
-				if (Config.DEVELOPER)
+				if (Config.General.DEVELOPER)
 				{
 					LOGGER.Warn("Heal error: " + e);
 				}

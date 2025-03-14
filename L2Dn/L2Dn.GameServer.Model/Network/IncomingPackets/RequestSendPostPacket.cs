@@ -72,14 +72,14 @@ public struct RequestSendPostPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-	    if (!Config.ALLOW_MAIL)
+	    if (!Config.General.ALLOW_MAIL)
 		    return ValueTask.CompletedTask;
 
 	    Player? player = session.Player;
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (!Config.ALLOW_ATTACHMENTS)
+        if (!Config.General.ALLOW_ATTACHMENTS)
 		{
 			_items = null;
 			_isCod = false;
@@ -196,7 +196,7 @@ public struct RequestSendPostPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 		}
 
-		if (player.isJailed() && ((Config.JAIL_DISABLE_TRANSACTION && _items != null) || Config.JAIL_DISABLE_CHAT))
+		if (player.isJailed() && ((Config.General.JAIL_DISABLE_TRANSACTION && _items != null) || Config.General.JAIL_DISABLE_CHAT))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_FORWARD_IN_A_NON_PEACE_ZONE_LOCATION);
 			return ValueTask.CompletedTask;

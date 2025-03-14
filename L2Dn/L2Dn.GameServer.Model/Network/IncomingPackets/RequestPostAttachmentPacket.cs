@@ -25,7 +25,7 @@ public struct RequestPostAttachmentPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-	    if (!Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
+	    if (!Config.General.ALLOW_MAIL || !Config.General.ALLOW_ATTACHMENTS)
 		    return ValueTask.CompletedTask;
 
         Player? player = session.Player;
@@ -78,7 +78,7 @@ public struct RequestPostAttachmentPacket: IIncomingPacket<GameSession>
 
 		if (msg.getReceiverId() != player.ObjectId)
 		{
-			Util.handleIllegalPlayerAction(player, player + " tried to get not own attachment!", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, player + " tried to get not own attachment!", Config.General.DEFAULT_PUNISH);
 			return ValueTask.CompletedTask;
 		}
 
@@ -102,7 +102,7 @@ public struct RequestPostAttachmentPacket: IIncomingPacket<GameSession>
 			if (item.getOwnerId() != msg.getSenderId())
 			{
 				Util.handleIllegalPlayerAction(player,
-					player + " tried to get wrong item (ownerId != senderId) from attachment!", Config.DEFAULT_PUNISH);
+					player + " tried to get wrong item (ownerId != senderId) from attachment!", Config.General.DEFAULT_PUNISH);
 
 				return ValueTask.CompletedTask;
 			}
@@ -110,7 +110,7 @@ public struct RequestPostAttachmentPacket: IIncomingPacket<GameSession>
 			if (item.getItemLocation() != ItemLocation.MAIL)
 			{
 				Util.handleIllegalPlayerAction(player,
-					player + " tried to get wrong item (Location != MAIL) from attachment!", Config.DEFAULT_PUNISH);
+					player + " tried to get wrong item (Location != MAIL) from attachment!", Config.General.DEFAULT_PUNISH);
 
 				return ValueTask.CompletedTask;
 			}
@@ -118,7 +118,7 @@ public struct RequestPostAttachmentPacket: IIncomingPacket<GameSession>
 			if (item.getLocationSlot() != msg.getId())
 			{
 				Util.handleIllegalPlayerAction(player, player + " tried to get items from different attachment!",
-					Config.DEFAULT_PUNISH);
+					Config.General.DEFAULT_PUNISH);
 
 				return ValueTask.CompletedTask;
 			}
@@ -168,7 +168,7 @@ public struct RequestPostAttachmentPacket: IIncomingPacket<GameSession>
 			if (item.getOwnerId() != msg.getSenderId())
 			{
 				Util.handleIllegalPlayerAction(player, player + " tried to get items with owner != sender !",
-					Config.DEFAULT_PUNISH);
+					Config.General.DEFAULT_PUNISH);
 
 				return ValueTask.CompletedTask;
 			}

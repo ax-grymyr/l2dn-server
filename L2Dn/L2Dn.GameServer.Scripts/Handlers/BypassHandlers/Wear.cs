@@ -25,7 +25,7 @@ public class Wear: IBypassHandler
 			return false;
 		}
 
-		if (!Config.ALLOW_WEAR)
+		if (!Config.General.ALLOW_WEAR)
 		{
 			return false;
 		}

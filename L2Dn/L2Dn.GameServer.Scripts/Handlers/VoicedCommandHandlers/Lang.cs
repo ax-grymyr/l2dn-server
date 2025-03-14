@@ -20,7 +20,7 @@ public class Lang: IVoicedCommandHandler
 
 	public bool useVoicedCommand(string command, Player activeChar, string @params)
 	{
-		if (!Config.MULTILANG_ENABLE || !Config.MULTILANG_VOICED_ALLOW)
+		if (!Config.MultilingualSupport.MULTILANG_ENABLE || !Config.MultilingualSupport.MULTILANG_VOICED_ALLOW)
 		{
 			return false;
 		}
@@ -28,7 +28,7 @@ public class Lang: IVoicedCommandHandler
 		if (@params == null)
 		{
 			StringBuilder html = new StringBuilder(100);
-			foreach (string lang in Config.MULTILANG_ALLOWED)
+			foreach (string lang in Config.MultilingualSupport.MULTILANG_ALLOWED)
             {
                 html.Append("<button value=\"" + lang.toUpperCase() + "\" action=\"bypass -h voice .lang " + lang +
                     "\" width=60 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><br>");

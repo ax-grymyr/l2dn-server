@@ -36,7 +36,7 @@ public sealed class RealDamage: AbstractEffect
             return;
 
         // Check if fake players should aggro each other.
-        if (effector.isFakePlayer() && !Config.FAKE_PLAYER_AGGRO_FPC && effected.isFakePlayer())
+        if (effector.isFakePlayer() && !Config.FakePlayers.FAKE_PLAYER_AGGRO_FPC && effected.isFakePlayer())
             return;
 
         // Calculate resistance.

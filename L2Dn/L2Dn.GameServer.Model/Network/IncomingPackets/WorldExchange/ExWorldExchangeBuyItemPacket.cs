@@ -17,7 +17,7 @@ public struct ExWorldExchangeBuyItemPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        if (!Config.ENABLE_WORLD_EXCHANGE)
+        if (!Config.WorldExchange.ENABLE_WORLD_EXCHANGE)
             return ValueTask.CompletedTask;
 
         Player? player = session.Player;

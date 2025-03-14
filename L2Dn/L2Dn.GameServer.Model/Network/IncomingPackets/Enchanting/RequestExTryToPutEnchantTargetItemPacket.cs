@@ -43,7 +43,7 @@ public struct RequestExTryToPutEnchantTargetItemPacket: IIncomingPacket<GameSess
 		{
 			Util.handleIllegalPlayerAction(player,
 				"RequestExTryToPutEnchantTargetItem: " + player +
-				" tried to cheat using a packet manipulation tool! Ban this player!", Config.DEFAULT_PUNISH);
+				" tried to cheat using a packet manipulation tool! Ban this player!", Config.General.DEFAULT_PUNISH);
 
 			return ValueTask.CompletedTask;
 		}

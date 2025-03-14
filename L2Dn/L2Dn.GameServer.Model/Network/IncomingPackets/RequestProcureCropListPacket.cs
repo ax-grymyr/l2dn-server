@@ -126,7 +126,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 		}
 
 		// Used when Config.ALT_MANOR_SAVE_ALL_ACTIONS == true
-		int updateListSize = Config.ALT_MANOR_SAVE_ALL_ACTIONS ? _items.Count : 0;
+		int updateListSize = Config.General.ALT_MANOR_SAVE_ALL_ACTIONS ? _items.Count : 0;
 		List<CropProcure> updateList = new(updateListSize);
 
 		// Proceed the purchase
@@ -170,13 +170,13 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 				continue;
 			}
 			player.addItem("Manor", i.getRewardId(), rewardItemCount, manager, true);
-			if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
+			if (Config.General.ALT_MANOR_SAVE_ALL_ACTIONS)
 			{
 				updateList.Add(cp);
 			}
 		}
 
-		if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
+		if (Config.General.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
 			manor.updateCurrentProcure(castleId, updateList);
 		}

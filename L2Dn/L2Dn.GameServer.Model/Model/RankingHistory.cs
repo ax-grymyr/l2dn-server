@@ -66,7 +66,7 @@ public class RankingHistory
 			{
 				store(); // to update
 			}
-			_nextUpdate = currentTime.AddMilliseconds(Config.CHAR_DATA_STORE_INTERVAL);
+			_nextUpdate = currentTime.AddMilliseconds(Config.General.CHAR_DATA_STORE_INTERVAL);
 
 			try
 			{

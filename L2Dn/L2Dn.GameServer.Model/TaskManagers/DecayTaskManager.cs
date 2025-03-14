@@ -69,17 +69,17 @@ public class DecayTaskManager: Runnable
 		}
 		else
 		{
-			delay = Config.DEFAULT_CORPSE_TIME;
+			delay = Config.Npc.DEFAULT_CORPSE_TIME;
 		}
 
 		if (creature.isAttackable() && (((Attackable) creature).isSpoiled() || ((Attackable) creature).isSeeded()))
 		{
-			delay += Config.SPOILED_CORPSE_EXTEND_TIME;
+			delay += Config.Npc.SPOILED_CORPSE_EXTEND_TIME;
 		}
 
 		if (creature.isPlayer() && creature.getActingPlayer() is {} player)
 		{
-			if (player.isOfflinePlay() && Config.OFFLINE_PLAY_LOGOUT_ON_DEATH)
+			if (player.isOfflinePlay() && Config.OfflinePlay.OFFLINE_PLAY_LOGOUT_ON_DEATH)
 			{
 				delay = 10; // 10 seconds
 			}

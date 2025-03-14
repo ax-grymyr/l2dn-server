@@ -240,7 +240,7 @@ public abstract class ItemContainer
 				}
 
 				// If stackable, end loop as entire count is included in 1 instance of item
-				if (template.isStackable() || !Config.MULTIPLE_ITEM_DROP)
+				if (template.isStackable() || !Config.General.MULTIPLE_ITEM_DROP)
 				{
 					break;
 				}

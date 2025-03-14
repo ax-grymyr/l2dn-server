@@ -38,7 +38,7 @@ public sealed class DbSpawnManager
 	 */
 	public void load()
 	{
-		if (Config.ALT_DEV_NO_SPAWNS)
+		if (Config.General.ALT_DEV_NO_SPAWNS)
 		{
 			return;
 		}
@@ -191,8 +191,8 @@ public sealed class DbSpawnManager
 			}
 			else
 			{
-				respawnMinDelay = npcSpawn.getRespawnMinDelay() * Config.RAID_MIN_RESPAWN_MULTIPLIER;
-				respawnMaxDelay = npcSpawn.getRespawnMaxDelay() * Config.RAID_MAX_RESPAWN_MULTIPLIER;
+				respawnMinDelay = npcSpawn.getRespawnMinDelay() * Config.Npc.RAID_MIN_RESPAWN_MULTIPLIER;
+				respawnMaxDelay = npcSpawn.getRespawnMaxDelay() * Config.Npc.RAID_MAX_RESPAWN_MULTIPLIER;
 				respawnDelay = Rnd.get(respawnMinDelay, respawnMaxDelay);
 				respawnTime = DateTime.UtcNow + respawnDelay;
 			}

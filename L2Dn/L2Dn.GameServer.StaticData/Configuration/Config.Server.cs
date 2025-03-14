@@ -51,10 +51,9 @@ public static partial class Config
         public static int PRECAUTIONARY_RESTART_PERCENTAGE;
         public static int PRECAUTIONARY_RESTART_DELAY;
 
-        internal static void Load(string configPath)
+        internal static void Load(ConfigurationParser parser)
         {
-            ConfigurationParser parser = new(configPath);
-            parser.LoadConfig(FileNames.Configs.ServerConfigFile);
+            parser.LoadConfig(FileNames.Configs.Server);
 
             CHARNAME_TEMPLATE_PATTERN = parser.GetRegex("CnameTemplate", _defaultRegex);
             PET_NAME_TEMPLATE = parser.GetRegex("PetNameTemplate", _defaultRegex);

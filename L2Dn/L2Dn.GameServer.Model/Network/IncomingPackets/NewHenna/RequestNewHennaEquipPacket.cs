@@ -106,7 +106,7 @@ public struct RequestNewHennaEquipPacket: IIncomingPacket<GameSession>
 			{
 				Util.handleIllegalPlayerAction(player,
 					"Exploit attempt: Character " + player.getName() + " of account " + player.getAccountName() +
-					" tryed to add a forbidden henna.", Config.DEFAULT_PUNISH);
+					" tryed to add a forbidden henna.", Config.General.DEFAULT_PUNISH);
 			}
 
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);

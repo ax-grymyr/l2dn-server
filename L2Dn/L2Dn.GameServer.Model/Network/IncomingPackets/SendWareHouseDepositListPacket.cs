@@ -73,7 +73,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 
 		if (player.hasItemRequest())
 		{
-			Util.handleIllegalPlayerAction(player, player + " tried to use enchant Exploit!", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, player + " tried to use enchant Exploit!", Config.General.DEFAULT_PUNISH);
 			return ValueTask.CompletedTask;
 		}
 

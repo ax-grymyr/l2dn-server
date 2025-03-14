@@ -19,7 +19,7 @@ public class OlympiadStat: IUserCommandHandler
 
     public bool useUserCommand(int id, Player player)
     {
-        if (!Config.OLYMPIAD_ENABLED)
+        if (!Config.Olympiad.OLYMPIAD_ENABLED)
         {
             player.sendPacket(SystemMessageId.THE_OLYMPIAD_IS_NOT_HELD_RIGHT_NOW);
             return false;

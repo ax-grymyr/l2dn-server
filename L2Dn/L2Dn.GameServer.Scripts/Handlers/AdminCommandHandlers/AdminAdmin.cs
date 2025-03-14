@@ -244,17 +244,17 @@ public class AdminAdmin: IAdminCommandHandler
 				{
 					case "RateXp":
 					{
-						Config.RATE_XP = pVal;
+						Config.Rates.RATE_XP = pVal;
 						break;
 					}
 					case "RateSp":
 					{
-						Config.RATE_SP = pVal;
+						Config.Rates.RATE_SP = pVal;
 						break;
 					}
 					case "RateDropSpoil":
 					{
-						Config.RATE_SPOIL_DROP_CHANCE_MULTIPLIER = pVal;
+						Config.Rates.RATE_SPOIL_DROP_CHANCE_MULTIPLIER = pVal;
 						break;
 					}
 				}
@@ -305,9 +305,9 @@ public class AdminAdmin: IAdminCommandHandler
 						break;
 					}
 
-					if (targetPlayer.getLevel() < Config.WORLD_CHAT_MIN_LEVEL)
+					if (targetPlayer.getLevel() < Config.General.WORLD_CHAT_MIN_LEVEL)
 					{
-						BuilderUtil.sendSysMessage(activeChar, "Your target's level is below the minimum: " + Config.WORLD_CHAT_MIN_LEVEL);
+						BuilderUtil.sendSysMessage(activeChar, "Your target's level is below the minimum: " + Config.General.WORLD_CHAT_MIN_LEVEL);
 						break;
 					}
 					BuilderUtil.sendSysMessage(activeChar, targetPlayer.getName() + ": has used world chat " + targetPlayer.getWorldChatUsed() + " times out of maximum " + targetPlayer.getWorldChatPoints() + " times.");
@@ -323,9 +323,9 @@ public class AdminAdmin: IAdminCommandHandler
 						break;
 					}
 
-					if (targetPlayer.getLevel() < Config.WORLD_CHAT_MIN_LEVEL)
+					if (targetPlayer.getLevel() < Config.General.WORLD_CHAT_MIN_LEVEL)
 					{
-						BuilderUtil.sendSysMessage(activeChar, "Your target's level is below the minimum: " + Config.WORLD_CHAT_MIN_LEVEL);
+						BuilderUtil.sendSysMessage(activeChar, "Your target's level is below the minimum: " + Config.General.WORLD_CHAT_MIN_LEVEL);
 						break;
 					}
 
@@ -344,7 +344,7 @@ public class AdminAdmin: IAdminCommandHandler
 
 					BuilderUtil.sendSysMessage(activeChar, targetPlayer.getName() + ": times used changed from " + targetPlayer.getWorldChatPoints() + " to " + valueToken);
 					targetPlayer.setWorldChatUsed(valueTokenInt);
-					if (Config.ENABLE_WORLD_CHAT)
+					if (Config.General.ENABLE_WORLD_CHAT)
 					{
 						targetPlayer.sendPacket(new ExWorldCharCntPacket(targetPlayer));
 					}
@@ -438,9 +438,9 @@ public class AdminAdmin: IAdminCommandHandler
 		replyMSG.Append("<center><table width=270><tr><td width=60><button value=\"Main\" action=\"bypass admin_admin\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=150>Config Server Panel</td><td width=60><button value=\"Back\" action=\"bypass -h admin_admin4\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table></center><br>");
 		replyMSG.Append("<center><table width=260><tr><td width=140></td><td width=40></td><td width=40></td></tr>");
 		replyMSG.Append("<tr><td><font color=\"00AA00\">Drop:</font></td><td></td><td></td></tr>");
-		replyMSG.Append("<tr><td><font color=\"LEVEL\">Rate EXP</font> = " + Config.RATE_XP + "</td><td><edit var=\"param1\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateXp $param1\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
-		replyMSG.Append("<tr><td><font color=\"LEVEL\">Rate SP</font> = " + Config.RATE_SP + "</td><td><edit var=\"param2\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateSp $param2\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
-		replyMSG.Append("<tr><td><font color=\"LEVEL\">Rate Drop Spoil</font> = " + Config.RATE_SPOIL_DROP_CHANCE_MULTIPLIER + "</td><td><edit var=\"param4\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateDropSpoil $param4\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+		replyMSG.Append("<tr><td><font color=\"LEVEL\">Rate EXP</font> = " + Config.Rates.RATE_XP + "</td><td><edit var=\"param1\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateXp $param1\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+		replyMSG.Append("<tr><td><font color=\"LEVEL\">Rate SP</font> = " + Config.Rates.RATE_SP + "</td><td><edit var=\"param2\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateSp $param2\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+		replyMSG.Append("<tr><td><font color=\"LEVEL\">Rate Drop Spoil</font> = " + Config.Rates.RATE_SPOIL_DROP_CHANCE_MULTIPLIER + "</td><td><edit var=\"param4\" width=40 height=15></td><td><button value=\"Set\" action=\"bypass -h admin_setconfig RateDropSpoil $param4\" width=40 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
 		replyMSG.Append("<tr><td width=140></td><td width=40></td><td width=40></td></tr>");
 		replyMSG.Append("</table></body></html>");
 

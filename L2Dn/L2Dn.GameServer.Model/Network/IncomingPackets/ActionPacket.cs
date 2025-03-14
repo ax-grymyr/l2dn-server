@@ -125,7 +125,7 @@ public struct ActionPacket: IIncomingPacket<GameSession>
 			}
 			case 1:
 			{
-				if (!player.isGM() && (!(obj.isNpc() && Config.ALT_GAME_VIEWNPC) || obj.isFakePlayer()))
+				if (!player.isGM() && (!(obj.isNpc() && Config.Npc.ALT_GAME_VIEWNPC) || obj.isFakePlayer()))
 				{
 					obj.onAction(player, false);
 				}

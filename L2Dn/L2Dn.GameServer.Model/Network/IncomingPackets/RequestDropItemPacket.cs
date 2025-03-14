@@ -44,9 +44,9 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 
 	    Item? item = player.getInventory().getItemByObjectId(_objectId);
 	    if (item == null || _count == 0 || !player.validateItemManipulation(_objectId, "drop") ||
-	        (!Config.ALLOW_DISCARDITEM && !player.canOverrideCond(PlayerCondOverride.DROP_ALL_ITEMS)) ||
+	        (!Config.General.ALLOW_DISCARDITEM && !player.canOverrideCond(PlayerCondOverride.DROP_ALL_ITEMS)) ||
 	        (!item.isDropable() && !(player.canOverrideCond(PlayerCondOverride.DROP_ALL_ITEMS) &&
-	                                 Config.GM_TRADE_RESTRICTED_ITEMS)) ||
+	                                 Config.General.GM_TRADE_RESTRICTED_ITEMS)) ||
 	        (item.getItemType() == EtcItemType.PET_COLLAR && player.havePetInvItems()) ||
 	        player.isInsideZone(ZoneId.NO_ITEM_DROP))
 	    {
@@ -55,7 +55,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 	    }
 
 	    if (item.isQuestItem() && !(player.canOverrideCond(PlayerCondOverride.DROP_ALL_ITEMS) &&
-	                                Config.GM_TRADE_RESTRICTED_ITEMS))
+	                                Config.General.GM_TRADE_RESTRICTED_ITEMS))
 		    return ValueTask.CompletedTask;
 
 	    if (_count > item.getCount())
@@ -74,7 +74,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 	    {
 		    Util.handleIllegalPlayerAction(player,
 			    "[RequestDropItem] Character " + player.getName() + " of account " + player.getAccountName() +
-			    " tried to drop item with oid " + _objectId + " but has count < 0!", Config.DEFAULT_PUNISH);
+			    " tried to drop item with oid " + _objectId + " but has count < 0!", Config.General.DEFAULT_PUNISH);
 		    return ValueTask.CompletedTask;
 	    }
 
@@ -83,11 +83,11 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 		    Util.handleIllegalPlayerAction(player,
 			    "[RequestDropItem] Character " + player.getName() + " of account " + player.getAccountName() +
 			    " tried to drop non-stackable item with oid " + _objectId + " but has count > 1!",
-			    Config.DEFAULT_PUNISH);
+			    Config.General.DEFAULT_PUNISH);
 		    return ValueTask.CompletedTask;
 	    }
 
-	    if (Config.JAIL_DISABLE_TRANSACTION && player.isJailed())
+	    if (Config.General.JAIL_DISABLE_TRANSACTION && player.isJailed())
 	    {
 		    player.sendMessage("You cannot drop items in Jail.");
 		    return ValueTask.CompletedTask;

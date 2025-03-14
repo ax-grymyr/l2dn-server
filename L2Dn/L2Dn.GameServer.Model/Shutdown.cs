@@ -312,7 +312,7 @@ public class Shutdown
 
 		try
 		{
-			if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS && !Config.STORE_OFFLINE_TRADE_IN_REALTIME)
+			if ((Config.OfflineTrade.OFFLINE_TRADE_ENABLE || Config.OfflineTrade.OFFLINE_CRAFT_ENABLE) && Config.OfflineTrade.RESTORE_OFFLINERS && !Config.OfflineTrade.STORE_OFFLINE_TRADE_IN_REALTIME)
 			{
 				OfflineTraderTable.getInstance().storeOffliners();
 				LOGGER.Info("Offline Traders Table: Offline shops stored(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
@@ -435,7 +435,7 @@ public class Shutdown
 		LOGGER.Info("Cursed Weapons Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 
 		// Save all manor data
-		if (!Config.ALT_MANOR_SAVE_ALL_ACTIONS)
+		if (!Config.General.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
 			CastleManorManager.getInstance().storeMe();
 			LOGGER.Info("Castle Manor Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
@@ -454,14 +454,14 @@ public class Shutdown
 		LOGGER.Info("SchemeBufferTable data has been saved.");
 
 		// Save World Exchange.
-		if (Config.ENABLE_WORLD_EXCHANGE)
+		if (Config.WorldExchange.ENABLE_WORLD_EXCHANGE)
 		{
 			WorldExchangeManager.getInstance().storeMe();
 			LOGGER.Info("World Exchange Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		}
 
 		// Save items on ground before closing
-		if (Config.SAVE_DROPPED_ITEM)
+		if (Config.General.SAVE_DROPPED_ITEM)
 		{
 			ItemsOnGroundManager.getInstance().saveInDb();
 			LOGGER.Info("Items On Ground Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
@@ -470,7 +470,7 @@ public class Shutdown
 		}
 
 		// Save bot reports to database
-		if (Config.BOTREPORT_ENABLE)
+		if (Config.General.BOTREPORT_ENABLE)
 		{
 			BotReportTable.getInstance().saveReportedCharData();
 			LOGGER.Info("Bot Report Table: Successfully saved reports to database!");

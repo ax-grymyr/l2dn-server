@@ -94,28 +94,28 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 						return ValueTask.CompletedTask;
 					}
 
-					if (Config.DUALBOX_CHECK_MAX_PLAYERS_PER_IP > 0 && !AntiFeedManager.getInstance()
-						    .tryAddClient(AntiFeedManager.GAME_ID, session, Config.DUALBOX_CHECK_MAX_PLAYERS_PER_IP))
+					if (Config.DualboxCheck.DUALBOX_CHECK_MAX_PLAYERS_PER_IP > 0 && !AntiFeedManager.getInstance()
+						    .tryAddClient(AntiFeedManager.GAME_ID, session, Config.DualboxCheck.DUALBOX_CHECK_MAX_PLAYERS_PER_IP))
 					{
 						HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/IPRestriction.htm", null);
 
 						htmlContent.Replace("%max%", AntiFeedManager.getInstance()
-							.getLimit(session, Config.DUALBOX_CHECK_MAX_PLAYERS_PER_IP).ToString());
+							.getLimit(session, Config.DualboxCheck.DUALBOX_CHECK_MAX_PLAYERS_PER_IP).ToString());
 
 						NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(null, 0, htmlContent);
 						connection.Send(ref msg);
 						return ValueTask.CompletedTask;
 					}
 
-					if (Config.FACTION_SYSTEM_ENABLED && Config.FACTION_BALANCE_ONLINE_PLAYERS)
+					if (Config.FactionSystem.FACTION_SYSTEM_ENABLED && Config.FactionSystem.FACTION_BALANCE_ONLINE_PLAYERS)
 					{
 						if (charInfo.IsGood && World.getInstance().getAllGoodPlayers().Count >=
 						    World.getInstance().getAllEvilPlayers().Count +
-						    Config.FACTION_BALANCE_PLAYER_EXCEED_LIMIT)
+						    Config.FactionSystem.FACTION_BALANCE_PLAYER_EXCEED_LIMIT)
 						{
 							HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/Faction/ExceededOnlineLimit.htm", null);
-							htmlContent.Replace("%more%", Config.FACTION_GOOD_TEAM_NAME);
-							htmlContent.Replace("%less%", Config.FACTION_EVIL_TEAM_NAME);
+							htmlContent.Replace("%more%", Config.FactionSystem.FACTION_GOOD_TEAM_NAME);
+							htmlContent.Replace("%less%", Config.FactionSystem.FACTION_EVIL_TEAM_NAME);
 
 							NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(null, 0, htmlContent);
 							connection.Send(ref msg);
@@ -124,12 +124,12 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 
 						if (charInfo.IsEvil && World.getInstance().getAllEvilPlayers().Count >=
 						    World.getInstance().getAllGoodPlayers().Count +
-						    Config.FACTION_BALANCE_PLAYER_EXCEED_LIMIT)
+						    Config.FactionSystem.FACTION_BALANCE_PLAYER_EXCEED_LIMIT)
 						{
 							HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/Faction/ExceededOnlineLimit.htm", null);
 
-							htmlContent.Replace("%more%", Config.FACTION_EVIL_TEAM_NAME);
-							htmlContent.Replace("%less%", Config.FACTION_GOOD_TEAM_NAME);
+							htmlContent.Replace("%more%", Config.FactionSystem.FACTION_EVIL_TEAM_NAME);
+							htmlContent.Replace("%less%", Config.FactionSystem.FACTION_GOOD_TEAM_NAME);
 
 							NpcHtmlMessagePacket msg = new NpcHtmlMessagePacket(null, 0, htmlContent);
 							connection.Send(ref msg);
@@ -145,7 +145,7 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 					CharInfoTable.getInstance().addName(player);
 
 					// Prevent instant disappear of invisible GMs on login.
-					if (player.isGM() && Config.GM_STARTUP_INVISIBLE && AdminData.getInstance()
+					if (player.isGM() && Config.General.GM_STARTUP_INVISIBLE && AdminData.getInstance()
 						    .hasAccess("admin_invisible", player.getAccessLevel()))
 					{
 						player.setInvisible(true);

@@ -1503,7 +1503,7 @@ public class Quest: AbstractScript, IIdentifiable
 				if (q == null)
 				{
 					LOGGER.Warn("Unknown quest " + questId + " for " + player);
-					if (Config.AUTODELETE_INVALID_QUEST_DATA)
+					if (Config.General.AUTODELETE_INVALID_QUEST_DATA)
 					{
 						ctx.CharacterQuests.Where(r => r.CharacterId == characterId && r.Name == questId)
 							.ExecuteDelete();
@@ -1536,7 +1536,7 @@ public class Quest: AbstractScript, IIdentifiable
 				if (qs == null)
 				{
 					LOGGER.Warn("Lost variable " + var + " in quest " + questId + " for " + player);
-					if (Config.AUTODELETE_INVALID_QUEST_DATA)
+					if (Config.General.AUTODELETE_INVALID_QUEST_DATA)
 					{
 						ctx.CharacterQuests.Where(r =>
 								r.CharacterId == characterId && r.Name == questId && r.Variable == var)
@@ -3090,7 +3090,7 @@ public class Quest: AbstractScript, IIdentifiable
 
 	public void giveStoryBuffReward(Npc npc, Player player)
 	{
-		if (Config.ENABLE_STORY_QUEST_BUFF_REWARD)
+		if (Config.General.ENABLE_STORY_QUEST_BUFF_REWARD)
 		{
 			foreach (SkillHolder holder in _storyQuestBuffs)
 			{

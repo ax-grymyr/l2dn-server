@@ -29,13 +29,13 @@ public class PAttackFinalizer : StatFunction
 			baseValue += calcEnchantBodyPart(creature, ItemTemplate.SLOT_CHEST, ItemTemplate.SLOT_FULL_ARMOR);
 		}
 
-		if (Config.CHAMPION_ENABLE && creature.isChampion())
+		if (Config.ChampionMonsters.CHAMPION_ENABLE && creature.isChampion())
 		{
-			baseValue *= Config.CHAMPION_ATK;
+			baseValue *= Config.ChampionMonsters.CHAMPION_ATK;
 		}
 		if (creature.isRaid())
 		{
-			baseValue *= Config.RAID_PATTACK_MULTIPLIER;
+			baseValue *= Config.Npc.RAID_PATTACK_MULTIPLIER;
 		}
 		baseValue *= BaseStat.STR.calcBonus(creature) * creature.getLevelMod();
 		return validateValue(creature, StatUtil.defaultValue(creature, stat, baseValue), 0, creature.isPlayable() ? Config.Character.MAX_PATK : double.MaxValue);

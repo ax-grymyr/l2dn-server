@@ -297,9 +297,9 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 		{
 			pointDiff = 1;
 		}
-		else if (pointDiff > Config.ALT_OLY_MAX_POINTS)
+		else if (pointDiff > Config.Olympiad.ALT_OLY_MAX_POINTS)
 		{
-			pointDiff = Config.ALT_OLY_MAX_POINTS;
+			pointDiff = Config.Olympiad.ALT_OLY_MAX_POINTS;
 		}
 
 		int points;
@@ -314,13 +314,13 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				{
 					try
 					{
-						points = Math.Min(playerOnePoints / 3, Config.ALT_OLY_MAX_POINTS);
+						points = Math.Min(playerOnePoints / 3, Config.Olympiad.ALT_OLY_MAX_POINTS);
 						removePointsFromParticipant(_playerOne, points);
 						list1.Add(new OlympiadInfo(_playerOne.getName(), _playerOne.getClanName(), _playerOne.getClanId(), _playerOne.getBaseClass(), _damageP1, playerOnePoints - points, -points));
 
 						winside = 2;
 
-						if (Config.ALT_OLY_LOG_FIGHTS)
+						if (Config.Olympiad.ALT_OLY_LOG_FIGHTS)
 						{
 							LOGGER_OLYMPIAD.Info(_playerOne.getName() + " default," + _playerOne + "," + _playerTwo + ",0,0,0,0," + points + "," + getType());
 						}
@@ -334,7 +334,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				{
 					try
 					{
-						points = Math.Min(playerTwoPoints / 3, Config.ALT_OLY_MAX_POINTS);
+						points = Math.Min(playerTwoPoints / 3, Config.Olympiad.ALT_OLY_MAX_POINTS);
 						removePointsFromParticipant(_playerTwo, points);
 						list2.Add(new OlympiadInfo(_playerTwo.getName(), _playerTwo.getClanName(), _playerTwo.getClanId(), _playerTwo.getBaseClass(), _damageP2, playerTwoPoints - points, -points));
 
@@ -347,7 +347,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 							winside = 1;
 						}
 
-						if (Config.ALT_OLY_LOG_FIGHTS)
+						if (Config.Olympiad.ALT_OLY_LOG_FIGHTS)
 						{
 							LOGGER_OLYMPIAD.Info(_playerTwo.getName() + " default," + _playerOne + "," + _playerTwo + ",0,0,0,0," + points + "," + getType());
 						}
@@ -400,9 +400,9 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 
 					winside = 1;
 
-					rewardParticipant(_playerOne.getPlayer(), Config.ALT_OLY_WINNER_REWARD); // Winner
+					rewardParticipant(_playerOne.getPlayer(), Config.Olympiad.ALT_OLY_WINNER_REWARD); // Winner
 
-					if (Config.ALT_OLY_LOG_FIGHTS)
+					if (Config.Olympiad.ALT_OLY_LOG_FIGHTS)
 					{
 						LOGGER_OLYMPIAD.Info(_playerTwo.getName() + " crash," + _playerOne + "," + _playerTwo + ",0,0,0,0," + pointDiff + "," + getType());
 					}
@@ -429,9 +429,9 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 
 					winside = 2;
 
-					rewardParticipant(_playerTwo.getPlayer(), Config.ALT_OLY_WINNER_REWARD); // Winner
+					rewardParticipant(_playerTwo.getPlayer(), Config.Olympiad.ALT_OLY_WINNER_REWARD); // Winner
 
-					if (Config.ALT_OLY_LOG_FIGHTS)
+					if (Config.Olympiad.ALT_OLY_LOG_FIGHTS)
 					{
 						LOGGER_OLYMPIAD.Info(_playerOne.getName() + " crash," + _playerOne + "," + _playerTwo + ",0,0,0,0," + pointDiff + "," + getType());
 					}
@@ -456,7 +456,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 
 					tie = true;
 
-					if (Config.ALT_OLY_LOG_FIGHTS)
+					if (Config.Olympiad.ALT_OLY_LOG_FIGHTS)
 					{
 						LOGGER_OLYMPIAD.Info("both crash," + _playerOne.getName() + "," + _playerOne + ",0,0,0,0," + _playerTwo + "," + pointDiff + "," + getType());
 					}
@@ -554,8 +554,8 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				// Save Fight Result
 				saveResults(_playerOne, _playerTwo, 1, _startTime, _fightTime, getType());
 
-				rewardParticipant(_playerOne.getPlayer(), Config.ALT_OLY_WINNER_REWARD); // Winner
-				rewardParticipant(_playerTwo.getPlayer(), Config.ALT_OLY_LOSER_REWARD); // Loser
+				rewardParticipant(_playerOne.getPlayer(), Config.Olympiad.ALT_OLY_WINNER_REWARD); // Winner
+				rewardParticipant(_playerTwo.getPlayer(), Config.Olympiad.ALT_OLY_LOSER_REWARD); // Loser
 
 				// Notify to scripts
 				if (olympiadEvents.HasSubscribers<OnOlympiadMatchResult>())
@@ -584,8 +584,8 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				// Save Fight Result
 				saveResults(_playerOne, _playerTwo, 2, _startTime, _fightTime, getType());
 
-				rewardParticipant(_playerTwo.getPlayer(), Config.ALT_OLY_WINNER_REWARD); // Winner
-				rewardParticipant(_playerOne.getPlayer(), Config.ALT_OLY_LOSER_REWARD); // Loser
+				rewardParticipant(_playerTwo.getPlayer(), Config.Olympiad.ALT_OLY_WINNER_REWARD); // Winner
+				rewardParticipant(_playerOne.getPlayer(), Config.Olympiad.ALT_OLY_LOSER_REWARD); // Loser
 
 				// Notify to scripts
 				if (olympiadEvents.HasSubscribers<OnOlympiadMatchResult>())
@@ -601,12 +601,12 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 				sm = new SystemMessagePacket(SystemMessageId.THE_DUEL_HAS_ENDED_IN_A_TIE);
 				stadium.broadcastPacket(sm);
 
-				int value = Math.Min(playerOnePoints / getDivider(), Config.ALT_OLY_MAX_POINTS);
+				int value = Math.Min(playerOnePoints / getDivider(), Config.Olympiad.ALT_OLY_MAX_POINTS);
 
 				removePointsFromParticipant(_playerOne, value);
 				list1.Add(new OlympiadInfo(_playerOne.getName(), _playerOne.getClanName(), _playerOne.getClanId(), _playerOne.getBaseClass(), _damageP1, playerOnePoints - value, -value));
 
-				value = Math.Min(playerTwoPoints / getDivider(), Config.ALT_OLY_MAX_POINTS);
+				value = Math.Min(playerTwoPoints / getDivider(), Config.Olympiad.ALT_OLY_MAX_POINTS);
 				removePointsFromParticipant(_playerTwo, value);
 				list2.Add(new OlympiadInfo(_playerTwo.getName(), _playerTwo.getClanName(), _playerTwo.getClanId(), _playerTwo.getBaseClass(), _damageP2, playerTwoPoints - value, -value));
 
@@ -631,7 +631,7 @@ public abstract class OlympiadGameNormal: AbstractOlympiadGame
 
 			stadium.broadcastPacket(result);
 
-			if (Config.ALT_OLY_LOG_FIGHTS)
+			if (Config.Olympiad.ALT_OLY_LOG_FIGHTS)
 			{
 				LOGGER_OLYMPIAD.Info(winner + "," + _playerOne.getName() + "," + _playerOne + "," + _playerTwo + "," + playerOneHp + "," + playerTwoHp + "," + _damageP1 + "," + _damageP2 + "," + pointDiff + "," + getType());
 			}

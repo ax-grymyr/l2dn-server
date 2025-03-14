@@ -82,7 +82,7 @@ public class MinionList
 	 */
 	public void onMasterDie(bool force)
 	{
-		if (_master.isRaid() || force || Config.FORCE_DELETE_MINIONS)
+		if (_master.isRaid() || force || Config.Npc.FORCE_DELETE_MINIONS)
 		{
 			if (_spawnedMinions.Count != 0)
 			{
@@ -126,7 +126,7 @@ public class MinionList
 		}
 		_spawnedMinions.Remove(minion);
 
-		int time = respawnTime < 0 ? _master.isRaid() ? (int) Config.RAID_MINION_RESPAWN_TIMER : 0 : respawnTime;
+		int time = respawnTime < 0 ? _master.isRaid() ? (int) Config.Npc.RAID_MINION_RESPAWN_TIMER : 0 : respawnTime;
 		if (time > 0 && !_master.isAlikeDead())
 		{
 			_respawnTasks.Add(ThreadPool.schedule(new MinionRespawnTask(this, minion), time));

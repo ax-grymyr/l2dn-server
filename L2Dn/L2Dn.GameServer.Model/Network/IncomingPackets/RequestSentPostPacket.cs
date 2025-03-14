@@ -20,7 +20,7 @@ public struct RequestSentPostPacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        if (!Config.ALLOW_MAIL)
+        if (!Config.General.ALLOW_MAIL)
             return ValueTask.CompletedTask;
 
         Player? player = session.Player;
@@ -39,7 +39,7 @@ public struct RequestSentPostPacket: IIncomingPacket<GameSession>
 
         if (msg.getSenderId() != player.ObjectId)
         {
-            Util.handleIllegalPlayerAction(player, player + " tried to read not own post!", Config.DEFAULT_PUNISH);
+            Util.handleIllegalPlayerAction(player, player + " tried to read not own post!", Config.General.DEFAULT_PUNISH);
             return ValueTask.CompletedTask;
         }
 

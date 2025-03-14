@@ -13,7 +13,7 @@ public class TrainingHolder
 	private readonly int _level;
 	private readonly DateTime _startTime;
 	private DateTime? _endTime;
-	private static readonly TimeSpan MaxDuration = TimeSpan.FromSeconds(Config.TRAINING_CAMP_MAX_DURATION);
+	private static readonly TimeSpan MaxDuration = TimeSpan.FromSeconds(Config.TrainingCamp.TRAINING_CAMP_MAX_DURATION);
 
 	public TrainingHolder(int objectId, int classIndex, int level, DateTime startTime, DateTime? endTime)
 	{
@@ -61,7 +61,7 @@ public class TrainingHolder
 
 	public bool isValid(Player player)
 	{
-		return Config.TRAINING_CAMP_ENABLE && player.ObjectId == _objectId && player.getClassIndex() == _classIndex;
+		return Config.TrainingCamp.TRAINING_CAMP_ENABLE && player.ObjectId == _objectId && player.getClassIndex() == _classIndex;
 	}
 
 	public TimeSpan getElapsedTime()

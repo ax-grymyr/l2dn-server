@@ -34,7 +34,7 @@ public struct RequestConfirmCancelItemPacket: IIncomingPacket<GameSession>
         {
             Util.handleIllegalPlayerAction(player,
                 "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-                " tryied to destroy augment on item that doesn't own.", Config.DEFAULT_PUNISH);
+                " tryied to destroy augment on item that doesn't own.", Config.General.DEFAULT_PUNISH);
 
             return ValueTask.CompletedTask;
         }

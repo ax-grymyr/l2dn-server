@@ -36,7 +36,7 @@ public class BoatManager
 
 	public Boat? getNewBoat(int boatId, int x, int y, int z, int heading)
 	{
-		if (!Config.ALLOW_BOAT)
+		if (!Config.General.ALLOW_BOAT)
 		{
 			return null;
 		}
@@ -163,9 +163,9 @@ public class BoatManager
 	{
 		IEnumerable<Player> players = World.getInstance().getPlayers().Where(player =>
 			double.Hypot(player.getX() - point1.Location.X, player.getY() - point1.Location.Y) <
-            Config.BOAT_BROADCAST_RADIUS || //
+            Config.General.BOAT_BROADCAST_RADIUS || //
 			double.Hypot(player.getX() - point2.Location.X, player.getY() - point2.Location.Y) <
-            Config.BOAT_BROADCAST_RADIUS);
+            Config.General.BOAT_BROADCAST_RADIUS);
 
 		return new PacketSendUtil(players);
 	}

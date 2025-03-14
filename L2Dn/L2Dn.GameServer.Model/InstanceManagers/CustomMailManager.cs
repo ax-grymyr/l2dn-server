@@ -102,7 +102,7 @@ public class CustomMailManager
 			{
 				LOGGER.Warn(GetType().Name + ": Error reading from database: " + e);
 			}
-		}, Config.CUSTOM_MAIL_MANAGER_DELAY, Config.CUSTOM_MAIL_MANAGER_DELAY);
+		}, Config.CustomMailManager.CUSTOM_MAIL_MANAGER_DELAY, Config.CustomMailManager.CUSTOM_MAIL_MANAGER_DELAY);
 
 		LOGGER.Info(GetType().Name +": Enabled.");
 	}

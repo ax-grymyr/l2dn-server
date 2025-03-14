@@ -215,9 +215,9 @@ public class AdminMenu: IAdminCommandHandler
 				target.reduceCurrentHp(target.getMaxHp() + target.getMaxCp() + 1, activeChar, null);
 				filename = "charmanage.htm";
 			}
-			else if (Config.CHAMPION_ENABLE && target.isChampion())
+			else if (Config.ChampionMonsters.CHAMPION_ENABLE && target.isChampion())
 			{
-				target.reduceCurrentHp(target.getMaxHp() * Config.CHAMPION_HP + 1, activeChar, null);
+				target.reduceCurrentHp(target.getMaxHp() * Config.ChampionMonsters.CHAMPION_HP + 1, activeChar, null);
 			}
 			else
 			{

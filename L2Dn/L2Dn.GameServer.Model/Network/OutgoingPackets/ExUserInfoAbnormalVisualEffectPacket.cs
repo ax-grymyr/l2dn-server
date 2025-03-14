@@ -22,7 +22,7 @@ public readonly struct ExUserInfoAbnormalVisualEffectPacket: IOutgoingPacket
         writer.WriteInt32(_player.ObjectId);
         writer.WriteInt32(_player.getTransformationId());
         Set<AbnormalVisualEffect> abnormalVisualEffects = _player.getEffectList().getCurrentAbnormalVisualEffects();
-        Team team = Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None ? _player.getTeam() : Team.NONE;
+        Team team = Config.General.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None && Config.General.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None ? _player.getTeam() : Team.NONE;
         bool isInvisible = _player.isInvisible();
         writer.WriteInt32(abnormalVisualEffects.size() + (isInvisible ? 1 : 0) + (team != Team.NONE ? 1 : 0));
         foreach (AbnormalVisualEffect abnormalVisualEffect in abnormalVisualEffects)
@@ -35,14 +35,14 @@ public readonly struct ExUserInfoAbnormalVisualEffectPacket: IOutgoingPacket
         }
         if (team == Team.BLUE)
         {
-            if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
+            if (Config.General.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
             {
-                writer.WriteInt16((short)Config.BLUE_TEAM_ABNORMAL_EFFECT);
+                writer.WriteInt16((short)Config.General.BLUE_TEAM_ABNORMAL_EFFECT);
             }
         }
-        else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
+        else if (team == Team.RED && Config.General.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
         {
-            writer.WriteInt16((short)Config.RED_TEAM_ABNORMAL_EFFECT);
+            writer.WriteInt16((short)Config.General.RED_TEAM_ABNORMAL_EFFECT);
         }
     }
 }

@@ -210,7 +210,7 @@ public class PlayerRandomCraft
 		}
 		_player.addRequest(new RandomCraftRequest(_player));
 
-		if (_fullCraftPoints > 0 && _player.reduceAdena("RandomCraft Refresh", Config.RANDOM_CRAFT_REFRESH_FEE, _player, true))
+		if (_fullCraftPoints > 0 && _player.reduceAdena("RandomCraft Refresh", Config.RandomCraft.RANDOM_CRAFT_REFRESH_FEE, _player, true))
 		{
 			_player.sendPacket(new ExCraftInfoPacket(_player));
 			_player.sendPacket(new ExCraftRandomRefreshPacket());
@@ -282,7 +282,7 @@ public class PlayerRandomCraft
 
 		_player.addRequest(new RandomCraftRequest(_player));
 
-		if (_player.reduceAdena("RandomCraft Make", Config.RANDOM_CRAFT_CREATE_FEE, _player, true))
+		if (_player.reduceAdena("RandomCraft Make", Config.RandomCraft.RANDOM_CRAFT_CREATE_FEE, _player, true))
 		{
 			int madeId = Rnd.get(0, 4);
 			RandomCraftRewardItemHolder holder = _rewardList[madeId];

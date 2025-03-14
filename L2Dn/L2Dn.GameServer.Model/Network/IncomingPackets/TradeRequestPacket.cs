@@ -142,7 +142,7 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (Config.JAIL_DISABLE_TRANSACTION && (player.isJailed() || partner.isJailed()))
+		if (Config.General.JAIL_DISABLE_TRANSACTION && (player.isJailed() || partner.isJailed()))
 		{
 			player.sendMessage("You cannot trade while you are in in Jail.");
 			return ValueTask.CompletedTask;

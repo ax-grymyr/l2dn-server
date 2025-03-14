@@ -39,7 +39,7 @@ public class AdminServerInfo: IAdminCommandHandler
 				GameTimeTaskManager.getInstance().getGameMinute());
 
 			htmlContent.Replace("%dayNight%", GameTimeTaskManager.getInstance().isNight() ? "Night" : "Day");
-			htmlContent.Replace("%geodata%", Config.PATHFINDING > 0 ? "Enabled" : "Disabled");
+			htmlContent.Replace("%geodata%", Config.GeoEngine.PATHFINDING > 0 ? "Enabled" : "Disabled");
 			htmlContent.Replace("%serverTime%", DateTime.UtcNow.ToString("u"));
 			htmlContent.Replace("%serverUpTime%", getServerUpTime());
 			htmlContent.Replace("%onlineAll%", getPlayersCount("ALL").ToString());

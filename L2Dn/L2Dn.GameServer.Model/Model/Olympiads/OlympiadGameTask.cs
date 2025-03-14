@@ -101,7 +101,7 @@ public class OlympiadGameTask: Runnable
 				case OlympiadGameState.BEGIN:
 				{
 					_state = OlympiadGameState.TELEPORT_TO_ARENA;
-					_countDown = Config.ALT_OLY_WAIT_TIME;
+					_countDown = Config.Olympiad.ALT_OLY_WAIT_TIME;
 					break;
 				}
 				// Teleport to arena countdown
@@ -211,7 +211,7 @@ public class OlympiadGameTask: Runnable
 				case OlympiadGameState.BATTLE_IN_PROGRESS:
 				{
 					_countDown += 1000;
-					int remaining = (int)((Config.ALT_OLY_BATTLE - _countDown) / 1000);
+					int remaining = (int)((Config.Olympiad.ALT_OLY_BATTLE - _countDown) / 1000);
 					foreach (int announceTime in BATTLE_END_TIME_SECOND)
 					{
 						if (announceTime == remaining)
@@ -223,7 +223,7 @@ public class OlympiadGameTask: Runnable
 						}
 					}
 
-					if (checkBattle() || _countDown > Config.ALT_OLY_BATTLE)
+					if (checkBattle() || _countDown > Config.Olympiad.ALT_OLY_BATTLE)
 					{
 						_state = OlympiadGameState.GAME_STOPPED;
 					}

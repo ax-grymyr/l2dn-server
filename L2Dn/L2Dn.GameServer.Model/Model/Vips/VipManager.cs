@@ -13,11 +13,11 @@ namespace L2Dn.GameServer.Model.Vips;
 
 public class VipManager
 {
-	private static readonly byte VIP_MAX_TIER = (byte) Config.VIP_SYSTEM_MAX_TIER;
+	private static readonly byte VIP_MAX_TIER = (byte) Config.VipSystem.VIP_SYSTEM_MAX_TIER;
 
 	protected VipManager()
 	{
-		if (!Config.VIP_SYSTEM_ENABLED)
+		if (!Config.VipSystem.VIP_SYSTEM_ENABLED)
 		{
 			return;
 		}
@@ -43,7 +43,7 @@ public class VipManager
 
 	private bool canReceiveGift(Player player)
 	{
-		if (!Config.VIP_SYSTEM_ENABLED)
+		if (!Config.VipSystem.VIP_SYSTEM_ENABLED)
 		{
 			return false;
 		}

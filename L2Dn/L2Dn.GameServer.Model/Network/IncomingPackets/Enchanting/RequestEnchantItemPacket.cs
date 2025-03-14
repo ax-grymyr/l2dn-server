@@ -108,7 +108,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 		if (player.getInventory().destroyItem("Enchant", scroll.ObjectId, 1, player, item) == null)
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
-			Util.handleIllegalPlayerAction(player, player + " tried to enchant with a scroll he doesn't have", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, player + " tried to enchant with a scroll he doesn't have", Config.General.DEFAULT_PUNISH);
 			player.removeRequest<EnchantItemRequest>();
 			player.sendPacket(new EnchantResultPacket(EnchantResultPacket.ERROR, null, null, 0));
 			return ValueTask.CompletedTask;
@@ -118,7 +118,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 		if (support != null && player.getInventory().destroyItem("Enchant", support.ObjectId, 1, player, item) == null)
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
-			Util.handleIllegalPlayerAction(player, player + " tried to enchant with a support item he doesn't have", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, player + " tried to enchant with a support item he doesn't have", Config.General.DEFAULT_PUNISH);
 			player.removeRequest<EnchantItemRequest>();
 			player.sendPacket(new EnchantResultPacket(EnchantResultPacket.ERROR, null, null, 0));
 			return ValueTask.CompletedTask;
@@ -235,7 +235,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 						}
 					}
 					player.sendPacket(new EnchantResultPacket(EnchantResultPacket.SUCCESS, new ItemHolder(item.getId(), 1), null, item.getEnchantLevel()));
-					if (Config.LOG_ITEM_ENCHANTS)
+					if (Config.General.LOG_ITEM_ENCHANTS)
 					{
 						StringBuilder sb = new StringBuilder();
 						if (item.getEnchantLevel() > 0)
@@ -339,7 +339,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 						// Safe enchant: Remain old value.
 						player.sendPacket(SystemMessageId.ENCHANT_FAILED_THE_ENCHANT_SKILL_FOR_THE_CORRESPONDING_ITEM_WILL_BE_EXACTLY_RETAINED);
 						player.sendPacket(new EnchantResultPacket(EnchantResultPacket.SAFE_FAIL_02, new ItemHolder(item.getId(), 1), null, item.getEnchantLevel()));
-						if (Config.LOG_ITEM_ENCHANTS)
+						if (Config.General.LOG_ITEM_ENCHANTS)
 						{
 							StringBuilder sb = new StringBuilder();
 							if (item.getEnchantLevel() > 0)
@@ -460,7 +460,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 							}
 							player.sendPacket(new EnchantResultPacket(EnchantResultPacket.FAIL, new ItemHolder(item.getId(), 1), null, item.getEnchantLevel()));
 							item.updateDatabase();
-							if (Config.LOG_ITEM_ENCHANTS)
+							if (Config.General.LOG_ITEM_ENCHANTS)
 							{
 								StringBuilder sb = new StringBuilder();
 								if (item.getEnchantLevel() > 0)
@@ -523,10 +523,10 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 							if (player.getInventory().destroyItem("Enchant", item, player, null) == null)
 							{
 								// Unable to destroy item, cheater?
-								Util.handleIllegalPlayerAction(player, "Unable to delete item on enchant failure from " + player + ", possible cheater !", Config.DEFAULT_PUNISH);
+								Util.handleIllegalPlayerAction(player, "Unable to delete item on enchant failure from " + player + ", possible cheater !", Config.General.DEFAULT_PUNISH);
 								player.removeRequest<EnchantItemRequest>();
 								player.sendPacket(new EnchantResultPacket(EnchantResultPacket.ERROR, null, null, 0));
-								if (Config.LOG_ITEM_ENCHANTS)
+								if (Config.General.LOG_ITEM_ENCHANTS)
 								{
 									StringBuilder sb = new StringBuilder();
 									if (item.getEnchantLevel() > 0)
@@ -636,7 +636,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 							}
 
 							player.sendPacket(new ExEnchantChallengePointInfoPacket(player));
-							if (Config.LOG_ITEM_ENCHANTS)
+							if (Config.General.LOG_ITEM_ENCHANTS)
 							{
 								StringBuilder sb = new StringBuilder();
 								if (item.getEnchantLevel() > 0)

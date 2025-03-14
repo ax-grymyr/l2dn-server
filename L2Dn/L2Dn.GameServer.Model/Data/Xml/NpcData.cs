@@ -48,7 +48,7 @@ public class NpcData: DataReaderBase
 
 		LOGGER.Info(GetType().Name + ": Loaded " + _npcs.Count + " NPCs.");
 
-		if (Config.CUSTOM_NPC_DATA)
+		if (Config.General.CUSTOM_NPC_DATA)
 		{
 			int npcCount = _npcs.Count;
 			LoadXmlDocuments(DataFileLocation.Data, "stats/npcs/custom").ForEach(t =>
@@ -354,7 +354,7 @@ public class NpcData: DataReaderBase
 					int itemId = itemEl.GetAttributeValueAsInt32("id");
 
 					// Drop materials for random craft configuration.
-					if (!Config.DROP_RANDOM_CRAFT_MATERIALS && itemId >= 92908 && itemId <= 92919)
+					if (!Config.RandomCraft.DROP_RANDOM_CRAFT_MATERIALS && itemId >= 92908 && itemId <= 92919)
 						return;
 
 					if (ItemData.getInstance().getTemplate(itemId) == null)
@@ -383,7 +383,7 @@ public class NpcData: DataReaderBase
 				int itemId = e.GetAttributeValueAsInt32("id");
 
 				// Drop materials for random craft configuration.
-				if (!Config.DROP_RANDOM_CRAFT_MATERIALS && itemId >= 92908 && itemId <= 92919)
+				if (!Config.RandomCraft.DROP_RANDOM_CRAFT_MATERIALS && itemId >= 92908 && itemId <= 92919)
 					return;
 
 				if (ItemData.getInstance().getTemplate(itemId) == null)
@@ -552,28 +552,28 @@ public class NpcData: DataReaderBase
 		template.removeDrops();
 
 		// Add configurable item drop for bosses.
-		if (Config.BOSS_DROP_ENABLED && type.contains("RaidBoss") && level >= Config.BOSS_DROP_MIN_LEVEL &&
-            level <= Config.BOSS_DROP_MAX_LEVEL)
+		if (Config.Rates.BOSS_DROP_ENABLED && type.contains("RaidBoss") && level >= Config.Rates.BOSS_DROP_MIN_LEVEL &&
+            level <= Config.Rates.BOSS_DROP_MAX_LEVEL)
 		{
 			if (dropLists == null)
 			{
 				dropLists = new();
 			}
 
-			dropLists.AddRange(Config.BOSS_DROP_LIST);
+			dropLists.AddRange(Config.Rates.BOSS_DROP_LIST);
 		}
 
 		// Add configurable LCoin drop for monsters.
-		if (Config.LCOIN_DROP_ENABLED && type.contains("Monster") && !type.contains("boss") &&
-            level >= Config.LCOIN_MIN_MOB_LEVEL)
+		if (Config.Rates.LCOIN_DROP_ENABLED && type.contains("Monster") && !type.contains("boss") &&
+            level >= Config.Rates.LCOIN_MIN_MOB_LEVEL)
 		{
 			if (dropLists == null)
 			{
 				dropLists = new();
 			}
 
-			dropLists.Add(new DropHolder(DropType.DROP, Inventory.LCOIN_ID, Config.LCOIN_MIN_QUANTITY,
-				Config.LCOIN_MAX_QUANTITY, Config.LCOIN_DROP_CHANCE));
+			dropLists.Add(new DropHolder(DropType.DROP, Inventory.LCOIN_ID, Config.Rates.LCOIN_MIN_QUANTITY,
+				Config.Rates.LCOIN_MAX_QUANTITY, Config.Rates.LCOIN_DROP_CHANCE));
 		}
 
 		// Set new drop lists.

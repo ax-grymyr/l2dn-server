@@ -24,7 +24,7 @@ public class RaceManager: Npc
 	{
 		if (command.startsWith("BuyTicket"))
 		{
-			if (!Config.ALLOW_RACE || MonsterRace.getInstance().getCurrentRaceState() != MonsterRace.RaceState.ACCEPTING_BETS)
+			if (!Config.General.ALLOW_RACE || MonsterRace.getInstance().getCurrentRaceState() != MonsterRace.RaceState.ACCEPTING_BETS)
 			{
 				player.sendPacket(SystemMessageId.MONSTER_RACE_TICKETS_ARE_NO_LONGER_AVAILABLE);
 				base.onBypassFeedback(player, "Chat 0");
@@ -153,7 +153,7 @@ public class RaceManager: Npc
 		}
 		else if (command.equals("ShowOdds"))
 		{
-			if (!Config.ALLOW_RACE || MonsterRace.getInstance().getCurrentRaceState() == MonsterRace.RaceState.ACCEPTING_BETS)
+			if (!Config.General.ALLOW_RACE || MonsterRace.getInstance().getCurrentRaceState() == MonsterRace.RaceState.ACCEPTING_BETS)
 			{
 				player.sendPacket(SystemMessageId.MONSTER_RACE_PAYOUT_INFORMATION_IS_NOT_AVAILABLE_WHILE_TICKETS_ARE_BEING_SOLD);
 				base.onBypassFeedback(player, "Chat 0");
@@ -180,7 +180,7 @@ public class RaceManager: Npc
 		}
 		else if (command.equals("ShowInfo"))
 		{
-			if (!Config.ALLOW_RACE)
+			if (!Config.General.ALLOW_RACE)
 			{
 				return;
 			}
@@ -201,7 +201,7 @@ public class RaceManager: Npc
 		}
 		else if (command.equals("ShowTickets"))
 		{
-			if (!Config.ALLOW_RACE)
+			if (!Config.General.ALLOW_RACE)
 			{
 				base.onBypassFeedback(player, "Chat 0");
 				return;
@@ -241,7 +241,7 @@ public class RaceManager: Npc
 		{
 			// Retrieve ticket objectId.
 			int val = int.Parse(command.Substring(11));
-			if (!Config.ALLOW_RACE || val == 0)
+			if (!Config.General.ALLOW_RACE || val == 0)
 			{
 				base.onBypassFeedback(player, "Chat 0");
 				return;
@@ -283,7 +283,7 @@ public class RaceManager: Npc
 		{
 			// Retrieve ticket objectId.
 			int val = int.Parse(command.Substring(13));
-			if (!Config.ALLOW_RACE || val == 0)
+			if (!Config.General.ALLOW_RACE || val == 0)
 			{
 				base.onBypassFeedback(player, "Chat 0");
 				return;
@@ -320,7 +320,7 @@ public class RaceManager: Npc
 		}
 		else if (command.equals("ViewHistory"))
 		{
-			if (!Config.ALLOW_RACE)
+			if (!Config.General.ALLOW_RACE)
 			{
 				base.onBypassFeedback(player, "Chat 0");
 				return;

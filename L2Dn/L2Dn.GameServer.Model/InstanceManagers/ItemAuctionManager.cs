@@ -24,7 +24,7 @@ public class ItemAuctionManager: DataReaderBase
 
 	protected ItemAuctionManager()
 	{
-		if (!Config.ALT_ITEM_AUCTION_ENABLED)
+		if (!Config.General.ALT_ITEM_AUCTION_ENABLED)
 		{
 			LOGGER.Info(GetType().Name +": Disabled.");
 			return;

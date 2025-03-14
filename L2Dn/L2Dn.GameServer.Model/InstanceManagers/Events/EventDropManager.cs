@@ -39,7 +39,7 @@ public class EventDropManager
 		}
 
 		// Event items drop only within a default 14 level difference.
-		if (player.getLevel() - attackable.getLevel() > Config.EVENT_ITEM_MAX_LEVEL_LOWEST_DIFFERENCE)
+		if (player.getLevel() - attackable.getLevel() > Config.Rates.EVENT_ITEM_MAX_LEVEL_LOWEST_DIFFERENCE)
 		{
 			return;
 		}

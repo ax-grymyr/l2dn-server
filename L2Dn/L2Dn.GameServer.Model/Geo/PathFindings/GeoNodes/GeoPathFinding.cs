@@ -381,7 +381,7 @@ public class GeoPathFinding: PathFinding
 	private void loadPathNodeFile(byte rx, byte ry)
 	{
 		short regionoffset = getRegionOffset(rx, ry);
-		string filePath = Path.Combine(Config.PATHNODE_PATH, rx + "_" + ry + ".pn");
+		string filePath = Path.Combine(Config.GeoEngine.PATHNODE_PATH, rx + "_" + ry + ".pn");
 		if (!File.Exists(filePath))
 		{
 			return;

@@ -127,7 +127,7 @@ public class Region: IRegion
 	 */
 	public bool saveToFile(string fileName)
 	{
-		string filePath = Path.Combine(Config.GEOEDIT_PATH, fileName);
+		string filePath = Path.Combine(Config.GeoEngine.GEOEDIT_PATH, fileName);
 		if (File.Exists(filePath))
 		{
 			try

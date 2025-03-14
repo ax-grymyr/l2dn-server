@@ -860,14 +860,14 @@ public class Party : AbstractPlayerGroup
 
 	private double calculateExpSpPartyCutoff(Player player, int topLvl, double addExpValue, double addSpValue, bool vit)
 	{
-		double addExp = addExpValue * Config.EXP_AMOUNT_MULTIPLIERS[player.getClassId()];
-		double addSp = addSpValue * Config.SP_AMOUNT_MULTIPLIERS[player.getClassId()];
+		double addExp = addExpValue * Config.ClassBalance.EXP_AMOUNT_MULTIPLIERS[player.getClassId()];
+		double addSp = addSpValue * Config.ClassBalance.SP_AMOUNT_MULTIPLIERS[player.getClassId()];
 
 		// Premium rates
 		if (player.hasPremiumStatus())
 		{
-			addExp *= Config.PREMIUM_RATE_XP;
-			addSp *= Config.PREMIUM_RATE_SP;
+			addExp *= Config.PremiumSystem.PREMIUM_RATE_XP;
+			addSp *= Config.PremiumSystem.PREMIUM_RATE_SP;
 		}
 
 		double xp = addExp;
@@ -999,13 +999,13 @@ public class Party : AbstractPlayerGroup
 
 	private double getExpBonus(int membersCount, Instance? instance)
 	{
-		float rateMul = instance != null ? instance.getExpPartyRate() : Config.RATE_PARTY_XP;
+		float rateMul = instance != null ? instance.getExpPartyRate() : Config.Rates.RATE_PARTY_XP;
 		return membersCount < 2 ? getBaseExpSpBonus(membersCount) : getBaseExpSpBonus(membersCount) * rateMul;
 	}
 
 	private double getSpBonus(int membersCount, Instance? instance)
 	{
-		float rateMul = instance != null ? instance.getSPPartyRate() : Config.RATE_PARTY_SP;
+		float rateMul = instance != null ? instance.getSPPartyRate() : Config.Rates.RATE_PARTY_SP;
 		return membersCount < 2 ? getBaseExpSpBonus(membersCount) : getBaseExpSpBonus(membersCount) * rateMul;
 	}
 

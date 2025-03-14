@@ -38,7 +38,7 @@ public class BotReportTable
 
 	protected BotReportTable()
 	{
-		if (Config.BOTREPORT_ENABLE)
+		if (Config.General.BOTREPORT_ENABLE)
 		{
 			try
 			{
@@ -86,7 +86,7 @@ public class BotReportTable
 			DateTime lastResetTime = default;
 			try
 			{
-				TimeOnly resetPoint = Config.BOTREPORT_RESETPOINT_HOUR;
+				TimeOnly resetPoint = Config.General.BOTREPORT_RESETPOINT_HOUR;
 				DateTime currentTime = DateTime.Now;
 				DateTime calendar = new(currentTime.Year, currentTime.Month, currentTime.Day, resetPoint.Hour, resetPoint.Minute, 0);
 				if (currentTime < calendar)
@@ -248,7 +248,7 @@ public class BotReportTable
 					return false;
 				}
 
-				if (!Config.BOTREPORT_ALLOW_REPORTS_FROM_SAME_CLAN_MEMBERS && reporterClan != null && rcd.reportedBySameClan(reporterClan))
+				if (!Config.General.BOTREPORT_ALLOW_REPORTS_FROM_SAME_CLAN_MEMBERS && reporterClan != null && rcd.reportedBySameClan(reporterClan))
 				{
 					reporter.sendPacket(SystemMessageId.THIS_CHARACTER_CANNOT_MAKE_A_REPORT_THE_TARGET_HAS_ALREADY_BEEN_REPORTED_BY_EITHER_YOUR_CLAN_OR_HAS_ALREADY_BEEN_REPORTED_FROM_YOUR_CURRENT_IP);
 					return false;
@@ -264,7 +264,7 @@ public class BotReportTable
 				}
 
 				TimeSpan reuse = DateTime.UtcNow - rcdRep.getLastReporTime();
-				if (reuse < TimeSpan.FromMilliseconds(Config.BOTREPORT_REPORT_DELAY))
+				if (reuse < TimeSpan.FromMilliseconds(Config.General.BOTREPORT_REPORT_DELAY))
 				{
 					sm = new SystemMessagePacket(SystemMessageId.YOU_CAN_MAKE_ANOTHER_REPORT_IN_S1_MIN_YOU_HAVE_S2_POINT_S_LEFT);
 					sm.Params.addInt((int)reuse.TotalMinutes);
@@ -387,7 +387,7 @@ public class BotReportTable
 	{
 		try
 		{
-			TimeOnly resetPoint = Config.BOTREPORT_RESETPOINT_HOUR;
+			TimeOnly resetPoint = Config.General.BOTREPORT_RESETPOINT_HOUR;
 			DateTime currentTime = DateTime.Now;
 			DateTime calendar = new(currentTime.Year, currentTime.Month, currentTime.Day, resetPoint.Hour, resetPoint.Minute, 0);
 			if (calendar < currentTime)
@@ -433,7 +433,7 @@ public class BotReportTable
 	{
 		if (map.TryGetValue(objectId, out DateTime value))
 		{
-			return DateTime.UtcNow - value > TimeSpan.FromMilliseconds(Config.BOTREPORT_REPORT_DELAY);
+			return DateTime.UtcNow - value > TimeSpan.FromMilliseconds(Config.General.BOTREPORT_REPORT_DELAY);
 		}
 
 		return true;

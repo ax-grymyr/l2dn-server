@@ -26,7 +26,7 @@ public class ItemAuctionLink: IBypassHandler
 			return false;
 		}
 
-		if (!Config.ALT_ITEM_AUCTION_ENABLED)
+		if (!Config.General.ALT_ITEM_AUCTION_ENABLED)
 		{
 			player.sendPacket(SystemMessageId.IT_IS_NOT_AN_AUCTION_PERIOD);
 			return true;

@@ -86,12 +86,12 @@ public struct RequestBlessOptionEnchantPacket: IIncomingPacket<GameSession>
 		if (player.getInventory().destroyItem("Blessing", targetScroll.ObjectId, 1, player, item) == null)
 		{
 			player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT_2);
-			Util.handleIllegalPlayerAction(player, player + " tried to bless with a scroll he doesn't have", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, player + " tried to bless with a scroll he doesn't have", Config.General.DEFAULT_PUNISH);
 			player.sendPacket(new ExBlessOptionEnchantPacket(EnchantResultPacket.ERROR));
 			return ValueTask.CompletedTask;
 		}
 
-		if (Rnd.get(100) < Config.BLESSING_CHANCE) // Success
+		if (Rnd.get(100) < Config.Rates.BLESSING_CHANCE) // Success
 		{
 			ItemTemplate it = item.getTemplate();
 			// Increase enchant level only if scroll's base template has chance, some armors can success over +20 but they shouldn't have increased.

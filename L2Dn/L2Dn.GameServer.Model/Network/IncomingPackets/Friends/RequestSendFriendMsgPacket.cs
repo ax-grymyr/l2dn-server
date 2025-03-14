@@ -40,7 +40,7 @@ public struct RequestSendFriendMsgPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (Config.LOG_CHAT)
+        if (Config.General.LOG_CHAT)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("PRIV_MSG [");

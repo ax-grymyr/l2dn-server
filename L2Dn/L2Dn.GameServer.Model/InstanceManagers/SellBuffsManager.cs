@@ -35,7 +35,7 @@ public class SellBuffsManager: DataReaderBase
 
 	public void load()
 	{
-		if (Config.SELLBUFF_ENABLED)
+		if (Config.SellBuffs.SELLBUFF_ENABLED)
 		{
 			ALLOWED_BUFFS.clear();
 
@@ -159,14 +159,14 @@ public class SellBuffsManager: DataReaderBase
 				continue;
 			}
 
-			ItemTemplate? item = ItemData.getInstance().getTemplate(Config.SELLBUFF_PAYMENT_ID);
+			ItemTemplate? item = ItemData.getInstance().getTemplate(Config.SellBuffs.SELLBUFF_PAYMENT_ID);
 
 			sb.Append("<tr>");
 			sb.Append("<td fixwidth=\"20\"></td>");
 			sb.Append("<td align=center><img src=\"" + skill.getIcon() + "\" width=\"32\" height=\"32\"></td>");
 			sb.Append("<td align=left>" + skill.getName() + (skill.getLevel() > 100 ? "<font color=\"LEVEL\"> + " + skill.getLevel() % 100 + "</font></td>" : "</td>"));
 			sb.Append("<td align=center>" + (skill.getLevel() > 100 ? SkillData.getInstance().getMaxLevel(skill.getId()) : skill.getLevel()) + "</td>");
-			sb.Append("<td align=center> <font color=\"1E90FF\">" + skill.getMpConsume() * Config.SELLBUFF_MP_MULTIPLER + "</font></td>");
+			sb.Append("<td align=center> <font color=\"1E90FF\">" + skill.getMpConsume() * Config.SellBuffs.SELLBUFF_MP_MULTIPLER + "</font></td>");
 			sb.Append("<td align=center> " + Util.formatAdena(holder.getPrice()) + " <font color=\"LEVEL\"> " + (item != null ? item.getName() : "") + "</font> </td>");
 			sb.Append("<td align=center fixwidth=\"50\"><button value=\"Buy Buff\" action=\"bypass -h sellbuffbuyskill " + seller.ObjectId + " " + skill.getId() + " " + index + "\" width=\"85\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 			sb.Append("</tr>");

@@ -55,7 +55,7 @@ public class AutoPlayTaskManager
 
 			foreach (Player player in _players)
 			{
-				if (!player.isOnline() || (player.isInOfflineMode() && !player.isOfflinePlay()) || !Config.ENABLE_AUTO_PLAY)
+				if (!player.isOnline() || (player.isInOfflineMode() && !player.isOfflinePlay()) || !Config.General.ENABLE_AUTO_PLAY)
 				{
 					_autoPlayTaskManager.stopAutoPlay(player);
 					continue; // play
@@ -259,7 +259,7 @@ public class AutoPlayTaskManager
 				creature = null;
 				Party? party = player.getParty();
 				Player? leader = party == null ? null : party.getLeader();
-				if (Config.ENABLE_AUTO_ASSIST && party != null && leader != null && leader != player && !leader.isDead())
+				if (Config.General.ENABLE_AUTO_ASSIST && party != null && leader != null && leader != player && !leader.isDead())
 				{
 					if (leader.Distance3D(player) < Config.Character.ALT_PARTY_RANGE * 2 /* 2? */)
 					{
@@ -336,7 +336,7 @@ public class AutoPlayTaskManager
 		private bool isMageCaster(Player player)
 		{
 			// On Essence auto attack is enabled via the Auto Attack action.
-			if (Config.AUTO_PLAY_ATTACK_ACTION)
+			if (Config.General.AUTO_PLAY_ATTACK_ACTION)
 			{
 				return !player.getAutoUseSettings().getAutoActions().Contains(AUTO_ATTACK_ACTION);
 			}

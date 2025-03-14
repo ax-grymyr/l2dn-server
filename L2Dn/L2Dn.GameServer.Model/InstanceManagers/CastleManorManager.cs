@@ -42,7 +42,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 
 	public CastleManorManager()
 	{
-		if (Config.ALLOW_MANOR)
+		if (Config.General.ALLOW_MANOR)
 		{
 			load(); // Load seed data (XML)
 			loadDb(); // Load castle manor data (DB)
@@ -51,12 +51,12 @@ public class CastleManorManager: DataReaderBase, IStorable
 			DateTime currentTime = DateTime.Now;
 			int hour = currentTime.Hour;
 			int min = currentTime.Minute;
-			int maintenanceMin = Config.ALT_MANOR_REFRESH_MIN + Config.ALT_MANOR_MAINTENANCE_MIN;
-			if ((hour >= Config.ALT_MANOR_REFRESH_TIME && min >= maintenanceMin) || hour < Config.ALT_MANOR_APPROVE_TIME || (hour == Config.ALT_MANOR_APPROVE_TIME && min <= Config.ALT_MANOR_APPROVE_MIN))
+			int maintenanceMin = Config.General.ALT_MANOR_REFRESH_MIN + Config.General.ALT_MANOR_MAINTENANCE_MIN;
+			if ((hour >= Config.General.ALT_MANOR_REFRESH_TIME && min >= maintenanceMin) || hour < Config.General.ALT_MANOR_APPROVE_TIME || (hour == Config.General.ALT_MANOR_APPROVE_TIME && min <= Config.General.ALT_MANOR_APPROVE_MIN))
 			{
 				_mode = ManorMode.MODIFIABLE;
 			}
-			else if (hour == Config.ALT_MANOR_REFRESH_TIME && min >= Config.ALT_MANOR_REFRESH_MIN && min < maintenanceMin)
+			else if (hour == Config.General.ALT_MANOR_REFRESH_TIME && min >= Config.General.ALT_MANOR_REFRESH_MIN && min < maintenanceMin)
 			{
 				_mode = ManorMode.MAINTENANCE;
 			}
@@ -65,10 +65,10 @@ public class CastleManorManager: DataReaderBase, IStorable
 			scheduleModeChange();
 
 			// Schedule autosave
-			if (!Config.ALT_MANOR_SAVE_ALL_ACTIONS)
+			if (!Config.General.ALT_MANOR_SAVE_ALL_ACTIONS)
 			{
-				ThreadPool.scheduleAtFixedRate(() => storeMe(), Config.ALT_MANOR_SAVE_PERIOD_RATE * 60 * 60 * 1000,
-					Config.ALT_MANOR_SAVE_PERIOD_RATE * 60 * 60 * 1000);
+				ThreadPool.scheduleAtFixedRate(() => storeMe(), Config.General.ALT_MANOR_SAVE_PERIOD_RATE * 60 * 60 * 1000,
+					Config.General.ALT_MANOR_SAVE_PERIOD_RATE * 60 * 60 * 1000);
 			}
 		}
 		else
@@ -185,7 +185,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 		{
 			case ManorMode.MODIFIABLE:
 			{
-				time = new DateTime(time.Year, time.Month, time.Day, Config.ALT_MANOR_APPROVE_TIME, Config.ALT_MANOR_APPROVE_MIN, 0);
+				time = new DateTime(time.Year, time.Month, time.Day, Config.General.ALT_MANOR_APPROVE_TIME, Config.General.ALT_MANOR_APPROVE_MIN, 0);
 				if (time < DateTime.Now)
 					time = time.AddDays(1);
 
@@ -193,14 +193,14 @@ public class CastleManorManager: DataReaderBase, IStorable
 			}
 			case ManorMode.MAINTENANCE:
 			{
-				time = new DateTime(time.Year, time.Month, time.Day, Config.ALT_MANOR_REFRESH_TIME,
-					Config.ALT_MANOR_REFRESH_MIN + Config.ALT_MANOR_MAINTENANCE_MIN, 0);
+				time = new DateTime(time.Year, time.Month, time.Day, Config.General.ALT_MANOR_REFRESH_TIME,
+					Config.General.ALT_MANOR_REFRESH_MIN + Config.General.ALT_MANOR_MAINTENANCE_MIN, 0);
 
 				break;
 			}
 			case ManorMode.APPROVED:
 			{
-				time = new DateTime(time.Year, time.Month, time.Day, Config.ALT_MANOR_REFRESH_TIME, Config.ALT_MANOR_REFRESH_MIN, 0);
+				time = new DateTime(time.Year, time.Month, time.Day, Config.General.ALT_MANOR_REFRESH_TIME, Config.General.ALT_MANOR_REFRESH_MIN, 0);
 				break;
 			}
 		}
@@ -362,7 +362,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 				}
 
 				// Store changes
-				if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
+				if (Config.General.ALT_MANOR_SAVE_ALL_ACTIONS)
 				{
 					storeMe();
 				}
@@ -375,7 +375,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 	public void setNextSeedProduction(List<SeedProduction> list, int castleId)
 	{
 		_productionNext.put(castleId, list);
-		if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
+		if (Config.General.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
 			try
 			{
@@ -410,7 +410,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 	public void setNextCropProcure(List<CropProcure> list, int castleId)
 	{
 		_procureNext.put(castleId, list);
-		if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
+		if (Config.General.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
 			try
 			{
@@ -599,7 +599,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 
 	public void resetManorData(int castleId)
 	{
-		if (!Config.ALLOW_MANOR)
+		if (!Config.General.ALLOW_MANOR)
 		{
 			return;
 		}
@@ -609,7 +609,7 @@ public class CastleManorManager: DataReaderBase, IStorable
 		_production.get(castleId)?.Clear();
 		_productionNext.get(castleId)?.Clear();
 
-		if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
+		if (Config.General.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
 			try
 			{

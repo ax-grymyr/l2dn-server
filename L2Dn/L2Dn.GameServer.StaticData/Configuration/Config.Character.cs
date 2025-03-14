@@ -18,6 +18,9 @@ public static partial class Config
         public static double RESPAWN_RESTORE_CP;
         public static double RESPAWN_RESTORE_HP;
         public static double RESPAWN_RESTORE_MP;
+        public static double HP_REGEN_MULTIPLIER;
+        public static double MP_REGEN_MULTIPLIER;
+        public static double CP_REGEN_MULTIPLIER;
 
         public static bool RESURRECT_BY_PAYMENT_ENABLED;
         public static int RESURRECT_BY_PAYMENT_MAX_FREE_TIMES;
@@ -219,10 +222,10 @@ public static partial class Config
         public static int ABILITY_MAX_POINTS;
         public static long ABILITY_POINTS_RESET_ADENA;
 
-        public static void Load(string configPath)
+        internal static void Load(ConfigurationParser parser)
         {
-            ConfigurationParser parser = new(configPath);
-            parser.LoadConfig(FileNames.Configs.AttendanceConfigFile);
+            parser.LoadConfig(FileNames.Configs.Character);
+
             PLAYER_DELEVEL = parser.getBoolean("Delevel", true);
             DELEVEL_MINIMUM = parser.getInt("DelevelMinimum", 85);
             DECREASE_SKILL_LEVEL = parser.getBoolean("DecreaseSkillOnDelevel", true);
@@ -483,7 +486,7 @@ public static partial class Config
                     !int.TryParse(timeSplit[0], CultureInfo.InvariantCulture, out int skillId) ||
                     !int.TryParse(timeSplit[1], CultureInfo.InvariantCulture, out int duration))
                 {
-                    LOGGER.Error(
+                    _logger.Error(
                         $"Invalid skill duration item '{timeData}' in entry '{key}' in configuration file '{parser.FilePath}'");
 
                     continue;
@@ -495,7 +498,7 @@ public static partial class Config
                 }
                 catch (ArgumentException)
                 {
-                    LOGGER.Error(
+                    _logger.Error(
                         $"Duplicated skill '{skillId}' in entry '{key}' in configuration file '{parser.FilePath}'");
                 }
             }
@@ -518,7 +521,7 @@ public static partial class Config
                 if (pair.Length != 2 || !int.TryParse(pair[0], CultureInfo.InvariantCulture, out int min) ||
                     !int.TryParse(pair[1], CultureInfo.InvariantCulture, out int max))
                 {
-                    LOGGER.Error(
+                    _logger.Error(
                         $"Invalid format '{value}' in entry '{key}' in configuration file '{parser.FilePath}'");
 
                     continue;
@@ -550,7 +553,7 @@ public static partial class Config
                 string[] timeSplit = timeData.Split(':');
                 if (timeSplit.Length != 2 || !int.TryParse(timeSplit[0], CultureInfo.InvariantCulture, out int level))
                 {
-                    LOGGER.Error(
+                    _logger.Error(
                         $"Invalid resurrect by payment item '{timeData}' in entry '{key}' in configuration file '{parser.FilePath}'");
 
                     continue;
@@ -565,7 +568,7 @@ public static partial class Config
                         !int.TryParse(values[1], CultureInfo.InvariantCulture, out int count) ||
                         !double.TryParse(values[2], CultureInfo.InvariantCulture, out double percent))
                     {
-                        LOGGER.Error(
+                        _logger.Error(
                             $"Invalid resurrect by payment data '{timeData}' for level {level} in entry '{key}' in configuration file '{parser.FilePath}'");
 
                         continue;
@@ -577,7 +580,7 @@ public static partial class Config
                     }
                     catch (ArgumentException)
                     {
-                        LOGGER.Error(
+                        _logger.Error(
                             $"Duplicated key {times} in resurrect by payment data '{data}' in entry '{key}' in configuration file '{parser.FilePath}'");
                     }
                 }
@@ -588,7 +591,7 @@ public static partial class Config
                 }
                 catch (ArgumentException)
                 {
-                    LOGGER.Error(
+                    _logger.Error(
                         $"Duplicated level {level} in resurrect by payment data '{timeData}' in entry '{key}' in configuration file '{parser.FilePath}'");
                 }
             }

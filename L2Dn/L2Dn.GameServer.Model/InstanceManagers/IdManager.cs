@@ -42,7 +42,7 @@ public class IdManager
 		}
 
 		// Cleanup database.
-		if (Config.DATABASE_CLEAN_UP)
+		if (Config.General.DATABASE_CLEAN_UP)
 		{
 			try
 			{

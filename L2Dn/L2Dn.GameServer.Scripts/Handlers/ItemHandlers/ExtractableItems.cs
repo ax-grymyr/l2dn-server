@@ -73,8 +73,8 @@ public class ExtractableItems: IItemHandler
 
 					if (Rnd.get(100000) <= expi.getChance())
 					{
-						long min = (long) (expi.getMin() * Config.RATE_EXTRACTABLE);
-						long max = (long) (expi.getMax() * Config.RATE_EXTRACTABLE);
+						long min = (long) (expi.getMin() * Config.Rates.RATE_EXTRACTABLE);
+						long max = (long) (expi.getMax() * Config.Rates.RATE_EXTRACTABLE);
 						long createItemAmount = max == min ? min : Rnd.get(max - min + 1) + min;
 						if (createItemAmount == 0)
 						{
@@ -177,8 +177,8 @@ public class ExtractableItems: IItemHandler
 
 				if (Rnd.get(100000) <= expi.getChance())
 				{
-					long min = (long) (expi.getMin() * Config.RATE_EXTRACTABLE);
-					long max = (long) (expi.getMax() * Config.RATE_EXTRACTABLE);
+					long min = (long) (expi.getMin() * Config.Rates.RATE_EXTRACTABLE);
+					long max = (long) (expi.getMax() * Config.Rates.RATE_EXTRACTABLE);
 					long createItemAmount = max == min ? min : Rnd.get(max - min + 1) + min;
 					if (createItemAmount == 0)
 					{

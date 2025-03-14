@@ -1221,7 +1221,7 @@ public sealed class Skill: IIdentifiable
 	public bool checkCondition(Creature creature, WorldObject? @object, bool sendMessage)
 	{
 		if (creature.isFakePlayer() || (creature.canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS) &&
-		                                !Config.GM_SKILL_RESTRICTION))
+		                                !Config.General.GM_SKILL_RESTRICTION))
 		{
 			return true;
 		}

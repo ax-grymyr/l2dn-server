@@ -107,7 +107,7 @@ public class ItemData: DataReaderBase
 			t.Document.Elements("list").Elements("item").ForEach(x => loadElement(t.FilePath, x));
 		});
 
-		if (Config.CUSTOM_ITEMS_LOAD)
+		if (Config.General.CUSTOM_ITEMS_LOAD)
 		{
 			LoadXmlDocuments(DataFileLocation.Data, "stats/items/custom", true).ForEach(t =>
 			{
@@ -1331,10 +1331,10 @@ public class ItemData: DataReaderBase
 			item.setCount(count);
 		}
 
-		if ((Config.LOG_ITEMS && !process.equals("Reset") &&
-                !Config.LOG_ITEMS_SMALL_LOG && !Config.LOG_ITEMS_IDS_ONLY) ||
-		    (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getId() == Inventory.ADENA_ID)) ||
-		    (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(item.getId())))
+		if ((Config.General.LOG_ITEMS && !process.equals("Reset") &&
+                !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) ||
+		    (Config.General.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getId() == Inventory.ADENA_ID)) ||
+		    (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(item.getId())))
 		{
 			if (item.getEnchantLevel() > 0)
 			{
@@ -1374,7 +1374,7 @@ public class ItemData: DataReaderBase
 			}
 		}
 
-		if (actor != null && actor is Player player && player.isGM() && Config.GMAUDIT)
+		if (actor != null && actor is Player player && player.isGM() && Config.General.GMAUDIT)
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.Append(process);
@@ -1445,7 +1445,7 @@ public class ItemData: DataReaderBase
 			World.getInstance().removeObject(item);
 			IdManager.getInstance().releaseId(item.ObjectId);
 
-			if ((Config.LOG_ITEMS && !Config.LOG_ITEMS_SMALL_LOG && !Config.LOG_ITEMS_IDS_ONLY) || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getId() == Inventory.ADENA_ID)) || (Config.LOG_ITEMS_IDS_ONLY && Config.LOG_ITEMS_IDS_LIST.Contains(item.getId())))
+			if ((Config.General.LOG_ITEMS && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getId() == Inventory.ADENA_ID)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(item.getId())))
 			{
 				if (item.getEnchantLevel() > 0)
 				{
@@ -1489,7 +1489,7 @@ public class ItemData: DataReaderBase
 				}
 			}
 
-			if (actor != null && actor.isGM() && Config.GMAUDIT)
+			if (actor != null && actor.isGM() && Config.General.GMAUDIT)
 			{
 				StringBuilder sb = new StringBuilder();
 				sb.Append(process);

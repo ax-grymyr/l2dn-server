@@ -28,7 +28,7 @@ public class HuntPassData: DataReaderBase
 
 	public void load()
 	{
-		if (Config.ENABLE_HUNT_PASS)
+		if (Config.HuntPass.ENABLE_HUNT_PASS)
 		{
 			_rewards.Clear();
 

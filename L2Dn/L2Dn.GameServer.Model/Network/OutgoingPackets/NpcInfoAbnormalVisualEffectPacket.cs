@@ -23,7 +23,7 @@ public readonly struct NpcInfoAbnormalVisualEffectPacket: IOutgoingPacket
         writer.WriteInt32(_npc.ObjectId);
         writer.WriteInt32(_npc.getTransformationDisplayId());
         Set<AbnormalVisualEffect> abnormalVisualEffects = _npc.getEffectList().getCurrentAbnormalVisualEffects();
-        Team team = Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None
+        Team team = Config.General.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None && Config.General.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None
             ? _npc.getTeam()
             : Team.NONE;
 
@@ -35,14 +35,14 @@ public readonly struct NpcInfoAbnormalVisualEffectPacket: IOutgoingPacket
 
         if (team == Team.BLUE)
         {
-            if (Config.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
+            if (Config.General.BLUE_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
             {
-                writer.WriteInt16((short)Config.BLUE_TEAM_ABNORMAL_EFFECT);
+                writer.WriteInt16((short)Config.General.BLUE_TEAM_ABNORMAL_EFFECT);
             }
         }
-        else if (team == Team.RED && Config.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
+        else if (team == Team.RED && Config.General.RED_TEAM_ABNORMAL_EFFECT != AbnormalVisualEffect.None)
         {
-            writer.WriteInt16((short)Config.RED_TEAM_ABNORMAL_EFFECT);
+            writer.WriteInt16((short)Config.General.RED_TEAM_ABNORMAL_EFFECT);
         }
     }
 }

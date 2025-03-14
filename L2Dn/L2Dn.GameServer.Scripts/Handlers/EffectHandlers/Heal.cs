@@ -86,7 +86,7 @@ public sealed class Heal: AbstractEffect
             amount *= effected.getStat().getValue(Stat.HEAL_EFFECT, 1);
             amount += effected.getStat().getValue(Stat.HEAL_EFFECT_ADD, 0);
             amount *= item == null && effector.isPlayable() && player != null
-                ? Config.PLAYER_HEALING_SKILL_MULTIPLIERS.GetValueOrDefault(player.getClassId(), 1f)
+                ? Config.ClassBalance.PLAYER_HEALING_SKILL_MULTIPLIERS.GetValueOrDefault(player.getClassId(), 1f)
                 : 1f;
 
             // Heal critic, since CT2.3 Gracia Final

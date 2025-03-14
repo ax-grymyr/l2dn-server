@@ -1708,7 +1708,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			}
 
 			// Retain monster original position if ENABLE_RANDOM_MONSTER_SPAWNS is enabled.
-			if (Config.ENABLE_RANDOM_MONSTER_SPAWNS && !randomOffset && npc.isMonster())
+			if (Config.RandomSpawns.ENABLE_RANDOM_MONSTER_SPAWNS && !randomOffset && npc.isMonster())
 			{
 				spawn.Location = new Location(x, y, zValue, spawn.Location.Heading);
 				npc.setXYZ(x, y, zValue);
@@ -1981,7 +1981,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			}
 		}
 		// Mail attachments.
-		if (Config.ALLOW_MAIL)
+		if (Config.General.ALLOW_MAIL)
 		{
 			List<Message> inbox = MailManager.getInstance().getInbox(player.ObjectId);
 			foreach (int itemId in itemIds)
@@ -2092,9 +2092,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			if (itemId == Inventory.ADENA_ID)
 			{
-				count = (long)(count * Config.RATE_QUEST_REWARD_ADENA);
+				count = (long)(count * Config.Rates.RATE_QUEST_REWARD_ADENA);
 			}
-			else if (Config.RATE_QUEST_REWARD_USE_MULTIPLIERS)
+			else if (Config.Rates.RATE_QUEST_REWARD_USE_MULTIPLIERS)
 			{
 				if (item is EtcItem etcItem)
 				{
@@ -2102,29 +2102,29 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 					{
 						case EtcItemType.POTION:
 						{
-							count = (long)(count * Config.RATE_QUEST_REWARD_POTION);
+							count = (long)(count * Config.Rates.RATE_QUEST_REWARD_POTION);
 							break;
 						}
 						case EtcItemType.ENCHT_WP:
 						case EtcItemType.ENCHT_AM:
 						case EtcItemType.SCROLL:
 						{
-							count = (long)(count * Config.RATE_QUEST_REWARD_SCROLL);
+							count = (long)(count * Config.Rates.RATE_QUEST_REWARD_SCROLL);
 							break;
 						}
 						case EtcItemType.RECIPE:
 						{
-							count = (long)(count * Config.RATE_QUEST_REWARD_RECIPE);
+							count = (long)(count * Config.Rates.RATE_QUEST_REWARD_RECIPE);
 							break;
 						}
 						case EtcItemType.MATERIAL:
 						{
-							count = (long)(count * Config.RATE_QUEST_REWARD_MATERIAL);
+							count = (long)(count * Config.Rates.RATE_QUEST_REWARD_MATERIAL);
 							break;
 						}
 						default:
 						{
-							count = (long)(count * Config.RATE_QUEST_REWARD);
+							count = (long)(count * Config.Rates.RATE_QUEST_REWARD);
 							break;
 						}
 					}
@@ -2132,7 +2132,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			}
 			else
 			{
-				count = (long)(count * Config.RATE_QUEST_REWARD);
+				count = (long)(count * Config.Rates.RATE_QUEST_REWARD);
 			}
 		}
 		catch (Exception e)
@@ -2359,22 +2359,22 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 			return true;
 		}
 
-		long minAmountWithBonus = (long) (minAmount * Config.RATE_QUEST_DROP);
-		long maxAmountWithBonus = (long) (maxAmount * Config.RATE_QUEST_DROP);
-		double dropChanceWithBonus = dropChance * Config.RATE_QUEST_DROP; // TODO separate configs for rate and amount
-		if (npc != null && Config.CHAMPION_ENABLE && npc.isChampion())
+		long minAmountWithBonus = (long) (minAmount * Config.Rates.RATE_QUEST_DROP);
+		long maxAmountWithBonus = (long) (maxAmount * Config.Rates.RATE_QUEST_DROP);
+		double dropChanceWithBonus = dropChance * Config.Rates.RATE_QUEST_DROP; // TODO separate configs for rate and amount
+		if (npc != null && Config.ChampionMonsters.CHAMPION_ENABLE && npc.isChampion())
 		{
 			if (itemId == Inventory.ADENA_ID || itemId == Inventory.ANCIENT_ADENA_ID)
 			{
-				dropChanceWithBonus *= Config.CHAMPION_ADENAS_REWARDS_CHANCE;
-				minAmountWithBonus = (long)(minAmountWithBonus * Config.CHAMPION_ADENAS_REWARDS_AMOUNT);
-				maxAmountWithBonus = (long)(maxAmountWithBonus * Config.CHAMPION_ADENAS_REWARDS_AMOUNT);
+				dropChanceWithBonus *= Config.ChampionMonsters.CHAMPION_ADENAS_REWARDS_CHANCE;
+				minAmountWithBonus = (long)(minAmountWithBonus * Config.ChampionMonsters.CHAMPION_ADENAS_REWARDS_AMOUNT);
+				maxAmountWithBonus = (long)(maxAmountWithBonus * Config.ChampionMonsters.CHAMPION_ADENAS_REWARDS_AMOUNT);
 			}
 			else
 			{
-				dropChanceWithBonus *= Config.CHAMPION_REWARDS_CHANCE;
-				minAmountWithBonus = (long)(minAmountWithBonus * Config.CHAMPION_REWARDS_AMOUNT);
-				maxAmountWithBonus = (long)(maxAmountWithBonus * Config.CHAMPION_REWARDS_AMOUNT);
+				dropChanceWithBonus *= Config.ChampionMonsters.CHAMPION_REWARDS_CHANCE;
+				minAmountWithBonus = (long)(minAmountWithBonus * Config.ChampionMonsters.CHAMPION_REWARDS_AMOUNT);
+				maxAmountWithBonus = (long)(maxAmountWithBonus * Config.ChampionMonsters.CHAMPION_REWARDS_AMOUNT);
 			}
 		}
 
@@ -2594,12 +2594,12 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		// Premium rates
 		if (player.hasPremiumStatus())
 		{
-			addExp = (long)(addExp * Config.PREMIUM_RATE_QUEST_XP);
-			addSp = (long)(addSp * Config.PREMIUM_RATE_QUEST_SP);
+			addExp = (long)(addExp * Config.PremiumSystem.PREMIUM_RATE_QUEST_XP);
+			addSp = (long)(addSp * Config.PremiumSystem.PREMIUM_RATE_QUEST_SP);
 		}
 
-		player.addExpAndSp((long) player.getStat().getValue(Stat.EXPSP_RATE, addExp * Config.RATE_QUEST_REWARD_XP), (int) player.getStat().getValue(Stat.EXPSP_RATE, addSp * Config.RATE_QUEST_REWARD_SP));
-		PcCafePointsManager.getInstance().givePcCafePoint(player, (long) (addExp * Config.RATE_QUEST_REWARD_XP));
+		player.addExpAndSp((long) player.getStat().getValue(Stat.EXPSP_RATE, addExp * Config.Rates.RATE_QUEST_REWARD_XP), (int) player.getStat().getValue(Stat.EXPSP_RATE, addSp * Config.Rates.RATE_QUEST_REWARD_SP));
+		PcCafePointsManager.getInstance().givePcCafePoint(player, (long) (addExp * Config.Rates.RATE_QUEST_REWARD_XP));
 	}
 
 	/**

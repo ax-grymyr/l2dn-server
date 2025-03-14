@@ -35,17 +35,17 @@ public class AutoPotionTaskManager: Runnable
 			{
                 if (player.isAlikeDead() ||
                     player.getOnlineStatus() != CharacterOnlineStatus.Online ||
-                    (!Config.AUTO_POTIONS_IN_OLYMPIAD && player.isInOlympiadMode()))
+                    (!Config.AutoPotions.AUTO_POTIONS_IN_OLYMPIAD && player.isInOlympiadMode()))
                 {
                     remove(player);
                     continue; // player
                 }
 
                 bool success = false;
-				if (Config.AUTO_HP_ENABLED)
+				if (Config.AutoPotions.AUTO_HP_ENABLED)
 				{
-					bool restoreHP = player.getStatus().getCurrentHp() / player.getMaxHp() * 100 < Config.AUTO_HP_PERCENTAGE;
-					foreach (int itemId in Config.AUTO_HP_ITEM_IDS)
+					bool restoreHP = player.getStatus().getCurrentHp() / player.getMaxHp() * 100 < Config.AutoPotions.AUTO_HP_PERCENTAGE;
+					foreach (int itemId in Config.AutoPotions.AUTO_HP_ITEM_IDS)
 					{
 						Item? hpPotion = player.getInventory().getItemByItemId(itemId);
 						if (hpPotion != null && hpPotion.getCount() > 0)
@@ -60,10 +60,10 @@ public class AutoPotionTaskManager: Runnable
 						}
 					}
 				}
-				if (Config.AUTO_CP_ENABLED)
+				if (Config.AutoPotions.AUTO_CP_ENABLED)
 				{
-					bool restoreCP = player.getStatus().getCurrentCp() / player.getMaxCp() * 100 < Config.AUTO_CP_PERCENTAGE;
-					foreach (int itemId in Config.AUTO_CP_ITEM_IDS)
+					bool restoreCP = player.getStatus().getCurrentCp() / player.getMaxCp() * 100 < Config.AutoPotions.AUTO_CP_PERCENTAGE;
+					foreach (int itemId in Config.AutoPotions.AUTO_CP_ITEM_IDS)
 					{
 						Item? cpPotion = player.getInventory().getItemByItemId(itemId);
 						if (cpPotion != null && cpPotion.getCount() > 0)
@@ -78,10 +78,10 @@ public class AutoPotionTaskManager: Runnable
 						}
 					}
 				}
-				if (Config.AUTO_MP_ENABLED)
+				if (Config.AutoPotions.AUTO_MP_ENABLED)
 				{
-					bool restoreMP = player.getStatus().getCurrentMp() / player.getMaxMp() * 100 < Config.AUTO_MP_PERCENTAGE;
-					foreach (int itemId in Config.AUTO_MP_ITEM_IDS)
+					bool restoreMP = player.getStatus().getCurrentMp() / player.getMaxMp() * 100 < Config.AutoPotions.AUTO_MP_PERCENTAGE;
+					foreach (int itemId in Config.AutoPotions.AUTO_MP_ITEM_IDS)
 					{
 						Item? mpPotion = player.getInventory().getItemByItemId(itemId);
 						if (mpPotion != null && mpPotion.getCount() > 0)

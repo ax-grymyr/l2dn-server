@@ -39,7 +39,7 @@ public struct RequestRefineCancelPacket: IIncomingPacket<GameSession>
         {
             Util.handleIllegalPlayerAction(player,
                 "Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-                " tryied to augment item that doesn't own.", Config.DEFAULT_PUNISH);
+                " tryied to augment item that doesn't own.", Config.General.DEFAULT_PUNISH);
 
             return ValueTask.CompletedTask;
         }

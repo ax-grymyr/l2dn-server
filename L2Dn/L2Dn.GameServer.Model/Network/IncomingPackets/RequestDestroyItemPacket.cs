@@ -40,7 +40,7 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 			{
 				Util.handleIllegalPlayerAction(player,
 					"[RequestDestroyItem] Character " + player.getName() + " of account " + player.getAccountName() +
-					" tried to destroy item with oid " + _objectId + " but has count < 0!", Config.DEFAULT_PUNISH);
+					" tried to destroy item with oid " + _objectId + " but has count < 0!", Config.General.DEFAULT_PUNISH);
 			}
 
 			return ValueTask.CompletedTask;
@@ -100,7 +100,7 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 		}
 
 		int itemId = itemToRemove.getId();
-		if (!Config.DESTROY_ALL_ITEMS && ((!player.canOverrideCond(PlayerCondOverride.DESTROY_ALL_ITEMS) && !itemToRemove.isDestroyable()) || CursedWeaponsManager.getInstance().isCursed(itemId)))
+		if (!Config.General.DESTROY_ALL_ITEMS && ((!player.canOverrideCond(PlayerCondOverride.DESTROY_ALL_ITEMS) && !itemToRemove.isDestroyable()) || CursedWeaponsManager.getInstance().isCursed(itemId)))
 		{
 			if (itemToRemove.isHeroItem())
 			{
@@ -119,7 +119,7 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 			Util.handleIllegalPlayerAction(player,
 				"[RequestDestroyItem] Character " + player.getName() + " of account " + player.getAccountName() +
 				" tried to destroy a non-stackable item with oid " + _objectId + " but has count > 1!",
-				Config.DEFAULT_PUNISH);
+				Config.General.DEFAULT_PUNISH);
 
 			return ValueTask.CompletedTask;
 		}

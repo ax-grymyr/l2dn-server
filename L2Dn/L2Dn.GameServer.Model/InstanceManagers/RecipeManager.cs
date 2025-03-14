@@ -60,7 +60,7 @@ public class RecipeManager
 		{
 			Util.handleIllegalPlayerAction(player,
 				"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-				" sent a false recipe id.", Config.DEFAULT_PUNISH);
+				" sent a false recipe id.", Config.General.DEFAULT_PUNISH);
 			return;
 		}
 
@@ -103,7 +103,7 @@ public class RecipeManager
 
 		if (!player.getDwarvenRecipeBook().Contains(recipeList) && !player.getCommonRecipeBook().Contains(recipeList))
 		{
-			Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false recipe id.", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false recipe id.", Config.General.DEFAULT_PUNISH);
 			return;
 		}
 

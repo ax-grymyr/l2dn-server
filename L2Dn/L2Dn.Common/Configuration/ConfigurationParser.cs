@@ -198,10 +198,10 @@ public sealed class ConfigurationParser(string? basePath = null)
         }
     }
 
-    public ImmutableArray<string> GetStringList(string key, char separator = ',', params string[] defaultValues)
+    public ImmutableArray<string> GetStringList(string key, char separator = ',', params ReadOnlySpan<string> defaultValues)
     {
         if (!_values.TryGetValue(key, out string? value) || string.IsNullOrWhiteSpace(value))
-            return defaultValues.ToImmutableArray();
+            return [..defaultValues];
 
         return value.Split(separator).Select(s => s.Trim()).Where(s => !string.IsNullOrWhiteSpace(s))
             .ToImmutableArray();
@@ -235,10 +235,11 @@ public sealed class ConfigurationParser(string? basePath = null)
         }
     }
 
-    public ImmutableArray<double> GetDoubleList(string key, char separator = ',', params double[] defaultValues)
+    public ImmutableArray<double> GetDoubleList(string key, char separator = ',',
+        params ReadOnlySpan<double> defaultValues)
     {
         if (!_values.TryGetValue(key, out string? value) || string.IsNullOrWhiteSpace(value))
-            return defaultValues.ToImmutableArray();
+            return [..defaultValues];
 
         try
         {
@@ -250,7 +251,7 @@ public sealed class ConfigurationParser(string? basePath = null)
         }
         catch (ConfigurationException)
         {
-            return defaultValues.ToImmutableArray();
+            return [..defaultValues];
         }
     }
 

@@ -117,7 +117,7 @@ public class SkillData: DataReaderBase
         IEnumerable<(string FilePath, XmlSkillList Document)> skillLists =
             LoadXmlDocuments<XmlSkillList>(DataFileLocation.Data, "stats/skills");
 
-        if (Config.CUSTOM_SKILLS_LOAD)
+        if (Config.General.CUSTOM_SKILLS_LOAD)
         {
             skillLists = skillLists.Concat(LoadXmlDocuments<XmlSkillList>(DataFileLocation.Data,
                 "stats/skills/custom"));

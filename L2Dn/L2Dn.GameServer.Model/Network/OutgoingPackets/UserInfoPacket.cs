@@ -288,7 +288,7 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 			writer.WriteByte((byte)_player.getPvpFlag());
 			writer.WriteInt32(_player.getReputation()); // Reputation
 			writer.WriteByte(_player.isNoble());
-			writer.WriteByte((byte)(_player.isHero() || (_player.isGM() && Config.GM_HERO_AURA) ? 2 : 0)); // 152 - Value for enabled changed to 2?
+			writer.WriteByte((byte)(_player.isHero() || (_player.isGM() && Config.General.GM_HERO_AURA) ? 2 : 0)); // 152 - Value for enabled changed to 2?
 			writer.WriteByte((byte)_player.getPledgeClass());
 			writer.WriteInt32(_player.getPkKills());
 			writer.WriteInt32(_player.getPvpKills());

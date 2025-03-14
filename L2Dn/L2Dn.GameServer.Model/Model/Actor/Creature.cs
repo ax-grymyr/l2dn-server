@@ -483,7 +483,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// Custom boss announcements configuration.
 		if (this is GrandBoss)
 		{
-			if (Config.GRANDBOSS_SPAWN_ANNOUNCEMENTS && (!isInInstance() || Config.GRANDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
+			if (Config.BossAnnouncements.GRANDBOSS_SPAWN_ANNOUNCEMENTS && (!isInInstance() || Config.BossAnnouncements.GRANDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 			{
 				string? name = NpcData.getInstance().getTemplate(getId())?.getName(); // TODO: wtf? why not use _template?
 				if (name != null)
@@ -493,7 +493,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				}
 			}
 		}
-		else if (isRaid() && Config.RAIDBOSS_SPAWN_ANNOUNCEMENTS && (!isInInstance() || Config.RAIDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
+		else if (isRaid() && Config.BossAnnouncements.RAIDBOSS_SPAWN_ANNOUNCEMENTS && (!isInInstance() || Config.BossAnnouncements.RAIDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 		{
 			string? name = NpcData.getInstance().getTemplate(getId())?.getName(); // TODO: wtf? why not use _template?
 			if (name != null)
@@ -1132,7 +1132,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				player.updatePvPStatus(target);
 			}
 
-			if (isFakePlayer() && !Config.FAKE_PLAYER_AUTO_ATTACKABLE && (target.isPlayable() || target.isFakePlayer()))
+			if (isFakePlayer() && !Config.FakePlayers.FAKE_PLAYER_AUTO_ATTACKABLE && (target.isPlayable() || target.isFakePlayer()))
 			{
 				Npc npc = (Npc)this;
 				if (!npc.isScriptValue(1))
@@ -1299,7 +1299,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 
 		// Players which are 9 levels above a Raid Boss and cast a skill nearby, are silenced with the Raid Curse skill.
-		if (!Config.RAID_DISABLE_CURSE && isPlayer())
+		if (!Config.Npc.RAID_DISABLE_CURSE && isPlayer())
 		{
 			World.getInstance().forEachVisibleObjectInRange<Attackable>(this, Config.Character.ALT_PARTY_RANGE, attackable =>
 			{
@@ -1711,7 +1711,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		// Custom boss announcements configuration.
 		if (this is GrandBoss)
 		{
-			if (Config.GRANDBOSS_DEFEAT_ANNOUNCEMENTS && (!isInInstance() || Config.GRANDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
+			if (Config.BossAnnouncements.GRANDBOSS_DEFEAT_ANNOUNCEMENTS && (!isInInstance() || Config.BossAnnouncements.GRANDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 			{
 				string? name = NpcData.getInstance().getTemplate(getId())?.getName(); // TODO: why not use _template?
 				if (name != null)
@@ -1721,7 +1721,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				}
 			}
 		}
-		else if (isRaid() && Config.RAIDBOSS_DEFEAT_ANNOUNCEMENTS && (!isInInstance() || Config.RAIDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
+		else if (isRaid() && Config.BossAnnouncements.RAIDBOSS_DEFEAT_ANNOUNCEMENTS && (!isInInstance() || Config.BossAnnouncements.RAIDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 		{
 			string? name = NpcData.getInstance().getTemplate(getId())?.getName(); // TODO: why not use _template?
 			if (name != null)
@@ -2280,15 +2280,15 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	public string getTitle()
 	{
 		// Custom level titles
-		if (isMonster() && (Config.SHOW_NPC_LEVEL || Config.SHOW_NPC_AGGRESSION))
+		if (isMonster() && (Config.Npc.SHOW_NPC_LEVEL || Config.Npc.SHOW_NPC_AGGRESSION))
 		{
 			string t1 = "";
-			if (Config.SHOW_NPC_LEVEL)
+			if (Config.Npc.SHOW_NPC_LEVEL)
 			{
 				t1 += "Lv " + getLevel();
 			}
 			string t2 = "";
-			if (Config.SHOW_NPC_AGGRESSION)
+			if (Config.Npc.SHOW_NPC_AGGRESSION)
 			{
 				if (!string.IsNullOrEmpty(t1))
 				{
@@ -2309,12 +2309,12 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			{
 				t1 += " " + _title;
 			}
-			return isChampion() ? Config.CHAMP_TITLE + " " + t1 : t1;
+			return isChampion() ? Config.ChampionMonsters.CHAMP_TITLE + " " + t1 : t1;
 		}
 		// Champion titles
 		if (isChampion())
 		{
-			return Config.CHAMP_TITLE;
+			return Config.ChampionMonsters.CHAMP_TITLE;
 		}
 		// Set trap title
 		if (isTrap() && ((Trap)this).getOwner() is {} trapOwner)
@@ -3221,7 +3221,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	public virtual void revalidateZone(bool force)
 	{
 		// This function is called too often from movement code.
-		if (!force && this.Distance3D(_lastZoneValidateLocation) < (isNpc() && !isInCombat() ? Config.MAX_DRIFT_RANGE : 100))
+		if (!force && this.Distance3D(_lastZoneValidateLocation) < (isNpc() && !isInCombat() ? Config.Npc.MAX_DRIFT_RANGE : 100))
 		{
 			return;
 		}
@@ -3465,7 +3465,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			}
 
 			// Movement checks.
-			if (Config.PATHFINDING > 0 && this is not FriendlyNpc)
+			if (Config.GeoEngine.PATHFINDING > 0 && this is not FriendlyNpc)
 			{
 				Location3D originalLoc = loc;
 				double originalDistance = distance;
@@ -3583,7 +3583,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			}
 
 			// If no distance to go through, the movement is canceled
-			if (distance < 1 && (Config.PATHFINDING > 0 || isPlayable()))
+			if (distance < 1 && (Config.GeoEngine.PATHFINDING > 0 || isPlayable()))
 			{
 				if (isSummon())
 				{
@@ -4590,7 +4590,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	public virtual void doAttack(double damageValue, Creature target, Skill? skill, bool isDOT, bool directlyToHp, bool critical, bool reflect)
 	{
 		// Check if fake players should aggro each other.
-		if (isFakePlayer() && !Config.FAKE_PLAYER_AGGRO_FPC && target.isFakePlayer())
+		if (isFakePlayer() && !Config.FakePlayers.FAKE_PLAYER_AGGRO_FPC && target.isFakePlayer())
 		{
 			return;
 		}
@@ -4635,7 +4635,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		// Absorb HP from the damage inflicted
 		bool isPvP = isPlayable() && (target.isPlayable() || target.isFakePlayer());
-		if (!isPvP || Config.VAMPIRIC_ATTACK_AFFECTS_PVP)
+		if (!isPvP || Config.Pvp.VAMPIRIC_ATTACK_AFFECTS_PVP)
 		{
 			if (skill == null || Config.Character.VAMPIRIC_ATTACK_WORKS_WITH_SKILLS)
 			{
@@ -4654,7 +4654,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 
 		// Absorb MP from the damage inflicted.
-		if (!isPvP || Config.MP_VAMPIRIC_ATTACK_AFFECTS_PVP)
+		if (!isPvP || Config.Pvp.MP_VAMPIRIC_ATTACK_AFFECTS_PVP)
 		{
 			if (skill != null || Config.Character.MP_VAMPIRIC_ATTACK_WORKS_WITH_MELEE)
 			{
@@ -4796,9 +4796,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 
         Player? player = getActingPlayer();
-		if (Config.CHAMPION_ENABLE && isChampion() && Config.CHAMPION_HP != 0)
+		if (Config.ChampionMonsters.CHAMPION_ENABLE && isChampion() && Config.ChampionMonsters.CHAMPION_HP != 0)
 		{
-			_status.reduceHp(amount / Config.CHAMPION_HP, attacker, skill == null || !skill.isToggle(), isDOT, false);
+			_status.reduceHp(amount / Config.ChampionMonsters.CHAMPION_HP, attacker, skill == null || !skill.isToggle(), isDOT, false);
 		}
 		else if (isPlayer() && player != null)
 		{

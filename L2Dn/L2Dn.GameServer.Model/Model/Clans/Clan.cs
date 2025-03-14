@@ -720,7 +720,7 @@ public class Clan: IIdentifiable, INamable
 	private void setLevel(int level)
 	{
 		_level = level;
-		if (_level >= 2 && _forum == null && Config.ENABLE_COMMUNITY_BOARD)
+		if (_level >= 2 && _forum == null && Config.General.ENABLE_COMMUNITY_BOARD)
 		{
 			Forum? forum = ForumsBBSManager.getInstance().getForumByName("ClanRoot");
 			if (forum != null)
@@ -3028,9 +3028,9 @@ public class Clan: IIdentifiable, INamable
 				if (_vars == null)
 				{
 					_vars = new ClanVariables(_clanId);
-					if (Config.CLAN_VARIABLES_STORE_INTERVAL > 0)
+					if (Config.General.CLAN_VARIABLES_STORE_INTERVAL > 0)
 					{
-						ThreadPool.scheduleAtFixedRate(storeVariables, Config.CLAN_VARIABLES_STORE_INTERVAL, Config.CLAN_VARIABLES_STORE_INTERVAL);
+						ThreadPool.scheduleAtFixedRate(storeVariables, Config.General.CLAN_VARIABLES_STORE_INTERVAL, Config.General.CLAN_VARIABLES_STORE_INTERVAL);
 					}
 				}
 			}

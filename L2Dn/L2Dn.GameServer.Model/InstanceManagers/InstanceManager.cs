@@ -149,16 +149,16 @@ public class InstanceManager: DataReaderBase
 		XmlInstanceRates? xmlInstanceRates = xmlInstance.Rates;
 		if (xmlInstanceRates != null)
 		{
-			template.setExpRate(xmlInstanceRates.ExpSpecified ? xmlInstanceRates.Exp : Config.RATE_INSTANCE_XP);
-			template.setSPRate(xmlInstanceRates.SpSpecified ? xmlInstanceRates.Sp : Config.RATE_INSTANCE_SP);
+			template.setExpRate(xmlInstanceRates.ExpSpecified ? xmlInstanceRates.Exp : Config.Rates.RATE_INSTANCE_XP);
+			template.setSPRate(xmlInstanceRates.SpSpecified ? xmlInstanceRates.Sp : Config.Rates.RATE_INSTANCE_SP);
 
 			template.setExpPartyRate(xmlInstanceRates.PartyExpSpecified
 				? xmlInstanceRates.PartyExp
-				: Config.RATE_INSTANCE_PARTY_XP);
+				: Config.Rates.RATE_INSTANCE_PARTY_XP);
 
 			template.setSPPartyRate(xmlInstanceRates.PartySpSpecified
 				? xmlInstanceRates.PartySp
-				: Config.RATE_INSTANCE_PARTY_SP);
+				: Config.Rates.RATE_INSTANCE_PARTY_SP);
 		}
 
 		XmlInstanceLocations? xmlInstanceLocations = xmlInstance.Locations;

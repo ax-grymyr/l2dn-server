@@ -39,14 +39,14 @@ public class Olympiad
         CategoryData.getInstance().getCategoryByType(CategoryType.FOURTH_CLASS_GROUP) ??
         throw new InvalidOperationException("No 4th class group defined");
 
-	private static readonly int COMP_START_HOUR = Config.ALT_OLY_START_TIME; // 6PM
-	private static readonly int COMP_START_MIN = Config.ALT_OLY_MIN; // 00 mins
-	private static readonly TimeSpan COMP_PERIOD = TimeSpan.FromMilliseconds(Config.ALT_OLY_CPERIOD); // 6 hours
-	protected static readonly TimeSpan WEEKLY_PERIOD = TimeSpan.FromMilliseconds(Config.ALT_OLY_WPERIOD); // 1 week
-	protected static readonly TimeSpan VALIDATION_PERIOD = TimeSpan.FromMilliseconds(Config.ALT_OLY_VPERIOD); // 24 hours
+	private static readonly int COMP_START_HOUR = Config.Olympiad.ALT_OLY_START_TIME; // 6PM
+	private static readonly int COMP_START_MIN = Config.Olympiad.ALT_OLY_MIN; // 00 mins
+	private static readonly TimeSpan COMP_PERIOD = TimeSpan.FromMilliseconds(Config.Olympiad.ALT_OLY_CPERIOD); // 6 hours
+	protected static readonly TimeSpan WEEKLY_PERIOD = TimeSpan.FromMilliseconds(Config.Olympiad.ALT_OLY_WPERIOD); // 1 week
+	protected static readonly TimeSpan VALIDATION_PERIOD = TimeSpan.FromMilliseconds(Config.Olympiad.ALT_OLY_VPERIOD); // 24 hours
 
-	public static readonly int DEFAULT_POINTS = Config.ALT_OLY_START_POINTS;
-	protected static readonly int WEEKLY_POINTS = Config.ALT_OLY_WEEKLY_POINTS;
+	public static readonly int DEFAULT_POINTS = Config.Olympiad.ALT_OLY_START_POINTS;
+	protected static readonly int WEEKLY_POINTS = Config.Olympiad.ALT_OLY_WEEKLY_POINTS;
 
 	public const string CHAR_ID = "charId";
 	public const string CLASS_ID = "class_id";
@@ -85,7 +85,7 @@ public class Olympiad
 
 	protected Olympiad()
 	{
-		if (Config.OLYMPIAD_ENABLED)
+		if (Config.Olympiad.OLYMPIAD_ENABLED)
 		{
 			load();
 			AntiFeedManager.getInstance().registerEvent(AntiFeedManager.OLYMPIAD_ID);
@@ -130,10 +130,10 @@ public class Olympiad
 		if (!loaded)
 		{
 			// LOGGER.info("Olympiad System: Failed to load data from database, trying to load from file.");
-			ConfigurationParser parser = new ConfigurationParser();
+			ConfigurationParser parser = new ConfigurationParser("Config");
 			try
 			{
-				parser.LoadConfig(Config.OLYMPIAD_CONFIG_FILE);
+				//parser.LoadConfig(Fil); // TODO: why loading from config?
 			}
 			catch (Exception e)
 			{
@@ -270,7 +270,7 @@ public class Olympiad
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			var query = ctx.OlympiadNoblesEom.Where(r => r.CompetitionsDone >= Config.ALT_OLY_MIN_MATCHES)
+			var query = ctx.OlympiadNoblesEom.Where(r => r.CompetitionsDone >= Config.Olympiad.ALT_OLY_MIN_MATCHES)
 				.OrderByDescending(r => r.OlympiadPoints).ThenByDescending(r => r.CompetitionsDone)
 				.ThenByDescending(r => r.CompetitionsWon);
 
@@ -377,11 +377,11 @@ public class Olympiad
 
 		DateTime compStart = DateTime.Now;
 
-		if (Config.ALT_OLY_COMPETITION_DAYS.Count != 0)
+		if (Config.Olympiad.ALT_OLY_COMPETITION_DAYS.Count != 0)
 		{
 			DayOfWeek currentDay = compStart.DayOfWeek;
 			int dayCounter = 0;
-			while (!Config.ALT_OLY_COMPETITION_DAYS.Contains(currentDay))
+			while (!Config.Olympiad.ALT_OLY_COMPETITION_DAYS.Contains(currentDay))
 			{
 				dayCounter++;
 				currentDay = currentDay == DayOfWeek.Saturday ? DayOfWeek.Sunday : currentDay + 1;
@@ -502,7 +502,7 @@ public class Olympiad
 			LOGGER_OLYMPIAD.Info("Result,Player1,Player2,Player1 HP,Player2 HP,Player1 Damage,Player2 Damage,Points,Classed");
 
 			_gameManager = ThreadPool.scheduleAtFixedRate(OlympiadGameManager.getInstance(), 30000, 30000);
-			if (Config.ALT_OLY_ANNOUNCE_GAMES)
+			if (Config.Olympiad.ALT_OLY_ANNOUNCE_GAMES)
 			{
 				_gameAnnouncer = ThreadPool.scheduleAtFixedRate(new OlympiadAnnouncer(), 30000, 500);
 			}
@@ -596,16 +596,16 @@ public class Olympiad
 		DateTime currentTime = DateTime.Today;
 		DateTime nextChange = DateTime.Now;
 
-		switch (Config.ALT_OLY_PERIOD)
+		switch (Config.Olympiad.ALT_OLY_PERIOD)
 		{
 			case "DAY":
 			{
-				currentTime = currentTime.AddDays(Config.ALT_OLY_PERIOD_MULTIPLIER);
-				if (Config.ALT_OLY_PERIOD_MULTIPLIER >= 14)
+				currentTime = currentTime.AddDays(Config.Olympiad.ALT_OLY_PERIOD_MULTIPLIER);
+				if (Config.Olympiad.ALT_OLY_PERIOD_MULTIPLIER >= 14)
 				{
 					_nextWeeklyChange = nextChange + WEEKLY_PERIOD;
 				}
-				else if (Config.ALT_OLY_PERIOD_MULTIPLIER >= 7)
+				else if (Config.Olympiad.ALT_OLY_PERIOD_MULTIPLIER >= 7)
 				{
 					_nextWeeklyChange = nextChange + WEEKLY_PERIOD / 2;
 				}
@@ -617,9 +617,9 @@ public class Olympiad
 			}
 			case "WEEK":
 			{
-				currentTime = currentTime.AddDays(7 * Config.ALT_OLY_PERIOD_MULTIPLIER);
+				currentTime = currentTime.AddDays(7 * Config.Olympiad.ALT_OLY_PERIOD_MULTIPLIER);
 
-				if (Config.ALT_OLY_PERIOD_MULTIPLIER > 1)
+				if (Config.Olympiad.ALT_OLY_PERIOD_MULTIPLIER > 1)
 				{
 					_nextWeeklyChange = nextChange + WEEKLY_PERIOD;
 				}
@@ -631,7 +631,7 @@ public class Olympiad
 			}
 			case "MONTH":
 			{
-				currentTime = currentTime.AddMonths(Config.ALT_OLY_PERIOD_MULTIPLIER);
+				currentTime = currentTime.AddMonths(Config.Olympiad.ALT_OLY_PERIOD_MULTIPLIER);
 				_nextWeeklyChange = nextChange + WEEKLY_PERIOD;
 				break;
 			}
@@ -684,9 +684,9 @@ public class Olympiad
 		}
 
 		int dayCounter = 0;
-		if (Config.ALT_OLY_COMPETITION_DAYS.Count != 0)
+		if (Config.Olympiad.ALT_OLY_COMPETITION_DAYS.Count != 0)
 		{
-			while (!Config.ALT_OLY_COMPETITION_DAYS.Contains(currentDay))
+			while (!Config.Olympiad.ALT_OLY_COMPETITION_DAYS.Contains(currentDay))
 			{
 				currentDay = currentDay == DayOfWeek.Saturday ? DayOfWeek.Sunday : currentDay + 1;
 				dayCounter++;
@@ -918,7 +918,7 @@ public class Olympiad
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
-			int? result = ctx.OlympiadNobles.Where(r => r.CompetitionsDone >= Config.ALT_OLY_MIN_MATCHES)
+			int? result = ctx.OlympiadNobles.Where(r => r.CompetitionsDone >= Config.Olympiad.ALT_OLY_MIN_MATCHES)
 				.OrderByDescending(r => r.OlympiadPoints).Select(r => (int?)r.CharacterId).FirstOrDefault();
 
 			if (result != null)
@@ -942,7 +942,7 @@ public class Olympiad
 
 				var query = (from n in ctx.OlympiadNobles
 					from c in ctx.Characters
-					where n.CharacterId == c.Id && n.CompetitionsDone >= Config.ALT_OLY_MIN_MATCHES &&
+					where n.CharacterId == c.Id && n.CompetitionsDone >= Config.Olympiad.ALT_OLY_MIN_MATCHES &&
 					      n.CompetitionsWon > 0 && (n.Class == heroClass || n.Class == parent)
 					orderby n.OlympiadPoints descending, n.CompetitionsDone descending, n.CompetitionsWon descending
 					select new
@@ -981,12 +981,12 @@ public class Olympiad
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 			IQueryable<string> query;
-			if (Config.ALT_OLY_SHOW_MONTHLY_WINNERS)
+			if (Config.Olympiad.ALT_OLY_SHOW_MONTHLY_WINNERS)
 				query = from n in ctx.OlympiadNoblesEom
 					from c in ctx.Characters
 					where n.CharacterId == c.Id &&
 					      (n.Class == classId || (classId == (CharacterClass)132 && n.Class == (CharacterClass)133)) &&
-					      n.CompetitionsDone >= Config.ALT_OLY_MIN_MATCHES
+					      n.CompetitionsDone >= Config.Olympiad.ALT_OLY_MIN_MATCHES
 					orderby n.OlympiadPoints descending, n.CompetitionsDone descending, n.CompetitionsWon descending
 					select c.Name;
 			else
@@ -994,7 +994,7 @@ public class Olympiad
 					from c in ctx.Characters
 					where n.CharacterId == c.Id &&
 					      (n.Class == classId || (classId == (CharacterClass)132 && n.Class == (CharacterClass)133)) &&
-					      n.CompetitionsDone >= Config.ALT_OLY_MIN_MATCHES
+					      n.CompetitionsDone >= Config.Olympiad.ALT_OLY_MIN_MATCHES
 					orderby n.OlympiadPoints descending, n.CompetitionsDone descending, n.CompetitionsWon descending
 					select c.Name;
 
@@ -1029,33 +1029,33 @@ public class Olympiad
 		}
 
 		// Hero point bonus
-		int points = Hero.getInstance().isHero(objectId) || Hero.getInstance().isUnclaimedHero(objectId) ? Config.ALT_OLY_HERO_POINTS : 0;
+		int points = Hero.getInstance().isHero(objectId) || Hero.getInstance().isUnclaimedHero(objectId) ? Config.Olympiad.ALT_OLY_HERO_POINTS : 0;
 		// Rank point bonus
 		switch (nobleRank)
 		{
 			case 1:
 			{
-				points += Config.ALT_OLY_RANK1_POINTS;
+				points += Config.Olympiad.ALT_OLY_RANK1_POINTS;
 				break;
 			}
 			case 2:
 			{
-				points += Config.ALT_OLY_RANK2_POINTS;
+				points += Config.Olympiad.ALT_OLY_RANK2_POINTS;
 				break;
 			}
 			case 3:
 			{
-				points += Config.ALT_OLY_RANK3_POINTS;
+				points += Config.Olympiad.ALT_OLY_RANK3_POINTS;
 				break;
 			}
 			case 4:
 			{
-				points += Config.ALT_OLY_RANK4_POINTS;
+				points += Config.Olympiad.ALT_OLY_RANK4_POINTS;
 				break;
 			}
 			default:
 			{
-				points += Config.ALT_OLY_RANK5_POINTS;
+				points += Config.Olympiad.ALT_OLY_RANK5_POINTS;
 				break;
 			}
 		}
@@ -1140,7 +1140,7 @@ public class Olympiad
 	 */
 	public int getRemainingWeeklyMatches(int objId)
 	{
-		return Math.Max(Config.ALT_OLY_MAX_WEEKLY_MATCHES - getCompetitionDoneWeek(objId), 0);
+		return Math.Max(Config.Olympiad.ALT_OLY_MAX_WEEKLY_MATCHES - getCompetitionDoneWeek(objId), 0);
 	}
 
 	protected void deleteNobles()

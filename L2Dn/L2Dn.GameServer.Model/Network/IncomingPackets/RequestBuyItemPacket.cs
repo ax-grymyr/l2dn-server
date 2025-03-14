@@ -100,7 +100,7 @@ public struct RequestBuyItemPacket: IIncomingPacket<GameSession>
 		{
 			Util.handleIllegalPlayerAction(player,
 				"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-				" sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
+				" sent a false BuyList list_id " + _listId, Config.General.DEFAULT_PUNISH);
 
 			return ValueTask.CompletedTask;
 		}
@@ -129,7 +129,7 @@ public struct RequestBuyItemPacket: IIncomingPacket<GameSession>
 			{
 				Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-					" sent a false BuyList list_id " + _listId + " and item_id " + i.getId(), Config.DEFAULT_PUNISH);
+					" sent a false BuyList list_id " + _listId + " and item_id " + i.getId(), Config.General.DEFAULT_PUNISH);
 
 				return ValueTask.CompletedTask;
 			}
@@ -138,7 +138,7 @@ public struct RequestBuyItemPacket: IIncomingPacket<GameSession>
 			{
 				Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-					" tried to purchase invalid quantity of items at the same time.", Config.DEFAULT_PUNISH);
+					" tried to purchase invalid quantity of items at the same time.", Config.General.DEFAULT_PUNISH);
 
 				player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_QUANTITY_THAT_CAN_BE_INPUTTED);
 				return ValueTask.CompletedTask;
@@ -152,12 +152,12 @@ public struct RequestBuyItemPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			if (price == 0 && !player.isGM() && Config.ONLY_GM_ITEMS_FREE)
+			if (price == 0 && !player.isGM() && Config.General.ONLY_GM_ITEMS_FREE)
 			{
 				player.sendMessage("Ohh Cheat dont work? You have a problem now!");
 				Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-					" tried buy item for 0 adena.", Config.DEFAULT_PUNISH);
+					" tried buy item for 0 adena.", Config.General.DEFAULT_PUNISH);
 
 				return ValueTask.CompletedTask;
 			}
@@ -173,7 +173,7 @@ public struct RequestBuyItemPacket: IIncomingPacket<GameSession>
 			{
 				Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-					" tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.DEFAULT_PUNISH);
+					" tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.General.DEFAULT_PUNISH);
 
 				return ValueTask.CompletedTask;
 			}
@@ -185,7 +185,7 @@ public struct RequestBuyItemPacket: IIncomingPacket<GameSession>
 			{
 				Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-					" tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.DEFAULT_PUNISH);
+					" tried to purchase over " + Inventory.MAX_ADENA + " adena worth of goods.", Config.General.DEFAULT_PUNISH);
 
 				return ValueTask.CompletedTask;
 			}
@@ -225,7 +225,7 @@ public struct RequestBuyItemPacket: IIncomingPacket<GameSession>
 			Product? product = buyList.getProductByItemId(i.getId());
 			if (product == null)
 			{
-				Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false BuyList list_id " + _listId + " and item_id " + i.getId(), Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false BuyList list_id " + _listId + " and item_id " + i.getId(), Config.General.DEFAULT_PUNISH);
 				continue;
 			}
 

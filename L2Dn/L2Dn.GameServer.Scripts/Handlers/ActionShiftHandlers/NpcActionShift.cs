@@ -175,7 +175,7 @@ public class NpcActionShift: IActionShiftHandler
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 			player.sendPacket(html);
 		}
-		else if (Config.ALT_GAME_VIEWNPC)
+		else if (Config.Npc.ALT_GAME_VIEWNPC)
 		{
 			if (!target.isNpc() || target.isFakePlayer())
 			{

@@ -796,31 +796,31 @@ public static class Scripts
 		VoicedCommandHandler voicedCommandHandler = VoicedCommandHandler.getInstance();
         voicedCommandHandler.registerHandler(new ExperienceGain());
 
-        if (Config.BANKING_SYSTEM_ENABLED)
+        if (Config.Banking.BANKING_SYSTEM_ENABLED)
             voicedCommandHandler.registerHandler(new Banking());
 
-        if (Config.CHAT_ADMIN)
+        if (Config.ChatModeration.CHAT_ADMIN)
             voicedCommandHandler.registerHandler(new ChatAdmin());
 
-        if (Config.MULTILANG_ENABLE && Config.MULTILANG_VOICED_ALLOW)
+        if (Config.MultilingualSupport.MULTILANG_ENABLE && Config.MultilingualSupport.MULTILANG_VOICED_ALLOW)
             voicedCommandHandler.registerHandler(new Lang());
 
-        if (Config.ALLOW_CHANGE_PASSWORD)
+        if (Config.PasswordChange.ALLOW_CHANGE_PASSWORD)
             voicedCommandHandler.registerHandler(new ChangePassword());
 
-        if (Config.ENABLE_OFFLINE_PLAY_COMMAND)
+        if (Config.OfflinePlay.ENABLE_OFFLINE_PLAY_COMMAND)
             voicedCommandHandler.registerHandler(new OfflinePlay());
 
-        if (Config.ENABLE_OFFLINE_COMMAND && (Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE))
+        if (Config.OfflineTrade.ENABLE_OFFLINE_COMMAND && (Config.OfflineTrade.OFFLINE_TRADE_ENABLE || Config.OfflineTrade.OFFLINE_CRAFT_ENABLE))
             voicedCommandHandler.registerHandler(new Offline());
 
-        if (Config.ENABLE_ONLINE_COMMAND)
+        if (Config.OnlineInfo.ENABLE_ONLINE_COMMAND)
             voicedCommandHandler.registerHandler(new Online());
 
-        if (Config.PREMIUM_SYSTEM_ENABLED)
+        if (Config.PremiumSystem.PREMIUM_SYSTEM_ENABLED)
             voicedCommandHandler.registerHandler(new Premium());
 
-        if (Config.AUTO_POTIONS_ENABLED)
+        if (Config.AutoPotions.AUTO_POTIONS_ENABLED)
             voicedCommandHandler.registerHandler(new AutoPotion());
 
         // TODO: Add configuration options for this voiced commands:

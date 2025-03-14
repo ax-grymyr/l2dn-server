@@ -59,8 +59,8 @@ public class PurgeRankingManager
 					foreach (var purgeData in getTop5(category))
 					{
 						int charId = CharInfoTable.getInstance().getIdByName(purgeData.Key);
-						Message msg = new Message(charId, Config.SUBJUGATION_TOPIC_HEADER,
-							Config.SUBJUGATION_TOPIC_BODY, MailType.PURGE_REWARD);
+						Message msg = new Message(charId, Config.General.SUBJUGATION_TOPIC_HEADER,
+							Config.General.SUBJUGATION_TOPIC_BODY, MailType.PURGE_REWARD);
 						Mail attachment = msg.createAttachments();
 						int reward;
 						switch (category)

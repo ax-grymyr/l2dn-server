@@ -20,7 +20,7 @@ public readonly struct TradeStartPacket: IOutgoingPacket
         _sendType = sendType;
         _partner = partner;
         _itemList = player.getInventory().getAvailableItems(true,
-            player.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && Config.GM_TRADE_RESTRICTED_ITEMS, false);
+            player.canOverrideCond(PlayerCondOverride.ITEM_CONDITIONS) && Config.General.GM_TRADE_RESTRICTED_ITEMS, false);
 
         if (partner != null)
         {

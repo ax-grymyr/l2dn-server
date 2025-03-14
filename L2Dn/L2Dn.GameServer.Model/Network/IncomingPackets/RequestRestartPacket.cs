@@ -51,7 +51,7 @@ public struct RequestRestartPacket: IIncomingPacket<GameSession>
         Instance? world = player.getInstanceWorld();
         if (world != null)
         {
-            if (Config.RESTORE_PLAYER_INSTANCE)
+            if (Config.General.RESTORE_PLAYER_INSTANCE)
             {
                 player.getVariables().Set(PlayerVariables.INSTANCE_RESTORE, world.getId());
             }

@@ -113,10 +113,9 @@ public static partial class Config
         public static bool ALLOW_WYVERN_DURING_SIEGE;
         public static bool ALLOW_MOUNTS_DURING_SIEGE;
 
-        internal static void Load(string configPath)
+        internal static void Load(ConfigurationParser parser)
         {
-            ConfigurationParser parser = new(configPath);
-            parser.LoadConfig(FileNames.Configs.FeatureConfigFile);
+            parser.LoadConfig(FileNames.Configs.Feature);
 
             // Castle Settings
             SIEGE_HOUR_LIST = parser.GetIntList("SiegeHourList");

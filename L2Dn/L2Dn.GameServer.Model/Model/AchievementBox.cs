@@ -36,8 +36,8 @@ public sealed class AchievementBox(Player owner)
 
 	public void addPoints(int value)
 	{
-		int newPoints = Math.Min(Config.ACHIEVEMENT_BOX_POINTS_FOR_REWARD, _monsterPoints + value);
-		if (newPoints >= Config.ACHIEVEMENT_BOX_POINTS_FOR_REWARD)
+		int newPoints = Math.Min(Config.AchievementBox.ACHIEVEMENT_BOX_POINTS_FOR_REWARD, _monsterPoints + value);
+		if (newPoints >= Config.AchievementBox.ACHIEVEMENT_BOX_POINTS_FOR_REWARD)
 		{
 			if (addNewBox())
 			{
@@ -45,7 +45,7 @@ public sealed class AchievementBox(Player owner)
 			}
 			else
 			{
-				_monsterPoints = Config.ACHIEVEMENT_BOX_POINTS_FOR_REWARD;
+				_monsterPoints = Config.AchievementBox.ACHIEVEMENT_BOX_POINTS_FOR_REWARD;
 			}
 			return;
 		}
@@ -54,8 +54,8 @@ public sealed class AchievementBox(Player owner)
 
 	public void addPvpPoints(int value)
 	{
-		int newPoints = Math.Min(Config.ACHIEVEMENT_BOX_PVP_POINTS_FOR_REWARD, _pvpPoints);
-		while (newPoints >= Config.ACHIEVEMENT_BOX_PVP_POINTS_FOR_REWARD)
+		int newPoints = Math.Min(Config.AchievementBox.ACHIEVEMENT_BOX_PVP_POINTS_FOR_REWARD, _pvpPoints);
+		while (newPoints >= Config.AchievementBox.ACHIEVEMENT_BOX_PVP_POINTS_FOR_REWARD)
 		{
 			if (addNewBox())
 			{
@@ -63,7 +63,7 @@ public sealed class AchievementBox(Player owner)
 			}
 			else
 			{
-				_pvpPoints = Config.ACHIEVEMENT_BOX_PVP_POINTS_FOR_REWARD;
+				_pvpPoints = Config.AchievementBox.ACHIEVEMENT_BOX_PVP_POINTS_FOR_REWARD;
 			}
 			return;
 		}

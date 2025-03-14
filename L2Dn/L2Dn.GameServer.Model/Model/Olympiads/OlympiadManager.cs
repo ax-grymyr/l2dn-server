@@ -45,7 +45,7 @@ public class OlympiadManager
 		List<Set<int>> result = [];
 		foreach (var classList in _classBasedRegisters)
 		{
-			if (classList.Value != null && classList.Value.size() >= Config.ALT_OLY_CLASSED)
+			if (classList.Value != null && classList.Value.size() >= Config.Olympiad.ALT_OLY_CLASSED)
 			{
 				result.Add(classList.Value);
 			}
@@ -56,7 +56,7 @@ public class OlympiadManager
 
 	public bool hasEnoughRegisteredNonClassed()
 	{
-		return _nonClassBasedRegisters.size() >= Config.ALT_OLY_NONCLASSED;
+		return _nonClassBasedRegisters.size() >= Config.Olympiad.ALT_OLY_NONCLASSED;
 	}
 
 	public void clearRegistered()
@@ -208,13 +208,13 @@ public class OlympiadManager
 					return false;
 				}
 
-				if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0 && !AntiFeedManager.getInstance()
+				if (Config.DualboxCheck.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0 && !AntiFeedManager.getInstance()
 					    .tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player,
-						    Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
+						    Config.DualboxCheck.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
 				{
 					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/OlympiadIPRestriction.htm", player);
 					htmlContent.Replace("%max%", AntiFeedManager.getInstance()
-						.getLimit(player, Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP).ToString());
+						.getLimit(player, Config.DualboxCheck.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP).ToString());
 
 					NpcHtmlMessagePacket message =
 						new NpcHtmlMessagePacket(player.getClient()?.HtmlActionValidator.OriginObjectId, 0, htmlContent);
@@ -235,14 +235,14 @@ public class OlympiadManager
 					return false;
 				}
 
-				if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0 && !AntiFeedManager.getInstance()
+				if (Config.DualboxCheck.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0 && !AntiFeedManager.getInstance()
 					    .tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player,
-						    Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
+						    Config.DualboxCheck.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
 				{
 					HtmlContent htmlContent = HtmlContent.LoadFromFile("html/mods/OlympiadIPRestriction.htm", player);
 					htmlContent.Replace("%max%",
 						AntiFeedManager.getInstance()
-							.getLimit(player, Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP).ToString());
+							.getLimit(player, Config.DualboxCheck.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP).ToString());
 
 					NpcHtmlMessagePacket message =
 						new NpcHtmlMessagePacket(player.getClient()?.HtmlActionValidator.OriginObjectId, 0, htmlContent);
@@ -293,7 +293,7 @@ public class OlympiadManager
 		int objId = noble.ObjectId;
 		if (_nonClassBasedRegisters.remove(objId))
 		{
-			if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
+			if (Config.DualboxCheck.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
 			{
 				AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, noble);
 			}
@@ -305,7 +305,7 @@ public class OlympiadManager
 		Set<int>? classed = _classBasedRegisters.get(getClassGroup(noble));
 		if (classed != null && classed.remove(objId))
 		{
-			if (Config.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
+			if (Config.DualboxCheck.DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
 			{
 				AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, noble);
 			}

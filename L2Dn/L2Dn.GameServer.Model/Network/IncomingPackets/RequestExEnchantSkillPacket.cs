@@ -132,7 +132,7 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
                 return ValueTask.CompletedTask;
             }
 
-			if (Config.LOG_SKILL_ENCHANTS)
+			if (Config.General.LOG_SKILL_ENCHANTS)
 			{
 				StringBuilder sb = new StringBuilder();
 				LOGGER_ENCHANT.Info(sb.Append("Success, Character:").Append(player.getName()).Append(" [")

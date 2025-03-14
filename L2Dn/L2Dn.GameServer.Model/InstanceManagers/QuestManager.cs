@@ -153,7 +153,7 @@ public class QuestManager
 			LOGGER.Info("Replaced quest " + old.Name + " (" + old.getId() + ") with a new version!");
 		}
 
-		if (Config.ALT_DEV_SHOW_QUESTS_LOAD_IN_LOGS)
+		if (Config.General.ALT_DEV_SHOW_QUESTS_LOAD_IN_LOGS)
 		{
 			string questName = quest.Name.Contains("_") ? quest.Name.Substring(quest.Name.IndexOf('_') + 1) : quest.Name;
 			LOGGER.Info("Loaded quest " + questName + ".");

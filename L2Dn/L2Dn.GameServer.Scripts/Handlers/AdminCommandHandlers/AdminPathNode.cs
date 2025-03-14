@@ -18,7 +18,7 @@ public class AdminPathNode: IAdminCommandHandler
 	{
 		if (command.equals("admin_path_find"))
 		{
-			if (Config.PATHFINDING < 1)
+			if (Config.GeoEngine.PATHFINDING < 1)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "PathFinding is disabled.");
 				return true;

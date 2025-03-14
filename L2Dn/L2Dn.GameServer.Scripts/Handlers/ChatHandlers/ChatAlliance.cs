@@ -29,12 +29,12 @@ public class ChatAlliance: IChatHandler
 			return;
 		}
 
-		if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.Contains(type))
+		if (activeChar.isChatBanned() && Config.General.BAN_CHAT_CHANNELS.Contains(type))
 		{
 			activeChar.sendPacket(SystemMessageId.IF_YOU_TRY_TO_CHAT_BEFORE_THE_PROHIBITION_IS_REMOVED_THE_PROHIBITION_TIME_WILL_INCREASE_EVEN_FURTHER_S1_SEC_OF_PROHIBITION_IS_LEFT);
 			return;
 		}
-		if (Config.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+		if (Config.General.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 			return;
@@ -42,7 +42,7 @@ public class ChatAlliance: IChatHandler
 
 		if (shareLocation)
 		{
-			if (activeChar.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < Config.SHARING_LOCATION_COST)
+			if (activeChar.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < Config.General.SHARING_LOCATION_COST)
 			{
 				activeChar.sendPacket(SystemMessageId.THERE_ARE_NOT_ENOUGH_L_COINS);
 				return;
@@ -54,7 +54,7 @@ public class ChatAlliance: IChatHandler
 				return;
 			}
 
-			activeChar.destroyItemByItemId("Shared Location", Inventory.LCOIN_ID, Config.SHARING_LOCATION_COST, activeChar, true);
+			activeChar.destroyItemByItemId("Shared Location", Inventory.LCOIN_ID, Config.General.SHARING_LOCATION_COST, activeChar, true);
 		}
 
 		clan.broadcastToOnlineAllyMembers(new CreatureSayPacket(activeChar, type, activeChar.getName(), text, shareLocation));

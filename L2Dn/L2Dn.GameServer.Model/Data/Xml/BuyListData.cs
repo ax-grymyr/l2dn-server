@@ -70,7 +70,7 @@ public class BuyListData: DataReaderBase
 		IEnumerable<ProductList> buyLists = LoadXmlDocuments<XmlBuyList>(DataFileLocation.Data, "buylists")
 			.Select(t => LoadBuyList(t.FilePath, t.Document));
 
-		if (Config.CUSTOM_BUYLIST_LOAD)
+		if (Config.General.CUSTOM_BUYLIST_LOAD)
 		{
 			buyLists = buyLists.Concat(LoadXmlDocuments<XmlBuyList>(DataFileLocation.Data, "buylists/custom")
 				.Select(t => LoadBuyList(t.FilePath, t.Document)));
@@ -106,7 +106,7 @@ public class BuyListData: DataReaderBase
 
 			int baseTax = buyListItem.BaseTaxSpecified ? buyListItem.BaseTax : 0;
 			int sellPrice = item.getReferencePrice() / 2;
-			if (Config.CORRECT_PRICES && allowedNpc.Count != 0 && price >= 0 && sellPrice > price)
+			if (Config.General.CORRECT_PRICES && allowedNpc.Count != 0 && price >= 0 && sellPrice > price)
 			{
 				_logger.Warn(
 					$"Buy price {price} is less than sell price {sellPrice} for ItemID:{itemId} of buylist {buyListId}.");

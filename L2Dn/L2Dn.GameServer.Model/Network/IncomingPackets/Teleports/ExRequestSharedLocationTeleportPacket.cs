@@ -40,7 +40,7 @@ public struct ExRequestSharedLocationTeleportPacket: IIncomingPacket<GameSession
             return ValueTask.CompletedTask;
         }
 
-        if (player.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < Config.TELEPORT_SHARE_LOCATION_COST)
+        if (player.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < Config.General.TELEPORT_SHARE_LOCATION_COST)
         {
             player.sendPacket(SystemMessageId.THERE_ARE_NOT_ENOUGH_L_COINS);
             return ValueTask.CompletedTask;
@@ -54,7 +54,7 @@ public struct ExRequestSharedLocationTeleportPacket: IIncomingPacket<GameSession
             return ValueTask.CompletedTask;
         }
 
-        if (player.destroyItemByItemId("Shared Location", Inventory.LCOIN_ID, Config.TELEPORT_SHARE_LOCATION_COST,
+        if (player.destroyItemByItemId("Shared Location", Inventory.LCOIN_ID, Config.General.TELEPORT_SHARE_LOCATION_COST,
                 player, true))
         {
             teleport.decrementCount();

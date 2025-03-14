@@ -60,7 +60,7 @@ public class MDefenseFinalizer : StatFunction
 		}
 		if (creature.isRaid())
 		{
-			baseValue *= Config.RAID_MDEFENCE_MULTIPLIER;
+			baseValue *= Config.Npc.RAID_MDEFENCE_MULTIPLIER;
 		}
 
 		double bonus = creature.getMEN() > 0 ? BaseStat.MEN.calcBonus(creature) : 1;

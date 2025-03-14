@@ -50,7 +50,7 @@ public class MonsterRace
 
 	protected MonsterRace()
 	{
-		if (!Config.ALLOW_RACE)
+		if (!Config.General.ALLOW_RACE)
 		{
 			return;
 		}

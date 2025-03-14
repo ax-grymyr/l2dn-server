@@ -78,7 +78,7 @@ public struct RequestBrBuyProductPacket: IIncomingPacket<GameSession>
 				}
 
 				player.setPrimePoints(player.getPrimePoints() - price);
-				if (Config.VIP_SYSTEM_PRIME_AFFECT)
+				if (Config.VipSystem.VIP_SYSTEM_PRIME_AFFECT)
 				{
 					player.updateVipPoints(price);
 				}
@@ -130,7 +130,7 @@ public struct RequestBrBuyProductPacket: IIncomingPacket<GameSession>
 		{
 			player.sendPacket(new ExBRBuyProductPacket(ExBrProductReplyType.INVALID_PRODUCT));
 			Util.handleIllegalPlayerAction(player, player + " tried to buy invalid brId from Prime",
-				Config.DEFAULT_PUNISH);
+				Config.General.DEFAULT_PUNISH);
 
 			return false;
 		}
@@ -138,7 +138,7 @@ public struct RequestBrBuyProductPacket: IIncomingPacket<GameSession>
 		if (count < 1 || count > 99)
 		{
 			Util.handleIllegalPlayerAction(player,
-				player + " tried to buy invalid itemcount [" + count + "] from Prime", Config.DEFAULT_PUNISH);
+				player + " tried to buy invalid itemcount [" + count + "] from Prime", Config.General.DEFAULT_PUNISH);
 
 			player.sendPacket(new ExBRBuyProductPacket(ExBrProductReplyType.INVALID_USER_STATE));
 			return false;
@@ -245,7 +245,7 @@ public struct RequestBrBuyProductPacket: IIncomingPacket<GameSession>
 	 */
 	private static bool canReceiveGift(Player player, PrimeShopGroup item)
 	{
-		if (!Config.VIP_SYSTEM_ENABLED)
+		if (!Config.VipSystem.VIP_SYSTEM_ENABLED)
 		{
 			return false;
 		}

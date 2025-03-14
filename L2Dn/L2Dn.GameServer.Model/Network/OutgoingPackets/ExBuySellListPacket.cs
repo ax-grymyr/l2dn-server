@@ -159,7 +159,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
             foreach (Item item in _sellList)
             {
                 InventoryPacketHelper.WriteItem(writer, new ItemInfo(item));
-                writer.WriteInt64(Config.MERCHANT_ZERO_SELL_PRICE ? 0 : item.getTemplate().getReferencePrice() / 2);
+                writer.WriteInt64(Config.MerchantZeroSellPrice.MERCHANT_ZERO_SELL_PRICE ? 0 : item.getTemplate().getReferencePrice() / 2);
             }
         }
         else
@@ -175,7 +175,7 @@ public struct ExBuySellListPacket: IOutgoingPacket
             {
                 InventoryPacketHelper.WriteItem(writer, new ItemInfo(item));
                 writer.WriteInt32(i++);
-                writer.WriteInt64(Config.MERCHANT_ZERO_SELL_PRICE
+                writer.WriteInt64(Config.MerchantZeroSellPrice.MERCHANT_ZERO_SELL_PRICE
                     ? 0
                     : item.getTemplate().getReferencePrice() / 2 * item.getCount());
             }

@@ -16,7 +16,7 @@ public readonly struct ReceiveVipInfoPacket: IOutgoingPacket
 
     public void WriteContent(PacketBitWriter writer)
     {
-        if (!Config.VIP_SYSTEM_ENABLED)
+        if (!Config.VipSystem.VIP_SYSTEM_ENABLED)
         {
             return;
         }

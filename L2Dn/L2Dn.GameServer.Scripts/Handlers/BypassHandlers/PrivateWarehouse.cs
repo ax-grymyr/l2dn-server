@@ -20,7 +20,7 @@ public class PrivateWarehouse: IBypassHandler
 
 	public bool useBypass(string command, Player player, Creature? target)
 	{
-		if (!Config.ALLOW_WAREHOUSE)
+		if (!Config.General.ALLOW_WAREHOUSE)
 		{
 			return false;
 		}

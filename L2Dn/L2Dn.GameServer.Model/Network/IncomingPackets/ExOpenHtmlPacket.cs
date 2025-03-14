@@ -30,7 +30,7 @@ public struct ExOpenHtmlPacket: IIncomingPacket<GameSession>
         {
             case 1:
             {
-                if (Config.PC_CAFE_ENABLED)
+                if (Config.PremiumSystem.PC_CAFE_ENABLED)
                 {
                     HtmlContent htmlContent = HtmlContent.LoadFromFile("html/pccafe.htm", player);
                     NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 0, htmlContent);
@@ -41,7 +41,7 @@ public struct ExOpenHtmlPacket: IIncomingPacket<GameSession>
             }
             case 5:
             {
-                if (Config.GAME_ASSISTANT_ENABLED)
+                if (Config.GameAssistant.GAME_ASSISTANT_ENABLED)
                 {
                     HtmlContent htmlContent = HtmlContent.LoadFromFile("scripts/ai/others/GameAssistant/32478.html", player);
                     connection.Send(new ExPremiumManagerShowHtmlPacket(htmlContent));

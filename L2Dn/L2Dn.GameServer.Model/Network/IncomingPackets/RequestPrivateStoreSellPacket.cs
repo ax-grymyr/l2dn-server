@@ -117,7 +117,7 @@ public struct RequestPrivateStoreSellPacket: IIncomingPacket<GameSession>
 
         // Update offline trade record, if realtime saving is enabled
         GameSession? storePlayerClient = storePlayer.getClient();
-        if (Config.OFFLINE_TRADE_ENABLE && Config.STORE_OFFLINE_TRADE_IN_REALTIME &&
+        if (Config.OfflineTrade.OFFLINE_TRADE_ENABLE && Config.OfflineTrade.STORE_OFFLINE_TRADE_IN_REALTIME &&
             (storePlayerClient == null || storePlayerClient.IsDetached))
         {
             OfflineTraderTable.getInstance().onTransaction(storePlayer, storeList.getItemCount() == 0, false);

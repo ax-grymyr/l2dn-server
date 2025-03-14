@@ -18,7 +18,7 @@ public static class BuilderUtil
 	 */
 	public static void sendSysMessage(Player player, string message)
 	{
-		if (Config.GM_STARTUP_BUILDER_HIDE)
+		if (Config.General.GM_STARTUP_BUILDER_HIDE)
 		{
 			player.sendPacket(new CreatureSayPacket(null, ChatType.GENERAL, "SYS",
 				SendMessageLocalisationData.getLocalisation(player, message)));

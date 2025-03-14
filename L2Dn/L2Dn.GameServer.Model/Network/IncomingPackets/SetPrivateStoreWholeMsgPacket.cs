@@ -27,7 +27,7 @@ public struct SetPrivateStoreWholeMsgPacket: IIncomingPacket<GameSession>
         if (_msg != null && _msg.Length > MAX_MSG_LENGTH)
         {
             Util.handleIllegalPlayerAction(player, player + " tried to overflow private store whole message",
-                Config.DEFAULT_PUNISH);
+                Config.General.DEFAULT_PUNISH);
 
             return ValueTask.CompletedTask;
         }

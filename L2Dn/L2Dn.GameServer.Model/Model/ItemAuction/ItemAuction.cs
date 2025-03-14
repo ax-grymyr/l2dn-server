@@ -353,10 +353,10 @@ public class ItemAuction
 				}
 				case ItemAuctionExtendState.EXTEND_BY_3_MIN:
 				{
-					if (Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID > 0 && getAndSetLastBidPlayerObjectId(player.ObjectId) != player.ObjectId)
+					if (Config.General.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID > 0 && getAndSetLastBidPlayerObjectId(player.ObjectId) != player.ObjectId)
 					{
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A;
-						_endingTime += TimeSpan.FromMilliseconds(Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
+						_endingTime += TimeSpan.FromMilliseconds(Config.General.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
 					}
 					break;
 				}
@@ -365,7 +365,7 @@ public class ItemAuction
 					if (getAndSetLastBidPlayerObjectId(player.ObjectId) != player.ObjectId && _scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B)
 					{
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_B;
-						_endingTime += TimeSpan.FromMilliseconds(Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
+						_endingTime += TimeSpan.FromMilliseconds(Config.General.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
 					}
 					break;
 				}
@@ -373,7 +373,7 @@ public class ItemAuction
 				{
 					if (getAndSetLastBidPlayerObjectId(player.ObjectId) != player.ObjectId && _scheduledAuctionEndingExtendState == ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A)
 					{
-						_endingTime += TimeSpan.FromMilliseconds(Config.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
+						_endingTime += TimeSpan.FromMilliseconds(Config.General.ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID);
 						_auctionEndingExtendState = ItemAuctionExtendState.EXTEND_BY_CONFIG_PHASE_A;
 					}
 
@@ -421,7 +421,7 @@ public class ItemAuction
 			}
 			case ItemAuctionState.FINISHED:
 			{
-				if (_startingTime < DateTime.UtcNow - TimeSpan.FromDays(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER))
+				if (_startingTime < DateTime.UtcNow - TimeSpan.FromDays(Config.General.ALT_ITEM_AUCTION_EXPIRED_AFTER))
 				{
 					return false;
 				}

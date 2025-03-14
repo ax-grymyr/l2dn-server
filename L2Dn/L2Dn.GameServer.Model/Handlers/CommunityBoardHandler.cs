@@ -83,7 +83,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 			return;
 		}
 
-		if (!Config.ENABLE_COMMUNITY_BOARD)
+		if (!Config.General.ENABLE_COMMUNITY_BOARD)
 		{
 			player.sendPacket(SystemMessageId.THE_COMMUNITY_SERVER_IS_CURRENTLY_OFFLINE);
 			return;
@@ -116,7 +116,7 @@ public class CommunityBoardHandler: IHandler<IParseBoardHandler, string>
 			return;
 		}
 
-		if (!Config.ENABLE_COMMUNITY_BOARD)
+		if (!Config.General.ENABLE_COMMUNITY_BOARD)
 		{
 			player.sendPacket(SystemMessageId.THE_COMMUNITY_SERVER_IS_CURRENTLY_OFFLINE);
 			return;

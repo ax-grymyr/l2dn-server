@@ -14,10 +14,9 @@ public static partial class Config
         public static bool ATTENDANCE_POPUP_START;
         public static bool ATTENDANCE_POPUP_WINDOW;
 
-        public static void Load(string configPath)
+        internal static void Load(ConfigurationParser parser)
         {
-            ConfigurationParser parser = new(configPath);
-            parser.LoadConfig(FileNames.Configs.AttendanceConfigFile);
+            parser.LoadConfig(FileNames.Configs.Attendance);
 
             ENABLE_ATTENDANCE_REWARDS = parser.getBoolean("EnableAttendanceRewards");
             PREMIUM_ONLY_ATTENDANCE_REWARDS = parser.getBoolean("PremiumOnlyAttendanceRewards");

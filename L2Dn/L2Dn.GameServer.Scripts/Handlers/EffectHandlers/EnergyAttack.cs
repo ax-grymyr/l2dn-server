@@ -155,8 +155,8 @@ public sealed class EnergyAttack: AbstractEffect
         if (attacker.isPlayable())
         {
             balanceMod = effected.isPlayable()
-                ? Config.PVP_ENERGY_SKILL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId()]
-                : Config.PVE_ENERGY_SKILL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId()];
+                ? Config.ClassBalance.PVP_ENERGY_SKILL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId()]
+                : Config.ClassBalance.PVE_ENERGY_SKILL_DAMAGE_MULTIPLIERS[attacker.getActingPlayer().getClassId()];
         }
 
         Player? effectedPlayer = effected.getActingPlayer();
@@ -164,8 +164,8 @@ public sealed class EnergyAttack: AbstractEffect
         {
             // TODO: why defence not used
             defence *= attacker.isPlayable()
-                ? Config.PVP_ENERGY_SKILL_DEFENCE_MULTIPLIERS[effectedPlayer.getClassId()]
-                : Config.PVE_ENERGY_SKILL_DEFENCE_MULTIPLIERS[effectedPlayer.getClassId()];
+                ? Config.ClassBalance.PVP_ENERGY_SKILL_DEFENCE_MULTIPLIERS[effectedPlayer.getClassId()]
+                : Config.ClassBalance.PVE_ENERGY_SKILL_DEFENCE_MULTIPLIERS[effectedPlayer.getClassId()];
         }
 
         damage = Math.Max(0, damage * effector.getStat().getValue(Stat.PHYSICAL_SKILL_POWER, 1)) * balanceMod;

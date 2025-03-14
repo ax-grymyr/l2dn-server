@@ -121,7 +121,7 @@ public sealed class SchemeBufferTable: DataReaderBase
         Map<string, List<int>> schemes = _schemesTable.GetOrAdd(playerId,
             static _ => new Map<string, List<int>>(StringComparer.InvariantCultureIgnoreCase));
 
-        if (schemes.Count >= Config.BUFFER_MAX_SCHEMES)
+        if (schemes.Count >= Config.SchemeBuffer.BUFFER_MAX_SCHEMES)
         {
             return;
         }

@@ -113,7 +113,7 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 		if (item != null && !item.isPotion())
 		{
 			// auto supply
-			if (Config.ENABLE_AUTO_ITEM)
+			if (Config.General.ENABLE_AUTO_ITEM)
 			{
 				AutoUseTaskManager.getInstance().addAutoSupplyItem(player, item.getId());
 			}
@@ -125,7 +125,7 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 			{
 				if (_slot == 1)
 				{
-					if (Config.ENABLE_AUTO_POTION && item != null && item.isPotion())
+					if (Config.General.ENABLE_AUTO_POTION && item != null && item.isPotion())
 					{
 						AutoUseTaskManager.getInstance().setAutoPotionItem(player, item.getId());
 						return ValueTask.CompletedTask;
@@ -133,7 +133,7 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 				}
 				else if (_slot == 2)
 				{
-					if (Config.ENABLE_AUTO_PET_POTION && item != null && item.isPotion())
+					if (Config.General.ENABLE_AUTO_PET_POTION && item != null && item.isPotion())
 					{
 						AutoUseTaskManager.getInstance().setAutoPetPotionItem(player, item.getId());
 						return ValueTask.CompletedTask;
@@ -142,7 +142,7 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 			}
 
 			// auto skill
-			if (Config.ENABLE_AUTO_SKILL && skill != null)
+			if (Config.General.ENABLE_AUTO_SKILL && skill != null)
 			{
 				if (skill.isBad())
 				{

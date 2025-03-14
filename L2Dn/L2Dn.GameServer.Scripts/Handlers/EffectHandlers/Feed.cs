@@ -33,7 +33,7 @@ public sealed class Feed: AbstractEffect
         {
             Pet pet = (Pet)effected;
             int feedEffect = (int)pet.getStat().getValue(Stat.FEED_MODIFY, 0);
-            pet.setCurrentFed(pet.getCurrentFed() + _normal * Config.PET_FOOD_RATE + feedEffect * (_normal / 100));
+            pet.setCurrentFed(pet.getCurrentFed() + _normal * Config.Rates.PET_FOOD_RATE + feedEffect * (_normal / 100));
         }
         else if (effected.isPlayer() && player != null)
         {

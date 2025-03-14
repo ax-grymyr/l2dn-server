@@ -17,7 +17,7 @@ public struct RequestExAddContactToContactListPacket: IIncomingPacket<GameSessio
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        if (!Config.ALLOW_MAIL || string.IsNullOrEmpty(_name))
+        if (!Config.General.ALLOW_MAIL || string.IsNullOrEmpty(_name))
             return ValueTask.CompletedTask;
 
         Player? player = session.Player;

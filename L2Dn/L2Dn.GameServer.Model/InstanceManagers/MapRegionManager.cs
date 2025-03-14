@@ -299,16 +299,16 @@ public class MapRegionManager: DataReaderBase
 			}
 		}
 
-		if (Config.FACTION_SYSTEM_ENABLED && Config.FACTION_RESPAWN_AT_BASE)
+		if (Config.FactionSystem.FACTION_SYSTEM_ENABLED && Config.FactionSystem.FACTION_RESPAWN_AT_BASE)
 		{
 			if (player != null && player.isGood())
 			{
-				return Config.FACTION_GOOD_BASE_LOCATION;
+				return Config.FactionSystem.FACTION_GOOD_BASE_LOCATION;
 			}
 
 			if (player != null && player.isEvil())
 			{
-				return Config.FACTION_EVIL_BASE_LOCATION;
+				return Config.FactionSystem.FACTION_EVIL_BASE_LOCATION;
 			}
 		}
 

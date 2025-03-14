@@ -44,7 +44,7 @@ public struct RequestCrystallizeEstimatePacket: IIncomingPacket<GameSession>
 		{
 			Util.handleIllegalPlayerAction(player,
 				"[RequestCrystallizeItem] count <= 0! ban! oid: " + _objectId + " owner: " + player.getName(),
-				Config.DEFAULT_PUNISH);
+				Config.General.DEFAULT_PUNISH);
 
 			return ValueTask.CompletedTask;
 		}

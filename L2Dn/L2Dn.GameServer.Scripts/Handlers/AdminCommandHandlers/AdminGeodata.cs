@@ -173,7 +173,7 @@ public class AdminGeodata: IAdminCommandHandler
 			case "admin_geosave":
 			{
 				// Create the saves directory if it does not exist.
-				string savesDir = Config.GEOEDIT_PATH;
+				string savesDir = Config.GeoEngine.GEOEDIT_PATH;
 				try
 				{
 					Directory.CreateDirectory(savesDir);
@@ -206,7 +206,7 @@ public class AdminGeodata: IAdminCommandHandler
 			case "admin_geosaveall":
 			{
 				// Create the saves directory if it does not exist.
-				string savesDir = Config.GEOEDIT_PATH;
+				string savesDir = Config.GeoEngine.GEOEDIT_PATH;
 				try
 				{
 					Directory.CreateDirectory(savesDir);

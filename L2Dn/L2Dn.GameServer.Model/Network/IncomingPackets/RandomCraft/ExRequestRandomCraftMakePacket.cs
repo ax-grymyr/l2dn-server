@@ -14,7 +14,7 @@ public struct ExRequestRandomCraftMakePacket: IIncomingPacket<GameSession>
 
     public ValueTask ProcessAsync(Connection connection, GameSession session)
     {
-        if (!Config.ENABLE_RANDOM_CRAFT)
+        if (!Config.RandomCraft.ENABLE_RANDOM_CRAFT)
             return ValueTask.CompletedTask;
 
         Player? player = session.Player;

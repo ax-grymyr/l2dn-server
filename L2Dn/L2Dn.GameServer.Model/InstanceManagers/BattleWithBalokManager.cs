@@ -23,7 +23,7 @@ public class BattleWithBalokManager
 
 	public void addPointsForPlayer(Player player, bool isScorpion)
 	{
-		int pointsToAdd = isScorpion ? Config.BALOK_POINTS_PER_MONSTER * 10 : Config.BALOK_POINTS_PER_MONSTER;
+		int pointsToAdd = isScorpion ? Config.GrandBoss.BALOK_POINTS_PER_MONSTER * 10 : Config.GrandBoss.BALOK_POINTS_PER_MONSTER;
 		int currentPoints = _playerPoints.GetOrAdd(player.ObjectId, 0);
 		int sum = pointsToAdd + currentPoints;
 		_playerPoints.put(player.ObjectId, sum);

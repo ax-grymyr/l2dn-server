@@ -38,7 +38,7 @@ internal class AntiFeedManager
 	 */
 	public bool check(Creature attacker, Creature target)
 	{
-		if (!Config.ANTIFEED_ENABLE)
+		if (!Config.Pvp.ANTIFEED_ENABLE)
 		{
 			return true;
 		}
@@ -60,13 +60,13 @@ internal class AntiFeedManager
 			return false;
 		}
 
-		if (Config.ANTIFEED_INTERVAL > 0 && _lastDeathTimes.ContainsKey(targetPlayer.ObjectId) &&
-		    DateTime.UtcNow - _lastDeathTimes.get(targetPlayer.ObjectId) < TimeSpan.FromMilliseconds(Config.ANTIFEED_INTERVAL))
+		if (Config.Pvp.ANTIFEED_INTERVAL > 0 && _lastDeathTimes.ContainsKey(targetPlayer.ObjectId) &&
+		    DateTime.UtcNow - _lastDeathTimes.get(targetPlayer.ObjectId) < TimeSpan.FromMilliseconds(Config.Pvp.ANTIFEED_INTERVAL))
 		{
 			return false;
 		}
 
-		if (Config.ANTIFEED_DUALBOX && attacker != null)
+		if (Config.Pvp.ANTIFEED_DUALBOX && attacker != null)
 		{
 			Player? attackerPlayer = attacker.getActingPlayer();
 			if (attackerPlayer == null)
@@ -80,7 +80,7 @@ internal class AntiFeedManager
 			    targetClient.IsDetached || attackerClient.IsDetached)
 			{
 				// unable to check ip address
-				return !Config.ANTIFEED_DISCONNECTED_AS_DUALBOX;
+				return !Config.Pvp.ANTIFEED_DISCONNECTED_AS_DUALBOX;
 			}
 
 			return !targetClient.IpAddress.Equals(attackerClient.IpAddress);
@@ -140,7 +140,7 @@ internal class AntiFeedManager
 
 		int addrHash = client.IpAddress.GetHashCode();
 		AtomicInteger connectionCount = @event.GetOrAdd(addrHash, _ => new AtomicInteger());
-		if (connectionCount.get() + 1 <= max + Config.DUALBOX_CHECK_WHITELIST.GetValueOrDefault(addrHash, 0))
+		if (connectionCount.get() + 1 <= max + Config.DualboxCheck.DUALBOX_CHECK_WHITELIST.GetValueOrDefault(addrHash, 0))
 		{
 			connectionCount.incrementAndGet();
 			return true;
@@ -273,7 +273,7 @@ internal class AntiFeedManager
 
 		int addrHash = client.IpAddress.GetHashCode();
 		int limit = max;
-		if (Config.DUALBOX_CHECK_WHITELIST.TryGetValue(addrHash, out int value))
+		if (Config.DualboxCheck.DUALBOX_CHECK_WHITELIST.TryGetValue(addrHash, out int value))
 		{
 			limit += value;
 		}

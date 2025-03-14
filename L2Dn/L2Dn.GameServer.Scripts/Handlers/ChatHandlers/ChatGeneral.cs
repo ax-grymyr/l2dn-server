@@ -54,23 +54,23 @@ public class ChatGeneral: IChatHandler
 
 		if (!vcdUsed)
 		{
-			if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.Contains(type))
+			if (activeChar.isChatBanned() && Config.General.BAN_CHAT_CHANNELS.Contains(type))
 			{
 				activeChar.sendPacket(SystemMessageId.IF_YOU_TRY_TO_CHAT_BEFORE_THE_PROHIBITION_IS_REMOVED_THE_PROHIBITION_TIME_WILL_INCREASE_EVEN_FURTHER_S1_SEC_OF_PROHIBITION_IS_LEFT);
 				return;
 			}
 
-			if (activeChar.getLevel() < Config.MINIMUM_CHAT_LEVEL && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+			if (activeChar.getLevel() < Config.General.MINIMUM_CHAT_LEVEL && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.GENERAL_CHAT_CANNOT_BE_USED_BY_CHARACTERS_LV_S1_OR_LOWER);
-				sm.Params.addInt(Config.MINIMUM_CHAT_LEVEL);
+				sm.Params.addInt(Config.General.MINIMUM_CHAT_LEVEL);
 				activeChar.sendPacket(sm);
 				return;
 			}
 
 			if (shareLocation)
 			{
-				if (activeChar.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < Config.SHARING_LOCATION_COST)
+				if (activeChar.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < Config.General.SHARING_LOCATION_COST)
 				{
 					activeChar.sendPacket(SystemMessageId.THERE_ARE_NOT_ENOUGH_L_COINS);
 					return;
@@ -82,7 +82,7 @@ public class ChatGeneral: IChatHandler
 					return;
 				}
 
-				activeChar.destroyItemByItemId("Shared Location", Inventory.LCOIN_ID, Config.SHARING_LOCATION_COST, activeChar, true);
+				activeChar.destroyItemByItemId("Shared Location", Inventory.LCOIN_ID, Config.General.SHARING_LOCATION_COST, activeChar, true);
 			}
 
 			CreatureSayPacket cs = new CreatureSayPacket(activeChar, type, activeChar.getAppearance().getVisibleName(), text, shareLocation);
@@ -92,9 +92,9 @@ public class ChatGeneral: IChatHandler
 			{
 				if (player != null && !BlockList.isBlocked(player, activeChar))
 				{
-					if (Config.FACTION_SYSTEM_ENABLED)
+					if (Config.FactionSystem.FACTION_SYSTEM_ENABLED)
 					{
-						if (Config.FACTION_SPECIFIC_CHAT)
+						if (Config.FactionSystem.FACTION_SPECIFIC_CHAT)
 						{
 							if ((activeChar.isGood() && player.isEvil()) || (activeChar.isEvil() && player.isGood()))
 							{

@@ -35,7 +35,7 @@ public class MultisellData: DataReaderBase
 			LoadXmlDocuments<XmlMultiSellList>(DataFileLocation.Data, "multisell")
 				.Concat(LoadXmlDocuments<XmlMultiSellList>(DataFileLocation.Data, "multisell/items"));
 
-		if (Config.CUSTOM_MULTISELL_LOAD)
+		if (Config.General.CUSTOM_MULTISELL_LOAD)
 			files = files.Concat(LoadXmlDocuments<XmlMultiSellList>(DataFileLocation.Data, "multisell/custom"));
 
 		_multiSellLists = files.Select(x => loadFile(x.FilePath, x.Document)).Where(l => l != null)
@@ -167,7 +167,7 @@ public class MultisellData: DataReaderBase
 
 				// Check if buy price is lower than sell price.
 				// Only applies when there is only one ingredient and it is adena.
-				if (Config.CORRECT_PRICES && ingredients.Count == 1 && lastIngredientId == 57 &&
+				if (Config.General.CORRECT_PRICES && ingredients.Count == 1 && lastIngredientId == 57 &&
 				    lastIngredientCount < totalPrice)
 				{
 					_logger.Warn("Buy price " + lastIngredientCount + " is less than sell price " + totalPrice +

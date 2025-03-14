@@ -27,12 +27,12 @@ public class ChatHeroVoice: IChatHandler
 			return;
 		}
 
-		if (activeChar.isChatBanned() && Config.BAN_CHAT_CHANNELS.Contains(type))
+		if (activeChar.isChatBanned() && Config.General.BAN_CHAT_CHANNELS.Contains(type))
 		{
 			activeChar.sendPacket(SystemMessageId.IF_YOU_TRY_TO_CHAT_BEFORE_THE_PROHIBITION_IS_REMOVED_THE_PROHIBITION_TIME_WILL_INCREASE_EVEN_FURTHER_S1_SEC_OF_PROHIBITION_IS_LEFT);
 			return;
 		}
-		if (Config.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
+		if (Config.General.JAIL_DISABLE_CHAT && activeChar.isJailed() && !activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS))
 		{
 			activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 			return;
@@ -50,9 +50,9 @@ public class ChatHeroVoice: IChatHandler
 		{
 			if (player != null && !BlockList.isBlocked(player, activeChar))
 			{
-				if (Config.FACTION_SYSTEM_ENABLED)
+				if (Config.FactionSystem.FACTION_SYSTEM_ENABLED)
 				{
-					if (Config.FACTION_SPECIFIC_CHAT)
+					if (Config.FactionSystem.FACTION_SPECIFIC_CHAT)
 					{
 						if ((activeChar.isGood() && player.isGood()) || (activeChar.isEvil() && player.isEvil()))
 						{

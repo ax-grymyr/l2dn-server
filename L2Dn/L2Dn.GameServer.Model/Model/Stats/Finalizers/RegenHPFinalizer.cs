@@ -27,10 +27,10 @@ public class RegenHPFinalizer: StatFunction
 		double baseValue = creature.isPlayer() && player != null
 			? player.getTemplate().getBaseHpRegen(creature.getLevel())
 			: creature.getTemplate().getBaseHpReg();
-		baseValue *= creature.isRaid() ? Config.RAID_HP_REGEN_MULTIPLIER : Config.HP_REGEN_MULTIPLIER;
-		if (Config.CHAMPION_ENABLE && creature.isChampion())
+		baseValue *= creature.isRaid() ? Config.Npc.RAID_HP_REGEN_MULTIPLIER : Config.Character.HP_REGEN_MULTIPLIER;
+		if (Config.ChampionMonsters.CHAMPION_ENABLE && creature.isChampion())
 		{
-			baseValue *= Config.CHAMPION_HP_REGEN;
+			baseValue *= Config.ChampionMonsters.CHAMPION_HP_REGEN;
 		}
 
 		if (creature.isPlayer() && player != null)
@@ -126,7 +126,7 @@ public class RegenHPFinalizer: StatFunction
 		}
 		else if (creature.isPet())
 		{
-			baseValue = ((Pet)creature).getPetLevelData().getPetRegenHP() * Config.PET_HP_REGEN_MULTIPLIER;
+			baseValue = ((Pet)creature).getPetLevelData().getPetRegenHP() * Config.Npc.PET_HP_REGEN_MULTIPLIER;
 		}
 
 		return StatUtil.defaultValue(creature, stat, baseValue);

@@ -24,7 +24,7 @@ public class Unstuck: IUserCommandHandler
             return false;
         }
 
-        if (Config.FACTION_SYSTEM_ENABLED && !player.isGood() && !player.isEvil())
+        if (Config.FactionSystem.FACTION_SYSTEM_ENABLED && !player.isGood() && !player.isEvil())
         {
             player.sendMessage("You cannot use this function while you are neutral.");
             return false;

@@ -1218,7 +1218,7 @@ public class FortSiege: Siegable
 			return;
 		}
 
-		if (_fort.getResidenceId() == FortManager.ORC_FORTRESS && Config.ORC_FORTRESS_ENABLE)
+		if (_fort.getResidenceId() == FortManager.ORC_FORTRESS && Config.OrcFortress.ORC_FORTRESS_ENABLE)
 		{
 			if (_siegeStartTask != null)
 			{
@@ -1228,7 +1228,7 @@ public class FortSiege: Siegable
 			ThreadPool.execute(new ScheduleSuspiciousMerchantSpawn(this));
 
 			DateTime cal = DateTime.Now; // local time
-			cal = new DateTime(new DateOnly(cal.Year, cal.Month, cal.Day), Config.ORC_FORTRESS_TIME);
+			cal = new DateTime(new DateOnly(cal.Year, cal.Month, cal.Day), Config.OrcFortress.ORC_FORTRESS_TIME);
 			if (cal < DateTime.Now)
 			{
 				cal = cal.AddDays(1);

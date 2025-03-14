@@ -988,7 +988,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public void finishInstance()
 	{
-		finishInstance(TimeSpan.FromMinutes(Config.INSTANCE_FINISH_TIME));
+		finishInstance(TimeSpan.FromMinutes(Config.General.INSTANCE_FINISH_TIME));
 	}
 
 	/**
@@ -1117,7 +1117,7 @@ public class Instance : IIdentifiable, INamable
 	public void onPlayerLogout(Player player)
 	{
 		removePlayer(player);
-		if (Config.RESTORE_PLAYER_INSTANCE)
+		if (Config.General.RESTORE_PLAYER_INSTANCE)
 		{
 			player.getVariables().Set(PlayerVariables.INSTANCE_RESTORE, _id);
 		}
