@@ -643,7 +643,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			connection.Send(new ExVitalityEffectInfoPacket(player));
 		}
 
-		if (Config.ENABLE_MAGIC_LAMP)
+		if (Config.MagicLamp.ENABLE_MAGIC_LAMP)
 		{
 			connection.Send(new ExMagicLampInfoPacket(player));
 		}

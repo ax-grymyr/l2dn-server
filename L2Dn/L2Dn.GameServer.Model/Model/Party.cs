@@ -833,7 +833,7 @@ public class Party : AbstractPlayerGroup
 					}
 					member.updateVitalityPoints(target.getVitalityPoints(member.getLevel(), exp, target.isRaid()), true, false);
 					PcCafePointsManager.getInstance().givePcCafePoint(member, exp);
-					if (Config.ENABLE_MAGIC_LAMP)
+					if (Config.MagicLamp.ENABLE_MAGIC_LAMP)
 					{
 						MagicLampManager.getInstance().addLampExp(member, exp, true);
 					}

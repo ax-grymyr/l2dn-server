@@ -9,5 +9,6 @@ internal static class FileNames
         public const string AttendanceConfigFile = "AttendanceRewards.ini";
         public const string AttributeSystemFile = "AttributeSystem.ini";
         public const string CharacterConfigFile = "Character.ini";
+        public const string MagicLampFile = "MagicLamp.ini";
     }
 }

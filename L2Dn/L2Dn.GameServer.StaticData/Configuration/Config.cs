@@ -36,7 +36,6 @@ public static partial class Config
 	private const string GRANDBOSS_CONFIG_FILE = "./Config/GrandBoss.ini";
 	private const string HUNT_PASS_CONFIG_FILE = "./Config/HuntPass.ini";
 	private const string ACHIEVEMENT_BOX_CONFIG_FILE = "./Config/AchievementBox.ini";
-	private const string MAGIC_LAMP_FILE = "./Config/MagicLamp.ini";
 	private const string NPC_CONFIG_FILE = "./Config/NPC.ini";
 	private const string ORC_FORTRESS_CONFIG_FILE = "./Config/OrcFortress.ini";
 	private const string PVP_CONFIG_FILE = "./Config/PVP.ini";
@@ -482,11 +481,6 @@ public static partial class Config
 	public static int MAX_CONNECTION_PER_IP;
 	public static bool ENABLE_CMD_LINE_LOGIN;
 	public static bool ONLY_CMD_LINE_LOGIN;
-
-	// Magic Lamp
-	public static bool ENABLE_MAGIC_LAMP;
-	public static int MAGIC_LAMP_MAX_LEVEL_EXP;
-	public static double MAGIC_LAMP_CHARGE_RATE;
 
 	// Random Craft
 	public static bool ENABLE_RANDOM_CRAFT;
@@ -977,14 +971,9 @@ public static partial class Config
         Attendance.Load(configPath);
         AttributeSystem.Load(configPath);
         Character.Load(configPath);
+        MagicLamp.Load(configPath);
 
         ConfigurationParser parser = new(configPath);
-
-		// Load Magic Lamp config file (if exists)
-		parser.LoadConfig(MAGIC_LAMP_FILE);
-		ENABLE_MAGIC_LAMP = parser.getBoolean("MagicLampEnabled");
-		MAGIC_LAMP_MAX_LEVEL_EXP = parser.getInt("MagicLampMaxLevelExp", 10000000);
-		MAGIC_LAMP_CHARGE_RATE = parser.getDouble("MagicLampChargeRate", 0.1);
 
 		// Load Random Craft config file (if exists)
 		parser.LoadConfig(RANDOM_CRAFT_FILE);

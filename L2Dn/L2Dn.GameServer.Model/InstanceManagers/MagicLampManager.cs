@@ -65,21 +65,21 @@ public class MagicLampManager
 
 	public void addLampExp(Player player, double exp, bool rateModifiers)
 	{
-		if (Config.ENABLE_MAGIC_LAMP)
+		if (Config.MagicLamp.ENABLE_MAGIC_LAMP)
 		{
 			int lampExp = (int)(exp * player.getStat().getExpBonusMultiplier() * (rateModifiers
-				? Config.MAGIC_LAMP_CHARGE_RATE * player.getStat().getMul(Stat.MAGIC_LAMP_EXP_RATE, 1)
+				? Config.MagicLamp.MAGIC_LAMP_CHARGE_RATE * player.getStat().getMul(Stat.MAGIC_LAMP_EXP_RATE, 1)
 				: 1));
 
 			int calc = lampExp + player.getLampExp();
 			if (player.getLevel() < 64)
 			{
-				calc = calc + FLAT_BONUS;
+				calc += FLAT_BONUS;
 			}
 
-			if (calc > Config.MAGIC_LAMP_MAX_LEVEL_EXP)
+			if (calc > Config.MagicLamp.MAGIC_LAMP_MAX_LEVEL_EXP)
 			{
-				calc %= Config.MAGIC_LAMP_MAX_LEVEL_EXP;
+				calc %= Config.MagicLamp.MAGIC_LAMP_MAX_LEVEL_EXP;
 				useMagicLamp(player);
 			}
 			player.setLampExp(calc);

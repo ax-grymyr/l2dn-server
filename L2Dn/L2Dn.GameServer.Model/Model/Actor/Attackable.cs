@@ -581,7 +581,7 @@ public class Attackable: Npc
 											attacker.updateVitalityPoints(getVitalityPoints(attacker.getLevel(), exp, _isRaid), true, false);
 										}
 										PcCafePointsManager.getInstance().givePcCafePoint(attacker, exp);
-										if (Config.ENABLE_MAGIC_LAMP)
+										if (Config.MagicLamp.ENABLE_MAGIC_LAMP)
 										{
 											MagicLampManager.getInstance().addLampExp(attacker, exp, true);
 										}
