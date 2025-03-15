@@ -12,6 +12,7 @@ using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Vips;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 
 namespace L2Dn.GameServer.Data;
@@ -33,7 +34,6 @@ public static class StaticData
 
         ActionData.getInstance();
         CategoryData.getInstance();
-        SecondaryAuthData.getInstance();
         SayuneData.getInstance();
         ClanRewardData.getInstance();
         MissionLevel.getInstance();
@@ -106,7 +106,6 @@ public static class StaticData
         HitConditionBonusData.getInstance();
         PlayerTemplateData.getInstance();
         CharInfoTable.getInstance();
-        AdminData.getInstance();
         PetDataTable.getInstance();
         PetTypeData.getInstance();
         PetExtractData.getInstance();
