@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using L2Dn.Collections;
 
-namespace L2Dn.Common.Tests;
+namespace L2Dn.Common.Tests.Collections;
 
 public class EnumSetTests
 {

@@ -2,7 +2,7 @@
 using L2Dn.Collections;
 using L2Dn.Geometry;
 
-namespace L2Dn.Common.Tests;
+namespace L2Dn.Common.Tests.Collections;
 
 public class PropertyDictionaryTests
 {

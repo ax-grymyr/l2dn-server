@@ -2,7 +2,7 @@
 using FluentAssertions;
 using L2Dn.Cryptography;
 
-namespace L2Dn;
+namespace L2Dn.Common.Tests.Cryptography;
 
 public class BlowfishEngineTests
 {

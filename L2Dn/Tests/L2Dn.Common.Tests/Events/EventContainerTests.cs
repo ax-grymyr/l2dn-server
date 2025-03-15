@@ -2,7 +2,7 @@
 using L2Dn.Events;
 using L2Dn.Extensions;
 
-namespace L2Dn;
+namespace L2Dn.Common.Tests.Events;
 
 public class EventContainerTests
 {
@@ -24,9 +24,9 @@ public class EventContainerTests
 
             EventArgument argument = new EventArgument();
             eventContainer.Notify(argument);
-            
+
             argument.Count.Should().Be(batchSize);
-                
+
             // Unsubscribe
             eventContainer.UnsubscribeAll<EventArgument>(this);
         }
@@ -40,7 +40,7 @@ public class EventContainerTests
         const int threadCount = 4;
         EventContainer eventContainer = new EventContainer("Test");
         bool stop = false;
-        
+
         void ThreadProc()
         {
             while (!Volatile.Read(ref stop))
@@ -58,7 +58,7 @@ public class EventContainerTests
                 EventArgument argument = new EventArgument();
                 eventContainer.Notify(argument);
                 argument.Count.Should().BeGreaterOrEqualTo(batchSize);
-                
+
                 // Unsubscribe
                 eventContainer.UnsubscribeAll<EventArgument>(owner);
             }
@@ -69,10 +69,10 @@ public class EventContainerTests
             threads[i] = new Thread(ThreadProc);
 
         threads.ForEach(x => x.Start());
-        
+
         Thread.Sleep(10000);
         stop = true;
-        
+
         threads.ForEach(x => x.Join());
 
         eventContainer.HasSubscribers<EventArgument>().Should().BeFalse();
@@ -85,7 +85,7 @@ public class EventContainerTests
             arg.Count++;
         }
     }
-    
+
     private class EventArgument: EventBase
     {
         public int Count;

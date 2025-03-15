@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using L2Dn.Parsing;
 
-namespace L2Dn;
+namespace L2Dn.Common.Tests.Parsing;
 
 public class ExpressionParserTests
 {
