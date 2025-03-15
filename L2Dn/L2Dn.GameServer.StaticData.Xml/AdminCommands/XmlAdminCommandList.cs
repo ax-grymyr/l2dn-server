@@ -1,9 +1,9 @@
 ﻿using System.Xml.Serialization;
 
-namespace L2Dn.Model.Xml;
+namespace L2Dn.GameServer.StaticData.Xml.AdminCommands;
 
 [XmlRoot("list")]
-public class XmlAdminCommands
+public class XmlAdminCommandList
 {
     [XmlElement("admin")]
     public List<XmlAdminCommand> Commands { get; set; } = [];

@@ -51,7 +51,7 @@ public class AdminReload: IAdminCommandHandler
 				}
 				case "access":
 				{
-					AdminData.getInstance().load();
+					//AdminData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Access.");
 					break;
 				}

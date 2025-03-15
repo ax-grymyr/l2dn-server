@@ -4,6 +4,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using Config = L2Dn.GameServer.Configuration.Config;
@@ -73,14 +74,14 @@ public class AdminCommandHandler: IHandler<IAdminCommandHandler, string>
 			return;
 		}
 
-		if (!AdminData.getInstance().hasAccess(command, player.getAccessLevel()))
+		if (!AdminCommandData.Instance.HasAccess(command, player.getAccessLevel().Level))
 		{
 			player.sendMessage("You don't have the access rights to use this command!");
 			LOGGER.Warn(player + " tried to use admin command '" + command + "', without proper access level!");
 			return;
 		}
 
-		if (useConfirm && AdminData.getInstance().requireConfirm(command))
+		if (useConfirm && AdminCommandData.Instance.RequireConfirmation(command))
 		{
 			player.setAdminConfirmCmd(fullCommand);
 			ConfirmDialogPacket dlg =

@@ -1173,7 +1173,7 @@ public class Player: Playable
 		getAI();
 
         _randomCraft = new PlayerRandomCraft(this);
-        _accessLevel = AccessLevelData.Instance.GetDefaultAccessLevel();
+        _accessLevel = AccessLevelData.Instance.DefaultAccessLevel;
         _fistsWeaponItem = findFistsWeaponItem(template.getClassId());
     }
 

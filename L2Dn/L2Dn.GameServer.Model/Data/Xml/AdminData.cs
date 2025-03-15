@@ -1,13 +1,10 @@
 using System.Collections.Frozen;
 using L2Dn.GameServer.Dto;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.StaticData;
-using L2Dn.GameServer.StaticData.Xml.AccessLevels;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Model.Xml;
 using L2Dn.Packets;
 using NLog;
 
@@ -17,76 +14,15 @@ namespace L2Dn.GameServer.Data.Xml;
  * Loads administrator access levels and commands.
  * @author UnAfraid
  */
-public class AdminData: DataReaderBase
+public class AdminData
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminData));
 
-	private FrozenDictionary<string, AdminCommandAccessRight> _adminCommandAccessRights =
-		FrozenDictionary<string, AdminCommandAccessRight>.Empty;
+	private static readonly Map<Player, bool> _gmList = new();
 
-	private readonly Map<Player, bool> _gmList = new();
-
-	private AdminData()
-	{
-		load();
-	}
-
-	public void load()
-	{
-		XmlAdminCommands document2 = LoadXmlDocument<XmlAdminCommands>(DataFileLocation.Config, "AdminCommands.xml");
-		_adminCommandAccessRights = document2.Commands.Select(command => new AdminCommandAccessRight(command))
-			.ToFrozenDictionary(command => command.getAdminCommand());
-
-		_logger.Info(GetType().Name + ": Loaded " + _adminCommandAccessRights.Count + " access commands.");
-	}
-
-	/**
-	 * Checks for access.
-	 * @param adminCommand the admin command
-	 * @param accessLevel the access level
-	 * @return {@code true}, if successful, {@code false} otherwise
-	 */
-	public bool hasAccess(string adminCommand, AccessLevel accessLevel)
-	{
-		AdminCommandAccessRight? acar = _adminCommandAccessRights.GetValueOrDefault(adminCommand);
-		if (acar == null)
-		{
-			// Trying to avoid the spam for next time when the GM would try to use the same command
-			if (accessLevel.Level > 0 && accessLevel.Level == AccessLevelData.Instance.HighestAccessLevel)
-			{
-				acar = new AdminCommandAccessRight(adminCommand, true, accessLevel.Level);
-				Dictionary<string, AdminCommandAccessRight> dict = _adminCommandAccessRights.ToDictionary();
-				dict[adminCommand] = acar;
-				_adminCommandAccessRights = dict.ToFrozenDictionary();
-				_logger.Info(GetType().Name + ": No rights defined for admin command " + adminCommand +
-					" auto setting accesslevel: " + accessLevel.Level + " !");
-			}
-			else
-			{
-				_logger.Info(GetType().Name + ": No rights defined for admin command " + adminCommand + " !");
-				return false;
-			}
-		}
-
-		return acar.hasAccess(accessLevel);
-	}
-
-	/**
-	 * Require confirm.
-	 * @param command the command
-	 * @return {@code true}, if the command require confirmation, {@code false} otherwise
-	 */
-	public bool requireConfirm(string command)
-	{
-		AdminCommandAccessRight? acar = _adminCommandAccessRights.GetValueOrDefault(command);
-		if (acar == null)
-		{
-			_logger.Info(GetType().Name + ": No rights defined for admin command " + command + ".");
-			return false;
-		}
-
-		return acar.getRequireConfirm();
-	}
+    private AdminData()
+    {
+    }
 
 	/**
 	 * Gets the all GMs.

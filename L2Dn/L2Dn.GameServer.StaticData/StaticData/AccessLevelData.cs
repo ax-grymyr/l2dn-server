@@ -47,7 +47,17 @@ public sealed class AccessLevelData
         _logger.Info($"{nameof(AccessLevelData)}: Loaded {_accessLevels.Count} access levels.");
     }
 
-    public int HighestAccessLevel => _highestLevel;
+    public int HighestLevel => _highestLevel;
+
+    /// <summary>
+    /// Gets the default access level.
+    /// </summary>
+    public AccessLevel DefaultAccessLevel => _defaultAccessLevel;
+
+    /// <summary>
+    /// Gets the master access level.
+    /// </summary>
+    public AccessLevel MasterAccessLevel => _masterAccessLevel;
 
     /// <summary>
     /// Returns the access level by level number.
@@ -62,14 +72,4 @@ public sealed class AccessLevelData
 
         return _accessLevels.OrderByDescending(kvp => kvp.Key).First(kvp => kvp.Key <= accessLevelNum).Value;
     }
-
-    /// <summary>
-    /// Gets the default access level.
-    /// </summary>
-    public AccessLevel GetDefaultAccessLevel() => _defaultAccessLevel;
-
-    /// <summary>
-    /// Gets the master access level.
-    /// </summary>
-    public AccessLevel GetMasterAccessLevel() => _masterAccessLevel;
 }

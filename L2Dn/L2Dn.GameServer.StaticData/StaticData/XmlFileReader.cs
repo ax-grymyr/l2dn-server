@@ -8,7 +8,7 @@ internal static class XmlFileReader
     internal static T LoadConfigXmlDocument<T>(string relativeFilePath)
         where T: class
     {
-        string filePath = Path.Combine(ServerConfig.Instance.DataPack.Path, relativeFilePath);
+        string filePath = Path.Combine(ServerConfig.Instance.DataPack.ConfigPath, relativeFilePath);
         return XmlUtil.Deserialize<T>(filePath);
     }
 

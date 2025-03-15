@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.VoicedCommandHandlers;
@@ -24,7 +25,7 @@ public class ChatAdmin: IVoicedCommandHandler
 
 	public bool useVoicedCommand(string command, Player activeChar, string @params)
 	{
-		if (!AdminData.getInstance().hasAccess(command, activeChar.getAccessLevel()))
+		if (!AdminCommandData.Instance.HasAccess(command, activeChar.getAccessLevel().Level))
 		{
 			return false;
 		}
@@ -78,7 +79,7 @@ public class ChatAdmin: IVoicedCommandHandler
 							BuilderUtil.sendSysMessage(activeChar, "You can't ban a GM!");
 							return false;
 						}
-						if (AdminData.getInstance().hasAccess(command, player.getAccessLevel()))
+						if (AdminCommandData.Instance.HasAccess(command, player.getAccessLevel().Level))
 						{
 							BuilderUtil.sendSysMessage(activeChar, "You can't ban moderator!");
 							return false;

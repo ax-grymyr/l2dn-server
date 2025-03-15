@@ -19,7 +19,7 @@ public sealed class AccessLevel
         AllowTransaction = CanGiveDamage = CanGainExp = CanTakeAggro = !banned;
     }
 
-    public AccessLevel(XmlAccessLevel level)
+    internal AccessLevel(XmlAccessLevel level)
     {
         Level = level.Level;
         Name = level.Name;

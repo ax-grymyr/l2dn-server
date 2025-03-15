@@ -34,6 +34,7 @@ using L2Dn.GameServer.Network.OutgoingPackets.RandomCraft;
 using L2Dn.GameServer.Network.OutgoingPackets.Settings;
 using L2Dn.GameServer.Network.OutgoingPackets.SteadyBoxes;
 using L2Dn.GameServer.Network.OutgoingPackets.Subjugation;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using L2Dn.Network;
@@ -107,7 +108,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		else
 		{
 			if (Config.General.GM_STARTUP_BUILDER_HIDE &&
-			    AdminData.getInstance().hasAccess("admin_hide", player.getAccessLevel()))
+			    AdminCommandData.Instance.HasAccess("admin_hide", player.getAccessLevel().Level))
 			{
 				BuilderUtil.setHiding(player, true);
 				BuilderUtil.sendSysMessage(player, "hide is default for builder.");
@@ -120,26 +121,26 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			else
 			{
 				if (Config.General.GM_STARTUP_INVULNERABLE &&
-				    AdminData.getInstance().hasAccess("admin_invul", player.getAccessLevel()))
+                    AdminCommandData.Instance.HasAccess("admin_invul", player.getAccessLevel().Level))
 				{
 					player.setInvul(true);
 				}
 
 				if (Config.General.GM_STARTUP_INVISIBLE &&
-				    AdminData.getInstance().hasAccess("admin_invisible", player.getAccessLevel()))
+                    AdminCommandData.Instance.HasAccess("admin_invisible", player.getAccessLevel().Level))
 				{
 					player.setInvisible(true);
 					player.getEffectList().startAbnormalVisualEffect(AbnormalVisualEffect.STEALTH);
 				}
 
 				if (Config.General.GM_STARTUP_SILENCE &&
-				    AdminData.getInstance().hasAccess("admin_silence", player.getAccessLevel()))
+                    AdminCommandData.Instance.HasAccess("admin_silence", player.getAccessLevel().Level))
 				{
 					player.setSilenceMode(true);
 				}
 
 				if (Config.General.GM_STARTUP_DIET_MODE &&
-				    AdminData.getInstance().hasAccess("admin_diet", player.getAccessLevel()))
+                    AdminCommandData.Instance.HasAccess("admin_diet", player.getAccessLevel().Level))
 				{
 					player.setDietMode(true);
 					player.refreshOverloaded(true);
@@ -147,7 +148,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			}
 
 			if (Config.General.GM_STARTUP_AUTO_LIST &&
-			    AdminData.getInstance().hasAccess("admin_gmliston", player.getAccessLevel()))
+                AdminCommandData.Instance.HasAccess("admin_gmliston", player.getAccessLevel().Level))
 			{
 				AdminData.getInstance().addGm(player, false);
 			}

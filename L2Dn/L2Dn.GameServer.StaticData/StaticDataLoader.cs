@@ -12,6 +12,7 @@ public static class StaticDataLoader
 
         // XML config files
         AccessLevelData.Instance.Load();
+        AdminCommandData.Instance.Load();
 
         // Xml files
         MapRegionData.Instance.Load();

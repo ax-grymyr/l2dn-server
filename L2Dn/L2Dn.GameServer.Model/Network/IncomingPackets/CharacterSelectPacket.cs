@@ -10,6 +10,7 @@ using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Geometry;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -145,8 +146,8 @@ public struct CharacterSelectPacket: IIncomingPacket<GameSession>
 					CharInfoTable.getInstance().addName(player);
 
 					// Prevent instant disappear of invisible GMs on login.
-					if (player.isGM() && Config.General.GM_STARTUP_INVISIBLE && AdminData.getInstance()
-						    .hasAccess("admin_invisible", player.getAccessLevel()))
+					if (player.isGM() && Config.General.GM_STARTUP_INVISIBLE && AdminCommandData.Instance
+						    .HasAccess("admin_invisible", player.getAccessLevel().Level))
 					{
 						player.setInvisible(true);
 					}
