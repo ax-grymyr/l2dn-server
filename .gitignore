@@ -4,3 +4,6 @@
 obj
 bin
 *.DotSettings.user
+
+# Geodata
+*.gz
