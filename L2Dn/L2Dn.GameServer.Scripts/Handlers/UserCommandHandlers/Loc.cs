@@ -1,3 +1,5 @@
+using L2Dn.GameServer.Dto;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
@@ -30,7 +32,7 @@ public class Loc: IUserCommandHandler
         }
 
         SystemMessageId systemMessageId = restartRegion != null
-            ? (SystemMessageId)restartRegion.getLocId()
+            ? (SystemMessageId)restartRegion.LocationId
             : (SystemMessageId)MapRegionManager.getInstance().getMapRegionLocId(player);
 
         SystemMessagePacket sm;

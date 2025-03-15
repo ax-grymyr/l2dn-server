@@ -1,10 +1,10 @@
-﻿using L2Dn.GameServer.Data.Sql;
+﻿using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.Packets;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
-using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -47,7 +47,7 @@ public readonly struct PledgeShowMemberListAllPacket: IOutgoingPacket
 
         writer.WriteInt32(!_isSubPledge);
         writer.WriteInt32(_clan.getId());
-        writer.WriteInt32(Config.SERVER_ID);
+        writer.WriteInt32(ServerConfig.Instance.GameServerParams.ServerId);
         writer.WriteInt32(_pledgeId);
         writer.WriteString(_name);
         writer.WriteString(_leaderName);

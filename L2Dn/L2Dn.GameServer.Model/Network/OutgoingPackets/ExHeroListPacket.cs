@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model;
+﻿using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
@@ -29,7 +30,7 @@ public readonly struct ExHeroListPacket: IOutgoingPacket
             writer.WriteString(hero.getString(Hero.ALLY_NAME, ""));
             writer.WriteInt32(0); // hero.getInt(Hero.ALLY_CREST, 0)
             writer.WriteInt32(hero.getInt(Hero.COUNT));
-            writer.WriteInt32(Config.SERVER_ID);
+            writer.WriteInt32(ServerConfig.Instance.GameServerParams.ServerId);
             writer.WriteByte(0); // 272
         }
     }

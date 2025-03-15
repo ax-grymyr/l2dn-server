@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Data.Sql;
+﻿using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
@@ -56,7 +57,7 @@ public readonly struct ExOlympiadHeroAndLegendInfoPacket: IOutgoingPacket
 						writer.WriteByte(1); // ?? shows 0 on JP
 						writer.WriteSizedString(record.Name);
 						writer.WriteSizedString(clan?.getName() ?? string.Empty);
-						writer.WriteInt32(Config.SERVER_ID);
+						writer.WriteInt32(ServerConfig.Instance.GameServerParams.ServerId);
 						writer.WriteInt32((int)record.BaseClass.GetRace());
 						writer.WriteInt32((int)record.Sex);
 						writer.WriteInt32((int)record.BaseClass);
@@ -80,7 +81,7 @@ public readonly struct ExOlympiadHeroAndLegendInfoPacket: IOutgoingPacket
 						{
 							writer.WriteSizedString(record.Name);
 							writer.WriteSizedString(clan?.getName() ?? string.Empty);
-							writer.WriteInt32(Config.SERVER_ID);
+							writer.WriteInt32(ServerConfig.Instance.GameServerParams.ServerId);
 							writer.WriteInt32((int)record.BaseClass.GetRace());
 							writer.WriteInt32((int)record.Sex);
 							writer.WriteInt32((int)record.BaseClass);

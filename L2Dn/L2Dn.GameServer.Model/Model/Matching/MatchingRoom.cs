@@ -4,6 +4,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Interfaces;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -141,7 +142,7 @@ public abstract class MatchingRoom: IIdentifiable
 
 	public int getLocation()
 	{
-		return MapRegionManager.getInstance().getBBs(_leader.Location.Location2D);
+		return MapRegionData.Instance.GetBBs(_leader.Location.Location2D);
 	}
 
 	public int getMembersCount()

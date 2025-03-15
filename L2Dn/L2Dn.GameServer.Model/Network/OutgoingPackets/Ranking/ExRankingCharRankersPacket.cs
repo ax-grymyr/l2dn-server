@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Db;
+﻿using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
@@ -34,7 +35,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 	}
 
 	public void WriteContent(PacketBitWriter writer)
-	{
+    {
 		writer.WritePacketCode(OutgoingPacketCodes.EX_RANKING_CHAR_RANKERS);
 
 		writer.WriteByte((byte)_group);
@@ -43,6 +44,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 		writer.WriteInt32((int)_player.getClassId());
 		if (_playerList.Count != 0)
 		{
+            int serverId = ServerConfig.Instance.GameServerParams.ServerId;
 			switch (_group)
 			{
 				case 0: // all
@@ -56,7 +58,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 							StatSet player = _playerList[id];
 							writer.WriteSizedString(player.getString("name"));
 							writer.WriteSizedString(player.getString("clanName"));
-							writer.WriteInt32(Config.SERVER_ID);
+							writer.WriteInt32(serverId);
 							writer.WriteInt32(player.getInt("level"));
 							writer.WriteInt32(player.getInt("classId"));
 							writer.WriteInt32(player.getInt("race"));
@@ -106,7 +108,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 									StatSet plr = _playerList[id2];
 									writer.WriteSizedString(plr.getString("name"));
 									writer.WriteSizedString(plr.getString("clanName"));
-									writer.WriteInt32(Config.SERVER_ID);
+									writer.WriteInt32(serverId);
 									writer.WriteInt32(plr.getInt("level"));
 									writer.WriteInt32(plr.getInt("classId"));
 									writer.WriteInt32(plr.getInt("race"));
@@ -156,7 +158,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 							{
 								writer.WriteSizedString(player.getString("name"));
 								writer.WriteSizedString(player.getString("clanName"));
-								writer.WriteInt32(Config.SERVER_ID);
+								writer.WriteInt32(serverId);
 								writer.WriteInt32(player.getInt("level"));
 								writer.WriteInt32(player.getInt("classId"));
 								writer.WriteInt32(player.getInt("race"));
@@ -230,7 +232,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 									StatSet plr = raceList[id2];
 									writer.WriteSizedString(plr.getString("name"));
 									writer.WriteSizedString(plr.getString("clanName"));
-									writer.WriteInt32(Config.SERVER_ID);
+									writer.WriteInt32(serverId);
 									writer.WriteInt32(plr.getInt("level"));
 									writer.WriteInt32(plr.getInt("classId"));
 									writer.WriteInt32(plr.getInt("race"));
@@ -270,7 +272,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 							StatSet player = clanList[id];
 							writer.WriteSizedString(player.getString("name"));
 							writer.WriteSizedString(player.getString("clanName"));
-							writer.WriteInt32(Config.SERVER_ID);
+							writer.WriteInt32(serverId);
 							writer.WriteInt32(player.getInt("level"));
 							writer.WriteInt32(player.getInt("classId"));
 							writer.WriteInt32(player.getInt("race"));
@@ -329,7 +331,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 							{
 								writer.WriteSizedString(player.getString("name"));
 								writer.WriteSizedString(player.getString("clanName"));
-								writer.WriteInt32(Config.SERVER_ID);
+								writer.WriteInt32(serverId);
 								writer.WriteInt32(player.getInt("level"));
 								writer.WriteInt32(player.getInt("classId"));
 								writer.WriteInt32(player.getInt("race"));
@@ -361,7 +363,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 						writer.WriteInt32(1);
 						writer.WriteSizedString(_player.getName());
 						writer.WriteSizedString(_player.getClan()?.getName() ?? string.Empty);
-						writer.WriteInt32(Config.SERVER_ID);
+						writer.WriteInt32(serverId);
 						writer.WriteInt32(_player.getStat().getBaseLevel());
 						writer.WriteInt32((int)_player.getBaseClass());
 						writer.WriteInt32((int)_player.getRace());
@@ -410,7 +412,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 							{
 								writer.WriteSizedString(player.getString("name"));
 								writer.WriteSizedString(player.getString("clanName"));
-								writer.WriteInt32(Config.SERVER_ID);
+								writer.WriteInt32(serverId);
 								writer.WriteInt32(player.getInt("level"));
 								writer.WriteInt32(player.getInt("classId"));
 								writer.WriteInt32(player.getInt("race"));
@@ -486,7 +488,7 @@ public readonly struct ExRankingCharRankersPacket: IOutgoingPacket
 									StatSet plr = classList[id2];
 									writer.WriteSizedString(plr.getString("name"));
 									writer.WriteSizedString(plr.getString("clanName"));
-									writer.WriteInt32(Config.SERVER_ID);
+									writer.WriteInt32(serverId);
 									writer.WriteInt32(plr.getInt("level"));
 									writer.WriteInt32(plr.getInt("classId"));
 									writer.WriteInt32(plr.getInt("race"));

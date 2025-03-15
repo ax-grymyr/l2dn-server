@@ -10,11 +10,11 @@
     <ItemGroup>
       <ProjectReference Include="..\L2Dn.Common\L2Dn.Common.csproj" />
       <ProjectReference Include="..\L2Dn.GameServer.Enums\L2Dn.GameServer.Enums.csproj" />
+      <ProjectReference Include="..\L2Dn.GameServer.StaticData.Xml\L2Dn.GameServer.StaticData.Xml.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Handlers\" />
-      <Folder Include="StaticData\" />
     </ItemGroup>
 
 </Project>

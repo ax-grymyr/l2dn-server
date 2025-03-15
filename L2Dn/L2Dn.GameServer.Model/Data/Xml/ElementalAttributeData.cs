@@ -4,6 +4,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using L2Dn.Model.Xml;
 using L2Dn.Utilities;

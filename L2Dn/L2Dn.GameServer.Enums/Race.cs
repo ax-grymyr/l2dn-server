@@ -1,9 +1,8 @@
-﻿namespace L2Dn.Model.Enums;
+﻿namespace L2Dn.GameServer.Enums;
 
-/**
- * Creature races enumerated.
- * @author Zealar
- */
+/// <summary>
+/// Creature races enumerated. // TODO: separate player race from creature race.
+/// </summary>
 public enum Race
 {
     HUMAN,

@@ -1,4 +1,5 @@
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;

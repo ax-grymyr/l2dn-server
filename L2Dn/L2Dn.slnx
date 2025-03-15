@@ -30,6 +30,7 @@
   <Project Path="L2Dn.GameServer.Enums\L2Dn.GameServer.Enums.csproj" Type="Classic C#" />
   <Project Path="L2Dn.GameServer.Model\L2Dn.GameServer.Model.csproj" Type="Classic C#" />
   <Project Path="L2Dn.GameServer.Scripts\L2Dn.GameServer.Scripts.csproj" Type="Classic C#" />
+  <Project Path="L2Dn.GameServer.StaticData.Xml\L2Dn.GameServer.StaticData.Xml.csproj" Type="Classic C#" />
   <Project Path="L2Dn.GameServer.StaticData\L2Dn.GameServer.StaticData.csproj" Type="Classic C#" />
   <Project Path="L2Dn.GameServer\L2Dn.GameServer.csproj" Type="Classic C#" />
   <Project Path="L2Dn.Model\L2Dn.Model.csproj" Type="Classic C#" />

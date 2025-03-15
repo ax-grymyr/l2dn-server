@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
@@ -770,7 +771,7 @@ public class NpcData: DataReaderBase
 		public static readonly NpcData INSTANCE = new();
 	}
 
-	private new static Map<string, object> parseParameters(XElement element)
+	private static Map<string, object> parseParameters(XElement element)
 	{
 		Map<string, object> parameters = new();
 

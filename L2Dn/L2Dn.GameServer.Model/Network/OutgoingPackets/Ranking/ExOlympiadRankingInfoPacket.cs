@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Db;
+﻿using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
@@ -134,7 +135,7 @@ public readonly struct ExOlympiadRankingInfoPacket: IOutgoingPacket
 				writer.WriteInt32(scope == RankingOlympiadScope.SELF ? data.Key : curRank);
 			}
 
-			writer.WriteInt32(Config.SERVER_ID); // server id
+			writer.WriteInt32(ServerConfig.Instance.GameServerParams.ServerId); // server id
 			writer.WriteInt32(player.getInt("level")); // level
 			writer.WriteInt32(player.getInt("classId")); // class id
 			writer.WriteInt32(player.getInt("clanLevel")); // clan level

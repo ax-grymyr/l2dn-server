@@ -3,6 +3,7 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Cubics;
 using L2Dn.GameServer.Model.Cubics.Conditions;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Xml;
 using NLog;

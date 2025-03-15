@@ -10,8 +10,9 @@ public static partial class Config
     {
         public static ImmutableArray<string> FILTER_LIST = ImmutableArray<string>.Empty;
 
-        internal static void LoadFilter(string configPath)
+        internal static void LoadFilter()
         {
+            string configPath = ServerConfig.Instance.DataPack.ConfigPath;
             string filePath = string.IsNullOrEmpty(configPath)
                 ? FileNames.Configs.ChatFilter
                 : Path.Combine(configPath, FileNames.Configs.ChatFilter);

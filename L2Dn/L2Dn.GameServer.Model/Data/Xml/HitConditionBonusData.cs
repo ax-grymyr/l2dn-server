@@ -2,6 +2,7 @@ using System.Xml.Linq;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.Geometry;
 using L2Dn.Utilities;

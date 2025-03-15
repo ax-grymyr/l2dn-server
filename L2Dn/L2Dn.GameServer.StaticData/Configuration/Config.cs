@@ -21,17 +21,7 @@ public static partial class Config
     // --------------------------------------------------
 	// General Settings
 	// --------------------------------------------------
-	public static bool SHOW_LICENCE;
-	public static bool SHOW_PI_AGREEMENT;
-	public static bool ACCEPT_NEW_GAMESERVER;
-	public static int SERVER_ID;
-	public static byte[] HEX_ID = [];
-	public static bool AUTO_CREATE_ACCOUNTS;
 	public static bool FLOOD_PROTECTION;
-	public static int FAST_CONNECTION_LIMIT;
-	public static int NORMAL_CONNECTION_TIME;
-	public static int FAST_CONNECTION_TIME;
-	public static int MAX_CONNECTION_PER_IP;
 	public static bool ENABLE_CMD_LINE_LOGIN;
 	public static bool ONLY_CMD_LINE_LOGIN;
 
@@ -39,9 +29,9 @@ public static partial class Config
 	// Custom Settings
 	// --------------------------------------------------
 
-    internal static void Load(string configPath)
+    internal static void Load()
     {
-        ConfigurationParser parser = new(configPath);
+        ConfigurationParser parser = new(ServerConfig.Instance.DataPack.ConfigPath);
 
         Server.Load(parser);
         Feature.Load(parser);
@@ -65,7 +55,7 @@ public static partial class Config
         OrcFortress.Load(parser);
         GraciaSeeds.Load(parser);
         GeoEngine.Load(parser);
-        ChatFilter.LoadFilter(configPath);
+        ChatFilter.LoadFilter();
 
         // Custom
         AllowedPlayerRaces.Load(parser);

@@ -3,6 +3,7 @@ using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Handlers;
@@ -14,6 +15,7 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
@@ -340,14 +342,14 @@ public class AdminTeleport: IAdminCommandHandler
 			}
 		}
 
-        MapRegion? region = MapRegionManager.getInstance().getMapRegionByName(regionName);
+        MapRegion? region = MapRegionData.Instance.GetMapRegionByName(regionName);
         if (region == null)
         {
             _logger.Warn("Region " + regionName + " not found.");
             return;
         }
 
-		player.teleToLocation(region.getSpawnLoc(), true);
+		player.teleToLocation(region.GetSpawnLocation(), true);
 	}
 
 	private void teleportTo(Player activeChar, string coords)

@@ -1,4 +1,5 @@
-﻿using L2Dn.Packets;
+﻿using L2Dn.GameServer.Configuration;
+using L2Dn.Packets;
 using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
@@ -24,7 +25,7 @@ public readonly struct ExPledgeEmblemPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_PLEDGE_EMBLEM);
 
-        writer.WriteInt32(Config.SERVER_ID);
+        writer.WriteInt32(ServerConfig.Instance.GameServerParams.ServerId);
         writer.WriteInt32(_clanId);
         writer.WriteInt32(_crestId);
         writer.WriteInt32(_chunkId);

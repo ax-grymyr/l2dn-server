@@ -1,4 +1,5 @@
 ﻿using L2Dn.Extensions;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.ItemContainers;
@@ -117,7 +118,7 @@ public readonly struct CharacterListPacket(int playKey1, string accountName, Cha
 			writer.WriteInt32((int)charInfo.Sex); // Sex
 			writer.WriteInt32((int)charInfo.Race); // Race
 			writer.WriteInt32((int)charInfo.BaseClass);
-			writer.WriteInt32(Config.SERVER_ID);
+			writer.WriteInt32(ServerConfig.Instance.GameServerParams.ServerId);
 			writer.WriteInt32(charInfo.X);
 			writer.WriteInt32(charInfo.Y);
 			writer.WriteInt32(charInfo.Z);

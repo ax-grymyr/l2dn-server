@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Model.BuyList;
 using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Xml;
 using NLog;
 using Config = L2Dn.GameServer.Configuration.Config;

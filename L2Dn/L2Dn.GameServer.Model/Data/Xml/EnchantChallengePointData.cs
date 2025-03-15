@@ -1,6 +1,7 @@
 using System.Collections.Frozen;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Xml;
 using NLog;
 

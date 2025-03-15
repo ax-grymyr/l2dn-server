@@ -134,7 +134,7 @@ public sealed class World
 	 */
 	public WorldObject? findObject(int objectId)
 	{
-		_allObjects.TryGetValue(objectId, out var obj);
+		_allObjects.TryGetValue(objectId, out WorldObject? obj);
 		return obj;
 	}
 
@@ -744,6 +744,6 @@ public sealed class World
 
 	private static class SingletonHolder
 	{
-		public static readonly World INSTANCE = new World();
+		public static readonly World INSTANCE = new();
 	}
 }

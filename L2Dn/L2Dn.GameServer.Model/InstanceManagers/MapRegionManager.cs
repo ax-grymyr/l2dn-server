@@ -1,23 +1,19 @@
-using System.Collections.Frozen;
-using L2Dn.Extensions;
-using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.InstanceZones;
-using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Zones.Types;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
-using L2Dn.Model.Enums;
-using L2Dn.Model.Xml;
 using NLog;
-using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.InstanceManagers;
 
@@ -25,85 +21,9 @@ namespace L2Dn.GameServer.InstanceManagers;
  * Map Region Manager.
  * @author Nyaran
  */
-public class MapRegionManager: DataReaderBase
+public sealed class MapRegionManager: DataReaderBase
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(MapRegionManager));
-
-	private static FrozenDictionary<string, MapRegion> _regions = FrozenDictionary<string, MapRegion>.Empty;
-	private const string DefaultRespawn = "talking_island_town";
-
-	private MapRegionManager()
-	{
-		load();
-	}
-
-	public void load()
-	{
-		Dictionary<string, MapRegion> regions = new Dictionary<string, MapRegion>();
-		LoadXmlDocuments<XmlMapRegionList>(DataFileLocation.Data, "mapregion")
-			.Where(t => t.Document.Enabled)
-			.SelectMany(t => t.Document.Regions)
-			.Select(xmlRegion =>
-			{
-				MapRegion region = new(xmlRegion.Name, xmlRegion.Town, xmlRegion.LocationId, xmlRegion.Bbs);
-				foreach (XmlMapRegionRespawnPoint respawnPoint in xmlRegion.RespawnPoints)
-				{
-					if (respawnPoint.IsOther)
-						region.addOtherSpawn(respawnPoint.X, respawnPoint.Y, respawnPoint.Z);
-					else if (respawnPoint.IsChaotic)
-						region.addChaoticSpawn(respawnPoint.X, respawnPoint.Y, respawnPoint.Z);
-					else if (respawnPoint.IsBanish)
-						region.addBanishSpawn(respawnPoint.X, respawnPoint.Y, respawnPoint.Z);
-					else
-						region.addSpawn(respawnPoint.X, respawnPoint.Y, respawnPoint.Z);
-				}
-
-				foreach (XmlMapRegionMap map in xmlRegion.Maps)
-					region.addMap(map.X, map.Y);
-
-				foreach (XmlMapRegionBanned banned in xmlRegion.Banned)
-					region.addBannedRace(banned.Race, banned.Point);
-
-				return region;
-			})
-			.ForEach(region =>
-			{
-				if (!regions.TryAdd(region.getName(), region))
-					_logger.Error(nameof(MapRegionManager) + $": Duplicated region name '{region.getName()}'");
-			});
-
-		_regions = regions.ToFrozenDictionary();
-
-		_logger.Info(GetType().Name +": Loaded " + regions.Count + " map regions.");
-	}
-
-	/**
-	 * @param locX
-	 * @param locY
-	 * @return
-	 */
-	public MapRegion? getMapRegion(int locX, int locY)
-	{
-		foreach (MapRegion region in _regions.Values)
-		{
-			if (region.isZoneInRegion(getMapRegionX(locX), getMapRegionY(locY)))
-			{
-				return region;
-			}
-		}
-
-		return null;
-	}
-
-	/**
-	 * @param locX
-	 * @param locY
-	 * @return
-	 */
-	public int getMapRegionLocId(int locX, int locY)
-	{
-		return getMapRegion(locX, locY)?.getLocId() ?? 0;
-	}
 
 	/**
 	 * @param obj
@@ -111,7 +31,7 @@ public class MapRegionManager: DataReaderBase
 	 */
 	public MapRegion? getMapRegion(WorldObject obj)
 	{
-		return getMapRegion(obj.getX(), obj.getY());
+		return MapRegionData.Instance.GetMapRegion(obj.getX(), obj.getY());
 	}
 
 	/**
@@ -120,25 +40,7 @@ public class MapRegionManager: DataReaderBase
 	 */
 	public int getMapRegionLocId(WorldObject obj)
 	{
-		return getMapRegionLocId(obj.getX(), obj.getY());
-	}
-
-	/**
-	 * @param posX
-	 * @return
-	 */
-	public int getMapRegionX(int posX)
-	{
-		return (posX >> 15) + 9 + 11; // + centerTileX;
-	}
-
-	/**
-	 * @param posY
-	 * @return
-	 */
-	public int getMapRegionY(int posY)
-	{
-		return (posY >> 15) + 10 + 8; // + centerTileX;
+		return MapRegionData.Instance.GetMapRegionLocId(obj.getX(), obj.getY());
 	}
 
 	/**
@@ -148,7 +50,7 @@ public class MapRegionManager: DataReaderBase
 	 */
 	public string getClosestTownName(Creature creature)
 	{
-		return getMapRegion(creature)?.getTown() ?? "Aden Castle Town";
+		return getMapRegion(creature)?.Town ?? "Aden Castle Town";
 	}
 
 	/**
@@ -328,7 +230,7 @@ public class MapRegionManager: DataReaderBase
                 {
                     MapRegion? restartRegion = getRestartRegion(player, respawnPoint);
                     if (restartRegion != null)
-                        return restartRegion.getChaoticSpawnLoc();
+                        return restartRegion.GetChaoticSpawnLocation();
                 }
             }
 
@@ -336,19 +238,19 @@ public class MapRegionManager: DataReaderBase
             MapRegion? mapRegion = getMapRegion(player);
             if (mapRegion != null)
             {
-                if (mapRegion.getBannedRace().TryGetValue(player.getRace(), out string? value))
+                if (mapRegion.BannedRaces.TryGetValue(player.getRace(), out string? value))
                 {
-                    MapRegion? restartRegion = _regions.GetValueOrDefault(value);
+                    MapRegion? restartRegion = MapRegionData.Instance.GetMapRegionByName(value);
                     if (restartRegion != null)
-                        return restartRegion.getChaoticSpawnLoc();
+                        return restartRegion.GetChaoticSpawnLocation();
                 }
 
-                return mapRegion.getChaoticSpawnLoc();
+                return mapRegion.GetChaoticSpawnLocation();
             }
 
-            MapRegion? defaultRegion = _regions.GetValueOrDefault(DefaultRespawn);
+            MapRegion? defaultRegion = MapRegionData.Instance.DefaultRespawnRegion;
             if (defaultRegion != null)
-                return defaultRegion.getChaoticSpawnLoc();
+                return defaultRegion.GetChaoticSpawnLocation();
 
             throw new InvalidOperationException("No default respawn location found.");
 		}
@@ -358,14 +260,14 @@ public class MapRegionManager: DataReaderBase
 
 			if (player.isFlyingMounted())
             {
-                MapRegion? restartRegion = _regions.GetValueOrDefault("union_base_of_kserth");
+                MapRegion? restartRegion = MapRegionData.Instance.GetMapRegionByName("union_base_of_kserth");
                 if (restartRegion != null)
-				    return restartRegion.getChaoticSpawnLoc();
+				    return restartRegion.GetChaoticSpawnLocation();
 			}
 
-            MapRegion? defaultRegion = _regions.GetValueOrDefault(DefaultRespawn);
+            MapRegion? defaultRegion = MapRegionData.Instance.DefaultRespawnRegion;
             if (defaultRegion != null)
-                return defaultRegion.getChaoticSpawnLoc();
+                return defaultRegion.GetChaoticSpawnLocation();
 
             throw new InvalidOperationException("No default respawn location found.");
 		}
@@ -383,7 +285,7 @@ public class MapRegionManager: DataReaderBase
                 {
                     MapRegion? restartRegion = getRestartRegion(creature, respawnPoint);
                     if (restartRegion != null)
-                        return restartRegion.getSpawnLoc();
+                        return restartRegion.GetSpawnLocation();
                 }
 			}
 
@@ -391,19 +293,19 @@ public class MapRegionManager: DataReaderBase
             MapRegion? mapRegion = getMapRegion(creature);
             if (mapRegion != null)
             {
-                if (mapRegion.getBannedRace().TryGetValue(creature.getRace(), out string? value))
+                if (mapRegion.BannedRaces.TryGetValue(creature.getRace(), out string? value))
                 {
-                    MapRegion? restartRegion = _regions.GetValueOrDefault(value);
+                    MapRegion? restartRegion = MapRegionData.Instance.GetMapRegionByName(value);
                     if (restartRegion != null)
-                        return restartRegion.getChaoticSpawnLoc();
+                        return restartRegion.GetChaoticSpawnLocation();
                 }
 
-                return mapRegion.getSpawnLoc();
+                return mapRegion.GetSpawnLocation();
             }
 
-            MapRegion? defaultRegion = _regions.GetValueOrDefault(DefaultRespawn);
+            MapRegion? defaultRegion = MapRegionData.Instance.DefaultRespawnRegion;
             if (defaultRegion != null)
-                return defaultRegion.getSpawnLoc();
+                return defaultRegion.GetSpawnLocation();
 
             throw new InvalidOperationException("No default respawn location found.");
         }
@@ -412,9 +314,9 @@ public class MapRegionManager: DataReaderBase
             _logger.Error(e);
 
 			// Port to the default respawn if no closest town found.
-            MapRegion? defaultRegion = _regions.GetValueOrDefault(DefaultRespawn);
+            MapRegion? defaultRegion = MapRegionData.Instance.DefaultRespawnRegion;
             if (defaultRegion != null)
-                return defaultRegion.getSpawnLoc();
+                return defaultRegion.GetSpawnLocation();
 
             throw new InvalidOperationException("No default respawn location found.");
 		}
@@ -429,18 +331,18 @@ public class MapRegionManager: DataReaderBase
 	{
 		try
 		{
-			MapRegion? region = _regions.GetValueOrDefault(point);
+			MapRegion? region = MapRegionData.Instance.GetMapRegionByName(point);
             if (region != null)
             {
-                if (region.getBannedRace().TryGetValue(creature.getRace(), out string? value))
+                if (region.BannedRaces.TryGetValue(creature.getRace(), out string? value))
                 {
-                    MapRegion? restartRegion = _regions.GetValueOrDefault(value);
+                    MapRegion? restartRegion = MapRegionData.Instance.GetMapRegionByName(value);
                     if (restartRegion != null)
                         return restartRegion;
                 }
             }
 
-            MapRegion? defaultRegion = _regions.GetValueOrDefault(DefaultRespawn);
+            MapRegion? defaultRegion = MapRegionData.Instance.DefaultRespawnRegion;
             if (defaultRegion != null)
                 return defaultRegion;
 
@@ -450,27 +352,12 @@ public class MapRegionManager: DataReaderBase
 		{
             _logger.Error(e);
 
-            MapRegion? defaultRegion = _regions.GetValueOrDefault(DefaultRespawn);
+            MapRegion? defaultRegion = MapRegionData.Instance.DefaultRespawnRegion;
             if (defaultRegion != null)
                 return defaultRegion;
 
             throw new InvalidOperationException("No default restart region found.");
 		}
-	}
-
-	/**
-	 * @param regionName the map region name.
-	 * @return if exists the map region identified by that name, null otherwise.
-	 */
-	public MapRegion? getMapRegionByName(string regionName)
-	{
-		return _regions.GetValueOrDefault(regionName);
-	}
-
-	public int getBBs(Location2D location)
-	{
-		return getMapRegion(location.X, location.Y)?.getBbs() ??
-		       _regions.GetValueOrDefault(DefaultRespawn)?.getBbs() ?? 0;
 	}
 
 	/**
