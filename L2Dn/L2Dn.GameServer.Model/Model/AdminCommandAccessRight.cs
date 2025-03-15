@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using L2Dn.GameServer.Dto;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Xml;
 
 namespace L2Dn.GameServer.Model;
@@ -37,9 +38,7 @@ public class AdminCommandAccessRight
      */
     public bool hasAccess(AccessLevel characterAccessLevel)
     {
-        AccessLevel? accessLevel = AdminData.getInstance().getAccessLevel(_accessLevel);
-        return accessLevel != null && (accessLevel.getLevel() == characterAccessLevel.getLevel() ||
-                                       characterAccessLevel.hasChildAccess(accessLevel));
+        return _accessLevel == characterAccessLevel.Level || characterAccessLevel.HasChildAccess(_accessLevel);
     }
 
     /**

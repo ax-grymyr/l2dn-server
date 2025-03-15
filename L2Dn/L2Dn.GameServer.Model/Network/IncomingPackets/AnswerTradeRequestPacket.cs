@@ -22,7 +22,7 @@ public struct AnswerTradeRequestPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (!player.getAccessLevel().allowTransaction())
+        if (!player.getAccessLevel().AllowTransaction)
         {
             player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);

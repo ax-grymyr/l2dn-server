@@ -31,7 +31,7 @@ public sealed class Lethal: AbstractEffect
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
-        if (effector.isPlayer() && effector.getActingPlayer() is { } player && !player.getAccessLevel().canGiveDamage())
+        if (effector.isPlayer() && effector.getActingPlayer() is { } player && !player.getAccessLevel().CanGiveDamage)
             return;
 
         if (skill.getMagicLevel() < effected.getLevel() - 6)

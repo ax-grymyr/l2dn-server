@@ -4101,7 +4101,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			}
 		}
 
-		if (playerTarget != null && !playerTarget.canBeAttacked() && !player.getAccessLevel().allowPeaceAttack())
+		if (playerTarget != null && !playerTarget.canBeAttacked() && !player.getAccessLevel().AllowPeaceAttack)
 		{
 			// If target is not attackable, send a Server=>Client packet ActionFailed
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -4159,7 +4159,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			}
 		}
 
-		if (attackerPlayer != null && attackerPlayer.getAccessLevel().allowPeaceAttack())
+		if (attackerPlayer != null && attackerPlayer.getAccessLevel().AllowPeaceAttack)
 		{
 			return false;
 		}

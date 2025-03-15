@@ -36,7 +36,7 @@ public class NotFriendPc: IAffectObjectHandler
 			}
 
 			// Peace Zone.
-			if (target.isInsidePeaceZone(player) && !player.getAccessLevel().allowPeaceAttack())
+			if (target.isInsidePeaceZone(player) && !player.getAccessLevel().AllowPeaceAttack)
 			{
 				return false;
 			}

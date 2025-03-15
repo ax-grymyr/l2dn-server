@@ -135,7 +135,7 @@ public class CreatureStatus
 		if (attacker != null)
 		{
 			Player? attackerPlayer = attacker.getActingPlayer();
-			if (attackerPlayer != null && attackerPlayer.isGM() && !attackerPlayer.getAccessLevel().canGiveDamage())
+			if (attackerPlayer != null && attackerPlayer.isGM() && !attackerPlayer.getAccessLevel().CanGiveDamage)
 			{
 				return;
 			}

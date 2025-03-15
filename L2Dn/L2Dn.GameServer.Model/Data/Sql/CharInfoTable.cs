@@ -47,7 +47,7 @@ public class CharInfoTable
 		if (player != null)
 		{
 			addName(player.ObjectId, player.getName());
-			_accessLevels.put(player.ObjectId, player.getAccessLevel().getLevel());
+			_accessLevels.put(player.ObjectId, player.getAccessLevel().Level);
 		}
 	}
 

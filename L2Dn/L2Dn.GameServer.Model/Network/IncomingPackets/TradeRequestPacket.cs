@@ -30,7 +30,7 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 		if (player == null)
 			return ValueTask.CompletedTask;
 
-		if (!player.getAccessLevel().allowTransaction())
+		if (!player.getAccessLevel().AllowTransaction)
 		{
 			player.sendMessage("Transactions are disabled for your current Access Level.");
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);

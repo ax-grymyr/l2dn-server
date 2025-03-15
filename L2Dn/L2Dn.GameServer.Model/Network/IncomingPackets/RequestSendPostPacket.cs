@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
@@ -8,6 +9,7 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -86,7 +88,7 @@ public struct RequestSendPostPacket: IIncomingPacket<GameSession>
 			_reqAdena = 0;
 		}
 
-		if (!player.getAccessLevel().allowTransaction())
+		if (!player.getAccessLevel().AllowTransaction)
 		{
 			player.sendMessage("Transactions are disabled for your Access Level.");
 			return ValueTask.CompletedTask;
@@ -187,8 +189,8 @@ public struct RequestSendPostPacket: IIncomingPacket<GameSession>
 		}
 
 		int level = CharInfoTable.getInstance().getAccessLevelById(receiverId);
-		AccessLevel? accessLevel = AdminData.getInstance().getAccessLevel(level);
-		if (accessLevel != null && accessLevel.isGm() && !player.getAccessLevel().isGm())
+		AccessLevel accessLevel = AccessLevelData.Instance.GetAccessLevel(level);
+		if (accessLevel.IsGM && !player.getAccessLevel().IsGM)
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOUR_MESSAGE_TO_C1_DID_NOT_REACH_ITS_RECIPIENT_YOU_CANNOT_SEND_MAIL_TO_THE_GM_STAFF);
 			sm.Params.addString(_receiver);

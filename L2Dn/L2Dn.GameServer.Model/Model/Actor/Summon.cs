@@ -759,7 +759,7 @@ public abstract class Summon: Playable
 
 	public override void doCast(Skill skill)
 	{
-		if (skill.getTarget(this, false, false, false) == null && !_owner.getAccessLevel().allowPeaceAttack())
+		if (skill.getTarget(this, false, false, false) == null && !_owner.getAccessLevel().AllowPeaceAttack)
 		{
 			// Send a System Message to the Player
 			_owner.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
@@ -964,7 +964,7 @@ public abstract class Summon: Playable
 			return false;
 		}
 
-		if (!_owner.getAccessLevel().allowPeaceAttack() && _owner.isInsidePeaceZone(this, target))
+		if (!_owner.getAccessLevel().AllowPeaceAttack && _owner.isInsidePeaceZone(this, target))
 		{
 			sendPacket(SystemMessageId.YOU_CANNOT_ATTACK_THIS_TARGET_IN_A_PEACEFUL_ZONE);
 			return false;

@@ -1,9 +1,11 @@
 using System.Collections.Frozen;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.StaticData;
+using L2Dn.GameServer.StaticData.Xml.AccessLevels;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Xml;
 using L2Dn.Packets;
@@ -19,13 +21,10 @@ public class AdminData: DataReaderBase
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminData));
 
-	private FrozenDictionary<int, AccessLevel> _accessLevels = FrozenDictionary<int, AccessLevel>.Empty;
-
 	private FrozenDictionary<string, AdminCommandAccessRight> _adminCommandAccessRights =
 		FrozenDictionary<string, AdminCommandAccessRight>.Empty;
 
 	private readonly Map<Player, bool> _gmList = new();
-	private int _highestLevel;
 
 	private AdminData()
 	{
@@ -34,54 +33,11 @@ public class AdminData: DataReaderBase
 
 	public void load()
 	{
-		XmlAccessLevels document = LoadXmlDocument<XmlAccessLevels>(DataFileLocation.Config, "AccessLevels.xml");
-		_accessLevels = document.AccessLevels.Select(level => new AccessLevel(level))
-			.ToFrozenDictionary(level => level.getLevel());
-
-		_highestLevel = _accessLevels.Count == 0 ? 0 : _accessLevels.Keys.Max();
-
-		_logger.Info(GetType().Name + ": Loaded " + _accessLevels.Count + " access levels.");
-
 		XmlAdminCommands document2 = LoadXmlDocument<XmlAdminCommands>(DataFileLocation.Config, "AdminCommands.xml");
 		_adminCommandAccessRights = document2.Commands.Select(command => new AdminCommandAccessRight(command))
 			.ToFrozenDictionary(command => command.getAdminCommand());
 
 		_logger.Info(GetType().Name + ": Loaded " + _adminCommandAccessRights.Count + " access commands.");
-	}
-
-	/**
-	 * Returns the access level by characterAccessLevel.
-	 * @param accessLevelNum as int
-	 * @return the access level instance by char access level
-	 */
-	public AccessLevel? getAccessLevel(int accessLevelNum)
-	{
-		if (accessLevelNum < 0)
-		{
-			return _accessLevels.GetValueOrDefault(-1);
-		}
-
-		return _accessLevels.GetValueOrDefault(accessLevelNum);
-	}
-
-	/**
-	 * Gets the master access level.
-	 * @return the master access level
-	 */
-	public AccessLevel getMasterAccessLevel()
-    {
-        return _accessLevels.GetValueOrDefault(_highestLevel) ??
-            throw new InvalidOperationException("Master access level is not defined");
-    }
-
-	/**
-	 * Checks for access level.
-	 * @param id the id
-	 * @return {@code true}, if successful, {@code false} otherwise
-	 */
-	public bool hasAccessLevel(int id)
-	{
-		return _accessLevels.ContainsKey(id);
 	}
 
 	/**
@@ -96,14 +52,14 @@ public class AdminData: DataReaderBase
 		if (acar == null)
 		{
 			// Trying to avoid the spam for next time when the GM would try to use the same command
-			if (accessLevel.getLevel() > 0 && accessLevel.getLevel() == _highestLevel)
+			if (accessLevel.Level > 0 && accessLevel.Level == AccessLevelData.Instance.HighestAccessLevel)
 			{
-				acar = new AdminCommandAccessRight(adminCommand, true, accessLevel.getLevel());
+				acar = new AdminCommandAccessRight(adminCommand, true, accessLevel.Level);
 				Dictionary<string, AdminCommandAccessRight> dict = _adminCommandAccessRights.ToDictionary();
 				dict[adminCommand] = acar;
 				_adminCommandAccessRights = dict.ToFrozenDictionary();
 				_logger.Info(GetType().Name + ": No rights defined for admin command " + adminCommand +
-					" auto setting accesslevel: " + accessLevel.getLevel() + " !");
+					" auto setting accesslevel: " + accessLevel.Level + " !");
 			}
 			else
 			{

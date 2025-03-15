@@ -65,7 +65,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 
 		bool isPrivate = warehouse is PlayerWarehouse;
-		if (!isPrivate && !player.getAccessLevel().allowTransaction())
+		if (!isPrivate && !player.getAccessLevel().AllowTransaction)
 		{
 			player.sendMessage("Transactions are disabled for your Access Level.");
 			return ValueTask.CompletedTask;

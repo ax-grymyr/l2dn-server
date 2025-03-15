@@ -62,6 +62,7 @@ using L2Dn.GameServer.Network.OutgoingPackets.LimitShop;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
 using L2Dn.GameServer.Network.OutgoingPackets.Surveillance;
 using L2Dn.GameServer.Network.OutgoingPackets.Vip;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
@@ -1172,9 +1173,7 @@ public class Player: Playable
 		getAI();
 
         _randomCraft = new PlayerRandomCraft(this);
-        _accessLevel = AdminData.getInstance().getAccessLevel(0) ??
-            throw new InvalidOperationException("No default access level defined");
-
+        _accessLevel = AccessLevelData.Instance.GetDefaultAccessLevel();
         _fistsWeaponItem = findFistsWeaponItem(template.getClassId());
     }
 
@@ -6424,7 +6423,7 @@ public class Player: Playable
 	 */
 	public bool isGM()
 	{
-		return _accessLevel.isGm();
+		return _accessLevel.IsGM;
 	}
 
 	/**
@@ -6434,31 +6433,13 @@ public class Player: Playable
 	 * @param updateInDb
 	 */
 	public void setAccessLevel(int level, bool broadcast, bool updateInDb)
-	{
-		AccessLevel? accessLevel = AdminData.getInstance().getAccessLevel(level);
-		if (accessLevel == null)
-		{
-			LOGGER.Warn("Can't find access level " + level + " for " + this);
-			accessLevel = AdminData.getInstance().getAccessLevel(0) ??
-                throw new InvalidOperationException("Access level 0 is not defined");
-		}
-
-		if (accessLevel.getLevel() == 0 && Config.General.DEFAULT_ACCESS_LEVEL > 0)
-		{
-			accessLevel = AdminData.getInstance().getAccessLevel(Config.General.DEFAULT_ACCESS_LEVEL);
-			if (accessLevel == null)
-			{
-				LOGGER.Warn("Config's default access level (" + Config.General.DEFAULT_ACCESS_LEVEL + ") is not defined, defaulting to 0!");
-                accessLevel = AdminData.getInstance().getAccessLevel(0) ??
-                    throw new InvalidOperationException("Access level 0 is not defined");
-
-				Config.General.DEFAULT_ACCESS_LEVEL = 0;
-			}
-		}
+    {
+        AccessLevel accessLevel = AccessLevelData.Instance.GetAccessLevel(Math.Max(level,
+            Config.General.DEFAULT_ACCESS_LEVEL));
 
 		_accessLevel = accessLevel;
-		_appearance.setNameColor(accessLevel.getNameColor());
-		_appearance.setTitleColor(accessLevel.getTitleColor());
+		_appearance.setNameColor(accessLevel.NameColor);
+		_appearance.setTitleColor(accessLevel.TitleColor);
 		if (broadcast)
 		{
 			broadcastUserInfo();
@@ -6471,7 +6452,7 @@ public class Player: Playable
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int characterId = ObjectId;
 				ctx.Characters.Where(c => c.Id == characterId)
-					.ExecuteUpdate(s => s.SetProperty(c => c.AccessLevel, accessLevel.getLevel()));
+					.ExecuteUpdate(s => s.SetProperty(c => c.AccessLevel, accessLevel.Level));
 			}
 			catch (Exception e)
 			{
@@ -6483,7 +6464,7 @@ public class Player: Playable
 
 		if (level > 0)
 		{
-			LOGGER.Warn(accessLevel.getName() + " access level set for character " + getName() + "! Just a warning to be careful ;)");
+			LOGGER.Warn(accessLevel.Name + " access level set for character " + getName() + "! Just a warning to be careful ;)");
 		}
 	}
 

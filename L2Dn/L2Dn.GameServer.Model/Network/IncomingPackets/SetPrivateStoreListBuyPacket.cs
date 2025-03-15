@@ -116,7 +116,7 @@ public struct SetPrivateStoreListBuyPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (!player.getAccessLevel().allowTransaction())
+		if (!player.getAccessLevel().AllowTransaction)
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
 			return ValueTask.CompletedTask;

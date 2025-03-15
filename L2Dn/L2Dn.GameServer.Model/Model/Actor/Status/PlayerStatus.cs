@@ -121,7 +121,7 @@ public class PlayerStatus: PlayableStatus
 			Player? attackerPlayer = attacker.getActingPlayer();
 			if (attackerPlayer != null)
 			{
-				if (attackerPlayer.isGM() && !attackerPlayer.getAccessLevel().canGiveDamage())
+				if (attackerPlayer.isGM() && !attackerPlayer.getAccessLevel().CanGiveDamage)
 				{
 					return;
 				}

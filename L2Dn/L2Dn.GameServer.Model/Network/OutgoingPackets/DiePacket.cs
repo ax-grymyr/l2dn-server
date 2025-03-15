@@ -83,7 +83,7 @@ public readonly struct DiePacket: IOutgoingPacket
 			}
 
 			// Feather check.
-			if (_player.getAccessLevel().allowFixedRes() || _player.getInventory().haveItemForSelfResurrection())
+			if (_player.getAccessLevel().AllowFixedRes || _player.getInventory().haveItemForSelfResurrection())
 			{
 				_flags += 32;
 			}

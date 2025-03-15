@@ -36,7 +36,7 @@ public struct RequestPostAttachmentPacket: IIncomingPacket<GameSession>
 		// if (!client.getFloodProtectors().canPerformTransaction())
 		// 	return ValueTask.CompletedTask;
 
-		if (!player.getAccessLevel().allowTransaction())
+		if (!player.getAccessLevel().AllowTransaction)
 		{
 			player.sendMessage("Transactions are disabled for your Access Level");
 			return ValueTask.CompletedTask;

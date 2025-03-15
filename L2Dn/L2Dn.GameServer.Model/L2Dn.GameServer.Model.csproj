@@ -14,8 +14,4 @@
       <ProjectReference Include="..\L2Dn.Protocol\L2Dn.Protocol.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Model\Zones\Forms\" />
-    </ItemGroup>
-
 </Project>

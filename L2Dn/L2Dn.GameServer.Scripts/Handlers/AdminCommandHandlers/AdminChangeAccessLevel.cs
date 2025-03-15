@@ -1,11 +1,12 @@
-using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using Microsoft.EntityFrameworkCore;
 using NLog;
@@ -94,21 +95,14 @@ public class AdminChangeAccessLevel: IAdminCommandHandler
 	{
 		if (lvl >= 0)
 		{
-			AccessLevel? acccessLevel = AdminData.getInstance().getAccessLevel(lvl);
-			if (acccessLevel != null)
-			{
-				player.setAccessLevel(lvl, true, true);
-				player.sendMessage("Your access level has been changed to " + acccessLevel.getName() + " (" + acccessLevel.getLevel() + ").");
-				activeChar.sendMessage(player.getName() + "'s access level has been changed to " + acccessLevel.getName() + " (" + acccessLevel.getLevel() + ").");
-			}
-			else
-			{
-				BuilderUtil.sendSysMessage(activeChar, "You are trying to set unexisting access level: " + lvl + " please try again with a valid one!");
-			}
+			AccessLevel accessLevel = AccessLevelData.Instance.GetAccessLevel(lvl);
+			player.setAccessLevel(lvl, true, true);
+			player.sendMessage("Your access level has been changed to " + accessLevel.Name + " (" + accessLevel.Level + ").");
+			activeChar.sendMessage(player.getName() + "'s access level has been changed to " + accessLevel.Name + " (" + accessLevel.Level + ").");
 		}
 		else
 		{
-			player.setAccessLevel(lvl, false, true);
+			player.setAccessLevel(-1, false, true);
 			player.sendMessage("Your character has been banned. Bye.");
 			Disconnection.of(player).defaultSequence(LeaveWorldPacket.STATIC_PACKET);
 		}

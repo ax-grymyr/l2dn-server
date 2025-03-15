@@ -59,7 +59,7 @@ public struct SendWareHouseWithDrawListPacket: IIncomingPacket<GameSession>
 		if (warehouse == null)
 			return ValueTask.CompletedTask;
 
-		if (!(warehouse is PlayerWarehouse) && !player.getAccessLevel().allowTransaction())
+		if (!(warehouse is PlayerWarehouse) && !player.getAccessLevel().AllowTransaction)
 		{
 			player.sendMessage("Transactions are disabled for your Access Level.");
 			return ValueTask.CompletedTask;

@@ -95,7 +95,7 @@ public class AttackableAI: CreatureAI
 		if (player != null)
 		{
 			// Don't take the aggro if the GM has the access level below or equal to GM_DONT_TAKE_AGGRO
-			if (!player.getAccessLevel().canTakeAggro())
+			if (!player.getAccessLevel().CanTakeAggro)
 			{
 				return false;
 			}

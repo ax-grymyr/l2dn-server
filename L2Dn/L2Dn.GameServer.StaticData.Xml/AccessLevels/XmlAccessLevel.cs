@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace L2Dn.Model.Xml;
+namespace L2Dn.GameServer.StaticData.Xml.AccessLevels;
 
 public class XmlAccessLevel
 {
@@ -42,4 +42,7 @@ public class XmlAccessLevel
 
     [XmlAttribute("childAccess")]
     public int ChildAccess { get; set; }
+
+    [XmlIgnore]
+    public bool ChildAccessSpecified { get; set; }
 }

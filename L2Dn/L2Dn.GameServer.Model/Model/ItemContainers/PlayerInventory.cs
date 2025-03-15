@@ -913,7 +913,7 @@ public class PlayerInventory: Inventory
 	public override bool validateWeight(long weight)
 	{
 		// Disable weight check for GMs.
-		if (_owner.isGM() && _owner.getDietMode() && _owner.getAccessLevel().allowTransaction())
+		if (_owner.isGM() && _owner.getDietMode() && _owner.getAccessLevel().AllowTransaction)
 		{
 			return true;
 		}

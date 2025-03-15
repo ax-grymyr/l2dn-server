@@ -213,7 +213,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	public bool showError(Player? player, Exception exception)
 	{
 		_logger.Warn(Name + " " + exception);
-		if (player != null && player.getAccessLevel().isGm())
+		if (player != null && player.getAccessLevel().IsGM)
 		{
 			string res = "<html><body><title>Script error</title>" + exception + "</body></html>";
 			return showResult(player, res);

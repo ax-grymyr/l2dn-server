@@ -914,7 +914,7 @@ public class EffectList
 				// Check if effected is debuff blocked.
                 if (info.getEffected().isDebuffBlocked() ||
                     (info.getEffector() is Player effectorPlayer && effectorPlayer.isGM() &&
-                        !effectorPlayer.getAccessLevel().canGiveDamage()))
+                        !effectorPlayer.getAccessLevel().CanGiveDamage))
                 {
                     return;
                 }

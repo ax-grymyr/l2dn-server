@@ -50,7 +50,7 @@ public struct TradeDoneRequestPacket: IIncomingPacket<GameSession>
             if (trade.getOwner().hasItemRequest() || tradePartner.hasItemRequest())
                 return ValueTask.CompletedTask;
 
-            if (!player.getAccessLevel().allowTransaction())
+            if (!player.getAccessLevel().AllowTransaction)
             {
                 player.cancelActiveTrade();
                 player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);

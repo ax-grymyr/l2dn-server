@@ -26,7 +26,7 @@ public struct RequestGmCommandPacket: IIncomingPacket<GameSession>
         if (thisPlayer is null)
             return ValueTask.CompletedTask;
 
-        if (!thisPlayer.isGM() || !thisPlayer.getAccessLevel().allowAltG())
+        if (!thisPlayer.isGM() || !thisPlayer.getAccessLevel().AllowAltG)
             return ValueTask.CompletedTask;
 
         Player? player = World.getInstance().getPlayer(_targetName);

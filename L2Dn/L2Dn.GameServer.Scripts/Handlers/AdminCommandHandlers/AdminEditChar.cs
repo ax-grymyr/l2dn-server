@@ -1243,7 +1243,7 @@ public class AdminEditChar: IAdminCommandHandler
 		htmlContent.Replace("%hpregen%", player.getStat().getHpRegen().ToString());
 		htmlContent.Replace("%mpregen%", player.getStat().getMpRegen().ToString());
 		htmlContent.Replace("%cpregen%", player.getStat().getCpRegen().ToString());
-		htmlContent.Replace("%access%", player.getAccessLevel().getLevel() + " (" + player.getAccessLevel().getName() + ")");
+		htmlContent.Replace("%access%", player.getAccessLevel().Level + " (" + player.getAccessLevel().Name + ")");
 		htmlContent.Replace("%account%", player.getAccountName());
 		htmlContent.Replace("%ip%", ip);
 		htmlContent.Replace("%protocol%", client != null ? client.ProtocolVersion.ToString() : "NULL");

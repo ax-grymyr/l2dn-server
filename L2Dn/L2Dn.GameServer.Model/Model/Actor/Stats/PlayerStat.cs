@@ -45,7 +45,7 @@ public class PlayerStat: PlayableStat
 		Player player = getActiveChar();
 
 		// Allowed to gain exp?
-		if (!player.getAccessLevel().canGainExp())
+		if (!player.getAccessLevel().CanGainExp)
 		{
 			return false;
 		}
@@ -75,7 +75,7 @@ public class PlayerStat: PlayableStat
 		Player player = getActiveChar();
 
 		// Allowed to gain exp/sp?
-		if (!player.getAccessLevel().canGainExp())
+		if (!player.getAccessLevel().CanGainExp)
 		{
 			return;
 		}

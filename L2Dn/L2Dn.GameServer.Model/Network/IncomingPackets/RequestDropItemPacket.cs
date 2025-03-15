@@ -93,7 +93,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 		    return ValueTask.CompletedTask;
 	    }
 
-	    if (!player.getAccessLevel().allowTransaction())
+	    if (!player.getAccessLevel().AllowTransaction)
 	    {
 		    player.sendMessage("Transactions are disabled for your Access Level.");
 		    connection.Send(SystemMessageId.NOTHING_HAPPENED);

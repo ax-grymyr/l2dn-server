@@ -30,7 +30,7 @@ public class Unstuck: IUserCommandHandler
             return false;
         }
 
-        int unstuckTimer = (player.getAccessLevel().isGm() ? 1000 : Config.Character.UNSTUCK_INTERVAL * 1000);
+        int unstuckTimer = (player.getAccessLevel().IsGM ? 1000 : Config.Character.UNSTUCK_INTERVAL * 1000);
 
         if (player.isInOlympiadMode())
         {
@@ -47,7 +47,7 @@ public class Unstuck: IUserCommandHandler
         // TODO: review this and refactor
         Skill? escape = SkillData.getInstance().getSkill(2099, 1); // 5 minutes escape
         Skill? gmEscape = SkillData.getInstance().getSkill(2100, 1); // 1 second escape
-        if (player.getAccessLevel().isGm())
+        if (player.getAccessLevel().IsGM)
         {
             if (gmEscape != null)
             {
