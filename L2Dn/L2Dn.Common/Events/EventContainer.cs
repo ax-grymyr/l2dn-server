@@ -1,4 +1,5 @@
 ﻿using System.Collections.Concurrent;
+using System.Diagnostics.CodeAnalysis;
 
 namespace L2Dn.Events;
 
@@ -8,11 +9,11 @@ public sealed class EventContainer(string containerName, EventContainer? parent 
 
     public string Name => containerName;
     public EventContainer? Parent => parent;
-    
+
     public void Subscribe<TEvent>(object owner, Action<TEvent> callback)
         where TEvent: EventBase
     {
-        ArgumentNullException.ThrowIfNull(owner, nameof(owner));        
+        ArgumentNullException.ThrowIfNull(owner, nameof(owner));
         SubscriberList<TEvent> list = GetOrCreateSubscriberList<TEvent>();
         list.Subscribe(owner, callback);
     }
@@ -20,7 +21,7 @@ public sealed class EventContainer(string containerName, EventContainer? parent 
     public void Subscribe<TEvent>(Action<TEvent> callback)
         where TEvent: EventBase
     {
-        ArgumentNullException.ThrowIfNull(callback.Target, nameof(callback.Target));        
+        ArgumentNullException.ThrowIfNull(callback.Target, nameof(callback.Target));
         object owner = callback.Target;
         SubscriberList<TEvent> list = GetOrCreateSubscriberList<TEvent>();
         list.Subscribe(owner, callback);
@@ -30,7 +31,7 @@ public sealed class EventContainer(string containerName, EventContainer? parent 
         where TEvent: EventBase
     {
         if (TryGetList<TEvent>(out SubscriberList<TEvent>? list))
-            list!.UnsubscribeAll(owner);
+            list.UnsubscribeAll(owner);
     }
 
     public void UnsubscribeAllTypes(object owner)
@@ -43,19 +44,16 @@ public sealed class EventContainer(string containerName, EventContainer? parent 
         where TEvent: EventBase
     {
         if (TryGetList<TEvent>(out SubscriberList<TEvent>? list))
-            list!.Unsubscribe(callback);
+            list.Unsubscribe(callback);
     }
 
     public bool HasSubscribers<TEvent>()
         where TEvent: EventBase
     {
-        if (TryGetList<TEvent>(out SubscriberList<TEvent>? list) && list!.HasListeners)
+        if (TryGetList<TEvent>(out SubscriberList<TEvent>? list) && list.HasListeners)
             return true;
-        
-        if (parent is not null)
-            return parent.HasSubscribers<TEvent>();
 
-        return false;
+        return parent is not null && parent.HasSubscribers<TEvent>();
     }
 
     public bool Notify<TEvent>(TEvent ev)
@@ -63,7 +61,7 @@ public sealed class EventContainer(string containerName, EventContainer? parent 
     {
         bool result = false;
         if (TryGetList<TEvent>(out SubscriberList<TEvent>? list))
-            result = list!.Notify(ev);
+            result = list.Notify(ev);
 
         if (parent is not null)
             result |= parent.Notify(ev);
@@ -77,22 +75,19 @@ public sealed class EventContainer(string containerName, EventContainer? parent 
         ThreadPool.QueueUserWorkItem(state => Notify((TEvent)state!), ev);
     }
 
-    public override string ToString()
-    {
-        return $"Event Container: {containerName}";
-    }
+    public override string ToString() => $"Event Container: {containerName}";
 
-    private bool TryGetList<TEvent>(out SubscriberList<TEvent>? list)
+    private bool TryGetList<TEvent>([NotNullWhen(true)] out SubscriberList<TEvent>? list)
         where TEvent: EventBase
     {
         bool result = _subscribers.TryGetValue(typeof(TEvent), out object? obj);
         list = (SubscriberList<TEvent>?)obj;
         return result;
     }
-    
+
     private SubscriberList<TEvent> GetOrCreateSubscriberList<TEvent>()
         where TEvent: EventBase
     {
-        return (SubscriberList<TEvent>)_subscribers.GetOrAdd(typeof(TEvent), t => new SubscriberList<TEvent>());
+        return (SubscriberList<TEvent>)_subscribers.GetOrAdd(typeof(TEvent), _ => new SubscriberList<TEvent>());
     }
 }

@@ -38,12 +38,12 @@ public class EventContainerTests
     public void SimultaneousAccess()
     {
         const int threadCount = 4;
-        EventContainer eventContainer = new EventContainer("Test");
-        bool stop = false;
+        EventContainer eventContainer = new("Test");
+        StopFlagHolder stopFlagHolder = new();
 
         void ThreadProc()
         {
-            while (!Volatile.Read(ref stop))
+            while (!stopFlagHolder.Stop)
             {
                 object owner = new();
                 const int batchSize = 20;
@@ -70,24 +70,29 @@ public class EventContainerTests
 
         threads.ForEach(x => x.Start());
 
-        Thread.Sleep(10000);
-        stop = true;
+        Thread.Sleep(1000);
+        stopFlagHolder.Stop = true;
 
         threads.ForEach(x => x.Join());
 
         eventContainer.HasSubscribers<EventArgument>().Should().BeFalse();
     }
 
-    private class EventListener
+    private sealed class EventListener
     {
         public void OnEvent(EventArgument arg)
         {
-            arg.Count++;
+            Interlocked.Increment(ref arg.Count);
         }
     }
 
-    private class EventArgument: EventBase
+    private sealed class EventArgument: EventBase
     {
         public int Count;
+    }
+
+    private sealed class StopFlagHolder
+    {
+        public bool Stop { get; set; }
     }
 }
