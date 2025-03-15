@@ -3,11 +3,11 @@ using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Zones;
-using L2Dn.GameServer.Model.Zones.Forms;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
@@ -206,15 +206,7 @@ public class ZoneManager: DataReaderBase
                 // nPoly needs to have at least 3 vertices
                 if (coords.Length > 2)
                 {
-                    int[] aX = new int[coords.Length];
-                    int[] aY = new int[coords.Length];
-                    for (int i = 0; i < coords.Length; i++)
-                    {
-                        aX[i] = coords[i].X;
-                        aY[i] = coords[i].Y;
-                    }
-
-                    zoneForm = new ZoneNPoly(aX, aY, minZ, maxZ);
+                    zoneForm = new ZoneNPoly(coords.ToImmutableArray(), minZ, maxZ);
                 }
                 else
                 {
@@ -316,7 +308,7 @@ public class ZoneManager: DataReaderBase
                 int bx = (x + 1 - OffsetX) << ShiftBy;
                 int ay = (y - OffsetY) << ShiftBy;
                 int by = (y + 1 - OffsetY) << ShiftBy;
-                if (zoneType.getZone().intersectsRectangle(ax, bx, ay, by))
+                if (zoneType.getZone().IntersectsRectangle(ax, bx, ay, by))
                 {
                     _zoneRegions[x][y].getZones().put(zoneType.getId(), zoneType);
                 }
@@ -559,6 +551,14 @@ public class ZoneManager: DataReaderBase
         }
 
         return null;
+    }
+
+    public void DropDebugItem(int itemId, int num, int x, int y, int z)
+    {
+        Item item = new Item(IdManager.getInstance().getNextId(), itemId);
+        item.setCount(num);
+        item.spawnMe(new Location3D(x, y, z + 5));
+        getDebugItems().Add(item);
     }
 
     /**

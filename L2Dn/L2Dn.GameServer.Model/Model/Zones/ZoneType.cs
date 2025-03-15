@@ -1,9 +1,12 @@
 ﻿using L2Dn.Events;
+using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Zones;
 using L2Dn.GameServer.Model.InstanceZones;
+using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
@@ -25,7 +28,7 @@ public abstract class ZoneType: IEventContainerProvider
 
 	private readonly int _id;
 	private readonly ZoneForm _zone;
-	protected List<ZoneForm> _blockedZones = [];
+    private List<ZoneForm> _blockedZones = [];
 	private readonly Map<int, Creature> _characterList = new();
 	private readonly EventContainer _eventContainer;
 
@@ -319,7 +322,7 @@ public abstract class ZoneType: IEventContainerProvider
 	 */
 	public bool isInsideZone(int x, int y, int z)
 	{
-		return _zone != null && _zone.isInsideZone(x, y, z) && !isInsideBlockedZone(x, y, z);
+		return _zone != null && _zone.IsInsideZone(x, y, z) && !isInsideBlockedZone(x, y, z);
 	}
 
 	/**
@@ -337,7 +340,7 @@ public abstract class ZoneType: IEventContainerProvider
 
 		foreach (ZoneForm zone in _blockedZones)
 		{
-			if (zone.isInsideZone(x, y, z))
+			if (zone.IsInsideZone(x, y, z))
 			{
 				return true;
 			}
@@ -354,7 +357,7 @@ public abstract class ZoneType: IEventContainerProvider
 	 */
 	public bool isInsideZone(Location2D location)
 	{
-		return isInsideZone(new Location3D(location.X, location.Y, _zone.getHighZ()));
+		return isInsideZone(new Location3D(location.X, location.Y, _zone.GetHighZ()));
 	}
 
 	/**
@@ -379,12 +382,12 @@ public abstract class ZoneType: IEventContainerProvider
 
 	public double getDistanceToZone(int x, int y)
 	{
-		return _zone.getDistanceToZone(x, y);
+		return _zone.GetDistanceToZone(x, y);
 	}
 
 	public double getDistanceToZone(WorldObject obj)
 	{
-		return _zone.getDistanceToZone(obj.getX(), obj.getY());
+		return _zone.GetDistanceToZone(obj.getX(), obj.getY());
 	}
 
 	public void revalidateInZone(Creature creature)
@@ -553,7 +556,8 @@ public abstract class ZoneType: IEventContainerProvider
 
 	public void visualizeZone(int z)
 	{
-		_zone.visualizeZone(z);
+        foreach (Location3D point in _zone.GetVisualizationPoints(z))
+            ZoneManager.getInstance().DropDebugItem(Inventory.ADENA_ID, 1, point.X, point.Y, point.Z);
 	}
 
 	public virtual void setEnabled(bool value)

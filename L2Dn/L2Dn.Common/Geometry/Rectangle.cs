@@ -1,7 +1,12 @@
-﻿namespace L2Dn.GameServer.Utilities;
+﻿namespace L2Dn.Geometry;
 
 public readonly record struct Rectangle(int X, int Y, int Width, int Height)
 {
+    public Location2D LeftTop => new(X, Y);
+    public Location2D LeftBottom => new(X, Y + Height);
+    public Location2D RightTop => new(X + Width, Y);
+    public Location2D RightBottom => new(X + Width, Y + Height);
+
     public bool Contains(int x, int y)
     {
         if ((Width | Height) < 0)
@@ -42,9 +47,6 @@ public readonly record struct Rectangle(int X, int Y, int Width, int Height)
         th += ty;
 
         // overflow || intersect
-        return (rw < rx || rw > tx) &&
-            (rh < ry || rh > ty) &&
-            (tw < tx || tw > rx) &&
-            (th < ty || th > ry);
+        return (rw < rx || rw > tx) && (rh < ry || rh > ty) && (tw < tx || tw > rx) && (th < ty || th > ry);
     }
 }

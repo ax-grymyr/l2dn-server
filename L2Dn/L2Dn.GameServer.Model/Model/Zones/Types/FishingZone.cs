@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Fishings;
@@ -42,7 +43,7 @@ public class FishingZone(int id, ZoneForm form): ZoneType(id, form)
 	 */
 	public int getWaterZ()
 	{
-		return getZone().getHighZ();
+		return getZone().GetHighZ();
 	}
 
 	protected class FishingAvailableTask(WeakReference<Player> weakPlayer): Runnable

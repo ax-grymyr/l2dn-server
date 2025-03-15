@@ -1,11 +1,12 @@
+using System.Collections.Immutable;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Spawns;
-using L2Dn.GameServer.Model.Zones;
-using L2Dn.GameServer.Model.Zones.Forms;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
@@ -13,7 +14,6 @@ using L2Dn.Geometry;
 using L2Dn.Model.Xml;
 using L2Dn.Utilities;
 using NLog;
-using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Data.Xml;
@@ -217,8 +217,8 @@ public class SpawnData: DataReaderBase
 
 			int minZ = territory.MinZ;
 			int maxZ = territory.MaxZ;
-			int[] x = territory.Nodes.Select(n => n.X).ToArray();
-			int[] y = territory.Nodes.Select(n => n.Y).ToArray();
+            ImmutableArray<Location2D> points = territory.Nodes.Select(n => new Location2D(n.X, n.Y)).
+                ToImmutableArray();
 
 			// Support for multiple spawn zone types.
 			ZoneForm zoneForm;
@@ -227,18 +227,18 @@ public class SpawnData: DataReaderBase
 			{
 				case XmlSpawnTerritoryShape.Cuboid:
 				{
-					zoneForm = new ZoneCuboid(x[0], x[1], y[0], y[1], minZ, maxZ);
+					zoneForm = new ZoneCuboid(points[0].X, points[1].X, points[0].Y, points[1].Y, minZ, maxZ);
 					break;
 				}
 				case XmlSpawnTerritoryShape.NPoly:
 				{
-					zoneForm = new ZoneNPoly(x, y, minZ, maxZ);
+					zoneForm = new ZoneNPoly(points, minZ, maxZ);
 					break;
 				}
 				case XmlSpawnTerritoryShape.Cylinder:
 				{
 					int zoneRad = territory.Radius;
-					zoneForm = new ZoneCylinder(x[0], y[0], minZ, maxZ, zoneRad);
+					zoneForm = new ZoneCylinder(points[0].X, points[0].Y, minZ, maxZ, zoneRad);
 					break;
 				}
 				default:

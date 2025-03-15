@@ -1,6 +1,8 @@
+using System.Collections.Immutable;
 using System.Globalization;
 using System.Text;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Handlers;
@@ -12,7 +14,6 @@ using L2Dn.GameServer.Model.Events.Annotations;
 using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Zones;
-using L2Dn.GameServer.Model.Zones.Forms;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
@@ -252,14 +253,15 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			ZoneNodeHolder holder = _zones.GetOrAdd(activeChar.ObjectId, _ => new ZoneNodeHolder(activeChar));
 			holder.getNodes().Clear();
 			holder.setName(zoneType.getName());
-			holder.setMinZ(zone.getLowZ());
-			holder.setMaxZ(zone.getHighZ());
-			for (int i = 0; i < zone.getX().Length; i++)
-			{
-				int x = zone.getX()[i];
-				int y = zone.getY()[i];
-				holder.addNode(new Location3D(x, y,
-					GeoEngine.getInstance().getHeight(new Location3D(x, y, Rnd.get(zone.getLowZ(), zone.getHighZ())))));
+			holder.setMinZ(zone.GetLowZ());
+			holder.setMaxZ(zone.GetHighZ());
+
+            ImmutableArray<Location2D> points = zone.Points;
+			for (int i = 0; i < points.Length; i++)
+            {
+                Location2D point = points[i];
+				holder.addNode(new Location3D(point,
+					GeoEngine.getInstance().getHeight(new Location3D(point, Rnd.get(zone.GetLowZ(), zone.GetHighZ())))));
 			}
 			showPoints(activeChar);
 		}

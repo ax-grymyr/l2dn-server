@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets;
 
@@ -89,6 +90,6 @@ public class WaterZone(int id, ZoneForm form): ZoneType(id, form)
 
     public int getWaterZ()
     {
-        return getZone().getHighZ();
+        return getZone().GetHighZ();
     }
 }
