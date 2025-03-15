@@ -27,11 +27,11 @@ public class GameServer
         Scripts.Scripts.RegisterQuests();
         Scripts.Scripts.RegisterScripts();
 
-		long totalMem = GC.GetTotalMemory(false) / 1024 / 1024;
-		long usedMem = GC.GetTotalAllocatedBytes() / 1024 / 1024;
-		_logger.Info(GetType().Name + ": Started, using " + usedMem + " of " + totalMem + " MB total memory.");
-		_logger.Info(GetType().Name + ": Maximum number of connected players is " + Config.Server.MAXIMUM_ONLINE_USERS + ".");
-		_logger.Info(GetType().Name + ": Server loaded in " + (DateTime.UtcNow - _startTime).TotalSeconds + " seconds.");
+        long usedMem = GC.GetTotalAllocatedBytes() / 1024 / 1024;
+        long totalMem = GC.GetTotalMemory(false) / 1024 / 1024;
+        _logger.Info("Server started, using " + usedMem + " of " + totalMem + " MB total memory.");
+        _logger.Info("Maximum number of connected players is " + Config.Server.MAXIMUM_ONLINE_USERS + ".");
+        _logger.Info("Server loaded in " + (DateTime.UtcNow - _startTime).TotalSeconds + " seconds.");
 
         ClientListenerConfig clientListenerConfig = ServerConfig.Instance.ClientListener;
         Console.Title = $"Game Server {clientListenerConfig.ListenAddress}:{clientListenerConfig.Port}";
@@ -47,6 +47,7 @@ public class GameServer
             new AuthPacketEncoder(new BlowfishEngine(authServerBlowfishKey)),
             new AuthServerPacketHandler(), authServerConnectionConfig.Address, authServerConnectionConfig.Port);
 
+        _logger.Info($"Connecting to {authServerConnectionConfig.Address}:{authServerConnectionConfig.Port}...");
         _authServerConnector.Start(_cancellationTokenSource.Token);
         _logger.Info("Server started at " + ServerInfo.ServerStarted);
     }

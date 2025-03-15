@@ -5,27 +5,15 @@ using NLog;
 
 namespace L2Dn.Network;
 
-public sealed class Connector<TSession>: ConnectionCallback
+public sealed class Connector<TSession>(
+    TSession session, PacketEncoder packetEncoder, PacketHandler<TSession> packetHandler,
+    string address, int port)
+    : ConnectionCallback
     where TSession: Session
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(Connector<TSession>));
-    private readonly string _address;
-    private readonly int _port;
-    private readonly TSession _session;
-    private readonly PacketEncoder _packetEncoder;
-    private readonly PacketHandler<TSession> _packetHandler;
     private Connection<TSession>? _connection;
     private CancellationToken _cancellationToken;
-
-    public Connector(TSession session, PacketEncoder packetEncoder, PacketHandler<TSession> packetHandler,
-        string address, int port)
-    {
-        _address = address;
-        _port = port;
-        _session = session;
-        _packetEncoder = packetEncoder;
-        _packetHandler = packetHandler;
-    }
 
     public void Start(CancellationToken cancellationToken)
     {
@@ -38,9 +26,24 @@ public sealed class Connector<TSession>: ConnectionCallback
         try
         {
             TcpClient client = new TcpClient();
-            await client.ConnectAsync(_address, _port, cancellationToken).ConfigureAwait(false);
+            while (!cancellationToken.IsCancellationRequested)
+            {
+                try
+                {
+                    await client.ConnectAsync(address, port, cancellationToken).ConfigureAwait(false);
+                    break;
+                }
+                catch (SocketException socketException)
+                {
+                    if (socketException.SocketErrorCode != SocketError.ConnectionRefused)
+                        throw;
+                }
+
+                await Task.Delay(1000, cancellationToken).ConfigureAwait(false);
+            }
+
             _logger.Trace($"Connected to {client.Client.RemoteEndPoint}");
-            _connection = new Connection<TSession>(this, client, _session, _packetEncoder, _packetHandler);
+            _connection = new Connection<TSession>(this, client, session, packetEncoder, packetHandler);
             _connection.BeginReceivingAsync(cancellationToken);
         }
         catch (OperationCanceledException)
@@ -49,10 +52,8 @@ public sealed class Connector<TSession>: ConnectionCallback
         catch (Exception exception)
         {
             if (exception is SocketException { SocketErrorCode: SocketError.OperationAborted })
-            {
                 return;
-            }
-            
+
             _logger.Error($"Exception in Connector: {exception}");
         }
     }
