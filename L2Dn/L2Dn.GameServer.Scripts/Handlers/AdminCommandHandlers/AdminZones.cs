@@ -253,15 +253,15 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 			ZoneNodeHolder holder = _zones.GetOrAdd(activeChar.ObjectId, _ => new ZoneNodeHolder(activeChar));
 			holder.getNodes().Clear();
 			holder.setName(zoneType.getName());
-			holder.setMinZ(zone.GetLowZ());
-			holder.setMaxZ(zone.GetHighZ());
+			holder.setMinZ(zone.LowZ);
+			holder.setMaxZ(zone.HighZ);
 
             ImmutableArray<Location2D> points = zone.Points;
 			for (int i = 0; i < points.Length; i++)
             {
                 Location2D point = points[i];
 				holder.addNode(new Location3D(point,
-					GeoEngine.getInstance().getHeight(new Location3D(point, Rnd.get(zone.GetLowZ(), zone.GetHighZ())))));
+					GeoEngine.getInstance().getHeight(new Location3D(point, Rnd.get(zone.LowZ, zone.HighZ)))));
 			}
 			showPoints(activeChar);
 		}

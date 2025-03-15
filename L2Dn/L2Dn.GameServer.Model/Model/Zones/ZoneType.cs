@@ -357,7 +357,7 @@ public abstract class ZoneType: IEventContainerProvider
 	 */
 	public bool isInsideZone(Location2D location)
 	{
-		return isInsideZone(new Location3D(location.X, location.Y, _zone.GetHighZ()));
+		return isInsideZone(new Location3D(location.X, location.Y, _zone.HighZ));
 	}
 
 	/**

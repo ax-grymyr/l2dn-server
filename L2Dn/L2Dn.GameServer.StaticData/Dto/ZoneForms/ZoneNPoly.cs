@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Runtime.InteropServices;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 
@@ -7,22 +8,19 @@ namespace L2Dn.GameServer.Dto.ZoneForms;
 /// <summary>
 /// A not so primitive N-polygon zone.
 /// </summary>
-public sealed class ZoneNPoly(ImmutableArray<Location2D> points, int z1, int z2): ZoneForm
+public sealed class ZoneNPoly(ImmutableArray<Location2D> points, int z1, int z2):
+    ZoneForm(CalculateBounds(points), z1, z2)
 {
     private readonly Polygon _polygon = new(points);
-    private readonly int _z1 = Math.Min(z1, z2);
-    private readonly int _z2 = Math.Max(z1, z2);
 
     public ImmutableArray<Location2D> Points => _polygon.Points;
 
-    public override bool IsInsideZone(int x, int y, int z)
-    {
-        return _polygon.Contains(x, y) && z >= _z1 && z <= _z2;
-    }
+    public override bool IsInsideZone(int x, int y, int z) => IsInsideBounds(x, y, z) && _polygon.Contains(x, y);
 
     public override bool IntersectsRectangle(int ax1, int ax2, int ay1, int ay2)
     {
-        return _polygon.Intersects(Math.Min(ax1, ax2), Math.Min(ay1, ay2), Math.Abs(ax2 - ax1), Math.Abs(ay2 - ay1));
+        Rectangle rectangle = new(Math.Min(ax1, ax2), Math.Min(ay1, ay2), Math.Abs(ax2 - ax1), Math.Abs(ay2 - ay1));
+        return Bounds.Intersects(rectangle) && _polygon.Intersects(rectangle);
     }
 
     public override double GetDistanceToZone(int x, int y)
@@ -40,11 +38,6 @@ public sealed class ZoneNPoly(ImmutableArray<Location2D> points, int z1, int z2)
 
         return Math.Sqrt(shortestDist);
     }
-
-    // getLowZ() / getHighZ() - These two functions were added to cope with the demand of the new fishing algorithms, which are now able to correctly place the hook in the water, thanks to getHighZ(). getLowZ() was added, considering potential future modifications.
-    public override int GetLowZ() => _z1;
-
-    public override int GetHighZ() => _z2;
 
     public override IEnumerable<Location3D> GetVisualizationPoints(int z)
     {
@@ -64,17 +57,28 @@ public sealed class ZoneNPoly(ImmutableArray<Location2D> points, int z1, int z2)
 
     public override Location3D GetRandomPoint()
     {
-        Rectangle bounds = _polygon.Bounds;
-        int x = bounds.X + Rnd.get(bounds.Width);
-        int y = bounds.Y + Rnd.get(bounds.Height);
+        int x = Bounds.X + Rnd.get(Bounds.Width);
+        int y = Bounds.Y + Rnd.get(Bounds.Height);
 
         int antiBlocker = 0;
         while (!_polygon.Contains(x, y) && antiBlocker++ < 1000)
         {
-            x = bounds.X + Rnd.get(bounds.Width);
-            y = bounds.Y + Rnd.get(bounds.Height);
+            x = Bounds.X + Rnd.get(Bounds.Width);
+            y = Bounds.Y + Rnd.get(Bounds.Height);
         }
 
-        return new Location3D(x, y, (_z1 + _z2) / 2);
+        return new Location3D(x, y, (LowZ + HighZ) / 2);
+    }
+
+    private static Rectangle CalculateBounds(ImmutableArray<Location2D> points)
+    {
+        Location2D[] array = ImmutableCollectionsMarshal.AsArray(points)!;
+        int boundsMinX = array.Min(p => p.X);
+        int boundsMaxX = array.Max(p => p.X);
+
+        int boundsMinY = array.Min(p => p.Y);
+        int boundsMaxY = array.Max(p => p.Y);
+
+        return new Rectangle(boundsMinX, boundsMinY, boundsMaxX - boundsMinX, boundsMaxY - boundsMinY);
     }
 }

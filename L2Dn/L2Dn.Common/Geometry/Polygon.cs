@@ -1,12 +1,10 @@
 ﻿using System.Collections.Immutable;
-using System.Runtime.InteropServices;
 
 namespace L2Dn.Geometry;
 
 public readonly struct Polygon
 {
     public ImmutableArray<Location2D> Points { get; }
-    public Rectangle Bounds { get; }
 
     public Polygon(ImmutableArray<Location2D> points)
     {
@@ -14,26 +12,10 @@ public readonly struct Polygon
             throw new ArgumentException("Polygon must have at least 3 points.");
 
         Points = points;
-        Bounds = CalculateBounds(points);
-    }
-
-    private static Rectangle CalculateBounds(ImmutableArray<Location2D> points)
-    {
-        Location2D[] array = ImmutableCollectionsMarshal.AsArray(points)!;
-        int boundsMinX = array.Min(p => p.X);
-        int boundsMaxX = array.Max(p => p.X);
-
-        int boundsMinY = array.Min(p => p.Y);
-        int boundsMaxY = array.Max(p => p.Y);
-
-        return new Rectangle(boundsMinX, boundsMinY, boundsMaxX - boundsMinX, boundsMaxY - boundsMinY);
     }
 
     public bool Contains(int x, int y)
     {
-        if (!Bounds.Contains(x, y))
-            return false;
-
         ImmutableArray<Location2D> points = Points;
         int hits = 0;
         Location2D last = points[^1];
@@ -100,11 +82,10 @@ public readonly struct Polygon
         return (hits & 1) != 0;
     }
 
-    private Crossings? GetCrossings(double xlo, double ylo,
-        double xhi, double yhi)
+    private Crossings? GetCrossings(Rectangle rectangle)
     {
         ImmutableArray<Location2D> points = Points;
-        Crossings cross = new Crossings(xlo, ylo, xhi, yhi);
+        Crossings cross = new Crossings(rectangle);
         Location2D last = points[^1];
 
         // Walk the edges of the polygon
@@ -120,17 +101,18 @@ public readonly struct Polygon
         return cross;
     }
 
-    public bool Intersects(int x, int y, int w, int h)
+    public bool Intersects(Rectangle rectangle)
     {
-        if (!Bounds.Intersects(x, y, w, h))
-            return false;
-
-        Crossings? cross = GetCrossings(x, y, x + w, y + h);
+        Crossings? cross = GetCrossings(rectangle);
         return cross == null || !cross.IsEmpty();
     }
 
-    private sealed class Crossings(double xlo, double ylo, double xhi, double yhi)
+    private sealed class Crossings(Rectangle rectangle)
     {
+        private readonly double _xlo = rectangle.X;
+        private readonly double _ylo = rectangle.Y;
+        private readonly double _xhi = rectangle.X + rectangle.Width;
+        private readonly double _yhi = rectangle.Y + rectangle.Height;
         private int _limit;
         private double[] _yRanges = new double[10];
 
@@ -241,22 +223,22 @@ public readonly struct Polygon
 
         public bool AccumulateLine(double x0, double y0, double x1, double y1)
         {
-            if (yhi <= y0 || ylo >= y1)
+            if (_yhi <= y0 || _ylo >= y1)
                 return false;
 
-            if (x0 >= xhi && x1 >= xhi)
+            if (x0 >= _xhi && x1 >= _xhi)
                 return false;
 
             if (y0 == y1)
-                return x0 >= xlo || x1 >= xlo;
+                return x0 >= _xlo || x1 >= _xlo;
 
             double xstart, ystart, xend, yend;
             double dx = x1 - x0;
             double dy = y1 - y0;
-            if (y0 < ylo)
+            if (y0 < _ylo)
             {
-                xstart = x0 + (ylo - y0) * dx / dy;
-                ystart = ylo;
+                xstart = x0 + (_ylo - y0) * dx / dy;
+                ystart = _ylo;
             }
             else
             {
@@ -264,10 +246,10 @@ public readonly struct Polygon
                 ystart = y0;
             }
 
-            if (yhi < y1)
+            if (_yhi < y1)
             {
-                xend = x0 + (yhi - y0) * dx / dy;
-                yend = yhi;
+                xend = x0 + (_yhi - y0) * dx / dy;
+                yend = _yhi;
             }
             else
             {
@@ -275,10 +257,10 @@ public readonly struct Polygon
                 yend = y1;
             }
 
-            if (xstart >= xhi && xend >= xhi)
+            if (xstart >= _xhi && xend >= _xhi)
                 return false;
 
-            if (xstart > xlo || xend > xlo)
+            if (xstart > _xlo || xend > _xlo)
                 return true;
 
             Record(ystart, yend);

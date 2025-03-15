@@ -6,22 +6,23 @@ namespace L2Dn.GameServer.Dto.ZoneForms;
 /// <summary>
 /// A primitive circular zone.
 /// </summary>
-public sealed class ZoneCylinder(int x, int y, int z1, int z2, int rad): ZoneForm
+public sealed class ZoneCylinder(int x, int y, int z1, int z2, int rad):
+    ZoneForm(new Rectangle(x - rad, y - rad, 2 * rad, 2 * rad), z1, z2)
 {
     private readonly int _radS = rad * rad;
 
     public override bool IsInsideZone(int x1, int y1, int z)
     {
-        return Math.Pow(x - x1, 2) + Math.Pow(y - y1, 2) <= _radS && z >= z1 && z <= z2;
+        return IsInsideBounds(x1, y1, z) &&
+            new Location2D(x1, y1).DistanceSquare2D(new Location2D(Bounds.X + Bounds.Width / 2,
+                Bounds.Y + Bounds.Height / 2)) <= _radS;
     }
 
     public override bool IntersectsRectangle(int ax1, int ax2, int ay1, int ay2)
     {
         // Circles point inside the rectangle?
         if (x > ax1 && x < ax2 && y > ay1 && y < ay2)
-        {
             return true;
-        }
 
         // Any point of the rectangle intersecting the Circle?
         if (Math.Pow(ax1 - x, 2) + Math.Pow(ay1 - y, 2) < _radS)
@@ -58,15 +59,7 @@ public sealed class ZoneCylinder(int x, int y, int z1, int z2, int rad): ZoneFor
         return false;
     }
 
-    public override double GetDistanceToZone(int x1, int y1)
-    {
-        return double.Hypot(x - x1, y - y1) - rad;
-    }
-
-    // getLowZ() / getHighZ() - These two functions were added to cope with the demand of the new fishing algorithms, wich are now able to correctly place the hook in the water, thanks to getHighZ(). getLowZ() was added, considering potential future modifications.
-    public override int GetLowZ() => z1;
-
-    public override int GetHighZ() => z2;
+    public override double GetDistanceToZone(int x1, int y1) => double.Hypot(x - x1, y - y1) - rad;
 
     public override IEnumerable<Location3D> GetVisualizationPoints(int z)
     {
@@ -90,6 +83,6 @@ public sealed class ZoneCylinder(int x, int y, int z1, int z2, int rad): ZoneFor
             y1 = Rnd.get(y2, y3);
         }
 
-        return new Location3D(x1, y1, (z1 + z2) / 2);
+        return new Location3D(x1, y1, (LowZ + HighZ) / 2);
     }
 }

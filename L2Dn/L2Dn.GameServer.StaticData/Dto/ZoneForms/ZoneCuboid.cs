@@ -6,49 +6,37 @@ namespace L2Dn.GameServer.Dto.ZoneForms;
 /// <summary>
 /// A primitive rectangular zone.
 /// </summary>
-public sealed class ZoneCuboid: ZoneForm
+public sealed class ZoneCuboid(int x1, int x2, int y1, int y2, int z1, int z2)
+    : ZoneForm(GetRectangle(x1, x2, y1, y2), z1, z2)
 {
-    private readonly Rectangle _rectangle;
-    private readonly int _z1;
-    private readonly int _z2;
-
-    public ZoneCuboid(int x1, int x2, int y1, int y2, int z1, int z2)
+    private static Rectangle GetRectangle(int x1, int y1, int x2, int y2)
     {
         int minX = Math.Min(x1, x2);
         int maxX = Math.Max(x1, x2);
         int minY = Math.Min(y1, y2);
         int maxY = Math.Max(y1, y2);
-        _rectangle = new Rectangle(minX, minY, maxX - minX, maxY - minY);
-        _z1 = Math.Min(z1, z2);
-        _z2 = Math.Max(z1, z2);
+        return new Rectangle(minX, minY, maxX - minX, maxY - minY);
     }
 
-    public override bool IsInsideZone(int x, int y, int z) => _rectangle.Contains(x, y) && z >= _z1 && z <= _z2;
+    public override bool IsInsideZone(int x, int y, int z) => IsInsideBounds(x, y, z);
 
     public override bool IntersectsRectangle(int ax1, int ax2, int ay1, int ay2) =>
-        _rectangle.Intersects(Math.Min(ax1, ax2), Math.Min(ay1, ay2), Math.Abs(ax2 - ax1), Math.Abs(ay2 - ay1));
+        Bounds.Intersects(Math.Min(ax1, ax2), Math.Min(ay1, ay2), Math.Abs(ax2 - ax1), Math.Abs(ay2 - ay1));
 
     public override double GetDistanceToZone(int x, int y)
     {
         Location2D location = new(x, y);
-        return Math.Min(Math.Min(location.DistanceSquare2D(_rectangle.LeftTop),
-                location.DistanceSquare2D(_rectangle.LeftBottom)),
-            Math.Min(location.DistanceSquare2D(_rectangle.RightTop),
-                location.DistanceSquare2D(_rectangle.RightBottom)));
+        return Math.Min(Math.Min(location.DistanceSquare2D(Bounds.LeftTop),
+                location.DistanceSquare2D(Bounds.LeftBottom)),
+            Math.Min(location.DistanceSquare2D(Bounds.RightTop),
+                location.DistanceSquare2D(Bounds.RightBottom)));
     }
-
-    /*
-     * getLowZ() / getHighZ() - These two functions were added to cope with the demand of the new fishing algorithms, which are now able to correctly place the hook in the water, thanks to getHighZ(). getLowZ() was added, considering potential future modifications.
-     */
-    public override int GetLowZ() => _z1;
-    public override int GetHighZ() => _z2;
 
     public override IEnumerable<Location3D> GetVisualizationPoints(int z)
     {
-        int minX = _rectangle.X;
-        int maxX = _rectangle.X + _rectangle.Width;
-        int minY = _rectangle.Y;
-        int maxY = _rectangle.Y + _rectangle.Height;
+        (int minX, int minY, int width, int height) = Bounds;
+        int maxX = minX + width;
+        int maxY = minY + height;
 
         // x1->x2
         for (int x = minX; x < maxX; x += Step)
@@ -67,8 +55,9 @@ public sealed class ZoneCuboid: ZoneForm
 
     public override Location3D GetRandomPoint()
     {
-        int x = _rectangle.X + Rnd.get(_rectangle.Width);
-        int y = _rectangle.Y + Rnd.get(_rectangle.Height);
-        return new Location3D(x, y, (_z1 + _z2) / 2);
+        (int minX, int minY, int width, int height) = Bounds;
+        int x = minX + Rnd.get(width);
+        int y = minY + Rnd.get(height);
+        return new Location3D(x, y, (LowZ + HighZ) / 2);
     }
 }

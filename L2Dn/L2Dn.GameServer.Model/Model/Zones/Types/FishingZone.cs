@@ -43,7 +43,7 @@ public class FishingZone(int id, ZoneForm form): ZoneType(id, form)
 	 */
 	public int getWaterZ()
 	{
-		return getZone().GetHighZ();
+		return getZone().HighZ;
 	}
 
 	protected class FishingAvailableTask(WeakReference<Player> weakPlayer): Runnable
