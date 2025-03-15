@@ -9,8 +9,8 @@ public sealed class AdminCommandData
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminCommandData));
 
-    private FrozenDictionary<string, AdminCommand> _adminCommands =
-        FrozenDictionary<string, AdminCommand>.Empty;
+    private FrozenDictionary<string, AdminCommandAccessLevel> _adminCommandAccessLevels =
+        FrozenDictionary<string, AdminCommandAccessLevel>.Empty;
 
     public static AdminCommandData Instance { get; } = new();
 
@@ -21,20 +21,11 @@ public sealed class AdminCommandData
     internal void Load()
     {
         XmlAdminCommandList document = XmlFileReader.LoadConfigXmlDocument<XmlAdminCommandList>("AdminCommands.xml");
-        _adminCommands = document.Commands.
-            Select(xmlAdminCommand => new AdminCommand(xmlAdminCommand)).
+        _adminCommandAccessLevels = document.Commands.
+            Select(xmlAdminCommand => new AdminCommandAccessLevel(xmlAdminCommand)).
             ToFrozenDictionary(command => command.Command);
 
-        _logger.Info($"{nameof(AdminCommandData)}: Loaded {_adminCommands.Count} access commands.");
-    }
-
-    public AdminCommand? GetAdminCommand(string command)
-    {
-        AdminCommand? adminCommand = _adminCommands.GetValueOrDefault(command);
-        if (adminCommand is null)
-            LogNoRightsForCommand(command);
-
-        return adminCommand;
+        _logger.Info($"{nameof(AdminCommandData)}: Loaded {_adminCommandAccessLevels.Count} access commands.");
     }
 
     /// <summary>
@@ -42,15 +33,15 @@ public sealed class AdminCommandData
     /// </summary>
     public bool HasAccess(string command, int accessLevel)
     {
-        AdminCommand? adminCommand = _adminCommands.GetValueOrDefault(command);
+        AdminCommandAccessLevel? adminCommand = _adminCommandAccessLevels.GetValueOrDefault(command);
         if (adminCommand == null)
         {
             if (accessLevel > 0 && accessLevel == AccessLevelData.Instance.HighestLevel)
             {
-                adminCommand = new AdminCommand(command, true, accessLevel);
-                Dictionary<string, AdminCommand> dict = _adminCommands.ToDictionary();
+                adminCommand = new AdminCommandAccessLevel(command, true, accessLevel);
+                Dictionary<string, AdminCommandAccessLevel> dict = _adminCommandAccessLevels.ToDictionary();
                 dict[command] = adminCommand;
-                _adminCommands = dict.ToFrozenDictionary();
+                _adminCommandAccessLevels = dict.ToFrozenDictionary();
                 _logger.Info($"{nameof(AdminCommandData)}: No rights defined for admin command {command}; " +
                     $"auto setting access level {accessLevel}.");
             }
@@ -69,14 +60,14 @@ public sealed class AdminCommandData
     /// </summary>
     public bool RequireConfirmation(string command)
     {
-        AdminCommand? adminCommand = _adminCommands.GetValueOrDefault(command);
-        if (adminCommand == null)
+        AdminCommandAccessLevel? adminCommandAccessLevel = _adminCommandAccessLevels.GetValueOrDefault(command);
+        if (adminCommandAccessLevel == null)
         {
             LogNoRightsForCommand(command);
             return false;
         }
 
-        return adminCommand.RequireConfirmation;
+        return adminCommandAccessLevel.RequireConfirmation;
     }
 
     private static void LogNoRightsForCommand(string command)

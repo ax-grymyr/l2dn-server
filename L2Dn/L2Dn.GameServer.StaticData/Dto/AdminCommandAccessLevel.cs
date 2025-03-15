@@ -2,18 +2,18 @@
 
 namespace L2Dn.GameServer.Dto;
 
-public sealed class AdminCommand
+public sealed class AdminCommandAccessLevel
 {
     private readonly int _accessLevel;
 
-    internal AdminCommand(XmlAdminCommand command)
+    internal AdminCommandAccessLevel(XmlAdminCommand command)
     {
         Command = command.Command;
         RequireConfirmation = command.ConfirmDialog;
         _accessLevel = command.AccessLevel;
     }
 
-    internal AdminCommand(string command, bool confirmation, int accessLevel)
+    internal AdminCommandAccessLevel(string command, bool confirmation, int accessLevel)
     {
         Command = command;
         RequireConfirmation = confirmation;

@@ -9,14 +9,6 @@
 						<xs:attribute name="allowFixedRes" type="xs:boolean" use="required" />
 						<xs:attribute name="allowPeaceAttack" type="xs:boolean" use="required" />
 						<xs:attribute name="allowTransaction" type="xs:boolean" use="required" />
-						<xs:attribute name="childAccess">
-							<xs:simpleType>
-								<xs:restriction base="xs:nonNegativeInteger">
-									<xs:minInclusive value="0" />
-									<xs:maxInclusive value="99" />
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:attribute>
 						<xs:attribute name="gainExp" type="xs:boolean" use="required" />
 						<xs:attribute name="giveDamage" type="xs:boolean" use="required" />
 						<xs:attribute name="isGM" type="xs:boolean" use="required" />

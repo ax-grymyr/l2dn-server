@@ -1,12 +1,9 @@
-﻿using L2Dn.GameServer.StaticData;
-using L2Dn.GameServer.StaticData.Xml.AccessLevels;
+﻿using L2Dn.GameServer.StaticData.Xml.AccessLevels;
 
 namespace L2Dn.GameServer.Dto;
 
 public sealed class AccessLevel
 {
-    private AccessLevel? _childAccessLevel;
-    private readonly int _childLevel;
     private readonly Color _nameColor;
     private readonly Color _titleColor;
 
@@ -30,7 +27,6 @@ public sealed class AccessLevel
         if (!Color.TryParse(level.TitleColor, out _titleColor))
             _titleColor = Colors.White;
 
-        _childLevel = level.ChildAccess;
         IsGM = level.IsGm;
         AllowPeaceAttack = level.AllowPeaceAttack;
         AllowFixedRes = level.AllowFixedRes;
@@ -100,21 +96,4 @@ public sealed class AccessLevel
     /// Returns if the access level can gain exp or not.
     /// </summary>
     public bool CanGainExp { get; }
-
-    /// <summary>
-    /// Returns if the access level contains allowedAccess as child.
-    /// </summary>
-    public bool HasChildAccess(int accessLevel)
-    {
-        if (_childAccessLevel == null)
-        {
-            if (_childLevel <= 0)
-                return false;
-
-            _childAccessLevel = AccessLevelData.Instance.GetAccessLevel(_childLevel);
-        }
-
-        return _childAccessLevel != null &&
-            (_childAccessLevel.Level == accessLevel || _childAccessLevel.HasChildAccess(accessLevel));
-    }
 }
