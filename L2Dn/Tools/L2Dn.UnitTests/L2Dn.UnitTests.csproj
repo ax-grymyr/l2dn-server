@@ -27,7 +27,7 @@
     <ItemGroup>
       <ProjectReference Include="..\L2Dn.Cryptography\L2Dn.Cryptography.csproj" />
       <ProjectReference Include="..\L2Dn.Packages\L2Dn.Packages.csproj" />
-      <ProjectReference Include="..\L2Dn.Protocol\L2Dn.Protocol.csproj" />
+      <ProjectReference Include="..\..\L2Dn.Protocol\L2Dn.Protocol.csproj" />
     </ItemGroup>
 
 </Project>

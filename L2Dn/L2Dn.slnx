@@ -15,14 +15,16 @@
   </Folder>
   <Folder Name="/Tools/">
     <Project Path="Tools\BuildDataPackDb\BuildDataPackDb.csproj" Type="Classic C#" />
+    <Project Path="Tools\L2Dn.Cryptography\L2Dn.Cryptography.csproj" Type="Classic C#" />
     <Project Path="Tools\L2Dn.DataPack.Db\L2Dn.DataPack.Db.csproj" Type="Classic C#" />
     <Project Path="Tools\L2Dn.DataPack.Editor\L2Dn.DataPack.Editor.csproj" Type="Classic C#" />
+    <Project Path="Tools\L2Dn.Packages\L2Dn.Packages.csproj" Type="Classic C#" />
+    <Project Path="Tools\L2Dn.UnitTests\L2Dn.UnitTests.csproj" Type="Classic C#" />
     <Project Path="Tools\XmlSchemaGenerator\XmlSchemaGenerator.csproj" Type="Classic C#" />
   </Folder>
   <Project Path="L2Dn.AuthServer.Db\L2Dn.AuthServer.Db.csproj" Type="Classic C#" />
   <Project Path="L2Dn.AuthServer\L2Dn.AuthServer.csproj" Type="Classic C#" />
   <Project Path="L2Dn.Common\L2Dn.Common.csproj" Type="Classic C#" />
-  <Project Path="L2Dn.Cryptography\L2Dn.Cryptography.csproj" Type="Classic C#" />
   <Project Path="L2Dn.Dashboard\L2Dn.Dashboard.csproj" Type="Classic C#" />
   <Project Path="L2Dn.GameServer.Db\L2Dn.GameServer.Db.csproj" Type="Classic C#" />
   <Project Path="L2Dn.GameServer.Enums\L2Dn.GameServer.Enums.csproj" Type="Classic C#" />
@@ -31,8 +33,6 @@
   <Project Path="L2Dn.GameServer.StaticData\L2Dn.GameServer.StaticData.csproj" Type="Classic C#" />
   <Project Path="L2Dn.GameServer\L2Dn.GameServer.csproj" Type="Classic C#" />
   <Project Path="L2Dn.Model\L2Dn.Model.csproj" Type="Classic C#" />
-  <Project Path="L2Dn.Packages\L2Dn.Packages.csproj" Type="Classic C#" />
   <Project Path="L2Dn.Protocol\L2Dn.Protocol.csproj" Type="Classic C#" />
-  <Project Path="L2Dn.UnitTests\L2Dn.UnitTests.csproj" Type="Classic C#" />
   <Project Path="L2Dn.Unsafe\L2Dn.Unsafe.csproj" Type="Classic C#" />
 </Solution>

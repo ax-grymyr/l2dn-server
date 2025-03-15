@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\L2Dn.Common\L2Dn.Common.csproj" />
+      <ProjectReference Include="..\..\L2Dn.Common\L2Dn.Common.csproj" />
     </ItemGroup>
 
 </Project>

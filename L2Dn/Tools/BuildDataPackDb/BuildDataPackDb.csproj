@@ -9,7 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\L2Dn.Model\L2Dn.Model.csproj" />
-      <ProjectReference Include="..\..\L2Dn.Packages\L2Dn.Packages.csproj" />
+      <ProjectReference Include="..\L2Dn.Packages\L2Dn.Packages.csproj" />
       <ProjectReference Include="..\L2Dn.DataPack.Db\L2Dn.DataPack.Db.csproj" />
     </ItemGroup>
 
