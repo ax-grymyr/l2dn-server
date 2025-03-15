@@ -38,6 +38,7 @@
 
   "DataPack": {
     "Path": "DataPack",
+    "ConfigPath": "Config",
     "ScriptPath": "DataPack/scripts",
     "GeoData": {
       "Download": false,

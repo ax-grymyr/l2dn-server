@@ -8,6 +8,11 @@ public class DataPackConfig
     public string Path { get; set; } = "DataPack";
 
     /// <summary>
+    /// Config root path, absolute or relative to the executable.
+    /// </summary>
+    public string ConfigPath { get; set; } = "Config";
+
+    /// <summary>
     /// Scripts root path, absolute or relative to the executable.
     /// </summary>
     public string ScriptPath { get; set; } = "DataPack/scripts";
