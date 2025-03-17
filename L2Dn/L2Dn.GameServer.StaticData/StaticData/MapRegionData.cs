@@ -16,7 +16,7 @@ public sealed class MapRegionData
     private FrozenDictionary<string, MapRegion> _regions = FrozenDictionary<string, MapRegion>.Empty;
     private MapRegion? _defaultRespawnRegion;
 
-    public static MapRegionData Instance => new();
+    public static MapRegionData Instance { get; } = new();
 
     private MapRegionData()
     {
