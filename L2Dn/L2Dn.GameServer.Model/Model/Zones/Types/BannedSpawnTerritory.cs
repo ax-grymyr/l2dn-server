@@ -34,7 +34,7 @@ public class BannedSpawnTerritory
 
 	public bool isInsideZone(int x, int y, int z)
 	{
-		return _territory.IsInsideZone(x, y, z);
+		return _territory.IsInsideZone(new Location3D(x, y, z));
 	}
 
 	public void visualizeZone(int z)

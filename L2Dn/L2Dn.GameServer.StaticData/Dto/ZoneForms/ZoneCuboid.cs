@@ -18,14 +18,12 @@ public sealed class ZoneCuboid(Location2D point1, Location2D point2, int z1, int
         return new Rectangle(minX, minY, maxX - minX, maxY - minY);
     }
 
-    public override bool IsInsideZone(int x, int y, int z) => IsInsideBounds(x, y, z);
+    public override bool IsInsideZone(Location3D location) => IsInsideBounds(location);
 
-    public override bool IntersectsRectangle(int ax1, int ax2, int ay1, int ay2) =>
-        Bounds.Intersects(Math.Min(ax1, ax2), Math.Min(ay1, ay2), Math.Abs(ax2 - ax1), Math.Abs(ay2 - ay1));
+    public override bool IntersectsRectangle(Rectangle rectangle) => Bounds.Intersects(rectangle);
 
-    public override double GetDistanceToZone(int x, int y)
+    public override double GetDistanceToZone(Location2D location)
     {
-        Location2D location = new(x, y);
         return Math.Min(Math.Min(location.DistanceSquare2D(Bounds.LeftTop),
                 location.DistanceSquare2D(Bounds.LeftBottom)),
             Math.Min(location.DistanceSquare2D(Bounds.RightTop),

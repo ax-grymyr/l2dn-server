@@ -16,13 +16,14 @@ public abstract class ZoneForm(Rectangle bounds, int z1, int z2)
     public int LowZ { get; } = Math.Min(z1, z2);
     public int HighZ { get; } = Math.Max(z1, z2);
 
-    protected bool IsInsideBounds(int x, int y, int z) => Bounds.Contains(x, y) && z >= LowZ && z <= HighZ;
+    protected bool IsInsideBounds(Location3D location) =>
+        Bounds.Contains(location.Location2D) && location.Z >= LowZ && location.Z <= HighZ;
 
-    public abstract bool IsInsideZone(int x, int y, int z);
+    public abstract bool IsInsideZone(Location3D location);
 
-    public abstract bool IntersectsRectangle(int x1, int x2, int y1, int y2);
+    public abstract bool IntersectsRectangle(Rectangle rectangle);
 
-    public abstract double GetDistanceToZone(int x, int y);
+    public abstract double GetDistanceToZone(Location2D location);
 
     public abstract IEnumerable<Location3D> GetVisualizationPoints(int z);
 
@@ -59,7 +60,7 @@ public abstract class ZoneForm(Rectangle bounds, int z1, int z2)
             case ZoneShape.NPoly:
             {
                 if (nodes.Length < 3)
-                    throw new ArgumentException("Invalid zone form, npoly must have exactly at least 3 nodes.");
+                    throw new ArgumentException("Invalid zone form, npoly must have at least 3 nodes.");
 
                 return new ZoneNPoly(nodes, zoneArea.MinZ, zoneArea.MaxZ);
             }

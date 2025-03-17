@@ -31,7 +31,7 @@ public sealed class SpawnTerritory(string name, ZoneForm territory)
 
     public bool isInsideZone(int x, int y, int z)
     {
-        return territory.IsInsideZone(x, y, z);
+        return territory.IsInsideZone(new Location3D(x, y, z));
     }
 
     public void visualizeZone(int z)

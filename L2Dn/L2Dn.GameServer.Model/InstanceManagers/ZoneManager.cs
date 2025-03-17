@@ -107,9 +107,7 @@ public sealed class ZoneManager
                 for (int y = leftTop.Y; y < rightBottom.Y; y++)
                 {
                     Rectangle regionRectangle = WorldMap.GetRegionRectangle(new Location2D(x, y));
-                    if (zone.getZone().IntersectsRectangle(regionRectangle.X,
-                            regionRectangle.X + regionRectangle.Width - 1, regionRectangle.Y,
-                            regionRectangle.Y + regionRectangle.Height - 1))
+                    if (zone.getZone().IntersectsRectangle(regionRectangle))
                     {
                         regions[y].getZones()[zone.getId()] = zone;
                     }

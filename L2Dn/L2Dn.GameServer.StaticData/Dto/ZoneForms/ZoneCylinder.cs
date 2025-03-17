@@ -11,18 +11,23 @@ public sealed class ZoneCylinder(Location2D center, int z1, int z2, int rad):
 {
     private readonly int _radS = rad * rad;
 
-    public override bool IsInsideZone(int x1, int y1, int z)
+    public override bool IsInsideZone(Location3D location)
     {
-        return IsInsideBounds(x1, y1, z) &&
-            new Location2D(x1, y1).DistanceSquare2D(new Location2D(Bounds.X + Bounds.Width / 2,
-                Bounds.Y + Bounds.Height / 2)) <= _radS;
+        return IsInsideBounds(location) &&
+            location.DistanceSquare2D(new Location2D(Bounds.X + Bounds.Width / 2, Bounds.Y + Bounds.Height / 2)) <=
+            _radS;
     }
 
-    public override bool IntersectsRectangle(int ax1, int ax2, int ay1, int ay2)
+    public override bool IntersectsRectangle(Rectangle rectangle)
     {
         // Circles point inside the rectangle?
-        if (center.X > ax1 && center.Y < ax2 && center.Y > ay1 && center.Y < ay2)
-            return true;
+        if (!Bounds.Intersects(rectangle))
+            return false;
+
+        int ax1 = rectangle.X;
+        int ax2 = rectangle.X + rectangle.Width - 1;
+        int ay1 = rectangle.Y;
+        int ay2 = rectangle.Y + rectangle.Height - 1;
 
         // Any point of the rectangle intersecting the Circle?
         if (center.DistanceSquare2D(new Location2D(ax1, ay1)) <= _radS)
@@ -59,7 +64,7 @@ public sealed class ZoneCylinder(Location2D center, int z1, int z2, int rad):
         return false;
     }
 
-    public override double GetDistanceToZone(int x, int y) => center.Distance2D(new Location2D(x, y)) - rad;
+    public override double GetDistanceToZone(Location2D location) => center.Distance2D(location) - rad;
 
     public override IEnumerable<Location3D> GetVisualizationPoints(int z)
     {

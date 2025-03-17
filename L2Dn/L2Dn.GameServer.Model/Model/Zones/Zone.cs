@@ -320,7 +320,7 @@ public abstract class Zone: IEventContainerProvider
 	 */
 	public bool isInsideZone(int x, int y, int z)
 	{
-		return _zone != null && _zone.IsInsideZone(x, y, z) && !isInsideBlockedZone(x, y, z);
+		return _zone != null && _zone.IsInsideZone(new Location3D(x, y, z)) && !isInsideBlockedZone(x, y, z);
 	}
 
 	/**
@@ -338,7 +338,7 @@ public abstract class Zone: IEventContainerProvider
 
 		foreach (ZoneForm zone in _blockedZones)
 		{
-			if (zone.IsInsideZone(x, y, z))
+			if (zone.IsInsideZone(new Location3D(x, y, z)))
 			{
 				return true;
 			}
@@ -380,12 +380,12 @@ public abstract class Zone: IEventContainerProvider
 
 	public double getDistanceToZone(int x, int y)
 	{
-		return _zone.GetDistanceToZone(x, y);
+		return _zone.GetDistanceToZone(new Location2D(x, y));
 	}
 
 	public double getDistanceToZone(WorldObject obj)
 	{
-		return _zone.GetDistanceToZone(obj.getX(), obj.getY());
+		return _zone.GetDistanceToZone(new Location2D(obj.getX(), obj.getY()));
 	}
 
 	public void revalidateInZone(Creature creature)

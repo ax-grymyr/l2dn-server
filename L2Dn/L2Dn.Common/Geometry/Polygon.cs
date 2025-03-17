@@ -14,7 +14,7 @@ public readonly struct Polygon
         Points = points;
     }
 
-    public bool Contains(int x, int y)
+    public bool Contains(Location2D location)
     {
         ImmutableArray<Location2D> points = Points;
         int hits = 0;
@@ -31,14 +31,14 @@ public readonly struct Polygon
             int leftx;
             if (cur.X < last.X)
             {
-                if (x >= last.X)
+                if (location.X >= last.X)
                     continue;
 
                 leftx = cur.X;
             }
             else
             {
-                if (x >= cur.X)
+                if (location.X >= cur.X)
                     continue;
 
                 leftx = last.X;
@@ -48,31 +48,31 @@ public readonly struct Polygon
             double test2;
             if (cur.Y < last.Y)
             {
-                if (y < cur.Y || y >= last.Y)
+                if (location.Y < cur.Y || location.Y >= last.Y)
                     continue;
 
-                if (x < leftx)
+                if (location.X < leftx)
                 {
                     hits++;
                     continue;
                 }
 
-                test1 = x - cur.X;
-                test2 = y - cur.Y;
+                test1 = location.X - cur.X;
+                test2 = location.Y - cur.Y;
             }
             else
             {
-                if (y < last.Y || y >= cur.Y)
+                if (location.Y < last.Y || location.Y >= cur.Y)
                     continue;
 
-                if (x < leftx)
+                if (location.X < leftx)
                 {
                     hits++;
                     continue;
                 }
 
-                test1 = x - last.X;
-                test2 = y - last.Y;
+                test1 = location.X - last.X;
+                test2 = location.Y - last.Y;
             }
 
             if (test1 < test2 / (last.Y - cur.Y) * (last.X - cur.X))

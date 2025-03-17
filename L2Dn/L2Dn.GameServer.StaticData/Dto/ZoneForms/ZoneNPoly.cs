@@ -15,18 +15,15 @@ public sealed class ZoneNPoly(ImmutableArray<Location2D> points, int z1, int z2)
 
     public ImmutableArray<Location2D> Points => _polygon.Points;
 
-    public override bool IsInsideZone(int x, int y, int z) => IsInsideBounds(x, y, z) && _polygon.Contains(x, y);
+    public override bool IsInsideZone(Location3D location) =>
+        IsInsideBounds(location) && _polygon.Contains(location.Location2D);
 
-    public override bool IntersectsRectangle(int ax1, int ax2, int ay1, int ay2)
-    {
-        Rectangle rectangle = new(Math.Min(ax1, ax2), Math.Min(ay1, ay2), Math.Abs(ax2 - ax1), Math.Abs(ay2 - ay1));
-        return Bounds.Intersects(rectangle) && _polygon.Intersects(rectangle);
-    }
+    public override bool IntersectsRectangle(Rectangle rectangle) =>
+        Bounds.Intersects(rectangle) && _polygon.Intersects(rectangle);
 
-    public override double GetDistanceToZone(int x, int y)
+    public override double GetDistanceToZone(Location2D location)
     {
         // TODO: should also the distance to an edge considered? not only the distance to points
-        Location2D location = new(x, y);
         ImmutableArray<Location2D> points = _polygon.Points;
         double shortestDist = points[0].DistanceSquare2D(location);
         for (int i = 1; i < points.Length; i++)
@@ -61,7 +58,7 @@ public sealed class ZoneNPoly(ImmutableArray<Location2D> points, int z1, int z2)
         int y = Bounds.Y + Rnd.get(Bounds.Height);
 
         int antiBlocker = 0;
-        while (!_polygon.Contains(x, y) && antiBlocker++ < 1000)
+        while (!_polygon.Contains(new Location2D(x, y)) && antiBlocker++ < 1000)
         {
             x = Bounds.X + Rnd.get(Bounds.Width);
             y = Bounds.Y + Rnd.get(Bounds.Height);
