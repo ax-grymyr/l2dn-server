@@ -126,7 +126,7 @@ public class SkillData: DataReaderBase
 
         List<Skill> allSkills = skillLists.SelectMany(pair => pair.Document.Skills).SelectMany(LoadSkill).ToList();
         allSkills.ForEach(skill => _skills.TryAdd(GetSkillHashCode(skill), skill));
-        allSkills.GroupBy(skill => skill.getLevel()).
+        allSkills.GroupBy(skill => skill.getId()).
             ForEach(g => _skillsMaxLevel[g.Key] = g.Select(s => s.getLevel()).Max());
 
         _logger.Info(GetType().Name + ": Loaded " + allSkills.Count + " Skills.");

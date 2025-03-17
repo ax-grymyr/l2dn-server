@@ -108,9 +108,7 @@ public sealed class ZoneManager
                 {
                     Rectangle regionRectangle = WorldMap.GetRegionRectangle(new Location2D(x, y));
                     if (zone.getZone().IntersectsRectangle(regionRectangle))
-                    {
                         regions[y].getZones()[zone.getId()] = zone;
-                    }
                 }
             }
         }
