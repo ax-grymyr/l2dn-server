@@ -101,10 +101,10 @@ public sealed class ZoneManager
             Rectangle bounds = form.Bounds;
             Location2D leftTop = WorldMap.WorldLocationToRegionCoordinates(bounds.LeftTop);
             Location2D rightBottom = WorldMap.WorldLocationToRegionCoordinates(bounds.RightBottom);
-            for (int x = leftTop.X; x < rightBottom.X; x++)
+            for (int x = leftTop.X; x <= rightBottom.X; x++)
             {
                 ImmutableArray<ZoneRegion> regions = _zoneRegions[x];
-                for (int y = leftTop.Y; y < rightBottom.Y; y++)
+                for (int y = leftTop.Y; y <= rightBottom.Y; y++)
                 {
                     Rectangle regionRectangle = WorldMap.GetRegionRectangle(new Location2D(x, y));
                     if (zone.getZone().IntersectsRectangle(regionRectangle))
