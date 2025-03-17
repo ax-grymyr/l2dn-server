@@ -4,6 +4,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -14,7 +15,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * Another type of damage zone with skills.
  * @author kerberos
  */
-public class EffectZone : ZoneType
+public class EffectZone : Zone
 {
 	int _chance;
 	private int _initialDelay;
@@ -36,41 +37,41 @@ public class EffectZone : ZoneType
 		_removeEffectsOnExit = false;
 	}
 
-	public override void setParameter(string name, string value)
+	public override void setParameter(XmlZoneStatName name, string value)
 	{
 		switch (name)
 		{
-			case "chance":
+			case XmlZoneStatName.chance:
 			{
 				_chance = int.Parse(value);
 				break;
 			}
-			case "initialDelay":
+			case XmlZoneStatName.initialDelay:
 			{
 				_initialDelay = int.Parse(value);
 				break;
 			}
-			case "reuse":
+			case XmlZoneStatName.reuse:
 			{
 				_reuse = int.Parse(value);
 				break;
 			}
-			case "bypassSkillConditions":
+			case XmlZoneStatName.bypassSkillConditions:
 			{
 				_bypassConditions = bool.Parse(value);
 				break;
 			}
-			case "maxDynamicSkillCount":
+			case XmlZoneStatName.maxDynamicSkillCount:
 			{
 				_skills = new(); // int.Parse(value)
 				break;
 			}
-			case "showDangerIcon":
+			case XmlZoneStatName.showDangerIcon:
 			{
 				_isShowDangerIcon = bool.Parse(value);
 				break;
 			}
-			case "skillIdLvl":
+			case XmlZoneStatName.skillIdLvl:
 			{
 				string[] propertySplit =
 					(value.EndsWith(';') ? value[..^1] : value).Split(";");
@@ -81,7 +82,7 @@ public class EffectZone : ZoneType
 					string[] skillSplit = skill.Split("-");
 					if (skillSplit.Length != 2)
 					{
-						LOGGER.Warn(GetType().Name + ": invalid config property -> skillsIdLvl \"" + skill + "\"");
+						Logger.Warn(GetType().Name + ": invalid config property -> skillsIdLvl \"" + skill + "\"");
 					}
 					else
 					{
@@ -93,7 +94,7 @@ public class EffectZone : ZoneType
 						{
 							if (!string.IsNullOrEmpty(skill))
 							{
-								LOGGER.Warn(GetType().Name + ": invalid config property -> skillsIdLvl \"" +
+								Logger.Warn(GetType().Name + ": invalid config property -> skillsIdLvl \"" +
 								            skillSplit[0] + "\"" + skillSplit[1] + ": " + nfe);
 							}
 						}
@@ -101,7 +102,7 @@ public class EffectZone : ZoneType
 				}
 				break;
 			}
-			case "removeEffectsOnExit":
+			case XmlZoneStatName.removeEffectsOnExit:
 			{
 				_removeEffectsOnExit = bool.Parse(value);
 				break;

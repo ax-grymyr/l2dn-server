@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/zones.xsd">
-	<zone name="Seed of Annihilation 1" id="60006" type="EffectZone" shape="NPoly" minZ="-10700" maxZ="-10100">
+	<zone name="Seed of Annihilation 1 Effect" id="60006" type="EffectZone" shape="NPoly" minZ="-10700" maxZ="-10100">
 		<stat name="maxDynamicSkillCount" val="1" />
 		<stat name="showDangerIcon" val="false" />
 		<stat name="initialDelay" val="1000" />
@@ -14,7 +14,7 @@
 		<node X="-182000" Y="184666" />
 		<node X="-180500" Y="183000" />
 	</zone>
-	<zone name="Seed of Annihilation 2" id="60007" type="EffectZone" shape="NPoly" minZ="-15900" maxZ="-14950">
+	<zone name="Seed of Annihilation 2 Effect" id="60007" type="EffectZone" shape="NPoly" minZ="-15900" maxZ="-14950">
 		<stat name="maxDynamicSkillCount" val="1" />
 		<stat name="showDangerIcon" val="false" />
 		<stat name="initialDelay" val="1000" />
@@ -32,7 +32,7 @@
 		<node X="-181000" Y="183500" />
 		<node X="-180500" Y="182500" />
 	</zone>
-	<zone name="Seed of Annihilation 3" id="60008" type="EffectZone" shape="NPoly" minZ="-12850" maxZ="-10800">
+	<zone name="Seed of Annihilation 3 Effect" id="60008" type="EffectZone" shape="NPoly" minZ="-12850" maxZ="-10800">
 		<stat name="maxDynamicSkillCount" val="1" />
 		<stat name="showDangerIcon" val="false" />
 		<stat name="initialDelay" val="1000" />

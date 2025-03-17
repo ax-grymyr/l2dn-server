@@ -18,11 +18,11 @@ public class HeavenlyRiftManager
     private static readonly Logger _logger = LogManager.GetLogger(nameof(HeavenlyRiftManager));
 	private static readonly TimeSpan _despawnTime = TimeSpan.FromMilliseconds(1800000);
 
-    private static readonly ZoneType _zone =
-        ZoneManager.getInstance().getZoneByName("heavenly_rift") ??
+    private static readonly Zone _zone =
+        ZoneManager.Instance.getZoneByName("heavenly_rift") ??
         throw new InvalidOperationException("Zone heavenly_rift not found");
 
-	public static ZoneType getZone()
+	public static Zone getZone()
 	{
 		return _zone;
 	}

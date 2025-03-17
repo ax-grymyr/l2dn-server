@@ -538,7 +538,7 @@ public class Duel
 
 		int instanceId = DuelManager.getInstance().getDuelArena();
 		OlympiadStadiumZone? zone = null;
-		foreach (OlympiadStadiumZone z in ZoneManager.getInstance().getAllZones<OlympiadStadiumZone>())
+		foreach (OlympiadStadiumZone z in ZoneManager.Instance.getAllZones<OlympiadStadiumZone>())
 		{
 			if (z.getInstanceTemplateId() == instanceId)
 			{

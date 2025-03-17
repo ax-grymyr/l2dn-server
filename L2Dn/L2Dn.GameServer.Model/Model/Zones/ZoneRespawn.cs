@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using L2Dn.GameServer.Dto.ZoneForms;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 using Config = L2Dn.GameServer.Configuration.Config;
@@ -10,48 +11,46 @@ namespace L2Dn.GameServer.Model.Zones;
  * Abstract zone with spawn locations
  * @author DS, Nyaran (rework 10/07/2011)
  */
-public abstract class ZoneRespawn(int id, ZoneForm form): ZoneType(id, form)
+public abstract class ZoneRespawn(int id, ZoneForm form): Zone(id, form)
 {
 	private ImmutableArray<Location3D> _spawnLocs = ImmutableArray<Location3D>.Empty;
 	private ImmutableArray<Location3D> _otherSpawnLocs = ImmutableArray<Location3D>.Empty;
 	private ImmutableArray<Location3D> _chaoticSpawnLocs = ImmutableArray<Location3D>.Empty;
 	private ImmutableArray<Location3D> _banishSpawnLocs = ImmutableArray<Location3D>.Empty;
 
-	public virtual void parseLoc(Location3D location, string type)
-	{
-		if (string.IsNullOrEmpty(type))
-		{
-			addSpawn(location);
-		}
-		else
-		{
-			switch (type)
-			{
-				case "other":
-				{
-					addOtherSpawn(location);
-					break;
-				}
-				case "chaotic":
-				{
-					addChaoticSpawn(location);
-					break;
-				}
-				case "banish":
-				{
-					addBanishSpawn(location);
-					break;
-				}
-				default:
-				{
-					LOGGER.Warn(GetType().Name + ": Unknown location type: " + type);
-					break;
-				}
-			}
-		}
-	}
+    public virtual void parseLoc(Location3D location, XmlZoneSpawnType type)
+    {
+        switch (type)
+        {
+            case XmlZoneSpawnType.None:
+            {
+                addSpawn(location);
+                break;
+            }
+            case XmlZoneSpawnType.other:
+            {
+                addOtherSpawn(location);
+                break;
+            }
+            case XmlZoneSpawnType.chaotic:
+            {
+                addChaoticSpawn(location);
+                break;
+            }
+            case XmlZoneSpawnType.banish:
+            {
+                addBanishSpawn(location);
+                break;
+            }
+            default:
+            {
+                Logger.Warn(GetType().Name + ": Unknown spawn location type: " + type);
+                break;
+            }
+        }
+    }
 
-	public void addSpawn(Location3D location)
+    public void addSpawn(Location3D location)
 	{
 		_spawnLocs = _spawnLocs.Add(location);
 	}

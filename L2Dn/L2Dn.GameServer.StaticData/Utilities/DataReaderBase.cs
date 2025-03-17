@@ -1,8 +1,9 @@
 ﻿using System.Xml.Linq;
 using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Utilities;
 
-namespace L2Dn.GameServer.StaticData;
+namespace L2Dn.GameServer.Utilities;
 
 public abstract class DataReaderBase
 {

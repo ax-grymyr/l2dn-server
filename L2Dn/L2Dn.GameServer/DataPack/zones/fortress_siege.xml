@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/zones.xsd">
 	<!-- Fortress Siege Zones -->
-	<zone name="gludio_fort_a" type="SiegeZone" shape="NPoly" minZ="-3950" maxZ="1050">
+	<zone name="gludio_fort_a_siege" type="SiegeZone" shape="NPoly" minZ="-3950" maxZ="1050">
 		<stat name="fortId" val="101" />
 		<!-- battlefield_territory -->
 		<node X="-51350" Y="153139" />
@@ -10,7 +10,7 @@
 		<node X="-56397" Y="158120" />
 		<node X="-56414" Y="155051" />
 	</zone>
-	<zone name="gludio_fort_b" type="SiegeZone" shape="NPoly" minZ="-5267" maxZ="-267">
+	<zone name="gludio_fort_b_siege" type="SiegeZone" shape="NPoly" minZ="-5267" maxZ="-267">
 		<stat name="fortId" val="102" />
 		<!-- battlefield_territory -->
 		<node X="-23904" Y="215879" />
@@ -20,7 +20,7 @@
 		<node X="-27440" Y="221210" />
 		<node X="-27262" Y="218372" />
 	</zone>
-	<zone name="dion_fort" type="SiegeZone" shape="NPoly" minZ="-4763" maxZ="237">
+	<zone name="dion_fort_siege" type="SiegeZone" shape="NPoly" minZ="-4763" maxZ="237">
 		<stat name="fortId" val="103" />
 		<!-- battlefield_territory -->
 		<node X="16806" Y="184151" />
@@ -31,7 +31,7 @@
 		<node X="13658" Y="186916" />
 		<node X="14463" Y="185414" />
 	</zone>
-	<zone name="giran_fort" type="SiegeZone" shape="NPoly" minZ="-4498" maxZ="502">
+	<zone name="giran_fort_siege" type="SiegeZone" shape="NPoly" minZ="-4498" maxZ="502">
 		<stat name="fortId" val="104" />
 		<!-- battlefield_territory -->
 		<node X="124284" Y="119446" />
@@ -42,7 +42,7 @@
 		<node X="122777" Y="124293" />
 		<node X="122690" Y="121280" />
 	</zone>
-	<zone name="oren_fort" type="SiegeZone" shape="NPoly" minZ="-4926" maxZ="74">
+	<zone name="oren_fort_siege" type="SiegeZone" shape="NPoly" minZ="-4926" maxZ="74">
 		<stat name="fortId" val="105" />
 		<!-- battlefield_territory -->
 		<node X="71484" Y="1432" />
@@ -52,7 +52,7 @@
 		<node X="71016" Y="7512" />
 		<node X="69961" Y="4638" />
 	</zone>
-	<zone name="aden_fort_a" type="SiegeZone" shape="NPoly" minZ="-5130" maxZ="-130">
+	<zone name="aden_fort_a_siege" type="SiegeZone" shape="NPoly" minZ="-5130" maxZ="-130">
 		<stat name="fortId" val="106" />
 		<!-- battlefield_territory -->
 		<node X="154558" Y="52235" />
@@ -65,7 +65,7 @@
 		<node X="151765" Y="54393" />
 		<node X="152779" Y="52962" />
 	</zone>
-	<zone name="aden_fort_b" type="SiegeZone" shape="NPoly" minZ="-5193" maxZ="-193">
+	<zone name="aden_fort_b_siege" type="SiegeZone" shape="NPoly" minZ="-5193" maxZ="-193">
 		<stat name="fortId" val="107" />
 		<!-- battlefield_territory -->
 		<node X="188581" Y="35178" />
@@ -75,7 +75,7 @@
 		<node X="187645" Y="42951" />
 		<node X="185955" Y="38633" />
 	</zone>
-	<zone name="inna_fort" type="SiegeZone" shape="NPoly" minZ="-5158" maxZ="-158">
+	<zone name="inna_fort_siege" type="SiegeZone" shape="NPoly" minZ="-5158" maxZ="-158">
 		<stat name="fortId" val="108" />
 		<!-- battlefield_territory -->
 		<node X="116995" Y="201928" />
@@ -85,7 +85,7 @@
 		<node X="115047" Y="206898" />
 		<node X="115703" Y="203324" />
 	</zone>
-	<zone name="godad_fort" type="SiegeZone" shape="NPoly" minZ="-4677" maxZ="323">
+	<zone name="godad_fort_siege" type="SiegeZone" shape="NPoly" minZ="-4677" maxZ="323">
 		<stat name="fortId" val="109" />
 		<!-- battlefield_territory -->
 		<node X="157327" Y="-73226" />
@@ -95,7 +95,7 @@
 		<node X="155844" Y="-68174" />
 		<node X="155347" Y="-70351" />
 	</zone>
-	<zone name="rune_fort" type="SiegeZone" shape="NPoly" minZ="-4544" maxZ="456">
+	<zone name="rune_fort_siege" type="SiegeZone" shape="NPoly" minZ="-4544" maxZ="456">
 		<stat name="fortId" val="110" />
 		<!-- battlefield_territory -->
 		<node X="66706" Y="-63705" />
@@ -105,7 +105,7 @@
 		<node X="70204" Y="-57367" />
 		<node X="66604" Y="-59399" />
 	</zone>
-	<zone name="schutt_fort" type="SiegeZone" shape="NPoly" minZ="-4744" maxZ="256">
+	<zone name="schutt_fort_siege" type="SiegeZone" shape="NPoly" minZ="-4744" maxZ="256">
 		<stat name="fortId" val="111" />
 		<!-- battlefield_territory -->
 		<node X="108236" Y="-143972" />
@@ -115,7 +115,7 @@
 		<node X="107114" Y="-138401" />
 		<node X="105935" Y="-141913" />
 	</zone>
-	<zone name="glu_di_fort" type="SiegeZone" shape="NPoly" minZ="-4776" maxZ="224">
+	<zone name="glu_di_fort_siege" type="SiegeZone" shape="NPoly" minZ="-4776" maxZ="224">
 		<stat name="fortId" val="112" />
 		<!-- battlefield_territory -->
 		<node X="4841" Y="145037" />
@@ -126,7 +126,7 @@
 		<node X="2625" Y="149463" />
 		<node X="3003" Y="148080" />
 	</zone>
-	<zone name="glu_ore_fort" type="SiegeZone" shape="NPoly" minZ="-5416" maxZ="-416">
+	<zone name="glu_ore_fort_siege" type="SiegeZone" shape="NPoly" minZ="-5416" maxZ="-416">
 		<stat name="fortId" val="113" />
 		<!-- battlefield_territory -->
 		<node X="-57784" Y="88538" />
@@ -134,7 +134,7 @@
 		<node X="-48981" Y="93886" />
 		<node X="-57853" Y="93471" />
 	</zone>
-	<zone name="di_gi_fort" type="SiegeZone" shape="NPoly" minZ="-3620" maxZ="1380">
+	<zone name="di_gi_fort_siege" type="SiegeZone" shape="NPoly" minZ="-3620" maxZ="1380">
 		<stat name="fortId" val="114" />
 		<!-- battlefield_territory -->
 		<node X="57267" Y="137306" />
@@ -144,7 +144,7 @@
 		<node X="57884" Y="141884" />
 		<node X="56277" Y="139496" />
 	</zone>
-	<zone name="di_ore_fort" type="SiegeZone" shape="NPoly" minZ="-5457" maxZ="-457">
+	<zone name="di_ore_fort_siege" type="SiegeZone" shape="NPoly" minZ="-5457" maxZ="-457">
 		<stat name="fortId" val="115" />
 		<!-- battlefield_territory -->
 		<node X="8304" Y="92707" />
@@ -155,7 +155,7 @@
 		<node X="9421" Y="97504" />
 		<node X="7680" Y="96618" />
 	</zone>
-	<zone name="ore_gi_fort" type="SiegeZone" shape="NPoly" minZ="-4710" maxZ="290">
+	<zone name="ore_gi_fort_siege" type="SiegeZone" shape="NPoly" minZ="-4710" maxZ="290">
 		<stat name="fortId" val="116" />
 		<!-- battlefield_territory -->
 		<node X="78726" Y="86600" />
@@ -166,7 +166,7 @@
 		<node X="74691" Y="93089" />
 		<node X="76675" Y="89735" />
 	</zone>
-	<zone name="a_o_g_fort" type="SiegeZone" shape="NPoly" minZ="-2505" maxZ="2495">
+	<zone name="a_o_g_fort_siege" type="SiegeZone" shape="NPoly" minZ="-2505" maxZ="2495">
 		<stat name="fortId" val="117" />
 		<!-- battlefield_territory -->
 		<node X="106731" Y="-19032" />
@@ -175,7 +175,7 @@
 		<node X="111792" Y="-9682" />
 		<node X="106440" Y="-13306" />
 	</zone>
-	<zone name="aden_gi_fort" type="SiegeZone" shape="NPoly" minZ="-3988" maxZ="1012">
+	<zone name="aden_gi_fort_siege" type="SiegeZone" shape="NPoly" minZ="-3988" maxZ="1012">
 		<stat name="fortId" val="118" />
 		<!-- battlefield_territory -->
 		<node X="122054" Y="91956" />
@@ -184,7 +184,7 @@
 		<node X="121811" Y="97944" />
 		<node X="121349" Y="93373" />
 	</zone>
-	<zone name="inna_gi_fort" type="SiegeZone" shape="NPoly" minZ="-4393" maxZ="607">
+	<zone name="inna_gi_fort_siege" type="SiegeZone" shape="NPoly" minZ="-4393" maxZ="607">
 		<stat name="fortId" val="119" />
 		<!-- battlefield_territory -->
 		<node X="71458" Y="182308" />
@@ -194,7 +194,7 @@
 		<node X="69945" Y="187518" />
 		<node X="69014" Y="185651" />
 	</zone>
-	<zone name="ru_go_fort" type="SiegeZone" shape="NPoly" minZ="-2414" maxZ="2586">
+	<zone name="ru_go_fort_siege" type="SiegeZone" shape="NPoly" minZ="-2414" maxZ="2586">
 		<stat name="fortId" val="120" />
 		<!-- battlefield_territory -->
 		<node X="98350" Y="-58747" />
@@ -202,7 +202,7 @@
 		<node X="102972" Y="-52300" />
 		<node X="98379" Y="-52053" />
 	</zone>
-	<zone name="ru_sch_fort" type="SiegeZone" shape="NPoly" minZ="-3246" maxZ="1754">
+	<zone name="ru_sch_fort_siege" type="SiegeZone" shape="NPoly" minZ="-3246" maxZ="1754">
 		<stat name="fortId" val="121" />
 		<!-- battlefield_territory -->
 		<node X="68828" Y="-96543" />

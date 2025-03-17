@@ -199,7 +199,7 @@ public class AdminGrandBoss: IAdminCommandHandler
         {
             case ANTHARAS:
             {
-                bossZone = ZoneManager.getInstance().getZoneById<NoRestartZone>(ANTHARAS_ZONE);
+                bossZone = ZoneManager.Instance.getZoneById<NoRestartZone>(ANTHARAS_ZONE);
                 htmlPath = "html/admin/grandboss/grandboss_antharas.htm";
                 break;
             }
@@ -210,7 +210,7 @@ public class AdminGrandBoss: IAdminCommandHandler
             }
             case BAIUM:
             {
-                bossZone = ZoneManager.getInstance().getZoneById<NoRestartZone>(BAIUM_ZONE);
+                bossZone = ZoneManager.Instance.getZoneById<NoRestartZone>(BAIUM_ZONE);
                 htmlPath = "html/admin/grandboss/grandboss_baium.htm";
                 break;
             }

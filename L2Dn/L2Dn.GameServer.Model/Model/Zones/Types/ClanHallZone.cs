@@ -2,6 +2,7 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Residences;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 
@@ -13,9 +14,9 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  */
 public class ClanHallZone(int id, ZoneForm form): ResidenceZone(id, form)
 {
-	public override void setParameter(string name, string value)
+	public override void setParameter(XmlZoneStatName name, string value)
 	{
-		if (name.equals("clanHallId"))
+		if (name == XmlZoneStatName.clanHallId)
 		{
 			setResidenceId(int.Parse(value));
 		}

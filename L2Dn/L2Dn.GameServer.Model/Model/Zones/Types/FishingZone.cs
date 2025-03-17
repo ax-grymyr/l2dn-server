@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A fishing zone
  * @author durgus
  */
-public class FishingZone(int id, ZoneForm form): ZoneType(id, form)
+public class FishingZone(int id, ZoneForm form): Zone(id, form)
 {
     protected override void onEnter(Creature creature)
     {

@@ -1,8 +1,7 @@
 ﻿using System.Xml.Serialization;
 using L2Dn.GameServer.Enums;
-using L2Dn.Model.Enums;
 
-namespace L2Dn.Model.Xml;
+namespace L2Dn.GameServer.StaticData.Xml.Zones;
 
 public class XmlZoneRace
 {

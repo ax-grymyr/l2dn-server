@@ -12,32 +12,22 @@ public sealed class WorldRegionCollection
     public WorldRegionCollection()
     {
         // Create regions
-        _worldRegions =
-            (from regionX in Enumerable.Range(0, WorldMap.RegionCountX)
-             select
-                 (from regionY in Enumerable.Range(0, WorldMap.RegionCountY)
-                  select new WorldRegion(this, regionX, regionY)).ToImmutableArray()).ToImmutableArray();
+        _worldRegions = WorldMap.CreateRegionGrid(coords => new WorldRegion(this, coords.X, coords.Y));
 
         // Set surrounding regions
         foreach (ImmutableArray<WorldRegion> regions in _worldRegions)
         foreach (WorldRegion region in regions)
             region.CalculateSurroundingRegions();
 
-        _logger.Info($"{nameof(WorldRegionCollection)}: ({WorldMap.RegionCountX} by {WorldMap.RegionCountY}) World Region Grid set up.");
+        _logger.Info($"{nameof(WorldRegionCollection)}: {WorldMap.RegionCountX}x{WorldMap.RegionCountY} " +
+            "world region grid set up.");
     }
 
     public WorldRegion this[int regionX, int regionY] => _worldRegions[regionX][regionY];
 
     public WorldRegion GetRegion(Location2D location)
     {
-        int x = Math.Clamp(location.X, WorldMap.WorldXMin, WorldMap.WorldXMax);
-        int y = Math.Clamp(location.Y, WorldMap.WorldYMin, WorldMap.WorldYMax);
-        if (x != location.X || y != location.Y)
-            _logger.Warn($"Location {location} is out of bounds. Clamped to ({x}, {y}).");
-
-        int regionX = (x - WorldMap.WorldXMin) / WorldMap.RegionSize;
-        int regionY = (y - WorldMap.WorldYMin) / WorldMap.RegionSize;
-
-        return _worldRegions[regionX][regionY];
+        Location2D regionLocation = WorldMap.WorldToRegion(location);
+        return _worldRegions[regionLocation.X][regionLocation.Y];
     }
 }

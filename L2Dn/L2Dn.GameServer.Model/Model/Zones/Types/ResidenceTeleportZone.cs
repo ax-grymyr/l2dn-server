@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 
@@ -13,9 +14,9 @@ public class ResidenceTeleportZone(int id, ZoneForm form): ZoneRespawn(id, form)
 {
 	private int _residenceId;
 
-    public override void setParameter(string name, string value)
+    public override void setParameter(XmlZoneStatName name, string value)
 	{
-		if (name.equals("residenceId"))
+		if (name == XmlZoneStatName.residenceId)
 		{
 			_residenceId = int.Parse(value);
 		}

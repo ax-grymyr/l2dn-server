@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * No PVP Zone
  * @author Edoo
  */
-public class NoPvPZone(int id, ZoneForm form): ZoneType(id, form)
+public class NoPvPZone(int id, ZoneForm form): Zone(id, form)
 {
     protected override void onEnter(Creature creature)
 	{

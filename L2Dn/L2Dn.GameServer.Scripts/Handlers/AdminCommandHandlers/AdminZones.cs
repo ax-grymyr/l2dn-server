@@ -211,8 +211,8 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	private void buildZonesEditorWindow(Player activeChar)
 	{
 		StringBuilder sb = new StringBuilder();
-		List<ZoneType> zones = ZoneManager.getInstance().getZones(activeChar.Location.Location3D);
-		foreach (ZoneType zone in zones)
+		List<Zone> zones = ZoneManager.Instance.getZones(activeChar.Location.Location3D);
+		foreach (Zone zone in zones)
 		{
 			if (zone.getZone() is ZoneNPoly)
 			{
@@ -235,9 +235,9 @@ public class AdminZones: AbstractScript, IAdminCommandHandler
 	private void loadZone(Player activeChar, string zoneName)
 	{
 		BuilderUtil.sendSysMessage(activeChar, "Searching for zone: " + zoneName);
-		List<ZoneType> zones = ZoneManager.getInstance().getZones(activeChar.Location.Location3D);
-		ZoneType? zoneType = null;
-		foreach (ZoneType zone in zones)
+		List<Zone> zones = ZoneManager.Instance.getZones(activeChar.Location.Location3D);
+		Zone? zoneType = null;
+		foreach (Zone zone in zones)
 		{
 			if (zone.getName().equalsIgnoreCase(zoneName))
 			{

@@ -22,7 +22,7 @@ public class OlympiadGameManager: Runnable
 
 	protected OlympiadGameManager()
 	{
-		ICollection<OlympiadStadiumZone> zones = ZoneManager.getInstance().getAllZones<OlympiadStadiumZone>();
+		ICollection<OlympiadStadiumZone> zones = ZoneManager.Instance.getAllZones<OlympiadStadiumZone>();
 		if (zones == null || zones.Count == 0)
 		{
 			throw new InvalidOperationException("No olympiad stadium zones defined !");

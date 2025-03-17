@@ -7,9 +7,9 @@ namespace L2Dn.GameServer.Model.Zones;
 
 public sealed class ZoneRegion(int regionX, int regionY)
 {
-    private readonly Map<int, ZoneType> _zones = new();
+    private readonly Map<int, Zone> _zones = new();
 
-    public Map<int, ZoneType> getZones()
+    public Map<int, Zone> getZones()
     {
         return _zones;
     }
@@ -33,7 +33,7 @@ public sealed class ZoneRegion(int regionX, int regionY)
             return;
         }
 
-        foreach (ZoneType z in _zones.Values)
+        foreach (Zone z in _zones.Values)
         {
             z.revalidateInZone(creature);
         }
@@ -41,7 +41,7 @@ public sealed class ZoneRegion(int regionX, int regionY)
 
     public void removeFromZones(Creature creature)
     {
-        foreach (ZoneType z in _zones.Values)
+        foreach (Zone z in _zones.Values)
         {
             z.removeCharacter(creature);
         }
@@ -54,7 +54,7 @@ public sealed class ZoneRegion(int regionX, int regionY)
         int down = y - range;
         int left = x + range;
         int right = x - range;
-        foreach (ZoneType e in _zones.Values)
+        foreach (Zone e in _zones.Values)
         {
             if (e is PeaceZone)
             {
@@ -89,7 +89,7 @@ public sealed class ZoneRegion(int regionX, int regionY)
 
     public void onDeath(Creature creature)
     {
-        foreach (ZoneType z in _zones.Values)
+        foreach (Zone z in _zones.Values)
         {
             if (z.isInsideZone(creature))
             {
@@ -100,7 +100,7 @@ public sealed class ZoneRegion(int regionX, int regionY)
 
     public void onRevive(Creature creature)
     {
-        foreach (ZoneType z in _zones.Values)
+        foreach (Zone z in _zones.Values)
         {
             if (z.isInsideZone(creature))
             {

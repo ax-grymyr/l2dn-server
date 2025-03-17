@@ -227,7 +227,7 @@ public class SpawnData: DataReaderBase
 			{
 				case XmlSpawnTerritoryShape.Cuboid:
 				{
-					zoneForm = new ZoneCuboid(points[0].X, points[1].X, points[0].Y, points[1].Y, minZ, maxZ);
+					zoneForm = new ZoneCuboid(points[0], points[1], minZ, maxZ);
 					break;
 				}
 				case XmlSpawnTerritoryShape.NPoly:
@@ -238,7 +238,7 @@ public class SpawnData: DataReaderBase
 				case XmlSpawnTerritoryShape.Cylinder:
 				{
 					int zoneRad = territory.Radius;
-					zoneForm = new ZoneCylinder(points[0].X, points[0].Y, minZ, maxZ, zoneRad);
+					zoneForm = new ZoneCylinder(points[0], minZ, maxZ, zoneRad);
 					break;
 				}
 				default:

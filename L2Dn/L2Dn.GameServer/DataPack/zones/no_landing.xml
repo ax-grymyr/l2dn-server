@@ -9,7 +9,7 @@
 		<node X="-5554" Y="-4207" />
 		<node X="-129444" Y="-4207" />
 	</zone>
-	<zone name="boss_area_valakas" type="NoLandingZone" shape="NPoly" minZ="-3753" maxZ="32767">
+	<zone name="boss_area_valakas_no_landing" type="NoLandingZone" shape="NPoly" minZ="-3753" maxZ="32767">
 		<node X="196710" Y="-130845" />
 		<node X="228895" Y="-130845" />
 		<node X="229126" Y="-96162" />

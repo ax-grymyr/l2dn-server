@@ -25,11 +25,7 @@ public static partial class Config
 	public static bool ENABLE_CMD_LINE_LOGIN;
 	public static bool ONLY_CMD_LINE_LOGIN;
 
-	// --------------------------------------------------
-	// Custom Settings
-	// --------------------------------------------------
-
-    internal static void Load()
+    public static void Load()
     {
         ConfigurationParser parser = new(ServerConfig.Instance.DataPack.ConfigPath);
 

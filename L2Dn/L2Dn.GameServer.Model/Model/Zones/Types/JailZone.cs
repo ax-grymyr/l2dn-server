@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A jail zone
  * @author durgus
  */
-public class JailZone(int id, ZoneForm form): ZoneType(id, form)
+public class JailZone(int id, ZoneForm form): Zone(id, form)
 {
 	private static readonly Location JAIL_IN_LOC = new(-114356, -249645, -2984, 0);
 	private static readonly Location JAIL_OUT_LOC = new(17836, 170178, -3507, 0);

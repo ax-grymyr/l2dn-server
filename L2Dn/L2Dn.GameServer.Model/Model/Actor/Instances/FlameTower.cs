@@ -38,7 +38,7 @@ public class FlameTower: Tower
             int maxIndex = _upgradeLevel * 2;
             for (int i = 0; i < maxIndex; i++)
             {
-                ZoneType? zone = ZoneManager.getInstance().getZoneById(_zoneList[i]);
+                Zone? zone = ZoneManager.Instance.getZoneById(_zoneList[i]);
                 if (zone != null)
                 {
                     zone.setEnabled(value);

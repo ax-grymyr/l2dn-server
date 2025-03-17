@@ -154,7 +154,7 @@ internal static class SubscriptionHelper
 		    SubscriptionType.Fortress => GetEventContainers(ids, idRanges, source,
 			    id => FortManager.getInstance().getFortById(id)),
 		    SubscriptionType.ZoneType => GetEventContainers(ids, idRanges, source,
-			    id => ZoneManager.getInstance().getZoneById(id)),
+			    id => ZoneManager.Instance.getZoneById(id)),
 		    SubscriptionType.InstanceTemplate => GetEventContainers(ids, idRanges, source,
 			    id => InstanceManager.getInstance().getInstanceTemplate(id)),
 		    SubscriptionType.ItemTemplate => GetEventContainers(ids, idRanges, source,

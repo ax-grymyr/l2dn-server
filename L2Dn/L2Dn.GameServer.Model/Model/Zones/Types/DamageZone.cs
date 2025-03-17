@@ -4,6 +4,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -14,7 +15,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A damage zone
  * @author durgus
  */
-public class DamageZone: ZoneType
+public class DamageZone: Zone
 {
 	private int _damageHPPerSec;
 	private int _damageMPPerSec;
@@ -43,25 +44,25 @@ public class DamageZone: ZoneType
 		setTargetType(InstanceType.Playable); // default only playabale
 	}
 
-	public override void setParameter(string name, string value)
+	public override void setParameter(XmlZoneStatName name, string value)
 	{
-		if (name.equals("dmgHPSec"))
+		if (name == XmlZoneStatName.dmgHPSec)
 		{
 			_damageHPPerSec = int.Parse(value);
 		}
-		else if (name.equals("dmgMPSec"))
+		else if (name == XmlZoneStatName.dmgMPSec)
 		{
 			_damageMPPerSec = int.Parse(value);
 		}
-		else if (name.equals("castleId"))
+		else if (name == XmlZoneStatName.castleId)
 		{
 			_castleId = int.Parse(value);
 		}
-		else if (name.equalsIgnoreCase("initialDelay"))
+		else if (name == XmlZoneStatName.initialDelay)
 		{
 			_startTask = int.Parse(value);
 		}
-		else if (name.equalsIgnoreCase("reuse"))
+		else if (name == XmlZoneStatName.reuse)
 		{
 			_reuseTask = int.Parse(value);
 		}

@@ -1,7 +1,13 @@
-﻿namespace L2Dn.GameServer.Model;
+﻿using System.Collections.Immutable;
+using L2Dn.Geometry;
+using NLog;
+
+namespace L2Dn.GameServer.Model;
 
 public static class WorldMap
 {
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(WorldMap));
+
     // Map tile is the square area corresponding to one map file in the client, for example 26_16.unr.
     // The tiles are arranged in a grid, with the 0,0 world coordinate at the left top corner of the tile 20,18.
     // The tile numbers are counted with the X axis increasing to the right and the Y axis increasing downwards.
@@ -35,4 +41,35 @@ public static class WorldMap
     public const int GraciaMaxX = -166168;
     public const int GraciaMinZ = -895;
     public const int GraciaMaxZ = 6105;
+
+    public static Location2D WorldToRegion(Location2D worldLocation)
+    {
+        Location2D clampedLocation = new Location2D(Math.Clamp(worldLocation.X, WorldXMin, WorldXMax),
+            Math.Clamp(worldLocation.Y, WorldYMin, WorldYMax));
+
+        if (clampedLocation != worldLocation)
+            _logger.Warn($"Location {worldLocation} is out of bounds. Clamped to {clampedLocation}.");
+
+        return new Location2D((clampedLocation.X - WorldXMin) / RegionSize,
+            (clampedLocation.Y - WorldYMin) / RegionSize);
+    }
+
+    public static Rectangle GetRegionRectangle(Location2D regionLocation)
+    {
+        Location2D clampedLocation = new Location2D(Math.Clamp(regionLocation.X, 0, RegionCountX - 1),
+            Math.Clamp(regionLocation.Y, 0, RegionCountY - 1));
+
+        if (clampedLocation != regionLocation)
+            _logger.Warn($"Region index {regionLocation} is out of bounds. Clamped to {clampedLocation}.");
+
+        return new Rectangle(clampedLocation.X * RegionSize + WorldXMin, clampedLocation.Y * RegionSize + WorldYMin,
+            RegionSize, RegionSize);
+    }
+
+    public static ImmutableArray<ImmutableArray<T>> CreateRegionGrid<T>(Func<Location2D, T> factory)
+    {
+        return (from regionX in Enumerable.Range(0, RegionCountX)
+                select (from regionY in Enumerable.Range(0, RegionCountY)
+                        select factory(new Location2D(regionX, regionY))).ToImmutableArray()).ToImmutableArray();
+    }
 }

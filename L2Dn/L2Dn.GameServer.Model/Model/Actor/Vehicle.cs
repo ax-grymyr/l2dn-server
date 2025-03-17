@@ -399,7 +399,7 @@ public abstract class Vehicle: Creature
 			LOGGER.Error("Failed oustPlayers(): " + e);
 		}
 
-		ZoneRegion? oldZoneRegion = ZoneManager.getInstance().getRegion(Location.Location2D);
+		ZoneRegion? oldZoneRegion = ZoneManager.Instance.getRegion(Location.Location2D);
 
 		try
 		{

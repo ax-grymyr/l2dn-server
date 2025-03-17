@@ -6,15 +6,15 @@ namespace L2Dn.GameServer.Dto.ZoneForms;
 /// <summary>
 /// A primitive rectangular zone.
 /// </summary>
-public sealed class ZoneCuboid(int x1, int x2, int y1, int y2, int z1, int z2)
-    : ZoneForm(GetRectangle(x1, x2, y1, y2), z1, z2)
+public sealed class ZoneCuboid(Location2D point1, Location2D point2, int z1, int z2)
+    : ZoneForm(GetRectangle(point1, point2), z1, z2)
 {
-    private static Rectangle GetRectangle(int x1, int y1, int x2, int y2)
+    private static Rectangle GetRectangle(Location2D point1, Location2D point2)
     {
-        int minX = Math.Min(x1, x2);
-        int maxX = Math.Max(x1, x2);
-        int minY = Math.Min(y1, y2);
-        int maxY = Math.Max(y1, y2);
+        int minX = Math.Min(point1.X, point2.X);
+        int maxX = Math.Max(point1.X, point2.X);
+        int minY = Math.Min(point1.Y, point2.Y);
+        int maxY = Math.Max(point1.Y, point2.Y);
         return new Rectangle(minX, minY, maxX - minX, maxY - minY);
     }
 

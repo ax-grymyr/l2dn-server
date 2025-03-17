@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
@@ -9,26 +10,26 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A simple no restart zone
  * @author GKR
  */
-public class NoRestartZone(int id, ZoneForm form): ZoneType(id, form)
+public class NoRestartZone(int id, ZoneForm form): Zone(id, form)
 {
 	private TimeSpan _restartAllowedTime;
 	private TimeSpan _restartTime;
 
-    public override void setParameter(string name, string value)
+    public override void setParameter(XmlZoneStatName name, string value)
 	{
-		if (name.equalsIgnoreCase("default_enabled"))
+		if (name == XmlZoneStatName.default_enabled)
 		{
 			_enabled = bool.Parse(value);
 		}
-		else if (name.equalsIgnoreCase("restartAllowedTime"))
+		else if (name == XmlZoneStatName.restartAllowedTime)
 		{
 			_restartAllowedTime = TimeSpan.FromSeconds(int.Parse(value));
 		}
-		else if (name.equalsIgnoreCase("restartTime"))
+		else if (name == XmlZoneStatName.restartTime)
 		{
 			_restartTime = TimeSpan.FromSeconds(int.Parse(value));
 		}
-		else if (name.equalsIgnoreCase("instanceId"))
+		else if (name == XmlZoneStatName.instanceId)
 		{
 			// Do nothing.
 		}

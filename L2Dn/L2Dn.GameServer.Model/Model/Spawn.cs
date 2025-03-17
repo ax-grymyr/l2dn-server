@@ -354,7 +354,7 @@ public class Spawn : IIdentifiable, IHasLocation
 		}
 
 		// Check if npc is in water.
-		WaterZone? water = ZoneManager.getInstance().getZone<WaterZone>(newLocation);
+		WaterZone? water = ZoneManager.Instance.getZone<WaterZone>(newLocation);
 
 		// If random spawn system is enabled.
 		if (Config.RandomSpawns.ENABLE_RANDOM_MONSTER_SPAWNS && _location.Heading != -1 && npc.isMonster() &&

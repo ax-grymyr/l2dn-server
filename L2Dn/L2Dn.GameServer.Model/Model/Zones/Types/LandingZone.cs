@@ -7,7 +7,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A landing zone
  * @author Kerberos
  */
-public class LandingZone(int id, ZoneForm form): ZoneType(id, form)
+public class LandingZone(int id, ZoneForm form): Zone(id, form)
 {
     protected override void onEnter(Creature creature)
 	{

@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using Config = L2Dn.GameServer.Configuration.Config;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -9,15 +10,15 @@ namespace L2Dn.GameServer.Model.Zones.Types;
 /**
  * @author UnAfraid
  */
-public class SayuneZone(int id, ZoneForm form): ZoneType(id, form)
+public class SayuneZone(int id, ZoneForm form): Zone(id, form)
 {
 	private int _mapId = -1;
 
-    public override void setParameter(string name, string value)
+    public override void setParameter(XmlZoneStatName name, string value)
 	{
 		switch (name)
 		{
-			case "mapId":
+			case XmlZoneStatName.mapId:
 			{
 				_mapId = int.Parse(value);
 				break;

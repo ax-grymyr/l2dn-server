@@ -18,20 +18,20 @@
 		<node X="-113990" Y="-177851" />
 		<node X="-115606" Y="-177858" />
 	</zone>
-	<zone name="gm_prison" type="NoSummonFriendZone" shape="NPoly" minZ="-2992" maxZ="-2792">
+	<zone name="gm_prison_no_summon" type="NoSummonFriendZone" shape="NPoly" minZ="-2992" maxZ="-2792">
 		<node X="-116390" Y="-251581" />
 		<node X="-112756" Y="-251617" />
 		<node X="-112720" Y="-248199" />
 		<node X="-116354" Y="-248217" />
 	</zone>
-	<zone name="Hell_Bound_Island" type="NoSummonFriendZone" shape="NPoly" minZ="-15000" maxZ="15000">
+	<zone name="Hell_Bound_Island_no_summon" type="NoSummonFriendZone" shape="NPoly" minZ="-15000" maxZ="15000">
 		<node X="-47730" Y="228200" />
 		<node X="-48000" Y="287833" />
 		<node X="48000" Y="287833" />
 		<node X="48000" Y="228200" />
 		<node X="-10026" Y="228200" />
 	</zone>
-	<zone name="boss_area_valakas" type="NoSummonFriendZone" shape="NPoly" minZ="-3753" maxZ="32767">
+	<zone name="boss_area_valakas_no_summon" type="NoSummonFriendZone" shape="NPoly" minZ="-3753" maxZ="32767">
 		<node X="196710" Y="-130845" />
 		<node X="228895" Y="-130845" />
 		<node X="229126" Y="-96162" />

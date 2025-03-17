@@ -2,6 +2,7 @@ using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Sieges;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
@@ -10,14 +11,14 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * Tax zone type.
  * @author malyelfik
  */
-public class TaxZone(int id, ZoneForm form): ZoneType(id, form)
+public class TaxZone(int id, ZoneForm form): Zone(id, form)
 {
 	private int _domainId;
 	private Castle? _castle;
 
-    public override void setParameter(string name, string value)
+    public override void setParameter(XmlZoneStatName name, string value)
 	{
-		if (name.equalsIgnoreCase("domainId"))
+		if (name == XmlZoneStatName.domainId)
 		{
 			_domainId = int.Parse(value);
 		}

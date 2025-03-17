@@ -450,7 +450,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		else
 		{
 			decayMe();
-			ZoneRegion? region = ZoneManager.getInstance().getRegion(Location.Location2D);
+			ZoneRegion? region = ZoneManager.Instance.getRegion(Location.Location2D);
 			if (region != null)
 			{
 				region.removeFromZones(this);
@@ -1699,7 +1699,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			getAI().notifyEvent(CtrlEvent.EVT_DEAD);
 		}
 
-		ZoneManager.getInstance().getRegion(Location.Location2D)?.onDeath(this);
+		ZoneManager.Instance.getRegion(Location.Location2D)?.onDeath(this);
 
 		getAttackByList().clear();
 
@@ -1812,7 +1812,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 			// Start broadcast status
 			broadcastPacket(new RevivePacket(this));
-			ZoneManager.getInstance().getRegion(Location.Location2D)?.onRevive(this);
+			ZoneManager.Instance.getRegion(Location.Location2D)?.onRevive(this);
 		}
 		else
 		{
@@ -3228,7 +3228,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		_lastZoneValidateLocation = Location.Location3D;
 
-		ZoneRegion? region = ZoneManager.getInstance().getRegion(Location.Location2D);
+		ZoneRegion? region = ZoneManager.Instance.getRegion(Location.Location2D);
 		if (region != null)
 		{
 			region.revalidateZones(this);
@@ -5450,8 +5450,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return;
 		}
 
-		ZoneRegion? oldZoneRegion = ZoneManager.getInstance().getRegion(Location.Location2D);
-		ZoneRegion? newZoneRegion = ZoneManager.getInstance().getRegion(new Location2D(newX, newY));
+		ZoneRegion? oldZoneRegion = ZoneManager.Instance.getRegion(Location.Location2D);
+		ZoneRegion? newZoneRegion = ZoneManager.Instance.getRegion(new Location2D(newX, newY));
 
 		// Mobius: Prevent moving to nonexistent regions.
 		if (newZoneRegion == null)

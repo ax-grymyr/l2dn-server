@@ -21,7 +21,7 @@ namespace L2Dn.GameServer.InstanceManagers;
  * Map Region Manager.
  * @author Nyaran
  */
-public sealed class MapRegionManager: DataReaderBase
+public sealed class MapRegionManager
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(MapRegionManager));
 
@@ -222,7 +222,7 @@ public sealed class MapRegionManager: DataReaderBase
 	{
 		try
 		{
-			RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(player.Location.Location3D);
+			RespawnZone? zone = ZoneManager.Instance.getZone<RespawnZone>(player.Location.Location3D);
 			if (zone != null)
             {
                 string? respawnPoint = zone.getRespawnPoint(player);
@@ -277,7 +277,7 @@ public sealed class MapRegionManager: DataReaderBase
 	{
 		try
 		{
-			RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(creature.Location.Location3D);
+			RespawnZone? zone = ZoneManager.Instance.getZone<RespawnZone>(creature.Location.Location3D);
 			if (zone != null)
 			{
                 string? respawnPoint = zone.getRespawnPoint((Player)creature);

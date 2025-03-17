@@ -198,10 +198,10 @@ public static class Broadcast
 	 * @param packets : The packets to send.
 	 */
 	public static PacketSendUtil toAllPlayersInZoneType<TZone>()
-		where TZone: ZoneType
+		where TZone: Zone
 	{
 		IEnumerable<Creature> creatures =
-			ZoneManager.getInstance().getAllZones<TZone>().SelectMany(z => z.getCharactersInside());
+			ZoneManager.Instance.getAllZones<TZone>().SelectMany(z => z.getCharactersInside());
 
 		return new PacketSendUtil(creatures);
 	}

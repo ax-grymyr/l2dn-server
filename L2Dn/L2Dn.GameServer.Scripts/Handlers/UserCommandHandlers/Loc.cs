@@ -21,7 +21,7 @@ public class Loc: IUserCommandHandler
 
     public bool useUserCommand(int id, Player player)
     {
-        RespawnZone? zone = ZoneManager.getInstance().getZone<RespawnZone>(player.Location.Location3D);
+        RespawnZone? zone = ZoneManager.Instance.getZone<RespawnZone>(player.Location.Location3D);
         MapRegion? restartRegion = null;
         if (zone != null)
         {

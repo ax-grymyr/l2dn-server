@@ -9,7 +9,7 @@ public class AbstractZoneSettings
     /**
      * Clear the Zone settings.
      */
-    public virtual void clear()
+    public virtual void Clear()
     {
     }
 }

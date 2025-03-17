@@ -7,7 +7,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * The Monster Derby Track Zone
  * @author durgus
  */
-public class DerbyTrackZone(int id, ZoneForm form): ZoneType(id, form)
+public class DerbyTrackZone(int id, ZoneForm form): Zone(id, form)
 {
     protected override void onEnter(Creature creature)
 	{

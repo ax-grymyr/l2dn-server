@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
@@ -17,9 +18,9 @@ public class ResidenceHallTeleportZone(int id, ZoneForm form): ResidenceTeleport
 	private int _residenceZoneId;
 	private ScheduledFuture? _teleTask;
 
-    public override void setParameter(string name, string value)
+    public override void setParameter(XmlZoneStatName name, string value)
 	{
-		if (name.equals("residenceZoneId"))
+		if (name == XmlZoneStatName.residenceZoneId)
 		{
 			_residenceZoneId = int.Parse(value);
 		}

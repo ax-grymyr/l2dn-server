@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.StaticData.Xml.AccessLevels;
+using L2Dn.GameServer.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.StaticData;
@@ -22,9 +23,9 @@ public sealed class AccessLevelData
     {
     }
 
-    internal void Load()
+    public void Load()
     {
-        XmlAccessLevelList document = XmlFileReader.LoadConfigXmlDocument<XmlAccessLevelList>("AccessLevels.xml");
+        XmlAccessLevelList document = XmlLoader.LoadConfigXmlDocument<XmlAccessLevelList>("AccessLevels.xml");
 
         _accessLevels = document.AccessLevels.Select(xmlAccessLevel => new AccessLevel(xmlAccessLevel)).
             ToFrozenDictionary(level => level.Level);

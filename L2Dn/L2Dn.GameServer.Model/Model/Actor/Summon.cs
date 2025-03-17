@@ -437,7 +437,7 @@ public abstract class Summon: Playable
 				}
 			}
 
-			ZoneRegion? oldRegion = ZoneManager.getInstance().getRegion(Location.Location2D);
+			ZoneRegion? oldRegion = ZoneManager.Instance.getRegion(Location.Location2D);
 			decayMe();
 			oldRegion?.removeFromZones(this);
 

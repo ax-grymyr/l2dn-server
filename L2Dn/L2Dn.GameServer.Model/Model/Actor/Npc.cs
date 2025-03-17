@@ -484,7 +484,7 @@ public class Npc: Creature
 	{
 		if (getId() == 33360) // Provisional Hall Manager
 		{
-			foreach (ZoneType zone in ZoneManager.getInstance().getZones(Location.Location3D))
+			foreach (Zone zone in ZoneManager.Instance.getZones(Location.Location3D))
 			{
 				if (zone is ClanHallZone)
 				{
@@ -1132,7 +1132,7 @@ public class Npc: Creature
 			getSkillChannelized().abortChannelization();
 		}
 
-		ZoneManager.getInstance().getRegion(Location.Location2D)?.removeFromZones(this);
+		ZoneManager.Instance.getRegion(Location.Location2D)?.removeFromZones(this);
 
 		return base.deleteMe();
 	}

@@ -7,7 +7,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * Zone where store is not allowed.
  * @author fordfrog
  */
-public class NoStoreZone(int id, ZoneForm form): ZoneType(id, form)
+public class NoStoreZone(int id, ZoneForm form): Zone(id, form)
 {
     protected override void onEnter(Creature creature)
 	{

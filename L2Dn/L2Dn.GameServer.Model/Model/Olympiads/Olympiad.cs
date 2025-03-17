@@ -775,7 +775,7 @@ public class Olympiad
 
 	public bool playerInStadia(Player player)
 	{
-		return ZoneManager.getInstance().getOlympiadStadium(player) != null;
+		return ZoneManager.Instance.getOlympiadStadium(player) != null;
 	}
 
 	/**

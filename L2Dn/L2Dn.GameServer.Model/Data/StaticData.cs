@@ -25,8 +25,6 @@ public static class StaticData
         IdManager.getInstance();
 
         World.getInstance();
-        MapRegionManager.getInstance();
-        ZoneManager.getInstance();
         DoorData.getInstance();
         FenceData.getInstance();
         AnnouncementsTable.getInstance();

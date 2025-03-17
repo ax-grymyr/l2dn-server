@@ -4,6 +4,7 @@ using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
@@ -12,24 +13,24 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * another type of zone where your speed is changed
  * @author kerberos, Pandragon
  */
-public class SwampZone(int id, ZoneForm form): ZoneType(id, form)
+public class SwampZone(int id, ZoneForm form): Zone(id, form)
 {
     private double _moveBonus = 0.5; // Setup default speed reduce (in %)
     private int _castleId; // no castle by default
     private Castle? _castle;
     private int _eventId; // no event by default
 
-    public override void setParameter(string name, string value)
+    public override void setParameter(XmlZoneStatName name, string value)
     {
-        if (name.equals("move_bonus"))
+        if (name == XmlZoneStatName.move_bonus)
         {
             _moveBonus = double.Parse(value, CultureInfo.InvariantCulture);
         }
-        else if (name.equals("castleId"))
+        else if (name == XmlZoneStatName.castleId)
         {
             _castleId = int.Parse(value);
         }
-        else if (name.equals("eventId"))
+        else if (name == XmlZoneStatName.eventId)
         {
             _eventId = int.Parse(value);
         }

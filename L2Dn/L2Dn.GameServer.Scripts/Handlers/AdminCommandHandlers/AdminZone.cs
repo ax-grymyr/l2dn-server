@@ -66,11 +66,11 @@ public class AdminZone: IAdminCommandHandler
 			string next = st.nextToken();
 			if (next.equalsIgnoreCase("all"))
 			{
-				foreach (ZoneType zone in ZoneManager.getInstance().getZones(activeChar.Location.Location3D))
+				foreach (Zone zone in ZoneManager.Instance.getZones(activeChar.Location.Location3D))
 				{
 					zone.visualizeZone(activeChar.getZ());
 				}
-				foreach (SpawnTerritory territory in ZoneManager.getInstance().getSpawnTerritories(activeChar))
+				foreach (SpawnTerritory territory in ZoneManager.Instance.getSpawnTerritories(activeChar))
 				{
 					territory.visualizeZone(activeChar.getZ());
 				}
@@ -79,12 +79,12 @@ public class AdminZone: IAdminCommandHandler
 			else
 			{
 				int zoneId = int.Parse(next);
-				ZoneManager.getInstance().getZoneById(zoneId)?.visualizeZone(activeChar.getZ());
+				ZoneManager.Instance.getZoneById(zoneId)?.visualizeZone(activeChar.getZ());
 			}
 		}
 		else if (actualCommand.equalsIgnoreCase("admin_zone_visual_clear"))
 		{
-			ZoneManager.getInstance().clearDebugItems();
+			ZoneManager.Instance.clearDebugItems();
 			showHtml(activeChar);
 		}
 		return true;
@@ -112,7 +112,7 @@ public class AdminZone: IAdminCommandHandler
 		htmlContent.Replace("%TAX%", activeChar.isInsideZone(ZoneId.TAX) ? "<font color=\"LEVEL\">YES</font>" : "NO");
 
 		StringBuilder zones = new StringBuilder(100);
-		foreach (ZoneType zone in ZoneManager.getInstance().getZones(activeChar.Location.Location3D))
+		foreach (Zone zone in ZoneManager.Instance.getZones(activeChar.Location.Location3D))
 		{
 			if (zone.getName() != null)
 			{
@@ -131,7 +131,7 @@ public class AdminZone: IAdminCommandHandler
 			}
 			zones.Append(" ");
 		}
-		foreach (SpawnTerritory territory in ZoneManager.getInstance().getSpawnTerritories(activeChar))
+		foreach (SpawnTerritory territory in ZoneManager.Instance.getSpawnTerritories(activeChar))
 		{
 			zones.Append(territory.getName());
 			zones.Append("<br1>");

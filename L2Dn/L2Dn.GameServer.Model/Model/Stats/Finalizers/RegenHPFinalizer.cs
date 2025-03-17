@@ -44,7 +44,7 @@ public class RegenHPFinalizer: StatFunction
             Clan? clan = player.getClan();
 			if (player.isInsideZone(ZoneId.CLAN_HALL) && clan != null && clan.getHideoutId() > 0)
 			{
-				ClanHallZone? zone = ZoneManager.getInstance().getZone<ClanHallZone>(player.Location.Location3D);
+				ClanHallZone? zone = ZoneManager.Instance.getZone<ClanHallZone>(player.Location.Location3D);
 				int posChIndex = zone == null ? -1 : zone.getResidenceId();
 				int clanHallIndex = clan.getHideoutId();
 				if (clanHallIndex > 0 && clanHallIndex == posChIndex)
@@ -63,7 +63,7 @@ public class RegenHPFinalizer: StatFunction
 
 			if (player.isInsideZone(ZoneId.CASTLE) && clan != null && clan.getCastleId() > 0)
 			{
-				CastleZone? zone = ZoneManager.getInstance().getZone<CastleZone>(player.Location.Location3D);
+				CastleZone? zone = ZoneManager.Instance.getZone<CastleZone>(player.Location.Location3D);
 				int posCastleIndex = zone == null ? -1 : zone.getResidenceId();
 				int? castleIndex = clan.getCastleId();
 				if (castleIndex > 0 && castleIndex == posCastleIndex)
@@ -82,7 +82,7 @@ public class RegenHPFinalizer: StatFunction
 
 			if (player.isInsideZone(ZoneId.FORT) && clan != null && clan.getFortId() > 0)
 			{
-				FortZone? zone = ZoneManager.getInstance().getZone<FortZone>(player.Location.Location3D);
+				FortZone? zone = ZoneManager.Instance.getZone<FortZone>(player.Location.Location3D);
 				int posFortIndex = zone == null ? -1 : zone.getResidenceId();
 				int? fortIndex = clan.getFortId();
 				if (fortIndex > 0 && fortIndex == posFortIndex)
@@ -102,7 +102,7 @@ public class RegenHPFinalizer: StatFunction
 			// Mother Tree effect is calculated at last
 			if (player.isInsideZone(ZoneId.MOTHER_TREE))
 			{
-				MotherTreeZone? zone = ZoneManager.getInstance().getZone<MotherTreeZone>(player.Location.Location3D);
+				MotherTreeZone? zone = ZoneManager.Instance.getZone<MotherTreeZone>(player.Location.Location3D);
 				int hpBonus = zone == null ? 0 : zone.getHpRegenBonus();
 				baseValue += hpBonus;
 			}

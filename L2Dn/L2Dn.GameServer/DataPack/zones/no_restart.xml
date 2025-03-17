@@ -340,7 +340,7 @@
 	</zone>
 	
 	<!-- Classic: The Kamael zone -->
-	<zone name="anakim" id="70052" type="NoRestartZone" shape="NPoly" minZ="-5000" maxZ="-5600">
+	<zone name="anakim_no_restart" id="70052" type="NoRestartZone" shape="NPoly" minZ="-5000" maxZ="-5600">
 		<stat name="restartTime" val="1800" />
 		<stat name="restartAllowedTime" val="600" />
 		<node X="-5760" Y="19420" />
@@ -348,7 +348,7 @@
 		<node X="-7590" Y="17586" />
 		<node X="-5760" Y="17586" />
 	</zone>
-	<zone name="lilith" id="70053" type="NoRestartZone" shape="NPoly" minZ="-5400" maxZ="-5600">
+	<zone name="lilith_no_restart" id="70053" type="NoRestartZone" shape="NPoly" minZ="-5400" maxZ="-5600">
 		<stat name="restartTime" val="1800" />
 		<stat name="restartAllowedTime" val="600" />
 		<node X="185996" Y="-10519" />

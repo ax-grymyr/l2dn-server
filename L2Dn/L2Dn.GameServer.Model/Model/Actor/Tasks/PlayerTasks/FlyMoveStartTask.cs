@@ -12,9 +12,9 @@ namespace L2Dn.GameServer.Model.Actor.Tasks.PlayerTasks;
 public class FlyMoveStartTask: Runnable
 {
 	private readonly Player _player;
-	private readonly ZoneType _zone;
+	private readonly Zone _zone;
 
-	public FlyMoveStartTask(ZoneType zone, Player player)
+	public FlyMoveStartTask(Zone zone, Player player)
 	{
 		ArgumentNullException.ThrowIfNull(zone);
 		ArgumentNullException.ThrowIfNull(player);

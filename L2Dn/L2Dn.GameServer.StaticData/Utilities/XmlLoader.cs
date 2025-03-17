@@ -1,18 +1,19 @@
 ﻿using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.StaticData.Xml;
 using L2Dn.Utilities;
 
-namespace L2Dn.GameServer.StaticData;
+namespace L2Dn.GameServer.Utilities;
 
-internal static class XmlFileReader
+public static class XmlLoader
 {
-    internal static T LoadConfigXmlDocument<T>(string relativeFilePath)
+    public static T LoadConfigXmlDocument<T>(string relativeFilePath)
         where T: class
     {
         string filePath = Path.Combine(ServerConfig.Instance.DataPack.ConfigPath, relativeFilePath);
         return XmlUtil.Deserialize<T>(filePath);
     }
 
-    internal static IEnumerable<T> LoadXmlDocuments<T>(string relativeDirPath, bool includeSubDirectories = false)
+    public static IEnumerable<T> LoadXmlDocuments<T>(string relativeDirPath, bool includeSubDirectories = false)
         where T: class
     {
         string directoryPath = Path.Combine(ServerConfig.Instance.DataPack.Path, relativeDirPath);
@@ -25,6 +26,9 @@ internal static class XmlFileReader
         foreach (string filePath in files)
         {
             T document = XmlUtil.Deserialize<T>(filePath);
+            if (document is IXmlRoot hasFilePath)
+                hasFilePath.FilePath = filePath;
+
             yield return document;
         }
     }

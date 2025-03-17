@@ -2,6 +2,7 @@ using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
@@ -10,13 +11,13 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A no landing zone
  * @author durgus
  */
-public class NoLandingZone(int id, ZoneForm form): ZoneType(id, form)
+public class NoLandingZone(int id, ZoneForm form): Zone(id, form)
 {
 	private int _dismountDelay = 5;
 
-    public override void setParameter(string name, string value)
+    public override void setParameter(XmlZoneStatName name, string value)
 	{
-		if (name.equals("dismountDelay"))
+		if (name == XmlZoneStatName.dismountDelay)
 		{
 			_dismountDelay = int.Parse(value);
 		}

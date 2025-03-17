@@ -3,6 +3,7 @@ using System.Collections.Immutable;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.StaticData;
+using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Xml;
 using NLog;
 

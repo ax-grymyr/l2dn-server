@@ -1,5 +1,6 @@
 using System.Collections.Frozen;
 using L2Dn.GameServer.StaticData.Xml.SecondaryAuth;
+using L2Dn.GameServer.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.StaticData;
@@ -20,9 +21,9 @@ public sealed class SecondaryAuthData
     {
     }
 
-    internal void Load()
+    public void Load()
     {
-        XmlSecondaryAuth document = XmlFileReader.LoadConfigXmlDocument<XmlSecondaryAuth>("SecondaryAuth.xml");
+        XmlSecondaryAuth document = XmlLoader.LoadConfigXmlDocument<XmlSecondaryAuth>("SecondaryAuth.xml");
         _enabled = document.Enabled;
         _maxAttempts = document.MaxAttempts;
         _banTime = TimeSpan.FromMinutes(document.BanTime);

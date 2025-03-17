@@ -1,6 +1,7 @@
 using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
@@ -8,7 +9,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
 /**
  * @author Sdw
  */
-public class TeleportZone: ZoneType
+public class TeleportZone: Zone
 {
 	private int _x = -1;
 	private int _y = -1;
@@ -19,21 +20,21 @@ public class TeleportZone: ZoneType
         setTargetType(InstanceType.Player); // Default only player.
     }
 
-    public override void setParameter(string name, string value)
+    public override void setParameter(XmlZoneStatName name, string value)
 	{
 		switch (name)
 		{
-			case "oustX":
+			case XmlZoneStatName.oustX:
 			{
 				_x = int.Parse(value);
 				break;
 			}
-			case "oustY":
+			case XmlZoneStatName.oustY:
 			{
 				_y = int.Parse(value);
 				break;
 			}
-			case "oustZ":
+			case XmlZoneStatName.oustZ:
 			{
 				_z = int.Parse(value);
 				break;

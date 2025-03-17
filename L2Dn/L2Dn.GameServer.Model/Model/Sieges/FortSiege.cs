@@ -40,8 +40,8 @@ public class FortSiege: Siegable
 
 	private static SpawnTemplate? SPAWN_PREPARATION_NPCS;
 
-    private static readonly ZoneType FORTRESS_ZONE =
-        ZoneManager.getInstance().getZoneByName("orc_fortress_general_area") ??
+    private static readonly Zone FORTRESS_ZONE =
+        ZoneManager.Instance.getZoneByName("orc_fortress_general_area") ??
         throw new InvalidOperationException("orc_fortress_general_area zone not defined");
 
 	private ScheduledFuture? _siegeGregSentryTask;

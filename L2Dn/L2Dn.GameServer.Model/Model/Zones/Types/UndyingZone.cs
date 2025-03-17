@@ -7,7 +7,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * An Undying Zone
  * @author UnAfraid
  */
-public class UndyingZone(int id, ZoneForm form): ZoneType(id, form)
+public class UndyingZone(int id, ZoneForm form): Zone(id, form)
 {
     protected override void onEnter(Creature creature)
 	{

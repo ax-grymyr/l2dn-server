@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
@@ -12,9 +13,9 @@ public sealed class SiegableHallZone(int id, ZoneForm form): ClanHallZone(id, fo
 {
 	private ImmutableArray<Location3D> _challengerLocations = ImmutableArray<Location3D>.Empty;
 
-	public override void parseLoc(Location3D location, string type)
+	public override void parseLoc(Location3D location, XmlZoneSpawnType type)
 	{
-		if (string.Equals(type, "challenger"))
+		if (type == XmlZoneSpawnType.challenger)
 		{
 			_challengerLocations = _challengerLocations.Add(location);
 		}

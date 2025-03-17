@@ -2,6 +2,7 @@ using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
@@ -10,28 +11,28 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A mother-trees zone Basic type zone for Hp, MP regen
  * @author durgus
  */
-public class MotherTreeZone(int id, ZoneForm form): ZoneType(id, form)
+public class MotherTreeZone(int id, ZoneForm form): Zone(id, form)
 {
 	private SystemMessageId _enterMsg;
 	private SystemMessageId _leaveMsg;
 	private int _mpRegen;
 	private int _hpRegen;
 
-    public override void setParameter(string name, string value)
+    public override void setParameter(XmlZoneStatName name, string value)
 	{
-		if (name.equals("enterMsgId"))
+		if (name == XmlZoneStatName.enterMsgId)
 		{
 			_enterMsg = (SystemMessageId)int.Parse(value);
 		}
-		else if (name.equals("leaveMsgId"))
+		else if (name == XmlZoneStatName.leaveMsgId)
 		{
 			_leaveMsg = (SystemMessageId)int.Parse(value);
 		}
-		else if (name.equals("MpRegenBonus"))
+		else if (name == XmlZoneStatName.MpRegenBonus)
 		{
 			_mpRegen = int.Parse(value);
 		}
-		else if (name.equals("HpRegenBonus"))
+		else if (name == XmlZoneStatName.HpRegenBonus)
 		{
 			_hpRegen = int.Parse(value);
 		}

@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
 /**
  * @author Mobius
  */
-public class TimedHuntingZone(int id, ZoneForm form): ZoneType(id, form)
+public class TimedHuntingZone(int id, ZoneForm form): Zone(id, form)
 {
     protected override void onEnter(Creature creature)
 	{

@@ -47,7 +47,7 @@ public class Ground: ITargetTypeHandler
                     return null;
                 }
 
-                ZoneRegion? zoneRegion = ZoneManager.getInstance().getRegion(creature.Location.Location2D);
+                ZoneRegion? zoneRegion = ZoneManager.Instance.getRegion(creature.Location.Location2D);
                 if (skill.isBad() && !creature.isInInstance() && zoneRegion != null &&
                     !zoneRegion.checkEffectRangeInsidePeaceZone(skill,
                         worldPosition.Value.X, worldPosition.Value.Y, worldPosition.Value.Z))

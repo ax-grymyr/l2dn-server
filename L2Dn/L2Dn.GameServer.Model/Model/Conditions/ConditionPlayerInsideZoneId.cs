@@ -17,7 +17,7 @@ public sealed class ConditionPlayerInsideZoneId(Set<int> zones): Condition
         if (effector.getActingPlayer() == null)
             return false;
 
-        foreach (ZoneType zone in ZoneManager.getInstance().getZones(effector.Location.Location3D))
+        foreach (Zone zone in ZoneManager.Instance.getZones(effector.Location.Location3D))
         {
             if (zones.Contains(zone.getId()))
                 return true;

@@ -4,7 +4,7 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
-public class WaterZone(int id, ZoneForm form): ZoneType(id, form)
+public class WaterZone(int id, ZoneForm form): Zone(id, form)
 {
     protected override void onEnter(Creature creature)
     {

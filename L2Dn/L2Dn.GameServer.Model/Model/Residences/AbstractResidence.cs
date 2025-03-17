@@ -331,7 +331,7 @@ public abstract class AbstractResidence: INamable
     protected static ResidenceZone FindResidenceZone<T>(int residenceId)
         where T: ResidenceZone
     {
-        foreach (T zone in ZoneManager.getInstance().getAllZones<T>())
+        foreach (T zone in ZoneManager.Instance.getAllZones<T>())
         {
             if (zone.getResidenceId() == residenceId)
                 return zone;
@@ -342,7 +342,7 @@ public abstract class AbstractResidence: INamable
 
     protected static SiegeZone FindSiegeZone(int residenceId)
     {
-        foreach (SiegeZone zone in ZoneManager.getInstance().getAllZones<SiegeZone>())
+        foreach (SiegeZone zone in ZoneManager.Instance.getAllZones<SiegeZone>())
         {
             if (zone.getSiegeObjectId() == residenceId)
                 return zone;
@@ -353,7 +353,7 @@ public abstract class AbstractResidence: INamable
 
     protected static ResidenceTeleportZone FindResidenceTeleportZone(int residenceId)
     {
-        foreach (ResidenceTeleportZone zone in ZoneManager.getInstance().getAllZones<ResidenceTeleportZone>())
+        foreach (ResidenceTeleportZone zone in ZoneManager.Instance.getAllZones<ResidenceTeleportZone>())
         {
             if (zone.getResidenceId() == residenceId)
                 return zone;

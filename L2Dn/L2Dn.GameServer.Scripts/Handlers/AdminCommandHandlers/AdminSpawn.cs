@@ -198,7 +198,7 @@ public class AdminSpawn: IAdminCommandHandler
 			// Unload all scripts.
 			QuestManager.getInstance().unloadAllScripts();
 			// Unload all zones.
-			ZoneManager.getInstance().unload();
+			ZoneManager.Instance.Unload();
 			// Delete all spawns.
 			foreach (Npc npc in DbSpawnManager.getInstance().getNpcs())
             {
@@ -225,7 +225,7 @@ public class AdminSpawn: IAdminCommandHandler
 				}
 			}
 			// Reload.
-			ZoneManager.getInstance().reload();
+			ZoneManager.Instance.Reload();
 			QuestManager.getInstance().reloadAllScripts();
 			AdminData.getInstance().broadcastMessageToGMs("NPC unspawn completed!");
 		}
@@ -234,7 +234,7 @@ public class AdminSpawn: IAdminCommandHandler
 			// Unload all scripts.
 			QuestManager.getInstance().unloadAllScripts();
 			// Unload all zones.
-			ZoneManager.getInstance().unload();
+			ZoneManager.Instance.Unload();
 			// Delete all spawns.
 			foreach (Npc npc in DbSpawnManager.getInstance().getNpcs())
             {
@@ -263,7 +263,7 @@ public class AdminSpawn: IAdminCommandHandler
 			// Reload.
 			SpawnData.getInstance().init();
 			DbSpawnManager.getInstance().load();
-			ZoneManager.getInstance().reload();
+			ZoneManager.Instance.Reload();
 			QuestManager.getInstance().reloadAllScripts();
 			AdminData.getInstance().broadcastMessageToGMs("NPC respawn completed!");
 		}

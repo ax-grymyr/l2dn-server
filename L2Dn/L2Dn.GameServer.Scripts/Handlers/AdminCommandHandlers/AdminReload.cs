@@ -160,7 +160,7 @@ public class AdminReload: IAdminCommandHandler
 				}
 				case "zone":
 				{
-					ZoneManager.getInstance().reload();
+					ZoneManager.Instance.Reload();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Zones.");
 					break;
 				}

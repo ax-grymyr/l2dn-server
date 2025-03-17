@@ -134,7 +134,7 @@ public abstract class Playable: Creature
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other Player to inform
 		broadcastStatusUpdate();
 
-		ZoneManager.getInstance().getRegion(Location.Location2D)?.onDeath(this);
+		ZoneManager.Instance.getRegion(Location.Location2D)?.onDeath(this);
 
 		// Notify Quest of Playable's death
 		if (player != null && !player.isNotifyQuestOfDeathEmpty())

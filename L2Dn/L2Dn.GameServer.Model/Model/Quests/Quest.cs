@@ -890,7 +890,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param creature
 	 * @param zone
 	 */
-	public void notifyEnterZone(Creature creature, ZoneType zone)
+	public void notifyEnterZone(Creature creature, Zone zone)
 	{
 		Player? player = creature.getActingPlayer();
 		string? res = null;
@@ -916,7 +916,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param creature
 	 * @param zone
 	 */
-	public void notifyExitZone(Creature creature, ZoneType zone)
+	public void notifyExitZone(Creature creature, Zone zone)
 	{
 		Player? player = creature.getActingPlayer();
 		string? res = null;
@@ -1333,7 +1333,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param zone this parameter contains a reference to the zone.
 	 * @return
 	 */
-	public string? onEnterZone(Creature creature, ZoneType zone)
+	public string? onEnterZone(Creature creature, Zone zone)
 	{
 		return null;
 	}
@@ -1344,7 +1344,7 @@ public class Quest: AbstractScript, IIdentifiable
 	 * @param zone this parameter contains a reference to the zone.
 	 * @return
 	 */
-	public string? onExitZone(Creature creature, ZoneType zone)
+	public string? onExitZone(Creature creature, Zone zone)
 	{
 		return null;
 	}

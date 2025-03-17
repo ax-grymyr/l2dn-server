@@ -376,10 +376,10 @@ public sealed class Fishing
 		Location2D baitLocation = new(baitX, baitY);
 
 		// search for fishing zone
-		FishingZone? fishingZone = ZoneManager.getInstance().getZone<FishingZone>(_player.Location.Location3D);
+		FishingZone? fishingZone = ZoneManager.Instance.getZone<FishingZone>(_player.Location.Location3D);
 
 		// search for water zone
-		WaterZone? waterZone = ZoneManager.getInstance().getZone<WaterZone>(baitLocation);
+		WaterZone? waterZone = ZoneManager.Instance.getZone<WaterZone>(baitLocation);
 
 		int baitZ = computeBaitZ(_player, baitLocation, fishingZone, waterZone);
 		if (baitZ == int.MinValue)

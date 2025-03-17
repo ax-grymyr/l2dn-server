@@ -72,7 +72,7 @@
 		<race name="ELF" point="oracle_of_dusk" />
 		<race name="KAMAEL" point="oracle_of_dusk" />
 	</zone>
-	<zone name="gm_room_solo1" type="RespawnZone" shape="NPoly" minZ="-3049" maxZ="-2849">
+	<zone name="gm_room_solo1_respawn" type="RespawnZone" shape="NPoly" minZ="-3049" maxZ="-2849">
 		<node X="-116299" Y="-251426" />
 		<node X="-115745" Y="-251426" />
 		<node X="-115745" Y="-250840" />
@@ -84,7 +84,7 @@
 		<race name="ELF" point="gm_room_solo1" />
 		<race name="KAMAEL" point="gm_room_solo1" />
 	</zone>
-	<zone name="gm_room_solo2" type="RespawnZone" shape="NPoly" minZ="-3053" maxZ="-2853">
+	<zone name="gm_room_solo2_respawn" type="RespawnZone" shape="NPoly" minZ="-3053" maxZ="-2853">
 		<node X="-113350" Y="-251408" />
 		<node X="-112797" Y="-251407" />
 		<node X="-112798" Y="-250855" />
@@ -96,7 +96,7 @@
 		<race name="ELF" point="gm_room_solo2" />
 		<race name="KAMAEL" point="gm_room_solo2" />
 	</zone>
-	<zone name="gm_room" type="RespawnZone" shape="NPoly" minZ="-3050" maxZ="-2850">
+	<zone name="gm_room_respawn" type="RespawnZone" shape="NPoly" minZ="-3050" maxZ="-2850">
 		<node X="-115727" Y="-251652" />
 		<node X="-113365" Y="-251655" />
 		<node X="-113365" Y="-248191" />
@@ -731,7 +731,7 @@
 		<race name="DWARF" point="colosseum" />
 		<race name="KAMAEL" point="colosseum" />
 	</zone>
-	<zone name="colosseum_24_19" type="RespawnZone" shape="NPoly" minZ="-3468" maxZ="-3268">
+	<zone name="colosseum_24_19_2" type="RespawnZone" shape="NPoly" minZ="-3468" maxZ="-3268">
 		<node X="147779" Y="46196" />
 		<node X="148045" Y="46481" />
 		<node X="148047" Y="46958" />
@@ -745,7 +745,7 @@
 		<race name="DWARF" point="colosseum" />
 		<race name="KAMAEL" point="colosseum" />
 	</zone>
-	<zone name="colosseum_24_19" type="RespawnZone" shape="NPoly" minZ="-3472" maxZ="-3272">
+	<zone name="colosseum_24_19_3" type="RespawnZone" shape="NPoly" minZ="-3472" maxZ="-3272">
 		<node X="151221" Y="46184" />
 		<node X="151928" Y="46183" />
 		<node X="151925" Y="47248" />
@@ -1206,7 +1206,7 @@
 		<race name="ELF" point="ironcastle_inner_oasis" />
 		<race name="KAMAEL" point="ironcastle_inner_oasis" />
 	</zone>
-	<zone name="ironcastle_inner_oasis_19_26" type="RespawnZone" shape="NPoly" minZ="-15504" maxZ="-7904">
+	<zone name="ironcastle_inner_oasis_19_26_2" type="RespawnZone" shape="NPoly" minZ="-15504" maxZ="-7904">
 		<node X="-15081" Y="271397" />
 		<node X="-9858" Y="271401" />
 		<node X="-9809" Y="282115" />
@@ -1242,7 +1242,7 @@
 		<race name="ELF" point="southern_wasteland" />
 		<race name="KAMAEL" point="southern_wasteland" />
 	</zone>
-	<zone name="ironcastle_inner_oasis_20_25" type="RespawnZone" shape="NPoly" minZ="9500" maxZ="13000">
+	<zone name="ironcastle_inner_oasis_20_25_2" type="RespawnZone" shape="NPoly" minZ="9500" maxZ="13000">
 		<node X="14989" Y="234586" />
 		<node X="13398" Y="247981" />
 		<node X="26587" Y="245429" />

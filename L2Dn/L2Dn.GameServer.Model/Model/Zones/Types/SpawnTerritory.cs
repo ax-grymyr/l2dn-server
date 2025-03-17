@@ -2,44 +2,41 @@ using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.StaticData.Xml.Common;
+using L2Dn.GameServer.StaticData.Xml.Zones;
+using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
 
-/**
- * Just dummy zone, needs only for geometry calculations
- * @author GKR
- */
-public class SpawnTerritory
+/// <summary>
+/// Just dummy zone, needs only for geometry calculations.
+/// </summary>
+public sealed class SpawnTerritory(string name, ZoneForm territory)
 {
-	private readonly string _name;
-	private readonly ZoneForm _territory;
+    private readonly string _name = string.IsNullOrEmpty(name)
+        ? throw new ArgumentException("Spawn territory name cannot be empty") : name;
 
-	public SpawnTerritory(string name, ZoneForm territory)
-	{
-		_name = name;
-		_territory = territory;
-	}
+    public SpawnTerritory(XmlZone xmlZone): this(xmlZone.Name, ZoneForm.Create(xmlZone))
+    {
+    }
 
-	public string getName()
-	{
-		return _name;
-	}
+    public string getName() => _name;
 
-	public Location3D getRandomPoint()
-	{
-        Location3D point = _territory.GetRandomPoint();
+    public Location3D getRandomPoint()
+    {
+        Location3D point = territory.GetRandomPoint();
         return point with { Z = GeoEngine.getInstance().getHeight(point) };
-	}
+    }
 
-	public bool isInsideZone(int x, int y, int z)
-	{
-		return _territory.IsInsideZone(x, y, z);
-	}
+    public bool isInsideZone(int x, int y, int z)
+    {
+        return territory.IsInsideZone(x, y, z);
+    }
 
-	public void visualizeZone(int z)
-	{
-        foreach (Location3D point in _territory.GetVisualizationPoints(z))
-            ZoneManager.getInstance().DropDebugItem(Inventory.ADENA_ID, 1, point.X, point.Y, point.Z);
-	}
+    public void visualizeZone(int z)
+    {
+        foreach (Location3D point in territory.GetVisualizationPoints(z))
+            ZoneManager.Instance.DropDebugItem(Inventory.ADENA_ID, 1, point.X, point.Y, point.Z);
+    }
 }

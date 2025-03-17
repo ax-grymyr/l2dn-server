@@ -313,7 +313,7 @@
 		<node X="95166" Y="84573" />
 		<node X="96095" Y="84213" />
 	</zone>
-	<zone name="oren21_mb2220_ugoz01" type="NoRestartZone" shape="NPoly" minZ="-3758" maxZ="-2758">
+	<zone name="oren21_mb2220_ugoz01_no_restart" type="NoRestartZone" shape="NPoly" minZ="-3758" maxZ="-2758">
 		<stat name="restartTime" val="1800" />
 		<stat name="restartAllowedTime" val="1" />
 		<node X="97040" Y="84524" />

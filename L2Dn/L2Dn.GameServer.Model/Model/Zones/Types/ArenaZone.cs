@@ -8,7 +8,7 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A PVP Zone
  * @author durgus
  */
-public sealed class ArenaZone(int id, ZoneForm form): ZoneType(id, form)
+public sealed class ArenaZone(int id, ZoneForm form): Zone(id, form)
 {
     protected override void onEnter(Creature creature)
 	{

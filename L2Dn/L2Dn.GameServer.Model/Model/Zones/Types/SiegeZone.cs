@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using Config = L2Dn.GameServer.Configuration.Config;
@@ -19,13 +20,13 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * A siege zone
  * @author durgus
  */
-public class SiegeZone: ZoneType
+public class SiegeZone: Zone
 {
 	private const int DISMOUNT_DELAY = 5;
 
 	public SiegeZone(int id, ZoneForm form): base(id, form)
 	{
-		AbstractZoneSettings? settings = ZoneManager.getSettings(getName());
+		AbstractZoneSettings? settings = ZoneManager.Instance.getSettings(getName());
 		if (settings == null)
 			settings = new Settings();
 
@@ -68,7 +69,7 @@ public class SiegeZone: ZoneType
 			_isActiveSiege = value;
 		}
 
-		public override void clear()
+		public override void Clear()
 		{
 			_siegableId = -1;
 			_siege = null;
@@ -81,9 +82,9 @@ public class SiegeZone: ZoneType
 		return (Settings)base.getSettings();
 	}
 
-	public override void setParameter(string name, string value)
+	public override void setParameter(XmlZoneStatName name, string value)
 	{
-		if (name.equals("castleId"))
+		if (name == XmlZoneStatName.castleId)
 		{
 			if (getSettings().getSiegeableId() != -1)
 			{
@@ -91,7 +92,7 @@ public class SiegeZone: ZoneType
 			}
 			getSettings().setSiegeableId(int.Parse(value));
 		}
-		else if (name.equals("fortId"))
+		else if (name == XmlZoneStatName.fortId)
 		{
 			if (getSettings().getSiegeableId() != -1)
 			{

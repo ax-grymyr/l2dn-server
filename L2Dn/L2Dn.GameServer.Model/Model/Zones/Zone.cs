@@ -9,22 +9,20 @@ using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
-using L2Dn.Model;
-using L2Dn.Model.Enums;
 using L2Dn.Packets;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Zones;
 
-/**
- * Abstract base class for any zone type handles basic operations.
- * @author durgus
- */
-public abstract class ZoneType: IEventContainerProvider
+/// <summary>
+/// Abstract base class for any zone type handles basic operations.
+/// </summary>
+public abstract class Zone: IEventContainerProvider
 {
-	protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(ZoneType));
+	protected static readonly Logger Logger = LogManager.GetLogger(nameof(Zone));
 
 	private readonly int _id;
 	private readonly ZoneForm _zone;
@@ -47,7 +45,7 @@ public abstract class ZoneType: IEventContainerProvider
 	private int _instanceTemplateId;
 	private readonly Map<int, bool> _enabledInInstance = [];
 
-	protected ZoneType(int id, ZoneForm form)
+	protected Zone(int id, ZoneForm form)
 	{
 		_eventContainer = new EventContainer($"Zone template {id}", GlobalEvents.Global);
         _zone = form;
@@ -76,27 +74,27 @@ public abstract class ZoneType: IEventContainerProvider
 	 * @param name
 	 * @param value
 	 */
-	public virtual void setParameter(string name, string value)
+	public virtual void setParameter(XmlZoneStatName name, string value)
 	{
 		_checkAffected = true;
 
 		// Zone name
-		if (name.equals("name"))
+		if (name == XmlZoneStatName.name)
 		{
 			_name = value;
 		}
 		// Minimum level
-		else if (name.equals("affectedLvlMin"))
+		else if (name == XmlZoneStatName.affectedLvlMin)
 		{
 			_minLevel = int.Parse(value);
 		}
 		// Maximum level
-		else if (name.equals("affectedLvlMax"))
+		else if (name == XmlZoneStatName.affectedLvlMax)
 		{
 			_maxLevel = int.Parse(value);
 		}
 		// Affected Races
-		else if (name.equals("affectedRace"))
+		else if (name == XmlZoneStatName.affectedRace)
 		{
 			// Create a new array holding the affected race
 			if (_race == null)
@@ -116,7 +114,7 @@ public abstract class ZoneType: IEventContainerProvider
 			}
 		}
 		// Affected classes
-		else if (name.equals("affectedClassId"))
+		else if (name == XmlZoneStatName.affectedClassId)
 		{
 			// Create a new array holding the affected classIds
 			if (_class == null)
@@ -136,7 +134,7 @@ public abstract class ZoneType: IEventContainerProvider
 			}
 		}
 		// Affected class type
-		else if (name.equals("affectedClassType"))
+		else if (name == XmlZoneStatName.affectedClassType)
 		{
 			if (value.equals("Fighter"))
 			{
@@ -147,25 +145,25 @@ public abstract class ZoneType: IEventContainerProvider
 				_classType = 2;
 			}
 		}
-		else if (name.equals("targetClass"))
+		else if (name == XmlZoneStatName.targetClass)
 		{
 			_target = Enum.Parse<InstanceType>(value);
 		}
-		else if (name.equals("allowStore"))
+		else if (name == XmlZoneStatName.allowStore)
 		{
 			_allowStore = bool.Parse(value);
 		}
-		else if (name.equals("default_enabled"))
+		else if (name == XmlZoneStatName.default_enabled)
 		{
 			_enabled = bool.Parse(value);
 		}
-		else if (name.equals("instanceId"))
+		else if (name == XmlZoneStatName.instanceId)
 		{
 			_instanceTemplateId = int.Parse(value);
 		}
 		else
 		{
-			LOGGER.Info(GetType().Name + ": Unknown parameter - " + name + " in zone: " + _id);
+			Logger.Info(GetType().Name + ": Unknown parameter - " + name + " in zone: " + _id);
 		}
 	}
 
@@ -459,7 +457,7 @@ public abstract class ZoneType: IEventContainerProvider
 
 	public void setSettings(AbstractZoneSettings settings)
 	{
-		_settings?.clear();
+		_settings?.Clear();
 		_settings = settings;
 	}
 
@@ -557,7 +555,7 @@ public abstract class ZoneType: IEventContainerProvider
 	public void visualizeZone(int z)
 	{
         foreach (Location3D point in _zone.GetVisualizationPoints(z))
-            ZoneManager.getInstance().DropDebugItem(Inventory.ADENA_ID, 1, point.X, point.Y, point.Z);
+            ZoneManager.Instance.DropDebugItem(Inventory.ADENA_ID, 1, point.X, point.Y, point.Z);
 	}
 
 	public virtual void setEnabled(bool value)

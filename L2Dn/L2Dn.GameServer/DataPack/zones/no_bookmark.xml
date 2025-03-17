@@ -35,13 +35,6 @@
 		<node X="-112720" Y="-248199" />
 		<node X="-116354" Y="-248217" />
 	</zone>
-	<zone name="no_boormark_boss_area_valakas" type="ConditionZone" shape="NPoly" minZ="-3753" maxZ="32767">
-		<stat name="NoBookmark" val="true" />
-		<node X="196710" Y="-130845" />
-		<node X="228895" Y="-130845" />
-		<node X="229126" Y="-96162" />
-		<node X="196478" Y="-98187" />
-	</zone>
 	<zone name="no_boormark_boss_area_valakas2" type="ConditionZone" shape="NPoly" minZ="-3388" maxZ="-3188">
 		<stat name="NoBookmark" val="true" />
 		<node X="183634" Y="-115085" />
@@ -525,35 +518,35 @@
 		<node X="-66141" Y="-230048" />
 		<node X="-97916" Y="-229940" />
 	</zone>
-	<zone name="no_bookmark_olympiad_no_restart1" type="ConditionZone" shape="NPoly" minZ="-6940" maxZ="3060">
+	<zone name="no_bookmark_olympiad_no_restart2" type="ConditionZone" shape="NPoly" minZ="-6940" maxZ="3060">
 		<stat name="NoBookmark" val="true" />
 		<node X="-98125" Y="-228906" />
 		<node X="-66083" Y="-228726" />
 		<node X="-66058" Y="-197359" />
 		<node X="-97729" Y="-197424" />
 	</zone>
-	<zone name="no_bookmark_olympiad_no_restart1" type="ConditionZone" shape="NPoly" minZ="-6560" maxZ="3440">
+	<zone name="no_bookmark_olympiad_no_restart3" type="ConditionZone" shape="NPoly" minZ="-6560" maxZ="3440">
 		<stat name="NoBookmark" val="true" />
 		<node X="-130930" Y="-229015" />
 		<node X="-99357" Y="-228549" />
 		<node X="-98826" Y="-197290" />
 		<node X="-130890" Y="-197075" />
 	</zone>
-	<zone name="no_boormark_olympiad_no_restart1" type="ConditionZone" shape="NPoly" minZ="-5000" maxZ="32767">
+	<zone name="no_boormark_olympiad_no_restart4" type="ConditionZone" shape="NPoly" minZ="-5000" maxZ="32767">
 		<stat name="NoBookmark" val="true" />
 		<node X="-155585" Y="-253925" />
 		<node X="-139294" Y="-253916" />
 		<node X="-139298" Y="-237620" />
 		<node X="-155615" Y="-237611" />
 	</zone>
-	<zone name="no_boormark_olympiad_no_restart1" type="ConditionZone" shape="NPoly" minZ="-4968" maxZ="32767">
+	<zone name="no_boormark_olympiad_no_restart5" type="ConditionZone" shape="NPoly" minZ="-4968" maxZ="32767">
 		<stat name="NoBookmark" val="true" />
 		<node X="-155584" Y="-221153" />
 		<node X="-139293" Y="-221144" />
 		<node X="-139297" Y="-204849" />
 		<node X="-155614" Y="-204839" />
 	</zone>
-	<zone name="no_boormark_olympiad_no_restart1" type="ConditionZone" shape="NPoly" minZ="-4936" maxZ="32767">
+	<zone name="no_boormark_olympiad_no_restart6" type="ConditionZone" shape="NPoly" minZ="-4936" maxZ="32767">
 		<stat name="NoBookmark" val="true" />
 		<node X="-155577" Y="-188340" />
 		<node X="-139287" Y="-188331" />
@@ -7122,7 +7115,7 @@
 		<node X="-53359" Y="-82330" />
 		<node X="-54650" Y="-82341" />
 	</zone>
-	<zone name="no_bookmark_crataer_battle2" type="ConditionZone" shape="NPoly" minZ="-8375" maxZ="-8095">
+	<zone name="no_bookmark_crataer_battle1" type="ConditionZone" shape="NPoly" minZ="-8375" maxZ="-8095">
 		<stat name="NoBookmark" val="true" />
 		<node X="-86726" Y="-21076" />
 		<node X="-77193" Y="-21079" />
@@ -7143,14 +7136,14 @@
 		<node X="-43926" Y="-78026" />
 		<node X="-53311" Y="-77966" />
 	</zone>
-	<zone name="no_bookmark_cratae_no_restart3" type="ConditionZone" shape="NPoly" minZ="-8375" maxZ="-8095">
+	<zone name="no_bookmark_cratae_no_restart1" type="ConditionZone" shape="NPoly" minZ="-8375" maxZ="-8095">
 		<stat name="NoBookmark" val="true" />
 		<node X="-86726" Y="-21076" />
 		<node X="-77193" Y="-21079" />
 		<node X="-77321" Y="-11710" />
 		<node X="-86670" Y="-11714" />
 	</zone>
-	<zone name="no_bookmark_cratae_no_restart3" type="ConditionZone" shape="NPoly" minZ="-8483" maxZ="-8233">
+	<zone name="no_bookmark_cratae_no_restart2" type="ConditionZone" shape="NPoly" minZ="-8483" maxZ="-8233">
 		<stat name="NoBookmark" val="true" />
 		<node X="-86608" Y="-86506" />
 		<node X="-77222" Y="-86479" />
@@ -7677,7 +7670,7 @@
 		<node X="32680" Y="229658" />
 		<node X="91" Y="229635" />
 	</zone>
-	<zone name="no_bookmark_partisan_agit001" type="ConditionZone" shape="NPoly" minZ="-2104" maxZ="-1104">
+	<zone name="no_bookmark_partisan_agit002" type="ConditionZone" shape="NPoly" minZ="-2104" maxZ="-1104">
 		<stat name="NoBookmark" val="true" />
 		<node X="43048" Y="108832" />
 		<node X="43692" Y="108204" />
@@ -7789,7 +7782,7 @@
 		<node X="20414" Y="146292" />
 		<node X="19942" Y="146292" />
 	</zone>
-	<zone name="no_bookmark_devastated_castle" type="ConditionZone" shape="NPoly" minZ="-2514" maxZ="486">
+	<zone name="no_bookmark_devastated_castle2" type="ConditionZone" shape="NPoly" minZ="-2514" maxZ="486">
 		<stat name="NoBookmark" val="true" />
 		<node X="176793" Y="-19176" />
 		<node X="179892" Y="-19176" />
@@ -7988,24 +7981,14 @@
 		<node X="89409" Y="-142877" />
 		<node X="88613" Y="-142975" />
 	</zone>
-	<zone name="no_bookmark_rainbow_spring" type="ConditionZone" shape="NPoly" minZ="-1930" maxZ="-1680">
+	<zone name="no_bookmark_rainbow_spring2" type="ConditionZone" shape="NPoly" minZ="-1930" maxZ="-1680">
 		<stat name="NoBookmark" val="true" />
 		<node X="141073" Y="-125043" />
 		<node X="140574" Y="-124709" />
 		<node X="140933" Y="-124171" />
 		<node X="141432" Y="-124505" />
 	</zone>
-	<zone name="no_bookmark_beast_farm_guildhall" type="ConditionZone" shape="NPoly" minZ="-1407" maxZ="-907">
-		<stat name="NoBookmark" val="true" />
-		<node X="59997" Y="-96111" />
-		<node X="61969" Y="-92430" />
-		<node X="58303" Y="-89937" />
-		<node X="55402" Y="-91364" />
-		<node X="55254" Y="-92999" />
-		<node X="55344" Y="-93295" />
-		<node X="56049" Y="-94619" />
-	</zone>
-	<zone name="no_bookmark_fortress_of_restless" type="ConditionZone" shape="NPoly" minZ="305" maxZ="685">
+	<zone name="no_bookmark_fortress_of_restless2" type="ConditionZone" shape="NPoly" minZ="305" maxZ="685">
 		<stat name="NoBookmark" val="true" />
 		<node X="58672" Y="-30158" />
 		<node X="59478" Y="-29345" />

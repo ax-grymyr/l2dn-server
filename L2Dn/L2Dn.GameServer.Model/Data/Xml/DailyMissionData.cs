@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.StaticData;
+using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Model.Xml;
 using NLog;

@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
@@ -8,23 +9,23 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  * Zone where 'Build Headquarters' is allowed.
  * @author Gnacik
  */
-public class HqZone(int id, ZoneForm form): ZoneType(id, form)
+public class HqZone(int id, ZoneForm form): Zone(id, form)
 {
-    public override void setParameter(string name, string value)
+    public override void setParameter(XmlZoneStatName name, string value)
 	{
-		if ("castleId".equals(name))
+		if (XmlZoneStatName.castleId == name)
 		{
 			// TODO
 		}
-		else if ("fortId".equals(name))
+		else if (XmlZoneStatName.fortId == name)
 		{
 			// TODO
 		}
-		else if ("clanHallId".equals(name))
+		else if (XmlZoneStatName.clanHallId == name)
 		{
 			// TODO
 		}
-		else if ("territoryId".equals(name))
+		else if (XmlZoneStatName.territoryId == name)
 		{
 			// TODO
 		}

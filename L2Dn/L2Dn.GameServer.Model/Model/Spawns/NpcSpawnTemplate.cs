@@ -96,7 +96,7 @@ public class NpcSpawnTemplate: IParameterized<StatSet>
 			string zoneName = npc.Zone;
 			if (!string.IsNullOrEmpty(zoneName))
 			{
-				SpawnTerritory? zone = ZoneManager.getInstance().getSpawnTerritory(zoneName);
+				SpawnTerritory? zone = ZoneManager.Instance.getSpawnTerritory(zoneName);
                 _zone = zone ?? throw new InvalidOperationException("Spawn with non existing zone requested " + zoneName);
 			}
 		}

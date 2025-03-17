@@ -2,6 +2,7 @@
 using L2Dn.Extensions;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.StaticData.Xml.MapRegions;
+using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using NLog;
 
@@ -21,11 +22,11 @@ public sealed class MapRegionData
     {
     }
 
-    internal void Load()
+    public void Load()
     {
         Dictionary<string, MapRegion> regions = new Dictionary<string, MapRegion>();
 
-        XmlFileReader.LoadXmlDocuments<XmlMapRegionList>("mapregion").
+        XmlLoader.LoadXmlDocuments<XmlMapRegionList>("mapregion").
             Where(xmlRegionList => xmlRegionList.Enabled).
             SelectMany(xmlRegionList => xmlRegionList.Regions).
             Select(xmlRegion => new MapRegion(xmlRegion)).

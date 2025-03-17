@@ -1,23 +1,16 @@
-using System.Collections.Frozen;
-using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Packets;
-using NLog;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * Loads administrator access levels and commands.
- * @author UnAfraid
- */
+/// <summary>
+/// Manages GM players.
+/// </summary>
 public class AdminData
 {
-	private static readonly Logger _logger = LogManager.GetLogger(nameof(AdminData));
-
 	private static readonly Map<Player, bool> _gmList = new();
 
     private AdminData()
@@ -166,6 +159,6 @@ public class AdminData
 
 	private static class SingletonHolder
 	{
-		public static readonly AdminData INSTANCE = new AdminData();
+		public static readonly AdminData INSTANCE = new();
 	}
 }

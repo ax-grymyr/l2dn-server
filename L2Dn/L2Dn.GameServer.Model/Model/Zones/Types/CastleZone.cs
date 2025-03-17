@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Dto.ZoneForms;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Zones.Types;
@@ -10,9 +11,9 @@ namespace L2Dn.GameServer.Model.Zones.Types;
  */
 public class CastleZone(int id, ZoneForm form): ResidenceZone(id, form)
 {
-    public override void setParameter(string name, string value)
+    public override void setParameter(XmlZoneStatName name, string value)
 	{
-		if (name.equals("castleId"))
+		if (name == XmlZoneStatName.castleId)
 		{
 			setResidenceId(int.Parse(value));
 		}

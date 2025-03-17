@@ -1,6 +1,7 @@
 ﻿using System.Collections.Frozen;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.StaticData.Xml.AdminCommands;
+using L2Dn.GameServer.Utilities;
 using NLog;
 
 namespace L2Dn.GameServer.StaticData;
@@ -18,9 +19,9 @@ public sealed class AdminCommandData
     {
     }
 
-    internal void Load()
+    public void Load()
     {
-        XmlAdminCommandList document = XmlFileReader.LoadConfigXmlDocument<XmlAdminCommandList>("AdminCommands.xml");
+        XmlAdminCommandList document = XmlLoader.LoadConfigXmlDocument<XmlAdminCommandList>("AdminCommands.xml");
         _adminCommandAccessLevels = document.Commands.
             Select(xmlAdminCommand => new AdminCommandAccessLevel(xmlAdminCommand)).
             ToFrozenDictionary(command => command.Command);

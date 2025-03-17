@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Zones;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -26,7 +27,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 
 	public OlympiadStadiumZone(int id, ZoneForm form): base(id, form)
 	{
-		AbstractZoneSettings? settings = ZoneManager.getSettings(getName());
+		AbstractZoneSettings? settings = ZoneManager.Instance.getSettings(getName());
 		if (settings == null)
 		{
 			settings = new Settings();
@@ -46,7 +47,7 @@ public class OlympiadStadiumZone: ZoneRespawn
 			_task = task;
 		}
 
-		public override void clear()
+		public override void Clear()
 		{
 			_task = null;
 		}
@@ -57,9 +58,9 @@ public class OlympiadStadiumZone: ZoneRespawn
 		return (Settings)base.getSettings();
 	}
 
-	public override void parseLoc(Location3D location, string type)
+	public override void parseLoc(Location3D location, XmlZoneSpawnType type)
 	{
-		if (string.Equals(type, "spectatorSpawn"))
+		if (type == XmlZoneSpawnType.spectatorSpawn)
 		{
 			_spectatorLocations = _spectatorLocations.Add(location);
 		}

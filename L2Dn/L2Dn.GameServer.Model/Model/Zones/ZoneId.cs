@@ -1,9 +1,8 @@
 ﻿namespace L2Dn.GameServer.Model.Zones;
 
-/**
- * Zone Ids.
- * @author Zoey76
- */
+/// <summary>
+/// Zone Ids.
+/// </summary>
 public enum ZoneId
 {
     PVP,

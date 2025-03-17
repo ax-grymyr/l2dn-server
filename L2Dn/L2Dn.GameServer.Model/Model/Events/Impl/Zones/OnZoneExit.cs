@@ -10,9 +10,9 @@ namespace L2Dn.GameServer.Model.Events.Impl.Zones;
 public class OnZoneExit: EventBase
 {
 	private readonly Creature _creature;
-	private readonly ZoneType _zone;
+	private readonly Zone _zone;
 	
-	public OnZoneExit(Creature creature, ZoneType zone)
+	public OnZoneExit(Creature creature, Zone zone)
 	{
 		_creature = creature;
 		_zone = zone;
@@ -23,7 +23,7 @@ public class OnZoneExit: EventBase
 		return _creature;
 	}
 	
-	public ZoneType getZone()
+	public Zone getZone()
 	{
 		return _zone;
 	}
