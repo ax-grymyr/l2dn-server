@@ -45,11 +45,11 @@ public sealed class MapRegion
     public ImmutableArray<Location3D> BanishSpawnLocations { get; }
     public FrozenDictionary<Race, string> BannedRaces { get; }
 
-    public bool IsZoneInRegion(int tileX, int tileY)
+    public bool IsZoneInRegion(Location2D tileCoordinates)
     {
         foreach (Location2D tile in MapTiles)
         {
-            if (tile.X == tileX && tile.Y == tileY)
+            if (tile == tileCoordinates)
                 return true;
         }
 

@@ -42,7 +42,19 @@ public static class WorldMap
     public const int GraciaMinZ = -895;
     public const int GraciaMaxZ = 6105;
 
-    public static Location2D WorldToRegion(Location2D worldLocation)
+    public static Location2D WorldLocationToTileCoordinates(Location2D worldLocation)
+    {
+        Location2D clampedLocation = new Location2D(Math.Clamp(worldLocation.X, WorldXMin, WorldXMax),
+            Math.Clamp(worldLocation.Y, WorldYMin, WorldYMax));
+
+        if (clampedLocation != worldLocation)
+            _logger.Warn($"Location {worldLocation} is out of bounds. Clamped to {clampedLocation}.");
+
+        return new Location2D(clampedLocation.X / TileSize + TileZeroCoordX,
+            clampedLocation.Y / RegionSize + TileZeroCoordY);
+    }
+
+    public static Location2D WorldLocationToRegionCoordinates(Location2D worldLocation)
     {
         Location2D clampedLocation = new Location2D(Math.Clamp(worldLocation.X, WorldXMin, WorldXMax),
             Math.Clamp(worldLocation.Y, WorldYMin, WorldYMax));
@@ -54,16 +66,28 @@ public static class WorldMap
             (clampedLocation.Y - WorldYMin) / RegionSize);
     }
 
-    public static Rectangle GetRegionRectangle(Location2D regionLocation)
+    public static Rectangle GetTileRectangle(Location2D tileCoordinates)
     {
-        Location2D clampedLocation = new Location2D(Math.Clamp(regionLocation.X, 0, RegionCountX - 1),
-            Math.Clamp(regionLocation.Y, 0, RegionCountY - 1));
+        Location2D clampedCoordinates = new Location2D(Math.Clamp(tileCoordinates.X, TileXMin, TileXMax),
+            Math.Clamp(tileCoordinates.Y, TileYMin, TileYMax));
 
-        if (clampedLocation != regionLocation)
-            _logger.Warn($"Region index {regionLocation} is out of bounds. Clamped to {clampedLocation}.");
+        if (clampedCoordinates != tileCoordinates)
+            _logger.Warn($"Tile coordinates {tileCoordinates} is out of bounds. Clamped to {clampedCoordinates}.");
 
-        return new Rectangle(clampedLocation.X * RegionSize + WorldXMin, clampedLocation.Y * RegionSize + WorldYMin,
-            RegionSize, RegionSize);
+        return new Rectangle((clampedCoordinates.X - TileZeroCoordX) * TileSize,
+            (clampedCoordinates.Y - TileZeroCoordY) * TileSize, TileSize, TileSize);
+    }
+
+    public static Rectangle GetRegionRectangle(Location2D regionCoordinates)
+    {
+        Location2D clampedCoordinates = new Location2D(Math.Clamp(regionCoordinates.X, 0, RegionCountX - 1),
+            Math.Clamp(regionCoordinates.Y, 0, RegionCountY - 1));
+
+        if (clampedCoordinates != regionCoordinates)
+            _logger.Warn($"Region coordinates {regionCoordinates} is out of bounds. Clamped to {clampedCoordinates}.");
+
+        return new Rectangle(clampedCoordinates.X * RegionSize + WorldXMin,
+            clampedCoordinates.Y * RegionSize + WorldYMin, RegionSize, RegionSize);
     }
 
     public static ImmutableArray<ImmutableArray<T>> CreateRegionGrid<T>(Func<Location2D, T> factory)

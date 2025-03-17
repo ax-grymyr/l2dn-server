@@ -31,7 +31,7 @@ public sealed class MapRegionManager
 	 */
 	public MapRegion? getMapRegion(WorldObject obj)
 	{
-		return MapRegionData.Instance.GetMapRegion(obj.getX(), obj.getY());
+		return MapRegionData.Instance.GetMapRegion(new Location2D(obj.getX(), obj.getY()));
 	}
 
 	/**
@@ -40,7 +40,7 @@ public sealed class MapRegionManager
 	 */
 	public int getMapRegionLocId(WorldObject obj)
 	{
-		return MapRegionData.Instance.GetMapRegionLocId(obj.getX(), obj.getY());
+		return MapRegionData.Instance.GetMapRegionLocId(new Location2D(obj.getX(), obj.getY()));
 	}
 
 	/**

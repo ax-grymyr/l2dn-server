@@ -43,7 +43,13 @@ public class AdminZone: IAdminCommandHandler
 		if (actualCommand.equalsIgnoreCase("admin_zone_check"))
 		{
 			showHtml(activeChar);
-			BuilderUtil.sendSysMessage(activeChar, "MapRegion: x:" + MapRegionData.GetMapRegionX(activeChar.getX()) + " y:" + MapRegionData.GetMapRegionY(activeChar.getY()) + " (" + MapRegionManager.getInstance().getMapRegionLocId(activeChar) + ")");
+            Location2D tileCoordinates =
+                WorldMap.WorldLocationToTileCoordinates(new Location2D(activeChar.getX(), activeChar.getY()));
+
+            BuilderUtil.sendSysMessage(activeChar,
+                "MapRegion: x:" + tileCoordinates.X + " y:" + tileCoordinates.Y + " (" +
+                MapRegionManager.getInstance().getMapRegionLocId(activeChar) + ")");
+            
 			getGeoRegionXY(activeChar);
 			BuilderUtil.sendSysMessage(activeChar, "Closest Town: " + MapRegionManager.getInstance().getClosestTownName(activeChar));
 

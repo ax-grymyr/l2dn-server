@@ -27,7 +27,7 @@ public sealed class WorldRegionCollection
 
     public WorldRegion GetRegion(Location2D location)
     {
-        Location2D regionLocation = WorldMap.WorldToRegion(location);
+        Location2D regionLocation = WorldMap.WorldLocationToRegionCoordinates(location);
         return _worldRegions[regionLocation.X][regionLocation.Y];
     }
 }

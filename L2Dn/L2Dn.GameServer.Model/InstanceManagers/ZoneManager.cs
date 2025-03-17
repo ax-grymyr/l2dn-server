@@ -99,8 +99,8 @@ public sealed class ZoneManager
         {
             ZoneForm form = zone.getZone();
             Rectangle bounds = form.Bounds;
-            Location2D leftTop = WorldMap.WorldToRegion(bounds.LeftTop);
-            Location2D rightBottom = WorldMap.WorldToRegion(bounds.RightBottom);
+            Location2D leftTop = WorldMap.WorldLocationToRegionCoordinates(bounds.LeftTop);
+            Location2D rightBottom = WorldMap.WorldLocationToRegionCoordinates(bounds.RightBottom);
             for (int x = leftTop.X; x < rightBottom.X; x++)
             {
                 ImmutableArray<ZoneRegion> regions = _zoneRegions[x];
@@ -283,7 +283,7 @@ public sealed class ZoneManager
 
     public ZoneRegion getRegion(Location2D location)
     {
-        Location2D regionLocation = WorldMap.WorldToRegion(location);
+        Location2D regionLocation = WorldMap.WorldLocationToRegionCoordinates(location);
         return _zoneRegions[regionLocation.X][regionLocation.Y];
     }
 
