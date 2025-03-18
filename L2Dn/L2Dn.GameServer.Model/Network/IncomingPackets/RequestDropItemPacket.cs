@@ -192,7 +192,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 	    {
 		    string msg = $"Character ({player.getName()}) has dropped ({dropedItem.getCount()})adena at {_location}";
 		    PacketLogger.Instance.Warn(msg);
-		    AdminData.getInstance().broadcastMessageToGMs(msg);
+		    GmManager.getInstance().BroadcastMessageToGMs(msg);
 	    }
 
 	    return ValueTask.CompletedTask;

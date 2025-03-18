@@ -96,7 +96,7 @@ public class AdminGmChat: IAdminCommandHandler
 				offset = 13;
 			}
 			text = command.Substring(offset);
-			AdminData.getInstance().broadcastToGMs(new CreatureSayPacket(null, ChatType.ALLIANCE, activeChar.getName(), text));
+			GmManager.getInstance().BroadcastToGMs(new CreatureSayPacket(null, ChatType.ALLIANCE, activeChar.getName(), text));
 		}
 		catch (IndexOutOfRangeException e)
 		{

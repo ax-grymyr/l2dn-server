@@ -227,7 +227,7 @@ public class AdminSpawn: IAdminCommandHandler
 			// Reload.
 			ZoneManager.Instance.Reload();
 			QuestManager.getInstance().reloadAllScripts();
-			AdminData.getInstance().broadcastMessageToGMs("NPC unspawn completed!");
+			GmManager.getInstance().BroadcastMessageToGMs("NPC unspawn completed!");
 		}
 		else if (command.startsWith("admin_respawnall") || command.startsWith("admin_spawn_reload"))
 		{
@@ -265,7 +265,7 @@ public class AdminSpawn: IAdminCommandHandler
 			DbSpawnManager.getInstance().load();
 			ZoneManager.Instance.Reload();
 			QuestManager.getInstance().reloadAllScripts();
-			AdminData.getInstance().broadcastMessageToGMs("NPC respawn completed!");
+			GmManager.getInstance().BroadcastMessageToGMs("NPC respawn completed!");
 		}
 		else if (command.startsWith("admin_spawnat"))
 		{

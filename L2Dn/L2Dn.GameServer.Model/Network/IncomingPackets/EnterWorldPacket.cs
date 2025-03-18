@@ -150,11 +150,11 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 			if (Config.General.GM_STARTUP_AUTO_LIST &&
                 AdminCommandData.Instance.HasAccess("admin_gmliston", player.getAccessLevel().Level))
 			{
-				AdminData.getInstance().addGm(player, false);
+				GmManager.getInstance().AddGM(player, false);
 			}
 			else
 			{
-				AdminData.getInstance().addGm(player, true);
+				GmManager.getInstance().AddGM(player, true);
 			}
 
 			if (Config.General.GM_GIVE_SPECIAL_SKILLS)

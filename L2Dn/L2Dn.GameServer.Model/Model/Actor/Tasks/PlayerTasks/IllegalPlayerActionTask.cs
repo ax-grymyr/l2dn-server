@@ -71,7 +71,7 @@ public class IllegalPlayerActionTask: Runnable
 			{
 				case IllegalActionPunishmentType.BROADCAST:
 				{
-					AdminData.getInstance().broadcastMessageToGMs(_message);
+					GmManager.getInstance().BroadcastMessageToGMs(_message);
 					return;
 				}
 				case IllegalActionPunishmentType.KICK:

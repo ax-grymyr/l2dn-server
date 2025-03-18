@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
@@ -9,7 +10,6 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using NLog;
-using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model;
 
@@ -45,7 +45,6 @@ public sealed class World
 
 	private static DateTime _nextPrivateStoreUpdate;
 
-	/** Constructor of World. */
 	private World()
 	{
 	}

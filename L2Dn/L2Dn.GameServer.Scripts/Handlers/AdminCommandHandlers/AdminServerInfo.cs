@@ -98,7 +98,7 @@ public class AdminServerInfo: IAdminCommandHandler
 			case "GM":
 			{
 				int onlineGMcount = 0;
-				foreach (Player gm in AdminData.getInstance().getAllGms(true))
+				foreach (Player gm in GmManager.getInstance().GetAllGMs(true))
 				{
                     GameSession? client = gm.getClient();
 					if (gm != null && gm.isOnline() && client != null && !client.IsDetached)

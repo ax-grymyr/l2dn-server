@@ -17,7 +17,7 @@ public struct RequestGmListPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 		
-        AdminData.getInstance().sendListToPlayer(player);
+        GmManager.getInstance().SendListToPlayer(player);
 
         return ValueTask.CompletedTask;
     }

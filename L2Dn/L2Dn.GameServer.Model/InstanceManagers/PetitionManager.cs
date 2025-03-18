@@ -420,7 +420,7 @@ public class PetitionManager
 
 		// Notify all GMs that a new petition has been submitted.
 		string msgContent = petitioner.getName() + " has submitted a new petition."; // (ID: " + newPetitionId + ").";
-		AdminData.getInstance().broadcastToGMs(new CreatureSayPacket(petitioner, ChatType.HERO_VOICE, "Petition System", msgContent));
+		GmManager.getInstance().BroadcastToGMs(new CreatureSayPacket(petitioner, ChatType.HERO_VOICE, "Petition System", msgContent));
 		return newPetitionId;
 	}
 

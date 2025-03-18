@@ -48,8 +48,8 @@ public struct RequestPetitionCancelPacket: IIncomingPacket<GameSession>
 
                 // Notify all GMs that the player's pending petition has been cancelled.
                 string msgContent = player.getName() + " has canceled a pending petition.";
-                AdminData.getInstance()
-                    .broadcastToGMs(new CreatureSayPacket(player, ChatType.HERO_VOICE, "Petition System", msgContent));
+                GmManager.getInstance()
+                    .BroadcastToGMs(new CreatureSayPacket(player, ChatType.HERO_VOICE, "Petition System", msgContent));
             }
             else
             {

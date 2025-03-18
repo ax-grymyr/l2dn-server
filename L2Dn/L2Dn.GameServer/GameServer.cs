@@ -4,7 +4,6 @@ using L2Dn.GameServer.Network;
 using L2Dn.GameServer.NetworkAuthServer;
 using L2Dn.Network;
 using NLog;
-using Config = L2Dn.GameServer.Configuration.Config;
 using Task = System.Threading.Tasks.Task;
 
 namespace L2Dn.GameServer;
@@ -24,7 +23,6 @@ public class GameServer
         Config.Load();
         Scripts.Scripts.RegisterHandlers();
         StaticDataLoader.Load();
-        Data.StaticData.Load();
         Scripts.Scripts.RegisterQuests();
         Scripts.Scripts.RegisterScripts();
 

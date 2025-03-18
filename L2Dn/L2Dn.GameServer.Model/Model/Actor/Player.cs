@@ -11187,7 +11187,7 @@ public class Player: Playable
 		{
 			try
 			{
-				AdminData.getInstance().deleteGm(this);
+				GmManager.getInstance().DeleteGM(this);
 			}
 			catch (Exception e)
 			{

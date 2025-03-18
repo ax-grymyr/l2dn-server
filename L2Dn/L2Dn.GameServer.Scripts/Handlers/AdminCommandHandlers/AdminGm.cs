@@ -20,7 +20,7 @@ public class AdminGm: IAdminCommandHandler
 	{
 		if (command.equals("admin_gm") && activeChar.isGM())
 		{
-			AdminData.getInstance().deleteGm(activeChar);
+			GmManager.getInstance().DeleteGM(activeChar);
 			activeChar.setAccessLevel(0, true, false);
 			BuilderUtil.sendSysMessage(activeChar, "You deactivated your GM access for this session, if you login again you will be GM again, in order to remove your access completely please shift yourself and set your accesslevel to 0.");
 		}

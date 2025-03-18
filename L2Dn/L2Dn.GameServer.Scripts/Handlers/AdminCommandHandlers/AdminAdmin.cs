@@ -64,13 +64,13 @@ public class AdminAdmin: IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_gmliston"))
 		{
-			AdminData.getInstance().addGm(activeChar, false);
+			GmManager.getInstance().AddGM(activeChar, false);
 			BuilderUtil.sendSysMessage(activeChar, "Registered into GM list.");
 			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
 		}
 		else if (command.startsWith("admin_gmlistoff"))
 		{
-			AdminData.getInstance().addGm(activeChar, true);
+			GmManager.getInstance().AddGM(activeChar, true);
 			BuilderUtil.sendSysMessage(activeChar, "Removed from GM list.");
 			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
 		}
