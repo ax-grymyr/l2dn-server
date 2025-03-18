@@ -1,6 +1,6 @@
 ﻿namespace L2Dn.Packets;
 
-public struct PacketRegistration
+public readonly struct PacketRegistration
 {
     private readonly PacketHandlerHelper _helper;
 

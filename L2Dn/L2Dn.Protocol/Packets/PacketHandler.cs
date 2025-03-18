@@ -41,7 +41,7 @@ public class PacketHandler<TSession>
         }
         else if (helper is null)
         {
-            exHelper = new(code);
+            exHelper = new ExPacketHandlerHelper<TSession>(code);
             _helpers[code] = exHelper;
         }
         else

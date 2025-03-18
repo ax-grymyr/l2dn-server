@@ -1,6 +1,6 @@
 ﻿namespace L2Dn.Packets;
 
-public class PacketTypeAttribute: Attribute
+public sealed class PacketTypeAttribute: Attribute
 {
     public PacketTypeAttribute(Type packetType)
     {
@@ -18,7 +18,7 @@ public class PacketTypeAttribute: Attribute
         else
             throw new ArgumentException("State must be of long or enum type");
     }
-    
+
     public Type PacketType { get; }
 
     public long? AllowedState { get; }
