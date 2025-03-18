@@ -88,7 +88,7 @@ public class TimedHuntingZone(int id, ZoneForm form): Zone(id, form)
 
 			if (!player.isGM())
 			{
-				player.teleToLocation(MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN));
+				player.teleToLocation(MapRegionManager.GetTeleToLocation(player, TeleportWhereType.TOWN));
 			}
 		}
 	}

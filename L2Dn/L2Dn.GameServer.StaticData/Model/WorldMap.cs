@@ -44,24 +44,14 @@ public static class WorldMap
 
     public static Location2D WorldLocationToTileCoordinates(Location2D worldLocation)
     {
-        Location2D clampedLocation = new Location2D(Math.Clamp(worldLocation.X, WorldXMin, WorldXMax),
-            Math.Clamp(worldLocation.Y, WorldYMin, WorldYMax));
-
-        if (clampedLocation != worldLocation)
-            _logger.Warn($"Location {worldLocation} is out of bounds. Clamped to {clampedLocation}.");
-
+        Location2D clampedLocation = ClampWorldLocation(worldLocation);
         return new Location2D(clampedLocation.X / TileSize + TileZeroCoordX,
             clampedLocation.Y / RegionSize + TileZeroCoordY);
     }
 
     public static Location2D WorldLocationToRegionCoordinates(Location2D worldLocation)
     {
-        Location2D clampedLocation = new Location2D(Math.Clamp(worldLocation.X, WorldXMin, WorldXMax),
-            Math.Clamp(worldLocation.Y, WorldYMin, WorldYMax));
-
-        if (clampedLocation != worldLocation)
-            _logger.Warn($"Location {worldLocation} is out of bounds. Clamped to {clampedLocation}.");
-
+        Location2D clampedLocation = ClampWorldLocation(worldLocation);
         return new Location2D((clampedLocation.X - WorldXMin) / RegionSize,
             (clampedLocation.Y - WorldYMin) / RegionSize);
     }
@@ -95,5 +85,16 @@ public static class WorldMap
         return (from regionX in Enumerable.Range(0, RegionCountX)
                 select (from regionY in Enumerable.Range(0, RegionCountY)
                         select factory(new Location2D(regionX, regionY))).ToImmutableArray()).ToImmutableArray();
+    }
+
+    private static Location2D ClampWorldLocation(Location2D worldLocation)
+    {
+        Location2D clampedLocation = new Location2D(Math.Clamp(worldLocation.X, WorldXMin, WorldXMax),
+            Math.Clamp(worldLocation.Y, WorldYMin, WorldYMax));
+
+        if (clampedLocation != worldLocation)
+            _logger.Warn($"Location {worldLocation} is out of bounds. Clamped to {clampedLocation}.");
+
+        return clampedLocation;
     }
 }

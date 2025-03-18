@@ -21,8 +21,9 @@ public class GameServer
     public void Start()
     {
         // Preload data
-        StaticDataLoader.Load();
+        Config.Load();
         Scripts.Scripts.RegisterHandlers();
+        StaticDataLoader.Load();
         Data.StaticData.Load();
         Scripts.Scripts.RegisterQuests();
         Scripts.Scripts.RegisterScripts();

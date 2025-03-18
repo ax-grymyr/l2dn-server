@@ -46,15 +46,15 @@ public readonly struct LogoutPacket: IIncomingPacket<GameSession>
             }
             else
             {
-                location = world.getExitLocation(player) ?? MapRegionManager.getInstance()
-                    .getTeleToLocation(player, TeleportWhereType.TOWN).Location3D;
+                location = world.getExitLocation(player) ??
+                    MapRegionManager.GetTeleToLocation(player, TeleportWhereType.TOWN).Location3D;
             }
 
             player.setInstance(null);
         }
         else if (player.isInTimedHuntingZone())
         {
-            location = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN).Location3D;
+            location = MapRegionManager.GetTeleToLocation(player, TeleportWhereType.TOWN).Location3D;
         }
 
         if (location != null)

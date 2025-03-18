@@ -106,7 +106,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 					return;
 				}
 
-				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.CLANHALL);
+				loc = MapRegionManager.GetTeleToLocation(player, TeleportWhereType.CLANHALL);
 				ClanHall? residence = ClanHallData.getInstance().getClanHallByClan(clan);
 				if (residence != null && residence.hasFunction(ResidenceFunctionType.EXP_RESTORE))
 				{
@@ -126,11 +126,11 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 					// Siege in progress
 					if (castle.getSiege().checkIsDefender(clan))
 					{
-						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.CASTLE);
+						loc = MapRegionManager.GetTeleToLocation(player, TeleportWhereType.CASTLE);
 					}
 					else if (castle.getSiege().checkIsAttacker(clan))
 					{
-						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+						loc = MapRegionManager.GetTeleToLocation(player, TeleportWhereType.TOWN);
 					}
 					else
 					{
@@ -145,7 +145,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 					{
 						return;
 					}
-					loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.CASTLE);
+					loc = MapRegionManager.GetTeleToLocation(player, TeleportWhereType.CASTLE);
 				}
 
 				if (clan != null)
@@ -172,7 +172,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 					return;
 				}
 
-				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.FORTRESS);
+				loc = MapRegionManager.GetTeleToLocation(player, TeleportWhereType.FORTRESS);
 
 				Fort? fort = FortManager.getInstance().getFortByOwner(clan);
 				if (fort != null)
@@ -205,7 +205,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 					PacketLogger.Instance.Warn("Player [" + player.getName() + "] called RestartPointPacket - To Siege HQ and he doesn't have Siege HQ!");
 					return;
 				}
-				loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.SIEGEFLAG);
+				loc = MapRegionManager.GetTeleToLocation(player, TeleportWhereType.SIEGEFLAG);
 				break;
 			}
 			case 5: // Fixed or Player is a festival participant
@@ -254,7 +254,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 					{
 						player.getVariables().Set(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, originalValue + 1);
 						player.doRevive(100.0);
-						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+						loc = MapRegionManager.GetTeleToLocation(player, TeleportWhereType.TOWN);
 						player.teleToLocation(loc.Value, instance, true);
 						break;
 					}
@@ -310,7 +310,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 						player.getVariables().Set(PlayerVariables.RESURRECT_BY_PAYMENT_COUNT, originalValue + 1);
 						player.destroyItem("item revive", item, fee, player, true);
 						player.doRevive(rbph.getResurrectPercent());
-						loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+						loc = MapRegionManager.GetTeleToLocation(player, TeleportWhereType.TOWN);
 						player.teleToLocation(loc.Value, instance, true);
 						break;
 					}
@@ -339,7 +339,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 				}
 				else
 				{
-					loc = MapRegionManager.getInstance().getTeleToLocation(player, TeleportWhereType.TOWN);
+					loc = MapRegionManager.GetTeleToLocation(player, TeleportWhereType.TOWN);
 				}
 				break;
 			}

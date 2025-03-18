@@ -380,11 +380,11 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 			{
 				if (player.getReputation() < 0)
 				{
-					location = MapRegionManager.getInstance().getNearestKarmaRespawn(player);
+					location = MapRegionManager.GetNearestKarmaRespawn(player);
 				}
 				else
 				{
-					location = MapRegionManager.getInstance().getNearestTownRespawn(player);
+					location = MapRegionManager.GetNearestTownRespawn(player);
 				}
 				break;
 			}

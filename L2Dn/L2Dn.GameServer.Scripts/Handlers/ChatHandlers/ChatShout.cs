@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using Config = L2Dn.GameServer.Configuration.Config;
 
@@ -63,10 +64,10 @@ public class ChatShout: IChatHandler
 		CreatureSayPacket cs = new CreatureSayPacket(activeChar, type, activeChar.getName(), text, shareLocation);
 		if (Config.General.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("on") || (Config.General.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("gm") && activeChar.canOverrideCond(PlayerCondOverride.CHAT_CONDITIONS)))
 		{
-			int region = MapRegionManager.getInstance().getMapRegionLocId(activeChar);
+			int region = MapRegionData.Instance.GetMapRegionLocationId(activeChar);
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				if (region == MapRegionManager.getInstance().getMapRegionLocId(player) && !BlockList.isBlocked(player, activeChar) && player.getInstanceId() == activeChar.getInstanceId() && !BlockList.isBlocked(activeChar, player))
+				if (region == MapRegionData.Instance.GetMapRegionLocationId(player) && !BlockList.isBlocked(player, activeChar) && player.getInstanceId() == activeChar.getInstanceId() && !BlockList.isBlocked(activeChar, player))
 				{
 					if (Config.FactionSystem.FACTION_SYSTEM_ENABLED)
 					{

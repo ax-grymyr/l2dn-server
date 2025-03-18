@@ -48,22 +48,22 @@ public class AdminZone: IAdminCommandHandler
 
             BuilderUtil.sendSysMessage(activeChar,
                 "MapRegion: x:" + tileCoordinates.X + " y:" + tileCoordinates.Y + " (" +
-                MapRegionManager.getInstance().getMapRegionLocId(activeChar) + ")");
-            
+                MapRegionData.Instance.GetMapRegionLocationId(activeChar) + ")");
+
 			getGeoRegionXY(activeChar);
-			BuilderUtil.sendSysMessage(activeChar, "Closest Town: " + MapRegionManager.getInstance().getClosestTownName(activeChar));
+			BuilderUtil.sendSysMessage(activeChar, "Closest Town: " + MapRegionData.Instance.GetClosestTownName(activeChar));
 
 			// Prevent exit instance variable deletion.
 			if (!activeChar.isInInstance())
 			{
 				Location loc;
-				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.CASTLE);
+				loc = MapRegionManager.GetTeleToLocation(activeChar, TeleportWhereType.CASTLE);
 				BuilderUtil.sendSysMessage(activeChar, "TeleToLocation (Castle): x:" + loc.X + " y:" + loc.Y + " z:" + loc.Z);
-				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.CLANHALL);
+				loc = MapRegionManager.GetTeleToLocation(activeChar, TeleportWhereType.CLANHALL);
 				BuilderUtil.sendSysMessage(activeChar, "TeleToLocation (ClanHall): x:" + loc.X + " y:" + loc.Y + " z:" + loc.Z);
-				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.SIEGEFLAG);
+				loc = MapRegionManager.GetTeleToLocation(activeChar, TeleportWhereType.SIEGEFLAG);
 				BuilderUtil.sendSysMessage(activeChar, "TeleToLocation (SiegeFlag): x:" + loc.X + " y:" + loc.Y + " z:" + loc.Z);
-				loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.TOWN);
+				loc = MapRegionManager.GetTeleToLocation(activeChar, TeleportWhereType.TOWN);
 				BuilderUtil.sendSysMessage(activeChar, "TeleToLocation (Town): x:" + loc.X + " y:" + loc.Y + " z:" + loc.Z);
 			}
 		}

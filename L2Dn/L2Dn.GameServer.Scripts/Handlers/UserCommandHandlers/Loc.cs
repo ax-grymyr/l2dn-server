@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 
@@ -28,12 +29,12 @@ public class Loc: IUserCommandHandler
             Map<Race, string> respawnPoints = zone.getAllRespawnPoints();
             string? respawnPoint = respawnPoints.get(player.getRace()) ?? respawnPoints.get(Race.HUMAN);
             if (respawnPoint != null)
-                restartRegion = MapRegionManager.getInstance().getRestartRegion(player, respawnPoint);
+                restartRegion = MapRegionManager.GetRestartRegion(player, respawnPoint);
         }
 
         SystemMessageId systemMessageId = restartRegion != null
             ? (SystemMessageId)restartRegion.LocationId
-            : (SystemMessageId)MapRegionManager.getInstance().getMapRegionLocId(player);
+            : (SystemMessageId)MapRegionData.Instance.GetMapRegionLocationId(player);
 
         SystemMessagePacket sm;
         if (systemMessageId > 0 && systemMessageId.GetParamCount() == 3)

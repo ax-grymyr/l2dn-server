@@ -212,7 +212,7 @@ public abstract class Vehicle: Creature
 		if (_oustLoc != null)
 			return _oustLoc.Value;
 
-		return MapRegionManager.getInstance().getTeleToLocation(this, TeleportWhereType.TOWN);
+		return MapRegionManager.GetTeleToLocation(this, TeleportWhereType.TOWN);
 	}
 
 	public virtual void oustPlayers()
