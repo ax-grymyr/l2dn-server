@@ -1,11 +1,12 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -17,9 +18,9 @@ public sealed class BlockAbnormalSlot: AbstractEffect
 {
     private readonly FrozenSet<AbnormalType> _blockAbnormalSlots;
 
-    public BlockAbnormalSlot(StatSet @params)
+    public BlockAbnormalSlot(EffectParameterSet parameters)
     {
-        string slot = @params.getString("slot");
+        string slot = parameters.GetString(XmlSkillEffectParameterType.Slot);
         _blockAbnormalSlots = ParseUtil.ParseEnumSet<AbnormalType>(slot);
     }
 

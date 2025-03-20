@@ -1,12 +1,11 @@
 using System.Collections.Frozen;
 using System.Globalization;
 using System.Xml.Serialization;
+using L2Dn.Collections;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
-using L2Dn.GameServer.Model;
-using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.StaticData.Xml.Skills;
@@ -106,14 +105,6 @@ public sealed class SkillData: DataReaderBase
         _logger.Info(GetType().Name + ": Loaded " + _skills.Count + " Skills.");
     }
 
-    public void Reload()
-    {
-        Load();
-
-        // Reload Skill Tree as well.
-        SkillTreeData.getInstance().load();
-    }
-
     private static IEnumerable<Skill> LoadSkill(XmlSkill xmlSkill)
     {
         SkillDataParser parser = new(xmlSkill);
@@ -211,31 +202,29 @@ public sealed class SkillData: DataReaderBase
                 FilterByLevel(conditionList, level, subLevel, false).ForEach(condition =>
                 {
                     // Calculate condition parameters
-                    StatSet statSet = new();
-                    statSet.set("type", condition.Type);
+                    SkillConditionParameterSet conditionParameters = new();
+                    if (!string.IsNullOrEmpty(condition.Type))
+                        conditionParameters[XmlSkillConditionParameterType.Type] = condition.Type;
+
                     foreach ((XmlSkillConditionParameterType type, List<Parameter> parameterList) in condition.
                                  Parameters)
                     {
                         FilterByLevel(parameterList, level, subLevel).
                             ForEach(parameter =>
                             {
-                                string paramName =
-                                    type.GetCustomAttribute<XmlSkillConditionParameterType, XmlEnumAttribute>()?.Name ??
-                                    type.ToString();
-
-                                statSet.set(paramName,
-                                    ParseValue(variables, parameter, level, subLevel, parameter.Value));
+                                conditionParameters[type] = ParseValue(variables, parameter, level, subLevel,
+                                    parameter.Value);
                             });
                     }
 
-                    Func<StatSet, ISkillCondition>? handlerFactory =
+                    Func<SkillConditionParameterSet, ISkillConditionBase>? handlerFactory =
                         SkillConditionHandler.getInstance().getHandlerFactory(condition.Name);
 
                     if (handlerFactory is null)
                         throw new InvalidOperationException(
                             $"Invalid skill id={_skillId}: condition handler '{condition.Name}' not found");
 
-                    ISkillCondition skillCondition = handlerFactory(statSet);
+                    ISkillConditionBase skillCondition = handlerFactory(conditionParameters);
 
                     parameters.Conditions.GetOrAdd(conditionScope, _ => []).Add(skillCondition);
                 });
@@ -247,29 +236,25 @@ public sealed class SkillData: DataReaderBase
                 FilterByLevel(effectList, level, subLevel, false).ForEach(effect =>
                 {
                     // Calculate condition parameters
-                    StatSet statSet = new();
+                    EffectParameterSet effectParameters = new();
                     foreach ((XmlSkillEffectParameterType type, List<Parameter> parameterList) in effect.Parameters)
                     {
                         FilterByLevel(parameterList, level, subLevel).
                             ForEach(parameter =>
                             {
-                                string paramName =
-                                    type.GetCustomAttribute<XmlSkillEffectParameterType, XmlEnumAttribute>()?.Name ??
-                                    type.ToString();
-
-                                statSet.set(paramName,
-                                    ParseValue(variables, parameter, level, subLevel, parameter.Value));
+                                effectParameters[type] = ParseValue(variables, parameter, level, subLevel,
+                                    parameter.Value);
                             });
                     }
 
-                    Func<StatSet, AbstractEffect>? handlerFactory =
+                    Func<EffectParameterSet, IAbstractEffect>? handlerFactory =
                         EffectHandler.getInstance().getHandlerFactory(effect.Name);
 
                     if (handlerFactory is null)
                         throw new InvalidOperationException(
                             $"Invalid skill id={_skillId}: effect handler '{effect.Name}' not found");
 
-                    AbstractEffect skillEffect = handlerFactory(statSet);
+                    IAbstractEffect skillEffect = handlerFactory(effectParameters);
 
                     parameters.Effects.GetOrAdd(effectScope, _ => []).Add(skillEffect);
                 });

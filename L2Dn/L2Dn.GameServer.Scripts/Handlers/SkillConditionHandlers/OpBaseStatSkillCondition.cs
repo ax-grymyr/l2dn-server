@@ -1,25 +1,23 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Mobius
- */
-public class OpBaseStatSkillCondition: ISkillCondition
+public sealed class OpBaseStatSkillCondition: ISkillCondition
 {
     private readonly BaseStat _stat;
     private readonly int _min;
     private readonly int _max;
 
-    public OpBaseStatSkillCondition(StatSet @params)
+    public OpBaseStatSkillCondition(SkillConditionParameterSet parameters)
     {
-        _stat = @params.getEnum<BaseStat>("stat");
-        _min = @params.getInt("min", 0);
-        _max = @params.getInt("max", 2147483647);
+        _stat = parameters.GetEnum<BaseStat>(XmlSkillConditionParameterType.Stat);
+        _min = parameters.GetInt32(XmlSkillConditionParameterType.Min, 0);
+        _max = parameters.GetInt32(XmlSkillConditionParameterType.Max, int.MaxValue);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

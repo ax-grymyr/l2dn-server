@@ -1,16 +1,12 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-public sealed class ExpModify: AbstractStatAddEffect
+public sealed class ExpModify(EffectParameterSet parameters): AbstractStatAddEffect(parameters, Stat.BONUS_EXP)
 {
-    public ExpModify(StatSet @params): base(@params, Stat.BONUS_EXP)
-    {
-    }
-
     public override void Pump(Creature effected, Skill skill)
     {
         effected.getStat().mergeAdd(Stat.BONUS_EXP, Amount);

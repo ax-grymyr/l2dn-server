@@ -586,14 +586,13 @@ public class AutoUseTaskManager
                 return false;
             }
 
-            if (skill.TargetType==TargetType.SELF || skill.TargetType==TargetType.SUMMON)
-			{
-				BuffInfo? summonInfo = summon.getEffectList().getBuffInfoBySkillId(skill.Id);
-				return summonInfo != null && summonInfo.getTime() >= TimeSpan.FromSeconds(REUSE_MARGIN_TIME);
-			}
+            if (skill.TargetType == TargetType.SELF || skill.TargetType == TargetType.SUMMON)
+            {
+                BuffInfo? summonInfo = summon.getEffectList().getBuffInfoBySkillId(skill.Id);
+                return summonInfo != null && summonInfo.getTime() >= TimeSpan.FromSeconds(REUSE_MARGIN_TIME);
+            }
 
-            if (skill.GetEffects(SkillEffectScope.General) is {} generalEffect &&
-                generalEffect.Any(a => a.EffectType == EffectTypes.MANAHEAL_BY_LEVEL) &&
+            if (skill.HasEffectType(SkillEffectScope.General, EffectTypes.MANAHEAL_BY_LEVEL) &&
                 player.getCurrentMpPercent() > 80)
             {
                 return false;

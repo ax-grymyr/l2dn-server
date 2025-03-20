@@ -1,9 +1,9 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.Utilities;
@@ -17,15 +17,16 @@ public sealed class ChangeBody: AbstractEffect
 {
     private readonly FrozenSet<TemplateChanceHolder> _transformations;
 
-    public ChangeBody(StatSet @params)
+    public ChangeBody(EffectParameterSet parameters)
     {
         _transformations = FrozenSet<TemplateChanceHolder>.Empty;
-        List<StatSet>? items = @params.getList<StatSet>("templates");
-        if (items != null)
-        {
-            _transformations = items.Select(item => new TemplateChanceHolder(item.getInt(".templateId"),
-                item.getInt(".minChance"), item.getInt(".maxChance"))).ToFrozenSet();
-        }
+        throw new NotImplementedException(); // TODO: currently not used, implement later
+        // List<StatSet>? items = parameters.getList<StatSet>("templates");
+        // if (items != null)
+        // {
+        //     _transformations = items.Select(item => new TemplateChanceHolder(item.getInt(".templateId"),
+        //         item.getInt(".minChance"), item.getInt(".maxChance"))).ToFrozenSet();
+        // }
     }
 
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

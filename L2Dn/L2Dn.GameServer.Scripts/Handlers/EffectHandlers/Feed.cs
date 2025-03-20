@@ -1,13 +1,14 @@
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
-using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -17,11 +18,11 @@ public sealed class Feed: AbstractEffect
     private readonly int _ride;
     private readonly int _wyvern;
 
-    public Feed(StatSet @params)
+    public Feed(EffectParameterSet parameters)
     {
-        _normal = @params.getInt("normal", 0);
-        _ride = @params.getInt("ride", 0);
-        _wyvern = @params.getInt("wyvern", 0);
+        _normal = parameters.GetInt32(XmlSkillEffectParameterType.Normal, 0);
+        _ride = parameters.GetInt32(XmlSkillEffectParameterType.Ride, 0);
+        _wyvern = parameters.GetInt32(XmlSkillEffectParameterType.Wyvern, 0);
     }
 
     public override bool IsInstant => true;

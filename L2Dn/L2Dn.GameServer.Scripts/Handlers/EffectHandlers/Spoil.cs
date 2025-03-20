@@ -1,5 +1,4 @@
 using L2Dn.GameServer.AI;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
@@ -16,10 +15,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class Spoil: AbstractEffect
 {
-    public Spoil(StatSet @params)
-    {
-    }
-
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
     {
         return Formulas.calcMagicSuccess(effector, effected, skill);

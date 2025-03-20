@@ -18,10 +18,6 @@ public sealed class Disarm: AbstractEffect
 {
     private static readonly Map<int, int> _disarmedPlayers = new();
 
-    public Disarm(StatSet @params)
-    {
-    }
-
     public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected.isPlayer();

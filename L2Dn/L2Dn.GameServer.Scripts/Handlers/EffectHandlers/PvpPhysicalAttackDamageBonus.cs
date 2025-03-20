@@ -1,7 +1,7 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-public sealed class PvpPhysicalAttackDamageBonus(StatSet @params)
-    : AbstractStatPercentEffect(@params, Stat.PVP_PHYSICAL_ATTACK_DAMAGE);
+public sealed class PvpPhysicalAttackDamageBonus(EffectParameterSet parameters)
+    : AbstractStatPercentEffect(parameters, Stat.PVP_PHYSICAL_ATTACK_DAMAGE);

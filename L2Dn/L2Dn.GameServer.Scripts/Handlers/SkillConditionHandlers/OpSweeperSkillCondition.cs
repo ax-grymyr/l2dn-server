@@ -6,21 +6,14 @@ using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Zoey76
- */
-public class OpSweeperSkillCondition: ISkillCondition
+public sealed class OpSweeperSkillCondition: ISkillCondition
 {
-	public OpSweeperSkillCondition(StatSet @params)
-	{
-	}
-
-	public bool canUse(Creature caster, Skill skill, WorldObject? target)
-	{
-		bool canSweep = false;
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        bool canSweep = false;
         Player? sweeper = caster.getActingPlayer();
-		if (sweeper != null)
-		{
+        if (sweeper != null)
+        {
             if (skill != null)
             {
                 List<WorldObject>? targets = skill.GetTargetsAffected(sweeper, target);
@@ -59,6 +52,7 @@ public class OpSweeperSkillCondition: ISkillCondition
                 }
             }
         }
-		return canSweep;
-	}
+
+        return canSweep;
+    }
 }

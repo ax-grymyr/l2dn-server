@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -10,6 +11,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 
@@ -23,10 +25,10 @@ public sealed class CallPc: AbstractEffect
     private readonly int _itemId;
     private readonly int _itemCount;
 
-    public CallPc(StatSet @params)
+    public CallPc(EffectParameterSet parameters)
     {
-        _itemId = @params.getInt("itemId", 0);
-        _itemCount = @params.getInt("itemCount", 0);
+        _itemId = parameters.GetInt32(XmlSkillEffectParameterType.ItemId, 0);
+        _itemCount = parameters.GetInt32(XmlSkillEffectParameterType.ItemCount, 0);
     }
 
     public override bool IsInstant => true;

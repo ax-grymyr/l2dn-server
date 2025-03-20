@@ -1,4 +1,4 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
@@ -9,8 +9,8 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Transfer Damage effect implementation.
 /// </summary>
-public sealed class TransferDamageToPlayer(StatSet @params)
-    : AbstractStatAddEffect(@params, Stat.TRANSFER_DAMAGE_TO_PLAYER)
+public sealed class TransferDamageToPlayer(EffectParameterSet parameters)
+    : AbstractStatAddEffect(parameters, Stat.TRANSFER_DAMAGE_TO_PLAYER)
 {
     public override void OnExit(Creature effector, Creature effected, Skill skill)
     {

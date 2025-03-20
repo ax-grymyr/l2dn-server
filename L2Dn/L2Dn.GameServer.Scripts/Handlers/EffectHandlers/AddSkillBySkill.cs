@@ -1,8 +1,9 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -13,11 +14,12 @@ public sealed class AddSkillBySkill: AbstractEffect
     private readonly int _existingSkillLevel;
     private readonly SkillHolder _addedSkill;
 
-    public AddSkillBySkill(StatSet @params)
+    public AddSkillBySkill(EffectParameterSet parameters)
     {
-        _existingSkillId = @params.getInt("existingSkillId");
-        _existingSkillLevel = @params.getInt("existingSkillLevel");
-        _addedSkill = new SkillHolder(@params.getInt("addedSkillId"), @params.getInt("addedSkillLevel"));
+        _existingSkillId = parameters.GetInt32(XmlSkillEffectParameterType.ExistingSkillId);
+        _existingSkillLevel = parameters.GetInt32(XmlSkillEffectParameterType.ExistingSkillLevel);
+        _addedSkill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.AddedSkillId),
+            parameters.GetInt32(XmlSkillEffectParameterType.AddedSkillLevel));
     }
 
     public override bool CanPump(Creature? effector, Creature effected, Skill? skill)

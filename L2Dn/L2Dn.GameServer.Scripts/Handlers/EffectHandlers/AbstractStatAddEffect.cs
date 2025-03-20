@@ -1,8 +1,9 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -13,11 +14,11 @@ public abstract class AbstractStatAddEffect: AbstractEffect
     private readonly Stat _stat;
     private readonly double _amount;
 
-    protected AbstractStatAddEffect(StatSet @params, Stat stat)
+    protected AbstractStatAddEffect(EffectParameterSet parameters, Stat stat)
     {
         _stat = stat;
-        _amount = @params.getDouble("amount", 0);
-        if (@params.getEnum("mode", StatModifierType.DIFF) != StatModifierType.DIFF)
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount, 0);
+        if (parameters.GetEnum(XmlSkillEffectParameterType.Mode, StatModifierType.DIFF) != StatModifierType.DIFF)
             Logger.Warn(GetType().Name + " can only use DIFF mode.");
     }
 

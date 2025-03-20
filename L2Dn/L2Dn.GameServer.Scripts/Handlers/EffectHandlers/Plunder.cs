@@ -4,7 +4,6 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
@@ -15,10 +14,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 public sealed class Plunder: AbstractEffect
 {
-    public Plunder(StatSet @params)
-    {
-    }
-
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
     {
         return Formulas.calcMagicSuccess(effector, effected, skill);

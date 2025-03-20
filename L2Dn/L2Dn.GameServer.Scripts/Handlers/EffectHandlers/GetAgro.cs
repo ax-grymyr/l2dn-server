@@ -16,11 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class GetAgro: AbstractEffect
 {
-    public GetAgro(StatSet @params)
-    {
-    }
-
-    public override EffectTypes EffectType => EffectTypes.AGGRESSION;
+    public override EffectTypes EffectTypes => EffectTypes.AGGRESSION;
 
     public override bool IsInstant => true;
 

@@ -1,5 +1,5 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using Config = L2Dn.GameServer.Configuration.Config;
@@ -25,12 +26,12 @@ public sealed class PhysicalSoulAttack: AbstractEffect
     private readonly bool _ignoreShieldDefence;
     private readonly bool _overHit;
 
-    public PhysicalSoulAttack(StatSet @params)
+    public PhysicalSoulAttack(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power", 0);
-        _criticalChance = @params.getDouble("criticalChance", 0);
-        _ignoreShieldDefence = @params.getBoolean("ignoreShieldDefence", false);
-        _overHit = @params.getBoolean("overHit", false);
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power, 0);
+        _criticalChance = parameters.GetDouble(XmlSkillEffectParameterType.CriticalChance, 0);
+        _ignoreShieldDefence = parameters.GetBoolean(XmlSkillEffectParameterType.IgnoreShieldDefence, false);
+        _overHit = parameters.GetBoolean(XmlSkillEffectParameterType.OverHit, false);
     }
 
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
@@ -38,7 +39,7 @@ public sealed class PhysicalSoulAttack: AbstractEffect
         return !Formulas.calcSkillEvasion(effector, effected, skill);
     }
 
-    public override EffectTypes EffectType => EffectTypes.PHYSICAL_ATTACK;
+    public override EffectTypes EffectTypes => EffectTypes.PHYSICAL_ATTACK;
 
     public override bool IsInstant => true;
 

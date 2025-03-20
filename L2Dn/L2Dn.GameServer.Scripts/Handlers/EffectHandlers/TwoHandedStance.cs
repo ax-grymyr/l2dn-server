@@ -1,7 +1,8 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -11,9 +12,9 @@ public sealed class TwoHandedStance: AbstractEffect
 {
     private readonly double _amount;
 
-    public TwoHandedStance(StatSet @params)
+    public TwoHandedStance(EffectParameterSet parameters)
     {
-        _amount = @params.getDouble("amount", 0);
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount, 0);
     }
 
     public override void Pump(Creature effected, Skill skill)

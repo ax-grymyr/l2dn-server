@@ -1,4 +1,3 @@
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.Utilities;
 
@@ -9,10 +8,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class BuffBlock: AbstractEffect
 {
-    public BuffBlock(StatSet @params)
-    {
-    }
-
     public override EffectFlags EffectFlags => EffectFlags.BUFF_BLOCK;
 
     public override int GetHashCode() => this.GetSingletonHashCode();

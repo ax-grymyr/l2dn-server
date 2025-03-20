@@ -1,27 +1,24 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Sdw
- */
-public class EquipWeaponSkillCondition: ISkillCondition
+public sealed class EquipWeaponSkillCondition: ISkillCondition
 {
     private readonly ItemTypeMask _weaponTypesMask = ItemTypeMask.Zero;
 
-    public EquipWeaponSkillCondition(StatSet @params)
+    public EquipWeaponSkillCondition(SkillConditionParameterSet parameters)
     {
-        List<WeaponType>? weaponTypes = @params.getEnumList<WeaponType>("weaponType");
+        List<string>? weaponTypes = parameters.GetStringListOptional(XmlSkillConditionParameterType.WeaponType);
         if (weaponTypes != null)
         {
-            foreach (WeaponType weaponType in weaponTypes)
-            {
-                _weaponTypesMask |= weaponType;
-            }
+            foreach (string weaponType in weaponTypes)
+                _weaponTypesMask |= Enum.Parse<WeaponType>(weaponType, true);
         }
     }
 

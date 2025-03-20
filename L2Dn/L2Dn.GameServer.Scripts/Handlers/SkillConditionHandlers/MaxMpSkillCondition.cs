@@ -1,19 +1,18 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Mobius
- */
-public class MaxMpSkillCondition: ISkillCondition
+public sealed class MaxMpSkillCondition: ISkillCondition
 {
     private readonly int _amount;
 
-    public MaxMpSkillCondition(StatSet @params)
+    public MaxMpSkillCondition(SkillConditionParameterSet parameters)
     {
-        _amount = @params.getInt("amount");
+        _amount = parameters.GetInt32(XmlSkillConditionParameterType.Amount);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

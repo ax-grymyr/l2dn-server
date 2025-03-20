@@ -1,5 +1,4 @@
 using L2Dn.GameServer.AI;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -14,10 +13,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class DisableTargeting: AbstractEffect
 {
-    public DisableTargeting(StatSet @params)
-    {
-    }
-
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.setTarget(null);

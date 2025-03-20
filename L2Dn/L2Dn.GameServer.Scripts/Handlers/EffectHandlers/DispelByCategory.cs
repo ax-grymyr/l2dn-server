@@ -1,10 +1,11 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -18,14 +19,14 @@ public sealed class DispelByCategory: AbstractEffect
     private readonly int _rate;
     private readonly int _max;
 
-    public DispelByCategory(StatSet @params)
+    public DispelByCategory(EffectParameterSet parameters)
     {
-        _slot = @params.getEnum("slot", DispelSlotType.BUFF);
-        _rate = @params.getInt("rate", 0);
-        _max = @params.getInt("max", 0);
+        _slot = parameters.GetEnum(XmlSkillEffectParameterType.Slot, DispelSlotType.BUFF);
+        _rate = parameters.GetInt32(XmlSkillEffectParameterType.Rate, 0);
+        _max = parameters.GetInt32(XmlSkillEffectParameterType.Max, 0);
     }
 
-    public override EffectTypes EffectType => EffectTypes.DISPEL;
+    public override EffectTypes EffectTypes => EffectTypes.DISPEL;
 
     public override bool IsInstant => true;
 

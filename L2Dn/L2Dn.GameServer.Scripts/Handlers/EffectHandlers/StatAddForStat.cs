@@ -1,8 +1,9 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -16,14 +17,14 @@ public sealed class StatAddForStat: AbstractEffect
     private readonly Stat _addStat;
     private readonly double _amount;
 
-    public StatAddForStat(StatSet @params)
+    public StatAddForStat(EffectParameterSet parameters)
     {
-        _stat = @params.getEnum<Stat>("stat");
-        _min = @params.getInt("min", 0);
-        _max = @params.getInt("max", 2147483647);
-        _addStat = @params.getEnum<Stat>("addStat");
-        _amount = @params.getDouble("amount", 0);
-        if (@params.getEnum("mode", StatModifierType.DIFF) != StatModifierType.DIFF)
+        _stat = parameters.GetEnum<Stat>(XmlSkillEffectParameterType.Stat);
+        _min = parameters.GetInt32(XmlSkillEffectParameterType.Min, 0);
+        _max = parameters.GetInt32(XmlSkillEffectParameterType.Max, 2147483647);
+        _addStat = parameters.GetEnum<Stat>(XmlSkillEffectParameterType.AddStat);
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount, 0);
+        if (parameters.GetEnum(XmlSkillEffectParameterType.Mode, StatModifierType.DIFF) != StatModifierType.DIFF)
             throw new ArgumentException(nameof(StatAddForStat) + " can only use DIFF mode.");
     }
 

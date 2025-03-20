@@ -1,5 +1,5 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -20,15 +21,15 @@ public sealed class Lethal: AbstractEffect
     private readonly double _fullLethal;
     private readonly double _halfLethal;
 
-    public Lethal(StatSet @params)
+    public Lethal(EffectParameterSet parameters)
     {
-        _fullLethal = @params.getDouble("fullLethal", 0);
-        _halfLethal = @params.getDouble("halfLethal", 0);
+        _fullLethal = parameters.GetDouble(XmlSkillEffectParameterType.FullLethal, 0);
+        _halfLethal = parameters.GetDouble(XmlSkillEffectParameterType.HalfLethal, 0);
     }
 
     public override bool IsInstant => true;
 
-    public override EffectTypes EffectType => EffectTypes.LETHAL_ATTACK;
+    public override EffectTypes EffectTypes => EffectTypes.LETHAL_ATTACK;
 
     public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

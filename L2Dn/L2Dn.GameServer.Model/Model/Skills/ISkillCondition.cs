@@ -1,11 +1,9 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 
 namespace L2Dn.GameServer.Model.Skills;
 
-/**
- * @author NosBit
- */
-public interface ISkillCondition
+public interface ISkillCondition: ISkillConditionBase
 {
-	bool canUse(Creature caster, Skill skill, WorldObject? target);
+    bool canUse(Creature caster, Skill skill, WorldObject? target);
 }

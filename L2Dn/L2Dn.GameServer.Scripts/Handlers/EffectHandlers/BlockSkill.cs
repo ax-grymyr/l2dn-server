@@ -1,11 +1,12 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -18,12 +19,12 @@ public sealed class BlockSkill: AbstractEffect
     private readonly FrozenSet<int> _magicTypes;
     private readonly FrozenSet<int> _skillIds;
 
-    public BlockSkill(StatSet @params)
+    public BlockSkill(EffectParameterSet parameters)
     {
-        string magicTypes = @params.getString("magicTypes", string.Empty);
+        string magicTypes = parameters.GetString(XmlSkillEffectParameterType.MagicTypes, string.Empty);
         _magicTypes = ParseUtil.ParseSet<int>(magicTypes);
 
-        string skillIds = @params.getString("skillIds", string.Empty);
+        string skillIds = parameters.GetString(XmlSkillEffectParameterType.SkillIds, string.Empty);
         _skillIds = ParseUtil.ParseSet<int>(skillIds);
     }
 

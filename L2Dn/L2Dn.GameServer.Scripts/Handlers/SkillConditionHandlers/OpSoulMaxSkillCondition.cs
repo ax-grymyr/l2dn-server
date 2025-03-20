@@ -1,22 +1,20 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid
- */
-public class OpSoulMaxSkillCondition: ISkillCondition
+public sealed class OpSoulMaxSkillCondition: ISkillCondition
 {
     private readonly SoulType _type;
 
-    public OpSoulMaxSkillCondition(StatSet @params)
+    public OpSoulMaxSkillCondition(SkillConditionParameterSet parameters)
     {
-        _type = @params.getEnum("type", SoulType.LIGHT);
+        _type = parameters.GetEnum(XmlSkillConditionParameterType.Type, SoulType.LIGHT);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

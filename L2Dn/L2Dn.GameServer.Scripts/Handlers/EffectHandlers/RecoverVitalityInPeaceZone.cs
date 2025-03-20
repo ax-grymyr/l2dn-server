@@ -1,10 +1,11 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Stats;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -16,10 +17,10 @@ public sealed class RecoverVitalityInPeaceZone: AbstractEffect
 {
     private readonly double _amount;
 
-    public RecoverVitalityInPeaceZone(StatSet @params)
+    public RecoverVitalityInPeaceZone(EffectParameterSet parameters)
     {
-        _amount = @params.getDouble("amount", 0);
-        Ticks = @params.getInt("ticks", 10);
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount, 0);
+        Ticks = parameters.GetInt32(XmlSkillEffectParameterType.Ticks, 10);
     }
 
     public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)

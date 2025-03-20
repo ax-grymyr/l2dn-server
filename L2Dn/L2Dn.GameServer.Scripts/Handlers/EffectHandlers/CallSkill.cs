@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Data.Xml;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -20,13 +21,13 @@ public sealed class CallSkill: AbstractEffect
     private readonly int _skillLevelScaleTo;
     private readonly int _chance;
 
-    public CallSkill(StatSet @params)
+    public CallSkill(EffectParameterSet parameters)
     {
-        _skill = new SkillHolder(@params.getInt("skillId"), @params.getInt("skillLevel", 1),
-            @params.getInt("skillSubLevel", 0));
+        _skill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.SkillId), parameters.GetInt32(XmlSkillEffectParameterType.SkillLevel, 1),
+            parameters.GetInt32(XmlSkillEffectParameterType.SkillSubLevel, 0));
 
-        _skillLevelScaleTo = @params.getInt("skillLevelScaleTo", 0);
-        _chance = @params.getInt("chance", 100);
+        _skillLevelScaleTo = parameters.GetInt32(XmlSkillEffectParameterType.SkillLevelScaleTo, 0);
+        _chance = parameters.GetInt32(XmlSkillEffectParameterType.Chance, 100);
     }
 
     public override bool IsInstant => true;

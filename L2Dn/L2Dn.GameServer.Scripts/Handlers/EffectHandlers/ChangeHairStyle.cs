@@ -1,8 +1,9 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -14,9 +15,9 @@ public sealed class ChangeHairStyle: AbstractEffect
 {
     private readonly int _value;
 
-    public ChangeHairStyle(StatSet @params)
+    public ChangeHairStyle(EffectParameterSet parameters)
     {
-        _value = @params.getInt("value", 0);
+        _value = parameters.GetInt32(XmlSkillEffectParameterType.Value, 0);
     }
 
     public override bool IsInstant => true;

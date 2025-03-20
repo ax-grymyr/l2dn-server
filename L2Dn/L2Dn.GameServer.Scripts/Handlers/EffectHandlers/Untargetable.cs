@@ -12,10 +12,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class Untargetable: AbstractEffect
 {
-    public Untargetable(StatSet @params)
-    {
-    }
-
     public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected.isPlayer();

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Runtime.InteropServices;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Data.Xml;
@@ -36,6 +37,13 @@ public static class SkillExtensions
         return !skill.IsPassive && !skill.IsToggle && !skill.IsDebuff && !skill.IsIrreplacableBuff &&
             !skill.IsHeroSkill() && !skill.IsGmSkill() &&
             !(skill.IsStatic && skill.Id != (int)CommonSkill.CARAVANS_SECRET_MEDICINE) && skill.CanBeDispelled;
+    }
+
+    public static IEnumerable<AbstractEffect> GetEffects(this Skill skill, SkillEffectScope scope)
+    {
+        ImmutableArray<IAbstractEffect> abstractEffects = skill.GetAbstractEffects(scope);
+        IAbstractEffect[]? array = ImmutableCollectionsMarshal.AsArray(abstractEffects);
+        return array?.Cast<AbstractEffect>() ?? [];
     }
 
     public static bool CheckCondition(this Skill skill, Creature creature, WorldObject? @object, bool sendMessage)
@@ -191,11 +199,7 @@ public static class SkillExtensions
     public static void ApplyEffectScope(this Skill skill, SkillEffectScope effectScope, BuffInfo info,
         bool applyInstantEffects, bool addContinuousEffects)
     {
-        ImmutableArray<AbstractEffect> effects = skill.GetEffects(effectScope);
-        if (effects.IsDefaultOrEmpty)
-            return;
-
-        foreach (AbstractEffect effect in effects)
+        foreach (AbstractEffect effect in skill.GetEffects(effectScope))
         {
             if (effect.IsInstant)
             {
@@ -512,8 +516,12 @@ public static class SkillExtensions
     public static bool CheckConditions(this Skill skill, SkillConditionScope skillConditionScope, Creature caster,
         WorldObject? target)
     {
-        ImmutableArray<ISkillCondition> conditions = skill.GetConditions(skillConditionScope);
-        foreach (ISkillCondition condition in conditions)
+        ImmutableArray<ISkillConditionBase> conditions = skill.GetConditions(skillConditionScope);
+        ISkillConditionBase[]? array = ImmutableCollectionsMarshal.AsArray(conditions);
+        if (array is null)
+            return true;
+
+        foreach (ISkillCondition condition in array.OfType<ISkillCondition>())
         {
             if (!condition.canUse(caster, skill, target))
                 return false;

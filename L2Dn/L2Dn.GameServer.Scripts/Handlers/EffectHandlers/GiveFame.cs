@@ -1,8 +1,9 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -11,9 +12,9 @@ public sealed class GiveFame: AbstractEffect
 {
     private readonly int _fame;
 
-    public GiveFame(StatSet @params)
+    public GiveFame(EffectParameterSet parameters)
     {
-        _fame = @params.getInt("fame", 0);
+        _fame = parameters.GetInt32(XmlSkillEffectParameterType.Fame, 0);
     }
 
     public override bool IsInstant => true;

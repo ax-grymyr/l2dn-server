@@ -1,10 +1,11 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -16,9 +17,9 @@ public sealed class Transformation: AbstractEffect
 {
     private readonly FrozenSet<int> _transformationIds;
 
-    public Transformation(StatSet @params)
+    public Transformation(EffectParameterSet parameters)
     {
-        string ids = @params.getString("transformationId", string.Empty);
+        string ids = parameters.GetString(XmlSkillEffectParameterType.TransformationId, string.Empty);
         _transformationIds = ParseUtil.ParseSet<int>(ids);
     }
 

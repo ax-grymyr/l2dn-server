@@ -1,11 +1,13 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 
@@ -19,13 +21,13 @@ public sealed class TeleportToNpc: AbstractEffect
     private readonly int _npcId;
     private readonly bool _party;
 
-    public TeleportToNpc(StatSet @params)
+    public TeleportToNpc(EffectParameterSet parameters)
     {
-        _npcId = @params.getInt("npcId");
-        _party = @params.getBoolean("party", false);
+        _npcId = parameters.GetInt32(XmlSkillEffectParameterType.NpcId);
+        _party = parameters.GetBoolean(XmlSkillEffectParameterType.Party, false);
     }
 
-    public override EffectTypes EffectType => EffectTypes.TELEPORT_TO_TARGET;
+    public override EffectTypes EffectTypes => EffectTypes.TELEPORT_TO_TARGET;
 
     public override bool IsInstant => true;
 

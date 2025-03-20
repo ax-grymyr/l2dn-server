@@ -5,15 +5,8 @@ using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid
- */
-public class TargetMyMenteeSkillCondition: ISkillCondition
+public sealed class TargetMyMenteeSkillCondition: ISkillCondition
 {
-    public TargetMyMenteeSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         if (target == null || !target.isPlayer())

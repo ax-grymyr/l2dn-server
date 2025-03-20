@@ -10,15 +10,8 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Sdw
- */
-public class BuildCampSkillCondition: ISkillCondition
+public sealed class BuildCampSkillCondition: ISkillCondition
 {
-    public BuildCampSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         Player? player = caster.getActingPlayer();

@@ -1,10 +1,11 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -17,10 +18,11 @@ public sealed class TriggerSkillByKill: AbstractEffect
     private readonly int _chance;
     private readonly SkillHolder _skill;
 
-    public TriggerSkillByKill(StatSet @params)
+    public TriggerSkillByKill(EffectParameterSet parameters)
     {
-        _chance = @params.getInt("chance", 100);
-        _skill = new SkillHolder(@params.getInt("skillId", 0), @params.getInt("skillLevel", 0));
+        _chance = parameters.GetInt32(XmlSkillEffectParameterType.Chance, 100);
+        _skill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.SkillId, 0),
+            parameters.GetInt32(XmlSkillEffectParameterType.SkillLevel, 0));
     }
 
     private void onCreatureKilled(OnCreatureKilled ev, Creature target)

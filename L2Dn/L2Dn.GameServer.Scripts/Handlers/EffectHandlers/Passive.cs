@@ -1,4 +1,3 @@
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
@@ -11,10 +10,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class Passive: AbstractEffect
 {
-    public Passive(StatSet @params)
-    {
-    }
-
     public override EffectFlags EffectFlags => EffectFlags.PASSIVE;
 
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

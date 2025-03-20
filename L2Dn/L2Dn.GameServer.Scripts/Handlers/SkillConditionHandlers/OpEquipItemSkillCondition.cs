@@ -1,33 +1,32 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Mobius
- */
-public class OpEquipItemSkillCondition: ISkillCondition
+public sealed class OpEquipItemSkillCondition: ISkillCondition
 {
     private readonly Set<int> _itemIds = new();
     private readonly SkillConditionAffectType _affectType;
 
-    public OpEquipItemSkillCondition(StatSet @params)
+    public OpEquipItemSkillCondition(SkillConditionParameterSet parameters)
     {
-        List<int>? itemIds = @params.getList<int>("itemIds");
+        List<int>? itemIds = parameters.GetInt32ListOptional(XmlSkillConditionParameterType.ItemIds);
         if (itemIds != null)
         {
             _itemIds.addAll(itemIds);
         }
         else
         {
-            _itemIds.add(@params.getInt("itemId"));
+            _itemIds.Add(parameters.GetInt32(XmlSkillConditionParameterType.ItemId));
         }
 
-        _affectType = @params.getEnum<SkillConditionAffectType>("affectType");
+        _affectType = parameters.GetEnum<SkillConditionAffectType>(XmlSkillConditionParameterType.AffectType);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

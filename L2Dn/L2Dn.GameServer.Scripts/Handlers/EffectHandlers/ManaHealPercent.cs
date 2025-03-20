@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -18,12 +19,12 @@ public sealed class ManaHealPercent: AbstractEffect
 {
     private readonly double _power;
 
-    public ManaHealPercent(StatSet @params)
+    public ManaHealPercent(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power", 0);
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power, 0);
     }
 
-    public override EffectTypes EffectType => EffectTypes.MANAHEAL_PERCENT;
+    public override EffectTypes EffectTypes => EffectTypes.MANAHEAL_PERCENT;
 
     public override bool IsInstant => true;
 

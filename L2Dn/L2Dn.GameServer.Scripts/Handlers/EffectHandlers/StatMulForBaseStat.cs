@@ -1,8 +1,9 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -16,17 +17,15 @@ public sealed class StatMulForBaseStat: AbstractEffect
     private readonly Stat _mulStat;
     private readonly double _amount;
 
-    public StatMulForBaseStat(StatSet @params)
+    public StatMulForBaseStat(EffectParameterSet parameters)
     {
-        _baseStat = @params.getEnum<BaseStat>("baseStat");
-        _min = @params.getInt("min", 0);
-        _max = @params.getInt("max", 2147483647);
-        _mulStat = @params.getEnum<Stat>("mulStat");
-        _amount = @params.getDouble("amount", 0);
-        if (@params.getEnum("mode", StatModifierType.PER) != StatModifierType.PER)
-        {
+        _baseStat = parameters.GetEnum<BaseStat>(XmlSkillEffectParameterType.BaseStat);
+        _min = parameters.GetInt32(XmlSkillEffectParameterType.Min, 0);
+        _max = parameters.GetInt32(XmlSkillEffectParameterType.Max, 2147483647);
+        _mulStat = parameters.GetEnum<Stat>(XmlSkillEffectParameterType.MulStat);
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount, 0);
+        if (parameters.GetEnum(XmlSkillEffectParameterType.Mode, StatModifierType.PER) != StatModifierType.PER)
             Logger.Warn(GetType().Name + " can only use PER mode.");
-        }
     }
 
     public override void Pump(Creature effected, Skill skill)

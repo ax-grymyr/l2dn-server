@@ -1,10 +1,11 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 
@@ -20,12 +21,12 @@ public sealed class Backstab: AbstractEffect
     private readonly double _criticalChance;
     private readonly bool _overHit;
 
-    public Backstab(StatSet @params)
+    public Backstab(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power");
-        _chanceBoost = @params.getDouble("chanceBoost");
-        _criticalChance = @params.getDouble("criticalChance", 0);
-        _overHit = @params.getBoolean("overHit", false);
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power);
+        _chanceBoost = parameters.GetDouble(XmlSkillEffectParameterType.ChanceBoost);
+        _criticalChance = parameters.GetDouble(XmlSkillEffectParameterType.CriticalChance, 0);
+        _overHit = parameters.GetBoolean(XmlSkillEffectParameterType.OverHit, false);
     }
 
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
@@ -35,7 +36,7 @@ public sealed class Backstab: AbstractEffect
             Formulas.calcBlowSuccess(effector, effected, skill, _chanceBoost);
     }
 
-    public override EffectTypes EffectType => EffectTypes.PHYSICAL_ATTACK;
+    public override EffectTypes EffectTypes => EffectTypes.PHYSICAL_ATTACK;
 
     public override bool IsInstant => true;
 

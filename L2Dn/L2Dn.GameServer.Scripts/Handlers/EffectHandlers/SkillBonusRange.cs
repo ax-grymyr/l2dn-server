@@ -1,6 +1,7 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-public sealed class SkillBonusRange(StatSet @params): AbstractStatAddEffect(@params, Stat.MAGIC_ATTACK_RANGE);
+public sealed class SkillBonusRange(EffectParameterSet parameters):
+    AbstractStatAddEffect(parameters, Stat.MAGIC_ATTACK_RANGE);

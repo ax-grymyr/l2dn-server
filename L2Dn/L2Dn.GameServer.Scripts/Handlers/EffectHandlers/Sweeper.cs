@@ -1,8 +1,8 @@
 using L2Dn.GameServer.Dto;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.Utilities;
@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class Sweeper: AbstractEffect
 {
-    public Sweeper(StatSet @params)
+    public Sweeper(EffectParameterSet parameters)
     {
     }
 

@@ -1,5 +1,6 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Effects;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 
@@ -14,9 +15,9 @@ public sealed class DamageBlock: AbstractEffect
     private readonly bool _blockHp;
     private readonly bool _blockMp;
 
-    public DamageBlock(StatSet @params)
+    public DamageBlock(EffectParameterSet parameters)
     {
-        string type = @params.getString("type", string.Empty);
+        string type = parameters.GetString(XmlSkillEffectParameterType.Type, string.Empty);
         _blockHp = type.equalsIgnoreCase("BLOCK_HP");
         _blockMp = type.equalsIgnoreCase("BLOCK_MP");
     }

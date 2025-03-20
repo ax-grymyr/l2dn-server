@@ -1,9 +1,10 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -14,10 +15,10 @@ public sealed class StatUp: AbstractEffect
     private readonly double _amount;
     private readonly FrozenSet<Stat> _stats;
 
-    public StatUp(StatSet @params)
+    public StatUp(EffectParameterSet parameters)
     {
-        _amount = @params.getDouble("amount", 0);
-        string stats = @params.getString("stat", "STR");
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount, 0);
+        string stats = parameters.GetString(XmlSkillEffectParameterType.Stat, "STR");
         _stats = ParseUtil.ParseEnumSet<Stat>(stats, "STAT_", string.Empty, ',');
     }
 

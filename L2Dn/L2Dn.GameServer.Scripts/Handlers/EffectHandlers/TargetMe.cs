@@ -1,4 +1,3 @@
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -12,10 +11,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class TargetMe: AbstractEffect
 {
-    public TargetMe(StatSet @params)
-    {
-    }
-
     public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         if (effected.isPlayable())

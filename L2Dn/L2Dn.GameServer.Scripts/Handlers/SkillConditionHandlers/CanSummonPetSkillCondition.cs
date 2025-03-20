@@ -9,22 +9,13 @@ using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Sdw
- */
-public class CanSummonPetSkillCondition: ISkillCondition
+public sealed class CanSummonPetSkillCondition: ISkillCondition
 {
-    public CanSummonPetSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         Player? player = caster.getActingPlayer();
         if (player == null || player.isSpawnProtected() || player.isTeleportProtected())
-        {
             return false;
-        }
 
         bool canSummon = true;
         if (Config.Character.RESTORE_PET_ON_RECONNECT && CharSummonTable.getInstance().getPets().ContainsKey(player.ObjectId))

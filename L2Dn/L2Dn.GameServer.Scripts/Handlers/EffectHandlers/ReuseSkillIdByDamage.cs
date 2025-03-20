@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -21,16 +22,16 @@ public sealed class ReuseSkillIdByDamage: AbstractEffect
     private readonly int _amount;
     private readonly InstanceType _attackerType;
 
-    public ReuseSkillIdByDamage(StatSet @params)
+    public ReuseSkillIdByDamage(EffectParameterSet parameters)
     {
-        _minAttackerLevel = @params.getInt("minAttackerLevel", 1);
-        _maxAttackerLevel = @params.getInt("maxAttackerLevel", int.MaxValue);
-        _minDamage = @params.getInt("minDamage", 1);
-        _chance = @params.getInt("chance", 100);
-        _hpPercent = @params.getInt("hpPercent", 100);
-        _skillId = @params.getInt("skillId", 0);
-        _amount = @params.getInt("amount", 0);
-        _attackerType = @params.getEnum("attackerType", InstanceType.Creature);
+        _minAttackerLevel = parameters.GetInt32(XmlSkillEffectParameterType.MinAttackerLevel, 1);
+        _maxAttackerLevel = parameters.GetInt32(XmlSkillEffectParameterType.MaxAttackerLevel, int.MaxValue);
+        _minDamage = parameters.GetInt32(XmlSkillEffectParameterType.MinDamage, 1);
+        _chance = parameters.GetInt32(XmlSkillEffectParameterType.Chance, 100);
+        _hpPercent = parameters.GetInt32(XmlSkillEffectParameterType.HpPercent, 100);
+        _skillId = parameters.GetInt32(XmlSkillEffectParameterType.SkillId, 0);
+        _amount = parameters.GetInt32(XmlSkillEffectParameterType.Amount, 0);
+        _attackerType = parameters.GetEnum(XmlSkillEffectParameterType.AttackerType, InstanceType.Creature);
     }
 
     private void onDamageReceivedEvent(OnCreatureDamageReceived @event)

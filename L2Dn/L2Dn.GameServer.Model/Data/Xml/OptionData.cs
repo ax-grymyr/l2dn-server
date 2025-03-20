@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Options;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Xml;
 using NLog;
@@ -58,18 +59,18 @@ public class OptionData: DataReaderBase
 		foreach (XmlOptionEffect xmlOptionEffect in xmlOption.Effects)
 		{
 			string name = xmlOptionEffect.Name;
-			StatSet parameters = new StatSet();
-			parameters.set("amount", xmlOptionEffect.Amount);
-			parameters.set("attribute", xmlOptionEffect.Attribute);
-			parameters.set("magicType", xmlOptionEffect.MagicType);
-			parameters.set("mode", xmlOptionEffect.Mode);
-			parameters.set("stat", xmlOptionEffect.Stat);
+            EffectParameterSet parameters = new();
+			parameters[XmlSkillEffectParameterType.Amount] = xmlOptionEffect.Amount;
+			parameters[XmlSkillEffectParameterType.Attribute] = xmlOptionEffect.Attribute;
+			parameters[XmlSkillEffectParameterType.MagicType] = xmlOptionEffect.MagicType;
+			parameters[XmlSkillEffectParameterType.Mode] = xmlOptionEffect.Mode;
+			parameters[XmlSkillEffectParameterType.Stat] = xmlOptionEffect.Stat;
 
-			Func<StatSet, AbstractEffect>? handlerFactory = EffectHandler.getInstance().getHandlerFactory(name);
+			Func<EffectParameterSet, IAbstractEffect>? handlerFactory = EffectHandler.getInstance().getHandlerFactory(name);
 			if (handlerFactory is null)
 				_logger.Error($"{GetType().Name}: Could not find effect handler '{name}' used by option {id}.");
 			else
-				option.addEffect(handlerFactory(parameters));
+				option.addEffect((AbstractEffect)handlerFactory(parameters));
 		}
 
 		foreach (XmlOptionSkill activeSkill in xmlOption.ActiveSkills)

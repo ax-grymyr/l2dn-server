@@ -1,8 +1,9 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -11,9 +12,9 @@ public sealed class VipUp: AbstractEffect
 {
     private readonly long _amount;
 
-    public VipUp(StatSet @params)
+    public VipUp(EffectParameterSet parameters)
     {
-        _amount = @params.getLong("amount", 0L);
+        _amount = parameters.GetInt64(XmlSkillEffectParameterType.Amount, 0);
     }
 
     public override bool IsInstant => true;

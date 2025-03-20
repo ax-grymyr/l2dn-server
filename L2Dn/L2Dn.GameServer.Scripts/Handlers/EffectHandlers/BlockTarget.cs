@@ -9,10 +9,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 public sealed class BlockTarget: AbstractEffect
 {
-    public BlockTarget(StatSet @params)
-    {
-    }
-
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.setTargetable(false);

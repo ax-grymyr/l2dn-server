@@ -14,11 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class RebalanceHP: AbstractEffect
 {
-    public RebalanceHP(StatSet @params)
-    {
-    }
-
-    public override EffectTypes EffectType => EffectTypes.REBALANCE_HP;
+    public override EffectTypes EffectTypes => EffectTypes.REBALANCE_HP;
 
     public override bool IsInstant => true;
 

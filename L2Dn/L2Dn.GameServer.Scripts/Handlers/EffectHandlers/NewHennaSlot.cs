@@ -1,6 +1,7 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-public sealed class NewHennaSlot(StatSet @params): AbstractStatAddEffect(@params, Stat.HENNA_SLOTS_AVAILABLE);
+public sealed class NewHennaSlot(EffectParameterSet parameters):
+    AbstractStatAddEffect(parameters, Stat.HENNA_SLOTS_AVAILABLE);

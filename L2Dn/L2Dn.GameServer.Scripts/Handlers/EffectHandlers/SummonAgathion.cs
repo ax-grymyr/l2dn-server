@@ -1,10 +1,11 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -16,9 +17,9 @@ public sealed class SummonAgathion: AbstractEffect
 {
     private readonly int _npcId;
 
-    public SummonAgathion(StatSet @params)
+    public SummonAgathion(EffectParameterSet parameters)
     {
-        _npcId = @params.getInt("npcId");
+        _npcId = parameters.GetInt32(XmlSkillEffectParameterType.NpcId);
     }
 
     public override bool IsInstant => true;

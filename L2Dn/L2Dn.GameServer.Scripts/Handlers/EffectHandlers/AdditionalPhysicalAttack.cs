@@ -1,8 +1,9 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -11,9 +12,9 @@ public sealed class AdditionalPhysicalAttack: PhysicalAttack
 {
     private readonly int _chance;
 
-    public AdditionalPhysicalAttack(StatSet @params): base(@params)
+    public AdditionalPhysicalAttack(EffectParameterSet parameters): base(parameters)
     {
-        _chance = @params.getInt("chance", 100);
+        _chance = parameters.GetInt32(XmlSkillEffectParameterType.Chance, 100);
     }
 
     public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)

@@ -6,15 +6,8 @@ using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Sdw
- */
-public class CanUntransformSkillCondition: ISkillCondition
+public sealed class CanUntransformSkillCondition: ISkillCondition
 {
-    public CanUntransformSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         bool canUntransform = true;

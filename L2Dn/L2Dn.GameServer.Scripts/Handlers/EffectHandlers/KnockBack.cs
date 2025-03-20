@@ -1,13 +1,14 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
@@ -28,14 +29,14 @@ public sealed class KnockBack: AbstractEffect
 
     private static readonly Set<Creature> ACTIVE_KNOCKBACKS = [];
 
-    public KnockBack(StatSet @params)
+    public KnockBack(EffectParameterSet parameters)
     {
-        _distance = @params.getInt("distance", 50);
-        _speed = @params.getInt("speed", 0);
-        _delay = @params.getInt("delay", 0);
-        _animationSpeed = @params.getInt("animationSpeed", 0);
-        _knockDown = @params.getBoolean("knockDown", false);
-        _type = @params.getEnum("type", _knockDown ? FlyType.PUSH_DOWN_HORIZONTAL : FlyType.PUSH_HORIZONTAL);
+        _distance = parameters.GetInt32(XmlSkillEffectParameterType.Distance, 50);
+        _speed = parameters.GetInt32(XmlSkillEffectParameterType.Speed, 0);
+        _delay = parameters.GetInt32(XmlSkillEffectParameterType.Delay, 0);
+        _animationSpeed = parameters.GetInt32(XmlSkillEffectParameterType.AnimationSpeed, 0);
+        _knockDown = parameters.GetBoolean(XmlSkillEffectParameterType.KnockDown, false);
+        _type = parameters.GetEnum(XmlSkillEffectParameterType.Type, _knockDown ? FlyType.PUSH_DOWN_HORIZONTAL : FlyType.PUSH_HORIZONTAL);
     }
 
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
@@ -47,7 +48,7 @@ public sealed class KnockBack: AbstractEffect
 
     public override EffectFlags EffectFlags => _knockDown ? EffectFlags.BLOCK_ACTIONS : base.EffectFlags;
 
-    public override EffectTypes EffectType => _knockDown ? EffectTypes.BLOCK_ACTIONS : base.EffectType;
+    public override EffectTypes EffectTypes => _knockDown ? EffectTypes.BLOCK_ACTIONS : base.EffectTypes;
 
     public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

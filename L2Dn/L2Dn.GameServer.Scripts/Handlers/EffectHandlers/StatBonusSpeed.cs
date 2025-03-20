@@ -1,9 +1,10 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Conditions;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -14,12 +15,12 @@ public sealed class StatBonusSpeed: AbstractEffect
     private readonly double _stat;
     private readonly Condition? _armorTypeCondition;
 
-    public StatBonusSpeed(StatSet @params)
+    public StatBonusSpeed(EffectParameterSet parameters)
     {
-        _stat = (int)@params.getEnum("stat", BaseStat.DEX);
+        _stat = (int)parameters.GetEnum(XmlSkillEffectParameterType.Stat, BaseStat.DEX);
 
         ItemTypeMask armorTypesMask = ItemTypeMask.Zero;
-        List<string>? armorTypes = @params.getList<string>("armorType");
+        List<string>? armorTypes = parameters.GetStringListOptional(XmlSkillEffectParameterType.ArmorType);
         if (armorTypes != null)
         {
             foreach (string armorType in armorTypes)

@@ -1,8 +1,9 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
@@ -14,10 +15,10 @@ public sealed class CriticalDamagePosition: AbstractEffect
     private readonly double _amount;
     private readonly Position _position;
 
-    public CriticalDamagePosition(StatSet @params)
+    public CriticalDamagePosition(EffectParameterSet parameters)
     {
-        _amount = @params.getDouble("amount", 0);
-        _position = @params.getEnum("position", Position.Front);
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount, 0);
+        _position = parameters.GetEnum(XmlSkillEffectParameterType.Position, Position.Front);
     }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

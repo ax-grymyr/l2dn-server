@@ -1,8 +1,9 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -13,9 +14,9 @@ public sealed class MaxHp: AbstractStatEffect
 {
     private readonly bool _heal;
 
-    public MaxHp(StatSet @params): base(@params, Stat.MAX_HP)
+    public MaxHp(EffectParameterSet parameters): base(parameters, Stat.MAX_HP)
     {
-        _heal = @params.getBoolean("heal", false);
+        _heal = parameters.GetBoolean(XmlSkillEffectParameterType.Heal, false);
     }
 
     public override void ContinuousInstant(Creature effector, Creature effected, Skill skill, Item? item)

@@ -1,5 +1,4 @@
 using L2Dn.GameServer.AI;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -13,10 +12,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class PhysicalMute: AbstractEffect
 {
-    public PhysicalMute(StatSet @params)
-    {
-    }
-
     public override EffectFlags EffectFlags => EffectFlags.PSYCHICAL_MUTED;
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

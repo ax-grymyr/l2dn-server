@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 
@@ -21,18 +22,22 @@ public sealed class TriggerSkillByDualRange: AbstractEffect
     private readonly int _distance;
     private readonly bool _adjustLevel;
 
-    public TriggerSkillByDualRange(StatSet @params)
+    public TriggerSkillByDualRange(EffectParameterSet parameters)
     {
         // Just use closeSkill and rangeSkill parameters.
-        _closeSkill = new SkillHolder(@params.getInt("closeSkill"), @params.getInt("closeSkillLevel", 1));
-        _rangeSkill = new SkillHolder(@params.getInt("rangeSkill"), @params.getInt("rangeSkillLevel", 1));
-        _distance = @params.getInt("distance", 120);
-        _adjustLevel = @params.getBoolean("adjustLevel", true);
+        _closeSkill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.CloseSkill),
+            parameters.GetInt32(XmlSkillEffectParameterType.CloseSkillLevel, 1));
+
+        _rangeSkill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.RangeSkill),
+            parameters.GetInt32(XmlSkillEffectParameterType.RangeSkillLevel, 1));
+
+        _distance = parameters.GetInt32(XmlSkillEffectParameterType.Distance, 120);
+        _adjustLevel = parameters.GetBoolean(XmlSkillEffectParameterType.AdjustLevel, true);
     }
 
     public override bool IsInstant => true;
 
-    public override EffectTypes EffectType => EffectTypes.DUAL_RANGE;
+    public override EffectTypes EffectTypes => EffectTypes.DUAL_RANGE;
 
     public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

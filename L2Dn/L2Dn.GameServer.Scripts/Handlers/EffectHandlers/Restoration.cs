@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -19,11 +20,11 @@ public sealed class Restoration: AbstractEffect
     private readonly int _itemCount;
     private readonly int _itemEnchantmentLevel;
 
-    public Restoration(StatSet @params)
+    public Restoration(EffectParameterSet parameters)
     {
-        _itemId = @params.getInt("itemId", 0);
-        _itemCount = @params.getInt("itemCount", 0);
-        _itemEnchantmentLevel = @params.getInt("itemEnchantmentLevel", 0);
+        _itemId = parameters.GetInt32(XmlSkillEffectParameterType.ItemId, 0);
+        _itemCount = parameters.GetInt32(XmlSkillEffectParameterType.ItemCount, 0);
+        _itemEnchantmentLevel = parameters.GetInt32(XmlSkillEffectParameterType.ItemEnchantmentLevel, 0);
     }
 
     public override bool IsInstant => true;
@@ -65,7 +66,7 @@ public sealed class Restoration: AbstractEffect
         }
     }
 
-    public override EffectTypes EffectType => EffectTypes.EXTRACT_ITEM;
+    public override EffectTypes EffectTypes => EffectTypes.EXTRACT_ITEM;
 
     public override int GetHashCode() => HashCode.Combine(_itemId, _itemCount, _itemEnchantmentLevel);
 

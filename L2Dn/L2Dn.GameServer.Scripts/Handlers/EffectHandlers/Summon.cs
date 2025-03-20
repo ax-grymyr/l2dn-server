@@ -2,15 +2,14 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.Model.Enums;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -26,18 +25,23 @@ public sealed class Summon: AbstractEffect
     private readonly TimeSpan? _lifeTime;
     private readonly int _consumeItemInterval;
 
-    public Summon(StatSet @params)
+    public Summon(EffectParameterSet parameters)
     {
-        _npcId = @params.getInt("npcId");
-        _expMultiplier = @params.getFloat("expMultiplier", 1);
-        _consumeItem = new ItemHolder(@params.getInt("consumeItemId", 0), @params.getInt("consumeItemCount", 1));
-        _consumeItemInterval = @params.getInt("consumeItemInterval", 0);
-        int? lifeTime = @params.getInt("lifeTime", 0) > 0 ? @params.getInt("lifeTime") * 1000 : null; // Classic change.
+        _npcId = parameters.GetInt32(XmlSkillEffectParameterType.NpcId);
+        _expMultiplier = parameters.GetFloat(XmlSkillEffectParameterType.ExpMultiplier, 1);
+        _consumeItem = new ItemHolder(parameters.GetInt32(XmlSkillEffectParameterType.ConsumeItemId, 0),
+            parameters.GetInt32(XmlSkillEffectParameterType.ConsumeItemCount, 1));
+
+        _consumeItemInterval = parameters.GetInt32(XmlSkillEffectParameterType.ConsumeItemInterval, 0);
+        int? lifeTime = parameters.GetInt32(XmlSkillEffectParameterType.LifeTime, 0) > 0
+            ? parameters.GetInt32(XmlSkillEffectParameterType.LifeTime) * 1000
+            : null; // Classic change
+
         if (lifeTime != null)
             _lifeTime = TimeSpan.FromMilliseconds(lifeTime.Value);
     }
 
-    public override EffectTypes EffectType => EffectTypes.SUMMON;
+    public override EffectTypes EffectTypes => EffectTypes.SUMMON;
 
     public override bool IsInstant => true;
 

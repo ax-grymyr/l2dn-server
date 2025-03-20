@@ -4,15 +4,8 @@ using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Sdw
- */
-public class OpNeedAgathionSkillCondition: ISkillCondition
+public sealed class OpNeedAgathionSkillCondition: ISkillCondition
 {
-    public OpNeedAgathionSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         Player? player = caster.getActingPlayer();

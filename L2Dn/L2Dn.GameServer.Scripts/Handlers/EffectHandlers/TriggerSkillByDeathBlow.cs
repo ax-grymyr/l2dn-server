@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -23,14 +24,16 @@ public sealed class TriggerSkillByDeathBlow: AbstractEffect
     private readonly TargetType _targetType;
     private readonly InstanceType _attackerType;
 
-    public TriggerSkillByDeathBlow(StatSet @params)
+    public TriggerSkillByDeathBlow(EffectParameterSet parameters)
     {
-        _minAttackerLevel = @params.getInt("minAttackerLevel", 1);
-        _maxAttackerLevel = @params.getInt("maxAttackerLevel", int.MaxValue);
-        _chance = @params.getInt("chance", 100);
-        _skill = new SkillHolder(@params.getInt("skillId"), @params.getInt("skillLevel", 1));
-        _targetType = @params.getEnum("targetType", TargetType.SELF);
-        _attackerType = @params.getEnum("attackerType", InstanceType.Creature);
+        _minAttackerLevel = parameters.GetInt32(XmlSkillEffectParameterType.MinAttackerLevel, 1);
+        _maxAttackerLevel = parameters.GetInt32(XmlSkillEffectParameterType.MaxAttackerLevel, int.MaxValue);
+        _chance = parameters.GetInt32(XmlSkillEffectParameterType.Chance, 100);
+        _skill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.SkillId),
+            parameters.GetInt32(XmlSkillEffectParameterType.SkillLevel, 1));
+
+        _targetType = parameters.GetEnum(XmlSkillEffectParameterType.TargetType, TargetType.SELF);
+        _attackerType = parameters.GetEnum(XmlSkillEffectParameterType.AttackerType, InstanceType.Creature);
     }
 
     private void OnDamageReceivedEvent(OnCreatureDamageReceived @event)

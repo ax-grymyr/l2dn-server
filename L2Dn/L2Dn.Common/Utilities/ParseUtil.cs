@@ -1,4 +1,5 @@
 ﻿using System.Collections.Frozen;
+using System.Collections.Immutable;
 using System.Globalization;
 
 namespace L2Dn.Utilities;
@@ -53,6 +54,20 @@ public static class ParseUtil
         }
 
         return list.ToFrozenSet();
+    }
+
+    public static ImmutableArray<T> ParseList<T>(string value, char separator = ';')
+        where T: ISpanParsable<T>
+    {
+        if (string.IsNullOrEmpty(value))
+            return ImmutableArray<T>.Empty;
+
+        List<T> list = new(16);
+        ReadOnlySpan<char> span = value.AsSpan();
+        foreach (System.Range range in span.Split(separator))
+            list.Add(T.Parse(span[range].Trim(), CultureInfo.InvariantCulture));
+
+        return list.ToImmutableArray();
     }
 
     public static FrozenSet<T> ParseSet<T>(string value, char separator = ';')

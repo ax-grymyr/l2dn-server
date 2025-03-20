@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -18,12 +19,12 @@ public sealed class HealPercent: AbstractEffect
 {
     private readonly int _power;
 
-    public HealPercent(StatSet @params)
+    public HealPercent(EffectParameterSet parameters)
     {
-        _power = @params.getInt("power", 0);
+        _power = parameters.GetInt32(XmlSkillEffectParameterType.Power, 0);
     }
 
-    public override EffectTypes EffectType => EffectTypes.HEAL;
+    public override EffectTypes EffectTypes => EffectTypes.HEAL;
 
     public override bool IsInstant => true;
 

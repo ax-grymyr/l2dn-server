@@ -1,7 +1,8 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -12,10 +13,10 @@ public sealed class MpVampiricAttack: AbstractEffect
     private readonly double _amount;
     private readonly double _sum;
 
-    public MpVampiricAttack(StatSet @params)
+    public MpVampiricAttack(EffectParameterSet parameters)
     {
-        _amount = @params.getDouble("amount");
-        _sum = _amount * @params.getDouble("chance", 30); // Classic: 30% chance.
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount);
+        _sum = _amount * parameters.GetDouble(XmlSkillEffectParameterType.Chance, 30); // Classic: 30% chance.
     }
 
     public override void Pump(Creature effected, Skill skill)

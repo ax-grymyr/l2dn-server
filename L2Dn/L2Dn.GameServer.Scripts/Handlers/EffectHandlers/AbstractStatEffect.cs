@@ -1,12 +1,13 @@
 using System.Collections.Immutable;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Conditions;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -20,19 +21,19 @@ public abstract class AbstractStatEffect: AbstractEffect
     private readonly StatModifierType _mode;
     private readonly ImmutableArray<Condition> _conditions;
 
-    protected AbstractStatEffect(StatSet @params, Stat stat): this(@params, stat, stat)
+    protected AbstractStatEffect(EffectParameterSet parameters, Stat stat): this(parameters, stat, stat)
     {
     }
 
-    protected AbstractStatEffect(StatSet @params, Stat mulStat, Stat addStat)
+    protected AbstractStatEffect(EffectParameterSet parameters, Stat mulStat, Stat addStat)
     {
         _addStat = addStat;
         _mulStat = mulStat;
-        _amount = @params.getDouble("amount", 0);
-        _mode = @params.getEnum("mode", StatModifierType.DIFF);
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount, 0);
+        _mode = parameters.GetEnum(XmlSkillEffectParameterType.Mode, StatModifierType.DIFF);
 
         ItemTypeMask weaponTypesMask = ItemTypeMask.Zero;
-        List<string>? weaponTypes = @params.getList<string>("weaponType");
+        List<string>? weaponTypes = parameters.GetStringListOptional(XmlSkillEffectParameterType.WeaponType);
         if (weaponTypes != null)
         {
             foreach (string weaponType in weaponTypes)
@@ -50,7 +51,7 @@ public abstract class AbstractStatEffect: AbstractEffect
         }
 
         ItemTypeMask armorTypesMask = ItemTypeMask.Zero;
-        List<string>? armorTypes = @params.getList<string>("armorType");
+        List<string>? armorTypes = parameters.GetStringListOptional(XmlSkillEffectParameterType.ArmorType);
         if (armorTypes != null)
         {
             foreach (string armorType in armorTypes)
@@ -74,14 +75,14 @@ public abstract class AbstractStatEffect: AbstractEffect
         if (armorTypesMask != ItemTypeMask.Zero)
             conditions.Add(new ConditionUsingItemType(armorTypesMask));
 
-        if (@params.contains("inCombat"))
-            conditions.Add(new ConditionPlayerIsInCombat(@params.getBoolean("inCombat")));
+        if (parameters.Contains(XmlSkillEffectParameterType.InCombat))
+            conditions.Add(new ConditionPlayerIsInCombat(parameters.GetBoolean(XmlSkillEffectParameterType.InCombat)));
 
-        if (@params.contains("magicWeapon"))
-            conditions.Add(new ConditionUsingMagicWeapon(@params.getBoolean("magicWeapon")));
+        if (parameters.Contains(XmlSkillEffectParameterType.MagicWeapon))
+            conditions.Add(new ConditionUsingMagicWeapon(parameters.GetBoolean(XmlSkillEffectParameterType.MagicWeapon)));
 
-        if (@params.contains("twoHandWeapon"))
-            conditions.Add(new ConditionUsingTwoHandWeapon(@params.getBoolean("twoHandWeapon")));
+        if (parameters.Contains(XmlSkillEffectParameterType.TwoHandWeapon))
+            conditions.Add(new ConditionUsingTwoHandWeapon(parameters.GetBoolean(XmlSkillEffectParameterType.TwoHandWeapon)));
 
         _conditions = conditions.ToImmutableArray();
     }

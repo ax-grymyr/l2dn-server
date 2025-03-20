@@ -1,8 +1,9 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -16,11 +17,11 @@ public sealed class GiveXp: AbstractEffect
     private readonly int _level;
     private readonly double _percentage;
 
-    public GiveXp(StatSet @params)
+    public GiveXp(EffectParameterSet parameters)
     {
-        _xp = @params.getLong("xp", 0);
-        _level = @params.getInt("level", 0);
-        _percentage = @params.getDouble("percentage", 0);
+        _xp = parameters.GetInt64(XmlSkillEffectParameterType.Xp, 0);
+        _level = parameters.GetInt32(XmlSkillEffectParameterType.Level, 0);
+        _percentage = parameters.GetDouble(XmlSkillEffectParameterType.Percentage, 0);
     }
 
     public override bool IsInstant => true;

@@ -1,12 +1,13 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -22,18 +23,18 @@ public sealed class ResurrectionSpecial: AbstractEffect
     private readonly int _cpPercent;
     private readonly FrozenSet<int> _instanceIds;
 
-    public ResurrectionSpecial(StatSet @params)
+    public ResurrectionSpecial(EffectParameterSet parameters)
     {
-        _power = @params.getInt("power", 0);
-        _hpPercent = @params.getInt("hpPercent", 0);
-        _mpPercent = @params.getInt("mpPercent", 0);
-        _cpPercent = @params.getInt("cpPercent", 0);
+        _power = parameters.GetInt32(XmlSkillEffectParameterType.Power, 0);
+        _hpPercent = parameters.GetInt32(XmlSkillEffectParameterType.HpPercent, 0);
+        _mpPercent = parameters.GetInt32(XmlSkillEffectParameterType.MpPercent, 0);
+        _cpPercent = parameters.GetInt32(XmlSkillEffectParameterType.CpPercent, 0);
 
-        string instanceIds = @params.getString("instanceId", string.Empty);
+        string instanceIds = parameters.GetString(XmlSkillEffectParameterType.InstanceId, string.Empty);
         _instanceIds = ParseUtil.ParseSet<int>(instanceIds);
     }
 
-    public override EffectTypes EffectType => EffectTypes.RESURRECTION_SPECIAL;
+    public override EffectTypes EffectTypes => EffectTypes.RESURRECTION_SPECIAL;
 
     public override EffectFlags EffectFlags => EffectFlags.RESURRECTION_SPECIAL;
 

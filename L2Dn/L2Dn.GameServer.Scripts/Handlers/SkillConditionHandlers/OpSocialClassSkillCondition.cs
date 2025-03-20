@@ -1,35 +1,30 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid
- */
-public class OpSocialClassSkillCondition: ISkillCondition
+public sealed class OpSocialClassSkillCondition: ISkillCondition
 {
-	private readonly int _socialClass;
+    private readonly int _socialClass;
 
-	public OpSocialClassSkillCondition(StatSet @params)
-	{
-		_socialClass = @params.getInt("socialClass");
-	}
+    public OpSocialClassSkillCondition(SkillConditionParameterSet parameters)
+    {
+        _socialClass = parameters.GetInt32(XmlSkillConditionParameterType.SocialClass);
+    }
 
-	public bool canUse(Creature caster, Skill skill, WorldObject? target)
-	{
-		Player? player = caster.getActingPlayer();
-		if (player == null || player.getClan() == null)
-		{
-			return false;
-		}
+    public bool canUse(Creature caster, Skill skill, WorldObject? target)
+    {
+        Player? player = caster.getActingPlayer();
+        if (player == null || player.getClan() == null)
+            return false;
 
-		bool isClanLeader = player.isClanLeader();
-		if (_socialClass == -1 && !isClanLeader)
-		{
-			return false;
-		}
+        bool isClanLeader = player.isClanLeader();
+        if (_socialClass == -1 && !isClanLeader)
+            return false;
 
-		return isClanLeader || player.getPledgeType() >= _socialClass;
-	}
+        return isClanLeader || player.getPledgeType() >= _socialClass;
+    }
 }

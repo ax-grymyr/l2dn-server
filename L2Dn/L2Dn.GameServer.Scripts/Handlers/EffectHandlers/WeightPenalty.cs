@@ -1,6 +1,6 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-public sealed class WeightPenalty(StatSet @params): AbstractStatAddEffect(@params, Stat.WEIGHT_PENALTY);
+public sealed class WeightPenalty(EffectParameterSet parameters): AbstractStatAddEffect(parameters, Stat.WEIGHT_PENALTY);

@@ -1,22 +1,21 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Sdw
- */
-public class OpCheckSkillSkillCondition: ISkillCondition
+public sealed class OpCheckSkillSkillCondition: ISkillCondition
 {
     private readonly int _skillId;
     private readonly SkillConditionAffectType _affectType;
 
-    public OpCheckSkillSkillCondition(StatSet @params)
+    public OpCheckSkillSkillCondition(SkillConditionParameterSet parameters)
     {
-        _skillId = @params.getInt("skillId");
-        _affectType = @params.getEnum<SkillConditionAffectType>("affectType");
+        _skillId = parameters.GetInt32(XmlSkillConditionParameterType.SkillId);
+        _affectType = parameters.GetEnum<SkillConditionAffectType>(XmlSkillConditionParameterType.AffectType);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

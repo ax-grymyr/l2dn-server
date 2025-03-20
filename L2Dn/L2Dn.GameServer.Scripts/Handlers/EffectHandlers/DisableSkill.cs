@@ -1,10 +1,11 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -13,9 +14,9 @@ public sealed class DisableSkill: AbstractEffect
 {
     private readonly FrozenSet<int> _disabledSkills;
 
-    public DisableSkill(StatSet @params)
+    public DisableSkill(EffectParameterSet parameters)
     {
-        string disable = @params.getString("disable");
+        string disable = parameters.GetString(XmlSkillEffectParameterType.Disable);
         _disabledSkills = ParseUtil.ParseSet<int>(disable);
     }
 

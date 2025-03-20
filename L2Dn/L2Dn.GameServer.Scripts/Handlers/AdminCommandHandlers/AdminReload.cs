@@ -142,7 +142,7 @@ public class AdminReload: IAdminCommandHandler
 				}
 				case "skill":
 				{
-					SkillData.Instance.Reload();
+					SkillData.Instance.Load();
 					GmManager.getInstance().BroadcastMessageToGMs(activeChar.getName() + ": Reloaded Skills.");
 					break;
 				}

@@ -1,12 +1,13 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 
@@ -35,14 +36,14 @@ public sealed class Blink: AbstractEffect
     private readonly int _flyDelay;
     private readonly int _animationSpeed;
 
-    public Blink(StatSet @params)
+    public Blink(EffectParameterSet parameters)
     {
-        _flyCourse = @params.getInt("angle", 0);
-        _flyRadius = @params.getInt("range", 0);
-        _flyType = @params.getEnum("flyType", FlyType.DUMMY);
-        _flySpeed = @params.getInt("speed", 0);
-        _flyDelay = @params.getInt("delay", 0);
-        _animationSpeed = @params.getInt("animationSpeed", 0);
+        _flyCourse = parameters.GetInt32(XmlSkillEffectParameterType.Angle, 0);
+        _flyRadius = parameters.GetInt32(XmlSkillEffectParameterType.Range, 0);
+        _flyType = parameters.GetEnum(XmlSkillEffectParameterType.FlyType, FlyType.DUMMY);
+        _flySpeed = parameters.GetInt32(XmlSkillEffectParameterType.Speed, 0);
+        _flyDelay = parameters.GetInt32(XmlSkillEffectParameterType.Delay, 0);
+        _animationSpeed = parameters.GetInt32(XmlSkillEffectParameterType.AnimationSpeed, 0);
     }
 
     public override bool IsInstant => true;

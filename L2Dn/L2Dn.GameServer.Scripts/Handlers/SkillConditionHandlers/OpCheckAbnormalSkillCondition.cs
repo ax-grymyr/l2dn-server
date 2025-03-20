@@ -1,26 +1,25 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid
- */
-public class OpCheckAbnormalSkillCondition: ISkillCondition
+public sealed class OpCheckAbnormalSkillCondition: ISkillCondition
 {
     private readonly AbnormalType _type;
     private readonly int _level;
     private readonly bool _hasAbnormal;
     private readonly SkillConditionAffectType _affectType;
 
-    public OpCheckAbnormalSkillCondition(StatSet @params)
+    public OpCheckAbnormalSkillCondition(SkillConditionParameterSet parameters)
     {
-        _type = @params.getEnum<AbnormalType>("type");
-        _level = @params.getInt("level");
-        _hasAbnormal = @params.getBoolean("hasAbnormal");
-        _affectType = @params.getEnum("affectType", SkillConditionAffectType.TARGET);
+        _type = parameters.GetEnum<AbnormalType>(XmlSkillConditionParameterType.Type);
+        _level = parameters.GetInt32(XmlSkillConditionParameterType.Level);
+        _hasAbnormal = parameters.GetBoolean(XmlSkillConditionParameterType.HasAbnormal);
+        _affectType = parameters.GetEnum(XmlSkillConditionParameterType.AffectType, SkillConditionAffectType.TARGET);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

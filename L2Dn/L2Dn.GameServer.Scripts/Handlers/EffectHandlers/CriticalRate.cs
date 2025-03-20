@@ -1,5 +1,5 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Conditions;
 using L2Dn.GameServer.Model.Skills;
@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 public sealed class CriticalRate: AbstractConditionalHpEffect
 {
-    public CriticalRate(StatSet @params): base(@params, Stat.CRITICAL_RATE)
+    public CriticalRate(EffectParameterSet parameters): base(parameters, Stat.CRITICAL_RATE)
     {
     }
 

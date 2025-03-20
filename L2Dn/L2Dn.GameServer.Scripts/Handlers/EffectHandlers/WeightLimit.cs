@@ -1,6 +1,6 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-public sealed class WeightLimit(StatSet @params): AbstractStatEffect(@params, Stat.WEIGHT_LIMIT);
+public sealed class WeightLimit(EffectParameterSet parameters): AbstractStatEffect(parameters, Stat.WEIGHT_LIMIT);

@@ -1,5 +1,4 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -13,10 +12,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class Flag: AbstractEffect
 {
-    public Flag(StatSet @params)
-    {
-    }
-
     public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected != null && effected.isPlayer();

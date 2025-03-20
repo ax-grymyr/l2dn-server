@@ -1,12 +1,13 @@
 using System.Collections.Immutable;
 using System.Globalization;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -18,9 +19,9 @@ public sealed class CallRandomSkill: AbstractEffect
 {
     private readonly ImmutableArray<SkillHolder> _skills;
 
-    public CallRandomSkill(StatSet @params)
+    public CallRandomSkill(EffectParameterSet parameters)
     {
-        string skills = @params.getString("skills", string.Empty);
+        string skills = parameters.GetString(XmlSkillEffectParameterType.Skills, string.Empty);
         _skills = ImmutableArray<SkillHolder>.Empty;
         if (!string.IsNullOrEmpty(skills))
         {

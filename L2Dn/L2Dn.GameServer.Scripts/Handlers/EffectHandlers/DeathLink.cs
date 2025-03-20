@@ -1,12 +1,13 @@
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
-using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -17,9 +18,9 @@ public sealed class DeathLink: AbstractEffect
 {
     private readonly double _power;
 
-    public DeathLink(StatSet @params)
+    public DeathLink(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power", 0);
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power, 0);
     }
 
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
@@ -27,7 +28,7 @@ public sealed class DeathLink: AbstractEffect
         return !Formulas.calcSkillEvasion(effector, effected, skill);
     }
 
-    public override EffectTypes EffectType => EffectTypes.DEATH_LINK;
+    public override EffectTypes EffectTypes => EffectTypes.DEATH_LINK;
 
     public override bool IsInstant => true;
 

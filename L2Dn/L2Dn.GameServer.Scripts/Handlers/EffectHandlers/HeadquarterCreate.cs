@@ -1,5 +1,5 @@
 using L2Dn.GameServer.Data.Xml;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 
@@ -20,9 +21,9 @@ public sealed class HeadquarterCreate: AbstractEffect
     private const int _hqNpcId = 35062;
     private readonly bool _isAdvanced;
 
-    public HeadquarterCreate(StatSet @params)
+    public HeadquarterCreate(EffectParameterSet parameters)
     {
-        _isAdvanced = @params.getBoolean("isAdvanced", false);
+        _isAdvanced = parameters.GetBoolean(XmlSkillEffectParameterType.IsAdvanced, false);
     }
 
     public override bool IsInstant => true;

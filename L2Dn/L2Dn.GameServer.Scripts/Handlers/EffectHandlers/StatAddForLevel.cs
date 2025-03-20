@@ -1,10 +1,12 @@
 using System.Collections.Frozen;
+using System.Collections.Immutable;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -15,15 +17,20 @@ public sealed class StatAddForLevel: AbstractEffect
     private readonly FrozenDictionary<int, double> _values;
     private readonly Stat _stat;
 
-    public StatAddForLevel(StatSet @params)
+    public StatAddForLevel(EffectParameterSet parameters)
     {
-        _stat = @params.getEnum<Stat>("stat");
+        _stat = parameters.GetEnum<Stat>(XmlSkillEffectParameterType.Stat);
 
-        List<int> amount = @params.getIntegerList("amount");
-        _values = @params.getIntegerList("level").
-            Select((level, index) => new KeyValuePair<int, double>(level, amount[index])).ToFrozenDictionary();
+        string amountStr = parameters.GetString(XmlSkillEffectParameterType.Amount);
+        ImmutableArray<int> amounts = ParseUtil.ParseList<int>(amountStr, ',');
 
-        if (@params.getEnum("mode", StatModifierType.DIFF) != StatModifierType.DIFF)
+        string levelStr = parameters.GetString(XmlSkillEffectParameterType.Level);
+        ImmutableArray<int> levels = ParseUtil.ParseList<int>(levelStr, ',');
+
+        _values = levels.Select((level, index) => new KeyValuePair<int, double>(level, amounts[index])).
+            ToFrozenDictionary();
+
+        if (parameters.GetEnum(XmlSkillEffectParameterType.Mode, StatModifierType.DIFF) != StatModifierType.DIFF)
             throw new ArgumentException(nameof(StatAddForLevel) + " can only use DIFF mode.");
     }
 

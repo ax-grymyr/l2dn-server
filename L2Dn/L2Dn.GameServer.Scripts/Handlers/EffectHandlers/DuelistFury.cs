@@ -1,4 +1,3 @@
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
@@ -8,10 +7,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 public sealed class DuelistFury: AbstractEffect
 {
-    public DuelistFury(StatSet @params)
-    {
-    }
-
     public override EffectFlags EffectFlags => EffectFlags.DUELIST_FURY;
 
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

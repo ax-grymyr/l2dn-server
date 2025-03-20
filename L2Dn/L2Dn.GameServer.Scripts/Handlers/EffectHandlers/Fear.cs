@@ -1,14 +1,12 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.Geometry;
-using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -19,10 +17,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public sealed class Fear: AbstractEffect
 {
     private const int _fearRange = 500;
-
-    public Fear(StatSet @params)
-    {
-    }
 
     public override EffectFlags EffectFlags => EffectFlags.FEAR;
 

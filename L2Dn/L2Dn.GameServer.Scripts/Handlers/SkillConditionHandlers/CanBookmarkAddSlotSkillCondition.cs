@@ -1,20 +1,19 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author
- */
-public class CanBookmarkAddSlotSkillCondition: ISkillCondition
+public sealed class CanBookmarkAddSlotSkillCondition: ISkillCondition
 {
     private readonly int _teleportBookmarkSlots;
 
-    public CanBookmarkAddSlotSkillCondition(StatSet @params)
+    public CanBookmarkAddSlotSkillCondition(SkillConditionParameterSet parameters)
     {
-        _teleportBookmarkSlots = @params.getInt("teleportBookmarkSlots");
+        _teleportBookmarkSlots = parameters.GetInt32(XmlSkillConditionParameterType.TeleportBookmarkSlots);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

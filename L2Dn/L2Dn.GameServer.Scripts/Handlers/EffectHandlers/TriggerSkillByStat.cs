@@ -1,9 +1,10 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
@@ -19,14 +20,14 @@ public sealed class TriggerSkillByStat: AbstractEffect
     private readonly int _min;
     private readonly int _max;
 
-    public TriggerSkillByStat(StatSet @params)
+    public TriggerSkillByStat(EffectParameterSet parameters)
     {
-        _stat = @params.getEnum<Stat>("stat");
-        _skillId = @params.getInt("skillId", 0);
-        _skillLevel = @params.getInt("skillLevel", 1);
-        _skillSubLevel = @params.getInt("skillSubLevel", 0);
-        _min = @params.getInt("min", 0);
-        _max = @params.getInt("max", 9999);
+        _stat = parameters.GetEnum<Stat>(XmlSkillEffectParameterType.Stat);
+        _skillId = parameters.GetInt32(XmlSkillEffectParameterType.SkillId, 0);
+        _skillLevel = parameters.GetInt32(XmlSkillEffectParameterType.SkillLevel, 1);
+        _skillSubLevel = parameters.GetInt32(XmlSkillEffectParameterType.SkillSubLevel, 0);
+        _min = parameters.GetInt32(XmlSkillEffectParameterType.Min, 0);
+        _max = parameters.GetInt32(XmlSkillEffectParameterType.Max, 9999);
     }
 
     public override void Pump(Creature effected, Skill skill)

@@ -1,19 +1,18 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Sdw
- */
-public class CannotUseInTransformSkillCondition: ISkillCondition
+public sealed class CannotUseInTransformSkillCondition: ISkillCondition
 {
     private readonly int _transformId;
 
-    public CannotUseInTransformSkillCondition(StatSet @params)
+    public CannotUseInTransformSkillCondition(SkillConditionParameterSet parameters)
     {
-        _transformId = @params.getInt("transformId", -1);
+        _transformId = parameters.GetInt32(XmlSkillConditionParameterType.TransformId, -1);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

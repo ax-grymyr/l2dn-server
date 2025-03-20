@@ -1,5 +1,5 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using Config = L2Dn.GameServer.Configuration.Config;
@@ -20,12 +21,12 @@ public sealed class HpCpHeal: AbstractEffect
 {
     private readonly double _power;
 
-    public HpCpHeal(StatSet @params)
+    public HpCpHeal(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power", 0);
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power, 0);
     }
 
-    public override EffectTypes EffectType => EffectTypes.HEAL;
+    public override EffectTypes EffectTypes => EffectTypes.HEAL;
 
     public override bool IsInstant => true;
 

@@ -1,10 +1,11 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -18,10 +19,10 @@ public sealed class FocusMomentum: AbstractEffect
     private readonly int _amount;
     private readonly int _maxCharges;
 
-    public FocusMomentum(StatSet @params)
+    public FocusMomentum(EffectParameterSet parameters)
     {
-        _amount = @params.getInt("amount", 1);
-        _maxCharges = @params.getInt("maxCharges", 0);
+        _amount = parameters.GetInt32(XmlSkillEffectParameterType.Amount, 1);
+        _maxCharges = parameters.GetInt32(XmlSkillEffectParameterType.MaxCharges, 0);
     }
 
     public override bool IsInstant => true;

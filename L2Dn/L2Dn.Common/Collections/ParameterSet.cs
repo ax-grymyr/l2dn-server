@@ -1,8 +1,10 @@
-﻿using System.Globalization;
+﻿using System.Collections;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 
 namespace L2Dn.Collections;
 
-public sealed class ParameterSet<TKey>
+public class ParameterSet<TKey>
     where TKey: notnull
 {
     private readonly Dictionary<TKey, object> _values = [];
@@ -13,14 +15,32 @@ public sealed class ParameterSet<TKey>
         set => _values[key] = value;
     }
 
+    public IReadOnlyCollection<TKey> Keys => _values.Keys;
+
+    public bool TryGetValue(TKey key, [NotNullWhen(true)] out object? value) => _values.TryGetValue(key, out value);
+
+    public bool Contains(TKey key) => _values.ContainsKey(key);
+
     public string? GetStringOptional(TKey key) =>
         _values.TryGetValue(key, out object? obj) ? ConvertToString(obj) : null;
 
     public string GetString(TKey key) =>
         GetStringOptional(key) ??
-        throw new InvalidCastException("String value of type required, but not specified");
+        throw new InvalidCastException("String value required, but not specified");
 
     public string GetString(TKey key, string defaultValue) => GetStringOptional(key) ?? defaultValue;
+
+    public List<string>? GetStringListOptional(TKey key) =>
+        _values.TryGetValue(key, out object? obj) ? ConvertToStringList(obj) : null;
+
+    public List<string> GetStringList(TKey key) =>
+        GetStringListOptional(key) ?? throw new InvalidCastException("String list required, but not specified");
+
+    public List<int>? GetInt32ListOptional(TKey key) =>
+        _values.TryGetValue(key, out object? obj) ? ConvertToList<int>(obj) : null;
+
+    public List<int> GetInt32List(TKey key) =>
+        GetInt32ListOptional(key) ?? throw new InvalidCastException("Integer list required, but not specified");
 
     public TEnum? GetEnumOptional<TEnum>(TKey key)
         where TEnum: unmanaged, Enum
@@ -53,7 +73,7 @@ public sealed class ParameterSet<TKey>
 
     public long? GetInt64Optional(TKey key) => GetValueOptional<long>(key);
     public long GetInt64(TKey key) => GetValue<long>(key);
-    public long GetInt64(TKey key, int defaultValue) => GetInt64Optional(key) ?? defaultValue;
+    public long GetInt64(TKey key, long defaultValue) => GetInt64Optional(key) ?? defaultValue;
 
     public decimal? GetDecimalOptional(TKey key) => GetValueOptional<decimal>(key);
     public decimal GetDecimal(TKey key) => GetValue<decimal>(key);
@@ -85,13 +105,49 @@ public sealed class ParameterSet<TKey>
     public TimeSpan GetTimeSpanMilliSeconds(TKey key, TimeSpan defaultValue) =>
         GetTimeSpanOptional(key, TimeSpan.TicksPerMillisecond) ?? defaultValue;
 
+    public T? GetObjectOptional<T>(TKey key)
+        where T: class =>
+        _values.TryGetValue(key, out object? value)
+            ? value as T ??
+            throw new InvalidCastException($"Object of type {typeof(T).Name} required, but {value} specified")
+            : null;
+
+    public T GetObject<T>(TKey key)
+        where T: class =>
+        GetObjectOptional<T>(key) ??
+        throw new InvalidCastException($"Object of type {typeof(T).Name} required, but not specified");
+
+    private static List<string> ConvertToStringList(object obj) =>
+        obj switch
+        {
+            List<string> list => list,
+            string s => [s],
+            IEnumerable<string> enumerable => enumerable.ToList(),
+            IEnumerable enumerable => enumerable.Cast<object?>().
+                Select(v => v is null ? string.Empty : ConvertToString(v)).ToList(),
+
+            _ => throw new InvalidCastException($"String list requested, but {obj} found"),
+        };
+
+    private static List<T> ConvertToList<T>(object obj)
+        where T: struct, IParsable<T> =>
+        obj switch
+        {
+            List<T> list => list,
+            IEnumerable<T> enumerable => enumerable.ToList(),
+            IEnumerable enumerable => enumerable.Cast<object>().
+                Select(ConvertToValue<T>).ToList(),
+
+            _ => throw new InvalidCastException($"{typeof(T).Name} list requested, but {obj} found"),
+        };
+
     private static string ConvertToString(object obj) =>
         obj switch
         {
             string s => s,
             IConvertible convertible => convertible.ToString(CultureInfo.InvariantCulture),
             IFormattable formattable => formattable.ToString(null, CultureInfo.InvariantCulture),
-            _ => obj.ToString() ?? string.Empty
+            _ => obj.ToString() ?? string.Empty,
         };
 
     private T GetValue<T>(TKey key)
@@ -105,6 +161,12 @@ public sealed class ParameterSet<TKey>
         if (!_values.TryGetValue(key, out object? obj))
             return null;
 
+        return ConvertToValue<T>(obj);
+    }
+
+    private static T ConvertToValue<T>(object obj)
+        where T: struct, IParsable<T>
+    {
         if (obj is T result)
             return result;
 

@@ -1,11 +1,12 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -18,14 +19,14 @@ public sealed class DispelBySlotProbability: AbstractEffect
     private readonly FrozenSet<AbnormalType> _dispelAbnormals;
     private readonly int _rate;
 
-    public DispelBySlotProbability(StatSet @params)
+    public DispelBySlotProbability(EffectParameterSet parameters)
     {
-        string dispelEffects = @params.getString("dispel");
+        string dispelEffects = parameters.GetString(XmlSkillEffectParameterType.Dispel);
         _dispelAbnormals = ParseUtil.ParseEnumSet<AbnormalType>(dispelEffects);
-        _rate = @params.getInt("rate", 100);
+        _rate = parameters.GetInt32(XmlSkillEffectParameterType.Rate, 100);
     }
 
-    public override EffectTypes EffectType => EffectTypes.DISPEL;
+    public override EffectTypes EffectTypes => EffectTypes.DISPEL;
 
     public override bool IsInstant => true;
 

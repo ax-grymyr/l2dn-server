@@ -1,8 +1,9 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -15,9 +16,9 @@ public sealed class ModifyVital: AbstractEffect
     // Modify types
     private enum ModifyType
     {
-        DIFF,
-        SET,
-        PER
+        Diff,
+        Set,
+        Per,
     }
 
     // Effect parameters
@@ -26,21 +27,13 @@ public sealed class ModifyVital: AbstractEffect
     private readonly int _mp;
     private readonly int _cp;
 
-    public ModifyVital(StatSet @params)
+    public ModifyVital(EffectParameterSet parameters)
     {
-        _type = @params.getEnum<ModifyType>("type");
-        if (_type != ModifyType.SET)
-        {
-            _hp = @params.getInt("hp", 0);
-            _mp = @params.getInt("mp", 0);
-            _cp = @params.getInt("cp", 0);
-        }
-        else
-        {
-            _hp = @params.getInt("hp", -1);
-            _mp = @params.getInt("mp", -1);
-            _cp = @params.getInt("cp", -1);
-        }
+        _type = parameters.GetEnum<ModifyType>(XmlSkillEffectParameterType.Type);
+        int defaultValue = _type == ModifyType.Set ? -1 : 0;
+        _hp = parameters.GetInt32(XmlSkillEffectParameterType.Hp, defaultValue);
+        _mp = parameters.GetInt32(XmlSkillEffectParameterType.Mp, defaultValue);
+        _cp = parameters.GetInt32(XmlSkillEffectParameterType.Cp, defaultValue);
     }
 
     public override bool IsInstant => true;
@@ -61,14 +54,14 @@ public sealed class ModifyVital: AbstractEffect
 
         switch (_type)
         {
-            case ModifyType.DIFF:
+            case ModifyType.Diff:
             {
                 effected.setCurrentCp(effected.getCurrentCp() + _cp);
                 effected.setCurrentHp(effected.getCurrentHp() + _hp);
                 effected.setCurrentMp(effected.getCurrentMp() + _mp);
                 break;
             }
-            case ModifyType.SET:
+            case ModifyType.Set:
             {
                 if (_cp >= 0)
                     effected.setCurrentCp(_cp);
@@ -81,7 +74,7 @@ public sealed class ModifyVital: AbstractEffect
 
                 break;
             }
-            case ModifyType.PER:
+            case ModifyType.Per:
             {
                 effected.setCurrentCp(effected.getCurrentCp() + effected.getMaxCp() * (_cp / 100.0));
                 effected.setCurrentHp(effected.getCurrentHp() + effected.getMaxHp() * (_hp / 100.0));

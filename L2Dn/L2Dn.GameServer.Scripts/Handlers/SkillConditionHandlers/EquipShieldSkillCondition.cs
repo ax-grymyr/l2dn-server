@@ -6,15 +6,8 @@ using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid
- */
-public class EquipShieldSkillCondition: ISkillCondition
+public sealed class EquipShieldSkillCondition: ISkillCondition
 {
-    public EquipShieldSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         ItemTemplate? shield = caster.getSecondaryWeaponItem();

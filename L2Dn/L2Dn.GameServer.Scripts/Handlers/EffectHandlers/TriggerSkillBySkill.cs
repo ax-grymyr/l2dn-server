@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -24,14 +25,16 @@ public sealed class TriggerSkillBySkill: AbstractEffect
     private readonly TargetType _targetType;
     private readonly bool _replace;
 
-    public TriggerSkillBySkill(StatSet @params)
+    public TriggerSkillBySkill(EffectParameterSet parameters)
     {
-        _castSkillId = @params.getInt("castSkillId");
-        _chance = @params.getInt("chance", 100);
-        _skill = new SkillHolder(@params.getInt("skillId", 0), @params.getInt("skillLevel", 0));
-        _skillLevelScaleTo = @params.getInt("skillLevelScaleTo", 0);
-        _targetType = @params.getEnum("targetType", TargetType.TARGET);
-        _replace = @params.getBoolean("replace", true);
+        _castSkillId = parameters.GetInt32(XmlSkillEffectParameterType.CastSkillId);
+        _chance = parameters.GetInt32(XmlSkillEffectParameterType.Chance, 100);
+        _skill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.SkillId, 0),
+            parameters.GetInt32(XmlSkillEffectParameterType.SkillLevel, 0));
+
+        _skillLevelScaleTo = parameters.GetInt32(XmlSkillEffectParameterType.SkillLevelScaleTo, 0);
+        _targetType = parameters.GetEnum(XmlSkillEffectParameterType.TargetType, TargetType.TARGET);
+        _replace = parameters.GetBoolean(XmlSkillEffectParameterType.Replace, true);
     }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

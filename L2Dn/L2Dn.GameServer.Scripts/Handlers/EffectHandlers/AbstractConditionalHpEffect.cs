@@ -1,9 +1,10 @@
 using System.Collections.Concurrent;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
@@ -16,9 +17,9 @@ public abstract class AbstractConditionalHpEffect: AbstractStatEffect
     private readonly ConcurrentDictionary<Creature, AtomicBoolean> _updates = new();
     private readonly int _hpPercent;
 
-    protected AbstractConditionalHpEffect(StatSet @params, Stat stat): base(@params, stat)
+    protected AbstractConditionalHpEffect(EffectParameterSet parameters, Stat stat): base(parameters, stat)
     {
-        _hpPercent = @params.getInt("hpPercent", 0);
+        _hpPercent = parameters.GetInt32(XmlSkillEffectParameterType.HpPercent, 0);
     }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

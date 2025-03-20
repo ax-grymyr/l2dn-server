@@ -1,12 +1,13 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -23,16 +24,16 @@ public sealed class FatalBlow: AbstractEffect
     private readonly double _abnormalPower;
     private readonly bool _overHit;
 
-    public FatalBlow(StatSet @params)
+    public FatalBlow(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power");
-        _chanceBoost = @params.getDouble("chanceBoost");
-        _criticalChance = @params.getDouble("criticalChance", 0);
-        _overHit = @params.getBoolean("overHit", false);
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power);
+        _chanceBoost = parameters.GetDouble(XmlSkillEffectParameterType.ChanceBoost);
+        _criticalChance = parameters.GetDouble(XmlSkillEffectParameterType.CriticalChance, 0);
+        _overHit = parameters.GetBoolean(XmlSkillEffectParameterType.OverHit, false);
 
-        string abnormals = @params.getString("abnormalType", string.Empty);
+        string abnormals = parameters.GetString(XmlSkillEffectParameterType.AbnormalType, string.Empty);
         _abnormals = ParseUtil.ParseEnumSet<AbnormalType>(abnormals);
-        _abnormalPower = @params.getDouble("abnormalPower", 1);
+        _abnormalPower = parameters.GetDouble(XmlSkillEffectParameterType.AbnormalPower, 1);
     }
 
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
@@ -41,7 +42,7 @@ public sealed class FatalBlow: AbstractEffect
             Formulas.calcBlowSuccess(effector, effected, skill, _chanceBoost);
     }
 
-    public override EffectTypes EffectType => EffectTypes.PHYSICAL_ATTACK;
+    public override EffectTypes EffectTypes => EffectTypes.PHYSICAL_ATTACK;
 
     public override bool IsInstant => true;
 

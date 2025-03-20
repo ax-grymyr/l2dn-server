@@ -1,13 +1,13 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.Utilities;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 
@@ -20,12 +20,12 @@ public sealed class TeleportToSummon: AbstractEffect
 {
     private readonly double _maxDistance;
 
-    public TeleportToSummon(StatSet @params)
+    public TeleportToSummon(EffectParameterSet parameters)
     {
-        _maxDistance = @params.getDouble("distance", -1);
+        _maxDistance = parameters.GetDouble(XmlSkillEffectParameterType.Distance, -1);
     }
 
-    public override EffectTypes EffectType => EffectTypes.TELEPORT_TO_TARGET;
+    public override EffectTypes EffectTypes => EffectTypes.TELEPORT_TO_TARGET;
 
     public override bool IsInstant => true;
 

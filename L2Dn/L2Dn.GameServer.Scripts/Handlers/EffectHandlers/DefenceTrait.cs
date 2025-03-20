@@ -1,12 +1,12 @@
 using System.Collections.Frozen;
-using System.Globalization;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -18,14 +18,20 @@ public sealed class DefenceTrait: AbstractEffect
 {
     private readonly FrozenDictionary<TraitType, float> _defenceTraits;
 
-    public DefenceTrait(StatSet @params)
+    public DefenceTrait(EffectParameterSet parameters)
     {
-        if (@params.isEmpty())
-            throw new ArgumentException(nameof(DefenceTrait) + ": must have parameters.");
+        FrozenDictionary<XmlSkillEffectParameterType, TraitType> map = AttackTrait.ParameterTraitTypeMap;
+        _defenceTraits = parameters.Keys.Select(key =>
+        {
+            if (!map.TryGetValue(key, out TraitType traitType))
+                return (TraitType.NONE, 0);
 
-        _defenceTraits = @params.getSet().Select(p => new KeyValuePair<TraitType, float>(
-            Enum.Parse<TraitType>(p.Key, true),
-            float.Parse(p.Value.ToString() ?? string.Empty, CultureInfo.InvariantCulture) / 100)).ToFrozenDictionary();
+            float value = parameters.GetFloat(key) / 100f;
+            return (traitType, value);
+        }).Where(t => t.Item1 != TraitType.NONE).ToFrozenDictionary(t => t.Item1, t => t.Item2);
+
+        if (_defenceTraits.IsEmpty())
+            throw new ArgumentException(nameof(DefenceTrait) + ": must have parameters.");
     }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

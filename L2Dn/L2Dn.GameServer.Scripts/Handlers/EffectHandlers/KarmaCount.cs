@@ -1,8 +1,9 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -15,14 +16,14 @@ public sealed class KarmaCount: AbstractEffect
     private readonly int _amount;
     private readonly int _mode;
 
-    public KarmaCount(StatSet @params)
+    public KarmaCount(EffectParameterSet parameters)
     {
-        _amount = @params.getInt("amount", 0);
-        _mode = @params.getString("mode", "DIFF") switch
+        _amount = parameters.GetInt32(XmlSkillEffectParameterType.Amount, 0);
+        _mode = parameters.GetString(XmlSkillEffectParameterType.Mode, "DIFF") switch
         {
             "DIFF" => 0,
             "RESET" => 1,
-            _ => throw new ArgumentException("Mode should be DIFF or RESET skill id:" + @params.getInt("id")),
+            _ => throw new ArgumentException("Mode should be DIFF or RESET for " + nameof(KarmaCount)),
         };
     }
 

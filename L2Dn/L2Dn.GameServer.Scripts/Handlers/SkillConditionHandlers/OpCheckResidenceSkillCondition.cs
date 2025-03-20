@@ -1,28 +1,27 @@
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Sdw
- */
-public class OpCheckResidenceSkillCondition: ISkillCondition
+public sealed class OpCheckResidenceSkillCondition: ISkillCondition
 {
     private readonly Set<int> _residenceIds = new();
     private readonly bool _isWithin;
 
-    public OpCheckResidenceSkillCondition(StatSet @params)
+    public OpCheckResidenceSkillCondition(SkillConditionParameterSet parameters)
     {
-        List<int>? residenceIds = @params.getList<int>("residenceIds");
+        List<int>? residenceIds = parameters.GetInt32ListOptional(XmlSkillConditionParameterType.ResidenceIds);
         if (residenceIds != null)
             _residenceIds.addAll(residenceIds);
-        
-        _isWithin = @params.getBoolean("isWithin");
+
+        _isWithin = parameters.GetBoolean(XmlSkillConditionParameterType.IsWithin);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

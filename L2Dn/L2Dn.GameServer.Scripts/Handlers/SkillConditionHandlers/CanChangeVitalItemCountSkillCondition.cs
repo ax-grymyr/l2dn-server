@@ -4,12 +4,8 @@ using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-public class CanChangeVitalItemCountSkillCondition: ISkillCondition
+public sealed class CanChangeVitalItemCountSkillCondition: ISkillCondition
 {
-    public CanChangeVitalItemCountSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         return true; // TODO

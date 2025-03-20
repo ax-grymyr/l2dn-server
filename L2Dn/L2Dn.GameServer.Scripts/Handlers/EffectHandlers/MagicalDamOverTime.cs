@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -18,14 +19,14 @@ public sealed class MagicalDamOverTime: AbstractEffect
     private readonly double _power;
     private readonly bool _canKill;
 
-    public MagicalDamOverTime(StatSet @params)
+    public MagicalDamOverTime(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power", 0);
-        _canKill = @params.getBoolean("canKill", false);
-        Ticks = @params.getInt("ticks");
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power, 0);
+        _canKill = parameters.GetBoolean(XmlSkillEffectParameterType.CanKill, false);
+        Ticks = parameters.GetInt32(XmlSkillEffectParameterType.Ticks);
     }
 
-    public override EffectTypes EffectType => EffectTypes.MAGICAL_DMG_OVER_TIME;
+    public override EffectTypes EffectTypes => EffectTypes.MAGICAL_DMG_OVER_TIME;
 
     public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {

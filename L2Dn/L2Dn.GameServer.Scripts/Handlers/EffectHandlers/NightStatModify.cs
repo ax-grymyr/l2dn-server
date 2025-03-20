@@ -1,5 +1,5 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events;
@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
@@ -17,7 +18,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 public sealed class NightStatModify: AbstractEffect
 {
-    private static readonly Set<Creature> NIGHT_STAT_CHARACTERS = [];
+    private static readonly Set<Creature> _nightStatCharacters = [];
     private const int _shadowSense = 294;
 
     private static bool _startListener = true;
@@ -26,11 +27,11 @@ public sealed class NightStatModify: AbstractEffect
     private readonly double _amount;
     private readonly StatModifierType _mode;
 
-    public NightStatModify(StatSet @params)
+    public NightStatModify(EffectParameterSet parameters)
     {
-        _stat = @params.getEnum<Stat>("stat");
-        _amount = @params.getDouble("amount");
-        _mode = @params.getEnum("mode", StatModifierType.DIFF);
+        _stat = parameters.GetEnum<Stat>(XmlSkillEffectParameterType.Stat);
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount);
+        _mode = parameters.GetEnum(XmlSkillEffectParameterType.Mode, StatModifierType.DIFF);
 
         // Run only once per daytime change.
         if (_startListener)
@@ -38,27 +39,25 @@ public sealed class NightStatModify: AbstractEffect
             _startListener = false;
 
             // Init a global day-night change listener.
-            GlobalEvents.Global.Subscribe<OnDayNightChange>(this, onDayNightChange);
+            GlobalEvents.Global.Subscribe<OnDayNightChange>(this, OnDayNightChange);
         }
     }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
-        NIGHT_STAT_CHARACTERS.add(effected);
+        _nightStatCharacters.Add(effected);
     }
 
     public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
-        NIGHT_STAT_CHARACTERS.remove(effected);
+        _nightStatCharacters.Remove(effected);
     }
 
     public override void Pump(Creature effected, Skill skill)
     {
         // Not night.
         if (!GameTimeTaskManager.getInstance().isNight())
-        {
             return;
-        }
 
         // Apply stat.
         switch (_mode)
@@ -76,7 +75,7 @@ public sealed class NightStatModify: AbstractEffect
         }
     }
 
-    public void onDayNightChange(OnDayNightChange @event)
+    private static void OnDayNightChange(OnDayNightChange @event)
     {
         // System message for Shadow Sense.
         SystemMessagePacket msg = new SystemMessagePacket(@event.isNight()
@@ -85,7 +84,7 @@ public sealed class NightStatModify: AbstractEffect
 
         msg.Params.addSkillName(_shadowSense);
 
-        foreach (Creature creature in NIGHT_STAT_CHARACTERS)
+        foreach (Creature creature in _nightStatCharacters)
         {
             // Pump again.
             creature.getStat().recalculateStats(true);

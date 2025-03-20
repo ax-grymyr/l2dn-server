@@ -1,5 +1,5 @@
 using L2Dn.GameServer.Data.Xml;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Cubics;
@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -20,10 +21,10 @@ public sealed class SummonCubic: AbstractEffect
     private readonly int _cubicId;
     private readonly int _cubicLvl;
 
-    public SummonCubic(StatSet @params)
+    public SummonCubic(EffectParameterSet parameters)
     {
-        _cubicId = @params.getInt("cubicId", -1);
-        _cubicLvl = @params.getInt("cubicLvl", 0);
+        _cubicId = parameters.GetInt32(XmlSkillEffectParameterType.CubicId, -1);
+        _cubicLvl = parameters.GetInt32(XmlSkillEffectParameterType.CubicLvl, 0);
     }
 
     public int getCubicId() => _cubicId;

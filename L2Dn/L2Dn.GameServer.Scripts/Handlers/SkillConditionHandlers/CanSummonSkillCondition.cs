@@ -5,15 +5,8 @@ using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Sdw
- */
-public class CanSummonSkillCondition: ISkillCondition
+public sealed class CanSummonSkillCondition: ISkillCondition
 {
-    public CanSummonSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         Player? player = caster.getActingPlayer();

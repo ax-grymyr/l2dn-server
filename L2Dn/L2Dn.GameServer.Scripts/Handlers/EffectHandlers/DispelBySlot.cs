@@ -2,11 +2,12 @@ using System.Collections.Frozen;
 using System.Globalization;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -18,10 +19,10 @@ public sealed class DispelBySlot: AbstractEffect
 {
     private readonly FrozenDictionary<AbnormalType, short> _dispelAbnormals;
 
-    public DispelBySlot(StatSet @params)
+    public DispelBySlot(EffectParameterSet parameters)
     {
         _dispelAbnormals = FrozenDictionary<AbnormalType, short>.Empty;
-        string dispel = @params.getString("dispel");
+        string dispel = parameters.GetString(XmlSkillEffectParameterType.Dispel);
         if (!string.IsNullOrEmpty(dispel))
         {
             _dispelAbnormals = dispel.Split(";").Select(ngtStack =>
@@ -33,7 +34,7 @@ public sealed class DispelBySlot: AbstractEffect
         }
     }
 
-    public override EffectTypes EffectType => EffectTypes.DISPEL_BY_SLOT;
+    public override EffectTypes EffectTypes => EffectTypes.DISPEL_BY_SLOT;
 
     public override bool IsInstant => true;
 

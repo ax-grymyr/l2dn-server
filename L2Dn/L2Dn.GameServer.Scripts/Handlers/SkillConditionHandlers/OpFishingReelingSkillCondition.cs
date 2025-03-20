@@ -5,15 +5,8 @@ using L2Dn.GameServer.Model.Zones;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Mobius
- */
-public class OpFishingReelingSkillCondition: ISkillCondition
+public sealed class OpFishingReelingSkillCondition: ISkillCondition
 {
-    public OpFishingReelingSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         return caster.isInsideZone(ZoneId.FISHING);

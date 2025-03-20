@@ -5,15 +5,8 @@ using L2Dn.GameServer.Model.Zones;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid
- */
-public class NotInUnderwaterSkillCondition: ISkillCondition
+public sealed class NotInUnderwaterSkillCondition: ISkillCondition
 {
-    public NotInUnderwaterSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         return !caster.isInsideZone(ZoneId.WATER);

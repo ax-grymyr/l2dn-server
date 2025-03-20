@@ -11,6 +11,7 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 
@@ -39,38 +40,38 @@ public sealed class TriggerSkillByAttack: AbstractEffect
     private readonly int _skillLevelScaleTo;
     private readonly List<SkillHolder>? _triggerSkills;
 
-    public TriggerSkillByAttack(StatSet @params)
+    public TriggerSkillByAttack(EffectParameterSet parameters)
     {
-        _minAttackerLevel = @params.getInt("minAttackerLevel", 1);
-        _maxAttackerLevel = @params.getInt("maxAttackerLevel", int.MaxValue);
-        _minDamage = @params.getInt("minDamage", 1);
-        _chance = @params.getInt("chance", 100);
-        _skill = new SkillHolder(@params.getInt("skillId", 0), @params.getInt("skillLevel", 1));
-        _targetType = @params.getEnum("targetType", TargetType.SELF);
-        _attackerType = @params.getEnum("attackerType", InstanceType.Creature);
-        _isCritical = @params.getBoolean("isCritical", false);
-        _renewDuration = @params.getBoolean("renewDuration", false);
-        _allowNormalAttack = @params.getBoolean("allowNormalAttack", true);
-        _allowSkillAttack = @params.getBoolean("allowSkillAttack", false);
-        _onlyMagicSkill = @params.getBoolean("onlyMagicSkill", false);
-        _onlyPhysicalSkill = @params.getBoolean("onlyPhysicalSkill", false);
-        _allowReflect = @params.getBoolean("allowReflect", false);
-        _skillLevelScaleTo = @params.getInt("skillLevelScaleTo", 0);
+        _minAttackerLevel = parameters.GetInt32(XmlSkillEffectParameterType.MinAttackerLevel, 1);
+        _maxAttackerLevel = parameters.GetInt32(XmlSkillEffectParameterType.MaxAttackerLevel, int.MaxValue);
+        _minDamage = parameters.GetInt32(XmlSkillEffectParameterType.MinDamage, 1);
+        _chance = parameters.GetInt32(XmlSkillEffectParameterType.Chance, 100);
+        _skill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.SkillId, 0), parameters.GetInt32(XmlSkillEffectParameterType.SkillLevel, 1));
+        _targetType = parameters.GetEnum(XmlSkillEffectParameterType.TargetType, TargetType.SELF);
+        _attackerType = parameters.GetEnum(XmlSkillEffectParameterType.AttackerType, InstanceType.Creature);
+        _isCritical = parameters.GetBoolean(XmlSkillEffectParameterType.IsCritical, false);
+        _renewDuration = parameters.GetBoolean(XmlSkillEffectParameterType.RenewDuration, false);
+        _allowNormalAttack = parameters.GetBoolean(XmlSkillEffectParameterType.AllowNormalAttack, true);
+        _allowSkillAttack = parameters.GetBoolean(XmlSkillEffectParameterType.AllowSkillAttack, false);
+        _onlyMagicSkill = parameters.GetBoolean(XmlSkillEffectParameterType.OnlyMagicSkill, false);
+        _onlyPhysicalSkill = parameters.GetBoolean(XmlSkillEffectParameterType.OnlyPhysicalSkill, false);
+        _allowReflect = parameters.GetBoolean(XmlSkillEffectParameterType.AllowReflect, false);
+        _skillLevelScaleTo = parameters.GetInt32(XmlSkillEffectParameterType.SkillLevelScaleTo, 0);
 
-        if (@params.getString("allowWeapons", "ALL").equalsIgnoreCase("ALL"))
+        if (parameters.GetString(XmlSkillEffectParameterType.AllowWeapons, "ALL").equalsIgnoreCase("ALL"))
         {
             _allowWeapons = ItemTypeMask.Zero;
         }
         else
         {
-            foreach (string s in @params.getString("allowWeapons").Split(","))
+            foreach (string s in parameters.GetString(XmlSkillEffectParameterType.AllowWeapons).Split(","))
             {
                 _allowWeapons |= Enum.Parse<WeaponType>(s);
             }
         }
 
         // Specific skills by level.
-        string triggerSkills = @params.getString("triggerSkills", string.Empty);
+        string triggerSkills = parameters.GetString(XmlSkillEffectParameterType.TriggerSkills, string.Empty);
         if (!string.IsNullOrEmpty(triggerSkills))
         {
             string[] split = triggerSkills.Split(";");

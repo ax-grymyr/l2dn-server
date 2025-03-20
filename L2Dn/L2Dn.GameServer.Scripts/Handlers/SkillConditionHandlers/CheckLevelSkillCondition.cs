@@ -1,24 +1,23 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid
- */
-public class CheckLevelSkillCondition: ISkillCondition
+public sealed class CheckLevelSkillCondition: ISkillCondition
 {
     private readonly int _minLevel;
     private readonly int _maxLevel;
     private readonly SkillConditionAffectType _affectType;
 
-    public CheckLevelSkillCondition(StatSet @params)
+    public CheckLevelSkillCondition(SkillConditionParameterSet parameters)
     {
-        _minLevel = @params.getInt("minLevel", 1);
-        _maxLevel = @params.getInt("maxLevel", int.MaxValue);
-        _affectType = @params.getEnum("affectType", SkillConditionAffectType.CASTER);
+        _minLevel = parameters.GetInt32(XmlSkillConditionParameterType.MinLevel, 1);
+        _maxLevel = parameters.GetInt32(XmlSkillConditionParameterType.MaxLevel, int.MaxValue);
+        _affectType = parameters.GetEnum(XmlSkillConditionParameterType.AffectType, SkillConditionAffectType.CASTER);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

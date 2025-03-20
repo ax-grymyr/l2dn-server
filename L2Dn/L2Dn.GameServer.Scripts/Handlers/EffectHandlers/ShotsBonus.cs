@@ -1,6 +1,6 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-public sealed class ShotsBonus(StatSet @params): AbstractStatEffect(@params, Stat.SHOTS_BONUS);
+public sealed class ShotsBonus(EffectParameterSet parameters): AbstractStatEffect(parameters, Stat.SHOTS_BONUS);

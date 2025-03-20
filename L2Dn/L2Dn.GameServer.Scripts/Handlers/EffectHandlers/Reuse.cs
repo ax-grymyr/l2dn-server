@@ -1,8 +1,9 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -12,10 +13,10 @@ public sealed class Reuse: AbstractEffect
     private readonly SkillMagicType _magicType;
     private readonly double _amount;
 
-    public Reuse(StatSet @params)
+    public Reuse(EffectParameterSet parameters)
     {
-        _magicType = (SkillMagicType)@params.getInt("magicType", 0);
-        _amount = @params.getDouble("amount", 0);
+        _magicType = (SkillMagicType)parameters.GetInt32(XmlSkillEffectParameterType.MagicType, 0);
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount, 0);
     }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

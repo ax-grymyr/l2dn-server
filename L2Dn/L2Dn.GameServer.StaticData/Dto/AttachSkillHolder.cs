@@ -6,8 +6,4 @@ public sealed class AttachSkillHolder(int skillId, int skillLevel, int requiredS
     public int getRequiredSkillId() => requiredSkillId;
 
     public int getRequiredSkillLevel() => requiredSkillLevel;
-
-    public static AttachSkillHolder FromStatSet(StatSet set) =>
-        new(set.getInt("skillId"), set.getInt("skillLevel", 1), set.getInt("requiredSkillId"),
-            set.getInt("requiredSkillLevel", 1));
 }

@@ -9,15 +9,8 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid
- */
-public class PossessHolythingSkillCondition: ISkillCondition
+public sealed class PossessHolythingSkillCondition: ISkillCondition
 {
-    public PossessHolythingSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         Player? player = caster.getActingPlayer();

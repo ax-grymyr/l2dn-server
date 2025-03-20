@@ -1,6 +1,6 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-public sealed class MpShield(StatSet @params): AbstractStatAddEffect(@params, Stat.MANA_SHIELD_PERCENT);
+public sealed class MpShield(EffectParameterSet parameters): AbstractStatAddEffect(parameters, Stat.MANA_SHIELD_PERCENT);

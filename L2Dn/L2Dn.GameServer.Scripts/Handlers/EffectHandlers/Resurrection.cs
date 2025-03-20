@@ -1,10 +1,11 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.Utilities;
 
@@ -20,15 +21,15 @@ public sealed class Resurrection: AbstractEffect
     private readonly int _mpPercent;
     private readonly int _cpPercent;
 
-    public Resurrection(StatSet @params)
+    public Resurrection(EffectParameterSet parameters)
     {
-        _power = @params.getInt("power", 0);
-        _hpPercent = @params.getInt("hpPercent", 0);
-        _mpPercent = @params.getInt("mpPercent", 0);
-        _cpPercent = @params.getInt("cpPercent", 0);
+        _power = parameters.GetInt32(XmlSkillEffectParameterType.Power, 0);
+        _hpPercent = parameters.GetInt32(XmlSkillEffectParameterType.HpPercent, 0);
+        _mpPercent = parameters.GetInt32(XmlSkillEffectParameterType.MpPercent, 0);
+        _cpPercent = parameters.GetInt32(XmlSkillEffectParameterType.CpPercent, 0);
     }
 
-    public override EffectTypes EffectType => EffectTypes.RESURRECTION;
+    public override EffectTypes EffectTypes => EffectTypes.RESURRECTION;
 
     public override bool IsInstant => true;
 

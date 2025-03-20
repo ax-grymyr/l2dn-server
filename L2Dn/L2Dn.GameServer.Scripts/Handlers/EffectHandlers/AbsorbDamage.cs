@@ -1,10 +1,11 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 
@@ -18,10 +19,10 @@ public sealed class AbsorbDamage: AbstractEffect
     private readonly double _damage;
     private readonly StatModifierType _mode;
 
-    public AbsorbDamage(StatSet @params)
+    public AbsorbDamage(EffectParameterSet parameters)
     {
-        _damage = @params.getDouble("damage", 0);
-        _mode = @params.getEnum("mode", StatModifierType.DIFF);
+        _damage = parameters.GetDouble(XmlSkillEffectParameterType.Damage, 0);
+        _mode = parameters.GetEnum(XmlSkillEffectParameterType.Mode, StatModifierType.DIFF);
     }
 
     private static void OnDamageReceivedDiffEvent(OnCreatureDamageReceived ev, Creature effected, Skill skill)

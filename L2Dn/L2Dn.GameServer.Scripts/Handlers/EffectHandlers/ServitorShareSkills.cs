@@ -1,5 +1,4 @@
 using System.Collections.Immutable;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
@@ -21,10 +20,6 @@ public sealed class ServitorShareSkills: AbstractEffect
     [
         50189, 50468, 50190, 50353, 50446, 50444, 50555, 50445, 50449, 50448, 50447, 50450,
     ];
-
-    public ServitorShareSkills(StatSet @params)
-    {
-    }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {

@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
@@ -7,6 +8,7 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 
@@ -25,18 +27,18 @@ public sealed class SummonNpc: AbstractEffect
     private readonly bool _singleInstance; // Only one instance of this NPC is allowed.
     private readonly bool _isAggressive;
 
-    public SummonNpc(StatSet @params)
+    public SummonNpc(EffectParameterSet parameters)
     {
-        _despawnDelay = @params.getInt("despawnDelay", 0);
-        _npcId = @params.getInt("npcId", 0);
-        _npcCount = @params.getInt("npcCount", 1);
-        _randomOffset = @params.getBoolean("randomOffset", false);
-        _isSummonSpawn = @params.getBoolean("isSummonSpawn", false);
-        _singleInstance = @params.getBoolean("singleInstance", false);
-        _isAggressive = @params.getBoolean("aggressive", true); // Used by Decoy.
+        _despawnDelay = parameters.GetInt32(XmlSkillEffectParameterType.DespawnDelay, 0);
+        _npcId = parameters.GetInt32(XmlSkillEffectParameterType.NpcId, 0);
+        _npcCount = parameters.GetInt32(XmlSkillEffectParameterType.NpcCount, 1);
+        _randomOffset = parameters.GetBoolean(XmlSkillEffectParameterType.RandomOffset, false);
+        _isSummonSpawn = parameters.GetBoolean(XmlSkillEffectParameterType.IsSummonSpawn, false);
+        _singleInstance = parameters.GetBoolean(XmlSkillEffectParameterType.SingleInstance, false);
+        _isAggressive = parameters.GetBoolean(XmlSkillEffectParameterType.Aggressive, true); // Used by Decoy.
     }
 
-    public override EffectTypes EffectType => EffectTypes.SUMMON_NPC;
+    public override EffectTypes EffectTypes => EffectTypes.SUMMON_NPC;
 
     public override bool IsInstant => true;
 

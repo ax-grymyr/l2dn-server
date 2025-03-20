@@ -1,10 +1,11 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -18,11 +19,11 @@ public sealed class SoulBlow: AbstractEffect
     private readonly double _chanceBoost;
     private readonly bool _overHit;
 
-    public SoulBlow(StatSet @params)
+    public SoulBlow(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power");
-        _chanceBoost = @params.getDouble("chanceBoost");
-        _overHit = @params.getBoolean("overHit", false);
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power);
+        _chanceBoost = parameters.GetDouble(XmlSkillEffectParameterType.ChanceBoost);
+        _overHit = parameters.GetBoolean(XmlSkillEffectParameterType.OverHit, false);
     }
 
     /// <summary>
@@ -34,7 +35,7 @@ public sealed class SoulBlow: AbstractEffect
             Formulas.calcBlowSuccess(effector, effected, skill, _chanceBoost);
     }
 
-    public override EffectTypes EffectType => EffectTypes.PHYSICAL_ATTACK;
+    public override EffectTypes EffectTypes => EffectTypes.PHYSICAL_ATTACK;
 
     public override bool IsInstant => true;
 

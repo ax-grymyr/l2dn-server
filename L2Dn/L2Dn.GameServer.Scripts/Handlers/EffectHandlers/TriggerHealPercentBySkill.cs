@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -7,6 +8,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -20,11 +22,11 @@ public sealed class TriggerHealPercentBySkill: AbstractEffect
     private readonly int _chance;
     private readonly int _power;
 
-    public TriggerHealPercentBySkill(StatSet @params)
+    public TriggerHealPercentBySkill(EffectParameterSet parameters)
     {
-        _castSkillId = @params.getInt("castSkillId");
-        _chance = @params.getInt("chance", 100);
-        _power = @params.getInt("power", 0);
+        _castSkillId = parameters.GetInt32(XmlSkillEffectParameterType.CastSkillId);
+        _chance = parameters.GetInt32(XmlSkillEffectParameterType.Chance, 100);
+        _power = parameters.GetInt32(XmlSkillEffectParameterType.Power, 0);
     }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
@@ -40,7 +42,7 @@ public sealed class TriggerHealPercentBySkill: AbstractEffect
         effected.Events.Unsubscribe<OnCreatureSkillFinishCast>(OnSkillUseEvent);
     }
 
-    public override EffectTypes EffectType => EffectTypes.HEAL;
+    public override EffectTypes EffectTypes => EffectTypes.HEAL;
 
     private void OnSkillUseEvent(OnCreatureSkillFinishCast @event)
     {

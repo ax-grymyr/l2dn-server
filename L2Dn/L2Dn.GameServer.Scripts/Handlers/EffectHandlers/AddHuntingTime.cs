@@ -1,5 +1,5 @@
 using L2Dn.GameServer.Data.Xml;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.OutgoingPackets.HuntingZones;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -16,10 +17,10 @@ public sealed class AddHuntingTime: AbstractEffect
     private readonly int _zoneId;
     private readonly TimeSpan _time;
 
-    public AddHuntingTime(StatSet @params)
+    public AddHuntingTime(EffectParameterSet parameters)
     {
-        _zoneId = @params.getInt("zoneId", 0);
-        _time = TimeSpan.FromMilliseconds(@params.getLong("time", 3600000));
+        _zoneId = parameters.GetInt32(XmlSkillEffectParameterType.ZoneId, 0);
+        _time = parameters.GetTimeSpanMilliSeconds(XmlSkillEffectParameterType.Time, TimeSpan.FromHours(1));
     }
 
     public override bool IsInstant => true;

@@ -1,10 +1,11 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -18,10 +19,10 @@ public sealed class FocusSouls: AbstractEffect
     private readonly int _charge;
     private readonly SoulType _type;
 
-    public FocusSouls(StatSet @params)
+    public FocusSouls(EffectParameterSet parameters)
     {
-        _charge = @params.getInt("charge", 0);
-        _type = @params.getEnum("type", SoulType.LIGHT);
+        _charge = parameters.GetInt32(XmlSkillEffectParameterType.Charge, 0);
+        _type = parameters.GetEnum(XmlSkillEffectParameterType.Type, SoulType.LIGHT);
     }
 
     public override bool IsInstant => true;

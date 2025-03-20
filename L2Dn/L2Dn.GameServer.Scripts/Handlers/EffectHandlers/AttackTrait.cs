@@ -1,12 +1,13 @@
 using System.Collections.Frozen;
-using System.Globalization;
+using System.Xml.Serialization;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -16,18 +17,32 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class AttackTrait: AbstractEffect
 {
+    private static readonly FrozenDictionary<XmlSkillEffectParameterType, TraitType> _map = EnumUtil.
+        GetValues<XmlSkillEffectParameterType>().Select(type =>
+        {
+            XmlEnumAttribute? attribute = type.GetCustomAttribute<XmlSkillEffectParameterType, XmlEnumAttribute>();
+            string name = attribute?.Name ?? type.ToString();
+            return Enum.TryParse(name, true, out TraitType traitType) ? (type, traitType) : (type, TraitType.NONE);
+        }).Where(t => t.Item2 != TraitType.NONE).ToFrozenDictionary(t => t.Item1, t => t.Item2);
+
     private readonly FrozenDictionary<TraitType, float> _attackTraits;
 
-    public AttackTrait(StatSet @params)
+    public AttackTrait(EffectParameterSet parameters)
     {
-        if (@params.isEmpty())
-            throw new ArgumentException(nameof(AttackTrait) + " effect must have parameters!", nameof(@params));
+        _attackTraits = parameters.Keys.Select(key =>
+        {
+            if (!_map.TryGetValue(key, out TraitType traitType))
+                return (TraitType.NONE, 0);
 
-        _attackTraits = @params.getSet().Select(pair => new KeyValuePair<TraitType, float>(
-                Enum.Parse<TraitType>(pair.Key, true),
-                float.Parse(pair.Value.ToString() ?? string.Empty, CultureInfo.InvariantCulture) / 100f)).
-            ToFrozenDictionary();
+            float value = parameters.GetFloat(key) / 100f;
+            return (traitType, value);
+        }).Where(t => t.Item1 != TraitType.NONE).ToFrozenDictionary(t => t.Item1, t => t.Item2);
+
+        if (_attackTraits.IsEmpty())
+            throw new ArgumentException(nameof(AttackTrait) + " effect must have parameters!", nameof(parameters));
     }
+
+    public static FrozenDictionary<XmlSkillEffectParameterType, TraitType> ParameterTraitTypeMap => _map;
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {

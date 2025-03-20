@@ -1,4 +1,3 @@
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.Utilities;
 
@@ -9,10 +8,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class SilentMove: AbstractEffect
 {
-    public SilentMove(StatSet @params)
-    {
-    }
-
     public override EffectFlags EffectFlags => EffectFlags.SILENT_MOVE;
 
     public override int GetHashCode() => this.GetSingletonHashCode();

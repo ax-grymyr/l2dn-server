@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
@@ -9,7 +10,8 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-public sealed class WeaponBonusPAtk(StatSet @params): AbstractStatAddEffect(@params, Stat.WEAPON_BONUS_PHYSICAL_ATTACK)
+public sealed class WeaponBonusPAtk(EffectParameterSet parameters):
+    AbstractStatAddEffect(parameters, Stat.WEAPON_BONUS_PHYSICAL_ATTACK)
 {
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {

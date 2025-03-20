@@ -1,11 +1,12 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -17,13 +18,13 @@ public sealed class DispelBySlotMyself: AbstractEffect
 {
     private readonly FrozenSet<AbnormalType> _dispelAbnormals;
 
-    public DispelBySlotMyself(StatSet @params)
+    public DispelBySlotMyself(EffectParameterSet parameters)
     {
-        string dispel = @params.getString("dispel");
+        string dispel = parameters.GetString(XmlSkillEffectParameterType.Dispel);
         _dispelAbnormals = ParseUtil.ParseEnumSet<AbnormalType>(dispel);
     }
 
-    public override EffectTypes EffectType => EffectTypes.DISPEL_BY_SLOT;
+    public override EffectTypes EffectTypes => EffectTypes.DISPEL_BY_SLOT;
 
     public override bool IsInstant => true;
 

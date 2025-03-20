@@ -1,12 +1,13 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -17,15 +18,15 @@ public sealed class AbnormalTimeChange: AbstractEffect
     private readonly TimeSpan? _time;
     private readonly int _mode;
 
-    public AbnormalTimeChange(StatSet @params)
+    public AbnormalTimeChange(EffectParameterSet parameters)
     {
-        string abnormals = @params.getString("slot", string.Empty);
+        string abnormals = parameters.GetString(XmlSkillEffectParameterType.Slot, string.Empty);
         _abnormals = ParseUtil.ParseEnumSet<AbnormalType>(abnormals);
 
-        int time = @params.getInt("time", -1);
+        int time = parameters.GetInt32(XmlSkillEffectParameterType.Time, -1);
         _time = time == -1 ? null : TimeSpan.FromSeconds(time);
 
-        _mode = @params.getString("mode", "DEBUFF") switch
+        _mode = parameters.GetString(XmlSkillEffectParameterType.Mode, "DEBUFF") switch
         {
             "DIFF" => 0,
             "DEBUFF" => 1,

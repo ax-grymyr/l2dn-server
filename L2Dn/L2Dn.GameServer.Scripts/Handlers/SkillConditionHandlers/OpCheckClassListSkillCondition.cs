@@ -1,32 +1,30 @@
-using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Model;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid, Mobius
- */
-public class OpCheckClassListSkillCondition: ISkillCondition
+public sealed class OpCheckClassListSkillCondition: ISkillCondition
 {
     private readonly Set<CharacterClass> _classIds = new();
     private readonly SkillConditionAffectType _affectType;
     private readonly bool _isWithin;
 
-    public OpCheckClassListSkillCondition(StatSet @params)
+    public OpCheckClassListSkillCondition(SkillConditionParameterSet parameters)
     {
-        List<CharacterClass>? classIds = @params.getEnumList<CharacterClass>("classIds");
+        List<string>? classIds = parameters.GetStringListOptional(XmlSkillConditionParameterType.ClassIds);
         if (classIds != null)
         {
-            _classIds.addAll(classIds);
+            foreach (string classId in classIds)
+                _classIds.Add(Enum.Parse<CharacterClass>(classId, true));
         }
 
-        _affectType = @params.getEnum<SkillConditionAffectType>("affectType");
-        _isWithin = @params.getBoolean("isWithin");
+        _affectType = parameters.GetEnum<SkillConditionAffectType>(XmlSkillConditionParameterType.AffectType);
+        _isWithin = parameters.GetBoolean(XmlSkillConditionParameterType.IsWithin);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

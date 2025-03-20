@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -21,11 +22,13 @@ public sealed class TriggerSkill: AbstractEffect
     private readonly TargetType _targetType;
     private readonly bool _adjustLevel;
 
-    public TriggerSkill(StatSet @params)
+    public TriggerSkill(EffectParameterSet parameters)
     {
-        _skill = new SkillHolder(@params.getInt("skillId"), @params.getInt("skillLevel", 1));
-        _targetType = @params.getEnum("targetType", TargetType.TARGET);
-        _adjustLevel = @params.getBoolean("adjustLevel", false);
+        _skill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.SkillId),
+            parameters.GetInt32(XmlSkillEffectParameterType.SkillLevel, 1));
+
+        _targetType = parameters.GetEnum(XmlSkillEffectParameterType.TargetType, TargetType.TARGET);
+        _adjustLevel = parameters.GetBoolean(XmlSkillEffectParameterType.AdjustLevel, false);
     }
 
     public override bool IsInstant => true;

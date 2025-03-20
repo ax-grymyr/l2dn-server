@@ -1,12 +1,14 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -22,18 +24,18 @@ public sealed class Synergy: AbstractEffect
     private readonly int _skillLevelScaleTo;
     private readonly int _minSlot;
 
-    public Synergy(StatSet @params)
+    public Synergy(EffectParameterSet parameters)
     {
-        string requiredSlots = @params.getString("requiredSlots", string.Empty);
+        string requiredSlots = parameters.GetString(XmlSkillEffectParameterType.RequiredSlots, string.Empty);
         _requiredSlots = ParseUtil.ParseEnumSet<AbnormalType>(requiredSlots);
 
-        string optionalSlots = @params.getString("optionalSlots", string.Empty);
+        string optionalSlots = parameters.GetString(XmlSkillEffectParameterType.OptionalSlots, string.Empty);
         _optionalSlots = ParseUtil.ParseEnumSet<AbnormalType>(optionalSlots);
 
-        _partyBuffSkillId = @params.getInt("partyBuffSkillId");
-        _skillLevelScaleTo = @params.getInt("skillLevelScaleTo", 1);
-        _minSlot = @params.getInt("minSlot", 2);
-        Ticks = @params.getInt("ticks");
+        _partyBuffSkillId = parameters.GetInt32(XmlSkillEffectParameterType.PartyBuffSkillId);
+        _skillLevelScaleTo = parameters.GetInt32(XmlSkillEffectParameterType.SkillLevelScaleTo, 1);
+        _minSlot = parameters.GetInt32(XmlSkillEffectParameterType.MinSlot, 2);
+        Ticks = parameters.GetInt32(XmlSkillEffectParameterType.Ticks);
     }
 
     public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)

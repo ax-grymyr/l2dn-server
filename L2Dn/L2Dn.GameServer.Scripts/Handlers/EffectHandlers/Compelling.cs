@@ -1,5 +1,4 @@
 using L2Dn.GameServer.AI;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -11,10 +10,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 public sealed class Compelling: AbstractEffect
 {
-    public Compelling(StatSet @params)
-    {
-    }
-
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
     {
         return Formulas.calcProbability(100, effector, effected, skill);

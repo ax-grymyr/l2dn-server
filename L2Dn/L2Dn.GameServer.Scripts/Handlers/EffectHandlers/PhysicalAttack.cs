@@ -1,16 +1,17 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
-using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -36,27 +37,27 @@ public class PhysicalAttack: AbstractEffect
     private readonly int _repeatCount;
     private readonly FrozenSet<Race> _races;
 
-    public PhysicalAttack(StatSet @params)
+    public PhysicalAttack(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power", 0);
-        _pAtkMod = @params.getDouble("pAtkMod", 1.0);
-        _pDefMod = @params.getDouble("pDefMod", 1.0);
-        _criticalChance = @params.getDouble("criticalChance", 10);
-        _ignoreShieldDefence = @params.getBoolean("ignoreShieldDefence", false);
-        _overHit = @params.getBoolean("overHit", false);
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power, 0);
+        _pAtkMod = parameters.GetDouble(XmlSkillEffectParameterType.PAtkMod, 1.0);
+        _pDefMod = parameters.GetDouble(XmlSkillEffectParameterType.PDefMod, 1.0);
+        _criticalChance = parameters.GetDouble(XmlSkillEffectParameterType.CriticalChance, 10);
+        _ignoreShieldDefence = parameters.GetBoolean(XmlSkillEffectParameterType.IgnoreShieldDefence, false);
+        _overHit = parameters.GetBoolean(XmlSkillEffectParameterType.OverHit, false);
 
-        string abnormals = @params.getString("abnormalType", string.Empty);
+        string abnormals = parameters.GetString(XmlSkillEffectParameterType.AbnormalType, string.Empty);
         _abnormals = ParseUtil.ParseEnumSet<AbnormalType>(abnormals);
 
-        _abnormalDamageMod = @params.getDouble("damageModifier", 1);
-        _abnormalPowerMod = @params.getDouble("powerModifier", 1);
-        _raceModifier = @params.getDouble("raceModifier", 1);
+        _abnormalDamageMod = parameters.GetDouble(XmlSkillEffectParameterType.DamageModifier, 1);
+        _abnormalPowerMod = parameters.GetDouble(XmlSkillEffectParameterType.PowerModifier, 1);
+        _raceModifier = parameters.GetDouble(XmlSkillEffectParameterType.RaceModifier, 1);
 
-        string races = @params.getString("races", string.Empty);
+        string races = parameters.GetString(XmlSkillEffectParameterType.Races, string.Empty);
         _races = ParseUtil.ParseEnumSet<Race>(races);
 
-        _repeatCount = @params.getInt("repeatCount", 1);
-        _chanceToRepeat = @params.getInt("chanceToRepeat", 0);
+        _repeatCount = parameters.GetInt32(XmlSkillEffectParameterType.RepeatCount, 1);
+        _chanceToRepeat = parameters.GetInt32(XmlSkillEffectParameterType.ChanceToRepeat, 0);
     }
 
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
@@ -64,7 +65,7 @@ public class PhysicalAttack: AbstractEffect
         return !Formulas.calcSkillEvasion(effector, effected, skill);
     }
 
-    public override EffectTypes EffectType => EffectTypes.PHYSICAL_ATTACK;
+    public override EffectTypes EffectTypes => EffectTypes.PHYSICAL_ATTACK;
 
     public override bool IsInstant => true;
 

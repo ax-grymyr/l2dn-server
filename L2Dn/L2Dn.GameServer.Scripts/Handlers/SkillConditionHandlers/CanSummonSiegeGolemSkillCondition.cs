@@ -8,15 +8,8 @@ using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Sdw
- */
-public class CanSummonSiegeGolemSkillCondition: ISkillCondition
+public sealed class CanSummonSiegeGolemSkillCondition: ISkillCondition
 {
-    public CanSummonSiegeGolemSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         Player? player = caster.getActingPlayer();

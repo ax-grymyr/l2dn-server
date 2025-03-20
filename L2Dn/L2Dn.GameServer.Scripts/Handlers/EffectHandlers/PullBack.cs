@@ -1,12 +1,13 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -21,12 +22,12 @@ public sealed class PullBack: AbstractEffect
     private readonly int _animationSpeed;
     private readonly FlyType _type;
 
-    public PullBack(StatSet @params)
+    public PullBack(EffectParameterSet parameters)
     {
-        _speed = @params.getInt("speed", 0);
-        _delay = @params.getInt("delay", _speed);
-        _animationSpeed = @params.getInt("animationSpeed", 0);
-        _type = @params.getEnum("type", FlyType.WARP_FORWARD); // type 9
+        _speed = parameters.GetInt32(XmlSkillEffectParameterType.Speed, 0);
+        _delay = parameters.GetInt32(XmlSkillEffectParameterType.Delay, _speed);
+        _animationSpeed = parameters.GetInt32(XmlSkillEffectParameterType.AnimationSpeed, 0);
+        _type = parameters.GetEnum(XmlSkillEffectParameterType.Type, FlyType.WARP_FORWARD); // type 9
     }
 
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)

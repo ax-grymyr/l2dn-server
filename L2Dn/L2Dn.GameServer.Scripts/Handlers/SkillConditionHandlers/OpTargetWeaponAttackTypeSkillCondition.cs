@@ -1,22 +1,21 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid
- */
-public class OpTargetWeaponAttackTypeSkillCondition: ISkillCondition
+public sealed class OpTargetWeaponAttackTypeSkillCondition: ISkillCondition
 {
     private readonly Set<WeaponType> _weaponTypes = new();
 
-    public OpTargetWeaponAttackTypeSkillCondition(StatSet @params)
+    public OpTargetWeaponAttackTypeSkillCondition(SkillConditionParameterSet parameters)
     {
-        List<string>? weaponTypes = @params.getList<string>("weaponType");
+        List<string>? weaponTypes = parameters.GetStringListOptional(XmlSkillConditionParameterType.WeaponType);
         if (weaponTypes != null)
         {
             foreach (string type in weaponTypes)

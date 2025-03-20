@@ -1,9 +1,10 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -18,9 +19,9 @@ public sealed class AbnormalShield: AbstractEffect
     /// <summary>
     /// An effect that blocks a debuff. Acts like DOTA's Linken Sphere.
     /// </summary>
-    public AbnormalShield(StatSet @params)
+    public AbnormalShield(EffectParameterSet parameters)
     {
-        _times = @params.getInt("times", -1);
+        _times = parameters.GetInt32(XmlSkillEffectParameterType.Times, -1);
     }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
@@ -35,7 +36,7 @@ public sealed class AbnormalShield: AbstractEffect
         effected.setAbnormalShieldBlocks(int.MinValue);
     }
 
-    public override EffectTypes EffectType => EffectTypes.ABNORMAL_SHIELD;
+    public override EffectTypes EffectTypes => EffectTypes.ABNORMAL_SHIELD;
 
     public override int GetHashCode() => _times;
     public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x._times);

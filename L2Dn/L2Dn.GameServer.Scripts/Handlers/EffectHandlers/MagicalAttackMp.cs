@@ -1,5 +1,5 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -20,11 +21,11 @@ public sealed class MagicalAttackMp: AbstractEffect
     private readonly bool _critical;
     private readonly double _criticalLimit;
 
-    public MagicalAttackMp(StatSet @params)
+    public MagicalAttackMp(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power");
-        _critical = @params.getBoolean("critical");
-        _criticalLimit = @params.getDouble("criticalLimit");
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power);
+        _critical = parameters.GetBoolean(XmlSkillEffectParameterType.Critical);
+        _criticalLimit = parameters.GetDouble(XmlSkillEffectParameterType.CriticalLimit);
     }
 
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
@@ -55,7 +56,7 @@ public sealed class MagicalAttackMp: AbstractEffect
         return true;
     }
 
-    public override EffectTypes EffectType => EffectTypes.MAGICAL_ATTACK;
+    public override EffectTypes EffectTypes => EffectTypes.MAGICAL_ATTACK;
 
     public override bool IsInstant => true;
 

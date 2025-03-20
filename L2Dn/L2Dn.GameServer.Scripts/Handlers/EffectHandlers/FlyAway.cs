@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 
@@ -18,9 +19,9 @@ public sealed class FlyAway: AbstractEffect
 {
     private readonly int _radius;
 
-    public FlyAway(StatSet @params)
+    public FlyAway(EffectParameterSet parameters)
     {
-        _radius = @params.getInt("radius");
+        _radius = parameters.GetInt32(XmlSkillEffectParameterType.Radius);
     }
 
     public override bool IsInstant => true;

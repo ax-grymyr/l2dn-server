@@ -3,6 +3,7 @@ using System.Collections.Frozen;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
@@ -11,6 +12,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Parsing;
 using L2Dn.Utilities;
@@ -211,12 +213,12 @@ public sealed class SkillTemplateLoadingTests
                     @params.remove(".name");
                     try
                     {
-                        Func<StatSet, AbstractEffect>? effectFunction =
+                        Func<EffectParameterSet, IAbstractEffect>? effectFunction =
                             EffectHandler.getInstance().getHandlerFactory(effectName);
 
                         if (effectFunction != null)
                         {
-                            skill.addEffect(effectScope, effectFunction(@params));
+                            skill.addEffect(effectScope, (AbstractEffect)effectFunction(ConvertStatSetToEffectParameters(@params)));
                         }
                         else
                         {
@@ -240,7 +242,7 @@ public sealed class SkillTemplateLoadingTests
                     @params.remove(".name");
                     try
                     {
-                        Func<StatSet, ISkillCondition>? conditionFunction =
+                        Func<SkillConditionParameterSet, ISkillConditionBase>? conditionFunction =
                             SkillConditionHandler.getInstance().getHandlerFactory(conditionName);
 
                         if (conditionFunction != null)
@@ -260,7 +262,7 @@ public sealed class SkillTemplateLoadingTests
                                     statSet.getInt(".id") + "] Level[" + level + "] SubLevel[" + subLevel + "]");
                             }
 
-                            skill.addCondition(skillConditionScope, conditionFunction(@params));
+                            skill.addCondition(skillConditionScope, (ISkillCondition)conditionFunction(ConvertStatSetToConditionParameters(@params)));
                         }
                         else
                         {
@@ -605,13 +607,13 @@ public sealed class SkillTemplateLoadingTests
             CompareValue(oldSkill, "getDoubleCastSkill", oldSkill.getDoubleCastSkill(), newSkill.DoubleCastSkill);
             CompareValue(oldSkill, "getEffectPoint", oldSkill.getEffectPoint(), newSkill.EffectPoint);
             CompareValue(oldSkill, "getEffectRange", oldSkill.getEffectRange(), newSkill.EffectRange);
-            CompareValue(oldSkill, "getEffects[General]", oldSkill.getEffects(SkillEffectScope.General)?.ToImmutableArray() ?? ImmutableArray<AbstractEffect>.Empty, newSkill.GetEffects(SkillEffectScope.General));
-            CompareValue(oldSkill, "getEffects[Start]", oldSkill.getEffects(SkillEffectScope.Start)?.ToImmutableArray() ?? ImmutableArray<AbstractEffect>.Empty, newSkill.GetEffects(SkillEffectScope.Start));
-            CompareValue(oldSkill, "getEffects[Self]", oldSkill.getEffects(SkillEffectScope.Self)?.ToImmutableArray() ?? ImmutableArray<AbstractEffect>.Empty, newSkill.GetEffects(SkillEffectScope.Self));
-            CompareValue(oldSkill, "getEffects[Channeling]", oldSkill.getEffects(SkillEffectScope.Channeling)?.ToImmutableArray() ?? ImmutableArray<AbstractEffect>.Empty, newSkill.GetEffects(SkillEffectScope.Channeling));
-            CompareValue(oldSkill, "getEffects[Pvp]", oldSkill.getEffects(SkillEffectScope.Pvp)?.ToImmutableArray() ?? ImmutableArray<AbstractEffect>.Empty, newSkill.GetEffects(SkillEffectScope.Pvp));
-            CompareValue(oldSkill, "getEffects[Pve]", oldSkill.getEffects(SkillEffectScope.Pve)?.ToImmutableArray() ?? ImmutableArray<AbstractEffect>.Empty, newSkill.GetEffects(SkillEffectScope.Pve));
-            CompareValue(oldSkill, "getEffects[End]", oldSkill.getEffects(SkillEffectScope.End)?.ToImmutableArray() ?? ImmutableArray<AbstractEffect>.Empty, newSkill.GetEffects(SkillEffectScope.End));
+            CompareEffects(oldSkill, "getEffects[General]", oldSkill.getEffects(SkillEffectScope.General) ?? [], newSkill.GetEffects(SkillEffectScope.General));
+            CompareEffects(oldSkill, "getEffects[Start]", oldSkill.getEffects(SkillEffectScope.Start) ?? [], newSkill.GetEffects(SkillEffectScope.Start));
+            CompareEffects(oldSkill, "getEffects[Self]", oldSkill.getEffects(SkillEffectScope.Self) ?? [], newSkill.GetEffects(SkillEffectScope.Self));
+            CompareEffects(oldSkill, "getEffects[Channeling]", oldSkill.getEffects(SkillEffectScope.Channeling) ?? [], newSkill.GetEffects(SkillEffectScope.Channeling));
+            CompareEffects(oldSkill, "getEffects[Pvp]", oldSkill.getEffects(SkillEffectScope.Pvp) ?? [], newSkill.GetEffects(SkillEffectScope.Pvp));
+            CompareEffects(oldSkill, "getEffects[Pve]", oldSkill.getEffects(SkillEffectScope.Pve) ?? [], newSkill.GetEffects(SkillEffectScope.Pve));
+            CompareEffects(oldSkill, "getEffects[End]", oldSkill.getEffects(SkillEffectScope.End) ?? [], newSkill.GetEffects(SkillEffectScope.End));
             CompareValue(oldSkill, "getFamePointConsume", oldSkill.getFamePointConsume(), newSkill.FamePointConsume);
             CompareValue(oldSkill, "getFanRange", new ReadOnlySpan<int>(oldSkill.getFanRange()), newSkill.FanRange);
             CompareValue(oldSkill, "getHitCancelTime", oldSkill.getHitCancelTime(), newSkill.HitCancelTime);
@@ -698,6 +700,19 @@ public sealed class SkillTemplateLoadingTests
             }
         }
 
+        private static void CompareEffects(OldSkill skill, string propertyName, IEnumerable<IAbstractEffect> oldValue,
+            IEnumerable<IAbstractEffect> newValue)
+        {
+            List<IAbstractEffect> oldList = oldValue.ToList();
+            List<IAbstractEffect> newList = newValue.ToList();
+            CompareValue(skill, propertyName + ".Count", oldList.Count, newList.Count);
+            if (oldList.Count == newList.Count)
+            {
+                for (int i = 0; i < oldList.Count; i++)
+                    CompareValue(skill, $"{propertyName}[{i}]", oldList[i], newList[i]);
+            }
+        }
+
         private static void CompareValue<T>(OldSkill skill, string propertyName, ReadOnlySpan<T> oldValue,
             ReadOnlySpan<T> newValue)
         {
@@ -713,19 +728,17 @@ public sealed class SkillTemplateLoadingTests
         {
             string index = string.Empty;
             bool equal;
-            if (oldValue is IEnumerable oldEnumerable && newValue is IEnumerable newEnumerable)
+            if (oldValue is RestorationRandom oldRestorationRandom &&
+                newValue is RestorationRandom newRestorationRandom)
+            {
+                // Allow old values to be approximate because of double rounding
+                equal = oldRestorationRandom.EqualsApproximately(newRestorationRandom);
+            }
+            else if (oldValue is IEnumerable oldEnumerable && newValue is IEnumerable newEnumerable)
             {
                 List<object?> oldEnum = oldEnumerable.Cast<object?>().ToList();
                 List<object?> newEnum = newEnumerable.Cast<object?>().ToList();
                 equal = oldEnum.SequenceEqual(newEnum);
-                if (!equal && oldEnum.Count == 1 && newEnum.Count == 1 &&
-                    oldEnum[0] is RestorationRandom oldRestorationRandom &&
-                    newEnum[0] is RestorationRandom newRestorationRandom)
-                {
-                    // Allow old values to be approximate because of double rounding
-                    equal = oldRestorationRandom.EqualsApproximately(newRestorationRandom);
-                }
-
                 if (!equal && oldEnum.Count == newEnum.Count)
                 {
                     for (int i = 0; i < oldEnum.Count; i++)
@@ -855,5 +868,45 @@ public sealed class SkillTemplateLoadingTests
         }
 
         return null;
+    }
+
+    private static readonly FrozenDictionary<string, XmlSkillEffectParameterType> _effectParameterTypes = EnumUtil.
+        GetValues<XmlSkillEffectParameterType>().
+        Select(v => new KeyValuePair<string, XmlSkillEffectParameterType>(
+            v.GetCustomAttribute<XmlSkillEffectParameterType, XmlEnumAttribute>()?.Name ?? v.ToString(), v)).
+        ToFrozenDictionary();
+
+    private static readonly FrozenDictionary<string, XmlSkillConditionParameterType> _conditionParameterTypes = EnumUtil.
+        GetValues<XmlSkillConditionParameterType>().
+        Select(v => new KeyValuePair<string, XmlSkillConditionParameterType>(
+            v.GetCustomAttribute<XmlSkillConditionParameterType, XmlEnumAttribute>()?.Name ?? v.ToString(), v)).
+        ToFrozenDictionary();
+
+    private static EffectParameterSet ConvertStatSetToEffectParameters(StatSet set)
+    {
+        EffectParameterSet parameters = new EffectParameterSet();
+        foreach (KeyValuePair<string, object> pair in set.getSet())
+        {
+            if (_effectParameterTypes.TryGetValue(pair.Key, out XmlSkillEffectParameterType type))
+                parameters[type] = pair.Value;
+            else
+                Assert.Fail($"Unknown effect parameter name {pair.Key}, value {pair.Value}");
+        }
+
+        return parameters;
+    }
+
+    private static SkillConditionParameterSet ConvertStatSetToConditionParameters(StatSet set)
+    {
+        SkillConditionParameterSet parameters = new SkillConditionParameterSet();
+        foreach (KeyValuePair<string, object> pair in set.getSet())
+        {
+            if (_conditionParameterTypes.TryGetValue(pair.Key, out XmlSkillConditionParameterType type))
+                parameters[type] = pair.Value;
+            else
+                Assert.Fail($"Unknown condition parameter name {pair.Key}, value {pair.Value}");
+        }
+
+        return parameters;
     }
 }

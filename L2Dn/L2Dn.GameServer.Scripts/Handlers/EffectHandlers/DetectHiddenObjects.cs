@@ -1,4 +1,3 @@
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
@@ -14,10 +13,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class DetectHiddenObjects: AbstractEffect
 {
-    public DetectHiddenObjects(StatSet @params)
-    {
-    }
-
     public override bool IsInstant => true;
 
     public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)

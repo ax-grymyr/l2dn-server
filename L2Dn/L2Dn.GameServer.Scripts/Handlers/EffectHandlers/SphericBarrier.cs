@@ -1,4 +1,4 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -8,12 +8,9 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-public sealed class SphericBarrier: AbstractStatAddEffect
+public sealed class SphericBarrier(EffectParameterSet parameters)
+    : AbstractStatAddEffect(parameters, Stat.SPHERIC_BARRIER_RANGE)
 {
-    public SphericBarrier(StatSet @params): base(@params, Stat.SPHERIC_BARRIER_RANGE)
-    {
-    }
-
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.Events.Subscribe<OnCreatureDamageReceived>(this, OnDamageReceivedEvent);

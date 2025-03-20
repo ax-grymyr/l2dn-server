@@ -1,9 +1,10 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -18,11 +19,11 @@ public sealed class StatByMoveType: AbstractEffect
     private readonly MoveType _type;
     private readonly double _value;
 
-    public StatByMoveType(StatSet @params)
+    public StatByMoveType(EffectParameterSet parameters)
     {
-        _stat = @params.getEnum<Stat>("stat");
-        _type = @params.getEnum<MoveType>("type");
-        _value = @params.getDouble("value");
+        _stat = parameters.GetEnum<Stat>(XmlSkillEffectParameterType.Stat);
+        _type = parameters.GetEnum<MoveType>(XmlSkillEffectParameterType.Type);
+        _value = parameters.GetDouble(XmlSkillEffectParameterType.Value);
     }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

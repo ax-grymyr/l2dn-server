@@ -1,10 +1,11 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -17,14 +18,14 @@ public sealed class DamOverTimePercent: AbstractEffect
     private readonly bool _canKill;
     private readonly double _power;
 
-    public DamOverTimePercent(StatSet @params)
+    public DamOverTimePercent(EffectParameterSet parameters)
     {
-        _canKill = @params.getBoolean("canKill", false);
-        _power = @params.getDouble("power");
-        Ticks = @params.getInt("ticks");
+        _canKill = parameters.GetBoolean(XmlSkillEffectParameterType.CanKill, false);
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power);
+        Ticks = parameters.GetInt32(XmlSkillEffectParameterType.Ticks);
     }
 
-    public override EffectTypes EffectType => EffectTypes.DMG_OVER_TIME_PERCENT;
+    public override EffectTypes EffectTypes => EffectTypes.DMG_OVER_TIME_PERCENT;
 
     public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {

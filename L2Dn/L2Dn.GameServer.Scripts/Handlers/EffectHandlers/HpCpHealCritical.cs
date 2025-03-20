@@ -1,4 +1,3 @@
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.Utilities;
 
@@ -6,10 +5,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 public sealed class HpCpHealCritical: AbstractEffect
 {
-    public HpCpHealCritical(StatSet @params)
-    {
-    }
-
     public override EffectFlags EffectFlags => EffectFlags.HPCPHEAL_CRITICAL;
 
     public override int GetHashCode() => this.GetSingletonHashCode();

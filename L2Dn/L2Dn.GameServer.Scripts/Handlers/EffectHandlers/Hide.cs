@@ -13,10 +13,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class Hide: AbstractEffect
 {
-    public Hide(StatSet @params)
-    {
-    }
-
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isPlayer())

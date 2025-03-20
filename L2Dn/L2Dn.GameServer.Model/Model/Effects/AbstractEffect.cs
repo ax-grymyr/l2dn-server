@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
@@ -14,7 +15,7 @@ namespace L2Dn.GameServer.Model.Effects;
 /// Instant effects should not override <see cref="CanStart"/>, all checks should be done <see cref="OnStart"/>.
 /// Do not call super class methods <see cref="OnStart"/> nor <see cref="OnExit"/>.
 /// </summary>
-public abstract class AbstractEffect
+public abstract class AbstractEffect: IAbstractEffect
 {
     protected static readonly Logger Logger = LogManager.GetLogger(nameof(AbstractEffect));
 
@@ -30,7 +31,7 @@ public abstract class AbstractEffect
      * TODO: Remove.
      * @return the effect type
      */
-    public virtual EffectTypes EffectType => EffectTypes.NONE;
+    public virtual EffectTypes EffectTypes => EffectTypes.NONE;
 
     /// <summary>
     /// Get the effect flags.

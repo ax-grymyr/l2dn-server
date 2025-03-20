@@ -1,42 +1,29 @@
 using L2Dn.GameServer.Geo;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Sdw
- */
-public class OpBlinkSkillCondition: ISkillCondition
+public sealed class OpBlinkSkillCondition: ISkillCondition
 {
     private readonly int _angle;
     private readonly int _range;
 
-    public OpBlinkSkillCondition(StatSet @params)
+    public OpBlinkSkillCondition(SkillConditionParameterSet parameters)
     {
-        Position position = @params.getEnum<Position>("direction");
-        switch (position)
+        Position position = parameters.GetEnum<Position>(XmlSkillConditionParameterType.Direction);
+        _angle = position switch
         {
-            case Position.Back:
-            {
-                _angle = 0;
-                break;
-            }
-            case Position.Front:
-            {
-                _angle = 180;
-                break;
-            }
-            default:
-            {
-                _angle = -1;
-                break;
-            }
-        }
+            Position.Back => 0,
+            Position.Front => 180,
+            _ => -1,
+        };
 
-        _range = @params.getInt("range");
+        _range = parameters.GetInt32(XmlSkillConditionParameterType.Range);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

@@ -1,12 +1,13 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -18,9 +19,9 @@ public sealed class TakeCastle: AbstractEffect
 {
     private readonly CastleSide _side;
 
-    public TakeCastle(StatSet @params)
+    public TakeCastle(EffectParameterSet parameters)
     {
-        _side = @params.getEnum<CastleSide>("side");
+        _side = parameters.GetEnum<CastleSide>(XmlSkillEffectParameterType.Side);
     }
 
     public override bool IsInstant => true;

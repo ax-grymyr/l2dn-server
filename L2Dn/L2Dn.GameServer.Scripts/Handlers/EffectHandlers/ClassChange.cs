@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -8,8 +9,8 @@ using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.TaskManagers;
-using L2Dn.Model;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -21,9 +22,9 @@ public sealed class ClassChange: AbstractEffect
 
     private readonly int _index;
 
-    public ClassChange(StatSet @params)
+    public ClassChange(EffectParameterSet parameters)
     {
-        _index = @params.getInt("index", 0);
+        _index = parameters.GetInt32(XmlSkillEffectParameterType.Index, 0);
     }
 
     public override bool IsInstant => true;

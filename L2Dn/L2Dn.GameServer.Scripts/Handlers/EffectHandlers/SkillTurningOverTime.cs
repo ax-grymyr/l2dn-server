@@ -1,10 +1,11 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -14,11 +15,11 @@ public sealed class SkillTurningOverTime: AbstractEffect
     private readonly int _chance;
     private readonly bool _staticChance;
 
-    public SkillTurningOverTime(StatSet @params)
+    public SkillTurningOverTime(EffectParameterSet parameters)
     {
-        _chance = @params.getInt("chance", 100);
-        _staticChance = @params.getBoolean("staticChance", false);
-        Ticks = @params.getInt("ticks");
+        _chance = parameters.GetInt32(XmlSkillEffectParameterType.Chance, 100);
+        _staticChance = parameters.GetBoolean(XmlSkillEffectParameterType.StaticChance, false);
+        Ticks = parameters.GetInt32(XmlSkillEffectParameterType.Ticks);
     }
 
     public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)

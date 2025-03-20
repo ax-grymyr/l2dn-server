@@ -17,10 +17,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class TakeFort: AbstractEffect
 {
-    public TakeFort(StatSet @params)
-    {
-    }
-
     public override bool IsInstant => true;
 
     public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)

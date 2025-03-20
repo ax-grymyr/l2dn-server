@@ -5,15 +5,8 @@ using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid
- */
-public class ConsumeBodySkillCondition: ISkillCondition
+public sealed class ConsumeBodySkillCondition: ISkillCondition
 {
-    public ConsumeBodySkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         if (target != null && (target.isMonster() || target.isSummon()))

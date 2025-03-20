@@ -3,15 +3,14 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.Model.Enums;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -29,28 +28,33 @@ public sealed class SummonMulti: AbstractEffect
     private readonly int _consumeItemInterval;
     private readonly int _summonPoints;
 
-    public SummonMulti(StatSet @params)
+    public SummonMulti(EffectParameterSet parameters)
     {
-        _npcId = @params.getInt("npcId", 0);
+        _npcId = parameters.GetInt32(XmlSkillEffectParameterType.NpcId, 0);
         if (_npcId > 0)
         {
             _levelTemplates = FrozenDictionary<int, int>.Empty;
         }
         else
         {
-            List<int> summonerLevels = @params.getIntegerList("summonerLevels");
-            List<int> npcIds = @params.getIntegerList("npcIds");
+            List<int> summonerLevels = parameters.GetInt32List(XmlSkillEffectParameterType.SummonerLevels);
+            List<int> npcIds = parameters.GetInt32List(XmlSkillEffectParameterType.NpcIds);
             _levelTemplates = summonerLevels.Zip(npcIds).ToFrozenDictionary(t => t.First, t => t.Second);
         }
 
-        _expMultiplier = @params.getFloat("expMultiplier", 1);
-        _consumeItem = new ItemHolder(@params.getInt("consumeItemId", 0), @params.getInt("consumeItemCount", 1));
-        _consumeItemInterval = @params.getInt("consumeItemInterval", 0);
-        _lifeTime = @params.getInt("lifeTime", 3600) > 0 ? @params.getInt("lifeTime", 3600) * 1000 : -1;
-        _summonPoints = @params.getInt("summonPoints", 0);
+        _expMultiplier = parameters.GetFloat(XmlSkillEffectParameterType.ExpMultiplier, 1);
+        _consumeItem = new ItemHolder(parameters.GetInt32(XmlSkillEffectParameterType.ConsumeItemId, 0),
+            parameters.GetInt32(XmlSkillEffectParameterType.ConsumeItemCount, 1));
+
+        _consumeItemInterval = parameters.GetInt32(XmlSkillEffectParameterType.ConsumeItemInterval, 0);
+        _lifeTime = parameters.GetInt32(XmlSkillEffectParameterType.LifeTime, 3600) > 0
+            ? parameters.GetInt32(XmlSkillEffectParameterType.LifeTime, 3600) * 1000
+            : -1;
+
+        _summonPoints = parameters.GetInt32(XmlSkillEffectParameterType.SummonPoints, 0);
     }
 
-    public override EffectTypes EffectType => EffectTypes.SUMMON;
+    public override EffectTypes EffectTypes => EffectTypes.SUMMON;
 
     public override bool IsInstant => true;
 

@@ -384,19 +384,16 @@ public class SkillCaster: Runnable
 		if (target.isCreature())
 		{
 			// Tempfix for the delayed TriggerSkillByDualRange effect skill.
-			ImmutableArray<AbstractEffect> effects = _skill.GetEffects(SkillEffectScope.General);
-			if (!effects.IsDefaultOrEmpty)
+			foreach (AbstractEffect effect in _skill.GetEffects(SkillEffectScope.General))
 			{
-				foreach (AbstractEffect effect in effects)
+				if (effect.EffectTypes == EffectTypes.DUAL_RANGE)
 				{
-					if (effect.EffectType == EffectTypes.DUAL_RANGE)
-					{
-						effect.Instant(caster, (Creature)target, _skill, null);
-						return false;
-					}
+					effect.Instant(caster, (Creature)target, _skill, null);
+					return false;
 				}
 			}
-			_skill.ApplyEffectScope(SkillEffectScope.Start, new BuffInfo(caster, (Creature) target, _skill, false, _item, null), true, false);
+
+            _skill.ApplyEffectScope(SkillEffectScope.Start, new BuffInfo(caster, (Creature) target, _skill, false, _item, null), true, false);
 		}
 
 		// Start channeling if skill is channeling.

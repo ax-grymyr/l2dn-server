@@ -1,6 +1,5 @@
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -15,10 +14,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class OpenCommonRecipeBook: AbstractEffect
 {
-    public OpenCommonRecipeBook(StatSet @params)
-    {
-    }
-
     public override bool IsInstant => true;
 
     public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)

@@ -1,5 +1,4 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
@@ -12,10 +11,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class NoblesseBless: AbstractEffect
 {
-    public NoblesseBless(StatSet @params)
-    {
-    }
-
     public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effector != null && effected != null && effected.isPlayable();
@@ -23,7 +18,7 @@ public sealed class NoblesseBless: AbstractEffect
 
     public override EffectFlags EffectFlags => EffectFlags.NOBLESS_BLESSING;
 
-    public override EffectTypes EffectType => EffectTypes.NOBLESSE_BLESSING;
+    public override EffectTypes EffectTypes => EffectTypes.NOBLESSE_BLESSING;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);

@@ -1,22 +1,21 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * TODO: Verify me, also should Quest items be counted?
- * @author UnAfraid
- */
-public class OpEncumberedSkillCondition: ISkillCondition
+// TODO: Verify me, also should Quest items be counted?
+public sealed class OpEncumberedSkillCondition: ISkillCondition
 {
     private readonly int _slotsPercent;
     private readonly int _weightPercent;
 
-    public OpEncumberedSkillCondition(StatSet @params)
+    public OpEncumberedSkillCondition(SkillConditionParameterSet parameters)
     {
-        _slotsPercent = @params.getInt("slotsPercent");
-        _weightPercent = @params.getInt("weightPercent");
+        _slotsPercent = parameters.GetInt32(XmlSkillConditionParameterType.SlotsPercent);
+        _weightPercent = parameters.GetInt32(XmlSkillConditionParameterType.WeightPercent);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

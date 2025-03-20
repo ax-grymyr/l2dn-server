@@ -19,11 +19,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class SummonPet: AbstractEffect
 {
-    public SummonPet(StatSet @params)
-    {
-    }
-
-    public override EffectTypes EffectType => EffectTypes.SUMMON_PET;
+    public override EffectTypes EffectTypes => EffectTypes.SUMMON_PET;
 
     public override bool IsInstant => true;
 

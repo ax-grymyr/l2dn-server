@@ -1,9 +1,11 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -15,12 +17,13 @@ public sealed class CallSkillOnActionTime: AbstractEffect
 {
     private readonly SkillHolder _skill;
 
-    public CallSkillOnActionTime(StatSet @params)
+    public CallSkillOnActionTime(EffectParameterSet parameters)
     {
-        _skill = new SkillHolder(@params.getInt("skillId"), @params.getInt("skillLevel", 1),
-            @params.getInt("skillSubLevel", 0));
+        _skill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.SkillId),
+            parameters.GetInt32(XmlSkillEffectParameterType.SkillLevel, 1),
+            parameters.GetInt32(XmlSkillEffectParameterType.SkillSubLevel, 0));
 
-        Ticks = @params.getInt("ticks");
+        Ticks = parameters.GetInt32(XmlSkillEffectParameterType.Ticks);
     }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

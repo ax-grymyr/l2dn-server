@@ -4,6 +4,15 @@ namespace L2Dn.GameServer.StaticData.Xml.Skills;
 
 public enum XmlSkillEffectParameterType
 {
+    [XmlEnum(XmlSkillEffectParameterNames.AddedSkillId)]
+    AddedSkillId,
+
+    [XmlEnum(XmlSkillEffectParameterNames.AddedSkillLevel)]
+    AddedSkillLevel,
+
+    [XmlEnum(XmlSkillEffectParameterNames.AffectSummoner)]
+    AffectSummoner,
+
     [XmlEnum(XmlSkillEffectParameterNames.AirBind)]
     AirBind,
 
@@ -12,6 +21,9 @@ public enum XmlSkillEffectParameterType
 
     [XmlEnum(XmlSkillEffectParameterNames.AnimalWeakness)]
     AnimalWeakness,
+
+    [XmlEnum(XmlSkillEffectParameterNames.AnimationSpeed)]
+    AnimationSpeed,
 
     [XmlEnum(XmlSkillEffectParameterNames.Anomaly)]
     Anomaly,
@@ -49,6 +61,9 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.Dagger)]
     Dagger,
 
+    [XmlEnum(XmlSkillEffectParameterNames.DamageModifier)]
+    DamageModifier,
+
     [XmlEnum(XmlSkillEffectParameterNames.DemonicWeakness)]
     DemonicWeakness,
 
@@ -73,11 +88,17 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.DualFist)]
     DualFist,
 
+    [XmlEnum(XmlSkillEffectParameterNames.Fame)]
+    Fame,
+
     [XmlEnum(XmlSkillEffectParameterNames.Fear)]
     Fear,
 
     [XmlEnum(XmlSkillEffectParameterNames.Fist)]
     Fist,
+
+    [XmlEnum(XmlSkillEffectParameterNames.FlyType)]
+    FlyType,
 
     [XmlEnum(XmlSkillEffectParameterNames.GiantWeakness)]
     GiantWeakness,
@@ -85,8 +106,17 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.Hold)]
     Hold,
 
+    [XmlEnum(XmlSkillEffectParameterNames.Ids)]
+    Ids,
+
     [XmlEnum(XmlSkillEffectParameterNames.Imprison)]
     Imprison,
+
+    [XmlEnum(XmlSkillEffectParameterNames.InCombat)]
+    InCombat,
+
+    [XmlEnum(XmlSkillEffectParameterNames.Index)]
+    Index,
 
     [XmlEnum(XmlSkillEffectParameterNames.Infection)]
     Infection,
@@ -106,11 +136,17 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.MagicAttackSpeed)]
     MagicAttackSpeed,
 
+    [XmlEnum(XmlSkillEffectParameterNames.MaxAttackerLevel)]
+    MaxAttackerLevel,
+
     [XmlEnum(XmlSkillEffectParameterNames.MaxHp)]
     MaxHp,
 
     [XmlEnum(XmlSkillEffectParameterNames.MaxMp)]
     MaxMp,
+
+    [XmlEnum(XmlSkillEffectParameterNames.MinAttackerLevel)]
+    MinAttackerLevel,
 
     [XmlEnum(XmlSkillEffectParameterNames.Paralyze)]
     Paralyze,
@@ -151,11 +187,17 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.Pull)]
     Pull,
 
+    [XmlEnum(XmlSkillEffectParameterNames.Radius)]
+    Radius,
+
     [XmlEnum(XmlSkillEffectParameterNames.Rapier)]
     Rapier,
 
     [XmlEnum(XmlSkillEffectParameterNames.RootPhysically)]
     RootPhysically,
+
+    [XmlEnum(XmlSkillEffectParameterNames.SaveHp)]
+    SaveHp,
 
     [XmlEnum(XmlSkillEffectParameterNames.Shock)]
     Shock,
@@ -190,6 +232,9 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.Zone)]
     Zone,
 
+    [XmlEnum(XmlSkillEffectParameterNames.AbnormalPower)]
+    AbnormalPower,
+
     [XmlEnum(XmlSkillEffectParameterNames.AbnormalType)]
     AbnormalType,
 
@@ -202,6 +247,9 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.AddStat)]
     AddStat,
 
+    [XmlEnum(XmlSkillEffectParameterNames.AdjustLevel)]
+    AdjustLevel,
+
     [XmlEnum(XmlSkillEffectParameterNames.Aggressive)]
     Aggressive,
 
@@ -213,6 +261,9 @@ public enum XmlSkillEffectParameterType
 
     [XmlEnum(XmlSkillEffectParameterNames.AllowNormalAttack)]
     AllowNormalAttack,
+
+    [XmlEnum(XmlSkillEffectParameterNames.AllowReflect)]
+    AllowReflect,
 
     [XmlEnum(XmlSkillEffectParameterNames.AllowSkillAttack)]
     AllowSkillAttack,
@@ -237,6 +288,9 @@ public enum XmlSkillEffectParameterType
 
     [XmlEnum(XmlSkillEffectParameterNames.AttackSkillId)]
     AttackSkillId,
+
+    [XmlEnum(XmlSkillEffectParameterNames.AttackSkillLevel)]
+    AttackSkillLevel,
 
     [XmlEnum(XmlSkillEffectParameterNames.Attribute)]
     Attribute,
@@ -280,8 +334,14 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.ConsumeItemId)]
     ConsumeItemId,
 
+    [XmlEnum(XmlSkillEffectParameterNames.ConsumeItemInterval)]
+    ConsumeItemInterval,
+
     [XmlEnum(XmlSkillEffectParameterNames.Cp)]
     Cp,
+
+    [XmlEnum(XmlSkillEffectParameterNames.CpPercent)]
+    CpPercent,
 
     [XmlEnum(XmlSkillEffectParameterNames.Critical)]
     Critical,
@@ -316,6 +376,9 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.DespawnDelay)]
     DespawnDelay,
 
+    [XmlEnum(XmlSkillEffectParameterNames.DespawnTime)]
+    DespawnTime,
+
     [XmlEnum(XmlSkillEffectParameterNames.Disable)]
     Disable,
 
@@ -331,6 +394,9 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.ExistingSkillId)]
     ExistingSkillId,
 
+    [XmlEnum(XmlSkillEffectParameterNames.ExistingSkillLevel)]
+    ExistingSkillLevel,
+
     [XmlEnum(XmlSkillEffectParameterNames.Exp)]
     Exp,
 
@@ -339,6 +405,9 @@ public enum XmlSkillEffectParameterType
 
     [XmlEnum(XmlSkillEffectParameterNames.ExpNeeded)]
     ExpNeeded,
+
+    [XmlEnum(XmlSkillEffectParameterNames.From)]
+    From,
 
     [XmlEnum(XmlSkillEffectParameterNames.FullLethal)]
     FullLethal,
@@ -370,8 +439,17 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.IsCritical)]
     IsCritical,
 
+    [XmlEnum(XmlSkillEffectParameterNames.IsItem)]
+    IsItem,
+
+    [XmlEnum(XmlSkillEffectParameterNames.IsSummonSpawn)]
+    IsSummonSpawn,
+
     [XmlEnum(XmlSkillEffectParameterNames.Item)]
     Item,
+
+    [XmlEnum(XmlSkillEffectParameterNames.ItemEnchantmentLevel)]
+    ItemEnchantmentLevel,
 
     [XmlEnum(XmlSkillEffectParameterNames.ItemCount)]
     ItemCount,
@@ -391,6 +469,12 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.LifeTime)]
     LifeTime,
 
+    [XmlEnum(XmlSkillEffectParameterNames.MAccuracyAmount)]
+    MAccuracyAmount,
+
+    [XmlEnum(XmlSkillEffectParameterNames.MAccuracyMode)]
+    MAccuracyMode,
+
     [XmlEnum(XmlSkillEffectParameterNames.MagicType)]
     MagicType,
 
@@ -400,6 +484,18 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.MagicWeapon)]
     MagicWeapon,
 
+    [XmlEnum(XmlSkillEffectParameterNames.MAtkAmount)]
+    MAtkAmount,
+
+    [XmlEnum(XmlSkillEffectParameterNames.MAtkMode)]
+    MAtkMode,
+
+    [XmlEnum(XmlSkillEffectParameterNames.MAtkSpeedAmount)]
+    MAtkSpeedAmount,
+
+    [XmlEnum(XmlSkillEffectParameterNames.MAtkSpeedMode)]
+    MAtkSpeedMode,
+
     [XmlEnum(XmlSkillEffectParameterNames.Max)]
     Max,
 
@@ -408,6 +504,18 @@ public enum XmlSkillEffectParameterType
 
     [XmlEnum(XmlSkillEffectParameterNames.MaxSouls)]
     MaxSouls,
+
+    [XmlEnum(XmlSkillEffectParameterNames.MCritDamageAmount)]
+    MCritDamageAmount,
+
+    [XmlEnum(XmlSkillEffectParameterNames.MCritDamageMode)]
+    MCritDamageMode,
+
+    [XmlEnum(XmlSkillEffectParameterNames.MCritRateAmount)]
+    MCritRateAmount,
+
+    [XmlEnum(XmlSkillEffectParameterNames.MCritRateMode)]
+    MCritRateMode,
 
     [XmlEnum(XmlSkillEffectParameterNames.Min)]
     Min,
@@ -424,6 +532,9 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.Mp)]
     Mp,
 
+    [XmlEnum(XmlSkillEffectParameterNames.MpPercent)]
+    MpPercent,
+
     [XmlEnum(XmlSkillEffectParameterNames.MulStat)]
     MulStat,
 
@@ -436,6 +547,9 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.NpcId)]
     NpcId,
 
+    [XmlEnum(XmlSkillEffectParameterNames.NpcIds)]
+    NpcIds,
+
     [XmlEnum(XmlSkillEffectParameterNames.OnlyMagicSkill)]
     OnlyMagicSkill,
 
@@ -447,6 +561,15 @@ public enum XmlSkillEffectParameterType
 
     [XmlEnum(XmlSkillEffectParameterNames.OverHit)]
     OverHit,
+
+    [XmlEnum(XmlSkillEffectParameterNames.PAccuracyAmount)]
+    PAccuracyAmount,
+
+    [XmlEnum(XmlSkillEffectParameterNames.PAccuracyMode)]
+    PAccuracyMode,
+
+    [XmlEnum(XmlSkillEffectParameterNames.Party)]
+    Party,
 
     [XmlEnum(XmlSkillEffectParameterNames.PartyBuffSkillId)]
     PartyBuffSkillId,
@@ -465,6 +588,18 @@ public enum XmlSkillEffectParameterType
 
     [XmlEnum(XmlSkillEffectParameterNames.PAtkSpeedMode)]
     PAtkSpeedMode,
+
+    [XmlEnum(XmlSkillEffectParameterNames.PCritDamageAmount)]
+    PCritDamageAmount,
+
+    [XmlEnum(XmlSkillEffectParameterNames.PCritDamageMode)]
+    PCritDamageMode,
+
+    [XmlEnum(XmlSkillEffectParameterNames.PCritRateAmount)]
+    PCritRateAmount,
+
+    [XmlEnum(XmlSkillEffectParameterNames.PCritRateMode)]
+    PCritRateMode,
 
     [XmlEnum(XmlSkillEffectParameterNames.PDefMod)]
     PDefMod,
@@ -493,6 +628,9 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.Races)]
     Races,
 
+    [XmlEnum(XmlSkillEffectParameterNames.RandomOffset)]
+    RandomOffset,
+
     [XmlEnum(XmlSkillEffectParameterNames.Range)]
     Range,
 
@@ -511,8 +649,14 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.RepeatCount)]
     RepeatCount,
 
+    [XmlEnum(XmlSkillEffectParameterNames.Replace)]
+    Replace,
+
     [XmlEnum(XmlSkillEffectParameterNames.ReplacementSkillId)]
     ReplacementSkillId,
+
+    [XmlEnum(XmlSkillEffectParameterNames.ReplacementSkillLevel)]
+    ReplacementSkillLevel,
 
     [XmlEnum(XmlSkillEffectParameterNames.Reputation)]
     Reputation,
@@ -535,164 +679,14 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.SkillId)]
     SkillId,
 
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId1)]
-    SkillId1,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId10)]
-    SkillId10,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId11)]
-    SkillId11,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId12)]
-    SkillId12,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId13)]
-    SkillId13,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId14)]
-    SkillId14,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId15)]
-    SkillId15,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId16)]
-    SkillId16,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId17)]
-    SkillId17,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId18)]
-    SkillId18,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId19)]
-    SkillId19,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId2)]
-    SkillId2,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId20)]
-    SkillId20,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId21)]
-    SkillId21,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId22)]
-    SkillId22,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId23)]
-    SkillId23,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId24)]
-    SkillId24,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId25)]
-    SkillId25,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId26)]
-    SkillId26,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId27)]
-    SkillId27,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId28)]
-    SkillId28,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId29)]
-    SkillId29,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId3)]
-    SkillId3,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId30)]
-    SkillId30,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId31)]
-    SkillId31,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId32)]
-    SkillId32,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId33)]
-    SkillId33,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId34)]
-    SkillId34,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId35)]
-    SkillId35,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId36)]
-    SkillId36,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId37)]
-    SkillId37,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId38)]
-    SkillId38,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId39)]
-    SkillId39,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId4)]
-    SkillId4,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId40)]
-    SkillId40,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId41)]
-    SkillId41,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId42)]
-    SkillId42,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId43)]
-    SkillId43,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId44)]
-    SkillId44,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId45)]
-    SkillId45,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId46)]
-    SkillId46,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId47)]
-    SkillId47,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId48)]
-    SkillId48,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId49)]
-    SkillId49,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId5)]
-    SkillId5,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId50)]
-    SkillId50,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId51)]
-    SkillId51,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId6)]
-    SkillId6,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId7)]
-    SkillId7,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId8)]
-    SkillId8,
-
-    [XmlEnum(XmlSkillEffectParameterNames.SkillId9)]
-    SkillId9,
-
     [XmlEnum(XmlSkillEffectParameterNames.SkillIds)]
     SkillIds,
 
     [XmlEnum(XmlSkillEffectParameterNames.SkillLevel)]
     SkillLevel,
+
+    [XmlEnum(XmlSkillEffectParameterNames.SkillLevels)]
+    SkillLevels,
 
     [XmlEnum(XmlSkillEffectParameterNames.SkillLevelScaleTo)]
     SkillLevelScaleTo,
@@ -715,11 +709,26 @@ public enum XmlSkillEffectParameterType
     [XmlEnum(XmlSkillEffectParameterNames.Speed)]
     Speed,
 
+    [XmlEnum(XmlSkillEffectParameterNames.SpeedAmount)]
+    SpeedAmount,
+
+    [XmlEnum(XmlSkillEffectParameterNames.SpeedMode)]
+    SpeedMode,
+
     [XmlEnum(XmlSkillEffectParameterNames.Stat)]
     Stat,
 
     [XmlEnum(XmlSkillEffectParameterNames.StaticChance)]
     StaticChance,
+
+    [XmlEnum(XmlSkillEffectParameterNames.StealAmount)]
+    StealAmount,
+
+    [XmlEnum(XmlSkillEffectParameterNames.SummonerLevels)]
+    SummonerLevels,
+
+    [XmlEnum(XmlSkillEffectParameterNames.SummonPoints)]
+    SummonPoints,
 
     [XmlEnum(XmlSkillEffectParameterNames.TargetType)]
     TargetType,
@@ -732,6 +741,9 @@ public enum XmlSkillEffectParameterType
 
     [XmlEnum(XmlSkillEffectParameterNames.Times)]
     Times,
+
+    [XmlEnum(XmlSkillEffectParameterNames.To)]
+    To,
 
     [XmlEnum(XmlSkillEffectParameterNames.TransformationId)]
     TransformationId,

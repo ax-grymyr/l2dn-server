@@ -13,8 +13,4 @@
       <ProjectReference Include="..\L2Dn.GameServer.StaticData.Xml\L2Dn.GameServer.StaticData.Xml.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Handlers\" />
-    </ItemGroup>
-
 </Project>

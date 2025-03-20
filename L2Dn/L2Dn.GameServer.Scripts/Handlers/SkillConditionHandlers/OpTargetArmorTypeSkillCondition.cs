@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
@@ -5,26 +6,22 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Mobius
- */
-public class OpTargetArmorTypeSkillCondition: ISkillCondition
+public sealed class OpTargetArmorTypeSkillCondition: ISkillCondition
 {
     private readonly Set<ArmorType> _armorTypes = [];
 
-    public OpTargetArmorTypeSkillCondition(StatSet @params)
+    public OpTargetArmorTypeSkillCondition(SkillConditionParameterSet parameters)
     {
-        List<string>? armorTypes = @params.getList<string>("armorType");
+        List<string>? armorTypes = parameters.GetStringListOptional(XmlSkillConditionParameterType.ArmorType);
         if (armorTypes != null)
         {
             foreach (string type in armorTypes)
-            {
-                _armorTypes.add(Enum.Parse<ArmorType>(type));
-            }
+                _armorTypes.add(Enum.Parse<ArmorType>(type, true));
         }
     }
 

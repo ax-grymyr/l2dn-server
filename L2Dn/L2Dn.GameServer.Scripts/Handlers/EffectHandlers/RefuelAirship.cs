@@ -1,10 +1,11 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -16,12 +17,12 @@ public sealed class RefuelAirship: AbstractEffect
 {
     private readonly int _value;
 
-    public RefuelAirship(StatSet @params)
+    public RefuelAirship(EffectParameterSet parameters)
     {
-        _value = @params.getInt("value", 0);
+        _value = parameters.GetInt32(XmlSkillEffectParameterType.Value, 0);
     }
 
-    public override EffectTypes EffectType => EffectTypes.REFUEL_AIRSHIP;
+    public override EffectTypes EffectTypes => EffectTypes.REFUEL_AIRSHIP;
 
     public override bool IsInstant => true;
 

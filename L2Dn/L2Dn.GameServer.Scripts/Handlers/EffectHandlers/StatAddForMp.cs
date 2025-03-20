@@ -1,7 +1,8 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -13,11 +14,11 @@ public sealed class StatAddForMp: AbstractEffect
     private readonly Stat _stat;
     private readonly double _amount;
 
-    public StatAddForMp(StatSet @params)
+    public StatAddForMp(EffectParameterSet parameters)
     {
-        _mp = @params.getInt("mp", 0);
-        _stat = @params.getEnum<Stat>("stat");
-        _amount = @params.getDouble("amount", 0);
+        _mp = parameters.GetInt32(XmlSkillEffectParameterType.Mp, 0);
+        _stat = parameters.GetEnum<Stat>(XmlSkillEffectParameterType.Stat);
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount, 0);
     }
 
     public override void Pump(Creature effected, Skill skill)

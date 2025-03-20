@@ -1,6 +1,5 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -14,13 +13,9 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class Root: AbstractEffect
 {
-    public Root(StatSet @params)
-    {
-    }
-
     public override EffectFlags EffectFlags => EffectFlags.ROOTED;
 
-    public override EffectTypes EffectType => EffectTypes.ROOT;
+    public override EffectTypes EffectTypes => EffectTypes.ROOT;
 
     public override void OnExit(Creature effector, Creature effected, Skill skill)
     {

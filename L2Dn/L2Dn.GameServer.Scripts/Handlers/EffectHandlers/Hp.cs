@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -19,10 +20,10 @@ public sealed class Hp: AbstractEffect
     private readonly int _amount;
     private readonly StatModifierType _mode;
 
-    public Hp(StatSet @params)
+    public Hp(EffectParameterSet parameters)
     {
-        _amount = @params.getInt("amount", 0);
-        _mode = @params.getEnum("mode", StatModifierType.DIFF);
+        _amount = parameters.GetInt32(XmlSkillEffectParameterType.Amount, 0);
+        _mode = parameters.GetEnum(XmlSkillEffectParameterType.Mode, StatModifierType.DIFF);
     }
 
     public override bool IsInstant => true;

@@ -1,16 +1,18 @@
 using System.Collections.Frozen;
+using System.Xml.Serialization;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
-using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -20,6 +22,14 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class PhysicalAttackWeaponBonus: AbstractEffect
 {
+    private static readonly FrozenDictionary<XmlSkillEffectParameterType, WeaponType> _map = EnumUtil.
+        GetValues<XmlSkillEffectParameterType>().Select(type =>
+        {
+            XmlEnumAttribute? attribute = type.GetCustomAttribute<XmlSkillEffectParameterType, XmlEnumAttribute>();
+            string name = attribute?.Name ?? type.ToString();
+            return Enum.TryParse(name, true, out WeaponType traitType) ? (type, traitType) : (type, WeaponType.NONE);
+        }).Where(t => t.Item2 != WeaponType.NONE).ToFrozenDictionary(t => t.Item1, t => t.Item2);
+
     private readonly double _power;
     private readonly double _criticalChance;
     private readonly bool _ignoreShieldDefence;
@@ -27,18 +37,24 @@ public sealed class PhysicalAttackWeaponBonus: AbstractEffect
     private readonly double _pDefMod;
     private readonly FrozenDictionary<WeaponType, double> _weaponBonus;
 
-    public PhysicalAttackWeaponBonus(StatSet @params)
+    public PhysicalAttackWeaponBonus(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power", 0);
-        _criticalChance = @params.getDouble("criticalChance", 10);
-        _ignoreShieldDefence = @params.getBoolean("ignoreShieldDefence", false);
-        _overHit = @params.getBoolean("overHit", false);
-        _pDefMod = @params.getDouble("pDefMod", 1.0);
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power, 0);
+        _criticalChance = parameters.GetDouble(XmlSkillEffectParameterType.CriticalChance, 10);
+        _ignoreShieldDefence = parameters.GetBoolean(XmlSkillEffectParameterType.IgnoreShieldDefence, false);
+        _overHit = parameters.GetBoolean(XmlSkillEffectParameterType.OverHit, false);
+        _pDefMod = parameters.GetDouble(XmlSkillEffectParameterType.PDefMod, 1.0);
 
-        _weaponBonus = EnumUtil.GetValues<WeaponType>().
-            Select(weapon => new KeyValuePair<WeaponType, double>(weapon, @params.getDouble(weapon.ToString(), 1))).
-            Where(pair => pair.Value != 1.0).
-            ToFrozenDictionary();
+        _weaponBonus = parameters.Keys.Select(key =>
+            {
+                if (!_map.TryGetValue(key, out WeaponType weaponType))
+                    return (WeaponType.NONE, 1.0);
+
+                double value = parameters.GetDouble(key);
+                return (weaponType, value);
+            }).
+            Where(t => t.Item1 != WeaponType.NONE && t.Item2 != 1.0).
+            ToFrozenDictionary(t => t.Item1, t => t.Item2);
     }
 
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
@@ -46,7 +62,7 @@ public sealed class PhysicalAttackWeaponBonus: AbstractEffect
         return !Formulas.calcSkillEvasion(effector, effected, skill);
     }
 
-    public override EffectTypes EffectType => EffectTypes.PHYSICAL_ATTACK;
+    public override EffectTypes EffectTypes => EffectTypes.PHYSICAL_ATTACK;
 
     public override bool IsInstant => true;
 

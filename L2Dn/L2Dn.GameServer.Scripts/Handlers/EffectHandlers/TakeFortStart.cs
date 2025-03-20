@@ -1,5 +1,4 @@
 using L2Dn.GameServer.InstanceManagers;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Effects;
@@ -17,10 +16,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public sealed class TakeFortStart: AbstractEffect
 {
-    public TakeFortStart(StatSet @params)
-    {
-    }
-
     public override bool IsInstant => true;
 
     public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)

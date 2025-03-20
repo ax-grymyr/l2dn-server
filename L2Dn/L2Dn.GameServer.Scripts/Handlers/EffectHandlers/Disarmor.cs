@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -8,6 +9,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 
@@ -21,11 +23,11 @@ public sealed class Disarmor: AbstractEffect
     private readonly Map<int, int> _unequippedItems; // PlayerObjId, ItemObjId
     private readonly long _slot;
 
-    public Disarmor(StatSet @params)
+    public Disarmor(EffectParameterSet parameters)
     {
         _unequippedItems = [];
 
-        string slot = @params.getString("slot", "chest");
+        string slot = parameters.GetString(XmlSkillEffectParameterType.Slot, "chest");
         _slot = ItemData._slotNameMap.GetValueOrDefault(slot, ItemTemplate.SLOT_NONE);
         if (_slot == ItemTemplate.SLOT_NONE)
         {

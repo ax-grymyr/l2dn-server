@@ -1,8 +1,9 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -14,11 +15,11 @@ public sealed class ReduceDropPenalty: AbstractEffect
     private readonly double _deathPenalty;
     private readonly ReduceDropType _type;
 
-    public ReduceDropPenalty(StatSet @params)
+    public ReduceDropPenalty(EffectParameterSet parameters)
     {
-        _exp = @params.getDouble("exp", 0);
-        _deathPenalty = @params.getDouble("deathPenalty", 0);
-        _type = @params.getEnum("type", ReduceDropType.MOB);
+        _exp = parameters.GetDouble(XmlSkillEffectParameterType.Exp, 0);
+        _deathPenalty = parameters.GetDouble(XmlSkillEffectParameterType.DeathPenalty, 0);
+        _type = parameters.GetEnum(XmlSkillEffectParameterType.Type, ReduceDropType.MOB);
     }
 
     public override void Pump(Creature effected, Skill skill)

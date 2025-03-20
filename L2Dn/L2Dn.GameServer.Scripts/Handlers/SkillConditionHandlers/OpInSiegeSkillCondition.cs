@@ -1,22 +1,21 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author dontknowdontcare
- */
-public class OpInSiegeSkillCondition: ISkillCondition
+public sealed class OpInSiegeSkillCondition: ISkillCondition
 {
 	private readonly Set<int> _residenceIds = new();
 
-	public OpInSiegeSkillCondition(StatSet @params)
+	public OpInSiegeSkillCondition(SkillConditionParameterSet parameters)
 	{
-		_residenceIds.addAll(@params.getList<int>("residenceIds") ?? []);
+		_residenceIds.addAll(parameters.GetInt32ListOptional(XmlSkillConditionParameterType.ResidenceIds) ?? []);
 	}
 
 	public bool canUse(Creature caster, Skill skill, WorldObject? target)

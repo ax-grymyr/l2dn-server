@@ -1,8 +1,9 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -13,13 +14,13 @@ public sealed class ReflectSkill: AbstractEffect
     private readonly Stat _stat;
     private readonly double _amount;
 
-    public ReflectSkill(StatSet @params)
+    public ReflectSkill(EffectParameterSet parameters)
     {
-        _stat = @params.getEnum("type", BasicProperty.PHYSICAL) == BasicProperty.PHYSICAL
+        _stat = parameters.GetEnum(XmlSkillEffectParameterType.Type, BasicProperty.PHYSICAL) == BasicProperty.PHYSICAL
             ? Stat.REFLECT_SKILL_PHYSIC
             : Stat.REFLECT_SKILL_MAGIC;
 
-        _amount = @params.getDouble("amount", 0);
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount, 0);
     }
 
     public override void Pump(Creature effected, Skill skill)

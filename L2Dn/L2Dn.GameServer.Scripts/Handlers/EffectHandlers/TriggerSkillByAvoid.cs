@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -22,12 +23,14 @@ public sealed class TriggerSkillByAvoid: AbstractEffect
     private readonly TargetType _targetType;
     private readonly int _skillLevelScaleTo;
 
-    public TriggerSkillByAvoid(StatSet @params)
+    public TriggerSkillByAvoid(EffectParameterSet parameters)
     {
-        _chance = @params.getInt("chance", 100);
-        _skill = new SkillHolder(@params.getInt("skillId", 0), @params.getInt("skillLevel", 0));
-        _targetType = @params.getEnum("targetType", TargetType.TARGET);
-        _skillLevelScaleTo = @params.getInt("skillLevelScaleTo", 0);
+        _chance = parameters.GetInt32(XmlSkillEffectParameterType.Chance, 100);
+        _skill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.SkillId, 0),
+            parameters.GetInt32(XmlSkillEffectParameterType.SkillLevel, 0));
+
+        _targetType = parameters.GetEnum(XmlSkillEffectParameterType.TargetType, TargetType.TARGET);
+        _skillLevelScaleTo = parameters.GetInt32(XmlSkillEffectParameterType.SkillLevelScaleTo, 0);
     }
 
     private void onAvoidEvent(OnCreatureAttackAvoid @event)

@@ -9,15 +9,8 @@ using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Sdw
- */
-public class OpCheckFlagSkillCondition: ISkillCondition
+public sealed class OpCheckFlagSkillCondition: ISkillCondition
 {
-    public OpCheckFlagSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         Player? player = caster.getActingPlayer();

@@ -1,13 +1,14 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -19,9 +20,9 @@ public sealed class BlockAction: AbstractEffect
 {
     private readonly FrozenSet<int> _blockedActions;
 
-    public BlockAction(StatSet @params)
+    public BlockAction(EffectParameterSet parameters)
     {
-        string blockedActions = @params.getString("blockedActions");
+        string blockedActions = parameters.GetString(XmlSkillEffectParameterType.BlockedActions);
         _blockedActions = ParseUtil.ParseSet<int>(blockedActions, ',');
     }
 

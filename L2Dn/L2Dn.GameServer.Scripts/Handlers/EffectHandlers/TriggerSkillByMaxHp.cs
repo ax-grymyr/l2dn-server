@@ -1,10 +1,11 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -17,12 +18,12 @@ public sealed class TriggerSkillByMaxHp: AbstractEffect
     private readonly int _from;
     private readonly int _to;
 
-    public TriggerSkillByMaxHp(StatSet @params)
+    public TriggerSkillByMaxHp(EffectParameterSet parameters)
     {
-        _skillId = @params.getInt("skillId", 0);
-        _skillLevel = @params.getInt("skillLevel", 1);
-        _from = @params.getInt("from", 0);
-        _to = @params.getInt("to", int.MaxValue);
+        _skillId = parameters.GetInt32(XmlSkillEffectParameterType.SkillId, 0);
+        _skillLevel = parameters.GetInt32(XmlSkillEffectParameterType.SkillLevel, 1);
+        _from = parameters.GetInt32(XmlSkillEffectParameterType.From, 0);
+        _to = parameters.GetInt32(XmlSkillEffectParameterType.To, int.MaxValue);
     }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

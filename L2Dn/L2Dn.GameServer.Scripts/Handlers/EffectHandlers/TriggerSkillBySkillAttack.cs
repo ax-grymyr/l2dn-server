@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -27,17 +28,21 @@ public sealed class TriggerSkillBySkillAttack: AbstractEffect
     private readonly TargetType _targetType;
     private readonly InstanceType _attackerType;
 
-    public TriggerSkillBySkillAttack(StatSet @params)
+    public TriggerSkillBySkillAttack(EffectParameterSet parameters)
     {
-        _minAttackerLevel = @params.getInt("minAttackerLevel", 1);
-        _maxAttackerLevel = @params.getInt("maxAttackerLevel", int.MaxValue);
-        _minDamage = @params.getInt("minDamage", 1);
-        _chance = @params.getInt("chance", 100);
-        _skill = new SkillHolder(@params.getInt("skillId"), @params.getInt("skillLevel", 1));
-        _attackSkill = new SkillHolder(@params.getInt("attackSkillId"), @params.getInt("attackSkillLevel", 1));
-        _skillLevelScaleTo = @params.getInt("skillLevelScaleTo", 0);
-        _targetType = @params.getEnum("targetType", TargetType.TARGET);
-        _attackerType = @params.getEnum("attackerType", InstanceType.Creature);
+        _minAttackerLevel = parameters.GetInt32(XmlSkillEffectParameterType.MinAttackerLevel, 1);
+        _maxAttackerLevel = parameters.GetInt32(XmlSkillEffectParameterType.MaxAttackerLevel, int.MaxValue);
+        _minDamage = parameters.GetInt32(XmlSkillEffectParameterType.MinDamage, 1);
+        _chance = parameters.GetInt32(XmlSkillEffectParameterType.Chance, 100);
+        _skill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.SkillId),
+            parameters.GetInt32(XmlSkillEffectParameterType.SkillLevel, 1));
+
+        _attackSkill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.AttackSkillId),
+            parameters.GetInt32(XmlSkillEffectParameterType.AttackSkillLevel, 1));
+
+        _skillLevelScaleTo = parameters.GetInt32(XmlSkillEffectParameterType.SkillLevelScaleTo, 0);
+        _targetType = parameters.GetEnum(XmlSkillEffectParameterType.TargetType, TargetType.TARGET);
+        _attackerType = parameters.GetEnum(XmlSkillEffectParameterType.AttackerType, InstanceType.Creature);
     }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

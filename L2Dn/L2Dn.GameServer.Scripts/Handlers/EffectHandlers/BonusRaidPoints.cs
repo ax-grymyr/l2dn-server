@@ -1,6 +1,7 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-public sealed class BonusRaidPoints(StatSet @params): AbstractStatPercentEffect(@params, Stat.BONUS_RAID_POINTS);
+public sealed class BonusRaidPoints(EffectParameterSet parameters):
+    AbstractStatPercentEffect(parameters, Stat.BONUS_RAID_POINTS);

@@ -4,12 +4,8 @@ using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-public class OpEnchantRangeSkillCondition: ISkillCondition
+public sealed class OpEnchantRangeSkillCondition: ISkillCondition
 {
-    public OpEnchantRangeSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         return true; // TODO

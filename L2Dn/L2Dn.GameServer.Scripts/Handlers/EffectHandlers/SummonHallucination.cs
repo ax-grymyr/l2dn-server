@@ -1,12 +1,13 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 
@@ -14,18 +15,20 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 public sealed class SummonHallucination: AbstractEffect
 {
-    private readonly int _despawnDelay;
+    private readonly TimeSpan _despawnDelay;
     private readonly int _npcId;
     private readonly int _npcCount;
 
-    public SummonHallucination(StatSet @params)
+    public SummonHallucination(EffectParameterSet parameters)
     {
-        _despawnDelay = @params.getInt("despawnDelay", 20000);
-        _npcId = @params.getInt("npcId", 0);
-        _npcCount = @params.getInt("npcCount", 1);
+        _despawnDelay = parameters.GetTimeSpanMilliSeconds(XmlSkillEffectParameterType.DespawnDelay,
+            TimeSpan.FromSeconds(20));
+
+        _npcId = parameters.GetInt32(XmlSkillEffectParameterType.NpcId, 0);
+        _npcCount = parameters.GetInt32(XmlSkillEffectParameterType.NpcCount, 1);
     }
 
-    public override EffectTypes EffectType => EffectTypes.SUMMON_NPC;
+    public override EffectTypes EffectTypes => EffectTypes.SUMMON_NPC;
 
     public override bool IsInstant => true;
 
@@ -70,7 +73,7 @@ public sealed class SummonHallucination: AbstractEffect
             clone.setCurrentMp(clone.getMaxMp());
             clone.setSummoner(player);
             clone.spawnMe(new Location3D(x, y, z));
-            clone.scheduleDespawn(TimeSpan.FromMilliseconds(_despawnDelay));
+            clone.scheduleDespawn(_despawnDelay);
             clone.startAttackTask(effected);
         }
     }

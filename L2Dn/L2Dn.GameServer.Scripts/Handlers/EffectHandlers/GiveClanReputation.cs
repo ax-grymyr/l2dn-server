@@ -1,4 +1,4 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Effects;
@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -17,9 +18,9 @@ public sealed class GiveClanReputation: AbstractEffect
 {
     private readonly int _reputation;
 
-    public GiveClanReputation(StatSet @params)
+    public GiveClanReputation(EffectParameterSet parameters)
     {
-        _reputation = @params.getInt("reputation", 0);
+        _reputation = parameters.GetInt32(XmlSkillEffectParameterType.Reputation, 0);
     }
 
     public override bool IsInstant => true;

@@ -1,8 +1,9 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -11,9 +12,9 @@ public sealed class GivePetXp: AbstractEffect
 {
     private readonly int _xp;
 
-    public GivePetXp(StatSet @params)
+    public GivePetXp(EffectParameterSet parameters)
     {
-        _xp = @params.getInt("xp", 0);
+        _xp = parameters.GetInt32(XmlSkillEffectParameterType.Xp, 0);
     }
 
     public override bool IsInstant => true;

@@ -4,15 +4,8 @@ using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid
- */
-public class OpTargetMyPledgeAcademySkillCondition: ISkillCondition
+public sealed class OpTargetMyPledgeAcademySkillCondition: ISkillCondition
 {
-    public OpTargetMyPledgeAcademySkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         if (caster.getClan() == null || target == null || !target.isPlayer())

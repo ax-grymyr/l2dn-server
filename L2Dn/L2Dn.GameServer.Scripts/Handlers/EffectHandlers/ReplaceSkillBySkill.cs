@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
@@ -9,6 +10,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -18,11 +20,13 @@ public sealed class ReplaceSkillBySkill: AbstractEffect
     private readonly SkillHolder _existingSkill;
     private readonly SkillHolder _replacementSkill;
 
-    public ReplaceSkillBySkill(StatSet @params)
+    public ReplaceSkillBySkill(EffectParameterSet parameters)
     {
-        _existingSkill = new SkillHolder(@params.getInt("existingSkillId"), @params.getInt("existingSkillLevel", -1));
-        _replacementSkill = new SkillHolder(@params.getInt("replacementSkillId"),
-            @params.getInt("replacementSkillLevel", -1));
+        _existingSkill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.ExistingSkillId),
+            parameters.GetInt32(XmlSkillEffectParameterType.ExistingSkillLevel, -1));
+
+        _replacementSkill = new SkillHolder(parameters.GetInt32(XmlSkillEffectParameterType.ReplacementSkillId),
+            parameters.GetInt32(XmlSkillEffectParameterType.ReplacementSkillLevel, -1));
     }
 
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

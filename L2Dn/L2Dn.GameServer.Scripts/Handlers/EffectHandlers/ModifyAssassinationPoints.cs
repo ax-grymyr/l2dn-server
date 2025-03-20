@@ -1,8 +1,9 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -11,9 +12,9 @@ public sealed class ModifyAssassinationPoints: AbstractEffect
 {
     private readonly int _amount;
 
-    public ModifyAssassinationPoints(StatSet @params)
+    public ModifyAssassinationPoints(EffectParameterSet parameters)
     {
-        _amount = @params.getInt("amount") * 10000;
+        _amount = parameters.GetInt32(XmlSkillEffectParameterType.Amount) * 10000;
     }
 
     public override bool IsInstant => true;

@@ -1,9 +1,11 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 
@@ -16,12 +18,14 @@ public sealed class Teleport: AbstractEffect
 {
     private readonly Location3D _location;
 
-    public Teleport(StatSet @params)
+    public Teleport(EffectParameterSet parameters)
     {
-        _location = new Location3D(@params.getInt("x", 0), @params.getInt("y", 0), @params.getInt("z", 0));
+        _location = new Location3D(parameters.GetInt32(XmlSkillEffectParameterType.X, 0),
+            parameters.GetInt32(XmlSkillEffectParameterType.Y, 0),
+            parameters.GetInt32(XmlSkillEffectParameterType.Z, 0));
     }
 
-    public override EffectTypes EffectType => EffectTypes.TELEPORT;
+    public override EffectTypes EffectTypes => EffectTypes.TELEPORT;
 
     public override bool IsInstant => true;
 

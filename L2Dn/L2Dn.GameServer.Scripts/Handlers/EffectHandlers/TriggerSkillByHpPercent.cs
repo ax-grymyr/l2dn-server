@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -17,12 +18,12 @@ public sealed class TriggerSkillByHpPercent: AbstractEffect
     private readonly int _percentFrom;
     private readonly int _percentTo;
 
-    public TriggerSkillByHpPercent(StatSet @params)
+    public TriggerSkillByHpPercent(EffectParameterSet parameters)
     {
-        _skillId = @params.getInt("skillId", 0);
-        _skillLevel = @params.getInt("skillLevel", 1);
-        _percentFrom = @params.getInt("percentFrom", 0);
-        _percentTo = @params.getInt("percentTo", 100);
+        _skillId = parameters.GetInt32(XmlSkillEffectParameterType.SkillId, 0);
+        _skillLevel = parameters.GetInt32(XmlSkillEffectParameterType.SkillLevel, 1);
+        _percentFrom = parameters.GetInt32(XmlSkillEffectParameterType.PercentFrom, 0);
+        _percentTo = parameters.GetInt32(XmlSkillEffectParameterType.PercentTo, 100);
     }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

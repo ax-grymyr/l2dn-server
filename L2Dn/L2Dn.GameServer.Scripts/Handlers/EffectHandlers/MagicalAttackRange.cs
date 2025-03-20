@@ -1,10 +1,11 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 using Config = L2Dn.GameServer.Configuration.Config;
 
@@ -18,10 +19,10 @@ public sealed class MagicalAttackRange: AbstractEffect
     private readonly double _power;
     private readonly double _shieldDefPercent;
 
-    public MagicalAttackRange(StatSet @params)
+    public MagicalAttackRange(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power");
-        _shieldDefPercent = @params.getDouble("shieldDefPercent", 0);
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power);
+        _shieldDefPercent = parameters.GetDouble(XmlSkillEffectParameterType.ShieldDefPercent, 0);
     }
 
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
@@ -29,7 +30,7 @@ public sealed class MagicalAttackRange: AbstractEffect
         return !Formulas.calcSkillEvasion(effector, effected, skill);
     }
 
-    public override EffectTypes EffectType => EffectTypes.MAGICAL_ATTACK;
+    public override EffectTypes EffectTypes => EffectTypes.MAGICAL_ATTACK;
 
     public override bool IsInstant => true;
 

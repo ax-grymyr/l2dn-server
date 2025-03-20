@@ -1,10 +1,11 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Conditions;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -16,13 +17,13 @@ public sealed class Speed: AbstractEffect
     private readonly StatModifierType _mode;
     private readonly ConditionUsingItemType? _condition;
 
-    public Speed(StatSet @params)
+    public Speed(EffectParameterSet parameters)
     {
-        _amount = @params.getDouble("amount", 0);
-        _mode = @params.getEnum("mode", StatModifierType.DIFF);
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount, 0);
+        _mode = parameters.GetEnum(XmlSkillEffectParameterType.Mode, StatModifierType.DIFF);
 
         ItemTypeMask weaponTypesMask = ItemTypeMask.Zero;
-        List<string>? weaponTypes = @params.getList<string>("weaponType");
+        List<string>? weaponTypes = parameters.GetStringListOptional(XmlSkillEffectParameterType.WeaponType);
         if (weaponTypes != null)
         {
             foreach (string weaponType in weaponTypes)

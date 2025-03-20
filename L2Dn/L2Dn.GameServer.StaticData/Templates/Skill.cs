@@ -6,7 +6,7 @@ using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model.Effects;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.StaticData.Xml.Skills;
@@ -22,10 +22,10 @@ public sealed class Skill: IIdentifiable
     private readonly InlineArray2<int> _affectHeight;
 
     // outer array index is SkillEffectScope
-    private readonly InlineArray7<ImmutableArray<AbstractEffect>> _effectLists;
+    private readonly InlineArray7<ImmutableArray<IAbstractEffect>> _effectLists;
 
     // outer array index is SkillConditionScope
-    private readonly InlineArray3<ImmutableArray<ISkillCondition>> _conditionLists;
+    private readonly InlineArray3<ImmutableArray<ISkillConditionBase>> _conditionLists;
 
     private readonly EffectTypes _effectTypes;
 
@@ -217,9 +217,9 @@ public sealed class Skill: IIdentifiable
 
         // effects
         for (int i = 0; i < _effectLists.Length; i++)
-            _effectLists[i] = ImmutableArray<AbstractEffect>.Empty;
+            _effectLists[i] = ImmutableArray<IAbstractEffect>.Empty;
 
-        foreach (KeyValuePair<SkillEffectScope, List<AbstractEffect>> pair in parameters.Effects)
+        foreach (KeyValuePair<SkillEffectScope, List<IAbstractEffect>> pair in parameters.Effects)
             _effectLists[(int)pair.Key] = pair.Value.ToImmutableArray();
 
         // effect types
@@ -227,11 +227,11 @@ public sealed class Skill: IIdentifiable
         foreach (SkillEffectScope effectScope in EnumUtil.GetValues<SkillEffectScope>())
         {
             EffectTypes effectTypes = EffectTypes.NONE;
-            ImmutableArray<AbstractEffect> effects = _effectLists[(int)effectScope];
+            ImmutableArray<IAbstractEffect> effects = _effectLists[(int)effectScope];
             if (!effects.IsDefaultOrEmpty)
             {
-                foreach (AbstractEffect effect in effects)
-                    effectTypes |= effect.EffectType;
+                foreach (IAbstractEffect effect in effects)
+                    effectTypes |= effect.EffectTypes;
             }
 
             _effectTypesByScope[(int)effectScope] = effectTypes;
@@ -242,9 +242,9 @@ public sealed class Skill: IIdentifiable
 
         // conditions
         for (int i = 0; i < _conditionLists.Length; i++)
-            _conditionLists[i] = ImmutableArray<ISkillCondition>.Empty;
+            _conditionLists[i] = ImmutableArray<ISkillConditionBase>.Empty;
 
-        foreach (KeyValuePair<SkillConditionScope, List<ISkillCondition>> pair in parameters.Conditions)
+        foreach (KeyValuePair<SkillConditionScope, List<ISkillConditionBase>> pair in parameters.Conditions)
             _conditionLists[(int)pair.Key] = pair.Value.ToImmutableArray();
     }
 
@@ -549,18 +549,19 @@ public sealed class Skill: IIdentifiable
     /// <summary>
     /// The skill effects by scope.
     /// </summary>
-    public ImmutableArray<AbstractEffect> GetEffects(SkillEffectScope effectScope)
+    public ImmutableArray<IAbstractEffect> GetAbstractEffects(SkillEffectScope effectScope)
     {
-        if (effectScope >= 0 || (int)effectScope < _effectLists.Length)
+        if (effectScope >= 0 && (int)effectScope < _effectLists.Length)
             return _effectLists[(int)effectScope];
 
-        return ImmutableArray<AbstractEffect>.Empty;
+        return ImmutableArray<IAbstractEffect>.Empty;
     }
 
     /// <summary>
     /// Verify if this skill has effects for the given scope.
     /// </summary>
-    public bool HasEffects(SkillEffectScope effectScope) => !GetEffects(effectScope).IsDefaultOrEmpty;
+    public bool HasEffects(SkillEffectScope effectScope) =>
+        effectScope >= 0 && (int)effectScope < _effectLists.Length && !_effectLists[(int)effectScope].IsDefaultOrEmpty;
 
     /// <summary>
     /// Effect type to check if its present on this skill effects.
@@ -586,12 +587,12 @@ public sealed class Skill: IIdentifiable
     /// <summary>
     /// The skill conditions by scope.
     /// </summary>
-    public ImmutableArray<ISkillCondition> GetConditions(SkillConditionScope skillConditionScope)
+    public ImmutableArray<ISkillConditionBase> GetConditions(SkillConditionScope skillConditionScope)
     {
         if (skillConditionScope >= 0 && (int)skillConditionScope < _conditionLists.Length)
             return _conditionLists[(int)skillConditionScope];
 
-        return ImmutableArray<ISkillCondition>.Empty;
+        return ImmutableArray<ISkillConditionBase>.Empty;
     }
 
     /// <summary>

@@ -1,9 +1,10 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events.Impl.Playables;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 
@@ -16,10 +17,10 @@ public sealed class GiveItemByExp: AbstractEffect
     private readonly long _exp;
     private readonly int _itemId;
 
-    public GiveItemByExp(StatSet @params)
+    public GiveItemByExp(EffectParameterSet parameters)
     {
-        _exp = @params.getLong("exp", 0);
-        _itemId = @params.getInt("itemId", 0);
+        _exp = parameters.GetInt64(XmlSkillEffectParameterType.Exp, 0);
+        _itemId = parameters.GetInt32(XmlSkillEffectParameterType.ItemId, 0);
     }
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

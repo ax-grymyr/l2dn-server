@@ -1,5 +1,5 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -7,6 +7,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 using Config = L2Dn.GameServer.Configuration.Config;
 
@@ -19,9 +20,9 @@ public sealed class MagicalSoulAttack: AbstractEffect
 {
     private readonly double _power;
 
-    public MagicalSoulAttack(StatSet @params)
+    public MagicalSoulAttack(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power", 0);
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power, 0);
     }
 
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
@@ -29,7 +30,7 @@ public sealed class MagicalSoulAttack: AbstractEffect
         return !Formulas.calcSkillEvasion(effector, effected, skill);
     }
 
-    public override EffectTypes EffectType => EffectTypes.MAGICAL_ATTACK;
+    public override EffectTypes EffectTypes => EffectTypes.MAGICAL_ATTACK;
 
     public override bool IsInstant => true;
 

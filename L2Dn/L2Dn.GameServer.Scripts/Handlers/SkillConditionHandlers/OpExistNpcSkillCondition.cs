@@ -1,23 +1,22 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid, Mobius
- */
-public class OpExistNpcSkillCondition: ISkillCondition
+public sealed class OpExistNpcSkillCondition: ISkillCondition
 {
     private readonly List<int> _npcIds;
     private readonly int _range;
     private readonly bool _isAround;
 
-    public OpExistNpcSkillCondition(StatSet @params)
+    public OpExistNpcSkillCondition(SkillConditionParameterSet parameters)
     {
-        _npcIds = @params.getList<int>("npcIds") ?? [];
-        _range = @params.getInt("range");
-        _isAround = @params.getBoolean("isAround");
+        _npcIds = parameters.GetInt32ListOptional(XmlSkillConditionParameterType.NpcIds) ?? [];
+        _range = parameters.GetInt32(XmlSkillConditionParameterType.Range);
+        _isAround = parameters.GetBoolean(XmlSkillConditionParameterType.IsAround);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

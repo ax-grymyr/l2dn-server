@@ -16,6 +16,9 @@ public enum XmlSkillConditionParameterType
     [XmlEnum(XmlSkillConditionParameterNames.ArmorType)]
     ArmorType,
 
+    [XmlEnum(XmlSkillConditionParameterNames.ClassId)]
+    ClassId,
+
     [XmlEnum(XmlSkillConditionParameterNames.ClassIds)]
     ClassIds,
 
@@ -37,6 +40,9 @@ public enum XmlSkillConditionParameterType
     [XmlEnum(XmlSkillConditionParameterNames.IncludeMe)]
     IncludeMe,
 
+    [XmlEnum(XmlSkillConditionParameterNames.InstanceId)]
+    InstanceId,
+
     [XmlEnum(XmlSkillConditionParameterNames.IsAround)]
     IsAround,
 
@@ -46,14 +52,26 @@ public enum XmlSkillConditionParameterType
     [XmlEnum(XmlSkillConditionParameterNames.IsWithin)]
     IsWithin,
 
+    [XmlEnum(XmlSkillConditionParameterNames.ItemId)]
+    ItemId,
+
+    [XmlEnum(XmlSkillConditionParameterNames.ItemIds)]
+    ItemIds,
+
     [XmlEnum(XmlSkillConditionParameterNames.Less)]
     Less,
 
     [XmlEnum(XmlSkillConditionParameterNames.Level)]
     Level,
 
+    [XmlEnum(XmlSkillConditionParameterNames.Max)]
+    Max,
+
     [XmlEnum(XmlSkillConditionParameterNames.MaxLevel)]
     MaxLevel,
+
+    [XmlEnum(XmlSkillConditionParameterNames.Min)]
+    Min,
 
     [XmlEnum(XmlSkillConditionParameterNames.MinLevel)]
     MinLevel,
@@ -87,6 +105,15 @@ public enum XmlSkillConditionParameterType
 
     [XmlEnum(XmlSkillConditionParameterNames.SlotsPercent)]
     SlotsPercent,
+
+    [XmlEnum(XmlSkillConditionParameterNames.SocialClass)]
+    SocialClass,
+
+    [XmlEnum(XmlSkillConditionParameterNames.Stat)]
+    Stat,
+
+    [XmlEnum(XmlSkillConditionParameterNames.SummonPoints)]
+    SummonPoints,
 
     [XmlEnum(XmlSkillConditionParameterNames.TeleportBookmarkSlots)]
     TeleportBookmarkSlots,

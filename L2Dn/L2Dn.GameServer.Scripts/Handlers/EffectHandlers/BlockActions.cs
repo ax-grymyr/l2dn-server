@@ -2,11 +2,12 @@ using System.Collections.Frozen;
 using L2Dn.Extensions;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -19,15 +20,15 @@ public class BlockActions: AbstractEffect
 {
     private readonly FrozenSet<int> _allowedSkills;
 
-    public BlockActions(StatSet @params)
+    public BlockActions(EffectParameterSet parameters)
     {
-        string allowedSkills = @params.getString("allowedSkills", string.Empty);
+        string allowedSkills = parameters.GetString(XmlSkillEffectParameterType.AllowedSkills, string.Empty);
         _allowedSkills = ParseUtil.ParseSet<int>(allowedSkills);
     }
 
     public override EffectFlags EffectFlags => _allowedSkills.Count == 0 ? EffectFlags.BLOCK_ACTIONS : EffectFlags.CONDITIONAL_BLOCK_ACTIONS;
 
-    public override EffectTypes EffectType => EffectTypes.BLOCK_ACTIONS;
+    public override EffectTypes EffectTypes => EffectTypes.BLOCK_ACTIONS;
 
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {

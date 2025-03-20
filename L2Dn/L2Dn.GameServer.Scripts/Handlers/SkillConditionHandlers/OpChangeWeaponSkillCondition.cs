@@ -5,15 +5,8 @@ using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Sdw
- */
-public class OpChangeWeaponSkillCondition: ISkillCondition
+public sealed class OpChangeWeaponSkillCondition: ISkillCondition
 {
-    public OpChangeWeaponSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         Weapon? weaponItem = caster.getActiveWeaponItem();

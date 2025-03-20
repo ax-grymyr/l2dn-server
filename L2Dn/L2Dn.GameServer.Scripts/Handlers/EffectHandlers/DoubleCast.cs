@@ -1,4 +1,3 @@
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
@@ -15,12 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public sealed class DoubleCast: AbstractEffect
 {
     private static readonly SkillHolder[] _toggleSkills = [new(11007, 1), new(11009, 1), new(11008, 1), new(11010, 1),];
-    private readonly Map<int, List<SkillHolder>> _addedToggles;
-
-    public DoubleCast(StatSet @params)
-    {
-        _addedToggles = [];
-    }
+    private readonly Map<int, List<SkillHolder>> _addedToggles = [];
 
     public override EffectFlags EffectFlags => EffectFlags.DOUBLE_CAST;
 

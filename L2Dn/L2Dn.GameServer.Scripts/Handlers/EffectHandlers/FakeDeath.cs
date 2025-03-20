@@ -1,10 +1,11 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -16,10 +17,10 @@ public sealed class FakeDeath: AbstractEffect
 {
     private readonly double _power;
 
-    public FakeDeath(StatSet @params)
+    public FakeDeath(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power", 0);
-        Ticks = @params.getInt("ticks");
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power, 0);
+        Ticks = parameters.GetInt32(XmlSkillEffectParameterType.Ticks);
     }
 
     public override EffectFlags EffectFlags => EffectFlags.FAKE_DEATH;

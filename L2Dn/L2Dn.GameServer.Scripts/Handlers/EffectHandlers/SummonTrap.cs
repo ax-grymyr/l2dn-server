@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Data.Xml;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -18,10 +19,10 @@ public sealed class SummonTrap: AbstractEffect
     private readonly int _despawnTime;
     private readonly int _npcId;
 
-    public SummonTrap(StatSet @params)
+    public SummonTrap(EffectParameterSet parameters)
     {
-        _despawnTime = @params.getInt("despawnTime", 0);
-        _npcId = @params.getInt("npcId", 0);
+        _despawnTime = parameters.GetInt32(XmlSkillEffectParameterType.DespawnTime, 0);
+        _npcId = parameters.GetInt32(XmlSkillEffectParameterType.NpcId, 0);
     }
 
     public override bool IsInstant => true;

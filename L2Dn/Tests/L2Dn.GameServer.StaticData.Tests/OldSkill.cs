@@ -347,7 +347,7 @@ public sealed class OldSkill: IIdentifiable
         _blockActionUseSkill = set.getBoolean("blockActionUseSkill", false);
         _toggleGroupId = set.getInt("toggleGroupId", -1);
         _attachToggleGroupId = set.getInt("attachToggleGroupId", -1);
-        _attachSkills = set.getList("attachSkillList", new List<StatSet>()).Select(AttachSkillHolder.FromStatSet).
+        _attachSkills = set.getList("attachSkillList", new List<StatSet>()).Select(GetAttachSkillHolder).
             ToImmutableArray();
 
         string abnormalResist = set.getString("abnormalResists", string.Empty);
@@ -840,7 +840,7 @@ public sealed class OldSkill: IIdentifiable
                         {
                             foreach (AbstractEffect effect in effectList)
                             {
-                                effectTypesSet.add(effect.EffectType);
+                                effectTypesSet.add(effect.EffectTypes);
                             }
                         }
                     }
@@ -883,7 +883,7 @@ public sealed class OldSkill: IIdentifiable
         foreach (AbstractEffect effect in effects)
         foreach (EffectTypes type in effectTypes)
         {
-            if (type == effect.EffectType)
+            if (type == effect.EffectTypes)
                 return true;
         }
 
@@ -937,4 +937,8 @@ public sealed class OldSkill: IIdentifiable
     public double getMagicCriticalRate() => _magicCriticalRate;
 
     public SkillBuffType getBuffType() => _buffType;
+
+    private static AttachSkillHolder GetAttachSkillHolder(StatSet set) =>
+        new(set.getInt("skillId"), set.getInt("skillLevel", 1), set.getInt("requiredSkillId"),
+            set.getInt("requiredSkillLevel", 1));
 }

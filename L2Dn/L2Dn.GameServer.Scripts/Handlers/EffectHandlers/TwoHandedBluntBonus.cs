@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Conditions;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -55,46 +56,46 @@ public sealed class TwoHandedBluntBonus: AbstractEffect
     private readonly double _skillBonusRange;
     private readonly StatModifierType _skillBonusRangeMode;
 
-    public TwoHandedBluntBonus(StatSet @params)
+    public TwoHandedBluntBonus(EffectParameterSet parameters)
     {
-        _pAtkAmount = @params.getDouble("pAtkAmount", 0);
-        _pAtkMode = @params.getEnum("pAtkMode", StatModifierType.DIFF);
+        _pAtkAmount = parameters.GetDouble(XmlSkillEffectParameterType.PAtkAmount, 0);
+        _pAtkMode = parameters.GetEnum(XmlSkillEffectParameterType.PAtkMode, StatModifierType.DIFF);
 
-        _mAtkAmount = @params.getDouble("mAtkAmount", 0);
-        _mAtkMode = @params.getEnum("mAtkMode", StatModifierType.DIFF);
+        _mAtkAmount = parameters.GetDouble(XmlSkillEffectParameterType.MAtkAmount, 0);
+        _mAtkMode = parameters.GetEnum(XmlSkillEffectParameterType.MAtkMode, StatModifierType.DIFF);
 
-        _pAtkSpeedAmount = @params.getDouble("pAtkSpeedAmount", 0);
-        _pAtkSpeedMode = @params.getEnum("pAtkSpeedMode", StatModifierType.DIFF);
+        _pAtkSpeedAmount = parameters.GetDouble(XmlSkillEffectParameterType.PAtkSpeedAmount, 0);
+        _pAtkSpeedMode = parameters.GetEnum(XmlSkillEffectParameterType.PAtkSpeedMode, StatModifierType.DIFF);
 
-        _mAtkSpeedAmount = @params.getDouble("mAtkSpeedAmount", 0);
-        _mAtkSpeedMode = @params.getEnum("mAtkSpeedMode", StatModifierType.DIFF);
+        _mAtkSpeedAmount = parameters.GetDouble(XmlSkillEffectParameterType.MAtkSpeedAmount, 0);
+        _mAtkSpeedMode = parameters.GetEnum(XmlSkillEffectParameterType.MAtkSpeedMode, StatModifierType.DIFF);
 
-        _pAccuracyAmount = @params.getDouble("pAccuracyAmount", 0);
-        _pAccuracyMode = @params.getEnum("pAccuracyMode", StatModifierType.DIFF);
+        _pAccuracyAmount = parameters.GetDouble(XmlSkillEffectParameterType.PAccuracyAmount, 0);
+        _pAccuracyMode = parameters.GetEnum(XmlSkillEffectParameterType.PAccuracyMode, StatModifierType.DIFF);
 
-        _mAccuracyAmount = @params.getDouble("mAccuracyAmount", 0);
-        _mAccuracyMode = @params.getEnum("mAccuracyMode", StatModifierType.DIFF);
+        _mAccuracyAmount = parameters.GetDouble(XmlSkillEffectParameterType.MAccuracyAmount, 0);
+        _mAccuracyMode = parameters.GetEnum(XmlSkillEffectParameterType.MAccuracyMode, StatModifierType.DIFF);
 
-        _pCritRateAmount = @params.getDouble("pCritRateAmount", 0);
-        _pCritRateMode = @params.getEnum("pCritRateMode", StatModifierType.DIFF);
+        _pCritRateAmount = parameters.GetDouble(XmlSkillEffectParameterType.PCritRateAmount, 0);
+        _pCritRateMode = parameters.GetEnum(XmlSkillEffectParameterType.PCritRateMode, StatModifierType.DIFF);
 
-        _mCritRateAmount = @params.getDouble("mCritRateAmount", 0);
-        _mCritRateMode = @params.getEnum("mCritRateMode", StatModifierType.DIFF);
+        _mCritRateAmount = parameters.GetDouble(XmlSkillEffectParameterType.MCritRateAmount, 0);
+        _mCritRateMode = parameters.GetEnum(XmlSkillEffectParameterType.MCritRateMode, StatModifierType.DIFF);
 
-        _pCritDamageAmount = @params.getDouble("pCritDamageAmount", 0);
-        _pCritDamageMode = @params.getEnum("pCritDamageMode", StatModifierType.DIFF);
+        _pCritDamageAmount = parameters.GetDouble(XmlSkillEffectParameterType.PCritDamageAmount, 0);
+        _pCritDamageMode = parameters.GetEnum(XmlSkillEffectParameterType.PCritDamageMode, StatModifierType.DIFF);
 
-        _mCritDamageAmount = @params.getDouble("mCritDamageAmount", 0);
-        _mCritDamageMode = @params.getEnum("mCritDamageMode", StatModifierType.DIFF);
+        _mCritDamageAmount = parameters.GetDouble(XmlSkillEffectParameterType.MCritDamageAmount, 0);
+        _mCritDamageMode = parameters.GetEnum(XmlSkillEffectParameterType.MCritDamageMode, StatModifierType.DIFF);
 
-        _speedAmount = @params.getDouble("speedAmount", 0);
-        _speedMode = @params.getEnum("speedMode", StatModifierType.DIFF);
+        _speedAmount = parameters.GetDouble(XmlSkillEffectParameterType.SpeedAmount, 0);
+        _speedMode = parameters.GetEnum(XmlSkillEffectParameterType.SpeedMode, StatModifierType.DIFF);
 
-        _physicalAttackRange = @params.getDouble("PhysicalAttackRange", 0);
-        _physicalAttackRangeMode = @params.getEnum("PhysicalAttackRangeMode", StatModifierType.DIFF);
+        _physicalAttackRange = parameters.GetDouble(XmlSkillEffectParameterType.PhysicalAttackRange, 0);
+        _physicalAttackRangeMode = parameters.GetEnum(XmlSkillEffectParameterType.PhysicalAttackRangeMode, StatModifierType.DIFF);
 
-        _skillBonusRange = @params.getDouble("SkillBonusRange", 0);
-        _skillBonusRangeMode = @params.getEnum("SkillBonusRangeMode", StatModifierType.DIFF);
+        _skillBonusRange = parameters.GetDouble(XmlSkillEffectParameterType.SkillBonusRange, 0);
+        _skillBonusRangeMode = parameters.GetEnum(XmlSkillEffectParameterType.SkillBonusRangeMode, StatModifierType.DIFF);
     }
 
     public override void Pump(Creature effected, Skill skill)

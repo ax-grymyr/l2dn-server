@@ -1,6 +1,7 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-public sealed class VitalityPointsRate(StatSet @params): AbstractStatPercentEffect(@params, Stat.VITALITY_CONSUME_RATE);
+public sealed class VitalityPointsRate(EffectParameterSet parameters):
+    AbstractStatPercentEffect(parameters, Stat.VITALITY_CONSUME_RATE);

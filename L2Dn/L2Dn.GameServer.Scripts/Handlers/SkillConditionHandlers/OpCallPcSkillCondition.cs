@@ -6,15 +6,8 @@ using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Sdw
- */
-public class OpCallPcSkillCondition: ISkillCondition
+public sealed class OpCallPcSkillCondition: ISkillCondition
 {
-    public OpCallPcSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         bool canCallPlayer = true;

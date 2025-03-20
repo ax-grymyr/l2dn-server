@@ -1,8 +1,9 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -23,11 +24,11 @@ public sealed class DamageByAttack: AbstractEffect
     private readonly double _value;
     private readonly DamageByAttackType _type;
 
-    public DamageByAttack(StatSet @params)
+    public DamageByAttack(EffectParameterSet parameters)
     {
-        _value = @params.getDouble("amount");
-        _type = @params.getEnum("type", DamageByAttackType.NONE);
-        if (@params.getEnum("mode", StatModifierType.DIFF) != StatModifierType.DIFF)
+        _value = parameters.GetDouble(XmlSkillEffectParameterType.Amount);
+        _type = parameters.GetEnum(XmlSkillEffectParameterType.Type, DamageByAttackType.NONE);
+        if (parameters.GetEnum(XmlSkillEffectParameterType.Mode, StatModifierType.DIFF) != StatModifierType.DIFF)
         {
             Logger.Warn(GetType().Name + " can only use DIFF mode.");
         }

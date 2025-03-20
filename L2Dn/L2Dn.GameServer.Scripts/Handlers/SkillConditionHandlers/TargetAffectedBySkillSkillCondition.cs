@@ -1,21 +1,20 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author Mobius
- */
-public class TargetAffectedBySkillSkillCondition: ISkillCondition
+public sealed class TargetAffectedBySkillSkillCondition: ISkillCondition
 {
     private readonly int _skillId;
     private readonly int _skillLevel;
 
-    public TargetAffectedBySkillSkillCondition(StatSet @params)
+    public TargetAffectedBySkillSkillCondition(SkillConditionParameterSet parameters)
     {
-        _skillId = @params.getInt("skillId", -1);
-        _skillLevel = @params.getInt("skillLevel", -1);
+        _skillId = parameters.GetInt32(XmlSkillConditionParameterType.SkillId, -1);
+        _skillLevel = parameters.GetInt32(XmlSkillConditionParameterType.SkillLevel, -1);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

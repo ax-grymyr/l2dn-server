@@ -1,20 +1,19 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid, Mobius
- */
-public class OpNeedSummonOrPetSkillCondition: ISkillCondition
+public sealed class OpNeedSummonOrPetSkillCondition: ISkillCondition
 {
     private readonly Set<int> _npcIds = new();
 
-    public OpNeedSummonOrPetSkillCondition(StatSet @params)
+    public OpNeedSummonOrPetSkillCondition(SkillConditionParameterSet parameters)
     {
-        List<int>? npcIds = @params.getList<int>("npcIds");
+        List<int>? npcIds = parameters.GetInt32ListOptional(XmlSkillConditionParameterType.NpcIds);
         if (npcIds != null)
         {
             _npcIds.addAll(npcIds);

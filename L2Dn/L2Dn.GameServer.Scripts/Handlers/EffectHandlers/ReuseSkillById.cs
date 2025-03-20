@@ -1,9 +1,10 @@
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -13,10 +14,10 @@ public sealed class ReuseSkillById: AbstractEffect
     private readonly int _skillId;
     private readonly int _amount;
 
-    public ReuseSkillById(StatSet @params)
+    public ReuseSkillById(EffectParameterSet parameters)
     {
-        _skillId = @params.getInt("skillId", 0);
-        _amount = @params.getInt("amount", 0);
+        _skillId = parameters.GetInt32(XmlSkillEffectParameterType.SkillId, 0);
+        _amount = parameters.GetInt32(XmlSkillEffectParameterType.Amount, 0);
     }
 
     public override bool IsInstant => true;

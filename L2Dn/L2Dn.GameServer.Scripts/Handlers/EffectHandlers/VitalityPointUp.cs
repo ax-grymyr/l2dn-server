@@ -1,11 +1,12 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -18,12 +19,12 @@ public sealed class VitalityPointUp: AbstractEffect
 {
     private readonly int _value;
 
-    public VitalityPointUp(StatSet @params)
+    public VitalityPointUp(EffectParameterSet parameters)
     {
-        _value = @params.getInt("value", 0);
+        _value = parameters.GetInt32(XmlSkillEffectParameterType.Value, 0);
     }
 
-    public override EffectTypes EffectType => EffectTypes.VITALITY_POINT_UP;
+    public override EffectTypes EffectTypes => EffectTypes.VITALITY_POINT_UP;
 
     public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {

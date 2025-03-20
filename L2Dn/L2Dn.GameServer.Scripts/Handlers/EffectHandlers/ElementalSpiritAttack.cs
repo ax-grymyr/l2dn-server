@@ -1,8 +1,9 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-public sealed class ElementalSpiritAttack(StatSet @params)
-    : AbstractStatEffect(@params, @params.getEnum<ElementalType>("type").getAttackStat());
+public sealed class ElementalSpiritAttack(EffectParameterSet parameters)
+    : AbstractStatEffect(parameters, parameters.GetEnum<ElementalType>(XmlSkillEffectParameterType.Type).getAttackStat());

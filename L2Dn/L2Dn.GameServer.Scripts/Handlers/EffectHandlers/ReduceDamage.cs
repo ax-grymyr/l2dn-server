@@ -1,10 +1,11 @@
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
@@ -15,10 +16,10 @@ public sealed class ReduceDamage: AbstractEffect
     private readonly double _amount;
     private readonly StatModifierType _mode;
 
-    public ReduceDamage(StatSet @params)
+    public ReduceDamage(EffectParameterSet parameters)
     {
-        _amount = @params.getDouble("amount");
-        _mode = @params.getEnum("mode", StatModifierType.DIFF);
+        _amount = parameters.GetDouble(XmlSkillEffectParameterType.Amount);
+        _mode = parameters.GetEnum(XmlSkillEffectParameterType.Mode, StatModifierType.DIFF);
     }
 
     private void onDamageReceivedEvent(OnCreatureDamageReceived ev)

@@ -1,24 +1,23 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author UnAfraid
- */
-public class RemainHpPerSkillCondition: ISkillCondition
+public sealed class RemainHpPerSkillCondition: ISkillCondition
 {
     private readonly int _amount;
     private readonly SkillConditionPercentType _percentType;
     private readonly SkillConditionAffectType _affectType;
 
-    public RemainHpPerSkillCondition(StatSet @params)
+    public RemainHpPerSkillCondition(SkillConditionParameterSet parameters)
     {
-        _amount = @params.getInt("amount");
-        _percentType = @params.getEnum<SkillConditionPercentType>("percentType");
-        _affectType = @params.getEnum<SkillConditionAffectType>("affectType");
+        _amount = parameters.GetInt32(XmlSkillConditionParameterType.Amount);
+        _percentType = parameters.GetEnum<SkillConditionPercentType>(XmlSkillConditionParameterType.PercentType);
+        _affectType = parameters.GetEnum<SkillConditionAffectType>(XmlSkillConditionParameterType.AffectType);
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

@@ -1,13 +1,13 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Model;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
-using L2Dn.Model.Enums;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Utilities;
 using Config = L2Dn.GameServer.Configuration.Config;
 
@@ -24,14 +24,14 @@ public sealed class MagicalAttack: AbstractEffect
     private readonly double _raceModifier;
     private readonly FrozenSet<Race> _races;
 
-    public MagicalAttack(StatSet @params)
+    public MagicalAttack(EffectParameterSet parameters)
     {
-        _power = @params.getDouble("power", 0);
-        _overHit = @params.getBoolean("overHit", false);
-        _debuffModifier = @params.getDouble("debuffModifier", 1);
-        _raceModifier = @params.getDouble("raceModifier", 1);
+        _power = parameters.GetDouble(XmlSkillEffectParameterType.Power, 0);
+        _overHit = parameters.GetBoolean(XmlSkillEffectParameterType.OverHit, false);
+        _debuffModifier = parameters.GetDouble(XmlSkillEffectParameterType.DebuffModifier, 1);
+        _raceModifier = parameters.GetDouble(XmlSkillEffectParameterType.RaceModifier, 1);
 
-        string races = @params.getString("races", string.Empty);
+        string races = parameters.GetString(XmlSkillEffectParameterType.Races, string.Empty);
         _races = ParseUtil.ParseEnumSet<Race>(races);
     }
 
@@ -40,7 +40,7 @@ public sealed class MagicalAttack: AbstractEffect
         return !Formulas.calcSkillEvasion(effector, effected, skill);
     }
 
-    public override EffectTypes EffectType => EffectTypes.MAGICAL_ATTACK;
+    public override EffectTypes EffectTypes => EffectTypes.MAGICAL_ATTACK;
 
     public override bool IsInstant => true;
 

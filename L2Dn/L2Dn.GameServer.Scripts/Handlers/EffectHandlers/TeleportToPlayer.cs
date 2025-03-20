@@ -15,11 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 public sealed class TeleportToPlayer: AbstractEffect
 {
-    public TeleportToPlayer(StatSet @params)
-    {
-    }
-
-    public override EffectTypes EffectType => EffectTypes.TELEPORT_TO_TARGET;
+    public override EffectTypes EffectTypes => EffectTypes.TELEPORT_TO_TARGET;
 
     public override bool IsInstant => true;
 

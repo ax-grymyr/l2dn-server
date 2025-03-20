@@ -6,15 +6,8 @@ using L2Dn.GameServer.Model.Skills;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-/**
- * @author nasseka
- */
-public class EquipSigilSkillCondition: ISkillCondition
+public sealed class EquipSigilSkillCondition: ISkillCondition
 {
-    public EquipSigilSkillCondition(StatSet @params)
-    {
-    }
-
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         ItemTemplate? sigil = caster.getSecondaryWeaponItem();

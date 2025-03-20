@@ -1,6 +1,8 @@
 using System.Collections.Immutable;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -11,7 +13,6 @@ using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
-using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
@@ -24,49 +25,17 @@ public sealed class RestorationRandom: AbstractEffect
 {
     private readonly ImmutableArray<ExtractableProductItem> _products;
 
-    public RestorationRandom(StatSet @params)
+    public RestorationRandom(EffectParameterSet parameters)
     {
-        List<ExtractableProductItem> products = new(16);
-        List<XmlSkillEffectItemListChance>? xmlSkillEffectItemList =
-            @params.getObject<List<XmlSkillEffectItemListChance>>("items");
-
-        if (xmlSkillEffectItemList != null)
+        parameters.TryGetValue(XmlSkillEffectParameterType.Items, out object? value);
+        _products = value switch
         {
-            foreach (XmlSkillEffectItemListChance xmlSkillEffectItemListChance in xmlSkillEffectItemList)
-            {
-                List<RestorationItemHolder> items = xmlSkillEffectItemListChance.Items.Select(xmlSkillEffectItem =>
-                    new RestorationItemHolder(xmlSkillEffectItem.Id, xmlSkillEffectItem.Count,
-                        xmlSkillEffectItem.MinEnchant, xmlSkillEffectItem.MaxEnchant)).ToList();
-
-                products.Add(new ExtractableProductItem(items.ToImmutableArray(),
-                    (double)xmlSkillEffectItemListChance.Chance));
-            }
-        }
-        else
-        {
-            List<StatSet>? sets = @params.getList<StatSet>("items");
-            if (sets != null)
-            {
-                List<RestorationItemHolder> items = new(16);
-                foreach (StatSet group in sets)
-                {
-                    items.Clear();
-                    List<StatSet>? itemSets = group.getList<StatSet>(".");
-                    if (itemSets != null)
-                    {
-                        foreach (StatSet item in itemSets)
-                        {
-                            items.Add(new RestorationItemHolder(item.getInt(".id"), item.getInt(".count"),
-                                item.getInt(".minEnchant", 0), item.getInt(".maxEnchant", 0)));
-                        }
-                    }
-
-                    products.Add(new ExtractableProductItem(items.ToImmutableArray(), group.getFloat(".chance")));
-                }
-            }
-        }
-
-        _products = products.ToImmutableArray();
+            null => ImmutableArray<ExtractableProductItem>.Empty,
+            List<XmlSkillEffectItemListChance> xmlSkillEffectItemList => Convert(xmlSkillEffectItemList),
+            List<StatSet> statSetList => Convert(statSetList),
+            List<object> objectList => Convert(objectList.ConvertAll(x => (StatSet)x)),
+            _ => throw new InvalidCastException("Expected items List<XmlSkillEffectItemListChance> or List<StatSet>"),
+        };
     }
 
     public override bool IsInstant => true;
@@ -149,7 +118,7 @@ public sealed class RestorationRandom: AbstractEffect
         }
     }
 
-    public override EffectTypes EffectType => EffectTypes.EXTRACT_ITEM;
+    public override EffectTypes EffectTypes => EffectTypes.EXTRACT_ITEM;
 
     private static void SendMessage(Player player, Item item, long count)
     {
@@ -178,7 +147,8 @@ public sealed class RestorationRandom: AbstractEffect
     public override int GetHashCode() => _products.GetSequenceHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x._products.GetSequentialComparable());
 
-    public bool EqualsApproximately(RestorationRandom other) // TODO: remove after migrating Skill loader to XML deserialization
+    public bool
+        EqualsApproximately(RestorationRandom other) // TODO: remove after migrating Skill loader to XML deserialization
     {
         if (_products.Length != other._products.Length)
             return false;
@@ -197,4 +167,45 @@ public sealed class RestorationRandom: AbstractEffect
     }
 
     private readonly record struct RestorationItemHolder(int Id, long Count, int MinEnchant, int MaxEnchant);
+
+    private static ImmutableArray<ExtractableProductItem> Convert(
+        List<XmlSkillEffectItemListChance> xmlSkillEffectItemList)
+    {
+        List<ExtractableProductItem> products = new(16);
+        foreach (XmlSkillEffectItemListChance xmlSkillEffectItemListChance in xmlSkillEffectItemList)
+        {
+            List<RestorationItemHolder> items = xmlSkillEffectItemListChance.Items.Select(xmlSkillEffectItem =>
+                new RestorationItemHolder(xmlSkillEffectItem.Id, xmlSkillEffectItem.Count,
+                    xmlSkillEffectItem.MinEnchant, xmlSkillEffectItem.MaxEnchant)).ToList();
+
+            products.Add(new ExtractableProductItem(items.ToImmutableArray(),
+                (double)xmlSkillEffectItemListChance.Chance));
+        }
+
+        return products.ToImmutableArray();
+    }
+
+    private static ImmutableArray<ExtractableProductItem> Convert(List<StatSet> statSetList)
+    {
+        List<ExtractableProductItem> products = new(16);
+
+        List<RestorationItemHolder> items = new(16);
+        foreach (StatSet group in statSetList)
+        {
+            items.Clear();
+            List<StatSet>? itemSets = group.getList<StatSet>(".");
+            if (itemSets != null)
+            {
+                foreach (StatSet item in itemSets)
+                {
+                    items.Add(new RestorationItemHolder(item.getInt(".id"), item.getInt(".count"),
+                        item.getInt(".minEnchant", 0), item.getInt(".maxEnchant", 0)));
+                }
+            }
+
+            products.Add(new ExtractableProductItem(items.ToImmutableArray(), group.getFloat(".chance")));
+        }
+
+        return products.ToImmutableArray();
+    }
 }
