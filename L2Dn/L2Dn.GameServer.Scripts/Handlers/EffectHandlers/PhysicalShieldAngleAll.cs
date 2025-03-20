@@ -10,7 +10,7 @@ public sealed class PhysicalShieldAngleAll: AbstractEffect
     {
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.PHYSICAL_SHIELD_ANGLE_ALL;
+    public override EffectFlags EffectFlags => EffectFlags.PHYSICAL_SHIELD_ANGLE_ALL;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);

@@ -1,10 +1,10 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.Utilities;
 using NLog;
-using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Effects;
 
@@ -24,6 +24,19 @@ public abstract class AbstractEffect
     public int Ticks { get; protected init; }
 
     protected double TicksMultiplier => Ticks * (Config.Character.EFFECT_TICK_RATIO / 1000.0);
+
+    /**
+     * Get this effect's type.
+     * TODO: Remove.
+     * @return the effect type
+     */
+    public virtual EffectTypes EffectType => EffectTypes.NONE;
+
+    /// <summary>
+    /// Get the effect flags.
+    /// </summary>
+    /// <value>bit flag for current effect</value>
+    public virtual EffectFlags EffectFlags => EffectFlags.NONE;
 
     /**
      * Calculates whether this effects land or not.<br>
@@ -77,12 +90,6 @@ public abstract class AbstractEffect
      */
     public virtual bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item) => false;
 
-    /// <summary>
-    /// Get the effect flags.
-    /// </summary>
-    /// <returns>bit flag for current effect</returns>
-    public virtual EffectFlags getEffectFlags() => EffectFlags.NONE;
-
     public virtual bool checkCondition(int id) => true;
 
     /// <summary>
@@ -102,13 +109,6 @@ public abstract class AbstractEffect
     public virtual void pump(Creature effected, Skill skill)
     {
     }
-
-    /**
-     * Get this effect's type.
-     * TODO: Remove.
-     * @return the effect type
-     */
-    public virtual EffectTypes EffectType => EffectTypes.NONE;
 
     public override string ToString() => "Effect " + GetType().Name;
     public override int GetHashCode() => this.GetSingletonHashCode();

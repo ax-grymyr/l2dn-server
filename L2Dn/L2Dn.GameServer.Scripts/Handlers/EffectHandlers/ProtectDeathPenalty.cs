@@ -10,7 +10,7 @@ public sealed class ProtectDeathPenalty: AbstractEffect
     {
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.PROTECT_DEATH_PENALTY;
+    public override EffectFlags EffectFlags => EffectFlags.PROTECT_DEATH_PENALTY;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);

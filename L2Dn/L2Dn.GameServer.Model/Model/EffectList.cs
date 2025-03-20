@@ -503,7 +503,7 @@ public class EffectList
 			{
 				foreach (AbstractEffect effect in info.getEffects())
 				{
-					if (effect != null && (effect.getEffectFlags() & effectFlags) != 0)
+					if (effect != null && (effect.EffectFlags & effectFlags) != 0)
 					{
 						remove(info);
 						update = true;
@@ -1244,7 +1244,7 @@ public class EffectList
 				// Add the EffectType flag.
 				foreach (AbstractEffect e in info.getEffects())
 				{
-					flags |= e.getEffectFlags();
+					flags |= e.EffectFlags;
 				}
 
 				// Add the AbnormalType flag.
@@ -1273,7 +1273,7 @@ public class EffectList
 				// Add the EffectType flag.
 				foreach (AbstractEffect e in info.getEffects())
 				{
-					flags |= e.getEffectFlags();
+					flags |= e.EffectFlags;
 				}
 
 				// Add AbnormalVisualEffect flag.

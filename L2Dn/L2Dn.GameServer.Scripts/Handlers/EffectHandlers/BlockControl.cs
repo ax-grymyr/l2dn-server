@@ -14,7 +14,7 @@ public sealed class BlockControl: AbstractEffect
     {
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.BLOCK_CONTROL;
+    public override EffectFlags EffectFlags => EffectFlags.BLOCK_CONTROL;
 
     public override EffectTypes EffectType => EffectTypes.BLOCK_CONTROL;
 

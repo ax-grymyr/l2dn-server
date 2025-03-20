@@ -23,7 +23,7 @@ public sealed class ChameleonRest: AbstractEffect
         Ticks = @params.getInt("ticks");
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.SILENT_MOVE | EffectFlags.RELAXING;
+    public override EffectFlags EffectFlags => EffectFlags.SILENT_MOVE | EffectFlags.RELAXING;
 
     public override EffectTypes EffectType => EffectTypes.RELAXING;
 

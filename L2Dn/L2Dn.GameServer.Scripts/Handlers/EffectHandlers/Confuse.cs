@@ -27,7 +27,7 @@ public sealed class Confuse: AbstractEffect
         return Formulas.calcProbability(_chance, effector, effected, skill);
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.CONFUSED;
+    public override EffectFlags EffectFlags => EffectFlags.CONFUSED;
 
     public override bool IsInstant => true;
 

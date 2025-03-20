@@ -45,7 +45,7 @@ public sealed class KnockBack: AbstractEffect
 
     public override bool IsInstant => !_knockDown;
 
-    public override EffectFlags getEffectFlags() => _knockDown ? EffectFlags.BLOCK_ACTIONS : base.getEffectFlags();
+    public override EffectFlags EffectFlags => _knockDown ? EffectFlags.BLOCK_ACTIONS : base.EffectFlags;
 
     public override EffectTypes EffectType => _knockDown ? EffectTypes.BLOCK_ACTIONS : base.EffectType;
 

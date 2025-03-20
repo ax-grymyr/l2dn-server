@@ -18,7 +18,7 @@ public sealed class Mute: AbstractEffect
     {
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.MUTED;
+    public override EffectFlags EffectFlags => EffectFlags.MUTED;
 
     public override EffectTypes EffectType => EffectTypes.MUTE;
 

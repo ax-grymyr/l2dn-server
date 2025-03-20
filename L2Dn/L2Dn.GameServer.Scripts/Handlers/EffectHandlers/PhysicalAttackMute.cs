@@ -16,7 +16,7 @@ public sealed class PhysicalAttackMute: AbstractEffect
     {
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.PSYCHICAL_ATTACK_MUTED;
+    public override EffectFlags EffectFlags => EffectFlags.PSYCHICAL_ATTACK_MUTED;
 
     public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
     {

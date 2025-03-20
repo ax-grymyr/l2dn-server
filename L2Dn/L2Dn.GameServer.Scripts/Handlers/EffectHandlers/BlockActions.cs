@@ -25,8 +25,7 @@ public class BlockActions: AbstractEffect
         _allowedSkills = ParseUtil.ParseSet<int>(allowedSkills);
     }
 
-    public override EffectFlags getEffectFlags() =>
-        _allowedSkills.Count == 0 ? EffectFlags.BLOCK_ACTIONS : EffectFlags.CONDITIONAL_BLOCK_ACTIONS;
+    public override EffectFlags EffectFlags => _allowedSkills.Count == 0 ? EffectFlags.BLOCK_ACTIONS : EffectFlags.CONDITIONAL_BLOCK_ACTIONS;
 
     public override EffectTypes EffectType => EffectTypes.BLOCK_ACTIONS;
 

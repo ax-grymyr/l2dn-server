@@ -13,7 +13,7 @@ public sealed class SilentMove: AbstractEffect
     {
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.SILENT_MOVE;
+    public override EffectFlags EffectFlags => EffectFlags.SILENT_MOVE;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);

@@ -23,7 +23,7 @@ public sealed class Relax: AbstractEffect
         Ticks = @params.getInt("ticks");
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.RELAXING;
+    public override EffectFlags EffectFlags => EffectFlags.RELAXING;
 
     public override EffectTypes EffectType => EffectTypes.RELAXING;
 

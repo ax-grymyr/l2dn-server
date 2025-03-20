@@ -21,7 +21,7 @@ public sealed class NoblesseBless: AbstractEffect
         return effector != null && effected != null && effected.isPlayable();
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.NOBLESS_BLESSING;
+    public override EffectFlags EffectFlags => EffectFlags.NOBLESS_BLESSING;
 
     public override EffectTypes EffectType => EffectTypes.NOBLESSE_BLESSING;
 

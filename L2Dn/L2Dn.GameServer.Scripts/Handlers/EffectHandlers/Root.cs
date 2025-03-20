@@ -18,7 +18,7 @@ public sealed class Root: AbstractEffect
     {
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.ROOTED;
+    public override EffectFlags EffectFlags => EffectFlags.ROOTED;
 
     public override EffectTypes EffectType => EffectTypes.ROOT;
 

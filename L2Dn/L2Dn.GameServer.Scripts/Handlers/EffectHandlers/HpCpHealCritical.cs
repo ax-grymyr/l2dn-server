@@ -10,7 +10,7 @@ public sealed class HpCpHealCritical: AbstractEffect
     {
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.HPCPHEAL_CRITICAL;
+    public override EffectFlags EffectFlags => EffectFlags.HPCPHEAL_CRITICAL;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);

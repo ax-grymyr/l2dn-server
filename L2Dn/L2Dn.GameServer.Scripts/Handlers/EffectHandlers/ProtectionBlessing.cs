@@ -20,7 +20,7 @@ public sealed class ProtectionBlessing: AbstractEffect
         return effector != null && effected != null && effected.isPlayer();
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.PROTECTION_BLESSING;
+    public override EffectFlags EffectFlags => EffectFlags.PROTECTION_BLESSING;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);

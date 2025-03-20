@@ -28,7 +28,7 @@ public sealed class AbnormalShield: AbstractEffect
         effected.setAbnormalShieldBlocks(_times);
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.ABNORMAL_SHIELD;
+    public override EffectFlags EffectFlags => EffectFlags.ABNORMAL_SHIELD;
 
     public override void onExit(Creature effector, Creature effected, Skill skill)
     {

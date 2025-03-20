@@ -23,7 +23,7 @@ public sealed class BlockChat: AbstractEffect
         return effected != null && effected.isPlayer();
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.CHAT_BLOCK;
+    public override EffectFlags EffectFlags => EffectFlags.CHAT_BLOCK;
 
     public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
     {

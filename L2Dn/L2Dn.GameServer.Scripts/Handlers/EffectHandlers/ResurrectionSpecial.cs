@@ -35,7 +35,7 @@ public sealed class ResurrectionSpecial: AbstractEffect
 
     public override EffectTypes EffectType => EffectTypes.RESURRECTION_SPECIAL;
 
-    public override EffectFlags getEffectFlags() => EffectFlags.RESURRECTION_SPECIAL;
+    public override EffectFlags EffectFlags => EffectFlags.RESURRECTION_SPECIAL;
 
     public override void onExit(Creature effector, Creature effected, Skill skill)
     {

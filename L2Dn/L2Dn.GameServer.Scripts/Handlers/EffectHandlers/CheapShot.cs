@@ -10,7 +10,7 @@ public sealed class CheapShot: AbstractEffect
     {
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.CHEAPSHOT;
+    public override EffectFlags EffectFlags => EffectFlags.CHEAPSHOT;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);

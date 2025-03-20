@@ -13,7 +13,7 @@ public sealed class BlockEscape: AbstractEffect
     {
     }
 
-    public override EffectFlags getEffectFlags() => EffectFlags.CANNOT_ESCAPE;
+    public override EffectFlags EffectFlags => EffectFlags.CANNOT_ESCAPE;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);
