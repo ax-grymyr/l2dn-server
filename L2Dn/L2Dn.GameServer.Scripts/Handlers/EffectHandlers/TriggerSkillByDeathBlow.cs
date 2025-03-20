@@ -60,7 +60,7 @@ public sealed class TriggerSkillByDeathBlow: AbstractEffect
         }
         catch (Exception e)
         {
-            LOGGER.Warn("Exception in ITargetTypeHandler.getTarget(): " + e);
+            Logger.Warn("Exception in ITargetTypeHandler.getTarget(): " + e);
         }
 
         if (target != null && target.isCreature())

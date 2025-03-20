@@ -28,7 +28,7 @@ public sealed class SummonCubic: AbstractEffect
 
     public int getCubicId() => _cubicId;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
@@ -38,7 +38,7 @@ public sealed class SummonCubic: AbstractEffect
 
         if (_cubicId < 0)
         {
-            LOGGER.Warn(GetType().Name + ": Invalid Cubic ID:" + _cubicId + " in skill ID: " + skill.Id);
+            Logger.Warn(GetType().Name + ": Invalid Cubic ID:" + _cubicId + " in skill ID: " + skill.Id);
             return;
         }
 
@@ -75,7 +75,7 @@ public sealed class SummonCubic: AbstractEffect
         CubicTemplate? template = CubicData.getInstance().getCubicTemplate(_cubicId, _cubicLvl);
         if (template == null)
         {
-            LOGGER.Warn("Attempting to summon cubic without existing template id: " + _cubicId + " level: " +
+            Logger.Warn("Attempting to summon cubic without existing template id: " + _cubicId + " level: " +
                 _cubicLvl);
 
             return;

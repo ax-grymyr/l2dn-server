@@ -28,14 +28,14 @@ public sealed class AbnormalShield: AbstractEffect
         effected.setAbnormalShieldBlocks(_times);
     }
 
-    public override long getEffectFlags() => EffectFlag.ABNORMAL_SHIELD.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.ABNORMAL_SHIELD;
 
     public override void onExit(Creature effector, Creature effected, Skill skill)
     {
         effected.setAbnormalShieldBlocks(int.MinValue);
     }
 
-    public override EffectType getEffectType() => EffectType.ABNORMAL_SHIELD;
+    public override EffectTypes EffectType => EffectTypes.ABNORMAL_SHIELD;
 
     public override int GetHashCode() => _times;
     public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x._times);

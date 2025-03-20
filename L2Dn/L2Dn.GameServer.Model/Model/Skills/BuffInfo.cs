@@ -299,7 +299,7 @@ public class BuffInfo
 
 		foreach (AbstractEffect effect in _effects)
 		{
-			if (effect.isInstant() || (_effected.isDead() && !_skill.IsPassive && !_skill.IsStayAfterDeath))
+			if (effect.IsInstant || (_effected.isDead() && !_skill.IsPassive && !_skill.IsStayAfterDeath))
 			{
 				continue;
 			}

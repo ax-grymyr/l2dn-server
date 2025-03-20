@@ -45,7 +45,7 @@ public sealed class Blink: AbstractEffect
         _animationSpeed = @params.getInt("animationSpeed", 0);
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override bool canStart(Creature effector, Creature effected, Skill skill)
     {

@@ -389,7 +389,7 @@ public class SkillCaster: Runnable
 			{
 				foreach (AbstractEffect effect in effects)
 				{
-					if (effect.getEffectType() == EffectType.DUAL_RANGE)
+					if (effect.EffectType == EffectTypes.DUAL_RANGE)
 					{
 						effect.instant(caster, (Creature)target, _skill, null);
 						return false;
@@ -653,7 +653,7 @@ public class SkillCaster: Runnable
                         }
 
 						// notify target AI about the attack
-						if (((Creature) obj).hasAI() && !skill.HasEffectType(EffectType.HATE))
+						if (((Creature) obj).hasAI() && !skill.HasEffectType(EffectTypes.HATE))
 						{
 							((Creature) obj).getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, caster);
 						}
@@ -806,7 +806,7 @@ public class SkillCaster: Runnable
 		{
 			int addedTime = 0;
             Player? creaturePlayer = creature.getActingPlayer();
-			if (skill.HasEffectType(EffectType.TELEPORT) && creature.isPlayer() && creaturePlayer != null)
+			if (skill.HasEffectType(EffectTypes.TELEPORT) && creature.isPlayer() && creaturePlayer != null)
 			{
 				switch (creaturePlayer.getEinhasadOverseeingLevel())
 				{
@@ -1105,7 +1105,7 @@ public class SkillCaster: Runnable
 			Item? requiredItem = casterInventory.getItemByItemId(skill.ItemConsumeId);
 			if (requiredItem == null || requiredItem.getCount() < skill.ItemConsumeCount)
 			{
-				if (skill.HasEffectType(EffectType.SUMMON))
+				if (skill.HasEffectType(EffectTypes.SUMMON))
 				{
 					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.SUMMONING_A_SERVITOR_COSTS_S2_S1);
 					sm.Params.addItemName(skill.ItemConsumeId);
@@ -1141,7 +1141,7 @@ public class SkillCaster: Runnable
 			}
 
 			// Check if not in AirShip
-			if (player.isInAirShip() && !skill.HasEffectType(EffectType.REFUEL_AIRSHIP))
+			if (player.isInAirShip() && !skill.HasEffectType(EffectTypes.REFUEL_AIRSHIP))
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
 				sm.Params.addSkillName(skill);
@@ -1178,7 +1178,7 @@ public class SkillCaster: Runnable
 			// Events.
 			if (player.isOnEvent())
 			{
-				if (skill.HasEffectType(EffectType.TELEPORT)) // Disable teleport skills.
+				if (skill.HasEffectType(EffectTypes.TELEPORT)) // Disable teleport skills.
 				{
 					player.sendMessage("You cannot use " + skill.Name + " while attending an event.");
 					return false;

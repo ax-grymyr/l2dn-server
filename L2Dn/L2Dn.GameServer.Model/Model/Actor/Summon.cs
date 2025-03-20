@@ -265,7 +265,7 @@ public abstract class Summon: Playable
 	{
 		if (isNoblesseBlessedAffected())
 		{
-			stopEffects(EffectFlag.NOBLESS_BLESSING);
+			stopEffects(EffectFlags.NOBLESS_BLESSING);
 			storeEffect(true);
 		}
 		else
@@ -721,7 +721,7 @@ public abstract class Summon: Playable
 			}
 
 			SystemMessagePacket sm;
-			if ((target.isHpBlocked() && !target.isNpc()) || (target.isPlayer() && target.isAffected(EffectFlag.DUELIST_FURY) && !_owner.isAffected(EffectFlag.FACEOFF)))
+			if ((target.isHpBlocked() && !target.isNpc()) || (target.isPlayer() && target.isAffected(EffectFlags.DUELIST_FURY) && !_owner.isAffected(EffectFlags.FACEOFF)))
 			{
 				sm = new SystemMessagePacket(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
 			}
@@ -742,7 +742,7 @@ public abstract class Summon: Playable
 	{
 		base.reduceCurrentHp(damage, attacker, skill);
 
-		if (!isDead() && !isHpBlocked() && _owner != null && attacker != null && (!_owner.isAffected(EffectFlag.DUELIST_FURY) || attacker.isAffected(EffectFlag.FACEOFF)))
+		if (!isDead() && !isHpBlocked() && _owner != null && attacker != null && (!_owner.isAffected(EffectFlags.DUELIST_FURY) || attacker.isAffected(EffectFlags.FACEOFF)))
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_HAS_RECEIVED_S3_DAMAGE_FROM_C2);
 			sm.Params.addNpcName(this);

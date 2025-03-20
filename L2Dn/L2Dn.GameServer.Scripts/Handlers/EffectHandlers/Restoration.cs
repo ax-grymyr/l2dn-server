@@ -26,7 +26,7 @@ public sealed class Restoration: AbstractEffect
         _itemEnchantmentLevel = @params.getInt("itemEnchantmentLevel", 0);
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
@@ -36,7 +36,7 @@ public sealed class Restoration: AbstractEffect
         if (_itemId <= 0 || _itemCount <= 0)
         {
             effected.sendPacket(SystemMessageId.FAILED_TO_CHANGE_THE_ITEM);
-            LOGGER.Warn(GetType().Name + " effect with wrong item Id/count: " + _itemId + "/" + _itemCount + "!");
+            Logger.Warn(GetType().Name + " effect with wrong item Id/count: " + _itemId + "/" + _itemCount + "!");
             return;
         }
 
@@ -65,7 +65,7 @@ public sealed class Restoration: AbstractEffect
         }
     }
 
-    public override EffectType getEffectType() => EffectType.EXTRACT_ITEM;
+    public override EffectTypes EffectType => EffectTypes.EXTRACT_ITEM;
 
     public override int GetHashCode() => HashCode.Combine(_itemId, _itemCount, _itemEnchantmentLevel);
 

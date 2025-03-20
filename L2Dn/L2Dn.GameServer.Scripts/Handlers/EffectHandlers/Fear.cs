@@ -24,7 +24,7 @@ public sealed class Fear: AbstractEffect
     {
     }
 
-    public override long getEffectFlags() => EffectFlag.FEAR.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.FEAR;
 
     public override bool canStart(Creature effector, Creature effected, Skill skill)
     {

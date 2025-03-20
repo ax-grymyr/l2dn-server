@@ -23,9 +23,9 @@ public sealed class SummonPet: AbstractEffect
     {
     }
 
-    public override EffectType getEffectType() => EffectType.SUMMON_PET;
+    public override EffectTypes EffectType => EffectTypes.SUMMON_PET;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
@@ -42,14 +42,14 @@ public sealed class SummonPet: AbstractEffect
         PetItemHolder? holder = player.removeScript<PetItemHolder>();
         if (holder == null)
         {
-            LOGGER.Warn("Summoning pet without attaching PetItemHandler!");
+            Logger.Warn("Summoning pet without attaching PetItemHandler!");
             return;
         }
 
         Item collar = holder.getItem();
         if (player.getInventory().getItemByObjectId(collar.ObjectId) != collar)
         {
-            LOGGER.Warn("Player: " + player + " is trying to summon pet from item that he doesn't owns.");
+            Logger.Warn("Player: " + player + " is trying to summon pet from item that he doesn't owns.");
             return;
         }
 
@@ -65,7 +65,7 @@ public sealed class SummonPet: AbstractEffect
         NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(petData.getNpcId());
         if (npcTemplate == null)
         {
-            LOGGER.Error($"NPC template id={petData.getNpcId()} not found");
+            Logger.Error($"NPC template id={petData.getNpcId()} not found");
             return;
         }
 

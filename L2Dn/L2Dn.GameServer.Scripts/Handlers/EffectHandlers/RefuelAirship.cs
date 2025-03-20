@@ -21,9 +21,9 @@ public sealed class RefuelAirship: AbstractEffect
         _value = @params.getInt("value", 0);
     }
 
-    public override EffectType getEffectType() => EffectType.REFUEL_AIRSHIP;
+    public override EffectTypes EffectType => EffectTypes.REFUEL_AIRSHIP;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

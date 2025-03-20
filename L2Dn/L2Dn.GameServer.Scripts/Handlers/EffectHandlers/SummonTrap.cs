@@ -24,7 +24,7 @@ public sealed class SummonTrap: AbstractEffect
         _npcId = @params.getInt("npcId", 0);
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
@@ -34,7 +34,7 @@ public sealed class SummonTrap: AbstractEffect
 
         if (_npcId <= 0)
         {
-            LOGGER.Warn(GetType().Name + ": Invalid NPC ID:" + _npcId + " in skill ID: " + skill.Id);
+            Logger.Warn(GetType().Name + ": Invalid NPC ID:" + _npcId + " in skill ID: " + skill.Id);
             return;
         }
 
@@ -49,7 +49,7 @@ public sealed class SummonTrap: AbstractEffect
         NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(_npcId);
         if (npcTemplate == null)
         {
-            LOGGER.Warn(GetType().Name + ": Spawn of the non-existing Trap ID: " + _npcId + " in skill ID:" +
+            Logger.Warn(GetType().Name + ": Spawn of the non-existing Trap ID: " + _npcId + " in skill ID:" +
                 skill.Id);
 
             return;

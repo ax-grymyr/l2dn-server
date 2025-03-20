@@ -66,7 +66,7 @@ public sealed class TriggerSkillBySkillAttack: AbstractEffect
         ITargetTypeHandler? targetHandler = TargetHandler.getInstance().getHandler(_targetType);
         if (targetHandler == null)
         {
-            LOGGER.Warn("Handler for target type: " + _targetType + " does not exist.");
+            Logger.Warn("Handler for target type: " + _targetType + " does not exist.");
             return;
         }
 
@@ -89,7 +89,7 @@ public sealed class TriggerSkillBySkillAttack: AbstractEffect
         }
         catch (Exception e)
         {
-            LOGGER.Warn("Exception in ITargetTypeHandler.getTarget(): " + e);
+            Logger.Warn("Exception in ITargetTypeHandler.getTarget(): " + e);
         }
 
         if (target != null && target.isCreature())

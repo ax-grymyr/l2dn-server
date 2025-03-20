@@ -24,7 +24,7 @@ public sealed class DamOverTimePercent: AbstractEffect
         Ticks = @params.getInt("ticks");
     }
 
-    public override EffectType getEffectType() => EffectType.DMG_OVER_TIME_PERCENT;
+    public override EffectTypes EffectType => EffectTypes.DMG_OVER_TIME_PERCENT;
 
     public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {

@@ -147,7 +147,7 @@ public class Doppelganger : Attackable
 
             SystemMessagePacket sm;
             if ((target.isHpBlocked() && !target.isNpc()) || (target.isPlayer() &&
-                    target.isAffected(EffectFlag.DUELIST_FURY) && !actingPlayer.isAffected(EffectFlag.FACEOFF)))
+                    target.isAffected(EffectFlags.DUELIST_FURY) && !actingPlayer.isAffected(EffectFlags.FACEOFF)))
             {
                 sm = new SystemMessagePacket(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
             }

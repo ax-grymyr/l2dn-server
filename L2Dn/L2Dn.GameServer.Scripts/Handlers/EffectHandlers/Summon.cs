@@ -37,9 +37,9 @@ public sealed class Summon: AbstractEffect
             _lifeTime = TimeSpan.FromMilliseconds(lifeTime.Value);
     }
 
-    public override EffectType getEffectType() => EffectType.SUMMON;
+    public override EffectTypes EffectType => EffectTypes.SUMMON;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

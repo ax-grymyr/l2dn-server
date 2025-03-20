@@ -3175,7 +3175,7 @@ public class Quest: AbstractScript, IIdentifiable
 		}
 
 		// Cannot escape effect.
-		if (player.isAffected(EffectFlag.CANNOT_ESCAPE))
+		if (player.isAffected(EffectFlags.CANNOT_ESCAPE))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_TELEPORT_RIGHT_NOW);
 			return;

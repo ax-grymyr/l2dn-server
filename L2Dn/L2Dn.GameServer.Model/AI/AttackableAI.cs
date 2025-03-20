@@ -1066,7 +1066,7 @@ public class AttackableAI: CreatureAI
 			}
 
 			// Check if target had buffs if skill is bad cancel, or debuffs if skill is good cancel.
-			if (skill.HasEffectType(EffectType.DISPEL, EffectType.DISPEL_BY_SLOT))
+			if (skill.HasEffectType(EffectTypes.DISPEL | EffectTypes.DISPEL_BY_SLOT))
 			{
 				if (skill.IsBad)
 				{
@@ -1082,7 +1082,7 @@ public class AttackableAI: CreatureAI
 			}
 
 			// Check for damaged targets if using healing skill.
-			if (((Creature) target).getCurrentHp() == ((Creature) target).getMaxHp() && skill.HasEffectType(EffectType.HEAL))
+			if (((Creature) target).getCurrentHp() == ((Creature) target).getMaxHp() && skill.HasEffectType(EffectTypes.HEAL))
 			{
 				return false;
 			}
@@ -1172,7 +1172,7 @@ public class AttackableAI: CreatureAI
 			}
 
 			// For heal skills sort by hp missing.
-			if (skill.HasEffectType(EffectType.HEAL))
+			if (skill.HasEffectType(EffectTypes.HEAL))
 			{
 				int searchValue = int.MaxValue;
 				Creature? creature = null;

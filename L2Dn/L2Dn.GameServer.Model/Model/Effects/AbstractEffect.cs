@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.Utilities;
 using NLog;
 using Config = L2Dn.GameServer.Configuration.Config;
 
@@ -15,7 +16,7 @@ namespace L2Dn.GameServer.Model.Effects;
 /// </summary>
 public abstract class AbstractEffect
 {
-    protected static readonly Logger LOGGER = LogManager.GetLogger(nameof(AbstractEffect));
+    protected static readonly Logger Logger = LogManager.GetLogger(nameof(AbstractEffect));
 
     /// <summary>
     /// Gets the effect ticks.
@@ -47,10 +48,7 @@ public abstract class AbstractEffect
      * @param skill
      * @return {@code true} if all the start conditions are meet, {@code false} otherwise
      */
-    public virtual bool canStart(Creature effector, Creature effected, Skill skill)
-    {
-        return true;
-    }
+    public virtual bool canStart(Creature effector, Creature effected, Skill skill) => true;
 
     public virtual void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
@@ -77,27 +75,21 @@ public abstract class AbstractEffect
      * @param item
      * @return if {@code true} this effect will continue forever, if {@code false} it will stop after abnormal time has passed
      */
-    public virtual bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
-    {
-        return false;
-    }
+    public virtual bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item) => false;
 
     /// <summary>
     /// Get the effect flags.
     /// </summary>
     /// <returns>bit flag for current effect</returns>
-    public virtual long getEffectFlags() => 1L << (int)EffectFlag.NONE;
+    public virtual EffectFlags getEffectFlags() => EffectFlags.NONE;
 
-    public virtual bool checkCondition(int id)
-    {
-        return true;
-    }
+    public virtual bool checkCondition(int id) => true;
 
     /// <summary>
     /// Verify if this effect is an instant effect.
     /// </summary>
-    /// <returns>true if this effect is instant, false otherwise</returns>
-    public virtual bool isInstant() => false;
+    /// <value>true if this effect is instant, false otherwise</value>
+    public virtual bool IsInstant => false;
 
     /**
      * @param effector
@@ -105,10 +97,7 @@ public abstract class AbstractEffect
      * @param skill
      * @return {@code true} if pump can be invoked, {@code false} otherwise
      */
-    public virtual bool canPump(Creature? effector, Creature effected, Skill? skill)
-    {
-        return true;
-    }
+    public virtual bool canPump(Creature? effector, Creature effected, Skill? skill) => true;
 
     public virtual void pump(Creature effected, Skill skill)
     {
@@ -119,8 +108,8 @@ public abstract class AbstractEffect
      * TODO: Remove.
      * @return the effect type
      */
-    public virtual EffectType getEffectType() => EffectType.NONE;
+    public virtual EffectTypes EffectType => EffectTypes.NONE;
 
     public override string ToString() => "Effect " + GetType().Name;
-    public override int GetHashCode() => GetType().Name.GetHashCode();
+    public override int GetHashCode() => this.GetSingletonHashCode();
 }

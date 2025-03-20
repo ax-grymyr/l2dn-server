@@ -62,7 +62,7 @@ public class EffectList
 	private readonly AtomicInteger _hasBuffsRemovedOnDamage = new();
 
 	/** Effect flags. */
-	private long _effectFlags;
+	private EffectFlags _effectFlags;
 
 	/** The owner of this effect list. */
 	private readonly Creature _owner;
@@ -494,16 +494,16 @@ public class EffectList
 	 * Exit all effects having a specified flag.
 	 * @param effectFlag the flag of the effect to stop
 	 */
-	public void stopEffects(EffectFlag effectFlag)
+	public void stopEffects(EffectFlags effectFlags)
 	{
-		if (isAffected(effectFlag) && _actives.Count != 0)
+		if (isAffected(effectFlags) && _actives.Count != 0)
 		{
 			bool update = false;
 			foreach (BuffInfo info in _actives)
 			{
 				foreach (AbstractEffect effect in info.getEffects())
 				{
-					if (effect != null && (effect.getEffectFlags() & effectFlag.getMask()) != 0)
+					if (effect != null && (effect.getEffectFlags() & effectFlags) != 0)
 					{
 						remove(info);
 						update = true;
@@ -920,8 +920,8 @@ public class EffectList
                 }
 
                 if (info.getEffector().isPlayer() && info.getEffected().isPlayer() &&
-                    info.getEffected().isAffected(EffectFlag.DUELIST_FURY) &&
-                    !info.getEffector().isAffected(EffectFlag.DUELIST_FURY))
+                    info.getEffected().isAffected(EffectFlags.DUELIST_FURY) &&
+                    !info.getEffector().isAffected(EffectFlags.DUELIST_FURY))
                 {
                     return;
                 }
@@ -1210,7 +1210,7 @@ public class EffectList
 	private void updateEffectList(bool broadcast)
 	{
 		// Create new empty flags.
-		long flags = 0;
+		EffectFlags flags = EffectFlags.NONE;
 		Set<AbnormalType> abnormalTypeFlags = new();
 		Set<AbnormalVisualEffect> abnormalVisualEffectFlags = new();
 		Set<BuffInfo> unhideBuffs = new();
@@ -1326,8 +1326,5 @@ public class EffectList
 	 * @param flag of special buff
 	 * @return bool true if affected
 	 */
-	public bool isAffected(EffectFlag flag)
-	{
-		return (_effectFlags & flag.getMask()) != 0;
-	}
+	public bool isAffected(EffectFlags flags) => (_effectFlags & flags) != 0;
 }

@@ -23,10 +23,7 @@ public sealed class OpenDoor: AbstractEffect
         _isItem = @params.getBoolean("isItem", false);
     }
 
-    public override bool isInstant()
-    {
-        return true;
-    }
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

@@ -23,9 +23,9 @@ public sealed class Relax: AbstractEffect
         Ticks = @params.getInt("ticks");
     }
 
-    public override long getEffectFlags() => EffectFlag.RELAXING.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.RELAXING;
 
-    public override EffectType getEffectType() => EffectType.RELAXING;
+    public override EffectTypes EffectType => EffectTypes.RELAXING;
 
     public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
     {

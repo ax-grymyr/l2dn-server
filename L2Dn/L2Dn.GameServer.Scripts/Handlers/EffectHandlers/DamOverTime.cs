@@ -45,7 +45,7 @@ public sealed class DamOverTime: AbstractEffect
         }
     }
 
-    public override EffectType getEffectType() => EffectType.DMG_OVER_TIME;
+    public override EffectTypes EffectType => EffectTypes.DMG_OVER_TIME;
 
     public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {

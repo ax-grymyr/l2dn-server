@@ -149,7 +149,7 @@ public class Formulas
 			{
 				if (calcMagicSuccess(attacker, target, skill))
 				{
-					if (skill.HasEffectType(EffectType.HP_DRAIN))
+					if (skill.HasEffectType(EffectTypes.HP_DRAIN))
 					{
 						attacker.sendPacket(SystemMessageId.DRAIN_WAS_ONLY_50_SUCCESSFUL);
 					}
@@ -172,7 +172,7 @@ public class Formulas
 
 			if (target.isPlayer())
 			{
-				SystemMessagePacket sm = skill.HasEffectType(EffectType.HP_DRAIN) ? new SystemMessagePacket(SystemMessageId.YOU_RESISTED_C1_S_DRAIN) : new SystemMessagePacket(SystemMessageId.YOU_RESISTED_C1_S_MAGIC);
+				SystemMessagePacket sm = skill.HasEffectType(EffectTypes.HP_DRAIN) ? new SystemMessagePacket(SystemMessageId.YOU_RESISTED_C1_S_DRAIN) : new SystemMessagePacket(SystemMessageId.YOU_RESISTED_C1_S_MAGIC);
 				sm.Params.addString(attacker.getName());
 				target.sendPacket(sm);
 			}
@@ -622,7 +622,7 @@ public class Formulas
 			shldRate *= 1.3;
 		}
 
-		int degreeside = target.isAffected(EffectFlag.PHYSICAL_SHIELD_ANGLE_ALL) ? 360 : 120;
+		int degreeside = target.isAffected(EffectFlags.PHYSICAL_SHIELD_ANGLE_ALL) ? 360 : 120;
 		if (degreeside < 360 && Math.Abs(target.AngleDegreesTo(attacker) - HeadingUtil.ConvertHeadingToDegrees(target.getHeading())) > degreeside / 2)
 		{
 			return 0;
@@ -685,7 +685,7 @@ public class Formulas
 				target.decrementAbnormalShieldBlocks();
 				return false;
 			}
-			else if (target.isAffected(EffectFlag.DEBUFF_BLOCK))
+			else if (target.isAffected(EffectFlags.DEBUFF_BLOCK))
 			{
 				return false;
 			}

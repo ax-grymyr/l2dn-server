@@ -21,7 +21,7 @@ public sealed class AddHate: AbstractEffect
         _affectSummoner = @params.getBoolean("affectSummoner", false);
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature creature, Creature effected, Skill skill, Item? item)
     {

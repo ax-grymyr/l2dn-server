@@ -23,8 +23,9 @@ public sealed class ChameleonRest: AbstractEffect
         Ticks = @params.getInt("ticks");
     }
 
-    public override long getEffectFlags() => EffectFlag.SILENT_MOVE.getMask() | EffectFlag.RELAXING.getMask();
-    public override EffectType getEffectType() => EffectType.RELAXING;
+    public override EffectFlags getEffectFlags() => EffectFlags.SILENT_MOVE | EffectFlags.RELAXING;
+
+    public override EffectTypes EffectType => EffectTypes.RELAXING;
 
     public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {

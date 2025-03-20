@@ -25,10 +25,10 @@ public class BlockActions: AbstractEffect
         _allowedSkills = ParseUtil.ParseSet<int>(allowedSkills);
     }
 
-    public override long getEffectFlags() =>
-        _allowedSkills.Count == 0 ? EffectFlag.BLOCK_ACTIONS.getMask() : EffectFlag.CONDITIONAL_BLOCK_ACTIONS.getMask();
+    public override EffectFlags getEffectFlags() =>
+        _allowedSkills.Count == 0 ? EffectFlags.BLOCK_ACTIONS : EffectFlags.CONDITIONAL_BLOCK_ACTIONS;
 
-    public override EffectType getEffectType() => EffectType.BLOCK_ACTIONS;
+    public override EffectTypes EffectType => EffectTypes.BLOCK_ACTIONS;
 
     public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
     {

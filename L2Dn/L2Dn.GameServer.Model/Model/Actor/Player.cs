@@ -2987,9 +2987,9 @@ public class Player: Playable
 	{
 		if (_waitTypeSitting && !isInStoreMode() && !isAlikeDead())
 		{
-			if (getEffectList().isAffected(EffectFlag.RELAXING))
+			if (getEffectList().isAffected(EffectFlags.RELAXING))
 			{
-				stopEffects(EffectFlag.RELAXING);
+				stopEffects(EffectFlags.RELAXING);
 			}
 
 			broadcastPacket(new ChangeWaitTypePacket(this, ChangeWaitTypePacket.WT_STANDING));
@@ -3981,7 +3981,7 @@ public class Player: Playable
 
 	public bool isFakeDeath()
 	{
-		return isAffected(EffectFlag.FAKE_DEATH);
+		return isAffected(EffectFlags.FAKE_DEATH);
 	}
 
 	public override bool isAlikeDead()
@@ -8192,7 +8192,7 @@ public class Player: Playable
 		}
 
 		// Invisible or untargetable players should not be attackable.
-		if (isInvisible() || isAffected(EffectFlag.UNTARGETABLE))
+		if (isInvisible() || isAffected(EffectFlags.UNTARGETABLE))
 		{
 			return false;
 		}
@@ -8393,7 +8393,7 @@ public class Player: Playable
 		}
 
 		// If Alternate rule Karma punishment is set to true, forbid skill Return to player with Karma
-		if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && getReputation() < 0 && usedSkill.HasEffectType(EffectType.TELEPORT))
+		if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && getReputation() < 0 && usedSkill.HasEffectType(EffectTypes.TELEPORT))
 		{
 			sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return false;
@@ -8430,7 +8430,7 @@ public class Player: Playable
 		}
 
 		// Check if fishing and trying to use non-fishing skills.
-		if (isFishing() && !usedSkill.HasEffectType(EffectType.FISHING, EffectType.FISHING_START))
+		if (isFishing() && !usedSkill.HasEffectType(EffectTypes.FISHING | EffectTypes.FISHING_START))
 		{
 			sendPacket(SystemMessageId.ONLY_FISHING_SKILLS_MAY_BE_USED_AT_THIS_TIME);
 			return false;
@@ -8573,7 +8573,7 @@ public class Player: Playable
 			return false;
 		}
 
-		bool doubleCast = isAffected(EffectFlag.DOUBLE_CAST) && usedSkill.CanDoubleCast;
+		bool doubleCast = isAffected(EffectFlags.DOUBLE_CAST) && usedSkill.CanDoubleCast;
 
 		// If a skill is currently being used, queue this one if this is not the same
 		// In case of double casting, check if both slots are occupied, then queue skill.
@@ -11892,7 +11892,7 @@ public class Player: Playable
 			OlympiadGameManager.getInstance().notifyCompetitorDamage(this, damage);
 		}
 
-		if ((target.isHpBlocked() && !target.isNpc()) || (target.isPlayer() && target.isAffected(EffectFlag.DUELIST_FURY) && !isAffected(EffectFlag.FACEOFF)) || target.isInvul())
+		if ((target.isHpBlocked() && !target.isNpc()) || (target.isPlayer() && target.isAffected(EffectFlags.DUELIST_FURY) && !isAffected(EffectFlags.FACEOFF)) || target.isInvul())
 		{
 			sendPacket(SystemMessageId.THE_ATTACK_HAS_BEEN_BLOCKED);
 		}
@@ -13678,7 +13678,7 @@ public class Player: Playable
 
 	public bool isBlockedFromDeathPenalty()
 	{
-		return _isOnEvent || isAffected(EffectFlag.PROTECT_DEATH_PENALTY);
+		return _isOnEvent || isAffected(EffectFlags.PROTECT_DEATH_PENALTY);
 	}
 
 	public void setOriginalCpHpMp(double cp, double hp, double mp)

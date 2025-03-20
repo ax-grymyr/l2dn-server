@@ -1056,7 +1056,7 @@ public sealed class FortManager: Merchant
                 return;
             }
 
-            if (skill.HasEffectType(EffectType.SUMMON))
+            if (skill.HasEffectType(EffectTypes.SUMMON))
             {
                 player.doCast(skill);
             }

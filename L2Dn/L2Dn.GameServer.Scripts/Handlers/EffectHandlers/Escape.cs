@@ -24,9 +24,9 @@ public class Escape: AbstractEffect
             _escapeType = @params.getEnum<TeleportWhereType>("escapeType");
     }
 
-    public override EffectType getEffectType() => EffectType.TELEPORT;
+    public override EffectTypes EffectType => EffectTypes.TELEPORT;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override bool canStart(Creature effector, Creature effected, Skill skill)
     {

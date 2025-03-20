@@ -22,7 +22,7 @@ public sealed class FakeDeath: AbstractEffect
         Ticks = @params.getInt("ticks");
     }
 
-    public override long getEffectFlags() => EffectFlag.FAKE_DEATH.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.FAKE_DEATH;
 
     public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {

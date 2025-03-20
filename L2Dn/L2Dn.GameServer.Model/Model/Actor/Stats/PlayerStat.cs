@@ -731,7 +731,7 @@ public class PlayerStat: PlayableStat
 	public override TimeSpan getReuseTime(Skill skill)
 	{
 		int addedReuse = 0;
-		if (skill.HasEffectType(EffectType.TELEPORT))
+		if (skill.HasEffectType(EffectTypes.TELEPORT))
 		{
 			switch (getActiveChar().getActingPlayer().getEinhasadOverseeingLevel())
 			{

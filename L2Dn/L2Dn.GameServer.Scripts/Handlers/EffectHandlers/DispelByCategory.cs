@@ -25,9 +25,9 @@ public sealed class DispelByCategory: AbstractEffect
         _max = @params.getInt("max", 0);
     }
 
-    public override EffectType getEffectType() => EffectType.DISPEL;
+    public override EffectTypes EffectType => EffectTypes.DISPEL;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

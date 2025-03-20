@@ -33,9 +33,9 @@ public sealed class ResurrectionSpecial: AbstractEffect
         _instanceIds = ParseUtil.ParseSet<int>(instanceIds);
     }
 
-    public override EffectType getEffectType() => EffectType.RESURRECTION_SPECIAL;
+    public override EffectTypes EffectType => EffectTypes.RESURRECTION_SPECIAL;
 
-    public override long getEffectFlags() => EffectFlag.RESURRECTION_SPECIAL.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.RESURRECTION_SPECIAL;
 
     public override void onExit(Creature effector, Creature effected, Skill skill)
     {

@@ -75,7 +75,7 @@ public class Monster: Attackable
      */
     public override bool isAggressive()
     {
-        return getTemplate().isAggressive() && !isAffected(EffectFlag.PASSIVE);
+        return getTemplate().isAggressive() && !isAffected(EffectFlags.PASSIVE);
     }
 
     public override void onSpawn()

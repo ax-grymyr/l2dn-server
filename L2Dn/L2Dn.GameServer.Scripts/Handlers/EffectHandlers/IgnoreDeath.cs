@@ -10,7 +10,7 @@ public sealed class IgnoreDeath: AbstractEffect
     {
     }
 
-    public override long getEffectFlags() => EffectFlag.IGNORE_DEATH.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.IGNORE_DEATH;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);

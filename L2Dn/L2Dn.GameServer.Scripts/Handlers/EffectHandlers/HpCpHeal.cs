@@ -25,16 +25,16 @@ public sealed class HpCpHeal: AbstractEffect
         _power = @params.getDouble("power", 0);
     }
 
-    public override EffectType getEffectType() => EffectType.HEAL;
+    public override EffectTypes EffectType => EffectTypes.HEAL;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isDead() || effected.isDoor() || effected.isHpBlocked())
             return;
 
-        if (effected != effector && effected.isAffected(EffectFlag.FACEOFF))
+        if (effected != effector && effected.isAffected(EffectFlags.FACEOFF))
             return;
 
         double amount = _power;
@@ -82,7 +82,7 @@ public sealed class HpCpHeal: AbstractEffect
 
             // Heal critic, since CT2.3 Gracia Final
             if (skill.IsMagic && (Formulas.calcCrit(skill.MagicCriticalRate, effector, effected, skill) ||
-                    effector.isAffected(EffectFlag.HPCPHEAL_CRITICAL)))
+                    effector.isAffected(EffectFlags.HPCPHEAL_CRITICAL)))
             {
                 amount *= 3;
                 effector.sendPacket(SystemMessageId.M_CRITICAL);

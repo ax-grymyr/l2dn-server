@@ -27,10 +27,10 @@ public sealed class Skill: IIdentifiable
     // outer array index is SkillConditionScope
     private readonly InlineArray3<ImmutableArray<ISkillCondition>> _conditionLists;
 
-    private readonly EnumSet64<EffectType> _effectTypes;
+    private readonly EffectTypes _effectTypes;
 
     // outer array index is SkillEffectScope
-    private readonly InlineArray7<EnumSet64<EffectType>> _effectTypesByScope;
+    private readonly InlineArray7<EffectTypes> _effectTypesByScope;
 
     // If true this skill's effect should stay after death.
     private readonly bool _stayAfterDeath;
@@ -223,19 +223,19 @@ public sealed class Skill: IIdentifiable
             _effectLists[(int)pair.Key] = pair.Value.ToImmutableArray();
 
         // effect types
-        EnumSet64<EffectType> allEffectTypes = EnumSet64<EffectType>.Create();
+        EffectTypes allEffectTypes = EffectTypes.NONE;
         foreach (SkillEffectScope effectScope in EnumUtil.GetValues<SkillEffectScope>())
         {
-            EnumSet64<EffectType> effectTypes = EnumSet64<EffectType>.Create();
+            EffectTypes effectTypes = EffectTypes.NONE;
             ImmutableArray<AbstractEffect> effects = _effectLists[(int)effectScope];
             if (!effects.IsDefaultOrEmpty)
             {
                 foreach (AbstractEffect effect in effects)
-                    effectTypes.Add(effect.getEffectType());
+                    effectTypes |= effect.EffectType;
             }
 
             _effectTypesByScope[(int)effectScope] = effectTypes;
-            allEffectTypes.AddRange(effectTypes);
+            allEffectTypes |= effectTypes;
         }
 
         _effectTypes = allEffectTypes;
@@ -567,16 +567,7 @@ public sealed class Skill: IIdentifiable
     /// </summary>
     /// <param name="effectTypes"></param>
     /// <returns>True if at least one effect type is present.</returns>
-    public bool HasEffectType(params ReadOnlySpan<EffectType> effectTypes)
-    {
-        foreach (EffectType type in effectTypes)
-        {
-            if (_effectTypes.Contains(type))
-                return true;
-        }
-
-        return false;
-    }
+    public bool HasEffectType(EffectTypes effectTypes) => (_effectTypes & effectTypes) != 0;
 
     /// <summary>
     /// Effect type to check if its present on this skill effects.
@@ -584,19 +575,12 @@ public sealed class Skill: IIdentifiable
     /// <param name="effectScope"></param>
     /// <param name="effectTypes"></param>
     /// <returns>True if at least one effect type is present.</returns>
-    public bool HasEffectType(SkillEffectScope effectScope, params ReadOnlySpan<EffectType> effectTypes)
+    public bool HasEffectType(SkillEffectScope effectScope, EffectTypes effectTypes)
     {
         if (effectScope < 0 || (int)effectScope >= _effectTypesByScope.Length)
             return false;
 
-        EnumSet64<EffectType> set = _effectTypesByScope[(int)effectScope];
-        foreach (EffectType type in effectTypes)
-        {
-            if (set.Contains(type))
-                return true;
-        }
-
-        return false;
+        return (_effectTypesByScope[(int)effectScope] & effectTypes) != 0;
     }
 
     /// <summary>
@@ -709,11 +693,11 @@ public sealed class Skill: IIdentifiable
     /// </summary>
     public bool IsTransformation => AbnormalType is AbnormalType.TRANSFORM or AbnormalType.CHANGEBODY;
 
-    public bool UseSoulShot => HasEffectType(EffectType.PHYSICAL_ATTACK, EffectType.PHYSICAL_ATTACK_HP_LINK);
+    public bool UseSoulShot => HasEffectType(EffectTypes.PHYSICAL_ATTACK | EffectTypes.PHYSICAL_ATTACK_HP_LINK);
 
     public bool UseSpiritShot => MagicType == SkillMagicType.Magic;
 
-    public bool UseFishShot => HasEffectType(EffectType.FISHING);
+    public bool UseFishShot => HasEffectType(EffectTypes.FISHING);
 
     public bool Is7Signs => Id is > 4360 and < 4367;
 

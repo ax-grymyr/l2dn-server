@@ -159,7 +159,7 @@ public sealed class OldSkill: IIdentifiable
 
     private readonly string _icon;
 
-    private volatile EffectType[]? _effectTypes;
+    private volatile EffectTypes[]? _effectTypes;
 
     // Channeling data
     private readonly int _channelingSkillId;
@@ -697,11 +697,11 @@ public sealed class OldSkill: IIdentifiable
 
     public int getEffectPoint() => _effectPoint;
 
-    public bool useSoulShot() => hasEffectType(EffectType.PHYSICAL_ATTACK, EffectType.PHYSICAL_ATTACK_HP_LINK);
+    public bool useSoulShot() => hasEffectType(EffectTypes.PHYSICAL_ATTACK, EffectTypes.PHYSICAL_ATTACK_HP_LINK);
 
     public bool useSpiritShot() => _magic == 1;
 
-    public bool useFishShot() => hasEffectType(EffectType.FISHING);
+    public bool useFishShot() => hasEffectType(EffectTypes.FISHING);
 
     public SocialClass getMinPledgeClass() => _minPledgeClass;
 
@@ -825,7 +825,7 @@ public sealed class OldSkill: IIdentifiable
      * @param effectTypes Effect types to check if are present on this skill effects.
      * @return {@code true} if at least one of specified {@link EffectType} types is present on this skill effects, {@code false} otherwise.
      */
-    public bool hasEffectType(EffectType effectType, params ReadOnlySpan<EffectType> effectTypes)
+    public bool hasEffectType(EffectTypes effectType, params ReadOnlySpan<EffectTypes> effectTypes)
     {
         if (_effectTypes == null)
         {
@@ -833,19 +833,19 @@ public sealed class OldSkill: IIdentifiable
             {
                 if (_effectTypes == null)
                 {
-                    Set<EffectType> effectTypesSet = new();
+                    Set<EffectTypes> effectTypesSet = new();
                     foreach (List<AbstractEffect> effectList in _effectLists.Values)
                     {
                         if (effectList != null)
                         {
                             foreach (AbstractEffect effect in effectList)
                             {
-                                effectTypesSet.add(effect.getEffectType());
+                                effectTypesSet.add(effect.EffectType);
                             }
                         }
                     }
 
-                    EffectType[] effectTypesArray = effectTypesSet.ToArray();
+                    EffectTypes[] effectTypesArray = effectTypesSet.ToArray();
                     Array.Sort(effectTypesArray);
                     _effectTypes = effectTypesArray;
                 }
@@ -857,7 +857,7 @@ public sealed class OldSkill: IIdentifiable
             return true;
         }
 
-        foreach (EffectType type in effectTypes)
+        foreach (EffectTypes type in effectTypes)
         {
             if (Array.BinarySearch(_effectTypes, type) >= 0)
             {
@@ -874,16 +874,16 @@ public sealed class OldSkill: IIdentifiable
      * @param effectTypes Effect types to check if are present on this skill effects.
      * @return {@code true} if at least one of specified {@link EffectType} types is present on this skill effects, {@code false} otherwise.
      */
-    public bool hasEffectType(SkillEffectScope effectScope, params ReadOnlySpan<EffectType> effectTypes)
+    public bool hasEffectType(SkillEffectScope effectScope, params ReadOnlySpan<EffectTypes> effectTypes)
     {
         List<AbstractEffect>? effects = _effectLists.get(effectScope);
         if (hasEffects(effectScope) || effects == null)
             return false;
 
         foreach (AbstractEffect effect in effects)
-        foreach (EffectType type in effectTypes)
+        foreach (EffectTypes type in effectTypes)
         {
-            if (type == effect.getEffectType())
+            if (type == effect.EffectType)
                 return true;
         }
 

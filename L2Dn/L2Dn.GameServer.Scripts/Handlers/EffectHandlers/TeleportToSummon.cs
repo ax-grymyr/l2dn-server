@@ -25,9 +25,9 @@ public sealed class TeleportToSummon: AbstractEffect
         _maxDistance = @params.getDouble("distance", -1);
     }
 
-    public override EffectType getEffectType() => EffectType.TELEPORT_TO_TARGET;
+    public override EffectTypes EffectType => EffectTypes.TELEPORT_TO_TARGET;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override bool canStart(Creature effector, Creature effected, Skill skill)
     {

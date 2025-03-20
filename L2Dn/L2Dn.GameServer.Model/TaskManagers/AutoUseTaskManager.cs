@@ -593,7 +593,7 @@ public class AutoUseTaskManager
 			}
 
             if (skill.GetEffects(SkillEffectScope.General) is {} generalEffect &&
-                generalEffect.Any(a => a.getEffectType() == EffectType.MANAHEAL_BY_LEVEL) &&
+                generalEffect.Any(a => a.EffectType == EffectTypes.MANAHEAL_BY_LEVEL) &&
                 player.getCurrentMpPercent() > 80)
             {
                 return false;

@@ -21,9 +21,9 @@ public sealed class NoblesseBless: AbstractEffect
         return effector != null && effected != null && effected.isPlayable();
     }
 
-    public override long getEffectFlags() => EffectFlag.NOBLESS_BLESSING.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.NOBLESS_BLESSING;
 
-    public override EffectType getEffectType() => EffectType.NOBLESSE_BLESSING;
+    public override EffectTypes EffectType => EffectTypes.NOBLESSE_BLESSING;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);

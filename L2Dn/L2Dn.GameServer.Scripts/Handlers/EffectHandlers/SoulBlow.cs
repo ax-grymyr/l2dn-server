@@ -34,9 +34,9 @@ public sealed class SoulBlow: AbstractEffect
             Formulas.calcBlowSuccess(effector, effected, skill, _chanceBoost);
     }
 
-    public override EffectType getEffectType() => EffectType.PHYSICAL_ATTACK;
+    public override EffectTypes EffectType => EffectTypes.PHYSICAL_ATTACK;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

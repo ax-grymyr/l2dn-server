@@ -19,7 +19,7 @@ public sealed class ReuseSkillById: AbstractEffect
         _amount = @params.getInt("amount", 0);
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

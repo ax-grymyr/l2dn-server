@@ -103,12 +103,12 @@ public abstract class Playable: Creature
 		bool deleteBuffs = true;
 		if (isNoblesseBlessedAffected())
 		{
-			stopEffects(EffectFlag.NOBLESS_BLESSING);
+			stopEffects(EffectFlags.NOBLESS_BLESSING);
 			deleteBuffs = false;
 		}
 		if (isResurrectSpecialAffected())
 		{
-			stopEffects(EffectFlag.RESURRECTION_SPECIAL);
+			stopEffects(EffectFlags.RESURRECTION_SPECIAL);
 			deleteBuffs = false;
 		}
 
@@ -208,7 +208,7 @@ public abstract class Playable: Creature
 	// Support for Noblesse Blessing skill, where buffs are retained after resurrect
 	public bool isNoblesseBlessedAffected()
 	{
-		return isAffected(EffectFlag.NOBLESS_BLESSING);
+		return isAffected(EffectFlags.NOBLESS_BLESSING);
 	}
 
 	/**
@@ -216,7 +216,7 @@ public abstract class Playable: Creature
 	 */
 	public bool isResurrectSpecialAffected()
 	{
-		return isAffected(EffectFlag.RESURRECTION_SPECIAL);
+		return isAffected(EffectFlags.RESURRECTION_SPECIAL);
 	}
 
 	/**
@@ -224,7 +224,7 @@ public abstract class Playable: Creature
 	 */
 	public bool isSilentMovingAffected()
 	{
-		return isAffected(EffectFlag.SILENT_MOVE);
+		return isAffected(EffectFlags.SILENT_MOVE);
 	}
 
 	/**
@@ -233,7 +233,7 @@ public abstract class Playable: Creature
 	 */
 	public bool isProtectionBlessingAffected()
 	{
-		return isAffected(EffectFlag.PROTECTION_BLESSING);
+		return isAffected(EffectFlags.PROTECTION_BLESSING);
 	}
 
 	public override void updateEffectIcons(bool partyOnly)

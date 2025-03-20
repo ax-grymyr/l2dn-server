@@ -23,9 +23,9 @@ public sealed class CpHeal: AbstractEffect
         _power = @params.getDouble("power", 0);
     }
 
-    public override EffectType getEffectType() => EffectType.CPHEAL;
+    public override EffectTypes EffectType => EffectTypes.CPHEAL;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

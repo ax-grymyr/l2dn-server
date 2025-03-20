@@ -29,10 +29,7 @@ public sealed class CallSkill: AbstractEffect
         _chance = @params.getInt("chance", 100);
     }
 
-    public override bool isInstant()
-    {
-        return true;
-    }
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
@@ -53,7 +50,7 @@ public sealed class CallSkill: AbstractEffect
                 }
                 else
                 {
-                    LOGGER.Warn("Player " + effector + " called unknown skill " + _skill + " triggered by " + skill +
+                    Logger.Warn("Player " + effector + " called unknown skill " + _skill + " triggered by " + skill +
                         " CallSkill.");
 
                     return;
@@ -106,7 +103,7 @@ public sealed class CallSkill: AbstractEffect
         }
         else
         {
-            LOGGER.Warn("Skill not found effect called from " + skill);
+            Logger.Warn("Skill not found effect called from " + skill);
         }
     }
 

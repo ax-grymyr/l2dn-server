@@ -12,7 +12,7 @@ public sealed class DuelistFury: AbstractEffect
     {
     }
 
-    public override long getEffectFlags() => EffectFlag.DUELIST_FURY.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.DUELIST_FURY;
 
     public override bool canStart(Creature effector, Creature effected, Skill skill)
     {

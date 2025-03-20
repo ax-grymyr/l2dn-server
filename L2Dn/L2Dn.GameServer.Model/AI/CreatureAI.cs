@@ -1136,20 +1136,20 @@ public class CreatureAI: AbstractAI
 					continue;
 				}
 
-				if (sk.HasEffectType(EffectType.DISPEL, EffectType.DISPEL_BY_SLOT))
+				if (sk.HasEffectType(EffectTypes.DISPEL | EffectTypes.DISPEL_BY_SLOT))
 				{
 					cancelSkills.add(sk);
 				}
-				else if (sk.HasEffectType(EffectType.HEAL))
+				else if (sk.HasEffectType(EffectTypes.HEAL))
 				{
 					healSkills.add(sk);
 					hasHealOrResurrect = true;
 				}
-				else if (sk.HasEffectType(EffectType.SLEEP))
+				else if (sk.HasEffectType(EffectTypes.SLEEP))
 				{
 					sleepSkills.add(sk);
 				}
-				else if (sk.HasEffectType(EffectType.BLOCK_ACTIONS))
+				else if (sk.HasEffectType(EffectTypes.BLOCK_ACTIONS))
 				{
 					// hardcoding petrification until improvements are made to
 					// EffectTemplate... petrification is totally different for
@@ -1172,19 +1172,19 @@ public class CreatureAI: AbstractAI
 						}
 					}
 				}
-				else if (sk.HasEffectType(EffectType.ROOT))
+				else if (sk.HasEffectType(EffectTypes.ROOT))
 				{
 					rootSkills.add(sk);
 				}
-				else if (sk.HasEffectType(EffectType.BLOCK_CONTROL))
+				else if (sk.HasEffectType(EffectTypes.BLOCK_CONTROL))
 				{
 					debuffSkills.add(sk);
 				}
-				else if (sk.HasEffectType(EffectType.MUTE))
+				else if (sk.HasEffectType(EffectTypes.MUTE))
 				{
 					muteSkills.add(sk);
 				}
-				else if (sk.HasEffectType(EffectType.RESURRECTION))
+				else if (sk.HasEffectType(EffectTypes.RESURRECTION))
 				{
 					resurrectSkills.add(sk);
 					hasHealOrResurrect = true;

@@ -41,7 +41,7 @@ public sealed class ConditionPlayerCanSwitchSubclass(int subIndex): Condition
         }
         else if (player.isAllSkillsDisabled())
             canSwitchSub = false;
-        else if (player.isAffected(EffectFlag.MUTED))
+        else if (player.isAffected(EffectFlags.MUTED))
         {
             canSwitchSub = false;
             player.sendPacket(SystemMessageId.YOU_CANNOT_CHANGE_THE_CLASS_BECAUSE_OF_IDENTITY_CRISIS);

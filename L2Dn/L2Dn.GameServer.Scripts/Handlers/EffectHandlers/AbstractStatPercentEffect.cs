@@ -22,7 +22,7 @@ public abstract class AbstractStatPercentEffect: AbstractEffect
         _amount = @params.getDouble("amount", 1);
         if (@params.getEnum("mode", StatModifierType.PER) != StatModifierType.PER)
         {
-            LOGGER.Warn(GetType().Name + " can only use PER mode.");
+            Logger.Warn(GetType().Name + " can only use PER mode.");
         }
     }
 

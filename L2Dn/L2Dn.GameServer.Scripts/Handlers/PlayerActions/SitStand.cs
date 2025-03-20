@@ -64,7 +64,7 @@ public class SitStand: IPlayerActionHandler
 
         if (player.isFakeDeath())
         {
-            player.stopEffects(EffectFlag.FAKE_DEATH);
+            player.stopEffects(EffectFlags.FAKE_DEATH);
         }
         else if (player.isSitting())
         {

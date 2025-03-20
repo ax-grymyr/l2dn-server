@@ -14,9 +14,9 @@ public sealed class BlockControl: AbstractEffect
     {
     }
 
-    public override long getEffectFlags() => EffectFlag.BLOCK_CONTROL.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.BLOCK_CONTROL;
 
-    public override EffectType getEffectType() => EffectType.BLOCK_CONTROL;
+    public override EffectTypes EffectType => EffectTypes.BLOCK_CONTROL;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);

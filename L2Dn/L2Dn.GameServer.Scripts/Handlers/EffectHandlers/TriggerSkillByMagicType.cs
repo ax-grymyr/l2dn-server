@@ -75,7 +75,7 @@ public sealed class TriggerSkillByMagicType: AbstractEffect
         }
         catch (Exception e)
         {
-            LOGGER.Error("Exception in ITargetTypeHandler.getTarget(): " + e);
+            Logger.Error("Exception in ITargetTypeHandler.getTarget(): " + e);
         }
 
         if (target == null || !target.isCreature())

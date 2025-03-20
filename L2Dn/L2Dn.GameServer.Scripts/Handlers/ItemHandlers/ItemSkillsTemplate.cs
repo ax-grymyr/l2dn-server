@@ -61,7 +61,7 @@ public class ItemSkillsTemplate: IItemHandler
 			if (itemSkill != null)
 			{
                 Player? player = playable.getActingPlayer();
-				if (itemSkill.HasEffectType(EffectType.EXTRACT_ITEM) && player != null && !player.isInventoryUnder80(false))
+				if (itemSkill.HasEffectType(EffectTypes.EXTRACT_ITEM) && player != null && !player.isInventoryUnder80(false))
 				{
 					player.sendPacket(SystemMessageId.NOT_ENOUGH_SPACE_IN_INVENTORY_UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_IS_LESS_THAN_80_AND_SLOT_COUNT_IS_LESS_THAN_90_OF_CAPACITY);
 					return false;
@@ -72,7 +72,7 @@ public class ItemSkillsTemplate: IItemHandler
 					hasConsumeSkill = true;
 				}
 
-				if (!itemSkill.HasEffectType(EffectType.SUMMON_PET) && !itemSkill.CheckCondition(playable, playable.getTarget(), true))
+				if (!itemSkill.HasEffectType(EffectTypes.SUMMON_PET) && !itemSkill.CheckCondition(playable, playable.getTarget(), true))
 				{
 					continue;
 				}
@@ -101,7 +101,7 @@ public class ItemSkillsTemplate: IItemHandler
 					playable.sendPacket(sm);
 				}
 
-				if (playable.isPlayer() && itemSkill.HasEffectType(EffectType.SUMMON_PET))
+				if (playable.isPlayer() && itemSkill.HasEffectType(EffectTypes.SUMMON_PET))
 				{
 					playable.doCast(itemSkill);
 					successfulUse = true;

@@ -43,7 +43,7 @@ public sealed class ModifyVital: AbstractEffect
         }
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
     {
@@ -55,8 +55,8 @@ public sealed class ModifyVital: AbstractEffect
         if (effected.isDead())
             return;
 
-        if (effector.isPlayer() && effected.isPlayer() && effected.isAffected(EffectFlag.DUELIST_FURY) &&
-            !effector.isAffected(EffectFlag.DUELIST_FURY))
+        if (effector.isPlayer() && effected.isPlayer() && effected.isAffected(EffectFlags.DUELIST_FURY) &&
+            !effector.isAffected(EffectFlags.DUELIST_FURY))
             return;
 
         switch (_type)

@@ -36,9 +36,9 @@ public sealed class SummonNpc: AbstractEffect
         _isAggressive = @params.getBoolean("aggressive", true); // Used by Decoy.
     }
 
-    public override EffectType getEffectType() => EffectType.SUMMON_NPC;
+    public override EffectTypes EffectType => EffectTypes.SUMMON_NPC;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
@@ -48,7 +48,7 @@ public sealed class SummonNpc: AbstractEffect
 
         if (_npcId <= 0 || _npcCount <= 0)
         {
-            LOGGER.Warn(GetType().Name + ": Invalid NPC ID or count skill ID: " + skill.Id);
+            Logger.Warn(GetType().Name + ": Invalid NPC ID or count skill ID: " + skill.Id);
             return;
         }
 
@@ -58,7 +58,7 @@ public sealed class SummonNpc: AbstractEffect
         NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(_npcId);
         if (npcTemplate == null)
         {
-            LOGGER.Warn(GetType().Name + ": Spawn of the nonexisting NPC ID: " + _npcId + ", skill ID:" +
+            Logger.Warn(GetType().Name + ": Spawn of the nonexisting NPC ID: " + _npcId + ", skill ID:" +
                 skill.Id);
 
             return;
@@ -147,7 +147,7 @@ public sealed class SummonNpc: AbstractEffect
                 }
                 catch (Exception e)
                 {
-                    LOGGER.Warn(GetType().Name + ": Unable to create spawn. " + e);
+                    Logger.Warn(GetType().Name + ": Unable to create spawn. " + e);
                     return;
                 }
 
@@ -157,7 +157,7 @@ public sealed class SummonNpc: AbstractEffect
                 Npc? npc = spawn.doSpawn(_isSummonSpawn);
                 if (npc == null)
                 {
-                    LOGGER.Warn(GetType().Name + ": Unable to spawn NPC. ");
+                    Logger.Warn(GetType().Name + ": Unable to spawn NPC. ");
                     return;
                 }
 

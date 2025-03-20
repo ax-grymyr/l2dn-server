@@ -22,7 +22,7 @@ public sealed class Betray: AbstractEffect
         return effector.isPlayer() && effected.isSummon();
     }
 
-    public override long getEffectFlags() => EffectFlag.BETRAYED.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.BETRAYED;
 
     public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
     {

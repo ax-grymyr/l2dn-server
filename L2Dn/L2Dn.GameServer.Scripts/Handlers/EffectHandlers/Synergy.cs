@@ -78,7 +78,7 @@ public sealed class Synergy: AbstractEffect
             }
             else
             {
-                LOGGER.Warn("Skill not found effect called from " + skill);
+                Logger.Warn("Skill not found effect called from " + skill);
             }
         }
         else

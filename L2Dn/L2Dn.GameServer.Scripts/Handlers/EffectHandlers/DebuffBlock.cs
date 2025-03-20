@@ -13,7 +13,7 @@ public sealed class DebuffBlock: AbstractEffect
     {
     }
 
-    public override long getEffectFlags() => EffectFlag.DEBUFF_BLOCK.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.DEBUFF_BLOCK;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);

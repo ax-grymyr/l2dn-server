@@ -26,9 +26,9 @@ public sealed class Lethal: AbstractEffect
         _halfLethal = @params.getDouble("halfLethal", 0);
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
-    public override EffectType getEffectType() => EffectType.LETHAL_ATTACK;
+    public override EffectTypes EffectType => EffectTypes.LETHAL_ATTACK;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
@@ -41,8 +41,8 @@ public sealed class Lethal: AbstractEffect
         if (!effected.isLethalable() || effected.isHpBlocked())
             return;
 
-        if (effector.isPlayer() && effected.isPlayer() && effected.isAffected(EffectFlag.DUELIST_FURY) &&
-            !effector.isAffected(EffectFlag.DUELIST_FURY))
+        if (effector.isPlayer() && effected.isPlayer() && effected.isAffected(EffectFlags.DUELIST_FURY) &&
+            !effector.isAffected(EffectFlags.DUELIST_FURY))
             return;
 
         double chanceMultiplier = Formulas.calcAttributeBonus(effector, effected, skill) *

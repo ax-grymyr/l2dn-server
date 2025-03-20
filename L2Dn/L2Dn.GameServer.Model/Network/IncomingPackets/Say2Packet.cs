@@ -121,7 +121,7 @@ public struct Say2Packet: IIncomingPacket<GameSession>
 
 		if (player.isChatBanned() && text[0] != '.')
 		{
-			if (player.isAffected(EffectFlag.CHAT_BLOCK))
+			if (player.isAffected(EffectFlags.CHAT_BLOCK))
 			{
 				connection.Send(new SystemMessagePacket(SystemMessageId.YOU_HAVE_BEEN_REPORTED_AS_AN_ILLEGAL_PROGRAM_USER_SO_CHATTING_IS_NOT_ALLOWED));
 			}

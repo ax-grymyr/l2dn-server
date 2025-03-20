@@ -12,7 +12,7 @@ public sealed class Faceoff: AbstractEffect
     {
     }
 
-    public override long getEffectFlags() => EffectFlag.FACEOFF.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.FACEOFF;
 
     public override bool canStart(Creature effector, Creature effected, Skill skill)
     {

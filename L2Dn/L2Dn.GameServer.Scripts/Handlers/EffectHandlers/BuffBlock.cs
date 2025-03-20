@@ -13,7 +13,7 @@ public sealed class BuffBlock: AbstractEffect
     {
     }
 
-    public override long getEffectFlags() => EffectFlag.BUFF_BLOCK.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.BUFF_BLOCK;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);

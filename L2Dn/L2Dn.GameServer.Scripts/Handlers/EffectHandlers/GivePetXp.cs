@@ -16,7 +16,7 @@ public sealed class GivePetXp: AbstractEffect
         _xp = @params.getInt("xp", 0);
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

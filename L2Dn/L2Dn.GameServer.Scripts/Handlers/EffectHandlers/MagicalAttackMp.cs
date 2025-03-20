@@ -32,8 +32,8 @@ public sealed class MagicalAttackMp: AbstractEffect
         if (effected.isMpBlocked())
             return false;
 
-        if (effector.isPlayer() && effected.isPlayer() && effected.isAffected(EffectFlag.DUELIST_FURY) &&
-            !effector.isAffected(EffectFlag.DUELIST_FURY))
+        if (effector.isPlayer() && effected.isPlayer() && effected.isAffected(EffectFlags.DUELIST_FURY) &&
+            !effector.isAffected(EffectFlags.DUELIST_FURY))
             return false;
 
         if (!Formulas.calcMagicAffected(effector, effected, skill))
@@ -55,9 +55,9 @@ public sealed class MagicalAttackMp: AbstractEffect
         return true;
     }
 
-    public override EffectType getEffectType() => EffectType.MAGICAL_ATTACK;
+    public override EffectTypes EffectType => EffectTypes.MAGICAL_ATTACK;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

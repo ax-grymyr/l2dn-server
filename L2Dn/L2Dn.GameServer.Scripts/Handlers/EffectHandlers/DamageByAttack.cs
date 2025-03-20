@@ -29,7 +29,7 @@ public sealed class DamageByAttack: AbstractEffect
         _type = @params.getEnum("type", DamageByAttackType.NONE);
         if (@params.getEnum("mode", StatModifierType.DIFF) != StatModifierType.DIFF)
         {
-            LOGGER.Warn(GetType().Name + " can only use DIFF mode.");
+            Logger.Warn(GetType().Name + " can only use DIFF mode.");
         }
     }
 

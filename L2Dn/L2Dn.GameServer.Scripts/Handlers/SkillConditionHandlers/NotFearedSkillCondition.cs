@@ -16,6 +16,6 @@ public class NotFearedSkillCondition: ISkillCondition
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
-        return target != null && target.isCreature() && !((Creature)target).isAffected(EffectFlag.FEAR);
+        return target != null && target.isCreature() && !((Creature)target).isAffected(EffectFlags.FEAR);
     }
 }

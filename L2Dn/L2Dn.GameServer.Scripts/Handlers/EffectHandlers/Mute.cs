@@ -18,9 +18,9 @@ public sealed class Mute: AbstractEffect
     {
     }
 
-    public override long getEffectFlags() => EffectFlag.MUTED.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.MUTED;
 
-    public override EffectType getEffectType() => EffectType.MUTE;
+    public override EffectTypes EffectType => EffectTypes.MUTE;
 
     public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
     {

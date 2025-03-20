@@ -23,16 +23,16 @@ public sealed class ManaHealByLevel: AbstractEffect
         _power = @params.getDouble("power", 0);
     }
 
-    public override EffectType getEffectType() => EffectType.MANAHEAL_BY_LEVEL;
+    public override EffectTypes EffectType => EffectTypes.MANAHEAL_BY_LEVEL;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isDead() || effected.isDoor() || effected.isMpBlocked())
             return;
 
-        if (effected != effector && effected.isAffected(EffectFlag.FACEOFF))
+        if (effected != effector && effected.isAffected(EffectFlags.FACEOFF))
             return;
 
         double amount = _power;

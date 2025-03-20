@@ -977,7 +977,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 							mpConsume = weaponItem.getReducedMpConsume();
 						}
 
-						mpConsume = isAffected(EffectFlag.CHEAPSHOT) ? 0 : mpConsume;
+						mpConsume = isAffected(EffectFlags.CHEAPSHOT) ? 0 : mpConsume;
 						if (_status.getCurrentMp() < mpConsume)
 						{
 							// If Player doesn't have enough MP, stop the attack
@@ -1284,7 +1284,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		// Get proper casting type.
 		SkillCastingType castingType = SkillCastingType.NORMAL;
-		if (skill.CanDoubleCast && isAffected(EffectFlag.DOUBLE_CAST) && isCastingNow(castingType))
+		if (skill.CanDoubleCast && isAffected(EffectFlags.DOUBLE_CAST) && isCastingNow(castingType))
 		{
 			castingType = SkillCastingType.NORMAL_SECOND;
 		}
@@ -1525,7 +1525,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return true;
 		}
 
-		if (isAffected(EffectFlag.CONDITIONAL_BLOCK_ACTIONS) && !isBlockedActionsAllowedSkill(skill))
+		if (isAffected(EffectFlags.CONDITIONAL_BLOCK_ACTIONS) && !isBlockedActionsAllowedSkill(skill))
 		{
 			return true;
 		}
@@ -1933,7 +1933,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public bool isControlBlocked()
 	{
-		return isAffected(EffectFlag.BLOCK_CONTROL);
+		return isAffected(EffectFlags.BLOCK_CONTROL);
 	}
 
 	/**
@@ -1962,7 +1962,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public bool isConfused()
 	{
-		return isAffected(EffectFlag.CONFUSED);
+		return isAffected(EffectFlags.CONFUSED);
 	}
 
 	/**
@@ -1998,17 +1998,17 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public bool isMuted()
 	{
-		return isAffected(EffectFlag.MUTED);
+		return isAffected(EffectFlags.MUTED);
 	}
 
 	public bool isPhysicalMuted()
 	{
-		return isAffected(EffectFlag.PSYCHICAL_MUTED);
+		return isAffected(EffectFlags.PSYCHICAL_MUTED);
 	}
 
 	public bool isPhysicalAttackMuted()
 	{
-		return isAffected(EffectFlag.PSYCHICAL_ATTACK_MUTED);
+		return isAffected(EffectFlags.PSYCHICAL_ATTACK_MUTED);
 	}
 
 	/**
@@ -2046,7 +2046,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public bool isDisarmed()
 	{
-		return isAffected(EffectFlag.DISARMED);
+		return isAffected(EffectFlags.DISARMED);
 	}
 
 	/**
@@ -2106,7 +2106,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public bool isRooted()
 	{
-		return isAffected(EffectFlag.ROOTED);
+		return isAffected(EffectFlags.ROOTED);
 	}
 
 	/**
@@ -2172,7 +2172,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public bool hasBlockActions()
 	{
-		return _blockActions || isAffected(EffectFlag.BLOCK_ACTIONS) || isAffected(EffectFlag.CONDITIONAL_BLOCK_ACTIONS);
+		return _blockActions || isAffected(EffectFlags.BLOCK_ACTIONS) || isAffected(EffectFlags.CONDITIONAL_BLOCK_ACTIONS);
 	}
 
 	public void setBlockActions(bool blockActions)
@@ -2182,7 +2182,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public bool isBetrayed()
 	{
-		return isAffected(EffectFlag.BETRAYED);
+		return isAffected(EffectFlags.BETRAYED);
 	}
 
 	public bool isTeleporting()
@@ -2212,27 +2212,27 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public virtual bool isUndying()
 	{
-		return _isUndying || isInvul() || isAffected(EffectFlag.IGNORE_DEATH) || isInsideZone(ZoneId.UNDYING);
+		return _isUndying || isInvul() || isAffected(EffectFlags.IGNORE_DEATH) || isInsideZone(ZoneId.UNDYING);
 	}
 
 	public bool isHpBlocked()
 	{
-		return isInvul() || isAffected(EffectFlag.HP_BLOCK);
+		return isInvul() || isAffected(EffectFlags.HP_BLOCK);
 	}
 
 	public bool isMpBlocked()
 	{
-		return isInvul() || isAffected(EffectFlag.MP_BLOCK);
+		return isInvul() || isAffected(EffectFlags.MP_BLOCK);
 	}
 
 	public bool isBuffBlocked()
 	{
-		return isAffected(EffectFlag.BUFF_BLOCK);
+		return isAffected(EffectFlags.BUFF_BLOCK);
 	}
 
 	public bool isDebuffBlocked()
 	{
-		return isInvul() || isAffected(EffectFlag.DEBUFF_BLOCK);
+		return isInvul() || isAffected(EffectFlags.DEBUFF_BLOCK);
 	}
 
 	public virtual bool isUndead()
@@ -2242,7 +2242,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public bool isResurrectionBlocked()
 	{
-		return isAffected(EffectFlag.BLOCK_RESURRECTION);
+		return isAffected(EffectFlags.BLOCK_RESURRECTION);
 	}
 
 	public bool isFlying()
@@ -2419,9 +2419,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		_effectList.stopSkillEffects(SkillFinishType.REMOVED, skill.Id);
 	}
 
-	public void stopEffects(EffectFlag effectFlag)
+	public void stopEffects(EffectFlags effectFlags)
 	{
-		_effectList.stopEffects(effectFlag);
+		_effectList.stopEffects(effectFlags);
 	}
 
 	/**
@@ -2457,7 +2457,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	{
 		if (removeEffects)
 		{
-			stopEffects(EffectFlag.FAKE_DEATH);
+			stopEffects(EffectFlags.FAKE_DEATH);
 		}
 
 		// if this is a player instance, start the grace period for this character (grace from mobs only)!
@@ -5008,9 +5008,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 * @return bool
 	 * @see EffectList#isAffected(EffectFlag)
 	 */
-	public bool isAffected(EffectFlag flag)
+	public bool isAffected(EffectFlags flags)
 	{
-		return _effectList.isAffected(flag);
+		return _effectList.isAffected(flags);
 	}
 
 	public virtual Team getTeam()
@@ -5475,17 +5475,17 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public override bool isTargetable()
 	{
-		return base.isTargetable() && !isAffected(EffectFlag.UNTARGETABLE);
+		return base.isTargetable() && !isAffected(EffectFlags.UNTARGETABLE);
 	}
 
 	public bool isTargetingDisabled()
 	{
-		return isAffected(EffectFlag.TARGETING_DISABLED);
+		return isAffected(EffectFlags.TARGETING_DISABLED);
 	}
 
 	public bool cannotEscape()
 	{
-		return isAffected(EffectFlag.CANNOT_ESCAPE);
+		return isAffected(EffectFlags.CANNOT_ESCAPE);
 	}
 
 	/**

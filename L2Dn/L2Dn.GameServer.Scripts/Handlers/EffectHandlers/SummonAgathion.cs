@@ -21,7 +21,7 @@ public sealed class SummonAgathion: AbstractEffect
         _npcId = @params.getInt("npcId");
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

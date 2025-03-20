@@ -40,7 +40,7 @@ public sealed class TriggerHealPercentBySkill: AbstractEffect
         effected.Events.Unsubscribe<OnCreatureSkillFinishCast>(OnSkillUseEvent);
     }
 
-    public override EffectType getEffectType() => EffectType.HEAL;
+    public override EffectTypes EffectType => EffectTypes.HEAL;
 
     private void OnSkillUseEvent(OnCreatureSkillFinishCast @event)
     {

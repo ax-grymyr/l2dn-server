@@ -19,7 +19,7 @@ public sealed class GiveSp: AbstractEffect
         _sp = @params.getInt("sp", 0);
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

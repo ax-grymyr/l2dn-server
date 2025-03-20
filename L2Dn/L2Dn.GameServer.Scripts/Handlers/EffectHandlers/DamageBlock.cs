@@ -21,9 +21,8 @@ public sealed class DamageBlock: AbstractEffect
         _blockMp = type.equalsIgnoreCase("BLOCK_MP");
     }
 
-    public override long getEffectFlags() =>
-        _blockHp ? EffectFlag.HP_BLOCK.getMask() :
-        _blockMp ? EffectFlag.MP_BLOCK.getMask() : EffectFlag.NONE.getMask();
+    public override EffectFlags getEffectFlags() =>
+        _blockHp ? EffectFlags.HP_BLOCK : _blockMp ? EffectFlags.MP_BLOCK : EffectFlags.NONE;
 
     public override int GetHashCode() => HashCode.Combine(_blockHp, _blockMp);
     public override bool Equals(object? obj) => this.EqualsTo(obj, static x => (x._blockHp, x._blockMp));

@@ -56,7 +56,7 @@ public sealed class CallSkillOnActionTime: AbstractEffect
         }
         else
         {
-            LOGGER.Warn("Skill not found effect called from " + skill);
+            Logger.Warn("Skill not found effect called from " + skill);
         }
 
         return skill.IsToggle;

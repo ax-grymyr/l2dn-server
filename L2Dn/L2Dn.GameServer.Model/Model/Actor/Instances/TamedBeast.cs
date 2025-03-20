@@ -325,11 +325,12 @@ public class TamedBeast: FeedableBeast
 			foreach (Skill skill in getTemplate().getSkills().Values)
 			{
 				// if the skill is a buff, check if the owner has it already [ owner.getEffect(Skill skill) ]
-				if (Rnd.get(5) < chance && skill.HasEffectType(EffectType.CPHEAL, EffectType.HEAL, EffectType.MANAHEAL_BY_LEVEL, EffectType.MANAHEAL_PERCENT))
-				{
-					sitCastAndFollow(skill, _owner);
-				}
-			}
+                if (Rnd.get(5) < chance && skill.HasEffectType(EffectTypes.CPHEAL | EffectTypes.HEAL |
+                        EffectTypes.MANAHEAL_BY_LEVEL | EffectTypes.MANAHEAL_PERCENT))
+                {
+                    sitCastAndFollow(skill, _owner);
+                }
+            }
 		}
 	}
 

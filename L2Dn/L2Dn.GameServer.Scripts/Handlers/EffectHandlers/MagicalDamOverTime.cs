@@ -25,7 +25,7 @@ public sealed class MagicalDamOverTime: AbstractEffect
         Ticks = @params.getInt("ticks");
     }
 
-    public override EffectType getEffectType() => EffectType.MAGICAL_DMG_OVER_TIME;
+    public override EffectTypes EffectType => EffectTypes.MAGICAL_DMG_OVER_TIME;
 
     public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {

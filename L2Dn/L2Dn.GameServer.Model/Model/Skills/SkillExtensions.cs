@@ -197,7 +197,7 @@ public static class SkillExtensions
 
         foreach (AbstractEffect effect in effects)
         {
-            if (effect.isInstant())
+            if (effect.IsInstant)
             {
                 if (applyInstantEffects && effect.calcSuccess(info.getEffector(), info.getEffected(), skill))
                 {
@@ -529,7 +529,7 @@ public static class SkillExtensions
     public static Skill? GetAttachedSkill(this Skill skill, Creature creature)
     {
         // If character is double casting, return double cast skill.
-        if (skill.DoubleCastSkill > 0 && creature.isAffected(EffectFlag.DOUBLE_CAST))
+        if (skill.DoubleCastSkill > 0 && creature.isAffected(EffectFlags.DOUBLE_CAST))
             return SkillData.Instance.GetSkill(skill.DoubleCastSkill, skill.Level, skill.SubLevel);
 
         int attachToggleGroupId = skill.AttachToggleGroupId;

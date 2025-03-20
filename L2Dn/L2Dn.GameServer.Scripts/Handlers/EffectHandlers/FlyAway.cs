@@ -23,7 +23,7 @@ public sealed class FlyAway: AbstractEffect
         _radius = @params.getInt("radius");
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

@@ -74,7 +74,7 @@ public class PlayerStatus: PlayableStatus
 			return;
 		}
 
-		if (getActiveChar().isAffected(EffectFlag.DUELIST_FURY) && attacker != null && !attacker.isAffected(EffectFlag.FACEOFF))
+		if (getActiveChar().isAffected(EffectFlags.DUELIST_FURY) && attacker != null && !attacker.isAffected(EffectFlags.FACEOFF))
 		{
 			return;
 		}

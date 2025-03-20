@@ -25,9 +25,9 @@ public sealed class SummonHallucination: AbstractEffect
         _npcCount = @params.getInt("npcCount", 1);
     }
 
-    public override EffectType getEffectType() => EffectType.SUMMON_NPC;
+    public override EffectTypes EffectType => EffectTypes.SUMMON_NPC;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
@@ -36,7 +36,7 @@ public sealed class SummonHallucination: AbstractEffect
 
         if (_npcId <= 0 || _npcCount <= 0)
         {
-            LOGGER.Warn(GetType().Name + ": Invalid NPC ID or count skill ID: " + skill.Id);
+            Logger.Warn(GetType().Name + ": Invalid NPC ID or count skill ID: " + skill.Id);
             return;
         }
 
@@ -50,7 +50,7 @@ public sealed class SummonHallucination: AbstractEffect
         NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(_npcId);
         if (npcTemplate == null)
         {
-            LOGGER.Warn(GetType().Name + ": Spawn of the nonexisting NPC ID: " + _npcId + ", skill ID:" +
+            Logger.Warn(GetType().Name + ": Spawn of the nonexisting NPC ID: " + _npcId + ", skill ID:" +
                 skill.Id);
 
             return;

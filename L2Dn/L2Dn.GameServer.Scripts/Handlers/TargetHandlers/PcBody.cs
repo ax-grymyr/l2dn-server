@@ -47,7 +47,7 @@ public class PcBody: ITargetTypeHandler
 		Playable target = (Playable) selectedTarget;
 		if (target.isDead())
 		{
-			if (skill.HasEffectType(EffectType.RESURRECTION))
+			if (skill.HasEffectType(EffectTypes.RESURRECTION))
 			{
 				if (creature.isResurrectionBlocked() || target.isResurrectionBlocked())
 				{

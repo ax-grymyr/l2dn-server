@@ -33,7 +33,7 @@ public sealed class Untargetable: AbstractEffect
         });
     }
 
-    public override long getEffectFlags() => EffectFlag.UNTARGETABLE.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.UNTARGETABLE;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);

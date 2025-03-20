@@ -470,41 +470,41 @@ public class NpcData: DataReaderBase
 								aiSkillScopes.Add(shortOrLongRangeScope);
 							}
 						}
-						else if (skill.HasEffectType(EffectType.DISPEL, EffectType.DISPEL_BY_SLOT))
+						else if (skill.HasEffectType(EffectTypes.DISPEL | EffectTypes.DISPEL_BY_SLOT))
 						{
 							aiSkillScopes.Add(AISkillScope.NEGATIVE);
 							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
-						else if (skill.HasEffectType(EffectType.HEAL))
+						else if (skill.HasEffectType(EffectTypes.HEAL))
 						{
 							aiSkillScopes.Add(AISkillScope.HEAL);
 						}
-						else if (skill.HasEffectType(EffectType.PHYSICAL_ATTACK, EffectType.PHYSICAL_ATTACK_HP_LINK,
-							         EffectType.MAGICAL_ATTACK, EffectType.DEATH_LINK, EffectType.HP_DRAIN))
+						else if (skill.HasEffectType(EffectTypes.PHYSICAL_ATTACK | EffectTypes.PHYSICAL_ATTACK_HP_LINK |
+							         EffectTypes.MAGICAL_ATTACK | EffectTypes.DEATH_LINK | EffectTypes.HP_DRAIN))
 						{
 							aiSkillScopes.Add(AISkillScope.ATTACK);
 							aiSkillScopes.Add(AISkillScope.UNIVERSAL);
 							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
-						else if (skill.HasEffectType(EffectType.SLEEP))
+						else if (skill.HasEffectType(EffectTypes.SLEEP))
 						{
 							aiSkillScopes.Add(AISkillScope.IMMOBILIZE);
 						}
-						else if (skill.HasEffectType(EffectType.BLOCK_ACTIONS, EffectType.ROOT))
+						else if (skill.HasEffectType(EffectTypes.BLOCK_ACTIONS | EffectTypes.ROOT))
 						{
 							aiSkillScopes.Add(AISkillScope.IMMOBILIZE);
 							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
-						else if (skill.HasEffectType(EffectType.MUTE, EffectType.BLOCK_CONTROL))
+						else if (skill.HasEffectType(EffectTypes.MUTE | EffectTypes.BLOCK_CONTROL))
 						{
 							aiSkillScopes.Add(AISkillScope.COT);
 							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
-						else if (skill.HasEffectType(EffectType.DMG_OVER_TIME, EffectType.DMG_OVER_TIME_PERCENT))
+						else if (skill.HasEffectType(EffectTypes.DMG_OVER_TIME | EffectTypes.DMG_OVER_TIME_PERCENT))
 						{
 							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
-						else if (skill.HasEffectType(EffectType.RESURRECTION))
+						else if (skill.HasEffectType(EffectTypes.RESURRECTION))
 						{
 							aiSkillScopes.Add(AISkillScope.RES);
 						}

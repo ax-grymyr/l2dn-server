@@ -43,17 +43,11 @@ public sealed class KnockBack: AbstractEffect
         return _knockDown || Formulas.calcProbability(100, effector, effected, skill);
     }
 
-    public override bool isInstant() => !_knockDown;
+    public override bool IsInstant => !_knockDown;
 
-    public override long getEffectFlags()
-    {
-        return _knockDown ? EffectFlag.BLOCK_ACTIONS.getMask() : base.getEffectFlags();
-    }
+    public override EffectFlags getEffectFlags() => _knockDown ? EffectFlags.BLOCK_ACTIONS : base.getEffectFlags();
 
-    public override EffectType getEffectType()
-    {
-        return _knockDown ? EffectType.BLOCK_ACTIONS : base.getEffectType();
-    }
+    public override EffectTypes EffectType => _knockDown ? EffectTypes.BLOCK_ACTIONS : base.EffectType;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

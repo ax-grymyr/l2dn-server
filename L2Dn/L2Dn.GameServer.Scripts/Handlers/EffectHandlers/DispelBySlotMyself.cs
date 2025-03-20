@@ -23,9 +23,9 @@ public sealed class DispelBySlotMyself: AbstractEffect
         _dispelAbnormals = ParseUtil.ParseEnumSet<AbnormalType>(dispel);
     }
 
-    public override EffectType getEffectType() => EffectType.DISPEL_BY_SLOT;
+    public override EffectTypes EffectType => EffectTypes.DISPEL_BY_SLOT;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

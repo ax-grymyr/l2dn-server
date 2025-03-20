@@ -22,14 +22,14 @@ public sealed class ManaHeal: AbstractEffect
         _power = @params.getDouble("power", 0);
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isDead() || effected.isDoor() || effected.isMpBlocked())
             return;
 
-        if (effected != effector && effected.isAffected(EffectFlag.FACEOFF))
+        if (effected != effector && effected.isAffected(EffectFlags.FACEOFF))
             return;
 
         double amount = _power;

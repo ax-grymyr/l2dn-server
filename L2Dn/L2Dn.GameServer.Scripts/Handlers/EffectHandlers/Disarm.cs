@@ -27,7 +27,7 @@ public sealed class Disarm: AbstractEffect
         return effected.isPlayer();
     }
 
-    public override long getEffectFlags() => EffectFlag.DISARMED.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.DISARMED;
 
     public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
     {

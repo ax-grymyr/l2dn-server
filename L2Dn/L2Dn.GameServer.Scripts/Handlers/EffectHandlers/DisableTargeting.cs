@@ -26,7 +26,7 @@ public sealed class DisableTargeting: AbstractEffect
         effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
     }
 
-    public override long getEffectFlags() => EffectFlag.TARGETING_DISABLED.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.TARGETING_DISABLED;
 
     public override int GetHashCode() => this.GetSingletonHashCode();
     public override bool Equals(object? obj) => this.EqualsTo(obj);

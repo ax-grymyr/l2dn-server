@@ -22,7 +22,7 @@ public sealed class DoubleCast: AbstractEffect
         _addedToggles = [];
     }
 
-    public override long getEffectFlags() => EffectFlag.DOUBLE_CAST.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.DOUBLE_CAST;
 
     public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
     {

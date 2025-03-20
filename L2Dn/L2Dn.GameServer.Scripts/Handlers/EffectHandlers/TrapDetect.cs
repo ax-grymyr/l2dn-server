@@ -20,7 +20,7 @@ public sealed class TrapDetect: AbstractEffect
         _power = @params.getInt("power");
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

@@ -33,9 +33,9 @@ public sealed class PhysicalAttackHpLink: AbstractEffect
         return !Formulas.calcSkillEvasion(effector, effected, skill);
     }
 
-    public override EffectType getEffectType() => EffectType.PHYSICAL_ATTACK_HP_LINK;
+    public override EffectTypes EffectType => EffectTypes.PHYSICAL_ATTACK_HP_LINK;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

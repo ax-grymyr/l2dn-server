@@ -20,7 +20,7 @@ public sealed class ResetInstanceEntry: AbstractEffect
         _instanceIds = ParseUtil.ParseSet<int>(instanceIds);
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

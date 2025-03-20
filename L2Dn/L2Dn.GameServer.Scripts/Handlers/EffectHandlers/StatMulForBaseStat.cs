@@ -25,7 +25,7 @@ public sealed class StatMulForBaseStat: AbstractEffect
         _amount = @params.getDouble("amount", 0);
         if (@params.getEnum("mode", StatModifierType.PER) != StatModifierType.PER)
         {
-            LOGGER.Warn(GetType().Name + " can only use PER mode.");
+            Logger.Warn(GetType().Name + " can only use PER mode.");
         }
     }
 

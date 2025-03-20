@@ -18,7 +18,7 @@ public abstract class AbstractStatAddEffect: AbstractEffect
         _stat = stat;
         _amount = @params.getDouble("amount", 0);
         if (@params.getEnum("mode", StatModifierType.DIFF) != StatModifierType.DIFF)
-            LOGGER.Warn(GetType().Name + " can only use DIFF mode.");
+            Logger.Warn(GetType().Name + " can only use DIFF mode.");
     }
 
     public double Amount => _amount;

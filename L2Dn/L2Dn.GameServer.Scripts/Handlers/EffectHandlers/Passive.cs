@@ -15,7 +15,7 @@ public sealed class Passive: AbstractEffect
     {
     }
 
-    public override long getEffectFlags() => EffectFlag.PASSIVE.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.PASSIVE;
 
     public override bool canStart(Creature effector, Creature effected, Skill skill)
     {

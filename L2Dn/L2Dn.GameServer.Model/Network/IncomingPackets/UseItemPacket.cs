@@ -125,7 +125,7 @@ public struct UseItemPacket: IIncomingPacket<GameSession>
 			{
 				foreach (ItemSkillHolder holder in skills)
 				{
-					if (holder.getSkill().HasEffectType(EffectType.TELEPORT))
+					if (holder.getSkill().HasEffectType(EffectTypes.TELEPORT))
 					{
 						return ValueTask.CompletedTask;
 					}

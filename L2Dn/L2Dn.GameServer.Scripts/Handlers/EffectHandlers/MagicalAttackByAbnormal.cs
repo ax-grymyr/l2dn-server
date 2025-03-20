@@ -27,9 +27,9 @@ public sealed class MagicalAttackByAbnormal: AbstractEffect
         return !Formulas.calcSkillEvasion(effector, effected, skill);
     }
 
-    public override EffectType getEffectType() => EffectType.MAGICAL_ATTACK;
+    public override EffectTypes EffectType => EffectTypes.MAGICAL_ATTACK;
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {

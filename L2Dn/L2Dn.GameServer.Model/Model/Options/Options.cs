@@ -122,7 +122,7 @@ public class Options
 			BuffInfo info = new BuffInfo(playable, playable, skill, true, null, this);
 			foreach (AbstractEffect effect in _effects)
 			{
-				if (effect.isInstant())
+				if (effect.IsInstant)
 				{
 					if (effect.calcSuccess(info.getEffector(), info.getEffected(), info.getSkill()))
 					{

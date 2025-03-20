@@ -28,7 +28,7 @@ public sealed class TriggerSkill: AbstractEffect
         _adjustLevel = @params.getBoolean("adjustLevel", false);
     }
 
-    public override bool isInstant() => true;
+    public override bool IsInstant => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
@@ -51,7 +51,7 @@ public sealed class TriggerSkill: AbstractEffect
         }
         catch (Exception e)
         {
-            LOGGER.Warn("Exception in ITargetTypeHandler.getTarget(): " + e);
+            Logger.Warn("Exception in ITargetTypeHandler.getTarget(): " + e);
         }
 
         if (target == null || !target.isCreature())

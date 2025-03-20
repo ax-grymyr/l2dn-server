@@ -18,9 +18,9 @@ public sealed class Root: AbstractEffect
     {
     }
 
-    public override long getEffectFlags() => EffectFlag.ROOTED.getMask();
+    public override EffectFlags getEffectFlags() => EffectFlags.ROOTED;
 
-    public override EffectType getEffectType() => EffectType.ROOT;
+    public override EffectTypes EffectType => EffectTypes.ROOT;
 
     public override void onExit(Creature effector, Creature effected, Skill skill)
     {
