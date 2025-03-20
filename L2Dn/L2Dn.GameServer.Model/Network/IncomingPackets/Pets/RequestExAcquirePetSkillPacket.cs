@@ -31,7 +31,7 @@ public struct RequestExAcquirePetSkillPacket: IIncomingPacket<GameSession>
         if (pet == null)
             return ValueTask.CompletedTask;
 
-        Skill? skill = SkillData.getInstance().getSkill(_skillId, _skillLevel);
+        Skill? skill = SkillData.Instance.GetSkill(_skillId, _skillLevel);
         if (skill == null)
             return ValueTask.CompletedTask;
 

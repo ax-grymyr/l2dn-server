@@ -82,7 +82,7 @@ public class VipManager
 			int oldSkillId = VipData.getInstance().getSkillId((byte) (player.getVipTier() - 1));
 			if (oldSkillId > 0)
 			{
-				Skill? oldSkill = SkillData.getInstance().getSkill(oldSkillId, 1);
+				Skill? oldSkill = SkillData.Instance.GetSkill(oldSkillId, 1);
 				if (oldSkill != null)
 				{
 					player.removeSkill(oldSkill);
@@ -93,7 +93,7 @@ public class VipManager
 		int skillId = VipData.getInstance().getSkillId(player.getVipTier());
 		if (skillId > 0)
 		{
-			Skill? skill = SkillData.getInstance().getSkill(skillId, 1);
+			Skill? skill = SkillData.Instance.GetSkill(skillId, 1);
 			if (skill != null)
 			{
 				player.addSkill(skill);

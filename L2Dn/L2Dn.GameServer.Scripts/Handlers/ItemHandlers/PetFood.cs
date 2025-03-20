@@ -37,7 +37,7 @@ public class PetFood: IItemHandler
 	private bool useFood(Playable activeChar, int skillId, int skillLevel, Item item)
 	{
         Player? player = activeChar.getActingPlayer();
-		Skill? skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+		Skill? skill = SkillData.Instance.GetSkill(skillId, skillLevel);
 		if (skill != null)
 		{
 			if (activeChar.isPet())

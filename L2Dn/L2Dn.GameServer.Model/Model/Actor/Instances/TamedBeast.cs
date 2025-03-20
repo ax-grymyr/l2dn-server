@@ -402,7 +402,7 @@ public class TamedBeast: FeedableBeast
 
 					// emulate a call to the owner using food, but bypass all checks for range, etc
 					// this also causes a call to the AI tasks handling feeding, which may call onReceiveFood as required.
-                    Skill skill = SkillData.getInstance().getSkill(foodTypeSkillId, 1) ??
+                    Skill skill = SkillData.Instance.GetSkill(foodTypeSkillId, 1) ??
                         throw new InvalidOperationException($"Skill not found, id={foodTypeSkillId}");
 
 					SkillCaster.triggerCast(owner, _tamedBeast, skill);

@@ -32,7 +32,7 @@ public struct RequestDispelPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        Skill? skill = SkillData.getInstance().getSkill(_skillId, _skillLevel, _skillSubLevel);
+        Skill? skill = SkillData.Instance.GetSkill(_skillId, _skillLevel, _skillSubLevel);
         if (skill == null)
             return ValueTask.CompletedTask;
 

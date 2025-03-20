@@ -218,7 +218,7 @@ public class PetData
                 }
 
                 // formula usable for skill that have 10 or more skill levels
-                int maxLevel = SkillData.getInstance().getMaxLevel(temp.getSkillId());
+                int maxLevel = SkillData.Instance.GetMaxLevel(temp.getSkillId());
                 if (lvl > maxLevel)
                 {
                     lvl = maxLevel;

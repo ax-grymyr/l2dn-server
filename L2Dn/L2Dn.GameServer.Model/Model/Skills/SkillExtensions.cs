@@ -530,7 +530,7 @@ public static class SkillExtensions
     {
         // If character is double casting, return double cast skill.
         if (skill.DoubleCastSkill > 0 && creature.isAffected(EffectFlag.DOUBLE_CAST))
-            return SkillData.getInstance().getSkill(skill.DoubleCastSkill, skill.Level, skill.SubLevel);
+            return SkillData.Instance.GetSkill(skill.DoubleCastSkill, skill.Level, skill.SubLevel);
 
         int attachToggleGroupId = skill.AttachToggleGroupId;
         ImmutableArray<AttachSkillHolder> attachSkills = skill.AttachSkills;
@@ -567,8 +567,8 @@ public static class SkillExtensions
         if (attachedSkill == null)
             return null;
 
-        return SkillData.getInstance().getSkill(attachedSkill.getSkillId(),
-            Math.Min(SkillData.getInstance().getMaxLevel(attachedSkill.getSkillId()), skill.Level),
+        return SkillData.Instance.GetSkill(attachedSkill.getSkillId(),
+            Math.Min(SkillData.Instance.GetMaxLevel(attachedSkill.getSkillId()), skill.Level),
             skill.SubLevel);
     }
 

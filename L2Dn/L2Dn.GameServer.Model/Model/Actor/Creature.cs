@@ -4223,8 +4223,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			Skill? existingSkill = _skills.get(newSkill.Id);
 			if (existingSkill != null && existingSkill.SubLevel > 0 && newSkill.SubLevel == 0 && existingSkill.Level < newSkill.Level)
             {
-                newSkill = SkillData.getInstance().
-                        getSkill(newSkill.Id, newSkill.Level, existingSkill.SubLevel) ??
+                newSkill = SkillData.Instance.
+                        GetSkill(newSkill.Id, newSkill.Level, existingSkill.SubLevel) ??
                     throw new InvalidOperationException("Skill not found for id " + newSkill.Id + " level " +
                         newSkill.Level + " sublevel " + existingSkill.SubLevel);
             }

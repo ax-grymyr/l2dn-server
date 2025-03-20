@@ -1,4 +1,5 @@
 using L2Dn.Extensions;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
@@ -9,13 +10,11 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Model;
 using L2Dn.Model.Enums;
 using L2Dn.Model.Xml;
 using L2Dn.Utilities;
 using NLog;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
-using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Data.Xml;
 
@@ -149,7 +148,7 @@ public class SkillTreeData: DataReaderBase
 
 		foreach (XmlSkillTreeSkill xmlSkill in xmlSkillTree.Skills)
 		{
-            Skill? skill = SkillData.getInstance().getSkill(xmlSkill.SkillId, xmlSkill.SkillLevel);
+            Skill? skill = SkillData.Instance.GetSkill(xmlSkill.SkillId, xmlSkill.SkillLevel);
             if (skill is null)
                 throw new InvalidOperationException($"Skill id={xmlSkill.SkillId}, level={xmlSkill.SkillLevel} does not exist");
 
@@ -157,7 +156,7 @@ public class SkillTreeData: DataReaderBase
 
 			foreach (XmlSkillTreeSkillItem xmlSkillItem in xmlSkill.Items)
 			{
-				List<ItemHolder> itemList = [new ItemHolder(xmlSkillItem.Id, xmlSkillItem.Count)];
+				List<ItemHolder> itemList = [new(xmlSkillItem.Id, xmlSkillItem.Count)];
 				skillLearn.addRequiredItem(itemList);
 			}
 
@@ -461,7 +460,7 @@ public class SkillTreeData: DataReaderBase
 		List<Skill> result = new();
 		foreach (SkillLearn skill in _nobleSkillTree.Values)
         {
-            Skill? skillData = SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel());
+            Skill? skillData = SkillData.Instance.GetSkill(skill.getSkillId(), skill.getSkillLevel());
             if (skillData != null)
 			    result.Add(skillData);
 		}
@@ -479,7 +478,7 @@ public class SkillTreeData: DataReaderBase
 		{
 			if (skill.isAutoGet())
             {
-                Skill? skillData = SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel());
+                Skill? skillData = SkillData.Instance.GetSkill(skill.getSkillId(), skill.getSkillLevel());
                 if (skillData != null)
 				    result.Add(skillData);
 			}
@@ -496,7 +495,7 @@ public class SkillTreeData: DataReaderBase
 		List<Skill> result = new();
 		foreach (SkillLearn skill in _heroSkillTree.Values)
 		{
-            Skill? skillData = SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel());
+            Skill? skillData = SkillData.Instance.GetSkill(skill.getSkillId(), skill.getSkillLevel());
             if (skillData != null)
                 result.Add(skillData);
 		}
@@ -512,7 +511,7 @@ public class SkillTreeData: DataReaderBase
 		List<Skill> result = new();
 		foreach (SkillLearn skill in _gameMasterSkillTree.Values)
 		{
-            Skill? skillData = SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel());
+            Skill? skillData = SkillData.Instance.GetSkill(skill.getSkillId(), skill.getSkillLevel());
             if (skillData != null)
                 result.Add(skillData);
 		}
@@ -528,7 +527,7 @@ public class SkillTreeData: DataReaderBase
 		List<Skill> result = new();
 		foreach (SkillLearn skill in _gameMasterAuraSkillTree.Values)
 		{
-            Skill? skillData = SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel());
+            Skill? skillData = SkillData.Instance.GetSkill(skill.getSkillId(), skill.getSkillLevel());
             if (skillData != null)
                 result.Add(skillData);
 		}
@@ -619,7 +618,7 @@ public class SkillTreeData: DataReaderBase
 
 			if (player.getLevel() >= skill.getGetLevel())
 			{
-				if (skill.getSkillLevel() > SkillData.getInstance().getMaxLevel(skill.getSkillId()))
+				if (skill.getSkillLevel() > SkillData.Instance.GetMaxLevel(skill.getSkillId()))
 				{
 					_logger.Error(GetType().Name + ": SkillTreesData found learnable skill " + skill.getSkillId() + " with level higher than max skill level!");
 					continue;
@@ -777,7 +776,7 @@ public class SkillTreeData: DataReaderBase
 
 				if (!removed.Contains(skillLearn.getSkillId()))
 				{
-					Skill? skill = SkillData.getInstance().getSkill(skillLearn.getSkillId(), skillLearn.getSkillLevel());
+					Skill? skill = SkillData.Instance.GetSkill(skillLearn.getSkillId(), skillLearn.getSkillLevel());
                     if (skill != null)
     					holder.addSkill(skill);
 				}
@@ -1565,7 +1564,7 @@ public class SkillTreeData: DataReaderBase
 		CharacterClass currentClass = player.getClassId();
 		foreach (Skill skill  in  player.getAllSkills())
 		{
-			int maxLevel = SkillData.getInstance().getMaxLevel(skill.Id);
+			int maxLevel = SkillData.Instance.GetMaxLevel(skill.Id);
 			long hashCode = Skill.GetSkillHashCode(skill.Id, maxLevel);
 			if (!isCurrentClassSkillNoParent(currentClass, hashCode) && !isRemoveSkill(currentClass, skill.Id) && !isAwakenSaveSkill(currentClass, skill.Id) && !isAlchemySkill(skill.Id, skill.Level))
 			{
@@ -1609,7 +1608,7 @@ public class SkillTreeData: DataReaderBase
 					int currentLevel = player.getSkillLevel(skillId);
 					if (currentLevel > 0)
                     {
-                        Skill? skill = SkillData.getInstance().getSkill(skillId, currentLevel);
+                        Skill? skill = SkillData.Instance.GetSkill(skillId, currentLevel);
                         if (skill != null)
 						    player.removeSkill(skill);
 					}
@@ -1684,10 +1683,10 @@ public class SkillTreeData: DataReaderBase
     public void addSkills(Player gmchar, bool auraSkills)
     {
         ICollection<SkillLearn> skills = auraSkills ? _gameMasterAuraSkillTree.Values : _gameMasterSkillTree.Values;
-        SkillData st = SkillData.getInstance();
+        SkillData st = SkillData.Instance;
         foreach (SkillLearn sl in skills)
         {
-            Skill? skill = st.getSkill(sl.getSkillId(), sl.getSkillLevel());
+            Skill? skill = st.GetSkill(sl.getSkillId(), sl.getSkillLevel());
             if (skill is not null)
                 gmchar.addSkill(skill, false); // Don't Save GM skills to database
         }
@@ -1825,7 +1824,7 @@ public class SkillTreeData: DataReaderBase
 			return true;
 		}
 
-		int maxLevel = SkillData.getInstance().getMaxLevel(skill.Id);
+		int maxLevel = SkillData.Instance.GetMaxLevel(skill.Id);
 		long hashCode = Skill.GetSkillHashCode(skill.Id, Math.Min(skill.Level, maxLevel));
 
         long[]? skillsByClassIdHashCodes = _skillsByClassIdHashCodes.get(player.getClassId());

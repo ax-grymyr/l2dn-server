@@ -105,7 +105,7 @@ public sealed class TriggerSkillByDamage: AbstractEffect
             }
             else
             {
-                triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(),
+                triggerSkill = SkillData.Instance.GetSkill(_skill.getSkillId(),
                     Math.Min(_skillLevelScaleTo, buffInfo.getSkill().Level + 1));
             }
 

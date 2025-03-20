@@ -48,8 +48,8 @@ public sealed class CallSkill: AbstractEffect
                 int knownLevel = effector.getSkillLevel(_skill.getSkillId());
                 if (knownLevel > 0)
                 {
-                    triggerSkill = SkillData.getInstance().
-                        getSkill(_skill.getSkillId(), knownLevel, _skill.getSkillSubLevel());
+                    triggerSkill = SkillData.Instance.
+                        GetSkill(_skill.getSkillId(), knownLevel, _skill.getSkillSubLevel());
                 }
                 else
                 {
@@ -69,7 +69,7 @@ public sealed class CallSkill: AbstractEffect
             BuffInfo? buffInfo = effected.getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
             if (buffInfo != null)
             {
-                triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(),
+                triggerSkill = SkillData.Instance.GetSkill(_skill.getSkillId(),
                     Math.Min(_skillLevelScaleTo, buffInfo.getSkill().Level + 1));
             }
             else

@@ -91,7 +91,7 @@ public class HennaData: DataReaderBase
 		{
 			int id = e.GetAttributeValueAsInt32("id");
 			int level = e.GetAttributeValueAsInt32("level");
-            Skill? skill = SkillData.getInstance().getSkill(id, level);
+            Skill? skill = SkillData.Instance.GetSkill(id, level);
             if (skill != null)
 			    skills.Add(skill);
 		});

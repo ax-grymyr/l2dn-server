@@ -164,7 +164,7 @@ public sealed class TriggerSkillByAttack: AbstractEffect
             }
             else
             {
-                triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(),
+                triggerSkill = SkillData.Instance.GetSkill(_skill.getSkillId(),
                     Math.Min(_skillLevelScaleTo, buffInfo.getSkill().Level + 1));
 
                 if (@event.getAttacker().isSkillDisabled(buffInfo.getSkill()))

@@ -39,8 +39,8 @@ public class Decoy : Creature
 		if (aggressive)
 		{
 			const int hateSpamSkillId = 5272; // TODO: to list of common skills
-            int skillLevel = Math.Min(getTemplate().getDisplayId() - 13070, SkillData.getInstance().getMaxLevel(hateSpamSkillId));
-            Skill hateSpamSkill = SkillData.getInstance().getSkill(hateSpamSkillId, skillLevel) ??
+            int skillLevel = Math.Min(getTemplate().getDisplayId() - 13070, SkillData.Instance.GetMaxLevel(hateSpamSkillId));
+            Skill hateSpamSkill = SkillData.Instance.GetSkill(hateSpamSkillId, skillLevel) ??
                 throw new InvalidOperationException("Decoy: Skill not found: " + hateSpamSkillId + " level: " +
                     skillLevel);
 

@@ -38,8 +38,8 @@ public class SiegeManager
 
 	public void addSiegeSkills(Player character)
 	{
-		foreach (Skill sk in SkillData.getInstance()
-			         .getSiegeSkills(character.isNoble(), character.getClan()?.getCastleId() > 0))
+		foreach (Skill sk in SkillData.Instance
+			         .GetSiegeSkills(character.isNoble(), character.getClan()?.getCastleId() > 0))
 		{
 			character.addSkill(sk, false);
 		}
@@ -79,8 +79,8 @@ public class SiegeManager
 
 	public void removeSiegeSkills(Player character)
 	{
-		foreach (Skill sk in SkillData.getInstance()
-			         .getSiegeSkills(character.isNoble(), character.getClan()?.getCastleId() > 0))
+		foreach (Skill sk in SkillData.Instance
+			         .GetSiegeSkills(character.isNoble(), character.getClan()?.getCastleId() > 0))
 		{
 			character.removeSkill(sk);
 		}

@@ -56,7 +56,7 @@ public class CursedWeapon: INamable // TODO: the class needs complete refactorin
 		_name = name;
 		_itemId = itemId;
 		_skillId = skillId;
-		_skillMaxLevel = SkillData.getInstance().getMaxLevel(_skillId);
+		_skillMaxLevel = SkillData.Instance.GetMaxLevel(_skillId);
 	}
 
 	public void endOfLife()
@@ -262,7 +262,7 @@ public class CursedWeapon: INamable // TODO: the class needs complete refactorin
 			level = _skillMaxLevel;
 		}
 
-        Skill skill = SkillData.getInstance().getSkill(_skillId, level) ??
+        Skill skill = SkillData.Instance.GetSkill(_skillId, level) ??
             throw new InvalidOperationException($"Skill id={_skillId}, level={level} not found");
 
 		_player.addSkill(skill, false);

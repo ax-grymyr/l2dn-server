@@ -268,7 +268,7 @@ public class NpcData: DataReaderBase
 		{
 			int skillId = el.GetAttributeValueAsInt32("id");
 			int skillLevel = el.GetAttributeValueAsInt32("level");
-			Skill? skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+			Skill? skill = SkillData.Instance.GetSkill(skillId, skillLevel);
 			if (skill != null)
 			{
 				skills.put(skill.Id, skill);

@@ -48,7 +48,7 @@ public sealed class TriggerSkillByBaseStat: AbstractEffect
             };
 
             // Synchronized because the same skill could be used twice and isAffectedBySkill ignored.
-            Skill? triggerSkill = SkillData.getInstance().getSkill(_skillId, _skillLevel, _skillSubLevel);
+            Skill? triggerSkill = SkillData.Instance.GetSkill(_skillId, _skillLevel, _skillSubLevel);
             if (triggerSkill == null)
                 return;
 

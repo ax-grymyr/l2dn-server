@@ -139,7 +139,7 @@ public class Pet: Summon
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (DbPetSkill record in ctx.PetSkills.Where(r => r.PetItemObjectId == _controlObjectId))
 			{
-				Skill? skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel);
+				Skill? skill = SkillData.Instance.GetSkill(record.SkillId, record.SkillLevel);
 				if (skill == null)
 				{
 					continue;
@@ -746,7 +746,7 @@ public class Pet: Summon
 			BuffInfo? buffInfo = owner.getEffectList().getBuffInfoBySkillId(petDeathPenaltySkillId);
             int petDeathPenaltySkillLevel = buffInfo == null ? 1 : Math.Min(buffInfo.getSkill().Level + 1, 10);
             Skill? petDeathPenaltySkill =
-                SkillData.getInstance().getSkill(petDeathPenaltySkillId, petDeathPenaltySkillLevel) ??
+                SkillData.Instance.GetSkill(petDeathPenaltySkillId, petDeathPenaltySkillLevel) ??
                 throw new InvalidOperationException($"Pet death penalty skill id={petDeathPenaltySkillId}, level={petDeathPenaltySkillLevel} not defined");
 
             owner.getEffectList().add(new BuffInfo(owner, owner, petDeathPenaltySkill, false, null, null));
@@ -1162,7 +1162,7 @@ public class Pet: Summon
 					         .OrderBy(r => r.BuffIndex))
 				{
 					TimeSpan effectCurTime = record.RemainingTime;
-					Skill? skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel);
+					Skill? skill = SkillData.Instance.GetSkill(record.SkillId, record.SkillLevel);
 					if (skill == null)
 					{
 						continue;
@@ -1383,7 +1383,7 @@ public class Pet: Summon
 				_curWeightPenalty = newWeightPenalty;
 				if (newWeightPenalty > 0)
                 {
-                    Skill weightPenaltySkill = SkillData.getInstance().getSkill(4270, newWeightPenalty) ??
+                    Skill weightPenaltySkill = SkillData.Instance.GetSkill(4270, newWeightPenalty) ??
                         throw new InvalidOperationException($"Weight penalty skill id=4270, level={newWeightPenalty} not found.");
 
 					addSkill(weightPenaltySkill);

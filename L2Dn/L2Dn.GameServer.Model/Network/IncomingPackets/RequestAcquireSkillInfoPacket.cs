@@ -47,7 +47,7 @@ public struct RequestAcquireSkillInfoPacket: IIncomingPacket<GameSession>
 		// Consider skill replacements.
 		int id = player.getOriginalSkill(_id);
 
-		Skill? skill = SkillData.getInstance().getSkill(id, _level);
+		Skill? skill = SkillData.Instance.GetSkill(id, _level);
 		if (skill == null)
 		{
 			PacketLogger.Instance.Warn($"Skill Id: {id} level: {_level} is undefined. {GetType().Name} failed.");

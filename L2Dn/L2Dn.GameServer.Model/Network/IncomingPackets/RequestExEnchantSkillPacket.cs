@@ -125,7 +125,7 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 		int starLevel = starHolder.getLevel();
 		if (Rnd.get(100) <= SkillEnchantData.getInstance().getChanceEnchantMap(skill))
 		{
-			Skill? enchantedSkill = SkillData.getInstance().getSkill(_skillId, _skillLevel, _skillSubLevel);
+			Skill? enchantedSkill = SkillData.Instance.GetSkill(_skillId, _skillLevel, _skillSubLevel);
             if (enchantedSkill == null)
             {
                 LOGGER.Warn(GetType().Name + " request enchant skill dont have skillId-" + _skillId + " lvl-" + _skillLevel + " sublvl-" + _skillSubLevel);

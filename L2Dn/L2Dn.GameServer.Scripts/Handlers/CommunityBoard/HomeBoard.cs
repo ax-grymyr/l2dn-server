@@ -183,7 +183,7 @@ public class HomeBoard: IParseBoardHandler
 
 				for (int i = 0; i < buffCount; i++)
 				{
-					Skill? skill = SkillData.getInstance().getSkill(int.Parse(buypassOptions[i].Split(",")[0]), int.Parse(buypassOptions[i].Split(",")[1]));
+					Skill? skill = SkillData.Instance.GetSkill(int.Parse(buypassOptions[i].Split(",")[0]), int.Parse(buypassOptions[i].Split(",")[1]));
 					if (skill == null || !Config.CommunityBoard.COMMUNITY_AVAILABLE_BUFFS.Contains(skill.Id))
 					{
 						continue;

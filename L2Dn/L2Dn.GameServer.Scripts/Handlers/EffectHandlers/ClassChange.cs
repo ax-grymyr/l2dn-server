@@ -43,7 +43,7 @@ public sealed class ClassChange: AbstractEffect
                 return;
             }
 
-            Skill? identityCrisis = SkillData.getInstance().getSkill(_identityCrisisSkillId, 1);
+            Skill? identityCrisis = SkillData.Instance.GetSkill(_identityCrisisSkillId, 1);
             if (identityCrisis != null)
             {
                 identityCrisis.ApplyEffects(player, player);

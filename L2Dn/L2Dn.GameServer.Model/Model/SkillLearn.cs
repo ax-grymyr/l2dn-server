@@ -224,7 +224,7 @@ public sealed class SkillLearn
 
 	public override string ToString()
 	{
-		Skill? skill = SkillData.getInstance().getSkill(_skillId, _skillLevel);
+		Skill? skill = SkillData.Instance.GetSkill(_skillId, _skillLevel);
 		return "[" + skill + " treeId: " + _treeId + " row: " + _row + " column: " + _column + " pointsRequired:" +
 		       _pointsRequired + "]";
 	}

@@ -79,7 +79,7 @@ public abstract class AbstractResidence: INamable
                 SocialClass? skillSocialClass = skill.getSocialClass();
                 if (skillSocialClass == null || playerSocialClass >= skillSocialClass)
                 {
-                    Skill skill1 = SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()) ??
+                    Skill skill1 = SkillData.Instance.GetSkill(skill.getSkillId(), skill.getSkillLevel()) ??
                         throw new InvalidOperationException($"Skill id={skill.getSkillId()}, level={skill.getSkillLevel()} not found");
 
                     player.addSkill(skill1, false);

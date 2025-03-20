@@ -38,7 +38,7 @@ public sealed class ReplaceSkillBySkill: AbstractEffect
         if (knownSkill == null || knownSkill.Level < _existingSkill.getSkillLevel())
             return;
 
-        Skill? addedSkill = SkillData.getInstance().getSkill(_replacementSkill.getSkillId(),
+        Skill? addedSkill = SkillData.Instance.GetSkill(_replacementSkill.getSkillId(),
             _replacementSkill.getSkillLevel() < 1 ? knownSkill.Level : _replacementSkill.getSkillLevel(),
             knownSkill.SubLevel);
 
@@ -128,8 +128,8 @@ public sealed class ReplaceSkillBySkill: AbstractEffect
         if (knownSkill == null)
             return;
 
-        Skill? addedSkill = SkillData.getInstance().
-            getSkill(existingSkillId, knownSkill.Level, knownSkill.SubLevel);
+        Skill? addedSkill = SkillData.Instance.
+            GetSkill(existingSkillId, knownSkill.Level, knownSkill.SubLevel);
 
         if (addedSkill == null)
             return;

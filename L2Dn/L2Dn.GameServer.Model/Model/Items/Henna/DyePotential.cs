@@ -23,7 +23,7 @@ public class DyePotential
 		for (int i = 1; i <= maxSkillLevel; i++)
 		{
             // TODO pass skills as argument
-            _skills[i - 1] = SkillData.getInstance().getSkill(skillId, i) ??
+            _skills[i - 1] = SkillData.Instance.GetSkill(skillId, i) ??
                 throw new ArgumentException($"Skill id={skillId}, level={i} not found");
         }
 

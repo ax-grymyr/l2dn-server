@@ -45,8 +45,8 @@ public class Unstuck: IUserCommandHandler
         }
 
         // TODO: review this and refactor
-        Skill? escape = SkillData.getInstance().getSkill(2099, 1); // 5 minutes escape
-        Skill? gmEscape = SkillData.getInstance().getSkill(2100, 1); // 1 second escape
+        Skill? escape = SkillData.Instance.GetSkill(2099, 1); // 5 minutes escape
+        Skill? gmEscape = SkillData.Instance.GetSkill(2100, 1); // 1 second escape
         if (player.getAccessLevel().IsGM)
         {
             if (gmEscape != null)

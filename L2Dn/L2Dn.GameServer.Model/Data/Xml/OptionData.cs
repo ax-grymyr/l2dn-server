@@ -74,7 +74,7 @@ public class OptionData: DataReaderBase
 
 		foreach (XmlOptionSkill activeSkill in xmlOption.ActiveSkills)
 		{
-			Skill? skill = SkillData.getInstance().getSkill(activeSkill.Id, activeSkill.Level);
+			Skill? skill = SkillData.Instance.GetSkill(activeSkill.Id, activeSkill.Level);
 			if (skill != null)
 				option.addActiveSkill(skill);
 			else
@@ -84,7 +84,7 @@ public class OptionData: DataReaderBase
 
 		foreach (XmlOptionSkill passiveSkill in xmlOption.PassiveSkills)
 		{
-			Skill? skill = SkillData.getInstance().getSkill(passiveSkill.Id, passiveSkill.Level);
+			Skill? skill = SkillData.Instance.GetSkill(passiveSkill.Id, passiveSkill.Level);
 			if (skill != null)
 				option.addPassiveSkill(skill);
 			else
@@ -94,7 +94,7 @@ public class OptionData: DataReaderBase
 
 		foreach (XmlOptionChanceSkill attackSkill in xmlOption.AttackSkills)
 		{
-			Skill? skill = SkillData.getInstance().getSkill(attackSkill.Id, attackSkill.Level);
+			Skill? skill = SkillData.Instance.GetSkill(attackSkill.Id, attackSkill.Level);
 			if (skill != null)
 				option.addActivationSkill(new OptionSkillHolder(skill, attackSkill.Chance, OptionSkillType.ATTACK));
 			else
@@ -104,7 +104,7 @@ public class OptionData: DataReaderBase
 
 		foreach (XmlOptionChanceSkill magicSkill in xmlOption.MagicSkills)
 		{
-			Skill? skill = SkillData.getInstance().getSkill(magicSkill.Id, magicSkill.Level);
+			Skill? skill = SkillData.Instance.GetSkill(magicSkill.Id, magicSkill.Level);
 			if (skill != null)
 				option.addActivationSkill(new OptionSkillHolder(skill, magicSkill.Chance, OptionSkillType.MAGIC));
 			else
@@ -114,7 +114,7 @@ public class OptionData: DataReaderBase
 
 		foreach (XmlOptionChanceSkill criticalSkill in xmlOption.CriticalSkills)
 		{
-			Skill? skill = SkillData.getInstance().getSkill(criticalSkill.Id, criticalSkill.Level);
+			Skill? skill = SkillData.Instance.GetSkill(criticalSkill.Id, criticalSkill.Level);
 			if (skill != null)
 				option.addActivationSkill(new OptionSkillHolder(skill, criticalSkill.Chance, OptionSkillType.CRITICAL));
 			else

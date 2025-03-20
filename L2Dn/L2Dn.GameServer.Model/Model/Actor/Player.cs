@@ -2110,7 +2110,7 @@ public class Player: Playable
 		{
 			if (_einhasadOverseeingLevel != expectedLevel)
             {
-                Skill skill = SkillData.getInstance().getSkill((int)CommonSkill.EINHASAD_OVERSEEING, expectedLevel) ??
+                Skill skill = SkillData.Instance.GetSkill((int)CommonSkill.EINHASAD_OVERSEEING, expectedLevel) ??
                     throw new InvalidOperationException($"EINHASAD_OVERSEEING skill id={CommonSkill.EINHASAD_OVERSEEING} not found");
 
 				getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING);
@@ -2181,7 +2181,7 @@ public class Player: Playable
 				_curWeightPenalty = newWeightPenalty;
 				if (newWeightPenalty > 0 && !_dietMode)
                 {
-                    Skill skill = SkillData.getInstance().getSkill((int)CommonSkill.WEIGHT_PENALTY, newWeightPenalty) ??
+                    Skill skill = SkillData.Instance.GetSkill((int)CommonSkill.WEIGHT_PENALTY, newWeightPenalty) ??
                         throw new InvalidOperationException(
                             $"WEIGHT_PENALTY skill id={(int)CommonSkill.WEIGHT_PENALTY}, level={newWeightPenalty} not found");
 
@@ -2619,7 +2619,7 @@ public class Player: Playable
 
 		foreach (SkillLearn skill in SkillTreeData.getInstance().getRaceSkillTree(getRace()))
         {
-            Skill skill1 = SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()) ??
+            Skill skill1 = SkillData.Instance.GetSkill(skill.getSkillId(), skill.getSkillLevel()) ??
                 throw new InvalidOperationException($"Skill id={skill.getSkillId()}, level={skill.getSkillLevel()} not found");
 
 			addSkill(skill1, true);
@@ -2723,7 +2723,7 @@ public class Player: Playable
 			Skill updatedSkill = skill;
 			if (oldSkill != null && oldSkill.SubLevel > 0 && skill.SubLevel == 0 && oldSkill.Level < skillLevel)
 			{
-				updatedSkill = SkillData.getInstance().getSkill(skillId, skillLevel, oldSkill.SubLevel) ??
+				updatedSkill = SkillData.Instance.GetSkill(skillId, skillLevel, oldSkill.SubLevel) ??
                     throw new InvalidOperationException($"Skill with id={skillId}, level={skillLevel}, subLevel={oldSkill.SubLevel} not found");
 			}
 
@@ -2757,10 +2757,10 @@ public class Player: Playable
 	{
 		// Get available skills
 		List<SkillLearn> autoGetSkills = SkillTreeData.getInstance().getAvailableAutoGetSkills(this);
-		SkillData st = SkillData.getInstance();
+		SkillData st = SkillData.Instance;
 		foreach (SkillLearn s in autoGetSkills)
 		{
-            Skill? skill = st.getSkill(s.getSkillId(), s.getSkillLevel());
+            Skill? skill = st.GetSkill(s.getSkillId(), s.getSkillLevel());
 			if (skill != null)
 			{
 				addSkill(skill, true);
@@ -7507,7 +7507,7 @@ public class Player: Playable
 					int subLevel = record.SkillSubLevel;
 
 					// Create a Skill object for each record
-					Skill? skill = SkillData.getInstance().getSkill(id, level, subLevel);
+					Skill? skill = SkillData.Instance.GetSkill(id, level, subLevel);
 					if (skill == null)
 					{
 						LOGGER.Warn("Skipped null skill Id: " + id + " Level: " + level + " while restoring player skills for playerObjId: " + ObjectId);
@@ -7550,7 +7550,7 @@ public class Player: Playable
 					TimeSpan reuseDelay = record.ReuseDelay;
 					DateTime? systime = record.SysTime;
 					int restoreType = record.RestoreType;
-					Skill? skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel, record.SkillSubLevel);
+					Skill? skill = SkillData.Instance.GetSkill(record.SkillId, record.SkillLevel, record.SkillSubLevel);
 					if (skill == null)
 					{
 						continue;
@@ -9615,7 +9615,7 @@ public class Player: Playable
 					if (originalSkillId != skill.DisplayId)
                     {
                         Skill originalSkill =
-                            SkillData.getInstance().getSkill(originalSkillId, skill.Level, skill.SubLevel) ??
+                            SkillData.Instance.GetSkill(originalSkillId, skill.Level, skill.SubLevel) ??
                             throw new InvalidOperationException($"Skill not found id={originalSkillId}, level={skill.Level}, sublevel={skill.SubLevel}");
 
 						skillList.addSkill(originalSkill.DisplayId, originalSkill.ReuseDelayGroup, originalSkill.DisplayLevel, originalSkill.SubLevel, originalSkill.IsPassive, isDisabled, originalSkill.IsEnchantable());
@@ -9745,7 +9745,7 @@ public class Player: Playable
 				if (skillInfo.getGetLevel() <= newClass.getLevel())
 				{
 					Skill? prevSkill = prevSkillList.get(skillInfo.getSkillId());
-					Skill newSkill = SkillData.getInstance().getSkill(skillInfo.getSkillId(), skillInfo.getSkillLevel()) ??
+					Skill newSkill = SkillData.Instance.GetSkill(skillInfo.getSkillId(), skillInfo.getSkillLevel()) ??
                         throw new InvalidOperationException($"Skill id={skillInfo.getSkillId()}, level={skillInfo.getSkillLevel()} not found");
 
 					if ((prevSkill != null && prevSkill.Level > newSkill.Level) || SkillTreeData.getInstance().isRemoveSkill(subTemplate, skillInfo.getSkillId()))
@@ -10995,7 +10995,7 @@ public class Player: Playable
 		{
 			if (isFlying())
 			{
-				removeSkill(SkillData.getInstance().getSkill((int)CommonSkill.WYVERN_BREATH, 1));
+				removeSkill(SkillData.Instance.GetSkill((int)CommonSkill.WYVERN_BREATH, 1));
 			}
 		}
 		catch (Exception e)
@@ -11615,7 +11615,7 @@ public class Player: Playable
 					abortCast();
 					decreaseSouls(100, type);
 
-                    Skill skill1 = SkillData.getInstance().getSkill(KAMAEL_LIGHT_TRANSFORMATION, skillLevel) ??
+                    Skill skill1 = SkillData.Instance.GetSkill(KAMAEL_LIGHT_TRANSFORMATION, skillLevel) ??
                         throw new InvalidOperationException(
                             $"KAMAEL_LIGHT_TRANSFORMATION skill id={KAMAEL_LIGHT_TRANSFORMATION}, level={skillLevel} not found");
 
@@ -11630,7 +11630,7 @@ public class Player: Playable
 					abortCast();
 					decreaseSouls(100, type);
 
-                    Skill skill1 = SkillData.getInstance().getSkill(KAMAEL_SHADOW_TRANSFORMATION, skillLevel) ??
+                    Skill skill1 = SkillData.Instance.GetSkill(KAMAEL_SHADOW_TRANSFORMATION, skillLevel) ??
                         throw new InvalidOperationException(
                             $"KAMAEL_SHADOW_TRANSFORMATION skill id={KAMAEL_SHADOW_TRANSFORMATION}, level={skillLevel} not found");
 
@@ -11753,7 +11753,7 @@ public class Player: Playable
 			if (getAffectedSkillLevel(DEVASTATING_MIND) != expectedLevel)
 			{
 				getEffectList().stopSkillEffects(SkillFinishType.REMOVED, DEVASTATING_MIND);
-                Skill skill1 = SkillData.getInstance().getSkill(DEVASTATING_MIND, expectedLevel) ??
+                Skill skill1 = SkillData.Instance.GetSkill(DEVASTATING_MIND, expectedLevel) ??
                     throw new InvalidOperationException($"DEVASTATING_MIND skill id={DEVASTATING_MIND}, level={expectedLevel} not found");
 
 				skill1.ApplyEffects(this, this);
@@ -12102,7 +12102,7 @@ public class Player: Playable
 				int revelationSkill = getVariables().Get(PlayerVariables.REVELATION_SKILL_1_DUAL_CLASS, 0);
 				if (revelationSkill != 0)
                 {
-                    Skill skill1 = SkillData.getInstance().getSkill(revelationSkill, 1) ??
+                    Skill skill1 = SkillData.Instance.GetSkill(revelationSkill, 1) ??
                         throw new InvalidOperationException($"Skill id={revelationSkill}, level=1 not found");
 
 					addSkill(skill1, false);
@@ -12110,7 +12110,7 @@ public class Player: Playable
 				revelationSkill = getVariables().Get(PlayerVariables.REVELATION_SKILL_2_DUAL_CLASS, 0);
 				if (revelationSkill != 0)
 				{
-                    Skill skill1 = SkillData.getInstance().getSkill(revelationSkill, 1) ??
+                    Skill skill1 = SkillData.Instance.GetSkill(revelationSkill, 1) ??
                         throw new InvalidOperationException($"Skill id={revelationSkill}, level=1 not found");
 
 					addSkill(skill1, false);
@@ -12121,7 +12121,7 @@ public class Player: Playable
 				int revelationSkill = getVariables().Get(PlayerVariables.REVELATION_SKILL_1_MAIN_CLASS, 0);
 				if (revelationSkill != 0)
 				{
-                    Skill skill1 = SkillData.getInstance().getSkill(revelationSkill, 1) ??
+                    Skill skill1 = SkillData.Instance.GetSkill(revelationSkill, 1) ??
                         throw new InvalidOperationException($"Skill id={revelationSkill}, level=1 not found");
 
                     addSkill(skill1, false);
@@ -12129,7 +12129,7 @@ public class Player: Playable
 				revelationSkill = getVariables().Get(PlayerVariables.REVELATION_SKILL_2_MAIN_CLASS, 0);
 				if (revelationSkill != 0)
 				{
-                    Skill skill1 = SkillData.getInstance().getSkill(revelationSkill, 1) ??
+                    Skill skill1 = SkillData.Instance.GetSkill(revelationSkill, 1) ??
                         throw new InvalidOperationException($"Skill id={revelationSkill}, level=1 not found");
 
                     addSkill(skill1, false);
@@ -13318,7 +13318,7 @@ public class Player: Playable
 		else
 		{
 			LOGGER.Info("Decreasing skill " + skill + " to " + nextLevel + " for " + this);
-            Skill skill1 = SkillData.getInstance().getSkill(skill.Id, nextLevel) ??
+            Skill skill1 = SkillData.Instance.GetSkill(skill.Id, nextLevel) ??
                 throw new InvalidOperationException($"Skill id={skill.Id}, level={nextLevel} not found");
 
 			addSkill(skill1, true); // replace with lower one

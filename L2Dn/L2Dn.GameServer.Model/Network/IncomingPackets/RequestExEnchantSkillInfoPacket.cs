@@ -35,7 +35,7 @@ public struct RequestExEnchantSkillInfoPacket: IIncomingPacket<GameSession>
         // return;
         // }
 
-        Skill? skill = SkillData.getInstance().getSkill(_skillId, _skillLevel, _skillSubLevel);
+        Skill? skill = SkillData.Instance.GetSkill(_skillId, _skillLevel, _skillSubLevel);
         if (skill == null || skill.Id != _skillId)
             return ValueTask.CompletedTask;
 

@@ -1048,7 +1048,7 @@ public sealed class FortManager: Merchant
                 skillLevel = int.Parse(st.nextToken());
             }
 
-            Skill? skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+            Skill? skill = SkillData.Instance.GetSkill(skillId, skillLevel);
             if (skill == null)
             {
                 _logger.Warn($"Invalid skill id={skillId}, level={skillLevel}");

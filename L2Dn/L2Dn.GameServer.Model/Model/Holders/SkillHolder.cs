@@ -42,7 +42,7 @@ public class SkillHolder: IEquatable<SkillHolder> // TODO: this class must never
 	public int getSkillSubLevel() => _skillSubLevel;
 
     public Skill getSkill() =>
-        _skill ??= SkillData.getInstance().getSkill(_skillId, Math.Max(_skillLevel, 1), _skillSubLevel) ??
+        _skill ??= SkillData.Instance.GetSkill(_skillId, Math.Max(_skillLevel, 1), _skillSubLevel) ??
             throw new InvalidOperationException(
                 $"Skill id={_skillId}, level={_skillLevel}, subLevel={_skillSubLevel} not found!");
 

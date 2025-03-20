@@ -35,7 +35,7 @@ public sealed class TriggerSkillByMaxHp: AbstractEffect
             {
                 if (!effected.isAffectedBySkill(_skillId))
                 {
-                    Skill? triggerSkill = SkillData.getInstance().getSkill(_skillId, _skillLevel);
+                    Skill? triggerSkill = SkillData.Instance.GetSkill(_skillId, _skillLevel);
                     if (triggerSkill == null)
                         return;
 

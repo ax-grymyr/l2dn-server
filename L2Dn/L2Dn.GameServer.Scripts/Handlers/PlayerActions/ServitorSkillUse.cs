@@ -36,7 +36,7 @@ public class ServitorSkillUse: IPlayerActionHandler
             int skillLevel = PetSkillData.getInstance().getAvailableLevel(servitor, data.getOptionId());
             if (skillLevel > 0)
             {
-                Skill? skill = SkillData.getInstance().getSkill(data.getOptionId(), skillLevel);
+                Skill? skill = SkillData.Instance.GetSkill(data.getOptionId(), skillLevel);
                 if (skill != null)
                 {
                     servitor.setTarget(player.getTarget());

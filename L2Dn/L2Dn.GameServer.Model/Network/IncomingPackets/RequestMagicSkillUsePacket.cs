@@ -37,7 +37,7 @@ public struct RequestMagicSkillUsePacket: IIncomingPacket<GameSession>
         {
             if (_magicId == (int)CommonSkill.HAIR_ACCESSORY_SET || (_magicId > 1565 && _magicId < 1570)) // subClass change SkillTree
             {
-                skill = SkillData.getInstance().getSkill(_magicId, 1);
+                skill = SkillData.Instance.GetSkill(_magicId, 1);
             }
             else // Check for known pet skill.
             {

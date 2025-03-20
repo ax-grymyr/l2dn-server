@@ -359,7 +359,7 @@ public class BotReportTable
 	 */
 	void addPunishment(int neededReports, int skillId, int skillLevel, SystemMessageId? sysMsg)
 	{
-		Skill? sk = SkillData.getInstance().getSkill(skillId, skillLevel);
+		Skill? sk = SkillData.Instance.GetSkill(skillId, skillLevel);
 		if (sk != null)
 		{
 			_punishments.put(neededReports, new PunishHolder(sk, sysMsg));

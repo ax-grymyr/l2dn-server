@@ -86,7 +86,7 @@ public sealed class TriggerSkillBySkill: AbstractEffect
             BuffInfo? buffInfo = ((Creature)target).getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
             if (buffInfo != null)
             {
-                triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(),
+                triggerSkill = SkillData.Instance.GetSkill(_skill.getSkillId(),
                     Math.Min(_skillLevelScaleTo, buffInfo.getSkill().Level + 1));
 
                 if (triggerSkill == null)

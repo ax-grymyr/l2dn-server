@@ -40,7 +40,7 @@ public struct RequestExMagicSkillUseGroundPacket: IIncomingPacket<GameSession>
         }
 
         // Get the Skill template corresponding to the skillID received from the client
-        Skill? skill = SkillData.getInstance().getSkill(_skillId, level);
+        Skill? skill = SkillData.Instance.GetSkill(_skillId, level);
 
         // Check the validity of the skill
         if (skill != null)

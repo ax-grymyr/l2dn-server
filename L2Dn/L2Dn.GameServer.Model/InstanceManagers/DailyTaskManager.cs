@@ -273,7 +273,7 @@ public class DailyTaskManager
 		// Set<Player> updates = new();
 		foreach (int skillId in RESET_SKILLS)
 		{
-			Skill? skill = SkillData.getInstance().getSkill(skillId, 1 /* No known need for more levels */);
+			Skill? skill = SkillData.Instance.GetSkill(skillId, 1 /* No known need for more levels */);
 			if (skill != null)
 			{
 				foreach (Player player in World.getInstance().getPlayers())

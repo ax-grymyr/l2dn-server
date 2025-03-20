@@ -45,7 +45,7 @@ public class PetSkillData: DataReaderBase
 			_skillTrees.put(npcId, skillTree);
 		}
 
-		if (SkillData.getInstance().getSkill(skillId, skillLevel == 0 ? 1 : skillLevel) != null)
+		if (SkillData.Instance.GetSkill(skillId, skillLevel == 0 ? 1 : skillLevel) != null)
 		{
 			skillTree.put(Skill.GetSkillHashCode(skillId, skillLevel + 1), new SkillHolder(skillId, skillLevel));
 		}
@@ -87,7 +87,7 @@ public class PetSkillData: DataReaderBase
 				}
 
 				// formula usable for skill that have 10 or more skill levels
-				int maxLevel = SkillData.getInstance().getMaxLevel(skillHolder.getSkillId());
+				int maxLevel = SkillData.Instance.GetMaxLevel(skillHolder.getSkillId());
 				if (level > maxLevel)
 				{
 					level = maxLevel;

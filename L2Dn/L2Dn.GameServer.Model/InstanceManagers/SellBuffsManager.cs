@@ -166,7 +166,7 @@ public class SellBuffsManager: DataReaderBase
 			sb.Append("<td fixwidth=\"20\"></td>");
 			sb.Append("<td align=center><img src=\"" + skill.Icon + "\" width=\"32\" height=\"32\"></td>");
 			sb.Append("<td align=left>" + skill.Name + (skill.Level > 100 ? "<font color=\"LEVEL\"> + " + skill.Level % 100 + "</font></td>" : "</td>"));
-			sb.Append("<td align=center>" + (skill.Level > 100 ? SkillData.getInstance().getMaxLevel(skill.Id) : skill.Level) + "</td>");
+			sb.Append("<td align=center>" + (skill.Level > 100 ? SkillData.Instance.GetMaxLevel(skill.Id) : skill.Level) + "</td>");
 			sb.Append("<td align=center> <font color=\"1E90FF\">" + skill.MpConsume * Config.SellBuffs.SELLBUFF_MP_MULTIPLER + "</font></td>");
 			sb.Append("<td align=center> " + Util.formatAdena(holder.getPrice()) + " <font color=\"LEVEL\"> " + (item != null ? item.getName() : "") + "</font> </td>");
 			sb.Append("<td align=center fixwidth=\"50\"><button value=\"Buy Buff\" action=\"bypass -h sellbuffbuyskill " + seller.ObjectId + " " + skill.Id + " " + index + "\" width=\"85\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
@@ -245,7 +245,7 @@ public class SellBuffsManager: DataReaderBase
 				sb.Append("<td fixwidth=\"20\"></td>");
 				sb.Append("<td align=center><img src=\"" + skill.Icon + "\" width=\"32\" height=\"32\"></td>"); // Icon
 				sb.Append("<td align=left>" + skill.Name + (skill.Level > 100 ? "<font color=\"LEVEL\"> + " + skill.Level % 100 + "</font></td>" : "</td>")); // Name + enchant
-				sb.Append("<td align=center>" + (skill.Level > 100 ? SkillData.getInstance().getMaxLevel(skill.Id) : skill.Level) + "</td>"); // Level
+				sb.Append("<td align=center>" + (skill.Level > 100 ? SkillData.Instance.GetMaxLevel(skill.Id) : skill.Level) + "</td>"); // Level
 				sb.Append("<td align=center> " + Util.formatAdena(holder.getPrice()) + " </td>"); // Price show
 				sb.Append("<td align=center><edit var=\"price_" + skill.Id + "\" width=120 type=\"number\"></td>"); // Price edit
 				sb.Append("<td align=center><button value=\"Edit\" action=\"bypass -h sellbuffchangeprice " + skill.Id + " $price_" + skill.Id + "\" width=\"85\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
@@ -317,7 +317,7 @@ public class SellBuffsManager: DataReaderBase
 				sb.Append("<td fixwidth=\"20\"></td>");
 				sb.Append("<td align=center><img src=\"" + skill.Icon + "\" width=\"32\" height=\"32\"></td>");
 				sb.Append("<td align=left>" + skill.Name + (skill.Level > 100 ? "<font color=\"LEVEL\"> + " + skill.Level % 100 + "</font></td>" : "</td>"));
-				sb.Append("<td align=center>" + (skill.Level > 100 ? SkillData.getInstance().getMaxLevel(skill.Id) : skill.Level) + "</td>");
+				sb.Append("<td align=center>" + (skill.Level > 100 ? SkillData.Instance.GetMaxLevel(skill.Id) : skill.Level) + "</td>");
 				sb.Append("<td align=center><edit var=\"price_" + skill.Id + "\" width=120 type=\"number\"></td>");
 				sb.Append("<td align=center fixwidth=\"50\"><button value=\"Add Buff\" action=\"bypass -h sellbuffaddskill " + skill.Id + " $price_" + skill.Id + "\" width=\"85\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 				sb.Append("</tr>");

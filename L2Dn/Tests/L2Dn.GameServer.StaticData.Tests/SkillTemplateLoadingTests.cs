@@ -31,7 +31,7 @@ public sealed class SkillTemplateLoadingTests
         oldLoader.Load();
 
         // Load skill templates
-        SkillData skillData = SkillData.getInstance();
+        SkillData skillData = SkillData.Instance;
 
         // Compare skills
         SkillComparer.CompareSkills(oldLoader.Skills, skillData.Skills);
@@ -547,7 +547,7 @@ public sealed class SkillTemplateLoadingTests
 
     private static class SkillComparer
     {
-        public static void CompareSkills(Map<long, OldSkill> oldSkills, Map<long, Skill> newSkills)
+        public static void CompareSkills(Map<long, OldSkill> oldSkills, FrozenDictionary<long, Skill> newSkills)
         {
             List<SkillPair> skillPairs =
                 oldSkills.Values.Select(s => new SkillPair(s.Id, s.getLevel(), s.getSubLevel(), [s], [])).Concat(

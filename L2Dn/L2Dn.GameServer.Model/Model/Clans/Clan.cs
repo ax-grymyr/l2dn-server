@@ -1210,7 +1210,7 @@ public class Clan: IIdentifiable, INamable
 				int level = clanSkill.SkillLevel;
 
                 // Create a Skill object for each record
-                Skill skill = SkillData.getInstance().getSkill(id, level) ??
+                Skill skill = SkillData.Instance.GetSkill(id, level) ??
                     throw new InvalidOperationException("Clan Skill not found for id: " + id); // TODO: null checking hack
 
                 // Add the Skill object to the Clan _skills

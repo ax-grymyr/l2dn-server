@@ -37,7 +37,7 @@ public sealed class TriggerSkill: AbstractEffect
             return;
 
         Skill? triggerSkill = _adjustLevel
-            ? SkillData.getInstance().getSkill(_skill.getSkillId(), skill.Level)
+            ? SkillData.Instance.GetSkill(_skill.getSkillId(), skill.Level)
             : _skill.getSkill();
 
         if (triggerSkill == null)

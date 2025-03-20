@@ -163,7 +163,7 @@ public class EffectZone : Zone
 			{
 				foreach (var e in _skills)
 				{
-					Skill? skill = SkillData.getInstance().getSkill(e.Key, e.Value);
+					Skill? skill = SkillData.Instance.GetSkill(e.Key, e.Value);
 					if (skill != null && creature.isAffectedBySkill(skill.Id))
 					{
 						creature.stopSkillEffects(SkillFinishType.REMOVED, skill.Id);
@@ -266,7 +266,7 @@ public class EffectZone : Zone
 				{
 					foreach (var e in _effectZone._skills)
 					{
-						Skill? skill = SkillData.getInstance().getSkill(e.Key, e.Value);
+						Skill? skill = SkillData.Instance.GetSkill(e.Key, e.Value);
 						if (skill != null && (_effectZone._bypassConditions || skill.CheckCondition(character, character, false)))
 						{
 							if (character.getAffectedSkillLevel(skill.Id) < skill.Level)

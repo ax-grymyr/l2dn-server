@@ -68,7 +68,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 
 		int skillId = player.getReplacementSkill(_id);
 		Skill? existingSkill = player.getKnownSkill(skillId); // Mobius: Keep existing sublevel.
-		Skill? skill = SkillData.getInstance().getSkill(skillId, _level, existingSkill?.SubLevel ?? 0);
+		Skill? skill = SkillData.Instance.GetSkill(skillId, _level, existingSkill?.SubLevel ?? 0);
 		if (skill == null)
 		{
 			PacketLogger.Instance.Warn(

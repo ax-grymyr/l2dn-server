@@ -67,7 +67,7 @@ public class AdminTest: IAdminCommandHandler
 			caster = (Creature) target;
 		}
 
-		Skill? skill = SkillData.getInstance().getSkill(id, 1);
+		Skill? skill = SkillData.Instance.GetSkill(id, 1);
 		if (skill != null)
 		{
 			caster.setTarget(activeChar);

@@ -165,7 +165,7 @@ public class Servitor : Summon, Runnable
 			skillLevel = 1;
 		}
 
-		Skill? skillToCast = SkillData.getInstance().getSkill(skill.Id, skillLevel);
+		Skill? skillToCast = SkillData.Instance.GetSkill(skill.Id, skillLevel);
 		if (skillToCast != null)
 		{
 			base.doCast(skillToCast);
@@ -371,7 +371,7 @@ public class Servitor : Summon, Runnable
 				foreach (DbSummonSkillReuse record in query)
 				{
 					TimeSpan effectCurTime = record.RemainingTime;
-					Skill? skill = SkillData.getInstance().getSkill(record.SkillId, record.SkillLevel);
+					Skill? skill = SkillData.Instance.GetSkill(record.SkillId, record.SkillLevel);
 					if (skill == null)
 					{
 						continue;

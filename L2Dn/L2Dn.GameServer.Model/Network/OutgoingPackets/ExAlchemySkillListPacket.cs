@@ -20,7 +20,7 @@ public readonly struct ExAlchemySkillListPacket: IOutgoingPacket
             }
         }
 
-        Skill? skill = SkillData.getInstance().getSkill((int)CommonSkill.ALCHEMY_CUBE, 1);
+        Skill? skill = SkillData.Instance.GetSkill((int)CommonSkill.ALCHEMY_CUBE, 1);
         if (skill != null)
             _skills.Add(skill);
     }

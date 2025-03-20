@@ -187,7 +187,7 @@ public class AdminSkill: IAdminCommandHandler
 			string[] Split = command.Split(" ");
 			int id = int.Parse(Split[1]);
 			int level = int.Parse(Split[2]);
-			Skill? skill = SkillData.getInstance().getSkill(id, level);
+			Skill? skill = SkillData.Instance.GetSkill(id, level);
 			if (skill != null)
 			{
 				activeChar.addSkill(skill);
@@ -214,8 +214,8 @@ public class AdminSkill: IAdminCommandHandler
 			try
 			{
 				int skillId = int.Parse(st.nextToken());
-				int skillLevel = st.hasMoreTokens() ? int.Parse(st.nextToken()) : SkillData.getInstance().getMaxLevel(skillId);
-				Skill? skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+				int skillLevel = st.hasMoreTokens() ? int.Parse(st.nextToken()) : SkillData.Instance.GetMaxLevel(skillId);
+				Skill? skill = SkillData.Instance.GetSkill(skillId, skillLevel);
 				if (skill == null)
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Skill with id: " + skillId + ", level: " + skillLevel + " not found.");
@@ -310,7 +310,7 @@ public class AdminSkill: IAdminCommandHandler
 		Map<int, SkillLearn> skills = SkillTreeData.getInstance().getMaxPledgeSkills(clan, includeSquad);
 		foreach (SkillLearn s in skills.Values)
         {
-            Skill? skillData = SkillData.getInstance().getSkill(s.getSkillId(), s.getSkillLevel());
+            Skill? skillData = SkillData.Instance.GetSkill(s.getSkillId(), s.getSkillLevel());
             if (skillData != null)
 			    clan.addNewSkill(skillData);
 		}
@@ -513,7 +513,7 @@ public class AdminSkill: IAdminCommandHandler
 				string? level = st.countTokens() == 1 ? st.nextToken() : null;
 				int idval = int.Parse(id);
 				int levelval = level == null ? 1 : int.Parse(level);
-				skill = SkillData.getInstance().getSkill(idval, levelval);
+				skill = SkillData.Instance.GetSkill(idval, levelval);
 			}
 			catch (Exception e)
 			{
@@ -552,7 +552,7 @@ public class AdminSkill: IAdminCommandHandler
 			return;
 		}
 
-        Skill? skill = SkillData.getInstance().getSkill(idval, player.getSkillLevel(idval));
+        Skill? skill = SkillData.Instance.GetSkill(idval, player.getSkillLevel(idval));
 		if (skill != null)
 		{
 			string skillname = skill.Name;
@@ -602,7 +602,7 @@ public class AdminSkill: IAdminCommandHandler
 			return;
 		}
 
-		Skill? skill = SkillData.getInstance().getSkill(id, level);
+		Skill? skill = SkillData.Instance.GetSkill(id, level);
 		if (skill == null)
 		{
 			BuilderUtil.sendSysMessage(activeChar, "Error: there is no such skill.");

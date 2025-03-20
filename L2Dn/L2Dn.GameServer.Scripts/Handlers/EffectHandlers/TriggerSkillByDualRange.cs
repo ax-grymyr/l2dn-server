@@ -42,7 +42,7 @@ public sealed class TriggerSkillByDualRange: AbstractEffect
 
         SkillHolder skillHolder = effector.Distance3D(effected) < _distance ? _closeSkill : _rangeSkill;
         Skill? triggerSkill = _adjustLevel
-            ? SkillData.getInstance().getSkill(skillHolder.getSkillId(), skill.Level)
+            ? SkillData.Instance.GetSkill(skillHolder.getSkillId(), skill.Level)
             : skillHolder.getSkill();
 
         if (triggerSkill == null)

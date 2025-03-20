@@ -160,7 +160,7 @@ public class CharSummonTable
 				TimeSpan? time = dbSummon.Time;
 
 				removeServitor(player, summonObjId);
-				skill = SkillData.getInstance().getSkill(skillId, player.getSkillLevel(skillId));
+				skill = SkillData.Instance.GetSkill(skillId, player.getSkillLevel(skillId));
 				if (skill == null)
 				{
 					return;

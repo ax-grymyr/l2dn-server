@@ -162,7 +162,7 @@ public class SkillChannelizer: Runnable
 
                 if (skill.ChannelingSkillId > 0)
 				{
-					int maxSkillLevel = SkillData.getInstance().getMaxLevel(skill.ChannelingSkillId);
+					int maxSkillLevel = SkillData.Instance.GetMaxLevel(skill.ChannelingSkillId);
 					int skillLevel =
 						Math.Min(creature.getSkillChannelized().getChannerlizersSize(skill.ChannelingSkillId),
 							maxSkillLevel);
@@ -175,7 +175,7 @@ public class SkillChannelizer: Runnable
 					if (info == null || info.getSkill().Level < skillLevel)
 					{
 						Skill? channeledSkill =
-							SkillData.getInstance().getSkill(skill.ChannelingSkillId, skillLevel);
+							SkillData.Instance.GetSkill(skill.ChannelingSkillId, skillLevel);
 						if (channeledSkill == null)
 						{
 							LOGGER.Warn(GetType().Name + ": Non existent channeling skill requested: " + skill);

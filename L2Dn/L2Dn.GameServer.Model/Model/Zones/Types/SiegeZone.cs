@@ -223,7 +223,7 @@ public class SiegeZone: Zone
 				level = Math.Min(level + info.getSkill().Level, 5);
 			}
 
-			Skill? skill = SkillData.getInstance().getSkill(5660, level);
+			Skill? skill = SkillData.Instance.GetSkill(5660, level);
 			if (skill != null)
 			{
 				skill.ApplyEffects(creature, creature);

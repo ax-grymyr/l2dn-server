@@ -244,7 +244,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 
 		foreach (SkillLearn skill in SkillTreeData.getInstance().getAvailableSkills(newChar, newChar.getClassId(), false, true, false))
         {
-            Skill? skillTemplate = SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel());
+            Skill? skillTemplate = SkillData.Instance.GetSkill(skill.getSkillId(), skill.getSkillLevel());
             if (skillTemplate != null)
 			    newChar.addSkill(skillTemplate, true);
 		}

@@ -61,9 +61,9 @@ public class AdminBuffs: IAdminCommandHandler
 			try
 			{
 				int skillId = int.Parse(st.nextToken());
-				int skillLevel = st.hasMoreTokens() ? int.Parse(st.nextToken()) : SkillData.getInstance().getMaxLevel(skillId);
+				int skillLevel = st.hasMoreTokens() ? int.Parse(st.nextToken()) : SkillData.Instance.GetMaxLevel(skillId);
 				Creature target = (Creature)activeCharTarget;
-				Skill? skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+				Skill? skill = SkillData.Instance.GetSkill(skillId, skillLevel);
 				if (skill == null)
 				{
 					BuilderUtil.sendSysMessage(activeChar, "Skill with id: " + skillId + ", level: " + skillLevel + " not found.");

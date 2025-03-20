@@ -95,7 +95,7 @@ public class SchemeBuffer: Npc
                     if (availableBuff == null)
                         continue;
 
-                    Skill? skill = SkillData.getInstance().getSkill(skillId, availableBuff.getLevel());
+                    Skill? skill = SkillData.Instance.GetSkill(skillId, availableBuff.getLevel());
                     if (skill == null)
                         continue;
 
@@ -129,7 +129,7 @@ public class SchemeBuffer: Npc
             List<int> skills = SchemeBufferTable.getInstance().getScheme(player.ObjectId, schemeName);
             if (currentCommand.startsWith("skillselect") && !schemeName.equalsIgnoreCase("none"))
             {
-                Skill? skill = SkillData.getInstance().getSkill(skillId, SkillData.getInstance().getMaxLevel(skillId));
+                Skill? skill = SkillData.Instance.GetSkill(skillId, SkillData.Instance.GetMaxLevel(skillId));
                 if (skill != null)
                 {
                     if (skill.IsDance)
@@ -340,7 +340,7 @@ public class SchemeBuffer: Npc
         int row = 0;
         foreach (int skillId in skills)
         {
-            Skill? skill = SkillData.getInstance().getSkill(skillId, 1);
+            Skill? skill = SkillData.Instance.GetSkill(skillId, 1);
             if (skill == null)
                 continue;
 
@@ -475,7 +475,7 @@ public class SchemeBuffer: Npc
         int count = 0;
         foreach (int skillId in skills)
         {
-            Skill? skill = SkillData.getInstance().getSkill(skillId, 1);
+            Skill? skill = SkillData.Instance.GetSkill(skillId, 1);
             if (skill != null && skill.IsDance == dances)
                 count++;
         }

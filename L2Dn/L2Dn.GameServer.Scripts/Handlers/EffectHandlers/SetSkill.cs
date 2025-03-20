@@ -29,7 +29,7 @@ public sealed class SetSkill: AbstractEffect
         if (!effected.isPlayer())
             return;
 
-        Skill? setSkill = SkillData.getInstance().getSkill(_skillId, _skillLevel);
+        Skill? setSkill = SkillData.Instance.GetSkill(_skillId, _skillLevel);
         if (setSkill == null)
             return;
 

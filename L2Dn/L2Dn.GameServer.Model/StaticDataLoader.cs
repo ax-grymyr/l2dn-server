@@ -57,7 +57,7 @@ public static class StaticDataLoader
 
         SkillConditionHandler.getInstance(); //.executeScript();
         EffectHandler.getInstance(); //.executeScript();
-        SkillData.getInstance();
+        SkillData.Instance.Load();
         SkillTreeData.getInstance();
         PetSkillData.getInstance();
         PetAcquireList.getInstance();

@@ -45,7 +45,7 @@ public sealed class TriggerSkillByStat: AbstractEffect
                 {
                     if (!target.isAffectedBySkill(_skillId))
                     {
-                        Skill? triggerSkill = SkillData.getInstance().getSkill(_skillId, _skillLevel, _skillSubLevel);
+                        Skill? triggerSkill = SkillData.Instance.GetSkill(_skillId, _skillLevel, _skillSubLevel);
                         if (triggerSkill == null)
                             return;
 
