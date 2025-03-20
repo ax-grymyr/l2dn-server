@@ -17,7 +17,7 @@ public sealed class GetMomentum: AbstractEffect
         Ticks = @params.getInt("ticks", 0);
     }
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Player? player = effected.getActingPlayer();
         if (effected.isPlayer() && player != null)

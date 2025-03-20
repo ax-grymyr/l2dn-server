@@ -27,7 +27,7 @@ public sealed class ChameleonRest: AbstractEffect
 
     public override EffectTypes EffectType => EffectTypes.RELAXING;
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isDead())
             return false;
@@ -47,7 +47,7 @@ public sealed class ChameleonRest: AbstractEffect
         return skill.IsToggle;
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Player? player = effected.getActingPlayer();
         if (effected.isPlayer() && player != null)

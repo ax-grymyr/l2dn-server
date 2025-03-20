@@ -22,18 +22,18 @@ public sealed class Transformation: AbstractEffect
         _transformationIds = ParseUtil.ParseSet<int>(ids);
     }
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return !effected.isDoor();
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (_transformationIds.Count != 0)
             effected.transform(_transformationIds.Items.GetRandomElement(), true);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.stopTransformation(false);
     }

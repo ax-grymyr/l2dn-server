@@ -31,7 +31,7 @@ public sealed class CallSkill: AbstractEffect
 
     public override bool IsInstant => true;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (_chance < 100 && Rnd.get(100) > _chance)
             return;

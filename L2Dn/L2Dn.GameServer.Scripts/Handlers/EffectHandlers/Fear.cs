@@ -26,7 +26,7 @@ public sealed class Fear: AbstractEffect
 
     public override EffectFlags EffectFlags => EffectFlags.FEAR;
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         if (effected == null || effected.isRaid())
             return false;
@@ -36,19 +36,19 @@ public sealed class Fear: AbstractEffect
                 || effected is SiegeFlag || effected.getTemplate().getRace() == Race.SIEGE_WEAPON));
     }
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         FearAction(null, effected);
         return false;
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.getAI().notifyEvent(CtrlEvent.EVT_AFRAID);
         FearAction(effector, effected);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         if (!effected.isPlayer())
             effected.getAI().notifyEvent(CtrlEvent.EVT_THINK);

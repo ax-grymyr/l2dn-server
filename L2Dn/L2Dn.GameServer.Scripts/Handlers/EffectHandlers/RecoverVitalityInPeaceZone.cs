@@ -22,7 +22,7 @@ public sealed class RecoverVitalityInPeaceZone: AbstractEffect
         Ticks = @params.getInt("ticks", 10);
     }
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Player? effectedPlayer = effected.getActingPlayer();
         if (effectedPlayer == null //
@@ -42,7 +42,7 @@ public sealed class RecoverVitalityInPeaceZone: AbstractEffect
         return skill.IsToggle;
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         Player? effectedPlayer = effected.getActingPlayer();
         if (effectedPlayer != null //

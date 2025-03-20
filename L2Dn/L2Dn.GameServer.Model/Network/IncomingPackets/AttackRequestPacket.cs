@@ -52,7 +52,7 @@ public struct AttackRequestPacket: IIncomingPacket<GameSession>
 	    {
 		    foreach (AbstractEffect effect in info.getEffects())
 		    {
-			    if (!effect.checkCondition(-1))
+			    if (!effect.CheckCondition(-1))
 			    {
 				    connection.Send(new SystemMessagePacket(SystemMessageId
 					    .YOU_HAVE_BEEN_REPORTED_AS_AN_ILLEGAL_PROGRAM_USER_SO_YOUR_ACTIONS_HAVE_BEEN_RESTRICTED));

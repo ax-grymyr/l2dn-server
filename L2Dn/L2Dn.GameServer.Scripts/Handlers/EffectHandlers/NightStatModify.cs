@@ -42,17 +42,17 @@ public sealed class NightStatModify: AbstractEffect
         }
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         NIGHT_STAT_CHARACTERS.add(effected);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         NIGHT_STAT_CHARACTERS.remove(effected);
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         // Not night.
         if (!GameTimeTaskManager.getInstance().isNight())

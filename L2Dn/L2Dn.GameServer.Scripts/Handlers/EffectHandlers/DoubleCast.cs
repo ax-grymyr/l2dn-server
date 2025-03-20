@@ -24,7 +24,7 @@ public sealed class DoubleCast: AbstractEffect
 
     public override EffectFlags EffectFlags => EffectFlags.DOUBLE_CAST;
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isPlayer())
         {
@@ -39,10 +39,10 @@ public sealed class DoubleCast: AbstractEffect
             }
         }
 
-        base.onStart(effector, effected, skill, item);
+        base.OnStart(effector, effected, skill, item);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         if (effected.isPlayer())
         {

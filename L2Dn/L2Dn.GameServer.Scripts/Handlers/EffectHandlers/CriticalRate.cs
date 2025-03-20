@@ -13,7 +13,7 @@ public sealed class CriticalRate: AbstractConditionalHpEffect
     {
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         foreach (Condition cond in Conditions)
         {

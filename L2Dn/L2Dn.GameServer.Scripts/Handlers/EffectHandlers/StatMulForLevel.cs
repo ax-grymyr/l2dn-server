@@ -27,7 +27,7 @@ public sealed class StatMulForLevel: AbstractEffect
             throw new ArgumentException(nameof(StatMulForLevel) + " can only use PER mode.");
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         if (_values.TryGetValue(effected.getLevel(), out double amount))
             effected.getStat().mergeMul(_stat, amount / 100 + 1);

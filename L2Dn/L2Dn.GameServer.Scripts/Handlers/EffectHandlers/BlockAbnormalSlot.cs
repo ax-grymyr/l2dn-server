@@ -23,12 +23,12 @@ public sealed class BlockAbnormalSlot: AbstractEffect
         _blockAbnormalSlots = ParseUtil.ParseEnumSet<AbnormalType>(slot);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.getEffectList().addBlockedAbnormalTypes(_blockAbnormalSlots);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.getEffectList().removeBlockedAbnormalTypes(_blockAbnormalSlots);
     }

@@ -23,7 +23,7 @@ public sealed class AddHate: AbstractEffect
 
     public override bool IsInstant => true;
 
-    public override void instant(Creature creature, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature creature, Creature effected, Skill skill, Item? item)
     {
         Creature effector = creature;
         Creature? summoner = effector.getSummoner();

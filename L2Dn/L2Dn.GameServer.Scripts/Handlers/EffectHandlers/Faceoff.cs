@@ -14,7 +14,7 @@ public sealed class Faceoff: AbstractEffect
 
     public override EffectFlags EffectFlags => EffectFlags.FACEOFF;
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected.isPlayer();
     }

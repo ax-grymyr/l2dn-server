@@ -25,14 +25,14 @@ public sealed class BlockAction: AbstractEffect
         _blockedActions = ParseUtil.ParseSet<int>(blockedActions, ',');
     }
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected != null && effected.isPlayer();
     }
 
-    public override bool checkCondition(int id) => !_blockedActions.Contains(id);
+    public override bool CheckCondition(int id) => !_blockedActions.Contains(id);
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (_blockedActions.Contains(BotReportTable.PARTY_ACTION_BLOCK_ID))
         {
@@ -47,7 +47,7 @@ public sealed class BlockAction: AbstractEffect
         }
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         if (_blockedActions.Contains(BotReportTable.PARTY_ACTION_BLOCK_ID))
         {

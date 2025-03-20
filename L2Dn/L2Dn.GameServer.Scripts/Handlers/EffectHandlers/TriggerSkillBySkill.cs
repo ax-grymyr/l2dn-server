@@ -34,7 +34,7 @@ public sealed class TriggerSkillBySkill: AbstractEffect
         _replace = @params.getBoolean("replace", true);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (_chance == 0 || _skill.getSkillId() == 0 || _skill.getSkillLevel() == 0 || _castSkillId == 0)
             return;
@@ -42,7 +42,7 @@ public sealed class TriggerSkillBySkill: AbstractEffect
         effected.Events.Subscribe<OnCreatureSkillFinishCast>(this, onSkillUseEvent);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.Events.Unsubscribe<OnCreatureSkillFinishCast>(onSkillUseEvent);
     }

@@ -22,7 +22,7 @@ public sealed class Mute: AbstractEffect
 
     public override EffectTypes EffectType => EffectTypes.MUTE;
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected == null || effected.isRaid())
             return;

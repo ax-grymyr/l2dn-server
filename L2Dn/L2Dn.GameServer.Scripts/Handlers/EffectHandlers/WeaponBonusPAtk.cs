@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 public sealed class WeaponBonusPAtk(StatSet @params): AbstractStatAddEffect(@params, Stat.WEAPON_BONUS_PHYSICAL_ATTACK)
 {
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Player? player = effected.getActingPlayer();
         if (player == null)
@@ -26,7 +26,7 @@ public sealed class WeaponBonusPAtk(StatSet @params): AbstractStatAddEffect(@par
         player.broadcastUserInfo();
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         Player? player = effected.getActingPlayer();
         if (player == null)

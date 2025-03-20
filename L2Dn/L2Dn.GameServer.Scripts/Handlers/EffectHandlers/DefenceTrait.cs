@@ -28,7 +28,7 @@ public sealed class DefenceTrait: AbstractEffect
             float.Parse(p.Value.ToString() ?? string.Empty, CultureInfo.InvariantCulture) / 100)).ToFrozenDictionary();
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         foreach ((TraitType key, float value) in _defenceTraits)
         {
@@ -39,7 +39,7 @@ public sealed class DefenceTrait: AbstractEffect
         }
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         foreach ((TraitType key, float value) in _defenceTraits)
         {

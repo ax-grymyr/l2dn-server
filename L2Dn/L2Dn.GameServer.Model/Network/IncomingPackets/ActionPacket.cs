@@ -54,7 +54,7 @@ public struct ActionPacket: IIncomingPacket<GameSession>
 		{
 			foreach (AbstractEffect effect in info.getEffects())
 			{
-				if (!effect.checkCondition(-4))
+				if (!effect.CheckCondition(-4))
 				{
 					player.sendPacket(SystemMessageId.YOU_HAVE_BEEN_REPORTED_AS_AN_ILLEGAL_PROGRAM_USER_SO_YOUR_ACTIONS_HAVE_BEEN_RESTRICTED);
 					player.sendPacket(ActionFailedPacket.STATIC_PACKET);

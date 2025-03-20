@@ -61,7 +61,7 @@ public sealed class AbsorbDamage: AbstractEffect
         ev.OverridenDamage = newDamage;
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         if (_mode == StatModifierType.DIFF)
         {
@@ -75,7 +75,7 @@ public sealed class AbsorbDamage: AbstractEffect
         }
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (_mode == StatModifierType.DIFF)
         {

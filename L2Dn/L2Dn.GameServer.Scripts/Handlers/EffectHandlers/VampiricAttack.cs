@@ -18,7 +18,7 @@ public sealed class VampiricAttack: AbstractEffect
         _sum = _amount * @params.getDouble("chance");
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         effected.getStat().mergeAdd(Stat.ABSORB_DAMAGE_PERCENT, _amount / 100);
         effected.getStat().addToVampiricSum(_sum);

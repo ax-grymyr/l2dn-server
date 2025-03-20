@@ -305,7 +305,7 @@ public class BuffInfo
 			}
 
 			// Call on start.
-			effect.onStart(_effector, _effected, _skill, _item);
+			effect.OnStart(_effector, _effected, _skill, _item);
 
 			// Do not add continuous effect if target just died from the initial effect, otherwise they'll be ticked forever.
 			if (_effected.isDead())
@@ -340,7 +340,7 @@ public class BuffInfo
 		if (_isInUse)
 		{
 			// Callback for on action time event.
-			continueForever = effect.onActionTime(_effector, _effected, _skill, _item);
+			continueForever = effect.OnActionTime(_effector, _effected, _skill, _item);
 		}
 
 		if (!continueForever && _skill.IsToggle)
@@ -379,7 +379,7 @@ public class BuffInfo
 			// Instant effects shouldn't call onExit(..).
 			// if (!effect.isInstant())
 			// {
-			effect.onExit(_effector, _effected, _skill);
+			effect.OnExit(_effector, _effected, _skill);
 			// }
 		}
 

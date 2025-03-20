@@ -18,7 +18,7 @@ public sealed class MpVampiricAttack: AbstractEffect
         _sum = _amount * @params.getDouble("chance", 30); // Classic: 30% chance.
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         effected.getStat().mergeAdd(Stat.ABSORB_MANA_DAMAGE_PERCENT, _amount / 100);
         effected.getStat().addToMpVampiricSum(_sum);

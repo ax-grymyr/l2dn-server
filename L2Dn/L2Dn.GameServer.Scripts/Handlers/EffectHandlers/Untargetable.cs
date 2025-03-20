@@ -16,12 +16,12 @@ public sealed class Untargetable: AbstractEffect
     {
     }
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected.isPlayer();
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         // Remove target from those that have the untargetable creature on target.
         World.getInstance().forEachVisibleObject<Creature>(effected, c =>

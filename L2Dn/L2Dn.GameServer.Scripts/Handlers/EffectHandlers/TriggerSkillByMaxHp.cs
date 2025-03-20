@@ -25,7 +25,7 @@ public sealed class TriggerSkillByMaxHp: AbstractEffect
         _to = @params.getInt("to", int.MaxValue);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         // Delay so that HP bonuses will be calculated first.
         ThreadPool.schedule(() =>

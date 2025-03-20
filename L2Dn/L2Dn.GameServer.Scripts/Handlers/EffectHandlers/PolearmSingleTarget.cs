@@ -14,13 +14,13 @@ public sealed class PolearmSingleTarget: AbstractEffect
     {
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isPlayer())
             effected.getStat().addFixedValue(Stat.PHYSICAL_POLEARM_TARGET_SINGLE, 1.0);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         if (effected.isPlayer())
             effected.getStat().removeFixedValue(Stat.PHYSICAL_POLEARM_TARGET_SINGLE);

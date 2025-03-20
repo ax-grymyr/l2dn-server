@@ -27,7 +27,7 @@ public sealed class StatAddForStat: AbstractEffect
             throw new ArgumentException(nameof(StatAddForStat) + " can only use DIFF mode.");
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         int currentValue = (int)effected.getStat().getValue(_stat);
         if (currentValue >= _min && currentValue <= _max)

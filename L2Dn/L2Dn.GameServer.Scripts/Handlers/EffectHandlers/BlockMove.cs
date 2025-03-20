@@ -16,12 +16,12 @@ public sealed class BlockMove: AbstractEffect
     {
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.setImmobilized(true);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.setImmobilized(false);
     }

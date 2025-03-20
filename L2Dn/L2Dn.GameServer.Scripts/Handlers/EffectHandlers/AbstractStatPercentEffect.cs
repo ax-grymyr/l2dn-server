@@ -28,7 +28,7 @@ public abstract class AbstractStatPercentEffect: AbstractEffect
 
     public double Amount => _amount;
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         effected.getStat().mergeMul(_stat, _amount / 100 + 1);
     }

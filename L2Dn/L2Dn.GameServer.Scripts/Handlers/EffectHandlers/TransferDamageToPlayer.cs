@@ -12,13 +12,13 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 public sealed class TransferDamageToPlayer(StatSet @params)
     : AbstractStatAddEffect(@params, Stat.TRANSFER_DAMAGE_TO_PLAYER)
 {
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         if (effected.isPlayable() && effector.isPlayer())
             ((Playable)effected).setTransferDamageTo(null);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Player? player = effector.getActingPlayer();
         if (effected.isPlayable() && effector.isPlayer() && player != null)

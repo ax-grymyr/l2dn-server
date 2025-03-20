@@ -46,7 +46,7 @@ public struct RequestActionUsePacket: IIncomingPacket<GameSession>
 		{
 			foreach (AbstractEffect effect in info.getEffects())
 			{
-				if (!effect.checkCondition(_actionId))
+				if (!effect.CheckCondition(_actionId))
 				{
 					connection.Send(new SystemMessagePacket(SystemMessageId.YOU_HAVE_BEEN_REPORTED_AS_AN_ILLEGAL_PROGRAM_USER_SO_YOUR_ACTIONS_HAVE_BEEN_RESTRICTED));
 					connection.Send(ActionFailedPacket.STATIC_PACKET);

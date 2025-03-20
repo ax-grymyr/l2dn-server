@@ -16,17 +16,17 @@ public sealed class EnableCloak: AbstractEffect
     {
     }
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effector != null && effected != null && effected.isPlayer();
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.getActingPlayer()?.getStat().setCloakSlotStatus(true);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.getActingPlayer()?.getStat().setCloakSlotStatus(false);
     }

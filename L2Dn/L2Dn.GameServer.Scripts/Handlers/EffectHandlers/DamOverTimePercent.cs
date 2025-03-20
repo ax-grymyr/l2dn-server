@@ -26,7 +26,7 @@ public sealed class DamOverTimePercent: AbstractEffect
 
     public override EffectTypes EffectType => EffectTypes.DMG_OVER_TIME_PERCENT;
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isDead())
             return false;

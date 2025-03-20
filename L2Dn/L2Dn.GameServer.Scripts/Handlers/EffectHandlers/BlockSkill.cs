@@ -27,7 +27,7 @@ public sealed class BlockSkill: AbstractEffect
         _skillIds = ParseUtil.ParseSet<int>(skillIds);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (_magicTypes.Count == 0 && _skillIds.Count == 0)
             return;
@@ -35,7 +35,7 @@ public sealed class BlockSkill: AbstractEffect
         effected.Events.Subscribe<OnCreatureSkillUse>(this, OnSkillUseEvent);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.Events.Unsubscribe<OnCreatureSkillUse>(OnSkillUseEvent);
     }

@@ -27,7 +27,7 @@ public sealed class MagicalDamOverTime: AbstractEffect
 
     public override EffectTypes EffectType => EffectTypes.MAGICAL_DMG_OVER_TIME;
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Creature creature = effector;
         Creature target = effected;

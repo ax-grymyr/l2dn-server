@@ -21,7 +21,7 @@ public sealed class StatUp: AbstractEffect
         _stats = ParseUtil.ParseEnumSet<Stat>(stats, "STAT_", string.Empty, ',');
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         foreach (Stat stat in _stats)
             effected.getStat().mergeAdd(stat, _amount);

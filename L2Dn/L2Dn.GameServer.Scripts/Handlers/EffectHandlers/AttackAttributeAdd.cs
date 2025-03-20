@@ -17,7 +17,7 @@ public sealed class AttackAttributeAdd: AbstractEffect
         _amount = @params.getDouble("amount", 0);
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         Stat stat = Stat.FIRE_POWER;
         AttributeType maxAttribute = AttributeType.FIRE;

@@ -19,7 +19,7 @@ public sealed class EnlargeSlot: AbstractEffect
         _type = @params.getEnum("type", StorageType.INVENTORY_NORMAL);
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         Stat stat = _type switch
         {

@@ -24,12 +24,12 @@ public sealed class ServitorShare: AbstractEffect
             ToFrozenDictionary();
     }
 
-    public override bool canPump(Creature? effector, Creature effected, Skill? skill)
+    public override bool CanPump(Creature? effector, Creature effected, Skill? skill)
     {
         return effected.isSummon();
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         Player? owner = effected.getActingPlayer();
         if (owner != null)

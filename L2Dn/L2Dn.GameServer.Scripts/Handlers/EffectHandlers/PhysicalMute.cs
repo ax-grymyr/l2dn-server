@@ -19,7 +19,7 @@ public sealed class PhysicalMute: AbstractEffect
 
     public override EffectFlags EffectFlags => EffectFlags.PSYCHICAL_MUTED;
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.getAI().notifyEvent(CtrlEvent.EVT_MUTED);
     }

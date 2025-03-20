@@ -16,7 +16,7 @@ public sealed class SkillMastery: AbstractEffect
         _stat = (int)@params.getEnum("stat", BaseStat.STR);
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         effected.getStat().mergeAdd(Stat.SKILL_MASTERY, _stat);
     }

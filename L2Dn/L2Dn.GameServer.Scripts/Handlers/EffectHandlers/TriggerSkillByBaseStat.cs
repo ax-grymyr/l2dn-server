@@ -29,7 +29,7 @@ public sealed class TriggerSkillByBaseStat: AbstractEffect
         _max = @params.getInt("max", 9999);
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         Creature target = effected;
 

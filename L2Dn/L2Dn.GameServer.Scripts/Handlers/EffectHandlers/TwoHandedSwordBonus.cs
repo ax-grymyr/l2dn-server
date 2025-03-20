@@ -97,7 +97,7 @@ public sealed class TwoHandedSwordBonus: AbstractEffect
         _skillBonusRangeMode = @params.getEnum("SkillBonusRangeMode", StatModifierType.DIFF);
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         if (!_weaponTypeCondition.test(effected, effected, skill) || !_slotCondition.test(effected, effected, skill))
             return;

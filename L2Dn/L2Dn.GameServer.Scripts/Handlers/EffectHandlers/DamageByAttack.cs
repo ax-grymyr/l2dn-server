@@ -33,7 +33,7 @@ public sealed class DamageByAttack: AbstractEffect
         }
     }
 
-    public override void pump(Creature target, Skill skill)
+    public override void Pump(Creature target, Skill skill)
     {
         switch (_type)
         {

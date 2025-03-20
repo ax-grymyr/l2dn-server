@@ -21,7 +21,7 @@ public abstract class AbstractConditionalHpEffect: AbstractStatEffect
         _hpPercent = @params.getInt("hpPercent", 0);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         // Augmentation option
         if (skill is null)
@@ -30,12 +30,12 @@ public abstract class AbstractConditionalHpEffect: AbstractStatEffect
         // Register listeners
         if (_hpPercent > 0 && _updates.ContainsKey(effected))
         {
-            if (_updates.TryAdd(effected, new AtomicBoolean(canPump(effector, effected, skill))))
+            if (_updates.TryAdd(effected, new AtomicBoolean(CanPump(effector, effected, skill))))
                 effected.Events.Subscribe<OnCreatureHpChange>(this, OnCreatureHpChanged);
         }
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         // Augmentation option
         if (skill is null)
@@ -45,7 +45,7 @@ public abstract class AbstractConditionalHpEffect: AbstractStatEffect
         _updates.TryRemove(effected, out _);
     }
 
-    public override bool canPump(Creature? effector, Creature effected, Skill? skill)
+    public override bool CanPump(Creature? effector, Creature effected, Skill? skill)
     {
         return _hpPercent <= 0 || effected.getCurrentHpPercent() <= _hpPercent;
     }
@@ -56,7 +56,7 @@ public abstract class AbstractConditionalHpEffect: AbstractStatEffect
         if (!_updates.TryGetValue(creature, out AtomicBoolean? update))
             return;
 
-        if (canPump(null, creature, null))
+        if (CanPump(null, creature, null))
         {
             if (update.get())
             {

@@ -23,14 +23,14 @@ public sealed class AbnormalShield: AbstractEffect
         _times = @params.getInt("times", -1);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.setAbnormalShieldBlocks(_times);
     }
 
     public override EffectFlags EffectFlags => EffectFlags.ABNORMAL_SHIELD;
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.setAbnormalShieldBlocks(int.MinValue);
     }

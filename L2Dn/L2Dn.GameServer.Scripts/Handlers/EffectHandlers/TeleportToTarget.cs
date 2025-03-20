@@ -23,14 +23,14 @@ public sealed class TeleportToTarget: AbstractEffect
 
     public override EffectTypes EffectType => EffectTypes.TELEPORT_TO_TARGET;
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected != null && GeoEngine.getInstance().canSeeTarget(effected, effector);
     }
 
     public override bool IsInstant => true;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         int px = effected.getX();
         int py = effected.getY();

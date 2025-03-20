@@ -30,7 +30,7 @@ public sealed class Lethal: AbstractEffect
 
     public override EffectTypes EffectType => EffectTypes.LETHAL_ATTACK;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effector.isPlayer() && effector.getActingPlayer() is { } player && !player.getAccessLevel().CanGiveDamage)
             return;

@@ -21,7 +21,7 @@ public sealed class Unsummon: AbstractEffect
         _chance = @params.getInt("chance", -1);
     }
 
-    public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
+    public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
     {
         if (_chance < 0)
             return true;
@@ -39,14 +39,14 @@ public sealed class Unsummon: AbstractEffect
         return false;
     }
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected.isSummon();
     }
 
     public override bool IsInstant => true;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (!effected.isServitor())
             return;

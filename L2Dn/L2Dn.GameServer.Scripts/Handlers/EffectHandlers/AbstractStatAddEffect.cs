@@ -23,7 +23,7 @@ public abstract class AbstractStatAddEffect: AbstractEffect
 
     public double Amount => _amount;
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         effected.getStat().mergeAdd(_stat, _amount);
     }

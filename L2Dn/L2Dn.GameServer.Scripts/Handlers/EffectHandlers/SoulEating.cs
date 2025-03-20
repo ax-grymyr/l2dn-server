@@ -28,7 +28,7 @@ public sealed class SoulEating: AbstractEffect
         _maxSouls = @params.getDouble("maxSouls");
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isPlayer())
         {
@@ -37,7 +37,7 @@ public sealed class SoulEating: AbstractEffect
         }
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         if (effected.isPlayer())
         {
@@ -46,7 +46,7 @@ public sealed class SoulEating: AbstractEffect
         }
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         effected.getStat().mergeAdd(Stat.MAX_SOULS, _maxSouls);
     }

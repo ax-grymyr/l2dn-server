@@ -15,7 +15,7 @@ public sealed class ProtectionBlessing: AbstractEffect
     {
     }
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effector != null && effected != null && effected.isPlayer();
     }

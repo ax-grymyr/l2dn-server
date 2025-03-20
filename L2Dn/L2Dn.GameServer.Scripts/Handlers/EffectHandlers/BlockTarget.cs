@@ -13,7 +13,7 @@ public sealed class BlockTarget: AbstractEffect
     {
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.setTargetable(false);
         World.getInstance().forEachVisibleObject<Creature>(effected, target =>
@@ -25,7 +25,7 @@ public sealed class BlockTarget: AbstractEffect
         });
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.setTargetable(true);
     }

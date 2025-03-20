@@ -209,12 +209,12 @@ public sealed class TriggerSkillByAttack: AbstractEffect
         }
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.Events.Unsubscribe<OnCreatureDamageDealt>(onAttackEvent);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.Events.Subscribe<OnCreatureDamageDealt>(this, onAttackEvent);
     }

@@ -43,7 +43,7 @@ public sealed class Speed: AbstractEffect
             _condition = new ConditionUsingItemType(weaponTypesMask);
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         if (_condition == null || _condition.test(effected, effected, skill))
         {

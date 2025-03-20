@@ -39,7 +39,7 @@ public sealed class StatBonusSkillCritical: AbstractEffect
         _armorTypeCondition = armorTypesMask != ItemTypeMask.Zero ? new ConditionUsingItemType(armorTypesMask) : null;
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         if (_armorTypeCondition == null || _armorTypeCondition.test(effected, effected, skill))
             effected.getStat().mergeAdd(Stat.STAT_BONUS_SKILL_CRITICAL, _stat); // TODO: why ordinal value is added

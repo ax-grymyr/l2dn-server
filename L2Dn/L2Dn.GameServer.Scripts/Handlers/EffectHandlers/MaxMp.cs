@@ -18,7 +18,7 @@ public sealed class MaxMp: AbstractStatEffect
         _heal = @params.getBoolean("heal", false);
     }
 
-    public override void continuousInstant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void ContinuousInstant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (_heal)
         {

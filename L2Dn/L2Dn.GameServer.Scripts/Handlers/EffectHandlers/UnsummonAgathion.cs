@@ -20,7 +20,7 @@ public sealed class UnsummonAgathion: AbstractEffect
 
     public override bool IsInstant => true;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Player? player = effector.getActingPlayer();
         if (player == null)

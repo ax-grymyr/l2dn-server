@@ -59,7 +59,7 @@ public class PhysicalAttack: AbstractEffect
         _chanceToRepeat = @params.getInt("chanceToRepeat", 0);
     }
 
-    public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
+    public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
     {
         return !Formulas.calcSkillEvasion(effector, effected, skill);
     }
@@ -68,7 +68,7 @@ public class PhysicalAttack: AbstractEffect
 
     public override bool IsInstant => true;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effector.isAlikeDead())
             return;

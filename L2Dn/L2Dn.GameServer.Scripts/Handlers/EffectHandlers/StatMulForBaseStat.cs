@@ -29,7 +29,7 @@ public sealed class StatMulForBaseStat: AbstractEffect
         }
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         int currentValue = _baseStat switch
         {

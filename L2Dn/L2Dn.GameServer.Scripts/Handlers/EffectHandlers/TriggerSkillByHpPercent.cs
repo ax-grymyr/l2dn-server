@@ -25,12 +25,12 @@ public sealed class TriggerSkillByHpPercent: AbstractEffect
         _percentTo = @params.getInt("percentTo", 100);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.Events.Subscribe<OnCreatureHpChange>(this, onHpChange);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.Events.Unsubscribe<OnCreatureHpChange>(onHpChange);
     }

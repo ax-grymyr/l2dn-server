@@ -27,7 +27,7 @@ public sealed class Relax: AbstractEffect
 
     public override EffectTypes EffectType => EffectTypes.RELAXING;
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Player? effectedPlayer = effected.getActingPlayer();
         if (effected.isPlayer() && effectedPlayer != null)
@@ -40,7 +40,7 @@ public sealed class Relax: AbstractEffect
         }
     }
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isDead())
         {

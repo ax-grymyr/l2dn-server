@@ -11,7 +11,7 @@ public sealed class ExpModify: AbstractStatAddEffect
     {
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         effected.getStat().mergeAdd(Stat.BONUS_EXP, Amount);
         if (skill != null && skill.IsActive)

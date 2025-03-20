@@ -33,12 +33,12 @@ public sealed class Disarmor: AbstractEffect
         }
     }
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return _slot != ItemTemplate.SLOT_NONE && effected.isPlayer();
     }
 
-    public override void continuousInstant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void ContinuousInstant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Player? player = effected.getActingPlayer();
         if (!effected.isPlayer() || player == null)
@@ -75,7 +75,7 @@ public sealed class Disarmor: AbstractEffect
         }
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         Player? player = effected.getActingPlayer();
         if (!effected.isPlayer() || player == null)

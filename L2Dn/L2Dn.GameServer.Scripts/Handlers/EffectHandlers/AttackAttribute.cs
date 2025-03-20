@@ -21,7 +21,7 @@ public sealed class AttackAttribute: AbstractEffect
         _stats = ParseUtil.ParseEnumSet<Stat>(attributes, string.Empty, "_POWER", ',');
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         foreach (Stat stat in _stats)
             effected.getStat().mergeAdd(stat, _amount);

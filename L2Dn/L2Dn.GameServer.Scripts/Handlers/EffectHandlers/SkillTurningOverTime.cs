@@ -21,7 +21,7 @@ public sealed class SkillTurningOverTime: AbstractEffect
         Ticks = @params.getInt("ticks");
     }
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected == null || effected == effector || effected.isRaid())
             return false;
@@ -36,7 +36,7 @@ public sealed class SkillTurningOverTime: AbstractEffect
             effected.sendPacket(SystemMessageId.YOUR_CASTING_HAS_BEEN_INTERRUPTED);
         }
 
-        return base.onActionTime(effector, effected, skill, item);
+        return base.OnActionTime(effector, effected, skill, item);
     }
 
     public override int GetHashCode() => HashCode.Combine(_chance, _staticChance, Ticks);

@@ -14,7 +14,7 @@ public sealed class DuelistFury: AbstractEffect
 
     public override EffectFlags EffectFlags => EffectFlags.DUELIST_FURY;
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected.isPlayer();
     }

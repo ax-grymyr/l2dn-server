@@ -92,7 +92,7 @@ public abstract class AbstractStatEffect: AbstractEffect
     public StatModifierType Mode => _mode;
     public ImmutableArray<Condition> Conditions => _conditions;
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         foreach (Condition cond in _conditions)
         {

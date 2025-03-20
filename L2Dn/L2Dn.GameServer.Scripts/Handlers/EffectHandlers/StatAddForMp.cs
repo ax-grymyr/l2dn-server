@@ -20,7 +20,7 @@ public sealed class StatAddForMp: AbstractEffect
         _amount = @params.getDouble("amount", 0);
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         if (effected.getMaxMp() >= _mp)
             effected.getStat().mergeAdd(_stat, _amount);

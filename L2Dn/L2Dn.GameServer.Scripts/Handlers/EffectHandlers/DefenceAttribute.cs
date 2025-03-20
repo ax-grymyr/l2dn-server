@@ -23,7 +23,7 @@ public sealed class DefenceAttribute: AbstractEffect
             throw new ArgumentException("No stats defined for DefenceAttribute effect");
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         foreach (Stat stat in _stats)
             effected.getStat().mergeAdd(stat, _amount);

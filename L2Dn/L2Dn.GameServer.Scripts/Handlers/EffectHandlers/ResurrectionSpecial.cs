@@ -37,7 +37,7 @@ public sealed class ResurrectionSpecial: AbstractEffect
 
     public override EffectFlags EffectFlags => EffectFlags.RESURRECTION_SPECIAL;
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         Player? effectedPlayer = effected.getActingPlayer();
         if (!effected.isPlayer() && !effected.isPet() || effectedPlayer == null)

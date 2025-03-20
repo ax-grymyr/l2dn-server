@@ -22,7 +22,7 @@ public sealed class TargetCancel: AbstractEffect
         _chance = @params.getInt("chance", 100);
     }
 
-    public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
+    public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
     {
         return !(effected.hasAbnormalType(AbnormalType.ABNORMAL_INVINCIBILITY) ||
                 effected.hasAbnormalType(AbnormalType.INVINCIBILITY_SPECIAL) ||
@@ -32,7 +32,7 @@ public sealed class TargetCancel: AbstractEffect
 
     public override bool IsInstant => true;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.setTarget(null);
         effected.abortAttack();

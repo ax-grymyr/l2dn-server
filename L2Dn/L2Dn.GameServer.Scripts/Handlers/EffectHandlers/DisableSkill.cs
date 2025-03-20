@@ -19,7 +19,7 @@ public sealed class DisableSkill: AbstractEffect
         _disabledSkills = ParseUtil.ParseSet<int>(disable);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         foreach (int disableSkillId in _disabledSkills)
         {
@@ -29,7 +29,7 @@ public sealed class DisableSkill: AbstractEffect
         }
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         foreach (int enableSkillId in _disabledSkills)
         {

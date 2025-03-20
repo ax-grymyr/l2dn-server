@@ -20,13 +20,13 @@ public sealed class AddSkillBySkill: AbstractEffect
         _addedSkill = new SkillHolder(@params.getInt("addedSkillId"), @params.getInt("addedSkillLevel"));
     }
 
-    public override bool canPump(Creature? effector, Creature effected, Skill? skill)
+    public override bool CanPump(Creature? effector, Creature effected, Skill? skill)
     {
         return effected.isPlayer() && !effected.isTransformed() &&
             effected.getSkillLevel(_existingSkillId) == _existingSkillLevel;
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         Player? player = effected.getActingPlayer();
         if (player == null)
@@ -41,7 +41,7 @@ public sealed class AddSkillBySkill: AbstractEffect
         }, 100);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         Player? player = effected.getActingPlayer();
         if (player == null)

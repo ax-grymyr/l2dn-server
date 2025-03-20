@@ -27,7 +27,7 @@ public sealed class StatAddForLevel: AbstractEffect
             throw new ArgumentException(nameof(StatAddForLevel) + " can only use DIFF mode.");
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         if (_values.TryGetValue(effected.getLevel(), out double amount))
             effected.getStat().mergeAdd(_stat, amount);

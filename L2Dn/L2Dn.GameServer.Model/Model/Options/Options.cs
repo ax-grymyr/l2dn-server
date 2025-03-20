@@ -124,16 +124,16 @@ public class Options
 			{
 				if (effect.IsInstant)
 				{
-					if (effect.calcSuccess(info.getEffector(), info.getEffected(), info.getSkill()))
+					if (effect.CalcSuccess(info.getEffector(), info.getEffected(), info.getSkill()))
 					{
-						effect.instant(info.getEffector(), info.getEffected(), info.getSkill(), info.getItem());
+						effect.Instant(info.getEffector(), info.getEffected(), info.getSkill(), info.getItem());
 					}
 				}
 				else
 				{
-					effect.continuousInstant(info.getEffector(), info.getEffected(), info.getSkill(), info.getItem());
-					effect.pump(playable, info.getSkill());
-					if (effect.canStart(info.getEffector(), info.getEffected(), info.getSkill()))
+					effect.ContinuousInstant(info.getEffector(), info.getEffected(), info.getSkill(), info.getItem());
+					effect.Pump(playable, info.getSkill());
+					if (effect.CanStart(info.getEffector(), info.getEffected(), info.getSkill()))
 					{
 						info.addEffect(effect);
 					}

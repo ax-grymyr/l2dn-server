@@ -22,7 +22,7 @@ public sealed class Confuse: AbstractEffect
         _chance = @params.getInt("chance", 100);
     }
 
-    public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
+    public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
     {
         return Formulas.calcProbability(_chance, effector, effected, skill);
     }
@@ -31,7 +31,7 @@ public sealed class Confuse: AbstractEffect
 
     public override bool IsInstant => true;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.getAI().notifyEvent(CtrlEvent.EVT_CONFUSED);
 

@@ -16,12 +16,12 @@ public sealed class ImmobilePetBuff: AbstractEffect
     {
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.setImmobilized(false);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isSummon() && (effector == effected ||
                 (effector.isPlayer() && ((L2Dn.GameServer.Model.Actor.Summon)effected).getOwner() == effector)))

@@ -24,7 +24,7 @@ public sealed class FakeDeath: AbstractEffect
 
     public override EffectFlags EffectFlags => EffectFlags.FAKE_DEATH;
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isDead())
             return false;
@@ -41,7 +41,7 @@ public sealed class FakeDeath: AbstractEffect
         return skill.IsToggle;
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         if (effected.isPlayer())
             effected.getActingPlayer()?.setRecentFakeDeath(true);
@@ -50,7 +50,7 @@ public sealed class FakeDeath: AbstractEffect
         effected.broadcastPacket(new RevivePacket(effected));
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.startFakeDeath();
     }

@@ -23,14 +23,14 @@ public sealed class BlinkSwap: AbstractEffect
     {
     }
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected != null && GeoEngine.getInstance().canSeeTarget(effected, effector);
     }
 
     public override bool IsInstant => true;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Location3D effectedLoc = effected.Location.Location3D;
         Location3D effectorLoc = effector.Location.Location3D;

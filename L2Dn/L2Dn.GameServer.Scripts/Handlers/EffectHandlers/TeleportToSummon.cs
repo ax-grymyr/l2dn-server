@@ -29,12 +29,12 @@ public sealed class TeleportToSummon: AbstractEffect
 
     public override bool IsInstant => true;
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected.hasServitors();
     }
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         L2Dn.GameServer.Model.Actor.Summon? summon = effected.getActingPlayer()?.getFirstServitor();
         if (summon == null)

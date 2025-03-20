@@ -20,14 +20,14 @@ public sealed class TargetMeProbability: AbstractEffect
         _chance = @params.getInt("chance", 100);
     }
 
-    public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
+    public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
     {
         return Formulas.calcProbability(_chance, effector, effected, skill);
     }
 
     public override bool IsInstant => true;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isPlayable() && effected.getTarget() != effector)
             effected.setTarget(effector);

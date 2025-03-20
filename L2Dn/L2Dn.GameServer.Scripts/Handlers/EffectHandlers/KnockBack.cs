@@ -38,7 +38,7 @@ public sealed class KnockBack: AbstractEffect
         _type = @params.getEnum("type", _knockDown ? FlyType.PUSH_DOWN_HORIZONTAL : FlyType.PUSH_HORIZONTAL);
     }
 
-    public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
+    public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
     {
         return _knockDown || Formulas.calcProbability(100, effector, effected, skill);
     }
@@ -49,13 +49,13 @@ public sealed class KnockBack: AbstractEffect
 
     public override EffectTypes EffectType => _knockDown ? EffectTypes.BLOCK_ACTIONS : base.EffectType;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (!_knockDown)
             knockBack(effector, effected);
     }
 
-    public override void continuousInstant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void ContinuousInstant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.startParalyze();
 
@@ -63,7 +63,7 @@ public sealed class KnockBack: AbstractEffect
             knockBack(effector, effected);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         ACTIVE_KNOCKBACKS.remove(effected);
         effected.updateAbnormalVisualEffects();

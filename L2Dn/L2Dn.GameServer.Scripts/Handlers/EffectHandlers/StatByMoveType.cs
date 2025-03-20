@@ -25,17 +25,17 @@ public sealed class StatByMoveType: AbstractEffect
         _value = @params.getDouble("value");
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.getStat().mergeMoveTypeValue(_stat, _type, _value);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.getStat().mergeMoveTypeValue(_stat, _type, -_value);
     }
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         return skill.IsPassive || skill.IsToggle;
     }

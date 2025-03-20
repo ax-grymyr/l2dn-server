@@ -29,7 +29,7 @@ public class BlockActions: AbstractEffect
 
     public override EffectTypes EffectType => EffectTypes.BLOCK_ACTIONS;
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected == null || effected.isRaid())
             return;
@@ -43,7 +43,7 @@ public class BlockActions: AbstractEffect
         effected.abortAllSkillCasters();
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         foreach (int skillId in _allowedSkills)
             effected.removeBlockActionsAllowedSkill(skillId);

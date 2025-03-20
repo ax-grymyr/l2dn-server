@@ -199,19 +199,19 @@ public static class SkillExtensions
         {
             if (effect.IsInstant)
             {
-                if (applyInstantEffects && effect.calcSuccess(info.getEffector(), info.getEffected(), skill))
+                if (applyInstantEffects && effect.CalcSuccess(info.getEffector(), info.getEffected(), skill))
                 {
-                    effect.instant(info.getEffector(), info.getEffected(), skill, info.getItem());
+                    effect.Instant(info.getEffector(), info.getEffected(), skill, info.getItem());
                 }
             }
             else if (addContinuousEffects)
             {
                 if (applyInstantEffects)
                 {
-                    effect.continuousInstant(info.getEffector(), info.getEffected(), skill, info.getItem());
+                    effect.ContinuousInstant(info.getEffector(), info.getEffected(), skill, info.getItem());
                 }
 
-                if (effect.canStart(info.getEffector(), info.getEffected(), skill))
+                if (effect.CanStart(info.getEffector(), info.getEffected(), skill))
                 {
                     info.addEffect(effect);
                 }

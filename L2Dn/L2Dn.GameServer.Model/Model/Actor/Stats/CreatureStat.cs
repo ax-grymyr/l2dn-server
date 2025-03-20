@@ -857,9 +857,9 @@ public class CreatureStat
 				{
 					foreach (AbstractEffect effect in info.getEffects())
 					{
-						if (effect.canStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.canPump(info.getEffector(), info.getEffected(), info.getSkill()))
+						if (effect.CanStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.CanPump(info.getEffector(), info.getEffected(), info.getSkill()))
 						{
-							effect.pump(info.getEffected(), info.getSkill());
+							effect.Pump(info.getEffected(), info.getSkill());
 						}
 					}
 				}
@@ -870,9 +870,9 @@ public class CreatureStat
 				{
 					foreach (AbstractEffect effect in info.getEffects())
 					{
-						if (effect.canStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.canPump(info.getEffector(), info.getEffected(), info.getSkill()))
+						if (effect.CanStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.CanPump(info.getEffector(), info.getEffected(), info.getSkill()))
 						{
-							effect.pump(info.getEffected(), info.getSkill());
+							effect.Pump(info.getEffected(), info.getSkill());
 						}
 					}
 				}
@@ -883,9 +883,9 @@ public class CreatureStat
 				{
 					foreach (AbstractEffect effect in info.getEffects())
 					{
-						if (effect.canStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.canPump(info.getEffector(), info.getEffected(), info.getSkill()))
+						if (effect.CanStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.CanPump(info.getEffector(), info.getEffected(), info.getSkill()))
 						{
-							effect.pump(info.getEffected(), info.getSkill());
+							effect.Pump(info.getEffected(), info.getSkill());
 						}
 					}
 				}
@@ -901,9 +901,9 @@ public class CreatureStat
 					{
 						foreach (AbstractEffect effect in info.getEffects())
 						{
-							if (effect.canStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.canPump(_creature, _creature, info.getSkill()))
+							if (effect.CanStart(info.getEffector(), info.getEffected(), info.getSkill()) && effect.CanPump(_creature, _creature, info.getSkill()))
 							{
-								effect.pump(_creature, info.getSkill());
+								effect.Pump(_creature, info.getSkill());
 							}
 						}
 					}

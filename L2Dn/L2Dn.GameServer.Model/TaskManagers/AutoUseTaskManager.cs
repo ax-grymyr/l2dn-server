@@ -420,7 +420,7 @@ public class AutoUseTaskManager
 						{
 							foreach (AbstractEffect effect in info.getEffects())
 							{
-								if (!effect.checkCondition(actionId))
+								if (!effect.CheckCondition(actionId))
 								{
 									player.sendPacket(SystemMessageId.YOU_HAVE_BEEN_REPORTED_AS_AN_ILLEGAL_PROGRAM_USER_SO_YOUR_ACTIONS_HAVE_BEEN_RESTRICTED);
 									break;

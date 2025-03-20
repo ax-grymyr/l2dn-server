@@ -45,12 +45,12 @@ public sealed class ModifyVital: AbstractEffect
 
     public override bool IsInstant => true;
 
-    public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
+    public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
     {
         return !effected.isRaid() && !effected.isRaidMinion();
     }
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isDead())
             return;

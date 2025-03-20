@@ -18,12 +18,12 @@ public sealed class Reuse: AbstractEffect
         _amount = @params.getDouble("amount", 0);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.getStat().mergeReuseTypeValue(_magicType, _amount / 100 + 1, (a, b) => a * b);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.getStat().mergeReuseTypeValue(_magicType, _amount / 100 + 1, (a, b) => a / b);
     }

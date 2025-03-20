@@ -40,12 +40,12 @@ public sealed class TriggerSkillBySkillAttack: AbstractEffect
         _attackerType = @params.getEnum("attackerType", InstanceType.Creature);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.Events.Subscribe<OnCreatureDamageDealt>(this, onAttackEvent);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.Events.Unsubscribe<OnCreatureDamageDealt>(onAttackEvent);
     }

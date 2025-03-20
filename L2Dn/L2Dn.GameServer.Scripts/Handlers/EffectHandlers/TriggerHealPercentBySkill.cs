@@ -27,7 +27,7 @@ public sealed class TriggerHealPercentBySkill: AbstractEffect
         _power = @params.getInt("power", 0);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (_chance == 0 || _castSkillId == 0)
             return;
@@ -35,7 +35,7 @@ public sealed class TriggerHealPercentBySkill: AbstractEffect
         effected.Events.Subscribe<OnCreatureSkillFinishCast>(this, OnSkillUseEvent);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.Events.Unsubscribe<OnCreatureSkillFinishCast>(OnSkillUseEvent);
     }

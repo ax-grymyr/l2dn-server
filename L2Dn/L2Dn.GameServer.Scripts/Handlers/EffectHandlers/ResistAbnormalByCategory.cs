@@ -19,7 +19,7 @@ public sealed class ResistAbnormalByCategory: AbstractEffect
         _slot = @params.getEnum("slot", DispelSlotType.DEBUFF);
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         switch (_slot)
         {

@@ -26,7 +26,7 @@ public sealed class MagicalAbnormalDispelAttack: AbstractEffect
             _abnormalType = val;
     }
 
-    public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
+    public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
     {
         return !Formulas.calcSkillEvasion(effector, effected, skill);
     }
@@ -35,7 +35,7 @@ public sealed class MagicalAbnormalDispelAttack: AbstractEffect
 
     public override bool IsInstant => true;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         // First dispells the effect, then does damage. Sometimes the damage is evaded, but debuff is still dispelled.
         if (effector.isAlikeDead() || _abnormalType == AbnormalType.NONE ||

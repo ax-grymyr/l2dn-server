@@ -42,7 +42,7 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 		{
 			foreach (AbstractEffect effect in info.getEffects())
 			{
-				if (!effect.checkCondition(BotReportTable.TRADE_ACTION_BLOCK_ID))
+				if (!effect.CheckCondition(BotReportTable.TRADE_ACTION_BLOCK_ID))
 				{
 					player.sendPacket(SystemMessageId.YOU_HAVE_BEEN_REPORTED_AS_AN_ILLEGAL_PROGRAM_USER_SO_YOUR_ACTIONS_HAVE_BEEN_RESTRICTED);
 					player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -118,7 +118,7 @@ public struct TradeRequestPacket: IIncomingPacket<GameSession>
 		{
 			foreach (AbstractEffect effect in info.getEffects())
 			{
-				if (!effect.checkCondition(BotReportTable.TRADE_ACTION_BLOCK_ID))
+				if (!effect.CheckCondition(BotReportTable.TRADE_ACTION_BLOCK_ID))
 				{
 					sm = new SystemMessagePacket(SystemMessageId.C1_HAS_BEEN_REPORTED_AS_AN_ILLEGAL_PROGRAM_USER_AND_IS_CURRENTLY_BEING_INVESTIGATED);
 					sm.Params.addString(partner.getName());

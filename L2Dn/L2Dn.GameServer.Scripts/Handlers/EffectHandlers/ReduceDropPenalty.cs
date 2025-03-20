@@ -21,7 +21,7 @@ public sealed class ReduceDropPenalty: AbstractEffect
         _type = @params.getEnum("type", ReduceDropType.MOB);
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         switch (_type)
         {

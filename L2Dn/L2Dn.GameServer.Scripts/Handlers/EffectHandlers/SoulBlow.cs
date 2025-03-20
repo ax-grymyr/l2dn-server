@@ -28,7 +28,7 @@ public sealed class SoulBlow: AbstractEffect
     /// <summary>
     /// If is not evaded and blow lands.
     /// </summary>
-    public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
+    public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
     {
         return !Formulas.calcSkillEvasion(effector, effected, skill) &&
             Formulas.calcBlowSuccess(effector, effected, skill, _chanceBoost);
@@ -38,7 +38,7 @@ public sealed class SoulBlow: AbstractEffect
 
     public override bool IsInstant => true;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effector.isAlikeDead())
             return;

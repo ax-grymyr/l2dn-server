@@ -22,13 +22,13 @@ public sealed class Root: AbstractEffect
 
     public override EffectTypes EffectType => EffectTypes.ROOT;
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         if (!effected.isPlayer())
             effected.getAI().notifyEvent(CtrlEvent.EVT_THINK);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected == null || effected.isRaid())
             return;

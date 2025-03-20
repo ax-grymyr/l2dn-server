@@ -23,7 +23,7 @@ public sealed class HealOverTime: AbstractEffect
         Ticks = @params.getInt("ticks");
     }
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isDead() || effected.isDoor())
             return false;
@@ -60,7 +60,7 @@ public sealed class HealOverTime: AbstractEffect
         return skill.IsToggle;
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isPlayer() && Ticks > 0 && skill.AbnormalType == AbnormalType.HP_RECOVER)
         {

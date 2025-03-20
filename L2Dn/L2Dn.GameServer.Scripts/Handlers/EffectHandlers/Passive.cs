@@ -17,7 +17,7 @@ public sealed class Passive: AbstractEffect
 
     public override EffectFlags EffectFlags => EffectFlags.PASSIVE;
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected.isAttackable();
     }

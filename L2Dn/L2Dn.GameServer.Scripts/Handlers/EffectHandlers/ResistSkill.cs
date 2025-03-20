@@ -36,13 +36,13 @@ public sealed class ResistSkill: AbstractEffect
         _skills = skillHolders.ToFrozenSet();
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         foreach (SkillHolder holder in _skills)
             effected.addIgnoreSkillEffects(holder);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         foreach (SkillHolder holder in _skills)
             effected.removeIgnoreSkillEffects(holder);

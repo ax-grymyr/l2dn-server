@@ -28,13 +28,13 @@ public class Escape: AbstractEffect
 
     public override bool IsInstant => true;
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         // While affected by escape blocking effect you cannot use Blink or Scroll of Escape
-        return base.canStart(effector, effected, skill) && !effected.cannotEscape();
+        return base.CanStart(effector, effected, skill) && !effected.cannotEscape();
     }
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (_escapeType != null)
         {

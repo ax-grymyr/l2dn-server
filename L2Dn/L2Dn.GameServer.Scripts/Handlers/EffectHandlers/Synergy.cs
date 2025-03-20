@@ -36,7 +36,7 @@ public sealed class Synergy: AbstractEffect
         Ticks = @params.getInt("ticks");
     }
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effector.isDead())
             return false;

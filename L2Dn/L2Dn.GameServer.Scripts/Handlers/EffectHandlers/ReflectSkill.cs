@@ -22,7 +22,7 @@ public sealed class ReflectSkill: AbstractEffect
         _amount = @params.getDouble("amount", 0);
     }
 
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         effected.getStat().mergeAdd(_stat, _amount);
     }

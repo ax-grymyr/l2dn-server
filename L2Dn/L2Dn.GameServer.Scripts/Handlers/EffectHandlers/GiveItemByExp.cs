@@ -22,7 +22,7 @@ public sealed class GiveItemByExp: AbstractEffect
         _itemId = @params.getInt("itemId", 0);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isPlayer())
         {
@@ -31,7 +31,7 @@ public sealed class GiveItemByExp: AbstractEffect
         }
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         Player? player = effected.getActingPlayer();
         if (effected.isPlayer() && player != null)

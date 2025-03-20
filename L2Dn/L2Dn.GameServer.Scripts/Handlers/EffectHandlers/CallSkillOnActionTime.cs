@@ -23,18 +23,18 @@ public sealed class CallSkillOnActionTime: AbstractEffect
         Ticks = @params.getInt("ticks");
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.getEffectList().stopEffects([_skill.getSkill().AbnormalType]);
         effected.getEffectList().addBlockedAbnormalTypes([_skill.getSkill().AbnormalType]);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.getEffectList().removeBlockedAbnormalTypes([_skill.getSkill().AbnormalType]);
     }
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effector.isDead())
             return false;

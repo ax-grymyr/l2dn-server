@@ -7,7 +7,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
 public sealed class VitalityExpRate(StatSet @params): AbstractStatPercentEffect(@params, Stat.VITALITY_EXP_RATE)
 {
-    public override void pump(Creature effected, Skill skill)
+    public override void Pump(Creature effected, Skill skill)
     {
         effected.getStat().mergeMul(Stat.VITALITY_EXP_RATE, Amount / 100 + 1);
         effected.getStat().mergeAdd(Stat.VITALITY_SKILLS, 1d);

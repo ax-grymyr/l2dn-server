@@ -21,7 +21,7 @@ public sealed class ManaDamOverTime: AbstractEffect
         Ticks = @params.getInt("ticks");
     }
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isDead())
             return false;

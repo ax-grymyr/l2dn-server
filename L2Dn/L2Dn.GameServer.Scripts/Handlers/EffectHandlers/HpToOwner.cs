@@ -24,7 +24,7 @@ public sealed class HpToOwner: AbstractEffect
         Ticks = @params.getInt("ticks");
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (!skill.IsToggle && skill.IsMagic)
         {
@@ -40,7 +40,7 @@ public sealed class HpToOwner: AbstractEffect
 
     public override EffectTypes EffectType => EffectTypes.DMG_OVER_TIME;
 
-    public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
+    public override bool OnActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected.isDead())
             return false;

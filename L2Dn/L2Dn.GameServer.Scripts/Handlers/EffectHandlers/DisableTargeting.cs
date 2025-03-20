@@ -18,7 +18,7 @@ public sealed class DisableTargeting: AbstractEffect
     {
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.setTarget(null);
         effected.abortAttack();

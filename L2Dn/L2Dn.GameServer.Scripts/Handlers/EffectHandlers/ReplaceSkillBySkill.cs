@@ -25,13 +25,13 @@ public sealed class ReplaceSkillBySkill: AbstractEffect
             @params.getInt("replacementSkillLevel", -1));
     }
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected.isPlayable() &&
             (!effected.isTransformed() || effected.hasAbnormalType(AbnormalType.KAMAEL_TRANSFORM));
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Playable playable = (Playable)effected;
         Skill? knownSkill = playable.getKnownSkill(_existingSkill.getSkillId());
@@ -117,7 +117,7 @@ public sealed class ReplaceSkillBySkill: AbstractEffect
         }
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         Playable playable = (Playable)effected;
         int existingSkillId = _existingSkill.getSkillId();

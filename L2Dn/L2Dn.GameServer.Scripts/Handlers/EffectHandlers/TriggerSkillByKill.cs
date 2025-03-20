@@ -37,12 +37,12 @@ public sealed class TriggerSkillByKill: AbstractEffect
             SkillCaster.triggerCast(target, target, triggerSkill);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.Events.UnsubscribeAll<OnCreatureKilled>(this);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.Events.Subscribe<OnCreatureKilled>(this, ev => onCreatureKilled(ev, effected));
     }

@@ -22,14 +22,14 @@ public sealed class Disarm: AbstractEffect
     {
     }
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected.isPlayer();
     }
 
     public override EffectFlags EffectFlags => EffectFlags.DISARMED;
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         Player? player = effected.getActingPlayer();
         if (player is null)
@@ -49,7 +49,7 @@ public sealed class Disarm: AbstractEffect
         _disarmedPlayers.put(player.ObjectId, itemToDisarm.ObjectId);
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         Player? player = effected.getActingPlayer();
         if (player == null)

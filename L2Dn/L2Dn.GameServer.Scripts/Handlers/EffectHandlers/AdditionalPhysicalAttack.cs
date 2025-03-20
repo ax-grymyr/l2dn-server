@@ -16,7 +16,7 @@ public sealed class AdditionalPhysicalAttack: PhysicalAttack
         _chance = @params.getInt("chance", 100);
     }
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effector.isPlayer() && effector.hasAbnormalType(AbnormalType.SEAL_OF_DAMAGE))
             return;
@@ -24,7 +24,7 @@ public sealed class AdditionalPhysicalAttack: PhysicalAttack
         if (Rnd.get(100) < _chance)
             return;
 
-        base.instant(effector, effected, skill, item);
+        base.Instant(effector, effected, skill, item);
     }
 
     public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), _chance);

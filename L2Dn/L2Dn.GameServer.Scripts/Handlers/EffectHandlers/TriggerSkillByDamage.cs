@@ -144,12 +144,12 @@ public sealed class TriggerSkillByDamage: AbstractEffect
         }
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         effected.Events.Unsubscribe<OnCreatureDamageReceived>(onDamageReceivedEvent);
     }
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         effected.Events.Subscribe<OnCreatureDamageReceived>(this, onDamageReceivedEvent);
     }

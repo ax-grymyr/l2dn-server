@@ -391,7 +391,7 @@ public class SkillCaster: Runnable
 				{
 					if (effect.EffectType == EffectTypes.DUAL_RANGE)
 					{
-						effect.instant(caster, (Creature)target, _skill, null);
+						effect.Instant(caster, (Creature)target, _skill, null);
 						return false;
 					}
 				}

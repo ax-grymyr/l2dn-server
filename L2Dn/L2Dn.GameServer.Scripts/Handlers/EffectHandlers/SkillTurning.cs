@@ -22,14 +22,14 @@ public sealed class SkillTurning: AbstractEffect
         _staticChance = @params.getBoolean("staticChance", false);
     }
 
-    public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
+    public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
     {
         return _staticChance ? Formulas.calcProbability(_chance, effector, effected, skill) : Rnd.get(100) < _chance;
     }
 
     public override bool IsInstant => true;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effected == effector || effected.isRaid())
             return;

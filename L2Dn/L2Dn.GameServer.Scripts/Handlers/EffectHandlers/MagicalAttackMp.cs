@@ -27,7 +27,7 @@ public sealed class MagicalAttackMp: AbstractEffect
         _criticalLimit = @params.getDouble("criticalLimit");
     }
 
-    public override bool calcSuccess(Creature effector, Creature effected, Skill skill)
+    public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)
     {
         if (effected.isMpBlocked())
             return false;
@@ -59,7 +59,7 @@ public sealed class MagicalAttackMp: AbstractEffect
 
     public override bool IsInstant => true;
 
-    public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void Instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
         if (effector.isAlikeDead())
             return;

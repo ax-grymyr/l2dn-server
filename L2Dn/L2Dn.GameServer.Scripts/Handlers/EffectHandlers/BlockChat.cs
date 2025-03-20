@@ -18,20 +18,20 @@ public sealed class BlockChat: AbstractEffect
     {
     }
 
-    public override bool canStart(Creature effector, Creature effected, Skill skill)
+    public override bool CanStart(Creature effector, Creature effected, Skill skill)
     {
         return effected != null && effected.isPlayer();
     }
 
     public override EffectFlags EffectFlags => EffectFlags.CHAT_BLOCK;
 
-    public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
+    public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
         PunishmentManager.getInstance().startPunishment(new PunishmentTask(0, effected.ObjectId.ToString(),
             PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN, null, "Chat banned bot report", "system", true));
     }
 
-    public override void onExit(Creature effector, Creature effected, Skill skill)
+    public override void OnExit(Creature effector, Creature effected, Skill skill)
     {
         PunishmentManager.getInstance().stopPunishment(effected.ObjectId.ToString(), PunishmentAffect.CHARACTER,
             PunishmentType.CHAT_BAN);
