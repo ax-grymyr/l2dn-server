@@ -5,7 +5,6 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.StaticData.Xml.Skills;
@@ -17,6 +16,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("NightStatModify")]
 public sealed class NightStatModify: AbstractEffect
 {
     private static readonly Set<Creature> _nightStatCharacters = [];

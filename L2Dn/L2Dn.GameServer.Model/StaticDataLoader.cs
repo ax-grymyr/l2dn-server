@@ -56,7 +56,6 @@ public static class StaticDataLoader
         NewQuestData.getInstance();
 
         SkillConditionFactory.getInstance(); //.executeScript();
-        AbstractEffectFactory.getInstance(); //.executeScript();
         SkillData.Instance.Load();
         SkillTreeData.getInstance();
         PetSkillData.getInstance();

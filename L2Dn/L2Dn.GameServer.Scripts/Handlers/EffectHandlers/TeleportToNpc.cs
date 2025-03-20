@@ -5,7 +5,6 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
@@ -17,6 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Teleport player/party to summoned npc effect implementation.
 /// </summary>
+[AbstractEffectName("TeleportToNpc")]
 public sealed class TeleportToNpc: AbstractEffect
 {
     private readonly int _npcId;

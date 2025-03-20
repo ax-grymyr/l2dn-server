@@ -7,7 +7,6 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Geometry;
@@ -18,6 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Summon Npc effect implementation.
 /// </summary>
+[AbstractEffectName("SummonNpc")]
 public sealed class SummonNpc: AbstractEffect
 {
     private readonly int _despawnDelay;

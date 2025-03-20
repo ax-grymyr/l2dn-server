@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -6,7 +7,6 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Enchant.Attributes;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Templates;
@@ -17,6 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Convert Item effect implementation.
 /// </summary>
+[AbstractEffectName("ConvertItem")]
 public sealed class ConvertItem: AbstractEffect
 {
     public override bool IsInstant => true;

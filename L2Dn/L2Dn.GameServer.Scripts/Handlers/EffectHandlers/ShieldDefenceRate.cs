@@ -3,5 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("ShieldDefenceRate")]
 public sealed class ShieldDefenceRate(EffectParameterSet parameters):
     AbstractStatEffect(parameters, Stat.SHIELD_DEFENCE_RATE);

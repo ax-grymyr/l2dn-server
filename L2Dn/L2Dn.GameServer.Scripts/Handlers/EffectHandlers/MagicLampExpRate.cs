@@ -1,12 +1,12 @@
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets.MagicLamp;
 using L2Dn.GameServer.Templates;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("MagicLampExpRate")]
 public sealed class MagicLampExpRate(EffectParameterSet parameters)
     : AbstractStatPercentEffect(parameters, Stat.MAGIC_LAMP_EXP_RATE)
 {

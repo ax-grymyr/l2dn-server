@@ -3,5 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("DefenceCriticalRate")]
 public sealed class DefenceCriticalRate(EffectParameterSet parameters)
     : AbstractStatEffect(parameters, Stat.DEFENCE_CRITICAL_RATE, Stat.DEFENCE_CRITICAL_RATE_ADD);

@@ -14,6 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Trigger Skill By Kill effect implementation.
 /// </summary>
+[AbstractEffectName("TriggerSkillByKill")]
 public sealed class TriggerSkillByKill: AbstractEffect
 {
     private readonly int _chance;

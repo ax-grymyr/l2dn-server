@@ -1,9 +1,9 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
 
@@ -12,6 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Mute effect implementation.
 /// </summary>
+[AbstractEffectName("Mute")]
 public sealed class Mute: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.MUTED;

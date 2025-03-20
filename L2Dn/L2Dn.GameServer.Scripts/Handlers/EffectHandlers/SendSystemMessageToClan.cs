@@ -3,7 +3,6 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.StaticData.Xml.Skills;
@@ -12,6 +11,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("SendSystemMessageToClan")]
 public sealed class SendSystemMessageToClan: AbstractEffect
 {
     private readonly SystemMessageId _messageId;

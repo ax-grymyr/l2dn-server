@@ -6,7 +6,6 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Geometry;
@@ -17,6 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Headquarter Create effect implementation.
 /// </summary>
+[AbstractEffectName("HeadquarterCreate")]
 public sealed class HeadquarterCreate: AbstractEffect
 {
     private const int _hqNpcId = 35062;

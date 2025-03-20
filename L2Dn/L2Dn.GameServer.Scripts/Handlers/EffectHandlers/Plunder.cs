@@ -1,11 +1,11 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Dto;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Templates;
@@ -13,6 +13,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("Plunder")]
 public sealed class Plunder: AbstractEffect
 {
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)

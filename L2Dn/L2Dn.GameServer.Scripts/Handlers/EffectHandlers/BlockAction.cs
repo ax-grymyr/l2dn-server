@@ -7,7 +7,6 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Punishment;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
@@ -17,6 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Block Action effect implementation.
 /// </summary>
+[AbstractEffectName("BlockAction")]
 public sealed class BlockAction: AbstractEffect
 {
     private readonly FrozenSet<int> _blockedActions;

@@ -2,7 +2,6 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Model.Enums;
@@ -20,6 +19,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// Multiple values of this effect add-up to each other rather than multiplying with each other. Be careful,
 /// there were cases in retail where damage is deacreased to 0.
 /// </summary>
+[AbstractEffectName("DamageByAttack")]
 public sealed class DamageByAttack: AbstractEffect
 {
     private readonly double _value;

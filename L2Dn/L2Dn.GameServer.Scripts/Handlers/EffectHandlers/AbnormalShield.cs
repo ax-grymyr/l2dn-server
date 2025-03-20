@@ -3,7 +3,6 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
@@ -13,6 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// An effect that blocks a debuff. Acts like DOTA's Linken Sphere.
 /// </summary>
+[AbstractEffectName("AbnormalShield")]
 public sealed class AbnormalShield: AbstractEffect
 {
     private readonly int _times;

@@ -3,4 +3,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("ElixirUsageLimit")]
 public sealed class ElixirUsageLimit(EffectParameterSet parameters): AbstractStatAddEffect(parameters, Stat.ELIXIR_USAGE_LIMIT);

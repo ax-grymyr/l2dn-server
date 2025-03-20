@@ -7,7 +7,6 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.StaticData.Xml.Skills;
@@ -22,6 +21,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// This effect is present in item skills that "extract" new items upon usage.
 /// This effect has been unhardcoded in order to work on targets as well.
 /// </summary>
+[AbstractEffectName("RestorationRandom")]
 public sealed class RestorationRandom: AbstractEffect
 {
     private readonly ImmutableArray<ExtractableProductItem> _products;

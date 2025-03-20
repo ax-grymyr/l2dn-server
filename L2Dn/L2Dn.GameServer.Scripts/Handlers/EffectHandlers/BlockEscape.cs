@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.Utilities;
 
@@ -6,6 +7,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Block escape effect implementation
 /// </summary>
+[AbstractEffectName("BlockEscape")]
 public sealed class BlockEscape: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.CANNOT_ESCAPE;

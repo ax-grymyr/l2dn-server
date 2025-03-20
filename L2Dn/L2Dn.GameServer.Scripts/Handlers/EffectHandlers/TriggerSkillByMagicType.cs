@@ -1,6 +1,5 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -20,6 +19,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Trigger skill by isMagic type.
 /// </summary>
+[AbstractEffectName("TriggerSkillByMagicType")]
 public sealed class TriggerSkillByMagicType: AbstractEffect
 {
     private readonly FrozenSet<int> _magicTypes;

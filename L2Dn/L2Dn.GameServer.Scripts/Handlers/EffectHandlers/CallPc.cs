@@ -7,7 +7,6 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Olympiads;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -21,6 +20,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Call Pc effect implementation.
 /// </summary>
+[AbstractEffectName("CallPc")]
 public sealed class CallPc: AbstractEffect
 {
     private readonly int _itemId;

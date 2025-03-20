@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.Utilities;
 
@@ -7,6 +8,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// An effect that blocks the player (NPC?) control. It prevents moving, casting, social actions, etc.
 /// </summary>
+[AbstractEffectName("BlockControl")]
 public sealed class BlockControl: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.BLOCK_CONTROL;

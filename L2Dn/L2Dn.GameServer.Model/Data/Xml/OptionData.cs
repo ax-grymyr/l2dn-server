@@ -67,11 +67,11 @@ public class OptionData: DataReaderBase
 			parameters[XmlSkillEffectParameterType.Mode] = xmlOptionEffect.Mode;
 			parameters[XmlSkillEffectParameterType.Stat] = xmlOptionEffect.Stat;
 
-			Func<EffectParameterSet, IAbstractEffect>? handlerFactory = AbstractEffectFactory.getInstance().getHandlerFactory(name);
-			if (handlerFactory is null)
+            AbstractEffect? effect = (AbstractEffect?)AbstractEffectFactory.Instance.Create(name, parameters);
+			if (effect is null)
 				_logger.Error($"{GetType().Name}: Could not find effect handler '{name}' used by option {id}.");
 			else
-				option.addEffect((AbstractEffect)handlerFactory(parameters));
+				option.addEffect(effect);
 		}
 
 		foreach (XmlOptionSkill activeSkill in xmlOption.ActiveSkills)

@@ -6,5 +6,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Resist damage while immobile.
 /// </summary>
+[AbstractEffectName("ImmobileDamageResist")]
 public sealed class ImmobileDamageResist(EffectParameterSet parameters):
     AbstractStatPercentEffect(parameters, Stat.IMMOBILE_DAMAGE_RESIST);

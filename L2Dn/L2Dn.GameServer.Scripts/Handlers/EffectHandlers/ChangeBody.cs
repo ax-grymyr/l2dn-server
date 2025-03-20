@@ -1,11 +1,9 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Handlers;
-using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
 
@@ -14,6 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Transformation type effect, which disables attack or use of skills.
 /// </summary>
+[AbstractEffectName("ChangeBody")]
 public sealed class ChangeBody: AbstractEffect
 {
     private readonly FrozenSet<TemplateChanceHolder> _transformations;

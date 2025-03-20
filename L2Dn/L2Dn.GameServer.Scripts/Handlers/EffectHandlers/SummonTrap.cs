@@ -5,7 +5,6 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
@@ -15,6 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Summon Trap effect implementation.
 /// </summary>
+[AbstractEffectName("SummonTrap")]
 public sealed class SummonTrap: AbstractEffect
 {
     private readonly int _despawnTime;

@@ -18,6 +18,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Summon effect implementation.
 /// </summary>
+[AbstractEffectName("Summon")]
 public sealed class Summon: AbstractEffect
 {
     private readonly int _npcId;

@@ -1,5 +1,4 @@
 using L2Dn.Extensions;
-using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -19,6 +18,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Trigger Skill By Damage effect implementation.
 /// </summary>
+[AbstractEffectName("TriggerSkillByDamage")]
 public sealed class TriggerSkillByDamage: AbstractEffect
 {
     private readonly int _minAttackerLevel;

@@ -1,9 +1,9 @@
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Templates;
@@ -14,6 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Spoil effect implementation.
 /// </summary>
+[AbstractEffectName("Spoil")]
 public sealed class Spoil: AbstractEffect
 {
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)

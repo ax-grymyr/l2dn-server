@@ -6,5 +6,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Equivalent of DefenceMagicCriticalDamage for physical skills.
 /// </summary>
+[AbstractEffectName("DefencePhysicalSkillCriticalDamage")]
 public sealed class DefencePhysicalSkillCriticalDamage(EffectParameterSet parameters): AbstractStatEffect(parameters,
     Stat.DEFENCE_PHYSICAL_SKILL_CRITICAL_DAMAGE, Stat.DEFENCE_PHYSICAL_SKILL_CRITICAL_DAMAGE_ADD);

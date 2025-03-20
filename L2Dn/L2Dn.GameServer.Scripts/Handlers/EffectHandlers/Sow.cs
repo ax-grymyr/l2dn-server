@@ -1,11 +1,11 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Templates;
@@ -16,6 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Sow effect implementation.
 /// </summary>
+[AbstractEffectName("Sow")]
 public sealed class Sow: AbstractEffect
 {
     public override bool IsInstant => true;

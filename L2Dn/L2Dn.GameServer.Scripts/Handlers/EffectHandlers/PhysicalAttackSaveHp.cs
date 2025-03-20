@@ -4,7 +4,6 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
@@ -18,6 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// Physical Attack effect implementation.
 /// Note: Initial formula taken from PhysicalAttack.
 /// </summary>
+[AbstractEffectName("PhysicalAttackSaveHp")]
 public sealed class PhysicalAttackSaveHp: AbstractEffect
 {
     private readonly double _power;

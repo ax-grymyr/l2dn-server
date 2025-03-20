@@ -3,7 +3,6 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.StaticData.Xml.Skills;
@@ -15,6 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Give Clan reputation effect implementation.
 /// </summary>
+[AbstractEffectName("GiveClanReputation")]
 public sealed class GiveClanReputation: AbstractEffect
 {
     private readonly int _reputation;

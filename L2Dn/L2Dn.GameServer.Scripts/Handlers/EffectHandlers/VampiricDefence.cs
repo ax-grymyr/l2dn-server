@@ -3,5 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("VampiricDefence")]
 public sealed class VampiricDefence(EffectParameterSet parameters):
     AbstractStatPercentEffect(parameters, Stat.ABSORB_DAMAGE_DEFENCE);

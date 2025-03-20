@@ -10,6 +10,7 @@
   <Folder Name="/Tests/">
     <Project Path="Tests\L2Dn.Common.Tests\L2Dn.Common.Tests.csproj" Type="Classic C#" />
     <Project Path="Tests\L2Dn.GameServer.Model.Tests\L2Dn.GameServer.Model.Tests.csproj" Type="Classic C#" />
+    <Project Path="Tests\L2Dn.GameServer.Scripts.Tests\L2Dn.GameServer.Scripts.Tests.csproj" Type="Classic C#" />
     <Project Path="Tests\L2Dn.GameServer.StaticData.Tests\L2Dn.GameServer.StaticData.Tests.csproj" Type="Classic C#" />
     <Project Path="Tests\L2Dn.Unsafe.Tests\L2Dn.Unsafe.Tests.csproj" Type="Classic C#" />
   </Folder>

@@ -5,7 +5,6 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.StaticData.Xml.Skills;
@@ -17,6 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Trigger heal percent by skill effect implementation.
 /// </summary>
+[AbstractEffectName("TriggerHealPercentBySkill")]
 public sealed class TriggerHealPercentBySkill: AbstractEffect
 {
     private readonly int _castSkillId;

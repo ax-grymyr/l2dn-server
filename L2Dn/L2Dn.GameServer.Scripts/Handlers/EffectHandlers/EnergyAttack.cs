@@ -4,7 +4,6 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -18,6 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Energy Attack effect implementation.
 /// </summary>
+[AbstractEffectName("EnergyAttack")]
 public sealed class EnergyAttack: AbstractEffect
 {
     private readonly double _power;

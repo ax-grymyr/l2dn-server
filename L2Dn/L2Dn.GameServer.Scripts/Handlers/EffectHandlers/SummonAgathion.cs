@@ -3,7 +3,6 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
@@ -14,6 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Summon Agathion effect implementation.
 /// </summary>
+[AbstractEffectName("SummonAgathion")]
 public sealed class SummonAgathion: AbstractEffect
 {
     private readonly int _npcId;

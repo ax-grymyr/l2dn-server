@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -7,7 +8,6 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
 
@@ -16,6 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Take Fort effect implementation.
 /// </summary>
+[AbstractEffectName("TakeFort")]
 public sealed class TakeFort: AbstractEffect
 {
     public override bool IsInstant => true;

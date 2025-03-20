@@ -4,13 +4,13 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Templates;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("WeaponBonusMAtk")]
 public sealed class WeaponBonusMAtk(EffectParameterSet parameters):
     AbstractStatAddEffect(parameters, Stat.WEAPON_BONUS_MAGIC_ATTACK)
 {

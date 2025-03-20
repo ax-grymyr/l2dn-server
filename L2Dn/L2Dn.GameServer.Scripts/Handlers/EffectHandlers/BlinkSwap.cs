@@ -1,10 +1,10 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Templates;
 using L2Dn.Geometry;
@@ -17,6 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// This effect is totally done based on client description.
 /// Assume that geodata checks are done on the skill cast and not needed to repeat here.
 /// </summary>
+[AbstractEffectName("BlinkSwap")]
 public sealed class BlinkSwap: AbstractEffect
 {
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

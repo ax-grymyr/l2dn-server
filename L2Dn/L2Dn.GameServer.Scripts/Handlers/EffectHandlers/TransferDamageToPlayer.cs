@@ -1,7 +1,6 @@
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Model.Enums;
 
@@ -10,6 +9,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Transfer Damage effect implementation.
 /// </summary>
+[AbstractEffectName("TransferDamageToPlayer")]
 public sealed class TransferDamageToPlayer(EffectParameterSet parameters)
     : AbstractStatAddEffect(parameters, Stat.TRANSFER_DAMAGE_TO_PLAYER)
 {

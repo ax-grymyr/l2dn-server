@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
@@ -12,6 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Double Casting effect implementation.
 /// </summary>
+[AbstractEffectName("DoubleCast")]
 public sealed class DoubleCast: AbstractEffect
 {
     private static readonly SkillHolder[] _toggleSkills = [new(11007, 1), new(11009, 1), new(11008, 1), new(11010, 1),];

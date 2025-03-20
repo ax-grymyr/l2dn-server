@@ -2,13 +2,13 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("SphericBarrier")]
 public sealed class SphericBarrier(EffectParameterSet parameters)
     : AbstractStatAddEffect(parameters, Stat.SPHERIC_BARRIER_RANGE)
 {

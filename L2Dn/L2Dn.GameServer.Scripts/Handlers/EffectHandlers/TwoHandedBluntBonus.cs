@@ -5,7 +5,6 @@ using L2Dn.GameServer.Model.Conditions;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Types;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Model.Enums;
@@ -13,6 +12,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("TwoHandedBluntBonus")]
 public sealed class TwoHandedBluntBonus: AbstractEffect
 {
     private static readonly Condition _weaponTypeCondition = new ConditionUsingItemType(WeaponType.BLUNT);

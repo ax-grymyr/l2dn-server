@@ -1,7 +1,7 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Templates;
@@ -13,6 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Focus Max Energy effect implementation.
 /// </summary>
+[AbstractEffectName("FocusMaxMomentum")]
 public sealed class FocusMaxMomentum: AbstractEffect
 {
     public override bool IsInstant => true;

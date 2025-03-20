@@ -1,4 +1,3 @@
-using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -17,6 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Call Skill effect implementation.
 /// </summary>
+[AbstractEffectName("CallSkill")]
 public sealed class CallSkill: AbstractEffect
 {
     private readonly SkillHolder _skill;

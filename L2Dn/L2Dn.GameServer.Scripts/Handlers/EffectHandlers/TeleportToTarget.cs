@@ -1,10 +1,10 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Templates;
 using L2Dn.Geometry;
@@ -15,6 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Teleport To Target effect implementation.
 /// </summary>
+[AbstractEffectName("TeleportToTarget")]
 public sealed class TeleportToTarget: AbstractEffect
 {
     public override EffectTypes EffectTypes => EffectTypes.TELEPORT_TO_TARGET;

@@ -35,6 +35,7 @@ public sealed class SkillTemplateLoadingTests
 
         // Load skill templates
         SkillData skillData = SkillData.Instance;
+        skillData.Load();
 
         // Compare skills
         SkillComparer.CompareSkills(oldLoader.Skills, skillData.Skills);
@@ -214,12 +215,12 @@ public sealed class SkillTemplateLoadingTests
                     @params.remove(".name");
                     try
                     {
-                        Func<EffectParameterSet, IAbstractEffect>? effectFunction =
-                            AbstractEffectFactory.getInstance().getHandlerFactory(effectName);
+                        IAbstractEffect? effect = AbstractEffectFactory.Instance.Create(effectName,
+                            ConvertStatSetToEffectParameters(@params));
 
-                        if (effectFunction != null)
+                        if (effect != null)
                         {
-                            skill.addEffect(effectScope, (AbstractEffect)effectFunction(ConvertStatSetToEffectParameters(@params)));
+                            skill.addEffect(effectScope, (AbstractEffect)effect);
                         }
                         else
                         {

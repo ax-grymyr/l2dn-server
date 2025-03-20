@@ -1,8 +1,8 @@
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
@@ -12,6 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Rebalance HP effect implementation.
 /// </summary>
+[AbstractEffectName("RebalanceHPSummon")]
 public sealed class RebalanceHPSummon: AbstractEffect
 {
     public override EffectTypes EffectTypes => EffectTypes.REBALANCE_HP;

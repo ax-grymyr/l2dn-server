@@ -1,7 +1,7 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
 
@@ -10,6 +10,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Immobile Pet Buff effect implementation.
 /// </summary>
+[AbstractEffectName("ImmobilePetBuff")]
 public sealed class ImmobilePetBuff: AbstractEffect
 {
     public override void OnExit(Creature effector, Creature effected, Skill skill)

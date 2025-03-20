@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.Utilities;
 
@@ -6,6 +7,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Silent Move effect implementation.
 /// </summary>
+[AbstractEffectName("SilentMove")]
 public sealed class SilentMove: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.SILENT_MOVE;

@@ -1,8 +1,8 @@
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
 
@@ -11,6 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Physical Mute effect implementation.
 /// </summary>
+[AbstractEffectName("PhysicalMute")]
 public sealed class PhysicalMute: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.PSYCHICAL_MUTED;

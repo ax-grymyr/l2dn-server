@@ -3,5 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("RealDamageResist")]
 public sealed class RealDamageResist(EffectParameterSet parameters):
     AbstractStatPercentEffect(parameters, Stat.REAL_DAMAGE_RESIST);

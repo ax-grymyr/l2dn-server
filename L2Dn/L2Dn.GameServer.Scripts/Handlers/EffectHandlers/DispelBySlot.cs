@@ -6,7 +6,6 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
@@ -16,6 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Dispel By Slot effect implementation.
 /// </summary>
+[AbstractEffectName("DispelBySlot")]
 public sealed class DispelBySlot: AbstractEffect
 {
     private readonly FrozenDictionary<AbnormalType, short> _dispelAbnormals;

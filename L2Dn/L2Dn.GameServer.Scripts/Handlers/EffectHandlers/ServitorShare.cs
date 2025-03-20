@@ -4,7 +4,6 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Model.Enums;
@@ -15,6 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Servitor Share effect implementation.
 /// </summary>
+[AbstractEffectName("ServitorShare")]
 public sealed class ServitorShare: AbstractEffect
 {
     private static readonly FrozenDictionary<XmlSkillEffectParameterType, Stat> _map = EnumUtil.

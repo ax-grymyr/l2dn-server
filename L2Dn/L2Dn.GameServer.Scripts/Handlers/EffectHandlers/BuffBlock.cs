@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.Utilities;
 
@@ -6,6 +7,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Effect that blocks all incoming debuffs.
 /// </summary>
+[AbstractEffectName("BuffBlock")]
 public sealed class BuffBlock: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.BUFF_BLOCK;

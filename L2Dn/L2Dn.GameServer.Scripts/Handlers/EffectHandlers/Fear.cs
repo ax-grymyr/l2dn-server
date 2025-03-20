@@ -1,11 +1,11 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
@@ -15,6 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Fear effect implementation.
 /// </summary>
+[AbstractEffectName("Fear")]
 public sealed class Fear: AbstractEffect
 {
     private const int _fearRange = 500;

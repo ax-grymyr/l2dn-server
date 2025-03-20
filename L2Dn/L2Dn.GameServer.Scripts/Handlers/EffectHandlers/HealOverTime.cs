@@ -15,6 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Heal Over Time effect implementation.
 /// </summary>
+[AbstractEffectName("HealOverTime")]
 public sealed class HealOverTime: AbstractEffect
 {
     private readonly double _power;

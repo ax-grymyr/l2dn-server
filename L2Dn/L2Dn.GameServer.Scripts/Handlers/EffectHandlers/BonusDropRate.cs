@@ -3,5 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("BonusDropRate")]
 public sealed class BonusDropRate(EffectParameterSet parameters):
     AbstractStatPercentEffect(parameters, Stat.BONUS_DROP_RATE);

@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
@@ -18,6 +19,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Summon Pet effect implementation.
 /// </summary>
+[AbstractEffectName("SummonPet")]
 public sealed class SummonPet: AbstractEffect
 {
     public override EffectTypes EffectTypes => EffectTypes.SUMMON_PET;

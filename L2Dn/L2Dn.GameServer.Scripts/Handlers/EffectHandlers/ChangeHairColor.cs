@@ -2,18 +2,17 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-/**
- * Change Hair Color effect implementation.
- * @author Zoey76
- */
-public class ChangeHairColor: AbstractEffect
+/// <summary>
+/// Change Hair Color effect implementation.
+/// </summary>
+[AbstractEffectName("ChangeHairColor")]
+public sealed class ChangeHairColor: AbstractEffect
 {
     private readonly int _value;
 

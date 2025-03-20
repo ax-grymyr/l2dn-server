@@ -3,7 +3,6 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
 using L2Dn.GameServer.StaticData.Xml.Skills;
@@ -15,6 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Restoration effect implementation.
 /// </summary>
+[AbstractEffectName("Restoration")]
 public sealed class Restoration: AbstractEffect
 {
     private readonly int _itemId;

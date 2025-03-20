@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
@@ -11,6 +12,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("ServitorShareSkills")]
 public sealed class ServitorShareSkills: AbstractEffect
 {
     private const int _servitorShareSkillId = 1557;

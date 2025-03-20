@@ -1,8 +1,8 @@
 using L2Dn.Extensions;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
 
@@ -11,6 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Unsummon my servitors effect implementation.
 /// </summary>
+[AbstractEffectName("UnsummonServitors")]
 public sealed class UnsummonServitors: AbstractEffect
 {
     public override bool IsInstant => true;

@@ -5,7 +5,6 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
@@ -16,6 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Attack Trait effect implementation.
 /// </summary>
+[AbstractEffectName("AttackTrait")]
 public sealed class AttackTrait: AbstractEffect
 {
     private static readonly FrozenDictionary<XmlSkillEffectParameterType, TraitType> _map = EnumUtil.

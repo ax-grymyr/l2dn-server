@@ -1,4 +1,3 @@
-using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
@@ -13,6 +12,7 @@ using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("TriggerSkillByStat")]
 public sealed class TriggerSkillByStat: AbstractEffect
 {
     private readonly Stat _stat;

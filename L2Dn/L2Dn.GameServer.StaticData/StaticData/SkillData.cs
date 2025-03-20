@@ -25,7 +25,6 @@ public sealed class SkillData: DataReaderBase
 
     private SkillData()
     {
-        Load();
     }
 
     public static SkillData Instance { get; } = new();
@@ -245,14 +244,12 @@ public sealed class SkillData: DataReaderBase
                             });
                     }
 
-                    Func<EffectParameterSet, IAbstractEffect>? handlerFactory =
-                        AbstractEffectFactory.getInstance().getHandlerFactory(effect.Name);
+                    IAbstractEffect? skillEffect =
+                        AbstractEffectFactory.Instance.Create(effect.Name, effectParameters);
 
-                    if (handlerFactory is null)
+                    if (skillEffect is null)
                         throw new InvalidOperationException(
                             $"Invalid skill id={_skillId}: effect handler '{effect.Name}' not found");
-
-                    IAbstractEffect skillEffect = handlerFactory(effectParameters);
 
                     parameters.Effects.GetOrAdd(effectScope, _ => []).Add(skillEffect);
                 });

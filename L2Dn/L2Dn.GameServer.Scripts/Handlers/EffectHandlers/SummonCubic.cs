@@ -5,7 +5,6 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Cubics;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
@@ -17,6 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Summon Cubic effect implementation.
 /// </summary>
+[AbstractEffectName("SummonCubic")]
 public sealed class SummonCubic: AbstractEffect
 {
     private readonly int _cubicId;

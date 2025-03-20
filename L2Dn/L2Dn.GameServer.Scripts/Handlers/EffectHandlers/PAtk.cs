@@ -3,4 +3,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("PAtk")]
 public sealed class PAtk(EffectParameterSet parameters): AbstractConditionalHpEffect(parameters, Stat.PHYSICAL_ATTACK);

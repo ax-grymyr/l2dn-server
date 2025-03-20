@@ -3,5 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
+[AbstractEffectName("BonusSpoilRate")]
 public sealed class BonusSpoilRate(EffectParameterSet parameters):
     AbstractStatPercentEffect(parameters, Stat.BONUS_SPOIL_RATE);

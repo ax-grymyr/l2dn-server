@@ -6,7 +6,6 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.InstanceZones;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
@@ -16,6 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Resurrection Special effect implementation.
 /// </summary>
+[AbstractEffectName("ResurrectionSpecial")]
 public sealed class ResurrectionSpecial: AbstractEffect
 {
     private readonly int _power;

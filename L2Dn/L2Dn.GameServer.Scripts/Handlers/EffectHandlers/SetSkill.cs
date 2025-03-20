@@ -1,9 +1,7 @@
-using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
@@ -14,6 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Set Skill effect implementation.
 /// </summary>
+[AbstractEffectName("SetSkill")]
 public sealed class SetSkill: AbstractEffect
 {
     private readonly int _skillId;

@@ -5,7 +5,6 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
@@ -28,6 +27,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// This, combined with target type, allows more complex actions like flying target's backwards or player's backwards.
 ///
 /// </summary>
+[AbstractEffectName("Blink")]
 public sealed class Blink: AbstractEffect
 {
     private readonly int _flyCourse;
