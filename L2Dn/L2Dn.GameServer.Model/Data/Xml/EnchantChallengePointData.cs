@@ -119,7 +119,7 @@ public class EnchantChallengePointData: DataReaderBase
 
 	public int[] handleFailure(Player player, Item item)
 	{
-		EnchantChallengePointsItemInfo? info = getInfoByItemId(item.getId());
+		EnchantChallengePointsItemInfo? info = getInfoByItemId(item.Id);
 		if (info == null)
 			return [-1, -1];
 

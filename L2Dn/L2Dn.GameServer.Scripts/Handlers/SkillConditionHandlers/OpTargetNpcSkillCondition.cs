@@ -21,6 +21,6 @@ public class OpTargetNpcSkillCondition: ISkillCondition
     {
         WorldObject? actualTarget = caster == null || !caster.isPlayer() ? target : caster.getTarget();
         return actualTarget != null && (actualTarget.isNpc() || actualTarget.isDoor()) &&
-            _npcIds.Contains(actualTarget.getId());
+            _npcIds.Contains(actualTarget.Id);
     }
 }

@@ -1,9 +1,9 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 
@@ -18,13 +18,13 @@ public class FanPB: IAffectScopeHandler
 	public void forEachAffected<T>(Creature creature, WorldObject target, Skill skill, Action<T> action)
 		where T: WorldObject
 	{
-		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
+		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.AffectObject);
 		double headingAngle = HeadingUtil.ConvertHeadingToDegrees(creature.getHeading());
-		int fanStartAngle = skill.getFanRange()[1];
-		int fanRadius = skill.getFanRange()[2];
-		int fanAngle = skill.getFanRange()[3];
+		int fanStartAngle = skill.FanRange[1];
+		int fanRadius = skill.FanRange[2];
+		int fanAngle = skill.FanRange[3];
 		double fanHalfAngle = fanAngle / 2.0; // Half left and half right.
-		int affectLimit = skill.getAffectLimit();
+		int affectLimit = skill.GetAffectLimit();
 
 		// Target checks.
 		AtomicInteger affected = new AtomicInteger(0);

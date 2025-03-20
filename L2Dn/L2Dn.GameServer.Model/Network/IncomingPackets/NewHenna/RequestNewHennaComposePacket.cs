@@ -90,9 +90,9 @@ public struct RequestNewHennaComposePacket: IIncomingPacket<GameSession>
 		    itemsToUpdate.Add(new ItemInfo(adenaItem, ItemChangeType.MODIFIED));
 
 		if ((_slotOneItemId != -1 &&
-		     inventory.destroyItemByItemId("Henna Improving", one.getId(), one.getCount(), player, null) == null) ||
+		     inventory.destroyItemByItemId("Henna Improving", one.Id, one.getCount(), player, null) == null) ||
 		    (_slotTwoItemId != -1 &&
-		     inventory.destroyItemByItemId("Henna Improving", two.getId(), two.getCount(), player, null) == null) ||
+		     inventory.destroyItemByItemId("Henna Improving", two.Id, two.getCount(), player, null) == null) ||
 		    inventory.destroyItemByItemId("Henna Improving", Inventory.ADENA_ID, commission, player, null) == null)
 		{
 			player.sendPacket(new NewHennaPotenComposePacket(henna.getDyeId(), -1, false));
@@ -109,9 +109,9 @@ public struct RequestNewHennaComposePacket: IIncomingPacket<GameSession>
                 {
                     player.removeHenna(_slotOneIndex, false);
                     player.addHenna(_slotOneIndex, rewardHenna);
-                    player.addItem("Henna Improving", reward.getId(), reward.getCount(), null, false);
+                    player.addItem("Henna Improving", reward.Id, reward.getCount(), null, false);
                     player.sendPacket(new NewHennaPotenComposePacket(reward.getHennaId(),
-                        reward.getId() == 0 ? -1 : reward.getId(), true));
+                        reward.Id == 0 ? -1 : reward.Id, true));
                 }
             }
         }
@@ -127,9 +127,9 @@ public struct RequestNewHennaComposePacket: IIncomingPacket<GameSession>
                     player.addHenna(_slotOneIndex, rewardHenna);
                 }
 
-                player.addItem("Henna Improving", reward.getId(), reward.getCount(), null, false);
+                player.addItem("Henna Improving", reward.Id, reward.getCount(), null, false);
                 player.sendPacket(new NewHennaPotenComposePacket(reward.getHennaId(),
-                    reward.getId() == 0 ? -1 : reward.getId(), false));
+                    reward.Id == 0 ? -1 : reward.Id, false));
             }
         }
 

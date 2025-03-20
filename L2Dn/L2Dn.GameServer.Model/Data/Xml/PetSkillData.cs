@@ -47,7 +47,7 @@ public class PetSkillData: DataReaderBase
 
 		if (SkillData.getInstance().getSkill(skillId, skillLevel == 0 ? 1 : skillLevel) != null)
 		{
-			skillTree.put(SkillData.getSkillHashCode(skillId, skillLevel + 1), new SkillHolder(skillId, skillLevel));
+			skillTree.put(Skill.GetSkillHashCode(skillId, skillLevel + 1), new SkillHolder(skillId, skillLevel));
 		}
 		else
 		{
@@ -59,7 +59,7 @@ public class PetSkillData: DataReaderBase
 	public int getAvailableLevel(Summon pet, int skillId)
 	{
 		int level = 0;
-		if (!_skillTrees.TryGetValue(pet.getId(), out Map<long, SkillHolder>? holders))
+		if (!_skillTrees.TryGetValue(pet.Id, out Map<long, SkillHolder>? holders))
 		{
 			// LOGGER.Warn(GetType().Name + ": Pet id " + pet.getId() + " does not have any skills assigned.");
 			return level;
@@ -107,7 +107,7 @@ public class PetSkillData: DataReaderBase
 	public List<int> getAvailableSkills(Summon pet)
 	{
 		List<int> skillIds = new();
-		if (!_skillTrees.TryGetValue(pet.getId(), out Map<long, SkillHolder>? holders))
+		if (!_skillTrees.TryGetValue(pet.Id, out Map<long, SkillHolder>? holders))
 		{
 			// LOGGER.Warn(GetType().Name + ": Pet id " + pet.getId() + " does not have any skills assigned.");
 			return skillIds;
@@ -128,7 +128,7 @@ public class PetSkillData: DataReaderBase
 	public List<Skill> getKnownSkills(Summon pet)
 	{
 		List<Skill> skills = new();
-		if (!_skillTrees.TryGetValue(pet.getId(), out Map<long, SkillHolder>? holders))
+		if (!_skillTrees.TryGetValue(pet.Id, out Map<long, SkillHolder>? holders))
 		{
 			return skills;
 		}
@@ -149,7 +149,7 @@ public class PetSkillData: DataReaderBase
 
 	public Skill? getKnownSkill(Summon pet, int skillId)
 	{
-		if (!_skillTrees.TryGetValue(pet.getId(), out Map<long, SkillHolder>? holders))
+		if (!_skillTrees.TryGetValue(pet.Id, out Map<long, SkillHolder>? holders))
 		{
 			return null;
 		}

@@ -24,7 +24,7 @@ public class OpExistNpcSkillCondition: ISkillCondition
     {
         foreach (Npc npc in World.getInstance().getVisibleObjectsInRange<Npc>(caster, _range))
         {
-            if (_npcIds.Contains(npc.getId()))
+            if (_npcIds.Contains(npc.Id))
                 return _isAround;
         }
 

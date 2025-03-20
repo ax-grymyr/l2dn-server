@@ -44,7 +44,7 @@ public sealed class Synergy: AbstractEffect
         foreach (AbnormalType required in _requiredSlots)
         {
             if (!effector.hasAbnormalType(required))
-                return skill.isToggle();
+                return skill.IsToggle;
         }
 
         int abnormalCount = 0;
@@ -60,13 +60,13 @@ public sealed class Synergy: AbstractEffect
             Skill partyBuffSkill = partyBuff.getSkill();
             if (partyBuffSkill != null)
             {
-                WorldObject? target = partyBuffSkill.getTarget(effector, effected, false, false, false);
+                WorldObject? target = partyBuffSkill.GetTarget(effector, effected, false, false, false);
                 if (target != null && target.isCreature())
                 {
                     BuffInfo? abnormalBuffInfo = effector.getEffectList().
-                        getFirstBuffInfoByAbnormalType(partyBuffSkill.getAbnormalType());
+                        getFirstBuffInfoByAbnormalType(partyBuffSkill.AbnormalType);
 
-                    if (abnormalBuffInfo != null && abnormalBuffInfo.getSkill().getAbnormalLevel() != abnormalCount - 1)
+                    if (abnormalBuffInfo != null && abnormalBuffInfo.getSkill().AbnormalLevel != abnormalCount - 1)
                     {
                         effector.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, _partyBuffSkillId);
                     }
@@ -86,7 +86,7 @@ public sealed class Synergy: AbstractEffect
             effector.getEffectList().stopSkillEffects(SkillFinishType.REMOVED, _partyBuffSkillId);
         }
 
-        return skill.isToggle();
+        return skill.IsToggle;
     }
 
     public override int GetHashCode() =>

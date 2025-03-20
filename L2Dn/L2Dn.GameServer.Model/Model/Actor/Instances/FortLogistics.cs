@@ -173,7 +173,7 @@ public class FortLogistics : Merchant
 
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
 		htmlContent.Replace("%objectId%", ObjectId.ToString());
-		htmlContent.Replace("%npcId%", getId().ToString());
+		htmlContent.Replace("%npcId%", Id.ToString());
 
         Clan? ownerClan = getFort()?.getOwnerClan();
 		if (ownerClan != null)

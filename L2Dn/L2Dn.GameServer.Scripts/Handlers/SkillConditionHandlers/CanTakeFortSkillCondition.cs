@@ -37,7 +37,7 @@ public class CanTakeFortSkillCondition: ISkillCondition
             player.sendPacket(sm);
             canTakeFort = false;
         }
-        else if (target != null && target.getId() != FortManager.ORC_FORTRESS_FLAGPOLE_ID)
+        else if (target != null && target.Id != FortManager.ORC_FORTRESS_FLAGPOLE_ID)
         {
             player.sendPacket(SystemMessageId.INVALID_TARGET);
             canTakeFort = false;

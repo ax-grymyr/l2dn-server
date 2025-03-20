@@ -104,7 +104,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 		string replyMSG;
 		if (npc1 != null && npc2 != null)
 		{
-			replyMSG = "<html><title>Selected mobs to fight</title><body><table><tr><td>First</td><td>Second</td></tr><tr><td>level " + lvl1 + "</td><td>level " + lvl2 + "</td></tr><tr><td>id " + npc1.getId() + "</td><td>id " + npc2.getId() + "</td></tr><tr><td>" + npc1.getName() + "</td><td>" + npc2.getName() + "</td></tr></table><center><br><br><br><button value=\"OK\" action=\"bypass -h admin_fight_calculator_show " + npc1.getId() + " " + npc2.getId() + "\"  width=100 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>";
+			replyMSG = "<html><title>Selected mobs to fight</title><body><table><tr><td>First</td><td>Second</td></tr><tr><td>level " + lvl1 + "</td><td>level " + lvl2 + "</td></tr><tr><td>id " + npc1.Id + "</td><td>id " + npc2.Id + "</td></tr><tr><td>" + npc1.getName() + "</td><td>" + npc2.getName() + "</td></tr></table><center><br><br><br><button value=\"OK\" action=\"bypass -h admin_fight_calculator_show " + npc1.Id + " " + npc2.Id + "\"  width=100 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>";
 		}
 		else if (lvl1 != 0 && npc1 == null)
 		{
@@ -113,7 +113,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 			sb.Append("<html><title>Select first mob to fight</title><body><table>");
 			foreach (NpcTemplate n in npcs)
 			{
-				sb.Append("<tr><td><a action=\"bypass -h admin_fight_calculator lvl1 " + lvl1 + " lvl2 " + lvl2 + " mid1 " + n.getId() + " mid2 " + mid2 + "\">" + n.getName() + "</a></td></tr>");
+				sb.Append("<tr><td><a action=\"bypass -h admin_fight_calculator lvl1 " + lvl1 + " lvl2 " + lvl2 + " mid1 " + n.Id + " mid2 " + mid2 + "\">" + n.getName() + "</a></td></tr>");
 			}
 
 			sb.Append("</table></body></html>");
@@ -126,7 +126,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 			sb.Append("<html><title>Select second mob to fight</title><body><table>");
 			foreach (NpcTemplate n in npcs)
 			{
-				sb.Append("<tr><td><a action=\"bypass -h admin_fight_calculator lvl1 " + lvl1 + " lvl2 " + lvl2 + " mid1 " + mid1 + " mid2 " + n.getId() + "\">" + n.getName() + "</a></td></tr>");
+				sb.Append("<tr><td><a action=\"bypass -h admin_fight_calculator lvl1 " + lvl1 + " lvl2 " + lvl2 + " mid1 " + mid1 + " mid2 " + n.Id + "\">" + n.getName() + "</a></td></tr>");
 			}
 
 			sb.Append("</table></body></html>");
@@ -328,7 +328,7 @@ public class AdminFightCalculator: IAdminCommandHandler
 		}
 		else
 		{
-			replyMSG.Append("<button value=\"Retry\" action=\"bypass -h admin_fight_calculator_show " + ((NpcTemplate) npc1.getTemplate()).getId() + " " + ((NpcTemplate) npc2.getTemplate()).getId() + "\"  width=100 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
+			replyMSG.Append("<button value=\"Retry\" action=\"bypass -h admin_fight_calculator_show " + ((NpcTemplate) npc1.getTemplate()).Id + " " + ((NpcTemplate) npc2.getTemplate()).Id + "\"  width=100 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 		}
 
 		replyMSG.Append("</center></body></html>");

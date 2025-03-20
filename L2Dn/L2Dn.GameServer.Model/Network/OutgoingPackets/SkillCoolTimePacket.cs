@@ -17,7 +17,7 @@ public readonly struct SkillCoolTimePacket: IOutgoingPacket
         foreach (TimeStamp ts in player.getSkillReuseTimeStamps().Values)
         {
             Skill? skill = SkillData.getInstance().getSkill(ts.getSkillId(), ts.getSkillLevel(), ts.getSkillSubLevel());
-            bool isNotBroadcastable = skill?.isNotBroadcastable() ?? false;
+            bool isNotBroadcastable = skill?.IsNotBroadcastable ?? false;
             if (ts.hasNotPassed() && !isNotBroadcastable)
             {
                 _reuseTimestamps.Add(ts);

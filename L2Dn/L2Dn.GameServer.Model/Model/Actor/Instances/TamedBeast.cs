@@ -171,7 +171,7 @@ public class TamedBeast: FeedableBeast
 		foreach (Skill skill in _beastSkills)
 		{
 			ThreadPool.schedule(new BuffCast(this, skill), delay);
-			delay += TimeSpan.FromMilliseconds(100) + skill.getHitTime();
+			delay += TimeSpan.FromMilliseconds(100) + skill.HitTime;
 		}
 		ThreadPool.schedule(new BuffCast(this, null), delay);
 	}
@@ -216,7 +216,7 @@ public class TamedBeast: FeedableBeast
 				foreach (Skill skill in getTemplate().getSkills().Values)
 				{
 					// if the skill is a buff, check if the owner has it already [ owner.getEffect(Skill skill) ]
-					if (skill.isContinuous() && !skill.isDebuff())
+					if (skill.IsContinuous && !skill.IsDebuff)
 					{
 						totalBuffsAvailable++;
 					}
@@ -305,7 +305,7 @@ public class TamedBeast: FeedableBeast
 			foreach (Skill skill in getTemplate().getSkills().Values)
 			{
 				// if the skill is a debuff, check if the attacker has it already [ attacker.getEffect(Skill skill) ]
-				if (skill.isDebuff() && Rnd.get(3) < 1 && attacker != null && attacker.isAffectedBySkill(skill.getId()))
+				if (skill.IsDebuff && Rnd.get(3) < 1 && attacker != null && attacker.isAffectedBySkill(skill.Id))
 				{
 					sitCastAndFollow(skill, attacker);
 				}
@@ -325,7 +325,7 @@ public class TamedBeast: FeedableBeast
 			foreach (Skill skill in getTemplate().getSkills().Values)
 			{
 				// if the skill is a buff, check if the owner has it already [ owner.getEffect(Skill skill) ]
-				if (Rnd.get(5) < chance && skill.hasEffectType(EffectType.CPHEAL, EffectType.HEAL, EffectType.MANAHEAL_BY_LEVEL, EffectType.MANAHEAL_PERCENT))
+				if (Rnd.get(5) < chance && skill.HasEffectType(EffectType.CPHEAL, EffectType.HEAL, EffectType.MANAHEAL_BY_LEVEL, EffectType.MANAHEAL_PERCENT))
 				{
 					sitCastAndFollow(skill, _owner);
 				}
@@ -475,13 +475,13 @@ public class TamedBeast: FeedableBeast
 			foreach (Skill skill in _tamedBeast.getTemplate().getSkills().Values)
 			{
 				// if the skill is a buff, check if the owner has it already [ owner.getEffect(Skill skill) ]
-				if (skill.isContinuous() && !skill.isDebuff())
+				if (skill.IsContinuous && !skill.IsDebuff)
 				{
 					if (i++ == rand)
 					{
 						buffToGive = skill;
 					}
-					if (owner.isAffectedBySkill(skill.getId()))
+					if (owner.isAffectedBySkill(skill.Id))
 					{
 						totalBuffsOnOwner++;
 					}

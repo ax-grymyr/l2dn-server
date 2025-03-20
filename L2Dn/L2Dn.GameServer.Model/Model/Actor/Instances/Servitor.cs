@@ -165,7 +165,7 @@ public class Servitor : Summon, Runnable
 			skillLevel = 1;
 		}
 
-		Skill? skillToCast = SkillData.getInstance().getSkill(skill.getId(), skillLevel);
+		Skill? skillToCast = SkillData.getInstance().getSkill(skill.Id, skillLevel);
 		if (skillToCast != null)
 		{
 			base.doCast(skillToCast);
@@ -193,7 +193,7 @@ public class Servitor : Summon, Runnable
 				foreach (SummonEffectTable.SummonEffect effect in effects)
 				{
 					Skill skill = effect.getSkill();
-					if (skill != null && skill.getId() == skillId)
+					if (skill != null && skill.Id == skillId)
 					{
 						effects.Remove(effect);
 					}
@@ -268,38 +268,38 @@ public class Servitor : Summon, Runnable
 					Skill skill = info.getSkill();
 
 					// Do not store those effects.
-					if (skill.isDeleteAbnormalOnLeave())
+					if (skill.IsDeleteAbnormalOnLeave)
 					{
 						continue;
 					}
 
 					// Do not save heals.
-					if (skill.getAbnormalType() == AbnormalType.LIFE_FORCE_OTHERS)
+					if (skill.AbnormalType == AbnormalType.LIFE_FORCE_OTHERS)
 					{
 						continue;
 					}
 
 					// Toggles are skipped, unless they are necessary to be always on.
-					if (skill.isToggle() && !skill.isNecessaryToggle())
+					if (skill.IsToggle && !skill.IsNecessaryToggle)
 					{
 						continue;
 					}
 
 					// Dances and songs are not kept in retail.
-					if (skill.isDance() && !Config.Character.ALT_STORE_DANCES)
+					if (skill.IsDance && !Config.Character.ALT_STORE_DANCES)
 					{
 						continue;
 					}
 
-					if (storedSkills.Contains(skill.getReuseHashCode()))
+					if (storedSkills.Contains(skill.ReuseHashCode))
 					{
 						continue;
 					}
 
-					storedSkills.add(skill.getReuseHashCode());
+					storedSkills.add(skill.ReuseHashCode);
 
-					int skillId = skill.getId();
-					int skillLevel = skill.getLevel();
+					int skillId = skill.Id;
+					int skillLevel = skill.Level;
 
 					// Search by primary key
 					DbSummonSkillReuse? record = ctx.SummonSkillReuses.SingleOrDefault(r =>
@@ -377,7 +377,7 @@ public class Servitor : Summon, Runnable
 						continue;
 					}
 
-					if (skill.hasEffects(EffectScope.GENERAL))
+					if (skill.HasEffects(SkillEffectScope.General))
 						effectList.Add(new SummonEffectTable.SummonEffect(skill, effectCurTime));
 				}
 			}
@@ -400,7 +400,7 @@ public class Servitor : Summon, Runnable
             if (effectList != null)
 			{
 				foreach (SummonEffectTable.SummonEffect se in effectList)
-					se.getSkill().applyEffects(this, this, false, se.getEffectCurTime());
+					se.getSkill().ApplyEffects(this, this, false, se.getEffectCurTime());
 			}
 		}
 	}
@@ -489,12 +489,12 @@ public class Servitor : Summon, Runnable
 			_consumeItemIntervalRemaining -= usedtime;
 
 			// check if it is time to consume another item
-			if (_consumeItemIntervalRemaining <= TimeSpan.Zero && _itemConsume.getCount() > 0 && _itemConsume.getId() > 0 && !isDead())
+			if (_consumeItemIntervalRemaining <= TimeSpan.Zero && _itemConsume.getCount() > 0 && _itemConsume.Id > 0 && !isDead())
 			{
-				if (destroyItemByItemId("Consume", _itemConsume.getId(), _itemConsume.getCount(), this, false))
+				if (destroyItemByItemId("Consume", _itemConsume.Id, _itemConsume.getCount(), this, false))
 				{
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.A_SUMMONED_MONSTER_USES_S1);
-					msg.Params.addItemName(_itemConsume.getId());
+					msg.Params.addItemName(_itemConsume.Id);
 					sendPacket(msg);
 
 					// Reset

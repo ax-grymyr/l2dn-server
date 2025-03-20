@@ -137,16 +137,13 @@ public class Door : Creature
 		return getTemplate().getLevel();
 	}
 
-	/**
+    /**
 	 * Gets the door ID.
 	 * @return the door ID
 	 */
-	public override int getId()
-	{
-		return getTemplate().getId();
-	}
+    public override int Id => getTemplate().Id;
 
-	/**
+    /**
 	 * @return Returns if the door is open.
 	 */
 	public bool isOpen()
@@ -268,7 +265,7 @@ public class Door : Creature
 		else if (isCastle)
 		{
 			Clan? clan = actingPlayer.getClan();
-			if (clan != null && castle != null && clan.getId() == castle.getOwnerId())
+			if (clan != null && castle != null && clan.Id == castle.getOwnerId())
 			{
 				return false;
 			}
@@ -655,7 +652,7 @@ public class Door : Creature
 		StringBuilder sb = new();
 		sb.Append(GetType().Name);
 		sb.Append("[");
-		sb.Append(getTemplate().getId());
+		sb.Append(getTemplate().Id);
 		sb.Append("](");
 		sb.Append(ObjectId);
 		sb.Append(")");

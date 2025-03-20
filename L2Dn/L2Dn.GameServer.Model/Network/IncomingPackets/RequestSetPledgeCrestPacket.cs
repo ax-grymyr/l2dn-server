@@ -74,7 +74,7 @@ public struct RequestSetPledgeCrestPacket: IIncomingPacket<GameSession>
             Crest? crest = CrestTable.getInstance().createCrest(_data, CrestType.PLEDGE);
             if (crest != null)
             {
-                clan.changeClanCrest(crest.getId());
+                clan.changeClanCrest(crest.Id);
                 connection.Send(SystemMessageId.THE_CREST_WAS_SUCCESSFULLY_REGISTERED);
             }
         }

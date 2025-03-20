@@ -118,7 +118,7 @@ public class QuestManager
 	{
 		foreach (Quest q in _quests.Values)
 		{
-			if (q.getId() == questId)
+			if (q.Id == questId)
 			{
 				return q;
 			}
@@ -150,7 +150,7 @@ public class QuestManager
 		if (old != null)
 		{
 			old.Unload();
-			LOGGER.Info("Replaced quest " + old.Name + " (" + old.getId() + ") with a new version!");
+			LOGGER.Info("Replaced quest " + old.Name + " (" + old.Id + ") with a new version!");
 		}
 
 		if (Config.General.ALT_DEV_SHOW_QUESTS_LOAD_IN_LOGS)

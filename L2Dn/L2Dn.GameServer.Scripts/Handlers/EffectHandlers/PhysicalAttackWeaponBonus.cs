@@ -122,8 +122,8 @@ public sealed class PhysicalAttackWeaponBonus: AbstractEffect
         {
             // Trait, elements
             double weaponTraitMod = Formulas.calcWeaponTraitBonus(effector, effected);
-            double generalTraitMod = Formulas.calcGeneralTraitBonus(effector, effected, skill.getTraitType(), true);
-            double weaknessMod = Formulas.calcWeaknessBonus(effector, effected, skill.getTraitType());
+            double generalTraitMod = Formulas.calcGeneralTraitBonus(effector, effected, skill.TraitType, true);
+            double weaknessMod = Formulas.calcWeaknessBonus(effector, effected, skill.TraitType);
             double attributeMod = Formulas.calcAttributeBonus(effector, effected, skill);
             double pvpPveMod = Formulas.calculatePvpPveBonus(effector, effected, skill, true);
             double randomMod = effector.getRandomDamageMultiplier();
@@ -135,7 +135,7 @@ public sealed class PhysicalAttackWeaponBonus: AbstractEffect
             double rangedBonus = effector.getAttackType().isRanged() ? attack + power : 0;
             double critMod = critical ? Formulas.calcCritDamage(effector, effected, skill) : 1;
             double ssmod = 1;
-            if (skill.useSoulShot())
+            if (skill.UseSoulShot)
             {
                 if (effector.isChargedShot(ShotType.SOULSHOTS))
                 {

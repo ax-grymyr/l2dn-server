@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Skills;
@@ -15,6 +16,6 @@ public class ConditionPlayerCheckAbnormal(AbnormalType type, int level = -1): Co
         if (level == -1)
             return effector.getEffectList().hasAbnormalType(type);
 
-        return effector.getEffectList().hasAbnormalType(type, info => level >= info.getSkill().getAbnormalLevel());
+        return effector.getEffectList().hasAbnormalType(type, info => level >= info.getSkill().AbnormalLevel);
     }
 }

@@ -219,16 +219,13 @@ public class DoorTemplate: CreatureTemplate, IIdentifiable
 		_isInverted = set.getBoolean("isInverted", false);
 	}
 
-	/**
+    /**
 	 * Gets the door ID.
 	 * @return the door ID
 	 */
-	public int getId()
-	{
-		return _doorId;
-	}
+    public int Id => _doorId;
 
-	public string getName()
+    public string getName()
 	{
 		return _name;
 	}

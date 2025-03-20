@@ -656,14 +656,14 @@ public class Party : AbstractPlayerGroup
 	 */
 	public void distributeItem(Player player, Item item)
 	{
-		if (item.getId() == Inventory.ADENA_ID)
+		if (item.Id == Inventory.ADENA_ID)
 		{
 			distributeAdena(player, item.getCount(), player);
 			ItemData.getInstance().destroyItem("Party", item, player, null);
 			return;
 		}
 
-		Player target = getActualLooter(player, item.getId(), false, player);
+		Player target = getActualLooter(player, item.Id, false, player);
 		target.addItem("Party", item, player, true);
 
 		// Send messages to other party members about reward
@@ -730,7 +730,7 @@ public class Party : AbstractPlayerGroup
 	 */
 	public void distributeItem(Player player, ItemHolder item, bool spoil, Attackable target)
 	{
-		distributeItem(player, item.getId(), item.getCount(), spoil, target);
+		distributeItem(player, item.Id, item.getCount(), spoil, target);
 	}
 
 	/**

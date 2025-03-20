@@ -48,7 +48,7 @@ public struct RequestExTryToPutEnchantTargetItemPacket: IIncomingPacket<GameSess
 			return ValueTask.CompletedTask;
 		}
 
-		EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
+		EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.Id);
 		if (!item.isEnchantable() || scrollTemplate == null || !scrollTemplate.isValid(item, null) ||
 		    item.getEnchantLevel() >= scrollTemplate.getMaxEnchantLevel())
 		{
@@ -60,7 +60,7 @@ public struct RequestExTryToPutEnchantTargetItemPacket: IIncomingPacket<GameSess
 			if (scrollTemplate == null)
 			{
 				PacketLogger.Instance.Warn("RequestExTryToPutEnchantTargetItem: " + player +
-				                           " has used undefined scroll with id " + scroll.getId());
+				                           " has used undefined scroll with id " + scroll.Id);
 			}
 
 			return ValueTask.CompletedTask;
@@ -78,7 +78,7 @@ public struct RequestExTryToPutEnchantTargetItemPacket: IIncomingPacket<GameSess
 		{
 			double challengePointsChance = 0;
 			EnchantChallengePointData.EnchantChallengePointsItemInfo? info = EnchantChallengePointData.getInstance()
-				.getInfoByItemId(item.getId());
+				.getInfoByItemId(item.Id);
 
 			if (info != null)
 			{

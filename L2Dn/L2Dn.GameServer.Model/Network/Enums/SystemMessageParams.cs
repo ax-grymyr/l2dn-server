@@ -116,7 +116,7 @@ public sealed class SystemMessageParams
 
 	public SystemMessageParams addNpcName(Summon npc)
 	{
-		return addNpcName(npc.getId());
+		return addNpcName(npc.Id);
 	}
 
 	public SystemMessageParams addNpcName(NpcTemplate template)
@@ -126,7 +126,7 @@ public sealed class SystemMessageParams
 			return addString(template.getName());
 		}
 
-		return addNpcName(template.getId());
+		return addNpcName(template.Id);
 	}
 
 	public SystemMessageParams addNpcName(int id)
@@ -137,19 +137,19 @@ public sealed class SystemMessageParams
 
 	public SystemMessageParams addItemName(Item item)
 	{
-		return addItemName(item.getId());
+		return addItemName(item.Id);
 	}
 
 	public SystemMessageParams addItemName(ItemTemplate item)
 	{
-		return addItemName(item.getId());
+		return addItemName(item.Id);
 	}
 
 	public SystemMessageParams addItemName(int id)
     {
         ItemTemplate item = ItemData.getInstance().getTemplate(id) ??
             throw new ArgumentException($"Item {id} template not found", nameof(id));
-        
+
 		if (item.getDisplayId() != id)
 		{
 			return addString(item.getName());
@@ -172,11 +172,11 @@ public sealed class SystemMessageParams
 
 	public SystemMessageParams addSkillName(Skill skill)
 	{
-		if (skill.getId() != skill.getDisplayId())
+		if (skill.Id != skill.DisplayId)
 		{
-			return addString(skill.getName());
+			return addString(skill.Name);
 		}
-		return addSkillName(skill.getId(), skill.getLevel(), skill.getSubLevel());
+		return addSkillName(skill.Id, skill.Level, skill.SubLevel);
 	}
 
 	public SystemMessageParams addSkillName(int id)

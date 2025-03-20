@@ -90,7 +90,7 @@ public class AdminDelete: IAdminCommandHandler
 			{
 				target.deleteMe();
 				spawn.stopRespawn();
-				if (DbSpawnManager.getInstance().isDefined(spawn.getId()))
+				if (DbSpawnManager.getInstance().isDefined(spawn.Id))
 				{
 					DbSpawnManager.getInstance().deleteSpawn(spawn, true);
 				}
@@ -133,7 +133,7 @@ public class AdminDelete: IAdminCommandHandler
 			{
 				target.deleteMe();
 				spawn.stopRespawn();
-				if (DbSpawnManager.getInstance().isDefined(spawn.getId()))
+				if (DbSpawnManager.getInstance().isDefined(spawn.Id))
 				{
 					DbSpawnManager.getInstance().deleteSpawn(spawn, true);
 				}

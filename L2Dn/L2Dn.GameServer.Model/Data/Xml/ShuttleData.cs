@@ -122,7 +122,7 @@ public class ShuttleData: DataReaderBase
 	{
 		foreach (Shuttle shuttle in _shuttleInstances.Values)
 		{
-			if (shuttle.ObjectId == id || shuttle.getId() == id)
+			if (shuttle.ObjectId == id || shuttle.Id == id)
 			{
 				return shuttle;
 			}

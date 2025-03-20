@@ -61,7 +61,7 @@ public sealed class PlainsOfDion: AbstractScript
 
             World.getInstance().forEachVisibleObjectInRange<Monster>(npc, npc.getTemplate().getClanHelpRange(), obj =>
             {
-                if (Array.IndexOf(DELU_LIZARDMEN, obj.getId()) >= 0 && !obj.isAttackingNow() && !obj.isDead() &&
+                if (Array.IndexOf(DELU_LIZARDMEN, obj.Id) >= 0 && !obj.isAttackingNow() && !obj.isDead() &&
                     GeoEngine.getInstance().canSeeTarget(npc, obj))
                 {
                     addAttackPlayerDesire(obj, player);

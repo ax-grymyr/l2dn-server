@@ -34,7 +34,7 @@ public class SoulShots: IItemHandler
 			return false;
 		}
 
-		int itemId = item.getId();
+		int itemId = item.Id;
 
 		// Check if Soul shot can be used
 		if (weaponInst == null || weaponItem.getSoulShotCount() == 0)
@@ -72,7 +72,7 @@ public class SoulShots: IItemHandler
 		player.chargeShot(ShotType.SOULSHOTS);
 
 		// Send message to client
-		if (!player.getAutoSoulShot().Contains(item.getId()))
+		if (!player.getAutoSoulShot().Contains(item.Id))
 		{
 			player.sendPacket(SystemMessageId.YOUR_SOULSHOTS_ARE_ENABLED);
 		}
@@ -132,7 +132,7 @@ public class SoulShots: IItemHandler
 			return false;
 		}
 
-		int itemId = item.getId();
+		int itemId = item.Id;
 		long shotCount = item.getCount();
 		short shotConsumption = 0;
 		if (pet != null && !pet.isChargedShot(ShotType.SOULSHOTS))

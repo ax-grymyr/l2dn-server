@@ -229,7 +229,7 @@ public class AttackableAI: CreatureAI
         // TODO: null checking hack
         Skill skill = _skill ?? throw new InvalidOperationException("Skill is null in thinkCast");
 
-		WorldObject? target = skill.getTarget(_actor, getTarget(), _forceUse, _dontMove, false);
+		WorldObject? target = skill.GetTarget(_actor, getTarget(), _forceUse, _dontMove, false);
 		if (checkTargetLost(target) || target == null)
 		{
 			setCastTarget(null);
@@ -727,7 +727,7 @@ public class AttackableAI: CreatureAI
 						NpcTemplate nearbyTemplate = nearby.getTemplate();
 						if (!template.isClan(nearbyTemplate.getClans()) || (nearbyTemplate.hasIgnoreClanNpcIds() &&
 						                                                    nearbyTemplate.getIgnoreClanNpcIds()
-							                                                    .Contains(npc.getId())))
+							                                                    .Contains(npc.Id)))
 						{
 							return;
 						}
@@ -1038,12 +1038,12 @@ public class AttackableAI: CreatureAI
 		}
 
 		// Check if target is valid and within cast range.
-		if (skill.getTarget(getActiveChar(), target, false, getActiveChar().isMovementDisabled(), false) == null)
+		if (skill.GetTarget(getActiveChar(), target, false, getActiveChar().isMovementDisabled(), false) == null)
 		{
 			return false;
 		}
 
-		if (!Util.checkIfInRange(skill.getCastRange(), getActiveChar(), target, true))
+		if (!Util.checkIfInRange(skill.CastRange, getActiveChar(), target, true))
 		{
 			return false;
 		}
@@ -1051,24 +1051,24 @@ public class AttackableAI: CreatureAI
 		if (target.isCreature())
 		{
 			// Skip if target is already affected by such skill.
-			if (skill.isContinuous())
+			if (skill.IsContinuous)
 			{
-				if (((Creature) target).getEffectList().hasAbnormalType(skill.getAbnormalType(), i => i.getSkill().getAbnormalLevel() >= skill.getAbnormalLevel()))
+				if (((Creature) target).getEffectList().hasAbnormalType(skill.AbnormalType, i => i.getSkill().AbnormalLevel >= skill.AbnormalLevel))
 				{
 					return false;
 				}
 
 				// There are cases where bad skills (negative effect points) are actually buffs and NPCs cast them on players, but they shouldn't.
-				if ((!skill.isDebuff() || !skill.isBad()) && target.isAutoAttackable(getActiveChar()))
+				if ((!skill.IsDebuff || !skill.IsBad) && target.isAutoAttackable(getActiveChar()))
 				{
 					return false;
 				}
 			}
 
 			// Check if target had buffs if skill is bad cancel, or debuffs if skill is good cancel.
-			if (skill.hasEffectType(EffectType.DISPEL, EffectType.DISPEL_BY_SLOT))
+			if (skill.HasEffectType(EffectType.DISPEL, EffectType.DISPEL_BY_SLOT))
 			{
-				if (skill.isBad())
+				if (skill.IsBad)
 				{
 					if (((Creature) target).getEffectList().getBuffCount() == 0)
 					{
@@ -1082,7 +1082,7 @@ public class AttackableAI: CreatureAI
 			}
 
 			// Check for damaged targets if using healing skill.
-			if (((Creature) target).getCurrentHp() == ((Creature) target).getMaxHp() && skill.hasEffectType(EffectType.HEAL))
+			if (((Creature) target).getCurrentHp() == ((Creature) target).getMaxHp() && skill.HasEffectType(EffectType.HEAL))
 			{
 				return false;
 			}
@@ -1139,10 +1139,10 @@ public class AttackableAI: CreatureAI
 		}
 
 		// There are cases where bad skills (negative effect points) are actually buffs and NPCs cast them on players, but they shouldn't.
-		bool isBad = skill.isContinuous() ? skill.isDebuff() : skill.isBad();
+		bool isBad = skill.IsContinuous ? skill.IsDebuff : skill.IsBad;
 
 		// Check current target first.
-		int range = insideCastRange ? skill.getCastRange() + getActiveChar().getTemplate().getCollisionRadius() : 2000; // TODO need some forget range
+		int range = insideCastRange ? skill.CastRange + getActiveChar().getTemplate().getCollisionRadius() : 2000; // TODO need some forget range
 
 		List<Creature> result = new();
 		if (isBad)
@@ -1172,7 +1172,7 @@ public class AttackableAI: CreatureAI
 			}
 
 			// For heal skills sort by hp missing.
-			if (skill.hasEffectType(EffectType.HEAL))
+			if (skill.HasEffectType(EffectType.HEAL))
 			{
 				int searchValue = int.MaxValue;
 				Creature? creature = null;

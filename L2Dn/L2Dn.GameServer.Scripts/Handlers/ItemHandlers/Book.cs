@@ -17,10 +17,10 @@ public class Book: IItemHandler
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
-		
+
 		Player player = (Player) playable;
-		
-		int itemId = item.getId();
+
+		int itemId = item.Id;
 		string filename = "html/help/" + itemId + ".htm";
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
 		NpcHtmlMessagePacket itemReply = new NpcHtmlMessagePacket(null, 0, htmlContent);

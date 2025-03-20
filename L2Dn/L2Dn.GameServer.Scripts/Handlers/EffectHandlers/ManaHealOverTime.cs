@@ -49,7 +49,7 @@ public sealed class ManaHealOverTime: AbstractEffect
         mp = _power > 0 ? Math.Min(mp, maxmp) : Math.Max(mp, 1);
         effected.setCurrentMp(mp, false);
         effected.broadcastStatusUpdate(effector);
-        return skill.isToggle();
+        return skill.IsToggle;
     }
 
     public override int GetHashCode() => HashCode.Combine(_power, Ticks);

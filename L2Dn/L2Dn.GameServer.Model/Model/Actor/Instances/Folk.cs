@@ -31,7 +31,7 @@ public class Folk: Npc
 	 */
 	public static void showSkillList(Player player, Npc npc, CharacterClass classId)
 	{
-		int npcId = npc.getTemplate().getId();
+		int npcId = npc.getTemplate().Id;
 		if (npcId == 32611) // Tolonis (Officer) // TODO: why the npc is handled differently?
 		{
 			List<SkillLearn> skills = SkillTreeData.getInstance().getAvailableCollectSkills(player);

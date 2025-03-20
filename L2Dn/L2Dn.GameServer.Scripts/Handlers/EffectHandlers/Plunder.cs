@@ -55,7 +55,7 @@ public sealed class Plunder: AbstractEffect
         {
             foreach (ItemHolder sweepedItem in items)
             {
-                ItemHolder rewardedItem = new ItemHolder(sweepedItem.getId(), sweepedItem.getCount());
+                ItemHolder rewardedItem = new ItemHolder(sweepedItem.Id, sweepedItem.getCount());
                 Party? party = effector.getParty();
                 if (party != null)
                     party.distributeItem(player, rewardedItem, true, monster);

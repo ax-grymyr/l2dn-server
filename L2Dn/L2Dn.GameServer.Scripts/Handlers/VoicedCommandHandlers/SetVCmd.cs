@@ -35,7 +35,7 @@ public class SetVCmd: IVoicedCommandHandler
 
             Clan? playerClan = player.getClan();
             Clan? activeCharClan = activeChar.getClan();
-			if (activeCharClan == null || playerClan == null || activeCharClan.getId() != playerClan.getId())
+			if (activeCharClan == null || playerClan == null || activeCharClan.Id != playerClan.Id)
 			{
 				return false;
 			}

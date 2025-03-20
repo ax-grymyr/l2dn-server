@@ -117,7 +117,7 @@ public class FenceData: DataReaderBase
 			}
 
 			// Check if fence is within the instance we search for.
-			int instanceId = instance == null ? 0 : instance.getId();
+			int instanceId = instance == null ? 0 : instance.Id;
 			if (fence.getInstanceId() != instanceId)
 			{
 				continue;

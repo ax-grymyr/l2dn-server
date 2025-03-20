@@ -33,7 +33,7 @@ public class ChangeAttributeCrystal: IItemHandler
 			return false;
 		}
 
-		if (!_itemGrades.ContainsKey(item.getId()))
+		if (!_itemGrades.ContainsKey(item.Id))
 		{
 			player.sendPacket(SystemMessageId.CHANGING_ATTRIBUTES_HAS_BEEN_FAILED);
 			return false;
@@ -43,7 +43,7 @@ public class ChangeAttributeCrystal: IItemHandler
 		foreach (Item i in player.getInventory().getItems())
 		{
 			if (i.isWeapon() && i.hasAttributes() &&
-                _itemGrades.TryGetValue(item.getId(), out ItemGrade grade) &&
+                _itemGrades.TryGetValue(item.Id, out ItemGrade grade) &&
                 i.getTemplate().getItemGrade() == grade)
 			{
 				itemList.Add(new ItemInfo(i));
@@ -56,7 +56,7 @@ public class ChangeAttributeCrystal: IItemHandler
 			return false;
 		}
 
-		player.sendPacket(new ExChangeAttributeItemListPacket(item.getId(), itemList));
+		player.sendPacket(new ExChangeAttributeItemListPacket(item.Id, itemList));
 		return true;
 	}
 }

@@ -150,15 +150,12 @@ public class Clan: IIdentifiable, INamable
         _leader = new ClanMember(this, leader);
 	}
 
-	/**
+    /**
 	 * @return Returns the clanId.
 	 */
-	public int getId()
-	{
-		return _clanId;
-	}
+    public int Id => _clanId;
 
-	/**
+    /**
 	 * @param clanId The clanId to set.
 	 */
 	public void setClanId(int clanId)
@@ -728,7 +725,7 @@ public class Clan: IIdentifiable, INamable
 				_forum = forum.getChildByName(_name);
 				if (_forum == null)
 				{
-					_forum = ForumsBBSManager.getInstance().createNewForum(_name, forum, Forum.CLAN, Forum.CLANMEMBERONLY, getId());
+					_forum = ForumsBBSManager.getInstance().createNewForum(_name, forum, Forum.CLAN, Forum.CLANMEMBERONLY, Id);
 				}
 			}
 		}
@@ -1220,11 +1217,11 @@ public class Clan: IIdentifiable, INamable
 				int subType = clanSkill.SubPledgeId;
 				if (subType == -2)
 				{
-					_skills.put(skill.getId(), skill);
+					_skills.put(skill.Id, skill);
 				}
 				else if (subType == 0)
 				{
-					_subPledgeSkills.put(skill.getId(), skill);
+					_subPledgeSkills.put(skill.Id, skill);
 				}
 				else
 				{
@@ -1278,7 +1275,7 @@ public class Clan: IIdentifiable, INamable
 		if (newSkill != null)
 		{
 			// Replace oldSkill by newSkill or Add the newSkill
-			oldSkill = _skills.put(newSkill.getId(), newSkill);
+			oldSkill = _skills.put(newSkill.Id, newSkill);
 		}
 		return oldSkill;
 	}
@@ -1301,11 +1298,11 @@ public class Clan: IIdentifiable, INamable
 		{
 			if (subType == -2)
 			{
-				oldSkill = _skills.put(newSkill.getId(), newSkill);
+				oldSkill = _skills.put(newSkill.Id, newSkill);
 			}
 			else if (subType == 0)
 			{
-				oldSkill = _subPledgeSkills.put(newSkill.getId(), newSkill);
+				oldSkill = _subPledgeSkills.put(newSkill.Id, newSkill);
 			}
 			else
 			{
@@ -1326,8 +1323,8 @@ public class Clan: IIdentifiable, INamable
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				if (oldSkill != null)
 				{
-					int skillId = oldSkill.getId();
-					int skillLevel = newSkill.getLevel();
+					int skillId = oldSkill.Id;
+					int skillLevel = newSkill.Level;
 					ctx.ClanSkills.Where(r => r.SkillId == skillId && r.ClanId == _clanId)
 						.ExecuteUpdate(s => s.SetProperty(r => r.SkillLevel, skillLevel));
 				}
@@ -1336,9 +1333,9 @@ public class Clan: IIdentifiable, INamable
 					ctx.ClanSkills.Add(new DbClanSkill()
 					{
 						ClanId = _clanId,
-						SkillId = newSkill.getId(),
-						SkillLevel = (short)newSkill.getLevel(),
-						SkillName = newSkill.getName(),
+						SkillId = newSkill.Id,
+						SkillLevel = (short)newSkill.Level,
+						SkillName = newSkill.Name,
 						SubPledgeId = subType
 					});
 
@@ -1351,7 +1348,7 @@ public class Clan: IIdentifiable, INamable
 			}
 
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_CLAN_SKILL_S1_HAS_BEEN_ADDED);
-			sm.Params.addSkillName(newSkill.getId());
+			sm.Params.addSkillName(newSkill.Id);
 
 			foreach (ClanMember temp in _members.Values)
             {
@@ -1360,10 +1357,10 @@ public class Clan: IIdentifiable, INamable
 				{
 					if (subType == -2)
 					{
-						if (newSkill.getMinPledgeClass() <= tempPlayer.getPledgeClass())
+						if (newSkill.MinPledgeClass <= tempPlayer.getPledgeClass())
 						{
                             tempPlayer.addSkill(newSkill, false); // Skill is not saved to player DB
-                            tempPlayer.sendPacket(new PledgeSkillListAddPacket(newSkill.getId(), newSkill.getLevel()));
+                            tempPlayer.sendPacket(new PledgeSkillListAddPacket(newSkill.Id, newSkill.Level));
                             tempPlayer.sendPacket(sm);
                             tempPlayer.sendSkillList();
 						}
@@ -1371,7 +1368,7 @@ public class Clan: IIdentifiable, INamable
 					else if (temp.getPledgeType() == subType)
 					{
                         tempPlayer.addSkill(newSkill, false); // Skill is not saved to player DB
-                        tempPlayer.sendPacket(new ExSubPledgeSkillAddPacket(subType, newSkill.getId(), newSkill.getLevel()));
+                        tempPlayer.sendPacket(new ExSubPledgeSkillAddPacket(subType, newSkill.Id, newSkill.Level));
                         tempPlayer.sendPacket(sm);
                         tempPlayer.sendSkillList();
 					}
@@ -1391,7 +1388,7 @@ public class Clan: IIdentifiable, INamable
 				try
                 {
                     Player? tempPlayer = temp.getPlayer();
-					if (temp != null && tempPlayer != null && temp.isOnline() && skill.getMinPledgeClass() <= tempPlayer.getPledgeClass())
+					if (temp != null && tempPlayer != null && temp.isOnline() && skill.MinPledgeClass <= tempPlayer.getPledgeClass())
 					{
 						tempPlayer.addSkill(skill, false); // Skill is not saved to player DB
 					}
@@ -1414,7 +1411,7 @@ public class Clan: IIdentifiable, INamable
 		SocialClass playerSocialClass = (SocialClass)player.getPledgeClass() + 1;
 		foreach (Skill skill in _skills.Values)
 		{
-			SkillLearn? skillLearn = SkillTreeData.getInstance().getPledgeSkill(skill.getId(), skill.getLevel());
+			SkillLearn? skillLearn = SkillTreeData.getInstance().getPledgeSkill(skill.Id, skill.Level);
 			if (skillLearn == null || skillLearn.getSocialClass() == null || playerSocialClass >= skillLearn.getSocialClass())
 			{
 				player.addSkill(skill, false); // Skill is not saved to player DB
@@ -1424,7 +1421,7 @@ public class Clan: IIdentifiable, INamable
 		{
 			foreach (Skill skill in _subPledgeSkills.Values)
 			{
-				SkillLearn? skillLearn = SkillTreeData.getInstance().getSubPledgeSkill(skill.getId(), skill.getLevel());
+				SkillLearn? skillLearn = SkillTreeData.getInstance().getSubPledgeSkill(skill.Id, skill.Level);
 				if (skillLearn == null || skillLearn.getSocialClass() == null || playerSocialClass >= skillLearn.getSocialClass())
 				{
 					player.addSkill(skill, false); // Skill is not saved to player DB
@@ -1607,7 +1604,7 @@ public class Clan: IIdentifiable, INamable
 		{
 			return false;
 		}
-		return _atWarWith.ContainsKey(clan.getId());
+		return _atWarWith.ContainsKey(clan.Id);
 	}
 
 	public int getHiredGuards()
@@ -1680,7 +1677,7 @@ public class Clan: IIdentifiable, INamable
 
 		public Skill? addNewSkill(Skill skill)
 		{
-			return _subPledgeSkills.put(skill.getId(), skill);
+			return _subPledgeSkills.put(skill.Id, skill);
 		}
 
 		public ICollection<Skill> getSkills()
@@ -2311,7 +2308,7 @@ public class Clan: IIdentifiable, INamable
 			return false;
 		}
 
-		if (leaderClan.isAtWarWith(targetClan.getId()))
+		if (leaderClan.isAtWarWith(targetClan.Id))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_MAKE_AN_ALLIANCE_WITH_A_CLAN_YOU_ARE_IN_WAR_WITH);
 			return false;
@@ -2444,7 +2441,7 @@ public class Clan: IIdentifiable, INamable
 		DateTime currentTime = DateTime.UtcNow;
 		foreach (Clan clan in ClanTable.getInstance().getClanAllies(_allyId.Value))
 		{
-			if (clan.getId() != getId())
+			if (clan.Id != Id)
 			{
 				clan.setAllyId(0);
 				clan.setAllyName(null);
@@ -2734,7 +2731,7 @@ public class Clan: IIdentifiable, INamable
 	{
 		Skill? current = _subPledgeSkills.get(skillId);
 		// is next level?
-		if (current != null && current.getLevel() + 1 == skillLevel)
+		if (current != null && current.Level + 1 == skillLevel)
 		{
 			return true;
 		}
@@ -2753,7 +2750,7 @@ public class Clan: IIdentifiable, INamable
 			}
 			current = subunit.getSkill(skillId);
 			// is next level?
-			if (current != null && current.getLevel() + 1 == skillLevel)
+			if (current != null && current.Level + 1 == skillLevel)
 			{
 				return true;
 			}
@@ -2774,7 +2771,7 @@ public class Clan: IIdentifiable, INamable
 			return false;
 		}
 
-		int id = skill.getId();
+		int id = skill.Id;
 		Skill? current;
 		if (subType == 0)
 		{
@@ -2785,12 +2782,12 @@ public class Clan: IIdentifiable, INamable
 			current = _subPledges.get(subType)?.getSkill(id);
 		}
 		// is next level?
-		if (current != null && current.getLevel() + 1 == skill.getLevel())
+		if (current != null && current.Level + 1 == skill.Level)
 		{
 			return true;
 		}
 		// is first level?
-		if (current == null && skill.getLevel() == 1)
+		if (current == null && skill.Level == 1)
 		{
 			return true;
 		}
@@ -2803,13 +2800,13 @@ public class Clan: IIdentifiable, INamable
 		List<PledgeSkillListPacket.SubPledgeSkill> list = new();
 		foreach (Skill skill in _subPledgeSkills.Values)
 		{
-			list.Add(new PledgeSkillListPacket.SubPledgeSkill(0, skill.getId(), skill.getLevel()));
+			list.Add(new PledgeSkillListPacket.SubPledgeSkill(0, skill.Id, skill.Level));
 		}
 		foreach (SubPledge subunit in _subPledges.Values)
 		{
 			foreach (Skill skill in subunit.getSkills())
 			{
-				list.Add(new PledgeSkillListPacket.SubPledgeSkill(subunit.getId(), skill.getId(), skill.getLevel()));
+				list.Add(new PledgeSkillListPacket.SubPledgeSkill(subunit.getId(), skill.Id, skill.Level));
 			}
 		}
 		return list;

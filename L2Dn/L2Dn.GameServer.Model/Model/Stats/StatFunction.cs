@@ -341,7 +341,7 @@ public abstract class StatFunction: IStatFunction
     protected static int getFrostLordWeaponBonus(Item item, int enchant)
     {
         return
-            (enchant >= 8 && ((95725 <= item.getId() && item.getId() <= 95737) ||
-                                (96751 <= item.getId() && item.getId() <= 96763))).CompareTo(false);
+            (enchant >= 8 && ((95725 <= item.Id && item.Id <= 95737) ||
+                                (96751 <= item.Id && item.Id <= 96763))).CompareTo(false);
     }
 }

@@ -112,7 +112,7 @@ public class AdminClan: IAdminCommandHandler
 						sb.Append("<tr>");
 						sb.Append("<td>" + clan.getName() + "</td>");
 						sb.Append("<td>" + clan.getNewLeaderName() + "</td>");
-						sb.Append("<td><a action=\"bypass -h admin_clan_force_pending " + clan.getId() + "\">Force</a></td>");
+						sb.Append("<td><a action=\"bypass -h admin_clan_force_pending " + clan.Id + "\">Force</a></td>");
 						sb.Append("</tr>");
 					}
 				}

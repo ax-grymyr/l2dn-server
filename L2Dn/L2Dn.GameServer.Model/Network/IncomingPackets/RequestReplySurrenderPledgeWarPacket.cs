@@ -38,7 +38,7 @@ public struct RequestReplySurrenderPledgeWarPacket: IIncomingPacket<GameSession>
 
         if (_answer == 1)
         {
-            ClanTable.getInstance().deleteClanWars(requestorClan.getId(), playerClan.getId());
+            ClanTable.getInstance().deleteClanWars(requestorClan.Id, playerClan.Id);
         }
         else
         {

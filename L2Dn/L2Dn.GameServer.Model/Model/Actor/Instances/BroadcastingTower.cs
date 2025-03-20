@@ -23,25 +23,25 @@ public class BroadcastingTower: Npc
         {
             if (value == 0)
             {
-                filename = "html/observation/" + getId() + "-Oracle.htm";
+                filename = "html/observation/" + Id + "-Oracle.htm";
             }
             else
             {
-                filename = "html/observation/" + getId() + "-Oracle-" + value + ".htm";
+                filename = "html/observation/" + Id + "-Oracle-" + value + ".htm";
             }
         }
         else if (value == 0)
         {
-            filename = "html/observation/" + getId() + ".htm";
+            filename = "html/observation/" + Id + ".htm";
         }
         else
         {
-            filename = "html/observation/" + getId() + "-" + value + ".htm";
+            filename = "html/observation/" + Id + "-" + value + ".htm";
         }
 
         HtmlContent htmlContent = HtmlContent.LoadFromFile(filename, player);
         htmlContent.Replace("%objectId%", ObjectId.ToString());
-       
+
         NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
         player.sendPacket(html);
     }

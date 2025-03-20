@@ -40,14 +40,14 @@ public sealed class AbnormalTimeChangeBySkillId: AbstractEffect
     private void OnCreatureSkillUse(OnCreatureSkillUse @event)
     {
         Skill skill = @event.getSkill();
-        if (!_skillIds.Contains(skill.getId()))
+        if (!_skillIds.Contains(skill.Id))
             return;
 
         AbnormalStatusUpdatePacket asu = new AbnormalStatusUpdatePacket([]);
         Creature creature = @event.getCaster();
         foreach (BuffInfo info in creature.getEffectList().getEffects())
         {
-            if (info.getSkill().getId() == skill.getId())
+            if (info.getSkill().Id == skill.Id)
             {
                 if (_mode == StatModifierType.PER)
                 {

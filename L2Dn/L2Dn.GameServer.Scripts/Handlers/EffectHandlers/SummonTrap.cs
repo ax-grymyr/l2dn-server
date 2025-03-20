@@ -34,7 +34,7 @@ public sealed class SummonTrap: AbstractEffect
 
         if (_npcId <= 0)
         {
-            LOGGER.Warn(GetType().Name + ": Invalid NPC ID:" + _npcId + " in skill ID: " + skill.getId());
+            LOGGER.Warn(GetType().Name + ": Invalid NPC ID:" + _npcId + " in skill ID: " + skill.Id);
             return;
         }
 
@@ -50,7 +50,7 @@ public sealed class SummonTrap: AbstractEffect
         if (npcTemplate == null)
         {
             LOGGER.Warn(GetType().Name + ": Spawn of the non-existing Trap ID: " + _npcId + " in skill ID:" +
-                skill.getId());
+                skill.Id);
 
             return;
         }

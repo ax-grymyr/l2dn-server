@@ -114,10 +114,10 @@ public class ControllableMobAI : AttackableAI
         // TODO: null checking hack
         Skill skill = _skill ?? throw new InvalidOperationException("Skill is null in thinkCast.");
 
-		WorldObject? target = skill.getTarget(_actor, _forceUse, _dontMove, false);
+		WorldObject? target = skill.GetTarget(_actor, _forceUse, _dontMove, false);
 		if (target == null || !target.isCreature() || ((Creature) target).isAlikeDead())
 		{
-			target = skill.getTarget(_actor, findNextRndTarget(), _forceUse, _dontMove, false);
+			target = skill.GetTarget(_actor, findNextRndTarget(), _forceUse, _dontMove, false);
 		}
 
 		if (target == null)
@@ -133,14 +133,14 @@ public class ControllableMobAI : AttackableAI
 			// check distant skills
 			foreach (Skill sk in _actor.getAllSkills())
 			{
-                if (Util.checkIfInRange(sk.getCastRange(), _actor, target, true) && !_actor.isSkillDisabled(sk) &&
+                if (Util.checkIfInRange(sk.CastRange, _actor, target, true) && !_actor.isSkillDisabled(sk) &&
                     _actor.getCurrentMp() > _actor.getStat().getMpConsume(sk))
                 {
                     _actor.doCast(sk);
                     return;
                 }
 
-                maxRange = Math.Max(maxRange, sk.getCastRange());
+                maxRange = Math.Max(maxRange, sk.CastRange);
 			}
 
 			if (!_isNotMoving)
@@ -179,7 +179,7 @@ public class ControllableMobAI : AttackableAI
 			// check distant skills
 			foreach (Skill sk in _actor.getAllSkills())
 			{
-				int castRange = sk.getCastRange();
+				int castRange = sk.CastRange;
 				if (castRange * castRange >= dist2 && !_actor.isSkillDisabled(sk) && _actor.getCurrentMp() > _actor.getStat().getMpConsume(sk))
 				{
 					_actor.doCast(sk);
@@ -219,7 +219,7 @@ public class ControllableMobAI : AttackableAI
 			// check distant skills
 			foreach (Skill sk in _actor.getAllSkills())
 			{
-				int castRange = sk.getCastRange();
+				int castRange = sk.CastRange;
 				if (castRange * castRange >= dist2 && !_actor.isSkillDisabled(sk) && _actor.getCurrentMp() > _actor.getStat().getMpConsume(sk))
 				{
 					_actor.doCast(sk);
@@ -283,7 +283,7 @@ public class ControllableMobAI : AttackableAI
 				// check distant skills
 				foreach (Skill sk in _actor.getAllSkills())
 				{
-					int castRange = sk.getCastRange();
+					int castRange = sk.CastRange;
 					if (castRange * castRange >= dist2 && !_actor.isSkillDisabled(sk) && _actor.getCurrentMp() > _actor.getStat().getMpConsume(sk))
 					{
 						_actor.doCast(sk);
@@ -323,7 +323,7 @@ public class ControllableMobAI : AttackableAI
 			{
 				foreach (Skill sk in _actor.getAllSkills())
 				{
-					int castRange = sk.getCastRange();
+					int castRange = sk.CastRange;
 					if (castRange * castRange >= dist2 && !_actor.isSkillDisabled(sk) && _actor.getCurrentMp() < _actor.getStat().getMpConsume(sk))
 					{
 						_actor.doCast(sk);

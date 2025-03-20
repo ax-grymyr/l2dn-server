@@ -7,14 +7,14 @@ namespace L2Dn.GameServer.Network.OutgoingPackets.Commission;
 public readonly struct ExResponseCommissionBuyItemPacket: IOutgoingPacket
 {
     public static readonly ExResponseCommissionBuyItemPacket FAILED = new(null);
-	
+
     private readonly CommissionItem? _commissionItem;
-	
+
     public ExResponseCommissionBuyItemPacket(CommissionItem? commissionItem)
     {
         _commissionItem = commissionItem;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_RESPONSE_COMMISSION_BUY_ITEM);
@@ -24,7 +24,7 @@ public readonly struct ExResponseCommissionBuyItemPacket: IOutgoingPacket
         {
             ItemInfo itemInfo = _commissionItem.getItemInfo();
             writer.WriteInt32(itemInfo.getEnchantLevel());
-            writer.WriteInt32(itemInfo.getItem().getId());
+            writer.WriteInt32(itemInfo.getItem().Id);
             writer.WriteInt64(itemInfo.getCount());
         }
     }

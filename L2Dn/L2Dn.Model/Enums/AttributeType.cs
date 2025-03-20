@@ -1,14 +1,12 @@
 ﻿namespace L2Dn.Model.Enums;
 
-/**
- * An enum representing all attribute types.
- * Value corresponds client id.
- * @author NosBit
- */
+/// <summary>
+/// An enum representing all attribute types. Value corresponds client id.
+/// </summary>
 public enum AttributeType
 {
     NONE = -2,
-    
+
     FIRE = 0,
     WATER = 1,
     WIND = 2,

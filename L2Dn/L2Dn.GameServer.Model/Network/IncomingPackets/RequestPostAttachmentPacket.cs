@@ -128,7 +128,7 @@ public struct RequestPostAttachmentPacket: IIncomingPacket<GameSession>
 			{
 				slots += item.getCount();
 			}
-			else if (player.getInventory().getItemByItemId(item.getId()) == null)
+			else if (player.getInventory().getItemByItemId(item.Id) == null)
 			{
 				slots++;
 			}
@@ -188,7 +188,7 @@ public struct RequestPostAttachmentPacket: IIncomingPacket<GameSession>
 			}
 
 			sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
-			sm.Params.addItemName(item.getId());
+			sm.Params.addItemName(item.Id);
 			sm.Params.addLong(count);
 			player.sendPacket(sm);
 		}

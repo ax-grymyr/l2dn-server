@@ -25,9 +25,9 @@ public readonly struct ExPetSkillListPacket: IOutgoingPacket
 		writer.WriteInt32(_pet.getAllSkills().Count);
 		foreach (Skill sk in _pet.getAllSkills())
 		{
-			writer.WriteInt32(sk.getDisplayId());
-			writer.WriteInt32(sk.getDisplayLevel());
-			writer.WriteInt32(sk.getReuseDelayGroup());
+			writer.WriteInt32(sk.DisplayId);
+			writer.WriteInt32(sk.DisplayLevel);
+			writer.WriteInt32(sk.ReuseDelayGroup);
 			writer.WriteByte(0);
 			writer.WriteByte(0);
 		}

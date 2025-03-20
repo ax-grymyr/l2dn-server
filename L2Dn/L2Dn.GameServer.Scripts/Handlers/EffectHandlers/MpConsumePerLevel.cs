@@ -27,7 +27,7 @@ public sealed class MpConsumePerLevel: AbstractEffect
             return false;
 
         double @base = _power * TicksMultiplier;
-        TimeSpan? abnormalTime = skill.getAbnormalTime();
+        TimeSpan? abnormalTime = skill.AbnormalTime;
         double consume = abnormalTime > TimeSpan.Zero
             ? (effected.getLevel() - 1) / 7.5 * @base * abnormalTime.Value.TotalSeconds
             : @base;
@@ -39,7 +39,7 @@ public sealed class MpConsumePerLevel: AbstractEffect
         }
 
         effected.reduceCurrentMp(consume);
-        return skill.isToggle();
+        return skill.IsToggle;
     }
 
     public override int GetHashCode() => HashCode.Combine(_power, Ticks);

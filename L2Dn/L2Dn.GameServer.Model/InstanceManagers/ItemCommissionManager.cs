@@ -274,8 +274,8 @@ public class ItemCommissionManager
 				ScheduledFuture saleEndTask = ThreadPool.schedule(() => expireSale(commissionItem), delay);
 				commissionItem.setSaleEndTask(saleEndTask);
 				_commissionItems.put(commissionItem.getCommissionId(), commissionItem);
-				player.getLastCommissionInfos().put(itemInstance.getId(),
-					new ExResponseCommissionInfoPacket(itemInstance.getId(), pricePerUnit, itemCount,
+				player.getLastCommissionInfos().put(itemInstance.Id,
+					new ExResponseCommissionInfoPacket(itemInstance.Id, pricePerUnit, itemCount,
 						(byte)((durationInDays - 1) / 2)));
 				player.sendPacket(SystemMessageId.THE_ITEM_HAS_BEEN_REGISTERED);
 				player.sendPacket(ExResponseCommissionRegisterPacket.SUCCEED);
@@ -476,7 +476,7 @@ public class ItemCommissionManager
 	{
 		foreach (CommissionItem item in _commissionItems.Values)
 		{
-			if (item.getItemInstance().getOwnerId() == player.ObjectId && item.getItemInstance().getTemplate().getId() == itemId)
+			if (item.getItemInstance().getOwnerId() == player.ObjectId && item.getItemInstance().getTemplate().Id == itemId)
 			{
 				return true;
 			}

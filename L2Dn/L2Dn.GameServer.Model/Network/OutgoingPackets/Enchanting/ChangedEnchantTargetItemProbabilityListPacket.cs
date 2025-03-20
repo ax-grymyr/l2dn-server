@@ -26,7 +26,7 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
 		if ((!isMulti && enchantingItem == null) || request.isProcessing() || enchantingScroll == null)
 			return;
 
-        EnchantScroll? enchantScroll = EnchantItemData.getInstance().getEnchantScroll(enchantingScroll.getId());
+        EnchantScroll? enchantScroll = EnchantItemData.getInstance().getEnchantScroll(enchantingScroll.Id);
         if (enchantScroll == null)
             return;
 
@@ -101,7 +101,7 @@ public readonly struct ChangedEnchantTargetItemProbabilityListPacket(Player play
         if (!isMulti && supportItem != null)
         {
             // TODO: null check suppressed
-            supportRate = EnchantItemData.getInstance().getSupportItem(supportItem.getId())?.getBonusRate() ?? 0;
+            supportRate = EnchantItemData.getInstance().getSupportItem(supportItem.Id)?.getBonusRate() ?? 0;
             supportRate *= 100;
         }
 

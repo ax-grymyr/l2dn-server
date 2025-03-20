@@ -84,7 +84,7 @@ public class ClanHallAuctionManager
 	{
 		foreach (ClanHallAuction auction in AUCTIONS.Values)
 		{
-			if (auction.getBids().ContainsKey(clan.getId()))
+			if (auction.getBids().ContainsKey(clan.Id))
 			{
 				return auction;
 			}
@@ -96,7 +96,7 @@ public class ClanHallAuctionManager
 	{
 		foreach (var auction in AUCTIONS)
 		{
-			if (auction.Key != clanHallId && auction.Value.getBids().ContainsKey(clan.getId()))
+			if (auction.Key != clanHallId && auction.Value.getBids().ContainsKey(clan.Id))
 			{
 				return true;
 			}

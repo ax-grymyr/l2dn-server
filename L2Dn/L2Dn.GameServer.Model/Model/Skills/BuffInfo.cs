@@ -213,11 +213,11 @@ public class BuffInfo
 		_isInUse = value;
 
 		// Send message that the effect is applied or removed.
-		if (_skill != null && !_skill.isHidingMessages() && _effected.isPlayer())
+		if (_skill != null && !_skill.IsHidingMessages && _effected.isPlayer())
 		{
 			if (value)
 			{
-				if (!_hideStartMessage && !_skill.isAura() && isDisplayedForEffected())
+				if (!_hideStartMessage && !_skill.IsAura && isDisplayedForEffected())
 				{
 					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_VE_USED_S1);
 					sm.Params.addSkillName(_skill);
@@ -226,7 +226,7 @@ public class BuffInfo
 			}
 			else
 			{
-				SystemMessagePacket sm = new SystemMessagePacket(_skill.isToggle() ? SystemMessageId.S1_HAS_BEEN_ABORTED : SystemMessageId.THE_EFFECT_OF_S1_HAS_BEEN_REMOVED);
+				SystemMessagePacket sm = new SystemMessagePacket(_skill.IsToggle ? SystemMessageId.S1_HAS_BEEN_ABORTED : SystemMessageId.THE_EFFECT_OF_S1_HAS_BEEN_REMOVED);
 				sm.Params.addSkillName(_skill);
 				_effected.sendPacket(sm);
 			}
@@ -284,9 +284,9 @@ public class BuffInfo
 		}
 
 		// When effects are initialized, the successfully landed.
-		if (!_hideStartMessage && _effected.isPlayer() && !_skill.isHidingMessages() && !_skill.isAura() && isDisplayedForEffected())
+		if (!_hideStartMessage && _effected.isPlayer() && !_skill.IsHidingMessages && !_skill.IsAura && isDisplayedForEffected())
 		{
-			SystemMessagePacket sm = new SystemMessagePacket(_skill.isToggle() ? SystemMessageId.YOU_VE_USED_S1 : SystemMessageId.YOU_FEEL_THE_S1_EFFECT);
+			SystemMessagePacket sm = new SystemMessagePacket(_skill.IsToggle ? SystemMessageId.YOU_VE_USED_S1 : SystemMessageId.YOU_FEEL_THE_S1_EFFECT);
 			sm.Params.addSkillName(_skill);
 			_effected.sendPacket(sm);
 		}
@@ -299,7 +299,7 @@ public class BuffInfo
 
 		foreach (AbstractEffect effect in _effects)
 		{
-			if (effect.isInstant() || (_effected.isDead() && !_skill.isPassive() && !_skill.isStayAfterDeath()))
+			if (effect.isInstant() || (_effected.isDead() && !_skill.IsPassive && !_skill.IsStayAfterDeath))
 			{
 				continue;
 			}
@@ -343,7 +343,7 @@ public class BuffInfo
 			continueForever = effect.onActionTime(_effector, _effected, _skill, _item);
 		}
 
-		if (!continueForever && _skill.isToggle())
+		if (!continueForever && _skill.IsToggle)
 		{
 			EffectTaskInfo? task = getEffectTask(effect);
 			if (task != null)
@@ -384,14 +384,14 @@ public class BuffInfo
 		}
 
 		// Set the proper system message.
-		if (_skill != null && !(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()) && !_skill.isHidingMessages())
+		if (_skill != null && !(_effected.isSummon() && !((Summon) _effected).getOwner().hasSummon()) && !_skill.IsHidingMessages)
 		{
 			SystemMessageId? smId = null;
 			if (_finishType == SkillFinishType.SILENT || !isDisplayedForEffected())
 			{
 				// smId is null.
 			}
-			else if (_skill.isToggle())
+			else if (_skill.IsToggle)
 			{
 				smId = SystemMessageId.S1_HAS_BEEN_ABORTED;
 			}
@@ -399,7 +399,7 @@ public class BuffInfo
 			{
 				smId = SystemMessageId.THE_EFFECT_OF_S1_HAS_BEEN_REMOVED;
 			}
-			else if (!_skill.isPassive())
+			else if (!_skill.IsPassive)
 			{
 				smId = SystemMessageId.S1_HAS_WORN_OFF;
 			}
@@ -427,7 +427,7 @@ public class BuffInfo
 
 	public bool isAbnormalType(AbnormalType type)
 	{
-		return _skill.getAbnormalType() == type;
+		return _skill.AbnormalType == type;
 	}
 
 	/**
@@ -437,6 +437,6 @@ public class BuffInfo
 	 */
 	public bool isDisplayedForEffected()
 	{
-		return !_skill.isSelfContinuous() || _effected == _effector || !_skill.hasEffects(EffectScope.SELF);
+		return !_skill.IsSelfContinuous || _effected == _effector || !_skill.HasEffects(SkillEffectScope.Self);
 	}
 }

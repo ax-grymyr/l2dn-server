@@ -95,7 +95,7 @@ public class CrestTable
             int? crestId = clan.getCrestId();
 			if (crestId != null && getCrest(crestId.Value) == null)
 			{
-				LOGGER.Info("Removing non-existent crest for clan " + clan.getName() + " [" + clan.getId() + "], crestId:" + clan.getCrestId());
+				LOGGER.Info("Removing non-existent crest for clan " + clan.getName() + " [" + clan.Id + "], crestId:" + clan.getCrestId());
 				clan.setCrestId(0);
 				clan.changeClanCrest(0);
 			}
@@ -103,7 +103,7 @@ public class CrestTable
             int? crestLargeId = clan.getCrestLargeId();
 			if (crestLargeId != null && getCrest(crestLargeId.Value) == null)
 			{
-				LOGGER.Info("Removing non-existent large crest for clan " + clan.getName() + " [" + clan.getId() + "], crestLargeId:" + clan.getCrestLargeId());
+				LOGGER.Info("Removing non-existent large crest for clan " + clan.getName() + " [" + clan.Id + "], crestLargeId:" + clan.getCrestLargeId());
 				clan.setCrestLargeId(0);
 				clan.changeLargeCrest(0);
 			}
@@ -111,7 +111,7 @@ public class CrestTable
             int? allyCrestId = clan.getAllyCrestId();
 			if (allyCrestId != null && getCrest(allyCrestId.Value) == null)
 			{
-				LOGGER.Info("Removing non-existent ally crest for clan " + clan.getName() + " [" + clan.getId() + "], allyCrestId:" + clan.getAllyCrestId());
+				LOGGER.Info("Removing non-existent ally crest for clan " + clan.getName() + " [" + clan.Id + "], allyCrestId:" + clan.getAllyCrestId());
 				clan.setAllyCrestId(0);
 				clan.changeAllyCrest(0, true);
 			}
@@ -141,13 +141,13 @@ public class CrestTable
 			Crest crest = new Crest(_nextId.getAndIncrement(), data, crestType);
 			ctx.Crests.Add(new()
 			{
-				Id = crest.getId(),
+				Id = crest.Id,
 				Data = crest.getData(),
 				Type = (byte)crest.getType()
 			});
 
 			ctx.SaveChanges();
-			_crests.put(crest.getId(), crest);
+			_crests.put(crest.Id, crest);
 			return crest;
 		}
 		catch (Exception e)

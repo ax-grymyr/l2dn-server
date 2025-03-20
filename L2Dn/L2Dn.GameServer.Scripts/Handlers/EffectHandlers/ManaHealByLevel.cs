@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -39,9 +40,9 @@ public sealed class ManaHealByLevel: AbstractEffect
         // recharged mp influenced by difference between target level and skill level
         // if target is within 5 levels or lower then skill level there's no penalty.
         amount = effected.getStat().getValue(Stat.MANA_CHARGE, amount);
-        if (effected.getLevel() > skill.getMagicLevel())
+        if (effected.getLevel() > skill.MagicLevel)
         {
-            int levelDiff = effected.getLevel() - skill.getMagicLevel();
+            int levelDiff = effected.getLevel() - skill.MagicLevel;
             // if target is too high compared to skill level, the amount of recharged mp gradually decreases.
             if (levelDiff == 6)
                 amount *= 0.9; // only 90% effective

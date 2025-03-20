@@ -42,7 +42,7 @@ public struct RequestConfirmGemstonePacket: IIncomingPacket<GameSession>
         if (gemStoneItem == null)
             return ValueTask.CompletedTask;
 
-        VariationFee? fee = VariationData.getInstance().getFee(targetItem.getId(), refinerItem.getId());
+        VariationFee? fee = VariationData.getInstance().getFee(targetItem.Id, refinerItem.Id);
         if (!RefinePacketHelper.isValid(player, targetItem, refinerItem, gemStoneItem, fee) || fee == null)
         {
             player.sendPacket(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM);
@@ -56,7 +56,7 @@ public struct RequestConfirmGemstonePacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        player.sendPacket(new ExPutCommissionResultForVariationMakePacket(_feeItemObjId, _feeCount, gemStoneItem.getId()));
+        player.sendPacket(new ExPutCommissionResultForVariationMakePacket(_feeItemObjId, _feeCount, gemStoneItem.Id));
 
         return ValueTask.CompletedTask;
     }

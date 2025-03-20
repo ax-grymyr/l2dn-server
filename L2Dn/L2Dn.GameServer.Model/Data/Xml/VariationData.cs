@@ -245,7 +245,7 @@ public class VariationData: DataReaderBase
 	 */
 	public VariationInstance generateRandomVariation(Variation variation, Item targetItem)
 	{
-		return generateRandomVariation(variation, targetItem.getId());
+		return generateRandomVariation(variation, targetItem.Id);
 	}
 
 	private VariationInstance generateRandomVariation(Variation variation, int targetItemId)
@@ -264,7 +264,7 @@ public class VariationData: DataReaderBase
 		foreach (Variation variation in variations)
 		{
 			Set<int>? group = _itemGroups.GetValueOrDefault(variation.getItemGroup());
-			if (group != null && group.Contains(item.getId()))
+			if (group != null && group.Contains(item.Id))
 				return variation;
 		}
 

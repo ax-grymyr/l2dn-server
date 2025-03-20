@@ -94,7 +94,7 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 
         // TODO: check items are defined before calculation
 		int totalWeight = rewards.Values.Select(list =>
-			list.Select(item => ItemData.getInstance().getTemplate(item.getId())?.getWeight() ?? 0).Sum()).Sum();
+			list.Select(item => ItemData.getInstance().getTemplate(item.Id)?.getWeight() ?? 0).Sum()).Sum();
 
 		// Check inventory capacity
 		if (rewards.Count != 0 && (!player.getInventory().validateCapacity(rewards.Count) || !player.getInventory().validateWeight(totalWeight)))
@@ -123,7 +123,7 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 		{
 			foreach (ItemHolder r in reward.Value)
 			{
-				Item? item = player.addItem("LuckyGame", r.getId(), r.getCount(), player, true);
+				Item? item = player.addItem("LuckyGame", r.Id, r.getCount(), player, true);
                 if (item == null)
                 {
                     player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: atomic inventory update

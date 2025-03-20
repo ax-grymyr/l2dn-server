@@ -64,7 +64,7 @@ public abstract class ItemContainer
 	{
 		foreach (Item item in _items)
 		{
-			if (item.getId() == itemId)
+			if (item.Id == itemId)
 			{
 				return item;
 			}
@@ -81,7 +81,7 @@ public abstract class ItemContainer
 		List<Item> result = new();
 		foreach (Item item in _items)
 		{
-			if (itemId == item.getId())
+			if (itemId == item.Id)
 			{
 				result.Add(item);
 			}
@@ -128,7 +128,7 @@ public abstract class ItemContainer
 		long count = 0;
 		foreach (Item item in _items)
 		{
-			if (item.getId() == itemId && (item.getEnchantLevel() == enchantLevel || enchantLevel < 0) && (includeEquipped || !item.isEquipped()))
+			if (item.Id == itemId && (item.getEnchantLevel() == enchantLevel || enchantLevel < 0) && (includeEquipped || !item.isEquipped()))
 			{
 				if (item.isStackable())
 				{
@@ -166,7 +166,7 @@ public abstract class ItemContainer
 	public virtual Item? addItem(string process, Item item, Player? actor, object? reference)
 	{
 		Item newItem = item;
-		Item? olditem = getItemByItemId(newItem.getId());
+		Item? olditem = getItemByItemId(newItem.Id);
 
 		// If stackable item is found in inventory just add to current quantity
 		if (olditem != null && olditem.isStackable())
@@ -281,7 +281,7 @@ public abstract class ItemContainer
 			return null;
 		}
 
-		Item? targetitem = sourceitem.isStackable() ? target.getItemByItemId(sourceitem.getId()) : null;
+		Item? targetitem = sourceitem.isStackable() ? target.getItemByItemId(sourceitem.Id) : null;
 		lock (sourceitem)
 		{
 			// check if this item still present in this container
@@ -322,7 +322,7 @@ public abstract class ItemContainer
 				}
 				else // Otherwise add new item
 				{
-					targetitem = target.addItem(process, sourceitem.getId(), count, actor, reference);
+					targetitem = target.addItem(process, sourceitem.Id, count, actor, reference);
 				}
 			}
 
@@ -385,7 +385,7 @@ public abstract class ItemContainer
 			item.changeCount(process, -count, actor, reference);
 			item.updateDatabase(true);
 
-			Item newItem = ItemData.getInstance().createItem(process, item.getId(), count, actor, reference);
+			Item newItem = ItemData.getInstance().createItem(process, item.Id, count, actor, reference);
 			newItem.setOwnerId(getOwnerId());
 			newItem.setItemLocation(newLocation);
 			newItem.updateDatabase(true);
@@ -522,7 +522,7 @@ public abstract class ItemContainer
 	{
 		foreach (Item item in _items)
 		{
-			if (item.getId() == Inventory.ADENA_ID)
+			if (item.Id == Inventory.ADENA_ID)
 			{
 				return item.getCount();
 			}
@@ -534,7 +534,7 @@ public abstract class ItemContainer
 	{
 		foreach (Item item in _items)
 		{
-			if (item.getId() == Inventory.BEAUTY_TICKET_ID)
+			if (item.Id == Inventory.BEAUTY_TICKET_ID)
 			{
 				return item.getCount();
 			}
@@ -623,7 +623,7 @@ public abstract class ItemContainer
 				Player? owner = getOwner()?.getActingPlayer();
 
 				// If stackable item is found in inventory just add to current quantity
-				if (item.isStackable() && getItemByItemId(item.getId()) != null)
+				if (item.isStackable() && getItemByItemId(item.Id) != null)
 				{
 					addItem("Restore", item, owner, null);
 				}

@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using System.Xml.Schema;
 using System.Xml.Serialization;
-using L2Dn.Model.Xml.Skills;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 
 XmlSchemas schemas = new();
 XmlSchemaExporter exporter = new(schemas);

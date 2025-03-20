@@ -18,7 +18,7 @@ public class ConditionReenter: Condition
 
 	protected override bool test(Player player, Npc npc)
 	{
-		int instanceId = getParameters().getInt("instanceId", getInstanceTemplate().getId());
+		int instanceId = getParameters().getInt("instanceId", getInstanceTemplate().Id);
 		return DateTime.UtcNow > InstanceManager.getInstance().getInstanceTime(player, instanceId);
 	}
 }

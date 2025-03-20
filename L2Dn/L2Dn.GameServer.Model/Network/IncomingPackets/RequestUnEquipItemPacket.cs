@@ -49,7 +49,7 @@ public struct RequestUnEquipItemPacket: IIncomingPacket<GameSession>
 		if (player.hasBlockActions() || player.isAlikeDead())
 			return ValueTask.CompletedTask;
 
-		if (!player.getInventory().canManipulateWithItemId(item.getId()))
+		if (!player.getInventory().canManipulateWithItemId(item.Id))
 		{
 			connection.Send(SystemMessageId.THAT_ITEM_CANNOT_BE_TAKEN_OFF);
 			return ValueTask.CompletedTask;

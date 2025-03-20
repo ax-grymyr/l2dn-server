@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -56,12 +57,12 @@ public sealed class HealOverTime: AbstractEffect
         hp = _power > 0 ? Math.Min(hp, maxhp) : Math.Max(hp, 1);
         effected.setCurrentHp(hp, false);
         effected.broadcastStatusUpdate(effector);
-        return skill.isToggle();
+        return skill.IsToggle;
     }
 
     public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
-        if (effected.isPlayer() && Ticks > 0 && skill.getAbnormalType() == AbnormalType.HP_RECOVER)
+        if (effected.isPlayer() && Ticks > 0 && skill.AbnormalType == AbnormalType.HP_RECOVER)
         {
             double power = _power;
             if (item != null && (item.isPotion() || item.isElixir()))
@@ -73,7 +74,7 @@ public sealed class HealOverTime: AbstractEffect
                 }
             }
 
-            effected.sendPacket(new ExRegenMaxPacket((int)(skill.getAbnormalTime() ?? TimeSpan.Zero).TotalSeconds,
+            effected.sendPacket(new ExRegenMaxPacket((int)(skill.AbnormalTime ?? TimeSpan.Zero).TotalSeconds,
                 Ticks, power));
         }
     }

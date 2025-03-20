@@ -31,7 +31,7 @@ public readonly struct ExShowFortressMapInfoPacket: IOutgoingPacket
                 {
                     foreach (FortSiegeSpawn spawn in commanders)
                     {
-                        if (isSpawned(spawn.getId()))
+                        if (isSpawned(spawn.Id))
                         {
                             writer.WriteInt32(0);
                         }
@@ -52,7 +52,7 @@ public readonly struct ExShowFortressMapInfoPacket: IOutgoingPacket
                         {
                             writer.WriteInt32(1); // TODO: control room emulated
                         }
-                        if (isSpawned(spawn.getId()))
+                        if (isSpawned(spawn.Id))
                         {
                             writer.WriteInt32(0);
                         }
@@ -83,7 +83,7 @@ public readonly struct ExShowFortressMapInfoPacket: IOutgoingPacket
         bool ret = false;
         foreach (Spawn spawn in _fortress.getSiege().getCommanders())
         {
-            if (spawn.getId() == npcId)
+            if (spawn.Id == npcId)
             {
                 ret = true;
                 break;

@@ -67,13 +67,13 @@ public class ClanHallAuction
 			ctx.ClanHallBidders.Add(new DbClanHallBidder()
 			{
 				ClanHallId = _clanHallId,
-				ClanId = clan.getId(),
+				ClanId = clan.Id,
 				Bid = bid,
 				BidTime = bidTime
 			});
 
 			ctx.SaveChanges();
-			_bidders.put(clan.getId(), new Bidder(clan, bid, bidTime));
+			_bidders.put(clan.Id, new Bidder(clan, bid, bidTime));
 		}
 		catch (Exception e)
 		{
@@ -84,11 +84,11 @@ public class ClanHallAuction
 
 	public void removeBid(Clan clan)
 	{
-		getBids().remove(clan.getId());
+		getBids().remove(clan.Id);
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int clanId = clan.getId();
+			int clanId = clan.Id;
 			ctx.ClanHallBidders.Where(c => c.ClanId == clanId).ExecuteDelete();
 		}
 		catch (Exception e)
@@ -107,7 +107,7 @@ public class ClanHallAuction
 
 	public long getClanBid(Clan clan)
 	{
-		return getBids().get(clan.getId())?.getBid() ?? 0;
+		return getBids().get(clan.Id)?.getBid() ?? 0;
 	}
 
 	public Bidder? getHighestBidder()

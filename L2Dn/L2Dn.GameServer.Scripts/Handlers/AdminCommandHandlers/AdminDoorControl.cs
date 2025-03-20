@@ -149,13 +149,13 @@ public class AdminDoorControl: IAdminCommandHandler
 
 					World.getInstance().forEachVisibleObject<Door>(activeChar, door =>
 					{
-						if (doorIds.Contains(door.getId()))
+						if (doorIds.Contains(door.Id))
 						{
 							return;
 						}
-						doorIds.add(door.getId());
+						doorIds.add(door.Id);
 
-						ExServerPrimitivePacket packet = new ExServerPrimitivePacket("Door" + door.getId(), activeChar.getX(), activeChar.getY(), -16000);
+						ExServerPrimitivePacket packet = new ExServerPrimitivePacket("Door" + door.Id, activeChar.getX(), activeChar.getY(), -16000);
 						Color color = door.isOpen() ? Colors.GREEN : Colors.RED;
 
 						// box 1
@@ -175,7 +175,7 @@ public class AdminDoorControl: IAdminCommandHandler
 						packet.addLine(color, door.getX(2), door.getY(2), door.getZMax(), door.getX(3), door.getY(3), door.getZMin());
 						activeChar.sendPacket(packet);
 						// send message
-						BuilderUtil.sendSysMessage(activeChar, "Found door " + door.getId());
+						BuilderUtil.sendSysMessage(activeChar, "Found door " + door.Id);
 					});
 				}
 			}

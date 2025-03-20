@@ -142,7 +142,7 @@ public class SummonAI : PlayableAI, Runnable
         // TODO: null checking hack
         Skill skill = _skill ?? throw new InvalidOperationException("_skill is null in SummonAI.thinkCast.");
 
-		_actor.doCast(skill, _item, skill.isBad(), _dontMove);
+		_actor.doCast(skill, _item, skill.IsBad, _dontMove);
 	}
 
 	private void thinkPickUp()

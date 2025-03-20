@@ -53,19 +53,19 @@ public struct RequestPledgeRecruitBoardAccessPacket: IIncomingPacket<GameSession
         {
             case 0: // remove
             {
-                ClanEntryManager.getInstance().removeFromClanList(clan.getId());
+                ClanEntryManager.getInstance().removeFromClanList(clan.Id);
                 break;
             }
             case 1: // add
             {
-                if (ClanEntryManager.getInstance().addToClanList(clan.getId(), pledgeRecruitInfo))
+                if (ClanEntryManager.getInstance().addToClanList(clan.Id, pledgeRecruitInfo))
                 {
                     player.sendPacket(SystemMessageId.ENTRY_APPLICATION_COMPLETE_USE_MY_APPLICATION_TO_CHECK_OR_CANCEL_YOUR_APPLICATION_APPLICATION_IS_AUTOMATICALLY_CANCELLED_AFTER_30_D_IF_YOU_CANCEL_APPLICATION_YOU_CANNOT_APPLY_AGAIN_FOR_5_MIN);
                 }
                 else
                 {
                     SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_MAY_APPLY_FOR_ENTRY_IN_S1_MIN_AFTER_CANCELLING_YOUR_APPLICATION);
-                    sm.Params.addLong((long)ClanEntryManager.getInstance().getClanLockTime(clan.getId()).TotalMinutes);
+                    sm.Params.addLong((long)ClanEntryManager.getInstance().getClanLockTime(clan.Id).TotalMinutes);
                     player.sendPacket(sm);
                 }
 
@@ -73,14 +73,14 @@ public struct RequestPledgeRecruitBoardAccessPacket: IIncomingPacket<GameSession
             }
             case 2: // update
             {
-                if (ClanEntryManager.getInstance().updateClanList(clan.getId(), pledgeRecruitInfo))
+                if (ClanEntryManager.getInstance().updateClanList(clan.Id, pledgeRecruitInfo))
                 {
                     player.sendPacket(SystemMessageId.ENTRY_APPLICATION_COMPLETE_USE_MY_APPLICATION_TO_CHECK_OR_CANCEL_YOUR_APPLICATION_APPLICATION_IS_AUTOMATICALLY_CANCELLED_AFTER_30_D_IF_YOU_CANCEL_APPLICATION_YOU_CANNOT_APPLY_AGAIN_FOR_5_MIN);
                 }
                 else
                 {
                     SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_MAY_APPLY_FOR_ENTRY_IN_S1_MIN_AFTER_CANCELLING_YOUR_APPLICATION);
-                    sm.Params.addLong((long)ClanEntryManager.getInstance().getClanLockTime(clan.getId()).TotalMinutes);
+                    sm.Params.addLong((long)ClanEntryManager.getInstance().getClanLockTime(clan.Id).TotalMinutes);
                     player.sendPacket(sm);
                 }
 

@@ -93,12 +93,9 @@ public class Instance : IIdentifiable, INamable
 		}
 	}
 
-	public int getId()
-	{
-		return _id;
-	}
+    public int Id => _id;
 
-	public string getName()
+    public string getName()
 	{
 		return _template.getName();
 	}
@@ -109,7 +106,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public bool isDynamic()
 	{
-		return _template.getId() == -1;
+		return _template.Id == -1;
 	}
 
 	/**
@@ -354,12 +351,12 @@ public class Instance : IIdentifiable, INamable
 		foreach (DoorTemplate template in doorTemplates)
 		{
 			bool? isOpenedByDefault = null;
-			if (doorStates.TryGetValue(template.getId(), out bool isOpened))
+			if (doorStates.TryGetValue(template.Id, out bool isOpened))
 				isOpenedByDefault = isOpened;
 
 			// Create new door instance
 			Door door = DoorData.getInstance().spawnDoor(template, this, isOpenedByDefault);
-			_doors.put(template.getId(), door);
+			_doors.put(template.Id, door);
 		}
 	}
 
@@ -588,7 +585,7 @@ public class Instance : IIdentifiable, INamable
 		List<Npc> result = new();
 		foreach (Npc npc in _npcs)
 		{
-			if (Array.IndexOf(id, npc.getId()) >= 0)
+			if (Array.IndexOf(id, npc.Id) >= 0)
 			{
 				result.Add(npc);
 			}
@@ -609,7 +606,7 @@ public class Instance : IIdentifiable, INamable
 		List<T> result = new();
 		foreach (Npc npc in _npcs)
 		{
-			if ((ids.Length == 0 || Array.IndexOf(ids, npc.getId()) >= 0) && npc is T npc1)
+			if ((ids.Length == 0 || Array.IndexOf(ids, npc.Id) >= 0) && npc is T npc1)
 			{
 				result.Add(npc1);
 			}
@@ -644,7 +641,7 @@ public class Instance : IIdentifiable, INamable
 		List<Npc> result = new();
 		foreach (Npc npc in _npcs)
 		{
-			if (npc.getCurrentHp() > 0 && Array.IndexOf(id, npc.getId()) >= 0)
+			if (npc.getCurrentHp() > 0 && Array.IndexOf(id, npc.Id) >= 0)
 			{
 				result.Add(npc);
 			}
@@ -665,7 +662,7 @@ public class Instance : IIdentifiable, INamable
 		List<T> result = new();
 		foreach (Npc npc in _npcs)
 		{
-			if ((ids.Length == 0 || Array.IndexOf(ids, npc.getId()) >= 0) && npc.getCurrentHp() > 0 && npc is T npc1)
+			if ((ids.Length == 0 || Array.IndexOf(ids, npc.Id) >= 0) && npc.getCurrentHp() > 0 && npc is T npc1)
 			{
 				result.Add(npc1);
 			}
@@ -700,7 +697,7 @@ public class Instance : IIdentifiable, INamable
 		int count = 0;
 		foreach (Npc npc in _npcs)
 		{
-			if (npc.getCurrentHp() > 0 && Array.IndexOf(id, npc.getId()) >= 0)
+			if (npc.getCurrentHp() > 0 && Array.IndexOf(id, npc.Id) >= 0)
 			{
 				count++;
 			}
@@ -717,7 +714,7 @@ public class Instance : IIdentifiable, INamable
 	{
 		foreach (Npc npc in _npcs)
 		{
-			if (npc.getId() == id)
+			if (npc.Id == id)
 			{
 				return npc;
 			}
@@ -847,7 +844,7 @@ public class Instance : IIdentifiable, INamable
 		removeDoors();
 		removeNpcs();
 
-		InstanceManager.getInstance().unregister(getId());
+		InstanceManager.getInstance().unregister(Id);
 	}
 
 	/**
@@ -932,7 +929,7 @@ public class Instance : IIdentifiable, INamable
 	public void setReenterTime(DateTime time)
 	{
 		// Cannot store reenter data for instance without template id.
-		if (_template.getId() == -1)
+		if (_template.Id == -1)
 		{
 			return;
 		}
@@ -947,7 +944,7 @@ public class Instance : IIdentifiable, INamable
 				ctx.CharacterInstances.Add(new DbCharacterInstance()
 				{
 					CharacterId = playerId,
-					InstanceId = _template.getId(),
+					InstanceId = _template.Id,
 					Time = time
 				});
 			}
@@ -960,7 +957,7 @@ public class Instance : IIdentifiable, INamable
 
 			if (InstanceManager.getInstance().getInstanceName(getTemplateId()) != null)
 			{
-				msg.Params.addInstanceName(_template.getId());
+				msg.Params.addInstanceName(_template.Id);
 			}
 			else
 			{
@@ -1155,7 +1152,7 @@ public class Instance : IIdentifiable, INamable
 	 */
 	public int getTemplateId()
 	{
-		return _template.getId();
+		return _template.Id;
 	}
 
 	/**
@@ -1282,9 +1279,9 @@ public class Instance : IIdentifiable, INamable
 		broadcastPacket().SendPackets(sm);
 	}
 
-    public override bool Equals(object? obj) => obj == this || obj is Instance instance && instance.getId() == getId();
+    public override bool Equals(object? obj) => obj == this || obj is Instance instance && instance.Id == Id;
 
-    public override int GetHashCode() => getId();
+    public override int GetHashCode() => Id;
 
     public override string ToString() => $"{_template.getName()}({_id})";
 }

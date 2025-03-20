@@ -24,14 +24,14 @@ public class OpNeedSummonOrPetSkillCondition: ISkillCondition
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         Summon? pet = caster.getPet();
-        if (pet != null && _npcIds.Contains(pet.getId()))
+        if (pet != null && _npcIds.Contains(pet.Id))
         {
             return true;
         }
 
         foreach (Summon summon in caster.getServitors().Values)
         {
-            if (_npcIds.Contains(summon.getId()))
+            if (_npcIds.Contains(summon.Id))
             {
                 return true;
             }

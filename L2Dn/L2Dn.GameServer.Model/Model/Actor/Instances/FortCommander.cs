@@ -95,7 +95,7 @@ public class FortCommander : Defender
 			List<FortSiegeSpawn> commanders = FortSiegeManager.getInstance().getCommanderSpawnList(fort.getResidenceId());
 			foreach (FortSiegeSpawn spawn2 in commanders)
 			{
-				if (spawn2.getId() == spawn.getId())
+				if (spawn2.Id == spawn.Id)
 				{
 					NpcStringId? npcString = null;
 					switch (spawn2.getMessageId())

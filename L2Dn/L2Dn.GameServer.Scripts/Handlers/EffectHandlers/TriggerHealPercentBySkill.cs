@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -43,7 +44,7 @@ public sealed class TriggerHealPercentBySkill: AbstractEffect
 
     private void OnSkillUseEvent(OnCreatureSkillFinishCast @event)
     {
-        if (_castSkillId != @event.getSkill().getId())
+        if (_castSkillId != @event.getSkill().Id)
             return;
 
         WorldObject? target = @event.getTarget();

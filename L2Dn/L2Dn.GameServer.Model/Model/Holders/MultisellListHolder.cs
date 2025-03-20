@@ -22,7 +22,7 @@ public class MultisellListHolder: IIdentifiable
 	private readonly FrozenSet<int> _npcsAllowed;
 
 	public MultisellListHolder(int listId, bool isChanceMultisell, bool applyTaxes, bool maintainEnchantment,
-		double ingredientMultiplier, double productMultiplier, ImmutableArray<MultisellEntryHolder> entries, 
+		double ingredientMultiplier, double productMultiplier, ImmutableArray<MultisellEntryHolder> entries,
 		FrozenSet<int> npcsAllowed)
 	{
 		_listId = listId;
@@ -45,12 +45,9 @@ public class MultisellListHolder: IIdentifiable
 		return _npcsAllowed;
 	}
 
-	public int getId()
-	{
-		return _listId;
-	}
+    public int Id => _listId;
 
-	public bool isChanceMultisell()
+    public bool isChanceMultisell()
 	{
 		return _isChanceMultisell;
 	}

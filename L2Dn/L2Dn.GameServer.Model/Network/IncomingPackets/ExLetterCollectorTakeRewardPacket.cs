@@ -40,13 +40,13 @@ public struct ExLetterCollectorTakeRewardPacket: IIncomingPacket<GameSession>
 
         foreach (ItemHolder needLetter in word)
         {
-            if (inventory.getInventoryItemCount(needLetter.getId(), -1) < needLetter.getCount())
+            if (inventory.getInventoryItemCount(needLetter.Id, -1) < needLetter.getCount())
                 return ValueTask.CompletedTask;
         }
 
         foreach (ItemHolder destroyLetter in word)
         {
-            if (!player.destroyItemByItemId("LetterCollector", destroyLetter.getId(), destroyLetter.getCount(), player, true))
+            if (!player.destroyItemByItemId("LetterCollector", destroyLetter.Id, destroyLetter.getCount(), player, true))
                 return ValueTask.CompletedTask;
         }
 
@@ -57,7 +57,7 @@ public struct ExLetterCollectorTakeRewardPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        player.addItem("LetterCollector", rewardItem.getId(), rewardItem.getCount(), rewardItem.getEnchantmentLevel(), player, true);
+        player.addItem("LetterCollector", rewardItem.Id, rewardItem.getCount(), rewardItem.getEnchantmentLevel(), player, true);
         return ValueTask.CompletedTask;
     }
 
@@ -70,7 +70,7 @@ public struct ExLetterCollectorTakeRewardPacket: IIncomingPacket<GameSession>
             itemChance += rewardItem.getChance();
             if (chance <= itemChance)
             {
-                if (rewardItem.getId() == -1)
+                if (rewardItem.Id == -1)
                 {
                     return null;
                 }

@@ -37,7 +37,7 @@ public struct RequestExSkillEnchantInfoPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        SkillEnchantHolder? skillEnchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.getId());
+        SkillEnchantHolder? skillEnchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.Id);
         if (skillEnchantHolder == null)
         {
             PacketLogger.Instance.Warn("Skill does not exist at SkillEnchantData id-" + _skillId);

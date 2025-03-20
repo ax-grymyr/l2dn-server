@@ -64,12 +64,12 @@ public class CustomMailManager
 							Mail attachments = msg.createAttachments();
 							foreach (ItemEnchantHolder itemHolder in itemHolders)
 							{
-								Item? item = attachments.addItem("Custom-Mail", itemHolder.getId(),
+								Item? item = attachments.addItem("Custom-Mail", itemHolder.Id,
 									itemHolder.getCount(), null, null);
 
                                 if (item == null)
                                 {
-                                    LOGGER.Error("Item not found: " + itemHolder.getId());
+                                    LOGGER.Error("Item not found: " + itemHolder.Id);
                                     continue;
                                 }
 

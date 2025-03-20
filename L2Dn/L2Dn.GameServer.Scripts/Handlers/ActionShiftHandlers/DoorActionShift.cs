@@ -26,7 +26,7 @@ public class DoorActionShift: IActionShiftHandler
 		{
 			player.setTarget(target);
 			Door door = (Door) target;
-			ClanHall? clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.getId());
+			ClanHall? clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.Id);
 			Fort? fort = door.getFort();
 			Castle? castle = door.getCastle();
 			player.sendPacket(new StaticObjectInfoPacket(door, player.isGM()));
@@ -39,7 +39,7 @@ public class DoorActionShift: IActionShiftHandler
 			// Basic info
 			htmlContent.Replace("%doorName%", door.getName());
 			htmlContent.Replace("%objId%", door.ObjectId.ToString());
-			htmlContent.Replace("%doorId%", door.getId().ToString());
+			htmlContent.Replace("%doorId%", door.Id.ToString());
 			// Position info
 			htmlContent.Replace("%position%", door.getX() + ", " + door.getY() + ", " + door.getZ());
 			htmlContent.Replace("%node1%", door.getX(0) + ", " + door.getY(0) + ", " + door.getZMin());

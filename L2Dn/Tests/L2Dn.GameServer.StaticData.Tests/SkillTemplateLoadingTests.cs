@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Frozen;
+using System.Collections.Immutable;
 using System.Globalization;
-using System.Linq.Expressions;
 using System.Xml.Linq;
 using L2Dn.Extensions;
-using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Effects;
@@ -39,11 +39,9 @@ public sealed class SkillTemplateLoadingTests
 
     private sealed class OldLoader: DataReaderBase
     {
-        private readonly Map<long, Skill> _skills = new();
-        private readonly Map<int, int> _skillsMaxLevel = new();
+        private readonly Map<long, OldSkill> _skills = new();
 
-        public Map<long, Skill> Skills => _skills;
-        public Map<int, int> SkillsMaxLevel => _skillsMaxLevel;
+        public Map<long, OldSkill> Skills => _skills;
 
         public void Load()
         {
@@ -66,9 +64,9 @@ public sealed class SkillTemplateLoadingTests
             return skillId * 4294967296L + subSkillLevel * 65536 + skillLevel;
         }
 
-        private static long GetSkillHashCode(Skill skill)
+        private static long GetSkillHashCode(OldSkill skill)
         {
-            return GetSkillHashCode(skill.getId(), skill.getLevel(), skill.getSubLevel());
+            return GetSkillHashCode(skill.Id, skill.getLevel(), skill.getSubLevel());
         }
 
         private void LoadElement(XElement element)
@@ -79,7 +77,7 @@ public sealed class SkillTemplateLoadingTests
             ParseAttributes(element, string.Empty, generalSkillInfo);
 
             Map<string, Map<int, Map<int, object>>> variableValues = new(); // key - name
-            Map<EffectScope, List<NamedParamInfo>> effectParamInfo = new();
+            Map<SkillEffectScope, List<NamedParamInfo>> effectParamInfo = new();
             Map<SkillConditionScope, List<NamedParamInfo>> conditionParamInfo = new();
 
             foreach (XElement skillNode in element.Elements())
@@ -96,7 +94,7 @@ public sealed class SkillTemplateLoadingTests
 
                     default:
                     {
-                        EffectScope? effectScope = EffectScopeUtil.FindByName(skillNodeName);
+                        SkillEffectScope? effectScope = FindEffectScopeByName(skillNodeName);
                         if (effectScope != null)
                         {
                             skillNode.Elements("effect").ForEach(effectsNode =>
@@ -108,7 +106,7 @@ public sealed class SkillTemplateLoadingTests
                             break;
                         }
 
-                        SkillConditionScope? skillConditionScope = SkillConditionScopeUtil.FindByXmlName(skillNodeName);
+                        SkillConditionScope? skillConditionScope = FindConditionScopeByXmlName(skillNodeName);
                         if (skillConditionScope != null)
                         {
                             skillNode.Elements("condition").ForEach(conditionNode =>
@@ -170,11 +168,11 @@ public sealed class SkillTemplateLoadingTests
                         });
                     });
 
-                    int? fromLevel = namedParamInfo.FromLevel;
-                    int? toLevel = namedParamInfo.ToLevel;
-                    if (fromLevel != null && toLevel != null)
+                    int? fromLevel2 = namedParamInfo.FromLevel;
+                    int? toLevel2 = namedParamInfo.ToLevel;
+                    if (fromLevel2 != null && toLevel2 != null)
                     {
-                        for (int i = fromLevel.Value; i <= toLevel.Value; i++)
+                        for (int i = fromLevel2.Value; i <= toLevel2.Value; i++)
                         {
                             int? fromSubLevel = namedParamInfo.FromSubLevel;
                             int? toSubLevel = namedParamInfo.ToSubLevel;
@@ -206,7 +204,7 @@ public sealed class SkillTemplateLoadingTests
 
                 statSet.set(".level", level);
                 statSet.set(".subLevel", subLevel);
-                Skill skill = new(statSet);
+                OldSkill skill = new(statSet);
                 ForEachNamedParamInfoParam(effectParamInfo, level, subLevel, (effectScope, @params) =>
                 {
                     string effectName = @params.getString(".name");
@@ -249,14 +247,14 @@ public sealed class SkillTemplateLoadingTests
                         {
                             if (skill.isPassive())
                             {
-                                if (skillConditionScope != SkillConditionScope.PASSIVE)
+                                if (skillConditionScope != SkillConditionScope.Passive)
                                 {
                                     Assert.Fail(GetType().Name + ": Non passive condition for passive Skill Id[" +
                                         statSet.getInt(".id") + "] Level[" + level + "] SubLevel[" + subLevel +
                                         "]");
                                 }
                             }
-                            else if (skillConditionScope == SkillConditionScope.PASSIVE)
+                            else if (skillConditionScope == SkillConditionScope.Passive)
                             {
                                 Assert.Fail(GetType().Name + ": Passive condition for non passive Skill Id[" +
                                     statSet.getInt(".id") + "] Level[" + level + "] SubLevel[" + subLevel + "]");
@@ -281,11 +279,10 @@ public sealed class SkillTemplateLoadingTests
                 });
 
                 _skills.put(GetSkillHashCode(skill), skill);
-                _skillsMaxLevel.merge(skill.getId(), skill.getLevel(), Math.Max);
                 if (skill.getSubLevel() % 1000 == 1)
                 {
                     EnchantSkillGroupsData.getInstance().
-                        addRouteForSkill(skill.getId(), skill.getLevel(), skill.getSubLevel());
+                        addRouteForSkill(skill.Id, skill.getLevel(), skill.getSubLevel());
                 }
             }));
         }
@@ -452,10 +449,7 @@ public sealed class SkillTemplateLoadingTests
                 {
                     case "item":
                     {
-                        if (list == null)
-                        {
-                            list = new();
-                        }
+                        list ??= new();
 
                         object? value = ParseValue(n, false, true, variables);
                         if (value != null)
@@ -553,16 +547,14 @@ public sealed class SkillTemplateLoadingTests
 
     private static class SkillComparer
     {
-        public static void CompareSkills(Map<long, Skill> oldSkills, Map<long, Skill> newSkills)
+        public static void CompareSkills(Map<long, OldSkill> oldSkills, Map<long, Skill> newSkills)
         {
-            List<SkillPair> skillPairs = oldSkills.Values.Select(s => (false, s)).
-                Concat(newSkills.Values.Select(s => (true, s))).
-                GroupBy(t => new SkillId(t.s.getId(), t.s.getLevel(), t.s.getSubLevel())).
-                OrderBy(g => g.Key).
-                Select(g => new SkillPair(g.Key.Id, g.Key.Level, g.Key.SubLevel,
-                    g.Where(t => !t.Item1).Select(t => t.s).ToList(),
-                    g.Where(t => t.Item1).Select(t => t.s).ToList())).
-                ToList();
+            List<SkillPair> skillPairs =
+                oldSkills.Values.Select(s => new SkillPair(s.Id, s.getLevel(), s.getSubLevel(), [s], [])).Concat(
+                        newSkills.Values.Select(s => new SkillPair(s.Id, s.Level, s.SubLevel, [], [s]))).
+                    GroupBy(sp => new SkillId(sp.Id, sp.Level, sp.SubLevel)).
+                    Select(g => new SkillPair(g.Key.Id, g.Key.Level, g.Key.SubLevel,
+                        g.SelectMany(sp => sp.Old).ToList(), g.SelectMany(sp => sp.New).ToList())).ToList();
 
             foreach (SkillPair skillPair in skillPairs)
             {
@@ -578,151 +570,147 @@ public sealed class SkillTemplateLoadingTests
             }
         }
 
-        private static void CompareSkill(Skill oldSkill, Skill newSkill)
+        private static void CompareSkill(OldSkill oldSkill, Skill newSkill)
         {
-            CompareValue(oldSkill, newSkill, s => s.allowOnTransform());
-            CompareValue(oldSkill, newSkill, s => s.canBeDispelled());
-            //CompareValue(oldSkill, newSkill, s => s.canBeStolen()); // Uses SkillTreeData
-            CompareValue(oldSkill, newSkill, s => s.canDoubleCast());
-            CompareValue(oldSkill, newSkill, s => s.canCastWhileDisabled());
-            CompareValue(oldSkill, newSkill, s => s.getAbnormalLevel());
-            CompareValue(oldSkill, newSkill, s => s.getAbnormalResists());
-            CompareValue(oldSkill, newSkill, s => s.getAbnormalTime());
-            CompareValue(oldSkill, newSkill, s => s.getAbnormalType());
-            CompareValue(oldSkill, newSkill, s => s.getAbnormalVisualEffects());
-            CompareValue(oldSkill, newSkill, s => s.getActivateRate());
-            //CompareValue(oldSkill, newSkill, s => s.getAffectLimit()); // Random value
-            CompareValue(oldSkill, newSkill, s => s.getAffectHeightMax());
-            CompareValue(oldSkill, newSkill, s => s.getAffectHeightMin());
-            CompareValue(oldSkill, newSkill, s => s.getAffectObject());
-            CompareValue(oldSkill, newSkill, s => s.getAffectRange());
-            CompareValue(oldSkill, newSkill, s => s.getAffectScope());
-            CompareValue(oldSkill, newSkill, s => s.getAttachSkills());
-            CompareValue(oldSkill, newSkill, s => s.getAttachToggleGroupId());
-            CompareValue(oldSkill, newSkill, s => s.getAttributeType());
-            CompareValue(oldSkill, newSkill, s => s.getAttributeValue());
-            CompareValue(oldSkill, newSkill, s => s.getBasicProperty());
-            CompareValue(oldSkill, newSkill, s => s.getBuffType());
-            CompareValue(oldSkill, newSkill, s => s.getCastRange());
-            CompareValue(oldSkill, newSkill, s => s.getChannelingSkillId());
-            CompareValue(oldSkill, newSkill, s => s.getChannelingTickInitialDelay());
-            CompareValue(oldSkill, newSkill, s => s.getChannelingTickInterval());
-            CompareValue(oldSkill, newSkill, s => s.getChargeConsumeCount());
-            CompareValue(oldSkill, newSkill, s => s.getClanRepConsume());
-            CompareValue(oldSkill, newSkill, s => s.getCoolTime());
-            CompareValue(oldSkill, newSkill, s => s.getDisplayId());
-            CompareValue(oldSkill, newSkill, s => s.getDisplayLevel());
-            CompareValue(oldSkill, newSkill, s => s.getDoubleCastSkill());
-            CompareValue(oldSkill, newSkill, s => s.getEffectPoint());
-            CompareValue(oldSkill, newSkill, s => s.getEffectRange());
-            CompareValue(oldSkill, newSkill, s => s.getEffects(EffectScope.GENERAL));
-            CompareValue(oldSkill, newSkill, s => s.getEffects(EffectScope.START));
-            CompareValue(oldSkill, newSkill, s => s.getEffects(EffectScope.SELF));
-            CompareValue(oldSkill, newSkill, s => s.getEffects(EffectScope.CHANNELING));
-            CompareValue(oldSkill, newSkill, s => s.getEffects(EffectScope.PVP));
-            CompareValue(oldSkill, newSkill, s => s.getEffects(EffectScope.PVE));
-            CompareValue(oldSkill, newSkill, s => s.getEffects(EffectScope.END));
-            CompareValue(oldSkill, newSkill, s => s.getFamePointConsume());
-            CompareValue(oldSkill, newSkill, s => s.getFanRange());
-            CompareValue(oldSkill, newSkill, s => s.getHitCancelTime());
-            CompareValue(oldSkill, newSkill, s => s.getHitTime());
-            CompareValue(oldSkill, newSkill, s => s.getHpConsume());
-            CompareValue(oldSkill, newSkill, s => s.getIcon());
-            CompareValue(oldSkill, newSkill, s => s.getItemConsumeCount());
-            CompareValue(oldSkill, newSkill, s => s.getItemConsumeId());
-            CompareValue(oldSkill, newSkill, s => s.getLvlBonusRate());
-            CompareValue(oldSkill, newSkill, s => s.getMagicCriticalRate());
-            CompareValue(oldSkill, newSkill, s => s.getMagicLevel());
-            CompareValue(oldSkill, newSkill, s => s.getMagicType());
-            CompareValue(oldSkill, newSkill, s => s.getMaxChance());
-            CompareValue(oldSkill, newSkill, s => s.getMaxLightSoulConsumeCount());
-            CompareValue(oldSkill, newSkill, s => s.getMaxShadowSoulConsumeCount());
-            CompareValue(oldSkill, newSkill, s => s.getMinChance());
-            CompareValue(oldSkill, newSkill, s => s.getMinPledgeClass());
-            CompareValue(oldSkill, newSkill, s => s.getMpConsume());
-            CompareValue(oldSkill, newSkill, s => s.getMpInitialConsume());
-            CompareValue(oldSkill, newSkill, s => s.getMpPerChanneling());
-            CompareValue(oldSkill, newSkill, s => s.getName());
-            CompareValue(oldSkill, newSkill, s => s.getNextAction());
-            CompareValue(oldSkill, newSkill, s => s.getOperateType());
-            CompareValue(oldSkill, newSkill, s => s.getReferenceItemId());
-            CompareValue(oldSkill, newSkill, s => s.getReuseDelay());
-            CompareValue(oldSkill, newSkill, s => s.getReuseDelayGroup());
-            CompareValue(oldSkill, newSkill, s => s.getReuseHashCode());
-            CompareValue(oldSkill, newSkill, s => s.getSubordinationAbnormalType());
-            CompareValue(oldSkill, newSkill, s => s.getTargetType());
-            CompareValue(oldSkill, newSkill, s => s.getToggleGroupId());
-            CompareValue(oldSkill, newSkill, s => s.getTraitType());
-            CompareValue(oldSkill, newSkill, s => s.hasAbnormalVisualEffects());
-            CompareValue(oldSkill, newSkill, s => s.is7Signs());
-            CompareValue(oldSkill, newSkill, s => s.isActive());
-            CompareValue(oldSkill, newSkill, s => s.isAura());
-            CompareValue(oldSkill, newSkill, s => s.isAbnormalInstant());
-            CompareValue(oldSkill, newSkill, s => s.isAOE());
-            CompareValue(oldSkill, newSkill, s => s.isBad());
-            CompareValue(oldSkill, newSkill, s => s.isBlockActionUseSkill());
-            CompareValue(oldSkill, newSkill, s => s.isBlockedInOlympiad());
-            CompareValue(oldSkill, newSkill, s => s.isChanneling());
-            //CompareValue(oldSkill, newSkill, s => s.isClanSkill()); // Uses SkillTreeData
-            CompareValue(oldSkill, newSkill, s => s.isContinuous());
-            CompareValue(oldSkill, newSkill, s => s.isDance());
-            CompareValue(oldSkill, newSkill, s => s.isDebuff());
-            CompareValue(oldSkill, newSkill, s => s.isDeleteAbnormalOnLeave());
-            CompareValue(oldSkill, newSkill, s => s.isDisplayInList());
-            CompareValue(oldSkill, newSkill, s => s.isEnchantable());
-            CompareValue(oldSkill, newSkill, s => s.isExcludedFromCheck());
-            CompareValue(oldSkill, newSkill, s => s.isFlyType());
-            //CompareValue(oldSkill, newSkill, s => s.isGMSkill()); // Uses SkillTreeData
-            //CompareValue(oldSkill, newSkill, s => s.isHeroSkill()); // Uses SkillTreeData
-            CompareValue(oldSkill, newSkill, s => s.isHealingPotionSkill());
-            CompareValue(oldSkill, newSkill, s => s.isHidingMessages());
-            CompareValue(oldSkill, newSkill, s => s.isMagic());
-            CompareValue(oldSkill, newSkill, s => s.isMentoring());
-            CompareValue(oldSkill, newSkill, s => s.isNecessaryToggle());
-            CompareValue(oldSkill, newSkill, s => s.isNotBroadcastable());
-            CompareValue(oldSkill, newSkill, s => s.isPassive());
-            CompareValue(oldSkill, newSkill, s => s.isPhysical());
-            CompareValue(oldSkill, newSkill, s => s.isRecoveryHerb());
-            CompareValue(oldSkill, newSkill, s => s.isRemovedOnDamage());
-            CompareValue(oldSkill, newSkill, s => s.isRemovedOnUnequipWeapon());
-            CompareValue(oldSkill, newSkill, s => s.isRemovedOnAnyActionExceptMove());
-            CompareValue(oldSkill, newSkill, s => s.isStatic());
-            CompareValue(oldSkill, newSkill, s => s.isSelfContinuous());
-            CompareValue(oldSkill, newSkill, s => s.isStaticReuse());
-            CompareValue(oldSkill, newSkill, s => s.isSynergySkill());
-            CompareValue(oldSkill, newSkill, s => s.isStayAfterDeath());
-            CompareValue(oldSkill, newSkill, s => s.isTriggeredSkill());
-            CompareValue(oldSkill, newSkill, s => s.isToggle());
-            CompareValue(oldSkill, newSkill, s => s.isTransformation());
-            CompareValue(oldSkill, newSkill, s => s.isWithoutAction());
-            CompareValue(oldSkill, newSkill, s => s.useFishShot());
-            CompareValue(oldSkill, newSkill, s => s.useSoulShot());
-            CompareValue(oldSkill, newSkill, s => s.useSpiritShot());
+            CompareValue(oldSkill, "allowOnTransform", oldSkill.allowOnTransform(), newSkill.AllowOnTransform);
+            CompareValue(oldSkill, "canBeDispelled", oldSkill.canBeDispelled(), newSkill.CanBeDispelled);
+            CompareValue(oldSkill, "canDoubleCast", oldSkill.canDoubleCast(), newSkill.CanDoubleCast);
+            CompareValue(oldSkill, "canCastWhileDisabled", oldSkill.canCastWhileDisabled(), newSkill.CanCastWhileDisabled);
+            CompareValue(oldSkill, "getAbnormalLevel", oldSkill.getAbnormalLevel(), newSkill.AbnormalLevel);
+            CompareValue(oldSkill, "getAbnormalResists", oldSkill.getAbnormalResists(), newSkill.AbnormalResists);
+            CompareValue(oldSkill, "getAbnormalTime", oldSkill.getAbnormalTime(), newSkill.AbnormalTime);
+            CompareValue(oldSkill, "getAbnormalType", oldSkill.getAbnormalType(), newSkill.AbnormalType);
+            CompareValue(oldSkill, "getAbnormalVisualEffects", oldSkill.getAbnormalVisualEffects(), newSkill.AbnormalVisualEffects);
+            CompareValue(oldSkill, "getActivateRate", oldSkill.getActivateRate(), newSkill.ActivateRate);
+            CompareValue(oldSkill, "getAffectHeightMax", oldSkill.getAffectHeightMax(), newSkill.AffectHeightMax);
+            CompareValue(oldSkill, "getAffectHeightMin", oldSkill.getAffectHeightMin(), newSkill.AffectHeightMin);
+            CompareValue(oldSkill, "getAffectObject", oldSkill.getAffectObject(), newSkill.AffectObject);
+            CompareValue(oldSkill, "getAffectRange", oldSkill.getAffectRange(), newSkill.AffectRange);
+            CompareValue(oldSkill, "getAffectScope", oldSkill.getAffectScope(), newSkill.AffectScope);
+            CompareValue(oldSkill, "getAttachSkills", oldSkill.getAttachSkills(), newSkill.AttachSkills);
+            CompareValue(oldSkill, "getAttachToggleGroupId", oldSkill.getAttachToggleGroupId(), newSkill.AttachToggleGroupId);
+            CompareValue(oldSkill, "getAttributeType", oldSkill.getAttributeType(), newSkill.AttributeType);
+            CompareValue(oldSkill, "getAttributeValue", oldSkill.getAttributeValue(), newSkill.AttributeValue);
+            CompareValue(oldSkill, "getBasicProperty", oldSkill.getBasicProperty(), newSkill.BasicProperty);
+            CompareValue(oldSkill, "getBuffType", oldSkill.getBuffType(), newSkill.BuffType);
+            CompareValue(oldSkill, "getCastRange", oldSkill.getCastRange(), newSkill.CastRange);
+            CompareValue(oldSkill, "getChannelingSkillId", oldSkill.getChannelingSkillId(), newSkill.ChannelingSkillId);
+            CompareValue(oldSkill, "getChannelingTickInitialDelay", oldSkill.getChannelingTickInitialDelay(), newSkill.ChannelingTickInitialDelay);
+            CompareValue(oldSkill, "getChannelingTickInterval", oldSkill.getChannelingTickInterval(), newSkill.ChannelingTickInterval);
+            CompareValue(oldSkill, "getChargeConsumeCount", oldSkill.getChargeConsumeCount(), newSkill.ChargeConsumeCount);
+            CompareValue(oldSkill, "getClanRepConsume", oldSkill.getClanRepConsume(), newSkill.ClanRepConsume);
+            CompareValue(oldSkill, "getCoolTime", oldSkill.getCoolTime(), newSkill.CoolTime);
+            CompareValue(oldSkill, "getDisplayId", oldSkill.getDisplayId(), newSkill.DisplayId);
+            CompareValue(oldSkill, "getDisplayLevel", oldSkill.getDisplayLevel(), newSkill.DisplayLevel);
+            CompareValue(oldSkill, "getDoubleCastSkill", oldSkill.getDoubleCastSkill(), newSkill.DoubleCastSkill);
+            CompareValue(oldSkill, "getEffectPoint", oldSkill.getEffectPoint(), newSkill.EffectPoint);
+            CompareValue(oldSkill, "getEffectRange", oldSkill.getEffectRange(), newSkill.EffectRange);
+            CompareValue(oldSkill, "getEffects[General]", oldSkill.getEffects(SkillEffectScope.General)?.ToImmutableArray(), newSkill.GetEffects(SkillEffectScope.General));
+            CompareValue(oldSkill, "getEffects[Start]", oldSkill.getEffects(SkillEffectScope.Start)?.ToImmutableArray(), newSkill.GetEffects(SkillEffectScope.Start));
+            CompareValue(oldSkill, "getEffects[Self]", oldSkill.getEffects(SkillEffectScope.Self)?.ToImmutableArray(), newSkill.GetEffects(SkillEffectScope.Self));
+            CompareValue(oldSkill, "getEffects[Channeling]", oldSkill.getEffects(SkillEffectScope.Channeling)?.ToImmutableArray(), newSkill.GetEffects(SkillEffectScope.Channeling));
+            CompareValue(oldSkill, "getEffects[Pvp]", oldSkill.getEffects(SkillEffectScope.Pvp)?.ToImmutableArray(), newSkill.GetEffects(SkillEffectScope.Pvp));
+            CompareValue(oldSkill, "getEffects[Pve]", oldSkill.getEffects(SkillEffectScope.Pve)?.ToImmutableArray(), newSkill.GetEffects(SkillEffectScope.Pve));
+            CompareValue(oldSkill, "getEffects[End]", oldSkill.getEffects(SkillEffectScope.End)?.ToImmutableArray(), newSkill.GetEffects(SkillEffectScope.End));
+            CompareValue(oldSkill, "getFamePointConsume", oldSkill.getFamePointConsume(), newSkill.FamePointConsume);
+            CompareValue(oldSkill, "getFanRange", new ReadOnlySpan<int>(oldSkill.getFanRange()), newSkill.FanRange);
+            CompareValue(oldSkill, "getHitCancelTime", oldSkill.getHitCancelTime(), newSkill.HitCancelTime);
+            CompareValue(oldSkill, "getHitTime", oldSkill.getHitTime(), newSkill.HitTime);
+            CompareValue(oldSkill, "getHpConsume", oldSkill.getHpConsume(), newSkill.HpConsume);
+            CompareValue(oldSkill, "getIcon", oldSkill.getIcon(), newSkill.Icon);
+            CompareValue(oldSkill, "getItemConsumeCount", oldSkill.getItemConsumeCount(), newSkill.ItemConsumeCount);
+            CompareValue(oldSkill, "getItemConsumeId", oldSkill.getItemConsumeId(), newSkill.ItemConsumeId);
+            CompareValue(oldSkill, "getLvlBonusRate", oldSkill.getLvlBonusRate(), newSkill.LevelBonusRate);
+            CompareValue(oldSkill, "getMagicCriticalRate", oldSkill.getMagicCriticalRate(), newSkill.MagicCriticalRate);
+            CompareValue(oldSkill, "getMagicLevel", oldSkill.getMagicLevel(), newSkill.MagicLevel);
+            CompareValue(oldSkill, "getMagicType", oldSkill.getMagicType(), (int)newSkill.MagicType);
+            CompareValue(oldSkill, "getMaxChance", oldSkill.getMaxChance(), newSkill.MaxChance);
+            CompareValue(oldSkill, "getMaxLightSoulConsumeCount", oldSkill.getMaxLightSoulConsumeCount(), newSkill.MaxLightSoulConsumeCount);
+            CompareValue(oldSkill, "getMaxShadowSoulConsumeCount", oldSkill.getMaxShadowSoulConsumeCount(), newSkill.MaxShadowSoulConsumeCount);
+            CompareValue(oldSkill, "getMinChance", oldSkill.getMinChance(), newSkill.MinChance);
+            CompareValue(oldSkill, "getMinPledgeClass", oldSkill.getMinPledgeClass(), newSkill.MinPledgeClass);
+            CompareValue(oldSkill, "getMpConsume", oldSkill.getMpConsume(), newSkill.MpConsume);
+            CompareValue(oldSkill, "getMpInitialConsume", oldSkill.getMpInitialConsume(), newSkill.MpInitialConsume);
+            CompareValue(oldSkill, "getMpPerChanneling", oldSkill.getMpPerChanneling(), newSkill.MpPerChanneling);
+            CompareValue(oldSkill, "getName", oldSkill.getName(), newSkill.Name);
+            CompareValue(oldSkill, "getNextAction", oldSkill.getNextAction(), newSkill.NextAction);
+            CompareValue(oldSkill, "getOperateType", oldSkill.getOperateType(), newSkill.OperateType);
+            CompareValue(oldSkill, "getReferenceItemId", oldSkill.getReferenceItemId(), newSkill.ReferenceItemId);
+            CompareValue(oldSkill, "getReuseDelay", oldSkill.getReuseDelay(), newSkill.ReuseDelay);
+            CompareValue(oldSkill, "getReuseDelayGroup", oldSkill.getReuseDelayGroup(), newSkill.ReuseDelayGroup);
+            CompareValue(oldSkill, "getReuseHashCode", oldSkill.getReuseHashCode(), newSkill.ReuseHashCode);
+            CompareValue(oldSkill, "getSubordinationAbnormalType", oldSkill.getSubordinationAbnormalType(), newSkill.SubordinationAbnormalType);
+            CompareValue(oldSkill, "getTargetType", oldSkill.getTargetType(), newSkill.TargetType);
+            CompareValue(oldSkill, "getToggleGroupId", oldSkill.getToggleGroupId(), newSkill.ToggleGroupId);
+            CompareValue(oldSkill, "getTraitType", oldSkill.getTraitType(), newSkill.TraitType);
+            CompareValue(oldSkill, "hasAbnormalVisualEffects", oldSkill.hasAbnormalVisualEffects(), newSkill.HasAbnormalVisualEffects);
+            CompareValue(oldSkill, "is7Signs", oldSkill.is7Signs(), newSkill.Is7Signs);
+            CompareValue(oldSkill, "isActive", oldSkill.isActive(), newSkill.IsActive);
+            CompareValue(oldSkill, "isAura", oldSkill.isAura(), newSkill.IsAura);
+            CompareValue(oldSkill, "isAbnormalInstant", oldSkill.isAbnormalInstant(), newSkill.IsAbnormalInstant);
+            CompareValue(oldSkill, "isAOE", oldSkill.isAOE(), newSkill.IsAoe);
+            CompareValue(oldSkill, "isBad", oldSkill.isBad(), newSkill.IsBad);
+            CompareValue(oldSkill, "isBlockActionUseSkill", oldSkill.isBlockActionUseSkill(), newSkill.IsBlockActionUseSkill);
+            CompareValue(oldSkill, "isBlockedInOlympiad", oldSkill.isBlockedInOlympiad(), newSkill.IsBlockedInOlympiad);
+            CompareValue(oldSkill, "isChanneling", oldSkill.isChanneling(), newSkill.IsChanneling);
+            CompareValue(oldSkill, "isContinuous", oldSkill.isContinuous(), newSkill.IsContinuous);
+            CompareValue(oldSkill, "isDance", oldSkill.isDance(), newSkill.IsDance);
+            CompareValue(oldSkill, "isDebuff", oldSkill.isDebuff(), newSkill.IsDebuff);
+            CompareValue(oldSkill, "isDeleteAbnormalOnLeave", oldSkill.isDeleteAbnormalOnLeave(), newSkill.IsDeleteAbnormalOnLeave);
+            CompareValue(oldSkill, "isDisplayInList", oldSkill.isDisplayInList(), newSkill.IsDisplayInList);
+            CompareValue(oldSkill, "isExcludedFromCheck", oldSkill.isExcludedFromCheck(), newSkill.IsExcludedFromCheck);
+            CompareValue(oldSkill, "isFlyType", oldSkill.isFlyType(), newSkill.IsFlyType);
+            CompareValue(oldSkill, "isHealingPotionSkill", oldSkill.isHealingPotionSkill(), newSkill.IsHealingPotionSkill);
+            CompareValue(oldSkill, "isHidingMessages", oldSkill.isHidingMessages(), newSkill.IsHidingMessages);
+            CompareValue(oldSkill, "isMagic", oldSkill.isMagic(), newSkill.IsMagic);
+            CompareValue(oldSkill, "isMentoring", oldSkill.isMentoring(), newSkill.IsMentoring);
+            CompareValue(oldSkill, "isNecessaryToggle", oldSkill.isNecessaryToggle(), newSkill.IsNecessaryToggle);
+            CompareValue(oldSkill, "isNotBroadcastable", oldSkill.isNotBroadcastable(), newSkill.IsNotBroadcastable);
+            CompareValue(oldSkill, "isPassive", oldSkill.isPassive(), newSkill.IsPassive);
+            CompareValue(oldSkill, "isPhysical", oldSkill.isPhysical(), newSkill.IsPhysical);
+            CompareValue(oldSkill, "isRecoveryHerb", oldSkill.isRecoveryHerb(), newSkill.IsRecoveryHerb);
+            CompareValue(oldSkill, "isRemovedOnDamage", oldSkill.isRemovedOnDamage(), newSkill.IsRemovedOnDamage);
+            CompareValue(oldSkill, "isRemovedOnUnequipWeapon", oldSkill.isRemovedOnUnequipWeapon(), newSkill.IsRemovedOnUnequipWeapon);
+            CompareValue(oldSkill, "isRemovedOnAnyActionExceptMove", oldSkill.isRemovedOnAnyActionExceptMove(), newSkill.IsRemovedOnAnyActionExceptMove);
+            CompareValue(oldSkill, "isStatic", oldSkill.isStatic(), newSkill.IsStatic);
+            CompareValue(oldSkill, "isSelfContinuous", oldSkill.isSelfContinuous(), newSkill.IsSelfContinuous);
+            CompareValue(oldSkill, "isStaticReuse", oldSkill.isStaticReuse(), newSkill.IsStaticReuse);
+            CompareValue(oldSkill, "isSynergySkill", oldSkill.isSynergySkill(), newSkill.IsSynergy);
+            CompareValue(oldSkill, "isStayAfterDeath", oldSkill.isStayAfterDeath(), newSkill.IsStayAfterDeath);
+            CompareValue(oldSkill, "isTriggeredSkill", oldSkill.isTriggeredSkill(), newSkill.IsTriggeredSkill);
+            CompareValue(oldSkill, "isToggle", oldSkill.isToggle(), newSkill.IsToggle);
+            CompareValue(oldSkill, "isTransformation", oldSkill.isTransformation(), newSkill.IsTransformation);
+            CompareValue(oldSkill, "isWithoutAction", oldSkill.isWithoutAction(), newSkill.IsWithoutAction);
+            CompareValue(oldSkill, "useFishShot", oldSkill.useFishShot(), newSkill.UseFishShot);
+            CompareValue(oldSkill, "useSoulShot", oldSkill.useSoulShot(), newSkill.UseSoulShot);
+            CompareValue(oldSkill, "useSpiritShot", oldSkill.useSpiritShot(), newSkill.UseSpiritShot);
         }
 
-        private static void CompareValue<T>(Skill oldSkill, Skill newSkill, Expression<Func<Skill, FrozenSet<T>>> func)
+        private static void CompareValue<T>(OldSkill skill, string propertyName, FrozenSet<T> oldValue,
+            FrozenSet<T> newValue)
         {
-            Func<Skill, FrozenSet<T>> f = func.Compile();
-            FrozenSet<T> oldValue = f(oldSkill);
-            FrozenSet<T> newValue = f(newSkill);
-
             bool equal = oldValue.Order().SequenceEqual(newValue.Order());
-
             if (!equal)
             {
-                Assert.Fail(
-                    $"Skill id={oldSkill.getId()}, level={oldSkill.getLevel()}, sublevel={oldSkill.getSubLevel()}" +
-                    $": property '{func}' old values '{string.Join(", ", oldValue.Order())}', " +
+                Assert.Fail($"Skill id={skill.Id}, level={skill.getLevel()}, sublevel={skill.getSubLevel()}" +
+                    $": property '{propertyName}' old values '{string.Join(", ", oldValue.Order())}', " +
                     $"new values '{string.Join(", ", newValue.Order())}'");
             }
         }
 
-        private static void CompareValue<T>(Skill oldSkill, Skill newSkill, Expression<Func<Skill, T>> func)
+        private static void CompareValue<T>(OldSkill skill, string propertyName, ReadOnlySpan<T> oldValue,
+            ReadOnlySpan<T> newValue)
         {
-            Func<Skill, T> f = func.Compile();
-            T oldValue = f(oldSkill);
-            T newValue = f(newSkill);
+            CompareValue(skill, propertyName + ".Count", oldValue.Length, newValue.Length);
+            if (oldValue.Length == newValue.Length)
+            {
+                for (int i = 0; i < oldValue.Length; i++)
+                    CompareValue(skill, $"{propertyName}[{i}]", oldValue[i], newValue[i]);
+            }
+        }
 
+        private static void CompareValue<T>(OldSkill skill, string propertyName, T oldValue, T newValue)
+        {
             string index = string.Empty;
             bool equal;
             if (oldValue is IEnumerable oldEnumerable && newValue is IEnumerable newEnumerable)
@@ -799,8 +787,8 @@ public sealed class SkillTemplateLoadingTests
                     newValueString = newValue?.ToString();
 
                 Assert.Fail(
-                    $"Skill id={oldSkill.getId()}, level={oldSkill.getLevel()}, sublevel={oldSkill.getSubLevel()}" +
-                    $": property '{func}{index}' old value '{oldValueString}', new value '{newValueString}'");
+                    $"Skill id={skill.Id}, level={skill.getLevel()}, sublevel={skill.getSubLevel()}" +
+                    $": property '{propertyName}{index}' old value '{oldValueString}', new value '{newValueString}'");
             }
         }
 
@@ -810,7 +798,7 @@ public sealed class SkillTemplateLoadingTests
                 (Id, Level, SubLevel).CompareTo((other.Id, other.Level, other.SubLevel));
         }
 
-        private readonly record struct SkillPair(int Id, int Level, int SubLevel, List<Skill> Old, List<Skill> New);
+        private readonly record struct SkillPair(int Id, int Level, int SubLevel, List<OldSkill> Old, List<Skill> New);
     }
 
     private sealed class NamedParamInfo(
@@ -823,5 +811,49 @@ public sealed class SkillTemplateLoadingTests
         public int? FromSubLevel => fromSubLevel;
         public int? ToSubLevel => toSubLevel;
         public Map<int, Map<int, StatSet>> Info => info;
+    }
+
+    private static string GetName(SkillConditionScope skillConditionScope) =>
+        skillConditionScope switch
+        {
+            SkillConditionScope.General => "conditions",
+            SkillConditionScope.Target => "targetConditions",
+            SkillConditionScope.Passive => "passiveConditions",
+            _ => throw new ArgumentOutOfRangeException(nameof(skillConditionScope)),
+        };
+
+    private static SkillConditionScope? FindConditionScopeByXmlName(string name)
+    {
+        foreach (SkillConditionScope value in EnumUtil.GetValues<SkillConditionScope>())
+        {
+            if (GetName(value) == name)
+                return value;
+        }
+
+        return null;
+    }
+
+    private static string GetName(SkillEffectScope effectScope) =>
+        effectScope switch
+        {
+            SkillEffectScope.General => "effects",
+            SkillEffectScope.Start => "startEffects",
+            SkillEffectScope.Self => "selfEffects",
+            SkillEffectScope.Channeling => "channelingEffects",
+            SkillEffectScope.Pvp => "pvpEffects",
+            SkillEffectScope.Pve => "pveEffects",
+            SkillEffectScope.End => "endEffects",
+            _ => throw new ArgumentOutOfRangeException(nameof(effectScope)),
+        };
+
+    private static SkillEffectScope? FindEffectScopeByName(string name)
+    {
+        foreach (SkillEffectScope effectScope in EnumUtil.GetValues<SkillEffectScope>())
+        {
+            if (string.Equals(name, GetName(effectScope)))
+                return effectScope;
+        }
+
+        return null;
     }
 }

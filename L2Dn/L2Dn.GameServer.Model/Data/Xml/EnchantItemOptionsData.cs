@@ -81,7 +81,7 @@ public sealed class EnchantItemOptionsData: DataReaderBase
 	 */
 	public ImmutableArray<int> getOptions(Item item)
 	{
-		return item != null ? getOptions(item.getId(), item.getEnchantLevel()) : ImmutableArray<int>.Empty;
+		return item != null ? getOptions(item.Id, item.getEnchantLevel()) : ImmutableArray<int>.Empty;
 	}
 
 	/**

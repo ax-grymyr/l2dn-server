@@ -219,7 +219,7 @@ public class Siege: Siegable
 				sm.Params.addCastleId(_castle.getResidenceId());
 				Broadcast.toAllOnlinePlayers(sm);
 
-				if (clan.getId() == _firstOwnerClanId)
+				if (clan.Id == _firstOwnerClanId)
 				{
 					// Owner is unchanged
 					clan.increaseBloodAllianceCount();
@@ -409,7 +409,7 @@ public class Siege: Siegable
 				// The player's clan is in an alliance
 				foreach (Clan clan in ClanTable.getInstance().getClanAllies(allyId ?? 0)) // TODO: ???
 				{
-					SiegeClan? sc = getAttackerClan(clan.getId());
+					SiegeClan? sc = getAttackerClan(clan.Id);
 					if (sc != null)
 					{
 						removeAttacker(sc);
@@ -992,7 +992,7 @@ public class Siege: Siegable
 		{
 			return;
 		}
-		removeSiegeClan(clan.getId());
+		removeSiegeClan(clan.Id);
 	}
 
 	/**
@@ -1157,7 +1157,7 @@ public class Siege: Siegable
 		{
 			player.sendPacket(SystemMessageId.ONLY_CLANS_OF_LEVEL_3_OR_ABOVE_MAY_REGISTER_FOR_A_CASTLE_SIEGE);
 		}
-		else if (playerClan.getId() == _castle.getOwnerId())
+		else if (playerClan.Id == _castle.getOwnerId())
 		{
 			player.sendPacket(SystemMessageId.CASTLE_OWNING_CLANS_ARE_AUTOMATICALLY_REGISTERED_ON_THE_DEFENDING_SIDE);
 		}
@@ -1413,7 +1413,7 @@ public class Siege: Siegable
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.CastleSiegeClans.Add(new DbCastleSiegeClan()
 				{
-					ClanId = clan.getId(),
+					ClanId = clan.Id,
 					CastleId = (byte)_castle.getResidenceId()
 				});
 
@@ -1423,7 +1423,7 @@ public class Siege: Siegable
 			{
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				int castleId = _castle.getResidenceId();
-				int clanId = clan.getId();
+				int clanId = clan.Id;
 
 				ctx.CastleSiegeClans.Where(r => r.CastleId == castleId && r.ClanId == clanId)
 					.ExecuteUpdate(s => s.SetProperty(r => r.Type, typeId));
@@ -1431,15 +1431,15 @@ public class Siege: Siegable
 
 			if (typeId is SiegeParticipantType.Defender or SiegeParticipantType.Owner)
 			{
-				addDefender(clan.getId());
+				addDefender(clan.Id);
 			}
 			else if (typeId == SiegeParticipantType.Attacker)
 			{
-				addAttacker(clan.getId());
+				addAttacker(clan.Id);
 			}
 			else if (typeId == SiegeParticipantType.DefenderNotApproved)
 			{
-				addDefenderWaiting(clan.getId());
+				addDefenderWaiting(clan.Id);
 			}
 		}
 		catch (Exception e)
@@ -1498,7 +1498,7 @@ public class Siege: Siegable
             {
                 foreach (TowerSpawn ts in towers)
                 {
-                    Spawn spawn = new Spawn(ts.getId());
+                    Spawn spawn = new Spawn(ts.Id);
                     spawn.Location = new Location(ts.getLocation(), 0);
                     ControlTower? controlTower = (ControlTower?)spawn.doSpawn(false);
                     if (controlTower != null)
@@ -1525,7 +1525,7 @@ public class Siege: Siegable
             {
                 foreach (TowerSpawn ts in towers)
                 {
-                    Spawn spawn = new Spawn(ts.getId());
+                    Spawn spawn = new Spawn(ts.Id);
                     spawn.Location = new Location(ts.getLocation(), 0);
                     FlameTower? tower = (FlameTower?)spawn.doSpawn(false);
                     if (tower != null)
@@ -1595,7 +1595,7 @@ public class Siege: Siegable
 		{
 			return null;
 		}
-		return getAttackerClan(clan.getId());
+		return getAttackerClan(clan.Id);
 	}
 
 	public SiegeClan? getAttackerClan(int clanId)
@@ -1635,7 +1635,7 @@ public class Siege: Siegable
 		{
 			return null;
 		}
-		return getDefenderClan(clan.getId());
+		return getDefenderClan(clan.Id);
 	}
 
 	public SiegeClan? getDefenderClan(int clanId)
@@ -1665,7 +1665,7 @@ public class Siege: Siegable
 		{
 			return null;
 		}
-		return getDefenderWaitingClan(clan.getId());
+		return getDefenderWaitingClan(clan.Id);
 	}
 
 	public SiegeClan? getDefenderWaitingClan(int clanId)

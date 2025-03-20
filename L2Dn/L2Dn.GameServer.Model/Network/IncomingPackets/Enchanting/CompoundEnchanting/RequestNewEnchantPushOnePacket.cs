@@ -58,7 +58,7 @@ public struct RequestNewEnchantPushOnePacket: IIncomingPacket<GameSession>
         }
 
         ImmutableArray<CombinationItem> combinationItems = CombinationItemsData.getInstance()
-            .getItemsByFirstSlot(itemOne.getId(), itemOne.getEnchantLevel());
+            .getItemsByFirstSlot(itemOne.Id, itemOne.getEnchantLevel());
 
         // Not implemented or not able to merge!
         if (combinationItems.IsDefaultOrEmpty)

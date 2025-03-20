@@ -42,8 +42,8 @@ public sealed class ConditionPlayerCanSummonSiegeGolem(bool value): Condition
             canSummonSiegeGolem = false;
         }
         else if (playerClan != null &&
-                 ((castle != null && castle.getSiege().getAttackerClan(playerClan.getId()) == null) ||
-                     (fort != null && fort.getSiege().getAttackerClan(playerClan.getId()) == null)))
+                 ((castle != null && castle.getSiege().getAttackerClan(playerClan.Id) == null) ||
+                     (fort != null && fort.getSiege().getAttackerClan(playerClan.Id) == null)))
         {
             player.sendPacket(SystemMessageId.INVALID_TARGET);
             canSummonSiegeGolem = false;

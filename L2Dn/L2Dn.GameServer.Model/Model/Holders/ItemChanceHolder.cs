@@ -70,6 +70,6 @@ public class ItemChanceHolder: ItemHolder
 
 	public override string ToString()
 	{
-		return "[" + GetType().Name + "] ID: " + getId() + ", count: " + getCount() + ", chance: " + _chance;
+		return "[" + GetType().Name + "] ID: " + Id + ", count: " + getCount() + ", chance: " + _chance;
 	}
 }

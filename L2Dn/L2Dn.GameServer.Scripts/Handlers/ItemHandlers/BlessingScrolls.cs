@@ -31,8 +31,8 @@ public class BlessingScrolls: IItemHandler
             return false;
         }
 
-        player.addRequest(new BlessingItemRequest(player, item.getId()));
-        player.sendPacket(new ExOpenBlessOptionScrollPacket(item.getId()));
+        player.addRequest(new BlessingItemRequest(player, item.Id));
+        player.sendPacket(new ExOpenBlessOptionScrollPacket(item.Id));
         return true;
     }
 }

@@ -54,7 +54,7 @@ public class BeeHive: AbstractScript
 		}
 
 		Npc npc = onAttackableAttack.getTarget();
-		if (npc.getId() == PET_70_MONSTER || npc.getId() == PET_80_MONSTER)
+		if (npc.Id == PET_70_MONSTER || npc.Id == PET_80_MONSTER)
 		{
 			pet.doCast(SKILLS.GetRandomElement().getSkill());
 		}
@@ -67,7 +67,7 @@ public class BeeHive: AbstractScript
             return;
 
 		Npc npc = onAttackableKill.getTarget();
-		if (killer.hasPet() && (npc.getId() == PET_70_MONSTER || npc.getId() == PET_80_MONSTER))
+		if (killer.hasPet() && (npc.Id == PET_70_MONSTER || npc.Id == PET_80_MONSTER))
 		{
 			if (getRandom(1000) < 1)
 			{
@@ -89,8 +89,8 @@ public class BeeHive: AbstractScript
 				}
 			}
 
-			bool isLow = LV_70_MONSTERS.Contains(npc.getId());
-			if (isLow || LV_80_MONSTERS.Contains(npc.getId()))
+			bool isLow = LV_70_MONSTERS.Contains(npc.Id);
+			if (isLow || LV_80_MONSTERS.Contains(npc.Id))
 			{
 				Npc? spawn;
 				if (killer.hasPet())

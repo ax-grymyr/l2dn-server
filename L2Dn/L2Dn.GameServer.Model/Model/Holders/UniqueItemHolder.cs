@@ -10,18 +10,18 @@ namespace L2Dn.GameServer.Model.Holders;
 public class UniqueItemHolder: ItemHolder, IUniqueId
 {
 	private readonly int _objectId;
-	
+
 	public UniqueItemHolder(int id, int objectId): this(id, objectId, 1)
 	{
 	}
-	
+
 	public UniqueItemHolder(int id, int objectId, long count): base(id, count)
 	{
 		_objectId = objectId;
 	}
 
 	public int ObjectId => _objectId;
-	
+
 	public override string ToString() =>
-		$"[{GetType().Name}] ID: {getId()}, object ID: {_objectId}, count: {getCount()}";
+		$"[{GetType().Name}] ID: {Id}, object ID: {_objectId}, count: {getCount()}";
 }

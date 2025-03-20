@@ -75,7 +75,7 @@ public struct RequestExSetPledgeCrestLargePacket: IIncomingPacket<GameSession>
             Crest? crest = CrestTable.getInstance().createCrest(_data, CrestType.PLEDGE_LARGE);
             if (crest != null)
             {
-                clan.changeLargeCrest(crest.getId());
+                clan.changeLargeCrest(crest.Id);
                 player.sendPacket(SystemMessageId.THE_CLAN_MARK_WAS_SUCCESSFULLY_REGISTERED_THE_SYMBOL_WILL_APPEAR_ON_THE_CLAN_FLAG_AND_THE_INSIGNIA_IS_ONLY_DISPLAYED_ON_ITEMS_PERTAINING_TO_A_CLAN_THAT_OWNS_A_CLAN_HALL_OR_CASTLE);
             }
         }

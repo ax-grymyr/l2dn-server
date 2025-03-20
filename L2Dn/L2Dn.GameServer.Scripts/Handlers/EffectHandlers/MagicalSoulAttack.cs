@@ -49,7 +49,7 @@ public sealed class MagicalSoulAttack: AbstractEffect
             effected.stopFakeDeath(true);
         }
 
-        int chargedLightSouls = Math.Min(skill.getMaxLightSoulConsumeCount(), player.getCharges());
+        int chargedLightSouls = Math.Min(skill.MaxLightSoulConsumeCount, player.getCharges());
         if (chargedLightSouls > 0 && !player.decreaseCharges(chargedLightSouls))
         {
             SystemMessagePacket sm =
@@ -60,7 +60,7 @@ public sealed class MagicalSoulAttack: AbstractEffect
             return;
         }
 
-        int chargedShadowSouls = Math.Min(skill.getMaxShadowSoulConsumeCount(), player.getCharges());
+        int chargedShadowSouls = Math.Min(skill.MaxShadowSoulConsumeCount, player.getCharges());
         if (chargedShadowSouls > 0 && !player.decreaseCharges(chargedShadowSouls))
         {
             SystemMessagePacket sm =
@@ -82,9 +82,9 @@ public sealed class MagicalSoulAttack: AbstractEffect
             return;
         }
 
-        bool sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
-        bool bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
-        bool mcrit = Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill);
+        bool sps = skill.UseSpiritShot && effector.isChargedShot(ShotType.SPIRITSHOTS);
+        bool bss = skill.UseSpiritShot && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+        bool mcrit = Formulas.calcCrit(skill.MagicCriticalRate, effector, effected, skill);
         double mAtk = effector.getMAtk() * (chargedSouls > 0 ? 1.3 + chargedSouls * 0.05 : 1);
         double damage =
             Formulas.calcMagicDam(effector, effected, skill, mAtk, _power, effected.getMDef(), sps, bss, mcrit);

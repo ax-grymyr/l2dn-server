@@ -186,7 +186,7 @@ public readonly struct PetSummonInfoPacket: IOutgoingPacket
 			Pet pet = (Pet) _summon;
 			writer.WriteInt32(pet.getPetData().getType());
 			writer.WriteInt32((int)pet.getEvolveLevel());
-			writer.WriteInt32(pet.getEvolveLevel() == 0 ? -1 : pet.getId());
+			writer.WriteInt32(pet.getEvolveLevel() == 0 ? -1 : pet.Id);
 		}
 		else
 		{

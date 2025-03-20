@@ -165,7 +165,7 @@ public struct SetPrivateStoreListBuyPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			tradeList.addItemByItemId(i.getItem().getId(), i.getCount(), i.getPrice());
+			tradeList.addItemByItemId(i.getItem().Id, i.getCount(), i.getPrice());
 			totalCost += i.getCount() * i.getPrice();
 			if (totalCost > Inventory.MAX_ADENA)
 			{

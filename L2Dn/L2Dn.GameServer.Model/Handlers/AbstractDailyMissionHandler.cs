@@ -91,7 +91,7 @@ public abstract class AbstractDailyMissionHandler
 	{
 		foreach (ItemHolder holder in _holder.getRewards())
 		{
-			switch (holder.getId())
+			switch (holder.Id)
 			{
 				case CLAN_EXP:
 				{

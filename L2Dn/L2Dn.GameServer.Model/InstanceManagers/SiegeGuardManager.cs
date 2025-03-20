@@ -135,7 +135,7 @@ public class SiegeGuardManager
         long count = 0;
 		foreach (Item ticket in _droppedTickets)
 		{
-			if (ticket.getId() == itemId)
+			if (ticket.Id == itemId)
 			{
 				count++;
 			}
@@ -223,7 +223,7 @@ public class SiegeGuardManager
 	{
 		foreach (Item ticket in _droppedTickets)
 		{
-			if (ticket != null && getSiegeGuardByItem(castleId, ticket.getId()) != null)
+			if (ticket != null && getSiegeGuardByItem(castleId, ticket.Id) != null)
 			{
 				ticket.decayMe();
 				_droppedTickets.remove(ticket);
@@ -243,7 +243,7 @@ public class SiegeGuardManager
 			return;
 		}
 
-		SiegeGuardHolder? holder = getSiegeGuardByItem(castle.getResidenceId(), item.getId());
+		SiegeGuardHolder? holder = getSiegeGuardByItem(castle.getResidenceId(), item.Id);
 		if (holder == null)
 		{
 			return;
@@ -344,7 +344,7 @@ public class SiegeGuardManager
                 if (lastSpawn == null)
                     continue;
 
-                SiegeGuardHolder? holder = getSiegeGuardByNpc(castle.getResidenceId(), lastSpawn.getId());
+                SiegeGuardHolder? holder = getSiegeGuardByNpc(castle.getResidenceId(), lastSpawn.Id);
                 if (holder == null)
                     continue;
 

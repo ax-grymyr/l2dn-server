@@ -32,7 +32,7 @@ public class EnchantScrolls: IItemHandler
         }
 
         player.addRequest(new EnchantItemRequest(player, item.ObjectId));
-        player.sendPacket(new ChooseInventoryItemPacket(item.getId()));
+        player.sendPacket(new ChooseInventoryItemPacket(item.Id));
         return true;
     }
 }

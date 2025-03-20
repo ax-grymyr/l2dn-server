@@ -46,7 +46,7 @@ public readonly struct PledgeShowMemberListAllPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.PLEDGE_SHOW_MEMBER_LIST_ALL);
 
         writer.WriteInt32(!_isSubPledge);
-        writer.WriteInt32(_clan.getId());
+        writer.WriteInt32(_clan.Id);
         writer.WriteInt32(ServerConfig.Instance.GameServerParams.ServerId);
         writer.WriteInt32(_pledgeId);
         writer.WriteString(_name);

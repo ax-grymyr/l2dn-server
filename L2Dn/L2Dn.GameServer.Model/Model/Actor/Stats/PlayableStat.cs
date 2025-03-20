@@ -51,7 +51,7 @@ public class PlayableStat: CreatureStat
 		if (getActiveChar().isPet())
 		{
 			// get minimum level from NpcTemplate
-			minimumLevel = PetDataTable.getInstance().getPetMinLevel(((Pet) getActiveChar()).getTemplate().getId());
+			minimumLevel = PetDataTable.getInstance().getPetMinLevel(((Pet) getActiveChar()).getTemplate().Id);
 		}
 
 		int level = minimumLevel; // minimum level
@@ -111,7 +111,7 @@ public class PlayableStat: CreatureStat
 		if (getActiveChar().isPet())
 		{
 			// get minimum level from NpcTemplate
-			minimumLevel = PetDataTable.getInstance().getPetMinLevel(((Pet) getActiveChar()).getTemplate().getId());
+			minimumLevel = PetDataTable.getInstance().getPetMinLevel(((Pet) getActiveChar()).getTemplate().Id);
 		}
 		int level = minimumLevel;
 		for (int tmp = level; tmp <= getMaxLevel(); tmp++)

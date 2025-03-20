@@ -1,9 +1,9 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.Geometry;
 
@@ -43,7 +43,7 @@ public class EnemyNot: ITargetTypeHandler
 		if (!target.isAutoAttackable(creature))
 		{
 			// Check for cast range if character cannot move. TODO: char will start follow until within castrange, but if his moving is blocked by geodata, this msg will be sent.
-			if (dontMove && (creature.Distance2D(target) > skill.getCastRange()))
+			if (dontMove && (creature.Distance2D(target) > skill.CastRange))
 			{
 				if (sendMessage)
 				{
@@ -52,7 +52,7 @@ public class EnemyNot: ITargetTypeHandler
 				return null;
 			}
 
-			if ((skill.isFlyType()) && !GeoEngine.getInstance().canMoveToTarget(creature.Location.Location3D, target.Location.Location3D, creature.getInstanceWorld()))
+			if ((skill.IsFlyType) && !GeoEngine.getInstance().canMoveToTarget(creature.Location.Location3D, target.Location.Location3D, creature.getInstanceWorld()))
 			{
 				if (sendMessage)
 				{

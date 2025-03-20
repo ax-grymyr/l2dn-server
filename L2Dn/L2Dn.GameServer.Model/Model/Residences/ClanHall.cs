@@ -171,7 +171,7 @@ public class ClanHall: AbstractResidence
 	public override int getOwnerId()
 	{
 		Clan? owner = _owner;
-		return owner != null ? owner.getId() : 0;
+		return owner != null ? owner.Id : 0;
 	}
 
 	/**

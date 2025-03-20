@@ -385,7 +385,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public int getTransformationId()
 	{
-		return _transform?.getId() ?? 0;
+		return _transform?.Id ?? 0;
 	}
 
 	public int getTransformationDisplayId()
@@ -485,7 +485,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		{
 			if (Config.BossAnnouncements.GRANDBOSS_SPAWN_ANNOUNCEMENTS && (!isInInstance() || Config.BossAnnouncements.GRANDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 			{
-				string? name = NpcData.getInstance().getTemplate(getId())?.getName(); // TODO: wtf? why not use _template?
+				string? name = NpcData.getInstance().getTemplate(Id)?.getName(); // TODO: wtf? why not use _template?
 				if (name != null)
 				{
 					Broadcast.toAllOnlinePlayers(name + " has spawned!");
@@ -495,7 +495,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 		else if (isRaid() && Config.BossAnnouncements.RAIDBOSS_SPAWN_ANNOUNCEMENTS && (!isInInstance() || Config.BossAnnouncements.RAIDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 		{
-			string? name = NpcData.getInstance().getTemplate(getId())?.getName(); // TODO: wtf? why not use _template?
+			string? name = NpcData.getInstance().getTemplate(Id)?.getName(); // TODO: wtf? why not use _template?
 			if (name != null)
 			{
 				Broadcast.toAllOnlinePlayers(name + " has spawned!");
@@ -1284,7 +1284,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 		// Get proper casting type.
 		SkillCastingType castingType = SkillCastingType.NORMAL;
-		if (skill.canDoubleCast() && isAffected(EffectFlag.DOUBLE_CAST) && isCastingNow(castingType))
+		if (skill.CanDoubleCast && isAffected(EffectFlag.DOUBLE_CAST) && isCastingNow(castingType))
 		{
 			castingType = SkillCastingType.NORMAL_SECOND;
 		}
@@ -1305,8 +1305,8 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			{
 				if (attackable.giveRaidCurse() && attackable.isInCombat() && getLevel() - attackable.getLevel() > 8)
 				{
-					CommonSkill curse = skill.isBad() ? CommonSkill.RAID_CURSE2 : CommonSkill.RAID_CURSE;
-					curse.getSkill().applyEffects(attackable, this);
+					CommonSkill curse = skill.IsBad ? CommonSkill.RAID_CURSE2 : CommonSkill.RAID_CURSE;
+					curse.getSkill().ApplyEffects(attackable, this);
 				}
 			});
 		}
@@ -1409,7 +1409,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public void addTimeStamp(Skill skill, TimeSpan reuse, DateTime? systime)
 	{
-		_reuseTimeStampsSkills.put(skill.getReuseHashCode(), new TimeStamp(skill, reuse, systime));
+		_reuseTimeStampsSkills.put(skill.ReuseHashCode, new TimeStamp(skill, reuse, systime));
 	}
 
 	/**
@@ -1418,7 +1418,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	 */
 	public void removeTimeStamp(Skill skill)
 	{
-		_reuseTimeStampsSkills.remove(skill.getReuseHashCode());
+		_reuseTimeStampsSkills.remove(skill.ReuseHashCode);
 	}
 
 	/**
@@ -1481,7 +1481,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		{
 			return;
 		}
-		_disabledSkills.remove(skill.getReuseHashCode());
+		_disabledSkills.remove(skill.ReuseHashCode);
 	}
 
 	/**
@@ -1497,7 +1497,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return;
 		}
 
-		_disabledSkills.put(skill.getReuseHashCode(), delay > TimeSpan.Zero ? DateTime.UtcNow + delay : DateTime.MaxValue);
+		_disabledSkills.put(skill.ReuseHashCode, delay > TimeSpan.Zero ? DateTime.UtcNow + delay : DateTime.MaxValue);
 	}
 
 	/**
@@ -1520,7 +1520,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return false;
 		}
 
-		if (_allSkillsDisabled || (!skill.canCastWhileDisabled() && isAllSkillsDisabled()))
+		if (_allSkillsDisabled || (!skill.CanCastWhileDisabled && isAllSkillsDisabled()))
 		{
 			return true;
 		}
@@ -1530,7 +1530,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 			return true;
 		}
 
-		long hashCode = skill.getReuseHashCode();
+		long hashCode = skill.ReuseHashCode;
 		if (hasSkillReuse(hashCode))
 		{
 			return true;
@@ -1713,7 +1713,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		{
 			if (Config.BossAnnouncements.GRANDBOSS_DEFEAT_ANNOUNCEMENTS && (!isInInstance() || Config.BossAnnouncements.GRANDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 			{
-				string? name = NpcData.getInstance().getTemplate(getId())?.getName(); // TODO: why not use _template?
+				string? name = NpcData.getInstance().getTemplate(Id)?.getName(); // TODO: why not use _template?
 				if (name != null)
 				{
 					Broadcast.toAllOnlinePlayers(name + " has been defeated!");
@@ -1723,7 +1723,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		}
 		else if (isRaid() && Config.BossAnnouncements.RAIDBOSS_DEFEAT_ANNOUNCEMENTS && (!isInInstance() || Config.BossAnnouncements.RAIDBOSS_INSTANCE_ANNOUNCEMENTS) && !isMinion() && !isRaidMinion())
 		{
-			string? name = NpcData.getInstance().getTemplate(getId())?.getName(); // TODO: why not use _template?
+			string? name = NpcData.getInstance().getTemplate(Id)?.getName(); // TODO: why not use _template?
 			if (name != null)
 			{
 				Broadcast.toAllOnlinePlayers(name + " has been defeated!");
@@ -2416,7 +2416,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public void stopSkillEffects(Skill skill)
 	{
-		_effectList.stopSkillEffects(SkillFinishType.REMOVED, skill.getId());
+		_effectList.stopSkillEffects(SkillFinishType.REMOVED, skill.Id);
 	}
 
 	public void stopEffects(EffectFlag effectFlag)
@@ -2563,7 +2563,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	public int getAffectedSkillLevel(int skillId)
 	{
 		BuffInfo? info = _effectList.getBuffInfoBySkillId(skillId);
-		return info == null ? 0 : info.getSkill().getLevel();
+		return info == null ? 0 : info.getSkill().Level;
 	}
 
 	/// <summary>
@@ -4049,7 +4049,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	{
 		// Break only one skill at a time while casting.
 		SkillCaster? skillCaster = getSkillCaster(c => c.isAnyNormalType());
-		if (skillCaster != null && skillCaster.getSkill().isMagic())
+		if (skillCaster != null && skillCaster.getSkill().IsMagic)
 		{
 			// Abort the cast of the Creature and send Server=>Client MagicSkillCanceled/ActionFailed packet.
 			skillCaster.stopCasting(true);
@@ -4220,22 +4220,22 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		if (newSkill != null)
 		{
 			// Mobius: Keep sublevel on skill level increase.
-			Skill? existingSkill = _skills.get(newSkill.getId());
-			if (existingSkill != null && existingSkill.getSubLevel() > 0 && newSkill.getSubLevel() == 0 && existingSkill.getLevel() < newSkill.getLevel())
+			Skill? existingSkill = _skills.get(newSkill.Id);
+			if (existingSkill != null && existingSkill.SubLevel > 0 && newSkill.SubLevel == 0 && existingSkill.Level < newSkill.Level)
             {
                 newSkill = SkillData.getInstance().
-                        getSkill(newSkill.getId(), newSkill.getLevel(), existingSkill.getSubLevel()) ??
-                    throw new InvalidOperationException("Skill not found for id " + newSkill.getId() + " level " +
-                        newSkill.getLevel() + " sublevel " + existingSkill.getSubLevel());
+                        getSkill(newSkill.Id, newSkill.Level, existingSkill.SubLevel) ??
+                    throw new InvalidOperationException("Skill not found for id " + newSkill.Id + " level " +
+                        newSkill.Level + " sublevel " + existingSkill.SubLevel);
             }
 
 			// Replace oldSkill by newSkill or Add the newSkill
-			oldSkill = _skills.put(newSkill.getId(), newSkill);
+			oldSkill = _skills.put(newSkill.Id, newSkill);
 			// If an old skill has been replaced, remove all its Func objects
 			if (oldSkill != null)
 			{
 				// Stop all effects of that skill
-				if (oldSkill.isPassive())
+				if (oldSkill.IsPassive)
 				{
 					_effectList.stopSkillEffects(SkillFinishType.REMOVED, oldSkill);
 				}
@@ -4243,9 +4243,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				_stat.recalculateStats(true);
 			}
 
-			if (newSkill.isPassive())
+			if (newSkill.IsPassive)
 			{
-				newSkill.applyEffects(this, this, false, true, false, TimeSpan.Zero, null);
+				newSkill.ApplyEffects(this, this, false, true, false, TimeSpan.Zero, null);
 			}
 		}
 		return oldSkill;
@@ -4253,7 +4253,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public virtual Skill? removeSkill(Skill? skill, bool cancelEffect)
 	{
-		return skill != null ? removeSkill(skill.getId(), cancelEffect) : null;
+		return skill != null ? removeSkill(skill.Id, cancelEffect) : null;
 	}
 
 	public Skill? removeSkill(int skillId, bool cancelEffect = true)
@@ -4264,12 +4264,12 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		if (oldSkill != null)
 		{
 			// Stop casting if this skill is used right now
-			abortCast(s => s.getSkill().getId() == skillId);
+			abortCast(s => s.getSkill().Id == skillId);
 
 			// Stop effects.
-			if (cancelEffect || oldSkill.isToggle() || oldSkill.isPassive())
+			if (cancelEffect || oldSkill.IsToggle || oldSkill.IsPassive)
 			{
-				stopSkillEffects(SkillFinishType.REMOVED, oldSkill.getId());
+				stopSkillEffects(SkillFinishType.REMOVED, oldSkill.Id);
 				_stat.recalculateStats(true);
 			}
 		}
@@ -4319,7 +4319,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 	public virtual int getSkillLevel(int skillId)
 	{
 		Skill? skill = getKnownSkill(skillId);
-		return skill == null ? 0 : skill.getLevel();
+		return skill == null ? 0 : skill.Level;
 	}
 
 	/**
@@ -4625,7 +4625,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				Formulas.calcCounterAttack(this, target, skill, true);
 
 				// Shield Deflect Magic: Reflect all damage on caster.
-				if (skill.isMagic() && target.getStat().getValue(Stat.VENGEANCE_SKILL_MAGIC_DAMAGE, 0) > Rnd.get(100))
+				if (skill.IsMagic && target.getStat().getValue(Stat.VENGEANCE_SKILL_MAGIC_DAMAGE, 0) > Rnd.get(100))
 				{
 					reduceCurrentHp(damage, target, skill, isDOT, directlyToHp, critical, true);
 					return;
@@ -4687,7 +4687,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 				reflectedDamage = Math.Min(reflectedDamage, target.getMaxHp());
 
 				// Reflected damage is limited by P.Def/M.Def
-				if (skill != null && skill.isMagic())
+				if (skill != null && skill.IsMagic)
 				{
 					reflectedDamage = (int) Math.Min(reflectedDamage, target.getStat().getMDef() * 1.5);
 				}
@@ -4798,15 +4798,15 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
         Player? player = getActingPlayer();
 		if (Config.ChampionMonsters.CHAMPION_ENABLE && isChampion() && Config.ChampionMonsters.CHAMPION_HP != 0)
 		{
-			_status.reduceHp(amount / Config.ChampionMonsters.CHAMPION_HP, attacker, skill == null || !skill.isToggle(), isDOT, false);
+			_status.reduceHp(amount / Config.ChampionMonsters.CHAMPION_HP, attacker, skill == null || !skill.IsToggle, isDOT, false);
 		}
 		else if (isPlayer() && player != null)
 		{
-            player.getStatus().reduceHp(amount, attacker, skill, skill == null || !skill.isToggle(), isDOT, false, directlyToHp);
+            player.getStatus().reduceHp(amount, attacker, skill, skill == null || !skill.IsToggle, isDOT, false, directlyToHp);
 		}
 		else
 		{
-			_status.reduceHp(amount, attacker, skill == null || !skill.isToggle(), isDOT, false);
+			_status.reduceHp(amount, attacker, skill == null || !skill.IsToggle, isDOT, false);
 		}
 
 		if (attacker != null)
@@ -5081,12 +5081,12 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public void addTriggerSkill(OptionSkillHolder holder)
 	{
-		getTriggerSkills().put(holder.getSkill().getId(), holder);
+		getTriggerSkills().put(holder.getSkill().Id, holder);
 	}
 
 	public void removeTriggerSkill(OptionSkillHolder holder)
 	{
-		getTriggerSkills().remove(holder.getSkill().getId());
+		getTriggerSkills().remove(holder.getSkill().Id);
 	}
 
 	/**
@@ -5198,14 +5198,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public bool isInCategory(CategoryType type)
 	{
-		return CategoryData.getInstance().isInCategory(type, getId());
+		return CategoryData.getInstance().isInCategory(type, Id);
 	}
 
 	public bool isInOneOfCategory(params CategoryType[] types)
 	{
 		foreach (CategoryType type in types)
 		{
-			if (CategoryData.getInstance().isInCategory(type, getId()))
+			if (CategoryData.getInstance().isInCategory(type, Id))
 			{
 				return true;
 			}
@@ -5530,7 +5530,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public bool isBlockedActionsAllowedSkill(Skill skill)
 	{
-		return _blockActionsAllowedSkills.ContainsKey(skill.getId());
+		return _blockActionsAllowedSkills.ContainsKey(skill.Id);
 	}
 
 	protected void initSeenCreatures()

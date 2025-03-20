@@ -54,7 +54,7 @@ public sealed class Q00206Tutorial: Quest
 		if (qs != null)
 		{
 			// start newbie helpers
-			if (npc.getId() == NEWBIE_HELPER)
+			if (npc.Id == NEWBIE_HELPER)
 			{
 				if (hasQuestItems(player, BLUE_GEM))
 					qs.setMemoState(3);
@@ -85,16 +85,16 @@ public sealed class Q00206Tutorial: Quest
 						giveItems(player, WIND_WALK_POTION);
 						giveItems(player, SOULSHOT_REWARD);
 						playTutorialVoice(player, "tutorial_voice_026");
-						return npc.getId() + "-2.html";
+						return npc.Id + "-2.html";
 					}
 					case 4:
 					{
-						return npc.getId() + "-4.html";
+						return npc.Id + "-4.html";
 					}
 					case 5:
 					case 6:
 					{
-						return npc.getId() + "-5.html";
+						return npc.Id + "-5.html";
 					}
 				}
 			}
@@ -107,21 +107,21 @@ public sealed class Q00206Tutorial: Quest
 				case 2:
 				case 3:
 				{
-					return npc.getId() + "-1.html";
+					return npc.Id + "-1.html";
 				}
 				case 4:
 				{
-					return npc.getId() + "-2.html";
+					return npc.Id + "-2.html";
 				}
 				case 5:
 				case 6:
 				{
-					return npc.getId() + "-4.html";
+					return npc.Id + "-4.html";
 				}
 			}
 		}
 
-		return npc.getId() + "-1.html";
+		return npc.Id + "-1.html";
     }
 
     public override string? onAdvEvent(string ev, Npc? npc, Player? player)

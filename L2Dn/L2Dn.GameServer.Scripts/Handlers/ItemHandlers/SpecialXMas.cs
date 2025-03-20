@@ -18,8 +18,8 @@ public class SpecialXMas: IItemHandler
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
-		
-		playable.sendPacket(new ShowXMasSealPacket(item.getId()));
+
+		playable.sendPacket(new ShowXMasSealPacket(item.Id));
 		return true;
 	}
 }

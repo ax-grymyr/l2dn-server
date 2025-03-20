@@ -596,7 +596,7 @@ public class AdminMobGroup: IAdminCommandHandler
 		BuilderUtil.sendSysMessage(activeChar, "======= <Mob Groups> =======");
 		foreach (MobGroup mobGroup in MobGroupTable.getInstance().getGroups())
 		{
-			activeChar.sendMessage(mobGroup.getGroupId() + ": " + mobGroup.getActiveMobCount() + " alive out of " + mobGroup.getMaxMobCount() + " of NPC ID " + mobGroup.getTemplate().getId() + " (" + mobGroup.getStatus() + ")");
+			activeChar.sendMessage(mobGroup.getGroupId() + ": " + mobGroup.getActiveMobCount() + " alive out of " + mobGroup.getMaxMobCount() + " of NPC ID " + mobGroup.getTemplate().Id + " (" + mobGroup.getStatus() + ")");
 		}
 
 		activeChar.sendPacket(SystemMessageId.EMPTY_3);

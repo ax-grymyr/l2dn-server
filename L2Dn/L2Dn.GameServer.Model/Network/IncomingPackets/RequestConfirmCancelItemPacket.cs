@@ -52,7 +52,7 @@ public struct RequestConfirmCancelItemPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        long price = VariationData.getInstance().getCancelFee(item.getId(), augmentation.getMineralId());
+        long price = VariationData.getInstance().getCancelFee(item.Id, augmentation.getMineralId());
         if (price < 0)
         {
             player.sendPacket(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM);

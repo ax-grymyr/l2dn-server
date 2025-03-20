@@ -134,11 +134,11 @@ public class Defender : Attackable
 
 	public override void useMagic(Skill skill)
 	{
-		if (!skill.isBad())
+		if (!skill.IsBad)
 		{
 			Creature target = this;
 			double lowestHpValue = double.MaxValue;
-			foreach (Creature nearby in World.getInstance().getVisibleObjectsInRange<Creature>(this, skill.getCastRange()))
+			foreach (Creature nearby in World.getInstance().getVisibleObjectsInRange<Creature>(this, skill.CastRange))
 			{
 				if (nearby == null || nearby.isDead() || !GeoEngine.getInstance().canSeeTarget(this, nearby))
 				{

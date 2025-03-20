@@ -149,7 +149,7 @@ public class ResidenceFunction
 		}
 
 		ItemContainer wh = clan.getWarehouse();
-		Item? item = wh.getItemByItemId(template.getCost().getId());
+		Item? item = wh.getItemByItemId(template.getCost().Id);
 		if (item == null || item.getCount() < template.getCost().getCount())
 		{
 			return false;

@@ -51,7 +51,7 @@ public class TransformData: DataReaderBase
         TransformTemplate femaleTemplate = loadTemplate(femaleElement);
 		Transform transform = new Transform(set, maleTemplate, femaleTemplate);
 
-		_transformData.put(transform.getId(), transform);
+		_transformData.put(transform.Id, transform);
 	}
 
 	private TransformTemplate loadTemplate(XElement element)

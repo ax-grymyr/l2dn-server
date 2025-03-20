@@ -34,7 +34,7 @@ public sealed class DoubleCast: AbstractEffect
                 if (s != null && !effected.isAffectedBySkill(holder))
                 {
                     _addedToggles.GetOrAdd(effected.ObjectId, _ => []).Add(holder);
-                    s.applyEffects(effected, effected);
+                    s.ApplyEffects(effected, effected);
                 }
             }
         }

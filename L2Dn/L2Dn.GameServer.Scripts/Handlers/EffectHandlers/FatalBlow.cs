@@ -68,7 +68,7 @@ public sealed class FatalBlow: AbstractEffect
             }
         }
 
-        bool ss = skill.useSoulShot() && (effector.isChargedShot(ShotType.SOULSHOTS) ||
+        bool ss = skill.UseSoulShot && (effector.isChargedShot(ShotType.SOULSHOTS) ||
             effector.isChargedShot(ShotType.BLESSED_SOULSHOTS));
 
         byte shld = Formulas.calcShldUse(effector, effected);

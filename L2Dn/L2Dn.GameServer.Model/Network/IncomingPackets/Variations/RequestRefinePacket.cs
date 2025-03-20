@@ -37,7 +37,7 @@ public struct RequestRefinePacket: IIncomingPacket<GameSession>
 		if (mineralItem == null)
 			return ValueTask.CompletedTask;
 
-		VariationFee? fee = VariationData.getInstance().getFee(targetItem.getId(), mineralItem.getId());
+		VariationFee? fee = VariationData.getInstance().getFee(targetItem.Id, mineralItem.Id);
 		if (fee == null)
 			return ValueTask.CompletedTask;
 
@@ -67,7 +67,7 @@ public struct RequestRefinePacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		Variation? variation = VariationData.getInstance().getVariation(mineralItem.getId(), targetItem);
+		Variation? variation = VariationData.getInstance().getVariation(mineralItem.Id, targetItem);
 		if (variation == null)
 		{
 			player.sendPacket(ExVariationResultPacket.FAIL);

@@ -54,9 +54,9 @@ public class Merchant: Folk
             return;
         }
 
-        if (!buyList.isNpcAllowed(getId()))
+        if (!buyList.isNpcAllowed(Id))
         {
-            LOGGER.Warn("Npc not allowed in BuyList! BuyListId:" + value + " NpcId:" + getId());
+            LOGGER.Warn("Npc not allowed in BuyList! BuyListId:" + value + " NpcId:" + Id);
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return;
         }

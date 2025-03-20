@@ -23,14 +23,14 @@ public readonly struct ExResultItemAutoPeelPacket: IOutgoingPacket
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_RESULT_ITEM_AUTO_PEEL);
-        
+
         writer.WriteByte(_result);
         writer.WriteInt64(_totalPeelCount);
         writer.WriteInt64(_remainingPeelCount);
         writer.WriteInt32(_itemList.Count);
         foreach (ItemHolder holder in _itemList)
         {
-            writer.WriteInt32(holder.getId());
+            writer.WriteInt32(holder.Id);
             writer.WriteInt64(holder.getCount());
             writer.WriteInt32(0); // Announce level.
             writer.WriteInt32(0); // Enchanted.

@@ -38,7 +38,7 @@ public sealed class SummonCubic: AbstractEffect
 
         if (_cubicId < 0)
         {
-            LOGGER.Warn(GetType().Name + ": Invalid Cubic ID:" + _cubicId + " in skill ID: " + skill.getId());
+            LOGGER.Warn(GetType().Name + ": Invalid Cubic ID:" + _cubicId + " in skill ID: " + skill.Id);
             return;
         }
 

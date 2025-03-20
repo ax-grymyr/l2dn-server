@@ -513,7 +513,7 @@ public sealed class AchievementBox(Player owner)
 		if (reward != null)
 		{
 			owner.addItem("Chest unlock", reward, owner, true);
-			owner.sendPacket(new ExSteadyBoxRewardPacket(slotId, reward.getId(), reward.getCount()));
+			owner.sendPacket(new ExSteadyBoxRewardPacket(slotId, reward.Id, reward.getCount()));
 		}
 	}
 

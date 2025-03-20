@@ -517,7 +517,7 @@ public class AdminTeleport: IAdminCommandHandler
 		if (obj is Npc && !((Npc) obj).isMinion() && !(obj is RaidBoss) && !(obj is GrandBoss))
 		{
 			Npc target = (Npc) obj;
-			int monsterTemplate = target.getTemplate().getId();
+			int monsterTemplate = target.getTemplate().Id;
 			NpcTemplate? template1 = NpcData.getInstance().getTemplate(monsterTemplate);
 			if (template1 == null)
 			{
@@ -573,13 +573,13 @@ public class AdminTeleport: IAdminCommandHandler
 			if (spawn == null)
 			{
 				BuilderUtil.sendSysMessage(activeChar, "Incorrect raid spawn.");
-				_logger.Warn("ERROR: NPC Id" + target.getId() + " has a 'null' spawn.");
+				_logger.Warn("ERROR: NPC Id" + target.Id + " has a 'null' spawn.");
 				return;
 			}
 			DbSpawnManager.getInstance().deleteSpawn(spawn, true);
 			try
 			{
-				Spawn spawnDat = new Spawn(target.getId());
+				Spawn spawnDat = new Spawn(target.Id);
 				spawnDat.Location = activeChar.Location;
 				spawnDat.setAmount(1);
 				spawnDat.setRespawnMinDelay(TimeSpan.FromSeconds(43200));

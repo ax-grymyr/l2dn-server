@@ -39,13 +39,13 @@ public struct RequestPetGetItemPacket: IIncomingPacket<GameSession>
         }
 
         Castle? castle = CastleManager.getInstance().getCastle(item);
-        if (castle != null && SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), item.getId()) != null)
+        if (castle != null && SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), item.Id) != null)
         {
             connection.Send(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
 
-        if (FortSiegeManager.getInstance().isCombat(item.getId()))
+        if (FortSiegeManager.getInstance().isCombat(item.Id))
         {
             connection.Send(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;

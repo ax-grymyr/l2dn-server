@@ -65,8 +65,8 @@ public struct ExRequestRandomCraftExtractPacket: IIncomingPacket<GameSession>
                 }
 
                 toDestroy.put(objId, count);
-                points += RandomCraftData.getInstance().getPoints(item.getId()) * count;
-                fee += RandomCraftData.getInstance().getFee(item.getId()) * count;
+                points += RandomCraftData.getInstance().getPoints(item.Id) * count;
+                fee += RandomCraftData.getInstance().getFee(item.Id) * count;
             }
             else
             {

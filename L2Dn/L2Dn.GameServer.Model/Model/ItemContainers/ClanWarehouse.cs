@@ -24,7 +24,7 @@ public class ClanWarehouse: Warehouse
 
 	public override int getOwnerId()
 	{
-		return _clan.getId();
+		return _clan.Id;
 	}
 
 	public override Player getOwner()

@@ -70,7 +70,7 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 
 		// Char cannot use item when dead
-		if (player.isDead() || pet.isDead() || !player.getInventory().canManipulateWithItemId(item.getId()))
+		if (player.isDead() || pet.isDead() || !player.getInventory().canManipulateWithItemId(item.Id))
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
 			sm.Params.addItemName(item);
@@ -83,7 +83,7 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		_itemId = item.getId();
+		_itemId = item.Id;
 		if (player.isFishing() && (_itemId < 6535 || _itemId > 6540))
 		{
 			// You cannot do anything else while fishing
@@ -104,7 +104,7 @@ public struct ExPetUnequipItemPacket: IIncomingPacket<GameSession>
 			// Don't allow weapon/shield equipment if a cursed weapon is equipped.
 			if (item.getTemplate().getBodyPart() == ItemTemplate.SLOT_LR_HAND || item.getTemplate().getBodyPart() == ItemTemplate.SLOT_L_HAND || item.getTemplate().getBodyPart() == ItemTemplate.SLOT_R_HAND)
 			{
-				if (player.getActiveWeaponItem() != null && player.getActiveWeaponItem().getId() == FortManager.ORC_FORTRESS_FLAG)
+				if (player.getActiveWeaponItem() != null && player.getActiveWeaponItem().Id == FortManager.ORC_FORTRESS_FLAG)
 				{
 					player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
 					return ValueTask.CompletedTask;

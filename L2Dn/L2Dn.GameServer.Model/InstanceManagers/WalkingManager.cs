@@ -182,7 +182,7 @@ public class WalkingManager: DataReaderBase
 	 */
 	public bool isTargeted(Npc npc)
 	{
-		return _targetedNpcIds.Contains(npc.getId());
+		return _targetedNpcIds.Contains(npc.Id);
 	}
 
 	/**
@@ -229,7 +229,7 @@ public class WalkingManager: DataReaderBase
 
 					if (!npc.IsInsideRadius3D(node.Location, 3000))
 					{
-						LOGGER.Warn(GetType().Name + ": " + "Route '" + routeName + "': NPC (id=" + npc.getId() +
+						LOGGER.Warn(GetType().Name + ": " + "Route '" + routeName + "': NPC (id=" + npc.Id +
 							", x=" + npc.getX() + ", y=" + npc.getY() + ", z=" + npc.getZ() +
 							") is too far from starting point (node x=" + node.Location.X + ", y=" + node.Location.Y +
 							", z=" + node.Location.Z + ", range=" + npc.Distance3D(node.Location) +
@@ -431,7 +431,7 @@ public class WalkingManager: DataReaderBase
 	 */
 	public void onSpawn(Npc npc)
 	{
-		if (_routesToAttach.TryGetValue(npc.getId(), out NpcRoutesHolder? route))
+		if (_routesToAttach.TryGetValue(npc.Id, out NpcRoutesHolder? route))
 		{
 			string routeName = route.getRouteName(npc);
 			if (!string.IsNullOrEmpty(routeName))

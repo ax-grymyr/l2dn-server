@@ -55,7 +55,7 @@ public struct RequestAutoSoulShotPacket: IIncomingPacket<GameSession>
 	    }
 
 
-	    if (!player.getInventory().canManipulateWithItemId(item.getId()))
+	    if (!player.getInventory().canManipulateWithItemId(item.Id))
 	    {
 		    player.sendMessage("Cannot use this item.");
 		    return ValueTask.CompletedTask;
@@ -116,7 +116,7 @@ public struct RequestAutoSoulShotPacket: IIncomingPacket<GameSession>
 			    {
 				    // Send message
 				    if (!pet.isChargedShot(item.getTemplate().getDefaultAction() == ActionType.SUMMON_SOULSHOT
-					        ? ShotType.SOULSHOTS : item.getId() == 6647 || item.getId() == 20334
+					        ? ShotType.SOULSHOTS : item.Id == 6647 || item.Id == 20334
 						        ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS))
 				    {
 					    SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_AUTOMATIC_USE_OF_S1_HAS_BEEN_ACTIVATED);
@@ -134,7 +134,7 @@ public struct RequestAutoSoulShotPacket: IIncomingPacket<GameSession>
 				    if (!summon.isChargedShot(item.getTemplate().getDefaultAction() == ActionType.SUMMON_SOULSHOT
 					        ?
 					        ShotType.SOULSHOTS
-					        : item.getId() == 6647 || item.getId() == 20334
+					        : item.Id == 6647 || item.Id == 20334
 						        ? ShotType.BLESSED_SPIRITSHOTS
 						        : ShotType.SPIRITSHOTS))
 				    {

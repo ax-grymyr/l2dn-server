@@ -41,7 +41,7 @@ public struct ExRequestNewHennaEnchantResetPacket: IIncomingPacket<GameSession>
             DyePotentialFee? newFee = HennaPatternPotentialData.getInstance().getFee(1 /* daily step */);
             if (newFee == null)
                 player.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS); // TODO: verify
-            else if (player.destroyItemByItemId("Reset fee", enchant.getId(), enchant.getCount(), player, true))
+            else if (player.destroyItemByItemId("Reset fee", enchant.Id, enchant.getCount(), player, true))
             {
                 player.setDyePotentialDailyCount(newFee.getDailyCount());
                 player.setDyePotentialDailyEnchantReset(dailyReset + 1);

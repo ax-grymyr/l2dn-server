@@ -8,14 +8,14 @@ public readonly struct QuestListPacket: IOutgoingPacket
 {
     private readonly List<QuestState> _activeQuests;
     private readonly byte[] _oneTimeQuestMask;
-	
+
     public QuestListPacket(Player player)
     {
         _activeQuests = new List<QuestState>();
         _oneTimeQuestMask = new byte[128];
         foreach (QuestState qs in player.getAllQuestStates())
         {
-            int questId = qs.getQuest().getId();
+            int questId = qs.getQuest().Id;
             if (questId > 0)
             {
                 if (qs.isStarted())
@@ -29,18 +29,18 @@ public readonly struct QuestListPacket: IOutgoingPacket
             }
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.QUEST_LIST);
-        
+
         writer.WriteInt16((short)_activeQuests.Count);
         foreach (QuestState qs in _activeQuests)
         {
-            writer.WriteInt32(qs.getQuest().getId());
+            writer.WriteInt32(qs.getQuest().Id);
             writer.WriteInt32(qs.getCondBitSet());
         }
-        
+
         writer.WriteBytes(_oneTimeQuestMask);
     }
 }

@@ -25,8 +25,8 @@ public readonly struct PledgeSkillListPacket: IOutgoingPacket
         writer.WriteInt32(_subSkills.Count); // Squad skill length
         foreach (Skill sk in _skills)
         {
-            writer.WriteInt32(sk.getDisplayId());
-            writer.WriteInt16((short)sk.getDisplayLevel());
+            writer.WriteInt32(sk.DisplayId);
+            writer.WriteInt16((short)sk.DisplayLevel);
             writer.WriteInt16(0); // Sub level
         }
         foreach (SubPledgeSkill sk in _subSkills)

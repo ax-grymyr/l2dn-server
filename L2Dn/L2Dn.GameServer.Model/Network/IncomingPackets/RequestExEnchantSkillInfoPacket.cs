@@ -36,7 +36,7 @@ public struct RequestExEnchantSkillInfoPacket: IIncomingPacket<GameSession>
         // }
 
         Skill? skill = SkillData.getInstance().getSkill(_skillId, _skillLevel, _skillSubLevel);
-        if (skill == null || skill.getId() != _skillId)
+        if (skill == null || skill.Id != _skillId)
             return ValueTask.CompletedTask;
 
         Set<int> route = EnchantSkillGroupsData.getInstance().getRouteForSkill(_skillId, _skillLevel);
@@ -44,10 +44,10 @@ public struct RequestExEnchantSkillInfoPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         Skill? playerSkill = player.getKnownSkill(_skillId);
-        if (playerSkill == null || playerSkill.getLevel() != _skillLevel || playerSkill.getSubLevel() != _skillSubLevel)
+        if (playerSkill == null || playerSkill.Level != _skillLevel || playerSkill.SubLevel != _skillSubLevel)
             return ValueTask.CompletedTask;
 
-        player.sendPacket(new ExEnchantSkillInfoPacket(_skillId, _skillLevel, _skillSubLevel, playerSkill.getSubLevel()));
+        player.sendPacket(new ExEnchantSkillInfoPacket(_skillId, _skillLevel, _skillSubLevel, playerSkill.SubLevel));
 
         // ExEnchantSkillInfoDetail - not really necessary I think
         // player.sendPacket(new ExEnchantSkillInfoDetail(SkillEnchantType.NORMAL, _skillId, _skillLevel, _skillSubLevel , activeChar));

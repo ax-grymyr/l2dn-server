@@ -37,7 +37,7 @@ public class DoorData: DataReaderBase
 			.Doors.ForEach(xmlDoor =>
 			{
 				DoorTemplate template = new(xmlDoor);
-				_templates.TryAdd(template.getId(), template);
+				_templates.TryAdd(template.Id, template);
 				spawnDoor(template);
 			});
 
@@ -54,7 +54,7 @@ public class DoorData: DataReaderBase
 		Door door = spawnDoor(template, null);
 
 		// Register the door
-		_doors.put(door.getId(), door);
+		_doors.put(door.Id, door);
 
 		return door;
 	}
@@ -82,7 +82,7 @@ public class DoorData: DataReaderBase
 		// Register door's group
 		if (template.getGroupName() != null)
 		{
-			_groups.GetOrAdd(door.getGroupName(), _ => []).add(door.getId());
+			_groups.GetOrAdd(door.getGroupName(), _ => []).add(door.Id);
 		}
 
 		return door;

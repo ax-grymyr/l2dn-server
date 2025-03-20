@@ -42,7 +42,7 @@ public readonly struct MercenaryCastleWarCastleSiegeDefenderListPacket: IOutgoin
 			Clan? owner = castle.getOwner();
 			if (owner != null)
 			{
-				writer.WriteInt32(owner.getId());
+				writer.WriteInt32(owner.Id);
 				writer.WriteString(owner.getName());
 				writer.WriteString(owner.getLeaderName());
 				writer.WriteInt32(owner.getAllyCrestId() ?? 0);
@@ -69,7 +69,7 @@ public readonly struct MercenaryCastleWarCastleSiegeDefenderListPacket: IOutgoin
 					continue;
 				}
 
-				writer.WriteInt32(defender.getId());
+				writer.WriteInt32(defender.Id);
 				writer.WriteString(defender.getName());
 				writer.WriteString(defender.getLeaderName());
 				writer.WriteInt32(defender.getCrestId() ?? 0);
@@ -96,7 +96,7 @@ public readonly struct MercenaryCastleWarCastleSiegeDefenderListPacket: IOutgoin
 					continue;
 				}
 
-				writer.WriteInt32(defender.getId());
+				writer.WriteInt32(defender.Id);
 				writer.WriteString(defender.getName());
 				writer.WriteString(defender.getLeaderName());
 				writer.WriteInt32(defender.getCrestId() ?? 0);

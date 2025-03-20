@@ -11,7 +11,7 @@ public class PledgeRecruitInfo(
 
     public int getClanId()
     {
-        return clan.getId();
+        return clan.Id;
     }
 
     public string getClanName()

@@ -29,13 +29,13 @@ public class ClanWar
 
 	public ClanWar(Clan attacker, Clan attacked)
 	{
-		_attackerClanId = attacker.getId();
-		_attackedClanId = attacked.getId();
+		_attackerClanId = attacker.Id;
+		_attackedClanId = attacked.Id;
 		_startTime = DateTime.UtcNow;
 		_state = ClanWarState.BLOOD_DECLARATION;
 		_cancelTask = ThreadPool.schedule(clanWarTimeout, TIME_TO_CANCEL_NON_MUTUAL_CLAN_WAR);
-		attacker.addWar(attacked.getId(), this);
-		attacked.addWar(attacker.getId(), this);
+		attacker.addWar(attacked.Id, this);
+		attacked.addWar(attacker.Id, this);
 
 		if (GlobalEvents.Global.HasSubscribers<OnClanWarStart>())
 		{
@@ -53,8 +53,8 @@ public class ClanWar
 
 	public ClanWar(Clan attacker, Clan attacked, int attackerKillCount, int attackedKillCount, int? winnerClan, DateTime startTime, DateTime? endTime, ClanWarState state)
 	{
-		_attackerClanId = attacker.getId();
-		_attackedClanId = attacked.getId();
+		_attackerClanId = attacker.Id;
+		_attackedClanId = attacked.Id;
 		_startTime = startTime;
 		_endTime = endTime;
 		_state = state;
@@ -107,7 +107,7 @@ public class ClanWar
 			sm.Params.addString(victimClan.getName());
 			sm.Params.addPcName(killer);
 			killerClan.broadcastToOnlineMembers(sm);
-			if (killerClan.getId() == _attackerClanId)
+			if (killerClan.Id == _attackerClanId)
 			{
 				Interlocked.Increment(ref _attackerKillCount);
 			}
@@ -116,7 +116,7 @@ public class ClanWar
 				Interlocked.Increment(ref _attackedKillCount);
 			}
 		}
-		else if (_state == ClanWarState.BLOOD_DECLARATION && victimClan.getId() == _attackerClanId && victim.getReputation() >= 0)
+		else if (_state == ClanWarState.BLOOD_DECLARATION && victimClan.Id == _attackerClanId && victim.getReputation() >= 0)
 		{
 			int killCount = Interlocked.Increment(ref _attackedKillCount);
 			if (killCount >= 5)
@@ -148,7 +148,7 @@ public class ClanWar
 
 	public void cancel(Player player, Clan cancelor)
     {
-        Clan? winnerClan = cancelor.getId() == _attackerClanId
+        Clan? winnerClan = cancelor.Id == _attackerClanId
             ? ClanTable.getInstance().getClan(_attackedClanId)
             : ClanTable.getInstance().getClan(_attackerClanId);
         if (winnerClan == null)
@@ -165,9 +165,9 @@ public class ClanWar
 		sm.Params.addString(cancelor.getName());
 		winnerClan.broadcastToOnlineMembers(sm);
 
-		_winnerClanId = winnerClan.getId();
+		_winnerClanId = winnerClan.Id;
 		_endTime = DateTime.UtcNow;
-		ThreadPool.schedule(() => ClanTable.getInstance().deleteClanWars(cancelor.getId(), winnerClan.getId()), 5000 /* (_endTime + TIME_TO_DELETION_AFTER_DEFEAT) - System.currentTimeMillis() */);
+		ThreadPool.schedule(() => ClanTable.getInstance().deleteClanWars(cancelor.Id, winnerClan.Id), 5000 /* (_endTime + TIME_TO_DELETION_AFTER_DEFEAT) - System.currentTimeMillis() */);
 	}
 
 	public void clanWarTimeout()
@@ -186,7 +186,7 @@ public class ClanWar
 
 			_state = ClanWarState.TIE;
 			_endTime = DateTime.UtcNow;
-			ThreadPool.schedule(() => ClanTable.getInstance().deleteClanWars(attackerClan.getId(), attackedClan.getId()), 5000 /* (_endTime + TIME_TO_DELETION_AFTER_CANCELLATION) - System.currentTimeMillis() */);
+			ThreadPool.schedule(() => ClanTable.getInstance().deleteClanWars(attackerClan.Id, attackedClan.Id), 5000 /* (_endTime + TIME_TO_DELETION_AFTER_CANCELLATION) - System.currentTimeMillis() */);
 		}
 	}
 
@@ -210,14 +210,14 @@ public class ClanWar
 
 	public int getKillDifference(Clan clan)
 	{
-		return _attackerClanId == clan.getId() ? _attackerKillCount - _attackedKillCount : _attackedKillCount - _attackerKillCount;
+		return _attackerClanId == clan.Id ? _attackerKillCount - _attackedKillCount : _attackedKillCount - _attackerKillCount;
 	}
 
 	public ClanWarState getClanWarState(Clan clan)
 	{
 		if (_winnerClanId > 0)
 		{
-			return _winnerClanId == clan.getId() ? ClanWarState.WIN : ClanWarState.LOSS;
+			return _winnerClanId == clan.Id ? ClanWarState.WIN : ClanWarState.LOSS;
 		}
 		return _state;
 	}
@@ -274,7 +274,7 @@ public class ClanWar
 
 	public Clan? getOpposingClan(Clan clan)
     {
-        return _attackerClanId == clan.getId()
+        return _attackerClanId == clan.Id
             ? ClanTable.getInstance().getClan(_attackedClanId)
             : ClanTable.getInstance().getClan(_attackerClanId);
     }

@@ -108,7 +108,7 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 			}
 		}
 
-		int stoneId = stone.getId();
+		int stoneId = stone.Id;
 		long count = Math.Min(stone.getCount(), _count);
 		AttributeType elementToAdd = ElementalAttributeData.getInstance().getItemElement(stoneId);
 		// Armors have the opposite element
@@ -274,8 +274,8 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 	{
 		AttributeHolder? oldElement = item.getAttribute(elementToAdd);
 		int elementValue = oldElement == null ? 0 : oldElement.getValue();
-		int limit = getLimit(item, stone.getId());
-		int powerToAdd = getPowerToAdd(stone.getId(), elementValue, item);
+		int limit = getLimit(item, stone.Id);
+		int powerToAdd = getPowerToAdd(stone.Id, elementValue, item);
 		int newPower = elementValue + powerToAdd;
 		if (newPower > limit)
 		{
@@ -290,7 +290,7 @@ public struct RequestExEnchantItemAttributePacket: IIncomingPacket<GameSession>
 			return -1;
 		}
 
-		bool success = ElementalAttributeData.getInstance().isSuccess(item, stone.getId());
+		bool success = ElementalAttributeData.getInstance().isSuccess(item, stone.Id);
 		if (success)
 		{
 			item.setAttribute(new AttributeHolder(elementToAdd, newPower), false);

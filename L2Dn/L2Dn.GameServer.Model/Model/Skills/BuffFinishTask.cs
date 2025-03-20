@@ -22,7 +22,7 @@ public class BuffFinishTask
 				if (info.getEffected() != null && TimeSpan.FromSeconds(entry.Value.incrementAndGet()) > info.getAbnormalTime())
 				{
 					info.getEffected().getEffectList()
-						.stopSkillEffects(SkillFinishType.NORMAL, info.getSkill().getId());
+						.stopSkillEffects(SkillFinishType.NORMAL, info.getSkill().Id);
 				}
 			}
 		}, 0, 1000);
@@ -32,12 +32,12 @@ public class BuffFinishTask
 	{
 		return _task;
 	}
-	
+
 	public void addBuffInfo(BuffInfo info)
 	{
 		_buffInfos.put(info, new AtomicInteger());
 	}
-	
+
 	public void removeBuffInfo(BuffInfo info)
 	{
 		_buffInfos.remove(info);

@@ -1,3 +1,5 @@
+using System.Collections.Immutable;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -23,10 +25,10 @@ public class CanSummonCubicSkillCondition: ISkillCondition
             return false;
         }
 
-        if (player.getAutoUseSettings().isAutoSkill(skill.getId()))
+        if (player.getAutoUseSettings().isAutoSkill(skill.Id))
         {
-            List<AbstractEffect>? generalEffects = skill.getEffects(EffectScope.GENERAL);
-            if (generalEffects != null)
+            ImmutableArray<AbstractEffect> generalEffects = skill.GetEffects(SkillEffectScope.General);
+            if (!generalEffects.IsDefaultOrEmpty)
             {
                 foreach (AbstractEffect effect in generalEffects)
                 {

@@ -36,13 +36,13 @@ public struct RequestDispelPacket: IIncomingPacket<GameSession>
         if (skill == null)
             return ValueTask.CompletedTask;
 
-        if (!skill.canBeDispelled() || skill.isDebuff())
+        if (!skill.CanBeDispelled || skill.IsDebuff)
             return ValueTask.CompletedTask;
 
-        if (skill.getAbnormalType() == AbnormalType.TRANSFORM)
+        if (skill.AbnormalType == AbnormalType.TRANSFORM)
             return ValueTask.CompletedTask;
 
-        if (skill.isDance() && !Config.Character.DANCE_CANCEL_BUFF)
+        if (skill.IsDance && !Config.Character.DANCE_CANCEL_BUFF)
             return ValueTask.CompletedTask;
 
         if (player.ObjectId == _objectId)

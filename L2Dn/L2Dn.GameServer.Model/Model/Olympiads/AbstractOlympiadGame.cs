@@ -184,7 +184,7 @@ public abstract class AbstractOlympiadGame
 
 			// Remove Buffs
 			player.stopAllEffectsExceptThoseThatLastThroughDeath();
-			player.getEffectList().stopEffects(info => info.getSkill().isBlockedInOlympiad(), true, true);
+			player.getEffectList().stopEffects(info => info.getSkill().IsBlockedInOlympiad, true, true);
 
 			// Remove Clan Skills
 			Clan? clan = player.getClan();
@@ -232,7 +232,7 @@ public abstract class AbstractOlympiadGame
 				player.getServitors().Values.ForEach(s =>
 				{
 					s.stopAllEffectsExceptThoseThatLastThroughDeath();
-					s.getEffectList().stopEffects(info => info.getSkill().isBlockedInOlympiad(), true, true);
+					s.getEffectList().stopEffects(info => info.getSkill().IsBlockedInOlympiad, true, true);
 					s.abortAttack();
 					s.abortCast();
 				});
@@ -262,7 +262,7 @@ public abstract class AbstractOlympiadGame
 			// enable skills with cool time <= 15 minutes
 			foreach (Skill skill in player.getAllSkills())
 			{
-				if (skill.getReuseDelay() <= TimeSpan.FromMinutes(15))
+				if (skill.ReuseDelay <= TimeSpan.FromMinutes(15))
 				{
 					player.enableSkill(skill);
 				}
@@ -294,7 +294,7 @@ public abstract class AbstractOlympiadGame
 			}
 
 			player.stopAllEffectsExceptThoseThatLastThroughDeath();
-			player.getEffectList().stopEffects(info => info.getSkill().isBlockedInOlympiad(), true, true);
+			player.getEffectList().stopEffects(info => info.getSkill().IsBlockedInOlympiad, true, true);
 			player.clearSouls();
 			player.clearCharges();
 			if (player.getAgathionId() > 0)
@@ -309,7 +309,7 @@ public abstract class AbstractOlympiadGame
 				pet.abortCast();
 				pet.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 				pet.stopAllEffectsExceptThoseThatLastThroughDeath();
-				pet.getEffectList().stopEffects(info => info.getSkill().isBlockedInOlympiad(), true, true);
+				pet.getEffectList().stopEffects(info => info.getSkill().IsBlockedInOlympiad, true, true);
 			}
 
 			foreach (Summon s in player.getServitors().Values)
@@ -321,7 +321,7 @@ public abstract class AbstractOlympiadGame
 					s.abortCast();
 					s.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 					s.stopAllEffectsExceptThoseThatLastThroughDeath();
-					s.getEffectList().stopEffects(info => info.getSkill().isBlockedInOlympiad(), true, true);
+					s.getEffectList().stopEffects(info => info.getSkill().IsBlockedInOlympiad, true, true);
 				}
 			}
 
@@ -419,7 +419,7 @@ public abstract class AbstractOlympiadGame
 			List<ItemInfo> items = new List<ItemInfo>();
 			list.ForEach(holder =>
 			{
-				Item? item = player.getInventory().addItem("Olympiad", holder.getId(), holder.getCount(), player, null);
+				Item? item = player.getInventory().addItem("Olympiad", holder.Id, holder.getCount(), player, null);
 				if (item == null)
 				{
 					return;

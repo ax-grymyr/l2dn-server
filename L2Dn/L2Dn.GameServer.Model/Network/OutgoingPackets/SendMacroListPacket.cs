@@ -11,12 +11,12 @@ public readonly struct SendMacroListPacket(int count, Macro? macro, MacroUpdateT
         writer.WritePacketCode(OutgoingPacketCodes.MACRO_LIST);
 
         writer.WriteByte((byte)updateType);
-        writer.WriteInt32(updateType != MacroUpdateType.LIST ? macro?.getId() ?? 0 : 0); // modified, created or deleted macro's id
+        writer.WriteInt32(updateType != MacroUpdateType.LIST ? macro?.Id ?? 0 : 0); // modified, created or deleted macro's id
         writer.WriteByte((byte)count); // count of Macros
         writer.WriteByte(macro != null); // unknown
         if (macro != null && updateType != MacroUpdateType.DELETE)
         {
-            writer.WriteInt32(macro.getId()); // Macro ID
+            writer.WriteInt32(macro.Id); // Macro ID
             writer.WriteString(macro.getName()); // Macro Name
             writer.WriteString(macro.getDescr()); // Desc
             writer.WriteString(macro.getAcronym()); // acronym

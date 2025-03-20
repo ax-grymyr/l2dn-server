@@ -342,7 +342,7 @@ public class AdminSpawn: IAdminCommandHandler
 						}
 
 						// Set the npcId based on template found.
-						npcId = template.getId().ToString();
+						npcId = template.Id.ToString();
 					}
 				}
 
@@ -402,7 +402,7 @@ public class AdminSpawn: IAdminCommandHandler
 				if (!int.TryParse(searchString, CultureInfo.InvariantCulture, out npcId))
 				{
 					// Otherwise, use it as the NPC name and look up the NPC ID.
-					npcId = NpcData.getInstance().getTemplateByName(searchString)?.getId() ?? 0;
+					npcId = NpcData.getInstance().getTemplateByName(searchString)?.Id ?? 0;
 				}
 
 				// If there are more than two words in the command, try to parse the last word as the teleport index.
@@ -448,7 +448,7 @@ public class AdminSpawn: IAdminCommandHandler
 				{
 					continue;
 				}
-				int npcId = obj.getId();
+				int npcId = obj.Id;
 				if (npcsFound.ContainsKey(npcId))
 				{
 					npcsFound.put(npcId, npcsFound.get(npcId) + 1);
@@ -525,7 +525,7 @@ public class AdminSpawn: IAdminCommandHandler
 
 	private void printSpawn(Npc target, int type)
 	{
-		int i = target.getId();
+		int i = target.Id;
         Spawn? spawn = target.getSpawn();
 		int x = spawn?.Location.X ?? 0;
 		int y = spawn?.Location.Y ?? 0;
@@ -667,7 +667,7 @@ public class AdminSpawn: IAdminCommandHandler
 		int i = from;
 		for (int j = 0; i < mobsCount && j < 50; i++, j++)
 		{
-			tb.Append("<a action=\"bypass -h admin_spawn_monster " + mobs[i].getId() + "\">" + mobs[i].getName() + "</a><br1>");
+			tb.Append("<a action=\"bypass -h admin_spawn_monster " + mobs[i].Id + "\">" + mobs[i].getName() + "</a><br1>");
 		}
 
 		if (i == mobsCount)
@@ -694,7 +694,7 @@ public class AdminSpawn: IAdminCommandHandler
 		int i = from;
 		for (int j = 0; i < mobsCount && j < 50; i++, j++)
 		{
-			tb.Append("<a action=\"bypass -h admin_spawn_monster " + mobs[i].getId() + "\">" + mobs[i].getName() + "</a><br1>");
+			tb.Append("<a action=\"bypass -h admin_spawn_monster " + mobs[i].Id + "\">" + mobs[i].getName() + "</a><br1>");
 		}
 
 		if (i == mobsCount)

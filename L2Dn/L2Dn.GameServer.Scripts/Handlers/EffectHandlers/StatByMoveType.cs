@@ -37,7 +37,7 @@ public sealed class StatByMoveType: AbstractEffect
 
     public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
     {
-        return skill.isPassive() || skill.isToggle();
+        return skill.IsPassive || skill.IsToggle;
     }
 
     public override int GetHashCode() => HashCode.Combine(_stat, _type, _value);

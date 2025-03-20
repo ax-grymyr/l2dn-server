@@ -46,7 +46,7 @@ public sealed class SoulBlow: AbstractEffect
         if (_overHit && effected.isAttackable())
             ((Attackable)effected).overhitEnabled(true);
 
-        bool ss = skill.useSoulShot() && (effector.isChargedShot(ShotType.SOULSHOTS) ||
+        bool ss = skill.UseSoulShot && (effector.isChargedShot(ShotType.SOULSHOTS) ||
             effector.isChargedShot(ShotType.BLESSED_SOULSHOTS));
 
         byte shld = Formulas.calcShldUse(effector, effected);
@@ -55,22 +55,22 @@ public sealed class SoulBlow: AbstractEffect
         Player? player = effector.getActingPlayer();
         if (effector.isPlayer() && player != null)
         {
-            if (skill.getMaxLightSoulConsumeCount() > 0)
+            if (skill.MaxLightSoulConsumeCount > 0)
             {
                 // Souls Formula (each soul increase +4%)
-                int chargedSouls = player.getChargedSouls(SoulType.LIGHT) <= skill.getMaxLightSoulConsumeCount()
+                int chargedSouls = player.getChargedSouls(SoulType.LIGHT) <= skill.MaxLightSoulConsumeCount
                     ? player.getChargedSouls(SoulType.LIGHT)
-                    : skill.getMaxLightSoulConsumeCount();
+                    : skill.MaxLightSoulConsumeCount;
 
                 damage *= 1 + chargedSouls * 0.04;
             }
 
-            if (skill.getMaxShadowSoulConsumeCount() > 0)
+            if (skill.MaxShadowSoulConsumeCount > 0)
             {
                 // Souls Formula (each soul increase +4%)
-                int chargedSouls = player.getChargedSouls(SoulType.SHADOW) <= skill.getMaxShadowSoulConsumeCount()
+                int chargedSouls = player.getChargedSouls(SoulType.SHADOW) <= skill.MaxShadowSoulConsumeCount
                     ? player.getChargedSouls(SoulType.SHADOW)
-                    : skill.getMaxShadowSoulConsumeCount();
+                    : skill.MaxShadowSoulConsumeCount;
 
                 damage *= 1 + chargedSouls * 0.04;
             }

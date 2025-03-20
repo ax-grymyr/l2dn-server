@@ -1,10 +1,10 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.Geometry;
@@ -47,7 +47,7 @@ public class PcBody: ITargetTypeHandler
 		Playable target = (Playable) selectedTarget;
 		if (target.isDead())
 		{
-			if (skill.hasEffectType(EffectType.RESURRECTION))
+			if (skill.HasEffectType(EffectType.RESURRECTION))
 			{
 				if (creature.isResurrectionBlocked() || target.isResurrectionBlocked())
 				{
@@ -73,7 +73,7 @@ public class PcBody: ITargetTypeHandler
 			}
 
 			// Check for cast range if character cannot move. TODO: char will start follow until within castrange, but if his moving is blocked by geodata, this msg will be sent.
-			if (dontMove && (creature.Distance2D(target) > skill.getCastRange()))
+			if (dontMove && (creature.Distance2D(target) > skill.CastRange))
 			{
 				if (sendMessage)
 				{

@@ -112,8 +112,8 @@ public struct RequestBlessOptionEnchantPacket: IIncomingPacket<GameSession>
 				Skill skill = CommonSkill.FIREWORK.getSkill();
 				if (skill != null)
 				{
-					player.broadcastPacket(new MagicSkillUsePacket(player, player, skill.getId(), skill.getLevel(),
-						skill.getHitTime(), skill.getReuseDelay()));
+					player.broadcastPacket(new MagicSkillUsePacket(player, player, skill.Id, skill.Level,
+						skill.HitTime, skill.ReuseDelay));
 				}
 			}
 			if (item.isEquipped())

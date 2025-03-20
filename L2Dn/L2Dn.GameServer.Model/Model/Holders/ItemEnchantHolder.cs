@@ -13,11 +13,11 @@ public class ItemEnchantHolder(int id, long count, int enchantLevel = 0): ItemHo
     public int getEnchantLevel() => enchantLevel;
 
     public override bool Equals(object? obj) =>
-        obj == this || obj is ItemEnchantHolder other && getId() == other.getId() && getCount() == other.getCount() &&
+        obj == this || obj is ItemEnchantHolder other && Id == other.Id && getCount() == other.getCount() &&
         enchantLevel == other.getEnchantLevel();
 
-    public override int GetHashCode() => HashCode.Combine(getId(), getCount(), getEnchantLevel());
+    public override int GetHashCode() => HashCode.Combine(Id, getCount(), getEnchantLevel());
 
     public override string ToString() =>
-        $"[{GetType().Name}] ID: {getId()}, count: {getCount()}, enchant level: {enchantLevel}";
+        $"[{GetType().Name}] ID: {Id}, count: {getCount()}, enchant level: {enchantLevel}";
 }

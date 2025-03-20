@@ -14,7 +14,7 @@ public readonly struct ExAlchemySkillListPacket: IOutgoingPacket
         _skills = new List<Skill>();
         foreach (Skill s in player.getAllSkills())
         {
-            if (SkillTreeData.getInstance().isAlchemySkill(s.getId(), s.getLevel()))
+            if (SkillTreeData.getInstance().isAlchemySkill(s.Id, s.Level))
             {
                 _skills.Add(s);
             }
@@ -32,10 +32,10 @@ public readonly struct ExAlchemySkillListPacket: IOutgoingPacket
         writer.WriteInt32(_skills.Count);
         foreach (Skill skill in _skills)
         {
-            writer.WriteInt32(skill.getId());
-            writer.WriteInt32(skill.getLevel());
+            writer.WriteInt32(skill.Id);
+            writer.WriteInt32(skill.Level);
             writer.WriteInt64(0); // Always 0 on Naia, SP I guess?
-            writer.WriteByte(skill.getId() != (int)CommonSkill.ALCHEMY_CUBE); // This is type in flash, visible or not
+            writer.WriteByte(skill.Id != (int)CommonSkill.ALCHEMY_CUBE); // This is type in flash, visible or not
         }
     }
 }

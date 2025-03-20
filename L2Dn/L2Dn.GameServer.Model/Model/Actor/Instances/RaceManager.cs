@@ -48,7 +48,7 @@ public class RaceManager: Npc
 			HtmlContent htmlContent;
 			if (val < 10)
 			{
-				htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 2, player), player);
+				htmlContent = HtmlContent.LoadFromFile(getHtmlPath(Id, 2, player), player);
 				for (int i = 0; i < 8; i++)
 				{
 					int n = i + 1;
@@ -73,7 +73,7 @@ public class RaceManager: Npc
 					return;
 				}
 
-				htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 3, player), player);
+				htmlContent = HtmlContent.LoadFromFile(getHtmlPath(Id, 3, player), player);
 				htmlContent.Replace("0place", player.getRaceTicket(0).ToString());
 				search = "Mob1";
 				replace = MonsterRace.getInstance().getMonsters()[player.getRaceTicket(0) - 1].getTemplate().getName();
@@ -96,7 +96,7 @@ public class RaceManager: Npc
 					return;
 				}
 
-				htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 4, player), player);
+				htmlContent = HtmlContent.LoadFromFile(getHtmlPath(Id, 4, player), player);
 				htmlContent.Replace("0place", player.getRaceTicket(0).ToString());
 				search = "Mob1";
 				replace = MonsterRace.getInstance().getMonsters()[player.getRaceTicket(0) - 1].getTemplate().getName();
@@ -160,7 +160,7 @@ public class RaceManager: Npc
 				return;
 			}
 
-			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 5, player), player);
+			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(Id, 5, player), player);
 			for (int i = 0; i < 8; i++)
 			{
 				int n = i + 1;
@@ -185,7 +185,7 @@ public class RaceManager: Npc
 				return;
 			}
 
-			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 6, player), player);
+			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(Id, 6, player), player);
 			for (int i = 0; i < 8; i++)
 			{
 				int n = i + 1;
@@ -230,7 +230,7 @@ public class RaceManager: Npc
 				sb.Append("</font> Adena</td></tr>");
 			}
 
-			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 7, player), player);
+			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(Id, 7, player), player);
 			htmlContent.Replace("%tickets%", sb.ToString());
 			htmlContent.Replace("%objectId%", ObjectId.ToString());
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
@@ -267,7 +267,7 @@ public class RaceManager: Npc
 				return;
 			}
 
-			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 8, player), player);
+			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(Id, 8, player), player);
 			htmlContent.Replace("%raceId%", raceId.ToString());
 			htmlContent.Replace("%lane%", lane.ToString());
 			htmlContent.Replace("%bet%", bet.ToString());
@@ -346,7 +346,7 @@ public class RaceManager: Npc
 				sb.Append("</font> Times</td></tr>");
 			}
 
-			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 9, player), player);
+			HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(Id, 9, player), player);
 			htmlContent.Replace("%infos%", sb.ToString());
 			htmlContent.Replace("%objectId%", ObjectId.ToString());
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);

@@ -64,10 +64,10 @@ public sealed class MagicalAttackMp: AbstractEffect
         if (effector.isAlikeDead())
             return;
 
-        bool sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
-        bool bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+        bool sps = skill.UseSpiritShot && effector.isChargedShot(ShotType.SPIRITSHOTS);
+        bool bss = skill.UseSpiritShot && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
         byte shld = Formulas.calcShldUse(effector, effected);
-        bool mcrit = _critical && Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill);
+        bool mcrit = _critical && Formulas.calcCrit(skill.MagicCriticalRate, effector, effected, skill);
         double damage = Formulas.calcManaDam(effector, effected, skill, _power, shld, sps, bss, mcrit, _criticalLimit);
         double mp = Math.Min(effected.getCurrentMp(), damage);
 

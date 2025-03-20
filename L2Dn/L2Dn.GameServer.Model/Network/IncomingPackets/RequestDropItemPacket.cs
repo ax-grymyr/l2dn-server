@@ -125,7 +125,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 
 	    // Cannot discard item that the skill is consuming.
 	    if (player.isCastingNow(s =>
-		        s.getSkill().getItemConsumeId() == item.getId() && item.getTemplate().getDefaultAction() ==
+		        s.getSkill().ItemConsumeId == item.Id && item.getTemplate().getDefaultAction() ==
 		        ActionType.SKILL_REDUCE_ON_SKILL_SUCCESS))
 	    {
 		    connection.Send(SystemMessageId.THAT_ITEM_CANNOT_BE_DISCARDED);
@@ -145,7 +145,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 		    return ValueTask.CompletedTask;
 	    }
 
-	    if (!player.getInventory().canManipulateWithItemId(item.getId()))
+	    if (!player.getInventory().canManipulateWithItemId(item.Id))
 	    {
 		    player.sendMessage("You cannot use this item.");
 		    return ValueTask.CompletedTask;
@@ -157,9 +157,9 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 		    foreach (SkillCaster skillCaster in player.getSkillCasters())
 		    {
 			    Skill skill = skillCaster.getSkill();
-			    if (skill != null && player.getKnownSkill(skill.getId()) != null)
+			    if (skill != null && player.getKnownSkill(skill.Id) != null)
 			    {
-				    player.sendMessage("You cannot drop an item while casting " + skill.getName() + ".");
+				    player.sendMessage("You cannot drop an item while casting " + skill.Name + ".");
 				    return ValueTask.CompletedTask;
 			    }
 		    }
@@ -168,7 +168,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 	    SkillUseHolder? skillUseHolder = player.getQueuedSkill();
 	    if (skillUseHolder != null && player.getKnownSkill(skillUseHolder.getSkillId()) != null)
 	    {
-		    player.sendMessage("You cannot drop an item while casting " + skillUseHolder.getSkill().getName() + ".");
+		    player.sendMessage("You cannot drop an item while casting " + skillUseHolder.getSkill().Name + ".");
 		    return ValueTask.CompletedTask;
 	    }
 
@@ -188,7 +188,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 		    //GMAudit.auditGMAction(player.getName() + " [" + player.getObjectId() + "]", "Drop", target, "(id: " + dropedItem.getId() + " name: " + dropedItem.getItemName() + " objId: " + dropedItem.getObjectId() + " x: " + player.getX() + " y: " + player.getY() + " z: " + player.getZ() + ")");
 	    }
 
-	    if (dropedItem != null && dropedItem.getId() == Inventory.ADENA_ID && dropedItem.getCount() >= 1000000)
+	    if (dropedItem != null && dropedItem.Id == Inventory.ADENA_ID && dropedItem.getCount() >= 1000000)
 	    {
 		    string msg = $"Character ({player.getName()}) has dropped ({dropedItem.getCount()})adena at {_location}";
 		    PacketLogger.Instance.Warn(msg);

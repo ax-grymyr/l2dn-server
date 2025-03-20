@@ -58,12 +58,12 @@ public sealed class MagicalAttackRange: AbstractEffect
         }
 
         double damage = 1;
-        bool mcrit = Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill);
+        bool mcrit = Formulas.calcCrit(skill.MagicCriticalRate, effector, effected, skill);
 
         if (mDef != -1)
         {
-            bool sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
-            bool bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+            bool sps = skill.UseSpiritShot && effector.isChargedShot(ShotType.SPIRITSHOTS);
+            bool bss = skill.UseSpiritShot && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 
             damage = Formulas.calcMagicDam(effector, effected, skill, effector.getMAtk(), _power, mDef, sps, bss,
                 mcrit);

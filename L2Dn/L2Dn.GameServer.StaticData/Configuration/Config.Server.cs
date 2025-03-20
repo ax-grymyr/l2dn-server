@@ -1,5 +1,4 @@
-﻿using System.Collections.Frozen;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using L2Dn.Configuration;
 
@@ -24,11 +23,6 @@ public static partial class Config
         public static bool HARDWARE_INFO_ENABLED;
         public static bool KICK_MISSING_HWID;
         public static int MAX_PLAYERS_PER_HWID;
-
-        public static FrozenSet<int> PROTOCOL_LIST = FrozenSet<int>.Empty;
-        public static GameServerType SERVER_LIST_TYPE;
-        public static int SERVER_LIST_AGE;
-        public static bool SERVER_LIST_BRACKET;
 
         public static int SCHEDULED_THREAD_POOL_SIZE;
         public static int INSTANT_THREAD_POOL_SIZE;
@@ -66,10 +60,6 @@ public static partial class Config
             if (MAX_PLAYERS_PER_HWID > 0)
                 KICK_MISSING_HWID = true;
 
-            PROTOCOL_LIST = parser.GetSet("AllowedProtocolRevisions", ';', 447);
-            SERVER_LIST_TYPE = parser.GetEnum("ServerListType", GameServerType.Classic);
-            SERVER_LIST_AGE = parser.getInt("ServerListAge");
-            SERVER_LIST_BRACKET = parser.getBoolean("ServerListBrackets");
             SCHEDULED_THREAD_POOL_SIZE = parser.getInt("ScheduledThreadPoolSize", Environment.ProcessorCount * 4);
             INSTANT_THREAD_POOL_SIZE = parser.getInt("InstantThreadPoolSize", Environment.ProcessorCount * 2);
             THREADS_FOR_LOADING = parser.getBoolean("ThreadsForLoading");

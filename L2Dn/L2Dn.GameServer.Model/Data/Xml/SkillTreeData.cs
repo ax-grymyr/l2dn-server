@@ -186,7 +186,7 @@ public class SkillTreeData: DataReaderBase
                 }
             }
 
-			long skillHashCode = SkillData.getSkillHashCode(skillLearn.getSkillId(), skillLearn.getSkillLevel());
+			long skillHashCode = Skill.GetSkillHashCode(skillLearn.getSkillId(), skillLearn.getSkillLevel());
 			switch (type)
 			{
 				case XmlSkillTreeType.classSkillTree:
@@ -552,7 +552,7 @@ public class SkillTreeData: DataReaderBase
 			}
 
 			Skill? oldSkill = player.getKnownSkill(skill.getSkillId());
-			if (oldSkill != null && oldSkill.getLevel() == skill.getSkillLevel() - 1)
+			if (oldSkill != null && oldSkill.Level == skill.getSkillLevel() - 1)
 			{
 				return true;
 			}
@@ -628,7 +628,7 @@ public class SkillTreeData: DataReaderBase
 				Skill? oldSkill = holder.getKnownSkill(player.getReplacementSkill(skill.getSkillId()));
 				if (oldSkill != null)
 				{
-					if (oldSkill.getLevel() == skill.getSkillLevel() - 1)
+					if (oldSkill.Level == skill.getSkillLevel() - 1)
 					{
 						result.add(skill);
 					}
@@ -643,7 +643,7 @@ public class SkillTreeData: DataReaderBase
 		// Manage skill unlearn for player skills.
 		foreach (Skill knownSkill in player.getSkillList())
 		{
-			SkillLearn? skillLearn = getClassSkill(player.getOriginalSkill(knownSkill.getId()), knownSkill.getLevel(), classId);
+			SkillLearn? skillLearn = getClassSkill(player.getOriginalSkill(knownSkill.Id), knownSkill.Level, classId);
 			if (skillLearn == null)
 			{
 				continue;
@@ -652,10 +652,10 @@ public class SkillTreeData: DataReaderBase
 			Set<int> removeSkills = skillLearn.getRemoveSkills();
 			if (removeSkills.isEmpty())
 			{
-				if (knownSkill.getLevel() > 1)
+				if (knownSkill.Level > 1)
 				{
 					// Check first skill level for removed skills.
-					skillLearn = getClassSkill(knownSkill.getId(), 1, classId);
+					skillLearn = getClassSkill(knownSkill.Id, 1, classId);
 					if (skillLearn == null)
 					{
 						continue;
@@ -823,7 +823,7 @@ public class SkillTreeData: DataReaderBase
 			Skill? oldSkill = player.getKnownSkill(player.getReplacementSkill(skill.getSkillId()));
 			if (oldSkill != null)
 			{
-				if (oldSkill.getLevel() < skill.getSkillLevel())
+				if (oldSkill.Level < skill.getSkillLevel())
 				{
 					result.Add(skill);
 				}
@@ -837,7 +837,7 @@ public class SkillTreeData: DataReaderBase
 		// Manage skill unlearn for player skills.
 		foreach (Skill knownSkill in player.getSkillList())
 		{
-			SkillLearn? skillLearn = getClassSkill(player.getOriginalSkill(knownSkill.getId()), knownSkill.getLevel(), player.getClassId());
+			SkillLearn? skillLearn = getClassSkill(player.getOriginalSkill(knownSkill.Id), knownSkill.Level, player.getClassId());
 			if (skillLearn == null)
 			{
 				continue;
@@ -846,10 +846,10 @@ public class SkillTreeData: DataReaderBase
 			Set<int> removeSkills = skillLearn.getRemoveSkills();
 			if (removeSkills.isEmpty())
 			{
-				if (knownSkill.getLevel() > 1)
+				if (knownSkill.Level > 1)
 				{
 					// Check first skill level for removed skills.
-					skillLearn = getClassSkill(knownSkill.getId(), 1, player.getClassId());
+					skillLearn = getClassSkill(knownSkill.Id, 1, player.getClassId());
 					if (skillLearn == null)
 					{
 						continue;
@@ -905,7 +905,7 @@ public class SkillTreeData: DataReaderBase
 				Skill? oldSkill = player.getSkills().get(skill.getSkillId());
 				if (oldSkill != null)
 				{
-					if (oldSkill.getLevel() == skill.getSkillLevel() - 1)
+					if (oldSkill.Level == skill.getSkillLevel() - 1)
 					{
 						result.Add(skill);
 					}
@@ -959,7 +959,7 @@ public class SkillTreeData: DataReaderBase
 				Skill? oldSkill = player.getSkills().get(skill.getSkillId());
 				if (oldSkill != null)
 				{
-					if (oldSkill.getLevel() == skill.getSkillLevel() - 1)
+					if (oldSkill.Level == skill.getSkillLevel() - 1)
 					{
 						result.Add(skill);
 					}
@@ -986,7 +986,7 @@ public class SkillTreeData: DataReaderBase
 			Skill? oldSkill = player.getSkills().get(skill.getSkillId());
 			if (oldSkill != null)
 			{
-				if (oldSkill.getLevel() == skill.getSkillLevel() - 1)
+				if (oldSkill.Level == skill.getSkillLevel() - 1)
 				{
 					result.Add(skill);
 				}
@@ -1040,7 +1040,7 @@ public class SkillTreeData: DataReaderBase
 				Skill? oldSkill = player.getSkills().get(skill.getSkillId());
 				if (oldSkill != null)
 				{
-					if (oldSkill.getLevel() == skill.getSkillLevel() - 1)
+					if (oldSkill.Level == skill.getSkillLevel() - 1)
 					{
 						result.Add(skill);
 					}
@@ -1069,7 +1069,7 @@ public class SkillTreeData: DataReaderBase
 				Skill? oldSkill = clan.getSkills().get(skill.getSkillId());
 				if (oldSkill != null)
 				{
-					if (oldSkill.getLevel() + 1 == skill.getSkillLevel())
+					if (oldSkill.Level + 1 == skill.getSkillLevel())
 					{
 						result.Add(skill);
 					}
@@ -1097,7 +1097,7 @@ public class SkillTreeData: DataReaderBase
 			if (!skill.isResidencialSkill() && clan.getLevel() >= skill.getGetLevel())
 			{
 				Skill? oldSkill = clan.getSkills().get(skill.getSkillId());
-				if (oldSkill == null || oldSkill.getLevel() < skill.getSkillLevel())
+				if (oldSkill == null || oldSkill.Level < skill.getSkillLevel())
 				{
 					result.put(skill.getSkillId(), skill);
 				}
@@ -1111,7 +1111,7 @@ public class SkillTreeData: DataReaderBase
 				if (clan.getLevel() >= skill.getGetLevel())
 				{
 					Skill? oldSkill = clan.getSkills().get(skill.getSkillId());
-					if (oldSkill == null || oldSkill.getLevel() < skill.getSkillLevel())
+					if (oldSkill == null || oldSkill.Level < skill.getSkillLevel())
 					{
 						result.put(skill.getSkillId(), skill);
 					}
@@ -1150,7 +1150,7 @@ public class SkillTreeData: DataReaderBase
 		foreach (SkillLearn skill  in  _subClassSkillTree.Values)
 		{
 			Skill? oldSkill = player.getSkills().get(skill.getSkillId());
-			if ((oldSkill == null && skill.getSkillLevel() == 1) || (oldSkill != null && oldSkill.getLevel() == skill.getSkillLevel() - 1))
+			if ((oldSkill == null && skill.getSkillLevel() == 1) || (oldSkill != null && oldSkill.Level == skill.getSkillLevel() - 1))
 			{
 				result.Add(skill);
 			}
@@ -1169,7 +1169,7 @@ public class SkillTreeData: DataReaderBase
 		foreach (SkillLearn skill  in  _dualClassSkillTree.Values)
 		{
 			Skill? oldSkill = player.getSkills().get(skill.getSkillId());
-			if ((oldSkill == null && skill.getSkillLevel() == 1) || (oldSkill != null && oldSkill.getLevel() == skill.getSkillLevel() - 1))
+			if ((oldSkill == null && skill.getSkillLevel() == 1) || (oldSkill != null && oldSkill.Level == skill.getSkillLevel() - 1))
 			{
 				result.Add(skill);
 			}
@@ -1282,7 +1282,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	private SkillLearn? getTransformSkill(int id, int lvl)
 	{
-		return _transformSkillTree.get(SkillData.getSkillHashCode(id, lvl));
+		return _transformSkillTree.get(Skill.GetSkillHashCode(id, lvl));
 	}
 
 	/**
@@ -1293,7 +1293,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public SkillLearn? getAbilitySkill(int id, int lvl)
 	{
-		return _abilitySkillTree.get(SkillData.getSkillHashCode(id, lvl));
+		return _abilitySkillTree.get(Skill.GetSkillHashCode(id, lvl));
 	}
 
 	/**
@@ -1304,7 +1304,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	private SkillLearn? getAlchemySkill(int id, int lvl)
 	{
-		return _alchemySkillTree.get(SkillData.getSkillHashCode(id, lvl));
+		return _alchemySkillTree.get(Skill.GetSkillHashCode(id, lvl));
 	}
 
 	/**
@@ -1316,7 +1316,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public SkillLearn? getClassSkill(int id, int lvl, CharacterClass classId)
 	{
-		return getCompleteClassSkillTree(classId).get(SkillData.getSkillHashCode(id, lvl));
+		return getCompleteClassSkillTree(classId).get(Skill.GetSkillHashCode(id, lvl));
 	}
 
 	/**
@@ -1327,7 +1327,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	private SkillLearn? getFishingSkill(int id, int lvl)
 	{
-		return _fishingSkillTree.get(SkillData.getSkillHashCode(id, lvl));
+		return _fishingSkillTree.get(Skill.GetSkillHashCode(id, lvl));
 	}
 
 	/**
@@ -1338,7 +1338,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public SkillLearn? getPledgeSkill(int id, int lvl)
 	{
-		return _pledgeSkillTree.get(SkillData.getSkillHashCode(id, lvl));
+		return _pledgeSkillTree.get(Skill.GetSkillHashCode(id, lvl));
 	}
 
 	/**
@@ -1349,7 +1349,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public SkillLearn? getSubPledgeSkill(int id, int lvl)
 	{
-		return _subPledgeSkillTree.get(SkillData.getSkillHashCode(id, lvl));
+		return _subPledgeSkillTree.get(Skill.GetSkillHashCode(id, lvl));
 	}
 
 	/**
@@ -1363,7 +1363,7 @@ public class SkillTreeData: DataReaderBase
 	{
 		if (_transferSkillTrees.get(classId) != null)
 		{
-			return _transferSkillTrees.get(classId)?.get(SkillData.getSkillHashCode(id, lvl));
+			return _transferSkillTrees.get(classId)?.get(Skill.GetSkillHashCode(id, lvl));
 		}
 		return null;
 	}
@@ -1395,7 +1395,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	private SkillLearn? getSubClassSkill(int id, int lvl)
 	{
-		return _subClassSkillTree.get(SkillData.getSkillHashCode(id, lvl));
+		return _subClassSkillTree.get(Skill.GetSkillHashCode(id, lvl));
 	}
 
 	/**
@@ -1406,7 +1406,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public SkillLearn? getDualClassSkill(int id, int lvl)
 	{
-		return _dualClassSkillTree.get(SkillData.getSkillHashCode(id, lvl));
+		return _dualClassSkillTree.get(Skill.GetSkillHashCode(id, lvl));
 	}
 
 	/**
@@ -1417,7 +1417,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public SkillLearn? getCommonSkill(int id, int lvl)
 	{
-		return _commonSkillTree.get(SkillData.getSkillHashCode(id, lvl));
+		return _commonSkillTree.get(Skill.GetSkillHashCode(id, lvl));
 	}
 
 	/**
@@ -1428,7 +1428,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public SkillLearn? getCollectSkill(int id, int lvl)
 	{
-		return _collectSkillTree.get(SkillData.getSkillHashCode(id, lvl));
+		return _collectSkillTree.get(Skill.GetSkillHashCode(id, lvl));
 	}
 
 	/**
@@ -1440,7 +1440,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public SkillLearn? getRevelationSkill(SubclassType type, int id, int lvl)
 	{
-		return _revelationSkillTree.get(type)?.get(SkillData.getSkillHashCode(id, lvl));
+		return _revelationSkillTree.get(type)?.get(Skill.GetSkillHashCode(id, lvl));
 	}
 
 	/**
@@ -1498,7 +1498,7 @@ public class SkillTreeData: DataReaderBase
 					Skill? oldSkill = player.getKnownSkill(player.getReplacementSkill(skill.getSkillId()));
 					if (oldSkill != null)
 					{
-						if (oldSkill.getLevel() == skill.getSkillLevel() - 1)
+						if (oldSkill.Level == skill.getSkillLevel() - 1)
 						{
 							result.add(skill);
 						}
@@ -1514,7 +1514,7 @@ public class SkillTreeData: DataReaderBase
 		// Manage skill unlearn for player skills.
 		foreach (Skill knownSkill  in  player.getSkillList())
 		{
-			SkillLearn? skillLearn = getClassSkill(player.getOriginalSkill(knownSkill.getId()), knownSkill.getLevel(), classId);
+			SkillLearn? skillLearn = getClassSkill(player.getOriginalSkill(knownSkill.Id), knownSkill.Level, classId);
 			if (skillLearn == null)
 			{
 				continue;
@@ -1523,10 +1523,10 @@ public class SkillTreeData: DataReaderBase
 			Set<int> removeSkills = skillLearn.getRemoveSkills();
 			if (removeSkills.isEmpty())
 			{
-				if (knownSkill.getLevel() > 1)
+				if (knownSkill.Level > 1)
 				{
 					// Check first skill level for removed skills.
-					skillLearn = getClassSkill(knownSkill.getId(), 1, classId);
+					skillLearn = getClassSkill(knownSkill.Id, 1, classId);
 					if (skillLearn == null)
 					{
 						continue;
@@ -1565,9 +1565,9 @@ public class SkillTreeData: DataReaderBase
 		CharacterClass currentClass = player.getClassId();
 		foreach (Skill skill  in  player.getAllSkills())
 		{
-			int maxLevel = SkillData.getInstance().getMaxLevel(skill.getId());
-			long hashCode = SkillData.getSkillHashCode(skill.getId(), maxLevel);
-			if (!isCurrentClassSkillNoParent(currentClass, hashCode) && !isRemoveSkill(currentClass, skill.getId()) && !isAwakenSaveSkill(currentClass, skill.getId()) && !isAlchemySkill(skill.getId(), skill.getLevel()))
+			int maxLevel = SkillData.getInstance().getMaxLevel(skill.Id);
+			long hashCode = Skill.GetSkillHashCode(skill.Id, maxLevel);
+			if (!isCurrentClassSkillNoParent(currentClass, hashCode) && !isRemoveSkill(currentClass, skill.Id) && !isAwakenSaveSkill(currentClass, skill.Id) && !isAlchemySkill(skill.Id, skill.Level))
 			{
 				// Do not remove equipped item skills.
 				bool isItemSkill = false;
@@ -1579,7 +1579,7 @@ public class SkillTreeData: DataReaderBase
 						bool breakOuter = false;
 						foreach (ItemSkillHolder itemSkillHolder  in  itemSkills)
 						{
-							if (itemSkillHolder.getSkillId() == skill.getId())
+							if (itemSkillHolder.getSkillId() == skill.Id)
 							{
 								isItemSkill = true;
 								breakOuter = true;
@@ -1623,7 +1623,7 @@ public class SkillTreeData: DataReaderBase
 
 	public bool isAlchemySkill(int skillId, int skillLevel)
 	{
-		return _alchemySkillTree.ContainsKey(SkillData.getSkillHashCode(skillId, skillLevel));
+		return _alchemySkillTree.ContainsKey(Skill.GetSkillHashCode(skillId, skillLevel));
 	}
 
 	/**
@@ -1634,7 +1634,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public bool isHeroSkill(int skillId, int skillLevel)
 	{
-		return _heroSkillTree.ContainsKey(SkillData.getSkillHashCode(skillId, skillLevel));
+		return _heroSkillTree.ContainsKey(Skill.GetSkillHashCode(skillId, skillLevel));
 	}
 
 	/**
@@ -1645,7 +1645,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public bool isGMSkill(int skillId, int skillLevel)
 	{
-		long hashCode = SkillData.getSkillHashCode(skillId, skillLevel);
+		long hashCode = Skill.GetSkillHashCode(skillId, skillLevel);
 		return _gameMasterSkillTree.ContainsKey(hashCode) || _gameMasterAuraSkillTree.ContainsKey(hashCode);
 	}
 
@@ -1657,7 +1657,7 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public bool isClanSkill(int skillId, int skillLevel)
 	{
-		long hashCode = SkillData.getSkillHashCode(skillId, skillLevel);
+		long hashCode = Skill.GetSkillHashCode(skillId, skillLevel);
 		return _pledgeSkillTree.ContainsKey(hashCode) || _subPledgeSkillTree.ContainsKey(hashCode);
 	}
 
@@ -1727,7 +1727,7 @@ public class SkillTreeData: DataReaderBase
 			{
 				if (s.getRaces().Contains(r))
 				{
-					list.Add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
+					list.Add(Skill.GetSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 				}
 			}
 
@@ -1735,7 +1735,7 @@ public class SkillTreeData: DataReaderBase
 			{
 				if (s.getRaces().Contains(r))
 				{
-					list.Add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
+					list.Add(Skill.GetSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 				}
 			}
 
@@ -1756,7 +1756,7 @@ public class SkillTreeData: DataReaderBase
 		{
 			if (s.getRaces().isEmpty())
 			{
-				list.Add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
+				list.Add(Skill.GetSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 			}
 		}
 
@@ -1764,7 +1764,7 @@ public class SkillTreeData: DataReaderBase
 		{
 			if (s.getRaces().isEmpty())
 			{
-				list.Add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
+				list.Add(Skill.GetSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 			}
 		}
 
@@ -1772,23 +1772,23 @@ public class SkillTreeData: DataReaderBase
 		{
 			if (s.getRaces().isEmpty())
 			{
-				list.Add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
+				list.Add(Skill.GetSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 			}
 		}
 
 		foreach (SkillLearn s  in  _collectSkillTree.Values)
 		{
-			list.Add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
+			list.Add(Skill.GetSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 		}
 
 		foreach (SkillLearn s  in  _abilitySkillTree.Values)
 		{
-			list.Add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
+			list.Add(Skill.GetSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 		}
 
 		foreach (SkillLearn s  in  _alchemySkillTree.Values)
 		{
-			list.Add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
+			list.Add(Skill.GetSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 		}
 
 		_allSkillsHashCodes = new long[list.Count];
@@ -1809,12 +1809,12 @@ public class SkillTreeData: DataReaderBase
 	 */
 	public bool isSkillAllowed(Player player, Skill skill)
 	{
-		if (skill.isExcludedFromCheck())
+		if (skill.IsExcludedFromCheck)
 		{
 			return true;
 		}
 
-		if (player.isGM() && skill.isGMSkill())
+		if (player.isGM() && skill.IsGmSkill())
 		{
 			return true;
 		}
@@ -1825,8 +1825,8 @@ public class SkillTreeData: DataReaderBase
 			return true;
 		}
 
-		int maxLevel = SkillData.getInstance().getMaxLevel(skill.getId());
-		long hashCode = SkillData.getSkillHashCode(skill.getId(), Math.Min(skill.getLevel(), maxLevel));
+		int maxLevel = SkillData.getInstance().getMaxLevel(skill.Id);
+		long hashCode = Skill.GetSkillHashCode(skill.Id, Math.Min(skill.Level, maxLevel));
 
         long[]? skillsByClassIdHashCodes = _skillsByClassIdHashCodes.get(player.getClassId());
 		if (skillsByClassIdHashCodes != null && Array.BinarySearch(skillsByClassIdHashCodes, hashCode) >= 0)
@@ -1846,13 +1846,13 @@ public class SkillTreeData: DataReaderBase
 		}
 
 		// Exclude Transfer Skills from this check.
-		if (getTransferSkill(skill.getId(), Math.Min(skill.getLevel(), maxLevel), player.getClassId()) != null)
+		if (getTransferSkill(skill.Id, Math.Min(skill.Level, maxLevel), player.getClassId()) != null)
 		{
 			return true;
 		}
 
 		// Exclude Race skills from this check.
-		if (getRaceSkill(skill.getId(), Math.Min(skill.getLevel(), maxLevel), player.getRace()) != null)
+		if (getRaceSkill(skill.Id, Math.Min(skill.Level, maxLevel), player.getRace()) != null)
 		{
 			return true;
 		}

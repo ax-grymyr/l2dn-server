@@ -204,16 +204,13 @@ public class Npc: Creature
 		return (NpcTemplate)base.getTemplate();
 	}
 
-	/**
+    /**
 	 * Gets the NPC ID.
 	 * @return the NPC ID
 	 */
-	public override int getId()
-	{
-		return getTemplate().getId();
-	}
+    public override int Id => getTemplate().Id;
 
-	public override bool canBeAttacked()
+    public override bool canBeAttacked()
 	{
 		return Config.Npc.ALT_ATTACKABLE_NPCS;
 	}
@@ -482,7 +479,7 @@ public class Npc: Creature
 
 	public ClanHall? getClanHall()
 	{
-		if (getId() == 33360) // Provisional Hall Manager
+		if (Id == 33360) // Provisional Hall Manager
 		{
 			foreach (Zone zone in ZoneManager.Instance.getZones(Location.Location3D))
 			{
@@ -496,7 +493,7 @@ public class Npc: Creature
 				}
 			}
 		}
-		return ClanHallData.getInstance().getClanHallByNpcId(getId());
+		return ClanHallData.getInstance().getClanHallByNpcId(Id);
 	}
 
 	/**
@@ -548,7 +545,7 @@ public class Npc: Creature
 			}
 			else
 			{
-				LOGGER.Info(GetType().Name + ": Unknown NPC bypass: \"" + command + "\" NpcId: " + getId());
+				LOGGER.Info(GetType().Name + ": Unknown NPC bypass: \"" + command + "\" NpcId: " + Id);
 			}
 		}
 	}
@@ -640,7 +637,7 @@ public class Npc: Creature
 	 */
 	private bool showPkDenyChatWindow(Player player, string type)
 	{
-		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/" + type + "/" + getId() + "-pk.htm", player);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/" + type + "/" + Id + "-pk.htm", player);
 		if (htmlContent.FileLoaded)
 		{
 			htmlContent.Replace("%objectId%", ObjectId.ToString(CultureInfo.InvariantCulture));
@@ -708,7 +705,7 @@ public class Npc: Creature
 			return;
 		}
 
-		int npcId = getTemplate().getId();
+		int npcId = getTemplate().Id;
 		string filename;
 		switch (npcId)
 		{
@@ -840,7 +837,7 @@ public class Npc: Creature
 		_currentCollisionRadius = getTemplate().getFCollisionRadius();
 
 		Weapon? weapon = killer != null ? killer.getActiveWeaponItem() : null;
-		_killingBlowWeaponId = weapon != null ? weapon.getId() : 0;
+		_killingBlowWeaponId = weapon != null ? weapon.Id : 0;
         Player? player = killer?.getActingPlayer();
 		if (_isFakePlayer && killer != null && killer.isPlayable() && player != null)
 		{
@@ -997,7 +994,7 @@ public class Npc: Creature
             setClanId(castle.getOwnerId());
         }
 
-        if (CREATURE_SEE_IDS.Contains(getId()))
+        if (CREATURE_SEE_IDS.Contains(Id))
 		{
 			initSeenCreatures();
 		}
@@ -1075,7 +1072,7 @@ public class Npc: Creature
 		base.onDecay();
 
 		// Decrease its spawn counter
-		if (_spawn != null && !DbSpawnManager.getInstance().isDefined(getId()))
+		if (_spawn != null && !DbSpawnManager.getInstance().isDefined(Id))
 		{
 			_spawn.decreaseCount(this);
 		}
@@ -1424,7 +1421,7 @@ public class Npc: Creature
 	public NpcVariables getVariables()
 	{
 		NpcVariables? vars = getScript<NpcVariables>();
-		return vars != null ? vars : addScript(new NpcVariables(getTemplate().getId()));
+		return vars != null ? vars : addScript(new NpcVariables(getTemplate().Id));
 	}
 
 	/**
@@ -1533,7 +1530,7 @@ public class Npc: Creature
 	 */
 	public Item? dropItem(Creature creature, ItemHolder item)
 	{
-		return dropItem(creature, item.getId(), item.getCount());
+		return dropItem(creature, item.Id, item.getCount());
 	}
 
 	public override string getName()
@@ -1862,7 +1859,7 @@ public class Npc: Creature
 		sb.Append(':');
 		sb.Append(getName());
 		sb.Append('(');
-		sb.Append(getId());
+		sb.Append(Id);
 		sb.Append(")[");
 		sb.Append(ObjectId);
 		sb.Append(']');

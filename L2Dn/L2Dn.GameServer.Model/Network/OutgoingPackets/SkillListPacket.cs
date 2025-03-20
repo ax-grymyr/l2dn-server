@@ -38,7 +38,7 @@ public readonly struct SkillListPacket: IOutgoingPacket
 
     public void addSkill(int id, int reuseDelayGroup, int level, int subLevel, bool passive, bool disabled, bool enchanted)
     {
-        bool toggle = SkillData.getInstance().getSkill(id, level, subLevel)?.isToggle() ?? false;
+        bool toggle = SkillData.getInstance().getSkill(id, level, subLevel)?.IsToggle ?? false;
         _skills.Add(new SkillDto(id, reuseDelayGroup, level, subLevel, passive, disabled, enchanted, toggle));
     }
 

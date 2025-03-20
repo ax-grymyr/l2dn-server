@@ -120,12 +120,9 @@ public abstract class MatchingRoom: IIdentifiable
 		notifyRemovedMember(player, kicked, leaderChanged);
 	}
 
-	public int getId()
-	{
-		return _id;
-	}
+    public int Id => _id;
 
-	public PartyDistributionType getLootType()
+    public PartyDistributionType getLootType()
 	{
 		return _loot;
 	}

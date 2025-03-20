@@ -464,13 +464,13 @@ public class AdminEditChar: IAdminCommandHandler
 					player.store(false);
 					foreach (Skill oldSkill in player.getAllSkills())
 					{
-						if (oldSkill.isBad())
+						if (oldSkill.IsBad)
 						{
-							AutoUseTaskManager.getInstance().removeAutoSkill(player, oldSkill.getId());
+							AutoUseTaskManager.getInstance().removeAutoSkill(player, oldSkill.Id);
 						}
 						else
 						{
-							AutoUseTaskManager.getInstance().removeAutoBuff(player, oldSkill.getId());
+							AutoUseTaskManager.getInstance().removeAutoBuff(player, oldSkill.Id);
 						}
 						player.removeSkill(oldSkill, true, true);
 					}

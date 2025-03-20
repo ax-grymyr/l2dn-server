@@ -41,7 +41,7 @@ public sealed class GetMomentum: AbstractEffect
             player.sendPacket(new EtcStatusUpdatePacket(player));
         }
 
-        return skill.isToggle();
+        return skill.IsToggle;
     }
 
     public override int GetHashCode() => Ticks;

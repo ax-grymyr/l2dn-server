@@ -242,7 +242,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	 */
 	public void banishForeigners()
     {
-        getResidenceZone().banishForeigners(_fortOwner?.getId() ?? 0);
+        getResidenceZone().banishForeigners(_fortOwner?.Id ?? 0);
     }
 
 	/**
@@ -790,7 +790,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		int? clanId = null;
 		if (clan != null)
 		{
-			clanId = clan.getId();
+			clanId = clan.Id;
 			_lastOwnedTime = DateTime.UtcNow;;
 		}
 		else
@@ -851,7 +851,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 	public override int getOwnerId()
 	{
 		Clan? clan = _fortOwner;
-		return clan != null ? clan.getId() : -1;
+		return clan != null ? clan.Id : -1;
 	}
 
 	public Clan? getOwnerClan()
@@ -874,7 +874,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 
 		foreach (Door door in _doors)
 		{
-			if (door.getId() == doorId)
+			if (door.Id == doorId)
 			{
 				return door;
 			}

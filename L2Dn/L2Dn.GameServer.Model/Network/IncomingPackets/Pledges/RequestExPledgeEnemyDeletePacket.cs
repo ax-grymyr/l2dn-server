@@ -37,7 +37,7 @@ public struct RequestExPledgeEnemyDeletePacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (!playerClan.isAtWarWith(enemyClan.getId()))
+        if (!playerClan.isAtWarWith(enemyClan.Id))
         {
             player.sendPacket(SystemMessageId.ENTER_THE_NAME_OF_THE_CLAN_YOU_WISH_TO_END_THE_WAR_WITH);
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -66,7 +66,7 @@ public struct RequestExPledgeEnemyDeletePacket: IIncomingPacket<GameSession>
 
         // Reduce reputation.
         playerClan.takeReputationScore(500);
-        ClanTable.getInstance().deleteClanWars(playerClan.getId(), enemyClan.getId());
+        ClanTable.getInstance().deleteClanWars(playerClan.Id, enemyClan.Id);
 
         broadcastClanInfo(playerClan, enemyClan);
 

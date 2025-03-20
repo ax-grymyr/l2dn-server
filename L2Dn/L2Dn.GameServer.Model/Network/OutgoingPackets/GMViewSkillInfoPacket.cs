@@ -27,13 +27,13 @@ public readonly struct GMViewSkillInfoPacket: IOutgoingPacket
         bool isDisabled = clan != null && clan.getReputationScore() < 0;
         foreach (Skill skill in _skills)
         {
-            writer.WriteInt32(skill.isPassive());
-            writer.WriteInt16((short)skill.getDisplayLevel());
-            writer.WriteInt16((short)skill.getSubLevel());
-            writer.WriteInt32(skill.getDisplayId());
+            writer.WriteInt32(skill.IsPassive);
+            writer.WriteInt16((short)skill.DisplayLevel);
+            writer.WriteInt16((short)skill.SubLevel);
+            writer.WriteInt32(skill.DisplayId);
             writer.WriteInt32(0);
-            writer.WriteByte(isDisabled && skill.isClanSkill());
-            writer.WriteByte(skill.isEnchantable());
+            writer.WriteByte(isDisabled && skill.IsClanSkill());
+            writer.WriteByte(skill.IsEnchantable());
         }
     }
 }

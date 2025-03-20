@@ -35,7 +35,7 @@ public struct ExRequestResetEnchantChallengePointPacket: IIncomingPacket<GameSes
             return ValueTask.CompletedTask;
         }
 
-        EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(enchantingScroll.getId());
+        EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(enchantingScroll.Id);
         if (scrollTemplate == null)
         {
             player.sendPacket(new ExResetEnchantChallengePointPacket(false));

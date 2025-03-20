@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.Model.Enums;
 using L2Dn.Packets;
@@ -727,40 +728,40 @@ public readonly struct ExUserViewInfoParameterPacket(Player player): IOutgoingPa
         // ################################## SKILL COOLDOWN ##############################
         // P. Skill Cooldown (%)
         writer.WriteInt16(index++);
-        writer.WriteInt32((int)player.getStat().getReuseTypeValue(1) * 100);
+        writer.WriteInt32((int)player.getStat().getReuseTypeValue(SkillMagicType.Physical) * 100);
 
         // M. Skill Cooldown (%)
         writer.WriteInt16(index++);
-        writer.WriteInt32((int)player.getStat().getReuseTypeValue(2) * 100);
+        writer.WriteInt32((int)player.getStat().getReuseTypeValue(SkillMagicType.Magic) * 100);
 
         // Song/ Dance Cooldown (%)
         writer.WriteInt16(index++);
-        writer.WriteInt32((int)player.getStat().getReuseTypeValue(3) * 100);
+        writer.WriteInt32((int)player.getStat().getReuseTypeValue(SkillMagicType.Dance) * 100);
 
         // ################################## MP CONSUMPTION ##############################
         // P. Skill MP Consumption Decrease (%)
         writer.WriteInt16(index++);
-        writer.WriteInt32((int)player.getStat().getMpConsumeTypeValue(1) * 100);
+        writer.WriteInt32((int)player.getStat().getMpConsumeTypeValue(SkillMagicType.Physical) * 100);
 
         // M. Skill MP Consumption Decrease (%)
         writer.WriteInt16(index++);
-        writer.WriteInt32((int)player.getStat().getMpConsumeTypeValue(2) * 100);
+        writer.WriteInt32((int)player.getStat().getMpConsumeTypeValue(SkillMagicType.Magic) * 100);
 
         // Song/ Dance MP Consumption Decrease (%)
         writer.WriteInt16(index++);
-        writer.WriteInt32((int)player.getStat().getMpConsumeTypeValue(3) * 100);
+        writer.WriteInt32((int)player.getStat().getMpConsumeTypeValue(SkillMagicType.Dance) * 100);
 
         // P. Skill MP Consumption Decrease (num.)
         writer.WriteInt16(index++);
-        writer.WriteInt32((int)player.getStat().getMpConsumeTypeValue(1) * 100);
+        writer.WriteInt32((int)player.getStat().getMpConsumeTypeValue(SkillMagicType.Physical) * 100);
 
         // M. Skill MP Consumption Decrease (num.)
         writer.WriteInt16(index++);
-        writer.WriteInt32((int)player.getStat().getMpConsumeTypeValue(2) * 100);
+        writer.WriteInt32((int)player.getStat().getMpConsumeTypeValue(SkillMagicType.Magic) * 100);
 
         // Song/ Dance MP Consumption Decrease (num.)
         writer.WriteInt16(index++);
-        writer.WriteInt32((int)player.getStat().getMpConsumeTypeValue(3) * 100);
+        writer.WriteInt32((int)player.getStat().getMpConsumeTypeValue(SkillMagicType.Dance) * 100);
 
         // ################################## ANOMALIES ##############################
         // Buff Cancel Resistance Bonus (%)

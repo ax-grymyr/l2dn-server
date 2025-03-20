@@ -15,6 +15,6 @@ public sealed class ConditionUsingSkill(int skillId): Condition
         if (skill is null)
             return false;
 
-        return skill.getId() == skillId;
+        return skill.Id == skillId;
     }
 }

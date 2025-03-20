@@ -50,7 +50,7 @@ public class Evolve
 		}
 
 		int oldnpcID = oldData.getNpcId();
-		if (currentPet.getStat().getLevel() < petminLevel || currentPet.getId() != oldnpcID)
+		if (currentPet.getStat().getLevel() < petminLevel || currentPet.Id != oldnpcID)
 		{
 			return false;
 		}

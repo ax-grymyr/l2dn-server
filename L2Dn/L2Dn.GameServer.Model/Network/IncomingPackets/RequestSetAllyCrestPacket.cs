@@ -49,7 +49,7 @@ public struct RequestSetAllyCrestPacket: IIncomingPacket<GameSession>
         }
 
         Clan? leaderClan = ClanTable.getInstance().getClan(allyId.Value);
-        if (leaderClan == null || player.getClanId() != leaderClan.getId() || !player.isClanLeader())
+        if (leaderClan == null || player.getClanId() != leaderClan.Id || !player.isClanLeader())
         {
             player.sendPacket(SystemMessageId.ACCESS_ONLY_FOR_THE_CHANNEL_FOUNDER);
             return ValueTask.CompletedTask;
@@ -67,7 +67,7 @@ public struct RequestSetAllyCrestPacket: IIncomingPacket<GameSession>
             Crest? crest = CrestTable.getInstance().createCrest(_data, CrestType.ALLY);
             if (crest != null)
             {
-                leaderClan.changeAllyCrest(crest.getId(), false);
+                leaderClan.changeAllyCrest(crest.Id, false);
                 player.sendPacket(SystemMessageId.THE_CREST_WAS_SUCCESSFULLY_REGISTERED);
             }
         }

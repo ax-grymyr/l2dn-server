@@ -37,7 +37,7 @@ public struct ExRequestStartMultiEnchantScrollPacket: IIncomingPacket<GameSessio
             return ValueTask.CompletedTask;
         }
 
-        EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
+        EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.Id);
         if (scrollTemplate == null || scrollTemplate.isBlessed() || scrollTemplate.isBlessedDown() ||
             scrollTemplate.isSafe() || scrollTemplate.isGiant())
         {

@@ -34,7 +34,7 @@ public sealed class TeleportToNpc: AbstractEffect
         Location? teleLocation = null;
         foreach (Npc npc in effector.getSummonedNpcs())
         {
-            if (npc.getId() == _npcId)
+            if (npc.Id == _npcId)
                 teleLocation = npc.Location;
         }
 

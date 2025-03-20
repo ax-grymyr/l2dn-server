@@ -1,1783 +1,752 @@
 using System.Collections.Frozen;
 using System.Collections.Immutable;
+using System.Globalization;
 using L2Dn.Collections;
-using L2Dn.Extensions;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
-using L2Dn.GameServer.Handlers;
-using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
-using L2Dn.GameServer.Model.Interfaces;
-using L2Dn.GameServer.Model.Items.Instances;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Stats;
-using L2Dn.GameServer.Network.Enums;
-using L2Dn.GameServer.Network.OutgoingPackets;
-using L2Dn.GameServer.Utilities;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
-using L2Dn.Model.Xml.Skills;
 using L2Dn.Utilities;
-using NLog;
-using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Skills;
 
 public sealed class Skill: IIdentifiable
 {
-	private static readonly Logger _logger = LogManager.GetLogger(nameof(Skill));
+    private readonly InlineArray4<int> _fanRange; // unk;startDegree;fanAffectRange;fanAffectAngle
+    private readonly InlineArray3<int> _affectLimit; // TODO: Third value is unknown... find it out!
+    private readonly InlineArray2<int> _affectHeight;
 
-	/** Skill ID. */
-	private readonly int _id;
+    // outer array index is SkillEffectScope
+    private readonly InlineArray7<ImmutableArray<AbstractEffect>> _effectLists;
 
-	/** Skill level. */
-	private readonly int _level;
+    // outer array index is SkillConditionScope
+    private readonly InlineArray3<ImmutableArray<ISkillCondition>> _conditionLists;
 
-	/** Skill sub level. */
-	private readonly int _subLevel;
+    private readonly EnumSet64<EffectType> _effectTypes;
 
-	/** Custom skill ID displayed by the client. */
-	private readonly int _displayId;
+    // outer array index is SkillEffectScope
+    private readonly InlineArray7<EnumSet64<EffectType>> _effectTypesByScope;
 
-	/** Custom skill level displayed by the client. */
-	private readonly int _displayLevel;
+    // If true this skill's effect should stay after death.
+    private readonly bool _stayAfterDeath;
 
-	/** Skill client's name. */
-	private readonly string _name;
-
-	/** Operative type: passive, active, toggle. */
-	private readonly SkillOperateType _operateType;
-
-	private readonly int _magic;
-	private readonly TraitType _traitType;
-	private readonly bool _staticReuse;
-
-	/** MP consumption. */
-	private readonly int _mpConsume;
-
-	/** Initial MP consumption. */
-	private readonly int _mpInitialConsume;
-
-	/** MP consumption per channeling. */
-	private readonly int _mpPerChanneling;
-
-	/** HP consumption. */
-	private readonly int _hpConsume;
-
-	/** Amount of items consumed by this skill from caster. */
-	private readonly int _itemConsumeCount;
-
-	/** Id of item consumed by this skill from caster. */
-	private readonly int _itemConsumeId;
-
-	/** Fame points consumed by this skill from caster */
-	private readonly int _famePointConsume;
-
-	/** Clan points consumed by this skill from caster's clan */
-	private readonly int _clanRepConsume;
-
-	/** Cast range: how far can be the target. */
-	private readonly int _castRange;
-
-	/** Effect range: how far the skill affect the target. */
-	private readonly int _effectRange;
-
-	/** Abnormal instant, used for herbs mostly. */
-	private readonly bool _isAbnormalInstant;
-
-	/** Abnormal level, global effect level. */
-	private readonly int _abnormalLevel;
-
-	/** Abnormal type: global effect "group". */
-	private readonly AbnormalType _abnormalType;
-
-	/** Abnormal type: local effect "group". */
-	private readonly AbnormalType _subordinationAbnormalType;
-
-	/** Abnormal time: global effect duration time. */
-	private readonly TimeSpan? _abnormalTime;
-
-	/** Abnormal visual effect: the visual effect displayed ingame. */
-	private readonly FrozenSet<AbnormalVisualEffect> _abnormalVisualEffects = [];
-
-	/** If {@code true} this skill's effect should stay after death. */
-	private readonly bool _stayAfterDeath;
-
-	/** If {@code true} this skill's effect recovery HP/MP or CP from herb. */
-	private readonly bool _isRecoveryHerb;
-
-	private readonly int _refId;
-
-	// all times in milliseconds
-	private readonly TimeSpan _hitTime;
-	private readonly TimeSpan _hitCancelTime;
-	private readonly TimeSpan _coolTime;
-	private readonly long _reuseHashCode;
-	private readonly TimeSpan _reuseDelay;
-	private readonly int _reuseDelayGroup;
-
-	private readonly int _magicLevel;
-	private readonly int _lvlBonusRate;
-	private readonly double? _activateRate;
-	private readonly int _minChance;
-	private readonly int _maxChance;
-
-	// Effecting area of the skill, in radius.
-	// The radius center varies according to the _targetType:
-	// "caster" if targetType = AURA/PARTY/CLAN or "target" if targetType = AREA
-	private readonly TargetType _targetType;
-	private readonly AffectScope _affectScope;
-	private readonly AffectObject _affectObject;
-	private readonly int _affectRange;
-	private readonly int[] _fanRange; // unk;startDegree;fanAffectRange;fanAffectAngle
-	private readonly int[] _affectLimit; // TODO: Third value is unknown... find it out!
-	private readonly int[] _affectHeight;
-
-	private readonly NextActionType _nextAction;
-
-	private readonly bool _removedOnAnyActionExceptMove;
-	private readonly bool _removedOnDamage;
-	private readonly bool _removedOnUnequipWeapon;
-
-	private readonly bool _blockedInOlympiad;
-
-	private readonly AttributeType _attributeType;
-	private readonly int _attributeValue;
-
-	private readonly BasicProperty _basicProperty;
-
-	private readonly SocialClass _minPledgeClass;
-	private readonly int _lightSoulMaxConsume;
-	private readonly int _shadowSoulMaxConsume;
-	private readonly int _chargeConsume;
-
-	private readonly bool _isTriggeredSkill; // If true the skill will take activation buff slot instead of a normal buff slot
-
-	private readonly int _effectPoint;
-
-	private readonly Map<SkillConditionScope, List<ISkillCondition>> _conditionLists = [];
-	private readonly Map<EffectScope, List<AbstractEffect>> _effectLists = [];
-
-	private readonly bool _isDebuff;
-
-	private readonly bool _isSuicideAttack;
-	private readonly bool _canBeDispelled;
-
-	private readonly bool _excludedFromCheck;
-	private readonly bool _withoutAction;
-
-	private readonly string _icon;
-
-	private volatile EffectType[]? _effectTypes;
-
-	// Channeling data
-	private readonly int _channelingSkillId;
-	private readonly TimeSpan _channelingStart;
-	private readonly TimeSpan _channelingTickInterval;
-
-	// Mentoring
-	private readonly bool _isMentoring;
-
-	// Stance skill IDs
-	private readonly int _doubleCastSkill;
-
-	private readonly bool _canDoubleCast;
-	private readonly bool _canCastWhileDisabled;
-	private readonly bool _isSharedWithSummon;
-	private readonly bool _isNecessaryToggle;
-	private readonly bool _deleteAbnormalOnLeave;
-	private readonly bool _irreplacableBuff; // Stays after death, on subclass change, cannot be canceled.
-	private readonly bool _blockActionUseSkill; // Blocks the use skill client action and is not showed on skill list.
-
-	private readonly int _toggleGroupId;
-	private readonly int _attachToggleGroupId;
-	private readonly ImmutableArray<AttachSkillHolder> _attachSkills;
-	private readonly FrozenSet<AbnormalType> _abnormalResists;
-
-	private readonly double _magicCriticalRate;
-	private readonly SkillBuffType _buffType;
-	private readonly bool _displayInList;
-	private readonly bool _isHidingMessages;
-
-	public Skill(StatSet set)
-	{
-		_id = set.getInt(".id");
-		_level = set.getInt(".level");
-		_subLevel = set.getInt(".subLevel", 0);
-		_refId = set.getInt(".referenceId", 0);
-		_displayId = set.getInt(".displayId", _id);
-		_displayLevel = set.getInt(".displayLevel", _level);
-		_name = set.getString(".name", string.Empty);
-		_operateType = set.getEnum<SkillOperateType>("operateType");
-		_magic = set.getInt("isMagic", 0);
-		_traitType = set.getEnum("trait", TraitType.NONE);
-		_staticReuse = set.getBoolean("staticReuse", false);
-		_mpConsume = set.getInt("mpConsume", 0);
-		_mpInitialConsume = set.getInt("mpInitialConsume", 0);
-		_mpPerChanneling = set.getInt("mpPerChanneling", _mpConsume);
-		_hpConsume = set.getInt("hpConsume", 0);
-		_itemConsumeCount = set.getInt("itemConsumeCount", 0);
-		_itemConsumeId = set.getInt("itemConsumeId", 0);
-		_famePointConsume = set.getInt("famePointConsume", 0);
-		_clanRepConsume = set.getInt("clanRepConsume", 0);
-		_castRange = set.getInt("castRange", -1);
-		_effectRange = set.getInt("effectRange", -1);
-		_abnormalLevel = set.getInt("abnormalLevel", 0);
-		_abnormalType = set.getEnum("abnormalType", AbnormalType.NONE);
-		_subordinationAbnormalType = set.getEnum("subordinationAbnormalType", AbnormalType.NONE);
-		TimeSpan abnormalTime = TimeSpan.FromSeconds(set.getDouble("abnormalTime", 0));
-        if (Config.Character.ENABLE_MODIFY_SKILL_DURATION && _operateType != SkillOperateType.T &&
-            Config.Character.SKILL_DURATION_LIST.TryGetValue(_id, out TimeSpan temp))
-        {
-            if (_level < 100 || _level > 140)
-                abnormalTime = temp;
-            else if (_level >= 100 && _level < 140)
-                abnormalTime += temp;
-        }
-
-        _abnormalTime = abnormalTime;
-		_isAbnormalInstant = set.getBoolean("abnormalInstant", false);
-		_abnormalVisualEffects = ParseAbnormalVisualEffect(_id, set.getString("abnormalVisualEffect", string.Empty));
-		_stayAfterDeath = set.getBoolean("stayAfterDeath", false);
-		_hitTime = TimeSpan.FromMilliseconds(set.getInt("hitTime", 0));
-		_hitCancelTime = TimeSpan.FromMilliseconds(set.getDouble("hitCancelTime", 0));
-		_coolTime = TimeSpan.FromMilliseconds(set.getInt("coolTime", 0));
-		_isDebuff = set.getBoolean("isDebuff", false);
-		_isRecoveryHerb = set.getBoolean("isRecoveryHerb", false);
-		if (!Config.Character.ENABLE_MODIFY_SKILL_REUSE || !Config.Character.SKILL_REUSE_LIST.TryGetValue(_id, out _reuseDelay))
-			_reuseDelay = TimeSpan.FromMilliseconds(set.getInt("reuseDelay", 0));
-
-		_reuseDelayGroup = set.getInt("reuseDelayGroup", -1);
-		_reuseHashCode = SkillData.getSkillHashCode(_reuseDelayGroup > 0 ? _reuseDelayGroup : _id, _level, _subLevel);
-		_targetType = set.getEnum("targetType", TargetType.SELF);
-		_affectScope = set.getEnum("affectScope", AffectScope.SINGLE);
-		_affectObject = set.getEnum("affectObject", AffectObject.ALL);
-		_affectRange = set.getInt("affectRange", 0);
-
-		string fanRange = set.getString("fanRange", string.Empty);
-        if (string.IsNullOrEmpty(fanRange))
-            _fanRange = [0, 0, 0, 0];
-        else
-		{
-			try
-			{
-				string[] valuesSplit = fanRange.Split(";");
-                _fanRange =
-                [
-                    int.Parse(valuesSplit[0]), int.Parse(valuesSplit[1]), int.Parse(valuesSplit[2]),
-                    int.Parse(valuesSplit[3]),
-                ];
-            }
-			catch
-			{
-				throw new InvalidOperationException(
-                    $"SkillId: {_id} invalid fanRange value: {fanRange}, " +
-                    "'unk;startDegree;fanAffectRange;fanAffectAngle' required");
-			}
-		}
-
-		string affectLimit = set.getString("affectLimit", string.Empty);
-        if (string.IsNullOrEmpty(affectLimit))
-            _affectLimit = [0, 0, 0];
-        else
-		{
-			try
-			{
-				string[] valuesSplit = affectLimit.Split("-");
-                _affectLimit = [int.Parse(valuesSplit[0]), int.Parse(valuesSplit[1]), 0];
-				if (valuesSplit.Length > 2)
-					_affectLimit[2] = int.Parse(valuesSplit[2]);
-			}
-			catch
-			{
-				throw new InvalidOperationException(
-                    $"SkillId: {_id} invalid affectLimit value: {affectLimit}, " +
-                    "'minAffected-additionalRandom' required");
-			}
-		}
-
-		string affectHeight = set.getString("affectHeight", string.Empty);
-        if (string.IsNullOrEmpty(affectHeight))
-            _affectHeight = [0, 0];
-        else
-		{
-			try
-			{
-				string[] valuesSplit = affectHeight.Split(";");
-				_affectHeight = [int.Parse(valuesSplit[0]), int.Parse(valuesSplit[1])];
-			}
-			catch
-			{
-				throw new InvalidOperationException(
-                    $"SkillId: {_id} invalid affectHeight value: {affectHeight}, 'minHeight-maxHeight' required");
-			}
-
-			if (_affectHeight[0] > _affectHeight[1])
-            {
-                throw new InvalidOperationException(
-                    $"SkillId: {_id} invalid affectHeight value: {affectHeight}, " +
-                    "'minHeight-maxHeight' required, minHeight is higher than maxHeight!");
-            }
-		}
-
-		_magicLevel = set.getInt("magicLevel", 0);
-		_lvlBonusRate = set.getInt("lvlBonusRate", 0);
-		_activateRate = set.contains("activateRate") ? set.getDouble("activateRate") : null;
-		_minChance = set.getInt("minChance", Config.Character.MIN_ABNORMAL_STATE_SUCCESS_RATE);
-		_maxChance = set.getInt("maxChance", Config.Character.MAX_ABNORMAL_STATE_SUCCESS_RATE);
-		_nextAction = set.getEnum("nextAction", NextActionType.NONE);
-		_removedOnAnyActionExceptMove = set.getBoolean("removedOnAnyActionExceptMove", false);
-		_removedOnDamage = set.getBoolean("removedOnDamage", false);
-		_removedOnUnequipWeapon = set.getBoolean("removedOnUnequipWeapon", false);
-		_blockedInOlympiad = set.getBoolean("blockedInOlympiad", false);
-		_attributeType = set.getEnum("attributeType", AttributeType.NONE);
-		_attributeValue = set.getInt("attributeValue", 0);
-		_basicProperty = set.getEnum("basicProperty", BasicProperty.NONE);
-		_isSuicideAttack = set.getBoolean("isSuicideAttack", false);
-		_minPledgeClass = (SocialClass)set.getInt("minPledgeClass", 0);
-		_lightSoulMaxConsume = set.getInt("lightSoulMaxConsume", 0);
-		_shadowSoulMaxConsume = set.getInt("shadowSoulMaxConsume", 0);
-		_chargeConsume = set.getInt("chargeConsume", 0);
-		_isTriggeredSkill = set.getBoolean("isTriggeredSkill", false);
-		_effectPoint = set.getInt("effectPoint", 0);
-		_canBeDispelled = set.getBoolean("canBeDispelled", true);
-		_excludedFromCheck = set.getBoolean("excludedFromCheck", false);
-		_withoutAction = set.getBoolean("withoutAction", false);
-		_icon = set.getString("icon", "icon.skill0000");
-		_channelingSkillId = set.getInt("channelingSkillId", 0);
-		_channelingTickInterval = TimeSpan.FromSeconds(set.getFloat("channelingTickInterval", 2f));
-		_channelingStart = TimeSpan.FromSeconds(set.getFloat("channelingStart", 0f));
-		_isMentoring = set.getBoolean("isMentoring", false);
-		_doubleCastSkill = set.getInt("doubleCastSkill", 0);
-		_canDoubleCast = set.getBoolean("canDoubleCast", false);
-		_canCastWhileDisabled = set.getBoolean("canCastWhileDisabled", false);
-		_isSharedWithSummon = set.getBoolean("isSharedWithSummon", true);
-		_isNecessaryToggle = set.getBoolean("isNecessaryToggle", false);
-		_deleteAbnormalOnLeave = set.getBoolean("deleteAbnormalOnLeave", false);
-		_irreplacableBuff = set.getBoolean("irreplacableBuff", false);
-		_blockActionUseSkill = set.getBoolean("blockActionUseSkill", false);
-		_toggleGroupId = set.getInt("toggleGroupId", -1);
-		_attachToggleGroupId = set.getInt("attachToggleGroupId", -1);
-		_attachSkills = set.getList("attachSkillList", new List<StatSet>())
-			.Select(AttachSkillHolder.FromStatSet).ToImmutableArray();
-
-        string abnormalResist = set.getString("abnormalResists", string.Empty);
-        _abnormalResists = ParseList<AbnormalType>(_id, abnormalResist);
-
-        _magicCriticalRate = set.getDouble("magicCriticalRate", 0);
-		_buffType = _isTriggeredSkill ? SkillBuffType.TRIGGER :
-			isToggle() ? SkillBuffType.TOGGLE :
-			isDance() ? SkillBuffType.DANCE :
-			_isDebuff ? SkillBuffType.DEBUFF :
-			!isHealingPotionSkill() ? SkillBuffType.BUFF : SkillBuffType.NONE;
-
-		_displayInList = set.getBoolean("displayInList", true);
-		_isHidingMessages = set.getBoolean("isHidingMessages", false);
-	}
+    private readonly bool _isHidingMessages;
 
     internal Skill(SkillParameters parameters)
     {
-        _id = parameters.Id;
-        _name = parameters.Name;
-        _level = parameters.Level;
-        _subLevel = parameters.SubLevel;
-        _displayId = parameters.DisplayId ?? parameters.Id;
-        _displayLevel = parameters.DisplayLevel ?? parameters.Level;
-        _refId = parameters.ReferenceId ?? 0;
+        Id = parameters.Id;
+        Name = parameters.Name;
+        Level = parameters.Level;
+        SubLevel = parameters.SubLevel;
+        DisplayId = parameters.DisplayId ?? parameters.Id;
+        DisplayLevel = parameters.DisplayLevel ?? parameters.Level;
+        ReferenceItemId = parameters.ReferenceId ?? 0;
 
         ParameterSet<XmlSkillParameterType> pars = parameters.Parameters;
 
-        _operateType = pars.GetEnum<SkillOperateType>(XmlSkillParameterType.OperateType);
-        _magic = pars.GetInt32(XmlSkillParameterType.IsMagic, 0);
-        _traitType = pars.GetEnum(XmlSkillParameterType.Trait, TraitType.NONE);
-        _staticReuse = pars.GetBoolean(XmlSkillParameterType.StaticReuse, false);
-        _mpConsume = pars.GetInt32(XmlSkillParameterType.MpConsume, 0);
-        _mpInitialConsume = pars.GetInt32(XmlSkillParameterType.MpInitialConsume, 0);
-        _mpPerChanneling = pars.GetInt32(XmlSkillParameterType.MpPerChanneling, _mpConsume);
-        _hpConsume = pars.GetInt32(XmlSkillParameterType.HpConsume, 0);
-        _itemConsumeCount = pars.GetInt32(XmlSkillParameterType.ItemConsumeCount, 0);
-        _itemConsumeId = pars.GetInt32(XmlSkillParameterType.ItemConsumeId, 0);
-        _famePointConsume = pars.GetInt32(XmlSkillParameterType.FamePointConsume, 0);
-        _clanRepConsume = pars.GetInt32(XmlSkillParameterType.ClanRepConsume, 0);
-        _castRange = pars.GetInt32(XmlSkillParameterType.CastRange, -1);
-        _effectRange = pars.GetInt32(XmlSkillParameterType.EffectRange, -1);
-        _abnormalLevel = pars.GetInt32(XmlSkillParameterType.AbnormalLevel, 0);
-        _abnormalType = pars.GetEnum(XmlSkillParameterType.AbnormalType, AbnormalType.NONE);
-        _subordinationAbnormalType = pars.GetEnum(XmlSkillParameterType.SubordinationAbnormalType, AbnormalType.NONE);
+        OperateType = pars.GetEnum<SkillOperateType>(XmlSkillParameterType.OperateType);
+        MagicType = (SkillMagicType)pars.GetInt32(XmlSkillParameterType.IsMagic, 0);
+        TraitType = pars.GetEnum(XmlSkillParameterType.Trait, TraitType.NONE);
+        IsStaticReuse = pars.GetBoolean(XmlSkillParameterType.StaticReuse, false);
+        MpConsume = pars.GetInt32(XmlSkillParameterType.MpConsume, 0);
+        MpInitialConsume = pars.GetInt32(XmlSkillParameterType.MpInitialConsume, 0);
+        MpPerChanneling = pars.GetInt32(XmlSkillParameterType.MpPerChanneling, MpConsume);
+        HpConsume = pars.GetInt32(XmlSkillParameterType.HpConsume, 0);
+        ItemConsumeCount = pars.GetInt32(XmlSkillParameterType.ItemConsumeCount, 0);
+        ItemConsumeId = pars.GetInt32(XmlSkillParameterType.ItemConsumeId, 0);
+        FamePointConsume = pars.GetInt32(XmlSkillParameterType.FamePointConsume, 0);
+        ClanRepConsume = pars.GetInt32(XmlSkillParameterType.ClanRepConsume, 0);
+        CastRange = pars.GetInt32(XmlSkillParameterType.CastRange, -1);
+        EffectRange = pars.GetInt32(XmlSkillParameterType.EffectRange, -1);
+        AbnormalLevel = pars.GetInt32(XmlSkillParameterType.AbnormalLevel, 0);
+        AbnormalType = pars.GetEnum(XmlSkillParameterType.AbnormalType, AbnormalType.NONE);
+        SubordinationAbnormalType = pars.GetEnum(XmlSkillParameterType.SubordinationAbnormalType, AbnormalType.NONE);
         TimeSpan abnormalTime = pars.GetTimeSpanSeconds(XmlSkillParameterType.AbnormalTime, TimeSpan.Zero);
-        if (Config.Character.ENABLE_MODIFY_SKILL_DURATION && _operateType != SkillOperateType.T &&
-            Config.Character.SKILL_DURATION_LIST.TryGetValue(_id, out TimeSpan temp))
+        if (Config.Character.ENABLE_MODIFY_SKILL_DURATION && OperateType != SkillOperateType.T &&
+            Config.Character.SKILL_DURATION_LIST.TryGetValue(Id, out TimeSpan temp))
         {
-            if (_level < 100 || _level > 140)
+            if (Level < 100 || Level > 140)
                 abnormalTime = temp;
-            else if (_level >= 100 && _level < 140)
+            else if (Level >= 100 && Level < 140)
                 abnormalTime += temp;
         }
 
-        _abnormalTime = abnormalTime;
-        _isAbnormalInstant = pars.GetBoolean(XmlSkillParameterType.AbnormalInstant, false);
-        _abnormalVisualEffects = ParseAbnormalVisualEffect(_id,
+        AbnormalTime = abnormalTime;
+        IsAbnormalInstant = pars.GetBoolean(XmlSkillParameterType.AbnormalInstant, false);
+        AbnormalVisualEffects = ParseAbnormalVisualEffect(Id,
             pars.GetString(XmlSkillParameterType.AbnormalVisualEffect, string.Empty));
 
         _stayAfterDeath = pars.GetBoolean(XmlSkillParameterType.StayAfterDeath, false);
-        _hitTime = pars.GetTimeSpanMilliSeconds(XmlSkillParameterType.HitTime, TimeSpan.Zero);
-        _hitCancelTime = pars.GetTimeSpanMilliSeconds(XmlSkillParameterType.HitCancelTime, TimeSpan.Zero);
-        _coolTime = pars.GetTimeSpanMilliSeconds(XmlSkillParameterType.CoolTime, TimeSpan.Zero);
-        _isDebuff = pars.GetBoolean(XmlSkillParameterType.IsDebuff, false);
-        _isRecoveryHerb = pars.GetBoolean(XmlSkillParameterType.IsRecoveryHerb, false);
-        if (!Config.Character.ENABLE_MODIFY_SKILL_REUSE || !Config.Character.SKILL_REUSE_LIST.TryGetValue(_id, out _reuseDelay))
-            _reuseDelay = pars.GetTimeSpanMilliSeconds(XmlSkillParameterType.ReuseDelay, TimeSpan.Zero);
+        HitTime = pars.GetTimeSpanMilliSeconds(XmlSkillParameterType.HitTime, TimeSpan.Zero);
+        HitCancelTime = pars.GetTimeSpanMilliSeconds(XmlSkillParameterType.HitCancelTime, TimeSpan.Zero);
+        CoolTime = pars.GetTimeSpanMilliSeconds(XmlSkillParameterType.CoolTime, TimeSpan.Zero);
+        IsDebuff = pars.GetBoolean(XmlSkillParameterType.IsDebuff, false);
+        IsRecoveryHerb = pars.GetBoolean(XmlSkillParameterType.IsRecoveryHerb, false);
+        if (Config.Character.ENABLE_MODIFY_SKILL_REUSE &&
+            Config.Character.SKILL_REUSE_LIST.TryGetValue(Id, out TimeSpan reuseDelay))
+            ReuseDelay = reuseDelay;
+        else
+            ReuseDelay = pars.GetTimeSpanMilliSeconds(XmlSkillParameterType.ReuseDelay, TimeSpan.Zero);
 
-        _reuseDelayGroup = pars.GetInt32(XmlSkillParameterType.ReuseDelayGroup, -1);
-        _reuseHashCode = SkillData.getSkillHashCode(_reuseDelayGroup > 0 ? _reuseDelayGroup : _id, _level, _subLevel);
-        _targetType = pars.GetEnum(XmlSkillParameterType.TargetType, TargetType.SELF);
-        _affectScope = pars.GetEnum(XmlSkillParameterType.AffectScope, AffectScope.SINGLE);
-        _affectObject = pars.GetEnum(XmlSkillParameterType.AffectObject, AffectObject.ALL);
-        _affectRange = pars.GetInt32(XmlSkillParameterType.AffectRange, 0);
+        ReuseDelayGroup = pars.GetInt32(XmlSkillParameterType.ReuseDelayGroup, -1);
+        ReuseHashCode = GetSkillHashCode(ReuseDelayGroup > 0 ? ReuseDelayGroup : Id, Level, SubLevel);
+        TargetType = pars.GetEnum(XmlSkillParameterType.TargetType, TargetType.SELF);
+        AffectScope = pars.GetEnum(XmlSkillParameterType.AffectScope, AffectScope.SINGLE);
+        AffectObject = pars.GetEnum(XmlSkillParameterType.AffectObject, AffectObject.ALL);
+        AffectRange = pars.GetInt32(XmlSkillParameterType.AffectRange, 0);
 
         string? fanRange = pars.GetStringOptional(XmlSkillParameterType.FanRange);
-        if (string.IsNullOrEmpty(fanRange))
-            _fanRange = [0, 0, 0, 0];
-        else
+        if (!string.IsNullOrEmpty(fanRange))
         {
             try
             {
                 string[] valuesSplit = fanRange.Split(";");
-                _fanRange =
-                [
-                    int.Parse(valuesSplit[0]), int.Parse(valuesSplit[1]), int.Parse(valuesSplit[2]),
-                    int.Parse(valuesSplit[3]),
-                ];
+                for (int i = 0; i < 4; i++)
+                    _fanRange[i] = int.Parse(valuesSplit[i], CultureInfo.InvariantCulture);
             }
             catch
             {
-                throw new InvalidOperationException($"SkillId: {_id} invalid fanRange value: {fanRange}, " +
+                throw new InvalidOperationException($"SkillId: {Id} invalid fanRange value: {fanRange}, " +
                     "'unk;startDegree;fanAffectRange;fanAffectAngle' required");
             }
         }
 
         string affectLimit = pars.GetString(XmlSkillParameterType.AffectLimit, string.Empty);
-        if (string.IsNullOrEmpty(affectLimit))
-            _affectLimit = [0, 0, 0];
-        else
+        if (!string.IsNullOrEmpty(affectLimit))
         {
             try
             {
                 string[] valuesSplit = affectLimit.Split("-");
-                _affectLimit = [int.Parse(valuesSplit[0]), int.Parse(valuesSplit[1]), 0];
+                _affectLimit[0] = int.Parse(valuesSplit[0], CultureInfo.InvariantCulture);
+                _affectLimit[1] = int.Parse(valuesSplit[1], CultureInfo.InvariantCulture);
                 if (valuesSplit.Length > 2)
-                    _affectLimit[2] = int.Parse(valuesSplit[2]);
+                    _affectLimit[2] = int.Parse(valuesSplit[2], CultureInfo.InvariantCulture);
             }
             catch
             {
-                throw new InvalidOperationException($"SkillId: {_id} invalid affectLimit value: {affectLimit}, " +
+                throw new InvalidOperationException($"SkillId: {Id} invalid affectLimit value: {affectLimit}, " +
                     "'minAffected-additionalRandom' required");
             }
         }
 
         string affectHeight = pars.GetString(XmlSkillParameterType.AffectHeight, string.Empty);
-        if (string.IsNullOrEmpty(affectHeight))
-            _affectHeight = [0, 0];
-        else
+        if (!string.IsNullOrEmpty(affectHeight))
         {
             try
             {
                 string[] valuesSplit = affectHeight.Split(";");
-                _affectHeight = [int.Parse(valuesSplit[0]), int.Parse(valuesSplit[1])];
+                _affectHeight[0] = int.Parse(valuesSplit[0], CultureInfo.InvariantCulture);
+                _affectHeight[1] = int.Parse(valuesSplit[1], CultureInfo.InvariantCulture);
             }
             catch
             {
                 throw new InvalidOperationException(
-                    $"SkillId: {_id} invalid affectHeight value: {affectHeight}, 'minHeight-maxHeight' required");
+                    $"SkillId: {Id} invalid affectHeight value: {affectHeight}, 'minHeight-maxHeight' required");
             }
 
             if (_affectHeight[0] > _affectHeight[1])
             {
-                throw new InvalidOperationException($"SkillId: {_id} invalid affectHeight value: {affectHeight}, " +
+                throw new InvalidOperationException($"SkillId: {Id} invalid affectHeight value: {affectHeight}, " +
                     "'minHeight-maxHeight' required, minHeight is higher than maxHeight!");
             }
         }
 
-        _magicLevel = pars.GetInt32(XmlSkillParameterType.MagicLevel, 0);
-        _lvlBonusRate = pars.GetInt32(XmlSkillParameterType.LvlBonusRate, 0);
-        _activateRate = pars.GetDoubleOptional(XmlSkillParameterType.ActivateRate);
-        _minChance = pars.GetInt32(XmlSkillParameterType.MinChance, Config.Character.MIN_ABNORMAL_STATE_SUCCESS_RATE);
-        _maxChance = pars.GetInt32(XmlSkillParameterType.MaxChance, Config.Character.MAX_ABNORMAL_STATE_SUCCESS_RATE);
-        _nextAction = pars.GetEnum(XmlSkillParameterType.NextAction, NextActionType.NONE);
-        _removedOnAnyActionExceptMove = pars.GetBoolean(XmlSkillParameterType.RemovedOnAnyActionExceptMove, false);
-        _removedOnDamage = pars.GetBoolean(XmlSkillParameterType.RemovedOnDamage, false);
-        _removedOnUnequipWeapon = pars.GetBoolean(XmlSkillParameterType.RemovedOnUnequipWeapon, false);
-        _blockedInOlympiad = pars.GetBoolean(XmlSkillParameterType.BlockedInOlympiad, false);
-        _attributeType = pars.GetEnum(XmlSkillParameterType.AttributeType, AttributeType.NONE);
-        _attributeValue = pars.GetInt32(XmlSkillParameterType.AttributeValue, 0);
-        _basicProperty = pars.GetEnum(XmlSkillParameterType.BasicProperty, BasicProperty.NONE);
-        _isSuicideAttack = pars.GetBoolean(XmlSkillParameterType.IsSuicideAttack, false);
-        _minPledgeClass = (SocialClass)pars.GetInt32(XmlSkillParameterType.MinPledgeClass, 0);
-        _lightSoulMaxConsume = pars.GetInt32(XmlSkillParameterType.LightSoulMaxConsume, 0);
-        _shadowSoulMaxConsume = pars.GetInt32(XmlSkillParameterType.ShadowSoulMaxConsume, 0);
-        _chargeConsume = pars.GetInt32(XmlSkillParameterType.ChargeConsume, 0);
-        _isTriggeredSkill = pars.GetBoolean(XmlSkillParameterType.IsTriggeredSkill, false);
-        _effectPoint = pars.GetInt32(XmlSkillParameterType.EffectPoint, 0);
-        _canBeDispelled = pars.GetBoolean(XmlSkillParameterType.CanBeDispelled, true);
-        _excludedFromCheck = pars.GetBoolean(XmlSkillParameterType.ExcludedFromCheck, false);
-        _withoutAction = pars.GetBoolean(XmlSkillParameterType.WithoutAction, false);
-        _icon = pars.GetString(XmlSkillParameterType.Icon, "icon.skill0000");
-        _channelingSkillId = pars.GetInt32(XmlSkillParameterType.ChannelingSkillId, 0);
-        _channelingTickInterval =
+        MagicLevel = pars.GetInt32(XmlSkillParameterType.MagicLevel, 0);
+        LevelBonusRate = pars.GetInt32(XmlSkillParameterType.LvlBonusRate, 0);
+        ActivateRate = pars.GetDoubleOptional(XmlSkillParameterType.ActivateRate);
+        MinChance = pars.GetInt32(XmlSkillParameterType.MinChance, Config.Character.MIN_ABNORMAL_STATE_SUCCESS_RATE);
+        MaxChance = pars.GetInt32(XmlSkillParameterType.MaxChance, Config.Character.MAX_ABNORMAL_STATE_SUCCESS_RATE);
+        NextAction = pars.GetEnum(XmlSkillParameterType.NextAction, NextActionType.NONE);
+        IsRemovedOnAnyActionExceptMove = pars.GetBoolean(XmlSkillParameterType.RemovedOnAnyActionExceptMove, false);
+        IsRemovedOnDamage = pars.GetBoolean(XmlSkillParameterType.RemovedOnDamage, false);
+        IsRemovedOnUnequipWeapon = pars.GetBoolean(XmlSkillParameterType.RemovedOnUnequipWeapon, false);
+        IsBlockedInOlympiad = pars.GetBoolean(XmlSkillParameterType.BlockedInOlympiad, false);
+        AttributeType = pars.GetEnum(XmlSkillParameterType.AttributeType, AttributeType.NONE);
+        AttributeValue = pars.GetInt32(XmlSkillParameterType.AttributeValue, 0);
+        BasicProperty = pars.GetEnum(XmlSkillParameterType.BasicProperty, BasicProperty.NONE);
+        IsSuicideAttack = pars.GetBoolean(XmlSkillParameterType.IsSuicideAttack, false);
+        MinPledgeClass = (SocialClass)pars.GetInt32(XmlSkillParameterType.MinPledgeClass, 0);
+        MaxLightSoulConsumeCount = pars.GetInt32(XmlSkillParameterType.LightSoulMaxConsume, 0);
+        MaxShadowSoulConsumeCount = pars.GetInt32(XmlSkillParameterType.ShadowSoulMaxConsume, 0);
+        ChargeConsumeCount = pars.GetInt32(XmlSkillParameterType.ChargeConsume, 0);
+        IsTriggeredSkill = pars.GetBoolean(XmlSkillParameterType.IsTriggeredSkill, false);
+        EffectPoint = pars.GetInt32(XmlSkillParameterType.EffectPoint, 0);
+        CanBeDispelled = pars.GetBoolean(XmlSkillParameterType.CanBeDispelled, true);
+        IsExcludedFromCheck = pars.GetBoolean(XmlSkillParameterType.ExcludedFromCheck, false);
+        IsWithoutAction = pars.GetBoolean(XmlSkillParameterType.WithoutAction, false);
+        Icon = pars.GetString(XmlSkillParameterType.Icon, "icon.skill0000");
+        ChannelingSkillId = pars.GetInt32(XmlSkillParameterType.ChannelingSkillId, 0);
+        ChannelingTickInterval =
             pars.GetTimeSpanSeconds(XmlSkillParameterType.ChannelingTickInterval, TimeSpan.FromSeconds(2));
 
-        _channelingStart = pars.GetTimeSpanSeconds(XmlSkillParameterType.ChannelingStart, TimeSpan.Zero);
-        _isMentoring = pars.GetBoolean(XmlSkillParameterType.IsMentoring, false);
-        _doubleCastSkill = pars.GetInt32(XmlSkillParameterType.DoubleCastSkill, 0);
-        _canDoubleCast = pars.GetBoolean(XmlSkillParameterType.CanDoubleCast, false);
-        _canCastWhileDisabled = pars.GetBoolean(XmlSkillParameterType.CanCastWhileDisabled, false);
-        _isSharedWithSummon = pars.GetBoolean(XmlSkillParameterType.IsSharedWithSummon, true);
-        _isNecessaryToggle = pars.GetBoolean(XmlSkillParameterType.IsNecessaryToggle, false);
-        _deleteAbnormalOnLeave = pars.GetBoolean(XmlSkillParameterType.DeleteAbnormalOnLeave, false);
-        _irreplacableBuff = pars.GetBoolean(XmlSkillParameterType.IrreplacableBuff, false);
-        _blockActionUseSkill = pars.GetBoolean(XmlSkillParameterType.BlockActionUseSkill, false);
-        _toggleGroupId = pars.GetInt32(XmlSkillParameterType.ToggleGroupId, -1);
-        _attachToggleGroupId = pars.GetInt32(XmlSkillParameterType.AttachToggleGroupId, -1);
+        ChannelingTickInitialDelay = pars.GetTimeSpanSeconds(XmlSkillParameterType.ChannelingStart, TimeSpan.Zero);
+        IsMentoring = pars.GetBoolean(XmlSkillParameterType.IsMentoring, false);
+        DoubleCastSkill = pars.GetInt32(XmlSkillParameterType.DoubleCastSkill, 0);
+        CanDoubleCast = pars.GetBoolean(XmlSkillParameterType.CanDoubleCast, false);
+        CanCastWhileDisabled = pars.GetBoolean(XmlSkillParameterType.CanCastWhileDisabled, false);
+        IsSharedWithSummon = pars.GetBoolean(XmlSkillParameterType.IsSharedWithSummon, true);
+        IsNecessaryToggle = pars.GetBoolean(XmlSkillParameterType.IsNecessaryToggle, false);
+        IsDeleteAbnormalOnLeave = pars.GetBoolean(XmlSkillParameterType.DeleteAbnormalOnLeave, false);
+        IsIrreplacableBuff = pars.GetBoolean(XmlSkillParameterType.IrreplacableBuff, false);
+        IsBlockActionUseSkill = pars.GetBoolean(XmlSkillParameterType.BlockActionUseSkill, false);
+        ToggleGroupId = pars.GetInt32(XmlSkillParameterType.ToggleGroupId, -1);
+        AttachToggleGroupId = pars.GetInt32(XmlSkillParameterType.AttachToggleGroupId, -1);
 
         // TODO: add to XML schema, not used
-        _attachSkills = ImmutableArray<AttachSkillHolder>.Empty;
+        AttachSkills = ImmutableArray<AttachSkillHolder>.Empty;
         //_attachSkills = set.getList(XmlSkillParameterType.AttachSkillList, new List<StatSet>())
         // .Select(AttachSkillHolder.FromStatSet).ToList();
 
         string abnormalResist = pars.GetString(XmlSkillParameterType.AbnormalResists, string.Empty);
-        _abnormalResists = ParseList<AbnormalType>(_id, abnormalResist);
+        AbnormalResists = ParseList<AbnormalType>(Id, abnormalResist);
 
-        _magicCriticalRate = pars.GetDouble(XmlSkillParameterType.MagicCriticalRate, 0);
-        _buffType = _isTriggeredSkill ? SkillBuffType.TRIGGER :
-            isToggle() ? SkillBuffType.TOGGLE :
-            isDance() ? SkillBuffType.DANCE :
-            _isDebuff ? SkillBuffType.DEBUFF :
-            !isHealingPotionSkill() ? SkillBuffType.BUFF : SkillBuffType.NONE;
+        MagicCriticalRate = pars.GetDouble(XmlSkillParameterType.MagicCriticalRate, 0);
+        BuffType = IsTriggeredSkill ? SkillBuffType.TRIGGER :
+            IsToggle ? SkillBuffType.TOGGLE :
+            IsDance ? SkillBuffType.DANCE :
+            IsDebuff ? SkillBuffType.DEBUFF :
+            !IsHealingPotionSkill ? SkillBuffType.BUFF : SkillBuffType.NONE;
 
-        _displayInList = pars.GetBoolean(XmlSkillParameterType.DisplayInList, true);
+        IsDisplayInList = pars.GetBoolean(XmlSkillParameterType.DisplayInList, true);
         _isHidingMessages = pars.GetBoolean(XmlSkillParameterType.IsHidingMessages, false);
 
         // effects
-        foreach (EffectScope effectScope in EnumUtil.GetValues<EffectScope>())
+        for (int i = 0; i < _effectLists.Length; i++)
+            _effectLists[i] = ImmutableArray<AbstractEffect>.Empty;
+
+        foreach (KeyValuePair<SkillEffectScope, List<AbstractEffect>> pair in parameters.Effects)
+            _effectLists[(int)pair.Key] = pair.Value.ToImmutableArray();
+
+        // effect types
+        EnumSet64<EffectType> allEffectTypes = EnumSet64<EffectType>.Create();
+        foreach (SkillEffectScope effectScope in EnumUtil.GetValues<SkillEffectScope>())
         {
-            if (parameters.Effects.TryGetValue(effectScope, out List<AbstractEffect>? effects))
-                _effectLists[effectScope] = effects;
+            EnumSet64<EffectType> effectTypes = EnumSet64<EffectType>.Create();
+            ImmutableArray<AbstractEffect> effects = _effectLists[(int)effectScope];
+            if (!effects.IsDefaultOrEmpty)
+            {
+                foreach (AbstractEffect effect in effects)
+                    effectTypes.Add(effect.getEffectType());
+            }
+
+            _effectTypesByScope[(int)effectScope] = effectTypes;
+            allEffectTypes.AddRange(effectTypes);
         }
+
+        _effectTypes = allEffectTypes;
 
         // conditions
-        foreach (SkillConditionScope conditionScope in EnumUtil.GetValues<SkillConditionScope>())
-        {
-            if (parameters.Conditions.TryGetValue(conditionScope, out List<ISkillCondition>? conditions))
-                _conditionLists[conditionScope] = conditions;
-        }
+        for (int i = 0; i < _conditionLists.Length; i++)
+            _conditionLists[i] = ImmutableArray<ISkillCondition>.Empty;
+
+        foreach (KeyValuePair<SkillConditionScope, List<ISkillCondition>> pair in parameters.Conditions)
+            _conditionLists[(int)pair.Key] = pair.Value.ToImmutableArray();
     }
 
-    public TraitType getTraitType()
-	{
-		return _traitType;
-	}
-
-	public AttributeType getAttributeType()
-	{
-		return _attributeType;
-	}
-
-	public int getAttributeValue()
-	{
-		return _attributeValue;
-	}
-
-	public bool isAOE()
-	{
-		switch (_affectScope)
-		{
-			case AffectScope.FAN:
-			case AffectScope.FAN_PB:
-			case AffectScope.POINT_BLANK:
-			case AffectScope.RANGE:
-			case AffectScope.RING_RANGE:
-			case AffectScope.SQUARE:
-			case AffectScope.SQUARE_PB:
-			{
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	public bool isSuicideAttack()
-	{
-		return _isSuicideAttack;
-	}
-
-	public bool allowOnTransform()
-	{
-		return isPassive();
-	}
-
-	/**
-	 * Verify if this skill is abnormal instant.<br>
-	 * Herb buff skills yield {@code true} for this check.
-	 * @return {@code true} if the skill is abnormal instant, {@code false} otherwise
-	 */
-	public bool isAbnormalInstant()
-	{
-		return _isAbnormalInstant;
-	}
-
-	/**
-	 * Gets the skill abnormal type.
-	 * @return the abnormal type
-	 */
-	public AbnormalType getAbnormalType()
-	{
-		return _abnormalType;
-	}
-
-	/**
-	 * Gets the skill subordination abnormal type.
-	 * @return the abnormal type
-	 */
-	public AbnormalType getSubordinationAbnormalType()
-	{
-		return _subordinationAbnormalType;
-	}
-
-	/**
-	 * Gets the skill abnormal level.
-	 * @return the skill abnormal level
-	 */
-	public int getAbnormalLevel()
-	{
-		return _abnormalLevel;
-	}
-
-	/**
-	 * Gets the skill abnormal time.<br>
-	 * Is the base to calculate the duration of the continuous effects of this skill.
-	 * @return the abnormal time
-	 */
-	public TimeSpan? getAbnormalTime()
-	{
-		return _abnormalTime;
-	}
-
-	/**
-	 * Gets the skill abnormal visual effect.
-	 * @return the abnormal visual effect
-	 */
-	public FrozenSet<AbnormalVisualEffect> getAbnormalVisualEffects()
-	{
-		return _abnormalVisualEffects;
-	}
-
-	/**
-	 * Verify if the skill has abnormal visual effects.
-	 * @return {@code true} if the skill has abnormal visual effects, {@code false} otherwise
-	 */
-	public bool hasAbnormalVisualEffects()
-	{
-		return _abnormalVisualEffects.Count != 0;
-	}
-
-	/**
-	 * Gets the skill magic level.
-	 * @return the skill magic level
-	 */
-	public int getMagicLevel()
-	{
-		return _magicLevel;
-	}
-
-	public int getLvlBonusRate()
-	{
-		return _lvlBonusRate;
-	}
-
-	public double? getActivateRate()
-	{
-		return _activateRate;
-	}
-
-	/**
-	 * Return custom minimum skill/effect chance.
-	 * @return
-	 */
-	public int getMinChance()
-	{
-		return _minChance;
-	}
-
-	/**
-	 * Return custom maximum skill/effect chance.
-	 * @return
-	 */
-	public int getMaxChance()
-	{
-		return _maxChance;
-	}
-
-	/**
-	 * Return true if skill effects should be removed on any action except movement
-	 * @return
-	 */
-	public bool isRemovedOnAnyActionExceptMove()
-	{
-		return _removedOnAnyActionExceptMove;
-	}
-
-	/**
-	 * @return {@code true} if skill effects should be removed on damage
-	 */
-	public bool isRemovedOnDamage()
-	{
-		return _removedOnDamage;
-	}
-
-	/**
-	 * @return {@code true} if skill effects should be removed on unequip weapon
-	 */
-	public bool isRemovedOnUnequipWeapon()
-	{
-		return _removedOnUnequipWeapon;
-	}
-
-	/**
-	 * @return {@code true} if skill can not be used in olympiad.
-	 */
-	public bool isBlockedInOlympiad()
-	{
-		return _blockedInOlympiad;
-	}
-
-	/**
-	 * Return the additional effect Id.
-	 * @return
-	 */
-	public int getChannelingSkillId()
-	{
-		return _channelingSkillId;
-	}
-
-	/**
-	 * Return character action after cast
-	 * @return
-	 */
-	public NextActionType getNextAction()
-	{
-		return _nextAction;
-	}
-
-	/**
-	 * @return Returns the castRange.
-	 */
-	public int getCastRange()
-	{
-		return _castRange;
-	}
-
-	/**
-	 * @return Returns the effectRange.
-	 */
-	public int getEffectRange()
-	{
-		return _effectRange;
-	}
-
-	/**
-	 * @return Returns the hpConsume.
-	 */
-	public int getHpConsume()
-	{
-		return _hpConsume;
-	}
-
-	/**
-	 * Gets the skill ID.
-	 * @return the skill ID
-	 */
-	public int getId()
-	{
-		return _id;
-	}
-
-	/**
-	 * Verify if this skill is a debuff.
-	 * @return {@code true} if this skill is a debuff, {@code false} otherwise
-	 */
-	public bool isDebuff()
-	{
-		return _isDebuff;
-	}
-
-	/**
-	 * Verify if this skill is coming from Recovery Herb.
-	 * @return {@code true} if this skill is a recover herb, {@code false} otherwise
-	 */
-	public bool isRecoveryHerb()
-	{
-		return _isRecoveryHerb;
-	}
-
-	public int getDisplayId()
-	{
-		return _displayId;
-	}
-
-	public int getDisplayLevel()
-	{
-		return _displayLevel;
-	}
-
-	/**
-	 * Return skill basic property type.
-	 * @return
-	 */
-	public BasicProperty getBasicProperty()
-	{
-		return _basicProperty;
-	}
-
-	/**
-	 * @return Returns the how much items will be consumed.
-	 */
-	public int getItemConsumeCount()
-	{
-		return _itemConsumeCount;
-	}
-
-	/**
-	 * @return Returns the ID of item for consume.
-	 */
-	public int getItemConsumeId()
-	{
-		return _itemConsumeId;
-	}
-
-	/**
-	 * @return Fame points consumed by this skill from caster
-	 */
-	public int getFamePointConsume()
-	{
-		return _famePointConsume;
-	}
-
-	/**
-	 * @return Clan points consumed by this skill from caster's clan
-	 */
-	public int getClanRepConsume()
-	{
-		return _clanRepConsume;
-	}
-
-	/**
-	 * @return Returns the level.
-	 */
-	public int getLevel()
-	{
-		return _level;
-	}
-
-	/**
-	 * @return Returns the sub level.
-	 */
-	public int getSubLevel()
-	{
-		return _subLevel;
-	}
-
-	/**
-	 * @return isMagic integer value from the XML.
-	 */
-	public int getMagicType()
-	{
-		return _magic; // TODO: enum
-	}
-
-	/**
-	 * @return Returns true to set physical skills.
-	 */
-	public bool isPhysical()
-	{
-		return _magic == 0;
-	}
-
-	/**
-	 * @return Returns true to set magic skills.
-	 */
-	public bool isMagic()
-	{
-		return _magic == 1;
-	}
-
-	/**
-	 * @return Returns true to set static skills.
-	 */
-	public bool isStatic()
-	{
-		return _magic == 2;
-	}
-
-	/**
-	 * @return Returns true to set dance skills.
-	 */
-	public bool isDance()
-	{
-		return _magic == 3;
-	}
-
-	/**
-	 * @return Returns true to set static reuse.
-	 */
-	public bool isStaticReuse()
-	{
-		return _staticReuse;
-	}
-
-	/**
-	 * @return Returns the mpConsume.
-	 */
-	public int getMpConsume()
-	{
-		return _mpConsume;
-	}
-
-	/**
-	 * @return Returns the mpInitialConsume.
-	 */
-	public int getMpInitialConsume()
-	{
-		return _mpInitialConsume;
-	}
-
-	/**
-	 * @return Mana consumption per channeling tick.
-	 */
-	public int getMpPerChanneling()
-	{
-		return _mpPerChanneling;
-	}
-
-	/**
-	 * @return the skill name
-	 */
-	public string getName()
-	{
-		return _name;
-	}
-
-	/**
-	 * @return the reuse delay
-	 */
-	public TimeSpan getReuseDelay()
-	{
-		return _reuseDelay;
-	}
-
-	/**
-	 * @return the skill ID from which the reuse delay should be taken.
-	 */
-	public int getReuseDelayGroup()
-	{
-		return _reuseDelayGroup;
-	}
-
-	public long getReuseHashCode()
-	{
-		return _reuseHashCode;
-	}
-
-	public TimeSpan getHitTime()
-	{
-		return _hitTime;
-	}
-
-	public TimeSpan getHitCancelTime()
-	{
-		return _hitCancelTime;
-	}
-
-	/**
-	 * @return the cool time
-	 */
-	public TimeSpan getCoolTime()
-	{
-		return _coolTime;
-	}
-
-	/**
-	 * @return the target type of the skill : SELF, TARGET, SUMMON, GROUND...
-	 */
-	public TargetType getTargetType()
-	{
-		return _targetType;
-	}
-
-	/**
-	 * @return the affect scope of the skill : SINGLE, FAN, SQUARE, PARTY, PLEDGE...
-	 */
-	public AffectScope getAffectScope()
-	{
-		return _affectScope;
-	}
-
-	/**
-	 * @return the affect object of the skill : All, Clan, Friend, NotFriend, Invisible...
-	 */
-	public AffectObject getAffectObject()
-	{
-		return _affectObject;
-	}
-
-	/**
-	 * @return the AOE range of the skill.
-	 */
-	public int getAffectRange()
-	{
-		return _affectRange;
-	}
-
-	/**
-	 * @return the AOE fan range of the skill.
-	 */
-	public int[] getFanRange()
-	{
-		return _fanRange;
-	}
-
-	/**
-	 * @return the maximum amount of targets the skill can affect or 0 if unlimited.
-	 */
-	public int getAffectLimit()
-	{
-		if (_affectLimit[0] > 0 || _affectLimit[1] > 0)
-		{
-			return _affectLimit[0] + Rnd.get(_affectLimit[1]);
-		}
-
-		return 0;
-	}
-
-	public int getAffectHeightMin()
-	{
-		return _affectHeight[0];
-	}
-
-	public int getAffectHeightMax()
-	{
-		return _affectHeight[1];
-	}
-
-	public bool isActive()
-	{
-		return _operateType.isActive();
-	}
-
-	public bool isPassive()
-	{
-		return _operateType.isPassive();
-	}
-
-	public bool isToggle()
-	{
-		return _operateType.isToggle();
-	}
-
-	public bool isAura()
-	{
-		return _operateType.isAura();
-	}
-
-	public bool isHidingMessages()
-	{
-		return _isHidingMessages || _operateType.isHidingMessages();
-	}
-
-	public bool isNotBroadcastable()
-	{
-		return _operateType.isNotBroadcastable();
-	}
-
-	public bool isContinuous()
-	{
-		return _operateType.isContinuous() || isSelfContinuous();
-	}
-
-	public bool isFlyType()
-	{
-		return _operateType.isFlyType();
-	}
-
-	public bool isSelfContinuous()
-	{
-		return _operateType.isSelfContinuous();
-	}
-
-	public bool isChanneling()
-	{
-		return _operateType.isChanneling();
-	}
-
-	public bool isTriggeredSkill()
-	{
-		return _isTriggeredSkill;
-	}
-
-	public bool isSynergySkill()
-	{
-		return _operateType.isSynergy();
-	}
-
-	public SkillOperateType getOperateType()
-	{
-		return _operateType;
-	}
-
-	/**
-	 * Verify if the skill is a transformation skill.
-	 * @return {@code true} if the skill is a transformation, {@code false} otherwise
-	 */
-	public bool isTransformation()
-	{
-		return _abnormalType == AbnormalType.TRANSFORM || _abnormalType == AbnormalType.CHANGEBODY;
-	}
-
-	public int getEffectPoint()
-	{
-		return _effectPoint;
-	}
-
-	public bool useSoulShot()
-	{
-		return hasEffectType(EffectType.PHYSICAL_ATTACK, EffectType.PHYSICAL_ATTACK_HP_LINK);
-	}
-
-	public bool useSpiritShot()
-	{
-		return _magic == 1;
-	}
-
-	public bool useFishShot()
-	{
-		return hasEffectType(EffectType.FISHING);
-	}
-
-	public SocialClass getMinPledgeClass()
-	{
-		return _minPledgeClass;
-	}
-
-	public bool isHeroSkill()
-	{
-		return SkillTreeData.getInstance().isHeroSkill(_id, _level);
-	}
-
-	public bool isGMSkill()
-	{
-		return SkillTreeData.getInstance().isGMSkill(_id, _level);
-	}
-
-	public bool is7Signs()
-	{
-		return _id > 4360 && _id < 4367;
-	}
-
-	/**
-	 * Verify if this is a healing potion skill.
-	 * @return {@code true} if this is a healing potion skill, {@code false} otherwise
-	 */
-	public bool isHealingPotionSkill()
-	{
-		return _abnormalType == AbnormalType.HP_RECOVER;
-	}
-
-	public int getMaxLightSoulConsumeCount()
-	{
-		return _lightSoulMaxConsume;
-	}
-
-	public int getMaxShadowSoulConsumeCount()
-	{
-		return _shadowSoulMaxConsume;
-	}
-
-	public int getChargeConsumeCount()
-	{
-		return _chargeConsume;
-	}
-
-	public bool isStayAfterDeath()
-	{
-		return _stayAfterDeath || _irreplacableBuff || _isNecessaryToggle;
-	}
-
-	public bool isBad()
-	{
-		return _effectPoint < 0;
-	}
-
-	public bool checkCondition(Creature creature, WorldObject? @object, bool sendMessage)
-	{
-		if (creature.isFakePlayer() || (creature.canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS) &&
-		                                !Config.General.GM_SKILL_RESTRICTION))
-		{
-			return true;
-		}
-
-        Player? player = creature.getActingPlayer();
-		if (creature.isPlayer() && player != null && player.isMounted() && isBad() &&
-		    !MountEnabledSkillList.contains(_id))
-		{
-			SystemMessagePacket sm =
-				new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
-			sm.Params.addSkillName(_id);
-			creature.sendPacket(sm);
-			return false;
-		}
-
-		if (!checkConditions(SkillConditionScope.GENERAL, creature, @object) ||
-		    !checkConditions(SkillConditionScope.TARGET, creature, @object))
-		{
-			if (sendMessage &&
-			    !(creature == @object && isBad())) // Self targeted bad skills should not send a message.
-			{
-				SystemMessagePacket sm =
-					new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
-				sm.Params.addSkillName(_id);
-				creature.sendPacket(sm);
-			}
-
-			return false;
-		}
-
-		return true;
-	}
-
-	/**
-	 * @param creature the creature that requests getting the skill target.
-	 * @param forceUse if character pressed ctrl (force pick target)
-	 * @param dontMove if character pressed shift (dont move and pick target only if in range)
-	 * @param sendMessage send SystemMessageId packet if target is incorrect.
-	 * @return {@code WorldObject} this skill can be used on, or {@code null} if there is no such.
-	 */
-	public WorldObject? getTarget(Creature creature, bool forceUse, bool dontMove, bool sendMessage)
-	{
-		return getTarget(creature, creature.getTarget(), forceUse, dontMove, sendMessage);
-	}
-
-	/**
-	 * @param creature the creature that requests getting the skill target.
-	 * @param seletedTarget the target that has been selected by this character to be checked.
-	 * @param forceUse if character pressed ctrl (force pick target)
-	 * @param dontMove if character pressed shift (dont move and pick target only if in range)
-	 * @param sendMessage send SystemMessageId packet if target is incorrect.
-	 * @return the selected {@code WorldObject} this skill can be used on, or {@code null} if there is no such.
-	 */
-	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, bool forceUse, bool dontMove,
-		bool sendMessage)
-	{
-		ITargetTypeHandler? handler = TargetHandler.getInstance().getHandler(getTargetType());
-		if (handler != null)
-		{
-			try
-			{
-				return handler.getTarget(creature, selectedTarget, this, forceUse, dontMove, sendMessage);
-			}
-			catch (Exception e)
-			{
-				_logger.Warn("Exception in Skill.getTarget(): " + e);
-			}
-		}
-
-		creature.sendMessage("Target type of skill " + this + " is not currently handled.");
-		return null;
-	}
-
-	/**
-	 * @param creature the creature that needs to gather targets.
-	 * @param target the initial target activeChar is focusing upon.
-	 * @return list containing objects gathered in a specific geometric way that are valid to be affected by this skill.
-	 */
-	public List<WorldObject>? getTargetsAffected(Creature creature, WorldObject? target)
-	{
-		if (target == null)
-			return null;
-
-		IAffectScopeHandler? handler = AffectScopeHandler.getInstance().getHandler(getAffectScope());
-		if (handler != null)
-		{
-			try
-			{
-				List<WorldObject> result = [];
-				handler.forEachAffected<WorldObject>(creature, target, this, x => result.Add(x));
-				return result;
-			}
-			catch (Exception e)
-			{
-				_logger.Warn("Exception in Skill.getTargetsAffected(): " + e);
-			}
-		}
-
-		creature.sendMessage("Target affect scope of skill " + this + " is not currently handled.");
-		return null;
-	}
-
-	/**
-	 * @param creature the creature that needs to gather targets.
-	 * @param target the initial target activeChar is focusing upon.
-	 * @param action for each affected target.
-	 */
-	public void forEachTargetAffected<T>(Creature creature, WorldObject? target, Action<T> action)
-		where T: WorldObject
-	{
-		if (target == null)
-		{
-			return;
-		}
-
-		IAffectScopeHandler? handler = AffectScopeHandler.getInstance().getHandler(getAffectScope());
-		if (handler != null)
-		{
-			try
-			{
-				handler.forEachAffected(creature, target, this, action);
-			}
-			catch (Exception e)
-			{
-				_logger.Warn("Exception in Skill.forEachTargetAffected(): " + e);
-			}
-		}
-		else
-		{
-			creature.sendMessage("Target affect scope of skill " + this + " is not currently handled.");
-		}
-	}
-
-	/**
-	 * Adds an effect to the effect list for the given effect scope.
-	 * @param effectScope the effect scope
-	 * @param effect the effect
-	 */
-	public void addEffect(EffectScope effectScope, AbstractEffect effect)
-	{
-		_effectLists.GetOrAdd(effectScope, _ => []).Add(effect);
-	}
-
-	/**
-	 * Gets the skill effects.
-	 * @param effectScope the effect scope
-	 * @return the list of effects for the give scope
-	 */
-	public List<AbstractEffect>? getEffects(EffectScope effectScope)
-	{
-		return _effectLists.get(effectScope);
-	}
-
-	/**
-	 * Verify if this skill has effects for the given scope.
-	 * @param effectScope the effect scope
-	 * @return {@code true} if this skill has effects for the given scope, {@code false} otherwise
-	 */
-	public bool hasEffects(EffectScope effectScope)
-	{
-		List<AbstractEffect>? effects = _effectLists.get(effectScope);
-		return effects != null && effects.Count != 0;
-	}
-
-	/**
-	 * Applies the effects from this skill to the target for the given effect scope.
-	 * @param effectScope the effect scope
-	 * @param info the buff info
-	 * @param applyInstantEffects if {@code true} instant effects will be applied to the effected
-	 * @param addContinuousEffects if {@code true} continuous effects will be applied to the effected
-	 */
-	public void applyEffectScope(EffectScope? effectScope, BuffInfo info, bool applyInstantEffects,
-		bool addContinuousEffects)
+    /// <summary>
+    /// The skill id.
+    /// </summary>
+    public int Id { get; }
+
+    /// <summary>
+    /// Skill level.
+    /// </summary>
+    public int Level { get; }
+
+    /// <summary>
+    /// Skill sublevel.
+    /// </summary>
+    public int SubLevel { get; }
+
+    /// <summary>
+    /// Custom skill id displayed by the client.
+    /// </summary>
+    public int DisplayId { get; }
+
+    /// <summary>
+    /// Custom skill level displayed by the client.
+    /// </summary>
+    public int DisplayLevel { get; }
+
+    /// <summary>
+    /// Icon of the skill.
+    /// </summary>
+    public string Icon { get; }
+
+    /// <summary>
+    /// Skill client's name.
+    /// </summary>
+    public string Name { get; }
+
+    /// <summary>
+    /// Operative type: passive, active, toggle.
+    /// </summary>
+    public SkillOperateType OperateType { get; }
+
+    public bool IsActive => OperateType.isActive();
+
+    public bool IsPassive => OperateType.isPassive();
+
+    public bool IsToggle => OperateType.isToggle();
+
+    public bool IsAura => OperateType.isAura();
+
+    public bool IsNotBroadcastable => OperateType.isNotBroadcastable();
+
+    public bool IsContinuous => OperateType.isContinuous() || IsSelfContinuous;
+
+    public bool IsFlyType => OperateType.isFlyType();
+
+    public bool IsSelfContinuous => OperateType.isSelfContinuous();
+
+    public bool IsChanneling => OperateType.isChanneling();
+
+    public bool IsSynergy => OperateType.isSynergy();
+
+    /// <summary>
+    /// Skill magic type.
+    /// </summary>
+    public SkillMagicType MagicType { get; }
+
+    /// <summary>
+    /// Returns true to set physical skills.
+    /// </summary>
+    public bool IsPhysical => MagicType == SkillMagicType.Physical;
+
+    /// <summary>
+    /// Returns true to set magic skills.
+    /// </summary>
+    public bool IsMagic => MagicType == SkillMagicType.Magic;
+
+    /// <summary>
+    /// Returns true to set static skills.
+    /// </summary>
+    public bool IsStatic => MagicType == SkillMagicType.Static;
+
+    /// <summary>
+    /// Returns true to set dance skills.
+    /// </summary>
+    public bool IsDance => MagicType == SkillMagicType.Dance;
+
+    public TraitType TraitType { get; }
+
+    /// <summary>
+    /// Initial MP consumption.
+    /// </summary>
+    public int MpInitialConsume { get; }
+
+    /// <summary>
+    /// MP consumption.
+    /// </summary>
+    public int MpConsume { get; }
+
+    /// <summary>
+    /// MP consumption per channeling tick.
+    /// </summary>
+    public int MpPerChanneling { get; }
+
+    /// <summary>
+    /// HP consumption.
+    /// </summary>
+    public int HpConsume { get; }
+
+    /// <summary>
+    /// Id of item consumed by this skill from caster.
+    /// </summary>
+    public int ItemConsumeId { get; }
+
+    /// <summary>
+    /// Amount of items consumed by this skill from caster.
+    /// </summary>
+    public int ItemConsumeCount { get; }
+
+    /// <summary>
+    /// Used for tracking item id in case that item consume cannot be used.
+    /// </summary>
+    public int ReferenceItemId { get; }
+
+    /// <summary>
+    /// Fame points consumed by this skill from caster.
+    /// </summary>
+    public int FamePointConsume { get; }
+
+    /// <summary>
+    /// Clan points consumed by this skill from caster's clan.
+    /// </summary>
+    public int ClanRepConsume { get; }
+
+    public int MaxLightSoulConsumeCount { get; }
+
+    public int MaxShadowSoulConsumeCount { get; }
+
+    public int ChargeConsumeCount { get; }
+
+    /// <summary>
+    /// Cast range: how far can be the target.
+    /// </summary>
+    public int CastRange { get; }
+
+    /// <summary>
+    /// Effect range: how far the skill affect the target.
+    /// </summary>
+    public int EffectRange { get; }
+
+    /// <summary>
+    /// The skill abnormal level.
+    /// </summary>
+    public int AbnormalLevel { get; }
+
+    /// <summary>
+    /// The skill abnormal time. It is the base to calculate the duration of the continuous effects of this skill.
+    /// </summary>
+    public TimeSpan? AbnormalTime { get; }
+
+    /// <summary>
+    /// The skill abnormal type (global effect "group").
+    /// </summary>
+    public AbnormalType AbnormalType { get; }
+
+    /// <summary>
+    /// The skill subordination abnormal type (local effect "group").
+    /// </summary>
+    public AbnormalType SubordinationAbnormalType { get; }
+
+    /// <summary>
+    /// The skill abnormal visual effect. The visual effects displayed in game.
+    /// </summary>
+    public FrozenSet<AbnormalVisualEffect> AbnormalVisualEffects { get; }
+
+    /// <summary>
+    /// Verify if the skill has abnormal visual effects.
+    /// </summary>
+    public bool HasAbnormalVisualEffects => AbnormalVisualEffects.Count != 0;
+
+    public TimeSpan HitTime { get; }
+
+    public TimeSpan HitCancelTime { get; }
+
+    public TimeSpan CoolTime { get; }
+
+    public TimeSpan ReuseDelay { get; }
+
+    public long ReuseHashCode { get; }
+
+    /// <summary>
+    /// The skill id from which the reuse delay should be taken.
+    /// </summary>
+    public int ReuseDelayGroup { get; }
+
+    /// <summary>
+    /// The skill magic level.
+    /// </summary>
+    public int MagicLevel { get; }
+
+    public int LevelBonusRate { get; }
+
+    public double? ActivateRate { get; }
+
+    /// <summary>
+    /// Custom minimum skill/effect chance.
+    /// </summary>
+    public int MinChance { get; }
+
+    /// <summary>
+    /// Custom maximum skill/effect chance.
+    /// </summary>
+    public int MaxChance { get; }
+
+    /// <summary>
+    /// The target type of the skill: SELF, TARGET, SUMMON, GROUND, etc
+    /// </summary>
+    public TargetType TargetType { get; }
+
+    /// <summary>
+    /// The affect scope of the skill: SINGLE, FAN, SQUARE, PARTY, PLEDGE, etc
+    /// </summary>
+    public AffectScope AffectScope { get; }
+
+    /// <summary>
+    /// The affect object of the skill: All, Clan, Friend, NotFriend, Invisible, etc
+    /// </summary>
+    public AffectObject AffectObject { get; }
+
+    /// <summary>
+    /// Effecting area of the skill (radius).
+    /// The center varies according to the target type:
+    /// "caster" if targetType = AURA/PARTY/CLAN or "target" if targetType = AREA.
+    /// </summary>
+    public int AffectRange { get; }
+
+    /// <summary>
+    /// The AOE fan range of the skill.
+    /// </summary>
+    public ReadOnlySpan<int> FanRange => _fanRange;
+
+    /// <summary>
+    /// The maximum amount of targets the skill can affect or 0 if unlimited.
+    /// </summary>
+    public int GetAffectLimit()
     {
-        List<AbstractEffect>? effects = effectScope == null ? null : getEffects(effectScope.Value);
-		if (effectScope != null && hasEffects(effectScope.Value) && effects != null)
-		{
-			foreach (AbstractEffect effect in effects)
-			{
-				if (effect.isInstant())
-				{
-					if (applyInstantEffects && effect.calcSuccess(info.getEffector(), info.getEffected(), this))
-					{
-						effect.instant(info.getEffector(), info.getEffected(), this, info.getItem());
-					}
-				}
-				else if (addContinuousEffects)
-				{
-					if (applyInstantEffects)
-					{
-						effect.continuousInstant(info.getEffector(), info.getEffected(), this, info.getItem());
-					}
+        if (_affectLimit[0] > 0 || _affectLimit[1] > 0)
+            return _affectLimit[0] + Rnd.get(_affectLimit[1]);
 
-					if (effect.canStart(info.getEffector(), info.getEffected(), this))
-					{
-						info.addEffect(effect);
-					}
+        return 0;
+    }
 
-					// tempfix for hp/mp regeneration
-					// TODO: Find where regen stops and make a proper fix
-                    Player? effectedPlayer = info.getEffected().getActingPlayer();
-					if (info.getEffected().isPlayer() && effectedPlayer != null && !isBad())
-					{
-                        effectedPlayer.getStatus().startHpMpRegeneration();
-					}
-				}
-			}
-		}
-	}
+    public int AffectHeightMin => _affectHeight[0];
 
-	/**
-	 * Method overload for {@link Skill#applyEffects(Creature, Creature, bool, bool, bool, int, Item)}.<br>
-	 * Simplify the calls.
-	 * @param effector the caster of the skill
-	 * @param effected the target of the effect
-	 */
-	public void applyEffects(Creature effector, Creature effected)
-	{
-		applyEffects(effector, effected, false, false, true, TimeSpan.Zero, null);
-	}
+    public int AffectHeightMax => _affectHeight[1];
 
-	/**
-	 * Method overload for {@link Skill#applyEffects(Creature, Creature, bool, bool, bool, int, Item)}.<br>
-	 * Simplify the calls.
-	 * @param effector the caster of the skill
-	 * @param effected the target of the effect
-	 * @param item
-	 */
-	public void applyEffects(Creature effector, Creature effected, Item? item)
-	{
-		applyEffects(effector, effected, false, false, true, TimeSpan.Zero, item);
-	}
+    /// <summary>
+    /// Character action after cast.
+    /// </summary>
+    public NextActionType NextAction { get; }
 
-	/**
-	 * Method overload for {@link Skill#applyEffects(Creature, Creature, bool, bool, bool, int, Item)}.<br>
-	 * Simplify the calls, allowing abnormal time time customization.
-	 * @param effector the caster of the skill
-	 * @param effected the target of the effect
-	 * @param instant if {@code true} instant effects will be applied to the effected
-	 * @param abnormalTime custom abnormal time, if equal or lesser than zero will be ignored
-	 */
-	public void applyEffects(Creature effector, Creature effected, bool instant, TimeSpan abnormalTime)
-	{
-		applyEffects(effector, effected, false, false, instant, abnormalTime, null);
-	}
+    public AttributeType AttributeType { get; }
 
-	/**
-	 * Applies the effects from this skill to the target.
-	 * @param effector the caster of the skill
-	 * @param effected the target of the effect
-	 * @param self if {@code true} self-effects will be casted on the caster
-	 * @param passive if {@code true} passive effects will be applied to the effector
-	 * @param instant if {@code true} instant effects will be applied to the effected
-	 * @param abnormalTime custom abnormal time, if equal or lesser than zero will be ignored
-	 * @param item
-	 */
-	public void applyEffects(Creature effector, Creature effected, bool self, bool passive, bool instant,
-		TimeSpan abnormalTime, Item? item)
-	{
-		// null targets cannot receive any effects.
-		if (effected == null)
-		{
-			return;
-		}
+    public int AttributeValue { get; }
 
-		if (effected.isIgnoringSkillEffects(_id, _level))
-		{
-			return;
-		}
+    /// <summary>
+    /// Skill basic property type.
+    /// </summary>
+    public BasicProperty BasicProperty { get; }
 
-		bool addContinuousEffects = !passive && (_operateType.isToggle() ||
-		                                         (_operateType.isContinuous() &&
-		                                          Formulas.calcEffectSuccess(effector, effected, this)));
-		if (!self && !passive)
-		{
-			BuffInfo info = new BuffInfo(effector, effected, this, !instant, item, null);
-			if (addContinuousEffects && abnormalTime > TimeSpan.Zero)
-			{
-				info.setAbnormalTime(abnormalTime);
-			}
+    public SocialClass MinPledgeClass { get; }
 
-			applyEffectScope(EffectScope.GENERAL, info, instant, addContinuousEffects);
+    public int EffectPoint { get; }
 
-			EffectScope? pvpOrPveEffectScope = effector.isPlayable() && effected.isAttackable() ? EffectScope.PVE :
-				effector.isPlayable() && effected.isPlayable() ? EffectScope.PVP : null;
-			applyEffectScope(pvpOrPveEffectScope, info, instant, addContinuousEffects);
-			if (addContinuousEffects)
-			{
-				// Aura skills reset the abnormal time.
-				BuffInfo? existingInfo =
-					_operateType.isAura() ? effected.getEffectList().getBuffInfoBySkillId(_id) : null;
-				if (existingInfo != null)
-				{
-					existingInfo.resetAbnormalTime(info.getAbnormalTime());
-				}
-				else
-				{
-					effected.getEffectList().add(info);
-				}
+    /// <summary>
+    /// The additional effect id.
+    /// </summary>
+    public int ChannelingSkillId { get; }
 
-				// Check for mesmerizing debuffs and increase resist level.
-				if (_isDebuff && _basicProperty != BasicProperty.NONE && effected.hasBasicPropertyResist())
-				{
-					BasicPropertyResist resist = effected.getBasicPropertyResist(_basicProperty);
-					resist.increaseResistLevel();
-				}
-			}
+    public TimeSpan ChannelingTickInterval { get; }
 
-			// Support for buff sharing feature including healing herbs.
-			if (_isSharedWithSummon && effected.isPlayer() && !isTransformation() &&
-			    ((addContinuousEffects && isContinuous() && !_isDebuff) || _isRecoveryHerb))
-			{
-				if (effected.hasServitors())
-				{
-					effected.getServitors().Values
-						.ForEach(s => applyEffects(effector, s, _isRecoveryHerb, TimeSpan.Zero));
-				}
+    public TimeSpan ChannelingTickInitialDelay { get; }
 
-                Summon? pet = effected.getPet();
-				if (effected.hasPet() && pet != null)
-				{
-					applyEffects(effector, pet, _isRecoveryHerb, TimeSpan.Zero);
-				}
-			}
-		}
+    /// <summary>
+    /// Stance skill id.
+    /// </summary>
+    public int DoubleCastSkill { get; }
 
-		if (self)
-		{
-			addContinuousEffects = !passive && (_operateType.isToggle() ||
-			                                    (_operateType.isSelfContinuous() &&
-			                                     Formulas.calcEffectSuccess(effector, effector, this)));
+    public int ToggleGroupId { get; }
 
-			BuffInfo info = new BuffInfo(effector, effector, this, !instant, item, null);
-			if (addContinuousEffects && abnormalTime > TimeSpan.Zero)
-			{
-				info.setAbnormalTime(abnormalTime);
-			}
+    public int AttachToggleGroupId { get; }
 
-			applyEffectScope(EffectScope.SELF, info, instant, addContinuousEffects);
-			if (addContinuousEffects)
-			{
-				// Aura skills reset the abnormal time.
-				BuffInfo? existingInfo =
-					_operateType.isAura() ? effector.getEffectList().getBuffInfoBySkillId(_id) : null;
-				if (existingInfo != null)
-				{
-					existingInfo.resetAbnormalTime(info.getAbnormalTime());
-				}
-				else
-				{
-					info.getEffector().getEffectList().add(info);
-				}
-			}
+    public ImmutableArray<AttachSkillHolder> AttachSkills { get; }
 
-			// Support for buff sharing feature.
-			// Avoiding Servitor Share since it's implementation already "shares" the effect.
-			if (addContinuousEffects && _isSharedWithSummon && info.getEffected().isPlayer() && isContinuous() &&
-			    !_isDebuff && info.getEffected().hasServitors())
-			{
-				info.getEffected().getServitors().Values
-					.ForEach(s => applyEffects(effector, s, false, TimeSpan.Zero));
-			}
-		}
+    public FrozenSet<AbnormalType> AbnormalResists { get; }
 
-		if (passive)
-		{
-			BuffInfo info = new BuffInfo(effector, effector, this, true, item, null);
-			applyEffectScope(EffectScope.GENERAL, info, false, true);
-			effector.getEffectList().add(info);
-		}
-	}
+    public double MagicCriticalRate { get; }
 
-	/**
-	 * Applies the channeling effects from this skill to the target.
-	 * @param effector the caster of the skill
-	 * @param effected the target of the effect
-	 */
-	public void applyChannelingEffects(Creature effector, Creature effected)
-	{
-		// null targets cannot receive any effects.
-		if (effected == null)
-		{
-			return;
-		}
+    public SkillBuffType BuffType { get; }
 
-		BuffInfo info = new BuffInfo(effector, effected, this, false, null, null);
-		applyEffectScope(EffectScope.CHANNELING, info, true, true);
-	}
+    /// <summary>
+    /// The skill effects by scope.
+    /// </summary>
+    public ImmutableArray<AbstractEffect> GetEffects(SkillEffectScope effectScope)
+    {
+        if (effectScope >= 0 || (int)effectScope < _effectLists.Length)
+            return _effectLists[(int)effectScope];
 
-	/**
-	 * Activates a skill for the given creature and targets.
-	 * @param caster the caster
-	 * @param targets the targets
-	 */
-	public void activateSkill(Creature caster, List<WorldObject> targets)
-	{
-		activateSkill(caster, null, targets);
-	}
+        return ImmutableArray<AbstractEffect>.Empty;
+    }
 
-	/**
-	 * Activates the skill to the targets.
-	 * @param caster the caster
-	 * @param item
-	 * @param targets the targets
-	 */
-	public void activateSkill(Creature caster, Item? item, List<WorldObject> targets)
-	{
-		foreach (WorldObject targetObject in targets)
-		{
-			if (!targetObject.isCreature())
-			{
-				continue;
-			}
+    /// <summary>
+    /// Verify if this skill has effects for the given scope.
+    /// </summary>
+    public bool HasEffects(SkillEffectScope effectScope) => !GetEffects(effectScope).IsDefaultOrEmpty;
 
-			if (targetObject.isSummon() && !isSharedWithSummon())
-			{
-				continue;
-			}
+    /// <summary>
+    /// Effect type to check if its present on this skill effects.
+    /// </summary>
+    /// <param name="effectTypes"></param>
+    /// <returns>True if at least one effect type is present.</returns>
+    public bool HasEffectType(params ReadOnlySpan<EffectType> effectTypes)
+    {
+        foreach (EffectType type in effectTypes)
+        {
+            if (_effectTypes.Contains(type))
+                return true;
+        }
 
-			Creature target = (Creature)targetObject;
-			if (Formulas.calcBuffDebuffReflection(target, this))
-			{
-				// if skill is reflected instant effects should be casted on target
-				// and continuous effects on caster
-				applyEffects(target, caster, false, TimeSpan.Zero);
+        return false;
+    }
 
-				BuffInfo info = new BuffInfo(caster, target, this, false, item, null);
-				applyEffectScope(EffectScope.GENERAL, info, true, false);
+    /// <summary>
+    /// Effect type to check if its present on this skill effects.
+    /// </summary>
+    /// <param name="effectScope"></param>
+    /// <param name="effectTypes"></param>
+    /// <returns>True if at least one effect type is present.</returns>
+    public bool HasEffectType(SkillEffectScope effectScope, params ReadOnlySpan<EffectType> effectTypes)
+    {
+        if (effectScope < 0 || (int)effectScope >= _effectTypesByScope.Length)
+            return false;
 
-				EffectScope? pvpOrPveEffectScope = caster.isPlayable() && target.isAttackable() ? EffectScope.PVE :
-					caster.isPlayable() && target.isPlayable() ? EffectScope.PVP : null;
-				applyEffectScope(pvpOrPveEffectScope, info, true, false);
-			}
-			else
-			{
-				applyEffects(caster, target, item);
-			}
-		}
+        EnumSet64<EffectType> set = _effectTypesByScope[(int)effectScope];
+        foreach (EffectType type in effectTypes)
+        {
+            if (set.Contains(type))
+                return true;
+        }
 
-		// Self Effect
-		if (hasEffects(EffectScope.SELF))
-		{
-			if (caster.isAffectedBySkill(_id))
-			{
-				caster.stopSkillEffects(SkillFinishType.REMOVED, _id);
-			}
+        return false;
+    }
 
-			applyEffects(caster, caster, true, false, true, TimeSpan.Zero, item);
-		}
+    /// <summary>
+    /// The skill conditions by scope.
+    /// </summary>
+    public ImmutableArray<ISkillCondition> GetConditions(SkillConditionScope skillConditionScope)
+    {
+        if (skillConditionScope >= 0 && (int)skillConditionScope < _conditionLists.Length)
+            return _conditionLists[(int)skillConditionScope];
 
-		if (!caster.isCubic())
-		{
-			if (useSpiritShot())
-			{
-				caster.unchargeShot(caster.isChargedShot(ShotType.BLESSED_SPIRITSHOTS)
-					? ShotType.BLESSED_SPIRITSHOTS
-					: ShotType.SPIRITSHOTS);
-			}
-			else if (useSoulShot())
-			{
-				caster.unchargeShot(caster.isChargedShot(ShotType.BLESSED_SOULSHOTS)
-					? ShotType.BLESSED_SOULSHOTS
-					: ShotType.SOULSHOTS);
-			}
-		}
+        return ImmutableArray<ISkillCondition>.Empty;
+    }
 
-		if (_isSuicideAttack)
-		{
-			caster.doDie(caster);
-		}
-	}
+    /// <summary>
+    /// Returns true to set static reuse.
+    /// </summary>
+    public bool IsStaticReuse { get; }
 
-	/**
-	 * Adds a condition to the condition list for the given condition scope.
-	 * @param skillConditionScope the condition scope
-	 * @param skillCondition the condition
-	 */
-	public void addCondition(SkillConditionScope skillConditionScope, ISkillCondition skillCondition)
-	{
-		_conditionLists.GetOrAdd(skillConditionScope, _ => []).Add(skillCondition);
-	}
+    /// <summary>
+    /// Verify if this skill is abnormal instant. Herb buff skills yield true for this check.
+    /// </summary>
+    public bool IsAbnormalInstant { get; }
 
-	/**
-	 * Checks the conditions of this skills for the given condition scope.
-	 * @param skillConditionScope the condition scope
-	 * @param caster the caster
-	 * @param target the target
-	 * @return {@code false} if at least one condition returns false, {@code true} otherwise
-	 */
-	public bool checkConditions(SkillConditionScope skillConditionScope, Creature caster, WorldObject? target)
-	{
-		List<ISkillCondition>? conditions = _conditionLists.get(skillConditionScope);
-		if (conditions == null)
-		{
-			return true;
-		}
+    public bool IsStayAfterDeath => _stayAfterDeath || IsIrreplacableBuff || IsNecessaryToggle;
 
-		foreach (ISkillCondition condition in conditions)
-		{
-			if (!condition.canUse(caster, this, target))
-			{
-				return false;
-			}
-		}
+    /// <summary>
+    /// Verify if this skill is coming from Recovery Herb.
+    /// </summary>
+    public bool IsRecoveryHerb { get; }
 
-		return true;
-	}
+    /// <summary>
+    /// True if skill effects should be removed on any action except movement.
+    /// </summary>
+    /// <value></value>
+    public bool IsRemovedOnAnyActionExceptMove { get; }
 
-	public override string ToString()
-	{
-		return "Skill " + _name + "(" + _id + "," + _level + "," + _subLevel + ")";
-	}
+    /// <summary>
+    /// True if skill effects should be removed on damage.
+    /// </summary>
+    public bool IsRemovedOnDamage { get; }
 
-	/**
-	 * used for tracking item id in case that item consume cannot be used
-	 * @return reference item id
-	 */
-	public int getReferenceItemId()
-	{
-		return _refId;
-	}
+    /// <summary>
+    /// True if skill effects should be removed on unequip weapon.
+    /// </summary>
+    /// <value></value>
+    public bool IsRemovedOnUnequipWeapon { get; }
 
-	public bool canBeDispelled()
-	{
-		return _canBeDispelled;
-	}
+    /// <summary>
+    /// True if skill cannot be used in olympiad.
+    /// </summary>
+    public bool IsBlockedInOlympiad { get; }
 
-	/**
-	 * Verify if the skill can be stolen.
-	 * @return {@code true} if skill can be stolen, {@code false} otherwise
-	 */
-	public bool canBeStolen()
-	{
-		return !isPassive() && !isToggle() && !_isDebuff && !_irreplacableBuff && !isHeroSkill() && !isGMSkill() &&
-		       !(isStatic() && getId() != (int)CommonSkill.CARAVANS_SECRET_MEDICINE) && _canBeDispelled;
-	}
+    /// <summary>
+    /// True if the skill will take activation buff slot instead of a normal buff slot.
+    /// </summary>
+    public bool IsTriggeredSkill { get; }
 
-	public bool isClanSkill()
-	{
-		return SkillTreeData.getInstance().isClanSkill(_id, _level);
-	}
+    /// <summary>
+    /// Verify if this skill is a debuff.
+    /// </summary>
+    public bool IsDebuff { get; }
 
-	public bool isExcludedFromCheck()
-	{
-		return _excludedFromCheck;
-	}
+    public bool IsSuicideAttack { get; }
 
-	public bool isWithoutAction()
-	{
-		return _withoutAction;
-	}
+    public bool CanBeDispelled { get; }
 
-    /**
-     * Parses all the abnormal visual effects.
-     * @param abnormalVisualEffects the abnormal visual effects list
-     */
+    public bool IsExcludedFromCheck { get; }
+
+    public bool IsWithoutAction { get; }
+
+    public bool IsMentoring { get; }
+
+    public bool CanDoubleCast { get; }
+
+    public bool CanCastWhileDisabled { get; }
+
+    public bool IsSharedWithSummon { get; }
+
+    public bool IsNecessaryToggle { get; }
+
+    public bool IsDeleteAbnormalOnLeave { get; }
+
+    /// <summary>
+    /// True if the buff cannot be replaced, canceled, removed on death, etc.
+    /// It can be only overriden by higher stack, but buff still remains ticking and
+    /// activates once the higher stack buff has passed away.
+    /// </summary>
+    public bool IsIrreplacableBuff { get; }
+
+    /// <summary>
+    /// True if skill could not be requested for use by players.
+    /// Blocks the use skill client action and is not showed on skill list.
+    /// </summary>
+    /// <value></value>
+    public bool IsBlockActionUseSkill { get; }
+
+    public bool IsDisplayInList { get; }
+
+    public bool IsHidingMessages => _isHidingMessages || OperateType.isHidingMessages();
+
+    public bool IsAoe =>
+        AffectScope is AffectScope.FAN or AffectScope.FAN_PB or AffectScope.POINT_BLANK or AffectScope.RANGE
+            or AffectScope.RING_RANGE or AffectScope.SQUARE or AffectScope.SQUARE_PB;
+
+
+    public bool AllowOnTransform => IsPassive;
+
+    /// <summary>
+    /// Verify if the skill is a transformation skill.
+    /// </summary>
+    public bool IsTransformation => AbnormalType is AbnormalType.TRANSFORM or AbnormalType.CHANGEBODY;
+
+    public bool UseSoulShot => HasEffectType(EffectType.PHYSICAL_ATTACK, EffectType.PHYSICAL_ATTACK_HP_LINK);
+
+    public bool UseSpiritShot => MagicType == SkillMagicType.Magic;
+
+    public bool UseFishShot => HasEffectType(EffectType.FISHING);
+
+    public bool Is7Signs => Id is > 4360 and < 4367;
+
+    /// <summary>
+    /// Verify if this is a healing potion skill.
+    /// </summary>
+    public bool IsHealingPotionSkill => AbnormalType == AbnormalType.HP_RECOVER;
+
+    public bool IsBad => EffectPoint < 0;
+
+    public override string ToString() => $"Skill {Name} ({Id},{Level},{SubLevel})";
+
+    public override int GetHashCode() => HashCode.Combine(Id, Level, SubLevel);
+
+    /// <summary>
+    /// Constructs the skill hash.
+    /// </summary>
+    public static long GetSkillHashCode(int skillId, int skillLevel) => skillId * 4294967296 + skillLevel;
+
+    /// <summary>
+    /// Constructs the skill hash.
+    /// </summary>
+    public static long GetSkillHashCode(int skillId, int skillLevel, int skillSubLevel) =>
+        skillId * 4294967296 + skillSubLevel * 65536 + skillLevel;
+
+    /// <summary>
+    /// Returns the skill hash.
+    /// </summary>
+    public long GetSkillHashCode() => GetSkillHashCode(Id, Level, SubLevel);
+
+    /// <summary>
+    /// Parses all the abnormal visual effects.
+    /// </summary>
     private static FrozenSet<AbnormalVisualEffect> ParseAbnormalVisualEffect(int skillId, string str)
     {
         FrozenSet<AbnormalVisualEffect> set = ParseList<AbnormalVisualEffect>(skillId, str);
@@ -1809,249 +778,4 @@ public sealed class Skill: IIdentifiable
 
         return FrozenSet<T>.Empty;
     }
-
-    /**
-     * @param effectType Effect type to check if its present on this skill effects.
-     * @param effectTypes Effect types to check if are present on this skill effects.
-     * @return {@code true} if at least one of specified {@link EffectType} types is present on this skill effects, {@code false} otherwise.
-     */
-	public bool hasEffectType(EffectType effectType, params EffectType[] effectTypes)
-	{
-		if (_effectTypes == null)
-		{
-			lock (this)
-			{
-				if (_effectTypes == null)
-				{
-					Set<EffectType> effectTypesSet = new();
-					foreach (List<AbstractEffect> effectList in _effectLists.Values)
-					{
-						if (effectList != null)
-						{
-							foreach (AbstractEffect effect in effectList)
-							{
-								effectTypesSet.add(effect.getEffectType());
-							}
-						}
-					}
-
-					EffectType[] effectTypesArray = effectTypesSet.ToArray();
-					Array.Sort(effectTypesArray);
-					_effectTypes = effectTypesArray;
-				}
-			}
-		}
-
-		if (Array.BinarySearch(_effectTypes, effectType) >= 0)
-		{
-			return true;
-		}
-
-		foreach (EffectType type in effectTypes)
-		{
-			if (Array.BinarySearch(_effectTypes, type) >= 0)
-			{
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	/**
-	 * @param effectScope Effect Scope to look inside for the specific effect type.
-	 * @param effectType Effect type to check if its present on this skill effects.
-	 * @param effectTypes Effect types to check if are present on this skill effects.
-	 * @return {@code true} if at least one of specified {@link EffectType} types is present on this skill effects, {@code false} otherwise.
-	 */
-	public bool hasEffectType(EffectScope effectScope, EffectType effectType, params EffectType[] effectTypes)
-    {
-        List<AbstractEffect>? effects = _effectLists.get(effectScope);
-		if (hasEffects(effectScope) || effects == null)
-		{
-			return false;
-		}
-
-		foreach (AbstractEffect effect in effects)
-		{
-			if (effectType == effect.getEffectType())
-			{
-				return true;
-			}
-
-			foreach (EffectType type in effectTypes)
-			{
-				if (type == effect.getEffectType())
-				{
-					return true;
-				}
-			}
-		}
-
-		return false;
-	}
-
-	/**
-	 * @return icon of the current skill.
-	 */
-	public string getIcon()
-	{
-		return _icon;
-	}
-
-	public TimeSpan getChannelingTickInterval()
-	{
-		return _channelingTickInterval;
-	}
-
-	public TimeSpan getChannelingTickInitialDelay()
-	{
-		return _channelingStart;
-	}
-
-	public bool isMentoring()
-	{
-		return _isMentoring;
-	}
-
-	/**
-	 * @param creature
-	 * @return alternative skill that has been attached due to the effect of toggle skills on the player (e.g Fire Stance, Water Stance).
-	 */
-	public Skill? getAttachedSkill(Creature creature)
-	{
-		// If character is double casting, return double cast skill.
-		if (_doubleCastSkill > 0 && creature.isAffected(EffectFlag.DOUBLE_CAST))
-		{
-			return SkillData.getInstance().getSkill(getDoubleCastSkill(), getLevel(), getSubLevel());
-		}
-
-		// Default toggle group ID, assume nothing attached.
-		if (_attachToggleGroupId <= 0 || _attachSkills == null)
-		{
-			return null;
-		}
-
-		int toggleSkillId = 0;
-		foreach (BuffInfo info in creature.getEffectList().getEffects())
-		{
-			if (info.getSkill().getToggleGroupId() == _attachToggleGroupId)
-			{
-				toggleSkillId = info.getSkill().getId();
-				break;
-			}
-		}
-
-		// No active toggles with this toggle group ID found.
-		if (toggleSkillId == 0)
-		{
-			return null;
-		}
-
-		AttachSkillHolder? attachedSkill = null;
-		foreach (AttachSkillHolder ash in _attachSkills)
-		{
-			if (ash.getRequiredSkillId() == toggleSkillId)
-			{
-				attachedSkill = ash;
-				break;
-			}
-		}
-
-		// No attached skills for this toggle found.
-		if (attachedSkill == null)
-		{
-			return null;
-		}
-
-		return SkillData.getInstance().getSkill(attachedSkill.getSkillId(),
-			Math.Min(SkillData.getInstance().getMaxLevel(attachedSkill.getSkillId()), _level), _subLevel);
-	}
-
-	public bool canDoubleCast()
-	{
-		return _canDoubleCast;
-	}
-
-	public int getDoubleCastSkill()
-	{
-		return _doubleCastSkill;
-	}
-
-	public bool canCastWhileDisabled()
-	{
-		return _canCastWhileDisabled;
-	}
-
-	public bool isSharedWithSummon()
-	{
-		return _isSharedWithSummon;
-	}
-
-	public bool isNecessaryToggle()
-	{
-		return _isNecessaryToggle;
-	}
-
-	public bool isDeleteAbnormalOnLeave()
-	{
-		return _deleteAbnormalOnLeave;
-	}
-
-	/**
-	 * @return {@code true} if the buff cannot be replaced, canceled, removed on death, etc.<br>
-	 *         It can be only overriden by higher stack, but buff still remains ticking and activates once the higher stack buff has passed away.
-	 */
-	public bool isIrreplacableBuff()
-	{
-		return _irreplacableBuff;
-	}
-
-	public bool isDisplayInList()
-	{
-		return _displayInList;
-	}
-
-	/**
-	 * @return if skill could not be requested for use by players.
-	 */
-	public bool isBlockActionUseSkill()
-	{
-		return _blockActionUseSkill;
-	}
-
-	public int getToggleGroupId()
-	{
-		return _toggleGroupId;
-	}
-
-	public int getAttachToggleGroupId()
-	{
-		return _attachToggleGroupId;
-	}
-
-	public ImmutableArray<AttachSkillHolder> getAttachSkills()
-	{
-		return _attachSkills;
-	}
-
-	public FrozenSet<AbnormalType> getAbnormalResists()
-	{
-		return _abnormalResists;
-	}
-
-	public double getMagicCriticalRate()
-	{
-		return _magicCriticalRate;
-	}
-
-	public SkillBuffType getBuffType()
-	{
-		return _buffType;
-	}
-
-	public bool isEnchantable()
-	{
-		return SkillEnchantData.getInstance().getSkillEnchant(getId()) != null;
-	}
 }

@@ -93,7 +93,7 @@ public sealed class EnchantSkillGroupsData: DataReaderBase
 
 	public bool isEnchantable(Skill skill)
 	{
-		return isEnchantable(new SkillHolder(skill.getId(), skill.getLevel()));
+		return isEnchantable(new SkillHolder(skill.Id, skill.Level));
 	}
 
 	public bool isEnchantable(SkillHolder holder)

@@ -1,6 +1,4 @@
 using L2Dn.GameServer.Dto;
-using L2Dn.GameServer.Model.Interfaces;
-using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Model.Holders;
@@ -16,7 +14,7 @@ public class MinionHolder: IIdentifiable
 	private readonly int _max;
 	private readonly TimeSpan _respawnTime;
 	private readonly int _weightPoint;
-	
+
 	/**
 	 * Constructs a minion holder.
 	 * @param id the id
@@ -33,16 +31,13 @@ public class MinionHolder: IIdentifiable
 		_respawnTime = respawnTime;
 		_weightPoint = weightPoint;
 	}
-	
-	/**
+
+    /**
 	 * @return the Identifier of the Minion to spawn.
 	 */
-	public int getId()
-	{
-		return _id;
-	}
-	
-	/**
+    public int Id => _id;
+
+    /**
 	 * @return the count of the Minions to spawn.
 	 */
 	public int getCount()
@@ -53,7 +48,7 @@ public class MinionHolder: IIdentifiable
 		}
 		return _count;
 	}
-	
+
 	/**
 	 * @return the respawn time of the Minions.
 	 */
@@ -61,7 +56,7 @@ public class MinionHolder: IIdentifiable
 	{
 		return _respawnTime;
 	}
-	
+
 	/**
 	 * @return the weight point of the Minion.
 	 */

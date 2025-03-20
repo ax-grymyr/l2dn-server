@@ -17,10 +17,7 @@ public class Crest: IIdentifiable
         _type = type;
     }
 
-    public int getId()
-    {
-        return _id;
-    }
+    public int Id => _id;
 
     public byte[] getData()
     {

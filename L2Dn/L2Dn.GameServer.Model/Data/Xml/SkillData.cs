@@ -2,24 +2,24 @@ using System.Globalization;
 using System.Xml.Serialization;
 using L2Dn.Collections;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Model.Xml.Skills;
 using L2Dn.Parsing;
 using NLog;
-using Config = L2Dn.GameServer.Configuration.Config;
-using Expression = L2Dn.Parsing.Expression;
 
 namespace L2Dn.GameServer.Data.Xml;
 
-/**
- * Skill data parser.
- */
-public class SkillData: DataReaderBase
+/// <summary>
+/// Skill data parser.
+/// </summary>
+public sealed class SkillData: DataReaderBase
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(SkillData));
 
@@ -33,31 +33,9 @@ public class SkillData: DataReaderBase
         Load();
     }
 
-    /**
-     * Provides the skill hash
-     * @param skill The Skill to be hashed
-     * @return getSkillHashCode(skill.getId(), skill.getLevel())
-     */
-    private static long GetSkillHashCode(Skill skill)
-    {
-        return getSkillHashCode(skill.getId(), skill.getLevel(), skill.getSubLevel());
-    }
-
-    /**
-     * Centralized method for easier change of the hashing sys
-     * @param skillId The Skill Id
-     * @param skillLevel The Skill Level
-     * @param subSkillLevel The skill sub level
-     * @return The Skill hash number
-     */
-    public static long getSkillHashCode(int skillId, int skillLevel, int subSkillLevel = 0)
-    {
-        return skillId * 4294967296L + subSkillLevel * 65536 + skillLevel;
-    }
-
     public Skill? getSkill(int skillId, int level, int subLevel = 0)
     {
-        Skill? result = _skills.get(getSkillHashCode(skillId, level, subLevel));
+        Skill? result = _skills.get(Skill.GetSkillHashCode(skillId, level, subLevel));
         if (result != null)
         {
             return result;
@@ -71,7 +49,7 @@ public class SkillData: DataReaderBase
             _logger.Warn(GetType().Name + ": Call to unexisting skill level id: " + skillId + " requested level: " +
                 level + " max level: " + maxLevel + ".");
 
-            return _skills.get(getSkillHashCode(skillId, maxLevel));
+            return _skills.get(Skill.GetSkillHashCode(skillId, maxLevel));
         }
 
         _logger.Warn(GetType().Name + ": No skill info found for skill id " + skillId + " and skill level " + level);
@@ -92,19 +70,19 @@ public class SkillData: DataReaderBase
     {
         List<Skill?> temp =
         [
-            _skills.get(getSkillHashCode((int)CommonSkill.SEAL_OF_RULER, 1)),
-            _skills.get(getSkillHashCode(247, 1)), // Build Headquarters
+            _skills.get(Skill.GetSkillHashCode((int)CommonSkill.SEAL_OF_RULER, 1)),
+            _skills.get(Skill.GetSkillHashCode(247, 1)), // Build Headquarters
         ];
 
         if (addNoble)
         {
-            temp.Add(_skills.get(getSkillHashCode(326, 1))); // Build Advanced Headquarters
+            temp.Add(_skills.get(Skill.GetSkillHashCode(326, 1))); // Build Advanced Headquarters
         }
 
         if (hasCastle)
         {
-            temp.Add(_skills.get(getSkillHashCode(844, 1))); // Outpost Construction
-            temp.Add(_skills.get(getSkillHashCode(845, 1))); // Outpost Demolition
+            temp.Add(_skills.get(Skill.GetSkillHashCode(844, 1))); // Outpost Construction
+            temp.Add(_skills.get(Skill.GetSkillHashCode(845, 1))); // Outpost Demolition
         }
 
         return temp.Where(s => s != null).ToList()!; // TODO: review code and refactor
@@ -125,9 +103,9 @@ public class SkillData: DataReaderBase
         }
 
         List<Skill> allSkills = skillLists.SelectMany(pair => pair.Document.Skills).SelectMany(LoadSkill).ToList();
-        allSkills.ForEach(skill => _skills.TryAdd(GetSkillHashCode(skill), skill));
-        allSkills.GroupBy(skill => skill.getId()).
-            ForEach(g => _skillsMaxLevel[g.Key] = g.Select(s => s.getLevel()).Max());
+        allSkills.ForEach(skill => _skills.TryAdd(skill.GetSkillHashCode(), skill));
+        allSkills.GroupBy(skill => skill.Id).
+            ForEach(g => _skillsMaxLevel[g.Key] = g.Select(s => s.Level).Max());
 
         _logger.Info(GetType().Name + ": Loaded " + allSkills.Count + " Skills.");
     }
@@ -173,7 +151,7 @@ internal sealed class SkillParameters
     public required int? ReferenceId { get; init; }
     public ParameterSet<XmlSkillParameterType> Parameters { get; } = new();
     public Dictionary<SkillConditionScope, List<ISkillCondition>> Conditions { get; } = [];
-    public Dictionary<EffectScope, List<AbstractEffect>> Effects { get; } = [];
+    public Dictionary<SkillEffectScope, List<AbstractEffect>> Effects { get; } = [];
 }
 
 file sealed class SkillDataParser
@@ -186,7 +164,7 @@ file sealed class SkillDataParser
     private readonly Dictionary<string, List<Variable>> _variables = [];
     private readonly Dictionary<XmlSkillParameterType, List<Parameter>> _parameters = [];
     private readonly Dictionary<SkillConditionScope, List<Condition>> _conditions = [];
-    private readonly Dictionary<EffectScope, List<Effect>> _effects = [];
+    private readonly Dictionary<SkillEffectScope, List<Effect>> _effects = [];
     private readonly int _maxLevel;
 
     public SkillDataParser(XmlSkill xmlSkill)
@@ -287,7 +265,7 @@ file sealed class SkillDataParser
         }
 
         // Calculate effects
-        foreach ((EffectScope effectScope, List<Effect> effectList) in _effects)
+        foreach ((SkillEffectScope effectScope, List<Effect> effectList) in _effects)
         {
             FilterByLevel(effectList, level, subLevel, false).ForEach(effect =>
             {
@@ -367,7 +345,7 @@ file sealed class SkillDataParser
 
                 case XmlSkillEffectList xmlSkillEffectList:
                 {
-                    EffectScope effectScope = GetEffectScope(type);
+                    SkillEffectScope effectScope = GetEffectScope(type);
                     List<Effect> effects = _effects.GetOrAdd(effectScope, _ => []);
 
                     foreach (XmlSkillEffect xmlSkillEffect in xmlSkillEffectList.Effects)
@@ -561,22 +539,22 @@ file sealed class SkillDataParser
     private static SkillConditionScope GetConditionScope(XmlSkillParameterType type) =>
         type switch
         {
-            XmlSkillParameterType.Conditions => SkillConditionScope.GENERAL,
-            XmlSkillParameterType.PassiveConditions => SkillConditionScope.PASSIVE,
-            XmlSkillParameterType.TargetConditions => SkillConditionScope.TARGET,
+            XmlSkillParameterType.Conditions => SkillConditionScope.General,
+            XmlSkillParameterType.PassiveConditions => SkillConditionScope.Passive,
+            XmlSkillParameterType.TargetConditions => SkillConditionScope.Target,
             _ => throw new ArgumentException($"Invalid condition list type: {type}"),
         };
 
-    private static EffectScope GetEffectScope(XmlSkillParameterType type) =>
+    private static SkillEffectScope GetEffectScope(XmlSkillParameterType type) =>
         type switch
         {
-            XmlSkillParameterType.Effects => EffectScope.GENERAL,
-            XmlSkillParameterType.ChannelingEffects => EffectScope.CHANNELING,
-            XmlSkillParameterType.SelfEffects => EffectScope.SELF,
-            XmlSkillParameterType.StartEffects => EffectScope.START,
-            XmlSkillParameterType.EndEffects => EffectScope.END,
-            XmlSkillParameterType.PveEffects => EffectScope.PVE,
-            XmlSkillParameterType.PvpEffects => EffectScope.PVP,
+            XmlSkillParameterType.Effects => SkillEffectScope.General,
+            XmlSkillParameterType.ChannelingEffects => SkillEffectScope.Channeling,
+            XmlSkillParameterType.SelfEffects => SkillEffectScope.Self,
+            XmlSkillParameterType.StartEffects => SkillEffectScope.Start,
+            XmlSkillParameterType.EndEffects => SkillEffectScope.End,
+            XmlSkillParameterType.PveEffects => SkillEffectScope.Pve,
+            XmlSkillParameterType.PvpEffects => SkillEffectScope.Pvp,
             _ => throw new ArgumentException($"Invalid effect list type: {type}"),
         };
 

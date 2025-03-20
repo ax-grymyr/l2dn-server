@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -26,10 +27,10 @@ public sealed class DamOverTime: AbstractEffect
 
     public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
-        if (!skill.isToggle() && skill.isMagic())
+        if (!skill.IsToggle && skill.IsMagic)
         {
             // TODO: M.Crit can occur even if this skill is resisted. Only then m.crit damage is applied and not debuff
-            bool mcrit = Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill);
+            bool mcrit = Formulas.calcCrit(skill.MagicCriticalRate, effector, effected, skill);
             if (mcrit)
             {
                 double damage = _power * 10; // Tests show that 10 times HP DOT is taken during magic critical.
@@ -54,7 +55,7 @@ public sealed class DamOverTime: AbstractEffect
         double damage = _power * TicksMultiplier;
         if (damage >= effected.getCurrentHp() - 1)
         {
-            if (skill.isToggle())
+            if (skill.IsToggle)
             {
                 effected.sendPacket(SystemMessageId.YOUR_SKILL_HAS_BEEN_CANCELED_DUE_TO_LACK_OF_HP);
                 return false;
@@ -65,14 +66,14 @@ public sealed class DamOverTime: AbstractEffect
             {
                 // Fix for players dying by DOTs if HP < 1 since reduceCurrentHP method will kill them
                 if (effected.getCurrentHp() <= 1)
-                    return skill.isToggle();
+                    return skill.IsToggle;
 
                 damage = effected.getCurrentHp() - 1;
             }
         }
 
         effector.doAttack(damage, effected, skill, true, false, false, false);
-        return skill.isToggle();
+        return skill.IsToggle;
     }
 
     public override int GetHashCode() => HashCode.Combine(_canKill, _power, Ticks);

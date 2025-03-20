@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -33,7 +34,7 @@ public sealed class DamOverTimePercent: AbstractEffect
         double damage = effected.getCurrentHp() * _power * TicksMultiplier;
         if (damage >= effected.getCurrentHp() - 1)
         {
-            if (skill.isToggle())
+            if (skill.IsToggle)
             {
                 effected.sendPacket(SystemMessageId.YOUR_SKILL_HAS_BEEN_CANCELED_DUE_TO_LACK_OF_HP);
                 return false;
@@ -44,14 +45,14 @@ public sealed class DamOverTimePercent: AbstractEffect
             {
                 // Fix for players dying by DOTs if HP < 1 since reduceCurrentHP method will kill them
                 if (effected.getCurrentHp() <= 1)
-                    return skill.isToggle();
+                    return skill.IsToggle;
 
                 damage = effected.getCurrentHp() - 1;
             }
         }
 
         effector.doAttack(damage, effected, skill, true, false, false, false);
-        return skill.isToggle();
+        return skill.IsToggle;
     }
 
     public override int GetHashCode() => HashCode.Combine(_canKill, _power, Ticks);

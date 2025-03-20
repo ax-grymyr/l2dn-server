@@ -285,10 +285,10 @@ internal static class SubscriptionHelper
 
 			    foreach (NpcTemplate npcTemplate in npcByLevel)
 			    {
-				    if (idSet.Add(npcTemplate.getId()))
+				    if (idSet.Add(npcTemplate.Id))
 					    builder.Add(npcTemplate.Events);
 				    else
-					    _logger.Warn($"Duplicated Npc Id {npcTemplate.getId()} (level {level}) in {source}");
+					    _logger.Warn($"Duplicated Npc Id {npcTemplate.Id} (level {level}) in {source}");
 			    }
 		    }
 	    }
@@ -313,10 +313,10 @@ internal static class SubscriptionHelper
 				    List<NpcTemplate> npcByLevel = NpcData.getInstance().getAllOfLevel(level);
 				    foreach (NpcTemplate npcTemplate in npcByLevel)
 				    {
-					    if (idSet.Add(npcTemplate.getId()))
+					    if (idSet.Add(npcTemplate.Id))
 						    builder.Add(npcTemplate.Events);
 					    else
-						    _logger.Warn($"Duplicated Npc Id {npcTemplate.getId()} (level {level}) in {source}");
+						    _logger.Warn($"Duplicated Npc Id {npcTemplate.Id} (level {level}) in {source}");
 				    }
 			    }
 		    }

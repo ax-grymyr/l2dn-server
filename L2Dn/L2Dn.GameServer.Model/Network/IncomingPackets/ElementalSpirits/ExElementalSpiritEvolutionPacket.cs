@@ -92,12 +92,12 @@ public struct ExElementalSpiritEvolutionPacket: IIncomingPacket<GameSession>
 		try
 		{
 			inventory.setInventoryBlock(
-				spirit.getItemsToEvolve().Select(x => x.getId()).ToList(),
+				spirit.getItemsToEvolve().Select(x => x.Id).ToList(),
 				InventoryBlockType.BLACKLIST);
 
 			foreach (ItemHolder itemHolder in spirit.getItemsToEvolve())
 			{
-				if (inventory.getInventoryItemCount(itemHolder.getId(), -1) < itemHolder.getCount())
+				if (inventory.getInventoryItemCount(itemHolder.Id, -1) < itemHolder.getCount())
 				{
 					return false;
 				}
@@ -105,7 +105,7 @@ public struct ExElementalSpiritEvolutionPacket: IIncomingPacket<GameSession>
 
 			foreach (ItemHolder itemHolder in spirit.getItemsToEvolve())
 			{
-				player.destroyItemByItemId("Evolve", itemHolder.getId(), itemHolder.getCount(), player, true);
+				player.destroyItemByItemId("Evolve", itemHolder.Id, itemHolder.getCount(), player, true);
 			}
 
 			return true;

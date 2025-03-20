@@ -1,4 +1,5 @@
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -52,14 +53,14 @@ public sealed class Relax: AbstractEffect
             return false;
         }
 
-        if (effected.getCurrentHp() + 1 > effected.getMaxRecoverableHp() && skill.isToggle())
+        if (effected.getCurrentHp() + 1 > effected.getMaxRecoverableHp() && skill.IsToggle)
         {
             effected.sendPacket(SystemMessageId.THAT_SKILL_HAS_BEEN_DE_ACTIVATED_AS_HP_WAS_FULLY_RECOVERED);
             return false;
         }
 
         double manaDam = _power * TicksMultiplier;
-        if (manaDam > effected.getCurrentMp() && skill.isToggle())
+        if (manaDam > effected.getCurrentMp() && skill.IsToggle)
         {
             effected.sendPacket(SystemMessageId.YOUR_SKILL_WAS_DEACTIVATED_DUE_TO_LACK_OF_MP);
             return false;
@@ -67,7 +68,7 @@ public sealed class Relax: AbstractEffect
 
         effected.reduceCurrentMp(manaDam);
 
-        return skill.isToggle();
+        return skill.IsToggle;
     }
 
     public override int GetHashCode() => HashCode.Combine(_power);

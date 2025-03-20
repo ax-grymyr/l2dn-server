@@ -82,7 +82,7 @@ public class AdminFence: IAdminCommandHandler
 						{
                             FenceState state = fenceValues[fenceTypeOrdinal];
 							fence.setState(state);
-							BuilderUtil.sendSysMessage(activeChar, "Fence " + fence.getName() + "[" + fence.getId() + "]'s state has been changed to " + state.ToString());
+							BuilderUtil.sendSysMessage(activeChar, "Fence " + fence.getName() + "[" + fence.Id + "]'s state has been changed to " + state.ToString());
 						}
 						else
 						{
@@ -164,29 +164,29 @@ public class AdminFence: IAdminCommandHandler
 		PageResult result = PageBuilder.newBuilder(FenceData.getInstance().getFences().Values.ToList(), 10, "bypass -h admin_listfence").currentPage(page).style(ButtonsStyle.INSTANCE).bodyHandler((pages, fence, sb) =>
 		{
 			sb.Append("<tr><td>");
-			sb.Append(fence.getName() == null ? fence.getId() : fence.getName());
+			sb.Append(fence.getName() == null ? fence.Id : fence.getName());
 			sb.Append("</td><td>");
 			sb.Append("<button value=\"Go\" action=\"bypass -h admin_gofence ");
-			sb.Append(fence.getId());
+			sb.Append(fence.Id);
 			sb.Append("\" width=30 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 			sb.Append("</td><td>");
 			sb.Append("<button value=\"Hide\" action=\"bypass -h admin_setfencestate ");
-			sb.Append(fence.getId());
+			sb.Append(fence.Id);
 			sb.Append(" 0");
 			sb.Append("\" width=30 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 			sb.Append("</td><td>");
 			sb.Append("<button value=\"Off\" action=\"bypass -h admin_setfencestate ");
-			sb.Append(fence.getId());
+			sb.Append(fence.Id);
 			sb.Append(" 1");
 			sb.Append("\" width=30 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 			sb.Append("</td><td>");
 			sb.Append("<button value=\"On\" action=\"bypass -h admin_setfencestate ");
-			sb.Append(fence.getId());
+			sb.Append(fence.Id);
 			sb.Append(" 2");
 			sb.Append("\" width=30 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 			sb.Append("</td><td>");
 			sb.Append("<button value=\"X\" action=\"bypass -h admin_removefence ");
-			sb.Append(fence.getId());
+			sb.Append(fence.Id);
 			sb.Append("\" width=30 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 			sb.Append("</td></tr>");
 		}).build();

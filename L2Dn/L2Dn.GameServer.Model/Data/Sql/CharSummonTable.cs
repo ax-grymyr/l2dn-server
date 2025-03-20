@@ -104,7 +104,7 @@ public class CharSummonTable
 		}
 
 		PetEvolveHolder evolveData = player.getPetEvolve(item.ObjectId);
-		PetData petData = evolveData.getEvolve() == EvolveLevel.None ? PetDataTable.getInstance().getPetDataByEvolve(item.getId(), evolveData.getEvolve()) : PetDataTable.getInstance().getPetDataByEvolve(item.getId(), evolveData.getEvolve(), evolveData.getIndex());
+		PetData petData = evolveData.getEvolve() == EvolveLevel.None ? PetDataTable.getInstance().getPetDataByEvolve(item.Id, evolveData.getEvolve()) : PetDataTable.getInstance().getPetDataByEvolve(item.Id, evolveData.getEvolve(), evolveData.getIndex());
 		if (petData == null)
 		{
 			LOGGER.Warn(GetType().Name + ": Null pet data for: " + player + " and summoning item: " + item);
@@ -166,7 +166,7 @@ public class CharSummonTable
 					return;
 				}
 
-				skill.applyEffects(player, player);
+				skill.ApplyEffects(player, player);
 
 				if (player.hasServitors())
 				{

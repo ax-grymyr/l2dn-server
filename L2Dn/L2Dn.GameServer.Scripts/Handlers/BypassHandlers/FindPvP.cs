@@ -70,7 +70,7 @@ public class FindPvP: IBypassHandler
 				int? allyId = player.getAllyId();
 				if (allyId is null)
 				{
-					allyId = clan.getId();
+					allyId = clan.Id;
 				}
 
 				clanNumbers.put(allyId.Value, 1);

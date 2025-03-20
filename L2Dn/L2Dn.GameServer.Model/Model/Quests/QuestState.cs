@@ -725,7 +725,7 @@ public class QuestState
 
 			if (_player.Events.HasSubscribers<OnPlayerQuestAccept>())
 			{
-				_player.Events.NotifyAsync(new OnPlayerQuestAccept(_player, getQuest().getId()));
+				_player.Events.NotifyAsync(new OnPlayerQuestAccept(_player, getQuest().Id));
 			}
 		}
 	}
@@ -765,7 +765,7 @@ public class QuestState
 		// Notify to scripts
 		if (_player.Events.HasSubscribers<OnPlayerQuestComplete>())
 		{
-			_player.Events.NotifyAsync(new OnPlayerQuestComplete(_player, getQuest().getId(), type));
+			_player.Events.NotifyAsync(new OnPlayerQuestComplete(_player, getQuest().Id, type));
 		}
 	}
 
@@ -868,7 +868,7 @@ public class QuestState
 		// Notify to scripts
 		if (_player.Events.HasSubscribers<OnPlayerQuestComplete>())
 		{
-			_player.Events.NotifyAsync(new OnPlayerQuestComplete(_player, getQuest().getId(), repeatable ? QuestType.REPEATABLE : QuestType.ONE_TIME));
+			_player.Events.NotifyAsync(new OnPlayerQuestComplete(_player, getQuest().Id, repeatable ? QuestType.REPEATABLE : QuestType.ONE_TIME));
 		}
 	}
 

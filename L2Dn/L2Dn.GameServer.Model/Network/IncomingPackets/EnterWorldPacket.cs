@@ -91,7 +91,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 		if (Config.General.RESTORE_PLAYER_INSTANCE)
 		{
 			Instance? instance = InstanceManager.getInstance().getPlayerInstance(player, false);
-			if (instance != null && instance.getId() == vars.Get(PlayerVariables.INSTANCE_RESTORE, 0))
+			if (instance != null && instance.Id == vars.Get(PlayerVariables.INSTANCE_RESTORE, 0))
 			{
 				player.setInstance(instance);
 			}
@@ -369,7 +369,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 					QuestState? questState = player.getQuestState(quest.Name);
 					if (questState == null && quest.canStartQuest(player) && !newQuest.getConditions().getSpecificStart())
 					{
-						connection.Send(new ExQuestDialogPacket(quest.getId(), QuestDialogType.ACCEPT));
+						connection.Send(new ExQuestDialogPacket(quest.Id, QuestDialogType.ACCEPT));
 						break; // Only send first dialog.
 					}
 				}

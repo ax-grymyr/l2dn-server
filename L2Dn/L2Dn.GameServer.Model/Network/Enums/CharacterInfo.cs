@@ -136,7 +136,7 @@ public sealed class CharacterInfo: IHasId<int>
 			    continue;
 		    }
 
-		    Paperdoll[i] = new CharacterPaperdollSlotInfo(item.getId(), item.getVisualId());
+		    Paperdoll[i] = new CharacterPaperdollSlotInfo(item.Id, item.getVisualId());
 		    switch (i)
 		    {
 			    case Inventory.PAPERDOLL_RHAND:

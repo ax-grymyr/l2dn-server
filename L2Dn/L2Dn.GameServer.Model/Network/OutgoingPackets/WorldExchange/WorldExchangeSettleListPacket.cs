@@ -54,7 +54,7 @@ public readonly struct WorldExchangeSettleListPacket(Player player): IOutgoingPa
         writer.WriteInt32(holder.getEndTime().getEpochSecond()); // TODO can be wrong
 
         Item item = holder.getItemInstance();
-        writer.WriteInt32(item.getId());
+        writer.WriteInt32(item.Id);
         writer.WriteInt64(item.getCount());
         writer.WriteInt32(item.getEnchantLevel() < 1 ? 0 : item.getEnchantLevel());
 

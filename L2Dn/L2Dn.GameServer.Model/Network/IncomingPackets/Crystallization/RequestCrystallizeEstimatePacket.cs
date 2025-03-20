@@ -84,7 +84,7 @@ public struct RequestCrystallizeEstimatePacket: IIncomingPacket<GameSession>
 			_count = player.getInventory().getItemByObjectId(_objectId)?.getCount() ?? 0;
 		}
 
-		if (!player.getInventory().canManipulateWithItemId(item.getId()))
+		if (!player.getInventory().canManipulateWithItemId(item.Id))
 		{
 			player.sendMessage("You cannot use this item.");
 			return ValueTask.CompletedTask;

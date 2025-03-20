@@ -46,8 +46,8 @@ public struct RequestExTryToPutEnchantSupportItemPacket: IIncomingPacket<GameSes
             return ValueTask.CompletedTask;
         }
 
-        EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
-        EnchantSupportItem? supportTemplate = EnchantItemData.getInstance().getSupportItem(support.getId());
+        EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.Id);
+        EnchantSupportItem? supportTemplate = EnchantItemData.getInstance().getSupportItem(support.Id);
         if (scrollTemplate == null || supportTemplate == null || !scrollTemplate.isValid(item, supportTemplate))
         {
             // Message may be custom.

@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\L2Dn.GameServer.StaticData.Xml\L2Dn.GameServer.StaticData.Xml.csproj" />
       <ProjectReference Include="..\..\L2Dn.Model\L2Dn.Model.csproj" />
     </ItemGroup>
 

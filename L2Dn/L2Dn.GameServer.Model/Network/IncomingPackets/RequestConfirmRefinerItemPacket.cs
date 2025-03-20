@@ -34,14 +34,14 @@ public struct RequestConfirmRefinerItemPacket: IIncomingPacket<GameSession>
         if (refinerItem == null)
             return ValueTask.CompletedTask;
 
-        VariationFee? fee = VariationData.getInstance().getFee(targetItem.getId(), refinerItem.getId());
+        VariationFee? fee = VariationData.getInstance().getFee(targetItem.Id, refinerItem.Id);
         if (fee == null || !RefinePacketHelper.isValid(player, targetItem, refinerItem))
         {
             player.sendPacket(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM);
             return ValueTask.CompletedTask;
         }
 
-        player.sendPacket(new ExPutIntensiveResultForVariationMakePacket(_refinerItemObjId, refinerItem.getId(), 1));
+        player.sendPacket(new ExPutIntensiveResultForVariationMakePacket(_refinerItemObjId, refinerItem.Id, 1));
 
         return ValueTask.CompletedTask;
     }

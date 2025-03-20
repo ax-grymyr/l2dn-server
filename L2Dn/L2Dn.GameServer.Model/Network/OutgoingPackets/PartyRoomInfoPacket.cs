@@ -6,17 +6,17 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct PartyRoomInfoPacket: IOutgoingPacket
 {
     private readonly PartyMatchingRoom _room;
-	
+
     public PartyRoomInfoPacket(PartyMatchingRoom room)
     {
         _room = room;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.PARTY_ROOM_INFO);
-        
-        writer.WriteInt32(_room.getId());
+
+        writer.WriteInt32(_room.Id);
         writer.WriteInt32(_room.getMaxMembers());
         writer.WriteInt32(_room.getMinLevel());
         writer.WriteInt32(_room.getMaxLevel());

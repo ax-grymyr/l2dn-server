@@ -29,7 +29,7 @@ public class Appearance: IItemHandler
 			return false;
 		}
 
-		AppearanceStone? stone = AppearanceItemData.getInstance().getStone(item.getId());
+		AppearanceStone? stone = AppearanceItemData.getInstance().getStone(item.Id);
 		if (stone == null)
 		{
 			player.sendMessage("This item is either not an appearance stone or is currently not handled!");

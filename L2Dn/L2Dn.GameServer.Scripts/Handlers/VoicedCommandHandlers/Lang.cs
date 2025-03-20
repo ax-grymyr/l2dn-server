@@ -51,7 +51,7 @@ public class Lang: IVoicedCommandHandler
                 activeChar.sendPacket(new NpcHtmlMessagePacket(0, 0, msg));
 				foreach (WorldObject obj in World.getInstance().getVisibleObjects())
 				{
-					if (obj.isNpc() && NpcNameLocalisationData.getInstance().hasLocalisation(obj.getId()))
+					if (obj.isNpc() && NpcNameLocalisationData.getInstance().hasLocalisation(obj.Id))
 					{
 						activeChar.sendPacket(new DeleteObjectPacket(obj.ObjectId));
 						ThreadPool.schedule(() => activeChar.sendPacket(new NpcInfoPacket((Npc) obj)), 1000);

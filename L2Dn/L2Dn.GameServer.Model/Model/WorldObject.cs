@@ -47,9 +47,9 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocat
         _worldRegion = World.getInstance().getRegion(_location.X, _location.Y);
     }
 
-	public abstract int getId();
+    public abstract int Id { get; }
 
-	public int ObjectId => _objectId;
+    public int ObjectId => _objectId;
 
 	/**
 	 * Gets the instance type of object.
@@ -538,7 +538,7 @@ public abstract class WorldObject: IIdentifiable, INamable, IUniqueId, IHasLocat
 	public virtual int getInstanceId()
 	{
 		Instance? instance = _instance;
-		return instance != null ? instance.getId() : 0;
+		return instance != null ? instance.Id : 0;
 	}
 
 	/**

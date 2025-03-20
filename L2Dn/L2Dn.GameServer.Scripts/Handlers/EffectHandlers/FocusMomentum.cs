@@ -37,7 +37,7 @@ public sealed class FocusMomentum: AbstractEffect
 
         if (currentCharges >= maxCharges)
         {
-            if (!skill.isTriggeredSkill())
+            if (!skill.IsTriggeredSkill)
                 player.sendPacket(SystemMessageId.YOUR_FORCE_HAS_REACHED_MAXIMUM_CAPACITY);
 
             return;

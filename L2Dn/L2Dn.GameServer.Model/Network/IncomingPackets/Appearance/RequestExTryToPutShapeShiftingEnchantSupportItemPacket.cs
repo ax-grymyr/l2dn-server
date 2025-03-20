@@ -74,7 +74,7 @@ public struct RequestExTryToPutShapeShiftingEnchantSupportItemPacket: IIncomingP
 			return ValueTask.CompletedTask;
 		}
 
-		AppearanceStone? appearanceStone = AppearanceItemData.getInstance().getStone(stone.getId());
+		AppearanceStone? appearanceStone = AppearanceItemData.getInstance().getStone(stone.Id);
 		if (appearanceStone == null)
 		{
 			player.removeRequest<ShapeShiftingItemRequest>();
@@ -103,7 +103,7 @@ public struct RequestExTryToPutShapeShiftingEnchantSupportItemPacket: IIncomingP
 			return ValueTask.CompletedTask;
 		}
 
-		if (extractItem.getItemType() != targetItem.getItemType() || extractItem.getId() == targetItem.getId() ||
+		if (extractItem.getItemType() != targetItem.getItemType() || extractItem.Id == targetItem.Id ||
 		    extractItem.ObjectId == targetItem.ObjectId)
 		{
 			player.sendPacket(SystemMessageId.THIS_ITEM_DOES_NOT_MEET_REQUIREMENTS);

@@ -48,8 +48,8 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 		}
 
 		Inventory inventory = player.getInventory();
-		if (inventory.getItemByItemId(upgradeHolder.getInitialItem().getId()) == null ||
-		    inventory.getInventoryItemCount(upgradeHolder.getInitialItem().getId(), -1) <
+		if (inventory.getItemByItemId(upgradeHolder.getInitialItem().Id) == null ||
+		    inventory.getInventoryItemCount(upgradeHolder.getInitialItem().Id, -1) <
 		    upgradeHolder.getInitialItem().getCount())
 		{
 			player.sendPacket(ExUpgradeSystemNormalResultPacket.FAIL);
@@ -74,7 +74,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 					return ValueTask.CompletedTask;
 				}
 
-				if (inventory.getInventoryItemCount(material.getId(), material.getEnchantLevel()) < material.getCount())
+				if (inventory.getInventoryItemCount(material.Id, material.getEnchantLevel()) < material.getCount())
 				{
 					player.sendPacket(ExUpgradeSystemNormalResultPacket.FAIL);
 					return ValueTask.CompletedTask;
@@ -82,9 +82,9 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 
 				foreach (ItemHolder discount in EquipmentUpgradeNormalData.getInstance().getDiscount())
 				{
-					if (discount.getId() == material.getId())
+					if (discount.Id == material.Id)
 					{
-						discounts.put(material.getId(), discount.getCount());
+						discounts.put(material.Id, discount.getCount());
 						break;
 					}
 				}
@@ -105,8 +105,8 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 		{
 			foreach (ItemEnchantHolder material in materials2)
 			{
-				player.destroyItemByItemId("UpgradeNormalEquipment", material.getId(),
-					material.getCount() - (discounts.Count == 0 ? 0 : discounts.get(material.getId())), player, true);
+				player.destroyItemByItemId("UpgradeNormalEquipment", material.Id,
+					material.getCount() - (discounts.Count == 0 ? 0 : discounts.get(material.Id)), player, true);
 			}
 		}
 
@@ -126,7 +126,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
             {
                 foreach (ItemEnchantHolder successItem in itemsOnSuccess)
                 {
-                    Item? addedSuccessItem = player.addItem("UpgradeNormalEquipment", successItem.getId(),
+                    Item? addedSuccessItem = player.addItem("UpgradeNormalEquipment", successItem.Id,
                         successItem.getCount(), player, true);
 
                     if (addedSuccessItem == null)
@@ -152,7 +152,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 			{
 				foreach (ItemEnchantHolder bonusItem in bonusTypeItems)
 				{
-					Item? addedBonusItem = player.addItem("UpgradeNormalEquipment", bonusItem.getId(),
+					Item? addedBonusItem = player.addItem("UpgradeNormalEquipment", bonusItem.Id,
 						bonusItem.getCount(), player, true);
 
                     if (addedBonusItem == null)
@@ -179,7 +179,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 			{
 				foreach (ItemEnchantHolder failureItem in itemsOnFailure)
 				{
-					Item? addedFailureItem = player.addItem("UpgradeNormalEquipment", failureItem.getId(),
+					Item? addedFailureItem = player.addItem("UpgradeNormalEquipment", failureItem.Id,
 						failureItem.getCount(), player, true);
 
                     if (addedFailureItem == null)

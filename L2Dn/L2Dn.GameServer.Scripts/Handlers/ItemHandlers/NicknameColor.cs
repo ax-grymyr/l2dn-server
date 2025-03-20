@@ -15,8 +15,8 @@ public class NicknameColor: IItemHandler
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
-		
-		playable.sendPacket(new ExChangeNicknameEmotePacket(item.getId()));
+
+		playable.sendPacket(new ExChangeNicknameEmotePacket(item.Id));
 		return true;
 	}
 }

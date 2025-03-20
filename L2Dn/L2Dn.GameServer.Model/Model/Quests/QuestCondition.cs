@@ -33,6 +33,6 @@ public class QuestCondition
 
 	public string? getHtml(Npc npc)
 	{
-		return _perNpcDialog.get(npc.getId()) ?? _html;
+		return _perNpcDialog.get(npc.Id) ?? _html;
 	}
 }

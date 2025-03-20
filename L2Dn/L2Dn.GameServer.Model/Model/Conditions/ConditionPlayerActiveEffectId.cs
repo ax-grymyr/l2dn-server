@@ -12,6 +12,6 @@ public sealed class ConditionPlayerActiveEffectId(int effectId, int effectLevel 
     protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         BuffInfo? info = effector.getEffectList().getBuffInfoBySkillId(effectId);
-        return info != null && (effectLevel == -1 || effectLevel <= info.getSkill().getLevel());
+        return info != null && (effectLevel == -1 || effectLevel <= info.getSkill().Level);
     }
 }

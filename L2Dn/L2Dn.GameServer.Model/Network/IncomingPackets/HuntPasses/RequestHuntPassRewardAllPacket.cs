@@ -80,7 +80,7 @@ public struct RequestHuntPassRewardAllPacket: IIncomingPacket<GameSession>
 				break;
 			}
 
-			ItemTemplate? itemTemplate = ItemData.getInstance().getTemplate(reward.getId());
+			ItemTemplate? itemTemplate = ItemData.getInstance().getTemplate(reward.Id);
             if (itemTemplate == null)
             {
                 player.removeRequest<RewardRequest>();
@@ -117,7 +117,7 @@ public struct RequestHuntPassRewardAllPacket: IIncomingPacket<GameSession>
 
 	private static void rewardItem(Player player, ItemHolder reward)
 	{
-		if (reward.getId() == 72286) // Sayha's Grace Sustention Points
+		if (reward.Id == 72286) // Sayha's Grace Sustention Points
 		{
 			int count = (int) reward.getCount();
 			player.getHuntPass().addSayhaTime(count);

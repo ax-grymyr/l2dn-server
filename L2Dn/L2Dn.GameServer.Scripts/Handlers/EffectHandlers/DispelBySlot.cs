@@ -1,6 +1,7 @@
 using System.Collections.Frozen;
 using System.Globalization;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -59,8 +60,8 @@ public sealed class DispelBySlot: AbstractEffect
                     return false;
                 }
 
-                return _dispelAbnormals.TryGetValue(info.getSkill().getAbnormalType(), out short abnormalLevel) &&
-                    (abnormalLevel < 0 || abnormalLevel >= info.getSkill().getAbnormalLevel());
+                return _dispelAbnormals.TryGetValue(info.getSkill().AbnormalType, out short abnormalLevel) &&
+                    (abnormalLevel < 0 || abnormalLevel >= info.getSkill().AbnormalLevel);
             }, true, true);
         }
     }

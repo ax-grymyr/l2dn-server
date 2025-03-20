@@ -40,20 +40,20 @@ public sealed class HpCpHeal: AbstractEffect
         double amount = _power;
         double staticShotBonus = 0;
         double mAtkMul = 1;
-        bool sps = skill.isMagic() && effector.isChargedShot(ShotType.SPIRITSHOTS);
-        bool bss = skill.isMagic() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+        bool sps = skill.IsMagic && effector.isChargedShot(ShotType.SPIRITSHOTS);
+        bool bss = skill.IsMagic && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
         double shotsBonus = effector.getStat().getValue(Stat.SHOTS_BONUS);
 
         Player? player = effector.getActingPlayer();
         if (((sps || bss) && effector.isPlayer() && player != null && player.isMageClass()) || effector.isSummon())
         {
-            staticShotBonus = skill.getMpConsume(); // static bonus for spiritshots
+            staticShotBonus = skill.MpConsume; // static bonus for spiritshots
             mAtkMul = bss ? 4 * shotsBonus : 2 * shotsBonus;
             staticShotBonus *= bss ? 2.4 : 1.0;
         }
         else if ((sps || bss) && effector.isNpc())
         {
-            staticShotBonus = 2.4 * skill.getMpConsume(); // always blessed spiritshots
+            staticShotBonus = 2.4 * skill.MpConsume; // always blessed spiritshots
             mAtkMul = 4 * shotsBonus;
         }
         else
@@ -71,7 +71,7 @@ public sealed class HpCpHeal: AbstractEffect
             mAtkMul = bss ? mAtkMul * 4 : mAtkMul + 1;
         }
 
-        if (!skill.isStatic())
+        if (!skill.IsStatic)
         {
             amount += staticShotBonus + Math.Sqrt(mAtkMul * effector.getMAtk());
             amount *= effected.getStat().getValue(Stat.HEAL_EFFECT, 1);
@@ -81,7 +81,7 @@ public sealed class HpCpHeal: AbstractEffect
                 : 1f;
 
             // Heal critic, since CT2.3 Gracia Final
-            if (skill.isMagic() && (Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill) ||
+            if (skill.IsMagic && (Formulas.calcCrit(skill.MagicCriticalRate, effector, effected, skill) ||
                     effector.isAffected(EffectFlag.HPCPHEAL_CRITICAL)))
             {
                 amount *= 3;

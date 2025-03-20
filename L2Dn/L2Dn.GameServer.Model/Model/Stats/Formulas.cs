@@ -72,8 +72,8 @@ public class Formulas
 		double criticalSkillMod = calcCritDamage(attacker, target, skill) / 2;
 		// Trait, elements
 		double weaponTraitMod = calcWeaponTraitBonus(attacker, target);
-		double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), true);
-		double weaknessMod = calcWeaknessBonus(attacker, target, skill.getTraitType());
+		double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.TraitType, true);
+		double weaknessMod = calcWeaknessBonus(attacker, target, skill.TraitType);
 		double attributeMod = calcAttributeBonus(attacker, target, skill);
 		double randomMod = attacker.getRandomDamageMultiplier();
 		double pvpPveMod = calculatePvpPveBonus(attacker, target, skill, true);
@@ -133,8 +133,8 @@ public class Formulas
 		double critMod = mcrit ? calcCritDamage(attacker, target, skill) : 1; // TODO not really a proper way... find how it works then implement. // damage += attacker.getStat().getValue(Stats.MAGIC_CRIT_DMG_ADD, 0);
 
 		// Trait, elements
-		double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), true);
-		double weaknessMod = calcWeaknessBonus(attacker, target, skill.getTraitType());
+		double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.TraitType, true);
+		double weaknessMod = calcWeaknessBonus(attacker, target, skill.TraitType);
 		double attributeMod = calcAttributeBonus(attacker, target, skill);
 		double randomMod = attacker.getRandomDamageMultiplier();
 		double pvpPveMod = calculatePvpPveBonus(attacker, target, skill, mcrit);
@@ -149,7 +149,7 @@ public class Formulas
 			{
 				if (calcMagicSuccess(attacker, target, skill))
 				{
-					if (skill.hasEffectType(EffectType.HP_DRAIN))
+					if (skill.HasEffectType(EffectType.HP_DRAIN))
 					{
 						attacker.sendPacket(SystemMessageId.DRAIN_WAS_ONLY_50_SUCCESSFUL);
 					}
@@ -172,7 +172,7 @@ public class Formulas
 
 			if (target.isPlayer())
 			{
-				SystemMessagePacket sm = skill.hasEffectType(EffectType.HP_DRAIN) ? new SystemMessagePacket(SystemMessageId.YOU_RESISTED_C1_S_DRAIN) : new SystemMessagePacket(SystemMessageId.YOU_RESISTED_C1_S_MAGIC);
+				SystemMessagePacket sm = skill.HasEffectType(EffectType.HP_DRAIN) ? new SystemMessagePacket(SystemMessageId.YOU_RESISTED_C1_S_DRAIN) : new SystemMessagePacket(SystemMessageId.YOU_RESISTED_C1_S_MAGIC);
 				sm.Params.addString(attacker.getName());
 				target.sendPacket(sm);
 			}
@@ -183,7 +183,7 @@ public class Formulas
 		damage *= attacker.getStat().getValue(Stat.MAGICAL_SKILL_POWER, 1);
 
 		// AoE modifiers.
-		if (skill.isBad() && skill.getAffectLimit() > 0)
+		if (skill.IsBad && skill.GetAffectLimit() > 0)
 		{
 			damage *= Math.Max(
 				attacker.getStat().getMul(Stat.AREA_OF_EFFECT_DAMAGE_MODIFY, 1) -
@@ -209,10 +209,10 @@ public class Formulas
 		if (skill != null)
 		{
 			// Magic Critical Rate.
-			if (skill.isMagic())
+			if (skill.IsMagic)
 			{
 				rate = creature.getStat().getValue(Stat.MAGIC_CRITICAL_RATE);
-				if (target == null || !skill.isBad())
+				if (target == null || !skill.IsBad)
 				{
 					return Math.Min(rate, 320) > Rnd.get(1000);
 				}
@@ -346,7 +346,7 @@ public class Formulas
 
 		if (skill != null)
 		{
-			if (skill.isMagic())
+			if (skill.IsMagic)
 			{
 				// Magic critical damage.
 				criticalDamage = attacker.getStat().getValue(Stat.MAGIC_CRITICAL_DAMAGE, 1);
@@ -402,7 +402,7 @@ public class Formulas
 
 		if (skill != null)
 		{
-			if (skill.isMagic())
+			if (skill.IsMagic)
 			{
 				// Magic critical damage.
 				criticalDamageAdd = attacker.getStat().getValue(Stat.MAGIC_CRITICAL_DAMAGE_ADD, 0);
@@ -486,7 +486,7 @@ public class Formulas
 	 */
 	public static TimeSpan calcAtkSpd(Creature attacker, Skill skill, TimeSpan skillTime)
 	{
-		if (skill.isMagic())
+		if (skill.IsMagic)
 		{
 			return skillTime / attacker.getMAtkSpd() * 333;
 		}
@@ -544,13 +544,14 @@ public class Formulas
 	 */
 	public static double calcSkillTimeFactor(Creature creature, Skill skill)
 	{
-		if (skill.getOperateType().isChanneling() || skill.getMagicType() == 2 || skill.getMagicType() == 4 || skill.getMagicType() == 21)
+		if (skill.OperateType.isChanneling() || skill.MagicType == SkillMagicType.Static ||
+            skill.MagicType == (SkillMagicType)4 || skill.MagicType == (SkillMagicType)21)
 		{
 			return 1.0d;
 		}
 
-		double factor = 0.0;
-		if (skill.getMagicType() == 1)
+		double factor;
+		if (skill.MagicType == SkillMagicType.Magic)
 		{
 			double spiritshotHitTime = creature.isChargedShot(ShotType.SPIRITSHOTS) || creature.isChargedShot(ShotType.BLESSED_SPIRITSHOTS) ? 0.4 : 0; // TODO: Implement propper values
 			factor = creature.getStat().getMAttackSpeedMultiplier() + creature.getStat().getMAttackSpeedMultiplier() * spiritshotHitTime; // matkspdmul + (matkspdmul * spiritshot_hit_time)
@@ -573,7 +574,7 @@ public class Formulas
 
 	public static TimeSpan calcSkillCancelTime(Creature creature, Skill skill)
 	{
-		return Algorithms.Max(skill.getHitCancelTime() / calcSkillTimeFactor(creature, skill), TimeSpan.FromMilliseconds(SKILL_LAUNCH_TIME));
+		return Algorithms.Max(skill.HitCancelTime / calcSkillTimeFactor(creature, skill), TimeSpan.FromMilliseconds(SKILL_LAUNCH_TIME));
 	}
 
 	/**
@@ -672,12 +673,12 @@ public class Formulas
 	public static bool calcMagicAffected(Creature actor, Creature target, Skill skill)
 	{
 		double defence = 0;
-		if (skill.isActive() && skill.isBad())
+		if (skill.IsActive && skill.IsBad)
 		{
 			defence = target.getMDef();
 		}
 
-		if (skill.isDebuff())
+		if (skill.IsDebuff)
 		{
 			if (target.getAbnormalShieldBlocks() > 0)
 			{
@@ -690,7 +691,7 @@ public class Formulas
 			}
 		}
 
-		double attack = 2 * actor.getMAtk() * calcGeneralTraitBonus(actor, target, skill.getTraitType(), false);
+		double attack = 2 * actor.getMAtk() * calcGeneralTraitBonus(actor, target, skill.TraitType, false);
 		double d = (attack - defence) / (attack + defence);
 		d += 0.5 * Rnd.nextDouble(); // TODO nextGaussian
 		return d > 0;
@@ -698,8 +699,8 @@ public class Formulas
 
 	public static double calcLvlBonusMod(Creature attacker, Creature target, Skill skill)
 	{
-		int attackerLvl = skill.getMagicLevel() > 0 ? skill.getMagicLevel() : attacker.getLevel();
-		double skillLevelBonusRateMod = 1 + skill.getLvlBonusRate() / 100.0;
+		int attackerLvl = skill.MagicLevel > 0 ? skill.MagicLevel : attacker.getLevel();
+		double skillLevelBonusRateMod = 1 + skill.LevelBonusRate / 100.0;
 		double lvlMod = 1 + (attackerLvl - target.getLevel()) / 100.0;
 		return skillLevelBonusRateMod * lvlMod;
 	}
@@ -719,9 +720,9 @@ public class Formulas
 			return false;
 		}
 
-		if (skill.isDebuff())
+		if (skill.IsDebuff)
 		{
-			bool resisted = target.isCastingNow(s => s.getSkill().getAbnormalResists().Contains(skill.getAbnormalType()));
+			bool resisted = target.isCastingNow(s => s.getSkill().AbnormalResists.Contains(skill.AbnormalType));
 			if (!resisted)
 			{
 				if (target.getAbnormalShieldBlocks() > 0)
@@ -751,26 +752,26 @@ public class Formulas
 			}
 		}
 
-		double? activateRate = skill.getActivateRate();
+		double? activateRate = skill.ActivateRate;
 		if (activateRate is null)
 		{
 			return true;
 		}
 
-		int magicLevel = skill.getMagicLevel();
+		int magicLevel = skill.MagicLevel;
 		if (magicLevel <= -1)
 		{
 			magicLevel = target.getLevel() + 3;
 		}
 
-		double targetBasicProperty = getAbnormalResist(skill.getBasicProperty(), target);
-		double baseMod = (magicLevel - target.getLevel() + 3) * skill.getLvlBonusRate() + activateRate.Value + 30.0 - targetBasicProperty;
+		double targetBasicProperty = getAbnormalResist(skill.BasicProperty, target);
+		double baseMod = (magicLevel - target.getLevel() + 3) * skill.LevelBonusRate + activateRate.Value + 30.0 - targetBasicProperty;
 		double elementMod = calcAttributeBonus(attacker, target, skill);
-		double traitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
-		double basicPropertyResist = getBasicPropertyResistBonus(skill.getBasicProperty(), target);
-		double buffDebuffMod = skill.isDebuff() ? target.getStat().getValue(Stat.RESIST_ABNORMAL_DEBUFF, 1) : 1;
+		double traitMod = calcGeneralTraitBonus(attacker, target, skill.TraitType, false);
+		double basicPropertyResist = getBasicPropertyResistBonus(skill.BasicProperty, target);
+		double buffDebuffMod = skill.IsDebuff ? target.getStat().getValue(Stat.RESIST_ABNORMAL_DEBUFF, 1) : 1;
 		double rate = baseMod * elementMod * traitMod * buffDebuffMod;
-		double finalRate = traitMod > 0 ? Math.Clamp(rate, skill.getMinChance(), skill.getMaxChance()) * basicPropertyResist : 0;
+		double finalRate = traitMod > 0 ? Math.Clamp(rate, skill.MinChance, skill.MaxChance) * basicPropertyResist : 0;
 
 		if (finalRate <= Rnd.get(100) && target != attacker)
 		{
@@ -792,8 +793,8 @@ public class Formulas
 		if (attacker.isAttackable() || target.isAttackable())
 		{
 			lvlModifier = Math.Pow(1.3,
-				target.getLevel() - (Config.Character.CALCULATE_MAGIC_SUCCESS_BY_SKILL_MAGIC_LEVEL && skill.getMagicLevel() > 0
-					? skill.getMagicLevel()
+				target.getLevel() - (Config.Character.CALCULATE_MAGIC_SUCCESS_BY_SKILL_MAGIC_LEVEL && skill.MagicLevel > 0
+					? skill.MagicLevel
 					: attacker.getLevel()));
 
             Player? attackerPlayer = attacker.getActingPlayer();
@@ -872,7 +873,7 @@ public class Formulas
 		mAtk *= bss ? 4 * (shotsBonus + sapphireBonus) : sps ? 2 * (shotsBonus + sapphireBonus) : 1;
 
 		double damage = Math.Sqrt(mAtk) * power * (mp / 97) / mDef;
-		damage *= calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
+		damage *= calcGeneralTraitBonus(attacker, target, skill.TraitType, false);
 		damage *= calculatePvpPveBonus(attacker, target, skill, mcrit);
 
 		// Failure calculation
@@ -926,7 +927,7 @@ public class Formulas
 
 	public static bool calcSkillEvasion(Creature creature, Creature target, Skill skill)
 	{
-		if (Rnd.get(100) < target.getStat().getSkillEvasionTypeValue(skill.getMagicType()))
+		if (Rnd.get(100) < target.getStat().getSkillEvasionTypeValue(skill.MagicType))
         {
             Player? creaturePlayer = creature.getActingPlayer();
 			if (creature.isPlayer() && creaturePlayer != null)
@@ -987,10 +988,10 @@ public class Formulas
 		int attackAttribute;
 		int defenceAttribute;
 
-		if (skill != null && skill.getAttributeType() != AttributeType.NONE)
+		if (skill != null && skill.AttributeType != AttributeType.NONE)
 		{
-			attackAttribute = attacker.getAttackElementValue(skill.getAttributeType()) + skill.getAttributeValue();
-			defenceAttribute = target.getDefenseElementValue(skill.getAttributeType());
+			attackAttribute = attacker.getAttackElementValue(skill.AttributeType) + skill.AttributeValue;
+			defenceAttribute = target.getDefenseElementValue(skill.AttributeType);
 		}
 		else
 		{
@@ -1014,7 +1015,7 @@ public class Formulas
 	public static void calcCounterAttack(Creature attacker, Creature target, Skill skill, bool crit)
 	{
 		// Only melee skills can be reflected
-		if (skill.isMagic() || skill.getCastRange() > MELEE_ATTACK_RANGE)
+		if (skill.IsMagic || skill.CastRange > MELEE_ATTACK_RANGE)
 		{
 			return;
 		}
@@ -1037,7 +1038,7 @@ public class Formulas
 
 			double counterdmg = target.getPAtk() * 873 / attacker.getPDef(); // Old: (((target.getPAtk(attacker) * 10.0) * 70.0) / attacker.getPDef(target));
 			counterdmg *= calcWeaponTraitBonus(attacker, target);
-			counterdmg *= calcGeneralTraitBonus(attacker, target, skill.getTraitType(), true);
+			counterdmg *= calcGeneralTraitBonus(attacker, target, skill.TraitType, true);
 			counterdmg *= calcAttributeBonus(attacker, target, skill);
 
 			attacker.reduceCurrentHp(counterdmg, target, skill);
@@ -1052,12 +1053,12 @@ public class Formulas
 	 */
 	public static bool calcBuffDebuffReflection(Creature target, Skill skill)
 	{
-		if (!skill.isDebuff() || skill.getActivateRate() == -1)
+		if (!skill.IsDebuff || skill.ActivateRate == -1)
 		{
 			return false;
 		}
 
-		return target.getStat().getValue(skill.isMagic() ? Stat.REFLECT_SKILL_MAGIC : Stat.REFLECT_SKILL_PHYSIC, 0) >
+		return target.getStat().getValue(skill.IsMagic ? Stat.REFLECT_SKILL_MAGIC : Stat.REFLECT_SKILL_PHYSIC, 0) >
 		       Rnd.get(100);
 	}
 
@@ -1121,14 +1122,14 @@ public class Formulas
 			case DispelSlotType.BUFF:
 			{
 				// Resist Modifier.
-				int cancelMagicLvl = skill.getMagicLevel();
+				int cancelMagicLvl = skill.MagicLevel;
 
 				// Prevent initialization.
 				List<BuffInfo> dances = target.getEffectList().getDances();
 				for (int i = dances.Count - 1; i >= 0; i--) // reverse order
 				{
 					BuffInfo info = dances[i];
-					if (!info.getSkill().canBeStolen() || (rate < 100 && !calcCancelSuccess(info, cancelMagicLvl, rate, skill, target)))
+					if (!info.getSkill().CanBeStolen() || (rate < 100 && !calcCancelSuccess(info, cancelMagicLvl, rate, skill, target)))
 					{
 						continue;
 					}
@@ -1146,7 +1147,7 @@ public class Formulas
 					for (int i = buffs.Count - 1; i >= 0; i--) // reverse order
 					{
 						BuffInfo info = buffs[i];
-						if (!info.getSkill().canBeStolen() || (rate < 100 && !calcCancelSuccess(info, cancelMagicLvl, rate, skill, target)))
+						if (!info.getSkill().CanBeStolen() || (rate < 100 && !calcCancelSuccess(info, cancelMagicLvl, rate, skill, target)))
 						{
 							continue;
 						}
@@ -1165,7 +1166,7 @@ public class Formulas
 				for (int i = debuffs.Count - 1; i >= 0; i--)
 				{
 					BuffInfo info = debuffs[i];
-					if (info.getSkill().canBeDispelled() && Rnd.get(100) <= rate)
+					if (info.getSkill().CanBeDispelled && Rnd.get(100) <= rate)
 					{
 						canceled.Add(info);
 						if (canceled.Count >= Max)
@@ -1183,7 +1184,7 @@ public class Formulas
 	public static bool calcCancelSuccess(BuffInfo info, int cancelMagicLvl, int rate, Skill? skill, Creature target)
 	{
 		int abnormalTimeSeconds = (int)(info.getAbnormalTime() ?? TimeSpan.Zero).TotalSeconds;
-		int chance = (int)(rate + (cancelMagicLvl - info.getSkill().getMagicLevel()) * 2 +
+		int chance = (int)(rate + (cancelMagicLvl - info.getSkill().MagicLevel) * 2 +
 		                   abnormalTimeSeconds / 120 * target.getStat().getValue(Stat.RESIST_DISPEL_BUFF, 1));
 
 		return
@@ -1201,10 +1202,10 @@ public class Formulas
 	 */
 	public static TimeSpan? calcEffectAbnormalTime(Creature caster, Creature target, Skill skill)
 	{
-		TimeSpan? time = skill == null || skill.isPassive() || skill.isToggle() ? null : skill.getAbnormalTime();
+		TimeSpan? time = skill == null || skill.IsPassive || skill.IsToggle ? null : skill.AbnormalTime;
 
 		// If the skill is a mastery skill, the effect will last twice the default time.
-		if (skill != null && !skill.isStatic() && calcSkillMastery(caster, skill))
+		if (skill != null && !skill.IsStatic && calcSkillMastery(caster, skill))
 		{
 			time *= 2;
 		}
@@ -1238,15 +1239,15 @@ public class Formulas
 		// Skills without set probability should only test against trait invulnerability.
 		if (double.IsNaN(baseChance))
 		{
-			return calcGeneralTraitBonus(attacker, target, skill.getTraitType(), true) > 0;
+			return calcGeneralTraitBonus(attacker, target, skill.TraitType, true) > 0;
 		}
 
 		// Outdated formula: return Rnd.get(100) < ((((((skill.getMagicLevel() + baseChance) - target.getLevel()) + 30) - target.getINT()) * calcAttributeBonus(attacker, target, skill)) * calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false));
 		// TODO: Find more retail-like formula
 		return Rnd.get(100) <
-		       (skill.getMagicLevel() + baseChance - target.getLevel() -
-			       getAbnormalResist(skill.getBasicProperty(), target)) * calcAttributeBonus(attacker, target, skill) *
-		       calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
+		       (skill.MagicLevel + baseChance - target.getLevel() -
+			       getAbnormalResist(skill.BasicProperty, target)) * calcAttributeBonus(attacker, target, skill) *
+		       calcGeneralTraitBonus(attacker, target, skill.TraitType, false);
 	}
 
 	/**
@@ -1496,7 +1497,7 @@ public class Formulas
 		if (Config.Character.ALT_GAME_STUN_BREAK && creature.hasBlockActions() && Rnd.get(14) == 0)
 		{
 			// Any stun that has double duration due to skill mastery, doesn't get removed until its time reaches the usual abnormal time.
-			return creature.getEffectList().hasAbnormalType(AbnormalType.STUN, info => info.getTime() <= info.getSkill().getAbnormalTime());
+			return creature.getEffectList().hasAbnormalType(AbnormalType.STUN, info => info.getTime() <= info.getSkill().AbnormalTime);
 		}
 		return false;
 	}
@@ -1605,7 +1606,7 @@ public class Formulas
 			double pvpDefense;
 			if (skill != null)
 			{
-				if (skill.isMagic())
+				if (skill.IsMagic)
 				{
 					// Magical Skill PvP
 					pvpAttack = attacker.getStat().getMul(Stat.PVP_MAGICAL_SKILL_DAMAGE, 1) *
@@ -1660,7 +1661,7 @@ public class Formulas
 
 			if (skill != null)
 			{
-				if (skill.isMagic())
+				if (skill.IsMagic)
 				{
 					// Magical Skill PvE
 					pveAttack = attacker.getStat().getMul(Stat.PVE_MAGICAL_SKILL_DAMAGE, 1) * (attackerPlayer == null

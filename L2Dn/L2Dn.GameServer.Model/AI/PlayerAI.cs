@@ -5,7 +5,6 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.AI;
@@ -51,7 +50,7 @@ public class PlayerAI : PlayableAI
             throw new InvalidOperationException("First argument is not a skill in PlayerAI.changeIntention with intention=CAST.");
 
         // however, forget interrupted actions when starting to use an offensive skill
-        if (skill.isBad())
+        if (skill.IsBad)
         {
             _nextIntention = null;
             base.changeIntention(intention, args);
@@ -300,7 +299,7 @@ public class PlayerAI : PlayableAI
         Skill skill = _skill ?? throw new InvalidOperationException("_skill is null in PlayerAI.thinkCast.");
 
         WorldObject? target = getCastTarget();
-		if (skill.getTargetType() == TargetType.GROUND && _actor.isPlayer())
+		if (skill.TargetType == TargetType.GROUND && _actor.isPlayer())
 		{
 			Location3D? location = ((Player)_actor).getCurrentSkillWorldPosition();
 			if (location != null && maybeMoveToPosition(location.Value, _actor.getMagicalAttackRange(skill)))
@@ -312,7 +311,7 @@ public class PlayerAI : PlayableAI
 		{
 			if (checkTargetLost(target))
 			{
-				if (skill.isBad() && target != null)
+				if (skill.IsBad && target != null)
 				{
 					// Notify the target
 					setCastTarget(null);

@@ -122,10 +122,10 @@ public readonly struct NpcInfoPacket: IOutgoingPacket
 		if (clanId > 0)
 		{
 			Clan? clan = ClanTable.getInstance().getClan(clanId.Value);
-			if (clan != null && (npc.getTemplate().getId() == 34156 /* Clan Stronghold Device */ ||
+			if (clan != null && (npc.getTemplate().Id == 34156 /* Clan Stronghold Device */ ||
 			                       (!npc.isMonster() && npc.isInsideZone(ZoneId.PEACE))))
 			{
-				_clanId = clan.getId();
+				_clanId = clan.Id;
 				_clanCrest = clan.getCrestId() ?? 0;
 				_clanLargeCrest = clan.getCrestLargeId() ?? 0;
 				_allyCrest = clan.getAllyCrestId() ?? 0;

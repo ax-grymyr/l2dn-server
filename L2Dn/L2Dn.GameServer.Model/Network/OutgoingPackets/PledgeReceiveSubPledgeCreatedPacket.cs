@@ -37,7 +37,7 @@ public readonly struct PledgeReceiveSubPledgeCreatedPacket: IOutgoingPacket
         ClanMember? clanMember = _clan.getClanMember(leaderId);
         if (clanMember == null)
         {
-            _logger.Error("SubPledgeLeader: " + leaderId + " is missing from clan: " + _clan.getName() + "[" + _clan.getId() + "]");
+            _logger.Error("SubPledgeLeader: " + leaderId + " is missing from clan: " + _clan.getName() + "[" + _clan.Id + "]");
             return "";
         }
 

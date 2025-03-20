@@ -223,7 +223,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 				else if (player.destroyItemByItemId("Feather", 10649, 1, player, false) /* || player.destroyItemByItemId("Feather", 13300, 1, player, false) || player.destroyItemByItemId("Feather", 13128, 1, player, false) */)
 				{
 					player.doRevive(100);
-					CommonSkill.FEATHER_OF_BLESSING.getSkill().applyEffects(player, player);
+					CommonSkill.FEATHER_OF_BLESSING.getSkill().ApplyEffects(player, player);
 				}
 				else
 				{

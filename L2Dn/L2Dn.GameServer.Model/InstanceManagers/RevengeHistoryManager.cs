@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.Revenge;
@@ -315,10 +316,10 @@ public class RevengeHistoryManager
 			if (player.destroyItemByItemId("Revenge Teleport", Inventory.LCOIN_ID, price, player, true))
 			{
 				revenge.setTeleportRemaining(revenge.getTeleportRemaining() - 1);
-				HIDE_SKILL.getSkill().applyEffects(player, player);
+				HIDE_SKILL.getSkill().ApplyEffects(player, player);
 				foreach (Summon summon in player.getServitorsAndPets())
 				{
-					HIDE_SKILL.getSkill().applyEffects(summon, summon);
+					HIDE_SKILL.getSkill().ApplyEffects(summon, summon);
 				}
 				player.teleToLocation(killer.Location);
 			}
@@ -367,10 +368,10 @@ public class RevengeHistoryManager
 		if (revenge.getSharedTeleportRemaining() > 0 && player.destroyItemByItemId("Revenge Teleport", Inventory.LCOIN_ID, 100, player, true))
 		{
 			revenge.setSharedTeleportRemaining(revenge.getSharedTeleportRemaining() - 1);
-			HIDE_SKILL.getSkill().applyEffects(player, player);
+			HIDE_SKILL.getSkill().ApplyEffects(player, player);
 			foreach (Summon summon in player.getServitorsAndPets())
 			{
-				HIDE_SKILL.getSkill().applyEffects(summon, summon);
+				HIDE_SKILL.getSkill().ApplyEffects(summon, summon);
 			}
 			player.teleToLocation(killer.Location);
 		}

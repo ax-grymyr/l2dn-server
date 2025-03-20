@@ -43,7 +43,7 @@ public sealed class FortManager: Merchant
 	private void sendHtmlMessage(Player player, HtmlContent htmlContent)
 	{
 		htmlContent.Replace("%objectId%", ObjectId.ToString());
-		htmlContent.Replace("%npcId%", getId().ToString());
+		htmlContent.Replace("%npcId%", Id.ToString());
 
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
@@ -218,7 +218,7 @@ public sealed class FortManager: Merchant
                     }
 
                     HtmlContent htmlContent = HtmlContent.LoadFromFile(
-                        "html/fortress/" + getTemplate().getId() + "-d.htm",
+                        "html/fortress/" + getTemplate().Id + "-d.htm",
                         player);
 
                     htmlContent.Replace("%objectId%", ObjectId.ToString());
@@ -278,7 +278,7 @@ public sealed class FortManager: Merchant
                 else
                 {
                     HtmlContent htmlContent = HtmlContent.LoadFromFile(
-                        "html/fortress/" + getId() + "-t" + funcTeleport.getLevel() + ".htm", player);
+                        "html/fortress/" + Id + "-t" + funcTeleport.getLevel() + ".htm", player);
 
                     sendHtmlMessage(player, htmlContent);
                 }
@@ -1056,11 +1056,11 @@ public sealed class FortManager: Merchant
                 return;
             }
 
-            if (skill.hasEffectType(EffectType.SUMMON))
+            if (skill.HasEffectType(EffectType.SUMMON))
             {
                 player.doCast(skill);
             }
-            else if (skill.getMpConsume() + skill.getMpInitialConsume() <= getCurrentMp())
+            else if (skill.MpConsume + skill.MpInitialConsume <= getCurrentMp())
             {
                 doCast(skill);
             }
@@ -1102,7 +1102,7 @@ public sealed class FortManager: Merchant
             int funcLvl = val.Length >= 4 ? val[3..].TryParseOrDefault(-1) : -1;
             if (funcTeleport.getLevel() == funcLvl)
             {
-                TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), val);
+                TeleportHolder? holder = TeleporterData.getInstance().getHolder(Id, val);
                 if (holder is not null)
                 {
                     int locId = st.nextToken().Trim().TryParseOrDefault(-1);
@@ -1152,7 +1152,7 @@ public sealed class FortManager: Merchant
 			}
 
             Clan? ownerClan = fort.getOwnerClan();
-            if (ownerClan != null && ownerClan.getId() == player.getClanId())
+            if (ownerClan != null && ownerClan.Id == player.getClanId())
             {
                 return COND_OWNER; // Owner
             }

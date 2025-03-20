@@ -43,7 +43,7 @@ public sealed class StealAbnormal: AbstractEffect
                 BuffInfo stolen = new BuffInfo(effected, effector, infoToSteal.getSkill(), false, null, null);
                 stolen.setAbnormalTime(infoToSteal.getTime()); // Copy the remaining time.
                 // To include all the effects, it's required to go through the template rather the buff info.
-                infoToSteal.getSkill().applyEffectScope(EffectScope.GENERAL, stolen, true, true);
+                infoToSteal.getSkill().ApplyEffectScope(SkillEffectScope.General, stolen, true, true);
                 effected.getEffectList().remove(infoToSteal, SkillFinishType.REMOVED, true, true);
                 effector.getEffectList().add(stolen);
             }

@@ -184,12 +184,9 @@ public class Decoy : Creature
 		return null;
 	}
 
-	public override int getId()
-	{
-		return getTemplate().getId();
-	}
+    public override int Id => getTemplate().Id;
 
-	public override int getLevel()
+    public override int getLevel()
 	{
 		return getTemplate().getLevel();
 	}

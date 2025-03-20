@@ -149,7 +149,7 @@ public class Item: WorldObject
 	{
 		InstanceType = InstanceType.Item;
 		_itemTemplate = itemTemplate;
-		_itemId = itemTemplate.getId();
+		_itemId = itemTemplate.Id;
 		if (_itemId == 0)
 			throw new ArgumentException();
 
@@ -224,7 +224,7 @@ public class Item: WorldObject
 
 		// if this item is a mercenary ticket, remove the spawns!
 		Castle? castle = CastleManager.getInstance().getCastle(this);
-		if (castle != null && SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), getId()) != null)
+		if (castle != null && SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), Id) != null)
 		{
 			SiegeGuardManager.getInstance().removeTicket(this);
 			ItemsOnGroundManager.getInstance().removeObject(this);
@@ -255,7 +255,7 @@ public class Item: WorldObject
 	{
 		setOwnerId(ownerId);
 
-		if ((Config.General.LOG_ITEMS && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || _itemTemplate.getId() == Inventory.ADENA_ID)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.getId())))
+		if ((Config.General.LOG_ITEMS && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || _itemTemplate.Id == Inventory.ADENA_ID)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.Id)))
 		{
 			if (_enchantLevel > 0)
 			{
@@ -450,7 +450,7 @@ public class Item: WorldObject
 
 		_storedInDb = false;
 
-		if ((Config.General.LOG_ITEMS && process != null && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || _itemTemplate.getId() == Inventory.ADENA_ID)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.getId())))
+		if ((Config.General.LOG_ITEMS && process != null && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || _itemTemplate.Id == Inventory.ADENA_ID)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.Id)))
 		{
 			if (_enchantLevel > 0)
 			{
@@ -617,16 +617,13 @@ public class Item: WorldObject
 		return _itemTemplate.getItemType();
 	}
 
-	/**
+    /**
 	 * Gets the item ID.
 	 * @return the item ID
 	 */
-	public override int getId()
-	{
-		return _itemId;
-	}
+    public override int Id => _itemId;
 
-	/**
+    /**
 	 * @return the display Id of the item.
 	 */
 	public int getDisplayId()
@@ -884,7 +881,7 @@ public class Item: WorldObject
 				ObjectId != pet.getControlObjectId()) // Not Control item of currently summoned pet
 			&& !player.isProcessingItem(ObjectId) // Not momentarily used enchant scroll
 			&& (allowAdena || _itemId != Inventory.ADENA_ID) // Not Adena
-			&& !player.isCastingNow(s => s.getSkill().getItemConsumeId() != _itemId) && (allowNonTradeable ||
+			&& !player.isCastingNow(s => s.getSkill().ItemConsumeId != _itemId) && (allowNonTradeable ||
 				(isTradeable() && !(_itemTemplate.getItemType() == EtcItemType.PET_COLLAR &&
 					player.havePetInvItems())));
 	}
@@ -922,19 +919,19 @@ public class Item: WorldObject
         Player? player = getActingPlayer();
 		if (player != null && isEquipped() && _itemTemplate.getBodyPart() == ItemTemplate.SLOT_AGATHION)
 		{
-			AgathionSkillHolder? agathionSkills = AgathionData.getInstance().getSkills(getId());
+			AgathionSkillHolder? agathionSkills = AgathionData.getInstance().getSkills(Id);
 			if (agathionSkills != null)
 			{
 				bool update = false;
 				// Remove old skills.
 				foreach (Skill skill in agathionSkills.getMainSkills(_enchantLevel))
 				{
-                    player.removeSkill(skill, false, skill.isPassive());
+                    player.removeSkill(skill, false, skill.IsPassive);
 					update = true;
 				}
 				foreach (Skill skill in agathionSkills.getSubSkills(_enchantLevel))
 				{
-                    player.removeSkill(skill, false, skill.isPassive());
+                    player.removeSkill(skill, false, skill.IsPassive);
 					update = true;
 				}
 				// Add new skills.
@@ -942,7 +939,7 @@ public class Item: WorldObject
 				{
 					foreach (Skill skill in agathionSkills.getMainSkills(newLevel))
 					{
-						if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player))
+						if (skill.IsPassive && !skill.CheckConditions(SkillConditionScope.Passive, player, player))
 						{
 							continue;
 						}
@@ -952,7 +949,7 @@ public class Item: WorldObject
 				}
 				foreach (Skill skill in agathionSkills.getSubSkills(newLevel))
 				{
-					if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player))
+					if (skill.IsPassive && !skill.CheckConditions(SkillConditionScope.Passive, player, player))
 					{
 						continue;
 					}
@@ -2022,7 +2019,7 @@ public class Item: WorldObject
 			_itemTemplate.forEachSkill(ItemSkillType.NORMAL, holder =>
 			{
 				Skill skill = holder.getSkill();
-				if (skill.isPassive())
+				if (skill.IsPassive)
 				{
 					player.addSkill(skill, false);
 				}
@@ -2043,9 +2040,9 @@ public class Item: WorldObject
 			_itemTemplate.forEachSkill(ItemSkillType.NORMAL, holder =>
 			{
 				Skill skill = holder.getSkill();
-				if (skill.isPassive())
+				if (skill.IsPassive)
 				{
-					player.removeSkill(skill, false, skill.isPassive());
+					player.removeSkill(skill, false, skill.IsPassive);
 				}
 			});
 		}
@@ -2264,7 +2261,7 @@ public class Item: WorldObject
 				Player? player = getActingPlayer();
 				if (player != null)
 				{
-					player.removeSkill(skill.getId());
+					player.removeSkill(skill.Id);
 				}
 			}
 		}
@@ -2283,7 +2280,7 @@ public class Item: WorldObject
 		if (skill != null)
 		{
 			Player? player = getActingPlayer();
-			if (player != null && player.getSkillLevel(skill.getId()) != skill.getLevel())
+			if (player != null && player.getSkillLevel(skill.Id) != skill.Level)
 			{
 				player.addSkill(skill, false);
 			}
@@ -2621,7 +2618,7 @@ public class Item: WorldObject
 								Skill skill = holder.getSkill();
 								if (skill != null)
 								{
-									player.removeSkill(skill, false, skill.isPassive());
+									player.removeSkill(skill, false, skill.IsPassive);
 									update = true;
 								}
 							}
@@ -2667,7 +2664,7 @@ public class Item: WorldObject
 								}
 
 								Skill skill = holder.getSkill();
-								if (skill == null || (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player)))
+								if (skill == null || (skill.IsPassive && !skill.CheckConditions(SkillConditionScope.Passive, player, player)))
 								{
 									continue;
 								}
@@ -2675,9 +2672,9 @@ public class Item: WorldObject
 								player.addSkill(skill, false);
 								update = true;
 
-								if (skill.isActive())
+								if (skill.IsActive)
 								{
-									if (!player.hasSkillReuse(skill.getReuseHashCode()))
+									if (!player.hasSkillReuse(skill.ReuseHashCode))
 									{
 										TimeSpan equipDelay = getEquipReuseDelay();
 										if (equipDelay > TimeSpan.Zero)
@@ -2688,11 +2685,11 @@ public class Item: WorldObject
 									}
 
 									// Active, non-offensive, skills start with reuse on equip.
-									if (!skill.isBad() && !skill.isTransformation() && Config.Character.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0 && player.hasEnteredWorld())
+									if (!skill.IsBad && !skill.IsTransformation && Config.Character.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0 && player.hasEnteredWorld())
 									{
 										player.addTimeStamp(skill,
-											skill.getReuseDelay() > TimeSpan.Zero
-												? skill.getReuseDelay()
+											skill.ReuseDelay > TimeSpan.Zero
+												? skill.ReuseDelay
 												: TimeSpan.FromMilliseconds(Config.Character.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE));
 									}
 

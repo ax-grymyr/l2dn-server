@@ -71,11 +71,11 @@ public sealed class DbSpawnManager
 				spawn.setAmount(1);
 
 				List<NpcSpawnTemplate> spawns = SpawnData.getInstance()
-					.getNpcSpawns(npc => npc.getId() == template.getId() && npc.hasDBSave());
+					.getNpcSpawns(npc => npc.getId() == template.Id && npc.hasDBSave());
 
 				if (spawns.Count == 0)
 				{
-					_logger.Warn(GetType().Name + ": Couldn't find spawn declaration for npc: " + template.getId() +
+					_logger.Warn(GetType().Name + ": Couldn't find spawn declaration for npc: " + template.Id +
 						" - " + template.getName());
 
 					deleteSpawn(spawn, true);
@@ -84,7 +84,7 @@ public sealed class DbSpawnManager
 
 				if (spawns.Count > 1)
 				{
-					_logger.Warn(GetType().Name + ": Found multiple database spawns for npc: " + template.getId() +
+					_logger.Warn(GetType().Name + ": Found multiple database spawns for npc: " + template.Id +
 						" - " + template.getName() + " " + spawns);
 
 					continue;
@@ -107,7 +107,7 @@ public sealed class DbSpawnManager
 				{
 					spawn.stopRespawn();
 					_logger.Warn(GetType().Name + ": Found database spawns without respawn for npc: " +
-						template.getId() + " - " + template.getName() + " " + spawnTemplate);
+						template.Id + " - " + template.getName() + " " + spawnTemplate);
 
 					continue;
 				}
@@ -166,7 +166,7 @@ public sealed class DbSpawnManager
 	 */
 	public void updateStatus(Npc npc, bool isNpcDead)
 	{
-		if (!_npcStates.TryGetValue(npc.getId(), out NpcState? npcState))
+		if (!_npcStates.TryGetValue(npc.Id, out NpcState? npcState))
 			return;
 
         Spawn? npcSpawn = npc.getSpawn();
@@ -207,7 +207,7 @@ public sealed class DbSpawnManager
 				_logger.Info(GetType().Name + ": Updated " + npc.getName() + " respawn time to " +
 					respawnTime.ToString("dd.MM.yyyy HH:mm"));
 
-				npcState.Future = ThreadPool.schedule(() => scheduleSpawn(npc.getId()), respawnDelay);
+				npcState.Future = ThreadPool.schedule(() => scheduleSpawn(npc.Id), respawnDelay);
 			}
 		}
 		else
@@ -232,11 +232,11 @@ public sealed class DbSpawnManager
 	 */
 	public void addNewSpawn(Spawn spawn, DateTime? respawnTime, double currentHp, double currentMp, bool storeInDb)
 	{
-		NpcState npcState = _npcStates.GetOrAdd(spawn.getId(), id => new NpcState() { NpcId = id });
+		NpcState npcState = _npcStates.GetOrAdd(spawn.Id, id => new NpcState() { NpcId = id });
 		if (npcState.Spawn is not null)
 			return;
 
-		int npcId = spawn.getId();
+		int npcId = spawn.Id;
 		SpawnTable.getInstance().addNewSpawn(spawn, false);
 		if (respawnTime is null || respawnTime < DateTime.UtcNow)
 		{
@@ -266,7 +266,7 @@ public sealed class DbSpawnManager
 
 	public Npc? addNewSpawn(Spawn spawn, bool storeInDb)
 	{
-		int npcId = spawn.getId();
+		int npcId = spawn.Id;
 		if (_npcStates.TryGetValue(npcId, out NpcState? npcState) && npcState.Spawn != null)
 			return npcState.Spawn.getLastSpawn();
 
@@ -300,7 +300,7 @@ public sealed class DbSpawnManager
 	 */
 	public void deleteSpawn(Spawn spawn, bool updateDb)
 	{
-		int npcId = spawn.getId();
+		int npcId = spawn.Id;
 		if (!_npcStates.Remove(npcId, out NpcState? npcState))
 			return;
 

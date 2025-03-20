@@ -82,7 +82,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 		foreach (CropHolder i in _items)
 		{
 			Item? item = player.getInventory().getItemByObjectId(i.ObjectId);
-			if (item == null || item.getCount() < i.getCount() || item.getId() != i.getId())
+			if (item == null || item.getCount() < i.getCount() || item.Id != i.Id)
 			{
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				return ValueTask.CompletedTask;
@@ -144,7 +144,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 			if (rewardItemCount < 1)
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.FAILED_IN_TRADING_S2_OF_S1_CROPS);
-				sm.Params.addItemName(i.getId());
+				sm.Params.addItemName(i.Id);
 				sm.Params.addLong(i.getCount());
 				player.sendPacket(sm);
 				continue;
@@ -155,7 +155,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 			if (fee != 0 && player.getAdena() < fee)
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.FAILED_IN_TRADING_S2_OF_S1_CROPS);
-				sm.Params.addItemName(i.getId());
+				sm.Params.addItemName(i.Id);
 				sm.Params.addLong(i.getCount());
 				player.sendPacket(sm);
 
@@ -202,7 +202,7 @@ public struct RequestProcureCropListPacket: IIncomingPacket<GameSession>
 
 		public CropProcure? getCropProcure()
         {
-            return _cp ??= CastleManorManager.getInstance().getCropProcure(manorId, getId(), false);
+            return _cp ??= CastleManorManager.getInstance().getCropProcure(manorId, Id, false);
         }
 
 		public int getRewardId()

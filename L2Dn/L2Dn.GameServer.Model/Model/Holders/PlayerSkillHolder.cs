@@ -39,7 +39,7 @@ public class PlayerSkillHolder: ISkillsHolder
 	 */
 	public Skill? addSkill(Skill skill)
 	{
-		return _skills.put(skill.getId(), skill);
+		return _skills.put(skill.Id, skill);
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class PlayerSkillHolder: ISkillsHolder
 	public int getSkillLevel(int skillId)
 	{
 		Skill? skill = getKnownSkill(skillId);
-		return skill == null ? 0 : skill.getLevel();
+		return skill == null ? 0 : skill.Level;
 	}
 
 	/**
@@ -64,6 +64,6 @@ public class PlayerSkillHolder: ISkillsHolder
 
 	public Skill? removeSkill(Skill skill)
 	{
-		return _skills.remove(skill.getId());
+		return _skills.remove(skill.Id);
 	}
 }

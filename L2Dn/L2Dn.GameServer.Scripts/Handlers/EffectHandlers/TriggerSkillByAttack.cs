@@ -11,7 +11,6 @@ using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 
@@ -108,11 +107,11 @@ public sealed class TriggerSkillByAttack: AbstractEffect
             return;
 
         // When only physical skills are allowed (allowSkillAttack should be set to true).
-        if (_onlyPhysicalSkill && eventSkill != null && eventSkill.isMagic())
+        if (_onlyPhysicalSkill && eventSkill != null && eventSkill.IsMagic)
             return;
 
         // When only magic skills are allowed (allowSkillAttack should be set to true).
-        if (_onlyMagicSkill && eventSkill != null && !eventSkill.isMagic())
+        if (_onlyMagicSkill && eventSkill != null && !eventSkill.IsMagic)
             return;
 
         if (!_allowReflect && @event.isReflect())
@@ -166,7 +165,7 @@ public sealed class TriggerSkillByAttack: AbstractEffect
             else
             {
                 triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(),
-                    Math.Min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
+                    Math.Min(_skillLevelScaleTo, buffInfo.getSkill().Level + 1));
 
                 if (@event.getAttacker().isSkillDisabled(buffInfo.getSkill()))
                     return;
@@ -175,7 +174,7 @@ public sealed class TriggerSkillByAttack: AbstractEffect
             if (triggerSkill == null)
                 return;
 
-            if (buffInfo == null || buffInfo.getSkill().getLevel() < triggerSkill.getLevel() || _renewDuration)
+            if (buffInfo == null || buffInfo.getSkill().Level < triggerSkill.Level || _renewDuration)
                 SkillCaster.triggerCast(@event.getAttacker(), (Creature)target, triggerSkill);
         }
         else // Multiple trigger skills.
@@ -184,13 +183,13 @@ public sealed class TriggerSkillByAttack: AbstractEffect
             {
                 SkillHolder holder = _triggerSkills[i];
                 Skill nextSkill = holder.getSkill();
-                if (((Creature)target).isAffectedBySkill(nextSkill.getId()))
+                if (((Creature)target).isAffectedBySkill(nextSkill.Id))
                 {
                     if (i < _triggerSkills.Count - 1)
                     {
                         i++;
                         holder = _triggerSkills[i];
-                        ((Creature)target).stopSkillEffects(SkillFinishType.SILENT, nextSkill.getId());
+                        ((Creature)target).stopSkillEffects(SkillFinishType.SILENT, nextSkill.Id);
                         triggerSkill = holder.getSkill();
                         break;
                     }

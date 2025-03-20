@@ -24,7 +24,7 @@ public readonly struct GMViewQuestInfoPacket: IOutgoingPacket
         foreach (Quest quest in _questList)
         {
             QuestState? qs = _player.getQuestState(quest.Name);
-            writer.WriteInt32(quest.getId());
+            writer.WriteInt32(quest.Id);
             writer.WriteInt32(qs == null ? 0 : (int)qs.getCond());
         }
 

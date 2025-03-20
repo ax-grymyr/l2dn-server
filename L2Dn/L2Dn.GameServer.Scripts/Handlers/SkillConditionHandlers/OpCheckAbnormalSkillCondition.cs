@@ -30,14 +30,14 @@ public class OpCheckAbnormalSkillCondition: ISkillCondition
             case SkillConditionAffectType.CASTER:
             {
                 return caster.getEffectList().
-                    hasAbnormalType(_type, info => info.getSkill().getAbnormalLevel() >= _level) == _hasAbnormal;
+                    hasAbnormalType(_type, info => info.getSkill().AbnormalLevel >= _level) == _hasAbnormal;
             }
             case SkillConditionAffectType.TARGET:
             {
                 if (target != null && target.isCreature())
                 {
                     return ((Creature)target).getEffectList().
-                        hasAbnormalType(_type, info => info.getSkill().getAbnormalLevel() >= _level) == _hasAbnormal;
+                        hasAbnormalType(_type, info => info.getSkill().AbnormalLevel >= _level) == _hasAbnormal;
                 }
 
                 break;

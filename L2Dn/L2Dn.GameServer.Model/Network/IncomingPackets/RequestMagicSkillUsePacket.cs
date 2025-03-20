@@ -75,7 +75,7 @@ public struct RequestMagicSkillUsePacket: IIncomingPacket<GameSession>
         }
 
         // Skill is blocked from player use.
-        if (skill.isBlockActionUseSkill())
+        if (skill.IsBlockActionUseSkill)
         {
             player.sendPacket(ActionFailedPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;

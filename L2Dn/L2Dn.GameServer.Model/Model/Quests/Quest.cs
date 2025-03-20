@@ -159,16 +159,13 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 	}
 
-	/**
+    /**
 	 * Gets the quest ID.
 	 * @return the quest ID
 	 */
-	public int getId()
-	{
-		return _questId;
-	}
+    public int Id => _questId;
 
-	/**
+    /**
 	 * @return the NpcStringId of the current quest, used in Quest link bypass
 	 */
 	public int getNpcStringId()
@@ -2696,7 +2693,7 @@ public class Quest: AbstractScript, IIdentifiable
 	{
 		if (target != null && target is T)
 		{
-			return Array.IndexOf(ids, target.getId()) >= 0;
+			return Array.IndexOf(ids, target.Id) >= 0;
 		}
 		return false;
 	}

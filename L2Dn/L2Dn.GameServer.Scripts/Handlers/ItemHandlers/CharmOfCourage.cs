@@ -53,7 +53,7 @@ public class CharmOfCourage: IItemHandler
 		if (itemLevel < playerLevel)
 		{
 			SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.S1_CANNOT_BE_USED_THE_REQUIREMENTS_ARE_NOT_MET);
-			sm.Params.addItemName(item.getId());
+			sm.Params.addItemName(item.Id);
 			player.sendPacket(sm);
 			return false;
 		}

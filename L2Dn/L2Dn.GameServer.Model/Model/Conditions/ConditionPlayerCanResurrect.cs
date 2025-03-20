@@ -18,7 +18,7 @@ public sealed class ConditionPlayerCanResurrect(bool value): Condition
     protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         // Need skill rework for fix that properly
-        if (skill is null || skill.getAffectRange() > 0)
+        if (skill is null || skill.AffectRange > 0)
             return true;
 
         if (effected == null)
@@ -58,7 +58,7 @@ public sealed class ConditionPlayerCanResurrect(bool value): Condition
                     effector.sendPacket(SystemMessageId.RESURRECTION_HAS_ALREADY_BEEN_PROPOSED);
                 }
             }
-            else if (skill.getId() != 2393) // Blessed Scroll of Battlefield Resurrection
+            else if (skill.Id != 2393) // Blessed Scroll of Battlefield Resurrection
             {
                 Siege? siege = SiegeManager.getInstance().getSiege(player);
                 if (siege != null && siege.isInProgress())

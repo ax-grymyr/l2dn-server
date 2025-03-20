@@ -303,16 +303,13 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 		return _autoDestroyTime;
 	}
 
-	/**
+    /**
 	 * Returns the ID of the item
 	 * @return int
 	 */
-	public int getId()
-	{
-		return _itemId;
-	}
+    public int Id => _itemId;
 
-	/**
+    /**
 	 * Returns the ID of the item
 	 * @return int
 	 */

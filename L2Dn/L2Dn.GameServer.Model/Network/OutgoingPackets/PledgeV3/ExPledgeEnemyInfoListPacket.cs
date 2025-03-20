@@ -16,7 +16,7 @@ public readonly struct ExPledgeEnemyInfoListPacket: IOutgoingPacket
         _warList = playerClan.getWarList().Values
             .Where(it =>
                 it.getClanWarState(playerClan) == ClanWarState.MUTUAL ||
-                it.getAttackerClanId() == playerClan.getId()).ToList();
+                it.getAttackerClanId() == playerClan.Id).ToList();
     }
 
     public void WriteContent(PacketBitWriter writer)
@@ -28,7 +28,7 @@ public readonly struct ExPledgeEnemyInfoListPacket: IOutgoingPacket
         {
             Clan? clan = war.getOpposingClan(_playerClan);
             writer.WriteInt32(clan?.getRank() ?? 0);
-            writer.WriteInt32(clan?.getId() ?? 0);
+            writer.WriteInt32(clan?.Id ?? 0);
             writer.WriteSizedString(clan?.getName() ?? string.Empty);
             writer.WriteSizedString(clan?.getLeaderName() ?? string.Empty);
             writer.WriteInt32(war.getStartTime().getEpochSecond()); // 430

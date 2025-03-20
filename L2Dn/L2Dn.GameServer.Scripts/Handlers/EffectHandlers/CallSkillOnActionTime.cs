@@ -25,13 +25,13 @@ public sealed class CallSkillOnActionTime: AbstractEffect
 
     public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
-        effected.getEffectList().stopEffects([_skill.getSkill().getAbnormalType()]);
-        effected.getEffectList().addBlockedAbnormalTypes([_skill.getSkill().getAbnormalType()]);
+        effected.getEffectList().stopEffects([_skill.getSkill().AbnormalType]);
+        effected.getEffectList().addBlockedAbnormalTypes([_skill.getSkill().AbnormalType]);
     }
 
     public override void onExit(Creature effector, Creature effected, Skill skill)
     {
-        effected.getEffectList().removeBlockedAbnormalTypes([_skill.getSkill().getAbnormalType()]);
+        effected.getEffectList().removeBlockedAbnormalTypes([_skill.getSkill().AbnormalType]);
     }
 
     public override bool onActionTime(Creature effector, Creature effected, Skill skill, Item? item)
@@ -42,14 +42,14 @@ public sealed class CallSkillOnActionTime: AbstractEffect
         Skill triggerSkill = _skill.getSkill();
         if (triggerSkill != null)
         {
-            if (triggerSkill.isSynergySkill())
+            if (triggerSkill.IsSynergy)
             {
-                triggerSkill.applyEffects(effector, effector);
+                triggerSkill.ApplyEffects(effector, effector);
             }
 
-            World.getInstance().forEachVisibleObjectInRange<Creature>(effector, _skill.getSkill().getAffectRange(), c =>
+            World.getInstance().forEachVisibleObjectInRange<Creature>(effector, _skill.getSkill().AffectRange, c =>
             {
-                WorldObject? target = triggerSkill.getTarget(effector, c, false, false, false);
+                WorldObject? target = triggerSkill.GetTarget(effector, c, false, false, false);
                 if (target != null && target.isCreature())
                     SkillCaster.triggerCast(effector, (Creature)target, triggerSkill);
             });
@@ -59,7 +59,7 @@ public sealed class CallSkillOnActionTime: AbstractEffect
             LOGGER.Warn("Skill not found effect called from " + skill);
         }
 
-        return skill.isToggle();
+        return skill.IsToggle;
     }
 
     public override int GetHashCode() => HashCode.Combine(_skill, Ticks);

@@ -252,7 +252,7 @@ public class PlayerStatus: PlayableStatus
 				if (Config.MultilingualSupport.MULTILANG_ENABLE && attacker.isNpc())
 				{
 					string[]? localisation = NpcNameLocalisationData.getInstance()
-						.getLocalisation(getActiveChar()?.getLang() ?? "en", attacker.getId());
+						.getLocalisation(getActiveChar()?.getLang() ?? "en", attacker.Id);
 					if (localisation != null)
 					{
 						targetName = localisation[0];
@@ -278,7 +278,7 @@ public class PlayerStatus: PlayableStatus
 		if (amount > 0)
 		{
             if (attacker != null)
-                getActiveChar().addDamageTaken(attacker, skill != null ? skill.getDisplayId() : 0, amount);
+                getActiveChar().addDamageTaken(attacker, skill != null ? skill.DisplayId : 0, amount);
 
             double newHp = Math.Max(getCurrentHp() - amount, getActiveChar().isUndying() ? 1 : 0);
 			if (newHp <= 0)

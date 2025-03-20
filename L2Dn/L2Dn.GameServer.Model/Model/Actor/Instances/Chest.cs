@@ -35,7 +35,7 @@ public class Chest: Monster
 
     public override void doItemDrop(NpcTemplate npcTemplate, Creature lastAttacker)
     {
-        int id = getTemplate().getId();
+        int id = getTemplate().Id;
         if (!_specialDrop)
         {
             switch (id) // TODO: unhardcode the values

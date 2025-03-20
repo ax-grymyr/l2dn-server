@@ -24,15 +24,15 @@ public class FortDoorman: Doorman
         HtmlContent htmlContent;
         if (!isOwnerClan(player))
         {
-            htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().getId() + "-no.htm", player);
+            htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().Id + "-no.htm", player);
         }
         else if (isUnderSiege())
         {
-            htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().getId() + "-busy.htm", player);
+            htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().Id + "-busy.htm", player);
         }
         else
         {
-            htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().getId() + ".htm", player);
+            htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().Id + ".htm", player);
         }
 
         htmlContent.Replace("%objectId%", ObjectId.ToString());
@@ -70,7 +70,7 @@ public class FortDoorman: Doorman
         Fort? fort = getFort();
         Clan? ownerClan = fort?.getOwnerClan();
         return player.getClan() != null && fort != null && ownerClan != null &&
-               player.getClanId() == ownerClan.getId();
+               player.getClanId() == ownerClan.Id;
     }
 
     protected sealed override bool isUnderSiege()

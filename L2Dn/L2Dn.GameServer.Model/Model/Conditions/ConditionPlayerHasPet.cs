@@ -24,6 +24,6 @@ public sealed class ConditionPlayerHasPet(List<int> itemIds): Condition
             return true;
 
         Item? controlItem = ((Pet)pet).getControlItem();
-        return controlItem != null && _controlItemIds.Contains(controlItem.getId());
+        return controlItem != null && _controlItemIds.Contains(controlItem.Id);
     }
 }

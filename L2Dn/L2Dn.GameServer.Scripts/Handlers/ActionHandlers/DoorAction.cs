@@ -29,7 +29,7 @@ public class DoorAction: IActionHandler
             Clan? clan = player.getClan();
             Door door = (Door)target;
             Fort? doorFort = door.getFort();
-            ClanHall? clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.getId());
+            ClanHall? clanHall = ClanHallData.getInstance().getClanHallByDoorId(door.Id);
             // MyTargetSelected my = new MyTargetSelected(getObjectId(), player.getLevel());
             // player.sendPacket(my);
             if (target.isAutoAttackable(player))
@@ -39,7 +39,7 @@ public class DoorAction: IActionHandler
                     player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
                 }
             }
-            else if (clan != null && clanHall != null && clan.getId() == clanHall.getOwnerId())
+            else if (clan != null && clanHall != null && clan.Id == clanHall.getOwnerId())
             {
                 if (!door.IsInsideRadius2D(player, Npc.INTERACTION_DISTANCE))
                 {

@@ -38,10 +38,10 @@ public readonly struct PartySpelledPacket: IOutgoingPacket
         {
             if (info != null && info.isInUse())
             {
-                writer.WriteInt32(info.getSkill().getDisplayId());
-                writer.WriteInt16((short)info.getSkill().getDisplayLevel());
+                writer.WriteInt32(info.getSkill().DisplayId);
+                writer.WriteInt16((short)info.getSkill().DisplayLevel);
                 writer.WriteInt16(0); // Sub level
-                writer.WriteInt32((int)info.getSkill().getAbnormalType());
+                writer.WriteInt32((int)info.getSkill().AbnormalType);
                 writer.WriteVariableInt((int)(info.getTime() ?? TimeSpan.Zero).TotalSeconds);
             }
         }
@@ -49,10 +49,10 @@ public readonly struct PartySpelledPacket: IOutgoingPacket
         {
             if (skill != null)
             {
-                writer.WriteInt32(skill.getDisplayId());
-                writer.WriteInt16((short)skill.getDisplayLevel());
+                writer.WriteInt32(skill.DisplayId);
+                writer.WriteInt16((short)skill.DisplayLevel);
                 writer.WriteInt16(0); // Sub level
-                writer.WriteInt32((int)skill.getAbnormalType());
+                writer.WriteInt32((int)skill.AbnormalType);
                 writer.WriteInt16(-1);
             }
         }

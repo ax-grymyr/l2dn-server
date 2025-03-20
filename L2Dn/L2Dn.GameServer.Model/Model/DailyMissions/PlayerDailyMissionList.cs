@@ -109,7 +109,7 @@ public class PlayerDailyMissionList
     {
         if (!_restored)
             restore();
-        
+
         if (_entries.TryGetValue(rewardId, out DailyMissionPlayerEntry? entry))
             return entry.getStatus();
 
@@ -120,7 +120,7 @@ public class PlayerDailyMissionList
     {
         if (!_restored)
             restore();
-        
+
         return _entries.TryGetValue(rewardId, out DailyMissionPlayerEntry? entry) ? entry.getProgress() : 0;
     }
 
@@ -138,7 +138,7 @@ public class PlayerDailyMissionList
             restore();
 
         return _entries.GetOrAdd(rewardId,
-            static (key, self) => new DailyMissionPlayerEntry(self._owner.getId(), key),
+            static (key, self) => new DailyMissionPlayerEntry(self._owner.Id, key),
             this);
     }
 
@@ -146,7 +146,7 @@ public class PlayerDailyMissionList
     {
         if (!_restored)
             restore();
-        
+
         return _entries.GetValueOrDefault(rewardId);
     }
 

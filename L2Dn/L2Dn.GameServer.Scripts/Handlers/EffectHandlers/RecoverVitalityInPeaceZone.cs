@@ -39,7 +39,7 @@ public sealed class RecoverVitalityInPeaceZone: AbstractEffect
             vitality = PlayerStat.MAX_VITALITY_POINTS;
 
         effectedPlayer.setVitalityPoints((int)vitality, true);
-        return skill.isToggle();
+        return skill.IsToggle;
     }
 
     public override void onExit(Creature effector, Creature effected, Skill skill)
@@ -48,7 +48,7 @@ public sealed class RecoverVitalityInPeaceZone: AbstractEffect
         if (effectedPlayer != null //
             && effected.isPlayer())
         {
-            BuffInfo? info = effected.getEffectList().getBuffInfoBySkillId(skill.getId());
+            BuffInfo? info = effected.getEffectList().getBuffInfoBySkillId(skill.Id);
             if (info != null && !info.isRemoved())
             {
                 double vitality = effectedPlayer.getVitalityPoints();

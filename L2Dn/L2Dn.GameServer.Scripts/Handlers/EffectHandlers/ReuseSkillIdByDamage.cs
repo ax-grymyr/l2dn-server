@@ -63,7 +63,7 @@ public sealed class ReuseSkillIdByDamage: AbstractEffect
         {
             if (_amount > 0)
             {
-                TimeSpan reuse = player.getSkillRemainingReuseTime(s.getReuseHashCode());
+                TimeSpan reuse = player.getSkillRemainingReuseTime(s.ReuseHashCode);
                 if (reuse > TimeSpan.Zero)
                 {
                     TimeSpan diff = reuse - TimeSpan.FromMilliseconds(_amount);

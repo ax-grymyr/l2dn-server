@@ -93,13 +93,13 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 		}
 
 		// Cannot discard item that the skill is consuming
-		if (player.isCastingNow(s => s.getSkill().getItemConsumeId() == itemToRemove.getId()))
+		if (player.isCastingNow(s => s.getSkill().ItemConsumeId == itemToRemove.Id))
 		{
 			player.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_DESTROYED);
 			return ValueTask.CompletedTask;
 		}
 
-		int itemId = itemToRemove.getId();
+		int itemId = itemToRemove.Id;
 		if (!Config.General.DESTROY_ALL_ITEMS && ((!player.canOverrideCond(PlayerCondOverride.DESTROY_ALL_ITEMS) && !itemToRemove.isDestroyable()) || CursedWeaponsManager.getInstance().isCursed(itemId)))
 		{
 			if (itemToRemove.isHeroItem())
@@ -124,7 +124,7 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (!player.getInventory().canManipulateWithItemId(itemToRemove.getId()))
+		if (!player.getInventory().canManipulateWithItemId(itemToRemove.Id))
 		{
 			player.sendMessage("You cannot use this item.");
 			return ValueTask.CompletedTask;
@@ -204,7 +204,7 @@ public struct RequestDestroyItemPacket: IIncomingPacket<GameSession>
 		player.sendInventoryUpdate(iu);
 
 		// LCoin UI update.
-		if (removedItem.getId() == Inventory.LCOIN_ID)
+		if (removedItem.Id == Inventory.LCOIN_ID)
 		{
 			player.sendPacket(new ExBloodyCoinCountPacket(player));
 		}

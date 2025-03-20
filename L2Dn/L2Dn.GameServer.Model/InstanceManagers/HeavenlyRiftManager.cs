@@ -32,7 +32,7 @@ public class HeavenlyRiftManager
 		int result = 0;
 		foreach (Creature creature in _zone.getCharactersInside())
 		{
-			if (creature.isMonster() && !creature.isDead() && creature.getId() == npcId)
+			if (creature.isMonster() && !creature.isDead() && creature.Id == npcId)
 			{
 				result++;
 			}
@@ -127,7 +127,7 @@ public class HeavenlyRiftManager
 				{
 					creature.teleToLocation(new Location3D(114264, 13352, -5104));
 				}
-				else if (creature.isNpc() && creature.getId() != 30401)
+				else if (creature.isNpc() && creature.Id != 30401)
 				{
 					creature.decayMe();
 				}

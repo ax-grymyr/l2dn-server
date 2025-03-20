@@ -87,7 +87,7 @@ public class GrandBossManager: IStorable
             LOGGER.Warn(GetType().Name + ": Could not find GrandBoss NPC template for " + bossId);
             return;
         }
-        
+
 		_bossStatus.put(bossId, status);
 		LOGGER.Info(GetType().Name +": Updated " + bossTemplate.getName() + "(" + bossId + ") status to " + status + ".");
 		updateDb(bossId, true);
@@ -101,7 +101,7 @@ public class GrandBossManager: IStorable
 	{
 		if (boss != null)
 		{
-			_bosses.put(boss.getId(), boss);
+			_bosses.put(boss.Id, boss);
 		}
 	}
 

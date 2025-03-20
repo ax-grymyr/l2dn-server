@@ -231,36 +231,36 @@ public class Weapon: ItemTemplate
 			if (type == ItemSkillType.ON_MAGIC_SKILL)
 			{
 				// Trigger only if both are good or bad magic.
-				if (trigger.isBad() != skill.isBad())
+				if (trigger.IsBad != skill.IsBad)
 				{
 					return;
 				}
 
 				// No Trigger if not Magic Skill or is toggle
-				if (trigger.isMagic() != skill.isMagic())
+				if (trigger.IsMagic != skill.IsMagic)
 				{
 					return;
 				}
 
 				// No Trigger if skill is toggle
-				if (trigger.isToggle())
+				if (trigger.IsToggle)
 				{
 					return;
 				}
 
-				if (skill.isBad() && Formulas.calcShldUse(caster, target) == Formulas.SHIELD_DEFENSE_PERFECT_BLOCK)
+				if (skill.IsBad && Formulas.calcShldUse(caster, target) == Formulas.SHIELD_DEFENSE_PERFECT_BLOCK)
 				{
 					return;
 				}
 			}
 
 			// Skill condition not met
-			if (!skill.checkCondition(caster, target, true))
+			if (!skill.CheckCondition(caster, target, true))
 			{
 				return;
 			}
 
-			skill.activateSkill(caster, [target]);
+			skill.ActivateSkill(caster, [target]);
 
 			// TODO: Verify if this applies ONLY to ON_MAGIC_SKILL!
 			if (type == ItemSkillType.ON_MAGIC_SKILL)

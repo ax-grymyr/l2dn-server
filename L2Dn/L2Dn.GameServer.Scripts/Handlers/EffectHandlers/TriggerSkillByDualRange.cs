@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -41,7 +42,7 @@ public sealed class TriggerSkillByDualRange: AbstractEffect
 
         SkillHolder skillHolder = effector.Distance3D(effected) < _distance ? _closeSkill : _rangeSkill;
         Skill? triggerSkill = _adjustLevel
-            ? SkillData.getInstance().getSkill(skillHolder.getSkillId(), skill.getLevel())
+            ? SkillData.getInstance().getSkill(skillHolder.getSkillId(), skill.Level)
             : skillHolder.getSkill();
 
         if (triggerSkill == null)
@@ -50,7 +51,7 @@ public sealed class TriggerSkillByDualRange: AbstractEffect
         if (effected.isPlayable() && !effected.isAutoAttackable(effector))
             player.updatePvPStatus();
 
-        player.useMagic(triggerSkill, null, true, triggerSkill.getCastRange() > 600);
+        player.useMagic(triggerSkill, null, true, triggerSkill.CastRange > 600);
     }
 
     public override int GetHashCode() => HashCode.Combine(_closeSkill, _rangeSkill, _distance, _adjustLevel);

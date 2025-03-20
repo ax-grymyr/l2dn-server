@@ -18,7 +18,7 @@ public class UniqueItemEnchantHolder: ItemEnchantHolder, IUniqueId
 		_objectId = objectId;
 	}
 
-	public UniqueItemEnchantHolder(ItemEnchantHolder itemHolder, int objectId): base(itemHolder.getId(),
+	public UniqueItemEnchantHolder(ItemEnchantHolder itemHolder, int objectId): base(itemHolder.Id,
 		itemHolder.getCount(), itemHolder.getEnchantLevel())
 	{
 		_objectId = objectId;
@@ -27,5 +27,5 @@ public class UniqueItemEnchantHolder: ItemEnchantHolder, IUniqueId
 	public int ObjectId => _objectId;
 
 	public override string ToString() =>
-		$"[{GetType().Name}] ID: {getId()}, object ID: {_objectId}, count: {getCount()}, enchant level: {getEnchantLevel()}";
+		$"[{GetType().Name}] ID: {Id}, object ID: {_objectId}, count: {getCount()}, enchant level: {getEnchantLevel()}";
 }

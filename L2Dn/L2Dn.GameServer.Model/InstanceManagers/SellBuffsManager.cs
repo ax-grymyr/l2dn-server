@@ -164,12 +164,12 @@ public class SellBuffsManager: DataReaderBase
 
 			sb.Append("<tr>");
 			sb.Append("<td fixwidth=\"20\"></td>");
-			sb.Append("<td align=center><img src=\"" + skill.getIcon() + "\" width=\"32\" height=\"32\"></td>");
-			sb.Append("<td align=left>" + skill.getName() + (skill.getLevel() > 100 ? "<font color=\"LEVEL\"> + " + skill.getLevel() % 100 + "</font></td>" : "</td>"));
-			sb.Append("<td align=center>" + (skill.getLevel() > 100 ? SkillData.getInstance().getMaxLevel(skill.getId()) : skill.getLevel()) + "</td>");
-			sb.Append("<td align=center> <font color=\"1E90FF\">" + skill.getMpConsume() * Config.SellBuffs.SELLBUFF_MP_MULTIPLER + "</font></td>");
+			sb.Append("<td align=center><img src=\"" + skill.Icon + "\" width=\"32\" height=\"32\"></td>");
+			sb.Append("<td align=left>" + skill.Name + (skill.Level > 100 ? "<font color=\"LEVEL\"> + " + skill.Level % 100 + "</font></td>" : "</td>"));
+			sb.Append("<td align=center>" + (skill.Level > 100 ? SkillData.getInstance().getMaxLevel(skill.Id) : skill.Level) + "</td>");
+			sb.Append("<td align=center> <font color=\"1E90FF\">" + skill.MpConsume * Config.SellBuffs.SELLBUFF_MP_MULTIPLER + "</font></td>");
 			sb.Append("<td align=center> " + Util.formatAdena(holder.getPrice()) + " <font color=\"LEVEL\"> " + (item != null ? item.getName() : "") + "</font> </td>");
-			sb.Append("<td align=center fixwidth=\"50\"><button value=\"Buy Buff\" action=\"bypass -h sellbuffbuyskill " + seller.ObjectId + " " + skill.getId() + " " + index + "\" width=\"85\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+			sb.Append("<td align=center fixwidth=\"50\"><button value=\"Buy Buff\" action=\"bypass -h sellbuffbuyskill " + seller.ObjectId + " " + skill.Id + " " + index + "\" width=\"85\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 			sb.Append("</tr>");
 			sb.Append("<tr><td><br><br></td></tr>");
 		}
@@ -243,13 +243,13 @@ public class SellBuffsManager: DataReaderBase
 
 				sb.Append("<tr>");
 				sb.Append("<td fixwidth=\"20\"></td>");
-				sb.Append("<td align=center><img src=\"" + skill.getIcon() + "\" width=\"32\" height=\"32\"></td>"); // Icon
-				sb.Append("<td align=left>" + skill.getName() + (skill.getLevel() > 100 ? "<font color=\"LEVEL\"> + " + skill.getLevel() % 100 + "</font></td>" : "</td>")); // Name + enchant
-				sb.Append("<td align=center>" + (skill.getLevel() > 100 ? SkillData.getInstance().getMaxLevel(skill.getId()) : skill.getLevel()) + "</td>"); // Level
+				sb.Append("<td align=center><img src=\"" + skill.Icon + "\" width=\"32\" height=\"32\"></td>"); // Icon
+				sb.Append("<td align=left>" + skill.Name + (skill.Level > 100 ? "<font color=\"LEVEL\"> + " + skill.Level % 100 + "</font></td>" : "</td>")); // Name + enchant
+				sb.Append("<td align=center>" + (skill.Level > 100 ? SkillData.getInstance().getMaxLevel(skill.Id) : skill.Level) + "</td>"); // Level
 				sb.Append("<td align=center> " + Util.formatAdena(holder.getPrice()) + " </td>"); // Price show
-				sb.Append("<td align=center><edit var=\"price_" + skill.getId() + "\" width=120 type=\"number\"></td>"); // Price edit
-				sb.Append("<td align=center><button value=\"Edit\" action=\"bypass -h sellbuffchangeprice " + skill.getId() + " $price_" + skill.getId() + "\" width=\"85\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
-				sb.Append("<td align=center><button value=\" X \" action=\"bypass -h sellbuffremove " + skill.getId() + "\" width=\"26\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+				sb.Append("<td align=center><edit var=\"price_" + skill.Id + "\" width=120 type=\"number\"></td>"); // Price edit
+				sb.Append("<td align=center><button value=\"Edit\" action=\"bypass -h sellbuffchangeprice " + skill.Id + " $price_" + skill.Id + "\" width=\"85\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+				sb.Append("<td align=center><button value=\" X \" action=\"bypass -h sellbuffremove " + skill.Id + "\" width=\"26\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 				sb.Append("</tr>");
 				sb.Append("<tr><td><br><br></td></tr>");
 			}
@@ -270,7 +270,7 @@ public class SellBuffsManager: DataReaderBase
 		int count = 0;
 		foreach (Skill skill in player.getAllSkills())
 		{
-			if (ALLOWED_BUFFS.Contains(skill.getId()) && !isInSellList(player, skill))
+			if (ALLOWED_BUFFS.Contains(skill.Id) && !isInSellList(player, skill))
 			{
 				count++;
 
@@ -315,11 +315,11 @@ public class SellBuffsManager: DataReaderBase
 			{
 				sb.Append("<tr>");
 				sb.Append("<td fixwidth=\"20\"></td>");
-				sb.Append("<td align=center><img src=\"" + skill.getIcon() + "\" width=\"32\" height=\"32\"></td>");
-				sb.Append("<td align=left>" + skill.getName() + (skill.getLevel() > 100 ? "<font color=\"LEVEL\"> + " + skill.getLevel() % 100 + "</font></td>" : "</td>"));
-				sb.Append("<td align=center>" + (skill.getLevel() > 100 ? SkillData.getInstance().getMaxLevel(skill.getId()) : skill.getLevel()) + "</td>");
-				sb.Append("<td align=center><edit var=\"price_" + skill.getId() + "\" width=120 type=\"number\"></td>");
-				sb.Append("<td align=center fixwidth=\"50\"><button value=\"Add Buff\" action=\"bypass -h sellbuffaddskill " + skill.getId() + " $price_" + skill.getId() + "\" width=\"85\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+				sb.Append("<td align=center><img src=\"" + skill.Icon + "\" width=\"32\" height=\"32\"></td>");
+				sb.Append("<td align=left>" + skill.Name + (skill.Level > 100 ? "<font color=\"LEVEL\"> + " + skill.Level % 100 + "</font></td>" : "</td>"));
+				sb.Append("<td align=center>" + (skill.Level > 100 ? SkillData.getInstance().getMaxLevel(skill.Id) : skill.Level) + "</td>");
+				sb.Append("<td align=center><edit var=\"price_" + skill.Id + "\" width=120 type=\"number\"></td>");
+				sb.Append("<td align=center fixwidth=\"50\"><button value=\"Add Buff\" action=\"bypass -h sellbuffaddskill " + skill.Id + " $price_" + skill.Id + "\" width=\"85\" height=\"26\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 				sb.Append("</tr>");
 				sb.Append("<tr><td><br><br></td></tr>");
 			}
@@ -347,7 +347,7 @@ public class SellBuffsManager: DataReaderBase
 	{
 		foreach (SellBuffHolder holder in player.getSellingBuffs())
 		{
-			if (holder.getSkillId() == skill.getId())
+			if (holder.getSkillId() == skill.Id)
 			{
 				return true;
 			}

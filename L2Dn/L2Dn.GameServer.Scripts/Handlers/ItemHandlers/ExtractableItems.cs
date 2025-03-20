@@ -51,7 +51,7 @@ public class ExtractableItems: IItemHandler
 		}
 
 		// destroy item
-		if (!DailyTaskManager.RESET_ITEMS.Contains(item.getId()) &&
+		if (!DailyTaskManager.RESET_ITEMS.Contains(item.Id) &&
 		    !player.destroyItem("Extract", item.ObjectId, 1, player, true))
 		{
 			return false;
@@ -85,7 +85,7 @@ public class ExtractableItems: IItemHandler
 						bool alreadyExtracted = false;
 						foreach (Item i in extractedItems.Keys)
 						{
-							if (i.getTemplate().getId() == expi.getId())
+							if (i.getTemplate().Id == expi.getId())
 							{
 								alreadyExtracted = true;
 								break;
@@ -280,7 +280,7 @@ public class ExtractableItems: IItemHandler
 				List<ItemHolder> rewards = new();
 				foreach (var entry in extractedItems)
 				{
-					rewards.Add(new ItemHolder(entry.Key.getId(), entry.Value));
+					rewards.Add(new ItemHolder(entry.Key.Id, entry.Value));
 				}
 
 				player.sendPacket(new ExResultItemAutoPeelPacket(true, request.getTotalPeelCount(), request.getRemainingPeelCount() - 1, rewards));

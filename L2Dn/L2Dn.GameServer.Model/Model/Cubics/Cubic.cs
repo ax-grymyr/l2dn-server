@@ -205,7 +205,7 @@ public class Cubic: Creature
             !(_template.getTargetType() == CubicTargetType.BY_SKILL &&
                 cubicSkill.getTargetType() == CubicTargetType.MASTER))
         {
-            target = skill.getTarget(_owner, target, false, false, false);
+            target = skill.GetTarget(_owner, target, false, false, false);
         }
 
         if (target != null)
@@ -225,13 +225,13 @@ public class Cubic: Creature
 
     private void activateCubicSkill(Skill skill, WorldObject target)
     {
-        if (!_owner.hasSkillReuse(skill.getReuseHashCode()))
+        if (!_owner.hasSkillReuse(skill.ReuseHashCode))
         {
-            _caster.broadcastPacket(new MagicSkillUsePacket(_owner, target, skill.getDisplayId(),
-                skill.getDisplayLevel(), skill.getHitTime(), skill.getReuseDelay()));
+            _caster.broadcastPacket(new MagicSkillUsePacket(_owner, target, skill.DisplayId,
+                skill.DisplayLevel, skill.HitTime, skill.ReuseDelay));
 
-            skill.activateSkill(this, [target]);
-            _owner.addTimeStamp(skill, skill.getReuseDelay());
+            skill.ActivateSkill(this, [target]);
+            _owner.addTimeStamp(skill, skill.ReuseDelay);
         }
     }
 
@@ -365,10 +365,7 @@ public class Cubic: Creature
         return _template;
     }
 
-    public override int getId()
-    {
-        return _template.getId();
-    }
+    public override int Id => _template.getId();
 
     public override int getPAtk()
     {

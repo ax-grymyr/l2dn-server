@@ -186,7 +186,7 @@ public class PrivateStoreHistoryManager
 		}
 
 		public ItemHistoryTransaction(PrivateStoreType transactionType, long count, long price, Item item)
-			: this(transactionType, count, price, item.getId(), item.getEnchantLevel(), true)
+			: this(transactionType, count, price, item.Id, item.getEnchantLevel(), true)
 		{
 		}
 

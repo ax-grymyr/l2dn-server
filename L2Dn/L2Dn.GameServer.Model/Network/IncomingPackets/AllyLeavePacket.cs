@@ -38,7 +38,7 @@ public struct AllyLeavePacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (clan.getId() == clan.getAllyId())
+        if (clan.Id == clan.getAllyId())
         {
             player.sendPacket(SystemMessageId.ALLIANCE_LEADERS_CANNOT_WITHDRAW);
             return ValueTask.CompletedTask;

@@ -16,10 +16,10 @@ public readonly struct StaticObjectInfoPacket: IOutgoingPacket
     private readonly int _currentHp;
     private readonly bool _showHp;
     private readonly int _damageGrade;
-	
+
     public StaticObjectInfoPacket(StaticObject staticObject)
     {
-        _staticObjectId = staticObject.getId();
+        _staticObjectId = staticObject.Id;
         _objectId = staticObject.ObjectId;
         _type = 0;
         _isTargetable = true;
@@ -31,10 +31,10 @@ public readonly struct StaticObjectInfoPacket: IOutgoingPacket
         _showHp = false;
         _damageGrade = 0;
     }
-	
+
     public StaticObjectInfoPacket(Door door, bool targetable)
     {
-        _staticObjectId = door.getId();
+        _staticObjectId = door.Id;
         _objectId = door.ObjectId;
         _type = 1;
         _isTargetable = door.isTargetable() || targetable;
@@ -46,11 +46,11 @@ public readonly struct StaticObjectInfoPacket: IOutgoingPacket
         _showHp = door.isShowHp();
         _damageGrade = door.getDamage();
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.STATIC_OBJECT);
-        
+
         writer.WriteInt32(_staticObjectId);
         writer.WriteInt32(_objectId);
         writer.WriteInt32(_type);

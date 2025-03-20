@@ -125,7 +125,7 @@ public sealed class ItemCrystallizationData: DataReaderBase
 				count = (long)(count * countMul);
 			}
 
-			rewards.Add(new ItemChanceHolder(reward.getId(), chance, count));
+			rewards.Add(new ItemChanceHolder(reward.Id, chance, count));
 		}
 
 		return rewards;
@@ -137,14 +137,14 @@ public sealed class ItemCrystallizationData: DataReaderBase
 		foreach (ItemTemplate item in ItemData.getInstance().getAllItems())
 		{
 			// Check if the data has not been generated.
-			if (item is Weapon or Armor && item.isCrystallizable() && !_items.ContainsKey(item.getId()))
+			if (item is Weapon or Armor && item.isCrystallizable() && !_items.ContainsKey(item.Id))
             {
                 List<ItemChanceHolder>? holder = _crystallizationTemplates[(int)item.getCrystalType()].
                     get(item is Weapon ? CrystallizationType.WEAPON : CrystallizationType.ARMOR);
 
 				if (holder != null)
 				{
-					_items.put(item.getId(), new CrystallizationDataHolder(item.getId(), CalculateCrystallizeRewards(item, holder)));
+					_items.put(item.Id, new CrystallizationDataHolder(item.Id, CalculateCrystallizeRewards(item, holder)));
 				}
 			}
 		}
@@ -179,7 +179,7 @@ public sealed class ItemCrystallizationData: DataReaderBase
 	{
 		List<ItemChanceHolder> result = new();
 		int crystalItemId = item.getTemplate().getCrystalItemId();
-		CrystallizationDataHolder? data = getCrystallizationData(item.getId());
+		CrystallizationDataHolder? data = getCrystallizationData(item.Id);
 		if (data != null)
 		{
 			// If there are no crystals on the template, add such.
@@ -187,7 +187,7 @@ public sealed class ItemCrystallizationData: DataReaderBase
 			List<ItemChanceHolder> items = data.getItems();
 			foreach (ItemChanceHolder holder in items)
 			{
-				if (holder.getId() == crystalItemId)
+				if (holder.Id == crystalItemId)
 				{
 					found = true;
 					break;

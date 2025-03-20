@@ -31,9 +31,9 @@ public class SkillHolder: IEquatable<SkillHolder> // TODO: this class must never
 
 	public SkillHolder(Skill skill)
 	{
-		_skillId = skill.getId();
-		_skillLevel = skill.getLevel();
-		_skillSubLevel = skill.getSubLevel();
+		_skillId = skill.Id;
+		_skillLevel = skill.Level;
+		_skillSubLevel = skill.SubLevel;
 		_skill = skill;
 	}
 

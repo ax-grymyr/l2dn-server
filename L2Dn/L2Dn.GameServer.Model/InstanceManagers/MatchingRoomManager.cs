@@ -62,7 +62,7 @@ public class MatchingRoomManager
 
 	public void removeMatchingRoom(MatchingRoom room)
 	{
-		_rooms.GetValueOrDefault(room.getRoomType(), []).remove(room.getId());
+		_rooms.GetValueOrDefault(room.getRoomType(), []).remove(room.Id);
 	}
 
 	public Map<int, MatchingRoom>? getPartyMathchingRooms()

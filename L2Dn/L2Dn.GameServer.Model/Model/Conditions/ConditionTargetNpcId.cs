@@ -13,7 +13,7 @@ public sealed class ConditionTargetNpcId(Set<int> npcIds): Condition
     protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)
     {
         if (effected != null && (effected.isNpc() || effected.isDoor()))
-            return npcIds.Contains(effected.getId());
+            return npcIds.Contains(effected.Id);
 
         return false;
     }

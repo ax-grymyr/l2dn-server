@@ -1,6 +1,6 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Skills.Targets;
 
 namespace L2Dn.GameServer.Scripts.Handlers.TargetHandlers.AffectObjects;
 

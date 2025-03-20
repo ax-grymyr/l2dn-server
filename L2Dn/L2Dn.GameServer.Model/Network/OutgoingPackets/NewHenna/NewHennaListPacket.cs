@@ -42,7 +42,7 @@ public readonly struct NewHennaListPacket: IOutgoingPacket
         if (resetInfo != null)
         {
             writer.WriteInt32(1);
-            writer.WriteInt32(resetInfo.getId());
+            writer.WriteInt32(resetInfo.Id);
             writer.WriteInt64(resetInfo.getCount());
         }
         else

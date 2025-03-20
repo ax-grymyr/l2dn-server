@@ -46,16 +46,16 @@ public readonly struct ExShowSellCropListPacket: IOutgoingPacket
         {
             // TODO: This is null checking hack
             // TODO: the proper structures and the valid arguments must be passed to the constructor
-            Seed? seed = CastleManorManager.getInstance().getSeedByCrop(item.getId());
+            Seed? seed = CastleManorManager.getInstance().getSeedByCrop(item.Id);
             writer.WriteInt32(item.ObjectId); // Object id
-            writer.WriteInt32(item.getId()); // crop id
+            writer.WriteInt32(item.Id); // crop id
             writer.WriteInt32(seed?.getLevel() ?? 0); // seed level
             writer.WriteByte(1);
             writer.WriteInt32(seed?.getReward(1) ?? 0); // reward 1 id
             writer.WriteByte(1);
             writer.WriteInt32(seed?.getReward(2) ?? 0); // reward 2 id
 
-            if (_castleCrops.TryGetValue(item.getId(), out CropProcure? crop))
+            if (_castleCrops.TryGetValue(item.Id, out CropProcure? crop))
             {
                 writer.WriteInt32(_manorId); // manor
                 writer.WriteInt64(crop.getAmount()); // buy residual

@@ -29,26 +29,26 @@ public readonly struct ExPetInfoPacket: IOutgoingPacket
 	private readonly int _statusMask = 0;
 	private readonly string _title;
 	private readonly Set<AbnormalVisualEffect> _abnormalVisualEffects;
-	
+
 	public ExPetInfoPacket(Summon summon, Player attacker, int value, NpcInfoType addComponent = NpcInfoType.ID)
 	{
 		_helper = new MaskablePacketHelper<NpcInfoType>(5);
 		_helper.AddComponent(addComponent);
-		
+
 		_summon = summon;
 		_attacker = attacker;
 		_relation = attacker != null && summon.getOwner() != null ? summon.getOwner().getRelation(attacker) : 0;
 		_title = summon.getOwner() != null && summon.getOwner().isOnline() ? summon.getOwner().getName() : "";
 		_value = value;
 		_abnormalVisualEffects = summon.getEffectList().getCurrentAbnormalVisualEffects();
-		
+
 		// These 4 bits are set for some reason. Find out why.
 		_helper.AddComponent((NpcInfoType)0x0C);
 		_helper.AddComponent((NpcInfoType)0x0D);
 		_helper.AddComponent((NpcInfoType)0x14);
 		_helper.AddComponent((NpcInfoType)0x15);
 
-		if (summon.getTemplate().getDisplayId() != summon.getTemplate().getId())
+		if (summon.getTemplate().getDisplayId() != summon.getTemplate().Id)
 		{
 			_helper.AddComponent(NpcInfoType.PET_EVOLUTION_ID);
 			_helper.AddComponent(NpcInfoType.NAME);
@@ -62,7 +62,7 @@ public readonly struct ExPetInfoPacket: IOutgoingPacket
 		_helper.AddComponent(NpcInfoType.STOP_MODE);
 		_helper.AddComponent(NpcInfoType.MOVE_MODE);
 		_helper.AddComponent(NpcInfoType.PVP_FLAG);
-		
+
 		if (summon.getHeading() > 0)
 		{
 			_helper.AddComponent(NpcInfoType.HEADING);
@@ -136,9 +136,9 @@ public readonly struct ExPetInfoPacket: IOutgoingPacket
 			_allyId = summon.getOwner().getAppearance().getVisibleAllyCrestId() ?? 0;
 			_helper.AddComponent(NpcInfoType.CLAN);
 		}
-		
+
 		_helper.AddComponent(NpcInfoType.PET_EVOLUTION_ID);
-		
+
 		// TODO: Confirm me
 		if (summon.isInCombat())
 		{
@@ -152,13 +152,13 @@ public readonly struct ExPetInfoPacket: IOutgoingPacket
 		{
 			_statusMask |= 0x04;
 		}
-		
+
 		_statusMask |= 0x08; // Show name (current on retail is empty).
 		if (_statusMask != 0x00)
 		{
 			_helper.AddComponent(NpcInfoType.VISUAL_STATE);
 		}
-		
+
 		// Calculate sizes
 		foreach (NpcInfoType npcInfoType in EnumUtil.GetValues<NpcInfoType>())
 		{
@@ -195,12 +195,12 @@ public readonly struct ExPetInfoPacket: IOutgoingPacket
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.EX_PET_INFO);
-		
+
 		writer.WriteInt32(_summon.ObjectId);
 		writer.WriteByte((byte)_value); // 0=teleported 1=default 2=summoned
 		writer.WriteInt16(38); // 338 - mask_bits_38
 		_helper.WriteMask(writer);
-		
+
 		// Block 1
 		writer.WriteByte((byte)_initSize);
 		if (_helper.HasComponent(NpcInfoType.ATTACKABLE))

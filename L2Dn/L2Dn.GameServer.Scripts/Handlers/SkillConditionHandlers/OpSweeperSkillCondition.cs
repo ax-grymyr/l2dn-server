@@ -23,7 +23,7 @@ public class OpSweeperSkillCondition: ISkillCondition
 		{
             if (skill != null)
             {
-                List<WorldObject>? targets = skill.getTargetsAffected(sweeper, target);
+                List<WorldObject>? targets = skill.GetTargetsAffected(sweeper, target);
                 if (targets != null)
                 {
                     foreach (WorldObject wo in targets)

@@ -65,7 +65,7 @@ public class SiegeManager
 		bool register = false;
 		try
 		{
-			int clanId = clan.getId();
+			int clanId = clan.Id;
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			register = ctx.SiegeClans.Any(r => r.ClanId == clanId && r.CastleId == castleid);
 		}

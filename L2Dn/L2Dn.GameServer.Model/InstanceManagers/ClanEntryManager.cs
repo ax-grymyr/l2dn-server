@@ -175,7 +175,7 @@ public class ClanEntryManager
 				ctx.PledgeApplicants.Add(new DbPledgeApplicant()
 				{
 					CharacterId = info.getPlayerId(),
-					ClanId = info.getRequestClan().getId(),
+					ClanId = info.getRequestClan().Id,
 					Karma = info.getKarma(),
 					Message = info.getMessage(),
 				});

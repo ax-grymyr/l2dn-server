@@ -74,7 +74,7 @@ public struct RequestExTryToPutShapeShiftingTargetItemPacket: IIncomingPacket<Ga
 			return ValueTask.CompletedTask;
 		}
 
-		AppearanceStone? appearanceStone = AppearanceItemData.getInstance().getStone(stone.getId());
+		AppearanceStone? appearanceStone = AppearanceItemData.getInstance().getStone(stone.Id);
 		if (appearanceStone == null)
 		{
 			player.sendPacket(ExPutShapeShiftingTargetItemResultPacket.FAILED);

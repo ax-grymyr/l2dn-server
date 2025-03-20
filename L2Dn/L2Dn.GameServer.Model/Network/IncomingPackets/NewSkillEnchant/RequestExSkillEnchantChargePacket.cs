@@ -45,7 +45,7 @@ public struct RequestExSkillEnchantChargePacket: IIncomingPacket<GameSession>
 	    if (skill == null)
 		    return ValueTask.CompletedTask;
 
-	    SkillEnchantHolder? skillEnchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.getId());
+	    SkillEnchantHolder? skillEnchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.Id);
 	    if (skillEnchantHolder == null)
 		    return ValueTask.CompletedTask;
 
@@ -57,25 +57,25 @@ public struct RequestExSkillEnchantChargePacket: IIncomingPacket<GameSession>
 	    long feeAdena = 0;
 	    foreach (ItemHolder itemCharge in _itemList)
 	    {
-		    Item? item = player.getInventory().getItemByObjectId(itemCharge.getId());
+		    Item? item = player.getInventory().getItemByObjectId(itemCharge.Id);
 		    if (item == null)
 		    {
 			    PacketLogger.Instance.Warn(GetType().Name + " Player" + player.getName() +
 			                               " trying charge skill exp enchant with not exist item by objectId - " +
-			                               itemCharge.getId());
+			                               itemCharge.Id);
 
 			    continue;
 		    }
 
 		    EnchantItemExpHolder? itemExpHolder =
-			    SkillEnchantData.getInstance().getEnchantItem(starHolder.getLevel(), item.getId());
+			    SkillEnchantData.getInstance().getEnchantItem(starHolder.getLevel(), item.Id);
 		    if (itemExpHolder != null)
 		    {
 			    feeAdena = itemCharge.getCount() * starHolder.getFeeAdena();
 			    if (player.getAdena() < feeAdena)
 			    {
 				    player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
-				    player.sendPacket(new ExSkillEnchantChargePacket(skill.getId(), 0));
+				    player.sendPacket(new ExSkillEnchantChargePacket(skill.Id, 0));
 				    return ValueTask.CompletedTask;
 			    }
 
@@ -95,13 +95,13 @@ public struct RequestExSkillEnchantChargePacket: IIncomingPacket<GameSession>
 		    else
 		    {
 			    PacketLogger.Instance.Warn(GetType().Name + " Player" + player.getName() +
-			                               " trying charge skill with missed item on XML  itemId-" + item.getId());
+			                               " trying charge skill with missed item on XML  itemId-" + item.Id);
 		    }
 	    }
 
 	    player.setSkillEnchantExp(starHolder.getLevel(), Math.Min(starHolder.getExpMax(), curExp));
 	    player.reduceAdena("ChargeFee", feeAdena, null, true);
-	    player.sendPacket(new ExSkillEnchantChargePacket(skill.getId(), 0));
+	    player.sendPacket(new ExSkillEnchantChargePacket(skill.Id, 0));
 	    player.sendPacket(new ExSkillEnchantInfoPacket(skill, player));
 
 	    return ValueTask.CompletedTask;

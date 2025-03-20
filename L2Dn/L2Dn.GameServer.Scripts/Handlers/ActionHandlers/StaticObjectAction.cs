@@ -16,15 +16,15 @@ namespace L2Dn.GameServer.Scripts.Handlers.ActionHandlers;
 public class StaticObjectAction: IActionHandler
 {
 	private static readonly Logger _logger = LogManager.GetLogger(nameof(StaticObjectAction));
-	
+
 	public bool action(Player player, WorldObject target, bool interact)
 	{
 		StaticObject staticObject = (StaticObject) target;
 		if (staticObject.getType() < 0)
 		{
-			_logger.Info("StaticObject: StaticObject with invalid type! StaticObjectId: " + staticObject.getId());
+			_logger.Info("StaticObject: StaticObject with invalid type! StaticObjectId: " + staticObject.Id);
 		}
-		
+
 		// Check if the Player already target the Npc
 		if (player.getTarget() != staticObject)
 		{
@@ -41,10 +41,10 @@ public class StaticObjectAction: IActionHandler
 			}
 			else if (staticObject.getType() == 2)
 			{
-				string filename = staticObject.getId() == 24230101
+				string filename = staticObject.Id == 24230101
 					? "html/signboard/tomb_of_crystalgolem.htm"
 					: "html/signboard/pvp_signboard.htm";
-				
+
 				HtmlContent html = HtmlContent.LoadFromFile(filename, player);
 				NpcHtmlMessagePacket htmlPacket = new NpcHtmlMessagePacket(staticObject.ObjectId, 0, html);
 				player.sendPacket(htmlPacket);
@@ -54,10 +54,10 @@ public class StaticObjectAction: IActionHandler
 				player.sendPacket(staticObject.getMap());
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	public InstanceType getInstanceType()
 	{
 		return InstanceType.StaticObject;

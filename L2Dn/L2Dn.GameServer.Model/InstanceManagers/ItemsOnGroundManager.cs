@@ -89,7 +89,7 @@ public class ItemsOnGroundManager: Runnable
                 WorldRegion? region = World.getInstance().getRegion(item);
                 if (region == null)
                 {
-                    LOGGER.Error("Region not found for item " + item.getId() + " " + item.getName());
+                    LOGGER.Error("Region not found for item " + item.Id + " " + item.getName());
                     continue;
                 }
 
@@ -103,7 +103,7 @@ public class ItemsOnGroundManager: Runnable
 				_items.add(item);
 				count++;
 				// add to ItemsAutoDestroy only items not protected
-				if (!Config.General.LIST_PROTECTED_ITEMS.Contains(item.getId()) && dropTime is not null &&
+				if (!Config.General.LIST_PROTECTED_ITEMS.Contains(item.Id) && dropTime is not null &&
 				    ((Config.General.AUTODESTROY_ITEM_AFTER > 0 && !item.getTemplate().hasExImmediateEffect()) ||
 				     (Config.General.HERB_AUTO_DESTROY_TIME > 0 && item.getTemplate().hasExImmediateEffect())))
 				{
@@ -189,7 +189,7 @@ public class ItemsOnGroundManager: Runnable
 					continue;
 				}
 
-				if (CursedWeaponsManager.getInstance().isCursed(item.getId()))
+				if (CursedWeaponsManager.getInstance().isCursed(item.Id))
 				{
 					continue; // Cursed Items not saved to ground, prevent double save
 				}
@@ -197,7 +197,7 @@ public class ItemsOnGroundManager: Runnable
 				ctx.ItemsOnGround.Add(new DbItemOnGround()
 				{
 					ObjectId = item.ObjectId,
-					ItemId = item.getId(),
+					ItemId = item.Id,
 					Count = item.getCount(),
 					EnchantLevel = item.getEnchantLevel(),
 					X = item.getX(),

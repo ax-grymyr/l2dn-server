@@ -23,7 +23,7 @@ public class OpNotAffectedBySkillSkillCondition: ISkillCondition
         BuffInfo? buffInfo = caster.getEffectList().getBuffInfoBySkillId(_skillId);
         if (_skillLevel > 0)
         {
-            return buffInfo == null || buffInfo.getSkill().getLevel() < _skillLevel;
+            return buffInfo == null || buffInfo.getSkill().Level < _skillLevel;
         }
 
         return buffInfo == null;

@@ -22,10 +22,7 @@ public class Boat: Vehicle
         return true;
     }
 
-    public override int getId()
-    {
-        return 0;
-    }
+    public override int Id => 0;
 
     public override bool moveToNextRoutePoint()
     {

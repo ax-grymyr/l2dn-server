@@ -18,8 +18,8 @@ public class Calculator: IItemHandler
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
-		
-		playable.sendPacket(new ShowCalculatorPacket(item.getId()));
+
+		playable.sendPacket(new ShowCalculatorPacket(item.Id));
 		return true;
 	}
 }

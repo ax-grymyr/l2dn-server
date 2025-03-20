@@ -15,7 +15,7 @@ public readonly struct ExAbnormalStatusUpdateFromTargetPacket: IOutgoingPacket
         _effects = new List<BuffInfo>();
         foreach (BuffInfo info in creature.getEffectList().getEffects())
         {
-            if (info != null && info.isInUse() && !info.getSkill().isToggle())
+            if (info != null && info.isInUse() && !info.getSkill().IsToggle)
             {
                 _effects.Add(info);
             }
@@ -32,11 +32,11 @@ public readonly struct ExAbnormalStatusUpdateFromTargetPacket: IOutgoingPacket
         foreach (BuffInfo info in _effects)
         {
             Skill skill = info.getSkill();
-            writer.WriteInt32(skill.getDisplayId());
-            writer.WriteInt16((short)skill.getDisplayLevel());
-            writer.WriteInt16((short)skill.getSubLevel());
-            writer.WriteInt16((short)skill.getAbnormalType());
-            if (skill.isAura())
+            writer.WriteInt32(skill.DisplayId);
+            writer.WriteInt16((short)skill.DisplayLevel);
+            writer.WriteInt16((short)skill.SubLevel);
+            writer.WriteInt16((short)skill.AbnormalType);
+            if (skill.IsAura)
                 writer.WriteVariableInt(-1);
             else
                 writer.WriteVariableInt((int)(info.getTime() ?? TimeSpan.Zero).TotalSeconds);

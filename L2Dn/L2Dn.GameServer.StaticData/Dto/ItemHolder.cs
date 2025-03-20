@@ -8,7 +8,7 @@ public class ItemHolder(int id, long count): IIdentifiable
     /**
      * @return the ID of the item contained in this object
      */
-    public int getId() => id;
+    public int Id => id;
 
     /**
      * @return the count of items contained in this object
@@ -16,7 +16,7 @@ public class ItemHolder(int id, long count): IIdentifiable
     public long getCount() => count;
 
     public override bool Equals(object? obj) =>
-        ReferenceEquals(obj, this) || obj is ItemHolder other && id == other.getId() && count == other.getCount();
+        ReferenceEquals(obj, this) || obj is ItemHolder other && id == other.Id && count == other.getCount();
 
     public override int GetHashCode() => HashCode.Combine(id, count);
 

@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -6,7 +7,6 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -37,7 +37,7 @@ public sealed class TriggerSkill: AbstractEffect
             return;
 
         Skill? triggerSkill = _adjustLevel
-            ? SkillData.getInstance().getSkill(_skill.getSkillId(), skill.getLevel())
+            ? SkillData.getInstance().getSkill(_skill.getSkillId(), skill.Level)
             : _skill.getSkill();
 
         if (triggerSkill == null)

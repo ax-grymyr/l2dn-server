@@ -36,7 +36,7 @@ public struct AllyDismissPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (!player.isClanLeader() || leaderClan.getId() != leaderClan.getAllyId())
+        if (!player.isClanLeader() || leaderClan.Id != leaderClan.getAllyId())
         {
             player.sendPacket(SystemMessageId.ACCESS_ONLY_FOR_THE_CHANNEL_FOUNDER);
             return ValueTask.CompletedTask;
@@ -49,7 +49,7 @@ public struct AllyDismissPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (clan.getId() == leaderClan.getId())
+        if (clan.Id == leaderClan.Id)
         {
             player.sendPacket(SystemMessageId.ALLIANCE_LEADERS_CANNOT_WITHDRAW);
             return ValueTask.CompletedTask;

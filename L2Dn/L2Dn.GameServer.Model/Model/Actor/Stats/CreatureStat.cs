@@ -26,9 +26,9 @@ public class CreatureStat
 	private readonly Map<Stat, double> _statsAdd = new();
 	private readonly Map<Stat, double> _statsMul = new();
 	private readonly Map<Stat, Map<MoveType, double>> _moveTypeStats = new();
-	private readonly Map<int, double> _reuseStat = new();
-	private readonly Map<int, double> _mpConsumeStat = new();
-	private readonly Map<int, LinkedList<double>> _skillEvasionStat = new();
+	private readonly Map<SkillMagicType, double> _reuseStat = new();
+	private readonly Map<SkillMagicType, double> _mpConsumeStat = new();
+	private readonly Map<SkillMagicType, LinkedList<double>> _skillEvasionStat = new();
 	private readonly Map<Stat, Map<Position, double>> _positionStats = new();
 	private readonly List<StatHolder> _additionalAdd = new();
 	private readonly List<StatHolder> _additionalMul = new();
@@ -190,7 +190,7 @@ public class CreatureStat
 	{
 		if (skill != null)
 		{
-			return skill.getCastRange() + (int) getValue(Stat.MAGIC_ATTACK_RANGE, 0);
+			return skill.CastRange + (int) getValue(Stat.MAGIC_ATTACK_RANGE, 0);
 		}
 		return _creature.getTemplate().getBaseAttackRange();
 	}
@@ -431,13 +431,13 @@ public class CreatureStat
 		{
 			return 1;
 		}
-		double mpConsume = skill.getMpConsume();
-		double nextDanceMpCost = Math.Ceiling(skill.getMpConsume() / 2.0);
-		if (skill.isDance() && Config.Character.DANCE_CONSUME_ADDITIONAL_MP && _creature != null && _creature.getDanceCount() > 0)
+		double mpConsume = skill.MpConsume;
+		double nextDanceMpCost = Math.Ceiling(skill.MpConsume / 2.0);
+		if (skill.IsDance && Config.Character.DANCE_CONSUME_ADDITIONAL_MP && _creature != null && _creature.getDanceCount() > 0)
 		{
 			mpConsume += _creature.getDanceCount() * nextDanceMpCost;
 		}
-		return (int) (mpConsume * getMpConsumeTypeValue(skill.getMagicType()));
+		return (int) (mpConsume * getMpConsumeTypeValue(skill.MagicType));
 	}
 
 	/**
@@ -450,7 +450,7 @@ public class CreatureStat
 		{
 			return 1;
 		}
-		return skill.getMpInitialConsume();
+		return skill.MpInitialConsume;
 	}
 
 	public AttributeType getAttackElement()
@@ -853,7 +853,7 @@ public class CreatureStat
 			// Call pump to each effect.
 			foreach (BuffInfo info in _creature.getEffectList().getPassives())
 			{
-				if (info.isInUse() && info.getSkill().checkConditions(SkillConditionScope.PASSIVE, _creature, _creature.getTarget()))
+				if (info.isInUse() && info.getSkill().CheckConditions(SkillConditionScope.Passive, _creature, _creature.getTarget()))
 				{
 					foreach (AbstractEffect effect in info.getEffects())
 					{
@@ -999,27 +999,27 @@ public class CreatureStat
 		_moveTypeStats.GetOrAdd(stat, _ => []).merge(type, value, StatInfo.DefaultAddFunction);
 	}
 
-	public double getReuseTypeValue(int magicType)
+	public double getReuseTypeValue(SkillMagicType magicType)
 	{
 		return _reuseStat.GetValueOrDefault(magicType, 1);
 	}
 
-	public void mergeReuseTypeValue(int magicType, double value, Func<double, double, double> func)
+	public void mergeReuseTypeValue(SkillMagicType magicType, double value, Func<double, double, double> func)
 	{
 		_reuseStat.merge(magicType, value, func);
 	}
 
-	public double getMpConsumeTypeValue(int magicType)
+	public double getMpConsumeTypeValue(SkillMagicType magicType)
 	{
 		return _mpConsumeStat.GetValueOrDefault(magicType, 1);
 	}
 
-	public void mergeMpConsumeTypeValue(int magicType, double value, Func<double, double, double> func)
+	public void mergeMpConsumeTypeValue(SkillMagicType magicType, double value, Func<double, double, double> func)
 	{
 		_mpConsumeStat.merge(magicType, value, func);
 	}
 
-	public double getSkillEvasionTypeValue(int magicType)
+	public double getSkillEvasionTypeValue(SkillMagicType magicType)
 	{
 		LinkedList<double>? skillEvasions = _skillEvasionStat.get(magicType);
 		if (skillEvasions != null && skillEvasions.Count != 0)
@@ -1030,12 +1030,12 @@ public class CreatureStat
 		return 0;
 	}
 
-	public void addSkillEvasionTypeValue(int magicType, double value)
+	public void addSkillEvasionTypeValue(SkillMagicType magicType, double value)
 	{
 		_skillEvasionStat.GetOrAdd(magicType, _ => []).AddLast(value);
 	}
 
-	public void removeSkillEvasionTypeValue(int magicType, double value)
+	public void removeSkillEvasionTypeValue(SkillMagicType magicType, double value)
 	{
 		_skillEvasionStat.computeIfPresent(magicType, (_, v) =>
 		{
@@ -1077,9 +1077,9 @@ public class CreatureStat
 	 */
 	public virtual TimeSpan getReuseTime(Skill skill)
 	{
-		return skill.isStaticReuse() || skill.isStatic()
-			? skill.getReuseDelay()
-			: skill.getReuseDelay() * getReuseTypeValue(skill.getMagicType());
+		return skill.IsStaticReuse || skill.IsStatic
+			? skill.ReuseDelay
+			: skill.ReuseDelay * getReuseTypeValue(skill.MagicType);
 	}
 
 	/**

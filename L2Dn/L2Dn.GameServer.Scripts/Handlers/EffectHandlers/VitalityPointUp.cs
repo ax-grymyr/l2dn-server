@@ -57,7 +57,7 @@ public sealed class VitalityPointUp: AbstractEffect
                 {
                     foreach (ItemSkillHolder s in i.getTemplate().getAllSkills())
                     {
-                        if (s.getSkill().hasEffectType(EffectType.VITALITY_POINT_UP))
+                        if (s.getSkill().HasEffectType(EffectType.VITALITY_POINT_UP))
                         {
                             items.Add(i);
                             break;

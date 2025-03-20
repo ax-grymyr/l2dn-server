@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -41,7 +42,7 @@ public sealed class MagicalDamOverTime: AbstractEffect
 
         if (damage >= target.getCurrentHp() - 1)
         {
-            if (skill.isToggle())
+            if (skill.IsToggle)
             {
                 target.sendPacket(SystemMessageId.YOUR_SKILL_HAS_BEEN_CANCELED_DUE_TO_LACK_OF_HP);
                 return false;
@@ -52,14 +53,14 @@ public sealed class MagicalDamOverTime: AbstractEffect
             {
                 // Fix for players dying by DOTs if HP < 1 since reduceCurrentHP method will kill them
                 if (target.getCurrentHp() <= 1)
-                    return skill.isToggle();
+                    return skill.IsToggle;
 
                 damage = target.getCurrentHp() - 1;
             }
         }
 
         effector.doAttack(damage, effected, skill, true, false, false, false);
-        return skill.isToggle();
+        return skill.IsToggle;
     }
 
     public override int GetHashCode() => HashCode.Combine(_power, _canKill, Ticks);

@@ -118,16 +118,13 @@ public class Spawn : IIdentifiable, IHasLocation
 		return _locationId;
 	}
 
-	/**
+    /**
 	 * Gets the NPC ID.
 	 * @return the NPC ID
 	 */
-	public int getId()
-	{
-		return _template.getId();
-	}
+    public int Id => _template.Id;
 
-	/**
+    /**
 	 * @return min respawn delay.
 	 */
 	public TimeSpan getRespawnMinDelay()
@@ -311,7 +308,7 @@ public class Spawn : IIdentifiable, IHasLocation
 		}
 		catch (Exception e)
 		{
-			LOGGER.Warn("Error while spawning " + _template.getId() + ": " + e);
+			LOGGER.Warn("Error while spawning " + _template.Id + ": " + e);
 		}
 		return null;
 	}
@@ -360,7 +357,7 @@ public class Spawn : IIdentifiable, IHasLocation
 		if (Config.RandomSpawns.ENABLE_RANDOM_MONSTER_SPAWNS && _location.Heading != -1 && npc.isMonster() &&
 		    !npc.isQuestMonster() && !WalkingManager.getInstance().isTargeted(npc) && getInstanceId() == 0 &&
 		    !getTemplate().isUndying() && !npc.isRaid() && !npc.isRaidMinion() && !npc.isFlying() && water == null &&
-		    !Config.RandomSpawns.MOBS_LIST_NOT_RANDOM.Contains(npc.getId()))
+		    !Config.RandomSpawns.MOBS_LIST_NOT_RANDOM.Contains(npc.Id))
 		{
 			int randX = newLocation.X + Rnd.get(Config.RandomSpawns.MOB_MIN_SPAWN_RANGE, Config.RandomSpawns.MOB_MAX_SPAWN_RANGE);
 			int randY = newLocation.Y + Rnd.get(Config.RandomSpawns.MOB_MIN_SPAWN_RANGE, Config.RandomSpawns.MOB_MAX_SPAWN_RANGE);
@@ -430,7 +427,7 @@ public class Spawn : IIdentifiable, IHasLocation
 		_currentCount++;
 
 		// Minions
-		if (npc.isMonster() && NpcData.getMasterMonsterIDs().Contains(npc.getId()))
+		if (npc.isMonster() && NpcData.getMasterMonsterIDs().Contains(npc.Id))
 		{
 			((Monster) npc).getMinionList().spawnMinions(npc.getParameters().getMinionList("Privates"));
 		}
@@ -570,6 +567,6 @@ public class Spawn : IIdentifiable, IHasLocation
 
 	public override string ToString()
 	{
-		return "Spawn ID: " + _template.getId() + " at " + _location;
+		return "Spawn ID: " + _template.Id + " at " + _location;
 	}
 }

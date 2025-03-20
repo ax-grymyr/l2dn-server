@@ -18,7 +18,7 @@ public class ConditionPlayerRangeFromNpc(Set<int> npcIds, int radius, bool value
         {
             foreach (Npc target in World.getInstance().getVisibleObjectsInRange<Npc>(effector, radius))
             {
-                if (npcIds.Contains(target.getId()))
+                if (npcIds.Contains(target.Id))
                 {
                     existNpc = true;
                     break;

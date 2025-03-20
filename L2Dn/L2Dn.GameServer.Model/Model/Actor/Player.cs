@@ -43,7 +43,6 @@ using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Model.Vips;
@@ -745,7 +744,7 @@ public class Player: Playable
 		}
 		if (clan != null && targetClan != null && target.getPledgeType() != Clan.SUBUNIT_ACADEMY && getPledgeType() != Clan.SUBUNIT_ACADEMY)
 		{
-			ClanWar? war = clan.getWarWith(targetClan.getId());
+			ClanWar? war = clan.getWarWith(targetClan.Id);
 			if (war != null)
 			{
 				switch (war.getState())
@@ -1415,7 +1414,7 @@ public class Player: Playable
 	{
 		foreach (QuestState questState in _quests.Values)
 		{
-			if (questIds.Contains(questState.getQuest().getId()) && questState.isCompleted())
+			if (questIds.Contains(questState.getQuest().Id) && questState.isCompleted())
 			{
 				return true;
 			}
@@ -1451,7 +1450,7 @@ public class Player: Playable
 			}
 
 			Quest quest = questState.getQuest();
-			if (quest == null || quest.getId() <= 1)
+			if (quest == null || quest.Id <= 1)
 			{
 				continue;
 			}
@@ -2115,7 +2114,7 @@ public class Player: Playable
                     throw new InvalidOperationException($"EINHASAD_OVERSEEING skill id={CommonSkill.EINHASAD_OVERSEEING} not found");
 
 				getEffectList().stopSkillEffects(SkillFinishType.REMOVED, (int)CommonSkill.EINHASAD_OVERSEEING);
-				skill.applyEffects(this, this);
+				skill.ApplyEffects(this, this);
 			}
 		}
 		else
@@ -2696,7 +2695,7 @@ public class Player: Playable
 		List<Skill> skillsForStore = new();
 		foreach (Skill skill in skills)
 		{
-			int skillId = skill.getId();
+			int skillId = skill.Id;
 			Skill? oldSkill = getKnownSkill(skillId);
 			if (oldSkill == skill)
 			{
@@ -2714,18 +2713,18 @@ public class Player: Playable
 			}
 
 			// fix when learning toggle skills
-			if (skill.isToggle() && !skill.isNecessaryToggle() && isAffectedBySkill(skillId))
+			if (skill.IsToggle && !skill.IsNecessaryToggle && isAffectedBySkill(skillId))
 			{
 				stopSkillEffects(SkillFinishType.REMOVED, skillId);
 			}
 
 			// Mobius: Keep sublevel on skill level increase.
-			int skillLevel = skill.getLevel();
+			int skillLevel = skill.Level;
 			Skill updatedSkill = skill;
-			if (oldSkill != null && oldSkill.getSubLevel() > 0 && skill.getSubLevel() == 0 && oldSkill.getLevel() < skillLevel)
+			if (oldSkill != null && oldSkill.SubLevel > 0 && skill.SubLevel == 0 && oldSkill.Level < skillLevel)
 			{
-				updatedSkill = SkillData.getInstance().getSkill(skillId, skillLevel, oldSkill.getSubLevel()) ??
-                    throw new InvalidOperationException($"Skill with id={skillId}, level={skillLevel}, subLevel={oldSkill.getSubLevel()} not found");
+				updatedSkill = SkillData.getInstance().getSkill(skillId, skillLevel, oldSkill.SubLevel) ??
+                    throw new InvalidOperationException($"Skill with id={skillId}, level={skillLevel}, subLevel={oldSkill.SubLevel} not found");
 			}
 
 			addSkill(updatedSkill, false);
@@ -2733,7 +2732,7 @@ public class Player: Playable
 
 			if (Config.Character.AUTO_LEARN_SKILLS)
 			{
-				updateShortCuts(skillId, skillLevel, updatedSkill.getSubLevel());
+				updateShortCuts(skillId, skillLevel, updatedSkill.SubLevel);
 			}
 		}
 
@@ -3339,11 +3338,11 @@ public class Player: Playable
             {
                 dropItem("InvDrop", newitem, null, true, true);
             }
-            else if (CursedWeaponsManager.getInstance().isCursed(newitem.getId()))
+            else if (CursedWeaponsManager.getInstance().isCursed(newitem.Id))
 			{
 				CursedWeaponsManager.getInstance().activate(this, newitem);
 			}
-			else if (FortSiegeManager.getInstance().isCombat(item.getId()) && FortSiegeManager.getInstance().activateCombatFlag(this, item))
+			else if (FortSiegeManager.getInstance().isCombat(item.Id) && FortSiegeManager.getInstance().activateCombatFlag(this, item))
 			{
 				Fort fort = FortManager.getInstance().getFort(this) ??
                     throw new InvalidOperationException("Combat item added to inventory but fort is null");
@@ -3459,7 +3458,7 @@ public class Player: Playable
 				{
 					dropItem("InvDrop", createdItem, null, true);
 				}
-				else if (CursedWeaponsManager.getInstance().isCursed(createdItem.getId()))
+				else if (CursedWeaponsManager.getInstance().isCursed(createdItem.Id))
 				{
 					CursedWeaponsManager.getInstance().activate(this, createdItem);
 				}
@@ -3477,7 +3476,7 @@ public class Player: Playable
 	 */
 	public void addItem(string process, ItemHolder item, WorldObject reference, bool sendMessage)
 	{
-		addItem(process, item.getId(), item.getCount(), reference, sendMessage);
+		addItem(process, item.Id, item.getCount(), reference, sendMessage);
 	}
 
 	/**
@@ -3711,7 +3710,7 @@ public class Player: Playable
 		}
 
 		// LCoin UI update.
-		if (newItem.getId() == Inventory.LCOIN_ID)
+		if (newItem.Id == Inventory.LCOIN_ID)
 		{
 			sendPacket(new ExBloodyCoinCountPacket(this));
 		}
@@ -3781,7 +3780,7 @@ public class Player: Playable
 		}
 
 		droppedItem.dropMe(this, new Location3D(getX() + Rnd.get(50) - 25, getY() + Rnd.get(50) - 25, getZ() + 20));
-		if (Config.General.AUTODESTROY_ITEM_AFTER > 0 && Config.General.DESTROY_DROPPED_PLAYER_ITEM && !Config.General.LIST_PROTECTED_ITEMS.Contains(droppedItem.getId()) && ((droppedItem.isEquipable() && Config.General.DESTROY_EQUIPABLE_PLAYER_ITEM) || !droppedItem.isEquipable()))
+		if (Config.General.AUTODESTROY_ITEM_AFTER > 0 && Config.General.DESTROY_DROPPED_PLAYER_ITEM && !Config.General.LIST_PROTECTED_ITEMS.Contains(droppedItem.Id) && ((droppedItem.isEquipable() && Config.General.DESTROY_EQUIPABLE_PLAYER_ITEM) || !droppedItem.isEquipable()))
 		{
 			ItemsAutoDestroyTaskManager.getInstance().addItem(droppedItem);
 		}
@@ -3815,7 +3814,7 @@ public class Player: Playable
 		}
 
 		// LCoin UI update.
-		if (item.getId() == Inventory.LCOIN_ID)
+		if (item.Id == Inventory.LCOIN_ID)
 		{
 			sendPacket(new ExBloodyCoinCountPacket(this));
 		}
@@ -3855,7 +3854,7 @@ public class Player: Playable
 		}
 
 		item.dropMe(this, location);
-		if (Config.General.AUTODESTROY_ITEM_AFTER > 0 && Config.General.DESTROY_DROPPED_PLAYER_ITEM && !Config.General.LIST_PROTECTED_ITEMS.Contains(item.getId()) && ((item.isEquipable() && Config.General.DESTROY_EQUIPABLE_PLAYER_ITEM) || !item.isEquipable()))
+		if (Config.General.AUTODESTROY_ITEM_AFTER > 0 && Config.General.DESTROY_DROPPED_PLAYER_ITEM && !Config.General.LIST_PROTECTED_ITEMS.Contains(item.Id) && ((item.isEquipable() && Config.General.DESTROY_EQUIPABLE_PLAYER_ITEM) || !item.isEquipable()))
 		{
 			ItemsAutoDestroyTaskManager.getInstance().addItem(item);
 		}
@@ -3890,7 +3889,7 @@ public class Player: Playable
 		}
 
 		// LCoin UI update.
-		if (item.getId() == Inventory.LCOIN_ID)
+		if (item.Id == Inventory.LCOIN_ID)
 		{
 			sendPacket(new ExBloodyCoinCountPacket(this));
 		}
@@ -4412,7 +4411,7 @@ public class Player: Playable
 	 */
 	public void doAutoLoot(Attackable target, ItemHolder item)
 	{
-		doAutoLoot(target, item.getId(), item.getCount());
+		doAutoLoot(target, item.Id, item.getCount());
 	}
 
 	/**
@@ -4489,7 +4488,7 @@ public class Player: Playable
 
 			if (target.getOwnerId() != 0 && target.getOwnerId() != ObjectId && !isInLooterParty(target.getOwnerId()))
 			{
-				if (target.getId() == Inventory.ADENA_ID)
+				if (target.Id == Inventory.ADENA_ID)
 				{
 					smsg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1_ADENA);
 					smsg.Params.addLong(target.getCount());
@@ -4511,7 +4510,7 @@ public class Player: Playable
 			}
 
 			// You can pickup only 1 combat flag
-			if (FortSiegeManager.getInstance().isCombat(target.getId()) && !FortSiegeManager.getInstance().checkIfCanPickup(this))
+			if (FortSiegeManager.getInstance().isCombat(target.Id) && !FortSiegeManager.getInstance().checkIfCanPickup(this))
 			{
 				return;
 			}
@@ -4535,7 +4534,7 @@ public class Player: Playable
 			IItemHandler? handler = ItemHandler.getInstance().getHandler(target.getEtcItem());
 			if (handler == null)
 			{
-				LOGGER.Warn("No item handler registered for item ID: " + target.getId() + ".");
+				LOGGER.Warn("No item handler registered for item ID: " + target.Id + ".");
 			}
 			else
 			{
@@ -4544,11 +4543,11 @@ public class Player: Playable
 			ItemData.getInstance().destroyItem("Consume", target, this, null);
 		}
 		// Cursed Weapons are not distributed
-		else if (CursedWeaponsManager.getInstance().isCursed(target.getId()))
+		else if (CursedWeaponsManager.getInstance().isCursed(target.Id))
 		{
 			addItem("Pickup", target, null, true);
 		}
-		else if (FortSiegeManager.getInstance().isCombat(target.getId()))
+		else if (FortSiegeManager.getInstance().isCombat(target.Id))
 		{
 			addItem("Pickup", target, null, true);
 		}
@@ -4562,14 +4561,14 @@ public class Player: Playable
 					smsg = new SystemMessagePacket(SystemMessageId.ATTENTION_C1_HAS_PICKED_UP_S2_S3);
 					smsg.Params.addPcName(this);
 					smsg.Params.addInt(target.getEnchantLevel());
-					smsg.Params.addItemName(target.getId());
+					smsg.Params.addItemName(target.Id);
 					broadcastPacket(smsg, 1400);
 				}
 				else
 				{
 					smsg = new SystemMessagePacket(SystemMessageId.ATTENTION_C1_HAS_PICKED_UP_S2);
 					smsg.Params.addPcName(this);
-					smsg.Params.addItemName(target.getId());
+					smsg.Params.addItemName(target.Id);
 					broadcastPacket(smsg, 1400);
 				}
 			}
@@ -4579,7 +4578,7 @@ public class Player: Playable
 			{
 				_party.distributeItem(this, target);
 			}
-			else if (target.getId() == Inventory.ADENA_ID && _inventory.getAdenaInstance() != null)
+			else if (target.Id == Inventory.ADENA_ID && _inventory.getAdenaInstance() != null)
 			{
 				addAdena("Pickup", target.getCount(), null, true);
 				ItemData.getInstance().destroyItem("Pickup", target, this, null);
@@ -5006,7 +5005,7 @@ public class Player: Playable
 						Clan? pkClan = pk.getClan();
 						if (pkClan != null && _clan != null && !isAcademyMember() && !pk.isAcademyMember())
 						{
-							ClanWar? clanWar = _clan.getWarWith(pkClan.getId());
+							ClanWar? clanWar = _clan.getWarWith(pkClan.Id);
 							if (clanWar != null && AntiFeedManager.getInstance().check(killer, this))
 							{
 								clanWar.onKill(pk, this);
@@ -5128,7 +5127,7 @@ public class Player: Playable
         Clan? clan = getClan();
 		Player? pk = killer.getActingPlayer();
         Clan? pkClan = pk?.getClan();
-		if (getReputation() >= 0 && pk != null && pkClan != null && clan != null && pkClan.isAtWarWith(clan.getId()))
+		if (getReputation() >= 0 && pk != null && pkClan != null && clan != null && pkClan.isAtWarWith(clan.Id))
             // || _clan.isAtWarWith(((Player)killer).getClanId())
         {
 			return droppedItems;
@@ -5171,11 +5170,11 @@ public class Player: Playable
 					// Don't drop
 					if (itemDrop.isShadowItem() || // Dont drop Shadow Items
                         itemDrop.isTimeLimitedItem() || // Dont drop Time Limited Items
-                        !itemDrop.isDropable() || itemDrop.getId() == Inventory.ADENA_ID || // Adena
+                        !itemDrop.isDropable() || itemDrop.Id == Inventory.ADENA_ID || // Adena
                         itemDrop.getTemplate().getType2() == ItemTemplate.TYPE2_QUEST || // Quest Items
-                        (_pet != null && _pet.getControlObjectId() == itemDrop.getId()) || // Control Item of active pet
-                        Config.Pvp.KARMA_NONDROPPABLE_ITEMS.Contains(itemDrop.getId()) || // Item listed in the non droppable item list
-                        Config.Pvp.KARMA_NONDROPPABLE_PET_ITEMS.Contains(itemDrop.getId())) // Item listed in the non droppable pet item list
+                        (_pet != null && _pet.getControlObjectId() == itemDrop.Id) || // Control Item of active pet
+                        Config.Pvp.KARMA_NONDROPPABLE_ITEMS.Contains(itemDrop.Id) || // Item listed in the non droppable item list
+                        Config.Pvp.KARMA_NONDROPPABLE_PET_ITEMS.Contains(itemDrop.Id)) // Item listed in the non droppable pet item list
 					{
 						continue;
 					}
@@ -5199,11 +5198,11 @@ public class Player: Playable
 
 						if (isKarmaDrop)
 						{
-							LOGGER.Warn(getName() + " has karma and dropped id = " + itemDrop.getId() + ", count = " + itemDrop.getCount());
+							LOGGER.Warn(getName() + " has karma and dropped id = " + itemDrop.Id + ", count = " + itemDrop.getCount());
 						}
 						else
 						{
-							LOGGER.Warn(getName() + " dropped id = " + itemDrop.getId() + ", count = " + itemDrop.getCount());
+							LOGGER.Warn(getName() + " dropped id = " + itemDrop.Id + ", count = " + itemDrop.getCount());
 						}
 
 						if (++dropCount >= dropLimit)
@@ -5920,7 +5919,7 @@ public class Player: Playable
 			return;
 		}
 
-		_clanId = clan.getId();
+		_clanId = clan.Id;
 		CharInfoTable.getInstance().setClanId(ObjectId, _clanId.Value);
 	}
 
@@ -5979,7 +5978,7 @@ public class Player: Playable
 
 	private void addAmmunitionSkills(Item ammunition)
 	{
-		int currentAmmunitionId = ammunition.getId();
+		int currentAmmunitionId = ammunition.Id;
 		if (_lastAmmunitionId == currentAmmunitionId)
 		{
 			return;
@@ -5999,7 +5998,7 @@ public class Player: Playable
 			if (!isAffectedBySkill(holder))
 			{
 				Skill skill = holder.getSkill();
-				if (skill.isPassive())
+				if (skill.IsPassive)
 				{
 					addSkill(skill);
 					sendSkillList = true;
@@ -6144,10 +6143,10 @@ public class Player: Playable
 		}
 
 		getEffectList().stopAllToggles();
-		setMount(pet.getId(), pet.getLevel());
+		setMount(pet.Id, pet.getLevel());
 		setMountObjectID(pet.getControlObjectId());
 		clearPetData();
-		startFeed(pet.getId());
+		startFeed(pet.Id);
 		broadcastPacket(new RidePacket(this));
 
 		// Notify self and others about speed change
@@ -7113,51 +7112,51 @@ public class Player: Playable
 					Skill skill = info.getSkill();
 
 					// Do not store those effects.
-					if (skill.isDeleteAbnormalOnLeave())
+					if (skill.IsDeleteAbnormalOnLeave)
 					{
 						continue;
 					}
 
 					// Do not save heals.
-					if (skill.getAbnormalType() == AbnormalType.LIFE_FORCE_OTHERS)
+					if (skill.AbnormalType == AbnormalType.LIFE_FORCE_OTHERS)
 					{
 						continue;
 					}
 
 					// Toggles are skipped, unless they are necessary to be always on.
-					if (skill.isToggle() && !skill.isNecessaryToggle())
+					if (skill.IsToggle && !skill.IsNecessaryToggle)
 					{
 						continue;
 					}
 
-					if (skill.isMentoring())
+					if (skill.IsMentoring)
 					{
 						continue;
 					}
 
 					// Dances and songs are not kept in retail.
-					if (skill.isDance() && !Config.Character.ALT_STORE_DANCES)
+					if (skill.IsDance && !Config.Character.ALT_STORE_DANCES)
 					{
 						continue;
 					}
 
-					if (storedSkills.Contains(skill.getReuseHashCode()))
+					if (storedSkills.Contains(skill.ReuseHashCode))
 					{
 						continue;
 					}
 
-					storedSkills.Add(skill.getReuseHashCode());
+					storedSkills.Add(skill.ReuseHashCode);
 
-					TimeStamp? t = getSkillReuseTimeStamp(skill.getReuseHashCode());
+					TimeStamp? t = getSkillReuseTimeStamp(skill.ReuseHashCode);
 
                     ++buffIndex;
 					ctx.CharacterSkillReuses.Add(new DbCharacterSkillReuse()
                     {
 	                    CharacterId = characterId,
                         ClassIndex = (byte)_classIndex,
-                        SkillId = skill.getId(),
-                        SkillLevel = (short)skill.getLevel(),
-                        SkillSubLevel = (short)skill.getSubLevel(),
+                        SkillId = skill.Id,
+                        SkillLevel = (short)skill.Level,
+                        SkillSubLevel = (short)skill.SubLevel,
                         RemainingTime = info.getTime(),
                         ReuseDelay = t != null && currentTime < t.getStamp() ? t.getReuse() : TimeSpan.Zero,
                         SysTime = t != null && currentTime < t.getStamp() ? t.getStamp() : null,
@@ -7360,7 +7359,7 @@ public class Player: Playable
 			try
 			{
                 int characterId = ObjectId;
-                int skillId = oldSkill.getId();
+                int skillId = oldSkill.Id;
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 
 				// Remove a Player skill from the character_skills table of the database
@@ -7381,7 +7380,7 @@ public class Player: Playable
 		{
 			foreach (Shortcut sc in _shortCuts.getAllShortCuts())
 			{
-				if (sc != null && sc.getId() == skill.getId() && sc.getType() == ShortcutType.SKILL && !(skill.getId() >= 3080 && skill.getId() <= 3259))
+				if (sc != null && sc.getId() == skill.Id && sc.getType() == ShortcutType.SKILL && !(skill.Id >= 3080 && skill.Id <= 3259))
 				{
 					deleteShortCut(sc.getSlot(), sc.getPage());
 				}
@@ -7406,17 +7405,17 @@ public class Player: Playable
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			if (oldSkill != null && newSkill != null)
 			{
-                int skillId = oldSkill.getId();
+                int skillId = oldSkill.Id;
 
                 ctx.CharacterSkills
 	                .Where(r => r.CharacterId == characterId && r.ClassIndex == classIndex && r.SkillId == skillId)
 	                .ExecuteUpdate(s =>
-		                s.SetProperty(r => r.SkillLevel, (short)newSkill.getLevel())
-			                .SetProperty(r => r.SkillSubLevel, (short)newSkill.getSubLevel()));
+		                s.SetProperty(r => r.SkillLevel, (short)newSkill.Level)
+			                .SetProperty(r => r.SkillSubLevel, (short)newSkill.SubLevel));
 			}
 			else if (newSkill != null)
 			{
-                int skillId = newSkill.getId();
+                int skillId = newSkill.Id;
                 DbCharacterSkill? record = ctx.CharacterSkills.SingleOrDefault(r =>
 	                r.CharacterId == characterId && r.ClassIndex == classIndex && r.SkillId == skillId);
 
@@ -7429,8 +7428,8 @@ public class Player: Playable
 					ctx.CharacterSkills.Add(record);
 				}
 
-				record.SkillLevel = (short)newSkill.getLevel();
-				record.SkillSubLevel = (short)newSkill.getSubLevel();
+				record.SkillLevel = (short)newSkill.Level;
+				record.SkillSubLevel = (short)newSkill.SubLevel;
 				ctx.SaveChanges();
 			}
 			// else
@@ -7463,7 +7462,7 @@ public class Player: Playable
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			foreach (Skill addSkill in newSkills)
 			{
-                int skillId = addSkill.getId();
+                int skillId = addSkill.Id;
 				DbCharacterSkill? record = ctx.CharacterSkills.SingleOrDefault(r =>
 					r.CharacterId == characterId && r.ClassIndex == classIndex && r.SkillId == skillId);
 
@@ -7476,8 +7475,8 @@ public class Player: Playable
 					ctx.CharacterSkills.Add(record);
 				}
 
-				record.SkillLevel = (short)addSkill.getLevel();
-				record.SkillSubLevel = (short)addSkill.getSubLevel();
+				record.SkillLevel = (short)addSkill.Level;
+				record.SkillSubLevel = (short)addSkill.SubLevel;
 			}
 
 			ctx.SaveChanges();
@@ -7520,7 +7519,7 @@ public class Player: Playable
 
 					if (Config.General.SKILL_CHECK_ENABLE && (!canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS) || Config.General.SKILL_CHECK_GM) && !SkillTreeData.getInstance().isSkillAllowed(this, skill))
 					{
-						Util.handleIllegalPlayerAction(this, "Player " + getName() + " has invalid skill " + skill.getName() + " (" + skill.getId() + "/" + skill.getLevel() + "), class:" + ClassListData.getInstance().getClass(getClassId()).getClassName(), IllegalActionPunishmentType.BROADCAST);
+						Util.handleIllegalPlayerAction(this, "Player " + getName() + " has invalid skill " + skill.Name + " (" + skill.Id + "/" + skill.Level + "), class:" + ClassListData.getInstance().getClass(getClassId()).getClassName(), IllegalActionPunishmentType.BROADCAST);
 						if (Config.General.SKILL_CHECK_REMOVE)
 						{
 							removeSkill(skill);
@@ -7572,7 +7571,7 @@ public class Player: Playable
 
 					// Restore Type 0 These skill were still in effect on the character upon logout.
 					// Some of which were self casted and might still have had a long reuse delay which also is restored.
-					skill.applyEffects(this, this, false, remainingTime ?? TimeSpan.Zero);
+					skill.ApplyEffects(this, this, false, remainingTime ?? TimeSpan.Zero);
             }
 
 			// Remove previously restored skills
@@ -7612,7 +7611,7 @@ public class Player: Playable
 					isInInventory = false;
 				}
 
-				if (item != null && item.getId() == itemId && item.getReuseDelay() > TimeSpan.Zero)
+				if (item != null && item.Id == itemId && item.getReuseDelay() > TimeSpan.Zero)
 				{
 					remainingTime = systime - currentTime;
 					if (remainingTime > TimeSpan.FromMilliseconds(10))
@@ -7885,7 +7884,7 @@ public class Player: Playable
 				// Reward henna skills
 				foreach (Skill skill in henna.getSkills())
 				{
-					if (skill.getLevel() > getSkillLevel(skill.getId()))
+					if (skill.Level > getSkillLevel(skill.Id))
 
 					{
 						addSkill(skill, false);
@@ -8010,7 +8009,7 @@ public class Player: Playable
 			if (hennaPoten != null && hennaPoten.getPotenId() > 0 && hennaPoten.isPotentialAvailable() && hennaPoten.getActiveStep() > 0)
 			{
 				Skill? hennaSkill = HennaPatternPotentialData.getInstance().getPotentialSkill(hennaPoten.getPotenId(), i, hennaPoten.getActiveStep());
-				if (hennaSkill != null && hennaSkill.getLevel() > getSkillLevel(hennaSkill.getId()))
+				if (hennaSkill != null && hennaSkill.Level > getSkillLevel(hennaSkill.Id))
 				{
 					addSkill(hennaSkill, false);
 				}
@@ -8295,7 +8294,7 @@ public class Player: Playable
 						ClanWarState warState = war.getState();
                         if (warState == ClanWarState.MUTUAL ||
                             ((warState == ClanWarState.BLOOD_DECLARATION || warState == ClanWarState.DECLARATION) &&
-                                war.getAttackerClanId() == clan.getId()))
+                                war.getAttackerClanId() == clan.Id))
                         {
                             return true;
                         }
@@ -8387,28 +8386,28 @@ public class Player: Playable
 		Skill usedSkill = skill;
 
 		// Passive skills cannot be used.
-		if (usedSkill.isPassive())
+		if (usedSkill.IsPassive)
 		{
 			sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return false;
 		}
 
 		// If Alternate rule Karma punishment is set to true, forbid skill Return to player with Karma
-		if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && getReputation() < 0 && usedSkill.hasEffectType(EffectType.TELEPORT))
+		if (!Config.Character.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && getReputation() < 0 && usedSkill.HasEffectType(EffectType.TELEPORT))
 		{
 			sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return false;
 		}
 
 		// players mounted on pets cannot use any toggle skills
-		if (usedSkill.isToggle() && isMounted())
+		if (usedSkill.IsToggle && isMounted())
 		{
 			sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return false;
 		}
 
 		// Support for wizard skills with stances (Fire, Water, Wind, Earth)
-		Skill? attachedSkill = usedSkill.getAttachedSkill(this);
+		Skill? attachedSkill = usedSkill.GetAttachedSkill(this);
 		if (attachedSkill != null)
 		{
 			usedSkill = attachedSkill;
@@ -8417,7 +8416,7 @@ public class Player: Playable
 		// ************************************* Check Player State *******************************************
 
 		// Abnormal effects(ex : Stun, Sleep...) are checked in Creature useMagic()
-		if (!usedSkill.canCastWhileDisabled() && (isControlBlocked() || hasBlockActions()))
+		if (!usedSkill.CanCastWhileDisabled && (isControlBlocked() || hasBlockActions()))
 		{
 			sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return false;
@@ -8431,7 +8430,7 @@ public class Player: Playable
 		}
 
 		// Check if fishing and trying to use non-fishing skills.
-		if (isFishing() && !usedSkill.hasEffectType(EffectType.FISHING, EffectType.FISHING_START))
+		if (isFishing() && !usedSkill.HasEffectType(EffectType.FISHING, EffectType.FISHING_START))
 		{
 			sendPacket(SystemMessageId.ONLY_FISHING_SKILLS_MAY_BE_USED_AT_THIS_TIME);
 			return false;
@@ -8447,9 +8446,9 @@ public class Player: Playable
 		if (isSkillDisabled(usedSkill))
 		{
 			SystemMessagePacket sm;
-			if (hasSkillReuse(usedSkill.getReuseHashCode()))
+			if (hasSkillReuse(usedSkill.ReuseHashCode))
 			{
-				TimeSpan remainingTime = getSkillRemainingReuseTime(usedSkill.getReuseHashCode());
+				TimeSpan remainingTime = getSkillRemainingReuseTime(usedSkill.ReuseHashCode);
 				if (remainingTime.TotalHours > 0)
 				{
 					sm = new SystemMessagePacket(SystemMessageId.S1_WILL_BE_AVAILABLE_AGAIN_IN_S2_H_S3_MIN_S4_SEC);
@@ -8491,21 +8490,21 @@ public class Player: Playable
 		}
 
 		// Check if the skill type is toggle and disable it, unless the toggle is necessary to be on.
-		if (usedSkill.isToggle())
+		if (usedSkill.IsToggle)
         {
-            if (isAffectedBySkill(usedSkill.getId()))
+            if (isAffectedBySkill(usedSkill.Id))
 			{
-				if (!usedSkill.isNecessaryToggle())
+				if (!usedSkill.IsNecessaryToggle)
 				{
-					stopSkillEffects(SkillFinishType.REMOVED, usedSkill.getId());
+					stopSkillEffects(SkillFinishType.REMOVED, usedSkill.Id);
 				}
 				sendPacket(ActionFailedPacket.STATIC_PACKET);
 				return false;
 			}
 
-            if (usedSkill.getToggleGroupId() > 0)
+            if (usedSkill.ToggleGroupId > 0)
             {
-                getEffectList().stopAllTogglesOfGroup(usedSkill.getToggleGroupId());
+                getEffectList().stopAllTogglesOfGroup(usedSkill.ToggleGroupId);
             }
         }
 
@@ -8519,23 +8518,23 @@ public class Player: Playable
 
 		// ************************************* Check Target *******************************************
 		// Create and set a WorldObject containing the target of the skill
-		WorldObject? target = usedSkill.getTarget(this, forceUse, dontMove, true);
+		WorldObject? target = usedSkill.GetTarget(this, forceUse, dontMove, true);
 		Location3D? worldPosition = _currentSkillWorldPosition;
-		if (usedSkill.getTargetType() == TargetType.GROUND && worldPosition == null)
+		if (usedSkill.TargetType == TargetType.GROUND && worldPosition == null)
 		{
-			if (usedSkill.getAffectScope() == AffectScope.FAN_PB)
+			if (usedSkill.AffectScope == AffectScope.FAN_PB)
 			{
 				if (isInsideZone(ZoneId.PEACE))
 				{
 					sendPacket(SystemMessageId.YOU_CANNOT_ATTACK_IN_A_PEACEFUL_ZONE);
 				}
-				else if (getCurrentMp() < usedSkill.getMpConsume())
+				else if (getCurrentMp() < usedSkill.MpConsume)
 				{
 					sendPacket(SystemMessageId.NOT_ENOUGH_MP);
 				}
-				else if (usedSkill.checkCondition(this, target, true))
+				else if (usedSkill.CheckCondition(this, target, true))
 				{
-					sendPacket(new MagicSkillUsePacket(this, this, usedSkill.getDisplayId(), usedSkill.getDisplayLevel(), TimeSpan.Zero, TimeSpan.Zero, usedSkill.getReuseDelayGroup(), -1, SkillCastingType.NORMAL, true));
+					sendPacket(new MagicSkillUsePacket(this, this, usedSkill.DisplayId, usedSkill.DisplayLevel, TimeSpan.Zero, TimeSpan.Zero, usedSkill.ReuseDelayGroup, -1, SkillCastingType.NORMAL, true));
 				}
 			}
 			sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -8550,21 +8549,21 @@ public class Player: Playable
 		}
 
 		// Check if all casting conditions are completed
-		if (!usedSkill.checkCondition(this, target, true))
+		if (!usedSkill.CheckCondition(this, target, true))
 		{
 			sendPacket(ActionFailedPacket.STATIC_PACKET);
 
 			// Upon failed conditions, next action is called.
-			if (usedSkill.getNextAction() != NextActionType.NONE && target != this && target.isAutoAttackable(this))
+			if (usedSkill.NextAction != NextActionType.NONE && target != this && target.isAutoAttackable(this))
 			{
 				CreatureAI.IntentionCommand? nextIntention = getAI().getNextIntention();
 				if (nextIntention == null || nextIntention.getCtrlIntention() != CtrlIntention.AI_INTENTION_MOVE_TO)
 				{
-					if (usedSkill.getNextAction() == NextActionType.ATTACK)
+					if (usedSkill.NextAction == NextActionType.ATTACK)
 					{
 						getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 					}
-					else if (usedSkill.getNextAction() == NextActionType.CAST)
+					else if (usedSkill.NextAction == NextActionType.CAST)
 					{
 						getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, usedSkill, target, item, false, false);
 					}
@@ -8574,7 +8573,7 @@ public class Player: Playable
 			return false;
 		}
 
-		bool doubleCast = isAffected(EffectFlag.DOUBLE_CAST) && usedSkill.canDoubleCast();
+		bool doubleCast = isAffected(EffectFlag.DOUBLE_CAST) && usedSkill.CanDoubleCast;
 
 		// If a skill is currently being used, queue this one if this is not the same
 		// In case of double casting, check if both slots are occupied, then queue skill.
@@ -9608,22 +9607,22 @@ public class Player: Playable
 				{
 					if (_clan != null)
 					{
-						isDisabled = skill.isClanSkill() && _clan.getReputationScore() < 0;
+						isDisabled = skill.IsClanSkill() && _clan.getReputationScore() < 0;
 					}
 
 					// Consider skill replacements.
-					int originalSkillId = getOriginalSkill(skill.getId());
-					if (originalSkillId != skill.getDisplayId())
+					int originalSkillId = getOriginalSkill(skill.Id);
+					if (originalSkillId != skill.DisplayId)
                     {
                         Skill originalSkill =
-                            SkillData.getInstance().getSkill(originalSkillId, skill.getLevel(), skill.getSubLevel()) ??
-                            throw new InvalidOperationException($"Skill not found id={originalSkillId}, level={skill.getLevel()}, sublevel={skill.getSubLevel()}");
+                            SkillData.getInstance().getSkill(originalSkillId, skill.Level, skill.SubLevel) ??
+                            throw new InvalidOperationException($"Skill not found id={originalSkillId}, level={skill.Level}, sublevel={skill.SubLevel}");
 
-						skillList.addSkill(originalSkill.getDisplayId(), originalSkill.getReuseDelayGroup(), originalSkill.getDisplayLevel(), originalSkill.getSubLevel(), originalSkill.isPassive(), isDisabled, originalSkill.isEnchantable());
+						skillList.addSkill(originalSkill.DisplayId, originalSkill.ReuseDelayGroup, originalSkill.DisplayLevel, originalSkill.SubLevel, originalSkill.IsPassive, isDisabled, originalSkill.IsEnchantable());
 					}
 					else
 					{
-						skillList.addSkill(skill.getDisplayId(), skill.getReuseDelayGroup(), skill.getDisplayLevel(), skill.getSubLevel(), skill.isPassive(), isDisabled, skill.isEnchantable());
+						skillList.addSkill(skill.DisplayId, skill.ReuseDelayGroup, skill.DisplayLevel, skill.SubLevel, skill.IsPassive, isDisabled, skill.IsEnchantable());
 					}
 				}
 
@@ -9749,12 +9748,12 @@ public class Player: Playable
 					Skill newSkill = SkillData.getInstance().getSkill(skillInfo.getSkillId(), skillInfo.getSkillLevel()) ??
                         throw new InvalidOperationException($"Skill id={skillInfo.getSkillId()}, level={skillInfo.getSkillLevel()} not found");
 
-					if ((prevSkill != null && prevSkill.getLevel() > newSkill.getLevel()) || SkillTreeData.getInstance().isRemoveSkill(subTemplate, skillInfo.getSkillId()))
+					if ((prevSkill != null && prevSkill.Level > newSkill.Level) || SkillTreeData.getInstance().isRemoveSkill(subTemplate, skillInfo.getSkillId()))
 					{
 						continue;
 					}
 
-					prevSkillList.put(newSkill.getId(), newSkill);
+					prevSkillList.put(newSkill.Id, newSkill);
 					storeSkill(newSkill, prevSkill, classIndex);
 				}
 			}
@@ -10046,10 +10045,10 @@ public class Player: Playable
 			}
 
 			// stopAllEffectsExceptThoseThatLastThroughDeath();
-			getEffectList().stopEffects(info => !info.getSkill().isStayAfterDeath(), true, false);
+			getEffectList().stopEffects(info => !info.getSkill().IsStayAfterDeath, true, false);
 
 			// stopAllEffects();
-			getEffectList().stopEffects(info => !info.getSkill().isNecessaryToggle() && !info.getSkill().isIrreplacableBuff(), true, false);
+			getEffectList().stopEffects(info => !info.getSkill().IsNecessaryToggle && !info.getSkill().IsIrreplacableBuff, true, false);
 
 			// In controversy with isNecessaryToggle above, new class rewarded skills should be rewarded bellow.
 			getEffectList().stopAllToggles();
@@ -10795,7 +10794,7 @@ public class Player: Playable
 			return false;
 		}
 
-		if (CursedWeaponsManager.getInstance().isCursed(item.getId()))
+		if (CursedWeaponsManager.getInstance().isCursed(item.Id))
 		{
 			// can not trade a cursed weapon
 			return false;
@@ -11620,7 +11619,7 @@ public class Player: Playable
                         throw new InvalidOperationException(
                             $"KAMAEL_LIGHT_TRANSFORMATION skill id={KAMAEL_LIGHT_TRANSFORMATION}, level={skillLevel} not found");
 
-                    skill1.applyEffects(this, this);
+                    skill1.ApplyEffects(this, this);
 				}
 			}
 			else // Shadow.
@@ -11635,7 +11634,7 @@ public class Player: Playable
                         throw new InvalidOperationException(
                             $"KAMAEL_SHADOW_TRANSFORMATION skill id={KAMAEL_SHADOW_TRANSFORMATION}, level={skillLevel} not found");
 
-					skill1.applyEffects(this, this);
+					skill1.ApplyEffects(this, this);
 				}
 			}
 		}
@@ -11757,7 +11756,7 @@ public class Player: Playable
                 Skill skill1 = SkillData.getInstance().getSkill(DEVASTATING_MIND, expectedLevel) ??
                     throw new InvalidOperationException($"DEVASTATING_MIND skill id={DEVASTATING_MIND}, level={expectedLevel} not found");
 
-				skill1.applyEffects(this, this);
+				skill1.ApplyEffects(this, this);
 			}
 		}
 		else
@@ -11853,7 +11852,7 @@ public class Player: Playable
 		// Check if hit is critical
 		if (crit)
 		{
-			if (skill == null || !skill.isMagic())
+			if (skill == null || !skill.IsMagic)
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_LANDED_A_CRITICAL_HIT);
 				sm.Params.addPcName(this);
@@ -11866,11 +11865,11 @@ public class Player: Playable
 
 			if (skill != null)
 			{
-				if (skill.isMagic())
+				if (skill.IsMagic)
 				{
 					sendPacket(new ExMagicAttackInfoPacket(ObjectId, target.ObjectId, ExMagicAttackInfoPacket.M_CRITICAL));
 				}
-				else if (skill.isPhysical())
+				else if (skill.IsPhysical)
 				{
 					sendPacket(new ExMagicAttackInfoPacket(ObjectId, target.ObjectId, ExMagicAttackInfoPacket.P_CRITICAL));
 				}
@@ -11921,7 +11920,7 @@ public class Player: Playable
 			string targetName = target.getName();
 			if (Config.MultilingualSupport.MULTILANG_ENABLE && target.isNpc())
 			{
-				string[]? localisation = NpcNameLocalisationData.getInstance().getLocalisation(_lang ?? "en", target.getId());
+				string[]? localisation = NpcNameLocalisationData.getInstance().getLocalisation(_lang ?? "en", target.Id);
 				if (localisation != null)
 				{
 					targetName = localisation[0];
@@ -12045,12 +12044,12 @@ public class Player: Playable
 
 	public void addTransformSkill(Skill skill)
 	{
-		_transformSkills.put(skill.getId(), skill);
+		_transformSkills.put(skill.Id, skill);
 	}
 
 	public bool hasTransformSkill(Skill skill)
 	{
-		return _transformSkills.get(skill.getId()) == skill;
+		return _transformSkills.get(skill.Id) == skill;
 	}
 
 	public bool hasTransformSkills()
@@ -12089,7 +12088,7 @@ public class Player: Playable
 			List<Skill> filteredSkills = new();
 			foreach (Skill skill in currentSkills)
 			{
-				if (!skill.allowOnTransform())
+				if (!skill.AllowOnTransform)
 					continue;
 
 				filteredSkills.Add(skill);
@@ -12145,7 +12144,7 @@ public class Player: Playable
 		List<Skill> finalSkills = new();
 		foreach (Skill skill in currentSkills)
 		{
-			if (skill == null || skill.isBlockActionUseSkill() || SkillTreeData.getInstance().isAlchemySkill(skill.getId(), skill.getLevel()) || !skill.isDisplayInList())
+			if (skill == null || skill.IsBlockActionUseSkill || SkillTreeData.getInstance().isAlchemySkill(skill.Id, skill.Level) || !skill.IsDisplayInList)
 			{
 				continue;
 			}
@@ -13287,7 +13286,7 @@ public class Player: Playable
 		SkillLearn? learn;
 		foreach (var e in getSkills())
 		{
-			learn = SkillTreeData.getInstance().getClassSkill(e.Key, e.Value.getLevel() % 100, getClassId());
+			learn = SkillTreeData.getInstance().getClassSkill(e.Key, e.Value.Level % 100, getClassId());
 			if (learn != null)
 			{
 				int levelDiff = e.Key == (int)CommonSkill.EXPERTISE ? 0 : 9;
@@ -13305,7 +13304,7 @@ public class Player: Playable
 		Map<long, SkillLearn> skillTree = SkillTreeData.getInstance().getCompleteClassSkillTree(getClassId());
 		foreach (SkillLearn sl in skillTree.Values)
 		{
-			if (sl.getSkillId() == skill.getId() && nextLevel < sl.getSkillLevel() && getLevel() >= sl.getGetLevel() - levelDiff)
+			if (sl.getSkillId() == skill.Id && nextLevel < sl.getSkillLevel() && getLevel() >= sl.getGetLevel() - levelDiff)
 			{
 				nextLevel = sl.getSkillLevel(); // next possible skill level
 			}
@@ -13319,8 +13318,8 @@ public class Player: Playable
 		else
 		{
 			LOGGER.Info("Decreasing skill " + skill + " to " + nextLevel + " for " + this);
-            Skill skill1 = SkillData.getInstance().getSkill(skill.getId(), nextLevel) ??
-                throw new InvalidOperationException($"Skill id={skill.getId()}, level={nextLevel} not found");
+            Skill skill1 = SkillData.getInstance().getSkill(skill.Id, nextLevel) ??
+                throw new InvalidOperationException($"Skill id={skill.Id}, level={nextLevel} not found");
 
 			addSkill(skill1, true); // replace with lower one
 		}
@@ -13394,7 +13393,7 @@ public class Player: Playable
                 {
                     return false;
                 }
-                if (clan.isAtWarWith(targetClan.getId()) && targetClan.isAtWarWith(clan.getId()))
+                if (clan.isAtWarWith(targetClan.Id) && targetClan.isAtWarWith(clan.Id))
                 {
                     return true;
                 }
@@ -13608,13 +13607,13 @@ public class Player: Playable
 	 */
 	private void addCustomSkill(Skill skill)
 	{
-		if (skill != null && skill.getDisplayId() != skill.getId())
+		if (skill != null && skill.DisplayId != skill.Id)
 		{
 			if (_customSkills == null)
 			{
 				_customSkills = new();
 			}
-			_customSkills.put(skill.getDisplayId(), skill);
+			_customSkills.put(skill.DisplayId, skill);
 		}
 	}
 
@@ -13624,9 +13623,9 @@ public class Player: Playable
 	 */
 	private void removeCustomSkill(Skill? skill)
 	{
-		if (skill != null && _customSkills != null && skill.getDisplayId() != skill.getId())
+		if (skill != null && _customSkills != null && skill.DisplayId != skill.Id)
 		{
-			_customSkills.remove(skill.getDisplayId());
+			_customSkills.remove(skill.DisplayId);
 		}
 	}
 
@@ -13723,12 +13722,9 @@ public class Player: Playable
 		return vars != null ? vars : addScript(new AccountVariables(getAccountId()));
 	}
 
-	public override int getId()
-	{
-		return (int)getClassId();
-	}
+    public override int Id => (int)getClassId();
 
-	public bool isPartyBanned()
+    public bool isPartyBanned()
 	{
 		return PunishmentManager.getInstance().hasPunishment(ObjectId.ToString(), PunishmentAffect.CHARACTER, PunishmentType.PARTY_BAN);
 	}
@@ -14982,7 +14978,7 @@ public class Player: Playable
 			if (knownSkill != null)
 			{
 				shortcut.setAutoUse(true);
-				if (knownSkill.isBad())
+				if (knownSkill.IsBad)
 				{
 					AutoUseTaskManager.getInstance().addAutoSkill(this, shortcut.getId());
 				}
@@ -14999,11 +14995,11 @@ public class Player: Playable
 					shortcut.setAutoUse(true);
 					if (item.isPotion())
 					{
-						AutoUseTaskManager.getInstance().setAutoPotionItem(this, item.getId());
+						AutoUseTaskManager.getInstance().setAutoPotionItem(this, item.Id);
 					}
 					else
 					{
-						AutoUseTaskManager.getInstance().addAutoSupplyItem(this, item.getId());
+						AutoUseTaskManager.getInstance().addAutoSupplyItem(this, item.Id);
 					}
 				}
 			}
@@ -15203,7 +15199,7 @@ public class Player: Playable
 		}
 
 		Item? item = getInventory().getItemByObjectId(controlItemId);
-		PetData? petData = item == null ? null : PetDataTable.getInstance().getPetDataByItemId(item.getId());
+		PetData? petData = item == null ? null : PetDataTable.getInstance().getPetDataByItemId(item.Id);
 		return new PetEvolveHolder(petData == null ? 0 : petData.getIndex(), EvolveLevel.None, "", 1, 0);
 	}
 

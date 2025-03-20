@@ -58,7 +58,7 @@ public sealed class PhysicalSoulAttack: AbstractEffect
             effected.stopFakeDeath(true);
         }
 
-        int chargedLightSouls = Math.Min(skill.getMaxLightSoulConsumeCount(), player.getCharges());
+        int chargedLightSouls = Math.Min(skill.MaxLightSoulConsumeCount, player.getCharges());
         if (chargedLightSouls > 0 && !player.decreaseCharges(chargedLightSouls))
         {
             SystemMessagePacket sm =
@@ -69,7 +69,7 @@ public sealed class PhysicalSoulAttack: AbstractEffect
             return;
         }
 
-        int chargedShadowSouls = Math.Min(skill.getMaxShadowSoulConsumeCount(), player.getCharges());
+        int chargedShadowSouls = Math.Min(skill.MaxShadowSoulConsumeCount, player.getCharges());
         if (chargedShadowSouls > 0 && !player.decreaseCharges(chargedShadowSouls))
         {
             SystemMessagePacket sm =
@@ -142,8 +142,8 @@ public sealed class PhysicalSoulAttack: AbstractEffect
         {
             // Trait, elements
             double weaponTraitMod = Formulas.calcWeaponTraitBonus(effector, effected);
-            double generalTraitMod = Formulas.calcGeneralTraitBonus(effector, effected, skill.getTraitType(), true);
-            double weaknessMod = Formulas.calcWeaknessBonus(effector, effected, skill.getTraitType());
+            double generalTraitMod = Formulas.calcGeneralTraitBonus(effector, effected, skill.TraitType, true);
+            double weaknessMod = Formulas.calcWeaknessBonus(effector, effected, skill.TraitType);
             double attributeMod = Formulas.calcAttributeBonus(effector, effected, skill);
             double pvpPveMod = Formulas.calculatePvpPveBonus(effector, effected, skill, true);
             double randomMod = effector.getRandomDamageMultiplier();
@@ -154,7 +154,7 @@ public sealed class PhysicalSoulAttack: AbstractEffect
             double rangedBonus = effector.getAttackType().isRanged() ? attack + power : 0;
             double critMod = critical ? Formulas.calcCritDamage(effector, effected, skill) : 1;
             double ssmod = 1;
-            if (skill.useSoulShot())
+            if (skill.UseSoulShot)
             {
                 if (effector.isChargedShot(ShotType.SOULSHOTS))
                 {

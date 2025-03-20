@@ -42,7 +42,7 @@ public sealed class AddHuntingTime: AbstractEffect
         if (endTime > currentTime &&
             endTime - currentTime + _time > TimeSpan.FromMilliseconds(holder.getMaximumAddedTime()))
         {
-            player.getInventory().addItem("AddHuntingTime effect refund", item.getId(), 1, player, player);
+            player.getInventory().addItem("AddHuntingTime effect refund", item.Id, 1, player, player);
             player.sendMessage("You cannot exceed the time zone limit.");
             return;
         }
@@ -52,7 +52,7 @@ public sealed class AddHuntingTime: AbstractEffect
 
         if (_time < TimeSpan.FromMilliseconds(remainRefill) || remainRefill == 0)
         {
-            player.getInventory().addItem("AddHuntingTime effect refund", item.getId(), 1, player, player);
+            player.getInventory().addItem("AddHuntingTime effect refund", item.Id, 1, player, player);
             player.sendMessage("You cannot exceed the time zone limit.");
             return;
         }

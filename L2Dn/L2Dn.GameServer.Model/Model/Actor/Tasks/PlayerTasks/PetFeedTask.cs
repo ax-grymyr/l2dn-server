@@ -72,7 +72,7 @@ public class PetFeedTask: Runnable
 					{
 						handler.useItem(_player, food, false);
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOUR_PET_WAS_HUNGRY_SO_IT_ATE_S1);
-						sm.Params.addItemName(food.getId());
+						sm.Params.addItemName(food.Id);
 						_player.sendPacket(sm);
 					}
 				}

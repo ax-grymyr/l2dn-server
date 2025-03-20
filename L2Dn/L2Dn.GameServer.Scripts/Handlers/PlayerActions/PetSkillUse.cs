@@ -1,10 +1,10 @@
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Network.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
@@ -41,7 +41,7 @@ public class PetSkillUse: IPlayerActionHandler
         }
         else
         {
-            PetData? petData = PetDataTable.getInstance().getPetData(pet.getId());
+            PetData? petData = PetDataTable.getInstance().getPetData(pet.Id);
             int skillLevel = petData?.getAvailableLevel(data.getOptionId(), pet.getLevel()) ?? 0;
 
             if (skillLevel > 0)
@@ -50,7 +50,7 @@ public class PetSkillUse: IPlayerActionHandler
                 if (skill != null)
                 {
                     pet.setTarget(player.getTarget());
-                    pet.useMagic(skill, null, skill.getTargetType() == TargetType.SELF || ctrlPressed, shiftPressed);
+                    pet.useMagic(skill, null, skill.TargetType == TargetType.SELF || ctrlPressed, shiftPressed);
                 }
             }
 

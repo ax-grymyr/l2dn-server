@@ -37,9 +37,9 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 		}
 
         // TODO: null check enforced
-		EnchantScroll enchantScroll = EnchantItemData.getInstance().getEnchantScroll(enchantScrollItem.getId())!;
+		EnchantScroll enchantScroll = EnchantItemData.getInstance().getEnchantScroll(enchantScrollItem.Id)!;
 
-        Item? addedItem = new Item(enchantItem.getId());
+        Item? addedItem = new Item(enchantItem.Id);
 		addedItem.setOwnerId(_player.ObjectId);
 		addedItem.setEnchantLevel(enchantItem.getEnchantLevel());
 
@@ -47,7 +47,7 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
         Item? supportItem = request.getSupportItem();
 		if (supportItem != null)
 		{
-			enchantSupportItem = EnchantItemData.getInstance().getSupportItem(supportItem.getId());
+			enchantSupportItem = EnchantItemData.getInstance().getSupportItem(supportItem.Id);
 		}
 
         ItemHolder? result = null;
@@ -84,13 +84,13 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 		if (result != null)
 		{
 			writer.WriteInt32(1); // Loop count.
-			writer.WriteInt32(result.getId());
+			writer.WriteInt32(result.Id);
 			writer.WriteInt32((int) result.getCount());
 		}
 		else if (addedItem != null)
 		{
 			writer.WriteInt32(1); // Loop count.
-			writer.WriteInt32(enchantItem.getId());
+			writer.WriteInt32(enchantItem.Id);
 			writer.WriteInt32(1);
 		}
 		else

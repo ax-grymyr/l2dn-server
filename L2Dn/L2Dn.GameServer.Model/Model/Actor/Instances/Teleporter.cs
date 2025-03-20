@@ -53,10 +53,10 @@ public class Teleporter: Npc
 			case "showTeleports":
 			{
 				string listName = st.hasMoreTokens() ? st.nextToken() : TeleportType.NORMAL.ToString();
-				TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), listName);
+				TeleportHolder? holder = TeleporterData.getInstance().getHolder(Id, listName);
 				if (holder == null)
 				{
-					LOGGER.Warn(player + " requested show teleports for list with name " + listName + " at NPC " + getId() + "!");
+					LOGGER.Warn(player + " requested show teleports for list with name " + listName + " at NPC " + Id + "!");
 					return;
 				}
 				holder.showTeleportList(player, this);
@@ -70,10 +70,10 @@ public class Teleporter: Npc
 			case "showTeleportsHunting":
 			{
 				string listName = st.hasMoreTokens() ? st.nextToken() : TeleportType.HUNTING.ToString();
-				TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), listName);
+				TeleportHolder? holder = TeleporterData.getInstance().getHolder(Id, listName);
 				if (holder == null)
 				{
-					LOGGER.Warn(player + " requested show teleports for hunting list with name " + listName + " at NPC " + getId() + "!");
+					LOGGER.Warn(player + " requested show teleports for hunting list with name " + listName + " at NPC " + Id + "!");
 					return;
 				}
 				holder.showTeleportList(player, this);
@@ -89,10 +89,10 @@ public class Teleporter: Npc
 				}
 
 				string listName = st.nextToken();
-				TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), listName);
+				TeleportHolder? holder = TeleporterData.getInstance().getHolder(Id, listName);
 				if (holder == null)
 				{
-					LOGGER.Warn(player + " requested unknown teleport list: " + listName + " for npc: " + getId() + "!");
+					LOGGER.Warn(player + " requested unknown teleport list: " + listName + " for npc: " + Id + "!");
 					return;
 				}
 				holder.doTeleport(player, this, parseNextInt(st, -1));
@@ -190,7 +190,7 @@ public class Teleporter: Npc
 		string filename = "html/teleporter/castleteleporter-no.htm";
 		if (player.getClan() != null && castle.getOwnerId() == player.getClanId()) // Clan owns castle
 		{
-			filename = getHtmlPath(getId(), 0, player); // Owner message window
+			filename = getHtmlPath(Id, 0, player); // Owner message window
 		}
 		else if (castle.getSiege().isInProgress()) // Teleporter is busy due siege
 		{

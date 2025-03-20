@@ -41,16 +41,13 @@ public class Transform: IIdentifiable
         _femaleTemplate = femaleTemplate;
 	}
 
-	/**
+    /**
 	 * Gets the transformation ID.
 	 * @return the transformation ID
 	 */
-	public int getId()
-	{
-		return _id;
-	}
+    public int Id => _id;
 
-	public int getDisplayId()
+    public int getDisplayId()
 	{
 		return _displayId;
 	}
@@ -255,11 +252,11 @@ public class Transform: IIdentifiable
 					{
 						if (holder.isAllowedToUse())
 						{
-							allowed.Add(holder.getId());
+							allowed.Add(holder.Id);
 						}
 						else
 						{
-							notAllowed.Add(holder.getId());
+							notAllowed.Add(holder.Id);
 						}
 					}
 
@@ -293,7 +290,7 @@ public class Transform: IIdentifiable
 				// Notify to scripts
 				if (player.Events.HasSubscribers<OnPlayerTransform>())
 				{
-					player.Events.NotifyAsync(new OnPlayerTransform(player, getId()));
+					player.Events.NotifyAsync(new OnPlayerTransform(player, Id));
 				}
 			}
 			else

@@ -10,10 +10,10 @@ namespace L2Dn.GameServer.Network.OutgoingPackets;
 public readonly struct ListPartyWaitingPacket: IOutgoingPacket
 {
     private const int NUM_PER_PAGE = 64;
-	
+
     private readonly List<MatchingRoom> _rooms;
     private readonly int _size;
-	
+
     public ListPartyWaitingPacket(PartyMatchingRoomLevelType type, int location, int page, int requestorLevel)
     {
         List<MatchingRoom> rooms = MatchingRoomManager.getInstance().getPartyMathchingRooms(location, type, requestorLevel);
@@ -31,16 +31,16 @@ public readonly struct ListPartyWaitingPacket: IOutgoingPacket
             _rooms.Add(rooms[i]);
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.LIST_PARTY_WATING);
-        
+
         writer.WriteInt32(_size);
         writer.WriteInt32(_rooms.Count);
         foreach (MatchingRoom room in _rooms)
         {
-            writer.WriteInt32(room.getId());
+            writer.WriteInt32(room.Id);
             writer.WriteString(room.getTitle());
             writer.WriteInt32(room.getLocation());
             writer.WriteInt32(room.getMinLevel());

@@ -29,7 +29,7 @@ public sealed class ConditionPlayerCanSweep(bool value): Condition
         bool canSweep = false;
         if (skill != null)
         {
-            List<WorldObject>? targets = skill.getTargetsAffected(sweeper, effected);
+            List<WorldObject>? targets = skill.GetTargetsAffected(sweeper, effected);
             if (targets is not null)
             {
                 foreach (WorldObject wo in targets)

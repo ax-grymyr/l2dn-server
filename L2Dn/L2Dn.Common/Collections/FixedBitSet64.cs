@@ -2,9 +2,10 @@ namespace L2Dn.Collections;
 
 public struct FixedBitSet64: IFixedBitSet
 {
+    private const int _capacity = sizeof(ulong) * 8;
     private ulong _bits;
 
-    public int Capacity => sizeof(ulong) * 8;
+    public static int Capacity => _capacity;
     public int Count => (int)ulong.PopCount(_bits);
 
     public bool this[int index]
@@ -12,10 +13,11 @@ public struct FixedBitSet64: IFixedBitSet
         get => (_bits & (1UL << index)) != 0;
         set
         {
+            ulong mask = 1UL << index;
             if (value)
-                SetBit(index);
+                Interlocked.Or(ref _bits, mask);
             else
-                ClearBit(index);
+                Interlocked.And(ref _bits, ~mask);
         }
     }
 

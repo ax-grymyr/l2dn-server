@@ -46,7 +46,7 @@ public readonly struct ExFriendDetailInfoPacket: IOutgoingPacket
 			Clan? clan = ClanTable.getInstance().getClan(CharInfoTable.getInstance().getClanIdById(charId));
 			if (clan != null)
 			{
-				writer.WriteInt32(clan.getId());
+				writer.WriteInt32(clan.Id);
 				writer.WriteInt32(clan.getCrestId() ?? 0);
 				writer.WriteString(clan.getName());
 				writer.WriteInt32(clan.getAllyId() ?? 0);

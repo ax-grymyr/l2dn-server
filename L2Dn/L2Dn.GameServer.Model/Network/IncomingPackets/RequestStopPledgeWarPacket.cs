@@ -36,7 +36,7 @@ public struct RequestStopPledgeWarPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (!playerClan.isAtWarWith(clan.getId()))
+		if (!playerClan.isAtWarWith(clan.Id))
 		{
 			connection.Send("You aren't at war with this clan.");
 			connection.Send(ActionFailedPacket.STATIC_PACKET);
@@ -77,7 +77,7 @@ public struct RequestStopPledgeWarPacket: IIncomingPacket<GameSession>
 		SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOUR_CLAN_LOST_500_REPUTATION_POINTS_FOR_WITHDRAWING_FROM_THE_CLAN_WAR);
         playerClan.broadcastToOnlineMembers(sm);
 
-		ClanTable.getInstance().deleteClanWars(playerClan.getId(), clan.getId());
+		ClanTable.getInstance().deleteClanWars(playerClan.Id, clan.Id);
 		foreach (Player member in playerClan.getOnlineMembers(0))
 		{
 			member.broadcastUserInfo();

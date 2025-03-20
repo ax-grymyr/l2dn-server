@@ -8,8 +8,8 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Utilities;
-using L2Dn.Model.Xml.Skills;
 using L2Dn.Utilities;
 using Config = L2Dn.GameServer.Configuration.Config;
 
@@ -137,7 +137,7 @@ public sealed class RestorationRandom: AbstractEffect
                     items.Add(new ItemInfo(key, ItemChangeType.MODIFIED));
                 else
                 {
-                    items.AddRange(player.getInventory().getAllItemsByItemId(key.getId()).
+                    items.AddRange(player.getInventory().getAllItemsByItemId(key.Id).
                         Select(itemInstance => new ItemInfo(itemInstance, ItemChangeType.MODIFIED)));
                 }
 

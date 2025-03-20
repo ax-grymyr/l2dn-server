@@ -12,7 +12,7 @@ public readonly struct ExShowUpgradeSystemNormalPacket: IOutgoingPacket
     private readonly int _commission;
     private readonly List<int> _materials;
     private readonly List<int> _discountRatio;
-	
+
     public ExShowUpgradeSystemNormalPacket(int mode, int type)
     {
         _mode = mode;
@@ -22,15 +22,15 @@ public readonly struct ExShowUpgradeSystemNormalPacket: IOutgoingPacket
         _discountRatio = new List<int>();
         foreach (ItemHolder item in EquipmentUpgradeNormalData.getInstance().getDiscount())
         {
-            _materials.Add(item.getId());
+            _materials.Add(item.Id);
             _discountRatio.Add((int) item.getCount());
         }
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SHOW_UPGRADE_SYSTEM_NORMAL);
-        
+
         writer.WriteInt16((short)_mode);
         writer.WriteInt16((short)_type);
         writer.WriteInt16((short)_commission); // default - 100

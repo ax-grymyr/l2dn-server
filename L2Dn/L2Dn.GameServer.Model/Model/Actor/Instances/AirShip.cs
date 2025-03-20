@@ -77,12 +77,9 @@ public class AirShip : Vehicle
 	{
 	}
 
-	public override int getId()
-	{
-		return 0;
-	}
+    public override int Id => 0;
 
-	public override bool moveToNextRoutePoint()
+    public override bool moveToNextRoutePoint()
 	{
 		bool result = base.moveToNextRoutePoint();
 		if (result)

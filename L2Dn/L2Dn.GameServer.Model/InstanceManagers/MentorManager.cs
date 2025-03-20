@@ -110,7 +110,7 @@ public class MentorManager
 
 		foreach (BuffInfo info in player.getEffectList().getEffects())
 		{
-			if (info.getSkill().isMentoring())
+			if (info.getSkill().IsMentoring)
 			{
 				player.stopSkillEffects(info.getSkill());
 			}

@@ -125,7 +125,7 @@ public class Attackable: Npc
 			return;
 		}
 
-		WorldObject? target = skill.getTarget(this, false, false, false);
+		WorldObject? target = skill.GetTarget(this, false, false, false);
 		if (target != null)
 		{
 			getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target);
@@ -181,7 +181,7 @@ public class Attackable: Npc
 				Skill raidCurse = CommonSkill.RAID_CURSE2.getSkill();
 				if (raidCurse != null)
 				{
-					raidCurse.applyEffects(this, attacker);
+					raidCurse.ApplyEffects(this, attacker);
 				}
 			}
 		}
@@ -256,7 +256,7 @@ public class Attackable: Npc
             Monster? leader = mob.getLeader();
 			if (leader != null && leader.hasMinions())
 			{
-				int respawnTime = Config.Npc.MINIONS_RESPAWN_TIME.ContainsKey(getId()) ? Config.Npc.MINIONS_RESPAWN_TIME[getId()] * 1000 : -1;
+				int respawnTime = Config.Npc.MINIONS_RESPAWN_TIME.ContainsKey(Id) ? Config.Npc.MINIONS_RESPAWN_TIME[Id] * 1000 : -1;
                 leader.getMinionList().onMinionDie(mob, respawnTime);
 			}
 
@@ -444,7 +444,7 @@ public class Attackable: Npc
                             p.sendPacket(sm);
                             if (p.isNoble())
                             {
-                                Hero.getInstance().setRBkilled(p.ObjectId, getId());
+                                Hero.getInstance().setRBkilled(p.ObjectId, Id);
                             }
                         });
                     }
@@ -461,7 +461,7 @@ public class Attackable: Npc
                         player.sendPacket(sm);
                         if (player.isNoble())
                         {
-                            Hero.getInstance().setRBkilled(player.ObjectId, getId());
+                            Hero.getInstance().setRBkilled(player.ObjectId, Id);
                         }
                     }
                 }
@@ -1134,11 +1134,11 @@ public class Attackable: Npc
 				{
 					foreach (ItemHolder drop in deathItems)
                     {
-                        ItemTemplate item = ItemData.getInstance().getTemplate(drop.getId()) ??
-                            throw new InvalidOperationException($"Item template id={drop.getId()} not found");
+                        ItemTemplate item = ItemData.getInstance().getTemplate(drop.Id) ??
+                            throw new InvalidOperationException($"Item template id={drop.Id} not found");
 
 						// Check if the autoLoot mode is active
-						if (Config.Character.AUTO_LOOT_ITEM_IDS.Contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.Character.AUTO_LOOT) || (_isRaid && Config.Character.AUTO_LOOT_RAIDS))))
+						if (Config.Character.AUTO_LOOT_ITEM_IDS.Contains(item.Id) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.Character.AUTO_LOOT) || (_isRaid && Config.Character.AUTO_LOOT_RAIDS))))
 						{
 							// do nothing
 						}
@@ -1177,11 +1177,11 @@ public class Attackable: Npc
 			List<int>? announceItems = null;
 			foreach (ItemHolder drop in deathItems1)
 			{
-				ItemTemplate item = ItemData.getInstance().getTemplate(drop.getId()) ??
-                    throw new InvalidOperationException($"Item template id={drop.getId()} not found");
+				ItemTemplate item = ItemData.getInstance().getTemplate(drop.Id) ??
+                    throw new InvalidOperationException($"Item template id={drop.Id} not found");
 
 				// Check if the autoLoot mode is active
-				if (Config.Character.AUTO_LOOT_ITEM_IDS.Contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.Character.AUTO_LOOT) || (_isRaid && Config.Character.AUTO_LOOT_RAIDS))) || (item.hasExImmediateEffect() && Config.Character.AUTO_LOOT_HERBS))
+				if (Config.Character.AUTO_LOOT_ITEM_IDS.Contains(item.Id) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.Character.AUTO_LOOT) || (_isRaid && Config.Character.AUTO_LOOT_RAIDS))) || (item.hasExImmediateEffect() && Config.Character.AUTO_LOOT_HERBS))
 				{
 					player.doAutoLoot(this, drop); // Give the item(s) to the Player that has killed the Attackable
 				}
@@ -1198,7 +1198,7 @@ public class Attackable: Npc
 					sm.Params.addItemName(item);
 					sm.Params.addLong(drop.getCount());
 					broadcastPacket(sm);
-					if (RaidDropAnnounceData.getInstance().isAnnounce(item.getId()))
+					if (RaidDropAnnounceData.getInstance().isAnnounce(item.Id))
 					{
 						if (announceItems == null)
 						{
@@ -1206,14 +1206,14 @@ public class Attackable: Npc
 						}
 						if (announceItems.Count < 3)
 						{
-							announceItems.Add(item.getId());
+							announceItems.Add(item.Id);
 						}
 					}
 				}
 			}
 			if (announceItems != null)
 			{
-				Broadcast.toAllOnlinePlayers(new ExRaidDropItemAnnouncePacket(player.getName(), getId(), announceItems));
+				Broadcast.toAllOnlinePlayers(new ExRaidDropItemAnnouncePacket(player.getName(), Id, announceItems));
 			}
 			deathItems1.Clear();
 
@@ -1225,11 +1225,11 @@ public class Attackable: Npc
 				{
 					foreach (ItemHolder drop in fortuneItems)
                     {
-                        ItemTemplate item = ItemData.getInstance().getTemplate(drop.getId()) ??
-                            throw new InvalidOperationException($"Item template id={drop.getId()} not found");
+                        ItemTemplate item = ItemData.getInstance().getTemplate(drop.Id) ??
+                            throw new InvalidOperationException($"Item template id={drop.Id} not found");
 
 						// Check if the autoLoot mode is active.
-						if (Config.Character.AUTO_LOOT_ITEM_IDS.Contains(item.getId()) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.Character.AUTO_LOOT) || (_isRaid && Config.Character.AUTO_LOOT_RAIDS))) || (item.hasExImmediateEffect() && Config.Character.AUTO_LOOT_HERBS))
+						if (Config.Character.AUTO_LOOT_ITEM_IDS.Contains(item.Id) || isFlying() || (!item.hasExImmediateEffect() && ((!_isRaid && Config.Character.AUTO_LOOT) || (_isRaid && Config.Character.AUTO_LOOT_RAIDS))) || (item.hasExImmediateEffect() && Config.Character.AUTO_LOOT_HERBS))
 						{
 							player.doAutoLoot(this, drop); // Give the item(s) to the Player that has killed the Attackable.
 						}
@@ -1296,8 +1296,8 @@ public class Attackable: Npc
 		{
 			foreach (ItemHolder item in sweepItems)
             {
-                ItemTemplate itemTemplate = ItemData.getInstance().getTemplate(item.getId()) ??
-                    throw new InvalidOperationException($"Item template {item.getId()} not found");
+                ItemTemplate itemTemplate = ItemData.getInstance().getTemplate(item.Id) ??
+                    throw new InvalidOperationException($"Item template {item.Id} not found");
 
 				lootItems.Add(itemTemplate);
 			}

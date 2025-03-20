@@ -1,10 +1,10 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.Geometry;
@@ -32,7 +32,7 @@ public class Ground: ITargetTypeHandler
             if (worldPosition != null)
             {
                 if (dontMove && !creature.IsInsideRadius2D(worldPosition.Value.Location2D,
-                        skill.getCastRange() + creature.getTemplate().getCollisionRadius()))
+                        skill.CastRange + creature.getTemplate().getCollisionRadius()))
                 {
                     return null;
                 }
@@ -48,7 +48,7 @@ public class Ground: ITargetTypeHandler
                 }
 
                 ZoneRegion? zoneRegion = ZoneManager.Instance.getRegion(creature.Location.Location2D);
-                if (skill.isBad() && !creature.isInInstance() && zoneRegion != null &&
+                if (skill.IsBad && !creature.isInInstance() && zoneRegion != null &&
                     !zoneRegion.checkEffectRangeInsidePeaceZone(skill,
                         worldPosition.Value.X, worldPosition.Value.Y, worldPosition.Value.Z))
                 {

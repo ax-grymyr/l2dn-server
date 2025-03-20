@@ -27,7 +27,7 @@ public struct RequestConfirmTargetItemPacket: IIncomingPacket<GameSession>
         if (item == null)
             return ValueTask.CompletedTask;
 
-        if (!VariationData.getInstance().hasFeeData(item.getId()))
+        if (!VariationData.getInstance().hasFeeData(item.Id))
         {
             player.sendPacket(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM);
             return ValueTask.CompletedTask;
@@ -46,7 +46,7 @@ public struct RequestConfirmTargetItemPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        player.sendPacket(new ExPutItemResultForVariationMakePacket(_itemObjId, item.getId()));
+        player.sendPacket(new ExPutItemResultForVariationMakePacket(_itemObjId, item.Id));
 
         return ValueTask.CompletedTask;
     }

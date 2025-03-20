@@ -53,7 +53,7 @@ public readonly struct SiegeDefenderListPacket(Castle castle): IOutgoingPacket
 
 		foreach (Clan clan in defenders)
 		{
-			writer.WriteInt32(clan.getId());
+			writer.WriteInt32(clan.Id);
 			writer.WriteString(clan.getName());
 			writer.WriteString(clan.getLeaderName());
 			writer.WriteInt32(clan.getCrestId() ?? 0);
@@ -62,7 +62,7 @@ public readonly struct SiegeDefenderListPacket(Castle castle): IOutgoingPacket
 			{
 				writer.WriteInt32((int)SiegeClanType.OWNER + 1);
 			}
-			else if (castle.getSiege().getDefenderClans().Any(defender => defender.getClanId() == clan.getId()))
+			else if (castle.getSiege().getDefenderClans().Any(defender => defender.getClanId() == clan.Id))
 			{
 				writer.WriteInt32((int)SiegeClanType.DEFENDER + 1);
 			}

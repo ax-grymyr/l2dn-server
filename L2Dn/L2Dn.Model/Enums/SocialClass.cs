@@ -1,9 +1,8 @@
 ﻿namespace L2Dn.Model.Enums;
 
-/**
- * Enumerated for Social Classes.
- * @author Zoey76
- */
+/// <summary>
+/// Social classes of a clan members.
+/// </summary>
 public enum SocialClass
 {
     VAGABOND,

@@ -36,7 +36,7 @@ public sealed class ManaHeal: AbstractEffect
         if (item != null && (item.isPotion() || item.isElixir()))
             amount += effected.getStat().getValue(Stat.ADDITIONAL_POTION_MP, 0);
 
-        if (!skill.isStatic())
+        if (!skill.IsStatic)
             amount = effected.getStat().getValue(Stat.MANA_CHARGE, amount);
 
         // Prevents overheal and negative amount

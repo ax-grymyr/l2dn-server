@@ -72,7 +72,7 @@ public struct RequestExPledgeEnemyRegisterPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		ClanWar? clanWar = playerClan.getWarWith(enemyClan.getId());
+		ClanWar? clanWar = playerClan.getWarWith(enemyClan.Id);
 		if (clanWar != null)
 		{
 			if (clanWar.getClanWarState(playerClan) == ClanWarState.WIN)
@@ -84,7 +84,7 @@ public struct RequestExPledgeEnemyRegisterPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			if (clanWar.getClanWarState(playerClan) != ClanWarState.BLOOD_DECLARATION || clanWar.getAttackerClanId() == playerClan.getId())
+			if (clanWar.getClanWarState(playerClan) != ClanWarState.BLOOD_DECLARATION || clanWar.getAttackerClanId() == playerClan.Id)
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ALREADY_BEEN_AT_WAR_WITH_THE_S1_CLAN_5_DAYS_MUST_PASS_BEFORE_YOU_CAN_DECLARE_WAR_AGAIN);
 				sm.Params.addString(enemyClan.getName());

@@ -220,13 +220,13 @@ public class SiegeZone: Zone
 			BuffInfo? info = creature.getEffectList().getBuffInfoBySkillId(5660);
 			if (info != null)
 			{
-				level = Math.Min(level + info.getSkill().getLevel(), 5);
+				level = Math.Min(level + info.getSkill().Level, 5);
 			}
 
 			Skill? skill = SkillData.getInstance().getSkill(5660, level);
 			if (skill != null)
 			{
-				skill.applyEffects(creature, creature);
+				skill.ApplyEffects(creature, creature);
 			}
 		}
 	}

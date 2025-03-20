@@ -110,7 +110,7 @@ public struct RequestSellItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (merchant != null && !buyList.isNpcAllowed(merchant.getId()))
+		if (merchant != null && !buyList.isNpcAllowed(merchant.Id))
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;

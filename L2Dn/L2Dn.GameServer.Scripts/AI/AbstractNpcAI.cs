@@ -23,7 +23,7 @@ public abstract class AbstractNpcAI: Quest
 	 */
 	public override string onFirstTalk(Npc npc, Player player)
 	{
-		return npc.getId() + ".html";
+		return npc.Id + ".html";
 	}
 
 	/**
@@ -54,7 +54,7 @@ public abstract class AbstractNpcAI: Quest
 	{
 		foreach (MinionHolder mh in npc.getParameters().getMinionList(spawnName))
 		{
-			addMinion((Monster) npc, mh.getId());
+			addMinion((Monster) npc, mh.Id);
 		}
 	}
 }

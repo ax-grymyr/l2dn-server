@@ -30,7 +30,7 @@ public readonly struct ExVipAttendanceListPacket: IOutgoingPacket
         writer.WriteInt32(_rewardItems.Length);
         foreach (ItemHolder reward in _rewardItems)
         {
-            writer.WriteInt32(reward.getId());
+            writer.WriteInt32(reward.Id);
             writer.WriteInt64(reward.getCount());
             writer.WriteByte(0); // Enchant level?
         }

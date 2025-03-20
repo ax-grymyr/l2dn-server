@@ -34,7 +34,7 @@ public struct RequestExManageMpccRoomPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         MatchingRoom? room = player.getMatchingRoom();
-        if (room == null || room.getId() != _roomId || room.getRoomType() != MatchingRoomType.COMMAND_CHANNEL ||
+        if (room == null || room.Id != _roomId || room.getRoomType() != MatchingRoomType.COMMAND_CHANNEL ||
             room.getLeader() != player)
         {
             return ValueTask.CompletedTask;

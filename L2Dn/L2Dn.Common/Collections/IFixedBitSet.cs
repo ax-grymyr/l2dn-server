@@ -2,7 +2,7 @@
 
 public interface IFixedBitSet
 {
-    int Capacity { get; }
+    static abstract int Capacity { get; }
     int Count { get; }
     bool this[int index] { get; set; }
     void SetBit(int index);

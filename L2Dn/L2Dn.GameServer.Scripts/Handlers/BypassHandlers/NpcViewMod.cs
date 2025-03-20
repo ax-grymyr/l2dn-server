@@ -235,22 +235,22 @@ public class NpcViewMod: IBypassHandler
 			sb.Append("<table width=277 height=32 cellspacing=0 background=\"L2UI_CT1.Windows.Windows_DF_TooltipBG\">");
 			sb.Append("<tr><td width=32>");
 			sb.Append("<img src=\"");
-			sb.Append(s.getIcon());
+			sb.Append(s.Icon);
 			sb.Append("\" width=32 height=32>");
 			sb.Append("</td><td width=110>");
-			sb.Append(s.getName());
+			sb.Append(s.Name);
 			sb.Append("</td>");
 			sb.Append("<td width=45 align=center>");
-			sb.Append(s.getId());
+			sb.Append(s.Id);
 			sb.Append("</td>");
 			sb.Append("<td width=35 align=center>");
-			sb.Append(s.getLevel());
+			sb.Append(s.Level);
 			sb.Append("</td></tr></table>");
 		});
 
 		htmlContent.Replace("%skills%", sb.ToString());
 		htmlContent.Replace("%npc_name%", npc.getName());
-		htmlContent.Replace("%npcId%", npc.getId().ToString());
+		htmlContent.Replace("%npcId%", npc.Id.ToString());
 
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 0, htmlContent);
 		player.sendPacket(html);
@@ -280,7 +280,7 @@ public class NpcViewMod: IBypassHandler
 
 		htmlContent.Replace("%aggrolist%", sb.ToString());
 		htmlContent.Replace("%npc_name%", npc.getName());
-		htmlContent.Replace("%npcId%", npc.getId().ToString());
+		htmlContent.Replace("%npcId%", npc.Id.ToString());
 		htmlContent.Replace("%objid%", npc.ObjectId.ToString());
 
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 0, htmlContent);
@@ -498,13 +498,13 @@ public class NpcViewMod: IBypassHandler
 
 				// bonus drop amount effect
 				rateAmount *= dropAmountEffectBonus;
-				if (item.getId() == Inventory.ADENA_ID)
+				if (item.Id == Inventory.ADENA_ID)
 				{
 					rateAmount *= dropAmountAdenaEffectBonus;
 				}
 				// bonus drop rate effect
 				rateChance *= dropRateEffectBonus;
-				if (item.getId() == Inventory.LCOIN_ID)
+				if (item.Id == Inventory.LCOIN_ID)
 				{
 					rateChance *= player.getStat().getMul(Stat.BONUS_DROP_RATE_LCOIN, 1);
 				}

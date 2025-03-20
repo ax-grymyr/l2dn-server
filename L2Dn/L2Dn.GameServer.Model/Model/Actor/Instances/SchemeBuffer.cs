@@ -30,7 +30,7 @@ public class SchemeBuffer: Npc
         string currentCommand = st.nextToken();
         if (currentCommand.startsWith("menu"))
         {
-            HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
+            HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(Id, 0, player), player);
             htmlContent.Replace("%objectId%", ObjectId.ToString());
             NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
             player.sendPacket(html);
@@ -47,7 +47,7 @@ public class SchemeBuffer: Npc
 
             player.getServitors().Values.ForEach(servitor => servitor.stopAllEffects());
 
-            HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
+            HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(Id, 0, player), player);
             htmlContent.Replace("%objectId%", ObjectId.ToString());
             NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
             player.sendPacket(html);
@@ -66,7 +66,7 @@ public class SchemeBuffer: Npc
             player.getServitors().Values.
                 ForEach(servitor => servitor.setCurrentHpMp(servitor.getMaxHp(), servitor.getMaxMp()));
 
-            HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 0, player), player);
+            HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(Id, 0, player), player);
             htmlContent.Replace("%objectId%", ObjectId.ToString());
             NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
             player.sendPacket(html);
@@ -104,14 +104,14 @@ public class SchemeBuffer: Npc
                         Pet? pet = player.getPet();
                         if (pet != null)
                         {
-                            skill.applyEffects(this, pet);
+                            skill.ApplyEffects(this, pet);
                         }
 
-                        player.getServitors().Values.ForEach(servitor => skill.applyEffects(this, servitor));
+                        player.getServitors().Values.ForEach(servitor => skill.ApplyEffects(this, servitor));
                     }
                     else
                     {
-                        skill.applyEffects(this, player);
+                        skill.ApplyEffects(this, player);
                     }
                 }
             }
@@ -132,7 +132,7 @@ public class SchemeBuffer: Npc
                 Skill? skill = SkillData.getInstance().getSkill(skillId, SkillData.getInstance().getMaxLevel(skillId));
                 if (skill != null)
                 {
-                    if (skill.isDance())
+                    if (skill.IsDance)
                     {
                         if (getCountOf(skills, true) < Config.Character.DANCES_MAX_AMOUNT)
                         {
@@ -276,7 +276,7 @@ public class SchemeBuffer: Npc
             }
         }
 
-        HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 1, player), player);
+        HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(Id, 1, player), player);
         htmlContent.Replace("%schemes%", sb.ToString());
         htmlContent.Replace("%max_schemes%", Config.SchemeBuffer.BUFFER_MAX_SCHEMES.ToString());
         htmlContent.Replace("%objectId%", ObjectId.ToString());
@@ -295,7 +295,7 @@ public class SchemeBuffer: Npc
     {
         List<int> schemeSkills = SchemeBufferTable.getInstance().getScheme(player.ObjectId, schemeName);
 
-        HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(getId(), 2, player), player);
+        HtmlContent htmlContent = HtmlContent.LoadFromFile(getHtmlPath(Id, 2, player), player);
         htmlContent.Replace("%schemename%", schemeName);
         htmlContent.Replace("%count%",
             getCountOf(schemeSkills, false) + " / " + player.getStat().getMaxBuffCount() + " buffs, " +
@@ -352,8 +352,8 @@ public class SchemeBuffer: Npc
 
             if (schemeSkills.Contains(skillId))
             {
-                sb.Append("<td height=40 width=40><img src=\"" + skill.getIcon() +
-                    "\" width=32 height=32></td><td width=190>" + skill.getName() +
+                sb.Append("<td height=40 width=40><img src=\"" + skill.Icon +
+                    "\" width=32 height=32></td><td width=190>" + skill.Name +
                     "<br1><font color=\"B09878\">" +
                     availableBuff.getDescription() +
                     "</font></td><td><button value=\" \" action=\"bypass npc_%objectId%_skillunselect;" +
@@ -362,8 +362,8 @@ public class SchemeBuffer: Npc
             }
             else
             {
-                sb.Append("<td height=40 width=40><img src=\"" + skill.getIcon() +
-                    "\" width=32 height=32></td><td width=190>" + skill.getName() +
+                sb.Append("<td height=40 width=40><img src=\"" + skill.Icon +
+                    "\" width=32 height=32></td><td width=190>" + skill.Name +
                     "<br1><font color=\"B09878\">" +
                     availableBuff.getDescription() +
                     "</font></td><td><button value=\" \" action=\"bypass npc_%objectId%_skillselect;" +
@@ -476,7 +476,7 @@ public class SchemeBuffer: Npc
         foreach (int skillId in skills)
         {
             Skill? skill = SkillData.getInstance().getSkill(skillId, 1);
-            if (skill != null && skill.isDance() == dances)
+            if (skill != null && skill.IsDance == dances)
                 count++;
         }
 

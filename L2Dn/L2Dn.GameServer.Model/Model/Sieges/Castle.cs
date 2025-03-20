@@ -477,7 +477,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	public void setOwner(Clan? clan)
 	{
 		// Remove old owner
-		if (_ownerId > 0 && (clan == null || clan.getId() != _ownerId))
+		if (_ownerId > 0 && (clan == null || clan.Id != _ownerId))
 		{
 			Clan? oldOwner = ClanTable.getInstance().getClan(getOwnerId()); // Try to find clan instance
 			if (oldOwner != null)
@@ -795,7 +795,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	{
 		if (clan != null)
 		{
-			_ownerId = clan.getId(); // Update owner id property
+			_ownerId = clan.Id; // Update owner id property
 		}
 		else
 		{
@@ -830,7 +830,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 	{
 		foreach (Door door in _doors)
 		{
-			if (door.getId() == doorId)
+			if (door.Id == doorId)
 			{
 				return door;
 			}

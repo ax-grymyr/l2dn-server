@@ -69,7 +69,7 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 							                               .contains(searchWord.toLowerCase())))
 						{
 							items.Add(new ShopItem(item, vendor, vendor.getPrivateStoreType()));
-							itemIds.Add(item.getItem().getId());
+							itemIds.Add(item.getItem().Id);
 						}
 					}
 				}
@@ -274,17 +274,17 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 
 	private static bool isCrystal(ItemTemplate item)
 	{
-		return EnsoulData.getInstance().getStone(item.getId()) != null;
+		return EnsoulData.getInstance().getStone(item.Id) != null;
 	}
 
 	private static bool isLifeStone(ItemTemplate item)
 	{
-		return VariationData.getInstance().hasVariation(item.getId());
+		return VariationData.getInstance().hasVariation(item.Id);
 	}
 
 	private static bool isDye(ItemTemplate item)
 	{
-		return HennaData.getInstance().getHennaByItemId(item.getId()) != null;
+		return HennaData.getInstance().getHennaByItemId(item.Id) != null;
 	}
 
 	private static bool isSpellBook(ItemTemplate item)
@@ -294,7 +294,7 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 
 	private static bool isEnhancementMisc(ItemTemplate item)
 	{
-		return item.getId() >= 91031 && item.getId() <= 91038;
+		return item.Id >= 91031 && item.Id <= 91038;
 	}
 
 	private static bool isEnhancementItem(ItemTemplate item)
@@ -305,16 +305,16 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 
 	private static bool isTicket(ItemTemplate item)
 	{
-		return item.getId() == 90045 || item.getId() == 91462 || item.getId() == 91463 ||
-		       item.getId() == 91972 || item.getId() == 93903;
+		return item.Id == 90045 || item.Id == 91462 || item.Id == 91463 ||
+		       item.Id == 91972 || item.Id == 93903;
 	}
 
 	private static bool isPackOrCraft(ItemTemplate item)
 	{
-        if (item.getId() == 92477 || item.getId() == 91462 || item.getId() == 92478 || item.getId() == 92479 ||
-            item.getId() == 92480 || item.getId() == 92481 || item.getId() == 49756 || item.getId() == 93906 ||
-            item.getId() == 93907 || item.getId() == 93908 || item.getId() == 93909 || item.getId() == 93910 ||
-            item.getId() == 91076)
+        if (item.Id == 92477 || item.Id == 91462 || item.Id == 92478 || item.Id == 92479 ||
+            item.Id == 92480 || item.Id == 92481 || item.Id == 49756 || item.Id == 93906 ||
+            item.Id == 93907 || item.Id == 93908 || item.Id == 93909 || item.Id == 93910 ||
+            item.Id == 91076)
         {
             return true;
         }
@@ -341,7 +341,7 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 		{
 			foreach (ItemEnchantHolder itemData in collectionHolder.getItems())
 			{
-				if (itemData.getId() == item.getId())
+				if (itemData.Id == item.Id)
 				{
 					return true;
 				}
@@ -362,7 +362,7 @@ public struct ExRequestPrivateStoreSearchListPacket: IIncomingPacket<GameSession
 
 	private static bool isCollectionMisc(ItemTemplate item)
 	{
-		return item.getId() >= 93906 && item.getId() <= 93910;
+		return item.Id >= 93906 && item.Id <= 93910;
 	}
 
 	private enum StoreType

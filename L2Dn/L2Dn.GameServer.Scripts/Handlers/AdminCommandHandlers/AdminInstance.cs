@@ -166,7 +166,7 @@ public class AdminInstance: IAdminCommandHandler
 				if (instance != null)
 				{
 					instance.getPlayers().ForEach(player => player.sendPacket(new ExShowScreenMessagePacket("Your instance has been destroyed by Game Master!", 10000)));
-					BuilderUtil.sendSysMessage(activeChar, "You destroyed Instance " + instance.getId() + " with " + instance.getPlayersCount() + " players inside.");
+					BuilderUtil.sendSysMessage(activeChar, "You destroyed Instance " + instance.Id + " with " + instance.getPlayersCount() + " players inside.");
 					instance.destroy();
 					sendTemplateDetails(activeChar, instance.getTemplateId());
 				}
@@ -184,7 +184,7 @@ public class AdminInstance: IAdminCommandHandler
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/instances_detail.htm", player);
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, 1, htmlContent);
 			StringBuilder sb = new StringBuilder();
-			htmlContent.Replace("%templateId%", template.getId().ToString());
+			htmlContent.Replace("%templateId%", template.Id.ToString());
 			htmlContent.Replace("%templateName%", template.getName());
 			htmlContent.Replace("%activeWorlds%", template.getWorldCount() + " / " + (template.getMaxWorlds() == -1 ? "Unlimited" : template.getMaxWorlds()));
 			htmlContent.Replace("%duration%", template.getDuration() + " minutes");
@@ -203,9 +203,9 @@ public class AdminInstance: IAdminCommandHandler
 			{
 				sb.Append("<table border=0 cellpadding=2 cellspacing=0 bgcolor=\"363636\">");
 				sb.Append("<tr>");
-				sb.Append("<td fixwidth=\"83\">" + instance.getId() + "</td>");
-				sb.Append("<td fixwidth=\"83\"><button value=\"Teleport!\" action=\"bypass -h admin_instanceteleport " + instance.getId() + "\" width=75 height=18 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
-				sb.Append("<td fixwidth=\"83\"><button value=\"Destroy!\" action=\"bypass -h admin_instancedestroy " + instance.getId() + "\" width=75 height=18 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
+				sb.Append("<td fixwidth=\"83\">" + instance.Id + "</td>");
+				sb.Append("<td fixwidth=\"83\"><button value=\"Teleport!\" action=\"bypass -h admin_instanceteleport " + instance.Id + "\" width=75 height=18 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
+				sb.Append("<td fixwidth=\"83\"><button value=\"Destroy!\" action=\"bypass -h admin_instancedestroy " + instance.Id + "\" width=75 height=18 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>");
 				sb.Append("</tr>");
 				sb.Append("</table>");
 			});
@@ -228,7 +228,7 @@ public class AdminInstance: IAdminCommandHandler
 		InstanceManager instManager = InstanceManager.getInstance();
 		List<InstanceTemplate> templateList = instManager.getInstanceTemplates()
 			.OrderByDescending(x => x.getWorldCount())
-			.Where(template => Array.IndexOf(IGNORED_TEMPLATES, template.getId()) < 0).ToList();
+			.Where(template => Array.IndexOf(IGNORED_TEMPLATES, template.Id) < 0).ToList();
 
 		//@formatter:off
 		PageResult result = PageBuilder.newBuilder(templateList, 4, "bypass -h admin_instancelist")
@@ -239,7 +239,7 @@ public class AdminInstance: IAdminCommandHandler
 			.bodyHandler((pages, template, sb) =>
 		{
 			sb.Append("<table border=0 cellpadding=0 cellspacing=0 bgcolor=\"363636\">");
-			sb.Append("<tr><td align=center fixwidth=\"250\"><font color=\"LEVEL\">" + template.getName() + " (" + template.getId() + ")</font></td></tr>");
+			sb.Append("<tr><td align=center fixwidth=\"250\"><font color=\"LEVEL\">" + template.getName() + " (" + template.Id + ")</font></td></tr>");
 			sb.Append("</table>");
 
 			sb.Append("<table border=0 cellpadding=0 cellspacing=0 bgcolor=\"363636\">");
@@ -252,7 +252,7 @@ public class AdminInstance: IAdminCommandHandler
 			sb.Append("<tr>");
 			sb.Append("<td align=center fixwidth=\"83\">Detailed info:</td>");
 			sb.Append("<td align=center fixwidth=\"83\"></td>");
-			sb.Append("<td align=center fixwidth=\"83\"><button value=\"Show me!\" action=\"bypass -h admin_instancelist id=" + template.getId() + "\" width=\"85\" height=\"20\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
+			sb.Append("<td align=center fixwidth=\"83\"><button value=\"Show me!\" action=\"bypass -h admin_instancelist id=" + template.Id + "\" width=\"85\" height=\"20\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 			sb.Append("</tr>");
 
 

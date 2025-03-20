@@ -146,7 +146,7 @@ public class RegenHPFinalizer: StatFunction
 			return 0;
 		}
 
-		SiegeClan? siegeClan = siege.getAttackerClan(clan.getId());
+		SiegeClan? siegeClan = siege.getAttackerClan(clan.Id);
 		if (siegeClan == null || siegeClan.getFlag().isEmpty())
 		{
 			return 0;

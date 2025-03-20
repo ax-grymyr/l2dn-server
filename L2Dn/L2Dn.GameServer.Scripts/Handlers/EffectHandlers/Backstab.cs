@@ -47,7 +47,7 @@ public sealed class Backstab: AbstractEffect
         if (_overHit && effected.isAttackable())
             ((Attackable)effected).overhitEnabled(true);
 
-        bool ss = skill.useSoulShot() && (effector.isChargedShot(ShotType.SOULSHOTS) ||
+        bool ss = skill.UseSoulShot && (effector.isChargedShot(ShotType.SOULSHOTS) ||
             effector.isChargedShot(ShotType.BLESSED_SOULSHOTS));
 
         byte shld = Formulas.calcShldUse(effector, effected);

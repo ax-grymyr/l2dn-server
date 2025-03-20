@@ -80,7 +80,7 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 				// auto supply
 				if (!item.isPotion())
 				{
-					AutoUseTaskManager.getInstance().removeAutoSupplyItem(player, item.getId());
+					AutoUseTaskManager.getInstance().removeAutoSupplyItem(player, item.Id);
 				}
 				else // auto potion
 				{
@@ -92,13 +92,13 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 			// auto skill
 			if (skill != null)
 			{
-				if (skill.isBad())
+				if (skill.IsBad)
 				{
-					AutoUseTaskManager.getInstance().removeAutoSkill(player, skill.getId());
+					AutoUseTaskManager.getInstance().removeAutoSkill(player, skill.Id);
 				}
 				else
 				{
-					AutoUseTaskManager.getInstance().removeAutoBuff(player, skill.getId());
+					AutoUseTaskManager.getInstance().removeAutoBuff(player, skill.Id);
 				}
 			}
 			else // action
@@ -115,7 +115,7 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 			// auto supply
 			if (Config.General.ENABLE_AUTO_ITEM)
 			{
-				AutoUseTaskManager.getInstance().addAutoSupplyItem(player, item.getId());
+				AutoUseTaskManager.getInstance().addAutoSupplyItem(player, item.Id);
 			}
 		}
 		else
@@ -127,7 +127,7 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 				{
 					if (Config.General.ENABLE_AUTO_POTION && item != null && item.isPotion())
 					{
-						AutoUseTaskManager.getInstance().setAutoPotionItem(player, item.getId());
+						AutoUseTaskManager.getInstance().setAutoPotionItem(player, item.Id);
 						return ValueTask.CompletedTask;
 					}
 				}
@@ -135,7 +135,7 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 				{
 					if (Config.General.ENABLE_AUTO_PET_POTION && item != null && item.isPotion())
 					{
-						AutoUseTaskManager.getInstance().setAutoPetPotionItem(player, item.getId());
+						AutoUseTaskManager.getInstance().setAutoPetPotionItem(player, item.Id);
 						return ValueTask.CompletedTask;
 					}
 				}
@@ -144,13 +144,13 @@ public struct ExRequestActivateAutoShortcutPacket: IIncomingPacket<GameSession>
 			// auto skill
 			if (Config.General.ENABLE_AUTO_SKILL && skill != null)
 			{
-				if (skill.isBad())
+				if (skill.IsBad)
 				{
-					AutoUseTaskManager.getInstance().addAutoSkill(player, skill.getId());
+					AutoUseTaskManager.getInstance().addAutoSkill(player, skill.Id);
 				}
 				else
 				{
-					AutoUseTaskManager.getInstance().addAutoBuff(player, skill.getId());
+					AutoUseTaskManager.getInstance().addAutoBuff(player, skill.Id);
 				}
 
 				return ValueTask.CompletedTask;

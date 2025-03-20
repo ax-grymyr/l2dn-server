@@ -10,7 +10,6 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -62,7 +61,7 @@ public sealed class TriggerSkillByMagicType: AbstractEffect
             return;
 
         Skill eventSkill = @event.getSkill();
-        if (!_magicTypes.Contains(eventSkill.getMagicType()))
+        if (!_magicTypes.Contains((int)eventSkill.MagicType))
             return;
 
         if (_chance < 100 && Rnd.get(100) > _chance)
@@ -83,7 +82,7 @@ public sealed class TriggerSkillByMagicType: AbstractEffect
             return;
 
         // Ignore common skills.
-        if (EnumUtil.GetValues<CommonSkill>().Contains((CommonSkill)eventSkill.getId()))
+        if (EnumUtil.GetValues<CommonSkill>().Contains((CommonSkill)eventSkill.Id))
             return;
 
         Skill? triggerSkill;
@@ -97,15 +96,15 @@ public sealed class TriggerSkillByMagicType: AbstractEffect
             if (buffInfo != null)
             {
                 triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(),
-                    Math.Min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
+                    Math.Min(_skillLevelScaleTo, buffInfo.getSkill().Level + 1));
 
                 if (triggerSkill == null)
                     return;
 
                 if (@event.getCaster().isSkillDisabled(buffInfo.getSkill()))
                 {
-                    if (_replace && buffInfo.getSkill().getLevel() == _skillLevelScaleTo)
-                        ((Creature)target).stopSkillEffects(SkillFinishType.SILENT, triggerSkill.getId());
+                    if (_replace && buffInfo.getSkill().Level == _skillLevelScaleTo)
+                        ((Creature)target).stopSkillEffects(SkillFinishType.SILENT, triggerSkill.Id);
 
                     return;
                 }
@@ -118,7 +117,7 @@ public sealed class TriggerSkillByMagicType: AbstractEffect
 
         // Remove existing effect, otherwise time will not be renewed at max level.
         if (_replace)
-            ((Creature)target).stopSkillEffects(SkillFinishType.SILENT, triggerSkill.getId());
+            ((Creature)target).stopSkillEffects(SkillFinishType.SILENT, triggerSkill.Id);
 
         SkillCaster.triggerCast(@event.getCaster(), (Creature)target, triggerSkill);
     }

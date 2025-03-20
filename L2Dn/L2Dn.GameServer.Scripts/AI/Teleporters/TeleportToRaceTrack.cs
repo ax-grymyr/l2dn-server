@@ -39,7 +39,7 @@ public sealed class TeleportToRaceTrack: AbstractScript
 
 	public override string? onTalk(Npc npc, Player player)
 	{
-		if (npc.getId() == RaceManager)
+		if (npc.Id == RaceManager)
 		{
 			int returnId = player.getVariables().Get(MonsterReturn, -1);
 			if (!_teleporterLocations.TryGetValue(returnId, out Location3D location))
@@ -51,7 +51,7 @@ public sealed class TeleportToRaceTrack: AbstractScript
 		else
 		{
 			player.teleToLocation(new Location(_raceTrackTeleport, 0));
-			player.getVariables().Set(MonsterReturn, npc.getId());
+			player.getVariables().Set(MonsterReturn, npc.Id);
 		}
 
 		return base.onTalk(npc, player);

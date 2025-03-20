@@ -72,7 +72,7 @@ public struct RequestAnswerJoinPledgePacket: IIncomingPacket<GameSession>
 					return ValueTask.CompletedTask;
 				}
 
-				player.sendPacket(new JoinPledgePacket(clan.getId()));
+				player.sendPacket(new JoinPledgePacket(clan.Id));
 				player.setPledgeType(pledgeType);
 				if (pledgeType == Clan.SUBUNIT_ACADEMY)
 				{

@@ -17,7 +17,7 @@ public class UseItemDailyMissionHandler: AbstractDailyMissionHandler
 	private readonly int _minLevel;
 	private readonly int _maxLevel;
 	private readonly Set<int> _itemIds = new();
-	
+
 	public UseItemDailyMissionHandler(DailyMissionDataHolder holder): base(holder)
 	{
 		_amount = holder.getRequiredCompletions();
@@ -36,12 +36,12 @@ public class UseItemDailyMissionHandler: AbstractDailyMissionHandler
 			}
 		}
 	}
-	
+
 	public override void init()
 	{
 		GlobalEvents.Global.Subscribe<OnItemUse>(this, onItemUse);
 	}
-	
+
 	public override bool isAvailable(Player player)
 	{
 		DailyMissionPlayerEntry? entry = player.getDailyMissions().getEntry(getHolder().getId());
@@ -67,7 +67,7 @@ public class UseItemDailyMissionHandler: AbstractDailyMissionHandler
 
 		return false;
 	}
-	
+
 	private void onItemUse(OnItemUse @event)
 	{
 		Player player = @event.getPlayer();
@@ -77,13 +77,13 @@ public class UseItemDailyMissionHandler: AbstractDailyMissionHandler
 			{
 				return;
 			}
-			if (_itemIds.Contains(@event.getItem().getId()))
+			if (_itemIds.Contains(@event.getItem().Id))
 			{
 				processPlayerProgress(player);
 			}
 		}
 	}
-	
+
 	private void processPlayerProgress(Player player)
 	{
 		DailyMissionPlayerEntry entry = player.getDailyMissions().getOrCreateEntry(getHolder().getId());

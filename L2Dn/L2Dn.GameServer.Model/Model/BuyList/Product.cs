@@ -40,7 +40,7 @@ public class Product
 
 	public int getItemId()
 	{
-		return _item.getId();
+		return _item.Id;
 	}
 
 	public long getPrice()
@@ -118,7 +118,7 @@ public class Product
 		try
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
-			int itemId = _item.getId();
+			int itemId = _item.Id;
 			DbBuyList? record = ctx.BuyLists.SingleOrDefault(r => r.BuyListId == _buyListId && r.ItemId == itemId);
 			if (record is null)
 			{
@@ -137,7 +137,7 @@ public class Product
 		}
 		catch (Exception e)
 		{
-			LOGGER.Error("Failed to save Product buylist_id:" + _buyListId + " item_id=" + _item.getId() + ": " + e);
+			LOGGER.Error("Failed to save Product buylist_id:" + _buyListId + " item_id=" + _item.Id + ": " + e);
 		}
 	}
 }

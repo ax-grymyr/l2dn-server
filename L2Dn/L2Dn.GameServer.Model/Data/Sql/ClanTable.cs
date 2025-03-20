@@ -60,7 +60,7 @@ public class ClanTable
 			_clans.put(cid, clan);
 			if (clan.getDissolvingExpiryTime() is not null)
 			{
-				scheduleRemoveClan(clan.getId());
+				scheduleRemoveClan(clan.Id);
 			}
 		}
 
@@ -157,7 +157,7 @@ public class ClanTable
 		player.setPledgeClass(ClanMember.calculatePledgeClass(player));
 		player.setClanPrivileges(ClanPrivilege.All);
 
-		_clans.put(clan.getId(), clan);
+		_clans.put(clan.Id, clan);
 
 		// should be update packet only
 		player.sendPacket(new PledgeShowInfoUpdatePacket(clan));
@@ -186,7 +186,7 @@ public class ClanTable
 
 		clan.broadcastToOnlineMembers(new SystemMessagePacket(SystemMessageId.CLAN_HAS_DISPERSED));
 
-		ClanEntryManager.getInstance().removeFromClanList(clan.getId());
+		ClanEntryManager.getInstance().removeFromClanList(clan.Id);
 
 		int? castleId = clan.getCastleId();
 		if (castleId == 0)
@@ -340,8 +340,8 @@ public class ClanTable
 			GlobalEvents.Global.NotifyAsync(new OnClanWarFinish(clan1, clan2));
 		}
 
-		clan1.deleteWar(clan2.getId());
-		clan2.deleteWar(clan1.getId());
+		clan1.deleteWar(clan2.Id);
+		clan2.deleteWar(clan1.Id);
 		clan1.broadcastClanStatus();
 		clan2.broadcastClanStatus();
 
@@ -370,8 +370,8 @@ public class ClanTable
 					ClanWarState state = (ClanWarState)war.State;
 					ClanWar clanWar = new ClanWar(attacker, attacked, war.Clan1Kills, war.Clan2Kills,
 						war.WinnerClanId, war.StartTime, war.EndTime, state);
-					attacker.addWar(attacked.getId(), clanWar);
-					attacked.addWar(attacker.getId(), clanWar);
+					attacker.addWar(attacked.Id, clanWar);
+					attacked.addWar(attacker.Id, clanWar);
 				}
 				else
 				{
@@ -393,7 +393,7 @@ public class ClanTable
 		foreach (Clan clan in _clans.Values)
 		{
 			int? allyId = clan.getAllyId();
-			if (allyId != null && clan.getId() != allyId && !_clans.ContainsKey(allyId.Value))
+			if (allyId != null && clan.Id != allyId && !_clans.ContainsKey(allyId.Value))
 			{
 				clan.setAllyId(0);
 				clan.setAllyName(null);

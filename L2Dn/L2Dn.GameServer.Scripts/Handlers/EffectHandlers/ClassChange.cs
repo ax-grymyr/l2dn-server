@@ -46,7 +46,7 @@ public sealed class ClassChange: AbstractEffect
             Skill? identityCrisis = SkillData.getInstance().getSkill(_identityCrisisSkillId, 1);
             if (identityCrisis != null)
             {
-                identityCrisis.applyEffects(player, player);
+                identityCrisis.ApplyEffects(player, player);
             }
 
             if (OlympiadManager.getInstance().isRegisteredInComp(player))
@@ -97,7 +97,7 @@ public sealed class ClassChange: AbstractEffect
                     Skill? knownSkill = player.getKnownSkill(shortcut.getId());
                     if (knownSkill != null)
                     {
-                        if (knownSkill.isBad())
+                        if (knownSkill.IsBad)
                         {
                             AutoUseTaskManager.getInstance().removeAutoSkill(player, shortcut.getId());
                         }
@@ -118,7 +118,7 @@ public sealed class ClassChange: AbstractEffect
                         }
                         else
                         {
-                            AutoUseTaskManager.getInstance().removeAutoSupplyItem(player, knownItem.getId());
+                            AutoUseTaskManager.getInstance().removeAutoSupplyItem(player, knownItem.Id);
                         }
                     }
                 }

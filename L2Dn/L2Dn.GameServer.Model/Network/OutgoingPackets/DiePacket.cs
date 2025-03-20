@@ -34,7 +34,7 @@ public readonly struct DiePacket: IOutgoingPacket
 
 			foreach (BuffInfo effect in creature.getEffectList().getEffects())
 			{
-				if (effect.getSkill().getId() == (int)CommonSkill.FEATHER_OF_BLESSING)
+				if (effect.getSkill().Id == (int)CommonSkill.FEATHER_OF_BLESSING)
 				{
 					_delayFeather = effect.getTime() ?? TimeSpan.Zero;
 					break;

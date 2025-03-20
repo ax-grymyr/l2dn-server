@@ -19,7 +19,6 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -233,16 +232,13 @@ public abstract class Summon: Playable
 		return _owner;
 	}
 
-	/**
+    /**
 	 * Gets the summon ID.
 	 * @return the summon ID
 	 */
-	public override int getId()
-	{
-		return getTemplate().getId();
-	}
+    public override int Id => getTemplate().Id;
 
-	public virtual short getSoulShotsPerHit()
+    public virtual short getSoulShotsPerHit()
 	{
 		if (getTemplate().getSoulShot() > 0)
 		{
@@ -410,7 +406,7 @@ public abstract class Summon: Playable
 			{
 				if (isPet())
 				{
-					getSkills().ForEach(kvp => ((Pet) this).storePetSkills(kvp.Key, kvp.Value.getLevel()));
+					getSkills().ForEach(kvp => ((Pet) this).storePetSkills(kvp.Key, kvp.Value.Level));
 					owner.setPet(null);
 				}
 				else
@@ -577,7 +573,7 @@ public abstract class Summon: Playable
 		}
 
 		// Check if the skill is active
-		if (skill.isPassive())
+		if (skill.IsPassive)
 		{
 			// just ignore the passive skill request. why does the client send it anyway ??
 			return false;
@@ -591,7 +587,7 @@ public abstract class Summon: Playable
 
 		// Get the target for the skill
 		WorldObject? target;
-		if (skill.getTargetType() == TargetType.OWNER_PET)
+		if (skill.TargetType == TargetType.OWNER_PET)
 		{
 			target = _owner;
 		}
@@ -600,7 +596,7 @@ public abstract class Summon: Playable
 			WorldObject? currentTarget = _owner.getTarget();
 			if (currentTarget != null)
 			{
-				target = skill.getTarget(this, forceUse && (!currentTarget.isPlayable() || !currentTarget.isInsideZone(ZoneId.PEACE) || !currentTarget.isInsideZone(ZoneId.NO_PVP)), dontMove, false);
+				target = skill.GetTarget(this, forceUse && (!currentTarget.isPlayable() || !currentTarget.isInsideZone(ZoneId.PEACE) || !currentTarget.isInsideZone(ZoneId.NO_PVP)), dontMove, false);
 				Player? currentTargetPlayer = currentTarget.getActingPlayer();
 				if (!forceUse && currentTargetPlayer != null && !currentTargetPlayer.isAutoAttackable(_owner))
 				{
@@ -610,7 +606,7 @@ public abstract class Summon: Playable
 			}
 			else
 			{
-				target = skill.getTarget(this, forceUse, dontMove, false);
+				target = skill.GetTarget(this, forceUse, dontMove, false);
 			}
 		}
 
@@ -620,7 +616,7 @@ public abstract class Summon: Playable
 			if (!isMovementDisabled())
 			{
 				setTarget(_owner.getTarget());
-				target = skill.getTarget(this, forceUse, dontMove, false);
+				target = skill.GetTarget(this, forceUse, dontMove, false);
 			}
 			if (target == null)
 			{
@@ -645,7 +641,7 @@ public abstract class Summon: Playable
 		}
 
 		// Check if the summon has enough HP
-		if (getCurrentHp() <= skill.getHpConsume())
+		if (getCurrentHp() <= skill.HpConsume)
 		{
 			// Send a System Message to the caster
 			sendPacket(SystemMessageId.NOT_ENOUGH_HP);
@@ -653,7 +649,7 @@ public abstract class Summon: Playable
 		}
 
 		// Check if all casting conditions are completed
-		if (!skill.checkCondition(this, target, true))
+		if (!skill.CheckCondition(this, target, true))
 		{
 			// Send a Server->Client packet ActionFailed to the Player
 			sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -661,7 +657,7 @@ public abstract class Summon: Playable
 		}
 
 		// Check if this is bad magic skill and if Player is in Olympiad and the match isn't already start, send a Server->Client packet ActionFailed
-		if (skill.isBad() && _owner.isInOlympiadMode() && !_owner.isOlympiadStart())
+		if (skill.IsBad && _owner.isInOlympiadMode() && !_owner.isOlympiadStart())
 		{
 			sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return false;
@@ -759,7 +755,7 @@ public abstract class Summon: Playable
 
 	public override void doCast(Skill skill)
 	{
-		if (skill.getTarget(this, false, false, false) == null && !_owner.getAccessLevel().AllowPeaceAttack)
+		if (skill.GetTarget(this, false, false, false) == null && !_owner.getAccessLevel().AllowPeaceAttack)
 		{
 			// Send a System Message to the Player
 			_owner.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
@@ -929,7 +925,7 @@ public abstract class Summon: Playable
 		}
 
 		// Sin eater, Big Boom, Wyvern can't attack with attack button.
-		int npcId = getId();
+		int npcId = Id;
 		if (Array.IndexOf(PASSIVE_SUMMONS, npcId) >= 0)
 		{
 			_owner.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -1110,7 +1106,7 @@ public abstract class Summon: Playable
 		StringBuilder sb = new();
 		sb.Append(base.ToString());
 		sb.Append("(");
-		sb.Append(getId());
+		sb.Append(Id);
 		sb.Append(") Owner: ");
 		sb.Append(_owner);
 		return sb.ToString();

@@ -8,20 +8,20 @@ public readonly struct GMViewPledgeInfoPacket: IOutgoingPacket
 {
     private readonly Clan _clan;
     private readonly Player _player;
-	
+
     public GMViewPledgeInfoPacket(Clan clan, Player player)
     {
         _clan = clan;
         _player = player;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.GM_VIEW_PLEDGE_INFO);
-        
+
         writer.WriteInt32(0);
         writer.WriteString(_player.getName());
-        writer.WriteInt32(_clan.getId());
+        writer.WriteInt32(_clan.Id);
         writer.WriteInt32(0);
         writer.WriteString(_clan.getName());
         writer.WriteString(_clan.getLeaderName());

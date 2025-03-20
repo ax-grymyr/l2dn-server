@@ -118,8 +118,8 @@ public sealed class EnergyAttack: AbstractEffect
         {
             // Trait, elements
             double weaponTraitMod = Formulas.calcWeaponTraitBonus(attacker, effected);
-            double generalTraitMod = Formulas.calcGeneralTraitBonus(attacker, effected, skill.getTraitType(), true);
-            double weaknessMod = Formulas.calcWeaknessBonus(attacker, effected, skill.getTraitType());
+            double generalTraitMod = Formulas.calcGeneralTraitBonus(attacker, effected, skill.TraitType, true);
+            double weaknessMod = Formulas.calcWeaknessBonus(attacker, effected, skill.TraitType);
             double attributeMod = Formulas.calcAttributeBonus(attacker, effected, skill);
             double pvpPveMod = Formulas.calculatePvpPveBonus(attacker, effected, skill, true);
 
@@ -127,7 +127,7 @@ public sealed class EnergyAttack: AbstractEffect
             double energyChargesBoost = 1 + charge * 0.1; // 10% bonus damage for each charge used.
             double critMod = critical ? Formulas.calcCritDamage(attacker, effected, skill) : 1;
             double ssmod = 1;
-            if (skill.useSoulShot())
+            if (skill.UseSoulShot)
             {
                 if (attacker.isChargedShot(ShotType.SOULSHOTS))
                 {

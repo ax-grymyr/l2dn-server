@@ -20,6 +20,6 @@ public class ConditionSlotItemId(int slot, int itemId, int enchantLevel): Condit
         if (itemSlot == null)
             return itemId == 0;
 
-        return itemSlot.getId() == itemId && itemSlot.getEnchantLevel() >= enchantLevel;
+        return itemSlot.Id == itemId && itemSlot.getEnchantLevel() >= enchantLevel;
     }
 }

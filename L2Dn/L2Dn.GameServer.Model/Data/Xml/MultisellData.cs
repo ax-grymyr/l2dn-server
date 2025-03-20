@@ -40,7 +40,7 @@ public class MultisellData: DataReaderBase
 			files = files.Concat(LoadXmlDocuments<XmlMultiSellList>(DataFileLocation.Data, "multisell/custom"));
 
 		_multiSellLists = files.Select(x => loadFile(x.FilePath, x.Document)).Where(l => l != null)
-			.ToFrozenDictionary(x => x!.getId())!;
+			.ToFrozenDictionary(x => x!.Id)!;
 
 		_logger.Info(GetType().Name + ": Loaded " + _multiSellLists.Count + " multisell lists.");
 	}
@@ -83,7 +83,7 @@ public class MultisellData: DataReaderBase
 
 					if (!ItemExists(ingredient))
 					{
-						_logger.Warn("Invalid ingredient id or count for itemId: " + ingredient.getId() +
+						_logger.Warn("Invalid ingredient id or count for itemId: " + ingredient.Id +
 						             ", count: " + ingredient.getCount() + " in list: " + listId);
 
 						continue;
@@ -141,7 +141,7 @@ public class MultisellData: DataReaderBase
 
 					if (!ItemExists(product))
 					{
-						_logger.Warn("Invalid product id or count for itemId: " + product.getId() + ", count: " +
+						_logger.Warn("Invalid product id or count for itemId: " + product.Id + ", count: " +
 						             product.getCount() + " in list: " + listId);
 
 						continue;
@@ -232,11 +232,11 @@ public class MultisellData: DataReaderBase
 		if (template == null)
 		{
 			_logger.Warn("Can't find list id: " + listId + " requested by player: " + player.getName() + ", npcId: " +
-			            (npc != null ? npc.getId() : 0));
+			            (npc != null ? npc.Id : 0));
 			return;
 		}
 
-        if (!template.isNpcAllowed(-1) && (npc == null || !template.isNpcAllowed(npc.getId())))
+        if (!template.isNpcAllowed(-1) && (npc == null || !template.isNpcAllowed(npc.Id)))
         {
             if (player.isGM())
             {
@@ -276,13 +276,13 @@ public class MultisellData: DataReaderBase
 
 	private static bool ItemExists(ItemHolder holder)
 	{
-		SpecialItemType specialItem = (SpecialItemType)holder.getId();
+		SpecialItemType specialItem = (SpecialItemType)holder.Id;
 		if (Enum.IsDefined(specialItem))
 		{
 			return true;
 		}
 
-		ItemTemplate? template = ItemData.getInstance().getTemplate(holder.getId());
+		ItemTemplate? template = ItemData.getInstance().getTemplate(holder.Id);
 		return template != null && (template.isStackable() ? holder.getCount() >= 1 : holder.getCount() == 1);
 	}
 

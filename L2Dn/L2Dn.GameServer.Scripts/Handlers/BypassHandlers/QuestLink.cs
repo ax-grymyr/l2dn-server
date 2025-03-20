@@ -71,7 +71,7 @@ public class QuestLink: IBypassHandler
 			npc.Events.Notify(onNpcQuestStart);
 			foreach (Quest quest in onNpcQuestStart.Quests)
 			{
-				if (NewQuestData.getInstance().getQuestById(quest.getId()) == null)
+				if (NewQuestData.getInstance().getQuestById(quest.Id) == null)
 					startingQuests.Add(quest);
 			}
 		}
@@ -82,9 +82,9 @@ public class QuestLink: IBypassHandler
 			Map<int, Quest> orderedQuests = new(); // Use TreeMap to order quests
 			foreach (Quest q in questList)
 			{
-				if (NewQuestData.getInstance().getQuestById(q.getId()) == null)
+				if (NewQuestData.getInstance().getQuestById(q.Id) == null)
 				{
-					orderedQuests.put(q.getId(), q);
+					orderedQuests.put(q.Id, q);
 				}
 			}
 
@@ -263,7 +263,7 @@ public class QuestLink: IBypassHandler
 		Quest? q = QuestManager.getInstance().getQuest(questId);
 		if (q != null)
 		{
-			if (q.getId() >= 1 && q.getId() < 20000 && (player.getWeightPenalty() >= 3 || !player.isInventoryUnder90(true)))
+			if (q.Id >= 1 && q.Id < 20000 && (player.getWeightPenalty() >= 3 || !player.isInventoryUnder90(true)))
 			{
 				player.sendPacket(SystemMessageId.UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_AND_SLOT_COUNT_ARE_LESS_THAN_80_PERCENT_OF_CAPACITY);
 				return;
@@ -271,7 +271,7 @@ public class QuestLink: IBypassHandler
 
 			// Get the state of the selected quest
 			QuestState? qs = player.getQuestState(questId);
-			if (qs == null && q.getId() >= 1 && q.getId() < 20000 && player.getAllActiveQuests().Count > 40)
+			if (qs == null && q.Id >= 1 && q.Id < 20000 && player.getAllActiveQuests().Count > 40)
 			{
 				HtmlContent htmlContent = HtmlContent.LoadFromFile("html/fullquest.html", player);
 				NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(npc.ObjectId, 0, htmlContent);
@@ -314,7 +314,7 @@ public class QuestLink: IBypassHandler
 			{
 				if (script is Quest quest)
 				{
-					if (quest.getId() > 0 && quest.getId() < 20000 && quest.getId() != 255 &&
+					if (quest.Id > 0 && quest.Id < 20000 && quest.Id != 255 &&
 					    !Quest.getNoQuestMsg(player).equals(quest.onTalk(npc, player, true)))
 					{
 						quests.add(quest);

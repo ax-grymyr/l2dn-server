@@ -26,11 +26,11 @@ public sealed class Unsummon: AbstractEffect
         if (_chance < 0)
             return true;
 
-        int magicLevel = skill.getMagicLevel();
+        int magicLevel = skill.MagicLevel;
         if (magicLevel <= 0 || effected.getLevel() - 9 <= magicLevel)
         {
             double chance = _chance * Formulas.calcAttributeBonus(effector, effected, skill) *
-                Formulas.calcGeneralTraitBonus(effector, effected, skill.getTraitType(), false);
+                Formulas.calcGeneralTraitBonus(effector, effected, skill.TraitType, false);
 
             if (chance >= 100 || chance > Rnd.nextDouble() * 100)
                 return true;

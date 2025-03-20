@@ -68,7 +68,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 
 		int skillId = player.getReplacementSkill(_id);
 		Skill? existingSkill = player.getKnownSkill(skillId); // Mobius: Keep existing sublevel.
-		Skill? skill = SkillData.getInstance().getSkill(skillId, _level, existingSkill?.getSubLevel() ?? 0);
+		Skill? skill = SkillData.getInstance().getSkill(skillId, _level, existingSkill?.SubLevel ?? 0);
 		if (skill == null)
 		{
 			PacketLogger.Instance.Warn(
@@ -159,9 +159,9 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 							foreach (ItemHolder item in items)
 							{
 								count++;
-								playerItemCount = player.getInventory().getInventoryItemCount(item.getId(), -1);
+								playerItemCount = player.getInventory().getInventoryItemCount(item.Id, -1);
 								if (playerItemCount >= item.getCount() &&
-								    player.destroyItemByItemId("PledgeLifeCrystal", item.getId(), item.getCount(),
+								    player.destroyItemByItemId("PledgeLifeCrystal", item.Id, item.getCount(),
 									    trainer, true))
 								{
 									break;
@@ -232,8 +232,8 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 					foreach (ItemHolder item in items)
 					{
 						count++;
-						playerItemCount = player.getInventory().getInventoryItemCount(item.getId(), -1);
-						if (playerItemCount >= item.getCount() && player.destroyItemByItemId("SubSkills", item.getId(), item.getCount(), trainer, true))
+						playerItemCount = player.getInventory().getInventoryItemCount(item.Id, -1);
+						if (playerItemCount >= item.getCount() && player.destroyItemByItemId("SubSkills", item.Id, item.getCount(), trainer, true))
 						{
 							break;
 						}
@@ -534,7 +534,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 					foreach (ItemHolder item in items)
 					{
 						count++;
-						playerItemCount = player.getInventory().getInventoryItemCount(item.getId(), -1);
+						playerItemCount = player.getInventory().getInventoryItemCount(item.Id, -1);
 						if (playerItemCount >= item.getCount())
 						{
 							break;
@@ -559,15 +559,15 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 					foreach (ItemHolder item in items)
 					{
 						count++;
-						playerItemCount = player.getInventory().getInventoryItemCount(item.getId(), -1);
-						if (playerItemCount >= item.getCount() && player.destroyItemByItemId("SkillLearn", item.getId(), item.getCount(), trainer, true))
+						playerItemCount = player.getInventory().getInventoryItemCount(item.Id, -1);
+						if (playerItemCount >= item.getCount() && player.destroyItemByItemId("SkillLearn", item.Id, item.getCount(), trainer, true))
 						{
 							break;
 						}
 
 						if (count == items.Count)
 						{
-							Util.handleIllegalPlayerAction(player, "Somehow " + player + ", level " + player.getLevel() + " lose required item Id: " + item.getId() + " to learn skill while learning skill Id: " + _id + " level " + skillLevel + "!", IllegalActionPunishmentType.NONE);
+							Util.handleIllegalPlayerAction(player, "Somehow " + player + ", level " + player.getLevel() + " lose required item Id: " + item.Id + " to learn skill while learning skill Id: " + _id + " level " + skillLevel + "!", IllegalActionPunishmentType.NONE);
 						}
 					}
 				}
@@ -624,11 +624,11 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 	{
 		player.addSkill(skill, store);
 		player.sendItemList();
-		player.updateShortCuts(_id, skill.getLevel(), skill.getSubLevel());
+		player.updateShortCuts(_id, skill.Level, skill.SubLevel);
 		player.sendPacket(new ShortCutInitPacket(player));
 		player.sendPacket(ExBasicActionListPacket.STATIC_PACKET);
-		player.sendPacket(new ExAcquireSkillResultPacket(skill.getId(), skill.getLevel(), true, SystemMessageId.YOU_HAVE_LEARNED_THE_SKILL_S1_2));
-		player.sendSkillList(skill.getId());
+		player.sendPacket(new ExAcquireSkillResultPacket(skill.Id, skill.Level, true, SystemMessageId.YOU_HAVE_LEARNED_THE_SKILL_S1_2));
+		player.sendSkillList(skill.Id);
 
 		// If skill is expand type then sends packet:
 		if (_id >= 1368 && _id <= 1372)

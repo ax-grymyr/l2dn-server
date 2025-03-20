@@ -1,4 +1,5 @@
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -42,7 +43,7 @@ public sealed class ChameleonRest: AbstractEffect
         }
 
         effected.reduceCurrentMp(manaDam);
-        return skill.isToggle();
+        return skill.IsToggle;
     }
 
     public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)

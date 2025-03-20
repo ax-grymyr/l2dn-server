@@ -32,12 +32,12 @@ public sealed class TimeStamp
 	 */
 	public TimeStamp(Skill skill, TimeSpan reuse, DateTime? systime = null)
 	{
-		_id1 = skill.getId();
-		_id2 = skill.getLevel();
-		_id3 = skill.getSubLevel();
+		_id1 = skill.Id;
+		_id2 = skill.Level;
+		_id3 = skill.SubLevel;
 		_reuse = reuse;
 		_stamp = systime != null ? systime.Value : reuse > TimeSpan.Zero ? DateTime.UtcNow + reuse : null;
-		_group = skill.getReuseDelayGroup();
+		_group = skill.ReuseDelayGroup;
 	}
 
 	/**
@@ -48,7 +48,7 @@ public sealed class TimeStamp
 	 */
 	public TimeStamp(Item item, TimeSpan reuse, DateTime? systime)
 	{
-		_id1 = item.getId();
+		_id1 = item.Id;
 		_id2 = item.ObjectId;
 		_id3 = 0;
 		_reuse = reuse;

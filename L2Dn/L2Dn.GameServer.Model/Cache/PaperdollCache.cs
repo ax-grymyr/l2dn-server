@@ -48,7 +48,7 @@ public class PaperdollCache
 		double value = 0;
 		foreach (Item item in _paperdollItems)
 		{
-			foreach (ArmorSet set in ArmorSetData.getInstance().getSets(item.getId()))
+			foreach (ArmorSet set in ArmorSetData.getInstance().getSets(item.Id))
 			{
 				if ((set.getPiecesCountById(player) >= set.getMinimumPieces()) && appliedSets.add(set))
 				{
@@ -71,7 +71,7 @@ public class PaperdollCache
 		int maxSetEnchant = 0;
 		foreach (Item item in _paperdollItems)
 		{
-			foreach (ArmorSet set in ArmorSetData.getInstance().getSets(item.getId()))
+			foreach (ArmorSet set in ArmorSetData.getInstance().getSets(item.Id))
 			{
 				int enchantEffect = set.getLowestSetEnchant(playable);
 				if (enchantEffect > maxSetEnchant)

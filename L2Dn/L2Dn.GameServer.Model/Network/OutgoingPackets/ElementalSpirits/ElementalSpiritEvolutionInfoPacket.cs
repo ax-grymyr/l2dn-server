@@ -12,17 +12,17 @@ public readonly struct ElementalSpiritEvolutionInfoPacket: IOutgoingPacket
 {
     private readonly Player _player;
     private readonly ElementalType _type;
-	
+
     public ElementalSpiritEvolutionInfoPacket(Player player, ElementalType type)
     {
         _player = player;
         _type = type;
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_ELEMENTAL_SPIRIT_EVOLUTION_INFO);
-        
+
         ElementalSpirit? spirit = _player.getElementalSpirit(_type);
         if (spirit == null)
         {
@@ -30,7 +30,7 @@ public readonly struct ElementalSpiritEvolutionInfoPacket: IOutgoingPacket
             writer.WriteInt32(0);
             return;
         }
-        
+
         writer.WriteByte((byte)_type);
         writer.WriteInt32(spirit.getNpcId());
         writer.WriteInt32(1); // unk
@@ -41,7 +41,7 @@ public readonly struct ElementalSpiritEvolutionInfoPacket: IOutgoingPacket
         writer.WriteInt32(items.Length);
         foreach (ItemHolder item in items)
         {
-            writer.WriteInt32(item.getId());
+            writer.WriteInt32(item.Id);
             writer.WriteInt64(item.getCount());
         }
     }

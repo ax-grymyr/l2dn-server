@@ -1,8 +1,8 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 
@@ -21,7 +21,7 @@ public class Self: ITargetTypeHandler
 
 	public WorldObject? getTarget(Creature creature, WorldObject? selectedTarget, Skill skill, bool forceUse, bool dontMove, bool sendMessage)
 	{
-		if (creature.isInsideZone(ZoneId.PEACE) && skill.isBad())
+		if (creature.isInsideZone(ZoneId.PEACE) && skill.IsBad)
 		{
 			if (sendMessage)
 			{

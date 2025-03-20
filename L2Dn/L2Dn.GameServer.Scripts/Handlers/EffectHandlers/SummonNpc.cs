@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
@@ -6,7 +7,6 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 
@@ -48,7 +48,7 @@ public sealed class SummonNpc: AbstractEffect
 
         if (_npcId <= 0 || _npcCount <= 0)
         {
-            LOGGER.Warn(GetType().Name + ": Invalid NPC ID or count skill ID: " + skill.getId());
+            LOGGER.Warn(GetType().Name + ": Invalid NPC ID or count skill ID: " + skill.Id);
             return;
         }
 
@@ -59,7 +59,7 @@ public sealed class SummonNpc: AbstractEffect
         if (npcTemplate == null)
         {
             LOGGER.Warn(GetType().Name + ": Spawn of the nonexisting NPC ID: " + _npcId + ", skill ID:" +
-                skill.getId());
+                skill.Id);
 
             return;
         }
@@ -68,7 +68,7 @@ public sealed class SummonNpc: AbstractEffect
         int y = player.getY();
         int z = player.getZ();
 
-        if (skill.getTargetType() == TargetType.GROUND)
+        if (skill.TargetType == TargetType.GROUND)
         {
             Location3D? wordPosition = player.getActingPlayer().getCurrentSkillWorldPosition();
             if (wordPosition != null)
@@ -96,7 +96,7 @@ public sealed class SummonNpc: AbstractEffect
         {
             foreach (Npc npc in player.getSummonedNpcs())
             {
-                if (npc.getId() == _npcId)
+                if (npc.Id == _npcId)
                     npc.deleteMe();
             }
         }

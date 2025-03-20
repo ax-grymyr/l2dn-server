@@ -44,7 +44,7 @@ public struct ExRequestSetEnchantChallengePointPacket: IIncomingPacket<GameSessi
 	    }
 
 	    EnchantChallengePointData.EnchantChallengePointsItemInfo? info =
-            EnchantChallengePointData.getInstance().getInfoByItemId(item.getId());
+            EnchantChallengePointData.getInstance().getInfoByItemId(item.Id);
 
 	    if (info == null)
 	    {
@@ -100,7 +100,7 @@ public struct ExRequestSetEnchantChallengePointPacket: IIncomingPacket<GameSessi
             return ValueTask.CompletedTask;
         }
 
-	    EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(enchantingScroll.getId());
+	    EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(enchantingScroll.Id);
         if (scrollTemplate == null)
         {
             player.sendPacket(new ExSetEnchantChallengePointPacket(false));

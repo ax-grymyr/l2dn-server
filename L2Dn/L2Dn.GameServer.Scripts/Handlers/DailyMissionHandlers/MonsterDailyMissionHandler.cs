@@ -80,7 +80,7 @@ public class MonsterDailyMissionHandler: AbstractDailyMissionHandler
     private void onAttackableKill(OnAttackableKill @event)
     {
         Attackable monster = @event.getTarget();
-        if (!_ids.isEmpty() && !_ids.Contains(monster.getId()))
+        if (!_ids.isEmpty() && !_ids.Contains(monster.Id))
         {
             return;
         }

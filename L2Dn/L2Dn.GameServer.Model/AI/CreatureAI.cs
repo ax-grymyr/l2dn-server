@@ -245,7 +245,7 @@ public class CreatureAI: AbstractAI
 	 */
 	protected override void onIntentionCast(Skill skill, WorldObject? target, Item? item, bool forceUse, bool dontMove)
 	{
-		if (getIntention() == CtrlIntention.AI_INTENTION_REST && skill.isMagic())
+		if (getIntention() == CtrlIntention.AI_INTENTION_REST && skill.IsMagic)
 		{
 			clientActionFailed();
 			return;
@@ -1016,7 +1016,7 @@ public class CreatureAI: AbstractAI
      */
     protected bool checkTargetLost(WorldObject? target)
     {
-        if (target == null || (_actor != null && _skill != null && _skill.isBad() && _skill.getAffectRange() > 0 &&
+        if (target == null || (_actor != null && _skill != null && _skill.IsBad && _skill.AffectRange > 0 &&
                 (_actor.isPlayer() && _actor.isMoving()
                     ? !GeoEngine.getInstance().canMoveToTarget(_actor.Location.Location3D, target.Location.Location3D)
                     : !GeoEngine.getInstance().canSeeTarget(_actor, target))))
@@ -1098,7 +1098,7 @@ public class CreatureAI: AbstractAI
 			// water movement analysis
 			if (_ai._actor.isNpc())
 			{
-				switch (_ai._actor.getId())
+				switch (_ai._actor.Id)
 				{
 					case 20314: // great white shark
 					case 20849: // Light Worm
@@ -1116,16 +1116,16 @@ public class CreatureAI: AbstractAI
 			// skill analysis
 			foreach (Skill sk in _ai._actor.getAllSkills())
 			{
-				if (sk.isPassive())
+				if (sk.IsPassive)
 				{
 					continue;
 				}
 
-				int castRange = sk.getCastRange();
+				int castRange = sk.CastRange;
 				bool hasLongRangeDamageSkill = false;
-				if (sk.isContinuous())
+				if (sk.IsContinuous)
 				{
-					if (!sk.isDebuff())
+					if (!sk.IsDebuff)
 					{
 						buffSkills.add(sk);
 					}
@@ -1136,25 +1136,25 @@ public class CreatureAI: AbstractAI
 					continue;
 				}
 
-				if (sk.hasEffectType(EffectType.DISPEL, EffectType.DISPEL_BY_SLOT))
+				if (sk.HasEffectType(EffectType.DISPEL, EffectType.DISPEL_BY_SLOT))
 				{
 					cancelSkills.add(sk);
 				}
-				else if (sk.hasEffectType(EffectType.HEAL))
+				else if (sk.HasEffectType(EffectType.HEAL))
 				{
 					healSkills.add(sk);
 					hasHealOrResurrect = true;
 				}
-				else if (sk.hasEffectType(EffectType.SLEEP))
+				else if (sk.HasEffectType(EffectType.SLEEP))
 				{
 					sleepSkills.add(sk);
 				}
-				else if (sk.hasEffectType(EffectType.BLOCK_ACTIONS))
+				else if (sk.HasEffectType(EffectType.BLOCK_ACTIONS))
 				{
 					// hardcoding petrification until improvements are made to
 					// EffectTemplate... petrification is totally different for
 					// AI than paralyze
-					switch (sk.getId())
+					switch (sk.Id)
 					{
 						case 367:
 						case 4111:
@@ -1172,19 +1172,19 @@ public class CreatureAI: AbstractAI
 						}
 					}
 				}
-				else if (sk.hasEffectType(EffectType.ROOT))
+				else if (sk.HasEffectType(EffectType.ROOT))
 				{
 					rootSkills.add(sk);
 				}
-				else if (sk.hasEffectType(EffectType.BLOCK_CONTROL))
+				else if (sk.HasEffectType(EffectType.BLOCK_CONTROL))
 				{
 					debuffSkills.add(sk);
 				}
-				else if (sk.hasEffectType(EffectType.MUTE))
+				else if (sk.HasEffectType(EffectType.MUTE))
 				{
 					muteSkills.add(sk);
 				}
-				else if (sk.hasEffectType(EffectType.RESURRECTION))
+				else if (sk.HasEffectType(EffectType.RESURRECTION))
 				{
 					resurrectSkills.add(sk);
 					hasHealOrResurrect = true;

@@ -212,7 +212,7 @@ public class Doppelganger : Attackable
 		StringBuilder sb = new();
 		sb.Append(base.ToString());
 		sb.Append("(");
-		sb.Append(getId());
+		sb.Append(Id);
 		sb.Append(") Summoner: ");
 		sb.Append(getSummoner());
 		return sb.ToString();

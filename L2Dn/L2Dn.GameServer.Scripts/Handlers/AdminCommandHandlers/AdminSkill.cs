@@ -192,7 +192,7 @@ public class AdminSkill: IAdminCommandHandler
 			{
 				activeChar.addSkill(skill);
 				activeChar.sendSkillList();
-				BuilderUtil.sendSysMessage(activeChar, "You added yourself skill " + skill.getName() + "(" + id + ") level " + level);
+				BuilderUtil.sendSysMessage(activeChar, "You added yourself skill " + skill.Name + "(" + id + ") level " + level);
 				activeChar.sendPacket(new AcquireSkillListPacket(activeChar));
 			}
 			else
@@ -224,22 +224,22 @@ public class AdminSkill: IAdminCommandHandler
 
 				if (command.equalsIgnoreCase("admin_castnow"))
 				{
-					BuilderUtil.sendSysMessage(activeChar, "Admin instant casting " + skill.getName() + " (" + skillId + "," + skillLevel + ")");
-					WorldObject? target = skill.getTarget(activeChar, true, false, true);
+					BuilderUtil.sendSysMessage(activeChar, "Admin instant casting " + skill.Name + " (" + skillId + "," + skillLevel + ")");
+					WorldObject? target = skill.GetTarget(activeChar, true, false, true);
 					if (target != null)
 					{
-						skill.forEachTargetAffected<Creature>(activeChar, target, o =>
+						skill.ForEachTargetAffected<Creature>(activeChar, target, o =>
 						{
 							if (o.isCreature())
 							{
-								skill.activateSkill(activeChar, [o]);
+								skill.ActivateSkill(activeChar, [o]);
 							}
 						});
 					}
 				}
 				else
 				{
-					BuilderUtil.sendSysMessage(activeChar, "Admin casting " + skill.getName() + " (" + skillId + "," + skillLevel + ")");
+					BuilderUtil.sendSysMessage(activeChar, "Admin casting " + skill.Name + " (" + skillId + "," + skillLevel + ")");
 					activeChar.doCast(skill);
 				}
 
@@ -373,7 +373,7 @@ public class AdminSkill: IAdminCommandHandler
 		replyMSG.Append("</tr></table></center><br><table width=270><tr><td width=80>Name:</td><td width=60>Level:</td><td width=40>Id:</td></tr>");
 		for (int i = skillsStart; i < skillsEnd; i++)
 		{
-			replyMSG.Append("<tr><td width=80><a action=\"bypass -h admin_remove_skill " + skills[i].getId() + "\">" + skills[i].getName() + "</a></td><td width=60>" + skills[i].getLevel() + "</td><td width=40>" + skills[i].getId() + "</td></tr>");
+			replyMSG.Append("<tr><td width=80><a action=\"bypass -h admin_remove_skill " + skills[i].Id + "\">" + skills[i].Name + "</a></td><td width=60>" + skills[i].Level + "</td><td width=40>" + skills[i].Id + "</td></tr>");
 		}
 
 		replyMSG.Append("</table><br><center><table>Remove skill by ID :<tr><td>Id: </td><td><edit var=\"id_to_remove\" width=110></td></tr></table></center><center><button value=\"Remove skill\" action=\"bypass -h admin_remove_skill $id_to_remove\" width=110 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center><br><center><button value=\"Back\" action=\"bypass -h admin_current_player\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
@@ -521,7 +521,7 @@ public class AdminSkill: IAdminCommandHandler
 			}
 			if (skill != null)
 			{
-				string name = skill.getName();
+				string name = skill.Name;
 				// Player's info.
 				player.sendMessage("Admin gave you the skill " + name + ".");
 				player.addSkill(skill, true);
@@ -555,7 +555,7 @@ public class AdminSkill: IAdminCommandHandler
         Skill? skill = SkillData.getInstance().getSkill(idval, player.getSkillLevel(idval));
 		if (skill != null)
 		{
-			string skillname = skill.getName();
+			string skillname = skill.Name;
 			player.sendMessage("Admin removed the skill " + skillname + " from your skills list.");
 			player.removeSkill(skill);
 			// Admin information
@@ -609,7 +609,7 @@ public class AdminSkill: IAdminCommandHandler
 			return;
 		}
 
-		string skillname = skill.getName();
+		string skillname = skill.Name;
 		sm = new SystemMessagePacket(SystemMessageId.THE_CLAN_SKILL_S1_HAS_BEEN_ADDED);
 		sm.Params.addSkillName(skill);
 		player.sendPacket(sm);

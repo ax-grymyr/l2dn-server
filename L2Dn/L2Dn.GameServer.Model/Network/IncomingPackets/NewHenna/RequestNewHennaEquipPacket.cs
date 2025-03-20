@@ -55,7 +55,7 @@ public struct RequestNewHennaEquipPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		Henna? henna = HennaData.getInstance().getHennaByItemId(item.getId());
+		Henna? henna = HennaData.getInstance().getHennaByItemId(item.Id);
 		if (henna == null)
 		{
 			PacketLogger.Instance.Warn(player + ": Invalid Henna SymbolId " + _symbolId + " " + _slotId + " " + item.getTemplate());

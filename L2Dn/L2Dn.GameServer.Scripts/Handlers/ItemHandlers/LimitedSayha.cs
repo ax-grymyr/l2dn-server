@@ -20,7 +20,7 @@ public class LimitedSayha: IItemHandler
 		}
 
 		long time;
-		switch (item.getId())
+		switch (item.Id)
 		{
 			case 71899:
 			{

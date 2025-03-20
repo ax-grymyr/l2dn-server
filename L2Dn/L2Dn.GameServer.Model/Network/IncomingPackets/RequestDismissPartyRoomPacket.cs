@@ -23,7 +23,7 @@ public struct RequestDismissPartyRoomPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         MatchingRoom? room = player.getMatchingRoom();
-        if (room == null || room.getId() != _roomId || room.getRoomType() != MatchingRoomType.PARTY ||
+        if (room == null || room.Id != _roomId || room.getRoomType() != MatchingRoomType.PARTY ||
             room.getLeader() != player)
         {
             return ValueTask.CompletedTask;

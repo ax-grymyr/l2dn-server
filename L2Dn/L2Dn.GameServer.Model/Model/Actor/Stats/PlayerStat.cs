@@ -97,7 +97,7 @@ public class PlayerStat: PlayableStat
 				{
 					foreach (ItemSkillHolder s in rod.getTemplate().getAllSkills())
 					{
-						if (s.getSkill().getId() == FANCY_FISHING_ROD_SKILL)
+						if (s.getSkill().Id == FANCY_FISHING_ROD_SKILL)
 						{
 							bonusExp *= 1.5;
 							bonusSp *= 1.5;
@@ -731,7 +731,7 @@ public class PlayerStat: PlayableStat
 	public override TimeSpan getReuseTime(Skill skill)
 	{
 		int addedReuse = 0;
-		if (skill.hasEffectType(EffectType.TELEPORT))
+		if (skill.HasEffectType(EffectType.TELEPORT))
 		{
 			switch (getActiveChar().getActingPlayer().getEinhasadOverseeingLevel())
 			{

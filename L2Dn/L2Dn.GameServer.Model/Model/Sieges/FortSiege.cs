@@ -483,7 +483,7 @@ public class FortSiege: Siegable
 				foreach (Player player in World.getInstance().getPlayers())
 				{
 					Item? weap = player.getActiveWeaponInstance();
-					if (weap != null && weap.getId() == FortManager.ORC_FORTRESS_FLAG)
+					if (weap != null && weap.Id == FortManager.ORC_FORTRESS_FLAG)
 					{
 						FortSiegeManager.getInstance().dropCombatFlag(player, getFort().getResidenceId());
 					}
@@ -493,7 +493,7 @@ public class FortSiege: Siegable
 				{
 					if (obj is Item)
 					{
-						if (obj.getId() == FortManager.ORC_FORTRESS_FLAG)
+						if (obj.Id == FortManager.ORC_FORTRESS_FLAG)
 						{
 							obj.decayMe();
 						}
@@ -521,7 +521,7 @@ public class FortSiege: Siegable
 			int ownerId = -1;
             Clan? ownerClan = _fort.getOwnerClan();
 			if (ownerClan != null)
-				ownerId = ownerClan.getId();
+				ownerId = ownerClan.Id;
 
             SiegeZone zone = _fort.getZone() ?? throw new InvalidOperationException("Fort zone is null");
             zone.banishForeigners(ownerId);
@@ -743,7 +743,7 @@ public class FortSiege: Siegable
         clan = _fort.getOwnerClan();
 		if (clan != null)
 		{
-			clan = ClanTable.getInstance().getClan(clan.getId());
+			clan = ClanTable.getInstance().getClan(clan.Id);
             if (clan != null)
             {
                 foreach (Player member in clan.getOnlineMembers(0))
@@ -806,7 +806,7 @@ public class FortSiege: Siegable
         clan = _fort.getOwnerClan();
         if (clan != null)
         {
-            clan = ClanTable.getInstance().getClan(clan.getId());
+            clan = ClanTable.getInstance().getClan(clan.Id);
             if (clan != null)
             {
                 foreach (Player member in clan.getOnlineMembers(0))
@@ -892,7 +892,7 @@ public class FortSiege: Siegable
             Clan? ownerClan = _fort.getOwnerClan();
 			if (ownerClan != null)
 			{
-				int clanId = ownerClan.getId();
+				int clanId = ownerClan.Id;
 				ctx.FortSiegeClans.Where(r => r.ClanId == clanId).ExecuteDelete();
 			}
 
@@ -967,7 +967,7 @@ public class FortSiege: Siegable
 		List<Player> players = new();
 		if (_fort.getOwnerClan() is {} ownerClan)
 		{
-			Clan? clan = ClanTable.getInstance().getClan(ownerClan.getId());
+			Clan? clan = ClanTable.getInstance().getClan(ownerClan.Id);
 			if (clan != _fort.getOwnerClan())
 			{
 				return null;
@@ -1007,7 +1007,7 @@ public class FortSiege: Siegable
 			{
 				foreach (FortSiegeSpawn spawn2 in FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
 				{
-					if (spawn2.getId() == spawn.getId())
+					if (spawn2.Id == spawn.Id)
 					{
 						NpcStringId? npcString = null;
 						switch (spawn2.getMessageId())
@@ -1077,7 +1077,7 @@ public class FortSiege: Siegable
 			}
 			else
 			{
-				LOGGER.Warn(GetType().Name + ": FortSiege.killedCommander(): killed commander, but commander not registered for fortress. NpcId: " + instance.getId() + " FortId: " + _fort.getResidenceId());
+				LOGGER.Warn(GetType().Name + ": FortSiege.killedCommander(): killed commander, but commander not registered for fortress. NpcId: " + instance.Id + " FortId: " + _fort.getResidenceId());
 			}
 		}
 	}
@@ -1130,7 +1130,7 @@ public class FortSiege: Siegable
 
 			foreach (Fort fort in FortManager.getInstance().getForts())
 			{
-				if (fort.getSiege().getAttackerClan(playerClan.getId()) != null)
+				if (fort.getSiege().getAttackerClan(playerClan.Id) != null)
 				{
 					return 3; // Players clan is already registered to siege
 				}
@@ -1164,7 +1164,7 @@ public class FortSiege: Siegable
 		{
 			return;
 		}
-		removeSiegeClan(clan.getId());
+		removeSiegeClan(clan.Id);
 	}
 
 	/**
@@ -1502,12 +1502,12 @@ public class FortSiege: Siegable
 			ctx.FortSiegeClans.Add(new DbFortSiegeClan()
 			{
 				FortId = (short)_fort.getResidenceId(),
-				ClanId = clan.getId()
+				ClanId = clan.Id
 			});
 
 			ctx.SaveChanges();
 
-			addAttacker(clan.getId());
+			addAttacker(clan.Id);
 		}
 		catch (Exception e)
 		{
@@ -1524,7 +1524,7 @@ public class FortSiege: Siegable
 			_commanders.clear();
 			foreach (FortSiegeSpawn sp in FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
 			{
-				Spawn spawnDat = new Spawn(sp.getId());
+				Spawn spawnDat = new Spawn(sp.Id);
 				spawnDat.setAmount(1);
 				spawnDat.Location = sp.Location;
 				spawnDat.setRespawnDelay(TimeSpan.FromSeconds(60));
@@ -1655,7 +1655,7 @@ public class FortSiege: Siegable
 		{
 			return null;
 		}
-		return getAttackerClan(clan.getId());
+		return getAttackerClan(clan.Id);
 	}
 
 	public SiegeClan? getAttackerClan(int clanId)

@@ -20,7 +20,7 @@ public class PreparedMultisellListHolder: MultisellListHolder
 
 	public PreparedMultisellListHolder(MultisellListHolder list, bool inventoryOnly, ItemContainer inventory, Npc? npc,
 		double ingredientMultiplier, double productMultiplier)
-		: base(list.getId(), list.isChanceMultisell(), list.isApplyTaxes(), list.isMaintainEnchantment(),
+		: base(list.Id, list.isChanceMultisell(), list.isApplyTaxes(), list.isMaintainEnchantment(),
 			list.getIngredientMultiplier(), list.getProductMultiplier(), list.getEntries(), list.getNpcsAllowed())
 	{
 		_inventoryOnly = inventoryOnly;
@@ -46,7 +46,7 @@ public class PreparedMultisellListHolder: MultisellListHolder
 					{
 						foreach (ItemChanceHolder holder in entry.getIngredients())
 						{
-							if (holder.getId() == item.getId())
+							if (holder.Id == item.Id)
 							{
 								_entries = _entries.Add(entry);
 								_itemInfos.Add(new ItemInfo(item));
@@ -84,7 +84,7 @@ public class PreparedMultisellListHolder: MultisellListHolder
 	 */
 	public long getIngredientCount(ItemHolder ingredient)
 	{
-		return (long)(ingredient.getId() == Inventory.ADENA_ID
+		return (long)(ingredient.Id == Inventory.ADENA_ID
 			? Math.Round(ingredient.getCount() * getIngredientMultiplier() * (1 + getTaxRate()))
 			: Math.Round(ingredient.getCount() * getIngredientMultiplier()));
 	}

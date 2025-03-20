@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
@@ -35,7 +36,7 @@ public sealed class SummonHallucination: AbstractEffect
 
         if (_npcId <= 0 || _npcCount <= 0)
         {
-            LOGGER.Warn(GetType().Name + ": Invalid NPC ID or count skill ID: " + skill.getId());
+            LOGGER.Warn(GetType().Name + ": Invalid NPC ID or count skill ID: " + skill.Id);
             return;
         }
 
@@ -50,7 +51,7 @@ public sealed class SummonHallucination: AbstractEffect
         if (npcTemplate == null)
         {
             LOGGER.Warn(GetType().Name + ": Spawn of the nonexisting NPC ID: " + _npcId + ", skill ID:" +
-                skill.getId());
+                skill.Id);
 
             return;
         }

@@ -28,14 +28,14 @@ public sealed class TransferHate: AbstractEffect
 
     public override bool canStart(Creature effector, Creature effected, Skill skill)
     {
-        return Util.checkIfInRange(skill.getEffectRange(), effector, effected, true);
+        return Util.checkIfInRange(skill.EffectRange, effector, effected, true);
     }
 
     public override bool isInstant() => true;
 
     public override void instant(Creature effector, Creature effected, Skill skill, Item? item)
     {
-        World.getInstance().forEachVisibleObjectInRange<Attackable>(effector, skill.getAffectRange(), hater =>
+        World.getInstance().forEachVisibleObjectInRange<Attackable>(effector, skill.AffectRange, hater =>
         {
             if (hater.isDead())
                 return;

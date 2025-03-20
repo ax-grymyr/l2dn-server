@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -25,10 +26,10 @@ public sealed class HpToOwner: AbstractEffect
 
     public override void onStart(Creature effector, Creature effected, Skill skill, Item? item)
     {
-        if (!skill.isToggle() && skill.isMagic())
+        if (!skill.IsToggle && skill.IsMagic)
         {
             // TODO: M.Crit can occur even if this skill is resisted. Only then m.crit damage is applied and not debuff
-            bool mcrit = Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill);
+            bool mcrit = Formulas.calcCrit(skill.MagicCriticalRate, effector, effected, skill);
             if (mcrit)
             {
                 double damage = _power * 10; // Tests show that 10 times HP DOT is taken during magic critical.
@@ -54,7 +55,7 @@ public sealed class HpToOwner: AbstractEffect
             effector.setCurrentMp(effector.getCurrentMp() + amount);
         }
 
-        return skill.isToggle();
+        return skill.IsToggle;
     }
 
     public override int GetHashCode() => HashCode.Combine(_power, _stealAmount, Ticks);

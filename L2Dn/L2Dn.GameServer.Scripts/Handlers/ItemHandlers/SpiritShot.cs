@@ -33,7 +33,7 @@ public class SpiritShot: IItemHandler
 			return false;
 		}
 
-		int itemId = item.getId();
+		int itemId = item.Id;
 
 		// Check if SpiritShot can be used
 		if (weaponInst == null || weaponItem == null || weaponItem.getSpiritShotCount() == 0)
@@ -65,7 +65,7 @@ public class SpiritShot: IItemHandler
 		player.chargeShot(ShotType.SPIRITSHOTS);
 
 		// Send message to client
-		if (!player.getAutoSoulShot().Contains(item.getId()))
+		if (!player.getAutoSoulShot().Contains(item.Id))
 		{
 			player.sendPacket(SystemMessageId.YOUR_SPIRITSHOT_HAS_BEEN_ENABLED);
 		}
@@ -125,7 +125,7 @@ public class SpiritShot: IItemHandler
 			return false;
 		}
 
-		int itemId = item.getId();
+		int itemId = item.Id;
 		bool isBlessed = itemId == 6647 || itemId == 20334; // TODO: Unhardcode these!
 		ShotType shotType = isBlessed ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS;
 		short shotConsumption = 0;

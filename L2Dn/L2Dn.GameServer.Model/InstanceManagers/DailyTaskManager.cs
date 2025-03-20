@@ -245,7 +245,7 @@ public class DailyTaskManager
 	{
 		foreach (Clan clan in ClanTable.getInstance().getClans())
 		{
-			GlobalVariablesManager.getInstance().Remove(GlobalVariablesManager.MONSTER_ARENA_VARIABLE + clan.getId());
+			GlobalVariablesManager.getInstance().Remove(GlobalVariablesManager.MONSTER_ARENA_VARIABLE + clan.Id);
 		}
 	}
 
@@ -278,7 +278,7 @@ public class DailyTaskManager
 			{
 				foreach (Player player in World.getInstance().getPlayers())
 				{
-					if (player.hasSkillReuse(skill.getReuseHashCode()))
+					if (player.hasSkillReuse(skill.ReuseHashCode))
 					{
 						player.removeTimeStamp(skill);
 						// updates.add(player);

@@ -19,7 +19,7 @@ public class PetFood: IItemHandler
 {
 	public bool useItem(Playable playable, Item item, bool forceUse)
 	{
-		if (playable.isPet() && !((Pet)playable).canEatFoodId(item.getId()))
+		if (playable.isPet() && !((Pet)playable).canEatFoodId(item.Id))
 		{
 			playable.sendPacket(SystemMessageId.THIS_PET_CANNOT_USE_THIS_ITEM);
 			return false;
@@ -47,7 +47,7 @@ public class PetFood: IItemHandler
 				{
 					pet.broadcastPacket(new MagicSkillUsePacket(pet, pet, skillId, skillLevel, TimeSpan.Zero,
 						TimeSpan.Zero));
-					skill.applyEffects(pet, pet);
+					skill.ApplyEffects(pet, pet);
 					pet.broadcastStatusUpdate();
 					if (pet.isHungry())
 					{
@@ -62,12 +62,12 @@ public class PetFood: IItemHandler
 				if (player.isMounted())
 				{
 					Set<int>? foodIds = PetDataTable.getInstance().getPetData(player.getMountNpcId())?.getFood();
-					if (foodIds != null && foodIds.Contains(item.getId()) &&
+					if (foodIds != null && foodIds.Contains(item.Id) &&
 					    player.destroyItem("Consume", item.ObjectId, 1, null, false))
 					{
 						player.broadcastPacket(new MagicSkillUsePacket(player, player, skillId, skillLevel,
 							TimeSpan.Zero, TimeSpan.Zero));
-						skill.applyEffects(player, player);
+						skill.ApplyEffects(player, player);
 						return true;
 					}
 				}

@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -39,7 +40,7 @@ public struct RequestPledgeBonusRewardPacket: IIncomingPacket<GameSession>
                 SkillHolder skillReward = bonus.getSkillReward();
                 if (skillReward != null)
                 {
-                    skillReward.getSkill().activateSkill(player, [player]);
+                    skillReward.getSkill().ActivateSkill(player, [player]);
                 }
 
                 member.setRewardClaimed(_type);

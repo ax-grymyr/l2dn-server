@@ -48,7 +48,7 @@ public class AdminSuperHaste: IAdminCommandHandler
 						}
 
 						Skill? superHasteSkill = SkillData.getInstance().getSkill(SUPER_HASTE_ID, val);
-						superHasteSkill?.applyEffects(player, player, true, TimeSpan.FromSeconds(time));
+						superHasteSkill?.ApplyEffects(player, player, true, TimeSpan.FromSeconds(time));
 					}
 				}
 				catch (Exception e)

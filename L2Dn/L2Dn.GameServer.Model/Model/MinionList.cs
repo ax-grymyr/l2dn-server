@@ -55,7 +55,7 @@ public class MinionList
 		foreach (MinionHolder minion in minions)
 		{
 			minionCount = minion.getCount();
-			minionId = minion.getId();
+			minionId = minion.Id;
 			minionsToSpawn = minionCount - countSpawnedMinionsById(minionId);
 			if (minionsToSpawn > 0)
 			{
@@ -332,7 +332,7 @@ public class MinionList
 		int count = 0;
 		foreach (Monster minion in _spawnedMinions)
 		{
-			if (minion != null && minion.getId() == minionId)
+			if (minion != null && minion.Id == minionId)
 			{
 				count++;
 			}

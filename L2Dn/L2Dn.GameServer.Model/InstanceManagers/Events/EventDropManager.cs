@@ -48,7 +48,7 @@ public class EventDropManager
 		{
 			foreach (EventDropHolder drop in eventDrops)
 			{
-				if (!drop.getMonsterIds().isEmpty() && !drop.getMonsterIds().Contains(attackable.getId()))
+				if (!drop.getMonsterIds().isEmpty() && !drop.getMonsterIds().Contains(attackable.Id))
 				{
 					continue;
 				}

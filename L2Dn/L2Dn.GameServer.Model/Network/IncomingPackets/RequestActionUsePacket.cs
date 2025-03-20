@@ -65,7 +65,7 @@ public struct RequestActionUsePacket: IIncomingPacket<GameSession>
 			{
 				connection.Send(ActionFailedPacket.STATIC_PACKET);
 				PacketLogger.Instance.Warn(player + " used action which he does not have! Id = " + _actionId +
-				                           " transform: " + transform.getId());
+				                           " transform: " + transform.Id);
 
 				return ValueTask.CompletedTask;
 			}

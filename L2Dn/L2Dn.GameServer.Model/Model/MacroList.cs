@@ -25,20 +25,20 @@ public class MacroList(Player owner): IRestorable
 	public void registerMacro(Macro macro)
 	{
 		MacroUpdateType updateType = MacroUpdateType.ADD;
-		if (macro.getId() == 0)
+		if (macro.Id == 0)
 		{
 			macro.setId(_macroId++);
-			while (_macroses.ContainsKey(macro.getId()))
+			while (_macroses.ContainsKey(macro.Id))
 			{
 				macro.setId(_macroId++);
 			}
-			_macroses.put(macro.getId(), macro);
+			_macroses.put(macro.Id, macro);
 			registerMacroInDb(macro);
 		}
 		else
 		{
 			updateType = MacroUpdateType.MODIFY;
-			Macro? old = _macroses.put(macro.getId(), macro);
+			Macro? old = _macroses.put(macro.Id, macro);
 			if (old != null)
 			{
 				deleteMacroFromDb(old);
@@ -108,7 +108,7 @@ public class MacroList(Player owner): IRestorable
 			ctx.CharacterMacros.Add(new DbCharacterMacros()
 			{
 				CharacterId = owner.ObjectId,
-				Id = macro.getId(),
+				Id = macro.Id,
 				Icon = macro.getIcon(),
 				Name = macro.getName(),
 				Description = macro.getDescr(),
@@ -129,7 +129,7 @@ public class MacroList(Player owner): IRestorable
 		{
 			using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 			int characterId = owner.ObjectId;
-			int macroId = macro.getId();
+			int macroId = macro.Id;
 			ctx.CharacterMacros.Where(r => r.CharacterId == characterId && r.Id == macroId).ExecuteDelete();
 		}
 		catch (Exception e)

@@ -49,7 +49,7 @@ public sealed class ZoneRegion(int regionX, int regionY)
 
     public bool checkEffectRangeInsidePeaceZone(Skill skill, int x, int y, int z)
     {
-        int range = skill.getEffectRange();
+        int range = skill.EffectRange;
         int up = y + range;
         int down = y - range;
         int left = x + range;

@@ -52,8 +52,8 @@ public struct RequestNewHennaPotenEnchantPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 
 		int costItemId = _costItemId;
-		ItemHolder? itemFee = currentFee.getItems().FirstOrDefault(ih => ih.getId() == costItemId);
-		if (itemFee == null || !player.destroyItemByItemId(GetType().Name, itemFee.getId(), itemFee.getCount(), player, true))
+		ItemHolder? itemFee = currentFee.getItems().FirstOrDefault(ih => ih.Id == costItemId);
+		if (itemFee == null || !player.destroyItemByItemId(GetType().Name, itemFee.Id, itemFee.getCount(), player, true))
 			return ValueTask.CompletedTask;
 
 		dailyCount -= 1;

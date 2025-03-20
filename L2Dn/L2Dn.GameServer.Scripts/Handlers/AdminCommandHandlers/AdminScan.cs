@@ -72,7 +72,7 @@ public class AdminScan: IAdminCommandHandler
 					{
 						spawn.stopRespawn();
 
-						if (DbSpawnManager.getInstance().isDefined(spawn.getId()))
+						if (DbSpawnManager.getInstance().isDefined(spawn.Id))
 						{
 							DbSpawnManager.getInstance().deleteSpawn(spawn, true);
 						}
@@ -107,7 +107,7 @@ public class AdminScan: IAdminCommandHandler
 		Predicate<Npc> condition;
 		if (id > 0)
 		{
-			condition = npc => npc.getId() == id;
+			condition = npc => npc.Id == id;
 		}
 		else if (!string.IsNullOrEmpty(name))
 		{
@@ -162,7 +162,7 @@ public class AdminScan: IAdminCommandHandler
 			builder.AddParam("page", page);
 			builder.AddParam("objectId", character.ObjectId);
 			sb.Append("<tr>");
-			sb.Append("<td width=\"45\">").Append(character.getId()).Append("</td>");
+			sb.Append("<td width=\"45\">").Append(character.Id).Append("</td>");
 			sb.Append("<td><a action=\"bypass -h admin_move_to ").Append(character.getX()).Append(SPACE).Append(character.getY()).Append(SPACE).Append(character.getZ()).Append("\">").Append(string.IsNullOrEmpty(npcName) ? "No name NPC" : npcName).Append("</a></td>");
 			sb.Append("<td width=\"60\">").Append(Util.formatAdena((long)Math.Round(activeChar.Distance2D(character)))).Append("</td>");
 			sb.Append("<td width=\"54\"><a action=\"").Append(builder.ToStringBuilder()).Append("\"><font color=\"LEVEL\">Delete</font></a></td>");

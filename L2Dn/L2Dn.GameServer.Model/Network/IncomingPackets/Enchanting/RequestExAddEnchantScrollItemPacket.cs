@@ -45,7 +45,7 @@ public struct RequestExAddEnchantScrollItemPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
+        EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.Id);
         if (scrollTemplate == null)
         {
             // Message may be custom.

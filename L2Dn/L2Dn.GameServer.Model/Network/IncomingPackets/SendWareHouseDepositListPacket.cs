@@ -87,7 +87,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 		long slots = 0;
 		foreach (ItemHolder itemHolder in _items)
 		{
-			Item? item = player.checkItemManipulation(itemHolder.getId(), itemHolder.getCount(), "deposit");
+			Item? item = player.checkItemManipulation(itemHolder.Id, itemHolder.getCount(), "deposit");
 			if (item == null)
 			{
 				PacketLogger.Instance.Warn("Error depositing a warehouse object for char " + player.getName() +
@@ -97,7 +97,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 			}
 
 			// Calculate needed adena and slots
-			if (item.getId() == Inventory.ADENA_ID)
+			if (item.Id == Inventory.ADENA_ID)
 			{
 				currentAdena -= itemHolder.getCount();
 			}
@@ -105,7 +105,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 			{
 				slots += itemHolder.getCount();
 			}
-			else if (warehouse.getItemByItemId(item.getId()) == null)
+			else if (warehouse.getItemByItemId(item.Id) == null)
 			{
 				slots++;
 			}
@@ -134,7 +134,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 		foreach (ItemHolder itemHolder in _items)
 		{
 			// Check validity of requested item
-			Item? oldItem = player.checkItemManipulation(itemHolder.getId(), itemHolder.getCount(), "deposit");
+			Item? oldItem = player.checkItemManipulation(itemHolder.Id, itemHolder.getCount(), "deposit");
 			if (oldItem == null)
 			{
 				PacketLogger.Instance.Warn("Error depositing a warehouse object for char " + player.getName() +
@@ -148,7 +148,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 				continue;
 			}
 
-			Item? newItem = player.getInventory().transferItem(warehouse.getName(), itemHolder.getId(), itemHolder.getCount(), warehouse, player, manager);
+			Item? newItem = player.getInventory().transferItem(warehouse.getName(), itemHolder.Id, itemHolder.getCount(), warehouse, player, manager);
 			if (newItem == null)
 			{
 				PacketLogger.Instance.Warn("Error depositing a warehouse object for char " + player.getName() +

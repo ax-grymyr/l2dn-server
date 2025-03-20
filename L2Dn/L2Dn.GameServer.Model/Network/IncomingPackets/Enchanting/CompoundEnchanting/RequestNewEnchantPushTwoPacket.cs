@@ -58,14 +58,14 @@ public struct RequestNewEnchantPushTwoPacket: IIncomingPacket<GameSession>
 
         // Lets prevent using same item twice. Also stackable item check.
         if (itemOne.ObjectId == itemTwo.ObjectId && (!itemOne.isStackable() ||
-            player.getInventory().getInventoryItemCount(itemOne.getTemplate().getId(), -1) < 2))
+            player.getInventory().getInventoryItemCount(itemOne.getTemplate().Id, -1) < 2))
         {
             player.sendPacket(ExEnchantTwoFailPacket.STATIC_PACKET);
             return ValueTask.CompletedTask;
         }
 
-        CombinationItem? combinationItem = CombinationItemsData.getInstance().getItemsBySlots(itemOne.getId(),
-            itemOne.getEnchantLevel(), itemTwo.getId(), itemTwo.getEnchantLevel());
+        CombinationItem? combinationItem = CombinationItemsData.getInstance().getItemsBySlots(itemOne.Id,
+            itemOne.getEnchantLevel(), itemTwo.Id, itemTwo.getEnchantLevel());
 
         // Not implemented or not able to merge!
         if (combinationItem == null)

@@ -157,7 +157,7 @@ public class ArmorSet
 		foreach (int armorSlot in ARMORSET_SLOTS)
 		{
 			Item? itemPart = inv.getPaperdollItem(armorSlot);
-			if (itemPart != null && Array.IndexOf(_requiredItems, itemPart.getId()) >= 0 && enchantLevel > itemPart.getEnchantLevel())
+			if (itemPart != null && Array.IndexOf(_requiredItems, itemPart.Id) >= 0 && enchantLevel > itemPart.getEnchantLevel())
 			{
 				enchantLevel = itemPart.getEnchantLevel();
 			}
@@ -189,7 +189,7 @@ public class ArmorSet
 				foreach (int artifactSlot in ARTIFACT_1_SLOTS)
 				{
 					Item? itemPart = inv.getPaperdollItem(artifactSlot);
-					if (itemPart != null && Array.IndexOf(_requiredItems, itemPart.getId()) >= 0)
+					if (itemPart != null && Array.IndexOf(_requiredItems, itemPart.Id) >= 0)
 					{
 						slotMask += artifactSlot;
 					}
@@ -201,7 +201,7 @@ public class ArmorSet
 				foreach (int artifactSlot in ARTIFACT_2_SLOTS)
 				{
 					Item? itemPart = inv.getPaperdollItem(artifactSlot);
-					if (itemPart != null && Array.IndexOf(_requiredItems, itemPart.getId()) >= 0)
+					if (itemPart != null && Array.IndexOf(_requiredItems, itemPart.Id) >= 0)
 					{
 						slotMask += artifactSlot;
 					}
@@ -213,7 +213,7 @@ public class ArmorSet
 				foreach (int artifactSlot in ARTIFACT_3_SLOTS)
 				{
 					Item? itemPart = inv.getPaperdollItem(artifactSlot);
-					if (itemPart != null && Array.IndexOf(_requiredItems, itemPart.getId()) >= 0)
+					if (itemPart != null && Array.IndexOf(_requiredItems, itemPart.Id) >= 0)
 					{
 						slotMask += artifactSlot;
 					}
@@ -252,6 +252,6 @@ public class ArmorSet
 
 	public long getPiecesCountById(Playable playable)
 	{
-		return playable.getInventory()?.getPaperdollItemCount(item => Array.IndexOf(_requiredItems, item.getId()) >= 0) ?? 0;
+		return playable.getInventory()?.getPaperdollItemCount(item => Array.IndexOf(_requiredItems, item.Id) >= 0) ?? 0;
 	}
 }

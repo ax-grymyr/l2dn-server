@@ -70,7 +70,7 @@ public sealed class CallSkill: AbstractEffect
             if (buffInfo != null)
             {
                 triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(),
-                    Math.Min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
+                    Math.Min(_skillLevelScaleTo, buffInfo.getSkill().Level + 1));
             }
             else
             {
@@ -81,12 +81,12 @@ public sealed class CallSkill: AbstractEffect
         if (triggerSkill != null)
         {
             // Prevent infinite loop.
-            if (skill.getId() == triggerSkill.getId() && skill.getLevel() == triggerSkill.getLevel())
+            if (skill.Id == triggerSkill.Id && skill.Level == triggerSkill.Level)
             {
                 return;
             }
 
-            TimeSpan hitTime = triggerSkill.getHitTime();
+            TimeSpan hitTime = triggerSkill.HitTime;
             if (hitTime > TimeSpan.Zero)
             {
                 if (effector.isSkillDisabled(triggerSkill))
@@ -94,8 +94,8 @@ public sealed class CallSkill: AbstractEffect
                     return;
                 }
 
-                effector.broadcastPacket(new MagicSkillUsePacket(effector, effected, triggerSkill.getDisplayId(),
-                    triggerSkill.getLevel(), hitTime, TimeSpan.Zero));
+                effector.broadcastPacket(new MagicSkillUsePacket(effector, effected, triggerSkill.DisplayId,
+                    triggerSkill.Level, hitTime, TimeSpan.Zero));
 
                 ThreadPool.schedule(() => SkillCaster.triggerCast(effector, effected, triggerSkill), hitTime);
             }

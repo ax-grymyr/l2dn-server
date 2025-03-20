@@ -286,12 +286,10 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	// -------------------------------------------------------------
 	// Getters
 	// -------------------------------------------------------------
-	public int getId()
-	{
-		return _templateId;
-	}
 
-	public string getName()
+    public int Id => _templateId;
+
+    public string getName()
 	{
 		return _name;
 	}
@@ -516,7 +514,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 			{
 				// Stop all buffs.
 				playable.getEffectList().stopEffects(info =>
-					!info.getSkill().isIrreplacableBuff() && info.getSkill().getBuffType() == SkillBuffType.BUFF &&
+					!info.getSkill().IsIrreplacableBuff && info.getSkill().BuffType == SkillBuffType.BUFF &&
 					hasRemoveBuffException(info.getSkill()), true, true);
 			}
 		}
@@ -529,7 +527,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	 */
 	private bool hasRemoveBuffException(Skill skill)
 	{
-		bool containsSkill = _removeBuffExceptions.Contains(skill.getId());
+		bool containsSkill = _removeBuffExceptions.Contains(skill.Id);
 		return _removeBuffType == InstanceRemoveBuffType.BLACKLIST ? containsSkill : !containsSkill;
 	}
 
@@ -794,7 +792,7 @@ public class InstanceTemplate: IIdentifiable, INamable, IEventContainerProvider
 	 */
 	public long getWorldCount()
 	{
-		return InstanceManager.getInstance().getWorldCount(getId());
+		return InstanceManager.getInstance().getWorldCount(Id);
 	}
 
 	public override string ToString()

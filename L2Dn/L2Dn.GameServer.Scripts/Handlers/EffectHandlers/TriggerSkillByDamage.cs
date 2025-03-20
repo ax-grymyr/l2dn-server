@@ -9,7 +9,6 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -107,13 +106,13 @@ public sealed class TriggerSkillByDamage: AbstractEffect
             else
             {
                 triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(),
-                    Math.Min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
+                    Math.Min(_skillLevelScaleTo, buffInfo.getSkill().Level + 1));
             }
 
             if (triggerSkill == null)
                 return;
 
-            if (buffInfo == null || buffInfo.getSkill().getLevel() < triggerSkill.getLevel())
+            if (buffInfo == null || buffInfo.getSkill().Level < triggerSkill.Level)
                 SkillCaster.triggerCast(attacker, (Creature)target, triggerSkill);
         }
         else // Multiple trigger skills.
@@ -122,13 +121,13 @@ public sealed class TriggerSkillByDamage: AbstractEffect
             {
                 SkillHolder holder = _triggerSkills[i];
                 Skill nextSkill = holder.getSkill();
-                if (((Creature)target).isAffectedBySkill(nextSkill.getId()))
+                if (((Creature)target).isAffectedBySkill(nextSkill.Id))
                 {
                     if (i < _triggerSkills.Count - 1)
                     {
                         i++;
                         holder = _triggerSkills[i];
-                        ((Creature)target).stopSkillEffects(SkillFinishType.SILENT, nextSkill.getId());
+                        ((Creature)target).stopSkillEffects(SkillFinishType.SILENT, nextSkill.Id);
                         triggerSkill = holder.getSkill();
                         break;
                     }

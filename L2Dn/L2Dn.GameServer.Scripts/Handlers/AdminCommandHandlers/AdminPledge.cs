@@ -195,7 +195,7 @@ public class AdminPledge: IAdminCommandHandler
 						try
 						{
 							int stage = int.Parse(param);
-							GlobalVariablesManager.getInstance().Set(GlobalVariablesManager.MONSTER_ARENA_VARIABLE + clan.getId(), stage);
+							GlobalVariablesManager.getInstance().Set(GlobalVariablesManager.MONSTER_ARENA_VARIABLE + clan.Id, stage);
 							BuilderUtil.sendSysMessage(activeChar, "You set " + stage + " Monster Arena stage for clan " + clan.getName() + "");
 						}
 						catch (Exception e)

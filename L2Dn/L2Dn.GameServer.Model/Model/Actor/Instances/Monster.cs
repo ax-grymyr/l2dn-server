@@ -178,7 +178,7 @@ public class Monster: Attackable
     {
         // Might need some exceptions here, but it will prevent the monster buffing player bug.
         Monster? target = getLeader();
-        if (!skill.isBad() && target != null && target.isPlayer())
+        if (!skill.IsBad && target != null && target.isPlayer())
         {
             abortAllSkillCasters();
             return;

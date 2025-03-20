@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Network.OutgoingPackets;
+﻿using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.Network;
 using L2Dn.Packets;
 using Config = L2Dn.GameServer.Configuration.Config;
@@ -26,7 +27,7 @@ public struct ProtocolVersionPacket: IIncomingPacket<GameSession>
 
         session.State = GameSessionState.Authorization;
 
-        bool isProtocolOk = Config.Server.PROTOCOL_LIST.Contains(_protocolVersion);
+        bool isProtocolOk = _protocolVersion == ServerConfig.Instance.ClientListener.Protocol;
         session.ProtocolVersion = _protocolVersion;
         session.IsProtocolOk = isProtocolOk;
         int serverId = session.Config.GameServerParams.ServerId;

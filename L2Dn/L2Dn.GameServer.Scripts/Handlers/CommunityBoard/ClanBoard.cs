@@ -178,7 +178,7 @@ public class ClanBoard: IWriteBoardHandler
 		// header
 		StringBuilder html = new StringBuilder(2048);
 		html.Append("<html><body><br><br><center><br1><br1><table border=0 cellspacing=0 cellpadding=0><tr><td FIXWIDTH=15>&nbsp;</td><td width=610 height=30 align=left><a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a></td></tr></table><table border=0 cellspacing=0 cellpadding=0 width=610 bgcolor=434343><tr><td height=10></td></tr><tr><td fixWIDTH=5></td><td fixWIDTH=600><a action=\"bypass _bbsclan_clanhome;");
-		html.Append(clan != null ? clan.getId() : 0);
+		html.Append(clan != null ? clan.Id : 0);
 		html.Append("\">[GO TO MY CLAN]</a>&nbsp;&nbsp;</td><td fixWIDTH=5></td></tr><tr><td height=10></td></tr></table><br><table border=0 cellspacing=0 cellpadding=2 bgcolor=5A5A5A width=610><tr><td FIXWIDTH=5></td><td FIXWIDTH=200 align=center>CLAN NAME</td><td FIXWIDTH=200 align=center>CLAN LEADER</td><td FIXWIDTH=100 align=center>CLAN LEVEL</td><td FIXWIDTH=100 align=center>CLAN MEMBERS</td><td FIXWIDTH=5></td></tr></table><img src=\"L2UI.Squareblank\" width=\"1\" height=\"5\">");
 		int i = 0;
 		foreach (Clan cl in ClanTable.getInstance().getClans())
@@ -191,7 +191,7 @@ public class ClanBoard: IWriteBoardHandler
 			if (i++ >= (index - 1) * 7)
 			{
 				html.Append("<img src=\"L2UI.SquareBlank\" width=\"610\" height=\"3\"><table border=0 cellspacing=0 cellpadding=0 width=610><tr> <td FIXWIDTH=5></td><td FIXWIDTH=200 align=center><a action=\"bypass _bbsclan_clanhome;");
-				html.Append(cl.getId());
+				html.Append(cl.Id);
 				html.Append("\">");
 				html.Append(cl.getName());
 				html.Append("</a></td><td FIXWIDTH=200 align=center>");
@@ -256,7 +256,7 @@ public class ClanBoard: IWriteBoardHandler
 
 	private void clanHome(Player player)
 	{
-		clanHome(player, player.getClan()?.getId() ?? 0);
+		clanHome(player, player.getClan()?.Id ?? 0);
 	}
 
 	private void clanHome(Player player, int clanId) // TODO: second argument must be Clan object

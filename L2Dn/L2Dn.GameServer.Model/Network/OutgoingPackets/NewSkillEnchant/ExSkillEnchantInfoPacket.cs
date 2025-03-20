@@ -22,7 +22,7 @@ public readonly struct ExSkillEnchantInfoPacket: IOutgoingPacket
         _player = player;
 
         // TODO: null checking hack, ensure only valid arguments are passed
-        SkillEnchantHolder? enchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.getId());
+        SkillEnchantHolder? enchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.Id);
         _starHolder = SkillEnchantData.getInstance().getEnchantStar(enchantHolder?.getStarLevel() ?? 0) ??
             new EnchantStarHolder(0, 0, 0, 0);
     }
@@ -31,8 +31,8 @@ public readonly struct ExSkillEnchantInfoPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_SKILL_ENCHANT_INFO);
 
-        writer.WriteInt32(_skill.getId());
-        writer.WriteInt32(_skill.getSubLevel());
+        writer.WriteInt32(_skill.Id);
+        writer.WriteInt32(_skill.SubLevel);
         writer.WriteInt32(_player.getSkillEnchantExp(_starHolder.getLevel()));
         writer.WriteInt32(_starHolder.getExpMax());
         writer.WriteInt32(SkillEnchantData.getInstance().getChanceEnchantMap(_skill) * 100);

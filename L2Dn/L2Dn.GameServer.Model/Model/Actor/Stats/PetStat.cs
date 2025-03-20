@@ -67,9 +67,9 @@ public class PetStat: SummonStat
 
 	public override long getExpForLevel(int level)
     {
-        PetLevelData petData = PetDataTable.getInstance().getPetLevelData(getActiveChar().getId(), level) ??
+        PetLevelData petData = PetDataTable.getInstance().getPetLevelData(getActiveChar().Id, level) ??
             throw new InvalidOperationException("Pet objectId:" + getActiveChar().ObjectId + ", NpcId:" +
-                getActiveChar().getId() +
+                getActiveChar().Id +
                 ", level:" + level + " is missing data from pets_stats table!");
 
         return petData.getPetMaxExp();
@@ -93,14 +93,14 @@ public class PetStat: SummonStat
 	public override void setLevel(int value)
     {
         PetLevelData petData =
-            PetDataTable.getInstance().getPetLevelData(getActiveChar().getTemplate().getId(), value) ??
-            throw new ArgumentException("No pet data for npc: " + getActiveChar().getTemplate().getId() + " level: " +
+            PetDataTable.getInstance().getPetLevelData(getActiveChar().getTemplate().Id, value) ??
+            throw new ArgumentException("No pet data for npc: " + getActiveChar().getTemplate().Id + " level: " +
                 value);
 
 		getActiveChar().setPetData(petData);
 		if (getActiveChar().getPetLevelData() == null)
 		{
-			throw new ArgumentException("No pet data for npc: " + getActiveChar().getTemplate().getId() + " level: " + value);
+			throw new ArgumentException("No pet data for npc: " + getActiveChar().getTemplate().Id + " level: " + value);
 		}
 		getActiveChar().stopFeed();
 		base.setLevel(value);

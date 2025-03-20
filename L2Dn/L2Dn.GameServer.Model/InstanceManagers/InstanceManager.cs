@@ -194,7 +194,7 @@ public class InstanceManager: DataReaderBase
 						if (locations.Length == 0)
 						{
 							_logger.Warn(GetType().Name + ": Missing exit location data for instance " +
-							             template.getName() + " (" + template.getId() + ")!");
+							             template.getName() + " (" + template.Id + ")!");
 						}
 						else
 							template.setExitLocation(type, locations);
@@ -220,7 +220,7 @@ public class InstanceManager: DataReaderBase
 			if (doorTemplate == null)
 			{
 				_logger.Warn(GetType().Name + ": Cannot find template for door: " + doorId + ", instance: " +
-				             template.getName() + " (" + template.getId() + ")");
+				             template.getName() + " (" + template.Id + ")");
 
 				continue;
 			}
@@ -430,7 +430,7 @@ public class InstanceManager: DataReaderBase
 	 */
 	public void register(Instance instance)
 	{
-		_instanceWorlds.TryAdd(instance.getId(), instance);
+		_instanceWorlds.TryAdd(instance.Id, instance);
 	}
 
 	/**

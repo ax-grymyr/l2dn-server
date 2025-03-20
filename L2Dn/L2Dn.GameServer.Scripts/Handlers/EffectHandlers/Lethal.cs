@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -34,7 +35,7 @@ public sealed class Lethal: AbstractEffect
         if (effector.isPlayer() && effector.getActingPlayer() is { } player && !player.getAccessLevel().CanGiveDamage)
             return;
 
-        if (skill.getMagicLevel() < effected.getLevel() - 6)
+        if (skill.MagicLevel < effected.getLevel() - 6)
             return;
 
         if (!effected.isLethalable() || effected.isHpBlocked())
@@ -45,7 +46,7 @@ public sealed class Lethal: AbstractEffect
             return;
 
         double chanceMultiplier = Formulas.calcAttributeBonus(effector, effected, skill) *
-            Formulas.calcGeneralTraitBonus(effector, effected, skill.getTraitType(), false);
+            Formulas.calcGeneralTraitBonus(effector, effected, skill.TraitType, false);
 
         // Calculate instant kill resistance first.
         if (Rnd.get(100) < effected.getStat().getValue(Stat.INSTANT_KILL_RESIST, 0))

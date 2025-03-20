@@ -72,7 +72,7 @@ public abstract class PlayableAI: CreatureAI
     protected override void onIntentionCast(Skill skill, WorldObject? target, Item? item, bool forceUse, bool dontMove)
     {
         Player? targetActingPlayer = target?.getActingPlayer();
-        if (target != null && target.isPlayable() && skill.isBad() && targetActingPlayer != null)
+        if (target != null && target.isPlayable() && skill.IsBad && targetActingPlayer != null)
         {
             // TODO: null checking hack
             Player actorActingPlayer = _actor.getActingPlayer() ??

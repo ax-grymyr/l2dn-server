@@ -18,7 +18,7 @@ public readonly struct PledgeInfoPacket: IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.PLEDGE_INFO);
 
         writer.WriteInt32(ServerConfig.Instance.GameServerParams.ServerId);
-        writer.WriteInt32(_clan.getId());
+        writer.WriteInt32(_clan.Id);
         writer.WriteString(_clan.getName());
         writer.WriteString(_clan.getAllyName());
     }

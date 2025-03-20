@@ -1,10 +1,10 @@
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
 
@@ -40,7 +40,7 @@ public class ServitorSkillUse: IPlayerActionHandler
                 if (skill != null)
                 {
                     servitor.setTarget(player.getTarget());
-                    servitor.useMagic(skill, null, skill.getTargetType() == TargetType.SELF || ctrlPressed,
+                    servitor.useMagic(skill, null, skill.TargetType == TargetType.SELF || ctrlPressed,
                         shiftPressed);
                 }
             }

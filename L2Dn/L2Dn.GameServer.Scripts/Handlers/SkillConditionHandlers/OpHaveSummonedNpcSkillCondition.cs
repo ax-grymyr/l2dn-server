@@ -20,7 +20,7 @@ public class OpHaveSummonedNpcSkillCondition: ISkillCondition
     {
         foreach (Npc npc in caster.getSummonedNpcs())
         {
-            if (npc.getId() == _npcId)
+            if (npc.Id == _npcId)
                 return true;
         }
 

@@ -23,7 +23,7 @@ public class ChallengePointsCoupon: IItemHandler
 
 		int pointsToGive;
 		int categoryId;
-		switch (item.getId())
+		switch (item.Id)
 		{
 			case 97125: // Rare Accessory Challenge Points +50
 			{

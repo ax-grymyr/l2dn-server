@@ -17,14 +17,14 @@ public class Bypass: IItemHandler
 		{
 			return false;
 		}
-		
+
 		Player player = (Player)playable;
-		int itemId = item.getId();
+		int itemId = item.Id;
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/item/" + itemId + ".htm", player);
 		htmlContent.Replace("%itemId%", item.ObjectId.ToString());
-		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, item.getId(), htmlContent);
+		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(null, item.Id, htmlContent);
 		player.sendPacket(html);
-		
+
 		return true;
 	}
 }

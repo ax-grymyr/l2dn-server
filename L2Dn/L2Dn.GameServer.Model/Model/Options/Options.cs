@@ -229,9 +229,9 @@ public class Options
 	{
 		bool updateTimeStamp = false;
 		playable.addSkill(skill);
-		if (skill.isActive())
+		if (skill.IsActive)
 		{
-			TimeSpan remainingTime = playable.getSkillRemainingReuseTime(skill.getReuseHashCode());
+			TimeSpan remainingTime = playable.getSkillRemainingReuseTime(skill.ReuseHashCode);
 			if (remainingTime > TimeSpan.Zero)
 			{
 				playable.addTimeStamp(skill, remainingTime);

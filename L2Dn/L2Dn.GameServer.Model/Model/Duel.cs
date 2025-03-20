@@ -132,7 +132,7 @@ public class Duel
 
             // Debuff removal
             foreach (Skill skill in _debuffs)
-                _player.stopSkillEffects(SkillFinishType.REMOVED, skill.getId());
+                _player.stopSkillEffects(SkillFinishType.REMOVED, skill.Id);
         }
 
         public void registerDebuff(Skill debuff)

@@ -7,7 +7,6 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using NLog;
@@ -62,18 +61,18 @@ public class ItemSkillsTemplate: IItemHandler
 			if (itemSkill != null)
 			{
                 Player? player = playable.getActingPlayer();
-				if (itemSkill.hasEffectType(EffectType.EXTRACT_ITEM) && player != null && !player.isInventoryUnder80(false))
+				if (itemSkill.HasEffectType(EffectType.EXTRACT_ITEM) && player != null && !player.isInventoryUnder80(false))
 				{
 					player.sendPacket(SystemMessageId.NOT_ENOUGH_SPACE_IN_INVENTORY_UNABLE_TO_PROCESS_THIS_REQUEST_UNTIL_YOUR_INVENTORY_S_WEIGHT_IS_LESS_THAN_80_AND_SLOT_COUNT_IS_LESS_THAN_90_OF_CAPACITY);
 					return false;
 				}
 
-				if (itemSkill.getItemConsumeId() > 0)
+				if (itemSkill.ItemConsumeId > 0)
 				{
 					hasConsumeSkill = true;
 				}
 
-				if (!itemSkill.hasEffectType(EffectType.SUMMON_PET) && !itemSkill.checkCondition(playable, playable.getTarget(), true))
+				if (!itemSkill.HasEffectType(EffectType.SUMMON_PET) && !itemSkill.CheckCondition(playable, playable.getTarget(), true))
 				{
 					continue;
 				}
@@ -102,14 +101,14 @@ public class ItemSkillsTemplate: IItemHandler
 					playable.sendPacket(sm);
 				}
 
-				if (playable.isPlayer() && itemSkill.hasEffectType(EffectType.SUMMON_PET))
+				if (playable.isPlayer() && itemSkill.HasEffectType(EffectType.SUMMON_PET))
 				{
 					playable.doCast(itemSkill);
 					successfulUse = true;
 				}
-				else if (itemSkill.isWithoutAction() || item.getTemplate().hasImmediateEffect() || item.getTemplate().hasExImmediateEffect())
+				else if (itemSkill.IsWithoutAction || item.getTemplate().hasImmediateEffect() || item.getTemplate().hasExImmediateEffect())
 				{
-					SkillCaster.triggerCast(playable, itemSkill.getTargetType() == TargetType.OTHERS ? playable.getTarget() : null, itemSkill, item, false);
+					SkillCaster.triggerCast(playable, itemSkill.TargetType == TargetType.OTHERS ? playable.getTarget() : null, itemSkill, item, false);
 					successfulUse = true;
 				}
 				else
@@ -125,9 +124,9 @@ public class ItemSkillsTemplate: IItemHandler
 					}
 				}
 
-				if (itemSkill.getReuseDelay() > TimeSpan.Zero)
+				if (itemSkill.ReuseDelay > TimeSpan.Zero)
 				{
-					playable.addTimeStamp(itemSkill, itemSkill.getReuseDelay());
+					playable.addTimeStamp(itemSkill, itemSkill.ReuseDelay);
 				}
 			}
 		}
@@ -176,7 +175,7 @@ public class ItemSkillsTemplate: IItemHandler
 	private bool checkReuse(Playable playable, Skill? skill, Item item)
 	{
 		TimeSpan remainingTime = skill != null
-			? playable.getSkillRemainingReuseTime(skill.getReuseHashCode())
+			? playable.getSkillRemainingReuseTime(skill.ReuseHashCode)
 			: playable.getItemRemainingReuseTime(item.ObjectId);
 
 		bool isAvailable = remainingTime <= TimeSpan.Zero;
@@ -189,7 +188,7 @@ public class ItemSkillsTemplate: IItemHandler
 			if (hours > 0)
 			{
 				sm = new SystemMessagePacket(SystemMessageId.S1_WILL_BE_AVAILABLE_AGAIN_IN_S2_H_S3_MIN_S4_SEC);
-				if (skill == null || skill.isStatic())
+				if (skill == null || skill.IsStatic)
 				{
 					sm.Params.addItemName(item);
 				}
@@ -203,7 +202,7 @@ public class ItemSkillsTemplate: IItemHandler
 			else if (minutes > 0)
 			{
 				sm = new SystemMessagePacket(SystemMessageId.S1_WILL_BE_AVAILABLE_AGAIN_IN_S2_MIN_S3_SEC);
-				if (skill == null || skill.isStatic())
+				if (skill == null || skill.IsStatic)
 				{
 					sm.Params.addItemName(item);
 				}
@@ -216,7 +215,7 @@ public class ItemSkillsTemplate: IItemHandler
 			else
 			{
 				sm = new SystemMessagePacket(SystemMessageId.S1_WILL_BE_AVAILABLE_AGAIN_IN_S2_SEC);
-				if (skill == null || skill.isStatic())
+				if (skill == null || skill.IsStatic)
 				{
 					sm.Params.addItemName(item);
 				}

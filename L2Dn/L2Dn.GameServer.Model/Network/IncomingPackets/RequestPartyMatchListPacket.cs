@@ -40,7 +40,7 @@ public struct RequestPartyMatchListPacket: IIncomingPacket<GameSession>
         }
         else
         {
-            if (matchingRoom.getId() == _roomId && matchingRoom.getRoomType() == MatchingRoomType.PARTY && matchingRoom.isLeader(player))
+            if (matchingRoom.Id == _roomId && matchingRoom.getRoomType() == MatchingRoomType.PARTY && matchingRoom.isLeader(player))
             {
                 matchingRoom.setLootType(_lootType);
                 matchingRoom.setMinLevel(_minLevel);

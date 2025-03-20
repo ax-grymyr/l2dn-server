@@ -150,7 +150,7 @@ public class WarehouseItem
 	 */
 	public int getItemId()
 	{
-		return _item.getId();
+		return _item.Id;
 	}
 
 	/**

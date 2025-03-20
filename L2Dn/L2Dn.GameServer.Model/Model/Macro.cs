@@ -35,10 +35,7 @@ public class Macro: IIdentifiable, INamable
      * Gets the marco ID.
      * @returns the marco ID
      */
-    public int getId()
-    {
-        return _id;
-    }
+    public int Id => _id;
 
     /**
      * Sets the marco ID.

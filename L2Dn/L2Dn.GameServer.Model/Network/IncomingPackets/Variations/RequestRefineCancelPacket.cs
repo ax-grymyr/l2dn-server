@@ -54,7 +54,7 @@ public struct RequestRefineCancelPacket: IIncomingPacket<GameSession>
         }
 
         // get the price
-        long price = VariationData.getInstance().getCancelFee(targetItem.getId(), augmentation.getMineralId());
+        long price = VariationData.getInstance().getCancelFee(targetItem.Id, augmentation.getMineralId());
         if (price < 0)
         {
             player.sendPacket(ExVariationCancelResultPacket.STATIC_PACKET_FAILURE);

@@ -26,7 +26,7 @@ public sealed class TrapTriggerTask(Trap trap): Runnable
             }
 
             trap.doCast(trapSkill);
-            ThreadPool.schedule(new TrapUnsummonTask(trap), trapSkill.getHitTime() + TimeSpan.FromMilliseconds(300));
+            ThreadPool.schedule(new TrapUnsummonTask(trap), trapSkill.HitTime + TimeSpan.FromMilliseconds(300));
         }
         catch (Exception e)
         {

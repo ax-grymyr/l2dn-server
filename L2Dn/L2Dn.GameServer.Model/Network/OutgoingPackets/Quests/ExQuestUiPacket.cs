@@ -9,22 +9,22 @@ public readonly struct ExQuestUiPacket: IOutgoingPacket
 {
     private readonly Player _player;
     private readonly ICollection<QuestState> _allQuests;
-	
+
     public ExQuestUiPacket(Player player)
     {
         _player = player;
         _allQuests = player.getAllQuestStates();
     }
-	
+
     public void WriteContent(PacketBitWriter writer)
     {
         if (_player == null)
         {
             return;
         }
-		
+
         writer.WritePacketCode(OutgoingPacketCodes.EX_QUEST_UI);
-        
+
         if (_allQuests.Count != 0)
         {
             List<QuestState> activeQuests = new List<QuestState>();
@@ -35,11 +35,11 @@ public readonly struct ExQuestUiPacket: IOutgoingPacket
                     activeQuests.Add(qs);
                 }
             }
-			
+
             writer.WriteInt32(_allQuests.Count);
             foreach (QuestState qs in _allQuests)
             {
-                writer.WriteInt32(qs.getQuest().getId());
+                writer.WriteInt32(qs.getQuest().Id);
                 writer.WriteInt32(qs.getCount());
                 writer.WriteByte(qs.getState());
             }

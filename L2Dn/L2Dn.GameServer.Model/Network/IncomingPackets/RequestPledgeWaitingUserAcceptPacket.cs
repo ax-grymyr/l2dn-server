@@ -32,7 +32,7 @@ public struct RequestPledgeWaitingUserAcceptPacket: IIncomingPacket<GameSession>
 		if (clan == null)
 			return ValueTask.CompletedTask;
 
-		int clanId = clan.getId();
+		int clanId = clan.Id;
 		if (_acceptRequest)
 		{
 			Player? target = World.getInstance().getPlayer(_playerId);
@@ -41,7 +41,7 @@ public struct RequestPledgeWaitingUserAcceptPacket: IIncomingPacket<GameSession>
 				DateTime currentTime = DateTime.UtcNow;
 				if (target.getClan() == null && target.getClanJoinExpiryTime() < currentTime)
 				{
-					target.sendPacket(new JoinPledgePacket(clan.getId()));
+					target.sendPacket(new JoinPledgePacket(clan.Id));
 
 					// player.setPowerGrade(9); // academy
 					target.setPowerGrade(5); // New member starts at 5, not confirmed.

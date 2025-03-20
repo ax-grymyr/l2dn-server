@@ -139,7 +139,7 @@ public static class RefinePacketHelper
 		}
 
 		// blacklist check
-		if (Config.Character.AUGMENTATION_BLACKLIST.Contains(item.getId()))
+		if (Config.Character.AUGMENTATION_BLACKLIST.Contains(item.Id))
 		{
 			return false;
 		}

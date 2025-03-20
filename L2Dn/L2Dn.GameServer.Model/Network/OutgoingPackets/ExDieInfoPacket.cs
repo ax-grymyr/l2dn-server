@@ -23,7 +23,7 @@ public readonly struct ExDieInfoPacket: IOutgoingPacket
         writer.WriteInt16((short)_droppedItems.Count);
         foreach (Item item in _droppedItems)
         {
-            writer.WriteInt32(item.getId());
+            writer.WriteInt32(item.Id);
             writer.WriteInt32(item.getEnchantLevel());
             writer.WriteInt32((int)item.getCount());
         }
@@ -34,7 +34,7 @@ public readonly struct ExDieInfoPacket: IOutgoingPacket
             if (damageHolder.getCreature().isNpc())
             {
                 writer.WriteInt16(1);
-                writer.WriteInt32(damageHolder.getCreature().getId());
+                writer.WriteInt32(damageHolder.getCreature().Id);
                 writer.WriteString("");
             }
             else

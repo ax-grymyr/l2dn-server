@@ -30,6 +30,6 @@ public class ItemPointHolder: ItemHolder
 
 	public override string ToString()
 	{
-		return "[" + GetType().Name + "] ID: " + getId() + ", count: " + getCount() + ", points: " + _points;
+		return "[" + GetType().Name + "] ID: " + Id + ", count: " + getCount() + ", points: " + _points;
 	}
 }

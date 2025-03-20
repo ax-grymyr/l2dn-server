@@ -70,8 +70,8 @@ public class AdminBuffs: IAdminCommandHandler
 					return false;
 				}
 
-				BuilderUtil.sendSysMessage(activeChar, "Admin buffing " + skill.getName() + " (" + skillId + "," + skillLevel + ")");
-				skill.applyEffects(activeChar, target);
+				BuilderUtil.sendSysMessage(activeChar, "Admin buffing " + skill.Name + " (" + skillId + "," + skillLevel + ")");
+				skill.ApplyEffects(activeChar, target);
 				return true;
 			}
 			catch (Exception e)
@@ -302,19 +302,19 @@ public class AdminBuffs: IAdminCommandHandler
 			{
 				sb.Append("<tr><td>");
 				sb.Append(!info.isInUse() ? FONT_RED1 : "");
-				sb.Append(info.getSkill().getName());
+				sb.Append(info.getSkill().Name);
 				sb.Append(" Lv ");
-				sb.Append(info.getSkill().getLevel());
+				sb.Append(info.getSkill().Level);
 				sb.Append(" (");
 				sb.Append(effect.GetType().Name);
 				sb.Append(")");
 				sb.Append(!info.isInUse() ? FONT_RED2 : "");
 				sb.Append("</td><td>");
-				sb.Append(info.getSkill().isToggle() ? "T" : info.getSkill().isPassive() ? "P" : info.getTime() + "s");
+				sb.Append(info.getSkill().IsToggle ? "T" : info.getSkill().IsPassive ? "P" : info.getTime() + "s");
 				sb.Append("</td><td><button value=\"X\" action=\"bypass -h admin_stopbuff ");
 				sb.Append(target.ObjectId);
 				sb.Append(" ");
-				sb.Append(info.getSkill().getId());
+				sb.Append(info.getSkill().Id);
 				sb.Append("\" width=30 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
 			}
 		}).build();

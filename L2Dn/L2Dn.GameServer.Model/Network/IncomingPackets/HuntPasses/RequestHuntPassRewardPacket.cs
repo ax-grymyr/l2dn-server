@@ -77,13 +77,13 @@ public struct RequestHuntPassRewardPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		ItemTemplate? itemTemplate = ItemData.getInstance().getTemplate(reward.getId());
+		ItemTemplate? itemTemplate = ItemData.getInstance().getTemplate(reward.Id);
         if (itemTemplate == null)
         {
             player.removeRequest<RewardRequest>();
             return ValueTask.CompletedTask;
         }
-        
+
 		long weight = itemTemplate.getWeight() * reward.getCount();
 		long slots = itemTemplate.isStackable() ? 1 : reward.getCount();
 		if (!player.getInventory().validateWeight(weight) || !player.getInventory().validateCapacity(slots))
@@ -111,7 +111,7 @@ public struct RequestHuntPassRewardPacket: IIncomingPacket<GameSession>
 
 	private void rewardItem(Player player, ItemHolder reward)
 	{
-		if (reward.getId() == 72286) // Sayha's Grace Sustention Points
+		if (reward.Id == 72286) // Sayha's Grace Sustention Points
 		{
 			int count = (int)reward.getCount();
 			player.getHuntPass().addSayhaTime(count);

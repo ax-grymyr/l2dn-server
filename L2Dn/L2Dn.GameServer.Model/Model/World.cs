@@ -687,7 +687,7 @@ public sealed class World
 			if (@object.isNpc())
 			{
 				Npc npc = (Npc) @object;
-				LOGGER.Warn("Deleting npc " + @object.getName() + " NPCID[" + npc.getId() + "] from invalid location X:" + @object.getX() + " Y:" + @object.getY() + " Z:" + @object.getZ());
+				LOGGER.Warn("Deleting npc " + @object.getName() + " NPCID[" + npc.Id + "] from invalid location X:" + @object.getX() + " Y:" + @object.getY() + " Z:" + @object.getZ());
 				npc.deleteMe();
 
 				Spawn? spawn = npc.getSpawn();

@@ -15,6 +15,6 @@ public class ConditionTargetActiveEffectId(int effectId, int effectLevel = -1): 
             return false;
 
         BuffInfo? info = effected.getEffectList().getBuffInfoBySkillId(effectId);
-        return info != null && (effectLevel == -1 || effectLevel <= info.getSkill().getLevel());
+        return info != null && (effectLevel == -1 || effectLevel <= info.getSkill().Level);
     }
 }

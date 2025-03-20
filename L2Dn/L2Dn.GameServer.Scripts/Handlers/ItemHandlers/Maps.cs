@@ -18,8 +18,8 @@ public class Maps: IItemHandler
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
 			return false;
 		}
-		
-		playable.sendPacket(new ShowMiniMapPacket(item.getId()));
+
+		playable.sendPacket(new ShowMiniMapPacket(item.Id));
 		return true;
 	}
 }

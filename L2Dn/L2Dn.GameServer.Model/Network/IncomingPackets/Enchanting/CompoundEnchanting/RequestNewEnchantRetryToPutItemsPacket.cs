@@ -69,8 +69,8 @@ public struct RequestNewEnchantRetryToPutItemsPacket: IIncomingPacket<GameSessio
         }
 
         // Not implemented or not able to merge!
-        CombinationItem? combinationItem = CombinationItemsData.getInstance().getItemsBySlots(itemOne.getId(),
-            itemOne.getEnchantLevel(), itemTwo.getId(), itemTwo.getEnchantLevel());
+        CombinationItem? combinationItem = CombinationItemsData.getInstance().getItemsBySlots(itemOne.Id,
+            itemOne.getEnchantLevel(), itemTwo.Id, itemTwo.getEnchantLevel());
 
         if (combinationItem == null)
         {

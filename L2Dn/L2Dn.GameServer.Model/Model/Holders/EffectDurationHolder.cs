@@ -19,8 +19,8 @@ public class EffectDurationHolder
 	 */
 	public EffectDurationHolder(Skill skill, int duration)
 	{
-		_skillId = skill.getDisplayId();
-		_skillLevel = skill.getDisplayLevel();
+		_skillId = skill.DisplayId;
+		_skillLevel = skill.DisplayLevel;
 		_duration = duration;
 	}
 	

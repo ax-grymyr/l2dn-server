@@ -16,7 +16,7 @@ public class ConditionTargetActiveSkillId(int skillId, int skillLevel = -1): Con
 
         Skill? knownSkill = effected.getKnownSkill(skillId);
         if (knownSkill != null)
-            return skillLevel == -1 || skillLevel <= knownSkill.getLevel();
+            return skillLevel == -1 || skillLevel <= knownSkill.Level;
 
         return false;
     }

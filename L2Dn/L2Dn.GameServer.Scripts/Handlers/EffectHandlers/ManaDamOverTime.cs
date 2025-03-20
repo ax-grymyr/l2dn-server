@@ -27,14 +27,14 @@ public sealed class ManaDamOverTime: AbstractEffect
             return false;
 
         double manaDam = _power * TicksMultiplier;
-        if (manaDam > effected.getCurrentMp() && skill.isToggle())
+        if (manaDam > effected.getCurrentMp() && skill.IsToggle)
         {
             effected.sendPacket(SystemMessageId.YOUR_SKILL_WAS_DEACTIVATED_DUE_TO_LACK_OF_MP);
             return false;
         }
 
         effected.reduceCurrentMp(manaDam);
-        return skill.isToggle();
+        return skill.IsToggle;
     }
 
     public override int GetHashCode() => HashCode.Combine(_power, Ticks);

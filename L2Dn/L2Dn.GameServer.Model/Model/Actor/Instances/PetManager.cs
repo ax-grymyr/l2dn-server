@@ -33,8 +33,8 @@ public class PetManager: Merchant
 
 	public override void showChatWindow(Player player)
 	{
-		string filename = "html/petmanager/" + getId() + ".htm";
-		if (getId() == 36478 && player.hasSummon())
+		string filename = "html/petmanager/" + Id + ".htm";
+		if (Id == 36478 && player.hasSummon())
 		{
 			filename = "html/petmanager/restore-unsummonpet.htm";
 		}
@@ -168,7 +168,7 @@ public class PetManager: Merchant
 		{
 			player.addItem("", itemIdgive, 1, this, true);
 
-			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/petmanager/" + getId() + ".htm", player);
+			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/petmanager/" + Id + ".htm", player);
 			NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 			player.sendPacket(html);
 		}

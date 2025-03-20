@@ -304,7 +304,7 @@ public abstract class Inventory: ItemContainer
 						Skill skill = holder.getSkill();
 						if (skill != null)
 						{
-							removedSkills.TryAdd(skill.getId(), skill);
+							removedSkills.TryAdd(skill.Id, skill);
 							update = true;
 						}
 					}
@@ -320,7 +320,7 @@ public abstract class Inventory: ItemContainer
 							Skill skill = holder.getSkill();
 							if (skill != null)
 							{
-								removedSkills.TryAdd(skill.getId(), skill);
+								removedSkills.TryAdd(skill.Id, skill);
 								update = true;
 							}
 						}
@@ -335,7 +335,7 @@ public abstract class Inventory: ItemContainer
 						Skill skill = holder.getSkill();
 						if (skill != null)
 						{
-							removedSkills.TryAdd(skill.getId(), skill);
+							removedSkills.TryAdd(skill.Id, skill);
 							update = true;
 						}
 					}
@@ -369,20 +369,20 @@ public abstract class Inventory: ItemContainer
 								continue;
 							}
 
-							Skill? existingSkill = addedSkills.get(skill.getId());
+							Skill? existingSkill = addedSkills.get(skill.Id);
 							if (existingSkill != null)
 							{
-								if (existingSkill.getLevel() < skill.getLevel())
+								if (existingSkill.Level < skill.Level)
 								{
-									addedSkills.put(skill.getId(), skill);
+									addedSkills.put(skill.Id, skill);
 								}
 							}
 							else
 							{
-								addedSkills.put(skill.getId(), skill);
+								addedSkills.put(skill.Id, skill);
 							}
 
-							if (skill.isActive() && !playable.hasSkillReuse(skill.getReuseHashCode()))
+							if (skill.IsActive && !playable.hasSkillReuse(skill.ReuseHashCode))
 							{
 								TimeSpan equipDelay = item.getEquipReuseDelay();
 								if (equipDelay > TimeSpan.Zero)
@@ -429,9 +429,9 @@ public abstract class Inventory: ItemContainer
 						}
 
 						// Check passive skill conditions.
-						if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, playable, playable))
+						if (skill.IsPassive && !skill.CheckConditions(SkillConditionScope.Passive, playable, playable))
 						{
-							removedSkills.TryAdd(skill.getId(), skill);
+							removedSkills.TryAdd(skill.Id, skill);
 							update = true;
 						}
 					}
@@ -448,9 +448,9 @@ public abstract class Inventory: ItemContainer
 						}
 
 						// Check passive skill conditions.
-						if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, playable, playable))
+						if (skill.IsPassive && !skill.CheckConditions(SkillConditionScope.Passive, playable, playable))
 						{
-							removedSkills.TryAdd(skill.getId(), skill);
+							removedSkills.TryAdd(skill.Id, skill);
 							update = true;
 						}
 					}
@@ -460,10 +460,10 @@ public abstract class Inventory: ItemContainer
 			// Must check for toggle and isRemovedOnUnequipWeapon skill item conditions.
 			foreach (Skill skill in playable.getAllSkills())
 			{
-				if ((skill.isToggle() && playable.isAffectedBySkill(skill.getId()) && !skill.checkConditions(SkillConditionScope.GENERAL, playable, playable)) //
-					|| (it.isWeapon() && skill.isRemovedOnUnequipWeapon()))
+				if ((skill.IsToggle && playable.isAffectedBySkill(skill.Id) && !skill.CheckConditions(SkillConditionScope.General, playable, playable)) //
+					|| (it.isWeapon() && skill.IsRemovedOnUnequipWeapon))
 				{
-					playable.stopSkillEffects(SkillFinishType.REMOVED, skill.getId());
+					playable.stopSkillEffects(SkillFinishType.REMOVED, skill.Id);
 					update = true;
 				}
 			}
@@ -471,14 +471,14 @@ public abstract class Inventory: ItemContainer
 			// Apply skill, if item has "skills on unequip" and it is not a secondary agathion.
 			if (slot < PAPERDOLL_AGATHION2 || slot > PAPERDOLL_AGATHION5)
 			{
-				it.forEachSkill(ItemSkillType.ON_UNEQUIP, holder => holder.getSkill().activateSkill(playable, [playable]));
+				it.forEachSkill(ItemSkillType.ON_UNEQUIP, holder => holder.getSkill().ActivateSkill(playable, [playable]));
 			}
 
 			if (update)
 			{
 				foreach (Skill skill in removedSkills.Values)
 				{
-					playable.removeSkill(skill, skill.isPassive());
+					playable.removeSkill(skill, skill.IsPassive);
 				}
 
 				foreach (Skill skill in addedSkills.Values)
@@ -556,31 +556,31 @@ public abstract class Inventory: ItemContainer
 						}
 
 						// Check passive skill conditions.
-						if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, playable, playable))
+						if (skill.IsPassive && !skill.CheckConditions(SkillConditionScope.Passive, playable, playable))
 						{
 							continue;
 						}
 
-						Skill? existingSkill = addedSkills.get(skill.getId());
+						Skill? existingSkill = addedSkills.get(skill.Id);
 						if (existingSkill != null)
 						{
-							if (existingSkill.getLevel() < skill.getLevel())
+							if (existingSkill.Level < skill.Level)
 							{
-								addedSkills.put(skill.getId(), skill);
+								addedSkills.put(skill.Id, skill);
 							}
 						}
 						else
 						{
-							addedSkills.put(skill.getId(), skill);
+							addedSkills.put(skill.Id, skill);
 						}
 
 						// Active, non-offensive, skills start with reuse on equip.
-						if (skill.isActive() && !skill.isBad() && !skill.isTransformation() &&
+						if (skill.IsActive && !skill.IsBad && !skill.IsTransformation &&
 						    Config.Character.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 && player.hasEnteredWorld())
 						{
 							playable.addTimeStamp(skill,
-								skill.getReuseDelay() > TimeSpan.Zero
-									? skill.getReuseDelay()
+								skill.ReuseDelay > TimeSpan.Zero
+									? skill.ReuseDelay
 									: TimeSpan.FromMilliseconds(Config.Character.ITEM_EQUIP_ACTIVE_SKILL_REUSE));
 
 							updateTimestamp = true;
@@ -612,22 +612,22 @@ public abstract class Inventory: ItemContainer
 							}
 
 							// Check passive skill conditions.
-							if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, playable, playable))
+							if (skill.IsPassive && !skill.CheckConditions(SkillConditionScope.Passive, playable, playable))
 							{
 								continue;
 							}
 
-							Skill? existingSkill = addedSkills.get(skill.getId());
+							Skill? existingSkill = addedSkills.get(skill.Id);
 							if (existingSkill != null)
 							{
-								if (existingSkill.getLevel() < skill.getLevel())
+								if (existingSkill.Level < skill.Level)
 								{
-									addedSkills.put(skill.getId(), skill);
+									addedSkills.put(skill.Id, skill);
 								}
 							}
 							else
 							{
-								addedSkills.put(skill.getId(), skill);
+								addedSkills.put(skill.Id, skill);
 							}
 						}
 					}
@@ -650,27 +650,27 @@ public abstract class Inventory: ItemContainer
 						}
 
 						// Check passive skill conditions.
-						if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, playable, playable))
+						if (skill.IsPassive && !skill.CheckConditions(SkillConditionScope.Passive, playable, playable))
 						{
 							continue;
 						}
 
-						Skill? existingSkill = addedSkills.get(skill.getId());
+						Skill? existingSkill = addedSkills.get(skill.Id);
 						if (existingSkill != null)
 						{
-							if (existingSkill.getLevel() < skill.getLevel())
+							if (existingSkill.Level < skill.Level)
 							{
-								addedSkills.put(skill.getId(), skill);
+								addedSkills.put(skill.Id, skill);
 							}
 						}
 						else
 						{
-							addedSkills.put(skill.getId(), skill);
+							addedSkills.put(skill.Id, skill);
 						}
 
-						if (skill.isActive())
+						if (skill.IsActive)
 						{
-							if (!playable.hasSkillReuse(skill.getReuseHashCode()))
+							if (!playable.hasSkillReuse(skill.ReuseHashCode))
 							{
 								TimeSpan equipDelay = item.getEquipReuseDelay();
 								if (equipDelay > TimeSpan.Zero)
@@ -681,13 +681,13 @@ public abstract class Inventory: ItemContainer
 							}
 
 							// Active, non-offensive, skills start with reuse on equip.
-                            if (!skill.isBad() && !skill.isTransformation() &&
+                            if (!skill.IsBad && !skill.IsTransformation &&
                                 Config.Character.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 &&
                                 player.hasEnteredWorld())
                             {
                                 playable.addTimeStamp(skill,
-                                    skill.getReuseDelay() > TimeSpan.Zero
-                                        ? skill.getReuseDelay()
+                                    skill.ReuseDelay > TimeSpan.Zero
+                                        ? skill.ReuseDelay
                                         : TimeSpan.FromMilliseconds(Config.Character.ITEM_EQUIP_ACTIVE_SKILL_REUSE));
                             }
 
@@ -733,31 +733,31 @@ public abstract class Inventory: ItemContainer
 						}
 
 						// Check passive skill conditions.
-						if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, playable, playable))
+						if (skill.IsPassive && !skill.CheckConditions(SkillConditionScope.Passive, playable, playable))
 						{
 							continue;
 						}
 
-						Skill? existingSkill = addedSkills.get(skill.getId());
+						Skill? existingSkill = addedSkills.get(skill.Id);
 						if (existingSkill != null)
 						{
-							if (existingSkill.getLevel() < skill.getLevel())
+							if (existingSkill.Level < skill.Level)
 							{
-								addedSkills.put(skill.getId(), skill);
+								addedSkills.put(skill.Id, skill);
 							}
 						}
 						else
 						{
-							addedSkills.put(skill.getId(), skill);
+							addedSkills.put(skill.Id, skill);
 						}
 
 						// Active, non offensive, skills start with reuse on equip.
-                        if (skill.isActive() && !skill.isBad() && !skill.isTransformation() &&
+                        if (skill.IsActive && !skill.IsBad && !skill.IsTransformation &&
                             Config.Character.ITEM_EQUIP_ACTIVE_SKILL_REUSE > 0 && player.hasEnteredWorld())
                         {
                             playable.addTimeStamp(skill,
-                                skill.getReuseDelay() > TimeSpan.Zero
-                                    ? skill.getReuseDelay()
+                                skill.ReuseDelay > TimeSpan.Zero
+                                    ? skill.ReuseDelay
                                     : TimeSpan.FromMilliseconds(Config.Character.ITEM_EQUIP_ACTIVE_SKILL_REUSE));
 
                             updateTimestamp = true;
@@ -783,22 +783,22 @@ public abstract class Inventory: ItemContainer
 							}
 
 							// Check passive skill conditions.
-							if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, playable, playable))
+							if (skill.IsPassive && !skill.CheckConditions(SkillConditionScope.Passive, playable, playable))
 							{
 								continue;
 							}
 
-							Skill? existingSkill = addedSkills.get(skill.getId());
+							Skill? existingSkill = addedSkills.get(skill.Id);
 							if (existingSkill != null)
 							{
-								if (existingSkill.getLevel() < skill.getLevel())
+								if (existingSkill.Level < skill.Level)
 								{
-									addedSkills.put(skill.getId(), skill);
+									addedSkills.put(skill.Id, skill);
 								}
 							}
 							else
 							{
-								addedSkills.put(skill.getId(), skill);
+								addedSkills.put(skill.Id, skill);
 							}
 						}
 					}
@@ -808,7 +808,7 @@ public abstract class Inventory: ItemContainer
 			// Apply skill, if item has "skills on equip" and it is not a secondary agathion.
 			if (slot < PAPERDOLL_AGATHION2 || slot > PAPERDOLL_AGATHION5)
 			{
-				item.getTemplate().forEachSkill(ItemSkillType.ON_EQUIP, holder => holder.getSkill().activateSkill(playable, [playable]));
+				item.getTemplate().forEachSkill(ItemSkillType.ON_EQUIP, holder => holder.getSkill().ActivateSkill(playable, [playable]));
 			}
 
 			if (addedSkills.Count != 0)
@@ -848,7 +848,7 @@ public abstract class Inventory: ItemContainer
 				return;
 			}
 
-			bool update = verifyAndApply(playable, item, x => x.getId());
+			bool update = verifyAndApply(playable, item, x => x.Id);
 
 			// Verify and apply normal set
 
@@ -907,15 +907,15 @@ public abstract class Inventory: ItemContainer
 							continue;
 						}
 
-						if (itemSkill.isPassive() && !itemSkill.checkConditions(SkillConditionScope.PASSIVE, playable, playable))
+						if (itemSkill.IsPassive && !itemSkill.CheckConditions(SkillConditionScope.Passive, playable, playable))
 						{
 							continue;
 						}
 
 						playable.addSkill(itemSkill);
-						if (itemSkill.isActive())
+						if (itemSkill.IsActive)
 						{
-							if (item != null && !playable.hasSkillReuse(itemSkill.getReuseHashCode()))
+							if (item != null && !playable.hasSkillReuse(itemSkill.ReuseHashCode))
 							{
 								TimeSpan equipDelay = item.getEquipReuseDelay();
 								if (equipDelay > TimeSpan.Zero)
@@ -926,13 +926,13 @@ public abstract class Inventory: ItemContainer
 							}
 
 							// Active, non-offensive, skills start with reuse on equip.
-                            if (!itemSkill.isBad() && !itemSkill.isTransformation() &&
+                            if (!itemSkill.IsBad && !itemSkill.IsTransformation &&
                                 Config.Character.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE > 0 &&
                                 player.hasEnteredWorld())
                             {
                                 playable.addTimeStamp(itemSkill,
-                                    itemSkill.getReuseDelay() > TimeSpan.Zero
-                                        ? itemSkill.getReuseDelay()
+                                    itemSkill.ReuseDelay > TimeSpan.Zero
+                                        ? itemSkill.ReuseDelay
                                         : TimeSpan.FromMilliseconds(Config.Character.ARMOR_SET_EQUIP_ACTIVE_SKILL_REUSE));
                             }
 
@@ -985,7 +985,7 @@ public abstract class Inventory: ItemContainer
 						}
 
 						// Update if a skill has been removed.
-						if (playable.removeSkill(itemSkill, itemSkill.isPassive()) != null)
+						if (playable.removeSkill(itemSkill, itemSkill.IsPassive) != null)
 						{
 							update = true;
 						}
@@ -1011,7 +1011,7 @@ public abstract class Inventory: ItemContainer
             Player player = playable.getActingPlayer() ??
                 throw new InvalidOperationException("Playable player is null, should not happen");
 
-			bool remove = verifyAndRemove(playable, item, x => x.getId());
+			bool remove = verifyAndRemove(playable, item, x => x.Id);
 
 			// Verify and remove normal set bonus
 
@@ -1297,7 +1297,7 @@ public abstract class Inventory: ItemContainer
 				item.setLastChange(ItemChangeType.MODIFIED);
 				item.updateDatabase();
 
-				Item newItem = ItemData.getInstance().createItem(process, item.getId(), count, actor, reference);
+				Item newItem = ItemData.getInstance().createItem(process, item.Id, count, actor, reference);
 				newItem.updateDatabase();
 				refreshWeight();
 				return newItem;
@@ -1364,7 +1364,7 @@ public abstract class Inventory: ItemContainer
 	{
 		foreach (Item? item in _paperdoll)
 		{
-			if (item != null && item.getId() == itemId)
+			if (item != null && item.Id == itemId)
 			{
 				return true;
 			}
@@ -1502,7 +1502,7 @@ public abstract class Inventory: ItemContainer
 		Item? item = _paperdoll[slot];
 		if (item != null)
 		{
-			return item.getId();
+			return item.Id;
 		}
 		return 0;
 	}
@@ -1620,18 +1620,18 @@ public abstract class Inventory: ItemContainer
                 Player? player = owner?.getActingPlayer();
 				if (slot >= PAPERDOLL_AGATHION1 && slot <= PAPERDOLL_AGATHION5 && owner != null && owner.isPlayer() && player != null)
 				{
-					AgathionSkillHolder? agathionSkills = AgathionData.getInstance().getSkills(old.getId());
+					AgathionSkillHolder? agathionSkills = AgathionData.getInstance().getSkills(old.Id);
 					if (agathionSkills != null)
 					{
 						bool update = false;
 						foreach (Skill skill in agathionSkills.getMainSkills(old.getEnchantLevel()))
 						{
-							player.removeSkill(skill, false, skill.isPassive());
+							player.removeSkill(skill, false, skill.IsPassive);
 							update = true;
 						}
 						foreach (Skill skill in agathionSkills.getSubSkills(old.getEnchantLevel()))
 						{
-							player.removeSkill(skill, false, skill.isPassive());
+							player.removeSkill(skill, false, skill.IsPassive);
 							update = true;
 						}
 						if (update)
@@ -1669,7 +1669,7 @@ public abstract class Inventory: ItemContainer
                 Player? player = owner?.getActingPlayer();
 				if (slot >= PAPERDOLL_AGATHION1 && slot <= PAPERDOLL_AGATHION5 && owner != null && owner.isPlayer() && player != null)
 				{
-					AgathionSkillHolder? agathionSkills = AgathionData.getInstance().getSkills(item.getId());
+					AgathionSkillHolder? agathionSkills = AgathionData.getInstance().getSkills(item.Id);
 					if (agathionSkills != null)
 					{
 						bool update = false;
@@ -1677,7 +1677,7 @@ public abstract class Inventory: ItemContainer
 						{
 							foreach (Skill skill in agathionSkills.getMainSkills(item.getEnchantLevel()))
 							{
-								if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player))
+								if (skill.IsPassive && !skill.CheckConditions(SkillConditionScope.Passive, player, player))
 								{
 									continue;
 								}
@@ -1687,7 +1687,7 @@ public abstract class Inventory: ItemContainer
 						}
 						foreach (Skill skill in agathionSkills.getSubSkills(item.getEnchantLevel()))
 						{
-							if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, player, player))
+							if (skill.IsPassive && !skill.CheckConditions(SkillConditionScope.Passive, player, player))
 							{
 								continue;
 							}
@@ -2133,7 +2133,7 @@ public abstract class Inventory: ItemContainer
 
 		// Check if player is using Formal Wear and item isn't Wedding Bouquet.
 		Item? formal = getPaperdollItem(PAPERDOLL_CHEST);
-		if (item.getId() != 21163 && formal != null && formal.getTemplate().getBodyPart() == ItemTemplate.SLOT_ALLDRESS)
+		if (item.Id != 21163 && formal != null && formal.getTemplate().getBodyPart() == ItemTemplate.SLOT_ALLDRESS)
 		{
 			// only chest target can pass this
 			if (targetSlot == ItemTemplate.SLOT_LR_HAND || targetSlot == ItemTemplate.SLOT_L_HAND || targetSlot == ItemTemplate.SLOT_R_HAND || targetSlot == ItemTemplate.SLOT_LEGS || targetSlot == ItemTemplate.SLOT_FEET || targetSlot == ItemTemplate.SLOT_GLOVES || targetSlot == ItemTemplate.SLOT_HEAD)
@@ -2322,7 +2322,7 @@ public abstract class Inventory: ItemContainer
 		}
 		else
 		{
-			LOGGER.Warn("Unknown body slot " + targetSlot + " for Item ID: " + item.getId());
+			LOGGER.Warn("Unknown body slot " + targetSlot + " for Item ID: " + item.Id);
 		}
 	}
 
@@ -2469,7 +2469,7 @@ public abstract class Inventory: ItemContainer
 					World.getInstance().addObject(item);
 
 					// If stackable item is found in inventory just add to current quantity
-					if (item.isStackable() && getItemByItemId(item.getId()) != null)
+					if (item.isStackable() && getItemByItemId(item.Id) != null)
 					{
 						addItem("Restore", item, getOwner()?.getActingPlayer(), null);
 					}
@@ -2507,7 +2507,7 @@ public abstract class Inventory: ItemContainer
 		// find same (or incompatible) talisman type
 		for (int i = PAPERDOLL_DECO1; i < PAPERDOLL_DECO1 + getTalismanSlots(); i++)
 		{
-			if (_paperdoll[i] != null && getPaperdollItemId(i) == item.getId())
+			if (_paperdoll[i] != null && getPaperdollItemId(i) == item.Id)
 			{
 				// overwrite
 				setPaperdollItem(i, item);
@@ -2607,7 +2607,7 @@ public abstract class Inventory: ItemContainer
 		// find same (or incompatible) brooch jewel type
 		for (int i = PAPERDOLL_BROOCH_JEWEL1; i < PAPERDOLL_BROOCH_JEWEL1 + getBroochJewelSlots(); i++)
 		{
-			if (_paperdoll[i] != null && getPaperdollItemId(i) == item.getId())
+			if (_paperdoll[i] != null && getPaperdollItemId(i) == item.Id)
 			{
 				// overwrite
 				setPaperdollItem(i, item);
@@ -2641,7 +2641,7 @@ public abstract class Inventory: ItemContainer
 		// find same (or incompatible) agathion type
 		for (int i = PAPERDOLL_AGATHION1; i < PAPERDOLL_AGATHION1 + getAgathionSlots(); i++)
 		{
-			if (_paperdoll[i] != null && getPaperdollItemId(i) == item.getId())
+			if (_paperdoll[i] != null && getPaperdollItemId(i) == item.Id)
 			{
 				// overwrite
 				setPaperdollItem(i, item);

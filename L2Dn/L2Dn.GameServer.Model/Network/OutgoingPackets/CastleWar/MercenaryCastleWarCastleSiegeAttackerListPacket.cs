@@ -44,7 +44,7 @@ public readonly struct MercenaryCastleWarCastleSiegeAttackerListPacket: IOutgoin
                     continue;
                 }
 
-                writer.WriteInt32(clan.getId());
+                writer.WriteInt32(clan.Id);
                 writer.WriteString(clan.getName());
                 writer.WriteString(clan.getLeaderName());
                 writer.WriteInt32(clan.getCrestId() ?? 0);

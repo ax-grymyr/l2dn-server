@@ -293,7 +293,7 @@ public class SpawnData: DataReaderBase
 		if (template.isType("Servitor") || template.isType("Pet"))
 		{
 			_logger.Warn(GetType().Name + ": Requested spawn for " + template.getType() + " " + template.getName() +
-			            "(" + template.getId() + ") file: " + spawnTemplate.getFile());
+			            "(" + template.Id + ") file: " + spawnTemplate.getFile());
 
 			return;
 		}

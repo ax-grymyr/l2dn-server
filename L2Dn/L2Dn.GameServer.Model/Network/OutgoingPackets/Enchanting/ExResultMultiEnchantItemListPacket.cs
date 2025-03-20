@@ -126,7 +126,7 @@ public readonly struct ExResultMultiEnchantItemListPacket: IOutgoingPacket
 			var failureReward = request.getMultiEnchantFailItems();
 			foreach (ItemHolder failure in failureReward.Values)
 			{
-				writer.WriteInt32(failure.getId());
+				writer.WriteInt32(failure.Id);
 				writer.WriteInt32((int) failure.getCount());
 			}
 			if (_isResult)

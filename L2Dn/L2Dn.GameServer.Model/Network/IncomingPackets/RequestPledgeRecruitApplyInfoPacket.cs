@@ -23,7 +23,7 @@ public struct RequestPledgeRecruitApplyInfoPacket: IIncomingPacket<GameSession>
         Clan? clan = player.getClan();
 
         ClanEntryStatus status;
-        if (clan != null && player.isClanLeader() && ClanEntryManager.getInstance().isClanRegistred(clan.getId()))
+        if (clan != null && player.isClanLeader() && ClanEntryManager.getInstance().isClanRegistred(clan.Id))
         {
             status = ClanEntryStatus.ORDERED;
         }

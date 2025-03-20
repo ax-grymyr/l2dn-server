@@ -96,7 +96,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
         }
 
         PreparedMultisellListHolder? list = player.getMultiSell();
-        if (list == null || list.getId() != _listId)
+        if (list == null || list.Id != _listId)
         {
             player.setMultiSell(null);
             return ValueTask.CompletedTask;
@@ -106,7 +106,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
         if (!list.isNpcAllowed(-1))
         {
             if (npc == null //
-                || !list.isNpcAllowed(npc.getId()) //
+                || !list.isNpcAllowed(npc.Id) //
                 || !list.checkNpcObjectId(npc.ObjectId) //
                 || player.getInstanceId() != npc.getInstanceId() //
                 || !player.IsInsideRadius3D(npc, Npc.INTERACTION_DISTANCE))
@@ -220,10 +220,10 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			long weight = 0;
 			foreach (ItemChanceHolder product in entry.getProducts())
 			{
-				if (product.getId() < 0)
+				if (product.Id < 0)
 				{
 					// Check if clan exists for clan reputation products.
-					if (clan == null && (int)SpecialItemType.CLAN_REPUTATION == product.getId())
+					if (clan == null && (int)SpecialItemType.CLAN_REPUTATION == product.Id)
 					{
 						player.sendPacket(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER_2);
 					    return ValueTask.CompletedTask;
@@ -232,7 +232,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 					continue;
 				}
 
-				ItemTemplate? template = ItemData.getInstance().getTemplate(product.getId());
+				ItemTemplate? template = ItemData.getInstance().getTemplate(product.Id);
 				if (template == null)
 				{
 					player.setMultiSell(null);
@@ -246,7 +246,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				    return ValueTask.CompletedTask;
 				}
 
-				if (!template.isStackable() || player.getInventory().getItemByItemId(product.getId()) == null)
+				if (!template.isStackable() || player.getInventory().getItemByItemId(product.Id) == null)
 				{
 					slots++;
 				}
@@ -277,7 +277,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			if (itemEnchantment != null && inventory.getItemByObjectId(itemEnchantment.getObjectId()) == null)
 			{
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.REQUIRED_S1);
-				sm.Params.addItemName(itemEnchantment.getItem().getId());
+				sm.Params.addItemName(itemEnchantment.getItem().Id);
 				player.sendPacket(sm);
 				return ValueTask.CompletedTask;
 			}
@@ -289,10 +289,10 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				bool added = false;
 				foreach (ItemChanceHolder summedIngredient in summedIngredients)
 				{
-					if (summedIngredient.getId() == ingredient.getId() &&
+					if (summedIngredient.Id == ingredient.Id &&
 					    summedIngredient.getEnchantmentLevel() == ingredient.getEnchantmentLevel())
 					{
-						summedIngredients.Add(new ItemChanceHolder(ingredient.getId(), ingredient.getChance(), ingredient.getCount() + summedIngredient.getCount(), ingredient.getEnchantmentLevel(), ingredient.isMaintainIngredient()));
+						summedIngredients.Add(new ItemChanceHolder(ingredient.Id, ingredient.getChance(), ingredient.getCount() + summedIngredient.getCount(), ingredient.getEnchantmentLevel(), ingredient.isMaintainIngredient()));
 						summedIngredients.Remove(summedIngredient);
 						added = true;
 					}
@@ -309,7 +309,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				if (ingredient.getEnchantmentLevel() > 0)
 				{
 					int found = 0;
-					foreach (Item item in inventory.getAllItemsByItemId(ingredient.getId(), ingredient.getEnchantmentLevel()))
+					foreach (Item item in inventory.getAllItemsByItemId(ingredient.Id, ingredient.getEnchantmentLevel()))
 					{
 						if (item.getEnchantLevel() >= ingredient.getEnchantmentLevel())
 						{
@@ -319,7 +319,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 
 					if (found < ingredient.getCount())
 					{
-                        ItemTemplate? ingredientTemplate = ItemData.getInstance().getTemplate(ingredient.getId());
+                        ItemTemplate? ingredientTemplate = ItemData.getInstance().getTemplate(ingredient.Id);
                         string ingredientName = ingredientTemplate != null ? ingredientTemplate.getName() : "Unknown"; // TODO: refactor later
 
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.REQUIRED_S1);
@@ -328,7 +328,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 					    return ValueTask.CompletedTask;
 					}
 				}
-				else if (!checkIngredients(player, list, inventory, clan, ingredient.getId(), checked(ingredient.getCount() * _amount)))
+				else if (!checkIngredients(player, list, inventory, clan, ingredient.Id, checked(ingredient.getCount() * _amount)))
 				{
 				    return ValueTask.CompletedTask;
 				}
@@ -346,7 +346,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				}
 
 				long totalCount = checked(list.getIngredientCount(ingredient) * _amount);
-				SpecialItemType specialItem = (SpecialItemType)ingredient.getId();
+				SpecialItemType specialItem = (SpecialItemType)ingredient.Id;
 				if (Enum.IsDefined(specialItem))
 				{
 					// Take special item.
@@ -392,7 +392,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 						}
 						default:
 						{
-							PacketLogger.Instance.Warn("Character: " + player.getName() + " has suffered possible item loss by using multisell " + _listId + " which has non-implemented special ingredient with id: " + ingredient.getId() + ".");
+							PacketLogger.Instance.Warn("Character: " + player.getName() + " has suffered possible item loss by using multisell " + _listId + " which has non-implemented special ingredient with id: " + ingredient.Id + ".");
 							return ValueTask.CompletedTask;
 						}
 					}
@@ -400,7 +400,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				else if (ingredient.getEnchantmentLevel() > 0)
 				{
 					// Take the enchanted item.
-					Item? destroyedItem = inventory.destroyItem("Multisell", inventory.getAllItemsByItemId(ingredient.getId(), ingredient.getEnchantmentLevel()).First(), totalCount, player, npc);
+					Item? destroyedItem = inventory.destroyItem("Multisell", inventory.getAllItemsByItemId(ingredient.Id, ingredient.getEnchantmentLevel()).First(), totalCount, player, npc);
 					if (destroyedItem != null)
 					{
 						itemEnchantmentProcessed = true;
@@ -413,12 +413,12 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 					else
 					{
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.REQUIRED_S1);
-						sm.Params.addItemName(ingredient.getId());
+						sm.Params.addItemName(ingredient.Id);
 						player.sendPacket(sm);
 						return ValueTask.CompletedTask;
 					}
 				}
-				else if (!itemEnchantmentProcessed && itemEnchantment != null && itemEnchantment.getItem().getId() == ingredient.getId())
+				else if (!itemEnchantmentProcessed && itemEnchantment != null && itemEnchantment.getItem().Id == ingredient.Id)
 				{
 					// Take the enchanted item.
 					Item? destroyedItem = inventory.destroyItem("Multisell", itemEnchantment.getObjectId(), totalCount, player, npc);
@@ -434,7 +434,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 					else
 					{
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.REQUIRED_S1);
-						sm.Params.addItemName(ingredient.getId());
+						sm.Params.addItemName(ingredient.Id);
 						player.sendPacket(sm);
 						return ValueTask.CompletedTask;
 					}
@@ -442,7 +442,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				else
 				{
 					// Take a regular item.
-					Item? destroyedItem = inventory.destroyItemByItemId("Multisell", ingredient.getId(), totalCount, player, npc);
+					Item? destroyedItem = inventory.destroyItemByItemId("Multisell", ingredient.Id, totalCount, player, npc);
 					if (destroyedItem != null)
 					{
 						itemsToUpdate.Add(new ItemInfo(destroyedItem));
@@ -454,7 +454,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 					else
 					{
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_NEED_S2_S1_S);
-						sm.Params.addItemName(ingredient.getId());
+						sm.Params.addItemName(ingredient.Id);
 						sm.Params.addLong(totalCount);
 						player.sendPacket(sm);
 						return ValueTask.CompletedTask;
@@ -473,7 +473,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			foreach (ItemChanceHolder product in products)
 			{
 				long totalCount = checked(list.getProductCount(product) * _amount);
-				SpecialItemType specialItem = (SpecialItemType)product.getId();
+				SpecialItemType specialItem = (SpecialItemType)product.Id;
 				if (Enum.IsDefined(specialItem))
 				{
 					// Give special item.
@@ -507,7 +507,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 						}
 						default:
 						{
-							PacketLogger.Instance.Warn("Character: " + player.getName() + " has suffered possible item loss by using multisell " + _listId + " which has non-implemented special product with id: " + product.getId() + ".");
+							PacketLogger.Instance.Warn("Character: " + player.getName() + " has suffered possible item loss by using multisell " + _listId + " which has non-implemented special product with id: " + product.Id + ".");
 							return ValueTask.CompletedTask;
 						}
 					}
@@ -515,7 +515,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				else
 				{
 					// Give item.
-					Item? addedItem = inventory.addItem("Multisell", product.getId(), totalCount, player, npc, false);
+					Item? addedItem = inventory.addItem("Multisell", product.Id, totalCount, player, npc, false);
                     if (addedItem == null)
                     {
                         player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
@@ -594,7 +594,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 					if (addedItem.getCount() > 1)
 					{
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
-						sm.Params.addItemName(addedItem.getId());
+						sm.Params.addItemName(addedItem.Id);
 						sm.Params.addLong(totalCount);
 						player.sendPacket(sm);
 					}
@@ -602,7 +602,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 					{
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_VE_OBTAINED_S1_S2_2);
 						sm.Params.addLong(addedItem.getEnchantLevel());
-						sm.Params.addItemName(addedItem.getId());
+						sm.Params.addItemName(addedItem.Id);
 						player.sendPacket(sm);
 					}
 					else
@@ -628,7 +628,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				long taxPaid = 0;
 				foreach (ItemChanceHolder ingredient in entry.getIngredients())
 				{
-					if (ingredient.getId() == Inventory.ADENA_ID)
+					if (ingredient.Id == Inventory.ADENA_ID)
 					{
 						taxPaid += checked((long)(ingredient.getCount() * list.getIngredientMultiplier() * list.getTaxRate() * _amount));
 					}
@@ -649,7 +649,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 		// Re-send multisell after successful exchange of inventory-only shown items.
 		if (list.isInventoryOnly())
 		{
-			MultisellData.getInstance().separateAndSend(list.getId(), player, npc, list.isInventoryOnly(), list.getProductMultiplier(), list.getIngredientMultiplier(), 0);
+			MultisellData.getInstance().separateAndSend(list.Id, player, npc, list.isInventoryOnly(), list.getProductMultiplier(), list.getIngredientMultiplier(), 0);
 		}
 
 		return ValueTask.CompletedTask;

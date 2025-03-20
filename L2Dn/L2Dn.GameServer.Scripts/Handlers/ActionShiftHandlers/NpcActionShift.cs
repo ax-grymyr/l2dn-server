@@ -30,16 +30,16 @@ public class NpcActionShift: IActionShiftHandler
 			player.setTarget(target);
 
 			Npc npc = (Npc) target;
-			ClanHall? clanHall = ClanHallData.getInstance().getClanHallByNpcId(npc.getId());
+			ClanHall? clanHall = ClanHallData.getInstance().getClanHallByNpcId(npc.Id);
 
 			HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/npcinfo.htm", player);
 			htmlContent.Replace("%objid%", target.ObjectId.ToString());
 			htmlContent.Replace("%class%", npc.GetType().Name);
 			htmlContent.Replace("%race%", npc.getTemplate().getRace().ToString());
-			htmlContent.Replace("%id%", npc.getTemplate().getId().ToString());
+			htmlContent.Replace("%id%", npc.getTemplate().Id.ToString());
 			htmlContent.Replace("%lvl%", npc.getTemplate().getLevel().ToString());
 			htmlContent.Replace("%name%", npc.getTemplate().getName());
-			htmlContent.Replace("%tmplid%", npc.getTemplate().getId().ToString());
+			htmlContent.Replace("%tmplid%", npc.getTemplate().Id.ToString());
 			htmlContent.Replace("%aggro%", (target.isAttackable() ? ((Attackable) target).getAggroRange() : 0).ToString());
 			htmlContent.Replace("%hp%", ((int) npc.getCurrentHp()).ToString());
 			htmlContent.Replace("%hpmax%", npc.getMaxHp().ToString());

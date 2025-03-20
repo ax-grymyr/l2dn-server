@@ -42,7 +42,7 @@ public sealed class Harvesting: AbstractEffect
                 if (harvestedItem != null)
                 {
                     // Add item
-                    player.getInventory().addItem("Harvesting", harvestedItem.getId(), harvestedItem.getCount(), player,
+                    player.getInventory().addItem("Harvesting", harvestedItem.Id, harvestedItem.getCount(), player,
                         monster);
 
                     // Send system msg
@@ -50,12 +50,12 @@ public sealed class Harvesting: AbstractEffect
                     if (harvestedItem.getCount() == 1)
                     {
                         sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1);
-                        sm.Params.addItemName(harvestedItem.getId());
+                        sm.Params.addItemName(harvestedItem.Id);
                     }
                     else
                     {
                         sm = new SystemMessagePacket(SystemMessageId.YOU_VE_OBTAINED_S1_X_S2);
-                        sm.Params.addItemName(harvestedItem.getId());
+                        sm.Params.addItemName(harvestedItem.Id);
                         sm.Params.addLong(harvestedItem.getCount());
                     }
 
@@ -69,14 +69,14 @@ public sealed class Harvesting: AbstractEffect
                         {
                             sm = new SystemMessagePacket(SystemMessageId.C1_HAS_OBTAINED_S2_2);
                             sm.Params.addString(player.getName());
-                            sm.Params.addItemName(harvestedItem.getId());
+                            sm.Params.addItemName(harvestedItem.Id);
                         }
                         else
                         {
                             sm = new SystemMessagePacket(SystemMessageId.C1_HARVESTED_S3_S2_S);
                             sm.Params.addString(player.getName());
                             sm.Params.addLong(harvestedItem.getCount());
-                            sm.Params.addItemName(harvestedItem.getId());
+                            sm.Params.addItemName(harvestedItem.Id);
                         }
 
                         party.broadcastToPartyMembers(player, sm);

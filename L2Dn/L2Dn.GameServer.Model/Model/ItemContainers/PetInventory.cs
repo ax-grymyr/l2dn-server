@@ -51,7 +51,7 @@ public class PetInventory: Inventory
     public bool validateCapacity(Item item)
     {
         int slots = 0;
-        if (!(item.isStackable() && getItemByItemId(item.getId()) != null) &&
+        if (!(item.isStackable() && getItemByItemId(item.Id) != null) &&
             !item.getTemplate().hasExImmediateEffect())
         {
             slots++;
@@ -68,7 +68,7 @@ public class PetInventory: Inventory
     public bool validateWeight(Item item, long count)
     {
         long weight = 0;
-        ItemTemplate? template = ItemData.getInstance().getTemplate(item.getId());
+        ItemTemplate? template = ItemData.getInstance().getTemplate(item.Id);
         if (template == null)
         {
             return false;

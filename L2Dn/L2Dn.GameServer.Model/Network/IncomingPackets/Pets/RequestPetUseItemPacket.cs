@@ -112,7 +112,7 @@ public struct RequestPetUseItemPacket: IIncomingPacket<GameSession>
 			else
 			{
 				player.sendPacket(SystemMessageId.THIS_PET_CANNOT_USE_THIS_ITEM);
-				PacketLogger.Instance.Warn("No item handler registered for itemId: " + item.getId());
+				PacketLogger.Instance.Warn("No item handler registered for itemId: " + item.Id);
 			}
 		}
     }

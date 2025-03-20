@@ -168,7 +168,7 @@ public class Message
 		if (mailType == MailType.COMMISSION_ITEM_SOLD)
 		{
 			_hasAttachments = false;
-			_itemId = item.getId();
+			_itemId = item.Id;
 			_enchantLvl = item.getEnchantLevel();
 			if (item.isArmor())
 			{

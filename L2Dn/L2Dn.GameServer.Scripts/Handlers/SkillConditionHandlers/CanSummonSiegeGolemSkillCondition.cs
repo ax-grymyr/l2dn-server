@@ -44,8 +44,8 @@ public class CanSummonSiegeGolemSkillCondition: ISkillCondition
             return false;
         }
 
-        if ((castle != null && castle.getSiege().getAttackerClan(clan.getId()) == null) ||
-            (fort != null && fort.getSiege().getAttackerClan(clan.getId()) == null))
+        if ((castle != null && castle.getSiege().getAttackerClan(clan.Id) == null) ||
+            (fort != null && fort.getSiege().getAttackerClan(clan.Id) == null))
         {
             player.sendPacket(SystemMessageId.INVALID_TARGET);
             return false;

@@ -51,7 +51,7 @@ public readonly struct WorldExchangeItemListPacket: IOutgoingPacket
         writer.WriteInt32(holder.getEndTime().getEpochSecond());
 
         Item item = holder.getItemInstance();
-        writer.WriteInt32(item.getId());
+        writer.WriteInt32(item.Id);
         writer.WriteInt64(item.getCount());
         writer.WriteInt32(item.getEnchantLevel() < 1 ? 0 : item.getEnchantLevel());
         VariationInstance? iv = item.getAugmentation();

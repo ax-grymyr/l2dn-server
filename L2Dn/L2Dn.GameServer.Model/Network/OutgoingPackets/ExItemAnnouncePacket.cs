@@ -48,7 +48,7 @@ public readonly struct ExItemAnnouncePacket: IOutgoingPacket
         // 11 and others - null item name by item_id and icon from chest.
         writer.WriteByte((byte)_type); // announce type
         writer.WriteSizedString(_announceName); // name of player
-        writer.WriteInt32(_item.getId()); // item id
+        writer.WriteInt32(_item.Id); // item id
         writer.WriteByte((byte)_item.getEnchantLevel()); // enchant level
         writer.WriteInt32(0); // chest item id
     }

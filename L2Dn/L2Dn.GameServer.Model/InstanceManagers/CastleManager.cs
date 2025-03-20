@@ -54,7 +54,7 @@ public class CastleManager
 		}
 		foreach (Castle temp in _castles.Values)
 		{
-			if (temp.getOwnerId() == clan.getId())
+			if (temp.getOwnerId() == clan.Id)
 			{
 				return temp;
 			}

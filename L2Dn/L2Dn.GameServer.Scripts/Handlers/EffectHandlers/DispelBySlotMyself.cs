@@ -1,5 +1,6 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -32,8 +33,8 @@ public sealed class DispelBySlotMyself: AbstractEffect
             return;
 
         // The effectlist should already check if it has buff with this abnormal type or not.
-        effected.getEffectList().stopEffects(info => !info.getSkill().isIrreplacableBuff() &&
-            _dispelAbnormals.Contains(info.getSkill().getAbnormalType()), true, true);
+        effected.getEffectList().stopEffects(info => !info.getSkill().IsIrreplacableBuff &&
+            _dispelAbnormals.Contains(info.getSkill().AbnormalType), true, true);
     }
 
     public override int GetHashCode() => _dispelAbnormals.GetSetHashCode();

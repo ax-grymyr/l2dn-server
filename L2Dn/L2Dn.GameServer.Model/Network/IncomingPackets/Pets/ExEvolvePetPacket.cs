@@ -58,13 +58,13 @@ public struct ExEvolvePetPacket: IIncomingPacket<GameSession>
             return;
 
 		pet.unSummon(activeChar);
-		List<PetData> pets = PetDataTable.getInstance().getPetDatasByEvolve(controlItem.getId(), evolveLevel);
+		List<PetData> pets = PetDataTable.getInstance().getPetDatasByEvolve(controlItem.Id, evolveLevel);
 		PetData targetPet = pets.GetRandomElement();
 		PetData? petData = PetDataTable.getInstance().getPetData(targetPet.getNpcId());
 		if (petData == null || petData.getNpcId() == -1)
 			return;
 
-		NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(evolveLevel == EvolveLevel.Second ? pet.getId() + 2 : petData.getNpcId());
+		NpcTemplate? npcTemplate = NpcData.getInstance().getTemplate(evolveLevel == EvolveLevel.Second ? pet.Id + 2 : petData.getNpcId());
         if (npcTemplate == null)
             return;
 

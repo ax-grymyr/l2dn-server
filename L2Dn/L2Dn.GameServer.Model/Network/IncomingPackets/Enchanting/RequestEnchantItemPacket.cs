@@ -70,7 +70,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 		}
 
 		// Template for scroll.
-		EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
+		EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.Id);
 		if (scrollTemplate == null)
 			return ValueTask.CompletedTask;
 
@@ -78,7 +78,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 		EnchantSupportItem? supportTemplate = null;
 		if (support != null)
 		{
-			supportTemplate = EnchantItemData.getInstance().getSupportItem(support.getId());
+			supportTemplate = EnchantItemData.getInstance().getSupportItem(support.Id);
 			if (supportTemplate == null)
 			{
 				player.removeRequest<EnchantItemRequest>();
@@ -138,7 +138,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 
 			EnchantResultType resultType = scrollTemplate.calculateSuccess(player, item, supportTemplate);
 			EnchantChallengePointData.EnchantChallengePointsItemInfo? info =
-                EnchantChallengePointData.getInstance().getInfoByItemId(item.getId());
+                EnchantChallengePointData.getInstance().getInfoByItemId(item.Id);
 
 			int challengePointsGroupId = -1;
 			int challengePointsOptionIndex = -1;
@@ -234,7 +234,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 							}
 						}
 					}
-					player.sendPacket(new EnchantResultPacket(EnchantResultPacket.SUCCESS, new ItemHolder(item.getId(), 1), null, item.getEnchantLevel()));
+					player.sendPacket(new EnchantResultPacket(EnchantResultPacket.SUCCESS, new ItemHolder(item.Id, 1), null, item.getEnchantLevel()));
 					if (Config.General.LOG_ITEM_ENCHANTS)
 					{
 						StringBuilder sb = new StringBuilder();
@@ -299,7 +299,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 						Skill skill = CommonSkill.FIREWORK.getSkill();
 						if (skill != null)
 						{
-							player.broadcastPacket(new MagicSkillUsePacket(player, player, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()));
+							player.broadcastPacket(new MagicSkillUsePacket(player, player, skill.Id, skill.Level, skill.HitTime, skill.ReuseDelay));
 						}
 					}
 
@@ -338,7 +338,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 					{
 						// Safe enchant: Remain old value.
 						player.sendPacket(SystemMessageId.ENCHANT_FAILED_THE_ENCHANT_SKILL_FOR_THE_CORRESPONDING_ITEM_WILL_BE_EXACTLY_RETAINED);
-						player.sendPacket(new EnchantResultPacket(EnchantResultPacket.SAFE_FAIL_02, new ItemHolder(item.getId(), 1), null, item.getEnchantLevel()));
+						player.sendPacket(new EnchantResultPacket(EnchantResultPacket.SAFE_FAIL_02, new ItemHolder(item.Id, 1), null, item.getEnchantLevel()));
 						if (Config.General.LOG_ITEM_ENCHANTS)
 						{
 							StringBuilder sb = new StringBuilder();
@@ -458,7 +458,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 								player.sendPacket(SystemMessageId.THE_BLESSED_ENCHANT_FAILED_THE_ENCHANT_VALUE_OF_THE_ITEM_BECAME_0);
 								item.setEnchantLevel(0);
 							}
-							player.sendPacket(new EnchantResultPacket(EnchantResultPacket.FAIL, new ItemHolder(item.getId(), 1), null, item.getEnchantLevel()));
+							player.sendPacket(new EnchantResultPacket(EnchantResultPacket.FAIL, new ItemHolder(item.Id, 1), null, item.getEnchantLevel()));
 							item.updateDatabase();
 							if (Config.General.LOG_ITEM_ENCHANTS)
 							{

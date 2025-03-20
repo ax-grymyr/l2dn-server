@@ -192,10 +192,10 @@ public class CursedWeaponsManager: DataReaderBase
 
 	public void activate(Player player, Item item)
 	{
-		CursedWeapon? cw = _cursedWeapons.get(item.getId());
+		CursedWeapon? cw = _cursedWeapons.get(item.Id);
         if (cw == null)
         {
-            LOGGER.Error("Unknown cursed weapon id=" + item.getId());
+            LOGGER.Error("Unknown cursed weapon id=" + item.Id);
             return;
         }
 

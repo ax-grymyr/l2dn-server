@@ -7,7 +7,6 @@ using L2Dn.GameServer.Model.InstanceZones;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
@@ -74,7 +73,7 @@ public sealed class CallPc: AbstractEffect
         }
         else if (target != null)
         {
-            if (skill.getTargetType() == TargetType.ENEMY)
+            if (skill.TargetType == TargetType.ENEMY)
             {
                 effected.abortCast();
                 effected.abortAttack();

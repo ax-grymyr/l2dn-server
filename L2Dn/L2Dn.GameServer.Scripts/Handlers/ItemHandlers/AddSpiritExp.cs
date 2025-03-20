@@ -23,7 +23,7 @@ public class AddSpiritExp: IItemHandler
 		}
 
 		ElementalSpirit? spirit = null;
-		switch (item.getId())
+		switch (item.Id)
 		{
 			case 91999:
 			case 91035:

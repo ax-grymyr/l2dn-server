@@ -36,14 +36,14 @@ public sealed class DeathLink: AbstractEffect
         if (effector.isAlikeDead())
             return;
 
-        bool sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
-        bool bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+        bool sps = skill.UseSpiritShot && effector.isChargedShot(ShotType.SPIRITSHOTS);
+        bool bss = skill.UseSpiritShot && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 
         Player? player = effected.getActingPlayer();
         if (effected.isPlayer() && player != null && player.isFakeDeath() && Config.Character.FAKE_DEATH_DAMAGE_STAND)
             effected.stopFakeDeath(true);
 
-        bool mcrit = Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill);
+        bool mcrit = Formulas.calcCrit(skill.MagicCriticalRate, effector, effected, skill);
         double damage = Formulas.calcMagicDam(effector, effected, skill, effector.getMAtk(),
             _power * (-(effector.getCurrentHp() * 2 / effector.getMaxHp()) + 2), effected.getMDef(), sps, bss, mcrit);
 

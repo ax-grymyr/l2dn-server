@@ -12,12 +12,12 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// </summary>
 public class SkillEvasion: AbstractEffect
 {
-    private readonly int _magicType;
+    private readonly SkillMagicType _magicType;
     private readonly double _amount;
 
     public SkillEvasion(StatSet @params)
     {
-        _magicType = @params.getInt("magicType", 0);
+        _magicType = (SkillMagicType)@params.getInt("magicType", 0);
         _amount = @params.getDouble("amount", 0);
     }
 

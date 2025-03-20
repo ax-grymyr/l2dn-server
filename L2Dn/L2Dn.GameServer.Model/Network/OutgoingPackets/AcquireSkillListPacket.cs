@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -41,7 +42,7 @@ public readonly struct AcquireSkillListPacket: IOutgoingPacket
             int skillId = _player.getReplacementSkill(skill.getSkillId());
             writer.WriteInt32(skillId);
 
-            if (Config.Server.SERVER_LIST_TYPE == GameServerType.Classic)
+            if (ServerConfig.Instance.GameServerParams.ServerType == GameServerType.Classic)
                 writer.WriteInt16((short)skill.getSkillLevel()); // Classic 16-bit integer
             else
                 writer.WriteInt32(skill.getSkillLevel()); // 414 both Main and Essence 32-bit integer
@@ -56,7 +57,7 @@ public readonly struct AcquireSkillListPacket: IOutgoingPacket
             writer.WriteByte((byte)requiredItems.Count);
             foreach (List<ItemHolder> item in requiredItems)
             {
-                writer.WriteInt32(item[0].getId());
+                writer.WriteInt32(item[0].Id);
                 writer.WriteInt64(item[0].getCount());
             }
 
@@ -71,12 +72,12 @@ public readonly struct AcquireSkillListPacket: IOutgoingPacket
             writer.WriteByte((byte)removeSkills.Count);
             foreach (Skill removed in removeSkills)
             {
-                writer.WriteInt32(removed.getId());
+                writer.WriteInt32(removed.Id);
 
-                if (Config.Server.SERVER_LIST_TYPE == GameServerType.Classic)
-                    writer.WriteInt16((short)removed.getLevel()); // Classic 16-bit integer
+                if (ServerConfig.Instance.GameServerParams.ServerType == GameServerType.Classic)
+                    writer.WriteInt16((short)removed.Level); // Classic 16-bit integer
                 else
-                    writer.WriteInt32(removed.getLevel()); // 414 both Main and Essence 32-bit integer
+                    writer.WriteInt32(removed.Level); // 414 both Main and Essence 32-bit integer
             }
         }
     }

@@ -71,7 +71,7 @@ public class Doorman : Folk
         {
             if (isOwnerClan(player))
             {
-                TeleportHolder? holder = TeleporterData.getInstance().getHolder(getId(), TeleportType.OTHER.ToString());
+                TeleportHolder? holder = TeleporterData.getInstance().getHolder(Id, TeleportType.OTHER.ToString());
                 if (holder != null)
                 {
                     int locId = int.Parse(command.Substring(5).Trim());
@@ -90,11 +90,11 @@ public class Doorman : Folk
 		string filePath;
 		if (!isOwnerClan(player))
 		{
-			filePath = "html/doorman/" + getTemplate().getId() + "-no.htm";
+			filePath = "html/doorman/" + getTemplate().Id + "-no.htm";
 		}
 		else
 		{
-			filePath = "html/doorman/" + getTemplate().getId() + ".htm";
+			filePath = "html/doorman/" + getTemplate().Id + ".htm";
 		}
 
 		HtmlContent htmlContent = HtmlContent.LoadFromFile(filePath, player);
@@ -130,7 +130,7 @@ public class Doorman : Folk
 	{
 		player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 
-		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().getId() + "-busy.htm", player);
+		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/doorman/" + getTemplate().Id + "-busy.htm", player);
 		NpcHtmlMessagePacket html = new NpcHtmlMessagePacket(ObjectId, 0, htmlContent);
 		player.sendPacket(html);
 	}

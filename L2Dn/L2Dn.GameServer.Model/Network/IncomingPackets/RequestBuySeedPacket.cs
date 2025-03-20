@@ -94,7 +94,7 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
         Map<int, SeedProduction> productInfo = new();
         foreach (ItemHolder ih in _items)
         {
-            SeedProduction? sp = manor.getSeedProduct(_manorId, ih.getId(), false);
+            SeedProduction? sp = manor.getSeedProduct(_manorId, ih.Id, false);
             if (sp == null || sp.getPrice() <= 0 || sp.getAmount() < ih.getCount() ||
                 Inventory.MAX_ADENA / ih.getCount() < sp.getPrice())
             {
@@ -115,7 +115,7 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
             }
 
             // Calculate weight
-            ItemTemplate? template = ItemData.getInstance().getTemplate(ih.getId());
+            ItemTemplate? template = ItemData.getInstance().getTemplate(ih.Id);
             if (template == null)
             {
                 player.sendPacket(ActionFailedPacket.STATIC_PACKET);
@@ -129,12 +129,12 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
             {
                 slots += ih.getCount();
             }
-            else if (player.getInventory().getItemByItemId(ih.getId()) == null)
+            else if (player.getInventory().getItemByItemId(ih.Id) == null)
             {
                 slots++;
             }
 
-            productInfo.put(ih.getId(), sp);
+            productInfo.put(ih.Id, sp);
         }
 
         if (!player.getInventory().validateWeight(totalWeight))
@@ -158,7 +158,7 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
         // Proceed the purchase
         foreach (ItemHolder i in _items)
         {
-            SeedProduction sp = productInfo[i.getId()];
+            SeedProduction sp = productInfo[i.Id];
             long price = sp.getPrice() * i.getCount();
 
             // Take Adena and decrease seed amount
@@ -170,7 +170,7 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
             }
 
             // Add item to player's inventory
-            player.addItem("Buy", i.getId(), i.getCount(), manager, true);
+            player.addItem("Buy", i.Id, i.getCount(), manager, true);
         }
 
         // Adding to treasury for Manor Castle

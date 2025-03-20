@@ -1797,7 +1797,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 
 			foreach (int itemId in itemIds)
 			{
-				if (item.getId() == itemId)
+				if (item.Id == itemId)
 				{
 					if (count + item.getCount() > long.MaxValue) // TODO! overflow
 					{
@@ -1837,9 +1837,9 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		if (checkCount)
 		{
-			return getQuestItemsCount(player, item.getId()) >= item.getCount();
+			return getQuestItemsCount(player, item.Id) >= item.getCount();
 		}
-		return hasQuestItems(player, item.getId());
+		return hasQuestItems(player, item.Id);
 	}
 
 	/**
@@ -2060,7 +2060,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 */
 	public static void rewardItems(Player player, ItemHolder holder)
 	{
-		rewardItems(player, holder.getId(), holder.getCount());
+		rewardItems(player, holder.Id, holder.getCount());
 	}
 
 	/**
@@ -2160,7 +2160,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	private static void sendItemGetMessage(Player player, Item item, long count)
 	{
 		// If item for reward is gold, send message of gold reward to client
-		if (item.getId() == Inventory.ADENA_ID)
+		if (item.Id == Inventory.ADENA_ID)
 		{
 			SystemMessagePacket smsg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_ADENA_2);
 			smsg.Params.addLong(count);
@@ -2215,7 +2215,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 */
 	protected void giveItems(Player player, ItemHolder holder)
 	{
-		giveItems(player, holder.getId(), holder.getCount());
+		giveItems(player, holder.Id, holder.getCount());
 	}
 
 	/**
@@ -2473,7 +2473,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return false;
 		}
-		return takeItems(player, holder.getId(), holder.getCount());
+		return takeItems(player, holder.Id, holder.getCount());
 	}
 
 	/**

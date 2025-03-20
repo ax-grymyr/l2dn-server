@@ -84,12 +84,12 @@ public class RankingPowerManager
 			{
 				BuffInfo? info = nearby.getEffectList().getBuffInfoBySkillId(LEADER_POWER.getSkillId());
 				if (info == null ||
-				    info.getTime() < LEADER_POWER.getSkill().getAbnormalTime() - TimeSpan.FromSeconds(60))
+				    info.getTime() < LEADER_POWER.getSkill().AbnormalTime - TimeSpan.FromSeconds(60))
 				{
 					nearby.sendPacket(new MagicSkillUsePacket(_decoyInstance, nearby, LEADER_POWER.getSkillId(),
 						LEADER_POWER.getSkillLevel(), TimeSpan.Zero, TimeSpan.Zero));
 
-					LEADER_POWER.getSkill().applyEffects(_decoyInstance, nearby);
+					LEADER_POWER.getSkill().ApplyEffects(_decoyInstance, nearby);
 				}
 			});
 			if (Rnd.nextBoolean()) // Add some randomness?

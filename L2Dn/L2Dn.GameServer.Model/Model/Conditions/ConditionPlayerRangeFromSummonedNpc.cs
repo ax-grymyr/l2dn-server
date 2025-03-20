@@ -18,7 +18,7 @@ public sealed class ConditionPlayerRangeFromSummonedNpc(Set<int> npcIds, int rad
         {
             foreach (Npc target in World.getInstance().getVisibleObjectsInRange<Npc>(effector, radius))
             {
-                if (npcIds.Contains(target.getId()) && effector == target.getSummoner())
+                if (npcIds.Contains(target.Id) && effector == target.getSummoner())
                 {
                     existNpc = true;
                     break;

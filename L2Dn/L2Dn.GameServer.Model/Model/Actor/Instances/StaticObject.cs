@@ -30,16 +30,13 @@ public class StaticObject: Creature
 		return null!; // TODO: make empty/null AI
 	}
 
-	/**
+    /**
 	 * Gets the static object ID.
 	 * @return the static object ID
 	 */
-	public override int getId()
-	{
-		return _staticObjectId;
-	}
+    public override int Id => _staticObjectId;
 
-	/**
+    /**
 	 * @param template
 	 * @param staticId
 	 */

@@ -14,7 +14,7 @@ public class ConditionPlayerActiveSkillId(int skillId, int skillLevel = -1): Con
     {
         Skill? knownSkill = effector.getKnownSkill(skillId);
         if (knownSkill is not null)
-            return skillLevel == -1 || skillLevel <= knownSkill.getLevel();
+            return skillLevel == -1 || skillLevel <= knownSkill.Level;
 
         return false;
     }

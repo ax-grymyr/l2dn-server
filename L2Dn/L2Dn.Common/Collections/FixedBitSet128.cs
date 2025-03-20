@@ -4,9 +4,10 @@ namespace L2Dn.Collections;
 
 public struct FixedBitSet128: IFixedBitSet
 {
-    private const int Size = 2;
+    private const int _size = 2;
+    private const int _capacity = sizeof(ulong) * 8 * _size;
 
-    [InlineArray(Size)]
+    [InlineArray(_size)]
     private struct Bits
     {
         public ulong Items;
@@ -14,7 +15,7 @@ public struct FixedBitSet128: IFixedBitSet
 
     private Bits _bits;
 
-    public int Capacity => sizeof(ulong) * Size * 8;
+    public static int Capacity => _capacity;
 
     public int Count => (int)(ulong.PopCount(_bits[0]) + ulong.PopCount(_bits[1]));
 
@@ -23,10 +24,12 @@ public struct FixedBitSet128: IFixedBitSet
         get => (_bits[index / (sizeof(ulong) * 8)] & (1UL << index)) != 0;
         set
         {
+            ref ulong bits = ref _bits[index / (sizeof(ulong) * 8)];
+            ulong mask = 1UL << index;
             if (value)
-                SetBit(index);
+                Interlocked.Or(ref bits, mask);
             else
-                ClearBit(index);
+                Interlocked.And(ref bits, ~mask);
         }
     }
 
@@ -44,7 +47,6 @@ public struct FixedBitSet128: IFixedBitSet
 
     public void Clear()
     {
-        _bits[0] = 0;
-        _bits[1] = 0;
+        _bits = default;
     }
 }

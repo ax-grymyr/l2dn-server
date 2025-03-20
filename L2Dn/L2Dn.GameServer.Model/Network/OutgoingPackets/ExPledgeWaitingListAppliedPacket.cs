@@ -22,7 +22,7 @@ public readonly struct ExPledgeWaitingListAppliedPacket: IOutgoingPacket
     {
         writer.WritePacketCode(OutgoingPacketCodes.EX_PLEDGE_WAITING_LIST_APPLIED);
 
-        writer.WriteInt32(_pledgeRecruitInfo.getClan().getId());
+        writer.WriteInt32(_pledgeRecruitInfo.getClan().Id);
         writer.WriteString(_pledgeRecruitInfo.getClan().getName());
         writer.WriteString(_pledgeRecruitInfo.getClan().getLeaderName());
         writer.WriteInt32(_pledgeRecruitInfo.getClan().getLevel());

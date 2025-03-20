@@ -23,7 +23,7 @@ public class RollingDice: IItemHandler
 			return false;
 		}
 
-		int itemId = item.getId();
+		int itemId = item.Id;
 		if (player.isInOlympiadMode())
 		{
 			player.sendPacket(SystemMessageId.THE_ITEM_CANNOT_BE_USED_IN_THE_OLYMPIAD);

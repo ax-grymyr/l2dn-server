@@ -1,5 +1,6 @@
 using System.Collections.Frozen;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -46,7 +47,7 @@ public sealed class AbnormalTimeChange: AbstractEffect
                 {
                     foreach (BuffInfo info in effected.getEffectList().getEffects())
                     {
-                        if (info.getSkill().canBeDispelled())
+                        if (info.getSkill().CanBeDispelled)
                         {
                             info.resetAbnormalTime(info.getTime() + _time);
                             asu.addSkill(info);
@@ -57,7 +58,7 @@ public sealed class AbnormalTimeChange: AbstractEffect
                 {
                     foreach (BuffInfo info in effected.getEffectList().getEffects())
                     {
-                        if (info.getSkill().canBeDispelled() && _abnormals.Contains(info.getSkill().getAbnormalType()))
+                        if (info.getSkill().CanBeDispelled && _abnormals.Contains(info.getSkill().AbnormalType))
                         {
                             info.resetAbnormalTime(info.getTime() + _time);
                             asu.addSkill(info);
@@ -73,7 +74,7 @@ public sealed class AbnormalTimeChange: AbstractEffect
                 {
                     foreach (BuffInfo info in effected.getEffectList().getDebuffs())
                     {
-                        if (info.getSkill().canBeDispelled())
+                        if (info.getSkill().CanBeDispelled)
                         {
                             info.resetAbnormalTime(info.getAbnormalTime());
                             asu.addSkill(info);
@@ -84,7 +85,7 @@ public sealed class AbnormalTimeChange: AbstractEffect
                 {
                     foreach (BuffInfo info in effected.getEffectList().getDebuffs())
                     {
-                        if (info.getSkill().canBeDispelled() && _abnormals.Contains(info.getSkill().getAbnormalType()))
+                        if (info.getSkill().CanBeDispelled && _abnormals.Contains(info.getSkill().AbnormalType))
                         {
                             info.resetAbnormalTime(info.getAbnormalTime());
                             asu.addSkill(info);

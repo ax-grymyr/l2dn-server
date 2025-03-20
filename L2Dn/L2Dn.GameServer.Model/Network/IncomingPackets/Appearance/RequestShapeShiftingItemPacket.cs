@@ -80,7 +80,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		AppearanceStone? appearanceStone = AppearanceItemData.getInstance().getStone(stone.getId());
+		AppearanceStone? appearanceStone = AppearanceItemData.getInstance().getStone(stone.Id);
 		if (appearanceStone == null)
 		{
 			player.sendPacket(ExShapeShiftingResultPacket.CLOSE);
@@ -141,7 +141,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			if (extractItem.getItemType() != targetItem.getItemType() || extractItem.getId() == targetItem.getId() || extractItem.ObjectId == targetItem.ObjectId)
+			if (extractItem.getItemType() != targetItem.getItemType() || extractItem.Id == targetItem.Id || extractItem.ObjectId == targetItem.ObjectId)
 			{
 				player.sendPacket(ExShapeShiftingResultPacket.CLOSE);
 				player.removeRequest<ShapeShiftingItemRequest>();
@@ -155,7 +155,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			extracItemId = extractItem.getId();
+			extracItemId = extractItem.Id;
 		}
 
 		long cost = appearanceStone.getCost();
@@ -195,12 +195,12 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 			}
 			case AppearanceType.NORMAL:
 			{
-				targetItem.setVisualId(extractItem.getId());
+				targetItem.setVisualId(extractItem.Id);
 				break;
 			}
 			case AppearanceType.BLESSED:
 			{
-				targetItem.setVisualId(extractItem.getId());
+				targetItem.setVisualId(extractItem.Id);
 				break;
 			}
 			case AppearanceType.FIXED:
@@ -260,7 +260,7 @@ public struct RequestShapeShiftingItemPacket: IIncomingPacket<GameSession>
 
 		player.removeRequest<ShapeShiftingItemRequest>();
 		player.sendPacket(new ExShapeShiftingResultPacket(ExShapeShiftingResultPacket.RESULT_SUCCESS,
-			targetItem.getId(), extracItemId));
+			targetItem.Id, extracItemId));
 
 		if (targetItem.isEquipped())
 		{

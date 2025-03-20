@@ -47,12 +47,9 @@ public class Shuttle: Vehicle
 		}
 	}
 
-	public override int getId()
-	{
-		return _shuttleData.getId();
-	}
+    public override int Id => _shuttleData.getId();
 
-	public override bool addPassenger(Player player)
+    public override bool addPassenger(Player player)
 	{
 		if (!base.addPassenger(player))
 		{

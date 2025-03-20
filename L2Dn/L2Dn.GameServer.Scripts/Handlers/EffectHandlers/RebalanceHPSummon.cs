@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -31,7 +32,7 @@ public sealed class RebalanceHPSummon: AbstractEffect
 
         foreach (L2Dn.GameServer.Model.Actor.Summon summon in effector.getServitors().Values)
         {
-            if (!summon.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, summon, true))
+            if (!summon.isDead() && Util.checkIfInRange(skill.AffectRange, effector, summon, true))
             {
                 fullHp += summon.getMaxHp();
                 currentHPs += summon.getCurrentHp();
@@ -45,7 +46,7 @@ public sealed class RebalanceHPSummon: AbstractEffect
         double newHP;
         foreach (L2Dn.GameServer.Model.Actor.Summon summon in effector.getServitors().Values)
         {
-            if (!summon.isDead() && Util.checkIfInRange(skill.getAffectRange(), effector, summon, true))
+            if (!summon.isDead() && Util.checkIfInRange(skill.AffectRange, effector, summon, true))
             {
                 newHP = summon.getMaxHp() * percentHP;
                 if (newHP > summon.getCurrentHp()) // The target gets healed

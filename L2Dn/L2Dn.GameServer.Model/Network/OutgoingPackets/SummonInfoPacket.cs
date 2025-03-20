@@ -40,7 +40,7 @@ public readonly struct SummonInfoPacket: IOutgoingPacket
 		_value = value;
 		_abnormalVisualEffects = summon.getEffectList().getCurrentAbnormalVisualEffects();
 
-		if (summon.getTemplate().getDisplayId() != summon.getTemplate().getId())
+		if (summon.getTemplate().getDisplayId() != summon.getTemplate().Id)
 		{
 			_helper.AddComponent(NpcInfoType.PET_EVOLUTION_ID);
 			_helper.AddComponent(NpcInfoType.NAME);

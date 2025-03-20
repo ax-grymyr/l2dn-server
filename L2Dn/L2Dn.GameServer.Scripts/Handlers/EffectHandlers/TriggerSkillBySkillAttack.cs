@@ -8,7 +8,6 @@ using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
@@ -61,7 +60,7 @@ public sealed class TriggerSkillBySkillAttack: AbstractEffect
         if (eventSkill == null)
             return;
 
-        if (eventSkill.getId() != _attackSkill.getSkillId())
+        if (eventSkill.Id != _attackSkill.getSkillId())
             return;
 
         ITargetTypeHandler? targetHandler = TargetHandler.getInstance().getHandler(_targetType);
@@ -100,7 +99,7 @@ public sealed class TriggerSkillBySkillAttack: AbstractEffect
                 BuffInfo? buffInfo = ((Creature)target).getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
                 if (buffInfo != null)
                     triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(),
-                        Math.Min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
+                        Math.Min(_skillLevelScaleTo, buffInfo.getSkill().Level + 1));
             }
 
             if (triggerSkill == null)

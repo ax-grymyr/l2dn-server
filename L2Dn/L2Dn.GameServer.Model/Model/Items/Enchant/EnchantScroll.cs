@@ -102,7 +102,7 @@ public class EnchantScroll: AbstractEnchantItem
 	 */
 	public override bool isValid(Item itemToEnchant, EnchantSupportItem? supportItem)
 	{
-		if (_items.Count != 0 && !_items.ContainsKey(itemToEnchant.getId()))
+		if (_items.Count != 0 && !_items.ContainsKey(itemToEnchant.Id))
 		{
 			return false;
 		}
@@ -148,7 +148,7 @@ public class EnchantScroll: AbstractEnchantItem
 				}
 
 				ICollection<int> scrollItems = scroll.getItems();
-				if (scrollItems.Count == 0 && scrollItems.Contains(itemToEnchant.getId()))
+				if (scrollItems.Count == 0 && scrollItems.Contains(itemToEnchant.Id))
 				{
 					return false;
 				}
@@ -165,7 +165,7 @@ public class EnchantScroll: AbstractEnchantItem
 	 */
 	public double getChance(Player player, Item enchantItem)
 	{
-		int scrollGroupId = _items.GetValueOrDefault(enchantItem.getId(), _scrollGroupId);
+		int scrollGroupId = _items.GetValueOrDefault(enchantItem.Id, _scrollGroupId);
 		if (EnchantItemGroupsData.getInstance().getScrollGroup(scrollGroupId) == null)
 		{
 			_logger.Warn(GetType().Name + ": Unexistent enchant scroll group specified for enchant scroll: " + getId());

@@ -37,7 +37,7 @@ public struct RequestChangePetNamePacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (PetNameTable.getInstance().doesPetNameExist(_name, pet.getTemplate().getId()))
+        if (PetNameTable.getInstance().doesPetNameExist(_name, pet.getTemplate().Id))
         {
             player.sendPacket(SystemMessageId.THIS_IS_ALREADY_IN_USE_BY_ANOTHER_PET);
             return ValueTask.CompletedTask;

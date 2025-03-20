@@ -31,7 +31,7 @@ public sealed class TakeCastleStart: AbstractEffect
         if (castle != null && castle.getSiege().isInProgress())
         {
             SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_OPPOSING_CLAN_HAS_STARTED_S1);
-            sm.Params.addSkillName(skill.getId());
+            sm.Params.addSkillName(skill.Id);
             castle.getSiege().announceToPlayer(sm, false);
         }
     }

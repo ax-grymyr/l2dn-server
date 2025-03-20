@@ -40,7 +40,7 @@ public readonly struct ExQuestAcceptableListPacket: IOutgoingPacket
         writer.WriteInt32(availableQuests.Count);
         foreach (Quest quest in availableQuests)
         {
-            writer.WriteInt32(quest.getId());
+            writer.WriteInt32(quest.Id);
         }
     }
 }

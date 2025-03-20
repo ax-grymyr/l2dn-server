@@ -184,18 +184,18 @@ public class HomeBoard: IParseBoardHandler
 				for (int i = 0; i < buffCount; i++)
 				{
 					Skill? skill = SkillData.getInstance().getSkill(int.Parse(buypassOptions[i].Split(",")[0]), int.Parse(buypassOptions[i].Split(",")[1]));
-					if (skill == null || !Config.CommunityBoard.COMMUNITY_AVAILABLE_BUFFS.Contains(skill.getId()))
+					if (skill == null || !Config.CommunityBoard.COMMUNITY_AVAILABLE_BUFFS.Contains(skill.Id))
 					{
 						continue;
 					}
 					foreach (Creature target in targets)
 					{
-						if (skill.isSharedWithSummon() || target.isPlayer())
+						if (skill.IsSharedWithSummon || target.isPlayer())
 						{
-							skill.applyEffects(player, target);
+							skill.ApplyEffects(player, target);
 							if (Config.CommunityBoard.COMMUNITYBOARD_CAST_ANIMATIONS)
 							{
-								player.sendPacket(new MagicSkillUsePacket(player, target, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()));
+								player.sendPacket(new MagicSkillUsePacket(player, target, skill.Id, skill.Level, skill.HitTime, skill.ReuseDelay));
 								// not recommend broadcast
 								// player.broadcastPacket(new MagicSkillUse(player, target, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay()));
 							}

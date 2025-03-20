@@ -16,7 +16,7 @@ public class ItemAction: IActionHandler
 	{
 		Castle? castle = CastleManager.getInstance().getCastle(target);
 		if (castle != null &&
-		    SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), target.getId()) != null &&
+		    SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), target.Id) != null &&
 		    (player.getClan() == null || castle.getOwnerId() != player.getClanId() ||
 		     !player.hasClanPrivilege(ClanPrivilege.CS_MERCENARIES)))
 		{

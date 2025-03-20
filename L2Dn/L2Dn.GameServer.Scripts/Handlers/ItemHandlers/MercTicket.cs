@@ -38,7 +38,7 @@ public class MercTicket: /*AbstractNpcAI, */ IItemHandler
 		}
 
 		int castleId = castle.getResidenceId();
-		SiegeGuardHolder? holder = SiegeGuardManager.getInstance().getSiegeGuardByItem(castleId, item.getId());
+		SiegeGuardHolder? holder = SiegeGuardManager.getInstance().getSiegeGuardByItem(castleId, item.Id);
 		if (holder == null || castleId != holder.getCastleId())
 		{
 			player.sendPacket(SystemMessageId.MERCENARIES_CANNOT_BE_POSITIONED_HERE);
@@ -57,7 +57,7 @@ public class MercTicket: /*AbstractNpcAI, */ IItemHandler
             return false;
         }
 
-        if (SiegeGuardManager.getInstance().isAtNpcLimit(castleId, item.getId()))
+        if (SiegeGuardManager.getInstance().isAtNpcLimit(castleId, item.Id))
         {
             player.sendPacket(SystemMessageId.THIS_MERCENARY_CANNOT_BE_POSITIONED_ANYMORE);
             return false;
@@ -87,7 +87,7 @@ public class MercTicket: /*AbstractNpcAI, */ IItemHandler
 
 			if (@event.getAnswer() == 1)
 			{
-				SiegeGuardManager.getInstance().addTicket(item.getId(), player);
+				SiegeGuardManager.getInstance().addTicket(item.Id, player);
 				player.destroyItem("Consume", item.ObjectId, 1, null, false); // Remove item from char's inventory
 			}
 

@@ -61,7 +61,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.getId());
+		EnchantScroll? scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll.Id);
 		if (scrollTemplate == null)
 			return ValueTask.CompletedTask;
 
@@ -112,7 +112,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			if (player.getInventory().destroyItemByItemId("Enchant", scroll.getId(), 1, player, enchantItem) == null)
+			if (player.getInventory().destroyItemByItemId("Enchant", scroll.Id, 1, player, enchantItem) == null)
 			{
 				player.removeRequest<EnchantItemRequest>();
 				return ValueTask.CompletedTask;
@@ -192,7 +192,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 						{
 							// Safe enchant: Remain old value.
 							player.sendPacket(SystemMessageId.ENCHANT_FAILED_THE_ENCHANT_SKILL_FOR_THE_CORRESPONDING_ITEM_WILL_BE_EXACTLY_RETAINED);
-							player.sendPacket(new EnchantResultPacket(EnchantResultPacket.SAFE_FAIL, new ItemHolder(enchantItem.getId(), 1), null, 0));
+							player.sendPacket(new EnchantResultPacket(EnchantResultPacket.SAFE_FAIL, new ItemHolder(enchantItem.Id, 1), null, 0));
 							if (Config.General.LOG_ITEM_ENCHANTS)
 							{
 								StringBuilder sb = new StringBuilder();
@@ -356,7 +356,7 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 							if (destroyReward != null && Rnd.get(100) < destroyReward.getChance())
 							{
 								failureReward.put(failureReward.Count + 1, destroyReward);
-								player.addItem("Enchant", destroyReward.getId(), destroyReward.getCount(), null, true);
+								player.addItem("Enchant", destroyReward.Id, destroyReward.getCount(), null, true);
 								player.sendPacket(new EnchantResultPacket(EnchantResultPacket.FAIL, destroyReward, null, 0));
 							}
 

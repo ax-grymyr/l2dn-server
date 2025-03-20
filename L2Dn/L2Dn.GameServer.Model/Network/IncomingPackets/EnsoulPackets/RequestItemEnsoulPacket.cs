@@ -166,7 +166,7 @@ public struct RequestItemEnsoulPacket: IIncomingPacket<GameSession>
 				continue;
 			}
 
-			EnsoulStone? stone = EnsoulData.getInstance().getStone(soulCrystal.getId());
+			EnsoulStone? stone = EnsoulData.getInstance().getStone(soulCrystal.Id);
 			if (stone == null)
 			{
 				continue;
@@ -221,7 +221,7 @@ public struct RequestItemEnsoulPacket: IIncomingPacket<GameSession>
 				continue;
 			}
 
-			Item? gemStones = player.getInventory().getItemByItemId(fee.getId());
+			Item? gemStones = player.getInventory().getItemByItemId(fee.Id);
 			if (gemStones == null || gemStones.getCount() < fee.getCount())
 			{
 				continue;

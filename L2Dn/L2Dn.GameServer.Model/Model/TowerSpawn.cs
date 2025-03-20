@@ -29,10 +29,7 @@ public class TowerSpawn: IIdentifiable
      * Gets the NPC ID.
      * @return the NPC ID
      */
-    public int getId()
-    {
-        return _npcId;
-    }
+    public int Id => _npcId;
 
     public Location3D getLocation()
     {

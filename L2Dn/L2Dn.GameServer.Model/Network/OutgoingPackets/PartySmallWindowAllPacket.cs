@@ -47,7 +47,7 @@ public readonly struct PartySmallWindowAllPacket: IOutgoingPacket
                 if (pet != null)
                 {
                     writer.WriteInt32(pet.ObjectId);
-                    writer.WriteInt32(pet.getId() + 1000000);
+                    writer.WriteInt32(pet.Id + 1000000);
                     writer.WriteByte((byte)pet.getSummonType());
                     writer.WriteString(pet.getName());
                     writer.WriteInt32((int)pet.getCurrentHp());
@@ -61,7 +61,7 @@ public readonly struct PartySmallWindowAllPacket: IOutgoingPacket
                 foreach (Summon servitor in servitors)
                 {
                     writer.WriteInt32(servitor.ObjectId);
-                    writer.WriteInt32(servitor.getId() + 1000000);
+                    writer.WriteInt32(servitor.Id + 1000000);
                     writer.WriteByte((byte)servitor.getSummonType());
                     writer.WriteString(servitor.getName());
                     writer.WriteInt32((int)servitor.getCurrentHp());

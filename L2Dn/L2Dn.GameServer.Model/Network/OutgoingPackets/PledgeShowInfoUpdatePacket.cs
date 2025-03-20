@@ -11,7 +11,7 @@ internal readonly struct PledgeShowInfoUpdatePacket(Clan clan): IOutgoingPacket
         writer.WritePacketCode(OutgoingPacketCodes.PLEDGE_SHOW_INFO_UPDATE);
 
         // sending empty data so client will ask all the info in response ;)
-        writer.WriteInt32(clan.getId());
+        writer.WriteInt32(clan.Id);
         writer.WriteInt32(ServerConfig.Instance.GameServerParams.ServerId);
         writer.WriteInt32(clan.getCrestId() ?? 0);
         writer.WriteInt32(clan.getLevel()); // clan level

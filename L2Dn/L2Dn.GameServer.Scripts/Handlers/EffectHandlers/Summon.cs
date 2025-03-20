@@ -63,7 +63,7 @@ public sealed class Summon: AbstractEffect
 
         summon.setName(template.getName());
         summon.setTitle(effected.getName());
-        summon.setReferenceSkill(skill.getId());
+        summon.setReferenceSkill(skill.Id);
         summon.setExpMultiplier(_expMultiplier);
         summon.setLifeTime(_lifeTime); // Classic hack. Resummon upon entering game.
         summon.setItemConsume(_consumeItem);
@@ -78,8 +78,8 @@ public sealed class Summon: AbstractEffect
         foreach (BuffInfo effect in player.getEffectList().getEffects())
         {
             Skill sk = effect.getSkill();
-            if (!sk.isBad() && !sk.isTransformation() && skill.isSharedWithSummon())
-                sk.applyEffects(player, summon, false, effect.getTime() ?? TimeSpan.Zero);
+            if (!sk.IsBad && !sk.IsTransformation && skill.IsSharedWithSummon)
+                sk.ApplyEffects(player, summon, false, effect.getTime() ?? TimeSpan.Zero);
         }
 
         summon.setCurrentHp(summon.getMaxHp());

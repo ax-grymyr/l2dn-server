@@ -19,6 +19,6 @@ public class OpTargetDoorSkillCondition: ISkillCondition
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
-        return target != null && target.isDoor() && _doorIds.Contains(target.getId());
+        return target != null && target.isDoor() && _doorIds.Contains(target.Id);
     }
 }

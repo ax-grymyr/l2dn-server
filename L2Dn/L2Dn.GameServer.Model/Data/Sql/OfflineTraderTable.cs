@@ -57,7 +57,7 @@ public class OfflineTraderTable
 									new DbCharacterOfflineTradeItem
 									{
 										CharacterId = pc.ObjectId,
-										ItemId = i.getItem().getId(),
+										ItemId = i.getItem().Id,
 										Count = i.getCount(),
 										Price = i.getPrice()
 									}));
@@ -327,7 +327,7 @@ public class OfflineTraderTable
 									new DbCharacterOfflineTradeItem
 									{
 										CharacterId = traderId,
-										ItemId = i.getItem().getId(),
+										ItemId = i.getItem().Id,
 										Count = i.getCount(),
 										Price = i.getPrice()
 									}));

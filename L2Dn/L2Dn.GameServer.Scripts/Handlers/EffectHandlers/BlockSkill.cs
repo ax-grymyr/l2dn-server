@@ -42,7 +42,7 @@ public sealed class BlockSkill: AbstractEffect
 
     private void OnSkillUseEvent(OnCreatureSkillUse ev)
     {
-        if (_magicTypes.Contains(ev.getSkill().getMagicType()) || _skillIds.Contains(ev.getSkill().getId()))
+        if (_magicTypes.Contains((int)ev.getSkill().MagicType) || _skillIds.Contains(ev.getSkill().Id))
         {
             ev.Terminate = true;
             ev.Abort = true;

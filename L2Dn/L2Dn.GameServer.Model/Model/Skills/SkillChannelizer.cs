@@ -55,8 +55,8 @@ public class SkillChannelizer: Runnable
 
 		// Start channeling.
 		_skill = skill;
-		_task = ThreadPool.scheduleAtFixedRate(this, skill.getChannelingTickInitialDelay(),
-			skill.getChannelingTickInterval());
+		_task = ThreadPool.scheduleAtFixedRate(this, skill.ChannelingTickInitialDelay,
+			skill.ChannelingTickInterval);
 	}
 
 	public void stopChanneling()
@@ -77,7 +77,7 @@ public class SkillChannelizer: Runnable
 		{
 			foreach (Creature creature in _channelized)
 			{
-				creature.getSkillChannelized().removeChannelizer(_skill.getChannelingSkillId(), _channelizer);
+				creature.getSkillChannelized().removeChannelizer(_skill.ChannelingSkillId, _channelizer);
 			}
 		}
 
@@ -109,10 +109,10 @@ public class SkillChannelizer: Runnable
 
 		try
 		{
-			if (skill.getMpPerChanneling() > 0)
+			if (skill.MpPerChanneling > 0)
 			{
 				// Validate mana per tick.
-				if (_channelizer.getCurrentMp() < skill.getMpPerChanneling())
+				if (_channelizer.getCurrentMp() < skill.MpPerChanneling)
 				{
 					if (_channelizer.isPlayer())
 					{
@@ -124,20 +124,20 @@ public class SkillChannelizer: Runnable
 				}
 
 				// Reduce mana per tick
-				_channelizer.reduceCurrentMp(skill.getMpPerChanneling());
+				_channelizer.reduceCurrentMp(skill.MpPerChanneling);
 			}
 
 			// Apply channeling skills on the targets.
 			List<Creature> targetList = new();
-			WorldObject? target = skill.getTarget(_channelizer, false, false, false);
+			WorldObject? target = skill.GetTarget(_channelizer, false, false, false);
 			if (target != null)
 			{
-				skill.forEachTargetAffected<Creature>(_channelizer, target, o =>
+				skill.ForEachTargetAffected<Creature>(_channelizer, target, o =>
 				{
 					if (o.isCreature())
 					{
 						targetList.Add(o);
-						o.getSkillChannelized().addChannelizer(skill.getChannelingSkillId(), _channelizer);
+						o.getSkillChannelized().addChannelizer(skill.ChannelingSkillId, _channelizer);
 					}
 				});
 			}
@@ -150,7 +150,7 @@ public class SkillChannelizer: Runnable
 			channelized = targetList;
 			foreach (Creature creature in channelized)
 			{
-				if (!Util.checkIfInRange(skill.getEffectRange(), _channelizer, creature, true))
+				if (!Util.checkIfInRange(skill.EffectRange, _channelizer, creature, true))
 				{
 					continue;
 				}
@@ -160,22 +160,22 @@ public class SkillChannelizer: Runnable
                     continue;
                 }
 
-                if (skill.getChannelingSkillId() > 0)
+                if (skill.ChannelingSkillId > 0)
 				{
-					int maxSkillLevel = SkillData.getInstance().getMaxLevel(skill.getChannelingSkillId());
+					int maxSkillLevel = SkillData.getInstance().getMaxLevel(skill.ChannelingSkillId);
 					int skillLevel =
-						Math.Min(creature.getSkillChannelized().getChannerlizersSize(skill.getChannelingSkillId()),
+						Math.Min(creature.getSkillChannelized().getChannerlizersSize(skill.ChannelingSkillId),
 							maxSkillLevel);
 					if (skillLevel == 0)
 					{
 						continue;
 					}
 
-					BuffInfo? info = creature.getEffectList().getBuffInfoBySkillId(skill.getChannelingSkillId());
-					if (info == null || info.getSkill().getLevel() < skillLevel)
+					BuffInfo? info = creature.getEffectList().getBuffInfoBySkillId(skill.ChannelingSkillId);
+					if (info == null || info.getSkill().Level < skillLevel)
 					{
 						Skill? channeledSkill =
-							SkillData.getInstance().getSkill(skill.getChannelingSkillId(), skillLevel);
+							SkillData.getInstance().getSkill(skill.ChannelingSkillId, skillLevel);
 						if (channeledSkill == null)
 						{
 							LOGGER.Warn(GetType().Name + ": Non existent channeling skill requested: " + skill);
@@ -190,22 +190,22 @@ public class SkillChannelizer: Runnable
 						}
 
 						// Be warned, this method has the possibility to call doDie->abortCast->stopChanneling method. Variable cache above try{} is used in this case to avoid NPEs.
-						channeledSkill.applyEffects(_channelizer, creature);
+						channeledSkill.ApplyEffects(_channelizer, creature);
 					}
 
-					if (!skill.isToggle())
+					if (!skill.IsToggle)
 					{
-						_channelizer.broadcastPacket(new MagicSkillLaunchedPacket(_channelizer, skill.getId(),
-							skill.getLevel(), SkillCastingType.NORMAL, creature));
+						_channelizer.broadcastPacket(new MagicSkillLaunchedPacket(_channelizer, skill.Id,
+							skill.Level, SkillCastingType.NORMAL, creature));
 					}
 				}
 				else
 				{
-					skill.applyChannelingEffects(_channelizer, creature);
+					skill.ApplyChannelingEffects(_channelizer, creature);
 				}
 
 				// Reduce shots.
-				if (skill.useSpiritShot())
+				if (skill.UseSpiritShot)
 				{
 					_channelizer.unchargeShot(_channelizer.isChargedShot(ShotType.BLESSED_SPIRITSHOTS)
 						? ShotType.BLESSED_SPIRITSHOTS
@@ -219,7 +219,7 @@ public class SkillChannelizer: Runnable
 				}
 
 				// Shots are re-charged every cast.
-				_channelizer.rechargeShots(skill.useSoulShot(), skill.useSpiritShot(), false);
+				_channelizer.rechargeShots(skill.UseSoulShot, skill.UseSpiritShot, false);
 			}
 		}
 		catch (Exception e)

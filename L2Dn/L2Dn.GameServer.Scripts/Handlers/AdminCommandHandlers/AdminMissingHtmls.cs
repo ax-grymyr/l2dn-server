@@ -43,18 +43,18 @@ public class AdminMissingHtmls: IAdminCommandHandler
 						&& !obj.isArtefact() //
 						&& !(obj is BroadcastingTower) //
 						&& !(obj is FlyTerrainObject) //
-						&& !results.Contains(obj.getId()))
+						&& !results.Contains(obj.Id))
 					{
 						Npc npc = (Npc) obj;
 						if (npc.Location.X > topLeftX && npc.Location.X < bottomRightX && npc.Location.Y > topLeftY && npc.Location.Y < bottomRightY && npc.isTalkable() && !npc.Events.HasSubscribers<OnNpcFirstTalk>())
 						{
-							if (npc.getHtmlPath(npc.getId(), 0, null).equals("html/npcdefault.htm")//
-								|| (obj is Fisherman && HtmlMissing("html/fisherman/" + npc.getId() + ".htm")) //
-								|| (obj is Warehouse && HtmlMissing("html/warehouse/" + npc.getId() + ".htm")) //
-								|| (obj is Merchant && !(obj is Fisherman) && HtmlMissing("html/merchant/" + npc.getId() + ".htm")) //
-								|| (obj is Guard && HtmlMissing("html/guard/" + npc.getId() + ".htm")))
+							if (npc.getHtmlPath(npc.Id, 0, null).equals("html/npcdefault.htm")//
+								|| (obj is Fisherman && HtmlMissing("html/fisherman/" + npc.Id + ".htm")) //
+								|| (obj is Warehouse && HtmlMissing("html/warehouse/" + npc.Id + ".htm")) //
+								|| (obj is Merchant && !(obj is Fisherman) && HtmlMissing("html/merchant/" + npc.Id + ".htm")) //
+								|| (obj is Guard && HtmlMissing("html/guard/" + npc.Id + ".htm")))
 							{
-								results.Add(npc.getId());
+								results.Add(npc.Id);
 							}
 						}
 					}
@@ -79,18 +79,18 @@ public class AdminMissingHtmls: IAdminCommandHandler
 						&& !obj.isArtefact() //
 						&& !(obj is BroadcastingTower) //
 						&& !(obj is FlyTerrainObject) //
-						&& !results.Contains(obj.getId()))
+						&& !results.Contains(obj.Id))
 					{
 						Npc npc = (Npc) obj;
 						if (npc.isTalkable() && !npc.Events.HasSubscribers<OnNpcFirstTalk>())
 						{
-							if (npc.getHtmlPath(npc.getId(), 0, null).equals("html/npcdefault.htm") //
-								|| (obj is Fisherman && HtmlMissing("html/fisherman/" + npc.getId() + ".htm")) //
-								|| (obj is Warehouse && HtmlMissing("html/warehouse/" + npc.getId() + ".htm")) //
-								|| (obj is Merchant && !(obj is Fisherman) && HtmlMissing("html/merchant/" + npc.getId() + ".htm")) //
-								|| (obj is Guard && HtmlMissing("html/guard/" + npc.getId() + ".htm")))
+							if (npc.getHtmlPath(npc.Id, 0, null).equals("html/npcdefault.htm") //
+								|| (obj is Fisherman && HtmlMissing("html/fisherman/" + npc.Id + ".htm")) //
+								|| (obj is Warehouse && HtmlMissing("html/warehouse/" + npc.Id + ".htm")) //
+								|| (obj is Merchant && !(obj is Fisherman) && HtmlMissing("html/merchant/" + npc.Id + ".htm")) //
+								|| (obj is Guard && HtmlMissing("html/guard/" + npc.Id + ".htm")))
 							{
-								results.Add(npc.getId());
+								results.Add(npc.Id);
 							}
 						}
 					}
@@ -117,14 +117,14 @@ public class AdminMissingHtmls: IAdminCommandHandler
 						Npc npc = (Npc) obj;
 						if (npc.isTalkable() && !npc.Events.HasSubscribers<OnNpcFirstTalk>())
 						{
-							if (npc.getHtmlPath(npc.getId(), 0, null).equals("html/npcdefault.htm") //
-								|| (obj is Fisherman && HtmlMissing("html/fisherman/" + npc.getId() + ".htm")) //
-								|| (obj is Warehouse && HtmlMissing("html/warehouse/" + npc.getId() + ".htm")) //
-								|| (obj is Merchant && !(obj is Fisherman) && HtmlMissing( "html/merchant/" + npc.getId() + ".htm")) //
-								|| (obj is Guard && HtmlMissing("html/guard/" + npc.getId() + ".htm")))
+							if (npc.getHtmlPath(npc.Id, 0, null).equals("html/npcdefault.htm") //
+								|| (obj is Fisherman && HtmlMissing("html/fisherman/" + npc.Id + ".htm")) //
+								|| (obj is Warehouse && HtmlMissing("html/warehouse/" + npc.Id + ".htm")) //
+								|| (obj is Merchant && !(obj is Fisherman) && HtmlMissing( "html/merchant/" + npc.Id + ".htm")) //
+								|| (obj is Guard && HtmlMissing("html/guard/" + npc.Id + ".htm")))
 							{
 								activeChar.teleToLocation(npc.Location);
-								BuilderUtil.sendSysMessage(activeChar, "NPC " + npc.getId() + " does not have a default html.");
+								BuilderUtil.sendSysMessage(activeChar, "NPC " + npc.Id + " does not have a default html.");
 								break;
 							}
 						}

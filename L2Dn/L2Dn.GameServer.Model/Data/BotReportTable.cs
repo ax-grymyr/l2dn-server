@@ -338,7 +338,7 @@ public class BotReportTable
 	{
 		if (ph != null)
 		{
-			ph.Punish.applyEffects(bot, bot);
+			ph.Punish.ApplyEffects(bot, bot);
 			if (ph.MessageId >= 0)
 			{
 				SystemMessageId? id = ph.MessageId;

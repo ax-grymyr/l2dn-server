@@ -57,7 +57,7 @@ public class BeastSoulShot: IItemHandler
 			return false;
 		}
 
-		int itemId = item.getId();
+		int itemId = item.Id;
 		long shotCount = item.getCount();
 		short shotConsumption = 0;
 		if (pet != null && !pet.isChargedShot(ShotType.SOULSHOTS))

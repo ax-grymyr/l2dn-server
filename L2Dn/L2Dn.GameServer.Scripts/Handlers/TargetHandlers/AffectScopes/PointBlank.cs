@@ -1,9 +1,9 @@
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 
@@ -18,9 +18,9 @@ public class PointBlank: IAffectScopeHandler
 	public void forEachAffected<T>(Creature creature, WorldObject target, Skill skill, Action<T> action)
 		where T: WorldObject
 	{
-		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.getAffectObject());
-		int affectRange = skill.getAffectRange();
-		int affectLimit = skill.getAffectLimit();
+		IAffectObjectHandler? affectObject = AffectObjectHandler.getInstance().getHandler(skill.AffectObject);
+		int affectRange = skill.AffectRange;
+		int affectLimit = skill.GetAffectLimit();
 
 		// Target checks.
 		AtomicInteger affected = new AtomicInteger(0);
@@ -32,7 +32,7 @@ public class PointBlank: IAffectScopeHandler
 			}
 			if (affectObject != null)
 			{
-				if (c.isDead() && (skill.getAffectObject() != AffectObject.OBJECT_DEAD_NPC_BODY))
+				if (c.isDead() && (skill.AffectObject != AffectObject.OBJECT_DEAD_NPC_BODY))
 				{
 					return false;
 				}
@@ -51,7 +51,7 @@ public class PointBlank: IAffectScopeHandler
 		};
 
 		// Check and add targets.
-		if (skill.getTargetType() == TargetType.GROUND)
+		if (skill.TargetType == TargetType.GROUND)
 		{
 			if (creature.isPlayable())
 			{

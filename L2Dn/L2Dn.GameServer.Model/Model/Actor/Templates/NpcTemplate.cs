@@ -179,10 +179,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable
         _mpRewardAffectType = set.getEnum("mpRewardAffectType", MpRewardAffectType.SOLO);
     }
 
-    public int getId()
-    {
-        return _id;
-    }
+    public int Id => _id;
 
     public int getDisplayId()
     {
@@ -767,7 +764,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable
 
                         // bonus drop rate effect
                         rateChance *= player.getStat().getMul(Stat.BONUS_DROP_RATE, 1);
-                        if (item != null && item.getId() == Inventory.LCOIN_ID)
+                        if (item != null && item.Id == Inventory.LCOIN_ID)
                         {
                             rateChance *= player.getStat().getMul(Stat.BONUS_DROP_RATE_LCOIN, 1);
                         }
@@ -894,7 +891,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable
                     calculatedDrops = new();
                 }
 
-                if (!calculatedDrops.All(holder => Config.ChampionMonsters.CHAMPION_REWARD_ITEMS.ContainsKey(holder.getId())))
+                if (!calculatedDrops.All(holder => Config.ChampionMonsters.CHAMPION_REWARD_ITEMS.ContainsKey(holder.Id)))
                 {
                     calculatedDrops.AddRange(
                         Config.ChampionMonsters.CHAMPION_REWARD_ITEMS.Select(kvp => new ItemHolder(kvp.Key, kvp.Value)));
@@ -1014,7 +1011,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable
                 calculatedDrops = new();
             }
 
-            if (!calculatedDrops.All(holder => Config.ChampionMonsters.CHAMPION_REWARD_ITEMS.ContainsKey(holder.getId())))
+            if (!calculatedDrops.All(holder => Config.ChampionMonsters.CHAMPION_REWARD_ITEMS.ContainsKey(holder.Id)))
             {
                 calculatedDrops.AddRange(
                     Config.ChampionMonsters.CHAMPION_REWARD_ITEMS.Select(kvp => new ItemHolder(kvp.Key, kvp.Value)));
@@ -1172,7 +1169,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable
 
                     // bonus drop rate effect
                     rateChance *= player.getStat().getMul(Stat.BONUS_DROP_RATE, 1);
-                    if (item != null && item.getId() == Inventory.LCOIN_ID)
+                    if (item != null && item.Id == Inventory.LCOIN_ID)
                     {
                         rateChance *= player.getStat().getMul(Stat.BONUS_DROP_RATE_LCOIN, 1);
                     }

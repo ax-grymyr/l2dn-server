@@ -95,18 +95,18 @@ public class PlayerInventory: Inventory
 		List<Item> list = new();
 		foreach (Item item in _items)
 		{
-			if (!allowAdena && item.getId() == ADENA_ID)
+			if (!allowAdena && item.Id == ADENA_ID)
 			{
 				continue;
 			}
-			if (!allowAncientAdena && item.getId() == ANCIENT_ADENA_ID)
+			if (!allowAncientAdena && item.Id == ANCIENT_ADENA_ID)
 			{
 				continue;
 			}
 			bool isDuplicate = false;
 			foreach (Item litem in list)
 			{
-				if (litem.getId() == item.getId())
+				if (litem.Id == item.Id)
 				{
 					isDuplicate = true;
 					break;
@@ -131,7 +131,7 @@ public class PlayerInventory: Inventory
 		List<Item> result = new();
 		foreach (Item item in _items)
 		{
-			if (itemId == item.getId() && (includeEquipped || !item.isEquipped()))
+			if (itemId == item.Id && (includeEquipped || !item.isEquipped()))
 			{
 				result.Add(item);
 			}
@@ -161,7 +161,7 @@ public class PlayerInventory: Inventory
 		List<Item> result = new();
 		foreach (Item item in _items)
 		{
-			if (itemId == item.getId() && item.getEnchantLevel() == enchantment && (includeEquipped || !item.isEquipped()))
+			if (itemId == item.Id && item.getEnchantLevel() == enchantment && (includeEquipped || !item.isEquipped()))
 			{
 				result.Add(item);
 			}
@@ -180,7 +180,7 @@ public class PlayerInventory: Inventory
 		List<Item> result = new();
 		foreach (Item item in _items)
 		{
-			if (!item.isAvailable(_owner, allowAdena, allowNonTradeable) || !canManipulateWithItemId(item.getId()))
+			if (!item.isAvailable(_owner, allowAdena, allowNonTradeable) || !canManipulateWithItemId(item.Id))
 			{
 				continue;
 			}
@@ -226,7 +226,7 @@ public class PlayerInventory: Inventory
 	public void adjustAvailableItem(TradeItem item)
 	{
 		bool notAllEquipped = false;
-		foreach (Item adjItem in getAllItemsByItemId(item.getItem().getId()))
+		foreach (Item adjItem in getAllItemsByItemId(item.getItem().Id))
 		{
 			if (adjItem.isEquipable())
 			{
@@ -244,7 +244,7 @@ public class PlayerInventory: Inventory
 
 		if (notAllEquipped)
         {
-            Item adjItem = getItemByItemId(item.getItem().getId()) ??
+            Item adjItem = getItemByItemId(item.getItem().Id) ??
                 throw new InvalidOperationException("Item not found!!!"); // TODO: exception added, verify
 
 			item.setObjectId(adjItem.ObjectId);
@@ -366,15 +366,15 @@ public class PlayerInventory: Inventory
 		Item? addedItem = base.addItem(process, item, actor, reference);
 		if (addedItem != null)
 		{
-			if (addedItem.getId() == ADENA_ID && !addedItem.Equals(_adena))
+			if (addedItem.Id == ADENA_ID && !addedItem.Equals(_adena))
 			{
 				_adena = addedItem;
 			}
-			else if (addedItem.getId() == ANCIENT_ADENA_ID && !addedItem.Equals(_ancientAdena))
+			else if (addedItem.Id == ANCIENT_ADENA_ID && !addedItem.Equals(_ancientAdena))
 			{
 				_ancientAdena = addedItem;
 			}
-			else if (addedItem.getId() == BEAUTY_TICKET_ID && !addedItem.Equals(_beautyTickets))
+			else if (addedItem.Id == BEAUTY_TICKET_ID && !addedItem.Equals(_beautyTickets))
 			{
 				_beautyTickets = addedItem;
 			}
@@ -429,15 +429,15 @@ public class PlayerInventory: Inventory
 		Item? item = base.addItem(process, itemId, count, actor, reference);
 		if (item != null)
 		{
-			if (item.getId() == ADENA_ID && !item.Equals(_adena))
+			if (item.Id == ADENA_ID && !item.Equals(_adena))
 			{
 				_adena = item;
 			}
-			else if (item.getId() == ANCIENT_ADENA_ID && !item.Equals(_ancientAdena))
+			else if (item.Id == ANCIENT_ADENA_ID && !item.Equals(_ancientAdena))
 			{
 				_ancientAdena = item;
 			}
-			else if (item.getId() == BEAUTY_TICKET_ID && !item.Equals(_beautyTickets))
+			else if (item.Id == BEAUTY_TICKET_ID && !item.Equals(_beautyTickets))
 			{
 				_beautyTickets = item;
 			}
@@ -461,12 +461,12 @@ public class PlayerInventory: Inventory
 					actor.sendInventoryUpdate(playerIU);
 
 					// Adena UI update.
-					if (item.getId() == Inventory.ADENA_ID)
+					if (item.Id == Inventory.ADENA_ID)
 					{
 						actor.sendPacket(new ExAdenaInvenCountPacket(actor));
 					}
 					// LCoin UI update.
-					else if (item.getId() == Inventory.LCOIN_ID)
+					else if (item.Id == Inventory.LCOIN_ID)
 					{
 						actor.sendPacket(new ExBloodyCoinCountPacket(actor));
 					}
@@ -571,12 +571,12 @@ public class PlayerInventory: Inventory
 		if (destroyedItem != null)
 		{
 			// Adena UI update.
-			if (destroyedItem.getId() == Inventory.ADENA_ID)
+			if (destroyedItem.Id == Inventory.ADENA_ID)
 			{
 				actor?.sendPacket(new ExAdenaInvenCountPacket(actor));
 			}
 			// LCoin UI update.
-			else if (destroyedItem.getId() == Inventory.LCOIN_ID)
+			else if (destroyedItem.Id == Inventory.LCOIN_ID)
 			{
 				actor?.sendPacket(new ExBloodyCoinCountPacket(actor));
 			}
@@ -768,15 +768,15 @@ public class PlayerInventory: Inventory
 			_owner.removeRequestsThatProcessesItem(item.ObjectId);
 		}
 
-		if (item.getId() == ADENA_ID)
+		if (item.Id == ADENA_ID)
 		{
 			_adena = null;
 		}
-		else if (item.getId() == ANCIENT_ADENA_ID)
+		else if (item.Id == ANCIENT_ADENA_ID)
 		{
 			_ancientAdena = null;
 		}
-		else if (item.getId() == BEAUTY_TICKET_ID)
+		else if (item.Id == BEAUTY_TICKET_ID)
 		{
 			_beautyTickets = null;
 		}
@@ -845,7 +845,7 @@ public class PlayerInventory: Inventory
 			foreach (ItemTemplate item in itemList)
 			{
 				// If the item is not stackable or is stackable and not present in inventory, will need a slot.
-				if (!item.isStackable() || getInventoryItemCount(item.getId(), -1) <= 0)
+				if (!item.isStackable() || getInventoryItemCount(item.Id, -1) <= 0)
 				{
 					requiredSlots++;
 				}
@@ -873,7 +873,7 @@ public class PlayerInventory: Inventory
 	public bool validateCapacity(Item item)
 	{
 		int slots = 0;
-		if (!item.isStackable() || (getInventoryItemCount(item.getId(), -1) <= 0 && !item.getTemplate().hasExImmediateEffect()))
+		if (!item.isStackable() || (getInventoryItemCount(item.Id, -1) <= 0 && !item.getTemplate().hasExImmediateEffect()))
 		{
 			slots++;
 		}
@@ -1041,24 +1041,24 @@ public class PlayerInventory: Inventory
 
 				if (item.getLocationSlot() >= Inventory.PAPERDOLL_AGATHION1 && item.getLocationSlot() <= Inventory.PAPERDOLL_AGATHION5)
 				{
-					AgathionSkillHolder? agathionSkills = AgathionData.getInstance().getSkills(item.getId());
+					AgathionSkillHolder? agathionSkills = AgathionData.getInstance().getSkills(item.Id);
 					if (agathionSkills != null)
 					{
 						// Remove old skills.
 						foreach (Skill skill in agathionSkills.getMainSkills(item.getEnchantLevel()))
 						{
-							_owner.removeSkill(skill, false, skill.isPassive());
+							_owner.removeSkill(skill, false, skill.IsPassive);
 						}
 						foreach (Skill skill in agathionSkills.getSubSkills(item.getEnchantLevel()))
 						{
-							_owner.removeSkill(skill, false, skill.isPassive());
+							_owner.removeSkill(skill, false, skill.IsPassive);
 						}
 						// Add new skills.
 						if (item.getLocationSlot() == Inventory.PAPERDOLL_AGATHION1)
 						{
 							foreach (Skill skill in agathionSkills.getMainSkills(item.getEnchantLevel()))
 							{
-								if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, _owner, _owner))
+								if (skill.IsPassive && !skill.CheckConditions(SkillConditionScope.Passive, _owner, _owner))
 								{
 									continue;
 								}
@@ -1067,7 +1067,7 @@ public class PlayerInventory: Inventory
 						}
 						foreach (Skill skill in agathionSkills.getSubSkills(item.getEnchantLevel()))
 						{
-							if (skill.isPassive() && !skill.checkConditions(SkillConditionScope.PASSIVE, _owner, _owner))
+							if (skill.IsPassive && !skill.CheckConditions(SkillConditionScope.Passive, _owner, _owner))
 							{
 								continue;
 							}

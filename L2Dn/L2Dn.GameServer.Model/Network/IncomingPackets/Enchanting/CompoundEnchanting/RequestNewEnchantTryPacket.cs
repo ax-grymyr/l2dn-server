@@ -64,27 +64,27 @@ public struct RequestNewEnchantTryPacket: IIncomingPacket<GameSession>
 	    if (itemOne.ObjectId == itemTwo.ObjectId && (!itemOne.isStackable() ||
 	                                                           player.getInventory()
 		                                                           .getInventoryItemCount(
-			                                                           itemOne.getTemplate().getId(), -1) < 2))
+			                                                           itemOne.getTemplate().Id, -1) < 2))
 	    {
-		    player.sendPacket(new ExEnchantFailPacket(itemOne.getId(), itemTwo.getId()));
+		    player.sendPacket(new ExEnchantFailPacket(itemOne.Id, itemTwo.Id));
 		    player.removeRequest<CompoundRequest>();
 		    return ValueTask.CompletedTask;
 	    }
 
-	    CombinationItem? combinationItem = CombinationItemsData.getInstance().getItemsBySlots(itemOne.getId(),
-		    itemOne.getEnchantLevel(), itemTwo.getId(), itemTwo.getEnchantLevel());
+	    CombinationItem? combinationItem = CombinationItemsData.getInstance().getItemsBySlots(itemOne.Id,
+		    itemOne.getEnchantLevel(), itemTwo.Id, itemTwo.getEnchantLevel());
 
 	    // Not implemented or not able to merge!
 	    if (combinationItem == null)
 	    {
-		    player.sendPacket(new ExEnchantFailPacket(itemOne.getId(), itemTwo.getId()));
+		    player.sendPacket(new ExEnchantFailPacket(itemOne.Id, itemTwo.Id));
 		    player.removeRequest<CompoundRequest>();
 		    return ValueTask.CompletedTask;
 	    }
 
 	    if (combinationItem.getCommission() > player.getAdena())
 	    {
-		    player.sendPacket(new ExEnchantFailPacket(itemOne.getId(), itemTwo.getId()));
+		    player.sendPacket(new ExEnchantFailPacket(itemOne.Id, itemTwo.Id));
 		    player.removeRequest<CompoundRequest>();
 		    player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
 		    return ValueTask.CompletedTask;
@@ -96,12 +96,12 @@ public struct RequestNewEnchantTryPacket: IIncomingPacket<GameSession>
 	    CombinationItemReward rewardItem = combinationItem.getReward(success);
 
 	    // Add item (early).
-	    Item? item = player.addItem("Compound-Result", rewardItem.getId(), rewardItem.getCount(),
+	    Item? item = player.addItem("Compound-Result", rewardItem.Id, rewardItem.getCount(),
 		    rewardItem.getEnchantLevel(), null, true);
 
         if (item == null)
         {
-            player.sendPacket(new ExEnchantFailPacket(itemOne.getId(), itemTwo.getId()));
+            player.sendPacket(new ExEnchantFailPacket(itemOne.Id, itemTwo.Id));
             player.removeRequest<CompoundRequest>();
             player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: proper message
             return ValueTask.CompletedTask;
@@ -110,7 +110,7 @@ public struct RequestNewEnchantTryPacket: IIncomingPacket<GameSession>
 	    // Send success or fail packet.
 	    if (success)
 	    {
-		    player.sendPacket(new ExEnchantSuccessPacket(item.getId()));
+		    player.sendPacket(new ExEnchantSuccessPacket(item.Id));
 		    if (combinationItem.isAnnounce())
 		    {
 			    Broadcast.toAllOnlinePlayers(new ExItemAnnouncePacket(player, item, ExItemAnnouncePacket.COMPOUND));
@@ -118,7 +118,7 @@ public struct RequestNewEnchantTryPacket: IIncomingPacket<GameSession>
 	    }
 	    else
 	    {
-		    player.sendPacket(new ExEnchantFailPacket(item.getId(), itemTwo.getId()));
+		    player.sendPacket(new ExEnchantFailPacket(item.Id, itemTwo.Id));
 	    }
 
 	    // Take required items.

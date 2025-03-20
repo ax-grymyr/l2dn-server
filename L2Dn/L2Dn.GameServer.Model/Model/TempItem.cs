@@ -14,19 +14,19 @@ public class TempItem
     private int _quantity;
     private readonly long _referencePrice;
     private readonly string _itemName;
-	
+
     /**
      * @param item
      * @param quantity of that item
      */
     public TempItem(Item item, int quantity)
     {
-        _itemId = item.getId();
+        _itemId = item.Id;
         _quantity = quantity;
         _itemName = item.getTemplate().getName();
         _referencePrice = item.getReferencePrice();
     }
-	
+
     /**
      * @return the quantity.
      */
@@ -34,7 +34,7 @@ public class TempItem
     {
         return _quantity;
     }
-	
+
     /**
      * @param quantity The quantity to set.
      */
@@ -42,12 +42,12 @@ public class TempItem
     {
         _quantity = quantity;
     }
-	
+
     public long getReferencePrice()
     {
         return _referencePrice;
     }
-	
+
     /**
      * @return the itemId.
      */
@@ -55,7 +55,7 @@ public class TempItem
     {
         return _itemId;
     }
-	
+
     /**
      * @return the itemName.
      */

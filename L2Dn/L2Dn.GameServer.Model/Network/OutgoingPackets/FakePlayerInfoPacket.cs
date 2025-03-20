@@ -73,7 +73,7 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 		_swimWalkSpd = (int) Math.Round(npc.getSwimWalkSpeed() / _moveMultiplier);
 		_flyRunSpd = npc.isFlying() ? _runSpd : 0;
 		_flyWalkSpd = npc.isFlying() ? _walkSpd : 0;
-        _fpcHolder = FakePlayerData.getInstance().getInfo(npc.getId()) ??
+        _fpcHolder = FakePlayerData.getInstance().getInfo(npc.Id) ??
             throw new ArgumentException("Fake player data not found", nameof(npc));
 
 		_clan = ClanTable.getInstance().getClan(_fpcHolder.getClanId());
@@ -139,7 +139,7 @@ public readonly struct FakePlayerInfoPacket: IOutgoingPacket
 		writer.WriteString(_npc.getTemplate().getTitle());
 		if (_clan != null)
 		{
-			writer.WriteInt32(_clan.getId());
+			writer.WriteInt32(_clan.Id);
 			writer.WriteInt32(_clan.getCrestId() ?? 0);
 			writer.WriteInt32(_clan.getAllyId() ?? 0);
 			writer.WriteInt32(_clan.getAllyCrestId() ?? 0);

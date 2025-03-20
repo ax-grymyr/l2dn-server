@@ -34,7 +34,7 @@ public struct RequestJoinPledgePacket: IIncomingPacket<GameSession>
         WorldObject? playerTarget = player.getTarget();
         if (playerTarget != null && FakePlayerData.getInstance().isTalkable(playerTarget.getName()))
         {
-            if (FakePlayerData.getInstance().getInfo(playerTarget.getId())?.getClanId() > 0)
+            if (FakePlayerData.getInstance().getInfo(playerTarget.Id)?.getClanId() > 0)
             {
                 player.sendPacket(SystemMessageId.THAT_PLAYER_ALREADY_BELONGS_TO_ANOTHER_CLAN);
             }

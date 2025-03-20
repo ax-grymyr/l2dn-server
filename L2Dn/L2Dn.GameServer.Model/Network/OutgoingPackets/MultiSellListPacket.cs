@@ -36,7 +36,7 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 
 	    writer.WritePacketCode(OutgoingPacketCodes.MULTI_SELL_LIST);
 		writer.WriteByte(0); // Helios
-		writer.WriteInt32(_list.getId()); // list id
+		writer.WriteInt32(_list.Id); // list id
 		writer.WriteByte((byte)_type); // 196?
 		writer.WriteInt32(1 + _index / MultisellData.PAGE_SIZE); // page started from 1
 		writer.WriteInt32(finished); // finished
@@ -55,7 +55,7 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 			{
 				foreach (ItemChanceHolder holder in entry.getIngredients())
 				{
-					Item? item = _player.getInventory().getItemByItemId(holder.getId());
+					Item? item = _player.getInventory().getItemByItemId(holder.Id);
 					if (item != null && item.isEquipable())
 					{
 						itemEnchantment = new ItemInfo(item);
@@ -75,7 +75,7 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 			writer.WriteInt16((short)entry.getIngredients().Count);
 			foreach (ItemChanceHolder product in entry.getProducts())
 			{
-				ItemTemplate? template = ItemData.getInstance().getTemplate(product.getId());
+				ItemTemplate? template = ItemData.getInstance().getTemplate(product.Id);
 				ItemInfo? displayItemEnchantment =
 					_list.isMaintainEnchantment() && itemEnchantment != null && template != null &&
 					template.GetType() == itemEnchantment.getItem().GetType()
@@ -89,7 +89,7 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 				}
 				else
 				{
-					writer.WriteInt32(product.getId());
+					writer.WriteInt32(product.Id);
 					writer.WriteInt64(0);
 					writer.WriteInt16(-1);
 				}
@@ -108,7 +108,7 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 
 			foreach (ItemChanceHolder ingredient in entry.getIngredients())
 			{
-				ItemTemplate? template = ItemData.getInstance().getTemplate(ingredient.getId());
+				ItemTemplate? template = ItemData.getInstance().getTemplate(ingredient.Id);
 				ItemInfo? displayItemEnchantment = itemEnchantment != null && template != null &&
 				                                  template.GetType() == itemEnchantment.GetType()
 					? itemEnchantment
@@ -121,7 +121,7 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 				}
 				else
 				{
-					writer.WriteInt32(ingredient.getId());
+					writer.WriteInt32(ingredient.Id);
 					writer.WriteInt16(-1);
 				}
 

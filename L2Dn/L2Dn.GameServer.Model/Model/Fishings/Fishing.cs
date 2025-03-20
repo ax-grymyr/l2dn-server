@@ -62,7 +62,7 @@ public sealed class Fishing
 	private FishingBait? getCurrentBaitData()
 	{
 		Item? bait = _player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
-		return bait != null ? FishingData.getInstance().getBaitData(bait.getId()) : null;
+		return bait != null ? FishingData.getInstance().getBaitData(bait.Id) : null;
 	}
 
 	private void cancelTasks()
@@ -162,7 +162,7 @@ public sealed class Fishing
 			return;
 		}
 
-		FishingRod? rodData = FishingData.getInstance().getRodData(rod.getId());
+		FishingRod? rodData = FishingData.getInstance().getRodData(rod.Id);
 		if (rodData == null)
 		{
 			_player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_A_FISHING_ROD_EQUIPPED);
@@ -287,7 +287,7 @@ public sealed class Fishing
 
 			if (reason == FishingEndReason.WIN && bait != null)
 			{
-				FishingBait? baitData = FishingData.getInstance().getBaitData(bait.getId());
+				FishingBait? baitData = FishingData.getInstance().getBaitData(bait.Id);
 				FishingCatch? fishingCatchData = baitData?.getRandom();
 				if (fishingCatchData != null)
 				{
@@ -309,7 +309,7 @@ public sealed class Fishing
 				}
 				else
 				{
-					LOGGER.Warn("Could not find fishing rewards for bait " + bait.getId());
+					LOGGER.Warn("Could not find fishing rewards for bait " + bait.Id);
 				}
 			}
 			else if (reason == FishingEndReason.LOSE)

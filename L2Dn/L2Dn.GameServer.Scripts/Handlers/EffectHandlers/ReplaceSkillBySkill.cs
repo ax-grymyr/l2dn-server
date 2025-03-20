@@ -35,12 +35,12 @@ public sealed class ReplaceSkillBySkill: AbstractEffect
     {
         Playable playable = (Playable)effected;
         Skill? knownSkill = playable.getKnownSkill(_existingSkill.getSkillId());
-        if (knownSkill == null || knownSkill.getLevel() < _existingSkill.getSkillLevel())
+        if (knownSkill == null || knownSkill.Level < _existingSkill.getSkillLevel())
             return;
 
         Skill? addedSkill = SkillData.getInstance().getSkill(_replacementSkill.getSkillId(),
-            _replacementSkill.getSkillLevel() < 1 ? knownSkill.getLevel() : _replacementSkill.getSkillLevel(),
-            knownSkill.getSubLevel());
+            _replacementSkill.getSkillLevel() < 1 ? knownSkill.Level : _replacementSkill.getSkillLevel(),
+            knownSkill.SubLevel);
 
         if (addedSkill == null)
             return;
@@ -53,31 +53,31 @@ public sealed class ReplaceSkillBySkill: AbstractEffect
             foreach (Shortcut shortcut in player.getAllShortCuts())
             {
                 if (shortcut.isAutoUse() && shortcut.getType() == ShortcutType.SKILL &&
-                    shortcut.getId() == knownSkill.getId())
+                    shortcut.getId() == knownSkill.Id)
                 {
-                    if (knownSkill.isBad())
+                    if (knownSkill.IsBad)
                     {
-                        if (player.getAutoUseSettings().getAutoSkills().Contains(knownSkill.getId()))
+                        if (player.getAutoUseSettings().getAutoSkills().Contains(knownSkill.Id))
                         {
-                            player.getAutoUseSettings().getAutoSkills().Add(addedSkill.getId());
-                            player.getAutoUseSettings().getAutoSkills().Remove(knownSkill.getId());
+                            player.getAutoUseSettings().getAutoSkills().Add(addedSkill.Id);
+                            player.getAutoUseSettings().getAutoSkills().Remove(knownSkill.Id);
                         }
                     }
-                    else if (player.getAutoUseSettings().getAutoBuffs().Contains(knownSkill.getId()))
+                    else if (player.getAutoUseSettings().getAutoBuffs().Contains(knownSkill.Id))
                     {
-                        player.getAutoUseSettings().getAutoBuffs().Add(addedSkill.getId());
-                        player.getAutoUseSettings().getAutoBuffs().Remove(knownSkill.getId());
+                        player.getAutoUseSettings().getAutoBuffs().Add(addedSkill.Id);
+                        player.getAutoUseSettings().getAutoBuffs().Remove(knownSkill.Id);
                     }
                 }
             }
 
             // Replace continuous effects.
-            if (knownSkill.isContinuous() && player.isAffectedBySkill(knownSkill.getId()))
+            if (knownSkill.IsContinuous && player.isAffectedBySkill(knownSkill.Id))
             {
                 TimeSpan? abnormalTime = null;
                 foreach (BuffInfo info in player.getEffectList().getEffects())
                 {
-                    if (info.getSkill().getId() == knownSkill.getId())
+                    if (info.getSkill().Id == knownSkill.Id)
                     {
                         abnormalTime = info.getAbnormalTime();
                         break;
@@ -86,11 +86,11 @@ public sealed class ReplaceSkillBySkill: AbstractEffect
 
                 if (abnormalTime > TimeSpan.FromMilliseconds(2000))
                 {
-                    addedSkill.applyEffects(player, player);
+                    addedSkill.ApplyEffects(player, player);
                     List<BuffInfo> skills = [];
                     foreach (BuffInfo info in player.getEffectList().getEffects())
                     {
-                        if (info.getSkill().getId() == addedSkill.getId())
+                        if (info.getSkill().Id == addedSkill.Id)
                         {
                             info.resetAbnormalTime(abnormalTime);
                             skills.Add(info);
@@ -129,7 +129,7 @@ public sealed class ReplaceSkillBySkill: AbstractEffect
             return;
 
         Skill? addedSkill = SkillData.getInstance().
-            getSkill(existingSkillId, knownSkill.getLevel(), knownSkill.getSubLevel());
+            getSkill(existingSkillId, knownSkill.Level, knownSkill.SubLevel);
 
         if (addedSkill == null)
             return;
@@ -137,36 +137,36 @@ public sealed class ReplaceSkillBySkill: AbstractEffect
         Player? player = effected.getActingPlayer();
         if (playable.isPlayer() && player != null)
         {
-            player.addSkill(addedSkill, knownSkill.getLevel() != _existingSkill.getSkillLevel());
+            player.addSkill(addedSkill, knownSkill.Level != _existingSkill.getSkillLevel());
             player.removeReplacedSkill(existingSkillId);
             foreach (Shortcut shortcut in player.getAllShortCuts())
             {
                 if (shortcut.isAutoUse() && shortcut.getType() == ShortcutType.SKILL &&
-                    shortcut.getId() == addedSkill.getId())
+                    shortcut.getId() == addedSkill.Id)
                 {
-                    if (knownSkill.isBad())
+                    if (knownSkill.IsBad)
                     {
-                        if (player.getAutoUseSettings().getAutoSkills().Contains(knownSkill.getId()))
+                        if (player.getAutoUseSettings().getAutoSkills().Contains(knownSkill.Id))
                         {
-                            player.getAutoUseSettings().getAutoSkills().Add(addedSkill.getId());
-                            player.getAutoUseSettings().getAutoSkills().Remove(knownSkill.getId());
+                            player.getAutoUseSettings().getAutoSkills().Add(addedSkill.Id);
+                            player.getAutoUseSettings().getAutoSkills().Remove(knownSkill.Id);
                         }
                     }
-                    else if (player.getAutoUseSettings().getAutoBuffs().Contains(knownSkill.getId()))
+                    else if (player.getAutoUseSettings().getAutoBuffs().Contains(knownSkill.Id))
                     {
-                        player.getAutoUseSettings().getAutoBuffs().Add(addedSkill.getId());
-                        player.getAutoUseSettings().getAutoBuffs().Remove(knownSkill.getId());
+                        player.getAutoUseSettings().getAutoBuffs().Add(addedSkill.Id);
+                        player.getAutoUseSettings().getAutoBuffs().Remove(knownSkill.Id);
                     }
                 }
             }
 
             // Replace continuous effects.
-            if (knownSkill.isContinuous() && player.isAffectedBySkill(knownSkill.getId()))
+            if (knownSkill.IsContinuous && player.isAffectedBySkill(knownSkill.Id))
             {
                 TimeSpan? abnormalTime = null;
                 foreach (BuffInfo info in player.getEffectList().getEffects())
                 {
-                    if (info.getSkill().getId() == knownSkill.getId())
+                    if (info.getSkill().Id == knownSkill.Id)
                     {
                         abnormalTime = info.getAbnormalTime();
                         break;
@@ -175,11 +175,11 @@ public sealed class ReplaceSkillBySkill: AbstractEffect
 
                 if (abnormalTime > TimeSpan.FromMilliseconds(2000))
                 {
-                    addedSkill.applyEffects(player, player);
+                    addedSkill.ApplyEffects(player, player);
                     List<BuffInfo> skills = [];
                     foreach (BuffInfo info in player.getEffectList().getEffects())
                     {
-                        if (info.getSkill().getId() == addedSkill.getId())
+                        if (info.getSkill().Id == addedSkill.Id)
                         {
                             info.resetAbnormalTime(abnormalTime);
                             skills.Add(info);

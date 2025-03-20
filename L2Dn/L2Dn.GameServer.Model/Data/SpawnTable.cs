@@ -306,7 +306,7 @@ public class SpawnTable
 	 */
 	private void addSpawn(Spawn spawn)
 	{
-		_spawnTable.GetOrAdd(spawn.getId(), _ => []).add(spawn);
+		_spawnTable.GetOrAdd(spawn.Id, _ => []).add(spawn);
 	}
 
 	/**
@@ -316,13 +316,13 @@ public class SpawnTable
 	 */
 	private bool removeSpawn(Spawn spawn)
 	{
-		Set<Spawn>? set = _spawnTable.get(spawn.getId());
+		Set<Spawn>? set = _spawnTable.get(spawn.Id);
 		if (set != null)
 		{
 			bool removed = set.remove(spawn);
 			if (set.isEmpty())
 			{
-				_spawnTable.remove(spawn.getId());
+				_spawnTable.remove(spawn.Id);
 			}
 			set.ForEach(notifyRemoved);
 			return removed;

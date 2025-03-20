@@ -42,7 +42,7 @@ public readonly struct LogoutPacket: IIncomingPacket<GameSession>
         {
             if (Config.General.RESTORE_PLAYER_INSTANCE)
             {
-                player.getVariables().Set(PlayerVariables.INSTANCE_RESTORE, world.getId());
+                player.getVariables().Set(PlayerVariables.INSTANCE_RESTORE, world.Id);
             }
             else
             {

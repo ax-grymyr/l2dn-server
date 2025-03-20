@@ -271,7 +271,7 @@ public class NpcData: DataReaderBase
 			Skill? skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 			if (skill != null)
 			{
-				skills.put(skill.getId(), skill);
+				skills.put(skill.Id, skill);
 			}
 			else
 			{
@@ -417,11 +417,11 @@ public class NpcData: DataReaderBase
 		if (template == null)
 		{
 			template = new NpcTemplate(set);
-			_npcs.put(template.getId(), template);
+			_npcs.put(template.Id, template);
 		}
 		else
 		{
-			throw new InvalidOperationException("Npc template already exist with id: " + template.getId());
+			throw new InvalidOperationException("Npc template already exist with id: " + template.Id);
 		}
 
 		if (parameters != null)
@@ -439,7 +439,7 @@ public class NpcData: DataReaderBase
 			Map<AISkillScope, List<Skill>>? aiSkillLists = null;
 			foreach (Skill skill in skills.Values)
 			{
-				if (!skill.isPassive())
+				if (!skill.IsPassive)
 				{
 					if (aiSkillLists == null)
 					{
@@ -448,8 +448,8 @@ public class NpcData: DataReaderBase
 
 					List<AISkillScope> aiSkillScopes = new();
 					AISkillScope shortOrLongRangeScope =
-						skill.getCastRange() <= 150 ? AISkillScope.SHORT_RANGE : AISkillScope.LONG_RANGE;
-					if (skill.isSuicideAttack())
+						skill.CastRange <= 150 ? AISkillScope.SHORT_RANGE : AISkillScope.LONG_RANGE;
+					if (skill.IsSuicideAttack)
 					{
 						aiSkillScopes.Add(AISkillScope.SUICIDE);
 					}
@@ -457,9 +457,9 @@ public class NpcData: DataReaderBase
 					{
 						aiSkillScopes.Add(AISkillScope.GENERAL);
 
-						if (skill.isContinuous())
+						if (skill.IsContinuous)
 						{
-							if (!skill.isDebuff())
+							if (!skill.IsDebuff)
 							{
 								aiSkillScopes.Add(AISkillScope.BUFF);
 							}
@@ -470,41 +470,41 @@ public class NpcData: DataReaderBase
 								aiSkillScopes.Add(shortOrLongRangeScope);
 							}
 						}
-						else if (skill.hasEffectType(EffectType.DISPEL, EffectType.DISPEL_BY_SLOT))
+						else if (skill.HasEffectType(EffectType.DISPEL, EffectType.DISPEL_BY_SLOT))
 						{
 							aiSkillScopes.Add(AISkillScope.NEGATIVE);
 							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
-						else if (skill.hasEffectType(EffectType.HEAL))
+						else if (skill.HasEffectType(EffectType.HEAL))
 						{
 							aiSkillScopes.Add(AISkillScope.HEAL);
 						}
-						else if (skill.hasEffectType(EffectType.PHYSICAL_ATTACK, EffectType.PHYSICAL_ATTACK_HP_LINK,
+						else if (skill.HasEffectType(EffectType.PHYSICAL_ATTACK, EffectType.PHYSICAL_ATTACK_HP_LINK,
 							         EffectType.MAGICAL_ATTACK, EffectType.DEATH_LINK, EffectType.HP_DRAIN))
 						{
 							aiSkillScopes.Add(AISkillScope.ATTACK);
 							aiSkillScopes.Add(AISkillScope.UNIVERSAL);
 							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
-						else if (skill.hasEffectType(EffectType.SLEEP))
+						else if (skill.HasEffectType(EffectType.SLEEP))
 						{
 							aiSkillScopes.Add(AISkillScope.IMMOBILIZE);
 						}
-						else if (skill.hasEffectType(EffectType.BLOCK_ACTIONS, EffectType.ROOT))
+						else if (skill.HasEffectType(EffectType.BLOCK_ACTIONS, EffectType.ROOT))
 						{
 							aiSkillScopes.Add(AISkillScope.IMMOBILIZE);
 							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
-						else if (skill.hasEffectType(EffectType.MUTE, EffectType.BLOCK_CONTROL))
+						else if (skill.HasEffectType(EffectType.MUTE, EffectType.BLOCK_CONTROL))
 						{
 							aiSkillScopes.Add(AISkillScope.COT);
 							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
-						else if (skill.hasEffectType(EffectType.DMG_OVER_TIME, EffectType.DMG_OVER_TIME_PERCENT))
+						else if (skill.HasEffectType(EffectType.DMG_OVER_TIME, EffectType.DMG_OVER_TIME_PERCENT))
 						{
 							aiSkillScopes.Add(shortOrLongRangeScope);
 						}
-						else if (skill.hasEffectType(EffectType.RESURRECTION))
+						else if (skill.HasEffectType(EffectType.RESURRECTION))
 						{
 							aiSkillScopes.Add(AISkillScope.RES);
 						}
@@ -609,7 +609,7 @@ public class NpcData: DataReaderBase
 		if (template.getParameters().getMinionList("Privates").Count != 0 &&
 		    template.getParameters().getSet().get("SummonPrivateRate") == null)
 		{
-			_masterMonsterIDs.add(template.getId());
+			_masterMonsterIDs.add(template.Id);
 		}
 	}
 

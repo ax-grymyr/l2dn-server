@@ -48,7 +48,7 @@ public struct RequestCollectionRegisterPacket: IIncomingPacket<GameSession>
 		long count = 0;
 		foreach (ItemEnchantHolder data in collection.getItems())
 		{
-			if (data.getId() == item.getId() && (data.getEnchantLevel() == 0 || data.getEnchantLevel() == item.getEnchantLevel()))
+			if (data.Id == item.Id && (data.getEnchantLevel() == 0 || data.getEnchantLevel() == item.getEnchantLevel()))
 			{
 				count = data.getCount();
 				break;
@@ -74,7 +74,7 @@ public struct RequestCollectionRegisterPacket: IIncomingPacket<GameSession>
 		if (currentColl != null && currentColl.getIndex() == _index)
 		{
 			player.sendPacket(new ExCollectionRegisterPacket(false, _collectionId, _index,
-				new ItemEnchantHolder(item.getId(), count, item.getEnchantLevel())));
+				new ItemEnchantHolder(item.Id, count, item.getEnchantLevel())));
 
 			player.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_ADDED_TO_YOUR_COLLECTION);
 			player.sendPacket(new ConfirmDialogPacket("Collection already registered;"));
@@ -84,9 +84,9 @@ public struct RequestCollectionRegisterPacket: IIncomingPacket<GameSession>
 		player.destroyItem("Collection", item, count, player, true);
 
 		player.sendPacket(new ExCollectionRegisterPacket(true, _collectionId, _index,
-			new ItemEnchantHolder(item.getId(), count, item.getEnchantLevel())));
+			new ItemEnchantHolder(item.Id, count, item.getEnchantLevel())));
 
-		player.getCollections().Add(new PlayerCollectionData(_collectionId, item.getId(), _index));
+		player.getCollections().Add(new PlayerCollectionData(_collectionId, item.Id, _index));
 
 		int completeCount = 0;
 		foreach (PlayerCollectionData coll in player.getCollections())

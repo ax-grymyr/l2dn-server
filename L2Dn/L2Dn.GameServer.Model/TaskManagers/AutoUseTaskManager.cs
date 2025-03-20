@@ -15,7 +15,6 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Skills.Targets;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Utilities;
@@ -112,14 +111,14 @@ public class AutoUseTaskManager
 								foreach (ItemSkillHolder itemSkillHolder in skills)
 								{
 									Skill skill = itemSkillHolder.getSkill();
-									if (player.isAffectedBySkill(skill.getId()) || player.hasSkillReuse(skill.getReuseHashCode()) || !skill.checkCondition(player, player, false))
+									if (player.isAffectedBySkill(skill.Id) || player.hasSkillReuse(skill.ReuseHashCode) || !skill.CheckCondition(player, player, false))
 									{
 										continueItems = true;
 										break;
 									}
 
 									// Check item skills that affect pets.
-									if (pet != null && !pet.isDead() && (pet.isAffectedBySkill(skill.getId()) || pet.hasSkillReuse(skill.getReuseHashCode()) || !skill.checkCondition(pet, pet, false)))
+									if (pet != null && !pet.isDead() && (pet.isAffectedBySkill(skill.Id) || pet.hasSkillReuse(skill.ReuseHashCode) || !skill.CheckCondition(pet, pet, false)))
 									{
 										continueItems = true;
 										break;
@@ -284,7 +283,7 @@ public class AutoUseTaskManager
 						WorldObject? target = player.getTarget();
 						if (canCastBuff(player, target, skill))
 						{
-							foreach (AttachSkillHolder holder in skill.getAttachSkills())
+							foreach (AttachSkillHolder holder in skill.AttachSkills)
 							{
 								if (player.isAffectedBySkill(holder.getRequiredSkillId()))
 								{
@@ -474,7 +473,7 @@ public class AutoUseTaskManager
 		private bool canCastBuff(Player player, WorldObject? target, Skill skill)
 		{
 			// Summon check.
-			if (skill.getAffectScope() == AffectScope.SUMMON_EXCEPT_MASTER || skill.getTargetType() == TargetType.SUMMON)
+			if (skill.AffectScope == AffectScope.SUMMON_EXCEPT_MASTER || skill.TargetType == TargetType.SUMMON)
 			{
 				if (!player.hasServitors())
 				{
@@ -483,7 +482,7 @@ public class AutoUseTaskManager
 				int occurrences = 0;
 				foreach (Summon servitor in player.getServitors().Values)
 				{
-					if (servitor.isAffectedBySkill(skill.getId()))
+					if (servitor.isAffectedBySkill(skill.Id))
 					{
 						occurrences++;
 					}
@@ -494,13 +493,13 @@ public class AutoUseTaskManager
 				}
 			}
 
-			if (target != null && target.isCreature() && ((Creature) target).isAlikeDead() && skill.getTargetType() != TargetType.SELF && skill.getTargetType() != TargetType.NPC_BODY && skill.getTargetType() != TargetType.PC_BODY)
+			if (target != null && target.isCreature() && ((Creature) target).isAlikeDead() && skill.TargetType != TargetType.SELF && skill.TargetType != TargetType.NPC_BODY && skill.TargetType != TargetType.PC_BODY)
 			{
 				return false;
 			}
 
-			Playable playableTarget = target == null || !target.isPlayable() || skill.getTargetType() == TargetType.SELF ? player : (Playable) target;
-			if (player != playableTarget && player.Distance3D(playableTarget) > skill.getCastRange())
+			Playable playableTarget = target == null || !target.isPlayable() || skill.TargetType == TargetType.SELF ? player : (Playable) target;
+			if (player != playableTarget && player.Distance3D(playableTarget) > skill.CastRange)
 			{
 				return false;
 			}
@@ -510,15 +509,15 @@ public class AutoUseTaskManager
 				return false;
 			}
 
-			BuffInfo? buffInfo = playableTarget.getEffectList().getBuffInfoBySkillId(skill.getId());
-			BuffInfo? abnormalBuffInfo = playableTarget.getEffectList().getFirstBuffInfoByAbnormalType(skill.getAbnormalType());
+			BuffInfo? buffInfo = playableTarget.getEffectList().getBuffInfoBySkillId(skill.Id);
+			BuffInfo? abnormalBuffInfo = playableTarget.getEffectList().getFirstBuffInfoByAbnormalType(skill.AbnormalType);
 			if (abnormalBuffInfo != null)
 			{
 				if (buffInfo != null)
 				{
-					return abnormalBuffInfo.getSkill().getId() == buffInfo.getSkill().getId() && (buffInfo.getTime() <= TimeSpan.FromSeconds(REUSE_MARGIN_TIME) || buffInfo.getSkill().getLevel() < skill.getLevel());
+					return abnormalBuffInfo.getSkill().Id == buffInfo.getSkill().Id && (buffInfo.getTime() <= TimeSpan.FromSeconds(REUSE_MARGIN_TIME) || buffInfo.getSkill().Level < skill.Level);
 				}
-				return abnormalBuffInfo.getSkill().getAbnormalLevel() < skill.getAbnormalLevel() || abnormalBuffInfo.isAbnormalType(AbnormalType.NONE);
+				return abnormalBuffInfo.getSkill().AbnormalLevel < skill.AbnormalLevel || abnormalBuffInfo.isAbnormalType(AbnormalType.NONE);
 			}
 			return buffInfo == null;
 		}
@@ -527,45 +526,45 @@ public class AutoUseTaskManager
 		{
             Inventory? inventory = playable.getInventory();
 
-            if (skill.getItemConsumeCount() > 0 &&
-                inventory != null && inventory.getInventoryItemCount(skill.getItemConsumeId(), -1) <
-                skill.getItemConsumeCount())
+            if (skill.ItemConsumeCount > 0 &&
+                inventory != null && inventory.getInventoryItemCount(skill.ItemConsumeId, -1) <
+                skill.ItemConsumeCount)
             {
                 return false;
             }
 
-            if (skill.getMpConsume() > 0 && playable.getCurrentMp() < skill.getMpConsume())
+            if (skill.MpConsume > 0 && playable.getCurrentMp() < skill.MpConsume)
 			{
 				return false;
 			}
 
 			// Check if monster is spoiled to avoid Spoil (254) skill recast.
-			if (skill.getId() == 254 && target != null && target.isMonster() && ((Monster) target).isSpoiled())
+			if (skill.Id == 254 && target != null && target.isMonster() && ((Monster) target).isSpoiled())
 			{
 				return false;
 			}
 
-			foreach (AttachSkillHolder holder in skill.getAttachSkills())
+			foreach (AttachSkillHolder holder in skill.AttachSkills)
 			{
 				if (playable.isAffectedBySkill(holder.getRequiredSkillId()) //
-					&& (playable.hasSkillReuse(holder.getSkill().getReuseHashCode()) || playable.isAffectedBySkill(holder)))
+					&& (playable.hasSkillReuse(holder.getSkill().ReuseHashCode) || playable.isAffectedBySkill(holder)))
 				{
 					return false;
 				}
 			}
 
-			return !playable.isSkillDisabled(skill) && skill.checkCondition(playable, target, false);
+			return !playable.isSkillDisabled(skill) && skill.CheckCondition(playable, target, false);
 		}
 
 		private bool canSummonCastSkill(Player player, Summon summon, Skill skill)
 		{
-			if (skill.isBad() && player.getTarget() == null)
+			if (skill.IsBad && player.getTarget() == null)
 			{
 				return false;
 			}
 
-			int mpConsume = skill.getMpConsume() + skill.getMpInitialConsume();
-			if ((mpConsume != 0 && mpConsume > (int) Math.Floor(summon.getCurrentMp())) || (skill.getHpConsume() != 0 && skill.getHpConsume() > (int) Math.Floor(summon.getCurrentHp())))
+			int mpConsume = skill.MpConsume + skill.MpInitialConsume;
+			if ((mpConsume != 0 && mpConsume > (int) Math.Floor(summon.getCurrentMp())) || (skill.HpConsume != 0 && skill.HpConsume > (int) Math.Floor(summon.getCurrentHp())))
 			{
 				return false;
 			}
@@ -575,40 +574,40 @@ public class AutoUseTaskManager
 				return false;
 			}
 
-			if ((player.getTarget() != null && !skill.checkCondition(summon, player.getTarget(), false)) || (player.getTarget() == null && !skill.checkCondition(summon, player, false)))
+			if ((player.getTarget() != null && !skill.CheckCondition(summon, player.getTarget(), false)) || (player.getTarget() == null && !skill.CheckCondition(summon, player, false)))
 			{
 				return false;
 			}
 
             Inventory? inventory = summon.getInventory();
-            if (skill.getItemConsumeCount() > 0 && inventory != null &&
-                inventory.getInventoryItemCount(skill.getItemConsumeId(), -1) < skill.getItemConsumeCount())
+            if (skill.ItemConsumeCount > 0 && inventory != null &&
+                inventory.getInventoryItemCount(skill.ItemConsumeId, -1) < skill.ItemConsumeCount)
             {
                 return false;
             }
 
-            if (skill.getTargetType()==TargetType.SELF || skill.getTargetType()==TargetType.SUMMON)
+            if (skill.TargetType==TargetType.SELF || skill.TargetType==TargetType.SUMMON)
 			{
-				BuffInfo? summonInfo = summon.getEffectList().getBuffInfoBySkillId(skill.getId());
+				BuffInfo? summonInfo = summon.getEffectList().getBuffInfoBySkillId(skill.Id);
 				return summonInfo != null && summonInfo.getTime() >= TimeSpan.FromSeconds(REUSE_MARGIN_TIME);
 			}
 
-            if (skill.getEffects(EffectScope.GENERAL) is {} generalEffect &&
+            if (skill.GetEffects(SkillEffectScope.General) is {} generalEffect &&
                 generalEffect.Any(a => a.getEffectType() == EffectType.MANAHEAL_BY_LEVEL) &&
                 player.getCurrentMpPercent() > 80)
             {
                 return false;
             }
 
-            BuffInfo? buffInfo = player.getEffectList().getBuffInfoBySkillId(skill.getId());
-			BuffInfo? abnormalBuffInfo = player.getEffectList().getFirstBuffInfoByAbnormalType(skill.getAbnormalType());
+            BuffInfo? buffInfo = player.getEffectList().getBuffInfoBySkillId(skill.Id);
+			BuffInfo? abnormalBuffInfo = player.getEffectList().getFirstBuffInfoByAbnormalType(skill.AbnormalType);
 			if (abnormalBuffInfo != null)
 			{
 				if (buffInfo != null)
 				{
-					return abnormalBuffInfo.getSkill().getId() == buffInfo.getSkill().getId() && (buffInfo.getTime() <= TimeSpan.FromSeconds(REUSE_MARGIN_TIME) || buffInfo.getSkill().getLevel() < skill.getLevel());
+					return abnormalBuffInfo.getSkill().Id == buffInfo.getSkill().Id && (buffInfo.getTime() <= TimeSpan.FromSeconds(REUSE_MARGIN_TIME) || buffInfo.getSkill().Level < skill.Level);
 				}
-				return abnormalBuffInfo.getSkill().getAbnormalLevel() < skill.getAbnormalLevel() || abnormalBuffInfo.isAbnormalType(AbnormalType.NONE);
+				return abnormalBuffInfo.getSkill().AbnormalLevel < skill.AbnormalLevel || abnormalBuffInfo.isAbnormalType(AbnormalType.NONE);
 			}
 
 			return true;

@@ -262,12 +262,12 @@ public class WorldExchangeManager: DataReaderBase
             return 0;
         }
 
-		if (itemToRemove.getId() == Inventory.ADENA_ID)
+		if (itemToRemove.Id == Inventory.ADENA_ID)
 		{
 			return priceForEach * 100L;
 		}
 
-		return (long)(priceForEach * (itemToRemove.getId() == Inventory.ADENA_ID ? 1 : amount) * Config.WorldExchange.WORLD_EXCHANGE_ADENA_FEE);
+		return (long)(priceForEach * (itemToRemove.Id == Inventory.ADENA_ID ? 1 : amount) * Config.WorldExchange.WORLD_EXCHANGE_ADENA_FEE);
 	}
 
 	/**
@@ -335,7 +335,7 @@ public class WorldExchangeManager: DataReaderBase
         }
 
         InventoryUpdatePacket iu;
-		if (item.isStackable() && player.getInventory().getInventoryItemCount(item.getId(), -1) > amount)
+		if (item.isStackable() && player.getInventory().getInventoryItemCount(item.Id, -1) > amount)
 		{
 			iu = new InventoryUpdatePacket(new ItemInfo(item, ItemChangeType.MODIFIED));
 		}
@@ -352,7 +352,7 @@ public class WorldExchangeManager: DataReaderBase
 			return;
 		}
 
-        if (!_itemCategories.TryGetValue(itemInstance.getId(), out WorldExchangeItemSubType category))
+        if (!_itemCategories.TryGetValue(itemInstance.Id, out WorldExchangeItemSubType category))
 		{
 			player.sendPacket(new SystemMessagePacket(SystemMessageId.THE_ITEM_YOU_REGISTERED_HAS_BEEN_SOLD));
 			player.sendPacket(WorldExchangeRegisterItemPacket.FAIL);
@@ -722,7 +722,7 @@ public class WorldExchangeManager: DataReaderBase
 		{
 			if (oldOwner.ObjectId == newHolder.getOldOwnerId())
 			{
-				oldOwner.sendPacket(new WorldExchangeSellCompleteAlarmPacket(newItem.getId(), newItem.getCount()));
+				oldOwner.sendPacket(new WorldExchangeSellCompleteAlarmPacket(newItem.Id, newItem.getCount()));
 				break;
 			}
 		}
@@ -736,7 +736,7 @@ public class WorldExchangeManager: DataReaderBase
 	 */
 	private Item createItem(Item oldItem, Player requestor)
 	{
-		Item newItem = new Item(oldItem.getId());
+		Item newItem = new Item(oldItem.Id);
 		newItem.setOwnerId(requestor.ObjectId);
 		newItem.setEnchantLevel(oldItem.getEnchantLevel() < 1 ? 0 : oldItem.getEnchantLevel());
 		newItem.setItemLocation(ItemLocation.EXCHANGE);
@@ -813,7 +813,7 @@ public class WorldExchangeManager: DataReaderBase
 				continue;
 			}
 
-			if (ids.Contains(holder.getItemInstance().getId()) && holder.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_REGISTERED)
+			if (ids.Contains(holder.getItemInstance().Id) && holder.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_REGISTERED)
 			{
 				returnList.Add(holder);
 			}
@@ -849,8 +849,8 @@ public class WorldExchangeManager: DataReaderBase
 				{
 					// TODO extract to comparer classes
 					sortedList.Sort((a, b) =>
-						getItemName(lang ?? "en", a.getItemInstance().getId(), a.getItemInstance().isBlessed())
-							.CompareTo(getItemName(lang ?? "en", b.getItemInstance().getId(),
+						getItemName(lang ?? "en", a.getItemInstance().Id, a.getItemInstance().isBlessed())
+							.CompareTo(getItemName(lang ?? "en", b.getItemInstance().Id,
 								b.getItemInstance().isBlessed())));
 				}
 				else
@@ -867,8 +867,8 @@ public class WorldExchangeManager: DataReaderBase
 				{
 					// TODO extract to comparer classes
 					sortedList.Sort((a, b) =>
-						-getItemName(lang ?? "en", a.getItemInstance().getId(), a.getItemInstance().isBlessed())
-							.CompareTo(getItemName(lang ?? "en", b.getItemInstance().getId(),
+						-getItemName(lang ?? "en", a.getItemInstance().Id, a.getItemInstance().isBlessed())
+							.CompareTo(getItemName(lang ?? "en", b.getItemInstance().Id,
 								b.getItemInstance().isBlessed())));
 				}
 				else
@@ -1001,7 +1001,7 @@ public class WorldExchangeManager: DataReaderBase
 		{
 			if (holder.getOldOwnerId() == player.ObjectId && (holder.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_SOLD || holder.getStoreType() == WorldExchangeItemStatusType.WORLD_EXCHANGE_OUT_TIME))
 			{
-				player.sendPacket(new WorldExchangeSellCompleteAlarmPacket(holder.getItemInstance().getId(), holder.getItemInstance().getCount()));
+				player.sendPacket(new WorldExchangeSellCompleteAlarmPacket(holder.getItemInstance().Id, holder.getItemInstance().getCount()));
 				break;
 			}
 		}
@@ -1099,7 +1099,7 @@ public class WorldExchangeManager: DataReaderBase
 		long totalItemCount = 0;
 		foreach (WorldExchangeHolder holder in _itemBids.Values)
 		{
-			if (holder.getItemInstance().getTemplate().getId() != itemId)
+			if (holder.getItemInstance().getTemplate().Id != itemId)
 			{
 				continue;
 			}

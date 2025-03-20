@@ -81,7 +81,7 @@ public struct RequestRefundItemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		if (merchant != null && !buyList.isNpcAllowed(merchant.getId()))
+		if (merchant != null && !buyList.isNpcAllowed(merchant.Id))
 		{
 			player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 			return ValueTask.CompletedTask;
@@ -142,7 +142,7 @@ public struct RequestRefundItemPacket: IIncomingPacket<GameSession>
 			{
 				slots += count;
 			}
-			else if (player.getInventory().getItemByItemId(template.getId()) == null)
+			else if (player.getInventory().getItemByItemId(template.Id) == null)
 			{
 				slots++;
 			}

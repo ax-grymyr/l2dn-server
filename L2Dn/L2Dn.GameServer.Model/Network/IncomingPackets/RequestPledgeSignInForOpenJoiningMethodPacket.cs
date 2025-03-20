@@ -59,7 +59,7 @@ public struct RequestPledgeSignInForOpenJoiningMethodPacket: IIncomingPacket<Gam
 		    return ValueTask.CompletedTask;
 	    }
 
-	    player.sendPacket(new JoinPledgePacket(clan.getId()));
+	    player.sendPacket(new JoinPledgePacket(clan.Id));
 
 	    // player.setPowerGrade(9); // academy
 	    player.setPowerGrade(5); // New member starts at 5, not confirmed.

@@ -108,7 +108,7 @@ public struct RequestBuyItemPacket: IIncomingPacket<GameSession>
 		double castleTaxRate = 0;
 		if (merchant != null)
 		{
-			if (!buyList.isNpcAllowed(merchant.getId()))
+			if (!buyList.isNpcAllowed(merchant.Id))
 			{
 				player.sendPacket(ActionFailedPacket.STATIC_PACKET);
 				return ValueTask.CompletedTask;
@@ -124,12 +124,12 @@ public struct RequestBuyItemPacket: IIncomingPacket<GameSession>
 		long weight = 0;
 		foreach (ItemHolder i in _items)
 		{
-			Product? product = buyList.getProductByItemId(i.getId());
+			Product? product = buyList.getProductByItemId(i.Id);
 			if (product == null)
 			{
 				Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-					" sent a false BuyList list_id " + _listId + " and item_id " + i.getId(), Config.General.DEFAULT_PUNISH);
+					" sent a false BuyList list_id " + _listId + " and item_id " + i.Id, Config.General.DEFAULT_PUNISH);
 
 				return ValueTask.CompletedTask;
 			}
@@ -222,10 +222,10 @@ public struct RequestBuyItemPacket: IIncomingPacket<GameSession>
 		// Proceed the purchase
 		foreach (ItemHolder i in _items)
 		{
-			Product? product = buyList.getProductByItemId(i.getId());
+			Product? product = buyList.getProductByItemId(i.Id);
 			if (product == null)
 			{
-				Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false BuyList list_id " + _listId + " and item_id " + i.getId(), Config.General.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false BuyList list_id " + _listId + " and item_id " + i.Id, Config.General.DEFAULT_PUNISH);
 				continue;
 			}
 
@@ -233,12 +233,12 @@ public struct RequestBuyItemPacket: IIncomingPacket<GameSession>
 			{
 				if (product.decreaseCount(i.getCount()))
 				{
-					player.getInventory().addItem("Buy", i.getId(), i.getCount(), player, merchant);
+					player.getInventory().addItem("Buy", i.Id, i.getCount(), player, merchant);
 				}
 			}
 			else
 			{
-				player.getInventory().addItem("Buy", i.getId(), i.getCount(), player, merchant);
+				player.getInventory().addItem("Buy", i.Id, i.getCount(), player, merchant);
 			}
 		}
 

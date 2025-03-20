@@ -1,5 +1,5 @@
 using System.Runtime.CompilerServices;
-using L2Dn.GameServer.Model.Skills.Targets;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Handlers;

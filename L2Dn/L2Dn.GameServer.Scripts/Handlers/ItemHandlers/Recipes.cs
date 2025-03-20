@@ -35,7 +35,7 @@ public class Recipes: IItemHandler
 			return false;
 		}
 
-		RecipeList? rp = RecipeData.getInstance().getRecipeByItemId(item.getId());
+		RecipeList? rp = RecipeData.getInstance().getRecipeByItemId(item.Id);
 		if (rp == null)
 		{
 			return false;

@@ -103,8 +103,8 @@ public class SkillEnchantData: DataReaderBase
 
 	public int getChanceEnchantMap(Skill skill)
 	{
-		int enchantLevel = skill.getSubLevel() == 0 ? 1 : skill.getSubLevel() + 1 - 1000;
-		if (enchantLevel > getSkillEnchant(skill.getId())?.getMaxEnchantLevel())
+		int enchantLevel = skill.SubLevel == 0 ? 1 : skill.SubLevel + 1 - 1000;
+		if (enchantLevel > getSkillEnchant(skill.Id)?.getMaxEnchantLevel())
 		{
 			return 0;
 		}

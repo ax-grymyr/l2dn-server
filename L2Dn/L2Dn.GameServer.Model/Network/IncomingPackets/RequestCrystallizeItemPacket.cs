@@ -104,7 +104,7 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        if (!player.getInventory().canManipulateWithItemId(itemToRemove.getId()))
+        if (!player.getInventory().canManipulateWithItemId(itemToRemove.Id))
 		{
 			player.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_CRYSTALLIZED);
 			return ValueTask.CompletedTask;
@@ -227,7 +227,7 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
 			if (rand < holder.getChance())
 			{
 				// add crystals
-				Item? createdItem = player.getInventory().addItem("Crystalize", holder.getId(), holder.getCount(), player, player);
+				Item? createdItem = player.getInventory().addItem("Crystalize", holder.Id, holder.getCount(), player, player);
                 if (createdItem == null)
                 {
                     player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: proper message, atomic inventory update

@@ -49,9 +49,9 @@ public sealed class MagicalAbnormalDispelAttack: AbstractEffect
             effected.stopFakeDeath(true);
         }
 
-        bool sps = skill.useSpiritShot() && effector.isChargedShot(ShotType.SPIRITSHOTS);
-        bool bss = skill.useSpiritShot() && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
-        bool mcrit = Formulas.calcCrit(skill.getMagicCriticalRate(), effector, effected, skill);
+        bool sps = skill.UseSpiritShot && effector.isChargedShot(ShotType.SPIRITSHOTS);
+        bool bss = skill.UseSpiritShot && effector.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
+        bool mcrit = Formulas.calcCrit(skill.MagicCriticalRate, effector, effected, skill);
         double damage = Formulas.calcMagicDam(effector, effected, skill, effector.getMAtk(), _power, effected.getMDef(),
             sps, bss, mcrit);
 

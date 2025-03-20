@@ -47,7 +47,7 @@ public class DropSearchBoard: IParseBoardHandler
 		{
 			isSpoil = dropHolder.getDropType() == DropType.SPOIL;
 			itemId = dropHolder.getItemId();
-			npcId = npcTemplate.getId();
+			npcId = npcTemplate.Id;
 			npcLevel = npcTemplate.getLevel();
 			min = dropHolder.getMin();
 			max = dropHolder.getMax();
@@ -270,13 +270,13 @@ public class DropSearchBoard: IParseBoardHandler
 
 						// bonus drop amount effect
 						rateAmount *= dropAmountEffectBonus;
-						if (item != null && item.getId() == Inventory.ADENA_ID)
+						if (item != null && item.Id == Inventory.ADENA_ID)
 						{
 							rateAmount *= dropAmountAdenaEffectBonus;
 						}
 						// bonus drop rate effect
 						rateChance *= dropRateEffectBonus;
-						if (item != null && item.getId() == Inventory.LCOIN_ID)
+						if (item != null && item.Id == Inventory.LCOIN_ID)
 						{
 							rateChance *= player.getStat().getMul(Stat.BONUS_DROP_RATE_LCOIN, 1);
 						}
@@ -346,7 +346,7 @@ public class DropSearchBoard: IParseBoardHandler
 				continue;
 			}
 
-			if (!DROP_INDEX_CACHE.ContainsKey(item.getId()))
+			if (!DROP_INDEX_CACHE.ContainsKey(item.Id))
 			{
 				continue;
 			}
@@ -388,10 +388,10 @@ public class DropSearchBoard: IParseBoardHandler
 			}
 
 			builder.Append("<td>");
-			builder.Append("<button value=\".\" action=\"bypass _bbs_search_drop " + item.getId() + " 1 $order $level\" width=32 height=32 back=\"" + icon + "\" fore=\"" + icon + "\">");
+			builder.Append("<button value=\".\" action=\"bypass _bbs_search_drop " + item.Id + " 1 $order $level\" width=32 height=32 back=\"" + icon + "\" fore=\"" + icon + "\">");
 			builder.Append("</td>");
 			builder.Append("<td width=200>");
-			builder.Append("&#").Append(item.getId()).Append(";");
+			builder.Append("&#").Append(item.Id).Append(";");
 			builder.Append("</td>");
 
 			if (i == 2)

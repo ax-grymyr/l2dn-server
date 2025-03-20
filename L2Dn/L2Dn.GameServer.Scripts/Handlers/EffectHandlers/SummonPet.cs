@@ -55,9 +55,9 @@ public sealed class SummonPet: AbstractEffect
 
         PetEvolveHolder evolveData = player.getPetEvolve(collar.ObjectId);
         PetData petData = evolveData.getEvolve() == EvolveLevel.None
-            ? PetDataTable.getInstance().getPetDataByEvolve(collar.getId(), evolveData.getEvolve())
+            ? PetDataTable.getInstance().getPetDataByEvolve(collar.Id, evolveData.getEvolve())
             : PetDataTable.getInstance().
-                getPetDataByEvolve(collar.getId(), evolveData.getEvolve(), evolveData.getIndex());
+                getPetDataByEvolve(collar.Id, evolveData.getEvolve(), evolveData.getIndex());
 
         if (petData == null || petData.getNpcId() == -1)
             return;
@@ -80,9 +80,9 @@ public sealed class SummonPet: AbstractEffect
         foreach (BuffInfo effect in player.getEffectList().getEffects())
         {
             Skill sk = effect.getSkill();
-            if (!sk.isBad() && !sk.isTransformation() && skill.isSharedWithSummon())
+            if (!sk.IsBad && !sk.IsTransformation && skill.IsSharedWithSummon)
             {
-                sk.applyEffects(player, pet, false, effect.getTime() ?? TimeSpan.Zero);
+                sk.ApplyEffects(player, pet, false, effect.getTime() ?? TimeSpan.Zero);
             }
         }
 

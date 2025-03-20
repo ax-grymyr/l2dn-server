@@ -119,7 +119,7 @@ public class EffectList
 		List<BuffInfo> result = new();
 		foreach (BuffInfo info in _actives)
 		{
-			if (info.getSkill().getBuffType() == SkillBuffType.BUFF)
+			if (info.getSkill().BuffType == SkillBuffType.BUFF)
 			{
 				result.Add(info);
 			}
@@ -136,7 +136,7 @@ public class EffectList
 		List<BuffInfo> result = new();
 		foreach (BuffInfo info in _actives)
 		{
-			if (info.getSkill().getBuffType() == SkillBuffType.DANCE)
+			if (info.getSkill().BuffType == SkillBuffType.DANCE)
 			{
 				result.Add(info);
 			}
@@ -153,7 +153,7 @@ public class EffectList
 		List<BuffInfo> result = new();
 		foreach (BuffInfo info in _actives)
 		{
-			if (info.getSkill().getBuffType() == SkillBuffType.DEBUFF)
+			if (info.getSkill().BuffType == SkillBuffType.DEBUFF)
 			{
 				result.Add(info);
 			}
@@ -170,14 +170,14 @@ public class EffectList
 	{
 		foreach (BuffInfo info in _actives)
 		{
-			if (info.getSkill().getId() == skillId)
+			if (info.getSkill().Id == skillId)
 			{
 				return true;
 			}
 		}
 		foreach (BuffInfo info in _passives)
 		{
-			if (info.getSkill().getId() == skillId)
+			if (info.getSkill().Id == skillId)
 			{
 				return true;
 			}
@@ -194,14 +194,14 @@ public class EffectList
 	{
 		foreach (BuffInfo info in _actives)
 		{
-			if (info.getSkill().getId() == skillId)
+			if (info.getSkill().Id == skillId)
 			{
 				return info;
 			}
 		}
 		foreach (BuffInfo info in _passives)
 		{
-			if (info.getSkill().getId() == skillId)
+			if (info.getSkill().Id == skillId)
 			{
 				return info;
 			}
@@ -320,8 +320,8 @@ public class EffectList
 			}
 			else
 			{
-				_owner.sendPacket(new ShortBuffStatusUpdatePacket(info.getSkill().getId(), info.getSkill().getLevel(),
-					info.getSkill().getSubLevel(), (int)(info.getTime() ?? TimeSpan.Zero).TotalSeconds));
+				_owner.sendPacket(new ShortBuffStatusUpdatePacket(info.getSkill().Id, info.getSkill().Level,
+					info.getSkill().SubLevel, (int)(info.getTime() ?? TimeSpan.Zero).TotalSeconds));
 			}
 		}
 	}
@@ -392,7 +392,7 @@ public class EffectList
 	 */
 	public void stopAllEffects(bool broadcast)
 	{
-		stopEffects(b => !b.getSkill().isIrreplacableBuff(), true, broadcast);
+		stopEffects(b => !b.getSkill().IsIrreplacableBuff, true, broadcast);
 	}
 
 	/**
@@ -400,7 +400,7 @@ public class EffectList
 	 */
 	public void stopAllEffectsExceptThoseThatLastThroughDeath()
 	{
-		stopEffects(info => !info.getSkill().isStayAfterDeath(), true, true);
+		stopEffects(info => !info.getSkill().IsStayAfterDeath, true, true);
 	}
 
 	/**
@@ -441,7 +441,7 @@ public class EffectList
 	{
 		if (_toggleCount.get() > 0)
 		{
-			stopEffects(b => b.getSkill().isToggle() && !b.getSkill().isIrreplacableBuff(), true, true);
+			stopEffects(b => b.getSkill().IsToggle && !b.getSkill().IsIrreplacableBuff, true, true);
 		}
 	}
 
@@ -449,7 +449,7 @@ public class EffectList
 	{
 		if (_toggleCount.get() > 0)
 		{
-			stopEffects(b => b.getSkill().isToggle() && b.getSkill().getToggleGroupId() == toggleGroup, true, true);
+			stopEffects(b => b.getSkill().IsToggle && b.getSkill().ToggleGroupId == toggleGroup, true, true);
 		}
 	}
 
@@ -550,7 +550,7 @@ public class EffectList
 	 */
 	public void stopSkillEffects(SkillFinishType type, Skill skill)
 	{
-		stopSkillEffects(type, skill.getId());
+		stopSkillEffects(type, skill.Id);
 	}
 
 	/**
@@ -578,7 +578,7 @@ public class EffectList
 	{
 		if (hasAbnormalType(types))
 		{
-			stopEffects(i => types.Contains(i.getSkill().getAbnormalType()), true, true);
+			stopEffects(i => types.Contains(i.getSkill().AbnormalType), true, true);
 			return true;
 		}
 		return false;
@@ -618,7 +618,7 @@ public class EffectList
 	{
 		if (_hasBuffsRemovedOnAnyAction.get() > 0)
 		{
-			stopEffects(info => info.getSkill().isRemovedOnAnyActionExceptMove(), true, true);
+			stopEffects(info => info.getSkill().IsRemovedOnAnyActionExceptMove, true, true);
 		}
 	}
 
@@ -626,7 +626,7 @@ public class EffectList
 	{
 		if (_hasBuffsRemovedOnDamage.get() > 0)
 		{
-			stopEffects(info => info.getSkill().isRemovedOnDamage(), true, true);
+			stopEffects(info => info.getSkill().IsRemovedOnDamage, true, true);
 		}
 	}
 
@@ -700,7 +700,7 @@ public class EffectList
 		}
 
 		// Update flag for skills being removed on action or damage.
-		if (info.getSkill().isRemovedOnAnyActionExceptMove())
+		if (info.getSkill().IsRemovedOnAnyActionExceptMove)
 		{
 			if (increase)
 			{
@@ -711,7 +711,7 @@ public class EffectList
 				_hasBuffsRemovedOnAnyAction.decrementAndGet();
 			}
 		}
-		if (info.getSkill().isRemovedOnDamage())
+		if (info.getSkill().IsRemovedOnDamage)
 		{
 			if (increase)
 			{
@@ -724,7 +724,7 @@ public class EffectList
 		}
 
 		// Increase specific buff count
-		switch (info.getSkill().getBuffType())
+		switch (info.getSkill().BuffType)
 		{
 			case SkillBuffType.TRIGGER:
 			{
@@ -780,7 +780,7 @@ public class EffectList
 			// Remove separately if its an option.
 			removeOption(info, type);
 		}
-		else if (info.getSkill().isPassive())
+		else if (info.getSkill().IsPassive)
 		{
 			// Remove Passive effect.
 			removePassive(info, type);
@@ -820,7 +820,7 @@ public class EffectList
 
 			// Decrease specific buff count
 			increaseDecreaseCount(info, false);
-			info.getSkill().applyEffectScope(EffectScope.END, info, true, false);
+			info.getSkill().ApplyEffectScope(SkillEffectScope.End, info, true, false);
 		}
 	}
 
@@ -856,7 +856,7 @@ public class EffectList
 		Skill skill = info.getSkill();
 
 		// Prevent adding and initializing buffs/effects on dead creatures.
-		if (info.getEffected().isDead() && skill != null && !skill.isPassive() && !skill.isStayAfterDeath())
+		if (info.getEffected().isDead() && skill != null && !skill.IsPassive && !skill.IsStayAfterDeath)
 		{
 			return;
 		}
@@ -866,7 +866,7 @@ public class EffectList
 			// Only options are without skills.
 			addOption(info);
 		}
-		else if (skill.isPassive())
+		else if (skill.IsPassive)
 		{
 			// Passive effects are treated specially
 			addPassive(info);
@@ -886,21 +886,21 @@ public class EffectList
 		Skill skill = info.getSkill();
 
 		// Cannot add active buff to dead creature. Even in retail if you are dead with Lv. 3 Shillien's Breath, it will disappear instead of going 1 level down.
-		if (info.getEffected().isDead() && !skill.isStayAfterDeath())
+		if (info.getEffected().isDead() && !skill.IsStayAfterDeath)
 		{
 			return;
 		}
 
-		if (_blockedAbnormalTypes != null && _blockedAbnormalTypes.Contains(skill.getAbnormalType()))
+		if (_blockedAbnormalTypes != null && _blockedAbnormalTypes.Contains(skill.AbnormalType))
 		{
 			return;
 		}
 
 		// Fix for stacking trigger skills
-		if (skill.isTriggeredSkill())
+		if (skill.IsTriggeredSkill)
 		{
-			BuffInfo? triggerInfo = info.getEffected().getEffectList().getBuffInfoBySkillId(skill.getId());
-			if (triggerInfo != null && triggerInfo.getSkill().getLevel() >= skill.getLevel())
+			BuffInfo? triggerInfo = info.getEffected().getEffectList().getBuffInfoBySkillId(skill.Id);
+			if (triggerInfo != null && triggerInfo.getSkill().Level >= skill.Level)
 			{
 				return;
 			}
@@ -909,7 +909,7 @@ public class EffectList
 		if (info.getEffector() != null)
 		{
 			// Check for debuffs against target.
-			if (info.getEffector() != info.getEffected() && skill.isBad())
+			if (info.getEffector() != info.getEffected() && skill.IsBad)
 			{
 				// Check if effected is debuff blocked.
                 if (info.getEffected().isDebuffBlocked() ||
@@ -928,27 +928,27 @@ public class EffectList
             }
 
 			// Check if buff skills are blocked.
-			if (info.getEffected().isBuffBlocked() && !skill.isBad())
+			if (info.getEffected().isBuffBlocked() && !skill.IsBad)
 			{
 				return;
 			}
 		}
 
 		// Manage effect stacking.
-		if (hasAbnormalType(skill.getAbnormalType()))
+		if (hasAbnormalType(skill.AbnormalType))
 		{
 			foreach (BuffInfo existingInfo in _actives)
 			{
 				Skill existingSkill = existingInfo.getSkill();
 				// Check if existing effect should be removed due to stack.
 				// Effects with no abnormal don't stack if their ID is the same. Effects of the same abnormal type don't stack.
-				if ((skill.getAbnormalType() == AbnormalType.NONE && existingSkill.getId() == skill.getId()) ||
-				    (skill.getAbnormalType() != AbnormalType.NONE &&
-				     existingSkill.getAbnormalType() == skill.getAbnormalType()))
+				if ((skill.AbnormalType == AbnormalType.NONE && existingSkill.Id == skill.Id) ||
+				    (skill.AbnormalType != AbnormalType.NONE &&
+				     existingSkill.AbnormalType == skill.AbnormalType))
 				{
 					// Check if there is subordination abnormal. Skills with subordination abnormal stack with each other, unless the caster is the same.
-					if (skill.getSubordinationAbnormalType() != AbnormalType.NONE &&
-					    skill.getSubordinationAbnormalType() == existingSkill.getSubordinationAbnormalType() //
+					if (skill.SubordinationAbnormalType != AbnormalType.NONE &&
+					    skill.SubordinationAbnormalType == existingSkill.SubordinationAbnormalType //
 					    && (info.getEffectorObjectId() == 0 || existingInfo.getEffectorObjectId() == 0 ||
 					        info.getEffectorObjectId() != existingInfo.getEffectorObjectId()))
 					{
@@ -956,11 +956,11 @@ public class EffectList
 					}
 
 					// The effect we are adding overrides the existing effect. Delete or disable the existing effect.
-					if (skill.getAbnormalLevel() >= existingSkill.getAbnormalLevel())
+					if (skill.AbnormalLevel >= existingSkill.AbnormalLevel)
 					{
 						// If it is an herb, set as not in use the lesser buff, unless it is the same skill.
-						if ((skill.isAbnormalInstant() || existingSkill.isIrreplacableBuff()) &&
-						    skill.getId() != existingSkill.getId())
+						if ((skill.IsAbnormalInstant || existingSkill.IsIrreplacableBuff) &&
+						    skill.Id != existingSkill.Id)
 						{
 							existingInfo.setInUse(false);
 							_hiddenBuffs.incrementAndGet();
@@ -971,7 +971,7 @@ public class EffectList
 							remove(existingInfo);
 						}
 					}
-					else if (skill.isIrreplacableBuff()) // The effect we try to add should be hidden.
+					else if (skill.IsIrreplacableBuff) // The effect we try to add should be hidden.
 					{
 						info.setInUse(false);
 					}
@@ -992,8 +992,8 @@ public class EffectList
 			// Check for each category.
 			foreach (BuffInfo existingInfo in _actives)
 			{
-				if (existingInfo.isInUse() && !skill.is7Signs() &&
-				    isLimitExceeded([existingInfo.getSkill().getBuffType()]))
+				if (existingInfo.isInUse() && !skill.Is7Signs &&
+				    isLimitExceeded([existingInfo.getSkill().BuffType]))
 				{
 					remove(existingInfo);
 				}
@@ -1018,15 +1018,15 @@ public class EffectList
 		Skill skill = info.getSkill();
 
 		// Passive effects don't need stack type!
-		if (skill.getAbnormalType() != AbnormalType.NONE)
+		if (skill.AbnormalType != AbnormalType.NONE)
 		{
-			LOGGER.Warn("Passive " + skill + " with abnormal type: " + skill.getAbnormalType() + "!");
+			LOGGER.Warn("Passive " + skill + " with abnormal type: " + skill.AbnormalType + "!");
 		}
 
 		// Remove previous passives of this id.
 		foreach (BuffInfo b in _passives)
 		{
-			if (b != null && b.getSkill().getId() == skill.getId())
+			if (b != null && b.getSkill().Id == skill.Id)
 			{
 				b.setInUse(false);
 				_passives.remove(b);
@@ -1090,7 +1090,7 @@ public class EffectList
 						{
 							if (info != null && info.isInUse())
 							{
-								if (info.getSkill().isHealingPotionSkill())
+								if (info.getSkill().IsHealingPotionSkill)
 								{
 									shortBuffStatusUpdate(info);
 								}
@@ -1099,7 +1099,7 @@ public class EffectList
 									if (asu != null)
 										asu.Value.addSkill(info);
 
-									if (ps != null && !info.getSkill().isToggle())
+									if (ps != null && !info.getSkill().IsToggle)
 										ps.Value.addSkill(info);
 
 									if (os != null)
@@ -1223,19 +1223,19 @@ public class EffectList
 				Skill skill = info.getSkill();
 
 				// Handle hidden buffs. Check if there was such abnormal before so we can continue.
-				if (_hiddenBuffs.get() > 0 && _stackedEffects.Contains(skill.getAbnormalType()))
+				if (_hiddenBuffs.get() > 0 && _stackedEffects.Contains(skill.AbnormalType))
 				{
 					// If incoming buff isnt hidden, remove any hidden buffs with its abnormal type.
 					if (info.isInUse())
 					{
-						unhideBuffs.removeIf(b => b.isAbnormalType(skill.getAbnormalType()));
+						unhideBuffs.removeIf(b => b.isAbnormalType(skill.AbnormalType));
 					}
 
 					// If this incoming buff is hidden and its first of its abnormal, or it removes
 					// any previous hidden buff with the same or lower abnormal level and add this instead.
-					else if (!abnormalTypeFlags.Contains(skill.getAbnormalType()) || unhideBuffs.removeIf(b =>
-						         b.isAbnormalType(skill.getAbnormalType()) &&
-						         b.getSkill().getAbnormalLevel() <= skill.getAbnormalLevel()))
+					else if (!abnormalTypeFlags.Contains(skill.AbnormalType) || unhideBuffs.removeIf(b =>
+						         b.isAbnormalType(skill.AbnormalType) &&
+						         b.getSkill().AbnormalLevel <= skill.AbnormalLevel))
 					{
 						unhideBuffs.add(info);
 					}
@@ -1248,12 +1248,12 @@ public class EffectList
 				}
 
 				// Add the AbnormalType flag.
-				abnormalTypeFlags.add(skill.getAbnormalType());
+				abnormalTypeFlags.add(skill.AbnormalType);
 
 				// Add AbnormalVisualEffect flag.
-				if (skill.hasAbnormalVisualEffects())
+				if (skill.HasAbnormalVisualEffects)
 				{
-					foreach (AbnormalVisualEffect ave in skill.getAbnormalVisualEffects())
+					foreach (AbnormalVisualEffect ave in skill.AbnormalVisualEffects)
 					{
 						abnormalVisualEffectFlags.add(ave);
 						_abnormalVisualEffects.add(ave);
@@ -1278,9 +1278,9 @@ public class EffectList
 
 				// Add AbnormalVisualEffect flag.
 				Skill skill = info.getSkill();
-				if (skill.hasAbnormalVisualEffects())
+				if (skill.HasAbnormalVisualEffects)
 				{
-					foreach (AbnormalVisualEffect ave in skill.getAbnormalVisualEffects())
+					foreach (AbnormalVisualEffect ave in skill.AbnormalVisualEffects)
 					{
 						abnormalVisualEffectFlags.add(ave);
 						_abnormalVisualEffects.add(ave);

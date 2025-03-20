@@ -36,7 +36,7 @@ public struct ExTryPetExtractSystemPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		PetData? petData = PetDataTable.getInstance().getPetDataByItemId(petItem.getId());
+		PetData? petData = PetDataTable.getInstance().getPetDataByItemId(petItem.Id);
         if (petData == null)
         {
             player.sendPacket(new ResultPetExtractSystemPacket(false));
@@ -68,7 +68,7 @@ public struct ExTryPetExtractSystemPacket: IIncomingPacket<GameSession>
 
 		petInventory.transferItemsToOwner();
 
-        int petId = PetDataTable.getInstance().getPetDataByItemId(petItem.getId())?.getType() ?? 0; // TODO
+        int petId = PetDataTable.getInstance().getPetDataByItemId(petItem.Id)?.getType() ?? 0; // TODO
 		Pet? petInfo = Pet.restore(petItem, npcTemplate, player);
         if (petInfo == null)
         {
@@ -83,9 +83,9 @@ public struct ExTryPetExtractSystemPacket: IIncomingPacket<GameSession>
 		{
 			int extractItemId = holder.getExtractItem();
 			int extractItemCount = (int) (petInfo.getStat().getExp() / holder.getExtractExp());
-			int extractCostId = holder.getExtractCost().getId();
+			int extractCostId = holder.getExtractCost().Id;
 			long extractCostCount = holder.getExtractCost().getCount() * extractItemCount;
-			int defaultCostId = holder.getDefaultCost().getId();
+			int defaultCostId = holder.getDefaultCost().Id;
 			long defaultCostCount = holder.getDefaultCost().getCount();
 			if (player.getInventory().getInventoryItemCount(extractCostId, -1) >= extractCostCount && player.getInventory().getInventoryItemCount(defaultCostId, -1) >= defaultCostCount)
 			{

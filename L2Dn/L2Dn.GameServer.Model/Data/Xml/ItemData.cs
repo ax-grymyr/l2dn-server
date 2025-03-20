@@ -238,7 +238,7 @@ public class ItemData: DataReaderBase
 		{
 			case EtcItem etcItem:
 			{
-				_etcItems.put(etcItem.getId(), etcItem);
+				_etcItems.put(etcItem.Id, etcItem);
 
 				if (etcItem.getItemType() == EtcItemType.ARROW || etcItem.getItemType() == EtcItemType.BOLT ||
 				    etcItem.getItemType() == EtcItemType.ELEMENTAL_ORB)
@@ -251,10 +251,10 @@ public class ItemData: DataReaderBase
 				break;
 			}
 			case Armor armor:
-				_armors.put(armor.getId(), armor);
+				_armors.put(armor.Id, armor);
 				break;
 			case Weapon weapon:
-				_weapons.put(item.getId(), weapon);
+				_weapons.put(item.Id, weapon);
 				break;
 
 			default:
@@ -326,7 +326,7 @@ public class ItemData: DataReaderBase
 		ConditionLogicAnd cond = new ConditionLogicAnd();
 		element.Elements().ForEach(e => cond.add(parseCondition(e, template)));
 		if (cond.conditions == null || cond.conditions.Count == 0)
-			LOGGER.Error($"Empty <and> condition in item {template.getId()}");
+			LOGGER.Error($"Empty <and> condition in item {template.Id}");
 
 		return cond;
 	}
@@ -336,7 +336,7 @@ public class ItemData: DataReaderBase
 		ConditionLogicOr cond = new ConditionLogicOr();
 		element.Elements().ForEach(e => cond.add(parseCondition(e, template)));
 		if (cond.conditions == null || cond.conditions.Count == 0)
-			LOGGER.Error($"Empty <or> condition in item {template.getId()}");
+			LOGGER.Error($"Empty <or> condition in item {template.Id}");
 
 		return cond;
 	}
@@ -1244,19 +1244,19 @@ public class ItemData: DataReaderBase
 		// Insert armor item in Fast Look Up Table
 		foreach (Armor item in _armors.Values)
 		{
-			_allTemplates[item.getId()] = item;
+			_allTemplates[item.Id] = item;
 		}
 
 		// Insert weapon item in Fast Look Up Table
 		foreach (Weapon item in _weapons.Values)
 		{
-			_allTemplates[item.getId()] = item;
+			_allTemplates[item.Id] = item;
 		}
 
 		// Insert etcItem item in Fast Look Up Table
 		foreach (EtcItem item in _etcItems.Values)
 		{
-			_allTemplates[item.getId()] = item;
+			_allTemplates[item.Id] = item;
 		}
 	}
 
@@ -1334,8 +1334,8 @@ public class ItemData: DataReaderBase
 
 		if ((Config.General.LOG_ITEMS && !process.equals("Reset") &&
                 !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) ||
-		    (Config.General.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getId() == Inventory.ADENA_ID)) ||
-		    (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(item.getId())))
+		    (Config.General.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.Id == Inventory.ADENA_ID)) ||
+		    (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(item.Id)))
 		{
 			if (item.getEnchantLevel() > 0)
 			{
@@ -1446,7 +1446,7 @@ public class ItemData: DataReaderBase
 			World.getInstance().removeObject(item);
 			IdManager.getInstance().releaseId(item.ObjectId);
 
-			if ((Config.General.LOG_ITEMS && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getId() == Inventory.ADENA_ID)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(item.getId())))
+			if ((Config.General.LOG_ITEMS && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.Id == Inventory.ADENA_ID)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(item.Id)))
 			{
 				if (item.getEnchantLevel() > 0)
 				{
@@ -1495,7 +1495,7 @@ public class ItemData: DataReaderBase
 				StringBuilder sb = new StringBuilder();
 				sb.Append(process);
 				sb.Append("(id: ");
-				sb.Append(item.getId());
+				sb.Append(item.Id);
 				sb.Append(" count: ");
 				sb.Append(item.getCount());
 				sb.Append(" itemObjId: ");
