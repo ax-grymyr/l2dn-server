@@ -9,7 +9,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("HairAccessorySet")]
+[HandlerName("HairAccessorySet")]
 public sealed class HairAccessorySet: AbstractEffect
 {
     public override bool IsInstant => true;

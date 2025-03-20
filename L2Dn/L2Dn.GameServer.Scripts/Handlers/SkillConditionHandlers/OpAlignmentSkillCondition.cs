@@ -8,6 +8,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("OpAlignment")]
 public sealed class OpAlignmentSkillCondition: ISkillCondition
 {
     private readonly SkillConditionAffectType _affectType;

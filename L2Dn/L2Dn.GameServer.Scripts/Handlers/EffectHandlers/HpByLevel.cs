@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Hp By Level effect implementation.
 /// </summary>
-[AbstractEffectName("HpByLevel")]
+[HandlerName("HpByLevel")]
 public sealed class HpByLevel: AbstractEffect
 {
     private readonly double _power;

@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Recover Vitality in Peace Zone effect implementation.
 /// </summary>
-[AbstractEffectName("RecoverVitalityInPeaceZone")]
+[HandlerName("RecoverVitalityInPeaceZone")]
 public sealed class RecoverVitalityInPeaceZone: AbstractEffect
 {
     private readonly double _amount;

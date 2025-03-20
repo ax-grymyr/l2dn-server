@@ -8,6 +8,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("OpPkcount")]
 public sealed class OpPkcountSkillCondition: ISkillCondition
 {
     private readonly SkillConditionAffectType _affectType;

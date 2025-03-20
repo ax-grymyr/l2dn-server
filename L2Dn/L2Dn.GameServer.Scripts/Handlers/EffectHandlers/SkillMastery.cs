@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("SkillMastery")]
+[HandlerName("SkillMastery")]
 public sealed class SkillMastery: AbstractEffect
 {
     private readonly double _stat;

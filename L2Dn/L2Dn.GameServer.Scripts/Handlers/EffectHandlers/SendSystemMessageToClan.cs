@@ -11,7 +11,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("SendSystemMessageToClan")]
+[HandlerName("SendSystemMessageToClan")]
 public sealed class SendSystemMessageToClan: AbstractEffect
 {
     private readonly SystemMessageId _messageId;

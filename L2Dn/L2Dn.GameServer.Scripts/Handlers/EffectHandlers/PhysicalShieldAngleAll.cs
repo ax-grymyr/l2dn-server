@@ -4,7 +4,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("PhysicalShieldAngleAll")]
+[HandlerName("PhysicalShieldAngleAll")]
 public sealed class PhysicalShieldAngleAll: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.PHYSICAL_SHIELD_ANGLE_ALL;

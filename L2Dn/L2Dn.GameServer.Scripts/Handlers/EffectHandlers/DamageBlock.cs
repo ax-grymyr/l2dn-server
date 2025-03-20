@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// Effect that blocks damage and heals to HP/MP.
 /// Regeneration or DOT shouldn't be blocked, Vampiric Rage and Balance Life as well.
 /// </summary>
-[AbstractEffectName("DamageBlock")]
+[HandlerName("DamageBlock")]
 public sealed class DamageBlock: AbstractEffect
 {
     private readonly bool _blockHp;

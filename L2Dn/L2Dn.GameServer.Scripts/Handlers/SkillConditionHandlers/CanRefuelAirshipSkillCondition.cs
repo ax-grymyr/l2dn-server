@@ -8,6 +8,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("CanRefuelAirship")]
 public sealed class CanRefuelAirshipSkillCondition: ISkillCondition
 {
     private readonly int _amount;

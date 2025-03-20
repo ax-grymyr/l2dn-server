@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Untargetable effect implementation.
 /// </summary>
-[AbstractEffectName("Untargetable")]
+[HandlerName("Untargetable")]
 public sealed class Untargetable: AbstractEffect
 {
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

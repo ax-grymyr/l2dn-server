@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Call Learned Skill by Level effect implementation.
 /// </summary>
-[AbstractEffectName("CallLearnedSkill")]
+[HandlerName("CallLearnedSkill")]
 public sealed class CallLearnedSkill: AbstractEffect
 {
     private readonly int _skillId;

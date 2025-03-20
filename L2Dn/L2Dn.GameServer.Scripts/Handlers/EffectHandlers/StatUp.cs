@@ -10,7 +10,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("StatUp")]
+[HandlerName("StatUp")]
 public sealed class StatUp: AbstractEffect
 {
     private readonly double _amount;

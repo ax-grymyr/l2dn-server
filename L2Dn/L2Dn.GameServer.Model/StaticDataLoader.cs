@@ -55,7 +55,6 @@ public static class StaticDataLoader
         PurgeRankingManager.getInstance();
         NewQuestData.getInstance();
 
-        SkillConditionFactory.getInstance(); //.executeScript();
         SkillData.Instance.Load();
         SkillTreeData.getInstance();
         PetSkillData.getInstance();

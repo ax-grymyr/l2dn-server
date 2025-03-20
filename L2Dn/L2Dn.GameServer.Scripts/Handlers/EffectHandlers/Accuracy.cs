@@ -3,5 +3,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("Accuracy")]
+[HandlerName("Accuracy")]
 public sealed class Accuracy(EffectParameterSet parameters): AbstractStatEffect(parameters, Stat.ACCURACY_COMBAT);

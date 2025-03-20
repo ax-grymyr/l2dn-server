@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Enable Cloak effect implementation.
 /// </summary>
-[AbstractEffectName("EnableCloak")]
+[HandlerName("EnableCloak")]
 public sealed class EnableCloak: AbstractEffect
 {
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

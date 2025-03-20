@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Root effect implementation.
 /// </summary>
-[AbstractEffectName("Root")]
+[HandlerName("Root")]
 public sealed class Root: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.ROOTED;

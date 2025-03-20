@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Open Common Recipe Book effect implementation.
 /// </summary>
-[AbstractEffectName("OpenCommonRecipeBook")]
+[HandlerName("OpenCommonRecipeBook")]
 public sealed class OpenCommonRecipeBook: AbstractEffect
 {
     public override bool IsInstant => true;

@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Trap Remove effect implementation.
 /// </summary>
-[AbstractEffectName("TrapRemove")]
+[HandlerName("TrapRemove")]
 public sealed class TrapRemove: AbstractEffect
 {
     private readonly int _power;

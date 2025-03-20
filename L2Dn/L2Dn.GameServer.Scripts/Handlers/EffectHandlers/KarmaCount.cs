@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Item Effect: Decreases/resets karma count.
 /// </summary>
-[AbstractEffectName("KarmaCount")]
+[HandlerName("KarmaCount")]
 public sealed class KarmaCount: AbstractEffect
 {
     private readonly int _amount;

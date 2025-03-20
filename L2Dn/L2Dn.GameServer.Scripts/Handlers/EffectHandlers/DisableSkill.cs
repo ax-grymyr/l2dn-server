@@ -10,7 +10,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("DisableSkill")]
+[HandlerName("DisableSkill")]
 public sealed class DisableSkill: AbstractEffect
 {
     private readonly FrozenSet<int> _disabledSkills;

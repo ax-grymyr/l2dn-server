@@ -3,5 +3,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("JewelSlot")]
+[HandlerName("JewelSlot")]
 public sealed class JewelSlot(EffectParameterSet parameters): AbstractStatAddEffect(parameters, Stat.BROOCH_JEWELS);

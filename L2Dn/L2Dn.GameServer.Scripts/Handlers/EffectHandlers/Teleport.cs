@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Teleport effect implementation.
 /// </summary>
-[AbstractEffectName("Teleport")]
+[HandlerName("Teleport")]
 public sealed class Teleport: AbstractEffect
 {
     private readonly Location3D _location;

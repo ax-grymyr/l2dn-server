@@ -10,7 +10,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("CriticalRatePositionBonus")]
+[HandlerName("CriticalRatePositionBonus")]
 public sealed class CriticalRatePositionBonus: AbstractEffect
 {
     private readonly double _amount;

@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Trigger Skill By Death Blow effect implementation.
 /// </summary>
-[AbstractEffectName("TriggerSkillByDeathBlow")]
+[HandlerName("TriggerSkillByDeathBlow")]
 public sealed class TriggerSkillByDeathBlow: AbstractEffect
 {
     private readonly int _minAttackerLevel;

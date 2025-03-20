@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Change Face effect implementation.
 /// </summary>
-[AbstractEffectName("ChangeFace")]
+[HandlerName("ChangeFace")]
 public sealed class ChangeFace: AbstractEffect
 {
     private readonly int _value;

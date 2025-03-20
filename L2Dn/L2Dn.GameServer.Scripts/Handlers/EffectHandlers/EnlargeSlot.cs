@@ -9,7 +9,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("EnlargeSlot")]
+[HandlerName("EnlargeSlot")]
 public sealed class EnlargeSlot: AbstractEffect
 {
     private readonly StorageType _type;

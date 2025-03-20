@@ -8,6 +8,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("OpCheckAbnormal")]
 public sealed class OpCheckAbnormalSkillCondition: ISkillCondition
 {
     private readonly AbnormalType _type;

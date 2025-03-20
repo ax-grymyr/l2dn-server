@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Transfer Damage effect implementation.
 /// </summary>
-[AbstractEffectName("TransferDamageToPlayer")]
+[HandlerName("TransferDamageToPlayer")]
 public sealed class TransferDamageToPlayer(EffectParameterSet parameters)
     : AbstractStatAddEffect(parameters, Stat.TRANSFER_DAMAGE_TO_PLAYER)
 {

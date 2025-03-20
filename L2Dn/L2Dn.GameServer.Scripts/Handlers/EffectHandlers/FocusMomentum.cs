@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Focus Energy effect implementation.
 /// </summary>
-[AbstractEffectName("FocusMomentum")]
+[HandlerName("FocusMomentum")]
 public sealed class FocusMomentum: AbstractEffect
 {
     private readonly int _amount;

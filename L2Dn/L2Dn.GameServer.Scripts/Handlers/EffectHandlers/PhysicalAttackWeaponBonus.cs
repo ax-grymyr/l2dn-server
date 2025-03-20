@@ -20,7 +20,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// Physical Attack effect implementation.
 /// Note: Initial formula taken from PhysicalAttack.
 /// </summary>
-[AbstractEffectName("PhysicalAttackWeaponBonus")]
+[HandlerName("PhysicalAttackWeaponBonus")]
 public sealed class PhysicalAttackWeaponBonus: AbstractEffect
 {
     private static readonly FrozenDictionary<XmlSkillEffectParameterType, WeaponType> _map = EnumUtil.

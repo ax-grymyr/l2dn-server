@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Consume Body effect implementation.
 /// </summary>
-[AbstractEffectName("ConsumeBody")]
+[HandlerName("ConsumeBody")]
 public sealed class ConsumeBody: AbstractEffect
 {
     public override bool IsInstant => true;

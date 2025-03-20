@@ -11,6 +11,7 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("CanTransform")]
 public sealed class CanTransformSkillCondition: ISkillCondition
 {
     private readonly int _transformId;

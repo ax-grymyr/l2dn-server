@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Fear effect implementation.
 /// </summary>
-[AbstractEffectName("Fear")]
+[HandlerName("Fear")]
 public sealed class Fear: AbstractEffect
 {
     private const int _fearRange = 500;

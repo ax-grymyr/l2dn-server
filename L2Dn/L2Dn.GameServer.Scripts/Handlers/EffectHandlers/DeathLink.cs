@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Death Link effect implementation.
 /// </summary>
-[AbstractEffectName("DeathLink")]
+[HandlerName("DeathLink")]
 public sealed class DeathLink: AbstractEffect
 {
     private readonly double _power;

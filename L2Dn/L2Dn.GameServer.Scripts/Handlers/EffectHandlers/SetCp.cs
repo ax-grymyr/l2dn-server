@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// An effect that sets the current cp to the given amount.
 /// </summary>
-[AbstractEffectName("SetCp")]
+[HandlerName("SetCp")]
 public sealed class SetCp: AbstractEffect
 {
     private readonly double _amount;

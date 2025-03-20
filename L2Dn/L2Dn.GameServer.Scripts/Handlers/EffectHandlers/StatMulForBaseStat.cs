@@ -9,7 +9,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("StatMulForBaseStat")]
+[HandlerName("StatMulForBaseStat")]
 public sealed class StatMulForBaseStat: AbstractEffect
 {
     private readonly BaseStat _baseStat;

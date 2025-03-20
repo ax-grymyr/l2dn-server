@@ -9,7 +9,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("AttackAttributeAdd")]
+[HandlerName("AttackAttributeAdd")]
 public sealed class AttackAttributeAdd: AbstractEffect
 {
     private readonly double _amount;

@@ -12,7 +12,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("AddHuntingTime")]
+[HandlerName("AddHuntingTime")]
 public sealed class AddHuntingTime: AbstractEffect
 {
     private readonly int _zoneId;

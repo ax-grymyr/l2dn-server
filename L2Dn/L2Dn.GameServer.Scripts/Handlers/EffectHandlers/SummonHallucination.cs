@@ -13,7 +13,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("SummonHallucination")]
+[HandlerName("SummonHallucination")]
 public sealed class SummonHallucination: AbstractEffect
 {
     private readonly TimeSpan _despawnDelay;

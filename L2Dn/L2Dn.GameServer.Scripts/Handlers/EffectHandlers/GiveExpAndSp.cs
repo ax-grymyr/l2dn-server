@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Give XP and SP effect implementation.
 /// </summary>
-[AbstractEffectName("GiveExpAndSp")]
+[HandlerName("GiveExpAndSp")]
 public sealed class GiveExpAndSp: AbstractEffect
 {
     private readonly int _xp;

@@ -17,7 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// This effect is totally done based on client description.
 /// Assume that geodata checks are done on the skill cast and not needed to repeat here.
 /// </summary>
-[AbstractEffectName("BlinkSwap")]
+[HandlerName("BlinkSwap")]
 public sealed class BlinkSwap: AbstractEffect
 {
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

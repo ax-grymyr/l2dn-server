@@ -10,7 +10,7 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("WeaponBonusMAtk")]
+[HandlerName("WeaponBonusMAtk")]
 public sealed class WeaponBonusMAtk(EffectParameterSet parameters):
     AbstractStatAddEffect(parameters, Stat.WEAPON_BONUS_MAGIC_ATTACK)
 {

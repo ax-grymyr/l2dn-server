@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Magical Attack MP effect.
 /// </summary>
-[AbstractEffectName("MagicalAttackMp")]
+[HandlerName("MagicalAttackMp")]
 public sealed class MagicalAttackMp: AbstractEffect
 {
     private readonly double _power;

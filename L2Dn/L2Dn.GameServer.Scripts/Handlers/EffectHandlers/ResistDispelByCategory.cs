@@ -9,7 +9,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("ResistDispelByCategory")]
+[HandlerName("ResistDispelByCategory")]
 public sealed class ResistDispelByCategory: AbstractEffect
 {
     private readonly DispelSlotType _slot;

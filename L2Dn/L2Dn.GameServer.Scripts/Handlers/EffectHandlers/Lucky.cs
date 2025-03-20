@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Lucky effect implementation.
 /// </summary>
-[AbstractEffectName("Lucky")]
+[HandlerName("Lucky")]
 public sealed class Lucky: AbstractEffect
 {
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

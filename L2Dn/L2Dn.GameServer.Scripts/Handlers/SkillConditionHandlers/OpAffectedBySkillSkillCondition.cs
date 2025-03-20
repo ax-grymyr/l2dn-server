@@ -7,6 +7,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("OpAffectedBySkill")]
 public sealed class OpAffectedBySkillSkillCondition: ISkillCondition
 {
     private readonly int _skillId;

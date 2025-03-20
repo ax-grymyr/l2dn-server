@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Sow effect implementation.
 /// </summary>
-[AbstractEffectName("Sow")]
+[HandlerName("Sow")]
 public sealed class Sow: AbstractEffect
 {
     public override bool IsInstant => true;

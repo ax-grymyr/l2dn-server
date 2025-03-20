@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Give XP effect implementation.
 /// </summary>
-[AbstractEffectName("GiveXp")]
+[HandlerName("GiveXp")]
 public sealed class GiveXp: AbstractEffect
 {
     private readonly long _xp;

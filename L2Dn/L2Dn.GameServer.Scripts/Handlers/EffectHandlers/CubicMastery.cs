@@ -3,5 +3,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("CubicMastery")]
+[HandlerName("CubicMastery")]
 public sealed class CubicMastery(EffectParameterSet parameters): AbstractStatAddEffect(parameters, Stat.MAX_CUBIC);

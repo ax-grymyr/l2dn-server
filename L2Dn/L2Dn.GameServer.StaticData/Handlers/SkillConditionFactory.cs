@@ -1,36 +1,30 @@
+using System.Collections.Frozen;
+using System.Reflection;
+using NLog;
+
 namespace L2Dn.GameServer.Handlers;
 
 public sealed class SkillConditionFactory
 {
-    private readonly Dictionary<string, Func<SkillConditionParameterSet, ISkillConditionBase>>
-        _skillConditionHandlerFactories = new();
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(SkillConditionFactory));
+
+    private FrozenDictionary<string, Func<SkillConditionParameterSet, ISkillConditionBase>> _factories =
+        FrozenDictionary<string, Func<SkillConditionParameterSet, ISkillConditionBase>>.Empty;
 
     private SkillConditionFactory()
     {
     }
 
-    public void registerHandler(string name, Func<SkillConditionParameterSet, ISkillConditionBase> handlerFactory)
+    public static SkillConditionFactory Instance { get; } = new();
+
+    public void Register(Assembly assembly)
     {
-        _skillConditionHandlerFactories.Add(name, handlerFactory);
+        _factories = FactoryHelper.CreateFactories<SkillConditionParameterSet, ISkillConditionBase>(assembly);
+        _logger.Info($"{nameof(SkillConditionFactory)}: Registered {_factories.Count} skill conditions.");
     }
 
-    public Func<SkillConditionParameterSet, ISkillConditionBase>? getHandlerFactory(string name)
-    {
-        return _skillConditionHandlerFactories.GetValueOrDefault(name);
-    }
-
-    public int size()
-    {
-        return _skillConditionHandlerFactories.Count;
-    }
-
-    private static class SingletonHolder
-    {
-        public static readonly SkillConditionFactory INSTANCE = new();
-    }
-
-    public static SkillConditionFactory getInstance()
-    {
-        return SingletonHolder.INSTANCE;
-    }
+    public ISkillConditionBase? Create(string name, SkillConditionParameterSet parameters) =>
+        _factories.TryGetValue(name, out Func<SkillConditionParameterSet, ISkillConditionBase>? factory)
+            ? factory(parameters)
+            : null;
 }

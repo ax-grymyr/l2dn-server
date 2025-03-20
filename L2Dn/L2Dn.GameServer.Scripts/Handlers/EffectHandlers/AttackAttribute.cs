@@ -10,7 +10,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("AttackAttribute")]
+[HandlerName("AttackAttribute")]
 public sealed class AttackAttribute: AbstractEffect
 {
     private readonly FrozenSet<Stat> _stats;

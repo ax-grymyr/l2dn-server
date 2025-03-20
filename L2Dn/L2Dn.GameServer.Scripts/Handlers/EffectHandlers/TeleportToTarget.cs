@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Teleport To Target effect implementation.
 /// </summary>
-[AbstractEffectName("TeleportToTarget")]
+[HandlerName("TeleportToTarget")]
 public sealed class TeleportToTarget: AbstractEffect
 {
     public override EffectTypes EffectTypes => EffectTypes.TELEPORT_TO_TARGET;

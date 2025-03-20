@@ -10,7 +10,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("GiveItemByExp")]
+[HandlerName("GiveItemByExp")]
 public sealed class GiveItemByExp: AbstractEffect
 {
     private static readonly Map<Player, long> PLAYER_VALUES = new();

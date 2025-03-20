@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("SacrificeSummon")]
+[HandlerName("SacrificeSummon")]
 public sealed class SacrificeSummon: AbstractEffect
 {
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

@@ -9,6 +9,7 @@ using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("OpCheckCastRange")]
 public sealed class OpCheckCastRangeSkillCondition: ISkillCondition
 {
     private readonly int _distance;

@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Mp Consume Per Level effect implementation.
 /// </summary>
-[AbstractEffectName("MpConsumePerLevel")]
+[HandlerName("MpConsumePerLevel")]
 public sealed class MpConsumePerLevel: AbstractEffect
 {
     private readonly double _power;

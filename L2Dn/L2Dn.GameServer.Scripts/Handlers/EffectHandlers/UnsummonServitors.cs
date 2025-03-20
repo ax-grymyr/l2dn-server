@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Unsummon my servitors effect implementation.
 /// </summary>
-[AbstractEffectName("UnsummonServitors")]
+[HandlerName("UnsummonServitors")]
 public sealed class UnsummonServitors: AbstractEffect
 {
     public override bool IsInstant => true;

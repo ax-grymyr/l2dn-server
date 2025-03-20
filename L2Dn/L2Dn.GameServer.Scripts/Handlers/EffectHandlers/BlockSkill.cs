@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Block Skills by isMagic type or skill id.
 /// </summary>
-[AbstractEffectName("BlockSkill")]
+[HandlerName("BlockSkill")]
 public sealed class BlockSkill: AbstractEffect
 {
     private readonly FrozenSet<int> _magicTypes;

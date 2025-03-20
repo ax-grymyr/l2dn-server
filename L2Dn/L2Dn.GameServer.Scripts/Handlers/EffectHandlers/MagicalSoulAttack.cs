@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Soul Attack effect implementation.
 /// </summary>
-[AbstractEffectName("MagicalSoulAttack")]
+[HandlerName("MagicalSoulAttack")]
 public sealed class MagicalSoulAttack: AbstractEffect
 {
     private readonly double _power;

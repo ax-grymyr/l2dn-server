@@ -21,7 +21,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// For melee skills: 70 * graciaSkillBonus1.10113 * (patk * lvlmod + power) * crit * ss * skillpowerbonus / pdef
 /// For ranged skills: 70 * (patk * lvlmod + power + patk + power) * crit * ss * skillpower / pdef
 /// </summary>
-[AbstractEffectName("PhysicalAttack")]
+[HandlerName("PhysicalAttack")]
 public class PhysicalAttack: AbstractEffect
 {
     private readonly double _power;

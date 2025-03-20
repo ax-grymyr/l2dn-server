@@ -17,7 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Summon Npc effect implementation.
 /// </summary>
-[AbstractEffectName("SummonNpc")]
+[HandlerName("SummonNpc")]
 public sealed class SummonNpc: AbstractEffect
 {
     private readonly int _despawnDelay;

@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Talisman Slot effect implementation.
 /// </summary>
-[AbstractEffectName("TalismanSlot")]
+[HandlerName("TalismanSlot")]
 public sealed class TalismanSlot: AbstractEffect
 {
     private readonly int _slots;

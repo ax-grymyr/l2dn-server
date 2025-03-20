@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Bluff effect implementation.
 /// </summary>
-[AbstractEffectName("Bluff")]
+[HandlerName("Bluff")]
 public sealed class Bluff: AbstractEffect
 {
     private readonly int _chance;

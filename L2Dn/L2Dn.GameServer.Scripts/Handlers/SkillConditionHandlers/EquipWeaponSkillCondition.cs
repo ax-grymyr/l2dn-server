@@ -9,6 +9,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("EquipWeapon")]
 public sealed class EquipWeaponSkillCondition: ISkillCondition
 {
     private readonly ItemTypeMask _weaponTypesMask = ItemTypeMask.Zero;

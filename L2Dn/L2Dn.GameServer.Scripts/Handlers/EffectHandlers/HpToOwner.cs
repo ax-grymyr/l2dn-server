@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// HpToOwner effect implementation.
 /// </summary>
-[AbstractEffectName("HpToOwner")]
+[HandlerName("HpToOwner")]
 public sealed class HpToOwner: AbstractEffect
 {
     private readonly double _power;

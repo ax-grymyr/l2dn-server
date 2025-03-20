@@ -8,6 +8,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("OpCheckClass")]
 public sealed class OpCheckClassSkillCondition: ISkillCondition
 {
     private readonly CharacterClass _classId;

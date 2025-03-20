@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("StatAddForMp")]
+[HandlerName("StatAddForMp")]
 public sealed class StatAddForMp: AbstractEffect
 {
     private readonly int _mp;

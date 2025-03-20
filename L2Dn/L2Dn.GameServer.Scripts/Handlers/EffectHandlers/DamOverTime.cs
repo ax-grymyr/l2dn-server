@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Dam Over Time effect implementation.
 /// </summary>
-[AbstractEffectName("DamOverTime")]
+[HandlerName("DamOverTime")]
 public sealed class DamOverTime: AbstractEffect
 {
     private readonly bool _canKill;

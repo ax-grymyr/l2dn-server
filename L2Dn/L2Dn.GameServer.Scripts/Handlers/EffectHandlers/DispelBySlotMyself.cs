@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Dispel By Slot effect implementation.
 /// </summary>
-[AbstractEffectName("DispelBySlotMyself")]
+[HandlerName("DispelBySlotMyself")]
 public sealed class DispelBySlotMyself: AbstractEffect
 {
     private readonly FrozenSet<AbnormalType> _dispelAbnormals;

@@ -9,7 +9,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("ModifyMagicLampPoints")]
+[HandlerName("ModifyMagicLampPoints")]
 public sealed class ModifyMagicLampPoints: AbstractEffect
 {
     private readonly int _amount;

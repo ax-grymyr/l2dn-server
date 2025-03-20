@@ -8,6 +8,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("CanUseVitalityIncreaseItem")]
 public sealed class CanUseVitalityIncreaseItemSkillCondition: ISkillCondition
 {
     private readonly int _amount;

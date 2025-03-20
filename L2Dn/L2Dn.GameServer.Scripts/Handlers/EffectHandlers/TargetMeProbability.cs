@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Target Me Probability effect implementation.
 /// </summary>
-[AbstractEffectName("TargetMeProbability")]
+[HandlerName("TargetMeProbability")]
 public sealed class TargetMeProbability: AbstractEffect
 {
     private readonly int _chance;

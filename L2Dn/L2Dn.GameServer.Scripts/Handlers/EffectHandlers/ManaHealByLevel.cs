@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Mana Heal By Level effect implementation.
 /// </summary>
-[AbstractEffectName("ManaHealByLevel")]
+[HandlerName("ManaHealByLevel")]
 public sealed class ManaHealByLevel: AbstractEffect
 {
     private readonly double _power;

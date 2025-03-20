@@ -3,5 +3,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("MpRegen")]
+[HandlerName("MpRegen")]
 public sealed class MpRegen(EffectParameterSet parameters): AbstractStatEffect(parameters, Stat.REGENERATE_MP_RATE);

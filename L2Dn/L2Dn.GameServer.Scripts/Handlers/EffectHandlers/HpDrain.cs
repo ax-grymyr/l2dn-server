@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// HP Drain effect implementation.
 /// </summary>
-[AbstractEffectName("HpDrain")]
+[HandlerName("HpDrain")]
 public sealed class HpDrain: AbstractEffect
 {
     private readonly double _power;

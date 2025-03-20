@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("PveMagicalSkillDamageBonus")]
+[HandlerName("PveMagicalSkillDamageBonus")]
 public sealed class PveMagicalSkillDamageBonus(EffectParameterSet parameters)
     : AbstractStatPercentEffect(parameters, Stat.PVE_MAGICAL_SKILL_DAMAGE);

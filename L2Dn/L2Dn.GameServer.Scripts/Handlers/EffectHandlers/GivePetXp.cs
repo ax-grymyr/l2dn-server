@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("GivePetXp")]
+[HandlerName("GivePetXp")]
 public sealed class GivePetXp: AbstractEffect
 {
     private readonly int _xp;

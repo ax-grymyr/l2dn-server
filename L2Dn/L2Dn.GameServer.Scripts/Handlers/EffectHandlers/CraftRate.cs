@@ -3,5 +3,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("CraftRate")]
+[HandlerName("CraftRate")]
 public sealed class CraftRate(EffectParameterSet parameters): AbstractStatAddEffect(parameters, Stat.CRAFT_RATE);

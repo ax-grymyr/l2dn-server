@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Cp Heal Percent effect implementation.
 /// </summary>
-[AbstractEffectName("CpHealPercent")]
+[HandlerName("CpHealPercent")]
 public sealed class CpHealPercent: AbstractEffect
 {
     private readonly double _power;

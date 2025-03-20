@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Confuse effect implementation.
 /// </summary>
-[AbstractEffectName("Confuse")]
+[HandlerName("Confuse")]
 public sealed class Confuse: AbstractEffect
 {
     private readonly int _chance;

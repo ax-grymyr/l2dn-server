@@ -8,6 +8,7 @@ using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("OpTargetNpc")]
 public sealed class OpTargetNpcSkillCondition: ISkillCondition
 {
     private readonly Set<int> _npcIds = new();

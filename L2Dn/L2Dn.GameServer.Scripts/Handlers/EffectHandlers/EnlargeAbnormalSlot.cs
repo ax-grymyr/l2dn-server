@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Enlarge Abnormal Slot effect implementation.
 /// </summary>
-[AbstractEffectName("EnlargeAbnormalSlot")]
+[HandlerName("EnlargeAbnormalSlot")]
 public sealed class EnlargeAbnormalSlot: AbstractEffect
 {
     private readonly int _slots;

@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Teleport To Target effect implementation.
 /// </summary>
-[AbstractEffectName("TeleportToSummon")]
+[HandlerName("TeleportToSummon")]
 public sealed class TeleportToSummon: AbstractEffect
 {
     private readonly double _maxDistance;

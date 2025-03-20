@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Magical Attack effect implementation.
 /// </summary>
-[AbstractEffectName("MagicalAttackRange")]
+[HandlerName("MagicalAttackRange")]
 public sealed class MagicalAttackRange: AbstractEffect
 {
     private readonly double _power;

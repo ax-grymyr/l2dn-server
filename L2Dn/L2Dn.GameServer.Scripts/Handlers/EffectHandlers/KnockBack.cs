@@ -18,7 +18,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Check if this effect is not counted as being stunned.
 /// </summary>
-[AbstractEffectName("KnockBack")]
+[HandlerName("KnockBack")]
 public sealed class KnockBack: AbstractEffect
 {
     private readonly int _distance;

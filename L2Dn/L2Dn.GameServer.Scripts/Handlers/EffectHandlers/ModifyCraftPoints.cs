@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("ModifyCraftPoints")]
+[HandlerName("ModifyCraftPoints")]
 public sealed class ModifyCraftPoints: AbstractEffect
 {
     private readonly int _amount;

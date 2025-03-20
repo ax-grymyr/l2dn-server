@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Get Agro effect implementation.
 /// </summary>
-[AbstractEffectName("GetAgro")]
+[HandlerName("GetAgro")]
 public sealed class GetAgro: AbstractEffect
 {
     public override EffectTypes EffectTypes => EffectTypes.AGGRESSION;

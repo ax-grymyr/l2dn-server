@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("TwoHandedStance")]
+[HandlerName("TwoHandedStance")]
 public sealed class TwoHandedStance: AbstractEffect
 {
     private readonly double _amount;

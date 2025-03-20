@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// CP change effect. It is mostly used for potions and static damage.
 /// </summary>
-[AbstractEffectName("Cp")]
+[HandlerName("Cp")]
 public sealed class Cp: AbstractEffect
 {
     private readonly int _amount;

@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("DamageShield")]
+[HandlerName("DamageShield")]
 public sealed class DamageShield(EffectParameterSet parameters):
     AbstractStatAddEffect(parameters, Stat.REFLECT_DAMAGE_PERCENT);

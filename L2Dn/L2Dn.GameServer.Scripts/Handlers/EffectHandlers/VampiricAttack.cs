@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("VampiricAttack")]
+[HandlerName("VampiricAttack")]
 public sealed class VampiricAttack: AbstractEffect
 {
     private readonly double _amount;

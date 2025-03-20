@@ -7,6 +7,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("TargetMyParty")]
 public sealed class TargetMyPartySkillCondition: ISkillCondition
 {
     private readonly bool _includeMe;

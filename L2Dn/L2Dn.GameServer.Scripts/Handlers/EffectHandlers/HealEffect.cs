@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("HealEffect")]
+[HandlerName("HealEffect")]
 public sealed class HealEffect(EffectParameterSet parameters):
     AbstractStatEffect(parameters, Stat.HEAL_EFFECT, Stat.HEAL_EFFECT_ADD);

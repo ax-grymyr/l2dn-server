@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Attack Trait effect implementation.
 /// </summary>
-[AbstractEffectName("AttackTrait")]
+[HandlerName("AttackTrait")]
 public sealed class AttackTrait: AbstractEffect
 {
     private static readonly FrozenDictionary<XmlSkillEffectParameterType, TraitType> _map = EnumUtil.

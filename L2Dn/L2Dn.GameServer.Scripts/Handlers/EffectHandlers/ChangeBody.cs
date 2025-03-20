@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Transformation type effect, which disables attack or use of skills.
 /// </summary>
-[AbstractEffectName("ChangeBody")]
+[HandlerName("ChangeBody")]
 public sealed class ChangeBody: AbstractEffect
 {
     private readonly FrozenSet<TemplateChanceHolder> _transformations;

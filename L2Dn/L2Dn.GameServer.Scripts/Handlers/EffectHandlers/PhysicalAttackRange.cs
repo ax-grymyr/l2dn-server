@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("PhysicalAttackRange")]
+[HandlerName("PhysicalAttackRange")]
 public sealed class PhysicalAttackRange(EffectParameterSet parameters):
     AbstractStatEffect(parameters, Stat.PHYSICAL_ATTACK_RANGE);

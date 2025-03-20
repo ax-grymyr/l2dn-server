@@ -12,7 +12,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("StatAddForLevel")]
+[HandlerName("StatAddForLevel")]
 public sealed class StatAddForLevel: AbstractEffect
 {
     private readonly FrozenDictionary<int, double> _values;

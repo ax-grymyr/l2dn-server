@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("ReduceCancel")]
+[HandlerName("ReduceCancel")]
 public sealed class ReduceCancel(EffectParameterSet parameters):
     AbstractStatEffect(parameters, Stat.ATTACK_CANCEL);

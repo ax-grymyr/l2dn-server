@@ -27,7 +27,8 @@ public class AbstractEffectFactoryTests
     private static Dictionary<string, Type> GetNewList()
     {
         Dictionary<string, Type> dict = typeof(Scripts).Assembly.GetTypes().
-            Select(t => (t, t.GetCustomAttribute<AbstractEffectNameAttribute>()?.Name ?? string.Empty)).
+            Where(t => t.GetInterfaces().Contains(typeof(IAbstractEffect))).
+            Select(t => (t, t.GetCustomAttribute<HandlerNameAttribute>()?.Name ?? string.Empty)).
             Where(t => !string.IsNullOrEmpty(t.Item2)).ToDictionary(t => t.Item2, t => t.Item1);
 
         return dict;

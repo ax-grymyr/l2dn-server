@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Resist Skill effect implementaion.
 /// </summary>
-[AbstractEffectName("ResistSkill")]
+[HandlerName("ResistSkill")]
 public sealed class ResistSkill: AbstractEffect
 {
     private readonly FrozenSet<SkillHolder> _skills;

@@ -6,7 +6,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("Faceoff")]
+[HandlerName("Faceoff")]
 public sealed class Faceoff: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.FACEOFF;

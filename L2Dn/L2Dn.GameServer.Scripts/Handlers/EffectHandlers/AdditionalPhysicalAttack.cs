@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("AdditionalPhysicalAttack")]
+[HandlerName("AdditionalPhysicalAttack")]
 public sealed class AdditionalPhysicalAttack: PhysicalAttack
 {
     private readonly int _chance;

@@ -16,7 +16,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("ReplaceSkillBySkill")]
+[HandlerName("ReplaceSkillBySkill")]
 public sealed class ReplaceSkillBySkill: AbstractEffect
 {
     private readonly SkillHolder _existingSkill;

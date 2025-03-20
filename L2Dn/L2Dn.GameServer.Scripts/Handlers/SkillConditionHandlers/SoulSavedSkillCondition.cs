@@ -8,6 +8,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("SoulSaved")]
 public sealed class SoulSavedSkillCondition: ISkillCondition
 {
     private readonly SoulType _type;

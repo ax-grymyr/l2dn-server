@@ -7,7 +7,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Silent Move effect implementation.
 /// </summary>
-[AbstractEffectName("SilentMove")]
+[HandlerName("SilentMove")]
 public sealed class SilentMove: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.SILENT_MOVE;

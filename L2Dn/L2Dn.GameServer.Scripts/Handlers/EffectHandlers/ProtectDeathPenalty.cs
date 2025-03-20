@@ -4,7 +4,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("ProtectDeathPenalty")]
+[HandlerName("ProtectDeathPenalty")]
 public sealed class ProtectDeathPenalty: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.PROTECT_DEATH_PENALTY;

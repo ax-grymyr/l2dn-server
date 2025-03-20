@@ -10,7 +10,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("StatBonusSpeed")]
+[HandlerName("StatBonusSpeed")]
 public sealed class StatBonusSpeed: AbstractEffect
 {
     private readonly double _stat;

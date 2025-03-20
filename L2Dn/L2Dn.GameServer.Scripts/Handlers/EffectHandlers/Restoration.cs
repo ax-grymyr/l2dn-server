@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Restoration effect implementation.
 /// </summary>
-[AbstractEffectName("Restoration")]
+[HandlerName("Restoration")]
 public sealed class Restoration: AbstractEffect
 {
     private readonly int _itemId;

@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("InstantKillResist")]
+[HandlerName("InstantKillResist")]
 public sealed class InstantKillResist: AbstractEffect
 {
     private readonly double _amount;

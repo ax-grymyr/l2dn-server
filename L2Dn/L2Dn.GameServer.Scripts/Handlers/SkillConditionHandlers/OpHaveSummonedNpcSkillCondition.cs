@@ -7,6 +7,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("OpHaveSummonedNpc")]
 public sealed class OpHaveSummonedNpcSkillCondition: ISkillCondition
 {
     private readonly int _npcId;

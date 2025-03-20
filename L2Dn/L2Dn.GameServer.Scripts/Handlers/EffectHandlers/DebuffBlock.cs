@@ -7,7 +7,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Effect that blocks all incoming debuffs.
 /// </summary>
-[AbstractEffectName("DebuffBlock")]
+[HandlerName("DebuffBlock")]
 public sealed class DebuffBlock: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.DEBUFF_BLOCK;

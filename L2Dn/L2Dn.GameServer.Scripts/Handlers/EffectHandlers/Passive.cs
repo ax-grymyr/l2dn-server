@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Passive effect implementation.
 /// </summary>
-[AbstractEffectName("Passive")]
+[HandlerName("Passive")]
 public sealed class Passive: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.PASSIVE;

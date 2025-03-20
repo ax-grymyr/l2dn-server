@@ -11,7 +11,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("AbsorbDamage")]
+[HandlerName("AbsorbDamage")]
 public sealed class AbsorbDamage: AbstractEffect
 {
     private static readonly Map<int, double> _diffDamageHolder = new();

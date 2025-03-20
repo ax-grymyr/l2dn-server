@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Focus Souls effect implementation.
 /// </summary>
-[AbstractEffectName("FocusSouls")]
+[HandlerName("FocusSouls")]
 public sealed class FocusSouls: AbstractEffect
 {
     private readonly int _charge;

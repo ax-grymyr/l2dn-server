@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Trigger heal percent by skill effect implementation.
 /// </summary>
-[AbstractEffectName("TriggerHealPercentBySkill")]
+[HandlerName("TriggerHealPercentBySkill")]
 public sealed class TriggerHealPercentBySkill: AbstractEffect
 {
     private readonly int _castSkillId;

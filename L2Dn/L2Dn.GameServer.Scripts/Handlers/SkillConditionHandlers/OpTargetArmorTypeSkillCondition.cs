@@ -12,6 +12,7 @@ using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("OpTargetArmorType")]
 public sealed class OpTargetArmorTypeSkillCondition: ISkillCondition
 {
     private readonly Set<ArmorType> _armorTypes = [];

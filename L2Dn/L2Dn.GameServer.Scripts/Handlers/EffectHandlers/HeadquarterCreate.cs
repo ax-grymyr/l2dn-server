@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Headquarter Create effect implementation.
 /// </summary>
-[AbstractEffectName("HeadquarterCreate")]
+[HandlerName("HeadquarterCreate")]
 public sealed class HeadquarterCreate: AbstractEffect
 {
     private const int _hqNpcId = 35062;

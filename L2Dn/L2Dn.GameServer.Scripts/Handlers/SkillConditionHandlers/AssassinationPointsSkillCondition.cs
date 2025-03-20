@@ -7,6 +7,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("AssassinationPoints")]
 public sealed class AssassinationPointsSkillCondition: ISkillCondition
 {
     private readonly int _amount;

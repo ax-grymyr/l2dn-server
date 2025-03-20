@@ -3,5 +3,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("ExpModifyPet")]
+[HandlerName("ExpModifyPet")]
 public sealed class ExpModifyPet(EffectParameterSet parameters): AbstractStatAddEffect(parameters, Stat.BONUS_EXP_PET);

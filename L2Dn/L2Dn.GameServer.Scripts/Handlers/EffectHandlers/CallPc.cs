@@ -20,7 +20,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Call Pc effect implementation.
 /// </summary>
-[AbstractEffectName("CallPc")]
+[HandlerName("CallPc")]
 public sealed class CallPc: AbstractEffect
 {
     private readonly int _itemId;

@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// MP change effect. It is mostly used for potions and static damage.
 /// </summary>
-[AbstractEffectName("Mp")]
+[HandlerName("Mp")]
 public sealed class Mp: AbstractEffect
 {
     private readonly int _amount;

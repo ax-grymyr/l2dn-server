@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Immobile Buff effect implementation.
 /// </summary>
-[AbstractEffectName("BlockMove")]
+[HandlerName("BlockMove")]
 public sealed class BlockMove: AbstractEffect
 {
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

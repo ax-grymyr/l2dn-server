@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Chameleon Rest effect implementation.
 /// </summary>
-[AbstractEffectName("ChameleonRest")]
+[HandlerName("ChameleonRest")]
 public sealed class ChameleonRest: AbstractEffect
 {
     private readonly double _power;

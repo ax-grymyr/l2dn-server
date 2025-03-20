@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Mana Damage Over Time effect implementation.
 /// </summary>
-[AbstractEffectName("ManaDamOverTime")]
+[HandlerName("ManaDamOverTime")]
 public sealed class ManaDamOverTime: AbstractEffect
 {
     private readonly double _power;

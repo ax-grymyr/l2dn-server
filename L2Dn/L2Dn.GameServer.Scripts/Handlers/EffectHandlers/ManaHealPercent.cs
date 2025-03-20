@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Mana Heal Percent effect implementation.
 /// </summary>
-[AbstractEffectName("ManaHealPercent")]
+[HandlerName("ManaHealPercent")]
 public sealed class ManaHealPercent: AbstractEffect
 {
     private readonly double _power;

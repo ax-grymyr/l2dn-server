@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Transfer Hate effect implementation.
 /// </summary>
-[AbstractEffectName("TransferHate")]
+[HandlerName("TransferHate")]
 public sealed class TransferHate: AbstractEffect
 {
     private readonly int _chance;

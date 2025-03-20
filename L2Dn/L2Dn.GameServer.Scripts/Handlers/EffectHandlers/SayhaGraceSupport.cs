@@ -7,7 +7,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("SayhaGraceSupport")]
+[HandlerName("SayhaGraceSupport")]
 public sealed class SayhaGraceSupport: AbstractEffect
 {
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

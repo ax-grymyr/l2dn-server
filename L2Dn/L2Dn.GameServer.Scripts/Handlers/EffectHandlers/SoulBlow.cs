@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Soul Blow effect implementation.
 /// </summary>
-[AbstractEffectName("SoulBlow")]
+[HandlerName("SoulBlow")]
 public sealed class SoulBlow: AbstractEffect
 {
     private readonly double _power;

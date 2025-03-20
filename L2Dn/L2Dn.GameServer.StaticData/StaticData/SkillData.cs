@@ -214,14 +214,12 @@ public sealed class SkillData: DataReaderBase
                             });
                     }
 
-                    Func<SkillConditionParameterSet, ISkillConditionBase>? handlerFactory =
-                        SkillConditionFactory.getInstance().getHandlerFactory(condition.Name);
+                    ISkillConditionBase? skillCondition =
+                        SkillConditionFactory.Instance.Create(condition.Name, conditionParameters);
 
-                    if (handlerFactory is null)
+                    if (skillCondition is null)
                         throw new InvalidOperationException(
                             $"Invalid skill id={_skillId}: condition handler '{condition.Name}' not found");
-
-                    ISkillConditionBase skillCondition = handlerFactory(conditionParameters);
 
                     parameters.Conditions.GetOrAdd(conditionScope, _ => []).Add(skillCondition);
                 });

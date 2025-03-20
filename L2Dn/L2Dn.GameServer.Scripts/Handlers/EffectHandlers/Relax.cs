@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Relax effect implementation.
 /// </summary>
-[AbstractEffectName("Relax")]
+[HandlerName("Relax")]
 public sealed class Relax: AbstractEffect
 {
     private readonly double _power;

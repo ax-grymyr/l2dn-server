@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Trap Detect effect implementation.
 /// </summary>
-[AbstractEffectName("TrapDetect")]
+[HandlerName("TrapDetect")]
 public sealed class TrapDetect: AbstractEffect
 {
     private readonly int _power;

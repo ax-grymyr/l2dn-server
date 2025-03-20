@@ -10,7 +10,7 @@ using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("MaxCp")]
+[HandlerName("MaxCp")]
 public sealed class MaxCp: AbstractStatEffect
 {
     private readonly bool _heal;

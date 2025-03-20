@@ -14,7 +14,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("AbnormalTimeChangeBySkillId")]
+[HandlerName("AbnormalTimeChangeBySkillId")]
 public sealed class AbnormalTimeChangeBySkillId: AbstractEffect
 {
     private readonly FrozenSet<int> _skillIds;

@@ -7,7 +7,7 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("CriticalRate")]
+[HandlerName("CriticalRate")]
 public sealed class CriticalRate: AbstractConditionalHpEffect
 {
     public CriticalRate(EffectParameterSet parameters): base(parameters, Stat.CRITICAL_RATE)

@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Fake Death effect implementation.
 /// </summary>
-[AbstractEffectName("FakeDeath")]
+[HandlerName("FakeDeath")]
 public sealed class FakeDeath: AbstractEffect
 {
     private readonly double _power;

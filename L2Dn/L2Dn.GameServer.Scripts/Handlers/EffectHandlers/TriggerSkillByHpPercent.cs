@@ -12,7 +12,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("TriggerSkillByHpPercent")]
+[HandlerName("TriggerSkillByHpPercent")]
 public sealed class TriggerSkillByHpPercent: AbstractEffect
 {
     private readonly int _skillId;

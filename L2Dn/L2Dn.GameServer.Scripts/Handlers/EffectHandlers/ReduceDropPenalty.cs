@@ -9,7 +9,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("ReduceDropPenalty")]
+[HandlerName("ReduceDropPenalty")]
 public sealed class ReduceDropPenalty: AbstractEffect
 {
     private readonly double _exp;

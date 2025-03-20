@@ -17,7 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Trigger Skill By Avoid effect implementation.
 /// </summary>
-[AbstractEffectName("TriggerSkillByAvoid")]
+[HandlerName("TriggerSkillByAvoid")]
 public sealed class TriggerSkillByAvoid: AbstractEffect
 {
     private readonly int _chance;

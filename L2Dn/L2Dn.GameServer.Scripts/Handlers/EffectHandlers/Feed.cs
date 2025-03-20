@@ -12,7 +12,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("Feed")]
+[HandlerName("Feed")]
 public sealed class Feed: AbstractEffect
 {
     private readonly int _normal;

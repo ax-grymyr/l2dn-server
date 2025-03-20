@@ -7,6 +7,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("MaxMp")]
 public sealed class MaxMpSkillCondition: ISkillCondition
 {
     private readonly int _amount;

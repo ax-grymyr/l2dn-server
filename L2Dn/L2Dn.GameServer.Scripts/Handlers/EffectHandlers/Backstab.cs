@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Backstab effect implementation.
 /// </summary>
-[AbstractEffectName("Backstab")]
+[HandlerName("Backstab")]
 public sealed class Backstab: AbstractEffect
 {
     private readonly double _power;

@@ -17,7 +17,7 @@ using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("ClassChange")]
+[HandlerName("ClassChange")]
 public sealed class ClassChange: AbstractEffect
 {
     private const int _identityCrisisSkillId = 1570;

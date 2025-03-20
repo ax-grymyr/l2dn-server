@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Detection effect implementation.
 /// </summary>
-[AbstractEffectName("Detection")]
+[HandlerName("Detection")]
 public sealed class Detection: AbstractEffect
 {
     public override bool IsInstant => true;

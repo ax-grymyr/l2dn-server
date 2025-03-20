@@ -9,6 +9,7 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("OpSoulMax")]
 public sealed class OpSoulMaxSkillCondition: ISkillCondition
 {
     private readonly SoulType _type;

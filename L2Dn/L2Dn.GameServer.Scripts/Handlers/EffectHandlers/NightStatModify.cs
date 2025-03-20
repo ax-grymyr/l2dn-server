@@ -16,7 +16,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("NightStatModify")]
+[HandlerName("NightStatModify")]
 public sealed class NightStatModify: AbstractEffect
 {
     private static readonly Set<Creature> _nightStatCharacters = [];

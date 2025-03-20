@@ -11,7 +11,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("GetMomentum")]
+[HandlerName("GetMomentum")]
 public sealed class GetMomentum: AbstractEffect
 {
     public GetMomentum(EffectParameterSet parameters)

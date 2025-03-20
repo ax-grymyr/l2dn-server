@@ -12,7 +12,7 @@ using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("TriggerSkillByMaxHp")]
+[HandlerName("TriggerSkillByMaxHp")]
 public sealed class TriggerSkillByMaxHp: AbstractEffect
 {
     private readonly int _skillId;

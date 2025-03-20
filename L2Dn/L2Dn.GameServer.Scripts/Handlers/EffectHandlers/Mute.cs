@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Mute effect implementation.
 /// </summary>
-[AbstractEffectName("Mute")]
+[HandlerName("Mute")]
 public sealed class Mute: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.MUTED;

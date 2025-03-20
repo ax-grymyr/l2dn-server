@@ -9,7 +9,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("MagicMpCost")]
+[HandlerName("MagicMpCost")]
 public sealed class MagicMpCost: AbstractEffect
 {
     private readonly SkillMagicType _magicType;

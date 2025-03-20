@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("VipUp")]
+[HandlerName("VipUp")]
 public sealed class VipUp: AbstractEffect
 {
     private readonly long _amount;

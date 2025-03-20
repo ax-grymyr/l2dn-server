@@ -8,6 +8,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("OpCompanion")]
 public sealed class OpCompanionSkillCondition: ISkillCondition
 {
     private readonly SkillConditionCompanionType _type;

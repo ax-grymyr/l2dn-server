@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Set Skill effect implementation.
 /// </summary>
-[AbstractEffectName("SetSkill")]
+[HandlerName("SetSkill")]
 public sealed class SetSkill: AbstractEffect
 {
     private readonly int _skillId;

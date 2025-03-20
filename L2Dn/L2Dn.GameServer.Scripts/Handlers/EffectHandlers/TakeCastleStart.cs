@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Take Castle Start effect implementation.
 /// </summary>
-[AbstractEffectName("TakeCastleStart")]
+[HandlerName("TakeCastleStart")]
 public sealed class TakeCastleStart: AbstractEffect
 {
     public override bool IsInstant => true;

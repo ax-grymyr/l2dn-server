@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Magical Attack By Abnormal Slot effect implementation.
 /// </summary>
-[AbstractEffectName("MagicalAttackByAbnormalSlot")]
+[HandlerName("MagicalAttackByAbnormalSlot")]
 public sealed class MagicalAttackByAbnormalSlot: AbstractEffect
 {
     private readonly double _power;

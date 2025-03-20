@@ -9,7 +9,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("ReflectSkill")]
+[HandlerName("ReflectSkill")]
 public sealed class ReflectSkill: AbstractEffect
 {
     private readonly Stat _stat;

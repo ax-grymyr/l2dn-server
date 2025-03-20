@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// An effect that sets the current hp to the given amount.
 /// </summary>
-[AbstractEffectName("SetHp")]
+[HandlerName("SetHp")]
 public sealed class SetHp: AbstractEffect
 {
     private readonly double _amount;

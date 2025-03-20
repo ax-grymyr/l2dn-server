@@ -8,6 +8,7 @@ using L2Dn.GameServer.Templates;
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
 // TODO: Verify me, also should Quest items be counted?
+[HandlerName("OpEncumbered")]
 public sealed class OpEncumberedSkillCondition: ISkillCondition
 {
     private readonly int _slotsPercent;

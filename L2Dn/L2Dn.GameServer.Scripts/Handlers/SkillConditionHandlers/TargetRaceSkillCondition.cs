@@ -9,6 +9,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
+[HandlerName("TargetRace")]
 public sealed class TargetRaceSkillCondition: ISkillCondition
 {
     private readonly EnumSet64<Race> _races;

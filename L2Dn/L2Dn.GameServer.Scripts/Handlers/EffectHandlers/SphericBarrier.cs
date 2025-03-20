@@ -8,7 +8,7 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[AbstractEffectName("SphericBarrier")]
+[HandlerName("SphericBarrier")]
 public sealed class SphericBarrier(EffectParameterSet parameters)
     : AbstractStatAddEffect(parameters, Stat.SPHERIC_BARRIER_RANGE)
 {

@@ -244,10 +244,10 @@ public sealed class SkillTemplateLoadingTests
                     @params.remove(".name");
                     try
                     {
-                        Func<SkillConditionParameterSet, ISkillConditionBase>? conditionFunction =
-                            SkillConditionFactory.getInstance().getHandlerFactory(conditionName);
+                        ISkillConditionBase? condition = SkillConditionFactory.Instance.Create(conditionName,
+                            ConvertStatSetToConditionParameters(@params));
 
-                        if (conditionFunction != null)
+                        if (condition != null)
                         {
                             if (skill.isPassive())
                             {
@@ -264,7 +264,7 @@ public sealed class SkillTemplateLoadingTests
                                     statSet.getInt(".id") + "] Level[" + level + "] SubLevel[" + subLevel + "]");
                             }
 
-                            skill.addCondition(skillConditionScope, (ISkillCondition)conditionFunction(ConvertStatSetToConditionParameters(@params)));
+                            skill.addCondition(skillConditionScope, (ISkillCondition)condition);
                         }
                         else
                         {

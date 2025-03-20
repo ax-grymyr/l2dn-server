@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Open Dwarf Recipe Book effect implementation.
 /// </summary>
-[AbstractEffectName("OpenDwarfRecipeBook")]
+[HandlerName("OpenDwarfRecipeBook")]
 public sealed class OpenDwarfRecipeBook: AbstractEffect
 {
     public override bool IsInstant => true;
