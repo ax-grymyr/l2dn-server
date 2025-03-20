@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Events.Impl.Players;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;

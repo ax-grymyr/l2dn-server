@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Model.Holders;
 
@@ -11,7 +12,7 @@ public class EffectDurationHolder
 	private readonly int _skillId;
 	private readonly int _skillLevel;
 	private readonly int _duration;
-	
+
 	/**
 	 * Effect duration holder constructor.
 	 * @param skill the skill to get the data
@@ -23,7 +24,7 @@ public class EffectDurationHolder
 		_skillLevel = skill.DisplayLevel;
 		_duration = duration;
 	}
-	
+
 	/**
 	 * Get the effect's skill Id.
 	 * @return the skill Id
@@ -32,7 +33,7 @@ public class EffectDurationHolder
 	{
 		return _skillId;
 	}
-	
+
 	/**
 	 * Get the effect's skill level.
 	 * @return the skill level
@@ -41,7 +42,7 @@ public class EffectDurationHolder
 	{
 		return _skillLevel;
 	}
-	
+
 	/**
 	 * Get the effect's duration.
 	 * @return the duration in <b>seconds</b>

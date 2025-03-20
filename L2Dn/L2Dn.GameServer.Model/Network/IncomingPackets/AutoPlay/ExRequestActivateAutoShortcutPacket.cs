@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.TaskManagers;
+using L2Dn.GameServer.Templates;
 using L2Dn.Network;
 using L2Dn.Packets;
 using Config = L2Dn.GameServer.Configuration.Config;

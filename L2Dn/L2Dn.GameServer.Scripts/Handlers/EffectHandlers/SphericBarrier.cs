@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events.Impl.Creatures;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Templates;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 

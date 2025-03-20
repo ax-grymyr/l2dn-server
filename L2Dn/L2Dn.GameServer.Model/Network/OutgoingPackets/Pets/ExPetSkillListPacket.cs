@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Templates;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.Pets;
@@ -11,13 +12,13 @@ public readonly struct ExPetSkillListPacket: IOutgoingPacket
 {
 	private readonly bool _onEnter;
 	private readonly Pet _pet;
-	
+
 	public ExPetSkillListPacket(bool onEnter, Pet pet)
 	{
 		_onEnter = onEnter;
 		_pet = pet;
 	}
-	
+
 	public void WriteContent(PacketBitWriter writer)
 	{
 		writer.WritePacketCode(OutgoingPacketCodes.EX_PET_SKILL_LIST);

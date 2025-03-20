@@ -14,6 +14,7 @@ using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Spawns;
 using L2Dn.GameServer.Model.Variables;
+using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;

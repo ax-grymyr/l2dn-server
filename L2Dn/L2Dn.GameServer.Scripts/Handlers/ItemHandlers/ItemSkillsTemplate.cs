@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Templates;
 using NLog;
 
 namespace L2Dn.GameServer.Scripts.Handlers.ItemHandlers;

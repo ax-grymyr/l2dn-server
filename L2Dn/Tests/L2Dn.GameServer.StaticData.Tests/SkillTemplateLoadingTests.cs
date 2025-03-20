@@ -13,6 +13,7 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 using L2Dn.GameServer.StaticData.Xml.Skills;
+using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Parsing;
 using L2Dn.Utilities;
@@ -214,7 +215,7 @@ public sealed class SkillTemplateLoadingTests
                     try
                     {
                         Func<EffectParameterSet, IAbstractEffect>? effectFunction =
-                            EffectHandler.getInstance().getHandlerFactory(effectName);
+                            AbstractEffectFactory.getInstance().getHandlerFactory(effectName);
 
                         if (effectFunction != null)
                         {
@@ -243,7 +244,7 @@ public sealed class SkillTemplateLoadingTests
                     try
                     {
                         Func<SkillConditionParameterSet, ISkillConditionBase>? conditionFunction =
-                            SkillConditionHandler.getInstance().getHandlerFactory(conditionName);
+                            SkillConditionFactory.getInstance().getHandlerFactory(conditionName);
 
                         if (conditionFunction != null)
                         {

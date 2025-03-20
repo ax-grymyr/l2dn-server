@@ -6,6 +6,8 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData;
+using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.PlayerActions;
 

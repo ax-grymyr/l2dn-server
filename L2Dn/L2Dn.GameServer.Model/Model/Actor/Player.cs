@@ -63,6 +63,7 @@ using L2Dn.GameServer.Network.OutgoingPackets.Surveillance;
 using L2Dn.GameServer.Network.OutgoingPackets.Vip;
 using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
+using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model;

@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model;

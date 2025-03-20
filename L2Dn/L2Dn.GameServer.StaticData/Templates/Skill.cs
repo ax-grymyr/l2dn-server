@@ -3,17 +3,18 @@ using System.Collections.Immutable;
 using System.Globalization;
 using L2Dn.Collections;
 using L2Dn.GameServer.Configuration;
-using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 
-namespace L2Dn.GameServer.Model.Skills;
+namespace L2Dn.GameServer.Templates;
 
 public sealed class Skill: IIdentifiable
 {

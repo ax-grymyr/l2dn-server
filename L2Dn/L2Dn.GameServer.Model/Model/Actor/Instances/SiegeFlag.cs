@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 

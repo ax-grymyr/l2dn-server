@@ -1,6 +1,7 @@
 using System.Collections.Frozen;
 using System.Collections.Immutable;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Model.Holders;
 

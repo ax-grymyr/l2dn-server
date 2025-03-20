@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Options;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.StaticData.Xml.Skills;
+using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Xml;
 using NLog;
@@ -66,7 +67,7 @@ public class OptionData: DataReaderBase
 			parameters[XmlSkillEffectParameterType.Mode] = xmlOptionEffect.Mode;
 			parameters[XmlSkillEffectParameterType.Stat] = xmlOptionEffect.Stat;
 
-			Func<EffectParameterSet, IAbstractEffect>? handlerFactory = EffectHandler.getInstance().getHandlerFactory(name);
+			Func<EffectParameterSet, IAbstractEffect>? handlerFactory = AbstractEffectFactory.getInstance().getHandlerFactory(name);
 			if (handlerFactory is null)
 				_logger.Error($"{GetType().Name}: Could not find effect handler '{name}' used by option {id}.");
 			else

@@ -1,6 +1,6 @@
 using System.Collections.Concurrent;
-using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Model.Skills;
 

@@ -6,7 +6,9 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.StaticData.Xml.Skills;
+using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 

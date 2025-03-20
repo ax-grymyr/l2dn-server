@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Templates;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 

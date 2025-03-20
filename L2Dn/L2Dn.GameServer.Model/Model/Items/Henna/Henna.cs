@@ -2,6 +2,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
+using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 
@@ -26,7 +27,7 @@ public class Henna
 	private readonly int _duration;
 	private readonly List<Skill> _skills;
 	private readonly Set<int> _wearClass;
-	
+
 	public Henna(StatSet set)
 	{
 		_dyeId = set.getInt("dyeId");
@@ -48,7 +49,7 @@ public class Henna
 		_skills = new();
 		_wearClass = new();
 	}
-	
+
 	/**
 	 * @return the dye Id.
 	 */
@@ -56,7 +57,7 @@ public class Henna
 	{
 		return _dyeId;
 	}
-	
+
 	/**
 	 * @return the item Id, required for this dye.
 	 */
@@ -64,17 +65,17 @@ public class Henna
 	{
 		return _dyeItemId;
 	}
-	
+
 	public int getBaseStats(BaseStat stat)
 	{
 		return _baseStats.GetValueOrDefault(stat);
 	}
-	
+
 	public Map<BaseStat, int> getBaseStats()
 	{
 		return _baseStats;
 	}
-	
+
 	/**
 	 * @return the wear fee, cost for adding this dye to the player.
 	 */
@@ -82,12 +83,12 @@ public class Henna
 	{
 		return _wearFee;
 	}
-	
+
 	public int getL2CoinFee()
 	{
 		return _l2CoinFee;
 	}
-	
+
 	/**
 	 * @return the wear count, the required count to add this dye to the player.
 	 */
@@ -95,7 +96,7 @@ public class Henna
 	{
 		return _wearCount;
 	}
-	
+
 	/**
 	 * @return the cancel fee, cost for removing this dye from the player.
 	 */
@@ -103,12 +104,12 @@ public class Henna
 	{
 		return _cancelFee;
 	}
-	
+
 	public int getCancelL2CoinFee()
 	{
 		return _l2CancelCoinFee;
 	}
-	
+
 	/**
 	 * @return the cancel count, the retrieved amount of dye items after removing the dye.
 	 */
@@ -116,7 +117,7 @@ public class Henna
 	{
 		return _cancelCount;
 	}
-	
+
 	/**
 	 * @return the duration of this dye.
 	 */
@@ -124,7 +125,7 @@ public class Henna
 	{
 		return _duration;
 	}
-	
+
 	/**
 	 * @param skillList the list of skills related to this dye.
 	 */
@@ -132,7 +133,7 @@ public class Henna
 	{
 		_skills.AddRange(skillList);
 	}
-	
+
 	/**
 	 * @return the skills related to this dye.
 	 */
@@ -140,7 +141,7 @@ public class Henna
 	{
 		return _skills;
 	}
-	
+
 	/**
 	 * @return the list with the allowed classes to wear this dye.
 	 */
@@ -148,7 +149,7 @@ public class Henna
 	{
 		return _wearClass;
 	}
-	
+
 	/**
 	 * @param c the class trying to wear this dye.
 	 * @return {@code true} if the player is allowed to wear this dye, {@code false} otherwise.
@@ -157,7 +158,7 @@ public class Henna
 	{
 		return _wearClass.Contains(c.getClassId().GetLevel());
 	}
-	
+
 	/**
 	 * @param wearClassIds the list of classes that can wear this dye.
 	 */
@@ -165,7 +166,7 @@ public class Henna
 	{
 		_wearClass.addAll(wearClassIds);
 	}
-	
+
 	public int getPatternLevel()
 	{
 		return _patternLevel;

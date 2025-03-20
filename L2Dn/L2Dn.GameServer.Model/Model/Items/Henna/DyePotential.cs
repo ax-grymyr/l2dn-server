@@ -1,5 +1,7 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData;
+using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Model.Items.Henna;
 

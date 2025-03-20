@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
+using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;

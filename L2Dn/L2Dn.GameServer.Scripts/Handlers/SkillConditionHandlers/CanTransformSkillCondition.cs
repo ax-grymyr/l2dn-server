@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.StaticData.Xml.Skills;
+using L2Dn.GameServer.Templates;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;

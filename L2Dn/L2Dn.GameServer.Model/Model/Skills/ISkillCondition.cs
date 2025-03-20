@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Model.Skills;
 

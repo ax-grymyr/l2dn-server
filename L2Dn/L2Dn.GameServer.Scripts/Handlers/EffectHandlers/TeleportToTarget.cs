@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Templates;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 

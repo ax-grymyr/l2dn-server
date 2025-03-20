@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network.OutgoingPackets.MagicLamp;
+using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;

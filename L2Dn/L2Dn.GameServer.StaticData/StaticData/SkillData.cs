@@ -1,19 +1,17 @@
 using System.Collections.Frozen;
 using System.Globalization;
-using System.Xml.Serialization;
-using L2Dn.Collections;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.StaticData.Xml.Skills;
+using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Parsing;
 using NLog;
 
-namespace L2Dn.GameServer.Data.Xml;
+namespace L2Dn.GameServer.StaticData;
 
 /// <summary>
 /// Skill data parser.
@@ -218,7 +216,7 @@ public sealed class SkillData: DataReaderBase
                     }
 
                     Func<SkillConditionParameterSet, ISkillConditionBase>? handlerFactory =
-                        SkillConditionHandler.getInstance().getHandlerFactory(condition.Name);
+                        SkillConditionFactory.getInstance().getHandlerFactory(condition.Name);
 
                     if (handlerFactory is null)
                         throw new InvalidOperationException(
@@ -248,7 +246,7 @@ public sealed class SkillData: DataReaderBase
                     }
 
                     Func<EffectParameterSet, IAbstractEffect>? handlerFactory =
-                        EffectHandler.getInstance().getHandlerFactory(effect.Name);
+                        AbstractEffectFactory.getInstance().getHandlerFactory(effect.Name);
 
                     if (handlerFactory is null)
                         throw new InvalidOperationException(

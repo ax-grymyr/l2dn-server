@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Events.Impl.Attackables;
 using L2Dn.GameServer.Model.Events.Impl.Npcs;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Model.Actor.Instances;
 

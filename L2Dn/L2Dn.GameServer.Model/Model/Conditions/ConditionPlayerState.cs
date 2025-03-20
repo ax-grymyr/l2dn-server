@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.Templates;
 using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Model.Conditions;
