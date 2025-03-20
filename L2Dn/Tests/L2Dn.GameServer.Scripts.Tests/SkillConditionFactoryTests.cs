@@ -73,7 +73,7 @@ public sealed class SkillConditionFactoryTests
         old.Add("EquipShield", typeof(EquipShieldSkillCondition));
         old.Add("EquipSigil", typeof(EquipSigilSkillCondition));
         old.Add("EquipWeapon", typeof(EquipWeaponSkillCondition));
-        old.Add("MaxMpSkillCondition", typeof(MaxMpSkillCondition));
+        old.Add("MaxMp", typeof(MaxMpSkillCondition));
         old.Add("NotFeared", typeof(NotFearedSkillCondition));
         old.Add("NotInUnderwater", typeof(NotInUnderwaterSkillCondition));
         old.Add("Op2hWeapon", typeof(Op2hWeaponSkillCondition));
