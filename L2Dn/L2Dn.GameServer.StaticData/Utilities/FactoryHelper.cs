@@ -1,8 +1,9 @@
 ﻿using System.Collections.Frozen;
 using System.Linq.Expressions;
 using System.Reflection;
+using L2Dn.GameServer.Handlers;
 
-namespace L2Dn.GameServer.Handlers;
+namespace L2Dn.GameServer.Utilities;
 
 internal static class FactoryHelper
 {

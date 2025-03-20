@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.StaticData;
 /// <summary>
 /// Skill data parser.
 /// </summary>
-public sealed class SkillData: DataReaderBase
+public sealed class SkillData
 {
     private static readonly Logger _logger = LogManager.GetLogger(nameof(SkillData));
 
@@ -84,16 +84,11 @@ public sealed class SkillData: DataReaderBase
 
     public void Load()
     {
-        IEnumerable<(string FilePath, XmlSkillList Document)> skillLists =
-            LoadXmlDocuments<XmlSkillList>(DataFileLocation.Data, "stats/skills");
-
+        IEnumerable<XmlSkillList> skillLists = XmlLoader.LoadXmlDocuments<XmlSkillList>("stats/skills");
         if (Config.General.CUSTOM_SKILLS_LOAD)
-        {
-            skillLists = skillLists.Concat(LoadXmlDocuments<XmlSkillList>(DataFileLocation.Data,
-                "stats/skills/custom"));
-        }
+            skillLists = skillLists.Concat(XmlLoader.LoadXmlDocuments<XmlSkillList>("stats/skills/custom"));
 
-        _skills = skillLists.SelectMany(pair => pair.Document.Skills).SelectMany(LoadSkill).
+        _skills = skillLists.SelectMany(doc => doc.Skills).SelectMany(LoadSkill).
             ToFrozenDictionary(skill => skill.GetSkillHashCode());
 
         _skillsMaxLevel = _skills.Values.GroupBy(skill => skill.Id).
