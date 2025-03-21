@@ -586,7 +586,7 @@ public struct EnterWorldPacket: IIncomingPacket<GameSession>
 
 		player.broadcastUserInfo();
 
-		if (BeautyShopData.getInstance().hasBeautyData(player.getRace(), player.getAppearance().getSex()))
+		if (BeautyShopData.Instance.HasBeautyData(player.getRace(), player.getAppearance().getSex()))
 		{
 			connection.Send(new ExBeautyItemListPacket(player));
 		}

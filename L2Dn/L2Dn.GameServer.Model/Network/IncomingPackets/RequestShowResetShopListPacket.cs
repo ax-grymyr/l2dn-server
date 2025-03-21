@@ -1,7 +1,8 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.BeautyShop;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -26,13 +27,13 @@ public struct RequestShowResetShopListPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
-        BeautyData? beautyData = BeautyShopData.getInstance()
-            .getBeautyData(player.getRace(), player.getAppearance().getSex());
+        BeautyData? beautyData = BeautyShopData.Instance
+            .GetBeautyData(player.getRace(), player.getAppearance().getSex());
 
         int requiredAdena = 0;
         if (_hairId > 0)
         {
-            BeautyItem? hair = beautyData?.getHairList().GetValueOrDefault(_hairId);
+            BeautyItem? hair = beautyData?.HairList.GetValueOrDefault(_hairId);
             if (hair == null)
             {
                 player.sendPacket(new ExResponseBeautyRegistResetPacket(player,
@@ -41,10 +42,10 @@ public struct RequestShowResetShopListPacket: IIncomingPacket<GameSession>
                 return ValueTask.CompletedTask;
             }
 
-            requiredAdena += hair.getResetAdena();
+            requiredAdena += hair.ResetAdena;
             if (_colorId > 0)
             {
-                BeautyItem? color = hair.getColors().GetValueOrDefault(_colorId);
+                BeautyItem? color = hair.Colors.GetValueOrDefault(_colorId);
                 if (color == null)
                 {
                     player.sendPacket(new ExResponseBeautyRegistResetPacket(player,
@@ -53,13 +54,13 @@ public struct RequestShowResetShopListPacket: IIncomingPacket<GameSession>
                     return ValueTask.CompletedTask;
                 }
 
-                requiredAdena += color.getResetAdena();
+                requiredAdena += color.ResetAdena;
             }
         }
 
         if (_faceId > 0)
         {
-            BeautyItem? face = beautyData?.getFaceList().GetValueOrDefault(_faceId);
+            BeautyItem? face = beautyData?.FaceList.GetValueOrDefault(_faceId);
             if (face == null)
             {
                 player.sendPacket(new ExResponseBeautyRegistResetPacket(player,
@@ -68,7 +69,7 @@ public struct RequestShowResetShopListPacket: IIncomingPacket<GameSession>
                 return ValueTask.CompletedTask;
             }
 
-            requiredAdena += face.getResetAdena();
+            requiredAdena += face.ResetAdena;
         }
 
         if (player.getAdena() < requiredAdena)

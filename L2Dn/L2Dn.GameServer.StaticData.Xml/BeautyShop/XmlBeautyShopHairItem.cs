@@ -1,8 +1,8 @@
 ﻿using System.Xml.Serialization;
 
-namespace L2Dn.Model.Xml;
+namespace L2Dn.GameServer.StaticData.Xml.BeautyShop;
 
-public class XmlBeautyShopHairData: XmlBeautyShopItem
+public class XmlBeautyShopHairItem: XmlBeautyShopItem
 {
     [XmlElement("color")]
     public List<XmlBeautyShopItem> Colors { get; set; } = [];

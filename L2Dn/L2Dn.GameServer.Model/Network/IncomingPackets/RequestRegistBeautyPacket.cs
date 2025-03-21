@@ -1,7 +1,8 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.BeautyShop;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -26,14 +27,14 @@ public struct RequestRegistBeautyPacket: IIncomingPacket<GameSession>
 		if (player == null)
 			return ValueTask.CompletedTask;
 
-		BeautyData? beautyData = BeautyShopData.getInstance()
-			.getBeautyData(player.getRace(), player.getAppearance().getSex());
+		BeautyData? beautyData = BeautyShopData.Instance
+			.GetBeautyData(player.getRace(), player.getAppearance().getSex());
 
 		int requiredAdena = 0;
 		int requiredBeautyShopTicket = 0;
 		if (_hairId > 0)
 		{
-			BeautyItem? hair = beautyData?.getHairList().GetValueOrDefault(_hairId);
+			BeautyItem? hair = beautyData?.HairList.GetValueOrDefault(_hairId);
 			if (hair == null)
 			{
 				player.sendPacket(new ExResponseBeautyRegistResetPacket(player,
@@ -44,15 +45,15 @@ public struct RequestRegistBeautyPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			if (hair.getId() != player.getVisualHair())
+			if (hair.Id != player.getVisualHair())
 			{
-				requiredAdena += hair.getAdena();
-				requiredBeautyShopTicket += hair.getBeautyShopTicket();
+				requiredAdena += hair.Adena;
+				requiredBeautyShopTicket += hair.BeautyShopTicket;
 			}
 
 			if (_colorId > 0)
 			{
-				BeautyItem? color = hair.getColors().GetValueOrDefault(_colorId);
+				BeautyItem? color = hair.Colors.GetValueOrDefault(_colorId);
 				if (color == null)
 				{
 					player.sendPacket(new ExResponseBeautyRegistResetPacket(player,
@@ -64,14 +65,14 @@ public struct RequestRegistBeautyPacket: IIncomingPacket<GameSession>
 					return ValueTask.CompletedTask;
 				}
 
-				requiredAdena += color.getAdena();
-				requiredBeautyShopTicket += color.getBeautyShopTicket();
+				requiredAdena += color.Adena;
+				requiredBeautyShopTicket += color.BeautyShopTicket;
 			}
 		}
 
 		if (_faceId > 0 && _faceId != player.getVisualFace())
 		{
-			BeautyItem? face = beautyData?.getFaceList().GetValueOrDefault(_faceId);
+			BeautyItem? face = beautyData?.FaceList.GetValueOrDefault(_faceId);
 			if (face == null)
 			{
 				player.sendPacket(new ExResponseBeautyRegistResetPacket(player,
@@ -81,8 +82,8 @@ public struct RequestRegistBeautyPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			requiredAdena += face.getAdena();
-			requiredBeautyShopTicket += face.getBeautyShopTicket();
+			requiredAdena += face.Adena;
+			requiredBeautyShopTicket += face.BeautyShopTicket;
 		}
 
 		if (player.getAdena() < requiredAdena || player.getBeautyTickets() < requiredBeautyShopTicket)

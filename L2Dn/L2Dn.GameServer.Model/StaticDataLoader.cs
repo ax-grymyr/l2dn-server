@@ -119,7 +119,7 @@ public static class StaticDataLoader
         PetExtractData.getInstance();
         CubicData.getInstance();
         CharSummonTable.getInstance().init();
-        BeautyShopData.getInstance();
+        BeautyShopData.Instance.Load();
         MentorManager.getInstance();
         VipManager.getInstance();
 

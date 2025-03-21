@@ -1,7 +1,8 @@
 ﻿using System.Collections.Frozen;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.BeautyShop;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
@@ -20,8 +21,8 @@ public readonly struct ExResponseBeautyListPacket: IOutgoingPacket
         _player = player;
         _type = type;
 
-        BeautyData? beautyData = BeautyShopData.getInstance()
-            .getBeautyData(player.getRace(), player.getAppearance().getSex());
+        BeautyData? beautyData = BeautyShopData.Instance
+            .GetBeautyData(player.getRace(), player.getAppearance().getSex());
 
         if (beautyData is null)
         {
@@ -29,11 +30,11 @@ public readonly struct ExResponseBeautyListPacket: IOutgoingPacket
         }
         else if (type == SHOW_HAIRSTYLE)
         {
-            _beautyItem = beautyData.getHairList();
+            _beautyItem = beautyData.HairList;
         }
         else
         {
-            _beautyItem = beautyData.getFaceList();
+            _beautyItem = beautyData.FaceList;
         }
     }
 
@@ -47,7 +48,7 @@ public readonly struct ExResponseBeautyListPacket: IOutgoingPacket
         writer.WriteInt32(_beautyItem.Count);
         foreach (BeautyItem item in _beautyItem.Values)
         {
-            writer.WriteInt32(item.getId());
+            writer.WriteInt32(item.Id);
             writer.WriteInt32(1); // Limit
         }
 
