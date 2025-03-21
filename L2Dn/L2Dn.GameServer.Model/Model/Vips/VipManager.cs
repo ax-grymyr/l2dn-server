@@ -1,4 +1,6 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using System.Collections.Frozen;
+using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Events.Impl.Players;
@@ -81,36 +83,37 @@ public class VipManager
 
 		if (player.getVipTier() > 1)
 		{
-			int oldSkillId = VipData.getInstance().getSkillId((byte) (player.getVipTier() - 1));
-			if (oldSkillId > 0)
-			{
-				Skill? oldSkill = SkillData.Instance.GetSkill(oldSkillId, 1);
-				if (oldSkill != null)
-				{
-					player.removeSkill(oldSkill);
-				}
-			}
+            if (VipData.Instance.VipTiers.TryGetValue(player.getVipTier() - 1, out VipInfo? oldVipInfo))
+            {
+                foreach (VipBonusInfo bonusInfo in oldVipInfo.BonusList)
+                {
+                    Skill? oldSkill = SkillData.Instance.GetSkill(bonusInfo.SkillId, 1);
+                    if (oldSkill != null)
+                        player.removeSkill(oldSkill);
+                }
+            }
 		}
 
-		int skillId = VipData.getInstance().getSkillId(player.getVipTier());
-		if (skillId > 0)
-		{
-			Skill? skill = SkillData.Instance.GetSkill(skillId, 1);
-			if (skill != null)
-			{
-				player.addSkill(skill);
-			}
-		}
+        if (VipData.Instance.VipTiers.TryGetValue(player.getVipTier(), out VipInfo? vipInfo))
+        {
+            foreach (VipBonusInfo bonusInfo in vipInfo.BonusList)
+            {
+                // TODO: what chances do?
+                Skill? skill = SkillData.Instance.GetSkill(bonusInfo.SkillId, 1);
+                if (skill != null)
+                    player.addSkill(skill);
+            }
+        }
 	}
 
 	public int getVipTier(Player player)
 	{
-		return getVipInfo(player).getTier();
+		return getVipInfo(player).Tier;
 	}
 
 	public int getVipTier(long points)
 	{
-		int temp = getVipInfo(points).getTier();
+		int temp = getVipInfo(points).Tier;
 		if (temp > VIP_MAX_TIER)
 		{
 			temp = VIP_MAX_TIER;
@@ -125,11 +128,11 @@ public class VipManager
 
 	private VipInfo getVipInfo(long points)
 	{
-        Map<int, VipInfo> vipTiers = VipData.getInstance().getVipTiers();
+        FrozenDictionary<int, VipInfo> vipTiers = VipData.Instance.VipTiers;
 
 		for (byte i = 0; i < vipTiers.Count; i++)
 		{
-			if (points < vipTiers[i].getPointsRequired())
+			if (points < vipTiers[i].PointsRequired)
 			{
 				byte temp = (byte) (i - 1);
 				if (temp > VIP_MAX_TIER)
@@ -144,22 +147,22 @@ public class VipManager
 
 	public long getPointsDepreciatedOnLevel(int vipTier)
 	{
-		VipInfo? tier = VipData.getInstance().getVipTiers().get(vipTier);
+		VipInfo? tier = VipData.Instance.VipTiers.GetValueOrDefault(vipTier);
 		if (tier == null)
 		{
 			return 0;
 		}
-		return tier.getPointsDepreciated();
+		return tier.PointsDepreciated;
 	}
 
 	public long getPointsToLevel(byte vipTier)
 	{
-		VipInfo? tier = VipData.getInstance().getVipTiers().get(vipTier);
+		VipInfo? tier = VipData.Instance.VipTiers.GetValueOrDefault(vipTier);
 		if (tier == null)
 		{
 			return 0;
 		}
-		return tier.getPointsRequired();
+		return tier.PointsRequired;
 	}
 
 	public bool checkVipTierExpiration(Player player)

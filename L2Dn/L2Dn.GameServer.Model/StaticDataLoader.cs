@@ -103,7 +103,7 @@ public static class StaticDataLoader
         MagicLampData.getInstance();
         RandomCraftData.getInstance();
         RevengeHistoryManager.getInstance();
-        VipData.getInstance();
+        VipData.Instance.Load();
 
         CharacterClassData.Instance.Load();
         InitialEquipmentData.getInstance();
