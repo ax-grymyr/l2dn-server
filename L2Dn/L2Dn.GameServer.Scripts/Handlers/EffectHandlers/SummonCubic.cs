@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Summon Cubic effect implementation.
 /// </summary>
-[HandlerName("SummonCubic")]
+[HandlerStringKey("SummonCubic")]
 public sealed class SummonCubic: AbstractEffect
 {
     private readonly int _cubicId;

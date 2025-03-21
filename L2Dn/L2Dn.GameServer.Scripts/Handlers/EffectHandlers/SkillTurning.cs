@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Skill Turning effect implementation.
 /// </summary>
-[HandlerName("SkillTurning")]
+[HandlerStringKey("SkillTurning")]
 public sealed class SkillTurning: AbstractEffect
 {
     private readonly int _chance;

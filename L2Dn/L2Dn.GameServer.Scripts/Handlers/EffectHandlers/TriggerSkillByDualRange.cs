@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Trigger Skill By Dual Range effect implementation.
 /// </summary>
-[HandlerName("TriggerSkillByDualRange")]
+[HandlerStringKey("TriggerSkillByDualRange")]
 public sealed class TriggerSkillByDualRange: AbstractEffect
 {
     private readonly SkillHolder _closeSkill;

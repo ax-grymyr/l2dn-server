@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Open Chest effect implementation.
 /// </summary>
-[HandlerName("OpenChest")]
+[HandlerStringKey("OpenChest")]
 public sealed class OpenChest: AbstractEffect
 {
     public override bool IsInstant => true;

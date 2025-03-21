@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Take Fort Start effect implementation.
 /// </summary>
-[HandlerName("TakeFortStart")]
+[HandlerStringKey("TakeFortStart")]
 public sealed class TakeFortStart: AbstractEffect
 {
     public override bool IsInstant => true;

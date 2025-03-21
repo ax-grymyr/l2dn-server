@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Physical Mute effect implementation.
 /// </summary>
-[HandlerName("PhysicalMute")]
+[HandlerStringKey("PhysicalMute")]
 public sealed class PhysicalMute: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.PSYCHICAL_MUTED;

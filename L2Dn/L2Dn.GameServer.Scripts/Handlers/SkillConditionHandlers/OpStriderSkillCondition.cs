@@ -7,7 +7,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("OpStrider")]
+[HandlerStringKey("OpStrider")]
 public sealed class OpStriderSkillCondition: ISkillCondition
 {
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

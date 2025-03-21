@@ -9,7 +9,7 @@ using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("OpCheckClassList")]
+[HandlerStringKey("OpCheckClassList")]
 public sealed class OpCheckClassListSkillCondition: ISkillCondition
 {
     private readonly Set<CharacterClass> _classIds = new();

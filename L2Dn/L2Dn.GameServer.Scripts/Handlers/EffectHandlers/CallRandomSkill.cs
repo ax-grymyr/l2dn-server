@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /**
  * @author Mobius
  */
-[HandlerName("CallRandomSkill")]
+[HandlerStringKey("CallRandomSkill")]
 public sealed class CallRandomSkill: AbstractEffect
 {
     private readonly ImmutableArray<SkillHolder> _skills;

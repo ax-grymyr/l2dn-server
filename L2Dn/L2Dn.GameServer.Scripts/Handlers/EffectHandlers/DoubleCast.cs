@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Double Casting effect implementation.
 /// </summary>
-[HandlerName("DoubleCast")]
+[HandlerStringKey("DoubleCast")]
 public sealed class DoubleCast: AbstractEffect
 {
     private static readonly SkillHolder[] _toggleSkills = [new(11007, 1), new(11009, 1), new(11008, 1), new(11010, 1),];

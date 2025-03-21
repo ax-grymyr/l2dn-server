@@ -8,7 +8,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("CheckLevel")]
+[HandlerStringKey("CheckLevel")]
 public sealed class CheckLevelSkillCondition: ISkillCondition
 {
     private readonly int _minLevel;

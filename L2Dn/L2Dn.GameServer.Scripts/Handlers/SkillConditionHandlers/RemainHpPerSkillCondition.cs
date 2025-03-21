@@ -8,7 +8,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("RemainHpPer")]
+[HandlerStringKey("RemainHpPer")]
 public sealed class RemainHpPerSkillCondition: ISkillCondition
 {
     private readonly int _amount;

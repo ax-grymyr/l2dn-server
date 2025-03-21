@@ -11,7 +11,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("OpHome")]
+[HandlerStringKey("OpHome")]
 public sealed class OpHomeSkillCondition: ISkillCondition
 {
     private readonly ResidenceType _type;

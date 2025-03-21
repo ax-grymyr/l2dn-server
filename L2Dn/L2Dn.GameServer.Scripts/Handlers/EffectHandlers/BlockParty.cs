@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Block Party effect implementation.
 /// </summary>
-[HandlerName("BlockParty")]
+[HandlerStringKey("BlockParty")]
 public sealed class BlockParty: AbstractEffect
 {
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

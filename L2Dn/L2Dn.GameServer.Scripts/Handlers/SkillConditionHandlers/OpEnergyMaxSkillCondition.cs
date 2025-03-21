@@ -8,7 +8,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("OpEnergyMax")]
+[HandlerStringKey("OpEnergyMax")]
 public sealed class OpEnergyMaxSkillCondition: ISkillCondition
 {
     private readonly int _amount;

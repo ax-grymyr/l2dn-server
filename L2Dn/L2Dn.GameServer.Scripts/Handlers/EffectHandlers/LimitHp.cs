@@ -3,5 +3,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("LimitHp")]
+[HandlerStringKey("LimitHp")]
 public sealed class LimitHp(EffectParameterSet parameters): AbstractStatEffect(parameters, Stat.MAX_RECOVERABLE_HP);

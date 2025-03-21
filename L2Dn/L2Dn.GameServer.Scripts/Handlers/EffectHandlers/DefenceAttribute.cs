@@ -10,7 +10,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("DefenceAttribute")]
+[HandlerStringKey("DefenceAttribute")]
 public sealed class DefenceAttribute: AbstractEffect
 {
     private readonly double _amount;

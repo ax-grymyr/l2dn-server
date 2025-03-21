@@ -6,7 +6,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("CanTransformInDominion")]
+[HandlerStringKey("CanTransformInDominion")]
 public sealed class CanTransformInDominionSkillCondition: ISkillCondition
 {
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

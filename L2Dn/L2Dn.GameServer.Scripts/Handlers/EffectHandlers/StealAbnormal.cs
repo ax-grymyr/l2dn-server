@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Steal Abnormal effect implementation.
 /// </summary>
-[HandlerName("StealAbnormal")]
+[HandlerStringKey("StealAbnormal")]
 public sealed class StealAbnormal: AbstractEffect
 {
     private readonly DispelSlotType _slot;

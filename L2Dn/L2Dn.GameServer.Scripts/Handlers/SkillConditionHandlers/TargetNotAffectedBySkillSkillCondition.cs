@@ -7,7 +7,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("TargetNotAffectedBySkill")]
+[HandlerStringKey("TargetNotAffectedBySkill")]
 public sealed class TargetNotAffectedBySkillSkillCondition: ISkillCondition
 {
     private readonly int _skillId;

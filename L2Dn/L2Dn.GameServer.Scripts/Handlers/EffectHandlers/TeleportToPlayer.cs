@@ -14,7 +14,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("TeleportToPlayer")]
+[HandlerStringKey("TeleportToPlayer")]
 public sealed class TeleportToPlayer: AbstractEffect
 {
     public override EffectTypes EffectTypes => EffectTypes.TELEPORT_TO_TARGET;

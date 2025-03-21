@@ -7,7 +7,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("OpSocialClass")]
+[HandlerStringKey("OpSocialClass")]
 public sealed class OpSocialClassSkillCondition: ISkillCondition
 {
     private readonly int _socialClass;

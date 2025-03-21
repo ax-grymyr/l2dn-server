@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Dispel By Slot Probability effect implementation.
 /// </summary>
-[HandlerName("DispelBySlotProbability")]
+[HandlerStringKey("DispelBySlotProbability")]
 public sealed class DispelBySlotProbability: AbstractEffect
 {
     private readonly FrozenSet<AbnormalType> _dispelAbnormals;

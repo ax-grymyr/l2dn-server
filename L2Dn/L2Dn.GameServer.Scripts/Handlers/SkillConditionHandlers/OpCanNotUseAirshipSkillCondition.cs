@@ -7,7 +7,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("OpCanNotUseAirship")]
+[HandlerStringKey("OpCanNotUseAirship")]
 public sealed class OpCanNotUseAirshipSkillCondition: ISkillCondition
 {
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Target Cancel effect implementation.
 /// </summary>
-[HandlerName("TargetCancel")]
+[HandlerStringKey("TargetCancel")]
 public sealed class TargetCancel: AbstractEffect
 {
     private readonly int _chance;

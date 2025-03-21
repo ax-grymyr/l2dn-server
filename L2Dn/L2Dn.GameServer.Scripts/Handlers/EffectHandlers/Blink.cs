@@ -27,7 +27,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// This, combined with target type, allows more complex actions like flying target's backwards or player's backwards.
 ///
 /// </summary>
-[HandlerName("Blink")]
+[HandlerStringKey("Blink")]
 public sealed class Blink: AbstractEffect
 {
     private readonly int _flyCourse;

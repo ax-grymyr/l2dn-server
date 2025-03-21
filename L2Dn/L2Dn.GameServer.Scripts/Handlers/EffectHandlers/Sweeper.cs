@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Sweeper effect implementation.
 /// </summary>
-[HandlerName("Sweeper")]
+[HandlerStringKey("Sweeper")]
 public sealed class Sweeper: AbstractEffect
 {
     public Sweeper(EffectParameterSet parameters)

@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Flag effect implementation.
 /// </summary>
-[HandlerName("Flag")]
+[HandlerStringKey("Flag")]
 public sealed class Flag: AbstractEffect
 {
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

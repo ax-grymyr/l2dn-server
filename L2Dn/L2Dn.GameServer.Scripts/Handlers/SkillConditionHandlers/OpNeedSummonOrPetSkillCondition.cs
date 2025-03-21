@@ -8,7 +8,7 @@ using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("OpNeedSummonOrPet")]
+[HandlerStringKey("OpNeedSummonOrPet")]
 public sealed class OpNeedSummonOrPetSkillCondition: ISkillCondition
 {
     private readonly Set<int> _npcIds = new();

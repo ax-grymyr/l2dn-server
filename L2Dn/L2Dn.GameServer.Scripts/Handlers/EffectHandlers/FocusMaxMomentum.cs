@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Focus Max Energy effect implementation.
 /// </summary>
-[HandlerName("FocusMaxMomentum")]
+[HandlerStringKey("FocusMaxMomentum")]
 public sealed class FocusMaxMomentum: AbstractEffect
 {
     public override bool IsInstant => true;

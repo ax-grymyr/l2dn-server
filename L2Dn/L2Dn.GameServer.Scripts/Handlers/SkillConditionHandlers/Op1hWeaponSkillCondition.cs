@@ -10,7 +10,7 @@ using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("Op1hWeapon")]
+[HandlerStringKey("Op1hWeapon")]
 public sealed class Op1hWeaponSkillCondition: ISkillCondition
 {
     private readonly Set<WeaponType> _weaponTypes = new();

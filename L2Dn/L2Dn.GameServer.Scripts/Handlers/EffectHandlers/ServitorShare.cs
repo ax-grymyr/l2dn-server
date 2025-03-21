@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Servitor Share effect implementation.
 /// </summary>
-[HandlerName("ServitorShare")]
+[HandlerStringKey("ServitorShare")]
 public sealed class ServitorShare: AbstractEffect
 {
     private static readonly FrozenDictionary<XmlSkillEffectParameterType, Stat> _map = EnumUtil.

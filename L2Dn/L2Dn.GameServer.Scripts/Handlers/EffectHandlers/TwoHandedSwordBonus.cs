@@ -12,7 +12,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("TwoHandedSwordBonus")]
+[HandlerStringKey("TwoHandedSwordBonus")]
 public sealed class TwoHandedSwordBonus: AbstractEffect
 {
     private static readonly Condition _weaponTypeCondition = new ConditionUsingItemType(WeaponType.SWORD);

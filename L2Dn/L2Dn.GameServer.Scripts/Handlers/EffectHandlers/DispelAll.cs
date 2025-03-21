@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Dispel All effect implementation.
 /// </summary>
-[HandlerName("DispelAll")]
+[HandlerStringKey("DispelAll")]
 public sealed class DispelAll: AbstractEffect
 {
     public override EffectTypes EffectTypes => EffectTypes.DISPEL;

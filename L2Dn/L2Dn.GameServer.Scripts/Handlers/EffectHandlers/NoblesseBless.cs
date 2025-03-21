@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Noblesse Blessing effect implementation.
 /// </summary>
-[HandlerName("NoblesseBless")]
+[HandlerStringKey("NoblesseBless")]
 public sealed class NoblesseBless: AbstractEffect
 {
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

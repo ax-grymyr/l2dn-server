@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Hide effect implementation.
 /// </summary>
-[HandlerName("Hide")]
+[HandlerStringKey("Hide")]
 public sealed class Hide: AbstractEffect
 {
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

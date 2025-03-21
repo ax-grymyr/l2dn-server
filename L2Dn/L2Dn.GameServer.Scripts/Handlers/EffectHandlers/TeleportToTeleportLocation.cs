@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Teleport to previously set Player teleport location.
 /// </summary>
-[HandlerName("TeleportToTeleportLocation")]
+[HandlerStringKey("TeleportToTeleportLocation")]
 public sealed class TeleportToTeleportLocation: AbstractEffect
 {
     public override bool IsInstant => true;

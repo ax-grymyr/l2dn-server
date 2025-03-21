@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Teleport player/party to summoned npc effect implementation.
 /// </summary>
-[HandlerName("TeleportToNpc")]
+[HandlerStringKey("TeleportToNpc")]
 public sealed class TeleportToNpc: AbstractEffect
 {
     private readonly int _npcId;

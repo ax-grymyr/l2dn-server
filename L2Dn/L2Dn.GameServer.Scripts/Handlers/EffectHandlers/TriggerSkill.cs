@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Trigger Skill effect implementation.
 /// </summary>
-[HandlerName("TriggerSkill")]
+[HandlerStringKey("TriggerSkill")]
 public sealed class TriggerSkill: AbstractEffect
 {
     private readonly SkillHolder _skill;

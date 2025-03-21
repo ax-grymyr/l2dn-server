@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("RearDamage")]
+[HandlerStringKey("RearDamage")]
 public sealed class RearDamage(EffectParameterSet parameters):
     AbstractStatPercentEffect(parameters, Stat.REAR_DAMAGE_RATE);

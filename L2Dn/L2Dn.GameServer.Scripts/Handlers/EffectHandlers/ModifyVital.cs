@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Modify vital effect implementation.
 /// </summary>
-[HandlerName("ModifyVital")]
+[HandlerStringKey("ModifyVital")]
 public sealed class ModifyVital: AbstractEffect
 {
     // Modify types

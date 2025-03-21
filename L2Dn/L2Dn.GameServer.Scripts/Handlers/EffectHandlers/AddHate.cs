@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Add Hate effect implementation.
 /// </summary>
-[HandlerName("AddHate")]
+[HandlerStringKey("AddHate")]
 public sealed class AddHate: AbstractEffect
 {
     private readonly double _power;

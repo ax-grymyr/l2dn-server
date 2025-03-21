@@ -7,7 +7,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("BeastPoints")]
+[HandlerStringKey("BeastPoints")]
 public sealed class BeastPointsSkillCondition: ISkillCondition
 {
     private readonly int _amount;

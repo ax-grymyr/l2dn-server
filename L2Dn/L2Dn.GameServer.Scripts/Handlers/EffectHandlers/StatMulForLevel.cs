@@ -11,7 +11,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("StatMulForLevel")]
+[HandlerStringKey("StatMulForLevel")]
 public sealed class StatMulForLevel: AbstractEffect
 {
     private readonly Stat _stat;

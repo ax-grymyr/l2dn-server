@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// Physical Attack HP Link effect implementation.
 /// Note: Initial formula taken from PhysicalAttack.
 /// </summary>
-[HandlerName("PhysicalAttackHpLink")]
+[HandlerStringKey("PhysicalAttackHpLink")]
 public sealed class PhysicalAttackHpLink: AbstractEffect
 {
     private readonly double _power;

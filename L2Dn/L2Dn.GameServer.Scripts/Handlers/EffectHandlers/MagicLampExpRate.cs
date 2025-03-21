@@ -6,7 +6,7 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("MagicLampExpRate")]
+[HandlerStringKey("MagicLampExpRate")]
 public sealed class MagicLampExpRate(EffectParameterSet parameters)
     : AbstractStatPercentEffect(parameters, Stat.MAGIC_LAMP_EXP_RATE)
 {

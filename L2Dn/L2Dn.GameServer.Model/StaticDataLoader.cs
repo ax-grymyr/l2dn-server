@@ -28,6 +28,9 @@ public static class StaticDataLoader
         SecondaryAuthData.Instance.Load();
 
         // XML data files
+
+        // Map
+        World.getInstance();
         MapRegionData.Instance.Load();
         ZoneManager.Instance.Load(); // for now, zones cannot be separated from the Creature class
 
@@ -35,7 +38,6 @@ public static class StaticDataLoader
         GameTimeTaskManager.getInstance();
         IdManager.getInstance();
 
-        World.getInstance();
         DoorData.getInstance();
         FenceData.getInstance();
         AnnouncementsTable.getInstance();
@@ -61,7 +63,6 @@ public static class StaticDataLoader
         PetAcquireList.getInstance();
         SkillEnchantData.getInstance();
 
-        ConditionHandler.getInstance(); //.executeScript();
         ItemData.getInstance();
         EnchantItemGroupsData.getInstance();
         EnchantItemData.getInstance();

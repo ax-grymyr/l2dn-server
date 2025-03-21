@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("BlockTarget")]
+[HandlerStringKey("BlockTarget")]
 public sealed class BlockTarget: AbstractEffect
 {
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Fatal Blow effect implementation.
 /// </summary>
-[HandlerName("FatalBlow")]
+[HandlerStringKey("FatalBlow")]
 public sealed class FatalBlow: AbstractEffect
 {
     private readonly double _power;

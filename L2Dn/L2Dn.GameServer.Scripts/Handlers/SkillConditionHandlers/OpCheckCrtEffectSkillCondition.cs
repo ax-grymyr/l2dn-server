@@ -6,7 +6,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("OpCheckCrtEffect")]
+[HandlerStringKey("OpCheckCrtEffect")]
 public sealed class OpCheckCrtEffectSkillCondition: ISkillCondition
 {
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

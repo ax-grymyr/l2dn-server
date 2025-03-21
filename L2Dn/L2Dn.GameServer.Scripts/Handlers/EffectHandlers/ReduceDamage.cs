@@ -11,7 +11,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("ReduceDamage")]
+[HandlerStringKey("ReduceDamage")]
 public sealed class ReduceDamage: AbstractEffect
 {
     private readonly double _amount;

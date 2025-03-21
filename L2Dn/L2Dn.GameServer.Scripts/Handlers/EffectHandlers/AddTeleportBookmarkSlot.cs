@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Item Effect: Gives teleport bookmark slots to the owner.
 /// </summary>
-[HandlerName("AddTeleportBookmarkSlot")]
+[HandlerStringKey("AddTeleportBookmarkSlot")]
 public sealed class AddTeleportBookmarkSlot: AbstractEffect
 {
     private readonly int _amount;

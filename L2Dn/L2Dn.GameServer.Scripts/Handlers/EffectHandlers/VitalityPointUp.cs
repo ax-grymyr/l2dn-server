@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Vitality Point Up effect implementation.
 /// </summary>
-[HandlerName("VitalityPointUp")]
+[HandlerStringKey("VitalityPointUp")]
 public sealed class VitalityPointUp: AbstractEffect
 {
     private readonly int _value;

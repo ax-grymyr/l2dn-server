@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Unsummon Agathion effect implementation.
 /// </summary>
-[HandlerName("UnsummonAgathion")]
+[HandlerStringKey("UnsummonAgathion")]
 public sealed class UnsummonAgathion: AbstractEffect
 {
     public override bool IsInstant => true;

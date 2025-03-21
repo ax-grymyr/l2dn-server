@@ -4,7 +4,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("HpCpHealCritical")]
+[HandlerStringKey("HpCpHealCritical")]
 public sealed class HpCpHealCritical: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.HPCPHEAL_CRITICAL;

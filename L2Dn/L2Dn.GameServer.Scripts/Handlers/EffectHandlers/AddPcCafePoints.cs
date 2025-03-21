@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Increase PcCafe points permanently.
 /// </summary>
-[HandlerName("AddPcCafePoints")]
+[HandlerStringKey("AddPcCafePoints")]
 public sealed class AddPcCafePoints: AbstractEffect
 {
     private readonly int _amount;

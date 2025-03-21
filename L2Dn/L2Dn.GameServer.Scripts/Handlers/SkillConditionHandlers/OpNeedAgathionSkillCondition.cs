@@ -6,7 +6,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("OpNeedAgathion")]
+[HandlerStringKey("OpNeedAgathion")]
 public sealed class OpNeedAgathionSkillCondition: ISkillCondition
 {
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

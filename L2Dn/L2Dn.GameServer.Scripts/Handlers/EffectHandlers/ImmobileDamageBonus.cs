@@ -6,6 +6,6 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Bonus damage to immobile targets.
 /// </summary>
-[HandlerName("ImmobileDamageBonus")]
+[HandlerStringKey("ImmobileDamageBonus")]
 public sealed class ImmobileDamageBonus(EffectParameterSet parameters):
     AbstractStatPercentEffect(parameters, Stat.IMMOBILE_DAMAGE_BONUS);

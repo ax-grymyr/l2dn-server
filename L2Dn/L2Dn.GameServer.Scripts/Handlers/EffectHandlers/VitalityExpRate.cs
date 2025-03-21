@@ -5,7 +5,7 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("VitalityExpRate")]
+[HandlerStringKey("VitalityExpRate")]
 public sealed class VitalityExpRate(EffectParameterSet parameters):
     AbstractStatPercentEffect(parameters, Stat.VITALITY_EXP_RATE)
 {

@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Immobile Pet Buff effect implementation.
 /// </summary>
-[HandlerName("ImmobilePetBuff")]
+[HandlerStringKey("ImmobilePetBuff")]
 public sealed class ImmobilePetBuff: AbstractEffect
 {
     public override void OnExit(Creature effector, Creature effected, Skill skill)

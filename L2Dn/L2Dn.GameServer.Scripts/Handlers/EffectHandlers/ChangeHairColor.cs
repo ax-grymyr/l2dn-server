@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Change Hair Color effect implementation.
 /// </summary>
-[HandlerName("ChangeHairColor")]
+[HandlerStringKey("ChangeHairColor")]
 public sealed class ChangeHairColor: AbstractEffect
 {
     private readonly int _value;

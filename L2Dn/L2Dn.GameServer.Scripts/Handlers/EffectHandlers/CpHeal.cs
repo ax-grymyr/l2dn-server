@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Cp Heal effect implementation.
 /// </summary>
-[HandlerName("CpHeal")]
+[HandlerStringKey("CpHeal")]
 public sealed class CpHeal: AbstractEffect
 {
     private readonly double _power;

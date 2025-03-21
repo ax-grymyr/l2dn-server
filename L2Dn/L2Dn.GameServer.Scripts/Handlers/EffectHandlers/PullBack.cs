@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// An effect that pulls effected target back to the effector.
 /// </summary>
-[HandlerName("PullBack")]
+[HandlerStringKey("PullBack")]
 public sealed class PullBack: AbstractEffect
 {
     private readonly int _speed;

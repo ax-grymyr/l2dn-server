@@ -11,7 +11,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("ResetInstanceEntry")]
+[HandlerStringKey("ResetInstanceEntry")]
 public sealed class ResetInstanceEntry: AbstractEffect
 {
     private readonly FrozenSet<int> _instanceIds;

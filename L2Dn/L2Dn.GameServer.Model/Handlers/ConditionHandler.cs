@@ -9,34 +9,34 @@ namespace L2Dn.GameServer.Handlers;
  */
 public class ConditionHandler
 {
-	private readonly Map<string, Func<StatSet, ICondition>> _conditionHandlerFactories = new();
+    private readonly Map<string, Func<StatSet, ICondition>> _conditionHandlerFactories = new();
 
-	private ConditionHandler()
-	{
-	}
+    private ConditionHandler()
+    {
+    }
 
-	public void registerHandler(string name, Func<StatSet, ICondition> handlerFactory)
-	{
-		_conditionHandlerFactories.put(name, handlerFactory);
-	}
+    public void registerHandler(string name, Func<StatSet, ICondition> handlerFactory)
+    {
+        _conditionHandlerFactories.put(name, handlerFactory);
+    }
 
-	public Func<StatSet, ICondition>? getHandlerFactory(string name)
-	{
-		return _conditionHandlerFactories.get(name);
-	}
+    public Func<StatSet, ICondition>? getHandlerFactory(string name)
+    {
+        return _conditionHandlerFactories.get(name);
+    }
 
-	public int size()
-	{
-		return _conditionHandlerFactories.Count;
-	}
+    public int size()
+    {
+        return _conditionHandlerFactories.Count;
+    }
 
-	private static class SingletonHolder
-	{
-		public static readonly ConditionHandler INSTANCE = new ConditionHandler();
-	}
+    private static class SingletonHolder
+    {
+        public static readonly ConditionHandler INSTANCE = new ConditionHandler();
+    }
 
-	public static ConditionHandler getInstance()
-	{
-		return SingletonHolder.INSTANCE;
-	}
+    public static ConditionHandler getInstance()
+    {
+        return SingletonHolder.INSTANCE;
+    }
 }

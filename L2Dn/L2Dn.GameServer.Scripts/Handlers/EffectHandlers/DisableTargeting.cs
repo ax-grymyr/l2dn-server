@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// Targeting disable effect implementation. When affected,
 /// player will lose target and be unable to target for the duration.
 /// </summary>
-[HandlerName("DisableTargeting")]
+[HandlerStringKey("DisableTargeting")]
 public sealed class DisableTargeting: AbstractEffect
 {
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

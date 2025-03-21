@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Take Castle effect implementation.
 /// </summary>
-[HandlerName("TakeCastle")]
+[HandlerStringKey("TakeCastle")]
 public sealed class TakeCastle: AbstractEffect
 {
     private readonly CastleSide _side;

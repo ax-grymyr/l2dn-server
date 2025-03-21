@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Target Me effect implementation.
 /// </summary>
-[HandlerName("TargetMe")]
+[HandlerStringKey("TargetMe")]
 public sealed class TargetMe: AbstractEffect
 {
     public override void OnExit(Creature effector, Creature effected, Skill skill)

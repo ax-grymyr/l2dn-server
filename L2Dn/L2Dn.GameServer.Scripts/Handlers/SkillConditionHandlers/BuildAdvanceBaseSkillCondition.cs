@@ -6,7 +6,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("BuildAdvanceBase")]
+[HandlerStringKey("BuildAdvanceBase")]
 public sealed class BuildAdvanceBaseSkillCondition: ISkillCondition
 {
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

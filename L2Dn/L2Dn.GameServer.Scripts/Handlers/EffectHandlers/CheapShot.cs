@@ -4,7 +4,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("CheapShot")]
+[HandlerStringKey("CheapShot")]
 public sealed class CheapShot: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.CHEAPSHOT;

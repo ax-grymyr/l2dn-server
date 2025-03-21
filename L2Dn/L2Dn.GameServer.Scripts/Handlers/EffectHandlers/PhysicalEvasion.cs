@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("PhysicalEvasion")]
+[HandlerStringKey("PhysicalEvasion")]
 public sealed class PhysicalEvasion(EffectParameterSet parameters):
     AbstractConditionalHpEffect(parameters, Stat.EVASION_RATE);

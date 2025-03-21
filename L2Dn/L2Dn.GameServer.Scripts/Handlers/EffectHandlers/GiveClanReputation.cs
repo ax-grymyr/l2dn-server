@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Give Clan reputation effect implementation.
 /// </summary>
-[HandlerName("GiveClanReputation")]
+[HandlerStringKey("GiveClanReputation")]
 public sealed class GiveClanReputation: AbstractEffect
 {
     private readonly int _reputation;

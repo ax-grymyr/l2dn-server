@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Note: In retail this effect doesn't stack. It appears that the active value is taken from the last such effect.
 /// </summary>
-[HandlerName("SkillEvasion")]
+[HandlerStringKey("SkillEvasion")]
 public sealed class SkillEvasion: AbstractEffect
 {
     private readonly SkillMagicType _magicType;

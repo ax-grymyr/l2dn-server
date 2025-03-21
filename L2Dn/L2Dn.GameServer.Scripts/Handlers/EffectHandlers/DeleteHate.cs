@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Delete Hate effect implementation.
 /// </summary>
-[HandlerName("DeleteHate")]
+[HandlerStringKey("DeleteHate")]
 public sealed class DeleteHate: AbstractEffect
 {
     private readonly int _chance;

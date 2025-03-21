@@ -3,5 +3,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("ShotsBonus")]
+[HandlerStringKey("ShotsBonus")]
 public sealed class ShotsBonus(EffectParameterSet parameters): AbstractStatEffect(parameters, Stat.SHOTS_BONUS);

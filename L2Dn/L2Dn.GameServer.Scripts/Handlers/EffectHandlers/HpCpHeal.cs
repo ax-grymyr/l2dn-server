@@ -18,7 +18,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// HpCpHeal effect implementation.
 /// </summary>
-[HandlerName("HpCpHeal")]
+[HandlerStringKey("HpCpHeal")]
 public sealed class HpCpHeal: AbstractEffect
 {
     private readonly double _power;

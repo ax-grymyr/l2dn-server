@@ -12,7 +12,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("BuildCamp")]
+[HandlerStringKey("BuildCamp")]
 public sealed class BuildCampSkillCondition: ISkillCondition
 {
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

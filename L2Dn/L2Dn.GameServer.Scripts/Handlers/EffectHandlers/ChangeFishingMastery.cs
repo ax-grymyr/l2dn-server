@@ -7,7 +7,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Change Fishing Mastery dummy effect implementation.
 /// </summary>
-[HandlerName("ChangeFishingMastery")]
+[HandlerStringKey("ChangeFishingMastery")]
 public sealed class ChangeFishingMastery: AbstractEffect
 {
     public override int GetHashCode() => this.GetSingletonHashCode();

@@ -8,7 +8,7 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("OpBaseStat")]
+[HandlerStringKey("OpBaseStat")]
 public sealed class OpBaseStatSkillCondition: ISkillCondition
 {
     private readonly BaseStat _stat;

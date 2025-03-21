@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Give Recommendation effect implementation.
 /// </summary>
-[HandlerName("GiveRecommendation")]
+[HandlerStringKey("GiveRecommendation")]
 public sealed class GiveRecommendation: AbstractEffect
 {
     private readonly int _amount;

@@ -11,7 +11,7 @@ using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("RealDamage")]
+[HandlerStringKey("RealDamage")]
 public sealed class RealDamage: AbstractEffect
 {
     private readonly double _power;

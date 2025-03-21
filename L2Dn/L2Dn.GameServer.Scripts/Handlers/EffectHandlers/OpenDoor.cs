@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Open Door effect implementation.
 /// </summary>
-[HandlerName("OpenDoor")]
+[HandlerStringKey("OpenDoor")]
 public sealed class OpenDoor: AbstractEffect
 {
     private readonly int _chance;

@@ -19,7 +19,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// SummonMulti effect implementation.
 /// </summary>
-[HandlerName("SummonMulti")]
+[HandlerStringKey("SummonMulti")]
 public sealed class SummonMulti: AbstractEffect
 {
     private readonly int _npcId;

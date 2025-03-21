@@ -11,7 +11,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("ReuseSkillIdByDamage")]
+[HandlerStringKey("ReuseSkillIdByDamage")]
 public sealed class ReuseSkillIdByDamage: AbstractEffect
 {
     private readonly int _minAttackerLevel;

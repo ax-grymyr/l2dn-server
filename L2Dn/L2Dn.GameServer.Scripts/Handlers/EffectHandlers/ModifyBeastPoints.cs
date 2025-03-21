@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("ModifyBeastPoints")]
+[HandlerStringKey("ModifyBeastPoints")]
 public sealed class ModifyBeastPoints: AbstractEffect
 {
     private readonly int _amount;

@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("AddSkillBySkill")]
+[HandlerStringKey("AddSkillBySkill")]
 public sealed class AddSkillBySkill: AbstractEffect
 {
     private readonly int _existingSkillId;

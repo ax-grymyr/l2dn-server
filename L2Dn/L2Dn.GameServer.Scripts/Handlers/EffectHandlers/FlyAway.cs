@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Throw Up effect implementation.
 /// </summary>
-[HandlerName("FlyAway")]
+[HandlerStringKey("FlyAway")]
 public sealed class FlyAway: AbstractEffect
 {
     private readonly int _radius;

@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Unsummon effect implementation.
 /// </summary>
-[HandlerName("Unsummon")]
+[HandlerStringKey("Unsummon")]
 public sealed class Unsummon: AbstractEffect
 {
     private readonly int _chance;

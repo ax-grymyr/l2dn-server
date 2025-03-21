@@ -18,7 +18,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Heal effect implementation.
 /// </summary>
-[HandlerName("Heal")]
+[HandlerStringKey("Heal")]
 public sealed class Heal: AbstractEffect
 {
     private readonly double _power;

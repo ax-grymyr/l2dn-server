@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Summon Trap effect implementation.
 /// </summary>
-[HandlerName("SummonTrap")]
+[HandlerStringKey("SummonTrap")]
 public sealed class SummonTrap: AbstractEffect
 {
     private readonly int _despawnTime;

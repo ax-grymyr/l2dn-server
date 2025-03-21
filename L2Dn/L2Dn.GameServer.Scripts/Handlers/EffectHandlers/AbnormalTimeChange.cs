@@ -13,7 +13,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("AbnormalTimeChange")]
+[HandlerStringKey("AbnormalTimeChange")]
 public sealed class AbnormalTimeChange: AbstractEffect
 {
     private readonly FrozenSet<AbnormalType> _abnormals;

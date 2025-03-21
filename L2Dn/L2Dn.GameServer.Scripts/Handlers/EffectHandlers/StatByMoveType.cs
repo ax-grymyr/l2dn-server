@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// StatByMoveType effect implementation.
 /// </summary>
-[HandlerName("StatByMoveType")]
+[HandlerStringKey("StatByMoveType")]
 public sealed class StatByMoveType: AbstractEffect
 {
     private readonly Stat _stat;

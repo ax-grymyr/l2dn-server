@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Item Effect: Increase/decrease PK count permanently.
 /// </summary>
-[HandlerName("PkCount")]
+[HandlerStringKey("PkCount")]
 public sealed class PkCount: AbstractEffect
 {
     private readonly int _amount;

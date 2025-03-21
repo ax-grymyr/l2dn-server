@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Transformation effect implementation.
 /// </summary>
-[HandlerName("Transformation")]
+[HandlerStringKey("Transformation")]
 public sealed class Transformation: AbstractEffect
 {
     private readonly FrozenSet<int> _transformationIds;

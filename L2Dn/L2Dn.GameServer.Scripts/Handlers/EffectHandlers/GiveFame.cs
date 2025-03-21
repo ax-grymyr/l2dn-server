@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("GiveFame")]
+[HandlerStringKey("GiveFame")]
 public sealed class GiveFame: AbstractEffect
 {
     private readonly int _fame;

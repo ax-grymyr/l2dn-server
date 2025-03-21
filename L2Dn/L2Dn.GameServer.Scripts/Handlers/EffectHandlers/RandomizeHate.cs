@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Randomize Hate effect implementation.
 /// </summary>
-[HandlerName("RandomizeHate")]
+[HandlerStringKey("RandomizeHate")]
 public sealed class RandomizeHate: AbstractEffect
 {
     private readonly int _chance;

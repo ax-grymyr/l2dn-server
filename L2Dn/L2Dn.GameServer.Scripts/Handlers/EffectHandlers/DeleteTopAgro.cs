@@ -11,7 +11,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("DeleteTopAgro")]
+[HandlerStringKey("DeleteTopAgro")]
 public sealed class DeleteTopAgro: AbstractEffect
 {
     private readonly int _chance;

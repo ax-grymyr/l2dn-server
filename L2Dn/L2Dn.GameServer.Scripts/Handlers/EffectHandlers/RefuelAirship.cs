@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Refuel Airship effect implementation.
 /// </summary>
-[HandlerName("RefuelAirship")]
+[HandlerStringKey("RefuelAirship")]
 public sealed class RefuelAirship: AbstractEffect
 {
     private readonly int _value;

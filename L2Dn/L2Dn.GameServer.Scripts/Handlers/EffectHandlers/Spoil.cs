@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Spoil effect implementation.
 /// </summary>
-[HandlerName("Spoil")]
+[HandlerStringKey("Spoil")]
 public sealed class Spoil: AbstractEffect
 {
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)

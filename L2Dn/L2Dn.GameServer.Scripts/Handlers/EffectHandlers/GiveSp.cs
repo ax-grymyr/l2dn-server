@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Give SP effect implementation.
 /// </summary>
-[HandlerName("GiveSp")]
+[HandlerStringKey("GiveSp")]
 public sealed class GiveSp: AbstractEffect
 {
     private readonly int _sp;

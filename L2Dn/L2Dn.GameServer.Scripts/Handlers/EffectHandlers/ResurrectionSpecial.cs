@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Resurrection Special effect implementation.
 /// </summary>
-[HandlerName("ResurrectionSpecial")]
+[HandlerStringKey("ResurrectionSpecial")]
 public sealed class ResurrectionSpecial: AbstractEffect
 {
     private readonly int _power;

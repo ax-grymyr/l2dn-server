@@ -7,7 +7,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("OpExistNpc")]
+[HandlerStringKey("OpExistNpc")]
 public sealed class OpExistNpcSkillCondition: ISkillCondition
 {
     private readonly List<int> _npcIds;

@@ -8,7 +8,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("CanSummonMulti")]
+[HandlerStringKey("CanSummonMulti")]
 public sealed class CanSummonMultiSkillCondition: ISkillCondition
 {
     private readonly int _summonPoints;

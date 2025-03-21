@@ -9,7 +9,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("Compelling")]
+[HandlerStringKey("Compelling")]
 public sealed class Compelling: AbstractEffect
 {
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)

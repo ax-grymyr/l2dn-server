@@ -5,7 +5,7 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("ExpModify")]
+[HandlerStringKey("ExpModify")]
 public sealed class ExpModify(EffectParameterSet parameters): AbstractStatAddEffect(parameters, Stat.BONUS_EXP)
 {
     public override void Pump(Creature effected, Skill skill)

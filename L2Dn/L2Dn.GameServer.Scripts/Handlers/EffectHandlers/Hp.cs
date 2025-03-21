@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// HP change effect. It is mostly used for potions and static damage.
 /// </summary>
-[HandlerName("Hp")]
+[HandlerStringKey("Hp")]
 public sealed class Hp: AbstractEffect
 {
     private readonly int _amount;

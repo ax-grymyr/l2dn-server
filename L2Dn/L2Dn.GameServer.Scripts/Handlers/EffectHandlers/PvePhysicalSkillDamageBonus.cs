@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("PvePhysicalSkillDamageBonus")]
+[HandlerStringKey("PvePhysicalSkillDamageBonus")]
 public sealed class PvePhysicalSkillDamageBonus(EffectParameterSet parameters)
     : AbstractStatPercentEffect(parameters, Stat.PVE_PHYSICAL_SKILL_DAMAGE);

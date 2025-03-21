@@ -11,7 +11,7 @@ using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("CanSummonPet")]
+[HandlerStringKey("CanSummonPet")]
 public sealed class CanSummonPetSkillCondition: ISkillCondition
 {
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

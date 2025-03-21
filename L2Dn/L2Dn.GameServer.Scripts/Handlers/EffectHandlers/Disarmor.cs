@@ -18,7 +18,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Disarm by inventory slot effect implementation. At end of effect, it re-equips that item.
 /// </summary>
-[HandlerName("Disarmor")]
+[HandlerStringKey("Disarmor")]
 public sealed class Disarmor: AbstractEffect
 {
     private readonly Map<int, int> _unequippedItems; // PlayerObjId, ItemObjId

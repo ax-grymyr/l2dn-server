@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("IgnoreReduceDamage")]
+[HandlerStringKey("IgnoreReduceDamage")]
 public sealed class IgnoreReduceDamage(EffectParameterSet parameters):
     AbstractStatEffect(parameters, Stat.IGNORE_REDUCE_DAMAGE);

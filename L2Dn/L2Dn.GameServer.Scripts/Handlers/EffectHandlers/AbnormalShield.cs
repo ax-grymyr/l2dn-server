@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// An effect that blocks a debuff. Acts like DOTA's Linken Sphere.
 /// </summary>
-[HandlerName("AbnormalShield")]
+[HandlerStringKey("AbnormalShield")]
 public sealed class AbnormalShield: AbstractEffect
 {
     private readonly int _times;

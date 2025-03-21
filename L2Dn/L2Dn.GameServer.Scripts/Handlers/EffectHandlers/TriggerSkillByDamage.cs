@@ -18,7 +18,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Trigger Skill By Damage effect implementation.
 /// </summary>
-[HandlerName("TriggerSkillByDamage")]
+[HandlerStringKey("TriggerSkillByDamage")]
 public sealed class TriggerSkillByDamage: AbstractEffect
 {
     private readonly int _minAttackerLevel;

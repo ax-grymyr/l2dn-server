@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("GiveHonorCoins")]
+[HandlerStringKey("GiveHonorCoins")]
 public sealed class GiveHonorCoins: AbstractEffect
 {
     private readonly long _amount;

@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Disarm effect implementation.
 /// </summary>
-[HandlerName("Disarm")]
+[HandlerStringKey("Disarm")]
 public sealed class Disarm: AbstractEffect
 {
     private static readonly Map<int, int> _disarmedPlayers = new();

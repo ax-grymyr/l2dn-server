@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Escape effect implementation.
 /// </summary>
-[HandlerName("Escape")]
+[HandlerStringKey("Escape")]
 public sealed class Escape: AbstractEffect
 {
     private readonly TeleportWhereType? _escapeType;

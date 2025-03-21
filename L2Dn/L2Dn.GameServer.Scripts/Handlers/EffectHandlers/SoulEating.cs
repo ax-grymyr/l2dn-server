@@ -17,7 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Soul Eating effect implementation.
 /// </summary>
-[HandlerName("SoulEating")]
+[HandlerStringKey("SoulEating")]
 public sealed class SoulEating: AbstractEffect
 {
     private readonly SoulType _type;

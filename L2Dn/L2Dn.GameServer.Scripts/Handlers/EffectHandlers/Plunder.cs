@@ -13,7 +13,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("Plunder")]
+[HandlerStringKey("Plunder")]
 public sealed class Plunder: AbstractEffect
 {
     public override bool CalcSuccess(Creature effector, Creature effected, Skill skill)

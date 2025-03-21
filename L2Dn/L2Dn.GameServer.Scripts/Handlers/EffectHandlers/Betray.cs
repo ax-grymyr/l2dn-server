@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Betray effect implementation.
 /// </summary>
-[HandlerName("Betray")]
+[HandlerStringKey("Betray")]
 public sealed class Betray: AbstractEffect
 {
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

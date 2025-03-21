@@ -3,5 +3,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("SummonPoints")]
+[HandlerStringKey("SummonPoints")]
 public sealed class SummonPoints(EffectParameterSet parameters): AbstractStatAddEffect(parameters, Stat.MAX_SUMMON_POINTS);

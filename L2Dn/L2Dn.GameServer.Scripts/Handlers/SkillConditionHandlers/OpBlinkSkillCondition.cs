@@ -9,7 +9,7 @@ using L2Dn.Geometry;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("OpBlink")]
+[HandlerStringKey("OpBlink")]
 public sealed class OpBlinkSkillCondition: ISkillCondition
 {
     private readonly int _angle;

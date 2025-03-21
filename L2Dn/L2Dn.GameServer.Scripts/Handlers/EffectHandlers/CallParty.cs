@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Call Party effect implementation.
 /// </summary>
-[HandlerName("CallParty")]
+[HandlerStringKey("CallParty")]
 public sealed class CallParty: AbstractEffect
 {
     public override bool IsInstant => true;

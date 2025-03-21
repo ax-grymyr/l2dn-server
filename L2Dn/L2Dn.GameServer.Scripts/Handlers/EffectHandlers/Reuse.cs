@@ -9,7 +9,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("Reuse")]
+[HandlerStringKey("Reuse")]
 public sealed class Reuse: AbstractEffect
 {
     private readonly SkillMagicType _magicType;

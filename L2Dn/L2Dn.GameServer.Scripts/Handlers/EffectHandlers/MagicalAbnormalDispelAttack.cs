@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Magical Abnormal-depending dispel Attack effect implementation.
 /// </summary>
-[HandlerName("MagicalAbnormalDispelAttack")]
+[HandlerStringKey("MagicalAbnormalDispelAttack")]
 public sealed class MagicalAbnormalDispelAttack: AbstractEffect
 {
     private readonly double _power;

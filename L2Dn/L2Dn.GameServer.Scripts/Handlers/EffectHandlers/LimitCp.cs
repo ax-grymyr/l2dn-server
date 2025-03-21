@@ -3,5 +3,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("LimitCp")]
+[HandlerStringKey("LimitCp")]
 public sealed class LimitCp(EffectParameterSet parameters): AbstractStatEffect(parameters, Stat.MAX_RECOVERABLE_CP);

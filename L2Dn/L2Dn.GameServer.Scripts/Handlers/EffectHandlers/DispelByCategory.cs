@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Dispel By Category effect implementation.
 /// </summary>
-[HandlerName("DispelByCategory")]
+[HandlerStringKey("DispelByCategory")]
 public sealed class DispelByCategory: AbstractEffect
 {
     private readonly DispelSlotType _slot;

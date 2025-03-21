@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Rebalance HP effect implementation.
 /// </summary>
-[HandlerName("RebalanceHPSummon")]
+[HandlerStringKey("RebalanceHPSummon")]
 public sealed class RebalanceHPSummon: AbstractEffect
 {
     public override EffectTypes EffectTypes => EffectTypes.REBALANCE_HP;

@@ -5,6 +5,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("ElementalSpiritAttack")]
+[HandlerStringKey("ElementalSpiritAttack")]
 public sealed class ElementalSpiritAttack(EffectParameterSet parameters)
     : AbstractStatEffect(parameters, parameters.GetEnum<ElementalType>(XmlSkillEffectParameterType.Type).getAttackStat());

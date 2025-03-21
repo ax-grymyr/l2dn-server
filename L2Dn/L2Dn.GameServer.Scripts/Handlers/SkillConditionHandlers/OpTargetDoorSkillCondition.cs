@@ -8,7 +8,7 @@ using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("OpTargetDoor")]
+[HandlerStringKey("OpTargetDoor")]
 public sealed class OpTargetDoorSkillCondition: ISkillCondition
 {
     private readonly Set<int> _doorIds = [];

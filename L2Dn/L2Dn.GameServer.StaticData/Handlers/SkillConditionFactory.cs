@@ -20,7 +20,7 @@ public sealed class SkillConditionFactory
 
     public void Register(Assembly assembly)
     {
-        _factories = FactoryHelper.CreateFactories<SkillConditionParameterSet, ISkillConditionBase>(assembly);
+        _factories = FactoryHelper.CreateFactories<string, SkillConditionParameterSet, ISkillConditionBase>(assembly);
         _logger.Info($"{nameof(SkillConditionFactory)}: Registered {_factories.Count} skill conditions.");
     }
 

@@ -3,5 +3,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("WeightLimit")]
+[HandlerStringKey("WeightLimit")]
 public sealed class WeightLimit(EffectParameterSet parameters): AbstractStatEffect(parameters, Stat.WEIGHT_LIMIT);

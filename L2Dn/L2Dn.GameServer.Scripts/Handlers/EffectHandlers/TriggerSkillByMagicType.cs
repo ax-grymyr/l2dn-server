@@ -19,7 +19,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Trigger skill by isMagic type.
 /// </summary>
-[HandlerName("TriggerSkillByMagicType")]
+[HandlerStringKey("TriggerSkillByMagicType")]
 public sealed class TriggerSkillByMagicType: AbstractEffect
 {
     private readonly FrozenSet<int> _magicTypes;

@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Block Chat effect implementation.
 /// </summary>
-[HandlerName("BlockChat")]
+[HandlerStringKey("BlockChat")]
 public sealed class BlockChat: AbstractEffect
 {
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

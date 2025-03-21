@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Block Action effect implementation.
 /// </summary>
-[HandlerName("BlockAction")]
+[HandlerStringKey("BlockAction")]
 public sealed class BlockAction: AbstractEffect
 {
     private readonly FrozenSet<int> _blockedActions;

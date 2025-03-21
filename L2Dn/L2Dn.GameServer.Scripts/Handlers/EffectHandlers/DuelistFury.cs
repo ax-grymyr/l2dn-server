@@ -6,7 +6,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("DuelistFury")]
+[HandlerStringKey("DuelistFury")]
 public sealed class DuelistFury: AbstractEffect
 {
     public override EffectFlags EffectFlags => EffectFlags.DUELIST_FURY;

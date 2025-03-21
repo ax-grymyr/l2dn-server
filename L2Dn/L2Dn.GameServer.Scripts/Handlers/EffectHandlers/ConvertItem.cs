@@ -17,7 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Convert Item effect implementation.
 /// </summary>
-[HandlerName("ConvertItem")]
+[HandlerStringKey("ConvertItem")]
 public sealed class ConvertItem: AbstractEffect
 {
     public override bool IsInstant => true;

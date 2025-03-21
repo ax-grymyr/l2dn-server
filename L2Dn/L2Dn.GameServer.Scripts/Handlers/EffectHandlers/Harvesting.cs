@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Harvesting effect implementation.
 /// </summary>
-[HandlerName("Harvesting")]
+[HandlerStringKey("Harvesting")]
 public sealed class Harvesting: AbstractEffect
 {
     public override bool IsInstant => true;

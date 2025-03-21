@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Cp Heal Over Time effect implementation.
 /// </summary>
-[HandlerName("CpHealOverTime")]
+[HandlerStringKey("CpHealOverTime")]
 public sealed class CpHealOverTime: AbstractEffect
 {
     private readonly double _power;

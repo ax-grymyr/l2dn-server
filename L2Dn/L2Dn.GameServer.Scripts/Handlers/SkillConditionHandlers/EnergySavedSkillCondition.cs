@@ -7,7 +7,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("EnergySaved")]
+[HandlerStringKey("EnergySaved")]
 public sealed class EnergySavedSkillCondition: ISkillCondition
 {
     private readonly int _amount;

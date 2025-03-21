@@ -17,7 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Energy Attack effect implementation.
 /// </summary>
-[HandlerName("EnergyAttack")]
+[HandlerStringKey("EnergyAttack")]
 public sealed class EnergyAttack: AbstractEffect
 {
     private readonly double _power;

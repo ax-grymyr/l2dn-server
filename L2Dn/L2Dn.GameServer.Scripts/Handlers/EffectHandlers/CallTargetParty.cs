@@ -11,7 +11,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// GM Effect: Call Target's Party around target effect implementation.
 /// </summary>
-[HandlerName("CallTargetParty")]
+[HandlerStringKey("CallTargetParty")]
 public sealed class CallTargetParty: AbstractEffect
 {
     public override bool IsInstant => true;

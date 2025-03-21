@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// MagicalAttack-damage over time effect implementation.
 /// </summary>
-[HandlerName("MagicalDamOverTime")]
+[HandlerStringKey("MagicalDamOverTime")]
 public sealed class MagicalDamOverTime: AbstractEffect
 {
     private readonly double _power;

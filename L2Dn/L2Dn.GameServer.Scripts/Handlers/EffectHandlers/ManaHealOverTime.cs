@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Mana Heal Over Time effect implementation.
 /// </summary>
-[HandlerName("ManaHealOverTime")]
+[HandlerStringKey("ManaHealOverTime")]
 public sealed class ManaHealOverTime: AbstractEffect
 {
     private readonly double _power;

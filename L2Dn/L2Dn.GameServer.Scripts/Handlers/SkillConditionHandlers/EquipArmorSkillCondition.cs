@@ -11,7 +11,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("EquipArmor")]
+[HandlerStringKey("EquipArmor")]
 public sealed class EquipArmorSkillCondition: ISkillCondition
 {
     private readonly ItemTypeMask _armorTypesMask = ItemTypeMask.Zero;

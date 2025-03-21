@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Heal Percent effect implementation.
 /// </summary>
-[HandlerName("HealPercent")]
+[HandlerStringKey("HealPercent")]
 public sealed class HealPercent: AbstractEffect
 {
     private readonly int _power;

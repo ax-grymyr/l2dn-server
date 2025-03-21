@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Damage Over Time effect implementation.
 /// </summary>
-[HandlerName("CallSkillOnActionTime")]
+[HandlerStringKey("CallSkillOnActionTime")]
 public sealed class CallSkillOnActionTime: AbstractEffect
 {
     private readonly SkillHolder _skill;

@@ -15,7 +15,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Defence Trait effect implementation.
 /// </summary>
-[HandlerName("DefenceTrait")]
+[HandlerStringKey("DefenceTrait")]
 public sealed class DefenceTrait: AbstractEffect
 {
     private readonly FrozenDictionary<TraitType, float> _defenceTraits;

@@ -3,5 +3,5 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("HpLimit")]
+[HandlerStringKey("HpLimit")]
 public sealed class HpLimit(EffectParameterSet parameters): AbstractStatEffect(parameters, Stat.HP_LIMIT);

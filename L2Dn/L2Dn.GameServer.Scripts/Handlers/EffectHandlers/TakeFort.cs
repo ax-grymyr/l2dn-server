@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Take Fort effect implementation.
 /// </summary>
-[HandlerName("TakeFort")]
+[HandlerStringKey("TakeFort")]
 public sealed class TakeFort: AbstractEffect
 {
     public override bool IsInstant => true;

@@ -12,7 +12,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("ServitorShareSkills")]
+[HandlerStringKey("ServitorShareSkills")]
 public sealed class ServitorShareSkills: AbstractEffect
 {
     private const int _servitorShareSkillId = 1557;

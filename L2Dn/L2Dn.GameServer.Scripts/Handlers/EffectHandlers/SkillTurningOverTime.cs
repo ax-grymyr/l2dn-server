@@ -10,7 +10,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("SkillTurningOverTime")]
+[HandlerStringKey("SkillTurningOverTime")]
 public sealed class SkillTurningOverTime: AbstractEffect
 {
     private readonly int _chance;

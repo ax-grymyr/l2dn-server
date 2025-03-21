@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("ModifyAssassinationPoints")]
+[HandlerStringKey("ModifyAssassinationPoints")]
 public sealed class ModifyAssassinationPoints: AbstractEffect
 {
     private readonly int _amount;

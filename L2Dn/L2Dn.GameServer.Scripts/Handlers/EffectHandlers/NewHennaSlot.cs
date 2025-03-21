@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("NewHennaSlot")]
+[HandlerStringKey("NewHennaSlot")]
 public sealed class NewHennaSlot(EffectParameterSet parameters):
     AbstractStatAddEffect(parameters, Stat.HENNA_SLOTS_AVAILABLE);

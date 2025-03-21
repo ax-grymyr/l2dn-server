@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("PvpPhysicalSkillDefenceBonus")]
+[HandlerStringKey("PvpPhysicalSkillDefenceBonus")]
 public sealed class PvpPhysicalSkillDefenceBonus(EffectParameterSet parameters)
     : AbstractStatPercentEffect(parameters, Stat.PVP_PHYSICAL_SKILL_DEFENCE);

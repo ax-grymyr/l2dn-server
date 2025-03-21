@@ -20,7 +20,7 @@ public sealed class AbstractEffectFactory
 
     public void Register(Assembly assembly)
     {
-        _factories = FactoryHelper.CreateFactories<EffectParameterSet, IAbstractEffect>(assembly);
+        _factories = FactoryHelper.CreateFactories<string, EffectParameterSet, IAbstractEffect>(assembly);
         _logger.Info($"{nameof(AbstractEffectFactory)}: Registered {_factories.Count} effect handlers.");
     }
 

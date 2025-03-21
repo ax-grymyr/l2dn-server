@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Call Skill effect implementation.
 /// </summary>
-[HandlerName("CallSkill")]
+[HandlerStringKey("CallSkill")]
 public sealed class CallSkill: AbstractEffect
 {
     private readonly SkillHolder _skill;

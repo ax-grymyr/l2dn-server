@@ -7,7 +7,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("DeathPoints")]
+[HandlerStringKey("DeathPoints")]
 public sealed class DeathPointsSkillCondition: ISkillCondition
 {
     private readonly int _amount;

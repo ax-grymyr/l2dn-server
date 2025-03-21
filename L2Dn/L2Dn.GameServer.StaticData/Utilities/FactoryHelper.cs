@@ -7,10 +7,11 @@ namespace L2Dn.GameServer.Utilities;
 
 internal static class FactoryHelper
 {
-    internal static FrozenDictionary<string, Func<TArg, THandler>> CreateFactories<TArg, THandler>(Assembly assembly)
+    internal static FrozenDictionary<TKey, Func<TArg, THandler>> CreateFactories<TKey, TArg, THandler>(Assembly assembly)
+        where TKey: notnull
     {
-        return GetAllHandlerTypes(assembly, typeof(THandler)).Select(pair =>
-                new KeyValuePair<string, Func<TArg, THandler>>(pair.Name, CreateFactory<TArg, THandler>(pair.Type))).
+        return GetAllHandlerTypes<TKey>(assembly, typeof(THandler)).Select(pair =>
+                new KeyValuePair<TKey, Func<TArg, THandler>>(pair.Key, CreateFactory<TArg, THandler>(pair.Type))).
             ToFrozenDictionary();
     }
 
@@ -37,7 +38,8 @@ internal static class FactoryHelper
         throw new InvalidOperationException($"Handler type {type} does not have supported constructor.");
     }
 
-    private static IEnumerable<TypeHandlerNamePair> GetAllHandlerTypes(Assembly assembly, Type baseType)
+    private static IEnumerable<TypeHandlerKeyPair<TKey>> GetAllHandlerTypes<TKey>(Assembly assembly, Type baseType)
+        where TKey: notnull
     {
         foreach (Type type in assembly.GetTypes())
         {
@@ -61,16 +63,13 @@ internal static class FactoryHelper
             if (!isOfBaseType)
                 continue;
 
-            HandlerNameAttribute? attribute = type.GetCustomAttribute<HandlerNameAttribute>();
+            HandlerKeyAttribute<TKey>? attribute = type.GetCustomAttribute<HandlerKeyAttribute<TKey>>();
             if (attribute is null)
                 continue;
 
-            if (string.IsNullOrEmpty(attribute.Name))
-                continue;
-
-            yield return new TypeHandlerNamePair(attribute.Name, type);
+            yield return new TypeHandlerKeyPair<TKey>(attribute.Key, type);
         }
     }
 
-    private readonly record struct TypeHandlerNamePair(string Name, Type Type);
+    private readonly record struct TypeHandlerKeyPair<TKey>(TKey Key, Type Type);
 }

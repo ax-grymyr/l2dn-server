@@ -10,7 +10,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("StatBonusSkillCritical")]
+[HandlerStringKey("StatBonusSkillCritical")]
 public sealed class StatBonusSkillCritical: AbstractEffect
 {
     private readonly double _stat;

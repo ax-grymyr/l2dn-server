@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("SoulshotResistance")]
+[HandlerStringKey("SoulshotResistance")]
 public sealed class SoulshotResistance(EffectParameterSet parameters):
     AbstractStatPercentEffect(parameters, Stat.SOULSHOT_RESISTANCE);

@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("VitalityPointsRate")]
+[HandlerStringKey("VitalityPointsRate")]
 public sealed class VitalityPointsRate(EffectParameterSet parameters):
     AbstractStatPercentEffect(parameters, Stat.VITALITY_CONSUME_RATE);

@@ -16,7 +16,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Lethal effect implementation.
 /// </summary>
-[HandlerName("Lethal")]
+[HandlerStringKey("Lethal")]
 public sealed class Lethal: AbstractEffect
 {
     private readonly double _fullLethal;

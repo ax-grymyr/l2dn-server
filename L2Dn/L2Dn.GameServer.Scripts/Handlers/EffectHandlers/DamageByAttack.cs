@@ -19,7 +19,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// Multiple values of this effect add-up to each other rather than multiplying with each other. Be careful,
 /// there were cases in retail where damage is deacreased to 0.
 /// </summary>
-[HandlerName("DamageByAttack")]
+[HandlerStringKey("DamageByAttack")]
 public sealed class DamageByAttack: AbstractEffect
 {
     private readonly double _value;

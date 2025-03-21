@@ -8,7 +8,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("OpInstantzone")]
+[HandlerStringKey("OpInstantzone")]
 public sealed class OpInstantzoneSkillCondition: ISkillCondition
 {
     private readonly int _instanceId;

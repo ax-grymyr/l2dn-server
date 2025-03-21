@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("MagicalAttackSpeed")]
+[HandlerStringKey("MagicalAttackSpeed")]
 public sealed class MagicalAttackSpeed(EffectParameterSet parameters):
     AbstractStatEffect(parameters, Stat.MAGIC_ATTACK_SPEED);

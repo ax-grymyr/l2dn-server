@@ -19,7 +19,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// Physical Soul Attack effect implementation.
 /// Note: Initial formula taken from PhysicalAttack.
 /// </summary>
-[HandlerName("PhysicalSoulAttack")]
+[HandlerStringKey("PhysicalSoulAttack")]
 public sealed class PhysicalSoulAttack: AbstractEffect
 {
     private readonly double _power;

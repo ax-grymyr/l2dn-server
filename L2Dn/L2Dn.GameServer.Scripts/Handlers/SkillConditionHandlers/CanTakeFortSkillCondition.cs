@@ -11,7 +11,7 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
-[HandlerName("CanTakeFort")]
+[HandlerStringKey("CanTakeFort")]
 public sealed class CanTakeFortSkillCondition: ISkillCondition
 {
     public bool canUse(Creature caster, Skill skill, WorldObject? target)

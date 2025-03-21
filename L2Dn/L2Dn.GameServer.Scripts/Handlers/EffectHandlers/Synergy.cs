@@ -17,7 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Synergy effect implementation.
 /// </summary>
-[HandlerName("Synergy")]
+[HandlerStringKey("Synergy")]
 public sealed class Synergy: AbstractEffect
 {
     private readonly FrozenSet<AbnormalType> _requiredSlots;

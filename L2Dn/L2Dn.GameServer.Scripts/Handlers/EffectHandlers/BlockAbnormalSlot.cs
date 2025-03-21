@@ -14,7 +14,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Block Buff Slot effect implementation.
 /// </summary>
-[HandlerName("BlockAbnormalSlot")]
+[HandlerStringKey("BlockAbnormalSlot")]
 public sealed class BlockAbnormalSlot: AbstractEffect
 {
     private readonly FrozenSet<AbnormalType> _blockAbnormalSlots;

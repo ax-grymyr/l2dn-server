@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Grow effect implementation.
 /// </summary>
-[HandlerName("Grow")]
+[HandlerStringKey("Grow")]
 public sealed class Grow: AbstractEffect
 {
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

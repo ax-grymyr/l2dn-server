@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Damage Over Time Percent effect implementation.
 /// </summary>
-[HandlerName("DamOverTimePercent")]
+[HandlerStringKey("DamOverTimePercent")]
 public sealed class DamOverTimePercent: AbstractEffect
 {
     private readonly bool _canKill;

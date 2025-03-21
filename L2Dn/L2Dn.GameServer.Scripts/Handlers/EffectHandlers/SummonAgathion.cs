@@ -13,7 +13,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Summon Agathion effect implementation.
 /// </summary>
-[HandlerName("SummonAgathion")]
+[HandlerStringKey("SummonAgathion")]
 public sealed class SummonAgathion: AbstractEffect
 {
     private readonly int _npcId;

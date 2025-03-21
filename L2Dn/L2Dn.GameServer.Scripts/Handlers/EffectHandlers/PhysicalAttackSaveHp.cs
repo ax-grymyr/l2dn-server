@@ -17,7 +17,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// Physical Attack effect implementation.
 /// Note: Initial formula taken from PhysicalAttack.
 /// </summary>
-[HandlerName("PhysicalAttackSaveHp")]
+[HandlerStringKey("PhysicalAttackSaveHp")]
 public sealed class PhysicalAttackSaveHp: AbstractEffect
 {
     private readonly double _power;

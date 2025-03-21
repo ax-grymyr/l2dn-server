@@ -9,7 +9,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Protection Blessing effect implementation.
 /// </summary>
-[HandlerName("ProtectionBlessing")]
+[HandlerStringKey("ProtectionBlessing")]
 public sealed class ProtectionBlessing: AbstractEffect
 {
     public override bool CanStart(Creature effector, Creature effected, Skill skill)

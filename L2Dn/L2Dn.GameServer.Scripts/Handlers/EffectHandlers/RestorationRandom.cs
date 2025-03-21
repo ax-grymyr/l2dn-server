@@ -21,7 +21,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// This effect is present in item skills that "extract" new items upon usage.
 /// This effect has been unhardcoded in order to work on targets as well.
 /// </summary>
-[HandlerName("RestorationRandom")]
+[HandlerStringKey("RestorationRandom")]
 public sealed class RestorationRandom: AbstractEffect
 {
     private readonly ImmutableArray<ExtractableProductItem> _products;

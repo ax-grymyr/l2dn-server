@@ -8,7 +8,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("PolearmSingleTarget")]
+[HandlerStringKey("PolearmSingleTarget")]
 public sealed class PolearmSingleTarget: AbstractEffect
 {
     public override void OnStart(Creature effector, Creature effected, Skill skill, Item? item)

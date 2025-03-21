@@ -12,7 +12,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 /// <summary>
 /// Detect Hidden Objects effect implementation.
 /// </summary>
-[HandlerName("DetectHiddenObjects")]
+[HandlerStringKey("DetectHiddenObjects")]
 public sealed class DetectHiddenObjects: AbstractEffect
 {
     public override bool IsInstant => true;

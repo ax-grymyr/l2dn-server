@@ -11,7 +11,7 @@ using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("Speed")]
+[HandlerStringKey("Speed")]
 public sealed class Speed: AbstractEffect
 {
     private readonly double _amount;

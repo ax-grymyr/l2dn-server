@@ -3,6 +3,6 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Scripts.Handlers.EffectHandlers;
 
-[HandlerName("AddMaxMagicCriticalRate")]
+[HandlerStringKey("AddMaxMagicCriticalRate")]
 public sealed class AddMaxMagicCriticalRate(EffectParameterSet parameters)
     : AbstractStatEffect(parameters, Stat.ADD_MAX_MAGIC_CRITICAL_RATE);
