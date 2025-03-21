@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Dto;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
@@ -49,7 +50,7 @@ public struct ExElementalSpiritAbsorbPacket: IIncomingPacket<GameSession>
         if (canAbsorb)
         {
             connection.Send(SystemMessageId.SUCCESSFUL_ABSORPTION);
-            spirit.addExperience(absorbItem.getExperience() * _amount);
+            spirit.addExperience(absorbItem.Experience * _amount);
 
             if (!player.isSubclassLocked())
             {

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
@@ -34,9 +35,9 @@ public readonly struct ElementalSpiritAbsorbInfoPacket(Player player, ElementalT
         writer.WriteInt32(absorbItems.Length); // AbsorbCount
         foreach (ElementalSpiritAbsorbItemHolder absorbItem in absorbItems)
         {
-            writer.WriteInt32(absorbItem.getId());
-            writer.WriteInt32((int)(player.getInventory().getItemByItemId(absorbItem.getId())?.getCount() ?? 0));
-            writer.WriteInt32(absorbItem.getExperience());
+            writer.WriteInt32(absorbItem.ItemId);
+            writer.WriteInt32((int)(player.getInventory().getItemByItemId(absorbItem.ItemId)?.getCount() ?? 0));
+            writer.WriteInt32(absorbItem.Experience);
         }
     }
 }

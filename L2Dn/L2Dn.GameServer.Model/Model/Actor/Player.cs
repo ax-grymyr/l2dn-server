@@ -14688,10 +14688,10 @@ public class Player: Playable
                 ElementalType type = (ElementalType)record.Type;
                 byte stage = record.Stage;
                 byte level = record.Level;
-                ElementalSpiritTemplateHolder spirit = ElementalSpiritData.getInstance().getSpirit(type, stage) ??
+                ElementalSpiritTemplateHolder spirit = ElementalSpiritData.Instance.GetSpirit(type, stage) ??
                     throw new InvalidOperationException($"No ElementalSpiritTemplate for type={type}, stage={stage}");
 
-				long experience = Math.Min(record.Exp, spirit.getMaxExperienceAtLevel(level));
+				long experience = Math.Min(record.Exp, spirit.GetMaxExperienceAtLevel(level));
 
 				newHolder.setCharId(record.CharacterId);
 				newHolder.setType(type);

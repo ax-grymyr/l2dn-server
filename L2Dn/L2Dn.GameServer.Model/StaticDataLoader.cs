@@ -50,7 +50,7 @@ public static class StaticDataLoader
         MissionLevel.getInstance();
         DailyMissionHandler.getInstance(); //.executeScript();
         DailyMissionData.getInstance();
-        ElementalSpiritData.getInstance();
+        ElementalSpiritData.Instance.Load();
         RankingPowerManager.getInstance();
         SubjugationData.getInstance();
         SubjugationGacha.getInstance();

@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.ElementalSpirits;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using NLog;
 
@@ -26,7 +27,7 @@ public class ElementalSpirit
 	{
         _owner = owner;
 		_data = new ElementalSpiritDataHolder(type, owner.ObjectId);
-        _template = ElementalSpiritData.getInstance().getSpirit(type, _data.getStage()) ??
+        _template = ElementalSpiritData.Instance.GetSpirit(type, _data.getStage()) ??
             throw new ArgumentException($"Elemental spirit template type={type}, stage={_data.getStage()} not found");
     }
 
@@ -34,14 +35,14 @@ public class ElementalSpirit
 	{
 		_owner = owner;
 		_data = data;
-        _template = ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage()) ??
+        _template = ElementalSpiritData.Instance.GetSpirit(_data.getType(), _data.getStage()) ??
             throw new ArgumentException(
                 $"Elemental spirit template type={_data.getType()}, stage={_data.getStage()} not found");
     }
 
 	public void addExperience(int experience)
 	{
-		if (_data.getLevel() == _template.getMaxLevel() && _data.getExperience() >= _template.getMaxExperienceAtLevel(_template.getMaxLevel()))
+		if (_data.getLevel() == _template.MaxLevel && _data.getExperience() >= _template.GetMaxExperienceAtLevel(_template.MaxLevel))
 		{
 			return;
 		}
@@ -75,7 +76,7 @@ public class ElementalSpirit
 	{
 		do
 		{
-			if (_data.getLevel() < _template.getMaxLevel())
+			if (_data.getLevel() < _template.MaxLevel)
 			{
 				_data.increaseLevel();
 			}
@@ -91,11 +92,11 @@ public class ElementalSpirit
 	{
 		_data.setLevel(Math.Max(1, _data.getLevel() - 1));
 
-        ElementalSpiritTemplateHolder template = ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage()) ??
+        ElementalSpiritTemplateHolder template = ElementalSpiritData.Instance.GetSpirit(_data.getType(), _data.getStage()) ??
             throw new ArgumentException(
                 $"Elemental spirit template type={_data.getType()}, stage={_data.getStage()} not found");
 
-		_data.setExperience(template.getMaxExperienceAtLevel(_data.getLevel() - 1));
+		_data.setExperience(template.GetMaxExperienceAtLevel(_data.getLevel() - 1));
 		resetCharacteristics();
 	}
 
@@ -111,7 +112,7 @@ public class ElementalSpirit
 	{
 		foreach (ElementalSpiritAbsorbItemHolder absorbItem in getAbsorbItems())
 		{
-			if (absorbItem.getId() == itemId)
+			if (absorbItem.ItemId == itemId)
 			{
 				return absorbItem;
 			}
@@ -124,11 +125,11 @@ public class ElementalSpirit
 		float amount = _data.getExperience() / ElementalSpiritData.FragmentXpConsume;
 		if (getLevel() > 1)
 		{
-            ElementalSpiritTemplateHolder template = ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage()) ??
+            ElementalSpiritTemplateHolder template = ElementalSpiritData.Instance.GetSpirit(_data.getType(), _data.getStage()) ??
                 throw new ArgumentException(
                     $"Elemental spirit template type={_data.getType()}, stage={_data.getStage()} not found");
 
-            amount += template.getMaxExperienceAtLevel(getLevel() - 1) / ElementalSpiritData.FragmentXpConsume;
+            amount += template.GetMaxExperienceAtLevel(getLevel() - 1) / ElementalSpiritData.FragmentXpConsume;
         }
 
 		return (int)amount;
@@ -152,7 +153,7 @@ public class ElementalSpirit
 		_data.setLevel(1);
 		_data.setExperience(0);
 
-        _template = ElementalSpiritData.getInstance().getSpirit(_data.getType(), _data.getStage()) ??
+        _template = ElementalSpiritData.Instance.GetSpirit(_data.getType(), _data.getStage()) ??
             throw new ArgumentException(
                 $"Elemental spirit template type={_data.getType()}, stage={_data.getStage()} not found");
 
@@ -172,17 +173,17 @@ public class ElementalSpirit
 
 	public ElementalType getType()
 	{
-		return _template.getType();
+		return _template.Type;
 	}
 
 	public byte getStage()
 	{
-		return _template.getStage();
+		return _template.Stage;
 	}
 
 	public int getNpcId()
 	{
-		return _template.getNpcId();
+		return _template.NpcId;
 	}
 
 	public long getExperience()
@@ -192,7 +193,7 @@ public class ElementalSpirit
 
 	public long getExperienceToNextLevel()
 	{
-		return _template.getMaxExperienceAtLevel(_data.getLevel());
+		return _template.GetMaxExperienceAtLevel(_data.getLevel());
 	}
 
 	public int getLevel()
@@ -202,22 +203,22 @@ public class ElementalSpirit
 
 	public int getMaxLevel()
 	{
-		return _template.getMaxLevel();
+		return _template.MaxLevel;
 	}
 
 	public int getAttack()
 	{
-		return _template.getAttackAtLevel(_data.getLevel()) + _data.getAttackPoints() * 5;
+		return _template.GetAttackAtLevel(_data.getLevel()) + _data.getAttackPoints() * 5;
 	}
 
 	public int getDefense()
 	{
-		return _template.getDefenseAtLevel(_data.getLevel()) + _data.getDefensePoints() * 5;
+		return _template.GetDefenseAtLevel(_data.getLevel()) + _data.getDefensePoints() * 5;
 	}
 
 	public int getMaxCharacteristics()
 	{
-		return _template.getMaxCharacteristics();
+		return _template.MaxCharacteristics;
 	}
 
 	public int getAttackPoints()
@@ -242,17 +243,17 @@ public class ElementalSpirit
 
 	public ImmutableArray<ItemHolder> getItemsToEvolve()
 	{
-		return _template.getItemsToEvolve();
+		return _template.ItemsToEvolve;
 	}
 
 	public ImmutableArray<ElementalSpiritAbsorbItemHolder> getAbsorbItems()
 	{
-		return _template.getAbsorbItems();
+		return _template.AbsorbItems;
 	}
 
 	public int getExtractItem()
 	{
-		return _template.getExtractItem();
+		return _template.ExtractItemId;
 	}
 
 	public void save()
@@ -313,12 +314,12 @@ public class ElementalSpirit
 
 	public int getCriticalRate()
 	{
-		return _template.getCriticalRateAtLevel(_data.getLevel()) + getCriticalRatePoints();
+		return _template.GetCriticalRateAtLevel(_data.getLevel()) + getCriticalRatePoints();
 	}
 
 	public int getCriticalDamage()
 	{
-		return _template.getCriticalDamageAtLevel(_data.getLevel()) + getCriticalDamagePoints();
+		return _template.GetCriticalDamageAtLevel(_data.getLevel()) + getCriticalDamagePoints();
 	}
 
 	public void setInUse(bool value)
