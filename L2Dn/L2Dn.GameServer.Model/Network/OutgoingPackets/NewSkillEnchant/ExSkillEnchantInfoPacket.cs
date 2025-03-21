@@ -39,8 +39,8 @@ public readonly struct ExSkillEnchantInfoPacket: IOutgoingPacket
         writer.WriteInt32(SkillEnchantData.getInstance().getChanceEnchantMap(_skill) * 100);
 
         // TODO: Item creation consumes object id from the pool, and the id is never released
-        writer.WriteInt16((short)InventoryPacketHelper.CalculatePacketSize(new ItemInfo(new Item(Inventory.ADENA_ID))));
-        writer.WriteInt32(Inventory.ADENA_ID);
+        writer.WriteInt16((short)InventoryPacketHelper.CalculatePacketSize(new ItemInfo(new Item(Inventory.AdenaId))));
+        writer.WriteInt32(Inventory.AdenaId);
         writer.WriteInt64(1000000); // TODO: Unhardcode this value
     }
 }

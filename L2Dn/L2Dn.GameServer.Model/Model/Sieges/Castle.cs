@@ -179,7 +179,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 						if (_castleFunction._cwh)
 						{
                             ownerClan.getWarehouse()
-								.destroyItemByItemId("CS_function_fee", Inventory.ADENA_ID, fee, null, null);
+								.destroyItemByItemId("CS_function_fee", Inventory.AdenaId, fee, null, null);
 						}
 
 						ThreadPool.schedule(new FunctionTask(_castle, _castleFunction, true), _castleFunction._rate);
@@ -677,7 +677,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 		if (player == null)
 			return false;
 
-        if (lease > 0 && !player.destroyItemByItemId("Consume", Inventory.ADENA_ID, lease, null, true))
+        if (lease > 0 && !player.destroyItemByItemId("Consume", Inventory.AdenaId, lease, null, true))
 			return false;
 
         if (addNew)

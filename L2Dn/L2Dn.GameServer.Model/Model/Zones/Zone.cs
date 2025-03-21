@@ -555,7 +555,7 @@ public abstract class Zone: IEventContainerProvider
 	public void visualizeZone(int z)
 	{
         foreach (Location3D point in _zone.GetVisualizationPoints(z))
-            ZoneManager.Instance.DropDebugItem(Inventory.ADENA_ID, 1, point.X, point.Y, point.Z);
+            ZoneManager.Instance.DropDebugItem(Inventory.AdenaId, 1, point.X, point.Y, point.Z);
 	}
 
 	public virtual void setEnabled(bool value)

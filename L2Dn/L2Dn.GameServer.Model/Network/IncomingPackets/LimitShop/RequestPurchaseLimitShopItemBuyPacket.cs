@@ -190,7 +190,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 			{
 				continue;
 			}
-			if (_product.getIngredientIds()[i] == Inventory.ADENA_ID)
+			if (_product.getIngredientIds()[i] == Inventory.AdenaId)
 			{
 				long amount = _product.getIngredientQuantities()[i] * _amount;
 				if (amount < 1)
@@ -293,7 +293,7 @@ public struct RequestPurchaseLimitShopItemBuyPacket: IIncomingPacket<GameSession
 			{
 				continue;
 			}
-			if (_product.getIngredientIds()[i] == Inventory.ADENA_ID)
+			if (_product.getIngredientIds()[i] == Inventory.AdenaId)
 			{
 				player.reduceAdena("LCoinShop", _product.getIngredientQuantities()[i] * _amount, player, true);
 			}

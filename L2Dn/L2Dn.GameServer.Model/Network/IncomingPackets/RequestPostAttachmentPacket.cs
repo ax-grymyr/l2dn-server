@@ -215,7 +215,7 @@ public struct RequestPostAttachmentPacket: IIncomingPacket<GameSession>
 			}
 			else
 			{
-				Item paidAdena = ItemData.getInstance().createItem("PayMail", Inventory.ADENA_ID, adena, player);
+				Item paidAdena = ItemData.getInstance().createItem("PayMail", Inventory.AdenaId, adena, player);
 				paidAdena.setOwnerId(msg.getSenderId());
 				paidAdena.setItemLocation(ItemLocation.INVENTORY);
 				paidAdena.updateDatabase(true);

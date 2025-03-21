@@ -1335,7 +1335,7 @@ public class ItemData: DataReaderBase
 
 		if ((Config.General.LOG_ITEMS && !process.equals("Reset") &&
                 !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) ||
-		    (Config.General.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.Id == Inventory.ADENA_ID)) ||
+		    (Config.General.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.Id == Inventory.AdenaId)) ||
 		    (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(item.Id)))
 		{
 			if (item.getEnchantLevel() > 0)
@@ -1447,7 +1447,7 @@ public class ItemData: DataReaderBase
 			World.getInstance().removeObject(item);
 			IdManager.getInstance().releaseId(item.ObjectId);
 
-			if ((Config.General.LOG_ITEMS && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.Id == Inventory.ADENA_ID)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(item.Id)))
+			if ((Config.General.LOG_ITEMS && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.Id == Inventory.AdenaId)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(item.Id)))
 			{
 				if (item.getEnchantLevel() > 0)
 				{

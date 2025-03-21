@@ -31,7 +31,7 @@ public abstract class Inventory: ItemContainer
 	}
 
 	// Common Items
-	public const int ADENA_ID = 57;
+	public const int AdenaId = 57;
 	public const int ANCIENT_ADENA_ID = 5575;
 	public const int BEAUTY_TICKET_ID = 36308;
 	public const int AIR_STONE_ID = 39461;

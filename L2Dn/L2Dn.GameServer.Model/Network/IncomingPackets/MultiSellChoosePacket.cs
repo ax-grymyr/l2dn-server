@@ -628,7 +628,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				long taxPaid = 0;
 				foreach (ItemChanceHolder ingredient in entry.getIngredients())
 				{
-					if (ingredient.Id == Inventory.ADENA_ID)
+					if (ingredient.Id == Inventory.AdenaId)
 					{
 						taxPaid += checked((long)(ingredient.getCount() * list.getIngredientMultiplier() * list.getTaxRate() * _amount));
 					}

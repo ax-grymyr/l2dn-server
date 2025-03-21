@@ -24,7 +24,7 @@ public class TeleportLocation
         _name = location.NameSpecified ? location.Name : string.Empty;
         _npcStringId = location.NpcStringIdSpecified ? (NpcStringId)location.NpcStringId : null;
         _questZoneId = location.QuestZoneIdSpecified ? location.QuestZoneId : 0;
-        _feeId =  location.FeeItemIdSpecified ? location.FeeItemId : Inventory.ADENA_ID;
+        _feeId =  location.FeeItemIdSpecified ? location.FeeItemId : Inventory.AdenaId;
         _feeCount = location.FeeCountSpecified ? location.FeeCount : 0;
 
         if (location.CastleIdSpecified && !string.IsNullOrEmpty(location.CastleId))

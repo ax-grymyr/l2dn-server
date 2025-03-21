@@ -85,7 +85,7 @@ public struct RequestNewHennaComposePacket: IIncomingPacket<GameSession>
 			itemsToUpdate.Add(new ItemInfo(slotTwoItem, ItemChangeType.MODIFIED));
 		}
 
-        Item? adenaItem = inventory.getItemByItemId(Inventory.ADENA_ID);
+        Item? adenaItem = inventory.getItemByItemId(Inventory.AdenaId);
         if (adenaItem != null)
 		    itemsToUpdate.Add(new ItemInfo(adenaItem, ItemChangeType.MODIFIED));
 
@@ -93,7 +93,7 @@ public struct RequestNewHennaComposePacket: IIncomingPacket<GameSession>
 		     inventory.destroyItemByItemId("Henna Improving", one.Id, one.getCount(), player, null) == null) ||
 		    (_slotTwoItemId != -1 &&
 		     inventory.destroyItemByItemId("Henna Improving", two.Id, two.getCount(), player, null) == null) ||
-		    inventory.destroyItemByItemId("Henna Improving", Inventory.ADENA_ID, commission, player, null) == null)
+		    inventory.destroyItemByItemId("Henna Improving", Inventory.AdenaId, commission, player, null) == null)
 		{
 			player.sendPacket(new NewHennaPotenComposePacket(henna.getDyeId(), -1, false));
 			return ValueTask.CompletedTask;

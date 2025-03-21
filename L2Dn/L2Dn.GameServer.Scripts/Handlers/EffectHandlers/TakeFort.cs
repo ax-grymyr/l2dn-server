@@ -43,7 +43,7 @@ public sealed class TakeFort: AbstractEffect
 
                     Message mail = new Message(player.ObjectId, "Orc Fortress", "", MailType.NPC);
                     Mail attachment = mail.createAttachments();
-                    attachment.addItem("Orc Fortress", Inventory.ADENA_ID, 30_000_000, player, player);
+                    attachment.addItem("Orc Fortress", Inventory.AdenaId, 30_000_000, player, player);
                     MailManager.getInstance().sendMessage(mail);
                 }
             }

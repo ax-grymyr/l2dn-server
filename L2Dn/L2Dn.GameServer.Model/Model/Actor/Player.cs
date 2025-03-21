@@ -3607,7 +3607,7 @@ public class Player: Playable
 	 */
 	public override bool destroyItemByItemId(string process, int itemId, long count, WorldObject? reference, bool sendMessage)
 	{
-		if (itemId == Inventory.ADENA_ID)
+		if (itemId == Inventory.AdenaId)
 		{
 			return reduceAdena(process, count, reference, sendMessage);
 		}
@@ -4395,7 +4395,7 @@ public class Player: Playable
 		{
 			_party.distributeItem(this, itemId, itemCount, false, target);
 		}
-		else if (itemId == Inventory.ADENA_ID)
+		else if (itemId == Inventory.AdenaId)
 		{
 			addAdena("Loot", itemCount, target, true);
 		}
@@ -4489,7 +4489,7 @@ public class Player: Playable
 
 			if (target.getOwnerId() != 0 && target.getOwnerId() != ObjectId && !isInLooterParty(target.getOwnerId()))
 			{
-				if (target.Id == Inventory.ADENA_ID)
+				if (target.Id == Inventory.AdenaId)
 				{
 					smsg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1_ADENA);
 					smsg.Params.addLong(target.getCount());
@@ -4579,7 +4579,7 @@ public class Player: Playable
 			{
 				_party.distributeItem(this, target);
 			}
-			else if (target.Id == Inventory.ADENA_ID && _inventory.getAdenaInstance() != null)
+			else if (target.Id == Inventory.AdenaId && _inventory.getAdenaInstance() != null)
 			{
 				addAdena("Pickup", target.getCount(), null, true);
 				ItemData.getInstance().destroyItem("Pickup", target, this, null);
@@ -5171,7 +5171,7 @@ public class Player: Playable
 					// Don't drop
 					if (itemDrop.isShadowItem() || // Dont drop Shadow Items
                         itemDrop.isTimeLimitedItem() || // Dont drop Time Limited Items
-                        !itemDrop.isDropable() || itemDrop.Id == Inventory.ADENA_ID || // Adena
+                        !itemDrop.isDropable() || itemDrop.Id == Inventory.AdenaId || // Adena
                         itemDrop.getTemplate().getType2() == ItemTemplate.TYPE2_QUEST || // Quest Items
                         (_pet != null && _pet.getControlObjectId() == itemDrop.Id) || // Control Item of active pet
                         Config.Pvp.KARMA_NONDROPPABLE_ITEMS.Contains(itemDrop.Id) || // Item listed in the non droppable item list

@@ -152,7 +152,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 						_fortFunction.dbSave();
 						if (_fortFunction._cwh)
 						{
-							_fort._fortOwner.getWarehouse().destroyItemByItemId("CS_function_fee", Inventory.ADENA_ID, fee, null, null);
+							_fort._fortOwner.getWarehouse().destroyItemByItemId("CS_function_fee", Inventory.AdenaId, fee, null, null);
 						}
 						ThreadPool.schedule(new FunctionTask(_fort, _fortFunction, true), _fortFunction._rate);
 					}
@@ -665,7 +665,7 @@ public class Fort: AbstractResidence, IEventContainerProvider
 		{
 			return false;
 		}
-		if (lease > 0 && !player.destroyItemByItemId("Consume", Inventory.ADENA_ID, lease, null, true))
+		if (lease > 0 && !player.destroyItemByItemId("Consume", Inventory.AdenaId, lease, null, true))
 		{
 			return false;
 		}

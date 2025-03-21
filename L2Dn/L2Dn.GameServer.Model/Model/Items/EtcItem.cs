@@ -31,7 +31,7 @@ public class EtcItem: ItemTemplate
         {
             _type2 = TYPE2_QUEST;
         }
-        else if (Id == Inventory.ADENA_ID || Id == Inventory.ANCIENT_ADENA_ID)
+        else if (Id == Inventory.AdenaId || Id == Inventory.ANCIENT_ADENA_ID)
         {
             _type2 = TYPE2_MONEY;
         }

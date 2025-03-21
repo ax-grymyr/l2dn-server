@@ -96,7 +96,7 @@ public class PlayerInventory: Inventory
 		List<Item> list = new();
 		foreach (Item item in _items)
 		{
-			if (!allowAdena && item.Id == ADENA_ID)
+			if (!allowAdena && item.Id == AdenaId)
 			{
 				continue;
 			}
@@ -273,7 +273,7 @@ public class PlayerInventory: Inventory
 	{
 		if (count > 0)
 		{
-			addItem(process, ADENA_ID, count, actor, reference);
+			addItem(process, AdenaId, count, actor, reference);
 		}
 	}
 
@@ -304,7 +304,7 @@ public class PlayerInventory: Inventory
 	{
 		if (count > 0)
 		{
-			return destroyItemByItemId(process, ADENA_ID, count, actor, reference) != null;
+			return destroyItemByItemId(process, AdenaId, count, actor, reference) != null;
 		}
 		return false;
 	}
@@ -367,7 +367,7 @@ public class PlayerInventory: Inventory
 		Item? addedItem = base.addItem(process, item, actor, reference);
 		if (addedItem != null)
 		{
-			if (addedItem.Id == ADENA_ID && !addedItem.Equals(_adena))
+			if (addedItem.Id == AdenaId && !addedItem.Equals(_adena))
 			{
 				_adena = addedItem;
 			}
@@ -430,7 +430,7 @@ public class PlayerInventory: Inventory
 		Item? item = base.addItem(process, itemId, count, actor, reference);
 		if (item != null)
 		{
-			if (item.Id == ADENA_ID && !item.Equals(_adena))
+			if (item.Id == AdenaId && !item.Equals(_adena))
 			{
 				_adena = item;
 			}
@@ -462,7 +462,7 @@ public class PlayerInventory: Inventory
 					actor.sendInventoryUpdate(playerIU);
 
 					// Adena UI update.
-					if (item.Id == Inventory.ADENA_ID)
+					if (item.Id == Inventory.AdenaId)
 					{
 						actor.sendPacket(new ExAdenaInvenCountPacket(actor));
 					}
@@ -572,7 +572,7 @@ public class PlayerInventory: Inventory
 		if (destroyedItem != null)
 		{
 			// Adena UI update.
-			if (destroyedItem.Id == Inventory.ADENA_ID)
+			if (destroyedItem.Id == Inventory.AdenaId)
 			{
 				actor?.sendPacket(new ExAdenaInvenCountPacket(actor));
 			}
@@ -769,7 +769,7 @@ public class PlayerInventory: Inventory
 			_owner.removeRequestsThatProcessesItem(item.ObjectId);
 		}
 
-		if (item.Id == ADENA_ID)
+		if (item.Id == AdenaId)
 		{
 			_adena = null;
 		}
@@ -826,7 +826,7 @@ public class PlayerInventory: Inventory
 	public override void restore()
 	{
 		base.restore();
-		_adena = getItemByItemId(ADENA_ID);
+		_adena = getItemByItemId(AdenaId);
 		_ancientAdena = getItemByItemId(ANCIENT_ADENA_ID);
 		_beautyTickets = getItemByItemId(BEAUTY_TICKET_ID);
 	}
@@ -958,7 +958,7 @@ public class PlayerInventory: Inventory
 	 */
 	public void blockAllItems()
 	{
-		setInventoryBlock([ADENA_ID], InventoryBlockType.WHITELIST);
+		setInventoryBlock([AdenaId], InventoryBlockType.WHITELIST);
 	}
 
 	/**

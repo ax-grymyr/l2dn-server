@@ -498,7 +498,7 @@ public class NpcViewMod: IBypassHandler
 
 				// bonus drop amount effect
 				rateAmount *= dropAmountEffectBonus;
-				if (item.Id == Inventory.ADENA_ID)
+				if (item.Id == Inventory.AdenaId)
 				{
 					rateAmount *= dropAmountAdenaEffectBonus;
 				}

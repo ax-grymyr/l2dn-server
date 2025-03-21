@@ -392,7 +392,7 @@ public class ItemCommissionManager
 			long addDiscount = (long) (saleFee * discountFee);
 			Message mail = new Message(itemInstance.getOwnerId(), itemInstance, MailType.COMMISSION_ITEM_SOLD);
 			Mail attachement = mail.createAttachments();
-			attachement.addItem("Commission Item Sold", Inventory.ADENA_ID, totalPrice - saleFee + addDiscount, player, null);
+			attachement.addItem("Commission Item Sold", Inventory.AdenaId, totalPrice - saleFee + addDiscount, player, null);
 			MailManager.getInstance().sendMessage(mail);
 
 			player.sendPacket(new ExResponseCommissionBuyItemPacket(commissionItem));

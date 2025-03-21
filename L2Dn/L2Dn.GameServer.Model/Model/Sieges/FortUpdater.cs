@@ -48,7 +48,7 @@ public class FortUpdater: Runnable
 					{
 						if (_clan.getWarehouse().getAdena() >= Config.Feature.FS_FEE_FOR_CASTLE)
 						{
-							_clan.getWarehouse().destroyItemByItemId("FS_fee_for_Castle", Inventory.ADENA_ID,
+							_clan.getWarehouse().destroyItemByItemId("FS_fee_for_Castle", Inventory.AdenaId,
 								Config.Feature.FS_FEE_FOR_CASTLE, null, null);
 							_fort.getContractedCastle()?.addToTreasuryNoTax(Config.Feature.FS_FEE_FOR_CASTLE);
 							_fort.raiseSupplyLvL();

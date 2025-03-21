@@ -273,7 +273,7 @@ public struct RequestBrBuyProductPacket: IIncomingPacket<GameSession>
 			}
 			case 1: // Adenas
 			{
-				return Inventory.ADENA_ID;
+				return Inventory.AdenaId;
 			}
 			case 2: // Hero coins
 			{

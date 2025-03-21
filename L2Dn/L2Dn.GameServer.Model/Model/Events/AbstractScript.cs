@@ -2046,11 +2046,11 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	{
 		if (applyRates)
 		{
-			rewardItems(player, Inventory.ADENA_ID, count);
+			rewardItems(player, Inventory.AdenaId, count);
 		}
 		else
 		{
-			giveItems(player, Inventory.ADENA_ID, count);
+			giveItems(player, Inventory.AdenaId, count);
 		}
 	}
 
@@ -2091,7 +2091,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		long count = countValue;
 		try
 		{
-			if (itemId == Inventory.ADENA_ID)
+			if (itemId == Inventory.AdenaId)
 			{
 				count = (long)(count * Config.Rates.RATE_QUEST_REWARD_ADENA);
 			}
@@ -2161,7 +2161,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	private static void sendItemGetMessage(Player player, Item item, long count)
 	{
 		// If item for reward is gold, send message of gold reward to client
-		if (item.Id == Inventory.ADENA_ID)
+		if (item.Id == Inventory.AdenaId)
 		{
 			SystemMessagePacket smsg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_ADENA_2);
 			smsg.Params.addLong(count);
@@ -2246,7 +2246,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 
 		// set enchant level for item if that item is not adena
-		if (enchantlevel > 0 && itemId != Inventory.ADENA_ID)
+		if (enchantlevel > 0 && itemId != Inventory.AdenaId)
 		{
 			item.setEnchantLevel(enchantlevel);
 		}
@@ -2365,7 +2365,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		double dropChanceWithBonus = dropChance * Config.Rates.RATE_QUEST_DROP; // TODO separate configs for rate and amount
 		if (npc != null && Config.ChampionMonsters.CHAMPION_ENABLE && npc.isChampion())
 		{
-			if (itemId == Inventory.ADENA_ID || itemId == Inventory.ANCIENT_ADENA_ID)
+			if (itemId == Inventory.AdenaId || itemId == Inventory.ANCIENT_ADENA_ID)
 			{
 				dropChanceWithBonus *= Config.ChampionMonsters.CHAMPION_ADENAS_REWARDS_CHANCE;
 				minAmountWithBonus = (long)(minAmountWithBonus * Config.ChampionMonsters.CHAMPION_ADENAS_REWARDS_AMOUNT);

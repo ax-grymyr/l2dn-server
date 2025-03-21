@@ -262,12 +262,12 @@ public class WorldExchangeManager: DataReaderBase
             return 0;
         }
 
-		if (itemToRemove.Id == Inventory.ADENA_ID)
+		if (itemToRemove.Id == Inventory.AdenaId)
 		{
 			return priceForEach * 100L;
 		}
 
-		return (long)(priceForEach * (itemToRemove.Id == Inventory.ADENA_ID ? 1 : amount) * Config.WorldExchange.WORLD_EXCHANGE_ADENA_FEE);
+		return (long)(priceForEach * (itemToRemove.Id == Inventory.AdenaId ? 1 : amount) * Config.WorldExchange.WORLD_EXCHANGE_ADENA_FEE);
 	}
 
 	/**

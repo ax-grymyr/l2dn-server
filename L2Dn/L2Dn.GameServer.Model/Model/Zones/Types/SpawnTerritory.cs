@@ -37,6 +37,6 @@ public sealed class SpawnTerritory(string name, ZoneForm territory)
     public void visualizeZone(int z)
     {
         foreach (Location3D point in territory.GetVisualizationPoints(z))
-            ZoneManager.Instance.DropDebugItem(Inventory.ADENA_ID, 1, point.X, point.Y, point.Z);
+            ZoneManager.Instance.DropDebugItem(Inventory.AdenaId, 1, point.X, point.Y, point.Z);
     }
 }

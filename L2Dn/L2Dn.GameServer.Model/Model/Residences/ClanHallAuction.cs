@@ -122,7 +122,7 @@ public class ClanHallAuction
 
 	public void returnAdenas(Bidder bidder)
 	{
-		bidder.getClan().getWarehouse().addItem("Clan Hall Auction Outbid", Inventory.ADENA_ID, bidder.getBid(), null, null);
+		bidder.getClan().getWarehouse().addItem("Clan Hall Auction Outbid", Inventory.AdenaId, bidder.getBid(), null, null);
 	}
 
 	public void finalizeAuctions()

@@ -323,7 +323,7 @@ public class ClanHall: AbstractResidence
 				}
 				else
 				{
-					_clanHall._owner.getWarehouse().destroyItem("Clan Hall Lease", Inventory.ADENA_ID, _clanHall._lease, null, null);
+					_clanHall._owner.getWarehouse().destroyItem("Clan Hall Lease", Inventory.AdenaId, _clanHall._lease, null, null);
 					_clanHall.setPaidUntil(_clanHall._paidUntil.AddDays(7));
 					_clanHall._checkPaymentTask = ThreadPool.schedule(new CheckPaymentTask(_clanHall), _clanHall._paidUntil - DateTime.UtcNow);
 					_clanHall.updateDB();

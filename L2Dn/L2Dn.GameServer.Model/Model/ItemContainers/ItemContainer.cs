@@ -522,7 +522,7 @@ public abstract class ItemContainer
 	{
 		foreach (Item item in _items)
 		{
-			if (item.Id == Inventory.ADENA_ID)
+			if (item.Id == Inventory.AdenaId)
 			{
 				return item.getCount();
 			}

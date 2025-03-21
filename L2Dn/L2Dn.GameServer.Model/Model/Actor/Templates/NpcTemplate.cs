@@ -721,7 +721,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable
                     if (Config.Rates.RATE_DROP_CHANCE_BY_ID.TryGetValue(itemId, out float value1))
                     {
                         rateChance *= value1;
-                        if (champion && itemId == Inventory.ADENA_ID)
+                        if (champion && itemId == Inventory.AdenaId)
                         {
                             rateChance *= Config.ChampionMonsters.CHAMPION_ADENAS_REWARDS_CHANCE;
                         }
@@ -802,7 +802,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable
                     }
 
                     // prevent to drop item if level of monster lower then level of player by [Config]
-                    if (levelDifference > (dropItem.getItemId() == Inventory.ADENA_ID
+                    if (levelDifference > (dropItem.getItemId() == Inventory.AdenaId
                             ? Config.Rates.DROP_ADENA_MAX_LEVEL_LOWEST_DIFFERENCE
                             : Config.Rates.DROP_ITEM_MAX_LEVEL_LOWEST_DIFFERENCE))
                     {
@@ -934,7 +934,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable
                 }
 
                 // prevent to drop item if level of monster lower than level of player by [Config]
-                if (levelDifference > (dropItem.getItemId() == Inventory.ADENA_ID
+                if (levelDifference > (dropItem.getItemId() == Inventory.AdenaId
                         ? Config.Rates.DROP_ADENA_MAX_LEVEL_LOWEST_DIFFERENCE
                         : Config.Rates.DROP_ITEM_MAX_LEVEL_LOWEST_DIFFERENCE))
                 {
@@ -1045,7 +1045,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable
             if (Config.Rates.RATE_DROP_AMOUNT_BY_ID.TryGetValue(itemId, out float value))
             {
                 rateAmount *= value;
-                if (champion && itemId == Inventory.ADENA_ID)
+                if (champion && itemId == Inventory.AdenaId)
                 {
                     rateAmount *= Config.ChampionMonsters.CHAMPION_ADENAS_REWARDS_AMOUNT;
                 }
@@ -1090,7 +1090,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable
 
                 // bonus drop amount effect
                 rateAmount *= player.getStat().getMul(Stat.BONUS_DROP_AMOUNT, 1);
-                if (itemId == Inventory.ADENA_ID)
+                if (itemId == Inventory.AdenaId)
                 {
                     rateAmount *= player.getStat().getMul(Stat.BONUS_DROP_ADENA, 1);
                 }
@@ -1125,7 +1125,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable
                 if (Config.Rates.RATE_DROP_CHANCE_BY_ID.TryGetValue(itemId, out float value))
                 {
                     rateChance *= value;
-                    if (champion && itemId == Inventory.ADENA_ID)
+                    if (champion && itemId == Inventory.AdenaId)
                     {
                         rateChance *= Config.ChampionMonsters.CHAMPION_ADENAS_REWARDS_CHANCE;
                     }
@@ -1184,7 +1184,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable
                     if (Config.Rates.RATE_DROP_AMOUNT_BY_ID.TryGetValue(itemId, out float value1))
                     {
                         rateAmount *= value1;
-                        if (champion && itemId == Inventory.ADENA_ID)
+                        if (champion && itemId == Inventory.AdenaId)
                         {
                             rateAmount *= Config.ChampionMonsters.CHAMPION_ADENAS_REWARDS_AMOUNT;
                         }
@@ -1228,7 +1228,7 @@ public class NpcTemplate: CreatureTemplate, IIdentifiable
 
                         // bonus drop amount effect
                         rateAmount *= player.getStat().getMul(Stat.BONUS_DROP_AMOUNT, 1);
-                        if (itemId == Inventory.ADENA_ID)
+                        if (itemId == Inventory.AdenaId)
                         {
                             rateAmount *= player.getStat().getMul(Stat.BONUS_DROP_ADENA, 1);
                         }

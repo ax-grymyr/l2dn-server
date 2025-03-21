@@ -97,7 +97,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 			}
 
 			// Calculate needed adena and slots
-			if (item.Id == Inventory.ADENA_ID)
+			if (item.Id == Inventory.AdenaId)
 			{
 				currentAdena -= itemHolder.getCount();
 			}

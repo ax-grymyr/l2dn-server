@@ -256,7 +256,7 @@ public class Item: WorldObject
 	{
 		setOwnerId(ownerId);
 
-		if ((Config.General.LOG_ITEMS && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || _itemTemplate.Id == Inventory.ADENA_ID)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.Id)))
+		if ((Config.General.LOG_ITEMS && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || _itemTemplate.Id == Inventory.AdenaId)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.Id)))
 		{
 			if (_enchantLevel > 0)
 			{
@@ -433,7 +433,7 @@ public class Item: WorldObject
 		}
 
 		long old = _count;
-		long max = _itemId == Inventory.ADENA_ID ? Inventory.MAX_ADENA : long.MaxValue;
+		long max = _itemId == Inventory.AdenaId ? Inventory.MAX_ADENA : long.MaxValue;
 
 		if (count > 0 && _count > max - count)
 		{
@@ -451,7 +451,7 @@ public class Item: WorldObject
 
 		_storedInDb = false;
 
-		if ((Config.General.LOG_ITEMS && process != null && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || _itemTemplate.Id == Inventory.ADENA_ID)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.Id)))
+		if ((Config.General.LOG_ITEMS && process != null && !Config.General.LOG_ITEMS_SMALL_LOG && !Config.General.LOG_ITEMS_IDS_ONLY) || (Config.General.LOG_ITEMS_SMALL_LOG && (_itemTemplate.isEquipable() || _itemTemplate.Id == Inventory.AdenaId)) || (Config.General.LOG_ITEMS_IDS_ONLY && Config.General.LOG_ITEMS_IDS_LIST.Contains(_itemTemplate.Id)))
 		{
 			if (_enchantLevel > 0)
 			{
@@ -881,7 +881,7 @@ public class Item: WorldObject
 			&& (pet == null ||
 				ObjectId != pet.getControlObjectId()) // Not Control item of currently summoned pet
 			&& !player.isProcessingItem(ObjectId) // Not momentarily used enchant scroll
-			&& (allowAdena || _itemId != Inventory.ADENA_ID) // Not Adena
+			&& (allowAdena || _itemId != Inventory.AdenaId) // Not Adena
 			&& !player.isCastingNow(s => s.getSkill().ItemConsumeId != _itemId) && (allowNonTradeable ||
 				(isTradeable() && !(_itemTemplate.getItemType() == EtcItemType.PET_COLLAR &&
 					player.havePetInvItems())));

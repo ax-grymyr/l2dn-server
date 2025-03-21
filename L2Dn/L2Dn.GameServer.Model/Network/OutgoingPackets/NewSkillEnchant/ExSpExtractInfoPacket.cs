@@ -29,11 +29,11 @@ public readonly struct ExSpExtractInfoPacket: IOutgoingPacket
         writer.WriteInt16((short)InventoryPacketHelper.CalculatePacketSize(new ItemInfo(new Item(Inventory.SP_POINTS))));
         writer.WriteInt32(Inventory.SP_POINTS);
         writer.WriteInt64(5000000000L);
-        writer.WriteInt16((short)InventoryPacketHelper.CalculatePacketSize(new ItemInfo(new Item(Inventory.ADENA_ID))));
-        writer.WriteInt32(Inventory.ADENA_ID);
+        writer.WriteInt16((short)InventoryPacketHelper.CalculatePacketSize(new ItemInfo(new Item(Inventory.AdenaId))));
+        writer.WriteInt32(Inventory.AdenaId);
         writer.WriteInt64(3000000);
-        writer.WriteInt16((short)InventoryPacketHelper.CalculatePacketSize(new ItemInfo(new Item(Inventory.ADENA_ID))));
-        writer.WriteInt32(Inventory.ADENA_ID);
+        writer.WriteInt16((short)InventoryPacketHelper.CalculatePacketSize(new ItemInfo(new Item(Inventory.AdenaId))));
+        writer.WriteInt32(Inventory.AdenaId);
         writer.WriteInt64(1);
         writer.WriteInt32(_player.getVariables().Get(PlayerVariables.DAILY_EXTRACT_ITEM + Inventory.SP_POUCH, 5));
         writer.WriteInt32(5);

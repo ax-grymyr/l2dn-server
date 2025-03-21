@@ -233,7 +233,7 @@ public class TeleportHolder
 		if (shouldPayFee(player, loc) &&
 		    !player.destroyItemByItemId("Teleport", loc.getFeeId(), calculateFee(player, loc), npc, true))
 		{
-			if (loc.getFeeId() == Inventory.ADENA_ID)
+			if (loc.getFeeId() == Inventory.AdenaId)
 			{
 				player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
 			}
@@ -305,7 +305,7 @@ public class TeleportHolder
 	{
 		if (fstring)
         {
-            if (itemId == Inventory.ADENA_ID)
+            if (itemId == Inventory.AdenaId)
 			{
 				return "<fstring>1000308</fstring>";
 			}

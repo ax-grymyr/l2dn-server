@@ -127,7 +127,7 @@ public struct ExTimedHuntingZoneEnterPacket: IIncomingPacket<GameSession>
 
 		if (endTime > currentTime)
 		{
-			if (holder.getEntryItemId() == Inventory.ADENA_ID)
+			if (holder.getEntryItemId() == Inventory.AdenaId)
 			{
 				if (player.getAdena() > holder.getEntryFee())
 				{

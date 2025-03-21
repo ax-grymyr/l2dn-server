@@ -189,7 +189,7 @@ public struct RequestDropItemPacket: IIncomingPacket<GameSession>
 		    //GMAudit.auditGMAction(player.getName() + " [" + player.getObjectId() + "]", "Drop", target, "(id: " + dropedItem.getId() + " name: " + dropedItem.getItemName() + " objId: " + dropedItem.getObjectId() + " x: " + player.getX() + " y: " + player.getY() + " z: " + player.getZ() + ")");
 	    }
 
-	    if (dropedItem != null && dropedItem.Id == Inventory.ADENA_ID && dropedItem.getCount() >= 1000000)
+	    if (dropedItem != null && dropedItem.Id == Inventory.AdenaId && dropedItem.getCount() >= 1000000)
 	    {
 		    string msg = $"Character ({player.getName()}) has dropped ({dropedItem.getCount()})adena at {_location}";
 		    PacketLogger.Instance.Warn(msg);

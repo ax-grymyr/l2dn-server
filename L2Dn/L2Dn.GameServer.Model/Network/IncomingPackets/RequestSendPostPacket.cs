@@ -259,7 +259,7 @@ public struct RequestSendPostPacket: IIncomingPacket<GameSession>
 				}
 
 				fee += MESSAGE_FEE_PER_SLOT;
-				if (item.Id == Inventory.ADENA_ID)
+				if (item.Id == Inventory.AdenaId)
 				{
 					currentAdena -= i.Count;
 				}

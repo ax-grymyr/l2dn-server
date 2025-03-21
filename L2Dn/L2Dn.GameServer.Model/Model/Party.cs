@@ -656,7 +656,7 @@ public class Party : AbstractPlayerGroup
 	 */
 	public void distributeItem(Player player, Item item)
 	{
-		if (item.Id == Inventory.ADENA_ID)
+		if (item.Id == Inventory.AdenaId)
 		{
 			distributeAdena(player, item.getCount(), player);
 			ItemData.getInstance().destroyItem("Party", item, player, null);
@@ -694,7 +694,7 @@ public class Party : AbstractPlayerGroup
 	 */
 	public void distributeItem(Player player, int itemId, long itemCount, bool spoil, Attackable target)
 	{
-		if (itemId == Inventory.ADENA_ID)
+		if (itemId == Inventory.AdenaId)
 		{
 			distributeAdena(player, itemCount, target);
 			return;

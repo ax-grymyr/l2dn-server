@@ -601,7 +601,7 @@ public class Pet: Summon
 
             if (target.getOwnerId() != 0 && target.getOwnerId() != getOwner().ObjectId && !getOwner().isInLooterParty(target.getOwnerId()))
 			{
-				if (target.Id == Inventory.ADENA_ID)
+				if (target.Id == Inventory.AdenaId)
 				{
 					smsg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_FAILED_TO_PICK_UP_S1_ADENA);
 					smsg.Params.addLong(target.getCount());
@@ -654,7 +654,7 @@ public class Pet: Summon
 		}
 		else
 		{
-			if (target.Id == Inventory.ADENA_ID)
+			if (target.Id == Inventory.AdenaId)
 			{
 				smsg = new SystemMessagePacket(SystemMessageId.YOUR_PET_PICKED_UP_S1_ADENA);
 				smsg.Params.addLong(target.getCount());
