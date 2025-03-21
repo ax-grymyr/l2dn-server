@@ -1,7 +1,9 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Packets;
 using NLog;
 
@@ -26,8 +28,8 @@ public readonly struct ExPledgeBonusOpenPacket: IOutgoingPacket
 			return;
 		}
 
-		ClanRewardBonus? highestMembersOnlineBonus = ClanRewardData.getInstance().getHighestReward(ClanRewardType.MEMBERS_ONLINE);
-		ClanRewardBonus? highestHuntingBonus = ClanRewardData.getInstance().getHighestReward(ClanRewardType.HUNTING_MONSTERS);
+		ClanRewardBonus? highestMembersOnlineBonus = ClanRewardData.Instance.GetHighestReward(ClanRewardType.MEMBERS_ONLINE);
+		ClanRewardBonus? highestHuntingBonus = ClanRewardData.Instance.GetHighestReward(ClanRewardType.HUNTING_MONSTERS);
 		ClanRewardBonus? membersOnlineBonus = ClanRewardType.MEMBERS_ONLINE.getAvailableBonus(clan);
 		ClanRewardBonus? huntingBonus = ClanRewardType.HUNTING_MONSTERS.getAvailableBonus(clan);
 		if (highestMembersOnlineBonus == null)
@@ -40,12 +42,12 @@ public readonly struct ExPledgeBonusOpenPacket: IOutgoingPacket
 			_logger.Error("Couldn't find highest available clan hunting bonus!!");
 			return;
 		}
-		else if (highestMembersOnlineBonus.getSkillReward() == null)
+		else if (highestMembersOnlineBonus.RewardSkill == null)
 		{
 			_logger.Error("Couldn't find skill reward for highest available members online bonus!!");
 			return;
 		}
-		else if (highestHuntingBonus.getSkillReward() == null)
+		else if (highestHuntingBonus.RewardSkill == null)
 		{
 			_logger.Error("Couldn't find skill reward for highest available hunting bonus!!");
 			return;
@@ -55,19 +57,19 @@ public readonly struct ExPledgeBonusOpenPacket: IOutgoingPacket
 		writer.WritePacketCode(OutgoingPacketCodes.EX_PLEDGE_BONUS_OPEN);
 
 		// Members online bonus
-		writer.WriteInt32(highestMembersOnlineBonus.getRequiredAmount());
+		writer.WriteInt32(highestMembersOnlineBonus.RequiredAmount);
 		writer.WriteInt32(clan.getMaxOnlineMembers());
 		writer.WriteByte(2); // 140
-		writer.WriteInt32(membersOnlineBonus != null ? highestMembersOnlineBonus.getSkillReward().getSkillId() : 0);
-		writer.WriteByte((byte)(membersOnlineBonus != null ? membersOnlineBonus.getLevel() : 0));
+		writer.WriteInt32(membersOnlineBonus != null ? highestMembersOnlineBonus.RewardSkill.getSkillId() : 0);
+		writer.WriteByte((byte)(membersOnlineBonus != null ? membersOnlineBonus.Level : 0));
 		writer.WriteByte(clan.canClaimBonusReward(_player, ClanRewardType.MEMBERS_ONLINE));
 
 		// Hunting bonus
-		writer.WriteInt32(highestHuntingBonus.getRequiredAmount());
+		writer.WriteInt32(highestHuntingBonus.RequiredAmount);
 		writer.WriteInt32(clan.getHuntingPoints());
 		writer.WriteByte(2); // 140
-		writer.WriteInt32(huntingBonus != null ? highestHuntingBonus.getSkillReward().getSkillId() : 0);
-		writer.WriteByte((byte)(huntingBonus != null ? huntingBonus.getLevel() : 0));
+		writer.WriteInt32(huntingBonus != null ? highestHuntingBonus.RewardSkill.getSkillId() : 0);
+		writer.WriteByte((byte)(huntingBonus != null ? huntingBonus.Level : 0));
 		writer.WriteByte(clan.canClaimBonusReward(_player, ClanRewardType.HUNTING_MONSTERS));
 	}
 }

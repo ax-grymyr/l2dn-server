@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Dto;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Holders;
@@ -37,7 +38,7 @@ public struct RequestPledgeBonusRewardPacket: IIncomingPacket<GameSession>
             ClanRewardBonus? bonus = _type.getAvailableBonus(clan);
             if (bonus != null)
             {
-                SkillHolder skillReward = bonus.getSkillReward();
+                SkillHolder skillReward = bonus.RewardSkill;
                 if (skillReward != null)
                 {
                     skillReward.getSkill().ActivateSkill(player, [player]);

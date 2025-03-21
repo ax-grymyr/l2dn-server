@@ -2915,14 +2915,14 @@ public class Clan: IIdentifiable, INamable
 			{
 				_lastMembersOnlineBonus = availableBonus;
 				var sm = new SystemMessagePacket(SystemMessageId.YOUR_CLAN_HAS_ACHIEVED_LOGIN_BONUS_LV_S1);
-				sm.Params.addByte(availableBonus.getLevel());
+				sm.Params.addByte(availableBonus.Level);
 				broadcastToOnlineMembers(sm);
 			}
-			else if (_lastMembersOnlineBonus.getLevel() < availableBonus.getLevel())
+			else if (_lastMembersOnlineBonus.Level < availableBonus.Level)
 			{
 				_lastMembersOnlineBonus = availableBonus;
 				var sm = new SystemMessagePacket(SystemMessageId.YOUR_CLAN_HAS_ACHIEVED_LOGIN_BONUS_LV_S1);
-				sm.Params.addByte(availableBonus.getLevel());
+				sm.Params.addByte(availableBonus.Level);
 				broadcastToOnlineMembers(sm);
 			}
 		}
@@ -2961,14 +2961,14 @@ public class Clan: IIdentifiable, INamable
 				{
 					_lastHuntingBonus = availableBonus;
 					var sm = new SystemMessagePacket(SystemMessageId.YOUR_CLAN_HAS_ACHIEVED_HUNTING_BONUS_LV_S1);
-					sm.Params.addByte(availableBonus.getLevel());
+					sm.Params.addByte(availableBonus.Level);
 					broadcastToOnlineMembers(sm);
 				}
-				else if (_lastHuntingBonus.getLevel() < availableBonus.getLevel())
+				else if (_lastHuntingBonus.Level < availableBonus.Level)
 				{
 					_lastHuntingBonus = availableBonus;
 					var sm = new SystemMessagePacket(SystemMessageId.YOUR_CLAN_HAS_ACHIEVED_HUNTING_BONUS_LV_S1);
-					sm.Params.addByte(availableBonus.getLevel());
+					sm.Params.addByte(availableBonus.Level);
 					broadcastToOnlineMembers(sm);
 				}
 			}
@@ -3115,11 +3115,11 @@ public class Clan: IIdentifiable, INamable
 		};
 
 		ClanRewardBonus? availableBonus = null;
-		foreach (ClanRewardBonus bonus in ClanRewardData.getInstance().getClanRewardBonuses(rewardType))
+		foreach (ClanRewardBonus bonus in ClanRewardData.Instance.GetClanRewardBonuses(rewardType))
 		{
-			if (bonus.getRequiredAmount() <= currentAmount)
+			if (bonus.RequiredAmount <= currentAmount)
 			{
-				if (availableBonus == null || availableBonus.getLevel() < bonus.getLevel())
+				if (availableBonus == null || availableBonus.Level < bonus.Level)
 				{
 					availableBonus = bonus;
 				}
