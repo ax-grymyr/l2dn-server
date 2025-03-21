@@ -1,8 +1,8 @@
 ﻿using System.Xml.Serialization;
 
-namespace L2Dn.Model.Xml;
+namespace L2Dn.GameServer.StaticData.Xml.CharacterClasses;
 
-public class XmlCharacterClass
+public sealed class XmlCharacterClass
 {
     [XmlAttribute("classId")]
     public int ClassId { get; set; }

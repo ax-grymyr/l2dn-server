@@ -411,7 +411,7 @@ public class VillageMaster: Folk
 						StringBuilder content1 = new StringBuilder(200);
 						foreach (CharacterClass subClass in subsAvailable)
 						{
-							content1.Append("<a action=\"bypass npc_%objectId%_Subclass 4 " + (int)subClass + "\" msg=\"1268;" + ClassListData.getInstance().getClass(subClass).getClassName() + "\">" + ClassListData.getInstance().getClass(subClass).getClientCode() + "</a><br>");
+							content1.Append("<a action=\"bypass npc_%objectId%_Subclass 4 " + (int)subClass + "\" msg=\"1268;" + CharacterClassData.Instance.GetClassInfo(subClass).Name + "\">" + CharacterClassData.Instance.GetClassInfo(subClass).GetClientCode() + "</a><br>");
 						}
 
 						htmlText.Replace("%list%", content1.ToString());
@@ -448,7 +448,7 @@ public class VillageMaster: Folk
 						StringBuilder content2 = new StringBuilder(200);
 						if (checkVillageMaster(player.getBaseClass()))
 						{
-							content2.Append("<a action=\"bypass -h npc_%objectId%_Subclass 5 0\">" + ClassListData.getInstance().getClass(player.getBaseClass()).getClientCode() + "</a><br>");
+							content2.Append("<a action=\"bypass -h npc_%objectId%_Subclass 5 0\">" + CharacterClassData.Instance.GetClassInfo(player.getBaseClass()).GetClientCode() + "</a><br>");
 						}
 
 						foreach (SubClassHolder holder in player.getSubClasses().Values)
@@ -457,8 +457,8 @@ public class VillageMaster: Folk
 							{
 								content2.Append("<a action=\"bypass -h npc_%objectId%_Subclass 5 " +
 								                holder.getClassIndex() + "\">" +
-								                ClassListData.getInstance().getClass(holder.getClassDefinition())
-									                .getClientCode() + "</a><br>");
+								                CharacterClassData.Instance.GetClassInfo(holder.getClassDefinition())
+									                .GetClientCode() + "</a><br>");
 							}
 						}
 
@@ -491,8 +491,8 @@ public class VillageMaster: Folk
 							content3.Append("Sub-class " + classIndex++ +
 							                "<br><a action=\"bypass -h npc_%objectId%_Subclass 6 " +
 							                holder.getClassIndex() + "\">" +
-							                ClassListData.getInstance().getClass(holder.getClassDefinition())
-								                .getClientCode() + "</a><br>");
+							                CharacterClassData.Instance.GetClassInfo(holder.getClassDefinition())
+								                .GetClientCode() + "</a><br>");
 						}
 						htmlText.Replace("%list%", content3.ToString());
 					}
@@ -502,7 +502,7 @@ public class VillageMaster: Folk
 						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_Modify.htm", player);
 						if (player.getSubClasses().ContainsKey(1))
 						{
-							htmlText.Replace("%sub1%", ClassListData.getInstance().getClass(player.getSubClasses().get(1)!.getClassDefinition()).getClientCode());
+							htmlText.Replace("%sub1%", CharacterClassData.Instance.GetClassInfo(player.getSubClasses().get(1)!.getClassDefinition()).GetClientCode());
 						}
 						else
 						{
@@ -511,7 +511,7 @@ public class VillageMaster: Folk
 
 						if (player.getSubClasses().ContainsKey(2))
 						{
-							htmlText.Replace("%sub2%", ClassListData.getInstance().getClass(player.getSubClasses().get(2)!.getClassDefinition()).getClientCode());
+							htmlText.Replace("%sub2%", CharacterClassData.Instance.GetClassInfo(player.getSubClasses().get(2)!.getClassDefinition()).GetClientCode());
 						}
 						else
 						{
@@ -520,7 +520,7 @@ public class VillageMaster: Folk
 
 						if (player.getSubClasses().ContainsKey(3))
 						{
-							htmlText.Replace("%sub3%", ClassListData.getInstance().getClass(player.getSubClasses().get(3)!.getClassDefinition()).getClientCode());
+							htmlText.Replace("%sub3%", CharacterClassData.Instance.GetClassInfo(player.getSubClasses().get(3)!.getClassDefinition()).GetClientCode());
 						}
 						else
 						{
@@ -647,7 +647,7 @@ public class VillageMaster: Folk
 					{
 						content6.Append("<a action=\"bypass npc_%objectId%_Subclass 7 " + paramOne + " " +
 						                (int)subClass + "\" msg=\"1445;\">" +
-						                ClassListData.getInstance().getClass(subClass).getClientCode() + "</a><br>");
+						                CharacterClassData.Instance.GetClassInfo(subClass).GetClientCode() + "</a><br>");
 					}
 
 					switch (paramOne)
@@ -693,7 +693,7 @@ public class VillageMaster: Folk
 						player.setActiveClass(paramOne);
 
 						htmlText = HtmlContent.LoadFromFile("html/villagemaster/SubClass_ModifyOk.htm", player);
-						htmlText.Replace("%name%", ClassListData.getInstance().getClass((CharacterClass)paramTwo).getClientCode());
+						htmlText.Replace("%name%", CharacterClassData.Instance.GetClassInfo((CharacterClass)paramTwo).GetClientCode());
 
 						SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_HAVE_ACHIEVED_THE_SECOND_CLASS_S1_CONGRATS);
 						msg.Params.addClassId(player.getClassId());

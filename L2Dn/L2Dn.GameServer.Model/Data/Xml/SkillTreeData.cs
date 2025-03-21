@@ -15,6 +15,7 @@ using L2Dn.Model.Enums;
 using L2Dn.Model.Xml;
 using L2Dn.Utilities;
 using NLog;
+using CharacterClassInfo = L2Dn.GameServer.Enums.CharacterClassInfo;
 using Clan = L2Dn.GameServer.Model.Clans.Clan;
 
 namespace L2Dn.GameServer.Data.Xml;

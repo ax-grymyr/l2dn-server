@@ -365,7 +365,7 @@ public class AdminSkill: IAdminCommandHandler
 		}
 
 		StringBuilder replyMSG = new StringBuilder(500 + maxPages * 50 + (skillsEnd - skillsStart + 1) * 50);
-		replyMSG.Append("<html><body><table width=260><tr><td width=40><button value=\"Main\" action=\"bypass admin_admin\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center>Character Selection Menu</center></td><td width=40><button value=\"Back\" action=\"bypass -h admin_show_skills\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br><br><center>Editing <font color=\"LEVEL\">" + player.getName() + "</font></center><br><table width=270><tr><td>Lv: " + player.getLevel() + " " + ClassListData.getInstance().getClass(player.getClassId()).getClientCode() + "</td></tr></table><br><table width=270><tr><td>Note: Dont forget that modifying players skills can</td></tr><tr><td>ruin the game...</td></tr></table><br><center>Click on the skill you wish to remove:</center><br><center><table width=270><tr>");
+		replyMSG.Append("<html><body><table width=260><tr><td width=40><button value=\"Main\" action=\"bypass admin_admin\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center>Character Selection Menu</center></td><td width=40><button value=\"Back\" action=\"bypass -h admin_show_skills\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br><br><center>Editing <font color=\"LEVEL\">" + player.getName() + "</font></center><br><table width=270><tr><td>Lv: " + player.getLevel() + " " + CharacterClassData.Instance.GetClassInfo(player.getClassId()).GetClientCode() + "</td></tr></table><br><table width=270><tr><td>Note: Dont forget that modifying players skills can</td></tr><tr><td>ruin the game...</td></tr></table><br><center>Click on the skill you wish to remove:</center><br><center><table width=270><tr>");
 		for (int x = 0; x < maxPages; x++)
 		{
 			int pagenr = x + 1;
@@ -401,7 +401,7 @@ public class AdminSkill: IAdminCommandHandler
 		HtmlContent htmlContent = HtmlContent.LoadFromFile("html/admin/charskills.htm", player);
 		htmlContent.Replace("%name%", player.getName());
 		htmlContent.Replace("%level%", player.getLevel().ToString());
-		htmlContent.Replace("%class%", ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
+		htmlContent.Replace("%class%", CharacterClassData.Instance.GetClassInfo(player.getClassId()).GetClientCode());
 		NpcHtmlMessagePacket adminReply = new NpcHtmlMessagePacket(null, 1, htmlContent);
 		activeChar.sendPacket(adminReply);
 	}

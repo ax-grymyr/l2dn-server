@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -93,7 +94,7 @@ public class AdminExpSp: IAdminCommandHandler
 		htmlContent.Replace("%level%", player.getLevel().ToString());
 		htmlContent.Replace("%xp%", player.getExp().ToString());
 		htmlContent.Replace("%sp%", player.getSp().ToString());
-		htmlContent.Replace("%class%", ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
+		htmlContent.Replace("%class%", CharacterClassData.Instance.GetClassInfo(player.getClassId()).GetClientCode());
 		activeChar.sendPacket(adminReply);
 	}
 

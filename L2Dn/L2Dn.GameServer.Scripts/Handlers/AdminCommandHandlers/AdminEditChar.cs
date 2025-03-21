@@ -462,7 +462,7 @@ public class AdminEditChar: IAdminCommandHandler
 						}
 					}
 
-					string newclass = ClassListData.getInstance().getClass(player.getClassId()).getClassName();
+					string newclass = CharacterClassData.Instance.GetClassInfo(player.getClassId()).Name;
 					player.store(false);
 					foreach (Skill oldSkill in player.getAllSkills())
 					{
@@ -1135,7 +1135,7 @@ public class AdminEditChar: IAdminCommandHandler
 		{
 			sb.Append("<tr>");
 			sb.Append("<td width=80><a action=\"bypass -h admin_character_info " + player.getName() + "\">" + (player.isInOfflineMode() ? "<font color=\"808080\">" + player.getName() + "</font>" : player.getName()) + "</a></td>");
-			sb.Append("<td width=110>" + ClassListData.getInstance().getClass(player.getClassId()).getClientCode() + "</td><td width=40>" + player.getLevel() + "</td>");
+			sb.Append("<td width=110>" + CharacterClassData.Instance.GetClassInfo(player.getClassId()).GetClientCode() + "</td><td width=40>" + player.getLevel() + "</td>");
 			sb.Append("</tr>");
 		}).build();
 
@@ -1211,10 +1211,10 @@ public class AdminEditChar: IAdminCommandHandler
 		htmlContent.Replace("%clan%", player.getClan() != null ? "<a action=\"bypass -h admin_clan_info " + player.ObjectId + "\">" + player.getClan()?.getName() + "</a>" : null);
 		htmlContent.Replace("%xp%", player.getExp().ToString());
 		htmlContent.Replace("%sp%", player.getSp().ToString());
-		htmlContent.Replace("%class%", ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
+		htmlContent.Replace("%class%", CharacterClassData.Instance.GetClassInfo(player.getClassId()).GetClientCode());
 		htmlContent.Replace("%ordinal%", player.getClassId().ToString());
 		htmlContent.Replace("%classid%", player.getClassId().ToString());
-		htmlContent.Replace("%baseclass%", ClassListData.getInstance().getClass(player.getBaseClass()).getClientCode());
+		htmlContent.Replace("%baseclass%", CharacterClassData.Instance.GetClassInfo(player.getBaseClass()).GetClientCode());
 		htmlContent.Replace("%x%", player.getX().ToString());
 		htmlContent.Replace("%y%", player.getY().ToString());
 		htmlContent.Replace("%z%", player.getZ().ToString());
@@ -1330,7 +1330,7 @@ public class AdminEditChar: IAdminCommandHandler
 				replyMSG.Append("\">");
 				replyMSG.Append(name);
 				replyMSG.Append("</a></td><td width=110>");
-				replyMSG.Append(ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
+				replyMSG.Append(CharacterClassData.Instance.GetClassInfo(player.getClassId()).GetClientCode());
 				replyMSG.Append("</td><td width=40>");
 				replyMSG.Append(player.getLevel());
 				replyMSG.Append("</td></tr>");
@@ -1427,7 +1427,7 @@ public class AdminEditChar: IAdminCommandHandler
 			replyMSG.Append("\">");
 			replyMSG.Append(name);
 			replyMSG.Append("</a></td><td width=110>");
-			replyMSG.Append(ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
+			replyMSG.Append(CharacterClassData.Instance.GetClassInfo(player.getClassId()).GetClientCode());
 			replyMSG.Append("</td><td width=40>");
 			replyMSG.Append(player.getLevel());
 			replyMSG.Append("</td></tr>");

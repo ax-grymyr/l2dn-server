@@ -105,7 +105,7 @@ public static class StaticDataLoader
         RevengeHistoryManager.getInstance();
         VipData.getInstance();
 
-        ClassListData.getInstance();
+        CharacterClassData.Instance.Load();
         InitialEquipmentData.getInstance();
         InitialShortcutData.getInstance();
         ExperienceData.getInstance();

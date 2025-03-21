@@ -939,7 +939,7 @@ public class Olympiad
 			{
 				// Classic can have 2nd and 3rd class competitors, but only 1 hero
 				CharacterClass heroClass = (CharacterClass)element;
-				CharacterClass? parent = ClassListData.getInstance().getClass(heroClass).getParentClassId();
+				CharacterClass? parent = CharacterClassData.Instance.GetClassInfo(heroClass).ParentClass;
 
 				var query = (from n in ctx.OlympiadNobles
 					from c in ctx.Characters

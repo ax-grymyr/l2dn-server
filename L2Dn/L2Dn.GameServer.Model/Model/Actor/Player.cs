@@ -7520,7 +7520,7 @@ public class Player: Playable
 
 					if (Config.General.SKILL_CHECK_ENABLE && (!canOverrideCond(PlayerCondOverride.SKILL_CONDITIONS) || Config.General.SKILL_CHECK_GM) && !SkillTreeData.getInstance().isSkillAllowed(this, skill))
 					{
-						Util.handleIllegalPlayerAction(this, "Player " + getName() + " has invalid skill " + skill.Name + " (" + skill.Id + "/" + skill.Level + "), class:" + ClassListData.getInstance().getClass(getClassId()).getClassName(), IllegalActionPunishmentType.BROADCAST);
+						Util.handleIllegalPlayerAction(this, "Player " + getName() + " has invalid skill " + skill.Name + " (" + skill.Id + "/" + skill.Level + "), class:" + CharacterClassData.Instance.GetClassInfo(getClassId()).Name, IllegalActionPunishmentType.BROADCAST);
 						if (Config.General.SKILL_CHECK_REMOVE)
 						{
 							removeSkill(skill);

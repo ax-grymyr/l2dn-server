@@ -17,6 +17,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using Microsoft.EntityFrameworkCore;
@@ -296,7 +297,7 @@ public class Hero
 					if (charId == charOneId)
 					{
 						string? name = CharInfoTable.getInstance().getNameById(charTwoId);
-						string cls = ClassListData.getInstance().getClass(charTwoClass).getClientCode();
+						string cls = CharacterClassData.Instance.GetClassInfo(charTwoClass).GetClientCode();
 						if (name != null && cls != null)
 						{
 							StatSet fight = new StatSet();
@@ -328,7 +329,7 @@ public class Hero
 					else if (charId == charTwoId)
 					{
 						string? name = CharInfoTable.getInstance().getNameById(charOneId);
-						string cls = ClassListData.getInstance().getClass(charOneClass).getClientCode();
+						string cls = CharacterClassData.Instance.GetClassInfo(charOneClass).GetClientCode();
 						if (name != null && cls != null)
 						{
 							StatSet fight = new StatSet();
