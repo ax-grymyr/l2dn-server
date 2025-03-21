@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("list")]
-public class XmlPlayerXpPercentLostData
+public class XmlPlayerXpPercentLostList
 {
     [XmlElement("xpLost")]
     public List<XmlPlayerXpPercentLost> Levels { get; set; } = [];

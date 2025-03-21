@@ -109,7 +109,7 @@ public static class StaticDataLoader
         InitialEquipmentData.getInstance();
         InitialShortcutData.getInstance();
         ExperienceData.Instance.Load();
-        PlayerXpPercentLostData.getInstance();
+        PlayerXpPercentLostData.Instance.Load();
         KarmaData.Instance.Load();
         HitConditionBonusData.getInstance();
         PlayerTemplateData.getInstance();

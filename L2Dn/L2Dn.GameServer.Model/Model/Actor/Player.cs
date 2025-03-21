@@ -5460,7 +5460,7 @@ public class Player: Playable
 	public void calculateDeathExpPenalty(Creature? killer)
 	{
 		int lvl = getLevel();
-		double percentLost = PlayerXpPercentLostData.getInstance().getXpPercent(getLevel());
+		double percentLost = PlayerXpPercentLostData.Instance.GetXpPercent(getLevel());
 		if (killer != null)
 		{
 			if (killer.isRaid())
