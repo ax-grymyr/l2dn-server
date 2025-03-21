@@ -22,7 +22,7 @@ public sealed class ClanRewardData
 
     public void Load()
     {
-        XmlClanRewardData document = XmlLoader.LoadXmlDocument<XmlClanRewardData>("ClanReward.xml");
+        XmlClanRewardData document = XmlLoader.LoadConfigXmlDocument<XmlClanRewardData>("ClanReward.xml");
 
         // Online bonuses.
         List<ClanRewardBonus> onlineBonuses = [];

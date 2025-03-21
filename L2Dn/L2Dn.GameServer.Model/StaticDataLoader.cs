@@ -26,6 +26,7 @@ public static class StaticDataLoader
         AccessLevelData.Instance.Load();
         AdminCommandData.Instance.Load();
         SecondaryAuthData.Instance.Load();
+        ClanRewardData.Instance.Load();
 
         // XML data files
 
@@ -46,7 +47,6 @@ public static class StaticDataLoader
         ActionData.Instance.Load();
         CategoryData.Instance.Load();
         SayuneData.getInstance();
-        ClanRewardData.Instance.Load();
         MissionLevel.getInstance();
         DailyMissionHandler.getInstance(); //.executeScript();
         DailyMissionData.getInstance();

@@ -37,7 +37,6 @@ public static class EnumerableExtensions
     public static IEnumerable<T> Duplicates<T>(this IEnumerable<T> source, IEqualityComparer<T>? comparer = null)
     {
         ArgumentNullException.ThrowIfNull(source);
-        ArgumentNullException.ThrowIfNull(comparer);
         HashSet<T> seenItems = new HashSet<T>(comparer);
         HashSet<T> duplicatedItems = new HashSet<T>(comparer);
         foreach (T item in source)
