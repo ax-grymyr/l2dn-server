@@ -3,6 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using L2Dn.Packets;
 
@@ -110,7 +111,7 @@ public readonly struct GMViewCharacterInfoPacket: IOutgoingPacket
 		writer.WriteInt32((int)_player.getClassId());
 		writer.WriteInt32(_player.getLevel());
 		writer.WriteInt64(_player.getExp());
-		writer.WriteDouble((_player.getExp() - ExperienceData.getInstance().getExpForLevel(_player.getLevel())) / (ExperienceData.getInstance().getExpForLevel(_player.getLevel() + 1) - ExperienceData.getInstance().getExpForLevel(_player.getLevel()))); // High Five exp %
+		writer.WriteDouble((_player.getExp() - ExperienceData.Instance.GetExpForLevel(_player.getLevel())) / (ExperienceData.Instance.GetExpForLevel(_player.getLevel() + 1) - ExperienceData.Instance.GetExpForLevel(_player.getLevel()))); // High Five exp %
 		writer.WriteInt32(_player.getSTR());
 		writer.WriteInt32(_player.getDEX());
 		writer.WriteInt32(_player.getCON());

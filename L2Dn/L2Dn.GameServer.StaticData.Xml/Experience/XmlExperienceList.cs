@@ -3,7 +3,7 @@
 namespace L2Dn.Model.Xml;
 
 [XmlRoot("table")]
-public class XmlExperienceData
+public class XmlExperienceList
 {
     [XmlAttribute("maxLevel")]
     public int MaxLevel { get; set; }

@@ -1287,7 +1287,7 @@ public class Pet: Summon
 
 	public override long getExpForThisLevel()
 	{
-		if (getLevel() >= ExperienceData.getInstance().getMaxPetLevel())
+		if (getLevel() >= ExperienceData.Instance.MaxPetLevel)
 		{
 			return 0;
 		}
@@ -1296,7 +1296,7 @@ public class Pet: Summon
 
 	public override long getExpForNextLevel()
 	{
-		if (getLevel() >= ExperienceData.getInstance().getMaxPetLevel() - 1)
+		if (getLevel() >= ExperienceData.Instance.MaxPetLevel - 1)
 		{
 			return 0;
 		}

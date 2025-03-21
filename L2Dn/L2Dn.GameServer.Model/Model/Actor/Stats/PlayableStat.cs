@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using NLog;
 using Config = L2Dn.GameServer.Configuration.Config;
@@ -225,7 +226,7 @@ public class PlayableStat: CreatureStat
 
 	public virtual long getExpForLevel(int level)
 	{
-		return ExperienceData.getInstance().getExpForLevel(level);
+		return ExperienceData.Instance.GetExpForLevel(level);
 	}
 
 	public override Playable getActiveChar()
@@ -235,7 +236,7 @@ public class PlayableStat: CreatureStat
 
 	public virtual int getMaxLevel()
 	{
-		return ExperienceData.getInstance().getMaxLevel();
+		return ExperienceData.Instance.MaxLevel;
 	}
 
 	public override int getPhysicalAttackRadius()

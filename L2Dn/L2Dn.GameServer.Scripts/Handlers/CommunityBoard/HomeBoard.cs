@@ -253,7 +253,7 @@ public class HomeBoard: IParseBoardHandler
 			{
 				player.destroyItemByItemId("CB_Delevel", Config.CommunityBoard.COMMUNITYBOARD_CURRENCY, Config.CommunityBoard.COMMUNITYBOARD_DELEVEL_PRICE, player, true);
 				int newLevel = player.getLevel() - 1;
-				player.setExp(ExperienceData.getInstance().getExpForLevel(newLevel));
+				player.setExp(ExperienceData.Instance.GetExpForLevel(newLevel));
 				player.getStat().setLevel(newLevel);
 				player.setCurrentHpMp(player.getMaxHp(), player.getMaxMp());
 				player.setCurrentCp(player.getMaxCp());

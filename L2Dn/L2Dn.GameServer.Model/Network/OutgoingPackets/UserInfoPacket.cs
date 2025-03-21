@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 using L2Dn.Packets;
 using L2Dn.Utilities;
@@ -151,8 +152,8 @@ public readonly struct UserInfoPacket: IOutgoingPacket
 		{
 			int level = _player.getLevel();
 			long exp = _player.getExp();
-			long expForLevel = ExperienceData.getInstance().getExpForLevel(level);
-			long expForNextLevel = ExperienceData.getInstance().getExpForLevel(level + 1);
+			long expForLevel = ExperienceData.Instance.GetExpForLevel(level);
+			long expForNextLevel = ExperienceData.Instance.GetExpForLevel(level + 1);
 			double expPercents = 1.0 * (exp - expForLevel) / (expForNextLevel - expForLevel);
 
 			writer.WriteInt16(39);

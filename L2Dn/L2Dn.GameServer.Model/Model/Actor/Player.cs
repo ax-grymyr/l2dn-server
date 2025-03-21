@@ -5485,13 +5485,13 @@ public class Player: Playable
 		long lostExp = 0;
 		if (!isOnEvent())
 		{
-			if (lvl < ExperienceData.getInstance().getMaxLevel())
+			if (lvl < ExperienceData.Instance.MaxLevel)
 			{
 				lostExp = (long)Math.Round((getStat().getExpForLevel(lvl + 1) - getStat().getExpForLevel(lvl)) * percentLost / 100);
 			}
 			else
 			{
-				lostExp = (long)Math.Round((getStat().getExpForLevel(ExperienceData.getInstance().getMaxLevel()) - getStat().getExpForLevel(ExperienceData.getInstance().getMaxLevel() - 1)) * percentLost / 100);
+				lostExp = (long)Math.Round((getStat().getExpForLevel(ExperienceData.Instance.MaxLevel) - getStat().getExpForLevel(ExperienceData.Instance.MaxLevel - 1)) * percentLost / 100);
 			}
 		}
 
@@ -9702,7 +9702,7 @@ public class Player: Playable
 			if (isDualClass)
 			{
 				newClass.setDualClassActive(true);
-				newClass.setExp(ExperienceData.getInstance().getExpForLevel(Config.Character.BASE_DUALCLASS_LEVEL));
+				newClass.setExp(ExperienceData.Instance.GetExpForLevel(Config.Character.BASE_DUALCLASS_LEVEL));
 				newClass.setLevel(Config.Character.BASE_DUALCLASS_LEVEL);
 			}
 

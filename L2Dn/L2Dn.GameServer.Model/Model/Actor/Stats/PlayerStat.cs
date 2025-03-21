@@ -18,6 +18,7 @@ using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.DailyMissions;
 using L2Dn.GameServer.Network.OutgoingPackets.Friends;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
@@ -200,7 +201,7 @@ public class PlayerStat: PlayableStat
 
 	public override bool addLevel(int value)
 	{
-		if (getLevel() + value > ExperienceData.getInstance().getMaxLevel() - 1)
+		if (getLevel() + value > ExperienceData.Instance.MaxLevel - 1)
 		{
 			return false;
 		}
@@ -290,7 +291,7 @@ public class PlayerStat: PlayableStat
 
 	public override long getExpForLevel(int level)
 	{
-		return ExperienceData.getInstance().getExpForLevel(level);
+		return ExperienceData.Instance.GetExpForLevel(level);
 	}
 
 	public override Player getActiveChar()
@@ -402,9 +403,9 @@ public class PlayerStat: PlayableStat
 	public override void setLevel(int value)
 	{
 		int level = value;
-		if (level > ExperienceData.getInstance().getMaxLevel() - 1)
+		if (level > ExperienceData.Instance.MaxLevel - 1)
 		{
-			level = ExperienceData.getInstance().getMaxLevel() - 1;
+			level = ExperienceData.Instance.MaxLevel - 1;
 		}
 
 		CharInfoTable.getInstance().setLevel(getActiveChar().ObjectId, level);

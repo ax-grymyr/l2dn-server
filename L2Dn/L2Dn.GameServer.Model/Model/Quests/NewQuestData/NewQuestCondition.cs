@@ -3,6 +3,7 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model;
 using L2Dn.Utilities;
 
@@ -25,7 +26,7 @@ public class NewQuestCondition
 		List<CharacterClass> classRestriction = new();
 		List<int> preQuestIds = new();
 		int minLevel = -1;
-		int maxLevel = ExperienceData.getInstance().getMaxLevel();
+		int maxLevel = ExperienceData.Instance.MaxLevel;
 		bool oneOfPreQuests = false;
 		bool specificStart = false;
 		

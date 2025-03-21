@@ -23,6 +23,7 @@ using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
@@ -197,20 +198,20 @@ public abstract class Summon: Playable
 
 	public virtual long getExpForThisLevel()
 	{
-		if (getLevel() >= ExperienceData.getInstance().getMaxPetLevel())
+		if (getLevel() >= ExperienceData.Instance.MaxPetLevel)
 		{
 			return 0;
 		}
-		return ExperienceData.getInstance().getExpForLevel(getLevel());
+		return ExperienceData.Instance.GetExpForLevel(getLevel());
 	}
 
 	public virtual long getExpForNextLevel()
 	{
-		if (getLevel() >= ExperienceData.getInstance().getMaxPetLevel() - 1)
+		if (getLevel() >= ExperienceData.Instance.MaxPetLevel - 1)
 		{
 			return 0;
 		}
-		return ExperienceData.getInstance().getExpForLevel(getLevel() + 1);
+		return ExperienceData.Instance.GetExpForLevel(getLevel() + 1);
 	}
 
 	public override int getReputation()

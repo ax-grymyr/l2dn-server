@@ -5,6 +5,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model;
 using L2Dn.Packets;
 using Config = L2Dn.GameServer.Configuration.Config;
@@ -128,10 +129,10 @@ public readonly struct CharacterListPacket(int playKey1, string accountName, Cha
 			writer.WriteInt64(charInfo.Exp);
 
 			writer.WriteDouble(1.0 *
-			                   (charInfo.Exp - ExperienceData.getInstance()
-				                   .getExpForLevel(charInfo.Level)) /
-			                   (ExperienceData.getInstance().getExpForLevel(charInfo.Level + 1) -
-			                    ExperienceData.getInstance().getExpForLevel(charInfo.Level)));
+			                   (charInfo.Exp - ExperienceData.Instance
+				                   .GetExpForLevel(charInfo.Level)) /
+			                   (ExperienceData.Instance.GetExpForLevel(charInfo.Level + 1) -
+			                    ExperienceData.Instance.GetExpForLevel(charInfo.Level)));
 
 			writer.WriteInt32(charInfo.Level);
 			writer.WriteInt32(charInfo.Reputation);

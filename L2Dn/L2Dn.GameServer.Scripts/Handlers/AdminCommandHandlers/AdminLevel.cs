@@ -3,6 +3,7 @@ using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using Config = L2Dn.GameServer.Configuration.Config;
@@ -53,7 +54,7 @@ public class AdminLevel: IAdminCommandHandler
 				return false;
 			}
 
-			int maxLevel = ExperienceData.getInstance().getMaxLevel();
+			int maxLevel = ExperienceData.Instance.MaxLevel;
 			if (targetPlayer.isSubClassActive() && !targetPlayer.isDualClassActive() && Config.Character.MAX_SUBCLASS_LEVEL < maxLevel)
 			{
 				maxLevel = Config.Character.MAX_SUBCLASS_LEVEL;
@@ -65,7 +66,7 @@ public class AdminLevel: IAdminCommandHandler
 				if (level >= 1 && level <= maxLevel)
 				{
 					long pXp = targetPlayer.getExp();
-					long tXp = ExperienceData.getInstance().getExpForLevel(level);
+					long tXp = ExperienceData.Instance.GetExpForLevel(level);
 					if (pXp > tXp)
 					{
 						targetPlayer.getStat().setLevel(level);

@@ -4,6 +4,7 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.ItemContainers;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model;
@@ -34,12 +35,12 @@ public class PlayerTemplate: CreatureTemplate
 	public PlayerTemplate(StatSet set, ImmutableArray<Location3D> creationPoints): base(set)
 	{
 		_classId = set.getEnum<CharacterClass>("classId");
-		_baseHp = new float[ExperienceData.getInstance().getMaxLevel() + 1];
-		_baseMp = new float[ExperienceData.getInstance().getMaxLevel() + 1];
-		_baseCp = new float[ExperienceData.getInstance().getMaxLevel() + 1];
-		_baseHpReg = new double[ExperienceData.getInstance().getMaxLevel() + 1];
-		_baseMpReg = new double[ExperienceData.getInstance().getMaxLevel() + 1];
-		_baseCpReg = new double[ExperienceData.getInstance().getMaxLevel() + 1];
+		_baseHp = new float[ExperienceData.Instance.MaxLevel + 1];
+		_baseMp = new float[ExperienceData.Instance.MaxLevel + 1];
+		_baseCp = new float[ExperienceData.Instance.MaxLevel + 1];
+		_baseHpReg = new double[ExperienceData.Instance.MaxLevel + 1];
+		_baseMpReg = new double[ExperienceData.Instance.MaxLevel + 1];
+		_baseCpReg = new double[ExperienceData.Instance.MaxLevel + 1];
 		_baseSlotDef = [];
 		_baseSlotDef.put(Inventory.PAPERDOLL_CHEST, set.getInt("basePDefchest", 0));
 		_baseSlotDef.put(Inventory.PAPERDOLL_LEGS, set.getInt("basePDeflegs", 0));

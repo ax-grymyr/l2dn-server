@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
@@ -75,10 +76,10 @@ public sealed class Summon: AbstractEffect
         summon.setItemConsume(_consumeItem);
         summon.setItemConsumeInterval(consumeItemInterval);
 
-        int maxPetLevel = ExperienceData.getInstance().getMaxPetLevel();
+        int maxPetLevel = ExperienceData.Instance.MaxPetLevel;
         summon.getStat().setExp(summon.getLevel() >= maxPetLevel
-            ? ExperienceData.getInstance().getExpForLevel(maxPetLevel - 1)
-            : ExperienceData.getInstance().getExpForLevel(summon.getLevel() % maxPetLevel));
+            ? ExperienceData.Instance.GetExpForLevel(maxPetLevel - 1)
+            : ExperienceData.Instance.GetExpForLevel(summon.getLevel() % maxPetLevel));
 
         // Summons must have their master buffs upon spawn.
         foreach (BuffInfo effect in player.getEffectList().getEffects())

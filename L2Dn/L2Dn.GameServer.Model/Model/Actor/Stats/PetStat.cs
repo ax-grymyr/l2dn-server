@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Actor.Stats;
@@ -139,6 +140,6 @@ public class PetStat: SummonStat
 
 	public override int getMaxLevel()
 	{
-		return ExperienceData.getInstance().getMaxPetLevel();
+		return ExperienceData.Instance.MaxPetLevel;
 	}
 }
