@@ -3076,14 +3076,14 @@ public class Clan: IIdentifiable, INamable
 
 	public void addExp(int objId, int value)
 	{
-		if (_exp + value <= ClanLevelData.getInstance().getMaxExp())
+		if (_exp + value <= ClanLevelData.Instance.MaxExp)
 		{
 			_exp += value;
 			broadcastToOnlineMembers(new ExPledgeV3InfoPacket(_exp, getRank(), getNotice(), isNoticeEnabled()));
 		}
 
 		int nextLevel = _level + 1;
-		if (nextLevel <= ClanLevelData.getInstance().getMaxLevel() && ClanLevelData.getInstance().getLevelExp(nextLevel) <= _exp)
+		if (nextLevel <= ClanLevelData.Instance.MaxLevel && ClanLevelData.Instance.GetLevelExp(nextLevel) <= _exp)
 		{
 			changeLevel(nextLevel);
 		}

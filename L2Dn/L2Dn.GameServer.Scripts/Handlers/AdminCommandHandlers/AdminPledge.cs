@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using NLog;
 
@@ -140,10 +141,10 @@ public class AdminPledge: IAdminCommandHandler
                         }
 
                         int level = int.Parse(param);
-						if (level >= 0 && level <= ClanLevelData.getInstance().getMaxLevel())
+						if (level >= 0 && level <= ClanLevelData.Instance.MaxLevel)
 						{
 							clan.changeLevel(level);
-							clan.setExp(activeChar.ObjectId, ClanLevelData.getInstance().getLevelExp(level));
+							clan.setExp(activeChar.ObjectId, ClanLevelData.Instance.GetLevelExp(level));
 							foreach (Player member in clan.getOnlineMembers(0))
 							{
 								member.broadcastUserInfo(UserInfoType.RELATION, UserInfoType.CLAN);

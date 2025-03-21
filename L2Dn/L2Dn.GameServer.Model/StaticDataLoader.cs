@@ -128,7 +128,7 @@ public static class StaticDataLoader
             PremiumManager.getInstance();
         }
 
-        ClanLevelData.getInstance();
+        ClanLevelData.Instance.Load();
         ClanTable.getInstance();
         ResidenceFunctionsData.getInstance();
         ClanHallData.getInstance();
