@@ -29,7 +29,7 @@ public sealed class DispelBySlot: AbstractEffect
             _dispelAbnormals = dispel.Split(";").Select(ngtStack =>
             {
                 string[] ngt = ngtStack.Split(",");
-                return new KeyValuePair<AbnormalType, short>(Enum.Parse<AbnormalType>(ngt[0], true),
+                return KeyValuePair.Create(Enum.Parse<AbnormalType>(ngt[0], true),
                     short.Parse(ngt[1], CultureInfo.InvariantCulture));
             }).ToFrozenDictionary();
         }

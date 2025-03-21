@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Enums;
@@ -15,15 +16,15 @@ public static class MountTypeUtil
 {
     public static MountType findByNpcId(int npcId)
     {
-        if (CategoryData.getInstance().isInCategory(CategoryType.STRIDER, npcId))
+        if (CategoryData.Instance.IsInCategory(CategoryType.STRIDER, npcId))
         {
             return MountType.STRIDER;
         }
-        if (CategoryData.getInstance().isInCategory(CategoryType.WYVERN_GROUP, npcId))
+        if (CategoryData.Instance.IsInCategory(CategoryType.WYVERN_GROUP, npcId))
         {
             return MountType.WYVERN;
         }
-        if (CategoryData.getInstance().isInCategory(CategoryType.WOLF_GROUP, npcId))
+        if (CategoryData.Instance.IsInCategory(CategoryType.WOLF_GROUP, npcId))
         {
             return MountType.WOLF;
         }

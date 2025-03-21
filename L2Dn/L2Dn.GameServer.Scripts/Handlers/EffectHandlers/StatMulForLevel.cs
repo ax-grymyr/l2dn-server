@@ -23,7 +23,7 @@ public sealed class StatMulForLevel: AbstractEffect
 
         List<int> amount = parameters.GetInt32List(XmlSkillEffectParameterType.Amount);
         _values = parameters.GetInt32List(XmlSkillEffectParameterType.Level).
-            Select((level, index) => new KeyValuePair<int, double>(level, amount[index])).ToFrozenDictionary();
+            Select((level, index) => KeyValuePair.Create(level, (double)amount[index])).ToFrozenDictionary();
 
         if (parameters.GetEnum(XmlSkillEffectParameterType.Mode, StatModifierType.PER) != StatModifierType.PER)
             throw new ArgumentException(nameof(StatMulForLevel) + " can only use PER mode.");

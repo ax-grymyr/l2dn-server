@@ -68,9 +68,8 @@ public sealed class CollectionData: DataReaderBase
 		}
 
 		_collections = collections.ToFrozenDictionary();
-		_collectionsByTabId = collectionsByTabId
-			.Select(p => new KeyValuePair<int, ImmutableArray<CollectionDataHolder>>(p.Key, p.Value.ToImmutableArray()))
-			.ToFrozenDictionary();
+        _collectionsByTabId = collectionsByTabId.Select(p => KeyValuePair.Create(p.Key, p.Value.ToImmutableArray())).
+            ToFrozenDictionary();
 
 		if (!_collections.IsEmpty())
 			_logger.Info(GetType().Name + ": Loaded " + _collections.Count + " collections.");

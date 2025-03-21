@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
 
@@ -75,11 +76,11 @@ public class FatedSupportBox: IItemHandler
 				{
 					player.addItem(GetType().Name, FATED_BOX_WIZARD, 1, player, true);
 				}
-				else if (CategoryData.getInstance().isInCategory(CategoryType.SUB_GROUP_ROGUE, classId))
+				else if (CategoryData.Instance.IsInCategory(CategoryType.SUB_GROUP_ROGUE, classId))
 				{
 					player.addItem(GetType().Name, FATED_BOX_ROGUE, 1, player, true);
 				}
-				else if (CategoryData.getInstance().isInCategory(CategoryType.SUB_GROUP_KNIGHT, classId))
+				else if (CategoryData.Instance.IsInCategory(CategoryType.SUB_GROUP_KNIGHT, classId))
 				{
 					player.addItem(GetType().Name, FATED_BOX_FIGHTER, 1, player, true);
 				}

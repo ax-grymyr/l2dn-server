@@ -11,7 +11,7 @@ internal static class FactoryHelper
         where TKey: notnull
     {
         return GetAllHandlerTypes<TKey>(assembly, typeof(THandler)).Select(pair =>
-                new KeyValuePair<TKey, Func<TArg, THandler>>(pair.Key, CreateFactory<TArg, THandler>(pair.Type))).
+                KeyValuePair.Create(pair.Key, CreateFactory<TArg, THandler>(pair.Type))).
             ToFrozenDictionary();
     }
 

@@ -68,7 +68,7 @@ public sealed class ZoneManager
 
         // Backup old zone settings
         _zoneSettings = _zonesByName.
-            Select(pair => new KeyValuePair<string, AbstractZoneSettings>(pair.Key, pair.Value.getSettings())).
+            Select(pair => KeyValuePair.Create(pair.Key, pair.Value.getSettings())).
             ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);
 
         // Clear zones

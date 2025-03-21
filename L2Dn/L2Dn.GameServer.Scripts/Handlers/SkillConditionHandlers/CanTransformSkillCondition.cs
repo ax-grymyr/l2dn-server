@@ -1,10 +1,12 @@
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Transforms;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Model.Enums;
@@ -49,7 +51,7 @@ public sealed class CanTransformSkillCondition: ISkillCondition
             player.sendPacket(SystemMessageId.YOU_CANNOT_TRANSFORM_WHILE_RIDING_A_PET);
             canTransform = false;
         }
-        else if (CategoryData.getInstance().isInCategory(CategoryType.VANGUARD_ALL_CLASS, player.getClassId()))
+        else if (CategoryData.Instance.IsInCategory(CategoryType.VANGUARD_ALL_CLASS, player.getClassId()))
         {
             Transform? transform = TransformData.getInstance().getTransform(_transformId);
             if (transform != null && transform.isRiding())

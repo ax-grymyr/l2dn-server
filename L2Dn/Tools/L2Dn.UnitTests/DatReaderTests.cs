@@ -12,7 +12,7 @@ public class DatReaderTests
 {
     private const string SourcePath = @"D:\L2\L2EU-P447-D20240313-P-230809-240318-1\system\eu\";
     private const string DestPath = @"D:\L2\L2EU-P447-D20240313-P-230809-240318-1\";
-    
+
     [Fact]
     public void ReadQuests()
     {
@@ -61,18 +61,17 @@ public class DatReaderTests
         //Serialize(@"D:\L2\DatFiles\L2GameDataName-eu.json", euNameData);
         ItemNameV18 euItemName = DatReader.Read<ItemNameV18>(euPath + "ItemName_Classic-eu.dat.original");
         //Serialize(@"D:\L2\DatFiles\ItemName_Classic-eu.json", euItemName);
-        
+
         // Load NA item names
         DatReader.ReadNameData(naPath + "L2GameDataName.dat");
         ItemNameV18 naItemName = DatReader.Read<ItemNameV18>(naPath + "ItemName_Classic-e.dat");
-        
+
         // Replace item names
         bool euNameDataUpdateNeeded = false;
         List<string> euStrings = euNameData.Names.ToList();
         Dictionary<string, int> euStringIndexMap =
-            euStrings.Select((s, i) => new KeyValuePair<string, int>(s, i))
-                .ToDictionary(StringComparer.OrdinalIgnoreCase);
-        
+            euStrings.Select(KeyValuePair.Create).ToDictionary(StringComparer.OrdinalIgnoreCase);
+
         foreach (ItemNameV18.ItemNameRecord euItemNameRecord in euItemName.Records)
         {
             uint itemId = euItemNameRecord.Id;
@@ -89,7 +88,7 @@ public class DatReaderTests
                     euStringIndexMap.Add(newName, index);
                     euNameDataUpdateNeeded = true;
                 }
-                
+
                 euItemNameRecord.Name = new IndexedString(newName, index);
                 euItemNameRecord.AdditionalName = euOldItemNameRecord.AdditionalName;
                 euItemNameRecord.Description = euOldItemNameRecord.Description;
@@ -115,7 +114,7 @@ public class DatReaderTests
         if (euNameDataUpdateNeeded)
         {
             euNameData.Names = euStrings.ToArray();
-            
+
             // Write name data
             DatWriter.Write(euPath + "L2GameDataName.dat.modified", euNameData);
 
@@ -126,17 +125,17 @@ public class DatReaderTests
             DatReader.SetNameData(euTestNameData.Names);
             Serialize(@"D:\L2\DatFiles\L2GameDataName.modified.json", euTestNameData);
         }
-        
+
         // Write items
         DatWriter.Write(euPath + "ItemName_Classic-eu.dat.modified", euItemName);
-        
+
         // Verify output file
         using FileStream stream = File.OpenRead(euPath + "ItemName_Classic-eu.dat.modified");
         ItemNameV18 euTestItemName = DatReader.Read<ItemNameV18>(stream);
         //euTestItemName.Should().BeEquivalentTo(euItemName);
         Serialize(@"D:\L2\DatFiles\ItemName_Classic-eu.modified.json", euTestItemName);
     }
-    
+
     [Fact]
     public void CheckModifiedFiles()
     {
@@ -152,14 +151,14 @@ public class DatReaderTests
         euItemName = DatReader.Read<ItemNameV18>(euPath + "ItemName_Classic-eu.dat-modified-encrypted");
         Serialize(dstPath + "ItemName_Classic-eu.modified.json", euItemName);
     }
-    
+
     [Fact]
     public void ConvertDataFiles()
     {
         EncryptionKeys.RsaDecryption413 = EncryptionKeys.RsaDecryption413L2EncDec;
 
         const string dstPath = @"D:\L2\DatFiles\";
-        
+
         const string clientsPath = @"D:\L2\";
 
         const string euPath = clientsPath + @"L2EU-P447-D20240313-P-230809-240318-1\system\eu\";
@@ -168,17 +167,17 @@ public class DatReaderTests
 
         // EU
         ConvertDatFiles(euPath, dstPath, "eu", "eu");
-        
+
         // RU
         ConvertDatFiles(ruPath, dstPath, "ru", "ru");
-        
+
         // NA
         ConvertDatFiles(naPath, dstPath, "e", "na");
     }
 
     private static void ConvertDatFiles(string srcPath, string dstPath, string langSuffix, string langDstSuffix)
     {
-        DatConversion[] conversions = 
+        DatConversion[] conversions =
         [
             new DatConversion<AbnormalAgathion>("AbnormalAgathion", "AbnormalAgathion-{0}"),
             new DatConversion<AbnormalDefaultEffectV5>("AbnormalDefaultEffect", "AbnormalDefaultEffect-{0}"),
@@ -203,7 +202,7 @@ public class DatReaderTests
             new DatConversion<CommandNameV2>("CommandName_Classic-{0}", "CommandName_Classic-{0}"),
             new DatConversion<CommonLook>("CommonLook_Classic", "CommonLook_Classic-{0}"),
             new DatConversion<Costume>("Costume_Classic", "Costume_Classic-{0}"),
-            
+
             new DatConversion<EtcItemGrpV9>("EtcItemgrp_Classic", "EtcItemGrp_Classic-{0}"),
             new DatConversion<ItemBaseInfoV5>("item_baseinfo_Classic", "Item_BaseInfo_Classic-{0}"),
             new DatConversion<ItemNameV18>("ItemName_Classic-{0}", "ItemName_Classic-{0}"),

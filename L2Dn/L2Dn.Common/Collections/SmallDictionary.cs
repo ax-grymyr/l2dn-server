@@ -14,7 +14,7 @@ public sealed class SmallDictionary<TKey, TValue>
         {
             if (key is null)
                 throw new ArgumentNullException(nameof(key));
-            
+
             // TODO: binary search?
             foreach (KeyValuePair<TKey, TValue> pair in _array)
             {
@@ -28,11 +28,9 @@ public sealed class SmallDictionary<TKey, TValue>
         {
             if (key is null)
                 throw new ArgumentNullException(nameof(key));
-            
+
             ImmutableArray<KeyValuePair<TKey, TValue>> array = _array;
-            ImmutableArray<KeyValuePair<TKey, TValue>> newArray =
-                UpdateArray(array, new KeyValuePair<TKey, TValue>(key, value));
-            
+            ImmutableArray<KeyValuePair<TKey, TValue>> newArray = UpdateArray(array, KeyValuePair.Create(key, value));
             while (ImmutableInterlocked.InterlockedCompareExchange(ref _array, newArray, array) != array)
             {
                 array = _array;

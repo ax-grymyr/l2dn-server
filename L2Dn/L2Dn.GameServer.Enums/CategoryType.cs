@@ -1,9 +1,8 @@
-﻿namespace L2Dn.Model.Enums;
+﻿namespace L2Dn.GameServer.Enums;
 
-/**
- * This class defines all category types.
- * @author xban1x
- */
+/// <summary>
+/// This class defines all category types.
+/// </summary>
 public enum CategoryType
 {
     FIGHTER_GROUP,

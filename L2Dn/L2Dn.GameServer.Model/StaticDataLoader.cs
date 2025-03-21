@@ -44,7 +44,7 @@ public static class StaticDataLoader
         GlobalVariablesManager.getInstance();
 
         ActionData.Instance.Load();
-        CategoryData.getInstance();
+        CategoryData.Instance.Load();
         SayuneData.getInstance();
         ClanRewardData.getInstance();
         MissionLevel.getInstance();

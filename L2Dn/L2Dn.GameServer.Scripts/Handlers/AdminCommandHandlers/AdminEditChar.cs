@@ -18,6 +18,7 @@ using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Network;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
@@ -394,7 +395,7 @@ public class AdminEditChar: IAdminCommandHandler
 					}
 
 					// Sylph checks
-					if (!CategoryData.getInstance().isInCategory(CategoryType.SYLPH_ALL_CLASS, classidval) && player.getActiveWeaponItem() != null && player.getActiveWeaponItem().getItemType() == WeaponType.PISTOLS)
+					if (!CategoryData.Instance.IsInCategory(CategoryType.SYLPH_ALL_CLASS, classidval) && player.getActiveWeaponItem() != null && player.getActiveWeaponItem().getItemType() == WeaponType.PISTOLS)
 					{
 						Item? itemToRemove = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
 						if (itemToRemove != null)
@@ -409,7 +410,7 @@ public class AdminEditChar: IAdminCommandHandler
 					}
 
 					// Death Knight checks.
-					if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classidval))
+					if (CategoryData.Instance.IsInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classidval))
 					{
 						player.getAppearance().setSex(Sex.Male);
 						if (!player.isDeathKnight())
@@ -426,7 +427,7 @@ public class AdminEditChar: IAdminCommandHandler
 					}
 
 					// Vanguard checks.
-					if (CategoryData.getInstance().isInCategory(CategoryType.VANGUARD_ALL_CLASS, classidval))
+					if (CategoryData.Instance.IsInCategory(CategoryType.VANGUARD_ALL_CLASS, classidval))
 					{
 						player.getAppearance().setSex(Sex.Male);
 						player.disarmShield();
@@ -444,7 +445,7 @@ public class AdminEditChar: IAdminCommandHandler
 					}
 
 					// Assassin checks.
-					if (CategoryData.getInstance().isInCategory(CategoryType.ASSASSIN_ALL_CLASS, classidval))
+					if (CategoryData.Instance.IsInCategory(CategoryType.ASSASSIN_ALL_CLASS, classidval))
 					{
 						if (player.getRace() == Race.HUMAN)
 						{
@@ -455,7 +456,7 @@ public class AdminEditChar: IAdminCommandHandler
 							player.getAppearance().setSex(Sex.Female);
 						}
 
-						if (CategoryData.getInstance().isInCategory(CategoryType.FOURTH_CLASS_GROUP, classidval))
+						if (CategoryData.Instance.IsInCategory(CategoryType.FOURTH_CLASS_GROUP, classidval))
 						{
 							player.setAssassinationPoints(0);
 						}

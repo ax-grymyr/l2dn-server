@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.ClassChange;
 using L2Dn.GameServer.Network.OutgoingPackets.ElementalSpirits;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
@@ -53,15 +54,15 @@ public struct ExRequestClassChangePacket: IIncomingPacket<GameSession>
 		int playerLevel = player.getLevel();
 		if (player.isInCategory(CategoryType.FIRST_CLASS_GROUP) && playerLevel >= 20)
 		{
-			canChange = CategoryData.getInstance().isInCategory(CategoryType.SECOND_CLASS_GROUP, _classId);
+			canChange = CategoryData.Instance.IsInCategory(CategoryType.SECOND_CLASS_GROUP, _classId);
 		}
 		else if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP) && playerLevel >= 40)
 		{
-			canChange = CategoryData.getInstance().isInCategory(CategoryType.THIRD_CLASS_GROUP, _classId);
+			canChange = CategoryData.Instance.IsInCategory(CategoryType.THIRD_CLASS_GROUP, _classId);
 		}
 		else if (player.isInCategory(CategoryType.THIRD_CLASS_GROUP) && playerLevel >= 76)
 		{
-			canChange = CategoryData.getInstance().isInCategory(CategoryType.FOURTH_CLASS_GROUP, _classId);
+			canChange = CategoryData.Instance.IsInCategory(CategoryType.FOURTH_CLASS_GROUP, _classId);
 		}
 
 		// Change class.

@@ -3993,7 +3993,7 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 					player.setBeastPoints(player.getBeastPoints() + 1);
 				}
 			}
-			else if (player.isAssassin() && CategoryData.getInstance().isInCategory(CategoryType.FOURTH_CLASS_GROUP, player.getBaseTemplate().getClassId()) && target.isDead())
+			else if (player.isAssassin() && CategoryData.Instance.IsInCategory(CategoryType.FOURTH_CLASS_GROUP, player.getBaseTemplate().getClassId()) && target.isDead())
 			{
 				if (target.isPlayable())
 				{
@@ -5200,14 +5200,14 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public bool isInCategory(CategoryType type)
 	{
-		return CategoryData.getInstance().isInCategory(type, Id);
+		return CategoryData.Instance.IsInCategory(type, Id);
 	}
 
 	public bool isInOneOfCategory(params CategoryType[] types)
 	{
 		foreach (CategoryType type in types)
 		{
-			if (CategoryData.getInstance().isInCategory(type, Id))
+			if (CategoryData.Instance.IsInCategory(type, Id))
 			{
 				return true;
 			}

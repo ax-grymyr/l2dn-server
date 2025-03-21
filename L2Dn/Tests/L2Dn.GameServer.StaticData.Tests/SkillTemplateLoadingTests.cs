@@ -874,13 +874,13 @@ public sealed class SkillTemplateLoadingTests
 
     private static readonly FrozenDictionary<string, XmlSkillEffectParameterType> _effectParameterTypes = EnumUtil.
         GetValues<XmlSkillEffectParameterType>().
-        Select(v => new KeyValuePair<string, XmlSkillEffectParameterType>(
+        Select(v => KeyValuePair.Create(
             v.GetCustomAttribute<XmlSkillEffectParameterType, XmlEnumAttribute>()?.Name ?? v.ToString(), v)).
         ToFrozenDictionary();
 
     private static readonly FrozenDictionary<string, XmlSkillConditionParameterType> _conditionParameterTypes = EnumUtil.
         GetValues<XmlSkillConditionParameterType>().
-        Select(v => new KeyValuePair<string, XmlSkillConditionParameterType>(
+        Select(v => KeyValuePair.Create(
             v.GetCustomAttribute<XmlSkillConditionParameterType, XmlEnumAttribute>()?.Name ?? v.ToString(), v)).
         ToFrozenDictionary();
 

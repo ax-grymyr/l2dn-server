@@ -291,11 +291,11 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 			    if (!Config.AllowedPlayerRaces.ALLOW_HUMAN)
 				    return false;
 
-			    if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId) &&
+			    if (CategoryData.Instance.IsInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId) &&
 			        sex == Sex.Female)
 				    return false;
 
-			    if (CategoryData.getInstance().isInCategory(CategoryType.ASSASSIN_ALL_CLASS, classId) &&
+			    if (CategoryData.Instance.IsInCategory(CategoryType.ASSASSIN_ALL_CLASS, classId) &&
 			        sex == Sex.Female)
 				    return false;
 
@@ -306,7 +306,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 			    if (!Config.AllowedPlayerRaces.ALLOW_ELF)
 				    return false;
 
-			    if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId) &&
+			    if (CategoryData.Instance.IsInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId) &&
 			        sex == Sex.Female)
 				    return false;
 
@@ -317,11 +317,11 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 			    if (!Config.AllowedPlayerRaces.ALLOW_DARKELF)
 				    return false;
 
-			    if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId) &&
+			    if (CategoryData.Instance.IsInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId) &&
 			        sex == Sex.Female)
 				    return false;
 
-			    if (CategoryData.getInstance().isInCategory(CategoryType.ASSASSIN_ALL_CLASS, classId) &&
+			    if (CategoryData.Instance.IsInCategory(CategoryType.ASSASSIN_ALL_CLASS, classId) &&
 			        sex != Sex.Female)
 				    return false;
 
@@ -332,7 +332,7 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 			    if (!Config.AllowedPlayerRaces.ALLOW_ORC)
 				    return false;
 
-			    if (CategoryData.getInstance().isInCategory(CategoryType.VANGUARD_ALL_CLASS, classId) &&
+			    if (CategoryData.Instance.IsInCategory(CategoryType.VANGUARD_ALL_CLASS, classId) &&
 			        sex == Sex.Female)
 				    return false;
 
@@ -362,11 +362,11 @@ public struct CharacterCreatePacket: IIncomingPacket<GameSession>
 	    }
 
 	    if (!Config.AllowedPlayerRaces.ALLOW_DEATH_KNIGHT &&
-	        CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId))
+	        CategoryData.Instance.IsInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS, classId))
 		    return false;
 
 	    if (!Config.AllowedPlayerRaces.ALLOW_VANGUARD &&
-	        CategoryData.getInstance().isInCategory(CategoryType.VANGUARD_ALL_CLASS, classId))
+	        CategoryData.Instance.IsInCategory(CategoryType.VANGUARD_ALL_CLASS, classId))
 		    return false;
 
 	    return true;

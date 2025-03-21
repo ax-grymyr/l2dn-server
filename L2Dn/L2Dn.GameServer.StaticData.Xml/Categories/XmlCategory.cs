@@ -1,7 +1,7 @@
 ﻿using System.Xml.Serialization;
-using L2Dn.Model.Enums;
+using L2Dn.GameServer.Enums;
 
-namespace L2Dn.Model.Xml;
+namespace L2Dn.GameServer.StaticData.Xml.Categories;
 
 public class XmlCategory
 {

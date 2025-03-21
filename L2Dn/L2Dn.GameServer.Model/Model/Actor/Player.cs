@@ -955,18 +955,18 @@ public class Player: Playable
                 player._activeClass = activeClassId;
             }
 
-            if (CategoryData.getInstance().isInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS,
+            if (CategoryData.Instance.IsInCategory(CategoryType.DEATH_KNIGHT_ALL_CLASS,
                     player.getBaseTemplate().getClassId()))
             {
                 player._isDeathKnight = true;
             }
-            else if (CategoryData.getInstance()
-                     .isInCategory(CategoryType.VANGUARD_ALL_CLASS, player.getBaseTemplate().getClassId()))
+            else if (CategoryData.Instance
+                     .IsInCategory(CategoryType.VANGUARD_ALL_CLASS, player.getBaseTemplate().getClassId()))
             {
                 player._isVanguard = true;
             }
-            else if (CategoryData.getInstance()
-                     .isInCategory(CategoryType.ASSASSIN_ALL_CLASS, player.getBaseTemplate().getClassId()))
+            else if (CategoryData.Instance
+                     .IsInCategory(CategoryType.ASSASSIN_ALL_CLASS, player.getBaseTemplate().getClassId()))
             {
                 player._isAssassin = true;
             }
@@ -2429,7 +2429,7 @@ public class Player: Playable
 
 		try
 		{
-			if (_lvlJoinedAcademy != 0 && _clan != null && CategoryData.getInstance().isInCategory(CategoryType.THIRD_CLASS_GROUP, id))
+			if (_lvlJoinedAcademy != 0 && _clan != null && CategoryData.Instance.IsInCategory(CategoryType.THIRD_CLASS_GROUP, id))
 			{
 				if (_lvlJoinedAcademy <= 16)
 				{

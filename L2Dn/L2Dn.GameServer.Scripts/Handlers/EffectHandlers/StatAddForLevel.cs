@@ -28,7 +28,7 @@ public sealed class StatAddForLevel: AbstractEffect
         string levelStr = parameters.GetString(XmlSkillEffectParameterType.Level);
         ImmutableArray<int> levels = ParseUtil.ParseList<int>(levelStr, ',');
 
-        _values = levels.Select((level, index) => new KeyValuePair<int, double>(level, amounts[index])).
+        _values = levels.Select((level, index) => KeyValuePair.Create(level, (double)amounts[index])).
             ToFrozenDictionary();
 
         if (parameters.GetEnum(XmlSkillEffectParameterType.Mode, StatModifierType.DIFF) != StatModifierType.DIFF)

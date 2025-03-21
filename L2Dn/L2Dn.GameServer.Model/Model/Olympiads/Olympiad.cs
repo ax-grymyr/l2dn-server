@@ -11,6 +11,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
@@ -36,7 +37,7 @@ public class Olympiad
 	public const string UNCLAIMED_OLYMPIAD_POINTS_VAR = "UNCLAIMED_OLYMPIAD_POINTS";
 
     private static readonly FrozenSet<int> HERO_IDS =
-        CategoryData.getInstance().getCategoryByType(CategoryType.FOURTH_CLASS_GROUP) ??
+        CategoryData.Instance.GetCategory(CategoryType.FOURTH_CLASS_GROUP) ??
         throw new InvalidOperationException("No 4th class group defined");
 
 	private static readonly int COMP_START_HOUR = Config.Olympiad.ALT_OLY_START_TIME; // 6PM

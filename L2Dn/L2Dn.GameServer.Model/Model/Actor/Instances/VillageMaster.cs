@@ -16,6 +16,7 @@ using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model;
 using L2Dn.Model.Enums;
@@ -60,7 +61,7 @@ public class VillageMaster: Folk
 		subclasseSet5.addAll([CharacterClass.SORCERER, CharacterClass.SPELLSINGER, CharacterClass.SPELLHOWLER]);
 
 		Set<CharacterClass> subclasses = [];
-        FrozenSet<int>? thirdClassGroup = CategoryData.getInstance().getCategoryByType(CategoryType.THIRD_CLASS_GROUP);
+        FrozenSet<int>? thirdClassGroup = CategoryData.Instance.GetCategory(CategoryType.THIRD_CLASS_GROUP);
         if (thirdClassGroup != null)
 		    subclasses.addAll(thirdClassGroup.Select(x => (CharacterClass)x));
 
@@ -827,7 +828,7 @@ public class VillageMaster: Folk
 	{
 		Set<CharacterClass>? subclasses = null;
 		CharacterClass pClass = classId;
-		if (CategoryData.getInstance().isInCategory(CategoryType.THIRD_CLASS_GROUP, classId) || CategoryData.getInstance().isInCategory(CategoryType.FOURTH_CLASS_GROUP, classId))
+		if (CategoryData.Instance.IsInCategory(CategoryType.THIRD_CLASS_GROUP, classId) || CategoryData.Instance.IsInCategory(CategoryType.FOURTH_CLASS_GROUP, classId))
 		{
 			subclasses = new();
 			subclasses.addAll(mainSubclassSet);
