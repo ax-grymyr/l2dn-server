@@ -1,5 +1,6 @@
 using L2Dn.Extensions;
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -21,7 +22,7 @@ public class ServitorMode: IPlayerActionHandler
 			return;
 		}
 
-		switch (data.getOptionId())
+		switch (data.OptionId)
 		{
 			case 1: // Passive mode
 			{

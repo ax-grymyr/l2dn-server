@@ -1,5 +1,6 @@
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -35,10 +36,10 @@ public class ServitorSkillUse: IPlayerActionHandler
                 return;
             }
 
-            int skillLevel = PetSkillData.getInstance().getAvailableLevel(servitor, data.getOptionId());
+            int skillLevel = PetSkillData.getInstance().getAvailableLevel(servitor, data.OptionId);
             if (skillLevel > 0)
             {
-                Skill? skill = SkillData.Instance.GetSkill(data.getOptionId(), skillLevel);
+                Skill? skill = SkillData.Instance.GetSkill(data.OptionId, skillLevel);
                 if (skill != null)
                 {
                     servitor.setTarget(player.getTarget());

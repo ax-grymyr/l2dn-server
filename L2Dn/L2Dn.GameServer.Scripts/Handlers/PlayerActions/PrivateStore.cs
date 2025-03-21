@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -19,10 +20,10 @@ public class PrivateStore: IPlayerActionHandler
 	
 	public void useAction(Player player, ActionDataHolder data, bool ctrlPressed, bool shiftPressed)
 	{
-		PrivateStoreType type = (PrivateStoreType)data.getOptionId();
+		PrivateStoreType type = (PrivateStoreType)data.OptionId;
 		if (!Enum.IsDefined(type))
 		{
-			LOGGER.Warn("Incorrect private store type: " + data.getOptionId());
+			LOGGER.Warn("Incorrect private store type: " + data.OptionId);
 			return;
 		}
 		

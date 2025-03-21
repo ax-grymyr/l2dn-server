@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
@@ -18,7 +19,7 @@ public class AirshipAction: IPlayerActionHandler
         if (!player.isInAirShip() || airShip == null)
             return;
 
-        switch (data.getOptionId())
+        switch (data.OptionId)
         {
             case 1: // Steer
             {

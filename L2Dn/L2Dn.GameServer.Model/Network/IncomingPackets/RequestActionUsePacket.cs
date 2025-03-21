@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -9,6 +10,7 @@ using L2Dn.GameServer.Model.Effects;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -71,17 +73,17 @@ public struct RequestActionUsePacket: IIncomingPacket<GameSession>
 			}
 		}
 
-		ActionDataHolder? actionHolder = ActionData.getInstance().getActionData(_actionId);
+		ActionDataHolder? actionHolder = ActionData.Instance.GetActionData(_actionId);
 		if (actionHolder != null)
 		{
-			IPlayerActionHandler? actionHandler = PlayerActionHandler.getInstance().getHandler(actionHolder.getHandler());
+			IPlayerActionHandler? actionHandler = PlayerActionHandler.getInstance().getHandler(actionHolder.Handler);
 			if (actionHandler != null)
 			{
 				actionHandler.useAction(player, actionHolder, _ctrlPressed, _shiftPressed);
 				return ValueTask.CompletedTask;
 			}
 
-			PacketLogger.Instance.Warn("Couldn't find handler with name: " + actionHolder.getHandler());
+			PacketLogger.Instance.Warn("Couldn't find handler with name: " + actionHolder.Handler);
 			return ValueTask.CompletedTask;
 		}
 

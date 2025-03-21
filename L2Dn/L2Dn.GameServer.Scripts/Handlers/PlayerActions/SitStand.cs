@@ -1,4 +1,5 @@
 using L2Dn.GameServer.AI;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;

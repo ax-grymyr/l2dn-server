@@ -1,12 +1,13 @@
 ﻿using System.Collections.Immutable;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets;
 
 public readonly struct ExBasicActionListPacket: IOutgoingPacket
 {
-    public static readonly ExBasicActionListPacket STATIC_PACKET = new(ActionData.getInstance().getActionIdList());
+    public static readonly ExBasicActionListPacket STATIC_PACKET = new(ActionData.Instance.GetActionIdList());
 	
     private readonly ImmutableArray<int> _actionIds;
 	

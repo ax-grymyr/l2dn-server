@@ -19,6 +19,7 @@ using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
@@ -292,7 +293,7 @@ public class SkillCaster: Runnable
 
 		// Send a packet starting the casting.
         Player? player = caster.getActingPlayer();
-		int actionId = caster.isSummon() ? ActionData.getInstance().getSkillActionId(_skill.Id) : -1;
+		int actionId = caster.isSummon() ? ActionData.Instance.GetSkillActionId(_skill.Id) : -1;
 		if (!_skill.IsNotBroadcastable)
 		{
 			caster.broadcastPacket(new MagicSkillUsePacket(caster, target, _skill.DisplayId, _skill.DisplayLevel, displayedCastTime, reuseDelay, _skill.ReuseDelayGroup, actionId, _castingType));

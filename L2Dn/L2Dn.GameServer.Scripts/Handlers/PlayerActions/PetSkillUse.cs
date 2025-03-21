@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -44,11 +45,11 @@ public class PetSkillUse: IPlayerActionHandler
         else
         {
             PetData? petData = PetDataTable.getInstance().getPetData(pet.Id);
-            int skillLevel = petData?.getAvailableLevel(data.getOptionId(), pet.getLevel()) ?? 0;
+            int skillLevel = petData?.getAvailableLevel(data.OptionId, pet.getLevel()) ?? 0;
 
             if (skillLevel > 0)
             {
-                Skill? skill = SkillData.Instance.GetSkill(data.getOptionId(), skillLevel);
+                Skill? skill = SkillData.Instance.GetSkill(data.OptionId, skillLevel);
                 if (skill != null)
                 {
                     pet.setTarget(player.getTarget());
@@ -56,7 +57,7 @@ public class PetSkillUse: IPlayerActionHandler
                 }
             }
 
-            if (data.getOptionId() == (int)CommonSkill.PET_SWITCH_STANCE)
+            if (data.OptionId == (int)CommonSkill.PET_SWITCH_STANCE)
             {
                 pet.switchMode();
             }

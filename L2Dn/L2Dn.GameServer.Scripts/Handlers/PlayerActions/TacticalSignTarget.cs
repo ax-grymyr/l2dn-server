@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -20,7 +21,7 @@ public class TacticalSignTarget: IPlayerActionHandler
             return;
         }
 
-        party.setTargetBasedOnTacticalSignId(player, data.getOptionId());
+        party.setTargetBasedOnTacticalSignId(player, data.OptionId);
     }
 
     public bool isPetAction()

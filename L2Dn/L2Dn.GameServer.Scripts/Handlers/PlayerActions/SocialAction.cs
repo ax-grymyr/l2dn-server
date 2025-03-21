@@ -1,5 +1,6 @@
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -20,7 +21,7 @@ public class SocialAction: IPlayerActionHandler
 {
 	public void useAction(Player player, ActionDataHolder data, bool ctrlPressed, bool shiftPressed)
 	{
-		switch (data.getOptionId())
+		switch (data.OptionId)
 		{
 			case 2: // Greeting
 			case 3: // Victory
@@ -39,12 +40,12 @@ public class SocialAction: IPlayerActionHandler
 			case 28: // Propose
 			case 29: // Provoke
 			{
-				useSocial(player, data.getOptionId());
+				useSocial(player, data.OptionId);
 				break;
 			}
 			case 30: // Beauty Shop
 			{
-				if (useSocial(player, data.getOptionId()))
+				if (useSocial(player, data.OptionId))
 				{
 					player.broadcastInfo();
 				}
@@ -54,7 +55,7 @@ public class SocialAction: IPlayerActionHandler
 			case 17: // High Five
 			case 18: // Couple Dance
 			{
-				useCoupleSocial(player, data.getOptionId());
+				useCoupleSocial(player, data.OptionId);
 				break;
 			}
 		}

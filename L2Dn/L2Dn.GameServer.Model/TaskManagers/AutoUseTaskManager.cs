@@ -2,6 +2,7 @@ using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
 using L2Dn.Events;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -17,6 +18,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
@@ -440,10 +442,10 @@ public class AutoUseTaskManager
 							}
 						}
 
-						ActionDataHolder? actionHolder = ActionData.getInstance().getActionData(actionId);
+						ActionDataHolder? actionHolder = ActionData.Instance.GetActionData(actionId);
 						if (actionHolder != null)
 						{
-							IPlayerActionHandler? actionHandler = PlayerActionHandler.getInstance().getHandler(actionHolder.getHandler());
+							IPlayerActionHandler? actionHandler = PlayerActionHandler.getInstance().getHandler(actionHolder.Handler);
 							if (actionHandler != null)
 							{
 								if (!actionHandler.isPetAction())
@@ -455,7 +457,7 @@ public class AutoUseTaskManager
 									Summon? summon = player.getAnyServitor();
 									if (summon != null && !summon.isAlikeDead())
 									{
-										Skill? skill = summon.getKnownSkill(actionHolder.getOptionId());
+										Skill? skill = summon.getKnownSkill(actionHolder.OptionId);
 										if (skill != null && !canSummonCastSkill(player, summon, skill))
 										{
 											continue;

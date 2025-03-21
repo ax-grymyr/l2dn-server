@@ -43,7 +43,7 @@ public static class StaticDataLoader
         AnnouncementsTable.getInstance();
         GlobalVariablesManager.getInstance();
 
-        ActionData.getInstance();
+        ActionData.Instance.Load();
         CategoryData.getInstance();
         SayuneData.getInstance();
         ClanRewardData.getInstance();
