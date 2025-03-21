@@ -664,29 +664,29 @@ public sealed class OldSkill: IIdentifiable
 
     public int getAffectHeightMax() => _affectHeight[1];
 
-    public bool isActive() => _operateType.isActive();
+    public bool isActive() => _operateType.IsActive();
 
-    public bool isPassive() => _operateType.isPassive();
+    public bool isPassive() => _operateType.IsPassive();
 
-    public bool isToggle() => _operateType.isToggle();
+    public bool isToggle() => _operateType.IsToggle();
 
-    public bool isAura() => _operateType.isAura();
+    public bool isAura() => _operateType.IsAura();
 
-    public bool isHidingMessages() => _isHidingMessages || _operateType.isHidingMessages();
+    public bool isHidingMessages() => _isHidingMessages || _operateType.IsHidingMessages();
 
-    public bool isNotBroadcastable() => _operateType.isNotBroadcastable();
+    public bool isNotBroadcastable() => _operateType.IsNotBroadcastable();
 
-    public bool isContinuous() => _operateType.isContinuous() || isSelfContinuous();
+    public bool isContinuous() => _operateType.IsContinuous() || isSelfContinuous();
 
-    public bool isFlyType() => _operateType.isFlyType();
+    public bool isFlyType() => _operateType.IsFlyType();
 
-    public bool isSelfContinuous() => _operateType.isSelfContinuous();
+    public bool isSelfContinuous() => _operateType.IsSelfContinuous();
 
-    public bool isChanneling() => _operateType.isChanneling();
+    public bool isChanneling() => _operateType.IsChanneling();
 
     public bool isTriggeredSkill() => _isTriggeredSkill;
 
-    public bool isSynergySkill() => _operateType.isSynergy();
+    public bool isSynergySkill() => _operateType.IsSynergy();
 
     public SkillOperateType getOperateType() => _operateType;
 

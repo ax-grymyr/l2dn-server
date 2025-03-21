@@ -545,7 +545,7 @@ public class Formulas
 	 */
 	public static double calcSkillTimeFactor(Creature creature, Skill skill)
 	{
-		if (skill.OperateType.isChanneling() || skill.MagicType == SkillMagicType.Static ||
+		if (skill.OperateType.IsChanneling() || skill.MagicType == SkillMagicType.Static ||
             skill.MagicType == (SkillMagicType)4 || skill.MagicType == (SkillMagicType)21)
 		{
 			return 1.0d;

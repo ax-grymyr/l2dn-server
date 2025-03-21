@@ -8,7 +8,6 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
-using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.Model.Enums;
@@ -289,25 +288,25 @@ public sealed class Skill: IIdentifiable
     /// </summary>
     public SkillOperateType OperateType { get; }
 
-    public bool IsActive => OperateType.isActive();
+    public bool IsActive => OperateType.IsActive();
 
-    public bool IsPassive => OperateType.isPassive();
+    public bool IsPassive => OperateType.IsPassive();
 
-    public bool IsToggle => OperateType.isToggle();
+    public bool IsToggle => OperateType.IsToggle();
 
-    public bool IsAura => OperateType.isAura();
+    public bool IsAura => OperateType.IsAura();
 
-    public bool IsNotBroadcastable => OperateType.isNotBroadcastable();
+    public bool IsNotBroadcastable => OperateType.IsNotBroadcastable();
 
-    public bool IsContinuous => OperateType.isContinuous() || IsSelfContinuous;
+    public bool IsContinuous => OperateType.IsContinuous() || IsSelfContinuous;
 
-    public bool IsFlyType => OperateType.isFlyType();
+    public bool IsFlyType => OperateType.IsFlyType();
 
-    public bool IsSelfContinuous => OperateType.isSelfContinuous();
+    public bool IsSelfContinuous => OperateType.IsSelfContinuous();
 
-    public bool IsChanneling => OperateType.isChanneling();
+    public bool IsChanneling => OperateType.IsChanneling();
 
-    public bool IsSynergy => OperateType.isSynergy();
+    public bool IsSynergy => OperateType.IsSynergy();
 
     /// <summary>
     /// Skill magic type.
@@ -681,7 +680,7 @@ public sealed class Skill: IIdentifiable
 
     public bool IsDisplayInList { get; }
 
-    public bool IsHidingMessages => _isHidingMessages || OperateType.isHidingMessages();
+    public bool IsHidingMessages => _isHidingMessages || OperateType.IsHidingMessages();
 
     public bool IsAoe =>
         AffectScope is AffectScope.FAN or AffectScope.FAN_PB or AffectScope.POINT_BLANK or AffectScope.RANGE

@@ -1,271 +1,169 @@
-namespace L2Dn.GameServer.Model.Skills;
+namespace L2Dn.GameServer.Enums;
 
-/**
- * This enum class holds the skill operative types:
- * <ul>
- * <li>A1</li>
- * <li>A2</li>
- * <li>A3</li>
- * <li>A4</li>
- * <li>CA1</li>
- * <li>CA5</li>
- * <li>DA1</li>
- * <li>DA2</li>
- * <li>P</li>
- * <li>T</li>
- * </ul>
- * @author Zoey76
- */
+/// <summary>
+/// This enum holds the skill operative types.
+/// </summary>
 public enum SkillOperateType
 {
-	/**
-	 * Active Skill with "Instant Effect" (for example damage skills heal/pdam/mdam/cpdam skills).
-	 */
-	A1,
+    /// <summary>
+    /// Active Skill with "Instant Effect" (for example damage skills heal/pdam/mdam/cpdam skills).
+    /// </summary>
+    A1,
 
-	/**
-	 * Active Skill with "Continuous effect + Instant effect" (for example buff/debuff or damage/heal over time skills).
-	 */
-	A2,
+    /// <summary>
+    /// Active Skill with "Continuous effect + Instant effect" (for example buff/debuff or damage/heal over time skills).
+    /// </summary>
+    A2,
 
-	/**
-	 * Active Skill with "Instant effect for target + Continuous effect + Continuous effect for self"
-	 */
-	A3,
+    /// <summary>
+    /// Active Skill with "Continuous effect + Instant effect" (for example buff/debuff or damage/heal over time skills).
+    /// </summary>
+    A3,
 
-	/**
-	 * Active Skill with "Instant effect + ?" used for special event herb.
-	 */
-	A4,
+    /// <summary>
+    /// Active Skill with "Instant effect + ?" used for special event herb.
+    /// </summary>
+    A4,
 
-	/**
-	 * Aura Active Skill
-	 */
-	A5,
+    /// <summary>
+    /// Aura Active Skill.
+    /// </summary>
+    A5,
 
-	/**
-	 * Synergy Active Skill
-	 */
-	A6,
+    /// <summary>
+    /// Synergy Active Skill.
+    /// </summary>
+    A6,
 
-	/**
-	 * Continuous Active Skill with "instant effect" (instant effect casted by ticks).
-	 */
-	CA1,
+    /// <summary>
+    /// Continuous Active Skill with "instant effect" (instant effect casted by ticks).
+    /// </summary>
+    CA1,
 
-	/**
-	 * ?
-	 */
-	CA2,
+    /// <summary>
+    /// ?
+    /// </summary>
+    CA2,
 
-	/**
-	 * Continuous Active Skill with "continuous effect" (continuous effect casted by ticks).
-	 */
-	CA5,
+    /// <summary>
+    /// Continuous Active Skill with "continuous effect" (continuous effect casted by ticks).
+    /// </summary>
+    CA5,
 
-	/**
-	 * Directional Active Skill with "Charge/Rush instant effect".
-	 */
-	DA1,
+    /// <summary>
+    /// Directional Active Skill with "Charge/Rush instant effect".
+    /// </summary>
+    DA1,
 
-	/**
-	 * Directional Active Skill with "Charge/Rush Continuous effect".
-	 */
-	DA2,
+    /// <summary>
+    /// Directional Active Skill with "Charge/Rush Continuous effect".
+    /// </summary>
+    DA2,
 
-	/**
-	 * Directional Active Skill with Blink effect
-	 */
-	DA3,
+    /// <summary>
+    /// Directional Active Skill with Blink effect.
+    /// </summary>
+    DA3,
 
-	/**
-	 * Directional Active Skill with "Left Continuous effect".
-	 */
-	DA4,
+    /// <summary>
+    /// Directional Active Skill with "Left Continuous effect".
+    /// </summary>
+    DA4,
 
-	/**
-	 * Directional Active Skill with "Right Continuous effect".
-	 */
-	DA5,
+    /// <summary>
+    /// Directional Active Skill with "Right Continuous effect".
+    /// </summary>
+    DA5,
 
-	/**
-	 * Passive Skill.
-	 */
-	P,
+    /// <summary>
+    /// Passive Skill.
+    /// </summary>
+    P,
 
-	/**
-	 * Toggle Skill.
-	 */
-	T,
+    /// <summary>
+    /// Toggle Skill.
+    /// </summary>
+    T,
 
-	/**
-	 * Toggle Skill with Group.
-	 */
-	TG,
+    /// <summary>
+    /// Toggle Skill with Group.
+    /// </summary>
+    TG,
 
-	/**
-	 * Aura Skill.
-	 */
-	AU
+    /// <summary>
+    /// Aura Skill.
+    /// </summary>
+    AU
 }
 
 public static class SkillOperateTypeUtil
 {
-/**
- * Verifies if the operative type correspond to an active skill.
- * @return {@code true} if the operative skill type is active, {@code false} otherwise
- */
-	public static bool isActive(this SkillOperateType skillOperateType)
-	{
-		switch (skillOperateType)
-		{
-			case SkillOperateType.A1:
-			case SkillOperateType.A2:
-			case SkillOperateType.A3:
-			case SkillOperateType.A4:
-			case SkillOperateType.A5:
-			case SkillOperateType.A6:
-			case SkillOperateType.CA1:
-			case SkillOperateType.CA5:
-			case SkillOperateType.DA1:
-			case SkillOperateType.DA2:
-			case SkillOperateType.DA4:
-			case SkillOperateType.DA5:
-			{
-				return true;
-			}
-			default:
-			{
-				return false;
-			}
-		}
-	}
-	
-	/**
-	 * Verifies if the operative type correspond to a continuous skill.
-	 * @return {@code true} if the operative skill type is continuous, {@code false} otherwise
-	 */
-	public static bool isContinuous(this SkillOperateType skillOperateType)
-	{
-		switch (skillOperateType)
-		{
-			case SkillOperateType.A2:
-			case SkillOperateType.A3:
-			case SkillOperateType.A4:
-			case SkillOperateType.A5:
-			case SkillOperateType.A6:
-			case SkillOperateType.DA2:
-			case SkillOperateType.DA4:
-			case SkillOperateType.DA5:
-			{
-				return true;
-			}
-			default:
-			{
-				return false;
-			}
-		}
-	}
-	
-	/**
-	 * Verifies if the operative type correspond to a continuous skill.
-	 * @return {@code true} if the operative skill type is continuous, {@code false} otherwise
-	 */
-	public static bool isSelfContinuous(this SkillOperateType skillOperateType)
-	{
-		return skillOperateType == SkillOperateType.A3;
-	}
-	
-	/**
-	 * Verifies if the operative type correspond to a passive skill.
-	 * @return {@code true} if the operative skill type is passive, {@code false} otherwise
-	 */
-	public static bool isPassive(this SkillOperateType skillOperateType)
-	{
-		return skillOperateType == SkillOperateType.P;
-	}
-	
-	/**
-	 * Verifies if the operative type correspond to a toggle skill.
-	 * @return {@code true} if the operative skill type is toggle, {@code false} otherwise
-	 */
-	public static bool isToggle(this SkillOperateType skillOperateType)
-	{
-		return skillOperateType == SkillOperateType.T || skillOperateType == SkillOperateType.TG || skillOperateType == SkillOperateType.AU;
-	}
-	
-	/**
-	 * Verifies if the operative type correspond to a active aura skill.
-	 * @return {@code true} if the operative skill type is active aura, {@code false} otherwise
-	 */
-	public static bool isAura(this SkillOperateType skillOperateType)
-	{
-		return skillOperateType == SkillOperateType.A5 || skillOperateType == SkillOperateType.A6 || skillOperateType == SkillOperateType.AU;
-	}
-	
-	/**
-	 * @return {@code true} if the operate type skill type should not send messages for start/finish, {@code false} otherwise
-	 */
-	public static bool isHidingMessages(this SkillOperateType skillOperateType)
-	{
-		return skillOperateType == SkillOperateType.P || skillOperateType == SkillOperateType.A5 || skillOperateType == SkillOperateType.A6 || skillOperateType == SkillOperateType.TG;
-	}
-	
-	/**
-	 * @return {@code true} if the operate type skill type should not be broadcasted as MagicSkillUse, MagicSkillLaunched, {@code false} otherwise
-	 */
-	public static bool isNotBroadcastable(this SkillOperateType skillOperateType)
-	{
-		return skillOperateType == SkillOperateType.AU || skillOperateType == SkillOperateType.A5 || 
-		       skillOperateType == SkillOperateType.A6 || skillOperateType == SkillOperateType.TG || skillOperateType == SkillOperateType.T;
-	}
-	
-	/**
-	 * Verifies if the operative type correspond to a channeling skill.
-	 * @return {@code true} if the operative skill type is channeling, {@code false} otherwise
-	 */
-	public static bool isChanneling(this SkillOperateType skillOperateType)
-	{
-		switch (skillOperateType)
-		{
-			case SkillOperateType.CA1:
-			case SkillOperateType.CA2:
-			case SkillOperateType.CA5:
-			{
-				return true;
-			}
-			default:
-			{
-				return false;
-			}
-		}
-	}
-	
-	/**
-	 * Verifies if the operative type correspond to a synergy skill.
-	 * @return {@code true} if the operative skill type is synergy, {@code false} otherwise
-	 */
-	public static bool isSynergy(this SkillOperateType skillOperateType)
-	{
-		return skillOperateType == SkillOperateType.A6;
-	}
-	
-	public static bool isFlyType(this SkillOperateType skillOperateType)
-	{
-		switch (skillOperateType)
-		{
-			case SkillOperateType.DA1:
-			case SkillOperateType.DA2:
-			case SkillOperateType.DA3:
-			case SkillOperateType.DA4:
-			case SkillOperateType.DA5:
-			{
-				return true;
-			}
-			default:
-			{
-				return false;
-			}
-		}
-	}
+    /// <summary>
+    /// Verifies if the operative type correspond to an active skill.
+    /// </summary>
+    public static bool IsActive(this SkillOperateType skillOperateType) =>
+        skillOperateType is SkillOperateType.A1 or SkillOperateType.A2 or SkillOperateType.A3 or SkillOperateType.A4
+            or SkillOperateType.A5 or SkillOperateType.A6 or SkillOperateType.CA1 or SkillOperateType.CA5
+            or SkillOperateType.DA1 or SkillOperateType.DA2 or SkillOperateType.DA4 or SkillOperateType.DA5;
+
+    /// <summary>
+    /// Verifies if the operative type correspond to a continuous skill.
+    /// </summary>
+    public static bool IsContinuous(this SkillOperateType skillOperateType) =>
+        skillOperateType is SkillOperateType.A2 or SkillOperateType.A3 or SkillOperateType.A4 or SkillOperateType.A5
+            or SkillOperateType.A6 or SkillOperateType.DA2 or SkillOperateType.DA4 or SkillOperateType.DA5;
+
+    /// <summary>
+    /// Verifies if the operative type correspond to a self continuous skill.
+    /// </summary>
+    public static bool IsSelfContinuous(this SkillOperateType skillOperateType) =>
+        skillOperateType == SkillOperateType.A3;
+
+    /// <summary>
+    /// Verifies if the operative type correspond to a passive skill.
+    /// </summary>
+    public static bool IsPassive(this SkillOperateType skillOperateType) => skillOperateType == SkillOperateType.P;
+
+    /// <summary>
+    /// Verifies if the operative type correspond to a toggle skill.
+    /// </summary>
+    public static bool IsToggle(this SkillOperateType skillOperateType) =>
+        skillOperateType is SkillOperateType.T or SkillOperateType.TG or SkillOperateType.AU;
+
+    /// <summary>
+    /// Verifies if the operative type correspond to a active aura skill.
+    /// </summary>
+    public static bool IsAura(this SkillOperateType skillOperateType) =>
+        skillOperateType is SkillOperateType.A5 or SkillOperateType.A6 or SkillOperateType.AU;
+
+    /// <summary>
+    /// Verifies if the operate type skill type should not send messages for start/finish.
+    /// </summary>
+    public static bool IsHidingMessages(this SkillOperateType skillOperateType) =>
+        skillOperateType is SkillOperateType.P or SkillOperateType.A5 or SkillOperateType.A6 or SkillOperateType.TG;
+
+    /// <summary>
+    /// Verifies if the operate type skill type should not be broadcasted as MagicSkillUse, MagicSkillLaunched.
+    /// </summary>
+    public static bool IsNotBroadcastable(this SkillOperateType skillOperateType) =>
+        skillOperateType is SkillOperateType.AU or SkillOperateType.A5 or SkillOperateType.A6 or SkillOperateType.TG
+            or SkillOperateType.T;
+
+    /// <summary>
+    /// Verifies if the operative type correspond to a channeling skill.
+    /// </summary>
+    public static bool IsChanneling(this SkillOperateType skillOperateType) =>
+        skillOperateType is SkillOperateType.CA1 or SkillOperateType.CA2 or SkillOperateType.CA5;
+
+    /// <summary>
+    /// Verifies if the operative type correspond to a synergy skill.
+    /// </summary>
+    public static bool IsSynergy(this SkillOperateType skillOperateType) => skillOperateType == SkillOperateType.A6;
+
+    /// <summary>
+    /// Verifies if the operative type correspond to a fly type skill.
+    /// </summary>
+    public static bool IsFlyType(this SkillOperateType skillOperateType) =>
+        skillOperateType is SkillOperateType.DA1 or SkillOperateType.DA2 or SkillOperateType.DA3 or SkillOperateType.DA4
+            or SkillOperateType.DA5;
 }

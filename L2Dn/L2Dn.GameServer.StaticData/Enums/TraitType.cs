@@ -1,6 +1,6 @@
 ﻿using System.Collections.Immutable;
 
-namespace L2Dn.GameServer.Model.Stats;
+namespace L2Dn.GameServer.Enums;
 
 public enum TraitType
 {

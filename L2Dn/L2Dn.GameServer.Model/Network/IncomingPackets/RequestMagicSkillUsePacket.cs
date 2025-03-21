@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;

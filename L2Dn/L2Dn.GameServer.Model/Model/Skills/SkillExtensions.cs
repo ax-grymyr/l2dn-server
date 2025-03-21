@@ -290,8 +290,8 @@ public static class SkillExtensions
         if (effected.isIgnoringSkillEffects(skill.Id, skill.Level))
             return;
 
-        bool addContinuousEffects = !passive && (skill.OperateType.isToggle() ||
-            (skill.OperateType.isContinuous() &&
+        bool addContinuousEffects = !passive && (skill.OperateType.IsToggle() ||
+            (skill.OperateType.IsContinuous() &&
                 Formulas.calcEffectSuccess(effector, effected, skill)));
 
         if (!self && !passive)
@@ -315,7 +315,7 @@ public static class SkillExtensions
             if (addContinuousEffects)
             {
                 // Aura skills reset the abnormal time.
-                BuffInfo? existingInfo = skill.OperateType.isAura()
+                BuffInfo? existingInfo = skill.OperateType.IsAura()
                     ? effected.getEffectList().getBuffInfoBySkillId(skill.Id)
                     : null;
 
@@ -357,8 +357,8 @@ public static class SkillExtensions
 
         if (self)
         {
-            addContinuousEffects = !passive && (skill.OperateType.isToggle() ||
-                (skill.OperateType.isSelfContinuous() &&
+            addContinuousEffects = !passive && (skill.OperateType.IsToggle() ||
+                (skill.OperateType.IsSelfContinuous() &&
                     Formulas.calcEffectSuccess(effector, effector, skill)));
 
             BuffInfo info = new BuffInfo(effector, effector, skill, !instant, item, null);
@@ -371,7 +371,7 @@ public static class SkillExtensions
             if (addContinuousEffects)
             {
                 // Aura skills reset the abnormal time.
-                BuffInfo? existingInfo = skill.OperateType.isAura()
+                BuffInfo? existingInfo = skill.OperateType.IsAura()
                     ? effector.getEffectList().getBuffInfoBySkillId(skill.Id)
                     : null;
 

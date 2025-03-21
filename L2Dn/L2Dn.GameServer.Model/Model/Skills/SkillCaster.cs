@@ -795,7 +795,7 @@ public class SkillCaster: Runnable
 	{
 		double timeFactor = Formulas.calcSkillTimeFactor(creature, skill);
 		TimeSpan cancelTime = Formulas.calcSkillCancelTime(creature, skill);
-		if (skill.OperateType.isChanneling())
+		if (skill.OperateType.IsChanneling())
 		{
 			_hitTime = Algorithms.Max(skill.HitTime - cancelTime, TimeSpan.Zero);
 			_cancelTime = TimeSpan.FromMilliseconds(2866);
