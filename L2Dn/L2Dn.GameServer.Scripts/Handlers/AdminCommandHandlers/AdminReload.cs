@@ -259,7 +259,7 @@ public class AdminReload: IAdminCommandHandler
 				}
 				case "options":
 				{
-					OptionData.getInstance().load();
+					OptionData.Instance.Load();
 					GmManager.getInstance().BroadcastMessageToGMs(activeChar.getName() + ": Reloaded Options data.");
 					break;
 				}

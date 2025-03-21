@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -6,6 +7,7 @@ using L2Dn.GameServer.Model.Options;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Collections;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -107,10 +109,10 @@ public struct RequestCollectionRegisterPacket: IIncomingPacket<GameSession>
 			player.sendPacket(sm);
 
 			// Apply collection option if all requirements are met.
-			Options? options = OptionData.getInstance().getOptions(collection.getOptionId());
+			Option? options = OptionData.Instance.GetOptions(collection.getOptionId());
 			if (options != null)
 			{
-				options.apply(player);
+				options.Apply(player);
 			}
 		}
 

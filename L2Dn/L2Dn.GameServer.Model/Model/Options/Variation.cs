@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using NLog;
 
 namespace L2Dn.GameServer.Model.Options;
@@ -34,7 +35,7 @@ public class Variation
 		_effects[order] = group;
 	}
 
-	public Options? getRandomEffect(int order, int targetItemId)
+	public Option? getRandomEffect(int order, int targetItemId)
 	{
 		if (_effects == null)
 		{

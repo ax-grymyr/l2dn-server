@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -1042,13 +1043,13 @@ public class EffectList
 
 	private void addOption(BuffInfo info)
     {
-        Options.Options? option = info.getOption();
+        Option? option = info.getOption();
 		if (option != null)
 		{
 			// Remove previous options of this id.
 			foreach (BuffInfo b in _options)
 			{
-				if (b.getOption()?.getId() == option.getId())
+				if (b.getOption()?.Id == option.Id)
 				{
 					b.setInUse(false);
 					_options.remove(b);

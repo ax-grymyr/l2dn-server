@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 
@@ -8,10 +9,10 @@ namespace L2Dn.GameServer.Model.Options;
  */
 public sealed class OptionDataGroup(List<OptionDataCategory> categories)
 {
-    public Options? getRandomEffect(int itemId)
+    public Option? getRandomEffect(int itemId)
 	{
 		List<OptionDataCategory> exclutions = [];
-		Options? result = null;
+		Option? result = null;
 		do
 		{
 			double random = Rnd.nextDouble() * 100.0;

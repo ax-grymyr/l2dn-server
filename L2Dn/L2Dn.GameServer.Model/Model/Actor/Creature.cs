@@ -4,6 +4,7 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.Geo.PathFindings;
@@ -3952,9 +3953,9 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 		{
 			foreach (OptionSkillHolder holder in _triggerSkills.Values)
 			{
-				if (((!hit.isCritical() && holder.getSkillType() == OptionSkillType.ATTACK) || (holder.getSkillType() == OptionSkillType.CRITICAL && hit.isCritical())) && Rnd.get(100) < holder.getChance())
+				if (((!hit.isCritical() && holder.SkillType == OptionSkillType.Attack) || (holder.SkillType == OptionSkillType.Critical && hit.isCritical())) && Rnd.get(100) < holder.Chance)
 				{
-					SkillCaster.triggerCast(this, target, holder.getSkill(), null, false);
+					SkillCaster.triggerCast(this, target, holder.Skill, null, false);
 				}
 			}
 		}
@@ -5083,12 +5084,12 @@ public abstract class Creature: WorldObject, ISkillsHolder, IEventContainerProvi
 
 	public void addTriggerSkill(OptionSkillHolder holder)
 	{
-		getTriggerSkills().put(holder.getSkill().Id, holder);
+		getTriggerSkills().put(holder.Skill.Id, holder);
 	}
 
 	public void removeTriggerSkill(OptionSkillHolder holder)
 	{
-		getTriggerSkills().remove(holder.getSkill().Id);
+		getTriggerSkills().remove(holder.Skill.Id);
 	}
 
 	/**

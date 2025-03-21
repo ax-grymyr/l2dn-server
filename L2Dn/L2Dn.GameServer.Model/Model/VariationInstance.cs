@@ -1,5 +1,7 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Actor;
+using L2Dn.GameServer.Model.Options;
+using L2Dn.GameServer.StaticData;
 
 namespace L2Dn.GameServer.Model;
 
@@ -10,17 +12,17 @@ namespace L2Dn.GameServer.Model;
 public class VariationInstance
 {
     private readonly int _mineralId;
-    private readonly Options.Options? _option1;
-    private readonly Options.Options? _option2;
+    private readonly Option? _option1;
+    private readonly Option? _option2;
 
     public VariationInstance(int mineralId, int option1Id, int option2Id)
     {
         _mineralId = mineralId;
-        _option1 = OptionData.getInstance().getOptions(option1Id);
-        _option2 = OptionData.getInstance().getOptions(option2Id);
+        _option1 = OptionData.Instance.GetOptions(option1Id);
+        _option2 = OptionData.Instance.GetOptions(option2Id);
     }
 
-    public VariationInstance(int mineralId, Options.Options? op1, Options.Options? op2)
+    public VariationInstance(int mineralId, Option? op1, Option? op2)
     {
         _mineralId = mineralId;
         _option1 = op1;
@@ -34,23 +36,23 @@ public class VariationInstance
 
     public int getOption1Id()
     {
-        return _option1 == null ? -1 : _option1.getId();
+        return _option1 == null ? -1 : _option1.Id;
     }
 
     public int getOption2Id()
     {
-        return _option2 == null ? -1 : _option2.getId();
+        return _option2 == null ? -1 : _option2.Id;
     }
 
     public void applyBonus(Playable playable)
     {
         if (_option1 != null)
         {
-            _option1.apply(playable);
+            _option1.Apply(playable);
         }
         if (_option2 != null)
         {
-            _option2.apply(playable);
+            _option2.Apply(playable);
         }
     }
 
@@ -58,11 +60,11 @@ public class VariationInstance
     {
         if (_option1 != null)
         {
-            _option1.remove(playable);
+            _option1.Remove(playable);
         }
         if (_option2 != null)
         {
-            _option2.remove(playable);
+            _option2.Remove(playable);
         }
     }
 }

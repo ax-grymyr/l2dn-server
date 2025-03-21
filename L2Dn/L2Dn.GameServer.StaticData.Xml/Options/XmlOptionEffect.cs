@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace L2Dn.Model.Xml;
+namespace L2Dn.GameServer.StaticData.Xml.Options;
 
 public class XmlOptionEffect
 {

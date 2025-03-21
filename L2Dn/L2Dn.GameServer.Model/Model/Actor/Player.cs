@@ -39,6 +39,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Matching;
 using L2Dn.GameServer.Model.Olympiads;
+using L2Dn.GameServer.Model.Options;
 using L2Dn.GameServer.Model.Punishment;
 using L2Dn.GameServer.Model.Quests;
 using L2Dn.GameServer.Model.Sieges;
@@ -15512,9 +15513,9 @@ public class Player: Playable
 
 			if (count >= collection.getCompleteCount())
 			{
-				Options.Options? options = OptionData.getInstance().getOptions(collection.getOptionId());
+				Option? options = OptionData.Instance.GetOptions(collection.getOptionId());
 				if (options != null)
-					options.apply(this);
+					options.Apply(this);
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.InstanceManagers;
@@ -603,9 +604,9 @@ public class SkillCaster: Runnable
 					{
 						foreach (OptionSkillHolder holder in caster.getTriggerSkills().Values)
 						{
-							if (((skill.IsMagic && holder.getSkillType() == OptionSkillType.MAGIC) || (skill.IsPhysical && holder.getSkillType() == OptionSkillType.ATTACK)) && Rnd.get(100) < holder.getChance())
+							if (((skill.IsMagic && holder.SkillType == OptionSkillType.Magic) || (skill.IsPhysical && holder.SkillType == OptionSkillType.Attack)) && Rnd.get(100) < holder.Chance)
 							{
-								triggerCast(caster, creature, holder.getSkill(), null, false);
+								triggerCast(caster, creature, holder.Skill, null, false);
 							}
 						}
 					}

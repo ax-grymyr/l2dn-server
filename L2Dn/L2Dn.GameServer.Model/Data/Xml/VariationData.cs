@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Instances;
@@ -67,7 +68,7 @@ public class VariationData: DataReaderBase
 			foreach (XmlVariationOptionGroupCategory xmlOptionGroupCategory in xmlVariationOptionGroup.OptionCategories)
 			{
 				double chance = xmlOptionGroupCategory.Chance;
-				Map<Options, double> options = new();
+				Map<Option, double> options = new();
 
 				// Support for specific item ids.
 				Set<int> itemIds = new();
@@ -80,7 +81,7 @@ public class VariationData: DataReaderBase
 						{
 							double optionChance = option.Chance;
 							int optionId = option.Id;
-							Options? opt = OptionData.getInstance().getOptions(optionId);
+							Option? opt = OptionData.Instance.GetOptions(optionId);
 							if (opt == null)
 							{
 								_logger.Error(GetType().Name + ": Null option for id " + optionId + " mineral " + mineralId);
@@ -98,7 +99,7 @@ public class VariationData: DataReaderBase
 							int toId = optionRange.To;
 							for (int id = fromId; id <= toId; id++)
 							{
-								Options? op = OptionData.getInstance().getOptions(id);
+								Option? op = OptionData.Instance.GetOptions(id);
 								if (op == null)
 								{
 									_logger.Error(GetType().Name + ": Null option for id " + id + " mineral " + mineralId);
@@ -250,8 +251,8 @@ public class VariationData: DataReaderBase
 
 	private VariationInstance generateRandomVariation(Variation variation, int targetItemId)
 	{
-		Options? option1 = variation.getRandomEffect(0, targetItemId);
-		Options? option2 = variation.getRandomEffect(1, targetItemId);
+		Option? option1 = variation.getRandomEffect(0, targetItemId);
+		Option? option2 = variation.getRandomEffect(1, targetItemId);
 		return new VariationInstance(variation.getMineralId(), option1, option2);
 	}
 

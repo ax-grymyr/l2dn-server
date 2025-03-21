@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -42,7 +43,7 @@ public class BuffInfo
 	private volatile bool _isInUse = true;
 	private readonly bool _hideStartMessage;
 	private readonly Item? _item;
-	private readonly Options.Options? _option;
+	private readonly Option? _option;
 
 	/**
 	 * Buff Info constructor.
@@ -53,7 +54,7 @@ public class BuffInfo
 	 * @param item
 	 * @param option
 	 */
-	public BuffInfo(Creature effector, Creature effected, Skill skill, bool hideStartMessage, Item? item, Options.Options? option)
+	public BuffInfo(Creature effector, Creature effected, Skill skill, bool hideStartMessage, Item? item, Option? option)
 	{
 		_effectorObjectId = effector.ObjectId;
 		_effector = effector;
@@ -163,7 +164,7 @@ public class BuffInfo
 	/**
 	 * @return the options that issued this effect
 	 */
-	public Options.Options? getOption()
+	public Option? getOption()
 	{
 		return _option;
 	}

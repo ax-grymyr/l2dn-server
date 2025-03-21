@@ -4,6 +4,7 @@ using System.Text;
 using L2Dn.Events;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
 using L2Dn.GameServer.InstanceManagers;
@@ -18,11 +19,13 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Appearance;
 using L2Dn.GameServer.Model.Items.Enchant.Attributes;
 using L2Dn.GameServer.Model.Items.Types;
+using L2Dn.GameServer.Model.Options;
 using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.TaskManagers;
 using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
@@ -113,7 +116,7 @@ public class Item: WorldObject
 
 	private readonly DropProtection _dropProtection = new();
 
-	private readonly List<Options.Options> _enchantOptions = new();
+	private readonly List<Option> _enchantOptions = new();
 	private readonly EnsoulOption?[] _ensoulOptions = new EnsoulOption?[2];
 	private readonly EnsoulOption?[] _ensoulSpecialOptions = new EnsoulOption?[1];
 	private bool _isBlessed;
@@ -2407,9 +2410,9 @@ public class Item: WorldObject
 			return;
 		}
 
-		foreach (Options.Options op in _enchantOptions)
+		foreach (Option op in _enchantOptions)
 		{
-			op.remove(player);
+			op.Remove(player);
 		}
 		_enchantOptions.Clear();
 	}
@@ -2428,10 +2431,10 @@ public class Item: WorldObject
 
 		foreach (int id in enchantOptions)
 		{
-			Options.Options? options = OptionData.getInstance().getOptions(id);
+			Option? options = OptionData.Instance.GetOptions(id);
 			if (options != null)
 			{
-				options.apply(player);
+				options.Apply(player);
 				_enchantOptions.Add(options);
 			}
 			else if (id != 0)

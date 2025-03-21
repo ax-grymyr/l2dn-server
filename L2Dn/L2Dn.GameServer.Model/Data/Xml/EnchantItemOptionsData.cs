@@ -49,7 +49,7 @@ public sealed class EnchantItemOptionsData: DataReaderBase
 
 				foreach (int option in enchantOptions)
 				{
-					if (OptionData.getInstance().getOptions(option) == null)
+					if (OptionData.Instance.GetOptions(option) == null)
 						_logger.Error(GetType().Name + ": Could not find option " + option + " for item " + template);
 				}
 

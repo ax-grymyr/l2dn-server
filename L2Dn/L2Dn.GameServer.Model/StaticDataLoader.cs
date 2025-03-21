@@ -62,15 +62,15 @@ public static class StaticDataLoader
         PetSkillData.getInstance();
         PetAcquireList.getInstance();
         SkillEnchantData.getInstance();
+        OptionData.Instance.Load(); // depends on SkillData
 
         ItemData.getInstance();
         EnchantItemGroupsData.getInstance();
         EnchantItemData.getInstance();
-        EnchantItemOptionsData.getInstance();
+        EnchantItemOptionsData.getInstance(); // depends on ItemData, OptionData
         EnchantChallengePointData.getInstance();
         ElementalAttributeData.getInstance();
         ItemCrystallizationData.getInstance();
-        OptionData.getInstance();
         VariationData.getInstance();
         EnsoulData.getInstance();
         EnchantItemHPBonusData.getInstance();

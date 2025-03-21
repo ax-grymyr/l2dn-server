@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Utilities;
 
@@ -6,15 +7,15 @@ namespace L2Dn.GameServer.Model.Options;
 /**
  * @author Pere, Mobius
  */
-public sealed class OptionDataCategory(Map<Options, double> options, Set<int> itemIds, double chance)
+public sealed class OptionDataCategory(Map<Option, double> options, Set<int> itemIds, double chance)
 {
-    public Options getRandomOptions()
+    public Option getRandomOptions()
 	{
-		Options? result = null;
+		Option? result = null;
 		do
 		{
 			double random = Rnd.nextDouble() * 100.0;
-			foreach (KeyValuePair<Options, double> entry in options)
+			foreach (KeyValuePair<Option, double> entry in options)
 			{
 				if (entry.Value >= random)
 				{
