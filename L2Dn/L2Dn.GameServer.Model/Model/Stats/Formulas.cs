@@ -12,6 +12,7 @@ using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
@@ -1259,7 +1260,7 @@ public class Formulas
 	 */
 	public static int calculateKarmaLost(Player player, double finalExp)
 	{
-		double karmaLooseMul = KarmaData.getInstance().getMultiplier(player.getLevel());
+		double karmaLooseMul = KarmaData.Instance.GetMultiplier(player.getLevel());
 		if (finalExp > 0) // Received exp
 		{
 			return (int) (Math.Abs(finalExp / Config.Rates.RATE_KARMA_LOST) / karmaLooseMul / 30);
