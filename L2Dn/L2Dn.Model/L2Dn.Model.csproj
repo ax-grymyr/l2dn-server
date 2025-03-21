@@ -16,6 +16,7 @@
     
     <ItemGroup>
       <ProjectReference Include="..\L2Dn.GameServer.Enums\L2Dn.GameServer.Enums.csproj" />
+      <ProjectReference Include="..\L2Dn.GameServer.StaticData.Xml\L2Dn.GameServer.StaticData.Xml.csproj" />
     </ItemGroup>
     
 </Project>

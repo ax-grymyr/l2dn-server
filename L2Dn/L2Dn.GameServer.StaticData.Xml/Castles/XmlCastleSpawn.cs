@@ -1,10 +1,10 @@
 ﻿using System.Xml.Serialization;
 using L2Dn.GameServer.Enums;
-using L2Dn.Model.Enums;
+using L2Dn.GameServer.StaticData.Xml.Common;
 
-namespace L2Dn.Model.Xml;
+namespace L2Dn.GameServer.StaticData.Xml.Castles;
 
-public class XmlCastleSpawn: XmlLocationWithHeading
+public sealed class XmlCastleSpawn: XmlLocationWithHeading
 {
     [XmlAttribute("id")]
     public int Id { get; set; }

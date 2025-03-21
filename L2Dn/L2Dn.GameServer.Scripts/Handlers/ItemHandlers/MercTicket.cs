@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
@@ -39,7 +40,7 @@ public class MercTicket: /*AbstractNpcAI, */ IItemHandler
 
 		int castleId = castle.getResidenceId();
 		SiegeGuardHolder? holder = SiegeGuardManager.getInstance().getSiegeGuardByItem(castleId, item.Id);
-		if (holder == null || castleId != holder.getCastleId())
+		if (holder == null || castleId != holder.CastleId)
 		{
 			player.sendPacket(SystemMessageId.MERCENARIES_CANNOT_BE_POSITIONED_HERE);
 			return false;
@@ -65,7 +66,7 @@ public class MercTicket: /*AbstractNpcAI, */ IItemHandler
 
         _items.put(player.ObjectId, item);
 		ConfirmDialogPacket dlg = new ConfirmDialogPacket(SystemMessageId.PLACE_S1_IN_THE_CURRENT_LOCATION_AND_DIRECTION_DO_YOU_WISH_TO_CONTINUE, 15000);
-		dlg.Params.addNpcName(holder.getNpcId());
+		dlg.Params.addNpcName(holder.NpcId);
 		player.sendPacket(dlg);
 		player.addAction(PlayerAction.MERCENARY_CONFIRM);
 		return true;

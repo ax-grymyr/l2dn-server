@@ -4,6 +4,7 @@ using L2Dn.Events;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
@@ -16,6 +17,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
@@ -1149,7 +1151,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 				Spawn spawn;
 				try
 				{
-					spawn = new Spawn(holder.getNpcId());
+					spawn = new Spawn(holder.NpcId);
 				}
 				catch (Exception e)
 				{
@@ -1170,7 +1172,7 @@ public class Castle: AbstractResidence, IEventContainerProvider
 
 	public ImmutableArray<CastleSpawnHolder> getSideSpawns()
 	{
-		return CastleData.getInstance().getSpawnsForSide(getResidenceId(), getSide());
+		return CastleData.Instance.GetSpawnsForSide(getResidenceId(), getSide());
 	}
 
 	public void setSide(CastleSide side)

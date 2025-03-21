@@ -1,8 +1,9 @@
 ﻿using System.Xml.Serialization;
+using L2Dn.Model.Xml;
 
-namespace L2Dn.Model.Xml;
+namespace L2Dn.GameServer.StaticData.Xml.Castles;
 
-public class XmlCastle
+public sealed class XmlCastle
 {
     [XmlArray("spawns")]
     [XmlArrayItem("npc")]

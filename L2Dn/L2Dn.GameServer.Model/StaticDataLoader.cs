@@ -134,6 +134,7 @@ public static class StaticDataLoader
         ClanHallData.getInstance();
         ClanHallAuctionManager.getInstance();
         ClanEntryManager.getInstance();
+        CastleData.Instance.Load();
 
         GeoEngine.getInstance();
 

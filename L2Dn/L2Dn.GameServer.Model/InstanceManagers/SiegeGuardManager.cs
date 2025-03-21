@@ -1,5 +1,6 @@
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -9,6 +10,7 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Interfaces;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Sieges;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using Microsoft.EntityFrameworkCore;
@@ -51,7 +53,7 @@ public class SiegeGuardManager
 				SiegeGuardHolder? holder = getSiegeGuardByNpc(castle.getResidenceId(), npcId);
 				if (holder != null && !castle.getSiege().isInProgress())
 				{
-					Item dropticket = new Item(holder.getItemId());
+					Item dropticket = new Item(holder.ItemId);
 					dropticket.setItemLocation(ItemLocation.VOID);
 					dropticket.dropMe(null, location);
 					World.getInstance().addObject(dropticket);
@@ -75,9 +77,9 @@ public class SiegeGuardManager
 	 */
 	public SiegeGuardHolder? getSiegeGuardByItem(int castleId, int itemId)
 	{
-		foreach (SiegeGuardHolder holder in CastleData.getInstance().getSiegeGuardsForCastle(castleId))
+		foreach (SiegeGuardHolder holder in CastleData.Instance.GetSiegeGuardsForCastle(castleId))
 		{
-			if (holder.getItemId() == itemId)
+			if (holder.ItemId == itemId)
 			{
 				return holder;
 			}
@@ -93,9 +95,9 @@ public class SiegeGuardManager
 	 */
 	public SiegeGuardHolder? getSiegeGuardByNpc(int castleId, int npcId)
 	{
-		foreach (SiegeGuardHolder holder in CastleData.getInstance().getSiegeGuardsForCastle(castleId))
+		foreach (SiegeGuardHolder holder in CastleData.Instance.GetSiegeGuardsForCastle(castleId))
 		{
-			if (holder.getNpcId() == npcId)
+			if (holder.NpcId == npcId)
 			{
 				return holder;
 			}
@@ -140,7 +142,7 @@ public class SiegeGuardManager
 				count++;
 			}
 		}
-		return count >= holder.getMaxNpcAmout();
+		return count >= holder.MaxNpcAmount;
 	}
 
 	/**
@@ -170,7 +172,7 @@ public class SiegeGuardManager
 				ctx.CastleSiegeGuards.Add(new DbCastleSiegeGuard()
 				{
 					CastleId = (short)castle.getResidenceId(),
-					NpcId = holder.getNpcId(),
+					NpcId = holder.NpcId,
 					X = player.getX(),
 					Y = player.getY(),
 					Z = player.getZ(),
@@ -202,7 +204,7 @@ public class SiegeGuardManager
 	 */
 	private void spawnMercenary(Location location, SiegeGuardHolder holder)
 	{
-		NpcTemplate? template = NpcData.getInstance().getTemplate(holder.getNpcId());
+		NpcTemplate? template = NpcData.getInstance().getTemplate(holder.NpcId);
 		if (template != null)
 		{
 			Defender npc = new Defender(template);
@@ -211,7 +213,7 @@ public class SiegeGuardManager
 			npc.setHeading(location.Heading);
 			npc.spawnMe(location.Location3D with { Z = location.Z + 20 });
 			npc.scheduleDespawn(TimeSpan.FromSeconds(3));
-			npc.setImmobilized(holder.isStationary());
+			npc.setImmobilized(holder.IsStationary);
 		}
 	}
 
@@ -249,7 +251,7 @@ public class SiegeGuardManager
 			return;
 		}
 
-		removeSiegeGuard(holder.getNpcId(), item.Location.Location3D);
+		removeSiegeGuard(holder.NpcId, item.Location.Location3D);
 		_droppedTickets.remove(item);
 	}
 
@@ -348,7 +350,7 @@ public class SiegeGuardManager
                 if (holder == null)
                     continue;
 
-                lastSpawn.setImmobilized(holder.isStationary());
+                lastSpawn.setImmobilized(holder.IsStationary);
             }
 		}
 		catch (Exception e)

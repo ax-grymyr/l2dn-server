@@ -1,9 +1,9 @@
 ﻿using System.Xml.Serialization;
 using L2Dn.Model.Enums;
 
-namespace L2Dn.Model.Xml;
+namespace L2Dn.GameServer.StaticData.Xml.Castles;
 
-public class XmlCastleSiegeGuard
+public sealed class XmlCastleSiegeGuard
 {
     [XmlAttribute("itemId")]
     public int ItemId { get; set; }

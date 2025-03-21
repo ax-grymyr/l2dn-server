@@ -8,6 +8,7 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.StaticData;
+using L2Dn.GameServer.StaticData.Xml.Common;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
