@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor.Templates;
@@ -11,6 +12,7 @@ using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Teleporters;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Teleports;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using NLog;
@@ -53,7 +55,7 @@ public class Teleporter: Npc
 			case "showTeleports":
 			{
 				string listName = st.hasMoreTokens() ? st.nextToken() : TeleportType.NORMAL.ToString();
-				TeleportHolder? holder = TeleporterData.getInstance().getHolder(Id, listName);
+				TeleportHolder? holder = TeleporterData.Instance.GetHolder(Id, listName);
 				if (holder == null)
 				{
 					LOGGER.Warn(player + " requested show teleports for list with name " + listName + " at NPC " + Id + "!");
@@ -70,7 +72,7 @@ public class Teleporter: Npc
 			case "showTeleportsHunting":
 			{
 				string listName = st.hasMoreTokens() ? st.nextToken() : TeleportType.HUNTING.ToString();
-				TeleportHolder? holder = TeleporterData.getInstance().getHolder(Id, listName);
+				TeleportHolder? holder = TeleporterData.Instance.GetHolder(Id, listName);
 				if (holder == null)
 				{
 					LOGGER.Warn(player + " requested show teleports for hunting list with name " + listName + " at NPC " + Id + "!");
@@ -89,7 +91,7 @@ public class Teleporter: Npc
 				}
 
 				string listName = st.nextToken();
-				TeleportHolder? holder = TeleporterData.getInstance().getHolder(Id, listName);
+				TeleportHolder? holder = TeleporterData.Instance.GetHolder(Id, listName);
 				if (holder == null)
 				{
 					LOGGER.Warn(player + " requested unknown teleport list: " + listName + " for npc: " + Id + "!");

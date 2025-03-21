@@ -159,7 +159,7 @@ public static class StaticDataLoader
         CrestTable.getInstance();
         TeleportListData.getInstance();
         SharedTeleportManager.getInstance();
-        TeleporterData.getInstance();
+        TeleporterData.Instance.Load();
         TimedHuntingZoneData.getInstance();
         MatchingRoomManager.getInstance();
         PetitionManager.getInstance();

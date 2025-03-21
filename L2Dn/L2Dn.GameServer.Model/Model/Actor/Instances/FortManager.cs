@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Clans;
@@ -1104,7 +1105,7 @@ public sealed class FortManager: Merchant
             int funcLvl = val.Length >= 4 ? val[3..].TryParseOrDefault(-1) : -1;
             if (funcTeleport.getLevel() == funcLvl)
             {
-                TeleportHolder? holder = TeleporterData.getInstance().getHolder(Id, val);
+                TeleportHolder? holder = TeleporterData.Instance.GetHolder(Id, val);
                 if (holder is not null)
                 {
                     int locId = st.nextToken().Trim().TryParseOrDefault(-1);

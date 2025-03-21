@@ -1,7 +1,7 @@
 ﻿using System.Xml.Serialization;
-using L2Dn.Model.Enums;
+using L2Dn.GameServer.Enums;
 
-namespace L2Dn.Model.Xml;
+namespace L2Dn.GameServer.StaticData.Xml.Teleporters;
 
 public class XmlTeleport
 {
@@ -10,7 +10,7 @@ public class XmlTeleport
 
     [XmlIgnore]
     public bool NameSpecified { get; set; }
-    
+
     [XmlAttribute("type")]
     public TeleportType Type { get; set; }
 

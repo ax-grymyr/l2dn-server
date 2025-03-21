@@ -137,7 +137,7 @@ public class AdminReload: IAdminCommandHandler
 				}
 				case "teleport":
 				{
-					TeleporterData.getInstance().load();
+					TeleporterData.Instance.Load();
 					GmManager.getInstance().BroadcastMessageToGMs(activeChar.getName() + ": Reloaded Teleports.");
 					break;
 				}

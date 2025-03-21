@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
 using System.Reflection;
 using L2Dn.CustomAttributes;
+using L2Dn.GameServer.Enums;
 
 namespace L2Dn.GameServer.Network.Enums;
 

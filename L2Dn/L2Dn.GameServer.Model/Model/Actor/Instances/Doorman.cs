@@ -1,11 +1,13 @@
 ﻿using L2Dn.GameServer.Data;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Html;
 using L2Dn.GameServer.Model.Teleporters;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 
@@ -71,7 +73,7 @@ public class Doorman : Folk
         {
             if (isOwnerClan(player))
             {
-                TeleportHolder? holder = TeleporterData.getInstance().getHolder(Id, TeleportType.OTHER.ToString());
+                TeleportHolder? holder = TeleporterData.Instance.GetHolder(Id, TeleportType.OTHER.ToString());
                 if (holder != null)
                 {
                     int locId = int.Parse(command.Substring(5).Trim());
