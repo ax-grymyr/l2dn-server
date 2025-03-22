@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
@@ -8,6 +9,7 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.Pets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -78,15 +80,15 @@ public struct ExTryPetExtractSystemPacket: IIncomingPacket<GameSession>
         }
 
 		int petLevel = petInfo.getLevel();
-		PetExtractionHolder? holder = PetExtractData.getInstance().getExtraction(petId, petLevel);
+		PetExtractionHolder? holder = PetExtractData.Instance.GetExtraction(petId, petLevel);
 		if (holder != null)
 		{
-			int extractItemId = holder.getExtractItem();
-			int extractItemCount = (int) (petInfo.getStat().getExp() / holder.getExtractExp());
-			int extractCostId = holder.getExtractCost().Id;
-			long extractCostCount = holder.getExtractCost().getCount() * extractItemCount;
-			int defaultCostId = holder.getDefaultCost().Id;
-			long defaultCostCount = holder.getDefaultCost().getCount();
+			int extractItemId = holder.ExtractItem;
+			int extractItemCount = (int) (petInfo.getStat().getExp() / holder.ExtractExp);
+			int extractCostId = holder.ExtractCost.Id;
+			long extractCostCount = holder.ExtractCost.getCount() * extractItemCount;
+			int defaultCostId = holder.DefaultCost.Id;
+			long defaultCostCount = holder.DefaultCost.getCount();
 			if (player.getInventory().getInventoryItemCount(extractCostId, -1) >= extractCostCount && player.getInventory().getInventoryItemCount(defaultCostId, -1) >= defaultCostCount)
 			{
 				if (player.destroyItemByItemId("Pet Extraction", extractCostId, extractCostCount, player, true) && player.destroyItemByItemId("Pet Extraction", defaultCostId, defaultCostCount, player, true) && player.destroyItem("Pet Extraction", petItem, player, true))

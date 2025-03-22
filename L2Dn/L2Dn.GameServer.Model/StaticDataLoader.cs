@@ -116,7 +116,7 @@ public static class StaticDataLoader
         CharInfoTable.getInstance();
         PetDataTable.getInstance();
         PetTypeData.Instance.Load();
-        PetExtractData.getInstance();
+        PetExtractData.Instance.Load();
         CubicData.getInstance();
         CharSummonTable.getInstance().init();
         BeautyShopData.Instance.Load();
