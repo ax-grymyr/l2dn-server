@@ -27,6 +27,7 @@ public static class StaticDataLoader
         AdminCommandData.Instance.Load();
         SecondaryAuthData.Instance.Load();
         ClanRewardData.Instance.Load();
+        CastleSiegeScheduleData.Instance.Load();
 
         // XML data files
 
@@ -193,7 +194,6 @@ public static class StaticDataLoader
         FortManager.getInstance().loadInstances();
         FortManager.getInstance().activateInstances();
         FortSiegeManager.getInstance();
-        SiegeScheduleData.getInstance();
 
         CastleManorManager.getInstance();
         SiegeGuardManager.getInstance();

@@ -4,6 +4,7 @@ using L2Dn.GameServer.Cache;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
@@ -14,6 +15,7 @@ using L2Dn.GameServer.Model.Olympiads;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Model.Enums;
@@ -53,8 +55,8 @@ public class Siege: Siegable
 	{
 		_castle = castle;
 
-		SiegeScheduleDate? schedule = SiegeScheduleData.getInstance().getScheduleDateForCastleId(_castle.getResidenceId());
-		if (schedule != null && schedule.siegeEnabled())
+		CastleSiegeSchedule? schedule = CastleSiegeScheduleData.Instance.GetSchedule(_castle.getResidenceId());
+		if (schedule != null && schedule.SiegeEnabled)
 		{
 			startAutoTask();
 		}
@@ -1451,8 +1453,8 @@ public class Siege: Siegable
 	/** Set the date for the next siege. */
 	private void setNextSiegeDate()
 	{
-		SiegeScheduleDate? holder = SiegeScheduleData.getInstance().getScheduleDateForCastleId(_castle.getResidenceId());
-		if (holder == null || !holder.siegeEnabled())
+		CastleSiegeSchedule? holder = CastleSiegeScheduleData.Instance.GetSchedule(_castle.getResidenceId());
+		if (holder == null || !holder.SiegeEnabled)
 		{
 			return;
 		}
@@ -1463,11 +1465,11 @@ public class Siege: Siegable
 			calendar = DateTime.UtcNow;
 		}
 
-		calendar = new DateTime(calendar.Year, calendar.Month, calendar.Day, holder.getHour(), 0, 0);
-		while (calendar.DayOfWeek != holder.getDay())
+		calendar = new DateTime(calendar.Year, calendar.Month, calendar.Day, holder.Hour, 0, 0);
+		while (calendar.DayOfWeek != holder.Day)
 			calendar = calendar.AddDays(1);
 
-		if (CastleManager.getInstance().getSiegeDates(calendar) < holder.getMaxConcurrent())
+		if (CastleManager.getInstance().getSiegeDates(calendar) < holder.MaxConcurrent)
 		{
 			CastleManager.getInstance().registerSiegeDate(getCastle().getResidenceId(), calendar);
 
