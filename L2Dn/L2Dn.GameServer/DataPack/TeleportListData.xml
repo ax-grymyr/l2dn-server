@@ -23,14 +23,14 @@
 	<teleport id="37" x="-14424" y="123972" z="-3120" price="12000" /> <!-- Town of Gludio -->
 	<teleport id="38" x="-46932" y="140883" z="-2936" price="1650" /> <!-- Abandoned Camp -->
 	<teleport id="46" x="-49332" y="207879" z="-3736" price="1650" /> <!-- Langk Lizardmen Dwellings -->
-	<teleport id="46" x="-45210" y="202654" z="-3592" price="1650" /> <!-- Langk Lizardmen Dwellings -->
+	<!--<teleport id="46" x="-45210" y="202654" z="-3592" price="1650" /> <!-!- Langk Lizardmen Dwellings -->
 	<teleport id="49" x="-84191" y="244531" z="-3728" price="7200" /> <!-- Talking Island -->
 	<teleport id="53" x="-112367" y="234703" z="-3688" price="500" /> <!-- Elven Ruins -->
 	<teleport id="55" x="-106696" y="214691" z="-3424" price="500" /> <!-- Talking Island, Western Territory -->
 	<teleport id="56" x="-95336" y="240478" z="-3264" price="500" /> <!-- Talking Island, Eastern Territory -->
 	<teleport id="57" x="-70387" y="115501" z="-3472" price="1650" /> <!-- Fellmere Harvesting Grounds -->
 	<teleport id="58" x="-75311" y="169110" z="-3632" price="1650" /> <!-- Windmill Hill -->
-	<teleport id="58" x="-77643" y="166967" z="-3712" price="1650" /> <!-- Windmill Hill -->
+	<!--<teleport id="58" x="-77643" y="166967" z="-3712" price="1650" /> <!-!- Windmill Hill -->
 	<teleport id="62" x="-23789" y="169683" z="-3424" price="1650" /> <!-- Windawood Manor -->
 	<teleport id="66" x="-10612" y="75881" z="-3592" price="500" /> <!-- Neutral Zone -->
 	<teleport id="68" x="21362" y="51122" z="-3688" price="500" /> <!-- Elven Forest -->
