@@ -7,20 +7,20 @@ using NLog;
 
 namespace L2Dn.GameServer.StaticData;
 
-public sealed class TeleportData
+public sealed class RaidTeleportData
 {
-    private static readonly Logger _logger = LogManager.GetLogger(nameof(TeleportData));
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(RaidTeleportData));
     private FrozenDictionary<int, TeleportListHolder> _teleports = FrozenDictionary<int, TeleportListHolder>.Empty;
 
-    private TeleportData()
+    private RaidTeleportData()
     {
     }
 
-    public static TeleportData Instance { get; } = new();
+    public static RaidTeleportData Instance { get; } = new();
 
     public void Load()
     {
-        _teleports = XmlLoader.LoadXmlDocument<XmlTeleportList>("TeleportListData.xml").Teleports.
+        _teleports = XmlLoader.LoadXmlDocument<XmlTeleportList>("RaidTeleportListData.xml").Teleports.
             Select(xmlTeleport => new TeleportListHolder(xmlTeleport.Id,
                 new Location3D(xmlTeleport.X, xmlTeleport.Y, xmlTeleport.Z),
                 xmlTeleport.Price, xmlTeleport.Special)).

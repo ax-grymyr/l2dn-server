@@ -13,6 +13,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.Teleports;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Network;
@@ -36,7 +37,7 @@ public struct ExTeleportToRaidPositionPacket: IIncomingPacket<GameSession>
         if (player == null)
             return ValueTask.CompletedTask;
 
- 		TeleportListHolder? teleport = RaidTeleportListData.getInstance().getTeleport(_raidId);
+ 		TeleportListHolder? teleport = RaidTeleportData.Instance.GetTeleport(_raidId);
 		if (teleport == null)
 		{
 			PacketLogger.Instance.Warn("No registered teleport location for raid id: " + _raidId);

@@ -80,7 +80,7 @@ public static class StaticDataLoader
         EquipmentUpgradeData.getInstance();
         EquipmentUpgradeNormalData.getInstance();
         AgathionData.getInstance();
-        RaidTeleportListData.getInstance();
+        RaidTeleportData.Instance.Load();
         RecipeData.getInstance();
         ArmorSetData.getInstance();
         FishingData.getInstance();

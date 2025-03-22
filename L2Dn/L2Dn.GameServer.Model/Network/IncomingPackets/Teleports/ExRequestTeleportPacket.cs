@@ -34,7 +34,7 @@ public struct ExRequestTeleportPacket: IIncomingPacket<GameSession>
 		if (player == null)
 			return ValueTask.CompletedTask;
 
-		TeleportListHolder? teleport = TeleportData.Instance.getTeleport(_teleportId);
+		TeleportListHolder? teleport = TeleportData.Instance.GetTeleport(_teleportId);
 		if (teleport == null)
 		{
 			PacketLogger.Instance.Warn("No registered teleport location for id: " + _teleportId);

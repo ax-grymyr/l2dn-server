@@ -25,7 +25,7 @@ public struct ExRequestTeleportFavoritesAddDelPacket: IIncomingPacket<GameSessio
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (TeleportData.Instance.getTeleport(_teleportId) == null)
+        if (TeleportData.Instance.GetTeleport(_teleportId) == null)
         {
             PacketLogger.Instance.Warn("No registered teleport location for id: " + _teleportId);
             return ValueTask.CompletedTask;
@@ -38,7 +38,7 @@ public struct ExRequestTeleportFavoritesAddDelPacket: IIncomingPacket<GameSessio
         {
             foreach (int id in favoriteTeleports)
             {
-                if (TeleportData.Instance.getTeleport(_teleportId) == null)
+                if (TeleportData.Instance.GetTeleport(_teleportId) == null)
                     PacketLogger.Instance.Warn("No registered teleport location for id: " + _teleportId);
                 else
                     favorites.Add(id);
