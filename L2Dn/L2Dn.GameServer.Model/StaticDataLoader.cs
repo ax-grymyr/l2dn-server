@@ -157,7 +157,7 @@ public static class StaticDataLoader
 
         HtmCache.getInstance();
         CrestTable.getInstance();
-        TeleportListData.getInstance();
+        TeleportData.Instance.Load();
         SharedTeleportManager.getInstance();
         TeleporterData.Instance.Load();
         TimedHuntingZoneData.Instance.Load();

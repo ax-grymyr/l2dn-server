@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
@@ -89,7 +90,7 @@ public struct ExTeleportToRaidPositionPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		Location3D location = teleport.getLocation();
+		Location3D location = teleport.Location;
 		if (!Config.Character.TELEPORT_WHILE_SIEGE_IN_PROGRESS)
 		{
 			Castle? castle = CastleManager.getInstance().getCastle(location);
@@ -108,7 +109,7 @@ public struct ExTeleportToRaidPositionPacket: IIncomingPacket<GameSession>
 		}
 		else
 		{
-			price = teleport.getPrice();
+			price = teleport.Price;
 		}
 
 		if (price > 0)

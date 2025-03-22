@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
@@ -9,6 +10,7 @@ using L2Dn.GameServer.Model.Sieges;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Network;
@@ -32,7 +34,7 @@ public struct ExRequestTeleportPacket: IIncomingPacket<GameSession>
 		if (player == null)
 			return ValueTask.CompletedTask;
 
-		TeleportListHolder? teleport = TeleportListData.getInstance().getTeleport(_teleportId);
+		TeleportListHolder? teleport = TeleportData.Instance.getTeleport(_teleportId);
 		if (teleport == null)
 		{
 			PacketLogger.Instance.Warn("No registered teleport location for id: " + _teleportId);
@@ -76,7 +78,7 @@ public struct ExRequestTeleportPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		Location3D location = teleport.getLocation();
+		Location3D location = teleport.Location;
 		if (!Config.Character.TELEPORT_WHILE_SIEGE_IN_PROGRESS)
 		{
 			Castle? castle = CastleManager.getInstance().getCastle(location);
@@ -89,11 +91,11 @@ public struct ExRequestTeleportPacket: IIncomingPacket<GameSession>
 
 		if (player.getLevel() > Config.Character.MAX_FREE_TELEPORT_LEVEL)
 		{
-			int price = teleport.getPrice();
+			int price = teleport.Price;
 			if (price > 0)
 			{
 				// Check if player has fee.
-				if (teleport.isSpecial())
+				if (teleport.IsSpecial)
 				{
 					if (player.getInventory().getInventoryItemCount(Inventory.LCOIN_ID, -1) < price)
 					{
@@ -108,7 +110,7 @@ public struct ExRequestTeleportPacket: IIncomingPacket<GameSession>
 				}
 
 				// Reduce items.
-				if (teleport.isSpecial())
+				if (teleport.IsSpecial)
 				{
 					player.destroyItemByItemId("Teleport", Inventory.LCOIN_ID, price, player, true);
 				}

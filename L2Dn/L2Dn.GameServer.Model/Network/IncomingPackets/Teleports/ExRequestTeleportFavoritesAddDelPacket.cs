@@ -1,6 +1,7 @@
 ﻿using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Variables;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -24,7 +25,7 @@ public struct ExRequestTeleportFavoritesAddDelPacket: IIncomingPacket<GameSessio
         if (player == null)
             return ValueTask.CompletedTask;
 
-        if (TeleportListData.getInstance().getTeleport(_teleportId) == null)
+        if (TeleportData.Instance.getTeleport(_teleportId) == null)
         {
             PacketLogger.Instance.Warn("No registered teleport location for id: " + _teleportId);
             return ValueTask.CompletedTask;
@@ -37,7 +38,7 @@ public struct ExRequestTeleportFavoritesAddDelPacket: IIncomingPacket<GameSessio
         {
             foreach (int id in favoriteTeleports)
             {
-                if (TeleportListData.getInstance().getTeleport(_teleportId) == null)
+                if (TeleportData.Instance.getTeleport(_teleportId) == null)
                     PacketLogger.Instance.Warn("No registered teleport location for id: " + _teleportId);
                 else
                     favorites.Add(id);
