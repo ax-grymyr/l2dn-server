@@ -130,7 +130,7 @@ public static class StaticDataLoader
 
         ClanLevelData.Instance.Load();
         ClanTable.getInstance();
-        ResidenceFunctionsData.getInstance();
+        ResidenceFunctionData.Instance.Load();
         ClanHallData.getInstance();
         ClanHallAuctionManager.getInstance();
         ClanEntryManager.getInstance();

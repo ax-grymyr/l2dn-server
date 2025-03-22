@@ -1,9 +1,11 @@
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Network.OutgoingPackets;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using ThreadPool = L2Dn.GameServer.Utilities.ThreadPool;
 
@@ -24,7 +26,7 @@ public class ResidenceFunction
     // TODO: pass template instead of id and level
 	public ResidenceFunction(int id, int level, DateTime expiration, AbstractResidence residense)
     {
-        _template = ResidenceFunctionsData.getInstance().getFunction(_id, _level) ??
+        _template = ResidenceFunctionData.Instance.GetFunction(_id, _level) ??
             throw new ArgumentException($"Residence function template id={id}, level={level} not found");
 
 		_id = id;
@@ -36,12 +38,12 @@ public class ResidenceFunction
 
 	public ResidenceFunction(int id, int level, AbstractResidence residense)
 	{
-        _template = ResidenceFunctionsData.getInstance().getFunction(_id, _level) ??
+        _template = ResidenceFunctionData.Instance.GetFunction(_id, _level) ??
             throw new ArgumentException($"Residence function template id={id}, level={level} not found");
 
 		_id = id;
 		_level = level;
-		_expiration = DateTime.UtcNow + _template.getDuration();
+		_expiration = DateTime.UtcNow + _template.Duration;
 		_residense = residense;
 		init();
 	}
@@ -95,7 +97,7 @@ public class ResidenceFunction
 	public double getValue()
 	{
 		ResidenceFunctionTemplate? template = getTemplate();
-		return template == null ? 0 : template.getValue();
+		return template == null ? 0 : template.Value;
 	}
 
 	/**
@@ -103,7 +105,7 @@ public class ResidenceFunction
 	 */
 	public ResidenceFunctionType getType()
 	{
-		return _template.getType();
+		return _template.Type;
 	}
 
 	/**
@@ -149,15 +151,15 @@ public class ResidenceFunction
 		}
 
 		ItemContainer wh = clan.getWarehouse();
-		Item? item = wh.getItemByItemId(template.getCost().Id);
-		if (item == null || item.getCount() < template.getCost().getCount())
+		Item? item = wh.getItemByItemId(template.Cost.Id);
+		if (item == null || item.getCount() < template.Cost.getCount())
 		{
 			return false;
 		}
 
-		if (wh.destroyItem("FunctionFee", item, template.getCost().getCount(), null, this) != null)
+		if (wh.destroyItem("FunctionFee", item, template.Cost.getCount(), null, this) != null)
 		{
-			_expiration = DateTime.UtcNow + template.getDuration();
+			_expiration = DateTime.UtcNow + template.Duration;
 			init();
 		}
 

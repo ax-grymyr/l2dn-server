@@ -1,6 +1,7 @@
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Interfaces;
@@ -229,7 +230,7 @@ public abstract class AbstractResidence: INamable
 		foreach (ResidenceFunction function  in  _functions.Values)
 		{
 			ResidenceFunctionTemplate? template = function.getTemplate();
-			if (template != null && template.getType() == type)
+			if (template != null && template.Type == type)
 			{
 				return true;
 			}
@@ -305,7 +306,7 @@ public abstract class AbstractResidence: INamable
 		ResidenceFunction? function = null;
 		foreach (ResidenceFunction func in _functions.Values)
 		{
-			if (func.getTemplate().getType() == type)
+			if (func.getTemplate().Type == type)
 			{
 				function = func;
 				break;
