@@ -1,7 +1,8 @@
-﻿using L2Dn.GameServer.Data.Xml;
+﻿using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Network.OutgoingPackets.Subjugation;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -30,12 +31,11 @@ public struct RequestSubjugationGachaPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
         PurgePlayerHolder? playerKeys = player.getPurgePoints().get(_category);
-        Map<int, double>? subjugationData = SubjugationGacha.getInstance().getSubjugation(_category);
-        if (subjugationData == null)
+        SubjugationHolder? subjugation = SubjugationData.Instance.GetSubjugation(_category);
+        if (subjugation == null || subjugation.Items.Count == 0)
             return ValueTask.CompletedTask;
 
-        KeyValuePair<int, double>[] subjugationDataArray = subjugationData.ToArray();
-        double maxBound = subjugationDataArray.Sum(x => x.Value);
+        double maxBound = subjugation.Items.Sum(x => x.Value);
         if (playerKeys != null && playerKeys.getKeys() >= _amount && player.getInventory().getAdena() > 20000L * _amount)
         {
             player.getInventory().reduceAdena("Purge Gacha", 20000L * _amount, player, null);
@@ -45,12 +45,11 @@ public struct RequestSubjugationGachaPacket: IIncomingPacket<GameSession>
             for (int i = 0; i < _amount; i++)
             {
                 double rate = 0;
-                for (int index = 0; index < subjugationDataArray.Length; index++)
+                // TODO: does items order matter?
+                foreach ((int itemId, double itemChance) in subjugation.Items)
                 {
-                    double itemChance = subjugationDataArray[index].Value;
                     if (Rnd.get(maxBound - rate) < itemChance)
                     {
-                        int itemId = subjugationDataArray[index].Key;
                         rewards.put(itemId, rewards.GetValueOrDefault(itemId) + 1);
                         player.addItem("Purge Gacha", itemId, 1, player, true);
                         break;

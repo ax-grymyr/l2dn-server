@@ -52,8 +52,7 @@ public static class StaticDataLoader
         DailyMissionData.getInstance();
         ElementalSpiritData.Instance.Load();
         RankingPowerManager.getInstance();
-        SubjugationData.getInstance();
-        SubjugationGacha.getInstance();
+        SubjugationData.Instance.Load();
         PurgeRankingManager.getInstance();
         NewQuestData.getInstance();
 
