@@ -3,7 +3,7 @@ using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 
-namespace L2Dn.GameServer.StaticData;
+namespace L2Dn.GameServer.Dto;
 
 internal sealed class SkillParameters
 {

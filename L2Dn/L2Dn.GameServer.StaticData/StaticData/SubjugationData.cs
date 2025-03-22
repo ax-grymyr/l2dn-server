@@ -87,7 +87,7 @@ public sealed class SubjugationData
 
         return hotTimes.Split(';').Select(range =>
         {
-            string[] parts = range.Split(',');
+            string[] parts = range.Split('-');
             return new SubjugationHotTime(int.Parse(parts[0], CultureInfo.InvariantCulture),
                 int.Parse(parts[1], CultureInfo.InvariantCulture));
         }).ToImmutableArray();

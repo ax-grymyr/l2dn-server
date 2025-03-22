@@ -2,6 +2,7 @@ using System.Collections.Frozen;
 using System.Globalization;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Configuration;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Skills;
