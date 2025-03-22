@@ -115,7 +115,7 @@ public static class StaticDataLoader
         PlayerTemplateData.getInstance();
         CharInfoTable.getInstance();
         PetDataTable.getInstance();
-        PetTypeData.getInstance();
+        PetTypeData.Instance.Load();
         PetExtractData.getInstance();
         CubicData.getInstance();
         CharSummonTable.getInstance().init();

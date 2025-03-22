@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Actor.Templates;
 using L2Dn.GameServer.Model.Items.Instances;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -74,8 +75,8 @@ public struct ExEvolvePetPacket: IIncomingPacket<GameSession>
 
 		if (evolveLevel == EvolveLevel.First)
 		{
-			var skillType = PetTypeData.getInstance().getRandomSkill();
-			string name = PetTypeData.getInstance().getNamePrefix(skillType.Key) + " " + PetTypeData.getInstance().getRandomName();
+			var skillType = PetTypeData.Instance.GetRandomSkill();
+			string name = PetTypeData.Instance.GetNamePrefix(skillType.Key) + " " + PetTypeData.Instance.GetRandomName();
 			evolved.addSkill(skillType.Value.getSkill());
 			evolved.setName(name);
 			PetDataTable.getInstance().setPetName(controlItem.ObjectId, name);

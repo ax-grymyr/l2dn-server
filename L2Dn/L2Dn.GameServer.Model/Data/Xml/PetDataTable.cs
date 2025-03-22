@@ -266,12 +266,12 @@ public class PetDataTable: DataReaderBase
 	public string getNameByItemObjectId(int objectId)
 	{
 		string name = getPetName(objectId);
-		SkillHolder? type = PetTypeData.getInstance().getSkillByName(name);
+		SkillHolder? type = PetTypeData.Instance.GetSkillByName(name);
 		if (type == null)
 		{
 			return "";
 		}
-		return type.getSkillId() + ";" + type.getSkillLevel() + ";" + PetTypeData.getInstance().getIdByName(name);
+		return type.getSkillId() + ";" + type.getSkillLevel() + ";" + PetTypeData.Instance.GetIdByName(name);
 	}
 
 	/**
