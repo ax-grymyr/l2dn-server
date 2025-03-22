@@ -1,5 +1,7 @@
-﻿using L2Dn.GameServer.AI;
+﻿using System.Collections.Immutable;
+using L2Dn.GameServer.AI;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -96,8 +98,10 @@ internal struct RequestMovePacket: IIncomingPacket<GameSession>
 				break;
 			}
 			case AdminTeleportType.SAYUNE:
-			{
-				player.sendPacket(new ExFlyMovePacket(player, SayuneType.ONE_WAY_LOC, -1, [new SayuneEntry(false, -1, _target)]));
+            {
+                player.sendPacket(new ExFlyMovePacket(player, SayuneType.ONE_WAY_LOC, -1,
+                    [new SayuneEntry(-1, false, _target, ImmutableArray<SayuneEntry>.Empty)]));
+
 				player.setXYZ(_target.X, _target.Y, _target.Z);
 				Broadcast.toKnownPlayers(player, new ExFlyMoveBroadcastPacket(player, SayuneType.ONE_WAY_LOC, -1, _target));
 				player.setTeleMode(AdminTeleportType.NORMAL);

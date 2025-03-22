@@ -1,10 +1,12 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Request;
 using L2Dn.GameServer.Model.Zones.Types;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -49,7 +51,7 @@ public struct RequestFlyMoveStartPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        SayuneEntry? map = SayuneData.getInstance().getMap(zone.getMapId());
+        SayuneEntry? map = SayuneData.Instance.GetMap(zone.getMapId());
         if (map == null)
         {
             player.sendMessage("This zone is not handled yet!!");
@@ -57,7 +59,7 @@ public struct RequestFlyMoveStartPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        SayuneRequest request = new(player, map.getId());
+        SayuneRequest request = new(player, map.Id);
         if (player.addRequest(request))
         {
             request.move(player, 0);

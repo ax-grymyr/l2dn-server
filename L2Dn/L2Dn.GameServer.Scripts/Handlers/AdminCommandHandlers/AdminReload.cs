@@ -247,7 +247,7 @@ public class AdminReload: IAdminCommandHandler
 				}
 				case "sayune":
 				{
-					SayuneData.getInstance().load();
+					SayuneData.Instance.Load();
 					GmManager.getInstance().BroadcastMessageToGMs(activeChar.getName() + ": Reloaded Sayune data.");
 					break;
 				}

@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
@@ -114,7 +115,7 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		EnchantStarHolder? starHolder = SkillEnchantData.Instance.GetEnchantStar(skillEnchantHolder.getStarLevel());
+		EnchantStarHolder? starHolder = SkillEnchantData.Instance.GetEnchantStar(skillEnchantHolder.StarLevel);
 		if (starHolder == null)
 		{
 			LOGGER.Warn(GetType().Name + " request enchant skill dont have star lvl-" + skill.Id);
@@ -124,7 +125,7 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 		if (player.getAdena() < 1000000)
 			return ValueTask.CompletedTask;
 
-		int starLevel = starHolder.getLevel();
+		int starLevel = starHolder.Level;
 		if (Rnd.get(100) <= SkillEnchantData.Instance.GetChanceEnchantMap(skill))
 		{
 			Skill? enchantedSkill = SkillData.Instance.GetSkill(_skillId, _skillLevel, _skillSubLevel);

@@ -1,5 +1,5 @@
 using System.Collections.Frozen;
-using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.StaticData.Xml.SkillEnchant;
 using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
@@ -33,17 +33,17 @@ public sealed class SkillEnchantData
 
         _skillEnchantMap = xmlSkillEnchantData.Skills.
             Select(x => new SkillEnchantHolder(x.Id, x.StarLevel, x.MaxEnchantLevel)).
-            ToFrozenDictionary(x => x.getId());
+            ToFrozenDictionary(x => x.Id);
 
         _enchantStarMap = xmlSkillEnchantData.Stars.
             Select(x => new EnchantStarHolder(x.Level, x.ExpMax, x.ExpOnFail, x.FeeAdena)).
-            ToFrozenDictionary(x => x.getLevel());
+            ToFrozenDictionary(x => x.Level);
 
         _chanceEnchantMap = xmlSkillEnchantData.Chances.ToFrozenDictionary(x => x.EnchantLevel, x => x.Chance);
 
         _enchantItemMap = xmlSkillEnchantData.ItemPoints.Select(x => KeyValuePair.Create(x.Level,
                 x.Items.Select(y => new EnchantItemExpHolder(y.Id, y.Exp, y.StarLevel)).
-                    ToFrozenDictionary(x => x.getId()))).
+                    ToFrozenDictionary(x => x.Id))).
             ToFrozenDictionary();
 
         _logger.Info($"{nameof(SkillEnchantData)}: Loaded {_enchantStarMap.Count} star levels.");
@@ -63,7 +63,7 @@ public sealed class SkillEnchantData
     public int GetChanceEnchantMap(Skill skill)
     {
         int enchantLevel = skill.SubLevel == 0 ? 1 : skill.SubLevel + 1 - 1000;
-        if (enchantLevel > GetSkillEnchant(skill.Id)?.getMaxEnchantLevel())
+        if (enchantLevel > GetSkillEnchant(skill.Id)?.MaxEnchantLevel)
             return 0;
 
         return _chanceEnchantMap.GetValueOrDefault(enchantLevel);

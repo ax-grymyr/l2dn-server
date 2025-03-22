@@ -1,9 +1,3 @@
-namespace L2Dn.GameServer.Model.Holders;
+namespace L2Dn.GameServer.Dto;
 
-public sealed class EnchantStarHolder(int level, int expMax, int expOnFail, long feeAdena)
-{
-    public int getLevel() => level;
-    public int getExpMax() => expMax;
-    public int getExpOnFail() => expOnFail;
-    public long getFeeAdena() => feeAdena;
-}
+public sealed record EnchantStarHolder(int Level, int ExpMax, int ExpOnFail, long FeeAdena);

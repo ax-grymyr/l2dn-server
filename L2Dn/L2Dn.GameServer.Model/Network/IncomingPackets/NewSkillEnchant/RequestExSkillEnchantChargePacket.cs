@@ -51,11 +51,11 @@ public struct RequestExSkillEnchantChargePacket: IIncomingPacket<GameSession>
 	    if (skillEnchantHolder == null)
 		    return ValueTask.CompletedTask;
 
-	    EnchantStarHolder? starHolder = SkillEnchantData.Instance.GetEnchantStar(skillEnchantHolder.getStarLevel());
+	    EnchantStarHolder? starHolder = SkillEnchantData.Instance.GetEnchantStar(skillEnchantHolder.StarLevel);
 	    if (starHolder == null)
 		    return ValueTask.CompletedTask;
 
-	    long curExp = player.getSkillEnchantExp(starHolder.getLevel());
+	    long curExp = player.getSkillEnchantExp(starHolder.Level);
 	    long feeAdena = 0;
 	    foreach (ItemHolder itemCharge in _itemList)
 	    {
@@ -70,10 +70,10 @@ public struct RequestExSkillEnchantChargePacket: IIncomingPacket<GameSession>
 		    }
 
 		    EnchantItemExpHolder? itemExpHolder =
-			    SkillEnchantData.Instance.GetEnchantItem(starHolder.getLevel(), item.Id);
+			    SkillEnchantData.Instance.GetEnchantItem(starHolder.Level, item.Id);
 		    if (itemExpHolder != null)
 		    {
-			    feeAdena = itemCharge.getCount() * starHolder.getFeeAdena();
+			    feeAdena = itemCharge.getCount() * starHolder.FeeAdena;
 			    if (player.getAdena() < feeAdena)
 			    {
 				    player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
@@ -81,17 +81,17 @@ public struct RequestExSkillEnchantChargePacket: IIncomingPacket<GameSession>
 				    return ValueTask.CompletedTask;
 			    }
 
-			    if (itemExpHolder.getStarLevel() <= starHolder.getLevel())
+			    if (itemExpHolder.StarLevel <= starHolder.Level)
 			    {
-				    curExp += itemExpHolder.getExp() * itemCharge.getCount();
+				    curExp += itemExpHolder.Exp * itemCharge.getCount();
 				    player.destroyItem("Charge", item, itemCharge.getCount(), null, true);
 			    }
 			    else
 			    {
 				    PacketLogger.Instance.Warn(GetType().Name + " Player" + player.getName() +
 				                               " trying charge item with not support star level skillstarLevel-" +
-				                               starHolder.getLevel() + " itemStarLevel-" +
-				                               itemExpHolder.getStarLevel() + " itemId-" + itemExpHolder.getId());
+				                               starHolder.Level + " itemStarLevel-" +
+				                               itemExpHolder.StarLevel + " itemId-" + itemExpHolder.Id);
 			    }
 		    }
 		    else
@@ -101,7 +101,7 @@ public struct RequestExSkillEnchantChargePacket: IIncomingPacket<GameSession>
 		    }
 	    }
 
-	    player.setSkillEnchantExp(starHolder.getLevel(), Math.Min(starHolder.getExpMax(), curExp));
+	    player.setSkillEnchantExp(starHolder.Level, Math.Min(starHolder.ExpMax, curExp));
 	    player.reduceAdena("ChargeFee", feeAdena, null, true);
 	    player.sendPacket(new ExSkillEnchantChargePacket(skill.Id, 0));
 	    player.sendPacket(new ExSkillEnchantInfoPacket(skill, player));

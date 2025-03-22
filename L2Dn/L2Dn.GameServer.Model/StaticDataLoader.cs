@@ -47,7 +47,7 @@ public static class StaticDataLoader
 
         ActionData.Instance.Load();
         CategoryData.Instance.Load();
-        SayuneData.getInstance();
+        SayuneData.Instance.Load();
         MissionLevel.getInstance();
         DailyMissionHandler.getInstance(); //.executeScript();
         DailyMissionData.getInstance();

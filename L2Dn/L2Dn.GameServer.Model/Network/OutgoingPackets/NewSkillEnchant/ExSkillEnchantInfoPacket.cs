@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
@@ -25,7 +26,7 @@ public readonly struct ExSkillEnchantInfoPacket: IOutgoingPacket
 
         // TODO: null checking hack, ensure only valid arguments are passed
         SkillEnchantHolder? enchantHolder = SkillEnchantData.Instance.GetSkillEnchant(skill.Id);
-        _starHolder = SkillEnchantData.Instance.GetEnchantStar(enchantHolder?.getStarLevel() ?? 0) ??
+        _starHolder = SkillEnchantData.Instance.GetEnchantStar(enchantHolder?.StarLevel ?? 0) ??
             new EnchantStarHolder(0, 0, 0, 0);
     }
 
@@ -35,8 +36,8 @@ public readonly struct ExSkillEnchantInfoPacket: IOutgoingPacket
 
         writer.WriteInt32(_skill.Id);
         writer.WriteInt32(_skill.SubLevel);
-        writer.WriteInt32(_player.getSkillEnchantExp(_starHolder.getLevel()));
-        writer.WriteInt32(_starHolder.getExpMax());
+        writer.WriteInt32(_player.getSkillEnchantExp(_starHolder.Level));
+        writer.WriteInt32(_starHolder.ExpMax);
         writer.WriteInt32(SkillEnchantData.Instance.GetChanceEnchantMap(_skill) * 100);
 
         // TODO: Item creation consumes object id from the pool, and the id is never released
