@@ -39,12 +39,12 @@ public struct RequestExAcquirePetSkillPacket: IIncomingPacket<GameSession>
 
         int skillId = _skillId;
         int skillLevel = _skillLevel;
-        PetSkillAcquireHolder? reqItem = PetAcquireList.getInstance()
-            .getSkills(pet.getPetData().getType())?.FirstOrDefault(it => it.getSkillId() == skillId && it.getSkillLevel() == skillLevel);
+        PetSkillAcquireHolder? reqItem = PetSkillAcquireData.Instance
+            .GetSkills(pet.getPetData().getType())?.FirstOrDefault(it => it.SkillId == skillId && it.SkillLevel == skillLevel);
 
         if (reqItem != null)
         {
-            ItemHolder? item = reqItem.getItem();
+            ItemHolder? item = reqItem.Item;
             if (item != null)
             {
                 if (player.destroyItemByItemId("PetAcquireSkill", item.Id,

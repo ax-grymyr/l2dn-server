@@ -60,7 +60,7 @@ public static class StaticDataLoader
         SkillData.Instance.Load();
         SkillTreeData.getInstance();
         PetSkillData.getInstance();
-        PetAcquireList.getInstance();
+        PetSkillAcquireData.Instance.Load();
         SkillEnchantData.Instance.Load();
         OptionData.Instance.Load(); // depends on SkillData
 
