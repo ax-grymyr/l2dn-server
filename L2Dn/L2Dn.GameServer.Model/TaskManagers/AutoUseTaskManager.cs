@@ -347,7 +347,7 @@ public class AutoUseTaskManager
 									skill = summon.getKnownSkill(skillId);
 									if (skill == null)
 									{
-										skill = PetSkillData.getInstance().getKnownSkill(summon, skillId);
+										skill = PetSkillData.Instance.GetKnownSkill(summon, skillId);
 									}
 									if (skill != null)
 									{
@@ -365,7 +365,7 @@ public class AutoUseTaskManager
 
 								if (skill == null && pet != null)
 								{
-									skill = PetSkillData.getInstance().getKnownSkill((Summon)pet, skillId);
+									skill = PetSkillData.Instance.GetKnownSkill((Summon)pet, skillId);
 								}
 								if (skill != null && pet != null && pet.isSkillDisabled(skill))
 								{

@@ -39,8 +39,8 @@ public struct RequestExAcquirePetSkillPacket: IIncomingPacket<GameSession>
 
         int skillId = _skillId;
         int skillLevel = _skillLevel;
-        PetSkillAcquireHolder? reqItem = PetSkillAcquireData.Instance
-            .GetSkills(pet.getPetData().getType())?.FirstOrDefault(it => it.SkillId == skillId && it.SkillLevel == skillLevel);
+        PetSkillAcquireHolder? reqItem = PetSkillAcquireData.Instance.GetSkills(pet.getPetData().getType()).
+            FirstOrDefault(it => it.SkillId == skillId && it.SkillLevel == skillLevel);
 
         if (reqItem != null)
         {

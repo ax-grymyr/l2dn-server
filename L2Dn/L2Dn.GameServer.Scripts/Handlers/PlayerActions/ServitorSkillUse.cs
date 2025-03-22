@@ -36,7 +36,7 @@ public class ServitorSkillUse: IPlayerActionHandler
                 return;
             }
 
-            int skillLevel = PetSkillData.getInstance().getAvailableLevel(servitor, data.OptionId);
+            int skillLevel = PetSkillData.Instance.GetAvailableLevel(servitor, data.OptionId);
             if (skillLevel > 0)
             {
                 Skill? skill = SkillData.Instance.GetSkill(data.OptionId, skillLevel);
