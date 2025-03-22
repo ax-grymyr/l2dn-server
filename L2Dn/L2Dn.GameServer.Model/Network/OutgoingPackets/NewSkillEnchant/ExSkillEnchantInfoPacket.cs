@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Templates;
 using L2Dn.Packets;
 
@@ -23,8 +24,8 @@ public readonly struct ExSkillEnchantInfoPacket: IOutgoingPacket
         _player = player;
 
         // TODO: null checking hack, ensure only valid arguments are passed
-        SkillEnchantHolder? enchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.Id);
-        _starHolder = SkillEnchantData.getInstance().getEnchantStar(enchantHolder?.getStarLevel() ?? 0) ??
+        SkillEnchantHolder? enchantHolder = SkillEnchantData.Instance.GetSkillEnchant(skill.Id);
+        _starHolder = SkillEnchantData.Instance.GetEnchantStar(enchantHolder?.getStarLevel() ?? 0) ??
             new EnchantStarHolder(0, 0, 0, 0);
     }
 
@@ -36,7 +37,7 @@ public readonly struct ExSkillEnchantInfoPacket: IOutgoingPacket
         writer.WriteInt32(_skill.SubLevel);
         writer.WriteInt32(_player.getSkillEnchantExp(_starHolder.getLevel()));
         writer.WriteInt32(_starHolder.getExpMax());
-        writer.WriteInt32(SkillEnchantData.getInstance().getChanceEnchantMap(_skill) * 100);
+        writer.WriteInt32(SkillEnchantData.Instance.GetChanceEnchantMap(_skill) * 100);
 
         // TODO: Item creation consumes object id from the pool, and the id is never released
         writer.WriteInt16((short)InventoryPacketHelper.CalculatePacketSize(new ItemInfo(new Item(Inventory.AdenaId))));

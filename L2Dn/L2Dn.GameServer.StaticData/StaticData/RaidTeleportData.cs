@@ -26,7 +26,7 @@ public sealed class RaidTeleportData
                 xmlTeleport.Price, xmlTeleport.Special)).
             ToFrozenDictionary(t => t.TeleportId);
 
-        _logger.Info($"{nameof(TeleportData)}: Loaded {_teleports.Count} teleports.");
+        _logger.Info($"{nameof(TeleportData)}: Loaded {_teleports.Count} raid teleport locations.");
     }
 
     public TeleportListHolder? GetTeleport(int teleportId) => _teleports.GetValueOrDefault(teleportId);

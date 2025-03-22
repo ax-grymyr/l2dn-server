@@ -3,6 +3,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.OutgoingPackets.NewSkillEnchant;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
@@ -38,7 +39,7 @@ public struct RequestExSkillEnchantInfoPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-        SkillEnchantHolder? skillEnchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.Id);
+        SkillEnchantHolder? skillEnchantHolder = SkillEnchantData.Instance.GetSkillEnchant(skill.Id);
         if (skillEnchantHolder == null)
         {
             PacketLogger.Instance.Warn("Skill does not exist at SkillEnchantData id-" + _skillId);

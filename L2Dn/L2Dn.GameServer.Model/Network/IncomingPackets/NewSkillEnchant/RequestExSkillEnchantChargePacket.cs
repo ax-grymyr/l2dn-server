@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.NewSkillEnchant;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
@@ -46,11 +47,11 @@ public struct RequestExSkillEnchantChargePacket: IIncomingPacket<GameSession>
 	    if (skill == null)
 		    return ValueTask.CompletedTask;
 
-	    SkillEnchantHolder? skillEnchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.Id);
+	    SkillEnchantHolder? skillEnchantHolder = SkillEnchantData.Instance.GetSkillEnchant(skill.Id);
 	    if (skillEnchantHolder == null)
 		    return ValueTask.CompletedTask;
 
-	    EnchantStarHolder? starHolder = SkillEnchantData.getInstance().getEnchantStar(skillEnchantHolder.getStarLevel());
+	    EnchantStarHolder? starHolder = SkillEnchantData.Instance.GetEnchantStar(skillEnchantHolder.getStarLevel());
 	    if (starHolder == null)
 		    return ValueTask.CompletedTask;
 
@@ -69,7 +70,7 @@ public struct RequestExSkillEnchantChargePacket: IIncomingPacket<GameSession>
 		    }
 
 		    EnchantItemExpHolder? itemExpHolder =
-			    SkillEnchantData.getInstance().getEnchantItem(starHolder.getLevel(), item.Id);
+			    SkillEnchantData.Instance.GetEnchantItem(starHolder.getLevel(), item.Id);
 		    if (itemExpHolder != null)
 		    {
 			    feeAdena = itemCharge.getCount() * starHolder.getFeeAdena();

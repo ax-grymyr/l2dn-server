@@ -584,6 +584,6 @@ public static class SkillExtensions
 
     public static bool IsEnchantable(this Skill skill)
     {
-        return SkillEnchantData.getInstance().getSkillEnchant(skill.Id) != null;
+        return SkillEnchantData.Instance.GetSkillEnchant(skill.Id) != null;
     }
 }

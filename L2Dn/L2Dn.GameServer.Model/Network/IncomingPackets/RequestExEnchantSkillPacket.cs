@@ -107,14 +107,14 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 			}
 		}
 
-		SkillEnchantHolder? skillEnchantHolder = SkillEnchantData.getInstance().getSkillEnchant(skill.Id);
+		SkillEnchantHolder? skillEnchantHolder = SkillEnchantData.Instance.GetSkillEnchant(skill.Id);
 		if (skillEnchantHolder == null)
 		{
 			LOGGER.Warn(GetType().Name + " request enchant skill dont have star lvl skillId-" + skill.Id);
 			return ValueTask.CompletedTask;
 		}
 
-		EnchantStarHolder? starHolder = SkillEnchantData.getInstance().getEnchantStar(skillEnchantHolder.getStarLevel());
+		EnchantStarHolder? starHolder = SkillEnchantData.Instance.GetEnchantStar(skillEnchantHolder.getStarLevel());
 		if (starHolder == null)
 		{
 			LOGGER.Warn(GetType().Name + " request enchant skill dont have star lvl-" + skill.Id);
@@ -125,7 +125,7 @@ public struct RequestExEnchantSkillPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 
 		int starLevel = starHolder.getLevel();
-		if (Rnd.get(100) <= SkillEnchantData.getInstance().getChanceEnchantMap(skill))
+		if (Rnd.get(100) <= SkillEnchantData.Instance.GetChanceEnchantMap(skill))
 		{
 			Skill? enchantedSkill = SkillData.Instance.GetSkill(_skillId, _skillLevel, _skillSubLevel);
             if (enchantedSkill == null)
