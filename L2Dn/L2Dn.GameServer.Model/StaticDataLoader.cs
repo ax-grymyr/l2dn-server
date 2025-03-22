@@ -160,7 +160,7 @@ public static class StaticDataLoader
         TeleportListData.getInstance();
         SharedTeleportManager.getInstance();
         TeleporterData.Instance.Load();
-        TimedHuntingZoneData.getInstance();
+        TimedHuntingZoneData.Instance.Load();
         MatchingRoomManager.getInstance();
         PetitionManager.getInstance();
         CursedWeaponsManager.getInstance();

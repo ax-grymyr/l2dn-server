@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -9,6 +10,7 @@ using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets.HuntingZones;
+using L2Dn.GameServer.StaticData;
 using L2Dn.Network;
 using L2Dn.Packets;
 
@@ -77,11 +79,11 @@ public struct ExTimedHuntingZoneEnterPacket: IIncomingPacket<GameSession>
 			return ValueTask.CompletedTask;
 		}
 
-		TimedHuntingZoneHolder? holder = TimedHuntingZoneData.getInstance().getHuntingZone(_zoneId);
+		TimedHuntingZoneHolder? holder = TimedHuntingZoneData.Instance.GetHuntingZone(_zoneId);
 		if (holder == null)
 			return ValueTask.CompletedTask;
 
-		if (player.getLevel() < holder.getMinLevel() || player.getLevel() > holder.getMaxLevel())
+		if (player.getLevel() < holder.MinLevel || player.getLevel() > holder.MaxLevel)
 		{
 			player.sendMessage("Your level does not correspond the zone equivalent.");
 			return ValueTask.CompletedTask;
@@ -89,8 +91,8 @@ public struct ExTimedHuntingZoneEnterPacket: IIncomingPacket<GameSession>
 
 		// TODO: Move shared instance cooldown to XML.
 		DateTime currentTime = DateTime.UtcNow;
-		int instanceId = holder.getInstanceId();
-		if (instanceId > 0 && holder.isSoloInstance())
+		int instanceId = holder.InstanceId;
+		if (instanceId > 0 && holder.IsSoloInstance)
 		{
 			if (instanceId == 228) // Cooldown for Training Zone instance.
 			{
@@ -114,24 +116,24 @@ public struct ExTimedHuntingZoneEnterPacket: IIncomingPacket<GameSession>
 		}
 
 		// TODO verify time calculations
-		DateTime endTime = currentTime + TimeSpan.FromMilliseconds(player.getTimedHuntingZoneRemainingTime(_zoneId));
+		DateTime endTime = currentTime + player.getTimedHuntingZoneRemainingTime(_zoneId);
 		DateTime lastEntryTime = player.getVariables().Get<DateTime>(PlayerVariables.HUNTING_ZONE_ENTRY + _zoneId);
-		if (lastEntryTime + holder.getResetDelay() < currentTime)
+		if (lastEntryTime + holder.ResetDelay < currentTime)
 		{
 			if (endTime == currentTime)
 			{
-				endTime += TimeSpan.FromMilliseconds(holder.getInitialTime());
+				endTime += holder.InitialTime;
 				player.getVariables().Set(PlayerVariables.HUNTING_ZONE_ENTRY + _zoneId, currentTime);
 			}
 		}
 
 		if (endTime > currentTime)
 		{
-			if (holder.getEntryItemId() == Inventory.AdenaId)
+			if (holder.EntryItemId == Inventory.AdenaId)
 			{
-				if (player.getAdena() > holder.getEntryFee())
+				if (player.getAdena() > holder.EntryFee)
 				{
-					player.reduceAdena("TimedHuntingZone", holder.getEntryFee(), player, true);
+					player.reduceAdena("TimedHuntingZone", holder.EntryFee, player, true);
 				}
 				else
 				{
@@ -139,7 +141,7 @@ public struct ExTimedHuntingZoneEnterPacket: IIncomingPacket<GameSession>
 					return ValueTask.CompletedTask;
 				}
 			}
-			else if (!player.destroyItemByItemId("TimedHuntingZone", holder.getEntryItemId(), holder.getEntryFee(),
+			else if (!player.destroyItemByItemId("TimedHuntingZone", holder.EntryItemId, holder.EntryFee,
 				         player, true))
 			{
 				player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_REQUIRED_ITEMS);
@@ -150,7 +152,7 @@ public struct ExTimedHuntingZoneEnterPacket: IIncomingPacket<GameSession>
 
 			if (instanceId == 0)
 			{
-				player.teleToLocation(holder.getEnterLocation());
+				player.teleToLocation(holder.EnterLocation);
 
 				// Send time icon.
 				connection.Send(new TimedHuntingZoneEnterPacket(player, _zoneId));

@@ -335,7 +335,7 @@ public struct RequestRestartPointPacket: IIncomingPacket<GameSession>
 				if (player.isInTimedHuntingZone() && timedHuntingZone != null)
 				{
 					instance = player.getInstanceWorld();
-					loc = new Location(timedHuntingZone.getEnterLocation(), 0);
+					loc = new Location(timedHuntingZone.EnterLocation, 0);
 				}
 				else
 				{

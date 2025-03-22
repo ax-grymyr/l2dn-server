@@ -15075,53 +15075,43 @@ public class Player: Playable
 
 	public bool isInTimedHuntingZone(int zoneId, int locX, int locY)
 	{
-		TimedHuntingZoneHolder? holder = TimedHuntingZoneData.getInstance().getHuntingZone(zoneId);
+		TimedHuntingZoneHolder? holder = TimedHuntingZoneData.Instance.GetHuntingZone(zoneId);
 		if (holder == null)
-		{
 			return false;
-		}
 
-		int instanceId = holder.getInstanceId();
+		int instanceId = holder.InstanceId;
 		if (instanceId > 0)
         {
             Instance? instance = getInstanceWorld();
 			return isInInstance() && instance != null && instanceId == instance.getTemplateId();
 		}
 
-		foreach (MapHolder map in holder.getMaps())
+		foreach (Location2D tileCoordinate in holder.TileCoordinates)
 		{
-            if (map.getX() == ((locX - WorldMap.WorldXMin) >> 15) + WorldMap.TileXMin &&
-                map.getY() == ((locY - WorldMap.WorldYMin) >> 15) + WorldMap.TileYMin)
-            {
+            if (tileCoordinate == WorldMap.WorldLocationToTileCoordinates(new Location2D(locX, locY)))
                 return true;
-            }
         }
 
 		return false;
 	}
 
-	public bool isInTimedHuntingZone()
-	{
-		return isInTimedHuntingZone(getX(), getY());
-	}
+	public bool isInTimedHuntingZone() => isInTimedHuntingZone(getX(), getY());
 
-	public bool isInTimedHuntingZone(int x, int y)
+    public bool isInTimedHuntingZone(int x, int y)
 	{
-		foreach (TimedHuntingZoneHolder holder in TimedHuntingZoneData.getInstance().getAllHuntingZones())
+		foreach (TimedHuntingZoneHolder holder in TimedHuntingZoneData.Instance.HuntingZones)
 		{
-			if (isInTimedHuntingZone(holder.getZoneId(), x, y))
-			{
+			if (isInTimedHuntingZone(holder.ZoneId, x, y))
 				return true;
-			}
 		}
 		return false;
 	}
 
 	public TimedHuntingZoneHolder? getTimedHuntingZone()
 	{
-		foreach (TimedHuntingZoneHolder holder in TimedHuntingZoneData.getInstance().getAllHuntingZones())
+		foreach (TimedHuntingZoneHolder holder in TimedHuntingZoneData.Instance.HuntingZones)
 		{
-			if (isInTimedHuntingZone(holder.getZoneId()))
+			if (isInTimedHuntingZone(holder.ZoneId))
 				return holder;
 		}
 
@@ -15137,16 +15127,16 @@ public class Player: Playable
 		{
 			if (isInTimedHuntingZone(zoneId))
 			{
-				long time = getTimedHuntingZoneRemainingTime(zoneId);
-				if (time > 0)
+				TimeSpan time = getTimedHuntingZoneRemainingTime(zoneId);
+				if (time > TimeSpan.Zero)
 				{
-					if (time < 300000)
+					if (time < TimeSpan.FromMinutes(5))
 					{
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THE_TIME_FOR_HUNTING_IN_THIS_ZONE_EXPIRES_IN_S1_MIN_PLEASE_ADD_MORE_TIME);
-						sm.Params.addLong(time / 60000);
+						sm.Params.addLong((int)time.TotalMinutes);
 						sendPacket(sm);
 					}
-					getVariables().Set(PlayerVariables.HUNTING_ZONE_TIME + zoneId, time - 60000);
+					getVariables().Set(PlayerVariables.HUNTING_ZONE_TIME + zoneId, time - TimeSpan.FromMinutes(1));
 				}
 				else
 				{
@@ -15171,10 +15161,11 @@ public class Player: Playable
 		}
 	}
 
-	public int getTimedHuntingZoneRemainingTime(int zoneId)
-	{
-		return Math.Max(getVariables().Get(PlayerVariables.HUNTING_ZONE_TIME + zoneId, 0), 0);
-	}
+	public TimeSpan getTimedHuntingZoneRemainingTime(int zoneId)
+    {
+        TimeSpan time = getVariables().Get(PlayerVariables.HUNTING_ZONE_TIME + zoneId, TimeSpan.Zero);
+        return time < TimeSpan.Zero ? TimeSpan.Zero : time;
+    }
 
 	public DateTime getTimedHuntingZoneInitialEntry(int zoneId)
 	{

@@ -2,6 +2,7 @@ using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Sql;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Stats;
@@ -459,9 +460,9 @@ public class DailyTaskManager
 
 	private void resetTimedHuntingZones()
 	{
-		foreach (TimedHuntingZoneHolder holder in TimedHuntingZoneData.getInstance().getAllHuntingZones())
+		foreach (TimedHuntingZoneHolder holder in TimedHuntingZoneData.Instance.HuntingZones)
 		{
-			if (holder.isWeekly())
+			if (holder.IsWeekly)
 			{
 				continue;
 			}
@@ -470,9 +471,9 @@ public class DailyTaskManager
 			try
 			{
 				// TODO: separate table
-				string name1 = PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId();
-				string name2 = PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId();
-				string name3 = PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId();
+				string name1 = PlayerVariables.HUNTING_ZONE_ENTRY + holder.ZoneId;
+				string name2 = PlayerVariables.HUNTING_ZONE_TIME + holder.ZoneId;
+				string name3 = PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.ZoneId;
 
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.CharacterVariables.Where(v => v.Name == name1 || v.Name == name2 || v.Name == name3)
@@ -486,9 +487,9 @@ public class DailyTaskManager
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId());
-				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId());
-				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId());
+				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_ENTRY + holder.ZoneId);
+				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_TIME + holder.ZoneId);
+				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.ZoneId);
 				player.getVariables().storeMe();
 			}
 		}
@@ -498,9 +499,9 @@ public class DailyTaskManager
 
 	private void resetTimedHuntingZonesWeekly()
 	{
-		foreach (TimedHuntingZoneHolder holder in TimedHuntingZoneData.getInstance().getAllHuntingZones())
+		foreach (TimedHuntingZoneHolder holder in TimedHuntingZoneData.Instance.HuntingZones)
 		{
-			if (!holder.isWeekly())
+			if (!holder.IsWeekly)
 			{
 				continue;
 			}
@@ -509,9 +510,9 @@ public class DailyTaskManager
 			try
 			{
 				// TODO: separate table
-				string name1 = PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId();
-				string name2 = PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId();
-				string name3 = PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId();
+				string name1 = PlayerVariables.HUNTING_ZONE_ENTRY + holder.ZoneId;
+				string name2 = PlayerVariables.HUNTING_ZONE_TIME + holder.ZoneId;
+				string name3 = PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.ZoneId;
 
 				using GameServerDbContext ctx = DbFactory.Instance.CreateDbContext();
 				ctx.CharacterVariables.Where(v => v.Name == name1 || v.Name == name2 || v.Name == name3)
@@ -525,9 +526,9 @@ public class DailyTaskManager
 			// Update data for online players.
 			foreach (Player player in World.getInstance().getPlayers())
 			{
-				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_ENTRY + holder.getZoneId());
-				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_TIME + holder.getZoneId());
-				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.getZoneId());
+				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_ENTRY + holder.ZoneId);
+				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_TIME + holder.ZoneId);
+				player.getVariables().Remove(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + holder.ZoneId);
 				player.getVariables().storeMe();
 			}
 		}

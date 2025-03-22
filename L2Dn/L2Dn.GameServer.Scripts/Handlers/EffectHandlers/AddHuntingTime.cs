@@ -1,4 +1,5 @@
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Effects;
@@ -6,6 +7,7 @@ using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Instances;
 using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.OutgoingPackets.HuntingZones;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
@@ -35,42 +37,38 @@ public sealed class AddHuntingTime: AbstractEffect
         if (player == null)
             return;
 
-        TimedHuntingZoneHolder? holder = TimedHuntingZoneData.getInstance().getHuntingZone(_zoneId);
+        TimedHuntingZoneHolder? holder = TimedHuntingZoneData.Instance.GetHuntingZone(_zoneId);
         if (holder == null)
             return;
 
         DateTime currentTime = DateTime.UtcNow;
-        DateTime endTime = currentTime + TimeSpan.FromMilliseconds(player.getTimedHuntingZoneRemainingTime(_zoneId));
+        DateTime endTime = currentTime + player.getTimedHuntingZoneRemainingTime(_zoneId);
         if (endTime > currentTime &&
-            endTime - currentTime + _time > TimeSpan.FromMilliseconds(holder.getMaximumAddedTime()))
+            endTime - currentTime + _time > holder.MaximumAddedTime)
         {
             player.getInventory().addItem("AddHuntingTime effect refund", item.Id, 1, player, player);
             player.sendMessage("You cannot exceed the time zone limit.");
             return;
         }
 
-        long remainRefill = player.getVariables().
-            Get(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + _zoneId, holder.getRemainRefillTime());
+        TimeSpan remainRefill = player.getVariables().
+            Get(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + _zoneId, holder.RemainRefillTime);
 
-        if (_time < TimeSpan.FromMilliseconds(remainRefill) || remainRefill == 0)
+        if (_time < remainRefill || remainRefill == TimeSpan.Zero)
         {
             player.getInventory().addItem("AddHuntingTime effect refund", item.Id, 1, player, player);
             player.sendMessage("You cannot exceed the time zone limit.");
             return;
         }
 
-        long remainTime = player.getVariables().
-            Get(PlayerVariables.HUNTING_ZONE_TIME + _zoneId, holder.getInitialTime());
+        TimeSpan remainTime = player.getVariables().
+            Get(PlayerVariables.HUNTING_ZONE_TIME + _zoneId, holder.InitialTime);
 
-        player.getVariables().Set(PlayerVariables.HUNTING_ZONE_TIME + _zoneId,
-            remainTime + (int)_time.TotalMilliseconds);
+        player.getVariables().Set(PlayerVariables.HUNTING_ZONE_TIME + _zoneId, remainTime + _time);
+        player.getVariables().Set(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + _zoneId, remainRefill - _time);
 
-        player.getVariables().Set(PlayerVariables.HUNTING_ZONE_REMAIN_REFILL + _zoneId,
-            remainRefill - (int)(_time.TotalMilliseconds / 1000));
-
-        player.sendPacket(new TimedHuntingZoneChargeResultPacket(_zoneId,
-            (int)((remainTime + _time.TotalMilliseconds) / 1000), (int)(remainRefill - _time.TotalMilliseconds / 1000),
-            (int)_time.TotalMilliseconds / 1000));
+        player.sendPacket(
+            new TimedHuntingZoneChargeResultPacket(_zoneId, remainTime + _time, remainRefill - _time, _time));
 
         if (player.isInTimedHuntingZone(_zoneId))
         {

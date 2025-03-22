@@ -137,7 +137,7 @@ public static class MapRegionManager
             TimedHuntingZoneHolder? timedHuntingZone = player.getTimedHuntingZone();
             if (timedHuntingZone != null)
             {
-                Location3D? exitLocation = timedHuntingZone.getExitLocation();
+                Location3D? exitLocation = timedHuntingZone.ExitLocation;
                 if (exitLocation != null)
                 {
                     return new Location(exitLocation.Value, 0);

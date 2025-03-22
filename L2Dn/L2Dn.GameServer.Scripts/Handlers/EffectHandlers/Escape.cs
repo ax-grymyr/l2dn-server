@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -44,7 +45,7 @@ public sealed class Escape: AbstractEffect
             if (effected.isInInstance() && effectedPlayer != null && effectedPlayer.isInTimedHuntingZone() &&
                 huntingZone != null)
             {
-                effected.teleToLocation(new Location(huntingZone.getEnterLocation(), 0),
+                effected.teleToLocation(new Location(huntingZone.EnterLocation, 0),
                     effected.getInstanceId());
             }
             else

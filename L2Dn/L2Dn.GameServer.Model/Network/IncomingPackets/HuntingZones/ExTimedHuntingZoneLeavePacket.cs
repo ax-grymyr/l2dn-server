@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Enums;
+﻿using L2Dn.GameServer.Dto;
+using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
@@ -35,7 +36,7 @@ public struct ExTimedHuntingZoneLeavePacket: IIncomingPacket<GameSession>
         if (huntingZone == null)
             return ValueTask.CompletedTask;
 
-        Location3D? exitLocation = huntingZone.getExitLocation();
+        Location3D? exitLocation = huntingZone.ExitLocation;
         if (exitLocation != null)
         {
             player.teleToLocation(new Location(exitLocation.Value, 0), null);
@@ -53,7 +54,7 @@ public struct ExTimedHuntingZoneLeavePacket: IIncomingPacket<GameSession>
             }
         }
 
-        ThreadPool.schedule(() => connection.Send(new TimedHuntingZoneExitPacket(huntingZone.getZoneId())), 3000);
+        ThreadPool.schedule(() => connection.Send(new TimedHuntingZoneExitPacket(huntingZone.ZoneId)), 3000);
         return ValueTask.CompletedTask;
     }
 }
