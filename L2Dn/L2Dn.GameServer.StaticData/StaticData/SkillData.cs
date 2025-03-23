@@ -88,7 +88,7 @@ public sealed class SkillData
         if (Config.General.CUSTOM_SKILLS_LOAD)
             skillLists = skillLists.Concat(XmlLoader.LoadXmlDocuments<XmlSkillList>("stats/skills/custom"));
 
-        _skills = skillLists.SelectMany(doc => doc.Skills).SelectMany(LoadSkill).
+        _skills = LoadSkills(skillLists.SelectMany(doc => doc.Skills)).
             ToFrozenDictionary(skill => skill.GetSkillHashCode());
 
         _skillsMaxLevel = _skills.Values.GroupBy(skill => skill.Id).
@@ -97,30 +97,36 @@ public sealed class SkillData
         _logger.Info($"{nameof(SkillData)}: Loaded {_skills.Count} Skills.");
     }
 
-    private static IEnumerable<Skill> LoadSkill(XmlSkill xmlSkill)
+    private static IEnumerable<Skill> LoadSkills(IEnumerable<XmlSkill> xmlSkills)
     {
-        SkillDataParser parser = new(xmlSkill);
-        for (int level = 1; level <= parser.MaxLevel; level++)
+        HashSet<IAbstractEffect> abstractEffectSet = [];
+        HashSet<ISkillConditionBase> skillConditionSet = [];
+
+        foreach (XmlSkill xmlSkill in xmlSkills)
         {
-            SortedSet<int> subLevels = parser.GetSubLevelsForLevel(level);
-            foreach (int subLevel in subLevels)
+            SkillDataParser parser = new(xmlSkill, abstractEffectSet, skillConditionSet);
+            for (int level = 1; level <= parser.MaxLevel; level++)
             {
-                SkillParameters parameters = parser.GetParameters(level, subLevel);
-                Skill skill = new Skill(parameters);
-                if (!skill.IsPassive && !skill.GetConditions(SkillConditionScope.Passive).IsDefaultOrEmpty)
+                SortedSet<int> subLevels = parser.GetSubLevelsForLevel(level);
+                foreach (int subLevel in subLevels)
                 {
-                    _logger.Error($"{nameof(SkillData)}: Passive conditions for non-passive Skill Id[{skill.Id}] " +
-                        $"Level[{level}] SubLevel[{subLevel}]");
-                }
+                    SkillParameters parameters = parser.GetParameters(level, subLevel);
+                    Skill skill = new Skill(parameters);
+                    if (!skill.IsPassive && !skill.GetConditions(SkillConditionScope.Passive).IsDefaultOrEmpty)
+                    {
+                        _logger.Error($"{nameof(SkillData)}: Passive conditions for non-passive Skill Id[{skill.Id}] " +
+                            $"Level[{level}] SubLevel[{subLevel}]");
+                    }
 
-                if (skill.IsPassive && !(skill.GetConditions(SkillConditionScope.General).IsDefaultOrEmpty &&
-                        skill.GetConditions(SkillConditionScope.Target).IsDefaultOrEmpty))
-                {
-                    _logger.Error($"{nameof(SkillData)}: Non-passive conditions for passive Skill Id[{skill.Id}] " +
-                        $"Level[{level}] SubLevel[{subLevel}]");
-                }
+                    if (skill.IsPassive && !(skill.GetConditions(SkillConditionScope.General).IsDefaultOrEmpty &&
+                            skill.GetConditions(SkillConditionScope.Target).IsDefaultOrEmpty))
+                    {
+                        _logger.Error($"{nameof(SkillData)}: Non-passive conditions for passive Skill Id[{skill.Id}] " +
+                            $"Level[{level}] SubLevel[{subLevel}]");
+                    }
 
-                yield return new Skill(parameters);
+                    yield return new Skill(parameters);
+                }
             }
         }
     }
@@ -137,8 +143,11 @@ public sealed class SkillData
         private readonly Dictionary<SkillConditionScope, List<Condition>> _conditions = [];
         private readonly Dictionary<SkillEffectScope, List<Effect>> _effects = [];
         private readonly int _maxLevel;
+        private readonly HashSet<IAbstractEffect> _abstractEffectSet;
+        private readonly HashSet<ISkillConditionBase> _skillConditionSet;
 
-        public SkillDataParser(XmlSkill xmlSkill)
+        public SkillDataParser(XmlSkill xmlSkill, HashSet<IAbstractEffect> abstractEffectSet,
+            HashSet<ISkillConditionBase> skillConditionSet)
         {
             _skillId = xmlSkill.Id;
             _skillName = xmlSkill.Name;
@@ -147,6 +156,8 @@ public sealed class SkillData
             _referenceId = xmlSkill.ReferenceIdSpecified ? xmlSkill.ReferenceId : null;
             CollectSkillParameters(xmlSkill);
             _maxLevel = GetMaxLevel(xmlSkill.ToLevel);
+            _abstractEffectSet = abstractEffectSet;
+            _skillConditionSet = skillConditionSet;
         }
 
         public int MaxLevel => _maxLevel;
@@ -230,6 +241,11 @@ public sealed class SkillData
                         throw new InvalidOperationException(
                             $"Invalid skill id={_skillId}: condition handler '{condition.Name}' not found");
 
+                    if (_skillConditionSet.TryGetValue(skillCondition, out ISkillConditionBase? existingCondition))
+                        skillCondition = existingCondition;
+                    else
+                        _skillConditionSet.Add(skillCondition);
+
                     parameters.Conditions.GetOrAdd(conditionScope, _ => []).Add(skillCondition);
                 });
             }
@@ -257,6 +273,11 @@ public sealed class SkillData
                     if (skillEffect is null)
                         throw new InvalidOperationException(
                             $"Invalid skill id={_skillId}: effect handler '{effect.Name}' not found");
+
+                    if (_abstractEffectSet.TryGetValue(skillEffect, out IAbstractEffect? existingEffect))
+                        skillEffect = existingEffect;
+                    else
+                        _abstractEffectSet.Add(skillEffect);
 
                     parameters.Effects.GetOrAdd(effectScope, _ => []).Add(skillEffect);
                 });
