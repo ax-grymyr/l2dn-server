@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
@@ -24,4 +25,7 @@ public sealed class RemainMpPerSkillCondition: ISkillCondition
     {
         return _percentType.test(caster.getCurrentMpPercent(), _amount);
     }
+
+    public override int GetHashCode() => HashCode.Combine(_amount, _percentType);
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => (x._amount, x._percentType));
 }

@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Frozen;
-using System.Collections.Immutable;
 using System.Globalization;
 using System.Xml.Linq;
 using System.Xml.Serialization;
@@ -331,6 +330,10 @@ public sealed class SkillTemplateLoadingTests
             int? toSubLevel = element.GetAttributeValueAsInt32OrNull("toSubLevel") ?? subLevel;
 
             Map<int, Map<int, StatSet>> info = [];
+            string type = element.GetAttributeValueAsString("type", string.Empty);
+            if (!string.IsNullOrEmpty(type))
+                info.GetOrAdd(-1, _ => []).GetOrAdd(-1, _ => new StatSet()).set("type", type);
+
             element.Elements().ForEach(el => ParseInfo(el, variableValues, info));
 
             return new NamedParamInfo(name, fromLevel, toLevel, fromSubLevel, toSubLevel, info);
@@ -616,6 +619,9 @@ public sealed class SkillTemplateLoadingTests
             CompareEffects(oldSkill, "getEffects[Pvp]", oldSkill.getEffects(SkillEffectScope.Pvp) ?? [], newSkill.GetEffects(SkillEffectScope.Pvp));
             CompareEffects(oldSkill, "getEffects[Pve]", oldSkill.getEffects(SkillEffectScope.Pve) ?? [], newSkill.GetEffects(SkillEffectScope.Pve));
             CompareEffects(oldSkill, "getEffects[End]", oldSkill.getEffects(SkillEffectScope.End) ?? [], newSkill.GetEffects(SkillEffectScope.End));
+            CompareConditions(oldSkill, "getConditions[General]", oldSkill.getConditions(SkillConditionScope.General) ?? [], newSkill.GetConditions(SkillConditionScope.General));
+            CompareConditions(oldSkill, "getConditions[Target]", oldSkill.getConditions(SkillConditionScope.Target) ?? [], newSkill.GetConditions(SkillConditionScope.Target));
+            CompareConditions(oldSkill, "getConditions[Passive]", oldSkill.getConditions(SkillConditionScope.Passive) ?? [], newSkill.GetConditions(SkillConditionScope.Passive));
             CompareValue(oldSkill, "getFamePointConsume", oldSkill.getFamePointConsume(), newSkill.FamePointConsume);
             CompareValue(oldSkill, "getFanRange", new ReadOnlySpan<int>(oldSkill.getFanRange()), newSkill.FanRange);
             CompareValue(oldSkill, "getHitCancelTime", oldSkill.getHitCancelTime(), newSkill.HitCancelTime);
@@ -707,6 +713,19 @@ public sealed class SkillTemplateLoadingTests
         {
             List<IAbstractEffect> oldList = oldValue.ToList();
             List<IAbstractEffect> newList = newValue.ToList();
+            CompareValue(skill, propertyName + ".Count", oldList.Count, newList.Count);
+            if (oldList.Count == newList.Count)
+            {
+                for (int i = 0; i < oldList.Count; i++)
+                    CompareValue(skill, $"{propertyName}[{i}]", oldList[i], newList[i]);
+            }
+        }
+
+        private static void CompareConditions(OldSkill skill, string propertyName, IEnumerable<ISkillConditionBase> oldValue,
+            IEnumerable<ISkillConditionBase> newValue)
+        {
+            List<ISkillConditionBase> oldList = oldValue.ToList();
+            List<ISkillConditionBase> newList = newValue.ToList();
             CompareValue(skill, propertyName + ".Count", oldList.Count, newList.Count);
             if (oldList.Count == newList.Count)
             {

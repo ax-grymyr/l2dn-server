@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
@@ -24,4 +25,7 @@ public sealed class SoulSavedSkillCondition: ISkillCondition
     {
         return caster.isPlayer() && caster.getActingPlayer()?.getChargedSouls(_type) >= _amount;
     }
+
+    public override int GetHashCode() => HashCode.Combine(_type, _amount);
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => (x._type, x._amount));
 }

@@ -741,7 +741,12 @@ public sealed class OldSkill: IIdentifiable
      */
     public List<AbstractEffect>? getEffects(SkillEffectScope effectScope)
     {
-        return _effectLists.get(effectScope);
+        return _effectLists.GetValueOrDefault(effectScope);
+    }
+
+    public List<ISkillCondition>? getConditions(SkillConditionScope conditionScope)
+    {
+        return _conditionLists.GetValueOrDefault(conditionScope);
     }
 
     /**

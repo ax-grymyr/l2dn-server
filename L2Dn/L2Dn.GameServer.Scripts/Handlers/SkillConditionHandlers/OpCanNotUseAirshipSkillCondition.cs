@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
@@ -15,4 +16,7 @@ public sealed class OpCanNotUseAirshipSkillCondition: ISkillCondition
         Player? player = caster.getActingPlayer();
         return caster.isPlayer() && player != null && player.getVehicle() is not AirShip;
     }
+
+    public override int GetHashCode() => this.GetSingletonHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj);
 }

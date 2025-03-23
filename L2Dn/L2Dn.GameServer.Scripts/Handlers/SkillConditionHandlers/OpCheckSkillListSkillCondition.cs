@@ -1,3 +1,5 @@
+using System.Collections.Frozen;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -5,18 +7,20 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
 [HandlerStringKey("OpCheckSkillList")]
 public sealed class OpCheckSkillListSkillCondition: ISkillCondition
 {
-    private readonly List<int> _skillIds;
+    private readonly FrozenSet<int> _skillIds;
     private readonly SkillConditionAffectType _affectType;
 
     public OpCheckSkillListSkillCondition(SkillConditionParameterSet parameters)
     {
-        _skillIds = parameters.GetInt32ListOptional(XmlSkillConditionParameterType.SkillIds) ?? [];
+        List<int>? skillIds = parameters.GetInt32ListOptional(XmlSkillConditionParameterType.SkillIds);
+        _skillIds = skillIds is null ? FrozenSet<int>.Empty : skillIds.ToFrozenSet();
         _affectType = parameters.GetEnum<SkillConditionAffectType>(XmlSkillConditionParameterType.AffectType);
     }
 
@@ -56,4 +60,9 @@ public sealed class OpCheckSkillListSkillCondition: ISkillCondition
 
         return false;
     }
+
+    public override int GetHashCode() => HashCode.Combine(_skillIds.GetSetHashCode(), _affectType);
+
+    public override bool Equals(object? obj) =>
+        this.EqualsTo(obj, static x => (x._skillIds.GetSetComparable(), x._affectType));
 }

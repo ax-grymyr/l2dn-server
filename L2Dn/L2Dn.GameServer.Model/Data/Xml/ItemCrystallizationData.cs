@@ -196,7 +196,7 @@ public sealed class ItemCrystallizationData: DataReaderBase
 			}
 			if (!found)
 			{
-				result.Add(new ItemChanceHolder(crystalItemId, 100, item.getCrystalCount()));
+				result.Add(new ItemChanceHolder(crystalItemId, item.getCrystalCount()));
 			}
 
 			result.AddRange(items);
@@ -204,7 +204,7 @@ public sealed class ItemCrystallizationData: DataReaderBase
 		else
 		{
 			// Add basic crystal reward.
-			result.Add(new ItemChanceHolder(crystalItemId, 100, item.getCrystalCount()));
+			result.Add(new ItemChanceHolder(crystalItemId, item.getCrystalCount()));
 		}
 
 		return result;

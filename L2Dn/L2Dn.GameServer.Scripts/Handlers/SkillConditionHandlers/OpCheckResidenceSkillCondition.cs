@@ -1,3 +1,5 @@
+using System.Collections.Frozen;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -7,22 +9,20 @@ using L2Dn.GameServer.Model.Residences;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
-using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
 [HandlerStringKey("OpCheckResidence")]
 public sealed class OpCheckResidenceSkillCondition: ISkillCondition
 {
-    private readonly Set<int> _residenceIds = new();
+    private readonly FrozenSet<int> _residenceIds;
     private readonly bool _isWithin;
 
     public OpCheckResidenceSkillCondition(SkillConditionParameterSet parameters)
     {
         List<int>? residenceIds = parameters.GetInt32ListOptional(XmlSkillConditionParameterType.ResidenceIds);
-        if (residenceIds != null)
-            _residenceIds.addAll(residenceIds);
-
+        _residenceIds = residenceIds is null ? FrozenSet<int>.Empty : residenceIds.ToFrozenSet();
         _isWithin = parameters.GetBoolean(XmlSkillConditionParameterType.IsWithin);
     }
 
@@ -45,4 +45,7 @@ public sealed class OpCheckResidenceSkillCondition: ISkillCondition
 
         return false;
     }
+
+    public override int GetHashCode() => HashCode.Combine(_residenceIds.GetSetHashCode(), _isWithin);
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => (x._residenceIds.GetSetComparable(), x._isWithin));
 }

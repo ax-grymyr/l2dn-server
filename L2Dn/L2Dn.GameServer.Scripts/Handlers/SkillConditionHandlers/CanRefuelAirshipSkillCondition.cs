@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor.Instances;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
@@ -30,4 +31,7 @@ public sealed class CanRefuelAirshipSkillCondition: ISkillCondition
 
         return canRefuelAirship;
     }
+
+    public override int GetHashCode() => _amount;
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x._amount);
 }

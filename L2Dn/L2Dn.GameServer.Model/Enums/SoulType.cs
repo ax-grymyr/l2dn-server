@@ -3,5 +3,5 @@
 public enum SoulType
 {
     LIGHT,
-    SHADOW
+    SHADOW,
 }

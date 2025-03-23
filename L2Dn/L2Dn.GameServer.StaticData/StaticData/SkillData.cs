@@ -5,7 +5,6 @@ using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
@@ -95,7 +94,7 @@ public sealed class SkillData
         _skillsMaxLevel = _skills.Values.GroupBy(skill => skill.Id).
             ToFrozenDictionary(g => g.Key, g => g.Max(s => s.Level));
 
-        _logger.Info(GetType().Name + ": Loaded " + _skills.Count + " Skills.");
+        _logger.Info($"{nameof(SkillData)}: Loaded {_skills.Count} Skills.");
     }
 
     private static IEnumerable<Skill> LoadSkill(XmlSkill xmlSkill)
@@ -107,6 +106,20 @@ public sealed class SkillData
             foreach (int subLevel in subLevels)
             {
                 SkillParameters parameters = parser.GetParameters(level, subLevel);
+                Skill skill = new Skill(parameters);
+                if (!skill.IsPassive && !skill.GetConditions(SkillConditionScope.Passive).IsDefaultOrEmpty)
+                {
+                    _logger.Error($"{nameof(SkillData)}: Passive conditions for non-passive Skill Id[{skill.Id}] " +
+                        $"Level[{level}] SubLevel[{subLevel}]");
+                }
+
+                if (skill.IsPassive && !(skill.GetConditions(SkillConditionScope.General).IsDefaultOrEmpty &&
+                        skill.GetConditions(SkillConditionScope.Target).IsDefaultOrEmpty))
+                {
+                    _logger.Error($"{nameof(SkillData)}: Non-passive conditions for passive Skill Id[{skill.Id}] " +
+                        $"Level[{level}] SubLevel[{subLevel}]");
+                }
+
                 yield return new Skill(parameters);
             }
         }

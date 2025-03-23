@@ -1,3 +1,5 @@
+using System.Collections.Frozen;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
@@ -6,28 +8,22 @@ using L2Dn.GameServer.Model.ItemContainers;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
-using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
 [HandlerStringKey("OpEquipItem")]
 public sealed class OpEquipItemSkillCondition: ISkillCondition
 {
-    private readonly Set<int> _itemIds = new();
+    private readonly FrozenSet<int> _itemIds;
     private readonly SkillConditionAffectType _affectType;
 
     public OpEquipItemSkillCondition(SkillConditionParameterSet parameters)
     {
-        List<int>? itemIds = parameters.GetInt32ListOptional(XmlSkillConditionParameterType.ItemIds);
-        if (itemIds != null)
-        {
-            _itemIds.addAll(itemIds);
-        }
-        else
-        {
-            _itemIds.Add(parameters.GetInt32(XmlSkillConditionParameterType.ItemId));
-        }
+        List<int> itemIds = parameters.GetInt32ListOptional(XmlSkillConditionParameterType.ItemIds) ??
+            [parameters.GetInt32(XmlSkillConditionParameterType.ItemId)];
 
+        _itemIds = itemIds.ToFrozenSet();
         _affectType = parameters.GetEnum<SkillConditionAffectType>(XmlSkillConditionParameterType.AffectType);
     }
 
@@ -90,4 +86,9 @@ public sealed class OpEquipItemSkillCondition: ISkillCondition
 
         return false;
     }
+
+    public override int GetHashCode() => HashCode.Combine(_itemIds.GetSetHashCode(), _affectType);
+
+    public override bool Equals(object? obj) =>
+        this.EqualsTo(obj, static x => (x._itemIds.GetSetComparable(), x._affectType));
 }

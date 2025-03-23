@@ -10,6 +10,7 @@ using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Model.Enums;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
@@ -63,4 +64,7 @@ public sealed class CanTransformSkillCondition: ISkillCondition
 
         return canTransform;
     }
+
+    public override int GetHashCode() => _transformId;
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x._transformId);
 }

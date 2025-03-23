@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Geometry;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
@@ -41,4 +42,7 @@ public sealed class OpBlinkSkillCondition: ISkillCondition
         return GeoEngine.getInstance().
             canMoveToTarget(caster.Location.Location3D, new Location3D(x, y, z), caster.getInstanceWorld());
     }
+
+    public override int GetHashCode() => HashCode.Combine(_angle, _range);
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => (x._angle, x._range));
 }

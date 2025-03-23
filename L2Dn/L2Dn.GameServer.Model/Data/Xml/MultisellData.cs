@@ -78,7 +78,7 @@ public class MultisellData: DataReaderBase
 
 				foreach (XmlMultiSellListIngredient ingredientEntry in itemEntry.Ingredients)
 				{
-					ItemChanceHolder ingredient = new(ingredientEntry.ItemId, 0, ingredientEntry.Count,
+					ItemChanceHolder ingredient = new(ingredientEntry.ItemId, ingredientEntry.Count, 0,
 						ingredientEntry.EnchantLevel, ingredientEntry.MaintainIngredient);
 
 					if (!ItemExists(ingredient))
@@ -174,8 +174,7 @@ public class MultisellData: DataReaderBase
 					_logger.Warn("Buy price " + lastIngredientCount + " is less than sell price " + totalPrice +
 					             " at entry " + entryCounter + " of multisell " + listId + ".");
 					// Adjust price.
-					ItemChanceHolder ingredient = new(57, 0, totalPrice, 0,
-						ingredients[0].MaintainIngredient);
+                    ItemChanceHolder ingredient = new(57, totalPrice, 0, 0, ingredients[0].MaintainIngredient);
 					ingredients.Clear();
 					ingredients.Add(ingredient);
 				}

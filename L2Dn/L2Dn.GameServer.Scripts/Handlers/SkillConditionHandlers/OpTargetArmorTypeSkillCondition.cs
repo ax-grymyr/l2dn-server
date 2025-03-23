@@ -1,3 +1,5 @@
+using System.Collections.Frozen;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -8,31 +10,27 @@ using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
-using L2Dn.GameServer.Utilities;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
 [HandlerStringKey("OpTargetArmorType")]
 public sealed class OpTargetArmorTypeSkillCondition: ISkillCondition
 {
-    private readonly Set<ArmorType> _armorTypes = [];
+    private readonly FrozenSet<ArmorType> _armorTypes;
 
     public OpTargetArmorTypeSkillCondition(SkillConditionParameterSet parameters)
     {
         List<string>? armorTypes = parameters.GetStringListOptional(XmlSkillConditionParameterType.ArmorType);
-        if (armorTypes != null)
-        {
-            foreach (string type in armorTypes)
-                _armorTypes.add(Enum.Parse<ArmorType>(type, true));
-        }
+        _armorTypes = armorTypes is null
+            ? FrozenSet<ArmorType>.Empty
+            : armorTypes.Select(type => Enum.Parse<ArmorType>(type, true)).ToFrozenSet();
     }
 
     public bool canUse(Creature caster, Skill skill, WorldObject? target)
     {
         if (target == null || !target.isCreature())
-        {
             return false;
-        }
 
         Creature targetCreature = (Creature)target;
         Inventory? inv = targetCreature.getInventory();
@@ -89,4 +87,7 @@ public sealed class OpTargetArmorTypeSkillCondition: ISkillCondition
 
         return false;
     }
+
+    public override int GetHashCode() => _armorTypes.GetSetHashCode();
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x._armorTypes.GetSetComparable());
 }

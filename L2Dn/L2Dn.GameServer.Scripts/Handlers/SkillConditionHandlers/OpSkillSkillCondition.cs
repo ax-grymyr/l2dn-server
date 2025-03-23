@@ -4,6 +4,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
@@ -30,4 +31,9 @@ public sealed class OpSkillSkillCondition: ISkillCondition
 		}
 		return requestedSkill == null || requestedSkill.Level != _skillLevel;
 	}
+
+    public override int GetHashCode() => HashCode.Combine(_skillId, _skillLevel, _hasLearned);
+
+    public override bool Equals(object? obj) =>
+        this.EqualsTo(obj, static x => (x._skillId, x._skillLevel, x._hasLearned));
 }

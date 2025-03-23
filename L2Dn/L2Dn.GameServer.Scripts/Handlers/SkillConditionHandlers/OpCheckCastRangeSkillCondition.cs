@@ -6,6 +6,7 @@ using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.StaticData.Xml.Skills;
 using L2Dn.GameServer.Templates;
 using L2Dn.Geometry;
+using L2Dn.Utilities;
 
 namespace L2Dn.GameServer.Scripts.Handlers.SkillConditionHandlers;
 
@@ -25,4 +26,7 @@ public sealed class OpCheckCastRangeSkillCondition: ISkillCondition
             && caster.Distance3D(target) >= _distance
             && GeoEngine.getInstance().canSeeTarget(caster, target);
     }
+
+    public override int GetHashCode() => _distance;
+    public override bool Equals(object? obj) => this.EqualsTo(obj, static x => x._distance);
 }
