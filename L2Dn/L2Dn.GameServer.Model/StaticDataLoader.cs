@@ -100,7 +100,7 @@ public static class StaticDataLoader
         PrivateStoreHistoryManager.getInstance().restore();
         LuckyGameData.getInstance();
         AttendanceRewardData.getInstance();
-        MagicLampData.getInstance();
+        MagicLampData.Instance.Load();
         RandomCraftData.getInstance();
         RevengeHistoryManager.getInstance();
         VipData.Instance.Load();

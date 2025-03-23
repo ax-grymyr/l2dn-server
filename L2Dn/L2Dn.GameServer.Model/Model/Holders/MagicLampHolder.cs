@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 
 namespace L2Dn.GameServer.Model.Holders;
@@ -20,13 +21,13 @@ public class MagicLampHolder
 	public void inc()
 	{
 		_count++;
-		_exp += _lamp.getExp();
-		_sp += _lamp.getSp();
+		_exp += _lamp.Exp;
+		_sp += _lamp.Sp;
 	}
 	
 	public LampType getType()
 	{
-		return _lamp.getType();
+		return _lamp.Type;
 	}
 	
 	public int getCount()
