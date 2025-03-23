@@ -86,7 +86,7 @@ public struct RequestBrBuyProductPacket: IIncomingPacket<GameSession>
 
 			foreach (PrimeShopItem subItem in item.getItems())
 			{
-				player.addItem("PrimeShop", subItem.Id, subItem.getCount() * _count, player, true);
+				player.addItem("PrimeShop", subItem.Id, subItem.Count * _count, player, true);
 			}
 
 			if (item.isVipGift())

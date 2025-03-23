@@ -84,8 +84,8 @@ public struct RequestHuntPassRewardPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
         }
 
-		long weight = itemTemplate.getWeight() * reward.getCount();
-		long slots = itemTemplate.isStackable() ? 1 : reward.getCount();
+		long weight = itemTemplate.getWeight() * reward.Count;
+		long slots = itemTemplate.isStackable() ? 1 : reward.Count;
 		if (!player.getInventory().validateWeight(weight) || !player.getInventory().validateCapacity(slots))
 		{
 			player.sendPacket(SystemMessageId
@@ -113,7 +113,7 @@ public struct RequestHuntPassRewardPacket: IIncomingPacket<GameSession>
 	{
 		if (reward.Id == 72286) // Sayha's Grace Sustention Points
 		{
-			int count = (int)reward.getCount();
+			int count = (int)reward.Count;
 			player.getHuntPass().addSayhaTime(count);
 
 			SystemMessagePacket msg =

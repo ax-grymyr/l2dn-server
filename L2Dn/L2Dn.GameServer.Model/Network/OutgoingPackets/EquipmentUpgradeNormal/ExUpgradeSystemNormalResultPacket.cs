@@ -34,8 +34,8 @@ public readonly struct ExUpgradeSystemNormalResultPacket: IOutgoingPacket
         {
             writer.WriteInt32(item.ObjectId);
             writer.WriteInt32(item.Id);
-            writer.WriteInt32(item.getEnchantLevel());
-            writer.WriteInt32((int)item.getCount());
+            writer.WriteInt32(item.EnchantLevel);
+            writer.WriteInt32((int)item.Count);
         }
 
         writer.WriteByte(0); // Is bonus? Do not see any effect.
@@ -44,8 +44,8 @@ public readonly struct ExUpgradeSystemNormalResultPacket: IOutgoingPacket
         {
             writer.WriteInt32(bonus.ObjectId);
             writer.WriteInt32(bonus.Id);
-            writer.WriteInt32(bonus.getEnchantLevel());
-            writer.WriteInt32((int)bonus.getCount());
+            writer.WriteInt32(bonus.EnchantLevel);
+            writer.WriteInt32((int)bonus.Count);
         }
     }
 }

@@ -1531,7 +1531,7 @@ public class Npc: Creature
 	 */
 	public Item? dropItem(Creature creature, ItemHolder item)
 	{
-		return dropItem(creature, item.Id, item.getCount());
+		return dropItem(creature, item.Id, item.Count);
 	}
 
 	public override string getName()

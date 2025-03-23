@@ -3478,7 +3478,7 @@ public class Player: Playable
 	 */
 	public void addItem(string process, ItemHolder item, WorldObject reference, bool sendMessage)
 	{
-		addItem(process, item.Id, item.getCount(), reference, sendMessage);
+		addItem(process, item.Id, item.Count, reference, sendMessage);
 	}
 
 	/**
@@ -4413,7 +4413,7 @@ public class Player: Playable
 	 */
 	public void doAutoLoot(Attackable target, ItemHolder item)
 	{
-		doAutoLoot(target, item.Id, item.getCount());
+		doAutoLoot(target, item.Id, item.Count);
 	}
 
 	/**

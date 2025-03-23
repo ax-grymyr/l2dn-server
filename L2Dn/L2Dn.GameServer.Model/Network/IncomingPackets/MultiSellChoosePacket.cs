@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -290,9 +291,9 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				foreach (ItemChanceHolder summedIngredient in summedIngredients)
 				{
 					if (summedIngredient.Id == ingredient.Id &&
-					    summedIngredient.getEnchantmentLevel() == ingredient.getEnchantmentLevel())
+					    summedIngredient.EnchantmentLevel == ingredient.EnchantmentLevel)
 					{
-						summedIngredients.Add(new ItemChanceHolder(ingredient.Id, ingredient.getChance(), ingredient.getCount() + summedIngredient.getCount(), ingredient.getEnchantmentLevel(), ingredient.isMaintainIngredient()));
+						summedIngredients.Add(new ItemChanceHolder(ingredient.Id, ingredient.Count + summedIngredient.Count, ingredient.Chance, ingredient.EnchantmentLevel, ingredient.MaintainIngredient));
 						summedIngredients.Remove(summedIngredient);
 						added = true;
 					}
@@ -306,29 +307,29 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 
 			foreach (ItemChanceHolder ingredient in summedIngredients)
 			{
-				if (ingredient.getEnchantmentLevel() > 0)
+				if (ingredient.EnchantmentLevel > 0)
 				{
 					int found = 0;
-					foreach (Item item in inventory.getAllItemsByItemId(ingredient.Id, ingredient.getEnchantmentLevel()))
+					foreach (Item item in inventory.getAllItemsByItemId(ingredient.Id, ingredient.EnchantmentLevel))
 					{
-						if (item.getEnchantLevel() >= ingredient.getEnchantmentLevel())
+						if (item.getEnchantLevel() >= ingredient.EnchantmentLevel)
 						{
 							found++;
 						}
 					}
 
-					if (found < ingredient.getCount())
+					if (found < ingredient.Count)
 					{
                         ItemTemplate? ingredientTemplate = ItemData.getInstance().getTemplate(ingredient.Id);
                         string ingredientName = ingredientTemplate != null ? ingredientTemplate.getName() : "Unknown"; // TODO: refactor later
 
 						SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.REQUIRED_S1);
-						sm.Params.addString("+" + ingredient.getEnchantmentLevel() + " " + ingredientName);
+						sm.Params.addString("+" + ingredient.EnchantmentLevel + " " + ingredientName);
 						player.sendPacket(sm);
 					    return ValueTask.CompletedTask;
 					}
 				}
-				else if (!checkIngredients(player, list, inventory, clan, ingredient.Id, checked(ingredient.getCount() * _amount)))
+				else if (!checkIngredients(player, list, inventory, clan, ingredient.Id, checked(ingredient.Count * _amount)))
 				{
 				    return ValueTask.CompletedTask;
 				}
@@ -340,7 +341,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			List<ItemInfo> itemsToUpdate = new List<ItemInfo>();
 			foreach (ItemChanceHolder ingredient in entry.getIngredients())
 			{
-				if (ingredient.isMaintainIngredient())
+				if (ingredient.MaintainIngredient)
 				{
 					continue;
 				}
@@ -397,10 +398,10 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 						}
 					}
 				}
-				else if (ingredient.getEnchantmentLevel() > 0)
+				else if (ingredient.EnchantmentLevel > 0)
 				{
 					// Take the enchanted item.
-					Item? destroyedItem = inventory.destroyItem("Multisell", inventory.getAllItemsByItemId(ingredient.Id, ingredient.getEnchantmentLevel()).First(), totalCount, player, npc);
+					Item? destroyedItem = inventory.destroyItem("Multisell", inventory.getAllItemsByItemId(ingredient.Id, ingredient.EnchantmentLevel).First(), totalCount, player, npc);
 					if (destroyedItem != null)
 					{
 						itemEnchantmentProcessed = true;
@@ -466,7 +467,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 			List<ItemChanceHolder> products = entry.getProducts();
 			if (list.isChanceMultisell())
 			{
-				ItemChanceHolder? randomProduct = ItemChanceHolder.getRandomHolder(entry.getProducts());
+				ItemChanceHolder? randomProduct = ItemChanceHolder.GetRandomHolder(entry.getProducts());
 				products = randomProduct != null ? [randomProduct] : [];
 			}
 
@@ -585,9 +586,9 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 						itemEnchantmentProcessed = false;
 					}
 
-					if (product.getEnchantmentLevel() > 0)
+					if (product.EnchantmentLevel > 0)
 					{
-						addedItem.setEnchantLevel(product.getEnchantmentLevel());
+						addedItem.setEnchantLevel(product.EnchantmentLevel);
 						addedItem.updateDatabase(true);
 					}
 
@@ -630,7 +631,7 @@ public struct MultiSellChoosePacket: IIncomingPacket<GameSession>
 				{
 					if (ingredient.Id == Inventory.AdenaId)
 					{
-						taxPaid += checked((long)(ingredient.getCount() * list.getIngredientMultiplier() * list.getTaxRate() * _amount));
+						taxPaid += checked((long)(ingredient.Count * list.getIngredientMultiplier() * list.getTaxRate() * _amount));
 					}
 				}
 				if (taxPaid > 0)

@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
@@ -224,10 +225,10 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
 		foreach (ItemChanceHolder holder in crystallizationRewards)
 		{
 			double rand = Rnd.nextDouble() * 100;
-			if (rand < holder.getChance())
+			if (rand < holder.Chance)
 			{
 				// add crystals
-				Item? createdItem = player.getInventory().addItem("Crystalize", holder.Id, holder.getCount(), player, player);
+				Item? createdItem = player.getInventory().addItem("Crystalize", holder.Id, holder.Count, player, player);
                 if (createdItem == null)
                 {
                     player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: proper message, atomic inventory update
@@ -236,7 +237,7 @@ public struct RequestCrystallizeItemPacket: IIncomingPacket<GameSession>
 
                 sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
 				sm.Params.addItemName(createdItem);
-				sm.Params.addLong(holder.getCount());
+				sm.Params.addLong(holder.Count);
 				player.sendPacket(sm);
 			}
 		}

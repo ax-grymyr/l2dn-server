@@ -28,9 +28,9 @@ public readonly struct ExBRProductInfoPacket: IOutgoingPacket
         foreach (PrimeShopItem item in _item.getItems())
         {
             writer.WriteInt32(item.Id);
-            writer.WriteInt32((int)item.getCount());
-            writer.WriteInt32(item.getWeight());
-            writer.WriteInt32(item.isTradable());
+            writer.WriteInt32((int)item.Count);
+            writer.WriteInt32(item.Weight);
+            writer.WriteInt32(item.IsTradable);
         }
 
         writer.WriteInt64(_charAdena);

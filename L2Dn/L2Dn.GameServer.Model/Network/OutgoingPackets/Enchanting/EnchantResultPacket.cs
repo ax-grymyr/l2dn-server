@@ -69,9 +69,9 @@ public readonly struct EnchantResultPacket: IOutgoingPacket
 
 		writer.WriteInt32(_result);
 		writer.WriteInt32(_crystal.Id);
-		writer.WriteInt64(_crystal.getCount());
+		writer.WriteInt64(_crystal.Count);
 		writer.WriteInt32(_additional.Id);
-		writer.WriteInt64(_additional.getCount());
+		writer.WriteInt64(_additional.Count);
 		writer.WriteInt32(_enchantLevel);
 	}
 }

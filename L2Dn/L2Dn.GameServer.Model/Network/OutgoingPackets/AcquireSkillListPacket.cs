@@ -59,7 +59,7 @@ public readonly struct AcquireSkillListPacket: IOutgoingPacket
             foreach (List<ItemHolder> item in requiredItems)
             {
                 writer.WriteInt32(item[0].Id);
-                writer.WriteInt64(item[0].getCount());
+                writer.WriteInt64(item[0].Count);
             }
 
             List<Skill> removeSkills = new();

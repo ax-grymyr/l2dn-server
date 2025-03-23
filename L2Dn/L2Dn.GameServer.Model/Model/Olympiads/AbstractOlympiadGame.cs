@@ -420,7 +420,7 @@ public abstract class AbstractOlympiadGame
 			List<ItemInfo> items = new List<ItemInfo>();
 			list.ForEach(holder =>
 			{
-				Item? item = player.getInventory().addItem("Olympiad", holder.Id, holder.getCount(), player, null);
+				Item? item = player.getInventory().addItem("Olympiad", holder.Id, holder.Count, player, null);
 				if (item == null)
 				{
 					return;
@@ -429,7 +429,7 @@ public abstract class AbstractOlympiadGame
 				items.Add(new ItemInfo(item, ItemChangeType.MODIFIED));
 				SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
 				sm.Params.addItemName(item);
-				sm.Params.addLong(holder.getCount());
+				sm.Params.addLong(holder.Count);
 				player.sendPacket(sm);
 			});
 

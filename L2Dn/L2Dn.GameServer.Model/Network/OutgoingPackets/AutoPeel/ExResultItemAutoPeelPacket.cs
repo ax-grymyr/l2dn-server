@@ -31,7 +31,7 @@ public readonly struct ExResultItemAutoPeelPacket: IOutgoingPacket
         foreach (ItemHolder holder in _itemList)
         {
             writer.WriteInt32(holder.Id);
-            writer.WriteInt64(holder.getCount());
+            writer.WriteInt64(holder.Count);
             writer.WriteInt32(0); // Announce level.
             writer.WriteInt32(0); // Enchanted.
             writer.WriteInt32(0); // Grade color.

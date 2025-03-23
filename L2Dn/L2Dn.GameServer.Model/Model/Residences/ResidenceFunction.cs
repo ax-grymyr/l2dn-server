@@ -152,12 +152,12 @@ public class ResidenceFunction
 
 		ItemContainer wh = clan.getWarehouse();
 		Item? item = wh.getItemByItemId(template.Cost.Id);
-		if (item == null || item.getCount() < template.Cost.getCount())
+		if (item == null || item.getCount() < template.Cost.Count)
 		{
 			return false;
 		}
 
-		if (wh.destroyItem("FunctionFee", item, template.Cost.getCount(), null, this) != null)
+		if (wh.destroyItem("FunctionFee", item, template.Cost.Count, null, this) != null)
 		{
 			_expiration = DateTime.UtcNow + template.Duration;
 			init();

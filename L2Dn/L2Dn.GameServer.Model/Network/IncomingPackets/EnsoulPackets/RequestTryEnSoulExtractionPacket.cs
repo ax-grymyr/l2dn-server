@@ -69,7 +69,7 @@ public struct RequestTryEnSoulExtractionPacket: IIncomingPacket<GameSession>
         // Check if player has required items.
         foreach (ItemHolder itemHolder in removalFee)
         {
-            if (player.getInventory().getInventoryItemCount(itemHolder.Id, -1) < itemHolder.getCount())
+            if (player.getInventory().getInventoryItemCount(itemHolder.Id, -1) < itemHolder.Count)
             {
                 player.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT);
                 player.sendPacket(new ExEnSoulExtractionResultPacket(false, item));
@@ -80,7 +80,7 @@ public struct RequestTryEnSoulExtractionPacket: IIncomingPacket<GameSession>
         // Take required items.
         foreach (ItemHolder itemHolder in removalFee)
         {
-            player.destroyItemByItemId("Rune Extract", itemHolder.Id, itemHolder.getCount(), player, true);
+            player.destroyItemByItemId("Rune Extract", itemHolder.Id, itemHolder.Count, player, true);
         }
 
         // Remove equipped rune.

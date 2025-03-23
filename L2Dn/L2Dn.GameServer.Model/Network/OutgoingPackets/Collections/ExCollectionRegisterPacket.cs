@@ -28,9 +28,9 @@ public readonly struct ExCollectionRegisterPacket: IOutgoingPacket
         writer.WriteInt16(249); // 256 - size so far
         writer.WriteByte((byte)_index); // slot index
         writer.WriteInt32(_collectionInfo.Id); // item classId
-        writer.WriteInt16((short)_collectionInfo.getEnchantLevel()); // enchant level
+        writer.WriteInt16((short)_collectionInfo.EnchantLevel); // enchant level
         writer.WriteByte(0); // is blessed
         writer.WriteByte(0); // blessed conditions
-        writer.WriteInt32((int)_collectionInfo.getCount()); // amount
+        writer.WriteInt32((int)_collectionInfo.Count); // amount
     }
 }

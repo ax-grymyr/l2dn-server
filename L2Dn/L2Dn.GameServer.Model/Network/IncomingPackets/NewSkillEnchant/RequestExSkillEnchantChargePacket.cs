@@ -73,7 +73,7 @@ public struct RequestExSkillEnchantChargePacket: IIncomingPacket<GameSession>
 			    SkillEnchantData.Instance.GetEnchantItem(starHolder.Level, item.Id);
 		    if (itemExpHolder != null)
 		    {
-			    feeAdena = itemCharge.getCount() * starHolder.FeeAdena;
+			    feeAdena = itemCharge.Count * starHolder.FeeAdena;
 			    if (player.getAdena() < feeAdena)
 			    {
 				    player.sendPacket(SystemMessageId.NOT_ENOUGH_ADENA);
@@ -83,8 +83,8 @@ public struct RequestExSkillEnchantChargePacket: IIncomingPacket<GameSession>
 
 			    if (itemExpHolder.StarLevel <= starHolder.Level)
 			    {
-				    curExp += itemExpHolder.Exp * itemCharge.getCount();
-				    player.destroyItem("Charge", item, itemCharge.getCount(), null, true);
+				    curExp += itemExpHolder.Exp * itemCharge.Count;
+				    player.destroyItem("Charge", item, itemCharge.Count, null, true);
 			    }
 			    else
 			    {

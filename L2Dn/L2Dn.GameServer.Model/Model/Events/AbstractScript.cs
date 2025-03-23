@@ -1838,7 +1838,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		}
 		if (checkCount)
 		{
-			return getQuestItemsCount(player, item.Id) >= item.getCount();
+			return getQuestItemsCount(player, item.Id) >= item.Count;
 		}
 		return hasQuestItems(player, item.Id);
 	}
@@ -2061,7 +2061,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 */
 	public static void rewardItems(Player player, ItemHolder holder)
 	{
-		rewardItems(player, holder.Id, holder.getCount());
+		rewardItems(player, holder.Id, holder.Count);
 	}
 
 	/**
@@ -2216,7 +2216,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 	 */
 	protected void giveItems(Player player, ItemHolder holder)
 	{
-		giveItems(player, holder.Id, holder.getCount());
+		giveItems(player, holder.Id, holder.Count);
 	}
 
 	/**
@@ -2474,7 +2474,7 @@ public abstract class AbstractScript: IEventTimerEvent<string>, IEventTimerCance
 		{
 			return false;
 		}
-		return takeItems(player, holder.Id, holder.getCount());
+		return takeItems(player, holder.Id, holder.Count);
 	}
 
 	/**

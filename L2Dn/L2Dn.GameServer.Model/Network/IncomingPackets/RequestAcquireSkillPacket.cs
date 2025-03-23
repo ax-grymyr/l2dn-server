@@ -162,8 +162,8 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 							{
 								count++;
 								playerItemCount = player.getInventory().getInventoryItemCount(item.Id, -1);
-								if (playerItemCount >= item.getCount() &&
-								    player.destroyItemByItemId("PledgeLifeCrystal", item.Id, item.getCount(),
+								if (playerItemCount >= item.Count &&
+								    player.destroyItemByItemId("PledgeLifeCrystal", item.Id, item.Count,
 									    trainer, true))
 								{
 									break;
@@ -235,7 +235,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 					{
 						count++;
 						playerItemCount = player.getInventory().getInventoryItemCount(item.Id, -1);
-						if (playerItemCount >= item.getCount() && player.destroyItemByItemId("SubSkills", item.Id, item.getCount(), trainer, true))
+						if (playerItemCount >= item.Count && player.destroyItemByItemId("SubSkills", item.Id, item.Count, trainer, true))
 						{
 							break;
 						}
@@ -537,7 +537,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 					{
 						count++;
 						playerItemCount = player.getInventory().getInventoryItemCount(item.Id, -1);
-						if (playerItemCount >= item.getCount())
+						if (playerItemCount >= item.Count)
 						{
 							break;
 						}
@@ -562,7 +562,7 @@ public struct RequestAcquireSkillPacket: IIncomingPacket<GameSession>
 					{
 						count++;
 						playerItemCount = player.getInventory().getInventoryItemCount(item.Id, -1);
-						if (playerItemCount >= item.getCount() && player.destroyItemByItemId("SkillLearn", item.Id, item.getCount(), trainer, true))
+						if (playerItemCount >= item.Count && player.destroyItemByItemId("SkillLearn", item.Id, item.Count, trainer, true))
 						{
 							break;
 						}

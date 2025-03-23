@@ -730,7 +730,7 @@ public class Party : AbstractPlayerGroup
 	 */
 	public void distributeItem(Player player, ItemHolder item, bool spoil, Attackable target)
 	{
-		distributeItem(player, item.Id, item.getCount(), spoil, target);
+		distributeItem(player, item.Id, item.Count, spoil, target);
 	}
 
 	/**

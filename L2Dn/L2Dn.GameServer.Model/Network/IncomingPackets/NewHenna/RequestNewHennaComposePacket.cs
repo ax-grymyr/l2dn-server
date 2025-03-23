@@ -68,8 +68,8 @@ public struct RequestNewHennaComposePacket: IIncomingPacket<GameSession>
 
 		ItemHolder one = new ItemHolder(combinationHennas.getItemOne(), combinationHennas.getCountOne());
 		ItemHolder two = new ItemHolder(combinationHennas.getItemTwo(), combinationHennas.getCountTwo());
-		if ((_slotOneItemId != -1 && slotOneItem != null && slotOneItem.getCount() < one.getCount()) ||
-            (_slotTwoItemId != -1 && slotTwoItem != null && slotTwoItem.getCount() < two.getCount()))
+		if ((_slotOneItemId != -1 && slotOneItem != null && slotOneItem.getCount() < one.Count) ||
+            (_slotTwoItemId != -1 && slotTwoItem != null && slotTwoItem.getCount() < two.Count))
 		{
 			player.sendPacket(new NewHennaPotenComposePacket(henna.getDyeId(), -1, false));
 			return ValueTask.CompletedTask;
@@ -90,9 +90,9 @@ public struct RequestNewHennaComposePacket: IIncomingPacket<GameSession>
 		    itemsToUpdate.Add(new ItemInfo(adenaItem, ItemChangeType.MODIFIED));
 
 		if ((_slotOneItemId != -1 &&
-		     inventory.destroyItemByItemId("Henna Improving", one.Id, one.getCount(), player, null) == null) ||
+		     inventory.destroyItemByItemId("Henna Improving", one.Id, one.Count, player, null) == null) ||
 		    (_slotTwoItemId != -1 &&
-		     inventory.destroyItemByItemId("Henna Improving", two.Id, two.getCount(), player, null) == null) ||
+		     inventory.destroyItemByItemId("Henna Improving", two.Id, two.Count, player, null) == null) ||
 		    inventory.destroyItemByItemId("Henna Improving", Inventory.AdenaId, commission, player, null) == null)
 		{
 			player.sendPacket(new NewHennaPotenComposePacket(henna.getDyeId(), -1, false));
@@ -109,7 +109,7 @@ public struct RequestNewHennaComposePacket: IIncomingPacket<GameSession>
                 {
                     player.removeHenna(_slotOneIndex, false);
                     player.addHenna(_slotOneIndex, rewardHenna);
-                    player.addItem("Henna Improving", reward.Id, reward.getCount(), null, false);
+                    player.addItem("Henna Improving", reward.Id, reward.Count, null, false);
                     player.sendPacket(new NewHennaPotenComposePacket(reward.getHennaId(),
                         reward.Id == 0 ? -1 : reward.Id, true));
                 }
@@ -127,7 +127,7 @@ public struct RequestNewHennaComposePacket: IIncomingPacket<GameSession>
                     player.addHenna(_slotOneIndex, rewardHenna);
                 }
 
-                player.addItem("Henna Improving", reward.Id, reward.getCount(), null, false);
+                player.addItem("Henna Improving", reward.Id, reward.Count, null, false);
                 player.sendPacket(new NewHennaPotenComposePacket(reward.getHennaId(),
                     reward.Id == 0 ? -1 : reward.Id, false));
             }

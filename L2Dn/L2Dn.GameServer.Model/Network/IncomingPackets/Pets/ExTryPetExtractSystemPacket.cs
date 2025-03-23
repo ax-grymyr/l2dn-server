@@ -86,9 +86,9 @@ public struct ExTryPetExtractSystemPacket: IIncomingPacket<GameSession>
 			int extractItemId = holder.ExtractItem;
 			int extractItemCount = (int) (petInfo.getStat().getExp() / holder.ExtractExp);
 			int extractCostId = holder.ExtractCost.Id;
-			long extractCostCount = holder.ExtractCost.getCount() * extractItemCount;
+			long extractCostCount = holder.ExtractCost.Count * extractItemCount;
 			int defaultCostId = holder.DefaultCost.Id;
-			long defaultCostCount = holder.DefaultCost.getCount();
+			long defaultCostCount = holder.DefaultCost.Count;
 			if (player.getInventory().getInventoryItemCount(extractCostId, -1) >= extractCostCount && player.getInventory().getInventoryItemCount(defaultCostId, -1) >= defaultCostCount)
 			{
 				if (player.destroyItemByItemId("Pet Extraction", extractCostId, extractCostCount, player, true) && player.destroyItemByItemId("Pet Extraction", defaultCostId, defaultCostCount, player, true) && player.destroyItem("Pet Extraction", petItem, player, true))

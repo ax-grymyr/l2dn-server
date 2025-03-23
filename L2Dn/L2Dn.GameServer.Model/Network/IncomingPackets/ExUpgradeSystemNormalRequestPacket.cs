@@ -50,7 +50,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 		Inventory inventory = player.getInventory();
 		if (inventory.getItemByItemId(upgradeHolder.getInitialItem().Id) == null ||
 		    inventory.getInventoryItemCount(upgradeHolder.getInitialItem().Id, -1) <
-		    upgradeHolder.getInitialItem().getCount())
+		    upgradeHolder.getInitialItem().Count)
 		{
 			player.sendPacket(ExUpgradeSystemNormalResultPacket.FAIL);
 			return ValueTask.CompletedTask;
@@ -63,7 +63,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 		{
 			foreach (ItemEnchantHolder material in materials)
 			{
-				if (material.getCount() < 0)
+				if (material.Count < 0)
 				{
 					player.sendPacket(ExUpgradeSystemNormalResultPacket.FAIL);
 					PacketLogger.Instance.Warn(GetType().Name +
@@ -74,7 +74,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 					return ValueTask.CompletedTask;
 				}
 
-				if (inventory.getInventoryItemCount(material.Id, material.getEnchantLevel()) < material.getCount())
+				if (inventory.getInventoryItemCount(material.Id, material.EnchantLevel) < material.Count)
 				{
 					player.sendPacket(ExUpgradeSystemNormalResultPacket.FAIL);
 					return ValueTask.CompletedTask;
@@ -84,7 +84,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 				{
 					if (discount.Id == material.Id)
 					{
-						discounts.put(material.Id, discount.getCount());
+						discounts.put(material.Id, discount.Count);
 						break;
 					}
 				}
@@ -106,7 +106,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 			foreach (ItemEnchantHolder material in materials2)
 			{
 				player.destroyItemByItemId("UpgradeNormalEquipment", material.Id,
-					material.getCount() - (discounts.Count == 0 ? 0 : discounts.get(material.Id)), player, true);
+					material.Count - (discounts.Count == 0 ? 0 : discounts.get(material.Id)), player, true);
 			}
 		}
 
@@ -127,7 +127,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
                 foreach (ItemEnchantHolder successItem in itemsOnSuccess)
                 {
                     Item? addedSuccessItem = player.addItem("UpgradeNormalEquipment", successItem.Id,
-                        successItem.getCount(), player, true);
+                        successItem.Count, player, true);
 
                     if (addedSuccessItem == null)
                     {
@@ -135,10 +135,10 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
                         return ValueTask.CompletedTask;
                     }
 
-                    if (successItem.getEnchantLevel() != 0)
+                    if (successItem.EnchantLevel != 0)
                     {
                         isNeedToSendUpdate = true;
-                        addedSuccessItem.setEnchantLevel(successItem.getEnchantLevel());
+                        addedSuccessItem.setEnchantLevel(successItem.EnchantLevel);
                     }
 
                     addedSuccessItem.updateDatabase(true);
@@ -153,7 +153,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 				foreach (ItemEnchantHolder bonusItem in bonusTypeItems)
 				{
 					Item? addedBonusItem = player.addItem("UpgradeNormalEquipment", bonusItem.Id,
-						bonusItem.getCount(), player, true);
+						bonusItem.Count, player, true);
 
                     if (addedBonusItem == null)
                     {
@@ -161,10 +161,10 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
                         return ValueTask.CompletedTask;
                     }
 
-					if (bonusItem.getEnchantLevel() != 0)
+					if (bonusItem.EnchantLevel != 0)
 					{
 						isNeedToSendUpdate = true;
-						addedBonusItem.setEnchantLevel(bonusItem.getEnchantLevel());
+						addedBonusItem.setEnchantLevel(bonusItem.EnchantLevel);
 					}
 
 					addedBonusItem.updateDatabase(true);
@@ -180,7 +180,7 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
 				foreach (ItemEnchantHolder failureItem in itemsOnFailure)
 				{
 					Item? addedFailureItem = player.addItem("UpgradeNormalEquipment", failureItem.Id,
-						failureItem.getCount(), player, true);
+						failureItem.Count, player, true);
 
                     if (addedFailureItem == null)
                     {
@@ -188,10 +188,10 @@ public struct ExUpgradeSystemNormalRequestPacket: IIncomingPacket<GameSession>
                         return ValueTask.CompletedTask;
                     }
 
-					if (failureItem.getEnchantLevel() != 0)
+					if (failureItem.EnchantLevel != 0)
 					{
 						isNeedToSendUpdate = true;
-						addedFailureItem.setEnchantLevel(failureItem.getEnchantLevel());
+						addedFailureItem.setEnchantLevel(failureItem.EnchantLevel);
 					}
 
 					addedFailureItem.updateDatabase(true);

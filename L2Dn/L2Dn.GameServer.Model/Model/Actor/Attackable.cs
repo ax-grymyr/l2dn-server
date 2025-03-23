@@ -1197,7 +1197,7 @@ public class Attackable: Npc
 					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.C1_DIED_AND_DROPPED_S2_X_S3);
 					sm.Params.addString(getName());
 					sm.Params.addItemName(item);
-					sm.Params.addLong(drop.getCount());
+					sm.Params.addLong(drop.Count);
 					broadcastPacket(sm);
 					if (RaidDropAnnounceData.getInstance().isAnnounce(item.Id))
 					{
@@ -1245,7 +1245,7 @@ public class Attackable: Npc
 							SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.THANKS_TO_C1_S_FORTUNE_TIME_EFFECT_S2_X_S3_DROPPED);
 							sm.Params.addString(getName());
 							sm.Params.addItemName(item);
-							sm.Params.addLong(drop.getCount());
+							sm.Params.addLong(drop.Count);
 							broadcastPacket(sm);
 						}
 					}

@@ -98,7 +98,7 @@ public static class StaticDataLoader
         ItemCommissionManager.getInstance();
         WorldExchangeManager.getInstance();
         PrivateStoreHistoryManager.getInstance().restore();
-        LuckyGameData.getInstance();
+        LuckyGameData.Instance.Load();
         AttendanceRewardData.getInstance();
         MagicLampData.Instance.Load();
         RandomCraftData.getInstance();

@@ -97,7 +97,7 @@ public struct ExElementalSpiritEvolutionPacket: IIncomingPacket<GameSession>
 
 			foreach (ItemHolder itemHolder in spirit.getItemsToEvolve())
 			{
-				if (inventory.getInventoryItemCount(itemHolder.Id, -1) < itemHolder.getCount())
+				if (inventory.getInventoryItemCount(itemHolder.Id, -1) < itemHolder.Count)
 				{
 					return false;
 				}
@@ -105,7 +105,7 @@ public struct ExElementalSpiritEvolutionPacket: IIncomingPacket<GameSession>
 
 			foreach (ItemHolder itemHolder in spirit.getItemsToEvolve())
 			{
-				player.destroyItemByItemId("Evolve", itemHolder.Id, itemHolder.getCount(), player, true);
+				player.destroyItemByItemId("Evolve", itemHolder.Id, itemHolder.Count, player, true);
 			}
 
 			return true;

@@ -96,8 +96,8 @@ public struct RequestNewEnchantTryPacket: IIncomingPacket<GameSession>
 	    CombinationItemReward rewardItem = combinationItem.getReward(success);
 
 	    // Add item (early).
-	    Item? item = player.addItem("Compound-Result", rewardItem.Id, rewardItem.getCount(),
-		    rewardItem.getEnchantLevel(), null, true);
+	    Item? item = player.addItem("Compound-Result", rewardItem.Id, rewardItem.Count,
+		    rewardItem.EnchantLevel, null, true);
 
         if (item == null)
         {

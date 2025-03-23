@@ -48,7 +48,7 @@ public struct RequestExAcquirePetSkillPacket: IIncomingPacket<GameSession>
             if (item != null)
             {
                 if (player.destroyItemByItemId("PetAcquireSkill", item.Id,
-                        item.getCount(), null, true))
+                        item.Count, null, true))
                 {
                     pet.addSkill(skill);
                     pet.storePetSkills(_skillId, _skillLevel);

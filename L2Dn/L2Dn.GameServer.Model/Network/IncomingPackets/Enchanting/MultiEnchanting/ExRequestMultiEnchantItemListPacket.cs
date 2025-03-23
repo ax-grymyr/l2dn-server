@@ -353,10 +353,10 @@ public struct ExRequestMultiEnchantItemListPacket: IIncomingPacket<GameSession>
 							}
 
 							ItemChanceHolder? destroyReward = ItemCrystallizationData.getInstance().getItemOnDestroy(player, enchantItem);
-							if (destroyReward != null && Rnd.get(100) < destroyReward.getChance())
+							if (destroyReward != null && Rnd.get(100) < destroyReward.Chance)
 							{
 								failureReward.put(failureReward.Count + 1, destroyReward);
-								player.addItem("Enchant", destroyReward.Id, destroyReward.getCount(), null, true);
+								player.addItem("Enchant", destroyReward.Id, destroyReward.Count, null, true);
 								player.sendPacket(new EnchantResultPacket(EnchantResultPacket.FAIL, destroyReward, null, 0));
 							}
 

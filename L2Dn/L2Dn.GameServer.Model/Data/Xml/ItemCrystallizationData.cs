@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using System.Xml.Linq;
 using L2Dn.Extensions;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
@@ -89,7 +90,7 @@ public sealed class ItemCrystallizationData: DataReaderBase
 			int itemId = el.GetAttributeValueAsInt32("id");
 			long itemCount = el.GetAttributeValueAsInt64("count");
 			double itemChance = el.GetAttributeValueAsDouble("chance");
-			crystallizeRewards.Add(new ItemChanceHolder(itemId, itemChance, itemCount));
+			crystallizeRewards.Add(new ItemChanceHolder(itemId, itemCount, itemChance));
 		});
 
 		_crystallizationTemplates[(int)crystalType].put(crystallizationType, crystallizeRewards);
@@ -105,7 +106,7 @@ public sealed class ItemCrystallizationData: DataReaderBase
 			int itemId = el.GetAttributeValueAsInt32("id");
 			long itemCount = el.GetAttributeValueAsInt64("count");
 			double itemChance = el.GetAttributeValueAsDouble("chance");
-			crystallizeRewards.Add(new ItemChanceHolder(itemId, itemChance, itemCount));
+			crystallizeRewards.Add(new ItemChanceHolder(itemId, itemCount, itemChance));
 		});
 
 		_items.put(id, new CrystallizationDataHolder(id, crystallizeRewards));
@@ -116,8 +117,8 @@ public sealed class ItemCrystallizationData: DataReaderBase
 		List<ItemChanceHolder> rewards = new();
 		foreach (ItemChanceHolder reward in crystallizeRewards)
 		{
-			double chance = reward.getChance() * item.getCrystalCount();
-			long count = reward.getCount();
+			double chance = reward.Chance * item.getCrystalCount();
+			long count = reward.Count;
 			if (chance > 100.0)
 			{
 				double countMul = Math.Ceiling(chance / 100.0);
@@ -125,7 +126,7 @@ public sealed class ItemCrystallizationData: DataReaderBase
 				count = (long)(count * countMul);
 			}
 
-			rewards.Add(new ItemChanceHolder(reward.Id, chance, count));
+			rewards.Add(new ItemChanceHolder(reward.Id, count, chance));
 		}
 
 		return rewards;

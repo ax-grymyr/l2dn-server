@@ -50,9 +50,9 @@ public struct RequestCollectionRegisterPacket: IIncomingPacket<GameSession>
 		long count = 0;
 		foreach (ItemEnchantHolder data in collection.getItems())
 		{
-			if (data.Id == item.Id && (data.getEnchantLevel() == 0 || data.getEnchantLevel() == item.getEnchantLevel()))
+			if (data.Id == item.Id && (data.EnchantLevel == 0 || data.EnchantLevel == item.getEnchantLevel()))
 			{
-				count = data.getCount();
+				count = data.Count;
 				break;
 			}
 		}

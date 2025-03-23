@@ -625,7 +625,7 @@ public struct RequestEnchantItemPacket: IIncomingPacket<GameSession>
 							else
 							{
 								ItemChanceHolder? destroyReward = ItemCrystallizationData.getInstance().getItemOnDestroy(player, item);
-								if (destroyReward != null && Rnd.get(100) < destroyReward.getChance())
+								if (destroyReward != null && Rnd.get(100) < destroyReward.Chance)
 								{
 									player.addItem("Enchant", destroyReward, player, true);
 									player.sendPacket(new EnchantResultPacket(EnchantResultPacket.FAIL, new ItemHolder(crystalId, count), destroyReward, 0));

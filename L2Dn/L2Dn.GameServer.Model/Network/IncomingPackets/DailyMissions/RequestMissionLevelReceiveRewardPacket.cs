@@ -55,7 +55,7 @@ public struct RequestMissionLevelReceiveRewardPacket: IIncomingPacket<GameSessio
 					return ValueTask.CompletedTask;
 				}
 
-				player.addItem("Mission Level", reward.Id, reward.getCount(), null, true);
+				player.addItem("Mission Level", reward.Id, reward.Count, null, true);
 				info.addToCollectedNormalRewards(_level);
 				info.storeInfoInVariable(player);
 				break;
@@ -70,7 +70,7 @@ public struct RequestMissionLevelReceiveRewardPacket: IIncomingPacket<GameSessio
 					return ValueTask.CompletedTask;
 				}
 
-				player.addItem("Mission Level", reward.Id, reward.getCount(), null, true);
+				player.addItem("Mission Level", reward.Id, reward.Count, null, true);
 				info.addToCollectedKeyReward(_level);
 				info.storeInfoInVariable(player);
 				return ValueTask.CompletedTask;
@@ -84,7 +84,7 @@ public struct RequestMissionLevelReceiveRewardPacket: IIncomingPacket<GameSessio
 					return ValueTask.CompletedTask;
 				}
 
-				player.addItem("Mission Level", specialReward.Id, specialReward.getCount(), null, true);
+				player.addItem("Mission Level", specialReward.Id, specialReward.Count, null, true);
 				info.setCollectedSpecialReward(true);
 				info.storeInfoInVariable(player);
 				break;
@@ -125,7 +125,7 @@ public struct RequestMissionLevelReceiveRewardPacket: IIncomingPacket<GameSessio
 					info.setCollectedBonusReward(true);
 				}
 
-				player.addItem("Mission Level", bonusReward.Id, bonusReward.getCount(), null, true);
+				player.addItem("Mission Level", bonusReward.Id, bonusReward.Count, null, true);
 				info.storeInfoInVariable(player);
 				break;
 			}

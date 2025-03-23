@@ -96,7 +96,7 @@ public class EquipmentUpgradeNormalData: DataReaderBase
             long count = upgradeEl.GetAttributeValueAsInt64("count");
             byte enchantLevel = upgradeEl.Attribute("enchantLevel").GetByte();
             initialItem = new ItemEnchantHolder(itemId, count, enchantLevel);
-            if (initialItem.getCount() < 0)
+            if (initialItem.Count < 0)
             {
                 LOGGER.Warn(GetType().Name +
                     ": upgradeItem => item => count in file EquipmentUpgradeNormalData.xml for upgrade id " + id +

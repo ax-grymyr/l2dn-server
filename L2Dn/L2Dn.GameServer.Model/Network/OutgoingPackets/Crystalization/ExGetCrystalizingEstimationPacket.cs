@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model.Holders;
+﻿using L2Dn.GameServer.Dto;
+using L2Dn.GameServer.Model.Holders;
 using L2Dn.Packets;
 
 namespace L2Dn.GameServer.Network.OutgoingPackets.Crystalization;
@@ -20,8 +21,8 @@ public readonly struct ExGetCrystalizingEstimationPacket: IOutgoingPacket
         foreach (ItemChanceHolder holder in _items)
         {
             writer.WriteInt32(holder.Id);
-            writer.WriteInt64(holder.getCount());
-            writer.WriteDouble(holder.getChance());
+            writer.WriteInt64(holder.Count);
+            writer.WriteDouble(holder.Chance);
         }
     }
 }

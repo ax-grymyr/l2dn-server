@@ -114,7 +114,7 @@ public struct RequestBrPresentBuyProductPacket: IIncomingPacket<GameSession>
 
 			foreach (PrimeShopItem subItem in item.getItems())
 			{
-				attachement.addItem("Prime Shop Gift", subItem.Id, subItem.getCount() * _count, player, this);
+				attachement.addItem("Prime Shop Gift", subItem.Id, subItem.Count * _count, player, this);
 			}
 
 			MailManager.getInstance().sendMessage(mail);

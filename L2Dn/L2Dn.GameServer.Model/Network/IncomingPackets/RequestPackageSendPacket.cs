@@ -82,7 +82,7 @@ public struct RequestPackageSendPacket: IIncomingPacket<GameSession>
 		foreach (ItemHolder i in _items)
 		{
 			// Check validity of requested item
-			Item? item = player.checkItemManipulation(i.Id, i.getCount(), "freight");
+			Item? item = player.checkItemManipulation(i.Id, i.Count, "freight");
 			if (item == null)
 			{
 				PacketLogger.Instance.Warn("Error depositing a warehouse object for char " + player.getName() +
@@ -101,11 +101,11 @@ public struct RequestPackageSendPacket: IIncomingPacket<GameSession>
 			// Calculate needed adena and slots
 			if (item.Id == Inventory.AdenaId)
 			{
-				currentAdena -= i.getCount();
+				currentAdena -= i.Count;
 			}
 			else if (!item.isStackable())
 			{
-				slots += i.getCount();
+				slots += i.Count;
 			}
 			else if (warehouse.getItemByItemId(item.Id) == null)
 			{
@@ -134,7 +134,7 @@ public struct RequestPackageSendPacket: IIncomingPacket<GameSession>
 		foreach (ItemHolder i in _items)
 		{
 			// Check validity of requested item
-			Item? oldItem = player.checkItemManipulation(i.Id, i.getCount(), "deposit");
+			Item? oldItem = player.checkItemManipulation(i.Id, i.Count, "deposit");
 			if (oldItem == null)
 			{
 				PacketLogger.Instance.Warn("Error depositing a warehouse object for char " + player.getName() +
@@ -144,7 +144,7 @@ public struct RequestPackageSendPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			Item? newItem = player.getInventory().transferItem("Trade", i.Id, i.getCount(), warehouse, player, null);
+			Item? newItem = player.getInventory().transferItem("Trade", i.Id, i.Count, warehouse, player, null);
 			if (newItem == null)
 			{
 				PacketLogger.Instance.Warn("Error depositing a warehouse object for char " + player.getName() +

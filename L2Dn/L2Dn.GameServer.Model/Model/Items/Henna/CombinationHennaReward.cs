@@ -5,10 +5,7 @@ using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Items.Henna;
 
-/**
- * @author Index
- */
-public class CombinationHennaReward: ItemHolder
+public sealed record CombinationHennaReward: ItemHolder
 {
 	private readonly int _hennaId;
 	private readonly CombinationItemType _type;

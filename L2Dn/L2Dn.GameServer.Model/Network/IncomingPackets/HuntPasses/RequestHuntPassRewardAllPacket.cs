@@ -87,8 +87,8 @@ public struct RequestHuntPassRewardAllPacket: IIncomingPacket<GameSession>
                 return ValueTask.CompletedTask;
             }
 
-			long weight = itemTemplate.getWeight() * reward.getCount();
-			long slots = itemTemplate.isStackable() ? 1 : reward.getCount();
+			long weight = itemTemplate.getWeight() * reward.Count;
+			long slots = itemTemplate.isStackable() ? 1 : reward.Count;
 			if (!player.getInventory().validateWeight(weight) || !player.getInventory().validateCapacity(slots))
 			{
 				player.sendPacket(SystemMessageId.YOUR_INVENTORY_S_WEIGHT_SLOT_LIMIT_HAS_BEEN_EXCEEDED_SO_YOU_CAN_T_RECEIVE_THE_REWARD_PLEASE_FREE_UP_SOME_SPACE_AND_TRY_AGAIN);
@@ -119,7 +119,7 @@ public struct RequestHuntPassRewardAllPacket: IIncomingPacket<GameSession>
 	{
 		if (reward.Id == 72286) // Sayha's Grace Sustention Points
 		{
-			int count = (int) reward.getCount();
+			int count = (int) reward.Count;
 			player.getHuntPass().addSayhaTime(count);
 
 			SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.YOU_VE_GOT_S1_SAYHA_S_GRACE_SUSTENTION_POINT_S);

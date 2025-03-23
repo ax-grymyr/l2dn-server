@@ -39,12 +39,12 @@ public sealed class Harvesting: AbstractEffect
                 if (harvestedItem != null)
                 {
                     // Add item
-                    player.getInventory().addItem("Harvesting", harvestedItem.Id, harvestedItem.getCount(), player,
+                    player.getInventory().addItem("Harvesting", harvestedItem.Id, harvestedItem.Count, player,
                         monster);
 
                     // Send system msg
                     SystemMessagePacket sm;
-                    if (harvestedItem.getCount() == 1)
+                    if (harvestedItem.Count == 1)
                     {
                         sm = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1);
                         sm.Params.addItemName(harvestedItem.Id);
@@ -53,7 +53,7 @@ public sealed class Harvesting: AbstractEffect
                     {
                         sm = new SystemMessagePacket(SystemMessageId.YOU_VE_OBTAINED_S1_X_S2);
                         sm.Params.addItemName(harvestedItem.Id);
-                        sm.Params.addLong(harvestedItem.getCount());
+                        sm.Params.addLong(harvestedItem.Count);
                     }
 
                     player.sendPacket(sm);
@@ -62,7 +62,7 @@ public sealed class Harvesting: AbstractEffect
                     Party? party = player.getParty();
                     if (party != null)
                     {
-                        if (harvestedItem.getCount() == 1)
+                        if (harvestedItem.Count == 1)
                         {
                             sm = new SystemMessagePacket(SystemMessageId.C1_HAS_OBTAINED_S2_2);
                             sm.Params.addString(player.getName());
@@ -72,7 +72,7 @@ public sealed class Harvesting: AbstractEffect
                         {
                             sm = new SystemMessagePacket(SystemMessageId.C1_HARVESTED_S3_S2_S);
                             sm.Params.addString(player.getName());
-                            sm.Params.addLong(harvestedItem.getCount());
+                            sm.Params.addLong(harvestedItem.Count);
                             sm.Params.addItemName(harvestedItem.Id);
                         }
 

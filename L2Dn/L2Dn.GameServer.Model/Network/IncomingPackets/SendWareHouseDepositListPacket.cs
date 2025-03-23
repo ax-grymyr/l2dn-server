@@ -87,7 +87,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 		long slots = 0;
 		foreach (ItemHolder itemHolder in _items)
 		{
-			Item? item = player.checkItemManipulation(itemHolder.Id, itemHolder.getCount(), "deposit");
+			Item? item = player.checkItemManipulation(itemHolder.Id, itemHolder.Count, "deposit");
 			if (item == null)
 			{
 				PacketLogger.Instance.Warn("Error depositing a warehouse object for char " + player.getName() +
@@ -99,11 +99,11 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 			// Calculate needed adena and slots
 			if (item.Id == Inventory.AdenaId)
 			{
-				currentAdena -= itemHolder.getCount();
+				currentAdena -= itemHolder.Count;
 			}
 			if (!item.isStackable())
 			{
-				slots += itemHolder.getCount();
+				slots += itemHolder.Count;
 			}
 			else if (warehouse.getItemByItemId(item.Id) == null)
 			{
@@ -134,7 +134,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 		foreach (ItemHolder itemHolder in _items)
 		{
 			// Check validity of requested item
-			Item? oldItem = player.checkItemManipulation(itemHolder.Id, itemHolder.getCount(), "deposit");
+			Item? oldItem = player.checkItemManipulation(itemHolder.Id, itemHolder.Count, "deposit");
 			if (oldItem == null)
 			{
 				PacketLogger.Instance.Warn("Error depositing a warehouse object for char " + player.getName() +
@@ -148,7 +148,7 @@ public struct SendWareHouseDepositListPacket: IIncomingPacket<GameSession>
 				continue;
 			}
 
-			Item? newItem = player.getInventory().transferItem(warehouse.getName(), itemHolder.Id, itemHolder.getCount(), warehouse, player, manager);
+			Item? newItem = player.getInventory().transferItem(warehouse.getName(), itemHolder.Id, itemHolder.Count, warehouse, player, manager);
 			if (newItem == null)
 			{
 				PacketLogger.Instance.Warn("Error depositing a warehouse object for char " + player.getName() +

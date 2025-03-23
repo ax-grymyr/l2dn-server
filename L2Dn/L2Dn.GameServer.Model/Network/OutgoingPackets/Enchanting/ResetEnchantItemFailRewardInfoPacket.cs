@@ -85,7 +85,7 @@ public readonly struct ResetEnchantItemFailRewardInfoPacket: IOutgoingPacket
 		{
 			writer.WriteInt32(1); // Loop count.
 			writer.WriteInt32(result.Id);
-			writer.WriteInt32((int) result.getCount());
+			writer.WriteInt32((int) result.Count);
 		}
 		else if (addedItem != null)
 		{

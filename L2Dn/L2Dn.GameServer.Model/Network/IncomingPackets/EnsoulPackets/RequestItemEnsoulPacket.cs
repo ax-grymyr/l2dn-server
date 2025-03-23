@@ -222,13 +222,13 @@ public struct RequestItemEnsoulPacket: IIncomingPacket<GameSession>
 			}
 
 			Item? gemStones = player.getInventory().getItemByItemId(fee.Id);
-			if (gemStones == null || gemStones.getCount() < fee.getCount())
+			if (gemStones == null || gemStones.getCount() < fee.Count)
 			{
 				continue;
 			}
 
 			if (player.destroyItem("EnsoulOption", soulCrystal, 1, player, true) &&
-			    player.destroyItem("EnsoulOption", gemStones, fee.getCount(), player, true))
+			    player.destroyItem("EnsoulOption", gemStones, fee.Count, player, true))
 			{
 				item.addSpecialAbility(option, position, stone.getSlotType(), true);
 				success = 1;

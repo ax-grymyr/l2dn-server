@@ -58,7 +58,7 @@ public readonly struct ExAcquireSkillInfoPacket: IOutgoingPacket
         foreach (List<ItemHolder> holder in _itemReq)
         {
             writer.WriteInt32(holder[0].Id);
-            writer.WriteInt64(holder[0].getCount());
+            writer.WriteInt64(holder[0].Count);
         }
         writer.WriteInt32(_skillRem.Count);
         foreach (Skill skill in _skillRem)

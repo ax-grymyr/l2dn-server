@@ -39,13 +39,13 @@ public class PrimeShopGroup
 		_price = element.GetAttributeValueAsInt32("price");
 		_panelType = element.Attribute("panelType").GetInt32(0);
 		_recommended = element.Attribute("recommended").GetInt32(0);
-		
+
 		int start = element.Attribute("startSale").GetInt32(0);
 		_start = start == 0 ? null : DateTime.UnixEpoch.AddSeconds(start);
-		
+
 		int end = element.Attribute("endSale").GetInt32(0);
 		_end = start == 0 ? null : DateTime.UnixEpoch.AddSeconds(end);
-		
+
 		_daysOfWeek = (DaysOfWeek)element.Attribute("daysOfWeek").GetInt32(127);
 		_startHour = element.Attribute("startHour").GetInt32(0);
 		_startMinute = element.Attribute("startMinute").GetInt32(0);
@@ -88,12 +88,12 @@ public class PrimeShopGroup
 
 	public long getCount()
 	{
-		return _items.Select(x => x.getCount()).Sum();
+		return _items.Select(x => x.Count).Sum();
 	}
 
 	public int getWeight()
 	{
-		return _items.Select(x => x.getWeight()).Sum();
+		return _items.Select(x => x.Weight).Sum();
 	}
 
 	public int getPanelType()

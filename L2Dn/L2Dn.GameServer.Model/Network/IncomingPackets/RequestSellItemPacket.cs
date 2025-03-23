@@ -120,15 +120,15 @@ public struct RequestSellItemPacket: IIncomingPacket<GameSession>
 		// Proceed the sell
 		foreach (UniqueItemHolder i in _items)
 		{
-			Item? item = player.checkItemManipulation(i.ObjectId, i.getCount(), "sell");
+			Item? item = player.checkItemManipulation(i.ObjectId, i.Count, "sell");
 			if (item == null || !item.isSellable())
 			{
 				continue;
 			}
 
 			long price = item.getReferencePrice() / 2;
-			totalPrice += price * i.getCount();
-			if (Inventory.MAX_ADENA / i.getCount() < price || totalPrice > Inventory.MAX_ADENA)
+			totalPrice += price * i.Count;
+			if (Inventory.MAX_ADENA / i.Count < price || totalPrice > Inventory.MAX_ADENA)
 			{
 				Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
@@ -139,11 +139,11 @@ public struct RequestSellItemPacket: IIncomingPacket<GameSession>
 
 			if (Config.General.ALLOW_REFUND)
 			{
-				player.getInventory().transferItem("Sell", i.ObjectId, i.getCount(), player.getRefund(), player, merchant);
+				player.getInventory().transferItem("Sell", i.ObjectId, i.Count, player.getRefund(), player, merchant);
 			}
 			else
 			{
-				player.getInventory().destroyItem("Sell", i.ObjectId, i.getCount(), player, merchant);
+				player.getInventory().destroyItem("Sell", i.ObjectId, i.Count, player, merchant);
 			}
 		}
 

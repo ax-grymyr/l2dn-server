@@ -251,7 +251,7 @@ public class Transform: IIdentifiable
 					List<int> notAllowed = new();
 					foreach (AdditionalItemHolder holder in template.getAdditionalItems())
 					{
-						if (holder.isAllowedToUse())
+						if (holder.AllowedToUse)
 						{
 							allowed.Add(holder.Id);
 						}

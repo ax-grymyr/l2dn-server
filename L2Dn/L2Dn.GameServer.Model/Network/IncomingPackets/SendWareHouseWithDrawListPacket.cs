@@ -86,7 +86,7 @@ public struct SendWareHouseWithDrawListPacket: IIncomingPacket<GameSession>
 		{
 			// Calculate needed slots
 			Item? item = warehouse.getItemByObjectId(i.Id);
-			if (item == null || item.getCount() < i.getCount())
+			if (item == null || item.getCount() < i.Count)
 			{
 				Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
@@ -95,10 +95,10 @@ public struct SendWareHouseWithDrawListPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			weight += i.getCount() * item.getTemplate().getWeight();
+			weight += i.Count * item.getTemplate().getWeight();
 			if (!item.isStackable())
 			{
-				slots += i.getCount();
+				slots += i.Count;
 			}
 			else if (player.getInventory().getItemByItemId(item.Id) == null)
 			{
@@ -124,7 +124,7 @@ public struct SendWareHouseWithDrawListPacket: IIncomingPacket<GameSession>
 		foreach (ItemHolder i in _items)
 		{
 			Item? oldItem = warehouse.getItemByObjectId(i.Id);
-			if (oldItem == null || oldItem.getCount() < i.getCount())
+			if (oldItem == null || oldItem.getCount() < i.Count)
 			{
 				PacketLogger.Instance.Warn("Error withdrawing a warehouse object for char " + player.getName() +
 				                           " (olditem == null)");
@@ -132,7 +132,7 @@ public struct SendWareHouseWithDrawListPacket: IIncomingPacket<GameSession>
 				return ValueTask.CompletedTask;
 			}
 
-			Item? newItem = warehouse.transferItem(warehouse.getName(), i.Id, i.getCount(), player.getInventory(),
+			Item? newItem = warehouse.transferItem(warehouse.getName(), i.Id, i.Count, player.getInventory(),
 				player, player.getLastFolkNPC());
 
 			if (newItem == null)

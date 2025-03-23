@@ -85,8 +85,8 @@ public class PreparedMultisellListHolder: MultisellListHolder
 	public long getIngredientCount(ItemHolder ingredient)
 	{
 		return (long)(ingredient.Id == Inventory.AdenaId
-			? Math.Round(ingredient.getCount() * getIngredientMultiplier() * (1 + getTaxRate()))
-			: Math.Round(ingredient.getCount() * getIngredientMultiplier()));
+			? Math.Round(ingredient.Count * getIngredientMultiplier() * (1 + getTaxRate()))
+			: Math.Round(ingredient.Count * getIngredientMultiplier()));
 	}
 
 	/**
@@ -95,6 +95,6 @@ public class PreparedMultisellListHolder: MultisellListHolder
 	 */
 	public long getProductCount(ItemChanceHolder product)
 	{
-		return (long)Math.Round(product.getCount() * getProductMultiplier());
+		return (long)Math.Round(product.Count * getProductMultiplier());
 	}
 }

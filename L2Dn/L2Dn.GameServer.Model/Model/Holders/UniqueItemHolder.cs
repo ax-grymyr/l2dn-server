@@ -3,25 +3,11 @@ using L2Dn.GameServer.Model.Interfaces;
 
 namespace L2Dn.GameServer.Model.Holders;
 
-/**
- * A DTO for items; contains item ID, object ID and count.
- * @author xban1x
- */
-public class UniqueItemHolder: ItemHolder, IUniqueId
+/// <summary>
+/// A DTO for items; contains item ID, object ID and count.
+/// </summary>
+public record UniqueItemHolder(int Id, int ObjectId, long Count = 1): ItemHolder(Id, Count), IUniqueId
 {
-	private readonly int _objectId;
-
-	public UniqueItemHolder(int id, int objectId): this(id, objectId, 1)
-	{
-	}
-
-	public UniqueItemHolder(int id, int objectId, long count): base(id, count)
-	{
-		_objectId = objectId;
-	}
-
-	public int ObjectId => _objectId;
-
-	public override string ToString() =>
-		$"[{GetType().Name}] ID: {Id}, object ID: {_objectId}, count: {getCount()}";
+    public override string ToString() =>
+        $"[{nameof(UniqueItemHolder)}] ID: {Id}, object ID: {ObjectId}, count: {Count}";
 }

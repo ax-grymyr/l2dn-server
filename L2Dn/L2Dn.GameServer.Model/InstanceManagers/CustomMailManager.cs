@@ -65,7 +65,7 @@ public class CustomMailManager
 							foreach (ItemEnchantHolder itemHolder in itemHolders)
 							{
 								Item? item = attachments.addItem("Custom-Mail", itemHolder.Id,
-									itemHolder.getCount(), null, null);
+									itemHolder.Count, null, null);
 
                                 if (item == null)
                                 {
@@ -73,8 +73,8 @@ public class CustomMailManager
                                     continue;
                                 }
 
-								if (itemHolder.getEnchantLevel() > 0)
-									item.setEnchantLevel(itemHolder.getEnchantLevel());
+								if (itemHolder.EnchantLevel > 0)
+									item.setEnchantLevel(itemHolder.EnchantLevel);
 							}
 						}
 

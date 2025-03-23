@@ -33,7 +33,7 @@ public readonly struct ExEnchantSkillInfoDetailPacket(
             foreach (ItemHolder holder in holders)
             {
                 writer.WriteInt32(holder.Id);
-                writer.WriteInt32((int)holder.getCount());
+                writer.WriteInt32((int)holder.Count);
             }
         }
     }

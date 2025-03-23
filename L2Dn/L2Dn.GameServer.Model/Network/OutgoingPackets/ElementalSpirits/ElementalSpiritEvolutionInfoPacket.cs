@@ -42,7 +42,7 @@ public readonly struct ElementalSpiritEvolutionInfoPacket: IOutgoingPacket
         foreach (ItemHolder item in items)
         {
             writer.WriteInt32(item.Id);
-            writer.WriteInt64(item.getCount());
+            writer.WriteInt64(item.Count);
         }
     }
 }

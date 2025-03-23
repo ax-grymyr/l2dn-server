@@ -98,7 +98,7 @@ public abstract class AbstractDailyMissionHandler
 					Clan? clan = player.getClan();
 					if (clan != null)
 					{
-						int expAmount = (int) holder.getCount();
+						int expAmount = (int) holder.Count;
 						clan.addExp(player.ObjectId, expAmount);
 						SystemMessagePacket packet = new SystemMessagePacket(SystemMessageId.YOU_HAVE_OBTAINED_S1_X_S2);
 						packet.Params.addItemName(MISSION_LEVEL_POINTS).addLong(expAmount);
@@ -108,7 +108,7 @@ public abstract class AbstractDailyMissionHandler
 				}
 				case MISSION_LEVEL_POINTS:
 				{
-					int levelPoints = (int) holder.getCount();
+					int levelPoints = (int) holder.Count;
 					MissionLevelPlayerDataHolder info = player.getMissionLevelProgress();
 					info.calculateEXP(levelPoints);
 					info.storeInfoInVariable(player);

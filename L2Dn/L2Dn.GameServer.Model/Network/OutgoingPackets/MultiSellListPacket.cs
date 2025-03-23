@@ -1,4 +1,5 @@
 ﻿using L2Dn.GameServer.Data.Xml;
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Holders;
@@ -95,11 +96,11 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 				}
 
 				writer.WriteInt64(_list.getProductCount(product));
-				writer.WriteInt16((short)(product.getEnchantmentLevel() > 0
-					? product.getEnchantmentLevel()
+				writer.WriteInt16((short)(product.EnchantmentLevel > 0
+					? product.EnchantmentLevel
 					: displayItemEnchantment?.getEnchantLevel() ?? 0)); // enchant level
 
-				writer.WriteInt32((int)(product.getChance() * 1000000)); // chance
+				writer.WriteInt32((int)(product.Chance * 1000000)); // chance
 				writer.WriteItemAugment(displayItemEnchantment);
 				writer.WriteItemElemental(displayItemEnchantment);
 				writer.WriteItemEnsoulOptions(displayItemEnchantment);
@@ -126,7 +127,7 @@ public readonly struct MultiSellListPacket: IOutgoingPacket
 				}
 
 				writer.WriteInt64(_list.getIngredientCount(ingredient));
-				writer.WriteInt16((short)(ingredient.getEnchantmentLevel() > 0 ? ingredient.getEnchantmentLevel() :
+				writer.WriteInt16((short)(ingredient.EnchantmentLevel > 0 ? ingredient.EnchantmentLevel :
 					displayItemEnchantment?.getEnchantLevel() ?? 0)); // enchant level
 
 				writer.WriteItemAugment(displayItemEnchantment);

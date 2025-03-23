@@ -53,7 +53,7 @@ public readonly struct ExCollectionInfoPacket: IOutgoingPacket
                 writer.WriteInt32(collection.getItemId());
                 writer.WriteByte(
                     (byte)(CollectionData.getInstance().getCollection(id)?.getItems()[collection.getIndex()]
-                        .getEnchantLevel() ?? 0)); // enchant level
+                        .EnchantLevel ?? 0)); // enchant level
 
                 writer.WriteByte(0); // bless
                 writer.WriteByte(0); // bless Condition

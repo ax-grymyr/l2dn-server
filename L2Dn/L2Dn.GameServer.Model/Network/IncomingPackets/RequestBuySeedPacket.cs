@@ -95,15 +95,15 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
         foreach (ItemHolder ih in _items)
         {
             SeedProduction? sp = manor.getSeedProduct(_manorId, ih.Id, false);
-            if (sp == null || sp.getPrice() <= 0 || sp.getAmount() < ih.getCount() ||
-                Inventory.MAX_ADENA / ih.getCount() < sp.getPrice())
+            if (sp == null || sp.getPrice() <= 0 || sp.getAmount() < ih.Count ||
+                Inventory.MAX_ADENA / ih.Count < sp.getPrice())
             {
                 player.sendPacket(ActionFailedPacket.STATIC_PACKET);
                 return ValueTask.CompletedTask;
             }
 
             // Calculate price
-            totalPrice += sp.getPrice() * ih.getCount();
+            totalPrice += sp.getPrice() * ih.Count;
             if (totalPrice > Inventory.MAX_ADENA)
             {
                 Util.handleIllegalPlayerAction(player,
@@ -122,12 +122,12 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
                 return ValueTask.CompletedTask;
             }
 
-            totalWeight += ih.getCount() * template.getWeight();
+            totalWeight += ih.Count * template.getWeight();
 
             // Calculate slots
             if (!template.isStackable())
             {
-                slots += ih.getCount();
+                slots += ih.Count;
             }
             else if (player.getInventory().getItemByItemId(ih.Id) == null)
             {
@@ -159,10 +159,10 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
         foreach (ItemHolder i in _items)
         {
             SeedProduction sp = productInfo[i.Id];
-            long price = sp.getPrice() * i.getCount();
+            long price = sp.getPrice() * i.Count;
 
             // Take Adena and decrease seed amount
-            if (!sp.decreaseAmount(i.getCount()) || !player.reduceAdena("Buy", price, player, false))
+            if (!sp.decreaseAmount(i.Count) || !player.reduceAdena("Buy", price, player, false))
             {
                 // failed buy, reduce total price
                 totalPrice -= price;
@@ -170,7 +170,7 @@ public struct RequestBuySeedPacket: IIncomingPacket<GameSession>
             }
 
             // Add item to player's inventory
-            player.addItem("Buy", i.Id, i.getCount(), manager, true);
+            player.addItem("Buy", i.Id, i.Count, manager, true);
         }
 
         // Adding to treasury for Manor Castle

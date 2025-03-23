@@ -51,7 +51,7 @@ public readonly struct ExBettingLuckyGameResultPacket: IOutgoingPacket
             {
                 writer.WriteInt32((int)reward.Key);
                 writer.WriteInt32(item.Id);
-                writer.WriteInt32((int) item.getCount());
+                writer.WriteInt32((int) item.Count);
             }
         }
     }

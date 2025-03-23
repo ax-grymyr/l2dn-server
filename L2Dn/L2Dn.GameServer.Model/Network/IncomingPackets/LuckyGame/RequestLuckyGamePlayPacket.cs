@@ -1,4 +1,5 @@
-﻿using L2Dn.Extensions;
+﻿using System.Collections.Immutable;
+using L2Dn.Extensions;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
@@ -9,6 +10,7 @@ using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.LuckyGame;
+using L2Dn.GameServer.StaticData;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Network;
 using L2Dn.Packets;
@@ -36,7 +38,7 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
             return ValueTask.CompletedTask;
 
 		int index = _type == LuckyGameType.LUXURY ? 102 : 2; // move to event config
-		LuckyGameDataHolder? holder = LuckyGameData.getInstance().getLuckyGameDataByIndex(index);
+		LuckyGameDataHolder? holder = LuckyGameData.Instance.GetLuckyGameByIndex(index);
 		if (holder == null)
 			return ValueTask.CompletedTask;
 
@@ -58,9 +60,9 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 		{
 			double chance = 100 * Rnd.nextDouble();
 			double totalChance = 0;
-			foreach (ItemChanceHolder item in holder.getCommonReward())
+			foreach (ItemChanceHolder item in holder.CommonRewards)
 			{
-				totalChance += item.getChance();
+				totalChance += item.Chance;
 				if (totalChance >= chance)
 				{
 					rewards.GetOrAdd(LuckyGameItemType.COMMON, _ => []).Add(item);
@@ -68,14 +70,14 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 				}
 			}
 			playCount++;
-			if (playCount >= holder.getMinModifyRewardGame() && playCount <= holder.getMaxModifyRewardGame() && !blackCat)
+			if (playCount >= holder.MinModifyRewardGame && playCount <= holder.MaxModifyRewardGame && !blackCat)
 			{
-				List<ItemChanceHolder> modifyReward = holder.getModifyReward();
+				ImmutableArray<ItemChanceHolder> modifyReward = holder.ModifyRewards;
 				double chanceModify = 100 * Rnd.nextDouble();
 				totalChance = 0;
 				foreach (ItemChanceHolder item in modifyReward)
 				{
-					totalChance += item.getChance();
+					totalChance += item.Chance;
 					if (totalChance >= chanceModify)
 					{
 						rewards.GetOrAdd(LuckyGameItemType.RARE, _ => []).Add(item);
@@ -84,7 +86,7 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 					}
 				}
 
-				if (playCount == holder.getMaxModifyRewardGame())
+				if (playCount == holder.MaxModifyRewardGame)
 				{
 					rewards.GetOrAdd(LuckyGameItemType.RARE, _ => []).Add(modifyReward.GetRandomElement());
 					blackCat = true;
@@ -112,8 +114,8 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 
 		for (int i = 0; i < _reading; i++)
 		{
-			int serverGameNumber = LuckyGameData.getInstance().increaseGame();
-			holder.getUniqueReward().Where(reward => reward.getPoints() == serverGameNumber).ForEach(item =>
+			int serverGameNumber = LuckyGameData.Instance.IncreaseGame();
+			holder.UniqueRewards.Where(reward => reward.Points == serverGameNumber).ForEach(item =>
 				rewards.GetOrAdd(LuckyGameItemType.UNIQUE, _ => []).Add(item));
 		}
 
@@ -123,7 +125,7 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 		{
 			foreach (ItemHolder r in reward.Value)
 			{
-				Item? item = player.addItem("LuckyGame", r.Id, r.getCount(), player, true);
+				Item? item = player.addItem("LuckyGame", r.Id, r.Count, player, true);
                 if (item == null)
                 {
                     player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL); // TODO: atomic inventory update
@@ -134,7 +136,7 @@ public struct RequestLuckyGamePlayPacket: IIncomingPacket<GameSession>
 				{
 					SystemMessagePacket sm = new SystemMessagePacket(SystemMessageId.CONGRATULATIONS_C1_HAS_OBTAINED_S2_X_S3_IN_THE_STANDARD_LUCKY_GAME);
 					sm.Params.addPcName(player);
-					sm.Params.addLong(r.getCount());
+					sm.Params.addLong(r.Count);
 					sm.Params.addItemName(item);
 					player.broadcastPacket(sm, 1000);
 					break;

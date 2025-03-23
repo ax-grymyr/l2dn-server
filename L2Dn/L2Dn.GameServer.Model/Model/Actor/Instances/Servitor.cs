@@ -491,9 +491,9 @@ public class Servitor : Summon, Runnable
 			_consumeItemIntervalRemaining -= usedtime;
 
 			// check if it is time to consume another item
-			if (_consumeItemIntervalRemaining <= TimeSpan.Zero && _itemConsume.getCount() > 0 && _itemConsume.Id > 0 && !isDead())
+			if (_consumeItemIntervalRemaining <= TimeSpan.Zero && _itemConsume.Count > 0 && _itemConsume.Id > 0 && !isDead())
 			{
-				if (destroyItemByItemId("Consume", _itemConsume.Id, _itemConsume.getCount(), this, false))
+				if (destroyItemByItemId("Consume", _itemConsume.Id, _itemConsume.Count, this, false))
 				{
 					SystemMessagePacket msg = new SystemMessagePacket(SystemMessageId.A_SUMMONED_MONSTER_USES_S1);
 					msg.Params.addItemName(_itemConsume.Id);

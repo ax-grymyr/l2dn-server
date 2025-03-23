@@ -23,7 +23,7 @@ public readonly struct ExShowUpgradeSystemNormalPacket: IOutgoingPacket
         foreach (ItemHolder item in EquipmentUpgradeNormalData.getInstance().getDiscount())
         {
             _materials.Add(item.Id);
-            _discountRatio.Add((int) item.getCount());
+            _discountRatio.Add((int) item.Count);
         }
     }
 

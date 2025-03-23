@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Utilities;
@@ -20,7 +21,7 @@ public class RewardItemsOnFailure
 
 	public void addItemToHolder(int itemId, CrystalType grade, int enchantLevel, long count, double chance)
 	{
-		ItemChanceHolder item = new ItemChanceHolder(itemId, chance, count);
+		ItemChanceHolder item = new ItemChanceHolder(itemId, count, chance);
 		_rewards.GetOrAdd(grade, _ => []).put(enchantLevel, item);
 		_minEnchantLevel = Math.Min(_minEnchantLevel, enchantLevel);
 		_maxEnchantLevel = Math.Max(_maxEnchantLevel, enchantLevel);

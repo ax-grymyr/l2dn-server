@@ -51,7 +51,7 @@ public struct RequestUpgradeSystemResultPacket: IIncomingPacket<GameSession>
 
 		foreach (ItemHolder material in upgradeHolder.getMaterials())
 		{
-			if (player.getInventory().getInventoryItemCount(material.Id, -1) < material.getCount())
+			if (player.getInventory().getInventoryItemCount(material.Id, -1) < material.Count)
 			{
 				player.sendPacket(new ExUpgradeSystemResultPacket(0, 0));
 				return ValueTask.CompletedTask;
@@ -79,7 +79,7 @@ public struct RequestUpgradeSystemResultPacket: IIncomingPacket<GameSession>
 		player.destroyItem("UpgradeEquipment", _objectId, 1, player, true);
 		foreach (ItemHolder material in upgradeHolder.getMaterials())
 		{
-			player.destroyItemByItemId("UpgradeEquipment", material.Id, material.getCount(), player, true);
+			player.destroyItemByItemId("UpgradeEquipment", material.Id, material.Count, player, true);
 		}
 
 		if (adena > 0)

@@ -84,7 +84,7 @@ public class MultisellData: DataReaderBase
 					if (!ItemExists(ingredient))
 					{
 						_logger.Warn("Invalid ingredient id or count for itemId: " + ingredient.Id +
-						             ", count: " + ingredient.getCount() + " in list: " + listId);
+						             ", count: " + ingredient.Count + " in list: " + listId);
 
 						continue;
 					}
@@ -136,13 +136,13 @@ public class MultisellData: DataReaderBase
 					if (productEntry.ChanceSpecified)
 						totalChance += productEntry.Chance;
 
-					ItemChanceHolder product = new(productEntry.ItemId, productEntry.Chance, productEntry.Count,
+					ItemChanceHolder product = new(productEntry.ItemId, productEntry.Count, productEntry.Chance,
 						enchantmentLevel);
 
 					if (!ItemExists(product))
 					{
 						_logger.Warn("Invalid product id or count for itemId: " + product.Id + ", count: " +
-						             product.getCount() + " in list: " + listId);
+						             product.Count + " in list: " + listId);
 
 						continue;
 					}
@@ -151,12 +151,12 @@ public class MultisellData: DataReaderBase
 
 					if (item != null)
 					{
-						double? chance = product.getChance();
+						double? chance = product.Chance;
 						if (chance != null)
-							totalPrice += (long)(item.getReferencePrice() / 2.0 * product.getCount() *
+							totalPrice += (long)(item.getReferencePrice() / 2.0 * product.Count *
 							                     (chance.Value / 100.0));
 						else
-							totalPrice += item.getReferencePrice() / 2 * product.getCount();
+							totalPrice += item.getReferencePrice() / 2 * product.Count;
 					}
 				}
 
@@ -175,7 +175,7 @@ public class MultisellData: DataReaderBase
 					             " at entry " + entryCounter + " of multisell " + listId + ".");
 					// Adjust price.
 					ItemChanceHolder ingredient = new(57, 0, totalPrice, 0,
-						ingredients[0].isMaintainIngredient());
+						ingredients[0].MaintainIngredient);
 					ingredients.Clear();
 					ingredients.Add(ingredient);
 				}
@@ -283,7 +283,7 @@ public class MultisellData: DataReaderBase
 		}
 
 		ItemTemplate? template = ItemData.getInstance().getTemplate(holder.Id);
-		return template != null && (template.isStackable() ? holder.getCount() >= 1 : holder.getCount() == 1);
+		return template != null && (template.isStackable() ? holder.Count >= 1 : holder.Count == 1);
 	}
 
 	public MultisellListHolder? getMultisell(int id)
