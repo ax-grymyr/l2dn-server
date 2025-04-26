@@ -2,11 +2,13 @@ using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
 using System.Text;
 using L2Dn.Events;
+using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Db;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Geo;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.InstanceManagers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Actor.Request;
@@ -33,7 +35,6 @@ using L2Dn.Geometry;
 using L2Dn.Model.Enums;
 using Microsoft.EntityFrameworkCore;
 using NLog;
-using Config = L2Dn.GameServer.Configuration.Config;
 
 namespace L2Dn.GameServer.Model.Items.Instances;
 
@@ -1776,8 +1777,8 @@ public class Item: WorldObject
 
 	public bool isAvailable()
 	{
-        List<Condition>? conditions = _itemTemplate.getConditions();
-		if (!_itemTemplate.isConditionAttached() || conditions == null)
+        ImmutableArray<IConditionBase> conditions = _itemTemplate.getConditions();
+		if (!_itemTemplate.isConditionAttached() || conditions.IsDefaultOrEmpty)
 			return true;
 
         if (_loc == ItemLocation.PET || _loc == ItemLocation.PET_EQUIP)
@@ -1786,8 +1787,8 @@ public class Item: WorldObject
 		Player? player = getActingPlayer();
 		if (player != null)
         {
-			foreach (Condition condition in conditions)
-			{
+			foreach (Condition condition in conditions.OfType<Condition>())
+            {
 				if (!condition.test(player, player, null, _itemTemplate))
 				{
 					return false;
@@ -1797,7 +1798,7 @@ public class Item: WorldObject
 			if (player.hasRequest<AutoPeelRequest>())
 			{
 				EtcItem? etcItem = getEtcItem();
-				if (etcItem != null && etcItem.getExtractableItems().Count != 0)
+				if (etcItem != null && !etcItem.getExtractableItems().IsDefaultOrEmpty)
 				{
 					return false;
 				}

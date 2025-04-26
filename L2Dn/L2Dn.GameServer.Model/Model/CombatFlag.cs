@@ -29,7 +29,7 @@ public class CombatFlag
 	public void spawnMe()
 	{
 		// Init the dropped ItemInstance and add it in the world as a visible object at the position where mob was last
-		_itemInstance = ItemData.getInstance().createItem("Combat", _itemId, 1, null);
+		_itemInstance = ItemDataExtensions.createItem("Combat", _itemId, 1, null);
 		_itemInstance.dropMe(null, _location.Location3D);
 	}
 

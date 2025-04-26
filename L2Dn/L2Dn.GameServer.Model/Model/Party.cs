@@ -659,7 +659,7 @@ public class Party : AbstractPlayerGroup
 		if (item.Id == Inventory.AdenaId)
 		{
 			distributeAdena(player, item.getCount(), player);
-			ItemData.getInstance().destroyItem("Party", item, player, null);
+			ItemDataExtensions.destroyItem("Party", item, player, null);
 			return;
 		}
 

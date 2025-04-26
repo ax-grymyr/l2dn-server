@@ -15,6 +15,25 @@ internal static class FactoryHelper
             ToFrozenDictionary();
     }
 
+    internal static FrozenDictionary<TKey, Func<THandler>> CreateFactories<TKey, THandler>(Assembly assembly)
+        where TKey: notnull
+    {
+        return GetAllHandlerTypes<TKey>(assembly, typeof(THandler)).Select(pair =>
+                KeyValuePair.Create(pair.Key, CreateFactory<THandler>(pair.Type))).ToFrozenDictionary();
+    }
+
+    private static Func<THandler> CreateFactory<THandler>(Type type)
+    {
+        ConstructorInfo? constructor = type.GetConstructor(BindingFlags.Public | BindingFlags.Instance, []);
+        if (constructor != null)
+        {
+            NewExpression newExpression = Expression.New(constructor);
+            return Expression.Lambda<Func<THandler>>(newExpression).Compile();
+        }
+
+        throw new InvalidOperationException($"Handler type {type} does not have supported constructor.");
+    }
+
     private static Func<TArg, THandler> CreateFactory<TArg, THandler>(Type type)
     {
         ConstructorInfo? constructor = type.GetConstructor(BindingFlags.Public | BindingFlags.Instance,

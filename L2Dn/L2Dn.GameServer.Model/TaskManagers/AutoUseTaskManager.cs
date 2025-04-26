@@ -107,8 +107,8 @@ public class AutoUseTaskManager
 								continue;
 							}
 
-							List<ItemSkillHolder> skills = it.getAllSkills();
-							if (skills != null)
+							ImmutableArray<ItemSkillHolder> skills = it.getAllSkills();
+							if (!skills.IsDefaultOrEmpty)
 							{
 								bool continueItems = false;
 								foreach (ItemSkillHolder itemSkillHolder in skills)

@@ -1,29 +1,21 @@
+using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Conditions;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
-using L2Dn.Model.Enums;
 
 namespace L2Dn.GameServer.Model.Stats.Functions;
 
-/**
- * Returns the initial value plus the function value, if the condition are met.
- * @author Zoey76
- */
-public class FuncMul: AbstractFunction
+/// <summary>
+/// Returns the initial value plus the function value, if the condition are met.
+/// </summary>
+[HandlerKey<StatFuncType>(StatFuncType.MUL)]
+public sealed class FuncMul(StatFuncParameters parameters): AbstractFunction(parameters)
 {
-	public FuncMul(Stat stat, int order, object owner, double value, Condition applayCond)
-		: base(stat, order, owner, value, applayCond)
-	{
-	}
+    public override double Calc(Creature effector, Creature effected, Skill skill, double initialValue)
+    {
+        if (ApplyCondition == null || ApplyCondition.test(effector, effected, skill))
+            return initialValue * Value;
 
-	public override double calc(Creature effector, Creature effected, Skill skill, double initVal)
-	{
-		if (getApplayCond() == null || getApplayCond().test(effector, effected, skill))
-		{
-			return initVal * getValue();
-		}
-
-		return initVal;
-	}
+        return initialValue;
+    }
 }

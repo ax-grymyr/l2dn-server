@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
@@ -37,8 +38,8 @@ public class ExtractableItems: IItemHandler
 		}
 
 		EtcItem etcitem = (EtcItem) item.getTemplate();
-		List<ExtractableProduct> exitems = etcitem.getExtractableItems();
-		if (exitems == null)
+		ImmutableArray<ExtractableProduct> exitems = etcitem.getExtractableItems();
+		if (exitems.IsDefaultOrEmpty)
 		{
 			_logger.Info("No extractable data defined for " + etcitem);
 			return false;
@@ -91,7 +92,7 @@ public class ExtractableItems: IItemHandler
 								break;
 							}
 						}
-						if (alreadyExtracted && exitems.Count >= etcitem.getExtractableCountMax())
+						if (alreadyExtracted && exitems.Length >= etcitem.getExtractableCountMax())
 						{
 							continue;
 						}

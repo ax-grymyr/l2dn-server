@@ -1492,7 +1492,7 @@ public class Npc: Creature
 				return null;
 			}
 
-			item = ItemData.getInstance().createItem("Loot", itemId, itemCount, creature, this);
+			item = ItemDataExtensions.createItem("Loot", itemId, itemCount, creature, this);
 			if (item == null)
 			{
 				return null;

@@ -39,7 +39,7 @@ public class PlayerRefund: ItemContainer
                 Item? removedItem = _items.FirstOrDefault(); // TODO: ordered container
                 if (removedItem != null && _items.remove(removedItem))
                 {
-                    ItemData.getInstance().destroyItem("ClearRefund", removedItem, getOwner(), null);
+                    ItemDataExtensions.destroyItem("ClearRefund", removedItem, getOwner(), null);
                     removedItem.updateDatabase(true);
                 }
             }
@@ -60,7 +60,7 @@ public class PlayerRefund: ItemContainer
         {
             foreach (Item item in _items)
             {
-                ItemData.getInstance().destroyItem("ClearRefund", item, getOwner(), null);
+                ItemDataExtensions.destroyItem("ClearRefund", item, getOwner(), null);
                 item.updateDatabase(true);
             }
         }

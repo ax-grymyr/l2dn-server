@@ -1298,7 +1298,7 @@ public abstract class Inventory: ItemContainer
 				item.setLastChange(ItemChangeType.MODIFIED);
 				item.updateDatabase();
 
-				Item newItem = ItemData.getInstance().createItem(process, item.Id, count, actor, reference);
+				Item newItem = ItemDataExtensions.createItem(process, item.Id, count, actor, reference);
 				newItem.updateDatabase();
 				refreshWeight();
 				return newItem;

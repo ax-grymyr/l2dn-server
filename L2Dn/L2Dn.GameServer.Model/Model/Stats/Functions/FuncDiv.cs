@@ -1,36 +1,33 @@
+using L2Dn.GameServer.Enums;
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Conditions;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
-using L2Dn.Model.Enums;
+using NLog;
 
 namespace L2Dn.GameServer.Model.Stats.Functions;
 
-/**
- * Returns the initial value divided the function value, if the condition are met.
- * @author Zoey76
- */
-public class FuncDiv: AbstractFunction
+/// <summary>
+/// Returns the initial value divided the function value, if the condition are met.
+/// </summary>
+[HandlerKey<StatFuncType>(StatFuncType.DIV)]
+public sealed class FuncDiv(StatFuncParameters parameters): AbstractFunction(parameters)
 {
-	public FuncDiv(Stat stat, int order, object owner, double value, Condition applayCond)
-		: base(stat, order, owner, value, applayCond)
-	{
-	}
+    private static readonly Logger _logger = LogManager.GetLogger(nameof(FuncDiv));
 
-	public override double calc(Creature effector, Creature effected, Skill skill, double initVal)
-	{
-		if (getApplayCond() == null || getApplayCond().test(effector, effected, skill))
-		{
-			try
-			{
-				return initVal / getValue();
-			}
-			catch (Exception e)
-			{
-				LOG.Warn(nameof(FuncDiv) + ": Division by zero: " + getValue() + "! " + e);
-			}
-		}
+    public override double Calc(Creature effector, Creature effected, Skill skill, double initialValue)
+    {
+        if (ApplyCondition == null || ApplyCondition.test(effector, effected, skill))
+        {
+            try
+            {
+                return initialValue / Value;
+            }
+            catch (Exception e)
+            {
+                _logger.Warn(nameof(FuncDiv) + ": Division by zero: " + Value + "! " + e);
+            }
+        }
 
-		return initVal;
-	}
+        return initialValue;
+    }
 }

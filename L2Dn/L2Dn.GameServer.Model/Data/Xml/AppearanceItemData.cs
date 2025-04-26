@@ -71,7 +71,7 @@ public class AppearanceItemData: DataReaderBase
 
 		element.Elements("bodyPart").ForEach(el =>
 		{
-			long part = ItemData._slotNameMap.get(el.Value);
+			long part = ItemData.SlotNameMap.GetValueOrDefault(el.Value);
 			stone.addBodyPart(part);
 		});
 

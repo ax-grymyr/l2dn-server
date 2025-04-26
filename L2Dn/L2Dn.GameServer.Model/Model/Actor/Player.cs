@@ -4542,7 +4542,7 @@ public class Player: Playable
 			{
 				handler.useItem(this, target, false);
 			}
-			ItemData.getInstance().destroyItem("Consume", target, this, null);
+			ItemDataExtensions.destroyItem("Consume", target, this, null);
 		}
 		// Cursed Weapons are not distributed
 		else if (CursedWeaponsManager.getInstance().isCursed(target.Id))
@@ -4583,7 +4583,7 @@ public class Player: Playable
 			else if (target.Id == Inventory.AdenaId && _inventory.getAdenaInstance() != null)
 			{
 				addAdena("Pickup", target.getCount(), null, true);
-				ItemData.getInstance().destroyItem("Pickup", target, this, null);
+				ItemDataExtensions.destroyItem("Pickup", target, this, null);
 			}
 			else
 			{
@@ -5988,8 +5988,8 @@ public class Player: Playable
 		removeAmmunitionSkills();
 		_lastAmmunitionId = currentAmmunitionId;
 
-		List<ItemSkillHolder> skills = ammunition.getTemplate().getAllSkills();
-		if (skills == null)
+		ImmutableArray<ItemSkillHolder> skills = ammunition.getTemplate().getAllSkills();
+		if (skills.IsDefaultOrEmpty)
 		{
 			return;
 		}
@@ -6022,7 +6022,7 @@ public class Player: Playable
 		_lastAmmunitionId = 0;
 
 		bool sendSkillList = false;
-		foreach (int skillId in AmmunitionSkillList.values())
+		foreach (int skillId in ItemData.getInstance().AmmunitionSkillIds)
 		{
 			if (removeSkill(skillId, true) != null)
 			{

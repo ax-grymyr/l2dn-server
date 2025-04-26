@@ -1,16 +1,15 @@
+using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
-/**
- * The Class Condition.
- * @author mkizub
- */
-public abstract class Condition: ConditionListener
+/// <summary>
+/// The Class Condition.
+/// </summary>
+public abstract class Condition: ConditionListener, IConditionBase
 {
     private ConditionListener? _listener;
     private string? _msg;

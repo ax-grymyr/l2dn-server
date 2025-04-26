@@ -29,7 +29,7 @@ public sealed class Disarmor: AbstractEffect
         _unequippedItems = [];
 
         string slot = parameters.GetString(XmlSkillEffectParameterType.Slot, "chest");
-        _slot = ItemData._slotNameMap.GetValueOrDefault(slot, ItemTemplate.SLOT_NONE);
+        _slot = ItemData.SlotNameMap.GetValueOrDefault(slot, ItemTemplate.SLOT_NONE);
         if (_slot == ItemTemplate.SLOT_NONE)
         {
             Logger.Error("Unknown bodypart slot for effect: " + slot);

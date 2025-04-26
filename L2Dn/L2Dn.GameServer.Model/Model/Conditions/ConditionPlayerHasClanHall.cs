@@ -1,7 +1,7 @@
+using System.Collections.Frozen;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Clans;
 using L2Dn.GameServer.Model.Items;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Model.Conditions;
@@ -10,7 +10,7 @@ namespace L2Dn.GameServer.Model.Conditions;
  * The Class ConditionPlayerHasClanHall.
  * @author MrPoke
  */
-public sealed class ConditionPlayerHasClanHall(List<int> clanHall): Condition
+public sealed class ConditionPlayerHasClanHall(FrozenSet<int> clanHalls): Condition
 {
     /**
      * Test impl.
@@ -24,12 +24,12 @@ public sealed class ConditionPlayerHasClanHall(List<int> clanHall): Condition
 
         Clan? clan = player.getClan();
         if (clan is null)
-            return clanHall is [0];
+            return clanHalls.Count == 1 && clanHalls.Contains(0);
 
         // All Clan Halls
-        if (clanHall is [-1])
+        if (clanHalls.Count == 1 && clanHalls.Contains(-1))
             return clan.getHideoutId() > 0;
 
-        return clanHall.Contains(clan.getHideoutId());
+        return clanHalls.Contains(clan.getHideoutId());
     }
 }

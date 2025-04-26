@@ -6,7 +6,7 @@ using NLog;
 
 namespace L2Dn.GameServer.Model.Stats;
 
-public record StatInfo(
+public sealed record StatInfo(
     Stat Stat,
     string XmlName,
     IStatFunction Finalizer,

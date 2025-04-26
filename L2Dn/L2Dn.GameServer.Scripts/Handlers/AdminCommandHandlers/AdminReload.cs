@@ -149,7 +149,7 @@ public class AdminReload: IAdminCommandHandler
 				}
 				case "item":
 				{
-					ItemData.getInstance().reload();
+					//ItemData.getInstance().reload(); // TODO
 					GmManager.getInstance().BroadcastMessageToGMs(activeChar.getName() + ": Reloaded Items.");
 					break;
 				}

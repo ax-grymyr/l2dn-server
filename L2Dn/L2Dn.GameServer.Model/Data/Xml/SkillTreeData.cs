@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using L2Dn.Extensions;
 using L2Dn.GameServer.Configuration;
 using L2Dn.GameServer.Dto;
@@ -1574,8 +1575,8 @@ public class SkillTreeData: DataReaderBase
 				bool isItemSkill = false;
 				foreach (Item item  in  player.getInventory().getItems())
 				{
-					List<ItemSkillHolder> itemSkills = item.getTemplate().getAllSkills();
-					if (itemSkills != null)
+					ImmutableArray<ItemSkillHolder> itemSkills = item.getTemplate().getAllSkills();
+					if (!itemSkills.IsDefaultOrEmpty)
 					{
 						bool breakOuter = false;
 						foreach (ItemSkillHolder itemSkillHolder  in  itemSkills)

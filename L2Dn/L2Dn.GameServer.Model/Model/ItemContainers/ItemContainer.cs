@@ -176,7 +176,7 @@ public abstract class ItemContainer
 			olditem.setLastChange(ItemChangeType.MODIFIED);
 
 			// And destroys the item
-			ItemData.getInstance().destroyItem(process, newItem, actor, reference);
+			ItemDataExtensions.destroyItem(process, newItem, actor, reference);
 			newItem.updateDatabase();
 			newItem = olditem;
 		}
@@ -225,7 +225,7 @@ public abstract class ItemContainer
 					return null;
 				}
 
-				item = ItemData.getInstance().createItem(process, itemId, template.isStackable() ? count : 1, actor, reference);
+				item = ItemDataExtensions.createItem(process, itemId, template.isStackable() ? count : 1, actor, reference);
 				item.setOwnerId(getOwnerId());
 				item.setItemLocation(getBaseLocation());
 				item.setLastChange(ItemChangeType.ADDED);
@@ -313,7 +313,7 @@ public abstract class ItemContainer
 				else // Otherwise destroy old item
 				{
 					removeItem(sourceitem);
-					ItemData.getInstance().destroyItem(process, sourceitem, actor, reference);
+					ItemDataExtensions.destroyItem(process, sourceitem, actor, reference);
 				}
 
 				if (targetitem != null) // If possible, only update counts
@@ -385,7 +385,7 @@ public abstract class ItemContainer
 			item.changeCount(process, -count, actor, reference);
 			item.updateDatabase(true);
 
-			Item newItem = ItemData.getInstance().createItem(process, item.Id, count, actor, reference);
+			Item newItem = ItemDataExtensions.createItem(process, item.Id, count, actor, reference);
 			newItem.setOwnerId(getOwnerId());
 			newItem.setItemLocation(newLocation);
 			newItem.updateDatabase(true);
@@ -461,7 +461,7 @@ public abstract class ItemContainer
 					return null;
 				}
 
-				ItemData.getInstance().destroyItem(process, item, actor, reference);
+				ItemDataExtensions.destroyItem(process, item, actor, reference);
 				item.updateDatabase();
 				refreshWeight();
 

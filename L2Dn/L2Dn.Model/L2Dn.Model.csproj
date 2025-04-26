@@ -7,14 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.XmlSerializer.Generator" Version="9.0.2" />
-    </ItemGroup>
-    
-    <ItemGroup>
-        <DotNetCliToolReference Include="Microsoft.XmlSerializer.Generator" Version="9.0.2" />
-    </ItemGroup>
-    
-    <ItemGroup>
       <ProjectReference Include="..\L2Dn.GameServer.Enums\L2Dn.GameServer.Enums.csproj" />
       <ProjectReference Include="..\L2Dn.GameServer.StaticData.Xml\L2Dn.GameServer.StaticData.Xml.csproj" />
     </ItemGroup>

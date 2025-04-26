@@ -1,4 +1,5 @@
-﻿using L2Dn.GameServer.Model;
+﻿using L2Dn.GameServer.Handlers;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Conditions;
 
@@ -7,7 +8,7 @@ namespace L2Dn.GameServer.Scripts.Handlers.ConditionHandlers;
 /**
  * @author Sdw
  */
-public class NpcLevelCondition: ICondition
+public class NpcLevelCondition: ICondition, IConditionBase
 {
     private readonly int _minLevel;
     private readonly int _maxLevel;

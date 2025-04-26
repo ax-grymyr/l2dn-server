@@ -649,7 +649,7 @@ public class Pet: Summon
 				handler.useItem(this, target, false);
 			}
 
-			ItemData.getInstance().destroyItem("Consume", target, getOwner(), null);
+			ItemDataExtensions.destroyItem("Consume", target, getOwner(), null);
 			broadcastStatusUpdate();
 		}
 		else

@@ -26,8 +26,7 @@ public struct ExRequestReadyItemAutoPeelPacket: IIncomingPacket<GameSession>
 
         Item? item = player.getInventory().getItemByObjectId(_itemObjectId);
         EtcItem? etcItem = item?.getEtcItem();
-        if (item == null || !item.isEtcItem() || etcItem == null || etcItem.getExtractableItems() == null ||
-            etcItem.getExtractableItems().Count == 0)
+        if (item == null || !item.isEtcItem() || etcItem == null || etcItem.getExtractableItems().IsDefaultOrEmpty)
         {
             player.sendPacket(new ExReadyItemAutoPeelPacket(false, _itemObjectId));
             return ValueTask.CompletedTask;

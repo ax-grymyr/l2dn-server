@@ -89,7 +89,7 @@ public sealed class EnchantItemGroupsData: DataReaderBase
 				foreach (XmlEnchantScrollGroupRateItem xmlEnchantScrollGroupRateItem in xmlEnchantScrollGroupRate.Items)
 				{
 					if (!string.IsNullOrEmpty(xmlEnchantScrollGroupRateItem.Slot))
-						rateGroup.addSlot(ItemData._slotNameMap[xmlEnchantScrollGroupRateItem.Slot]);
+						rateGroup.addSlot(ItemData.SlotNameMap[xmlEnchantScrollGroupRateItem.Slot]);
 
 					rateGroup.setMagicWeapon(xmlEnchantScrollGroupRateItem.MagicWeapon);
 

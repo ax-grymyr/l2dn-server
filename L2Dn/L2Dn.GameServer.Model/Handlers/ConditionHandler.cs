@@ -9,18 +9,18 @@ namespace L2Dn.GameServer.Handlers;
  */
 public class ConditionHandler
 {
-    private readonly Map<string, Func<StatSet, ICondition>> _conditionHandlerFactories = new();
+    private readonly Map<string, Func<StatSet, IConditionBase>> _conditionHandlerFactories = new();
 
     private ConditionHandler()
     {
     }
 
-    public void registerHandler(string name, Func<StatSet, ICondition> handlerFactory)
+    public void registerHandler(string name, Func<StatSet, IConditionBase> handlerFactory)
     {
         _conditionHandlerFactories.put(name, handlerFactory);
     }
 
-    public Func<StatSet, ICondition>? getHandlerFactory(string name)
+    public Func<StatSet, IConditionBase>? getHandlerFactory(string name)
     {
         return _conditionHandlerFactories.get(name);
     }

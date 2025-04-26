@@ -22,6 +22,12 @@ public static class StaticDataLoader
 {
     public static void Load()
     {
+        // Stat functions
+        StatFuncFactory.Instance.Register(typeof(StaticDataLoader).Assembly);
+
+        // Conditions
+        ConditionFactory.Instance.Register(typeof(StaticDataLoader).Assembly);
+
         // XML config files
         AccessLevelData.Instance.Load();
         AdminCommandData.Instance.Load();
