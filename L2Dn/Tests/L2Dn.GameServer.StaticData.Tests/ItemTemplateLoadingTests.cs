@@ -29,7 +29,7 @@ public sealed class ItemTemplateLoadingTests
         // Register item handlers
         ConditionFactory.Instance.Register(new Model.Conditions.ConditionFactory());
 
-        // Loading skill templates old way
+        // Loading skill templates the old way
         OldLoader oldLoader = new();
         oldLoader.Load();
 
@@ -102,14 +102,14 @@ public sealed class ItemTemplateLoadingTests
             _etcItems.Clear();
             _weapons.Clear();
 
-            LoadXmlDocuments(DataFileLocation.Data, "stats/items", true).ForEach(t =>
+            LoadXmlDocuments(DataFileLocation.Data, "stats/items").ForEach(t =>
             {
                 t.Document.Elements("list").Elements("item").ForEach(x => loadElement(t.FilePath, x));
             });
 
             if (Config.General.CUSTOM_ITEMS_LOAD)
             {
-                LoadXmlDocuments(DataFileLocation.Data, "stats/items/custom", true).ForEach(t =>
+                LoadXmlDocuments(DataFileLocation.Data, "stats/items/custom").ForEach(t =>
                 {
                     t.Document.Elements("list").Elements("item").ForEach(x => loadElement(t.FilePath, x));
                 });

@@ -44,23 +44,24 @@ public class DatReaderTests
     [Fact]
     public void ReplaceRuItemNamesInEuClient()
     {
-        const string euPath = @"D:\L2\L2EU-P447-D20240313-P-230809-240318-1\system\eu\";
-        const string euOldPath = @"D:\L2\L2J_Mobius_Classic_3.0 - The Kamael P228 Client\system\";
-        const string naPath = @"D:\L2\L2NA-P447-D20240320-G458-230809.72\system\";
+        const string euPath = @"E:\Temp\L2\!Latest\L2EU-P447-D20240327-P-230809-240401-1\system_patched\eu\";
+        const string euOldPath = @"E:\Temp\L2\!Latest\L2J_Mobius_Classic_3.0 - Prelude of War - The Kamael EU P228\system\";
+        const string naPath = @"E:\Temp\L2\!Latest\L2NA-P447-D20240327-G460-230809.76\system_patched\";
+        const string jsonPath = @"E:\Temp\L2\!Latest\";
 
         EncryptionKeys.RsaDecryption413 = EncryptionKeys.RsaDecryption413L2EncDec;
 
         // Load EU item names from old EU 228 client
         L2NameData euOldNameData = DatReader.ReadNameData(euOldPath + "L2GameDataName.dat");
-        //Serialize(@"D:\L2\DatFiles\L2GameDataName-eu-P228.json", euOldNameData);
+        //Serialize(jsonPath + "L2GameDataName-eu-P228.json", euOldNameData);
         ItemNameV11 euOldItemName = DatReader.Read<ItemNameV11>(euOldPath + "ItemName_Classic-eu.dat");
-        //Serialize(@"D:\L2\DatFiles\ItemName_Classic-eu-P228.json", euOldItemName);
+        //Serialize(jsonPath + "ItemName_Classic-eu-P228.json", euOldItemName);
 
         // Load EU item names (EU client has Russian names for items for some reason)
         L2NameData euNameData = DatReader.ReadNameData(euPath + "L2GameDataName.dat.original");
-        //Serialize(@"D:\L2\DatFiles\L2GameDataName-eu.json", euNameData);
+        //Serialize(jsonPath + "L2GameDataName-eu.json", euNameData);
         ItemNameV18 euItemName = DatReader.Read<ItemNameV18>(euPath + "ItemName_Classic-eu.dat.original");
-        //Serialize(@"D:\L2\DatFiles\ItemName_Classic-eu.json", euItemName);
+        //Serialize(jsonPath + "ItemName_Classic-eu.json", euItemName);
 
         // Load NA item names
         DatReader.ReadNameData(naPath + "L2GameDataName.dat");
@@ -123,7 +124,7 @@ public class DatReaderTests
             L2NameData euTestNameData = DatReader.Read<L2NameData>(stream1);
             euNameData.Names.Should().BeEquivalentTo(euTestNameData.Names);
             DatReader.SetNameData(euTestNameData.Names);
-            Serialize(@"D:\L2\DatFiles\L2GameDataName.modified.json", euTestNameData);
+            Serialize(jsonPath + "L2GameDataName.modified.json", euTestNameData);
         }
 
         // Write items
@@ -133,7 +134,7 @@ public class DatReaderTests
         using FileStream stream = File.OpenRead(euPath + "ItemName_Classic-eu.dat.modified");
         ItemNameV18 euTestItemName = DatReader.Read<ItemNameV18>(stream);
         //euTestItemName.Should().BeEquivalentTo(euItemName);
-        Serialize(@"D:\L2\DatFiles\ItemName_Classic-eu.modified.json", euTestItemName);
+        Serialize(jsonPath + "ItemName_Classic-eu.modified.json", euTestItemName);
     }
 
     [Fact]

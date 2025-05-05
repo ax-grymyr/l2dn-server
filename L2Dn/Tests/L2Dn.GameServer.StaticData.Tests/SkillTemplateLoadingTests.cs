@@ -29,7 +29,7 @@ public sealed class SkillTemplateLoadingTests
         // Register effect and condition handlers
         Scripts.Scripts.RegisterHandlers();
 
-        // Loading skill templates old way
+        // Loading skill templates the old way
         OldLoader oldLoader = new();
         oldLoader.Load();
 
