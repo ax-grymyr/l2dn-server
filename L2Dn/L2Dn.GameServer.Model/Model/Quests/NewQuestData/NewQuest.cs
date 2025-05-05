@@ -1,6 +1,7 @@
 using System.Xml.Linq;
 using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Templates;
 using L2Dn.Utilities;
 using NLog;
 

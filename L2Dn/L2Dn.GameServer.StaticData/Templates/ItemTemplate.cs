@@ -6,9 +6,11 @@ using L2Dn.GameServer.Data.Xml;
 using L2Dn.GameServer.Dto;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Handlers;
+using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Commission;
 using L2Dn.GameServer.Model.Events;
 using L2Dn.GameServer.Model.Holders;
+using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Enchant.Attributes;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Stats.Functions;
@@ -16,7 +18,7 @@ using L2Dn.GameServer.StaticData.Xml.Items;
 using L2Dn.Model.Enums;
 using NLog;
 
-namespace L2Dn.GameServer.Model.Items;
+namespace L2Dn.GameServer.Templates;
 
 /// <summary>
 /// This class contains all information about an item (Weapon, Armor, or EtcItem).
@@ -296,42 +298,27 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
     /// Verifies if the item is a magic weapon.
     /// </summary>
     /// <returns><c>true</c> if the weapon is magic, <c>false</c> otherwise.</returns>
-    public virtual bool isMagicWeapon()
-    {
-        return false;
-    }
+    public virtual bool isMagicWeapon() => false;
 
     /// <summary>
     /// The equip reuse delay.
     /// </summary>
-    public TimeSpan getEquipReuseDelay()
-    {
-        return _equipReuseDelay;
-    }
+    public TimeSpan getEquipReuseDelay() => _equipReuseDelay;
 
     /// <summary>
     /// Returns the duration of the item.
     /// </summary>
-    public int? getDuration()
-    {
-        return _duration;
-    }
+    public int? getDuration() => _duration;
 
     /// <summary>
     /// Returns the time of the item.
     /// </summary>
-    public TimeSpan? getTime()
-    {
-        return _time;
-    }
+    public TimeSpan? getTime() => _time;
 
     /// <summary>
     /// Gets the auto destroy time of the item in seconds: 0 or less - default.
     /// </summary>
-    public TimeSpan? getAutoDestroyTime()
-    {
-        return _autoDestroyTime;
-    }
+    public TimeSpan? getAutoDestroyTime() => _autoDestroyTime;
 
     /// <summary>
     /// Returns the ID of the item.
@@ -341,168 +328,95 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
     /// <summary>
     /// Returns the display ID of the item.
     /// </summary>
-    public int getDisplayId()
-    {
-        return _displayId;
-    }
+    public int getDisplayId() => _displayId;
 
     /// <summary>
     /// Returns the type of material of the item.
     /// </summary>
-    public MaterialType getMaterialType()
-    {
-        return _materialType;
-    }
+    public MaterialType getMaterialType() => _materialType;
 
     /// <summary>
     /// Returns the type 2 of the item.
     /// </summary>
-    public int getType2()
-    {
-        return _type2;
-    }
+    public int getType2() => _type2;
 
     /// <summary>
     /// Returns the weight of the item.
     /// </summary>
-    public int getWeight()
-    {
-        return _weight;
-    }
+    public int getWeight() => _weight;
 
     /// <summary>
     /// Returns if the item is crystallizable.
     /// </summary>
     /// <returns><c>true</c> if the item is crystallizable; otherwise, <c>false</c>.</returns>
-    public bool isCrystallizable()
-    {
-        return _crystalType != CrystalType.NONE && _crystalCount > 0;
-    }
+    public bool isCrystallizable() => _crystalType != CrystalType.NONE && _crystalCount > 0;
 
     /// <summary>
     /// Gets the general item grade (No S80, S84, R95, R99).
     /// </summary>
-    public ItemGrade getItemGrade()
-    {
-        return _crystalType.GetItemGrade();
-    }
+    public ItemGrade getItemGrade() => _crystalType.GetItemGrade();
 
     /// <summary>
     /// Returns the type of crystal if item is crystallizable.
     /// </summary>
-    public CrystalType getCrystalType()
-    {
-        return _crystalType;
-    }
+    public CrystalType getCrystalType() => _crystalType;
 
-    /**
-     * Return the ID of crystal if item is crystallizable
-     * @return int
-     */
-    public int getCrystalItemId()
-    {
-        return _crystalType.getCrystalId();
-    }
+    /// <summary>
+    /// Return the ID of crystal if item is crystallizable.
+    /// </summary>
+    public int getCrystalItemId() => _crystalType.getCrystalId();
 
     /// <summary>
     /// The grade of the item.
     /// For grades S80 and S84 return S, R95, and R99 return R.
     /// </summary>
-    public CrystalType getCrystalTypePlus()
-    {
-        switch (_crystalType)
+    public CrystalType getCrystalTypePlus() =>
+        _crystalType switch
         {
-            case CrystalType.S80:
-            case CrystalType.S84:
-            {
-                return CrystalType.S;
-            }
-            case CrystalType.R95:
-            case CrystalType.R99:
-            {
-                return CrystalType.R;
-            }
-            default:
-            {
-                return _crystalType;
-            }
-        }
-    }
+            CrystalType.S80 or CrystalType.S84 => CrystalType.S,
+            CrystalType.R95 or CrystalType.R99 => CrystalType.R,
+            _ => _crystalType,
+        };
 
     /// <summary>
     /// Gets the quantity of crystals for crystallization.
     /// </summary>
-    public int getCrystalCount()
-    {
-        return _crystalCount;
-    }
+    public int getCrystalCount() => _crystalCount;
 
     /// <summary>
     /// The quantity of crystals for crystallization on specific enchant level.
     /// </summary>
     /// <param name="enchantLevel">Enchant level.</param>
     /// <returns>The quantity of crystals.</returns>
-    public int getCrystalCount(int enchantLevel)
-    {
-        if (enchantLevel > 3)
+    public int getCrystalCount(int enchantLevel) =>
+        enchantLevel switch
         {
-            switch (_type2)
+            > 3 => _type2 switch
             {
-                case TYPE2_SHIELD_ARMOR:
-                case TYPE2_ACCESSORY:
-                {
-                    return _crystalCount + _crystalType.getCrystalEnchantBonusArmor() * (3 * enchantLevel - 6);
-                }
-                case TYPE2_WEAPON:
-                {
-                    return _crystalCount + _crystalType.getCrystalEnchantBonusWeapon() * (2 * enchantLevel - 3);
-                }
-                default:
-                {
-                    return _crystalCount;
-                }
-            }
-        }
-        else if (enchantLevel > 0)
-        {
-            switch (_type2)
+                TYPE2_SHIELD_ARMOR or TYPE2_ACCESSORY => _crystalCount +
+                    _crystalType.getCrystalEnchantBonusArmor() * (3 * enchantLevel - 6),
+                TYPE2_WEAPON => _crystalCount + _crystalType.getCrystalEnchantBonusWeapon() * (2 * enchantLevel - 3),
+                _ => _crystalCount,
+            },
+            > 0 => _type2 switch
             {
-                case TYPE2_SHIELD_ARMOR:
-                case TYPE2_ACCESSORY:
-                {
-                    return _crystalCount + _crystalType.getCrystalEnchantBonusArmor() * enchantLevel;
-                }
-                case TYPE2_WEAPON:
-                {
-                    return _crystalCount + _crystalType.getCrystalEnchantBonusWeapon() * enchantLevel;
-                }
-                default:
-                {
-                    return _crystalCount;
-                }
-            }
-        }
-        else
-        {
-            return _crystalCount;
-        }
-    }
+                TYPE2_SHIELD_ARMOR or TYPE2_ACCESSORY => _crystalCount +
+                    _crystalType.getCrystalEnchantBonusArmor() * enchantLevel,
+                TYPE2_WEAPON => _crystalCount + _crystalType.getCrystalEnchantBonusWeapon() * enchantLevel,
+                _ => _crystalCount,
+            },
+            _ => _crystalCount,
+        };
 
     /// <summary>
     /// Gets the name of the item.
     /// </summary>
-    public string getName()
-    {
-        return _name;
-    }
+    public string getName() => _name;
 
     /// <summary>
     /// Gets the item's additional name.
     /// </summary>
-    public string getAdditionalName()
-    {
-        return _additionalName;
-    }
+    public string getAdditionalName() => _additionalName;
 
     public ImmutableArray<AttributeHolder> getAttributes() => _elementals.Values;
 
@@ -511,161 +425,108 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
     /// <summary>
     /// Gets the part of the body used with the item.
     /// </summary>
-    public long getBodyPart()
-    {
-        return _bodyPart;
-    }
+    public long getBodyPart() => _bodyPart;
 
     /// <summary>
     /// Gets the type 1 of the item.
     /// </summary>
-    public int getType1()
-    {
-        return _type1;
-    }
+    public int getType1() => _type1;
 
     /// <summary>
     /// Determines whether the item is stackable.
     /// </summary>
     /// <returns><c>true</c> if the item is stackable; otherwise, <c>false</c>.</returns>
-    public bool isStackable()
-    {
-        return _stackable;
-    }
+    public bool isStackable() => _stackable;
 
     /// <summary>
     /// Determines whether the item can be equipped.
     /// </summary>
     /// <returns><c>true</c> if the item can be equipped; otherwise, <c>false</c>.</returns>
-    public bool isEquipable()
-    {
-        return _bodyPart != 0 && !getItemType().IsEtcItem();
-    }
+    public bool isEquipable() => _bodyPart != 0 && !getItemType().IsEtcItem();
 
     /// <summary>
     /// Gets the reference price of the item.
     /// </summary>
     /// <returns>The reference price.</returns>
-    public int getReferencePrice()
-    {
-        return _referencePrice;
-    }
+    public int getReferencePrice() => _referencePrice;
 
     /// <summary>
     /// Determines whether the item can be sold.
     /// </summary>
     /// <returns><c>true</c> if the item can be sold; otherwise, <c>false</c>.</returns>
-    public bool isSellable()
-    {
-        return _sellable;
-    }
+    public bool isSellable() => _sellable;
 
     /// <summary>
     /// Determines whether the item can be dropped.
     /// </summary>
     /// <returns><c>true</c> if the item can be dropped; otherwise, <c>false</c>.</returns>
-    public bool isDropable()
-    {
-        return _dropable;
-    }
+    public bool isDropable() => _dropable;
 
     /// <summary>
     /// Determines whether the item can be destroyed.
     /// </summary>
     /// <returns><c>true</c> if the item can be destroyed; otherwise, <c>false</c>.</returns>
-    public bool isDestroyable()
-    {
-        return _destroyable;
-    }
+    public bool isDestroyable() => _destroyable;
 
     /// <summary>
     /// Determines whether the item can be traded.
     /// </summary>
     /// <returns><c>true</c> if the item can be traded; otherwise, <c>false</c>.</returns>
-    public bool isTradeable()
-    {
-        return _tradeable;
-    }
+    public bool isTradeable() => _tradeable;
 
     /// <summary>
     /// Determines whether the item can be put into warehouse.
     /// </summary>
     /// <returns><c>true</c> if the item can be put into warehouse; otherwise, <c>false</c>.</returns>
-    public bool isDepositable()
-    {
-        return _depositable;
-    }
+    public bool isDepositable() => _depositable;
 
     /// <summary>
     /// Determines whether the item can be enchanted. This method also checks the enchant blacklist.
     /// </summary>
     /// <returns><c>true</c> if the item can be enchanted; otherwise, <c>false</c>.</returns>
-    public bool isEnchantable()
-    {
-        return _enchantable && !Config.Character.ENCHANT_BLACKLIST.Contains(_id);
-    }
+    public bool isEnchantable() => _enchantable && !Config.Character.ENCHANT_BLACKLIST.Contains(_id);
 
     /// <summary>
     /// Returns the enchantment limit of the item.
     /// </summary>
     /// <returns>The enchantment limit.</returns>
-    public int getEnchantLimit()
-    {
-        return _enchantLimit > 0 ? _enchantLimit : 0;
-    }
+    public int getEnchantLimit() => _enchantLimit > 0 ? _enchantLimit : 0;
 
     /**
      * @return the available ensoul slot count.
      */
-    public int getEnsoulSlots()
-    {
-        return _ensoulNormalSlots;
-    }
+    public int getEnsoulSlots() => _ensoulNormalSlots;
 
     /// <summary>
     /// Gets the available special ensoul slot count.
     /// </summary>
     /// <returns>The available special ensoul slot count.</returns>
-    public int getSpecialEnsoulSlots()
-    {
-        return _ensoulSpecialSlots;
-    }
+    public int getSpecialEnsoulSlots() => _ensoulSpecialSlots;
 
     /// <summary>
     /// Determines whether the item can be elemented.
     /// </summary>
     /// <returns><c>true</c> if the item can be elemented; otherwise, <c>false</c>.</returns>
-    public bool isElementable()
-    {
-        return _elementable;
-    }
+    public bool isElementable() => _elementable;
 
     /// <summary>
     /// Determines whether the item is common.
     /// </summary>
     /// <returns><c>true</c> if the item is common; otherwise, <c>false</c>.</returns>
-    public bool isCommon()
-    {
-        return _common;
-    }
+    public bool isCommon() => _common;
 
     /**
      * Returns if item is hero-only
      * @return <c>true</c> if the item is hero-only; otherwise, <c>false</c>.
      */
-    public bool isHeroItem()
-    {
-        return _heroItem;
-    }
+    public bool isHeroItem() => _heroItem;
 
     /// <summary>
     /// Determines whether the item is a PvP item.
     /// </summary>
     /// <returns><c>true</c> if the item is a PvP item; otherwise, <c>false</c>.</returns>
-    public bool isPvpItem()
-    {
-        return _pvpItem;
-    }
+    public bool isPvpItem() => _pvpItem;
+
     public bool isPotion() => getItemType() == EtcItemType.POTION;
 
     public bool isElixir() => getItemType() == EtcItemType.ELIXIR;
@@ -674,27 +535,18 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
 
     public ImmutableArray<IConditionBase> getConditions() => _conditions;
 
-    public bool hasSkills()
-    {
-        return !_skills.IsDefaultOrEmpty;
-    }
+    public bool hasSkills() => !_skills.IsDefaultOrEmpty;
 
     /// <summary>
     /// Gets the extractable items list.
     /// </summary>
-    public ImmutableArray<ExtractableProduct> getExtractableItems()
-    {
-        return _extractableItems;
-    }
+    public ImmutableArray<ExtractableProduct> getExtractableItems() => _extractableItems;
 
     /// <summary>
     /// Gets all skills linked to this item (armor, weapon, etc.).
     /// </summary>
     /// <returns>Skills linked to this item.</returns>
-    public ImmutableArray<ItemSkillHolder> getAllSkills()
-    {
-        return _skills;
-    }
+    public ImmutableArray<ItemSkillHolder> getAllSkills() => _skills;
 
     public ImmutableArray<ItemSkillHolder> UnequipSkills => _unequipSkills;
 
@@ -705,16 +557,15 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
     /// <returns>A list of ItemSkillHolder if the item has skills and matches the condition; otherwise, <c>null</c>.</returns>
     public List<ItemSkillHolder>? getSkills(Predicate<ItemSkillHolder> condition)
     {
-        if (_skills == null)
-        {
+        if (_skills.IsDefaultOrEmpty)
             return null;
-        }
 
-        List<ItemSkillHolder> result = new();
+        List<ItemSkillHolder>? result = null;
         foreach (ItemSkillHolder skill in _skills)
         {
             if (condition(skill))
             {
+                result ??= [];
                 result.Add(skill);
             }
         }
@@ -729,16 +580,15 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
     /// <returns>A list of ItemSkillHolder if the item has skills of the specified type; otherwise, <c>null</c>.</returns>
     public List<ItemSkillHolder>? getSkills(ItemSkillType type)
     {
-        if (_skills == null)
-        {
+        if (_skills.IsDefaultOrEmpty)
             return null;
-        }
 
-        List<ItemSkillHolder> result = new();
+        List<ItemSkillHolder>? result = null;
         foreach (ItemSkillHolder skill in _skills)
         {
             if (skill.getType() == type)
             {
+                result ??= [];
                 result.Add(skill);
             }
         }
@@ -753,150 +603,94 @@ public abstract class ItemTemplate: IIdentifiable, IEventContainerProvider
     /// <param name="action">The action to execute on each skill.</param>
     public void forEachSkill(ItemSkillType type, Action<ItemSkillHolder> action)
     {
-        if (_skills != null)
+        if (!_skills.IsDefaultOrEmpty)
         {
             foreach (ItemSkillHolder skill in _skills)
             {
                 if (skill.getType() == type)
-                {
                     action(skill);
-                }
             }
         }
     }
 
     public bool isConditionAttached() => !_conditions.IsDefaultOrEmpty;
 
-    public bool isQuestItem()
-    {
-        return _questItem;
-    }
+    public bool isQuestItem() => _questItem;
 
-    public bool isFreightable()
-    {
-        return _freightable;
-    }
+    public bool isFreightable() => _freightable;
 
-    public bool isAllowSelfResurrection()
-    {
-        return _allowSelfResurrection;
-    }
+    public bool isAllowSelfResurrection() => _allowSelfResurrection;
 
-    public bool isOlyRestrictedItem()
-    {
-        return _isOlyRestricted || Config.Olympiad.LIST_OLY_RESTRICTED_ITEMS.Contains(_id);
-    }
+    public bool isOlyRestrictedItem() => _isOlyRestricted || Config.Olympiad.LIST_OLY_RESTRICTED_ITEMS.Contains(_id);
 
     /// <summary>
     /// Determines whether the item cannot be used in event games.
     /// </summary>
     /// <returns><c>true</c> if the item cannot be used in event games; otherwise, <c>false</c>.</returns>
-    public bool isEventRestrictedItem()
-    {
-        return _isEventRestricted;
-    }
+    public bool isEventRestrictedItem() => _isEventRestricted;
 
     /// <summary>
     /// Determines whether the item is for NPCs.
     /// </summary>
     /// <returns><c>true</c> if the item is for NPCs; otherwise, <c>false</c>.</returns>
-    public bool isForNpc()
-    {
-        return _forNpc;
-    }
+    public bool isForNpc() => _forNpc;
 
-    public bool isAppearanceable()
-    {
-        return _isAppearanceable;
-    }
+    public bool isAppearanceable() => _isAppearanceable;
 
     /**
      * @return {@code true} if the item is blessed, {@code false} otherwise.
      */
-    public bool isBlessed()
-    {
-        return _isBlessed;
-    }
+    public bool isBlessed() => _isBlessed;
 
     /// <summary>
     /// Gets the artifact slot.
     /// </summary>
     /// <returns>The artifact slot.</returns>
-    public int getArtifactSlot()
-    {
-        return _artifactSlot;
-    }
+    public int getArtifactSlot() => _artifactSlot;
 
     /**
-     * Verifies if the item has effects immediately.<br>
+     * Verifies if the item has effects immediately.
      * Used for herbs mostly.
      * @return <c>true</c> if the item applies effects immediately; otherwise, <c>false</c>.
      */
-    public bool hasExImmediateEffect()
-    {
-        return _exImmediateEffect;
-    }
+    public bool hasExImmediateEffect() => _exImmediateEffect;
 
     /**
      * Determines whether the item has immediate effects.
      * @return <c>true</c> if the item applies effects immediately; otherwise, <c>false</c>.
      */
-    public bool hasImmediateEffect()
-    {
-        return _immediateEffect;
-    }
+    public bool hasImmediateEffect() => _immediateEffect;
 
     /// <summary>
     /// Gets the default action of the item.
     /// </summary>
     /// <returns>The default action.</returns>
-    public ActionType getDefaultAction()
-    {
-        return _defaultAction;
-    }
+    public ActionType getDefaultAction() => _defaultAction;
 
-    public int useSkillDisTime()
-    {
-        return _useSkillDisTime;
-    }
+    public int useSkillDisTime() => _useSkillDisTime;
 
     /// <summary>
     /// Gets the item reuse delay time.
     /// </summary>
     /// <returns>The reuse delay time.</returns>
-    public TimeSpan getReuseDelay()
-    {
-        return _reuseDelay;
-    }
+    public TimeSpan getReuseDelay() => _reuseDelay;
 
     /**
      * Gets the shared reuse group.<br>
      * Items with the same reuse group will render reuse delay upon those items when used.
      * @return the shared reuse group
      */
-    public int getSharedReuseGroup()
-    {
-        return _sharedReuseGroup;
-    }
+    public int getSharedReuseGroup() => _sharedReuseGroup;
 
-    public CommissionItemType getCommissionItemType()
-    {
-        return _commissionItemType;
-    }
+    public CommissionItemType getCommissionItemType() => _commissionItemType;
 
     /// <summary>
     /// Gets the icon of the item. Usable in HTML windows.
     /// </summary>
     /// <returns>The icon link in client files.</returns>
-    public string getIcon()
-    {
-        return _icon;
-    }
+    public string getIcon() => _icon;
 
-    public int getDefaultEnchantLevel()
-    {
-        return _defaultEnchantLevel;
-    }
+    public int getDefaultEnchantLevel() => _defaultEnchantLevel;
 
     public bool isPetItem() => getItemType() == EtcItemType.PET_COLLAR;
 

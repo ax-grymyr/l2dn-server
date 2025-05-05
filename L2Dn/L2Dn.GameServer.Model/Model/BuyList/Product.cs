@@ -2,6 +2,7 @@
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.TaskManagers;
+using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using NLog;
 using Config = L2Dn.GameServer.Configuration.Config;

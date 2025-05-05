@@ -1,3 +1,4 @@
+using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 
 namespace L2Dn.GameServer.Model.Items.Enchant;

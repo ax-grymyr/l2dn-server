@@ -35,6 +35,7 @@ using L2Dn.GameServer.Network.OutgoingPackets.Settings;
 using L2Dn.GameServer.Network.OutgoingPackets.SteadyBoxes;
 using L2Dn.GameServer.Network.OutgoingPackets.Subjugation;
 using L2Dn.GameServer.StaticData;
+using L2Dn.GameServer.Templates;
 using L2Dn.GameServer.Utilities;
 using L2Dn.Model.Enums;
 using L2Dn.Network;

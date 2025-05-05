@@ -1,5 +1,6 @@
 ﻿using L2Dn.GameServer.Model.BuyList;
 using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Templates;
 using L2Dn.Packets;
 using Config = L2Dn.GameServer.Configuration.Config;
 

@@ -2,6 +2,7 @@ using System.Collections.Immutable;
 using L2Dn.GameServer.Constants;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.StaticData.Xml.Items;
+using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Model.Items;
 

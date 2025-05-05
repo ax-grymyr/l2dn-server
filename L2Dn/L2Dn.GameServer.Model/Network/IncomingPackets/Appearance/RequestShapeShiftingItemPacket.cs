@@ -12,6 +12,7 @@ using L2Dn.GameServer.Model.Variables;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Network.OutgoingPackets;
 using L2Dn.GameServer.Network.OutgoingPackets.Appearance;
+using L2Dn.GameServer.Templates;
 using L2Dn.Network;
 using L2Dn.Packets;
 using L2Dn.Utilities;

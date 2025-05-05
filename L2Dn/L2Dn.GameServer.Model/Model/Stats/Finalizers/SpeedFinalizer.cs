@@ -5,6 +5,7 @@ using L2Dn.GameServer.Model.Actor;
 using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Model.Zones;
 using L2Dn.GameServer.Model.Zones.Types;
+using L2Dn.GameServer.Templates;
 using L2Dn.Model.Enums;
 using L2Dn.Utilities;
 using Config = L2Dn.GameServer.Configuration.Config;
