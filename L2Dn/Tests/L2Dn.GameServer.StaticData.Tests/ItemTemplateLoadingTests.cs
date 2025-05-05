@@ -9,6 +9,7 @@ using L2Dn.GameServer.Model;
 using L2Dn.GameServer.Model.Conditions;
 using L2Dn.GameServer.Model.Holders;
 using L2Dn.GameServer.Model.Items;
+using L2Dn.GameServer.Model.Items.Enchant.Attributes;
 using L2Dn.GameServer.Model.Items.Types;
 using L2Dn.GameServer.Model.Stats;
 using L2Dn.GameServer.Model.Stats.Functions;
@@ -214,15 +215,17 @@ public sealed class ItemTemplateLoadingTests
                         Condition condition = parseCondition(conditionEl, item);
                         string? msg = conditionEl.Attribute("msg")?.Value;
                         string? msgId = conditionEl.Attribute("msgId")?.Value;
-                        if (condition != null && msg != null)
+                        if (msg is not null)
                             condition.setMessage(msg);
-                        else if (condition != null && msgId != null)
+                        else if (msgId is not null)
                         {
                             condition.setMessageId((SystemMessageId)int.Parse(msgId));
                             string? addName = conditionEl.GetAttributeValueAsString("addName");
                             if (addName != null && int.Parse(msgId) > 0)
                                 condition.addName();
                         }
+
+                        item.attachCondition(condition);
 
                         break;
                     }
@@ -1393,6 +1396,31 @@ public sealed class ItemTemplateLoadingTests
             ValueComparer.CompareValue(owner, "isEventRestrictedItem", oldItem.isEventRestrictedItem(), newItem.isEventRestrictedItem());
             ValueComparer.CompareValue(owner, "isOlyRestrictedItem", oldItem.isOlyRestrictedItem(), newItem.isOlyRestrictedItem());
             ValueComparer.CompareValue(owner, "useSkillDisTime", oldItem.useSkillDisTime(), newItem.useSkillDisTime());
+
+            ValueComparer.CompareValue(owner, "skills.Length", oldItem.getAllSkills().Count, newItem.getAllSkills().Length);
+            for (int i = 0; i < oldItem.getAllSkills().Count; i++)
+                ValueComparer.CompareValue(owner, $"skills[{i}]", oldItem.getAllSkills()[i], newItem.getAllSkills()[i]);
+
+            ValueComparer.CompareValue(owner, "conditions.Length", oldItem.getConditions()?.Count ?? 0, newItem.getConditions().Length);
+            if (oldItem.getConditions() is { } conditions)
+            {
+                for (int i = 0; i < conditions.Count; i++)
+                    ValueComparer.CompareValue(owner, $"conditions[{i}]", conditions[i],
+                        newItem.getConditions()[i]);
+            }
+
+            ValueComparer.CompareValue(owner, "unequipSkills.Length", 0, newItem.UnequipSkills.Length);
+            for (int i = 0; i < newItem.UnequipSkills.Length; i++)
+                ValueComparer.CompareValue(owner, $"unequipSkills[{i}]", null, newItem.UnequipSkills[i]);
+
+            ValueComparer.CompareValue(owner, "attributes.Length", oldItem.getAttributes()?.Count ?? 0, newItem.getAttributes().Length);
+            List<AttributeHolder>? attributes = oldItem.getAttributes()?.ToList();
+            if (attributes is not null)
+            {
+                for (int i = 0; i < attributes.Count; i++)
+                    ValueComparer.CompareValue(owner, $"attributes[{i}]", attributes[i],
+                        newItem.getAttributes()[i]);
+            }
 
             Assert.Equal(oldItem is OldArmor, newItem is Armor);
             Assert.Equal(oldItem is OldWeapon, newItem is Weapon);

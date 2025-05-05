@@ -481,12 +481,12 @@ public abstract class OldItemTemplate: IIdentifiable, IEventContainerProvider
 
     public ICollection<AttributeHolder>? getAttributes()
     {
-        return _elementals != null ? _elementals.Values : null;
+        return _elementals?.Values;
     }
 
     public AttributeHolder? getAttribute(AttributeType type)
     {
-        return _elementals != null ? _elementals.get(type) : null;
+        return _elementals?.get(type);
     }
 
     /**
