@@ -1,6 +1,4 @@
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Items;
-using L2Dn.GameServer.Model.Skills;
 using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Model.Conditions;
@@ -20,24 +18,6 @@ public class ConditionLogicNot: Condition
     public ConditionLogicNot(Condition condition)
     {
         _condition = condition;
-        if (getListener() != null)
-        {
-            _condition.setListener(this);
-        }
-    }
-
-    public override void setListener(ConditionListener? listener)
-    {
-        if (listener != null)
-        {
-            _condition.setListener(this);
-        }
-        else
-        {
-            _condition.setListener(null);
-        }
-
-        base.setListener(listener);
     }
 
     protected override bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item)

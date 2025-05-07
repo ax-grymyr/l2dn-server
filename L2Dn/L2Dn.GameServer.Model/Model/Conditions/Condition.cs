@@ -1,6 +1,5 @@
 using L2Dn.GameServer.Handlers;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Network.Enums;
 using L2Dn.GameServer.Templates;
 
@@ -9,13 +8,11 @@ namespace L2Dn.GameServer.Model.Conditions;
 /// <summary>
 /// The Class Condition.
 /// </summary>
-public abstract class Condition: ConditionListener, IConditionBase
+public abstract class Condition: IConditionBase
 {
-    private ConditionListener? _listener;
     private string? _msg;
     private SystemMessageId _msgId;
     private bool _addName;
-    private bool _result;
 
     /**
      * Sets the message.
@@ -70,34 +67,9 @@ public abstract class Condition: ConditionListener, IConditionBase
         return _addName;
     }
 
-    /**
-     * Sets the listener.
-     * @param listener the new listener
-     */
-    public virtual void setListener(ConditionListener? listener)
-    {
-        _listener = listener;
-        notifyChanged();
-    }
-
-    /**
-     * Gets the listener.
-     * @return the listener
-     */
-    public ConditionListener? getListener()
-    {
-        return _listener;
-    }
-
     public bool test(Creature caster, Creature? target, Skill? skill = null, ItemTemplate? item = null)
     {
         bool res = TestImpl(caster, target, skill, item);
-        if (_listener != null && res != _result)
-        {
-            _result = res;
-            notifyChanged();
-        }
-
         return res;
     }
 
@@ -110,9 +82,4 @@ public abstract class Condition: ConditionListener, IConditionBase
      * @return {@code true} if successful, {@code false} otherwise
      */
     protected abstract bool TestImpl(Creature effector, Creature? effected, Skill? skill, ItemTemplate? item);
-
-    public void notifyChanged()
-    {
-        _listener?.notifyChanged();
-    }
 }

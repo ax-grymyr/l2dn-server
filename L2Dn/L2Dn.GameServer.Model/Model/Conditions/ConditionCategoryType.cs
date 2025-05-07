@@ -1,7 +1,6 @@
 using System.Collections.Frozen;
 using L2Dn.GameServer.Enums;
 using L2Dn.GameServer.Model.Actor;
-using L2Dn.GameServer.Model.Items;
 using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Model.Conditions;
