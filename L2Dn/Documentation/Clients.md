@@ -46,7 +46,11 @@
 | 42 | 불멸의 무기 (Immortal Weapon)                                 |                     |         |                     | 393 395                                 |
 | 43 | 어둠이 선택한 자 (The Source of Flame)                          | 418                 | 418     | 418                 | 413 414 415 417 419 422 424 425 426     |
 | 44 | DEATHKNIGHT REBORN / Aztacan's Temple / DEATHKNIGHT II   | 430                 | 430     | 430                 | 430                                     |
-| 45 | Shine Maker                                              |                     |      |                     | 437                                     |
+| 45 | Shine Maker                                              | 447                 | 447     | 447                 | 437 444 446                             |
+| 46 | Path of a Rogue                                          | 464                 | 464     | 464                 |                                         |
+| 47 | Shield of the Kingdom                                    | 474                 | 474     | 474                 |                                         |
+| 48 | Superior                                                 | 502                 | 502     | 502                 |                                         |
+| 49 | Orc Village                                              | 507                 | 507     | 507                 |                                         |
 
 # Lineage 2 Classic
 
@@ -74,6 +78,10 @@
 | 20 | The Source of Flame                   | 418 |     | 418     |    |
 | 21 | Death Knight Reborn / Pagan Temple    | 430 |     | 430 439 |    |
 | 22 | Kelbim's Fortress                     | 447 |     | 447     |    |
+| 23 | Kelbim's Fortress Ch. 2               |     |     | 464     |    |
+| 24 | Lizard Overlord                       |     |     | 474     |    |
+| 25 | Hellbound                             |     |     | 502     |    |
+| 26 | Hellbound Ch. 2                       |     |     | 507     |    |
 
 # Lineage 2 Essence/Aden
 
@@ -93,3 +101,7 @@
 | 12 | Assassin             | 418 | 414 418 | 414 418 |    |
 | 13 | Aztacan's Temple     | 430 | 430 439 | 430 439 |    |
 | 14 | Seven Signs          | 447 | 447     | 447     |    |
+| 15 | High Elves           | 464 | 464     | 464     |    |
+| 16 | Heart of the Volcano | 474 | 474     | 474     |    |
+| 17 | Guardians            | 502 | 502     | 502     |    |
+| 18 | Warg                 | 507 | 507     | 507     |    |
