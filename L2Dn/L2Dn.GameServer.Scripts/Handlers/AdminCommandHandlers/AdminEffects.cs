@@ -17,7 +17,6 @@ using L2Dn.GameServer.Utilities;
 using L2Dn.Geometry;
 using L2Dn.Utilities;
 using NLog;
-using NLog.Fluent;
 
 namespace L2Dn.GameServer.Scripts.Handlers.AdminCommandHandlers;
 

@@ -5,6 +5,8 @@ using L2Dn.GameServer.Templates;
 
 namespace L2Dn.GameServer.Model.Conditions;
 
+public sealed record ConditionMessage(string? Text, SystemMessageId? MessageId, bool AddName);
+
 /// <summary>
 /// The Class Condition.
 /// </summary>
